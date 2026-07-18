@@ -90,14 +90,14 @@
   `.github/workflows/kb-semantic-proof.yml`
 - **`Mutation Test (manual)`** _[manual]_ —   
   `.github/workflows/mutation-test.yml`
-- **`Orchestrator SDK`** _[push/pull_request]_ —   
-  `.github/workflows/orchestrator-sdk.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  
   `.github/workflows/recover-fanart.yml`
 - **`Refresh Claude Code Prompts`** _[schedule/manual]_ —   
   `.github/workflows/refresh-claude-code-prompts.yml`
 - **`SDK Mutation Ratchet (weekly)`** _[schedule/manual]_ —   
   `.github/workflows/sdk-mutation-ratchet.yml`
+- **`Silver Core Maestro SDK`** _[push/pull_request]_ —   
+  `.github/workflows/silver-core-maestro-sdk.yml`
 - **`Silver Core SDK`** _[schedule/push/pull_request/manual]_ —   
   `.github/workflows/silver-core-sdk.yml`
 - **`Test All Data Collectors`** _[manual]_ — 运行采集器单元测试。  
@@ -325,8 +325,8 @@
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
   `projects/news/`
-- **`orchestrator-sdk`** — > 动手前先读本档。需求裁定书(建成什么样的唯一权威):  
-  `projects/orchestrator-sdk/`
+- **`silver-core-maestro-sdk`** — > 动手前先读本档。需求裁定书(建成什么样的唯一权威):  
+  `projects/silver-core-maestro-sdk/`
 - **`silver-core-sdk`** — Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面  
   `projects/silver-core-sdk/`
 - **`site`** — 对外门户：静态站 public/ + 设计令牌 design/。  
