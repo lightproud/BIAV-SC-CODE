@@ -13,12 +13,16 @@
  *           token (opus-4-5 is pre-adaptive; opus-4-50 is NOT that model).
  *  - WV4-3 (elicitation): an accept whose content violates requestedSchema is
  *           downgraded to decline (never forwards invalid typed input).
+ *  - WV2-4 (keeper ruling T60, option ③): a caller temperature != 1 is dropped
+ *           ONLY on a declared reasoning endpoint (caps.thinking === true);
+ *           unknown / thinking:false gateways pass it through untouched.
  */
 
 import { describe, it, expect } from 'vitest';
 import { valueMatchesSchema } from '../src/internal/structured-output.js';
 import { supportsAdaptiveThinking } from '../src/engine/thinking-model.js';
 import { resolveElicitation } from '../src/mcp/elicitation.js';
+import { encodeOpenAIRequest } from '../src/transport/openai.js';
 
 // ---------------------------------------------------------------------------
 // WV4-3 / WV4-9 — valueMatchesSchema public surface
@@ -112,5 +116,51 @@ describe('WV4-3: elicitation validates accepted content against requestedSchema'
     // abort branch rather than hanging on the never-fulfilled handler.
     ctrl.abort();
     expect((await pending).action).toBe('decline');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// WV2-4 (keeper ruling T60, option ③) — caps-gated temperature suppression
+// ---------------------------------------------------------------------------
+
+describe('WV2-4: temperature != 1 dropped ONLY on a declared reasoning endpoint', () => {
+  const req = (temperature?: number) => ({
+    model: 'o3',
+    max_tokens: 100,
+    messages: [{ role: 'user' as const, content: 'x' }],
+    ...(temperature !== undefined ? { temperature } : {}),
+  });
+
+  it('drops a stray temperature when caps.thinking === true and reasoning is active', () => {
+    const body = encodeOpenAIRequest(req(0.7), { reasoningEffort: 'high' }, undefined, {
+      thinking: true,
+    });
+    expect('temperature' in body).toBe(false);
+    expect(body.reasoning_effort).toBe('high');
+  });
+
+  it('keeps temperature exactly 1 even on a declared reasoning endpoint', () => {
+    const body = encodeOpenAIRequest(req(1), { reasoningEffort: 'high' }, undefined, {
+      thinking: true,
+    });
+    expect(body.temperature).toBe(1);
+  });
+
+  it('passes temperature through on an UNKNOWN gateway (caps undefined)', () => {
+    // The vLLM/Qwen-style case: no capability declaration — never rewrite intent.
+    const body = encodeOpenAIRequest(req(0), { reasoningEffort: 'high' });
+    expect(body.temperature).toBe(0);
+  });
+
+  it('passes temperature through when the endpoint declares thinking: false', () => {
+    const body = encodeOpenAIRequest(req(0), { reasoningEffort: 'high' }, undefined, {
+      thinking: false,
+    });
+    expect(body.temperature).toBe(0);
+  });
+
+  it('passes temperature through on a declared reasoning endpoint when reasoning is NOT active', () => {
+    const body = encodeOpenAIRequest(req(0.5), {}, undefined, { thinking: true });
+    expect(body.temperature).toBe(0.5);
   });
 });

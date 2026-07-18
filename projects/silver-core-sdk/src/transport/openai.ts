@@ -549,6 +549,27 @@ export function encodeOpenAIRequest(
   const maxTokensParam =
     opts.maxTokensParam ??
     (reasoningEffort !== undefined ? 'max_completion_tokens' : 'max_tokens');
+
+  // WV2-4 (audit r3, keeper ruling T60 2026-07-18, option ③): a reasoning model
+  // on api.openai.com (o-series / gpt-5 reasoning) 400s on any temperature != 1.
+  // Suppress a stray caller temperature ONLY when the endpoint is DECLARED as a
+  // thinking endpoint (`capabilities.thinking === true`) AND reasoning is active
+  // — never on an unknown gateway (caps undefined) or one declared thinking:false
+  // (vLLM/Qwen-style stacks accept temperature under reasoning; silently
+  // rewriting the caller's intent there would break them). temperature === 1 is
+  // always safe to pass through.
+  const suppressTemperature =
+    caps?.thinking === true &&
+    reasoningEffort !== undefined &&
+    req.temperature !== undefined &&
+    req.temperature !== 1;
+  if (suppressTemperature) {
+    debug?.(
+      'openai transport: capability guard — dropped temperature ' +
+        `${req.temperature} on a declared reasoning endpoint (api.openai.com reasoning ` +
+        'models 400 on temperature != 1); pass temperature: 1 or omit it',
+    );
+  }
   return {
     // Gateway-specific extras first: translator-owned keys win on conflict.
     ...(opts.extraBody ?? {}),
@@ -560,7 +581,9 @@ export function encodeOpenAIRequest(
       ? encodeToolChoice(req.tool_choice)
       : {}),
     ...(forceSerialTools ? { parallel_tool_calls: false } : {}),
-    ...(req.temperature !== undefined ? { temperature: req.temperature } : {}),
+    ...(req.temperature !== undefined && !suppressTemperature
+      ? { temperature: req.temperature }
+      : {}),
     ...(reasoningEffort !== undefined
       ? { reasoning_effort: reasoningEffort }
       : {}),

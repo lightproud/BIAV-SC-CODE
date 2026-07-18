@@ -16,10 +16,24 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.72.1 — 2026-07-18
+
+WV2-4 resolved (keeper ruling T60, option ③). The OpenAI transport now drops a
+caller `temperature != 1` ONLY when the endpoint is DECLARED as a reasoning
+endpoint (`capabilities.thinking === true`) and reasoning is active — api.openai
+.com's o-series / gpt-5 reasoning models 400 on any temperature other than 1.
+On an unknown gateway (no capability declaration) or one declared
+`thinking: false`, the caller's temperature passes through untouched, so
+vLLM/Qwen-style stacks that accept temperature under reasoning are never
+silently rewritten. `temperature === 1` is always passed through. Regression
+lock in tests/audit-r3-batch-rst.test.ts (+5). This closes the only T51 finding
+that had been deferred to the keeper rather than fixed in-batch.
+
 ## 0.72.0 — 2026-07-18
 
 Lockstep alignment with silver-core-maestro-sdk 0.72.0 (T56 audit round 2:
 16 defects fixed, incl. three P1s). No agent-side changes.
+
 ## 0.71.3 — 2026-07-18
 
 T51 audit r3 — batches O (governance / CI / conformance guards) + Q (build /
