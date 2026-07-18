@@ -15,14 +15,13 @@ on:
       - 'package-lock.json'
       - '.github/workflows/silver-core-maestro-sdk.yml'
       - '.github/scripts/check-dep-direction.mjs'
+  # NO pull_request paths filter (keeper ruling 2026-07-18, option ②): this job
+  # is the family INTEGRATION gate (agent build + maestro suite + testbed
+  # consumer contract) and is meant to be a REQUIRED status check. A required
+  # check behind a paths filter deadlocks docs-only PRs on "Expected — waiting
+  # for status" (the exact 2026-06-21 failure mode). Sparse checkout keeps it
+  # cheap; it always runs and always reports so the Ruleset can require it.
   pull_request:
-    paths:
-      - 'projects/silver-core-maestro-sdk/**'
-      - 'projects/silver-core-sdk/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/silver-core-maestro-sdk.yml'
-      - '.github/scripts/check-dep-direction.mjs'
 
 concurrency:
   group: silver-core-maestro-sdk-${{ github.ref }}
@@ -73,6 +72,13 @@ jobs:
         run: npm run build --workspace silver-core-maestro-sdk
       - name: Test
         run: npm test --workspace silver-core-maestro-sdk
+      - name: Testbed consumer contract (both packages combined, third-party consumer)
+        # The family combination gate (keeper ruling 2026-07-18 ①): silver-core-
+        # testbed is a non-family third-party consumer that resolves BOTH packages
+        # from the workspace (the freshly-built agent + maestro above) and asserts
+        # the public-surface contract. Catches consumer-facing breakage that each
+        # package's own suite cannot see. Fast (~2s, no build — pure .mjs vitest).
+        run: npm test --workspace silver-core-testbed
       - name: Publishability (dry-run pack, both packages independently)
         run: |
           npm pack --dry-run --workspace silver-core-agent-sdk

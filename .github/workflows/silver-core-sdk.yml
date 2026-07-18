@@ -19,12 +19,13 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/silver-core-sdk.yml'
+  # NO pull_request paths filter (keeper ruling 2026-07-18, option ②): the unit
+  # + conformance jobs are meant to be REQUIRED status checks, and a required
+  # check behind a paths filter deadlocks docs-only PRs on "Expected — waiting
+  # for status" (the 2026-06-21 failure mode). The live-budget jobs below stay
+  # gated by `if: event_name == 'workflow_dispatch'/'schedule'`, so a PR only
+  # ever runs the keyless unit + conformance jobs. Sparse checkout keeps it cheap.
   pull_request:
-    paths:
-      - 'projects/silver-core-sdk/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/silver-core-sdk.yml'
   schedule:
     # Monthly L5 real-API round (audit 2026-07-10 P2-7/F): the emulator-based
     # conformance jobs catch OUR regressions on every push, but real API
