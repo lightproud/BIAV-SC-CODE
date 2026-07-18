@@ -483,11 +483,43 @@ divergences):
 | `assistant` | FULL | full `APIAssistantMessage` |
 | `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
 | `stream_event` | FULL | behind `includePartialMessages`; **P2**: `SDKPartialAssistantMessage` now carries the official `ttft_ms?` field, attached from the event that latches the first token onward (test engine.test.ts) |
-| `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries both `errorMessage: string` and the official-parallel `errors: string[]` (v0.4). Mid-stream SSE truncation degrades gracefully like official 2.1.201 (E3, 2026-07-05): the blocks the wire delivered whole are salvaged - partial text becomes the `success` answer, complete tool_use blocks EXECUTE (at either cut depth, with or without stop_reason) and the loop re-requests to deliver the tool_result; the connection error rides `errors` as a non-fatal note on the terminal result (former KD-L4-04 + all three truncation engine findings retired; residual KD-L4-02: official also appends the error as assistant text and throws from the iterator post-result - deliberately not replicated). An UNCLOSED tool_use (mid-transmission input) never executes; nothing salvageable falls back to `error_during_execution`. Remaining fault-path divergence: on a terminal non-retryable 400 ours ends with a clean `result/error_during_execution` where official surfaces the error as assistant text plus `result/success` then throws (KD-L4-01; run-l4 l4-http400-non-retryable, l4-script-exhausted-400-terminal). Reporting semantics on streamed multi-turn input match official (E2, 2026-07-05, KD-L5-04 retired): `num_turns`/`usage` are PER-RESULT (that turn's own figures), `total_cost_usd`/`duration_api_ms` are session-cumulative; `modelUsage` stays session-cumulative (official per-result semantics unobserved - our choice); internal `maxTurns`/`maxBudgetUsd` enforcement remains session-wide. Query-layer synthetic results (hook-block / pre-turn cap stop / interrupt) report `num_turns: 0` + zero `usage` (no engine turn ran for them; official shape unobserved) |
+| `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries both `errorMessage: string` and the official-parallel `errors: string[]` (v0.4). Mid-stream SSE truncation degrades gracefully like official 2.1.201 (E3, 2026-07-05): the blocks the wire delivered whole are salvaged - partial text becomes the `success` answer, complete tool_use blocks EXECUTE (at either cut depth, with or without stop_reason) and the loop re-requests to deliver the tool_result; the connection error rides `errors` as a non-fatal note on the terminal result (former KD-L4-04 + all three truncation engine findings retired; residual KD-L4-02: official also appends the error as assistant text and throws from the iterator post-result - deliberately not replicated). An UNCLOSED tool_use (mid-transmission input) never executes; nothing salvageable falls back to `error_during_execution`. Remaining fault-path divergence: on a terminal non-retryable 400 ours ends with a clean `result/error_during_execution` where official surfaces the error as assistant text plus `result/success` then throws (KD-L4-01; run-l4 l4-http400-non-retryable, l4-script-exhausted-400-terminal). Reporting semantics on streamed multi-turn input match official (E2, 2026-07-05, KD-L5-04 retired): `num_turns`/`usage` are PER-RESULT (that turn's own figures), `total_cost_usd`/`duration_api_ms` are session-cumulative; `modelUsage` stays session-cumulative (official per-result semantics unobserved - our choice); internal `maxTurns`/`maxBudgetUsd` enforcement remains session-wide. Query-layer synthetic results (hook-block / pre-turn cap stop / interrupt) report `num_turns: 0` + zero `usage` (no engine turn ran for them; official shape unobserved). A query using `options.memory` (session-end round) or with in-flight background subagents may emit a TRAILING corrected result at teardown — same uuid, complete cumulative cost — see "Result accounting contract" below |
 | `system/compact_boundary` | FULL | emitted on auto-compaction (the official manual `/compact` text command has no engine equivalent — slash retirement §4; the `trigger` union keeps `manual` for stream-shape parity) |
 | `system/mirror_error` | FULL | emitted on a session-store mirror failure |
 | `active_goal` | TYPED | NEW-IN-DOCS 0.3.205; no persistent goal/condition loop in a headless engine (`value:null` clears) |
 | `conversation_reset` | TYPED | NEW-IN-DOCS 0.3.205; a new conversation is a new `query()`/session here, not an in-stream boundary |
+
+### Result accounting contract (read this to aggregate cost/usage correctly)
+
+Two SDK-original features — `options.memory` (the session-end progress-card
+round) and in-flight background subagents — can spend money AFTER a turn's
+`result` was already yielded (the round/settle happens at teardown). Rather
+than delay the answer, the query emits a **trailing corrected result** carrying
+the complete cumulative accounting. The contract a consumer must follow:
+
+- **Cumulative fields are last-wins.** `total_cost_usd` and `duration_api_ms`
+  are session-cumulative; **read them from the LAST `result` message**, never by
+  summing across results. Summing double-counts.
+- **Per-result fields are per-turn.** `num_turns` and `usage` are that turn's own
+  figures (**sum** them across results). The trailing correction carries
+  `num_turns: 0` + zero `usage` precisely so summing them stays correct.
+- **The correction reuses the original result's `uuid`** (keeper ruling
+  2026-07-18, 丙). A consumer that keys/dedupes results by `uuid` therefore sees
+  ONE result — the correction is its updated, complete-accounting version
+  (latest-wins) — and needs no special-casing; a consumer that does not dedupe
+  still receives both messages and must apply the last-wins rule above.
+- **When it appears:** only when teardown moved the totals (a priced session-end
+  memory round, or a background subagent that settled cost late). A plain query
+  with no memory and no background subagents emits exactly one `result`, matching
+  the official one-result-per-query shape.
+- **Not emitted** on abort/error (those throw/emit their own terminal result) or
+  to a consumer that already stopped iterating (return()/throw()).
+
+Rationale (keeper 2026-07-16 / 2026-07-18): deferring the single result until
+after teardown would deadlock an interactive streaming consumer that waits for
+the result before sending its next input, so the correction — not deferral — is
+the universal, deadlock-safe mechanism; reusing the uuid removes the "two
+results" ambiguity for deduping consumers without a second code path.
 
 ### Observability arm (v0.3 — task #16)
 

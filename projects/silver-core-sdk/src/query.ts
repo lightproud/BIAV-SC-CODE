@@ -2027,7 +2027,17 @@ export function query(args: {
           lastYieldedResult !== undefined &&
           acct.cost > lastYieldedResult.total_cost_usd
         ) {
-          yield { ...lastYieldedResult, uuid: randomUUID(), ...resultCommon() };
+          // 丙 (keeper 2026-07-18): REUSE the original result's uuid (do not mint
+          // a new one). A consumer that dedupes/keys by uuid then sees ONE result
+          // — this emission is the SAME logical result, updated to the complete
+          // accounting — instead of two distinct results; a consumer that does
+          // not dedupe still receives the correction. num_turns:0 / usage:0
+          // (via resultCommon) keep the per-result sums from double-counting (E2),
+          // while the cumulative total_cost_usd / duration_api_ms / modelUsage
+          // now carry the whole session (incl. the session-end memory round and
+          // any late background-subagent settle). The A-contract is documented in
+          // docs/COMPAT.md ("Result accounting contract").
+          yield { ...lastYieldedResult, ...resultCommon() };
         }
       }
     }

@@ -16,6 +16,40 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.68.1 — 2026-07-18
+
+Result accounting contract — clarified, single-mechanism (keeper ruling
+2026-07-18, options 乙+丙; supersedes the deferred/hybrid idea).
+
+Background: a query using `options.memory` (session-end round) or in-flight
+background subagents can spend money AFTER a turn's `result` was yielded, so
+the query emits a trailing corrected result at teardown with the complete
+cumulative accounting (the "待裁⑤" mechanism). We considered deferring the
+single result instead (one-result-per-query), but deferral deadlocks an
+interactive streaming consumer that waits for the result before sending its
+next input — so the correction is the only universal, deadlock-safe
+mechanism, and a second (mode-split) mechanism would be redundant and
+introduce a mode-dependent footgun. Chosen instead: keep the one correction
+mechanism, and make it clean + explicit.
+
+- **丙 (src/query.ts)**: the trailing corrected result now REUSES the original
+  result's `uuid` instead of minting a new one. A consumer that keys/dedupes
+  results by `uuid` collapses the two into one (latest-wins = complete
+  accounting) with no special-casing; a non-deduping consumer still receives
+  both and applies the documented last-wins rule. `num_turns: 0` + zero
+  `usage` still keep the per-result sums from double-counting.
+- **乙 (docs/COMPAT.md)**: new "Result accounting contract" section makes the
+  previously-implicit contract explicit — cumulative fields (`total_cost_usd`,
+  `duration_api_ms`) are last-wins (never sum), per-result fields
+  (`num_turns`, `usage`) are per-turn (sum), when the correction appears, the
+  uuid-reuse behavior, and the deadlock rationale. The `result` row in the
+  SDKMessage stream table points to it.
+
+No behavior change for a plain query (no memory, no background subagents):
+exactly one `result`, matching the official one-result-per-query shape.
+Regression: memory-m2 待裁⑤ test now also asserts the shared uuid. Full
+vitest 2997 passed / 3 skipped; tsc + build clean.
+
 ## 0.68.0 — 2026-07-18
 
 LOCKSTEP versioning begins (keeper ruling 2026-07-18, overriding the
@@ -27,6 +61,7 @@ equality (check-dep-direction section D, red-proven). From here on, a merge
 that changes shipped runtime code in EITHER package bumps BOTH package.json
 versions; the untouched package's changelog gets a one-line lockstep
 alignment note. No agent-side code changes in this release.
+
 
 ## 0.67.2 — 2026-07-18
 
