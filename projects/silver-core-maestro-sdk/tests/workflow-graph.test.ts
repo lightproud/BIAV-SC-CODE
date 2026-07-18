@@ -272,3 +272,11 @@ describe('mutation kill round (2026-07-18): cycle path is EXACTLY the cycle', ()
     }
   });
 });
+
+describe('r2 kill round: deps-shape guard message pins', () => {
+  it('non-array deps throws ITS OWN message (not a downstream unknown-dep error)', () => {
+    expect(() =>
+      validateGraph({ id: 'g', nodes: [{ id: 'n', intent: 'x', deps: 'other' as unknown as string[] }] }),
+    ).toThrow("node 'n': deps must be an array (got string)");
+  });
+});

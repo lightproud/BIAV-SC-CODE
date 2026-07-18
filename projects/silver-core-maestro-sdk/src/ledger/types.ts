@@ -42,8 +42,16 @@ export interface SessionRecord {
    * When the driver should (re)run this session — the data-plane schedule:
    * set at dispatch, re-set to now+backoff on retrying, null while running
    * and once terminal. Persisted, so scheduling survives a host restart.
+   * A manual-claim session (dispatched with runAt: null) keeps this null in
+   * EVERY state — claimDue never lists it, including through retries.
    */
   nextRunAt: number | null;
+  /**
+   * True for sessions dispatched with runAt: null (manual-claim only). The
+   * marker persists so the invariant survives failed attempts: recordOutcome
+   * keeps nextRunAt null on 'retrying' when this is set (audit r2).
+   */
+  manualClaim?: boolean;
   /** Last attempt's error text (kept once set; cleared by nothing). */
   lastError?: string;
   /**

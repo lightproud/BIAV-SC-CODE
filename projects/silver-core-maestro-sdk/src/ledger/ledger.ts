@@ -152,6 +152,12 @@ export class TaskLedger {
       createdAt: now,
       updatedAt: now,
       nextRunAt: input.runAt === undefined ? now : input.runAt,
+      // Persisted marker (audit r2): the manual-claim-only property must
+      // survive a failed attempt — without it, recordOutcome's retrying
+      // branch would set a numeric nextRunAt and a co-resident driver's
+      // claimDue would steal the retry, contradicting the documented
+      // "claimSession is the only way to start it" contract.
+      ...(input.runAt === null ? { manualClaim: true } : {}),
     };
     await this.#store.putSession(record);
     return { ...record };
@@ -183,7 +189,16 @@ export class TaskLedger {
         updatedAt: now,
         leaseUntil: this.#claimLeaseMs !== undefined ? now + this.#claimLeaseMs : null,
       };
-      await this.#store.putSession(updated);
+      // Per-session isolation (audit r2): if one put fails mid-batch, the
+      // failing session is left UNTOUCHED in the store (still pending /
+      // retrying — safe, re-claimed next poll) and the sessions already
+      // claimed are still RETURNED so their claims are executed rather than
+      // stranded in 'running' with no executor.
+      try {
+        await this.#store.putSession(updated);
+      } catch {
+        continue;
+      }
       claimed.push(updated);
     }
     return claimed;
@@ -262,24 +277,35 @@ export class TaskLedger {
       throw new Error(`recordOutcome: unknown session '${sessionId}'`);
     }
     const next = transition(session.state, outcomeEvent[result.outcome], session);
-    const query: QueryRecord = {
-      id: this.#idFactory(),
-      sessionId,
-      attempt: session.attempts,
-      startedAt: result.startedAt,
-      endedAt: result.endedAt,
-      outcome: result.outcome,
-      ...(result.error !== undefined ? { error: result.error } : {}),
-      ...(result.summary !== undefined ? { summary: result.summary } : {}),
-    };
-    await this.#store.appendQuery(query);
+    // Idempotency across a caller retry (audit r2): recordOutcome is
+    // append-then-put; if the PUT failed, a retry must not append a second
+    // row for the same attempt into an append-only store ("one row per
+    // round" contract in types.ts). The attempt number is the natural key.
+    const existing = await this.#store.listQueries(sessionId);
+    const alreadyAppended = existing.some((q) => q.attempt === session.attempts);
+    if (!alreadyAppended) {
+      const query: QueryRecord = {
+        id: this.#idFactory(),
+        sessionId,
+        attempt: session.attempts,
+        startedAt: result.startedAt,
+        endedAt: result.endedAt,
+        outcome: result.outcome,
+        ...(result.error !== undefined ? { error: result.error } : {}),
+        ...(result.summary !== undefined ? { summary: result.summary } : {}),
+      };
+      await this.#store.appendQuery(query);
+    }
     const now = this.#clock.now();
     const updated: SessionRecord = {
       ...session,
       state: next,
       updatedAt: now,
+      // A manual-claim session keeps nextRunAt null even through 'retrying'
+      // (audit r2): the retry is still the inline caller's to start via
+      // claimSession — claimDue must never see it.
       nextRunAt:
-        next === 'retrying'
+        next === 'retrying' && session.manualClaim !== true
           ? now + backoffDelayMs(session.attempts, { ...this.#retry, maxAttempts: session.maxAttempts })
           : null,
       // The attempt is settled either way — its claim lease is spent.
@@ -294,15 +320,20 @@ export class TaskLedger {
 
   // --- Query surface (§4: one query set serving every scenario). -----------
 
-  getSession(id: string): Promise<SessionRecord | null> {
-    return this.#store.getSession(id);
+  // Read surface returns SHALLOW COPIES (audit r2): the store contract does
+  // not promise defensive copies, and handing back live store rows would let
+  // a host mutate ledger state through a read. (payload stays a shared
+  // reference by design — it is host-owned opaque data.)
+  async getSession(id: string): Promise<SessionRecord | null> {
+    const row = await this.#store.getSession(id);
+    return row === null ? null : { ...row };
   }
 
-  listSessions(filter?: SessionFilter): Promise<SessionRecord[]> {
-    return this.#store.listSessions(filter);
+  async listSessions(filter?: SessionFilter): Promise<SessionRecord[]> {
+    return (await this.#store.listSessions(filter)).map((row) => ({ ...row }));
   }
 
-  listQueries(sessionId: string): Promise<QueryRecord[]> {
-    return this.#store.listQueries(sessionId);
+  async listQueries(sessionId: string): Promise<QueryRecord[]> {
+    return (await this.#store.listQueries(sessionId)).map((row) => ({ ...row }));
   }
 }

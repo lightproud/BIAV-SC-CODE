@@ -24,7 +24,38 @@ export type WorkflowGraphLoadResult =
   | { ok: true; graph: WorkflowGraph; format: WorkflowGraphSourceFormat }
   | { ok: false; error: string };
 
-const FENCE_RE = /```(?:json|workflow)\s*\n([\s\S]*?)```/;
+/**
+ * Extract the FIRST top-level ```json / ```workflow fence body. A line
+ * scanner, not a regex (audit r2): a regex match also fired on fences quoted
+ * INSIDE another fence (e.g. a ```md block documenting a graph) or indented
+ * example blocks, silently loading the wrong definition. Fences only count
+ * when opened at top level with <= 3 leading spaces; any other fence opens an
+ * opaque region skipped until its closing line.
+ */
+function extractTopLevelFence(source: string): string | null {
+  const lines = source.split('\n');
+  let inOtherFence = false;
+  let capturing = false;
+  const body: string[] = [];
+  for (const line of lines) {
+    const m = /^ {0,3}```(.*)$/.exec(line);
+    if (m !== null) {
+      // The capture group always participates in a match (possibly empty),
+      // so no ?? fallback exists here — it would be dead code.
+      const info = (m[1] as string).trim();
+      if (capturing) return body.join('\n');
+      if (inOtherFence) {
+        if (info === '') inOtherFence = false;
+        continue;
+      }
+      if (info === 'json' || info === 'workflow') capturing = true;
+      else inOtherFence = true;
+      continue;
+    }
+    if (capturing) body.push(line);
+  }
+  return null;
+}
 
 function fail(error: string): WorkflowGraphLoadResult {
   return { ok: false, error };
@@ -48,13 +79,11 @@ export function parseWorkflowGraphSource(
   if (fmt === 'json') {
     jsonText = source;
   } else {
-    const fence = FENCE_RE.exec(source);
-    if (fence === null) {
-      return fail('md graph definition has no ```json fenced block');
+    const fenceBody = extractTopLevelFence(source);
+    if (fenceBody === null) {
+      return fail('md graph definition has no top-level ```json fenced block');
     }
-    // The capture group always participates in a match (possibly empty), so
-    // no ?? fallback exists here — an empty fence parses '' and fails as JSON.
-    jsonText = fence[1] as string;
+    jsonText = fenceBody;
   }
   let parsed: unknown;
   try {

@@ -183,8 +183,12 @@ export class Scheduler {
       let latest: number | null = null;
       for (const session of sessions) {
         if (!session.id.startsWith(prefix)) continue;
-        const fireAt = Number(session.id.slice(prefix.length));
-        if (!Number.isFinite(fireAt)) continue;
+        const suffix = session.id.slice(prefix.length);
+        // Strict digits-only (audit r2): Number('') and Number('  ') are 0,
+        // so a malformed id like 'sched:x:' would recover lastFired = 0 and
+        // trigger a catastrophic epoch catch-up.
+        if (!/^\d+$/.test(suffix)) continue;
+        const fireAt = Number(suffix);
         if (latest === null || fireAt > latest) latest = fireAt;
       }
       // seedFirstRun (gap G3): a footprint-less spec starts one cadence back,

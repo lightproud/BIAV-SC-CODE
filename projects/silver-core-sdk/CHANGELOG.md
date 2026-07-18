@@ -16,6 +16,10 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.72.0 — 2026-07-18
+
+Lockstep alignment with silver-core-maestro-sdk 0.72.0 (T56 audit round 2:
+16 defects fixed, incl. three P1s). No agent-side changes.
 ## 0.71.3 — 2026-07-18
 
 T51 audit r3 — batches O (governance / CI / conformance guards) + Q (build /

@@ -103,7 +103,13 @@ export function nextFireAt(spec: ScheduleSpec, after: number): number {
   const every = spec.every as number;
   const anchor = spec.anchorAt ?? 0;
   if (after < anchor) return anchor;
-  const steps = Math.floor((after - anchor) / every) + 1;
+  let steps = Math.floor((after - anchor) / every) + 1;
+  // Division can round UP in float (exact 2.999... -> 3.0), overstepping the
+  // true smallest lattice point; step back while the previous point is still
+  // strictly greater than `after` (audit r2 — bounded: at most a couple).
+  while (steps > 0 && anchor + (steps - 1) * every > after) {
+    steps -= 1;
+  }
   let candidate = anchor + steps * every;
   // Fractional `every` float guard: the division and the multiplication round
   // independently, so the candidate can land EXACTLY on `after` (e.g. every
@@ -114,21 +120,25 @@ export function nextFireAt(spec: ScheduleSpec, after: number): number {
   // iterations suffice — unless `every` is below the float resolution at
   // `after`'s magnitude, in which case no fire point is representable and we
   // must refuse rather than spin.
-  let prevCandidate = candidate;
+  // Step indices beyond 2^53 are not exactly representable: steps + extra
+  // silently equals steps and the advance loop cannot make progress for a
+  // reason UNRELATED to `every`'s resolution — refuse precisely (audit r2).
+  if (steps >= Number.MAX_SAFE_INTEGER) {
+    throw new RangeError(
+      `nextFireAt: spec '${spec.id}': fire step index exceeds float precision (steps=${steps})`,
+    );
+  }
+  // Bounded advance for the rounding-flat case (candidate === after, C1):
+  // the saturation guard above proves every >= ulp/2 at this magnitude, so
+  // each exact step adds at least half an ulp and the float product must
+  // strictly pass `after` within a couple of iterations — no unbounded spin
+  // is possible and no separate flatness detector is needed (a sub-ulp
+  // `every` ALWAYS saturates the step index first, for every magnitude:
+  // x/ulp(x) is in [2^52, 2^53), so x/every >= 2*x/ulp(x) >= 2^53).
   let extra = 0;
   while (candidate <= after) {
     extra += 1;
     candidate = anchor + (steps + extra) * every;
-    // Flatness detection: each iteration adds a whole `every` step in exact
-    // arithmetic, so the ONLY way the float result fails to move is `every`
-    // below the float resolution at this magnitude — and then it will never
-    // move. Deterministic and testable, unlike an arbitrary iteration cap.
-    if (candidate === prevCandidate) {
-      throw new RangeError(
-        `nextFireAt: spec '${spec.id}': every=${every} is below float resolution at t=${after}; no representable next fire point`,
-      );
-    }
-    prevCandidate = candidate;
   }
   if (!Number.isFinite(candidate)) {
     throw new RangeError(`nextFireAt: fire time overflowed for after=${after}`);
@@ -157,11 +167,19 @@ export function firesBetween(
     throw new RangeError(`firesBetween: cap must be an integer >= 1, got ${cap}`);
   }
   const fires: number[] = [];
+  // Fast-forward (audit r2): only the LATEST `cap` fires are kept, so a huge
+  // backlog (months of downtime at a 1s cadence) must not be enumerated
+  // point by point. Jump the start of the walk to at most cap+1 periods
+  // before the window end; the loop then visits O(cap) points.
+  let walkFrom = afterExclusive;
+  const periodMs = spec.every !== undefined ? spec.every : 24 * 60 * 60 * 1_000;
+  const jumpTo = untilInclusive - (cap + 1) * periodMs;
+  if (jumpTo > walkFrom) walkFrom = jumpTo;
   // Loop safety rests on nextFireAt's own contract: it returns STRICTLY
   // greater than its input or throws (flatness detection) — pinned by its
   // tests — so no separate non-advance guard is needed (an in-loop guard
   // would be unreachable dead code).
-  let t = nextFireAt(spec, afterExclusive);
+  let t = nextFireAt(spec, walkFrom);
   while (t <= untilInclusive) {
     fires.push(t);
     // Ring behavior keeps memory bounded at cap while retaining the latest.
