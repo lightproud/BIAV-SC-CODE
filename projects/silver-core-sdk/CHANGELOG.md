@@ -16,6 +16,18 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.68.0 — 2026-07-18
+
+LOCKSTEP versioning begins (keeper ruling 2026-07-18, overriding the
+orchestrator requirement §2 "independent clocks / never bump in lockstep"
+clause): silver-core-agent-sdk and silver-core-maestro-sdk now always carry
+the SAME version — the Silver Core SDK family bumps as one. This release
+aligns both clocks at 0.68.0 (maestro jumps 0.4.0 -> 0.68.0). CI enforces
+equality (check-dep-direction section D, red-proven). From here on, a merge
+that changes shipped runtime code in EITHER package bumps BOTH package.json
+versions; the untouched package's changelog gets a one-line lockstep
+alignment note. No agent-side code changes in this release.
+
 ## 0.67.2 — 2026-07-18
 
 T52 r4 audit — Tier 3 (low / cosmetic + eval + descriptions) fix campaign:

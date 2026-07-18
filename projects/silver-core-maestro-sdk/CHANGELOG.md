@@ -5,10 +5,19 @@ the family is two independent SDKs, Silver Core Agent SDK + Silver Core
 Maestro SDK — the conductor direction). Entries below 0.3.0 keep the
 historical name as shipped; this ledger is not rewritten retroactively.
 
-Own semver clock, decoupled from silver-core-agent-sdk by requirement (SCS-REQ
-orchestrator-sdk §2): the two packages never bump in lockstep. Same ledger
+Version clock: LOCKSTEP with silver-core-agent-sdk since 0.68.0 (keeper
+ruling 2026-07-18 — the family bumps as one; overrides the §2
+independent-clocks clause under which 0.1.0-0.4.0 shipped). Same ledger
 discipline as the agent SDK: every merge that changes shipped runtime code
-bumps the version and adds one line here.
+bumps BOTH versions and adds one line here (a lockstep-alignment line when
+this package itself is untouched).
+
+## 0.68.0 — 2026-07-18
+
+Lockstep versioning begins (keeper ruling 2026-07-18): version jumps
+0.4.0 -> 0.68.0 to align with silver-core-agent-sdk; the two clocks are one
+from here on, CI-enforced (check-dep-direction section D). peerDependency
+floor moves to >=0.68.0. No code changes.
 
 ## 0.4.0 — 2026-07-18
 

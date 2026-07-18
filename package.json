@@ -1,7 +1,7 @@
 {
   "name": "biav-sdk-workspace",
   "private": true,
-  "description": "npm workspace root for the Silver Core SDK family: Silver Core Agent SDK (silver-core-agent-sdk) + Silver Core Maestro SDK (silver-core-maestro-sdk). One-way dependency maestro -> agent, independent semver clocks (SCS-REQ orchestrator-sdk §2). The rest of this repository (news/wiki/site/memory/...) is not part of the npm workspace.",
+  "description": "npm workspace root for the Silver Core SDK family: Silver Core Agent SDK (silver-core-agent-sdk) + Silver Core Maestro SDK (silver-core-maestro-sdk). One-way dependency maestro -> agent, LOCKSTEP version clock — the two packages always carry the SAME version (keeper ruling 2026-07-18, overriding the §2 independent-clocks clause). The rest of this repository (news/wiki/site/memory/...) is not part of the npm workspace.",
   "workspaces": [
     "projects/silver-core-sdk",
     "projects/silver-core-maestro-sdk"
