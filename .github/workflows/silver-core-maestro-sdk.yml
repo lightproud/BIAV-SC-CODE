@@ -32,6 +32,7 @@ permissions:
 
 jobs:
   dep-direction:
+    name: Maestro dep-direction
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -49,6 +50,9 @@ jobs:
         run: node .github/scripts/check-dep-direction.mjs
 
   unit:
+    # Unique display name so the required-status-check list is unambiguous
+    # (the agent SDK workflow also has a job id `unit`).
+    name: Maestro unit
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
