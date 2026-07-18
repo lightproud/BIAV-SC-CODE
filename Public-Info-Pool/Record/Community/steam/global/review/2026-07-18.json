@@ -1,8 +1,8 @@
 {
   "date": "2026-07-18",
-  "archived_at": "2026-07-18T15:57:11.056357+00:00",
+  "archived_at": "2026-07-18T19:02:48.153165+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] Lovecraft+beach episode, collab of the century",
@@ -46,6 +46,30 @@
         "playtime_forever": 386,
         "votes_up": 0,
         "timestamp_created": 1784377911
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩爱玩",
+      "summary": "好玩爱玩",
+      "source": "steam_review",
+      "time": "2026-07-18T15:51:37+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199545915309/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199545915309",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1823,
+        "votes_up": 0,
+        "timestamp_created": 1784389897
       },
       "region": "global",
       "archive_subtype": "review",
