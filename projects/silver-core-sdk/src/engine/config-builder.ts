@@ -180,11 +180,18 @@ export function buildEngineConfig(args: {
     const projectInstructions = loadProjectInstructions(cwd, options.settingSources);
     // There is one harness prompt: buildSystemPromptParts resolves both an unset
     // systemPrompt and the claude_code preset to the same comprehensive default.
+    // Automation-continuation fragment (keeper memo 2026-07-18 §3):
+    // protocol-gated default — armed on openai-chat (mainline non-Anthropic
+    // models stall mid-run on agentic tasks), off on anthropic; an explicit
+    // options.continuationPrompt wins either way.
+    const continuation =
+      options.continuationPrompt ?? options.provider?.protocol === 'openai-chat';
     const promptParts = buildSystemPromptParts(sp, {
       cwd,
       toolNames: [...args.builtinToolNames],
       environment,
       projectInstructions,
+      ...(continuation ? { continuation: true } : {}),
     });
     systemPromptStable = promptParts.stable;
     // Boundary between the shared base harness and the appended stable tail

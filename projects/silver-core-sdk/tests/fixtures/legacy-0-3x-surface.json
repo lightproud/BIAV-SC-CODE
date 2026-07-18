@@ -21,7 +21,7 @@
       }
     },
     "knownRemovals": {
-      "Options.harnessPromptVariant": "removed 0.33.0 (keeper ruling 2026-07-08: variant ladder collapsed to the single v5 default) — present in the 0.30.0 snapshot only; see docs/MIGRATION-0.3x-to-0.52.md"
+      "Options.harnessPromptVariant": "removed 0.33.0 (keeper ruling 2026-07-08: variant ladder collapsed to the single v5 default) — present in the 0.30.0 snapshot only; see docs/MIGRATION-0.3x-to-0.68.md"
     }
   },
   "0.30.0": {

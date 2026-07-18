@@ -27,6 +27,7 @@ import type {
 } from '../types.js';
 import type { RetryInfo, StreamRequest, Transport } from '../internal/contracts.js';
 import { sliceSurrogateSafe } from '../internal/text.js';
+import { degradeAnthropicRequestBody } from './capabilities.js';
 import { parseSSE } from './sse.js';
 import {
   firePreconnect,
@@ -187,10 +188,13 @@ export class AnthropicTransport implements Transport {
     // their thinking, so this is a NO-OP (byte-identical body) on every normal
     // and conformance path — it only activates on the rare unsigned case.
     const sanitizedMessages = stripUnsignedThinking(requestBody.messages);
-    const wireBody =
+    const wireBody = degradeAnthropicRequestBody(
       sanitizedMessages === requestBody.messages
         ? requestBody
-        : { ...requestBody, messages: sanitizedMessages };
+        : { ...requestBody, messages: sanitizedMessages },
+      this.provider.capabilities,
+      this.debug,
+    );
 
     // JSON.stringify drops undefined-valued fields, satisfying "omit
     // undefined fields" without manual pruning. onRetry (a function) is

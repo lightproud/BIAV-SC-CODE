@@ -12,6 +12,43 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.69.0 — 2026-07-18
+
+Keeper todo batch 2026-07-18 (SDK-side items 4–5): maestro fill-ins +
+quality-direction switch.
+
+- **Declarative workflow-graph loading** (hot-layer gate): new module
+  `src/workflow/load.ts` — `parseWorkflowGraphSource` (json, or md carrying
+  the graph in its first ```json fence; format sniffed or forced by
+  extension) + `loadWorkflowGraphFile`. NEVER throws: every malformed /
+  unreadable definition degrades to `{ ok: false, error }` for the host to
+  log and skip; an ok result is always an already-validated, runnable graph.
+- **Example 4 "综合整理任务"** (`examples/memory-tidy.mjs` + fake-timer e2e):
+  the consolidation ("dream") routine — scheduled dispatch → read the memory
+  health surface (`assessMemoryStoreHealth`, agent SDK 0.69.0) → merge
+  fragments into a digest card → delete the merged fragments → ledger
+  closeout; imports ONLY the two packages' public surfaces. The deterministic
+  executor seat is where the black pool puts an agent `query()`.
+- **Schedule missed-compensation check** (todo item 4c): verified ALREADY
+  implemented and tested — `catchUp: 'latest'/'all'` (`scheduler.ts` +
+  `spec.ts` cap semantics), cross-restart recovery, down-gap compensation
+  covered at both the component level (`scheduler.test.ts`, fake timers) and
+  the e2e level (`schedule-loop.e2e.test.ts`). No change needed.
+- **Mutation ratchet — every module family targeted**: new targets
+  `delivery-channel` (100.00 after a message-pin kill round; delivery was the
+  only family with zero mutation coverage) and `workflow-load` (100.00 after
+  a kill round: guard-message pins, format-forcing asymmetry, fence regex
+  pin, dead `?? ''` fallback removed). CI matrix extended to six maestro
+  targets.
+- **E2E clock discipline — zero real clocks**: all four real-timer e2e
+  suites (minimal-loop / schedule-loop / store-patrol / workflow-fanout)
+  converted to FAKE timers with a bounded drive loop (real HTTP/fs I/O flows
+  between advances); triple-run verified stable, wall-clock per suite drops
+  from seconds to milliseconds. The whole maestro test suite now runs on
+  fake timers only.
+
+Tests: 171 -> 180 passing (workflow-load 7, memory-tidy e2e 2).
+
 ## 0.68.0 — 2026-07-18
 
 Lockstep versioning begins (keeper ruling 2026-07-18): version jumps

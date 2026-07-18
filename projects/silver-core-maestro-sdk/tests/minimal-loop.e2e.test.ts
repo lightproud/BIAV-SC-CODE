@@ -10,11 +10,34 @@
  * turn whose usage costs far beyond the remaining budget, so the engine
  * records the cost, refuses the tool call at the budget gate, fires
  * `budget:threshold` + `budget:exhausted` (R2) and stops — and the loop winds
- * down on the closeout report.
+ * down on the closeout report. FAKE timers throughout (clock discipline audit
+ * 2026-07-18): the test drives time, engine/HTTP I/O flows between advances.
  */
 import http from 'node:http';
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { runMinimalLoop } from '../examples/minimal-loop.js';
+
+/** Drive fake time until the run settles (clock discipline audit 2026-07-18:
+ *  no real clock — the test advances time; the real HTTP/engine I/O flows
+ *  between advances). Bounded — a hang fails the test. */
+async function drive<T>(run: Promise<T>): Promise<T> {
+  let settled = false;
+  const tracked = run.then(
+    (v) => {
+      settled = true;
+      return v;
+    },
+    (e) => {
+      settled = true;
+      throw e;
+    },
+  );
+  for (let i = 0; i < 4000 && !settled; i += 1) {
+    await vi.advanceTimersByTimeAsync(25);
+  }
+  expect(settled, 'run did not settle within the driven fake-time budget').toBe(true);
+  return tracked;
+}
 
 function sse(res: http.ServerResponse, event: string, data: unknown): void {
   res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
@@ -67,6 +90,7 @@ let server: http.Server;
 let baseUrl: string;
 
 beforeEach(async () => {
+  vi.useFakeTimers();
   let call = 0;
   server = http.createServer((req, res) => {
     let body = '';
@@ -88,12 +112,13 @@ beforeEach(async () => {
   });
 });
 afterEach(async () => {
+  vi.useRealTimers();
   await new Promise<void>((r) => server.close(() => r()));
 });
 
 describe('example 1: minimal loop over the real agent stack', () => {
   it('polls periodically, hits the cap, consumes R2 events and winds down on the closeout', async () => {
-    const result = await runMinimalLoop({
+    const result = await drive(runMinimalLoop({
       intervalMs: 50,
       pollIntervalMs: 25,
       totalBudgetUsd: 0.05,
@@ -104,7 +129,7 @@ describe('example 1: minimal loop over the real agent stack', () => {
         provider: { apiKey: 'test-key', baseUrl },
         persistSession: false,
       },
-    });
+    }));
 
     // Wind-down came from the R2 exhaustion event, not the tick limit.
     expect(result.windDownReason).toBe('budget:exhausted');

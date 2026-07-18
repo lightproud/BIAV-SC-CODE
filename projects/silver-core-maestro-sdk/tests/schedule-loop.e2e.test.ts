@@ -1,31 +1,54 @@
 /**
  * Campaign 3 acceptance: the schedule loop example — fixed-point firing,
  * missed-fire compensation ('latest' and 'all'), and cross-restart recovery
- * through a host file-backed ledger — runs end to end with real short timers.
- * The example imports the PACKAGE name, so this test needs the schedule
- * exports wired into src/index.ts (integration step).
+ * through a host file-backed ledger — runs end to end on FAKE timers (clock
+ * discipline audit 2026-07-18: the test drives time, no real clock). The
+ * example imports the PACKAGE name, so this test needs the schedule exports
+ * wired into src/index.ts (integration step).
  */
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore — plain-JS example module, no type declarations by design
 import { runScheduleLoop } from '../examples/schedule-loop.mjs';
 
 let sandbox: string;
 beforeEach(() => {
+  vi.useFakeTimers();
   sandbox = fs.mkdtempSync(path.join(os.tmpdir(), 'schedule-loop-'));
 });
 afterEach(() => {
+  vi.useRealTimers();
   fs.rmSync(sandbox, { recursive: true, force: true });
 });
 
+/** Drive fake time until the run settles (bounded — a hang fails the test). */
+async function drive<T>(run: Promise<T>): Promise<T> {
+  let settled = false;
+  const tracked = run.then(
+    (v) => {
+      settled = true;
+      return v;
+    },
+    (e) => {
+      settled = true;
+      throw e;
+    },
+  );
+  for (let i = 0; i < 4000 && !settled; i += 1) {
+    await vi.advanceTimersByTimeAsync(25);
+  }
+  expect(settled, 'run did not settle within the driven fake-time budget').toBe(true);
+  return tracked;
+}
+
 const fireAtOf = (id: string): number => Number(id.split(':')[2]);
 
-describe('schedule loop e2e (real short timers, file-backed ledger)', () => {
+describe('schedule loop e2e (fake timers, file-backed ledger)', () => {
   it("catchUp 'latest': fires on time, restart re-fires nothing and compensates the newest missed point", async () => {
-    const result = await runScheduleLoop({
+    const result = await drive(runScheduleLoop({
       archiveDir: sandbox,
       everyMs: 200,
       pollIntervalMs: 25,
@@ -33,7 +56,7 @@ describe('schedule loop e2e (real short timers, file-backed ledger)', () => {
       phase2Fires: 1,
       gapMs: 700,
       catchUp: 'latest',
-    });
+    }));
     expect(result.phase1FiredIds.length).toBeGreaterThanOrEqual(2);
     expect(result.phase2FiredIds.length).toBeGreaterThanOrEqual(1);
     // Fire bookkeeping is in the ledger: ids encode spec + fire point.
@@ -55,7 +78,7 @@ describe('schedule loop e2e (real short timers, file-backed ledger)', () => {
   }, 30_000);
 
   it("catchUp 'all': every point missed during the gap is compensated, ascending", async () => {
-    const result = await runScheduleLoop({
+    const result = await drive(runScheduleLoop({
       archiveDir: sandbox,
       everyMs: 200,
       pollIntervalMs: 25,
@@ -63,7 +86,7 @@ describe('schedule loop e2e (real short timers, file-backed ledger)', () => {
       phase2Fires: 3, // gap of ~900ms at 200ms cadence owes at least 3 points
       gapMs: 900,
       catchUp: 'all',
-    });
+    }));
     expect(result.phase2FiredIds.length).toBeGreaterThanOrEqual(3);
     const fireAts = result.phase2FiredIds.map(fireAtOf);
     expect([...fireAts].sort((a: number, b: number) => a - b)).toEqual(fireAts);

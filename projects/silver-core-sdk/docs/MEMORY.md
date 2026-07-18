@@ -35,7 +35,9 @@ M2 surface summary:
   enforced in the store engine and re-checked at the tool layer (view
   truncation + create size + create cards) so directly-implemented stores are
   covered too; `metrics.memoryHealth` reports operations / reads / writes /
-  errors / bytesRead / bytesWritten / indexInjectionTokens per run.
+  errors / bytesRead / bytesWritten / indexInjectionTokens per run. For the
+  deep on-demand store scan (waterlines / rot / capacity / supersede chains
+  / read-write ratio) see "Store health assessment" below.
 - **R9 cards mode** — `schema: 'cards'` + `memory.cards` (defaults 500
   chars/card, 50 cards/file): every written file must be `## <title>` cards
   with 结论 / 依据 / 过期条件 fields (half- or full-width colons, multi-line
@@ -124,6 +126,70 @@ import { runMemoryStoreContractSuite } from 'silver-core-sdk';
 const report = await runMemoryStoreContractSuite(() => makeFreshEmptyStore());
 // report.passed === true  <=>  contract-compliant
 ```
+
+### Concurrency semantics (contract, 2026-07-18)
+
+The storage contract declares exactly two concurrency guarantees — no more:
+
+1. **Single-command atomicity.** Every command applies entirely or not at
+   all; a reader never observes a torn or partial write. The built-in
+   backends satisfy this with whole-content writes (in-memory) and
+   write-to-temp-then-rename (local filesystem).
+2. **Last-write-wins.** Concurrent writers race without coordination: a lost
+   update is an acceptable outcome, a byte-interleaved mix of two writes is
+   not. The `old_str` precondition of `str_replace` is the contract's only
+   optimistic guard — content that changed underneath a writer fails the
+   replace with the reference not-found error instead of clobbering the
+   newer content.
+
+Version tokens, locks, and transactions are deliberately NOT part of the
+contract (keeper ruling 2026-07-18: no new machinery). Both guarantees are
+executable — the contract suite's two `concurrency:` checks
+(`src/tools/memory/contract-suite.ts`) drive parallel writes and a stale
+replace against any implementation.
+
+## Store health assessment (keeper memo 2026-07-18 §2)
+
+`assessMemoryStoreHealth(ops, options?)` deep-scans a memory tree over the
+`MemoryFileOps` primitives and returns a `MemoryStoreAssessment` — the
+trigger surface the black-pool dream mechanism (a scheduled tidy-up task)
+gates on. Distinct from the per-run `metrics.memoryHealth` counters: this is
+an async scan a host runs when it decides to, not something the engine
+computes per result.
+
+```ts
+import { assessMemoryStoreHealth, createLocalMemoryFileOps } from 'silver-core-sdk';
+
+const ops = createLocalMemoryFileOps('<baseDir>/memories');
+const health = await assessMemoryStoreHealth(ops, {
+  counters: lastResult.metrics?.memoryHealth,   // optional: stamps readWriteRatio
+});
+if (health.warnDirectories.length > 0 || !health.supersede.intact) {
+  // dispatch the consolidation ("dream") session
+}
+```
+
+The five dimensions, each honest about its limits:
+
+- **Directory waterlines** — per-directory direct-file counts against the R8
+  hard cap (64), with a soft early-warning line at 48
+  (`softWaterline` option); `warnDirectories` lists offenders.
+- **Rot (staleness)** — files unmodified for `staleAfterDays` (default 30),
+  oldest-first. Requires backend mtimes: `MemoryEntryStat.mtimeMs` /
+  `MemoryDirEntry.mtimeMs` are OPTIONAL fields the built-in local-fs backend
+  populates; a backend without them gets `staleness.available: false` with a
+  note — never a fabricated number.
+- **Capacity headroom** — largest file vs the 64 KB cap, files over half the
+  cap (consolidation candidates), fullest directory.
+- **Supersede-chain integrity** — every `supersedes:` /`superseded_by:`
+  frontmatter reference to a `/memories/...` path (the S6 prompt-driven
+  convention) is checked; `broken` lists dangling targets.
+- **Read/write ratio** — computed from the per-run counters when passed in
+  (`reads / writes`, null without writes): a store that is only ever written
+  and never read back is hoarding, not remembering.
+
+Scans are bounded (`maxEntries`, default 4096); hitting the bound sets
+`truncatedScan: true` instead of silently under-reporting.
 
 ## Reference formats (spec R1)
 

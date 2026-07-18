@@ -451,6 +451,80 @@ const CHECKS: Check[] = [
       );
     },
   },
+  // ------------------------------------------------------------------
+  // Concurrency section (keeper memo 2026-07-18). The contract declares:
+  //  (1) SINGLE-COMMAND ATOMICITY — every command applies entirely or not at
+  //      all; a reader never observes a torn/partial write (the built-in
+  //      backends guarantee this via whole-content writes / tmp+rename).
+  //  (2) LAST-WRITE-WINS — concurrent writers race without coordination; a
+  //      lost update is acceptable, a byte-interleaved mix of two writes is
+  //      not. The `old_str` precondition of str_replace is the contract's
+  //      only optimistic guard: content that changed underneath a writer
+  //      MUST fail the replace (reference not-found error), never clobber.
+  //  No stronger mechanism (version tokens, locks, transactions) is part of
+  //  the contract — deliberately (keeper ruling: no new machinery).
+  // ------------------------------------------------------------------
+  {
+    name: 'concurrency: parallel writes never interleave-corrupt (last write wins)',
+    run: async (s) => {
+      // Distinct-path concurrent creates: all must land, each intact.
+      const paths = [0, 1, 2, 3].map((i) => `/memories/con/f${i}.txt`);
+      await Promise.all(paths.map((p, i) => s.create(p, `body-${i}\n`.repeat(50))));
+      for (const [i, p] of paths.entries()) {
+        assertMatch(await s.view(p), new RegExp(`\\tbody-${i}$`, 'm'), `intact ${p}`);
+      }
+      // Same-file concurrent inserts (read-modify-write race): under
+      // last-write-wins some inserts may be lost, but the surviving content
+      // must be a set of WHOLE lines from the expected vocabulary — a spliced
+      // or truncated line is an interleaving corruption.
+      await s.create('/memories/con/race.txt', 'MARKER-ORIGINAL-LINE');
+      const inserted = [0, 1, 2, 3, 4].map((i) => `INSERTED-LINE-${i}-${'x'.repeat(40)}`);
+      const settled = await Promise.allSettled(
+        inserted.map((text) => s.insert('/memories/con/race.txt', 0, text)),
+      );
+      if (!settled.some((r) => r.status === 'fulfilled')) {
+        throw new ContractCheckFailure('every concurrent insert failed');
+      }
+      const out = await s.view('/memories/con/race.txt');
+      const legal = new Set(['MARKER-ORIGINAL-LINE', ...inserted]);
+      const lines = out.split('\n').slice(1).map((l) => l.replace(/^\s*\d+\t/, ''));
+      for (const line of lines) {
+        if (!legal.has(line)) {
+          throw new ContractCheckFailure(
+            `interleaving corruption — line is not a whole written line:\n  ${JSON.stringify(line)}`,
+          );
+        }
+      }
+      if (!lines.includes('MARKER-ORIGINAL-LINE')) {
+        throw new ContractCheckFailure(`original line lost entirely:\n${out}`);
+      }
+    },
+  },
+  {
+    name: 'concurrency: str_replace on changed content fails instead of clobbering',
+    run: async (s) => {
+      // A stale writer captured "state: A"; a faster writer moves the file to
+      // "state: B". The stale replace MUST fail with the reference not-found
+      // error and leave the newer content untouched — old_str is the
+      // contract's optimistic-concurrency guard.
+      await s.create('/memories/con/state.txt', 'state: A');
+      await s.strReplace('/memories/con/state.txt', 'state: A', 'state: B');
+      const msg = await expectThrow(
+        () => s.strReplace('/memories/con/state.txt', 'state: A', 'state: STALE'),
+        'stale str_replace',
+      );
+      assertEq(
+        msg,
+        'No replacement was performed, old_str `state: A` did not appear verbatim in /memories/con/state.txt.',
+        'stale replace message',
+      );
+      assertMatch(
+        await s.view('/memories/con/state.txt'),
+        /\tstate: B$/m,
+        'newer content survives the stale attempt',
+      );
+    },
+  },
 ];
 
 /** Names of all contract checks (stable identifiers for reporting). */

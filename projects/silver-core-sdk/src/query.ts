@@ -1588,6 +1588,24 @@ export function query(args: {
           );
         }
       }
+      // Capability-declaration surfacing (keeper memo 2026-07-18 §3): the
+      // `usage` dimension has no wire effect, so its consequence is stated
+      // here once at startup instead of silently booking wrong numbers.
+      if (!sess.resumed && options.provider?.capabilities?.usage !== undefined) {
+        const usageCap = options.provider.capabilities.usage;
+        if (usageCap === 'none' && options.maxBudgetUsd !== undefined) {
+          informational(
+            `maxBudgetUsd is set but the endpoint declares capabilities.usage 'none' — ` +
+              `no usage reporting means cost estimates cannot accumulate and the cap ` +
+              `can never trip. Enforce budgets host-side for this endpoint.`,
+          );
+        } else if (usageCap === 'approximate') {
+          informational(
+            `The endpoint declares capabilities.usage 'approximate' — token counts and ` +
+              `cost figures on results are directional, not authoritative.`,
+          );
+        }
+      }
       // SessionStart hook lifecycle events (includeHookEvents) surface right
       // after init — they fired before the stream had anywhere to go.
       yield* drainObs();

@@ -234,6 +234,29 @@ client-side.
   Claude Code behavior (POSITIONING §2); a different model family means a
   different feel. This is the sovereignty trade the switch exists to offer.
 
+## Capability declaration + continuation fragment (keeper memo 2026-07-18 §3)
+
+Two seams for gateways/models that do NOT support everything:
+
+- **`provider.capabilities`** — declare what the endpoint truly supports;
+  the engine degrades per declaration instead of silently assuming full
+  capability. On this protocol: `thinking: false` suppresses
+  `openai.reasoningEffort` from the wire; `parallelToolCalls: false` sends
+  `parallel_tool_calls: false` whenever tools are advertised;
+  `usage: 'none' | 'approximate'` surfaces an informational message about
+  budget/cost precision at startup (`promptCaching` is moot here — this
+  translator never emits `cache_control`). On the anthropic protocol the same
+  declaration strips `thinking` / `cache_control` and forces
+  `disable_parallel_tool_use`. Every degradation logs a debug line. This is a
+  DECLARATION seam, not a model profile: no probing, no per-model tables.
+- **Automation-continuation fragment** (`options.continuationPrompt`) —
+  default ON for this protocol: the default harness gets one appended
+  sdk-original clause telling the model to finish ALL the work before ending
+  its turn (no mid-task progress reports) — mainline non-Anthropic models
+  measurably stall mid-run without it. Default OFF on anthropic; an explicit
+  boolean overrides either way. Verified end-to-end against fake endpoints
+  in `tests/provider-capabilities.test.ts`.
+
 ## Cross-protocol subagents (v0.54.0)
 
 A query has ONE provider config, but a gateway often serves different models

@@ -210,6 +210,13 @@
 > **未做**：周报 loop 生产切换（机制已备，待 T37 推送形态裁定）。
 > **版本钟**：2026-07-18 守密人裁定两包**锁步同版**（覆盖需求档 §2 双钟制），0.68.0 起同号、
 > CI 守卫相等；此后本节版本号即家族版本号。
+>
+> **第七战（0.69.0，2026-07-18 守密人待办批 4/5 项）**：workflow 声明式加载
+> （`parseWorkflowGraphSource` / `loadWorkflowGraphFile`，json / md fence、坏文件永不抛降级跳过，
+> 变异分 100）+ 例程四「综合整理任务」（`examples/memory-tidy.mjs`：定时派发→读健康面
+> `assessMemoryStoreHealth`→归并写卡→删碎片→台账收口，黑池做梦例程原型，假钟 e2e）+
+> schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
+> workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
@@ -223,6 +230,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.69.0（2026-07-18，守密人待办批 SDK 侧 1–3 项）**：① 迁移文档刷新
+  `docs/MIGRATION-0.3x-to-0.68.md`（取代 0.52 版：斜杠退役 0.63 / MultiEdit 生命弧 /
+  npm 两连改名 / 锁步制 + 13 步黑池升级检查单——黑池升级咽喉铺平）；② 记忆便签三件套
+  （COMPAT 上游核对记录：官方 SDK 0.112.3 仅 memory_20250818 对齐无欠账；契约套件并发节：
+  单命令原子性 + last-write-wins 两条可执行检查、不加版本令牌；`assessMemoryStoreHealth`
+  健康深扫：目录水位软 48 / 腐烂度 mtime 诚实标注 / 容量余量 / supersede 链 / 读写比——
+  黑池做梦触发面，黑池侧已确认消费）；③ `provider.capabilities` 端点能力声明（按声明降级
+  逐条报告，画像机制维持不立项）+ `options.continuationPrompt` 续跑片段（openai-chat 默认开 /
+  anthropic 默认关，双协议假端点 e2e 验证注入）。3017 单测全绿 + 2 skipped（+19）。
 - **v0.63.1（2026-07-17，T49 批B · P0 存量高危+安全 6 项修复）**：H1 Edit/MultiEdit 非 UTF-8
   拒改守卫（`isUtf8`，防未编辑字节全文变 U+FFFD，顺带钝化 L15 Edit 侧）；H2 thinking 线型改按
   实发模型（`computeThinking(useModel)`，跨世代 fallback 不再必 400）；H3 openai 臂

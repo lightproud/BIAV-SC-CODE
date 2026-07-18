@@ -6,6 +6,21 @@ compatible with `@anthropic-ai/claude-agent-sdk`, but whose engine drives the
 executable and no subprocess: the agent loop, tool dispatch, permissions,
 hooks, MCP and session persistence are all implemented in this package.
 
+Naming: the npm package is **`silver-core-agent-sdk`** (the Silver Core
+Agent SDK); the runtime brand strings (User-Agent, log prefixes) remain
+`silver-core-sdk`. It forms the Silver Core SDK family with
+`silver-core-maestro-sdk` (the orchestration package — clocks, cross-session
+state, session assembly); the two packages version in **lockstep** (always
+the same number) with a one-way dependency maestro → agent.
+
+## Identity statement (as-is)
+
+This repository is a game project's **by-product**, provided **as-is**: no
+support commitment, and issues / PRs may go unanswered. Contributions are
+only considered with the contract suite fully green (`npm test` passing;
+mutation-ratchet floors unbroken for touched targets). 中文:本仓为游戏项目
+副产品,按 as-is 提供,无支持承诺,PR 可能不被处理;回贡仅收契约套件全绿的 PR。
+
 The **engine** is an independent reimplementation grounded in the public SDK
 documentation and the public Messages API documentation — no proprietary code
 copied. The **default system prompts** are an *open reproduction* of the
@@ -21,7 +36,7 @@ leak").
 ## Install
 
 ```bash
-npm install silver-core-sdk
+npm install silver-core-agent-sdk
 ```
 
 Requires Node.js `>= 20.3` (`AbortSignal.any`). **ESM only** - this
@@ -31,7 +46,7 @@ use `import` (or dynamic `import()` from CJS).
 ## Quickstart
 
 ```ts
-import { query } from 'silver-core-sdk';
+import { query } from 'silver-core-agent-sdk';
 
 const q = query({
   prompt: 'Summarize the files in this directory.',
@@ -55,7 +70,7 @@ Set `ANTHROPIC_API_KEY` in the environment before running.
 
 ```bash
 npm uninstall @anthropic-ai/claude-agent-sdk
-npm install silver-core-sdk
+npm install silver-core-agent-sdk
 ```
 
 Then swap the import:
@@ -64,7 +79,7 @@ Then swap the import:
 // before
 import { query, tool, createSdkMcpServer } from '@anthropic-ai/claude-agent-sdk';
 // after
-import { query, tool, createSdkMcpServer } from 'silver-core-sdk';
+import { query, tool, createSdkMcpServer } from 'silver-core-agent-sdk';
 ```
 
 Most call sites need no further change. Key differences to be aware of:
@@ -194,7 +209,7 @@ runner on a fixed-delay cadence (next run scheduled `intervalMs` after the
 previous one settles — runs never overlap). The host bridge is thin:
 
 ```ts
-import { parseLoopCommand, createPromptLoop, LOOP_SLASH_COMMAND } from 'silver-core-sdk';
+import { parseLoopCommand, createPromptLoop, LOOP_SLASH_COMMAND } from 'silver-core-agent-sdk';
 
 const parsed = parseLoopCommand(userInput);
 if (parsed) {
@@ -227,7 +242,7 @@ semantics (v0.39) and the evaluator prompt already shipped; this module is
 the missing surface. Host bridge:
 
 ```ts
-import { createSessionGoal, GOAL_SLASH_COMMAND } from 'silver-core-sdk';
+import { createSessionGoal, GOAL_SLASH_COMMAND } from 'silver-core-agent-sdk';
 
 const goal = createSessionGoal({
   utility: { provider },              // evaluator credentials (Haiku default)
