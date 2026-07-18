@@ -432,29 +432,54 @@ function isWrapperArgToken(token: string): boolean {
 }
 
 /**
+ * Strip shell GROUP wrappers so a deny/ask scoped to the inner command sees
+ * through a bare subshell / brace group (audit r3 W10-1 — `(rm -rf x)` and
+ * `{ rm -rf x; }` were deny fail-open: the segment starts with `(`/`{`, so a
+ * `Bash(rm:*)` deny never matched and a bare `Bash` allow auto-ran it).
+ * Leading run of `(` / `{` / whitespace, trailing run of `)` / `}` / `;` /
+ * whitespace — nested groups (`((rm))`) collapse in one pass. Deny/ask
+ * position only (candidates below): an allow must keep matching the literal
+ * form, so a grouped command still falls through to prompting.
+ */
+function stripGroupWrappers(segment: string): string {
+  return segment.replace(/^[\s({]+/, '').replace(/[\s)};]+$/, '');
+}
+
+/**
  * Candidate command strings a DENY/ASK specifier is tested against so an
- * obfuscated (V4-1) or wrapped (V4-2) command still matches a rule scoped to
- * the real command. Always includes the raw segment and its env-stripped form
- * (the prior behavior); additionally de-obfuscates the command word and peels
- * leading wrappers (plus a wrapper's own flag/assignment/duration args) so
- * `sudo \rm -rf /`, `timeout 5 rm …` and `eval "rm -rf /"` all reach `rm`.
- * Purely additive - it only ever offers MORE candidates, so a deny/ask can fire
- * but an existing match is never lost.
+ * obfuscated (V4-1), wrapped (V4-2) or grouped (r3 W10-1) command still
+ * matches a rule scoped to the real command. Always includes the raw segment
+ * and its env-stripped form (the prior behavior); additionally de-obfuscates
+ * the command word, peels leading wrappers (plus a wrapper's own
+ * flag/assignment/duration args), and sees through subshell / brace grouping,
+ * so `sudo \rm -rf /`, `timeout 5 rm …`, `eval "rm -rf /"` and `(rm -rf /)`
+ * all reach `rm`. Purely additive - it only ever offers MORE candidates, so a
+ * deny/ask can fire but an existing match is never lost.
  */
 function denyMatchCandidates(segment: string): string[] {
-  const out = new Set<string>([segment, stripEnvAssignments(segment)]);
-  let cur = stripEnvAssignments(segment);
-  for (let i = 0; i < MAX_COMMAND_UNWRAP; i++) {
-    const { first, rest } = splitFirstToken(cur);
-    if (first === '') break;
-    const word = deobfuscateWord(first);
-    out.add(rest === '' ? word : `${word} ${rest}`);
-    // Peel a leading wrapper, or - once already inside a wrapper (i > 0) - a
-    // wrapper's own arg token. A non-wrapper head token is the real command.
-    const peelable = COMMAND_WRAPPERS.has(word) || (i > 0 && isWrapperArgToken(first));
-    if (!peelable || rest === '') break;
-    cur = rest;
-    out.add(rest);
+  const out = new Set<string>([segment]);
+  // Seed the unwrap walk from the raw segment AND its group-stripped form
+  // (r3 W10-1) — the stripped seed lets wrapper peeling work inside a group
+  // too (`(sudo rm …)`).
+  const seeds = new Set<string>([segment]);
+  const ungrouped = stripGroupWrappers(segment);
+  if (ungrouped !== '' && ungrouped !== segment) seeds.add(ungrouped);
+  for (const seed of seeds) {
+    out.add(seed);
+    out.add(stripEnvAssignments(seed));
+    let cur = stripEnvAssignments(seed);
+    for (let i = 0; i < MAX_COMMAND_UNWRAP; i++) {
+      const { first, rest } = splitFirstToken(cur);
+      if (first === '') break;
+      const word = deobfuscateWord(first);
+      out.add(rest === '' ? word : `${word} ${rest}`);
+      // Peel a leading wrapper, or - once already inside a wrapper (i > 0) - a
+      // wrapper's own arg token. A non-wrapper head token is the real command.
+      const peelable = COMMAND_WRAPPERS.has(word) || (i > 0 && isWrapperArgToken(first));
+      if (!peelable || rest === '') break;
+      cur = rest;
+      out.add(rest);
+    }
   }
   return [...out];
 }

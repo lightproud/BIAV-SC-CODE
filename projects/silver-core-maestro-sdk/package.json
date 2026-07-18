@@ -1,6 +1,6 @@
 {
   "name": "silver-core-maestro-sdk",
-  "version": "0.70.0",
+  "version": "0.70.1",
   "description": "Silver Core Maestro SDK - reusable parts for agents that outlive a single call: clock, cross-session state, session assembly (task ledger, driver, loop/schedule/workflow scaffolds). A library, not a framework: the host owns main().",
   "license": "MIT",
   "type": "module",
