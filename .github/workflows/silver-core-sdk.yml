@@ -118,7 +118,7 @@ jobs:
   unit:
     # Unique display name so the required-status-check list is unambiguous
     # (both this workflow and the maestro workflow have a job id `unit`).
-    name: SDK unit
+    name: Silver Core Agent SDK / unit tests
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -149,7 +149,7 @@ jobs:
         run: node scripts/check-version-bump.mjs
 
   conformance:
-    name: SDK conformance
+    name: Silver Core Agent SDK / conformance
     # Conformance suite M1-M3 (design final 2026-07-05): the full L1-L4
     # differential — L1 stream grammar, L2 options semantics, L3 tool_result
     # content, L4 fault injection — plus the M3 scoreboard ratchet and the
