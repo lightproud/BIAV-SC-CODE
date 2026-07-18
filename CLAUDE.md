@@ -456,14 +456,19 @@ MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具
 - **合并默认规则**（守密人 2026-06-11 裁定）：feature 分支任务完成且全量验证通过后，
   守密人下达「合并」即默认合并 main，PR 无需停留等待逐项确认；遇合并冲突按
   「自动生成状态档案取最新、人工档案先报告再处置」原则解决。
-- **CI 硬门禁已生效（守密人 2026-07-11 完成 Ruleset 勾选，销 todo T19）**：main Ruleset 恢复
-  required `test` 检查——**只勾 `test`**（2026-07-11 裁定修正 0710 原案，不勾 require branches
-  up to date）。**合并纪律（2026-07-11 同日会话操作口径修订，见 `memory/decisions.md`「题库定稿 +
-  对话内合并纪律」条）**：判定门 = **对话内直接跑全量测试**（`pytest tests/`，涉 SDK 加 vitest），
-  绿即合并——**不以围等 GitHub CI 为工作环节**（不为 CI 安排轮询 / 计时器 / 自检回执）；required
-  `test` 保留为 GitHub 侧物理门禁，合并瞬时被其挡下则等其转绿重试一次即可。**绝不**把「CI 会拦」
-  当成「免自查」。历程：2026-06-21 撤检查改自查自合 → 2026-07-10 批准重启（撤检查的两条理由已随
-  07-02 sparse checkout 改造消失）→ 2026-07-11 勾选生效 + 同日操作口径修订。
+- **CI 硬门禁已生效（守密人 2026-07-11 完成 Ruleset 勾选，销 todo T19；2026-07-18 扩为五检查，销 T61）**：
+  main Ruleset required 检查集 = **`test`（Python）+ 四个家族 JS 检查**——`Silver Core Agent SDK / unit tests`、
+  `Silver Core Agent SDK / conformance`、`Silver Core Maestro SDK / unit + testbed`（含 testbed 第三方消费者契约）、
+  `Silver Core Maestro SDK / dependency direction`（守密人 2026-07-18 交互裁②：把 SDK/maestro CI 提为 required，堵
+  lockstep 家族「required 门只看 Python」盲区）。两 JS 工作流已去 `pull_request` paths 过滤器故每 PR 必报告（否则
+  required + paths 过滤会让 docs-only PR 卡死，2026-06-21 坑）；live-budget job 仍 `if: event_name` 门控、PR 不烧预算。
+  **require branches up to date 仍不勾**（2026-07-11 裁定沿用；pre-push 自动 rebase + §7.6 对话内自查兜底撞车）。
+  **合并纪律（2026-07-11 同日会话操作口径修订，见 `memory/decisions.md`「题库定稿 + 对话内合并纪律」条）**：
+  判定门 = **对话内直接跑全量测试**（`pytest tests/`，涉 SDK 加 vitest；涉两包组合加 testbed），绿即合并——
+  **不以围等 GitHub CI 为工作环节**（不为 CI 安排轮询 / 计时器 / 自检回执）；required 检查保留为 GitHub 侧物理门禁，
+  合并瞬时被其挡下则等其转绿重试一次即可。**绝不**把「CI 会拦」当成「免自查」。历程：2026-06-21 撤检查改自查自合 →
+  2026-07-10 批准重启（撤检查的两条理由已随 07-02 sparse checkout 改造消失）→ 2026-07-11 勾选生效 + 同日操作口径修订 →
+  2026-07-18 扩为五检查（家族组合入门）。
 - **直接合并 main + PR 订阅可选（守密人 2026-06-14 裁定、2026-06-21 修订）**：
   Web 环境强制建 PR，但任务完成且验证通过后**默认立即合并 main**（squash），不停留等待。
   PR 订阅由**退订不再强制**：若会话被环境自动订阅（出现 `<github-webhook-activity>` 提示）
