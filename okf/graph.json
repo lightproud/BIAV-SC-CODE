@@ -2,7 +2,7 @@
   "generated": "2026-07-18",
   "stats": {
     "nodes": 361,
-    "edges": 424
+    "edges": 426
   },
   "nodes": [
     {
@@ -4600,6 +4600,12 @@
     },
     {
       "source": "/community/community-youtube.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"
@@ -5976,6 +5982,12 @@
       "source": "/sources/youtube.md",
       "target": "/characters/54117.md",
       "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
