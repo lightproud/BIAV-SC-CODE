@@ -11,23 +11,17 @@
  *            into state/heartbeat.jsonl (downtime forensics for the soak
  *            report), pid file for driverctl.
  *
- * Crash recovery (kill -9 semantics): a session claimed as `running` when
- * the process dies has no one left to record its outcome — the SDK has no
- * claim lease (gap ledger G2), so the HOST sweeps at boot: every `running`
- * session is settled as an error outcome, which re-enters the normal
- * retry/backoff path exactly like a graceful-stop abort would.
+ * Crash recovery (kill -9 semantics): two complementary layers since the
+ * 0.69.0 gap adoption — claim leases (gap G2, claimLeaseMs on the ledger;
+ * expired claims are swept by the driver every tick, multi-driver safe) plus
+ * the host boot sweep below (immediate recovery on restart instead of
+ * waiting out the lease; single-driver deployments only, which this is).
  */
 
 import { appendFileSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import {
-  DuplicateSessionError,
-  LedgerDriver,
-  Scheduler,
-  TaskLedger,
-  firesBetween,
-} from 'silver-core-maestro-sdk';
+import { LedgerDriver, Scheduler, TaskLedger } from 'silver-core-maestro-sdk';
 import { fileLedgerStore } from './store.mjs';
 import { INSPECTORS, renderReport } from './inspectors.mjs';
 import { openMemory, writeReport } from './memory.mjs';
@@ -58,6 +52,9 @@ export function buildHost({
   const ledger = new TaskLedger({
     store,
     retry: { maxAttempts: 3, baseDelayMs: 5_000, factor: 2, maxDelayMs: 20_000 },
+    // G2 lease belt (0.69.0): comfortably above the worst-case attempt
+    // (queryTimeoutMs) so only genuinely dead claims ever expire.
+    claimLeaseMs: queryTimeoutMs + 60_000,
   });
   const memory = openMemory(memoryDir);
   const inspectorIds = Object.keys(INSPECTORS);
@@ -111,6 +108,11 @@ export function buildHost({
     ledger,
     specs,
     pollIntervalMs,
+    // G3 (0.69.0): a footprint-less spec fires its most recent due point on
+    // the first tick — day-zero and newly-added hot-layer specs both covered.
+    // (Replaces the host-side primeSchedules workaround that hand-formatted
+    // sched: ids from a doc comment.)
+    seedFirstRun: true,
     onEvent: (ev) => {
       if (ev.type === 'schedule:fire') log(`fire ${ev.sessionId}`);
       else log(`schedule error: ${ev.error}`);
@@ -131,43 +133,6 @@ export function buildHost({
   });
 
   return { store, ledger, scheduler, driver, stateDir, memory, inspectorIds };
-}
-
-/**
- * Day-zero schedule priming. The Scheduler's recovery deliberately does no
- * epoch backfill: a spec with no ledger footprint starts at `now`. Correct
- * for a long-lived process, but a SHORT-LIVED host (daily CI run, boots
- * after the fire point, exits seconds later) then never fires AT ALL — every
- * boot re-anchors at now, the footprint never appears (gap ledger G3). Host
- * fix over public surface: when a spec has no footprint, dispatch its most
- * recent due point using the documented `sched:{specId}:{fireAt}` id format,
- * which both runs today's patrol and seeds recovery for every later boot.
- * Self-healing: a spec newly added to the hot layer gets primed the same way.
- */
-export async function primeSchedules(ledger, specs, log = () => {}, now = Date.now()) {
-  const sessions = await ledger.listSessions();
-  const primed = [];
-  for (const spec of specs) {
-    if (sessions.some((s) => s.id.startsWith(`sched:${spec.id}:`))) continue;
-    const lookbackMs = Math.max(25 * 3_600_000, (spec.every ?? 0) * 2);
-    const due = firesBetween(spec, now - lookbackMs, now);
-    const fireAt = due[due.length - 1];
-    if (fireAt === undefined) continue;
-    const sessionId = `sched:${spec.id}:${fireAt}`;
-    try {
-      await ledger.dispatch({
-        id: sessionId,
-        intent: spec.intent,
-        payload: { schedule: { specId: spec.id, fireAt }, data: spec.payload },
-        ...(spec.maxAttempts !== undefined ? { maxAttempts: spec.maxAttempts } : {}),
-      });
-      primed.push(sessionId);
-      log(`primed ${sessionId}`);
-    } catch (err) {
-      if (!(err instanceof DuplicateSessionError)) throw err;
-    }
-  }
-  return primed;
 }
 
 /** Boot-time crash sweep (see header). Returns the swept session ids. */
@@ -228,10 +193,6 @@ async function main() {
   });
   const swept = await crashSweep(host.ledger, log);
   if (swept.length > 0) log(`crash sweep settled ${swept.length} orphaned running session(s)`);
-  const specs = JSON.parse(
-    readFileSync(process.env.TESTBED_SPECS_FILE ?? join(TESTBED_ROOT, 'targets', 'schedule.specs.json'), 'utf8'),
-  ).specs;
-  await primeSchedules(host.ledger, specs, log);
 
   host.scheduler.start();
   host.driver.start();

@@ -17,8 +17,7 @@
 | ID | 账目 | 类别 | 源出处 | 状态 |
 |----|------|------|--------|------|
 | T56 | testbed 验收 2「四巡检器连续 7 天无人值守」核验：CI `testbed-patrol.yml` 每日北京 15:20 首轮起算，D+7 核 Actions 日志与台账（`projects/silver-core-testbed/state/ledger.json` 逐轮 sched 会话 + 记忆区日报告/卡）全绿即销；首轮亦需核 deploy key 推送四步走通 | 观察 | 施工封面 §4.2 + `projects/silver-core-testbed/CONTEXT.md` 当前状态节 | 开 |
-| T57 | testbed §2 第三战 72h 连续长跑：演练件（kill -9 恢复 + 停机补偿真实钟短程 10 检查 PASS）已实证，72h 连跑需常驻宿主（云容器短命），待守密人指定宿主后按 `projects/silver-core-testbed/SOAK.md` 节奏执行并出浸泡报告三结论 | 裁定 | 施工封面 §2 第三战 + `SOAK.md` | 开 |
-| T58 | testbed 漏缝清单四条（G1 LedgerStore 契约套件缺交付 / G2 认领无租约 / G3 Scheduler 零号日死锁 + sched id 无公开构造器 / G4 memory 无原样读回）是否采纳进 SDK 侧：每条附建议修法，采纳即家族 bump 并销对应缝 | 裁定 | `projects/silver-core-testbed/GAPS.md` | 开 |
+| T57 | testbed §2 第三战 72h 连续长跑：**守密人 2026-07-18 裁定「甲」= CI 积累先行、72h 缓议**——7 天无人值守由每日 CI 自动积累（T56 D+7 核账），72h 连跑待有常驻宿主再按 `projects/silver-core-testbed/SOAK.md` 执行；演练件（真实钟 10 检查 PASS）已覆盖三项结论的语义证明 | 观察 | 施工封面 §2 第三战 + `SOAK.md` + 守密人 2026-07-18「甲甲」裁定 | 开 |
 | T59 | 值班发现两条站岗：① agent SDK mutation-ratchet loop-support 靶（地板 94.35）不在 `sdk-mutation-ratchet.yml` 周检矩阵、从未实测（矩阵补 loop-support 即销）；② `store-patrol.yml` checkout 未挂 `BOT_DEPLOY_KEY`（T31 后 GITHUB_TOKEN 推 main 会被 Ruleset 拦，与 T54 首轮核验并看） | 观察 | testbed 首日巡检 + `.github/workflows/sdk-mutation-ratchet.yml` 矩阵行 | 开 |
 | T54 | store-patrol 首次定时跑核验:CI `store-patrol.yml` 每日北京 15:15(07:15 UTC)首轮自动跑需核 Actions 日志——sparse 纳回 / npm ci+build / 巡检 / 快照提交推送四步全绿即销(本地真跑与 sparse check-rules 已实证,余 Actions 环境一跑) | 观察 | `memory/decisions.md` 2026-07-18 第二战条 + `.github/workflows/store-patrol.yml` | 开 |
 | T5 | /goal 提示词快照待上游露出（每周参照刷新 CI `refresh-claude-code-prompts.yml` 自动观察） | 观察 | `memory/project-status.md` v0.38 段挂账注 | 开 |
@@ -46,6 +45,7 @@
 
 | ID | 账目 | 销案引 |
 |----|------|--------|
+| T58 | testbed 漏缝清单四条是否采纳进 SDK 侧 | **守密人 2026-07-18 裁定「甲」（四条全采纳）+ 同日落地销案**：家族锁步 bump 0.69.0——G1 `runLedgerStoreContractSuite` / G2 `claimLeaseMs`+`sweepExpiredLeases` 认领租约 / G3 `seedFirstRun`+`scheduleSessionId`（maestro 0.69.0）、G4 `MemoryStore.read?` 原样读回（agent 0.69.0）；testbed 换装消费新面、primeSchedules 绕行件删除；逐缝落地注见 `projects/silver-core-testbed/GAPS.md` 销缝状态节；maestro 189 / agent 3004 / testbed 30 测试全绿 |
 | T55 | 编排 SDK 第三至六战接口设计挂账（签名级） | **2026-07-18 同日挂账同日销**：设计随实现定稿（主要偏差：送达 claimDue 改台账新 API `claimSession`、goal 增 drainTimeoutMs、四处 id 冒号封禁——均为对抗审查整改），全文见 `memory/decisions.md` 2026-07-18「第三至六战」条；silver-core-maestro-sdk 0.4.0 |
 | T53 | 编排 SDK 第一战接口设计挂账（施工封面 §2「设计先挂账」，签名级） | **2026-07-18 同日挂账同日销**：设计随第一战实现定稿（挂账为草案，两处实现偏差——事件集并入 claim / dispatch 不作流转事件——以定稿为准），全文见 `memory/decisions.md` 2026-07-18「编排 SDK 第一战」条；@biav/orchestrator-sdk 0.2.0 |
 | T41 | SCS-REQ-REPOS-01 §1/§2/§6 定位改写与文档落簿 | **2026-07-17 整天目标循环实现销案**（守密人驱动令）：POSITIONING 引擎层终态重写（三否定一肯定 + 扩展面三缝 + 钩子契约总则）、COMPAT 降级参照笔记（义务表述清零、chase 双触发）、decisions.md 两条覆盖注、钩子契约总则入 ARCHITECTURE §E；silver-core-sdk 0.63.0 |

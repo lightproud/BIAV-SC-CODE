@@ -230,9 +230,13 @@
 > fire point，**每天走一遍错过补偿路径**）。**漏缝四条实缝**（G1 契约套件缺交付 /
 > G2 认领无租约 kill -9 孤儿靠宿主自扫 / G3 Scheduler 短命宿主零号日死锁 + sched id
 > 无公开构造器 / G4 memory 无原样读回），全走公开面绕行、无一触碰非公开面。
-> **等待真实时间**：验收 2「连续 7 天无人值守」自 CI 首轮起算；72h 连续长跑需常驻宿主
-> （跑法 `SOAK.md`）。首日真实发现：agent SDK `mutation-ratchet.json` 的 loop-support 靶
-> （地板 94.35）不在周检矩阵、从未被实测（ratchet 巡检器每日盯防此类缺口）。
+> **收尾双裁定（守密人 2026-07-18「甲甲」）**：T57 = CI 积累先行、72h 连跑缓议（转观察）；
+> T58 = **四缝全采纳、同日落地家族锁步 0.69.0**——G1 随包契约套件 / G2 认领租约 + 每 tick
+> 过期清扫 / G3 seedFirstRun + scheduleSessionId / G4 MemoryStore.read 原样读回；testbed
+> 换装消费新面（primeSchedules 绕行件删除），GAPS.md 四缝全销、绕行件留作回归证据。
+> **等待真实时间**：验收 2「连续 7 天无人值守」自 CI 首轮起算（T56）。首日真实发现：
+> agent SDK `mutation-ratchet.json` 的 loop-support 靶（地板 94.35）不在周检矩阵、从未被
+> 实测（T59 站岗；ratchet 巡检器每日盯防此类缺口）。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 

@@ -14,7 +14,7 @@ import { describe, expect, it } from 'vitest';
 import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { LedgerDriver, TaskLedger } from 'silver-core-maestro-sdk';
+import { LedgerDriver, TaskLedger, runLedgerStoreContractSuite } from 'silver-core-maestro-sdk';
 import { fileLedgerStore } from '../src/store.mjs';
 
 const freshStore = () =>
@@ -30,6 +30,14 @@ const session = (over = {}) => ({
   updatedAt: 1000,
   nextRunAt: 1000,
   ...over,
+});
+
+describe('delivered contract suite (gap G1 adopted in 0.69.0)', () => {
+  it('runLedgerStoreContractSuite passes the testbed store', async () => {
+    const report = await runLedgerStoreContractSuite(() => freshStore());
+    expect(report.failed).toBe(0);
+    expect(report.passed).toBe(true);
+  });
 });
 
 describe('LedgerStore contract: sessions', () => {
