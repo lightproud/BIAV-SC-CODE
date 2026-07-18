@@ -1,6 +1,6 @@
 {
   "name": "silver-core-agent-sdk",
-  "version": "0.69.0",
+  "version": "0.70.0",
   "description": "Silver Core Agent SDK - independent agent harness with a claude-agent-sdk compatible surface, driving the Anthropic Messages API directly (no bundled CLI binary).",
   "license": "MIT",
   "type": "module",

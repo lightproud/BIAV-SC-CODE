@@ -152,12 +152,12 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
     // reviews.query_summary (110 -> 160). Without the beforeEach deep reset
     // this baseline patrol observes the mutated store and the suite becomes
     // order-coupled.
-    const result = await runStorePatrol({
+    const result = await drive(runStorePatrol({
       targets: targetsFor(baseUrl),
       archiveDir: sandbox,
       today: '2026-07-18',
       ...fastOpts,
-    });
+    }));
     expect(result.failures).toHaveLength(0);
     const latest = JSON.parse(fs.readFileSync(path.join(sandbox, 'steam-review-summary', 'latest.json'), 'utf8'));
     expect(latest.signature.total_reviews).toBe(110);
@@ -230,12 +230,12 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
       }) + '\n',
     );
 
-    const result = await runStorePatrol({
+    const result = await drive(runStorePatrol({
       targets,
       archiveDir: sandbox,
       today: '2026-07-18',
       ...fastOpts,
-    });
+    }));
     expect(result.failures).toHaveLength(0);
     // The SAME session recovered through the normal retry path (no :rN fork):
     // sweep closes the interrupted attempt as an error, retry lands in done.

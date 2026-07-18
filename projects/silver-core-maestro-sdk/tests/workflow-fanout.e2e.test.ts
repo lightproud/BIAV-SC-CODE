@@ -77,9 +77,7 @@ describe('workflow fan-out example (e2e, fake timers)', () => {
     expect(merge.attempts).toBe(1); // rerun dispatched nothing new
   });
 
-  it('reports wiring status honestly (never a silent skip)', () => {
-    // This assertion always runs: it documents in the test output whether the
-    // e2e path above executed or was deferred to package-export integration.
-    expect(typeof wired).toBe('boolean');
-  });
+  // The former 'wiring status' probe is gone with the dynamic-import guard
+  // (audit H2): imports are static now, so a broken export reds the suite at
+  // collection time — no wiring flag left to report.
 });
