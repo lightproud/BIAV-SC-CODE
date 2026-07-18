@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-19",
+  "archived_at": "2026-07-18T21:50:49.553888+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] Cool art and nice, spooky atmosphere. Seems pretty...",
+      "summary": "Cool art and nice, spooky atmosphere. Seems pretty generous as well. The only real frustration is there are a LOT of different upgrade items, and the descriptions are not always helpful. If you're looking for a gacha game that isn't actiony, this is it.",
+      "source": "steam_review",
+      "time": "2026-07-18T19:38:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561197975018455/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561197975018455",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 694,
+        "votes_up": 0,
+        "timestamp_created": 1784403527
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Very fun game about Anime girls that do everything...",
+      "summary": "Very fun game about Anime girls that do everything u want (slavery)",
+      "source": "steam_review",
+      "time": "2026-07-18T18:43:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199072920601/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199072920601",
+      "tags": [
+        "polish"
+      ],
+      "language": "polish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1284,
+        "votes_up": 0,
+        "timestamp_created": 1784400195
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}
