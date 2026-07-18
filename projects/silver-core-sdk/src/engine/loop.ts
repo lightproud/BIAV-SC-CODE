@@ -836,6 +836,15 @@ export async function* runAgentLoop(
     // (audit 2026-07-10 P2-2) — the assembly side lives in config-builder and
     // the pairing is pinned by tests/system-field.test.ts.
     const cachingOn = config.promptCaching === true;
+    // audit r4 Z8-2/Rdt-4: refresh the volatile <env> tail for the LIVE model
+    // and the current calendar day before deriving the wire system field, so a
+    // fallback-model switch or a session spanning local midnight no longer
+    // serves the construction-time model name / date. Cache-safe: the tail
+    // rides after the breakpoint (deriveSystemField reads systemPromptSuffix),
+    // so refreshing it never touches the cached stable prefix.
+    if (config.rebuildVolatileSuffix !== undefined) {
+      config.systemPromptSuffix = config.rebuildVolatileSuffix(useModel);
+    }
     const derived = deriveSystemField(config);
     // Re-clamp max_tokens for the LIVE model: a fallback switch to a model
     // with a lower output ceiling (e.g. sonnet 64k cap -> opus 32k) would

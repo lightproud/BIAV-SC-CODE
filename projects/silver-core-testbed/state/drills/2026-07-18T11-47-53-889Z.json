@@ -1,0 +1,67 @@
+{
+  "at": "2026-07-18T11:47:24.779Z",
+  "clock": "real (seconds-scale cadence; no fake timers — soak-battle discipline)",
+  "drills": [
+    {
+      "drill": "kill9-recovery",
+      "checks": [
+        {
+          "name": "fires happened before the kill",
+          "pass": true,
+          "detail": "6 sessions at kill time"
+        },
+        {
+          "name": "hard kill caught an attempt in flight (orphaned running session)",
+          "pass": true,
+          "detail": "2 orphaned running session(s): sched:slow-latest:1784375248780, sched:slow-latest:1784375249780"
+        },
+        {
+          "name": "crash sweep: no session stuck in running after restart + settle",
+          "pass": true,
+          "detail": "none stuck"
+        },
+        {
+          "name": "crash sweep recorded the orphan as an error attempt (retry path)",
+          "pass": true,
+          "detail": "2 crash-sweep query row(s)"
+        },
+        {
+          "name": "the orphaned session itself reached a healthy state after restart",
+          "pass": true,
+          "detail": "sched:slow-latest:1784375248780 -> retrying"
+        },
+        {
+          "name": "schedule kept firing after restart (new fire points)",
+          "pass": true,
+          "detail": "6 -> 11 sessions"
+        },
+        {
+          "name": "ticks completed across the kill boundary",
+          "pass": true,
+          "detail": "9 done sessions"
+        }
+      ]
+    },
+    {
+      "drill": "outage-compensation",
+      "checks": [
+        {
+          "name": "catchUp 'latest': the outage gap collapses to exactly one compensated fire",
+          "pass": true,
+          "detail": "gap fires: [1784375268344] (stop edge 1784375260344)"
+        },
+        {
+          "name": "catchUp 'all': every missed point in the gap is compensated",
+          "pass": true,
+          "detail": "5 gap fires (expected ~5): [1784375262344, 1784375264344, 1784375266344, 1784375268344, 1784375270344]"
+        },
+        {
+          "name": "catchUp 'all': fire points ascending, no duplicate sessions",
+          "pass": true,
+          "detail": "9 total fire points"
+        }
+      ]
+    }
+  ],
+  "verdict": "PASS"
+}

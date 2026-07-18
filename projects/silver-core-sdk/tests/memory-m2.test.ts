@@ -372,6 +372,10 @@ describe('R7: session-end progress-card round (query level)', () => {
     expect(corrected!.usage.input_tokens).toBe(0);
     // The corrected result is the LAST message on the stream.
     expect(messages[messages.length - 1]!.type).toBe('result');
+    // 丙 (keeper 2026-07-18): the correction REUSES the first result's uuid, so a
+    // consumer that dedupes by uuid collapses the two into one (latest-wins =
+    // complete accounting), while a non-deduping consumer still sees both.
+    expect(corrected!.uuid).toBe(first!.uuid);
   });
 
   it('a zero-cost session-end round adds NO corrected result (exactly one)', async () => {

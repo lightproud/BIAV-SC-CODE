@@ -130,3 +130,44 @@ describe('audit r4 Z8-3: osVersion carries the capitalized OS name', () => {
     }
   });
 })
+
+// ---------------------------------------------------------------------------
+// Z8-2 / Rdt-4 (config-builder + loop): the volatile <env> tail is rebuilt per
+// turn for the LIVE model (and a freshly-computed calendar day), so a fallback-
+// model switch no longer serves the construction-time model name.
+// ---------------------------------------------------------------------------
+
+describe('audit r4 Z8-2/Rdt-4: <env> model line tracks the live model', () => {
+  it('config exposes a rebuild closure; the baked suffix names the initial model', () => {
+    const { engineConfig } = build({ systemPrompt: { type: 'preset', preset: 'claude_code' } });
+    expect(engineConfig.rebuildVolatileSuffix).toBeTypeOf('function');
+    // Baked at construction from initialModel.
+    expect(engineConfig.systemPromptSuffix).toContain(
+      'You are powered by the model named claude-sonnet-4-5.',
+    );
+  });
+
+  it('rebuilding with a fallback model reflects THAT model, not the initial one', () => {
+    const { engineConfig } = build({ systemPrompt: { type: 'preset', preset: 'claude_code' } });
+    const refreshed = engineConfig.rebuildVolatileSuffix!('claude-opus-4-8');
+    expect(refreshed).toContain('You are powered by the model named claude-opus-4-8.');
+    expect(refreshed).not.toContain('claude-sonnet-4-5');
+  });
+
+  it('rebuilding with the SAME model reproduces the baked tail byte-for-byte', () => {
+    const { engineConfig } = build({ systemPrompt: { type: 'preset', preset: 'claude_code' } });
+    // Same model + same calendar day => identical bytes (cache-safe: an unchanged
+    // turn refreshes to the exact same suffix, so the wire prefix is stable).
+    expect(engineConfig.rebuildVolatileSuffix!('claude-sonnet-4-5')).toBe(
+      engineConfig.systemPromptSuffix,
+    );
+  });
+
+  it('no rebuild closure when the <env> block is disabled', () => {
+    const { engineConfig } = build({
+      systemPrompt: { type: 'preset', preset: 'claude_code' },
+      includeEnvironmentContext: false,
+    });
+    expect(engineConfig.rebuildVolatileSuffix).toBeUndefined();
+  });
+})

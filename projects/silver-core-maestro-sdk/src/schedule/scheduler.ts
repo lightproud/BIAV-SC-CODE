@@ -60,7 +60,15 @@ export class Scheduler {
 
   #running = false;
   #pollHandle: unknown = null;
-  #tickInFlight: Promise<void> | null = null;
+  /**
+   * Run generation, bumped by every start(). A scheduled or in-flight tick
+   * captures its generation and aborts silently once it no longer matches,
+   * so a start() re-entered during an unsettled stop() cannot leave the old
+   * tick alive to fork a second permanent poll chain.
+   */
+  #generation = 0;
+  /** Every unsettled tick promise; stop() awaits a snapshot of this set. */
+  readonly #ticksInFlight = new Set<Promise<void>>();
   #recovered = false;
   /** Newest fire point handled per spec id (rebuilt from the ledger on start). */
   readonly #lastFired = new Map<string, number>();
@@ -90,18 +98,24 @@ export class Scheduler {
     if (this.#running) return;
     this.#running = true;
     this.#recovered = false;
+    // New generation: a tick still in flight from a previous run detects the
+    // mismatch and aborts instead of rescheduling alongside this run's chain.
+    this.#generation += 1;
     // First poll on the next tick (delay 0): start() itself stays synchronous.
-    this.#scheduleTick(0);
+    this.#scheduleTick(0, this.#generation);
   }
 
-  /** Stop polling; resolves after any in-flight tick settles. */
+  /** Stop polling; resolves after every in-flight tick settles. */
   async stop(): Promise<void> {
     this.#running = false;
     if (this.#pollHandle !== null) {
       this.#clock.clearTimeout(this.#pollHandle);
       this.#pollHandle = null;
     }
-    if (this.#tickInFlight !== null) await this.#tickInFlight;
+    // Snapshot: ticks started before this stop() must settle before we
+    // resolve; ticks belonging to a subsequent start() are that run's problem.
+    const pending = [...this.#ticksInFlight];
+    if (pending.length > 0) await Promise.all(pending);
   }
 
   isRunning(): boolean {
@@ -117,26 +131,32 @@ export class Scheduler {
     }
   }
 
-  #scheduleTick(delayMs: number): void {
-    if (!this.#running) return;
+  #scheduleTick(delayMs: number, generation: number): void {
+    if (!this.#running || generation !== this.#generation) return;
     this.#pollHandle = this.#clock.setTimeout(() => {
-      const tick = this.#tick().finally(() => {
-        if (this.#tickInFlight === tick) this.#tickInFlight = null;
+      // A cleared timer cannot fire, but a stale one can: stop() then start()
+      // may have re-entered before this callback ran. Stale generation = abort.
+      if (generation !== this.#generation) return;
+      const tick = this.#tick(generation).finally(() => {
+        this.#ticksInFlight.delete(tick);
       });
-      this.#tickInFlight = tick;
+      this.#ticksInFlight.add(tick);
     }, delayMs);
   }
 
-  async #tick(): Promise<void> {
-    if (!this.#running) return;
+  async #tick(generation: number): Promise<void> {
+    if (!this.#running || generation !== this.#generation) return;
     try {
       if (!this.#recovered) {
         await this.#recover();
+        // A start() during the await above owns recovery for its own
+        // generation; a stale tick must not mark it done (or reschedule).
+        if (generation !== this.#generation) return;
         this.#recovered = true;
       }
       const now = this.#clock.now();
       for (const spec of this.#specs) {
-        if (!this.#running) break;
+        if (!this.#running || generation !== this.#generation) break;
         try {
           await this.#fireDue(spec, now);
         } catch (error) {
@@ -147,7 +167,7 @@ export class Scheduler {
     } catch (error) {
       this.#emit({ type: 'schedule:error', error });
     }
-    this.#scheduleTick(this.#pollIntervalMs);
+    this.#scheduleTick(this.#pollIntervalMs, generation);
   }
 
   /**

@@ -1,5 +1,5 @@
 /**
- * MemoryStore.read (gap G4, 0.69.0): host-facing raw accessor — exact bytes
+ * MemoryStore.read (gap G4, 0.71.0): host-facing raw accessor — exact bytes
  * back, no reference decoration — while the six model-facing commands stay
  * byte-for-byte unchanged.
  */

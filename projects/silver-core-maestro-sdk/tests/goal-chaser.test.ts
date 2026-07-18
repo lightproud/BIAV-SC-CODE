@@ -319,3 +319,70 @@ describe('drain timeout + id hygiene (review hardening 2026-07-18)', () => {
     await expect(chaser.chase({ id: 'a:b', description: 'x' })).rejects.toThrow(/must not contain ':'/);
   });
 });
+
+describe('concurrent chase of the same goal id (audit E1)', () => {
+  it('mid-chase dispatch collision is adopted: both chases settle done, no DuplicateSessionError escapes', async () => {
+    const store = memoryStore();
+    const ledger = new TaskLedger({ store });
+    let evalCallCount = 0;
+    const evaluator: GoalEvaluator = async ({ round }) => {
+      evalCallCount += 1;
+      // The second round-1 judge call (chase B) lags a few microtasks, so
+      // B's round-2 dispatch lands strictly after A's — the collision under
+      // test. The non-atomic dispatch guard cannot collide in pure lockstep.
+      if (evalCallCount === 2) {
+        for (let i = 0; i < 4; i += 1) await Promise.resolve();
+      }
+      return round === 1 ? { achieved: false, feedback: 'again' } : { achieved: true };
+    };
+    const chaser = new GoalChaser({ ledger, evaluator, pollIntervalMs: 10 });
+    const driver = new LedgerDriver({
+      ledger,
+      executor: async () => ({ outcome: 'ok', summary: 's' }),
+      pollIntervalMs: 10,
+    });
+    // Round 1 already terminal: both chases resume-adopt it, judge it, and
+    // race to dispatch round 2.
+    await store.putSession(seedSession(1, 'done', 'dup'));
+    driver.start();
+    const results = await drive(
+      driver,
+      Promise.all([
+        chaser.chase({ id: 'dup', description: 'race' }),
+        chaser.chase({ id: 'dup', description: 'race' }),
+      ]),
+    );
+    for (const result of results) {
+      expect(result.action).toBe('done');
+      expect(result.rounds.map((s) => s.id)).toEqual(['goal:dup:round-1', 'goal:dup:round-2']);
+      expect(result.rounds[1]?.state).toBe('done');
+    }
+    // Round 2 exists once with a single attempt: adopted, not re-run.
+    expect((await ledger.getSession(goalRoundSessionId('dup', 2)))?.attempts).toBe(1);
+  });
+});
+
+describe('resume scan past maxRounds (audit E2)', () => {
+  it('pre-seeded rounds 1..maxRounds+1: exhausted with ALL rounds listed, true latest re-judged, no new dispatch', async () => {
+    const { store, chaser, dispatched, evalCalls } = harness({
+      executor: () => ({ outcome: 'ok', summary: 's' }),
+      verdicts: () => ({ achieved: false, feedback: 'redo' }),
+    });
+    // Rounds beyond the budget exist (a previous chase ran with a larger
+    // maxRounds). The scan must find the TRUE latest round (3), not stop at
+    // maxRounds (2) and re-judge stale round 2 while dropping round 3.
+    for (let n = 1; n <= 3; n += 1) {
+      await store.putSession(seedSession(n, 'done', 'g6'));
+    }
+    // All rounds are terminal: no driver needed, chase resolves on microtasks.
+    const result = await chaser.chase({ id: 'g6', description: 'shrunk budget', maxRounds: 2 });
+    expect(result.action).toBe('exhausted');
+    expect(result.rounds.map((s) => s.id)).toEqual([
+      'goal:g6:round-1',
+      'goal:g6:round-2',
+      'goal:g6:round-3',
+    ]);
+    expect(dispatched).toHaveLength(0);
+    expect(evalCalls.map((c) => c.round)).toEqual([3]);
+  });
+});

@@ -37,7 +37,7 @@ export function stripView(viewText) {
 }
 
 /** Raw content of a memory file, or null when it does not exist. Prefers
- *  the store's raw `read` (gap G4, adopted in 0.69.0); stripView stays as
+ *  the store's raw `read` (gap G4, adopted in 0.71.0); stripView stays as
  *  the fallback for stores that omit the optional accessor. */
 export async function readIfExists(store, path) {
   try {

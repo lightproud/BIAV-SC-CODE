@@ -117,52 +117,68 @@ export async function runMinimalLoop(opts: MinimalLoopOptions): Promise<MinimalL
     resolveDone();
   };
 
+  // Budget reservation: the driver runs overlapping ticks concurrently, so
+  // arming each query with the FULL remaining budget would let two in-flight
+  // queries spend ~2x the cap. Each query reserves its arm up front; the arm
+  // is (remaining - reservations), and an executor that finds nothing left to
+  // arm winds the loop down instead of issuing a query.
+  let inFlightReservedUsd = 0;
+
   const executor = async (session: SessionRecord): Promise<{ outcome: 'ok' | 'error'; error?: string; summary?: string }> => {
-    const remaining = opts.totalBudgetUsd - spentUsd;
-    if (remaining <= 0) {
+    const armUsd = opts.totalBudgetUsd - spentUsd - inFlightReservedUsd;
+    if (armUsd <= 0) {
       windDown('budget:spent');
       return { outcome: 'error', error: 'loop budget already spent' };
     }
     const { prompt } = session.payload as { prompt: string };
-    const q = query({
-      prompt,
-      options: {
-        ...opts.queryOptions,
-        maxBudgetUsd: remaining,
-        budgetThresholdRatio: 0.8,
-        hooks: {
-          ...opts.queryOptions?.hooks,
-          'budget:threshold': [
-            {
-              hooks: [
-                async (input) => {
-                  if (input.hook_event_name === 'budget:threshold') thresholdSeen = true;
-                  return {};
-                },
-              ],
-            },
-          ],
-          'budget:exhausted': [
-            {
-              hooks: [
-                async (input) => {
-                  if (input.hook_event_name === 'budget:exhausted') closeout = input.report;
-                  return {};
-                },
-              ],
-            },
-          ],
-        },
-      },
-    });
-
     let resultText = '';
     let errorSubtype: string | undefined;
-    for await (const message of q) {
-      if (message.type !== 'result') continue;
-      spentUsd += message.total_cost_usd;
-      if (message.subtype === 'success') resultText = message.result;
-      else errorSubtype = message.subtype;
+    inFlightReservedUsd += armUsd;
+    try {
+      const q = query({
+        prompt,
+        options: {
+          ...opts.queryOptions,
+          maxBudgetUsd: armUsd,
+          budgetThresholdRatio: 0.8,
+          hooks: {
+            ...opts.queryOptions?.hooks,
+            // Merge, don't overwrite: caller-supplied budget hooks in
+            // queryOptions.hooks keep firing alongside the loop's own.
+            'budget:threshold': [
+              ...(opts.queryOptions?.hooks?.['budget:threshold'] ?? []),
+              {
+                hooks: [
+                  async (input) => {
+                    if (input.hook_event_name === 'budget:threshold') thresholdSeen = true;
+                    return {};
+                  },
+                ],
+              },
+            ],
+            'budget:exhausted': [
+              ...(opts.queryOptions?.hooks?.['budget:exhausted'] ?? []),
+              {
+                hooks: [
+                  async (input) => {
+                    if (input.hook_event_name === 'budget:exhausted') closeout = input.report;
+                    return {};
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      });
+
+      for await (const message of q) {
+        if (message.type !== 'result') continue;
+        spentUsd += message.total_cost_usd;
+        if (message.subtype === 'success') resultText = message.result;
+        else errorSubtype = message.subtype;
+      }
+    } finally {
+      inFlightReservedUsd -= armUsd;
     }
 
     if (closeout !== null) {
@@ -172,7 +188,9 @@ export async function runMinimalLoop(opts: MinimalLoopOptions): Promise<MinimalL
     }
     if (spentUsd >= opts.totalBudgetUsd) windDown('budget:spent');
     if (errorSubtype !== undefined) return { outcome: 'error', error: errorSubtype };
-    return { outcome: 'ok', summary: resultText.slice(0, 200) };
+    // Truncate on code points, not UTF-16 units: a unit-index slice can split
+    // a surrogate pair and persist a lone surrogate into the ledger.
+    return { outcome: 'ok', summary: [...resultText].slice(0, 200).join('') };
   };
 
   let ticks = 0;

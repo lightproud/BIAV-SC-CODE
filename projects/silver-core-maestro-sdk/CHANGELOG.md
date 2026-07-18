@@ -12,11 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
-## 0.69.0 — 2026-07-18
+## 0.71.0 — 2026-07-18
 
 Testbed gap adoption (keeper ruling 2026-07-18, option 甲: all four gaps from
 projects/silver-core-testbed/GAPS.md accepted; G1-G3 land here, G4 on the
-agent side):
+agent side). Version note: authored as 0.69.0, renumbered to 0.71.0 at merge
+time — 0.69.0/0.70.0 were taken on main by a parallel session (#743/#744),
+same let-the-number-go discipline as agent 0.53.2:
 
 - **G1 — deliverable LedgerStore contract suite**: new public
   `runLedgerStoreContractSuite(makeStore)` + `ledgerStoreContractCheckNames()`
@@ -37,6 +39,86 @@ agent side):
   builds a footprint at all) + public `scheduleSessionId(specId, fireAt)`
   (the `sched:{id}:{fireAt}` format was a doc-comment-only contract;
   workflow's workflowSessionId had a public constructor all along).
+
+## 0.70.0 — 2026-07-18
+
+Audit round 1 of the keeper's 500-bug campaign (T56): 17 finder agents +
+adversarial verification confirmed **29 real defects** (1 P1 + 11 P2 + 17 P3)
+across src, examples, tests, CI and docs — all 29 fixed or explicitly
+documented, each with a regression test that fails on the old code.
+Highlights:
+
+- **P1** schedule: fractional `every` float rounding could make `nextFireAt`
+  return t == after, spinning `firesBetween` forever; fixed with a bounded
+  advance re-derived deterministically (flatness detection — an `every` below
+  float resolution at the target magnitude now refuses loudly).
+- Ledger: `runAt` is now `number | null` — non-finite throws; `null` =
+  manual-claim-only (invisible to claimDue; the race-free
+  dispatch-then-claimSession inline pattern, used by the delivery channel);
+  retry-policy merge drops explicit-undefined overrides; `backoffDelayMs`
+  validates policy numbers (a poisoned cap previously wedged sessions in
+  'retrying' with nextRunAt NaN).
+- Driver + Scheduler: generation counters + stop() awaiting the in-flight
+  tick kill two stop/start races (claims landing after stop resolved;
+  stop-then-start forking two poll chains). Driver recordOutcome failure now
+  retries once, then emits `driver:error` WITH the stranded session.
+- Workflow: Map-backed lookups ('__proto__'/'toString' node ids now safe),
+  GraphError consistency + empty-id/node-field validation at construction,
+  drainTimeoutMs validated.
+- Goal: concurrent chase() of one goal id adopts the existing round instead
+  of crashing; resume scan finds the true latest round past maxRounds.
+- Examples: store-patrol sweeps crash-orphaned 'running' sessions at start;
+  minimal-loop budget reservations stop overlapping queries from each arming
+  the full remaining budget, caller-supplied budget hooks are merged, and
+  summary truncation is surrogate-safe.
+- CI: store-patrol.yml commits partial results before failing the job;
+  sdk-mutation-ratchet.yml single-target dispatch actually skips other
+  targets now.
+- **Integration suites** (the campaign's third deliverable):
+  `tests/integration-full-stack.test.ts` (scheduler + driver + workflow +
+  goal + delivery co-resident on ONE store, stop-safety, fake timers) and
+  `tests/integration-restart.test.ts` (file-store crash/restart:
+  exactly-once fires, workflow resume, goal resume, atomic ledger writes).
+- Tests 171 -> 231 (18 files); mutation floors hold (state 100 / spec 99.49
+  within tolerance, 1 documented equivalence survivor / graph 97.84 up from
+  97.14 / decision 100).
+
+## 0.69.0 — 2026-07-18
+
+Keeper todo batch 2026-07-18 (SDK-side items 4–5): maestro fill-ins +
+quality-direction switch.
+
+- **Declarative workflow-graph loading** (hot-layer gate): new module
+  `src/workflow/load.ts` — `parseWorkflowGraphSource` (json, or md carrying
+  the graph in its first ```json fence; format sniffed or forced by
+  extension) + `loadWorkflowGraphFile`. NEVER throws: every malformed /
+  unreadable definition degrades to `{ ok: false, error }` for the host to
+  log and skip; an ok result is always an already-validated, runnable graph.
+- **Example 4 "综合整理任务"** (`examples/memory-tidy.mjs` + fake-timer e2e):
+  the consolidation ("dream") routine — scheduled dispatch → read the memory
+  health surface (`assessMemoryStoreHealth`, agent SDK 0.69.0) → merge
+  fragments into a digest card → delete the merged fragments → ledger
+  closeout; imports ONLY the two packages' public surfaces. The deterministic
+  executor seat is where the black pool puts an agent `query()`.
+- **Schedule missed-compensation check** (todo item 4c): verified ALREADY
+  implemented and tested — `catchUp: 'latest'/'all'` (`scheduler.ts` +
+  `spec.ts` cap semantics), cross-restart recovery, down-gap compensation
+  covered at both the component level (`scheduler.test.ts`, fake timers) and
+  the e2e level (`schedule-loop.e2e.test.ts`). No change needed.
+- **Mutation ratchet — every module family targeted**: new targets
+  `delivery-channel` (100.00 after a message-pin kill round; delivery was the
+  only family with zero mutation coverage) and `workflow-load` (100.00 after
+  a kill round: guard-message pins, format-forcing asymmetry, fence regex
+  pin, dead `?? ''` fallback removed). CI matrix extended to six maestro
+  targets.
+- **E2E clock discipline — zero real clocks**: all four real-timer e2e
+  suites (minimal-loop / schedule-loop / store-patrol / workflow-fanout)
+  converted to FAKE timers with a bounded drive loop (real HTTP/fs I/O flows
+  between advances); triple-run verified stable, wall-clock per suite drops
+  from seconds to milliseconds. The whole maestro test suite now runs on
+  fake timers only.
+
+Tests: 171 -> 180 passing (workflow-load 7, memory-tidy e2e 2).
 
 ## 0.68.0 — 2026-07-18
 

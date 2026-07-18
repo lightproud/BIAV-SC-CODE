@@ -41,8 +41,14 @@ export interface DispatchInput {
   maxAttempts?: number;
   /** Explicit id (host-side idempotency key); duplicate dispatch throws. */
   id?: string;
-  /** Earliest run time (epoch ms); default now. */
-  runAt?: number;
+  /**
+   * Earliest run time (epoch ms; must be finite — NaN/Infinity throw
+   * RangeError, they would otherwise make the session never-due forever).
+   * `null` = manual-claim only: nextRunAt persists as null, so claimDue NEVER
+   * lists the session and claimSession is the only way to start it (the
+   * race-free dispatch-then-run-inline pattern). Default: now.
+   */
+  runAt?: number | null;
 }
 
 export interface OutcomeInput {
@@ -86,7 +92,14 @@ export class TaskLedger {
     this.#store = opts.store;
     this.#clock = opts.clock ?? systemClock;
     this.#idFactory = opts.idFactory ?? (() => crypto.randomUUID());
-    this.#retry = { ...DEFAULT_RETRY_POLICY, ...opts.retry };
+    // A Partial<RetryPolicy> may carry EXPLICIT undefined values (e.g.
+    // { maxDelayMs: cfg.cap } where cfg.cap is unset); a plain spread would
+    // let those override the defaults with undefined and poison the backoff
+    // arithmetic — drop them so the default applies instead.
+    const overrides = Object.fromEntries(
+      Object.entries(opts.retry ?? {}).filter(([, value]) => value !== undefined),
+    ) as Partial<RetryPolicy>;
+    this.#retry = { ...DEFAULT_RETRY_POLICY, ...overrides };
     if (
       opts.claimLeaseMs !== undefined &&
       (!Number.isFinite(opts.claimLeaseMs) || opts.claimLeaseMs <= 0)
@@ -98,7 +111,17 @@ export class TaskLedger {
     this.#claimLeaseMs = opts.claimLeaseMs;
   }
 
-  /** Create a session in `pending`, due immediately unless runAt says later. */
+  /**
+   * Create a session in `pending`, due immediately unless runAt says later
+   * (or runAt is null = manual-claim only, see DispatchInput.runAt).
+   *
+   * Duplicate-id guard: get-then-put, NOT atomic. The assumption is a single
+   * writer per idempotency key (each key is minted and dispatched by exactly
+   * one host-side flow); two concurrent dispatches of the SAME id can both
+   * pass the get and last-write-wins. A true compare-and-swap needs store
+   * cooperation and belongs to the LedgerStore implementation (the SDK
+   * defines the seam only — library-not-framework).
+   */
   async dispatch(input: DispatchInput): Promise<SessionRecord> {
     if (typeof input.intent !== 'string' || input.intent.length === 0) {
       throw new TypeError('dispatch: intent must be a non-empty string');
@@ -106,6 +129,11 @@ export class TaskLedger {
     const maxAttempts = input.maxAttempts ?? this.#retry.maxAttempts;
     if (!Number.isInteger(maxAttempts) || maxAttempts < 1) {
       throw new RangeError(`dispatch: maxAttempts must be an integer >= 1, got ${maxAttempts}`);
+    }
+    // A non-finite runAt (NaN/Infinity) fails every `<= now` due-check, so the
+    // session would sit pending forever without ever being listed as due.
+    if (input.runAt !== undefined && input.runAt !== null && !Number.isFinite(input.runAt)) {
+      throw new RangeError(`dispatch: runAt must be a finite number or null, got ${input.runAt}`);
     }
     if (input.id !== undefined) {
       const existing = await this.#store.getSession(input.id);
@@ -123,7 +151,7 @@ export class TaskLedger {
       maxAttempts,
       createdAt: now,
       updatedAt: now,
-      nextRunAt: input.runAt ?? now,
+      nextRunAt: input.runAt === undefined ? now : input.runAt,
     };
     await this.#store.putSession(record);
     return { ...record };
@@ -133,6 +161,11 @@ export class TaskLedger {
    * Claim every due session (pending or retrying with nextRunAt <= now) for
    * an attempt: state -> running, attempts += 1, nextRunAt cleared. Returns
    * the claimed records; the caller (normally the driver) runs them.
+   *
+   * Sessions dispatched with runAt: null have no nextRunAt and are NEVER
+   * listed here (the dueBefore filter requires nextRunAt !== null) — that is
+   * what makes dispatch({ runAt: null }) + claimSession race-free against a
+   * co-resident driver polling claimDue.
    */
   async claimDue(now: number = this.#clock.now()): Promise<SessionRecord[]> {
     const due = await this.#store.listSessions({
@@ -161,8 +194,11 @@ export class TaskLedger {
    * The surgical sibling of claimDue for callers that execute inline (the
    * delivery channel) — claimDue would claim EVERY due session in the store
    * and steal a co-resident driver's work (review finding 2026-07-18).
-   * Unlike claimDue this claims regardless of nextRunAt: the caller created
-   * the session and is executing it now.
+   * Unlike claimDue this claims regardless of nextRunAt — including null:
+   * the caller created the session and is executing it now. Inline callers
+   * should dispatch with runAt: null so the session is invisible to claimDue
+   * in the dispatch->claim window; claimSession is then the ONLY way the
+   * session can start.
    */
   async claimSession(sessionId: string, now: number = this.#clock.now()): Promise<SessionRecord> {
     const session = await this.#store.getSession(sessionId);
@@ -193,6 +229,11 @@ export class TaskLedger {
    * calls this each poll tick.
    */
   async sweepExpiredLeases(now: number = this.#clock.now()): Promise<SessionRecord[]> {
+    // A lease-less ledger is a TRUE no-op — zero store calls (the driver
+    // invokes this every poll tick; a leased record can only exist where some
+    // ledger instance was configured with claimLeaseMs, and sweeping such
+    // records is that configuration's job).
+    if (this.#claimLeaseMs === undefined) return [];
     const running = await this.#store.listSessions({ states: ['running'] });
     const swept: SessionRecord[] = [];
     for (const session of running) {

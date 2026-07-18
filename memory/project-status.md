@@ -210,6 +210,13 @@
 > **未做**：周报 loop 生产切换（机制已备，待 T37 推送形态裁定）。
 > **版本钟**：2026-07-18 守密人裁定两包**锁步同版**（覆盖需求档 §2 双钟制），0.68.0 起同号、
 > CI 守卫相等；此后本节版本号即家族版本号。
+>
+> **第七战（0.69.0，2026-07-18 守密人待办批 4/5 项）**：workflow 声明式加载
+> （`parseWorkflowGraphSource` / `loadWorkflowGraphFile`，json / md fence、坏文件永不抛降级跳过，
+> 变异分 100）+ 例程四「综合整理任务」（`examples/memory-tidy.mjs`：定时派发→读健康面
+> `assessMemoryStoreHealth`→归并写卡→删碎片→台账收口，黑池做梦例程原型，假钟 e2e）+
+> schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
+> workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 
 ## Silver Core Testbed（`projects/silver-core-testbed/`，试金石，2026-07-18 施工封面立项）
 
@@ -230,13 +237,13 @@
 > fire point，**每天走一遍错过补偿路径**）。**漏缝四条实缝**（G1 契约套件缺交付 /
 > G2 认领无租约 kill -9 孤儿靠宿主自扫 / G3 Scheduler 短命宿主零号日死锁 + sched id
 > 无公开构造器 / G4 memory 无原样读回），全走公开面绕行、无一触碰非公开面。
-> **收尾双裁定（守密人 2026-07-18「甲甲」）**：T57 = CI 积累先行、72h 连跑缓议（转观察）；
-> T58 = **四缝全采纳、同日落地家族锁步 0.69.0**——G1 随包契约套件 / G2 认领租约 + 每 tick
+> **收尾双裁定（守密人 2026-07-18「甲甲」）**：T58 = CI 积累先行、72h 连跑缓议（转观察）；
+> T59 = **四缝全采纳、同日落地家族锁步 0.71.0（原编 0.69.0，合并时因 main 并行会话占号让号）**——G1 随包契约套件 / G2 认领租约 + 每 tick
 > 过期清扫 / G3 seedFirstRun + scheduleSessionId / G4 MemoryStore.read 原样读回；testbed
 > 换装消费新面（primeSchedules 绕行件删除），GAPS.md 四缝全销、绕行件留作回归证据。
-> **等待真实时间**：验收 2「连续 7 天无人值守」自 CI 首轮起算（T56）。首日真实发现：
+> **等待真实时间**：验收 2「连续 7 天无人值守」自 CI 首轮起算（T57）。首日真实发现：
 > agent SDK `mutation-ratchet.json` 的 loop-support 靶（地板 94.35）不在周检矩阵、从未被
-> 实测（T59 站岗；ratchet 巡检器每日盯防此类缺口）。
+> 实测（T60 站岗；ratchet 巡检器每日盯防此类缺口）。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
@@ -250,6 +257,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.69.0（2026-07-18，守密人待办批 SDK 侧 1–3 项）**：① 迁移文档刷新
+  `docs/MIGRATION-0.3x-to-0.68.md`（取代 0.52 版：斜杠退役 0.63 / MultiEdit 生命弧 /
+  npm 两连改名 / 锁步制 + 13 步黑池升级检查单——黑池升级咽喉铺平）；② 记忆便签三件套
+  （COMPAT 上游核对记录：官方 SDK 0.112.3 仅 memory_20250818 对齐无欠账；契约套件并发节：
+  单命令原子性 + last-write-wins 两条可执行检查、不加版本令牌；`assessMemoryStoreHealth`
+  健康深扫：目录水位软 48 / 腐烂度 mtime 诚实标注 / 容量余量 / supersede 链 / 读写比——
+  黑池做梦触发面，黑池侧已确认消费）；③ `provider.capabilities` 端点能力声明（按声明降级
+  逐条报告，画像机制维持不立项）+ `options.continuationPrompt` 续跑片段（openai-chat 默认开 /
+  anthropic 默认关，双协议假端点 e2e 验证注入）。3017 单测全绿 + 2 skipped（+19）。
 - **v0.63.1（2026-07-17，T49 批B · P0 存量高危+安全 6 项修复）**：H1 Edit/MultiEdit 非 UTF-8
   拒改守卫（`isUtf8`，防未编辑字节全文变 U+FFFD，顺带钝化 L15 Edit 侧）；H2 thinking 线型改按
   实发模型（`computeThinking(useModel)`，跨世代 fallback 不再必 400）；H3 openai 臂

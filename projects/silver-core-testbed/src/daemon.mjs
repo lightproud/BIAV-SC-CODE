@@ -12,7 +12,7 @@
  *            report), pid file for driverctl.
  *
  * Crash recovery (kill -9 semantics): two complementary layers since the
- * 0.69.0 gap adoption — claim leases (gap G2, claimLeaseMs on the ledger;
+ * 0.71.0 gap adoption — claim leases (gap G2, claimLeaseMs on the ledger;
  * expired claims are swept by the driver every tick, multi-driver safe) plus
  * the host boot sweep below (immediate recovery on restart instead of
  * waiting out the lease; single-driver deployments only, which this is).
@@ -52,7 +52,7 @@ export function buildHost({
   const ledger = new TaskLedger({
     store,
     retry: { maxAttempts: 3, baseDelayMs: 5_000, factor: 2, maxDelayMs: 20_000 },
-    // G2 lease belt (0.69.0): comfortably above the worst-case attempt
+    // G2 lease belt (0.71.0): comfortably above the worst-case attempt
     // (queryTimeoutMs) so only genuinely dead claims ever expire.
     claimLeaseMs: queryTimeoutMs + 60_000,
   });
@@ -108,7 +108,7 @@ export function buildHost({
     ledger,
     specs,
     pollIntervalMs,
-    // G3 (0.69.0): a footprint-less spec fires its most recent due point on
+    // G3 (0.71.0): a footprint-less spec fires its most recent due point on
     // the first tick — day-zero and newly-added hot-layer specs both covered.
     // (Replaces the host-side primeSchedules workaround that hand-formatted
     // sched: ids from a doc comment.)

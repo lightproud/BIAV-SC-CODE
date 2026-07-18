@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Day-one upgrade canary — the first thing to run after swapping the pin to
- * silver-core-sdk 0.52+ (see docs/MIGRATION-0.3x-to-0.52.md §0/§4).
+ * silver-core-sdk 0.52+ / silver-core-agent-sdk 0.68+ (see docs/MIGRATION-0.3x-to-0.68.md §0/§4).
  *
  * Four checks, one per failure class the upgrade touches:
  *   C1 build/import sanity     — the package resolves, query() is callable
@@ -324,6 +324,6 @@ console.log(
     `${results.filter((r) => r.status === 'PASS').length} passed, ${fails.length} failed, ${skips.length} skipped`,
 );
 if (fails.length > 0) {
-  console.log('If a check fails, start at docs/MIGRATION-0.3x-to-0.52.md section 3 (breaking points).');
+  console.log('If a check fails, start at docs/MIGRATION-0.3x-to-0.68.md section 3 (breaking points).');
 }
 process.exit(fails.length === 0 ? 0 : 1);

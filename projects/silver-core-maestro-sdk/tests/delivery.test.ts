@@ -136,7 +136,11 @@ describe('createDeliveryChannel.deliver', () => {
     const { store, channel } = setup(sink);
     const put = vi.spyOn(store, 'putSession');
 
-    await expect(channel.deliver({ body: '' })).rejects.toThrow(TypeError);
+    // Byte-exact message pin (mutation-kill: a blanked/reworded guard message
+    // must fail this assertion, not just the error type).
+    await expect(channel.deliver({ body: '' })).rejects.toThrow(
+      'deliver: message.body must be a non-empty string',
+    );
     // Non-string body rejected too (runtime guard behind the type).
     await expect(
       channel.deliver({ body: 42 as unknown as string }),
@@ -197,5 +201,54 @@ describe('delivery claim surgery (review hardening 2026-07-18)', () => {
     expect(seen.sort()).toEqual(['first', 'second']);
     // The driver's session was never touched by the channel's claims.
     expect((await ledger.getSession(driverJob.id))?.state).toBe('pending');
+  });
+
+  it('audit session is invisible to a due-hungry driver even in the dispatch->claimSession window and while the sink is slow (runAt: null, manual-claim only)', async () => {
+    const store = memoryStore();
+    const clock = testClock();
+    const ledger = new TaskLedger({ store, clock, idFactory: seq() });
+    const stolen: string[] = [];
+    // Co-resident driver simulated at the WORST possible moment: it polls
+    // claimDue immediately after the audit session's dispatch write lands in
+    // the store, before the channel's claimSession has run. A dispatch
+    // without runAt: null persists nextRunAt = now and loses this race.
+    const put = store.putSession.bind(store);
+    let polled = false;
+    store.putSession = async (record) => {
+      await put(record);
+      if (!polled && record.state === 'pending' && record.id.startsWith('delivery:')) {
+        polled = true;
+        const claimed = await ledger.claimDue(clock.now());
+        stolen.push(...claimed.map((s) => s.id));
+      }
+    };
+    let sinkStarted!: () => void;
+    const started = new Promise<void>((resolve) => (sinkStarted = resolve));
+    let release!: () => void;
+    const gate = new Promise<void>((resolve) => (release = resolve));
+    const channel = createDeliveryChannel({
+      ledger,
+      clock,
+      idFactory: seq(),
+      // Deferred sink: keeps the session mid-flight until the test releases it.
+      sink: async () => {
+        sinkStarted();
+        await gate;
+      },
+    });
+
+    const pending = channel.deliver({ body: 'audited' });
+    await started;
+    // The in-window poll (inside the putSession hook) claimed nothing.
+    expect(polled).toBe(true);
+    expect(stolen).toEqual([]);
+    // Mid-flight (sink still hanging, session running): a fresh driver poll
+    // still finds nothing to claim.
+    expect(await ledger.claimDue(clock.now())).toEqual([]);
+
+    release();
+    const receipt = await pending;
+    expect(receipt).toEqual({ sessionId: 'delivery:id-1', delivered: true });
+    expect((await ledger.getSession('delivery:id-1'))?.state).toBe('done');
   });
 });

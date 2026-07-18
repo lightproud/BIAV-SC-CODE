@@ -22,7 +22,7 @@
  * LedgerDriver.
  */
 
-export const MAESTRO_SDK_VERSION = '0.69.0';
+export const MAESTRO_SDK_VERSION = '0.71.0';
 
 // Clock seam
 export type { Clock } from './clock.js';
@@ -84,6 +84,8 @@ export type { SchedulerOptions, SchedulerEvent } from './schedule/scheduler.js';
 // Workflow graph executor (campaign 4: 声明式图,图定义是数据)
 export { GraphError, validateGraph, readyNodes, graphStatus } from './workflow/graph.js';
 export type { WorkflowNode, WorkflowGraph, WorkflowStatus } from './workflow/graph.js';
+export { loadWorkflowGraphFile, parseWorkflowGraphSource } from './workflow/load.js';
+export type { WorkflowGraphLoadResult, WorkflowGraphSourceFormat } from './workflow/load.js';
 export { WorkflowRun, workflowSessionId } from './workflow/run.js';
 export type {
   WorkflowRunOptions,

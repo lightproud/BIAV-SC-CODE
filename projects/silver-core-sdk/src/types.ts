@@ -1089,6 +1089,50 @@ export type OpenAIProtocolOptions = {
 };
 
 /**
+ * Structured capability declaration for ONE endpoint (BPT-EXTENSION, keeper
+ * memo 2026-07-18 §3): what the endpoint TRULY supports, declared by the
+ * host that connected it. The engine degrades per declaration — with a debug
+ * diagnostic, never silently — instead of assuming full capability for every
+ * gateway. Omitted object or omitted fields keep the current per-protocol
+ * behavior exactly (drop-in). This is a declaration seam, NOT a model
+ * profile: no probing, no inference, no per-model tables (the "model surface
+ * profile" mechanism stays un-chartered per the same memo).
+ */
+export type ProviderCapabilities = {
+  /**
+   * Usage-reporting precision of the endpoint's stream. 'exact' (the
+   * default assumption): token counts are authoritative. 'approximate':
+   * counts exist but are estimates (cost figures are directional).
+   * 'none': the endpoint reports no usage — cost estimation and
+   * `maxBudgetUsd` are unenforceable; the engine says so once at startup
+   * instead of quietly booking $0.
+   */
+  usage?: 'exact' | 'approximate' | 'none';
+  /**
+   * The endpoint's prompt-caching semantics. 'explicit' (Anthropic
+   * cache_control breakpoints honored — the anthropic-protocol default),
+   * 'automatic' (the endpoint caches on its own; breakpoint markers are
+   * stripped from the wire so a strict gateway never 400s on them),
+   * 'none' (no caching at all; markers stripped likewise). The openai-chat
+   * translator never emits cache_control regardless.
+   */
+  promptCaching?: 'explicit' | 'automatic' | 'none';
+  /**
+   * Whether the endpoint supports thinking / reasoning output. `false`
+   * strips the `thinking` request field from the anthropic wire and
+   * suppresses `provider.openai.reasoningEffort` on the openai wire —
+   * for gateways that 400 on either.
+   */
+  thinking?: boolean;
+  /**
+   * Whether the endpoint supports parallel tool calls. `false` asks the
+   * endpoint for at most one tool call per turn: `disable_parallel_tool_use`
+   * on the anthropic wire, `parallel_tool_calls: false` on the openai wire.
+   */
+  parallelToolCalls?: boolean;
+};
+
+/**
  * BPT extension: direct-API transport settings. The reference SDK spawns a
  * CLI subprocess; this SDK talks to the Messages API itself, so connection
  * settings live here. Falls back to ANTHROPIC_API_KEY / ANTHROPIC_AUTH_TOKEN /
@@ -1108,6 +1152,13 @@ export type ProviderConfig = {
   protocol?: 'anthropic' | 'openai-chat';
   /** OpenAI-protocol tuning; read only when protocol is 'openai-chat'. */
   openai?: OpenAIProtocolOptions;
+  /**
+   * Structured declaration of what THIS endpoint truly supports (usage
+   * precision / prompt-caching semantics / thinking / parallel tool calls).
+   * The engine degrades per declaration with a debug diagnostic — never a
+   * silent full-capability assumption. Omit to keep per-protocol defaults.
+   */
+  capabilities?: ProviderCapabilities;
   /**
    * Custom model pricing (BPT-EXTENSION, audit 2026-07-10): USD-per-MTok
    * entries keyed by model-id prefix, merged over the static Claude table
@@ -1564,7 +1615,7 @@ export interface MemoryStore {
   rename(oldPath: string, newPath: string): Promise<string>;
   /**
    * OPTIONAL host-facing raw accessor (BPT-EXTENSION, testbed gap G4,
-   * 0.69.0): the exact stored content of an EXISTING file — no header, no
+   * 0.71.0): the exact stored content of an EXISTING file — no header, no
    * line numbers, no truncation. NOT one of the six model-facing memory
    * commands (models keep using view); embedders that read their own memory
    * writes back previously had to strip view's reference decoration or drop
@@ -1716,7 +1767,11 @@ export type MemoryOptions = {
 /**
  * Memory-operation counters for one run (spec R8 observability; rides
  * SDKRunMetrics.memoryHealth when the memory system is enabled). All-zero
- * means the model never touched memory.
+ * means the model never touched memory. For the on-demand DEEP health scan
+ * of the store itself (directory waterlines / rot / capacity headroom /
+ * supersede-chain integrity — the dream-trigger surface), see
+ * `assessMemoryStoreHealth()`; pass these counters in to get the read/write
+ * ratio stamped alongside.
  */
 export type SDKMemoryHealth = {
   /** Total memory tool invocations. */
@@ -1961,6 +2016,19 @@ export type Options = {
    * string or segments systemPrompt (the caller owns those verbatim).
    */
   includeEnvironmentContext?: boolean;
+  /**
+   * Automation-continuation prompt fragment (BPT-EXTENSION, keeper memo
+   * 2026-07-18 §3): append a short sdk-original fragment to the default
+   * harness telling the model it runs inside an automated loop — finish ALL
+   * the work before ending the turn, keep calling tools, no mid-task
+   * progress reports. Motivated by mainline non-Anthropic models stalling
+   * mid-run ("中途熄火") on agentic tasks. Default is PROTOCOL-GATED:
+   * `true` on `provider.protocol: 'openai-chat'`, `false` on 'anthropic'
+   * (whose harness already carries the act-when-ready discipline). Explicit
+   * true/false overrides the default either way. Preset/default systemPrompt
+   * path only — a string or segments systemPrompt is caller-owned verbatim.
+   */
+  continuationPrompt?: boolean;
   stderr?: (data: string) => void;
   /** ACCEPTED-IGNORED (audit 2026-07-10): despite the official name, this SDK
    *  has no consumer for the flag — project `.mcp.json` loading is governed by

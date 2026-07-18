@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-18",
   "stats": {
-    "nodes": 361,
-    "edges": 424
+    "nodes": 362,
+    "edges": 426
   },
   "nodes": [
     {
@@ -2189,9 +2189,9 @@
       "tier": "search"
     },
     {
-      "id": "/projects/silver-core-sdk-doc-migration-0-3x-to-0-52.md",
+      "id": "/projects/silver-core-sdk-doc-migration-0-3x-to-0-68.md",
       "type": "documentation",
-      "title": "silver-core-sdk MIGRATION-0.3x-to-0.52",
+      "title": "silver-core-sdk MIGRATION-0.3x-to-0.68",
       "tags": [
         "data_layer:curated",
         "design-doc",
@@ -3259,6 +3259,17 @@
       "id": "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "type": "documentation",
       "title": "sdk-cross-protocol-routing-bpt-handoff-20260713",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
+      "type": "documentation",
+      "title": "silver-core-maestro-sdk-bug-audit-r1-20260718",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4596,6 +4607,12 @@
       "source": "/community/community-youtube.md",
       "target": "/characters/54117.md",
       "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -5976,6 +5993,12 @@
       "source": "/sources/youtube.md",
       "target": "/characters/54117.md",
       "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {

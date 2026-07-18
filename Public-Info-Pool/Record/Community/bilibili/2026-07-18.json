@@ -1,8 +1,8 @@
 {
   "date": "2026-07-18",
-  "archived_at": "2026-07-18T07:47:39.792402+00:00",
+  "archived_at": "2026-07-18T10:19:53.336240+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 8,
   "items": [
     {
       "title": "器官。",
@@ -74,6 +74,52 @@
       "platform_region": "cn"
     },
     {
+      "title": "不进超维空间我就会死",
+      "summary": "融灾1-5",
+      "source": "bilibili",
+      "time": "2026-07-18T07:31:08+00:00",
+      "url": "https://www.bilibili.com/video/BV1iaKw6DEvf",
+      "engagement": 111,
+      "is_hot": false,
+      "author": "上完大号按哪个键",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 111,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/51874b7ed22d6da992e57e8fbed90176f8ccb142.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【绘画过程】saya",
+      "summary": "-\n  └ 耕司青海瑶 (1赞): [星星眼][星星眼][星星眼]\n  └ 是只鸽子罢了 (1赞): 哇，好可爱\n  └ 我是梶 (1赞): 好美。。。",
+      "source": "bilibili",
+      "time": "2026-07-17T21:23:58+00:00",
+      "url": "https://www.bilibili.com/video/BV1yYNf6pE9t",
+      "engagement": 105,
+      "is_hot": false,
+      "author": "fogsleeppp",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 101,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/92f8c161a4951cbdc7d52d542615a84456becdb5.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "【忘却前夜】科研向｜双大鲨鱼自爆追击流莫丝",
       "summary": "-\n  └ 嘎啦嘎啦果 (1赞): 这个队没易伤，所以带莱克钥令，爆发回合鲨鱼必然有大，肯反复凹的话，必然会有易伤。\n刚需+12希莱斯特，带无垢是因为觉醒后回血能有临时触伤，而无垢的效果是开钥令回血。\n其他人都需要超限。\n鲨鱼的莉莉1680固定，能帮忙省下一个熔朵专，双持可以优化成红夫人专武，效果应该比皮克曼专更好？\n鲨鱼腾不开可以换成詹金，效果应该差挺多的，现在我还没试过。\n说句别的，现在一堆新角色，一百五、两百的基础狂气，其实都是在防温柯尔。",
       "source": "bilibili",
@@ -92,6 +138,52 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/9f4c1becd5f874da1ee27ffe04ac97ba3de39419.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "雪豹哲學與瓦爾德齊肯學派——聆聽織女的聲音",
+      "summary": "這一集有教育意義\n  └ 暮知藏 (0赞): 我喜欢你",
+      "source": "bilibili",
+      "time": "2026-07-18T09:56:32+00:00",
+      "url": "https://www.bilibili.com/video/BV1uQKP61EPQ",
+      "engagement": 19,
+      "is_hot": false,
+      "author": "密斯卡托尼克的银猫",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 18,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/ad3230904cf66b7b553f54d828c3ab313cbfd637.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "《忘却前夜》第二章以蜡像之名P5",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-18T09:33:00+00:00",
+      "url": "https://www.bilibili.com/video/BV172NL6REfa",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "不可燃抹茶果冻",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 2,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/dc4ba35979082fb250fb8233fc26d78a68654924.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

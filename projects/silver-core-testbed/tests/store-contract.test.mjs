@@ -32,7 +32,7 @@ const session = (over = {}) => ({
   ...over,
 });
 
-describe('delivered contract suite (gap G1 adopted in 0.69.0)', () => {
+describe('delivered contract suite (gap G1 adopted in 0.71.0)', () => {
   it('runLedgerStoreContractSuite passes the testbed store', async () => {
     const report = await runLedgerStoreContractSuite(() => freshStore());
     expect(report.failed).toBe(0);

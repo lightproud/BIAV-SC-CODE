@@ -59,11 +59,11 @@ tests/     store-contract（LedgerStore 契约套件 14 例）· inspectors · s
 - 四战全部落地：契约套件绿（验收 1）；四巡检器 + 做梦首轮生产真跑全绿
   （5 会话 done，台账逐轮可查）；真实钟演练 10 检查 PASS（kill -9 恢复 + 停机补偿，
   验收 3 的短程实证）；首份基线入库（验收 4）；漏缝清单四条实缝（验收 5）。
-- **收尾双裁定（守密人 2026-07-18「甲甲」）**：72h 长跑 = CI 积累先行、缓议（T57 转观察）；
-  四缝 = 全采纳、同日落地家族 0.69.0（G1-G3 maestro / G4 agent），testbed 已换装消费
+- **收尾双裁定（守密人 2026-07-18「甲甲」）**：72h 长跑 = CI 积累先行、缓议（T58 转观察，原编 T57 合并让号）；
+  四缝 = 全采纳、同日落地家族 0.71.0（原编 0.69.0，合并时因 main 并行会话占号让号）（G1-G3 maestro / G4 agent），testbed 已换装消费
   新面（daemon 用 `claimLeaseMs` + `seedFirstRun`、契约测试并跑随包套件、readIfExists
   优先 `store.read`；primeSchedules 绕行件删除），销缝注见 `GAPS.md`。
-- **等待真实时间的验收**：验收 2「连续 7 天无人值守」自 CI 首轮起算（挂账 T56）。
+- **等待真实时间的验收**：验收 2「连续 7 天无人值守」自 CI 首轮起算（挂账 T57，原编 T56）。
 - 首日真实发现：agent SDK `mutation-ratchet.json` 的 `loop-support` 靶（地板 94.35）
   不在周检矩阵中、从未被实测——ratchet 巡检器的「地板无实测」检查将在 CI 环境每日
   盯住此类缺口。

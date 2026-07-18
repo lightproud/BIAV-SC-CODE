@@ -67,6 +67,16 @@ export {
   type MemoryStoreContractReport,
   type MemoryStoreContractResult,
 } from './contract-suite.js';
+export {
+  assessMemoryStoreHealth,
+  DEFAULT_SOFT_WATERLINE,
+  DEFAULT_STALE_AFTER_DAYS,
+  type AssessMemoryStoreHealthOptions,
+  type MemoryDirectoryWaterline,
+  type MemoryStalenessReport,
+  type MemoryStoreAssessment,
+  type MemorySupersedeReport,
+} from './health.js';
 
 /** The official server-declared entry for native mode (docs: the entry is the
  *  entire configuration). */

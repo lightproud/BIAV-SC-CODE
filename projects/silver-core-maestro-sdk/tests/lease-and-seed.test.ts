@@ -1,5 +1,5 @@
 /**
- * Gap-adoption tests (0.69.0, keeper ruling 2026-07-18):
+ * Gap-adoption tests (0.71.0, keeper ruling 2026-07-18):
  *  - G2 claim leases: claimLeaseMs stamps leaseUntil, sweepExpiredLeases
  *    settles expired running claims into the retry path (multi-driver safe,
  *    lease-less records untouched), the driver sweeps each tick, and

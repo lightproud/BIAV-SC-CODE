@@ -7,8 +7,8 @@
 >
 > 空清单 = 接口面首次通过第二消费者检验。本清单**不为空**：四条实缝，见下。
 >
-> **销缝状态（守密人 2026-07-18「甲」裁定：四条全采纳排期，同日落地家族 0.69.0）**：
-> G1/G2/G3 落 silver-core-maestro-sdk 0.69.0，G4 落 silver-core-agent-sdk 0.69.0；
+> **销缝状态（守密人 2026-07-18「甲」裁定：四条全采纳排期，同日落地家族 0.71.0）**：
+> G1/G2/G3 落 silver-core-maestro-sdk 0.71.0，G4 落 silver-core-agent-sdk 0.71.0；
 > testbed 已换装消费新面（daemon 用 claimLeaseMs + seedFirstRun、契约测试并跑随包
 > 套件、readIfExists 优先 store.read），原绕行件保留为回归证据。逐条落地注见各缝尾。
 
@@ -23,7 +23,7 @@
 - **testbed 绕行**：`tests/store-contract.test.mjs` 自写 14 例（纯契约 + 经
   TaskLedger/LedgerDriver 端到端），全绿。
 - **建议**：maestro 侧仿 memory 契约套件交付 `runLedgerStoreContractSuite(store)`。
-- **✔ 已销（0.69.0）**：`runLedgerStoreContractSuite` + `ledgerStoreContractCheckNames`
+- **✔ 已销（0.71.0）**：`runLedgerStoreContractSuite` + `ledgerStoreContractCheckNames`
   随包交付（12 检查，坏实现落报告不抛出）；testbed 契约测试并跑随包套件全绿。
 
 ## G2 · 认领无租约：kill -9 孤儿只能靠宿主自扫
@@ -39,7 +39,7 @@
   租约/心跳戳只能长在 SDK 的记录形状里，宿主侧补不了。
 - **建议**：SessionRecord 增认领租约（claimedUntil / 驱动器身份戳）或至少交付
   文档化的 sweep 原语与其安全边界。
-- **✔ 已销（0.69.0）**：`TaskLedgerOptions.claimLeaseMs` 认领盖租约戳
+- **✔ 已销（0.71.0）**：`TaskLedgerOptions.claimLeaseMs` 认领盖租约戳
   （`SessionRecord.leaseUntil`）+ `TaskLedger.sweepExpiredLeases()`（只动过期租约，
   多驱动器共库安全），驱动器每 tick 自动清扫；无租约台账与存量记录逐字节旧行为。
   testbed 双层并用：租约（在线自愈）+ 开机自扫（重启即时恢复，单驱动器场景）。
@@ -58,7 +58,7 @@
   同样被播种）。实证：首轮 5 spec 全部 primed 并执行。
 - **建议**：导出 `scheduleSessionId()`；Scheduler 增 `seedOnFirstRun`（或
   `backfill: 'latest'`）选项原生覆盖短命宿主。
-- **✔ 已销（0.69.0）**：`scheduleSessionId()` 公开导出 + `SchedulerOptions.seedFirstRun`
+- **✔ 已销（0.71.0）**：`scheduleSessionId()` 公开导出 + `SchedulerOptions.seedFirstRun`
   （无足迹 spec 起点回拨一个节拍，首 tick 恰发最近一个到期点、两种 catchUp 同构；
   默认关，旧行为逐字节不变）。testbed 宿主侧 primeSchedules 绕行件已删除换装。
 
@@ -72,7 +72,7 @@
 - **风险**：剥壳对「内容本身长得像行号格式」的文件不保真（当前场景无此类内容，
   可接受）；参考格式头若随上游对齐变化，剥壳正则会静默漂移。
 - **建议**：公开面补 `read(path): Promise<string>`（原样字节，不裁剪不编号）。
-- **✔ 已销（0.69.0）**：`MemoryStore.read?(path)` 可选宿主面原样读回（引擎店实现，
+- **✔ 已销（0.71.0）**：`MemoryStore.read?(path)` 可选宿主面原样读回（引擎店实现，
   R4 路径校验同行；六条模型面命令逐字节不变；自定义实现可缺省、消费方特性探测）。
   testbed `readIfExists` 优先走 read，stripView 降级保留。
 

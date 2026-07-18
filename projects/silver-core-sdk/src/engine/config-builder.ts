@@ -25,7 +25,7 @@ import type {
   SystemCompositionPart,
 } from '../internal/contracts.js';
 import { buildCompactionConfig } from './compaction.js';
-import { buildSystemPromptParts } from './prompts.js';
+import { buildSystemPromptParts, renderVolatileTail } from './prompts.js';
 import { estimateTextTokens } from './tokens.js';
 import { gatherEnvironment, loadProjectInstructions } from './runtime-context.js';
 import {
@@ -80,6 +80,10 @@ export function buildEngineConfig(args: {
   let systemBlocks: TextBlockParam[] | undefined;
   let systemPromptStable = '';
   let systemPromptVolatile = '';
+  // audit r4 Z8-2/Rdt-4: per-turn rebuild of the volatile <env> tail for the
+  // live model + current date (set on the runtime-assembly path when an <env>
+  // block exists; undefined otherwise). The loop calls it each turn.
+  let rebuildVolatileSuffix: ((liveModel: string) => string) | undefined;
   // Git branch of cwd at query construction, reused from the runtime-context
   // probe below (no second git call) and persisted into the session meta line
   // so listSessions/getSessionInfo report SDKSessionInfo.gitBranch. Absent on
@@ -163,21 +167,31 @@ export function buildEngineConfig(args: {
     const includeEnv = options.includeEnvironmentContext !== false;
     // E6 (audit r2): "Today's date" must be the HOST'S calendar day, not the
     // UTC one — toISOString() told a UTC+8 host yesterday's date every day
-    // from 00:00 to 08:00 local.
-    const now = new Date();
-    const localToday = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    // from 00:00 to 08:00 local. audit r4 Rdt-4: recomputed per rebuild so a
+    // session spanning local midnight refreshes the date, not just at build.
+    const localCalendarDay = (): string => {
+      const d = new Date();
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    };
     const environment = includeEnv
-      ? gatherEnvironment(cwd, initialModel, localToday)
+      ? gatherEnvironment(cwd, initialModel, localCalendarDay())
       : undefined;
     sessionGitBranch = environment?.gitBranch;
     const projectInstructions = loadProjectInstructions(cwd, options.settingSources);
     // There is one harness prompt: buildSystemPromptParts resolves both an unset
     // systemPrompt and the claude_code preset to the same comprehensive default.
+    // Automation-continuation fragment (keeper memo 2026-07-18 §3):
+    // protocol-gated default — armed on openai-chat (mainline non-Anthropic
+    // models stall mid-run on agentic tasks), off on anthropic; an explicit
+    // options.continuationPrompt wins either way.
+    const continuation =
+      options.continuationPrompt ?? options.provider?.protocol === 'openai-chat';
     const promptParts = buildSystemPromptParts(sp, {
       cwd,
       toolNames: [...args.builtinToolNames],
       environment,
       projectInstructions,
+      ...(continuation ? { continuation: true } : {}),
     });
     systemPromptStable = promptParts.stable;
     // Boundary between the shared base harness and the appended stable tail
@@ -205,6 +219,16 @@ export function buildEngineConfig(args: {
         label: 'environment',
         estTokens: estimateTextTokens(systemPromptVolatile),
       });
+    }
+    // audit r4 Z8-2/Rdt-4: capture the base <env> facts so the loop can rebuild
+    // the tail per turn with the live model and a freshly-computed calendar day.
+    // Only when an <env> block is actually present (otherwise the tail is the
+    // bare working-directory line — nothing per-run to refresh). Byte-identical
+    // to the baked tail for equal inputs (renderVolatileTail is the same code
+    // buildSystemPromptParts used above).
+    if (environment !== undefined && systemPromptVolatile.length > 0) {
+      rebuildVolatileSuffix = (liveModel: string): string =>
+        renderVolatileTail(cwd, { ...environment, model: liveModel, date: localCalendarDay() });
     }
     systemComposition = { parts: compositionParts };
   }
@@ -261,6 +285,8 @@ export function buildEngineConfig(args: {
     ...(systemPromptVolatile.length > 0
       ? { systemPromptSuffix: systemPromptVolatile }
       : {}),
+    // audit r4 Z8-2/Rdt-4: per-turn <env> tail refresh (live model + date).
+    ...(rebuildVolatileSuffix !== undefined ? { rebuildVolatileSuffix } : {}),
     // Base/tail split offset for the 2nd system cache breakpoint (string/preset
     // path only; the loop guards 0 < baseLen < systemPrompt.length so it
     // degrades to a single breakpoint when there is no appended tail).

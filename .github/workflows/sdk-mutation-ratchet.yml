@@ -38,11 +38,13 @@ jobs:
       fail-fast: false
       matrix:
         target: [permissions, transport-openai, transport-anthropic, sessions]
+    # Single-target dispatch: matrix legs cannot be pruned (matrix context is
+    # unavailable in job-level if), so every REAL step carries the same gate —
+    # an echo+exit-0 "skip step" gates nothing (audit H4). Empty/absent input
+    # (schedule runs) means the full matrix.
     steps:
-      - name: Skip when a single target was requested and this is not it
-        if: github.event.inputs.target != '' && github.event.inputs.target != matrix.target
-        run: echo "skipping ${{ matrix.target }}" && exit 0
       - uses: actions/checkout@v7
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         with:
           # SPARSE: the SDK suite does not need the 2.4G archive layers
           # (same exclusions as silver-core-sdk.yml; corpus-sync tests skip
@@ -53,12 +55,15 @@ jobs:
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         with:
           node-version: '20'
       - name: Install dependencies
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         working-directory: projects/silver-core-sdk
         run: npm ci
       - name: Resolve mutate pattern from the baseline
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         id: pattern
         working-directory: projects/silver-core-sdk
         run: |
@@ -80,13 +85,15 @@ jobs:
           echo "mutate=$PATTERN" >> "$GITHUB_OUTPUT"
           echo "ignore_static=$IGNORE_STATIC" >> "$GITHUB_OUTPUT"
       - name: Stryker round (${{ matrix.target }})
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         working-directory: projects/silver-core-sdk
         run: npx stryker run --mutate "${{ steps.pattern.outputs.mutate }}" ${{ steps.pattern.outputs.ignore_static }}
       - name: Ratchet check
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         working-directory: projects/silver-core-sdk
         run: node scripts/check-mutation-ratchet.mjs --name "${{ matrix.target }}"
       - name: Upload mutation report
-        if: always()
+        if: ${{ always() && (!github.event.inputs.target || github.event.inputs.target == matrix.target) }}
         uses: actions/upload-artifact@v4
         with:
           name: mutation-report-${{ matrix.target }}
@@ -103,12 +110,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [ledger-state, schedule-spec, workflow-graph, goal-decision]
+        target: [ledger-state, schedule-spec, workflow-graph, goal-decision, delivery-channel, workflow-load]
+    # Same per-step gate as the ratchet job above (audit H4): matrix legs
+    # cannot be pruned at job level, and an echo+exit-0 step skips nothing.
     steps:
-      - name: Skip when a single target was requested and this is not it
-        if: github.event.inputs.target != '' && github.event.inputs.target != matrix.target
-        run: echo "skipping ${{ matrix.target }}" && exit 0
       - uses: actions/checkout@v7
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         with:
           sparse-checkout: |
             /*
@@ -116,15 +123,20 @@ jobs:
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v4
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         with:
           node-version: '20'
       - name: Install dependencies (workspace root)
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         run: npm ci
       - name: Build agent SDK (workspace dependency of the e2e tests)
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         run: npm run build --workspace silver-core-agent-sdk
       - name: Build orchestrator SDK
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         run: npm run build --workspace silver-core-maestro-sdk
       - name: Resolve mutate pattern from the baseline
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         id: pattern
         working-directory: projects/silver-core-maestro-sdk
         run: |
@@ -136,13 +148,15 @@ jobs:
           ")
           echo "mutate=$PATTERN" >> "$GITHUB_OUTPUT"
       - name: Stryker round (${{ matrix.target }})
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         working-directory: projects/silver-core-maestro-sdk
         run: npx stryker run --mutate "${{ steps.pattern.outputs.mutate }}"
       - name: Ratchet check
+        if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         working-directory: projects/silver-core-maestro-sdk
         run: node scripts/check-mutation-ratchet.mjs --name "${{ matrix.target }}"
       - name: Upload mutation report
-        if: always()
+        if: ${{ always() && (!github.event.inputs.target || github.event.inputs.target == matrix.target) }}
         uses: actions/upload-artifact@v4
         with:
           name: mutation-report-maestro-${{ matrix.target }}

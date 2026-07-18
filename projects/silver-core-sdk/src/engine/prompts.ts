@@ -51,6 +51,13 @@ export type PromptContext = {
    * runtime carries codebase instructions.
    */
   projectInstructions?: string;
+  /**
+   * Arm the automation-continuation fragment on the default harness (keeper
+   * memo 2026-07-18 §3): resolved by the caller from
+   * `options.continuationPrompt` with a protocol-gated default (openai-chat
+   * on, anthropic off). Appended last, so unarmed output is byte-unchanged.
+   */
+  continuation?: boolean;
 };
 
 /**
@@ -121,14 +128,22 @@ function environmentBlock(cwd: string, env: EnvironmentContext): string {
 /**
  * The per-run volatile tail: the `<env>` context block when environment facts
  * are supplied, else the bare working directory. Either way the cwd is present
- * so relative-path guidance stays valid.
+ * so relative-path guidance stays valid. Exported so the engine loop can
+ * REBUILD it per turn from the live model + current date (audit r4 Z8-2/Rdt-4)
+ * without re-running the whole prompt assembly; the internal volatileTail
+ * delegates here so the baked and rebuilt tails are byte-identical for equal
+ * inputs.
  */
-function volatileTail(ctx: PromptContext): string {
-  const lines = ctx.environment
-    ? [environmentBlock(ctx.cwd, ctx.environment)]
-    : [`Working directory: ${ctx.cwd}`];
+export function renderVolatileTail(cwd: string, environment?: EnvironmentContext): string {
+  const lines = environment
+    ? [environmentBlock(cwd, environment)]
+    : [`Working directory: ${cwd}`];
   lines.push('Treat relative paths as relative to this directory and prefer absolute paths in tool calls.');
   return lines.join('\n');
+}
+
+function volatileTail(ctx: PromptContext): string {
+  return renderVolatileTail(ctx.cwd, ctx.environment);
 }
 
 /**
@@ -150,7 +165,10 @@ function volatileTail(ctx: PromptContext): string {
 function defaultHarnessStable(ctx: PromptContext): string {
   // Composed by the fragment-store assembler (assembleMainLoop) from
   // prompt-fragments.ts; byte-locked by prompt-assembler.test / v5-mainloop-golden.
-  return assembleMainLoop({ toolNames: ctx.toolNames });
+  return assembleMainLoop({
+    toolNames: ctx.toolNames,
+    ...(ctx.continuation === true ? { continuation: true } : {}),
+  });
 }
 
 /**

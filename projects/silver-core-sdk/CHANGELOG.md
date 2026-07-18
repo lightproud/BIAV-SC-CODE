@@ -16,10 +16,12 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
-## 0.69.0 — 2026-07-18
+## 0.71.0 — 2026-07-18
 
 Testbed gap adoption, agent-side slice (keeper ruling 2026-07-18, option 甲;
-G1-G3 land in silver-core-maestro-sdk 0.69.0):
+G1-G3 land in silver-core-maestro-sdk 0.71.0). Version note: authored as
+0.69.0, renumbered to 0.71.0 at merge time — 0.69.0/0.70.0 were taken on main
+by a parallel session (#743/#744), same let-the-number-go discipline as 0.53.2:
 
 - **G4 — `MemoryStore.read?(path)`** (BPT-EXTENSION, host-facing): OPTIONAL
   raw accessor returning the exact stored content of an existing file — no
@@ -33,6 +35,125 @@ G1-G3 land in silver-core-maestro-sdk 0.69.0):
   reading their own memory writes back had to strip view's decoration or
   bypass the engine via the FileOps primitive layer.
 
+## 0.70.0 — 2026-07-18
+
+Lockstep alignment with silver-core-maestro-sdk 0.70.0 (maestro audit
+round 1: 29 defects fixed + integration suites). No agent-side changes.
+
+## 0.69.0 — 2026-07-18
+
+Keeper todo batch 2026-07-18 (SDK-side items 1–3): migration doc refresh +
+memory memo trio + provider capability declaration & continuation fragment.
+
+- **Migration doc refreshed to the 0.68 terminus**: `docs/MIGRATION-0.3x-to-0.68.md`
+  supersedes (and removes) `MIGRATION-0.3x-to-0.52.md` — full 0.3x→0.68
+  channel: slash retirement (0.63.0), MultiEdit arc (0.61.0→0.65.0, net zero
+  for 0.3x pins), npm rename chain (0.66.0/0.67.0, runtime brand unchanged),
+  family lockstep + maestro peer range (0.68.0), new default-semantics shifts
+  (openai 128k output / `sonnet`→claude-sonnet-5 / proxy-env httpClient), and
+  a 13-step black-pool upgrade checklist. Live references (canary, legacy
+  suite, fixture) repointed.
+- **Memory memo trio (keeper memo 2026-07-18)**: ① COMPAT.md memory row
+  carries the upstream check record (official SDK 0.112.3 declares only
+  memory_20250818 — no alignment debt); ② the storage contract declares its
+  concurrency semantics — single-command atomicity + last-write-wins, NO new
+  machinery (no version tokens) — with two executable contract-suite checks
+  (parallel writes never interleave-corrupt; a stale `str_replace` fails
+  instead of clobbering) and a docs/MEMORY.md section; ③ **store health
+  assessment** `assessMemoryStoreHealth(ops)` (public API): deep scan behind
+  the black-pool dream trigger — per-directory waterlines (soft 48 warning),
+  rot (requires backend mtimes; `MemoryEntryStat/MemoryDirEntry.mtimeMs` new
+  OPTIONAL fields, local-fs backend populates them; marked unavailable when
+  absent, never fabricated), capacity headroom, supersede-chain integrity
+  (S6 frontmatter convention), read/write ratio from the R8 counters, bounded
+  scan with an explicit truncation flag.
+- **Provider capability declaration** `provider.capabilities` (BPT-EXTENSION):
+  structured per-endpoint declaration of usage precision / promptCaching
+  semantics / thinking / parallelToolCalls; the engine degrades per
+  declaration at the wire boundary (anthropic: strips `thinking` +
+  `cache_control`, forces `disable_parallel_tool_use`; openai-chat:
+  suppresses `reasoning_effort`, sends `parallel_tool_calls: false`; usage
+  surfaces an informational at startup) — with a debug line per degradation,
+  never silently. Omitted declaration keeps today's bytes exactly. The
+  "model surface profile" mechanism stays deliberately un-chartered.
+- **Automation-continuation fragment** `options.continuationPrompt`
+  (BPT-EXTENSION): sdk-original fragment appended LAST to the default
+  harness ("finish ALL the work before ending the turn, no mid-task
+  reports") — default protocol-gated ON for openai-chat (mainline
+  non-Anthropic models measurably stall mid-run), OFF for anthropic;
+  explicit boolean overrides. Unarmed output is byte-unchanged (goldens
+  untouched). Verified end-to-end against fake endpoints on BOTH protocols.
+
+Tests: 3021 passing + 2 skipped after rebasing onto 0.68.2 (19 new here: capability degradation unit+wire +
+fragment e2e both protocols 11, health assessment 8; the two concurrency
+contract checks ride the existing contract-suite drivers).
+
+## 0.68.2 — 2026-07-18
+
+Z8-2 / Rdt-4 (audit r4, keeper ruling 2026-07-18 「剩下一个低危站岗也要修」):
+the volatile `<env>` block is now rebuilt PER TURN from the live model and a
+freshly-computed local calendar day, instead of being baked once at query
+construction. A fallback-model switch no longer tells the model it is the
+primary model (`You are powered by the model named …`), and a session
+spanning local midnight no longer serves a stale `Today's date`.
+
+**Cache-safe by design** (this was the earlier over-stated "risk", corrected):
+the volatile tail rides AFTER the cache breakpoint and carries no
+`cache_control`, so refreshing it never touches the cached stable prefix —
+the whole point of the v0.5+ stable/volatile split was to let cwd-class facts
+change freely. The prior deferral was a cluster-ownership boundary (the
+prompt-assembly fix needed a change in loop.ts), not a real cache hazard.
+
+- **prompts.ts**: `renderVolatileTail(cwd, environment?)` exported; the
+  internal `volatileTail` delegates to it, so the baked and rebuilt tails are
+  byte-identical for equal inputs.
+- **config-builder.ts**: captures the base `<env>` facts + cwd into a
+  `rebuildVolatileSuffix(liveModel)` closure on the engine config (present only
+  when an `<env>` block exists); the local calendar day is recomputed per
+  rebuild.
+- **loop.ts**: each streaming attempt refreshes `systemPromptSuffix` via that
+  closure (with the live `useModel`) just before deriving the wire system
+  field. An unchanged model + day reproduces the exact same suffix bytes, so a
+  steady-state turn keeps the cache prefix stable.
+
++4 regression tests (rebuild reflects a fallback model / same-model byte
+identity / absent when `<env>` disabled). Full vitest 3001 passed / 3 skipped;
+tsc + build clean.
+
+## 0.68.1 — 2026-07-18
+
+Result accounting contract — clarified, single-mechanism (keeper ruling
+2026-07-18, options 乙+丙; supersedes the deferred/hybrid idea).
+
+Background: a query using `options.memory` (session-end round) or in-flight
+background subagents can spend money AFTER a turn's `result` was yielded, so
+the query emits a trailing corrected result at teardown with the complete
+cumulative accounting (the "待裁⑤" mechanism). We considered deferring the
+single result instead (one-result-per-query), but deferral deadlocks an
+interactive streaming consumer that waits for the result before sending its
+next input — so the correction is the only universal, deadlock-safe
+mechanism, and a second (mode-split) mechanism would be redundant and
+introduce a mode-dependent footgun. Chosen instead: keep the one correction
+mechanism, and make it clean + explicit.
+
+- **丙 (src/query.ts)**: the trailing corrected result now REUSES the original
+  result's `uuid` instead of minting a new one. A consumer that keys/dedupes
+  results by `uuid` collapses the two into one (latest-wins = complete
+  accounting) with no special-casing; a non-deduping consumer still receives
+  both and applies the documented last-wins rule. `num_turns: 0` + zero
+  `usage` still keep the per-result sums from double-counting.
+- **乙 (docs/COMPAT.md)**: new "Result accounting contract" section makes the
+  previously-implicit contract explicit — cumulative fields (`total_cost_usd`,
+  `duration_api_ms`) are last-wins (never sum), per-result fields
+  (`num_turns`, `usage`) are per-turn (sum), when the correction appears, the
+  uuid-reuse behavior, and the deadlock rationale. The `result` row in the
+  SDKMessage stream table points to it.
+
+No behavior change for a plain query (no memory, no background subagents):
+exactly one `result`, matching the official one-result-per-query shape.
+Regression: memory-m2 待裁⑤ test now also asserts the shared uuid. Full
+vitest 2997 passed / 3 skipped; tsc + build clean.
+
 ## 0.68.0 — 2026-07-18
 
 LOCKSTEP versioning begins (keeper ruling 2026-07-18, overriding the
@@ -44,6 +165,7 @@ equality (check-dep-direction section D, red-proven). From here on, a merge
 that changes shipped runtime code in EITHER package bumps BOTH package.json
 versions; the untouched package's changelog gets a one-line lockstep
 alignment note. No agent-side code changes in this release.
+
 
 ## 0.67.2 — 2026-07-18
 
