@@ -4,7 +4,7 @@ title: "youtube 社区数据源"
 description: "youtube 平台采集档案，全量 2925 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/youtube/global/video/"
 tags: ["data_layer:full_archive", "platform:youtube", "health:active"]
-timestamp: "2026-07-17T21:54:11.443566+00:00"
+timestamp: "2026-07-18T02:13:19.835973+00:00"
 ---
 
 # 数据层指针

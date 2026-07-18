@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 360,
+    "concepts": 361,
     "edges": 423,
-    "terms": 6449,
+    "terms": 6475,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 127,
+      "documentation": 128,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 98,
+      "resource": 99,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 226
+      "search": 227
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 98
+      "count": 99
     },
     "sources": {
       "index": "/sources/index.md",
@@ -4112,6 +4112,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md": {
+      "type": "documentation",
+      "title": "scs-req-orchestrator-sdk-20260717",
+      "description": "**银芯编排 SDK 持有分子:钟、跨会话状态、会话装配。它把\\\"活得比一次调用久\\\"的 agent 所需的脏活——循环、调度、重试、恢复、台账——做成可复用零件,交给宿主装配。**（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md": {
       "type": "documentation",
       "title": "scs-req-repositioning-loop-support-20260717",
@@ -4367,7 +4381,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2925 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2926 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4479,7 +4493,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5235 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5236 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4535,7 +4549,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1599 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1607 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4549,7 +4563,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10460 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10473 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4563,7 +4577,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10652 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10672 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -10097,6 +10111,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -10235,6 +10250,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "agents": [
@@ -11345,6 +11361,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -11708,6 +11725,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -12040,6 +12058,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -12228,6 +12247,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -12521,6 +12541,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -13288,6 +13309,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -13786,6 +13808,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -14303,6 +14326,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -14636,6 +14660,9 @@
     ],
     "orchestrated": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "orchestrator": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "origin": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -15025,6 +15052,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -15443,6 +15471,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -15748,6 +15777,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -15785,6 +15815,7 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "req": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "requirements": [
@@ -15892,6 +15923,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -16099,6 +16131,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "scs": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "sdk": [
@@ -16152,6 +16185,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
@@ -16884,6 +16918,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -17433,7 +17468,8 @@
     "一次": [
       "/characters/15593.md",
       "/characters/15604.md",
-      "/memory/memory-ext-active-self-improvement-requirements.md"
+      "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "一步": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
@@ -17987,6 +18023,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -18259,6 +18296,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -18594,6 +18632,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -19149,6 +19188,9 @@
     "主线": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
+    "主装": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "主要": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -19543,6 +19585,9 @@
     "交流": [
       "/characters/77925.md"
     ],
+    "交给": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "交记": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
@@ -19890,6 +19935,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -20478,7 +20524,8 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
-      "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+      "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "会超": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
@@ -20864,6 +20911,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -21138,6 +21186,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -21645,6 +21694,9 @@
     ],
     "做完": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
+    "做成": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "做梦": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -22562,6 +22614,9 @@
     "分多": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "分子": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "分层": [
       "/memory/memory-ext-testing-strategy.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
@@ -23102,6 +23157,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -24526,6 +24582,9 @@
     "可动": [
       "/README.md"
     ],
+    "可复": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "可对": [
       "/characters/15564.md"
     ],
@@ -24779,7 +24838,8 @@
     "台账": [
       "/community/community-index.md",
       "/memory/memory-ext-todo.md",
-      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "台采": [
       "/sources/appstore.md",
@@ -26449,6 +26509,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -26527,7 +26588,8 @@
       "/characters/95786.md"
     ],
     "复用": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "复的": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -27260,6 +27322,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -27522,6 +27585,9 @@
     ],
     "它干": [
       "/projects/news-archive-sources-registry.md"
+    ],
+    "它把": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "它既": [
       "/memory/memory-ext-knowledge-layer-design.md"
@@ -27892,6 +27958,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -28175,6 +28242,9 @@
     ],
     "容错": [
       "/characters/15575.md"
+    ],
+    "宿主": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "密度": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
@@ -29943,6 +30013,9 @@
       "/characters/15598.md",
       "/characters/15604.md"
     ],
+    "得比": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "得永": [
       "/characters/15600.md"
     ],
@@ -29977,6 +30050,7 @@
       "/characters/15562.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "心使": [
@@ -30550,6 +30624,9 @@
     "恒的": [
       "/characters/15589.md"
     ],
+    "恢复": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "恨与": [
       "/characters/15562.md"
     ],
@@ -30905,7 +30982,8 @@
       "/sources/youtube_comments.md"
     ],
     "成可": [
-      "/characters/95786.md"
+      "/characters/95786.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "成型": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
@@ -31128,6 +31206,9 @@
     ],
     "所追": [
       "/characters/15570.md"
+    ],
+    "所需": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "所验": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -31619,6 +31700,9 @@
     "持战": [
       "/characters/94450.md"
     ],
+    "持有": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "持续": [
       "/characters/15580.md",
       "/characters/15592.md",
@@ -31877,6 +31961,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -32458,6 +32543,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -32805,6 +32891,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -33235,6 +33322,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -33528,6 +33616,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -34854,6 +34943,9 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md"
     ],
+    "有分": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "有副": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
@@ -35294,6 +35386,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -35742,6 +35835,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -36381,6 +36475,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -36603,6 +36698,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -37135,6 +37231,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -37288,6 +37385,9 @@
     ],
     "次生": [
       "/characters/54117.md"
+    ],
+    "次调": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "欲生": [
       "/characters/15560.md"
@@ -37531,6 +37631,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -37748,6 +37849,9 @@
     ],
     "毒连": [
       "/characters/15600.md"
+    ],
+    "比一": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "比喻": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -38029,6 +38133,9 @@
     ],
     "活动": [
       "/community/community-timeline.md"
+    ],
+    "活得": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "活是": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
@@ -38839,7 +38946,8 @@
       "/memory/project-status.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
-      "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+      "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "状每": [
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
@@ -39373,6 +39481,9 @@
     "用主": [
       "/projects/entry-readme.md"
     ],
+    "用久": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "用亡": [
       "/characters/95786.md"
     ],
@@ -39537,7 +39648,8 @@
       "/characters/15567.md"
     ],
     "用零": [
-      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "用面": [
       "/projects/project-silver-core-sdk.md"
@@ -40376,6 +40488,9 @@
       "/characters/15600.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
+    "的脏": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "的艺": [
       "/characters/15592.md"
@@ -42114,6 +42229,9 @@
     "给予": [
       "/characters/15599.md"
     ],
+    "给宿": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "给意": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
@@ -42236,7 +42354,8 @@
     "编排": [
       "/memory/capability-index.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
-      "/resource/resource-repo-engineering-repo-audit-20260603.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "编码": [
       "/memory/memory-ext-karpathy-coding-principles.md",
@@ -42685,6 +42804,9 @@
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/story/story_units.md"
     ],
+    "脏活": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "脑缸": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
@@ -43038,6 +43160,9 @@
     ],
     "芯社": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+    ],
+    "芯编": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "芯自": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -43409,7 +43534,8 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "装配": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "裹噬": [
       "/characters/77913.md"
@@ -44114,6 +44240,9 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
+    "话状": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "话结": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -44123,6 +44252,9 @@
     ],
     "话蒸": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+    ],
+    "话装": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "话角": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -44258,13 +44390,17 @@
     "调和": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
+    "调度": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "调查": [
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "调用": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
-      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "谕中": [
       "/characters/15599.md"
@@ -44548,7 +44684,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "跨会": [
-      "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md"
+      "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "跨组": [
       "/README.md"
@@ -44778,6 +44915,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -45500,6 +45638,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -46078,6 +46217,9 @@
     "重要": [
       "/README.md"
     ],
+    "重试": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
     "重跑": [
       "/README.md"
     ],
@@ -46546,6 +46688,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -46808,6 +46951,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -46900,6 +47044,7 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "银钥": [
@@ -47383,7 +47528,8 @@
       "/characters/15588.md"
     ],
     "零件": [
-      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "零依": [
       "/README.md"
@@ -47436,6 +47582,9 @@
       "/memory/memory-archive-storage-discussion.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
+    ],
+    "需的": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "需要": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -48716,6 +48865,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -49041,6 +49191,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -49216,6 +49367,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -49427,6 +49579,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -49976,6 +50129,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -50322,6 +50476,9 @@
     ],
     "orchestrated": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "orchestrator": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "oss": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -50733,6 +50890,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
@@ -50767,6 +50925,7 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "req": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "requirements": [
@@ -50883,6 +51042,7 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "scs": [
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "sdk": [
@@ -50931,6 +51091,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
@@ -51261,6 +51422,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",

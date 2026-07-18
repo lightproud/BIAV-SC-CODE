@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-18",
   "stats": {
-    "nodes": 360,
+    "nodes": 361,
     "edges": 423
   },
   "nodes": [
@@ -3226,6 +3226,17 @@
       "id": "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "type": "documentation",
       "title": "retired-modules-audit-202606",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
+      "type": "documentation",
+      "title": "scs-req-orchestrator-sdk-20260717",
       "tags": [
         "data_layer:curated",
         "deliverable",
