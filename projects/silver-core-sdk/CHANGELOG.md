@@ -16,6 +16,38 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.68.2 — 2026-07-18
+
+Z8-2 / Rdt-4 (audit r4, keeper ruling 2026-07-18 「剩下一个低危站岗也要修」):
+the volatile `<env>` block is now rebuilt PER TURN from the live model and a
+freshly-computed local calendar day, instead of being baked once at query
+construction. A fallback-model switch no longer tells the model it is the
+primary model (`You are powered by the model named …`), and a session
+spanning local midnight no longer serves a stale `Today's date`.
+
+**Cache-safe by design** (this was the earlier over-stated "risk", corrected):
+the volatile tail rides AFTER the cache breakpoint and carries no
+`cache_control`, so refreshing it never touches the cached stable prefix —
+the whole point of the v0.5+ stable/volatile split was to let cwd-class facts
+change freely. The prior deferral was a cluster-ownership boundary (the
+prompt-assembly fix needed a change in loop.ts), not a real cache hazard.
+
+- **prompts.ts**: `renderVolatileTail(cwd, environment?)` exported; the
+  internal `volatileTail` delegates to it, so the baked and rebuilt tails are
+  byte-identical for equal inputs.
+- **config-builder.ts**: captures the base `<env>` facts + cwd into a
+  `rebuildVolatileSuffix(liveModel)` closure on the engine config (present only
+  when an `<env>` block exists); the local calendar day is recomputed per
+  rebuild.
+- **loop.ts**: each streaming attempt refreshes `systemPromptSuffix` via that
+  closure (with the live `useModel`) just before deriving the wire system
+  field. An unchanged model + day reproduces the exact same suffix bytes, so a
+  steady-state turn keeps the cache prefix stable.
+
++4 regression tests (rebuild reflects a fallback model / same-model byte
+identity / absent when `<env>` disabled). Full vitest 3001 passed / 3 skipped;
+tsc + build clean.
+
 ## 0.68.1 — 2026-07-18
 
 Result accounting contract — clarified, single-mechanism (keeper ruling
