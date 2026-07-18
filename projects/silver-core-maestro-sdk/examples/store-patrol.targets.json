@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "what": "Store-patrol target registry (campaign 2, SCS-REQ orchestrator-sdk §8). Adding a storefront = adding one entry here — zero new code as long as an extractor for its `extract` kind exists in store-patrol.mjs. Both current targets are official public Steam JSON endpoints; the appreviews endpoint is already consumed by the news layer (aggregator_collectors.py), so this adds no new ToS surface.",
+    "archive": "Public-Info-Pool/Record/store-patrol/{target-id}/ — latest.json (current signature) + {date}.json (daily snapshot) + changes.jsonl (append-only change log)"
+  },
+  "targets": [
+    {
+      "id": "steam-appdetails",
+      "title": "Morimens Steam storefront (price / release surface)",
+      "url": "https://store.steampowered.com/api/appdetails?appids=3052450&cc=us&l=en&filters=basic,price_overview,release_date",
+      "extract": "steam-appdetails",
+      "key": "3052450"
+    },
+    {
+      "id": "steam-review-summary",
+      "title": "Morimens Steam review summary",
+      "url": "https://store.steampowered.com/appreviews/3052450?json=1&num_per_page=0&language=all&purchase_type=all",
+      "extract": "steam-review-summary"
+    }
+  ]
+}
