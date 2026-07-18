@@ -310,6 +310,7 @@ brain-in-a-vat/
 ├── Public-Info-Pool/              # 公开信息层总池（BPT 5R：取代旧 deliverables/，见 §6.2）
 │   ├── Resource/{主题类型}/       #   A类正式产物（报告/分析），按主题类型分目录，进 git 长期归档
 │   ├── Record/Community/          #   社区全量档案 text（discord + 16+ 平台，冷热分层见 §5.2）
+│   ├── Record/store-patrol/       #   商店巡检快照 + 变更日志（Maestro SDK 台账驱动，每日北京 15:15）
 │   ├── Reference/                 #   引用参照层（解包 text 层 2026-07-12 裁定删除，git 历史可追）
 │   ├── Rough/                     #   C类即兴草稿/过程废料，.gitignore，可晋升进 Resource
 │   └── types.json                 #   Resource 主题类型开放注册表（形式定死/清单可增）

@@ -198,8 +198,11 @@
 > 第一战任务台账 + 驱动器完成（0.2.0）：封闭状态机（pending/running/retrying/failed/done，定稿回填
 > 需求档 §4）+ `LedgerStore` 宿主注入缝 + `TaskLedger` + `LedgerDriver` 持钟活组件 + 例程一最小 loop
 > （消费代理侧 R2 预算事件流，e2e 对本地仿真器真跑）；纯核 state.ts **变异分 100%**（83/83，
-> 棘轮地板 100 入 `sdk-mutation-ratchet.yml` 周检）；测试 45。
-> **未做**：商店巡检场景接入（第二战）、周报 loop 迁入、schedule / workflow 图 / goal 追逐器 / 送达契约。
+> 棘轮地板 100 入 `sdk-mutation-ratchet.yml` 周检）；第二战商店巡检真实场景接入完成
+> （2026-07-18 守密人点火）：`examples/store-patrol.mjs` 生产循环任务长在台账 + 驱动器上——
+> Morimens Steam 双端点每日指纹比对，快照 + 变更日志落 `Public-Info-Pool/Record/store-patrol/`，
+> CI `store-patrol.yml` 每日北京 15:15 自动跑，e2e 四场景 + 首次生产真跑绿；测试 50。
+> **未做**：周报 loop 迁入（台账稳定后改轨）、schedule / workflow 图 / goal 追逐器 / 送达契约。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
