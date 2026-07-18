@@ -26,6 +26,7 @@ import type {
   RawMessageStreamEvent,
 } from '../types.js';
 import type { RetryInfo, StreamRequest, Transport } from '../internal/contracts.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import { parseSSE } from './sse.js';
 import {
   firePreconnect,
@@ -194,7 +195,20 @@ export class AnthropicTransport implements Transport {
     // JSON.stringify drops undefined-valued fields, satisfying "omit
     // undefined fields" without manual pruning. onRetry (a function) is
     // destructured out above so it never reaches the body.
-    const bodyJson = JSON.stringify({ ...wireBody, stream: true });
+    // audit r4 R7j-3: guard the wire stringify. A caller-assembled
+    // self-referential content block makes JSON.stringify throw a raw
+    // "Converting circular structure to JSON" TypeError (the OpenAI arm wraps
+    // its request encode in try/catch; this arm did not). Surface a typed
+    // ConfigurationError so the failure is attributable to the malformed
+    // request the caller built, not an opaque uncaught transport crash.
+    let bodyJson: string;
+    try {
+      bodyJson = JSON.stringify({ ...wireBody, stream: true });
+    } catch (err) {
+      throw new ConfigurationError(
+        `Messages API request body is not serializable: ${errorMessage(err)}`,
+      );
+    }
     const headers = this.buildHeaders(this.credential);
     // timeoutMs: 0 disables the whole-request timeout, consistent with the
     // idle-watchdog / stream-hard-cap "0 = disabled" convention (previously 0
@@ -322,7 +336,12 @@ export class AnthropicTransport implements Transport {
       let consumerHolds = false;
       const armIdle = (delay: number): void => {
         idleTimer = setTimeout(() => {
-          const remaining = idleMs - (Date.now() - lastEventAt);
+          // audit r4 Rdt-1: measure elapsed with a MONOTONIC clock, not
+          // Date.now(). A wall-clock rollback (NTP step / manual change) would
+          // make this delta negative, push `remaining` above idleMs, and
+          // re-arm the watchdog forever — so a genuinely stalled stream would
+          // never abort.
+          const remaining = idleMs - (monotonicNowMs() - lastEventAt);
           if (remaining <= 0) {
             if (consumerHolds) armIdle(idleMs);
             else idleController!.abort();
@@ -332,7 +351,7 @@ export class AnthropicTransport implements Transport {
         (idleTimer as { unref?: () => void }).unref?.();
       };
       const resetIdle = (): void => {
-        lastEventAt = Date.now();
+        lastEventAt = monotonicNowMs(); // audit r4 Rdt-1: monotonic (see armIdle)
         if (!idleController || idleTimer !== undefined) return;
         armIdle(idleMs);
       };
@@ -472,14 +491,22 @@ export class AnthropicTransport implements Transport {
         releaseSignals();
       }
 
-      // The stream ended without a terminal message_stop. No message_start =>
-      // the body never began (replay-safe): retry the whole request within the
-      // shared budget instead of returning an unusable stream. Keys on
-      // sawMessageStart, not eventCount, so a stream of ONLY ping keep-alives
-      // (no message_start) is still recognized as an empty non-start rather than
-      // slipping through to the accumulator's raw "finalize before message_start".
+      // The stream ended without a terminal message_stop. No message_start AND
+      // no content_block => the body never began (replay-safe): retry the whole
+      // request within the shared budget instead of returning an unusable
+      // stream. Keys on sawMessageStart, not eventCount, so a stream of ONLY
+      // ping keep-alives (no message_start) is still recognized as an empty
+      // non-start rather than slipping through to the accumulator's raw
+      // "finalize before message_start".
+      // audit r4 U2-1: ALSO require !sawContentBlock. An out-of-order stream
+      // that delivered content_block(s) — already YIELDED to the consumer —
+      // before or without message_start is NOT a zero-consumption non-start:
+      // re-issuing the POST would replay a partially consumed turn. Such a
+      // stream falls through to the midStreamTruncation salvage below instead
+      // (content delivered, no stop_reason). The openai arm gates its own
+      // empty-retry on chunkCount===0 for the same reason.
       // Any caller abort observed here wins over the retry.
-      if (!sawMessageStart) {
+      if (!sawMessageStart && !sawContentBlock) {
         if (callerSignal?.aborted) throw new AbortError();
         if (retryBudget.used < maxRetries) {
           retryBudget.used += 1;
@@ -508,9 +535,12 @@ export class AnthropicTransport implements Transport {
       // a null-stop_reason success). Surface a diagnosable, NON-replay-safe
       // error instead; a started stream is not replay-safe, so it is NOT
       // retried (respecting the "no phantom empty-retry" contract). This sits
-      // between the no-message_start empty-retry above (sawMessageStart is
-      // guaranteed true here) and the mid-stream-truncation salvage below
-      // (which needs sawContentBlock).
+      // between the empty-retry above and the mid-stream-truncation salvage
+      // below. This branch's own !sawContentBlock guard, combined with the
+      // widened retry gate above (which exits on !sawMessageStart &&
+      // !sawContentBlock), means sawMessageStart is necessarily true whenever
+      // it fires — a guarantee now DERIVED from the two guards rather than
+      // assumed (audit r4 U2-1).
       if (!sawStopReason && !sawContentBlock) {
         if (callerSignal?.aborted) throw new AbortError();
         throw new APIConnectionError(
@@ -1101,7 +1131,11 @@ async function readErrorInfo(
   }
   return {
     type: 'api_error',
-    message: text.slice(0, 2_000) || `HTTP ${response.status} ${response.statusText}`,
+    // audit r4 R7s-7: surrogate-safe truncation so a body cut at 2000 UTF-16
+    // units never leaves a lone surrogate in the surfaced error message.
+    message:
+      sliceSurrogateSafe(text, 2_000) ||
+      `HTTP ${response.status} ${response.statusText}`,
   };
 }
 
@@ -1236,6 +1270,16 @@ function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
 
 function errorMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err);
+}
+
+/** Monotonic elapsed-time clock for the idle watchdog (audit r4 Rdt-1).
+ *  performance.now() advances independently of the wall clock, so an NTP step
+ *  or manual clock change cannot corrupt an elapsed-time delta the way a
+ *  Date.now() subtraction can (a backward jump would leave a real stall
+ *  undetected — the watchdog would re-arm forever). Present on Node >= 18
+ *  (this transport's floor) and every supported test runtime. */
+function monotonicNowMs(): number {
+  return performance.now();
 }
 
 /** Abortable sleep; rejects with AbortError when the signal fires. */

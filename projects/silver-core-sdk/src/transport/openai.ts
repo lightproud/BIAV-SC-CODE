@@ -39,6 +39,7 @@
  * locked Anthropic transport stays byte-untouched.
  */
 
+import { performance } from 'node:perf_hooks';
 import {
   AbortError,
   APIConnectionError,
@@ -82,6 +83,7 @@ import {
   SUPPORTED_IMAGE_MEDIA_TYPES,
   SUPPORTED_IMAGE_MEDIA_TYPES_LIST,
 } from '../internal/media.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 
 const DEFAULT_BASE_URL = 'https://api.openai.com/v1';
 const DEFAULT_TIMEOUT_MS = 600_000;
@@ -137,7 +139,10 @@ type OpenAIToolCall = {
 };
 
 type OpenAIChatMessage =
-  | { role: 'system'; content: string }
+  // 'developer' is the reasoning-model system role (o1/o3 on api.openai.com
+  // 400 on role:'system'); opt-in via OpenAIProtocolOptions.systemRole so
+  // lenient gateways that accept 'system' are unaffected (audit r4 Soa-3).
+  | { role: 'system' | 'developer'; content: string }
   | { role: 'user'; content: string | OpenAIContentPart[] }
   | { role: 'assistant'; content: string | null; tool_calls?: OpenAIToolCall[] }
   | { role: 'tool'; tool_call_id: string; content: string };
@@ -184,6 +189,18 @@ function cleanBase64(raw: string, where: string, what: string): string {
   if (!BASE64_RE.test(data)) {
     throw new ConfigurationError(
       `openai-chat: ${what} data at ${where} is not valid base64 (${data.length} chars)`,
+    );
+  }
+  // Alphabet + trailing padding pass BASE64_RE, but a length ≡ 1 (mod 4) can
+  // never be valid base64 (each 4-char group encodes 3 bytes; a final lone
+  // char is impossible, e.g. "YWJjZ"), and any '=' padding requires the total
+  // to complete a 4-char group. Both decode-fail opaquely at the gateway's
+  // media stage — reject HERE, byte-free. (audit r4 Y6-1.)
+  const padded = data.endsWith('=');
+  if (data.length % 4 === 1 || (padded && data.length % 4 !== 0)) {
+    throw new ConfigurationError(
+      `openai-chat: ${what} data at ${where} has an invalid base64 length ` +
+        `(${data.length} chars; base64 encodes in 4-character groups)`,
     );
   }
   return data;
@@ -444,7 +461,9 @@ export function encodeOpenAIRequest(
 ): Record<string, unknown> {
   const messages: OpenAIChatMessage[] = [];
   const system = encodeSystem(req.system);
-  if (system !== undefined) messages.push({ role: 'system', content: system });
+  if (system !== undefined) {
+    messages.push({ role: opts.systemRole ?? 'system', content: system });
+  }
   const imageStats: ImageStats = { mediaTypes: [], dataChars: [] };
   for (let i = 0; i < req.messages.length; i += 1) {
     messages.push(...encodeMessage(req.messages[i]!, `messages[${i}]`, imageStats));
@@ -483,7 +502,32 @@ export function encodeOpenAIRequest(
         }))
       : undefined;
 
-  const maxTokensParam = opts.maxTokensParam ?? 'max_tokens';
+  // Tool/function names are sent verbatim. api.openai.com enforces
+  // ^[A-Za-z0-9_-]{1,64}$ and 400s a name with dots/spaces or over 64 chars;
+  // many OpenAI-compatible gateways are lenient, so a hard reject would break a
+  // gateway that accepts the name — surface a locatable WARNING instead (twin
+  // of the Claude-model-id warning in streamRequest). (audit r4 Soa-4.)
+  if (tools !== undefined) {
+    const badToolNames = customTools
+      .map((t) => t.name)
+      .filter((n) => !/^[A-Za-z0-9_-]{1,64}$/.test(n));
+    if (badToolNames.length > 0) {
+      debug?.(
+        `openai transport: WARNING ${badToolNames.length} tool name(s) violate the OpenAI ` +
+          `function-name constraint ^[A-Za-z0-9_-]{1,64}$ (likely 400 on api.openai.com): ` +
+          `${badToolNames.join(', ')}`,
+      );
+    }
+  }
+
+  // reasoning_effort is accepted only by reasoning models (o-series, gpt-5
+  // reasoning), which REJECT `max_tokens` and require `max_completion_tokens`.
+  // When a caller asks for reasoning but did not pin the token param, default it
+  // to max_completion_tokens instead of 400-ing the request; an explicit
+  // maxTokensParam still wins. (audit r4 Soa-2.)
+  const maxTokensParam =
+    opts.maxTokensParam ??
+    (opts.reasoningEffort !== undefined ? 'max_completion_tokens' : 'max_tokens');
   return {
     // Gateway-specific extras first: translator-owned keys win on conflict.
     ...(opts.extraBody ?? {}),
@@ -546,6 +590,9 @@ type OpenAIChunk = {
     delta?: {
       role?: string;
       content?: string | null;
+      /** Structured-output / safety refusal text. OpenAI streams a decline HERE,
+       *  never in `content`; decoding it keeps the user from an empty turn. */
+      refusal?: string | null;
       /** DeepSeek-style reasoning stream; some gateways use `reasoning`. */
       reasoning_content?: string | null;
       reasoning?: string | null;
@@ -555,6 +602,8 @@ type OpenAIChunk = {
         type?: string;
         function?: { name?: string; arguments?: string };
       }>;
+      /** Legacy singular function-calling delta (pre-tool_calls gateways). */
+      function_call?: { name?: string; arguments?: string } | null;
     };
     finish_reason?: string | null;
   }>;
@@ -626,6 +675,13 @@ export class OpenAIStreamTranslator {
    * content, no finish_reason) instead of fabricating an empty success.
    */
   private contentSeen = false;
+  /**
+   * Whether a delta.refusal fragment arrived. A refusal is surfaced as visible
+   * assistant text (so the user sees the decline, not a blank turn) and, when no
+   * stronger terminal signal contradicts it, mapped to stop_reason 'refusal'.
+   * (audit r4 Roa-1.)
+   */
+  private refusalSeen = false;
   /**
    * Per-tool-call buffered state so a fragmented gateway does not lose the id
    * or the name. Some OpenAI-compatible gateways stream the id in a LATER chunk
@@ -726,6 +782,20 @@ export class OpenAIStreamTranslator {
         delta: { type: 'text_delta', text: delta.content },
       });
     }
+    // A structured-output / safety refusal streams its text in delta.refusal,
+    // never in delta.content. Surface it as visible assistant text (so the user
+    // sees the decline instead of a blank assistant turn) and remember it for
+    // the stop_reason. (audit r4 Roa-1.)
+    if (typeof delta.refusal === 'string' && delta.refusal.length > 0) {
+      this.contentSeen = true;
+      this.refusalSeen = true;
+      const index = this.openBlock(events, 'text', { type: 'text', text: '' });
+      events.push({
+        type: 'content_block_delta',
+        index,
+        delta: { type: 'text_delta', text: delta.refusal },
+      });
+    }
     for (const tc of delta.tool_calls ?? []) {
       // A tool_call fragment is VALID assistant content the moment it carries
       // an id, a function name, or argument bytes — even before the block can
@@ -784,6 +854,30 @@ export class OpenAIStreamTranslator {
           buf.args = '';
         }
       }
+    }
+    // Legacy singular function_call streaming (pre-tool_calls gateways):
+    // mapFinishReason already treats finish_reason 'function_call' as tool_use,
+    // but feed() never decoded the delta — so the turn ended stop_reason
+    // 'tool_use' with ZERO tool_use blocks and the engine dropped the call.
+    // Accumulate it into a dedicated buffer; this wire shape carries no id, so
+    // finish()'s flush mints a synthetic one and emits one input_json_delta.
+    // (audit r4 Roa-2.)
+    const fc = delta.function_call;
+    if (fc !== undefined && fc !== null) {
+      if (
+        (typeof fc.name === 'string' && fc.name.length > 0) ||
+        (typeof fc.arguments === 'string' && fc.arguments.length > 0)
+      ) {
+        this.contentSeen = true;
+      }
+      const key = 'tool:function_call';
+      let buf = this.toolBuffers.get(key);
+      if (buf === undefined) {
+        buf = { name: '', args: '', emitted: false };
+        this.toolBuffers.set(key, buf);
+      }
+      if (typeof fc.name === 'string') buf.name += fc.name;
+      if (typeof fc.arguments === 'string' && fc.arguments.length > 0) buf.args += fc.arguments;
     }
     return events;
   }
@@ -861,7 +955,7 @@ export class OpenAIStreamTranslator {
     // new empty-name block (which would never dispatch). A pure placeholder
     // buffer (`{index:N}` with nothing ever received) is skipped outright,
     // mirroring the contentSeen placeholder guard in feed().
-    for (const [key, buf] of this.toolBuffers) {
+    for (const buf of this.toolBuffers.values()) {
       if (buf.emitted) continue;
       if (buf.args === '') continue; // pure placeholder
       if (lastEmittedToolIndex !== undefined) {
@@ -873,20 +967,13 @@ export class OpenAIStreamTranslator {
         buf.emitted = true; // consumed into the sibling block; no standalone block
         continue;
       }
-      // No sibling exists anywhere: emit standalone (empty-name, synthetic id)
-      // rather than silently dropping received argument bytes.
-      buf.index = this.openBlock(events, key, {
-        type: 'tool_use',
-        id: `call_${this.nextIndex}`,
-        name: buf.name,
-        input: {},
-      });
-      buf.emitted = true;
-      events.push({
-        type: 'content_block_delta',
-        index: buf.index,
-        delta: { type: 'input_json_delta', partial_json: buf.args },
-      });
+      // No sibling anywhere to merge into. Every buffer reaching pass 2 is
+      // NAMELESS and ID-LESS (pass 1 flushes anything carrying a name or id), so
+      // emitting one would mint an empty-name tool_use block the engine can
+      // never dispatch AND force stop_reason:'tool_use' for a call that does not
+      // exist. Drop the stray argument bytes instead — the same "no bogus
+      // empty-name block" rule the placeholder guard already applies; hasRealTool
+      // below likewise does not count it. (audit r4 Roa-4.)
     }
     for (const index of [...this.open.values()].sort((a, b) => a - b)) {
       events.push({ type: 'content_block_stop', index });
@@ -903,13 +990,23 @@ export class OpenAIStreamTranslator {
     // 'tool_use'. An EXPLICIT finish_reason (including 'stop') is respected
     // regardless of open tool blocks — deliberate M-5 semantics. A pure
     // placeholder buffer does not count (same guard as the flush loop above).
+    // A pure args-only orphan (argument bytes but no id, no name, never
+    // emitted — a doubly malformed fragment dropped by pass 2) is NOT a
+    // dispatchable tool call and must not force stop_reason:'tool_use' with no
+    // matching block; count only buffers carrying a real dispatch signal.
+    // (audit r4 Roa-4.)
     const hasRealTool = [...this.toolBuffers.values()].some(
-      (b) => b.emitted || b.id !== undefined || b.name !== '' || b.args !== '',
+      (b) => b.emitted || b.id !== undefined || b.name !== '',
     );
+    // A delta.refusal that arrived with no stronger terminal signal (an
+    // explicit tool/length/content_filter reason still wins) maps to
+    // stop_reason 'refusal' rather than a fabricated 'end_turn'. (audit r4 Roa-1.)
     const stopReason: StopReason =
       this.finishReason === null && hasRealTool
         ? 'tool_use'
-        : mapFinishReason(this.finishReason);
+        : this.refusalSeen && (this.finishReason === null || this.finishReason === 'stop')
+          ? 'refusal'
+          : mapFinishReason(this.finishReason);
     events.push({
       type: 'message_delta',
       delta: { stop_reason: stopReason, stop_sequence: null },
@@ -1157,9 +1254,14 @@ export class OpenAIChatTransport implements Transport {
       // yield). Stall detection during a long consumer pause is deferred
       // until the consumer resumes (worst case ~2x idleMs).
       let consumerHolds = false;
+      // Monotonic clock (performance.now()), NOT wall-clock Date.now(): an NTP
+      // step or manual clock set backward would make (now - lastEventAt) go
+      // negative, so `remaining` exceeds idleMs and the watchdog re-arms forever
+      // on a genuinely stalled stream. performance.now() never moves backward.
+      // (audit r4 Rdt-1, openai idle-watchdog side.)
       const armIdle = (delay: number): void => {
         idleTimer = setTimeout(() => {
-          const remaining = idleMs - (Date.now() - lastEventAt);
+          const remaining = idleMs - (performance.now() - lastEventAt);
           if (remaining <= 0) {
             if (consumerHolds) armIdle(idleMs);
             else idleController!.abort();
@@ -1168,7 +1270,7 @@ export class OpenAIChatTransport implements Transport {
         (idleTimer as { unref?: () => void }).unref?.();
       };
       const resetIdle = (): void => {
-        lastEventAt = Date.now();
+        lastEventAt = performance.now();
         if (!idleController || idleTimer !== undefined) return;
         armIdle(idleMs);
       };
@@ -1743,7 +1845,12 @@ async function readOpenAIErrorInfo(
   }
   return {
     type: normalizedType,
-    message: text.slice(0, 2_000) || `HTTP ${response.status} ${response.statusText}`,
+    // sliceSurrogateSafe, not a raw slice: the 2000-char cut must not split a
+    // surrogate pair and leave a lone surrogate in the error message (it would
+    // serialize as U+FFFD wherever the error is logged/replayed). (audit r4
+    // R7s-7, openai boundMessage side.)
+    message:
+      sliceSurrogateSafe(text, 2_000) || `HTTP ${response.status} ${response.statusText}`,
   };
 }
 

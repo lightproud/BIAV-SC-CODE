@@ -522,12 +522,20 @@ export function resolveAgentDefinition(
     ? agents[type]
     : undefined;
   if (named !== undefined) {
-    if (typeof named.prompt !== 'string' || named.prompt.length === 0) {
+    if (typeof named.prompt === 'string' && named.prompt.length > 0) {
+      return { type, definition: named, synthetic: false };
+    }
+    // Sag-7 (audit r4): a registered entry with no usable prompt is a HARD error
+    // — EXCEPT the reserved general-purpose type, which must stay spawnable via
+    // the synthetic default below. A host that shadows general-purpose with an
+    // empty-prompt entry must not disable the always-available fallback (before
+    // this, the own-property guard returned the "no usable prompt" error and the
+    // reserved type became unusable).
+    if (type !== GENERAL_PURPOSE_TYPE) {
       return {
         error: `subagent type "${type}" has no usable prompt`,
       };
     }
-    return { type, definition: named, synthetic: false };
   }
 
   if (type !== GENERAL_PURPOSE_TYPE) {

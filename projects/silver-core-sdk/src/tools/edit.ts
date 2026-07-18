@@ -5,7 +5,17 @@
  * part of the compat surface — hooks and permission rules match on them.
  */
 
-import { readFile, stat, writeFile } from 'node:fs/promises';
+import { randomBytes } from 'node:crypto';
+import {
+  chmod,
+  readFile,
+  realpath,
+  rename,
+  stat,
+  unlink,
+  writeFile,
+} from 'node:fs/promises';
+import * as path from 'node:path';
 import type {
   BuiltinTool,
   ToolContext,
@@ -126,6 +136,7 @@ export const editTool: BuiltinTool = {
 
       const abs = resolveAbs(ctx.cwd, filePath);
 
+      let priorMode: number | undefined;
       try {
         const st = await stat(abs);
         if (st.isDirectory()) {
@@ -139,6 +150,7 @@ export const editTool: BuiltinTool = {
             `Edit failed: "${abs}" is not a regular file (FIFO/device/socket); editing it is not supported.`,
           );
         }
+        priorMode = st.mode & 0o7777; // preserved across the atomic write (Sfs-1)
       } catch (e) {
         if ((e as NodeJS.ErrnoException).code === 'ENOENT') {
           return errorResult(`Edit failed: file does not exist: "${abs}".`);
@@ -220,7 +232,33 @@ export const editTool: BuiltinTool = {
         }
       }
 
-      await writeFile(abs, updated, { encoding: 'utf8', signal: ctx.signal });
+      // Sfs-1 (audit r4): the F8 atomic-write fix was never ported to Edit — an
+      // in-place O_TRUNC writeFile clears the file the instant it opens, so an
+      // abort / ENOSPC / EIO between open and write-complete leaves it EMPTY with
+      // the original content gone (data loss). Mirror write.ts: stage a sibling
+      // tmp file and rename it over the target so the swap is all-or-nothing.
+      // Resolve a symlink target first so the write lands THROUGH the link (a
+      // rename would otherwise replace the link with a regular file), and stamp
+      // the prior mode with an explicit chmod (writeFile's mode is umask-masked,
+      // Y5-2).
+      let target = abs;
+      try {
+        target = await realpath(abs);
+      } catch {
+        target = abs; // best-effort; the file exists (checked above)
+      }
+      const tmp = path.join(
+        path.dirname(target),
+        `.${path.basename(target)}.${process.pid}.${randomBytes(6).toString('hex')}.tmp`,
+      );
+      try {
+        await writeFile(tmp, updated, { encoding: 'utf8', signal: ctx.signal });
+        if (priorMode !== undefined) await chmod(tmp, priorMode);
+        await rename(tmp, target);
+      } catch (e) {
+        await unlink(tmp).catch(() => {});
+        throw e;
+      }
 
       const replaced = replaceAll ? count : 1;
       // Read-before-write gate (E4): Edit read the full file to apply the

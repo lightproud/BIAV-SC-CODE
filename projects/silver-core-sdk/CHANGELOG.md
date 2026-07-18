@@ -16,6 +16,89 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.66.1 — 2026-07-18
+
+T52 r4 audit — Tier 1 (P0 / security / high) fix campaign: **64 defects
+fixed, 15 honestly skipped** across 8 file-disjoint clusters, run via the
+SDK's own dynamic-orchestration Workflow tool (8 parallel agents). Report:
+`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r4-20260717.md`.
+Each defect was re-verified against current source before fixing (the audit
+ran on 0.65.3; line numbers had drifted); items already fixed, not
+reproducible, or deliberate design choices were skipped with a precise
+reason (audit §4.2 R3 honesty), never fabricated.
+
+- **permissions (rules.ts, gate.ts) — 7**: symlink-aware deny matching
+  (Y1-2 realpath re-test on lexical miss); interior-wildcard specifiers
+  `Read(/etc/**/secret)` now fire (Y1-3); command-word de-obfuscation for
+  deny/ask so `\rm` / `"rm"` / `sudo rm` / `timeout 5 rm` / `eval "rm …"`
+  are caught while the allow position stays strict (V4-1/V4-2);
+  arithmetic `$((…))` no longer flagged as injection (V4-3); wildcard
+  specifier deny on non-tabled tools fires instead of no-op (Rg-1);
+  canUseTool returning undefined/non-object fails closed instead of
+  throwing out of the gate (Rg-2).
+- **subagents (runtime.ts, agent-tool.ts, query.ts) — 11**: child gates
+  inherit cwd / knownMcpServers / allowDangerousBypass so path hardening +
+  MCP scoping apply inside subagents (Y1-1); killAgent bumps epoch on the
+  terminal branch so a queued continuation cannot revive a stopped child
+  (Y3-1); Start/Stop hook brackets closed on foreground-abort and on
+  revived continuation episodes (V2-1/V2-2); resultPreview surrogate-safe
+  (V2-3); stale comments corrected (V2-4); `agentDef.tools`/`disallowedTools`
+  coerced + trimmed so a bare-string allowlist is fail-closed, not
+  fail-open escalation, and a non-array no longer crashes the spawn
+  (Sag-3/4/5); Agent tool enforces its advertised model enum (Sag-6);
+  background-promise tracking set self-prunes (Stim-1).
+- **openai (openai.ts, types.ts) — 9**: base64 length validation (Y6-1);
+  `max_completion_tokens` for reasoning models (Soa-2); off-charset tool
+  names warn instead of silently 400 (Soa-4); configurable system role
+  `'developer'` for o1/o3 (Soa-3); `delta.refusal` decoded (Roa-1); legacy
+  `delta.function_call` accumulated into a real tool_use block (Roa-2);
+  nameless args-only orphan dropped instead of forging stop_reason
+  tool_use (Roa-4); idle watchdog on a monotonic clock (Rdt-1); error-body
+  truncation surrogate-safe (R7s-7).
+- **anthropic (anthropic.ts) — 4**: empty-stream retry gate widened so an
+  out-of-order stream that already yielded content is not replayed (U2-1);
+  wire stringify wrapped so a circular body throws typed, not raw (R7j-3);
+  error-body truncation surrogate-safe (R7s-7); idle watchdog on a
+  monotonic clock (Rdt-1).
+- **regex-guard (regex-guard.ts) — 2**: alternation-overlap detection
+  compares whole branch atom-sequences with class membership, so
+  `(\w|a)+$` is correctly flagged as the real ReDoS it is (U8b-1, measured
+  63.9s freeze) while divergent `(foo|fox)+` is no longer falsely rejected
+  (Z2-1).
+- **query (query.ts, subagents/agents.ts) — 9**: a budget/turns-rejected
+  prompt is not persisted as a dangling user turn (Y8-1); memory
+  session-end round bounded by remaining maxTurns (Y8-2); post-init
+  diagnostics gated on non-resumed sessions (Y8-4); `</system-reminder>`
+  neutralized in prelude values (Y4-1); host-shadowed general-purpose
+  falls through to the synthetic default (Sag-7); a consumer q.throw()
+  distinguished from a turn interrupt so it propagates (Sq-2);
+  incognito+checkpointing and non-positive maxBudgetUsd rejected at
+  construction (R7c-2/R7c-3); persisted tool_input surrogate-safe (R7s-6).
+- **tools-fs (glob/grep/read/write/edit/shells/fsutil.ts) — 11**: symlinks
+  to regular files are listed and searched (Y5-1); Write preserves the
+  exact prior mode past umask (Y5-2); a stalled newline-less prompt is
+  released (Y5-4); oversize (>10MB) scan skips are disclosed instead of a
+  bare "No matches" (V6-1); glob mtime sort has a deterministic tiebreak
+  (V6-2); negative head_limit rejected (V6-3); Grep binary sniff scans the
+  whole buffer (V6-4); per-line cap bounded to the total cap (V6-5); Read
+  tolerates a deep stray NUL while Edit/Write stay strict (Z3-2); **Edit is
+  now atomic tmp+rename** (Sfs-1, was in-place O_TRUNC → data loss on
+  mid-write abort); grep line clip surrogate-safe (R7s-1).
+- **memory (memory-tool / store / local-store / mounts / paths / index /
+  cards.ts) — 11**: byte cap enforced on str_replace/insert not just
+  create (U4-1); NFC path normalization closes a read-only-mount bypass
+  (U4-2); rename enforces the destination directory file cap (U4-3);
+  local write + rename are atomic / no-clobber (U4-4, Sfs-2); empty-file
+  insert has no phantom blank line (U4-5); self-subtree rename rejected
+  cleanly (U4-6); path-length bounded (U4-7); over-cap first index line
+  byte-truncated instead of dropping the whole index (U4-8); card marker
+  lines are escapable so they round-trip (U4-9); memory view truncation
+  surrogate-safe (R7s-5).
+
+Regression tests: `tests/audit-r4-{permissions,subagents,openai,anthropic,regex-guard,query,tools-fs,memory}.test.ts`
+(+108). Full vitest 2833 passed / 3 skipped; repo pytest 2973 passed; tsc + build
+clean.
+
 ## 0.66.0 — 2026-07-18
 
 Monorepo phase 0 (SCS-REQ orchestrator-sdk §2, keeper ruling 2026-07-17): the
@@ -122,6 +205,7 @@ Regression lock: `tests/audit-t50-batch-l.test.ts` (21 cases) plus two existing
 assertions realigned to the fixed behavior (sandbox argv order; worktree
 baseHead-unknown keep). Full vitest green (post-rebase onto batches E–K +
 0.65.0 MultiEdit removal).
+
 
 ## 0.65.5 — 2026-07-18
 

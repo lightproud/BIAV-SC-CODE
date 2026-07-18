@@ -335,6 +335,20 @@ export class DefaultPermissionGate implements PermissionGate {
         message: 'permission decision was handled by the application (no local record)',
       };
     }
+    if (result === undefined || typeof result !== 'object') {
+      // audit r4 Rg-2: the contract is `PermissionResult | null`. A callback
+      // that returns undefined (or any non-object) is out of contract;
+      // dereferencing result.behavior would throw a TypeError OUTSIDE the
+      // try/catch above and ESCAPE the gate instead of failing closed. Treat an
+      // absent decision as a fail-closed deny.
+      return this.deny(
+        toolName,
+        toolUseID,
+        input,
+        'canUseTool callback',
+        'callback returned no decision',
+      );
+    }
     if (result.behavior === 'allow') {
       // canUseTool may rewrite the input; re-check it against the deny rules
       // before allowing. Deny wins outright - a denied call applies no session

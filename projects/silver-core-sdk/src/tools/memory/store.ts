@@ -32,6 +32,7 @@
 import { Buffer } from 'node:buffer';
 import type { MemoryStore } from '../../internal/contracts.js';
 import { MemoryToolError } from '../../errors.js';
+import { sliceSurrogateSafe } from '../../internal/text.js';
 import { MEMORY_ROOT, validateMemoryPath } from './paths.js';
 import {
   DEFAULT_CARDS_CONFIG,
@@ -126,7 +127,11 @@ export function truncateViewBody(body: string, maxViewChars: number): string {
   if (body.length <= maxViewChars) return body;
   if (TRUNCATION_NOTICE_RE.test(body)) return body;
   const cut = body.lastIndexOf('\n', maxViewChars);
-  const kept = cut > 0 ? body.slice(0, cut) : body.slice(0, maxViewChars);
+  // The newline-boundary cut is surrogate-safe (a `\n` is never half a pair);
+  // the no-newline fallback slices at an arbitrary char index, so it must not
+  // split a surrogate pair into a lone, model-visible surrogate (audit r4
+  // R7s-5).
+  const kept = cut > 0 ? body.slice(0, cut) : sliceSurrogateSafe(body, maxViewChars);
   return `${kept}\n${viewTruncationNotice(maxViewChars)}`;
 }
 
@@ -393,7 +398,11 @@ export function createMemoryStore(
         throw new MemoryToolError(`Error: The path ${path} does not exist`);
       }
       const content = await ops.read(path);
-      const lines = content.split('\n');
+      // An empty file is zero lines, not one phantom blank line: ''.split('\n')
+      // yields [''], so inserting left a stray blank line beside the inserted
+      // text (audit r4 U4-5). Treat empty content as no lines so an insert into
+      // an empty file produces exactly the inserted text.
+      const lines = content === '' ? [] : content.split('\n');
       if (!Number.isInteger(insertLine) || insertLine < 0 || insertLine > lines.length) {
         throw new MemoryToolError(
           `Error: Invalid \`insert_line\` parameter: ${insertLine}. It should be ` +
@@ -430,9 +439,39 @@ export function createMemoryStore(
       if (oldStat === null) {
         throw new MemoryToolError(`Error: The path ${oldPath} does not exist`);
       }
+      // A directory renamed into its own subtree makes fs.rename throw a raw
+      // EINVAL; reject with a structured error first (audit r4 U4-6). The
+      // trailing slash keeps a sibling with a shared prefix (foo -> foobar)
+      // out of the check.
+      if (newPath.startsWith(oldPath + '/')) {
+        throw new MemoryToolError(
+          `Error: Cannot rename ${oldPath} into its own subdirectory ${newPath}`,
+        );
+      }
       const newStat = await statOrNull(newPath);
       if (newStat !== null || newPath === MEMORY_ROOT) {
         throw new MemoryToolError(`Error: The destination ${newPath} already exists`);
+      }
+      // R8: a rename that moves a FILE into a DIFFERENT directory adds a new
+      // file there — enforce the destination's per-directory file cap, or
+      // create-elsewhere-then-rename-in would smuggle files past the cap that
+      // `create` blocks (audit r4 U4-3). A directory move adds a directory
+      // (not a direct file), and a rename within the same parent grows
+      // nothing — neither needs the check.
+      if (oldStat.kind === 'file') {
+        const oldParent = oldPath.slice(0, oldPath.lastIndexOf('/')) || MEMORY_ROOT;
+        const newParent = newPath.slice(0, newPath.lastIndexOf('/')) || MEMORY_ROOT;
+        if (newParent !== oldParent) {
+          const parentStat = await statOrNull(newParent);
+          if (parentStat?.kind === 'directory') {
+            const files = (await ops.list(newParent)).filter((e) => e.kind === 'file');
+            if (files.length >= limits.maxFilesPerDirectory) {
+              throw new MemoryToolError(
+                directoryFullError(newParent, limits.maxFilesPerDirectory),
+              );
+            }
+          }
+        }
       }
       await ops.rename(oldPath, newPath);
       return `Successfully renamed ${oldPath} to ${newPath}`;

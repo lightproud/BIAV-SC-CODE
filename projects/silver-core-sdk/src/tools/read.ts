@@ -16,7 +16,7 @@ import { AbortError, isAbortError } from '../errors.js';
 import {
   MAX_READ_OUTPUT_CHARS,
   formatCatN,
-  looksBinary,
+  looksBinaryForDisplay,
   resolveAbs,
 } from './fsutil.js';
 import { READ_DESCRIPTION } from './descriptions.js';
@@ -328,7 +328,11 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
         };
       }
 
-      if (looksBinary(buf)) {
+      // Z3-2 (audit r4): Read is non-destructive, so it uses the leading-window
+      // sniff — a lone NUL deep in a large text log must NOT make the whole file
+      // unreadable (the full-buffer looksBinary is reserved for the write-back
+      // tools, where a stray NUL really would corrupt bytes on save).
+      if (looksBinaryForDisplay(buf)) {
         return errorResult(
           `Read failed: "${abs}" appears to be a binary file and cannot be displayed as text.`,
         );

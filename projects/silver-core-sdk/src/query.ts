@@ -69,6 +69,8 @@ import {
 } from './loop-support/loop-control.js';
 import { createRunLogSink } from './reporting/run-log.js';
 import { AsyncQueue, createDeferred } from './internal/async.js';
+import { sliceSurrogateSafe } from './internal/text.js';
+import { neutralizeClosingTag } from './internal/inert-text.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
 import { SDK_VERSION } from './version.js';
 import { JsonlSessionStore, resolveTranscriptPath } from './sessions/store.js';
@@ -285,12 +287,28 @@ export function query(args: {
         'session persists nothing)',
     );
   }
+  // R7c-2 (audit r4): file checkpointing writes pre-image file content to disk,
+  // which an incognito session must never do (zero-persistence contract) — reject
+  // the combination like the two sibling incognito/checkpointing combos already do.
+  if (incognito && options.enableFileCheckpointing === true) {
+    throw new ConfigurationError(
+      'enableFileCheckpointing cannot be combined with incognito:true (file ' +
+        'checkpoints persist pre-image content to disk)',
+    );
+  }
   // R2 budget events: the threshold ratio is a fraction of maxBudgetUsd.
   if (
     options.budgetThresholdRatio !== undefined &&
     !(options.budgetThresholdRatio > 0 && options.budgetThresholdRatio <= 1)
   ) {
     throw new ConfigurationError('budgetThresholdRatio must be in (0, 1]');
+  }
+  // R7c-3 (audit r4): maxBudgetUsd must be positive. A 0 / negative / NaN cap
+  // makes the very first pre-turn check (`acct.cost >= cap` == `0 >= 0`) trip,
+  // terminating with error_max_budget_usd at num_turns:0 and no explanation —
+  // reject it up front, exactly like budgetThresholdRatio above.
+  if (options.maxBudgetUsd !== undefined && !(options.maxBudgetUsd > 0)) {
+    throw new ConfigurationError('maxBudgetUsd must be a positive number');
   }
   // R1 structured prelude: the blocks are rendered by string concatenation,
   // so a missing/non-string content (typed but unchecked at runtime — L60,
@@ -755,7 +773,10 @@ export function query(args: {
       inputJson = '"[unserializable input]"';
     }
     if (inputJson.length > TOOL_RECORD_INPUT_MAX_CHARS) {
-      inputJson = `${inputJson.slice(0, TOOL_RECORD_INPUT_MAX_CHARS)}…[truncated]`;
+      // R7s-6 (audit r4): a bare slice can bisect a surrogate pair, leaving a
+      // lone surrogate in the persisted tool_input that serializes as U+FFFD on
+      // every resume replay — cut on a code-point boundary instead.
+      inputJson = `${sliceSurrogateSafe(inputJson, TOOL_RECORD_INPUT_MAX_CHARS)}…[truncated]`;
     }
     store.append(resolvedSessionId, {
       type: 'tool_call',
@@ -796,6 +817,10 @@ export function query(args: {
     persist,
     cwd,
     env,
+    // audit r4 Y1-1: thread the session's bypass unlock into child gates so a
+    // legitimately bypass-enabled session is honored (defaults false / fail-
+    // closed when the session never unlocked it).
+    allowDangerousBypass,
     additionalDirectories: options.additionalDirectories ?? [],
     fallbackModel: options.fallbackModel,
     outerSignal: lifeSignal,
@@ -1365,6 +1390,15 @@ export function query(args: {
             if (lifeSignal.aborted) {
               throw err instanceof AbortError ? err : new AbortError();
             }
+            // Sq-2 (audit r4): an AbortError that reached here WITHOUT this turn's
+            // controller being aborted was never a real interrupt() — it was
+            // injected by the consumer via q.throw(). Treating it as a turn
+            // interrupt (return 'continue' / a synthetic terminal) swallows the
+            // exception and re-suspends at queue.next(), so the throw() promise
+            // pends forever. Propagate the consumer's error instead.
+            if (turnController === null || !turnController.signal.aborted) {
+              throw err;
+            }
             // Turn-level interrupt(): the USER deliberately cancelled THIS turn.
             // Settle the write-ahead checkpoint so a later resume does NOT
             // auto-redrive the cancelled request — redriving would re-bill the
@@ -1497,7 +1531,11 @@ export function query(args: {
       };
       // ACCEPTED-IGNORED knobs present on this call surface once as a typed
       // stream message, not only behind debug:true (audit 2026-07-10 #6).
-      if (presentAcceptedKeys.length > 0) {
+      // Y8-4 (audit r4): these post-init diagnostics are static functions of the
+      // options/model, so re-emitting them on every recoverable auto-resume just
+      // duplicates the same warning in the consumer stream (a supervisor stitches
+      // resumes together and only dedups system/init). Emit on a fresh start only.
+      if (!sess.resumed && presentAcceptedKeys.length > 0) {
         informational(
           `Options accepted for compatibility but with NO effect in this SDK: ` +
             `${presentAcceptedKeys.join(', ')} (see docs/COMPAT.md).`,
@@ -1505,8 +1543,9 @@ export function query(args: {
       }
       // OpenAI-protocol silent-failure surfacing (audit 2026-07-10 P1-4): a
       // knob the wire cannot honor must SAY so once, not no-op quietly. One
-      // informational message per condition, right after init.
-      if (options.provider?.protocol === 'openai-chat') {
+      // informational message per condition, right after init. Y8-4: startup
+      // only — the same conditions recur unchanged on every resume.
+      if (!sess.resumed && options.provider?.protocol === 'openai-chat') {
         if (
           options.maxBudgetUsd !== undefined &&
           !hasPriceFor(engineConfig.model, options.provider.pricing)
@@ -1647,9 +1686,17 @@ export function query(args: {
           const blocks = options.prelude
             .map(
               (p) =>
+                // Y4-1 (audit r4): prelude blocks embed host/ledger-derived text
+                // (event keys/summaries) inside a <system-reminder> fence. Without
+                // neutralizing the closing tag, a value containing
+                // `</system-reminder>` closes the fence early and smuggles forged
+                // instructions after it — the ledger's singleLine only strips
+                // newlines, so the fence owner must break its own terminator here.
                 '<system-reminder>\n' +
-                (p.title !== undefined ? p.title + '\n\n' : '') +
-                p.content +
+                (p.title !== undefined
+                  ? neutralizeClosingTag(p.title, 'system-reminder') + '\n\n'
+                  : '') +
+                neutralizeClosingTag(p.content, 'system-reminder') +
                 '\n</system-reminder>',
             )
             .join('\n\n');
@@ -1688,7 +1735,6 @@ export function query(args: {
         const userParam: APIMessageParam = { role: 'user', content: message.content };
         history.push(userParam);
         requestView.messages.push(userParam);
-        persistParam(sess.sessionId, userParam, userUuid);
         yield echoed;
 
         // 4. Enforce session-wide limits BEFORE the turn, and arm the engine
@@ -1732,6 +1778,13 @@ export function query(args: {
           engineConfig.maxTurns = options.maxTurns - acct.turns;
         }
 
+        // Y8-1 (audit r4): persist the user turn only AFTER the session-cap
+        // pre-check passes. Persisting it before (then returning on a budget /
+        // turns stop) left an UNANSWERED trailing user turn on disk; a later
+        // resume would load that dangling user + the new input as two
+        // consecutive user messages and the API 400s ("roles must alternate").
+        persistParam(sess.sessionId, userParam, userUuid);
+
         // Delegate this turn to the shared engine driver (SM-乙b §5.2 wires
         // the write-ahead checkpoint inside it). A 'stop' outcome (string-mode
         // interrupt) ends the run; anything else falls through to the next
@@ -1756,12 +1809,19 @@ export function query(args: {
       // breaching the budget contract).
       const sessionEndRemainingUsd =
         options.maxBudgetUsd !== undefined ? options.maxBudgetUsd - acct.cost : undefined;
+      // Y8-2 (audit r4): the round must also honor the session-wide maxTurns cap.
+      // It re-armed to a flat 4 turns, so a session run under a tighter maxTurns
+      // (e.g. 1) could overshoot the contract by up to 4 extra turns. Compute the
+      // real remaining turns and skip the round entirely once none are left.
+      const sessionEndRemainingTurns =
+        options.maxTurns !== undefined ? options.maxTurns - acct.turns : undefined;
       if (
         memory !== null &&
         memory.sessionEndUpdate &&
         acct.turns > 0 &&
         !lifeSignal.aborted &&
-        (sessionEndRemainingUsd === undefined || sessionEndRemainingUsd > 0)
+        (sessionEndRemainingUsd === undefined || sessionEndRemainingUsd > 0) &&
+        (sessionEndRemainingTurns === undefined || sessionEndRemainingTurns > 0)
       ) {
         // The round's own result is ABSORBED (below), so it must not count as
         // the last consumer-visible result — driveTurn sets lastYieldedResult
@@ -1788,8 +1848,12 @@ export function query(args: {
             requestView.messages.push(endParam);
             persistParam(sess.sessionId, endParam);
             // Bound the round: a progress card is a couple of tool turns, not
-            // a task — and never more budget than the session cap has left.
-            engineConfig.maxTurns = 4;
+            // a task — and never more budget/turns than the session cap has left
+            // (Y8-2: cap at the remaining session turns, not a flat 4).
+            engineConfig.maxTurns =
+              sessionEndRemainingTurns !== undefined
+                ? Math.min(4, sessionEndRemainingTurns)
+                : 4;
             if (sessionEndRemainingUsd !== undefined) {
               engineConfig.maxBudgetUsd = sessionEndRemainingUsd;
               engineConfig.budgetCostBaselineUsd = acct.cost;

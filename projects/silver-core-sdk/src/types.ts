@@ -1057,6 +1057,14 @@ export type OpenAIProtocolOptions = {
    */
   reasoningEffort?: 'minimal' | 'low' | 'medium' | 'high';
   /**
+   * Role for the system message on the wire. Defaults to `'system'`. Set to
+   * `'developer'` for api.openai.com reasoning models (o1/o3), which 400 on
+   * `role:'system'` (audit r4 Soa-3). Left as an explicit opt-in because the
+   * many OpenAI-compatible gateways this transport targets (vLLM / DeepSeek /
+   * one-api) accept `'system'` fine, so a heuristic remap would misfire.
+   */
+  systemRole?: 'system' | 'developer';
+  /**
    * Extra top-level body fields merged into every request (gateway params,
    * e.g. `{ enable_thinking: false }`). Translator-owned keys win on conflict.
    */

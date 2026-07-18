@@ -364,6 +364,18 @@ function consumeWindow(
   return { chunk: data.slice(cursor, end), nextCursor: end };
 }
 
+/**
+ * Y5-4 (audit r4): per-record stream lengths observed at the previous
+ * BashOutput poll, so a filtered read can tell a STALLED trailing partial
+ * (release it — a stable interactive prompt) from one still being written (keep
+ * holding it, per F4). A WeakMap keeps this out of the shared BackgroundShell
+ * contract and clears itself when the record is dropped.
+ */
+const lastPolledLen = new WeakMap<
+  BackgroundShell,
+  { out: number; err: number }
+>();
+
 export const bashOutputTool: BuiltinTool = {
   name: 'BashOutput',
   description:
@@ -436,18 +448,29 @@ export const bashOutputTool: BuiltinTool = {
     // F4: with an active filter on a running shell, hold back the trailing
     // partial line so the line-anchored regex never tests a chunk fragment.
     const holding = filter !== undefined && rec.status === 'running';
+    // Y5-4 (audit r4): a newline-less trailing partial (an interactive prompt
+    // like "Password: ") would otherwise be held FOREVER by F4, so the model
+    // never sees it and cannot respond to the apparent hang. Release a held
+    // partial once the stream has STALLED — no new bytes since the previous
+    // poll — because a stalled tail is a stable prompt, not a line still being
+    // written. The split-line case F4 protects (bytes arriving between polls)
+    // is untouched: a growing stream is never treated as stalled.
+    const prev = lastPolledLen.get(rec);
+    const stalledOut = prev !== undefined && prev.out === rec.stdout.length;
+    const stalledErr = prev !== undefined && prev.err === rec.stderr.length;
     const winOut = consumeWindow(
       rec.stdout,
       rec.cursorOut,
-      holding && !rec.stdoutTruncated,
+      holding && !rec.stdoutTruncated && !stalledOut,
     );
     const winErr = consumeWindow(
       rec.stderr,
       rec.cursorErr,
-      holding && !rec.stderrTruncated,
+      holding && !rec.stderrTruncated && !stalledErr,
     );
     rec.cursorOut = winOut.nextCursor;
     rec.cursorErr = winErr.nextCursor;
+    lastPolledLen.set(rec, { out: rec.stdout.length, err: rec.stderr.length });
 
     const parts: string[] = [describeStatus(rec)];
     const out = filterLines(winOut.chunk, filter);
