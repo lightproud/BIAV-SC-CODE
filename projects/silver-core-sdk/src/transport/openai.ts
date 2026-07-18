@@ -763,7 +763,24 @@ export class OpenAIStreamTranslator {
         },
       });
     }
-    if (chunk.usage !== undefined && chunk.usage !== null) this.usage = chunk.usage;
+    if (chunk.usage !== undefined && chunk.usage !== null) {
+      // WV2-2 (audit r3): shallow-MERGE, don't replace. A gateway that splits
+      // usage across chunks (prompt_tokens early, completion_tokens /
+      // prompt_tokens_details in the final summary) would otherwise lose the
+      // earlier fields — finish() reads them off the last object only.
+      this.usage = {
+        ...this.usage,
+        ...chunk.usage,
+        ...(chunk.usage.prompt_tokens_details !== undefined
+          ? {
+              prompt_tokens_details: {
+                ...this.usage?.prompt_tokens_details,
+                ...chunk.usage.prompt_tokens_details,
+              },
+            }
+          : {}),
+      };
+    }
     const choice = chunk.choices?.[0];
     if (choice === undefined) return events;
     // Only a non-empty finish_reason string counts as an explicit terminal
@@ -775,13 +792,35 @@ export class OpenAIStreamTranslator {
     const delta = choice.delta;
     if (delta === undefined) return events;
 
+    // WV2-3 (audit r3): some OpenAI-compatible / multimodal gateways stream
+    // `content` (and reasoning) as an ARRAY of parts, not a bare string. Only
+    // the string case was decoded, so an array-form delta contributed nothing
+    // → contentSeen never flipped → the empty-finish guard wrongly rejected the
+    // whole turn as empty_message. Flatten an array of text-ish parts to a
+    // joined string first.
+    const flattenContent = (v: unknown): unknown => {
+      if (!Array.isArray(v)) return v;
+      const text = v
+        .map((p) =>
+          typeof p === 'string'
+            ? p
+            : typeof (p as { text?: unknown }).text === 'string'
+              ? (p as { text: string }).text
+              : '',
+        )
+        .join('');
+      return text;
+    };
+    const deltaContent = flattenContent(delta.content);
+
     // Prefer whichever reasoning field actually carries text: `??` alone let a
     // present-but-empty `reasoning_content: ''` mask a populated `reasoning`
     // in the same delta (dual-field gateways emit both).
-    const reasoning =
+    const reasoningRaw =
       typeof delta.reasoning_content === 'string' && delta.reasoning_content.length > 0
         ? delta.reasoning_content
         : (delta.reasoning ?? delta.reasoning_content);
+    const reasoning = flattenContent(reasoningRaw);
     if (typeof reasoning === 'string' && reasoning.length > 0) {
       this.contentSeen = true;
       const index = this.openBlock(events, 'reasoning', {
@@ -795,13 +834,13 @@ export class OpenAIStreamTranslator {
         delta: { type: 'thinking_delta', thinking: reasoning },
       });
     }
-    if (typeof delta.content === 'string' && delta.content.length > 0) {
+    if (typeof deltaContent === 'string' && deltaContent.length > 0) {
       this.contentSeen = true;
       const index = this.openBlock(events, 'text', { type: 'text', text: '' });
       events.push({
         type: 'content_block_delta',
         index,
-        delta: { type: 'text_delta', text: delta.content },
+        delta: { type: 'text_delta', text: deltaContent },
       });
     }
     // A structured-output / safety refusal streams its text in delta.refusal,

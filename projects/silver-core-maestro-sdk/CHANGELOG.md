@@ -12,6 +12,18 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.71.2 — 2026-07-18
+
+Lockstep alignment only — no maestro code change. The agent SDK landed T51
+audit r3 batches R + S + T (deep-read source): 19 STILL-LIVE findings across
+the openai transport (usage merge, array-delta flattening), structured-output
+(exported `valueMatchesSchema`, circular-schema guard, elicitation fail-close),
+thinking policy (right-bounded pre-adaptive minors + dated-4.0 re-anchor), tool
+dispatch / MCP registry, sessions, subagents (foreground-failure isolation),
+and tools (surrogate-safe slicing, bash timeout guard). Two findings were
+adjudicated rather than shipped blind (WV2-4 deferred to keeper; WV2-1 a false
+positive). See the agent SDK CHANGELOG 0.71.2 for the itemized list.
+
 ## 0.71.1 — 2026-07-18
 
 Lockstep alignment only — no maestro code change. The agent SDK landed T51

@@ -154,7 +154,9 @@ export function formatCatN(
     const raw = lines[i] ?? '';
     let text: string;
     if (raw.length > maxLineChars) {
-      text = `${raw.slice(0, maxLineChars)}…[line truncated: ${raw.length} chars total]`;
+      // WV5-4 (audit r3): surrogate-safe slice so the per-line cap never leaves
+      // a lone surrogate (the total-cap branch below already uses this helper).
+      text = `${sliceSurrogateSafe(raw, maxLineChars)}…[line truncated: ${raw.length} chars total]`;
       truncatedLines += 1;
     } else {
       text = raw;

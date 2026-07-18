@@ -137,13 +137,16 @@ describe('structured goal gate over the engine loop', () => {
     expect(lastResult(messages).subtype).toBe('success');
     expect(events.map((e) => e.kind)).toEqual(['blocked', 'achieved']);
     // The evaluator's reason was fed back into the loop as a user turn.
+    // W2-1 (audit r3): the reason is fed back as a USER turn (the Stop-hook
+    // block reason). Match a user turn carrying the evaluator's reason,
+    // whether its content is a string or a block array — the earlier filter
+    // required a non-string content and only passed via a loose `??` fallback.
     const feedback = history.find(
       (m) =>
         m.role === 'user' &&
-        typeof m.content !== 'string' &&
         JSON.stringify(m.content).includes('two hosts still unscanned'),
     );
-    expect(feedback ?? history.find((m) => JSON.stringify(m).includes('two hosts'))).toBeDefined();
+    expect(feedback).toBeDefined();
     // The evaluator saw the goal text and the running block count.
     expect(contexts[0]).toEqual({ goal: 'all fleet metrics collected', blocks: 0 });
     expect(contexts[1]).toEqual({ goal: 'all fleet metrics collected', blocks: 1 });

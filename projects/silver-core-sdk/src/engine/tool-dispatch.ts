@@ -71,13 +71,20 @@ export type ToolExecOutcome = {
   /** Observability messages (e.g. permission_denied) to yield before the batch
    * continues. Sourced inside executeToolUse, which cannot yield itself. */
   observability?: SDKMessage[];
+  /** WV4-8 (audit r3): defer/skip return an is_error placeholder tool_result to
+   *  keep the API turn valid, but they are NOT failures — the app is resolving
+   *  the call out of band. Set so the S3 telemetry does not label them 'error'. */
+  outOfBand?: boolean;
 };
 
 /** Map an MCP CallToolResult into a builtin-style tool result payload.
  *  Exported for unit tests (pure function, no I/O). */
 export function mapMcpResult(res: CallToolResult): ToolResultPayload {
   const parts: Array<TextBlockParam | ImageBlockParam> = [];
-  for (const part of res.content) {
+  // WV4-6 (audit r3): a structuredContent-only result has no `content` array;
+  // iterating it unguarded threw "not iterable" and lost the structured data
+  // (handled just below). Default to an empty list.
+  for (const part of res.content ?? []) {
     switch (part.type) {
       case 'text':
         parts.push({ type: 'text', text: part.text });
@@ -297,7 +304,9 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       throw err;
     }
     emit(
-      outcome.result.is_error === true ? 'error' : 'ok',
+      // WV4-8: an out-of-band defer/skip carries an is_error placeholder but is
+      // not a failure — do not label it 'error' in the S3 telemetry.
+      outcome.outOfBand !== true && outcome.result.is_error === true ? 'error' : 'ok',
       summarizeResultContent(outcome.result.content),
     );
     return outcome;
@@ -417,7 +426,7 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
     if (check.decision === 'skip') {
       // canUseTool returned null: the app is resolving this call out of band.
       // Emit a placeholder tool_result so the API turn stays valid; record NO denial.
-      return { result: errorToolResult(check.message) };
+      return { result: errorToolResult(check.message), outOfBand: true };
     }
     if (check.decision === 'defer') {
       // The deferred payload must carry the hook-rewritten input when a
@@ -427,6 +436,7 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       const deferredInput = pre?.updatedInput ?? input;
       return {
         result: errorToolResult(check.message),
+        outOfBand: true,
         defer: {
           id: block.id,
           name: toolName,

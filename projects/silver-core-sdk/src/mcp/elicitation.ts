@@ -18,6 +18,7 @@ import type {
   ElicitationResult,
   JSONSchema,
 } from '../types.js';
+import { valueMatchesSchema } from '../internal/structured-output.js';
 
 /** JSON-RPC `result` payload written back for an elicitation/create request. */
 export type ElicitationJsonRpcResult =
@@ -42,13 +43,21 @@ export function parseElicitationParams(params: unknown): ElicitationRequest {
   return { message, requestedSchema };
 }
 
-/** Normalize a host ElicitationResult into the JSON-RPC result payload. */
-function normalizeResult(result: unknown): ElicitationJsonRpcResult {
+/** Normalize a host ElicitationResult into the JSON-RPC result payload.
+ *  WV4-3 (audit r3): accepted content is validated against the request's
+ *  requestedSchema — a host that accepts with schema-violating content must
+ *  not forward invalid typed input to the server; fail closed instead. */
+function normalizeResult(
+  result: unknown,
+  requestedSchema: JSONSchema,
+): ElicitationJsonRpcResult {
   if (result && typeof result === 'object') {
     const action = (result as { action?: unknown }).action;
     if (action === 'accept') {
       const content = (result as { content?: unknown }).content;
       if (content && typeof content === 'object' && !Array.isArray(content)) {
+        // Validate against requestedSchema; on violation, fail closed.
+        if (!valueMatchesSchema(content, requestedSchema)) return { action: 'decline' };
         return { action: 'accept', content: content as Record<string, unknown> };
       }
       // accept without a valid content object is invalid; fail closed.
@@ -77,8 +86,21 @@ export async function resolveElicitation(
   if (signal.aborted) return { action: 'decline' };
   try {
     const request = parseElicitationParams(params);
-    const result: ElicitationResult = await handler(request, { signal });
-    return normalizeResult(result);
+    // WV4-2 (audit r3): race the handler against the abort signal so a handler
+    // that never resolves (and ignores the passed signal) cannot hang the wire
+    // indefinitely — an abort mid-await declines rather than blocks forever.
+    const abortDecline = new Promise<ElicitationResult>((resolve) => {
+      if (signal.aborted) {
+        resolve({ action: 'decline' });
+        return;
+      }
+      signal.addEventListener('abort', () => resolve({ action: 'decline' }), { once: true });
+    });
+    const result: ElicitationResult = await Promise.race([
+      handler(request, { signal }),
+      abortDecline,
+    ]);
+    return normalizeResult(result, request.requestedSchema);
   } catch {
     return { action: 'decline' };
   }

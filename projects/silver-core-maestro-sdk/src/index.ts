@@ -22,7 +22,7 @@
  * LedgerDriver.
  */
 
-export const MAESTRO_SDK_VERSION = '0.71.1';
+export const MAESTRO_SDK_VERSION = '0.71.2';
 
 // Clock seam
 export type { Clock } from './clock.js';

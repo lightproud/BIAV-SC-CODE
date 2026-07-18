@@ -76,7 +76,14 @@ export function createSessionPersistence(
     // Mirror persistAssistant's empty guard (audit 2026-07-17 L53): an empty
     // turn ('' or []) persisted here survives every repair pass and 400s the
     // API on each later resume replay.
-    if (m.content.length === 0) return;
+    // WV3-4 (audit r3): a length check alone let `[{type:'text',text:''}]`
+    // (array length 1, empty text) through — the API 400s on that too. Filter
+    // empty text blocks first, exactly as persistAssistant does.
+    const content =
+      typeof m.content === 'string'
+        ? m.content
+        : m.content.filter((b) => (b.type === 'text' ? b.text.length > 0 : true));
+    if (content.length === 0) return;
     store.append(sessionId, {
       type: m.role,
       // Persist a STABLE message identity (keeper ruling 2026-07-13): when the
@@ -87,7 +94,7 @@ export function createSessionPersistence(
       // tolerance), which is why the field stays optional there.
       uuid: uuid ?? randomUUID(),
       timestamp: new Date().toISOString(),
-      message: { role: m.role, content: m.content },
+      message: { role: m.role, content },
     });
   }
 

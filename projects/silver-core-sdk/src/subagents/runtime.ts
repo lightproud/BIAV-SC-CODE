@@ -1744,6 +1744,21 @@ export function createSubagentRuntime(
           resolved.type,
           new AbortController().signal,
         ).catch(() => undefined);
+        // WZ3-2 (audit r3): a NON-abort child failure must not kill the parent
+        // loop — the background and SendMessage paths already isolate & degrade.
+        // Return a failure result so the Agent tool surfaces it and the parent
+        // continues; rethrow ONLY for a genuine abort (cancellation must always
+        // propagate — V2-1 — whether it arrived as an AbortError or a set signal).
+        if (!isAbortError(err) && !params.signal.aborted && !outerSignal.aborted) {
+          return {
+            content:
+              `Subagent failed (agentId: ${agentId}): ` +
+              `${err instanceof Error ? err.message : String(err)}`,
+            isError: true,
+            agentId,
+            background: false,
+          };
+        }
         throw err;
       } finally {
         await releaseWorktree().catch(() => undefined);
@@ -2175,14 +2190,20 @@ export function createSubagentRuntime(
       }
     },
     async settleAll(timeoutMs = 2_000): Promise<void> {
+      let allSettled = true;
       if (allBackgroundPromises.size > 0) {
-        await Promise.race([
-          Promise.allSettled([...allBackgroundPromises]),
-          new Promise<void>((resolve) => {
-            const t = setTimeout(resolve, timeoutMs);
+        // WZ3-3 (audit r3): learn WHICH arm of the race won. If the timeout
+        // wins with children still in flight, their transports are still
+        // serving requests — disposing them below would be a use-after-dispose.
+        const TIMED_OUT = Symbol('timed-out');
+        const winner = await Promise.race([
+          Promise.allSettled([...allBackgroundPromises]).then(() => 'settled' as const),
+          new Promise<typeof TIMED_OUT>((resolve) => {
+            const t = setTimeout(() => resolve(TIMED_OUT), timeoutMs);
             (t as { unref?: () => void }).unref?.();
           }),
         ]);
+        allSettled = winner !== TIMED_OUT;
       }
       // Query teardown: every started sidechain is now truly done (no further
       // SendMessage continuation can revive it past this point), so emit each
@@ -2191,8 +2212,10 @@ export function createSubagentRuntime(
       for (const agentId of sidechainStarted) finalizeSidechain(agentId);
       // Release transports the resolver handed over with owned: true (AFTER the
       // children settled — a SendMessage continuation can revive a finished
-      // child any time before this point).
-      disposeOwnedTransports();
+      // child any time before this point). WZ3-3: on a timeout with in-flight
+      // children, SKIP disposal (leak-but-safe) rather than dispose a transport
+      // still in use.
+      if (allSettled) disposeOwnedTransports();
     },
     abortAll(): void {
       for (const { controller } of backgroundTasks.values()) {

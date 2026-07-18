@@ -116,7 +116,11 @@ describe('H1 — compaction folds pure tool-loops', () => {
       { role: 'assistant', content: [{ type: 'text', text: 'ok' }] },
     ];
     const part = partitionForCompaction(msgs, 400, cfg);
-    if (part !== null) expect(part.suffix[0]!.role).toBe('user');
+    // W1-1 (audit r3): a conditional `if (part !== null)` let a null result
+    // (no partition = the regression) pass with zero assertions. Assert the
+    // partition happened, then its shape.
+    expect(part).not.toBeNull();
+    expect(part!.suffix[0]!.role).toBe('user');
   });
 });
 

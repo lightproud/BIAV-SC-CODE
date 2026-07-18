@@ -85,7 +85,10 @@ describe('OPT-1: content mode keeps the 250 flood guard + honest footer', () => 
     const dir = await makeCorpus(300);
     const c = contentOf(await grepTool.execute({ pattern: 'NEEDLE', path: dir, output_mode: 'content' }, makeCtx(dir)));
     const bodyLines = c.split('\n').filter((l) => l.includes('NEEDLE'));
-    expect(bodyLines.length).toBeLessThanOrEqual(250);
+    // W2-2 (audit r3): 300 matches capped at 250 must yield EXACTLY 250 body
+    // lines. A one-sided `<= 250` also passed on over-truncation (e.g. 12
+    // lines); pin the cap so both directions are guarded.
+    expect(bodyLines.length).toBe(250);
     // Early scan stop (files remain unscanned): certainty-honest footer.
     expect(c).toContain('head_limit=250');
     expect(c).toMatch(/not scanned|truncated at head_limit=250/);
