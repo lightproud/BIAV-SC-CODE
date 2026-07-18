@@ -12,6 +12,7 @@ import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
 import { AbortError } from '../errors.js';
 import { guardRegexPattern } from '../internal/regex-guard.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import { GREP_DESCRIPTION } from './descriptions.js';
 import type {
   BuiltinTool,
@@ -22,7 +23,6 @@ import type {
 const IGNORE_PATTERNS = ['**/node_modules/**', '**/.git/**'];
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
 const DEFAULT_HEAD_LIMIT = 250;
-const BINARY_SNIFF_BYTES = 8192;
 const MAX_LINE_DISPLAY_CHARS = 2000;
 
 /** File-type name -> glob patterns (mirrors common ripgrep type sets). */
@@ -60,12 +60,13 @@ const TYPE_GLOBS: Record<string, string[]> = {
   tex: ['**/*.tex'],
 };
 
+// V6-4 (audit r4): sniffing only the first 8KB let a file with a text header
+// and a binary tail slip through the guard — grep then emitted the raw binary
+// bytes of its tail. The whole buffer is already resident (<= 10MB read cap)
+// and Buffer.includes is native memchr, so scan all of it: a NUL anywhere marks
+// the file binary and it is skipped whole (ripgrep-style).
 function looksBinary(buf: Buffer): boolean {
-  const n = Math.min(buf.length, BINARY_SNIFF_BYTES);
-  for (let i = 0; i < n; i++) {
-    if (buf[i] === 0) return true;
-  }
-  return false;
+  return buf.includes(0);
 }
 
 /** Extension set ('.ext') for a type's glob patterns, for glob+type filtering. */
@@ -112,8 +113,11 @@ function lineIndexAt(offsets: number[], pos: number): number {
 }
 
 function clipLine(s: string): string {
+  // R7s-1 (audit r4): a bare slice at 2000 can split a surrogate pair, leaving
+  // a lone surrogate that serializes as U+FFFD in the grep tool_result the model
+  // sees. Cut on a codepoint boundary via the shared helper.
   return s.length > MAX_LINE_DISPLAY_CHARS
-    ? `${s.slice(0, MAX_LINE_DISPLAY_CHARS)} [line truncated]`
+    ? `${sliceSurrogateSafe(s, MAX_LINE_DISPLAY_CHARS)} [line truncated]`
     : s;
 }
 
@@ -131,28 +135,37 @@ type FileScan = {
   matches: number[];
 };
 
-/** Scan one file; null means skipped (unreadable / binary / oversize). */
+/** Why a file produced no scan. `oversize` is disclosed to the caller (V6-1);
+ *  the others are ordinary silent skips. */
+type ScanSkip = { skipped: 'unreadable' | 'binary' | 'oversize' };
+
+/** Scan one file; a `skipped` result means unreadable / binary / oversize. */
 async function scanFile(
   file: string,
   pattern: string,
   flags: string,
   multiline: boolean,
-): Promise<FileScan | null> {
+): Promise<FileScan | ScanSkip> {
   let stat;
   try {
     stat = await fs.stat(file);
   } catch {
-    return null;
+    return { skipped: 'unreadable' };
   }
-  if (!stat.isFile() || stat.size > MAX_FILE_SIZE_BYTES) return null;
+  if (!stat.isFile()) return { skipped: 'unreadable' };
+  // V6-1 (audit r4): an oversize file used to be indistinguishable from every
+  // other skip, so the caller silently dropped it — a 10.5MB log that DID
+  // contain the search term reported a bare "No matches found" with no hint it
+  // was never scanned. Signal oversize distinctly so the caller can disclose it.
+  if (stat.size > MAX_FILE_SIZE_BYTES) return { skipped: 'oversize' };
 
   let buf: Buffer;
   try {
     buf = await fs.readFile(file);
   } catch {
-    return null;
+    return { skipped: 'unreadable' };
   }
-  if (looksBinary(buf)) return null;
+  if (looksBinary(buf)) return { skipped: 'binary' };
 
   // CRLF-normalize ONCE so line splitting, multiline detection and -o
   // extraction all see the same text (F6). Lone `\r` was never a separator
@@ -339,7 +352,21 @@ export const grepTool: BuiltinTool = {
     const before = asOptionalCount(input['-B']) ?? bothContext ?? 0;
     const after = asOptionalCount(input['-A']) ?? bothContext ?? 0;
     const rawLimit = input['head_limit'];
-    // 0 (or negative) = unlimited; undefined -> a MODE-DEPENDENT default.
+    // V6-3 (audit r4): a NEGATIVE head_limit used to collapse via Math.max(0,…)
+    // to 0 = unlimited, so `head_limit:-1` silently returned EVERY match with no
+    // cap — the opposite of a caller asking to bound output. Reject it so the
+    // model corrects the value instead of being flooded.
+    if (
+      typeof rawLimit === 'number' &&
+      Number.isFinite(rawLimit) &&
+      rawLimit < 0
+    ) {
+      return {
+        content: `Grep: "head_limit" must be >= 0 (0 = unlimited). Got ${rawLimit}.`,
+        isError: true,
+      };
+    }
+    // 0 = unlimited; undefined -> a MODE-DEPENDENT default.
     // `content` can flood (many lines per file) so it keeps the 250 guard.
     // `count` and `files_with_matches` emit ONE small entry per file, and a
     // truncated result there is a WRONG count / an incomplete file list — a
@@ -424,11 +451,19 @@ export const grepTool: BuiltinTool = {
       const patterns = globPattern
         ? [globPattern]
         : (typePatterns ?? ['**/*']);
-      files = await fg(patterns, {
+      const rawEntries = await fg(patterns, {
         cwd: searchPath,
         absolute: true,
         dot: false,
-        onlyFiles: true,
+        // Y5-1 (audit r4): onlyFiles:true + followSymbolicLinks:false drops
+        // symlinks pointing to a regular file (a non-followed symlink's dirent
+        // is not a file), leaving a symlinked source file silently unsearched.
+        // Enumerate with onlyFiles:false so symlink entries survive the filter;
+        // scanFile fs.stat's each below (following the link) and skips whatever
+        // does not resolve to a regular file. The loop guard is unaffected: a
+        // non-followed symlinked directory is still never recursed into.
+        onlyFiles: false,
+        objectMode: true,
         ignore: IGNORE_PATTERNS,
         suppressErrors: true,
         // F1 (audit 2026-07-17): same symlink-loop guard as Glob — fast-glob
@@ -436,6 +471,9 @@ export const grepTool: BuiltinTool = {
         // on sibling loop links, uninterruptible). ripgrep default parity.
         followSymbolicLinks: false,
       });
+      files = rawEntries
+        .filter((e) => e.dirent.isFile() || e.dirent.isSymbolicLink())
+        .map((e) => e.path);
       if (globPattern && typePatterns) {
         // glob narrowed further by type extensions.
         const exts = extensionsForType(typePatterns);
@@ -458,6 +496,9 @@ export const grepTool: BuiltinTool = {
     // has CERTAIN pending output (a match/hunk was about to be emitted); the
     // top-of-loop early-stop alone missed a cut inside the LAST scanned file.
     let matchesCut = false;
+    // V6-1 (audit r4): files skipped for exceeding the 10MB scan cap, disclosed
+    // in the result so their (possible) matches are not silently unreported.
+    const oversizeSkipped: string[] = [];
 
     for (const file of files) {
       if (ctx.signal.aborted) throw new AbortError();
@@ -468,7 +509,11 @@ export const grepTool: BuiltinTool = {
       scannedFiles += 1;
 
       const scan = await scanFile(file, pattern, flags, multiline);
-      if (scan === null || scan.matches.length === 0) continue;
+      if ('skipped' in scan) {
+        if (scan.skipped === 'oversize') oversizeSkipped.push(file);
+        continue;
+      }
+      if (scan.matches.length === 0) continue;
       anyMatch = true;
 
       if (outputMode === 'files_with_matches') {
@@ -571,8 +616,18 @@ export const grepTool: BuiltinTool = {
         `early_stop=${scanStoppedEarly}`,
     );
 
+    // V6-1 (audit r4): disclose files skipped for exceeding the 10MB scan cap,
+    // so an empty or partial result is never mistaken for a complete search of
+    // a corpus that contains an unsearched (possibly matching) large file.
+    const oversizeNote =
+      oversizeSkipped.length > 0
+        ? `\n(${oversizeSkipped.length} file(s) skipped: larger than the ` +
+          `${MAX_FILE_SIZE_BYTES / (1024 * 1024)}MB scan cap and NOT searched — ` +
+          `matches in them, if any, are not shown:\n${oversizeSkipped.join('\n')})`
+        : '';
+
     if (!anyMatch) {
-      return { content: 'No matches found' };
+      return { content: `No matches found${oversizeNote}` };
     }
     const capped = limited
       ? out.slice(offset, offset + headLimit)
@@ -581,14 +636,15 @@ export const grepTool: BuiltinTool = {
       // Zero collected rows despite anyMatch: only zero-length matches (which
       // emit nothing, ripgrep semantics) — genuinely no reportable matches.
       if (out.length === 0) {
-        return { content: 'No matches found' };
+        return { content: `No matches found${oversizeNote}` };
       }
       // L17 (audit 2026-07-17): matches DO exist, the offset just skipped
       // past all of them — "No matches found" masked real hits.
       return {
         content:
           `No results in the requested window: offset=${offset} skips all ` +
-          `${out.length} collected result(s). Matches exist — lower offset.`,
+          `${out.length} collected result(s). Matches exist — lower offset.` +
+          oversizeNote,
       };
     }
     // OPT-1: never truncate silently. When the head_limit cap cut the scan or
@@ -608,6 +664,6 @@ export const grepTool: BuiltinTool = {
         `${files.length - scannedFiles} file(s) not scanned — more matches may exist;` +
         ` raise head_limit or set head_limit=0 for the complete result)`;
     }
-    return { content };
+    return { content: content + oversizeNote };
   },
 };

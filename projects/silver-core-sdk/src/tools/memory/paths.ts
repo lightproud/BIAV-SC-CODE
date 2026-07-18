@@ -64,7 +64,15 @@ export function validateMemoryPath(raw: unknown): string {
   // Decode BEFORE structural checks so %2e%2e%2f-style traversal is seen as
   // the `../` it decodes to (docs-listed attack shape). A decoded backslash
   // (%5c) is likewise rejected.
-  const decoded = fullyDecoded(raw);
+  //
+  // Unicode-normalize (NFC) so a path supplied in a different normalization
+  // form than a mount declaration (NFD vs NFC — the SAME file on APFS/HFS+)
+  // canonicalizes identically; otherwise the byte-wise mount containment
+  // checks (mounts.ts) miss and a read-only mount could be bypassed by
+  // re-encoding a segment (audit r4 U4-2). NFC (canonical, not compatibility
+  // NFKC) never turns non-ASCII into ASCII separators/dots, so it is safe
+  // before the structural checks below.
+  const decoded = fullyDecoded(raw).normalize('NFC');
   if (decoded.includes('\0')) {
     throw new MemoryPathError(`Error: Path contains an invalid NUL byte: ${raw}`);
   }

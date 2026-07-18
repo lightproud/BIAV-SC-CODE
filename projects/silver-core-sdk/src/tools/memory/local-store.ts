@@ -13,6 +13,7 @@
  * under permissive umasks, matching the reference local-filesystem helper.
  */
 
+import { Buffer } from 'node:buffer';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import type { MemoryStore } from '../../internal/contracts.js';
@@ -28,6 +29,17 @@ import {
 
 const FILE_CREATE_MODE = 0o600;
 const DIR_CREATE_MODE = 0o700;
+
+// Real-filesystem path limits: a segment over NAME_MAX (255 bytes on Linux /
+// macOS) or a whole path over PATH_MAX (4096 on Linux) makes fs throw a raw
+// ENAMETOOLONG. Bounding them here turns an overly long virtual path into a
+// structured MemoryToolError instead (audit r4 U4-7).
+const MAX_PATH_COMPONENT_BYTES = 255;
+const MAX_PATH_BYTES = 4096;
+
+// Monotonic suffix so concurrent atomic writes in one process never collide on
+// a temp name (audit r4 U4-4).
+let tmpWriteCounter = 0;
 
 async function validateNoSymlinkEscape(targetPath: string, memoryRoot: string): Promise<void> {
   const resolvedRoot = await fs.realpath(memoryRoot);
@@ -61,6 +73,20 @@ export function createLocalMemoryFileOps(memoryRootDir: string): MemoryFileOps {
     const full = rel === '' ? rootAbs : path.resolve(rootAbs, rel);
     if (full !== rootAbs && !full.startsWith(rootAbs + path.sep)) {
       throw new MemoryToolError(`Error: Path ${virtualPath} would escape the ${MEMORY_ROOT} directory`);
+    }
+    // Path length bound (audit r4 U4-7): fail with a structured error rather
+    // than letting fs raise a raw ENAMETOOLONG errno for an over-long path.
+    if (Buffer.byteLength(full, 'utf8') > MAX_PATH_BYTES) {
+      throw new MemoryToolError(
+        `Error: Path ${virtualPath} is too long (exceeds ${MAX_PATH_BYTES} bytes)`,
+      );
+    }
+    for (const seg of rel === '' ? [] : rel.split('/')) {
+      if (Buffer.byteLength(seg, 'utf8') > MAX_PATH_COMPONENT_BYTES) {
+        throw new MemoryToolError(
+          `Error: Path ${virtualPath} has a segment longer than ${MAX_PATH_COMPONENT_BYTES} bytes`,
+        );
+      }
     }
     await fs.mkdir(rootAbs, { recursive: true, mode: DIR_CREATE_MODE });
     await validateNoSymlinkEscape(full, rootAbs);
@@ -104,8 +130,25 @@ export function createLocalMemoryFileOps(memoryRootDir: string): MemoryFileOps {
     },
     async write(p, content): Promise<void> {
       const real = await toReal(p);
-      await fs.mkdir(path.dirname(real), { recursive: true, mode: DIR_CREATE_MODE });
-      await fs.writeFile(real, content, { encoding: 'utf8', mode: FILE_CREATE_MODE });
+      const dir = path.dirname(real);
+      await fs.mkdir(dir, { recursive: true, mode: DIR_CREATE_MODE });
+      // Atomic write (audit r4 U4-4): write to a sibling temp file then rename
+      // over the target, so a crash / abort / ENOSPC mid-write leaves the
+      // ORIGINAL file intact instead of a truncated or empty one — a bare
+      // fs.writeFile truncates in place before the new bytes land. The temp
+      // name is dot-prefixed (excluded from listings) and process/counter
+      // -unique to avoid concurrent collisions; it is removed on failure.
+      const tmp = path.join(
+        dir,
+        `.${path.basename(real)}.${process.pid}.${(tmpWriteCounter += 1)}.tmp`,
+      );
+      try {
+        await fs.writeFile(tmp, content, { encoding: 'utf8', mode: FILE_CREATE_MODE });
+        await fs.rename(tmp, real);
+      } catch (err) {
+        await fs.rm(tmp, { force: true }).catch(() => {});
+        throw err;
+      }
     },
     async delete(p): Promise<void> {
       await fs.rm(await toReal(p), { recursive: true, force: false });
@@ -114,7 +157,24 @@ export function createLocalMemoryFileOps(memoryRootDir: string): MemoryFileOps {
       const realOld = await toReal(oldP);
       const realNew = await toReal(newP);
       await fs.mkdir(path.dirname(realNew), { recursive: true, mode: DIR_CREATE_MODE });
-      await fs.rename(realOld, realNew);
+      // No-clobber rename (audit r4 Sfs-2): the engine checks the destination
+      // is free, but fs.rename would still silently overwrite a file created
+      // in the TOCTOU window before this call. link() is atomic and fails
+      // EEXIST when the destination already exists, closing the window for
+      // files; then drop the source name. Directories cannot be hardlinked
+      // (link throws EPERM) and some filesystems reject link outright — fall
+      // back to fs.rename there (its own no-clobber for non-empty dirs still
+      // holds).
+      try {
+        await fs.link(realOld, realNew);
+      } catch (err) {
+        if ((err as NodeJS.ErrnoException).code === 'EEXIST') {
+          throw new MemoryToolError(`Error: The destination ${newP} already exists`);
+        }
+        await fs.rename(realOld, realNew);
+        return;
+      }
+      await fs.unlink(realOld);
     },
   };
 }

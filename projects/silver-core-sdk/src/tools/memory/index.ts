@@ -78,6 +78,19 @@ export const MEMORY_INDEX_PATH = '/memories/MEMORY.md';
 const INDEX_DEFAULT_MAX_LINES = 200;
 const INDEX_DEFAULT_MAX_BYTES = 25_600; // 25 KB
 
+/** Truncate a string to at most `maxBytes` UTF-8 bytes at a character boundary
+ *  (never splitting a multi-byte sequence). Used only for the degenerate
+ *  resident-index case where a single line exceeds the byte cap (audit r4
+ *  U4-8). */
+function truncateToUtf8Bytes(line: string, maxBytes: number): string {
+  const buf = Buffer.from(line, 'utf8');
+  if (buf.length <= maxBytes) return line;
+  let end = maxBytes;
+  // Back off while the cut lands on a UTF-8 continuation byte (0b10xxxxxx).
+  while (end > 0 && (buf[end]! & 0xc0) === 0x80) end -= 1;
+  return buf.toString('utf8', 0, end);
+}
+
 export type MemoryRuntime = {
   store: MemoryStore;
   /** Resolved assembly mode (spec R2): see MemoryOptions.mode. */
@@ -239,6 +252,17 @@ export function resolveMemoryRuntime(args: {
         const cost = Buffer.byteLength(line, 'utf8') + (kept.length > 0 ? 1 : 0);
         if (bytes + cost > maxBytes) {
           truncated = true;
+          // A first line that ALONE exceeds the byte cap would otherwise drop
+          // the whole index silently (kept stays empty -> content '' -> null);
+          // inject a byte-truncated head instead so the index is never lost
+          // without signal (audit r4 U4-8).
+          if (kept.length === 0) {
+            const head = truncateToUtf8Bytes(line, maxBytes);
+            if (head.length > 0) {
+              kept.push(head);
+              bytes += Buffer.byteLength(head, 'utf8');
+            }
+          }
           break;
         }
         kept.push(line);

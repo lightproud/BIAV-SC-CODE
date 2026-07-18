@@ -9,6 +9,7 @@
 import { Buffer } from 'node:buffer';
 import { randomBytes } from 'node:crypto';
 import {
+  chmod,
   mkdir,
   readFile,
   realpath,
@@ -179,6 +180,12 @@ export const writeTool: BuiltinTool = {
           signal: ctx.signal,
           ...(priorMode !== undefined ? { mode: priorMode } : {}),
         });
+        // Y5-2 (audit r4): writeFile's `mode` is masked by the process umask, so
+        // under umask 022 a prior mode of 0o664 was recreated as 0o644 — the
+        // group/other WRITE bits were stripped on every overwrite (compounded by
+        // the atomic rename minting a fresh inode). chmod is NOT umask-masked, so
+        // stamp the exact prior bits explicitly before the swap.
+        if (priorMode !== undefined) await chmod(tmp, priorMode);
         await rename(tmp, target);
       } catch (e) {
         await unlink(tmp).catch(() => {});

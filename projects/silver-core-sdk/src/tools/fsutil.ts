@@ -14,9 +14,13 @@
 
 import * as path from 'node:path';
 import { isUtf8 } from 'node:buffer';
+import { sliceSurrogateSafe } from '../internal/text.js';
 
 /** Default maximum characters kept per line in cat -n style output. */
 export const MAX_LINE_CHARS = 2000;
+
+/** Bytes sniffed by looksBinaryForDisplay before declaring a file binary. */
+const DISPLAY_BINARY_SNIFF_BYTES = 8192;
 
 /**
  * Default cap on the TOTAL characters one Read returns (BPT request 2026-07-06).
@@ -111,6 +115,21 @@ export function looksBinary(buf: Buffer): boolean {
   return buf.includes(0);
 }
 
+/** Binary sniff for the NON-destructive Read path (Z3-2, audit r4). The full-
+ *  buffer looksBinary above is correct for Edit/Write, where a single NUL means
+ *  the write-back would corrupt real bytes — but applying it to Read rejects a
+ *  perfectly readable 20MB log just because one stray NUL sits past its header.
+ *  Read only DISPLAYS bytes, so it sniffs a leading window instead: a genuinely
+ *  binary file reveals a NUL right away, while a lone NUL deep in an otherwise
+ *  text file stays readable. */
+export function looksBinaryForDisplay(buf: Buffer): boolean {
+  const n = Math.min(buf.length, DISPLAY_BINARY_SNIFF_BYTES);
+  for (let i = 0; i < n; i++) {
+    if (buf[i] === 0) return true;
+  }
+  return false;
+}
+
 /**
  * Format lines in `cat -n` style: right-aligned 6-char line number, a tab, then
  * the line text. Two caps apply: each line is truncated at `maxLineChars` (a
@@ -140,11 +159,22 @@ export function formatCatN(
     } else {
       text = raw;
     }
-    const formatted = `${String(startLine + i).padStart(LINE_NUMBER_WIDTH)}\t${text}`;
+    const prefix = `${String(startLine + i).padStart(LINE_NUMBER_WIDTH)}\t`;
+    const formatted = `${prefix}${text}`;
     // Cost of appending this line = the '\n' join separator (none before the
-    // first line) + the formatted text. The first line always goes in.
+    // first line) + the formatted text.
     const addition = (out.length === 0 ? 0 : 1) + formatted.length;
-    if (out.length > 0 && running + addition > maxOutputChars) {
+    if (running + addition > maxOutputChars) {
+      if (out.length === 0) {
+        // V6-5 (audit r4): the first line is emitted unconditionally so the
+        // output is never empty, but a per-line cap WIDER than the total cap
+        // (maxLineChars > maxOutputChars) let that first line blow straight
+        // past maxOutputChars, unbounded and with no footer. Bound it to the
+        // total cap (surrogate-safe) and flag charCapped so the truncation
+        // footer fires.
+        const room = Math.max(0, maxOutputChars - prefix.length);
+        out.push(`${prefix}${sliceSurrogateSafe(text, room)}`);
+      }
       charCapped = true;
       break;
     }

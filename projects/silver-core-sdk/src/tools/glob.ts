@@ -78,7 +78,15 @@ export const globTool: BuiltinTool = {
       cwd: baseDir,
       absolute: true,
       dot: false,
-      onlyFiles: true,
+      // Y5-1 (audit r4): the F1 loop guard set followSymbolicLinks:false, but
+      // with onlyFiles:true fast-glob ALSO drops symlinks that point to a
+      // regular file (a non-followed symlink's dirent is a symlink, not a file),
+      // so `config.yml -> config.dev.yml` vanished from results silently.
+      // Enumerate with onlyFiles:false so those symlink entries survive the
+      // filter, then keep only what RESOLVES to a regular file below. The loop
+      // guard is unchanged: fast-glob still descends only entries whose dirent
+      // isDirectory(), which a non-followed symlinked directory never is.
+      onlyFiles: false,
       ignore: IGNORE_PATTERNS,
       stats: true,
       suppressErrors: true,
@@ -92,14 +100,41 @@ export const globTool: BuiltinTool = {
     });
     if (ctx.signal.aborted) throw new AbortError();
 
-    if (entries.length === 0) {
+    // Keep regular files directly; for a symlink entry (never followed by
+    // fast-glob above, so it cannot introduce a loop) resolve the target and
+    // keep it only when it points to a regular file. A symlink's own lstat
+    // mtime is meaningless for "newest first", so use the target's (Y5-1).
+    const files: { path: string; mtimeMs: number }[] = [];
+    for (const e of entries) {
+      if (e.dirent.isFile()) {
+        files.push({ path: e.path, mtimeMs: e.stats?.mtimeMs ?? 0 });
+      } else if (e.dirent.isSymbolicLink()) {
+        try {
+          const target = await fs.stat(e.path);
+          if (target.isFile()) {
+            files.push({ path: e.path, mtimeMs: target.mtimeMs });
+          }
+        } catch {
+          // Dangling / unreadable symlink: skip it.
+        }
+      }
+    }
+    if (ctx.signal.aborted) throw new AbortError();
+
+    if (files.length === 0) {
       return { content: 'No files found' };
     }
 
-    // Newest first; missing stats (shouldn't happen with stats:true) sink last.
-    const sorted = entries
-      .slice()
-      .sort((a, b) => (b.stats?.mtimeMs ?? 0) - (a.stats?.mtimeMs ?? 0));
+    // Newest first, with a deterministic path tiebreak (V6-2, audit r4): mtime
+    // alone left same-mtime files in fast-glob's filesystem-dependent
+    // enumeration order, so the MAX_RESULTS cap dropped a DIFFERENT subset from
+    // one run to the next. Breaking ties by path makes the capped listing
+    // stable across runs.
+    const sorted = files.sort((a, b) => {
+      const d = b.mtimeMs - a.mtimeMs;
+      if (d !== 0) return d;
+      return a.path < b.path ? -1 : a.path > b.path ? 1 : 0;
+    });
 
     const capped = sorted.slice(0, MAX_RESULTS);
     const lines = capped.map((e) => e.path);

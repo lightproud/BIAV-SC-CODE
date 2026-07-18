@@ -317,6 +317,15 @@ export function createMemoryTool(
             const path = validateMemoryPath(cmd.path);
             const denied = writeDenial(path);
             if (denied !== null) return done(errorResult(denied));
+            // Tool-layer R8 size cap (audit r4 U4-1): create enforced
+            // maxFileBytes here but str_replace/insert did not, so a directly-
+            // implemented store (one that skips the engine's checkWrite) took
+            // an unbounded chunk. The tool layer cannot see the resulting file
+            // without a read, but a replacement chunk that ALONE exceeds the
+            // cap guarantees an over-cap file — reject it before the store call.
+            if (bytesOf(cmd.new_str ?? '') > limits.maxFileBytes) {
+              return done(errorResult(fileTooLargeError(path, limits.maxFileBytes)));
+            }
             const replacedContent = await store.strReplace(path, cmd.old_str, cmd.new_str);
             if (health !== undefined) {
               health.writes += 1;
@@ -328,6 +337,12 @@ export function createMemoryTool(
             const path = validateMemoryPath(cmd.path);
             const denied = writeDenial(path);
             if (denied !== null) return done(errorResult(denied));
+            // Tool-layer R8 size cap (audit r4 U4-1): insert_text that ALONE
+            // exceeds the cap guarantees an over-cap file — same guard as
+            // str_replace above, covering directly-implemented stores.
+            if (bytesOf(cmd.insert_text) > limits.maxFileBytes) {
+              return done(errorResult(fileTooLargeError(path, limits.maxFileBytes)));
+            }
             const inserted = await store.insert(path, cmd.insert_line, cmd.insert_text);
             if (health !== undefined) {
               health.writes += 1;

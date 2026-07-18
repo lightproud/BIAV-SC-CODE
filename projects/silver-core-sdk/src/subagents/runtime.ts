@@ -77,6 +77,7 @@ import {
 } from '../transport/stall-watchdog.js';
 import { existsSync } from 'node:fs';
 
+import { sliceSurrogateSafe } from '../internal/text.js';
 import { addWorktree, removeWorktreeIfClean } from '../internal/worktree.js';
 import {
   DEFAULT_SUBAGENT_MAX_TURNS,
@@ -164,6 +165,11 @@ export type SubagentRuntimeOptions = {
   canUseTool?: CanUseTool;
   allowedTools?: string[];
   disallowedTools?: string[];
+  /** Whether the session unlocked allowDangerouslySkipPermissions (RP3). The
+   *  child gate mirrors the parent: a canUseTool `setMode:'bypassPermissions'`
+   *  update is refused unless this is true (audit r4 Y1-1). Absent -> false
+   *  (fail-closed) until the query layer threads it. */
+  allowDangerousBypass?: boolean;
   /** Live parent engine config (model/thinking read at spawn time). */
   engineConfig: EngineConfig;
   /** The query's provider config: resolver-callback context + the parent
@@ -270,6 +276,28 @@ function appendUserText(msg: APIMessageParam, text: string): APIMessageParam {
     return { role: 'user', content: `${msg.content}\n\n${text}` };
   }
   return { role: 'user', content: [...msg.content, { type: 'text', text }] };
+}
+
+/**
+ * Coerce an AgentDefinition `tools` / `disallowedTools` field into a clean
+ * pattern list. The field is TYPED `string[]` but arrives from untyped config,
+ * so a bare string or a malformed value slips through at runtime:
+ *  - a bare string (`tools: 'Read'`) is a SINGLE-entry list, not "no list" —
+ *    Array.isArray was false for it, so the allowlist was silently ignored and
+ *    the child kept EVERY parent tool (fail-OPEN privilege escalation)
+ *    (audit r4 Sag-3);
+ *  - a non-array, non-string value would throw on `.filter` and CRASH the spawn
+ *    — it degrades to [] instead (audit r4 Sag-4);
+ *  - entries are trimmed so `' Read'` matches like `'Read'` rather than
+ *    silently matching zero tools (audit r4 Sag-5).
+ * Non-string array members are dropped.
+ */
+export function coerceToolPatternList(value: unknown): string[] {
+  const arr =
+    typeof value === 'string' ? [value] : Array.isArray(value) ? value : [];
+  return arr
+    .filter((e): e is string => typeof e === 'string')
+    .map((e) => e.trim());
 }
 
 /**
@@ -442,7 +470,9 @@ export function createSubagentRuntime(
   };
   const resultPreview = (text: string): string =>
     text.length > TASK_RESULT_PREVIEW_CHARS
-      ? `${text.slice(0, TASK_RESULT_PREVIEW_CHARS)}...`
+      ? // audit r4 V2-3: a bare .slice at the cut can split a surrogate pair,
+        // leaving a lone surrogate in the <summary>/<result> preview.
+        `${sliceSurrogateSafe(text, TASK_RESULT_PREVIEW_CHARS)}...`
       : text;
   /** Terminal task_updated for a finished (non-killed) child (official
    *  `patch` envelope since v0.7). */
@@ -587,9 +617,16 @@ export function createSubagentRuntime(
     string,
     { controller: AbortController; promise: Promise<void> }
   >();
-  // Every background finalizer ever launched (settleAll awaits these; entries
-  // are already-settled promises after completion, so the array stays cheap).
-  const allBackgroundPromises: Array<Promise<void>> = [];
+  // Every IN-FLIGHT background finalizer (settleAll awaits these). audit r4
+  // Stim-1: a long-lived coordinator that spawns/continues many background
+  // children grew this without bound (push-only). Each promise removes itself
+  // once settled, so only outstanding work is retained — the finalizers never
+  // reject (their bodies swallow errors), so the tracking .finally is safe.
+  const allBackgroundPromises = new Set<Promise<void>>();
+  const trackBackgroundPromise = (p: Promise<void>): void => {
+    allBackgroundPromises.add(p);
+    void p.finally(() => allBackgroundPromises.delete(p));
+  };
 
   const drainCompletedResults = (): TextBlockParam[] => {
     if (completedBuffer.length === 0) return [];
@@ -688,20 +725,28 @@ export function createSubagentRuntime(
     // tools: explicit allowlist (intersection). K7 (audit r2 2026-07-17):
     // match with the SAME pattern semantics the MCP filter below uses
     // (matchToolName), not an exact-name Set — otherwise `tools: ['*']`
-    // stripped every builtin while exposing every MCP tool.
-    if (Array.isArray(agentDef.tools)) {
-      const allow = agentDef.tools;
+    // stripped every builtin while exposing every MCP tool. audit r4
+    // Sag-3/4/5: coerce a bare-string/malformed field + trim entries via
+    // coerceToolPatternList, so `tools:'Read'` RESTRICTS (fail-closed) instead
+    // of being silently ignored, and `' Read'` matches like `'Read'`. `tools`
+    // absent -> undefined (no allowlist); present -> an allowlist (even []).
+    const allowList =
+      agentDef.tools === undefined
+        ? undefined
+        : coerceToolPatternList(agentDef.tools);
+    if (allowList !== undefined) {
       for (const name of [...childBuiltins.keys()]) {
-        if (!allow.some((entry) => matchToolName(entry, name))) {
+        if (!allowList.some((entry) => matchToolName(entry, name))) {
           childBuiltins.delete(name);
         }
       }
     }
 
-    // disallowedTools (bare) + parent bare disallow.
+    // disallowedTools (bare) + parent bare disallow. coerceToolPatternList guards
+    // a non-array field that would otherwise throw on `.filter` (audit r4 Sag-4).
     const bareDeny = [
       ...parentBareDisallowed,
-      ...(agentDef.disallowedTools ?? [])
+      ...coerceToolPatternList(agentDef.disallowedTools)
         .filter((raw) => parseRule(raw).specifier === undefined),
     ];
     if (bareDeny.length > 0) {
@@ -719,10 +764,16 @@ export function createSubagentRuntime(
   }
 
   function buildChildMcp(agentDef: AgentDefinition): McpRegistry {
-    const allowList = Array.isArray(agentDef.tools) ? agentDef.tools : undefined;
+    // audit r4 Sag-3/4/5: same normalization as buildChildBuiltins — a bare
+    // string is a single-entry allowlist (not "no allowlist" / fail-open), a
+    // malformed field degrades instead of crashing, and entries are trimmed.
+    const allowList =
+      agentDef.tools === undefined
+        ? undefined
+        : coerceToolPatternList(agentDef.tools);
     const bareDeny = [
       ...parentBareDisallowed,
-      ...(agentDef.disallowedTools ?? [])
+      ...coerceToolPatternList(agentDef.disallowedTools)
         .filter((raw) => parseRule(raw).specifier === undefined),
     ];
     if (allowList === undefined && bareDeny.length === 0) return mcp;
@@ -814,7 +865,9 @@ export function createSubagentRuntime(
   // end"): ONE sidechain_start at the child's birth and ONE sidechain_end at its
   // final teardown, bracketing every SendMessage continuation episode in
   // between — instead of a fresh start/end pair per run. `finalizeSidechain`
-  // (called from killAgent + settleAll) writes the single end idempotently.
+  // (called from settleAll only — killAgent deliberately does NOT finalize, so
+  // a later SendMessage can still revive a killed child, see K6) writes the
+  // single end idempotently (audit r4 V2-4: this pointer was stale).
   const sidechainStarted = new Set<string>();
   const sidechainEnded = new Set<string>();
   const sidechainLastError = new Map<string, boolean>();
@@ -982,8 +1035,8 @@ export function createSubagentRuntime(
       // Do NOT write sidechain_end per run (待裁② — keeper 2026-07-16): a
       // SendMessage continuation would revive this child, so the terminal marker
       // belongs to the child's final teardown, not each episode. Record this
-      // episode's error state; finalizeSidechain (killAgent + settleAll) emits
-      // the single end idempotently.
+      // episode's error state; finalizeSidechain (settleAll only, NOT killAgent
+      // — audit r4 V2-4) emits the single end idempotently.
       if (recordSidechain && store !== undefined) {
         sidechainLastError.set(agentId, sidechainErrored);
       }
@@ -1169,6 +1222,18 @@ export function createSubagentRuntime(
           ? [...(disallowedTools ?? [])]
           : [...(disallowedTools ?? []), ...(agentDef.disallowedTools ?? [])],
         canUseTool,
+        // audit r4 Y1-1: the child gate must know the SAME cwd + MCP server set
+        // the parent gate does, or RP1/RP2 path hardening and I2 MCP scoping go
+        // dark inside subagents — `deny Write(/etc/*)` no longer collapses a
+        // relative `../../etc/passwd` onto the denied absolute path, and a
+        // `mcp__server__*` rule stops resolving its server segment. cwd is the
+        // child's own (a worktree-isolated child resolves paths against childCwd).
+        cwd: childCwd,
+        knownMcpServers: () => new Set(childMcp.statuses().map((s) => s.name)),
+        // RP3: honor the session's bypass interlock inside the child too, so a
+        // canUseTool setMode:'bypassPermissions' update is refused unless the
+        // host unlocked it (defaults false = fail-closed when absent).
+        allowDangerousBypass: opts.allowDangerousBypass,
         debug,
       });
 
@@ -1606,7 +1671,7 @@ export function createSubagentRuntime(
           }
         })();
         backgroundTasks.set(agentId, { controller: childController, promise });
-        allBackgroundPromises.push(promise);
+        trackBackgroundPromise(promise);
         record.queue = promise;
         return {
           content:
@@ -1669,6 +1734,16 @@ export function createSubagentRuntime(
             background: false,
           };
         }
+        // audit r4 V2-1: a genuine parent-side abort or a real failure rethrows
+        // here — but SubagentStart already fired at spawn, so close the pair
+        // first, or a host that pairs Start/Stop for per-agent resource
+        // accounting leaks a unit on every parent-abort/failure. Fresh signal +
+        // swallow: this is a notification, and the error still propagates below.
+        await fireSubagentStop(
+          agentId,
+          resolved.type,
+          new AbortController().signal,
+        ).catch(() => undefined);
         throw err;
       } finally {
         await releaseWorktree().catch(() => undefined);
@@ -1811,6 +1886,18 @@ export function createSubagentRuntime(
       ...record.deps,
       toolContext: { ...record.deps.toolContext, signal: contSignal },
     };
+    // audit r4 V2-2: bracket THIS continuation episode with its own
+    // SubagentStart/Stop pair. The first run fired one pair at spawn/teardown;
+    // a SendMessage-revived episode re-ran the whole child loop with zero
+    // lifecycle hooks, so a host pairing Start/Stop for per-agent resource
+    // accounting never counted the continuation's work. Both are fired with a
+    // fresh signal so the pair is always balanced (the run itself observes any
+    // abort via contSignal); the matching Stop is in this try's finally.
+    await fireSubagentStart(
+      agentId,
+      record.agentType,
+      new AbortController().signal,
+    ).catch(() => undefined);
     // Stall watchdog for the continuation too (twin of the initial background
     // launch). Without it a SendMessage continuation whose stream goes silent
     // never aborts, so `turn` never settles, the background delivery promise
@@ -1860,6 +1947,13 @@ export function createSubagentRuntime(
     } finally {
       stallWatchdog.dispose();
       await releaseEpisodeWorktree?.().catch(() => undefined);
+      // audit r4 V2-2: close this episode's Start/Stop bracket (fresh signal so
+      // an outer abort landing here does not skip the notification).
+      await fireSubagentStop(
+        agentId,
+        record.agentType,
+        new AbortController().signal,
+      ).catch(() => undefined);
     }
   }
 
@@ -1881,6 +1975,12 @@ export function createSubagentRuntime(
     // task entry either way.
     if (record !== undefined && record.status !== 'running') {
       backgroundTasks.delete(taskId);
+      // K5 gap (audit r4 Y3-1): a stop landing on an already-terminal child
+      // must still bump the epoch, or a SendMessage continuation queued BEFORE
+      // this stop passes its dequeue guard and REVIVES the child the host just
+      // asked to stop. A message issued AFTER the stop snapshots the new epoch
+      // and legitimately revives (official semantics).
+      record.epoch += 1;
       return { outcome: 'not_running', status: record.status };
     }
     // Word the kill honestly by the record (audit 2026-07-14 M-11b): this
@@ -2033,7 +2133,7 @@ export function createSubagentRuntime(
               }`,
             );
           });
-        allBackgroundPromises.push(delivery);
+        trackBackgroundPromise(delivery);
         return {
           content:
             `Message delivered to background subagent (agentId: ${agentId}). ` +
@@ -2075,9 +2175,9 @@ export function createSubagentRuntime(
       }
     },
     async settleAll(timeoutMs = 2_000): Promise<void> {
-      if (allBackgroundPromises.length > 0) {
+      if (allBackgroundPromises.size > 0) {
         await Promise.race([
-          Promise.allSettled(allBackgroundPromises),
+          Promise.allSettled([...allBackgroundPromises]),
           new Promise<void>((resolve) => {
             const t = setTimeout(resolve, timeoutMs);
             (t as { unref?: () => void }).unref?.();

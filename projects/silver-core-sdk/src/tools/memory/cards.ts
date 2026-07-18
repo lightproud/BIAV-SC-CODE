@@ -59,6 +59,20 @@ function fieldOfLine(line: string): { key: keyof Omit<MemoryCard, 'title'>; valu
   return null;
 }
 
+/** A line that, taken literally, would read as a card heading (`## `) or a
+ *  field marker (`结论:` / `依据:` / `过期条件:`, half- or full-width colon). */
+function looksLikeMarker(line: string): boolean {
+  return line.startsWith('## ') || fieldOfLine(line) !== null;
+}
+
+/** Strip one leading backslash that escapes a marker line, so a field value
+ *  whose continuation line begins with `## ` or a field marker round-trips as
+ *  literal content instead of derailing the parse into a bogus heading/field
+ *  (audit r4 U4-9). A line that is not an escaped marker is returned as-is. */
+function unescapeMarkerLine(line: string): string {
+  return line.startsWith('\\') && looksLikeMarker(line.slice(1)) ? line.slice(1) : line;
+}
+
 export type CardsParseResult =
   | { ok: true; cards: MemoryCard[] }
   | { ok: false; reason: string };
@@ -125,8 +139,9 @@ export function parseMemoryCards(
           reason: `${where} has content outside the three fields: ${JSON.stringify(line.slice(0, 40))}`,
         };
       }
-      // Continuation line of the current field.
-      card[currentField] = `${card[currentField]}\n${line}`.trim();
+      // Continuation line of the current field; a leading backslash escapes a
+      // line that would otherwise read as a heading/field marker (audit r4 U4-9).
+      card[currentField] = `${card[currentField]}\n${unescapeMarkerLine(line)}`.trim();
     }
     const parsed = cardSchema.safeParse(card);
     if (!parsed.success) {

@@ -20,6 +20,14 @@ function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
 }
 
+/** The model-override aliases the Agent tool advertises AND accepts. The
+ *  inputSchema enum and execute() validation share this one list so the schema
+ *  constraint is actually enforced (audit r4 Sag-6): the enum was declared but
+ *  never checked, so an off-enum `model` the schema forbids still reached
+ *  spawn — and steering the model toward only these four while silently
+ *  accepting others is the inconsistency the finding flags. */
+const MODEL_OVERRIDE_ALIASES = ['sonnet', 'opus', 'haiku', 'fable'] as const;
+
 /**
  * Build the Agent tool. `agentNames` are the spawnable subagent_type values
  * (the keys of options.agents plus 'general-purpose'); they are enumerated in
@@ -80,7 +88,7 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
         },
         model: {
           type: 'string',
-          enum: ['sonnet', 'opus', 'haiku', 'fable'],
+          enum: [...MODEL_OVERRIDE_ALIASES],
           description:
             'Optional model override for this subagent. Takes precedence ' +
             'over the agent definition\'s model. Ignored when forking — a ' +
@@ -141,13 +149,20 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
       const subagentType =
         (subagentTypeRaw as string | undefined) ?? GENERAL_PURPOSE_TYPE;
       const modelRaw = input['model'];
-      if (
-        modelRaw !== undefined &&
-        (typeof modelRaw !== 'string' || modelRaw.length === 0)
-      ) {
-        return errorResult(
-          'Agent failed: "model" must be a non-empty string when provided.',
-        );
+      if (modelRaw !== undefined) {
+        if (typeof modelRaw !== 'string' || modelRaw.length === 0) {
+          return errorResult(
+            'Agent failed: "model" must be a non-empty string when provided.',
+          );
+        }
+        // audit r4 Sag-6: enforce the advertised enum here too — the schema
+        // constraint was declared but never checked, letting an off-enum value
+        // the schema forbids reach spawn.
+        if (!(MODEL_OVERRIDE_ALIASES as readonly string[]).includes(modelRaw)) {
+          return errorResult(
+            `Agent failed: "model" must be one of: ${MODEL_OVERRIDE_ALIASES.join(', ')}.`,
+          );
+        }
       }
       const isolationRaw = input['isolation'];
       if (isolationRaw !== undefined && isolationRaw !== 'worktree') {
