@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-18",
+  "archived_at": "2026-07-18T02:13:18.812978+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] Lovecraft+beach episode, collab of the century",
+      "summary": "Lovecraft+beach episode, collab of the century",
+      "source": "steam_review",
+      "time": "2026-07-17T21:50:36+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198080223591/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198080223591",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 845,
+        "votes_up": 0,
+        "timestamp_created": 1784325036
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}
