@@ -63,6 +63,14 @@ export interface SessionRecord {
    * records and lease-less ledgers are never swept).
    */
   leaseUntil?: number | null;
+  /**
+   * Optimistic-concurrency counter (audit r4): the ledger bumps this on every
+   * session write, and — when the store implements the optional putSessionIf
+   * seam — uses it to fence concurrent writers (dual-host claim exclusivity,
+   * sweeper vs late lease-holder). Stores persist it like any other field;
+   * legacy rows without it read as revision 0.
+   */
+  revision?: number;
 }
 
 /** Query record: one execution attempt. Rounds are appended, never edited. */

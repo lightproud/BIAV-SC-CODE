@@ -189,6 +189,11 @@ export class Scheduler {
         // trigger a catastrophic epoch catch-up.
         if (!/^\d+$/.test(suffix)) continue;
         const fireAt = Number(suffix);
+        // Digits beyond the representable epoch range (audit r4): one
+        // poisoned row like 'sched:x:99…9' would otherwise pin lastFired in
+        // the far future and silently starve the spec forever. The bound is
+        // the JS Date range (±8.64e15 ms), which also keeps it a safe integer.
+        if (fireAt > 8_640_000_000_000_000) continue;
         if (latest === null || fireAt > latest) latest = fireAt;
       }
       // seedFirstRun (gap G3): a footprint-less spec starts one cadence back,

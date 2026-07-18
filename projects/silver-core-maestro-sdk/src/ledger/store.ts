@@ -30,4 +30,21 @@ export interface LedgerStore {
   listSessions(filter?: SessionFilter): Promise<SessionRecord[]>;
   appendQuery(record: QueryRecord): Promise<void>;
   listQueries(sessionId: string): Promise<QueryRecord[]>;
+  /**
+   * OPTIONAL conditional put (audit r4): atomically replace the row iff its
+   * stored revision matches `expectedRevision` (comparing stored.revision ?? 0),
+   * or create it iff `expectedRevision === null` and no row exists. Returns
+   * whether the write was applied. The comparison and write must be atomic
+   * with respect to other store calls.
+   *
+   * Why it exists: putSession alone cannot give claim exclusivity across
+   * PROCESSES — two hosts sharing a store can both pass a get-then-put claim
+   * (reproduced in audit r4: 295/300 seeded interleavings double-claimed
+   * within an unexpired lease). When the store provides this method the
+   * ledger uses it for every session write and concurrent claims/settles are
+   * fenced; without it, the ledger serializes its OWN calls per session
+   * (in-process safety) but cross-process exclusivity is the host's problem
+   * — run one claiming driver per store, or implement this seam.
+   */
+  putSessionIf?(record: SessionRecord, expectedRevision: number | null): Promise<boolean>;
 }

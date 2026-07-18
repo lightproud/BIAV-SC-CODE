@@ -12,6 +12,57 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.73.0 — 2026-07-18
+
+Audit round 4 of the 500-bug campaign (T56): 4 fault-injection lenses
+(chaos store / dual-host races / ambiguous failure / hostile input) with
+adversarial verification confirmed **11 real defects** (3 P1 + 4 P2 + 4 P3),
+all fixed with fail-on-old locks. The battle report
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-maestro-sdk-bug-audit-r4-20260718.md`)
+is the detail authority.
+
+Ledger concurrency overhaul (the P1 cluster shared one root cause — no
+attempt fencing and no write atomicity):
+
+- **Attempt fencing** (R4-A/C4/AF1): `OutcomeInput.attempt?` — when given,
+  a stale writer (an attempt that outran its lease, was swept, and whose
+  session was re-claimed) throws `InvalidTransitionError` instead of
+  stealing the live attempt's query row or terminally settling the session
+  with an outdated result. The SDK's own callers (driver, delivery channel,
+  lease sweep) always pass it; the claimLeaseMs doc promise is now real.
+- **Per-session in-process mutex** (R4-C1/C2/C3 same-instance): every
+  mutating ledger path is serialized per session, so one TaskLedger instance
+  never races itself between read and write.
+- **Optional store CAS seam** (R4-C1/C3 cross-host): `LedgerStore.putSessionIf?`
+  + `SessionRecord.revision` — when the store implements it, every session
+  write is a compare-and-swap and dual-host claims/settles are fenced
+  (pre-fix: 295/300 seeded interleavings double-claimed inside an unexpired
+  lease). Without it, cross-process exclusivity remains the host's problem
+  (documented). `ClaimConflictError` (new export) surfaces a lost CAS.
+  The contract suite grows conditional putSessionIf checks (base checks and
+  a plain store's report are unchanged).
+- **Settle-then-append + reconciliation** (R4-B/C2): the session write is
+  now the commit point; the query row is appended after, so a settle race
+  cannot leave two contradictory rows for one attempt, and a session's state
+  can no longer contradict its own committed row (a committed row for the
+  current attempt is adopted as the truth; a crash between settle and append
+  is repaired by a consistent-retry backfill). `TaskLedger.listQueries`
+  canonicalizes to one row per attempt. NOTE: this reorders the r2-era
+  append-first behavior — on a put failure nothing is committed (previously
+  the row was).
+- **Sweep hardening**: per-session isolation (one settle failure no longer
+  aborts the batch) and the expired-attempt fence.
+
+Hostile-input hardening (R4-HI-1..4 + leads): retry policy validated at the
+TaskLedger constructor (was detonating inside recordOutcome after the append,
+wedging the session); `now` must be finite in claimDue / claimSession /
+sweepExpiredLeases (NaN/Infinity leases used to falsely burn attempts or
+permanently defeat the sweep); recordOutcome rejects non-finite
+startedAt/endedAt; scheduler recovery ignores digits-only fire suffixes
+beyond the Date range (one poisoned row used to starve the spec forever);
+dispatch rejects non-string ids; goal chaser normalizes a missing evaluator
+feedback to null.
+
 ## 0.72.1 — 2026-07-18
 
 Lockstep alignment only — no maestro code change. The agent SDK resolved WV2-4

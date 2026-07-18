@@ -202,7 +202,9 @@ export class GoalChaser {
         this.#emit({ type: 'goal:settled', goalId: config.id, action, rounds: rounds.length });
         return { action, rounds };
       }
-      if (!verdict.achieved) feedback = verdict.feedback;
+      // `?? null`: an any-cast verdict without feedback must not smuggle
+      // `undefined` into the next round's persisted payload (typed `| null`).
+      if (!verdict.achieved) feedback = verdict.feedback ?? null;
       round += 1;
     }
   }

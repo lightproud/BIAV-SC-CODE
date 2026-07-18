@@ -5,6 +5,7 @@
  */
 import { describe, it, expect, vi } from 'vitest';
 import { TaskLedger } from '../src/ledger/ledger.js';
+import { InvalidTransitionError } from '../src/ledger/state.js';
 import { LedgerDriver } from '../src/driver.js';
 import { Scheduler } from '../src/schedule/scheduler.js';
 import { nextFireAt, firesBetween } from '../src/schedule/spec.js';
@@ -56,21 +57,28 @@ function memoryStore(): LedgerStore & {
 
 const clockAt = (t: number) => ({ now: () => t });
 
-describe('r2: recordOutcome idempotent across a caller retry (append-then-put split)', () => {
-  it('a retry after a put-side failure does NOT append a second row for the same attempt', async () => {
+describe('r2: recordOutcome idempotent across a caller retry (half-write split)', () => {
+  it('a retry after a put-side failure settles once with exactly one row for the attempt', async () => {
     const store = memoryStore();
     const ledger = new TaskLedger({ store, clock: clockAt(1_000) });
     const s = await ledger.dispatch({ intent: 'x' });
     await ledger.claimSession(s.id);
-    store.failNextPutSession(); // appendQuery succeeds, putSession fails
+    store.failNextPutSession();
     await expect(
       ledger.recordOutcome(s.id, { outcome: 'ok', startedAt: 1, endedAt: 2 }),
     ).rejects.toThrow('store hiccup');
-    expect(store.queries).toHaveLength(1);
+    // Settle-then-append (audit r4 reorder): the failed settle commits
+    // NOTHING — under the r2-era append-first order this point held one row.
+    expect(store.queries).toHaveLength(0);
     // The driver-style immediate retry:
     await ledger.recordOutcome(s.id, { outcome: 'ok', startedAt: 1, endedAt: 2 });
     expect(store.queries).toHaveLength(1); // one row per attempt, not two
     expect((await ledger.getSession(s.id))?.state).toBe('done');
+    // A further replay cannot double-settle or double-append.
+    await expect(
+      ledger.recordOutcome(s.id, { outcome: 'ok', startedAt: 1, endedAt: 2 }),
+    ).rejects.toThrow(InvalidTransitionError);
+    expect(store.queries).toHaveLength(1);
   });
 });
 
