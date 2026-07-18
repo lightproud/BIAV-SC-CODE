@@ -3,22 +3,22 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-16
-- 功能总数：**136**
+- 生成日期：2026-07-18
+- 功能总数：**138**
 - 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 36 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 37 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 5 |
-| 子项目 | 5 |
+| 子项目 | 6 |
 
 ## 动态编排与可达性
 
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（36）
+## CI 自动化工作流（编排入口·定时/事件平面）（37）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -90,6 +90,8 @@
   `.github/workflows/kb-semantic-proof.yml`
 - **`Mutation Test (manual)`** _[manual]_ —   
   `.github/workflows/mutation-test.yml`
+- **`Orchestrator SDK`** _[push/pull_request]_ —   
+  `.github/workflows/orchestrator-sdk.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  
   `.github/workflows/recover-fanart.yml`
 - **`Refresh Claude Code Prompts`** _[schedule/manual]_ —   
@@ -317,12 +319,14 @@
 - **`intel-weekly`** — Generate the Morimens weekly community intelligence report (社区情报周报) from the full archive layer. Use when asked for the weekly report, 周报, community intel digest, or a windowed community summary. Produces a fixed-skeleton Chinese report (trend + role routing + business topics with embedded risk sentinels + bug list + player request list + credited fanart gallery + volume map) rendered as mobile PDF in brand themes.  
   `.claude/skills/intel-weekly/SKILL.md`
 
-## 子项目（5）
+## 子项目（6）
 
 - **`game`** — 衍生游戏，退出主线，守密人个人兴趣，不主线派发。  
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
   `projects/news/`
+- **`orchestrator-sdk`** — > 动手前先读本档。需求裁定书(建成什么样的唯一权威):  
+  `projects/orchestrator-sdk/`
 - **`silver-core-sdk`** — Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面  
   `projects/silver-core-sdk/`
 - **`site`** — 对外门户：静态站 public/ + 设计令牌 design/。  

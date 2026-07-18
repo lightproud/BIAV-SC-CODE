@@ -1,20 +1,20 @@
 {
   "meta": {
-    "generated_at": "2026-07-16",
+    "generated_at": "2026-07-18",
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 36,
+      "workflows": 37,
       "scripts_top": 37,
       "scripts_news": 32,
       "scripts_wiki": 6,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 5,
-      "projects": 5,
-      "total": 136
+      "projects": 6,
+      "total": 138
     },
     "reachability": {
       "live": 75,
@@ -270,6 +270,15 @@
       "path": ".github/workflows/mutation-test.yml",
       "triggers": [
         "manual"
+      ]
+    },
+    {
+      "id": "orchestrator-sdk.yml",
+      "name": "Orchestrator SDK",
+      "path": ".github/workflows/orchestrator-sdk.yml",
+      "triggers": [
+        "push",
+        "pull_request"
       ]
     },
     {
@@ -1225,6 +1234,11 @@
       "path": "projects/news/",
       "summary": "> 启动时请先阅读根目录 `CLAUDE.md` 了解全局。",
       "note_zh": "使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。"
+    },
+    {
+      "id": "orchestrator-sdk",
+      "path": "projects/orchestrator-sdk/",
+      "summary": "> 动手前先读本档。需求裁定书(建成什么样的唯一权威):"
     },
     {
       "id": "silver-core-sdk",
