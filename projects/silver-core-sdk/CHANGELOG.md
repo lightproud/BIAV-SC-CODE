@@ -16,6 +16,57 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.71.3 — 2026-07-18
+
+T51 audit r3 — batches O (governance / CI / conformance guards) + Q (build /
+packaging). 20 STILL-LIVE findings fixed with regression locks; 3 adjudicated
+as by-design / not-a-bug rather than force-changed. Almost all of batch O is
+test/CI infrastructure (no runtime `src/` change); the version bump is carried
+by the packaging fixes (batch Q) and the lockstep version constants.
+
+- **Packaging (batch Q):** `files` now ships `src` so the emitted declaration /
+  source maps resolve their `../src/*` references in the published tarball
+  (W4-1); `prepublishOnly: npm run build` guarantees a fresh `dist` on publish
+  instead of a stale hand-built one (W4-2, `dist` is gitignored); `exports`
+  gains a `./package.json` subpath so tooling can read the manifest (W4-3).
+  Mirrored to silver-core-maestro-sdk, which had the identical defects.
+- **Version-bump guard (WX4-1/2/3):** the guard now requires a MONOTONIC semver
+  increase (a revert to an older number no longer passes as a "bump"), compares
+  the PARSED version value instead of a patch-line regex (a re-indent is a
+  no-op), and distinguishes a missing parent (benign skip) from a real git
+  error (fails instead of silently exiting 0).
+- **Eval-regression gate (WX4-4/5):** judges on the RAW delta so a -0.501 drop
+  is not rounded to -0.50 and slipped past the threshold; a committed baseline
+  with zero dimensions now SKIPs explicitly instead of a vacuous PASS.
+- **Mutation-ratchet guard (W3-1/2):** the score formula is an exported pure
+  function (unit-tested, so a flipped numerator reds a test) and it scopes the
+  report to the target's `mutate` glob (one module's floor can no longer be
+  judged against another module's mutants).
+- **Conformance wire-fingerprint (WX3-1/2/3):** the `topLevelKeys` set and the
+  requested `model` value are now actually diffed (both were computed but never
+  compared); per-param TYPE/nesting divergence is captured (names could match
+  while types differed). Newly-added facets skip an `undefined` side so an older
+  committed reference snapshot stays compatible.
+- **Conformance ratchet (W3-3):** `main()`'s safety nets — zero-scoreboard
+  refusal, missing-baseline refusal, and the RED-LOCK-on-`--update` warning —
+  are now driven by tests.
+- **Integration harness (WX5):** perf overhead captures wall/CPU before the
+  emulator teardown so socket-close latency no longer inflates it (WX5-2); the
+  soak harness counts each compaction fold, not runs-that-saw-one (WX5-6/7);
+  the A/B benchmark uses one cache-hit-ratio definition for both arms (WX5-5);
+  the preconnect probe accepts HEAD and counts sockets so a silent no-fire is
+  visible (WX5-4).
+- **Test-quality locks (W3-4/5/6, WX5-1):** the L5 aggregate sum is locked by a
+  sum≠first fixture; import-discipline also scans dynamic `import()`; the
+  0.3.205 message-type test asserts runtime discriminants, not just an
+  annotation; the memory-axis fixture's `anthropic-beta` absence check is gated
+  on whether the header was actually capturable (a stale fixture no longer
+  passes vacuously — flagged for regeneration).
+- **Adjudicated, not changed:** WX4-6 (behavior-eval layer exits 0) is an
+  intentional advisory gate; WX5-3 (A/B preset asymmetry) is by-design per its
+  own comment; WX3-4 (consecutive-token coalescing) is deliberate KD-05
+  granularity normalization applied symmetrically with a `collapsed` flag.
+
 ## 0.71.2 — 2026-07-18
 
 T51 audit r3 — batches R + S + T (deep-read source), 19 STILL-LIVE findings

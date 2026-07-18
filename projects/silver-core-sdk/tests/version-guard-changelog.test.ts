@@ -15,9 +15,34 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
-import { latestChangelogVersion } from '../scripts/check-version-bump.mjs';
+import { latestChangelogVersion, compareVersions } from '../scripts/check-version-bump.mjs';
 
 const PKG = join(__dirname, '..');
+
+describe('compareVersions (WX4-1/WX4-2 monotonic bump)', () => {
+  it('orders versions numerically, not lexically', () => {
+    expect(compareVersions('0.10.0', '0.9.0')).toBeGreaterThan(0);
+    expect(compareVersions('0.71.2', '0.71.1')).toBeGreaterThan(0);
+    expect(compareVersions('0.71.1', '0.71.2')).toBeLessThan(0);
+    expect(compareVersions('1.0.0', '0.99.99')).toBeGreaterThan(0);
+  });
+
+  it('returns 0 for equal versions (a re-indent of the line is a no-op)', () => {
+    expect(compareVersions('0.71.2', '0.71.2')).toBe(0);
+    expect(compareVersions(' 0.71.2 ', '0.71.2')).toBe(0);
+  });
+
+  it('flags a revert (older <= newer) as non-forward: delta <= 0', () => {
+    // WX4-1: a bump to an OLDER number must not read as forward progress.
+    expect(compareVersions('0.70.0', '0.71.0')).toBeLessThan(0);
+    expect(compareVersions('0.71.2', '0.71.2')).toBe(0);
+  });
+
+  it('returns null on an unparseable version', () => {
+    expect(compareVersions('0.71', '0.71.2')).toBeNull();
+    expect(compareVersions('latest', '0.71.2')).toBeNull();
+  });
+});
 
 describe('latestChangelogVersion (CHANGELOG parse)', () => {
   it('returns the first "## X.Y.Z" heading from the top', () => {

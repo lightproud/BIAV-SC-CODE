@@ -82,6 +82,11 @@ async function runOnce(scripts, promptText) {
   const cpu0 = process.cpuUsage();
   const t0 = performance.now();
   let metrics;
+  // WX5-2 (audit r3): capture wall/CPU the instant the run finishes, INSIDE the
+  // try — before `finally` awaits the emulator socket teardown. Measuring after
+  // close() folded teardown latency into wallMs and inflated overheadMs.
+  let wallMs = 0;
+  let cpu = { user: 0, system: 0 };
   try {
     const q = query({
       prompt: promptText,
@@ -94,11 +99,11 @@ async function runOnce(scripts, promptText) {
     for await (const msg of q) {
       if (msg.type === 'result') metrics = msg.metrics;
     }
+    wallMs = performance.now() - t0;
+    cpu = process.cpuUsage(cpu0);
   } finally {
     await emulator.close();
   }
-  const wallMs = performance.now() - t0;
-  const cpu = process.cpuUsage(cpu0);
   const apiMs = metrics?.durationApiMs ?? 0;
   const toolMs = (metrics?.perTool ?? []).reduce((n, t) => n + t.totalMs, 0);
   return {

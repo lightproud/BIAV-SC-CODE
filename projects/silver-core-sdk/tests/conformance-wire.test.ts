@@ -121,6 +121,40 @@ describe('fingerprint + diff', () => {
     expect(fingerprintRequestBody({ __unparsed: 'garbage' })).toEqual({ present: false });
     expect(fingerprintRequestBody(undefined)).toEqual({ present: false });
   });
+
+  it('WX3-1: a topLevelKeys difference (metadata presence) is diffed, not blind', () => {
+    const a = fingerprintRequestBody({ stream: true, max_tokens: 100 });
+    const b = fingerprintRequestBody({ stream: true, max_tokens: 100, metadata: { user_id: 'x' } });
+    const d = diffFingerprints(a, b);
+    expect(d.some((x: { facet: string }) => x.facet === 'topLevelKeys')).toBe(true);
+  });
+
+  it('WX3-2: a model-value mismatch surfaces as a model facet', () => {
+    const a = fingerprintRequestBody({ stream: true, model: 'claude-opus-4-8' });
+    const b = fingerprintRequestBody({ stream: true, model: 'claude-sonnet-5' });
+    const d = diffFingerprints(a, b);
+    const model = d.find((x: { facet: string }) => x.facet === 'model');
+    expect(model).toBeTruthy();
+    expect(model.a).toBe('claude-opus-4-8');
+    expect(model.b).toBe('claude-sonnet-5');
+  });
+
+  it('WX3-3: same param NAMES but different TYPES surface as a paramTypes diff', () => {
+    const a = fingerprintRequestBody({
+      stream: true,
+      tools: [{ name: 'X', input_schema: { properties: { n: { type: 'string' } } } }],
+    });
+    const b = fingerprintRequestBody({
+      stream: true,
+      tools: [{ name: 'X', input_schema: { properties: { n: { type: 'number' } } } }],
+    });
+    const schemaDiff = diffToolSchemas(a, b);
+    expect(schemaDiff).toHaveLength(1);
+    expect(schemaDiff[0].tool).toBe('X');
+    expect(schemaDiff[0].diffs.some((x: { facet: string }) => x.facet === 'paramTypes')).toBe(true);
+    // The param NAME set is identical, so the old fingerprint would have been blind.
+    expect(schemaDiff[0].diffs.some((x: { facet: string }) => x.facet === 'params')).toBe(false);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -137,7 +171,11 @@ describe('fingerprint + diff', () => {
 // omits) and excluded from the alignment comparison, matching the runner.
 // ---------------------------------------------------------------------------
 
-const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount']);
+// Mirrors run-wire.mjs: topLevelKeys divergence (max_tokens/metadata/service_tier
+// presence) is a KNOWN engine-shape difference, surfaced for visibility (WX3-1)
+// but not an alignment gap. `model` would be a real gap, but the frozen official
+// reference predates the field, so diffFingerprints skips an undefined facet.
+const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount', 'topLevelKeys']);
 
 /**
  * Documented wire-alignment gaps vs the official reference target. Each is a

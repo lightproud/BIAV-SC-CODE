@@ -12,6 +12,17 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.71.3 — 2026-07-18
+
+Packaging fix + lockstep alignment. This package carried the same batch-Q
+build defects the agent SDK fixed and gets the identical treatment: `files`
+now ships `src` so the emitted declaration/source maps resolve their
+`../src/*` references in the tarball (W4-1); `prepublishOnly: npm run build`
+guarantees a fresh `dist` on publish (W4-2); `exports` gains a `./package.json`
+subpath (W4-3). The rest of T51 batches O + Q is agent-SDK-side (governance /
+CI / conformance guards); see the agent SDK CHANGELOG 0.71.3 for the itemized
+list.
+
 ## 0.71.2 — 2026-07-18
 
 Lockstep alignment only — no maestro code change. The agent SDK landed T51

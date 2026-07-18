@@ -52,6 +52,27 @@ export function latestChangelogVersion(changelogText) {
   return m ? m[1] : null;
 }
 
+/**
+ * Compare two `X.Y.Z` version strings numerically (WX4-1/WX4-2, audit r3).
+ * Returns >0 when a is newer, <0 when older, 0 when equal; null when either
+ * side is unparseable. Numeric per-component compare (not string compare) so
+ * 0.10.0 correctly sorts after 0.9.0, and a pure-whitespace reformat of the
+ * version LINE is a no-op because only the parsed value is considered.
+ */
+export function compareVersions(a, b) {
+  const parse = (v) => {
+    const m = /^(\d+)\.(\d+)\.(\d+)$/.exec(String(v ?? '').trim());
+    return m ? [Number(m[1]), Number(m[2]), Number(m[3])] : null;
+  };
+  const pa = parse(a);
+  const pb = parse(b);
+  if (pa === null || pb === null) return null;
+  for (let i = 0; i < 3; i += 1) {
+    if (pa[i] !== pb[i]) return pa[i] - pb[i];
+  }
+  return 0;
+}
+
 function git(args) {
   return execSync(`git ${args}`, { encoding: 'utf8' }).trim();
 }
@@ -108,26 +129,68 @@ function runGuard() {
   }
 
   // --- diff-based "runtime change needs a bump" logic ---------------------
+  // WX4-3 (audit r3): only a MISSING parent (shallow clone / root commit) is a
+  // benign skip. A real git failure (corrupt object, not-a-repo) must NOT be
+  // swallowed as exit 0 — that silently disables the guard. Probe for the
+  // parent first; if it exists but the diff still throws, that is a real error.
+  let hasParent = false;
+  try {
+    git('rev-parse --verify --quiet HEAD~1');
+    hasParent = true;
+  } catch {
+    hasParent = false;
+  }
+  if (!hasParent) {
+    console.log('version-bump guard: no HEAD~1 parent (shallow/root commit) - skipping diff.');
+    process.exit(0);
+  }
   let changed;
   try {
     changed = git('diff --name-only HEAD~1 HEAD').split('\n').filter(Boolean);
-  } catch {
-    console.log('version-bump guard: cannot diff HEAD~1 (shallow/root commit) - skipping.');
-    process.exit(0);
+  } catch (err) {
+    console.error(
+      `version-bump guard FAILED: HEAD~1 exists but the diff could not be computed: ${err}. ` +
+        'This is a real git error, not a shallow clone — not skipping.',
+    );
+    process.exit(1);
   }
 
   const runtimeChanged = changed.some(
     (f) => PKG_DIR_RE.test(f) && /^projects\/silver-core-sdk\/src\//.test(f),
   );
 
+  // Parse the package.json "version" at a revision (WX4-2: compare parsed
+  // VALUES, never a patch-line regex that a re-indent would false-trigger).
+  const versionOf = (rev) => {
+    try {
+      return JSON.parse(git(`show ${rev}:projects/silver-core-sdk/package.json`)).version ?? null;
+    } catch {
+      return null;
+    }
+  };
+
   let depsChanged = false;
   let versionChanged = false;
   if (changed.includes('projects/silver-core-sdk/package.json')) {
-    // ":(top)" anchors the pathspec at the repo root: this script runs with
-    // cwd = projects/silver-core-sdk in CI, where a bare repo-root-relative
-    // pathspec silently matches nothing (empty patch -> false negative).
-    const patch = git('diff HEAD~1 HEAD -- ":(top)projects/silver-core-sdk/package.json"');
-    versionChanged = /^[+-]\s*"version":/m.test(patch);
+    const versionBefore = versionOf('HEAD~1');
+    const versionAfter = versionOf('HEAD');
+    versionChanged =
+      versionBefore !== null && versionAfter !== null && versionBefore !== versionAfter;
+    // WX4-1 (audit r3): a bump must move the version FORWARD. A revert to an
+    // older number (all three sources consistently stale) otherwise satisfies
+    // the "version line differs" check and ships forked content under a reused
+    // tag. Require a strict semver increase.
+    if (versionChanged) {
+      const delta = compareVersions(versionAfter, versionBefore);
+      if (delta !== null && delta <= 0) {
+        console.error(
+          `version-bump guard FAILED: package.json version went from ${versionBefore} to ` +
+            `${versionAfter} — a bump must INCREASE the version, never revert/reuse. Consumers ` +
+            'pin tarballs by version; a non-monotonic version reuses a tag for different goods.',
+        );
+        process.exit(1);
+      }
+    }
     // Consumer-affecting deps are the runtime "dependencies" ONLY: devDependencies
     // ship in no tarball and are never installed by a consumer, so a devDep-only
     // change (e.g. bumping vitest/typescript) must NOT force a version bump.

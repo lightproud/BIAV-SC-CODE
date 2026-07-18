@@ -30,8 +30,22 @@ function toolSchemaFingerprints(tools) {
     if (!t || typeof t.name !== 'string') continue;
     const schema = t.input_schema ?? {};
     const props = schema.properties && typeof schema.properties === 'object' ? schema.properties : {};
+    // WX3-3 (audit r3): capture per-param declared TYPE (and a nested-shape
+    // marker), not just the param NAME. Two arms that agree on parameter names
+    // but disagree on a type (string vs number) or on nesting (a param that is
+    // a bare value vs an object/array) previously fingerprinted identical.
+    const paramTypes = {};
+    for (const [name, spec] of Object.entries(props)) {
+      const s = spec && typeof spec === 'object' ? spec : {};
+      const type = Array.isArray(s.type) ? [...s.type].sort().join('|') : (s.type ?? null);
+      const nested =
+        (s.properties && typeof s.properties === 'object' && Object.keys(s.properties).length > 0) ||
+        (s.items && typeof s.items === 'object');
+      paramTypes[name] = { type, nested: !!nested };
+    }
     out[t.name] = {
       params: Object.keys(props).sort(),
+      paramTypes,
       required: Array.isArray(schema.required) ? [...schema.required].sort() : [],
       hasDescription: typeof t.description === 'string' && t.description.length > 0,
     };
@@ -57,6 +71,17 @@ export function diffToolSchemas(aFp, bFp) {
     }
     if (JSON.stringify(a[name].required) !== JSON.stringify(b[name].required)) {
       diffs.push({ facet: 'required', a: a[name].required, b: b[name].required });
+    }
+    // WX3-3: per-param type/nesting divergence (names may match while types do
+    // not). Skip when EITHER side lacks the facet — an older reference snapshot
+    // that predates paramTypes is unrecorded, not divergent (twin of the
+    // undefined-facet rule in diffFingerprints).
+    if (
+      a[name].paramTypes !== undefined &&
+      b[name].paramTypes !== undefined &&
+      JSON.stringify(a[name].paramTypes) !== JSON.stringify(b[name].paramTypes)
+    ) {
+      diffs.push({ facet: 'paramTypes', a: a[name].paramTypes, b: b[name].paramTypes });
     }
     if (diffs.length > 0) out.push({ tool: name, diffs });
   }
@@ -96,6 +121,9 @@ export function fingerprintRequestBody(body) {
         : null,
     hasTemperature: body.temperature !== undefined,
     stream: body.stream === true,
+    // WX3-2 (audit r3): capture the requested model VALUE so two arms asking
+    // for different models are detectable (topLevelKeys only shows the KEY).
+    model: typeof body.model === 'string' ? body.model : null,
     topLevelKeys: Object.keys(body).sort(),
   };
 }
@@ -117,11 +145,21 @@ export function diffFingerprints(a, b) {
     'thinking',
     'hasTemperature',
     'stream',
+    // WX3-2 (model value) + WX3-1 (topLevelKeys set): both were computed but
+    // never diffed, so max_tokens/tool_choice/metadata/stop_sequences/top_p/
+    // service_tier presence and a model mismatch were structurally invisible.
+    'model',
+    'topLevelKeys',
   ];
   const out = [];
   for (const f of facets) {
-    if (JSON.stringify(a?.[f]) !== JSON.stringify(b?.[f])) {
-      out.push({ facet: f, a: a?.[f], b: b?.[f] });
+    // A facet that is UNDEFINED on either side is unrecorded, not divergent —
+    // this keeps a newly-added facet (model, WX3-2) backward-compatible with an
+    // older committed reference snapshot that predates it (`undefined` vs a
+    // value is not a real difference; `null` vs a value still is).
+    if (a?.[f] === undefined || b?.[f] === undefined) continue;
+    if (JSON.stringify(a[f]) !== JSON.stringify(b[f])) {
+      out.push({ facet: f, a: a[f], b: b[f] });
     }
   }
   // toolNames: report the symmetric difference rather than raw arrays.

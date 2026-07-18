@@ -40,8 +40,12 @@ export function compareToBaseline(baseline, report) {
       rows.push({ dimension, baseline: base, current: null, delta: null, regressed: false });
       continue;
     }
-    const delta = +(cur - base).toFixed(2);
-    const regressed = delta < -REGRESSION_THRESHOLD;
+    // WX4-4 (audit r3): judge on the RAW delta; only the DISPLAY value is
+    // rounded. Rounding before the compare turned a -0.501 drop into -0.50,
+    // which is not `< -0.5`, so a real regression slipped past the gate.
+    const rawDelta = cur - base;
+    const delta = +rawDelta.toFixed(2);
+    const regressed = rawDelta < -REGRESSION_THRESHOLD;
     if (regressed) {
       warnings.push(
         `behavior regression: ${dimension} ${base} -> ${cur} (${delta}; threshold -${REGRESSION_THRESHOLD})`,
@@ -123,6 +127,17 @@ function main() {
     return;
   }
   const baseline = JSON.parse(readFileSync(baselinePath, 'utf8'));
+  // WX4-5 (audit r3): a committed baseline with ZERO dimensions would make the
+  // compare loop run no iterations and print PASS — a vacuous green. A baseline
+  // that has no dimensions is not "passing", it is unusable: SKIP explicitly so
+  // it reads as "not checked", not "checked and clean".
+  if (Object.keys(baseline.dimensionMeans ?? {}).length === 0) {
+    console.log(
+      'SKIP: committed baseline has zero scored dimensions — it cannot gate anything. ' +
+        'Re-seed it from a LIVE round with --write-baseline <report.json>.',
+    );
+    return;
+  }
   const report = JSON.parse(readFileSync(reportPath, 'utf8'));
   if (report.mode !== 'LIVE') {
     console.log(`SKIP: report is ${report.mode}, regression gate only judges LIVE scores`);

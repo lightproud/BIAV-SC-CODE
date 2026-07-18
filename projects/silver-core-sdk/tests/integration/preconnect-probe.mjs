@@ -34,6 +34,7 @@ const { query } = await import('../../dist/index.js');
 // --- keyless fallback: local emulator ------------------------------------------
 let server;
 let baseUrl = REAL_URL ?? '';
+let socketOpens = 0; // WX5-4: TCP connections accepted by the local emulator.
 if (!REAL_URL) {
   function sse(res, event, data) {
     res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
@@ -44,7 +45,10 @@ if (!REAL_URL) {
       req.on('data', (c) => (body += c));
       req.on('end', () => {
         if (req.method === 'HEAD') {
-          res.writeHead(405);
+          // WX5-4 (audit r3): answer a preconnect HEAD warmup with 200, not 405.
+          // A 405 makes a real preconnect look like a failed request and muddies
+          // whether the warmup actually opened a socket ahead of the POST.
+          res.writeHead(200, { 'content-type': 'text/event-stream' });
           return res.end();
         }
         res.writeHead(200, { 'content-type': 'text/event-stream' });
@@ -60,6 +64,12 @@ if (!REAL_URL) {
         res.end();
       });
     });
+    // WX5-4: observe the socket layer so a preconnect that silently no-fires is
+    // distinguishable from one that fired but saved nothing — count each TCP
+    // connection the server accepts.
+    server.on('connection', () => {
+      socketOpens += 1;
+    });
     server.listen(0, '127.0.0.1', () => {
       baseUrl = `http://127.0.0.1:${server.address().port}`;
       resolve();
@@ -68,6 +78,7 @@ if (!REAL_URL) {
 }
 
 async function oneRep(preconnect) {
+  const socketsBefore = socketOpens;
   const t0 = performance.now();
   let firstEventMs = -1;
   const q = query({
@@ -90,7 +101,7 @@ async function oneRep(preconnect) {
       firstEventMs = performance.now() - t0;
     }
   }
-  return firstEventMs;
+  return { firstEventMs, sockets: socketOpens - socketsBefore };
 }
 
 const median = (xs) => {
@@ -101,15 +112,29 @@ const median = (xs) => {
 console.log(`preconnect probe - ${REAL_URL ? 'REAL endpoint ' + REAL_URL : 'local emulator (pipeline check; expect ~0 delta)'}, reps=${REPS}`);
 const off = [];
 const on = [];
+const offSockets = [];
+const onSockets = [];
 for (let i = 0; i < REPS; i++) {
-  off.push(await oneRep(false));
-  on.push(await oneRep(true));
+  const r0 = await oneRep(false);
+  off.push(r0.firstEventMs);
+  offSockets.push(r0.sockets);
+  const r1 = await oneRep(true);
+  on.push(r1.firstEventMs);
+  onSockets.push(r1.sockets);
 }
 const mOff = median(off);
 const mOn = median(on);
 console.log(`preconnect OFF: median first-event ${mOff.toFixed(0)}ms  (raw: ${off.map((x) => x.toFixed(0)).join(',')})`);
 console.log(`preconnect ON : median first-event ${mOn.toFixed(0)}ms  (raw: ${on.map((x) => x.toFixed(0)).join(',')})`);
 console.log(`delta: ${(mOff - mOn).toFixed(0)}ms`);
+// WX5-4: sockets opened per rep. A preconnect ON rep that opens the SAME count
+// as OFF (typically 1: only the POST) means the warmup silently no-fired — a
+// no-saving that is otherwise indistinguishable from a saving-that-was-zero.
+const sum = (xs) => xs.reduce((a, b) => a + b, 0);
+console.log(
+  `sockets opened — OFF total ${sum(offSockets)}, ON total ${sum(onSockets)} ` +
+    `(ON > OFF means the preconnect warmup actually opened an extra socket ahead of the POST)`,
+);
 console.log(
   mOff - mOn > 50
     ? 'recommendation: the handshake saving is real on this network - default preconnect ON in BPT.'

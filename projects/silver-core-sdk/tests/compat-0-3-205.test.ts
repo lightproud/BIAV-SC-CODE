@@ -92,6 +92,22 @@ describe('0.3.205 new message types (typed for drop-in exhaustiveness)', () => {
     };
     const all: SDKMessage[] = [active, cleared, reset, bg, prog];
     expect(all).toHaveLength(5);
+    // W3-6 (audit r3): the `: SDKMessage[]` annotation is erased at runtime, so
+    // a length check alone is a tautology tsc could satisfy for any array. Assert
+    // the discriminants at runtime so the union SHAPE (not just the count) is
+    // exercised — the fields a drop-in consumer switches on.
+    expect(all.map((m) => m.type)).toEqual([
+      'active_goal',
+      'active_goal',
+      'conversation_reset',
+      'system',
+      'system',
+    ]);
+    expect(active.value).not.toBeNull();
+    expect(cleared.value).toBeNull(); // the CLEAR variant carries a null goal
+    expect(reset.new_conversation_id).toBe('conv-2');
+    expect(bg.subtype).toBe('background_tasks_changed');
+    expect(prog.subtype).toBe('control_request_progress');
     // REPLACE semantics on background_tasks_changed: the payload is the full set.
     expect(bg.tasks[0].task_id).toBe('k');
     expect(prog.status).toBe('api_retry');
