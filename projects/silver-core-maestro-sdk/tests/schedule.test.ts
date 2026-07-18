@@ -315,7 +315,7 @@ describe('audit C1 (2026-07-18): fractional every float guard', () => {
     // ulp(1e15) = 0.125 > 0.001: no representable strictly-greater fire point.
     const spec = everySpec({ every: 0.001, anchorAt: 0 });
     expect(() => nextFireAt(spec, 1e15)).toThrow(RangeError);
-    expect(() => nextFireAt(spec, 1e15)).toThrow(/below float resolution/);
+    expect(() => nextFireAt(spec, 1e15)).toThrow(/exceeds float precision/);
   });
 });
 
@@ -340,7 +340,7 @@ describe('float-resolution refusal + overflow (integration kill round 2026-07-18
     // At |t| = 2^53 the float ULP is 2; every = 0.5 can never advance the
     // candidate, so the flatness detector must refuse instead of spinning.
     const spec = { id: 's', intent: 'x', every: 0.5, anchorAt: 0 };
-    expect(() => nextFireAt(spec, 2 ** 53)).toThrow(/below float resolution/);
+    expect(() => nextFireAt(spec, 2 ** 53)).toThrow(/exceeds float precision/);
   });
   it('refuses when the computed fire time overflows to Infinity', () => {
     const spec = { id: 's', intent: 'x', every: 1e308, anchorAt: 0 };
@@ -352,5 +352,38 @@ describe('float-resolution refusal + overflow (integration kill round 2026-07-18
     const next = nextFireAt(spec, 1.2);
     expect(next).toBeGreaterThan(1.2);
     expect(next).toBeCloseTo(1.3, 10);
+  });
+});
+
+describe('r2 kill round: rounding-up division + step-index boundary + fast-forward purity', () => {
+  it('steps DOWN when float division rounds up past the true smallest point (every=0.016)', () => {
+    // after/every = exactly 36.0 in float while the exact value is just
+    // below 36: floor+1 = 37 would skip the true smallest point 36*0.016.
+    const spec = { id: 's', intent: 'x', every: 0.016, anchorAt: 0 };
+    const next = nextFireAt(spec, 0.576);
+    expect(next).toBe(36 * 0.016); // 0.5760000000000001, NOT 0.592
+    expect(next).toBeGreaterThan(0.576);
+  });
+  it('refuses at the exact MAX_SAFE_INTEGER step-index boundary', () => {
+    // steps = floor((2^53-2)/1)+1 = 2^53-1 = MAX_SAFE_INTEGER exactly.
+    const spec = { id: 's', intent: 'x', every: 1, anchorAt: 0 };
+    expect(() => nextFireAt(spec, 2 ** 53 - 2)).toThrow(/exceeds float precision/);
+  });
+  it('fast-forward never leaks fires at or before the window start', () => {
+    // cap*period reaches far before afterExclusive: a jump that ignored the
+    // window start would collect pre-window points into the ring.
+    const spec = { id: 's', intent: 'x', every: 100, anchorAt: 0 };
+    const fires = firesBetween(spec, 1_000, 1_500, 100);
+    expect(fires).toEqual([1_100, 1_200, 1_300, 1_400, 1_500]);
+  });
+  it('fast-forward respects the dailyAt period too', () => {
+    const day = 24 * 60 * 60 * 1_000;
+    const spec = { id: 's', intent: 'x', dailyAt: { hour: 3, minute: 0 } };
+    const until = 400 * day; // > cap+1 days of backlog
+    const fires = firesBetween(spec, 0, until, 5);
+    expect(fires).toHaveLength(5);
+    for (const t of fires) expect(new Date(t).getUTCHours()).toBe(3);
+    expect(fires[4]).toBeLessThanOrEqual(until);
+    expect(fires[0]).toBeGreaterThan(until - 6 * day);
   });
 });

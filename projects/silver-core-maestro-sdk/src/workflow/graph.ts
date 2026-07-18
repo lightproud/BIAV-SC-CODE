@@ -104,7 +104,13 @@ export function validateGraph(graph: WorkflowGraph): void {
     byId.set(node.id, node);
   }
   for (const node of graph.nodes) {
+    if (node.deps !== undefined && !Array.isArray(node.deps)) {
+      throw new GraphError(`node '${node.id}': deps must be an array (got ${typeof node.deps})`);
+    }
     for (const dep of node.deps ?? []) {
+      if (typeof dep !== 'string') {
+        throw new GraphError(`node '${node.id}': deps entries must be strings (got ${typeof dep})`);
+      }
       if (dep === node.id) {
         throw new GraphError(`node '${node.id}' depends on itself`);
       }

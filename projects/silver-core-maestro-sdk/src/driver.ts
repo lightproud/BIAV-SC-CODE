@@ -76,8 +76,11 @@ export class LedgerDriver {
   #pollHandle: unknown = null;
   /** The currently in-flight tick, if any; stop() awaits it (see stop()). */
   #tickPromise: Promise<void> | null = null;
-  readonly #inflight = new Set<Promise<void>>();
-  readonly #controllers = new Set<AbortController>();
+  // Generation-tagged (audit r2): a STALE stop() — one that suspended at the
+  // tick await while a non-awaited start() opened a new generation — must
+  // abort and await ONLY its own generation's work, never the restarted one's.
+  readonly #inflight = new Map<Promise<void>, number>();
+  readonly #controllers = new Map<AbortController, number>();
 
   constructor(opts: LedgerDriverOptions) {
     this.#ledger = opts.ledger;
@@ -115,14 +118,23 @@ export class LedgerDriver {
    * path below BEFORE stop() resolves — nothing is claimed or executed after.
    */
   async stop(): Promise<void> {
+    const stoppedGeneration = this.#generation;
     this.#running = false;
     if (this.#pollHandle !== null) {
       this.#clock.clearTimeout(this.#pollHandle);
       this.#pollHandle = null;
     }
     if (this.#tickPromise !== null) await this.#tickPromise;
-    for (const controller of this.#controllers) controller.abort();
-    await Promise.allSettled([...this.#inflight]);
+    // Abort/await ONLY work belonging to generations up to the one this
+    // stop() call closed — a restart that happened while we awaited the tick
+    // owns the newer generations and must not be touched (audit r2).
+    for (const [controller, generation] of this.#controllers) {
+      if (generation <= stoppedGeneration) controller.abort();
+    }
+    const toAwait = [...this.#inflight]
+      .filter(([, generation]) => generation <= stoppedGeneration)
+      .map(([promise]) => promise);
+    await Promise.allSettled(toAwait);
   }
 
   isRunning(): boolean {
@@ -159,11 +171,11 @@ export class LedgerDriver {
       // flight: stop() awaits this tick and then aborts them, so the claims
       // settle into 'retrying' (resumable) instead of stranding in 'running'.
       for (const session of claimed) {
-        const attempt = this.#runAttempt(session);
+        const attempt = this.#runAttempt(session, generation);
         const tracked: Promise<void> = attempt.finally(() => {
           this.#inflight.delete(tracked);
         });
-        this.#inflight.add(tracked);
+        this.#inflight.set(tracked, generation);
       }
     } catch (error) {
       this.#emit({ type: 'driver:error', error });
@@ -171,9 +183,9 @@ export class LedgerDriver {
     this.#scheduleTick(this.#pollIntervalMs, generation);
   }
 
-  async #runAttempt(session: SessionRecord): Promise<void> {
+  async #runAttempt(session: SessionRecord, generation: number): Promise<void> {
     const controller = new AbortController();
-    this.#controllers.add(controller);
+    this.#controllers.set(controller, generation);
     let timedOut = false;
     let timeoutHandle: unknown = null;
     if (this.#queryTimeoutMs !== undefined) {

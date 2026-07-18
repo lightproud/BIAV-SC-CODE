@@ -22,7 +22,7 @@
  *   RUN_MEMORY_TIDY=1 node projects/silver-core-maestro-sdk/examples/memory-tidy.mjs
  */
 
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { LedgerDriver, Scheduler, TaskLedger } from 'silver-core-maestro-sdk';
@@ -83,7 +83,7 @@ const DIGEST_PATH = '/memories/cards/digest.md';
  * supersede link) does it touch the store. Returns a facts summary for the
  * ledger closeout.
  */
-export async function tidyOnce({ ops, store, softWaterline, staleAfterDays }) {
+export async function tidyOnce({ ops, store, memoriesDir, softWaterline, staleAfterDays }) {
   const health = await assessMemoryStoreHealth(ops, {
     ...(softWaterline !== undefined ? { softWaterline } : {}),
     ...(staleAfterDays !== undefined ? { staleAfterDays } : {}),
@@ -97,26 +97,32 @@ export async function tidyOnce({ ops, store, softWaterline, staleAfterDays }) {
   }
 
   // 归并写卡: fold every fragment file into one digest card file.
+  // HOST-SIDE reads (audit r2, P1): store.view truncates at the 16k view
+  // limit, so merging THROUGH the view silently drops everything past it —
+  // the tidy pass would delete fragments whose content never reached the
+  // digest. The memories tree is the host's own disk; read it fully with fs.
+  const fragmentsOnDisk = join(memoriesDir, 'fragments');
   const names = [];
-  if (fragmentCount > 0) {
-    const listing = await store.view(FRAGMENTS_DIR);
-    for (const line of listing.split('\n').slice(1)) {
-      const m = /\t(\/memories\/fragments\/[^/]+)$/.exec(line);
-      if (m !== null) names.push(m[1]);
+  if (fragmentCount > 0 && existsSync(fragmentsOnDisk)) {
+    for (const entry of readdirSync(fragmentsOnDisk).sort()) {
+      names.push(`${FRAGMENTS_DIR}/${entry}`);
     }
   }
   const sections = [];
   for (const path of names) {
-    const viewed = await store.view(path);
-    const body = viewed
-      .split('\n')
-      .slice(1)
-      .map((l) => l.replace(/^\s*\d+\t/, ''))
-      .join('\n');
-    sections.push(`## ${path.slice(FRAGMENTS_DIR.length + 1)}\n\n${body}`);
+    const body = readFileSync(join(fragmentsOnDisk, path.slice(FRAGMENTS_DIR.length + 1)), 'utf8');
+    sections.push(`## ${path.slice(FRAGMENTS_DIR.length + 1)}\n\n${body.trimEnd()}`);
   }
   if (sections.length > 0) {
-    const digest = `# Memory digest\n\n${sections.join('\n\n')}\n`;
+    // MERGE, never overwrite (audit r2, P1): a second tidy pass — including
+    // the driver's own retry of a half-failed attempt — must extend the
+    // digest, not destroy the previously consolidated history.
+    const digestOnDisk = join(memoriesDir, 'cards', 'digest.md');
+    const existing = existsSync(digestOnDisk) ? readFileSync(digestOnDisk, 'utf8').trimEnd() : null;
+    const digest =
+      existing !== null
+        ? `${existing}\n\n${sections.join('\n\n')}\n`
+        : `# Memory digest\n\n${sections.join('\n\n')}\n`;
     await store.create(DIGEST_PATH, digest);
   }
 
@@ -178,6 +184,7 @@ export async function runMemoryTidy(opts) {
     ledger,
     executor: async (session) => {
       const tidy = await tidyOnce({
+        memoriesDir,
         ops,
         store,
         softWaterline: opts.softWaterline,

@@ -111,3 +111,34 @@ describe('memory tidy example (e2e, fake timers)', () => {
     await expect(stat(digestOnDisk)).rejects.toThrow();
   });
 });
+
+describe('audit r2 P1 locks: full-content merge + digest preservation', () => {
+  it('a fragment larger than the 16k view limit is merged WITHOUT truncation', async () => {
+    const { root, memoriesDir } = await sandbox();
+    await mkdir(join(memoriesDir, 'fragments'), { recursive: true });
+    const big = 'x'.repeat(20_000) + '\nTAIL-MARKER-BEYOND-VIEW\n';
+    await writeFile(join(memoriesDir, 'fragments', 'big.md'), big);
+    const { session, digestOnDisk } = await drive(
+      runMemoryTidy({ memoriesDir, archiveDir: root, everyMs: 1_000, pollIntervalMs: 25, deadlineMs: 60_000 }),
+    );
+    expect(session.state).toBe('done');
+    // The old view-based merge dropped everything past ~16k: the tail marker
+    // is the proof the FULL content reached the digest.
+    const digestBody = await readFile(digestOnDisk, 'utf8');
+    expect(digestBody).toContain('TAIL-MARKER-BEYOND-VIEW');
+  });
+
+  it('a second tidy pass EXTENDS the digest instead of destroying the first consolidation', async () => {
+    const { root, memoriesDir } = await sandbox();
+    await mkdir(join(memoriesDir, 'fragments'), { recursive: true });
+    await writeFile(join(memoriesDir, 'fragments', 'first.md'), 'first-generation fact\n');
+    await drive(runMemoryTidy({ memoriesDir, archiveDir: root, everyMs: 1_000, pollIntervalMs: 25, deadlineMs: 60_000 }));
+    await writeFile(join(memoriesDir, 'fragments', 'second.md'), 'second-generation fact\n');
+    const { digestOnDisk } = await drive(
+      runMemoryTidy({ memoriesDir, archiveDir: join(root, 'run2'), everyMs: 1_000, pollIntervalMs: 25, deadlineMs: 60_000 }),
+    );
+    const digestBody = await readFile(digestOnDisk, 'utf8');
+    expect(digestBody).toContain('first-generation fact'); // history preserved
+    expect(digestBody).toContain('second-generation fact');
+  });
+});

@@ -79,7 +79,7 @@ describe('parseWorkflowGraphSource', () => {
     });
     expect(parseWorkflowGraphSource('# just prose\n')).toEqual({
       ok: false,
-      error: 'md graph definition has no ```json fenced block',
+      error: 'md graph definition has no top-level ```json fenced block',
     });
     expect(parseWorkflowGraphSource('{not json')).toMatchObject({
       ok: false,
@@ -156,10 +156,78 @@ describe('loadWorkflowGraphFile', () => {
     const jsonInMd = await tempFile('wrong.md', JSON.stringify(GRAPH));
     expect(await loadWorkflowGraphFile(jsonInMd)).toEqual({
       ok: false,
-      error: 'md graph definition has no ```json fenced block',
+      error: 'md graph definition has no top-level ```json fenced block',
     });
     // An unknown extension falls back to sniffing.
     const sniffed = await tempFile('graph.txt', JSON.stringify(GRAPH));
     expect(await loadWorkflowGraphFile(sniffed)).toMatchObject({ ok: true, format: 'json' });
+  });
+});
+
+describe('top-level fence scanner (audit r2)', () => {
+  it('ignores a ```json fence quoted inside an outer fence', () => {
+    const source = [
+      '# Doc',
+      '```md',
+      'example of a definition:',
+      '```json',
+      '{"id":"decoy","nodes":[{"id":"x","intent":"nope"}]}',
+      '```',
+      '',
+      'the REAL definition:',
+      '```json',
+      '{"id":"real","nodes":[{"id":"n","intent":"work"}]}',
+      '```',
+    ].join('\n');
+    const r = parseWorkflowGraphSource(source, 'md');
+    // The outer ```md fence opens an opaque region; its inner ```json line is
+    // CONTENT, and the region closes at the bare ``` line — the first
+    // top-level json fence is the real one.
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.graph.id).toBe('real');
+  });
+  it('ignores an indented (4-space) pseudo-fence', () => {
+    const source = [
+      'indented example:',
+      '    ```json',
+      '    {"id":"decoy","nodes":[]}',
+      '    ```',
+      '```json',
+      '{"id":"real","nodes":[{"id":"n","intent":"work"}]}',
+      '```',
+    ].join('\n');
+    const r = parseWorkflowGraphSource(source, 'md');
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.graph.id).toBe('real');
+  });
+});
+
+describe('r2 kill round: scanner fence-info semantics', () => {
+  it("captures a 'workflow' info fence like 'json'", () => {
+    const r = parseWorkflowGraphSource(
+      '```workflow\n{"id":"g","nodes":[{"id":"n","intent":"x"}]}\n```\n',
+      'md',
+    );
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.graph.id).toBe('g');
+  });
+  it('a bare ``` fence is an opaque region, not a capture', () => {
+    const source = [
+      '```',
+      '{"id":"decoy","nodes":[{"id":"x","intent":"nope"}]}',
+      '```',
+      '```json',
+      '{"id":"real","nodes":[{"id":"n","intent":"work"}]}',
+      '```',
+    ].join('\n');
+    const r = parseWorkflowGraphSource(source, 'md');
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.graph.id).toBe('real');
+  });
+  it('an unclosed non-json fence swallows the rest of the document', () => {
+    const source = ['```md', 'never closed', '```json', '{"id":"g","nodes":[]}'].join('\n');
+    const r = parseWorkflowGraphSource(source, 'md');
+    expect(r.ok).toBe(false);
+    if (!r.ok) expect(r.error).toContain('no top-level');
   });
 });
