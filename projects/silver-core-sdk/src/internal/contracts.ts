@@ -581,6 +581,14 @@ export type EngineConfig = {
    *  so it never invalidates the cached stable prefix. Absent -> systemPrompt
    *  is sent as a single string (original behavior). */
   systemPromptSuffix?: string;
+  /** Rebuild the volatile <env> tail for the LIVE model + current calendar day
+   *  (audit r4 Z8-2/Rdt-4). The loop calls this each turn and refreshes
+   *  systemPromptSuffix before deriving the wire system field, so a fallback-
+   *  model switch or a session spanning local midnight no longer serves the
+   *  construction-time model name / date. Absent when there is no <env> block
+   *  (nothing per-run to refresh). Cache-safe: the tail rides after the
+   *  breakpoint, so a refresh never touches the cached stable prefix. */
+  rebuildVolatileSuffix?: (liveModel: string) => string;
   /** Char offset in systemPrompt where the base harness ends and the appended
    *  stable tail (project instructions / append / structured-output) begins;
    *  enables a 2nd system cache breakpoint so the shared base and the
