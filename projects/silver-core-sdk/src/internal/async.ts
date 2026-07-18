@@ -84,6 +84,15 @@ export class AsyncQueue<T> {
   }
 
   async next(): Promise<IteratorResult<T, undefined>> {
+    // A FAILED queue throws BEFORE any buffered item is drained (audit r4 Sq-3).
+    // fail() means an abort or input-stream error; a message pushed before that
+    // failure must NOT be served afterwards, or a between-turns raw abort would
+    // resurrect a buffered user turn as an orphaned turn AFTER the abort. A
+    // graceful close() leaves `failure` null and still drains its buffer below,
+    // so this reordering only diverts the post-fail() path (query.ts bridges
+    // every abort — onOuterAbort / close() — to queue.fail(), so the failure
+    // guard here is the lifeSignal guard the audit calls for).
+    if (this.failure !== null) throw this.failure.err;
     // Gate on queue LENGTH, not on `shift() !== undefined`: a legitimately
     // enqueued `undefined` value is indistinguishable from an empty queue under
     // the shift-sentinel form, so a buffered `undefined` turn would be swallowed
@@ -92,7 +101,6 @@ export class AsyncQueue<T> {
     if (this.items.length > 0) {
       return { done: false, value: this.items.shift() as T };
     }
-    if (this.failure !== null) throw this.failure.err;
     if (this.closed) return { done: true, value: undefined };
     return new Promise((resolve, reject) => {
       this.waiters.push({ resolve, reject });

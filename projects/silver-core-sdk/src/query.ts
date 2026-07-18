@@ -81,7 +81,7 @@ import {
   makeToolSearchTool,
   type DeferredBuiltinEntry,
 } from './tools/toolsearch.js';
-import { appendFileSync, mkdtempSync, rmSync } from 'node:fs';
+import { appendFileSync, mkdtempSync, realpathSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -451,13 +451,26 @@ export function query(args: {
       sandboxTmpDir = '';
     }
     const sbxOpt = typeof options.sandbox === 'object' ? options.sandbox : undefined;
+    // audit r4 U8-1: resolve each writable root to its real target before it
+    // reaches the backend. A symlinked writable root bound by its logical path
+    // is shadowed by the backend's `--ro-bind / /`, so a write through it hits
+    // EROFS; binding the resolved target makes the rw-bind actually take. Kept
+    // out of the backend's pure argv assembler (it must stay I/O-free); done
+    // here, best-effort — a path that cannot be resolved keeps its literal form.
+    const resolveRealBestEffort = (p: string): string => {
+      try {
+        return realpathSync(p);
+      } catch {
+        return p;
+      }
+    };
     const writablePaths = [
       cwd,
       ...(options.additionalDirectories ?? []),
       ...(sbxOpt?.writablePaths ?? []),
       ...(shells.stateDir !== '' ? [shells.stateDir] : []),
       ...(sandboxTmpDir !== '' ? [sandboxTmpDir] : []),
-    ];
+    ].map(resolveRealBestEffort);
     sandboxCtx = {
       backend: sandboxBackend,
       tmpDir: sandboxTmpDir,

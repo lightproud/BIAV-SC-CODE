@@ -10,7 +10,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, statSync } from 'node:fs';
-import { homedir, platform as osPlatform, release } from 'node:os';
+import { homedir, platform as osPlatform, release, type as osType } from 'node:os';
 import { dirname, join, parse as parsePath } from 'node:path';
 
 import { resolveSettingSources } from '../internal/setting-sources.js';
@@ -34,7 +34,10 @@ export function gatherEnvironment(
 ): EnvironmentContext {
   const env: EnvironmentContext = {
     platform: safe(() => osPlatform()),
-    osVersion: safe(() => `${osPlatform()} ${release()}`),
+    // audit r4 Z8-3: os.type() yields the capitalized OS name ('Linux 6.x',
+    // matching the official <env> reproduction) where os.platform() lowercased
+    // it ('linux'). The `platform:` line above stays lowercase by design.
+    osVersion: safe(() => `${osType()} ${release()}`),
     date,
     model,
     isGitRepo: false,

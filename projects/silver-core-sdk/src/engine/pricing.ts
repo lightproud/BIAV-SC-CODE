@@ -37,8 +37,17 @@ const PRICE_TABLE: readonly PriceEntry[] = [
   { prefix: 'claude-3-opus-', input: 15, output: 75, cacheWrite: 18.75, cacheRead: 1.5 },
   { prefix: 'claude-3-7-sonnet-', input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
   { prefix: 'claude-3-5-sonnet-', input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
+  // audit r4 U5-1: the original Claude 3 Sonnet (claude-3-sonnet-20240229) was
+  // missing from this block -> matched no prefix -> estimateCostUsd $0 ->
+  // maxBudgetUsd silently unenforced for callers pinned to it. Longest prefix
+  // wins, so this shorter prefix never shadows claude-3-5-/claude-3-7-sonnet-.
+  { prefix: 'claude-3-sonnet-', input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
   { prefix: 'claude-3-5-haiku-', input: 0.8, output: 4, cacheWrite: 1, cacheRead: 0.08 },
-  { prefix: 'claude-3-haiku-', input: 0.25, output: 1.25, cacheWrite: 0.3125, cacheRead: 0.025 },
+  // audit r4 U5-2: Claude 3 Haiku's cache rates are the OFFICIAL published
+  // figures ($0.30 write / $0.03 read per MTok), not the generic input x1.25 /
+  // x0.1 multiplier (which would give 0.3125 / 0.025 — the latter is ~17% under
+  // the official $0.03 cache-read rate, under-reporting cost).
+  { prefix: 'claude-3-haiku-', input: 0.25, output: 1.25, cacheWrite: 0.3, cacheRead: 0.03 },
 ];
 
 const MTOK = 1_000_000;

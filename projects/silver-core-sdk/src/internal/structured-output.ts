@@ -400,12 +400,17 @@ function validateValue(
     }
   }
 
-  // string constraints
-  if (typeof value === 'string') {
-    if (typeof s.minLength === 'number' && value.length < s.minLength) {
+  // string constraints. JSON Schema defines string length in Unicode CODE
+  // POINTS, but String#length counts UTF-16 code units, so an astral character
+  // (emoji, rare CJK) double-counts and a valid string fails minLength/maxLength
+  // (audit r4 U6-2). Count code points via the string iterator; compute only
+  // when a length constraint is present (spread is O(n)).
+  if (typeof value === 'string' && (typeof s.minLength === 'number' || typeof s.maxLength === 'number')) {
+    const codePoints = [...value].length;
+    if (typeof s.minLength === 'number' && codePoints < s.minLength) {
       errors.push({ path, message: `expected length >= ${s.minLength}` });
     }
-    if (typeof s.maxLength === 'number' && value.length > s.maxLength) {
+    if (typeof s.maxLength === 'number' && codePoints > s.maxLength) {
       errors.push({ path, message: `expected length <= ${s.maxLength}` });
     }
   }

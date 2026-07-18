@@ -25,8 +25,33 @@
  */
 
 import type { BuiltinTool, ToolContext, ToolResultPayload } from '../internal/contracts.js';
+import type { PermissionMode } from '../types.js';
 import { AbortError } from '../errors.js';
 import { ENTERPLANMODE_DESCRIPTION } from './descriptions.js';
+
+/**
+ * Per-gate memory of the permission mode active when plan mode was entered, so
+ * ExitPlanMode can restore it instead of hard-coding 'default' (audit r4 U3-1).
+ * Keyed by the gate object — the query's single, stable permission gate across
+ * turns (query.ts and the subagent runtime thread the SAME reference into every
+ * turn's ToolContext), so an enter-then-explore-then-exit round trip resolves to
+ * the same key. A WeakMap keeps this off the gate contract and self-clears when
+ * the gate is collected.
+ */
+const priorModeByGate = new WeakMap<object, PermissionMode>();
+
+/** Record the mode active before plan mode (called by EnterPlanMode at entry). */
+export function recordPriorPlanMode(gate: object, mode: PermissionMode): void {
+  priorModeByGate.set(gate, mode);
+}
+
+/** Consume the recorded pre-plan mode for a gate (called by ExitPlanMode).
+ *  undefined when plan mode was not entered through EnterPlanMode. */
+export function takePriorPlanMode(gate: object): PermissionMode | undefined {
+  const mode = priorModeByGate.get(gate);
+  priorModeByGate.delete(gate);
+  return mode;
+}
 
 export const enterPlanModeTool: BuiltinTool = {
   name: 'EnterPlanMode',
@@ -64,6 +89,10 @@ export const enterPlanModeTool: BuiltinTool = {
       };
     }
 
+    // audit r4 U3-1: remember the pre-plan mode so ExitPlanMode restores it
+    // (e.g. acceptEdits) instead of silently dropping it to 'default'. `mode` is
+    // guaranteed != 'plan' by the guard above.
+    recordPriorPlanMode(gate, mode);
     gate.setMode('plan');
     ctx.debug(`EnterPlanMode: permission mode ${mode} -> plan`);
     return {

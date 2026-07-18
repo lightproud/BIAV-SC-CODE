@@ -112,7 +112,18 @@ export const monitorTool: BuiltinTool = {
         isError: true,
       };
     }
-    const persistent = input['persistent'] === true;
+    // audit r4 U3-2: a malformed `persistent` (e.g. the string "true") must fail
+    // loudly, not silently coerce to false — otherwise a caller that intended a
+    // session-length watch gets it killed by the default timeout ("drop-in
+    // inputs fail loudly, never silently").
+    const rawPersistent = input['persistent'];
+    if (rawPersistent !== undefined && typeof rawPersistent !== 'boolean') {
+      return {
+        content: 'Monitor failed: "persistent" must be a boolean.',
+        isError: true,
+      };
+    }
+    const persistent = rawPersistent === true;
     // Clamp to Node's 32-bit setTimeout ceiling: a larger delay silently
     // overflows to 1ms, firing the kill timer ~immediately and killing the
     // just-launched watch — the exact opposite of a long-lived watch request.
@@ -155,14 +166,28 @@ export const monitorTool: BuiltinTool = {
     // shell 'killed'; a watch that already exited is left as-is. unref'd so an
     // armed timer never keeps the host process alive.
     if (!persistent) {
-      const timer = setTimeout(() => {
+      // audit r4 Stim-2: an armed kill timer otherwise pins its closure — and
+      // the shell manager it captures — until it FIRES, up to the 32-bit ceiling
+      // (~24 days) for a large timeout, even after the watch exits early. Bind
+      // the timer's lifetime to the query: clear it (and drop its closure) on
+      // teardown via the abort signal, and capture only the light locals below
+      // rather than the whole ToolContext. On a natural timeout the callback
+      // removes its own abort listener.
+      const debug = ctx.debug;
+      const signal = ctx.signal;
+      let timer: ReturnType<typeof setTimeout>;
+      const onAbort = (): void => clearTimeout(timer);
+      timer = setTimeout(() => {
+        signal.removeEventListener('abort', onAbort);
         const rec = shellsMgr.get(taskId);
         if (rec !== undefined && rec.status === 'running') {
-          ctx.debug(`Monitor: watch ${taskId} timed out after ${timeoutMs}ms; killing`);
+          debug(`Monitor: watch ${taskId} timed out after ${timeoutMs}ms; killing`);
           shellsMgr.kill(taskId);
         }
       }, timeoutMs);
       timer.unref?.();
+      if (signal.aborted) clearTimeout(timer);
+      else signal.addEventListener('abort', onAbort, { once: true });
     }
 
     ctx.debug(

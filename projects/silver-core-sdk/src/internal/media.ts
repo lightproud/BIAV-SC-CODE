@@ -20,9 +20,14 @@ export const SUPPORTED_IMAGE_MEDIA_TYPES: ReadonlySet<string> = new Set([
 /** Human-readable list for error/marker messages (stable order). */
 export const SUPPORTED_IMAGE_MEDIA_TYPES_LIST = [...SUPPORTED_IMAGE_MEDIA_TYPES].join(', ');
 
-/** Normalize a raw media type (trim + lowercase); undefined when the result
- *  is not one of the supported image types. */
+/** Normalize a raw media type (strip RFC-6838 parameters + trim + lowercase);
+ *  undefined when the result is not one of the supported image types. */
 export function normalizeImageMediaType(raw: string): string | undefined {
-  const mediaType = raw.trim().toLowerCase();
+  // RFC 6838: a media type may carry parameters after ';' (e.g.
+  // "image/png; charset=binary"). Strip the parameter segment before matching
+  // so a parameterized-but-decodable image is not downgraded to "unsupported"
+  // (audit r4 Y6-3).
+  const semi = raw.indexOf(';');
+  const mediaType = (semi === -1 ? raw : raw.slice(0, semi)).trim().toLowerCase();
   return SUPPORTED_IMAGE_MEDIA_TYPES.has(mediaType) ? mediaType : undefined;
 }

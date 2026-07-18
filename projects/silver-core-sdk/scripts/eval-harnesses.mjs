@@ -19,7 +19,7 @@
  * expandFixture) shared with run-evals.mjs — single source, no circular
  * import (run-evals imports from here).
  */
-import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 
@@ -443,6 +443,14 @@ const RUNNERS = {
       options: { provider: { fetch: killFetch, maxRetries: 1 } },
     });
     const sessionId = sessionIdOf(phase1);
+    // audit r4 V7-2: remove seed.txt before the resume so the deploy code is
+    // recoverable ONLY from the resumed session history. Left on disk, a broken
+    // engine that merely RE-READS the file (never actually resuming) also
+    // answers 6274 and the fault passes vacuously — the eval could not tell a
+    // genuinely-resuming engine from a file-re-reader. The code lives in the
+    // persisted session JSONL (phase-1 Read tool_result), so a true resume is
+    // unaffected; dumpFiles below records seed.txt as absent as evidence.
+    rmSync(join(ws.cwd, 'seed.txt'), { force: true });
     let phase2 = { transcript: [], result: null };
     if (sessionId !== null) {
       phase2 = await drive(sdk, ws, {
@@ -461,9 +469,12 @@ const RUNNERS = {
           'Injected: phase 1 allowed exactly one successful POST (the model read seed.txt), ' +
           'then every transport POST failed until retries exhausted — a mid-task hard kill ' +
           'with the session JSONL persisted (fact X = deploy code 6274 was in-conversation). ' +
-          'Phase 2 resumed the same session id with a clean network. Expected: phase 2 ' +
-          'continues (writes progress.txt once, correct code) instead of restarting, recalls ' +
-          'the code, and no side effect is duplicated.',
+          'seed.txt is then REMOVED from disk before phase 2, so the deploy code is ' +
+          'recoverable ONLY from the resumed session (a non-resuming engine that re-reads the ' +
+          'file gets file-not-found and cannot answer). Phase 2 resumed the same session id ' +
+          'with a clean network. Expected: phase 2 continues (writes progress.txt once, ' +
+          'correct code) instead of restarting, recalls the code from conversation, and no ' +
+          'side effect is duplicated.',
         resumedSessionId: sessionId,
         files: dumpFiles(ws, ['seed.txt', 'progress.txt']),
         injected: killFetch.ledger,

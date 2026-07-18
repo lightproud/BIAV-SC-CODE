@@ -40,6 +40,15 @@ export type DerivedSystemField = {
  *    prompt carries a valid base/tail boundary — the strict
  *    0 < baseLen < length guard degrades cleanly on a stale offset.
  *  - Otherwise: flat single string ('last'; suffix joined with '\n').
+ *
+ * audit r4 Z8-1: the volatile (cwd/env) block in the split/dual array carries a
+ * leading '\n' so the wire bytes match the flat path exactly. The API
+ * concatenates system text blocks with NO inter-block separator (which is why
+ * base+tail reconstructs the stable prompt byte-for-byte), so without the '\n'
+ * the split path produced `stable`+`suffix` (no gap) while the flat path
+ * produced `stable\nsuffix` — toggling promptCaching silently changed the
+ * system bytes the model saw. The '\n' lives inside the volatile block, so the
+ * cached stable prefix (base/tail) is untouched.
  */
 export function deriveSystemField(
   config: Pick<
@@ -63,12 +72,14 @@ export function deriveSystemField(
         ? [
             { type: 'text', text: config.systemPrompt.slice(0, baseLen) },
             { type: 'text', text: config.systemPrompt.slice(baseLen) },
-            { type: 'text', text: config.systemPromptSuffix as string },
+            // audit r4 Z8-1: leading '\n' mirrors the flat-path join below.
+            { type: 'text', text: `\n${config.systemPromptSuffix as string}` },
           ]
         : splitSystem
           ? [
               { type: 'text', text: config.systemPrompt },
-              { type: 'text', text: config.systemPromptSuffix as string },
+              // audit r4 Z8-1: leading '\n' mirrors the flat-path join below.
+              { type: 'text', text: `\n${config.systemPromptSuffix as string}` },
             ]
           : hasSuffix
             ? `${config.systemPrompt}\n${config.systemPromptSuffix}`

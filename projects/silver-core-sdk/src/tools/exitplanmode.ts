@@ -15,8 +15,10 @@
  *    scope): query.ts builds the per-turn ToolContext (~line 1281) with the
  *    gate in scope — add `permissionGate: gate` there (and the subagent
  *    runtime's child context equivalently) to activate real mode switching.
- *  - Wired + mode 'plan': the call switches the gate to 'default' and reports
- *    the transition. allowedPrompts are ECHOED BUT NOT APPLIED — this gate has
+ *  - Wired + mode 'plan': the call restores the permission mode active BEFORE
+ *    plan mode was entered (recorded by EnterPlanMode; 'default' when plan mode
+ *    was entered by other means, e.g. a host setPermissionMode) and reports the
+ *    transition (audit r4 U3-1). allowedPrompts are ECHOED BUT NOT APPLIED — this gate has
  *    no prompt-based (natural-language) Bash rules, and mistranslating them
  *    into pattern rules would grant the wrong thing; the result says so
  *    explicitly (behavior-honesty red line: no silent pretending).
@@ -38,6 +40,7 @@ import type {
 } from '../internal/contracts.js';
 import { AbortError } from '../errors.js';
 import { EXITPLANMODE_DESCRIPTION } from './descriptions.js';
+import { takePriorPlanMode } from './enterplanmode.js';
 
 /** The slice of the permission gate ExitPlanMode needs (duck-typed context extension). */
 export type PlanModeControl = Pick<PermissionGate, 'getMode' | 'setMode'>;
@@ -132,9 +135,14 @@ export const exitPlanModeTool: BuiltinTool = {
       };
     }
 
-    gate.setMode('default');
-    ctx.debug('ExitPlanMode: permission mode plan -> default');
-    const lines = ['Exited plan mode. Permission mode: plan -> default.'];
+    // audit r4 U3-1: restore the mode active before plan mode (recorded by
+    // EnterPlanMode) rather than hard-coding 'default' and silently discarding
+    // the user's mode choice (e.g. acceptEdits). Plan mode entered by other
+    // means leaves no record and falls back to 'default' (unchanged behavior).
+    const restoreTo = takePriorPlanMode(gate) ?? 'default';
+    gate.setMode(restoreTo);
+    ctx.debug(`ExitPlanMode: permission mode plan -> ${restoreTo}`);
+    const lines = [`Exited plan mode. Permission mode: plan -> ${restoreTo}.`];
     if (prompts.value !== undefined && prompts.value.length > 0) {
       lines.push(
         'Requested prompt-based permissions (NOT applied — this permission ' +
