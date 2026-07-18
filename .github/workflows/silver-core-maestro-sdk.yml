@@ -32,7 +32,7 @@ permissions:
 
 jobs:
   dep-direction:
-    name: Maestro dep-direction
+    name: Silver Core Maestro SDK / dependency direction
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -52,7 +52,7 @@ jobs:
   unit:
     # Unique display name so the required-status-check list is unambiguous
     # (the agent SDK workflow also has a job id `unit`).
-    name: Maestro unit
+    name: Silver Core Maestro SDK / unit + testbed
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
