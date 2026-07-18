@@ -1,0 +1,10 @@
+node_modules/
+dist/
+# npm pack tarballs are build artifacts (BPT pins them); never commit — a
+# packed blob would trip the pre-push fat-pack firewall.
+*.tgz
+*.tsbuildinfo
+.vitest-cache/
+.stryker-tmp/
+reports/
+stryker.log

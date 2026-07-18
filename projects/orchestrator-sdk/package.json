@@ -1,6 +1,6 @@
 {
   "name": "@biav/orchestrator-sdk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "BIAV orchestrator SDK (Silver Core) - reusable parts for agents that outlive a single call: clock, cross-session state, session assembly (task ledger, driver, loop/schedule/workflow scaffolds). A library, not a framework: the host owns main().",
   "license": "MIT",
   "type": "module",
