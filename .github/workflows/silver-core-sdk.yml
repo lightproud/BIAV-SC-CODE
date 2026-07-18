@@ -134,18 +134,53 @@ jobs:
           # fetch-depth 2: the version-bump guard diffs HEAD~1 (squash merge =
           # one commit; the guard skips gracefully when no parent exists).
           fetch-depth: 2
+      - name: Detect family changes (fail-safe — any doubt runs the full suite)
+        id: changes
+        working-directory: ${{ github.workspace }}
+        run: |
+          # Docs-only PR short-circuit (keeper ruling 2026-07-18 ①): a PR that
+          # touches NONE of the family packages / lock / these workflows skips the
+          # heavy npm ci + build + test steps below and reports green in seconds.
+          # STEP-level, never job-level `if:` — a SKIPPED required job deadlocks
+          # the PR (counts as not-passed), a job that runs and no-ops does not.
+          # Fail SAFE: a non-PR event, a missing SHA, or any fetch/diff error all
+          # default to run=true, so an SDK change is never skipped on a bad guess.
+          set -uo pipefail
+          run=true
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base='${{ github.event.pull_request.base.sha }}'
+            head='${{ github.event.pull_request.head.sha }}'
+            if [ -n "$base" ] && [ -n "$head" ] \
+               && git fetch --no-tags --depth=1 origin "$base" "$head" >/dev/null 2>&1 \
+               && diff="$(git diff --name-only "$base" "$head" 2>/dev/null)"; then
+              if printf '%s\n' "$diff" | grep -qE '^(projects/silver-core-(sdk|maestro-sdk|testbed)/|package(-lock)?\.json|\.github/workflows/silver-core-(sdk|maestro-sdk)\.yml)'; then
+                run=true
+              else
+                run=false
+              fi
+            fi
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+          echo "family paths changed -> run=$run"
       - uses: actions/setup-node@v6
         with:
           node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
       - name: Install dependencies
+        if: steps.changes.outputs.run == 'true'
         run: npm ci
       - name: Typecheck
+        if: steps.changes.outputs.run == 'true'
         run: npm run typecheck
       - name: Build
+        if: steps.changes.outputs.run == 'true'
         run: npm run build
       - name: Test (keyless, includes emulator e2e)
+        if: steps.changes.outputs.run == 'true'
         run: npm test
       - name: Version-bump guard (BPT tarball pinning, 2026-07-05)
+        if: steps.changes.outputs.run == 'true'
         run: node scripts/check-version-bump.mjs
 
   conformance:
@@ -173,33 +208,68 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
+      - name: Detect family changes (fail-safe — any doubt runs the full suite)
+        id: changes
+        working-directory: ${{ github.workspace }}
+        run: |
+          # Docs-only short-circuit — see the SDK unit job for the rationale
+          # (step-level, fail-safe: any doubt -> run=true).
+          set -uo pipefail
+          run=true
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base='${{ github.event.pull_request.base.sha }}'
+            head='${{ github.event.pull_request.head.sha }}'
+            if [ -n "$base" ] && [ -n "$head" ] \
+               && git fetch --no-tags --depth=1 origin "$base" "$head" >/dev/null 2>&1 \
+               && diff="$(git diff --name-only "$base" "$head" 2>/dev/null)"; then
+              if printf '%s\n' "$diff" | grep -qE '^(projects/silver-core-(sdk|maestro-sdk|testbed)/|package(-lock)?\.json|\.github/workflows/silver-core-(sdk|maestro-sdk)\.yml)'; then
+                run=true
+              else
+                run=false
+              fi
+            fi
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+          echo "family paths changed -> run=$run"
       - uses: actions/setup-node@v6
         with:
           node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
       - name: Install dependencies
+        if: steps.changes.outputs.run == 'true'
         run: npm ci
       - name: Build
+        if: steps.changes.outputs.run == 'true'
         run: npm run build
       - name: Install pinned official arm (transient, --no-save, never a repo dep)
+        if: steps.changes.outputs.run == 'true'
         run: |
           PINS=$(node -e "const p=require('./tests/conformance/pins.json');process.stdout.write('@anthropic-ai/claude-agent-sdk@'+p.agentSdk+' @anthropic-ai/claude-code@'+p.claudeCode)")
           npm i --no-save $PINS
       - name: L1 stream-grammar differential (content-blind emulator)
+        if: steps.changes.outputs.run == 'true'
         run: node tests/conformance/run-l1.mjs --out=conformance-l1.json
       - name: L2 options-semantics differential
+        if: steps.changes.outputs.run == 'true'
         run: node tests/conformance/run-l2.mjs --out=conformance-l2.json
       - name: L3 tool-behavior differential
+        if: steps.changes.outputs.run == 'true'
         run: node tests/conformance/run-l3.mjs --out=conformance-l3.json
       - name: L4 fault-injection differential
+        if: steps.changes.outputs.run == 'true'
         run: node tests/conformance/run-l4.mjs --out=conformance-l4.json
       - name: L3.5 subagent-lifecycle vocabulary differential (report-only — KD-L35 triage, never a gate; wired 2026-07-11, todo T16)
+        if: steps.changes.outputs.run == 'true'
         run: node tests/conformance/run-l35.mjs --arm=both --out=conformance-l35.json
       - name: Scoreboard ratchet (M3 GATE — green only grows vs committed baseline.json)
+        if: steps.changes.outputs.run == 'true'
         run: node tests/conformance/ratchet.mjs conformance-l1.json conformance-l2.json conformance-l3.json conformance-l4.json
       - name: L5 harness smoke (keyless — scripted emulator round proves the M4 harness end-to-end)
+        if: steps.changes.outputs.run == 'true'
         run: node tests/conformance/run-l5.mjs --smoke
       - uses: actions/upload-artifact@v7
-        if: always()
+        if: always() && steps.changes.outputs.run == 'true'
         with:
           name: conformance-matrix
           path: |
