@@ -12,6 +12,48 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.72.0 — 2026-07-18
+
+Audit round 2 of the 500-bug campaign (T56): 6 changed-lens finders
+(fix-regression x3 / #743-new-code deep read / adversarial-store /
+type-honesty) + adversarial verification confirmed **16 real defects**
+(3 P1 + 4 P2 + 9 P3); all 16 fixed single-brained with fail-on-old locks
+(21 new tests):
+
+- **P1 memory-tidy data loss**: fragments were merged THROUGH store.view,
+  silently truncating everything past the 16k view limit and then deleting
+  the originals; merge now reads the host's own files in full. **P1 digest
+  destruction**: each tidy pass overwrote the digest; it now extends it.
+- **P1 claimDue partial failure**: one failing put mid-batch threw the whole
+  claim away, stranding already-claimed sessions in 'running' with no
+  executor; puts are now per-session isolated (failed one stays safely
+  unclaimed, earlier claims are returned).
+- recordOutcome is idempotent across the driver's retry-once (the
+  append-then-put split no longer double-appends a query row for the same
+  attempt). Stale stop() no longer aborts a restarted generation's attempts
+  (controllers/inflight are generation-tagged). runAt:null manual-claim
+  survives failed attempts via a persisted `manualClaim` marker (retrying
+  keeps nextRunAt null; claimDue can never steal the inline retry).
+- Schedule: division-rounds-up guard (nextFireAt could skip the true
+  smallest fire point, e.g. every=0.016/after=0.576), step-index
+  float-precision refusal at >= 2^53, firesBetween fast-forwards a huge
+  backlog (a year at 1s cadence returns in O(cap), not 31M iterations);
+  scheduler recovery accepts strict digit suffixes only (a malformed
+  'sched:x:' id no longer recovers lastFired=0 into an epoch catch-up).
+- Workflow: deps must be a string array (a string dep passed validation then
+  crashed readyNodes); md graph fences parsed by a top-level line scanner
+  (a ```json fence QUOTED inside another fence or indented block no longer
+  silently loads the wrong definition).
+- Ledger read surface returns shallow copies (a host can no longer mutate
+  ledger state through a read); SessionRecord.nextRunAt docs aligned.
+- Tests 261 -> 279 against the merged 0.71.x base (leases + testbed
+  contract suite coexist with all round-2 fixes; full suite green).
+- Mutation after re-measure: state / decision / delivery-channel 100,
+  graph 97.14 -> 98.04; spec measures 97.77 and workflow-load 98.04 against
+  their 100 floors — remaining survivors are analyzed equivalence classes
+  (correction-loop-absorbed estimates, performance-only fast-forward,
+  regex-$). Floor adjustment awaits a keeper ruling (ratchet discipline);
+  until ruled the weekly ratchet run may red on these two targets.
 ## 0.71.3 — 2026-07-18
 
 Packaging fix + lockstep alignment. This package carried the same batch-Q
