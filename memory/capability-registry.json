@@ -6,7 +6,7 @@
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 41,
+      "workflows": 42,
       "scripts_top": 37,
       "scripts_news": 32,
       "scripts_wiki": 6,
@@ -14,7 +14,7 @@
       "commands": 4,
       "skills": 5,
       "projects": 7,
-      "total": 143
+      "total": 144
     },
     "reachability": {
       "live": 75,
@@ -167,6 +167,14 @@
       "id": "consolidate-releases.yml",
       "name": "Consolidate Releases",
       "path": ".github/workflows/consolidate-releases.yml",
+      "triggers": [
+        "manual"
+      ]
+    },
+    {
+      "id": "data-repo-sync.yml",
+      "name": "Sync Community archive to BIAV-SC-DATA",
+      "path": ".github/workflows/data-repo-sync.yml",
       "triggers": [
         "manual"
       ]
