@@ -1,8 +1,8 @@
 {
   "date": "2026-07-19",
-  "archived_at": "2026-07-19T15:58:16.114792+00:00",
+  "archived_at": "2026-07-19T19:05:27.553590+00:00",
   "source": "bilibili",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "title": "杀戮尖塔2-沙耶MOD_beta0.109更新一览",
@@ -92,6 +92,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/e26f2be04e5380c043abb411cd61cb9f85970c85.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "沙耶之歌，惬意的事",
+      "summary": "借物表:\n地图（YH MMD WORLD）－作者（yaohu）\n人物（沙耶）-模型作者（NaRingo）\n平台（vrchat）\n  └ 剑圣念枪诗 (0赞): 好好，你还是忘不了她[妙啊]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_我推赛高]\n  └ 哈基沙大玉 (0赞): 好[鸣潮2周年同人绘画_对的][鸣潮2周年同人绘画_对的][鸣潮2周年同人绘画_对的]",
+      "source": "bilibili",
+      "time": "2026-07-18T22:10:03+00:00",
+      "url": "https://www.bilibili.com/video/BV1KwKT62EkL",
+      "engagement": 104,
+      "is_hot": false,
+      "author": "曦初望舒",
+      "tags": [
+        "MMD·3D"
+      ],
+      "metadata": {
+        "play": 100,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/0389a8e367fb7389b1713e0f507ff17f64045b36.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

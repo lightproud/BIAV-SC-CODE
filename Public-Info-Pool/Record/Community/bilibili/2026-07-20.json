@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-20",
+  "archived_at": "2026-07-19T19:05:27.646031+00:00",
+  "source": "bilibili",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "第四届N厨杯-第二十七日录播",
+      "summary": "第二十七日直播录播\n本日由代理代理主播直播，还望海涵",
+      "source": "bilibili",
+      "time": "2026-07-19T16:54:55+00:00",
+      "url": "https://www.bilibili.com/video/BV1ZsKC6iEer",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    }
+  ]
+}
