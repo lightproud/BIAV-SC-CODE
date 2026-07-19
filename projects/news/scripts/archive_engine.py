@@ -41,12 +41,25 @@ from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import archive_layout  # 分仓桥接：社区数据根 SSOT（同目录）
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 REGISTRY_PATH = Path(__file__).resolve().parent / 'archive_sources.json'
 RELEASES_INDEX = REPO_ROOT / 'projects' / 'news' / 'data' / 'releases-index.json'
+
+
+def _resolve_base_dir(base_dir_rel: str) -> Path:
+    """来源根解析（分仓桥接）：数据湖内来源（`Public-Info-Pool/...`）经 archive_layout
+    数据根解析（env BIAV_SC_DATA_ROOT 或在树默认）；code 仓内来源（如 fanart staging
+    `projects/news/data/fanart`）仍相对 REPO_ROOT。env 未设时与旧 `REPO_ROOT / base_dir`
+    逐字节相等（行为中性）。"""
+    prefix = 'Public-Info-Pool/'
+    if base_dir_rel.startswith(prefix):
+        return archive_layout.pool_root() / base_dir_rel[len(prefix):]
+    return REPO_ROOT / base_dir_rel
 
 
 # ---------- 注册表 ----------
@@ -248,7 +261,7 @@ def rebuild_releases_index(registry: dict):
     """汇总各来源 archive-log 成统一 releases-index.json（治「好难认」）。"""
     index = []
     for source_id, cfg in registry.items():
-        base_dir = REPO_ROOT / cfg['base_dir']
+        base_dir = _resolve_base_dir(cfg['base_dir'])
         log = load_log(base_dir / 'archive-log.json')
         for entry in log:
             group = entry.get('group') or entry.get('month', '')
@@ -276,7 +289,7 @@ def rebuild_releases_index(registry: dict):
 
 def archive_source(source_id: str, cfg: dict, args) -> None:
     logger.info(f'==== source: {source_id} ====')
-    base_dir = REPO_ROOT / cfg['base_dir']
+    base_dir = _resolve_base_dir(cfg['base_dir'])
     by_group = discover(cfg, base_dir, args.force_group)
     if not by_group:
         logger.info(f'[{source_id}] nothing to archive')
