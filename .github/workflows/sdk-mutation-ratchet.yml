@@ -94,7 +94,7 @@ jobs:
         run: node scripts/check-mutation-ratchet.mjs --name "${{ matrix.target }}"
       - name: Upload mutation report
         if: ${{ always() && (!github.event.inputs.target || github.event.inputs.target == matrix.target) }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mutation-report-${{ matrix.target }}
           path: projects/silver-core-sdk/reports/mutation/mutation.json
@@ -157,7 +157,7 @@ jobs:
         run: node scripts/check-mutation-ratchet.mjs --name "${{ matrix.target }}"
       - name: Upload mutation report
         if: ${{ always() && (!github.event.inputs.target || github.event.inputs.target == matrix.target) }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mutation-report-maestro-${{ matrix.target }}
           path: projects/silver-core-maestro-sdk/reports/mutation/mutation.json
