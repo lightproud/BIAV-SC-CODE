@@ -1,0 +1,16 @@
+# 银芯 gitleaks 配置 —— secret 扫描聚焦「银芯自有凭据面」（代码 / CI / 脚本 / 配置），
+# 把社区全量档案层与生成物 allowlist 掉：那里是用户文本与派生数据，不是银芯凭据泄漏点，
+# 全量扫会因随机 base64 / token 状字符串产生误报风暴（守密人 2026-07-19 裁定丙前置 B 段落地）。
+
+title = "biav-sc gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "社区全量档案层 / 采集输出 / OKF 生成物 —— 非银芯自有凭据面，排除避免误报"
+paths = [
+  '''Public-Info-Pool/Record/.*''',
+  '''projects/news/output/.*''',
+  '''okf/.*''',
+]
