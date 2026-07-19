@@ -102,10 +102,14 @@
 > **实测坐实（2026-07-19）**：`create_repository` 建 `BIAV-SC-DATA` → **403「Resource not accessible
 > by integration」**——本会话 GitHub 集成无仓库管理权限。建仓 + 改名两件确须守密人 GitHub 侧亲为。
 
-1. 新建 `lightproud/BIAV-SC-DATA` 仓（定可见性：随现状 public / 改 private 分级，见下）；
+1. ~~新建 `lightproud/BIAV-SC-DATA` 仓~~ **已建**（2026-07-19，空仓）；定可见性：随现状 public / 改 private 分级；
 2. 现仓 `brain-in-a-vat` → rename `BIAV-SC-CODE`（Settings）；
-3. 两仓各配 deploy key + Ruleset required 检查 + Release 权限；
-4. 会话 repo scope 随之更新（现 scope 钉 brain-in-a-vat）。
+3. **data 仓填充 deploy key（乙方案，阶段一）**：会话代理对 BIAV-SC-DATA 只读（写 403），
+   故走 deploy-key + CI 推送——(a) 生成 ed25519 keypair；(b) **公钥**加入 BIAV-SC-DATA →
+   Settings → Deploy keys（勾 **Allow write access**）；(c) **私钥**存 code 仓 secret
+   `BIAV_SC_DATA_DEPLOY_KEY`。配好后手动 `workflow_dispatch` `data-repo-sync.yml`（输 `MIGRATE` 确认）
+   即把 Record/Community 快照推进 data 仓。**私钥绝不经聊天/仓库**（lesson #3）。
+4. 两仓各配 Ruleset required 检查 + Release 权限；会话 repo scope 随之更新（现钉 brain-in-a-vat）。
 
 银芯侧可自动化的准备（现仓内、可逆）：桥接改造（P-0）、16 平台备份 workflow（P-1）、活引用改址脚本、
 CI 分仓草案、RELEASES/restore URL 参数化。
