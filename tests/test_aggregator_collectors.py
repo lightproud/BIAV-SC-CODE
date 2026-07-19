@@ -7,6 +7,7 @@
 """
 
 import json
+import os
 import sys
 import unittest
 from datetime import datetime, timezone, timedelta
@@ -1058,7 +1059,7 @@ class TestReadDiscordJsonl(unittest.TestCase):
             index_dir = root / "Public-Info-Pool" / "Record" / "Community" / "discord" / "global"
             (index_dir / "channel_index.json").write_text(
                 json.dumps({"cid9": {"name": "general", "dir": "suffixA"}}), encoding="utf-8")
-            with mock.patch.object(ac, "REPO_ROOT", root):
+            with mock.patch.dict(os.environ, {"BIAV_SC_DATA_ROOT": str(root / "Public-Info-Pool")}):
                 out = ac._read_discord_jsonl("2026-06-10")
         self.assertEqual(len(out), 2)
         self.assertTrue(all(m["_channel_name"] == "general" for m in out))
@@ -1070,7 +1071,7 @@ class TestReadDiscordJsonl(unittest.TestCase):
             ch_dir = root / "Public-Info-Pool" / "Record" / "Community" / "discord" / "global" / "channels" / "suffixB"
             ch_dir.mkdir(parents=True)
             (ch_dir / "2026-06-09.jsonl").write_text("{}\n", encoding="utf-8")
-            with mock.patch.object(ac, "REPO_ROOT", root):
+            with mock.patch.dict(os.environ, {"BIAV_SC_DATA_ROOT": str(root / "Public-Info-Pool")}):
                 out = ac._read_discord_jsonl("2026-06-10")  # 不同日期
         self.assertEqual(out, [])
 
@@ -1081,7 +1082,7 @@ class TestReadDiscordJsonl(unittest.TestCase):
             ch_dir = root / "Public-Info-Pool" / "Record" / "Community" / "discord" / "global" / "channels" / "suffixC"
             ch_dir.mkdir(parents=True)
             (ch_dir / "2026-06-10.jsonl").write_text("{bad json\n", encoding="utf-8")
-            with mock.patch.object(ac, "REPO_ROOT", root):
+            with mock.patch.dict(os.environ, {"BIAV_SC_DATA_ROOT": str(root / "Public-Info-Pool")}):
                 out = ac._read_discord_jsonl("2026-06-10")
         # 坏行触发异常被 except 捕获，整文件中断但不崩溃
         self.assertEqual(out, [])

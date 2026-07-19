@@ -32,11 +32,11 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-COMMUNITY_ROOT = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # noqa: E402
 import discord_cold_compress as dcc  # noqa: E402  discord 语义压冷（复用月界与并轨）
+COMMUNITY_ROOT = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 
 def _atomic_write_gz_text(target: Path, text: str) -> None:

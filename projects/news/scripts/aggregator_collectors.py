@@ -24,11 +24,12 @@ import archive_layout  # discord 布局 SSOT（2026-07-10 方案甲）
 def _discord_data_dir() -> Path:
     """T1 桥的数据目录 = 主服 global（原语义不变），新旧布局经 SSOT 解析。
 
-    调用期从 REPO_ROOT 现算（可测性：单测 monkeypatch REPO_ROOT 即可改根）。
+    调用期经 archive_layout 数据根解析（分仓桥接；可测性：单测设 env
+    BIAV_SC_DATA_ROOT 即可改根）。
     旧根 projects/news/data/discord 已死——本桥曾读旧根静默零条 19 天，
     2026-07-10 迁移时修复。
     """
-    discord_root = REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord'
+    discord_root = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
     roots = archive_layout.discord_region_roots(discord_root)
     return roots.get('global', discord_root / 'global')
 

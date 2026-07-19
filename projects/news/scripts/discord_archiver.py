@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 import archive_layout  # noqa: E402  discord 布局收编 SSOT（2026-07-10 方案甲）
 
 _REPO_ROOT = Path(__file__).parent.parent.parent.parent
-DISCORD_DATA_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord'
+DISCORD_DATA_DIR = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 # 三服统一 discord/{global,jp,volunteer}/（2026-07-10 方案甲，根特例消灭）。
 # guild_id → 区服名映射唯一源 = archive_layout.DISCORD_GUILD_REGIONS；

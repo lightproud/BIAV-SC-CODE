@@ -31,10 +31,10 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-DISCORD_ROOT = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord'
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # noqa: E402  归档布局单一真相源（2026-07-02 P0-1）
+DISCORD_ROOT = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 
 def default_cutoff(today: date | None = None) -> str:
