@@ -26,6 +26,8 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
+import archive_layout  # noqa: E402  分仓桥接：社区数据根 SSOT
 LESSONS = REPO / "memory" / "lessons-learned.md"
 ARCHIVE = REPO / "memory" / "lessons-archive.md"
 
@@ -139,7 +141,7 @@ def missing_paths() -> list[str]:
     路径按三个基底解析，任一命中即视为存在：仓根 / 所在文件目录（CONTEXT 项目内相对路径）/
     社区归档根（news 的 source 标识 = 归档相对路径，2026-06-21 裁定）。
     """
-    community = REPO / "Public-Info-Pool" / "Record" / "Community"
+    community = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
     out: list[str] = []
     files = [LESSONS] + sorted(REPO.glob("projects/*/CONTEXT.md"))
     for f in files:
