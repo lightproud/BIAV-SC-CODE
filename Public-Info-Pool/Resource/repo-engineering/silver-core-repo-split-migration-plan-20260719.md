@@ -1,0 +1,122 @@
+# silver-core 分仓迁移计划（silver-core-code + silver-core-data）
+
+> **决策锁定**：守密人 2026-07-19 裁定分仓——**新仓 `silver-core-data`（数据湖）+ 现仓 `brain-in-a-vat`
+> 改名 `silver-core-code`（代码/大脑）**。本档为可执行迁移计划，承 T62 门② 分仓走向定案，取代原
+> 「存储后端甲/乙/丙」框架（存储后端退化为 data 仓内部子问题）。
+> **性质**：计划先行，不含执行动作。仓库创建/改名/迁数据为外向且部分不可逆操作，须按本计划分阶段、
+> 每不可逆步前置守密人确认。
+
+---
+
+## 1. 决策与命名
+
+| 仓 | 内容 | 由来 |
+|----|------|------|
+| **silver-core-code** | 代码 / 记忆 / 知识 / OKF / SDK 家族 / CI（现 brain-in-a-vat 改名）| 现仓 rename |
+| **silver-core-data** | 数据湖 `Public-Info-Pool/Record`（社区全量档案）| 新建 |
+
+命名与既有 silver-core 家族（silver-core-sdk / -maestro-sdk）一致，呼应银芯 = Silver Core 定位。
+
+---
+
+## 2. 事实基线（2026-07-19 实测）
+
+| 块 | 工作树 | git 影响 | 耦合面 |
+|----|--------|----------|--------|
+| 数据湖 Public-Info-Pool | 663 MB（~94%）| pack ~417M 主体 | — |
+| 大脑（代码/记忆/知识）| 36 MB | — | **48 个 .py 在树直读数据湖** |
+| SDK 家族 | 7.6 MB | — | 本轮不迁（留 code 仓）|
+| 仓名硬引用 | — | — | **63 个跟踪档含 `brain-in-a-vat`** |
+
+> 比喻：搬报纸（数据）出屋只是搬得动的问题；难的是屋里 48 台仪器（脚本）都插着「墙上固定插座」（在树数据路径）读报纸——搬走报纸，得先给每台仪器换成「能接远端的插头」。
+
+---
+
+## 3. 核心技术难点 · 代码↔数据桥接（分仓成败所在）
+
+48 个脚本（`build_community_index` / `build_okf_bundle` / `kb_*` / news 采集与回填 / OKF 指针层 /
+`report_render` 等）在树直读 `Public-Info-Pool/`。数据迁出后，silver-core-code 侧构建/采集/知识层
+**必须仍能取到数据**。三种桥接，须门②-A 定选：
+
+| 桥接 | 机制 | 优点 | 代价 |
+|------|------|------|------|
+| **A. git submodule** | code 仓把 data 仓作 `Public-Info-Pool/Record` 子模块 | 路径不变、48 脚本零改；版本钉定 | clone 需 `--recursive`；CI 需 checkout submodule（又拉回 663M，**未减 CI 成本**，除非 sparse）|
+| **B. 兄弟 checkout + 环境变量根** | `archive_layout` 数据根改环境变量，CI/本地并列 clone 两仓 | code 仓 clone 真变小（不带 data）；采集 CI 只在 data 仓侧跑 | 须把 48 脚本的路径统一收口到 `archive_layout` 单一根常量（部分已收口）|
+| **C. restore-from-Release 按需还原** | 构建期从 data 仓 Release 临时拉数据（现 `restore_release_data.py` 模式）| code 仓最轻；消费方按需取 | 每次构建拉数据慢；已有此模式基础 |
+
+**艾瑞卡倾向 B**：唯一真正把 code 仓 clone 减到 ~36M + 让采集/数据 CI 归 data 仓的方案；改造靶心明确
+（数据根常量收口），且部分脚本已走 `archive_layout` 单一真相源。A 最省事但不减重（伪分仓）。
+
+---
+
+## 4. 硬前置（承门① 发现，不可跳）
+
+**17 个非 discord 平台无任何 Release 副本**（门① 盘点）。分仓迁移前**必须先为其建 Release 备份**——
+迁移中任何数据移动若误伤，这 17 平台无第二份即不可逆丢失。discord 已有 `community-data` 桶兜底。
+执行件：一条 CI workflow 打包 17 平台 → data 仓（或现仓）Release，与 discord 对齐。
+
+---
+
+## 5. 迁移时序（每不可逆步前置守密人确认）
+
+- **P-0 · 桥接选型定案**（门②-A）：定 A/B/C，据此改 `archive_layout` 数据根 + 48 脚本路径收口（可先在现仓做、可逆）。
+- **P-1 · 17 平台 Release 备份**（硬前置）：CI 打包上传，实证可还原。**只增不减、纯可逆。**
+- **P-2 · 建 silver-core-data 仓**（守密人 GitHub 侧）：新建仓，导入数据湖（带或不带历史，见 §7）。
+- **P-3 · code 仓拆数据**：现仓停止跟踪 `Public-Info-Pool/Record`，改桥接引用；48 脚本切远端根。
+- **P-4 · 现仓改名 silver-core-code**（守密人 GitHub 侧）：GitHub rename（旧 URL 自动重定向）；同步改 63 处硬引用中的活引用（README/RELEASES/CLAUDE.md/workflows/package.json 等，数据档内历史引用不追溯改）。
+- **P-5 · CI/凭据重挂**：两仓各自 workflow；deploy key（BOT_DEPLOY_KEY）、Ruleset required 检查、Release 通道分仓重配。
+
+---
+
+## 6. 会断/需改清单（迁移必须扫平）
+
+- **CI**：39 workflow 按归属分仓（采集/数据类 → data 仓；测试/SDK/OKF/知识 → code 仓）；
+- **deploy key / Ruleset**：T31 的 BOT_DEPLOY_KEY 直推链、T61 的五 required 检查须两仓各自重建；
+- **Release URL**：`community-data` 等桶随数据归 data 仓，RELEASES.md「藏宝图」+ `restore_release_data.py` URL 改址；
+- **blob 超链接**：CLAUDE.md §2.2.2 硬规则的 GitHub blob 链接域名随改名变（旧链重定向但应更新活档）；
+- **OKF 指针层**：community/news-output 层指针路径经 `archive_layout` 单一源，随桥接根改而正确（`test_okf_pointer_layers` 守护）；
+- **package.json / npm**：SDK 家族 `repository` 字段（若指 brain-in-a-vat）随改名更新。
+
+---
+
+## 7. 遗留决策 · silver-core-code 历史体量（唯一仍涉 T29 的点）
+
+现仓改名保留历史 → **pack 仍压着 ~417M 历史数据 blob**。两条路：
+- **甲（推荐，绕 T29）**：silver-core-code **保留全历史**（冻结的数据 blob 留在 pack），仅**停止新增**数据跟踪。
+  clone 仍带历史重量，但**零历史重写、零不可逆风险**；随时间新数据全在 data 仓、code 仓相对变轻。
+- **乙（触 T29）**：对 silver-core-code 做历史重写剥离数据 blob → pack 真减到 ~code 体量。**须满 §4 硬前置 +
+  全量 mirror 备份 + 守密人显式裁**（门③ 语义）。
+
+> 分仓本身（拓扑 A + rename）**不要求**历史重写；乙是可选的「再瘦一层」，独立裁。先分仓、後议是否鞭历史。
+
+---
+
+## 8. 守密人侧 GitHub 管理动作（银芯无权，须守密人执行）
+
+1. 新建 `lightproud/silver-core-data` 仓；
+2. 现仓 `brain-in-a-vat` → rename `silver-core-code`（Settings）；
+3. 两仓各配 deploy key + Ruleset required 检查 + Release 权限；
+4. 会话 repo scope 随之更新（现 scope 钉 brain-in-a-vat）。
+
+银芯侧可自动化的准备（现仓内、可逆）：桥接改造（P-0）、17 平台备份 workflow（P-1）、活引用改址脚本、
+CI 分仓草案、RELEASES/restore URL 参数化。
+
+---
+
+## 9. 回滚
+
+- P-0～P-1 纯可逆（现仓内改造 + 只增备份）；
+- P-2～P-3 半可逆（data 仓在、现仓数据可从 data 仓/Release 还原）；
+- P-4 rename 由 GitHub 自动重定向兜底，可再改回；
+- 未做 §7 乙（历史重写）前，**全程无不可逆步**——这是分仓相对门③ 的根本安全优势。
+
+---
+
+## 10. 待裁点（逐个呈上）
+
+1. **门②-A 桥接选型**：A submodule / **B 兄弟 checkout+环境根（荐）** / C restore-from-release；
+2. **P-1 17 平台备份 workflow**：是否授权艾瑞卡现在就写（纯可逆止血，独立于选型）；
+3. **§7 历史体量**：silver-core-code 走甲（保历史、绕 T29）还是乙（历史重写、须门③ 前置）——**可延后，分仓不阻塞**。
+
+*立计划：2026-07-19 艾瑞卡会话（守密人分仓裁定 + 命名）。挂账见 `memory/todo.md` T62。仓库管理动作在守密人侧，
+银芯侧只做可逆准备工作。*
