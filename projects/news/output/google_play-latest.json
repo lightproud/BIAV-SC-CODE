@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-18T21:50:11.314311+00:00",
+  "collected_at": "2026-07-19T02:29:44.161142+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 111,
+  "item_count": 112,
   "items": [
     {
       "source": "google_play",
@@ -823,6 +823,16 @@
       "summary": "peak game",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-3029aa0d-5b35-4d8e-bea3-124f6105ae6a",
       "author": "Hamza",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-18T01:42:55",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 me encanta el juego no tengo quejas, aun",
+      "summary": "me encanta el juego no tengo quejas, aunque me gustaría que agregaran más cosas como nuevos reinos, más modos de juego, etc.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-13749bff-d1e7-458f-b935-4d638f1756f5",
+      "author": "Angel Sanchez",
       "engagement": 0
     },
     {

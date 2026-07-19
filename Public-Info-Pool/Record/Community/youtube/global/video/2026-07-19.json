@@ -1,8 +1,8 @@
 {
   "date": "2026-07-19",
-  "archived_at": "2026-07-18T21:50:49.441182+00:00",
+  "archived_at": "2026-07-19T02:30:25.502321+00:00",
   "source": "youtube",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "成長。サブ垢→本垢 #忘却前夜 #ゲーム #shorts #ショート",
@@ -51,6 +51,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/rWZlBB8ektc/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "【忘却前夜】本日の主役　少しだけ【対人戦】",
+      "summary": "誕生日なのに運が悪すぎる男、見参...... Twitter(X)→https://x.com/to_m4fuyu.",
+      "source": "youtube",
+      "time": "2026-07-19T02:08:48Z",
+      "url": "https://www.youtube.com/watch?v=SsE7g4ilZTM",
+      "engagement": 24,
+      "is_hot": false,
+      "author": "to真冬",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/SsE7g4ilZTM/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

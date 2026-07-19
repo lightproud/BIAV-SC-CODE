@@ -1,8 +1,8 @@
 {
   "date": "2026-07-18",
-  "archived_at": "2026-07-18T21:50:49.665179+00:00",
+  "archived_at": "2026-07-19T02:30:25.754058+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★5 ثثثثث",
@@ -27,6 +27,20 @@
       "engagement": 0,
       "is_hot": false,
       "author": "Dylan Canteros",
+      "tags": [],
+      "lang": "es",
+      "platform_region": "es",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 me encanta el juego no tengo quejas, aun",
+      "summary": "me encanta el juego no tengo quejas, aunque me gustaría que agregaran más cosas como nuevos reinos, más modos de juego, etc.",
+      "source": "google_play",
+      "time": "2026-07-18T01:42:55",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-13749bff-d1e7-458f-b935-4d638f1756f5",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Angel Sanchez",
       "tags": [],
       "lang": "es",
       "platform_region": "es",

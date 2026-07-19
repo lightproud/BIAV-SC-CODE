@@ -1,10 +1,40 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-18T21:50:11.314311+00:00",
+  "collected_at": "2026-07-19T02:29:44.161142+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-18T23:19:08+00:00",
+      "lang": "schinese",
+      "title": "[正面] 百闻牌停止运营后就一直在找代餐，炉石的画风实在不喜欢，和朋友一起入坑了9，但是9基本没有玩法可言，就...",
+      "summary": "百闻牌停止运营后就一直在找代餐，炉石的画风实在不喜欢，和朋友一起入坑了9，但是9基本没有玩法可言，就是抽卡养成就没了，一点策略也没有，根本不是卡牌游戏，而且画风有点太幼稚了，前几天因为舅舅上线在b站看到别人抽，一下子就被画风吸引住了，玩了快20个小时，爆率真是说不透，沙耶我吃了大保底，其他自选的4个up倒是基本没怎么歪，目前在用水母繁血队推主线中，希望能有国服",
+      "url": "https://steamcommunity.com/profiles/76561198801029939/recommended/3052450",
+      "author": "76561198801029939",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "百闻牌停止运营后就一直在找代餐，炉石的画风实在不喜欢，和朋友一起入坑了9，但是9基本没有玩法可言，就是抽卡养成就没了，一点策略也没有，根本不是卡牌游戏，而且画风有点太幼稚了，前几天因为舅舅上线在b站看到别人抽，一下子就被画风吸引住了，玩了快20个小时，爆率真是说不透，沙耶我吃了大保底，其他自选的4个up倒是基本没怎么歪，目前在用水母繁血队推主线中，希望能有国服",
+      "timestamp_created": 1784416748,
+      "playtime_forever": 1140
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-18T21:52:56+00:00",
+      "lang": "english",
+      "title": "[正面] good",
+      "summary": "good",
+      "url": "https://steamcommunity.com/profiles/76561199498756088/recommended/3052450",
+      "author": "76561199498756088",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "good",
+      "timestamp_created": 1784411576,
+      "playtime_forever": 718
+    },
     {
       "source": "steam",
       "time": "2026-07-18T19:38:47+00:00",
@@ -18,7 +48,7 @@
       "voted_up": true,
       "review": "Cool art and nice, spooky atmosphere. Seems pretty generous as well. The only real frustration is there are a LOT of different upgrade items, and the descriptions are not always helpful. If you're looking for a gacha game that isn't actiony, this is it.",
       "timestamp_created": 1784403527,
-      "playtime_forever": 694
+      "playtime_forever": 904
     },
     {
       "source": "steam",
@@ -48,7 +78,7 @@
       "voted_up": true,
       "review": "好玩爱玩",
       "timestamp_created": 1784389897,
-      "playtime_forever": 1823
+      "playtime_forever": 1883
     },
     {
       "source": "steam",
@@ -63,22 +93,7 @@
       "voted_up": true,
       "review": "太好玩了我一口气狂玩六小时",
       "timestamp_created": 1784377911,
-      "playtime_forever": 386
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-17T21:50:36+00:00",
-      "lang": "english",
-      "title": "[正面] Lovecraft+beach episode, collab of the century",
-      "summary": "Lovecraft+beach episode, collab of the century",
-      "url": "https://steamcommunity.com/profiles/76561198080223591/recommended/3052450",
-      "author": "76561198080223591",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Lovecraft+beach episode, collab of the century",
-      "timestamp_created": 1784325036,
-      "playtime_forever": 970
+      "playtime_forever": 416
     },
     {
       "source": "steam",

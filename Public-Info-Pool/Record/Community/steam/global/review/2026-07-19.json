@@ -1,8 +1,8 @@
 {
   "date": "2026-07-19",
-  "archived_at": "2026-07-18T21:50:49.553888+00:00",
+  "archived_at": "2026-07-19T02:30:25.668255+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] Cool art and nice, spooky atmosphere. Seems pretty...",
@@ -46,6 +46,54 @@
         "playtime_forever": 1284,
         "votes_up": 0,
         "timestamp_created": 1784400195
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 百闻牌停止运营后就一直在找代餐，炉石的画风实在不喜欢，和朋友一起入坑了9，但是9基本没有玩法可言，就...",
+      "summary": "百闻牌停止运营后就一直在找代餐，炉石的画风实在不喜欢，和朋友一起入坑了9，但是9基本没有玩法可言，就是抽卡养成就没了，一点策略也没有，根本不是卡牌游戏，而且画风有点太幼稚了，前几天因为舅舅上线在b站看到别人抽，一下子就被画风吸引住了，玩了快20个小时，爆率真是说不透，沙耶我吃了大保底，其他自选的4个up倒是基本没怎么歪，目前在用水母繁血队推主线中，希望能有国服",
+      "source": "steam_review",
+      "time": "2026-07-18T23:19:08+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198801029939/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198801029939",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1140,
+        "votes_up": 0,
+        "timestamp_created": 1784416748
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] good",
+      "summary": "good",
+      "source": "steam_review",
+      "time": "2026-07-18T21:52:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199498756088/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199498756088",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 718,
+        "votes_up": 0,
+        "timestamp_created": 1784411576
       },
       "region": "global",
       "archive_subtype": "review",
