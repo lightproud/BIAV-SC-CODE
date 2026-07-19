@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 366,
-    "edges": 420,
-    "terms": 6550,
+    "concepts": 367,
+    "edges": 421,
+    "terms": 6568,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 133,
+      "documentation": 134,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 104,
+      "resource": 105,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 232
+      "search": 233
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 104
+      "count": 105
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 101
+      "degree": 102
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3137,6 +3137,20 @@
       "title": "discord-data-retention-diagnosis-202606",
       "description": "`projects/news/data/discord/channels/` 现存 **3.3 GB / 12803 个 jsonl**，（格式：md）",
       "resource": "/Public-Info-Pool/Resource/data-diagnostics/discord-data-retention-diagnosis-202606.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md": {
+      "type": "documentation",
+      "title": "discord-rescue-net-completeness-20260719",
+      "description": "**抢救网对 discord 主服数据 = 高保真、近乎全覆盖**；T29「30 月仅实证 3 月有副本」的悲观假设（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/data-diagnostics/discord-rescue-net-completeness-20260719.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -6804,6 +6818,11 @@
         "mention"
       ],
       [
+        "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
         "提及:艾瑞卡",
         "mention"
@@ -8848,6 +8867,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md": [
       [
         "/characters/15603.md",
@@ -10088,6 +10114,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -11201,6 +11228,9 @@
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md"
     ],
+    "completeness": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "completion": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -11358,6 +11388,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -11731,6 +11762,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -12069,6 +12101,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -12263,6 +12296,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -12433,6 +12467,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -12463,6 +12498,7 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/sources/discord.md"
     ],
@@ -13346,6 +13382,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -13853,6 +13890,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -14389,6 +14427,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -14646,6 +14685,9 @@
     ],
     "neighbors": [
       "/README.md"
+    ],
+    "net": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "new": [
       "/projects/silver-core-sdk-doc-onboarding.md"
@@ -15116,6 +15158,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -15541,6 +15584,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -15975,6 +16019,9 @@
       "/projects/silver-core-sdk-doc-memory-governance.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
+    "rescue": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "research": [
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -16006,6 +16053,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -16893,6 +16941,9 @@
     "t2": [
       "/projects/news-archive-sources-registry.md"
     ],
+    "t29": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "tags": [
       "/README.md"
     ],
@@ -17014,6 +17065,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -18125,6 +18177,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -18403,6 +18456,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -18747,6 +18801,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -19377,6 +19432,9 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
+    "主服": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "主模": [
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
@@ -19547,6 +19605,9 @@
     ],
     "乎与": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
+    ],
+    "乎全": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "乎零": [
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md"
@@ -19977,6 +20038,9 @@
       "/story/story_search_index.md",
       "/story/story_units.md"
     ],
+    "仅实": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "仅描": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-card-system.md",
@@ -20074,6 +20138,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -21061,6 +21126,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -21341,6 +21407,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -21815,6 +21882,7 @@
       "/README.md"
     ],
     "保真": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "保自": [
@@ -21916,6 +21984,9 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
+    ],
+    "假设": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "假象": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -22149,6 +22220,9 @@
     "全绿": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+    ],
+    "全覆": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "全身": [
       "/characters/125346.md",
@@ -23320,6 +23394,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -23516,7 +23591,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "副本": [
-      "/memory/memory-research-discord-archive-backfill-conflict.md"
+      "/memory/memory-research-discord-archive-backfill-conflict.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "力一": [
       "/characters/15593.md"
@@ -26710,6 +26786,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -27544,6 +27621,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -28193,6 +28271,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -28421,6 +28500,7 @@
     ],
     "实证": [
       "/memory/memory-ext-todo.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md"
     ],
     "实际": [
@@ -31014,6 +31094,9 @@
     "悲伤": [
       "/characters/15583.md"
     ],
+    "悲观": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "悲鸣": [
       "/characters/15569.md"
     ],
@@ -31745,6 +31828,9 @@
     "折辱": [
       "/characters/15575.md"
     ],
+    "抢救": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "护佑": [
       "/characters/77923.md"
     ],
@@ -32241,6 +32327,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -32828,6 +32915,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -33181,6 +33269,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -33617,6 +33706,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -33916,6 +34006,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -34165,6 +34256,9 @@
     "救世": [
       "/characters/15599.md"
     ],
+    "救网": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "救赎": [
       "/characters/77925.md"
     ],
@@ -34215,6 +34309,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -35307,8 +35402,14 @@
     "月中": [
       "/community/community-timeline.md"
     ],
+    "月仅": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "月度": [
       "/community/community-timeline.md"
+    ],
+    "月有": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "月量": [
       "/community/community-timeline.md"
@@ -35337,7 +35438,8 @@
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "有副": [
-      "/memory/memory-research-discord-archive-backfill-conflict.md"
+      "/memory/memory-research-discord-archive-backfill-conflict.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "有原": [
       "/assets/assets-chat-onboarding-snippet.md"
@@ -35461,6 +35563,9 @@
     ],
     "服布": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
+    ],
+    "服数": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "朗和": [
       "/characters/15578.md",
@@ -35710,6 +35815,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -36164,6 +36270,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -36816,6 +36923,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -37044,6 +37152,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -37583,6 +37692,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -37988,6 +38098,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -40647,7 +40758,8 @@
       "/characters/15580.md"
     ],
     "的悲": [
-      "/characters/15583.md"
+      "/characters/15583.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "的情": [
       "/characters/15583.md",
@@ -42886,6 +42998,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
+    "网对": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "网络": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
@@ -44068,6 +44183,7 @@
       "/README.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
@@ -44109,6 +44225,9 @@
     ],
     "见证": [
       "/characters/77926.md"
+    ],
+    "观假": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "观察": [
       "/characters/15595.md"
@@ -45338,6 +45457,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -45852,6 +45972,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
     ],
     "近乎": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md"
     ],
     "近她": [
@@ -46072,6 +46193,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -47133,6 +47255,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -47401,6 +47524,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -48497,6 +48621,9 @@
     "高但": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "高保": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "高危": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -49135,6 +49262,9 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
+    "completeness": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "completion": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -49341,6 +49471,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -49672,6 +49803,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -49853,6 +49985,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -50006,6 +50139,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -50022,6 +50156,7 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/sources/discord.md"
     ],
@@ -50628,6 +50763,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
@@ -50996,6 +51132,9 @@
     ],
     "narrative": [
       "/assets/assets-narrative-structure.md"
+    ],
+    "net": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
     "news": [
       "/projects/news-archive-sources-registry.md",
@@ -51521,6 +51660,9 @@
     "requirements": [
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
+    "rescue": [
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
+    ],
     "research": [
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -51951,6 +52093,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",

@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-19",
   "stats": {
-    "nodes": 366,
-    "edges": 420
+    "nodes": 367,
+    "edges": 421
   },
   "nodes": [
     {
@@ -2467,6 +2467,17 @@
       "id": "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "type": "documentation",
       "title": "discord-data-retention-diagnosis-202606",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
+      "type": "documentation",
+      "title": "discord-rescue-net-completeness-20260719",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5441,6 +5452,12 @@
     },
     {
       "source": "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
