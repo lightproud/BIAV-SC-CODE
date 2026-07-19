@@ -1,7 +1,7 @@
-# silver-core 分仓迁移计划（silver-core-code + silver-core-data）
+# BIAV-SC 分仓迁移计划（BIAV-SC-CODE + BIAV-SC-DATA）
 
-> **决策锁定**：守密人 2026-07-19 裁定分仓——**新仓 `silver-core-data`（数据湖）+ 现仓 `brain-in-a-vat`
-> 改名 `silver-core-code`（代码/大脑）**。本档为可执行迁移计划，承 T62 门② 分仓走向定案，取代原
+> **决策锁定**：守密人 2026-07-19 裁定分仓——**新仓 `BIAV-SC-DATA`（数据湖）+ 现仓 `brain-in-a-vat`
+> 改名 `BIAV-SC-CODE`（代码/大脑）**。本档为可执行迁移计划，承 T62 门② 分仓走向定案，取代原
 > 「存储后端甲/乙/丙」框架（存储后端退化为 data 仓内部子问题）。
 > **性质**：计划先行，不含执行动作。仓库创建/改名/迁数据为外向且部分不可逆操作，须按本计划分阶段、
 > 每不可逆步前置守密人确认。
@@ -12,10 +12,11 @@
 
 | 仓 | 内容 | 由来 |
 |----|------|------|
-| **silver-core-code** | 代码 / 记忆 / 知识 / OKF / SDK 家族 / CI（现 brain-in-a-vat 改名）| 现仓 rename |
-| **silver-core-data** | 数据湖 `Public-Info-Pool/Record`（社区全量档案）| 新建 |
+| **BIAV-SC-CODE** | 代码 / 记忆 / 知识 / OKF / SDK 家族 / CI（现 brain-in-a-vat 改名）| 现仓 rename |
+| **BIAV-SC-DATA** | 数据湖 `Public-Info-Pool/Record`（社区全量档案）| 新建 |
 
-命名与既有 silver-core 家族（silver-core-sdk / -maestro-sdk）一致，呼应银芯 = Silver Core 定位。
+命名与 CLAUDE.md 既有系统代号一致（BIAV-SC = Brain In A Vat — Silver Core / 银芯，对偶 BIAV-BP = 黑池），
+在系统层沿用银芯自身代号；SDK 家族包名（silver-core-sdk / silver-core-maestro-sdk）为 npm 发布名，不受本次改名影响。
 
 ---
 
@@ -35,7 +36,7 @@
 ## 3. 核心技术难点 · 代码↔数据桥接（分仓成败所在）
 
 48 个脚本（`build_community_index` / `build_okf_bundle` / `kb_*` / news 采集与回填 / OKF 指针层 /
-`report_render` 等）在树直读 `Public-Info-Pool/`。数据迁出后，silver-core-code 侧构建/采集/知识层
+`report_render` 等）在树直读 `Public-Info-Pool/`。数据迁出后，BIAV-SC-CODE 侧构建/采集/知识层
 **必须仍能取到数据**。三种桥接，须门②-A 定选：
 
 | 桥接 | 机制 | 优点 | 代价 |
@@ -61,9 +62,9 @@
 
 - **P-0 · 桥接选型定案**（门②-A）：定 A/B/C，据此改 `archive_layout` 数据根 + 48 脚本路径收口（可先在现仓做、可逆）。
 - **P-1 · 17 平台 Release 备份**（硬前置）：CI 打包上传，实证可还原。**只增不减、纯可逆。**
-- **P-2 · 建 silver-core-data 仓**（守密人 GitHub 侧）：新建仓，导入数据湖（带或不带历史，见 §7）。
+- **P-2 · 建 BIAV-SC-DATA 仓**（守密人 GitHub 侧）：新建仓，导入数据湖（带或不带历史，见 §7）。
 - **P-3 · code 仓拆数据**：现仓停止跟踪 `Public-Info-Pool/Record`，改桥接引用；48 脚本切远端根。
-- **P-4 · 现仓改名 silver-core-code**（守密人 GitHub 侧）：GitHub rename（旧 URL 自动重定向）；同步改 63 处硬引用中的活引用（README/RELEASES/CLAUDE.md/workflows/package.json 等，数据档内历史引用不追溯改）。
+- **P-4 · 现仓改名 BIAV-SC-CODE**（守密人 GitHub 侧）：GitHub rename（旧 URL 自动重定向）；同步改 63 处硬引用中的活引用（README/RELEASES/CLAUDE.md/workflows/package.json 等，数据档内历史引用不追溯改）。
 - **P-5 · CI/凭据重挂**：两仓各自 workflow；deploy key（BOT_DEPLOY_KEY）、Ruleset required 检查、Release 通道分仓重配。
 
 ---
@@ -79,12 +80,12 @@
 
 ---
 
-## 7. 遗留决策 · silver-core-code 历史体量（唯一仍涉 T29 的点）
+## 7. 遗留决策 · BIAV-SC-CODE 历史体量（唯一仍涉 T29 的点）
 
 现仓改名保留历史 → **pack 仍压着 ~417M 历史数据 blob**。两条路：
-- **甲（推荐，绕 T29）**：silver-core-code **保留全历史**（冻结的数据 blob 留在 pack），仅**停止新增**数据跟踪。
+- **甲（推荐，绕 T29）**：BIAV-SC-CODE **保留全历史**（冻结的数据 blob 留在 pack），仅**停止新增**数据跟踪。
   clone 仍带历史重量，但**零历史重写、零不可逆风险**；随时间新数据全在 data 仓、code 仓相对变轻。
-- **乙（触 T29）**：对 silver-core-code 做历史重写剥离数据 blob → pack 真减到 ~code 体量。**须满 §4 硬前置 +
+- **乙（触 T29）**：对 BIAV-SC-CODE 做历史重写剥离数据 blob → pack 真减到 ~code 体量。**须满 §4 硬前置 +
   全量 mirror 备份 + 守密人显式裁**（门③ 语义）。
 
 > 分仓本身（拓扑 A + rename）**不要求**历史重写；乙是可选的「再瘦一层」，独立裁。先分仓、後议是否鞭历史。
@@ -93,8 +94,11 @@
 
 ## 8. 守密人侧 GitHub 管理动作（银芯无权，须守密人执行）
 
-1. 新建 `lightproud/silver-core-data` 仓；
-2. 现仓 `brain-in-a-vat` → rename `silver-core-code`（Settings）；
+> **实测坐实（2026-07-19）**：`create_repository` 建 `BIAV-SC-DATA` → **403「Resource not accessible
+> by integration」**——本会话 GitHub 集成无仓库管理权限。建仓 + 改名两件确须守密人 GitHub 侧亲为。
+
+1. 新建 `lightproud/BIAV-SC-DATA` 仓（定可见性：随现状 public / 改 private 分级，见下）；
+2. 现仓 `brain-in-a-vat` → rename `BIAV-SC-CODE`（Settings）；
 3. 两仓各配 deploy key + Ruleset required 检查 + Release 权限；
 4. 会话 repo scope 随之更新（现 scope 钉 brain-in-a-vat）。
 
@@ -116,7 +120,7 @@ CI 分仓草案、RELEASES/restore URL 参数化。
 
 1. **门②-A 桥接选型**：A submodule / **B 兄弟 checkout+环境根（荐）** / C restore-from-release；
 2. **P-1 17 平台备份 workflow**：是否授权艾瑞卡现在就写（纯可逆止血，独立于选型）；
-3. **§7 历史体量**：silver-core-code 走甲（保历史、绕 T29）还是乙（历史重写、须门③ 前置）——**可延后，分仓不阻塞**。
+3. **§7 历史体量**：BIAV-SC-CODE 走甲（保历史、绕 T29）还是乙（历史重写、须门③ 前置）——**可延后，分仓不阻塞**。
 
 *立计划：2026-07-19 艾瑞卡会话（守密人分仓裁定 + 命名）。挂账见 `memory/todo.md` T62。仓库管理动作在守密人侧，
 银芯侧只做可逆准备工作。*
