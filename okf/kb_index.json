@@ -9,7 +9,7 @@
   "stats": {
     "concepts": 368,
     "edges": 422,
-    "terms": 6575,
+    "terms": 6578,
     "by_type": {
       "character": 72,
       "dataset": 94,
@@ -4241,7 +4241,7 @@
     "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md": {
       "type": "documentation",
       "title": "silver-core-repo-split-migration-plan-20260719",
-      "description": "命名与既有 silver-core 家族（silver-core-sdk / -maestro-sdk）一致，呼应银芯 = Silver Core 定位。（格式：md）",
+      "description": "命名与 CLAUDE.md 既有系统代号一致（BIAV-SC = Brain In A Vat — Silver Core / 银芯，对偶 BIAV-BP = 黑池），（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/silver-core-repo-split-migration-plan-20260719.md",
       "tags": [
         "data_layer:curated",
@@ -4479,7 +4479,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2944 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2947 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4549,7 +4549,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 577 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 578 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4591,7 +4591,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5243 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5245 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4647,7 +4647,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1704 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1712 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4661,7 +4661,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10587 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10600 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4675,7 +4675,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10832 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10852 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4689,7 +4689,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2943 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2946 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -10700,7 +10700,8 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
-      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
+      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "bible": [
       "/assets/assets-archive-integrity.md",
@@ -10868,6 +10869,9 @@
     "boundary": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
     ],
+    "bp": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
+    ],
     "bpt": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -10935,7 +10939,8 @@
     "brain": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-biav-info-classification.md",
-      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "bug": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -11064,6 +11069,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -14312,8 +14318,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
-      "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
-      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
+      "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md"
     ],
     "main": [
       "/README.md",
@@ -16341,7 +16346,8 @@
     "sc": [
       "/memory/memory-ext-lessons-archive.md",
       "/projects/silver-core-sdk-doc-positioning.md",
-      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
+      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "scan": [
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md"
@@ -16439,7 +16445,6 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
-      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -17381,7 +17386,8 @@
     "vat": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-biav-info-classification.md",
-      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "vector": [
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -19004,9 +19010,6 @@
     "与患": [
       "/characters/77925.md"
     ],
-    "与既": [
-      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
-    ],
     "与权": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
@@ -20505,6 +20508,9 @@
     ],
     "代原": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
+    ],
+    "代号": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "代理": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
@@ -25285,6 +25291,9 @@
     "史消": [
       "/memory/memory-ext-discord-archiver-design.md"
     ],
+    "号一": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
+    ],
     "号令": [
       "/characters/15563.md",
       "/characters/15576.md",
@@ -25628,8 +25637,7 @@
       "/characters/95786.md"
     ],
     "呼应": [
-      "/README.md",
-      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
+      "/README.md"
     ],
     "命上": [
       "/characters/15581.md"
@@ -28688,9 +28696,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
-    "家族": [
-      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
-    ],
     "家普": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
@@ -28726,6 +28731,9 @@
     ],
     "对你": [
       "/characters/54116.md"
+    ],
+    "对偶": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "对剩": [
       "/characters/95786.md"
@@ -29967,9 +29975,6 @@
     ],
     "应能": [
       "/characters/15571.md"
-    ],
-    "应银": [
-      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "底座": [
       "/README.md",
@@ -35597,6 +35602,9 @@
     "有着": [
       "/characters/15578.md",
       "/characters/15593.md"
+    ],
+    "有系": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "有结": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
@@ -42537,7 +42545,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
-      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "系边": [
       "/README.md"
@@ -42922,6 +42931,9 @@
     "统一": [
       "/projects/entry-claude-md.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+    ],
+    "统代": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "统性": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
@@ -48839,7 +48851,8 @@
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
-      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
+      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "黑法老": [
       "/characters/77927.md"
