@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-19",
   "stats": {
-    "nodes": 369,
-    "edges": 423
+    "nodes": 370,
+    "edges": 424
   },
   "nodes": [
     {
@@ -2801,6 +2801,17 @@
         "data_layer:curated",
         "deliverable",
         "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
+      "type": "documentation",
+      "title": "biav-sc-split-p23-cutover-plan-20260719",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
       ],
       "tier": "search"
     },
@@ -5672,6 +5683,12 @@
     },
     {
       "source": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

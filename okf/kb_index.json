@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 369,
-    "edges": 423,
-    "terms": 6587,
+    "concepts": 370,
+    "edges": 424,
+    "terms": 6627,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 136,
+      "documentation": 137,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 107,
+      "resource": 108,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 235
+      "search": 236
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 107
+      "count": 108
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 104
+      "degree": 105
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3565,6 +3565,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 0
+    },
+    "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md": {
+      "type": "documentation",
+      "title": "biav-sc-split-p23-cutover-plan-20260719",
+      "description": "小学生比喻：把「采货机器人」全改道去新库房（写侧），把「查货窗口」也都改指向新库房（读侧），再拆掉「照老库房清新库房」的传送带（退役 sync）——三件齐了，老库房的货才是纯冗余、可安全清。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/biav-sc-split-p23-cutover-plan-20260719.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
     },
     "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md": {
       "type": "documentation",
@@ -6933,6 +6947,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
         "提及:艾瑞卡",
         "mention"
@@ -9110,6 +9129,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md": [
       [
         "/characters/15603.md",
@@ -10198,6 +10224,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -10729,6 +10756,7 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
@@ -11482,6 +11510,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -11859,6 +11888,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -11954,6 +11984,9 @@
     ],
     "currently": [
       "/projects/silver-core-sdk-doc-migration.md"
+    ],
+    "cutover": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "cv": [
       "/README.md",
@@ -12200,6 +12233,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -12397,6 +12431,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -12708,6 +12743,7 @@
     "engineering": [
       "/projects/doc-testing-strategy.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -13488,6 +13524,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -13998,6 +14035,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -14534,6 +14572,7 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -14979,6 +15018,9 @@
     "overview": [
       "/README.md"
     ],
+    "p23": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "pandia": [
       "/characters/15560.md"
     ],
@@ -15050,6 +15092,7 @@
       "/memory/strategic-plan-2026.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -15273,6 +15316,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -15701,6 +15745,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -16017,6 +16062,7 @@
     ],
     "repo": [
       "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -16174,6 +16220,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -16391,6 +16438,7 @@
     "sc": [
       "/memory/memory-ext-lessons-archive.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
@@ -16739,6 +16787,7 @@
       "/assets/persona-erica-speech-canon.md"
     ],
     "split": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
@@ -17027,6 +17076,9 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "sync": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "system": [
       "/assets/assets-card-system.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -17198,6 +17250,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -17886,6 +17939,9 @@
     "三个": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
+    "三件": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "三份": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -18317,6 +18373,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -18598,6 +18655,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -18945,6 +19003,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -19761,6 +19820,9 @@
       "/characters/15582.md",
       "/characters/54117.md"
     ],
+    "也都": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "习概": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
     ],
@@ -20290,6 +20352,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -20795,6 +20858,9 @@
     "件静": [
       "/README.md"
     ],
+    "件齐": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "价的": [
       "/characters/15593.md"
     ],
@@ -20953,6 +21019,9 @@
     ],
     "传输": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "传送": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "伤变": [
       "/characters/15581.md"
@@ -21287,6 +21356,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -21570,6 +21640,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -22342,9 +22413,15 @@
     "全扫": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
+    "全改": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "全档": [
       "/README.md",
       "/memory/memory-ext-active-policy-direct-push-main.md"
+    ],
+    "全清": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "全知": [
       "/characters/54116.md"
@@ -22762,6 +22839,9 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-bpt-guidance-protocol.md"
     ],
+    "再拆": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "再现": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
@@ -22776,13 +22856,17 @@
       "/characters/15565.md"
     ],
     "冗余": [
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "写一": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "写作": [
       "/memory/memory-ext-skill-authoring-standard.md"
+    ],
+    "写侧": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "写入": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -23565,6 +23649,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -24521,6 +24606,9 @@
     "去大": [
       "/characters/77923.md"
     ],
+    "去新": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "去重": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md"
     ],
@@ -25058,6 +25146,9 @@
     ],
     "可复": [
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
+    ],
+    "可安": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "可对": [
       "/characters/15564.md"
@@ -25612,6 +25703,9 @@
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md"
     ],
+    "向新": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "向模": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
@@ -25994,6 +26088,9 @@
     ],
     "啜饮": [
       "/characters/15597.md"
+    ],
+    "器人": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "器可": [
       "/story/story_units.md"
@@ -26968,6 +27065,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -27805,6 +27903,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -28094,6 +28193,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
     ],
     "学生": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -28184,6 +28284,7 @@
     "安全": [
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "安武": [
@@ -28457,6 +28558,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -29026,6 +29128,7 @@
       "/characters/15603.md"
     ],
     "小学": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -30025,6 +30128,9 @@
     ],
     "库总": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
+    ],
+    "库房": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "库时": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
@@ -31761,6 +31867,12 @@
     "户线": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
+    "房清": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
+    "房的": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "所有": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/characters/15573.md",
@@ -31826,6 +31938,9 @@
     "手的": [
       "/characters/15560.md",
       "/characters/15577.md"
+    ],
+    "才是": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "才能": [
       "/characters/15584.md",
@@ -32157,6 +32272,9 @@
     "拆分": [
       "/memory/memory-ext-lessons-archive.md"
     ],
+    "拆掉": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "拉巴": [
       "/characters/122587.md",
       "/characters/125346.md",
@@ -32322,6 +32440,9 @@
     ],
     "指出": [
       "/story/story_research_todo.md"
+    ],
+    "指向": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "指导": [
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -32518,6 +32639,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -33108,6 +33230,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -33464,6 +33587,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -33662,6 +33786,9 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
+    "改指": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "改版": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -33689,6 +33816,9 @@
     ],
     "改进": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
+    "改道": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "攻击": [
       "/characters/130901.md",
@@ -33903,6 +34033,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -34205,6 +34336,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -34797,6 +34929,9 @@
     "新并": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md"
     ],
+    "新库": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "新快": [
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -35338,6 +35473,9 @@
     ],
     "是疯": [
       "/characters/15601.md"
+    ],
+    "是纯": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "是缸": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
@@ -36023,6 +36161,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -36271,6 +36410,7 @@
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-session-continuity.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/story/story_units.md"
     ],
@@ -36480,6 +36620,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -36993,6 +37134,9 @@
     "查询": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
+    "查货": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "查阅": [
       "/projects/entry-readme.md"
     ],
@@ -37135,6 +37279,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -37366,6 +37511,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -37908,6 +38054,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -38316,6 +38463,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -38589,6 +38737,7 @@
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "比喻": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -39069,6 +39218,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
     ],
+    "清新": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "清查": [
       "/memory/memory-ext-workflow-api-key-audit.md"
     ],
@@ -39448,6 +39600,9 @@
     ],
     "照耀": [
       "/characters/77917.md"
+    ],
+    "照老": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "照聚": [
       "/news-output/news-output-all.md"
@@ -40222,6 +40377,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
     "生比": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -40743,6 +40899,9 @@
     "的介": [
       "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
+    ],
+    "的传": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "的伤": [
       "/characters/15562.md",
@@ -41305,6 +41464,9 @@
     ],
     "的责": [
       "/characters/77922.md"
+    ],
+    "的货": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "的足": [
       "/characters/15562.md"
@@ -42372,6 +42534,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -42805,6 +42968,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "纯冗": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "纯洁": [
       "/characters/77917.md"
@@ -43310,6 +43476,9 @@
     ],
     "耀之": [
       "/characters/77917.md"
+    ],
+    "老库": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "老鼠": [
       "/characters/15593.md"
@@ -45186,6 +45355,9 @@
     "诺缔拉": [
       "/characters/15565.md"
     ],
+    "读侧": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "读取": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/community/community-index.md",
@@ -45265,6 +45437,15 @@
     ],
     "账本": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "货才": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
+    "货机": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
+    "货窗": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "质架": [
       "/projects/silver-core-sdk-doc-positioning.md",
@@ -45687,6 +45868,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -46425,6 +46607,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -46577,6 +46760,7 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "送到": [
@@ -46584,6 +46768,9 @@
     ],
     "送后": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
+    ],
+    "送带": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "送的": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -46748,6 +46935,9 @@
     "道历": [
       "/memory/memory-ext-discord-archiver-design.md"
     ],
+    "道去": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "道路": [
       "/characters/15575.md",
       "/characters/54116.md"
@@ -46875,6 +47065,9 @@
     "都接": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
+    "都改": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "都是": [
       "/characters/15603.md"
     ],
@@ -46944,6 +47137,9 @@
     ],
     "采访": [
       "/memory/memory-ext-collab-event-playbook.md"
+    ],
+    "采货": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "采集": [
       "/memory/memory-ext-active-silver-blackpool-interface.md",
@@ -47489,6 +47685,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -47760,6 +47957,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -48986,6 +49184,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
     "齐了": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
     "齐备": [
@@ -49238,6 +49437,7 @@
     ],
     "biav": [
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
     ],
     "bible": [
@@ -49713,6 +49913,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -49805,6 +50006,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "cutover": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "cv": [
       "/characters/122587.md",
@@ -50047,6 +50251,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -50231,6 +50436,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -50454,6 +50660,7 @@
     "engineering": [
       "/projects/doc-testing-strategy.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -51014,6 +51221,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -51453,6 +51661,9 @@
     "overnight": [
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
+    "p23": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
     "panel": [
       "/wiki-data/wiki-data-panel-text.md"
     ],
@@ -51482,6 +51693,7 @@
       "/memory/strategic-plan-2026.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -51800,6 +52012,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "repo": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -51985,6 +52198,7 @@
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md"
     ],
     "sc": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
     ],
     "scan": [
@@ -52166,6 +52380,7 @@
       "/assets/persona-erica-speech-canon.md"
     ],
     "split": [
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
@@ -52362,6 +52577,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
+      "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
