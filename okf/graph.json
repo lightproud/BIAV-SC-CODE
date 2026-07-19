@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-19",
   "stats": {
-    "nodes": 367,
-    "edges": 421
+    "nodes": 368,
+    "edges": 422
   },
   "nodes": [
     {
@@ -3333,6 +3333,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
+      "type": "documentation",
+      "title": "silver-core-repo-split-migration-plan-20260719",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "type": "documentation",
       "title": "silver-core-sdk-bug-audit-20260717",
@@ -5776,6 +5787,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

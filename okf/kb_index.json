@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 367,
-    "edges": 421,
-    "terms": 6568,
+    "concepts": 368,
+    "edges": 422,
+    "terms": 6575,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 134,
+      "documentation": 135,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 105,
+      "resource": 106,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 233
+      "search": 234
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 105
+      "count": 106
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 102
+      "degree": 103
     },
     "/characters/15604.md": {
       "type": "character",
@@ -4238,6 +4238,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md": {
+      "type": "documentation",
+      "title": "silver-core-repo-split-migration-plan-20260719",
+      "description": "命名与既有 silver-core 家族（silver-core-sdk / -maestro-sdk）一致，呼应银芯 = Silver Core 定位。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/silver-core-repo-split-migration-plan-20260719.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md": {
       "type": "documentation",
       "title": "silver-core-sdk-bug-audit-20260717",
@@ -6993,6 +7007,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
         "提及:艾瑞卡",
         "mention"
@@ -9215,6 +9234,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md": [
       [
         "/characters/15603.md",
@@ -10192,6 +10218,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -11466,6 +11493,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -11623,6 +11651,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -11840,6 +11869,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -12179,6 +12209,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -12374,6 +12405,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -12683,6 +12715,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -13460,6 +13493,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -13968,6 +14002,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -14277,7 +14312,8 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
-      "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md"
+      "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "main": [
       "/README.md",
@@ -14498,6 +14534,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -14630,7 +14667,8 @@
     ],
     "migration": [
       "/projects/silver-core-sdk-doc-migration-0-3x-to-0-68.md",
-      "/projects/silver-core-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "milestone": [
       "/projects/project-game.md",
@@ -14968,7 +15006,8 @@
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
-      "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
+      "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "platform": [
       "/community/community-appstore.md",
@@ -15236,6 +15275,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -15662,6 +15702,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -15976,6 +16017,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -16131,6 +16173,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -16396,6 +16439,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -16486,6 +16530,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -16641,6 +16686,9 @@
     ],
     "speech": [
       "/assets/persona-erica-speech-canon.md"
+    ],
+    "split": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "squash": [
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
@@ -17143,6 +17191,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -17724,7 +17773,8 @@
     "一致": [
       "/README.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
-      "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "一艾": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -18255,6 +18305,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -18534,6 +18585,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -18879,6 +18931,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -18950,6 +19003,9 @@
     ],
     "与患": [
       "/characters/77925.md"
+    ],
+    "与既": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "与权": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
@@ -20216,6 +20272,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -21204,6 +21261,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -21485,6 +21543,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -23472,6 +23531,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -25358,6 +25418,9 @@
     "同调": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
+    "名与": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
+    ],
     "名提": [
       "/characters/15602.md"
     ],
@@ -25565,7 +25628,8 @@
       "/characters/95786.md"
     ],
     "呼应": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "命上": [
       "/characters/15581.md"
@@ -25580,6 +25644,9 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md"
+    ],
+    "命名": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "命周": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
@@ -26864,6 +26931,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -27699,6 +27767,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -28349,6 +28418,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -28617,6 +28687,9 @@
     "家回": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "家族": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "家普": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -29894,6 +29967,9 @@
     ],
     "应能": [
       "/characters/15571.md"
+    ],
+    "应银": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "底座": [
       "/README.md",
@@ -32405,6 +32481,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -32993,6 +33070,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -33347,6 +33425,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -33784,6 +33863,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -34084,6 +34164,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -34842,6 +34923,9 @@
     ],
     "既为": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "既有": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "既能": [
       "/characters/15582.md",
@@ -35893,6 +35977,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -36348,6 +36433,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -37001,6 +37087,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -37230,6 +37317,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -37770,6 +37858,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -38176,6 +38265,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -45535,6 +45625,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -46271,6 +46362,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -47333,6 +47425,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -47602,6 +47695,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -47693,7 +47787,8 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
-      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
+      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "银钥": [
       "/characters/54116.md"
@@ -49339,6 +49434,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -49549,6 +49645,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -49881,6 +49978,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -50063,6 +50161,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -50284,6 +50383,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -50841,6 +50941,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -51107,7 +51208,8 @@
     ],
     "migration": [
       "/projects/silver-core-sdk-doc-migration-0-3x-to-0-68.md",
-      "/projects/silver-core-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "milestone": [
       "/projects/project-game.md",
@@ -51259,7 +51361,8 @@
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
-      "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
+      "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "platform": [
       "/community/community-appstore.md",
@@ -51622,6 +51725,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -51882,6 +51986,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
@@ -51932,6 +52037,9 @@
     ],
     "speech": [
       "/assets/persona-erica-speech-canon.md"
+    ],
+    "split": [
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "stack": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
@@ -52171,6 +52279,7 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
+      "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
