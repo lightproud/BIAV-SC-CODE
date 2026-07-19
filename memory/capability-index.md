@@ -3,15 +3,15 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-18
-- 功能总数：**141**
+- 生成日期：2026-07-19
+- 功能总数：**142**
 - 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 39 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 40 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（39）
+## CI 自动化工作流（编排入口·定时/事件平面）（40）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -96,6 +96,8 @@
   `.github/workflows/refresh-claude-code-prompts.yml`
 - **`SDK Mutation Ratchet (weekly)`** _[schedule/manual]_ —   
   `.github/workflows/sdk-mutation-ratchet.yml`
+- **`Secret Scan`** _[schedule/push/pull_request/manual]_ —   
+  `.github/workflows/secret-scan.yml`
 - **`Silver Core Maestro SDK`** _[push/pull_request]_ —   
   `.github/workflows/silver-core-maestro-sdk.yml`
 - **`Silver Core SDK`** _[schedule/push/pull_request/manual]_ —   
