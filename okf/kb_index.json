@@ -4479,7 +4479,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2947 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2949 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4493,7 +4493,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8121371 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8138044 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4591,7 +4591,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5246 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5248 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4605,7 +4605,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 118 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 121 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4647,7 +4647,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1720 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1728 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4661,7 +4661,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10615 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10626 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4675,7 +4675,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10872 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10892 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4689,7 +4689,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2948 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2949 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4703,7 +4703,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2161 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2169 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
