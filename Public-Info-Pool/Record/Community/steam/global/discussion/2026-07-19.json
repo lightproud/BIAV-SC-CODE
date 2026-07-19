@@ -1,8 +1,8 @@
 {
   "date": "2026-07-19",
-  "archived_at": "2026-07-19T08:15:27.876103+00:00",
+  "archived_at": "2026-07-19T10:28:23.131239+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
     {
       "title": "[Steam论坛] New Player Handbook Guide",
@@ -13,6 +13,23 @@
       "engagement": 3,
       "is_hot": false,
       "author": "SUSKIWY",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] 进不去游戏",
+      "summary": "这游戏只有我进不去吗?",
+      "source": "steam_discussion",
+      "time": "2026-07-19T09:45:59+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/4626981323674867794/",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "西柚咪",
       "tags": [
         "steam_forum"
       ],
@@ -39,6 +56,23 @@
       "platform_region": "global"
     },
     {
+      "title": "[Steam论坛] I am a new player, need advice on what to do",
+      "summary": "I started playing 2 months ago i think but im kinda always slow on start so rn im only lvl 43 and on 5th chapter. i read imfamous newbie guide so i have general understanding of a game but i still lack of expirience. \n\nRn im kinda confused with what should be my pulling plan and what team i should build.\nI understand that u cant play only 1 team but i just dont like any dps chars that i have.\n\nFor u to undestand this is what i have rn:\nlimited chars: Thais e1, Saya e3+1, Corposant, GHelot, Tulu",
+      "source": "steam_discussion",
+      "time": "2026-07-19T09:04:13+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/578299465370252703/",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "ReXert",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "[Steam论坛] What to do with Pure Cores?",
       "summary": "I've just started playing this, and I've been spending all of my Pure Cores on pulling for Caro in the Realm Study. I feel like I have a really solid team now as Faint, Uvhash, Agrippa, and Saya, with Faint and Uvhash three starred. But I keep getting more Pure Cores. Should I switch to a different realm (I'm thinking Ultra) and try to put together another team? Dump them into Gnostic Potential for Faint and Uvhash? Or save them for something else?...",
       "source": "steam_discussion",
@@ -47,6 +81,23 @@
       "engagement": 0,
       "is_hot": false,
       "author": "Sotetsu",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] 玩起来还挺像边狱巴士的",
+      "summary": "剧情不错",
+      "source": "steam_discussion",
+      "time": "2026-07-19T09:25:42+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/578299465370255852/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "不喝冰美式",
       "tags": [
         "steam_forum"
       ],
