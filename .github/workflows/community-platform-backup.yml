@@ -1,0 +1,72 @@
+name: Community Platform Backup
+
+# 为非 discord 社区平台建 Release 副本 —— 分仓（T62）硬前置。
+# 门① 盘点发现：discord 有 community-data 桶兜底，但 16 个非 discord 平台
+# （appstore / bilibili / reddit / steam / youtube / weibo / ... ）在 git 里是
+# 唯一正本、零第二份。数据移动（分仓 / 历史动作）前必须先有备份，否则误伤即不可逆丢失。
+# 本工作流每月刷新一次滚动全量副本（--clobber 覆盖同名），并可 workflow_dispatch 在迁移前手动跑一次。
+# discord 不在此（自有 community-data 桶）；tar 步显式跳过 discord 作正确性兜底。
+
+on:
+  schedule:
+    # 每月 3 日 04:23 UTC（≈ 北京 12:23）；错开 2 日的 community-cold-compress。
+    - cron: '23 4 3 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: community-platform-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # 只取 Community 下非 discord 平台（~26M）；非 cone 模式支持 discord 子树排除。
+          # 即便排除失效，下方 tar 步仍显式跳过 discord，正确性不依赖 sparse。
+          sparse-checkout: |
+            /Public-Info-Pool/Record/Community
+            !/Public-Info-Pool/Record/Community/discord
+          sparse-checkout-cone-mode: false
+
+      - name: Package non-discord platforms
+        run: |
+          set -euo pipefail
+          COMM=Public-Info-Pool/Record/Community
+          mkdir -p /tmp/platform-backup
+          if [ ! -d "$COMM" ]; then
+            echo "::error::$COMM 不存在，checkout 异常"; exit 1
+          fi
+          backed=""
+          for d in "$COMM"/*/; do
+            name=$(basename "$d")
+            [ "$name" = "discord" ] && continue   # 正确性兜底：discord 自有 community-data 桶
+            [ -d "$d" ] || continue
+            tar czf "/tmp/platform-backup/platform-archive-$name.tar.gz" -C "$COMM" "$name"
+            backed="$backed $name"
+          done
+          echo "backed up:$backed"
+          if [ -z "$backed" ]; then
+            echo "::error::无任何平台被打包，异常"; exit 1
+          fi
+          ls -la /tmp/platform-backup
+
+      - name: Upload to community-platforms release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release view community-platforms --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create community-platforms --repo "$GITHUB_REPOSITORY" \
+                 --title "Community Platform Archive (non-discord)" \
+                 --notes "非 discord 社区平台全量档案备份（分仓 T62 硬前置）。滚动全量、每月刷新。"
+          # --clobber：同名平台资产覆盖为最新全量（滚动副本，非月度版本化）
+          gh release upload community-platforms /tmp/platform-backup/*.tar.gz \
+            --clobber --repo "$GITHUB_REPOSITORY"
+          echo "已上传 $(ls /tmp/platform-backup | wc -l) 个平台副本至 community-platforms release"

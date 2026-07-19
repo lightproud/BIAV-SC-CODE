@@ -157,3 +157,35 @@ def test_discord_new_layout_wins_over_legacy(tmp_path):
     (tmp_path / "channels" / "cccc3333" / "2026-07-01.jsonl").write_text("{}\n")
     files = list(al.iter_discord_message_files(tmp_path, region="global"))
     assert files == [tmp_path / "global" / "channels" / "cccc3333" / "2026-07-02.jsonl"]
+
+
+# ── 数据湖根解析（分仓桥接 SSOT，T62 方案 B）────────────────────────────────
+
+def test_data_root_default_in_tree(monkeypatch):
+    """env 未设 → 回落现仓在树 <repo>/Public-Info-Pool（分仓前行为）。"""
+    monkeypatch.delenv("BIAV_SC_DATA_ROOT", raising=False)
+    assert al.pool_root() == al._REPO_ROOT / "Public-Info-Pool"
+    assert al.community_root() == al._REPO_ROOT / "Public-Info-Pool" / "Record" / "Community"
+    assert al.discord_root() == al.community_root() / "discord"
+
+
+def test_data_root_default_matches_legacy_hardcode(monkeypatch):
+    """向后兼容硬约束：默认根须与迁移前各脚本硬编码路径逐字节相等。"""
+    monkeypatch.delenv("BIAV_SC_DATA_ROOT", raising=False)
+    legacy = al._REPO_ROOT / "Public-Info-Pool" / "Record" / "Community"
+    assert al.community_root() == legacy
+    assert al.discord_root() == legacy / "discord"
+
+
+def test_data_root_env_override(monkeypatch, tmp_path):
+    """env BIAV_SC_DATA_ROOT 设定 → 数据根整体换位至 BIAV-SC-DATA checkout。"""
+    monkeypatch.setenv("BIAV_SC_DATA_ROOT", str(tmp_path / "biav-sc-data"))
+    assert al.pool_root() == tmp_path / "biav-sc-data"
+    assert al.community_root() == tmp_path / "biav-sc-data" / "Record" / "Community"
+    assert al.discord_root() == tmp_path / "biav-sc-data" / "Record" / "Community" / "discord"
+
+
+def test_data_root_env_expanduser(monkeypatch):
+    """env 支持 ~ 展开（兄弟 checkout 常在家目录并列）。"""
+    monkeypatch.setenv("BIAV_SC_DATA_ROOT", "~/biav-sc-data")
+    assert str(al.pool_root()).startswith(str(Path("~").expanduser()))

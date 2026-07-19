@@ -21,12 +21,42 @@ collect_video_comments 写旧读新、backfill 写平级与分层写方对冲的
 from __future__ import annotations
 
 import gzip
+import os
 import re
 from pathlib import Path
 from typing import Iterator, TextIO
 
 # 归档文件名 = 日期；state.json / manifest 等辅助文件不参与日期语义
 DATE_STEM = re.compile(r'^\d{4}-\d{2}-\d{2}$')
+
+# ── 数据湖根解析（分仓桥接 SSOT，T62 方案 B「兄弟 checkout + 环境根」）─────────
+# 分仓（BIAV-SC-CODE + BIAV-SC-DATA）后数据湖 Public-Info-Pool/Record 迁出至
+# BIAV-SC-DATA 仓。为让在树直读脚本零逻辑改动地跟随数据换位，Record 数据根统一经
+# 下列函数解析：环境变量 BIAV_SC_DATA_ROOT 设定则用之（指向 BIAV-SC-DATA checkout
+# 内扮演 Public-Info-Pool 角色的目录），否则回落现仓在树默认——**分仓前行为，
+# 完全向后兼容**（env 未设 = 与旧硬编码路径逐字节相等）。
+# 只覆盖随分仓移动的 **Record 数据湖**；Resource（策展产物）留 code 仓、不经此。
+# 与「归档根由调用方传入」契约不冲突：遍历函数仍收 archive_dir 参数，本组只提供
+# 调用方可选用的**规范默认根**，取代各自 `_REPO_ROOT / 'Public-Info-Pool' / ...` 硬编码。
+_DATA_ROOT_ENV = 'BIAV_SC_DATA_ROOT'
+# archive_layout.py 位于 <repo>/projects/news/scripts/ → parents[3] = 仓根
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+
+
+def pool_root() -> Path:
+    """数据湖池根（扮演 Public-Info-Pool 角色的目录）。env BIAV_SC_DATA_ROOT 或在树默认。"""
+    env = os.environ.get(_DATA_ROOT_ENV)
+    return Path(env).expanduser() if env else _REPO_ROOT / 'Public-Info-Pool'
+
+
+def community_root() -> Path:
+    """社区全量档案根：<pool>/Record/Community（discord + 16+ 平台摊平）。"""
+    return pool_root() / 'Record' / 'Community'
+
+
+def discord_root() -> Path:
+    """discord 归档根：<community>/discord。"""
+    return community_root() / 'discord'
 
 # ── 折叠映射：源 → (宿主平台, 类型子目录) ────────────────────────────────────
 # steam 家族三子类共享宿主 steam；taptap 评论流归 taptap/*/review。

@@ -23,7 +23,7 @@ from pathlib import Path
 # 复用归档器的 Global guild 常量；已登记清单从布局 SSOT 注册表派生（单一映射源）。
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from discord_archiver import GLOBAL_GUILD_ID  # noqa: E402
-from archive_layout import DISCORD_GUILD_REGIONS  # noqa: E402
+from archive_layout import DISCORD_GUILD_REGIONS, discord_root  # noqa: E402
 
 API_BASE = 'https://discord.com/api/v10'
 
@@ -35,9 +35,7 @@ KNOWN_GUILDS = {
     for gid, region in DISCORD_GUILD_REGIONS.items()
 }
 
-_REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-SEEN_PATH = (_REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
-             / 'discord' / 'guilds_seen.json')
+SEEN_PATH = discord_root() / 'guilds_seen.json'  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 
 def classify_guilds(guilds: list, known: dict) -> tuple[list, list]:
@@ -117,7 +115,7 @@ def main() -> int:
     SEEN_PATH.write_text(
         json.dumps(snapshot, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
     )
-    print(f'\n快照已写入 {SEEN_PATH.relative_to(_REPO_ROOT)}')
+    print(f'\n快照已写入 {SEEN_PATH}')
 
     print('---')
     if not unregistered:

@@ -9,10 +9,10 @@
 ## 0. 结论摘要
 
 **抢救网对 discord 主服数据 = 高保真、近乎全覆盖**；T29「30 月仅实证 3 月有副本」的悲观假设
-**决定性推翻**。但盘出**一条新风险**：17 个非 discord 平台**无任何 Release 副本**，须在任何历史动作前补齐。
+**决定性推翻**。但盘出**一条新风险**：16 个非 discord 平台**无任何 Release 副本**，须在任何历史动作前补齐。
 
 > 比喻：原担心搬家前只备份了 3 个月的聊天记录，实测一看——主群 33 个月几乎全备着，且抽一个月
-> 逐条点数**一条不差**；但另外 17 个小群的记录只有一份正本、连一张备份都没有，搬家前得先给它们各拍一份。
+> 逐条点数**一条不差**；但另外 16 个小群的记录只有一份正本、连一张备份都没有，搬家前得先给它们各拍一份。
 
 ---
 
@@ -25,7 +25,7 @@
 | Release 内部布局 | 扁平 `channels/{id}/{date}.jsonl`，**无区服子目录** | = 区服拆分（2026-07-10 三服统一）前的**单服历史格式** |
 | 对应区服 | 单服 = 现 `global` 区服 | 旧月（pre-2026-03）本就单服，覆盖范围正确 |
 | jp / volunteer 区服 | Release **不含**；现 git 各 24 / 32 频道，全量在库 | 二者为近期新增、数据在 git，非删除项、不属抢救网范畴 |
-| 非 discord 平台（17 个）| Release **零副本**（community-data 桶纯 `discord-archive-*`）| **见 §2 新风险** |
+| 非 discord 平台（16 个）| Release **零副本**（community-data 桶纯 `discord-archive-*`）| **见 §2 新风险** |
 
 ### 1.2 内容完整度（重叠月保真度铁证）
 
@@ -53,18 +53,18 @@
 
 ## 2. 新发现风险（门① 盘出，喂门②/③）
 
-**17 个非 discord 平台无 Release 副本**：`appstore / arca_live / bahamut / bilibili / google_play /
+**16 个非 discord 平台无 Release 副本**：`appstore / arca_live / bahamut / bilibili / google_play /
 note_com / pixiv / reddit / ruliweb / steam / stopgame / taptap / weibo / weixin / youtube /
 youtube_comments`（+ discord 平级）。
 
 - 现状：这些平台**未经 2026-06-21 discord 瘦身**（T29 是 discord 专属），全量在 git（各平台起始日不一，
   如 youtube 2024-06、steam 2024-08、bilibili 2026-01）；
-- 风险：它们在 git 里是**唯一正本、零第二份**。discord 有 Release 兜底、可承受历史重写；这 17 平台**不能**——
+- 风险：它们在 git 里是**唯一正本、零第二份**。discord 有 Release 兜底、可承受历史重写；这 16 平台**不能**——
   一旦历史动作误伤且无备份，即不可逆丢失；
-- **门③ 硬前置**：任何 git 历史重写前，**必须先为这 17 平台建 Release 副本**（与 discord 对齐），否则
+- **门③ 硬前置**：任何 git 历史重写前，**必须先为这 16 平台建 Release 副本**（与 discord 对齐），否则
   历史动作的不可逆风险对它们仍是灾难级。
 
-> 比喻：主群有云备份、真出事能恢复；17 个小群只有手机里这一份，删了就没了——动大手术前先给它们各存一份云备份。
+> 比喻：主群有云备份、真出事能恢复；16 个小群只有手机里这一份，删了就没了——动大手术前先给它们各存一份云备份。
 
 ---
 
@@ -72,9 +72,9 @@ youtube_comments`（+ discord 平级）。
 
 - **T29 悬案闭合**：抢救网对 discord 主服 = 33 月连续（2023-07→2026-05）+ 逐条保真，远超「3 月」旧判。
   discord 侧历史动作的不可逆风险由「灾难级」降至「可核对级」。
-- **门② 输入**：目标形态选型时，discord 与 17 非 discord 平台**风险不对称**，须分层处理（discord 可先行，
+- **门② 输入**：目标形态选型时，discord 与 16 非 discord 平台**风险不对称**，须分层处理（discord 可先行，
   非 discord 需先补副本）。
-- **门③ 硬前置**：历史重写须满足 (a) 17 非 discord 平台先建 Release 副本；(b) 全新 clone 各方确认；
+- **门③ 硬前置**：历史重写须满足 (a) 16 非 discord 平台先建 Release 副本；(b) 全新 clone 各方确认；
   (c) force-push 前全量 mirror 备份。当前 git pack 417M、触发线未破，**仍倾向暂缓**（成本收益不划算）。
 
 ---

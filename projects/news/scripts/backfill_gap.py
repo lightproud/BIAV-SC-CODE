@@ -25,12 +25,11 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-# 4R 迁移后全量档案层现址（旧 projects/news/data/platforms 已废，2026-07-12 修复）
-ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # 日志脱敏单一真源（H3）
 import archive_layout  # noqa: E402  归档布局单一真相源（2026-07-02 P0-1）
+# 4R 迁移后全量档案层现址（旧 projects/news/data/platforms 已废，2026-07-12 修复）
+ARCHIVE_DIR = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 
 def _gap_bound(env_name: str, default: datetime, end_of_day: bool) -> datetime:
