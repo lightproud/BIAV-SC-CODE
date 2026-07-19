@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 36
+      "degree": 34
     },
     "/characters/130375.md": {
       "type": "character",
@@ -789,7 +789,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/characters/15592.md": {
       "type": "character",
@@ -4493,7 +4493,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2949 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2954 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4661,7 +4661,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1728 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1736 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4675,7 +4675,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10626 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10638 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4689,7 +4689,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10892 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10912 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4703,7 +4703,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2949 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2951 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5307,11 +5307,6 @@
         "mention"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
         "/community/community-google-play.md",
         "提及:Saya",
         "mention"
@@ -5428,11 +5423,6 @@
       ],
       [
         "/sources/bahamut.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:沙耶",
         "mention"
       ],
@@ -6291,6 +6281,18 @@
       [
         "/wiki-data/wiki-data-character-skills.md",
         "提及:达芙黛尔",
+        "mention"
+      ]
+    ],
+    "/characters/15591.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:艾继丝",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:艾继丝",
         "mention"
       ]
     ],
@@ -7499,6 +7501,11 @@
         "mention"
       ],
       [
+        "/characters/15591.md",
+        "提及:艾继丝",
+        "mention"
+      ],
+      [
         "/characters/54117.md",
         "提及:哈姆林",
         "mention"
@@ -7526,11 +7533,6 @@
       [
         "/characters/94450.md",
         "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
         "mention"
       ],
       [
@@ -9401,6 +9403,11 @@
         "mention"
       ],
       [
+        "/characters/15591.md",
+        "提及:艾继丝",
+        "mention"
+      ],
+      [
         "/characters/54117.md",
         "提及:哈姆林",
         "mention"
@@ -9428,11 +9435,6 @@
       [
         "/characters/94450.md",
         "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
         "mention"
       ],
       [
