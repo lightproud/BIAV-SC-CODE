@@ -6,7 +6,7 @@
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 40,
+      "workflows": 41,
       "scripts_top": 37,
       "scripts_news": 32,
       "scripts_wiki": 6,
@@ -14,7 +14,7 @@
       "commands": 4,
       "skills": 5,
       "projects": 7,
-      "total": 142
+      "total": 143
     },
     "reachability": {
       "live": 75,
@@ -140,6 +140,15 @@
       "id": "community-cold-compress.yml",
       "name": "Community Cold Compress",
       "path": ".github/workflows/community-cold-compress.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
+    },
+    {
+      "id": "community-platform-backup.yml",
+      "name": "Community Platform Backup",
+      "path": ".github/workflows/community-platform-backup.yml",
       "triggers": [
         "schedule",
         "manual"

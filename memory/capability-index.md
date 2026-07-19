@@ -4,14 +4,14 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-19
-- 功能总数：**142**
+- 功能总数：**143**
 - 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 40 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 41 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（40）
+## CI 自动化工作流（编排入口·定时/事件平面）（41）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -62,6 +62,8 @@
   `.github/workflows/collect-fanart.yml`
 - **`Community Cold Compress`** _[schedule/manual]_ —   
   `.github/workflows/community-cold-compress.yml`
+- **`Community Platform Backup`** _[schedule/manual]_ —   
+  `.github/workflows/community-platform-backup.yml`
 - **`Conformance pin drift sentinel`** _[schedule/manual]_ —   
   `.github/workflows/conformance-drift.yml`
 - **`Consolidate Releases`** _[manual]_ —   
