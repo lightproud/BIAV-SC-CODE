@@ -34,7 +34,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
+ARCHIVE_DIR = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 # 工作报告仍留 projects/news/data/（Record/ 是档案层，不放监控产物）
 REPORT_PATH = _REPO_ROOT / 'projects' / 'news' / 'data' / 'gap_report.json'
 

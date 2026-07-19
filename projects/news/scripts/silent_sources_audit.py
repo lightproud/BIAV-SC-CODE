@@ -35,7 +35,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sources import KNOWN_SOURCES, CORE_SOURCES, LEGACY_SOURCES, INDEPENDENT_ARCHIVE_SOURCES
 import archive_layout
 
-ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
+ARCHIVE_DIR = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 # discord 健康以主服 global 的每日统计为准（原语义不变）；2026-07-10 方案甲布局
 # 迁 discord/global/activity_daily/，经 SSOT 解析并回落旧布局（迁移前克隆兼容）。
 _DISCORD_ROOT = ARCHIVE_DIR / 'discord'

@@ -29,10 +29,10 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-DISCORD_ROOT = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord'
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # noqa: E402  归档布局单一真相源（2026-07-02 P0-1）
+DISCORD_ROOT = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 # 索引条目的三种状态（缺省按 active 解释——存量条目未带 status 字段）
 STATUS_ACTIVE = 'active'      # 本轮 API 仍在线

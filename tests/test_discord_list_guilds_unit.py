@@ -27,13 +27,11 @@ class _Resp:
 
 
 def _patch_seen(tmp):
-    # SEEN_PATH must live under _REPO_ROOT (main() prints relative_to it); patch
-    # both the path and the root so the write lands in the temp sandbox.
+    # SEEN_PATH now derives from archive_layout.discord_root() (分仓桥接); main()
+    # prints it directly (no relative_to), so patching SEEN_PATH alone redirects
+    # the write into the temp sandbox.
     root = Path(tmp)
-    return (
-        mock.patch.object(dlg, "SEEN_PATH", root / "data" / "guilds_seen.json"),
-        mock.patch.object(dlg, "_REPO_ROOT", root),
-    )
+    return mock.patch.object(dlg, "SEEN_PATH", root / "data" / "guilds_seen.json")
 
 
 class TestGet(unittest.TestCase):
@@ -86,8 +84,7 @@ class TestMain(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp, \
                 mock.patch.dict(dlg.os.environ, {"DISCORD_BOT_TOKEN": "t"}, clear=True), \
                 mock.patch.object(dlg, "_get", return_value=_Resp(200, guilds)):
-            sp, rp = _patch_seen(tmp)
-            with sp, rp:
+            with _patch_seen(tmp):
                 self.assertEqual(dlg.main(), 0)
                 self.assertTrue((Path(tmp) / "data" / "guilds_seen.json").exists())
 
@@ -97,8 +94,7 @@ class TestMain(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp, \
                 mock.patch.dict(dlg.os.environ, {"DISCORD_BOT_TOKEN": "t"}, clear=True), \
                 mock.patch.object(dlg, "_get", return_value=_Resp(200, guilds)):
-            sp, rp = _patch_seen(tmp)
-            with sp, rp:
+            with _patch_seen(tmp):
                 self.assertEqual(dlg.main(), 0)
 
     def test_success_many_unregistered(self):
@@ -106,8 +102,7 @@ class TestMain(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp, \
                 mock.patch.dict(dlg.os.environ, {"DISCORD_BOT_TOKEN": "t"}, clear=True), \
                 mock.patch.object(dlg, "_get", return_value=_Resp(200, guilds)):
-            sp, rp = _patch_seen(tmp)
-            with sp, rp:
+            with _patch_seen(tmp):
                 self.assertEqual(dlg.main(), 0)
 
 

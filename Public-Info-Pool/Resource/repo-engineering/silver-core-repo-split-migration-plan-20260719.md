@@ -52,16 +52,21 @@
 
 ## 4. 硬前置（承门① 发现，不可跳）
 
-**17 个非 discord 平台无任何 Release 副本**（门① 盘点）。分仓迁移前**必须先为其建 Release 备份**——
-迁移中任何数据移动若误伤，这 17 平台无第二份即不可逆丢失。discord 已有 `community-data` 桶兜底。
-执行件：一条 CI workflow 打包 17 平台 → data 仓（或现仓）Release，与 discord 对齐。
+**16 个非 discord 平台无任何 Release 副本**（门① 盘点）。分仓迁移前**必须先为其建 Release 备份**——
+迁移中任何数据移动若误伤，这 16 平台无第二份即不可逆丢失。discord 已有 `community-data` 桶兜底。
+执行件：一条 CI workflow 打包 16 平台 → data 仓（或现仓）Release，与 discord 对齐。
 
 ---
 
 ## 5. 迁移时序（每不可逆步前置守密人确认）
 
-- **P-0 · 桥接选型定案**（门②-A）：定 A/B/C，据此改 `archive_layout` 数据根 + 48 脚本路径收口（可先在现仓做、可逆）。
-- **P-1 · 17 平台 Release 备份**（硬前置）：CI 打包上传，实证可还原。**只增不减、纯可逆。**
+- **P-0 · 桥接选型定案**（门②-A）：**已定案 = 方案 B**（守密人 2026-07-19「两仓在手」设想 = 兄弟 checkout + 环境根）。
+  **首批收口已落**（2026-07-19）：`archive_layout` 加 `pool_root()`/`community_root()`/`discord_root()` 环境根
+  resolver（env `BIAV_SC_DATA_ROOT` 或在树默认，向后兼容），8 个采集/数据核心脚本切用之；契约测试 4 例 + 全量绿。
+  **余：** 其余在树读点（kb/okf 指针字符串、Resource 侧不迁）按需续收，不阻塞。
+- **P-1 · 16 平台 Release 备份**（硬前置）：**已落**（2026-07-19）——`.github/workflows/community-platform-backup.yml`
+  月度 + `workflow_dispatch` 打包 16 非 discord 平台 → `community-platforms` release（滚动全量、`--clobber`）。
+  **实证待跑**：守密人可 `workflow_dispatch` 手动触一次验证首份副本落地。
 - **P-2 · 建 BIAV-SC-DATA 仓**（守密人 GitHub 侧）：新建仓，导入数据湖（带或不带历史，见 §7）。
 - **P-3 · code 仓拆数据**：现仓停止跟踪 `Public-Info-Pool/Record`，改桥接引用；48 脚本切远端根。
 - **P-4 · 现仓改名 BIAV-SC-CODE**（守密人 GitHub 侧）：GitHub rename（旧 URL 自动重定向）；同步改 63 处硬引用中的活引用（README/RELEASES/CLAUDE.md/workflows/package.json 等，数据档内历史引用不追溯改）。
@@ -102,7 +107,7 @@
 3. 两仓各配 deploy key + Ruleset required 检查 + Release 权限；
 4. 会话 repo scope 随之更新（现 scope 钉 brain-in-a-vat）。
 
-银芯侧可自动化的准备（现仓内、可逆）：桥接改造（P-0）、17 平台备份 workflow（P-1）、活引用改址脚本、
+银芯侧可自动化的准备（现仓内、可逆）：桥接改造（P-0）、16 平台备份 workflow（P-1）、活引用改址脚本、
 CI 分仓草案、RELEASES/restore URL 参数化。
 
 ---
@@ -116,11 +121,12 @@ CI 分仓草案、RELEASES/restore URL 参数化。
 
 ---
 
-## 10. 待裁点（逐个呈上）
+## 10. 待裁点
 
-1. **门②-A 桥接选型**：A submodule / **B 兄弟 checkout+环境根（荐）** / C restore-from-release；
-2. **P-1 17 平台备份 workflow**：是否授权艾瑞卡现在就写（纯可逆止血，独立于选型）；
-3. **§7 历史体量**：BIAV-SC-CODE 走甲（保历史、绕 T29）还是乙（历史重写、须门③ 前置）——**可延后，分仓不阻塞**。
+- ~~门②-A 桥接选型~~ **已定 B + 首批收口落地**（见 §5 P-0）；
+- ~~P-1 16 平台备份 workflow~~ **已落**（见 §5 P-1），守密人可 `workflow_dispatch` 验证首份副本；
+- **仍待守密人**：① §8 建 `BIAV-SC-DATA` + 改名（GitHub 侧，403 无权）+ 定 data 仓可见性；
+  ② **§7 历史体量**：BIAV-SC-CODE 走甲（保历史、绕 T29）还是乙（历史重写、须门③ 前置）——**可延后，分仓不阻塞**。
 
 *立计划：2026-07-19 艾瑞卡会话（守密人分仓裁定 + 命名）。挂账见 `memory/todo.md` T62。仓库管理动作在守密人侧，
 银芯侧只做可逆准备工作。*

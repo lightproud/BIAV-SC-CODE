@@ -23,9 +23,10 @@ from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_REPO_ROOT / 'projects' / 'news' / 'scripts'))
+import archive_layout  # noqa: E402  分仓桥接：数据根 SSOT
 from discord_compact import compact_record  # noqa: E402
 
-DISCORD_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord'
+DISCORD_DIR = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 
 def process_file(path: Path, dry_run: bool) -> tuple[int, int, int]:
