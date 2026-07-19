@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-19T05:52:03.079841+00:00",
+  "collected_at": "2026-07-19T08:14:48.214131+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 112,
+  "item_count": 113,
   "items": [
     {
       "source": "google_play",
@@ -267,12 +267,12 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-17T19:51:04",
+      "time": "2026-07-18T06:50:59",
       "lang": "en",
-      "title": "[Google Play 好评] ★5 ثثثثث",
-      "summary": "ثثثثث",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-03143b53-8a2c-4e93-9f1f-ce6681932acc",
-      "author": "Ebrahim الطنيجي",
+      "title": "[Google Play 好评] ★5 best game i ever played lowkey",
+      "summary": "best game i ever played lowkey",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-6bd39c3c-7763-41b2-aee8-33259232c819",
+      "author": "kavish",
       "engagement": 0
     },
     {
@@ -787,6 +787,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-18T06:22:20",
+      "lang": "vi",
+      "title": "[Google Play 好评] ★5 bản dịch Tiếng Việt hơi dở nhưng còn lại",
+      "summary": "bản dịch Tiếng Việt hơi dở nhưng còn lại thì game cực đỉnh ✨",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-1d7a2bfc-3ad8-47c5-9488-1b829c21dd94",
+      "author": "rổ Đan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-05T11:30:32",
       "lang": "vi",
       "title": "[Google Play 好评] ★5 Cốt truyện peak, cực cuốn",
@@ -823,6 +833,16 @@
       "summary": "peak game",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-3029aa0d-5b35-4d8e-bea3-124f6105ae6a",
       "author": "Hamza",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-18T06:52:36",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 jueguenlo, es mejor de lo que creen. Wan",
+      "summary": "jueguenlo, es mejor de lo que creen. Wanda mi mujer",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-d767ef0c-1fe7-4096-9168-67bfd9eb149e",
+      "author": "elsapito :3",
       "engagement": 0
     },
     {
@@ -1113,16 +1133,6 @@
       "summary": "ガチャだいぶ回せる、恒常キャラいっぱいいる、イイね",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-476b45d6-3c9c-4121-a3d0-9bc4dc795c28",
       "author": "近藤さち",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-19T07:01:41",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 戦闘手応え、ガチャ仕様、ストーリー◯",
-      "summary": "戦闘手応え、ガチャ仕様、ストーリー◯",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a2cd690b-32c9-4485-8d10-4370fff8b9bd",
-      "author": "rarara peas",
       "engagement": 0
     }
   ]
