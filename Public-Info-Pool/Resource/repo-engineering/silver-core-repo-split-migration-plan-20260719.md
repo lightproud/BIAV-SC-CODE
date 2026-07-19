@@ -104,11 +104,11 @@
 
 1. ~~新建 `lightproud/BIAV-SC-DATA` 仓~~ **已建**（2026-07-19，空仓）；定可见性：随现状 public / 改 private 分级；
 2. 现仓 `brain-in-a-vat` → rename `BIAV-SC-CODE`（Settings）；
-3. **data 仓填充 deploy key（乙方案，阶段一）**：会话代理对 BIAV-SC-DATA 只读（写 403），
-   故走 deploy-key + CI 推送——(a) 生成 ed25519 keypair；(b) **公钥**加入 BIAV-SC-DATA →
-   Settings → Deploy keys（勾 **Allow write access**）；(c) **私钥**存 code 仓 secret
-   `BIAV_SC_DATA_DEPLOY_KEY`。配好后手动 `workflow_dispatch` `data-repo-sync.yml`（输 `MIGRATE` 确认）
-   即把 Record/Community 快照推进 data 仓。**私钥绝不经聊天/仓库**（lesson #3）。
+3. **data 仓填充 · 细粒度 PAT（乙方案，阶段一；守密人无本地环境，纯网页操作）**：会话代理对
+   BIAV-SC-DATA 只读（写 403），故走 PAT + CI 推送——(a) 建 fine-grained PAT（github.com/settings/tokens
+   → Fine-grained → Only select repositories: BIAV-SC-DATA → Repository permissions → Contents: Read and write）；
+   (b) 令牌存 code 仓 secret `BIAV_SC_DATA_TOKEN`（GitHub 令牌页直接贴进 secret 框，不经聊天，lesson #3）。
+   配好后 Actions → `data-repo-sync.yml` → Run（输 `MIGRATE`）即把 Record/Community 快照推进 data 仓。
 4. 两仓各配 Ruleset required 检查 + Release 权限；会话 repo scope 随之更新（现钉 brain-in-a-vat）。
 
 银芯侧可自动化的准备（现仓内、可逆）：桥接改造（P-0）、16 平台备份 workflow（P-1）、活引用改址脚本、
