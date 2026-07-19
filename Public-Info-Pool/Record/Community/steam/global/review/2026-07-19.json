@@ -1,8 +1,8 @@
 {
   "date": "2026-07-19",
-  "archived_at": "2026-07-19T02:30:25.668255+00:00",
+  "archived_at": "2026-07-19T05:52:47.982843+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] Cool art and nice, spooky atmosphere. Seems pretty...",
@@ -94,6 +94,54 @@
         "playtime_forever": 718,
         "votes_up": 0,
         "timestamp_created": 1784411576
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] this game is boring.   why do these games always h...",
+      "summary": "this game is boring.   why do these games always have the most dreadful tutorials like let me skip it and would be perfect game.",
+      "source": "steam_review",
+      "time": "2026-07-19T03:50:03+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198858394447/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198858394447",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 26,
+        "votes_up": 0,
+        "timestamp_created": 1784433003
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Its still a (((gacha))) but its good. Player MC is...",
+      "summary": "Its still a (((gacha))) but its good. Player MC is kind of stupid but I just skipped most of the dialogue and got into gameplay. Don't look up meta and build around whatever you want, unless you're that guy, you know, a meta guy. I am not a meta guy.",
+      "source": "steam_review",
+      "time": "2026-07-19T03:33:57+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198770029463/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198770029463",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 10345,
+        "votes_up": 0,
+        "timestamp_created": 1784432037
       },
       "region": "global",
       "archive_subtype": "review",

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-18",
-  "archived_at": "2026-07-19T02:30:25.502767+00:00",
+  "archived_at": "2026-07-19T05:52:47.927929+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "title": "器官。",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/966a45e77ceba123bfbf4df09cf053cee63362bb.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[忘却前夜]懂不懂100抽三启的狗运程度",
+      "summary": "└ 丨北极星光 (8赞): [笑哭]\n  └ 暴热神指 (4赞): [呲牙]\n  └ 寂榕 (2赞): 那个狂气天赋不要点，没有提升，点那个星辰篇灵塑适性提升大一点，还有爆发记得切怒涛",
+      "source": "bilibili",
+      "time": "2026-07-18T13:51:47+00:00",
+      "url": "https://www.bilibili.com/video/BV1mJKK6LEgF",
+      "engagement": 324,
+      "is_hot": false,
+      "author": "TAZex影",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 312,
+        "comment_count": 12,
+        "comments_fetched": 3,
+        "danmaku": 2
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/7319e07483c7db83315e03549f923b9c3997f3d9.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

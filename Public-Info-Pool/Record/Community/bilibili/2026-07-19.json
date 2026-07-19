@@ -1,9 +1,32 @@
 {
   "date": "2026-07-19",
-  "archived_at": "2026-07-19T02:30:25.503699+00:00",
+  "archived_at": "2026-07-19T05:52:47.928800+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
+    {
+      "title": "杀戮尖塔2-沙耶MOD_beta0.109更新一览",
+      "summary": "希望大家多多支持，反馈问题\n历经多个版本迭代，沙耶已经达成了超高的兼容性与极小的体积，仅占23mb！\n反馈q群：1053129817\n百度网盘下载链接：https://pan.baidu.com/s/1m9Ng5HE1xShu7J0P8h1Qnw?pwd=pfuc 提取码: pfuc\n夸克网盘下载链接：https://pan.quark.cn/s/db81f992dc7c?pwd=Qfcs\n  └ 迷路的鸠鸠 (1赞): [打call][巧克甜恋_加油]\n  └ 于天鱼 (0赞): [打call]\n  └ 是里克休比 (0赞): 卡面做的很好了，玩完感觉认知滤镜关不掉了。[doge]",
+      "source": "bilibili",
+      "time": "2026-07-19T04:26:42+00:00",
+      "url": "https://www.bilibili.com/video/BV1aKKB65EgY",
+      "engagement": 257,
+      "is_hot": false,
+      "author": "千导院枫",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 244,
+        "comment_count": 13,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/b764fa53084f925357de2ca064f887df6bf28ac2.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "100爆伤狂翻5倍?高配海茉夏有多夸张?",
       "summary": "-\n  └ 愛吃郭子的小孩 (1赞): 恐怖暗鼠吓哭我了[大哭]\n  └ 车轱辘轧脸上了 (0赞): 恐怖老头[大哭]\n  └ 幽缀 (0赞): 高配安卓佬有多夸张[大哭]",
@@ -46,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/409fb0310ebe0eccf5f35752785bbf00278243fe.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "神秘白衣少女",
+      "summary": "沙耶:依乃",
+      "source": "bilibili",
+      "time": "2026-07-19T02:54:47+00:00",
+      "url": "https://www.bilibili.com/video/BV1ryKv6DEwP",
+      "engagement": 43,
+      "is_hot": false,
+      "author": "世紀氷涙",
+      "tags": [
+        "宅舞"
+      ],
+      "metadata": {
+        "play": 43,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/fd049bb2d0ce433778e74a4b75bf6e538441290d.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

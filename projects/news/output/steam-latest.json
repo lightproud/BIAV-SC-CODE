@@ -1,10 +1,40 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-19T02:29:44.161142+00:00",
+  "collected_at": "2026-07-19T05:52:03.079841+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-19T03:50:03+00:00",
+      "lang": "english",
+      "title": "[负面] this game is boring.   why do these games always h...",
+      "summary": "this game is boring.   why do these games always have the most dreadful tutorials like let me skip it and would be perfect game.",
+      "url": "https://steamcommunity.com/profiles/76561198858394447/recommended/3052450",
+      "author": "76561198858394447",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "this game is boring.   why do these games always have the most dreadful tutorials like let me skip it and would be perfect game.",
+      "timestamp_created": 1784433003,
+      "playtime_forever": 26
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-19T03:33:57+00:00",
+      "lang": "english",
+      "title": "[正面] Its still a (((gacha))) but its good. Player MC is...",
+      "summary": "Its still a (((gacha))) but its good. Player MC is kind of stupid but I just skipped most of the dialogue and got into gameplay. Don't look up meta and build around whatever you want, unless you're that guy, you know, a meta guy. I am not a meta guy.",
+      "url": "https://steamcommunity.com/profiles/76561198770029463/recommended/3052450",
+      "author": "76561198770029463",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Its still a (((gacha))) but its good. Player MC is kind of stupid but I just skipped most of the dialogue and got into gameplay. Don't look up meta and build around whatever you want, unless you're that guy, you know, a meta guy. I am not a meta guy.",
+      "timestamp_created": 1784432037,
+      "playtime_forever": 10345
+    },
     {
       "source": "steam",
       "time": "2026-07-18T23:19:08+00:00",
@@ -33,7 +63,7 @@
       "voted_up": true,
       "review": "good",
       "timestamp_created": 1784411576,
-      "playtime_forever": 718
+      "playtime_forever": 808
     },
     {
       "source": "steam",
@@ -48,7 +78,7 @@
       "voted_up": true,
       "review": "Cool art and nice, spooky atmosphere. Seems pretty generous as well. The only real frustration is there are a LOT of different upgrade items, and the descriptions are not always helpful. If you're looking for a gacha game that isn't actiony, this is it.",
       "timestamp_created": 1784403527,
-      "playtime_forever": 904
+      "playtime_forever": 1008
     },
     {
       "source": "steam",
@@ -78,7 +108,7 @@
       "voted_up": true,
       "review": "好玩爱玩",
       "timestamp_created": 1784389897,
-      "playtime_forever": 1883
+      "playtime_forever": 2093
     },
     {
       "source": "steam",
@@ -93,7 +123,7 @@
       "voted_up": true,
       "review": "太好玩了我一口气狂玩六小时",
       "timestamp_created": 1784377911,
-      "playtime_forever": 416
+      "playtime_forever": 550
     },
     {
       "source": "steam",
