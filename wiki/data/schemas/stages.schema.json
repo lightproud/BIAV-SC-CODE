@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "stages.schema.json",
+  "title": "Morimens Stages",
+  "description": "Stage (关卡) and stage-group database for Morimens. Curated authoritative stage records with drop tables and reverse-index foreign keys, distinct from raw extraction in projects/wiki/data/processed/stages.json.",
+  "type": "object",
+  "required": ["description", "groups", "stages"],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/stage_group"
+      }
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/stage"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "drop_entry": {
+      "type": "object",
+      "required": ["item_id"],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "description": "Foreign key to items.json item id"
+        },
+        "drop_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Probability of dropping per clear (0-1)"
+        },
+        "quantity_min": { "type": "integer", "minimum": 0 },
+        "quantity_max": { "type": "integer", "minimum": 0 },
+        "guaranteed": {
+          "type": "boolean",
+          "description": "True for first-clear and milestone rewards"
+        }
+      },
+      "additionalProperties": false
+    },
+    "enemy_ref": {
+      "type": "object",
+      "required": ["enemy_id"],
+      "properties": {
+        "enemy_id": { "type": "string" },
+        "name": { "type": "string" },
+        "count": { "type": "integer", "minimum": 1 },
+        "is_boss": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "stage_group": {
+      "type": "object",
+      "required": ["id", "name", "type"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Numeric group id mirroring source extraction"
+        },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "desc": { "type": "string" },
+        "type": {
+          "type": "string",
+          "description": "Group classification: 幻梦深潜 / 怪雾之都 / 混沌之域 / 主线 / 活动 / 其他"
+        },
+        "reward_desc": { "type": "string" },
+        "stage_ids": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "description": "Foreign keys to stages[].id within this file"
+        },
+        "unlock_condition": { "type": "string" },
+        "lore": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "stage": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Numeric stage id mirroring source extraction"
+        },
+        "group_id": {
+          "type": "integer",
+          "description": "Foreign key to stage_group.id"
+        },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "desc": { "type": "string" },
+        "stamina_cost": { "type": "integer", "minimum": 0 },
+        "recommended_level": { "type": "integer", "minimum": 1 },
+        "enemies": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/enemy_ref" }
+        },
+        "drops": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/drop_entry" }
+        },
+        "first_clear_rewards": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/drop_entry" }
+        },
+        "lore": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

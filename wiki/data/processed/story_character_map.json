@@ -1,0 +1,343 @@
+{
+  "_meta": {
+    "source": "CollectionHall.lua",
+    "method": "Title 直接匹配角色名",
+    "generated": "2026-06-16",
+    "total_entries": 1026,
+    "note": "CollectionHall 多数为世界观/物品 lore,非角色归属;此处仅抽出角色小传",
+    "fills_gap": "world_lore.json(CollectionHall 提取)by_category.characters=0,未能归类任何角色小传;本文件用 Title==角色名补出这 55 条角色传记条目",
+    "relation_to_voice_map": "voice_character_map.json 已覆盖语音侧角色关系(含 about 八卦);本文件仅处理 CollectionHall 故事侧,无重复"
+  },
+  "assigned": [
+    {
+      "id": 48636,
+      "character": "塔薇",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 51375,
+      "character": "拉蒙娜",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57597,
+      "character": "萨尔瓦多",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57598,
+      "character": "图鲁",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57600,
+      "character": "弥利亚姆",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57602,
+      "character": "萝坦",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57603,
+      "character": "杜勒赛因",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57604,
+      "character": "旺达",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57605,
+      "character": "菲茵特",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57606,
+      "character": "凯蒂古拉",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57607,
+      "character": "熔毁·朵尔",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57608,
+      "character": "汀克特",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57609,
+      "character": "朵尔",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57610,
+      "character": "温柯尔",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57611,
+      "character": "达芙黛尔",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57612,
+      "character": "卡茜亚",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57613,
+      "character": "环行·拉蒙娜",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57614,
+      "character": "奥尔拉",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57615,
+      "character": "泰旖丝",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57629,
+      "character": "法洛思",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57630,
+      "character": "奥吉尔",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57631,
+      "character": "莉兹",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57632,
+      "character": "血链·希洛",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57634,
+      "character": "戈利亚",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57635,
+      "character": "希洛",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57637,
+      "character": "艾尔瓦",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57638,
+      "character": "尤乌哈希",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57639,
+      "character": "索蕾尔",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57640,
+      "character": "阿格里帕",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57641,
+      "character": "希莱斯特",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57642,
+      "character": "珊",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57643,
+      "character": "珈伦",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57644,
+      "character": "潘狄娅",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57649,
+      "character": "凯刻斯",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57650,
+      "character": "雷娅",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57651,
+      "character": "「24」",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57652,
+      "character": "莉莉",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57654,
+      "character": "艾继丝",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57716,
+      "character": "艾瑞卡",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57718,
+      "character": "克莱门汀",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 57720,
+      "character": "诺缔拉",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 58148,
+      "character": "墨菲",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 59454,
+      "character": "奥瑞塔",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 59455,
+      "character": "莱克",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 59456,
+      "character": "宁菲亚",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 62184,
+      "character": "哈姆林",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 65509,
+      "character": "詹金",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 89706,
+      "character": "克珀珊特",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 90416,
+      "character": "卡斯托尔",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 94553,
+      "character": "波吕克斯",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 100442,
+      "character": "皮克曼",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 121341,
+      "character": "诞妄·墨菲",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 124844,
+      "character": "茉夏",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 126989,
+      "character": "徐",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    },
+    {
+      "id": 129601,
+      "character": "莫丝",
+      "desc": "<Title:简介>",
+      "confidence": "anchored_title"
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "characters.schema.json",
+  "title": "Morimens Characters",
+  "description": "Awakener (唤醒体) database for Morimens. Top-level shape is a flat array of character records. Each character may currently carry stub-state placeholders ('pending') for fields that are scheduled to be enriched in later wiki phases (skills, trinkets, commune, ascension_materials, etc.). Schema accepts both stub and structured forms via anyOf, so validation passes during the multi-phase data fill.",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/character"
+  },
+  "$defs": {
+    "portraits": {
+      "type": "object",
+      "required": ["default", "awaker", "skins"],
+      "properties": {
+        "default": { "type": ["string", "null"] },
+        "awaker": { "type": ["string", "null"] },
+        "skins": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["extracted_from", "extracted_at"],
+      "properties": {
+        "extracted_from": { "type": "string" },
+        "extracted_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "game_version": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "duplicate_bug": {
+      "type": "object",
+      "required": ["duplicate_of", "note", "ruled_by"],
+      "properties": {
+        "duplicate_of": { "type": "string" },
+        "note": { "type": "string" },
+        "ruled_by": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "command_card_upgrade": {
+      "type": "object",
+      "required": ["name", "effect"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "effect": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "command_card": {
+      "type": "object",
+      "required": ["name", "effect"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "cost": {
+          "anyOf": [
+            { "type": "integer", "minimum": 0 },
+            { "type": "string" }
+          ]
+        },
+        "effect": { "type": "string" },
+        "note": { "type": "string" },
+        "upgrades": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/command_card_upgrade" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "level_effect_entry": {
+      "type": "object",
+      "required": ["level", "value"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "value": { "type": ["string", "number"] },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "skill_entry": {
+      "type": "object",
+      "required": ["name", "effect"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "effect": { "type": "string" },
+        "cost": { "type": "integer" },
+        "charge": { "type": "integer", "minimum": 0 },
+        "cooldown": { "type": "integer", "minimum": 0 },
+        "note": { "type": "string" },
+        "scaling": { "type": "string" },
+        "level_effects": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/level_effect_entry" },
+          "minItems": 0,
+          "maxItems": 10,
+          "description": "Per-level effect values (1-10). Optional; populated when Mooncell-style level table is available."
+        },
+        "upgrade_materials_per_level": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/material_quantity" }
+          },
+          "minItems": 0,
+          "maxItems": 9,
+          "description": "Materials required for each upgrade step (Lv1->2, Lv2->3, ..., Lv9->10)."
+        }
+      },
+      "additionalProperties": false
+    },
+    "enlighten_entry": {
+      "type": "object",
+      "required": ["level", "name", "effect"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "effect": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "skills_object": {
+      "type": "object",
+      "properties": {
+        "command_cards": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/command_card" }
+        },
+        "command_cards_note": { "type": "string" },
+        "rouse": { "$ref": "#/$defs/skill_entry" },
+        "exalt": { "$ref": "#/$defs/skill_entry" },
+        "overexalt": { "$ref": "#/$defs/skill_entry" },
+        "enlighten": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/enlighten_entry" }
+        },
+        "talent": { "$ref": "#/$defs/skill_entry" },
+        "role_in_team": { "type": "string" },
+        "special_mechanic": {
+          "anyOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "required": ["name", "description"],
+              "properties": {
+                "name": { "type": "string" },
+                "name_en": { "type": "string" },
+                "description": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "build_notes": {
+          "anyOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          ]
+        },
+        "gameplay_notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "trinkets_owned_object": {
+      "type": "object",
+      "properties": {
+        "set_name": { "type": "string" },
+        "pieces": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "effect_summary": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "commune_object": {
+      "type": "object",
+      "properties": {
+        "summary": { "type": "string" },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["stage", "effect"],
+            "properties": {
+              "stage": { "type": "integer", "minimum": 1 },
+              "name": { "type": "string" },
+              "effect": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "trinket_recommendation": {
+      "type": "object",
+      "required": ["trinket_id"],
+      "properties": {
+        "trinket_id": {
+          "type": "string",
+          "description": "Foreign key to trinkets.json"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["BiS", "alt", "budget"]
+        },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "material_quantity": {
+      "type": "object",
+      "required": ["item_id", "quantity"],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "description": "Foreign key to items.json"
+        },
+        "quantity": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "ascension_materials": {
+      "type": "object",
+      "properties": {
+        "stage_1": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/material_quantity" }
+        },
+        "stage_2": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/material_quantity" }
+        },
+        "stage_3": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/material_quantity" }
+        },
+        "stage_4": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/material_quantity" }
+        },
+        "total": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/material_quantity" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "bond_reward": {
+      "type": "object",
+      "required": ["level", "unlocks"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 1 },
+        "unlocks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "stat_growth_point": {
+      "type": "object",
+      "required": ["level"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 1 },
+        "atk": { "type": "number" },
+        "hp": { "type": "number" },
+        "defense": { "type": "number" },
+        "speed": { "type": "number" },
+        "extras": {
+          "type": "object",
+          "additionalProperties": { "type": "number" },
+          "description": "Free-form bag for game-specific stat dimensions (TBD pending producer confirmation)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "stat_growth_curve": {
+      "type": "object",
+      "required": ["levels"],
+      "properties": {
+        "levels": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stat_growth_point" }
+        },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "affinities": {
+      "type": "object",
+      "properties": {
+        "traits": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "super_effective_against": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "weak_against": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "character": {
+      "type": "object",
+      "required": [
+        "id",
+        "slug",
+        "name_zh",
+        "title_zh",
+        "gender",
+        "voice_actor",
+        "painter",
+        "characteristic",
+        "skills",
+        "trinkets",
+        "commune",
+        "background_story",
+        "portraits",
+        "source",
+        "last_verified",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[0-9]{5,6}$"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "name_zh": { "type": "string" },
+        "name_en": { "type": ["string", "null"] },
+        "name_en_source": { "type": ["string", "null"] },
+        "name_ja": { "type": ["string", "null"] },
+        "name_ja_source": { "type": ["string", "null"] },
+        "title_zh": { "type": "string" },
+        "title_en": { "type": ["string", "null"] },
+        "realm": {
+          "type": ["string", "null"],
+          "enum": [null, "chaos", "aequor", "caro", "ultra"]
+        },
+        "role": {
+          "type": ["string", "null"]
+        },
+        "rarity": {
+          "type": "string",
+          "enum": ["SSR", "SR", "R"]
+        },
+        "gender": { "type": "string" },
+        "age": { "type": "string" },
+        "height": { "type": "string" },
+        "weight": { "type": "string" },
+        "gi": { "type": "string" },
+        "voice_actor": { "type": "string" },
+        "painter": { "type": "string" },
+        "introduction": { "type": ["string", "null"] },
+        "awaker_introduction": { "type": ["string", "null"] },
+        "characteristic": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "summon_slogan": { "type": ["string", "null"] },
+        "skills": {
+          "anyOf": [
+            { "const": "pending" },
+            { "$ref": "#/$defs/skills_object" }
+          ]
+        },
+        "trinkets": {
+          "anyOf": [
+            { "const": "pending" },
+            { "$ref": "#/$defs/trinkets_owned_object" }
+          ]
+        },
+        "commune": {
+          "anyOf": [
+            { "const": "pending" },
+            { "$ref": "#/$defs/commune_object" }
+          ]
+        },
+        "background_story": {
+          "anyOf": [
+            { "const": "pending" },
+            { "type": "string" }
+          ]
+        },
+        "portraits": { "$ref": "#/$defs/portraits" },
+        "duplicate_bug": {
+          "anyOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/duplicate_bug" }
+          ]
+        },
+        "source": { "$ref": "#/$defs/source" },
+        "last_verified": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["stub", "partial", "complete", "fixture"],
+          "description": "stub = bare extraction, partial = some fields filled, complete = canonical, fixture = synthesized data for component prototyping (NOT canonical, must be replaced before Phase 5)"
+        },
+        "trinkets_recommended": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/trinket_recommendation" },
+          "description": "Mooncell-target field: BiS / alt / budget trinket recommendations"
+        },
+        "ascension_materials": {
+          "$ref": "#/$defs/ascension_materials",
+          "description": "Mooncell-target field: stage_1..stage_4 + total material requirements"
+        },
+        "bond_rewards": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/bond_reward" },
+          "description": "Mooncell-target field: per-bond-level unlocks"
+        },
+        "stat_growth_curve": {
+          "$ref": "#/$defs/stat_growth_curve",
+          "description": "Mooncell-target field: per-level stat samples"
+        },
+        "affinities": {
+          "$ref": "#/$defs/affinities",
+          "description": "Mooncell-target field: traits / super-effective / weak-against"
+        },
+        "voice_line_refs": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "description": "Mooncell-target field: cross-reference to voice_lines.json line ids"
+        },
+        "cg_refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Mooncell-target field: cross-reference to cg_gallery.json image names"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

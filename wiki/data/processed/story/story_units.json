@@ -1,0 +1,450 @@
+{
+  "_meta": {
+    "purpose": "剧情单元脊柱:序章 / 调查行动主线 / 星辰篇 / 意识潜游",
+    "types": "prologue, main_chapter, star_chapter(星辰篇), mind_dive",
+    "note": "mind_dive 的 order 按首条 lore id 近似;star_chapter 为第二剧情弧",
+    "total_units": 31,
+    "generated": "2026-06-21"
+  },
+  "units": [
+    {
+      "unit": "序章",
+      "type": "prologue",
+      "chapter_no": 0,
+      "short_name": "序章",
+      "lore_count": 7,
+      "first_lore_id": 48616,
+      "order": 0,
+      "stage_group_ids": [],
+      "stage_group_count": 0
+    },
+    {
+      "unit": "调查行动第1章「东区秘事」",
+      "type": "main_chapter",
+      "chapter_no": 1,
+      "short_name": "东区秘事",
+      "lore_count": 37,
+      "first_lore_id": 48609,
+      "order": 1,
+      "stage_group_ids": [
+        15896,
+        15917,
+        15927
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动第2章「以蜡像之名」",
+      "type": "main_chapter",
+      "chapter_no": 2,
+      "short_name": "以蜡像之名",
+      "lore_count": 53,
+      "first_lore_id": 48619,
+      "order": 2,
+      "stage_group_ids": [
+        15895,
+        15901,
+        15918
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动第3章「谨防恶犬」",
+      "type": "main_chapter",
+      "chapter_no": 3,
+      "short_name": "谨防恶犬",
+      "lore_count": 24,
+      "first_lore_id": 49764,
+      "order": 3,
+      "stage_group_ids": [
+        15906,
+        15913,
+        15922
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动第4章「于无声处」",
+      "type": "main_chapter",
+      "chapter_no": 4,
+      "short_name": "于无声处",
+      "lore_count": 22,
+      "first_lore_id": 49759,
+      "order": 4,
+      "stage_group_ids": [
+        15882,
+        15921,
+        15925
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动第5章「风暴之眼」",
+      "type": "main_chapter",
+      "chapter_no": 5,
+      "short_name": "风暴之眼",
+      "lore_count": 19,
+      "first_lore_id": 49758,
+      "order": 5,
+      "stage_group_ids": [
+        15905,
+        15907,
+        15919
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动第6章「倒错的群星」",
+      "type": "main_chapter",
+      "chapter_no": 6,
+      "short_name": "倒错的群星",
+      "lore_count": 17,
+      "first_lore_id": 49104,
+      "order": 6,
+      "stage_group_ids": [
+        15890,
+        15920,
+        15946
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动第7章「欲河」",
+      "type": "main_chapter",
+      "chapter_no": 7,
+      "short_name": "欲河",
+      "lore_count": 26,
+      "first_lore_id": 49740,
+      "order": 7,
+      "stage_group_ids": [
+        48868,
+        48869,
+        48870
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动第8章「终末交响曲」",
+      "type": "main_chapter",
+      "chapter_no": 8,
+      "short_name": "终末交响曲",
+      "lore_count": 11,
+      "first_lore_id": 51409,
+      "order": 8,
+      "stage_group_ids": [
+        58900,
+        58904,
+        58906
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动第9章「长梦尽时」",
+      "type": "main_chapter",
+      "chapter_no": 9,
+      "short_name": "长梦尽时",
+      "lore_count": 33,
+      "first_lore_id": 70283,
+      "order": 9,
+      "stage_group_ids": [
+        67785,
+        67786,
+        67787
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "调查行动星辰篇第1章「重临雾都」",
+      "type": "star_chapter",
+      "chapter_no": 1,
+      "short_name": "重临雾都",
+      "lore_count": 12,
+      "first_lore_id": 51444,
+      "order": 10,
+      "stage_group_ids": [
+        70939,
+        72075
+      ],
+      "stage_group_count": 2
+    },
+    {
+      "unit": "调查行动星辰篇第2章「蜕变」",
+      "type": "star_chapter",
+      "chapter_no": 2,
+      "short_name": "蜕变",
+      "lore_count": 14,
+      "first_lore_id": 51445,
+      "order": 11,
+      "stage_group_ids": [
+        70938,
+        72074
+      ],
+      "stage_group_count": 2
+    },
+    {
+      "unit": "调查行动星辰篇第3章「餍飨」",
+      "type": "star_chapter",
+      "chapter_no": 3,
+      "short_name": "餍飨",
+      "lore_count": 14,
+      "first_lore_id": 51440,
+      "order": 12,
+      "stage_group_ids": [
+        70940,
+        72073
+      ],
+      "stage_group_count": 2
+    },
+    {
+      "unit": "调查行动星辰篇第4章「乐园」",
+      "type": "star_chapter",
+      "chapter_no": 4,
+      "short_name": "乐园",
+      "lore_count": 25,
+      "first_lore_id": 51423,
+      "order": 13,
+      "stage_group_ids": [
+        118157,
+        118158
+      ],
+      "stage_group_count": 2
+    },
+    {
+      "unit": "意识潜游「一步之遥：似雨之泪」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "一步之遥：似雨之泪",
+      "lore_count": 1,
+      "first_lore_id": 48625,
+      "order": 14,
+      "stage_group_ids": [],
+      "stage_group_count": 0
+    },
+    {
+      "unit": "意识潜游「燃烧的群宴」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "燃烧的群宴",
+      "lore_count": 7,
+      "first_lore_id": 57604,
+      "order": 15,
+      "stage_group_ids": [
+        36625,
+        36626,
+        36627
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「不朽极昼」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "不朽极昼",
+      "lore_count": 6,
+      "first_lore_id": 57606,
+      "order": 16,
+      "stage_group_ids": [
+        95184
+      ],
+      "stage_group_count": 1
+    },
+    {
+      "unit": "意识潜游「一步之遥」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "一步之遥",
+      "lore_count": 8,
+      "first_lore_id": 57613,
+      "order": 17,
+      "stage_group_ids": [
+        24552,
+        24553,
+        24554
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「巨人的陨落」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "巨人的陨落",
+      "lore_count": 6,
+      "first_lore_id": 57628,
+      "order": 18,
+      "stage_group_ids": [
+        43515,
+        43516,
+        43517
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「骑士的愿望」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "骑士的愿望",
+      "lore_count": 5,
+      "first_lore_id": 57630,
+      "order": 19,
+      "stage_group_ids": [
+        20449,
+        20452,
+        20454
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「血与沙」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "血与沙",
+      "lore_count": 5,
+      "first_lore_id": 57638,
+      "order": 20,
+      "stage_group_ids": [
+        15888,
+        15923,
+        15960
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「苍白后裔」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "苍白后裔",
+      "lore_count": 7,
+      "first_lore_id": 57640,
+      "order": 21,
+      "stage_group_ids": [
+        20446,
+        20450,
+        20453
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「如歌的雕琢」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "如歌的雕琢",
+      "lore_count": 5,
+      "first_lore_id": 57642,
+      "order": 22,
+      "stage_group_ids": [
+        20222,
+        20223,
+        20224
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「扭曲核心」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "扭曲核心",
+      "lore_count": 5,
+      "first_lore_id": 57716,
+      "order": 23,
+      "stage_group_ids": [
+        20447,
+        20448,
+        20451
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「诸事如常」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "诸事如常",
+      "lore_count": 5,
+      "first_lore_id": 59454,
+      "order": 24,
+      "stage_group_ids": [
+        35544,
+        35545,
+        35546
+      ],
+      "stage_group_count": 3
+    },
+    {
+      "unit": "意识潜游「最后的引航」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "最后的引航",
+      "lore_count": 5,
+      "first_lore_id": 84328,
+      "order": 25,
+      "stage_group_ids": [
+        81262
+      ],
+      "stage_group_count": 1
+    },
+    {
+      "unit": "意识潜游「畸世绘」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "畸世绘",
+      "lore_count": 7,
+      "first_lore_id": 97208,
+      "order": 26,
+      "stage_group_ids": [
+        96834
+      ],
+      "stage_group_count": 1
+    },
+    {
+      "unit": "意识潜游「天边之外·下」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "天边之外·下",
+      "lore_count": 1,
+      "first_lore_id": 117621,
+      "order": 27,
+      "stage_group_ids": [
+        99734
+      ],
+      "stage_group_count": 1
+    },
+    {
+      "unit": "意识潜游「加冕之日」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "加冕之日",
+      "lore_count": 4,
+      "first_lore_id": 121383,
+      "order": 28,
+      "stage_group_ids": [
+        71850
+      ],
+      "stage_group_count": 1
+    },
+    {
+      "unit": "意识潜游「扇下夜谈」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "扇下夜谈",
+      "lore_count": 10,
+      "first_lore_id": 126906,
+      "order": 29,
+      "stage_group_ids": [
+        125338
+      ],
+      "stage_group_count": 1
+    },
+    {
+      "unit": "意识潜游「沉溺」",
+      "type": "mind_dive",
+      "chapter_no": null,
+      "short_name": "沉溺",
+      "lore_count": 1,
+      "first_lore_id": 131663,
+      "order": 30,
+      "stage_group_ids": [
+        130895
+      ],
+      "stage_group_count": 1
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "meta.schema.json",
+  "title": "Morimens Wiki Meta",
+  "description": "Game metadata for Morimens wiki",
+  "type": "object",
+  "required": [
+    "version",
+    "game",
+    "game_en",
+    "game_alt",
+    "developer",
+    "publisher",
+    "genre",
+    "platforms",
+    "steam_app_id",
+    "launch_dates",
+    "description",
+    "description_en",
+    "current_version",
+    "updated_at"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Schema version in semver format"
+    },
+    "game": {
+      "type": "string",
+      "description": "Game name in Chinese"
+    },
+    "game_en": {
+      "type": "string",
+      "description": "Game name in English"
+    },
+    "game_alt": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alternative game names"
+    },
+    "developer": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "genre": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "platforms": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "steam_app_id": {
+      "type": "integer"
+    },
+    "steam_app_id_jp": {
+      "type": "integer"
+    },
+    "launch_dates": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "realm_names_en": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "description": {
+      "type": "string"
+    },
+    "description_en": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "current_version": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Last updated date in YYYY-MM-DD format"
+    },
+    "wiki_urls": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "community_urls": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  },
+  "additionalProperties": false
+}
