@@ -1,8 +1,8 @@
 {
   "date": "2026-07-18",
-  "archived_at": "2026-07-19T10:28:23.062869+00:00",
+  "archived_at": "2026-07-19T13:15:16.722361+00:00",
   "source": "bilibili",
-  "item_count": 15,
+  "item_count": 16,
   "items": [
     {
       "title": "器官。",
@@ -138,6 +138,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/978cc5437070dbaa4d2df3431ddbee10e3990539.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "《爹系校猫喜欢吗》",
+      "summary": "爹系校猫喜欢吗？\n喜欢吗？\n说话！\n68的盲盒\n忘却前夜想赚钱\n  └ 寒末殇燕灵 (0赞): 校猫的爹系的意思其实是没马[doge]",
+      "source": "bilibili",
+      "time": "2026-07-18T14:32:29+00:00",
+      "url": "https://www.bilibili.com/video/BV1nvKK6NEud",
+      "engagement": 112,
+      "is_hot": false,
+      "author": "苍露曦cat",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 111,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/c0477464fbb5a68f30545f64d2886ff689dbdf11.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
