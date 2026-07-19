@@ -2,13 +2,12 @@ name: Sync Community archive to BIAV-SC-DATA
 
 # 把社区全量档案 Record/Community 从 BIAV-SC-CODE（本仓）推进数据仓 BIAV-SC-DATA。
 # 分仓（T62）阶段一：快照导入 + 可重跑镜像同步（rsync --delete 使 data 仓 Community 与本仓逐字节一致）。
-# 跑在 GitHub Actions 基础设施（~14G 盘，不占会话磁盘），经 BIAV-SC-DATA 写权限 deploy key 推送。
+# 跑在 GitHub Actions 基础设施（~14G 盘，不占会话磁盘），经细粒度 PAT（HTTPS）推送。
 # 仅 workflow_dispatch 手动触发 + confirm 门，绝不自动跑；只读本仓、只写 data 仓（不改本仓）。
 #
-# 前置（守密人一次性配好，见迁移计划）：
-#   1. 生成 ed25519 keypair；
-#   2. 公钥加入 BIAV-SC-DATA → Settings → Deploy keys（勾 Allow write access）；
-#   3. 私钥存本仓 secret：BIAV_SC_DATA_DEPLOY_KEY。
+# 前置（守密人一次性网页配好，无需本地环境，见迁移计划）：
+#   1. 建 fine-grained PAT：Only select repositories → BIAV-SC-DATA，Repository permissions → Contents: Read and write；
+#   2. 令牌存本仓 secret：BIAV_SC_DATA_TOKEN。
 
 on:
   workflow_dispatch:
@@ -19,7 +18,7 @@ on:
         default: ''
 
 permissions:
-  contents: read   # 只读本仓；写 data 仓走 deploy key，不用 GITHUB_TOKEN
+  contents: read   # 只读本仓；写 data 仓走细粒度 PAT，不用 GITHUB_TOKEN
 
 concurrency:
   group: data-repo-sync
@@ -39,22 +38,21 @@ jobs:
           sparse-checkout-cone-mode: true
           path: code-repo
 
-      - name: 装配 BIAV-SC-DATA 写 deploy key
+      - name: Clone BIAV-SC-DATA（细粒度 PAT / HTTPS）
         env:
-          DEPLOY_KEY: ${{ secrets.BIAV_SC_DATA_DEPLOY_KEY }}
+          DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
         run: |
           set -euo pipefail
-          if [ -z "${DEPLOY_KEY:-}" ]; then
-            echo "::error::secret BIAV_SC_DATA_DEPLOY_KEY 未配置——守密人须先加 deploy key + secret"
+          if [ -z "${DATA_TOKEN:-}" ]; then
+            echo "::error::secret BIAV_SC_DATA_TOKEN 未配置——守密人须先建细粒度 PAT + secret"
             exit 1
           fi
-          mkdir -p ~/.ssh
-          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
-
-      - name: Clone BIAV-SC-DATA
-        run: git clone git@github.com:lightproud/BIAV-SC-DATA.git data-repo
+          # 令牌走 credential store（不落 remote URL、不入 git config，防 git remote -v 泄漏）；
+          # 先设凭据再 clone，故私有 data 仓 clone 与后续 push 均认证。
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
+          chmod 600 ~/.git-credentials
+          git clone https://github.com/lightproud/BIAV-SC-DATA.git data-repo
 
       - name: 快照镜像 Record/Community → data 仓
         run: |
