@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-18",
+  "generated": "2026-07-19",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 365,
-    "edges": 428,
-    "terms": 6534,
+    "concepts": 366,
+    "edges": 420,
+    "terms": 6550,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 132,
+      "documentation": 133,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 103,
+      "resource": 104,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 231
+      "search": 232
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 103
+      "count": 104
     },
     "sources": {
       "index": "/sources/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 33
+      "degree": 36
     },
     "/characters/130375.md": {
       "type": "character",
@@ -394,7 +394,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 11
+      "degree": 7
     },
     "/characters/15564.md": {
       "type": "character",
@@ -422,7 +422,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/15566.md": {
       "type": "character",
@@ -451,7 +451,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/15568.md": {
       "type": "character",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 6
     },
     "/characters/15577.md": {
       "type": "character",
@@ -592,7 +592,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/15578.md": {
       "type": "character",
@@ -648,7 +648,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 8
     },
     "/characters/15582.md": {
       "type": "character",
@@ -732,7 +732,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 5
     },
     "/characters/15588.md": {
       "type": "character",
@@ -817,7 +817,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 9
     },
     "/characters/15594.md": {
       "type": "character",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 100
+      "degree": 101
     },
     "/characters/15604.md": {
       "type": "character",
@@ -972,7 +972,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/54116.md": {
       "type": "character",
@@ -1070,7 +1070,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 8
     },
     "/characters/77921.md": {
       "type": "character",
@@ -1098,7 +1098,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77923.md": {
       "type": "character",
@@ -1140,7 +1140,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77926.md": {
       "type": "character",
@@ -1239,7 +1239,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1436,7 +1436,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/community/community-stopgame.md": {
       "type": "dataset",
@@ -1492,7 +1492,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 14
+      "degree": 11
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -3440,6 +3440,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md": {
+      "type": "documentation",
+      "title": "data-layer-detachment-evaluation-20260719",
+      "description": "KIMI3 静态审查判「主仓同时承担源码 + 事实档案 + 社区数据 + AI 指令 + 发布流水线」为最大战略风险，（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/data-layer-detachment-evaluation-20260719.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-proposal-discord-layout-unification-20260710.md": {
       "type": "documentation",
       "title": "discord-layout-unification-20260710",
@@ -4423,7 +4437,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 210 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 234 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4437,7 +4451,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2940 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2944 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4465,7 +4479,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 2253 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 2256 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4549,7 +4563,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5237 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5243 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4558,12 +4572,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 115 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 118 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4572,12 +4586,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 90 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 91 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4605,7 +4619,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1647 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1704 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4619,7 +4633,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10544 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10587 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4628,12 +4642,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 14
+      "degree": 11
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10772 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10832 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4647,7 +4661,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2938 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2943 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5251,6 +5265,11 @@
         "mention"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-google-play.md",
         "提及:Saya",
         "mention"
@@ -5267,7 +5286,7 @@
       ],
       [
         "/community/community-steam.md",
-        "提及:Saya",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -5371,6 +5390,11 @@
         "mention"
       ],
       [
+        "/sources/bilibili.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/sources/google_play.md",
         "提及:Saya",
         "mention"
@@ -5387,6 +5411,11 @@
       ],
       [
         "/sources/steam.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/sources/steam_discussion.md",
         "提及:Saya",
         "mention"
       ],
@@ -5518,16 +5547,6 @@
         "cv"
       ],
       [
-        "/community/community-steam.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/community/community-weibo.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
         "/memory/memory-ext-lessons-archive.md",
         "提及:图鲁",
         "mention"
@@ -5549,16 +5568,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/sources/steam.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:图鲁",
         "mention"
       ],
@@ -5592,17 +5601,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:诺缔拉",
-        "mention"
-      ],
-      [
         "/memory/morimens-context.md",
-        "提及:诺缔拉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:诺缔拉",
         "mention"
       ]
@@ -5651,17 +5650,7 @@
         "cv"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:血链·希洛",
-        "mention"
-      ],
-      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
-        "提及:血链·希洛",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:血链·希洛",
         "mention"
       ],
@@ -5884,11 +5873,6 @@
         "variant"
       ],
       [
-        "/community/community-steam.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:墨菲",
         "mention"
@@ -5900,11 +5884,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/sources/steam.md",
         "提及:墨菲",
         "mention"
       ],
@@ -5926,22 +5905,12 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:菲茵特",
-        "mention"
-      ],
-      [
         "/memory/morimens-context.md",
         "提及:菲茵特",
         "mention"
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:菲茵特",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:菲茵特",
         "mention"
       ]
@@ -6057,6 +6026,11 @@
     ],
     "/characters/15581.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
         "/community/community-youtube-comments.md",
         "提及:莉莉",
         "mention"
@@ -6073,6 +6047,11 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:莉莉",
         "mention"
       ],
@@ -6187,22 +6166,12 @@
         "mention"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
         "/resource/resource-intel-weekly-morimens-intel-20260712.md",
         "提及:希洛",
         "mention"
       ],
       [
         "/sources/bahamut.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:希洛",
         "mention"
       ]
@@ -6307,6 +6276,11 @@
         "mention"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
         "/memory/decisions-archive.md",
         "提及:詹金",
         "mention"
@@ -6323,6 +6297,11 @@
       ],
       [
         "/sources/steam.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:詹金",
         "mention"
       ]
@@ -6885,6 +6864,11 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-discord-layout-unification-20260710.md",
         "提及:艾瑞卡",
         "mention"
@@ -7037,7 +7021,17 @@
     ],
     "/characters/15604.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:莱克",
         "mention"
       ]
@@ -7181,11 +7175,6 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:阿拉克涅",
         "mention"
@@ -7207,11 +7196,6 @@
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:阿拉克涅",
         "mention"
       ],
@@ -7245,17 +7229,7 @@
         "mention"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:克珀珊特",
-        "mention"
-      ],
-      [
         "/sources/bahamut.md",
-        "提及:克珀珊特",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:克珀珊特",
         "mention"
       ]
@@ -7274,17 +7248,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:克莱门汀",
-        "mention"
-      ],
-      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:克莱门汀",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:克莱门汀",
         "mention"
       ],
@@ -7358,12 +7322,22 @@
     ],
     "/characters/94450.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
         "/community/community-youtube-comments.md",
         "提及:茉夏",
         "mention"
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -7448,21 +7422,6 @@
         "mention"
       ],
       [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/77925.md",
-        "提及:克莱门汀",
-        "mention"
-      ],
-      [
-        "/characters/15565.md",
-        "提及:诺缔拉",
-        "mention"
-      ],
-      [
         "/characters/15574.md",
         "提及:汀克特",
         "mention"
@@ -7470,11 +7429,6 @@
       [
         "/characters/15575.md",
         "提及:法洛思",
-        "mention"
-      ],
-      [
-        "/characters/15577.md",
-        "提及:菲茵特",
         "mention"
       ],
       [
@@ -7500,6 +7454,26 @@
       [
         "/characters/15593.md",
         "提及:詹金",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/characters/15604.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -7694,23 +7668,13 @@
     ],
     "/community/community-steam.md": [
       [
-        "/characters/15563.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/characters/15576.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/characters/15593.md",
         "提及:詹金",
         "mention"
       ],
       [
         "/characters/130226.md",
-        "提及:Saya",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -7750,11 +7714,6 @@
     ],
     "/community/community-weibo.md": [
       [
-        "/characters/15567.md",
-        "提及:血链·希洛",
-        "mention"
-      ],
-      [
         "/characters/15582.md",
         "提及:弥利亚姆",
         "mention"
@@ -7775,18 +7734,8 @@
         "mention"
       ],
       [
-        "/characters/77922.md",
-        "提及:克珀珊特",
-        "mention"
-      ],
-      [
         "/characters/54117.md",
         "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/characters/15563.md",
-        "提及:图鲁",
         "mention"
       ],
       [
@@ -7795,8 +7744,8 @@
         "mention"
       ],
       [
-        "/characters/15587.md",
-        "提及:希洛",
+        "/characters/15593.md",
+        "提及:詹金",
         "mention"
       ],
       [
@@ -9067,6 +9016,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-discord-layout-unification-20260710.md": [
       [
         "/characters/15603.md",
@@ -9347,21 +9303,6 @@
         "mention"
       ],
       [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/77925.md",
-        "提及:克莱门汀",
-        "mention"
-      ],
-      [
-        "/characters/15565.md",
-        "提及:诺缔拉",
-        "mention"
-      ],
-      [
         "/characters/15574.md",
         "提及:汀克特",
         "mention"
@@ -9369,11 +9310,6 @@
       [
         "/characters/15575.md",
         "提及:法洛思",
-        "mention"
-      ],
-      [
-        "/characters/15577.md",
-        "提及:菲茵特",
         "mention"
       ],
       [
@@ -9399,6 +9335,26 @@
       [
         "/characters/15593.md",
         "提及:詹金",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/characters/15604.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -9513,23 +9469,13 @@
     ],
     "/sources/steam.md": [
       [
-        "/characters/15563.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/characters/15576.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/characters/15593.md",
         "提及:詹金",
         "mention"
       ],
       [
         "/characters/130226.md",
-        "提及:Saya",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -9544,6 +9490,11 @@
       ]
     ],
     "/sources/steam_discussion.md": [
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/news-output/news-output-steam-discussion.md",
         "抽样自",
@@ -9583,11 +9534,6 @@
     ],
     "/sources/weibo.md": [
       [
-        "/characters/15567.md",
-        "提及:血链·希洛",
-        "mention"
-      ],
-      [
         "/characters/15582.md",
         "提及:弥利亚姆",
         "mention"
@@ -9608,18 +9554,8 @@
         "mention"
       ],
       [
-        "/characters/77922.md",
-        "提及:克珀珊特",
-        "mention"
-      ],
-      [
         "/characters/54117.md",
         "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/characters/15563.md",
-        "提及:图鲁",
         "mention"
       ],
       [
@@ -9628,8 +9564,8 @@
         "mention"
       ],
       [
-        "/characters/15587.md",
-        "提及:希洛",
+        "/characters/15593.md",
+        "提及:詹金",
         "mention"
       ],
       [
@@ -10173,6 +10109,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -10386,6 +10323,7 @@
       "/projects/entry-readme.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
@@ -11441,6 +11379,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -11813,6 +11752,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -12150,6 +12090,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -12343,6 +12284,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -12473,6 +12415,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
+    ],
+    "detachment": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "deterministic": [
       "/story/story_search_index.md"
@@ -12743,6 +12688,7 @@
     ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "event": [
@@ -13421,6 +13367,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -13686,6 +13633,9 @@
     "key": [
       "/memory/memory-ext-workflow-api-key-audit.md"
     ],
+    "kimi3": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+    ],
     "kind": [
       "/community/community-index.md",
       "/community/community-timeline.md"
@@ -13924,6 +13874,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -14457,6 +14408,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -15185,6 +15137,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -15530,6 +15483,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -15608,6 +15562,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -16072,6 +16027,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -17079,6 +17035,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -18189,6 +18146,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -18466,6 +18424,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -18809,6 +18768,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -19336,6 +19296,9 @@
     "为敌": [
       "/characters/15587.md"
     ],
+    "为最": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+    ],
     "为未": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md"
     ],
@@ -19386,6 +19349,9 @@
     ],
     "为面": [
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
+    ],
+    "主仓": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "主体": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -19662,7 +19628,8 @@
       "/assets/assets-sentinel-baseline.md",
       "/assets/assets-version.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "事数": [
       "/story/story_layer_readme.md"
@@ -20128,6 +20095,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -20328,6 +20296,9 @@
     ],
     "仓内": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "仓同": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "仓库": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -21111,6 +21082,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -21390,6 +21362,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -23368,6 +23341,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -23886,6 +23860,7 @@
     ],
     "区数": [
       "/assets/assets-chat-onboarding-snippet.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -24443,7 +24418,8 @@
     ],
     "发布": [
       "/README.md",
-      "/memory/memory-archive-bpt-architecture-summary-template.md"
+      "/memory/memory-archive-bpt-architecture-summary-template.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "发性": [
       "/characters/15563.md"
@@ -25282,7 +25258,8 @@
       "/characters/15602.md",
       "/characters/15604.md",
       "/characters/54117.md",
-      "/characters/77922.md"
+      "/characters/77922.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "同样": [
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -26754,6 +26731,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -27115,6 +27093,9 @@
       "/characters/15589.md",
       "/characters/77913.md",
       "/characters/77926.md"
+    ],
+    "大战": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "大文": [
       "/memory/memory-archive-storage-discussion.md"
@@ -27584,6 +27565,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -28232,6 +28214,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -28415,6 +28398,9 @@
     "实机": [
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
     ],
+    "实档": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+    ],
     "实现": [
       "/README.md",
       "/projects/project-silver-core-sdk.md",
@@ -28451,6 +28437,7 @@
       "/characters/77917.md"
     ],
     "审查": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
     ],
@@ -29490,6 +29477,9 @@
     "布朗": [
       "/characters/15578.md",
       "/characters/15593.md"
+    ],
+    "布流": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "布的": [
       "/README.md"
@@ -30644,6 +30634,9 @@
     "态可": [
       "/README.md"
     ],
+    "态审": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+    ],
     "态导": [
       "/README.md"
     ],
@@ -31500,7 +31493,8 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/memory/strategic-plan-2026.md"
+      "/memory/strategic-plan-2026.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "战线": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
@@ -31662,6 +31656,9 @@
       "/characters/15576.md",
       "/characters/15581.md",
       "/characters/77923.md"
+    ],
+    "承担": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "承载": [
       "/characters/15562.md",
@@ -31907,6 +31904,9 @@
       "/characters/15574.md",
       "/characters/15579.md"
     ],
+    "担源": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+    ],
     "拆分": [
       "/memory/memory-ext-lessons-archive.md"
     ],
@@ -32062,7 +32062,8 @@
       "/memory/memory-ext-todo.md"
     ],
     "指令": [
-      "/characters/15568.md"
+      "/characters/15568.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "指令卡": [
       "/characters/15560.md",
@@ -32261,6 +32262,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -32847,6 +32849,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -33199,6 +33202,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -33634,6 +33638,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -33932,6 +33937,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -34212,6 +34218,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -34831,6 +34838,9 @@
       "/characters/15602.md",
       "/projects/entry-claude-md.md"
     ],
+    "时承": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+    ],
     "时持": [
       "/characters/15580.md"
     ],
@@ -35250,7 +35260,8 @@
     ],
     "最大": [
       "/characters/15603.md",
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "最强": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
@@ -35720,6 +35731,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -36173,6 +36185,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -36672,6 +36685,9 @@
     "查其": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
+    "查判": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+    ],
     "查未": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -36821,6 +36837,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -37048,6 +37065,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -37372,6 +37390,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -37585,6 +37604,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -37989,6 +38009,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -38325,6 +38346,9 @@
     "水母": [
       "/characters/15573.md"
     ],
+    "水线": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+    ],
     "永不": [
       "/characters/77913.md"
     ],
@@ -38595,6 +38619,9 @@
     ],
     "流原": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
+    "流水": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "流派": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
@@ -38878,6 +38905,7 @@
       "/characters/15573.md"
     ],
     "源码": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "源选": [
@@ -40277,6 +40305,9 @@
     ],
     "略重": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
+    ],
+    "略风": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "疑似": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -41699,6 +41730,7 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/sources/appstore.md",
@@ -45327,6 +45359,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -46060,6 +46093,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -47120,6 +47154,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -47387,6 +47422,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -48096,6 +48132,7 @@
     "静态": [
       "/README.md",
       "/community/community-index.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "静默": [
@@ -48360,6 +48397,7 @@
       "/characters/77923.md"
     ],
     "风险": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/story/story_research_todo.md"
     ],
     "飞鸟": [
@@ -49324,6 +49362,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -49654,6 +49693,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -49834,6 +49874,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -49950,6 +49991,9 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
+    ],
+    "detachment": [
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "diagnosis": [
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md"
@@ -50135,6 +50179,7 @@
     ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "execution": [
@@ -50604,6 +50649,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -51302,6 +51348,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -51925,6 +51972,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",

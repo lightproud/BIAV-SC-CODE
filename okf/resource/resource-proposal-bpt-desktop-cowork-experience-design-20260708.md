@@ -4,7 +4,7 @@ title: "bpt-desktop-cowork-experience-design-20260708"
 description: "**不含任何黑池数据**；产品本体（BPT Desktop）在黑池侧构建，银芯只出**设计情报 + 对接缝**。（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/bpt-desktop-cowork-experience-design-20260708.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-18"
+timestamp: "2026-07-19"
 ---
 
 # 指针概念

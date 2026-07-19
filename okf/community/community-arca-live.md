@@ -4,7 +4,7 @@ title: "arca_live 社区全量档案"
 description: "arca_live 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。"
 resource: "/Public-Info-Pool/Record/Community/arca_live/"
 tags: ["data_layer:full_archive", "platform:arca_live", "lens:analysis"]
-timestamp: "2026-07-18"
+timestamp: "2026-07-19"
 ---
 
 # 指针概念

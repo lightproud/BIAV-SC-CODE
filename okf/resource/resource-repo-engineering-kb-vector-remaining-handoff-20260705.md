@@ -4,7 +4,7 @@ title: "kb-vector-remaining-handoff-20260705"
 description: "银芯已建向量检索腿（§八「厚锚撑向量」的活体参照实现，守密人 2026-07-05 裁定(A) 解除零 ML 红线，**scoped**：白盒脊柱仍零 ML，只加隔离 ML 向量长尾腿；§1.1-HC 黑池防火墙无涉，只吃银芯自有公开社区档案）。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/kb-vector-remaining-handoff-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-18"
+timestamp: "2026-07-19"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "README.md（人 + AI 共用主入口）"
 description: "忘却前夜（忘卻前夜 / Morimens）的**社区知识平台 + 黑池信息入口**。本仓库由忘却前夜官方授权制作人维护，引用公开可查阅的游戏资料。"
 resource: "/README.md"
 tags: ["data_layer:curated", "entry-point"]
-timestamp: "2026-07-18"
+timestamp: "2026-07-19"
 ---
 
 # 指针概念

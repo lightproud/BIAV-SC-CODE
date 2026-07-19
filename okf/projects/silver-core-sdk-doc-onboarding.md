@@ -4,7 +4,7 @@ title: "silver-core-sdk ONBOARDING"
 description: "Goal: get a new maintainer from zero to \"I can make a change safely and prove"
 resource: "/projects/silver-core-sdk/docs/ONBOARDING.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-18"
+timestamp: "2026-07-19"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "输出展示层 · weixin 最新快照"
 description: "weixin 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。"
 resource: "/projects/news/output/weixin-latest.json"
 tags: ["data_layer:output", "platform:weixin", "sampled"]
-timestamp: "2026-07-18"
+timestamp: "2026-07-19"
 ---
 
 # 指针概念

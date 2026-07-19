@@ -4,7 +4,7 @@ title: "BPT-Desktop 设计规范参考（v0.1.15 逆向）"
 description: "图例：✓ 完整 ◎ 摘要 △ 部分 ✗ 未提供"
 resource: "/memory/archive/bpt-strategic-shift-2026-04-19/bpt-desktop-design-spec-ref.md"
 tags: ["memory", "data_layer:curated", "archive", "frozen-snapshot", "bpt"]
-timestamp: "2026-07-18"
+timestamp: "2026-07-19"
 ---
 
 # 记忆层指针
