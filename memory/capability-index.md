@@ -4,14 +4,14 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-19
-- 功能总数：**144**
+- 功能总数：**145**
 - 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 42 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 43 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（42）
+## CI 自动化工作流（编排入口·定时/事件平面）（43）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -74,6 +74,8 @@
   `.github/workflows/delete-release.yml`
 - **`Deploy Site`** _[push/manual]_ — push 触发部署 site 静态站。  
   `.github/workflows/deploy-site.yml`
+- **`Discord archive  BIAV-SC-DATA (objective-A pilot)`** _[manual]_ —   
+  `.github/workflows/discord-archive-datarepo-pilot.yml`
 - **`Discord Archive (JP)`** _[schedule/manual]_ — 定时归档日服 Discord 数据。  
   `.github/workflows/discord-archive-jp.yml`
 - **`Discord Archive (Volunteer)`** _[schedule/manual]_ — 定时归档志愿者 Discord 数据。  
