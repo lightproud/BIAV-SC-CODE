@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-19T13:14:27.462504+00:00",
+  "collected_at": "2026-07-19T15:57:33.621918+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -18,7 +18,7 @@
       "voted_up": true,
       "review": "百闻牌停止运营后就一直在找代餐，炉石的画风实在不喜欢，和朋友一起入坑了9，但是9基本没有玩法可言，就是抽卡养成就没了，一点策略也没有，根本不是卡牌游戏，而且画风有点太幼稚了，前几天因为舅舅上线在b站看到别人抽，一下子就被画风吸引住了，玩了快20个小时，爆率真是说不透，沙耶我吃了大保底，其他自选的4个up倒是基本没怎么歪，目前在用水母繁血队推主线中，希望能有国服",
       "timestamp_created": 1784416748,
-      "playtime_forever": 1140
+      "playtime_forever": 1170
     },
     {
       "source": "steam",
@@ -48,7 +48,7 @@
       "voted_up": true,
       "review": "What a pearl. Just dont follow YouTube tutorials. Just dont. Play every Charakter so you get a feel what kind of Playstyle fits you. The developers really Care for the Game since IT almost got cancelled and now ITs Reviving. \n\nYes there only IS a Server in Asia (and Japan but there ITS another Game) but besides the Red number on the bottom I iad No downside. Sorry my Bad english Im German. Lets make this Game Grat again. MMGA!",
       "timestamp_created": 1784440888,
-      "playtime_forever": 307
+      "playtime_forever": 403
     },
     {
       "source": "steam",
@@ -108,22 +108,7 @@
       "voted_up": true,
       "review": "Very fun game about Anime girls that do everything u want (slavery)",
       "timestamp_created": 1784400195,
-      "playtime_forever": 1381
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-18T15:51:37+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩爱玩",
-      "summary": "好玩爱玩",
-      "url": "https://steamcommunity.com/profiles/76561199545915309/recommended/3052450",
-      "author": "76561199545915309",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩爱玩",
-      "timestamp_created": 1784389897,
-      "playtime_forever": 2477
+      "playtime_forever": 1415
     },
     {
       "source": "steam",
@@ -153,7 +138,7 @@
       "voted_up": true,
       "review": "Steamで配信中のMorimensというゲームの日本語正式ローカライズ版です。\n\n全体的な雰囲気、キャラ、シナリオ、グラ、SEやBGM、全体的にとても良いです。\nキービジュアルの見た目に惹かれたなら、割と刺さると思います。\n\nバトルもSlay the Spireライクで面白い。\n難易度は正直高めなんですがコンティニューやら救済措置が用意されているのでどうにかなるという感じです。\n\n＃＃＃\n\n「日本語版」だけあって、翻訳部分はかなり整えられていると思います。\nしかし、細部で怪しい部分はあります……が、まあ許容というか脳内補完できる範囲です。\n※なんというか、波があります、滅茶苦茶綺麗な翻訳がされていると思ったら別の話は荒くなったり。\n\n個人的にはシナリオ面がかなり好きで、オススメです。\n陰鬱としてはいるんですがそれでも王道的な熱さもあり非常に良い。\n\n難点を言うなら、今現在は「流行っている」とは言えないので攻略情報がないところです。\n本家Morimensとはバランスが異なるので、あちらの情報がそのまま適用できません。\n思考錯誤する楽しさがあるとも言えますが、ゲーム自体の基本難易度が高めなので困る時がある感じ。\n\n続いてほしいなあと思いつつ、スマホ側メインですが微課金程度で遊んでいます。",
       "timestamp_created": 1784396617,
-      "playtime_forever": 731
+      "playtime_forever": 747
     }
   ]
 }

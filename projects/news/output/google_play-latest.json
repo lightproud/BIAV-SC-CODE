@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-19T13:14:27.462504+00:00",
+  "collected_at": "2026-07-19T15:57:33.621918+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 113,
+  "item_count": 114,
   "items": [
     {
       "source": "google_play",
@@ -24,6 +24,16 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-168038cf-b0f3-475c-b4bd-12177f378675",
       "author": "スタンバートアシュレイ",
       "engagement": 4
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-01T20:01:46",
+      "lang": "en",
+      "title": "[Google Play 好评] ★4 great art, really enjoying the lovecraft",
+      "summary": "great art, really enjoying the lovecraftian story (its just much hovercraft without the obscene racism), feels fun for being a gacha game at its core, I would say though that some of the designs on the younger presenting characters are questionable at best, like, they might be old in the lore, but that doesn't come across very well.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-e2174d44-2f35-46a7-aeab-7deea5b7f862",
+      "author": "Hal Frost",
+      "engagement": 3
     },
     {
       "source": "google_play",
@@ -77,16 +87,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-01T20:01:46",
-      "lang": "en",
-      "title": "[Google Play 好评] ★4 great art, really enjoying the lovecraft",
-      "summary": "great art, really enjoying the lovecraftian story (its just much hovercraft without the obscene racism), feels fun for being a gacha game at its core, I would say though that some of the designs on the younger presenting characters are questionable at best, like, they might be old in the lore, but that doesn't come across very well.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-e2174d44-2f35-46a7-aeab-7deea5b7f862",
-      "author": "Hal Frost",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
       "time": "2026-06-24T10:30:22",
       "lang": "id",
       "title": "[Google Play 好评] ★5 Absolutely perfect. Game ini niat banget",
@@ -123,6 +123,16 @@
       "summary": "This game has been an emotional rollercoaster that has genuinely brought me to tears. The storyline is nothing short of breathtaking-it’s rare to find a narrative this moving, with twists that hit hard and characters you’ll fall in love with instantly. I’m not exaggerating when I say I’ve been playing for days straight. It’s that addictive. And the visuals?Dont even get me started, bro. They're absolutely gorgeous. The character designs are stunning, with so much detail and personality.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f78bec77-760e-4337-95f7-876bd58411d4",
       "author": "strobery",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-15T06:53:10",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Hyper fixation activation. Amazing gamep",
+      "summary": "Hyper fixation activation. Amazing gameplay and art style, love the story and the voice acting. Would give it six stars but there are only 5. So far my favourite group characters in design are the Aequor peeps, but for game play I lean towards the Ultra faction. Just having an entire turn to command a possibly losing battle and still win is just so appealing and exhilarating.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-a247c6f3-2f8c-4f83-9446-94196408fdac",
+      "author": "Ashton Teoh",
       "engagement": 1
     },
     {
@@ -303,16 +313,6 @@
       "summary": "i wanna like this game so bad. interesting world, good writing, amazing music but the gotcha mechanics ruin the atmosphere for me. here's a cut scene with the story character you don't use cuz why would you after getting the better units?",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ba3028ec-82d8-4a12-86d0-b1931c96a3a8",
       "author": "Austin Vincent",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-15T06:53:10",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Hyper fixation activation. Amazing gamep",
-      "summary": "Hyper fixation activation. Amazing gameplay and art style, love the story and the voice acting. Would give it six stars but there are only 5. So far my favourite group characters in design are the Aequor peeps, but for game play I lean towards the Ultra faction. Just having an entire turn to command a possibly losing battle and still win is just so appealing and exhilarating.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-a247c6f3-2f8c-4f83-9446-94196408fdac",
-      "author": "Ashton Teoh",
       "engagement": 0
     },
     {
@@ -643,6 +643,16 @@
       "summary": "\"การผจญภัยแห่งดวงดาว!\"",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-32e549ce-efd3-47c1-8fc1-9fb2535d404f",
       "author": "Shi Wouldgrave",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-18T13:47:43",
+      "lang": "id",
+      "title": "[Google Play 差评] ★1 pity is unclear, the chance of losing th",
+      "summary": "pity is unclear, the chance of losing the rate off is greater, the income is not comparable to the gacha",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-057f5b99-527e-45bb-8e00-d90009083b05",
+      "author": "Nothing",
       "engagement": 0
     },
     {
