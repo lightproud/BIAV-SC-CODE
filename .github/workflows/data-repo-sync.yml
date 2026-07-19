@@ -1,19 +1,17 @@
 name: Sync Community archive to BIAV-SC-DATA
 
-# 把社区全量档案 Record/Community 从 BIAV-SC-CODE（本仓）推进数据仓 BIAV-SC-DATA。
-# 分仓（T62）阶段一：快照导入 + 可重跑镜像同步（rsync --delete 使 data 仓 Community 与本仓逐字节一致）。
-# 跑在 GitHub Actions 基础设施（~14G 盘，不占会话磁盘），经细粒度 PAT（HTTPS）推送。
-# 仅 workflow_dispatch 手动触发 + confirm 门，绝不自动跑；只读本仓、只写 data 仓（不改本仓）。
+# ⚠ 已退役（T62 P2-3a，2026-07-19）：分仓阶段一快照导入已完成、目标 A 采集器改直写 data 仓，
+# 本 code→data 镜像 sync 使命结束。**其 rsync --delete 会在 code 仓数据被删后连 data 仓一并清空**，
+# 是删除 P2-5 的灾难级 footgun，故退役——旧 `MIGRATE` 令牌失效，仅保留一个强警示词作紧急重灌逃生口。
+# 常规数据流现为：采集器 → BIAV-SC-DATA（见 discord-archive-datarepo-pilot.yml 模板，P2-3c 推广）。
 #
-# 前置（守密人一次性网页配好，无需本地环境，见迁移计划）：
-#   1. 建 fine-grained PAT：Only select repositories → BIAV-SC-DATA，Repository permissions → Contents: Read and write；
-#   2. 令牌存本仓 secret：BIAV_SC_DATA_TOKEN。
+# 原前置（如需紧急重灌）：细粒度 PAT + secret BIAV_SC_DATA_TOKEN。
 
 on:
   workflow_dispatch:
     inputs:
       confirm:
-        description: '输入 MIGRATE 确认把 Record/Community 快照推进 BIAV-SC-DATA'
+        description: '⚠ 已退役。仅紧急整仓重灌用，输入 FORCE-DESTRUCTIVE-RESYNC（会 --delete 覆盖 data 仓）'
         required: true
         default: ''
 
@@ -26,7 +24,7 @@ concurrency:
 
 jobs:
   sync:
-    if: github.event.inputs.confirm == 'MIGRATE'
+    if: github.event.inputs.confirm == 'FORCE-DESTRUCTIVE-RESYNC'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
