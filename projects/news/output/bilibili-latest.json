@@ -1,205 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-20T11:45:12.301696+00:00",
+  "collected_at": "2026-07-20T14:02:27.704187+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 1,
   "items": [
     {
       "source": "bilibili",
       "time": "2026-07-20T02:45:45+00:00",
       "lang": "zh",
       "title": "【忘却前夜】7.20-8.4容灾攻略",
-      "summary": "└ 金发女人丨型 (2赞): 1图任意阵容，忘记标上去了\n  └ 抱着狗狗不敢说话 (0赞): 太强  学\n  └ 肥肠刺身佐醋溜腰子 (1赞): 这么快[doge_金箍]",
+      "summary": "└ 金发女人丨型 (2赞): 1图任意阵容，忘记标上去了\n  └ 肥肠刺身佐醋溜腰子 (1赞): 这么快[doge_金箍]\n  └ 抱着狗狗不敢说话 (0赞): 太强  学",
       "url": "https://www.bilibili.com/video/BV1qRK26CEaP",
       "author": "金发女人丨型",
-      "engagement": 2406,
-      "media_url": "https://i0.hdslb.com/bfs/archive/03c34eebeb9dd719787052ab3d640e5f1038a2ef.jpg",
+      "engagement": 2779,
+      "media_url": "http://i1.hdslb.com/bfs/archive/03c34eebeb9dd719787052ab3d640e5f1038a2ef.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 2398,
-        "comment_count": 8,
+        "play": 2770,
+        "comment_count": 9,
         "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-19T14:24:50+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜科研向】灵感大王·入药回溯时计火枪hml，算力、过牌、力量多到怎么都用不完！",
-      "summary": "-\n  └ 嘎啦嘎啦果 (8赞): 队伍核心是普娜和入药回溯时计哈姆林以及重逢心愿钥令，最好能带一张+2手牌上限的命轮，另外两个角色是可以替换的，这里只是演示一下怎么刷牌、刷灵感。\n\n这个队没有稳定虚弱，生存稍微差一点，适合打3-5落地战的多段boss。\n\n下面把哈姆林能生成灵感的3费叫灵3，打伤害的叫伤3，衍生牌上行音叫+2，下行音叫-2。诺缔拉叫ndl，凯刻斯叫kks，哈姆林叫hml，普娜叫lmn。\n\nndl的自充极差，最好能带自动回狂的命轮。\n\nkks最好+12，至少+4，暴击尽量堆高，密契用红悸最好，想要生存可以换成双子白（先出kks的防御，还可以把hml的灵3给卡成强行打出），其他密契不推荐，因为这个队走的不是一波流。sr命轮推荐使用hml的sr，有自充还有暴击率。\n\n核心手法：\n1觉hml，前期先用+2使得hml的灵3生成大量灵感，再通过重逢心愿把灵3拉回来，继续生成灵感。所有有保留的牌和lmn的3费先扣着不打，从而压缩第二轮的抽牌库。\n先过完第一轮牌库，不停地洗灵感，途中把其打防牌出了，把整个队伍的状态都做满。\n看情况可以适当出hml的伤3，赌能出虚弱易伤和偷力，甚至可以用-2来保证生存。\n当然也可以适当出lmn的3费，因为她的3费有大量的临时精通，如果再配合重逢心愿，能让静海盾变得非常非常厚。\n每轮结束之前尽量把抽牌库过到尽量只剩5张（反正最好别少于5张），以及把银钥能量给做满，这样才能使得下一回合又能把灵3拉回来继续洗灵感。\n\n爆发手法：\n以kks的3费为例。\n假设提前留了大量灵感，算力多到用不完。\n上一回合的抽牌库正好只剩5张。\n手牌上有3张hml的衍生牌，1张kks的3费。\n爆发回合，先把被hml大招上过buff的3费打出去，生效2次，消耗1费。\n再让lmn把kks的3费拉回来，使用+2，生效2次，消耗0费。\n重逢心愿再把kks的3费拉回来，使用+2，生效2次，消耗5费。\n这里共计消耗6费，生效6次。\n如果我们通过灵感又把牌库过穿到第二轮，正好又捞到了kks的3费。使用+2，生效2次，消耗5费。\n最后的理想情况是一共消耗11费，生效8次。如果算力不够，\n那么也是消耗7费，生效7次。\n哪怕对付单段boss也绰绰有余了，而且还有个5倍固伤的诺缔拉。\n  └ 凌厉彼岸 (0赞): [打call][打call][打call][打call]",
-      "url": "https://www.bilibili.com/video/BV1e4Kr6tESw",
-      "author": "嘎啦嘎啦果",
-      "engagement": 562,
-      "media_url": "https://i1.hdslb.com/bfs/archive/e26f2be04e5380c043abb411cd61cb9f85970c85.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 560,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 1
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-20T03:23:18+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】配置能省就省，阿拉克涅逃课3-5",
-      "summary": "-\n  └ 莱星Ligh (5赞): 我的天呐阿拉大人[打call]\n  └ 嘎啦嘎啦果 (3赞): 需要阿拉克涅3启，初始狂气尽量高。\n开局要凹1费在手上，\n活不下去的话，可以把栗子换成再衍化艾瑞卡，或者多带生存命轮。\n步骤：\n全程静海。\n3t，湮灭开大，取1费出来，直接打掉，就能秒杀后面的小怪。打毛线，尽量多打，但是不要把boss秒了。\n4t，把阿拉的3费塞空间里。\n5t，法洛思可以开大消除易伤。进空间，阿拉克涅视情况，保证自己血量充沛。先打自己的3费，再把毛线全部打掉。\n6t，开钥令，防守。\n7t，阿拉取1费出来，接下来就自己玩吧。\n  └ 风早櫌霜 (1赞): 感谢老师&gt;w&lt;交作业--",
-      "url": "https://www.bilibili.com/video/BV1qgK26CENm",
-      "author": "嘎啦嘎啦果",
-      "engagement": 551,
-      "media_url": "https://i0.hdslb.com/bfs/archive/20beddf673724b7ae9bd6b26b5f230caa2e5f547.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 540,
-        "comment_count": 11,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-20T02:51:13+00:00",
-      "lang": "zh",
-      "title": "[混沌戒】最快融灾第一，初见50分钟，失误是困了",
-      "summary": "-\n  └ 金发女人丨型 (4赞): 这下尴尬了\n  └ 幺幺水下乐园 (1赞): [混沌戒】最快融灾第一，初见50分钟，失误是困了\n  └ 和我一起逃跑吧i (1赞): 刚打第二关就看到排行榜425了[吃瓜]",
-      "url": "https://www.bilibili.com/video/BV1zmK26EEjY",
-      "author": "忘却安卓佬",
-      "engagement": 435,
-      "media_url": "https://i2.hdslb.com/bfs/archive/b7a18f731a768e4ea17befd48ba98b9ca1cfe46c.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 418,
-        "comment_count": 17,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-19T14:14:39+00:00",
-      "lang": "zh",
-      "title": "一觉醒来忘却数值膨胀了十倍",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1bqKr6DE9p",
-      "author": "阁楼工作室",
-      "engagement": 311,
-      "media_url": "https://i2.hdslb.com/bfs/archive/63c1cfc17517df78ad16f9d1d533f6cde7b19daa.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 311,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-20T03:54:36+00:00",
-      "lang": "zh",
-      "title": "希洛沙耶1t羊",
-      "summary": "-\n  └ 烟已归 (1赞): 我了\n  └ bian_loratadine (0赞): 我了三区别吓俺",
-      "url": "https://www.bilibili.com/video/BV1UhK26FE7u",
-      "author": "偶陈陈陈",
-      "engagement": 117,
-      "media_url": "https://i0.hdslb.com/bfs/archive/e7d8f967f38a503b8241053887f3b44c26346b4e.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 115,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-19T12:52:48+00:00",
-      "lang": "zh",
-      "title": "［忘却前夜］11囚魇塔庞几乎满血暴打融灾5-5阴影的忠犬",
-      "summary": "-\n  └ 小肠在蠕动 (0赞): 配置",
-      "url": "https://www.bilibili.com/video/BV1MkKr67ERr",
-      "author": "小肠在蠕动",
-      "engagement": 117,
-      "media_url": "https://i1.hdslb.com/bfs/archive/41408364e37faccc2606c880854a35186e1e7e74.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 116,
-        "comment_count": 1,
-        "comments_fetched": 1,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-20T04:45:14+00:00",
-      "lang": "zh",
-      "title": "［忘却前夜］大狗粪庞C大战羊妈，打了足足500万的伤害，老头还是太强了",
-      "summary": "-\n  └ 水中沉浮的貓貓 (2赞): 無傷5-5[吃瓜]\n  └ 小肠在蠕动 (1赞): 操作很烂，看个思路吧",
-      "url": "https://www.bilibili.com/video/BV1DyK16hEoS",
-      "author": "小肠在蠕动",
-      "engagement": 115,
-      "media_url": "https://i2.hdslb.com/bfs/archive/9f8dad4fd946880ac72625648b3a6f507daf3c5e.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 113,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-19T16:54:55+00:00",
-      "lang": "zh",
-      "title": "第四届N厨杯-第二十七日录播",
-      "summary": "第二十七日直播录播\n本日由代理代理主播直播，还望海涵",
-      "url": "https://www.bilibili.com/video/BV1ZsKC6iEer",
-      "author": "God7777",
-      "engagement": 91,
-      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 91,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-20T10:34:00+00:00",
-      "lang": "zh",
-      "title": "《忘却前夜》第二章以蜡像之名P7",
-      "summary": "-\n  └ 寒末殇燕灵 (0赞): up你看这个 0播放16赞[doge][doge][doge]\n  └ 寒末殇燕灵 (0赞): up你可以抽个沙耶辅助茉夏\n配队的话就\n茉夏+沙耶+菲茵特+萝坦/蓝发小萝莉/拉蒙娜[doge]\n萝坦的两个技能都视为打击\n不过商店里要换萝坦的启灵碎片 技能点满才好用\n拉蒙娜可以回转手牌 不过现在低启有点便秘",
-      "url": "https://www.bilibili.com/video/BV1pzNL68ExE",
-      "author": "不可燃抹茶果冻",
-      "engagement": 7,
-      "media_url": "https://i0.hdslb.com/bfs/archive/5c75d1ad29bbc53826c36aba8eabe6af9a08c62b.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 5,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-20T10:47:45+00:00",
-      "lang": "zh",
-      "title": "忘却前夜抽奖",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1MGKm6wEdz",
-      "author": "卢泓然卢大王",
-      "engagement": 2,
-      "media_url": "https://i1.hdslb.com/bfs/archive/343181bb57a3bf25a770ae63928748a1e1b57fad.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 2,
-        "comment_count": 0,
-        "comments_fetched": 0,
         "danmaku": 0
       }
     }

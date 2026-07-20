@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-20T11:45:12.301696+00:00",
+  "collected_at": "2026-07-20T14:02:27.704187+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-20T12:39:57+00:00",
+      "lang": "russian",
+      "title": "[正面] Не плохая игра ,запутанная",
+      "summary": "Не плохая игра ,запутанная",
+      "url": "https://steamcommunity.com/profiles/76561198041329446/recommended/3052450",
+      "author": "76561198041329446",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Не плохая игра ,запутанная",
+      "timestamp_created": 1784551197,
+      "playtime_forever": 317
+    },
     {
       "source": "steam",
       "time": "2026-07-20T10:54:13+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "make it a no-gacha game and it would blow up, contender of STS&STS2",
       "timestamp_created": 1784544853,
-      "playtime_forever": 753
+      "playtime_forever": 836
     },
     {
       "source": "steam",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "1、",
       "timestamp_created": 1784523179,
-      "playtime_forever": 676
+      "playtime_forever": 715
     },
     {
       "source": "steam",
@@ -48,7 +63,7 @@
       "voted_up": true,
       "review": "比刚开始入坑的时候好玩多了，完成日活也从半小时变成半分钟，可以接受打工。总之活着就行。",
       "timestamp_created": 1784514956,
-      "playtime_forever": 19366
+      "playtime_forever": 19424
     },
     {
       "source": "steam",
@@ -63,7 +78,7 @@
       "voted_up": true,
       "review": "Помесь Reverse: 1999 с Slay the Spire. Затягивает сильно, если вы любите такие карточные игры. Без доната можно собрать как минимум одну деку до капа. Куча кодов в сети, которые подарят вам 100500 круток.\r\nПеревод конечно какашка, но все же лучше чем в 1999 ;)",
       "timestamp_created": 1784484682,
-      "playtime_forever": 2213
+      "playtime_forever": 2322
     }
   ]
 }
