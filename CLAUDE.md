@@ -89,7 +89,8 @@
 1. **采集三层**（使命#1，2026-06-21 守密人定性）：采集层非一锅，按职能分三层、产出三个不同目标——
    **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产输出展示层流快照，每 3 小时一轮，2026-07-11 降频裁定）；
    **T2 数据层归档**（声明式归档引擎 `projects/news/scripts/archive_engine.py` 读 `archive_sources.json` 干活；
-   2026-06-21 de-tier 后 discord **全量永驻 git**`Public-Info-Pool/Record/Community/`（`after_archive: keep`，不再驱逐）；
+   2026-06-21 de-tier 后 discord **全量永驻数据仓 BIAV-SC-DATA** `Record/Community/`（`after_archive: keep`，不再驱逐；
+   2026-07-20 T62 P2-5 §7甲 数据湖迁出 code 仓、经 `BIAV_SC_DATA_ROOT` 读，见 §5.2）；
    fanart 等二进制仍滚动归档进 Releases「社区二创」；加新来源 = 注册表加一段配置、零新代码；
    T2 **绝不并入 T1**——节拍刻意错峰、产出目标不同，且 archiver 落档 → T1 读档入流有上游依赖）；
    **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media` 等）。
@@ -247,7 +248,8 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
-- 全量档案（2026-06-21 迁入 BPT 4R `Public-Info-Pool/`，text 全量永驻 git）：`Public-Info-Pool/Record/Community/discord/{区服}/channels/{id_suffix}/{date}.jsonl`（区服 ∈ global / jp / volunteer，2026-07-10 方案甲三服统一；guild↔区服映射唯一源 = `projects/news/scripts/archive_layout.py` `DISCORD_GUILD_REGIONS`，新 guild 未登记归档即响亮失败）+ `Public-Info-Pool/Record/Community/{platform}/`（16+ 平台与 discord 平级摊平，以 `ls` 为准）。**discord JSONL 为紧凑 schema（2026-06-22 精简，工作树 3.4G→2.0G 省 41%）：缺字段 = 默认值**（`type`→0 / `author_bot`→false / `pinned`→false / `flags`→0 / `has_thread`→false / `thread_id`·`edited_timestamp`·`reply_to`→null / `mentions`·`reactions`·`attachments`·`embeds`→[]）；恒留 `id`/`channel_id`/`author_id`/`author_name`/`content`/`timestamp`。读取**必用 `.get(默认)`**，需稳定全字段用 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。
+- **数据湖已迁 BIAV-SC-DATA（T62 P2-5 §7甲，2026-07-20）**：社区全量档案 `Record/Community/` 不再在 code 仓跟踪（git 历史保留可恢复；§7乙 历史重写暂缓）。采集写 / build CI clone / 读侧一律经 **`BIAV_SC_DATA_ROOT`** 指向 BIAV-SC-DATA checkout 解析（`archive_layout.community_root()` 单一真相源，env 未设回落在树默认）；本地会话消费需先 clone BIAV-SC-DATA 并设 env 根。以下路径为**数据湖内相对布局**（根 = `$BIAV_SC_DATA_ROOT` 或旧在树 `Public-Info-Pool/`）。
+- 全量档案（2026-06-21 迁入 BPT 4R，text 全量永驻数据仓）：`Record/Community/discord/{区服}/channels/{id_suffix}/{date}.jsonl`（区服 ∈ global / jp / volunteer，2026-07-10 方案甲三服统一；guild↔区服映射唯一源 = `projects/news/scripts/archive_layout.py` `DISCORD_GUILD_REGIONS`，新 guild 未登记归档即响亮失败）+ `Public-Info-Pool/Record/Community/{platform}/`（16+ 平台与 discord 平级摊平，以 `ls` 为准）。**discord JSONL 为紧凑 schema（2026-06-22 精简，工作树 3.4G→2.0G 省 41%）：缺字段 = 默认值**（`type`→0 / `author_bot`→false / `pinned`→false / `flags`→0 / `has_thread`→false / `thread_id`·`edited_timestamp`·`reply_to`→null / `mentions`·`reactions`·`attachments`·`embeds`→[]）；恒留 `id`/`channel_id`/`author_id`/`author_name`/`content`/`timestamp`。读取**必用 `.get(默认)`**，需稳定全字段用 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。
   **冷热分层（守密人 2026-07-12 甲案裁定，同日推广全平台）**：Community dated 归档按月压冷——**当月 + 上月为
   裸文本热层，上上个月及更早压成 `.gz` 冷层**（实测压至 ~18%）；月度执行 = CI `community-cold-compress.yml`
   （每月 2 日）调 `projects/news/scripts/community_cold_compress.py` 总入口（discord JSONL 委托
@@ -258,7 +260,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
   **频道反查唯一入口 = `{区服}/channel_index.json`**（id→{name,type,dir,status}；status ∈ active / offline / orphan，缺省按 active——2026-07-12 T35 对账后每个归档目录均可反查，orphan 为下线早于索引入库的历史目录、名字不可考）；索引为**合并式更新**（下线条目保留标 offline，不再覆盖蒸发），对账工具 `projects/news/scripts/discord_reconcile.py`（扫孤儿目录、从 JSONL 恢复完整 channel_id 登记，`--dry-run` 只报告）
 - Discord 每日纯统计：`Public-Info-Pool/Record/Community/discord/{区服}/activity_daily/{date}.json`（主服在 global 区服目录）
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
-- **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史现永驻 git `Public-Info-Pool/Record/Community/discord`**（2026-06-21 de-tier，退役月度 git_rm 瘦身），直接读、无需还原。重建：`python3 scripts/build_community_index.py`（消费方双布局：新路径优先、回落旧）。分词用领域词典 FMM，top_terms 为粗粒度主题信号
+- **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史现驻数据仓 BIAV-SC-DATA `Record/Community/discord`**（2026-06-21 de-tier 退役月度 git_rm；2026-07-20 T62 P2-5 §7甲 迁出 code 仓），经 `BIAV_SC_DATA_ROOT` 读、无需 Release 还原。重建：`BIAV_SC_DATA_ROOT=<data仓> python3 scripts/build_community_index.py`（消费方双布局：新路径优先、回落旧）。分词用领域词典 FMM，top_terms 为粗粒度主题信号
 - 解包层：text 层（原 Reference 层 Game-Unpacked 目录）**2026-07-12 守密人裁定整层删除**（git 历史可追、
   Releases「解包」桶二进制可重解）；二进制解包资产（立绘/音视频/lua-bytecode/config binary）在 Releases「解包」桶
 - Releases：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
