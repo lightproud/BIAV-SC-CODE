@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-20T06:17:59.252317+00:00",
+  "collected_at": "2026-07-20T11:45:12.301696+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 4,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-20T10:54:13+00:00",
+      "lang": "english",
+      "title": "[正面] make it a no-gacha game and it would blow up, cont...",
+      "summary": "make it a no-gacha game and it would blow up, contender of STS&STS2",
+      "url": "https://steamcommunity.com/profiles/76561198274951513/recommended/3052450",
+      "author": "76561198274951513",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "make it a no-gacha game and it would blow up, contender of STS&STS2",
+      "timestamp_created": 1784544853,
+      "playtime_forever": 753
+    },
     {
       "source": "steam",
       "time": "2026-07-20T04:52:59+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "1、",
       "timestamp_created": 1784523179,
-      "playtime_forever": 528
+      "playtime_forever": 676
     },
     {
       "source": "steam",
@@ -48,22 +63,7 @@
       "voted_up": true,
       "review": "Помесь Reverse: 1999 с Slay the Spire. Затягивает сильно, если вы любите такие карточные игры. Без доната можно собрать как минимум одну деку до капа. Куча кодов в сети, которые подарят вам 100500 круток.\r\nПеревод конечно какашка, но все же лучше чем в 1999 ;)",
       "timestamp_created": 1784484682,
-      "playtime_forever": 1882
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-19T08:50:26+00:00",
-      "lang": "english",
-      "title": "[正面] Fun game",
-      "summary": "Fun game",
-      "url": "https://steamcommunity.com/profiles/76561198123398147/recommended/3052450",
-      "author": "76561198123398147",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Fun game",
-      "timestamp_created": 1784451026,
-      "playtime_forever": 9747
+      "playtime_forever": 2213
     }
   ]
 }
