@@ -1,0 +1,14 @@
+# .gitleaksignore —— 指纹级豁免（残余命中逐条核实档案，守密人 2026-07-20 裁定）
+# 与 .gitleaks.toml 的路径面豁免不同：本档每条对应一个已人工核实的具体命中，
+# 新增条目必须附核实结论注记。
+
+# [核实：合成夹具] SDK 脱敏测试的假密钥（sk-abcdef_LEAK99 等），
+# 该测试断言的正是「密钥须被脱敏」，夹具本身非凭据。
+a04d534896bfa07c3326bff8697c3d734242f1e8:projects/silver-core-sdk/tests/error-normalize.test.ts:generic-api-key:199
+
+# [核实：历史 blob，已单独报守密人] 已退役会话蒸馏子系统（2026-06-20 整删）
+# 2026-04-15 digest 收录了旧泄漏检查器 stdout，回显了其发现并已脱敏的
+# LTAI 形状 AccessKey ID（单 ID 不构成可用凭据，配对 secret 未在扫描中出现；
+# 处置权在守密人：若识别为在用 key 建议阿里侧轮换，历史 blob 无法撤回）。
+0a538928abd697998764bf376710f623391f318e:memory/session-digests/ff59edeb-0742-46f2-8778-114f17d1be09.progress.jsonl:alibaba-access-key-id:3
+24ace9d76f1d35cf7bdb77ad7f7fea4538d0271c:memory/session-digests/ff59edeb-0742-46f2-8778-114f17d1be09.progress.jsonl:alibaba-access-key-id:3
