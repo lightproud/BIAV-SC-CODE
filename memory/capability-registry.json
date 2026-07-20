@@ -1062,7 +1062,7 @@
       "path": "projects/news/scripts/sources.py",
       "summary": "sources.py — 采集源单一真相源（single source of truth）",
       "planes": [
-        "workflow"
+        "import"
       ],
       "status": "live"
     },

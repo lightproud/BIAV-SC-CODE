@@ -258,7 +258,7 @@
   `projects/news/scripts/repair_gaps.py`
 - **`silent_sources_audit.py`** _[活:cli+workflow]_ — silent_sources_audit.py — 沉默源审计（基于归档历史）  
   `projects/news/scripts/silent_sources_audit.py`
-- **`sources.py`** _[活:workflow]_ — sources.py — 采集源单一真相源（single source of truth）  
+- **`sources.py`** _[活:import]_ — sources.py — 采集源单一真相源（single source of truth）  
   `projects/news/scripts/sources.py`
 - **`split_output.py`** _[活:cli+workflow]_ — split_output.py — 按数据源分割 projects/news/output/news.json  
   `projects/news/scripts/split_output.py`
