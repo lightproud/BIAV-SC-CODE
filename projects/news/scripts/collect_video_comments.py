@@ -21,12 +21,17 @@
 用法：
   YOUTUBE_API_KEY=xxx python projects/news/scripts/collect_video_comments.py --date 2026-06-03
 """
-import os, json, glob, argparse, urllib.request, urllib.parse, urllib.error
+import os, sys, json, glob, argparse, urllib.request, urllib.parse, urllib.error
+from pathlib import Path
 from datetime import datetime, timezone
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import archive_layout  # noqa: E402  归档布局单一真相源（分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认）
+
 API = "https://www.googleapis.com/youtube/v3"
-DEST = "Public-Info-Pool/Record/Community/youtube_comments"
-YT_ARCHIVE_GLOB = "Public-Info-Pool/Record/Community/youtube/**/*.json"
+# 分仓桥接：youtube_comments 写根 + youtube 读 glob 均随 community_root() 换位（data 仓 / 在树默认）
+DEST = str(archive_layout.community_root() / "youtube_comments")
+YT_ARCHIVE_GLOB = str(archive_layout.community_root() / "youtube" / "**" / "*.json")
 SEARCH_Q = ["Morimens", "忘却前夜", "Morimens Saya no Uta", "忘却前夜 沙耶"]
 
 

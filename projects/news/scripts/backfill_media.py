@@ -27,10 +27,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # SSRF 守卫 + safe_get 单一真源（R2-H1：补齐姊妹下载路径）
+import archive_layout  # 归档布局单一真相源（分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认）
 import requests
 
 ROOT = "projects/news/data"            # media 输出（二进制，gitignore，留原地）
-SRC = "Public-Info-Pool/Record/Community"  # 源读取根（discord + 平台摊平，2026-06-21 迁移）
+SRC = str(archive_layout.community_root())  # 源读取根（分仓桥接：随 community_root() 换位 data 仓 / 在树）
 FILES = f"{ROOT}/media/files"
 MANIFEST = f"{ROOT}/media/backfill_manifest.json"
 UA = "Mozilla/5.0 (silver-core media backfill)"
