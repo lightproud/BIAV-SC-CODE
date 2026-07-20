@@ -2,9 +2,11 @@ name: "🖼️ Backfill & Archive Media"
 
 # 媒体补录与归档：把归档里仍存活的图片全部下载，二进制传 GitHub Releases（决策 038/059）。
 # Discord 过期链接经 refresh-urls 接口刷新后再下载（附件本体仍在 Discord，丢的只是签名链接）。
-# 每日跑兼顾两件事：补回历史存活图 + 趁新鲜留存当日新图（避免再次只存链接）。
 #
-# 所需 Secrets：DISCORD_BOT_TOKEN（刷新 Discord 链接）；GH_TOKEN 用内置 github.token。
+# T62 P2-3c 已切换（2026-07-19）：源读根 SRC（Record/Community）经 community_root() 分仓桥接
+# **读 BIAV-SC-DATA**；media 二进制仍传 code 仓 Releases、manifest 仍写 **code 仓** news/data
+# （分仓设计：仅 Record 数据湖迁 data 仓）。故 clone data 仓（PAT，只读源）+ code 仓 ssh-key 回推 manifest。
+# 所需 Secrets：DISCORD_BOT_TOKEN（刷新 Discord 链接）；GH_TOKEN 用内置 github.token；BIAV_SC_DATA_TOKEN。
 
 on:
   schedule:
@@ -26,19 +28,45 @@ concurrency:
 permissions:
   contents: write
 
+defaults:
+  run:
+    working-directory: code-repo
+
 jobs:
   backfill:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     if: github.ref == 'refs/heads/main'
+    env:
+      BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout code repo（sparse 脚本 + state，ssh-key 供回推 manifest）
+        uses: actions/checkout@v7
         with:
           ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
+          path: code-repo
+          sparse-checkout: |
+            projects/news
+            scripts
+          sparse-checkout-cone-mode: true
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Clone BIAV-SC-DATA（PAT，只读源根：读存活媒体链接）
+        working-directory: ${{ github.workspace }}
+        env:
+          DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DATA_TOKEN:-}" ]; then
+            echo "::error::secret BIAV_SC_DATA_TOKEN 未配置"; exit 1
+          fi
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
+          chmod 600 ~/.git-credentials
+          git clone --depth 1 https://github.com/lightproud/BIAV-SC-DATA.git data-repo
 
       - name: Install dependencies
         run: pip install -r projects/news/requirements.txt
@@ -53,12 +81,12 @@ jobs:
           if [ "$INPUT_NO_DISCORD" = "true" ]; then FLAGS="$FLAGS --no-discord"; fi
           python projects/news/scripts/backfill_media.py $FLAGS
 
-      - name: Package binaries to GitHub Releases
+      - name: Package binaries to GitHub Releases (code repo)
         env:
           GH_TOKEN: ${{ github.token }}
         run: python projects/news/scripts/backfill_media.py --upload
 
-      - name: Commit manifest (text only; binaries live in Releases)
+      - name: Commit manifest → code repo (text only; binaries live in Releases)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
