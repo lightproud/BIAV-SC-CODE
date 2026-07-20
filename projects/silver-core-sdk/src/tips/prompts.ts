@@ -98,7 +98,11 @@ Output: {"has_tip":true,"tip":"We've been going back and forth on this. Starting
 export const CONTEXT_TIP_SELECTOR_OUTPUT_CONTRACT =
   'Respond with ONLY this JSON, no code fences:\n{"has_tip":<true|false>,"tip":"<the 1-2 sentence tip; omit when has_tip is false>","feature_id":"<an id from eligible_ids; omit when has_tip is false>","action":"<the command/shortcut; omit when has_tip is false>"}';
 
-/** Provenance for the context-tip selector surface. */
+/** Provenance for the context-tip selector surface. NOTE: upstream retired
+ *  the whole context-tip prompt set at ccVersion 2.1.213 (archive refresh
+ *  2026-07-20); the SDK keeps this surface PINNED at the last-seen version
+ *  (2.1.182). `faithful` describes fidelity to that pinned source; the
+ *  corpus-sync guards re-arm automatically if the archive file returns. */
 export const CONTEXT_TIP_SELECTOR_PROVENANCE: TipProvenance = {
   slug: 'agent-prompt-context-tip-selector',
   faithful: true,

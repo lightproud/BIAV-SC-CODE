@@ -23,6 +23,7 @@ import type {
   RewindFilesResult,
   SDKControlInitializeResponse,
   SDKControlInterruptResponse,
+  SDKMemoryHealth,
   SDKMessage,
   SDKMirrorErrorMessage,
   SDKResultMessage,
@@ -1638,7 +1639,12 @@ export function query(args: {
           sess.pendingTurnRef ?? randomUUID(),
           sess.pendingTurnUuid,
         );
-        if (outcome === 'stop') return;
+        if (outcome === 'stop') {
+          // R7 write-back observability: a string-mode interrupt ends the run
+          // before the session-end round can fire.
+          if (memory !== null) memory.health.sessionEndUpdate = 'skipped-interrupt';
+          return;
+        }
       }
 
       // 3. Consume user turns until the input queue closes.
@@ -1784,6 +1790,10 @@ export function query(args: {
         }
         if (options.maxBudgetUsd !== undefined) {
           if (acct.cost >= options.maxBudgetUsd) {
+            // R7 write-back observability (keeper 2026-07-20): this exit
+            // bypasses the session-end round entirely — stamp the reason so
+            // the host can see the progress card was not updated.
+            if (memory !== null) memory.health.sessionEndUpdate = 'skipped-budget';
             yield terminalResult(
               'error_max_budget_usd',
               sess.sessionId,
@@ -1799,6 +1809,8 @@ export function query(args: {
         }
         if (options.maxTurns !== undefined) {
           if (acct.turns >= options.maxTurns) {
+            // R7 write-back observability: same bypass as the budget exit above.
+            if (memory !== null) memory.health.sessionEndUpdate = 'skipped-turns';
             yield terminalResult(
               'error_max_turns',
               sess.sessionId,
@@ -1821,7 +1833,12 @@ export function query(args: {
         // interrupt) ends the run; anything else falls through to the next
         // input (streaming-mode interrupt or normal completion).
         const outcome = yield* driveTurn(userUuid);
-        if (outcome === 'stop') return;
+        if (outcome === 'stop') {
+          // R7 write-back observability: same interrupt bypass as the
+          // redrive path above.
+          if (memory !== null) memory.health.sessionEndUpdate = 'skipped-interrupt';
+          return;
+        }
       }
 
       // Memory spec R7: session-end progress-card round. Runs ONLY on the
@@ -1846,20 +1863,39 @@ export function query(args: {
       // real remaining turns and skip the round entirely once none are left.
       const sessionEndRemainingTurns =
         options.maxTurns !== undefined ? options.maxTurns - acct.turns : undefined;
-      if (
-        memory !== null &&
-        memory.sessionEndUpdate &&
-        acct.turns > 0 &&
-        !lifeSignal.aborted &&
-        (sessionEndRemainingUsd === undefined || sessionEndRemainingUsd > 0) &&
-        (sessionEndRemainingTurns === undefined || sessionEndRemainingTurns > 0)
-      ) {
+      // R7 write-back observability (keeper 2026-07-20, BPT memory-rot
+      // diagnosis): stamp WHY the round does or does not run, so a
+      // ledger-driven host can detect a session that ended without updating
+      // its progress card (capped sessions silently skipped the round, the
+      // card went stale, and every resume re-verified the world from an
+      // outdated recovery point). 'pending' here ⇔ every gate below passes;
+      // the stamp then advances to 'failed' at round start and 'ran' on
+      // clean completion. It rides later metrics snapshots and
+      // q.memoryHealthSnapshot().
+      if (memory !== null) {
+        memory.health.sessionEndUpdate = !memory.sessionEndUpdate
+          ? 'disabled'
+          : acct.turns === 0
+            ? 'skipped-no-turns'
+            : lifeSignal.aborted
+              ? 'skipped-abort'
+              : sessionEndRemainingUsd !== undefined && sessionEndRemainingUsd <= 0
+                ? 'skipped-budget'
+                : sessionEndRemainingTurns !== undefined && sessionEndRemainingTurns <= 0
+                  ? 'skipped-turns'
+                  : 'pending';
+      }
+      if (memory !== null && memory.health.sessionEndUpdate === 'pending') {
         // The round's own result is ABSORBED (below), so it must not count as
         // the last consumer-visible result — driveTurn sets lastYieldedResult
         // via its internal yield regardless. Save the pre-round pointer and
         // restore it after, so the corrected final result (待裁⑤) still sees
         // that acct grew past what the consumer last actually received.
         const preRoundResult = lastYieldedResult;
+        // Committed to the round: 'failed' until the drive completes cleanly,
+        // so any error/abort mid-round leaves an honest "started but did not
+        // finish" — the card may still be stale (writes counter tells).
+        memory.health.sessionEndUpdate = 'failed';
         // L2-2 (audit 2026-07-17): this round hand-drives driveTurn, so the
         // iterator-protocol duties the for-await sugar normally covers are
         // explicit here. Two rules: (1) only errors thrown BY the round
@@ -1909,7 +1945,10 @@ export function query(args: {
                 );
                 break;
               }
-              if (it.done === true) break;
+              if (it.done === true) {
+                memory.health.sessionEndUpdate = 'ran';
+                break;
+              }
               const msg = it.value;
               // A consumer-injected throw()/return() resumes AT this yield and
               // propagates out of the round (through the finally below).
@@ -2055,7 +2094,22 @@ export function query(args: {
           // now carry the whole session (incl. the session-end memory round and
           // any late background-subagent settle). The A-contract is documented in
           // docs/COMPAT.md ("Result accounting contract").
-          yield { ...lastYieldedResult, ...resultCommon() };
+          yield {
+            ...lastYieldedResult,
+            ...resultCommon(),
+            // R7 write-back observability: this emission happens AFTER the
+            // session-end round, so refresh the memoryHealth snapshot —
+            // re-spreading the pre-round metrics would re-report a stale
+            // sessionEndUpdate ('pending') and miss the round's own writes.
+            ...(memory !== null && lastYieldedResult.metrics !== undefined
+              ? {
+                  metrics: {
+                    ...lastYieldedResult.metrics,
+                    memoryHealth: { ...memory.health },
+                  },
+                }
+              : {}),
+          };
         }
       }
     }
@@ -2127,6 +2181,13 @@ export function query(args: {
     },
     [Symbol.asyncIterator](): Query {
       return q;
+    },
+
+    memoryHealthSnapshot(): SDKMemoryHealth | null {
+      // R7 write-back observability: live-object snapshot, readable on every
+      // exit path (incl. after an abort threw — no result carries the final
+      // sessionEndUpdate value there).
+      return memory !== null ? { ...memory.health } : null;
     },
 
     async interrupt(): Promise<SDKControlInterruptResponse> {

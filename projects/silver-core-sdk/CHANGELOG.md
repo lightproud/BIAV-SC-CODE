@@ -16,6 +16,40 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.75.0 — 2026-07-20
+
+R7 session-end write-back observability (keeper ruling 2026-07-20, from the
+BPT memory-rot diagnosis: ledger-driven sessions that end at a cap / driver
+timeout silently skip the session-end progress-card round, the card goes
+stale, and every resume re-verifies the world from an outdated recovery
+point — with no programmatic signal that the write-back was starved):
+
+- `SDKMemoryHealth.sessionEndUpdate` — what happened to the R7 round
+  (`pending` / `ran` / `failed` / `disabled` / `skipped-no-turns` /
+  `skipped-abort` / `skipped-budget` / `skipped-turns` /
+  `skipped-interrupt`), stamped on every exit path incl. the pre-turn
+  budget/turns cap returns and string-mode interrupts;
+- `Query.memoryHealthSnapshot()` — live counters snapshot, readable at any
+  time incl. after the stream ended or threw (the only channel on abort/cap
+  paths, where no result can carry the final value); the SessionManager
+  supervised wrapper delegates it to the current inner query;
+- the corrected final result now refreshes `metrics.memoryHealth` instead of
+  re-reporting the pre-round snapshot (which missed the round's own writes
+  and showed a stale `pending`);
+- docs/MEMORY.md "Session-end write-back observability" section with the
+  host compensation contract; 5 new tests (31 in memory-m2).
+
+Also in this build — upstream corpus re-sync (latent break shipped by the
+2026-07-20 automated snapshot refresh, `[skip ci]` so the guards never ran):
+
+- coordinator-worker preset synced to ccVersion 2.1.213: upstream flipped
+  "Do not spawn subagents" to bounded fan-out ("You may use the Agent tool
+  to fan out … bounded by the same depth cap as every other caller");
+- context-tip prompt set: upstream RETIRED the source files at 2.1.213; the
+  SDK keeps its adapted prompts pinned at last-seen 2.1.182, and the
+  corpus-sync guards now gate on the individual archive file (skip honestly
+  on a retired source, re-arm automatically if it returns).
+
 ## 0.74.0 — 2026-07-18
 
 Lockstep alignment only — no agent-SDK code change. The maestro SDK landed

@@ -35,9 +35,11 @@ M2 surface summary:
   enforced in the store engine and re-checked at the tool layer (view
   truncation + create size + create cards) so directly-implemented stores are
   covered too; `metrics.memoryHealth` reports operations / reads / writes /
-  errors / bytesRead / bytesWritten / indexInjectionTokens per run. For the
-  deep on-demand store scan (waterlines / rot / capacity / supersede chains
-  / read-write ratio) see "Store health assessment" below.
+  errors / bytesRead / bytesWritten / indexInjectionTokens /
+  sessionEndUpdate per run. For the deep on-demand store scan (waterlines /
+  rot / capacity / supersede chains / read-write ratio) see "Store health
+  assessment" below; for the sessionEndUpdate write-back signal see
+  "Session-end write-back observability" below.
 - **R9 cards mode** — `schema: 'cards'` + `memory.cards` (defaults 500
   chars/card, 50 cards/file): every written file must be `## <title>` cards
   with 结论 / 依据 / 过期条件 fields (half- or full-width colons, multi-line
@@ -147,6 +149,51 @@ contract (keeper ruling 2026-07-18: no new machinery). Both guarantees are
 executable — the contract suite's two `concurrency:` checks
 (`src/tools/memory/contract-suite.ts`) drive parallel writes and a stale
 replace against any implementation.
+
+## Session-end write-back observability (keeper 2026-07-20)
+
+The R7 session-end progress-card round runs ONLY on the normal end of input
+— an abort (driver timeout), a spent `maxBudgetUsd` / `maxTurns` cap, or a
+string-mode interrupt all skip it. That is correct per-session (a progress
+card is never worth breaching the budget contract), but silently fatal for a
+ledger-driven host whose sessions routinely end at their caps: the card
+never updates, every resume works from a stale recovery point, re-verifies
+the world, hits the cap again — the memory-rot loop the BPT deploy-rollback
+incident exposed (each retry round re-read the stale "one rollback failure"
+card and re-ran the whole verification).
+
+`memoryHealth.sessionEndUpdate` makes the skip programmatically visible:
+
+- `'ran'` — the round completed; nothing to do.
+- `'failed'` — the round started but errored/aborted mid-way (non-fatal to
+  the query); the card may still be stale — check `writes`.
+- `'disabled'` / `'skipped-no-turns'` — deliberate or vacuous; no action.
+- `'skipped-abort'` / `'skipped-budget'` / `'skipped-turns'` /
+  `'skipped-interrupt'` — the card was NOT updated; compensate.
+- `'pending'` — the run never reached the decision point at all (abort or
+  error threw past it, or the input was blocked); treat like a skip.
+
+Two read paths, because not every exit can carry the value on a result:
+
+```ts
+const q = query({ prompt, options: { memory: {} } });
+try {
+  for await (const m of q) { /* ... */ }
+} catch (err) { /* aborted / errored — no final result carries the value */ }
+
+const wb = q.memoryHealthSnapshot();       // null when memory is not enabled
+if (wb !== null && wb.sessionEndUpdate !== 'ran' && wb.sessionEndUpdate !== 'disabled') {
+  // write-back starved: dispatch a dedicated card-update session, or raise
+  // the caps for this task — otherwise the next resume works from a stale card
+}
+```
+
+On a normal completion where the round ran, the corrected final result (the
+one re-emitted with complete accounting) carries the refreshed snapshot in
+`metrics.memoryHealth` — earlier results honestly report `'pending'` because
+they predate the decision point. `Query.memoryHealthSnapshot()` is readable
+at any time, including after the stream ended or threw, and is the ONLY
+channel on abort/cap paths.
 
 ## Store health assessment (keeper memo 2026-07-18 §2)
 

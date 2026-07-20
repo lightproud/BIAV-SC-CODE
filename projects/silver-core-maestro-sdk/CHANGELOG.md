@@ -12,6 +12,14 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.75.0 — 2026-07-20
+
+Lockstep alignment only — no maestro-SDK code change. The agent SDK added R7
+session-end write-back observability (`SDKMemoryHealth.sessionEndUpdate` +
+`Query.memoryHealthSnapshot()`), giving ledger-driven hosts the signal to
+detect a session that ended without updating its progress card. See the
+agent CHANGELOG 0.75.0.
+
 ## 0.74.0 — 2026-07-18
 
 Audit round 5 of the 500-bug campaign (T56): three lenses over the NEW r4
