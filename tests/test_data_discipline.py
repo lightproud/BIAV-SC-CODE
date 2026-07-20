@@ -98,14 +98,15 @@ class TestOkfSourceLayerTagging:
                         "platforms": platforms}),
             encoding="utf-8",
         )
-        # Lay down the full-archive bodies the existence-gate checks for.
+        # Lay down the full-archive bodies the existence-gate checks for. Post
+        # T62 split the archive lives under the Record/Community data lake, which
+        # build_sources resolves via archive_layout.community_root() — driven here
+        # to the fixture through BIAV_SC_DATA_ROOT (env root), NOT the REPO monkeypatch.
+        community = fake_repo / "Public-Info-Pool" / "Record" / "Community"
         for name in platforms:
-            if name == "discord":
-                (fake_repo / "projects/news/data/discord").mkdir(parents=True, exist_ok=True)
-            else:
-                (fake_repo / f"projects/news/data/platforms/{name}").mkdir(
-                    parents=True, exist_ok=True)
+            (community / name).mkdir(parents=True, exist_ok=True)
 
+        monkeypatch.setenv("BIAV_SC_DATA_ROOT", str(fake_repo / "Public-Info-Pool"))
         monkeypatch.setattr(build_okf_bundle, "REPO", fake_repo)
         monkeypatch.setattr(build_okf_bundle, "BUNDLE", bundle)
         monkeypatch.setattr(build_okf_bundle, "SOURCE_HEALTH", health)
@@ -144,8 +145,9 @@ class TestOkfSourceLayerTagging:
             {"reddit": {"total_items": 5455, "level": "active"}},
         )
         resource = fm["reddit"].get("resource", "")
-        # resource is the layer the consumer is steered to for analysis: archive.
-        assert "/projects/news/data/" in resource, (
+        # resource is the layer the consumer is steered to for analysis: the full
+        # archive lake (post T62 split = Record/Community, logical pointer path).
+        assert "/Record/Community/" in resource, (
             f"reddit pointer does not target the archive layer: {resource!r}")
         assert "/projects/news/output/" not in resource, (
             f"reddit pointer leaks into the output/display layer: {resource!r}")
