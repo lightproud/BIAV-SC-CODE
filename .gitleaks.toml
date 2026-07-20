@@ -13,4 +13,16 @@ paths = [
   '''Public-Info-Pool/Record/.*''',
   '''projects/news/output/.*''',
   '''okf/.*''',
+  # ---- 历史路径豁免（2026-07-20 守密人裁定）----
+  # 周一全历史兜底扫会扫到目录迁移前的旧 blob：同一批「数据层非凭据面」内容，
+  # 只是住在旧地址。逐条锚定（^），不误伤同名工程目录；工程面（projects/*/src、
+  # scripts/、.github/ 等）无论历史现今一律照扫。
+  '''^projects/news/data/.*''',                        # 旧社区归档层（2026-06-21 迁入 Public-Info-Pool/Record 前）
+  '''^Public-Info-Pool/Reference/Game-Unpacked/.*''',  # 解包 text 层（2026-07-12 整层删除，历史 blob 仍在）
+  '''^projects/wiki/data/.*''',                        # wiki 解包/基线数据层（游戏数据 JSON）
+  '''^projects/wiki/docs/.*''',                        # wiki 站点内容层（生成角色页/图鉴/图标）
+  '''^wiki/.*''',                                      # 远古根级 wiki 布局（现已迁 projects/wiki）
+  '''^deliverables/.*''',                              # 旧产物目录（已由 Public-Info-Pool 取代）
+  '''^data/.*''',                                      # 远古根级数据布局（历史 blob）
+  '''^news/.*''',                                      # 远古根级 news 布局（历史 blob）
 ]
