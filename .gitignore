@@ -86,3 +86,8 @@ mutmut-stats.json
 
 # Node deps (root-level tooling caches; subprojects have their own)
 node_modules/
+
+# Public-Info-Pool/Record/Community: 社区全量档案数据湖 2026-07-20 迁 BIAV-SC-DATA（T62 P2-5 §7甲）。
+# 采集/消费经 BIAV_SC_DATA_ROOT 指向 data 仓 checkout；本仓不再跟踪（git 历史保留可恢复）。
+# store-patrol / kb-usage 等非数据湖子目录不受影响，仍留本仓。
+Public-Info-Pool/Record/Community/
