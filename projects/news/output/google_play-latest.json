@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-20T14:02:27.704187+00:00",
+  "collected_at": "2026-07-20T16:24:56.227237+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 116,
@@ -87,6 +87,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-09T14:14:47",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
+      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
+      "author": "Osman Yusuf",
+      "engagement": 2
+    },
+    {
+      "source": "google_play",
       "time": "2026-06-24T10:30:22",
       "lang": "id",
       "title": "[Google Play 好评] ★5 Absolutely perfect. Game ini niat banget",
@@ -143,16 +153,6 @@
       "summary": "The conversations between phases of bosses in story are annoying, add a skip for that please, and also add that in replay too, thanks. And please have guide for teams.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-81b13ca9-e065-49df-90ff-be632967802f",
       "author": "Nauth",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-09T14:14:47",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
-      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
-      "author": "Osman Yusuf",
       "engagement": 1
     },
     {
