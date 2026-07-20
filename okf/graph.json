@@ -3599,7 +3599,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:official",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
