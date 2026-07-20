@@ -1,0 +1,97 @@
+name: Build OKF Bundle
+
+on:
+  push:
+    branches: [main]
+    # 一步到位协议（2026-07-10，治 #341/#494/#549「事后补 rebuild PR」循环）：
+    # 路径清单从生成器（build_okf_bundle.py + okf_pointer_layers.py + build_kb_index.py）
+    # 实际消费的源反推，覆盖全部会话可提交的 KB 源——内容 PR 合并即触发重建直推 main，
+    # 会话不必随 PR 重建 okf/、更不必开 follow-up rebuild PR。
+    # 刻意不含每小时归档层（Public-Info-Pool/Record/Community、projects/news/output 流快照）：
+    # 其提交带 [skip ci] 本就不触发，数据漂移由下方每日 cron 兜底，防高频重建。
+    paths:
+      # 生成器本体
+      - 'scripts/build_okf_bundle.py'
+      - 'scripts/okf_pointer_layers.py'
+      - 'scripts/build_kb_index.py'
+      # wiki 数据层（characters / story / aliases / schemas / 解包结构化）
+      - 'projects/wiki/data/processed/**'
+      - 'projects/wiki/data/schemas/**'
+      - 'projects/wiki/data/extracted/**'
+      # sources 注册表
+      - 'projects/news/output/source-health.json'
+      - 'projects/news/scripts/archive_sources.json'
+      # 记忆层 + 事实圣经层
+      - 'memory/**'
+      - 'assets/data/**'
+      - 'assets/images/**'
+      # 正式产物层 + 解包 text 层
+      - 'Public-Info-Pool/Resource/**'
+      - 'Public-Info-Pool/Reference/Game-Unpacked/**'
+      # projects 入口文档层
+      - 'projects/*/CONTEXT.md'
+      - 'projects/silver-core-sdk/docs/**'
+      - 'projects/site/design/**'
+      - 'RELEASES.md'
+      - 'docs/testing-strategy.md'
+      - 'extracted_lua/**'
+  # 丙（守密人 2026-07-06）：sources 层派生自每小时更新的社区档案，push-path 触发盖不住
+  # 数据演进带来的层漂移（新平台/新档案指针）。每日重建一次把 committed bundle 同步上来，
+  # 兜住 test_kb_governance（该测试在 sparse-checkout CI 下跳过、只本地全量现形，见其注释）。
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: okf-bundle-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # T62 P2-5 接线（2026-07-20）：社区全量档案已迁 BIAV-SC-DATA，OKF 构建的存在检查 /
+      # mention 边本体读经 community_root() 读 data 仓（指针字符串仍逻辑）。
+      BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Clone BIAV-SC-DATA（PAT，社区全量档案数据根）
+        env:
+          DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DATA_TOKEN:-}" ]; then
+            echo "::error::secret BIAV_SC_DATA_TOKEN 未配置"; exit 1
+          fi
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
+          chmod 600 ~/.git-credentials
+          git clone --depth 1 https://github.com/lightproud/BIAV-SC-DATA.git data-repo
+      - name: Regenerate OKF bundle
+        run: python scripts/build_okf_bundle.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add okf/
+          if git diff --staged --quiet; then
+            echo "OKF bundle already up to date"
+          else
+            git commit -m "chore: rebuild OKF bundle [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $i failed, retrying in ${i}s..."
+              sleep $i
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi

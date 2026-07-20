@@ -1,0 +1,75 @@
+name: Sync Community archive to BIAV-SC-DATA
+
+# ⚠ 已退役（T62 P2-3a，2026-07-19）：分仓阶段一快照导入已完成、目标 A 采集器改直写 data 仓，
+# 本 code→data 镜像 sync 使命结束。**其 rsync --delete 会在 code 仓数据被删后连 data 仓一并清空**，
+# 是删除 P2-5 的灾难级 footgun，故退役——旧 `MIGRATE` 令牌失效，仅保留一个强警示词作紧急重灌逃生口。
+# 常规数据流现为：采集器 → BIAV-SC-DATA（见 discord-archive-datarepo-pilot.yml 模板，P2-3c 推广）。
+#
+# 原前置（如需紧急重灌）：细粒度 PAT + secret BIAV_SC_DATA_TOKEN。
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: '⚠ 已退役。仅紧急整仓重灌用，输入 FORCE-DESTRUCTIVE-RESYNC（会 --delete 覆盖 data 仓）'
+        required: true
+        default: ''
+
+permissions:
+  contents: read   # 只读本仓；写 data 仓走细粒度 PAT，不用 GITHUB_TOKEN
+
+concurrency:
+  group: data-repo-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.event.inputs.confirm == 'FORCE-DESTRUCTIVE-RESYNC'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout 本仓数据（sparse Record/Community）
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            Public-Info-Pool/Record/Community
+          sparse-checkout-cone-mode: true
+          path: code-repo
+
+      - name: Clone BIAV-SC-DATA（细粒度 PAT / HTTPS）
+        env:
+          DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DATA_TOKEN:-}" ]; then
+            echo "::error::secret BIAV_SC_DATA_TOKEN 未配置——守密人须先建细粒度 PAT + secret"
+            exit 1
+          fi
+          # 令牌走 credential store（不落 remote URL、不入 git config，防 git remote -v 泄漏）；
+          # 先设凭据再 clone，故私有 data 仓 clone 与后续 push 均认证。
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
+          chmod 600 ~/.git-credentials
+          git clone https://github.com/lightproud/BIAV-SC-DATA.git data-repo
+
+      - name: 快照镜像 Record/Community → data 仓
+        run: |
+          set -euo pipefail
+          SRC=code-repo/Public-Info-Pool/Record/Community
+          DST=data-repo/Record/Community
+          if [ ! -d "$SRC" ]; then echo "::error::$SRC 不存在，checkout 异常"; exit 1; fi
+          mkdir -p "$DST"
+          # --delete：使 data 仓 Community 与本仓逐字节一致（首次=纯导入，重跑=镜像同步）
+          rsync -a --delete "$SRC/" "$DST/"
+          cd data-repo
+          git config user.email "lightproud@hotmail.com"
+          git config user.name "Erica (BIAV-SC)"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "无变更，data 仓已与本仓一致"
+            exit 0
+          fi
+          COUNT=$(git diff --cached --numstat | wc -l)
+          git commit -m "data: sync Record/Community from BIAV-SC-CODE (T62 stage-1, $COUNT paths)"
+          git push origin HEAD:main
+          echo "已推送 $COUNT 路径变更至 BIAV-SC-DATA"

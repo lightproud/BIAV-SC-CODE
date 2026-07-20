@@ -1,0 +1,75 @@
+name: Testbed Patrol
+
+# silver-core-testbed (试金石, 施工封面 2026-07-18): the daily unattended
+# patrol run — four repository inspectors + the dream merge, grown on the
+# Silver Core Maestro SDK's scheduler + task ledger + driver, memory area
+# held through the agent SDK's memory store. `daemon.mjs --once` recovers
+# the schedule from the committed ledger and COMPENSATES the fire points
+# missed since yesterday's run (the 07:20 UTC cron is deliberately after
+# the 07:00 UTC fire points: the missed-fire path is exercised every day).
+# Ledger + memory area are committed back [skip ci]; acceptance §4.2 ("four
+# inspectors, 7 days unattended, every round auditable") accrues here.
+#
+# Daily slot: Beijing 15:20 (07:20 UTC), minute-offset against the 07:00 /
+# 07:05 / 07:10 / 07:15 / 07:37 siblings of the 北京 15 点档.
+
+on:
+  schedule:
+    - cron: '20 7 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: testbed-patrol
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  patrol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Deploy key: main carries a Ruleset; GITHUB_TOKEN pushes are
+          # blocked (todo T31) — machine commits go through BOT_DEPLOY_KEY.
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
+          # Sparse: the doc-links inspector reads only README/RELEASES/SDK
+          # trees; the multi-GB archive layers stay out.
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - name: Install dependencies (workspace root)
+        run: npm ci
+      - name: Build the two SDKs (testbed host dependencies)
+        run: |
+          npm run build --workspace=projects/silver-core-sdk
+          npm run build --workspace=projects/silver-core-maestro-sdk
+      - name: Run the patrol (scheduler + ledger + driver, one CI round)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node projects/silver-core-testbed/src/daemon.mjs --once
+      - name: Commit ledger + memory area if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/silver-core-testbed/state/ projects/silver-core-testbed/memory/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: testbed patrol round [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $i failed, retrying in ${i}s..."
+              sleep $i
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi

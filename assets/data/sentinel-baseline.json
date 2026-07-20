@@ -1,0 +1,24 @@
+{
+  "history": [
+    {
+      "steam": {
+        "item_count": 14,
+        "total_engagement": 5,
+        "positive_count": 14,
+        "negative_count": 0,
+        "negative_rate": 0.0,
+        "negative_keyword_hits": 0,
+        "negative_keywords": []
+      },
+      "discord": {
+        "item_count": 16,
+        "total_engagement": 17785,
+        "daily_messages": 17387,
+        "negative_keyword_hits": 0,
+        "negative_keywords": []
+      }
+    }
+  ],
+  "baseline": {},
+  "last_scan": "2026-06-02T01:52:35.057522"
+}

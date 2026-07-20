@@ -1,0 +1,62 @@
+name: Claude Code
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: claude-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  claude:
+    if: (github.event_name == 'issues' && github.event.issue.user.login == github.repository_owner) || (github.event_name == 'issue_comment' && github.event.comment.user.login == github.repository_owner)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: anthropics/claude-code-action@3553f84341b92da26052e28acf1aa898f9511f32 # v1
+        id: claude
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_push: "true"
+        continue-on-error: true
+      - name: Close issue on success
+        if: steps.claude.outcome == 'success'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const issue_number = context.issue?.number;
+            if (!issue_number) return;
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              state: 'closed',
+              state_reason: 'completed'
+            });
+      - name: Label blocked issues on failure
+        if: steps.claude.outcome == 'failure'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const issue_number = context.issue?.number;
+            if (!issue_number) return;
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              labels: ['blocked']
+            });
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              body: '⚠️ 自动执行失败。可能原因：API 余额不足或运行时错误。请检查 [Actions 日志](' + context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId + ')。'
+            });

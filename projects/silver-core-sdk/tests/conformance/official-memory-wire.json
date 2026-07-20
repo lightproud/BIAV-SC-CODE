@@ -1,0 +1,78 @@
+{
+  "provenance": {
+    "capturedAt": "2026-07-11T09:41:11Z",
+    "run": "https://github.com/lightproud/brain-in-a-vat/actions/runs/29148114257",
+    "capturedWith": "@anthropic-ai/sdk 0.111.0 (installed --no-save at run time)",
+    "script": "tests/integration/capture-official-memory-wire.mjs",
+    "note": "Headers whitelisted (content-type / anthropic-version / user-agent); no credentials were ever captured. Observation-boundary r2 compliant: official-arm request bodies are readable."
+  },
+  "model": "claude-haiku-4-5-20251001",
+  "captures": [
+    {
+      "arm": "ga",
+      "url": "https://api.anthropic.com/v1/messages",
+      "headers": {
+        "content-type": "application/json",
+        "anthropic-version": "2023-06-01",
+        "user-agent": "Anthropic/JS 0.111.0"
+      },
+      "body": {
+        "model": "claude-haiku-4-5-20251001",
+        "max_tokens": 16,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with exactly OK. Do not use any tools."
+          }
+        ],
+        "tools": [
+          {
+            "name": "echo_probe",
+            "description": "Echo a string back.",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          },
+          {
+            "type": "memory_20250818",
+            "name": "memory"
+          }
+        ]
+      }
+    },
+    {
+      "arm": "runner",
+      "url": "https://api.anthropic.com/v1/messages?beta=true",
+      "headers": {
+        "content-type": "application/json",
+        "anthropic-version": "2023-06-01",
+        "user-agent": "Anthropic/JS 0.111.0"
+      },
+      "body": {
+        "model": "claude-haiku-4-5-20251001",
+        "max_tokens": 64,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with exactly OK. Do not use any tools."
+          }
+        ],
+        "tools": [
+          {
+            "type": "memory_20250818",
+            "name": "memory"
+          }
+        ],
+        "stream": false
+      }
+    }
+  ]
+}

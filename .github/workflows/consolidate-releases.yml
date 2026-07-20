@@ -1,0 +1,134 @@
+name: Consolidate Releases
+
+# 把多个零散 release 合并归入一个目标 release（四分类整理：解包数据 / 解包资产 /
+# 社区归档数据 / 社区归档资产）。云容器无 release 写权限，故走此 workflow（Actions 内置令牌）。
+#
+# 安全设计：
+#   - 仅 workflow_dispatch 手动触发
+#   - confirm 必须等于 target_tag 才执行
+#   - 资产逐源下载到一个目录，整体上传到目标 release
+#   - 删源前先校验：目标 release 资产数 >= 下载到的资产数，不达标不删源（防丢数据）
+#   - delete_sources 显式开启才删，删除连带 git tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_tag:
+        description: '目标 release tag（如 unpacked-data / community-data / community-assets）'
+        required: true
+      target_title:
+        description: '目标 release 标题'
+        required: true
+      source_tags:
+        description: '并入的源 release tag，逗号分隔'
+        required: true
+      confirm:
+        description: '二次确认：重复键入 target_tag'
+        required: true
+      delete_sources:
+        description: '校验通过后删除源 release + git tag（true/false）'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  consolidate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Verify confirmation matches target_tag
+        env:
+          T: ${{ github.event.inputs.target_tag }}
+          C: ${{ github.event.inputs.confirm }}
+        run: |
+          if [ "$T" != "$C" ]; then
+            echo "ERROR: confirm ('$C') 与 target_tag ('$T') 不一致，拒绝执行。"
+            exit 1
+          fi
+          echo "确认通过：合并到 '$T'。"
+
+      - uses: actions/checkout@v7
+
+      - name: Download all assets from source releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          SOURCES: ${{ github.event.inputs.source_tags }}
+        run: |
+          mkdir -p merge_assets
+          IFS=',' read -ra TAGS <<< "$SOURCES"
+          for t in "${TAGS[@]}"; do
+            tag="$(echo "$t" | tr -d '[:space:]')"
+            [ -z "$tag" ] && continue
+            echo "===== downloading assets from $tag ====="
+            if ! gh release view "$tag" >/dev/null 2>&1; then
+              echo "ERROR: 源 release '$tag' 不存在，中止。"
+              exit 1
+            fi
+            gh release download "$tag" --dir merge_assets || {
+              echo "ERROR: 下载 '$tag' 失败"; exit 1; }
+          done
+          echo "===== downloaded files ====="
+          ls -la merge_assets
+          count=$(find merge_assets -maxdepth 1 -type f | wc -l)
+          echo "downloaded_count=$count" >> "$GITHUB_ENV"
+          echo "total downloaded assets: $count"
+          if [ "$count" -eq 0 ]; then
+            echo "ERROR: 未下载到任何资产，中止。"
+            exit 1
+          fi
+
+      - name: Create or update target release and upload assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TARGET: ${{ github.event.inputs.target_tag }}
+          TITLE: ${{ github.event.inputs.target_title }}
+          SOURCES: ${{ github.event.inputs.source_tags }}
+        run: |
+          NOTES="Consolidated release. 合并自: $SOURCES. 由 consolidate-releases.yml 于 $(date -u +%Y-%m-%d) 生成。"
+          if gh release view "$TARGET" >/dev/null 2>&1; then
+            echo "目标 '$TARGET' 已存在，--clobber 追加资产..."
+            gh release upload "$TARGET" merge_assets/* --clobber
+          else
+            echo "创建目标 release '$TARGET'..."
+            gh release create "$TARGET" merge_assets/* --title "$TITLE" --notes "$NOTES"
+          fi
+
+      - name: Verify target asset count
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TARGET: ${{ github.event.inputs.target_tag }}
+        run: |
+          actual=$(gh release view "$TARGET" --json assets --jq '.assets | length')
+          echo "目标资产数=$actual，下载并入数=$downloaded_count"
+          if [ "$actual" -lt "$downloaded_count" ]; then
+            echo "ERROR: 目标资产数 ($actual) < 并入数 ($downloaded_count)，上传不完整，保留源 release 不删。"
+            exit 1
+          fi
+          echo "校验通过。"
+
+      - name: Delete source releases (only when requested and verification passed)
+        if: ${{ github.event.inputs.delete_sources == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          SOURCES: ${{ github.event.inputs.source_tags }}
+          TARGET: ${{ github.event.inputs.target_tag }}
+        run: |
+          IFS=',' read -ra TAGS <<< "$SOURCES"
+          for t in "${TAGS[@]}"; do
+            tag="$(echo "$t" | tr -d '[:space:]')"
+            [ -z "$tag" ] && continue
+            if [ "$tag" = "$TARGET" ]; then
+              echo "skip: 源与目标同名 ($tag)"
+              continue
+            fi
+            echo "删除源 release + git tag '$tag'..."
+            gh release delete "$tag" --yes --cleanup-tag
+          done
+          echo "源 release 清理完成。"

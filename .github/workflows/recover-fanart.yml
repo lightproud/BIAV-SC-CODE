@@ -1,0 +1,85 @@
+name: "🎨 Recover Fan Art"
+
+# 同人图全量补录：附件本体仍在 Discord，过期的只是带签名链接。
+# 带 DISCORD_BOT_TOKEN 经 refresh-urls 刷新后全量下载二创图，直传 community-assets
+# release 对应月资产（取回既有月桶合并后经归档引擎 --force-group 重传）。
+# 2026-06-21 守密人裁定 fanart 二进制不入 git（.gitignore 排除、采集链直传 release），
+# 故本工作流不做任何 git 提交。
+# 单次跑覆盖整窗口（内部逐日循环），避免多次触发被并发组取消。
+
+on:
+  workflow_dispatch:
+    inputs:
+      end_date:
+        description: '窗口结束日 YYYY-MM-DD（默认=北京今日）'
+        required: false
+        default: ''
+      window_days:
+        description: '窗口天数（含结束日，默认 4）'
+        required: false
+        default: '4'
+
+concurrency:
+  group: recover-fanart
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Recover fan art across window (refresh Discord URLs)
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          INPUT_END_DATE: ${{ github.event.inputs.end_date }}
+          INPUT_WINDOW_DAYS: ${{ github.event.inputs.window_days }}
+        run: |
+          END="$INPUT_END_DATE"
+          [ -n "$END" ] || END=$(TZ=Asia/Shanghai date +%Y-%m-%d)
+          WIN="$INPUT_WINDOW_DAYS"; WIN=${WIN:-4}
+          for k in $(seq $((WIN-1)) -1 0); do
+            D=$(date -d "$END -$k day" +%Y-%m-%d)
+            echo "=== $D ==="
+            python projects/news/scripts/collect_fanart.py --date "$D" \
+              --out "projects/news/data/fanart/$D"
+          done
+
+      - name: Upload to community-assets release (merge month assets)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BASE=projects/news/data/fanart
+          # 先算受影响月份（此刻目录里只有本次窗口新采的日期目录）
+          MONTHS=$(ls "$BASE" 2>/dev/null | grep -E '^20[0-9]{2}-[0-9]{2}-[0-9]{2}$' | cut -c1-7 | sort -u || true)
+          if [ -z "$MONTHS" ]; then
+            echo "No fan art recovered, nothing to upload"
+            exit 0
+          fi
+          mkdir -p /tmp/fanart-assets
+          # 查询失败必须硬失败：静默当「资产不存在」会用窗口增量 --clobber 覆掉整月存量
+          gh release view community-assets --json assets -q '.assets[].name' \
+            --repo "$GITHUB_REPOSITORY" > /tmp/fanart-assets/names.txt
+          FLAGS="--source fanart"
+          for M in $MONTHS; do
+            ASSET="fanart-archive-$M.tar.gz"
+            if grep -qx "$ASSET" /tmp/fanart-assets/names.txt; then
+              gh release download community-assets --pattern "$ASSET" \
+                --dir /tmp/fanart-assets --repo "$GITHUB_REPOSITORY"
+              # --skip-old-files：月桶存量与本次补录同名时保留补录（刚刷新过 CDN 链接）
+              tar --skip-old-files -xzf "/tmp/fanart-assets/$ASSET" -C "$BASE"
+            else
+              echo "No existing asset for $M (first upload of the month)"
+            fi
+            FLAGS="$FLAGS --force-group $M"
+          done
+          python projects/news/scripts/archive_engine.py $FLAGS

@@ -1,0 +1,394 @@
+{
+  "_meta": {
+    "purpose": "角色 -> 故事链路",
+    "total": 55,
+    "generated": "2026-06-21"
+  },
+  "links": [
+    {
+      "character": "塔薇",
+      "bio_lore_id": 48636,
+      "unlock_condition": "通关序章解锁",
+      "unlock_type": "main_story",
+      "story_unit": "序章"
+    },
+    {
+      "character": "拉蒙娜",
+      "bio_lore_id": 51375,
+      "unlock_condition": "唤醒「拉蒙娜」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "萨尔瓦多",
+      "bio_lore_id": 57597,
+      "unlock_condition": "通关特遣纪录「血的颜色」解锁",
+      "unlock_type": "special_record",
+      "story_unit": null
+    },
+    {
+      "character": "图鲁",
+      "bio_lore_id": 57598,
+      "unlock_condition": "唤醒「图鲁」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "弥利亚姆",
+      "bio_lore_id": 57600,
+      "unlock_condition": "通关异梦视界「亵渎」解锁",
+      "unlock_type": "event_stage",
+      "story_unit": null
+    },
+    {
+      "character": "萝坦",
+      "bio_lore_id": 57602,
+      "unlock_condition": "唤醒「萝坦」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "杜勒赛因",
+      "bio_lore_id": 57603,
+      "unlock_condition": "唤醒「杜勒赛因」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "旺达",
+      "bio_lore_id": 57604,
+      "unlock_condition": "通关意识潜游「燃烧的群宴」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「燃烧的群宴」"
+    },
+    {
+      "character": "菲茵特",
+      "bio_lore_id": 57605,
+      "unlock_condition": "唤醒「菲茵特」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "凯蒂古拉",
+      "bio_lore_id": 57606,
+      "unlock_condition": "通关意识潜游「不朽极昼」后解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「不朽极昼」"
+    },
+    {
+      "character": "熔毁·朵尔",
+      "bio_lore_id": 57607,
+      "unlock_condition": "唤醒「熔毁·朵尔」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "汀克特",
+      "bio_lore_id": 57608,
+      "unlock_condition": "唤醒「汀克特」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "朵尔",
+      "bio_lore_id": 57609,
+      "unlock_condition": "唤醒「朵尔」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "温柯尔",
+      "bio_lore_id": 57610,
+      "unlock_condition": "唤醒「温柯尔」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "达芙黛尔",
+      "bio_lore_id": 57611,
+      "unlock_condition": "通关特遣纪录「雨镇幽影」解锁",
+      "unlock_type": "special_record",
+      "story_unit": null
+    },
+    {
+      "character": "卡茜亚",
+      "bio_lore_id": 57612,
+      "unlock_condition": "唤醒「卡茜亚」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "环行·拉蒙娜",
+      "bio_lore_id": 57613,
+      "unlock_condition": "通关意识潜游「一步之遥」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「一步之遥」"
+    },
+    {
+      "character": "奥尔拉",
+      "bio_lore_id": 57614,
+      "unlock_condition": "通关特遣纪录「玫瑰的栖居」解锁",
+      "unlock_type": "special_record",
+      "story_unit": null
+    },
+    {
+      "character": "泰旖丝",
+      "bio_lore_id": 57615,
+      "unlock_condition": "唤醒「泰旖丝」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "法洛思",
+      "bio_lore_id": 57629,
+      "unlock_condition": "唤醒「法洛思」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "奥吉尔",
+      "bio_lore_id": 57630,
+      "unlock_condition": "通关意识潜游「骑士的愿望」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「骑士的愿望」"
+    },
+    {
+      "character": "莉兹",
+      "bio_lore_id": 57631,
+      "unlock_condition": "唤醒「莉兹」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "血链·希洛",
+      "bio_lore_id": 57632,
+      "unlock_condition": "唤醒「血链·希洛」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "戈利亚",
+      "bio_lore_id": 57634,
+      "unlock_condition": "通关意识潜游「巨人的陨落」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「巨人的陨落」"
+    },
+    {
+      "character": "希洛",
+      "bio_lore_id": 57635,
+      "unlock_condition": "唤醒「希洛」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "艾尔瓦",
+      "bio_lore_id": 57637,
+      "unlock_condition": "唤醒「艾尔瓦」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "尤乌哈希",
+      "bio_lore_id": 57638,
+      "unlock_condition": "通关意识潜游「血与沙」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「血与沙」"
+    },
+    {
+      "character": "索蕾尔",
+      "bio_lore_id": 57639,
+      "unlock_condition": "通关特遣纪录「蔷薇礼赞」解锁",
+      "unlock_type": "special_record",
+      "story_unit": null
+    },
+    {
+      "character": "阿格里帕",
+      "bio_lore_id": 57640,
+      "unlock_condition": "通关意识潜游「苍白后裔」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「苍白后裔」"
+    },
+    {
+      "character": "希莱斯特",
+      "bio_lore_id": 57641,
+      "unlock_condition": "唤醒「希莱斯特」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "珊",
+      "bio_lore_id": 57642,
+      "unlock_condition": "通关意识潜游「如歌的雕琢」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「如歌的雕琢」"
+    },
+    {
+      "character": "珈伦",
+      "bio_lore_id": 57643,
+      "unlock_condition": "唤醒「珈伦」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "潘狄娅",
+      "bio_lore_id": 57644,
+      "unlock_condition": "唤醒「潘狄娅」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "凯刻斯",
+      "bio_lore_id": 57649,
+      "unlock_condition": "唤醒「凯刻斯」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "雷娅",
+      "bio_lore_id": 57650,
+      "unlock_condition": "唤醒「雷娅」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "「24」",
+      "bio_lore_id": 57651,
+      "unlock_condition": "通关特遣纪录「宁静的裂殖」解锁",
+      "unlock_type": "special_record",
+      "story_unit": null
+    },
+    {
+      "character": "莉莉",
+      "bio_lore_id": 57652,
+      "unlock_condition": "通关特遣纪录「故事的魔法」解锁",
+      "unlock_type": "special_record",
+      "story_unit": null
+    },
+    {
+      "character": "艾继丝",
+      "bio_lore_id": 57654,
+      "unlock_condition": "唤醒「艾继丝」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "艾瑞卡",
+      "bio_lore_id": 57716,
+      "unlock_condition": "通关意识潜游「扭曲核心」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「扭曲核心」"
+    },
+    {
+      "character": "克莱门汀",
+      "bio_lore_id": 57718,
+      "unlock_condition": "通关调查行动第1章「东区秘事」解锁",
+      "unlock_type": "main_story",
+      "story_unit": "调查行动第1章「东区秘事」"
+    },
+    {
+      "character": "诺缔拉",
+      "bio_lore_id": 57720,
+      "unlock_condition": "唤醒「诺缔拉」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "墨菲",
+      "bio_lore_id": 58148,
+      "unlock_condition": "唤醒「墨菲」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "奥瑞塔",
+      "bio_lore_id": 59454,
+      "unlock_condition": "通关意识潜游「诸事如常」解锁",
+      "unlock_type": "mind_dive",
+      "story_unit": "意识潜游「诸事如常」"
+    },
+    {
+      "character": "莱克",
+      "bio_lore_id": 59455,
+      "unlock_condition": "通关特遣纪录「狩猎愉快！」解锁",
+      "unlock_type": "special_record",
+      "story_unit": null
+    },
+    {
+      "character": "宁菲亚",
+      "bio_lore_id": 59456,
+      "unlock_condition": "唤醒「宁菲亚」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "哈姆林",
+      "bio_lore_id": 62184,
+      "unlock_condition": "通关调查行动第8章「终末交响曲」解锁",
+      "unlock_type": "main_story",
+      "story_unit": "调查行动第8章「终末交响曲」"
+    },
+    {
+      "character": "詹金",
+      "bio_lore_id": 65509,
+      "unlock_condition": "通关调查行动第2章「以蜡像之名」解锁",
+      "unlock_type": "main_story",
+      "story_unit": "调查行动第2章「以蜡像之名」"
+    },
+    {
+      "character": "克珀珊特",
+      "bio_lore_id": 89706,
+      "unlock_condition": "唤醒「克珀珊特」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "卡斯托尔",
+      "bio_lore_id": 90416,
+      "unlock_condition": "唤醒「卡斯托尔」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "波吕克斯",
+      "bio_lore_id": 94553,
+      "unlock_condition": "通关异梦视界「天边之外·下」解锁",
+      "unlock_type": "event_stage",
+      "story_unit": null
+    },
+    {
+      "character": "皮克曼",
+      "bio_lore_id": 100442,
+      "unlock_condition": "唤醒「皮克曼」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "诞妄·墨菲",
+      "bio_lore_id": 121341,
+      "unlock_condition": "唤醒「诞妄·墨菲」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "茉夏",
+      "bio_lore_id": 124844,
+      "unlock_condition": "唤醒「茉夏」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "徐",
+      "bio_lore_id": 126989,
+      "unlock_condition": "唤醒「徐」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    },
+    {
+      "character": "莫丝",
+      "bio_lore_id": 129601,
+      "unlock_condition": "唤醒「莫丝」后解锁",
+      "unlock_type": "acquire_character",
+      "story_unit": null
+    }
+  ]
+}

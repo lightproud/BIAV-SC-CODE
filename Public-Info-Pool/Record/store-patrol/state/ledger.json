@@ -1,0 +1,61 @@
+{
+  "sessions": {
+    "patrol:steam-appdetails:2026-07-18": {
+      "id": "patrol:steam-appdetails:2026-07-18",
+      "intent": "store-patrol steam-appdetails 2026-07-18",
+      "payload": {
+        "target": {
+          "id": "steam-appdetails",
+          "title": "Morimens Steam storefront (price / release surface)",
+          "url": "https://store.steampowered.com/api/appdetails?appids=3052450&cc=us&l=en&filters=basic,price_overview,release_date",
+          "extract": "steam-appdetails",
+          "key": "3052450"
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1784357664956,
+      "updatedAt": 1784357665538,
+      "nextRunAt": null
+    },
+    "patrol:steam-review-summary:2026-07-18": {
+      "id": "patrol:steam-review-summary:2026-07-18",
+      "intent": "store-patrol steam-review-summary 2026-07-18",
+      "payload": {
+        "target": {
+          "id": "steam-review-summary",
+          "title": "Morimens Steam review summary",
+          "url": "https://store.steampowered.com/appreviews/3052450?json=1&num_per_page=0&language=all&purchase_type=all",
+          "extract": "steam-review-summary"
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1784357664957,
+      "updatedAt": 1784357665388,
+      "nextRunAt": null
+    }
+  },
+  "queries": [
+    {
+      "id": "cbe9a7df-06db-4bd0-9b2c-f049cfcf83e3",
+      "sessionId": "patrol:steam-review-summary:2026-07-18",
+      "attempt": 1,
+      "startedAt": 1784357665024,
+      "endedAt": 1784357665386,
+      "outcome": "ok",
+      "summary": "steam-review-summary: CHANGED"
+    },
+    {
+      "id": "418f64dd-476c-4e44-86e1-f953443d788f",
+      "sessionId": "patrol:steam-appdetails:2026-07-18",
+      "attempt": 1,
+      "startedAt": 1784357664958,
+      "endedAt": 1784357665537,
+      "outcome": "ok",
+      "summary": "steam-appdetails: CHANGED"
+    }
+  ]
+}

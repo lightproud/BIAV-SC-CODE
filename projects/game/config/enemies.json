@@ -1,0 +1,35 @@
+{
+  "_meta": "融蚀造物。融蚀（Erosion）= 抹消意义/生命/理智/记忆的核心灾变（morimens-context）。数值为玩法平衡设计。",
+  "enemies": [
+    {
+      "id": "husk",
+      "name": "蚀仆",
+      "hp": 14, "speed": 52, "damage": 8, "radius": 12, "xp": 1, "color": "#6b7280",
+      "ai": "chase"
+    },
+    {
+      "id": "wisp",
+      "name": "速影",
+      "hp": 8, "speed": 105, "damage": 6, "radius": 9, "xp": 2, "color": "#a78bfa",
+      "ai": "chase"
+    },
+    {
+      "id": "bloater",
+      "name": "壅肿",
+      "hp": 60, "speed": 34, "damage": 18, "radius": 20, "xp": 4, "color": "#dc2626",
+      "ai": "chase", "onDeath": "burst"
+    },
+    {
+      "id": "weaver",
+      "name": "织雾者",
+      "hp": 26, "speed": 40, "damage": 10, "radius": 13, "xp": 3, "color": "#0ea5e9",
+      "ai": "ranged", "shootCooldown": 2.8, "shotSpeed": 155, "shotDamage": 8, "keepDist": 260
+    },
+    {
+      "id": "erosion_lord",
+      "name": "融蚀领主",
+      "hp": 3500, "speed": 46, "damage": 30, "radius": 46, "xp": 200, "color": "#7c3aed",
+      "ai": "boss", "summon": "husk", "summonCooldown": 4.0, "boss": true
+    }
+  ]
+}

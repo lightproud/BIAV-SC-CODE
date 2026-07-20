@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "type": "card-system",
+    "extracted_from": [
+      "projects/wiki/data/extracted/lua_tables/LanguageConfig.lua",
+      "projects/wiki/data/extracted/categorized/game_kv.txt",
+      "projects/wiki/data/extracted/categorized/character_data.txt",
+      "memory/morimens-context.md"
+    ],
+    "extracted_by": "Code-memory",
+    "extracted_at": "2026-04-26",
+    "extraction_principle": "仅录入解包数据中可字面验证的 token 与系统术语；玩家俚语单独标记；未在游戏数据出现的术语显式标注「未确认」",
+    "version": "1.0.0"
+  },
+
+  "card_classes_official": {
+    "description": "游戏 UI 实际显示的卡牌类型，源自 LanguageConfig 表的 CardString_* 与 Card_Bag_Title_CN 字段",
+    "container": {
+      "name_zh": "指令卡",
+      "name_en": "Order Card (推断翻译，源 token 仅 CN)",
+      "lua_token": "LanguageConfig_Card_Bag_Title_CN",
+      "definition": "玩家卡组的容器主类，包含每名唤醒体可携带的所有可主动打出的卡牌。每个角色 2 张独特指令卡（出自 morimens-context.md:132）。",
+      "evidence_chunks": [
+        "projects/wiki/data/extracted/categorized/game_kv.txt 含 LanguageConfig_Card_Bag_Title_CN|指令卡",
+        "character_data.txt 中 AwakerConfig_*_AwakerIntroduction 多处描述「通过指令卡」「使用指令卡」"
+      ]
+    },
+    "subtypes": [
+      {
+        "id": "card-string-01",
+        "name_zh": "伤害",
+        "lua_token": "LanguageConfig_CardString_01_CN"
+      },
+      {
+        "id": "card-string-02",
+        "name_zh": "能力",
+        "lua_token": "LanguageConfig_CardString_02_CN"
+      },
+      {
+        "id": "card-string-03",
+        "name_zh": "状态",
+        "lua_token": "LanguageConfig_CardString_03_CN"
+      },
+      {
+        "id": "card-string-04",
+        "name_zh": "技能",
+        "lua_token": "LanguageConfig_CardString_04_CN"
+      },
+      {
+        "id": "card-string-05",
+        "name_zh": "症状",
+        "lua_token": "LanguageConfig_CardString_05_CN"
+      },
+      {
+        "id": "card-string-06",
+        "name_zh": "护盾",
+        "lua_token": "LanguageConfig_CardString_06_CN"
+      }
+    ],
+    "morimens_context_summary": {
+      "source": "memory/morimens-context.md:132",
+      "card_types_5": [
+        "打击（1 费）",
+        "防御（1 费）",
+        "指令卡（每角色 2 张独特）",
+        "觉醒卡（被动）",
+        "症状/状态卡"
+      ],
+      "note": "上下文文档列出 5 类，与 LanguageConfig 的 7 个 CardString token 视角不同：morimens-context 按「玩法功能」分，LanguageConfig 按「UI 文案标签」分。无矛盾。"
+    }
+  },
+
+  "keeper_skill_system": {
+    "description": "守密人技能系统（v2.0 引入），独立于唤醒体卡组，由独立资源充能。",
+    "key_orders": {
+      "name_zh": "钥令",
+      "name_en": "Key Orders",
+      "lua_token": "LanguageConfig.KeeperSkillTitle_CN, LanguageConfig.BagKeeperSkillTitle_CN",
+      "evidence": [
+        "projects/wiki/data/extracted/lua_tables/LanguageConfig.lua: KeeperSkillTitle_CN = \"钥令\"",
+        "projects/wiki/data/extracted/lua_tables/LanguageConfig.lua: Card_Select_Get_Tips1_KeeperSkill_CN = \"选择 1 张钥令\"",
+        "memory/morimens-context.md:93,133"
+      ],
+      "selection": "战斗前编队时选择 1 张钥令携带（守密人技能槽）"
+    },
+    "silver_key_energy": {
+      "name_zh": "银钥能量",
+      "name_en": "Silver Key Energy",
+      "lua_token": "LanguageConfig.KeeperSkillEnergy_CN",
+      "evidence": [
+        "LanguageConfig.lua: KeeperSkillEnergy_CN = \"银钥能量{s1}\"",
+        "LanguageConfig.lua: KeeperSkillEnergyConsume_CN = \"银钥能量消耗:{s1}\"",
+        "LanguageConfig.lua: C15AFNotUseCard_CN = \"银钥能量不足\""
+      ],
+      "purpose": "钥令释放所需的资源"
+    },
+    "keyflare": {
+      "name_zh": "钥焰",
+      "name_en": "Keyflare",
+      "evidence": "memory/morimens-context.md:133",
+      "purpose": "充能至 1000 时释放钥令"
+    },
+    "silver_resonance": {
+      "name_zh": "银钥共鸣",
+      "lua_token": "LanguageConfig.Chaos_Tips_Title_CN",
+      "evidence": "LanguageConfig.lua: Chaos_Tips_Title_CN = \"银钥共鸣\""
+    }
+  },
+
+  "commune_system": {
+    "name_zh": "命轮",
+    "name_en": "Commune",
+    "description": "唤醒体配备的装备/词条系统（参考 morimens-context 提及）",
+    "evidence": [
+      "LanguageConfig.lua: AbyssChallengeBattleTips_CN = \"通关后，本次出战的唤醒体、命轮和钥令将无法在其他融灾禁区中上场\"",
+      "LanguageConfig.lua: AlchemyDecomposeWeaponLockTip_CN = \"当前命轮已锁定\"",
+      "Wiki Phase 2 W1 自举 24 角色含完整命轮数据"
+    ]
+  },
+
+  "awaker_card_system": {
+    "name_zh": "觉醒卡 / 觉醒被动",
+    "lua_table": "AwakerConfig.lua + AwakerPotency.lua + AwakerTalent.lua",
+    "description": "唤醒体被动能力，在战斗中根据触发条件自动生效。每个唤醒体一套 AwakerConfig + AwakerPotency + AwakerTalent 配置。",
+    "evidence": [
+      "projects/wiki/data/extracted/lua_tables/AwakerConfig.lua",
+      "projects/wiki/data/extracted/lua_tables/AwakerPotency.lua",
+      "character_data.txt 中 AwakerConfig_*_AwakerIntroduction 字段"
+    ]
+  },
+
+  "player_slang_aliases": {
+    "description": "玩家社区俚语 → 官方术语映射。仓库内字面 grep 命中证据已附。这些俚语**不是**官方术语，仅为帮助 RAG 检索时识别玩家提问意图。",
+    "aliases": [
+      {
+        "slang": "指令牌",
+        "official_term": "指令卡",
+        "evidence": [
+          "projects/news/data/discord/activity_daily/2024-09-17.json:11 频道名「哈姆林把我的指令牌吐出來」（玩家俗称，加儿化/口语化）"
+        ],
+        "occurrence_count": 1,
+        "confidence": "中（仅 1 条玩家发言）"
+      }
+    ]
+  },
+
+  "unconfirmed_terms": {
+    "description": "守密人 2026-04-26 提问中出现但仓库内未找到任何官方/玩家证据的术语。Code-memory 保留此清单供将来获得新信息时录入。",
+    "terms": [
+      {
+        "term": "灵魂牌",
+        "search_scope": [
+          "全仓库 grep 字面匹配（仅 baseline 报告自我引用）",
+          "lua_tables/ 25 表名扫描（无 SoulCard/SoulOrder 等）",
+          "Discord/Bilibili/Steam 玩家发言扫描（0 命中）",
+          "LanguageConfig 全部 _CN 字段扫描"
+        ],
+        "verdict": "在忘却前夜公开数据中不存在",
+        "possible_origin_hypothesis": [
+          "守密人记忆混淆其他卡牌游戏术语（《阴阳师·百闻牌》「魂卡」等）",
+          "未公开活动/联动卡片名称（v2.5 联动尚未确证）",
+          "玩家未流行起来的临时俚语（活跃度阈值之下）"
+        ],
+        "investigated_at": "2026-04-26 by Code-memory"
+      },
+      {
+        "term": "命运牌",
+        "search_scope": [
+          "全仓库 grep 字面匹配（仅 baseline 报告自我引用）",
+          "玩家发言扫描（0 命中）",
+          "lua_tables/ 25 表名扫描（无 FateCard/DestinyCard 等）"
+        ],
+        "verdict": "在忘却前夜公开数据中不存在",
+        "possible_origin_hypothesis": [
+          "守密人记忆混淆其他卡牌游戏术语（《炉石传说》「命运卡」扩展包等）",
+          "未公开机制"
+        ],
+        "investigated_at": "2026-04-26 by Code-memory"
+      }
+    ]
+  }
+}

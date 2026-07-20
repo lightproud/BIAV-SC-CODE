@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "trinkets.schema.json",
+  "title": "Morimens Trinkets",
+  "description": "Trinket (神器) database for Morimens. Trinkets are the equipment-tier accessories awakeners hold; equivalent to FGO Craft Essences.",
+  "type": "object",
+  "required": ["description", "trinkets"],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "trinkets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/trinket"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "set_bonus": {
+      "type": "object",
+      "required": ["pieces", "effect"],
+      "properties": {
+        "pieces": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 6
+        },
+        "effect": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "trinket_recommendation": {
+      "type": "object",
+      "required": ["character_id"],
+      "properties": {
+        "character_id": { "type": "string" },
+        "priority": {
+          "type": "string",
+          "enum": ["BiS", "alt", "budget"]
+        },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "trinket": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "rarity",
+        "effect",
+        "obtain",
+        "icon_url",
+        "last_verified"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "source_id": {
+          "type": "integer",
+          "description": "Numeric ID from extracted Lua tables, when available"
+        },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "name_ja": { "type": "string" },
+        "rarity": {
+          "type": "string",
+          "enum": ["SSR", "SR", "R"]
+        },
+        "realm_affinity": {
+          "type": "string",
+          "description": "Either 'neutral' or one of the realm ids from realms.json",
+          "enum": ["neutral", "chaos", "aequor", "caro", "ultra"]
+        },
+        "set_id": {
+          "type": "string",
+          "description": "Set group id this trinket belongs to (if part of a multi-piece set)",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "effect": {
+          "type": "string",
+          "description": "Single-piece equip effect; required field even if data is currently TODO (use 'pending' literal until populated)"
+        },
+        "effect_max": {
+          "type": "string",
+          "description": "Effect at max upgrade tier"
+        },
+        "set_bonus": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/set_bonus" }
+        },
+        "obtain": {
+          "type": "string",
+          "description": "Acquisition channel: gacha banner / event reward / shop exchange / story drop"
+        },
+        "obtain_banners": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "description": "External keys to banners.json banner ids when obtained from a banner"
+        },
+        "recommended_for": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/trinket_recommendation" }
+        },
+        "lore": { "type": "string" },
+        "icon_url": {
+          "type": ["string", "null"],
+          "description": "Path or URL to icon; null acceptable when asset is missing"
+        },
+        "last_verified": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "Date the data was last verified against the game client (YYYY-MM-DD)"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

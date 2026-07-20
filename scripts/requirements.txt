@@ -1,0 +1,20 @@
+# 银芯 scripts/ 顶层第三方依赖收口
+# 标准库不在此列。本地模块（dream_*、memory_search、knowledge_graph 等）为仓库内文件，非依赖。
+
+# --- MCP 服务端（mcp_server.py，对接知识层工具调用）---
+mcp>=1.0.0
+
+# --- 客户端资源解包（extract_art.py）---
+UnityPy>=1.10.0
+
+# --- 可选依赖：缺失时相关功能优雅降级，不影响主流程 ---
+# AI 综合分析 / 做梦 Agent（memory_search.synthesize、dream_ai.py）
+anthropic>=0.40.0
+# 向量检索腿嵌入（kb_vector.py / build_kb_vectors.py，§八「厚锚撑向量」；
+# 缺 VOYAGE_API_KEY 时优雅降级——桩后端可测、运行时回退 kb_search 关键词检索）
+voyageai>=0.3.0
+# 代码语义解析（memory_search.py，缺失时按文本检索）
+tree-sitter>=0.21.0
+# 日报 / 报告 PDF 渲染（report_render.py，缺失时只产 Markdown）
+markdown>=3.5
+weasyprint>=60.0

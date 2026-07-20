@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "purpose": "Public-Info-Pool/Resource 主题类型开放注册表。形式定死、清单可增、脚本挡同义分裂。",
+    "form_rules": "类型名必须：全小写、连字符分词(kebab-case)、单数、仅 [a-z0-9-]。",
+    "authority": "新增/改名由 scripts/deliverable_path.py 维护；人工编辑后须保持 form_rules 合规。",
+    "status_legend": "provisional=迁移期暂定，守密人可随时改名(脚本 rename-type 一条龙)；stable=已确认",
+    "updated": "2026-06-21"
+  },
+  "types": {
+    "community-analysis": {
+      "desc": "社区情报深度分析(社区反响/联动/志愿者/跨服洞察)",
+      "status": "provisional"
+    },
+    "daily-news": {
+      "desc": "新闻管线周期性渲染报告(日报/期报/窗口报)",
+      "status": "provisional"
+    },
+    "data-diagnostics": {
+      "desc": "数据层诊断与缺口登记(采集滞留诊断/wiki数据缺口)",
+      "status": "provisional"
+    },
+    "game-analysis": {
+      "desc": "游戏向分析(数据全景/角色行动建议/bug故障报告)",
+      "status": "provisional"
+    },
+    "intel-weekly": {
+      "desc": "例行社区情报周报(报告规范v1物种①,固定骨架:速览/重点信号/风险哨兵/故障单)",
+      "status": "provisional"
+    },
+    "methodology": {
+      "desc": "方法论导出与导读(面向黑池会话等外部消费方的知识工程方法论 primer)",
+      "status": "provisional"
+    },
+    "proposal": {
+      "desc": "方案与原型提案(平台建设方案/协作方法/早期原型)",
+      "status": "provisional"
+    },
+    "repo-engineering": {
+      "desc": "银芯仓库自身工程产物(全仓审计/健康度/编排审查/测试覆盖/治理调研)",
+      "status": "provisional"
+    }
+  }
+}

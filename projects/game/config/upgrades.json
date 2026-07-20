@@ -1,0 +1,12 @@
+{
+  "_meta": "命运卡（升级池）。trinket 被动取自真实遗物概念。只做加法（只增强不削弱）。",
+  "passives": [
+    { "id": "vigor",    "name": "灼血护符",   "stat": "maxHp",       "value": 30,   "max": 6, "desc": "生命上限 +30" },
+    { "id": "swift",    "name": "疾行靴",     "stat": "speed",       "value": 14,   "max": 5, "desc": "移动速度 +14" },
+    { "id": "might",    "name": "凶兆指环",   "stat": "damageMul",   "value": 0.12, "max": 6, "desc": "全局伤害 +12%" },
+    { "id": "expanse",  "name": "扩界之瞳",   "stat": "areaMul",     "value": 0.12, "max": 5, "desc": "作用范围 +12%" },
+    { "id": "haste",    "name": "回响怀表",   "stat": "cooldownMul", "value": -0.08,"max": 5, "desc": "攻击冷却 -8%" },
+    { "id": "magnet",   "name": "灵知磁石",   "stat": "pickup",      "value": 30,   "max": 4, "desc": "灵知拾取范围 +30" },
+    { "id": "regen",    "name": "缝合之心",   "stat": "regen",       "value": 0.6,  "max": 4, "desc": "每秒回复生命 +0.6" }
+  ]
+}

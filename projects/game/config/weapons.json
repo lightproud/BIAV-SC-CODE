@@ -1,0 +1,65 @@
+{
+  "_meta": "环行记武器层。每把武器对应一界域核心机制（DESIGN §2.2）。数值为本同人玩法平衡设计，非游戏正典数值。",
+  "weapons": [
+    {
+      "id": "echo_blade",
+      "name": "回响刃",
+      "realm": "chaos",
+      "behavior": "orbit",
+      "desc": "环绕守密人旋转的银钥，复制上一击的余威。",
+      "base": { "damage": 12, "count": 2, "radius": 70, "rotSpeed": 2.6, "tick": 0.25 },
+      "perLevel": { "damage": 6, "count": 0.5, "radius": 6 },
+      "maxLevel": 8
+    },
+    {
+      "id": "tentacle",
+      "name": "触腕",
+      "realm": "aequor",
+      "behavior": "homing",
+      "desc": "自深海伸出的触腕，自动锁定最近的融蚀造物。",
+      "base": { "damage": 16, "count": 1, "cooldown": 0.9, "speed": 320, "life": 1.6 },
+      "perLevel": { "damage": 7, "count": 0.5, "cooldown": -0.05 },
+      "maxLevel": 8
+    },
+    {
+      "id": "thorn_field",
+      "name": "荆棘场",
+      "realm": "caro",
+      "behavior": "aura",
+      "desc": "贴身荆棘持续撕咬，吞噬敌躯回复生命。",
+      "base": { "damage": 9, "radius": 64, "tick": 0.3, "lifesteal": 0.06 },
+      "perLevel": { "damage": 4, "radius": 7 },
+      "maxLevel": 8
+    },
+    {
+      "id": "hyper_nova",
+      "name": "超维爆发",
+      "realm": "ultra",
+      "behavior": "nova",
+      "desc": "撕裂维度的放射状能量波，复制自身向四周炸裂。",
+      "base": { "damage": 22, "radius": 130, "cooldown": 2.4 },
+      "perLevel": { "damage": 9, "radius": 14, "cooldown": -0.12 },
+      "maxLevel": 8
+    },
+    {
+      "id": "key_shard",
+      "name": "银钥碎片",
+      "realm": "chaos",
+      "behavior": "homing",
+      "desc": "混沌银钥裂片，可与任何界域协同射向虚空裂隙。",
+      "base": { "damage": 14, "count": 2, "cooldown": 1.1, "speed": 280, "life": 1.4 },
+      "perLevel": { "damage": 6, "count": 0.5, "cooldown": -0.05 },
+      "maxLevel": 8
+    },
+    {
+      "id": "abyss_pulse",
+      "name": "深渊脉冲",
+      "realm": "aequor",
+      "behavior": "nova",
+      "desc": "深海压强骤释，环形冲散逼近之敌。",
+      "base": { "damage": 18, "radius": 110, "cooldown": 2.0 },
+      "perLevel": { "damage": 8, "radius": 12, "cooldown": -0.1 },
+      "maxLevel": 8
+    }
+  ]
+}

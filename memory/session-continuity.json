@@ -1,0 +1,133 @@
+{
+  "last_session": {
+    "id": "18142329",
+    "timestamp": "2026-06-14T10:19:27.260000+00:00",
+    "duration_minutes": 4.5,
+    "branch": "claude/notion-integration-nnk81r",
+    "topics": [],
+    "decisions": [],
+    "files_changed": [],
+    "open_items": []
+  },
+  "recent_sessions": [
+    {
+      "id": "346a9eeb",
+      "timestamp": "2026-06-14T10:02:29.633000+00:00",
+      "duration_minutes": 0.2,
+      "branch": "claude/personal-reminders-integration-8ipcpq",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "7fe0ce50",
+      "timestamp": "2026-06-14T07:42:13.934000+00:00",
+      "duration_minutes": 1.3,
+      "branch": "claude/news-aggregator-status-ne8r5j",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "d062dc8f",
+      "timestamp": "2026-06-14T05:50:25.214000+00:00",
+      "duration_minutes": 1058.3,
+      "branch": "claude/pr-202-review-2m867w",
+      "topics": [
+        "GitHub"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/README.md",
+        "/home/user/brain-in-a-vat/memory/active/silver-blackpool-interface.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "6a24d1d3",
+      "timestamp": "2026-06-13T20:16:28.460000+00:00",
+      "duration_minutes": 0.2,
+      "branch": "main",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "d062dc8f",
+      "timestamp": "2026-06-13T12:13:36.642000+00:00",
+      "duration_minutes": 1.5,
+      "branch": "claude/pr-202-review-2m867w",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "59f9205f",
+      "timestamp": "2026-06-12T21:04:53.921000+00:00",
+      "duration_minutes": 0.2,
+      "branch": "main",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "0c9fbbf3",
+      "timestamp": "2026-06-11T21:20:29.038000+00:00",
+      "duration_minutes": 0.2,
+      "branch": "main",
+      "topics": [
+        "做梦Agent"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "ffed32ad",
+      "timestamp": "2026-06-11T02:56:16.834000+00:00",
+      "duration_minutes": 1.3,
+      "branch": "claude/songwriter-naming-rights-f2co1s",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "d384f7cb",
+      "timestamp": "2026-06-10T21:35:48.017000+00:00",
+      "duration_minutes": 10503.1,
+      "branch": "claude/kind-meitner-xyX97",
+      "topics": [],
+      "decisions": [
+        "规定如何落盘。按守密人硬约束（§6.1 动手前先想），先报告排查结果"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/news/GLOBAL_COLLECTION_SPEC.md"
+      ],
+      "open_items": []
+    }
+  ],
+  "momentum": {
+    "topic_weights": {
+      "做梦Agent": 0.91,
+      "GitHub": 0.78,
+      "BPT": 0.36,
+      "MCP": 0.32,
+      "Wiki": 0.11
+    },
+    "hot_files": [],
+    "total_sessions": 155
+  },
+  "updated_at": "2026-06-14T10:24:29.701800+00:00"
+}

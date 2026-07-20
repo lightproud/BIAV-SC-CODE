@@ -1,0 +1,323 @@
+/**
+ * Request-body wire-differential mechanism self-test (decisions.md 2026-07-05
+ * 净室观测边界 r3 - clause ② content-blind lifted). Keyless: drives OUR arm
+ * against a capturing emulator, proving (1) the emulator now captures request
+ * bodies when opted in, and (2) the structural fingerprint + diff behave. The
+ * dual-arm real differential lives in run-wire.mjs (needs the official pkg).
+ *
+ * This is the mechanism proof; it does not need the official arm, so it runs
+ * in the normal keyless `npm test`.
+ */
+
+import { mkdtemp, rm, mkdir, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { query, type Query } from '../src/index.js';
+import { startEmulator, textReply } from './conformance/emulator.mjs';
+// @ts-expect-error - plain-JS conformance module without type declarations
+import { fingerprintRequestBody, diffFingerprints, diffToolSchemas } from './conformance/wire-fingerprint.mjs';
+// @ts-expect-error - plain-JS conformance module without type declarations
+import { WIRE_SCENARIOS } from './conformance/scenarios-wire.mjs';
+
+const DUMMY_KEY = 'sk-ant-api03-' + 'A'.repeat(95);
+let cwd: string;
+
+beforeEach(async () => {
+  cwd = await mkdtemp(join(tmpdir(), 'conf-wire-'));
+});
+afterEach(async () => {
+  await rm(cwd, { recursive: true, force: true });
+});
+
+async function driveOurArm(captureBodies: boolean) {
+  await mkdir(join(cwd, '.sessions'), { recursive: true });
+  const emulator = await startEmulator([{ kind: 'sse', events: textReply('WIRE OK') }], {
+    captureBodies,
+  });
+  try {
+    const q: Query = query({
+      prompt: 'Say OK.',
+      options: {
+        cwd,
+        maxTurns: 2,
+        sessionDir: join(cwd, '.sessions'),
+        sandbox: false,
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+        env: {
+          PATH: process.env.PATH,
+          HOME: process.env.HOME,
+          ANTHROPIC_BASE_URL: emulator.url,
+          ANTHROPIC_API_KEY: DUMMY_KEY,
+        },
+      },
+    });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    for await (const _ of q) void _;
+  } finally {
+    await emulator.close();
+  }
+  return emulator.profile;
+}
+
+describe('request-body capture (r3)', () => {
+  it('defaults to NOT capturing bodies (existing L1-L5 semantics unchanged)', async () => {
+    const profile = await driveOurArm(false);
+    expect(profile.requestBodies).toEqual([]);
+    // The POST still happened - only the body was drained.
+    expect(profile.requests.some((r: string) => r === 'POST /v1/messages')).toBe(true);
+  });
+
+  it('captures and parses the request body when opted in', async () => {
+    const profile = await driveOurArm(true);
+    expect(profile.requestBodies.length).toBeGreaterThan(0);
+    const body = profile.requestBodies[0];
+    expect(body.stream).toBe(true);
+    expect(typeof body.model).toBe('string');
+    // Our claude_code preset ships a system prompt and the built-in tool set.
+    const fp = fingerprintRequestBody(body);
+    expect(fp.present).toBe(true);
+    expect(fp.systemKind).not.toBe('none');
+    expect(fp.toolCount).toBeGreaterThan(0);
+    expect(fp.toolNames).toContain('Read');
+  });
+});
+
+describe('fingerprint + diff', () => {
+  it('identical bodies fingerprint-diff to empty', async () => {
+    const profile = await driveOurArm(true);
+    const fp = fingerprintRequestBody(profile.requestBodies[0]);
+    expect(diffFingerprints(fp, fp)).toEqual([]);
+  });
+
+  it('surfaces a tool-set difference as a toolNames facet', () => {
+    const a = fingerprintRequestBody({ stream: true, tools: [{ name: 'Read' }, { name: 'Bash' }] });
+    const b = fingerprintRequestBody({ stream: true, tools: [{ name: 'Read' }] });
+    const d = diffFingerprints(a, b);
+    const tool = d.find((x: { facet: string }) => x.facet === 'toolNames');
+    expect(tool).toBeTruthy();
+    expect(tool.onlyA).toEqual(['Bash']);
+    expect(tool.onlyB).toEqual([]);
+    // toolCount also differs.
+    expect(d.some((x: { facet: string }) => x.facet === 'toolCount')).toBe(true);
+  });
+
+  it('surfaces system segmentation and cache-breakpoint differences', () => {
+    const stringSys = fingerprintRequestBody({ stream: true, system: 'flat prompt' });
+    const blockSys = fingerprintRequestBody({
+      stream: true,
+      system: [
+        { type: 'text', text: 'stable', cache_control: { type: 'ephemeral' } },
+        { type: 'text', text: 'volatile' },
+      ],
+    });
+    const d = diffFingerprints(stringSys, blockSys);
+    expect(d.some((x: { facet: string }) => x.facet === 'systemKind')).toBe(true);
+    expect(d.some((x: { facet: string }) => x.facet === 'systemCacheBreakpoints')).toBe(true);
+  });
+
+  it('an unparsed/absent body fingerprints as not-present', () => {
+    expect(fingerprintRequestBody({ __unparsed: 'garbage' })).toEqual({ present: false });
+    expect(fingerprintRequestBody(undefined)).toEqual({ present: false });
+  });
+
+  it('WX3-1: a topLevelKeys difference (metadata presence) is diffed, not blind', () => {
+    const a = fingerprintRequestBody({ stream: true, max_tokens: 100 });
+    const b = fingerprintRequestBody({ stream: true, max_tokens: 100, metadata: { user_id: 'x' } });
+    const d = diffFingerprints(a, b);
+    expect(d.some((x: { facet: string }) => x.facet === 'topLevelKeys')).toBe(true);
+  });
+
+  it('WX3-2: a model-value mismatch surfaces as a model facet', () => {
+    const a = fingerprintRequestBody({ stream: true, model: 'claude-opus-4-8' });
+    const b = fingerprintRequestBody({ stream: true, model: 'claude-sonnet-5' });
+    const d = diffFingerprints(a, b);
+    const model = d.find((x: { facet: string }) => x.facet === 'model');
+    expect(model).toBeTruthy();
+    expect(model.a).toBe('claude-opus-4-8');
+    expect(model.b).toBe('claude-sonnet-5');
+  });
+
+  it('WX3-3: same param NAMES but different TYPES surface as a paramTypes diff', () => {
+    const a = fingerprintRequestBody({
+      stream: true,
+      tools: [{ name: 'X', input_schema: { properties: { n: { type: 'string' } } } }],
+    });
+    const b = fingerprintRequestBody({
+      stream: true,
+      tools: [{ name: 'X', input_schema: { properties: { n: { type: 'number' } } } }],
+    });
+    const schemaDiff = diffToolSchemas(a, b);
+    expect(schemaDiff).toHaveLength(1);
+    expect(schemaDiff[0].tool).toBe('X');
+    expect(schemaDiff[0].diffs.some((x: { facet: string }) => x.facet === 'paramTypes')).toBe(true);
+    // The param NAME set is identical, so the old fingerprint would have been blind.
+    expect(schemaDiff[0].diffs.some((x: { facet: string }) => x.facet === 'params')).toBe(false);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Reference-target regression (keeper directive: "对着接口全部测试一轮,然后
+// 作为参考目标"). The official arm's structural wire fingerprints per scenario
+// live in wire-reference.json (refreshed by run-wire.mjs --update-reference
+// with the official pkg installed). This block drives OUR arm keyless per
+// scenario and asserts the diff-against-reference EXACTLY equals the
+// documented alignment gaps - a shrink-only ratchet:
+//   - a NEW gap (our wire drifted, or a new reference facet) -> RED;
+//   - a gap that CLOSED (engine aligned to the target) but is still listed
+//     -> RED (stale entry must be deleted).
+// Tool-set size/name gaps are expected-surface (CLI product tools the SDK
+// omits) and excluded from the alignment comparison, matching the runner.
+// ---------------------------------------------------------------------------
+
+// Mirrors run-wire.mjs: topLevelKeys divergence (max_tokens/metadata/service_tier
+// presence) is a KNOWN engine-shape difference, surfaced for visibility (WX3-1)
+// but not an alignment gap. `model` would be a real gap, but the frozen official
+// reference predates the field, so diffFingerprints skips an undefined facet.
+const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount', 'topLevelKeys']);
+
+/**
+ * Documented wire-alignment gaps vs the official reference target. Each is a
+ * concrete engine-alignment candidate handed to the engine team; DELETE the
+ * entry when the engine closes it (the ratchet reds a stale entry).
+ *   thinking            - model-gate divergence on every thinking scenario; see
+ *                         the block comment above WIRE_ALIGNMENT_GAPS for why.
+ *   toolCacheBreakpoints- official 0 on tools; ours 1 (cache-strategy divergence)
+ *   Agent:params        - E7-02 landed: Bash (dangerouslyDisableSandbox) and
+ *                         Read (pages) cleared, Agent official params + required
+ *                         set aligned; the residual param delta is our BPT-only
+ *                         `fork` extension (worker-fork preset depends on it)
+ *   cache-off system*   - promptCaching:false is a bpt-only option the official
+ *                         arm ignores, so its reference stays cache-on: the
+ *                         system-segmentation delta there is an artifact of the
+ *                         asymmetric option, documented not chased.
+ */
+const TOOL_GAPS = ['Agent:params'];
+// systemSegments (A1): our cache breakpoint sits on the stable FIRST system
+// block; official's sits on the LAST - a cache-boundary PLACEMENT gap (E7-03
+// territory). Present on every scenario alongside thinking + toolCacheBreakpoints.
+//
+// thinking (2026-07-05, model-gate fix): the wire harness uses the engine
+// DEFAULT_MODEL (claude-sonnet-4-5), which is PRE-4.6 and rejects
+// {type:'adaptive'} at the API — so our arm now correctly emits
+// {type:'enabled', budget_tokens} there. The official STRUCTURAL reference
+// builds {type:'adaptive'} unconditionally (it never validates against the
+// endpoint), so `thinking` is now an expected divergence on every scenario
+// that sends thinking. This is us being MORE correct (adaptive on sonnet-4-5
+// would 400), not a regression; the per-tier wire form is unit-locked in
+// conformance-l2-locks + thinking-model.test.ts. To retire it, recapture the
+// reference on a matched model tier.
+const WIRE_ALIGNMENT_GAPS: Record<string, { facets: string[]; tools: string[] }> = {
+  default: { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'thinking-off': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'thinking-4096': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'cache-off': { facets: ['systemBlocks', 'systemCacheBreakpoints', 'systemKind', 'systemSegments', 'thinking'], tools: TOOL_GAPS },
+  'tool-loop': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'mcp-added': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+};
+
+interface WireScenario {
+  id: string;
+  options?: Record<string, unknown>;
+  buildOptions?: (ctx: { sdk: unknown }) => Record<string, unknown>;
+  multiTurn?: boolean;
+  fixtureFiles?: Record<string, string>;
+  buildScripts?: (cwd: string) => unknown[];
+}
+
+async function ourCapture(scenario: WireScenario) {
+  await mkdir(join(cwd, '.sessions'), { recursive: true });
+  for (const [name, content] of Object.entries(scenario.fixtureFiles ?? {})) {
+    await writeFile(join(cwd, name), content);
+  }
+  const scripts = scenario.buildScripts
+    ? scenario.buildScripts(cwd)
+    : [{ kind: 'sse', events: textReply('WIRE OK') }];
+  const emulator = await startEmulator(scripts, { captureBodies: true });
+  const sdk = await import('../src/index.js');
+  const extra = scenario.buildOptions ? scenario.buildOptions({ sdk }) : (scenario.options ?? {});
+  try {
+    const q: Query = query({
+      prompt: scenario.multiTurn ? 'Read wire.txt then say done.' : 'Say OK.',
+      options: {
+        cwd,
+        maxTurns: 3,
+        sessionDir: join(cwd, '.sessions'),
+        sandbox: false,
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+        env: {
+          PATH: process.env.PATH,
+          HOME: process.env.HOME,
+          ANTHROPIC_BASE_URL: emulator.url,
+          ANTHROPIC_API_KEY: DUMMY_KEY,
+        },
+        ...extra,
+      },
+    });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    for await (const _ of q) void _;
+  } finally {
+    await emulator.close();
+  }
+  const bodies = emulator.profile.requestBodies as unknown[];
+  return { fingerprint: fingerprintRequestBody(bodies[0]), trajectory: bodies.map((b) => fingerprintRequestBody(b)) };
+}
+
+async function ourFingerprint(scenario: WireScenario) {
+  return (await ourCapture(scenario)).fingerprint;
+}
+
+describe('wire reference-target ratchet (our arm vs official reference)', () => {
+  const ref = JSON.parse(
+    readFileSync(join(__dirname, 'conformance', 'wire-reference.json'), 'utf8'),
+  ).scenarios as Record<string, unknown>;
+
+  it('reference file covers every scenario', () => {
+    for (const sc of WIRE_SCENARIOS as WireScenario[]) {
+      expect(ref[sc.id], `reference missing scenario ${sc.id}`).toBeTruthy();
+    }
+  });
+
+  for (const scenario of WIRE_SCENARIOS as WireScenario[]) {
+    it(`${scenario.id}: alignment gaps vs reference exactly match the documented set`, async () => {
+      const ours = await ourFingerprint(scenario);
+      const facetGaps = (diffFingerprints(ref[scenario.id], ours) as { facet: string }[])
+        .filter((d) => !EXPECTED_SURFACE.has(d.facet))
+        .map((d) => d.facet)
+        .sort();
+      const toolGaps = (diffToolSchemas(ref[scenario.id], ours) as { tool: string; diffs: { facet: string }[] }[])
+        .map((s) => `${s.tool}:${s.diffs.map((d) => d.facet).join('+')}`)
+        .sort();
+      const expected = WIRE_ALIGNMENT_GAPS[scenario.id];
+      expect(facetGaps, `facet gaps drifted for ${scenario.id}`).toEqual([...expected.facets].sort());
+      expect(toolGaps, `tool-schema gaps drifted for ${scenario.id}`).toEqual([...expected.tools].sort());
+    });
+  }
+});
+
+// A2: cache-prefix stability across a multi-turn trajectory. Our system + tool
+// surface must stay byte-stable turn-over-turn or cross-turn prompt-cache reuse
+// breaks (the economics win). Regression lock on OUR arm (keyless).
+describe('wire trajectory: cache-prefix stability (A2)', () => {
+  const loop = (WIRE_SCENARIOS as WireScenario[]).find((s) => s.id === 'tool-loop');
+
+  it('the tool-loop scenario exists and is multi-turn', () => {
+    expect(loop?.multiTurn).toBe(true);
+  });
+
+  it('system + tool prefix is byte-stable across every turn (cache reuse holds)', async () => {
+    const { trajectory } = await ourCapture(loop as WireScenario);
+    expect(trajectory.length, 'expected >= 2 POSTs from the tool loop').toBeGreaterThanOrEqual(2);
+    const first = trajectory[0];
+    const facets = ['systemKind', 'systemBlocks', 'systemSegments', 'toolCount', 'toolCacheBreakpoints', 'thinking'] as const;
+    for (let i = 1; i < trajectory.length; i++) {
+      for (const f of facets) {
+        expect(
+          JSON.stringify(trajectory[i][f]),
+          `prefix facet ${f} drifted at turn ${i + 1} - cross-turn cache reuse would break`,
+        ).toBe(JSON.stringify(first[f]));
+      }
+    }
+  });
+});

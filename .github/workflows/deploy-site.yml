@@ -1,0 +1,149 @@
+# Auto-deploy site + wiki + news to GitHub Pages
+# Art assets downloaded from Release at build time (not stored in git)
+name: Deploy Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/site/**'
+      - 'projects/wiki/docs/**'
+      - 'projects/wiki/package.json'
+      - 'projects/news/index.html'
+      - 'Public-Info-Pool/Resource/proposal/**'
+      - 'okf/visualizer.html'
+      - '.github/workflows/deploy-site.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-site-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Download lightweight art assets from Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # SLIM 部署（守密人 2026-06-21 裁定）：GitHub Pages 站点硬上限 1GB，
+          # 全量美术/音视频解压约 8-10GB 远超限，致 gh-pages 推送 500 断连、全站 404。
+          # 策略：只内嵌轻量资产（icon + units），GB 级重媒体（cg/portraits/
+          # uiresources/audio/video）不下载；对应画廊页由 generate_wiki_pages.py
+          # 自动降级为指向 unpacked-assets Release 的占位页。
+          echo "Downloading lightweight assets (icon + units) from unpacked-assets..."
+          cd projects/wiki/docs/public
+          gh release download unpacked-assets \
+            -p "morimens-icons-full.tar.gz" \
+            -p "morimens-units.tar.gz"
+          echo "Extracting..."
+          tar xzf morimens-icons-full.tar.gz && rm morimens-icons-full.tar.gz
+          tar xzf morimens-units.tar.gz && rm morimens-units.tar.gz
+          echo "Asset directories (slim set):"
+          for d in icon bunit munit; do
+            if [ -d "$d" ]; then
+              count=$(find "$d" -type f | wc -l)
+              size=$(du -sh "$d" | cut -f1)
+              echo "  $d: $count files ($size)"
+            fi
+          done
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: projects/wiki/package-lock.json
+
+      - name: Install wiki dependencies
+        working-directory: projects/wiki
+        run: npm ci
+
+      - name: Regenerate wiki pages with media assets
+        run: python scripts/generate_wiki_pages.py
+
+      - name: Build wiki
+        working-directory: projects/wiki
+        run: npm run build
+
+      - name: Assemble site
+        run: |
+          mkdir -p dist/wiki dist/news
+
+          cp -r projects/site/public/. dist/
+          [ -d projects/site/design ] && cp -r projects/site/design dist/design
+          cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
+          cp projects/news/index.html dist/news/index.html
+          mkdir -p dist/news/data
+          [ -f projects/news/output/news.json ] && cp projects/news/output/news.json dist/news/data/news.json
+          mkdir -p dist/kb
+          [ -f "okf/visualizer.html" ] && cp "okf/visualizer.html" dist/kb/index.html
+          mkdir -p dist/docs
+          [ -f "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html" ] && cp "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html" dist/docs/brain-in-a-vat-project.html
+          [ -f "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.pdf" ] && cp "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.pdf" dist/docs/brain-in-a-vat-project.pdf
+          touch dist/.nojekyll
+
+      - name: Verify build output
+        run: |
+          echo "=== dist root ==="
+          ls -la dist/
+          echo ""
+          echo "=== index.html title ==="
+          grep '<title>' dist/index.html
+          echo ""
+          for f in dist/index.html dist/wiki/index.html dist/news/index.html dist/kb/index.html; do
+            if [ ! -f "$f" ]; then
+              echo "MISSING: $f" && exit 1
+            fi
+            echo "OK: $f ($(wc -c < "$f") bytes)"
+          done
+          echo "Total files: $(find dist -type f | wc -l)"
+
+      - name: Enhanced build verification
+        run: |
+          echo "=== Checking HTML files are not empty ==="
+          for f in $(find dist -name '*.html'); do
+            if ! grep -q '<html' "$f" 2>/dev/null; then
+              echo "WARNING: $f may be empty or corrupted"
+            else
+              echo "OK: $f"
+            fi
+          done
+          echo ""
+          echo "=== Checking wiki locale directories ==="
+          # zh is the root locale via VitePress rewrites (zh/:rest* → :rest*)
+          if [ -f "dist/wiki/index.html" ]; then
+            echo "OK: dist/wiki/ (zh root) exists ($(find dist/wiki -maxdepth 1 -name '*.html' | wc -l) html files at root)"
+          else
+            echo "WARNING: dist/wiki/index.html missing"
+          fi
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
+
+      - name: Post-deploy smoke test
+        continue-on-error: true
+        run: |
+          echo "Waiting 30s for GitHub Pages to propagate..."
+          sleep 30
+          BASE="https://lightproud.github.io/brain-in-a-vat"
+          # wiki is zh-only (single locale at /wiki/ root); no en/ja locales configured
+          for url in "$BASE/" "$BASE/wiki/" "$BASE/news/" "$BASE/kb/"; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "000")
+            if [ "$status" = "200" ]; then
+              echo "OK: $url → $status"
+            else
+              echo "WARNING: $url → $status (may need more time to propagate)"
+            fi
+          done

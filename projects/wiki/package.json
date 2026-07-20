@@ -1,0 +1,16 @@
+{
+  "name": "morimens-wiki",
+  "version": "1.0.0",
+  "description": "忘却前夜 (Morimens) 全球游戏Wiki - 包含所有游戏内信息",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "docs:build": "node --stack-size=65536 node_modules/.bin/vitepress build docs",
+    "build": "node --stack-size=65536 node_modules/.bin/vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.38"
+  }
+}

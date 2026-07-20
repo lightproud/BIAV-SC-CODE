@@ -1,0 +1,53 @@
+{
+  "name": "silver-core-maestro-sdk",
+  "version": "0.75.0",
+  "description": "Silver Core Maestro SDK - reusable parts for agents that outlive a single call: clock, cross-session state, session assembly (task ledger, driver, loop/schedule/workflow scaffolds). A library, not a framework: the host owns main().",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.3.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "silver-core-agent-sdk": ">=0.71.0 <1.0.0"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^9.6.1",
+    "@stryker-mutator/vitest-runner": "^9.6.1",
+    "@types/node": "^22.0.0",
+    "fast-check": "^4.9.0",
+    "silver-core-agent-sdk": "*",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  },
+  "keywords": [
+    "agent",
+    "orchestration",
+    "sdk",
+    "task-ledger",
+    "scheduler",
+    "bpt"
+  ]
+}

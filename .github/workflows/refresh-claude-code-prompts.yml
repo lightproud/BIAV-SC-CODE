@@ -1,0 +1,51 @@
+name: "🔄 Refresh Claude Code Prompts"
+
+# 定期把外部公开参照 Piebald-AI/claude-code-system-prompts 刷新到
+# Public-Info-Pool/Reference/Claude-Code-System-Prompts/（使命#1 采集层，单向采入）。
+# 公开仓库、纯 git clone，不碰 Anthropic API、不用任何密钥、零成本。
+# 每周一次追新 Claude Code 提示词版本；有变化才 [skip ci] 提交。
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 3 * * 1'   # 每周一 03:00 UTC 检查上游是否随 Claude Code 发版更新
+
+concurrency:
+  group: refresh-claude-code-prompts
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Refresh upstream prompts snapshot
+        run: python3 scripts/refresh_claude_code_prompts.py
+
+      - name: Commit refreshed snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Public-Info-Pool/Reference/Claude-Code-System-Prompts/
+          if git diff --staged --quiet; then
+            echo "No upstream changes to commit"
+          else
+            git commit -m "chore: refresh claude-code-system-prompts snapshot [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              sleep $i
+            done
+            exit 1
+          fi

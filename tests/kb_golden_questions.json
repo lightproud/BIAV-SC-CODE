@@ -1,0 +1,30 @@
+{
+  "version": "2026-07-04-v2-capability-tailored",
+  "note": "黄金问题集 v2（定制化：按 KB 独门能力出题，守密人 2026-07-04『应该定制化设计』）。每题标 capability（考哪种能力）+ distinctive（grep 是否也能答——false=grep 也行，非 KB 独门；true=token 脱节等 grep 结构上到不了）。度量的重点是 distinctive 题的命中率=KB 独门价值的兑现。诚实边界：hit@k 只测『检索类』能力（associative/keyword）；层判定/身份/边界等质性能力靠不变量测试与遥测，非本集。expect=id 子串（任一命中即 hit）。",
+  "k": 3,
+  "min_hit_rate": 0.62,
+  "min_distinctive_hit_rate": 0.80,
+  "questions": [
+    {"q": "萝坦", "expect": ["/characters/15585", "/characters/15595"], "mode": "activate", "capability": "associative", "distinctive": true, "probe": "token 脱节联想：→奥吉尔/拉蒙娜（同篇 lore，零共享字，grep 无从遍历）"},
+    {"q": "奥吉尔", "expect": ["/characters/15569", "/characters/15595"], "mode": "activate", "capability": "associative", "distinctive": true, "probe": "token 脱节联想：→萝坦/拉蒙娜"},
+    {"q": "拉蒙娜", "expect": ["/characters/15569", "/characters/15585"], "mode": "activate", "capability": "associative", "distinctive": true, "probe": "token 脱节联想：→萝坦/奥吉尔"},
+    {"q": "本源萝坦有哪些异变形态", "expect": ["/characters/15569"], "mode": "activate", "capability": "associative", "distinctive": true, "probe": "变体遍历：本源萝坦→萝坦（variant）"},
+
+    {"q": "关于沙耶社区和记忆里有哪些分析讨论", "expect": ["/memory/decisions", "/memory/lessons", "saya-collab"], "mode": "activate", "capability": "cross_layer", "distinctive": false, "probe": "跨层提及：沙耶→记忆/报告（grep 沙耶 也能找到点名它的文档，故非独门）"},
+    {"q": "discord 平台相关的都有哪些镜头", "expect": ["community-discord", "news-output-discord", "/sources/discord"], "mode": "activate", "capability": "cross_layer", "distinctive": false, "probe": "跨层平台 join（同平台异镜头；discord 字面可被 grep）"},
+
+    {"q": "discord 的全量档案层在哪", "expect": ["community-discord", "/sources/discord"], "mode": "search", "capability": "layer_aware", "distinctive": false, "probe": "层判定：全量档案 vs 输出抽样（KB 带 data_layer/tier 元数据；hit@k 测不出层，见不变量测试）"},
+
+    {"q": "沙耶是谁", "expect": ["/characters/130226"], "mode": "search", "capability": "identity", "distinctive": false, "probe": "身份消歧：唯一 concept vs 出现（grep 也命中）"},
+    {"q": "角色徐的档案", "expect": ["/characters/125346"], "mode": "search", "capability": "identity", "distinctive": false, "probe": "身份"},
+
+    {"q": "知识层设计哲学 白盒骨架", "expect": ["knowledge-layer-design"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组（KB≈grep）"},
+    {"q": "releases 藏宝图 二进制", "expect": ["releases-treasure-map"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "世界观术语 历史时间线", "expect": ["morimens-context"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "解包的游戏文本", "expect": ["unpacked-game-text"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "silver-core-sdk 定位", "expect": ["project-silver-core-sdk", "silver-core-sdk-doc"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "剧情 lore 正文", "expect": ["/story/lore"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "news 输出展示层 抽样", "expect": ["news-output"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "决策 为什么这么定", "expect": ["/memory/decisions"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"}
+  ]
+}

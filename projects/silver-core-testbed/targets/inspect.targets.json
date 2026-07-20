@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "what": "热层目标清单 (hot layer): what the four inspectors watch. Editing this file changes patrol coverage with ZERO code changes — same registry discipline as store-patrol.targets.json and archive_sources.json.",
+    "keys": "repo: owner/name used by GitHub API inspectors; ci-status.workflows: workflow files whose latest completed run is checked; doc-links.roots: files/dirs swept for internal markdown links; lockstep.packages: package dirs that must carry the same family version; ratchet: mutation-ratchet floor files + the weekly workflow that re-measures them."
+  },
+  "repo": "lightproud/brain-in-a-vat",
+  "ci-status": {
+    "workflows": [
+      "test.yml",
+      "silver-core-sdk.yml",
+      "silver-core-maestro-sdk.yml",
+      "sdk-mutation-ratchet.yml",
+      "store-patrol.yml",
+      "testbed-patrol.yml",
+      "update-news.yml",
+      "build-okf-bundle.yml",
+      "discord-archive.yml",
+      "collect-comments.yml"
+    ]
+  },
+  "doc-links": {
+    "roots": [
+      "README.md",
+      "RELEASES.md",
+      "projects/silver-core-sdk/README.md",
+      "projects/silver-core-sdk/CONTEXT.md",
+      "projects/silver-core-sdk/docs",
+      "projects/silver-core-maestro-sdk/README.md",
+      "projects/silver-core-maestro-sdk/CONTEXT.md",
+      "projects/silver-core-testbed"
+    ]
+  },
+  "lockstep": {
+    "packages": [
+      "projects/silver-core-sdk",
+      "projects/silver-core-maestro-sdk"
+    ],
+    "versionTs": "projects/silver-core-sdk/src/version.ts"
+  },
+  "ratchet": {
+    "workflow": "sdk-mutation-ratchet.yml",
+    "maxAgeDays": 9,
+    "ratchets": [
+      {
+        "package": "silver-core-agent-sdk",
+        "file": "projects/silver-core-sdk/mutation-ratchet.json",
+        "jobPrefix": "ratchet"
+      },
+      {
+        "package": "silver-core-maestro-sdk",
+        "file": "projects/silver-core-maestro-sdk/mutation-ratchet.json",
+        "jobPrefix": "ratchet-maestro"
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+name: "💬 Collect Video Comments"
+
+# 独立采集忘却前夜相关 YouTube 视频（含官方 PV）的热门评论，归档到
+# Record/Community/youtube_comments/{date}.json，供会话内报告引用。
+# 只用 YOUTUBE_API_KEY（Google，免费配额），不碰 Anthropic API、不花钱。
+# T62 P2-3c 已切换（2026-07-19）：写 **BIAV-SC-DATA**（collect_video_comments 经
+# community_root() 分仓桥接读 youtube 存档 + 写 youtube_comments），提交推 data 仓。
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '归档日期标签 YYYY-MM-DD（默认=北京昨日）'
+        required: false
+        default: ''
+  schedule:
+    - cron: '5 7 * * *'   # 每日北京时间 15:05（07:05 UTC）自动采
+
+concurrency:
+  group: collect-comments
+  cancel-in-progress: false
+
+permissions:
+  contents: read   # 只读 code 仓脚本；写 data 仓走 PAT
+
+env:
+  BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code repo（sparse 脚本，不取数据）
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            projects/news
+            scripts
+          sparse-checkout-cone-mode: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Clone BIAV-SC-DATA（PAT，数据根：读 youtube 存档 + 写评论）
+        env:
+          DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DATA_TOKEN:-}" ]; then
+            echo "::error::secret BIAV_SC_DATA_TOKEN 未配置"; exit 1
+          fi
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
+          chmod 600 ~/.git-credentials
+          git clone https://github.com/lightproud/BIAV-SC-DATA.git data-repo
+
+      - name: Collect video comments
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          D="${{ github.event.inputs.date }}"
+          [ -n "$D" ] || D=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
+          python projects/news/scripts/collect_video_comments.py --date "$D"
+
+      - name: Commit comments archive → BIAV-SC-DATA
+        run: |
+          set -euo pipefail
+          cd data-repo
+          git config user.name "Erica (BIAV-SC)"
+          git config user.email "lightproud@hotmail.com"
+          git add Record/Community/youtube_comments/
+          if git diff --staged --quiet; then
+            echo "No new comments to commit"
+            exit 0
+          fi
+          git commit -m "data: archive youtube video comments (T62 P2-3c)"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push origin main && exit 0
+            echo "Push attempt $i failed, retrying in ${i}s..."
+            sleep $i
+          done
+          echo "All push attempts failed"
+          exit 1

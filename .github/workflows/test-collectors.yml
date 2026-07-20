@@ -1,0 +1,264 @@
+name: Test All Data Collectors
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to test (default: main)'
+        required: false
+        default: 'main'
+        type: string
+
+concurrency:
+  group: test-collectors-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  test-aggregator:
+    name: Test aggregator.py collectors
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.branch || 'main' }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r projects/news/requirements.txt
+
+      - name: Install Playwright browsers
+        run: playwright install chromium
+
+      - name: Test each aggregator collector
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          HOURS_LOOKBACK: "72"
+        run: |
+          python3 -c "
+          import sys, json, traceback, time
+          sys.path.insert(0, 'projects/news/scripts')
+          from aggregator import (
+              fetch_reddit, fetch_bilibili,
+              fetch_taptap, fetch_steam_reviews, fetch_steam_news,
+              fetch_steam_discussions,
+              fetch_discord_local,
+          )
+          # Playwright collectors (fallback for API-limited platforms)
+          try:
+              from playwright_collectors import (
+                  fetch_taptap_playwright,
+                  fetch_xiaohongshu_playwright, fetch_weibo_playwright,
+              )
+              pw_fetchers = [
+                  ('TapTap (Playwright)', fetch_taptap_playwright),
+                  ('Xiaohongshu', fetch_xiaohongshu_playwright),
+                  ('Weibo', fetch_weibo_playwright),
+              ]
+          except ImportError:
+              pw_fetchers = []
+
+          fetchers = [
+              ('Reddit', fetch_reddit),
+              ('Bilibili', fetch_bilibili),
+              ('TapTap', fetch_taptap),
+              ('SteamReviews', fetch_steam_reviews),
+              ('SteamNews', fetch_steam_news),
+              ('SteamDiscussions', fetch_steam_discussions),
+              ('DiscordLocal', fetch_discord_local),
+          ] + pw_fetchers
+
+          print('=' * 80)
+          print('AGGREGATOR COLLECTOR DIAGNOSTIC REPORT')
+          print('=' * 80)
+
+          results = []
+          for name, fn in fetchers:
+              print(f'\n--- {name} ---')
+              start = time.time()
+              try:
+                  items = fn()
+                  elapsed = time.time() - start
+                  media_count = sum(1 for i in items if i.get('media_url'))
+                  comment_items = sum(1 for i in items if
+                      i.get('metadata', {}).get('comments_fetched', 0) > 0 or
+                      i.get('metadata', {}).get('comment_count_fetched', 0) > 0 or
+                      i.get('metadata', {}).get('reply_count', 0) > 0)
+                  avg_summary = sum(len(i.get('summary', '')) for i in items) / max(len(items), 1)
+
+                  status = 'OK' if items else 'EMPTY'
+                  print(f'  Status: {status}')
+                  print(f'  Items: {len(items)}')
+                  print(f'  With media: {media_count}')
+                  print(f'  With comments: {comment_items}')
+                  print(f'  Avg summary length: {avg_summary:.0f} chars')
+                  print(f'  Time: {elapsed:.1f}s')
+                  if items:
+                      sample = items[0]
+                      print(f'  Sample title: {sample.get(\"title\", \"?\")[:100]}')
+                      print(f'  Sample summary: {sample.get(\"summary\", \"\")[:200]}')
+                      print(f'  Sample engagement: {sample.get(\"engagement\", 0)}')
+                  results.append({'name': name, 'status': status, 'count': len(items),
+                                  'media': media_count, 'comments': comment_items,
+                                  'avg_summary': round(avg_summary), 'time': round(elapsed, 1)})
+              except Exception as e:
+                  elapsed = time.time() - start
+                  print(f'  Status: CRASH')
+                  print(f'  Error: {e}')
+                  traceback.print_exc()
+                  results.append({'name': name, 'status': 'CRASH', 'count': 0,
+                                  'media': 0, 'comments': 0, 'avg_summary': 0,
+                                  'time': round(elapsed, 1), 'error': str(e)})
+
+          print('\n' + '=' * 80)
+          print('SUMMARY')
+          print('=' * 80)
+          print(f\"{'Source':<20} {'Status':<8} {'Items':>6} {'Media':>6} {'Comments':>8} {'AvgLen':>7} {'Time':>6}\")
+          print('-' * 73)
+          for r in results:
+              print(f\"{r['name']:<20} {r['status']:<8} {r['count']:>6} {r['media']:>6} {r['comments']:>8} {r['avg_summary']:>7} {r['time']:>5}s\")
+
+          ok = sum(1 for r in results if r['status'] == 'OK')
+          empty = sum(1 for r in results if r['status'] == 'EMPTY')
+          crash = sum(1 for r in results if r['status'] == 'CRASH')
+          total_items = sum(r['count'] for r in results)
+          print(f'\nTotal: {ok} OK / {empty} EMPTY / {crash} CRASH — {total_items} items collected')
+          "
+
+  test-global-collectors:
+    name: Test global_collectors
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.branch || 'main' }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r projects/news/requirements.txt
+          pip install cloudscraper google-play-scraper 2>/dev/null || true
+
+      - name: Test each global_collectors fetcher
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_IDS: ${{ secrets.DISCORD_CHANNEL_IDS }}
+          FACEBOOK_ACCESS_TOKEN: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_IDS: ${{ secrets.FACEBOOK_PAGE_IDS }}
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_ACCESS_TOKEN: ${{ secrets.TWITCH_ACCESS_TOKEN }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          TELEGRAM_CHANNELS: ${{ secrets.TELEGRAM_CHANNELS }}
+          DC_GALLERY_ID: ${{ secrets.DC_GALLERY_ID }}
+          QQ_CHANNEL: ${{ secrets.QQ_CHANNEL }}
+          HOURS_LOOKBACK: "72"
+        run: |
+          python3 -c "
+          import sys, time, traceback
+          sys.path.insert(0, 'projects/news/scripts')
+          import global_collectors as c
+
+          fetchers = [
+              ('Reddit', c.fetch_reddit),
+              ('Twitter', c.fetch_twitter),
+              ('YouTube', c.fetch_youtube),
+              ('Bilibili', c.fetch_bilibili),
+              ('TapTap', c.fetch_taptap),
+              ('Weibo', c.fetch_weibo),
+              ('Xiaohongshu', c.fetch_xiaohongshu),
+              ('Douyin', c.fetch_douyin),
+              ('Tieba', c.fetch_tieba),
+              ('Arca.live', c.fetch_arca_live),
+              ('Discord', c.fetch_discord),
+              ('Facebook', c.fetch_facebook),
+              ('QQ', c.fetch_qq),
+              ('Pixiv', c.fetch_pixiv),
+              ('Lofter', c.fetch_lofter),
+              ('Xianyu', c.fetch_xianyu),
+              ('Taobao', c.fetch_taobao_merch),
+              ('Google Play', c.fetch_google_play),
+              ('QooApp', c.fetch_qooapp),
+              ('Epic Store', c.fetch_epic_store),
+              ('TikTok', c.fetch_tiktok),
+              ('Bahamut', c.fetch_bahamut),
+              ('Telegram', c.fetch_telegram),
+              ('Twitch', c.fetch_twitch),
+              ('Instagram', c.fetch_instagram),
+              ('Weixin', c.fetch_weixin),
+              ('Gamerch', c.fetch_gamerch),
+              ('Note.com', c.fetch_note_com),
+              ('Ruliweb', c.fetch_ruliweb),
+              ('VK Play', c.fetch_vkplay),
+              ('StopGame', c.fetch_stopgame),
+              ('GACHAREVENUE', c.fetch_gacharevenue),
+              ('Miraheze Wiki', c.fetch_miraheze_wiki),
+              ('GameKee', c.fetch_gamekee),
+              ('Huiji Wiki', c.fetch_huiji_wiki),
+              ('RSSHub', c.fetch_rsshub),
+          ]
+
+          print('=' * 80)
+          print('GLOBAL_COLLECTORS DIAGNOSTIC REPORT')
+          print('=' * 80)
+
+          results = []
+          for name, fn in fetchers:
+              print(f'\n--- {name} ---')
+              start = time.time()
+              try:
+                  items = fn()
+                  elapsed = time.time() - start
+                  has_summary = sum(1 for i in items if i.get('summary'))
+                  has_engagement = sum(1 for i in items if i.get('engagement', 0) > 0)
+                  avg_summary = sum(len(i.get('summary', '')) for i in items) / max(len(items), 1)
+
+                  status = 'OK' if items else 'EMPTY'
+                  print(f'  Status: {status}')
+                  print(f'  Items: {len(items)}')
+                  print(f'  With summary: {has_summary}/{len(items)}')
+                  print(f'  With engagement>0: {has_engagement}/{len(items)}')
+                  print(f'  Avg summary length: {avg_summary:.0f} chars')
+                  print(f'  Time: {elapsed:.1f}s')
+                  if items:
+                      s = items[0]
+                      print(f'  Sample: {s.get(\"title\", \"?\")[:80]} | eng={s.get(\"engagement\", 0)}')
+                  results.append({'name': name, 'status': status, 'count': len(items),
+                                  'summary': has_summary, 'engagement': has_engagement,
+                                  'avg_len': round(avg_summary), 'time': round(elapsed, 1)})
+              except Exception as e:
+                  elapsed = time.time() - start
+                  print(f'  Status: CRASH — {e}')
+                  results.append({'name': name, 'status': 'CRASH', 'count': 0,
+                                  'summary': 0, 'engagement': 0, 'avg_len': 0,
+                                  'time': round(elapsed, 1), 'error': str(e)[:100]})
+
+          print('\n' + '=' * 80)
+          print('SUMMARY')
+          print('=' * 80)
+          print(f\"{'Source':<16} {'Status':<8} {'Items':>5} {'Summary':>8} {'Engage':>7} {'AvgLen':>7} {'Time':>6}\")
+          print('-' * 69)
+          for r in results:
+              print(f\"{r['name']:<16} {r['status']:<8} {r['count']:>5} {r['summary']:>8} {r['engagement']:>7} {r['avg_len']:>7} {r['time']:>5}s\")
+
+          ok = sum(1 for r in results if r['status'] == 'OK')
+          empty = sum(1 for r in results if r['status'] == 'EMPTY')
+          crash = sum(1 for r in results if r['status'] == 'CRASH')
+          total = sum(r['count'] for r in results)
+          print(f'\nTotal: {ok} OK / {empty} EMPTY / {crash} CRASH — {total} items')
+          "

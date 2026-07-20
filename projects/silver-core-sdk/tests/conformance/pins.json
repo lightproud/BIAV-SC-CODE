@@ -1,0 +1,5 @@
+{
+  "comment": "PROPOSED chase 0.3.201 -> 0.3.215 / 2.1.201 -> 2.1.215, auto-drafted by the drift sentinel on 2026-07-20T09:33:14.842Z. NOT RATIFIED: the standing rule (选择性追踪) is that pins move ONLY by keeper ruling after a conformance re-run against these candidates. Merging this PR is that ruling; do not merge until the conformance suite (L1-L4 + ratchet) has run green against these versions. Prior comment preserved below.\nPRIOR: Dual-package pin for the conformance suite (design final 2026-07-05 §1): the official agent-sdk AND the claude-code engine it spawns are pinned SEPARATELY - the engine is otherwise a moving target that drifts the baseline (observed: CLI 2.1.201 emits variants outside the earlier 0.3.199 type surface). Installed at run time with `npm i --no-save`; never a repo dependency (black-box comparison discipline). Chased 0.3.199 -> 0.3.201 on 2026-07-05 (keeper ruling: 追) after the drift sentinel flagged the release; full dual-arm stack re-run green, zero new divergences.",
+  "agentSdk": "0.3.215",
+  "claudeCode": "2.1.215"
+}

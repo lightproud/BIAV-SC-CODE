@@ -1,0 +1,120 @@
+name: Cleanup Stale Branches
+
+on:
+  schedule:
+    # Every Monday 02:00 UTC (before Monday's other workflows)
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Preview deletions without actually deleting'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      stale_days:
+        description: 'Branches with no activity for N days are eligible for deletion'
+        required: false
+        default: '30'
+        type: string
+
+concurrency:
+  group: cleanup-stale-branches-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+      STALE_DAYS: ${{ github.event_name == 'workflow_dispatch' && inputs.stale_days || '30' }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Identify and delete stale claude/* branches
+        run: |
+          set -euo pipefail
+          REPO="${GITHUB_REPOSITORY}"
+          NOW=$(date -u +%s)
+          THRESHOLD=$((NOW - STALE_DAYS * 86400))
+
+          echo "Repository: $REPO"
+          echo "Dry run:    $DRY_RUN"
+          echo "Stale days: $STALE_DAYS (cutoff $(date -u -d @$THRESHOLD +'%Y-%m-%dT%H:%M:%SZ'))"
+          echo ""
+
+          deleted=0
+          kept_active=0
+
+          # Page through all branches starting with claude/
+          page=1
+          while true; do
+            branches=$(gh api -X GET "/repos/$REPO/branches" \
+              -f per_page=100 -F page=$page \
+              --jq '.[] | select(.name | startswith("claude/")) | .name' || true)
+
+            [ -z "$branches" ] && break
+
+            while IFS= read -r branch; do
+              [ -z "$branch" ] && continue
+
+              # Get last commit timestamp
+              last_commit_iso=$(gh api "/repos/$REPO/branches/$branch" \
+                --jq '.commit.commit.committer.date' 2>/dev/null || echo "")
+              if [ -z "$last_commit_iso" ]; then
+                echo "  ?  $branch — could not read commit date, skipping"
+                continue
+              fi
+              last_commit_ts=$(date -u -d "$last_commit_iso" +%s)
+
+              # Branch is "merged" if it has zero commits not in main
+              ahead_by=$(gh api "/repos/$REPO/compare/main...$branch" \
+                --jq '.ahead_by' 2>/dev/null || echo "")
+
+              if [ "$ahead_by" = "0" ]; then
+                reason="merged (no unique commits vs main)"
+                should_delete=1
+              elif [ "$last_commit_ts" -lt "$THRESHOLD" ]; then
+                reason="stale (last commit $last_commit_iso)"
+                should_delete=1
+              else
+                reason="active (last commit $last_commit_iso, $ahead_by ahead of main)"
+                should_delete=0
+              fi
+
+              if [ "$should_delete" = "1" ]; then
+                if [ "$DRY_RUN" = "true" ]; then
+                  echo "  -  $branch — WOULD DELETE ($reason)"
+                else
+                  if gh api -X DELETE "/repos/$REPO/git/refs/heads/$branch" >/dev/null 2>&1; then
+                    echo "  X  $branch — DELETED ($reason)"
+                    deleted=$((deleted + 1))
+                  else
+                    echo "  !  $branch — DELETE FAILED ($reason)"
+                  fi
+                fi
+              else
+                echo "  =  $branch — KEEP ($reason)"
+                kept_active=$((kept_active + 1))
+              fi
+            done <<< "$branches"
+
+            page=$((page + 1))
+          done
+
+          echo ""
+          echo "Summary:"
+          echo "  Deleted: $deleted"
+          echo "  Kept (active): $kept_active"
+          echo "  Dry run: $DRY_RUN"

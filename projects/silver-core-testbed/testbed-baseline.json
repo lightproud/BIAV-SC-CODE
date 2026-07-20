@@ -1,0 +1,105 @@
+{
+  "note": "silver-core-testbed effect baseline — derived ENTIRELY from the task ledger (施工封面 §0.3: the ledger is the evaluation data source). Regenerate with `npm run baseline -w silver-core-testbed`; comparison experiments (endpoint/model swaps) rerun the same patrols and diff this file.",
+  "exportedAt": "2026-07-18T09:11:21.364Z",
+  "window": {
+    "from": "2026-07-18T09:11:09.715Z",
+    "to": "2026-07-18T09:11:10.785Z"
+  },
+  "totals": {
+    "sessions": 5,
+    "terminal": 5,
+    "done": 5,
+    "failed": 0,
+    "completionRate": 1,
+    "attemptRows": 5,
+    "stalls": 0,
+    "crashSweepStalls": 0,
+    "meanAttemptsPerTerminalSession": 1
+  },
+  "perClass": {
+    "inspect:ci-status": {
+      "sessions": 1,
+      "done": 1,
+      "failed": 0,
+      "open": 0,
+      "attempts": 1,
+      "stalls": 0,
+      "completionRate": 1
+    },
+    "inspect:doc-links": {
+      "sessions": 1,
+      "done": 1,
+      "failed": 0,
+      "open": 0,
+      "attempts": 1,
+      "stalls": 0,
+      "completionRate": 1
+    },
+    "inspect:lockstep": {
+      "sessions": 1,
+      "done": 1,
+      "failed": 0,
+      "open": 0,
+      "attempts": 1,
+      "stalls": 0,
+      "completionRate": 1
+    },
+    "inspect:ratchet": {
+      "sessions": 1,
+      "done": 1,
+      "failed": 0,
+      "open": 0,
+      "attempts": 1,
+      "stalls": 0,
+      "completionRate": 1
+    },
+    "dream": {
+      "sessions": 1,
+      "done": 1,
+      "failed": 0,
+      "open": 0,
+      "attempts": 1,
+      "stalls": 0,
+      "completionRate": 1
+    }
+  },
+  "schedule": {
+    "insp-ci-status": {
+      "catchUp": "latest",
+      "fires": 1,
+      "expectedPoints": 1,
+      "uncoveredPoints": 0,
+      "note": "uncovered points under catchUp latest = designed backlog collapse, not loss"
+    },
+    "insp-doc-links": {
+      "catchUp": "latest",
+      "fires": 1,
+      "expectedPoints": 1,
+      "uncoveredPoints": 0,
+      "note": "uncovered points under catchUp latest = designed backlog collapse, not loss"
+    },
+    "insp-lockstep": {
+      "catchUp": "latest",
+      "fires": 1,
+      "expectedPoints": 1,
+      "uncoveredPoints": 0,
+      "note": "uncovered points under catchUp latest = designed backlog collapse, not loss"
+    },
+    "insp-ratchet": {
+      "catchUp": "latest",
+      "fires": 1,
+      "expectedPoints": 1,
+      "uncoveredPoints": 0,
+      "note": "uncovered points under catchUp latest = designed backlog collapse, not loss"
+    },
+    "dream": {
+      "catchUp": "latest",
+      "fires": 1,
+      "expectedPoints": 1,
+      "uncoveredPoints": 0,
+      "note": "uncovered points under catchUp latest = designed backlog collapse, not loss"
+    }
+  },
+  "tokensPerTask": null,
+  "tokensNote": "honestly null: the four inspectors and the dream merge are deterministic executors (zero model calls, no API key in the unattended cron). This slot is where the three-configuration endpoint experiments (黑池侧 todo §7) will land their numbers."
+}

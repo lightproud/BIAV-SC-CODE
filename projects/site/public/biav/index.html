@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>缸中之脑 / Brain in a Vat — B.I.A.V. Studio</title>
+<meta name="description" content="缸中之脑（Brain in a Vat / B.I.A.V.）— B.I.A.V. Studio 的 AI 协作元项目。从笛卡尔思想实验到银芯系统，承载二核心使命的知识层与记忆基底。">
+<meta name="author" content="B.I.A.V. Studio">
+<meta name="theme-color" content="#c5a356">
+<link rel="canonical" href="https://lightproud.github.io/brain-in-a-vat/biav/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0b10'/%3E%3Ctext x='32' y='46' font-family='Noto Serif SC,serif' font-weight='700' font-size='44' fill='%23c5a356' text-anchor='middle'%3E夜%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="缸中之脑 / Brain in a Vat">
+<meta property="og:description" content="B.I.A.V. Studio 的 AI 协作元项目 — 承载二核心使命的知识层与记忆基底。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lightproud.github.io/brain-in-a-vat/biav/">
+<meta property="og:site_name" content="B.I.A.V. Studio">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../design/morimens-design-tokens.css">
+<style>
+  :root {
+    --bg:var(--m-bg-abyss,#0a0b10);--bg2:var(--m-bg-surface,#0f1018);
+    --gold:var(--m-gold-primary,#c5a356);--gold-l:var(--m-gold-light,#e2c97e);--gold-d:var(--m-gold-dim,#8a7340);
+    --txt:var(--m-text-primary,#f0ebe0);--txt-m:var(--m-text-muted,#b5aa98);--txt-d:var(--m-text-dim,#7a7265);
+    --serif:var(--m-font-title,'Noto Serif SC',serif);--sans:var(--m-font-body,'Noto Sans SC',sans-serif);
+    --border:var(--m-border-subtle,rgba(197,163,86,0.08));
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-weight:500;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--gold);text-decoration:none}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,11,16,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--gold);letter-spacing:0.04em}
+  .nav-back{font-size:13px;color:var(--txt-d);font-weight:500;letter-spacing:0.02em;transition:color 0.3s}
+  .nav-back:hover{color:var(--gold)}
+
+  .hero{position:relative;padding:140px 24px 80px;text-align:center;max-width:840px;margin:0 auto}
+  .hero-eyebrow{font-family:var(--serif);font-size:13px;color:var(--gold-d);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px}
+  .hero-title{font-family:var(--serif);font-weight:700;font-size:38px;color:var(--txt);letter-spacing:0.06em;margin-bottom:8px;line-height:1.3}
+  .hero-sub{font-family:var(--serif);font-weight:400;font-size:15px;color:var(--gold);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:24px}
+  .hero-div{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);margin:24px auto}
+  .hero-tagline{font-size:15px;color:var(--txt-m);max-width:560px;line-height:2;margin:0 auto}
+
+  .deco{text-align:center;color:#3a3520;font-size:11px;letter-spacing:6pt;padding:40px 0}
+
+  section{padding:60px 40px;max-width:840px;margin:0 auto}
+  .sec-label{font-family:var(--serif);font-size:13px;color:var(--gold-d);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px}
+  .sec-title{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--txt);margin-bottom:16px;line-height:1.3}
+  .sec-body{font-size:15px;color:var(--txt-m);line-height:2}
+  .sec-body p{margin-bottom:14px}
+  .sec-body strong{color:var(--gold-l);font-weight:600}
+  .sec-body em{color:var(--txt);font-style:normal;font-family:var(--serif)}
+  .code{font-family:'JetBrains Mono','SF Mono',monospace;font-size:13px;color:var(--gold);background:rgba(197,163,86,0.06);padding:1px 6px;border-radius:2px}
+
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
+  .card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:24px}
+  .card-num{font-family:var(--serif);font-weight:700;font-size:24px;color:var(--gold-d);margin-bottom:10px;line-height:1}
+  .card-name{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--gold-l);margin-bottom:6px}
+  .card-desc{font-size:13px;color:var(--txt-m);line-height:1.7}
+  .card-meta{font-size:11px;color:var(--txt-d);letter-spacing:0.06em;margin-top:10px}
+
+  table.struct{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
+  table.struct th{font-family:var(--sans);font-weight:700;font-size:11px;color:var(--gold-d);letter-spacing:0.1em;text-transform:uppercase;text-align:left;padding:10px 14px;border-bottom:1px solid rgba(197,163,86,0.1)}
+  table.struct td{color:var(--txt-m);padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.02);vertical-align:top}
+  table.struct td:first-child{color:var(--gold-l);font-family:var(--serif);font-weight:600;white-space:nowrap}
+  table.struct td code{font-family:'JetBrains Mono','SF Mono',monospace;font-size:12px;color:var(--gold);background:rgba(197,163,86,0.06);padding:1px 6px;border-radius:2px}
+
+  .exit-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+  .exit-link{display:inline-flex;align-items:center;padding:10px 22px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;font-size:13px;color:var(--txt-m);font-weight:500;transition:all 0.3s}
+  .exit-link:hover{border-color:rgba(197,163,86,0.18);color:var(--gold)}
+
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);margin-top:40px}
+  .footer-brand{font-family:var(--serif);font-weight:600;font-size:13px;color:var(--gold-d);letter-spacing:0.06em;margin-bottom:8px}
+  .footer-copy{font-size:11px;color:var(--txt-d)}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease-out,transform 0.6s ease-out}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  @media(max-width:700px){
+    nav{padding:0 20px}
+    section{padding:40px 20px}
+    .hero{padding:100px 20px 60px}
+    .hero-title{font-size:26px}
+    .sec-title{font-size:20px}
+    .grid-2{grid-template-columns:1fr}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .reveal{transition:none;opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">缸中之脑</div>
+  <a class="nav-back" href="../">← 返回主站</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">B.I.A.V. Studio</div>
+  <h1 class="hero-title">缸中之脑 / Brain in a Vat</h1>
+  <div class="hero-sub">B.I.A.V. — Silver Core</div>
+  <div class="hero-div"></div>
+  <div class="hero-tagline">B.I.A.V. Studio 的 AI 协作元项目。<br>不是游戏，不是百科，而是承载游戏与百科的知识层与记忆基底。</div>
+</div>
+
+<div class="deco">◇ ◇ ◇</div>
+
+<section class="reveal">
+  <div class="sec-label">Etymology</div>
+  <div class="sec-title">命名缘由</div>
+  <div class="sec-body">
+    <p><strong>Brain in a Vat</strong> 出自笛卡尔与普特南的同名哲学思想实验：一个脱离躯体、被维持在营养液中的大脑，能否区分"真实经验"与"被注入的经验"？</p>
+    <p>Studio 选择此名作为身份锚点，并非声称给出答案，而是接受其前提：<em>制作者所感知的世界，本身可能就是被构建的</em>。这个不确定性是创作《忘却前夜》克苏鲁式认知恐惧叙事的精神基底——所有"已知"都可能被更高阶的存在证伪。</p>
+    <p>在工程层面，本仓库 <span class="code">brain-in-a-vat</span> 就是这个思想实验的具象——一个由 AI 协作维护、自动情报循环驱动的"脱体大脑"，承载 Studio 的记忆、决策与协议。</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-label">Silver Core</div>
+  <div class="sec-title">银芯系统</div>
+  <div class="sec-body">
+    <p><strong>银芯（Silver Core / BIAV-SC）</strong>是 BIAV 项目的知识层系统名，定位为 Studio 的<em>公开信息层</em>（整层公开，自身工程产物亦属公开信息）：负责采集、整理外部社区与解包信息，向内部层（黑池）单向输出，是 Studio 对外的"眼睛和耳朵"。需注意：定位公开<strong>不解除</strong>第三方平台对采集的约束，黑池→银芯方向亦<strong>永久关闭</strong>——越公开，这道单向防火墙越关键。</p>
+    <p>银芯的记忆不再依赖自建检索栈，而是收回到三条互补支柱：<strong>CLAUDE.md</strong>（每会话自动加载的统一入口与协议）、<strong>memory/*.md</strong>（人工策展的决策 / 踩坑 / 状态 / 方法论档案），以及 Claude 平台原生的上下文管理。每一轮协作产出的事实与决策被写入策展档案，让下一轮会话从已有沉淀起步。</p>
+    <p>会话之外，MCP 服务 <span class="code">biav-sc-memory</span> 提供四件协作工具：<span class="code">character_persona</span>（人格激活）、<span class="code">record_decision</span>（决策落档）、<span class="code">record_lesson</span>（教训沉淀）、<span class="code">current_continuity</span>（连续性读取）。这是 Studio 在 AI 协作时代的方法论尝试：<em>让记忆成为基础设施，让协议优先于工具</em>。</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-label">Mission</div>
+  <div class="sec-title">二核心使命</div>
+  <div class="sec-body">
+    <p>2026-04 银芯重新定位、2026-06 使命收敛后，BIAV 项目承载两条核心使命：</p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-num">壹</div>
+        <div class="card-name">多平台社区情报入口</div>
+        <div class="card-desc">为内部消费层提供多平台社区情报的统一视野。每小时自动聚合 Bilibili / Discord / Reddit / 微博 / TapTap / Steam 等平台。</div>
+        <div class="card-meta">主载体 — news 子项目</div>
+      </div>
+      <div class="card">
+        <div class="card-num">贰</div>
+        <div class="card-name">社区共建知识底座</div>
+        <div class="card-desc">以客户端一手解包数据重建可信底座。剧情正文与 lore 档案已开放；角色基线已以一手解包字段重建（禁用合成占位）。</div>
+        <div class="card-meta">主载体 — wiki 子项目</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-label">Repository</div>
+  <div class="sec-title">仓库结构</div>
+  <div class="sec-body">
+    <table class="struct">
+      <tr><th>子项目</th><th>路径</th><th>职责</th></tr>
+      <tr><td>site</td><td><code>projects/site/</code></td><td>对外门户、部署流水线、跨站视觉一致性</td></tr>
+      <tr><td>news</td><td><code>projects/news/</code></td><td>多平台社区情报聚合、Discord 归档、报告生成</td></tr>
+      <tr><td>wiki</td><td><code>projects/wiki/</code></td><td>客户端解包数据、剧情正文与 lore 档案、角色基线重建、VitePress 构建</td></tr>
+      <tr><td>memory</td><td><code>memory/*.md</code></td><td>人工策展记忆层：决策档案、踩坑教训、状态权威、方法论</td></tr>
+      <tr><td>事实圣经</td><td><code>assets/data/</code></td><td>角色卡 / 设计决策 / 制作者采访 / 叙事结构 + 校验脚本</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="sec-label">Exits</div>
+  <div class="sec-title">入口与协议</div>
+  <div class="sec-body">
+    <p style="margin-bottom:24px">所有协议均以仓库为唯一真值源。下列入口指向具体载体或子站：</p>
+    <div class="exit-row">
+      <a class="exit-link" href="../">主站</a>
+      <a class="exit-link" href="../wiki/">Wiki</a>
+      <a class="exit-link" href="../news/">News</a>
+      <a class="exit-link" href="../kb/">知识库</a>
+      <a class="exit-link" href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">GitHub 仓库</a>
+      <a class="exit-link" href="https://discord.gg/morimens" target="_blank" rel="noopener">Discord 国际服</a>
+    </div>
+  </div>
+</section>
+
+<div class="deco">◇ ◇ ◇</div>
+
+<footer>
+  <div class="footer-brand">B.I.A.V. STUDIO</div>
+  <div class="footer-copy">© 2024-2026 缸中之脑 Brain in a Vat. Game content © 灵犀互娱. Wiki content © Contributors.</div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

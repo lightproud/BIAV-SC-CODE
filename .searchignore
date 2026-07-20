@@ -1,0 +1,17 @@
+# .searchignore — patterns for memory_search.py:discover_files() to skip
+#
+# Syntax: gitignore-style glob patterns (one per line, # for comments).
+# Files matching ANY pattern AND older than SEARCHIGNORE_AGE_DAYS (default 30
+# days, set in scripts/memory_search.py) are excluded from indexing.
+#
+# Hot files matching a pattern are still indexed; only cold archives drop.
+# Author: Code-memory (BIAV-SC batch 1 dispatch, 2026-05-03)
+
+# Session digests — verbose verbatim conversation logs.
+# Recent ones stay (active reference); older than 30 days drop into cold tier.
+memory/session-digests/*.md
+memory/session-digests/*.meta.json
+
+# Dream journals — daily phase-1 reports. Older than 30 days are stale.
+memory/dreams/*.json
+memory/dreams/access-log/*.json

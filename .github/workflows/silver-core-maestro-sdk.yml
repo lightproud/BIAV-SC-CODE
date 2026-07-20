@@ -1,0 +1,123 @@
+name: Silver Core Maestro SDK
+
+# Node/TypeScript CI for projects/silver-core-maestro-sdk (silver-core-maestro-sdk)
+# plus the monorepo dependency-direction guard (SCS-REQ orchestrator-sdk §2:
+# orchestrator -> agent one-way, machine-enforced). The guard also watches
+# agent-SDK changes, because a reverse import would appear on that side.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/silver-core-maestro-sdk/**'
+      - 'projects/silver-core-sdk/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/silver-core-maestro-sdk.yml'
+      - '.github/scripts/check-dep-direction.mjs'
+  # NO pull_request paths filter (keeper ruling 2026-07-18, option ②): this job
+  # is the family INTEGRATION gate (agent build + maestro suite + testbed
+  # consumer contract) and is meant to be a REQUIRED status check. A required
+  # check behind a paths filter deadlocks docs-only PRs on "Expected — waiting
+  # for status" (the exact 2026-06-21 failure mode). Sparse checkout keeps it
+  # cheap; it always runs and always reports so the Ruleset can require it.
+  pull_request:
+
+concurrency:
+  group: silver-core-maestro-sdk-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  dep-direction:
+    name: Silver Core Maestro SDK / dependency direction
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - name: Dependency-direction guard (orchestrator -> agent one-way)
+        run: node .github/scripts/check-dep-direction.mjs
+
+  unit:
+    # Unique display name so the required-status-check list is unambiguous
+    # (the agent SDK workflow also has a job id `unit`).
+    name: Silver Core Maestro SDK / unit + testbed
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - name: Detect family changes (fail-safe — any doubt runs the full suite)
+        id: changes
+        working-directory: ${{ github.workspace }}
+        run: |
+          # Docs-only PR short-circuit (keeper ruling 2026-07-18 ①): skip the
+          # heavy npm ci + build + test steps when no family path changed. STEP-
+          # level (a skipped required job would deadlock the PR); fail-safe (any
+          # non-PR event / missing SHA / fetch-or-diff error defaults to run=true).
+          set -uo pipefail
+          run=true
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base='${{ github.event.pull_request.base.sha }}'
+            head='${{ github.event.pull_request.head.sha }}'
+            if [ -n "$base" ] && [ -n "$head" ] \
+               && git fetch --no-tags --depth=1 origin "$base" "$head" >/dev/null 2>&1 \
+               && diff="$(git diff --name-only "$base" "$head" 2>/dev/null)"; then
+              if printf '%s\n' "$diff" | grep -qE '^(projects/silver-core-(sdk|maestro-sdk|testbed)/|package(-lock)?\.json|\.github/workflows/silver-core-(sdk|maestro-sdk)\.yml)'; then
+                run=true
+              else
+                run=false
+              fi
+            fi
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+          echo "family paths changed -> run=$run"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies (workspace root)
+        if: steps.changes.outputs.run == 'true'
+        run: npm ci
+      - name: Build agent SDK (workspace dependency)
+        if: steps.changes.outputs.run == 'true'
+        run: npm run build --workspace silver-core-agent-sdk
+      - name: Typecheck
+        if: steps.changes.outputs.run == 'true'
+        run: npm run typecheck --workspace silver-core-maestro-sdk
+      - name: Build
+        if: steps.changes.outputs.run == 'true'
+        run: npm run build --workspace silver-core-maestro-sdk
+      - name: Test
+        if: steps.changes.outputs.run == 'true'
+        run: npm test --workspace silver-core-maestro-sdk
+      - name: Testbed consumer contract (both packages combined, third-party consumer)
+        if: steps.changes.outputs.run == 'true'
+        # The family combination gate (keeper ruling 2026-07-18 ①): silver-core-
+        # testbed is a non-family third-party consumer that resolves BOTH packages
+        # from the workspace (the freshly-built agent + maestro above) and asserts
+        # the public-surface contract. Catches consumer-facing breakage that each
+        # package's own suite cannot see. Fast (~2s, no build — pure .mjs vitest).
+        run: npm test --workspace silver-core-testbed
+      - name: Publishability (dry-run pack, both packages independently)
+        if: steps.changes.outputs.run == 'true'
+        run: |
+          npm pack --dry-run --workspace silver-core-agent-sdk
+          npm pack --dry-run --workspace silver-core-maestro-sdk

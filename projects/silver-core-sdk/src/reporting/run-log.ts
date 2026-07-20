@@ -1,0 +1,202 @@
+/**
+ * Run-signal ledger (self-improvement spec SCS-REQ-002 loop 1 / REQ-1.1).
+ *
+ * Opt-in via Options.runLog: every result message the consumer sees is
+ * mirrored as ONE JSONL line in `{dir}/runlog-{YYYY-MM-DD}.jsonl` (UTC day
+ * files). This is the signal source generateRuntimeReport() aggregates —
+ * facts only, no conversation content: termination subtype, turn/duration
+ * counters, token usage, cost, cache ratio, the transport-health disconnect
+ * ledger, per-tool call/error counters, and model ids.
+ *
+ * Incognito boundary (spec §6.4): an incognito session still contributes
+ * transport-health and token statistics (no content), but its record carries
+ * no session id, no scenario tag and no error text, and is excluded from the
+ * report's failed-sessions section.
+ *
+ * Writes are fire-and-forget appends — a ledger fault must never break the
+ * run (it is observability, not the task).
+ */
+
+import { appendFile, mkdir } from 'node:fs/promises';
+import { join } from 'node:path';
+import { sliceSurrogateSafe } from '../internal/text.js';
+import type {
+  RunLogOptions,
+  SDKMessage,
+  SDKResultMessage,
+  SDKTransportHealth,
+} from '../types.js';
+
+export type { RunLogOptions };
+
+/** One ledger line. Field names are the wire contract consumed by
+ *  generateRuntimeReport() and by BPT-side log producers (spec §6.1). */
+export type RunLogRecord = {
+  /** Record schema version (bump on breaking shape changes). */
+  v: 1;
+  ts: string;
+  /** Absent on incognito records. */
+  session_id?: string;
+  /** Consumer-supplied workload tag, e.g. 'coding' / 'non-coding'. Absent on
+   *  incognito records. */
+  scenario?: string;
+  subtype: string;
+  is_error: boolean;
+  num_turns: number;
+  duration_ms: number;
+  duration_api_ms: number;
+  total_cost_usd: number;
+  usage: {
+    input_tokens: number;
+    output_tokens: number;
+    cache_read_input_tokens: number;
+    cache_creation_input_tokens: number;
+  };
+  cache_hit_ratio?: number;
+  transport_health?: SDKTransportHealth;
+  per_tool?: Array<{ name: string; calls: number; errors: number }>;
+  models?: string[];
+  incognito?: true;
+  /** First line of the error, when the result is an error. Absent on
+   *  incognito records. */
+  error?: string;
+};
+
+export type RunLogSink = {
+  /** Observe one consumer-facing message; mirrors result messages. */
+  observe(msg: SDKMessage): void;
+  /** Resolves once every record observed SO FAR has been appended (or its
+   *  append failed and was swallowed). Lets tests and shutdown paths await
+   *  durability instead of sleeping. */
+  flush(): Promise<void>;
+};
+
+/** UTC day file name for a timestamp. */
+export function runLogFileName(ts: Date): string {
+  return `runlog-${ts.toISOString().slice(0, 10)}.jsonl`;
+}
+
+export function buildRunLogRecord(
+  msg: SDKResultMessage,
+  opts: { scenario?: string; incognito: boolean; now?: Date },
+): RunLogRecord {
+  const m = msg as SDKResultMessage & { errorMessage?: string };
+  const usage = m.usage;
+  const record: RunLogRecord = {
+    v: 1,
+    ts: (opts.now ?? new Date()).toISOString(),
+    subtype: m.subtype,
+    is_error: m.is_error === true,
+    num_turns: m.num_turns,
+    duration_ms: m.duration_ms,
+    duration_api_ms: m.duration_api_ms,
+    total_cost_usd: m.total_cost_usd,
+    usage: {
+      input_tokens: usage.input_tokens,
+      output_tokens: usage.output_tokens,
+      cache_read_input_tokens: usage.cache_read_input_tokens,
+      cache_creation_input_tokens: usage.cache_creation_input_tokens,
+    },
+  };
+  const metrics = m.metrics;
+  if (metrics?.cacheHitRatio !== undefined) record.cache_hit_ratio = metrics.cacheHitRatio;
+  if (metrics?.transportHealth !== undefined) record.transport_health = metrics.transportHealth;
+  if (metrics?.perTool !== undefined && metrics.perTool.length > 0) {
+    record.per_tool = metrics.perTool.map((t) => ({
+      name: t.name,
+      calls: t.calls,
+      errors: t.errors,
+    }));
+  }
+  if (metrics?.modelUsage !== undefined) {
+    const models = Object.keys(metrics.modelUsage);
+    if (models.length > 0) record.models = models;
+  }
+  if (opts.incognito) {
+    // §6.4: transport/token stats stay; identity, tags and content-adjacent
+    // fields go. audit r4 Sls-3 NOT APPLIED (deliberate, test-locked): the
+    // audit argued per_tool/models leak activity and should be stripped, but
+    // §6.4's established contract deliberately KEEPS aggregate transport/token
+    // stats (per_tool is a name→count map, not session-identifying) and
+    // runtime-report.test.ts locks the incognito record contributing to the
+    // aggregate tools table. Generic tool names in an aggregate reveal no
+    // identity, so the established design wins over the audit's premise.
+    record.incognito = true;
+  } else {
+    record.session_id = m.session_id;
+    if (opts.scenario !== undefined) record.scenario = opts.scenario;
+    if (m.is_error === true && typeof m.errorMessage === 'string') {
+      // audit r4 R7s-10: surrogate-safe truncation — a bare slice(0,300) can
+      // sever a surrogate pair, persisting a lone surrogate into the run-log
+      // error field (audit-facing, and replayed on resume).
+      record.error = sliceSurrogateSafe(m.errorMessage.split('\n')[0]!, 300);
+    }
+  }
+  return record;
+}
+
+export function createRunLogSink(args: {
+  runLog: RunLogOptions;
+  incognito: boolean;
+  debug: (msg: string) => void;
+}): RunLogSink {
+  const { runLog, incognito, debug } = args;
+  let dirReady: Promise<void> | null = null;
+  const ensureDir = (): Promise<void> => {
+    // N4 (audit r2): memoize only SUCCESS. Caching a rejected mkdir promise
+    // meant one transient failure (ENOSPC, a permissions blip) permanently
+    // killed the ledger for the rest of the process — every later append
+    // re-awaited the same cached rejection and the self-improvement loop's
+    // signal source went silently dark.
+    dirReady ??= mkdir(runLog.dir, { recursive: true }).then(
+      () => undefined,
+      (err) => {
+        dirReady = null;
+        throw err;
+      },
+    );
+    return dirReady;
+  };
+  // Appends are SERIALIZED on one promise chain: two concurrent fire-and-
+  // forget appendFile calls can land out of arrival order (surfaced as a CI
+  // flake in the sink's own ordering test, 2026-07-12 — and a consumer
+  // reading the ledger as a timeline would see the same inversion). Each
+  // link swallows its own failure so one bad append never wedges the chain;
+  // still fire-and-forget from the caller's view (observability never breaks
+  // the run).
+  let tail: Promise<void> = Promise.resolve();
+  return {
+    observe(msg: SDKMessage): void {
+      if (msg.type !== 'result') return;
+      // audit r4 Sls-2: record construction runs SYNCHRONOUSLY here. A
+      // malformed result (e.g. one missing `usage`) made buildRunLogRecord
+      // throw straight out of observe(), and the caller's un-wrapped .then
+      // broke the run — violating "a ledger fault never breaks the run". Any
+      // construction fault is now swallowed exactly like an append fault.
+      let line: string;
+      let fileName: string;
+      try {
+        const record = buildRunLogRecord(msg, {
+          incognito,
+          ...(runLog.scenario !== undefined ? { scenario: runLog.scenario } : {}),
+        });
+        line = `${JSON.stringify(record)}\n`;
+        // audit 2026-07-14 L-16: derive the day file from the RECORD'S ts (set
+        // at observe time), not the flush-time clock — a record observed at
+        // 23:59:59 and appended at 00:00:01 otherwise lands in the wrong day
+        // file, where readWindow's filename-based day prefilter can miss it.
+        fileName = runLogFileName(new Date(record.ts));
+      } catch (err) {
+        debug(`runLog: record build failed (ignored): ${String(err)}`);
+        return;
+      }
+      tail = tail
+        .then(() => ensureDir())
+        .then(() => appendFile(join(runLog.dir, fileName), line, 'utf8'))
+        .catch((err) => debug(`runLog: append failed (ignored): ${String(err)}`));
+    },
+    flush(): Promise<void> {
+      return tail;
+    },
+  };
+}

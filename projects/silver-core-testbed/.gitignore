@@ -1,0 +1,8 @@
+# Soak-local noise: logs, pid, heartbeat and drill sandboxes stay on the
+# soak host. The ledger (state/ledger.json), drill REPORTS (state/drills/)
+# and the memory area are the evaluation record — they go to git.
+state/daemon.log
+state/daemon.pid
+state/heartbeat.jsonl
+state/drill-sandbox/
+node_modules/

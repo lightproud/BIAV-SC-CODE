@@ -1,0 +1,56 @@
+name: Weekly Heavy-Deps Test
+
+# Kills the two PERMANENT BLIND SPOTS in the main test gate (keeper-adjudicated
+# 2026-07-11, test-coverage proposal P2-2 follow-up): the real-UnityPy client
+# extract smoke and the weasyprint PDF render path are importorskip-gated and
+# never actually run in test.yml (heavy deps deliberately kept out of the fast
+# gate per the render-deps-on-demand stance). This job installs the heavy deps
+# once a week and runs those two test files for real.
+#
+# NOT a required check — failure alerts in Actions only, never blocks merges.
+# The explicit import step below is the loud-failure guard: pip "success" with
+# a broken native install would otherwise let importorskip silently re-open
+# the blind spot while the job stays green.
+
+on:
+  schedule:
+    # 北京时间周一 15:30（UTC 07:30 Monday）——避开采集日更 15 点档的
+    # :00/:05/:10/:37 分钟位，非采集周检节拍
+    - cron: '30 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  heavy-deps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # SPARSE：两份目标测试不读档案层，排除 2.4G Record/Reference（同 test.yml）
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install system libraries for weasyprint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0
+      - name: Install Python dependencies (heavy set)
+        run: |
+          pip install pytest jsonschema markdown UnityPy weasyprint
+      - name: Verify heavy deps genuinely importable (loud-failure guard)
+        # importorskip would silently skip on a broken install — this step makes
+        # a broken heavy dep RED, which is the entire point of the job.
+        run: |
+          python -c "import UnityPy; print('UnityPy', UnityPy.__version__)"
+          python -c "import weasyprint; print('weasyprint', weasyprint.__version__)"
+      - name: Run the two dependency-gated test files for real
+        run: |
+          pytest tests/test_integration_unitpy_optional.py tests/test_report_render_unit.py -v -rs

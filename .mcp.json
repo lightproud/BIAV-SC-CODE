@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "biav-sc-memory": {
+      "command": "python",
+      "args": ["scripts/mcp_server.py"],
+      "cwd": "."
+    }
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "scanned_at": "2026-04-26T16:22:09Z",
+  "total_references": 461,
+  "broken": [
+    {
+      "ref_path": "memory/silver-blackpool-interface.md",
+      "source_file": "memory/console-handover-2026-04-26.md",
+      "line_no": 85,
+      "line_text": "4. **`memory/silver-blackpool-interface.md`**（银芯-黑池关系全规范，新建于 4-26）"
+    },
+    {
+      "ref_path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "source_file": "memory/contribution-protocol.md",
+      "line_no": 68,
+      "line_text": "| **bug-report** | 报告数据错误、链接死链、显示异常 | 待建（`.github/ISSUE_TEMPLATE/bug.yml`） |"
+    },
+    {
+      "ref_path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "source_file": "memory/contribution-protocol.md",
+      "line_no": 104,
+      "line_text": "- 反映到 PR 模板（待建 `.github/PULL_REQUEST_TEMPLATE.md`）"
+    },
+    {
+      "ref_path": ".github/ISSUE_TEMPLATE/*.yml",
+      "source_file": "memory/contribution-protocol.md",
+      "line_no": 130,
+      "line_text": "| M1 末 | Issue / PR 模板落档 | `.github/ISSUE_TEMPLATE/*.yml` + `PULL_REQUEST_TEMPLATE.md`（派 Code-site） |"
+    },
+    {
+      "ref_path": "projects/wiki/news/site/game/",
+      "source_file": "memory/decisions.md",
+      "line_no": 66,
+      "line_text": "| **新增 Code-memory 会话角色 2026-04-26**：守密人 4-26 命题「64M 解包数据如何让 AI 上下文理解」触发——发现 `assets/data/vectors.json.gz` 损坏（gzip EOF）+ `knowledge-graph.json` 缺失，整个 RAG 链条断了。原 6 角色（主控台 / site / news / wiki / game / "
+    },
+    {
+      "ref_path": "projects/site/public/biav/",
+      "source_file": "memory/dispatch-brief-D-fix.md",
+      "line_no": 40,
+      "line_text": "第 134 行 `<a href=\"biav/\">BIAV</a>` 指向 `projects/site/public/biav/`，**该路径不存在**，构建后会 404。"
+    },
+    {
+      "ref_path": "memory/rag-performance-baseline.md",
+      "source_file": "memory/dispatch-brief-code-memory-bootstrap.md",
+      "line_no": 98,
+      "line_text": "撰写 `memory/rag-performance-baseline.md`，包含："
+    },
+    {
+      "ref_path": "memory/rag-performance-baseline.md",
+      "source_file": "memory/dispatch-brief-code-memory-bootstrap.md",
+      "line_no": 128,
+      "line_text": "- ✅ T3 报告 `memory/rag-performance-baseline.md` 是元产物，可直接落档"
+    },
+    {
+      "ref_path": "memory/rag-performance-baseline.md",
+      "source_file": "memory/dispatch-brief-code-memory-bootstrap.md",
+      "line_no": 140,
+      "line_text": "| 5 | T3 报告 `memory/rag-performance-baseline.md` 落档 + 含 T4 建议章节 | 文件存在 |"
+    },
+    {
+      "ref_path": "projects/wiki/docs/public/bunit/awaker/",
+      "source_file": "memory/wiki-phase-2-gap-inventory.md",
+      "line_no": 46,
+      "line_text": "| `projects/wiki/docs/public/bunit/awaker/` | 64 PNG | Wiki 战斗立绘（客户端代码命名 e.g. `BUnit_Awaker_B01_AF.png`） | 未映射到角色 ID |"
+    },
+    {
+      "ref_path": "projects/wiki/docs/public/portraits/full/",
+      "source_file": "memory/wiki-phase-2-gap-inventory.md",
+      "line_no": 47,
+      "line_text": "| `projects/wiki/docs/public/portraits/full/` | 11 PNG | 全身立绘（新格式） | 仅 11 角色 |"
+    },
+    {
+      "ref_path": ".github/workflows/update-news-highfreq.yml",
+      "source_file": "memory/workflow-api-key-audit.md",
+      "line_no": 113,
+      "line_text": "### `.github/workflows/update-news-highfreq.yml`"
+    },
+    {
+      "ref_path": "memory/silver-blackpool-interface.md",
+      "source_file": "projects/news/CONTEXT.md",
+      "line_no": 30,
+      "line_text": "- [ ] 黑池接口规范文档对齐（参考 `memory/silver-blackpool-interface.md`）"
+    },
+    {
+      "ref_path": "scripts/validate_data.py",
+      "source_file": "projects/wiki/CONTEXT.md",
+      "line_no": 43,
+      "line_text": "- CI 校验（`scripts/validate_data.py`）：注册 4 份新 schema，缺失文件改 SKIP（修复历史 CI 红：meta.json/realms.json 从未存在）"
+    },
+    {
+      "ref_path": "scripts/validate_data.py",
+      "source_file": "projects/wiki/CONTEXT.md",
+      "line_no": 143,
+      "line_text": "- [x] CI 校验脚本 `scripts/validate_data.py` 退出码 0（5/5 schemas 校验通过）"
+    }
+  ],
+  "pending_whitelisted": [
+    {
+      "ref_path": "assets/data/memory-utility.json",
+      "source_file": "memory/advanced-memory-design.md",
+      "line_no": 425,
+      "line_text": "| `assets/data/memory-utility.json` | 运行时生成 | 效用分数 |"
+    },
+    {
+      "ref_path": "assets/data/precomputed-cache.json",
+      "source_file": "memory/advanced-memory-design.md",
+      "line_no": 426,
+      "line_text": "| `assets/data/precomputed-cache.json` | 运行时生成 | 预计算缓存 |"
+    },
+    {
+      "ref_path": "projects/bpt-next/",
+      "source_file": "memory/decisions.md",
+      "line_no": 7,
+      "line_text": "> ⚠ **BPT 战线已删除（2026-04-19）**：以下所有包含 `projects/bpt-next/`、`projects/bpt-web/`、`projects/bpt-desktop/`、`projects/graphify-ext/`、`projects/occ-local/` 路径的历史条目均为已移除子系统的追溯记录，路径本身不再存在于仓库。详见 `memory/strateg"
+    },
+    {
+      "ref_path": "projects/bpt-web/",
+      "source_file": "memory/decisions.md",
+      "line_no": 7,
+      "line_text": "> ⚠ **BPT 战线已删除（2026-04-19）**：以下所有包含 `projects/bpt-next/`、`projects/bpt-web/`、`projects/bpt-desktop/`、`projects/graphify-ext/`、`projects/occ-local/` 路径的历史条目均为已移除子系统的追溯记录，路径本身不再存在于仓库。详见 `memory/strateg"
+    },
+    {
+      "ref_path": "projects/bpt-desktop/",
+      "source_file": "memory/decisions.md",
+      "line_no": 7,
+      "line_text": "> ⚠ **BPT 战线已删除（2026-04-19）**：以下所有包含 `projects/bpt-next/`、`projects/bpt-web/`、`projects/bpt-desktop/`、`projects/graphify-ext/`、`projects/occ-local/` 路径的历史条目均为已移除子系统的追溯记录，路径本身不再存在于仓库。详见 `memory/strateg"
+    },
+    {
+      "ref_path": "projects/graphify-ext/",
+      "source_file": "memory/decisions.md",
+      "line_no": 7,
+      "line_text": "> ⚠ **BPT 战线已删除（2026-04-19）**：以下所有包含 `projects/bpt-next/`、`projects/bpt-web/`、`projects/bpt-desktop/`、`projects/graphify-ext/`、`projects/occ-local/` 路径的历史条目均为已移除子系统的追溯记录，路径本身不再存在于仓库。详见 `memory/strateg"
+    },
+    {
+      "ref_path": "projects/occ-local/",
+      "source_file": "memory/decisions.md",
+      "line_no": 7,
+      "line_text": "> ⚠ **BPT 战线已删除（2026-04-19）**：以下所有包含 `projects/bpt-next/`、`projects/bpt-web/`、`projects/bpt-desktop/`、`projects/graphify-ext/`、`projects/occ-local/` 路径的历史条目均为已移除子系统的追溯记录，路径本身不再存在于仓库。详见 `memory/strateg"
+    },
+    {
+      "ref_path": "projects/bpt-next/.claw/settings.json",
+      "source_file": "memory/decisions.md",
+      "line_no": 53,
+      "line_text": "| **bpt-next 接入 idealab 网关锁定**（2026-04-14）：守密人明示确认 idealab（`https://idealab.alibaba-inc.com`）完整支持 Anthropic-compatible 协议（prompt caching / tool_use / 流式全保留）。锁定端点为 `/api/anthropic/v1/messages`（`/code/`"
+    },
+    {
+      "ref_path": "projects/bpt-next/LOCAL-SETUP-ZH.md",
+      "source_file": "memory/decisions.md",
+      "line_no": 53,
+      "line_text": "| **bpt-next 接入 idealab 网关锁定**（2026-04-14）：守密人明示确认 idealab（`https://idealab.alibaba-inc.com`）完整支持 Anthropic-compatible 协议（prompt caching / tool_use / 流式全保留）。锁定端点为 `/api/anthropic/v1/messages`（`/code/`"
+    },
+    {
+      "ref_path": "projects/bpt-next/LOCAL-SETUP-ZH.md",
+      "source_file": "memory/lessons-learned.md",
+      "line_no": 199,
+      "line_text": "- **Fix**：API key 消费方（bpt-next / 后端服务 / CI）必须锁定 `/api/anthropic/v1/messages`；`/code/` 仅供 Web IDE / 浏览器 SSO 场景。档案同步固化到 `projects/bpt-next/LOCAL-SETUP-ZH.md` ⚠（已删除）情境八，防止未来会话重新评估时踩坑"
+    },
+    {
+      "ref_path": "projects/bpt-next/.claw/settings.json",
+      "source_file": "memory/lessons-learned.md",
+      "line_no": 206,
+      "line_text": "- **Fix**：在 `projects/bpt-next/.claw/settings.json` ⚠（已删除）用户别名表覆盖 `haiku → claude-haiku-4_5`；Sonnet/Opus 恰好匹配 claw 内置别名无需改动。命名约定说明同步到 `LOCAL-SETUP-ZH.md` 情境八"
+    },
+    {
+      "ref_path": "assets/data/memory-utility.json",
+      "source_file": "memory/project-status.md",
+      "line_no": 190,
+      "line_text": "| `assets/data/memory-utility.json` | 效用评分（运行时生成） |"
+    },
+    {
+      "ref_path": "scripts/session_svn_sync.py",
+      "source_file": "memory/silver-memory-enhancement-plan.md",
+      "line_no": 108,
+      "line_text": "- 黑池侧：`scripts/session_svn_sync.py` ⚠（Phase B P6 待自建）推到本地 SVN"
+    },
+    {
+      "ref_path": "scripts/session_svn_sync.py",
+      "source_file": "memory/silver-memory-enhancement-plan.md",
+      "line_no": 141,
+      "line_text": "- P6 SVN 会话同步（`scripts/session_svn_sync.py` ⚠ 待自建）"
+    },
+    {
+      "ref_path": "projects/bpt-web",
+      "source_file": "memory/strategic-plan-2026.md",
+      "line_no": 101,
+      "line_text": "1. **BPT 从银芯删除**：`projects/bpt-web` ⚠（已删除）/ `bpt-desktop` / `bpt-next` / `graphify-ext` / `occ-local` 五目录全部删除，不迁仓库不归档分支。"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/characters.schema.json",
+      "source_file": "memory/wiki-characters-schema-v1.md",
+      "line_no": 25,
+      "line_text": "5. Schema 为 draft-07，可直接落盘 `projects/wiki/data/db/characters.schema.json` ⚠（目标路径，Phase 2 W1 自举时建立），供 CI validate-data.yml 校验"
+    },
+    {
+      "ref_path": "projects/game/config/game-config.json",
+      "source_file": "projects/game/CONTEXT.md",
+      "line_no": 34,
+      "line_text": "- `projects/game/config/game-config.json` — 游戏配置（本项目产出，待创建）"
+    },
+    {
+      "ref_path": "assets/data/character_data.txt",
+      "source_file": "projects/wiki/CONTEXT.md",
+      "line_no": 69,
+      "line_text": "- **数据文件**：`data/db/characters.json` 尚未建立，Phase 2 开工需先自举（参考 `assets/data/character_data.txt` 解析）。真实角色总数 72（含皮肤/联动/彩蛋）"
+    },
+    {
+      "ref_path": "scripts/content_db.py",
+      "source_file": "projects/wiki/CONTEXT.md",
+      "line_no": 70,
+      "line_text": "- **查询模块**：`scripts/content_db.py`，Python 接口"
+    }
+  ],
+  "summary": {
+    "broken_count": 15,
+    "pending_count": 19,
+    "scanned_files": 33
+  }
+}

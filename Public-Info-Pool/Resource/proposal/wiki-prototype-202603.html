@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>忘却前夜 WIKI — 唤醒体图鉴</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0b10;
+  --panel: #111219;
+  --card: #161820;
+  --card-hover: #1c1e28;
+  --border: #252630;
+  --gold: #c5a356;
+  --gold-light: #e2c97e;
+  --gold-dark: #8a7a48;
+  --text: #d4c9a8;
+  --text-sub: #6b6040;
+  --chaos: #c5a356;
+  --aequor: #3498db;
+  --caro: #e74c3c;
+  --ultra: #9b59b6;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans SC', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+.site-header {
+  background: var(--panel); border-bottom: 1px solid var(--border);
+  padding: 14px 24px; position: sticky; top: 0; z-index: 100;
+}
+.header-inner {
+  max-width: 1400px; margin: 0 auto; display: flex;
+  align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.header-logo { display: flex; flex-direction: column; }
+.site-title {
+  font-family: 'Noto Serif SC', serif; font-size: 18px; font-weight: 700;
+  color: var(--gold-light); letter-spacing: 2px; white-space: nowrap;
+}
+.site-subtitle { font-size: 10px; color: var(--text-sub); letter-spacing: 1px; margin-top: 2px; }
+.search-wrap {
+  position: relative; flex: 1; max-width: 280px;
+}
+.search-wrap input {
+  width: 100%; background: var(--card); border: 1px solid var(--border);
+  border-radius: 6px; padding: 7px 12px 7px 34px; color: var(--text);
+  font-family: 'Noto Sans SC', sans-serif; font-size: 13px; outline: none;
+  transition: border-color 0.2s;
+}
+.search-wrap input:focus { border-color: var(--gold); }
+.search-wrap input::placeholder { color: var(--text-sub); }
+.search-icon {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  color: var(--text-sub); font-size: 14px; pointer-events: none;
+}
+.main { max-width: 1400px; margin: 0 auto; padding: 20px 16px; }
+.filter-bar {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+  padding: 14px 16px; margin-bottom: 16px; display: flex; gap: 20px;
+  flex-wrap: wrap; align-items: flex-start;
+}
+.filter-group { display: flex; flex-direction: column; gap: 6px; }
+.filter-label {
+  font-size: 10px; color: var(--text-sub); font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.filter-options { display: flex; gap: 5px; flex-wrap: wrap; }
+.fbtn {
+  padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text-sub); font-family: 'Noto Sans SC', sans-serif;
+  font-size: 11px; font-weight: 500; cursor: pointer; transition: all 0.15s; white-space: nowrap;
+}
+.fbtn:hover { border-color: var(--gold-dark); color: var(--text); }
+.fbtn.active { color: #fff; border-color: transparent; }
+.fbtn[data-realm="chaos"].active { background: var(--chaos); color: #000; }
+.fbtn[data-realm="aequor"].active { background: var(--aequor); }
+.fbtn[data-realm="caro"].active { background: var(--caro); }
+.fbtn[data-realm="ultra"].active { background: var(--ultra); }
+.fbtn[data-role].active, .fbtn[data-rarity].active, .fbtn[data-tier].active { background: var(--gold); color: #000; border-color: transparent; }
+.sort-group { display: flex; flex-direction: column; gap: 6px; margin-left: auto; }
+select.sort-sel {
+  background: var(--card); border: 1px solid var(--border); border-radius: 4px;
+  color: var(--text); font-family: 'Noto Sans SC', sans-serif; font-size: 12px;
+  padding: 5px 8px; outline: none; cursor: pointer;
+}
+select.sort-sel:focus { border-color: var(--gold); }
+.results-info { font-size: 12px; color: var(--text-sub); margin-bottom: 12px; }
+.results-info span { color: var(--gold); font-weight: 700; }
+.char-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 10px;
+}
+.char-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  overflow: hidden; cursor: pointer; transition: all 0.2s; position: relative;
+}
+.char-card:hover { border-color: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+.char-card[data-realm="chaos"] { --rc: var(--chaos); }
+.char-card[data-realm="aequor"] { --rc: var(--aequor); }
+.char-card[data-realm="caro"] { --rc: var(--caro); }
+.char-card[data-realm="ultra"] { --rc: var(--ultra); }
+.card-bar { height: 3px; background: var(--rc); }
+.card-art {
+  width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, var(--panel) 0%, var(--card) 100%);
+  display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
+}
+.card-art img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.art-placeholder {
+  font-size: 32px; font-family: 'Noto Serif SC', serif; font-weight: 700;
+  color: var(--rc); opacity: 0.12;
+}
+.badge-rarity {
+  position: absolute; top: 6px; right: 6px; font-size: 9px; font-weight: 700;
+  padding: 2px 5px; border-radius: 3px; background: rgba(0,0,0,0.75);
+  border: 1px solid var(--rc); color: var(--rc);
+}
+.badge-tier {
+  position: absolute; top: 6px; left: 6px; font-size: 9px; font-weight: 700;
+  padding: 2px 5px; border-radius: 3px; background: rgba(0,0,0,0.8);
+  color: var(--gold-light); border: 1px solid var(--gold-dark);
+}
+.badge-limited {
+  position: absolute; bottom: 6px; right: 6px; font-size: 8px; font-weight: 700;
+  padding: 1px 5px; border-radius: 2px; background: rgba(197,163,86,0.9); color: #000;
+}
+.card-info { padding: 8px 10px 10px; }
+.card-name {
+  font-family: 'Noto Serif SC', serif; font-size: 13px; font-weight: 700;
+  color: var(--gold-light); margin-bottom: 1px; line-height: 1.3;
+}
+.card-en { font-size: 10px; color: var(--text-sub); letter-spacing: 0.5px; margin-bottom: 5px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.role-chip {
+  font-size: 9px; padding: 1px 5px; border-radius: 3px;
+  background: rgba(255,255,255,0.05); color: var(--text-sub); border: 1px solid var(--border);
+}
+.empty-msg { text-align: center; padding: 60px 20px; color: var(--text-sub); font-size: 13px; grid-column: 1/-1; }
+/* Modal */
+.modal-bg {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.82);
+  z-index: 1000; align-items: center; justify-content: center; padding: 16px;
+}
+.modal-bg.open { display: flex; }
+.modal {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+  width: 100%; max-width: 620px; max-height: 90vh; overflow: hidden;
+  display: flex; flex-direction: column; animation: fadeUp 0.2s ease;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.modal-head { padding: 18px 18px 0; display: flex; gap: 14px; align-items: flex-start; }
+.modal-accent { width: 4px; border-radius: 2px; min-height: 56px; flex-shrink: 0; }
+.modal-titles { flex: 1; }
+.modal-name {
+  font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 700;
+  color: var(--gold-light); margin-bottom: 2px;
+}
+.modal-en { font-size: 12px; color: var(--text-sub); letter-spacing: 1px; margin-bottom: 8px; }
+.modal-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+.mbadge {
+  font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px;
+}
+.mbadge-realm { color: #fff; }
+.mbadge-role { background: rgba(255,255,255,0.07); color: var(--text); border: 1px solid var(--border); }
+.mbadge-tier { background: rgba(226,201,126,0.1); color: var(--gold-light); border: 1px solid var(--gold-dark); }
+.mbadge-limited { background: rgba(197,163,86,0.18); color: var(--gold); border: 1px solid var(--gold-dark); }
+.mbadge-free { background: rgba(74,174,90,0.18); color: #7aad5a; border: 1px solid #4a7a3a; }
+.modal-close {
+  background: none; border: none; cursor: pointer; color: var(--text-sub);
+  font-size: 18px; padding: 4px 6px; border-radius: 4px; line-height: 1; flex-shrink: 0;
+}
+.modal-close:hover { color: var(--text); background: var(--card); }
+.modal-tabs {
+  display: flex; padding: 14px 18px 0; border-bottom: 1px solid var(--border);
+}
+.tab-btn {
+  background: none; border: none; border-bottom: 2px solid transparent;
+  color: var(--text-sub); font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12px; font-weight: 500; padding: 7px 14px; cursor: pointer;
+  transition: all 0.15s; margin-bottom: -1px;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+.modal-body { overflow-y: auto; flex: 1; padding: 16px 18px 20px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.attr-desc { font-size: 13px; line-height: 1.85; color: var(--text); margin-bottom: 14px; font-weight: 500; }
+.attr-tbl { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 12px; }
+.attr-tbl td { padding: 6px 10px; border: 1px solid var(--border); font-weight: 500; }
+.attr-tbl td:first-child {
+  color: var(--text-sub); background: var(--card); font-weight: 700; width: 25%; white-space: nowrap;
+}
+.attr-tbl tr:nth-child(even) td:not(:first-child) { background: rgba(197,163,86,0.03); }
+.tag-row { display: flex; gap: 5px; flex-wrap: wrap; }
+.tag-chip {
+  font-size: 10px; padding: 2px 7px; border-radius: 3px;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-sub);
+}
+.sec-title {
+  font-size: 11px; font-weight: 700; color: var(--text-sub); letter-spacing: 1px;
+  text-transform: uppercase; margin: 14px 0 7px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.cmd-list { display: flex; flex-direction: column; gap: 7px; margin-bottom: 4px; }
+.cmd-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 9px 11px;
+}
+.cmd-hd { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.cmd-cost {
+  width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: #000;
+  font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cmd-cost.c0 { background: rgba(255,255,255,0.1); color: var(--text); }
+.cmd-cost.cv { background: rgba(197,163,86,0.3); color: var(--gold-light); }
+.cmd-name { font-size: 12px; font-weight: 700; color: var(--gold-light); }
+.cmd-en { font-size: 10px; color: var(--text-sub); }
+.cmd-effect { font-size: 12px; color: var(--text); line-height: 1.65; font-weight: 500; }
+.cmd-note { font-size: 11px; color: var(--text-sub); margin-top: 3px; line-height: 1.5; }
+.exalt-card {
+  background: rgba(197,163,86,0.05); border: 1px solid rgba(197,163,86,0.18);
+  border-radius: 6px; padding: 10px 12px;
+}
+.exalt-name { font-size: 12px; font-weight: 700; color: var(--gold-light); margin-bottom: 4px; }
+.exalt-effect { font-size: 12px; color: var(--text); line-height: 1.7; font-weight: 500; }
+.overexalt-card {
+  background: rgba(155,89,182,0.07); border: 1px solid rgba(155,89,182,0.25);
+  border-radius: 6px; padding: 10px 12px; margin-top: 7px;
+}
+.overexalt-name { font-size: 12px; font-weight: 700; color: #c39de0; margin-bottom: 4px; }
+.no-data { font-size: 13px; color: var(--text-sub); text-align: center; padding: 28px; }
+.enl-list { display: flex; flex-direction: column; gap: 9px; }
+.enl-item {
+  display: flex; gap: 11px; align-items: flex-start;
+  background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 9px 11px;
+}
+.enl-lvl {
+  width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--gold-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: var(--gold); flex-shrink: 0;
+}
+.enl-body { flex: 1; }
+.enl-name { font-size: 12px; font-weight: 700; color: var(--gold-light); margin-bottom: 3px; }
+.enl-effect { font-size: 12px; color: var(--text); line-height: 1.6; font-weight: 500; }
+.site-footer {
+  text-align: center; padding: 28px; color: var(--text-sub); font-size: 11px;
+  border-top: 1px solid var(--border); margin-top: 36px; letter-spacing: 0.5px;
+}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+@media (max-width: 600px) {
+  .char-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+  .filter-bar { gap: 12px; }
+  .tab-btn { padding: 7px 10px; font-size: 11px; }
+  .modal-name { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <div class="site-title">忘却前夜 WIKI</div>
+      <div class="site-subtitle">MORIMENS — 唤醒体图鉴</div>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" id="searchInput" placeholder="搜索角色名 / English name...">
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="filter-bar">
+    <div class="filter-group">
+      <div class="filter-label">界域</div>
+      <div class="filter-options" id="realmFilters">
+        <button class="fbtn active" data-realm="all">全部</button>
+        <button class="fbtn" data-realm="chaos">混沌</button>
+        <button class="fbtn" data-realm="aequor">深海</button>
+        <button class="fbtn" data-realm="caro">血肉</button>
+        <button class="fbtn" data-realm="ultra">超维</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">定位</div>
+      <div class="filter-options" id="roleFilters">
+        <button class="fbtn active" data-role="all">全部</button>
+        <button class="fbtn" data-role="attack">输出</button>
+        <button class="fbtn" data-role="sub_attack">副输出</button>
+        <button class="fbtn" data-role="support">辅助</button>
+        <button class="fbtn" data-role="defense">防御</button>
+        <button class="fbtn" data-role="healer">治疗</button>
+        <button class="fbtn" data-role="chorus">合唱</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">获取</div>
+      <div class="filter-options" id="rarityFilters">
+        <button class="fbtn active" data-rarity="all">全部</button>
+        <button class="fbtn" data-rarity="limited">限定</button>
+        <button class="fbtn" data-rarity="permanent">常驻</button>
+      </div>
+    </div>
+    <div class="sort-group">
+      <div class="filter-label">排序</div>
+      <select class="sort-sel" id="sortSel">
+        <option value="tier">强度 Tier</option>
+        <option value="realm">界域</option>
+        <option value="name">中文名</option>
+        <option value="en">英文名</option>
+        <option value="role">定位</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="results-info">共显示 <span id="countDisplay">0</span> 个唤醒体</div>
+
+  <div class="char-grid" id="charGrid"></div>
+</main>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <div class="modal-accent" id="modalAccent"></div>
+      <div class="modal-titles">
+        <div class="modal-name" id="modalName"></div>
+        <div class="modal-en" id="modalEn"></div>
+        <div class="modal-badges" id="modalBadges"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    </div>
+    <div class="modal-tabs">
+      <button class="tab-btn active" onclick="switchTab('attr')">属性面板</button>
+      <button class="tab-btn" onclick="switchTab('cmd')">指令卡</button>
+      <button class="tab-btn" onclick="switchTab('enl')">启灵</button>
+    </div>
+    <div class="modal-body">
+      <div class="tab-panel active" id="tab-attr"></div>
+      <div class="tab-panel" id="tab-cmd"></div>
+      <div class="tab-panel" id="tab-enl"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  忘却前夜 WIKI · 数据来源：公开社区情报 · 仅供参考 · Morimens &copy; 2024 脑缸组
+</footer>
+
+<script>
+const REALM_NAMES = { chaos:'混沌', aequor:'深海', caro:'血肉', ultra:'超维' };
+const REALM_COLORS = { chaos:'#c5a356', aequor:'#3498db', caro:'#e74c3c', ultra:'#9b59b6' };
+const ROLE_NAMES = { attack:'输出', sub_attack:'副输出', support:'辅助', defense:'防御', healer:'治疗', chorus:'合唱' };
+const TIER_ORDER = { 'T0':0, 'T1':1, 'T2':2, 'T3':3, '-':4 };
+
+const characters = [
+// ─── CHAOS 混沌 ───────────────────────────────────────────────────
+{id:'alva',name:'艾尔瓦',en:'Alva',realm:'chaos',role:'defense',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['主C','混沌核心'],
+desc:'混沌界域防御型唤醒体，御四家之一。官方定位防御型，实际为攻防一体坦C——护盾越高伤害越高。银钥共鸣体系核心坦克，死亡抵抗机制使其极难倒下。社区公认混沌队基石。',portrait:'assets/images/portraits/alva.png',
+skills:{cmds:[
+  {name:'打击',en:'Strike',cost:1,effect:'标准打击卡'},
+  {name:'临战体势',en:'Combat Stance',cost:1,effect:'获得防御力x10%护盾(4点)。回合结束时若在手中，获得的护盾提高2点。保留。',note:'启灵1后算力消耗-1(变为0费)，打出后驱散所有唤醒体封印状态'},
+  {name:'心眼利刃',en:"Mind's Edge",cost:3,effect:'造成攻击力x30%伤害(11点)。每点护盾使伤害提高2点。',note:'启灵3后，本回合每打出1张防御卡，心眼利刃算力消耗-1'}
+],rouse:{name:'灵知觉醒',effect:'艾尔瓦获得25点狂气。灵知觉醒：获得2点戒备。艾尔瓦造成的伤害随当前护盾提高，每点护盾提高1。'},
+exalt:{name:'无止境的正义',en:'Endless Justice',effect:'获得19点护盾。弃掉手牌中所有状态卡和症状卡，并抽取等量+1的卡牌。'},
+enlighten:[
+  {lv:1,name:'固守阵地',en:'Hold the Line',effect:'「临战体势」算力消耗-1，打出后驱散所有唤醒体封印状态。【必要启灵】'},
+  {lv:2,name:'永战不怠',en:'Tireless Warrior',effect:'「无止境的正义」抽牌数量+1。'},
+  {lv:3,name:'一切为了公正',en:'All for Justice',effect:'本回合每打出1张防御卡，「心眼利刃」算力消耗-1。【输出向必要启灵】'}
+]}},
+{id:'doll',name:'朵尔',en:'Doll',realm:'chaos',role:'attack',tier:'T0',limited:false,obtain:'常驻/活动唤醒',tags:['主C'],portrait:'assets/images/portraits/doll.png',
+desc:'混沌界域T0输出型唤醒体，御四家之一。拥有「终章形态」变身机制：使用终章后全技能改变效果，牺牲治疗换取自伤增强毒伤，化身玻璃大炮。与SR版朵尔为不同角色。'},
+{id:'ramona-timeworn',name:'环行·拉蒙娜',en:'Ramona: Timeworn',realm:'chaos',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['主C','限定','拉蒙娜变体'],portrait:'assets/images/portraits/ramona-timeworn.png',
+desc:'混沌界域T0限定输出角色，拉蒙娜的环行变体形态。围绕负熵（Negentropy）和卡牌操控的辅助输出角色，可召回大量打击卡配合队友爆发。社区简称「环拉」。',
+skills:{cmds:[],rouse:{name:'灵知觉醒',effect:'拉蒙娜·环行打出无回环效果的指令卡时，获得1层负熵和50点钥能，每回合最多3次。'},
+exalt:{name:'狂气爆发',effect:'将上回合最后打出的3张固有指令卡的复制加入手牌，算力消耗-1。'},
+overexalt:{name:'超限爆发',effect:'获得3层无视上限的负熵，使获得的复制卡算力消耗变为0。'}}},
+{id:'ogier',name:'奥吉尔',en:'Ogier',realm:'chaos',role:'support',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['辅助'],portrait:'assets/images/portraits/ogier.png',
+desc:'混沌界域T1辅助型唤醒体，御四家成员之一。提供队伍增益和敌方减益，是混沌队稳定的后排辅助。与SR版奥吉尔为不同角色，SR版提供嘲讽/点名能力。'},
+{id:'lotan',name:'萝坦',en:'Lotan',realm:'chaos',role:'defense',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['防御','御四家'],portrait:'assets/images/portraits/lotan.png',
+desc:'混沌界域T1防御型唤醒体，御四家成员之一。银钥共鸣体系防御核心，死亡抵抗机制出色。与SR版萝坦为不同角色，SSR版侧重团队护盾和反伤。'},
+{id:'ramona',name:'拉蒙娜',en:'Ramona',realm:'chaos',role:'support',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['辅助','御四家'],portrait:'assets/images/portraits/ramona.png',
+desc:'混沌界域T1辅助型唤醒体，御四家成员之一。可从弃牌堆找回指令卡并最多减4费，卡牌循环能力优秀。社区讨论度高，与SR版拉蒙娜为不同角色。',
+skills:{cmds:[
+  {name:'打击',en:'Strike',cost:1,effect:'标准打击卡'},
+  {name:'防御',en:'Defense',cost:1,effect:'标准防御卡'},
+  {name:'突击论文',en:'Assault Thesis',cost:'?',effect:'拉蒙娜专属指令卡，从弃牌堆找回并降费'},
+  {name:'女王之剑',en:"Queen's Sword",cost:'?',effect:'拉蒙娜专属指令卡，提供卡牌循环效果'}
+],overexalt:{name:'超限爆发',effect:'对所有敌人造成易伤与虚弱1回合，本回合打出的下1张指令卡生效3次。'}}},
+{id:'pandya',name:'潘狄娅',en:'Pandya',realm:'chaos',role:'sub_attack',tier:'T2',limited:false,obtain:'常驻/活动唤醒',tags:['副输出'],
+desc:'混沌界域T2副输出型唤醒体。擅长配合混沌主C进行副输出，在混沌队阵容中作为灵活的副C填充位使用。'},
+{id:'nodera',name:'诺缔拉',en:'Nodera',realm:'chaos',role:'attack',tier:'T2',limited:false,obtain:'常驻/活动唤醒',tags:['输出'],
+desc:'混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。角色设计灵感来自鹦鹉螺，战斗风格以循环打击为主。常驻池可获取的混沌输出角色。'},
+{id:'galen',name:'伽伦',en:'Galen',realm:'chaos',role:'sub_attack',tier:'T3',limited:false,obtain:'常驻/活动唤醒',tags:['副输出'],
+desc:'混沌界域T3副输出型唤醒体，社区也写作「珈伦」。超限后配合塔薇+拉蒙娜阵容可发挥出色表现。常用于凯刻斯反击队体系中。'},
+{id:'nymphia',name:'宁菲亚',en:'Nymphia',realm:'chaos',role:'support',tier:'T3',limited:false,obtain:'常驻/活动唤醒',tags:['辅助'],
+desc:'混沌界域T3辅助型唤醒体。提供队伍增益效果，在混沌辅助位中属于入门级选择。常驻池可获取。'},
+{id:'lily',name:'莉莉',en:'Lily',realm:'chaos',role:'defense',tier:'T1',limited:false,obtain:"活动唤醒「花不染尘」",tags:['防御','v1.1新角色'],portrait:'assets/images/portraits/lily.png',
+desc:'混沌界域防御型唤醒体，v1.1下半版本通过「花不染尘」活动推出。主线重要角色，与守密人关系密切。防御能力出色，为混沌队提供稳定护盾。'},
+{id:'danmo',name:'淡墨',en:'Danmo',realm:'chaos',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['主C','限定'],
+desc:'混沌界域限定输出角色，满配后伤害极高，常作为助战首选。银钥爆发流代表角色，一轮爆发可秒杀大多数Boss。'},
+{id:'karen',name:'莱克',en:'Karen',realm:'chaos',role:'support',tier:'T1',limited:false,obtain:'活动唤醒',tags:['v1.5新角色','混沌辅助'],portrait:'assets/images/portraits/karen.png',
+desc:'混沌界域辅助型唤醒体，v1.5推出。官方定位辅助但输出能力突出，专属命轮极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。'},
+{id:'hameln',name:'哈姆林',en:'Hameln',realm:'chaos',role:'support',tier:'T1',limited:false,obtain:'唤醒',tags:['混沌辅助'],portrait:'assets/images/portraits/hameln.png',
+desc:'混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。自选池中与塔薇、莉莉、莱克同列于混沌界域。'},
+{id:'tawil',name:'塔薇',en:'Tawil',realm:'chaos',role:'support',tier:'T0',limited:false,obtain:'唤醒',tags:['混沌辅助','可做主C'],portrait:'assets/images/portraits/tawil.png',
+desc:'混沌界域辅助型唤醒体，第一个「唤醒体」，唤醒体技术的源头。守护黑池多年，弥萨格大学最高机密之一。核心技能「通晓万物之理」可从界域全角色卡池五选三，超限后升级为十选三。',
+skills:{cmds:[
+  {name:'纵贯时序之翼',en:'Wings Through Time',cost:'?',effect:'提供永久力量加成、狂气获取和力量窃取，附带12段伤害，配合回环更佳。双翼/四翼/六翼阶段可消耗钥能替代算力打出。'},
+  {name:'通晓万物之理',en:'Knowledge of All Things',cost:'?',effect:'占卜下一轮抽牌内容，补充狂气。'}
+],exalt:{name:'狂气爆发',effect:'从当前界域所有角色卡牌中五选三(附带消耗效果)，自带回环效果和保留机制。'},
+enlighten:[
+  {lv:2,name:'启灵2',effect:'狂气爆发获得的卡片能降费，解决随机大费卡问题。重大启灵。'},
+  {lv:3,name:'启灵3',effect:'强化主C能力，通过印过往回声避免残写机制崩盘，减少联络点使用。'}
+]}},
+{id:'doll-inferno',name:'熔毁·朵尔',en:'Doll: Inferno',realm:'chaos',role:'support',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.0首个限定','朵尔变体'],portrait:'assets/images/portraits/doll-inferno.png',
+desc:'星辰篇首个限定角色，混沌界域辅助型，朵尔的熔毁变体形态。v2.0上线，社区简称「熔朵」。战斗风格与原版朵尔截然不同，侧重火焰增益辅助。',
+skills:{cmds:[],exalt:{name:'超限爆发',effect:'接下来3回合内，每回合开始时回复20%体质的生命，并使所有唤醒体获得10点狂气。'}}},
+{id:'24',name:'24',en:'24',realm:'chaos',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['主C','限定','最强通用角色'],
+desc:'混沌界域限定输出角色，v1.5推出，被社区认为是最强通用角色。以狂气爆发为主要输出手段，可在混沌队或跨界域队伍中使用。泛用性极强。'},
+{id:'kathigu-ra',name:'凯蒂古拉',en:'Kathigu-Ra',realm:'chaos',role:'attack',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.2新角色'],portrait:'assets/images/portraits/kathigu-ra.png',
+desc:'混沌界域限定输出角色，v2.2推出。星辰篇新增的混沌主C选择，拥有独特的战斗机制。名字来源于克苏鲁神话体系。'},
+{id:'mouchette',name:'茉夏',en:'Mouchette',realm:'chaos',role:'attack',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.3新角色','打击型'],portrait:'assets/images/portraits/mouchette.png',
+desc:'混沌界域限定输出角色，星辰篇v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语，含义为「小苍蝇」。'},
+// ─── AEQUOR 深海 ───────────────────────────────────────────────────
+{id:'miryam',name:'弥利亚姆',en:'Miryam',realm:'aequor',role:'support',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['限定','深海辅助'],portrait:'assets/images/portraits/miryam.png',
+desc:'深海界域限定辅助型唤醒体，强力触手辅助。社区昵称「米粒」。v1.4版本获得增强：技能「至高生命献祭」调整为穿透伤害，灵之觉醒与天赋增强。深海队必备辅助。'},
+{id:'tulu',name:'图鲁',en:'Tulu',realm:'aequor',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['主C','深海核心','限定'],portrait:'assets/images/portraits/tulu.png',
+desc:'深海界域T0级输出角色，深海队核心主C。角色原型为克苏鲁，正太外形，被称为「幼主」「沉睡之主」。通过触腕和穿刺伤害造成极高输出，深海体系的绝对核心。',
+skills:{cmds:[
+  {name:'打击',en:'Strike',cost:1,effect:'造成攻击力x10%伤害(4点)。图鲁获得5点狂气。'},
+  {name:'防御',en:'Defense',cost:1,effect:'获得防御力x10%护盾(4点)。图鲁获得5点狂气。'},
+  {name:'深渊号令',en:'Abyssal Command',cost:4,effect:'对所有敌人造成攻击力x30%穿刺伤害(12点)。使所有触腕攻击1次，造成穿刺伤害。'},
+  {name:'螺湮重临',en:'Spiral Annihilation Returns',cost:3,effect:'驱散自身虚弱状态。临时触腕伤害+攻击力x20%(8点)。'}
+],rouse:{name:'不朽威仪',en:'Immortal Majesty',effect:'图鲁获得25点狂气。灵知觉醒：图鲁每消耗1点算力，触腕伤害+1。'},
+exalt:{name:'星辰正位之刻',en:'Hour of Stellar Alignment',effect:'获得1条触腕。临时触腕伤害+10。临时暴击率+25%。'},
+enlighten:[
+  {lv:1,name:'暗夜呢喃',en:'Night Whisper',effect:'「深渊号令」使触腕攻击所有敌人。'},
+  {lv:2,name:'复苏之触',en:'Touch of Revival',effect:'「打击」和「防御」使触腕伤害临时提高图鲁攻击力的3%(效果随等级提升)。'}
+]}},
+{id:'divine-king-tulu',name:'神王·图鲁',en:'Divine King Tulu',realm:'aequor',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['主C','限定','图鲁变体'],
+desc:'图鲁的神王变体形态，深海界域限定角色。社区简称「神王」。作为图鲁的进化形态，战斗能力进一步提升，深海队的顶级主C选择。'},
+{id:'celeste',name:'希莱斯特',en:'Celeste',realm:'aequor',role:'support',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['辅助'],portrait:'assets/images/portraits/celeste.png',
+desc:'深海界域T1辅助型唤醒体，适配性极强，同时在混沌队中也有T1表现。高贵的复活奶——0费卡可奶可加算力，高费卡和觉醒技可提供触手。深海队核心辅助。',
+skills:{cmds:[],rouse:{name:'灵塑适性',en:'Soulforge Aptitude',effect:'希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。'}}},
+{id:'goliath',name:'戈利亚',en:'Goliath',realm:'aequor',role:'defense',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['防御'],portrait:'assets/images/portraits/goliath.png',
+desc:'深海界域T1防御型唤醒体。为深海队提供稳定的前排防护和触手联动能力。拥有灵塑适性天赋，触腕伤害额外提升。常驻池可获取。'},
+{id:'shan',name:'珊',en:'Shan',realm:'aequor',role:'sub_attack',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['副输出'],
+desc:'深海界域T1副输出型唤醒体。深海触手体系中的副C位置，配合图鲁等主C进行触腕联动输出。常驻池可获取。'},
+{id:'aurita',name:'奥瑞塔',en:'Aurita',realm:'aequor',role:'attack',tier:'T2',limited:false,obtain:'免费获取(通关混沌界域裂隙I)',tags:['输出','深潜三杰','免费SSR'],portrait:'assets/images/portraits/aurita.png',
+desc:'深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌打法，被称为「深海万能锤」，新手友好的免费SSR。'},
+{id:'caecus',name:'凯刻斯',en:'Caecus',realm:'aequor',role:'sub_attack',tier:'T2',limited:false,obtain:'常驻/活动唤醒',tags:['副输出'],portrait:'assets/images/portraits/caecus.png',
+desc:'深海界域T2副输出型唤醒体。深海体系中的灵活副C，可配合反击队体系使用。常驻池可获取。'},
+{id:'faros',name:'法洛思',en:'Faros',realm:'aequor',role:'support',tier:'T3',limited:false,obtain:'常驻/活动唤醒',tags:['辅助'],portrait:'assets/images/portraits/faros.png',
+desc:'深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。常驻池可获取。'},
+{id:'murphy',name:'墨菲',en:'Murphy',realm:'aequor',role:'defense',tier:'T0',limited:false,obtain:'唤醒',tags:['深海防御','深海必抽'],portrait:'assets/images/portraits/murphy.png',
+desc:'深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色，大幅提升深海队生存能力。'},
+{id:'corposant',name:'克珀珊特',en:'Corposant',realm:'aequor',role:'defense',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.1新角色'],portrait:'assets/images/portraits/corposant.png',
+desc:'深海界域限定防御型角色，v2.1~2.2推出。为深海队提供新的防御选择，拥有独特的护盾和减伤机制。名字含义为「圣艾尔摩之火」。'},
+{id:'murphy-fauxborn',name:'诞妄·墨菲',en:'Murphy: Fauxborn',realm:'aequor',role:'chorus',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.4新角色','墨菲变体','合唱'],portrait:'assets/images/portraits/murphy-fauxborn.png',
+desc:'深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为v2.4新增合唱型角色，与深海主C产生联携效果。'},
+{id:'pickman',name:'皮克曼',en:'Pickman',realm:'aequor',role:'attack',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','星辰篇','深海输出'],portrait:'assets/images/portraits/pickman.png',
+desc:'深海界域限定输出型唤醒体，星辰篇推出。专属命轮「写实主义悖谬」。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。'},
+// ─── CARO 血肉 ────────────────────────────────────────────────────
+{id:'uvhash',name:'尤乌哈希',en:'Uvhash',realm:'caro',role:'attack',tier:'T0',limited:false,obtain:'常驻/活动唤醒',tags:['主C','血肉核心'],portrait:'assets/images/portraits/uvhash.png',
+desc:'血肉界域T0输出型唤醒体，血肉队核心主C之一。通过自残降血触发吞噬机制，反复释放狂气爆发造成递增伤害。体质属性极高，越战越强的暴走型角色。',
+skills:{cmds:[
+  {name:'打击',en:'Strike',cost:1,effect:'标准打击卡'},
+  {name:'防御',en:'Defense',cost:1,effect:'标准防御卡'},
+  {name:'尖啸吧，血！',en:'Scream, Blood!',cost:0,effect:'失去20%当前生命值，造成15%体质伤害并获得6%体质力量。升格4后每1%暴击伤害提高0.5%伤害和力量。',note:'启灵1后同时伤害和力量提高20%'},
+  {name:'沸腾吧，血！',en:'Boil, Blood!',cost:0,effect:'自残类技能，压血手段之一，触发吞噬机制。'}
+],exalt:{name:'狂气爆发',en:'Exalt',effect:'造成150%体质(每级+15%)伤害，享受三倍力量增益。每次触发吞噬后，后续狂气爆发基础伤害提高1倍、力量增益提高1倍。（第2次爆发：300%+4倍力量；第3次：450%+5倍力量）'},
+enlighten:[
+  {lv:1,name:'角斗士',effect:'「尖啸吧，血！」算力消耗-1，伤害和获得的力量提高20%。'},
+  {lv:3,name:'爱之摇篮',effect:'[星之摇篮]吞噬时虚弱所有敌人2回合。血肉界域目前唯一的虚弱技能。'}
+]}},
+{id:'rhea',name:'雷娅',en:'Rhea',realm:'caro',role:'support',tier:'T0',limited:false,obtain:'常驻/活动唤醒',tags:['辅助'],
+desc:'血肉界域T0辅助型唤醒体，血肉队核心辅助。兼具回血和上盾功能，核心玩法为「养胎流」——通过孕育胚胎积累增益后一次释放爆发。血肉队必备。',
+skills:{cmds:[],exalt:{name:'狂气爆发',effect:'回复30%体质(每级+3%)生命值，获得15%体质(每级+1.5%)力量。当前每损失1%生命值，回复量提高2%。触发吞噬时回复量翻倍。血量最低时触发吞噬可回复180%体质生命值。'}}},
+{id:'sorel',name:'索蕾尔',en:'Sorel',realm:'caro',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['主C','限定'],portrait:'assets/images/portraits/sorel.png',
+desc:'血肉界域T0限定输出角色，被誉为「红女王」。穿着红色玫瑰裙的沙龙主人，血肉主C之一。附带回血技能，攻守兼备的限定角色。',
+skills:{cmds:[
+  {name:'打击',en:'Strike',cost:1,effect:'造成攻击力x10%伤害(4点)。索蕾尔获得5点狂气。'},
+  {name:'防御',en:'Defense',cost:1,effect:'获得防御力x10%护盾(4点)。护盾持续至下回合开始。'},
+  {name:'玫瑰鞭刑',en:'Rose Lash',cost:2,effect:'对单体造成攻击力x25%伤害(10点)，施加2层「鲜血」（每层每回合造成2点持续伤害，持续2回合）。',note:'启灵1后：打出后抽1张牌。启灵2后：「鲜血」层数上限+2。'},
+  {name:'绯红华尔兹',en:'Crimson Waltz',cost:3,effect:'对所有敌人造成攻击力x20%伤害(8点)，并回复造成总伤害的30%生命值。临时使索蕾尔获得「玫瑰芬芳」：下回合指令卡算力消耗-1。'}
+],rouse:{name:'灵知觉醒',effect:'索蕾尔获得25点狂气。灵知觉醒：索蕾尔造成伤害时回复1%最大生命值；「鲜血」效果爆发时额外回复2%最大生命值。'},
+exalt:{name:'红女王裁决',en:"Red Queen's Decree",effect:'对单体造成攻击力x200%伤害(80点)，叠加8层「鲜血」。回复造成伤害的50%为全队生命值。本回合已对目标叠加的「鲜血」每层额外提高2%伤害。'},
+overexalt:{name:'超限爆发',effect:'红女王裁决效果触发2次，第二次伤害提高50%。为全队额外提供10点护盾，持续2回合。'},
+enlighten:[
+  {lv:1,name:'王者风范',en:'Royal Grace',effect:'「玫瑰鞭刑」打出后抽1张牌，「鲜血」上限+2层。'},
+  {lv:2,name:'华尔兹轮回',en:'Waltz Eternal',effect:'「绯红华尔兹」触发时，队伍中所有角色回复1点算力。'},
+  {lv:3,name:'血月加冕',en:'Blood Moon Coronation',effect:'「红女王裁决」：每1层「鲜血」额外提高1%伤害（改为每层2%）；全队护盾持续时间延长至3回合。'}
+]}},
+{id:'thais',name:'泰旖丝',en:'Thais',realm:'caro',role:'support',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['辅助','限定'],portrait:'assets/images/portraits/thais.png',
+desc:'血肉界域SSR限定辅助角色，社区昵称「羊妈」。提供队伍增益和回复，是血肉队的顶级辅助选择之一。限定池获取。'},
+{id:'alice',name:'爱丽丝',en:'Alice',realm:'caro',role:'sub_attack',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['副输出'],
+desc:'血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。常驻池可获取。'},
+{id:'faint',name:'菲茵特',en:'Faint',realm:'caro',role:'sub_attack',tier:'T2',limited:false,obtain:'常驻/活动唤醒',tags:['副输出'],portrait:'assets/images/portraits/faint.png',
+desc:'血肉界域T2副输出型唤醒体。血肉体系中的灵活副C位置，可配合尤乌哈希等主C使用。常驻池可获取。'},
+{id:'agrippa',name:'阿格里帕',en:'Agrippa',realm:'caro',role:'defense',tier:'T2',limited:false,obtain:'常驻/活动唤醒',tags:['防御'],portrait:'assets/images/portraits/agrippa.png',
+desc:'血肉界域T2防御型唤醒体。为血肉队提供前排防护，适合血肉队的防御需求。常驻池可获取。'},
+{id:'shilo',name:'希洛',en:'Shilo',realm:'caro',role:'attack',tier:'T3',limited:false,obtain:'常驻/活动唤醒',tags:['输出'],
+desc:'血肉界域T3输出型唤醒体。血肉队初期主C选择，后续被血链·希洛等限定角色超越。常驻池可获取，有变体「血链·希洛(Helot)」。'},
+{id:'salvador',name:'萨尔瓦多',en:'Salvador',realm:'caro',role:'defense',tier:'T1',limited:false,obtain:'唤醒',tags:['血肉防御','盾反队'],portrait:'assets/images/portraits/salvador.png',
+desc:'血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，专属命轮「神言石板」。以盾反打法为特色，靠反伤和护盾进行输出。'},
+{id:'aigis',name:'艾继丝',en:'Aigis',realm:'caro',role:'support',tier:'T1',limited:false,obtain:'唤醒',tags:['深潜三杰','血肉辅助','免费SSR'],portrait:'assets/images/portraits/aigis.png',
+desc:'血肉界域辅助型唤醒体，深潜三杰成员之一。通关第一章免费获取。提供群体易伤、AOE输出和石化效果，攻击面板突出。'},
+{id:'xu',name:'徐',en:'Xu',realm:'caro',role:'chorus',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.4新角色','合唱','二周年'],portrait:'assets/images/portraits/xu.png',
+desc:'血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果，二周年重磅新角色。'},
+{id:'helot',name:'血链·希洛',en:'Helot',realm:'caro',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['限定','v1.6新角色','希洛变体'],portrait:'assets/images/portraits/helot.png',
+desc:'血肉界域限定输出角色，希洛的血链变体形态。v1.6推出。当前版本「血希」队伍核心，破链一击爆发伤害极高，是血肉队的顶级主C选择。'},
+{id:'leigh',name:'莱',en:'Leigh',realm:'caro',role:'chorus',tier:'T2',limited:false,obtain:'常驻唤醒',tags:['常驻','血肉合唱','嗜血患者'],portrait:'assets/images/portraits/leigh.png',
+desc:'血肉界域常驻合唱型唤醒体，卡文迪什家族的「嗜血患者」。作为合唱型角色与血肉主C产生联携效果，常驻池中即可获取的合唱位选择。'},
+{id:'doresain',name:'杜勒赛因',en:'Doresain',realm:'caro',role:'attack',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','星辰篇','血肉输出'],portrait:'assets/images/portraits/doresain.png',
+desc:'血肉界域限定输出型唤醒体，星辰篇推出。名字来源于克苏鲁神话中的食尸鬼之王。血肉队新一代输出选择，拥有独特的吞噬增伤机制。'},
+// ─── ULTRA 超维 ───────────────────────────────────────────────────
+{id:'erica',name:'艾瑞卡',en:'Erica',realm:'ultra',role:'defense',tier:'T0',limited:false,obtain:'免费获取(通关血肉沼泽裂隙I)',tags:['防御','超维核心','深潜三杰','免费SSR'],portrait:'assets/images/portraits/erica.png',
+desc:'超维界域T0防御型唤醒体，超维队核心成员，深潜三杰之一。通关血肉沼泽裂隙I免费获取。提供力量加成和易伤效果，是超维队爆发回合的关键角色。新手必练。',
+skills:{cmds:[],exalt:{name:'电磁爆破',en:'Electromagnetic Blast',effect:'强力输出大招，附带额外效果。「功能过载」(Functional Overload)可同时叠加大量护盾和伤害，但消耗全部算力。3启后更为强力。'}}},
+{id:'liz',name:'莉兹',en:'Liz',realm:'ultra',role:'attack',tier:'T0',limited:false,obtain:'活动唤醒',tags:['主C'],portrait:'assets/images/portraits/liz.png',
+desc:'超维界域T0输出型唤醒体，社区别称「青炎舞者」「青炎」。以毒伤+穿刺为核心的爆发型主C，超维队的主要输出选择。青色火焰为其标志性视觉元素。',
+skills:{cmds:[
+  {name:'打击',en:'Strike',cost:1,effect:'标准打击卡'},
+  {name:'防御',en:'Defense',cost:1,effect:'获得7点护盾。跃迁：下回合开始前，每受到1次攻击，将1张具有消耗的「绿炎」置入手牌。保留。'},
+  {name:'绿炎',en:'Green Flame',cost:0,effect:'对随机敌人造成6点穿刺伤害，施加50%伤害的中毒。回合结束时若在手牌或超维空间，升级为「腐化绿炎」。保留。'}
+],rouse:{name:'灵知觉醒',effect:'莉兹获得25点狂气。灵知觉醒：莉兹每造成3次伤害，将1张具有消耗的「绿炎」置入手牌，每回合最多3次。'},
+exalt:{name:'告死之舞',en:'Dance of Death',effect:'获得临时2点力量，弃掉手牌中所有莉兹的卡片并触发它们的效果（免费打出所有绿炎）。'},
+enlighten:[{lv:1,name:'启灵1',effect:'绿炎可额外升级一次，多增加一段伤害与中毒数值。必要启灵。'}]}},
+{id:'daffodil',name:'达芙黛尔',en:'Daffodil',realm:'ultra',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['主C','限定'],portrait:'assets/images/portraits/daffodil.png',
+desc:'超维界域T0限定输出角色，别称「水仙夫人」。v1.1版本进行过重做，拥有全游戏最多功能的狂气爆发之一。超维队的顶级限定主C选择。',
+skills:{cmds:[],exalt:{name:'狂气爆发',effect:'生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。核心技能「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。'}}},
+{id:'winkle',name:'温柯尔',en:'Winkle',realm:'ultra',role:'support',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['辅助'],portrait:'assets/images/portraits/winkle.png',
+desc:'超维界域T1辅助型唤醒体。为超维队提供稳定的辅助增益，是超维队的常驻辅助选择。常驻池可获取。'},
+{id:'casiah',name:'卡茜亚',en:'Casiah',realm:'ultra',role:'sub_attack',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['副输出'],portrait:'assets/images/portraits/casiah.png',
+desc:'超维界域T1副输出型唤醒体。在超维队中担任副C角色，配合莉兹或达芙黛尔进行输出。常驻池可获取。'},
+{id:'jenkins',name:'詹金',en:'Jenkins',realm:'ultra',role:'sub_attack',tier:'T1',limited:false,obtain:'常驻/活动唤醒',tags:['副输出'],portrait:'assets/images/portraits/jenkins.png',
+desc:'超维界域T1副输出型唤醒体。超维体系中的灵活副C，可为主C提供额外的输出补充。常驻池可获取。'},
+{id:'tincture',name:'汀克特',en:'Tincture',realm:'ultra',role:'support',tier:'T2',limited:false,obtain:'常驻/活动唤醒',tags:['辅助'],
+desc:'超维界域T2辅助型唤醒体。提供基础辅助效果，在超维队中作为过渡辅助位使用。常驻池可获取。'},
+{id:'horla',name:'奥尔拉',en:'Horla',realm:'ultra',role:'support',tier:'T1',limited:false,obtain:'活动唤醒',tags:['v1.5新角色','超维辅助'],portrait:'assets/images/portraits/horla.png',
+desc:'超维界域辅助型唤醒体，v1.5版本推出。超维开荒队核心辅助，大幅提升超维队的整体强度。推荐配队：莉兹+奥尔拉+艾瑞卡+环娜。'},
+{id:'wanda',name:'旺达',en:'Wanda',realm:'ultra',role:'defense',tier:'T0',limited:false,obtain:'唤醒',tags:['超维防御','盾反队'],portrait:'assets/images/portraits/wanda.png',
+desc:'超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，生存能力拉满。与萨尔瓦多组成盾反队双核。'},
+{id:'clementine',name:'克莱门汀',en:'Clementine',realm:'ultra',role:'support',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.1新角色'],portrait:'assets/images/portraits/clementine.png',
+desc:'超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。星辰篇时期推出的限定辅助。'},
+{id:'castor',name:'卡斯托尔',en:'Castor',realm:'ultra',role:'defense',tier:'T1',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.2新角色'],portrait:'assets/images/portraits/castor.png',
+desc:'超维界域限定防御角色，v2.2.2推出。名字来源于双子座α星。与波吕克斯（Pollux，双子座β星）构成双子角色组合。'},
+{id:'pollux',name:'波吕克斯',en:'Pollux',realm:'ultra',role:'attack',tier:'T0',limited:true,obtain:'限定活动唤醒',tags:['限定','v2.3新角色'],portrait:'assets/images/portraits/pollux.png',
+desc:'超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。名字来源于双子座β星，与卡斯托尔构成双子角色组合。超维队新一代主C选择。'},
+{id:'arachne',name:'阿拉克涅',en:'Arachne',realm:'ultra',role:'attack',tier:'T1',limited:true,obtain:'限定活动唤醒(v2.5预告)',tags:['限定','v2.5预告','超维'],portrait:'assets/images/portraits/arachne.png',
+desc:'超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队的未来主力角色之一。'}
+];
+
+// ── State ────────────────────────────────────────────────────────
+let filters = { realm: 'all', role: 'all', rarity: 'all' };
+let sortBy = 'tier';
+let search = '';
+let activeChar = null;
+let activeTab = 'attr';
+
+// ── Helpers ──────────────────────────────────────────────────────
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function realmColor(r){ return REALM_COLORS[r]||'#888'; }
+function tierVal(t){ return TIER_ORDER[t]??4; }
+
+// ── Render grid ──────────────────────────────────────────────────
+function filteredChars(){
+  return characters.filter(c=>{
+    if(filters.realm!=='all' && c.realm!==filters.realm) return false;
+    if(filters.role!=='all' && c.role!==filters.role) return false;
+    if(filters.rarity!=='all'){
+      if(filters.rarity==='limited' && !c.limited) return false;
+      if(filters.rarity==='permanent' && c.limited) return false;
+    }
+    if(search){
+      const q=search.toLowerCase();
+      return c.name.toLowerCase().includes(q)||c.en.toLowerCase().includes(q)||(c.tags||[]).some(t=>t.toLowerCase().includes(q));
+    }
+    return true;
+  }).sort((a,b)=>{
+    if(sortBy==='tier') return tierVal(a.tier)-tierVal(b.tier)||(a.realm>b.realm?1:-1);
+    if(sortBy==='realm'){const ro=['chaos','aequor','caro','ultra'];return ro.indexOf(a.realm)-ro.indexOf(b.realm)||a.name.localeCompare(b.name);}
+    if(sortBy==='name') return a.name.localeCompare(b.name,'zh-CN');
+    if(sortBy==='en') return a.en.localeCompare(b.en);
+    if(sortBy==='role'){const rr=['attack','sub_attack','support','defense','healer','chorus'];return rr.indexOf(a.role)-rr.indexOf(b.role);}
+    return 0;
+  });
+}
+
+function renderGrid(){
+  const chars=filteredChars();
+  document.getElementById('countDisplay').textContent=chars.length;
+  const grid=document.getElementById('charGrid');
+  if(!chars.length){grid.innerHTML='<div class="empty-msg">没有匹配的唤醒体</div>';return;}
+  grid.innerHTML=chars.map(c=>{
+    const rc=realmColor(c.realm);
+    const portraitHtml=c.portrait
+      ?`<img src="${esc(c.portrait)}" alt="${esc(c.name)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      :'';
+    const phStyle=c.portrait?'style="display:none"':'';
+    return `<div class="char-card" data-realm="${c.realm}" onclick="openModal('${c.id}')">
+  <div class="card-bar"></div>
+  <div class="card-art">
+    ${portraitHtml}
+    <div class="art-placeholder" ${phStyle}>${c.name[0]}</div>
+    ${c.tier&&c.tier!=='-'?`<div class="badge-tier">${esc(c.tier)}</div>`:''}
+    <div class="badge-rarity">SSR</div>
+    ${c.limited?'<div class="badge-limited">LIMITED</div>':''}
+  </div>
+  <div class="card-info">
+    <div class="card-name">${esc(c.name)}</div>
+    <div class="card-en">${esc(c.en)}</div>
+    <div class="card-tags">
+      <span class="role-chip">${esc(REALM_NAMES[c.realm]||c.realm)}</span>
+      <span class="role-chip">${esc(ROLE_NAMES[c.role]||c.role)}</span>
+    </div>
+  </div>
+</div>`;
+  }).join('');
+}
+
+// ── Modal ─────────────────────────────────────────────────────────
+function openModal(id){
+  const c=characters.find(x=>x.id===id); if(!c) return;
+  activeChar=c; activeTab='attr';
+  const rc=realmColor(c.realm);
+  document.getElementById('modalAccent').style.background=rc;
+  document.getElementById('modalName').textContent=c.name;
+  document.getElementById('modalEn').textContent=c.en;
+  const realmLabel=`<span class="mbadge mbadge-realm" style="background:${rc}">${REALM_NAMES[c.realm]||c.realm}</span>`;
+  const roleLabel=`<span class="mbadge mbadge-role">${ROLE_NAMES[c.role]||c.role}</span>`;
+  const tierLabel=c.tier&&c.tier!=='-'?`<span class="mbadge mbadge-tier">${c.tier}</span>`:'';
+  const limLabel=c.limited?'<span class="mbadge mbadge-limited">限定</span>':'';
+  const freeLabel=c.obtain&&c.obtain.includes('免费')?'<span class="mbadge mbadge-free">免费</span>':'';
+  document.getElementById('modalBadges').innerHTML=realmLabel+roleLabel+tierLabel+limLabel+freeLabel;
+  renderTabs(c);
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===0));
+  document.querySelectorAll('.tab-panel').forEach((p,i)=>p.classList.toggle('active',i===0));
+  document.getElementById('modalBg').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){
+  document.getElementById('modalBg').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function switchTab(tab){
+  activeTab=tab;
+  const order=['attr','cmd','enl'];
+  const idx=order.indexOf(tab);
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===idx));
+  document.querySelectorAll('.tab-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
+}
+
+function renderTabs(c){
+  // Attributes
+  const freeNote=c.obtain&&c.obtain.includes('免费')?'<tr><td>获取</td><td style="color:#7aad5a">'+esc(c.obtain)+'</td></tr>':'<tr><td>获取</td><td>'+esc(c.obtain||'—')+'</td></tr>';
+  const tagsHtml=c.tags&&c.tags.length?'<tr><td>标签</td><td><div class="tag-row">'+c.tags.map(t=>`<span class="tag-chip">${esc(t)}</span>`).join('')+'</div></td></tr>':'';
+  document.getElementById('tab-attr').innerHTML=`
+<div class="attr-desc">${esc(c.desc||'暂无描述')}</div>
+<table class="attr-tbl">
+<tr><td>界域</td><td style="color:${realmColor(c.realm)};font-weight:700">${REALM_NAMES[c.realm]||c.realm}</td></tr>
+<tr><td>定位</td><td>${ROLE_NAMES[c.role]||c.role}</td></tr>
+<tr><td>稀有度</td><td style="color:var(--gold-light)">SSR</td></tr>
+<tr><td>强度</td><td style="color:var(--gold-light);font-weight:700">${c.tier||'—'}</td></tr>
+${freeNote}
+${tagsHtml}
+</table>`;
+
+  // Commands
+  const sk=c.skills;
+  if(!sk){ document.getElementById('tab-cmd').innerHTML='<div class="no-data">该角色暂无详细技能数据</div>'; }
+  else {
+    let html='';
+    if(sk.cmds&&sk.cmds.length){
+      html+='<div class="sec-title">指令卡</div><div class="cmd-list">';
+      html+=sk.cmds.map(cmd=>{
+        const costClass=cmd.cost===0||cmd.cost==='0'?'c0':(cmd.cost==='?'||isNaN(cmd.cost)?'cv':'');
+        return `<div class="cmd-card">
+<div class="cmd-hd"><div class="cmd-cost ${costClass}">${cmd.cost}</div>
+<div><div class="cmd-name">${esc(cmd.name)}</div>${cmd.en?`<div class="cmd-en">${esc(cmd.en)}</div>`:''}</div></div>
+<div class="cmd-effect">${esc(cmd.effect||'')}</div>
+${cmd.note?`<div class="cmd-note">&#9642; ${esc(cmd.note)}</div>`:''}
+</div>`;
+      }).join('');
+      html+='</div>';
+    } else if(!sk.rouse&&!sk.exalt){ html='<div class="no-data">指令卡数据待补充</div>'; }
+    if(sk.rouse){
+      html+=`<div class="sec-title">灵知觉醒</div>
+<div class="cmd-card">
+<div class="cmd-hd"><div class="cmd-cost cv">觉</div><div><div class="cmd-name">${esc(sk.rouse.name||'灵知觉醒')}</div>${sk.rouse.en?`<div class="cmd-en">${esc(sk.rouse.en)}</div>`:''}</div></div>
+<div class="cmd-effect">${esc(sk.rouse.effect||'')}</div>
+</div>`;
+    }
+    if(sk.exalt){
+      html+=`<div class="sec-title">狂气爆发</div>
+<div class="exalt-card">
+<div class="exalt-name">${esc(sk.exalt.name||'狂气爆发')}${sk.exalt.en?` <span style="font-size:10px;color:var(--text-sub);font-weight:400">${esc(sk.exalt.en)}</span>`:''}</div>
+<div class="exalt-effect">${esc(sk.exalt.effect||'')}</div>
+</div>`;
+    }
+    if(sk.overexalt){
+      html+=`<div class="overexalt-card"><div class="overexalt-name">超限爆发</div><div class="exalt-effect">${esc(sk.overexalt.effect||'')}</div></div>`;
+    }
+    document.getElementById('tab-cmd').innerHTML=html||'<div class="no-data">指令卡数据待补充</div>';
+  }
+
+  // Enlighten
+  const enl=sk&&sk.enlighten;
+  if(!enl||!enl.length){
+    document.getElementById('tab-enl').innerHTML='<div class="no-data">启灵数据待补充</div>';
+  } else {
+    document.getElementById('tab-enl').innerHTML='<div class="enl-list">'+enl.map(e=>`<div class="enl-item">
+<div class="enl-lvl">${e.lv}</div>
+<div class="enl-body"><div class="enl-name">${esc(e.name||'')}${e.en?` <span style="font-size:10px;color:var(--text-sub)">${esc(e.en)}</span>`:''}</div>
+<div class="enl-effect">${esc(e.effect||'')}</div></div>
+</div>`).join('')+'</div>';
+  }
+}
+
+// ── Filter handlers ───────────────────────────────────────────────
+document.getElementById('realmFilters').addEventListener('click',e=>{
+  const btn=e.target.closest('.fbtn'); if(!btn) return;
+  document.querySelectorAll('#realmFilters .fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filters.realm=btn.dataset.realm;
+  renderGrid();
+});
+document.getElementById('roleFilters').addEventListener('click',e=>{
+  const btn=e.target.closest('.fbtn'); if(!btn) return;
+  document.querySelectorAll('#roleFilters .fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filters.role=btn.dataset.role;
+  renderGrid();
+});
+document.getElementById('rarityFilters').addEventListener('click',e=>{
+  const btn=e.target.closest('.fbtn'); if(!btn) return;
+  document.querySelectorAll('#rarityFilters .fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filters.rarity=btn.dataset.rarity;
+  renderGrid();
+});
+document.getElementById('sortSel').addEventListener('change',e=>{
+  sortBy=e.target.value; renderGrid();
+});
+document.getElementById('searchInput').addEventListener('input',e=>{
+  search=e.target.value.trim(); renderGrid();
+});
+document.getElementById('modalBg').addEventListener('click',e=>{
+  if(e.target===document.getElementById('modalBg')) closeModal();
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+// ── Init ──────────────────────────────────────────────────────────
+renderGrid();
+</script>
+</body>
+</html>

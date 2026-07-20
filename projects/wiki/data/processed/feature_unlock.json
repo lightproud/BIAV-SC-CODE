@@ -1,0 +1,1917 @@
+{
+  "_meta": {
+    "source": "FeatureUnlock.lua (runtime memory extraction)",
+    "total_features": 318,
+    "generated": "2026-04-25"
+  },
+  "features": [
+    {
+      "id": 16955,
+      "feature_name": "材料合成",
+      "lock_tip": "完成 「调查行动」2-15·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16956,
+      "feature_name": "",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16957,
+      "feature_name": "源液提取",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16958,
+      "feature_name": "「调查行动」第2章",
+      "lock_tip": "完成 「调查行动」第1章·普通 后解锁",
+      "unlock_desc": "调查行动「以蜡像之名」已开启"
+    },
+    {
+      "id": 16959,
+      "feature_name": "「调查行动」第3章",
+      "lock_tip": "完成 「调查行动」第2章·普通 后解锁",
+      "unlock_desc": "调查行动「谨防恶犬」已开启"
+    },
+    {
+      "id": 16960,
+      "feature_name": "错乱异镇",
+      "lock_tip": "完成 「调查行动」第3章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16961,
+      "feature_name": "超维之旅·轮转间隙",
+      "lock_tip": "通关 超维之旅·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16962,
+      "feature_name": "超维之旅·轮转间隙",
+      "lock_tip": "通关 超维之旅·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16963,
+      "feature_name": "超维之旅·轮转间隙",
+      "lock_tip": "通关 超维之旅·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16964,
+      "feature_name": "漆黑之链",
+      "lock_tip": "完成 「调查行动」第3章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16965,
+      "feature_name": "密契分解",
+      "lock_tip": "调查等级 25 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16966,
+      "feature_name": "教程",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16967,
+      "feature_name": "主线序章",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16968,
+      "feature_name": "主线",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16969,
+      "feature_name": "失序山脉",
+      "lock_tip": "完成 「调查行动」第4章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16970,
+      "feature_name": "无光之境",
+      "lock_tip": "完成 「调查行动」2-4·普通 后解锁",
+      "unlock_desc": "无光之境已开启"
+    },
+    {
+      "id": 16971,
+      "feature_name": "「调查行动」第5章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "调查行动「风暴之眼」·癫狂难度已开启"
+    },
+    {
+      "id": 16972,
+      "feature_name": "幻梦深潜",
+      "lock_tip": "完成 「调查行动」2-12·普通 后解锁",
+      "unlock_desc": "幻梦深潜现已开启"
+    },
+    {
+      "id": 16973,
+      "feature_name": "「调查行动」第3章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "调查行动「谨防恶犬」·癫狂难度已开启"
+    },
+    {
+      "id": 16977,
+      "feature_name": "「调查行动」第4章",
+      "lock_tip": "完成 「调查行动」第3章·普通 后解锁",
+      "unlock_desc": "调查行动「于无声处」已开启"
+    },
+    {
+      "id": 16978,
+      "feature_name": "狂躁蜡馆",
+      "lock_tip": "完成 「调查行动」第2章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16979,
+      "feature_name": "「调查行动」第5章",
+      "lock_tip": "完成 「调查行动」第4章·普通 后解锁",
+      "unlock_desc": "调查行动「风暴之眼」已开启"
+    },
+    {
+      "id": 16980,
+      "feature_name": "密契升级",
+      "lock_tip": "调查等级 35 级 解锁",
+      "unlock_desc": "密契升级功能已开启"
+    },
+    {
+      "id": 16981,
+      "feature_name": "界域精通",
+      "lock_tip": "完成 「调查行动」1-5·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16982,
+      "feature_name": "蜡像之秘",
+      "lock_tip": "完成 「调查行动」3-10·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16983,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16984,
+      "feature_name": "「调查行动」第6章",
+      "lock_tip": "完成 「调查行动」第5章·普通 后解锁",
+      "unlock_desc": "调查行动「倒错的群星」已开启"
+    },
+    {
+      "id": 16985,
+      "feature_name": "禁忌纂录",
+      "lock_tip": "调查等级 25 级 解锁",
+      "unlock_desc": "禁忌纂录已开启"
+    },
+    {
+      "id": 16986,
+      "feature_name": "「调查行动」第6章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "调查行动「倒错的群星」·癫狂难度已开启"
+    },
+    {
+      "id": 16988,
+      "feature_name": "蠕虫之所",
+      "lock_tip": "调查等级 20 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16989,
+      "feature_name": "「调查行动」第2章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "调查行动「以蜡像之名」·癫狂难度已开启"
+    },
+    {
+      "id": 16990,
+      "feature_name": "混沌之域·轮转间隙",
+      "lock_tip": "通关 混沌之域·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16991,
+      "feature_name": "幕间演习",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16992,
+      "feature_name": "混沌之域·轮转间隙",
+      "lock_tip": "通关 混沌之域·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16993,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16994,
+      "feature_name": "怪雾之都",
+      "lock_tip": "完成 「调查行动」第1章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16996,
+      "feature_name": "虔诚之握",
+      "lock_tip": "完成 「调查行动」第5章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 16998,
+      "feature_name": "波纳佩之墟",
+      "lock_tip": "调查等级 20 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17000,
+      "feature_name": "成长记录",
+      "lock_tip": "完成 「调查行动」1-5·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17001,
+      "feature_name": "狂蚀集训(开发中)",
+      "lock_tip": "敬请期待",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17002,
+      "feature_name": "金券兑换",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17003,
+      "feature_name": "「调查行动」第4章 ·困难",
+      "lock_tip": "完成 「调查行动」第3章·困难 及第4章·普通 后解锁",
+      "unlock_desc": "调查行动「于无声处」·困难难度已开启"
+    },
+    {
+      "id": 17004,
+      "feature_name": "史瓦西喉",
+      "lock_tip": "调查等级 20 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17005,
+      "feature_name": "幕间演习(开发中)",
+      "lock_tip": "敬请期待",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17006,
+      "feature_name": "器质残像",
+      "lock_tip": "完成 「调查行动」1-13·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17007,
+      "feature_name": "维度残像",
+      "lock_tip": "完成 「调查行动」1-13·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17008,
+      "feature_name": "课题纪录",
+      "lock_tip": "完成 「调查行动」1-11·普通 后解锁",
+      "unlock_desc": "课题纪录现已开启"
+    },
+    {
+      "id": 17009,
+      "feature_name": "血肉之沼·间隙",
+      "lock_tip": "完成 「调查行动」2-4·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17010,
+      "feature_name": "",
+      "lock_tip": "完成 「雨镇幽影」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17011,
+      "feature_name": "界外之影",
+      "lock_tip": "完成 「调查行动」第4章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17012,
+      "feature_name": "典藏馆",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17013,
+      "feature_name": "沉淀兑换",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17014,
+      "feature_name": "密契重印",
+      "lock_tip": "敬请期待",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17015,
+      "feature_name": "唤醒",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": "唤醒仪式已开启"
+    },
+    {
+      "id": 17016,
+      "feature_name": "冶炼室",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17017,
+      "feature_name": "海渊残像",
+      "lock_tip": "完成 「调查行动」1-13·普通 后解锁",
+      "unlock_desc": "融蚀之墟：升格素材已开启"
+    },
+    {
+      "id": 17018,
+      "feature_name": "启灵",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17019,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17020,
+      "feature_name": "意识潜游",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17021,
+      "feature_name": "",
+      "lock_tip": "完成 「血与沙」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17022,
+      "feature_name": "校友会",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17023,
+      "feature_name": "银芯购买",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17024,
+      "feature_name": "融珠兑换",
+      "lock_tip": "完成 「调查行动」2-12·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17025,
+      "feature_name": "「调查行动」第2章 ·困难",
+      "lock_tip": "完成 「调查行动」1-8·困难 后解锁",
+      "unlock_desc": "调查行动「以蜡像之名」·困难难度已开启"
+    },
+    {
+      "id": 17026,
+      "feature_name": "",
+      "lock_tip": "调查等级 35 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17027,
+      "feature_name": "",
+      "lock_tip": "调查等级 25 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17028,
+      "feature_name": "",
+      "lock_tip": "调查等级 45 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17029,
+      "feature_name": "",
+      "lock_tip": "调查等级 45 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17030,
+      "feature_name": "",
+      "lock_tip": "调查等级 35 级 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17031,
+      "feature_name": "混沌之域·轮转间隙",
+      "lock_tip": "通关 混沌之域·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17032,
+      "feature_name": "",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17033,
+      "feature_name": "风暴外海",
+      "lock_tip": "完成 「调查行动」第6章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17034,
+      "feature_name": "信箱",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17035,
+      "feature_name": "混沌集群",
+      "lock_tip": "调查等级 20 级 解锁",
+      "unlock_desc": "融蚀之墟·技能素材现已开启"
+    },
+    {
+      "id": 17036,
+      "feature_name": "活动",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": "活动已开启"
+    },
+    {
+      "id": 17037,
+      "feature_name": "特遣纪录",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17038,
+      "feature_name": "「调查行动」第5章 ·困难",
+      "lock_tip": "完成 「调查行动」第4章·困难 及第5章·普通 后解锁",
+      "unlock_desc": "调查行动「风暴之眼」·困难难度已开启"
+    },
+    {
+      "id": 17039,
+      "feature_name": "圣胎之咏",
+      "lock_tip": "完成 「调查行动」第6章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17040,
+      "feature_name": "手记",
+      "lock_tip": "完成 「调查行动」1-5·普通 后解锁",
+      "unlock_desc": "手册现已开启"
+    },
+    {
+      "id": 17041,
+      "feature_name": "融蚀之墟",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": "融蚀之墟：金券搜查/制剂淬炼已开启"
+    },
+    {
+      "id": 17042,
+      "feature_name": "结社",
+      "lock_tip": "敬请期待",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17043,
+      "feature_name": "密契转录",
+      "lock_tip": "调查等级 45 级 解锁",
+      "unlock_desc": "密契转录功能已开启"
+    },
+    {
+      "id": 17044,
+      "feature_name": "「调查行动」第3章 ·困难",
+      "lock_tip": "完成 「调查行动」3-5·普通 及 第2章·困难 后解锁",
+      "unlock_desc": "调查行动「谨防恶犬」·困难难度已开启"
+    },
+    {
+      "id": 17045,
+      "feature_name": "命轮分解",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17046,
+      "feature_name": "行动报告",
+      "lock_tip": "完成 「调查行动」1-5·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17047,
+      "feature_name": "浑浊残像",
+      "lock_tip": "完成 「调查行动」1-13·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17048,
+      "feature_name": "礼包商店",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17049,
+      "feature_name": "血肉之沼·轮转间隙",
+      "lock_tip": "通关 血肉之沼·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17050,
+      "feature_name": "血肉之沼·轮转间隙",
+      "lock_tip": "通关 血肉之沼·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17051,
+      "feature_name": "血肉之沼·轮转间隙",
+      "lock_tip": "通关 血肉之沼·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17052,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17053,
+      "feature_name": "相位兑换",
+      "lock_tip": "完成 「调查行动」3-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17054,
+      "feature_name": "相位对弈",
+      "lock_tip": "完成 「调查行动」3-2·普通 后解锁",
+      "unlock_desc": "相位对弈现已开启"
+    },
+    {
+      "id": 17055,
+      "feature_name": "材料置换",
+      "lock_tip": "完成 「调查行动」3-10·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17056,
+      "feature_name": "「调查行动」·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "「调查行动」·癫狂难度已开启"
+    },
+    {
+      "id": 17057,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17058,
+      "feature_name": "成就",
+      "lock_tip": "完成 「调查行动」1-5·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17059,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17060,
+      "feature_name": "深海之遗·轮转间隙",
+      "lock_tip": "通关 深海之遗·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17061,
+      "feature_name": "深海之遗·轮转间隙",
+      "lock_tip": "通关 深海之遗·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17062,
+      "feature_name": "深海之遗·轮转间隙",
+      "lock_tip": "通关 深海之遗·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17063,
+      "feature_name": "超维之旅·间隙",
+      "lock_tip": "完成 「调查行动」2-4·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17064,
+      "feature_name": "「调查行动」第1章",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17065,
+      "feature_name": "深海之遗·间隙",
+      "lock_tip": "完成 「调查行动」2-4·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17066,
+      "feature_name": "「调查行动」第4章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "调查行动「于无声处」·癫狂难度已开启"
+    },
+    {
+      "id": 17067,
+      "feature_name": "混沌之域·间隙",
+      "lock_tip": "完成 「调查行动」2-4·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17068,
+      "feature_name": "「调查行动」第1章 ·困难",
+      "lock_tip": "完成 「调查行动」3-5·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17069,
+      "feature_name": "「调查行动」·困难",
+      "lock_tip": "完成 「调查行动」3-5·普通 后解锁",
+      "unlock_desc": "「调查行动」·困难难度已开启"
+    },
+    {
+      "id": 17070,
+      "feature_name": "「调查行动」第6章 ·困难",
+      "lock_tip": "完成 「调查行动」第5章·困难 及第6章·普通 后解锁",
+      "unlock_desc": "调查行动「倒错的群星」·困难难度已开启"
+    },
+    {
+      "id": 17071,
+      "feature_name": "暗海之舟",
+      "lock_tip": "完成 「调查行动」第5章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17072,
+      "feature_name": "玩偶之泪",
+      "lock_tip": "完成 「调查行动」3-10·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17073,
+      "feature_name": "「调查行动」第1章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": ""
+    },
+    {
+      "id": 17074,
+      "feature_name": "第二命轮",
+      "lock_tip": "调查等级 15 级 后，可装备第二个命轮",
+      "unlock_desc": "第二命轮已开启"
+    },
+    {
+      "id": 17075,
+      "feature_name": "派遣",
+      "lock_tip": "完成 「调查行动」1-8·普通 后解锁",
+      "unlock_desc": "派遣任务已开启"
+    },
+    {
+      "id": 20225,
+      "feature_name": "",
+      "lock_tip": "完成 「雕塑之死」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20226,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20227,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20455,
+      "feature_name": "",
+      "lock_tip": "完成 「骑士的愿望」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20456,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20457,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20458,
+      "feature_name": "",
+      "lock_tip": "完成 「扭曲核心」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20459,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20460,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20461,
+      "feature_name": "",
+      "lock_tip": "完成 「苍白之主」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20462,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20463,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20785,
+      "feature_name": "调查兑换",
+      "lock_tip": "完成 「调查行动」1-2 ·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 20786,
+      "feature_name": "无光兑换",
+      "lock_tip": "完成 「调查行动」2-4 ·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 21402,
+      "feature_name": "常训任务",
+      "lock_tip": "完成 「调查行动」1-10·普通 后解锁",
+      "unlock_desc": "常训任务已开启"
+    },
+    {
+      "id": 21452,
+      "feature_name": "超验存在",
+      "lock_tip": "完成 「调查行动」3-10·普通 后解锁",
+      "unlock_desc": "超验存在已开启"
+    },
+    {
+      "id": 23667,
+      "feature_name": "超维之旅·轮转间隙",
+      "lock_tip": "通关 超维之旅·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 23668,
+      "feature_name": "混沌之域·轮转间隙",
+      "lock_tip": "通关 混沌之域·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 23669,
+      "feature_name": "血肉之沼·轮转间隙",
+      "lock_tip": "通关 血肉之沼·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 23670,
+      "feature_name": "深海之遗·轮转间隙",
+      "lock_tip": "通关 深海之遗·间隙Ⅷ 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 23699,
+      "feature_name": "",
+      "lock_tip": "完成 「故事的魔法」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 23700,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 23701,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 24502,
+      "feature_name": "",
+      "lock_tip": "完成 「蔷薇礼赞」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 24503,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 24504,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 25070,
+      "feature_name": "",
+      "lock_tip": "完成 「一步之遥」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 25071,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 25072,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 25256,
+      "feature_name": "融灾禁区",
+      "lock_tip": "完成 「调查行动」4-3 ·普通 后解锁",
+      "unlock_desc": "融灾禁区已开启"
+    },
+    {
+      "id": 35576,
+      "feature_name": "魔法剧情商店",
+      "lock_tip": "完成 「调查行动」1-10 ·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 36165,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 36166,
+      "feature_name": "",
+      "lock_tip": "完成 「诸事如常」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 36167,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 36628,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 36629,
+      "feature_name": "",
+      "lock_tip": "完成 「燃烧的群宴」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 36630,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 38850,
+      "feature_name": "旺达的奇珍宝匣",
+      "lock_tip": "完成 「调查行动」1-10 ·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 38851,
+      "feature_name": "湖中之城",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 43518,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 43519,
+      "feature_name": "",
+      "lock_tip": "完成 「巨人的陨落」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 43520,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44550,
+      "feature_name": "萨尔瓦多",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44568,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44569,
+      "feature_name": "",
+      "lock_tip": "完成 「血的颜色」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44570,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44700,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：血的颜色」中完成「为嫉妒杀戮」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44701,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：血的颜色」中完成「把饥肠填满」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44702,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：血的颜色」中完成「血腥的符号」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44703,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：血的颜色」中完成「将罪恶净化」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 44704,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：血的颜色」中完成「燃起白色的希望」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 46186,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 46187,
+      "feature_name": "",
+      "lock_tip": "完成 「宁静的裂殖」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 46188,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 47456,
+      "feature_name": "多重疗愈",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 47457,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：宁静的裂殖」中完成「源」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 47458,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：宁静的裂殖」中完成「止于此」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 47459,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：宁静的裂殖」中完成「金色赋格」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 47460,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：宁静的裂殖」中完成「失眠蛇」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 47461,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：宁静的裂殖」中完成「影子童话」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 48920,
+      "feature_name": "「调查行动」第7章",
+      "lock_tip": "完成 「调查行动」第6章·普通 后解锁",
+      "unlock_desc": "调查行动「欲河」已开启"
+    },
+    {
+      "id": 48921,
+      "feature_name": "「调查行动」第7章 ·困难",
+      "lock_tip": "完成 「调查行动」第6章·困难 及第7章·普通 后解锁",
+      "unlock_desc": "调查行动「欲河」·困难难度已开启"
+    },
+    {
+      "id": 48922,
+      "feature_name": "「调查行动」第7章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "调查行动「欲河」·癫狂难度已开启"
+    },
+    {
+      "id": 49170,
+      "feature_name": "沙海遗存",
+      "lock_tip": "完成 「调查行动」第7章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49171,
+      "feature_name": "荒沙之壁",
+      "lock_tip": "完成 「调查行动」第7章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49205,
+      "feature_name": "唤醒体试玩",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49296,
+      "feature_name": "命轮",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49298,
+      "feature_name": "事件",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49300,
+      "feature_name": "剧情CG",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49301,
+      "feature_name": "留声机",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49302,
+      "feature_name": "影像",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49303,
+      "feature_name": "洪积世界",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49304,
+      "feature_name": "角色",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49305,
+      "feature_name": "密契",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49306,
+      "feature_name": "洪积禁典",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49307,
+      "feature_name": "组织势力",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49308,
+      "feature_name": "场景CG",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49309,
+      "feature_name": "编年史",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49310,
+      "feature_name": "造物",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49311,
+      "feature_name": "PV",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49418,
+      "feature_name": "通用任务类型",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 49567,
+      "feature_name": "繁衍狂热",
+      "lock_tip": "完成 「调查行动」7-3·普通 后解锁",
+      "unlock_desc": "繁衍狂热已开启"
+    },
+    {
+      "id": 50092,
+      "feature_name": "欲海翻波",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51255,
+      "feature_name": "故事的魔法·轻量复刻",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51256,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「安迪·约翰逊之力」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51257,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「寻找故事」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51258,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「商人的慷慨」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51259,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「最怀念的人」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51260,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「最好的花」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51261,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「最圆满的结局」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51262,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「最盛大的幻景」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51263,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「最圆满的结局」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51264,
+      "feature_name": "",
+      "lock_tip": "在「特遣纪录：故事的魔法」中完成「最圆满的结局」后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51757,
+      "feature_name": "异梦视界",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 51759,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 54118,
+      "feature_name": "与蔷薇书",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 55456,
+      "feature_name": "趁花园凋零以前",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 55458,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 55459,
+      "feature_name": "",
+      "lock_tip": "完成 「玫瑰的栖居」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 55460,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 57707,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 57708,
+      "feature_name": "",
+      "lock_tip": "完成 「狩猎愉快！」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 57709,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 57710,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 57712,
+      "feature_name": "",
+      "lock_tip": "完成 「艾尔沃斯的归人」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 57714,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58025,
+      "feature_name": "墨菲活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58026,
+      "feature_name": "弥利亚姆复刻活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58027,
+      "feature_name": "萨尔瓦多复刻活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58028,
+      "feature_name": "本源朵尔活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58029,
+      "feature_name": "本源希洛活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58030,
+      "feature_name": "塔薇活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58031,
+      "feature_name": "哈姆林活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58032,
+      "feature_name": "莱克活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58033,
+      "feature_name": "旺达复刻活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58034,
+      "feature_name": "24复刻活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58907,
+      "feature_name": "「调查行动」第8章",
+      "lock_tip": "完成 「调查行动」第7章·普通 后解锁",
+      "unlock_desc": "调查行动「终末交响曲」已开启"
+    },
+    {
+      "id": 58908,
+      "feature_name": "「调查行动」终章",
+      "lock_tip": "完成 「调查行动」第8章·普通 后解锁",
+      "unlock_desc": "调查行动「长梦尽时」已开启"
+    },
+    {
+      "id": 58909,
+      "feature_name": "「调查行动」终章 ·困难",
+      "lock_tip": "完成 「调查行动」第8章·困难 及第9章·普通 后解锁",
+      "unlock_desc": "调查行动「长梦尽时」·困难难度已开启"
+    },
+    {
+      "id": 58911,
+      "feature_name": "「调查行动」第8章 ·困难",
+      "lock_tip": "完成 「调查行动」第7章·困难 及第8章·普通 后解锁",
+      "unlock_desc": "调查行动「终末交响曲」·困难难度已开启"
+    },
+    {
+      "id": 58912,
+      "feature_name": "「调查行动」第8章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "调查行动「终末交响曲」·癫狂难度已开启"
+    },
+    {
+      "id": 58913,
+      "feature_name": "原初裂隙",
+      "lock_tip": "完成 「调查行动」第8章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58914,
+      "feature_name": "黑池之潮",
+      "lock_tip": "完成 「调查行动」第8章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 58915,
+      "feature_name": "「调查行动」终章 ·癫狂",
+      "lock_tip": "敬请期待",
+      "unlock_desc": "调查行动「长梦尽时」·癫狂难度已开启"
+    },
+    {
+      "id": 60580,
+      "feature_name": "银芯通信",
+      "lock_tip": "完成 「调查行动」2-1·普通 后解锁",
+      "unlock_desc": "银芯通信已开启"
+    },
+    {
+      "id": 68887,
+      "feature_name": "克莱门汀活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 68888,
+      "feature_name": "本源图鲁活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 68889,
+      "feature_name": "图鲁活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 68890,
+      "feature_name": "本源墨菲活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 68891,
+      "feature_name": "达芙黛尔活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 68892,
+      "feature_name": "莫尔迪基安活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 68893,
+      "feature_name": "鲁利姆活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 68894,
+      "feature_name": "昂特拉克活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 70556,
+      "feature_name": "活动",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 71851,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 72031,
+      "feature_name": "「调查行动」星辰篇第1章",
+      "lock_tip": "完成 「调查行动」第9章·普通 后解锁",
+      "unlock_desc": "调查行动「星辰正位之刻·重临雾都」已开启"
+    },
+    {
+      "id": 72035,
+      "feature_name": "通关忘却篇剧情",
+      "lock_tip": "完成 「调查行动」第9章·普通 后回到主界面播放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 72076,
+      "feature_name": "「调查行动」星辰篇第1章 ·困难",
+      "lock_tip": "完成 「调查行动」星辰篇第1章·普通 后解锁",
+      "unlock_desc": "调查行动「重临雾都」·困难难度已开启"
+    },
+    {
+      "id": 73800,
+      "feature_name": "墨菲复刻活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 74239,
+      "feature_name": "",
+      "lock_tip": "完成 「热情归尘」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 74240,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 74241,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 74337,
+      "feature_name": "逆转回合活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 74341,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 74348,
+      "feature_name": "萨尔瓦多复刻活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 74362,
+      "feature_name": "莱克复刻活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 75909,
+      "feature_name": "广播剧",
+      "lock_tip": "尚未有相关收藏",
+      "unlock_desc": ""
+    },
+    {
+      "id": 78650,
+      "feature_name": "24复刻活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 78734,
+      "feature_name": "多维连接",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 78793,
+      "feature_name": "本源希洛活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 79686,
+      "feature_name": "唤醒体时装",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 80156,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-9·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 80317,
+      "feature_name": "「调查行动」星辰篇第2章 ·困难",
+      "lock_tip": "完成 「调查行动」星辰篇第1章 · 困难 及第2章·普通 后解锁",
+      "unlock_desc": "调查行动「蜕变」·困难难度已开启"
+    },
+    {
+      "id": 80318,
+      "feature_name": "「调查行动」星辰篇第2章",
+      "lock_tip": "完成 「调查行动」星辰篇第1章·普通 后解锁",
+      "unlock_desc": "调查行动「星辰正位之刻·蜕变」已开启"
+    },
+    {
+      "id": 83813,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 84307,
+      "feature_name": "克珀珊特活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 84356,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 88941,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 88942,
+      "feature_name": "卡斯托尔活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 89531,
+      "feature_name": "时装商店",
+      "lock_tip": "通关 序章 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 91201,
+      "feature_name": "好友邀请码",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 91202,
+      "feature_name": "「调查行动」星辰篇第3章",
+      "lock_tip": "完成 「调查行动」星辰篇第2章·普通 后解锁",
+      "unlock_desc": "调查行动「星辰正位之刻·餍飨」已开启"
+    },
+    {
+      "id": 91203,
+      "feature_name": "「调查行动」星辰篇第3章 ·困难",
+      "lock_tip": "完成 「调查行动」星辰篇第2章 · 困难 及第3章·普通 后解锁",
+      "unlock_desc": "调查行动「餍飨」·困难难度已开启"
+    },
+    {
+      "id": 91238,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 91239,
+      "feature_name": "罗马活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 94856,
+      "feature_name": "夏日特别活动上篇",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 94857,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 95783,
+      "feature_name": "杜勒赛因活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 97143,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 97144,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 97145,
+      "feature_name": "凯蒂古拉活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 97146,
+      "feature_name": "皮克曼活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 97671,
+      "feature_name": "本源深海淑女活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 97894,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 97895,
+      "feature_name": "夏日特别活动下篇",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 97929,
+      "feature_name": "",
+      "lock_tip": "完成 「再见永无乡」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 100551,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」3-10·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 100552,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」2-15·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 116229,
+      "feature_name": "",
+      "lock_tip": "完成 「再见，永无乡」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 116599,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 116600,
+      "feature_name": "波吕克斯活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 119961,
+      "feature_name": "兑换商店",
+      "lock_tip": "通关 序章 解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 120493,
+      "feature_name": "「调查行动」星辰篇第4章",
+      "lock_tip": "完成 「调查行动」星辰篇第3章·普通 后解锁",
+      "unlock_desc": "调查行动「星辰正位之刻·乐园」已开启"
+    },
+    {
+      "id": 120494,
+      "feature_name": "「调查行动」星辰篇第4章 ·困难",
+      "lock_tip": "完成 「调查行动」星辰篇第3章 · 困难 及第4章·普通 后解锁",
+      "unlock_desc": "调查行动「乐园」·困难难度已开启"
+    },
+    {
+      "id": 120989,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 120990,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」星辰篇第4章·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 120991,
+      "feature_name": "",
+      "lock_tip": "完成 「群星咏叹调」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 122563,
+      "feature_name": "茉夏活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 122564,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 123278,
+      "feature_name": "",
+      "lock_tip": "完成 「银与血的洗礼」·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 123279,
+      "feature_name": "",
+      "lock_tip": "暂未开放",
+      "unlock_desc": ""
+    },
+    {
+      "id": 125344,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 125345,
+      "feature_name": "徐活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 126274,
+      "feature_name": "阿拉克涅活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 126363,
+      "feature_name": "「调查行动」星辰篇第5章",
+      "lock_tip": "完成 「调查行动」星辰篇第4章·普通 后解锁",
+      "unlock_desc": "调查行动「星辰正位之刻·临时文本」已开启"
+    },
+    {
+      "id": 126364,
+      "feature_name": "「调查行动」星辰篇第5章 ·困难",
+      "lock_tip": "完成 「调查行动」星辰篇第4章 · 困难 及第5章·普通 后解锁",
+      "unlock_desc": "调查行动「临时文本」·困难难度已开启"
+    },
+    {
+      "id": 128099,
+      "feature_name": "记忆回响",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 129487,
+      "feature_name": "疾驰的欢愉专列",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 129507,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 129645,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 130172,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 130173,
+      "feature_name": "沙耶活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    },
+    {
+      "id": 130899,
+      "feature_name": "",
+      "lock_tip": "完成 「调查行动」1-2·普通 后解锁",
+      "unlock_desc": ""
+    },
+    {
+      "id": 130900,
+      "feature_name": "莫丝活动",
+      "lock_tip": "",
+      "unlock_desc": ""
+    }
+  ]
+}

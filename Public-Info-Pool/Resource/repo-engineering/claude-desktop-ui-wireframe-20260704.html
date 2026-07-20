@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Desktop UI 结构线框图（黑箱观察规格配图，2026-07-04）</title>
+<style>
+  :root{
+    --bg:#f5f4f0; --panel:#ffffff; --line:#c9c4b8; --ink:#3d3a33; --dim:#8a8577;
+    --accent:#b0552f; --wash:#eceae3;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1e1c18; --panel:#2a2722; --line:#4a453c; --ink:#e8e4da; --dim:#9a937f; --wash:#343028; }
+  }
+  *{box-sizing:border-box; margin:0}
+  body{background:var(--bg); color:var(--ink); font:14px/1.5 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; padding:24px}
+  h1{font-size:18px; margin-bottom:4px}
+  .meta{color:var(--dim); font-size:12px; margin-bottom:16px}
+  .tabs{display:flex; gap:8px; margin-bottom:12px}
+  .tabs button{padding:6px 18px; border:1px solid var(--line); background:var(--panel); color:var(--ink); border-radius:6px; cursor:pointer; font-size:14px}
+  .tabs button.on{border-color:var(--accent); color:var(--accent); font-weight:600}
+  .frame{border:1px solid var(--line); border-radius:10px; background:var(--panel); overflow:hidden; max-width:1180px}
+  .titlebar{display:flex; align-items:center; gap:10px; padding:8px 14px; border-bottom:1px solid var(--line); background:var(--wash); font-size:12px; color:var(--dim)}
+  .titlebar .seg{margin-left:auto}
+  .box{border:1px dashed var(--line); border-radius:6px; padding:8px 10px; margin:6px; background:var(--panel); font-size:12px}
+  .box b{display:block; font-size:12px; color:var(--ink)}
+  .box span{color:var(--dim); font-size:11px}
+  .lay{display:flex; min-height:460px}
+  .col{display:flex; flex-direction:column}
+  .side{width:210px; border-right:1px solid var(--line); background:var(--wash)}
+  .main{flex:1}
+  .right{width:250px; border-left:1px solid var(--line); background:var(--wash)}
+  .grow{flex:1}
+  .row{display:flex}
+  .row>.box{flex:1}
+  .note{max-width:1180px; color:var(--dim); font-size:12px; margin-top:10px}
+  .pane-grid{display:grid; grid-template-columns:1fr 1fr; gap:0; flex:1}
+  .chip{display:inline-block; border:1px solid var(--line); border-radius:10px; padding:0 8px; font-size:11px; color:var(--dim); margin-right:4px}
+  .hidden{display:none}
+  @media (max-width:900px){ .lay{flex-direction:column} .side,.right{width:auto; border:none; border-bottom:1px solid var(--line)} }
+</style>
+</head>
+<body>
+<h1>Claude Desktop UI 结构线框图</h1>
+<div class="meta">黑箱观察规格配图 · 详细规格见同目录 claude-desktop-ui-structure-20260704-r2.md · 灰框 = 结构占位，非视觉还原</div>
+
+<div class="tabs">
+  <button class="on" data-t="chat">Chat</button>
+  <button data-t="cowork">Cowork</button>
+  <button data-t="code">Code</button>
+  <button data-t="design">Design（Labs）</button>
+</div>
+
+<!-- ============ CHAT ============ -->
+<div class="frame" id="t-chat">
+  <div class="titlebar">Chat | Cowork | Code（顶层标签切换器）<span class="seg">账号菜单 · 设置</span></div>
+  <div class="lay">
+    <div class="side col">
+      <div class="box"><b>New chat</b></div>
+      <div class="box"><b>搜索</b><span>跨会话检索</span></div>
+      <div class="box grow"><b>Chats 近期会话列表</b><span>悬停：改名 / 删除 / 星标</span></div>
+      <div class="box"><b>Projects</b><span>知识库 + 项目指令 + 项目内会话</span></div>
+      <div class="box"><b>账号 / 设置</b><span>Profile · Appearance · Capabilities · Connectors · Extensions(.dxt) · Developer(claude_desktop_config.json) · Cowork</span></div>
+    </div>
+    <div class="main col">
+      <div class="box grow"><b>对话流</b><span>用户消息（可编辑重发）· 助手 markdown · 扩展思考块（默认折叠）· 工具调用块 · artifact 卡片 · MCP 工具权限弹窗（本次允许 / 始终允许 / 拒绝）</span></div>
+      <div class="box"><b>Composer</b><span>附件（文件 / 截图 / 窗口共享）· 语音听写 · 连接器与工具菜单（逐 server 开关）· styles · 模型选择器 · 扩展思考开关 · 发送 / 停止</span></div>
+    </div>
+    <div class="right col">
+      <div class="box grow"><b>Artifacts 面板</b><span>Preview / Code 双视图 · 版本历史 · 复制 / 下载 / 发布分享 · 可关闭回纯对话</span></div>
+      <div class="box"><b>快速入口浮窗</b><span>双击 Option 唤出置顶小窗（全局）</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ COWORK ============ -->
+<div class="frame hidden" id="t-cowork">
+  <div class="titlebar">Chat | Cowork | Code<span class="seg">通知：完成 / 需审批时推送</span></div>
+  <div class="lay">
+    <div class="side col">
+      <div class="box"><b>新任务</b></div>
+      <div class="box grow"><b>任务列表</b><span>Active 等状态分组 · Dispatch 常驻对话</span></div>
+      <div class="box"><b>Scheduled</b><span>定时任务管理（/schedule）</span></div>
+      <div class="box"><b>Projects</b><span>独立工作空间：文件 / 上下文 / 记忆</span></div>
+    </div>
+    <div class="main col">
+      <div class="box"><b>任务描述区</b><span>prompt + 附件 + 工作文件夹选择（仅已连接文件夹）</span></div>
+      <div class="box"><b>计划审批面板</b><span>执行前展示计划，批准后开跑</span></div>
+      <div class="box grow"><b>进度视图</b><span>逐步进度指示 · 推理透明化 · 多子代理并行 · 源文件与输出文件可见</span></div>
+      <div class="box"><b>权限双模式</b><span>Ask before acting / Act without asking；永久删除始终显式许可</span></div>
+    </div>
+    <div class="right col">
+      <div class="box grow"><b>产出</b><span>成品直接落文件系统（文档 / 表格 / 演示）</span></div>
+      <div class="box"><b>扩展</b><span>插件 · Chrome 集成 · 连接器</span></div>
+      <div class="box"><b>移动端派单</b><span>手机 Dispatch → 可 spawn Code 会话</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CODE ============ -->
+<div class="frame hidden" id="t-code">
+  <div class="titlebar">Chat | Cowork | Code<span class="seg">会话标题（点击改名）· Views 菜单 · Continue in（Web / IDE）</span></div>
+  <div class="lay">
+    <div class="side col">
+      <div class="box"><b>+ New session</b><span>Cmd+N · Ctrl+Tab 轮换</span></div>
+      <div class="box"><b>过滤 / 分组</b><span>状态 · 项目 · 环境（Local / Cloud）</span></div>
+      <div class="box grow"><b>会话列表</b><span>每会话独立 worktree（.claude/worktrees/）· Dispatch 徽章 · 悬停归档 · Cmd+点击 = 双会话分屏</span></div>
+      <div class="box"><b>Customize</b><span>connectors / skills / plugins 集中管理</span></div>
+    </div>
+    <div class="main col">
+      <div class="pane-grid">
+        <div class="box"><b>chat pane</b><span>转录三档：Normal / Verbose / Summary（Ctrl+O）· 工具调用折叠摘要 · side chat（Cmd+;）</span></div>
+        <div class="box"><b>diff pane</b><span>+12 -1 指示器 · 文件列表 + 行级评论（Cmd+Enter 批量提交）· Review code 自评</span></div>
+        <div class="box"><b>preview pane</b><span>内嵌浏览器 · 自动验证（截图 / DOM / 点击）· .claude/launch.json · Persist sessions</span></div>
+        <div class="box"><b>terminal / file / plan / tasks / subagent</b><span>八 pane 拖拽重排 · Ctrl+` 终端 · tasks = 子代理 + 后台 shell + 工作流台账</span></div>
+      </div>
+      <div class="box"><b>CI 状态条</b><span>PR 后出现 · Auto-fix / Auto-merge 开关 · gh CLI 轮询 · 完成发桌面通知</span></div>
+      <div class="box"><b>Prompt box</b>
+        <span class="chip">Environment: Local / Remote / SSH</span>
+        <span class="chip">项目文件夹（云可多仓）</span>
+        <span class="chip">模型 + 用量环</span>
+        <span class="chip">权限模式五档</span>
+        <span class="chip">+ 附件 / Skills / Connectors / Plugins</span>
+        <span class="chip">@mention</span>
+        <span class="chip">运行中追加纠正不打断</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DESIGN ============ -->
+<div class="frame hidden" id="t-design">
+  <div class="titlebar">Claude Design（Labs 研究预览 · 侧栏入口进入的独立工作区）<span class="seg">警示：顶层 Chat/Cowork/Code 导航在此消失（社区批评的集成反模式）</span></div>
+  <div class="lay">
+    <div class="side col">
+      <div class="box"><b>入口画面</b><span>Prototype / Slide deck / From template / Other 四选一</span></div>
+      <div class="box"><b>保真度档位</b><span>rough wireframes / high-fidelity mockups</span></div>
+      <div class="box grow"><b>输入四路</b><span>文本提示 · 上传 DOCX/PPTX/XLSX/图片 · 指向代码库 · 网页元素捕获</span></div>
+      <div class="box"><b>品牌系统</b><span>扫描代码库与设计文件自动建设计系统（色 / 排版 / 组件），项目间自动套用</span></div>
+    </div>
+    <div class="main col">
+      <div class="row grow">
+        <div class="box"><b>聊天区（左）</b><span>对话驱动生成与修改 · 版本以指令保存（无版本树 UI）</span></div>
+        <div class="box"><b>画布 canvas（右）</b><span>拖拽 / 缩放 / 对齐 · rich layout controls（间距 / 颜色 / 布局旋钮）· 文字直改 · 行内评论（回灌链路尚不可靠）</span></div>
+      </div>
+      <div class="box"><b>Export（右上角）</b><span>.zip / PDF / PPTX / 独立 HTML · Canva / Adobe / Miro / Vercel 等集成 · 交接 Claude Code（/design-sync）</span></div>
+      <div class="box"><b>分享</b><span>组织内链接 · 查看 / 评论 / 编辑三档权限 · 群组对话</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">交互提示：点上方 Chat / Cowork / Code / Design 切换线框。快捷键 / 权限模式 / launch.json 字段等契约级明细见规格档 §5，Claude Design 见 §6。</div>
+
+<script>
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      ['chat','cowork','code','design'].forEach(function(t){
+        document.getElementById('t-'+t).classList.toggle('hidden', t!==b.dataset.t);
+      });
+    });
+  });
+</script>
+</body>
+</html>
