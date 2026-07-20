@@ -1301,7 +1301,7 @@
     "/community/community-bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区全量档案",
-      "description": "bahamut 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "bahamut 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -1469,7 +1469,7 @@
     "/community/community-timeline.md": {
       "type": "dataset",
       "title": "社区活动时序（全量）",
-      "description": "全量社区月度时序：2017-08..2026-07（38 月），vol_index 抓量异常（本月量÷前6月中位数）。",
+      "description": "全量社区月度时序：2016-06..2026-07（39 月），vol_index 抓量异常（本月量÷前6月中位数）。",
       "resource": "/projects/news/index/community_index.json",
       "tags": [
         "data_layer:full_archive",
@@ -1483,7 +1483,7 @@
     "/community/community-weibo.md": {
       "type": "dataset",
       "title": "weibo 社区全量档案",
-      "description": "weibo 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weibo 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -1497,7 +1497,7 @@
     "/community/community-weixin.md": {
       "type": "dataset",
       "title": "weixin 社区全量档案",
-      "description": "weixin 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 11 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weixin 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 12 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4465,7 +4465,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 1149 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 699 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4507,7 +4507,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2960 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2963 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4521,7 +4521,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8138044 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8161508 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4535,7 +4535,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 2264 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1774 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4591,7 +4591,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3677 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3669 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4605,7 +4605,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 542 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 447 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4619,7 +4619,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5249 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5251 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4633,7 +4633,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 122 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 121 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4675,7 +4675,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1801 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1769 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4689,7 +4689,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10686 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10642 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4703,7 +4703,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10992 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 7508 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4731,7 +4731,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2169 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2172 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -17830,7 +17830,9 @@
     ],
     "万级": [
       "/community/community-discord.md",
-      "/community/community-index.md"
+      "/community/community-index.md",
+      "/community/community-weibo.md",
+      "/community/community-weixin.md"
     ],
     "万能": [
       "/characters/15590.md",
@@ -22839,7 +22841,6 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "几十": [
-      "/community/community-bahamut.md",
       "/community/community-note-com.md",
       "/community/community-stopgame.md"
     ],
@@ -24122,7 +24123,6 @@
       "/characters/15571.md"
     ],
     "十条": [
-      "/community/community-bahamut.md",
       "/community/community-note-com.md",
       "/community/community-stopgame.md"
     ],
@@ -24133,8 +24133,6 @@
       "/community/community-reddit.md",
       "/community/community-steam.md",
       "/community/community-taptap.md",
-      "/community/community-weibo.md",
-      "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
     ],
@@ -29062,7 +29060,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "少条": [
-      "/community/community-bahamut.md",
       "/community/community-note-com.md",
       "/community/community-stopgame.md"
     ],
@@ -31695,7 +31692,6 @@
     ],
     "或更": [
       "/characters/15572.md",
-      "/community/community-bahamut.md",
       "/community/community-note-com.md",
       "/community/community-stopgame.md"
     ],
@@ -35505,7 +35501,6 @@
       "/characters/77922.md"
     ],
     "更少": [
-      "/community/community-bahamut.md",
       "/community/community-note-com.md",
       "/community/community-stopgame.md"
     ],
@@ -36672,7 +36667,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
     "条或": [
-      "/community/community-bahamut.md",
       "/community/community-note-com.md",
       "/community/community-stopgame.md"
     ],
@@ -40749,6 +40743,7 @@
     ],
     "百级": [
       "/community/community-arca-live.md",
+      "/community/community-bahamut.md",
       "/community/community-pixiv.md",
       "/community/community-ruliweb.md"
     ],
@@ -42822,6 +42817,7 @@
     "级条": [
       "/community/community-appstore.md",
       "/community/community-arca-live.md",
+      "/community/community-bahamut.md",
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
