@@ -1,7 +1,7 @@
 <!--
 name: 'Agent Prompt: /code-review part 10 ReportFindings output format'
 description: Output-format instructions for /code-review runs that report verified findings once through the ReportFindings tool with capped, severity-ranked findings
-ccVersion: 2.1.199
+ccVersion: 2.1.212
 variables:
   - REPORT_FINDINGS_TOOL_NAME
   - MAX_FINDINGS
@@ -11,7 +11,8 @@ variables:
 Call the ${REPORT_FINDINGS_TOOL_NAME} tool once to report this review's results
 with `{level, findings}`. `findings` is at most ${MAX_FINDINGS} entries ranked
 most-severe first; each entry has `file`, `line`, `summary`,
-`failure_scenario`, and `category` — a short kebab-case slug for the angle
+`short_summary` — the claim compressed to ≤60 characters, no rationale
+or consequence clause — `failure_scenario`, and `category` — a short kebab-case slug for the angle
 that produced it (`correctness`, `simplification`, `efficiency`,
 `reuse`, `altitude`, `conventions`, or a more specific slug like
 `test-coverage` when one fits better) — plus `verdict` when a verify pass

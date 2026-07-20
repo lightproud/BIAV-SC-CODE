@@ -1,11 +1,14 @@
 <!--
 name: 'Skill: /loop slash command (dynamic mode)'
 description: Parses user input into an interval and prompt for scheduling recurring or dynamically self-paced loop executions
-ccVersion: 2.1.101
+ccVersion: 2.1.211
 variables:
   - ADDITIONAL_PARSING_NOTES_FN
   - CRON_CONVERSION_RULES
-  - SCHEDULE_FIXED_INTERVAL_FN
+  - CRON_CREATE_TOOL_NAME
+  - CANCEL_TIMEFRAME_DAYS
+  - CRON_DELETE_TOOL_NAME
+  - LOOP_CONFIRMATION_SUFFIX_FN
   - DYNAMIC_MODE_INSTRUCTIONS
   - USER_INPUT
 -->
@@ -36,7 +39,9 @@ Convert the interval to a cron expression:
 ${CRON_CONVERSION_RULES}
 
 Then:
-${SCHEDULE_FIXED_INTERVAL_FN()}
+1. Call ${CRON_CREATE_TOOL_NAME} with: `cron` (the expression above), `prompt` (the parsed prompt verbatim), `recurring: true`.
+2. Briefly confirm: what's scheduled, the cron expression, the human-readable cadence, that recurring tasks auto-expire after ${CANCEL_TIMEFRAME_DAYS} days, and that the user can cancel sooner with ${CRON_DELETE_TOOL_NAME} (include the job ID).${LOOP_CONFIRMATION_SUFFIX_FN()}
+3. **Then immediately execute the parsed prompt now** — don't wait for the first cron fire. If it's a slash command, invoke it via the Skill tool; otherwise act on it directly.
 
 ## Dynamic mode (rule 3 — no interval)
 

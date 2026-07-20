@@ -1,10 +1,11 @@
 <!--
 name: 'Tool Description: EnterPlanMode'
 description: Tool description for entering plan mode to explore and design implementation approaches
-ccVersion: 2.1.198
+ccVersion: 2.1.215
 variables:
   - ASK_USER_QUESTION_TOOL_NAME
-  - CONDITIONAL_WHAT_HAPPENS_NOTE_FN
+  - CONDITIONAL_USE_AGENT_TOOL_INSTEAD_NOTE
+  - WHAT_HAPPENS_IN_PLAN_MODE_FN
 -->
 Use this tool proactively when you're about to start a non-trivial implementation task. Getting user sign-off on your approach before writing code prevents wasted effort and ensures alignment. This tool transitions you into plan mode where you can explore the codebase and design an implementation approach for user approval.
 
@@ -46,9 +47,9 @@ Only skip EnterPlanMode for simple tasks:
 - Single-line or few-line fixes (typos, obvious bugs, small tweaks)
 - Adding a single function with clear requirements
 - Tasks where the user has given very specific, detailed instructions
-- Pure research/exploration tasks (use the Agent tool instead)
+- Pure research/exploration tasks${CONDITIONAL_USE_AGENT_TOOL_INSTEAD_NOTE}
 
-${CONDITIONAL_WHAT_HAPPENS_NOTE_FN()}## Examples
+${WHAT_HAPPENS_IN_PLAN_MODE_FN()}## Examples
 
 ### GOOD - Use EnterPlanMode:
 User: "Add user authentication to the app"

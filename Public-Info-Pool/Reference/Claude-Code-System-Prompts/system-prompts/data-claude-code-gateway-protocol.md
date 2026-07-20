@@ -1,7 +1,7 @@
 <!--
 name: 'Data: Claude Code gateway protocol'
 description: Markdown reference documenting the Claude Code gateway wire contract, including OAuth 2.0 device flow, RFC 8414 discovery, Messages API inference, managed settings, model discovery, OTLP telemetry, error envelopes, TLS certificate pinning, and proxying to Bedrock, Vertex, and Foundry
-ccVersion: 2.1.195
+ccVersion: 2.1.211
 -->
 # Claude Code gateway protocol
 
@@ -104,7 +104,7 @@ deprovisioning hook.
 
 `POST /v1/messages` and `POST /v1/messages/count_tokens` (bearer)
 
-The Anthropic Messages API (https://docs.claude.com/en/api/messages),
+The Anthropic Messages API (https://platform.claude.com/docs/en/api/messages),
 unchanged. Proxy to your upstream and stream the response back. Enforce your
 model allowlist here, returning `400 invalid_request_error` for a denied
 model. Don't buffer SSE on the `stream: true` path. The client always sets

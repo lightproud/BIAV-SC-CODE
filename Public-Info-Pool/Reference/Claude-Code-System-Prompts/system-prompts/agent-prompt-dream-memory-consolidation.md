@@ -1,7 +1,7 @@
 <!--
 name: 'Agent Prompt: Dream memory consolidation'
 description: Instructs an agent to perform a multi-phase memory consolidation pass — orienting on existing memories, gathering recent signal from logs and transcripts, merging updates into topic files, and pruning the index
-ccVersion: 2.1.120
+ccVersion: 2.1.212
 variables:
   - MEMORY_DIR
   - MEMORY_DIR_CONTEXT
@@ -10,6 +10,7 @@ variables:
   - TRANSCRIPT_SOURCE_NOTE
   - INDEX_FILE
   - POST_GATHER_FN
+  - IS_STONE_SHELL_MEMORY_VARIANT
   - INDEX_MAX_LINES
   - CLAUDE_MD_RECONCILIATION_BLOCK
   - ADDITIONAL_DREAM_GUIDANCE_FN
@@ -45,10 +46,10 @@ Look for new information worth persisting. Sources in rough priority order:
    `grep -rn "<narrow term>" ${TRANSCRIPTS_DIR}/ --include="*.jsonl" | tail -50`
 
 Don't exhaustively read transcripts. Look only for things you already suspect matter.
-${POST_GATHER_FN()}
+${POST_GATHER_FN(IS_STONE_SHELL_MEMORY_VARIANT)}
 ## Phase 3 — Consolidate
 
-For each thing worth remembering, write or update a memory file at the top level of the memory directory. Use the memory file format and type conventions from your system prompt's auto-memory section — it's the source of truth for what to save, how to structure it, and what NOT to save.
+For each thing worth remembering, write or update a memory file at the top level of the memory directory. Use the memory file format${IS_STONE_SHELL_MEMORY_VARIANT?"":" and type conventions"} from your system prompt's auto-memory section — it's the source of truth for what to save, how to structure it, and what NOT to save.
 
 Focus on:
 - Merging new signal into existing topic files rather than creating near-duplicates

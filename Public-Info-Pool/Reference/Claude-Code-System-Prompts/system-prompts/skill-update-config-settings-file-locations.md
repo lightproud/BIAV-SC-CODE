@@ -1,7 +1,7 @@
 <!--
 name: 'Skill: Update config settings file locations'
 description: Where Claude Code stores settings.json across scopes
-ccVersion: 2.1.173
+ccVersion: 2.1.210
 -->
 ## Settings File Locations
 
@@ -23,7 +23,7 @@ Settings load in order: user → project → local (later overrides earlier).
   "permissions": {
     "allow": ["Bash(npm *)", "Edit(.claude)", "Read"],
     "deny": ["Bash(rm -rf *)"],
-    "ask": ["Write(/etc/*)"],
+    "ask": ["Edit(//etc/*)"],
     "defaultMode": "default" | "plan" | "acceptEdits" | "dontAsk",
     "additionalDirectories": ["/extra/dir"]
   }

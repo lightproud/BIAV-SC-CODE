@@ -1,7 +1,7 @@
 <!--
 name: 'Skill: Run browser-driven web app example'
 description: Example file for the Run app skill showing how to start a web dev server, drive it with chromium-cli, capture screenshots, and document app-specific gotchas
-ccVersion: 2.1.145
+ccVersion: 2.1.213
 -->
 # Example: Browser-driven web app
 
@@ -19,13 +19,16 @@ README), start it in the background, and wait for it to actually serve:
 
 ```bash
 npm run dev &   # or yarn dev, pnpm dev, make serve, ./dev.sh
-echo $! > /tmp/dev.pid
 timeout 30 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done'
 ```
 
-Don't `sleep 5` — poll the port. Stop with
-`kill $(cat /tmp/dev.pid)` (or `pkill -f 'npm run dev'`) before
-relaunching, or the next run hits `EADDRINUSE`.
+Don't `sleep 5` — poll the port. Stop by killing the port's listener
+— `lsof -ti:3000 -sTCP:LISTEN | xargs -r kill` — before relaunching,
+or the next run hits `EADDRINUSE`. (`$!` after `npm run dev &` is only
+the npm wrapper; npm doesn't forward SIGTERM to the server it spawned,
+so the port kill is what actually frees it.) Avoid `pkill -f` with a
+broad pattern — it can match the agent's own command line and kill the
+session.
 
 ## Drive
 
@@ -68,7 +71,7 @@ drop the Electron-only window introspection
 The project-specific bits only. `chromium-cli` handles the mechanics.
 
 - **Dev command + port + stop.** The exact start line, any env vars it
-  needs, and the `kill`/`pkill` to stop it.
+  needs, and the `kill` to stop it.
 - **Auth.** Whatever gets a logged-in session — a `set-cookie` line, a
   `fill`/`click` login sequence, or a helper script that does the API
   dance and emits the cookie.

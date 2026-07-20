@@ -12,14 +12,14 @@ BPT 4R `Reference` 层子目录。**外部公开参照材料**（非银芯原创
 |----|----|
 | 上游仓库 | [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) |
 | 维护方 | Piebald AI（**非 Anthropic 官方**；由脚本从 `@anthropic-ai/claude-code` npm 编译产物提取） |
-| 采集版本 | Claude Code v2.1.207 |
-| 上游 commit | `96fd97a455ab5fa55b2fa8cfd83e241ada5e7d5f` |
-| 上游 commit 日期 | 2026-07-10 |
+| 采集版本 | Claude Code v2.1.215 |
+| 上游 commit | `f10c95c442c99ffbebd9d833767fd6f9bf7b7182` |
+| 上游 commit 日期 | 2026-07-18 |
 | 许可证 | MIT（Copyright (c) 2025 Piebald LLC）——见同目录 `LICENSE`，再分发须随附 |
 
 ## 内容清单
 
-- `system-prompts/`：**573** 份 markdown，每份含 YAML frontmatter（标注 Claude Code 版本 + 模板变量）。
+- `system-prompts/`：**589** 份 markdown，每份含 YAML frontmatter（标注 Claude Code 版本 + 模板变量）。
   覆盖主循环系统提示、各子代理（explore / general-purpose / plan / code-review 多段 / security-review 等）、
   工具描述、会话摘要 / 标题生成 / 记忆挑选等编排环节的提示词。
 - `README.md`：上游目录 + 逐提示词 token 计数总表。

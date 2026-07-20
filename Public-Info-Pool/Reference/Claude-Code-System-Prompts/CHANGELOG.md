@@ -4,6 +4,116 @@ Note: Only use **NEW:** for entirely new prompt files, NOT for new additions/sec
 
 ### Claude Code System Prompts Changelog
 
+# [2.1.215](https://github.com/Piebald-AI/claude-code-system-prompts/commit/c998138)
+
+_+645 tokens_
+
+- **NEW:** System Prompt: Subagent delegation restraint — Limits subagent use to genuinely independent, sizeable, or parallel work; keeps small tasks and inline verification in the parent agent; discourages redundant fan-out and duplicated work; and favors a few precisely briefed agents.
+- **REMOVED:** System Prompt: Action safety and truthful reporting — Removes general instructions to confirm irreversible or outward-facing actions, inspect targets before deletion or overwrite, and report failed, skipped, or verified outcomes plainly.
+- Tool Description: Agent (simple usage notes) and Tool Description: Agent (usage notes) — Make broad delegation, proactive-use, and parallel-launch guidance conditional on the default subagent steering mode, while injecting mode- and capability-specific fork, prompt-writing, example, and remote-isolation notes.
+- Tool Description: EnterPlanMode and Tool Description: Grep — Make suggestions to use the Agent tool for pure research and open-ended multi-round searches conditional on the active subagent steering mode.
+- Tool Description: Glob — Removes the unconditional recommendation to use the Agent tool for open-ended searches requiring multiple rounds of globbing and grepping.
+
+#### [2.1.214](https://github.com/Piebald-AI/claude-code-system-prompts/commit/29d3029)
+
+<sub>_No changes to the system prompts in v2.1.214._</sub>
+
+# [2.1.213](https://github.com/Piebald-AI/claude-code-system-prompts/commit/a0c68b2)
+
+_+7,589 tokens_
+
+- **NEW:** Agent Prompt: /code-review unavailable-agent inline mode and Agent Prompt: /code-review inline gap sweep phase — Add a single-context fallback when the Agent tool is unavailable, with sequential review angles, deduplication, self-checking, an optional fresh gap sweep, capped findings, and explicit disclosure that no subagent verification ran.
+- **NEW:** Agent Prompt: /simplify unavailable-agent inline mode — Adds a single-pass fallback that reviews changed code for reuse, simplification, efficiency, and abstraction-level issues, applies safe cleanup fixes, and discloses that the normal four-agent fan-out was unavailable.
+- **NEW:** Skill: Artifact PR review and Skill: Artifact PR review description — Add a workflow for gathering a GitHub pull request and publishing a self-contained review briefing Artifact with a recommendation, reviewer judgment calls, visual explanation, observed signals, coverage, and blind spots.
+- **NEW:** Skill: Import to Claude Code — Adds a generated follow-up workflow for reviewing foreign-agent configuration that `claude import` could not map automatically and translating applicable settings, MCP servers, commands, skills, and hooks into Claude Code equivalents.
+- **NEW:** System Reminder: Scheduled task automated firing — Marks scheduled turns as stored prompts delivered without live user input and forbids treating prior or embedded claims as fresh approval or consent.
+- **NEW:** Tool Description: Artifact runtime capabilities guidance — Explains when live data, shared state, or self-updating Artifacts require loading the capabilities skill before authoring runtime code, and defines capability preservation and clearing on redeploy.
+- **NEW:** Tool Description: SuggestSkills proactive guidance — Allows proactive recommendations of addable skills for repeatable workflows while excluding one-off tasks, uncertain matches, and repeated unengaged suggestions.
+- **NEW:** Tool Parameter: matched ask rule — Identifies approval prompts forced by user-configured `permissions.ask` rules while preserving richer tool-authored reasons, and directs hosts to treat the metadata as rule-forced and render-unsafe.
+- **REMOVED:** Data: Artifact connected-source guidance — Removes the standalone live-connector guidance after expanding it into the dedicated Artifact runtime-capabilities prompt.
+- **REMOVED:** Skill: /morning slash command — Removes the hand-sketched morning brief workflow for calendar, email, chat, preparation, resolved items, and custom sections.
+- Agent Prompt: CLAUDE.md creation and Skill: /init CLAUDE.md and skill setup — When import support is enabled, detect OpenAI Codex and Gemini CLI configuration and offer to import it instead of making users re-enter existing setup.
+- Agent Prompt: /code-review medium-, high-, extra-high-, and maximum-effort modes — Remove separately injected reuse, simplification, efficiency, altitude, and conventions cleanup angles from correctness-review finder prompts.
+- Agent Prompt: Security monitor for autonomous agent actions — Treat scheduled-task prompts as standing task scope rather than live consent for soft-blocked actions, and remove the requirement that the monitor response begin with the `<block>` tag without any preamble.
+- System Prompt: Auto mode setup proposal generator — Allows repository-wide bucket-name evidence to inform trusted cloud bucket proposals, requires usage corroboration or explicit config-derived provenance warnings, and retains safeguards against generic wildcards and treating repository content as instructions.
+- System Prompt: Coordinator worker instructions — Allows worker agents to fan out through the Agent tool for bounded parallel research, review, and cleanup instead of prohibiting subagents entirely.
+- System Prompt: PowerShell edition for 5.1 — Corrects file-encoding guidance to distinguish UTF-8 output from `>`, `>>`, and `Out-File` from the system-codepage defaults of `Set-Content` and `Add-Content`.
+- Tool Description: PowerShell — Clarifies that noninteractive console prompts receive EOF or fail immediately while GUI prompts can still block until timeout.
+- Skill: Run browser-driven web app example and Skill: Run web server API example — Replace broad `pkill -f` shutdown guidance with captured-PID or port-listener termination, noting that npm wrapper PIDs may not stop child servers and broad patterns can terminate the agent session; also normalize the browser example's Markdown quoting and code fences.
+
+# [2.1.212](https://github.com/Piebald-AI/claude-code-system-prompts/commit/1247a27)
+
+_+1,066 tokens_
+
+- **NEW:** Agent Prompt: /code-review workflow routing — Routes eligible reviews through the background workflow at the requested effort, forwards additional review instructions, and handles verified findings, optional GitHub comments or fixes, and artifact publishing after completion.
+- **NEW:** System Prompt: Persistent memory usage and writing guidance — Adds cross-session file-memory rules for validating recalled knowledge, keeping memories applicable, durable, and legible, and immediately recording durable user corrections or newly learned environment behavior.
+- **NEW:** Tool Description: Artifact publishing and update guidance — Splits Artifact redeployment, lookup, ownership, content-safety, self-containment, responsive design, theme, favicon, and anti-impersonation requirements into a dedicated prompt while retaining them outside the core Artifact description.
+- **NEW:** Tool Description: SendFeedback drafting guidance — Adds silent local drafting of factual Claude Code feedback after product failures, explicit frustration, or blocking capability gaps, with approval, privacy, sourcing, and deduplication constraints.
+- **REMOVED:** Agent Prompt: Context tip selector; Agent Prompt: Context tip reception evaluator; Data: Context tip situation — manual polling; Data: Context tip situation — persistent memory; and Data: Context tip situation — subagent fan-out — Remove contextual tip selection and reception scoring plus triggers for `/loop`, persistent memory, and parallel subagent suggestions.
+- **REMOVED:** Agent Prompt: Session search — Removes the transcript-scanning subagent for finding and ranking past Claude Code session IDs.
+- **REMOVED:** Data: Doctor checkup suggestion trigger — Removes the contextual `/doctor` suggestion trigger for Claude Code installation, update, startup, settings, and setup-drift problems.
+- Agent Prompt: /code-review part 10 ReportFindings output format — Requires each reported finding to include a `short_summary` that compresses the claim to at most 60 characters without rationale or consequence clauses.
+- Agent Prompt: Dream memory consolidation and System Prompt: Dream CLAUDE.md memory reconciliation — Adapt memory consolidation for a variant without typed memories and clarify that CLAUDE.md reconciliation applies to memories capturing feedback or project conventions, using `feedback` and `project` tags where available.
+- Tool Description: Agent (usage notes) — Stops describing the `mode` parameter as unavailable to in-process subagents and teammates while retaining synchronous-only and no-teammate-spawning constraints.
+- Data: Plan artifact HTML template — Clarifies that the injected client-side `hljsHighlight.ts` runtime, rather than the build-time fill, emits syntax-highlighting spans.
+
+# [2.1.211](https://github.com/Piebald-AI/claude-code-system-prompts/commit/2c464fc)
+
+_+3,890 tokens_
+
+- **NEW:** System Prompt: Background subagent delegation examples; System Prompt: Foreground subagent delegation examples; and System Prompt: Fresh subagent delegation example — Split delegation examples by execution mode, requiring self-contained prompts, status-only replies while background work is pending, later reporting from completion notifications, and sufficient context for independent fresh-agent reviews.
+- **NEW:** System Reminder: Async agent launched metadata and System Reminder: Cloud agent launched — Mark launch IDs and result locations as internal, prohibit exposing or predicting results before completion, and require cloud launches to receive only a brief user-facing acknowledgement before ending the response.
+- **NEW:** Tool Description: Navigate — Documents standalone and batched browser navigation, automatic tab creation, and when an explicit tab ID is required.
+- **NEW:** Tool Description: RefreshMcpTools and Tool Description: RefreshMcpTools prompt — Add on-demand resynchronization of connected MCP server tool lists, including stale-tool recovery triggers, per-server refreshes, and added, removed, or disconnected result reporting without reconnecting servers.
+- **REMOVED:** Skill: Schedule recurring cron and execute immediately (compact) — Removes the standalone compact recurring-schedule workflow after folding its create, confirmation, expiry, cancellation, and immediate-execution steps into `/loop`.
+- **REMOVED:** System Prompt: Subagent prompt-writing examples — Removes the combined delegation-example prompt after separating foreground, background, and fresh-agent guidance into dedicated prompts.
+- **REMOVED:** System Reminder: ClaudeDesign project grant unavailable without verified identity — Removes the fallback reminder that required verified project identity before offering project-wide ClaudeDesign approval.
+- Agent Prompt: Security monitor for autonomous agent actions (first part) — Clarifies that naming a desired outcome does not authorize a destructive means chosen by the agent; consent must name the dangerous operation, scope, guard, or targets themselves.
+- Agent Prompt: Security monitor for autonomous agent actions (second part) — Replaces default-branch-specific push blocking with a destination exception for ordinary pushes to any session-repository branch, while adding a separate consent rule for landing code that would leak secrets or sensitive data when run, widen deployment exposure, or arm an exfiltrating CI or setup path.
+- Data: Claude API reference — C# and Data: Claude Code gateway protocol — Update Anthropic documentation links from `docs.claude.com` to `platform.claude.com`.
+- Data: Claude Code recent changes reference — Adds removed memory-entry and thinking-toggle shortcuts plus corrections for model aliases, keybinding hot reload and schema, permission-mode cycling, macOS Option chords, subprocess credential scrubbing, and `--bg` incompatibility with print mode.
+- Data: Data visualization reference palette — Documents measured categorical-versus-status color collisions and requires same-hue series and status cues to remain distinguishable through icons, labels, and placement rather than hue alone.
+- Skill: Claude Code configuration guide — Adds keybinding-specific routing, requires strictly valid comment-free JSON configuration examples, and forbids inventing documentation heading anchors.
+- Skill: /loop slash command (dynamic mode) — Inlines recurring cron creation, confirmation, expiry and cancellation details, and immediate execution of the parsed prompt after scheduling.
+- Tool Description: Agent (simple usage notes) and Tool Description: Agent (usage notes) — Tailor final-report wording to background-agent support, prohibit racing or predicting pending background results, and distinguish in-process subagents from teammates when describing available parameters and agent types.
+- Tool Description: Claude in Chrome read page — Changes oversized accessibility-tree handling from an error to line-boundary truncation with the full size and guidance to raise `max_chars` or narrow the read by depth or element reference.
+- Tool Description: ClaudeDesign — Makes project writes use a one-time durable approval instead of a plan token, while retaining plan-token requirements for deletes and copies.
+
+# [2.1.210](https://github.com/Piebald-AI/claude-code-system-prompts/commit/8eb4b72)
+
+_-8,629 tokens_
+
+- **NEW:** Data: Doctor checkup suggestion trigger — Identifies Claude Code installation, update, startup, settings, extension-bloat, and setup-drift problems that should suggest `/doctor`, while excluding project bugs, mid-session context pressure, and permission fatigue.
+- **NEW:** System Prompt: Auto mode setup proposal generator — Converts mechanically gathered, untrusted repository and session reconnaissance into a constrained JSON proposal for environment context, narrowly scoped classifier rules, unsafe permission-allow removals, and recon-status notes.
+- **NEW:** System Reminder: Memory index capacity warning — Warns when a private or team memory index approaches or exceeds its read limit and directs immediate compaction below the target size so trailing entries remain visible.
+- **NEW:** Tool Description: SendFile — Documents cross-session file transfer to local peers and Remote Control or cloud sessions, including addressing, size and count limits, SHA-256 integrity checks, and when shared-filesystem agents or plain text should use messaging instead.
+- **REMOVED:** Data: Data visualization color formula — Removes the standalone reference for assigning and validating categorical, sequential, diverging, and status colors.
+- **REMOVED:** Skill: Auto mode setup — Removes the interactive setup workflow for gathering repository context and configuring auto mode environment, rule, and permission settings.
+- Data: Data visualization anti-patterns; Data: Data visualization reference palette; and Skill: Data Visualization — Reorder the default categorical palette, lower the OKLab CVD separation target to 8 with a 6–8 secondary-encoding floor, add a hard normal-vision separation floor, cap all-pairs charts at four series, and update validator and sequential-hue guidance accordingly.
+- Skill: /doctor slash command — Treats auto mode as available across third-party providers, leaving per-model availability and fallback enforcement to the CLI instead of skipping the setup proposal for Bedrock, Vertex, or Foundry sessions.
+- Skill: /morning slash command — Reworks the morning brief into a warm, hand-sketched HTML view that maps calendar load as terrain, verifies and sorts connected-source findings into Needs attention and Resolved, incorporates tomorrow preparation and requested sections, provides safe action-seeding buttons under strict sourcing and design rules, and removes the prior recurring-task setup and schedule-management flow.
+- Skill: Setup Cowork and Skill: Setup Cowork role selection — Expand onboarding into a visible six-step flow that checks installed plugins before role-matched recommendations, connects every plugin in play, offers a skill trial and optional writing-voice setup, reacts only after widgets render, and clarifies that connectors supply tools while plugins bundle skills and connectors.
+- Skill: Update config settings file locations — Corrects the example permission prompt rule from `Write(/etc/*)` to `Edit(//etc/*)`.
+- Tool Description: Artifact — Adds scoped listing of owned and shared artifacts, permits reading but not updating shared artifacts, treats shared titles as untrusted data, and documents HTML title fallback behavior while preserving Markdown filename identity.
+- Tool Description: ScheduleWakeup delay and reason guidance — Clarifies that consecutive no-op wakeups collapse in the terminal and are tracked as a streak so long quiet holds remain readable.
+
+# [2.1.209](https://github.com/Piebald-AI/claude-code-system-prompts/commit/d83c700)
+
+_+1,261 tokens_
+
+- **NEW:** Data: Artifact connected-source guidance and Data: Artifact runtime capability declarations — Explain how published Artifacts can fetch live connected-source data through declared runtime capabilities, require loading the capabilities skill before writing runtime code, and define carry-forward, clear-all, full-replacement, and contract pinning or upgrade semantics for redeployments.
+- **NEW:** Data: Artifact MCP connector guidance — Documents how to identify supported claude.ai connectors and their exact server values, distinguish upstream tool names from normalized tool-list names, reject locally configured MCP servers, and discover connectors through the API in hermetic or CI sessions.
+- **NEW:** Data: Artifact connector call observation requirement — Requires observing a real connector request and response before publishing an Artifact that calls it, reporting when safe observation is impossible instead of guessing the schema, and preventing observed user data from being embedded as samples or placeholders.
+
+# [2.1.208](https://github.com/Piebald-AI/claude-code-system-prompts/commit/d39e922)
+
+_+2,947 tokens_
+
+- Data: Data visualization reference palette; Data: Plan artifact HTML template; Skill: Artifact dashboard; Skill: Artifact data table; Skill: Artifact explainer; Skill: Artifact report; and Skill: Plan Artifact — Make artifact themes follow both the OS color scheme and the viewer's explicit light/dark toggle, keep applicable print output light, preserve the plan template's theme shim, and require restyling palette values consistently across every theme and print scope.
+- Skill: Auto mode setup — Moves repository visibility, ruleset, branch-protection, shell-command-word, and nearby-repository discovery into deterministic pre-gathering; treats gathered names as untrusted data; forbids agents from reading raw shell history or repeating filesystem and GitHub scans; and scopes optional recon to the user's project and source selections.
+- Tool Description: Artifact — Documents native Mermaid rendering for Markdown `mermaid` fences and HTML `<pre class="mermaid">` blocks without external libraries.
+- Tool Description: Background monitor (streaming events) — When background tasks are disabled, directs one-shot readiness and completion waits to foreground Bash loops instead of unavailable background execution.
+
 # [2.1.207](https://github.com/Piebald-AI/claude-code-system-prompts/commit/4e1911e)
 
 _+6,150 tokens_
