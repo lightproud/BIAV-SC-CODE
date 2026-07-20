@@ -3,6 +3,8 @@ name: Build Analysis Index
 # 重建静态分析索引（社区全量档案 + 剧情 lore）。社区数据由采集 CI 带 [skip ci]
 # 提交，push 触发器会被跳过，故走「周定时 + 手动」而非 path-push；全量构建耗时
 # 分钟级，不宜每次 push 触发。剧情索引轻量，顺带一起重建。
+# T62 P2-5 已接线（2026-07-20）：社区全量档案已迁 **BIAV-SC-DATA**，故 clone data 仓 +
+# 设 BIAV_SC_DATA_ROOT，build_community_index 经 community_root() 读 data 仓；索引产出仍写 code 仓。
 on:
   schedule:
     - cron: '17 4 * * 1'   # 每周一 04:17 UTC
@@ -19,6 +21,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
     steps:
       - uses: actions/checkout@v7
         with:
@@ -26,11 +30,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Clone BIAV-SC-DATA（PAT，社区全量档案数据根）
+        env:
+          DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DATA_TOKEN:-}" ]; then
+            echo "::error::secret BIAV_SC_DATA_TOKEN 未配置"; exit 1
+          fi
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
+          chmod 600 ~/.git-credentials
+          git clone --depth 1 https://github.com/lightproud/BIAV-SC-DATA.git data-repo
       - name: Rebuild story index
         run: python scripts/build_story_index.py
-      # 2026-06-21 de-tier 后 discord 全量永驻 git（Record/Community/discord），
-      # 无需再从 Release 构建期还原；build_community_index 直接读 git 全量。
-      - name: Rebuild community index (full archive)
+      - name: Rebuild community index (full archive · reads BIAV-SC-DATA)
         run: python scripts/build_community_index.py
       - name: Commit if changed
         run: |
