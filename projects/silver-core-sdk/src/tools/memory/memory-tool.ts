@@ -166,6 +166,7 @@ export function createMemoryHealth(): SDKMemoryHealth {
     bytesRead: 0,
     bytesWritten: 0,
     indexInjectionTokens: 0,
+    sessionEndUpdate: 'pending',
   };
 }
 

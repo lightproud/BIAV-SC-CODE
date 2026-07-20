@@ -31,7 +31,13 @@ import {
   truncateViewBody,
   validateCardsContent,
 } from '../src/tools/memory/index.js';
-import type { MemoryStore, Options, SDKMessage, SDKResultMessage } from '../src/types.js';
+import type {
+  MemoryStore,
+  Options,
+  SDKMessage,
+  SDKResultMessage,
+  SDKUserMessage,
+} from '../src/types.js';
 import type {
   AggregatedHookResult,
   BuiltinTool,
@@ -410,6 +416,86 @@ describe('R7: session-end progress-card round (query level)', () => {
     expect(last.subtype).toBe('error_max_turns');
     // No turn ran, no session-end round fired.
     expect(stub.requests).toHaveLength(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// R7 write-back observability: memoryHealth.sessionEndUpdate (keeper
+// 2026-07-20, BPT memory-rot diagnosis) — a host must be able to detect a
+// session that ended WITHOUT updating its progress card, on every exit path.
+// ---------------------------------------------------------------------------
+
+describe('R7 observability: sessionEndUpdate stamp + memoryHealthSnapshot()', () => {
+  async function collectWithHandle(
+    prompt: string | AsyncIterable<SDKUserMessage>,
+    options: Options,
+  ) {
+    const q = query({ prompt, options });
+    const messages: SDKMessage[] = [];
+    for await (const m of q) messages.push(m);
+    return { q, messages };
+  }
+
+  it("a completed round stamps 'ran'; the corrected final result carries the REFRESHED snapshot", async () => {
+    const stub = makeSSEFetch([
+      pricedReplyEvents('the answer', { inputTokens: 100 }),
+      pricedReplyEvents('progress saved', { inputTokens: 900 }),
+    ]);
+    const { q, messages } = await collectWithHandle(
+      'do the task',
+      baseOptions(stub, { memory: {} }),
+    );
+    expect(q.memoryHealthSnapshot()?.sessionEndUpdate).toBe('ran');
+    const results = messages.filter((m): m is SDKResultMessage => m.type === 'result');
+    expect(results).toHaveLength(2);
+    // The task's own result predates the decision point -> its snapshot is
+    // honest 'pending'; the corrected final result is emitted AFTER the round
+    // and must NOT re-report that stale snapshot.
+    expect(results[0]!.metrics?.memoryHealth?.sessionEndUpdate).toBe('pending');
+    expect(results[1]!.metrics?.memoryHealth?.sessionEndUpdate).toBe('ran');
+  });
+
+  it("sessionEndUpdate: false stamps 'disabled'; no memory system -> snapshot is null", async () => {
+    const stub = makeSSEFetch([textReplyEvents('answer')]);
+    const { q } = await collectWithHandle(
+      'hi',
+      baseOptions(stub, { memory: { sessionEndUpdate: false } }),
+    );
+    expect(q.memoryHealthSnapshot()?.sessionEndUpdate).toBe('disabled');
+
+    const bare = makeSSEFetch([textReplyEvents('answer')]);
+    const { q: q2 } = await collectWithHandle('hi', baseOptions(bare));
+    expect(q2.memoryHealthSnapshot()).toBeNull();
+  });
+
+  it("a maxTurns-capped run stamps 'skipped-turns' (the round is silently starved without it)", async () => {
+    const stub = makeSSEFetch([]);
+    const { q, messages } = await collectWithHandle(
+      'hi',
+      baseOptions(stub, { memory: {}, maxTurns: 0 }),
+    );
+    expect((messages.at(-1) as SDKResultMessage).subtype).toBe('error_max_turns');
+    expect(q.memoryHealthSnapshot()?.sessionEndUpdate).toBe('skipped-turns');
+  });
+
+  it("a maxBudgetUsd-exhausted run stamps 'skipped-budget' and never drives the round", async () => {
+    // The single priced turn spends past the (tiny) session cap, so the
+    // decision point finds no budget left: exactly one request, no round.
+    const stub = makeSSEFetch([pricedReplyEvents('the answer', { inputTokens: 5000 })]);
+    const { q } = await collectWithHandle(
+      'do the task',
+      baseOptions(stub, { memory: {}, maxBudgetUsd: 0.000001 }),
+    );
+    expect(stub.requests).toHaveLength(1);
+    expect(q.memoryHealthSnapshot()?.sessionEndUpdate).toBe('skipped-budget');
+  });
+
+  it("a zero-turn run (input closes with no items) stamps 'skipped-no-turns'", async () => {
+    const stub = makeSSEFetch([]);
+    const empty = (async function* (): AsyncGenerator<SDKUserMessage> {})();
+    const { q } = await collectWithHandle(empty, baseOptions(stub, { memory: {} }));
+    expect(stub.requests).toHaveLength(0);
+    expect(q.memoryHealthSnapshot()?.sessionEndUpdate).toBe('skipped-no-turns');
   });
 });
 

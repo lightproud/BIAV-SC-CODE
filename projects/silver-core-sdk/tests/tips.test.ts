@@ -206,17 +206,25 @@ describe('context-tip prompt provenance (corpus-sync guard, Track B parity)', ()
       .filter((s) => !body.includes(s.slice(0, 60)));
   };
 
+  // Upstream RETIRED the context-tip prompt set at ccVersion 2.1.213 (snapshot
+  // refresh 2026-07-20 deleted the archived files). The SDK keeps its adapted
+  // prompts PINNED at the last-seen upstream version (2.1.182); each guard
+  // below re-arms automatically if upstream resurrects its source file —
+  // gating on the individual file, not the archive directory, so a retired
+  // source skips honestly instead of red-ing on ENOENT forever.
+  const archived = (slug: string) => existsSync(join(archive, `${slug}.md`));
+
   it('the provenance table has 2 faithful entries', () => {
     expect(Object.keys(TIP_PROVENANCE)).toHaveLength(2);
     for (const p of Object.values(TIP_PROVENANCE)) expect(p.faithful).toBe(true);
   });
-  it.runIf(existsSync(archive))('selector is faithful to its archive', () => {
+  it.runIf(archived(CONTEXT_TIP_SELECTOR_PROVENANCE.slug))('selector is faithful to its archive', () => {
     expect(faithful(CONTEXT_TIP_SELECTOR_SYSTEM, CONTEXT_TIP_SELECTOR_PROVENANCE.slug)).toEqual([]);
   });
-  it.runIf(existsSync(archive))('reception evaluator is faithful to its archive', () => {
+  it.runIf(archived(TIP_RECEPTION_PROVENANCE.slug))('reception evaluator is faithful to its archive', () => {
     expect(faithful(TIP_RECEPTION_SYSTEM, TIP_RECEPTION_PROVENANCE.slug)).toEqual([]);
   });
-  it.runIf(existsSync(archive))('catalog situations are faithful to their archive', () => {
+  it.runIf(archived('data-context-tip-situation-persistent-memory'))('catalog situations are faithful to their archive', () => {
     expect(faithful(SITUATION_PERSISTENT_MEMORY, 'data-context-tip-situation-persistent-memory')).toEqual([]);
   });
 });

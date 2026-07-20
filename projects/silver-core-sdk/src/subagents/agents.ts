@@ -428,9 +428,10 @@ export const COORDINATOR_MODE_PROMPT_PROVENANCE = {
 /**
  * Coordinator worker instructions — a faithful OPEN reproduction of the
  * official coordinator-assigned-worker prompt (archive slug
- * system-prompt-coordinator-worker-instructions, ccVersion 2.1.182), with the
- * single \`\${AGENT_TOOL_NAME}\` variable resolved to Agent. Corpus-sync
- * guard: tests/subagents.test.ts.
+ * system-prompt-coordinator-worker-instructions, ccVersion 2.1.213 — synced
+ * 2026-07-20 when upstream flipped the no-subagents rule to bounded fan-out),
+ * with the single \`\${AGENT_TOOL_NAME}\` variable resolved to Agent.
+ * Corpus-sync guard: tests/subagents.test.ts.
  */
 export const COORDINATOR_WORKER_INSTRUCTIONS = `You are a worker agent executing a task assigned by the coordinator.
 
@@ -442,7 +443,7 @@ export const COORDINATOR_WORKER_INSTRUCTIONS = `You are a worker agent executing
 
 Complete exactly what was asked. Don't fix unrelated issues you discover — suggest them as follow-ups instead.
 - If you changed any files, commit your changes when done. Use a clear, descriptive commit message. Only stage files you actually changed — never use \`git add .\` or \`git add -A\`. Report the commit hash in your summary.
-- Do not spawn subagents (Agent tool)
+- You may use the Agent tool to fan out (e.g. \`/simplify\`, \`/code-review\`, or your own parallel research/verification) — bounded by the same depth cap as every other caller
 - Limit changes to what your task requires
 
 ## Resumed Tasks

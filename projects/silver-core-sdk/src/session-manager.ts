@@ -732,6 +732,9 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       setMcpServers: (servers) => q.setMcpServers(servers),
       rewindFiles: (id, opts) => q.rewindFiles(id, opts),
       stopTask: (taskId) => q.stopTask(taskId),
+      // R7 write-back observability: delegate to the CURRENT inner query (q is
+      // reassigned on resume), so the snapshot always reflects the live run.
+      memoryHealthSnapshot: () => q.memoryHealthSnapshot(),
       setRetainedRegion: (region) => {
         // Region carries its own id; a re-set overwrites, matching the query's
         // own last-write-wins semantics for a given region id.

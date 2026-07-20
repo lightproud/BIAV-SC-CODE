@@ -1765,6 +1765,40 @@ export type MemoryOptions = {
 };
 
 /**
+ * Outcome of the session-end progress-card round (memory spec R7) for one
+ * run — the write-back observability signal (keeper 2026-07-20, BPT
+ * memory-rot diagnosis). The failure mode this exposes: a ledger-driven host
+ * whose sessions routinely end at a cap / driver timeout never gets the
+ * round, the progress card goes stale, and every resume re-verifies the
+ * world from an outdated recovery point. Contract for hosts: any final value
+ * other than 'ran' means the progress card was NOT updated this run —
+ * compensate (e.g. dispatch a dedicated card-update session) or the next
+ * resume works from a stale card.
+ *
+ *  - 'pending'           — the run never reached the session-end decision
+ *                          point (abort / thrown error / blocked input);
+ *  - 'ran'               — the round was driven to completion;
+ *  - 'failed'            — the round started but did not complete (error or
+ *                          abort mid-round; non-fatal to the query);
+ *  - 'disabled'          — sessionEndUpdate: false, or an incognito session;
+ *  - 'skipped-no-turns'  — zero turns ran, nothing to record;
+ *  - 'skipped-abort'     — the life signal was aborted at the decision point;
+ *  - 'skipped-budget'    — maxBudgetUsd was already spent;
+ *  - 'skipped-turns'     — maxTurns was already spent;
+ *  - 'skipped-interrupt' — a string-mode interrupt ended the run.
+ */
+export type SDKMemorySessionEndUpdate =
+  | 'pending'
+  | 'ran'
+  | 'failed'
+  | 'disabled'
+  | 'skipped-no-turns'
+  | 'skipped-abort'
+  | 'skipped-budget'
+  | 'skipped-turns'
+  | 'skipped-interrupt';
+
+/**
  * Memory-operation counters for one run (spec R8 observability; rides
  * SDKRunMetrics.memoryHealth when the memory system is enabled). All-zero
  * means the model never touched memory. For the on-demand DEEP health scan
@@ -1790,6 +1824,12 @@ export type SDKMemoryHealth = {
   /** Estimated tokens of the resident memory-index injection (R6), so the
    *  read-side residency cost shows up on the bill. */
   indexInjectionTokens: number;
+  /** R7 write-back observability: what happened to the session-end
+   *  progress-card round. Advances during the run ('pending' until the
+   *  decision point); the final value is authoritative once the query has
+   *  finished — read it via the last result's metrics or, on paths where no
+   *  result can carry it (abort / cap), via `Query.memoryHealthSnapshot()`. */
+  sessionEndUpdate: SDKMemorySessionEndUpdate;
 };
 
 /**
@@ -3602,6 +3642,15 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
   rewindFiles(userMessageId: string, options?: { dryRun?: boolean }): Promise<RewindFilesResult>;
   /** Stop a background subagent task by id (no-op + debug warn when unknown). */
   stopTask(taskId: string): Promise<void>;
+  /**
+   * Snapshot of the run's live memory counters (SDKMemoryHealth), or null
+   * when the memory system is not enabled for this query. Readable at any
+   * time — including AFTER the stream ended or threw — so a host can check
+   * `sessionEndUpdate` even on abort/cap paths where no result could carry
+   * the final value, and compensate for a missed write-back (keeper
+   * 2026-07-20, BPT memory-rot diagnosis).
+   */
+  memoryHealthSnapshot(): SDKMemoryHealth | null;
   /**
    * Declare (or replace, by id) a compaction retained region (R3): its content
    * survives every automatic compaction verbatim. Throws `ConfigurationError`
