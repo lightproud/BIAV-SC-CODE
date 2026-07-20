@@ -338,12 +338,15 @@ def _archive_resource(name: str) -> str | None:
         plat, region, subtype = archive_layout.resolve_write_layout(name)
     except Exception:
         plat, region, subtype = name, None, None
-    layered = "Public-Info-Pool/Record/Community/" + "/".join(p for p in (plat, region, subtype) if p)
-    flat = f"Public-Info-Pool/Record/Community/{name}"
-    if (REPO / layered).exists():
-        return "/" + layered + "/"
-    if (REPO / flat).exists():
-        return "/" + flat + "/"
+    rel_layered = "/".join(p for p in (plat, region, subtype) if p)
+    # 存在性检查经 archive_layout.community_root()（env BIAV_SC_DATA_ROOT 感知，分仓后随
+    # 数据换位 data 仓；未设 env = 在树默认，逐字节等价旧行为）。指针字符串仍保**逻辑相对路径**
+    # （OKF 指针是逻辑定位、不随物理仓变，计划 P2-3b 倾向），故门控用物理根、返回值用逻辑前缀。
+    community = archive_layout.community_root()
+    if rel_layered and (community / rel_layered).exists():
+        return "/Public-Info-Pool/Record/Community/" + rel_layered + "/"
+    if (community / name).exists():
+        return f"/Public-Info-Pool/Record/Community/{name}/"
     return None
 
 

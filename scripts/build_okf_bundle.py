@@ -210,15 +210,17 @@ def build_sources() -> int:
         # 单一真相源（2026-07-02 P0-1）：折叠源（official→steam/global/news 等）指向
         # 分层落点；回落顺序 = 分层落点 → 平级源目录 → 迁移前旧根 → 跳过。
         _plat, _region, _subtype = archive_layout.resolve_write_layout(name)
-        layered_rel = "Public-Info-Pool/Record/Community/" + "/".join(
-            p for p in (_plat, _region, _subtype) if p)
-        flat_rel = f"Public-Info-Pool/Record/Community/{name}"
+        rel_layered = "/".join(p for p in (_plat, _region, _subtype) if p)
         old_rel = "projects/news/data/discord" if name == "discord" \
             else f"projects/news/data/platforms/{name}"
-        if (REPO / layered_rel).exists():
-            archive = "/" + layered_rel + "/"
-        elif (REPO / flat_rel).exists():
-            archive = "/" + flat_rel + "/"
+        # 存在性检查经 archive_layout.community_root()（env BIAV_SC_DATA_ROOT 感知，分仓后随
+        # 数据换位 data 仓；未设 env = 在树默认，逐字节等价旧行为）。指针字符串仍保**逻辑相对
+        # 路径**（OKF 指针逻辑定位、不随物理仓变，计划 P2-3b 倾向）：门控用物理根、返回值用逻辑前缀。
+        community = archive_layout.community_root()
+        if rel_layered and (community / rel_layered).exists():
+            archive = "/Public-Info-Pool/Record/Community/" + rel_layered + "/"
+        elif (community / name).exists():
+            archive = f"/Public-Info-Pool/Record/Community/{name}/"
         elif (REPO / old_rel).exists():
             archive = "/" + old_rel + "/"
         else:
@@ -829,7 +831,13 @@ def build_graph() -> dict:
     def _mention_texts(res: str) -> list[str]:
         """概念 resource 指针 → 可扫正文块（有界；读不了就返空，绝不炸构建）。"""
         low = res.lower()
-        src = REPO / res
+        # 分仓桥接：community 资源本体随 archive_layout.community_root() 换位（env
+        # BIAV_SC_DATA_ROOT）；指针字符串保逻辑（Public-Info-Pool/...），此处把逻辑前缀
+        # 重定向到物理数据根，令 mention 扫描分仓后仍读到 archive 本体（否则边整批掉）。
+        if low.startswith(_COMMUNITY_REC):
+            src = archive_layout.community_root() / res[len(_COMMUNITY_REC):]
+        else:
+            src = REPO / res
         out: list[str] = []
         try:
             if low.startswith(_COMMUNITY_REC):
