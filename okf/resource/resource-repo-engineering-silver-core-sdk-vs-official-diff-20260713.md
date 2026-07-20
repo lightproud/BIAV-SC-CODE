@@ -4,7 +4,7 @@ title: "silver-core-sdk-vs-official-diff-20260713"
 description: "解析双方 `.d.ts` 导出符号面；官方-对-官方隔离版本漂移；本 SDK 全量 vitest 对照测试（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-vs-official-diff-20260713.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-19"
+timestamp: "2026-07-20"
 ---
 
 # 指针概念

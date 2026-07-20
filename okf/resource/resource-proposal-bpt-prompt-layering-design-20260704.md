@@ -4,7 +4,7 @@ title: "bpt-prompt-layering-design-20260704"
 description: "BPT 在内网 SVN 免安装部署、按个人/团队目录分数据。提示词注入分多层（硬编码核心 → 团队 → 个人 → 项目工作目录），（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/bpt-prompt-layering-design-20260704.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-19"
+timestamp: "2026-07-20"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "contribution-protocol.md"
 description: "贡献协议 v1.0（已退役 2026-07-10：社区贡献取消，仅供追溯）"
 resource: "/memory/contribution-protocol.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-07-19"
+timestamp: "2026-07-20"
 ---
 
 # 记忆层指针

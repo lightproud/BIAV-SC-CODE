@@ -4,7 +4,7 @@ title: "characters.processed.schema.json"
 description: "wiki 数据模型 schema 定义（characters.processed.schema），派生 JSON 的契约来源。"
 resource: "/projects/wiki/data/schemas/characters.processed.schema.json"
 tags: ["data_layer:curated", "schema", "contract"]
-timestamp: "2026-07-19"
+timestamp: "2026-07-20"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "silver-core-sdk REPORTING"
 description: "The signal side of the self-improvement loop: runs leave a facts-only ledger,"
 resource: "/projects/silver-core-sdk/docs/REPORTING.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-19"
+timestamp: "2026-07-20"
 ---
 
 # 指针概念

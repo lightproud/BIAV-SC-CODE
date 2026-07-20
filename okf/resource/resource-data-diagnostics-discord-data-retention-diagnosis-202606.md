@@ -4,7 +4,7 @@ title: "discord-data-retention-diagnosis-202606"
 description: "`projects/news/data/discord/channels/` 现存 **3.3 GB / 12803 个 jsonl**，（格式：md）"
 resource: "/Public-Info-Pool/Resource/data-diagnostics/discord-data-retention-diagnosis-202606.md"
 tags: ["data_layer:curated", "deliverable", "topic:data-diagnostics"]
-timestamp: "2026-07-19"
+timestamp: "2026-07-20"
 ---
 
 # 指针概念

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-19",
+  "generated": "2026-07-20",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 8
     },
     "/characters/15577.md": {
       "type": "character",
@@ -1239,7 +1239,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/94451.md": {
       "type": "character",
@@ -4507,7 +4507,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2957 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2960 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4535,7 +4535,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 2263 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 2264 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4591,7 +4591,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3672 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3677 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4633,7 +4633,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 121 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 122 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4675,7 +4675,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1793 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1801 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4689,7 +4689,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10674 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10686 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4703,7 +4703,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10972 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10992 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4717,7 +4717,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2955 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2959 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5899,6 +5899,11 @@
         "variant"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "提及:墨菲",
         "mention"
@@ -5910,6 +5915,11 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:墨菲",
         "mention"
       ],
@@ -7350,22 +7360,12 @@
     ],
     "/characters/94450.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:茉夏",
         "mention"
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -7485,6 +7485,11 @@
         "mention"
       ],
       [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/characters/15593.md",
         "提及:詹金",
         "mention"
@@ -7497,11 +7502,6 @@
       [
         "/characters/15604.md",
         "提及:莱克",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
         "mention"
       ],
       [
@@ -9369,6 +9369,11 @@
         "mention"
       ],
       [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/characters/15593.md",
         "提及:詹金",
         "mention"
@@ -9381,11 +9386,6 @@
       [
         "/characters/15604.md",
         "提及:莱克",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
         "mention"
       ],
       [
