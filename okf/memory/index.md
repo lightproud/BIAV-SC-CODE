@@ -29,7 +29,7 @@
 * [Best Game Wiki Features & UX Patterns Research](/memory/memory-ext-research-best-wiki-features.md) - **Core Info Block (Infobox)**
 * [技能写作审计标尺](/memory/memory-ext-skill-authoring-standard.md) - 技能存在的唯一目的：**从随机的 AI 里榨出确定性（predictability）——同样的「过程」，而非同样的「输出」**。下文每条杠杆
 * [银芯测试策略 — 分层质量护栏](/memory/memory-ext-testing-strategy.md) - 银芯的测试不靠单一数字护城。三层护栏各管一件事，互相补盲：
-* [挂账台账（待办 / 待裁唯一权威）](/memory/memory-ext-todo.md) - *建档：2026-07-10 全仓扫描清点（`rg "待守密人|待裁|挂账"` + 逐条溯源实证），艾瑞卡会话。*
+* [挂账台账（待办 / 待裁唯一权威）](/memory/memory-ext-todo.md) - **P2-3e 全系统验证已跑（只读）**：数据移出树 + env 根，全量 pytest **2963 绿**、build_communi
 * [Wiki characters.json Schema v1.0.1](/memory/memory-ext-wiki-characters-schema-v1.md) - 1. 覆盖 72 角色全部可预见字段，并为 B3 揭露的四类缺口留有表达位：技能引导、背景故事、命轮、立绘
 * [Wiki Phase 2 缺口清单](/memory/memory-ext-wiki-phase-2-gap-inventory.md) - 艾瑞卡在扫描仓库时检测到**严重的记忆-现实脱节**：
 * [Workflow API Key 使用清查](/memory/memory-ext-workflow-api-key-audit.md) - **说明**：

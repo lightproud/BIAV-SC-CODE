@@ -9,7 +9,7 @@
   "stats": {
     "concepts": 370,
     "edges": 414,
-    "terms": 6627,
+    "terms": 6645,
     "by_type": {
       "character": 72,
       "dataset": 94,
@@ -2082,7 +2082,7 @@
     "/memory/memory-ext-todo.md": {
       "type": "knowledge-pointer",
       "title": "挂账台账（待办 / 待裁唯一权威）",
-      "description": "*建档：2026-07-10 全仓扫描清点（`rg \\\"待守密人|待裁|挂账\\\"` + 逐条溯源实证），艾瑞卡会话。*",
+      "description": "**P2-3e 全系统验证已跑（只读）**：数据移出树 + env 根，全量 pytest **2963 绿**、build_community_index honor env 根、kb_eval 不读 Record——运行时读侧位置无关。**抓到消费侧 build 缺口并已修**：`okf_pointer_layers._archive_resource`（community 层门）+ `build_okf_bundle.build_sources`（sources 层门）",
       "resource": "/memory/todo.md",
       "tags": [
         "memory",
@@ -10458,6 +10458,7 @@
       "/memory/memory-archive-pending-discussions.md",
       "/memory/memory-archive-storage-discussion.md",
       "/memory/memory-ext-lessons-archive.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -10914,13 +10915,15 @@
     ],
     "build": [
       "/README.md",
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
+      "/memory/memory-ext-todo.md"
     ],
     "builtin": [
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md"
     ],
     "bundle": [
-      "/README.md"
+      "/README.md",
+      "/memory/memory-ext-todo.md"
     ],
     "cache": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -11150,6 +11153,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -12720,6 +12724,9 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md"
     ],
+    "env": [
+      "/memory/memory-ext-todo.md"
+    ],
     "equivalent": [
       "/projects/silver-core-sdk-doc-memory.md"
     ],
@@ -12732,6 +12739,9 @@
     ],
     "errors": [
       "/projects/silver-core-sdk-doc-errors.md"
+    ],
+    "eval": [
+      "/memory/memory-ext-todo.md"
     ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
@@ -13222,6 +13232,9 @@
     "helper": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
+    "honor": [
+      "/memory/memory-ext-todo.md"
+    ],
     "hook": [
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
@@ -13351,6 +13364,7 @@
       "/community/community-index.md",
       "/community/community-timeline.md",
       "/memory/capability-index.md",
+      "/memory/memory-ext-todo.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/story/story_index.md",
       "/story/story_search_index.md",
@@ -13675,6 +13689,7 @@
     ],
     "kb": [
       "/README.md",
+      "/memory/memory-ext-todo.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -14058,6 +14073,9 @@
     ],
     "layering": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
+    "layers": [
+      "/memory/memory-ext-todo.md"
     ],
     "layout": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
@@ -14824,7 +14842,8 @@
       "/sources/official.md"
     ],
     "okf": [
-      "/README.md"
+      "/README.md",
+      "/memory/memory-ext-todo.md"
     ],
     "old": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md"
@@ -14917,6 +14936,9 @@
     ],
     "overview": [
       "/README.md"
+    ],
+    "p2": [
+      "/memory/memory-ext-todo.md"
     ],
     "p23": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
@@ -15136,6 +15158,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-ext-todo.md",
       "/memory/methodology.md",
       "/memory/morimens-context.md",
       "/memory/project-status.md",
@@ -15745,6 +15768,9 @@
       "/README.md",
       "/assets/assets-readme.md"
     ],
+    "pytest": [
+      "/memory/memory-ext-todo.md"
+    ],
     "python": [
       "/assets/assets-readme.md"
     ],
@@ -15889,6 +15915,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-ext-todo.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-memory-governance.md",
       "/sources/appstore.md",
@@ -16076,6 +16103,7 @@
     ],
     "resource": [
       "/README.md",
+      "/memory/memory-ext-todo.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
@@ -16232,9 +16260,6 @@
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/sources/steam.md",
       "/sources/taptap_review.md"
-    ],
-    "rg": [
-      "/memory/memory-ext-todo.md"
     ],
     "ripgrep": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
@@ -16655,6 +16680,7 @@
     ],
     "sources": [
       "/README.md",
+      "/memory/memory-ext-todo.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
       "/news-output/news-output-bahamut.md",
@@ -18724,6 +18750,9 @@
     "不覆": [
       "/memory/memory-archive-contribution-protocol-hub.md"
     ],
+    "不读": [
+      "/memory/memory-ext-todo.md"
+    ],
     "不贴": [
       "/memory/memory-archive-bpt-architecture-summary-template.md"
     ],
@@ -20471,9 +20500,6 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
-    "仓扫": [
-      "/memory/memory-ext-todo.md"
-    ],
     "仓最": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -20902,7 +20928,6 @@
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
-      "/memory/memory-ext-todo.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
@@ -21029,6 +21054,9 @@
     ],
     "位数": [
       "/community/community-timeline.md"
+    ],
+    "位置": [
+      "/memory/memory-ext-todo.md"
     ],
     "低下": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -21953,6 +21981,9 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
+    "侧位": [
+      "/memory/memory-ext-todo.md"
+    ],
     "侧实": [
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
@@ -22287,7 +22318,6 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
     "全仓": [
-      "/memory/memory-ext-todo.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -22331,6 +22361,9 @@
     "全策": [
       "/memory/memory-archive-contribution-protocol-hub.md"
     ],
+    "全系": [
+      "/memory/memory-ext-todo.md"
+    ],
     "全绿": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
@@ -22372,6 +22405,7 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-ext-lessons-archive.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -22936,6 +22970,9 @@
     "出来": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
+    "出树": [
+      "/memory/memory-ext-todo.md"
+    ],
     "出物": [
       "/README.md"
     ],
@@ -23307,6 +23344,9 @@
     ],
     "到本": [
       "/story/story_research_todo.md"
+    ],
+    "到消": [
+      "/memory/memory-ext-todo.md"
     ],
     "到端": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
@@ -24868,6 +24908,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "口并": [
+      "/memory/memory-ext-todo.md"
+    ],
     "口径": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -24950,6 +24993,9 @@
     ],
     "只要": [
       "/characters/15565.md"
+    ],
+    "只读": [
+      "/memory/memory-ext-todo.md"
     ],
     "只返": [
       "/README.md"
@@ -28162,7 +28208,6 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/memory/memory-ext-todo.md",
       "/projects/project-game.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
@@ -28657,7 +28702,6 @@
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "实证": [
-      "/memory/memory-ext-todo.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md"
     ],
@@ -29353,6 +29397,9 @@
     "层质": [
       "/memory/memory-ext-testing-strategy.md"
     ],
+    "层门": [
+      "/memory/memory-ext-todo.md"
+    ],
     "屈的": [
       "/characters/77923.md"
     ],
@@ -29575,6 +29622,9 @@
     "已从": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
+    "已修": [
+      "/memory/memory-ext-todo.md"
+    ],
     "已删": [
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
     ],
@@ -29618,6 +29668,9 @@
     ],
     "已裁": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
+    "已跑": [
+      "/memory/memory-ext-todo.md"
     ],
     "已退": [
       "/memory/contribution-protocol.md",
@@ -29944,6 +29997,9 @@
       "/characters/15590.md",
       "/characters/54116.md"
     ],
+    "并已": [
+      "/memory/memory-ext-todo.md"
+    ],
     "并形": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
@@ -30165,9 +30221,6 @@
     ],
     "建期": [
       "/news-output/news-output-newsjs.md"
-    ],
-    "建档": [
-      "/memory/memory-ext-todo.md"
     ],
     "建源": [
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md"
@@ -30537,9 +30590,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "待办": [
-      "/memory/memory-ext-todo.md"
-    ],
-    "待守": [
       "/memory/memory-ext-todo.md"
     ],
     "待定": [
@@ -31883,7 +31933,6 @@
       "/characters/15571.md"
     ],
     "扫描": [
-      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -31962,6 +32011,9 @@
     ],
     "抓住": [
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
+    "抓到": [
+      "/memory/memory-ext-todo.md"
     ],
     "抓取": [
       "/memory/memory-ext-discord-archiver-design.md"
@@ -32848,6 +32900,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "据移": [
+      "/memory/memory-ext-todo.md"
+    ],
     "据纪": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -32995,9 +33050,6 @@
     ],
     "描整": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
-    ],
-    "描清": [
-      "/memory/memory-ext-todo.md"
     ],
     "描述": [
       "/assets/assets-archive-integrity.md",
@@ -34506,6 +34558,7 @@
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-session-continuity.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -34982,6 +35035,7 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "无关": [
+      "/memory/memory-ext-todo.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "无可": [
@@ -35189,6 +35243,9 @@
     ],
     "时让": [
       "/characters/54117.md"
+    ],
+    "时读": [
+      "/memory/memory-ext-todo.md"
     ],
     "时轰": [
       "/characters/125346.md"
@@ -36703,9 +36760,6 @@
     ],
     "条活": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
-    ],
-    "条溯": [
-      "/memory/memory-ext-todo.md"
     ],
     "条目": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
@@ -39063,7 +39117,8 @@
     ],
     "消费": [
       "/README.md",
-      "/memory/memory-ext-active-self-improvement-requirements.md"
+      "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/memory/memory-ext-todo.md"
     ],
     "消链": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -39122,7 +39177,6 @@
       "/characters/15590.md"
     ],
     "清点": [
-      "/memory/memory-ext-todo.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -39233,9 +39287,6 @@
     "源子": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
     ],
-    "源实": [
-      "/memory/memory-ext-todo.md"
-    ],
     "源归": [
       "/projects/news-archive-sources-registry.md"
     ],
@@ -39263,8 +39314,7 @@
     ],
     "溯源": [
       "/README.md",
-      "/memory/decisions.md",
-      "/memory/memory-ext-todo.md"
+      "/memory/decisions.md"
     ],
     "滔天": [
       "/characters/15569.md"
@@ -42312,6 +42362,9 @@
       "/characters/94451.md",
       "/characters/95786.md"
     ],
+    "移出": [
+      "/memory/memory-ext-todo.md"
+    ],
     "稀有": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
@@ -42695,6 +42748,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-discord-archiver-design.md",
+      "/memory/memory-ext-todo.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
@@ -43120,6 +43174,9 @@
     "统设": [
       "/memory/memory-ext-discord-archiver-design.md"
     ],
+    "统验": [
+      "/memory/memory-ext-todo.md"
+    ],
     "绣金": [
       "/characters/15584.md"
     ],
@@ -43243,6 +43300,7 @@
       "/memory/memory-ext-biav-info-classification.md"
     ],
     "缺口": [
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
@@ -43286,6 +43344,9 @@
     ],
     "置和": [
       "/memory/memory-ext-biav-info-classification.md"
+    ],
+    "置无": [
+      "/memory/memory-ext-todo.md"
     ],
     "署名": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
@@ -43925,7 +43986,6 @@
       "/README.md",
       "/characters/15603.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
-      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
@@ -44276,6 +44336,7 @@
     ],
     "行时": [
       "/README.md",
+      "/memory/memory-ext-todo.md",
       "/projects/entry-claude-md.md"
     ],
     "行档": [
@@ -44891,6 +44952,9 @@
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md"
     ],
+    "证已": [
+      "/memory/memory-ext-todo.md"
+    ],
     "证报": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
     ],
@@ -45252,6 +45316,7 @@
       "/characters/15565.md"
     ],
     "读侧": [
+      "/memory/memory-ext-todo.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "读取": [
@@ -45371,6 +45436,9 @@
     ],
     "贵的": [
       "/characters/77917.md"
+    ],
+    "费侧": [
+      "/memory/memory-ext-todo.md"
     ],
     "费本": [
       "/README.md"
@@ -46247,6 +46315,7 @@
     "运行": [
       "/README.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/memory/memory-ext-todo.md",
       "/projects/entry-claude-md.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
@@ -46731,9 +46800,6 @@
     ],
     "逐工": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
-    ],
-    "逐条": [
-      "/memory/memory-ext-todo.md"
     ],
     "逐渐": [
       "/characters/15595.md",
@@ -48884,6 +48950,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/memory/memory-ext-todo.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
