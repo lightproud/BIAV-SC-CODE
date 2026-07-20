@@ -27,6 +27,10 @@ class TestClaudeMdReferences(unittest.TestCase):
         self.assertGreaterEqual(len(paths), 15, "extraction regex likely broken")
 
     def test_referenced_paths_exist(self):
+        # 数据湖 Record/Community 已迁 BIAV-SC-DATA（T62 P2-5 §7甲，2026-07-20）：
+        # 路径外置本仓、经 BIAV_SC_DATA_ROOT 解析，无论本地是否残留 untracked 副本，
+        # 一律豁免在树存在断言（含新旧两种前缀写法）。
+        external_lake = ("Public-Info-Pool/Record/Community", "Record/Community")
         # CI 硬门禁走 sparse checkout（2026-07-02 P0-2）排除重量档案层：
         # 该层缺席时跳过指向其中的路径断言；全量环境仍全程执法。
         sparse_excluded = ("Public-Info-Pool/Record", "Public-Info-Pool/Reference")
@@ -34,6 +38,7 @@ class TestClaudeMdReferences(unittest.TestCase):
         missing = sorted({
             p for p in referenced_paths()
             if not (ROOT / p).exists()
+            and not p.startswith(external_lake)
             and (archive_present or not p.startswith(sparse_excluded))
         })
         self.assertEqual(missing, [], f"CLAUDE.md references nonexistent paths: {missing}")
