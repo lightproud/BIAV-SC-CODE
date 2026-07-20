@@ -9,19 +9,20 @@
       "2026-07-17 loop-support seeded": "ledger.ts (SCS-REQ-REPOS-01 R4, pure dedup-ledger logic) seeded at 92.12 after three kill rounds (72.41 -> 89.16 -> 91.63 -> 92.12; 186 killed). The 16 survivors are a documented equivalence class: unique-Map-key `<` vs `<=` ties, stable-sort 1-vs-0 comparator tails, JSON.stringify dropping undefined config fields, NaN cutoff no-ops behind removed early-returns, and unreachable guards.",
       "2026-07-17 loop-support +retention": "retention.ts (R3 retained-region store) joins the target at 96.55 after one kill round (86.21 -> 96.55: combined-overflow fixture + per-segment error-message pins); package floor raised 92.12 -> 93.10. Its 2 survivors are the 'utf8' Buffer.byteLength encoding-arg literals (Node defaults to utf8 — equivalent).",
       "2026-07-17 loop-support +loop-control": "loop-control.ts (R5 LoopControl tool) joins at 96.55 after one kill round (65.52 -> 96.55: the description/schema/ack strings are byte-pinned as model-side surface goldens, error paths and callback containment asserted by name); package floor raised 93.10 -> 93.73. Its 2 survivors are equivalence-class literals.",
-      "2026-07-17 loop-support batch-A fixes": "T49 batch-A fixes (L62 joiner-aware cap, L63 faithful deserialize, L75 finite-at guard) plus their regression tests re-measured the package at 94.35 (ledger 92.59 / retention 96.77 / loop-control 98.28; 316 killed + 1 timeout, 19 survivors = the documented equivalence classes); floor raised 93.73 -> 94.35."
+      "2026-07-17 loop-support batch-A fixes": "T49 batch-A fixes (L62 joiner-aware cap, L63 faithful deserialize, L75 finite-at guard) plus their regression tests re-measured the package at 94.35 (ledger 92.59 / retention 96.77 / loop-control 98.28; 316 killed + 1 timeout, 19 survivors = the documented equivalence classes); floor raised 93.73 -> 94.35.",
+      "2026-07-20 transport-openai + permissions RE-BASELINE (keeper ruling A, T63)": "First DOWNWARD floor move under the only-up rule — sanctioned by keeper ruling A 2026-07-20 (ratchet discipline: floors move down only by keeper ruling). The 2026-07-20 weekly ratchet reds BOTH targets: transport-openai 85.55 -> measured 77.14 and permissions 92.87 -> measured 85.96. Root cause is NOT test-quality decay but FILE GROWTH: both floors were seeded on smaller files (openai dedicated rounds 1-6 on 2026-07-13; permissions round 2), after which v0.53-0.75 grew openai.ts to ~1626 mutants (image input v0.56 / error-normalization v0.57 / WV2-4 temperature v0.72) and hardened permissions/rules.ts (0.70.1 deny-bypass + batch-E), each adding branches without matching kill tests. T63 batch 1-3 (81 tests, openai-mutation-kills-r6/r7/r8) drove transport-openai 77.14 -> 80.28 (+51 REAL kills: decoder state machine, in-stream + non-2xx error classification, the 0.72.1 capability-degradation/temperature branches, message-encoding helpers). That is the clean (non-over-fit) ceiling: the remaining ~89 kills to 85.55 are dominated by idle-watchdog/backoff/debug mutants (the documented 2026-07-13 over-fit class) and translator-boundary equivalents (contentSeen guards only observable at the transport-layer empty_message check), and the batch efficiency curve (+18 / +29 / +4) confirms the killable inventory is exhausted. permissions was NOT kill-batched (ruling A re-baselines it as-is); its 127 survivors are largely rules.ts command-name StringLiterals (a data-table grind, recoverable later under only-up if the keeper invests). New floors: transport-openai 80.0 (measured 80.28), permissions 85.5 (measured 85.96) — each a hair below measured so the 0.75pp tolerance absorbs run-to-run variance; only-up resumes from here on the honest post-growth basis."
     }
   },
   "targets": [
     {
       "name": "permissions",
       "mutate": "src/permissions/**/*.ts",
-      "floor": 92.87
+      "floor": 85.5
     },
     {
       "name": "transport-openai",
       "mutate": "src/transport/openai.ts",
-      "floor": 85.55
+      "floor": 80.0
     },
     {
       "name": "transport-anthropic",
