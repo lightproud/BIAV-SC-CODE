@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-22T03:15:11.513189+00:00",
+  "collected_at": "2026-07-22T05:49:44.530573+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 112,
+  "item_count": 113,
   "items": [
     {
       "source": "google_play",
@@ -263,6 +263,16 @@
       "summary": "赞✨👍！",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-76f8661b-513b-45d0-b27c-a667dc06df2f",
       "author": "Zhi Shao Tan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-21T03:33:16",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Honestly I found this game by accident.",
+      "summary": "Honestly I found this game by accident. I'm LOVING it! its such a hidden gem that deserves way more recognition. I pray that it continues to grow and gain success as I just love the art style, creepy story and art and how it plays like Slay the spire!",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f7b33733-b7e5-4785-8eb2-726b751639a6",
+      "author": "Hunter Lambert",
       "engagement": 0
     },
     {

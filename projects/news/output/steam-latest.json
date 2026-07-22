@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-22T03:15:11.513189+00:00",
+  "collected_at": "2026-07-22T05:49:44.530573+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 14,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -123,7 +123,7 @@
       "voted_up": true,
       "review": "アジア産らしく課金システムの上限がえぐい（海外は一部のプレイヤーに大量課金させる方針の為）\nしかし、無課金でそこそこ楽しんで終わるつもりならかなり楽しめる作品となっている。\nガチャチケットが割とたくさんもらえるが、どうやって貰えばいいのかが分かり辛い、頑張って探そう。\n\nストーリーがとても暗い内容で、登場人物のほとんどが「酷い目に合っている奴」か「酷い奴」の二択でありそういった部分を楽しめるならば是非お勧めしたい。",
       "timestamp_created": 1784638209,
-      "playtime_forever": 5324
+      "playtime_forever": 5474
     },
     {
       "source": "steam",
@@ -153,7 +153,7 @@
       "voted_up": true,
       "review": "好看",
       "timestamp_created": 1784630311,
-      "playtime_forever": 580
+      "playtime_forever": 670
     },
     {
       "source": "steam",
@@ -169,36 +169,6 @@
       "review": "邀请码AUNQEQ953F",
       "timestamp_created": 1784615187,
       "playtime_forever": 177
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-21T04:48:48+00:00",
-      "lang": "schinese",
-      "title": "[负面] 因为沙耶来的，不过游戏本身属于说很无聊套皮又确实打牌还好，多一个也还行没他也无所谓的。羊妈杯子那个事...",
-      "summary": "因为沙耶来的，不过游戏本身属于说很无聊套皮又确实打牌还好，多一个也还行没他也无所谓的。羊妈杯子那个事情感觉钉死耻辱柱了，没法当没发生过",
-      "url": "https://steamcommunity.com/profiles/76561198841791640/recommended/3052450",
-      "author": "76561198841791640",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "因为沙耶来的，不过游戏本身属于说很无聊套皮又确实打牌还好，多一个也还行没他也无所谓的。羊妈杯子那个事情感觉钉死耻辱柱了，没法当没发生过",
-      "timestamp_created": 1784609328,
-      "playtime_forever": 5659
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-21T04:28:03+00:00",
-      "lang": "english",
-      "title": "[正面] d",
-      "summary": "d",
-      "url": "https://steamcommunity.com/profiles/76561198169405066/recommended/3052450",
-      "author": "76561198169405066",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "d",
-      "timestamp_created": 1784608083,
-      "playtime_forever": 770
     },
     {
       "source": "steam",
