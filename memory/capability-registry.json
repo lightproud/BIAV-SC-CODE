@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-20",
+    "generated_at": "2026-07-22",
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
