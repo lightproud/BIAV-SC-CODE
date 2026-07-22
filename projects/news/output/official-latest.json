@@ -1,10 +1,30 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-20T16:24:56.227237+00:00",
+  "collected_at": "2026-07-22T03:15:11.513189+00:00",
   "source": "official",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
+    {
+      "source": "official",
+      "time": "2026-07-21T07:00:19+00:00",
+      "lang": "en",
+      "title": "[Steam新闻] V2.5.3 Fight to the Astral Doom",
+      "summary": "She never cares who stands before her.She only lives to slay those pure enough, strong enough to face her.\"Come—kill me, or be killed.\"She's thrilled. She can't keep the grin off her face.Will she survive and conquer all...?Will she finally claim that Crown of blood👑?",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329268256",
+      "author": "lqx02483534",
+      "engagement": 0
+    },
+    {
+      "source": "official",
+      "time": "2026-07-21T03:24:16+00:00",
+      "lang": "en",
+      "title": "[Steam新闻] 🎧 V2.5.2 Radio Drama - Addiction",
+      "summary": "\"The fouler the suffering, the more it becomes a reward to filthy little things like you.\"\"Your wretched savior is not coming... Kneel. Offer yourself to the ocean.\"✦ Pontos VA: Junichi Suwabe",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329267996",
+      "author": "lqx02483534",
+      "engagement": 0
+    },
     {
       "source": "official",
       "time": "2026-07-20T07:22:02+00:00",
