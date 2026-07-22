@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-22T19:14:53.938317+00:00",
+  "collected_at": "2026-07-22T22:04:27.117862+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 5,
   "items": [
     {
       "source": "steam",
@@ -63,7 +63,7 @@
       "voted_up": true,
       "review": "very fun game!! the art is pretty and so far the story is nice as well.\r\n\r\n\r\nas for the gameplay i particular: it can be hard to pick up, especially if youre like me and dislike relying on ingame tutorials. but it isn't egregious or anything, just difficult to parse. all the information is available and relatively easy to find, so if you've got the will to figure it out you'll be fine, dont worry\r\n\r\nthere's a lot of flexibility in play styles too! that's my favorite part probably; i've never been good with games that try to force a minmax playstyle (although i don't mind that kind of thing on my own terms). there's lots of different strategies and playstyles you can use so if you don't like, for example, caro and chaos, you can adjust and use caro and ultra, or chaos and ultra, etcetc. you can make basically any team comp work lol\r\n\r\nthe difficulty curve has been nice so far, although i admittedly haven't made it that far, so i'm not sure how it is late-game. but at least up to about keeper level 25 or so it's been lenient. you can seek out challenge, but if you don't want to, you don't need to push yourself either.\r\n\r\nthe gacha is also pretty damn generous. you can grind out a good amount of 5 pulls every day if you really wanted, and the rates are very kind compared to some, uh, other gacha games (proseka i'm looking at you). keeping up with the discord/an updates account (like morimens-news on tumblr) is also a good idea since redemption codes are given out all the time (although you won't die without, like i said you can grind perfectly fine on your own)\r\n\r\ntl;dr the gameplay is fairly well-balanced and very fun, especially if you enjoy the satisfaction of blowing through a wave with a single card (cough cough final verdict)\r\n\r\n\r\nabsolutely a recommendation! fun game i like it a lot. the fem keeper and ramona should kiss. doll inferno has a cool design. ok done now goodbyeeee",
       "timestamp_created": 1784686076,
-      "playtime_forever": 1140
+      "playtime_forever": 1217
     },
     {
       "source": "steam",
@@ -78,37 +78,7 @@
       "voted_up": true,
       "review": "the best gacha out there - dark, moody, great combat",
       "timestamp_created": 1784683222,
-      "playtime_forever": 1633
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-21T21:31:45+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩",
-      "summary": "好玩",
-      "url": "https://steamcommunity.com/profiles/76561199859431706/recommended/3052450",
-      "author": "76561199859431706",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩",
-      "timestamp_created": 1784669505,
-      "playtime_forever": 843
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-21T20:40:42+00:00",
-      "lang": "english",
-      "title": "[正面] Absolute Peak. Story is amazing to the point i cri...",
-      "summary": "Absolute Peak. Story is amazing to the point i cried multiple times",
-      "url": "https://steamcommunity.com/profiles/76561199366313856/recommended/3052450",
-      "author": "76561199366313856",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Absolute Peak. Story is amazing to the point i cried multiple times",
-      "timestamp_created": 1784666442,
-      "playtime_forever": 10628
+      "playtime_forever": 1634
     }
   ]
 }

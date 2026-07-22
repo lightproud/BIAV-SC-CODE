@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-22T19:14:53.938317+00:00",
+  "collected_at": "2026-07-22T22:04:27.117862+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 118,
+  "item_count": 119,
   "items": [
     {
       "source": "google_play",
@@ -623,6 +623,16 @@
       "summary": "The most generous gacha I've played.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-61a37276-7b16-4db9-8392-01c8103d5b11",
       "author": "Cecil H.Y.",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-21T19:48:01",
+      "lang": "ko",
+      "title": "[Google Play 中评] ★3 제법 재밌었던 게임",
+      "summary": "제법 재밌었던 게임",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-ea9bc66b-1cf4-47bc-8605-5af9a6ad1889",
+      "author": "YJ S",
       "engagement": 0
     },
     {
