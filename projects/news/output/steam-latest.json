@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-22T16:20:37.688332+00:00",
+  "collected_at": "2026-07-22T19:14:53.938317+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-22T16:38:47+00:00",
+      "lang": "schinese",
+      "title": "[正面] 我去，怎么那么好玩，我饭也不吃，觉也不睡，每天两眼一睁就是打开这个忘却前夜，真的太好玩了，好玩到父母...",
+      "summary": "我去，怎么那么好玩，我饭也不吃，觉也不睡，每天两眼一睁就是打开这个忘却前夜，真的太好玩了，好玩到父母不想再管我，亲戚看不起我，但是这能怎么办，我已经深深爱上这个游戏了，别人对我的指点只不过是对我的认可罢了",
+      "url": "https://steamcommunity.com/profiles/76561199594482144/recommended/3052450",
+      "author": "76561199594482144",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "我去，怎么那么好玩，我饭也不吃，觉也不睡，每天两眼一睁就是打开这个忘却前夜，真的太好玩了，好玩到父母不想再管我，亲戚看不起我，但是这能怎么办，我已经深深爱上这个游戏了，别人对我的指点只不过是对我的认可罢了",
+      "timestamp_created": 1784738327,
+      "playtime_forever": 2802
+    },
     {
       "source": "steam",
       "time": "2026-07-22T09:16:39+00:00",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "I am torn about this game. It is fun enough to entertain you, but it's not difficult enough to give you that invested feeling every battle. Most of the time, I'm just doing the battle for the sake of it. But it's a free to play game so I'll just give it a thumbs up. Try it yourself and decide. Plus, I don't really like turn-based games, so the fact that I played this for more than 12 hours is enough for me to give it a thumbs up.\n\nWhat I like about this game:\n1. The mechanics of the game is easy to understand and familiarize.\n2. The visual is pretty\n3. It is a generous gacha game. I feel like I have more than enough to enjoy the game as it is and any purchases ( I never did) that you make are completely optional.\n4. I really like the format of the game. You do minor battles, gain temporary boosts, earn coins, purchase relics for more boosts, heal your characters, and then proceed to the final boss fight. With the right strategy you can easily kill the boss in a few turns haha.\n\nWhat I don't like about this game:\n1. The difficulty progression is too slow. I'm in the middle of Chapter 3 and I'm bored. There is a \"recommended\" level for every mission, and I can easily do the mission even if I'm 2-3 levels lower that the recommended. I searched on reddit when will the game be finally interesting and there were people who said it will be at the end of chapter 5 or early in chapter 6. Part of me isn't willing to wait that long, but the other part of me wants to experience how difficult chapter 6 is. 😆\n2. I really can't get into the story.\n3. In every line up, you can only have characters from a maximum of 2 realms. There are 4 realms in total. It would have been so much fun if you can have 1 character per realm for your line up and they fight a really OP final boss.\n4. The artificial communication with the awakeners in a chat format is cringe to me.",
       "timestamp_created": 1784703348,
-      "playtime_forever": 786
+      "playtime_forever": 820
     },
     {
       "source": "steam",
@@ -48,7 +63,7 @@
       "voted_up": true,
       "review": "very fun game!! the art is pretty and so far the story is nice as well.\r\n\r\n\r\nas for the gameplay i particular: it can be hard to pick up, especially if youre like me and dislike relying on ingame tutorials. but it isn't egregious or anything, just difficult to parse. all the information is available and relatively easy to find, so if you've got the will to figure it out you'll be fine, dont worry\r\n\r\nthere's a lot of flexibility in play styles too! that's my favorite part probably; i've never been good with games that try to force a minmax playstyle (although i don't mind that kind of thing on my own terms). there's lots of different strategies and playstyles you can use so if you don't like, for example, caro and chaos, you can adjust and use caro and ultra, or chaos and ultra, etcetc. you can make basically any team comp work lol\r\n\r\nthe difficulty curve has been nice so far, although i admittedly haven't made it that far, so i'm not sure how it is late-game. but at least up to about keeper level 25 or so it's been lenient. you can seek out challenge, but if you don't want to, you don't need to push yourself either.\r\n\r\nthe gacha is also pretty damn generous. you can grind out a good amount of 5 pulls every day if you really wanted, and the rates are very kind compared to some, uh, other gacha games (proseka i'm looking at you). keeping up with the discord/an updates account (like morimens-news on tumblr) is also a good idea since redemption codes are given out all the time (although you won't die without, like i said you can grind perfectly fine on your own)\r\n\r\ntl;dr the gameplay is fairly well-balanced and very fun, especially if you enjoy the satisfaction of blowing through a wave with a single card (cough cough final verdict)\r\n\r\n\r\nabsolutely a recommendation! fun game i like it a lot. the fem keeper and ramona should kiss. doll inferno has a cool design. ok done now goodbyeeee",
       "timestamp_created": 1784686076,
-      "playtime_forever": 1050
+      "playtime_forever": 1140
     },
     {
       "source": "steam",
@@ -94,36 +109,6 @@
       "review": "Absolute Peak. Story is amazing to the point i cried multiple times",
       "timestamp_created": 1784666442,
       "playtime_forever": 10628
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-21T18:07:21+00:00",
-      "lang": "english",
-      "title": "[正面] its actually pretty fun",
-      "summary": "its actually pretty fun",
-      "url": "https://steamcommunity.com/profiles/76561199012911426/recommended/3052450",
-      "author": "76561199012911426",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "its actually pretty fun",
-      "timestamp_created": 1784657241,
-      "playtime_forever": 404
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-21T16:44:21+00:00",
-      "lang": "schinese",
-      "title": "[正面] 构筑思路与立绘都很好，我不想多说虚的，这是我在steam上能够找到的为数不多精美二次元回合策略游戏了",
-      "summary": "构筑思路与立绘都很好，我不想多说虚的，这是我在steam上能够找到的为数不多精美二次元回合策略游戏了",
-      "url": "https://steamcommunity.com/profiles/76561198786404669/recommended/3052450",
-      "author": "76561198786404669",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "构筑思路与立绘都很好，我不想多说虚的，这是我在steam上能够找到的为数不多精美二次元回合策略游戏了",
-      "timestamp_created": 1784652261,
-      "playtime_forever": 3730
     }
   ]
 }
