@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-22T08:26:43.102881+00:00",
+  "collected_at": "2026-07-22T11:09:10.459708+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 113,
+  "item_count": 114,
   "items": [
     {
       "source": "google_play",
@@ -273,6 +273,16 @@
       "summary": "赞✨👍！",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-76f8661b-513b-45d0-b27c-a667dc06df2f",
       "author": "Zhi Shao Tan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-21T09:39:43",
+      "lang": "en",
+      "title": "[Google Play 差评] ★2 why always connecting whenever i tried t",
+      "summary": "why always connecting whenever i tried to enter the battle",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-0b1f86a8-35d3-4403-bc94-4d8a475fbec5",
+      "author": "Kangi Is Here",
       "engagement": 0
     },
     {

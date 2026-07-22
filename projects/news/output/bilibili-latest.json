@@ -1,28 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-22T08:26:43.102881+00:00",
+  "collected_at": "2026-07-22T11:09:10.459708+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 19,
+  "item_count": 14,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-07-21T10:41:01+00:00",
-      "lang": "zh",
-      "title": "在你的眼里 我是什么样的呢",
-      "summary": "-\n  └ 与白无瑕 (3赞): 刷了一天肉块，终于看见一个少女了[黎歌Neeko_RUA脸]\n  └ 哈基沙大玉 (2赞): [鸣潮2周年同人绘画_看你]\n  └ 区彼妥 (1赞): 阿婆主为什么要放一个肉块在这里？",
-      "url": "https://www.bilibili.com/video/BV1tPKa6HEft",
-      "author": "失忆做美梦",
-      "engagement": 824,
-      "media_url": "https://i1.hdslb.com/bfs/archive/c558199504c90f65cf0df9a706e6a6124ff5596f.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 812,
-        "comment_count": 12,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
     {
       "source": "bilibili",
       "time": "2026-07-21T13:38:10+00:00",
@@ -31,11 +13,11 @@
       "summary": "感觉3启队伍有点玩不下去了，已经需要额外的造物支撑了，拿不到固定造物和埋了差不多。\n这期主要是初始造物都强的不像话，不然我感觉道中都够你喝一壶大的。毕竟小怪伤害已经全面加强了。\n5图道中两个精英怪何意味。\n混沌三件套：酒杯，项链，照相机，我说全金选到就赢三件套。\n  └ 寂榕 (5赞): 这么低练度的425，厉害了\n  └ 夏·卷 (1赞): 免罪符老师依旧：水温又上升了（展示425）\n  └ 灵恒之夏 (0赞): 期待下一个作品！",
       "url": "https://www.bilibili.com/video/BV1giK86QEp4",
       "author": "断裂免罪符",
-      "engagement": 741,
+      "engagement": 812,
       "media_url": "https://i0.hdslb.com/bfs/archive/4f4d68cda65861447c3c3d841ed050be403f49b3.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 737,
+        "play": 808,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 1
@@ -49,11 +31,11 @@
       "summary": "虽然羊妈血量涨了一截，但整体水温感觉\n  └ _double_double (2赞): 哇怪物图鉴真的来了[打call]\n  └ Yoroha_NULL (2赞): 隐匿的效果\n  └ 黑白-看客 (5赞): 怪物图鉴是对的，实用性很高",
       "url": "https://www.bilibili.com/video/BV1BkKh6iEq3",
       "author": "花岚天音Amane",
-      "engagement": 705,
+      "engagement": 744,
       "media_url": "https://i1.hdslb.com/bfs/archive/3985d8f84013cc02d10917bb77cb71195f6dbe86.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 695,
+        "play": 734,
         "comment_count": 10,
         "comments_fetched": 3,
         "danmaku": 0
@@ -61,35 +43,17 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-21T09:33:15+00:00",
-      "lang": "zh",
-      "title": "匂坂郁纪小可爱",
-      "summary": "-\n  └ chikoi31 (2赞): 有没有沙耶版本\n  └ 木大の大罪司教 (1赞): 依旧如此诡异\n  └ -匂坂郁纪- (1赞): 绷不住了",
-      "url": "https://www.bilibili.com/video/BV1DGKb6EEbi",
-      "author": "耕司青海瑶",
-      "engagement": 308,
-      "media_url": "https://i2.hdslb.com/bfs/archive/66edc61a78685fb9220ecc084d15b13ec7486344.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 278,
-        "comment_count": 30,
-        "comments_fetched": 3,
-        "danmaku": 20
-      }
-    },
-    {
-      "source": "bilibili",
       "time": "2026-07-22T03:41:36+00:00",
       "lang": "zh",
       "title": "【忘却前夜】怎么又能逃课了？混沌最终法则大队满血通关融灾3-5",
-      "summary": "-\n  └ 凌厉彼岸 (1赞): 逃课成功 感谢大佬[星星眼][星星眼]\n  └ 嘎啦嘎啦果 (1赞): 诺缔拉可以换成法洛思 一样的打法 可能还更舒适 全部的她全部充给混沌队友 优先两个小骑士和艾尔瓦\n  └ 嘎啦嘎啦果 (0赞): 鼠鼠版，鼠鼠有成长有群攻，带双子白有过牌",
+      "summary": "-\n  └ 凌厉彼岸 (1赞): 逃课成功 感谢大佬[星星眼][星星眼]\n  └ 嘎啦嘎啦果 (1赞): 诺缔拉可以换成法洛思 一样的打法 可能还更舒适 全部的她全部充给混沌队友 优先两个小骑士和艾尔瓦\n  └ 嘎啦嘎啦果 (1赞): 钥令固定全部的她。\n女仆和艾尔瓦需要+12，没+12的话可能生存差一大截。\n除了诺缔拉的命轮之外，其他人的密契和命轮最好都要照抄。全队堆精通和银钥。\n需要全队比较高的灵塑适性，和等级。\n并不是一定能苟到底的，还是可能会被对面滚雪球直接让我们崩盘。\n开局凹视频里的造物，或者是每回合回血的，或者是开钥令给毒反的。\n艾尔瓦有防御就先打防御，这样能叠戒备。\n小骑士如果有x费和防御或者大招在手，就先出打击，这样能让盾量提高50%。\n女仆的3费可以翻倍用，可以作为算力从高到低出牌能上毒的跳板。至少留两张料理在手里，因为这样能让女仆的治疗获得加成，但也不要留太多，这样的话下回合进张就少了。\n艾尔瓦的0费能打就打，最好和防御一起打（同理打击。看专造效果），双子白多洗一点爆率，或者把艾瑞卡专武换成鸟弟专。注意，因为带了茉夏sr，开钥令前要防止打击拉不上来。前期适当屯一些超限印一些0费和3费，后期症状卡上来了，就有大开大。\n诺缔拉大招不能随便交，要提前防对面的三回合易伤。\n可以适当屯钥能，对轴开出二次钥令，可以选择小小心愿、短暂的永恒（给艾尔瓦）、唯一的种子（印小骑士x费或者艾尔瓦3费），以及回血降力给盾的都可以看着给。",
       "url": "https://www.bilibili.com/video/BV1S4gz6WEsX",
       "author": "嘎啦嘎啦果",
-      "engagement": 285,
+      "engagement": 402,
       "media_url": "https://i0.hdslb.com/bfs/archive/9ff20834de787bfc614414f1c1c9df6e0bac3eb1.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 277,
+        "play": 394,
         "comment_count": 8,
         "comments_fetched": 3,
         "danmaku": 0
@@ -103,12 +67,30 @@
       "summary": "要被千面万象打死了好怕怕哦（棒读\n残局唯一生存kks，谁看打击回血能不笑\n  └ iq2233 (1赞): 吃个驱散就老实了[doge]\n  └ 抱着狗狗不敢说话 (0赞): 这玩意可肉嘟嘟了 还有反击在。 我以前用过应该女王戒律不错 一直可以加固，后面发现 带5-10反击对面就避开不打了",
       "url": "https://www.bilibili.com/video/BV1WXKa6UEJt",
       "author": "上完大号按哪个键",
-      "engagement": 276,
+      "engagement": 297,
       "media_url": "https://i1.hdslb.com/bfs/archive/544c271d87c5e4a8b1a60d5135cd6cc25e9f774c.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 272,
+        "play": 293,
         "comment_count": 4,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-22T05:11:19+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜/时摆组手书】绝对不可以熬夜哦！",
+      "summary": "哟西熬夜吧小莉奥\nos时摆好美味。\n音频来源：cc老师（配音界的王子）\n  └ 丰川祥子-忍界大战 (1赞): @半醒的鱼yyy\n  └ 星灿乌云里 (0赞): [星星眼]可爱守密入",
+      "url": "https://www.bilibili.com/video/BV1s6gr6pEhU",
+      "author": "保温傍晚bw",
+      "engagement": 280,
+      "media_url": "https://i2.hdslb.com/bfs/archive/b09694f0489da8d4426b4be5ca77696d5bbaeaf2.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 278,
+        "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
       }
@@ -121,11 +103,11 @@
       "summary": "这队是不是有点太超模了\n我们和中毒玩的真的是同一个游戏吗\n\n人偶好像没什么存在感\n可能塞个界精比较好\n\n背景音乐：\nCount Basie - &quot;Hay Burner&quot;\nSeycara - &quot;642 Ways (Vintage Vinyl Edition)&quot;",
       "url": "https://www.bilibili.com/video/BV11YKY6HE5b",
       "author": "夢遊遊遊遊",
-      "engagement": 236,
+      "engagement": 251,
       "media_url": "https://i0.hdslb.com/bfs/archive/8c06aee3f63b107e2450735da23528234d795628.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 236,
+        "play": 251,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -133,18 +115,18 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-21T08:47:47+00:00",
+      "time": "2026-07-22T08:44:30+00:00",
       "lang": "zh",
-      "title": "看了一天肉块，终于刷到美少女了",
-      "summary": "终于cos上了沙耶\n  └ 沉桵 (2赞): 40℃了老大今天\n  └ 哈基沙大玉 (2赞): 哇沙耶\n  └ AAA法厄同夫人薇薇安 (2赞): up好像意识到了自己是美少女这件事[星星眼]",
-      "url": "https://www.bilibili.com/video/BV1dPKb69Eju",
-      "author": "淡紫樱梦",
-      "engagement": 233,
-      "media_url": "https://i1.hdslb.com/bfs/archive/ed9b4bbd8c826ab5a1b5ce70e7a6217af854a74b.jpg",
+      "title": "［相位/教学］御驾亲征的杜勒原来这么强？！",
+      "summary": "-\n  └ yi36403 (2赞): 已完成今日的相位大学习[OK]\n  └ 星极吃不吃得了热豆腐 (2赞): 新鲜出炉[doge]\n  └ 青青子衿-隐 (1赞): 支持[打call][打call][打call]",
+      "url": "https://www.bilibili.com/video/BV1W1gC6oEL9",
+      "author": "莱星Ligh",
+      "engagement": 243,
+      "media_url": "https://i2.hdslb.com/bfs/archive/bcb9cd3f9795218e24a8fd550e5e530a378ad7e0.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 220,
-        "comment_count": 13,
+        "play": 239,
+        "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -157,67 +139,13 @@
       "summary": "键帽什么时候原谅我们血希",
       "url": "https://www.bilibili.com/video/BV1czKY67EbL",
       "author": "ぽんとねい",
-      "engagement": 199,
+      "engagement": 202,
       "media_url": "https://i1.hdslb.com/bfs/archive/d3bd1c41f491f852fe4c4a38850f9f27251b3966.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 199,
+        "play": 202,
         "comment_count": 0,
         "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-21T10:27:34+00:00",
-      "lang": "zh",
-      "title": "忘却前夜100回合的终结",
-      "summary": "-\n  └ -_--_-_--_-_ (0赞): 质量好高[打call]\n  └ 蔡怜儿 (0赞): 这牌库直接爆了",
-      "url": "https://www.bilibili.com/video/BV1sMKa6UEtK",
-      "author": "不知今世为何",
-      "engagement": 193,
-      "media_url": "https://i1.hdslb.com/bfs/archive/5dbf2de5872a3497b286ef0ead0e534801c89480.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 191,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-21T10:47:00+00:00",
-      "lang": "zh",
-      "title": "《忘却前夜》简章3-3，P1你好，猎头人夫人！",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1vHNJ6tELx",
-      "author": "不可燃抹茶果冻",
-      "engagement": 162,
-      "media_url": "https://i2.hdslb.com/bfs/archive/a22a639b434d50263fa68eb78ee877ea3a021043.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 162,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-21T08:46:00+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】i哈tv之打击神秘产崽女（被反击做局版）",
-      "summary": "如果小骑士是最早备战四周年的角色，那我们哈姆林可能是最早备战5周年的角色（我去不早说）\n  └ 归于喧嚣海洋吧 (0赞): 难道我哈真是百万大C？\n  └ 欢你喜欢大家都 (0赞): 上面显示steam第三方服务未通过\n  └ 欢你喜欢大家都 (0赞): bro我现在游戏进不去了，你怎么样？",
-      "url": "https://www.bilibili.com/video/BV1zBKb6hEYC",
-      "author": "通往你幸福的花园",
-      "engagement": 156,
-      "media_url": "https://i0.hdslb.com/bfs/archive/c716526b5f6c6a681ef87ed139e579f7ebbbb618.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 149,
-        "comment_count": 7,
-        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -226,52 +154,16 @@
       "time": "2026-07-21T20:57:57+00:00",
       "lang": "zh",
       "title": "【上海视觉小说only】星光咖啡馆地大分店宣摊",
-      "summary": "",
+      "summary": "-\n  └ 呵呵呵呵哈嘿嘻 (0赞): 坏了这是真想要",
       "url": "https://www.bilibili.com/video/BV1K9Ke6dEYU",
       "author": "Rance様_",
-      "engagement": 149,
+      "engagement": 157,
       "media_url": "https://i1.hdslb.com/bfs/archive/4d72341502eed0b492359d9167455fc5f8599104.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 149,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-21T10:36:50+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜×沙耶之歌】《颠倒的新生》剧情合集",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV11gKa67EiV",
-      "author": "月下观星兰夜花裳",
-      "engagement": 140,
-      "media_url": "https://i0.hdslb.com/bfs/archive/262423da3b8a22050e2a09e96b2e5e5b582d1d4a.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 138,
-        "comment_count": 2,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-22T05:11:19+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜/时摆组手书】绝对不可以熬夜哦！",
-      "summary": "哟西熬夜吧小莉奥\nos时摆好美味。\n音频来源：cc老师（配音界的王子）\n  └ 丰川祥子-忍界大战 (1赞): @半醒的鱼yyy\n  └ 星灿乌云里 (0赞): [星星眼]可爱守密入",
-      "url": "https://www.bilibili.com/video/BV1s6gr6pEhU",
-      "author": "保温傍晚bw",
-      "engagement": 118,
-      "media_url": "https://i2.hdslb.com/bfs/archive/b09694f0489da8d4426b4be5ca77696d5bbaeaf2.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 116,
-        "comment_count": 2,
-        "comments_fetched": 2,
+        "play": 156,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -283,11 +175,11 @@
       "summary": "这个阵容也许还可以？\n神父提供高额血量和回复，沙耶+鸟弟道中清杂体验不错，阿拉克涅提供护盾和辅助输出。\n虽然比上个视频慢一回合，但是打起来手感比较安逸， \n缺点是银钥不太够，也许神父换羊妈更好？",
       "url": "https://www.bilibili.com/video/BV1hHgz6oECH",
       "author": "千年之剑",
-      "engagement": 75,
+      "engagement": 125,
       "media_url": "https://i0.hdslb.com/bfs/archive/21be4dcfdba9ebbe05843b088959cfc882bc332f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 75,
+        "play": 125,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -298,16 +190,34 @@
       "time": "2026-07-22T02:00:00+00:00",
       "lang": "zh",
       "title": "【没想好的初玩实况】冲动的后果丨沙耶之歌 The Song of Saya #25",
-      "summary": "感谢您的观看，我是一个游戏实况主，名字没想好。\n游戏名字：沙耶之歌 The Song of Saya\n游戏平台：Steam",
+      "summary": "感谢您的观看，我是一个游戏实况主，名字没想好。\n游戏名字：沙耶之歌 The Song of Saya\n游戏平台：Steam\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]\n  └ A-A-A-KRIS (0赞): UP主加油！",
       "url": "https://www.bilibili.com/video/BV1w9K86gEvH",
       "author": "没想好哦MeiXiangHAO",
-      "engagement": 45,
+      "engagement": 89,
       "media_url": "https://i2.hdslb.com/bfs/archive/44473ebf43c9499518793e8747c23f5f81be9363.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 45,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 87,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-22T06:39:19+00:00",
+      "lang": "zh",
+      "title": "沙耶的绘画过程",
+      "summary": "-\n  └ 哈基沙大玉 (0赞): 可爱捏",
+      "url": "https://www.bilibili.com/video/BV1rMgr65EVj",
+      "author": "汐式烤全烊",
+      "engagement": 39,
+      "media_url": "https://i0.hdslb.com/bfs/archive/acf75ed4d11de00ac983802216e71dd3f3681b2d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 38,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -319,11 +229,11 @@
       "summary": "-\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV1UsKY6dEXt",
       "author": "_山田涼_",
-      "engagement": 19,
+      "engagement": 21,
       "media_url": "https://i1.hdslb.com/bfs/archive/19c939659e12cf20d6d30d28d7665e32639983e4.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 18,
+        "play": 20,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -331,17 +241,17 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-22T06:39:19+00:00",
+      "time": "2026-07-22T10:38:00+00:00",
       "lang": "zh",
-      "title": "沙耶的绘画过程",
+      "title": "《忘却前夜》简章3-3，P2单手停火车，是你？",
       "summary": "",
-      "url": "https://www.bilibili.com/video/BV1rMgr65EVj",
-      "author": "汐式烤全烊",
-      "engagement": 2,
-      "media_url": "https://i0.hdslb.com/bfs/archive/acf75ed4d11de00ac983802216e71dd3f3681b2d.jpg",
+      "url": "https://www.bilibili.com/video/BV1pANJ66EYY",
+      "author": "不可燃抹茶果冻",
+      "engagement": 1,
+      "media_url": "https://i2.hdslb.com/bfs/archive/b20c0dd28d8823488ec789e19f59d5cbb429b0d4.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 2,
+        "play": 1,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
