@@ -4,7 +4,7 @@ title: "language_config"
 description: "LanguageConfig.lua (runtime memory extraction) · total_entries=3045 · 生成 2026-04-26"
 resource: "/projects/wiki/data/processed/language_config.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:localization"]
-timestamp: "2026-07-20"
+timestamp: "2026-07-22"
 ---
 
 # 指针概念

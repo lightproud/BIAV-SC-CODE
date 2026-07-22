@@ -4,7 +4,7 @@ title: "bpt-prompt-assembly-layer-design-20260705"
 description: "bpt-agent-sdk 是官方 Claude Code / Claude Agent SDK 的干净重实现（clean-room reimplementation）。它的 agent-loop 要向模型发系统提示词。官方的系统提示词**不是一根字符串**——上游 README 明确写「Claude Code doesn't just have one single string」。它是一个**片段库（fragment store）**：553 个带 HTML 注释头的 m（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-20"
+timestamp: "2026-07-22"
 ---
 
 # 指针概念

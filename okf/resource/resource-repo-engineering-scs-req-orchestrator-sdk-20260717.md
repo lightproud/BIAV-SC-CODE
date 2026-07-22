@@ -4,7 +4,7 @@ title: "scs-req-orchestrator-sdk-20260717"
 description: "**银芯编排 SDK 持有分子:钟、跨会话状态、会话装配。它把\"活得比一次调用久\"的 agent 所需的脏活——循环、调度、重试、恢复、台账——做成可复用零件,交给宿主装配。**（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-20"
+timestamp: "2026-07-22"
 ---
 
 # 指针概念

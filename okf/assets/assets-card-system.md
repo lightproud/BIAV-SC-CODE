@@ -4,7 +4,7 @@ title: "card-system"
 description: "card-system 事实数据"
 resource: "/assets/data/card-system.json"
 tags: ["data_layer:curated", "fact-bible"]
-timestamp: "2026-07-20"
+timestamp: "2026-07-22"
 ---
 
 # 指针概念

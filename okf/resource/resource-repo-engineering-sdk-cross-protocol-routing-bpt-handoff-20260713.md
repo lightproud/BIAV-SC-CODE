@@ -4,7 +4,7 @@ title: "sdk-cross-protocol-routing-bpt-handoff-20260713"
 description: "BPT 报障场景：主模型 `azure/gpt-5.6-sol`（openai-chat 协议）+ Haiku 档子代理映射（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/sdk-cross-protocol-routing-bpt-handoff-20260713.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-20"
+timestamp: "2026-07-22"
 ---
 
 # 指针概念

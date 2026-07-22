@@ -4,7 +4,7 @@ title: "silver-core-sdk-bug-audit-20260717"
 description: "末一项（L75）非编造，而是对自造 R4 代码加倍审查、**实机运行确认**（node 跑出 RangeError）后计入，（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-20260717.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-20"
+timestamp: "2026-07-22"
 ---
 
 # 指针概念

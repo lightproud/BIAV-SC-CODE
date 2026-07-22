@@ -4,7 +4,7 @@ title: "news-push-format-20260712"
 description: "采集侧已稳（全量档案 + 3 小时节拍自动跑、日采北京 15 点档）；待定的是**输出侧最后一公里**：（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/news-push-format-20260712.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-20"
+timestamp: "2026-07-22"
 ---
 
 # 指针概念
