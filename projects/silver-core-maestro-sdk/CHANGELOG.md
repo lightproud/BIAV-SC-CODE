@@ -12,6 +12,60 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.76.0 — 2026-07-22
+
+The `cancelled` closed terminal (BPT requirement P0-D1, 2026-07-22: a
+user-initiated cancel is a first-class terminal outcome — ledger-
+distinguishable from `failed`, and NEVER auto-rerun). Prior to this the
+only ways a host could fake a cancel were both wrong: recording an 'error'
+re-runs the session on the backoff schedule against the user's intent, and
+forcing attempts to the ceiling mis-books a cancel as a failure in every
+audit. Delivered surface:
+
+- `SessionState` gains the terminal `cancelled` (no outgoing edges;
+  `TERMINAL_STATES` includes it; `SESSION_STATES` appends it LAST so index
+  order of the first five entries is undisturbed). `SessionEvent` gains
+  `cancel`, legal from every non-terminal state:
+  pending/running/retrying --cancel--> cancelled.
+- `TaskLedger.cancelSession(sessionId, { reason?, cancelledAt? })`:
+  idempotent on an already-cancelled session (returns the stored record,
+  keeps the FIRST cancel's stamps, appends nothing); throws
+  InvalidTransitionError on done/failed; per-session mutex + putSessionIf
+  CAS like every mutating path, with a bounded re-read-re-apply loop on CAS
+  loss (cancel is legal from every non-terminal state, so it lands over an
+  interleaved claim/settle; a rival reaching done/failed first throws).
+  nextRunAt and leaseUntil are cleared unconditionally — a cancelled
+  session is never due, never listed by claimDue, and can never look like
+  an expired claim to sweepExpiredLeases (which lists `running` alone).
+- Query-level audit: `QueryOutcome` gains `'cancelled'` (BPT P0-D1 §4.4,
+  option A — the query history distinguishes "cut short" from "failed"
+  without session-level special-casing). Cancelling from `running` appends
+  one row for the in-flight attempt (outcome 'cancelled', error =
+  opts.reason, startedAt = the claim's stamp); cancelling from
+  pending/retrying appends NOTHING (no attempt was in flight — fabricating
+  a row would pollute the per-attempt history). recordOutcome REJECTS
+  outcome 'cancelled' (RangeError): cancellation is a session-level
+  command, not an executor-reportable result.
+- Session-level audit: `SessionRecord` gains optional `cancelledAt` /
+  `cancelReason` (pure additive; absent on every pre-0.76.0 row).
+  `lastError` is NOT repurposed — its "latest error/timeout summary"
+  meaning stays unpolluted.
+- Cancel-vs-in-flight-attempt race, both directions pinned: cancel lands
+  first -> the aborted executor's late recordOutcome throws
+  InvalidTransitionError (the ledger stays strict; no backfill into a
+  cancelled session) and the DRIVER now drops exactly that rejection
+  silently — a user cancel must not read as a driver malfunction (no
+  driver:error event; every other stranding signal is unchanged). Attempt
+  settles first -> cancelSession on the resulting done/failed throws; on
+  retrying it cancels normally. cancelSession does NOT abort the host's
+  in-flight executor (the ledger holds no executors) — the host aborts its
+  own runtime, in either order.
+- Contract suite: one new base check — a store must round-trip the
+  cancelled terminal byte-for-byte (state/cancelledAt/cancelReason, the
+  states filter on 'cancelled', and the 'cancelled' query outcome), so a
+  host restart reloads a cancelled session as cancelled instead of
+  resurrecting it. Existing checks untouched.
+
 ## 0.75.0 — 2026-07-20
 
 Lockstep alignment only — no maestro-SDK code change. The agent SDK added R7

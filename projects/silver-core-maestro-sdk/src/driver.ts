@@ -10,6 +10,7 @@
 import type { Clock } from './clock.js';
 import { systemClock } from './clock.js';
 import type { OutcomeInput, TaskLedger } from './ledger/ledger.js';
+import { InvalidTransitionError } from './ledger/state.js';
 import type { QueryOutcome, SessionRecord } from './ledger/types.js';
 
 export interface ExecutorContext {
@@ -45,7 +46,10 @@ export type DriverEvent =
    * state to paper over a failing store; the host repairs from the event.
    * A bookkeeping rejection whose session was already settled elsewhere
    * (e.g. a lease sweep — self-healing on the retry path) emits WITHOUT a
-   * session: there is nothing to repair.
+   * session: there is nothing to repair. One rejection emits NOTHING at
+   * all (0.76.0): a session the host cancelled mid-flight — the late
+   * result's InvalidTransitionError is the cancel contract working, not a
+   * malfunction.
    */
   | { type: 'driver:error'; error: unknown; session?: SessionRecord };
 
@@ -254,6 +258,12 @@ export class LedgerDriver {
         }
         if (current !== null && current.state === 'running') {
           this.#emit({ type: 'driver:error', error, session: current });
+        } else if (current?.state === 'cancelled' && error instanceof InvalidTransitionError) {
+          // Host cancelled mid-flight (0.76.0): the rejection IS the design
+          // — cancelSession already settled the session and wrote the
+          // attempt's epitaph row; this late result has nothing to record
+          // and nothing to repair, so no error event is emitted (a user
+          // cancel must not read as a driver malfunction).
         } else {
           this.#emit({ type: 'driver:error', error });
         }

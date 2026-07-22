@@ -16,6 +16,14 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.76.0 — 2026-07-22
+
+Lockstep alignment only — no agent-SDK code change. The maestro SDK added
+the `cancelled` terminal session state + `TaskLedger.cancelSession()`
+(BPT requirement P0-D1: user-initiated cancel as a first-class terminal,
+ledger-distinguishable from `failed`, never auto-rerun). See the maestro
+CHANGELOG 0.76.0.
+
 ## 0.75.0 — 2026-07-20
 
 R7 session-end write-back observability (keeper ruling 2026-07-20, from the

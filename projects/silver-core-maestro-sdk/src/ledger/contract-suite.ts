@@ -195,6 +195,31 @@ const CHECKS: Array<[string, Check]> = [
     },
   ],
   [
+    "putSession/getSession round-trips a cancelled row (state 'cancelled', cancelledAt, cancelReason) and a 'cancelled' query outcome",
+    async (store) => {
+      // 0.76.0 (BPT P0-D1): a store must persist the cancelled terminal
+      // byte-for-byte — a host restart must reload it as cancelled, never
+      // resurrect it into the retry path.
+      const rec = session({
+        state: 'cancelled',
+        attempts: 1,
+        nextRunAt: null,
+        leaseUntil: null,
+        cancelledAt: 3_000,
+        cancelReason: 'user',
+      });
+      await store.putSession(rec);
+      assertDeepEq(await store.getSession('s1'), rec, 'cancelled round-trip');
+      const listed = await store.listSessions({ states: ['cancelled'] });
+      assertDeepEq(listed.map((s) => s.id), ['s1'], 'cancelled states filter');
+      await store.appendQuery(query({ outcome: 'cancelled', error: 'user' }));
+      const [row] = await store.listQueries('s1');
+      if (row?.outcome !== 'cancelled') {
+        fail('cancelled outcome', `expected 'cancelled', got ${row?.outcome}`);
+      }
+    },
+  ],
+  [
     'returned query records are copies, not live references into the store',
     async (store) => {
       await store.appendQuery(query());

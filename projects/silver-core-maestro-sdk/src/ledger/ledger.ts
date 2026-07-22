@@ -69,6 +69,11 @@ export interface DispatchInput {
 }
 
 export interface OutcomeInput {
+  /**
+   * The attempt's result. 'cancelled' is REJECTED here (RangeError):
+   * cancellation is a session-level command owned by cancelSession, never
+   * an outcome an executor may report.
+   */
   outcome: QueryOutcome;
   error?: string;
   summary?: string;
@@ -84,6 +89,17 @@ export interface OutcomeInput {
    * unfenced legacy behavior (the current attempt is assumed).
    */
   attempt?: number;
+}
+
+export interface CancelSessionInput {
+  /**
+   * Cancel reason, stored verbatim as the session's cancelReason (and as the
+   * in-flight attempt's query-row error text when cancelling from `running`).
+   * Host vocabulary — e.g. 'user' | 'operator' | 'superseded'.
+   */
+  reason?: string;
+  /** Epoch ms the cancel takes effect; defaults to the injected clock's now(). */
+  cancelledAt?: number;
 }
 
 const outcomeEvent = {
@@ -363,8 +379,12 @@ export class TaskLedger {
    * fabricated lease-expired error (audit r4). Otherwise the attempt is
    * recorded as an error and the session re-enters the normal retry/backoff
    * path (or exhausts into failed). Sessions without a lease are NEVER
-   * touched. Per-session isolation: one session's settle failure (including
-   * losing a race to the late lease-holder) skips that session only.
+   * touched, and neither are cancelled sessions (0.76.0): the sweep lists
+   * `running` alone, and cancelSession clears leaseUntil at the moment it
+   * settles the terminal — a cancelled session can never look like an
+   * expired claim. Per-session isolation: one session's settle failure
+   * (including losing a race to the late lease-holder) skips that session
+   * only.
    */
   async sweepExpiredLeases(now: number = this.#clock.now()): Promise<SessionRecord[]> {
     if (!Number.isFinite(now)) {
@@ -415,6 +435,16 @@ export class TaskLedger {
    * contradiction with its query history.
    */
   async recordOutcome(sessionId: string, result: OutcomeInput): Promise<SessionRecord> {
+    // 'cancelled' is a session-level command, not an attempt outcome (0.76.0):
+    // it may only enter the ledger through cancelSession, which owns the
+    // terminal transition, the lease/nextRunAt clearing and the audit row.
+    // Accepting it here would let an executor smuggle a cancel past the
+    // cancel semantics (no cancelledAt stamp, retry arithmetic applied).
+    if (result.outcome === 'cancelled') {
+      throw new RangeError(
+        "recordOutcome: outcome 'cancelled' is reserved for cancelSession()",
+      );
+    }
     for (const key of ['startedAt', 'endedAt'] as const) {
       // NaN/Infinity would be persisted verbatim into the append-only audit
       // row — and a JSON-backed store silently rewrites NaN to null,
@@ -436,6 +466,9 @@ export class TaskLedger {
       if (session === null) {
         throw new Error(`recordOutcome: unknown session '${sessionId}'`);
       }
+      // The entry guard rejected 'cancelled'; re-assert the narrowing for
+      // this closure (TS narrowing does not cross function boundaries).
+      const attemptOutcome = result.outcome as Exclude<QueryOutcome, 'cancelled'>;
       // Attempt fencing (audit r4): a stale writer — an attempt that outran
       // its lease, was swept, and whose session has since been re-claimed —
       // must NOT commit against the live attempt. Keyed on the attempt
@@ -443,9 +476,17 @@ export class TaskLedger {
       if (result.attempt !== undefined && result.attempt !== session.attempts) {
         throw new InvalidTransitionError(
           session.state,
-          outcomeEvent[result.outcome],
+          outcomeEvent[attemptOutcome],
           `stale outcome: settles attempt ${result.attempt} but the session is on attempt ${session.attempts}`,
         );
+      }
+      // Cancelled is terminal with NO backfill repair (0.76.0): the cancel's
+      // audit row belongs to cancelSession, and a late attempt result — the
+      // in-flight executor the host aborted alongside its cancel — must not
+      // settle or append anything. The driver drops exactly this rejection
+      // instead of signaling a stranded session (see driver.ts).
+      if (session.state === 'cancelled') {
+        throw new InvalidTransitionError(session.state, outcomeEvent[attemptOutcome]);
       }
       const existing = await this.#store.listQueries(sessionId);
       const committed = existing.find((q) => q.attempt === session.attempts);
@@ -475,7 +516,7 @@ export class TaskLedger {
           await this.#store.appendQuery(this.#queryRow(sessionId, session.attempts, result));
           return { ...session };
         }
-        throw new InvalidTransitionError(session.state, outcomeEvent[result.outcome]);
+        throw new InvalidTransitionError(session.state, outcomeEvent[attemptOutcome]);
       }
       // Retrying backfill (r5): a failure settle that landed in 'retrying'
       // has the same put->append crash window as a terminal one, and the
@@ -487,12 +528,31 @@ export class TaskLedger {
         await this.#store.appendQuery(this.#queryRow(sessionId, session.attempts, result));
         return { ...session };
       }
+      // A committed 'cancelled' row for the current attempt can only be
+      // written by cancelSession, whose session put (state 'cancelled') lands
+      // FIRST (settle-then-append) — reading such a row while the session
+      // still shows a non-terminal state means this call raced a rival
+      // host's cancel on a store without putSessionIf. The cancel is the
+      // recorded truth; this attempt result is late and must not clobber
+      // the cancel record (defensive; unreachable on a CAS-fenced store,
+      // where the revision fence below would reject the write anyway).
+      if (committed !== undefined && committed.outcome === 'cancelled') {
+        throw new InvalidTransitionError(
+          session.state,
+          outcomeEvent[attemptOutcome],
+          'attempt already cancelled by a concurrent cancelSession',
+        );
+      }
       // A committed row for the CURRENT attempt is the truth (audit r4): a
       // caller retry — or a lease sweep arriving with a fabricated error —
       // converges to the recorded outcome instead of settling the session in
       // contradiction with its own query history.
       const effective: Pick<OutcomeInput, 'outcome' | 'error'> = committed ?? result;
-      const next = transition(session.state, outcomeEvent[effective.outcome], session);
+      const next = transition(
+        session.state,
+        outcomeEvent[effective.outcome as Exclude<QueryOutcome, 'cancelled'>],
+        session,
+      );
       const now = this.#clock.now();
       const updated: SessionRecord = {
         ...session,
@@ -527,6 +587,115 @@ export class TaskLedger {
         await this.#store.appendQuery(this.#queryRow(sessionId, session.attempts, result));
       }
       return { ...updated, revision: (session.revision ?? 0) + 1 };
+    });
+  }
+
+  /**
+   * Cancel a session (0.76.0, BPT P0-D1): the host's "stop this, forever"
+   * command — a first-class terminal, ledger-distinguishable from `failed`.
+   * Legal from every non-terminal state:
+   *
+   * - pending / retrying: no attempt in flight — the session lands in
+   *   `cancelled` with nextRunAt cleared (a scheduled retry is dropped, not
+   *   deferred), and NO query row is appended (fabricating an attempt number
+   *   would pollute the per-attempt audit history).
+   * - running: the in-flight attempt is the host's to abort (the ledger
+   *   holds no executors); this call records its epitaph — one query row
+   *   with outcome 'cancelled' on the current attempt (error = opts.reason)
+   *   — and clears leaseUntil so the spent claim can never be mistaken for
+   *   an expired one. The aborted executor's own late recordOutcome then
+   *   rejects with InvalidTransitionError, which the driver drops silently.
+   *
+   * Idempotent on an already-cancelled session: returns the stored record,
+   * throws nothing, appends nothing, and keeps the FIRST cancel's
+   * cancelledAt/cancelReason. On `done`/`failed` it throws
+   * InvalidTransitionError — terminal states accept no event, a settled
+   * outcome is not rewritable into a cancellation.
+   *
+   * Concurrency: per-session in-process mutex + the putSessionIf CAS fence,
+   * like every other mutating path. A lost CAS is re-read and re-applied
+   * (bounded): cancel is legal from every non-terminal state, so whatever
+   * the rival wrote (a claim, a settle into retrying), the cancel still
+   * lands; if the rival reached done/failed first, the re-read throws
+   * InvalidTransitionError — the attempt genuinely finished before the
+   * cancel. A crash between the session put (the commit point) and the
+   * running-cancel's row append loses the audit row, never the state —
+   * same settle-then-append discipline as recordOutcome, minus the backfill
+   * (a repeat cancel cannot distinguish that window from a retrying-cancel
+   * whose failure row was legitimately committed earlier, so it repairs
+   * nothing rather than risk a wrong row).
+   */
+  async cancelSession(sessionId: string, opts?: CancelSessionInput): Promise<SessionRecord> {
+    if (opts?.reason !== undefined && typeof opts.reason !== 'string') {
+      throw new TypeError(`cancelSession: reason must be a string when given, got ${typeof opts.reason}`);
+    }
+    // A non-finite cancelledAt would poison the terminal timestamp verbatim
+    // (JSON stores rewrite NaN to null — the audit r4 lesson, same guard).
+    if (opts?.cancelledAt !== undefined && !Number.isFinite(opts.cancelledAt)) {
+      throw new RangeError(
+        `cancelSession: cancelledAt must be a finite number when given, got ${opts.cancelledAt}`,
+      );
+    }
+    return this.#withLock(sessionId, async () => {
+      // Bounded CAS retry: a rival's interleaved write (claim, settle) moves
+      // the session between our read and our put, but cancel remains legal
+      // from every non-terminal state — re-read and re-apply instead of
+      // surfacing a transient conflict for a call that must win eventually.
+      for (let round = 0; ; round += 1) {
+        const session = await this.#store.getSession(sessionId);
+        if (session === null) {
+          throw new Error(`cancelSession: unknown session '${sessionId}'`);
+        }
+        if (session.state === 'cancelled') {
+          // Idempotent repeat: the first cancel's record is the truth.
+          return { ...session };
+        }
+        // Throws InvalidTransitionError on done/failed (terminal, no edges).
+        const next = transition(session.state, 'cancel', session);
+        const wasRunning = session.state === 'running';
+        const now = this.#clock.now();
+        const cancelledAt = opts?.cancelledAt ?? now;
+        const updated: SessionRecord = {
+          ...session,
+          state: next,
+          updatedAt: now,
+          // Terminal: never due again — and the in-flight claim (if any) is
+          // spent, so no residual lease can ever look expired to a sweeper.
+          nextRunAt: null,
+          leaseUntil: null,
+          cancelledAt,
+          cancelReason: opts?.reason ?? null,
+        };
+        const won = await this.#putGuarded(updated, session.revision ?? 0);
+        if (!won) {
+          if (round >= 4) {
+            throw new ClaimConflictError(sessionId, 'cancel lost to concurrent writers repeatedly');
+          }
+          continue;
+        }
+        if (wasRunning) {
+          // Epitaph row for the aborted in-flight attempt — appended AFTER
+          // the session write (settle-then-append, audit r4 ordering).
+          // startedAt = the claim's stamp (same convention as the lease
+          // sweep); a row already committed for this attempt (a cross-host
+          // settle we raced on a plain store) is the truth and is kept.
+          const committed = (await this.#store.listQueries(sessionId)).find(
+            (q) => q.attempt === session.attempts,
+          );
+          if (committed === undefined) {
+            await this.#store.appendQuery({
+              id: this.#idFactory(),
+              sessionId,
+              attempt: session.attempts,
+              startedAt: session.updatedAt,
+              endedAt: cancelledAt,
+              outcome: 'cancelled',
+              ...(opts?.reason !== undefined ? { error: opts.reason } : {}),
+            });
+          }
+        }
+        return { ...updated, revision: (session.revision ?? 0) + 1 };
+      }
     });
   }
 

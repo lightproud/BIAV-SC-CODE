@@ -10,18 +10,28 @@
  * The CLOSED session state set (requirement §4: the SDK pins the state
  * machine; a uniform vocabulary is what makes one query surface serve every
  * scenario). Spelling finalized 2026-07-18 and inscribed back into the
- * requirement doc §4.
+ * requirement doc §4; `cancelled` added 0.76.0 (BPT P0-D1: a user-initiated
+ * cancel is a first-class terminal outcome, ledger-distinguishable from
+ * `failed` and never auto-rerun).
  *
- * - pending:  dispatched, waiting to be claimed for its first attempt
- * - running:  an attempt is in flight
- * - retrying: last attempt failed, waiting for its scheduled retry
- * - failed:   terminal — attempts exhausted (or recorded as fatal)
- * - done:     terminal — an attempt succeeded
+ * - pending:   dispatched, waiting to be claimed for its first attempt
+ * - running:   an attempt is in flight
+ * - retrying:  last attempt failed, waiting for its scheduled retry
+ * - failed:    terminal — attempts exhausted (or recorded as fatal)
+ * - done:      terminal — an attempt succeeded
+ * - cancelled: terminal — the host cancelled the session (cancelSession);
+ *              no outgoing edges, never listed by claimDue, never swept
  */
-export type SessionState = 'pending' | 'running' | 'retrying' | 'failed' | 'done';
+export type SessionState = 'pending' | 'running' | 'retrying' | 'failed' | 'done' | 'cancelled';
 
-/** Query-level round result (the query row records outcomes only). */
-export type QueryOutcome = 'ok' | 'error' | 'timeout';
+/**
+ * Query-level round result (the query row records outcomes only).
+ * `cancelled` (0.76.0) marks an in-flight attempt cut short by
+ * TaskLedger.cancelSession — it is written by cancelSession ONLY;
+ * recordOutcome rejects it (cancellation is not an attempt outcome a host
+ * executor may report, it is a session-level command).
+ */
+export type QueryOutcome = 'ok' | 'error' | 'timeout' | 'cancelled';
 
 /** Session record: the dispatch unit. State machine hangs at this level. */
 export interface SessionRecord {
@@ -71,6 +81,20 @@ export interface SessionRecord {
    * legacy rows without it read as revision 0.
    */
   revision?: number;
+  /**
+   * Epoch ms the cancel took effect (0.76.0). Set by cancelSession ONLY —
+   * present iff state is 'cancelled'; the first cancel's stamp is kept
+   * through idempotent repeats. Absent on every pre-0.76.0 row.
+   */
+  cancelledAt?: number | null;
+  /**
+   * Host-supplied cancel reason (cancelSession opts.reason, e.g. 'user' |
+   * 'operator' | 'superseded'), stored verbatim (0.76.0). lastError is NOT
+   * repurposed for this — its "latest error/timeout summary" meaning stays
+   * unpolluted, so audits can separate "why it failed" from "why it was
+   * cancelled" field-by-field.
+   */
+  cancelReason?: string | null;
 }
 
 /** Query record: one execution attempt. Rounds are appended, never edited. */

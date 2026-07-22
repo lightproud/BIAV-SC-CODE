@@ -208,6 +208,6 @@ describe('assembly: full state flow on public surface, fake timers only', () => 
   });
 
   it('the closed state set is exactly what the package declares', () => {
-    expect(SESSION_STATES).toEqual(['pending', 'running', 'retrying', 'failed', 'done']);
+    expect(SESSION_STATES).toEqual(['pending', 'running', 'retrying', 'failed', 'done', 'cancelled']);
   });
 });

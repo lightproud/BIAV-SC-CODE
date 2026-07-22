@@ -7,17 +7,20 @@
 
 import type { SessionState } from './types.js';
 
-/** The closed state set, in lifecycle order. */
+/** The closed state set, in lifecycle order (terminals last; `cancelled`
+ *  appended at the END in 0.76.0 so downstreams relying on index order of
+ *  the first five entries are undisturbed). */
 export const SESSION_STATES: readonly SessionState[] = [
   'pending',
   'running',
   'retrying',
   'failed',
   'done',
+  'cancelled',
 ];
 
 /** States with no outgoing transitions. */
-export const TERMINAL_STATES: readonly SessionState[] = ['failed', 'done'];
+export const TERMINAL_STATES: readonly SessionState[] = ['failed', 'done', 'cancelled'];
 
 /**
  * Ledger events driving the session state machine:
@@ -25,12 +28,15 @@ export const TERMINAL_STATES: readonly SessionState[] = ['failed', 'done'];
  * - attempt:ok:       the attempt succeeded
  * - attempt:error:    the attempt failed
  * - attempt:timeout:  the attempt hit the driver's per-attempt timeout
+ * - cancel:           the host cancels the session (0.76.0, BPT P0-D1) —
+ *                     legal from every NON-terminal state, lands in the
+ *                     terminal `cancelled` and never re-enters the retry path
  *
  * Retries are not a distinct event: a failed/timed-out attempt lands in
  * `retrying` while attempts remain, and a due retry is claimed with the same
  * `claim` event that first started the session.
  */
-export type SessionEvent = 'claim' | 'attempt:ok' | 'attempt:error' | 'attempt:timeout';
+export type SessionEvent = 'claim' | 'attempt:ok' | 'attempt:error' | 'attempt:timeout' | 'cancel';
 
 export class InvalidTransitionError extends Error {
   readonly state: SessionState;
@@ -63,6 +69,9 @@ export interface TransitionContext {
  *   running  --attempt:ok-->       done
  *   running  --attempt:error-->    retrying | failed  (attempts vs maxAttempts)
  *   running  --attempt:timeout-->  retrying | failed  (attempts vs maxAttempts)
+ *   pending  --cancel-->           cancelled          (0.76.0)
+ *   running  --cancel-->           cancelled          (0.76.0)
+ *   retrying --cancel-->           cancelled          (0.76.0)
  */
 export function transition(
   state: SessionState,
@@ -71,8 +80,10 @@ export function transition(
 ): SessionState {
   if (state === 'pending' || state === 'retrying') {
     if (event === 'claim') return 'running';
+    if (event === 'cancel') return 'cancelled';
   } else if (state === 'running') {
     if (event === 'attempt:ok') return 'done';
+    if (event === 'cancel') return 'cancelled';
     if (event === 'attempt:error' || event === 'attempt:timeout') {
       // NaN / non-finite counters poison a >= comparison into a permanent
       // 'retrying' — reject them loudly instead of retrying forever.
