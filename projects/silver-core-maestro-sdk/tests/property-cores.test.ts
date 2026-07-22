@@ -31,7 +31,13 @@ const RUNS = { numRuns: 2_000 };
 const HEAVY = { numRuns: 500 };
 
 const arbState = fc.constantFrom<SessionState>(...SESSION_STATES);
-const arbEvent = fc.constantFrom<SessionEvent>('claim', 'attempt:ok', 'attempt:error', 'attempt:timeout');
+const arbEvent = fc.constantFrom<SessionEvent>(
+  'claim',
+  'attempt:ok',
+  'attempt:error',
+  'attempt:timeout',
+  'cancel',
+);
 
 describe('state.ts properties', () => {
   it('transition is TOTAL: a member of the closed set or InvalidTransitionError, nothing else', () => {
@@ -47,7 +53,7 @@ describe('state.ts properties', () => {
       RUNS,
     );
   });
-  it('terminal states absorb: no event ever leaves done/failed', () => {
+  it('terminal states absorb: no event ever leaves done/failed/cancelled', () => {
     fc.assert(
       fc.property(fc.constantFrom<SessionState>(...TERMINAL_STATES), arbEvent, fc.nat(20), (s, e, a) => {
         expect(() => transition(s, e, { attempts: a, maxAttempts: 3 })).toThrowError(InvalidTransitionError);

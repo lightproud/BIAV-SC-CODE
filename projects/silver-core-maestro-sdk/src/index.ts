@@ -22,7 +22,7 @@
  * LedgerDriver.
  */
 
-export const MAESTRO_SDK_VERSION = '0.75.0';
+export const MAESTRO_SDK_VERSION = '0.76.0';
 
 // Clock seam
 export type { Clock } from './clock.js';
@@ -63,7 +63,12 @@ export type {
 
 // Ledger API
 export { TaskLedger, DuplicateSessionError, ClaimConflictError } from './ledger/ledger.js';
-export type { TaskLedgerOptions, DispatchInput, OutcomeInput } from './ledger/ledger.js';
+export type {
+  TaskLedgerOptions,
+  DispatchInput,
+  OutcomeInput,
+  CancelSessionInput,
+} from './ledger/ledger.js';
 
 // Driver (live component; host holds life-and-death)
 export { LedgerDriver } from './driver.js';

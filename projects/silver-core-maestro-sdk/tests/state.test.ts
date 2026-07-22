@@ -11,15 +11,15 @@ import {
 } from '../src/ledger/state.js';
 import type { SessionState } from '../src/ledger/types.js';
 
-const ALL_EVENTS: SessionEvent[] = ['claim', 'attempt:ok', 'attempt:error', 'attempt:timeout'];
+const ALL_EVENTS: SessionEvent[] = ['claim', 'attempt:ok', 'attempt:error', 'attempt:timeout', 'cancel'];
 const CTX = { attempts: 1, maxAttempts: 3 };
 
 describe('state sets', () => {
-  it('pins the closed state set, in lifecycle order', () => {
-    expect(SESSION_STATES).toEqual(['pending', 'running', 'retrying', 'failed', 'done']);
+  it('pins the closed state set, in lifecycle order (cancelled appended LAST, 0.76.0)', () => {
+    expect(SESSION_STATES).toEqual(['pending', 'running', 'retrying', 'failed', 'done', 'cancelled']);
   });
   it('pins the terminal states', () => {
-    expect(TERMINAL_STATES).toEqual(['failed', 'done']);
+    expect(TERMINAL_STATES).toEqual(['failed', 'done', 'cancelled']);
   });
 });
 
@@ -32,6 +32,9 @@ describe('transition — the full matrix', () => {
     ['running', 'attempt:ok', 'done'],
     ['running', 'attempt:error', 'retrying'], // attempts 1 < maxAttempts 3
     ['running', 'attempt:timeout', 'retrying'],
+    ['pending', 'cancel', 'cancelled'], // 0.76.0: cancel from every non-terminal
+    ['running', 'cancel', 'cancelled'],
+    ['retrying', 'cancel', 'cancelled'],
   ];
 
   it.each(legal)('%s --%s--> %s', (state, event, next) => {
@@ -93,6 +96,11 @@ describe('transition — retry counting', () => {
   });
   it('ok is unaffected by attempt counters (no exhaustion check)', () => {
     expect(transition('running', 'attempt:ok', { attempts: 99, maxAttempts: 1 })).toBe('done');
+  });
+  it('cancel is unaffected by attempt counters — never lands in failed (0.76.0)', () => {
+    expect(transition('running', 'cancel', { attempts: 99, maxAttempts: 1 })).toBe('cancelled');
+    expect(transition('pending', 'cancel', { attempts: 0, maxAttempts: 1 })).toBe('cancelled');
+    expect(transition('retrying', 'cancel', { attempts: NaN, maxAttempts: NaN })).toBe('cancelled');
   });
   it('the non-finite guard names the counters in its message', () => {
     try {
