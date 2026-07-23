@@ -1,8 +1,419 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-23T16:27:55.774743+00:00",
+  "collected_at": "2026-07-23T19:13:56.345269+00:00",
   "source": "taptap_review",
   "data_layer": "output",
-  "item_count": 0,
-  "items": []
+  "item_count": 41,
+  "items": [
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327084+00:00",
+      "lang": "zh",
+      "title": "哈吼哈哈哈哈哈",
+      "summary": "哈吼哈哈哈哈哈",
+      "url": "https://www.taptap.cn/review/48950782",
+      "author": "哈吼哈哈哈哈哈",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327118+00:00",
+      "lang": "zh",
+      "title": "哈吼哈哈哈哈哈",
+      "summary": "哈吼哈哈哈哈哈",
+      "url": "https://www.taptap.cn/user/613600623",
+      "author": "哈吼哈哈哈哈哈",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327138+00:00",
+      "lang": "zh",
+      "title": "期待",
+      "summary": "期待",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327179+00:00",
+      "lang": "zh",
+      "title": "来自 Android 设备",
+      "summary": "来自 Android 设备",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327183+00:00",
+      "lang": "zh",
+      "title": "无\n : 求问群号在哪，没找到",
+      "summary": "无\n : 求问群号在哪，没找到",
+      "url": "https://www.taptap.cn/user/519826740",
+      "author": "无",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327188+00:00",
+      "lang": "zh",
+      "title": "3",
+      "summary": "3",
+      "url": "https://www.taptap.cn/review/48950782#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327192+00:00",
+      "lang": "zh",
+      "title": "咕咕嘎嘎",
+      "summary": "咕咕嘎嘎",
+      "url": "https://www.taptap.cn/review/47077459",
+      "author": "咕咕嘎嘎",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327195+00:00",
+      "lang": "zh",
+      "title": "咕咕嘎嘎",
+      "summary": "咕咕嘎嘎",
+      "url": "https://www.taptap.cn/user/679275104",
+      "author": "咕咕嘎嘎",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327215+00:00",
+      "lang": "zh",
+      "title": "来自 Honor X10",
+      "summary": "来自 Honor X10",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327220+00:00",
+      "lang": "zh",
+      "title": "没凡恼\n : 怎么下载啊",
+      "summary": "没凡恼\n : 怎么下载啊",
+      "url": "https://www.taptap.cn/user/585481016",
+      "author": "没凡恼",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327226+00:00",
+      "lang": "zh",
+      "title": "17",
+      "summary": "17",
+      "url": "https://www.taptap.cn/review/47077459#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327229+00:00",
+      "lang": "zh",
+      "title": "Emiya Iii",
+      "summary": "Emiya Iii",
+      "url": "https://www.taptap.cn/review/45868862",
+      "author": "Emiya Iii",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327232+00:00",
+      "lang": "zh",
+      "title": "Emiya Iii",
+      "summary": "Emiya Iii",
+      "url": "https://www.taptap.cn/user/321224519",
+      "author": "Emiya Iii",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327252+00:00",
+      "lang": "zh",
+      "title": "展开",
+      "summary": "展开",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327277+00:00",
+      "lang": "zh",
+      "title": "User111601947\n : 挺有钱的",
+      "summary": "User111601947\n : 挺有钱的",
+      "url": "https://www.taptap.cn/user/111601947",
+      "author": "User111601947",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327283+00:00",
+      "lang": "zh",
+      "title": "2",
+      "summary": "2",
+      "url": "https://www.taptap.cn/review/45868862#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327287+00:00",
+      "lang": "zh",
+      "title": "Kurisu",
+      "summary": "Kurisu",
+      "url": "https://www.taptap.cn/review/46310244",
+      "author": "Kurisu",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327291+00:00",
+      "lang": "zh",
+      "title": "Kurisu",
+      "summary": "Kurisu",
+      "url": "https://www.taptap.cn/user/400100377",
+      "author": "Kurisu",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327332+00:00",
+      "lang": "zh",
+      "title": "冰月\n : 会歪吗",
+      "summary": "冰月\n : 会歪吗",
+      "url": "https://www.taptap.cn/user/715419416",
+      "author": "冰月",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327338+00:00",
+      "lang": "zh",
+      "title": "10",
+      "summary": "10",
+      "url": "https://www.taptap.cn/review/46310244#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327341+00:00",
+      "lang": "zh",
+      "title": "MuKuRo",
+      "summary": "MuKuRo",
+      "url": "https://www.taptap.cn/review/46996261",
+      "author": "MuKuRo",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327344+00:00",
+      "lang": "zh",
+      "title": "MuKuRo",
+      "summary": "MuKuRo",
+      "url": "https://www.taptap.cn/user/689060473",
+      "author": "MuKuRo",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327380+00:00",
+      "lang": "zh",
+      "title": "来自 Vivo V2353A",
+      "summary": "来自 Vivo V2353A",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327383+00:00",
+      "lang": "zh",
+      "title": "阿巴阿巴\n : steam下的需要加速器吗",
+      "summary": "阿巴阿巴\n : steam下的需要加速器吗",
+      "url": "https://www.taptap.cn/user/70640911",
+      "author": "阿巴阿巴",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327389+00:00",
+      "lang": "zh",
+      "title": "15",
+      "summary": "15",
+      "url": "https://www.taptap.cn/review/46996261#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327392+00:00",
+      "lang": "zh",
+      "title": "该用户已注销",
+      "summary": "该用户已注销",
+      "url": "https://www.taptap.cn/review/46593677",
+      "author": "该用户已注销",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327395+00:00",
+      "lang": "zh",
+      "title": "该用户已注销",
+      "summary": "该用户已注销",
+      "url": "https://www.taptap.cn/user/739479375",
+      "author": "该用户已注销",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327429+00:00",
+      "lang": "zh",
+      "title": "来自 Nubia NX789J",
+      "summary": "来自 Nubia NX789J",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327432+00:00",
+      "lang": "zh",
+      "title": "29",
+      "summary": "29",
+      "url": "https://www.taptap.cn/review/46593677#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327435+00:00",
+      "lang": "zh",
+      "title": "发现烂游戏",
+      "summary": "发现烂游戏",
+      "url": "https://www.taptap.cn/review/46738787",
+      "author": "发现烂游戏",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327438+00:00",
+      "lang": "zh",
+      "title": "发现烂游戏",
+      "summary": "发现烂游戏",
+      "url": "https://www.taptap.cn/user/745592097",
+      "author": "发现烂游戏",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327461+00:00",
+      "lang": "zh",
+      "title": "来自 Web 官网",
+      "summary": "来自 Web 官网",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327468+00:00",
+      "lang": "zh",
+      "title": "该用户已注销\n : 抛开无关的男女问题，游戏还是挺好玩的，美术也好看",
+      "summary": "该用户已注销\n : 抛开无关的男女问题，游戏还是挺好玩的，美术也好看",
+      "url": "https://www.taptap.cn/user/637724961",
+      "author": "该用户已注销",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327475+00:00",
+      "lang": "zh",
+      "title": "3",
+      "summary": "3",
+      "url": "https://www.taptap.cn/review/46738787#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327478+00:00",
+      "lang": "zh",
+      "title": "Sylus的猫",
+      "summary": "Sylus的猫",
+      "url": "https://www.taptap.cn/review/44843360",
+      "author": "Sylus的猫",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327482+00:00",
+      "lang": "zh",
+      "title": "Sylus的猫",
+      "summary": "Sylus的猫",
+      "url": "https://www.taptap.cn/user/571672214",
+      "author": "Sylus的猫",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327518+00:00",
+      "lang": "zh",
+      "title": "来自 小米24122RKC7C",
+      "summary": "来自 小米24122RKC7C",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327521+00:00",
+      "lang": "zh",
+      "title": "꒦ິ^꒦ິ\n : 怎么下啊？",
+      "summary": "꒦ິ^꒦ິ\n : 怎么下啊？",
+      "url": "https://www.taptap.cn/user/706400405",
+      "author": "꒦ິ^꒦ິ",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327527+00:00",
+      "lang": "zh",
+      "title": "17",
+      "summary": "17",
+      "url": "https://www.taptap.cn/review/44843360#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327531+00:00",
+      "lang": "zh",
+      "title": "澄诚丶",
+      "summary": "澄诚丶",
+      "url": "https://www.taptap.cn/review/45428095",
+      "author": "澄诚丶",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-07-23T19:12:53.327534+00:00",
+      "lang": "zh",
+      "title": "澄诚丶",
+      "summary": "澄诚丶",
+      "url": "https://www.taptap.cn/user/25713227",
+      "author": "澄诚丶",
+      "engagement": 0
+    }
+  ]
 }
