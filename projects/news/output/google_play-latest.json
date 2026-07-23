@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-22T22:04:27.117862+00:00",
+  "collected_at": "2026-07-23T02:31:58.591865+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 119,
+  "item_count": 121,
   "items": [
     {
       "source": "google_play",
@@ -293,6 +293,26 @@
       "summary": "赞✨👍！",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-76f8661b-513b-45d0-b27c-a667dc06df2f",
       "author": "Zhi Shao Tan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-21T23:35:09",
+      "lang": "en",
+      "title": "[Google Play 好评] ★4 back when i tried the game like... 2 mon",
+      "summary": "back when i tried the game like... 2 months ago, the english translation seems like doesn't really work. Also, the game is very laggy, i have midrange chipset (mediatek dimensity 1080) but it feels very heavy.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-7c0684e1-0244-4282-b3ae-927d93bfece3",
+      "author": "Akbar Ramadhani",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-21T23:21:41",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 absolute banger",
+      "summary": "absolute banger",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-3590fc1f-0851-4ce4-afd0-2e50ad50766a",
+      "author": "Rara",
       "engagement": 0
     },
     {
