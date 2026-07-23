@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-23T08:27:46.742036+00:00",
+  "collected_at": "2026-07-23T11:09:31.056051+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 5,
@@ -22,6 +22,21 @@
     },
     {
       "source": "steam",
+      "time": "2026-07-23T09:08:41+00:00",
+      "lang": "english",
+      "title": "[正面] kath. great art for a start up studio and sides fo...",
+      "summary": "kath. great art for a start up studio and sides for the fact that its made by a small studio, its one of the better dark gatcha out if not the only dark gatcha. if you don't count ptn (path to nowhere), and I say again Kath, please artist of the community make Kath fan art I'm begging.",
+      "url": "https://steamcommunity.com/profiles/76561198836796049/recommended/3052450",
+      "author": "76561198836796049",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "kath. great art for a start up studio and sides for the fact that its made by a small studio, its one of the better dark gatcha out if not the only dark gatcha. if you don't count ptn (path to nowhere), and I say again Kath, please artist of the community make Kath fan art I'm begging.",
+      "timestamp_created": 1784797721,
+      "playtime_forever": 8497
+    },
+    {
+      "source": "steam",
       "time": "2026-07-23T05:12:10+00:00",
       "lang": "koreana",
       "title": "[正面] 어흐",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "어흐",
       "timestamp_created": 1784783530,
-      "playtime_forever": 13076
+      "playtime_forever": 13134
     },
     {
       "source": "steam",
@@ -64,21 +79,6 @@
       "review": "我去，怎么那么好玩，我饭也不吃，觉也不睡，每天两眼一睁就是打开这个忘却前夜，真的太好玩了，好玩到父母不想再管我，亲戚看不起我，但是这能怎么办，我已经深深爱上这个游戏了，别人对我的指点只不过是对我的认可罢了",
       "timestamp_created": 1784738327,
       "playtime_forever": 2802
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-22T09:16:39+00:00",
-      "lang": "schinese",
-      "title": "[负面] 太好玩了，累计活动抽283次，就中5个，歪8次，比原神都6.",
-      "summary": "太好玩了，累计活动抽283次，就中5个，歪8次，比原神都6.",
-      "url": "https://steamcommunity.com/profiles/76561199071711369/recommended/3052450",
-      "author": "76561199071711369",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "太好玩了，累计活动抽283次，就中5个，歪8次，比原神都6.",
-      "timestamp_created": 1784711799,
-      "playtime_forever": 2474
     }
   ]
 }
