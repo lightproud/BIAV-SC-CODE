@@ -4,7 +4,7 @@ title: "cg_gallery"
 description: "art_assets/manifest.json (UnityPy extraction) · total_cg=404 · 生成 2026-04-12"
 resource: "/projects/wiki/data/processed/cg_gallery.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:gameplay"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 指针概念

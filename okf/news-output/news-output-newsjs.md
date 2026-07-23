@@ -4,7 +4,7 @@ title: "输出展示层 · 合并流"
 description: "合并全量层 news.json（构建期快照）。 抽样/展示用途，非全量档案层。"
 resource: "/projects/news/output/news.json"
 tags: ["data_layer:output", "aggregate", "sampled"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 指针概念

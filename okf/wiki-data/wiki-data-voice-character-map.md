@@ -4,7 +4,7 @@ title: "voice_character_map"
 description: "Voice.lua + AwakerConfig.lua text matching · total_voice_entries=2562 · 生成 2026-04-26"
 resource: "/projects/wiki/data/processed/voice_character_map.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:story"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 指针概念

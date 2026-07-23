@@ -4,7 +4,7 @@ title: "repo-slim-audit-20260711"
 description: "session-digests/）」在全半径删除清单内；dreams/ 与 session-digests/ 已删，facts.json 漏网。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/repo-slim-audit-20260711.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 指针概念

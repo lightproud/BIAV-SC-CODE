@@ -4,7 +4,7 @@ title: "scs-req-repositioning-loop-support-20260717"
 description: "银芯 BIAV-SC 是黑池五层介质架构中的**引擎层**:最慢的介质、版本化、可替换的商品泵。它的职责由三条否定与一条肯定完整定义:（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/scs-req-repositioning-loop-support-20260717.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 指针概念

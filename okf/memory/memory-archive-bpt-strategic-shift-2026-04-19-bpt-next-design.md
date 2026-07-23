@@ -4,7 +4,7 @@ title: "BPT-NEXT 架构蓝图（旧版 - 已封存）"
 description: "1. **Token 经济纪律不可降级**（母版 Prime Directive）"
 resource: "/memory/archive/bpt-strategic-shift-2026-04-19/bpt-next-design.md"
 tags: ["memory", "data_layer:curated", "archive", "frozen-snapshot", "bpt"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 记忆层指针

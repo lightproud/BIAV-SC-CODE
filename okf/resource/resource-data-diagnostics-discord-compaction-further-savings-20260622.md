@@ -4,7 +4,7 @@ title: "discord-compaction-further-savings-20260622"
 description: "硬约束：仓库总纲「可检索 text→git」——**grep 存活是采信前提**。（格式：md）"
 resource: "/Public-Info-Pool/Resource/data-diagnostics/discord-compaction-further-savings-20260622.md"
 tags: ["data_layer:curated", "deliverable", "topic:data-diagnostics"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "silver-core-sdk TOOL-PARITY"
 description: "Why this file exists: the SDK reproduces the **Claude Code CLI agent** tool"
 resource: "/projects/silver-core-sdk/docs/TOOL-PARITY.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 指针概念

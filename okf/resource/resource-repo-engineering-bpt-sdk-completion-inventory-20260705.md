@@ -4,7 +4,7 @@ title: "bpt-sdk-completion-inventory-20260705"
 description: "比喻：①查「家里电器齐不齐」，②查「每个插头针脚形状对不对」，③把电表箱打开看「进户线接法跟官方图纸差在哪」。三张验收单本次并成一张总表。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-completion-inventory-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-22"
+timestamp: "2026-07-23"
 ---
 
 # 指针概念
