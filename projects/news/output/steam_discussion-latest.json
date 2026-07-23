@@ -1,39 +1,19 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-23T19:13:56.345269+00:00",
+  "collected_at": "2026-07-23T22:04:25.240271+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 1,
   "items": [
     {
       "source": "steam_discussion",
-      "time": "2026-07-22T20:56:59+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Invitation Code",
-      "summary": "1D1EGZ10U1",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/603039786130771940/",
-      "author": "Znye",
-      "engagement": 213
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-07-23T01:04:02+00:00",
+      "time": "2026-07-23T20:14:32+00:00",
       "lang": "en",
       "title": "[Steam论坛] linux login ?",
       "summary": "como posso fazer o login no linux ?",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/564786150742430626/",
       "author": "manotroll",
-      "engagement": 16
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-07-22T21:15:50+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] Redeem codes",
-      "summary": "This codes NEVER EXPIRE:\n\nCODE l REWARD\nHVGX-HLDX-QKKN l [Pure Core x5]\nQKBQ-SSDG-JZYU l [Pure Core x5]\nCatsgift l [Silver x1000]\nDc5000 l [Special Elixie x3]\nSilverkey l [Pure Core x10]\n\n\nThis ones WILL EXPIRE eventually:\n\nCODE l REWARD l VALID UNTIL\nSayaNoUta l [Pure Core x5] l [look at her banner and event ending date]\nYouSavedMorimens l [Pure Core x100] l [11 May 2026 but i was able to get it now][\nHJVA-RLMF-RELF l [Silver ×500, Pure Core ×5] l [27 July 2026]\nWNZC-ZCQA-QBKQ l [Silver × 500,",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/594062392368893733/",
-      "author": "ReXert",
-      "engagement": 0
+      "engagement": 17
     }
   ]
 }
