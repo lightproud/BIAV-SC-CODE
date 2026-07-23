@@ -1,8 +1,19 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-23T13:53:02.397486+00:00",
+  "collected_at": "2026-07-23T16:27:55.774743+00:00",
   "source": "taptap",
   "data_layer": "output",
-  "item_count": 0,
-  "items": []
+  "item_count": 1,
+  "items": [
+    {
+      "source": "taptap",
+      "time": "2026-07-23T14:25:41+00:00",
+      "lang": "zh",
+      "title": "[TapTap 好评] 谁有忘却的下载渠道？浏览器上搜的说是本地未发行",
+      "summary": "谁有忘却的下载渠道？浏览器上搜的说是本地未发行",
+      "url": "https://www.taptap.cn/moment/829482089417017333",
+      "author": "User323931401",
+      "engagement": 0
+    }
+  ]
 }
