@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-24T13:41:00.425493+00:00",
+  "collected_at": "2026-07-24T16:33:02.317031+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 5,
+  "item_count": 4,
   "items": [
     {
       "source": "steam",
@@ -48,7 +48,7 @@
       "voted_up": false,
       "review": "垃圾的引导，离谱的BGU\r\n什么叫我必须先跟着引导放玩我的全部底牌然后硬吃26点敌方大招？\r\n什么叫我可能需要在新手教程浪费一次复活？\r\n什么叫如果在复活页面按到了~键会卡死在战斗界面什么都干不了？\r\n什么叫强行退出游戏就再也打不开了？\r\n我TM就玩了10来分钟，新手引导也能出BUG啊？\r\n很难让人相信制作组里有人类...",
       "timestamp_created": 1784864712,
-      "playtime_forever": 388
+      "playtime_forever": 444
     },
     {
       "source": "steam",
@@ -64,21 +64,6 @@
       "review": "карты",
       "timestamp_created": 1784844260,
       "playtime_forever": 235
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-23T15:56:55+00:00",
-      "lang": "schinese",
-      "title": "[负面] 每走一关都像坐牢，卡池爆率低得感人，剧情硬是剧情杀没什么感觉，只有美术还能看",
-      "summary": "每走一关都像坐牢，卡池爆率低得感人，剧情硬是剧情杀没什么感觉，只有美术还能看",
-      "url": "https://steamcommunity.com/profiles/76561198847008121/recommended/3052450",
-      "author": "76561198847008121",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "每走一关都像坐牢，卡池爆率低得感人，剧情硬是剧情杀没什么感觉，只有美术还能看",
-      "timestamp_created": 1784822215,
-      "playtime_forever": 438
     }
   ]
 }

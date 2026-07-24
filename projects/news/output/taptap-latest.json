@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-24T13:41:00.425493+00:00",
+  "collected_at": "2026-07-24T16:33:02.317031+00:00",
   "source": "taptap",
   "data_layer": "output",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "source": "taptap",
@@ -14,6 +14,16 @@
       "url": "https://www.taptap.cn/moment/829712818281384935",
       "author": "鸢之",
       "engagement": 1
+    },
+    {
+      "source": "taptap",
+      "time": "2026-07-24T14:33:35+00:00",
+      "lang": "zh",
+      "title": "[TapTap 差评] 游戏好玩，角色也好看，因为美工在线基本上没崩过。但是，策划雷人操作又是啥阴。周边超级无敌大混池。又毒又恶心，贵，还搞隐藏",
+      "summary": "游戏好玩，角色也好看，因为美工在线基本上没崩过。但是，策划雷人操作又是啥阴。周边超级无敌大混池。又毒又恶心，贵，还搞隐藏。简直就是一个巨大的黄牛市场。😌",
+      "url": "https://www.taptap.cn/moment/829846466691336300",
+      "author": "隐隐笙歌处处随",
+      "engagement": 0
     }
   ]
 }
