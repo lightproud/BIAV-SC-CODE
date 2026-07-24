@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-24T08:25:53.770442+00:00",
+  "collected_at": "2026-07-24T11:04:34.645600+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -33,7 +33,7 @@
       "voted_up": false,
       "review": "垃圾的引导，离谱的BGU\r\n什么叫我必须先跟着引导放玩我的全部底牌然后硬吃26点敌方大招？\r\n什么叫我可能需要在新手教程浪费一次复活？\r\n什么叫如果在复活页面按到了~键会卡死在战斗界面什么都干不了？\r\n什么叫强行退出游戏就再也打不开了？\r\n我TM就玩了10来分钟，新手引导也能出BUG啊？\r\n很难让人相信制作组里有人类...",
       "timestamp_created": 1784864712,
-      "playtime_forever": 214
+      "playtime_forever": 304
     },
     {
       "source": "steam",
@@ -109,21 +109,6 @@
       "review": "번역이 좀 이상하지만 기괴한 분위기 때문에 그거마저 좀 어울리는것같습니다.\r\n그림이 취향에 맞고, 스토리도 저한테는 신선해서 괜찮은것같습니다.",
       "timestamp_created": 1784808577,
       "playtime_forever": 2545
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-23T09:08:41+00:00",
-      "lang": "english",
-      "title": "[正面] kath. great art for a start up studio and sides fo...",
-      "summary": "kath. great art for a start up studio and sides for the fact that its made by a small studio, its one of the better dark gatcha out if not the only dark gatcha. if you don't count ptn (path to nowhere), and I say again Kath, please artist of the community make Kath fan art I'm begging.",
-      "url": "https://steamcommunity.com/profiles/76561198836796049/recommended/3052450",
-      "author": "76561198836796049",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "kath. great art for a start up studio and sides for the fact that its made by a small studio, its one of the better dark gatcha out if not the only dark gatcha. if you don't count ptn (path to nowhere), and I say again Kath, please artist of the community make Kath fan art I'm begging.",
-      "timestamp_created": 1784797721,
-      "playtime_forever": 8497
     }
   ]
 }
