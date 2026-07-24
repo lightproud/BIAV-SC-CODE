@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-23T22:05:11.821003+00:00",
-  "total_gaps": 248,
+  "generated_at": "2026-07-24T02:29:52.278975+00:00",
+  "total_gaps": 247,
   "platforms": {
     "appstore": {
       "missing_dates": [
@@ -38,7 +38,6 @@
     },
     "bahamut": {
       "missing_dates": [
-        "2026-05-24",
         "2026-05-25",
         "2026-05-26",
         "2026-05-27",
@@ -85,7 +84,7 @@
         "2026-07-07",
         "2026-07-08"
       ],
-      "count": 46
+      "count": 45
     },
     "bilibili": {
       "missing_dates": [
