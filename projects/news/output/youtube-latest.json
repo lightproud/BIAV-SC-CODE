@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-24T05:50:58.727267+00:00",
+  "collected_at": "2026-07-24T08:25:53.770442+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "source": "youtube",
@@ -13,7 +13,7 @@
       "summary": "Steam：https://store.steampowered.com/app/3052450/Morimens/ ✦ 港澳新馬官網：https://morimens.qookkagames.com/ ✦ 台灣 ...",
       "url": "https://www.youtube.com/watch?v=xkZ0Ws4yaOY",
       "author": "Morimens",
-      "engagement": 1643,
+      "engagement": 1795,
       "media_url": "https://i.ytimg.com/vi/xkZ0Ws4yaOY/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,7 +25,7 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=m4Ngj6rUboQ",
       "author": "Flares117",
-      "engagement": 1020,
+      "engagement": 1239,
       "media_url": "https://i.ytimg.com/vi/m4Ngj6rUboQ/hqdefault.jpg",
       "content_type": "video"
     },
@@ -37,7 +37,7 @@
       "summary": "Don't know how long. Will be doing other stuff too.",
       "url": "https://www.youtube.com/watch?v=1yXFFjzQ3hk",
       "author": "Flares117",
-      "engagement": 368,
+      "engagement": 371,
       "media_url": "https://i.ytimg.com/vi/1yXFFjzQ3hk/hqdefault.jpg",
       "content_type": "video"
     },
@@ -49,7 +49,7 @@
       "summary": "No olviden unirse al discord :) https://discord.gg/UgmMCae3Sg.",
       "url": "https://www.youtube.com/watch?v=JjiR8hrYfBs",
       "author": "OcteKG",
-      "engagement": 149,
+      "engagement": 203,
       "media_url": "https://i.ytimg.com/vi/JjiR8hrYfBs/hqdefault.jpg",
       "content_type": "video"
     },
@@ -73,7 +73,7 @@
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=VZ6eb08OGN8",
       "author": "박현(Muyeong)",
-      "engagement": 62,
+      "engagement": 63,
       "media_url": "https://i.ytimg.com/vi/VZ6eb08OGN8/hqdefault.jpg",
       "content_type": "video"
     },
@@ -85,7 +85,7 @@
       "summary": "Stream almost daily whenever I have free time we multi-stream on twitch and only on twitch for things that might get us in trouble ...",
       "url": "https://www.youtube.com/watch?v=xbypzWlxv9U",
       "author": "FluffeyPanda's World",
-      "engagement": 24,
+      "engagement": 28,
       "media_url": "https://i.ytimg.com/vi/xbypzWlxv9U/hqdefault.jpg",
       "content_type": "video"
     },
@@ -97,7 +97,7 @@
       "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
       "url": "https://www.youtube.com/watch?v=X7UOTG_8yw4",
       "author": "霏憂【ひゅう】",
-      "engagement": 8,
+      "engagement": 9,
       "media_url": "https://i.ytimg.com/vi/X7UOTG_8yw4/hqdefault.jpg",
       "content_type": "video"
     },
@@ -109,20 +109,32 @@
       "summary": "Finally wanted to give D-Tide a serious attempt! Plus I needed to finish an event and get more resources to level my Mouchette.",
       "url": "https://www.youtube.com/watch?v=NJgxDeVpxzg",
       "author": "Nechromicon-VOD",
-      "engagement": 2,
+      "engagement": 4,
       "media_url": "https://i.ytimg.com/vi/NJgxDeVpxzg/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-07-23T08:13:32Z",
+      "time": "2026-07-24T07:42:59Z",
       "lang": "",
-      "title": "Morimens 6-14 Twisted Stars",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=fnozS8dmJbs",
-      "author": "Maddy Archer",
-      "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/fnozS8dmJbs/hqdefault.jpg",
+      "title": "【忘却前夜】イベント「半歩の隔たり」虚無の扉「星・超難度」",
+      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
+      "url": "https://www.youtube.com/watch?v=gpp0Qqz04Yk",
+      "author": "霏憂【ひゅう】",
+      "engagement": 3,
+      "media_url": "https://i.ytimg.com/vi/gpp0Qqz04Yk/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-24T06:23:41Z",
+      "lang": "",
+      "title": "[Morimens] Let&#39;s bully Karen!",
+      "summary": "meido correction.",
+      "url": "https://www.youtube.com/watch?v=-0G0bTIHm_E",
+      "author": "A:\\Quitter",
+      "engagement": 2,
+      "media_url": "https://i.ytimg.com/vi/-0G0bTIHm_E/hqdefault.jpg",
       "content_type": "video"
     }
   ]
