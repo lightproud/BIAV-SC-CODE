@@ -4,7 +4,7 @@ title: "silver-core-sdk-memory-consumer-kit-20260711"
 description: "`options.memory` 给 BPT 平台补上跨会话记忆:与 Anthropic 官方 memory tool(`memory_20250818`)（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/silver-core-sdk-memory-consumer-kit-20260711.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-23"
+timestamp: "2026-07-24"
 ---
 
 # 指针概念

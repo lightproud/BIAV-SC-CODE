@@ -4,7 +4,7 @@ title: "bpt-sdk-conformance-suite-design-20260705-r2"
 description: "**门禁按甲、覆盖按乙**：验收线与权重服务 **BPT Desktop 换装信心**（关键路径严格、（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705-r2.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-23"
+timestamp: "2026-07-24"
 ---
 
 # 指针概念

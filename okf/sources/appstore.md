@@ -4,7 +4,7 @@ title: "appstore 社区数据源"
 description: "appstore 平台采集档案，全量 910 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/appstore/global/"
 tags: ["data_layer:full_archive", "platform:appstore", "health:active"]
-timestamp: "2026-07-23T08:28:36.293535+00:00"
+timestamp: "2026-07-24T08:26:45.946621+00:00"
 ---
 
 # 数据层指针

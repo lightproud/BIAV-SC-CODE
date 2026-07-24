@@ -4,7 +4,7 @@ title: "realms.schema.json"
 description: "wiki 数据模型 schema 定义（realms.schema），派生 JSON 的契约来源。"
 resource: "/projects/wiki/data/schemas/realms.schema.json"
 tags: ["data_layer:curated", "schema", "contract"]
-timestamp: "2026-07-23"
+timestamp: "2026-07-24"
 ---
 
 # 指针概念

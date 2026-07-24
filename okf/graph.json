@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-23",
+  "generated": "2026-07-24",
   "stats": {
     "nodes": 371,
-    "edges": 416
+    "edges": 418
   },
   "nodes": [
     {
@@ -3694,7 +3694,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:taptap",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4452,8 +4452,20 @@
     },
     {
       "source": "/community/community-bahamut.md",
+      "target": "/characters/77921.md",
+      "rel": "提及:卡拉布",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
@@ -4482,14 +4494,32 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15575.md",
       "rel": "提及:法洛思",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15584.md",
-      "rel": "提及:索蕾尔",
+      "target": "/characters/15580.md",
+      "rel": "提及:宁菲亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
       "rel_type": "mention"
     },
     {
@@ -4506,32 +4536,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77921.md",
+      "rel": "提及:卡拉布",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15593.md",
-      "rel": "提及:詹金",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15586.md",
-      "rel": "提及:旺达",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
       "rel_type": "mention"
     },
     {
@@ -4544,12 +4556,6 @@
       "source": "/community/community-reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-steam.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -5874,8 +5880,20 @@
     },
     {
       "source": "/sources/bahamut.md",
+      "target": "/characters/77921.md",
+      "rel": "提及:卡拉布",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
@@ -5904,14 +5922,32 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15575.md",
       "rel": "提及:法洛思",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15584.md",
-      "rel": "提及:索蕾尔",
+      "target": "/characters/15580.md",
+      "rel": "提及:宁菲亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
       "rel_type": "mention"
     },
     {
@@ -5928,32 +5964,14 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77921.md",
+      "rel": "提及:卡拉布",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15593.md",
-      "rel": "提及:詹金",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15586.md",
-      "rel": "提及:旺达",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
       "rel_type": "mention"
     },
     {
@@ -5966,12 +5984,6 @@
       "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/steam.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {

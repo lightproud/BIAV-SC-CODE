@@ -4,7 +4,7 @@ title: "decisions-archive.md"
 description: "决策归档层（长理由 + 已退役决策 + 编年史）"
 resource: "/memory/decisions-archive.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-07-23"
+timestamp: "2026-07-24"
 ---
 
 # 记忆层指针

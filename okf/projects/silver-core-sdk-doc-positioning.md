@@ -4,7 +4,7 @@ title: "silver-core-sdk POSITIONING"
 description: "Silver Core SDK(BIAV-SC 引擎)是黑池五层介质架构中的**引擎层**:最慢的介质、"
 resource: "/projects/silver-core-sdk/docs/POSITIONING.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-23"
+timestamp: "2026-07-24"
 ---
 
 # 指针概念

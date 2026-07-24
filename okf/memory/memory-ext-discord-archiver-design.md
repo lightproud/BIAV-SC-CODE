@@ -4,7 +4,7 @@ title: "Discord 数据归档系统设计方案"
 description: "忘却前夜 Discord 服务器数据量远超预期——单个频道历史消息达 **76 万条**。纯 git 存储不可持续，需要设计分级存储 + 增量抓取方案。"
 resource: "/memory/discord-archiver-design.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-23"
+timestamp: "2026-07-24"
 ---
 
 # 记忆层指针
