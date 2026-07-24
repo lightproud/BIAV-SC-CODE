@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-24T02:29:07.645286+00:00",
+  "collected_at": "2026-07-24T05:50:58.727267+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 122,
+  "item_count": 124,
   "items": [
     {
       "source": "google_play",
@@ -303,6 +303,26 @@
       "summary": "赞✨👍！",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-76f8661b-513b-45d0-b27c-a667dc06df2f",
       "author": "Zhi Shao Tan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-23T04:23:01",
+      "lang": "en",
+      "title": "[Google Play 差评] ★1 downloaded it never played it before. te",
+      "summary": "downloaded it never played it before. tells me I cant play because I have reached the maximum number of characters allowed. re-download, fix option. never got to even try this game out",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-2d9f6cca-df8a-40a4-a8aa-90d058db6881",
+      "author": "Josiah Collins (josiah)",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-23T02:28:37",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 I had a wonderful experience playing! Ol",
+      "summary": "I had a wonderful experience playing! Older reviews seem to mention the use of A.I. for many things and it seems like the creators have moved away from that and are using mostly (if not all) human work and voices.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ec1dd207-75b2-4b58-b9aa-b30d64b21e01",
+      "author": "Bernadette Glorioso",
       "engagement": 0
     },
     {
