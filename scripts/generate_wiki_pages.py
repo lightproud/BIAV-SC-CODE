@@ -16,7 +16,7 @@ import glob
 
 PROCESSED_DIR = 'projects/wiki/data/processed'
 DOCS_DIR = 'projects/wiki/docs'
-SITE_BASE = '/brain-in-a-vat/wiki/'
+SITE_BASE = '/BIAV-SC-CODE/wiki/'
 
 # 界域：解包无 realm 字段，玩法层（character_skills.md）是唯一界域归属来源。
 REALM_KEYS = {'混沌': 'chaos', '深海': 'aequor', '血肉': 'caro', '超维': 'ultra'}
@@ -447,7 +447,7 @@ def _release_pointer_lines(title, desc, hint):
 
     站点为符合 GitHub Pages 1GB 上限走「文本 + 轻量资源」策略，GB 级重媒体
     （CG / 立绘 / UI / 音视频）不内嵌，改由本页指向解包一手 Release。"""
-    rel = f'https://github.com/lightproud/brain-in-a-vat/releases/tag/{ASSET_RELEASE_TAG}'
+    rel = f'https://github.com/lightproud/BIAV-SC-CODE/releases/tag/{ASSET_RELEASE_TAG}'
     return [
         f'# {title}', '',
         f'> {desc}', '',
@@ -1363,7 +1363,7 @@ def generate_stages():
 
 def generate_audio_index():
     """Generate audio page. If OGG files exist locally, embed inline players."""
-    RELEASE_URL = 'https://github.com/lightproud/brain-in-a-vat/releases/tag'
+    RELEASE_URL = 'https://github.com/lightproud/BIAV-SC-CODE/releases/tag'
     audio_dir = f'{DOCS_DIR}/public/audio'
     ogg_files = sorted(glob.glob(f'{audio_dir}/**/*.ogg', recursive=True) +
                        glob.glob(f'{audio_dir}/*.ogg'))
@@ -1404,7 +1404,7 @@ def generate_audio_index():
 
 def generate_video_index():
     """Generate video page. If MP4 files exist locally, embed inline players."""
-    RELEASE_URL = 'https://github.com/lightproud/brain-in-a-vat/releases/tag'
+    RELEASE_URL = 'https://github.com/lightproud/BIAV-SC-CODE/releases/tag'
     video_dir = f'{DOCS_DIR}/public/video'
     mp4_files = sorted(glob.glob(f'{video_dir}/**/*.mp4', recursive=True) +
                        glob.glob(f'{video_dir}/*.mp4'))

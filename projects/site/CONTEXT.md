@@ -58,18 +58,18 @@ Code-site 会话负责：
 - **部署流水线**：使用 `peaceiris/actions-gh-pages@v4` 推送到 gh-pages 分支
   - **2026-04-26 改造**：site 部署改为 `cp -r projects/site/public/. dist/` 递归，未来 `public/` 下任何子目录或新增文件自动部署，不需再追加 cp 行
 - **GitHub Pages Source**：设为 gh-pages 分支（Settings → Pages）
-- **站点地址**：`https://lightproud.github.io/brain-in-a-vat/`
+- **站点地址**：`https://lightproud.github.io/BIAV-SC-CODE/`
 
 ## 部署架构
 
 ```
-https://lightproud.github.io/brain-in-a-vat/
+https://lightproud.github.io/BIAV-SC-CODE/
 ├── /         ← projects/site/public/index.html（主站导航页，单文件 HTML，全内联 CSS）
 ├── /404.html ← projects/site/public/404.html（GitHub Pages 自动接管错误页）
 ├── /biav/    ← projects/site/public/biav/index.html（D-biav 项目说明页）
 ├── /kb/      ← okf/visualizer.html（知识库关系图，部署期 cp 成 kb/index.html；okf/ 为唯一真值源，非 public/ 下本体）
 ├── /design/  ← projects/site/design/（设计系统 Token + 落地指南，对外可访问）
-├── /wiki/    ← projects/wiki/docs/.vitepress/dist/*（Code-wiki 维护，VitePress base: /brain-in-a-vat/wiki/）
+├── /wiki/    ← projects/wiki/docs/.vitepress/dist/*（Code-wiki 维护，VitePress base: /BIAV-SC-CODE/wiki/）
 ├── /news/    ← projects/news/index.html + 数据（Code-news 维护）
 └── /docs/    ← Public-Info-Pool/Resource/proposal/biav-project-plan-202603.{html,pdf}（如存在；deliverables/ 已 2026-06-21 迁此）
 ```

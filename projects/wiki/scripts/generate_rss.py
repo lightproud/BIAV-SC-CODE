@@ -23,7 +23,7 @@ VERSIONS_PATH = REPO_ROOT / "data" / "db" / "versions.json"
 DATA_DIR = REPO_ROOT / "data" / "db"
 FEED_DIR = REPO_ROOT / "docs" / "public"
 
-SITE_URL = "https://lightproud.github.io/brain-in-a-vat/wiki"
+SITE_URL = "https://lightproud.github.io/BIAV-SC-CODE/wiki"
 FEED_TITLE = "Morimens Wiki Updates"
 FEED_DESCRIPTION = "Latest updates from the Morimens (忘却前夜) community wiki - game versions and data changes."
 
@@ -105,7 +105,7 @@ def build_wiki_items(git_entries: list[dict]) -> list[dict]:
     for entry in git_entries:
         items.append({
             "title": f"[Wiki] {entry['subject']}",
-            "link": f"https://github.com/lightproud/brain-in-a-vat/commit/{entry['hash']}",
+            "link": f"https://github.com/lightproud/BIAV-SC-CODE/commit/{entry['hash']}",
             "guid": f"morimens-wiki-commit-{entry['hash'][:12]}",
             "description": f"<p>Data update by {entry['author']}: {entry['subject']}</p>",
             "category": "wiki-update",
