@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-25T02:28:06.753095+00:00",
+  "collected_at": "2026-07-25T05:43:47.058682+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-25T03:08:31+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩，但也有缺点过剧情的手感太差了，字会慢慢显现出来不利落我个人是不太喜欢这种的会让手很累。灵肺肽和...",
+      "summary": "好玩，但也有缺点过剧情的手感太差了，字会慢慢显现出来不利落我个人是不太喜欢这种的会让手很累。灵肺肽和狂气真的不是抄袭的月计吗",
+      "url": "https://steamcommunity.com/profiles/76561198753216584/recommended/3052450",
+      "author": "76561198753216584",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩，但也有缺点过剧情的手感太差了，字会慢慢显现出来不利落我个人是不太喜欢这种的会让手很累。灵肺肽和狂气真的不是抄袭的月计吗",
+      "timestamp_created": 1784948911,
+      "playtime_forever": 256
+    },
     {
       "source": "steam",
       "time": "2026-07-24T23:58:25+00:00",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "es super divertido y el apartado visual es increible de lo mejorcito que hay en gachas",
       "timestamp_created": 1784933886,
-      "playtime_forever": 39809
+      "playtime_forever": 39876
     },
     {
       "source": "steam",
@@ -108,22 +123,7 @@
       "voted_up": true,
       "review": "Eldritch Horror... Cthulhu inspired... gothic style and atmosphere - I'm hooked on this game.",
       "timestamp_created": 1784872123,
-      "playtime_forever": 643
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-24T03:45:12+00:00",
-      "lang": "schinese",
-      "title": "[负面] 垃圾的引导，离谱的BGU\r\n什么叫我必须先跟着引导放玩我的全部底牌然后硬吃26点敌方大招？\r\n什么叫...",
-      "summary": "垃圾的引导，离谱的BGU\r\n什么叫我必须先跟着引导放玩我的全部底牌然后硬吃26点敌方大招？\r\n什么叫我可能需要在新手教程浪费一次复活？\r\n什么叫如果在复活页面按到了~键会卡死在战斗界面什么都干不了？\r\n什么叫强行退出游戏就再也打不开了？\r\n我TM就玩了10来分钟，新手引导也能出BUG啊？\r\n很难让人相信制作组里有人类...",
-      "url": "https://steamcommunity.com/profiles/76561199180699519/recommended/3052450",
-      "author": "76561199180699519",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "垃圾的引导，离谱的BGU\r\n什么叫我必须先跟着引导放玩我的全部底牌然后硬吃26点敌方大招？\r\n什么叫我可能需要在新手教程浪费一次复活？\r\n什么叫如果在复活页面按到了~键会卡死在战斗界面什么都干不了？\r\n什么叫强行退出游戏就再也打不开了？\r\n我TM就玩了10来分钟，新手引导也能出BUG啊？\r\n很难让人相信制作组里有人类...",
-      "timestamp_created": 1784864712,
-      "playtime_forever": 444
+      "playtime_forever": 703
     }
   ]
 }
