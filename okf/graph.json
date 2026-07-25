@@ -2,7 +2,7 @@
   "generated": "2026-07-25",
   "stats": {
     "nodes": 371,
-    "edges": 414
+    "edges": 412
   },
   "nodes": [
     {
@@ -4560,12 +4560,6 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/77917.md",
-      "rel": "提及:波吕克斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
@@ -5978,12 +5972,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/15599.md",
       "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/77917.md",
-      "rel": "提及:波吕克斯",
       "rel_type": "mention"
     },
     {
