@@ -101,7 +101,15 @@ const targetsFor = (base: string) => [
   { id: 'steam-review-summary', url: `${base}/reviews`, extract: 'steam-review-summary' },
 ];
 
-const fastOpts = { pollIntervalMs: 20, retryBaseMs: 30, queryTimeoutMs: 400, drainTimeoutMs: 10_000 };
+// queryTimeoutMs is deliberately generous relative to pollIntervalMs/retryBaseMs: a
+// loopback fetch against the in-process fake storefront returns in single-digit ms, so
+// this budget is never reached on a healthy run and the suite stays fast. It is NOT a
+// tuning knob for the assertions — it only has to sit above the worst-case cold-start
+// latency of a loaded CI runner. At 400ms it did not: a runner overshoot timed the
+// attempt out, the driver retried, and the ledger carried 4 query rows where the test
+// asserts 2 (observed 2026-07-25, PR #801). Raising the ceiling removes the false
+// timeout without touching the semantics under test.
+const fastOpts = { pollIntervalMs: 20, retryBaseMs: 30, queryTimeoutMs: 3_000, drainTimeoutMs: 10_000 };
 
 describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () => {
   it('baseline day: snapshots + change log seeded, sessions done, ledger persisted', async () => {
