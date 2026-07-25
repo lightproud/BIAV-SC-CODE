@@ -4,14 +4,14 @@ export default defineConfig({
   title: '忘却前夜 Wiki',
   description: '忘却前夜 (Morimens) 游戏资料站 - 基于客户端数据提取',
 
-  base: '/brain-in-a-vat/wiki/',
+  base: '/BIAV-SC-CODE/wiki/',
   ignoreDeadLinks: true,
   lang: 'zh-CN',
 
   head: [
     ['meta', { name: 'keywords', content: '忘却前夜,Morimens,wiki,收藏馆,语音,CG,命轮,密契,克苏鲁,roguelite' }],
     ['meta', { name: 'theme-color', content: '#c5a356' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/brain-in-a-vat/wiki/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/BIAV-SC-CODE/wiki/logo.svg' }],
   ],
 
   themeConfig: {
@@ -120,7 +120,7 @@ export default defineConfig({
     docFooter: { prev: '上一篇', next: '下一篇' },
     lastUpdated: { text: '最后更新' },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/lightproud/brain-in-a-vat' },
+      { icon: 'github', link: 'https://github.com/lightproud/BIAV-SC-CODE' },
     ],
     search: { provider: 'local' },
     footer: {

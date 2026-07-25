@@ -89,8 +89,8 @@ jobs:
           mkdir -p dist/kb
           [ -f "okf/visualizer.html" ] && cp "okf/visualizer.html" dist/kb/index.html
           mkdir -p dist/docs
-          [ -f "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html" ] && cp "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html" dist/docs/brain-in-a-vat-project.html
-          [ -f "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.pdf" ] && cp "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.pdf" dist/docs/brain-in-a-vat-project.pdf
+          [ -f "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html" ] && cp "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html" dist/docs/BIAV-SC-CODE-project.html
+          [ -f "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.pdf" ] && cp "Public-Info-Pool/Resource/proposal/biav-project-plan-202603.pdf" dist/docs/BIAV-SC-CODE-project.pdf
           touch dist/.nojekyll
 
       - name: Verify build output
@@ -149,7 +149,7 @@ jobs:
         run: |
           echo "Waiting 30s for GitHub Pages to propagate..."
           sleep 30
-          BASE="https://lightproud.github.io/brain-in-a-vat"
+          BASE="https://lightproud.github.io/BIAV-SC-CODE"
           # wiki is zh-only (single locale at /wiki/ root); no en/ja locales configured
           for url in "$BASE/" "$BASE/wiki/" "$BASE/news/" "$BASE/kb/"; do
             status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "000")

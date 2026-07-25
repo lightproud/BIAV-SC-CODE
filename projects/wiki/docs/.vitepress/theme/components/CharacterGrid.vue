@@ -5,7 +5,7 @@ import { characters, REALM_LABELS, ROLE_LABELS, STATUS_LABELS } from '../data/ch
 import type { MorimensCharacter } from '../data/characters'
 
 function pageHref(c: MorimensCharacter): string | undefined {
-  // cleanUrls: false + 站点挂 /brain-in-a-vat/wiki/ 子路径 → 必须 withBase + .html
+  // cleanUrls: false + 站点挂 /BIAV-SC-CODE/wiki/ 子路径 → 必须 withBase + .html
   return c.has_page ? withBase(`/zh/awakeners/${c.slug}.html`) : undefined
 }
 

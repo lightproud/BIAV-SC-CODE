@@ -14,97 +14,97 @@
 
   <!-- Language root pages with hreflang cross-references -->
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/brain-in-a-vat/wiki/zh/"/>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/brain-in-a-vat/wiki/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/en/"/>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/brain-in-a-vat/wiki/zh/"/>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/brain-in-a-vat/wiki/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/en/"/>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/ja/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/brain-in-a-vat/wiki/zh/"/>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/brain-in-a-vat/wiki/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/BIAV-SC-CODE/wiki/en/"/>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- High-priority content sections (zh) -->
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/awakeners/</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/awakeners/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/awakeners/list</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/awakeners/list</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/cards/</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/cards/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/guides/tier-list</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/guides/tier-list</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/guides/beginner</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/guides/beginner</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/guides/faq</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/zh/guides/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- High-priority content sections (en) -->
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/awakeners/</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/en/awakeners/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/awakeners/list</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/en/awakeners/list</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/guides/tier-list</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/en/guides/tier-list</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/guides/beginner</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/en/guides/beginner</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- High-priority content sections (ja) -->
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/ja/awakeners/</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/ja/awakeners/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/ja/awakeners/list</loc>
+    <loc>https://lightproud.github.io/BIAV-SC-CODE/wiki/ja/awakeners/list</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
