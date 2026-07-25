@@ -1,5 +1,8 @@
-# Auto-deploy site + wiki + news to GitHub Pages
-# Art assets downloaded from Release at build time (not stored in git)
+# Auto-deploy site + wiki + news to GitHub Pages (artifact-based deployment)
+# T62（2026-07-22）：从 gh-pages 分支部署（peaceiris）迁移到 GitHub Actions artifact
+# 部署（actions/deploy-pages）——~553M 构建产物不再作为 1.1G 常驻分支存在仓库里，默认
+# clone 降到代码基线（73M）。美术资产仍构建期从 Release 下载（不入 git）。
+# ⚠ 前置：仓库 Settings → Pages → Source 须设为 "GitHub Actions"（否则 deploy 步骤失败）。
 name: Deploy Site
 
 on:
@@ -16,14 +19,16 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-site-${{ github.ref }}
+  group: pages
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -34,10 +39,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # SLIM 部署（守密人 2026-06-21 裁定）：GitHub Pages 站点硬上限 1GB，
-          # 全量美术/音视频解压约 8-10GB 远超限，致 gh-pages 推送 500 断连、全站 404。
-          # 策略：只内嵌轻量资产（icon + units），GB 级重媒体（cg/portraits/
-          # uiresources/audio/video）不下载；对应画廊页由 generate_wiki_pages.py
-          # 自动降级为指向 unpacked-assets Release 的占位页。
+          # 全量美术/音视频解压约 8-10GB 远超限。策略：只内嵌轻量资产（icon + units），
+          # GB 级重媒体（cg/portraits/uiresources/audio/video）不下载；对应画廊页由
+          # generate_wiki_pages.py 自动降级为指向 unpacked-assets Release 的占位页。
           echo "Downloading lightweight assets (icon + units) from unpacked-assets..."
           cd projects/wiki/docs/public
           gh release download unpacked-assets \
@@ -124,13 +128,21 @@ jobs:
             echo "WARNING: dist/wiki/index.html missing"
           fi
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-          force_orphan: true
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       - name: Post-deploy smoke test
         continue-on-error: true
