@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-25T13:21:21.753479+00:00",
+  "collected_at": "2026-07-25T16:04:46.644144+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-24T23:58:25+00:00",
+      "lang": "english",
+      "title": "[正面] Yea I licked the screen, not gonna deny it.",
+      "summary": "Yea I licked the screen, not gonna deny it.",
+      "url": "https://steamcommunity.com/profiles/76561198136438453/recommended/3052450",
+      "author": "76561198136438453",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "Yea I licked the screen, not gonna deny it.",
+      "timestamp_created": 1784937505,
+      "playtime_forever": 3558
+    },
     {
       "source": "steam",
       "time": "2026-07-25T10:58:10+00:00",
@@ -67,21 +82,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-07-24T23:58:25+00:00",
-      "lang": "english",
-      "title": "[正面] Yea I licked the screen, not gonna deny it.",
-      "summary": "Yea I licked the screen, not gonna deny it.",
-      "url": "https://steamcommunity.com/profiles/76561198136438453/recommended/3052450",
-      "author": "76561198136438453",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Yea I licked the screen, not gonna deny it.",
-      "timestamp_created": 1784937505,
-      "playtime_forever": 3558
-    },
-    {
-      "source": "steam",
       "time": "2026-07-24T22:58:06+00:00",
       "lang": "spanish",
       "title": "[正面] es super divertido y el apartado visual es increib...",
@@ -93,7 +93,7 @@
       "voted_up": true,
       "review": "es super divertido y el apartado visual es increible de lo mejorcito que hay en gachas",
       "timestamp_created": 1784933886,
-      "playtime_forever": 39876
+      "playtime_forever": 39970
     },
     {
       "source": "steam",
