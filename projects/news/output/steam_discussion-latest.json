@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-25T16:04:46.644144+00:00",
+  "collected_at": "2026-07-25T19:05:25.877139+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "source": "steam_discussion",
@@ -17,6 +17,16 @@
     },
     {
       "source": "steam_discussion",
+      "time": "2026-07-25T18:51:30+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] Who should I pull for in the Triune Verdant Banner?",
+      "summary": "Hellot: Catena, Corposanct or Pollux?",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/594062684485358631/",
+      "author": "Kalderman (Ain't it nice?)",
+      "engagement": 4
+    },
+    {
+      "source": "steam_discussion",
       "time": "2026-07-25T16:01:54+00:00",
       "lang": "en",
       "title": "[Steam论坛] Account Lost",
@@ -24,6 +34,16 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/594062392369063214/",
       "author": "ZerOxygeNeedEd",
       "engagement": 1
+    },
+    {
+      "source": "steam_discussion",
+      "time": "2026-07-25T19:01:14+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] Publisher deletes stuff after 365 days??",
+      "summary": "From the wall of text only I sift through:\n\nIII. Account\n\"5. If you do not log in the game in 365 days, The Company has the right to irretrievably delete your Account and the game data thereunder (including but not limited to game character, level, virtual items).\"\n\nIs this true?? So if I install the game, buy some stuff unlock some stories assemble a team, then leave it for other games for a while, revisiting a year later, my stuff is reset?...",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/594062684485368066/",
+      "author": "st0ic",
+      "engagement": 0
     }
   ]
 }
