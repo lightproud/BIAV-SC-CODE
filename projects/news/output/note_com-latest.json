@@ -1,10 +1,20 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-25T08:04:46.650733+00:00",
+  "collected_at": "2026-07-25T10:27:29.284255+00:00",
   "source": "note_com",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
+    {
+      "source": "note_com",
+      "time": "2026-07-25T17:29:12+09:00",
+      "lang": "ja",
+      "title": "【忘却前夜】レベルとステータスの関係",
+      "summary": "注意深く見ていればわかる程度の計算式ですが、意外と知られていない気がするので、ここにまとめておきます。あと、内在霊格の仕様で色々と混乱がありそうなので、それについても解説します。ステータスの計算式続きをみる",
+      "url": "https://note.com/mayoineko_2025/n/n80774a092f35",
+      "author": "mayoineko",
+      "engagement": 0
+    },
     {
       "source": "note_com",
       "time": "2026-07-24T23:10:44+09:00",
