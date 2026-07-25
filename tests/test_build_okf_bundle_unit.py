@@ -14,7 +14,9 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
+import build_kb_index as bki
 import build_okf_bundle as bok
+import okf_pointer_layers as opl
 
 
 # --- _yaml_scalar -----------------------------------------------------------
@@ -278,10 +280,26 @@ def _repo_tmp_bundle():
     return Path(tempfile.mkdtemp(prefix="_unit_okf_", dir=repo)) / "okf"
 
 
+def _redirect_bundle(monkeypatch, b):
+    """Point every module that writes into the bundle at `b`.
+
+    `bok.BUNDLE` alone is not enough: okf_pointer_layers and build_kb_index each
+    hold their own `REPO / "okf"` (deliberately self-contained to avoid a circular
+    import), and `bok.main()` drives both. Patching only `bok.BUNDLE` sent the four
+    native layers to tmp while every pointer layer + kb_index.json was written
+    straight into the tracked okf/ tree — and with the community data lake absent
+    (no BIAV_SC_DATA_ROOT) that rewrite silently dropped 17 platform concepts.
+    """
+    monkeypatch.setattr(bok, "BUNDLE", b)
+    monkeypatch.setattr(opl, "BUNDLE", b)
+    monkeypatch.setattr(bki, "BUNDLE", b)
+    monkeypatch.setattr(bki, "INDEX_PATH", b / "kb_index.json")
+
+
 def test_main_builds_full_bundle(monkeypatch, capsys):
     import shutil
     b = _repo_tmp_bundle()
-    monkeypatch.setattr(bok, "BUNDLE", b)
+    _redirect_bundle(monkeypatch, b)
     monkeypatch.setattr(sys, "argv", ["build_okf_bundle.py"])
     try:
         bok.main()
@@ -297,10 +315,45 @@ def test_main_builds_full_bundle(monkeypatch, capsys):
         shutil.rmtree(b.parent, ignore_errors=True)
 
 
+def test_main_leaves_the_tracked_bundle_untouched(monkeypatch, capsys):
+    """main() under redirection must not write one byte into the tracked okf/.
+
+    Regression guard for the leak this helper closes. Without it the pointer
+    layers landed in the real tree, and running the suite in an environment
+    without the community data lake rewrote them into a lossy state that the
+    stop hook then invited you to commit.
+    """
+    import shutil
+    real = Path(__file__).resolve().parent.parent / "okf"
+    if not real.is_dir():
+        pytest.skip("tracked okf/ absent (sparse checkout) — 无从核验污染")
+
+    def snapshot():
+        return {p: (p.stat().st_mtime_ns, p.stat().st_size)
+                for p in sorted(real.rglob("*")) if p.is_file()}
+
+    before = snapshot()
+    assert before, "tracked okf/ unexpectedly empty — guard would be vacuous"
+
+    b = _repo_tmp_bundle()
+    _redirect_bundle(monkeypatch, b)
+    monkeypatch.setattr(sys, "argv", ["build_okf_bundle.py"])
+    try:
+        bok.main()
+        capsys.readouterr()
+        # The pointer layers really ran — they just landed in the redirected dir.
+        # (Asserting only "real/ unchanged" would also pass if opl never ran.)
+        assert (b / "assets" / "index.md").exists()
+        assert (b / "kb_index.json").exists()
+        assert snapshot() == before, "build_okf_bundle wrote into the tracked okf/"
+    finally:
+        shutil.rmtree(b.parent, ignore_errors=True)
+
+
 def test_main_with_tarball(tmp_path, monkeypatch):
     import shutil
     b = _repo_tmp_bundle()
-    monkeypatch.setattr(bok, "BUNDLE", b)
+    _redirect_bundle(monkeypatch, b)
     tarball = tmp_path / "out.tar.gz"
     monkeypatch.setattr(sys, "argv",
                         ["build_okf_bundle.py", "--tarball", str(tarball)])
