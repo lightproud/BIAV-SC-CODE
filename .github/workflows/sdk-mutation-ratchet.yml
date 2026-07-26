@@ -13,9 +13,15 @@ name: SDK Mutation Ratchet (weekly)
 # Deliberately scheduled + manual, NOT a per-PR required check: a full
 # per-target Stryker round costs ~7-12 minutes.
 #
-# Matrix names must match mutation-ratchet.json target names - the guard
-# script REDS loudly on drift (unknown name), so adding a target means
-# editing both files in one PR.
+# Matrix legs are GENERATED from the two mutation-ratchet.json files by the
+# `targets` job below (keeper ruling 2026-07-26, drift-resistant-architecture
+# proposal move 1: generate instead of cross-check). Adding a ratchet target
+# means editing ONE file - the baseline - and the matrix follows. The earlier
+# arrangement kept the same list in two hand-written places, which is how the
+# loop-support floor sat unmeasured from 2026-07-17 to 2026-07-26: it was in
+# the baseline, absent from the matrix, and the guard script only reds the
+# other direction (a matrix leg with no floor).
+# tests/test_mutation_ratchet_matrix.py stays on as a second belt.
 
 on:
   schedule:
@@ -31,17 +37,48 @@ permissions:
   contents: read
 
 jobs:
+  # The single source of truth for "what gets ratcheted" is the baseline file
+  # of each package. This job just reads them out; nothing here decides
+  # anything. Sparse to the two baselines - no checkout of the repo body.
+  targets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      agent: ${{ steps.read.outputs.agent }}
+      maestro: ${{ steps.read.outputs.maestro }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /projects/silver-core-sdk/mutation-ratchet.json
+            /projects/silver-core-maestro-sdk/mutation-ratchet.json
+          sparse-checkout-cone-mode: false
+      - id: read
+        run: |
+          set -euo pipefail
+          emit() {
+            local file="$1" key="$2"
+            local list
+            list=$(node -e "
+              const b = require('./$file');
+              const names = (b.targets ?? []).map((t) => t.name);
+              if (names.length === 0) { console.error('no targets in $file'); process.exit(2); }
+              process.stdout.write(JSON.stringify(names));
+            ")
+            echo "$key=$list" >> "$GITHUB_OUTPUT"
+            echo "$key: $list"
+          }
+          emit projects/silver-core-sdk/mutation-ratchet.json agent
+          emit projects/silver-core-maestro-sdk/mutation-ratchet.json maestro
+
   ratchet:
+    needs: targets
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
-        # loop-support joined 2026-07-26 (todo T64 item 1): its floor 94.35 had
-        # sat in mutation-ratchet.json since 2026-07-17 with no matching matrix
-        # leg, so it was never re-measured — a floor nobody checks is not a
-        # ratchet. The testbed's ratchet inspector reported the gap daily.
-        target: [permissions, transport-openai, transport-anthropic, sessions, loop-support]
+        target: ${{ fromJSON(needs.targets.outputs.agent) }}
     # Single-target dispatch: matrix legs cannot be pruned (matrix context is
     # unavailable in job-level if), so every REAL step carries the same gate —
     # an echo+exit-0 "skip step" gates nothing (audit H4). Empty/absent input
@@ -109,12 +146,13 @@ jobs:
   # share no code by decree (SCS-REQ orchestrator-sdk §2), and CI tooling
   # follows the same one-way discipline.
   ratchet-maestro:
+    needs: targets
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
-        target: [ledger-state, schedule-spec, workflow-graph, goal-decision, delivery-channel, workflow-load]
+        target: ${{ fromJSON(needs.targets.outputs.maestro) }}
     # Same per-step gate as the ratchet job above (audit H4): matrix legs
     # cannot be pruned at job level, and an echo+exit-0 step skips nothing.
     steps:
