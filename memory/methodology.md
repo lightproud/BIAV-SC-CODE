@@ -389,6 +389,26 @@ lessons-learned 的毕业纪律写的是第三个说法：「文字劝告是弱�
 生成块对它一无所知。`tests/test_status_doc_facts.py` 守的正是这一层（发布台账最新一版必须在
 叙述里留下痕迹），与生成块不重叠。
 
+**射程延伸（守密人 2026-07-26「3 推进」）**：哨兵原本要求「最新版本号出现在 CONTEXT.md
+当前状态节」——那实质是**要求人手抄一个会变的数字**，与招一相抵。现已改为生成
+（两包 `CONTEXT.md` 的 CONTEXT-FACTS 块：版本 / 发布日 / 锁步对端），哨兵同步收窄为只看叙述。
+**这是「能生成的先生成」次序的一次实际执行：先扩生成层，再把哨兵让出那一维。**
+
+### 生成层扩射程时的必查项：别把哨兵架空了（2026-07-26 实战教训）
+
+把版本号生成进 CONTEXT.md 的**那一刻**，哨兵「版本号必须出现在当前状态节」就地变成永真——
+生成块自己就带着那个号。**测试照常绿，守的东西却没了，而且它红不了，所以没人会发现它已经死了。**
+
+这不是本次特有的坑，是生成层与检查层共存的通用失效模式。故立两条：
+
+- **搜叙述前先剥生成块**（`_narrative()` 用 `<!-- X:BEGIN … X:END -->` 通配剥除，不是硬编码
+  某个块名——下一个块不会再触发一次同样的事故）；
+- **为「不架空」本身写一条非空控**（`test_narrative_stripping_is_not_vacuous`：构造一份版本号
+  只存在于生成块里的档案，断言叙述检查仍判负）。哨兵的负控证明它会咬，这一条证明**它咬的
+  还是原来那块肉**。
+
+一句话纪律：**生成层每扩一次射程，回头点一遍现有哨兵的判据有没有被自己吃掉。**
+
 ### 两条配套纪律
 
 - **空 allowlist 是目标**。豁免每条须写明理由，且必须是「经核实的哨兵已知盲区」而非「懒得改」。
@@ -400,16 +420,17 @@ lessons-learned 的毕业纪律写的是第三个说法：「文字劝告是弱�
 ### 覆盖现状（新增须在此登记，便于下一个会话知道哪些角落已有岗）
 
 **先看生成层**（漂移不可能，非「被发现」）：`scripts/build_status_facts.py`（版本 / 规模 /
-台账条数生成进 STATUS-FACTS 块，守卫 `tests/test_status_facts.py`）· `sdk-mutation-ratchet.yml`
-矩阵改生成（地板清单即唯一源，不再两份手写）。**生成层盖不到的，才由下表的哨兵站岗。**
+台账条数生成进 `project-status.md` 的 STATUS-FACTS 块 **+ 两包 `CONTEXT.md` 的 CONTEXT-FACTS
+版本标签块**，守卫 `tests/test_status_facts.py`）· `sdk-mutation-ratchet.yml` 矩阵改生成
+（地板清单即唯一源，不再两份手写）。**生成层盖不到的，才由下表的哨兵站岗。**
 
 | 哨兵 | 盯的对应关系 |
 |------|-------------|
 | `tests/test_claude_md.py` | CLAUDE.md 引用的路径 ↔ 磁盘实况（正向） |
 | `tests/test_claude_md_coverage.py` | 核心脚本 ↔ 权威档提及（反向孤儿） |
 | `tests/test_claude_md_dates.py` | CLAUDE.md 裁定日期 ↔ decisions 台账（跨档） |
-| `tests/test_status_facts.py` | 生成块 ↔ 权威源（重算逐字比对，2026-07-26 招一） |
-| `tests/test_status_doc_facts.py` | CHANGELOG 最新版本 ↔ package.json ↔ 状态**叙述层**（生成块够不到的那层，2026-07-26 新增） |
+| `tests/test_status_facts.py` | 生成块 ↔ 权威源（重算逐字比对 + 块存在性，2026-07-26 招一） |
+| `tests/test_status_doc_facts.py` | CHANGELOG 最新版本 ↔ package.json ↔ 状态**叙述层**（剥掉生成块后搜，含「不被架空」非空控，2026-07-26 新增） |
 | `tests/test_memory_freshness.py` | lessons 指针完整性 + 编号不变量 |
 | `tests/test_ledger_discipline.py` | todo 台账编号 / 分节纪律（2026-07-26 招二） |
 | `tests/test_mutation_ratchet_matrix.py` | 变异地板清单 ↔ CI 矩阵腿（双向） |

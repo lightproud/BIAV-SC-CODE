@@ -55,6 +55,30 @@ jobs:
         run: npm ci
       - name: Typecheck (agent SDK)
         run: npm run typecheck --workspace silver-core-agent-sdk
+      # Shell-resolver diagnostic (added after round 1, 2026-07-26): the first
+      # probe failed ~24 Bash-path tests with "No POSIX shell found", yet the
+      # runner demonstrably has C:\Program Files\Git\bin\git.exe and the
+      # resolver's probe list covers %ProgramFiles%\Git\bin\bash.exe. Either the
+      # env var is absent/differently cased under the runner shell, or bash.exe
+      # is not where git.exe is — this step tells us which, instead of leaving
+      # the whole cluster classified as "probably environment".
+      # Non-fatal on purpose: it is instrumentation, not a gate.
+      - name: Diagnose the Windows shell resolver
+        if: runner.os == 'Windows'
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          Write-Host "ProgramFiles      = $env:ProgramFiles"
+          Write-Host "ProgramFiles(x86) = ${env:ProgramFiles(x86)}"
+          Write-Host "ProgramW6432      = $env:ProgramW6432"
+          Write-Host "LOCALAPPDATA      = $env:LOCALAPPDATA"
+          foreach ($p in @(
+            "$env:ProgramFiles\Git\bin\bash.exe",
+            "$env:ProgramFiles\Git\usr\bin\bash.exe",
+            "${env:ProgramFiles(x86)}\Git\bin\bash.exe",
+            "$env:LOCALAPPDATA\Programs\Git\bin\bash.exe"
+          )) { Write-Host ("exists {0,-5} {1}" -f (Test-Path $p), $p) }
+          node -e "const e=process.env; const s={...e}; console.log('spread keeps ProgramFiles:', 'ProgramFiles' in s, JSON.stringify(s.ProgramFiles ?? null));"
       # The suite is expected to surface platform assumptions here — path
       # separators, shell resolution, process-group kills, and the sandbox
       # backend that only resolves on Linux. A red run is DATA, not a failure
