@@ -1,8 +1,8 @@
 # Wiki 子项目上下文
 
 > **⚠ 解包 text 层已删除（守密人 2026-07-12 裁定）**：原 `Public-Info-Pool/Reference/Game-Unpacked/`
-> 整层（224M / 3,694 文件）已删——wiki 冻结后消费场景消失；追溯走 git 历史，二进制本体仍在
-> Releases「解包」桶（可重解 text）。下文对该层的引用按历史状态理解。
+> 整层（224M / 3,694 文件）已删——wiki 冻结后消费场景消失；**唯一还原路径 = Releases「解包」桶
+> 二进制重解 text**（git 历史一路已随 2026-07-20 全仓压扁断掉，见 CLAUDE.md §6.3）。下文对该层的引用按历史状态理解。
 
 > **⚠ 子项目已冻结（守密人 2026-07-12 裁定，见 `memory/decisions.md` 同日「wiki 使命取消」条）**：
 > 原使命#2「社区共建知识底座」取消，wiki 不再承载银芯正式使命。**已建成果保留不删不派发**
@@ -65,7 +65,7 @@ Public-Info-Pool/Reference/Game-Unpacked/   客户端一手解包 text（Lua表�
 ## 目录说明
 
 - `data/extracted/` — **已整删（2026-07-12 目录规范化裁定）**：独占残件（art_assets 清单 + 2 txt）
-  随解包 text 层同日退场，追溯走 git 历史 / Releases 美术桶；血缘链就此收束为历史记录
+  随解包 text 层同日退场，追溯走 Releases 美术桶（git 历史一路已断，见 CLAUDE.md §6.3）；血缘链就此收束为历史记录
 - `data/processed/` — 加工 JSON（现行 source of truth；剧情层在 `processed/story/`）
 - `data/schemas/` — schema 定义。现行校验对象为 processed 基线
   （`characters.processed.schema.json`，2026-07-02 对齐）；旧 db 链 schema

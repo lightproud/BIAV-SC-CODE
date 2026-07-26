@@ -99,7 +99,8 @@
 2. **wiki 自举闭环**（原使命#2 载体；**2026-07-12 使命取消、子项目冻结**——已建成果保留
    不删不派发，以下为冻结时点状态）：客户端解包 Lua → 解包 text 原始字段（原
    Reference 层 Game-Unpacked 目录，**2026-07-12 守密人裁定整层删除**——wiki 冻结后
-   消费场景消失，git 历史 + Releases「解包」桶二进制可恢复；wiki 侧 data/extracted 独占残件
+   消费场景消失，**可由 Releases「解包」桶二进制经解包管线重新推导**——原「git 历史可追」
+   已随 2026-07-20 §7乙 全仓压扁 + 备份分支删除失效，见 §6 尾「历史抢救网现状」；wiki 侧 data/extracted 独占残件
    亦于同日随目录规范化裁定整删）→ 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
    **当前状态**：旧结构化层（`characters.json` 全 6 JSON + 派生角色页，原在 data/db/）2026-06-15 守密人裁定整层清空
    （占位数据长期误导引用）；W2 **可信基线已重建**于 `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、
@@ -242,13 +243,13 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 - 人格：`assets/data/character-personas/erica.json`（角色卡 v1.1）+ `assets/data/character-personas/erica-speech-canon.md`（Voice.lua 一手 + 8 节归纳）
 - 采访 / 叙事 / 设计：`assets/data/interview-2026-04.json`（53 问）· `assets/data/narrative-structure.json` · `assets/data/design-decisions.json` · `assets/data/card-system.json`
-- 角色基线：W2 可信基线 `projects/wiki/data/processed/characters.json`（72 真实角色，现行唯一权威）。原自举源解包 text 层（Reference 层 Game-Unpacked 目录）已于 2026-07-12 守密人裁定整层删除（wiki 冻结后消费场景消失），追溯走 git 历史 / Releases「解包」桶
+- 角色基线：W2 可信基线 `projects/wiki/data/processed/characters.json`（72 真实角色，现行唯一权威）。原自举源解包 text 层（Reference 层 Game-Unpacked 目录）已于 2026-07-12 守密人裁定整层删除（wiki 冻结后消费场景消失），**追溯走 Releases「解包」桶二进制重解**（git 历史一路已断，见 §6 尾「历史抢救网现状」）
 - 剧情结构层：`projects/wiki/data/processed/story/`（`story_units` / `lore_entries` / `index`，`scripts/build_story_layer.py` 生成）+ `STORY_RESEARCH.md`（社区源深研，采信看置信标签）+ `story_search_index.json`（`scripts/build_story_index.py` 重建，分词 `scripts/silver_tokenizer.py`）
 - 世界观：`memory/morimens-context.md`（术语 + 历史时间线）
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
-- **数据湖已迁 BIAV-SC-DATA（T62 P2-5 §7甲，2026-07-20）**：社区全量档案 `Record/Community/` 不再在 code 仓跟踪（git 历史保留可恢复；§7乙 历史重写暂缓）。采集写 / build CI clone / 读侧一律经 **`BIAV_SC_DATA_ROOT`** 指向 BIAV-SC-DATA checkout 解析（`archive_layout.community_root()` 单一真相源，env 未设回落在树默认）；本地会话消费需先 clone BIAV-SC-DATA 并设 env 根。以下路径为**数据湖内相对布局**（根 = `$BIAV_SC_DATA_ROOT` 或旧在树 `Public-Info-Pool/`）。
+- **数据湖已迁 BIAV-SC-DATA（T62 P2-5 §7甲，2026-07-20）**：社区全量档案 `Record/Community/` 不再在 code 仓跟踪（**本体在 BIAV-SC-DATA 数据仓 + `community-data` Release 副本**；原「git 历史保留可恢复」已随 2026-07-20 §7乙 全仓压扁失效，见 §6 尾「历史抢救网现状」）。采集写 / build CI clone / 读侧一律经 **`BIAV_SC_DATA_ROOT`** 指向 BIAV-SC-DATA checkout 解析（`archive_layout.community_root()` 单一真相源，env 未设回落在树默认）；本地会话消费需先 clone BIAV-SC-DATA 并设 env 根。以下路径为**数据湖内相对布局**（根 = `$BIAV_SC_DATA_ROOT` 或旧在树 `Public-Info-Pool/`）。
 - 全量档案（2026-06-21 迁入 BPT 4R，text 全量永驻数据仓）：`Record/Community/discord/{区服}/channels/{id_suffix}/{date}.jsonl`（区服 ∈ global / jp / volunteer，2026-07-10 方案甲三服统一；guild↔区服映射唯一源 = `projects/news/scripts/archive_layout.py` `DISCORD_GUILD_REGIONS`，新 guild 未登记归档即响亮失败）+ `Public-Info-Pool/Record/Community/{platform}/`（16+ 平台与 discord 平级摊平，以 `ls` 为准）。**discord JSONL 为紧凑 schema（2026-06-22 精简，工作树 3.4G→2.0G 省 41%）：缺字段 = 默认值**（`type`→0 / `author_bot`→false / `pinned`→false / `flags`→0 / `has_thread`→false / `thread_id`·`edited_timestamp`·`reply_to`→null / `mentions`·`reactions`·`attachments`·`embeds`→[]）；恒留 `id`/`channel_id`/`author_id`/`author_name`/`content`/`timestamp`。读取**必用 `.get(默认)`**，需稳定全字段用 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。
   **冷热分层（守密人 2026-07-12 甲案裁定，同日推广全平台）**：Community dated 归档按月压冷——**当月 + 上月为
   裸文本热层，上上个月及更早压成 `.gz` 冷层**（实测压至 ~18%）；月度执行 = CI `community-cold-compress.yml`
@@ -261,8 +262,9 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 - Discord 每日纯统计：`Public-Info-Pool/Record/Community/discord/{区服}/activity_daily/{date}.json`（主服在 global 区服目录）
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
 - **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史现驻数据仓 BIAV-SC-DATA `Record/Community/discord`**（2026-06-21 de-tier 退役月度 git_rm；2026-07-20 T62 P2-5 §7甲 迁出 code 仓），经 `BIAV_SC_DATA_ROOT` 读、无需 Release 还原。重建：`BIAV_SC_DATA_ROOT=<data仓> python3 scripts/build_community_index.py`（消费方双布局：新路径优先、回落旧）。分词用领域词典 FMM，top_terms 为粗粒度主题信号
-- 解包层：text 层（原 Reference 层 Game-Unpacked 目录）**2026-07-12 守密人裁定整层删除**（git 历史可追、
-  Releases「解包」桶二进制可重解）；二进制解包资产（立绘/音视频/lua-bytecode/config binary）在 Releases「解包」桶
+- 解包层：text 层（原 Reference 层 Game-Unpacked 目录）**2026-07-12 守密人裁定整层删除**
+  （**唯一还原路径 = Releases「解包」桶二进制重解**，管线 `extract-game-data.yml` +
+  `projects/wiki/scripts/extract_client_data.py` + `scripts/parse_*.py` 均在；git 历史一路已断，见 §6 尾）；二进制解包资产（立绘/音视频/lua-bytecode/config binary）在 Releases「解包」桶
 - Releases：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
 
 ### §5.3 项目档案
@@ -314,7 +316,7 @@ brain-in-a-vat/
 │   ├── Resource/{主题类型}/       #   A类正式产物（报告/分析），按主题类型分目录，进 git 长期归档
 │   ├── Record/Community/          #   社区全量档案 text（discord + 16+ 平台，冷热分层见 §5.2）
 │   ├── Record/store-patrol/       #   商店巡检快照 + 变更日志（Maestro SDK 台账驱动，每日北京 15:15）
-│   ├── Reference/                 #   引用参照层（解包 text 层 2026-07-12 裁定删除，git 历史可追）
+│   ├── Reference/                 #   引用参照层（解包 text 层 2026-07-12 裁定删除，经 Releases 二进制重解）
 │   ├── Rough/                     #   C类即兴草稿/过程废料，.gitignore，可晋升进 Resource
 │   └── types.json                 #   Resource 主题类型开放注册表（形式定死/清单可增）
 ├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
@@ -385,6 +387,28 @@ bpt-agent-sdk、2026-07-10 守密人裁定更名 Silver Core SDK，与 §1.1-HC 
   - `promote <Rough草稿> --type --topic --date` 草稿晋升；`rename-type <old> <new>` 类型改名（移目录 + 改注册表）。
 - **`Public` 语义**：指**信息来源为公开渠道** + 银芯整层公开定位（见 §0）。_避免_读成「公网可访问目录」。
 
+### §6.3 历史抢救网现状（2026-07-26 核实，硬事实）
+
+**本仓 git 历史只到 2026-07-20**。T62 §7乙 全仓压扁把 main 重建为单提交基线，回滚保险分支
+`pre-flatten-backup-20260720` 与工作分支 `flat-main-20260720` 随后由守密人删除（2026-07-26 经
+GitHub API + `git ls-remote` 双向核实：远端仅剩 `main` 一条 heads）。**此前散落各档案的
+「git 历史可追 / 可恢复」措辞一律作废**，本次已全仓订正（守密人 2026-07-26 裁定「全部订正」）。
+
+现行**三张网**（今后它们就是唯一抢救网，删任一即等同永久丢失）：
+
+| 网 | 覆盖 | 还原方式 |
+|---|---|---|
+| **BIAV-SC-DATA 数据仓** | 社区全量档案 `Record/Community/`（discord 三区服 + 16+ 平台）| clone 后设 `BIAV_SC_DATA_ROOT` 直接读 |
+| **`community-data` / `community-assets` Release** | discord 33 月历史副本（2023-07 → 2026-05）· fanart 与回填媒体 | `scripts/restore_release_data.py` |
+| **`unpacked-assets` Release** | 游戏内部二进制（立绘 / CG / 音视频 / lua-bytecode / config）| `extract-game-data.yml` + `projects/wiki/scripts/extract_client_data.py` + `scripts/parse_*.py` **重新解包推导** |
+
+**已确认不可恢复**（当初删除判词均为「已不使用 / 长期误导 / 用完即删」，价值损失近零，照实记录不粉饰）：
+bpt-pm 排期工作台代码 · 2026-06-20 退役的记忆子系统旧码 · `migrate_*` 一次性脚本历史版本 ·
+wiki 旧结构化层的 6 个占位 JSON（2026-06-15 裁定清空者）。**守密人已裁定不抢存本地残余克隆**（2026-07-26）。
+
+小学生比喻：地下室连同楼梯一起拆了；真正要紧的东西早就另外装箱寄存在三个仓库里，
+但墙上那些「请下地下室取」的指示牌必须全部摘掉，否则下一个人会照着牌子白跑一趟。
+
 ---
 
 ## §7 开发工作流
@@ -421,7 +445,7 @@ bpt-agent-sdk、2026-07-10 守密人裁定更名 Silver Core SDK，与 §1.1-HC 
 
 `scripts/` 按命名约定分类（人格 `character_persona` / 记忆写入 `silver_memory_tools` /
 解包-解析 `parse_*` / 运营；一次性迁移脚本 `migrate_*` **用完即删**——2026-07-11 精简裁定
-清空已完工存量，历史版本 git 可追），`projects/news/scripts/` 为采集器层——其中
+清空已完工存量，**历史版本已随 2026-07-20 压扁不可恢复**——`migrate_*` 本就用完即弃，此处照实记录），`projects/news/scripts/` 为采集器层——其中
 `archive_layout.py` 为**归档布局单一真相源**（2026-07-02 P0-1：某源数据落在哪、
 怎么找，全仓只有它回答；写方读方一律 import 它，契约测试 `tests/test_archive_layout.py`
 锁定读写往返）；精确清单以 `ls` 为准。
