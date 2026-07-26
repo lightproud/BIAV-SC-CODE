@@ -10,7 +10,10 @@ name: "🖼️ Backfill & Archive Media"
 
 on:
   schedule:
-    - cron: '40 * * * *'   # 每小时（清积压期；积压补齐后可调回每日）
+    # 2026-07-26 降为每日（守密人裁定）：死手开关首跑抓到本工作流**最近一次成功在
+    # 836 小时前**——每小时 cron 撞 90 分钟超时，排队比排空快，新 run 顶掉待跑 run，
+    # 于是连续 35 天全是 cancelled。注释原写「积压补齐后可调回每日」，此刻兑现。
+    - cron: '40 8 * * *'   # 每日北京 16:40（08:40 UTC），错开 15 点档采集群
   workflow_dispatch:
     inputs:
       no_discord:

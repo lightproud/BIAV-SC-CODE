@@ -19,16 +19,21 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # discord 布局 SSOT（2026-07-10 方案甲）
 
-# discord 数据迁至 Public-Info-Pool/Record/Community（2026-06-21）；ROOT 仅用于读 discord
-ROOT = "Public-Info-Pool/Record/Community"
+# 归档根**不再硬编码**（2026-07-26 死手开关首跑抓到：T62 §7甲 把数据湖迁出 code 仓后，
+# 本脚本仍按在树路径找 discord/global/channel_index.json，自 07-21 起天天崩）。
+# 一律问 archive_layout 这个单一真相源；env `BIAV_SC_DATA_ROOT` 指向数据仓 checkout，
+# 未设时它自己回落在树默认，故本地与 CI 同一份代码。
+def _community_root() -> Path:
+    """社区档案根。调用期现算——单测 monkeypatch env 即可改根。"""
+    return archive_layout.community_root()
 
 
 def _discord_global_dir() -> Path:
     """主服 global 数据目录（原语义：二创频道只在主服；新旧布局经 SSOT 解析）。
 
-    调用期从 ROOT 现算（可测性：单测 monkeypatch ROOT 即可改根）。
+    调用期经 archive_layout 现算（新旧布局与数据仓 env 根均由 SSOT 解析）。
     """
-    droot = Path(ROOT) / "discord"
+    droot = _community_root() / "discord"
     return archive_layout.discord_region_roots(droot).get("global", droot / "global")
 FANART_CH = ["同人创作", "art-and-memes", "官方素材", "official-materials",
              "fanart", "创作", "二创", "绘"]
@@ -136,7 +141,7 @@ def main():
                         "file": x["fn"] if status == "ok" else None, "status": status})
 
     # ---- Pixiv ----
-    pfp = f"{ROOT}/platforms/pixiv/{a.date}.json"
+    pfp = str(_community_root() / "platforms" / "pixiv" / f"{a.date}.json")
     if os.path.isfile(pfp):
         items = json.load(open(pfp, encoding="utf-8"))
         items = items if isinstance(items, list) else items.get("items", [])

@@ -30,12 +30,29 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     if: github.ref == 'refs/heads/main'
+    env:
+      BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
     steps:
       - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      # 二创附件是从 discord 归档里挑出来的——档案自 T62 §7甲 起住在数据仓。
+      # 本作业只读数据仓（产物直传 release，不回写），故浅克隆即可。
+      - name: Clone BIAV-SC-DATA（PAT，数据根）
+        env:
+          DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DATA_TOKEN:-}" ]; then
+            echo "::error::secret BIAV_SC_DATA_TOKEN 未配置"; exit 1
+          fi
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
+          chmod 600 ~/.git-credentials
+          git clone --depth 1 https://github.com/lightproud/BIAV-SC-DATA.git data-repo
 
       - name: Collect fan art
         env:

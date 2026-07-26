@@ -99,7 +99,12 @@ class TestRefreshDiscord(unittest.TestCase):
 
 class TestMain(unittest.TestCase):
     def _build_root(self, d, with_token_chan=True):
-        root = Path(d)
+        # 2026-07-26：夹具改建在**数据湖布局**下（<BIAV_SC_DATA_ROOT>/Record/Community/），
+        # 并经真实 env 根解析——原先 monkeypatch 模块常量 ROOT，恰好绕开了
+        # archive_layout 这条真实路径，于是 T62 §7甲 把档案迁出 code 仓后单测照绿、
+        # 线上天天崩（死手开关 2026-07-26 首跑抓到）。测试要走生产同一条解析链。
+        root = Path(d) / "Record" / "Community"
+        root.mkdir(parents=True, exist_ok=True)
         # channel_index.json
         idx = {"c1": {"dir": "11111111", "name": "同人创作"},
                "c2": {"dir": "22222222", "name": "general-chat"}}
@@ -134,8 +139,9 @@ class TestMain(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             self._build_root(d)
             out = str(Path(d) / "out")
-            with mock.patch.object(cf, "ROOT", str(Path(d))):
-                self._run(["prog", "--date", "2026-06-01", "--out", out], {}, out)
+            with mock.patch.dict(cf.os.environ, {"BIAV_SC_DATA_ROOT": d}):
+                self._run(["prog", "--date", "2026-06-01", "--out", out],
+                          {"BIAV_SC_DATA_ROOT": d}, out)
             manifest = json.loads(Path(out, "gallery_manifest.json").read_text())
             sources = {g["source"] for g in manifest}
             self.assertIn("discord", sources)
@@ -146,11 +152,13 @@ class TestMain(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             self._build_root(d)
             out = str(Path(d) / "out")
-            with mock.patch.object(cf, "ROOT", str(Path(d))), \
+            with mock.patch.dict(cf.os.environ, {"BIAV_SC_DATA_ROOT": d}), \
                     mock.patch.object(cf, "refresh_discord",
                                       return_value={"https://d/a.png": "https://d/a.png?new"}) as rd:
                 with mock.patch.object(sys, "argv", ["prog", "--date", "2026-06-01", "--out", out]), \
-                        mock.patch.dict(cf.os.environ, {"DISCORD_BOT_TOKEN": "t"}, clear=True), \
+                        mock.patch.dict(cf.os.environ,
+                                        {"DISCORD_BOT_TOKEN": "t", "BIAV_SC_DATA_ROOT": d},
+                                        clear=True), \
                         mock.patch.object(cf, "fetch", return_value="ok"), \
                         mock.patch.object(cf.time, "sleep"):
                     cf.main()
@@ -159,16 +167,17 @@ class TestMain(unittest.TestCase):
     def test_run_missing_pixiv_and_jsonl(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
-            root = Path(d)
+            root = Path(d) / "Record" / "Community"
             ddir = root / "discord" / "global"   # 2026-07-10 方案甲区服布局
             ddir.mkdir(parents=True)
             (ddir / "channels").mkdir()          # 标记新布局根存在
             # channel matches fanart but no jsonl file for the date
             idx = {"c1": {"dir": "11111111", "name": "fanart"}}
             (ddir / "channel_index.json").write_text(json.dumps(idx), encoding="utf-8")
-            out = str(root / "out")
-            with mock.patch.object(cf, "ROOT", str(root)):
-                self._run(["prog", "--date", "2026-06-01", "--out", out], {}, out)
+            out = str(Path(d) / "out")
+            with mock.patch.dict(cf.os.environ, {"BIAV_SC_DATA_ROOT": d}):
+                self._run(["prog", "--date", "2026-06-01", "--out", out],
+                          {"BIAV_SC_DATA_ROOT": d}, out)
             manifest = json.loads(Path(out, "gallery_manifest.json").read_text())
             self.assertEqual(manifest, [])
 
