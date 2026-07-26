@@ -10,7 +10,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "wi
 import validate_data
 import check_version
 import build_drop_index
-import generate_rss
 
 
 class TestValidateDataLoadJson(unittest.TestCase):
@@ -171,81 +170,7 @@ class TestBuildDropIndex(unittest.TestCase):
         self.assertEqual(build_drop_index.build_index([]), {})
 
 
-class TestGenerateRssHelpers(unittest.TestCase):
-    def test_parse_fuzzy_date_iso(self):
-        dt = generate_rss.parse_fuzzy_date("2026-05-01T12:00:00+00:00")
-        self.assertEqual(dt, datetime(2026, 5, 1, 12, 0, tzinfo=timezone.utc))
-
-    def test_parse_fuzzy_date_year_fallback(self):
-        dt = generate_rss.parse_fuzzy_date("2024年夏")
-        self.assertEqual(dt, datetime(2024, 1, 1, tzinfo=timezone.utc))
-
-    def test_format_rfc822_assumes_utc_for_naive(self):
-        s = generate_rss.format_rfc822(datetime(2026, 5, 1, 12, 0))
-        self.assertEqual(s, "Fri, 01 May 2026 12:00:00 +0000")
-
-    def test_build_version_items_reversed_with_guid(self):
-        data = {"versions": [
-            {"version": "1.0", "title": "First", "period": "2025",
-             "highlights": ["a"]},
-            {"version": "2.0", "title": "Second", "period": "2026",
-             "highlights": []},
-        ]}
-        items = generate_rss.build_version_items(data)
-        # Newest (last in file) comes first in the feed
-        self.assertEqual(items[0]["guid"], "morimens-version-2.0")
-        self.assertEqual(items[0]["title"], "[Game] v2.0 - Second")
-        self.assertIn("<li>a</li>", items[1]["description"])
-
-    def test_build_wiki_items_guid_uses_short_hash(self):
-        entries = [{"hash": "a" * 40, "date": "2026-05-01T00:00:00+00:00",
-                    "author": "erica", "subject": "update data"}]
-        items = generate_rss.build_wiki_items(entries)
-        self.assertEqual(items[0]["guid"], f"morimens-wiki-commit-{'a' * 12}")
-        self.assertEqual(items[0]["title"], "[Wiki] update data")
-        self.assertIn("erica", items[0]["description"])
-
-
-class TestGenerateFeedWriters(unittest.TestCase):
-    """Regression net for the py3.8+ feed-writer crash: binary handle plus
-    tree.write(encoding="unicode") raised TypeError, so RSS/Atom generation
-    was unusable at runtime."""
-
-    def _items(self):
-        return [{
-            "guid": "morimens-version-1.0",
-            "title": "[Game] v1.0 - First",
-            "link": "https://example.test/changelog",
-            "description": "<p>hello & <world></p>",
-            "category": "version",
-            "pub_date": "2026-05-01T12:00:00+00:00",
-        }]
-
-    def test_generate_rss_writes_parseable_xml(self):
-        from xml.etree.ElementTree import fromstring
-        with tempfile.TemporaryDirectory() as td:
-            out = Path(td) / "feed.xml"
-            generate_rss.generate_rss(self._items(), out)
-            text = out.read_text("utf-8")
-            self.assertTrue(text.startswith('<?xml version="1.0" encoding="UTF-8"?>'))
-            root = fromstring(text)
-            self.assertEqual(root.tag, "rss")
-            self.assertEqual(root.find("./channel/item/guid").text,
-                             "morimens-version-1.0")
-
-    def test_generate_atom_writes_parseable_xml(self):
-        from xml.etree.ElementTree import fromstring
-        ns = "{http://www.w3.org/2005/Atom}"
-        with tempfile.TemporaryDirectory() as td:
-            out = Path(td) / "atom.xml"
-            generate_rss.generate_atom(self._items(), out)
-            text = out.read_text("utf-8")
-            self.assertTrue(text.startswith('<?xml version="1.0" encoding="UTF-8"?>'))
-            root = fromstring(text)
-            self.assertEqual(root.tag, f"{ns}feed")
-            self.assertEqual(root.find(f"./{ns}entry/{ns}title").text,
-                             "[Game] v1.0 - First")
-
+# RSS 两组测试随 generate_rss.py 于 2026-07-26 一并退役（守密人裁定「停产 RSS，保留版本检测」）：wiki 冻结后 feed 无消费方，产出↔消费对账判其零消费。本档保留的四组（validate / 交叉引用 / check_version / drop_index）与 RSS 无关。
 
 if __name__ == "__main__":
     unittest.main()
