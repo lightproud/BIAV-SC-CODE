@@ -13,6 +13,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
+import { tmpdir } from 'node:os';
 
 import { resolveModelAlias } from '../src/internal/model-alias.js';
 import { AsyncQueue } from '../src/internal/async.js';
@@ -125,7 +126,7 @@ describe('Q2 — bwrap functional probe exercises the same namespaces as wrap()'
     const plan = new BwrapBackend().wrap({
       shell: '/bin/sh',
       command: 'true',
-      cwd: '/tmp',
+      cwd: tmpdir(),
       writablePaths: ['/tmp/w'],
       tmpDir: '/tmp/t',
       allowNetwork: false,
@@ -141,7 +142,7 @@ describe('Q5 — bwrap emits --dev/--proc AFTER the writable binds', () => {
     new BwrapBackend().wrap({
       shell: '/bin/sh',
       command: 'true',
-      cwd: '/tmp',
+      cwd: tmpdir(),
       writablePaths,
       tmpDir: '/tmp/t',
       allowNetwork: true,

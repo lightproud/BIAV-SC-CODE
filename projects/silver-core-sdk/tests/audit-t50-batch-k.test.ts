@@ -188,7 +188,7 @@ describe('E8 — segments flatten survives null / textless segments', () => {
           { label: 'missing' },
         ] as never,
       },
-      { cwd: '/tmp', toolNames: [] },
+      { cwd: tmpdir(), toolNames: [] },
     );
     expect(parts.stable).toBe('real text');
     expect(parts.parts).toHaveLength(1);

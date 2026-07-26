@@ -6,6 +6,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
+import { tmpdir } from 'node:os';
 
 import type { ToolContext, ToolResultPayload } from '../src/internal/contracts.js';
 import { AbortError } from '../src/errors.js';
@@ -21,7 +22,7 @@ import * as D from '../src/tools/descriptions.js';
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: {},
     signal: new AbortController().signal,

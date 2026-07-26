@@ -63,7 +63,7 @@ import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: {},
     signal: new AbortController().signal,
@@ -506,7 +506,7 @@ describe('M12 — Stop-condition evaluator sees the transcript tail', () => {
     });
     const input = {
       session_id: 's1',
-      cwd: '/tmp',
+      cwd: tmpdir(),
       hook_event_name: 'Stop',
       stop_hook_active: false,
       transcript_path: transcriptPath,
@@ -552,7 +552,7 @@ describe('M13 — condition-evaluation failure routes by failureMode', () => {
       'PreToolUse',
       {
         session_id: 's1',
-        cwd: '/tmp',
+        cwd: tmpdir(),
         hook_event_name: 'PreToolUse',
         tool_name: 'Bash',
         tool_input: { command: 'rm -rf /' },
@@ -589,7 +589,7 @@ describe('M13 — condition-evaluation failure routes by failureMode', () => {
       'PreToolUse',
       {
         session_id: 's1',
-        cwd: '/tmp',
+        cwd: tmpdir(),
         hook_event_name: 'PreToolUse',
         tool_name: 'Bash',
         tool_input: { command: 'ls' },

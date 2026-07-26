@@ -18,6 +18,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
+import { tmpdir } from 'node:os';
 
 import { ConfigurationError } from '../src/errors.js';
 import { normalizeImageMediaType } from '../src/internal/media.js';
@@ -126,7 +127,7 @@ describe('Rdt-2 ledger timestamp Date-range guard', () => {
 
 describe('R7c-1 SessionMutationOptions barrel re-export', () => {
   it('lets a consumer name the shared options bag from the package entry point', () => {
-    const opts: SessionMutationOptions = { sessionDir: '/tmp/s', cwd: '/tmp' };
+    const opts: SessionMutationOptions = { sessionDir: '/tmp/s', cwd: tmpdir() };
     const withLimit: GetSessionMessagesOptions = { ...opts, limit: 10 };
     expect(opts.sessionDir).toBe('/tmp/s');
     expect(withLimit.limit).toBe(10);

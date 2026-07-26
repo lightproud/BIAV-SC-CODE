@@ -351,7 +351,7 @@ describe('createAgentTool', () => {
     spawn: ToolContext['spawnSubagent'],
   ): ToolContext {
     return {
-      cwd: '/tmp',
+      cwd: tmpdir(),
       additionalDirectories: [],
       env: {},
       signal: new AbortController().signal,
@@ -496,7 +496,7 @@ describe('createAgentTool', () => {
       return { content: 'ok', isError: false, agentId: 'a', background: false };
     };
     const ctx: ToolContext = {
-      cwd: '/tmp',
+      cwd: tmpdir(),
       additionalDirectories: [],
       env: {},
       signal: new AbortController().signal,

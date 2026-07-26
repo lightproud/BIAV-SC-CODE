@@ -71,7 +71,7 @@ afterEach(() => {
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: process.env as Record<string, string | undefined>,
     signal: new AbortController().signal,

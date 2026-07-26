@@ -15,6 +15,7 @@
  */
 
 import { readFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -31,7 +32,7 @@ const COMPAT_MD = join(here, '..', 'docs', 'COMPAT.md');
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: {},
     signal: new AbortController().signal,

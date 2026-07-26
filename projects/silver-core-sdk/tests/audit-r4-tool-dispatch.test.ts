@@ -18,6 +18,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
+import { tmpdir } from 'node:os';
 
 import { AbortError } from '../src/errors.js';
 import { createToolDispatcher, mapMcpResult } from '../src/engine/tool-dispatch.js';
@@ -36,7 +37,7 @@ const LONE_SURROGATE = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: {},
     signal: new AbortController().signal,
@@ -95,7 +96,7 @@ function makeDispatcher(stubs: DispatcherStubs) {
       debug: () => {},
     },
     sessionId: 'test-session',
-    baseHookFields: { session_id: 'test-session', cwd: '/tmp' },
+    baseHookFields: { session_id: 'test-session', cwd: tmpdir() },
     signal: new AbortController().signal,
     recordTool: stubs.recordTool ?? (() => {}),
     onToolRecord: stubs.onToolRecord,

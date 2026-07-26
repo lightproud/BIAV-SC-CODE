@@ -20,6 +20,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
+import { tmpdir } from 'node:os';
 
 import {
   coerceToolPatternList,
@@ -506,7 +507,7 @@ describe('Sag-6: Agent tool model enum is enforced', () => {
   const tool = createAgentTool(['general-purpose']);
   function ctxWith(spawn: ToolContext['spawnSubagent']): ToolContext {
     return {
-      cwd: '/tmp',
+      cwd: tmpdir(),
       additionalDirectories: [],
       env: {},
       signal: new AbortController().signal,

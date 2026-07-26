@@ -13,6 +13,7 @@
  */
 
 import { describe, expect, it, vi } from 'vitest';
+import { tmpdir } from 'node:os';
 
 const REPORTED_SIZE = 100;
 const ACTUAL_TAIL = 'tail-data';
@@ -36,7 +37,7 @@ function stopInput(): StopHookInput {
   return {
     session_id: 'sess-goal-tail',
     transcript_path: '/tmp/fake-transcript.jsonl',
-    cwd: '/tmp',
+    cwd: tmpdir(),
     hook_event_name: 'Stop',
     stop_hook_active: false,
   };
