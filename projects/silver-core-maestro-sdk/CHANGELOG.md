@@ -12,6 +12,113 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.78.0 — 2026-07-26
+
+Design-review remediation (`Public-Info-Pool/Resource/repo-engineering/
+maestro-sdk-design-review-20260726.md`; keeper ruled all four findings the same
+day, each taking the recommended option). None of the four was a
+miscomputation — every one was a convention whose radius had not reached every
+reader, which is the class of defect that produces no test signal. Five audit
+rounds (67 defects), three property suites and six mutation targets at floors
+97-100 all missed them.
+
+**F1 — the `cancelled` terminal now reaches the scenario layer.** 0.76.0 added
+the sixth state and revised the ledger and driver thoroughly; three
+scenario-layer readers still spelled their terminal test as
+`state === 'done' || state === 'failed'`, kept compiling, kept passing, and
+silently treated a cancelled session as still in flight. With `drainTimeoutMs`
+unset — the default — a user cancel wedged the orchestrator permanently, so the
+feature's motivating scenario was its failure scenario.
+
+- `graphStatus` fails the run on a cancelled node (keeper ruling: fail-fast,
+  same treatment as `failed`). Justification: readiness requires deps to be
+  `'done'`, so nothing downstream of a cancelled node can ever become ready —
+  continuing cannot finish the run. Hosts distinguishing "failed" from
+  "cancelled" read it off the node session in the returned `states` map;
+  `WorkflowStatus` deliberately stays a three-value verdict.
+- `GoalChaser` awaits ANY terminal and settles a cancelled round as the new
+  `GoalAction` member `'cancelled'` — WITHOUT consulting the evaluator (asking
+  the judge to rule on a round the host itself cancelled is meaningless) and
+  without emitting `goal:round`, whose contract requires a verdict.
+  `nextGoalAction` never returns it, so the pure decision core is unchanged.
+- New vocabulary: `UNSUCCESSFUL_TERMINAL_STATES` (`failed | cancelled`) plus
+  the `isTerminal` / `isUnsuccessfulTerminal` predicates, all exported.
+  `TERMINAL_STATES` already held the right value and had ZERO src consumers.
+- Enforcement, because the fix alone does not stop a seventh state repeating
+  it: `tests/terminal-vocabulary.test.ts` forbids spelling a terminal test as a
+  literal PAIR anywhere in src, with an in-code `terminal-literal-ok:` opt-out
+  for the one site that legitimately needs one (recordOutcome's
+  "settled by an attempt" branch, which must NOT widen to include cancelled).
+  The guard states its own scope limit: it would not have caught the
+  `graphStatus` half, whose two literals sat in separate statements.
+
+**F2 — `LedgerDriver.maxConcurrent`.** A tick claimed every due session and
+started them all, so peak concurrency equalled the backlog: measured at 200
+concurrent attempts for 200 due sessions, with no bound anywhere in the chain.
+Three ordinary paths produce a backlog (scheduler catch-up, wide fan-out,
+restart over a full store), and where an attempt is a paid API call that is a
+cost event. A host could not fix it downstream: queueing inside the executor
+burns the claim lease of work that has already been counted as an attempt.
+
+- `maxConcurrent` (integer >= 1; unset = unbounded, prior behavior
+  byte-for-byte) makes the driver claim only as many as it has free slots,
+  counted across all generations. The rest stay untouched in the store — still
+  due, no attempts increment, no lease — for a later tick.
+- Backing it, `claimDue(now, { limit })` stops after that many SUCCESSFUL
+  claims (counted in claims, not in listed candidates). `limit: 0` short-circuits
+  before the store, so a saturated tick performs no reads — but the lease sweep
+  still runs, since a saturated driver is exactly when a dead peer's expired
+  claims need reclaiming.
+
+**F3 — retention.** The ledger was append-only forever: no `delete`, no
+`prune`, nothing. The store-patrol production loop accretes two sessions and
+two query rows per day with nothing reclaiming them, and every `deliver()`
+writes an audit session never revisited. A host reclaiming space behind the SDK
+would also bypass the per-session mutex and the CAS fence.
+
+- New OPTIONAL store seam `deleteSession?(id)`, in the same shape as
+  `putSessionIf`: implement it and you get retention, skip it and nothing
+  changes. It must remove the session's QUERY ROWS too — removing the row alone
+  leaves exactly the accretion the seam exists to bound.
+- `TaskLedger.purgeSession(id)` is the gate: holds the session mutex, refuses
+  non-terminal sessions (purging live work strands its attempt; cancel first),
+  returns false on an unknown id so a sweep is idempotent, and throws naming
+  the seam when the store lacks it — a retention sweep that quietly reclaims
+  nothing is worse than one that fails, because the growth continues while the
+  host believes it does not.
+- Contract suite grows four optional checks (run only for stores implementing
+  the seam), including the one that catches an implementation orphaning query
+  rows. The `store-patrol` example store implements it.
+- Documented HAZARD, not fixable here: for sessions whose id IS bookkeeping,
+  deleting the row deletes the bookkeeping — purging `sched:{spec}:{fireAt}`
+  makes Scheduler recovery re-anchor, purging `wf:{graph}:{run}:{node}` makes a
+  run re-dispatch that node. Both are the resume contract working as
+  documented.
+- NOT addressed (out of the keeper's ruling): `Scheduler` recovery still does
+  an unfiltered full-table `listSessions()` on every start.
+
+**F4 — an abort seam on the two long-running components.** `WorkflowRun.run()`
+and `GoalChaser.chase()` had no `stop()`, took no signal, and never cleared
+their sleep timer; their only exit was the default-unset `drainTimeoutMs`. The
+driver had spoken AbortSignal all along.
+
+- `run({ signal })` and `chase(config, { signal })` check the signal before
+  every tick/poll and interrupt the inter-tick sleep, rejecting with the
+  signal's reason. Ledger records survive, so a later run/chase resumes from
+  them.
+- The shared `waitOrAbort` helper ALWAYS clears its timer, so an abandoned loop
+  leaves nothing pending on the clock.
+
+Tests 362 -> 400 (31 files): `tests/design-review-20260726.test.ts` (27 cases,
+the probes that demonstrated the four defects promoted into locks, plus the
+negative controls they lacked — "unset maxConcurrent still measures 200" is
+kept deliberately, as the documented default) and
+`tests/terminal-vocabulary.test.ts` (11). `tests/property-cores.test.ts`'s
+graphStatus law was REWRITTEN, not relaxed: it held the old
+"`failed` dominates" rule and is what caught the semantic change. All three
+mechanisms negative-controlled by reverting each fix in turn (6 failures) and
+restoring.
+
 ## 0.77.0 — 2026-07-26
 
 Lockstep alignment only — no maestro-SDK code change. The agent SDK landed the

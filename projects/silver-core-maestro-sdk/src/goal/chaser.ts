@@ -11,8 +11,10 @@
 
 import type { Clock } from '../clock.js';
 import { systemClock } from '../clock.js';
+import { waitOrAbort } from '../internal/wait.js';
 import type { TaskLedger } from '../ledger/ledger.js';
 import { DuplicateSessionError } from '../ledger/ledger.js';
+import { isTerminal } from '../ledger/state.js';
 import type { SessionRecord } from '../ledger/types.js';
 import type { GoalAction, GoalVerdict } from './decision.js';
 import { nextGoalAction } from './decision.js';
@@ -120,8 +122,17 @@ export class GoalChaser {
    * persisted — goal semantics stay out of the ledger), and the chase
    * proceeds from there. The host's LedgerDriver must be running for rounds
    * to make progress.
+   *
+   * `opts.signal` (0.78.0) abandons the chase: it is checked before every
+   * terminal poll and interrupts the inter-poll sleep, rejecting with the
+   * signal's reason. Round records stay in the ledger, so a later chase of the
+   * same goal id resumes from them (design review 2026-07-26 F4 — previously
+   * the only exit was drainTimeoutMs, unset by default).
    */
-  async chase(config: GoalRunConfig): Promise<GoalChaseResult> {
+  async chase(
+    config: GoalRunConfig,
+    opts: { signal?: AbortSignal } = {},
+  ): Promise<GoalChaseResult> {
     if (typeof config.id !== 'string' || config.id.length === 0) {
       throw new TypeError('GoalChaser.chase: config.id must be a non-empty string');
     }
@@ -191,8 +202,23 @@ export class GoalChaser {
           pending = adopted;
         }
       }
-      const terminal = await this.#awaitTerminal(pending.id);
+      const terminal = await this.#awaitTerminal(pending.id, opts.signal);
       pending = null;
+      // A cancelled round settles the chase WITHOUT consulting the evaluator
+      // (0.78.0): the host said "stop, forever" about this round's session, so
+      // there is nothing for the judge to rule on and re-initiating the next
+      // round would defy the cancel. No `goal:round` event is emitted — that
+      // event's contract requires a verdict, and none exists.
+      if (terminal.state === 'cancelled') {
+        rounds.push(terminal);
+        this.#emit({
+          type: 'goal:settled',
+          goalId: config.id,
+          action: 'cancelled',
+          rounds: rounds.length,
+        });
+        return { action: 'cancelled', rounds };
+      }
       const summary = await this.#lastOkSummary(terminal.id);
       const verdict = await this.#evaluator({ round, session: terminal, summary });
       const action = nextGoalAction({ round, maxRounds, verdict });
@@ -209,13 +235,20 @@ export class GoalChaser {
     }
   }
 
-  /** Poll getSession on the injected clock until the round is terminal. */
-  async #awaitTerminal(sessionId: string): Promise<SessionRecord> {
+  /**
+   * Poll getSession on the injected clock until the round reaches ANY terminal
+   * state — including `cancelled` (0.78.0). Spelling this as
+   * `done || failed` treated a cancelled round as still in flight and the
+   * chase polled until its drain timeout, which is unset by default: a user
+   * cancel hung the chase forever (design review 2026-07-26 F1).
+   */
+  async #awaitTerminal(sessionId: string, signal?: AbortSignal): Promise<SessionRecord> {
     const deadline =
       this.#drainTimeoutMs === undefined ? undefined : this.#clock.now() + this.#drainTimeoutMs;
     for (;;) {
+      signal?.throwIfAborted();
       const session = await this.#ledger.getSession(sessionId);
-      if (session !== null && (session.state === 'done' || session.state === 'failed')) {
+      if (session !== null && isTerminal(session.state)) {
         return session;
       }
       if (deadline !== undefined && this.#clock.now() > deadline) {
@@ -224,9 +257,7 @@ export class GoalChaser {
             `${session === null ? 'missing' : session.state} (is the driver running?)`,
         );
       }
-      await new Promise<void>((resolve) => {
-        this.#clock.setTimeout(resolve, this.#pollIntervalMs);
-      });
+      await waitOrAbort(this.#clock, this.#pollIntervalMs, signal);
     }
   }
 

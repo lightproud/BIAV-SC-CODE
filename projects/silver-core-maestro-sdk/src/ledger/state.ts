@@ -23,6 +23,34 @@ export const SESSION_STATES: readonly SessionState[] = [
 export const TERMINAL_STATES: readonly SessionState[] = ['failed', 'done', 'cancelled'];
 
 /**
+ * Terminals that are NOT a success (0.78.0). `done` is the only successful
+ * terminal; `failed` (attempts exhausted) and `cancelled` (host command) both
+ * mean "this session will never produce a result".
+ *
+ * Why this is a NAMED set rather than a literal comparison at each call site:
+ * 0.76.0 added `cancelled` to the state machine and every scenario-layer
+ * reader that spelled its terminal test as `=== 'done' || === 'failed'` kept
+ * compiling and kept passing its tests while silently treating a cancelled
+ * session as still-in-progress (design review 2026-07-26 F1: a cancelled
+ * workflow node held graphStatus at 'running' and a cancelled goal round
+ * wedged GoalChaser until its drain timeout — with the timeout unset, which
+ * is the default, forever). Adding a seventh state must not be able to do
+ * that again, so `tests/terminal-vocabulary.test.ts` forbids literal terminal
+ * comparisons anywhere in src.
+ */
+export const UNSUCCESSFUL_TERMINAL_STATES: readonly SessionState[] = ['failed', 'cancelled'];
+
+/** True iff the state accepts no further events (see TERMINAL_STATES). */
+export function isTerminal(state: SessionState): boolean {
+  return TERMINAL_STATES.includes(state);
+}
+
+/** True iff the state is terminal AND not a success (see UNSUCCESSFUL_TERMINAL_STATES). */
+export function isUnsuccessfulTerminal(state: SessionState): boolean {
+  return UNSUCCESSFUL_TERMINAL_STATES.includes(state);
+}
+
+/**
  * Ledger events driving the session state machine:
  * - claim:            the driver takes a due session for an attempt
  * - attempt:ok:       the attempt succeeded

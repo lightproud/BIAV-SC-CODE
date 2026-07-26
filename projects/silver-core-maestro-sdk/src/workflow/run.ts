@@ -13,6 +13,7 @@
 
 import type { Clock } from '../clock.js';
 import { systemClock } from '../clock.js';
+import { waitOrAbort } from '../internal/wait.js';
 import type { TaskLedger } from '../ledger/ledger.js';
 import { DuplicateSessionError } from '../ledger/ledger.js';
 import type { SessionState } from '../ledger/types.js';
@@ -177,8 +178,19 @@ export class WorkflowRun {
    * Tick-loop on the injected clock until the run settles. Throws on
    * drainTimeoutMs exceeded (unset = wait indefinitely); the host's driver
    * must be running for the loop to make progress.
+   *
+   * `signal` (0.78.0) is the host's abandon button: the loop checks it before
+   * every tick and interrupts the inter-tick sleep, rejecting with the
+   * signal's reason. Without it the ONLY exit was drainTimeoutMs, which is
+   * unset by default — a host that changed its mind had to leave the promise
+   * hanging (design review 2026-07-26 F4). Aborting stops THIS loop only: the
+   * ledger keeps every node record, so a later run() over the same store
+   * resumes exactly where this one left off (idempotent dispatch is the
+   * resume story, unchanged).
    */
-  async run(opts: { drainTimeoutMs?: number } = {}): Promise<WorkflowRunResult> {
+  async run(
+    opts: { drainTimeoutMs?: number; signal?: AbortSignal } = {},
+  ): Promise<WorkflowRunResult> {
     // A NaN drainTimeoutMs makes the deadline comparison always false and
     // silently disables the timeout; Infinity and <= 0 are equally
     // meaningless as a drain budget (audit D3).
@@ -193,6 +205,9 @@ export class WorkflowRun {
     const deadline =
       opts.drainTimeoutMs !== undefined ? this.#clock.now() + opts.drainTimeoutMs : null;
     for (;;) {
+      // Checked BEFORE the tick, so an abort that lands during a sleep does
+      // not buy the run one more dispatch round.
+      opts.signal?.throwIfAborted();
       const status = await this.tick();
       if (status !== 'running') {
         return { status, states: await this.#readStates() };
@@ -203,9 +218,7 @@ export class WorkflowRun {
             `(graph '${this.#graph.id}', run '${this.#runId}' still running)`,
         );
       }
-      await new Promise<void>((resolve) => {
-        this.#clock.setTimeout(resolve, this.#pollIntervalMs);
-      });
+      await waitOrAbort(this.#clock, this.#pollIntervalMs, opts.signal);
     }
   }
 }

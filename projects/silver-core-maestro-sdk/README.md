@@ -37,6 +37,34 @@ workflow 扇出 / 记忆综合整理(`examples/memory-tidy.mjs`,黑池做梦例�
 均只 import 两包公开面。生产循环:商店巡检(`examples/store-patrol.mjs`,
 每日 CI)。实时进度以 `memory/project-status.md` 为唯一权威。
 
+## 宿主必须自己决定的三件事(0.78.0)
+
+本包是库不是框架,以下三处**默认值刻意保守**——它们保持 0.78.0 之前的行为
+逐字节不变,所以升级不会改变任何既有宿主的行为。代价是:不显式设置就等于选了
+那个默认,而其中两个默认在生产里是需要过问的。
+
+1. **并发上限 `LedgerDriver.maxConcurrent`**——**不设 = 无上限**。驱动器会把
+   一 tick 内全部到期会话同时起飞(实测 200 到期 → 峰值并发 200)。三条日常
+   路径都会堆出积压:调度器停机后补偿(`catchUp: 'all'`,`firesBetween` 上限
+   100 个触发点一次到齐)、宽图扇出(无依赖节点一次全 ready)、宿主重启后
+   store 里的 pending 一次全到期。**若一次 attempt 是一次付费 API 调用,请显式
+   设置。** 注意这件事宿主无法在 executor 里自行补救:排队时 attempt 早已被
+   认领(`running`、attempts 已 +1、租约已起算),排队等于让租约空烧。
+2. **保留策略**——台账**只增不减**,除非宿主 store 实现可选缝
+   `deleteSession?` 并经 `TaskLedger.purgeSession(id)` 清理(该网关持会话互斥、
+   拒绝非终态会话、缺缝时响亮失败而非静默不清)。每日循环任务与每条
+   `deliver()` 审计会话都会永久累积。**注意反作用**:会话 id 即簿记的那些行,
+   删了行就删了簿记——清理 `sched:{spec}:{fireAt}` 会让 `Scheduler` 恢复丢失
+   足迹并重锚,清理 `wf:{graph}:{run}:{node}` 会让工作流重发该节点。保留策略
+   须保住每个 spec 的最新触发点、且不碰未完成的 run。
+3. **长跑组件的放弃口**——`WorkflowRun.run({ signal })` /
+   `GoalChaser.chase(config, { signal })` 收 `AbortSignal`;不传且
+   `drainTimeoutMs` 也不设时,两者会**无限等待**(驱动器不跑就永远等下去)。
+   中止只停这一次循环,台账记录照留,故稍后重跑从原处续上。
+
+三条的来由与实测数字见
+`Public-Info-Pool/Resource/repo-engineering/maestro-sdk-design-review-20260726.md`。
+
 ## 安装与家族结构
 
 两包版本钟**锁步同版**(守密人 2026-07-18 裁定,覆盖需求档 §2「永不同步」条):

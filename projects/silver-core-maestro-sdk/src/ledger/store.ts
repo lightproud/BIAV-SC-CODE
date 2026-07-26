@@ -47,4 +47,32 @@ export interface LedgerStore {
    * — run one claiming driver per store, or implement this seam.
    */
   putSessionIf?(record: SessionRecord, expectedRevision: number | null): Promise<boolean>;
+  /**
+   * OPTIONAL retention seam (design review 2026-07-26 F3): remove a session
+   * row AND every query row belonging to it. Removing the session alone is
+   * NOT a valid implementation — orphan query rows would accumulate exactly
+   * the growth the seam exists to bound, and `listQueries` on a re-used id
+   * would surface a previous life's attempts.
+   *
+   * Why it exists: without it the ledger is append-only forever. The
+   * store-patrol production loop adds two sessions and two query rows per day
+   * with nothing ever reclaiming them, and every `deliver()` writes an audit
+   * session that is never revisited. A host that wanted a retention policy had
+   * to reach around the SDK into its own storage, which also reaches around
+   * the per-session mutex and the putSessionIf CAS fence — so the safe way to
+   * offer retention is to define it here and gate it behind
+   * TaskLedger.purgeSession, which holds the mutex and refuses non-terminal
+   * sessions.
+   *
+   * Returns whether a row was actually removed (false = no such session), so
+   * a purge sweep is idempotent. Stores that do not implement this are
+   * unaffected: purgeSession reports the seam as absent instead of silently
+   * doing nothing.
+   *
+   * CAUTION for hosts: schedule fire bookkeeping IS the session row. Purging
+   * `sched:{specId}:{fireAt}` sessions destroys the footprint
+   * Scheduler recovery parses on start, and the spec then re-anchors at `now`
+   * (or one cadence back under seedFirstRun) — see purgeSession's own docs.
+   */
+  deleteSession?(id: string): Promise<boolean>;
 }
