@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 375,
-    "edges": 411,
-    "terms": 6694,
+    "concepts": 376,
+    "edges": 412,
+    "terms": 6703,
     "by_type": {
       "character": 72,
       "dataset": 95,
-      "documentation": 141,
+      "documentation": 142,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 112,
+      "resource": 113,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 241
+      "search": 242
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 112
+      "count": 113
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 108
+      "degree": 109
     },
     "/characters/15604.md": {
       "type": "character",
@@ -4070,6 +4070,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md": {
+      "type": "documentation",
+      "title": "maestro-sdk-product-review-20260726",
+      "description": "先记正面账，且这笔账是硬的：（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/maestro-sdk-product-review-20260726.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md": {
       "type": "documentation",
       "title": "markdown-consistency-audit-20260628",
@@ -7022,6 +7036,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
         "提及:艾瑞卡",
         "mention"
@@ -9199,6 +9218,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md": [
       [
         "/characters/15603.md",
@@ -10207,6 +10233,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -11507,6 +11534,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -11890,6 +11918,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -12240,6 +12269,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -12445,6 +12475,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -12765,6 +12796,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -13556,6 +13588,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -14072,6 +14105,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -14399,6 +14433,7 @@
     ],
     "maestro": [
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -14614,6 +14649,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -15370,6 +15406,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -15504,7 +15541,8 @@
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
     "product": [
-      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
     ],
     "profile": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
@@ -15807,6 +15845,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -16126,6 +16165,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -16291,6 +16331,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -16368,6 +16409,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/sources/steam.md",
@@ -16580,6 +16622,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
@@ -17337,6 +17380,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -18480,6 +18524,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -18773,6 +18818,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -19126,6 +19172,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -19268,6 +19315,9 @@
     ],
     "且能": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
+    "且这": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
     ],
     "且高": [
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
@@ -20500,6 +20550,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -21513,6 +21564,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -21805,6 +21857,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -22471,7 +22524,8 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
     "先记": [
-      "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
+      "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
     ],
     "光明": [
       "/characters/77917.md"
@@ -23846,6 +23900,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -27282,6 +27337,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -28134,6 +28190,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -28797,6 +28854,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -32905,6 +32963,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -33505,6 +33564,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -33867,6 +33927,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -34318,6 +34379,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -34626,6 +34688,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -35740,6 +35803,9 @@
     "是疯": [
       "/characters/15601.md"
     ],
+    "是硬": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
+    ],
     "是纯": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
@@ -36466,6 +36532,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -36930,6 +36997,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -37596,6 +37664,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -37836,6 +37905,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -38389,6 +38459,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -38803,6 +38874,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -38870,6 +38942,9 @@
     ],
     "正的": [
       "/characters/15602.md"
+    ],
+    "正面": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
     ],
     "此世": [
       "/characters/94450.md"
@@ -42329,6 +42404,9 @@
     "硬任": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
+    "硬的": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
+    ],
     "硬约": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/sources/appstore.md",
@@ -42928,6 +43006,9 @@
     ],
     "笑着": [
       "/characters/15565.md"
+    ],
+    "笔账": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
     ],
     "符串": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -45251,6 +45332,9 @@
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
+    "记正": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
+    ],
     "记账": [
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
     ],
@@ -45767,6 +45851,9 @@
     "账按": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
+    "账是": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
+    ],
     "账本": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
@@ -46241,6 +46328,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -46750,6 +46838,9 @@
     "这甘": [
       "/characters/15597.md"
     ],
+    "这笔": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
+    ],
     "进入": [
       "/characters/15583.md"
     ],
@@ -46986,6 +47077,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -48076,6 +48168,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -48353,6 +48446,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -49123,6 +49217,9 @@
     ],
     "面的": [
       "/characters/15566.md"
+    ],
+    "面账": [
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
     ],
     "面集": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -50322,6 +50419,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -50665,6 +50763,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -50857,6 +50956,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -51089,6 +51189,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -51657,6 +51758,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -51819,6 +51921,7 @@
     ],
     "maestro": [
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -52283,7 +52386,8 @@
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
     "product": [
-      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
     ],
     "profile": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
@@ -52461,6 +52565,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -52552,6 +52657,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/sources/taptap_review.md"
@@ -52697,6 +52803,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -53045,6 +53152,7 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
