@@ -7,7 +7,6 @@ or client files are touched; all I/O runs through tempfile.
 
 import sys
 import tempfile
-import types
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -15,44 +14,8 @@ from unittest import mock
 SCRIPTS = Path(__file__).resolve().parent.parent / "projects" / "wiki" / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
-
-def _install_unitypy_stub():
-    if "UnityPy" in sys.modules and hasattr(sys.modules["UnityPy"], "helpers"):
-        return
-
-    class _ClassIDType:
-        class _T:
-            def __init__(self, name):
-                self.name = name
-
-            def __eq__(self, other):
-                return isinstance(other, _ClassIDType._T) and other.name == self.name
-
-            def __hash__(self):
-                return hash(self.name)
-
-        TextAsset = _T("TextAsset")
-        MonoBehaviour = _T("MonoBehaviour")
-        Texture2D = _T("Texture2D")
-
-    unitypy = sys.modules.get("UnityPy") or types.ModuleType("UnityPy")
-    unitypy.load = mock.MagicMock(name="UnityPy.load")
-    unitypy.set_assetbundle_decrypt_key = mock.MagicMock()
-    enums = types.ModuleType("UnityPy.enums")
-    enums.ClassIDType = _ClassIDType
-    unitypy.enums = enums
-    helpers = types.ModuleType("UnityPy.helpers")
-    archive = types.ModuleType("UnityPy.helpers.ArchiveStorageManager")
-    archive.brute_force_key = mock.MagicMock(name="brute_force_key")
-    helpers.ArchiveStorageManager = archive
-    unitypy.helpers = helpers
-    sys.modules["UnityPy"] = unitypy
-    sys.modules["UnityPy.enums"] = enums
-    sys.modules["UnityPy.helpers"] = helpers
-    sys.modules["UnityPy.helpers.ArchiveStorageManager"] = archive
-
-
-_install_unitypy_stub()
+from unitypy_stub import install_unitypy_stub  # noqa: E402  桩单一真相源
+install_unitypy_stub()
 
 import decrypt_and_extract as dae  # noqa: E402
 from UnityPy.enums import ClassIDType  # noqa: E402
