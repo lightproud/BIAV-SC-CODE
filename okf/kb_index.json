@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 373,
-    "edges": 408,
+    "edges": 410,
     "terms": 6696,
     "by_type": {
       "character": 72,
@@ -1056,7 +1056,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/77918.md": {
       "type": "character",
@@ -1492,7 +1492,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 10
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -4549,7 +4549,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3099 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3102 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4605,7 +4605,7 @@
     "/sources/official.md": {
       "type": "dataset",
       "title": "official 社区数据源",
-      "description": "official 平台采集档案，全量 346 条，健康度 active。",
+      "description": "official 平台采集档案，全量 347 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/news/",
       "tags": [
         "data_layer:full_archive",
@@ -4661,7 +4661,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5300 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5301 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4731,7 +4731,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11316 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11331 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4740,12 +4740,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 10
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8468 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8488 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -7193,6 +7193,16 @@
     ],
     "/characters/77917.md": [
       [
+        "/community/community-weibo.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
         "/story/STORY_RESEARCH.md",
         "提及:波吕克斯",
         "mention"
@@ -7726,6 +7736,11 @@
       [
         "/characters/15599.md",
         "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/characters/77917.md",
+        "提及:波吕克斯",
         "mention"
       ],
       [
@@ -9543,6 +9558,11 @@
       [
         "/characters/15599.md",
         "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/characters/77917.md",
+        "提及:波吕克斯",
         "mention"
       ],
       [
