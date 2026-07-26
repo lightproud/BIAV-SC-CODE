@@ -78,6 +78,25 @@ function canonicalPath(p: string, flavor: PathFlavor): string {
 }
 
 /**
+ * Identity key for a DIRECTORY path — same canonical space as rule matching.
+ *
+ * `add/removeDirectories` compared grants with a bare `path.resolve`, which on
+ * Windows makes `C:\Work\Data` and `c:/work/data` two different strings for one
+ * directory: a revocation could miss the grant it was meant to cancel, and a
+ * re-grant could duplicate an entry. Same defect family as the path-scoped rule
+ * matching above, one file over — the platform probe did not reach it because
+ * no test varies the spelling, so it is fixed here rather than left to be
+ * rediscovered in the field.
+ *
+ * Returns a comparison KEY only; callers keep the caller's original spelling
+ * for anything they hand back out.
+ */
+export function directoryKey(dir: string, platform?: NodeJS.Platform): string {
+  const flavor = pathFlavor(platform);
+  return canonicalPath(flavor.impl.resolve(dir), flavor);
+}
+
+/**
  * Parse a raw rule string (`Tool` or `Tool(spec)`).
  *
  * The specifier is everything between the first `(` and the trailing `)`,

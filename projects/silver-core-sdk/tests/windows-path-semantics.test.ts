@@ -33,7 +33,12 @@
 
 import { describe, expect, it } from 'vitest';
 import * as path from 'node:path';
-import { parseRule, ruleMatches, type MatchContext } from '../src/permissions/rules.js';
+import {
+  directoryKey,
+  parseRule,
+  ruleMatches,
+  type MatchContext,
+} from '../src/permissions/rules.js';
 import { toNativePath } from '../src/tools/fsutil.js';
 import { resolvePosixShells } from '../src/tools/shell-resolve.js';
 
@@ -212,5 +217,23 @@ describe('resolvePosixShells — a curated host env must not lose Bash', () => {
 
   it('POSIX is untouched — bare names, no probing', () => {
     expect(resolvePosixShells({}, 'linux', () => false)).toEqual(['bash', 'sh']);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Directory identity (add/removeDirectories). Same canonical space as rule
+// matching — found by inspection during the sweep, not by the probe: no test
+// varies the spelling, so on Windows a revocation could miss its grant.
+// ---------------------------------------------------------------------------
+
+describe('directoryKey — one directory, one key', () => {
+  it('POSIX keeps case and treats a backslash literally', () => {
+    expect(directoryKey('/work/Data', 'linux')).not.toBe(directoryKey('/work/data', 'linux'));
+    expect(directoryKey('/work/a', 'linux')).toBe(directoryKey('/work/./a', 'linux'));
+  });
+
+  it('Windows folds case and separators, so a revoke cannot miss its grant', () => {
+    expect(directoryKey('C:\\Work\\Data', 'win32')).toBe(directoryKey('c:/work/data', 'win32'));
+    expect(directoryKey('C:\\Work\\Data', 'win32')).not.toBe(directoryKey('C:\\Work\\Other', 'win32'));
   });
 });
