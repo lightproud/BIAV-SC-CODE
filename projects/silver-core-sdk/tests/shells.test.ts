@@ -29,7 +29,11 @@ beforeEach(() => {
 });
 afterEach(() => {
   manager?.dispose();
-  fs.rmSync(sandbox, { recursive: true, force: true });
+  // maxRetries: Windows keeps a handle on a just-reaped child's files for a
+  // moment, so an immediate rmdir loses the race with EBUSY and fails the
+  // test in TEARDOWN — nothing to do with what was under test (2026-07-26
+  // platform probe). Retrying is the documented remedy; a no-op elsewhere.
+  fs.rmSync(sandbox, { recursive: true, force: true, maxRetries: 10, retryDelay: 50 });
 });
 
 function makeCtx(withManager: boolean): ToolContext {

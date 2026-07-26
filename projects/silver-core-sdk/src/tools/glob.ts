@@ -10,6 +10,7 @@ import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
 import { AbortError } from '../errors.js';
 import { GLOB_DESCRIPTION } from './descriptions.js';
+import { toNativePath } from './fsutil.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -108,15 +109,18 @@ export const globTool: BuiltinTool = {
     // fast-glob above, so it cannot introduce a loop) resolve the target and
     // keep it only when it points to a regular file. A symlink's own lstat
     // mtime is meaningless for "newest first", so use the target's (Y5-1).
+    // Paths are normalized to host-native separators as they are collected
+    // (fast-glob always emits POSIX ones) — before the sort, so the path
+    // tiebreak orders the same strings the caller will see.
     const files: { path: string; mtimeMs: number }[] = [];
     for (const e of entries) {
       if (e.dirent.isFile()) {
-        files.push({ path: e.path, mtimeMs: e.stats?.mtimeMs ?? 0 });
+        files.push({ path: toNativePath(e.path), mtimeMs: e.stats?.mtimeMs ?? 0 });
       } else if (e.dirent.isSymbolicLink()) {
         try {
           const target = await fs.stat(e.path);
           if (target.isFile()) {
-            files.push({ path: e.path, mtimeMs: target.mtimeMs });
+            files.push({ path: toNativePath(e.path), mtimeMs: target.mtimeMs });
           }
         } catch {
           // Dangling / unreadable symlink: skip it.

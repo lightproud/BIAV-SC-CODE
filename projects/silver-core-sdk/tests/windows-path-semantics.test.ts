@@ -32,7 +32,10 @@
  */
 
 import { describe, expect, it } from 'vitest';
+import * as path from 'node:path';
 import { parseRule, ruleMatches, type MatchContext } from '../src/permissions/rules.js';
+import { toNativePath } from '../src/tools/fsutil.js';
+import { resolvePosixShells } from '../src/tools/shell-resolve.js';
 
 const WIN: MatchContext = { cwd: 'C:\\work', platform: 'win32' };
 const NIX: MatchContext = { cwd: '/work', platform: 'linux' };
@@ -131,5 +134,83 @@ describe('POSIX negative controls — the fix must NOT leak off Windows', () => 
     // Same assertions the pre-existing suites make with no platform supplied.
     expect(hits('Read(//etc/**)', '/etc/a/b/secret', NIX)).toBe(true);
     expect(hits('Read(//etc/**)', '/var/secret', NIX)).toBe(false);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Enumerated-path separators (Glob / Grep). Asserted at the helper, because the
+// end-to-end behavior only differs on Windows and the suite must stay meaningful
+// on Linux CI.
+// ---------------------------------------------------------------------------
+
+describe('toNativePath — one separator dialect across the tool surface', () => {
+  it('is a no-op on POSIX, where a backslash is a filename character', () => {
+    if (process.platform === 'win32') return; // asserted the other way below
+    // `/work/a\b` is ONE file named `a\b`; rewriting it would name a file that
+    // does not exist.
+    expect(toNativePath('/work/a\\b')).toBe('/work/a\\b');
+    expect(toNativePath('/work/src/foo.ts')).toBe('/work/src/foo.ts');
+  });
+
+  it('converts fast-glob POSIX output to backslashes on Windows', () => {
+    if (process.platform !== 'win32') return;
+    expect(toNativePath('C:/Users/x/a.txt')).toBe('C:\\Users\\x\\a.txt');
+  });
+
+  it('agrees with path.join on this host, which is what the tool tests assert', () => {
+    const expected = path.join('src', 'foo.ts');
+    expect(toNativePath('src/foo.ts')).toBe(expected);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Locating the POSIX shell on Windows. The resolver already takes an injectable
+// platform + probe, so all of this is assertable on Linux.
+// ---------------------------------------------------------------------------
+
+describe('resolvePosixShells — a curated host env must not lose Bash', () => {
+  const withProgramFiles = <T>(value: string | undefined, run: () => T): T => {
+    const prev = process.env.ProgramFiles;
+    if (value === undefined) delete process.env.ProgramFiles;
+    else process.env.ProgramFiles = value;
+    try {
+      return run();
+    } finally {
+      if (prev === undefined) delete process.env.ProgramFiles;
+      else process.env.ProgramFiles = prev;
+    }
+  };
+  const found = (p: string) => p.endsWith('bash.exe');
+
+  it('falls back to process.env for the install root', () => {
+    // A hardened Electron host passes `{ PATH, HOME }` and nothing else. Before
+    // the fix that produced an EMPTY candidate list on Windows, so every Bash
+    // call died with "No POSIX shell found" — the Bash tool simply gone.
+    const shells = withProgramFiles('C:\\Program Files', () =>
+      resolvePosixShells({ PATH: 'C:\\x', HOME: 'C:\\u' }, 'win32', found),
+    );
+    expect(shells).toContain('C:\\Program Files\\Git\\bin\\bash.exe');
+  });
+
+  it('a caller-supplied root still wins', () => {
+    const shells = withProgramFiles('C:\\Program Files', () =>
+      resolvePosixShells({ ProgramFiles: 'D:\\Apps' }, 'win32', found),
+    );
+    expect(shells[0]).toBe('D:\\Apps\\Git\\bin\\bash.exe');
+  });
+
+  it('identical roots are probed once, not twice', () => {
+    // ProgramFiles === ProgramW6432 on every 64-bit host; the probe's own
+    // resolver dump showed each candidate listed twice.
+    const shells = resolvePosixShells(
+      { ProgramFiles: 'C:\\Program Files', ProgramW6432: 'C:\\Program Files' },
+      'win32',
+      found,
+    );
+    expect(shells).toEqual([...new Set(shells)]);
+  });
+
+  it('POSIX is untouched — bare names, no probing', () => {
+    expect(resolvePosixShells({}, 'linux', () => false)).toEqual(['bash', 'sh']);
   });
 });

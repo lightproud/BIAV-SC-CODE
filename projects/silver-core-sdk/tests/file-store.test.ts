@@ -13,7 +13,7 @@
 import { existsSync } from 'node:fs';
 import { appendFile, mkdtemp, readdir, rm, stat } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, sep } from 'node:path';
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -212,8 +212,11 @@ describe('FileSessionStore path containment', () => {
     // Every file created lives under the store root; nothing leaked into tmp.
     const files = await walk(tmp);
     expect(files.length).toBeGreaterThan(0);
+    // `sep`, not '/': the containment assertion is about the store root, and on
+    // Windows `walk` yields backslash-joined paths, so a hardcoded '/' asserts
+    // that the escape guard failed when it in fact held (2026-07-26 probe).
     for (const f of files) {
-      expect(f.startsWith(root + '/')).toBe(true);
+      expect(f.startsWith(root + sep)).toBe(true);
     }
     expect(existsSync(join(tmp, 'session-escape'))).toBe(false);
     expect(existsSync(join(tmp, 'sub-escape'))).toBe(false);
@@ -228,7 +231,7 @@ describe('FileSessionStore path containment', () => {
       expect((await s.load(key))?.[0]?.uuid).toBe(`id-${sessionId}`);
     }
     const files = await walk(tmp);
-    for (const f of files) expect(f.startsWith(root + '/')).toBe(true);
+    for (const f of files) expect(f.startsWith(root + sep)).toBe(true);
     expect(existsSync('/etc/passwd.jsonl')).toBe(false);
   });
 });

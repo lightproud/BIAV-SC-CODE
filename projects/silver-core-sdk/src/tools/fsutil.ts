@@ -63,6 +63,25 @@ export function resolveAbs(cwd: string, p: string): string {
 }
 
 /**
+ * Host-native separator form of an enumerated path.
+ *
+ * `fast-glob` always emits POSIX separators, so on Windows Glob and Grep
+ * reported `C:/Users/x/a.txt` while every other surface of the SDK — Read,
+ * Write, Edit, error messages, the `cwd` it is handed — speaks `C:\Users\x`.
+ * The model then sees two spellings of one path in a single session and starts
+ * doing dumb things with them (2026-07-26 platform probe + the keeper's field
+ * report). The existing Glob/Grep tests already asserted `path.join(...)`
+ * output, so native separators were always the intended contract; only the
+ * implementation drifted, invisibly, because CI never ran on Windows.
+ *
+ * No-op off Windows, where `/` IS the separator and a backslash is a legal
+ * filename character that must never be rewritten.
+ */
+export function toNativePath(p: string): string {
+  return path.sep === '\\' ? p.replace(/\//g, '\\') : p;
+}
+
+/**
  * True when `buf` is NOT valid UTF-8 (H1, audit T49). The read-modify-write
  * tools (Edit) decode with Buffer.toString('utf8'), which replaces
  * every invalid sequence with U+FFFD — writing that back re-encodes the
