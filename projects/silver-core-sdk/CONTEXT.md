@@ -69,11 +69,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.78.0`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-maestro-sdk` = `0.78.0`
+**当前版本 `0.78.1`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-maestro-sdk` = `0.78.1`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.78.1（2026-07-26）：锁步对齐**——本包**零代码改动**。家族版本钟因 maestro 0.78.1（产品审视四裁：删除其对本包的无支撑 peerDependency / 六族两级成熟度标注 / 首份 ONBOARDING 文档 / 判别式补维）整体前进，详见该包 CHANGELOG。
 
 **v0.78.0（2026-07-26）：锁步对齐**——本包**零代码改动**。家族版本钟因 silver-core-maestro-sdk 0.78.0（设计审视四缝全修：`cancelled` 终态穿透场景层 / 驱动器并发上限 / 台账保留缝 / 长跑组件中止缝）整体前进，详见该包 CHANGELOG。
 

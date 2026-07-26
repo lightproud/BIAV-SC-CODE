@@ -16,6 +16,14 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.78.1 — 2026-07-26
+
+Lockstep alignment only — **no changes to this package**. The family version
+clock advanced for silver-core-maestro-sdk 0.78.1 (product-review remediation:
+the unbacked peerDependency on THIS package removed from maestro, per-family
+maturity labelling, the first ONBOARDING doc, and a charter discriminant fix).
+See that package's CHANGELOG.
+
 ## 0.78.0 — 2026-07-26
 
 Lockstep alignment only — **no changes to this package**. The family version

@@ -8,8 +8,11 @@
 ## 定位
 
 编排 SDK 持有分子:钟、跨会话状态、会话装配。代理 SDK(`projects/silver-core-sdk/`,
-npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式:节点要活得比父调用久、
-或要等墙钟/外部事件 → 编排;否则 → 代理引擎内。
+npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**三项**(第三项为守密人
+2026-07-26 产品审视 P5 补维):节点要活得比父调用久、或要等墙钟/外部事件、**或由 agent 侧
+主动发起且需在台账留审计的对外动作(触发权)** → 编排;否则 → 代理引擎内。
+补维缘由:`createDeliveryChannel` 不满足原两项(只用 clock 打时间戳、零 setTimeout),
+但需求档 §3 一直按「触发权」把它归编排——**是判据表述漏了 §3 已在用的那一维,不是它放错了**。
 
 三条硬性质(红线,违规推倒重来):
 
@@ -22,6 +25,9 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式:�
 
 - **版本钟锁步同版**(守密人 2026-07-18 裁定,覆盖需求档 §2「永不同步」条):两包永远同号、任一侧 shipped 变更双双 bump,CI 守卫版本相等;未动侧 CHANGELOG 记一行锁步对齐注。
 - 依赖单向:编排 → 代理。共享代码只准下沉进代理 SDK 或独立第三包。
+- **不声明对代理 SDK 的 peerDependency**(守密人 2026-07-26 裁定,覆盖需求档 §2 该条):
+  本包 `src/` 对代理 SDK 零 import,声明一个从不使用的包会被 npm 7+ 自动装上,
+  与硬性质①「整箱不要」冲突。`devDependencies` 保留(测试与两个例程真用它)。
 - 发版纪律与代理侧同构:改 shipped 运行时代码即 bump + CHANGELOG 一行。
 - monorepo:仓库根 `package.json` workspaces 持两包,单一根 lockfile;
   `npm ci` 在仓库根跑,workspace 内 `npm run <script>` 照常。
@@ -30,11 +36,26 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式:�
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.78.0`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-agent-sdk` = `0.78.0`
+**当前版本 `0.78.1`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-agent-sdk` = `0.78.1`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.78.1（2026-07-26）：产品审视四项裁定**——审视档
+`Public-Info-Pool/Resource/repo-engineering/maestro-sdk-product-review-20260726.md`（同日第二轮，
+问的不是「代码对不对」而是「作为产品是否成立、是否有效」）。**两包运行时行为零变化。**
+**P1** 删除对代理 SDK 的 peerDependency——`src/` 对它零 import（仅两处注释散文），而 npm 7+ 自动装 peer，
+等于强迫只想要台账的宿主连带装代理包，与硬性质①冲突；信息价值由锁步同号纪律接替。
+**P2** 六族按**两级标尺**标成熟度（需求档 §6 新增）：`ledger`/`driver`/`scheduler` 为**已验证**
+（两个互不相干真实消费方：生产商店巡检 + 试金石 daemon）；`workflow`/`goal`/`delivery`/保留缝为
+**实验面、无生产消费方**（实测全仓零真实调用点，`WorkflowRun` 仅 1 处自家 demo）。原标尺
+「例程写不出来 = 接口面漏缝」检验的是**可行性**不是需求，故补第二级：**须有至少一个不是为演示它而写的消费方**。
+**P3** 新增本包**第一份 docs** `docs/ONBOARDING.md`——两个真实消费方各自手写文件型 store
+（43/38 行、逐行相似度 86%），而本包原本只给「16 项契约套件检查你抄得对不对」、不给那份「抄什么」；
+现给可复制样板 + 四条陷阱各对应一项检查。`tests/onboarding-sample.test.ts` **从 markdown 提取样板
+写临时 .ts 真跑契约套件**（负控：删掉样板一行即报「2 orphan query row(s)」）。
+**P4** delivery 归属维持，改的是**判别式**（见上「定位」节补维）。测试 400 → **404**。
 
 **v0.78.0（2026-07-26）：设计审视四缝全修**——审视档
 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-design-review-20260726.md`，守密人同日四项裁定（均取推荐案）。
