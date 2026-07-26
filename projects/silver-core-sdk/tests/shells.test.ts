@@ -113,23 +113,23 @@ describe('ShellManager', () => {
 
 
 /**
- * The SHELL's own canonical spelling of `dir`.
+ * Assert the shell's cwd IS `dir` — WITHOUT comparing path spellings.
  *
- * A cross-dialect string compare between Node's path and the shell's `pwd` is
- * not a test of persistence — it is a test of whether the two agree about how
- * to spell a directory, and on two platforms they legitimately do not
- * (2026-07-26 platform probe): macOS resolves `/var/folders/...` to
- * `/private/var/...`, and Git Bash reports MSYS paths (`/tmp/...`,
- * `/c/Users/...`) rather than `C:\Users\...`. Both are correct for their
- * platform; neither is what the assertion means to check.
+ * Every string form of this assertion has now failed on some platform
+ * (2026-07-26 probe): macOS resolves `/var` to `/private/var`; Git Bash reports
+ * MSYS paths; and worse, Git Bash reaches ONE directory through TWO mounts, so
+ * `pwd -P` legitimately answers `/tmp/x` or `/c/Users/.../Temp/x` depending on
+ * how the shell got there. All of those are the same directory, and none of
+ * them is what "the cwd persisted" means.
  *
- * So ask the shell. A one-shot `cd && pwd -P` (physical, symlinks resolved)
- * in a NON-persistent context yields the exact string a persisted call must
- * reproduce, on every host.
+ * So stop asking for a name and ask a question only the right directory can
+ * answer: read a marker through a RELATIVE path. It resolves against whatever
+ * the shell's actual cwd is, on any host, through any mount.
  */
-async function shellPathOf(dir: string): Promise<string> {
-  const res = await bashTool.execute({ command: `cd '${dir}' && pwd -P` }, makeCtx(false));
-  return text(res.content).trim().split('\n')[0]!;
+async function expectShellCwdIs(ctx: ToolContext, dir: string, tag: string): Promise<void> {
+  fs.writeFileSync(path.join(dir, `${tag}.marker`), tag);
+  const out = await bashTool.execute({ command: `cat ./${tag}.marker` }, ctx);
+  expect(text(out.content).trim(), `shell cwd is not ${dir}`).toBe(tag);
 }
 
 describe('Bash run_in_background + BashOutput + KillShell', () => {
@@ -318,10 +318,8 @@ describe('Bash persistent cwd/env state', () => {
     const ctx = makeCtx(true);
     const sub = path.join(sandbox, 'subdir');
     fs.mkdirSync(sub);
-    const expected = await shellPathOf(sub);
     await bashTool.execute({ command: `cd '${sub}'` }, ctx);
-    const out = await bashTool.execute({ command: 'pwd -P' }, ctx);
-    expect(text(out.content).trim().split('\n')[0]).toBe(expected);
+    await expectShellCwdIs(ctx, sub, 'cd-persists');
   });
 
   it('exported variables persist across Bash calls', async () => {
@@ -347,10 +345,9 @@ describe('Bash persistent cwd/env state', () => {
     const ctx = makeCtx(false);
     const sub = path.join(sandbox, 'stateless');
     fs.mkdirSync(sub);
-    const expected = await shellPathOf(sandbox);
     await bashTool.execute({ command: `cd '${sub}'` }, ctx);
-    const out = await bashTool.execute({ command: 'pwd -P' }, ctx);
-    expect(text(out.content).trim()).toBe(expected);
+    // No manager: the cd must NOT stick — the next call is back at ctx.cwd.
+    await expectShellCwdIs(ctx, sandbox, 'stateless');
   });
 });
 
@@ -364,8 +361,6 @@ describe('forkShellSession — per-subagent persistent-state fork (audit 2026-07
     const aDir = path.join(sandbox, 'a-dir');
     fs.mkdirSync(parentDir);
     fs.mkdirSync(aDir);
-    const parentShellPath = await shellPathOf(parentDir);
-    const aShellPath = await shellPathOf(aDir);
     // Parent records a persistent cwd BEFORE the spawns.
     await bashTool.execute({ command: `cd '${parentDir}'` }, ctx);
 
@@ -373,22 +368,14 @@ describe('forkShellSession — per-subagent persistent-state fork (audit 2026-07
     const ctxB: ToolContext = { ...ctx, shells: forkShellSession(manager!) };
 
     // A child sees the parent's persistent cwd that existed at spawn time.
-    expect(firstLine(await bashTool.execute({ command: 'pwd -P' }, ctxA))).toBe(
-      parentShellPath,
-    );
+    await expectShellCwdIs(ctxA, parentDir, 'fork-a-sees-parent');
     // A cd's away; B's SUBSEQUENT Bash call must NOT inherit A's cwd.
     await bashTool.execute({ command: `cd '${aDir}'` }, ctxA);
-    expect(firstLine(await bashTool.execute({ command: 'pwd -P' }, ctxB))).toBe(
-      parentShellPath,
-    );
+    await expectShellCwdIs(ctxB, parentDir, 'fork-b-sees-parent');
     // ... and A keeps its own cwd across its own calls.
-    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctxA))).toBe(
-      aShellPath,
-    );
+    await expectShellCwdIs(ctxA, aDir, 'fork-a-keeps-own');
     // The parent's next foreground Bash is untouched by A's cd.
-    expect(firstLine(await bashTool.execute({ command: 'pwd -P' }, ctx))).toBe(
-      parentShellPath,
-    );
+    await expectShellCwdIs(ctx, parentDir, 'fork-parent-untouched');
   });
 
   it('a child export does not leak to the parent; the child sees parent exports from spawn time', async () => {

@@ -1,0 +1,25 @@
+# Line endings are CONTENT here, not formatting.
+#
+# The 2026-07-26 platform probe (this family's first non-Linux CI run) failed
+# `evals-governance > MANIFEST.sha256 matches the current evals/ content` on
+# Windows: git's autocrlf checkout rewrote LF to CRLF, the bytes changed, and a
+# tamper-evidence hash computed over those bytes could never match. The manifest
+# is deliberately a hash of raw bytes — weakening it to normalize line endings
+# would blunt exactly what it exists to detect — so the checkout is pinned
+# instead.
+#
+# Default: every text file checks out with LF on every platform.
+* text=auto eol=lf
+
+# Binary-ish assets git must never touch.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tgz binary
+*.jsonl.gz binary
