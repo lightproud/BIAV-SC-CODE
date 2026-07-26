@@ -39,6 +39,7 @@ const ARMS: Array<{ name: string; src: string }> = [
 const SHARED_FUNCTIONS = [
   'requestWithRetries',
   'backoff',
+  'createStreamGovernor',
   'mapStreamError',
   'parseRetryAfterMs',
   'sleep',
@@ -93,6 +94,9 @@ describe('transport shared HTTP layer (anthropic.ts / openai.ts / http-retry.ts)
       // silently diverges is the failure mode this catches.
       expect(arm.src).toMatch(/return requestWithRetries\(\{/);
       expect(arm.src).toMatch(/return backoff\(attempt, retryAfterMs, signal, this\.debug, DEBUG_PREFIX\)/);
+      // The idle watchdog / hard cap come from the governor, never re-armed locally.
+      expect(arm.src).toMatch(/const governor = createStreamGovernor\(\{/);
+      expect(arm.src, `${arm.name} re-arms its own idle timer`).not.toContain('let idleTimer');
     });
   }
 

@@ -46,6 +46,7 @@ import {
   mapStreamError,
   nonEmpty,
   readBodyTextBounded,
+  createStreamGovernor,
   requestWithRetries,
   type AcceptedResponse,
 } from './http-retry.js';
@@ -283,83 +284,17 @@ export class AnthropicTransport implements Transport {
         releaseSignals();
         throw new APIConnectionError('Messages API response has no body');
       }
-      // Idle watchdog: abort a silently-stalled stream after `idleMs` with no
-      // server event — faster and more diagnosable than the whole-request
-      // timeout. Anthropic emits periodic `ping` events, so a gap this long
-      // means the connection is stuck. `0` disables. Official env analogs
-      // (CLAUDE_ENABLE_STREAM_WATCHDOG / CLAUDE_STREAM_IDLE_TIMEOUT_MS) are
-      // honored below the provider option. (Design ref: Codex
-      // `stream_idle_timeout`; reimplemented, no code copied.) A STALLED stream
-      // (connected, then silent) is distinct from an EMPTY one (closed at once,
-      // no event): the watchdog handles the former, the eventCount check below
-      // handles the latter.
+      // Streaming-body governance (idle watchdog + optional hard duration cap)
+      // — shared with the OpenAI arm; see createStreamGovernor in http-retry.ts.
       const idleMs = resolveStreamIdleMs(this.provider, this.env);
-      const idleController = idleMs > 0 ? new AbortController() : undefined;
-      // P1 body governance: once headers have arrived, stop propagating the
-      // whole-request timeout into the stream — UNLESS both body governors
-      // (idle watchdog, hard cap) are off, in which case the request timeout
-      // stays wired as the fallback bound (never-unbounded invariant).
-      const timeoutDetached = idleController !== undefined || streamMaxMs > 0;
-      if (timeoutDetached) detachRequestTimeout();
-      // Optional hard cap on total streaming duration (streamMaxDurationMs /
-      // BPT_STREAM_MAX_DURATION_MS; 0 = disabled). Unlike the idle watchdog it
-      // fires even on a flowing stream; when it does, delivered-whole blocks
-      // remain salvageable (midStreamTruncation).
-      const maxController = streamMaxMs > 0 ? new AbortController() : undefined;
-      let maxTimer: ReturnType<typeof setTimeout> | undefined;
-      if (maxController !== undefined) {
-        maxTimer = setTimeout(() => maxController.abort(), streamMaxMs);
-        (maxTimer as { unref?: () => void }).unref?.();
-      }
-      const signalParts = [
+      const governor = createStreamGovernor({
         signal,
-        ...(idleController ? [idleController.signal] : []),
-        ...(maxController ? [maxController.signal] : []),
-      ];
-      const streamSignal =
-        signalParts.length > 1 ? AbortSignal.any(signalParts) : signal;
-      // Lazily re-armed: the per-event cost is ONE timestamp write, not a
-      // clearTimeout+setTimeout pair — a stream of thousands of small deltas
-      // no longer churns a timer per event. The single timer wakes at the
-      // earliest possible expiry and either fires (gap since the last event
-      // reached idleMs) or re-arms for exactly the remaining gap, so the
-      // abort still lands idleMs after the LAST event — same semantics as
-      // the per-event reset, at ~1 timer per idle window instead of 1 per
-      // event.
-      let idleTimer: ReturnType<typeof setTimeout> | undefined;
-      let lastEventAt = 0;
-      // audit 2026-07-14 L-3: the watchdog measures SERVER progress, not
-      // consumer progress. While the consumer holds a yielded event this
-      // generator is suspended at the yield through no fault of the
-      // connection, so the expiry check re-arms instead of aborting; the
-      // clock restarts when the consumer resumes (resetIdle after the yield).
-      // A genuine stall (silent server while WE await the next frame) still
-      // aborts exactly as before; detection of a stall that begins during a
-      // long consumer pause is deferred until the consumer resumes (worst
-      // case ~2x idleMs), which trades delay for never killing a healthy
-      // stream under a slow consumer.
-      let consumerHolds = false;
-      const armIdle = (delay: number): void => {
-        idleTimer = setTimeout(() => {
-          // audit r4 Rdt-1: measure elapsed with a MONOTONIC clock, not
-          // Date.now(). A wall-clock rollback (NTP step / manual change) would
-          // make this delta negative, push `remaining` above idleMs, and
-          // re-arm the watchdog forever — so a genuinely stalled stream would
-          // never abort.
-          const remaining = idleMs - (monotonicNowMs() - lastEventAt);
-          if (remaining <= 0) {
-            if (consumerHolds) armIdle(idleMs);
-            else idleController!.abort();
-          } else armIdle(remaining);
-        }, delay);
-        // Don't let the watchdog alone keep the process alive.
-        (idleTimer as { unref?: () => void }).unref?.();
-      };
-      const resetIdle = (): void => {
-        lastEventAt = monotonicNowMs(); // audit r4 Rdt-1: monotonic (see armIdle)
-        if (!idleController || idleTimer !== undefined) return;
-        armIdle(idleMs);
-      };
+        idleMs,
+        streamMaxMs,
+        detachRequestTimeout,
+      });
+      const { streamSignal, resetIdle } = governor;
+      const timeoutDetached = governor.timeoutDetached;
       let eventCount = 0;
       let sawMessageStart = false;
       // Finding M2 — whether a terminal message_delta.stop_reason arrived. If
@@ -445,9 +380,9 @@ export class AnthropicTransport implements Transport {
           // audit 2026-07-14 L-3: mark the consumer-hold window around the
           // yield so the idle watchdog never counts a paused consumer as a
           // stalled connection; restart the idle clock when it resumes.
-          consumerHolds = true;
+          governor.setConsumerHolds(true);
           yield parsed as RawMessageStreamEvent;
-          consumerHolds = false;
+          governor.setConsumerHolds(false);
           resetIdle();
           // The Messages API streams exactly one message; message_stop is its
           // terminal event. Stop consuming here - official-client lifecycle -
@@ -485,16 +420,15 @@ export class AnthropicTransport implements Transport {
           timeoutGovernsBody: !timeoutDetached,
           count: eventCount,
           sawMessageStart,
-          idleSignal: idleController?.signal,
+          idleSignal: governor.idleSignal,
           idleMs,
-          maxSignal: maxController?.signal,
+          maxSignal: governor.maxSignal,
           streamMaxMs,
           apiLabel: 'Messages API',
           unit: 'event',
         });
       } finally {
-        if (idleTimer) clearTimeout(idleTimer);
-        if (maxTimer) clearTimeout(maxTimer);
+        governor.dispose();
         releaseSignals();
       }
 
@@ -955,15 +889,5 @@ async function readErrorInfo(
       sliceSurrogateSafe(text, 2_000) ||
       `HTTP ${response.status} ${response.statusText}`,
   };
-}
-
-/** Monotonic elapsed-time clock for the idle watchdog (audit r4 Rdt-1).
- *  performance.now() advances independently of the wall clock, so an NTP step
- *  or manual clock change cannot corrupt an elapsed-time delta the way a
- *  Date.now() subtraction can (a backward jump would leave a real stall
- *  undetected — the watchdog would re-arm forever). Present on Node >= 18
- *  (this transport's floor) and every supported test runtime. */
-function monotonicNowMs(): number {
-  return performance.now();
 }
 

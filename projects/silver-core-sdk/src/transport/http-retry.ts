@@ -450,3 +450,119 @@ export function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
   return failure;
 }
 
+
+// ---------------------------------------------------------------------------
+// Streaming-body governance (idle watchdog + hard duration cap)
+// ---------------------------------------------------------------------------
+
+/**
+ * Governs the STREAMING phase of a turn, once response headers have arrived.
+ *
+ * Two independent bounds, both provider-neutral:
+ *  - **idle watchdog** — abort a silently-stalled stream after `idleMs` with no
+ *    server frame. Faster and far more diagnosable than the whole-request
+ *    timeout; both providers emit periodic keep-alives, so a gap this long
+ *    means the connection is stuck. `0` disables. (Design ref: Codex
+ *    `stream_idle_timeout`; reimplemented, no code copied.) A STALLED stream
+ *    (connected, then silent) is distinct from an EMPTY one (closed at once,
+ *    no frame): the watchdog handles the former, each arm's own frame-count
+ *    check handles the latter.
+ *  - **hard cap** — `streamMaxDurationMs` (0 = disabled). Unlike the watchdog
+ *    it fires even on a FLOWING stream; when it does, blocks delivered whole
+ *    remain salvageable (midStreamTruncation).
+ *
+ * P1 body governance: with either governor active the caller detaches the
+ * whole-request timeout from the body; with BOTH off the request timeout stays
+ * wired as the fallback bound, so no configuration is ever unbounded.
+ */
+export type StreamGovernor = {
+  /** Signal to hand the SSE reader: request signal + whichever governors are on. */
+  streamSignal: AbortSignal;
+  idleSignal: AbortSignal | undefined;
+  maxSignal: AbortSignal | undefined;
+  /** True when a body governor took over, so the request timeout was detached. */
+  timeoutDetached: boolean;
+  /** Call once before the loop and after every frame (and after each yield). */
+  resetIdle: () => void;
+  /** Mark the generator as suspended at a `yield`: the watchdog measures SERVER
+   *  progress, not consumer progress (audit 2026-07-14 L-3), so while this is
+   *  true an expiry re-arms instead of aborting. */
+  setConsumerHolds: (holding: boolean) => void;
+  /** Clear both timers; safe to call more than once. */
+  dispose: () => void;
+};
+
+export function createStreamGovernor(opts: {
+  /** The accepted request's signal (caller + possibly the request timeout). */
+  signal: AbortSignal;
+  idleMs: number;
+  streamMaxMs: number;
+  /** Stops the whole-request timeout from governing the body. */
+  detachRequestTimeout: () => void;
+}): StreamGovernor {
+  const { signal, idleMs, streamMaxMs, detachRequestTimeout } = opts;
+  const idleController = idleMs > 0 ? new AbortController() : undefined;
+  const timeoutDetached = idleController !== undefined || streamMaxMs > 0;
+  if (timeoutDetached) detachRequestTimeout();
+
+  const maxController = streamMaxMs > 0 ? new AbortController() : undefined;
+  let maxTimer: ReturnType<typeof setTimeout> | undefined;
+  if (maxController !== undefined) {
+    maxTimer = setTimeout(() => maxController.abort(), streamMaxMs);
+    (maxTimer as { unref?: () => void }).unref?.();
+  }
+
+  const signalParts = [
+    signal,
+    ...(idleController ? [idleController.signal] : []),
+    ...(maxController ? [maxController.signal] : []),
+  ];
+  const streamSignal = signalParts.length > 1 ? AbortSignal.any(signalParts) : signal;
+
+  // Lazily re-armed: the per-frame cost is ONE timestamp write, not a
+  // clearTimeout+setTimeout pair — a stream of thousands of small deltas no
+  // longer churns a timer per frame. The single timer wakes at the earliest
+  // possible expiry and either fires (gap since the last frame reached idleMs)
+  // or re-arms for exactly the remaining gap, so the abort still lands idleMs
+  // after the LAST frame — same semantics as the per-frame reset, at ~1 timer
+  // per idle window instead of 1 per frame.
+  let idleTimer: ReturnType<typeof setTimeout> | undefined;
+  let lastEventAt = 0;
+  let consumerHolds = false;
+  const armIdle = (delay: number): void => {
+    idleTimer = setTimeout(() => {
+      // audit r4 Rdt-1: measure elapsed with a MONOTONIC clock, not Date.now().
+      // A wall-clock rollback (NTP step / manual change) would make this delta
+      // negative, push `remaining` above idleMs, and re-arm the watchdog
+      // forever — so a genuinely stalled stream would never abort.
+      const remaining = idleMs - (performance.now() - lastEventAt);
+      if (remaining <= 0) {
+        if (consumerHolds) armIdle(idleMs);
+        else idleController!.abort();
+      } else armIdle(remaining);
+    }, delay);
+    // Don't let the watchdog alone keep the process alive.
+    (idleTimer as { unref?: () => void }).unref?.();
+  };
+
+  return {
+    streamSignal,
+    idleSignal: idleController?.signal,
+    maxSignal: maxController?.signal,
+    timeoutDetached,
+    resetIdle: (): void => {
+      lastEventAt = performance.now();
+      if (!idleController || idleTimer !== undefined) return;
+      armIdle(idleMs);
+    },
+    setConsumerHolds: (holding: boolean): void => {
+      consumerHolds = holding;
+    },
+    dispose: (): void => {
+      if (idleTimer) clearTimeout(idleTimer);
+      if (maxTimer) clearTimeout(maxTimer);
+      idleTimer = undefined;
+      maxTimer = undefined;
+    },
+  };
+}

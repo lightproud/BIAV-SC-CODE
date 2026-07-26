@@ -39,7 +39,6 @@
  * chain and the error-body parse are OpenAI-specific.
  */
 
-import { performance } from 'node:perf_hooks';
 import {
   AbortError,
   APIConnectionError,
@@ -95,6 +94,7 @@ import {
   mapStreamError,
   nonEmpty,
   readBodyTextBounded,
+  createStreamGovernor,
   requestWithRetries,
   type AcceptedResponse,
 } from './http-retry.js';
@@ -1313,57 +1313,17 @@ export class OpenAIChatTransport implements Transport {
         releaseSignals();
         throw new APIConnectionError('Chat Completions response has no body');
       }
+      // Streaming-body governance (idle watchdog + optional hard duration cap)
+      // — shared with the Anthropic arm; see createStreamGovernor in http-retry.ts.
       const idleMs = resolveStreamIdleMs(this.provider, this.env);
-      const idleController = idleMs > 0 ? new AbortController() : undefined;
-      // P1 body governance (mirrors the Anthropic arm): detach the request
-      // timeout from the body unless BOTH body governors are off.
-      const timeoutDetached = idleController !== undefined || streamMaxMs > 0;
-      if (timeoutDetached) detachRequestTimeout();
-      const maxController = streamMaxMs > 0 ? new AbortController() : undefined;
-      let maxTimer: ReturnType<typeof setTimeout> | undefined;
-      if (maxController !== undefined) {
-        maxTimer = setTimeout(() => maxController.abort(), streamMaxMs);
-        (maxTimer as { unref?: () => void }).unref?.();
-      }
-      const signalParts = [
+      const governor = createStreamGovernor({
         signal,
-        ...(idleController ? [idleController.signal] : []),
-        ...(maxController ? [maxController.signal] : []),
-      ];
-      const streamSignal =
-        signalParts.length > 1 ? AbortSignal.any(signalParts) : signal;
-      // Lazily re-armed watchdog (see the anthropic twin for the rationale):
-      // per-event cost is one timestamp write; the single timer re-arms for
-      // the remaining gap and still aborts idleMs after the LAST event.
-      let idleTimer: ReturnType<typeof setTimeout> | undefined;
-      let lastEventAt = 0;
-      // audit 2026-07-14 L-3 (twin of the anthropic arm): the watchdog
-      // measures SERVER progress, not consumer progress — while the consumer
-      // holds a yielded event the expiry check re-arms instead of aborting;
-      // the clock restarts when the consumer resumes (resetIdle after the
-      // yield). Stall detection during a long consumer pause is deferred
-      // until the consumer resumes (worst case ~2x idleMs).
-      let consumerHolds = false;
-      // Monotonic clock (performance.now()), NOT wall-clock Date.now(): an NTP
-      // step or manual clock set backward would make (now - lastEventAt) go
-      // negative, so `remaining` exceeds idleMs and the watchdog re-arms forever
-      // on a genuinely stalled stream. performance.now() never moves backward.
-      // (audit r4 Rdt-1, openai idle-watchdog side.)
-      const armIdle = (delay: number): void => {
-        idleTimer = setTimeout(() => {
-          const remaining = idleMs - (performance.now() - lastEventAt);
-          if (remaining <= 0) {
-            if (consumerHolds) armIdle(idleMs);
-            else idleController!.abort();
-          } else armIdle(remaining);
-        }, delay);
-        (idleTimer as { unref?: () => void }).unref?.();
-      };
-      const resetIdle = (): void => {
-        lastEventAt = performance.now();
-        if (!idleController || idleTimer !== undefined) return;
-        armIdle(idleMs);
-      };
+        idleMs,
+        streamMaxMs,
+        detachRequestTimeout,
+      });
+      const { streamSignal, resetIdle } = governor;
+      const timeoutDetached = governor.timeoutDetached;
       const translator = new OpenAIStreamTranslator(req.model);
       let chunkCount = 0;
       let doneSeen = false;
@@ -1407,9 +1367,9 @@ export class OpenAIChatTransport implements Transport {
           // audit 2026-07-14 L-3: mark the consumer-hold window around the
           // yield so the idle watchdog never counts a paused consumer as a
           // stalled connection; restart the idle clock when it resumes.
-          consumerHolds = true;
+          governor.setConsumerHolds(true);
           yield* translator.feed(parsed);
-          consumerHolds = false;
+          governor.setConsumerHolds(false);
           resetIdle();
         }
       } catch (err) {
@@ -1448,16 +1408,15 @@ export class OpenAIChatTransport implements Transport {
           timeoutGovernsBody: !timeoutDetached,
           count: chunkCount,
           sawMessageStart: translator.hasStarted(),
-          idleSignal: idleController?.signal,
+          idleSignal: governor.idleSignal,
           idleMs,
-          maxSignal: maxController?.signal,
+          maxSignal: governor.maxSignal,
           streamMaxMs,
           apiLabel: 'Chat Completions',
           unit: 'chunk',
         });
       } finally {
-        if (idleTimer) clearTimeout(idleTimer);
-        if (maxTimer) clearTimeout(maxTimer);
+        governor.dispose();
         releaseSignals();
       }
 
