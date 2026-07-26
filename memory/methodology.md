@@ -303,6 +303,13 @@ Light 当前在 L3.5。L3→L4 是最难的跳跃，需要同时完成三件事�
   记录（死概念 / 零命中回流候选，遥测已落 git 内 `Public-Info-Pool/Record/kb-usage/`
   跨会话累计）——CI 测试只守「不回归」，趋势要人看
 
+### 月检加一眼：死手开关的状态戳（2026-07-26 起）
+
+看 `Public-Info-Pool/Record/heartbeat/status.json` 的 **`generated_at`**。它若停在上个月，
+说明死手开关自己哑了——**人是最后一道不会哑的开关**（设计档 `Public-Info-Pool/Resource/
+proposal/dead-man-switch-design-20260726.md` §3 选择四）。`findings` 非零即有工作流
+「该出声却没出声」，`entries` 里 `stale`（曾成功、超阈值）与 `never`（从未成功）分列。
+
 ### 数据增长触发线（命中任一即重开冷热分层议题，只定何时重议、不预设结论）
 | 触发条件 | 定标基准（2026-07-02 实测） |
 |----------|---------------------------|

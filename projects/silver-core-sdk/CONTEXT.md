@@ -82,7 +82,7 @@ src/
 > 诊断）+ 上游 corpus 重同步（ccVersion 2.1.213）。
 >
 > **实测复核（2026-07-26 本地现跑，非引用）**：版本 **0.76.0**（`package.json` / `src/version.ts` /
-> `CHANGELOG.md` 三处一致）· `tsc --noEmit` 零错误 · vitest **3215 通过 + 6 skipped / 196 文件**
+> `CHANGELOG.md` 三处一致）· `tsc --noEmit` 零错误 · vitest **3215 通过 + 6 skipped / 196 文件**（**同日复测订正 2026-07-26**：本会话再跑得 **3216 通过 + 5 skipped / 197 文件**，总数同为 3221——差异 = 一条**条件跳过**的用例在两次环境下归属不同 + 文件计数口径（顶层 glob 196 vs 递归 197，vitest 报 197）。两处均为**手抄实测数**，正是`memory/project-status.md` 机器生成事实块要消灭的那一类：静态口径以块内为准，实测通过数留在正文但须带日期。）
 > （原记 3017，**+198**）· `npm pack` 614 文件 / 解包 5.85 MB / tarball 1640 KB · `npm audit` 0 漏洞 ·
 > 家族锁步 agent 0.76.0 = maestro 0.76.0 · maestro 362 测试全绿 · testbed 33 测试全绿 ·
 > 依赖方向守卫与版本纪律守卫均 OK。

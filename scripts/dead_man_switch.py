@@ -1,0 +1,248 @@
+#!/usr/bin/env python3
+"""死手开关 —— 只数空座位，不听课。
+
+靶（设计档 `Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md`）：
+**不是「机制报错时告诉我」（工作流失败会红，已有），而是「机制该出声却没出声时告诉我」**
+（2026-07-26 前全仓为零）。两种沉默分开报，因为病因不同：
+
+- `STALE` —— 曾经成功过，最近一次成功超出阈值（2026-07-26 的 store-patrol：连红 7 天）；
+- `NEVER` —— 从来没成功过（同日的 community-platform-backup：建成次日即坏、从未触发，
+  首个 cron 还在一周之后，「坏了」这个事件根本还没发生）。
+
+三条设计取舍（守密人 2026-07-26 裁定「按建议推进」）：
+1. **拉模式**：一个作业查 Actions API 覆盖全部定时工作流，不必改 N 个文件、不指望下一个
+   作者记得加心跳——漏网面是推模式的死穴。
+2. **阈值由 cron 自己推导**：期望间隔 = 该工作流全部 cron 的**最大相邻间隔**，阈值 =
+   期望间隔 × `THRESHOLD_FACTOR` + `GRACE_HOURS`。清单只有一份，就是工作流文件本身。
+3. **NEVER 宽限** = 工作流创建时刻 + 一个期望间隔（首个 cron 到期）+ 再一个间隔，
+   新建工作流不会一落地就红。
+
+克制（守卫的信誉是一次性的）：禁用的工作流跳过；无 cron 的（纯 workflow_dispatch）不纳入；
+只报状态、不猜原因——它一分析就会变复杂，而元规则要求**守卫必须比它守的东西简单**。
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from typing import Callable, Iterable
+
+REPO = Path(__file__).resolve().parent.parent
+WORKFLOW_DIR = REPO / ".github" / "workflows"
+STATUS_PATH = REPO / "Public-Info-Pool" / "Record" / "heartbeat" / "status.json"
+
+THRESHOLD_FACTOR = 2.0
+GRACE_HOURS = 2.0
+#  cron 采样窗口：要能覆盖到月度 cron 的两次触发（每月 3 日 → 需 > 31 天）
+SAMPLE_DAYS = 400
+
+CRON_BOUNDS = [(0, 59), (0, 23), (1, 31), (1, 12), (0, 6)]
+
+
+def parse_field(spec: str, lo: int, hi: int) -> set[int]:
+    """展开单个 cron 字段。支持 `*` / `a` / `a-b` / `a,b` / `*/n` / `a-b/n`。"""
+    values: set[int] = set()
+    for part in spec.split(","):
+        step = 1
+        if "/" in part:
+            part, step_s = part.split("/", 1)
+            step = int(step_s)
+            if step <= 0:
+                raise ValueError(f"步长必须为正: {spec}")
+        if part in ("*", "?"):
+            start, end = lo, hi
+        elif "-" in part.lstrip("-"):
+            start_s, end_s = part.split("-", 1)
+            start, end = int(start_s), int(end_s)
+        else:
+            start = end = int(part)
+        if start < lo or end > hi or start > end:
+            raise ValueError(f"字段越界: {part} 不在 [{lo},{hi}]")
+        values.update(range(start, end + 1, step))
+    return values
+
+
+def _matches_day(dom_spec: str, dow_spec: str, dom: set[int], dow: set[int], when: datetime) -> bool:
+    """cron 的日/周语义：两者都被限定时取「或」，否则取「与」。"""
+    # cron 的 dow：0/7 = 周日；Python weekday(): 周一=0
+    cron_dow = (when.weekday() + 1) % 7
+    dom_hit = when.day in dom
+    dow_hit = cron_dow in dow or (7 in dow and cron_dow == 0)
+    if dom_spec.strip() not in ("*", "?") and dow_spec.strip() not in ("*", "?"):
+        return dom_hit or dow_hit
+    return dom_hit and dow_hit
+
+
+def fire_times(cron: str, start: datetime, days: int = SAMPLE_DAYS) -> list[datetime]:
+    """窗口内的全部触发时刻。只遍历 minute/hour 集合，不逐分钟扫。"""
+    fields = cron.split()
+    if len(fields) != 5:
+        raise ValueError(f"cron 须为 5 段: {cron!r}")
+    minutes, hours, doms, months, dows = (
+        parse_field(f, lo, hi) for f, (lo, hi) in zip(fields, CRON_BOUNDS)
+    )
+    out: list[datetime] = []
+    for offset in range(days):
+        day = (start + timedelta(days=offset)).replace(
+            hour=0, minute=0, second=0, microsecond=0
+        )
+        if day.month not in months:
+            continue
+        if not _matches_day(fields[2], fields[4], doms, dows, day):
+            continue
+        for hour in sorted(hours):
+            for minute in sorted(minutes):
+                out.append(day.replace(hour=hour, minute=minute))
+    return sorted(out)
+
+
+def expected_interval_hours(crons: Iterable[str], reference: datetime) -> float:
+    """期望间隔 = 全部 cron 触发时刻**并集**的最大相邻间隔。
+
+    取最大而非平均：`discord-archive.yml` 同时有每日与每月两条 cron，按平均会得出一个
+    没有任何一条 cron 真正满足的阈值。最大间隔才是「多久没动静算不对劲」的诚实answer。
+    """
+    stamps: list[datetime] = []
+    for cron in crons:
+        stamps.extend(fire_times(cron, reference))
+    stamps = sorted(set(stamps))
+    if len(stamps) < 2:
+        raise ValueError("采样窗口内触发次数不足，无法推导间隔")
+    gaps = [
+        (b - a).total_seconds() / 3600.0 for a, b in zip(stamps, stamps[1:])
+    ]
+    return max(gaps)
+
+
+def scheduled_workflows(workflow_dir: Path = WORKFLOW_DIR) -> dict[str, list[str]]:
+    """{工作流文件名: [cron...]}，只收带 schedule 的。纯 dispatch 的本就不该定期出声。"""
+    import re
+
+    found: dict[str, list[str]] = {}
+    for path in sorted(workflow_dir.glob("*.yml")):
+        crons = re.findall(r"^\s*-\s*cron:\s*'([^']+)'", path.read_text(encoding="utf-8"), re.M)
+        if crons:
+            found[path.name] = crons
+    return found
+
+
+def _api(url: str, token: str | None) -> dict:
+    request = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json"})
+    if token:
+        request.add_header("Authorization", f"Bearer {token}")
+    with urllib.request.urlopen(request, timeout=30) as response:  # noqa: S310 - 固定 api.github.com
+        return json.loads(response.read().decode("utf-8"))
+
+
+def github_fetcher(repo: str, token: str | None) -> Callable[[str], dict]:
+    """返回 fetch(workflow_file) -> {created_at, state, last_success}；失败向上抛。"""
+
+    def fetch(workflow_file: str) -> dict:
+        base = f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_file}"
+        meta = _api(base, token)
+        runs = _api(f"{base}/runs?status=success&per_page=1", token)
+        items = runs.get("workflow_runs") or []
+        return {
+            "created_at": meta.get("created_at"),
+            "state": meta.get("state", "active"),
+            "last_success": items[0].get("updated_at") if items else None,
+        }
+
+    return fetch
+
+
+def _parse_ts(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def classify(entry: dict, now: datetime) -> tuple[str, str]:
+    """(state, note)。state ∈ ok / stale / never / skipped / unknown。"""
+    if entry.get("state") not in (None, "active"):
+        return "skipped", f"工作流非 active（{entry.get('state')}），不计沉默"
+    interval = entry["expected_interval_h"]
+    threshold = interval * THRESHOLD_FACTOR + GRACE_HOURS
+    last = _parse_ts(entry.get("last_success"))
+    if last is not None:
+        age = (now - last).total_seconds() / 3600.0
+        if age > threshold:
+            return "stale", f"最近一次成功在 {age:.1f}h 前，超阈值 {threshold:.1f}h"
+        return "ok", f"最近一次成功在 {age:.1f}h 前（阈值 {threshold:.1f}h）"
+    created = _parse_ts(entry.get("created_at"))
+    if created is None:
+        return "unknown", "无成功记录且无创建时间，无法判定"
+    # NEVER 宽限：首个 cron 到期（+1 间隔）再给一个间隔，新工作流不会一落地就红
+    grace_deadline = created + timedelta(hours=interval * 2 + GRACE_HOURS)
+    if now < grace_deadline:
+        return "ok", f"新工作流，尚在首跑宽限内（至 {grace_deadline.isoformat()}）"
+    return "never", f"创建于 {created.isoformat()}，至今从无一次成功"
+
+
+def build_status(
+    fetch: Callable[[str], dict],
+    now: datetime,
+    workflow_dir: Path = WORKFLOW_DIR,
+) -> dict:
+    entries = []
+    for name, crons in scheduled_workflows(workflow_dir).items():
+        record: dict = {"workflow": name, "cron": crons}
+        try:
+            record["expected_interval_h"] = round(expected_interval_hours(crons, now), 2)
+        except ValueError as exc:
+            record.update(state="unknown", note=f"cron 间隔无法推导: {exc}")
+            entries.append(record)
+            continue
+        try:
+            record.update(fetch(name))
+        except (urllib.error.URLError, urllib.error.HTTPError, OSError) as exc:
+            record.update(state="unknown", note=f"API 查询失败: {exc}")
+            entries.append(record)
+            continue
+        state, note = classify(record, now)
+        record["state"] = state
+        record["note"] = note
+        entries.append(record)
+    findings = [e for e in entries if e.get("state") in ("stale", "never")]
+    return {
+        "generated_at": now.isoformat(),
+        "threshold_factor": THRESHOLD_FACTOR,
+        "grace_hours": GRACE_HOURS,
+        "watched": len(entries),
+        "findings": len(findings),
+        "entries": entries,
+    }
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="死手开关：报告该出声却没出声的定时工作流")
+    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "lightproud/BIAV-SC-CODE"))
+    parser.add_argument("--out", type=Path, default=STATUS_PATH)
+    parser.add_argument("--dry-run", action="store_true", help="只打印，不写文件")
+    args = parser.parse_args(argv)
+
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    now = datetime.now(timezone.utc).replace(second=0, microsecond=0)
+    status = build_status(github_fetcher(args.repo, token), now)
+
+    for entry in status["entries"]:
+        if entry.get("state") in ("stale", "never", "unknown"):
+            print(f"  [{entry['state'].upper():7}] {entry['workflow']}: {entry.get('note')}")
+    print(f"死手开关：watched={status['watched']} findings={status['findings']}")
+
+    if not args.dry_run:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(
+            json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        print(f"状态已写入 {args.out}")
+    return 1 if status["findings"] else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
