@@ -3,7 +3,7 @@
     "what": "热层目标清单 (hot layer): what the four inspectors watch. Editing this file changes patrol coverage with ZERO code changes — same registry discipline as store-patrol.targets.json and archive_sources.json.",
     "keys": "repo: owner/name used by GitHub API inspectors; ci-status.workflows: workflow files whose latest completed run is checked; doc-links.roots: files/dirs swept for internal markdown links; lockstep.packages: package dirs that must carry the same family version; ratchet: mutation-ratchet floor files + the weekly workflow that re-measures them."
   },
-  "repo": "lightproud/brain-in-a-vat",
+  "repo": "lightproud/BIAV-SC-CODE",
   "ci-status": {
     "workflows": [
       "test.yml",
@@ -15,7 +15,9 @@
       "update-news.yml",
       "build-okf-bundle.yml",
       "discord-archive.yml",
-      "collect-comments.yml"
+      "collect-comments.yml",
+      "dead-man-switch.yml",
+      "collect-fanart.yml"
     ]
   },
   "doc-links": {

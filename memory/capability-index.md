@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-26
-- 功能总数：**144**
-- 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
+- 功能总数：**147**
+- 脚本可达性：活 77 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 42 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 43 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 39 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（42）
+## CI 自动化工作流（编排入口·定时/事件平面）（43）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -70,6 +70,8 @@
   `.github/workflows/consolidate-releases.yml`
 - **`Sync Community archive to BIAV-SC-DATA`** _[manual]_ —   
   `.github/workflows/data-repo-sync.yml`
+- **`Dead Man Switch`** _[schedule/manual]_ —   
+  `.github/workflows/dead-man-switch.yml`
 - **`Delete Release`** _[manual]_ —   
   `.github/workflows/delete-release.yml`
 - **`Deploy Site`** _[push/manual]_ — push 触发部署 site 静态站。  
@@ -121,7 +123,7 @@
 - **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
   `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（37）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（39）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -133,6 +135,8 @@
   `scripts/build_kb_vectors.py`
 - **`build_okf_bundle.py`** _[活:cli+workflow]_ — Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).  
   `scripts/build_okf_bundle.py`
+- **`build_status_facts.py`** _[活:cli]_ — 状态档机器生成事实块 —— 「会变的数字不许手抄」。  
+  `scripts/build_status_facts.py`
 - **`build_story_index.py`** _[活:cli+workflow]_ — Build a static story/lore search index over the unpacked story layer.  
   `scripts/build_story_index.py`
 - **`build_story_layer.py`** _[活:cli]_ — Build the story/ structured layer from raw + processed sources.  
@@ -143,6 +147,8 @@
   `scripts/check_decisions_consistency.py`
 - **`compact_discord_archive.py`** _[活:cli]_ — Discord 存量归档批量紧凑化（S2）—— 把已落盘的 721 万条记录一次性压成紧凑 schema。  
   `scripts/compact_discord_archive.py`
+- **`dead_man_switch.py`** _[活:cli+workflow]_ — 死手开关 —— 只数空座位，不听课。  
+  `scripts/dead_man_switch.py`
 - **`deliverable_path.py`** _[活:cli+command]_ — deliverable_path.py — 银芯产物路径生成器 / 注册表守卫  
   `scripts/deliverable_path.py`
 - **`extract_aliases.py`** _[活:cli]_ — extract_aliases.py — 厚锚别名生成期工作面（AI 自动识别的落表 CLI）。  

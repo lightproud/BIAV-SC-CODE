@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-26",
   "stats": {
-    "nodes": 371,
-    "edges": 406
+    "nodes": 373,
+    "edges": 410
   },
   "nodes": [
     {
@@ -2728,9 +2728,31 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-proposal-dead-man-switch-design-20260726.md",
+      "type": "documentation",
+      "title": "dead-man-switch-design-20260726",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "type": "documentation",
       "title": "discord-layout-unification-20260710",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
+      "type": "documentation",
+      "title": "drift-resistant-architecture-20260726",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4542,6 +4564,12 @@
     },
     {
       "source": "/community/community-weibo.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
@@ -5627,7 +5655,19 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-proposal-dead-man-switch-design-20260726.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
@@ -5936,6 +5976,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/15599.md",
       "rel": "提及:萨尔瓦多",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
       "rel_type": "mention"
     },
     {

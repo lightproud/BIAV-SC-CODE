@@ -303,12 +303,42 @@ Light 当前在 L3.5。L3→L4 是最难的跳跃，需要同时完成三件事�
   记录（死概念 / 零命中回流候选，遥测已落 git 内 `Public-Info-Pool/Record/kb-usage/`
   跨会话累计）——CI 测试只守「不回归」，趋势要人看
 
+### 月检加一眼：死手开关的状态戳（2026-07-26 起）
+
+看 `Public-Info-Pool/Record/heartbeat/status.json` 的 **`generated_at`**。它若停在上个月，
+说明死手开关自己哑了——**人是最后一道不会哑的开关**（设计档 `Public-Info-Pool/Resource/
+proposal/dead-man-switch-design-20260726.md` §3 选择四）。`findings` 非零即有工作流
+「该出声却没出声」，`entries` 里 `stale`（曾成功、超阈值）与 `never`（从未成功）分列。
+
 ### 数据增长触发线（命中任一即重开冷热分层议题，只定何时重议、不预设结论）
 | 触发条件 | 定标基准（2026-07-02 实测） |
 |----------|---------------------------|
 | 档案层工作树 ≥ 4 G | 当前 2.01 G，增速约 205 MB/月，线性外推约 2027-04 命中 |
 | 单月增速 ≥ 400 MB 连续 2 月 | 事件驱动（新联动爆量等） |
 | 全新 clone ≥ 5 分钟（Actions 实测） | 与 .git 增长相关，届时执行历史压缩既有待办 |
+
+### 首跑实证纪律（守密人 2026-07-26 点头，本次会话四条故障归纳）
+
+**新增定时机制（cron 工作流 / 定时例程）当天必须 `workflow_dispatch` 跑一轮实证，不等首个 cron。**
+未经真跑的定时件一律视为**未完工**，不得在台账里记「已落地」。
+
+一句话理由：**首次真跑同时也是首次测试**——在那之前，它是不是能跑没有任何人知道。本次会话
+四条故障里三条同形态，且都恰好卡在这条纪律的空档上：
+
+| 故障 | 为何 CI 绿、评审过、却是坏的 |
+|---|---|
+| `store-patrol.yml` 推送腿 | T54 首轮定时恰走 no-changes 空跑路径，**推送腿从未执行过**；07-19 快照首次有变更即断，连红 7 天 |
+| `community-platform-backup.yml` | 建于 07-19、次日 §7甲 就把它读的目录搬走；首个 cron 是 08-03，**从未触发过**，坏了整整一周无人可能发现 |
+| `loop-support` 变异地板 | 地板 07-17 入档但没有周检矩阵腿，**从未被复测**——「已上棘轮」是错觉 |
+
+**配套两条**（同属「让机制自证」）：
+- 实证以**产物**为准，不以工作流 conclusion=success 为准（空跑也会绿）——要能指出这一轮
+  真写了哪个文件 / 哪个 Release 资产；
+- 巡检类机制须留**可缺席检测的痕迹**（提交 / 台账 / 快照）：靠它自己喊「我坏了」是靠不住的，
+  今天哑掉 7 天的正是巡检器本身。
+
+小学生比喻：新买的烟雾报警器不能只挂上墙就算装好了——必须当场点根火柴试一次。它下次自己响
+是什么时候没人知道，而没响过的报警器和坏的报警器，外表一模一样。
 
 ### 随裁定一并生效的两项
 - ~~**CI 硬门禁重启**~~（**已被同日稍晚裁定覆盖**，守密人 2026-07-10 AskUserQuestion
@@ -343,6 +373,21 @@ lessons-learned 的毕业纪律写的是第三个说法：「文字劝告是弱�
 3. **前置步骤会掩盖产物的自洽性**。CI 永远先 build 再 test，于是「`npm test` 自己能不能跑」
    这个问题在 CI 里根本不存在。**凡是文档里写给人照抄的命令，都该有一条腿在干净环境里实跑**
    （`.github/workflows/family-cold-start.yml`）。
+   本戒与上面的**「首跑实证纪律」是同一条规律的两端**——那条说「没跑过的机制，绿和坏长得
+   一模一样」，本戒说「跑过了但被前置步骤兜着，绿同样不作数」。合起来读：**一个机制只有在
+   它真实的起始条件下跑通过，才算存在**。
+
+### 与「生成取代对账」的分工（招一 vs 哨兵，2026-07-26 同日两路落地）
+
+同日另一路落了**招一·生成取代对账**（`scripts/build_status_facts.py` 把版本 / 规模 / 台账
+条数生成进 `memory/project-status.md` 的 STATUS-FACTS 块）。**生成严格强于哨兵**——它让漂移
+不可能发生，而哨兵只是发现漂移。故次序是：**能生成的先生成，生成不了的才架哨兵。**
+
+生成不了的是哪一类：**叙述**。「当前版本是 0.76.0」可以生成；「0.75.0 做了 R7 会话末回写
+可观测性、堵的是黑池进度卡静默变陈」不能生成——那是判断。而叙述层照样会烂：实证 2026-07-26，
+`project-status.md` 顶部的机器块已正确写着 maestro 0.76.0，下方 maestro 叙述节**仍停在 0.69.0**，
+生成块对它一无所知。`tests/test_status_doc_facts.py` 守的正是这一层（发布台账最新一版必须在
+叙述里留下痕迹），与生成块不重叠。
 
 ### 两条配套纪律
 
@@ -354,15 +399,23 @@ lessons-learned 的毕业纪律写的是第三个说法：「文字劝告是弱�
 
 ### 覆盖现状（新增须在此登记，便于下一个会话知道哪些角落已有岗）
 
+**先看生成层**（漂移不可能，非「被发现」）：`scripts/build_status_facts.py`（版本 / 规模 /
+台账条数生成进 STATUS-FACTS 块，守卫 `tests/test_status_facts.py`）· `sdk-mutation-ratchet.yml`
+矩阵改生成（地板清单即唯一源，不再两份手写）。**生成层盖不到的，才由下表的哨兵站岗。**
+
 | 哨兵 | 盯的对应关系 |
 |------|-------------|
 | `tests/test_claude_md.py` | CLAUDE.md 引用的路径 ↔ 磁盘实况（正向） |
 | `tests/test_claude_md_coverage.py` | 核心脚本 ↔ 权威档提及（反向孤儿） |
 | `tests/test_claude_md_dates.py` | CLAUDE.md 裁定日期 ↔ decisions 台账（跨档） |
-| `tests/test_status_doc_facts.py` | CHANGELOG 最新版本 ↔ package.json ↔ 两份状态档（2026-07-26 新增） |
+| `tests/test_status_facts.py` | 生成块 ↔ 权威源（重算逐字比对，2026-07-26 招一） |
+| `tests/test_status_doc_facts.py` | CHANGELOG 最新版本 ↔ package.json ↔ 状态**叙述层**（生成块够不到的那层，2026-07-26 新增） |
 | `tests/test_memory_freshness.py` | lessons 指针完整性 + 编号不变量 |
+| `tests/test_ledger_discipline.py` | todo 台账编号 / 分节纪律（2026-07-26 招二） |
 | `tests/test_mutation_ratchet_matrix.py` | 变异地板清单 ↔ CI 矩阵腿（双向） |
 | `scripts/check_decisions_consistency.py` | decisions 层内部硬不变量 |
+| `scripts/dead_man_switch.py` | 定时机制的**缺席**检测（巡检器自己哑掉谁来喊，2026-07-26 招三） |
 | `projects/silver-core-sdk/scripts/check-version-bump.mjs` | 包内三方版本对账 + 单调递增 |
 | `.github/scripts/check-dep-direction.mjs` | maestro → agent 单向依赖 |
 | `.github/workflows/family-cold-start.yml` | 文档里写给人照抄的命令 ↔ 干净环境实跑（周检，2026-07-26 新增） |
+| `.github/workflows/sdk-platform-probe.yml` | 家族的绿 ↔ 非 Linux 平台（手动探路，2026-07-26 新增） |

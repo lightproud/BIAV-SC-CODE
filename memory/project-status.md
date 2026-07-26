@@ -72,6 +72,28 @@
 - ⏳ **守密人本地待执行**：批量删除 37 个 stale 分支（含 13 个安全 + 24 个审计后决定删 + 本会话清理分支）
 - ⏳ **5 个 dependabot PR 待批量升级**（#136-140）— 已派任务给 Code-news（参 batch dependency update 文字派单）
 
+<!-- STATUS-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
+
+### 机器生成事实（版本 / 规模 / 台账）
+
+> 本块由 `scripts/build_status_facts.py` 从权威源生成，`tests/test_status_facts.py` 守同步。
+> **勿手抄这些数字到别处**——要引用就指这里（2026-07-26 抗漂移裁定，提案招一）。
+> 测试**通过数**不在此列：那要真跑才知道，属实测记录、随文注明日期，不是静态事实。
+
+| 事实 | 值 | 权威源 |
+|------|----|--------|
+| Silver Core Agent SDK 版本 | `0.76.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.76.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
+| agent SDK 源文件 / 测试档 | 122 / 197 | 磁盘实况 |
+| maestro SDK 源文件 / 测试档 | 16 / 29 | 磁盘实况 |
+| testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
+| Python 测试档 | 128 | 磁盘实况 |
+| CI 工作流 / 其中定时 | 45 / 26 | `.github/workflows/` |
+| 挂账台账 开 / 已清 | 19 / 53 | `memory/todo.md` |
+
+<!-- STATUS-FACTS:END -->
+
 ## 子项目状态
 
 | 子项目 | 状态 | 负责会话 | 下一步 |
@@ -298,7 +320,7 @@
   （`SDKMemoryHealth.sessionEndUpdate` 九态 + `Query.memoryHealthSnapshot()`）+ 上游 corpus
   重同步 ccVersion 2.1.213。
   **实测复核（2026-07-26 本地现跑）**：三处版本常量一致 · `tsc --noEmit` 零错误 · vitest
-  **3215 通过 + 6 skipped / 196 文件**（原记 3017，**+198**）· tarball 1640 KB / 解包 5.85 MB ·
+  **3215 通过 + 6 skipped / 196 文件**（原记 3017，**+198**）（**同日复测订正 2026-07-26**：本会话再跑得 **3216 通过 + 5 skipped / 197 文件**，总数同为 3221——差异 = 一条**条件跳过**的用例在两次环境下归属不同 + 文件计数口径（顶层 glob 196 vs 递归 197，vitest 报 197）。两处均为**手抄实测数**，正是`memory/project-status.md` 机器生成事实块要消灭的那一类：静态口径以块内为准，实测通过数留在正文但须带日期。）· tarball 1640 KB / 解包 5.85 MB ·
   `npm audit` 0 漏洞 · 家族锁步 agent = maestro = 0.76.0 · maestro 362 绿 / testbed 33 绿 ·
   依赖方向守卫 + 版本纪律守卫均 OK。
 - **v0.69.0（2026-07-18，守密人待办批 SDK 侧 1–3 项）**：① 迁移文档刷新
