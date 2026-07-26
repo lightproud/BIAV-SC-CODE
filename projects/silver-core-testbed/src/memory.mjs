@@ -48,9 +48,22 @@ export async function readIfExists(store, path) {
   }
 }
 
+/**
+ * Create-or-overwrite through the six-command contract. The store keeps the
+ * REFERENCE `create` semantics (R1: create on an existing path errors unless
+ * `createOverwrite` is opted into), so a host that genuinely means "replace"
+ * must say so explicitly — delete, then create. Without this every write that
+ * repeats a path (the resident index refreshed daily, a retried task rewriting
+ * the day's file) dies with "File ... already exists".
+ */
+export async function replaceFile(store, path, content) {
+  if ((await readIfExists(store, path)) !== null) await store.delete(path);
+  await store.create(path, content);
+}
+
 /** Create-or-overwrite a day's patrol report for one inspector. */
 export async function writeReport(store, inspectorId, date, markdown) {
-  await store.create(`${REPORTS_PREFIX}/${inspectorId}/${date}.md`, markdown);
+  await replaceFile(store, `${REPORTS_PREFIX}/${inspectorId}/${date}.md`, markdown);
 }
 
 /** The report dates present for one inspector (parsed out of the dir view). */

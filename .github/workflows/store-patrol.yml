@@ -31,6 +31,13 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
+          # Deploy key: main carries a Ruleset; GITHUB_TOKEN pushes are
+          # blocked (todo T31) — machine commits go through BOT_DEPLOY_KEY.
+          # Missing here until 2026-07-26: the first scheduled run (T54) took
+          # the no-changes path, so the push leg stayed unproven; from the
+          # 07-19 run on, every day died with "push declined due to repository
+          # rule violations" and the storefront snapshots stopped at 07-18.
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
           # Sparse: exclude the multi-GB archive layers but RE-INCLUDE the
           # patrol's own archive subdir (write + commit target). Re-inclusion
           # verified with `git sparse-checkout check-rules` (2026-07-18).
