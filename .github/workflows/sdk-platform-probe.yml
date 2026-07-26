@@ -1,0 +1,69 @@
+name: SDK Platform Probe (manual)
+
+# 平台矩阵探路腿（守密人 2026-07-26 裁定「先手动探一次路」）。
+#
+# 补的是 testbed 的**结构性**盲区：试金石以「第二消费者」视角巡检两包公开面，视角是对的，
+# 但它跑在 Linux 上——bubblewrap 沙箱后端在那里解得出来，于是「Windows 宿主上 Bash 全程
+# 无沙箱」这类只在别的平台成立的事实，它结构上看不见。核实（2026-07-26）：全仓
+# .github/workflows/ 此前**零个** windows runner，整个家族的绿全部只在 Linux 上取得。
+#
+# 本腿的收益是**发现未知问题**，不是修已知问题——沙箱只是第一个被抓到的。故：
+#   - 只挂 workflow_dispatch，**不入常规 CI、不设 required check**、不排定时；
+#   - 允许它红。红多少是本次要采的数据，采到之后由守密人裁是否入常。
+#   - continue-on-error 刻意不加：探路要看见真实的红，吞掉就白探了。
+#
+# 若日后裁定入常，改法是把 os 矩阵搬进 silver-core-sdk.yml 的 unit job；本文件届时退役。
+
+on:
+  workflow_dispatch:
+    inputs:
+      os:
+        description: 'Runner OS to probe'
+        required: false
+        type: choice
+        options: ['windows-latest', 'macos-latest', 'both']
+        default: 'windows-latest'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    name: ${{ matrix.os }} probe
+    strategy:
+      fail-fast: false
+      matrix:
+        # Single line on purpose: a folded scalar keeps newlines inside the
+        # more-indented continuation lines, which would land literal \n inside
+        # the ${{ }} expression.
+        os: ${{ inputs.os == 'both' && fromJSON('["windows-latest","macos-latest"]') || fromJSON(format('["{0}"]', inputs.os)) }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies (workspace root)
+        run: npm ci
+      - name: Typecheck (agent SDK)
+        run: npm run typecheck --workspace silver-core-agent-sdk
+      # The suite is expected to surface platform assumptions here — path
+      # separators, shell resolution, process-group kills, and the sandbox
+      # backend that only resolves on Linux. A red run is DATA, not a failure
+      # of the probe; the run log is the deliverable.
+      - name: Unit suite (agent SDK)
+        run: npm test --workspace silver-core-agent-sdk
+      - name: Build + unit suite (maestro SDK)
+        if: always()
+        run: |
+          npm run build --workspace silver-core-agent-sdk
+          npm run build --workspace silver-core-maestro-sdk
+          npm test --workspace silver-core-maestro-sdk

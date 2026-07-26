@@ -316,3 +316,53 @@ Light 当前在 L3.5。L3→L4 是最难的跳跃，需要同时完成三件事�
   `memory/decisions.md` 同日「CI required 检查维持自查自合」条，节拍表其余条款不动）
 - **零产出源清账**：bahamut / arca_live / note_com / twitter 于 07-19 前逐一
   修复或明文退役（移出 KNOWN_SOURCES + 注册表除名 + CONTEXT 记理由）
+
+---
+
+## 防漂移：哨兵化标尺（守密人 2026-07-26 裁定四项落地后结晶）
+
+本仓治漂移的主手法叫**哨兵**（sentinel）：把一条「靠人/AI 记得住」的对应关系，改成一条
+「机器每次都查」的对应关系。`tests/test_claude_md_dates.py` 把它写在自己开头——
+**「本哨兵把『同步』从承诺变成保障」**，这是全套手法的一句话纲领。
+
+### 判据（一句话）
+
+**它是否依赖某人在正确的时刻想起某件事？** 是 → 迟早漂移 → 该哨兵化。
+
+CLAUDE.md §6.2 早写过同一句的另一个说法：「把弱约定（文档）升级为强约束（脚本）」。
+lessons-learned 的毕业纪律写的是第三个说法：「文字劝告是弱约束，真防护在工具层」
+（实证 #28/#34/#39 三记文字防不住复发、pre-push 钩子一次根治）。**同一条规律，三处独立发现。**
+
+### 设计三戒（2026-07-26 三条实缝各贡献一戒）
+
+1. **粒度要对齐事实，别对齐文件**。`memory_freshness.py` 管档案级 git 龄，而
+   `project-status.md` 天天被别的子项目改、git 龄永远新鲜——SDK 那一节烂在里面 12 个发布无人喊。
+   哨兵盯的必须是**那条具体的对应关系**（CHANGELOG 最新版本号 ↔ 状态节），不是承载它的文件。
+2. **只钉机器判得了的，判不了的别硬钉**。机器能判「最新版本号有没有出现」，判不了「摘要写得好不好」；
+   钉前者足以让 12 版落后当场翻红，钉后者只会制造噪音与豁免。**够用即止**是设计目标，不是妥协。
+3. **前置步骤会掩盖产物的自洽性**。CI 永远先 build 再 test，于是「`npm test` 自己能不能跑」
+   这个问题在 CI 里根本不存在。**凡是文档里写给人照抄的命令，都该有一条腿在干净环境里实跑**
+   （`.github/workflows/family-cold-start.yml`）。
+
+### 两条配套纪律
+
+- **空 allowlist 是目标**。豁免每条须写明理由，且必须是「经核实的哨兵已知盲区」而非「懒得改」。
+  真实漂移应当 fail，由守密人裁「补回写」还是「加豁免」，而非默认吞掉。
+- **新哨兵必须做负控**。「加了测试」不等于「测试会咬」——`tests/test_mutation_ratchet_matrix.py`
+  撤腿转红、本轮四条负控（缺版本号 / 兄弟节不串 / 散文版本不冒充 / 节改名响亮失败）都是这个动作。
+  没做负控的哨兵，与没有哨兵之间只差一次运气。
+
+### 覆盖现状（新增须在此登记，便于下一个会话知道哪些角落已有岗）
+
+| 哨兵 | 盯的对应关系 |
+|------|-------------|
+| `tests/test_claude_md.py` | CLAUDE.md 引用的路径 ↔ 磁盘实况（正向） |
+| `tests/test_claude_md_coverage.py` | 核心脚本 ↔ 权威档提及（反向孤儿） |
+| `tests/test_claude_md_dates.py` | CLAUDE.md 裁定日期 ↔ decisions 台账（跨档） |
+| `tests/test_status_doc_facts.py` | CHANGELOG 最新版本 ↔ package.json ↔ 两份状态档（2026-07-26 新增） |
+| `tests/test_memory_freshness.py` | lessons 指针完整性 + 编号不变量 |
+| `tests/test_mutation_ratchet_matrix.py` | 变异地板清单 ↔ CI 矩阵腿（双向） |
+| `scripts/check_decisions_consistency.py` | decisions 层内部硬不变量 |
+| `projects/silver-core-sdk/scripts/check-version-bump.mjs` | 包内三方版本对账 + 单调递增 |
+| `.github/scripts/check-dep-direction.mjs` | maestro → agent 单向依赖 |
+| `.github/workflows/family-cold-start.yml` | 文档里写给人照抄的命令 ↔ 干净环境实跑（周检，2026-07-26 新增） |

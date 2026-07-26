@@ -226,6 +226,25 @@
 > `assessMemoryStoreHealth`→归并写卡→删碎片→台账收口，黑池做梦例程原型，假钟 e2e）+
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
+>
+> **当前版本 v0.76.0（2026-07-22）· 0.70.0→0.76.0 合并摘要（2026-07-26 哨兵首跑抓出补写）**：
+> 本节此前停在 0.69.0，与 agent 侧同款漂移，由新建的跨档对账哨兵
+> `tests/test_status_doc_facts.py` 首跑当场抓出。逐版全文以本包 `CHANGELOG.md` 为唯一权威。
+> **T56「500 缺陷战役」五轮审计是本段主线**：0.70.0 轮一（17 finder 代理 + 对抗验证，确认 29 项真
+> 缺陷全修带 fail-on-old 锁）· 0.72.0 轮二（6 换镜 finder，16 项含 3 个 P1，含 memory-tidy 经
+> `store.view` 归并的数据丢失）· 0.73.0 轮四（4 路故障注入镜，11 项——台账并发大修：attempt 围栏 +
+> 每会话互斥 + `putSessionIf` CAS 缝 + settle-then-append 提交序 + 恶意输入硬化）· 0.74.0 轮五
+> （6 项：回填分支围栏 / 读面序列化 / 送达通道租约竞态 / 驱动器搁浅信号 / 分数 fireAt 恢复）；
+> 战报 `Public-Info-Pool/Resource/repo-engineering/silver-core-maestro-sdk-bug-audit-r4-20260718.md`。
+> **0.71.0** testbed 漏缝 G1–G3 采纳（`runLedgerStoreContractSuite` 12 检查 + `claimLeaseMs` 认领租约 +
+> `scheduleSessionId()` / `seedFirstRun` 短命宿主收口）；**0.71.3** 打包三修（`files` 带 `src` /
+> `prepublishOnly` / `exports` 子路径，与 agent 同缺陷同治）；**0.70.1 / 0.71.1 / 0.71.2 / 0.75.0**
+> 为锁步对齐（本包零改动，跟随 agent 侧 deny 绕过修复、r3 批 N+P、批 R+S+T、R7 可观测性）；
+> **0.76.0** `cancelled` 封闭终局（BPT P0-D1：用户主动取消升为一等终态，台账可与 `failed` 区分、
+> 永不自动重跑；`TaskLedger.cancelSession()` 幂等 + CAS，取消与在飞尝试双向竞态均已钉死，
+> 驱动器静默吞掉取消导致的迟到 `InvalidTransitionError`——用户取消不得读作驱动器故障）。
+> **实测复核（2026-07-26 本地现跑）**：vitest **362 通过 / 29 文件**（冷态经新 `pretest` 自举）·
+> 锁步 agent = maestro = 0.76.0 · dep-direction 守卫 OK。
 
 ## Silver Core Testbed（`projects/silver-core-testbed/`，试金石，2026-07-18 施工封面立项）
 
