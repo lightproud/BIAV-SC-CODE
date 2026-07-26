@@ -18,6 +18,7 @@ import {
   listReportDates,
   pruneOld,
   readIfExists,
+  replaceFile,
 } from './memory.mjs';
 
 /** Pick the newest date for which at least one inspector report exists. */
@@ -91,12 +92,17 @@ export async function dream(store, { date, inspectorIds, keepDays = 45 }) {
 
   // The card file stays STRICTLY cards-valid (finding detail already lives in
   // the day's report files — the card carries conclusions and pointers only).
-  await store.create(`${CARDS_PREFIX}/${day}.md`, card);
+  // replaceFile, not create: the ledger retries a failed attempt, and attempt
+  // 2 must not die on the card attempt 1 already wrote.
+  await replaceFile(store, `${CARDS_PREFIX}/${day}.md`, card);
 
   // Refresh the resident index head (R6 shape: a small, always-current map).
+  // This path is rewritten EVERY run by construction, so it must go through
+  // replaceFile — plain create only ever succeeds on the very first day.
   const cardDates = await listCardDates(store);
   const recent = cardDates.slice(-7).reverse();
-  await store.create(
+  await replaceFile(
+    store,
     INDEX_PATH,
     [
       '# testbed memory index',

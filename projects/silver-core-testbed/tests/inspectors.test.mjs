@@ -223,6 +223,55 @@ describe('memory area + dream (real agent-SDK memory store)', () => {
     expect(summary).toContain('nothing to merge');
   });
 
+  // Regression (2026-07-26 repository review): every test above opens a FRESH
+  // store, so no test ever ran a second dream against a store that already
+  // held /memories/MEMORY.md — and reference `create` semantics reject an
+  // existing path. In production that meant the index refresh threw from the
+  // second day onward; the ledger's retry then died earlier still, on the card
+  // attempt 1 had already written, masking the real cause. Seven consecutive
+  // red Testbed Patrol runs (2026-07-19 → 07-25). The two cases below are the
+  // shapes the fresh-store tests structurally cannot reach.
+  it('runs on consecutive days against the SAME store (index refresh is a rewrite)', async () => {
+    const store = openMemory(tmp());
+    const report = (date) =>
+      renderReport('lockstep', date, { status: 'ok', findings: [], metrics: {} });
+
+    await writeReport(store, 'lockstep', '2026-07-18', report('2026-07-18'));
+    await dream(store, { date: '2026-07-18', inspectorIds: ['lockstep'] });
+
+    await writeReport(store, 'lockstep', '2026-07-19', report('2026-07-19'));
+    const summary = await dream(store, { date: '2026-07-19', inspectorIds: ['lockstep'] });
+
+    expect(summary).toContain('merged 2026-07-19');
+    const index = await readIfExists(store, '/memories/MEMORY.md');
+    expect(index).toContain('newest card: cards/2026-07-19.md');
+    expect(await readIfExists(store, '/memories/cards/2026-07-18.md')).not.toBeNull();
+  });
+
+  it('is idempotent on a retry of the same day (attempt 2 must not hit "already exists")', async () => {
+    const store = openMemory(tmp());
+    await writeReport(store, 'lockstep', '2026-07-18', renderReport('lockstep', '2026-07-18', {
+      status: 'ok', findings: [], metrics: {},
+    }));
+    await dream(store, { date: '2026-07-18', inspectorIds: ['lockstep'] });
+    const summary = await dream(store, { date: '2026-07-18', inspectorIds: ['lockstep'] });
+
+    expect(summary).toContain('merged 2026-07-18');
+    const parsed = parseMemoryCards(await readIfExists(store, '/memories/cards/2026-07-18.md'));
+    expect(parsed.ok).toBe(true);
+  });
+
+  it('writeReport overwrites a same-day rerun rather than erroring', async () => {
+    const store = openMemory(tmp());
+    const mk = (status) => renderReport('lockstep', '2026-07-18', {
+      status, findings: [], metrics: {},
+    });
+    await writeReport(store, 'lockstep', '2026-07-18', mk('ok'));
+    await writeReport(store, 'lockstep', '2026-07-18', mk('warn'));
+    expect(await readIfExists(store, '/memories/reports/lockstep/2026-07-18.md'))
+      .toContain('- status: warn');
+  });
+
   it('stripView undoes the numbered view format', () => {
     expect(stripView('     1\tline one\n     2\t  indented')).toBe('line one\n  indented');
   });
