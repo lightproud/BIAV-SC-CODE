@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 372,
-    "edges": 407,
-    "terms": 6680,
+    "concepts": 373,
+    "edges": 408,
+    "terms": 6696,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 139,
+      "documentation": 140,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 110,
+      "resource": 111,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 238
+      "search": 239
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 110
+      "count": 111
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 106
+      "degree": 107
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3459,6 +3459,20 @@
       "title": "data-layer-detachment-evaluation-20260719",
       "description": "KIMI3 静态审查判「主仓同时承担源码 + 事实档案 + 社区数据 + AI 指令 + 发布流水线」为最大战略风险，（格式：md）",
       "resource": "/Public-Info-Pool/Resource/proposal/data-layer-detachment-evaluation-20260719.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-proposal-dead-man-switch-design-20260726.md": {
+      "type": "documentation",
+      "title": "dead-man-switch-design-20260726",
+      "description": "2026-07-26 最贵的一条教训不是「巡检器坏了」，而是**巡检器坏了七天没人知道**——因为（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -6890,6 +6904,11 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-dead-man-switch-design-20260726.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-discord-layout-unification-20260710.md",
         "提及:艾瑞卡",
         "mention"
@@ -9006,6 +9025,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-dead-man-switch-design-20260726.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-discord-layout-unification-20260710.md": [
       [
         "/characters/15603.md",
@@ -10077,6 +10103,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -11378,6 +11405,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -11758,6 +11786,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -12105,6 +12134,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -12248,6 +12278,9 @@
     "de": [
       "/community/community-index.md"
     ],
+    "dead": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "decisions": [
       "/assets/assets-design-decisions.md",
       "/memory/decisions-archive.md",
@@ -12304,6 +12337,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -12420,6 +12454,7 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
@@ -13419,6 +13454,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -13933,6 +13969,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -14324,6 +14361,9 @@
     "make": [
       "/projects/silver-core-sdk-doc-onboarding.md"
     ],
+    "man": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "management": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
@@ -14476,6 +14516,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -15229,6 +15270,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -15580,6 +15622,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -15661,6 +15704,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -16147,6 +16191,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -17017,6 +17062,9 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "switch": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "sync": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
@@ -17184,6 +17232,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -17778,6 +17827,7 @@
     ],
     "一条": [
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
@@ -17861,6 +17911,9 @@
     ],
     "一默": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "七天": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
     "七绪": [
       "/characters/15572.md",
@@ -18316,6 +18369,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -18603,6 +18657,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -18956,6 +19011,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -19798,6 +19854,9 @@
     "书逐": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
+    "了七": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "了她": [
       "/characters/15562.md",
       "/characters/15588.md"
@@ -20138,6 +20197,9 @@
       "/characters/15598.md",
       "/characters/77925.md"
     ],
+    "人知": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "人级": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
@@ -20312,6 +20374,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -21317,6 +21380,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -21606,6 +21670,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -23649,6 +23714,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -26110,6 +26176,9 @@
     "器可": [
       "/story/story_units.md"
     ],
+    "器坏": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "器基": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -26564,6 +26633,9 @@
     ],
     "坍缩": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
+    "坏了": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
     "坏人": [
       "/characters/130901.md"
@@ -27073,6 +27145,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -27510,6 +27583,9 @@
     "天建": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
+    "天没": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "天活": [
       "/characters/77913.md"
     ],
@@ -27919,6 +27995,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -28578,6 +28655,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -29605,6 +29683,9 @@
     ],
     "川育": [
       "/characters/94450.md"
+    ],
+    "巡检": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
     "工作": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
@@ -32682,6 +32763,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -33278,6 +33360,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -33637,6 +33720,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -34085,6 +34169,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -34390,6 +34475,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -34627,6 +34713,9 @@
     ],
     "救赎": [
       "/characters/77925.md"
+    ],
+    "教训": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
     "敛为": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
@@ -35775,6 +35864,9 @@
     "最终": [
       "/characters/15582.md"
     ],
+    "最贵": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "最需": [
       "/characters/15595.md"
     ],
@@ -36224,6 +36316,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -36685,6 +36778,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -36851,6 +36945,9 @@
     ],
     "条战": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
+    ],
+    "条教": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
     "条数": [
       "/sources/appstore.md",
@@ -37342,6 +37439,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -37579,6 +37677,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -37958,6 +38057,9 @@
     "检出": [
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
+    "检器": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "检查": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -38127,6 +38229,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -38538,6 +38641,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -39011,6 +39115,9 @@
     "沙龙": [
       "/characters/15584.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
+    ],
+    "没人": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
     "没跟": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
@@ -40942,6 +41049,7 @@
       "/characters/15577.md",
       "/characters/15592.md",
       "/characters/77925.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "的上": [
@@ -43628,6 +43736,7 @@
       "/characters/77917.md"
     ],
     "而是": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -44948,6 +45057,9 @@
       "/characters/15565.md",
       "/characters/15575.md"
     ],
+    "训不": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "训练": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
@@ -45579,7 +45691,8 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
     "贵的": [
-      "/characters/77917.md"
+      "/characters/77917.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
     "费侧": [
       "/memory/memory-ext-todo.md"
@@ -45969,6 +46082,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -46712,6 +46826,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -47793,6 +47908,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -48067,6 +48183,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -50029,6 +50146,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -50369,6 +50487,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -50504,6 +50623,9 @@
       "/story/stages_by_unit.md",
       "/story/story_search_index.md"
     ],
+    "dead": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "decisions": [
       "/assets/assets-design-decisions.md",
       "/memory/decisions-archive.md",
@@ -50555,6 +50677,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -50660,6 +50783,7 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
@@ -51349,6 +51473,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -51560,6 +51685,9 @@
     ],
     "maintenance": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+    ],
+    "man": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
     "management": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -52066,6 +52194,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -52644,6 +52773,9 @@
     "survey": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
+    "switch": [
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
     "system": [
       "/assets/assets-card-system.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -52722,6 +52854,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",

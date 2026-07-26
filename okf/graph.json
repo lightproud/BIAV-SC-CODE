@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-26",
   "stats": {
-    "nodes": 372,
-    "edges": 407
+    "nodes": 373,
+    "edges": 408
   },
   "nodes": [
     {
@@ -2720,6 +2720,17 @@
       "id": "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "type": "documentation",
       "title": "data-layer-detachment-evaluation-20260719",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-dead-man-switch-design-20260726.md",
+      "type": "documentation",
+      "title": "dead-man-switch-design-20260726",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5633,6 +5644,12 @@
     },
     {
       "source": "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
