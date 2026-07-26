@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-26",
   "stats": {
-    "nodes": 373,
+    "nodes": 374,
     "edges": 410
   },
   "nodes": [
@@ -4076,6 +4076,17 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/wiki-data/wiki-data-versions.md",
+      "type": "dataset",
+      "title": "versions",
+      "tags": [
+        "data_layer:curated",
+        "unpacked-bootstrap",
+        "domain:meta"
       ],
       "tier": "search"
     },

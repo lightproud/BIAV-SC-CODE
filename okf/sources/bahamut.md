@@ -4,7 +4,7 @@ title: "bahamut 社区数据源"
 description: "bahamut 平台采集档案，全量 402 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/bahamut/"
 tags: ["data_layer:full_archive", "platform:bahamut", "health:active"]
-timestamp: "2026-07-26T08:38:32.737160+00:00"
+timestamp: "2026-07-26T10:46:14.011826+00:00"
 ---
 
 # 数据层指针
