@@ -5,10 +5,10 @@
     "会话内按需读档（不可见）",
     "黑池侧消费（防火墙外，结构上不可见）"
   ],
-  "artifacts": 27,
-  "orphans": 3,
+  "artifacts": 25,
+  "orphans": 1,
   "doc_only": 1,
-  "parent_consumed": 9,
+  "parent_consumed": 8,
   "entries": [
     {
       "artifact": "Public-Info-Pool/Record/heartbeat",
@@ -19,12 +19,21 @@
       "consumers": {
         "doc": [
           "CLAUDE.md:427:| 死手开关（沉默检测）| `python3 scripts/dead_man_switch.py [--dry-run]`（**只数空座位**：查全部带 cron 工作流的最近一次成功，超阈值报 `STALE`、从无成功报 `NEVER`；阈值由各自 cron 推导 ×2 + 宽限，状态落 `Public-Info-Pool/Record/heartbeat/status.json`，CI `dead-man-switch.yml` 每日北京 15:50；设计档见 `Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md`，单测 `tests/test_dead_man_switch.py`）|",
+          "CLAUDE.md:428:| 产出↔消费对账 | `python3 scripts/consumption_audit.py [--dry-run]`（**找没人读的产物**：静态引用图判「谁在读」，零消费 / 仅档案提及 / 经解析器读三档，报告落 `Public-Info-Pool/Record/heartbeat/consumption.json`；**候选清单供人裁、不是退役触发器**——静态图看不见守密人翻阅 / 会话内读档 / 黑池侧消费；单测 `tests/test_consumption_audit.py`）|",
           "Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md:77:2. **状态落成仓内单文件**（如 `Public-Info-Pool/Record/heartbeat/status.json`，含",
           "memory/methodology.md:308:看 `Public-Info-Pool/Record/heartbeat/status.json` 的 **`generated_at`**。它若停在上个月，"
+        ],
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:14:      \"artifact\": \"Public-Info-Pool/Record/heartbeat\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:21:          \"CLAUDE.md:427:| 死手开关（沉默检测）| `python3 scripts/dead_man_switch.py [--dry-run]`（**只数空座位**：查全部带 cron 工作流的最近一次成功，超阈值报 `STALE`、从无成功报 `NEVER`；阈值由各自 cron 推导 ×2 + 宽限，状态落 `Public-Info-Pool/Record/heartbeat/status.json`，CI `dead-man-switch.yml` 每日北京 15:50；设计档见 `Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md`，单测 `tests/test_dead_man_switch.py`）|\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:22:          \"Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md:77:2. **状态落成仓内单文件**（如 `Public-Info-Pool/Record/heartbeat/status.json`，含\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:23:          \"memory/methodology.md:308:看 `Public-Info-Pool/Record/heartbeat/status.json` 的 **`generated_at`**。它若停在上个月，\"",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:343:          \"Public-Info-Pool/Record/heartbeat/status.json:42:      \\\"workflow\\\": \\\"build-okf-bundle.yml\\\",\","
         ]
       },
       "consumer_counts": {
-        "doc": 3
+        "doc": 4,
+        "other": 5
       },
       "consumed_via_parent": "Public-Info-Pool/Record"
     },
@@ -39,15 +48,19 @@
           "Public-Info-Pool/Resource/repo-engineering/biav-sc-p27-history-rewrite-runbook-20260720.md:95:git ls-tree -r --name-only HEAD | grep -c '^Public-Info-Pool/Record/store-patrol/' # 期望 >0（保留项未误伤）",
           "memory/decisions.md:135:| **编排 SDK 第二战:商店巡检真实场景接入落地 — 守密人 2026-07-18「第二战点火」口谕(施工封面 §2 留白授权,授权代写)**:需求档 §8「新场景首发」验收兑现——首个**生产**循环任务直接长在 Maestro SDK 台账 + 驱动器上。**设计填空清单**:(a) **巡检面 = Morimens Steam 双官方公开 JSON 端点**(appdetails 价格/发行面,appid 3052450;appreviews 评价总量面——后者 news 层 `aggregator_collectors.py` 已有消费先例,**零新增 ToS 面**;TapTap 等留注册表扩展位 `examples/store-patrol.targets.json`,加新商店 = 加一段配置零新代码,承 archive_engine 注册表哲学);(b) **签名指纹法**:响应归约为稳定字段集(排除 num_reviews 等请求域易变字段),逐日比对,变即追加 `changes.jsonl`;(c) **归档落点** `Public-Info-Pool/Record/store-patrol/{target}/`(latest.json + {date}.json + changes.jsonl)+ 台账持久化 `state/ledger.json`(宿主文件店,跨重启恢复真实生效);(d) **幂等派发键** `patrol:{target}:{date}`(同日重跑跳过;failed 终态自动开 `:rN` 重试会话);(e) **失败面**:驱动器超时经 AbortSignal 真中断 fetch,3 次退避耗尽进 failed 并翻进程退出码(CI 可见化);(f) **节拍**:每日北京 15:15(07:15 UTC,并入 2026-07-11 十五点档、分钟错峰),CI `store-patrol.yml` sparse 排除大档案层但**纳回** store-patrol 子目录(`git sparse-checkout check-rules` 实证);(g) 巡检不用代理 SDK(executor 纯 HTTP,零 API 花销——台账/驱动器本就 agent 无关,§1 硬性质 1「零件可单独拿取」的实证)。**验收实绩**:e2e 四场景绿(基线归档/跨日变更检测+同日幂等/500→200 重试进 done/挂死超时×3 进 failed+同日 r2 重开),2026-07-18 首次生产真跑绿(两目标 done,基线:免费/发行 2024-08-01/Very Positive 3989 正:797 负:4786 总);examples/tests 非发货面,maestro 版本 0.3.0 不动(发版纪律:仅 shipped 运行时变更 bump) | Maestro SDK / 商店巡检 | 承需求档 §8 与 2026-07-18 第一战条;周报 loop 迁入(§8 改轨)另役待点 |",
           "memory/project-status.md:234:> Morimens Steam 双端点每日指纹比对，快照 + 变更日志落 `Public-Info-Pool/Record/store-patrol/`，",
-          "projects/silver-core-maestro-sdk/CONTEXT.md:53:  `Public-Info-Pool/Record/store-patrol/`;台账经宿主文件店持久化,跨重启恢复真实生效;"
+          "projects/silver-core-maestro-sdk/CONTEXT.md:57:  `Public-Info-Pool/Record/store-patrol/`;台账经宿主文件店持久化,跨重启恢复真实生效;"
         ],
         "other": [
-          "projects/silver-core-maestro-sdk/examples/store-patrol.targets.json:4:    \"archive\": \"Public-Info-Pool/Record/store-patrol/{target-id}/ — latest.json (current signature) + {date}.json (daily snapshot) + changes.jsonl (append-only change log)\""
+          "Public-Info-Pool/Record/heartbeat/consumption.json:32:      \"artifact\": \"Public-Info-Pool/Record/store-patrol\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:39:          \"Public-Info-Pool/Resource/repo-engineering/biav-sc-p27-history-rewrite-runbook-20260720.md:95:git ls-tree -r --name-only HEAD | grep -c '^Public-Info-Pool/Record/store-patrol/' # 期望 >0（保留项未误伤）\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:40:          \"memory/decisions.md:135:| **编排 SDK 第二战:商店巡检真实场景接入落地 — 守密人 2026-07-18「第二战点火」口谕(施工封面 §2 留白授权,授权代写)**:需求档 §8「新场景首发」验收兑现——首个**生产**循环任务直接长在 Maestro SDK 台账 + 驱动器上。**设计填空清单**:(a) **巡检面 = Morimens Steam 双官方公开 JSON 端点**(appdetails 价格/发行面,appid 3052450;appreviews 评价总量面——后者 news 层 `aggregator_collectors.py` 已有消费先例,**零新增 ToS 面**;TapTap 等留注册表扩展位 `examples/store-patrol.targets.json`,加新商店 = 加一段配置零新代码,承 archive_engine 注册表哲学);(b) **签名指纹法**:响应归约为稳定字段集(排除 num_reviews 等请求域易变字段),逐日比对,变即追加 `changes.jsonl`;(c) **归档落点** `Public-Info-Pool/Record/store-patrol/{target}/`(latest.json + {date}.json + changes.jsonl)+ 台账持久化 `state/ledger.json`(宿主文件店,跨重启恢复真实生效);(d) **幂等派发键** `patrol:{target}:{date}`(同日重跑跳过;failed 终态自动开 `:rN` 重试会话);(e) **失败面**:驱动器超时经 AbortSignal 真中断 fetch,3 次退避耗尽进 failed 并翻进程退出码(CI 可见化);(f) **节拍**:每日北京 15:15(07:15 UTC,并入 2026-07-11 十五点档、分钟错峰),CI `store-patrol.yml` sparse 排除大档案层但**纳回** store-patrol 子目录(`git sparse-checkout check-rules` 实证);(g) 巡检不用代理 SDK(executor 纯 HTTP,零 API 花销——台账/驱动器本就 agent 无关,§1 硬性质 1「零件可单独拿取」的实证)。**验收实绩**:e2e 四场景绿(基线归档/跨日变更检测+同日幂等/500→200 重试进 done/挂死超时×3 进 failed+同日 r2 重开),2026-07-18 首次生产真跑绿(两目标 done,基线:免费/发行 2024-08-01/Very Positive 3989 正:797 负:4786 总);examples/tests 非发货面,maestro 版本 0.3.0 不动(发版纪律:仅 shipped 运行时变更 bump) | Maestro SDK / 商店巡检 | 承需求档 §8 与 2026-07-18 第一战条;周报 loop 迁入(§8 改轨)另役待点 |\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:41:          \"memory/project-status.md:234:> Morimens Steam 双端点每日指纹比对，快照 + 变更日志落 `Public-Info-Pool/Record/store-patrol/`，\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:42:          \"projects/silver-core-maestro-sdk/CONTEXT.md:53:  `Public-Info-Pool/Record/store-patrol/`;台账经宿主文件店持久化,跨重启恢复真实生效;\""
         ]
       },
       "consumer_counts": {
         "doc": 4,
-        "other": 1
+        "other": 7
       },
       "consumed_via_parent": "Public-Info-Pool/Record"
     },
@@ -59,14 +72,18 @@
       "verdict": "consumed",
       "consumers": {
         "doc": [
-          "CLAUDE.md:436:| 刷新 Claude Code 提示词参照 | `python3 scripts/refresh_claude_code_prompts.py`（浅克隆上游公开仓库、同步进 `Public-Info-Pool/Reference/Claude-Code-System-Prompts/`；每周定时 CI `refresh-claude-code-prompts.yml` 自动跑，手动亦可）|",
+          "CLAUDE.md:437:| 刷新 Claude Code 提示词参照 | `python3 scripts/refresh_claude_code_prompts.py`（浅克隆上游公开仓库、同步进 `Public-Info-Pool/Reference/Claude-Code-System-Prompts/`；每周定时 CI `refresh-claude-code-prompts.yml` 自动跑，手动亦可）|",
           "Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md:143: │  Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/│",
           "Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md:422:- **INPUT**：`Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/*.md`（CI 刷新的 Piebald 归档）+ `scripts/prompt-adaptation.json`（唯一改写/略过账本）+ **`ls src/tools/*.ts src/subagents/*.ts` 生成的面清单**（用于 §6.4 勘定对账与红线覆盖，取代手抄清单）。",
           "Public-Info-Pool/Resource/proposal/bpt-sdk-v06-remaining-execution-roadmap-20260705.md:34:**G-VERIFY + G-SUMMARY.** Both are additive utility-call surfaces over the shipped runtime, each ships its prompt *with* a runnable exported caller (no unshipped-capability risk), and each carries a corpus-sync guard against its cited archive slug (all target slugs verified present in `Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/`). G-VERIFY has zero regression surface (greenfield); G-SUMMARY is a guarded superset of current fold behavior. If maximally conservative, ship **G-VERIFY alone** — it is the only item with literally no touch to existing runtime behavior.",
           "Public-Info-Pool/Resource/repo-engineering/bpt-desktop-builtin-commands-batch1-20260711.md:231:  （`Public-Info-Pool/Reference/Claude-Code-System-Prompts/`，553 份）ripgrep 反查。"
         ],
         "other": [
-          "okf/kb_index.json:3978:      \"description\": \"可见的行为面。与静态提示词快照（`Public-Info-Pool/Reference/Claude-Code-System-Prompts/`）（格式：md）\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:55:      \"artifact\": \"Public-Info-Pool/Reference/Claude-Code-System-Prompts\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:62:          \"CLAUDE.md:436:| 刷新 Claude Code 提示词参照 | `python3 scripts/refresh_claude_code_prompts.py`（浅克隆上游公开仓库、同步进 `Public-Info-Pool/Reference/Claude-Code-System-Prompts/`；每周定时 CI `refresh-claude-code-prompts.yml` 自动跑，手动亦可）|\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:63:          \"Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md:143: │  Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/│\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:64:          \"Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md:422:- **INPUT**：`Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/*.md`（CI 刷新的 Piebald 归档）+ `scripts/prompt-adaptation.json`（唯一改写/略过账本）+ **`ls src/tools/*.ts src/subagents/*.ts` 生成的面清单**（用于 §6.4 勘定对账与红线覆盖，取代手抄清单）。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:65:          \"Public-Info-Pool/Resource/proposal/bpt-sdk-v06-remaining-execution-roadmap-20260705.md:34:**G-VERIFY + G-SUMMARY.** Both are additive utility-call surfaces over the shipped runtime, each ships its prompt *with* a runnable exported caller (no unshipped-capability risk), and each carries a corpus-sync guard against its cited archive slug (all target slugs verified present in `Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/`). G-VERIFY has zero regression surface (greenfield); G-SUMMARY is a guarded superset of current fold behavior. If maximally conservative, ship **G-VERIFY alone** — it is the only item with literally no touch to existing runtime behavior.\","
         ],
         "script": [
           "projects/silver-core-sdk/src/engine/compaction.ts:86: * Public-Info-Pool/Reference/Claude-Code-System-Prompts/): the structured",
@@ -78,7 +95,7 @@
       },
       "consumer_counts": {
         "doc": 13,
-        "other": 1,
+        "other": 13,
         "script": 11
       }
     },
@@ -102,9 +119,9 @@
         "other": [
           ".gitignore:90:# Public-Info-Pool/Record/Community: 社区全量档案数据湖 2026-07-20 迁 BIAV-SC-DATA（T62 P2-5 §7甲）。",
           ".gitignore:93:Public-Info-Pool/Record/Community/",
-          "okf/kb_index.json:1277:      \"resource\": \"/Public-Info-Pool/Record/Community/appstore/global/\",",
-          "okf/kb_index.json:1291:      \"resource\": \"/Public-Info-Pool/Record/Community/arca_live/\",",
-          "okf/kb_index.json:1305:      \"resource\": \"/Public-Info-Pool/Record/Community/bahamut/\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:100:          \".claude/skills/intel-weekly/SKILL.md:14:1. **数据层**：只用全量档案层 `Public-Info-Pool/Record/Community/`，禁用\"",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:103:          \".gitignore:90:# Public-Info-Pool/Record/Community: 社区全量档案数据湖 2026-07-20 迁 BIAV-SC-DATA（T62 P2-5 §7甲）。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:104:          \".gitignore:93:Public-Info-Pool/Record/Community/\","
         ],
         "script": [
           "projects/news/scripts/archive_layout.py:4:背景（2026-07-02 体质改进 P0-1）：Record/Community 的目录布局知识此前散落在",
@@ -130,9 +147,9 @@
       },
       "consumer_counts": {
         "doc": 188,
-        "other": 47,
+        "other": 119,
         "script": 23,
-        "test": 29,
+        "test": 33,
         "workflow": 17
       }
     },
@@ -153,11 +170,11 @@
           "CLAUDE.md:262:- Discord 每日纯统计：`Public-Info-Pool/Record/Community/discord/{区服}/activity_daily/{date}.json`（主服在 global 区服目录）"
         ],
         "other": [
-          "okf/kb_index.json:1333:      \"resource\": \"/Public-Info-Pool/Record/Community/discord/\",",
-          "okf/kb_index.json:1360:      \"description\": \"全量社区档案静态分析台账：百万级 条（精确值见指针本体）/ 17 平台，词典法零 ML。discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Rele\",",
-          "okf/kb_index.json:4567:      \"resource\": \"/Public-Info-Pool/Record/Community/discord/\",",
-          "projects/news/index/community_index.json:11:  \"data_note\": \"discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Release 还原；community-data release 已退役删除。\"",
-          "projects/news/scripts/archive_sources.json:3:    \"base_dir\": \"Public-Info-Pool/Record/Community/discord\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:140:      \"artifact\": \"Record/Community/discord\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:149:          \".claude/commands/biav-report.md:8:   - Discord：`Public-Info-Pool/Record/Community/discord/channel_index.json` 映射 `{name→dir}`；消息在 `Public-Info-Pool/Record/Community/discord/channels/{id_suffix}/{date}.jsonl` 逐行 JSON，字段 `content`/`author_id`/`author_bot`(过滤bot)/`timestamp`/`reactions`。**紧凑 schema（缺字段=默认值，见 CLAUDE.md §5.2）：读取必用 `.get(默认)`**，需稳定全字段调 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:150:          \".claude/skills/intel-weekly/reference.md:43:署名：拿文件名里的 attachment_id 在 `Record/Community/discord/` 全档 `grep -rm1`，\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:151:          \".claude/skills/intel-weekly/reference.md:5:- Discord 三服：`Record/Community/discord/{global|jp|volunteer}/`\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:152:          \"CLAUDE.md:253:- 全量档案（2026-06-21 迁入 BPT 4R，text 全量永驻数据仓）：`Record/Community/discord/{区服}/channels/{id_suffix}/{date}.jsonl`（区服 ∈ global / jp / volunteer，2026-07-10 方案甲三服统一；guild↔区服映射唯一源 = `projects/news/scripts/archive_layout.py` `DISCORD_GUILD_REGIONS`，新 guild 未登记归档即响亮失败）+ `Public-Info-Pool/Record/Community/{platform}/`（16+ 平台与 discord 平级摊平，以 `ls` 为准）。**discord JSONL 为紧凑 schema（2026-06-22 精简，工作树 3.4G→2.0G 省 41%）：缺字段 = 默认值**（`type`→0 / `author_bot`→false / `pinned`→false / `flags`→0 / `has_thread`→false / `thread_id`·`edited_timestamp`·`reply_to`→null / `mentions`·`reactions`·`attachments`·`embeds`→[]）；恒留 `id`/`channel_id`/`author_id`/`author_name`/`content`/`timestamp`。读取**必用 `.get(默认)`**，需稳定全字段用 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。\","
         ],
         "script": [
           "scripts/build_community_index.py:301:                         \"（Record/Community/discord/），直接读取，无需从 Release 还原；\"",
@@ -179,9 +196,9 @@
       },
       "consumer_counts": {
         "doc": 33,
-        "other": 5,
+        "other": 39,
         "script": 3,
-        "test": 6,
+        "test": 10,
         "workflow": 3
       }
     },
@@ -194,10 +211,16 @@
       "consumers": {
         "doc": [
           "projects/news/CONTEXT.md:91:   `Public-Info-Pool/Record/Community/discord/guilds_seen.json` 并提交回仓库。日服 ID 即在该快照中。"
+        ],
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:177:          \".github/workflows/discord-discover-guilds.yml:64:          git add Record/Community/discord/guilds_seen.json\"",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:189:      \"artifact\": \"Record/Community/discord/guilds_seen.json\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:196:          \"projects/news/CONTEXT.md:91:   `Public-Info-Pool/Record/Community/discord/guilds_seen.json` 并提交回仓库。日服 ID 即在该快照中。\""
         ]
       },
       "consumer_counts": {
-        "doc": 1
+        "doc": 1,
+        "other": 3
       },
       "consumed_via_parent": "Record/Community/discord"
     },
@@ -206,17 +229,28 @@
       "producers": [
         "discord-archive-jp.yml"
       ],
-      "verdict": "parent-consumed",
+      "verdict": "consumed",
       "consumers": {
         "doc": [
           "projects/news/CONTEXT.md:78:- discord-archive-jp.yml 日服服务器归档（数据落 `Public-Info-Pool/Record/Community/discord/jp/`）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）",
           "projects/news/CONTEXT.md:97:`Public-Info-Pool/Record/Community/discord/jp/`（2026-07-10 方案甲区服布局；新 guild 须先登记"
+        ],
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:175:          \".github/workflows/discord-archive-jp.yml:87:          git add Record/Community/discord/jp/\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:205:      \"artifact\": \"Record/Community/discord/jp\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:212:          \"projects/news/CONTEXT.md:78:- discord-archive-jp.yml 日服服务器归档（数据落 `Public-Info-Pool/Record/Community/discord/jp/`）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:213:          \"projects/news/CONTEXT.md:97:`Public-Info-Pool/Record/Community/discord/jp/`（2026-07-10 方案甲区服布局；新 guild 须先登记\""
+        ],
+        "test": [
+          "tests/test_consumption_audit.py:51:            \"Record/Community/discord/jp\": [],",
+          "tests/test_consumption_audit.py:54:        entry = ca.audit_one(\"Record/Community/discord/jp\", [\"archiver.yml\"])"
         ]
       },
       "consumer_counts": {
-        "doc": 2
-      },
-      "consumed_via_parent": "Record/Community/discord"
+        "doc": 2,
+        "other": 4,
+        "test": 2
+      }
     },
     {
       "artifact": "Record/Community/discord/volunteer",
@@ -227,10 +261,16 @@
       "consumers": {
         "doc": [
           "projects/news/CONTEXT.md:77:- discord-archive-volunteer.yml 每 3 小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/volunteer/`）"
+        ],
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:176:          \".github/workflows/discord-archive-volunteer.yml:68:          git add Record/Community/discord/volunteer/\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:222:      \"artifact\": \"Record/Community/discord/volunteer\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:229:          \"projects/news/CONTEXT.md:77:- discord-archive-volunteer.yml 每 3 小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/volunteer/`）\""
         ]
       },
       "consumer_counts": {
-        "doc": 1
+        "doc": 1,
+        "other": 3
       },
       "consumed_via_parent": "Record/Community/discord"
     },
@@ -249,8 +289,11 @@
           "okf/sources/youtube_comments.md:17:| 全量档案层（本体） | `Public-Info-Pool/Record/Community/youtube_comments/` |"
         ],
         "other": [
-          "okf/kb_index.json:1515:      \"resource\": \"/Public-Info-Pool/Record/Community/youtube_comments/\",",
-          "okf/kb_index.json:4777:      \"resource\": \"/Public-Info-Pool/Record/Community/youtube_comments/\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:126:          \".github/workflows/collect-comments.yml:4:# Record/Community/youtube_comments/{date}.json，供会话内报告引用。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:127:          \".github/workflows/collect-comments.yml:74:          git add Record/Community/youtube_comments/\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:238:      \"artifact\": \"Record/Community/youtube_comments\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:245:          \"memory/project-status.md:140:    `data/platforms/`，权威档案断更 10 天；已改写 `Record/Community/youtube_comments/`\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:246:          \"okf/community/community-youtube-comments.md:12:> 放指针不放本体：本体权威在 `Public-Info-Pool/Record/Community/youtube_comments/`，本 concept 仅描述与定位、不复刻正文。\","
         ],
         "script": [
           "projects/news/scripts/collect_video_comments.py:7:存储（Public-Info-Pool/Record/Community/youtube_comments/，2026-07-02 对齐 BPT 4R",
@@ -259,7 +302,7 @@
       },
       "consumer_counts": {
         "doc": 6,
-        "other": 2,
+        "other": 14,
         "script": 2
       }
     },
@@ -278,11 +321,11 @@
           "okf/memory/index.md:15:* [capability-index.md](/memory/capability-index.md) - 银芯全功能目录 + 动态编排可达性"
         ],
         "other": [
-          "okf/graph.json:1213:      \"id\": \"/memory/capability-index.md\",",
-          "okf/graph.json:4679:      \"source\": \"/memory/capability-index.md\",",
-          "okf/kb_index.json:10218:      \"/memory/capability-index.md\",",
-          "okf/kb_index.json:10967:      \"/memory/capability-index.md\",",
-          "okf/kb_index.json:11302:      \"/memory/capability-index.md\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:267:      \"artifact\": \"memory/capability-index.md\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:274:          \"CLAUDE.md:285:| `memory/capability-index.md` | 银芯全功能目录 + 动态编排可达性（CI 自动生成；含孤儿检测。人工用途补注在 `memory/capability-annotations.json`，机器权威数据在 `memory/capability-registry.json`）|\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:275:          \"okf/memory/capability-index.md:12:> 放指针不放本体：正文权威在 `memory/capability-index.md`，本 concept 不复刻其内容。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:276:          \"okf/memory/capability-index.md:14:- 本体路径：`memory/capability-index.md`\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:277:          \"okf/memory/capability-index.md:5:resource: \\\"/memory/capability-index.md\\\"\","
         ],
         "script": [
           "scripts/build_capability_registry.py:27:  memory/capability-index.md       人类可读 Markdown（含编排与可达性专章）"
@@ -290,7 +333,7 @@
       },
       "consumer_counts": {
         "doc": 5,
-        "other": 52,
+        "other": 65,
         "script": 1
       }
     },
@@ -309,7 +352,11 @@
           "memory/archive/bpt-strategic-shift-2026-04-19/blackpool-architecture.md:277:- `memory/capability-registry.json` —— Phase B P8 产出目标"
         ],
         "other": [
-          "okf/kb_index.json:1954:      \"resource\": \"/memory/capability-registry.json\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:274:          \"CLAUDE.md:285:| `memory/capability-index.md` | 银芯全功能目录 + 动态编排可达性（CI 自动生成；含孤儿检测。人工用途补注在 `memory/capability-annotations.json`，机器权威数据在 `memory/capability-registry.json`）|\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:298:      \"artifact\": \"memory/capability-registry.json\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:305:          \"CLAUDE.md:285:| `memory/capability-index.md` | 银芯全功能目录 + 动态编排可达性（CI 自动生成；含孤儿检测。人工用途补注在 `memory/capability-annotations.json`，机器权威数据在 `memory/capability-registry.json`）|\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:306:          \"Public-Info-Pool/Resource/repo-engineering/repo-slim-audit-20260711.md:42:  `memory/capability-registry.json` 由 CI 自动重生成，无需手改。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:307:          \"memory/archive/bpt-strategic-shift-2026-04-19/blackpool-architecture.md:178:| 建设模块 | `memory/capability-registry.json`；`scripts/capability_manager.py` |\","
         ],
         "script": [
           "scripts/build_capability_registry.py:26:  memory/capability-registry.json  机器权威 JSON（含可达性字段）",
@@ -318,7 +365,7 @@
       },
       "consumer_counts": {
         "doc": 9,
-        "other": 1,
+        "other": 13,
         "script": 2
       }
     },
@@ -340,8 +387,8 @@
           ".gitignore:58:okf/kb_vectors.json.gz",
           ".gitleaks.toml:15:  '''okf/.*''',",
           "Binary file assets/images/portraits/uvhash.png matches",
-          "Public-Info-Pool/Record/heartbeat/status.json:42:      \"workflow\": \"build-okf-bundle.yml\",",
-          "memory/capability-registry.json:487:      \"id\": \"build_okf_bundle.py\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:105:          \"okf/kb_index.json:1277:      \\\"resource\\\": \\\"/Public-Info-Pool/Record/Community/appstore/global/\\\",\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:106:          \"okf/kb_index.json:1291:      \\\"resource\\\": \\\"/Public-Info-Pool/Record/Community/arca_live/\\\",\","
         ],
         "script": [
           "scripts/build_kb_index.py:105:    \"\"\"Scan ``okf/`` into a runtime navigation index and write ``okf/kb_index.json``.",
@@ -367,9 +414,9 @@
       },
       "consumer_counts": {
         "doc": 95,
-        "other": 17,
+        "other": 84,
         "script": 49,
-        "test": 65,
+        "test": 66,
         "workflow": 7
       }
     },
@@ -420,7 +467,7 @@
       },
       "consumer_counts": {
         "doc": 47,
-        "other": 21,
+        "other": 49,
         "script": 19,
         "test": 6,
         "workflow": 6
@@ -432,8 +479,15 @@
         "backfill-media.yml"
       ],
       "verdict": "orphan",
-      "consumers": {},
-      "consumer_counts": {}
+      "consumers": {
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:414:          \".github/workflows/backfill-media.yml:96:          git add projects/news/data/media/backfill_manifest.json\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:430:      \"artifact\": \"projects/news/data/media/backfill_manifest.json\","
+        ]
+      },
+      "consumer_counts": {
+        "other": 2
+      }
     },
     {
       "artifact": "projects/news/index",
@@ -450,10 +504,11 @@
           "Public-Info-Pool/Resource/data-diagnostics/weixin-noise-cleanup-20260712.md:139:- `projects/news/index/community_index.json` 中 weixin 各月计数将随下次 CI 索引重建自动收敛（build-analysis-index）。"
         ],
         "other": [
-          "okf/kb_index.json:1361:      \"resource\": \"/projects/news/index/community_index.json\",",
-          "okf/kb_index.json:1473:      \"resource\": \"/projects/news/index/community_index.json\",",
-          "okf/kb_index.json:2998:      \"description\": \"（7,565,639 条 / 17 平台，索引 `projects/news/index/community_index.json`，（格式：md）\",",
-          "projects/site/design/morimens-design-system-guide.html:130:projects/news/index.html"
+          "Public-Info-Pool/Record/heartbeat/consumption.json:159:          \"projects/news/index/community_index.json:11:  \\\"data_note\\\": \\\"discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Release 还原；community-data release 已退役删除。\\\"\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:439:      \"artifact\": \"projects/news/index\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:446:          \"CLAUDE.md:264:- **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史现驻数据仓 BIAV-SC-DATA `Record/Community/discord`**（2026-06-21 de-tier 退役月度 git_rm；2026-07-20 T62 P2-5 §7甲 迁出 code 仓），经 `BIAV_SC_DATA_ROOT` 读、无需 Release 还原。重建：`BIAV_SC_DATA_ROOT=<data仓> python3 scripts/build_community_index.py`（消费方双布局：新路径优先、回落旧）。分词用领域词典 FMM，top_terms 为粗粒度主题信号\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:447:          \"Public-Info-Pool/Resource/community-analysis/light-selfreport-crosscheck-20260705.md:6:  + 全量分析索引 `projects/news/index/community_index.json`（`data_layer=full_archive`）。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:448:          \"Public-Info-Pool/Resource/community-analysis/producer-light-evaluation-20260704.md:128:| 全量分析索引 | `projects/news/index/community_index.json` |\","
         ],
         "script": [
           "scripts/build_community_index.py:45:OUT = REPO / \"projects/news/index/community_index.json\""
@@ -469,7 +524,7 @@
       },
       "consumer_counts": {
         "doc": 17,
-        "other": 4,
+        "other": 20,
         "script": 1,
         "test": 2,
         "workflow": 2
@@ -492,9 +547,9 @@
         "other": [
           ".gitignore:53:projects/news/output/alerts.json",
           ".gitleaks.toml:14:  '''projects/news/output/.*''',",
-          "Public-Info-Pool/Resource/community-analysis/community-deep-analysis-20260518-26.html:110:逐条数据）与<strong>输出展示层</strong>（<code>projects/news/output/</code>，过滤选样）之分，二者语义不可互换。",
-          "memory/capability-registry.json:1117:      \"summary\": \"split_output.py — 按数据源分割 projects/news/output/news.json\",",
-          "okf/kb_index.json:2245:      \"resource\": \"/projects/news/output/all-latest.json\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:125:          \".github/workflows/build-okf-bundle.yml:10:    # 刻意不含每小时归档层（Public-Info-Pool/Record/Community、projects/news/output 流快照）：\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:479:      \"artifact\": \"projects/news/output\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:486:          \".claude/commands/biav-report.md:5:1. 确认数据层（§4 硬约束）：报告类一律走全量档案层 `Public-Info-Pool/Record/Community/`（2026-06-21 迁入，text 全量永驻 git），禁用输出层充全量（lesson #30）。日报/快查才用 `projects/news/output/*-latest.json`。\","
         ],
         "script": [
           "projects/news/scripts/aggregator.py:18:  4. 输出: projects/news/output/news.json",
@@ -518,7 +573,7 @@
       },
       "consumer_counts": {
         "doc": 129,
-        "other": 28,
+        "other": 55,
         "script": 17,
         "test": 5,
         "workflow": 3
@@ -531,11 +586,16 @@
       ],
       "verdict": "consumed",
       "consumers": {
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:528:      \"artifact\": \"projects/silver-core-sdk/tests/conformance/pins.json\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:535:          \"projects/silver-core-sdk/tests/conformance/drift-check.mjs:210:    'This **draft** bumps `projects/silver-core-sdk/tests/conformance/pins.json` to',\""
+        ],
         "script": [
           "projects/silver-core-sdk/tests/conformance/drift-check.mjs:210:    'This **draft** bumps `projects/silver-core-sdk/tests/conformance/pins.json` to',"
         ]
       },
       "consumer_counts": {
+        "other": 2,
         "script": 1
       }
     },
@@ -545,8 +605,14 @@
         "testbed-patrol.yml"
       ],
       "verdict": "parent-consumed",
-      "consumers": {},
-      "consumer_counts": {},
+      "consumers": {
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:543:      \"artifact\": \"projects/silver-core-testbed/memory\","
+        ]
+      },
+      "consumer_counts": {
+        "other": 1
+      },
       "consumed_via_parent": "projects/silver-core-testbed"
     },
     {
@@ -558,10 +624,15 @@
       "consumers": {
         "doc": [
           "memory/todo.md:19:| T57 | testbed 验收 2「四巡检器连续 7 天无人值守」核验：CI `testbed-patrol.yml` 每日北京 15:20 首轮起算，D+7 核 Actions 日志与台账（`projects/silver-core-testbed/state/ledger.json` 逐轮 sched 会话 + 记忆区日报告/卡）全绿即销；首轮亦需核 deploy key 推送四步走通。（原编 T56，合并时与审计账撞号让号）**首轮 7 天验收诚实判定为失败（2026-07-26 仓库审视会话核 Actions 日志）**：07-18 首轮 success 后，07-19 → 07-25 **连续 7 轮全 failure**（最新 [run 30152439641](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/30152439641)）。四巡检器本身每轮 ok/done，唯 `dream` 归并任务必败——`INDEX_PATH=/memories/MEMORY.md` 每轮用 create-only 语义重写，07-18 落库后天天撞 already exists；台账重试时又撞尝试 1 已写的当日值班卡，**后者掩盖前者**（日志末行报 cards 冲突，真凶在索引行）。守密人 2026-07-26 裁定「修 dream 幂等 + 重算 T57」：修复落 `src/dream.mjs` / `src/memory.mjs`（`replaceFile` 显式先删后建，不改 SDK 侧 create 参照语义）+ 3 例回归（负控实证旧源转红），**D+7 计时自修复后首个绿轮重新起算，不顺延**。**新起算锚点已定**：2026-07-26 dispatch [run 30185091549](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/30185091549) 全步 success，四巡检器报告 + 值班卡 + 索引改写 + 台账均真落 main（提交 `af3188d`，含此前不可能成功的 `MEMORY.md` 改写），**D+7 = 2026-08-02** 核 07-26 → 08-01 七轮定时是否连绿。 | 观察 | 施工封面 §4.2 + `projects/silver-core-testbed/CONTEXT.md` 当前状态节 | 开 |"
+        ],
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:553:      \"artifact\": \"projects/silver-core-testbed/state\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:560:          \"memory/todo.md:19:| T57 | testbed 验收 2「四巡检器连续 7 天无人值守」核验：CI `testbed-patrol.yml` 每日北京 15:20 首轮起算，D+7 核 Actions 日志与台账（`projects/silver-core-testbed/state/ledger.json` 逐轮 sched 会话 + 记忆区日报告/卡）全绿即销；首轮亦需核 deploy key 推送四步走通。（原编 T56，合并时与审计账撞号让号）**首轮 7 天验收诚实判定为失败（2026-07-26 仓库审视会话核 Actions 日志）**：07-18 首轮 success 后，07-19 → 07-25 **连续 7 轮全 failure**（最新 [run 30152439641](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/30152439641)）。四巡检器本身每轮 ok/done，唯 `dream` 归并任务必败——`INDEX_PATH=/memories/MEMORY.md` 每轮用 create-only 语义重写，07-18 落库后天天撞 already exists；台账重试时又撞尝试 1 已写的当日值班卡，**后者掩盖前者**（日志末行报 cards 冲突，真凶在索引行）。守密人 2026-07-26 裁定「修 dream 幂等 + 重算 T57」：修复落 `src/dream.mjs` / `src/memory.mjs`（`replaceFile` 显式先删后建，不改 SDK 侧 create 参照语义）+ 3 例回归（负控实证旧源转红），**D+7 计时自修复后首个绿轮重新起算，不顺延**。**新起算锚点已定**：2026-07-26 dispatch [run 30185091549](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/30185091549) 全步 success，四巡检器报告 + 值班卡 + 索引改写 + 台账均真落 main（提交 `af3188d`，含此前不可能成功的 `MEMORY.md` 改写），**D+7 = 2026-08-02** 核 07-26 → 08-01 七轮定时是否连绿。 | 观察 | 施工封面 §4.2 + `projects/silver-core-testbed/CONTEXT.md` 当前状态节 | 开 |\""
         ]
       },
       "consumer_counts": {
-        "doc": 1
+        "doc": 1,
+        "other": 2
       },
       "consumed_via_parent": "projects/silver-core-testbed"
     },
@@ -579,7 +650,11 @@
           "okf/story/story_search_index.md:5:resource: \"/projects/wiki/data/processed/story/story_search_index.json\""
         ],
         "other": [
-          "okf/kb_index.json:4917:      \"resource\": \"/projects/wiki/data/processed/story/story_search_index.json\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:569:      \"artifact\": \"projects/wiki/data/processed/story/story_search_index.json\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:576:          \"Public-Info-Pool/Resource/methodology/knowledge-engineering-primer-20260704.md:95:| `projects/wiki/data/processed/story/story_search_index.json` | 1026 条剧情 lore 倒排表 + 单元画像 | `scripts/build_story_index.py` |\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:577:          \"okf/story/story_search_index.md:12:> 放指针不放本体：本体在 `projects/wiki/data/processed/story/story_search_index.json`，本 concept 仅定位。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:578:          \"okf/story/story_search_index.md:14:- 本体路径：`projects/wiki/data/processed/story/story_search_index.json`\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:579:          \"okf/story/story_search_index.md:5:resource: \\\"/projects/wiki/data/processed/story/story_search_index.json\\\"\""
         ],
         "test": [
           "tests/test_analysis_index.py:20:STORY = REPO / \"projects/wiki/data/processed/story/story_search_index.json\""
@@ -587,7 +662,7 @@
       },
       "consumer_counts": {
         "doc": 4,
-        "other": 1,
+        "other": 8,
         "test": 1
       }
     },
@@ -604,32 +679,18 @@
           "okf/wiki-data/wiki-data-versions.md:5:resource: \"/projects/wiki/data/processed/versions.json\""
         ],
         "other": [
-          "okf/kb_index.json:5156:      \"resource\": \"/projects/wiki/data/processed/versions.json\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:595:      \"artifact\": \"projects/wiki/data/processed/versions.json\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:602:          \"okf/wiki-data/wiki-data-versions.md:12:> 放指针不放本体：本体权威在 `projects/wiki/data/processed/versions.json`，本 concept 仅描述与定位、不复刻正文。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:603:          \"okf/wiki-data/wiki-data-versions.md:14:- 本体路径：`projects/wiki/data/processed/versions.json`\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:604:          \"okf/wiki-data/wiki-data-versions.md:5:resource: \\\"/projects/wiki/data/processed/versions.json\\\"\"",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:607:          \"okf/kb_index.json:5156:      \\\"resource\\\": \\\"/projects/wiki/data/processed/versions.json\\\",\""
         ]
       },
       "consumer_counts": {
         "doc": 3,
-        "other": 1
+        "other": 6
       },
       "consumed_via_parent": "projects/wiki/data/processed"
-    },
-    {
-      "artifact": "projects/wiki/docs/public/atom.xml",
-      "producers": [
-        "check-version.yml"
-      ],
-      "verdict": "orphan",
-      "consumers": {},
-      "consumer_counts": {}
-    },
-    {
-      "artifact": "projects/wiki/docs/public/feed.xml",
-      "producers": [
-        "check-version.yml"
-      ],
-      "verdict": "orphan",
-      "consumers": {},
-      "consumer_counts": {}
     },
     {
       "artifact": "projects/wiki/output/client_extract",
@@ -638,11 +699,16 @@
       ],
       "verdict": "consumed",
       "consumers": {
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:635:      \"artifact\": \"projects/wiki/output/client_extract\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:642:          \"projects/wiki/scripts/extract_client_data.py:537:        help=\\\"Output directory (default: projects/wiki/output/client_extract/)\\\",\""
+        ],
         "script": [
           "projects/wiki/scripts/extract_client_data.py:537:        help=\"Output directory (default: projects/wiki/output/client_extract/)\","
         ]
       },
       "consumer_counts": {
+        "other": 2,
         "script": 1
       }
     },
@@ -652,8 +718,14 @@
         "check-version.yml"
       ],
       "verdict": "parent-consumed",
-      "consumers": {},
-      "consumer_counts": {},
+      "consumers": {
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:650:      \"artifact\": \"projects/wiki/output/version_check_result.json\","
+        ]
+      },
+      "consumer_counts": {
+        "other": 1
+      },
       "consumed_via_parent": "projects/wiki/output"
     },
     {
@@ -673,7 +745,9 @@
         "other": [
           ".gitignore:56:# 可 MB→GB，放指针不放本体：不进 git，CI 构建后上传 Release community-assets，",
           ".gitignore:74:# 走 community-assets「社区二创」release；采集落以下 staging 但不入 git。",
-          "projects/news/scripts/archive_sources.json:19:    \"release_tag\": \"community-assets\","
+          "Public-Info-Pool/Record/heartbeat/consumption.json:364:          \".github/workflows/build-community-vectors.yml:68:          gh release upload community-assets okf/kb_vectors.json.gz --clobber \\\\\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:415:          \".github/workflows/collect-fanart.yml:4:# projects/news/data/fanart/{date}/ 后直传 community-assets release 当月资产\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:660:      \"artifact\": \"community-assets\","
         ],
         "script": [
           "projects/news/scripts/backfill_media.py:148:    # 2026-06-21 收敛：media 二进制并入「社区二创」community-assets（与 fanart 同桶），",
@@ -684,6 +758,9 @@
         ],
         "test": [
           "tests/test_archive_engine.py:47:        self.assertEqual(cfg[\"release_tag\"], \"community-assets\")",
+          "tests/test_consumption_audit.py:80:        \"\"\"带连字符的 tag 必须整取——首版正则把 community-assets 截成 `-assets`。\"\"\"",
+          "tests/test_consumption_audit.py:84:            \"  gh release upload community-assets okf/x.gz --clobber\\n\", encoding=\"utf-8\"",
+          "tests/test_consumption_audit.py:87:        assert list(ca.produced_releases()) == [\"community-assets\"]",
           "tests/test_restore_release_data_unit.py:162:    n = rrd.restore(\"community-assets\", \"kb_vectors.json.gz\", Path(\"okf\"), force=False)"
         ],
         "workflow": [
@@ -696,9 +773,9 @@
       },
       "consumer_counts": {
         "doc": 27,
-        "other": 3,
+        "other": 27,
         "script": 5,
-        "test": 2,
+        "test": 5,
         "workflow": 9
       },
       "kind": "release"
@@ -714,10 +791,17 @@
           "Public-Info-Pool/Resource/repo-engineering/silver-core-repo-split-migration-plan-20260719.md:68:  月度 + `workflow_dispatch` 打包 16 非 discord 平台 → `community-platforms` release（滚动全量、`--clobber`）。",
           "memory/todo.md:40:| T65 | **三网站岗（接棒 T29，守密人 2026-07-26 裁定「销案，改立新站岗」）**：本仓 git 历史只到 2026-07-20（§7乙 压扁 + 备份分支已删），此后**唯一抢救网 = 三处**——① **BIAV-SC-DATA 数据仓**（社区全量档案本体）② **`community-data` / `community-assets` Release**（discord 33 月副本 2023-07→2026-05 + fanart / 回填媒体）③ **`unpacked-assets` Release**（游戏二进制，解包 text 层的唯一还原源，管线 `extract-game-data.yml` + `extract_client_data.py` + `scripts/parse_*.py` 均在）。**站岗内容**：删除 / 覆盖 / 迁移三者中任一处前必须先确认另有副本——它们背后**不再有 git 历史兜底**，删即永久。**16 平台第二网已建成（2026-07-26 守密人裁定「修好并立即跑一轮」）**：`community-platform-backup.yml` 原从 code 仓取已被 §7甲 搬走的目录、且自建成（07-19）起从未触发过（首个 cron 为 08-03），即「建好就坏、坏了还没人知道」；已改 clone BIAV-SC-DATA + 经 `archive_layout.community_root()` 解析路径（不再手拼），同日 dispatch [run 30192652167](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/30192652167) success，[`community-platforms` Release](https://github.com/lightproud/BIAV-SC-CODE/releases/tag/community-platforms) 落 **16 个平台副本 / 6.39MB**（appstore · arca_live · bahamut · bilibili · google_play · note_com · pixiv · reddit · ruliweb · steam · stopgame · taptap · weibo · weixin · youtube · youtube_comments）。**三网自此全部到位**，本条转为常态站岗：删 / 覆盖 / 迁移任一网之前先确认另有副本。 | **已清（2026-07-26 守密人裁定「只销台账，机制与桶保留」）**：本条不再作为开着的站岗项，**四个 Release 桶与月度备份工作流原样保留、不删不停**——所裁的是「台账里不必再挂一条提醒」，**不是**「不要副本」。核实时点四桶实况：`community-platforms` 16 资产 / 6.4MB（当日新建）· `community-data` 33 / 272MB（discord 2023-07→2026-05）· `community-assets` 3 / 743MB（fanart + 回填媒体）· `unpacked-assets` 20 / **10.2GB**（游戏二进制，**解包 text 层的唯一还原源**——该层 2026-07-12 已整层删除，此桶删则永久不可推导）。**纪律仍然生效，只是不再靠台账提醒**：三网背后已无 git 历史兜底（07-20 压扁 + 备份分支删除，见 CLAUDE.md §6.3），删 / 覆盖 / 迁移任一网前须先确认另有副本；该纪律的常驻载体 = CLAUDE.md §6.3 表格本身。｜原类别：观察｜源出处：T29 销案条 + CLAUDE.md §6.3 + 守密人 2026-07-26 裁定 |",
           "memory/todo.md:42:| T62 | **数据层剥离评估战线（守密人 2026-07-19 裁定「丙 · 立项重估形态」，回应 KIMI3 静态审查头号 P0）**：产「代码+指针+小样本」目标形态迁移评估，分四阶段决策门（P0 盘点核验 / P1 选型 / P2 增量掐口乙案 / P3 历史处置）。**立项 charter 已落** `Public-Info-Pool/Resource/proposal/data-layer-detachment-evaluation-20260719.md`。**关键发现**：`community-data` Release 实含 33 月 discord 副本（2023-07→2026-05，仅缺 2023-08/09），大幅松动 T29 悲观假设。**逐门待裁**：~~门①~~ **已放行完成**（2026-07-19，见下）→ 门② 选型 + 乙案 → 门③ 历史重写（最高风险，触发线未破倾向暂缓）。不触任何不可逆动作前置守密人裁定。**门① · P0 盘点核验结论**（报告 `Public-Info-Pool/Resource/data-diagnostics/discord-rescue-net-completeness-20260719.md`）：discord 抢救网 = 高保真（重叠月 2026-04 逐条相等 620,970 行 / 33 月连续 2023-07→2026-05），T29 悲观假设推翻；**新发现风险 → 门③ 硬前置**：16 个非 discord 平台无任何 Release 副本，历史重写前须先为其建副本。**门② 已定案（2026-07-19 守密人裁分仓）**：新仓 `BIAV-SC-DATA`（数据湖）+ 现仓改名 `BIAV-SC-CODE`（代码/大脑）；目标形态由存储后端选型升级为分仓拓扑，**分仓不要求历史重写、绕开 T29**。可执行迁移计划落 `Public-Info-Pool/Resource/repo-engineering/silver-core-repo-split-migration-plan-20260719.md`。**B 段可逆准备已交付（2026-07-19，守密人「B 我做 A」授权）**：① 桥接定案**方案 B**（兄弟 checkout + 环境根）+ 首批收口——`archive_layout` 加 `pool_root/community_root/discord_root` 环境根 resolver（env `BIAV_SC_DATA_ROOT`，向后兼容）、8 采集/数据脚本切用、契约测试 4 例；② 16 非 discord 平台备份 workflow `community-platform-backup.yml`（月度 + dispatch，`community-platforms` release 滚动全量）。**A 段进展**：`BIAV-SC-DATA` **已建**（2026-07-19 守密人建，空仓）；会话代理对其只读（写 403），故阶段一填充走**乙方案**——`data-repo-sync.yml`（workflow_dispatch + `MIGRATE` 门，sparse 读 Record/Community、经 deploy key 推 data 仓、rsync 镜像）已落。**A 段改名已完成**（2026-07-19，`BIAV-SC-CODE` 生效、GitHub 重定向）。**阶段一迁移已完成并验证**（2026-07-19，run #29683057765）：守密人配细粒度 PAT + secret `BIAV_SC_DATA_TOKEN`，艾瑞卡直接触发 `data-repo-sync.yml`，`Record/Community` 快照落 BIAV-SC-DATA（HEAD d078b93c→537b231c，**21,815 文件逐一相等**、657M、discord 三区服 + 16 平台齐）。**仍待守密人**：① 历史体量甲/乙（独立可延后）。**阶段二执行计划已出**（守密人 2026-07-19「推进」，`Public-Info-Pool/Resource/repo-engineering/biav-sc-split-stage2-execution-plan-20260719.md`）：拆两目标——**A 止增长**（11 采集 CI 改写 data 仓，独立见效、不涉 T29）+ **B 缩体积**（移除 Community，**§7 甲下只省工作树、clone 不减，须乙历史重写才真缩**）。破坏点清单：~25 读脚本（8 已桥接）/ 11 写侧 CI / 8 测试。**守密人 2026-07-19 裁 1 甲（P2-1+P2-2）+ 2 甲（§7 暂缓）**。**P2-1 已完成**（两批共 13 脚本桥接 archive_layout 数据根 resolver，全量 2961 绿；剩 extract_aliases/memory_freshness/指针字符串类/restore 暂缓，B 暂缓不急）。**P2-2 目标 A 试点已落**：隔离 workflow `discord-archive-datarepo-pilot.yml`（不碰 live），discord_archiver 经 env 根写 BIAV-SC-DATA + PAT 推送。**P2-2 试点已验证通过**（2026-07-19 run #29689243312：discord_archiver 经 env 根写 BIAV-SC-DATA、推送成功 `537b231c`→`0103b77c`、code 仓未动、全步 success）——目标 A 止增长机制打通。**P2-3 全切换方案已细化**（`Public-Info-Pool/Resource/repo-engineering/biav-sc-split-p23-cutover-plan-20260719.md`）：a 停 mirror sync（删除硬前置）→ b 读桥接收尾（含 archive_engine）→ c 11 采集 CI 分批切写 data 仓 → d/e 测试与全系统验证；**删除（P2-5）待全绿 + §7 甲/乙**。**P2-3a+b 已落**（2026-07-19，守密人「按建议推进」）：a `data-repo-sync.yml` **退役**（旧 MIGRATE 令牌失效、须强警示词 FORCE-DESTRUCTIVE-RESYNC，防 --delete footgun）；b 读桥接收尾——干净 FS 读常量消费者全桥接（+extract_aliases/memory_freshness，全量 2961 绿）。**archive_engine + 相对字符串/写入型（collect/backfill）归 P2-3c**（与写侧 git 操作耦合，非简单读桥）；okf 指针字符串保持逻辑相对（不随物理仓变）。**P2-3c 开工（守密人 2026-07-19「开工」）**：archive_engine base_dir env 感知已落（0.71 桥接，全平台归档使能，全量 2963 绿）；discord 三写脚本（archiver/forum-starters/engine）全 honor `BIAV_SC_DATA_ROOT`。**discord 族六个全部切写 data 仓**（`discord-archive` global 已 dispatch 验证 run#294 → data 仓 commit 54d9b1e4；jp/volunteer/history-backfill/discover-guilds/cold-compress 同模板已改，待 dispatch 验证）+ 冗余 pilot 已删（活由正式 discord-archive 接管）。`data-repo-sync.yml` 确认 P2-3a 退役。**news 族分三类**：纯 data 仓（collect-comments · community-cold-compress，已切）· 双目标 Record→data+output/state→code（update-news · backfill-news · backfill-gap，**已切**，待 dispatch 验证）· 读 data 写 code（backfill-media，**已切**）。双目标模式=code 仓 checkout 保 ssh-key 推 output/state + clone data 仓 PAT 推 Record/Community + defaults working-directory code-repo 兄弟目录。collect-comments/community-cold-compress dispatch 验证 success。P2-3b 读侧桥接补齐：collect_video_comments（DEST+glob）+ backfill_media（SRC）经 community_root()（repair_gaps/archive_platforms/backfill_platforms/backfill_gap/community_cold_compress 早已桥接；aggregator/split_output/download_media 只写 output/media 留 code 仓）。切完 → P2-5（删 code 存量）→ §7 甲/乙。 **P2-3e 全系统验证已跑（只读）**：数据移出树 + env 根，全量 pytest **2963 绿**、build_community_index honor env 根、kb_eval 不读 Record——运行时读侧位置无关。**抓到消费侧 build 缺口并已修**：`okf_pointer_layers._archive_resource`（community 层门）+ `build_okf_bundle.build_sources`（sources 层门）+ `_mention_texts`（mention 边读 archive 本体）三处存在检查/本体读**硬编码在树** → 改经 `community_root()`（env 感知、指针字符串保逻辑）；`test_data_discipline` fixture 改喂 env 根（P2-3d 适配）。验证：env-根构建与 committed **逐字节一致**（nodes 370/edges 稳）、env-未设与 committed 零差异（行为保持）。**P2-5 §7甲 已执行（守密人 2026-07-20「启动」）**：`git rm -r --cached Public-Info-Pool/Record/Community`（21829 文件 / 658M 取消跟踪 + .gitignore，git 历史保留可恢复）；store-patrol 等非数据湖子目录保留。前置接线先落：build-okf-bundle + build-analysis-index clone data 仓 + env 根（dispatch 验证读 data 仓绿）；test.yml 自 P0-2 sparse 排除 Record，required 门无涉。CLAUDE.md §1.4/§5.2 三处「永驻 git」改「迁 BIAV-SC-DATA、经 BIAV_SC_DATA_ROOT 读」+ test_claude_md 数据湖路径豁免适配。**T62 目标 A 止增长 + §7甲 数据湖出仓全部完成**。**§7乙（历史压扁真缩 clone）已执行（守密人 2026-07-20「全仓压扁」裁 + 会话内协助执行完成）**：守密人改选**全历史压扁**（非 filter-repo 单路径 purge——手册 `biav-sc-p27-history-rewrite-runbook-20260720.md` 记备选路径，仍存档）。执行经过：① GitHub 建备份分支 `pre-flatten-backup-20260720`（全历史，回滚保险）② orphan 单提交从当前树重建（`git checkout --orphan`，gitignore 排除 Record/Community）③ 压扁树与原 main **逐字节相同**（tree e5d2489f）④ fresh clone 验证：1 提交 / 2223 文件 / 0 数据 / `.git` 22M（原 445M）/ 整 clone 39M ⑤ 守密人临时解 main 保护 → force-push `dc918b4b:main` 上位 → 守密人复原保护。**诚实记录**：压扁基于备份点 73dcb493，漏 force-push 前一轮 update-news 自动 news 输出提交 58d64a1a（`projects/news/output/*`+state 快照，[skip ci]）——自愈型陈旧（output 每 3h 重生、state 下轮自纠），永久内容零丢失（已触发 update-news 刷新）。**收尾待守密人确认后**：删 `flat-main-20260720` + `pre-flatten-backup-20260720`（回滚保险，确认前绝不删）+ 残留旧分支 → GitHub 回收旧 blob，clone ~1G→39M 落地。**T62 分仓工程全线完成（目标 A + §7甲 + §7乙）。** | **已清（2026-07-26 守密人裁定「销案」）**：分仓工程全线完成——门① P0 盘点放行、门② 定案分仓拓扑（新仓 BIAV-SC-DATA + 现仓改名 BIAV-SC-CODE）、**门③ 历史处置已于 07-20 §7乙 全仓压扁实际执行**（clone ~1G→39M）；目标 A 止增长 + §7甲 数据湖出仓 + §7乙 压扁三段俱已落地，残余「历史体量甲/乙」随压扁自然作废。**状态列此前滞后于正文事实**，本次一并订正。｜原类别：裁定｜源出处：守密人 2026-07-19 丙裁 + 门①放行；`Public-Info-Pool/Resource/proposal/data-layer-detachment-evaluation-20260719.md` + `.../data-diagnostics/discord-rescue-net-completeness-20260719.md` |"
+        ],
+        "other": [
+          "Public-Info-Pool/Record/heartbeat/consumption.json:707:      \"artifact\": \"community-platforms\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:714:          \"Public-Info-Pool/Resource/repo-engineering/silver-core-repo-split-migration-plan-20260719.md:68:  月度 + `workflow_dispatch` 打包 16 非 discord 平台 → `community-platforms` release（滚动全量、`--clobber`）。\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:715:          \"memory/todo.md:40:| T65 | **三网站岗（接棒 T29，守密人 2026-07-26 裁定「销案，改立新站岗」）**：本仓 git 历史只到 2026-07-20（§7乙 压扁 + 备份分支已删），此后**唯一抢救网 = 三处**——① **BIAV-SC-DATA 数据仓**（社区全量档案本体）② **`community-data` / `community-assets` Release**（discord 33 月副本 2023-07→2026-05 + fanart / 回填媒体）③ **`unpacked-assets` Release**（游戏二进制，解包 text 层的唯一还原源，管线 `extract-game-data.yml` + `extract_client_data.py` + `scripts/parse_*.py` 均在）。**站岗内容**：删除 / 覆盖 / 迁移三者中任一处前必须先确认另有副本——它们背后**不再有 git 历史兜底**，删即永久。**16 平台第二网已建成（2026-07-26 守密人裁定「修好并立即跑一轮」）**：`community-platform-backup.yml` 原从 code 仓取已被 §7甲 搬走的目录、且自建成（07-19）起从未触发过（首个 cron 为 08-03），即「建好就坏、坏了还没人知道」；已改 clone BIAV-SC-DATA + 经 `archive_layout.community_root()` 解析路径（不再手拼），同日 dispatch [run 30192652167](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/30192652167) success，[`community-platforms` Release](https://github.com/lightproud/BIAV-SC-CODE/releases/tag/community-platforms) 落 **16 个平台副本 / 6.39MB**（appstore · arca_live · bahamut · bilibili · google_play · note_com · pixiv · reddit · ruliweb · steam · stopgame · taptap · weibo · weixin · youtube · youtube_comments）。**三网自此全部到位**，本条转为常态站岗：删 / 覆盖 / 迁移任一网之前先确认另有副本。 | **已清（2026-07-26 守密人裁定「只销台账，机制与桶保留」）**：本条不再作为开着的站岗项，**四个 Release 桶与月度备份工作流原样保留、不删不停**——所裁的是「台账里不必再挂一条提醒」，**不是**「不要副本」。核实时点四桶实况：`community-platforms` 16 资产 / 6.4MB（当日新建）· `community-data` 33 / 272MB（discord 2023-07→2026-05）· `community-assets` 3 / 743MB（fanart + 回填媒体）· `unpacked-assets` 20 / **10.2GB**（游戏二进制，**解包 text 层的唯一还原源**——该层 2026-07-12 已整层删除，此桶删则永久不可推导）。**纪律仍然生效，只是不再靠台账提醒**：三网背后已无 git 历史兜底（07-20 压扁 + 备份分支删除，见 CLAUDE.md §6.3），删 / 覆盖 / 迁移任一网前须先确认另有副本；该纪律的常驻载体 = CLAUDE.md §6.3 表格本身。｜原类别：观察｜源出处：T29 销案条 + CLAUDE.md §6.3 + 守密人 2026-07-26 裁定 |\",",
+          "Public-Info-Pool/Record/heartbeat/consumption.json:716:          \"memory/todo.md:42:| T62 | **数据层剥离评估战线（守密人 2026-07-19 裁定「丙 · 立项重估形态」，回应 KIMI3 静态审查头号 P0）**：产「代码+指针+小样本」目标形态迁移评估，分四阶段决策门（P0 盘点核验 / P1 选型 / P2 增量掐口乙案 / P3 历史处置）。**立项 charter 已落** `Public-Info-Pool/Resource/proposal/data-layer-detachment-evaluation-20260719.md`。**关键发现**：`community-data` Release 实含 33 月 discord 副本（2023-07→2026-05，仅缺 2023-08/09），大幅松动 T29 悲观假设。**逐门待裁**：~~门①~~ **已放行完成**（2026-07-19，见下）→ 门② 选型 + 乙案 → 门③ 历史重写（最高风险，触发线未破倾向暂缓）。不触任何不可逆动作前置守密人裁定。**门① · P0 盘点核验结论**（报告 `Public-Info-Pool/Resource/data-diagnostics/discord-rescue-net-completeness-20260719.md`）：discord 抢救网 = 高保真（重叠月 2026-04 逐条相等 620,970 行 / 33 月连续 2023-07→2026-05），T29 悲观假设推翻；**新发现风险 → 门③ 硬前置**：16 个非 discord 平台无任何 Release 副本，历史重写前须先为其建副本。**门② 已定案（2026-07-19 守密人裁分仓）**：新仓 `BIAV-SC-DATA`（数据湖）+ 现仓改名 `BIAV-SC-CODE`（代码/大脑）；目标形态由存储后端选型升级为分仓拓扑，**分仓不要求历史重写、绕开 T29**。可执行迁移计划落 `Public-Info-Pool/Resource/repo-engineering/silver-core-repo-split-migration-plan-20260719.md`。**B 段可逆准备已交付（2026-07-19，守密人「B 我做 A」授权）**：① 桥接定案**方案 B**（兄弟 checkout + 环境根）+ 首批收口——`archive_layout` 加 `pool_root/community_root/discord_root` 环境根 resolver（env `BIAV_SC_DATA_ROOT`，向后兼容）、8 采集/数据脚本切用、契约测试 4 例；② 16 非 discord 平台备份 workflow `community-platform-backup.yml`（月度 + dispatch，`community-platforms` release 滚动全量）。**A 段进展**：`BIAV-SC-DATA` **已建**（2026-07-19 守密人建，空仓）；会话代理对其只读（写 403），故阶段一填充走**乙方案**——`data-repo-sync.yml`（workflow_dispatch + `MIGRATE` 门，sparse 读 Record/Community、经 deploy key 推 data 仓、rsync 镜像）已落。**A 段改名已完成**（2026-07-19，`BIAV-SC-CODE` 生效、GitHub 重定向）。**阶段一迁移已完成并验证**（2026-07-19，run #29683057765）：守密人配细粒度 PAT + secret `BIAV_SC_DATA_TOKEN`，艾瑞卡直接触发 `data-repo-sync.yml`，`Record/Community` 快照落 BIAV-SC-DATA（HEAD d078b93c→537b231c，**21,815 文件逐一相等**、657M、discord 三区服 + 16 平台齐）。**仍待守密人**：① 历史体量甲/乙（独立可延后）。**阶段二执行计划已出**（守密人 2026-07-19「推进」，`Public-Info-Pool/Resource/repo-engineering/biav-sc-split-stage2-execution-plan-20260719.md`）：拆两目标——**A 止增长**（11 采集 CI 改写 data 仓，独立见效、不涉 T29）+ **B 缩体积**（移除 Community，**§7 甲下只省工作树、clone 不减，须乙历史重写才真缩**）。破坏点清单：~25 读脚本（8 已桥接）/ 11 写侧 CI / 8 测试。**守密人 2026-07-19 裁 1 甲（P2-1+P2-2）+ 2 甲（§7 暂缓）**。**P2-1 已完成**（两批共 13 脚本桥接 archive_layout 数据根 resolver，全量 2961 绿；剩 extract_aliases/memory_freshness/指针字符串类/restore 暂缓，B 暂缓不急）。**P2-2 目标 A 试点已落**：隔离 workflow `discord-archive-datarepo-pilot.yml`（不碰 live），discord_archiver 经 env 根写 BIAV-SC-DATA + PAT 推送。**P2-2 试点已验证通过**（2026-07-19 run #29689243312：discord_archiver 经 env 根写 BIAV-SC-DATA、推送成功 `537b231c`→`0103b77c`、code 仓未动、全步 success）——目标 A 止增长机制打通。**P2-3 全切换方案已细化**（`Public-Info-Pool/Resource/repo-engineering/biav-sc-split-p23-cutover-plan-20260719.md`）：a 停 mirror sync（删除硬前置）→ b 读桥接收尾（含 archive_engine）→ c 11 采集 CI 分批切写 data 仓 → d/e 测试与全系统验证；**删除（P2-5）待全绿 + §7 甲/乙**。**P2-3a+b 已落**（2026-07-19，守密人「按建议推进」）：a `data-repo-sync.yml` **退役**（旧 MIGRATE 令牌失效、须强警示词 FORCE-DESTRUCTIVE-RESYNC，防 --delete footgun）；b 读桥接收尾——干净 FS 读常量消费者全桥接（+extract_aliases/memory_freshness，全量 2961 绿）。**archive_engine + 相对字符串/写入型（collect/backfill）归 P2-3c**（与写侧 git 操作耦合，非简单读桥）；okf 指针字符串保持逻辑相对（不随物理仓变）。**P2-3c 开工（守密人 2026-07-19「开工」）**：archive_engine base_dir env 感知已落（0.71 桥接，全平台归档使能，全量 2963 绿）；discord 三写脚本（archiver/forum-starters/engine）全 honor `BIAV_SC_DATA_ROOT`。**discord 族六个全部切写 data 仓**（`discord-archive` global 已 dispatch 验证 run#294 → data 仓 commit 54d9b1e4；jp/volunteer/history-backfill/discover-guilds/cold-compress 同模板已改，待 dispatch 验证）+ 冗余 pilot 已删（活由正式 discord-archive 接管）。`data-repo-sync.yml` 确认 P2-3a 退役。**news 族分三类**：纯 data 仓（collect-comments · community-cold-compress，已切）· 双目标 Record→data+output/state→code（update-news · backfill-news · backfill-gap，**已切**，待 dispatch 验证）· 读 data 写 code（backfill-media，**已切**）。双目标模式=code 仓 checkout 保 ssh-key 推 output/state + clone data 仓 PAT 推 Record/Community + defaults working-directory code-repo 兄弟目录。collect-comments/community-cold-compress dispatch 验证 success。P2-3b 读侧桥接补齐：collect_video_comments（DEST+glob）+ backfill_media（SRC）经 community_root()（repair_gaps/archive_platforms/backfill_platforms/backfill_gap/community_cold_compress 早已桥接；aggregator/split_output/download_media 只写 output/media 留 code 仓）。切完 → P2-5（删 code 存量）→ §7 甲/乙。 **P2-3e 全系统验证已跑（只读）**：数据移出树 + env 根，全量 pytest **2963 绿**、build_community_index honor env 根、kb_eval 不读 Record——运行时读侧位置无关。**抓到消费侧 build 缺口并已修**：`okf_pointer_layers._archive_resource`（community 层门）+ `build_okf_bundle.build_sources`（sources 层门）+ `_mention_texts`（mention 边读 archive 本体）三处存在检查/本体读**硬编码在树** → 改经 `community_root()`（env 感知、指针字符串保逻辑）；`test_data_discipline` fixture 改喂 env 根（P2-3d 适配）。验证：env-根构建与 committed **逐字节一致**（nodes 370/edges 稳）、env-未设与 committed 零差异（行为保持）。**P2-5 §7甲 已执行（守密人 2026-07-20「启动」）**：`git rm -r --cached Public-Info-Pool/Record/Community`（21829 文件 / 658M 取消跟踪 + .gitignore，git 历史保留可恢复）；store-patrol 等非数据湖子目录保留。前置接线先落：build-okf-bundle + build-analysis-index clone data 仓 + env 根（dispatch 验证读 data 仓绿）；test.yml 自 P0-2 sparse 排除 Record，required 门无涉。CLAUDE.md §1.4/§5.2 三处「永驻 git」改「迁 BIAV-SC-DATA、经 BIAV_SC_DATA_ROOT 读」+ test_claude_md 数据湖路径豁免适配。**T62 目标 A 止增长 + §7甲 数据湖出仓全部完成**。**§7乙（历史压扁真缩 clone）已执行（守密人 2026-07-20「全仓压扁」裁 + 会话内协助执行完成）**：守密人改选**全历史压扁**（非 filter-repo 单路径 purge——手册 `biav-sc-p27-history-rewrite-runbook-20260720.md` 记备选路径，仍存档）。执行经过：① GitHub 建备份分支 `pre-flatten-backup-20260720`（全历史，回滚保险）② orphan 单提交从当前树重建（`git checkout --orphan`，gitignore 排除 Record/Community）③ 压扁树与原 main **逐字节相同**（tree e5d2489f）④ fresh clone 验证：1 提交 / 2223 文件 / 0 数据 / `.git` 22M（原 445M）/ 整 clone 39M ⑤ 守密人临时解 main 保护 → force-push `dc918b4b:main` 上位 → 守密人复原保护。**诚实记录**：压扁基于备份点 73dcb493，漏 force-push 前一轮 update-news 自动 news 输出提交 58d64a1a（`projects/news/output/*`+state 快照，[skip ci]）——自愈型陈旧（output 每 3h 重生、state 下轮自纠），永久内容零丢失（已触发 update-news 刷新）。**收尾待守密人确认后**：删 `flat-main-20260720` + `pre-flatten-backup-20260720`（回滚保险，确认前绝不删）+ 残留旧分支 → GitHub 回收旧 blob，clone ~1G→39M 落地。**T62 分仓工程全线完成（目标 A + §7甲 + §7乙）。** | **已清（2026-07-26 守密人裁定「销案」）**：分仓工程全线完成——门① P0 盘点放行、门② 定案分仓拓扑（新仓 BIAV-SC-DATA + 现仓改名 BIAV-SC-CODE）、**门③ 历史处置已于 07-20 §7乙 全仓压扁实际执行**（clone ~1G→39M）；目标 A 止增长 + §7甲 数据湖出仓 + §7乙 压扁三段俱已落地，残余「历史体量甲/乙」随压扁自然作废。**状态列此前滞后于正文事实**，本次一并订正。｜原类别：裁定｜源出处：守密人 2026-07-19 丙裁 + 门①放行；`Public-Info-Pool/Resource/proposal/data-layer-detachment-evaluation-20260719.md` + `.../data-diagnostics/discord-rescue-net-completeness-20260719.md` |\""
         ]
       },
       "consumer_counts": {
-        "doc": 3
+        "doc": 3,
+        "other": 4
       },
       "kind": "release"
     }

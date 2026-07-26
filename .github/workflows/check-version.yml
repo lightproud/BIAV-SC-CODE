@@ -35,9 +35,6 @@ jobs:
         id: check
         run: python projects/wiki/scripts/check_version.py
 
-      - name: Generate RSS feeds
-        run: python projects/wiki/scripts/generate_rss.py
-
       - name: Check for changes
         id: changes
         run: |
@@ -49,8 +46,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add projects/wiki/data/processed/versions.json
-          git add projects/wiki/docs/public/feed.xml
-          git add projects/wiki/docs/public/atom.xml
           git add projects/wiki/output/version_check_result.json
           git diff --cached --quiet || git commit -m "chore(wiki): auto-update version data and RSS feeds [skip ci]"
           for i in 1 2 3 4; do
