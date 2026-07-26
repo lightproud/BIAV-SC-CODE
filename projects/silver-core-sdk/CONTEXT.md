@@ -67,6 +67,26 @@ src/
 
 ## 当前状态
 
+> **回写摘要（2026-07-26 审视补记，守密人裁定「补顶部摘要 + 实测数字」）**：本节逐条叙述此前
+> 停在 v0.69.0，其后 **12 个发布（0.70.0 → 0.76.0）未回写**，现以一条摘要合并补齐，逐版全文
+> 见 `CHANGELOG.md`（唯一发布权威，不在此复刻）：
+> **0.70.0 / 0.72.0 / 0.73.0 / 0.74.0 / 0.76.0 = 锁步对齐**（agent 侧零代码改动，跟随 maestro
+> 的 T56 审计 1/2/4/5 轮与 `cancelled` 终态）；**0.70.1** 权限 deny 绕过修复（裸子 shell `(rm -rf x)` /
+> 花括号组曾 DENY fail-open，新增 `stripGroupWrappers`，仅 deny/ask 位放宽、allow 分支保持严格）；
+> **0.71.0** testbed 漏缝 G4 采纳（`MemoryStore.read?(path)` 原样读回，模型面六命令字节不变）；
+> **0.71.1 / 0.71.2 / 0.71.3** T51 审计 r3 三批（批 N+P / R+S+T / O+Q，合计 39 条 STILL-LIVE
+> 修复带回归锁；含发货打包三修 `files` 带 `src`、`prepublishOnly`、`exports` 子路径，及版本/评估/
+> 变异三守卫加固）；**0.72.1** WV2-4 收口（OpenAI 臂仅在端点**声明**为推理端点时才丢弃
+> `temperature != 1`，未声明的网关原样透传）；**0.75.0** R7 会话末回写可观测性
+> （`SDKMemoryHealth.sessionEndUpdate` 九态 + `Query.memoryHealthSnapshot()`，堵黑池「进度卡静默变陈」
+> 诊断）+ 上游 corpus 重同步（ccVersion 2.1.213）。
+>
+> **实测复核（2026-07-26 本地现跑，非引用）**：版本 **0.76.0**（`package.json` / `src/version.ts` /
+> `CHANGELOG.md` 三处一致）· `tsc --noEmit` 零错误 · vitest **3215 通过 + 6 skipped / 196 文件**
+> （原记 3017，**+198**）· `npm pack` 614 文件 / 解包 5.85 MB / tarball 1640 KB · `npm audit` 0 漏洞 ·
+> 家族锁步 agent 0.76.0 = maestro 0.76.0 · maestro 362 测试全绿 · testbed 33 测试全绿 ·
+> 依赖方向守卫与版本纪律守卫均 OK。
+
 **v0.69.0（2026-07-18）：守密人待办批(SDK 侧 1–3 项)**——① 迁移文档刷新为
 `docs/MIGRATION-0.3x-to-0.68.md`(取代 0.52 版:斜杠退役 0.63 / MultiEdit 生命弧 /
 npm 两连改名 / 锁步制 + 13 步黑池升级检查单);② 记忆便签三件套(COMPAT memory 条目

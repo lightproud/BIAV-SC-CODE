@@ -114,7 +114,10 @@ jobs:
         # testbed is a non-family third-party consumer that resolves BOTH packages
         # from the workspace (the freshly-built agent + maestro above) and asserts
         # the public-surface contract. Catches consumer-facing breakage that each
-        # package's own suite cannot see. Fast (~2s, no build — pure .mjs vitest).
+        # package's own suite cannot see. The suite itself is fast (~2s, pure .mjs
+        # vitest); since 2026-07-26 its `pretest` re-builds both packages so a
+        # fresh clone cannot run it against a missing dist (the two builds above
+        # already ran, so this is a redundant-but-cheap re-emit in CI).
         run: npm test --workspace silver-core-testbed
       - name: Publishability (dry-run pack, both packages independently)
         if: steps.changes.outputs.run == 'true'

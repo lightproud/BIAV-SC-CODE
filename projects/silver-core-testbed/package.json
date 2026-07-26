@@ -5,6 +5,7 @@
   "description": "试金石 — effect-verification bed for the Silver Core SDK family. A CONSUMER, not a family package: never published, lockstep-exempt, imports ONLY the public export surfaces of silver-core-agent-sdk and silver-core-maestro-sdk. Patrols this repository itself (self-hosting warden); the task ledger IS the evaluation data source.",
   "type": "module",
   "scripts": {
+    "pretest": "npm --prefix ../silver-core-sdk run build && npm --prefix ../silver-core-maestro-sdk run build",
     "test": "vitest run",
     "daemon": "node src/daemon.mjs",
     "baseline": "node src/baseline.mjs",

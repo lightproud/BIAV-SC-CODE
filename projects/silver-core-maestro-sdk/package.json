@@ -27,6 +27,7 @@
     "build": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run build",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "pretest": "npm --prefix ../silver-core-sdk run build && npm run build",
     "test": "vitest run",
     "test:watch": "vitest"
   },
