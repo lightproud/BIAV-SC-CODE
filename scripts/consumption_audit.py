@@ -29,6 +29,16 @@ REPO = Path(__file__).resolve().parent.parent
 WORKFLOW_DIR = REPO / ".github" / "workflows"
 REPORT_PATH = REPO / "Public-Info-Pool" / "Record" / "heartbeat" / "consumption.json"
 
+# 审计器自身及其产物不算消费者——「生产者自引不算消费」的同一条原则，只是主体换成审计器。
+# 2026-07-26 实测踩到：本审计的报告里列着每条产出路径，下一轮 git grep 就把自己的报告
+# 当成消费者；更糟的是**本审计的单测**用真实路径当夹具，直接把 verdict 翻成 consumed。
+# 一个自己给自己作证的审计，比没有审计更坏。
+SELF_PATHS = {
+    "Public-Info-Pool/Record/heartbeat/consumption.json",
+    "scripts/consumption_audit.py",
+    "tests/test_consumption_audit.py",
+}
+
 # 产出声明：工作流里 `git add <路径...>` 与 `gh release upload <tag>`。
 GIT_ADD_RE = re.compile(r"^\s*git add\s+(.+)$", re.M)
 RELEASE_RE = re.compile(r"gh release upload\s+\"?([A-Za-z][\w.-]*)\"?", re.M)
@@ -96,7 +106,7 @@ def audit_one(artifact: str, producers: list[str]) -> dict:
     kinds: dict[str, list[str]] = {}
     for hit in _grep(artifact):
         hit_path = hit.split(":", 1)[0]
-        if hit_path in {f".github/workflows/{p}" for p in producers}:
+        if hit_path in {f".github/workflows/{p}" for p in producers} or hit_path in SELF_PATHS:
             continue
         kinds.setdefault(_classify(hit_path), []).append(hit)
     code_side = sum(len(kinds.get(k, [])) for k in ("script", "workflow", "test"))
@@ -114,14 +124,36 @@ def audit_one(artifact: str, producers: list[str]) -> dict:
         # `archive_layout` 拿到的是 `.../discord`），再往上就是猜。
         parent = str(Path(artifact).parent)
         phits = (
-            [h for h in _grep(parent) if _classify(h.split(":", 1)[0]) in ("script", "test")]
+            [
+                h for h in _grep(parent)
+                if _classify(h.split(":", 1)[0]) in ("script", "test")
+                and h.split(":", 1)[0] not in SELF_PATHS
+            ]
             if parent not in (".", "/", "")
             else []
         )
         if phits:
             verdict, via = "parent-consumed", parent
         else:
-            verdict = "doc-only" if kinds.get("doc") else "orphan"
+            # 构造式路径盲区（第三次校准，2026-07-26）：`MANIFEST = f"{ROOT}/media/x.json"`
+            # 这类拼装路径的**全路径字面量从不出现**，父目录同样是拼出来的——前两次修的
+            # 是「解析器函数」，这是同一病根的另一张脸。故退一步认**文件名**：basename
+            # 在代码里出现即算读到。命中若落在生产者自己的脚本，那就是**自用状态文件**
+            # （如断点续跑台账），照实标 basename-consumed 供人一眼判，不诬告成死件。
+            base = Path(artifact).name
+            bhits = (
+                [
+                h for h in _grep(base)
+                if _classify(h.split(":", 1)[0]) in ("script", "test")
+                and h.split(":", 1)[0] not in SELF_PATHS
+            ]
+                if base != artifact
+                else []
+            )
+            if bhits:
+                verdict, via = "basename-consumed", base
+            else:
+                verdict = "doc-only" if kinds.get("doc") else "orphan"
     entry = {
         "artifact": artifact,
         "producers": sorted(set(producers)),
@@ -130,7 +162,7 @@ def audit_one(artifact: str, producers: list[str]) -> dict:
         "consumer_counts": {k: len(set(v)) for k, v in sorted(kinds.items())},
     }
     if via:
-        entry["consumed_via_parent"] = via
+        entry["consumed_via"] = via
     return entry
 
 
@@ -142,7 +174,7 @@ def build_report() -> dict:
     ]
     orphans = [e for e in entries if e["verdict"] == "orphan"]
     doc_only = [e for e in entries if e["verdict"] == "doc-only"]
-    via_parent = [e for e in entries if e["verdict"] == "parent-consumed"]
+    via_parent = [e for e in entries if e["verdict"] in ("parent-consumed", "basename-consumed")]
     return {
         "method": "static-reference-graph",
         "blind_spots": [
@@ -165,13 +197,13 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     report = build_report()
-    marks = {"orphan": "ORPHAN  ", "doc-only": "DOC-ONLY", "parent-consumed": "VIA-PARENT"}
+    marks = {"orphan": "ORPHAN  ", "doc-only": "DOC-ONLY"}
     for entry in report["entries"]:
         if entry["verdict"] in ("orphan", "doc-only"):
             print(f"  [{marks[entry['verdict']]}] {entry['artifact']}  ← {', '.join(entry['producers'])}")
     print(
         f"产出↔消费对账：产出 {report['artifacts']} 件 / 零消费 {report['orphans']} 件 / "
-        f"仅档案提及 {report['doc_only']} 件 / 经解析器读 {report['parent_consumed']} 件"
+        f"仅档案提及 {report['doc_only']} 件 / 经解析器/文件名读 {report['parent_consumed']} 件"
     )
     print("（静态图看不见守密人翻阅、会话内读档、黑池侧消费——候选清单供人裁，不是退役触发器）")
 

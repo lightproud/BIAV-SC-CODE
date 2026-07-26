@@ -53,13 +53,41 @@ class TestVerdicts:
         }))
         entry = ca.audit_one("Record/Community/discord/jp", ["archiver.yml"])
         assert entry["verdict"] == "parent-consumed"
-        assert entry["consumed_via_parent"] == "Record/Community/discord"
+        assert entry["consumed_via"] == "Record/Community/discord"
+
+    def test_constructed_path_is_credited_via_basename(self, monkeypatch):
+        """f-string 拼出来的路径（`f"{ROOT}/media/x.json"`）全路径与父目录都不出现字面量。
+
+        真实案例：`backfill_manifest.json` 是 backfill-media 的断点续跑台账，生产脚本
+        自己 load 回来去重——它被读，只是没人写出全路径。退一步认文件名即可救回，
+        且命中落在生产者自身时正好告诉人「这是自用状态文件」。
+        """
+        monkeypatch.setattr(ca, "_grep", _fake_grep({
+            "projects/news/data/media/backfill_manifest.json": [],
+            "projects/news/data/media": [],
+            "backfill_manifest.json": [
+                "projects/news/scripts/backfill_media.py:36: MANIFEST = f'{ROOT}/media/backfill_manifest.json'",
+            ],
+        }))
+        entry = ca.audit_one("projects/news/data/media/backfill_manifest.json", ["backfill-media.yml"])
+        assert entry["verdict"] == "basename-consumed"
+        assert entry["consumed_via"] == "backfill_manifest.json"
+
+    def test_basename_hits_in_docs_do_not_rescue(self, monkeypatch):
+        """文件名只在档案里出现 ≠ 有人读——basename 这一档只认代码，别把口子开大。"""
+        monkeypatch.setattr(ca, "_grep", _fake_grep({
+            "out/thing.json": [],
+            "out": [],
+            "thing.json": ["memory/notes.md:3: thing.json 曾经很重要"],
+        }))
+        assert ca.audit_one("out/thing.json", ["w.yml"])["verdict"] == "orphan"
 
     def test_parent_walk_stops_at_one_level(self, monkeypatch):
         """只回溯一级——无限上溯会把一切吸收成「有人读」，信号归零（首版真踩过）。"""
         monkeypatch.setattr(ca, "_grep", _fake_grep({
             "projects/wiki/docs/public/feed.xml": [],
             "projects/wiki/docs/public": [],
+            "feed.xml": [],
             # 祖父级有代码引用，但不得据此赦免
             "projects/wiki/docs": ["scripts/build.py:1: projects/wiki/docs"],
             "projects/wiki": ["scripts/build.py:2: projects/wiki"],
@@ -85,6 +113,28 @@ class TestProducerParsing:
         )
         monkeypatch.setattr(ca, "WORKFLOW_DIR", wf)
         assert list(ca.produced_releases()) == ["community-assets"]
+
+
+class TestSelfPollution:
+    """审计器不得给自己作证。2026-07-26 实测：报告与本测试档都写着真实产出路径，
+    未排除时 `backfill_manifest.json` 被自己的单测夹具「证明」成 consumed。"""
+
+    def test_own_report_and_tests_are_not_consumers(self, monkeypatch):
+        monkeypatch.setattr(ca, "_grep", _fake_grep({
+            "out/thing.json": [
+                "Public-Info-Pool/Record/heartbeat/consumption.json:9: out/thing.json",
+                "tests/test_consumption_audit.py:12: out/thing.json",
+                "scripts/consumption_audit.py:3: out/thing.json",
+            ],
+            "out": [],
+            "thing.json": ["tests/test_consumption_audit.py:12: thing.json"],
+        }))
+        assert ca.audit_one("out/thing.json", ["w.yml"])["verdict"] == "orphan"
+
+    def test_self_paths_cover_report_script_and_test(self):
+        assert ca.REPORT_PATH.relative_to(ca.REPO).as_posix() in ca.SELF_PATHS
+        assert "scripts/consumption_audit.py" in ca.SELF_PATHS
+        assert "tests/test_consumption_audit.py" in ca.SELF_PATHS
 
 
 def test_report_carries_its_blind_spots(monkeypatch):
