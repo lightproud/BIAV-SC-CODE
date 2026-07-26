@@ -425,6 +425,7 @@ wiki 旧结构化层的 6 个占位 JSON（2026-06-15 裁定清空者）。**守
 | 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
 | 跨档案检索 | `rg "<关键词>" memory/ assets/`（ripgrep） |
 | 死手开关（沉默检测）| `python3 scripts/dead_man_switch.py [--dry-run]`（**只数空座位**：查全部带 cron 工作流的最近一次成功，超阈值报 `STALE`、从无成功报 `NEVER`；阈值由各自 cron 推导 ×2 + 宽限，状态落 `Public-Info-Pool/Record/heartbeat/status.json`，CI `dead-man-switch.yml` 每日北京 15:50；设计档见 `Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md`，单测 `tests/test_dead_man_switch.py`）|
+| 产出↔消费对账 | `python3 scripts/consumption_audit.py [--dry-run]`（**找没人读的产物**：静态引用图判「谁在读」，零消费 / 仅档案提及 / 经解析器读三档，报告落 `Public-Info-Pool/Record/heartbeat/consumption.json`；**候选清单供人裁、不是退役触发器**——静态图看不见守密人翻阅 / 会话内读档 / 黑池侧消费；单测 `tests/test_consumption_audit.py`）|
 | 状态档事实块重算 | `python3 scripts/build_status_facts.py [--check]`（`memory/project-status.md` 的版本 / 规模 / 台账数字 **+ 两包 `CONTEXT.md` 的版本标签块**由权威源生成，**勿手抄**；同步守卫 `tests/test_status_facts.py`，叙述新鲜度另由 `tests/test_status_doc_facts.py` 守）|
 | 记忆保鲜巡检 | `python3 scripts/memory_freshness.py`（lessons 指针/编号不变量门禁见 `tests/test_memory_freshness.py`；月检例程与 `/sync-memory` 手册共用一套流程）|
 | 知识库有效性记分卡 | `python3 scripts/kb_eval.py`（黄金问题集 hit@k + MRR；需求侧有效性回归见 `tests/test_kb_golden.py`）|
