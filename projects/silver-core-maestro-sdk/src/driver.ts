@@ -10,7 +10,7 @@
 import type { Clock } from './clock.js';
 import { systemClock } from './clock.js';
 import type { OutcomeInput, TaskLedger } from './ledger/ledger.js';
-import { InvalidTransitionError } from './ledger/state.js';
+import { InvalidTransitionError, isTerminal } from './ledger/state.js';
 import type { QueryOutcome, SessionRecord } from './ledger/types.js';
 
 export interface ExecutorContext {
@@ -60,6 +60,29 @@ export interface LedgerDriverOptions {
   pollIntervalMs?: number;
   /** Per-attempt timeout; unset = attempts are never timed out by the driver. */
   queryTimeoutMs?: number;
+  /**
+   * Cap on attempts in flight at once (integer >= 1; unset = UNBOUNDED, the
+   * pre-0.78.0 behavior byte-for-byte).
+   *
+   * Why it exists (design review 2026-07-26 F2): a tick used to claim every
+   * due session and start them all, so peak concurrency equalled the size of
+   * the due backlog — measured at 200 concurrent attempts for 200 due
+   * sessions. Three ordinary paths produce a backlog: a scheduler catching up
+   * after downtime (`catchUp: 'all'`, up to firesBetween's cap of 100 fire
+   * points at once), a wide workflow fan-out (every dep-free node becomes
+   * ready together), and a host restart over a store full of pending rows.
+   * Where an attempt is a paid API call that is a cost/rate-limit event, not
+   * a throughput win.
+   *
+   * A host CANNOT implement this itself by queueing inside its executor: by
+   * then the attempt is already claimed (state `running`, attempts
+   * incremented, claim lease started), so queued work burns its lease while
+   * waiting. The cap therefore has to live where the claiming happens — the
+   * driver claims only as many as it has free slots, and the rest stay
+   * untouched in the store, due, for a later tick. Nothing about their record
+   * changes in the meantime.
+   */
+  maxConcurrent?: number;
   clock?: Clock;
   /** Observability seam: data out, rendering host-side. Callback errors are swallowed. */
   onEvent?: (event: DriverEvent) => void;
@@ -70,6 +93,7 @@ export class LedgerDriver {
   readonly #executor: Executor;
   readonly #pollIntervalMs: number;
   readonly #queryTimeoutMs: number | undefined;
+  readonly #maxConcurrent: number | undefined;
   readonly #clock: Clock;
   readonly #onEvent: ((event: DriverEvent) => void) | undefined;
 
@@ -95,6 +119,7 @@ export class LedgerDriver {
     this.#executor = opts.executor;
     this.#pollIntervalMs = opts.pollIntervalMs ?? 1_000;
     this.#queryTimeoutMs = opts.queryTimeoutMs;
+    this.#maxConcurrent = opts.maxConcurrent;
     this.#clock = opts.clock ?? systemClock;
     this.#onEvent = opts.onEvent;
     if (!Number.isFinite(this.#pollIntervalMs) || this.#pollIntervalMs < 0) {
@@ -102,6 +127,17 @@ export class LedgerDriver {
     }
     if (this.#queryTimeoutMs !== undefined && (!Number.isFinite(this.#queryTimeoutMs) || this.#queryTimeoutMs <= 0)) {
       throw new RangeError(`LedgerDriver: queryTimeoutMs must be a finite number > 0`);
+    }
+    // Integer, not merely finite: a fractional cap (2.5) would make the free-
+    // slot arithmetic claim a non-integer batch bound, and 0 would mean "never
+    // claim anything" — a silently dead driver.
+    if (
+      this.#maxConcurrent !== undefined &&
+      (!Number.isInteger(this.#maxConcurrent) || this.#maxConcurrent < 1)
+    ) {
+      throw new RangeError(
+        `LedgerDriver: maxConcurrent must be an integer >= 1 when given, got ${this.#maxConcurrent}`,
+      );
     }
   }
 
@@ -174,7 +210,18 @@ export class LedgerDriver {
       // driver re-enter the retry path and may be re-claimed this very tick.
       // No-op on lease-less ledgers and lease-less records.
       await this.#ledger.sweepExpiredLeases(this.#clock.now());
-      const claimed = await this.#ledger.claimDue(this.#clock.now());
+      // Free-slot arithmetic (0.78.0): claim at most as many as we can run
+      // right now. #inflight is counted across ALL generations on purpose —
+      // a stopped generation's attempts are still executing until stop()
+      // finishes awaiting them, and they still consume the host's budget.
+      // Zero slots = claim nothing this tick and leave the backlog untouched
+      // in the store; the sweep above still ran (it must not be skipped) and
+      // the tick still reschedules through the shared tail below.
+      const limit =
+        this.#maxConcurrent === undefined
+          ? undefined
+          : Math.max(0, this.#maxConcurrent - this.#inflight.size);
+      const claimed = limit === 0 ? [] : await this.#ledger.claimDue(this.#clock.now(), { limit });
       // Attempts are started even if stop() began while claimDue was in
       // flight: stop() awaits this tick and then aborts them, so the claims
       // settle into 'retrying' (resumable) instead of stranding in 'running'.
@@ -276,7 +323,12 @@ export class LedgerDriver {
       outcome,
       ...(result.error !== undefined ? { error: result.error } : {}),
     });
-    if (updated.state === 'done' || updated.state === 'failed') {
+    // Terminal vocabulary, not a literal pair (0.78.0): recordOutcome cannot
+    // return a `cancelled` record today (it rejects that state outright), so
+    // this is future-proofing rather than a behavior change — but it is the
+    // same spelling that silently excluded `cancelled` in the scenario layer
+    // when 0.76.0 added it, and the src-wide guard now forbids that spelling.
+    if (isTerminal(updated.state)) {
       this.#emit({ type: 'session:terminal', session: updated });
     }
   }

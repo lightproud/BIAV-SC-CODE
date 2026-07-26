@@ -82,15 +82,15 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.77.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.77.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.78.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.78.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 122 / 198 | 磁盘实况 |
-| maestro SDK 源文件 / 测试档 | 16 / 29 | 磁盘实况 |
+| maestro SDK 源文件 / 测试档 | 17 / 31 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 129 | 磁盘实况 |
 | CI 工作流 / 其中定时 | 45 / 26 | `.github/workflows/` |
-| 挂账台账 开 / 已清 | 16 / 56 | `memory/todo.md` |
+| 挂账台账 开 / 已清 | 17 / 56 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->
 
@@ -249,6 +249,7 @@
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
+> **v0.78.0（2026-07-26）**：**设计审视四缝全修**（审视档 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-design-review-20260726.md`，守密人同日四裁均取推荐案）——F1 `cancelled` 终态穿透场景层（三处硬编码 `done || failed`，默认配置下用户取消致工作流/目标追逐**永久挂死**；`graphStatus` 判 fail-fast、`GoalChaser` 新 action `'cancelled'`，新增 `isTerminal`/`isUnsuccessfulTerminal` + **禁字面量终态对的治理守卫**）· F2 驱动器 `maxConcurrent`（实测 200 到期→峰值 200）+ `claimDue(now,{limit})` · F3 可选存储缝 `deleteSession?` + 网关 `purgeSession`（契约套件 +4 检查）· F4 两长跑组件收 `AbortSignal`。测试 362 → **400**，三机制逐条回退负控实证。**未纳入**：Scheduler 全表扫、F5「重开」语义（挂待裁）。
 > **v0.77.0（2026-07-26）**：锁步对齐 agent 侧 Windows 正确性清扫，本包零代码改动。
 > 值得记一笔——同轮 Windows 探路中 agent SDK 15 个测试档失败，**maestro 362/362 全绿且无需任何改动**，
 > 编排层不含宿主路径与 shell 假设。
@@ -311,6 +312,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.78.0（2026-07-26，锁步对齐）**：本包**零代码改动**；家族版本钟随 maestro 0.78.0（设计审视四缝全修）整体前进，详见 maestro CHANGELOG。
 - **v0.77.0（2026-07-26，Windows 正确性清扫——家族史上首次非 Linux CI 实跑 + 守密人现场反馈
   「SDK 在 windows 环境工具调用经常犯蠢」）**：3200+ 测试一直全绿却一条都看不见，因为全部跑在
   POSIX 宿主的 POSIX 方言下。三条真缺陷——① **路径域权限规则双向皆坏**：POSIX 写法 deny

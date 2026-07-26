@@ -292,7 +292,12 @@ describe('graph.ts properties', () => {
       RUNS,
     );
   });
-  it('graphStatus laws: failed dominates; done iff all done; else running', () => {
+  // 0.78.0: the dominating condition widened from `failed` to ANY unsuccessful
+  // terminal (failed | cancelled) — keeper ruling 2026-07-26, design review F1.
+  // This property held the OLD law and is what caught the change; it is
+  // rewritten deliberately, not relaxed (the `else running` arm still pins that
+  // NOTHING else reaches 'failed').
+  it('graphStatus laws: unsuccessful terminal dominates; done iff all done; else running', () => {
     fc.assert(
       fc.property(
         arbDag.chain((g) =>
@@ -311,7 +316,7 @@ describe('graph.ts properties', () => {
           });
           const status = graphStatus(graph, states);
           const vals = graph.nodes.map((node) => states[node.id]);
-          if (vals.some((v) => v === 'failed')) expect(status).toBe('failed');
+          if (vals.some((v) => v === 'failed' || v === 'cancelled')) expect(status).toBe('failed');
           else if (vals.every((v) => v === 'done')) expect(status).toBe('done');
           else expect(status).toBe('running');
         },

@@ -30,11 +30,25 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式:�
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.77.0`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-agent-sdk` = `0.77.0`
+**当前版本 `0.78.0`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-agent-sdk` = `0.78.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.78.0（2026-07-26）：设计审视四缝全修**——审视档
+`Public-Info-Pool/Resource/repo-engineering/maestro-sdk-design-review-20260726.md`，守密人同日四项裁定（均取推荐案）。
+四条**无一是算错了**，全部是「某个约定的射程没铺满」——五轮审计 67 项、三套性质测试、六靶变异棘轮（地板 97–100）全数漏过，
+因为这类缺口不产生任何测试信号。**F1** 0.76.0 新增的 `cancelled` 终态没穿透场景层（三处硬编码 `done || failed`），
+默认 `drainTimeoutMs` 不设时用户取消 → 工作流 / 目标追逐永久挂死；现 `graphStatus` 按守密人裁定判 fail-fast、
+`GoalChaser` 认全部终态并以新 action `'cancelled'` 结案（不问 evaluator），新增 `UNSUCCESSFUL_TERMINAL_STATES` +
+`isTerminal` / `isUnsuccessfulTerminal`，并**加治理守卫**禁止 src 内把终态判定写成字面量对（带在码内的
+`terminal-literal-ok:` 例外口 + 自陈射程边界）。**F2** 驱动器新增 `maxConcurrent`（实测 200 到期 → 峰值 200；
+宿主无法自行补救，executor 内排队会空烧租约）+ 台账 `claimDue(now,{limit})`。**F3** 新增可选存储缝
+`deleteSession?` + 网关 `TaskLedger.purgeSession`（持互斥、拒非终态、缺缝响亮失败；契约套件 +4 检查）。
+**F4** `run({signal})` / `chase(config,{signal})` 收 AbortSignal，共用的 `waitOrAbort` 恒清定时器。
+测试 362 → **400**；三套机制均经逐条回退负控实证（6 例转红）后还原。
+**未纳入（不在裁定射程）**：`Scheduler` 恢复仍做无过滤全表扫；F5「重开」语义仍挂待裁。
 
 **v0.77.0（2026-07-26）：锁步对齐（agent 侧 Windows 正确性清扫）**——本包零代码改动。
 值得记一笔：同一轮 Windows 探路里 agent SDK 15 个测试档失败，**maestro 362/362 全绿、无需任何改动**——

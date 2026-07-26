@@ -16,6 +16,14 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.78.0 — 2026-07-26
+
+Lockstep alignment only — **no changes to this package**. The family version
+clock advanced for silver-core-maestro-sdk 0.78.0 (design-review remediation:
+the `cancelled` terminal reaching the scenario layer, a driver concurrency cap,
+a retention seam, and an abort seam on the two long-running components). See
+that package's CHANGELOG.
+
 ## 0.77.0 — 2026-07-26
 
 Windows correctness sweep — the first CI run this family ever had on a

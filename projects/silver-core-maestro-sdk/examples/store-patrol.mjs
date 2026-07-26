@@ -72,6 +72,19 @@ export function fileLedgerStore(filePath) {
     async listQueries(sessionId) {
       return state.queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
     },
+    // Optional retention seam (0.78.0): the ledger is append-only without it,
+    // and a daily patrol accretes two sessions plus two query rows per day
+    // forever. Deleting the session MUST take its query rows with it, or the
+    // orphans defeat the purpose. Reached only through
+    // TaskLedger.purgeSession, which holds the session mutex and refuses
+    // non-terminal rows.
+    async deleteSession(id) {
+      if (state.sessions[id] === undefined) return false;
+      delete state.sessions[id];
+      state.queries = state.queries.filter((q) => q.sessionId !== id);
+      save();
+      return true;
+    },
   };
 }
 

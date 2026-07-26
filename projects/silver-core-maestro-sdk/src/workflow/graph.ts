@@ -9,6 +9,7 @@
  */
 
 import type { SessionState } from '../ledger/types.js';
+import { isUnsuccessfulTerminal } from '../ledger/state.js';
 
 /** One node of a workflow graph. The whole graph is data (JSON-shaped). */
 export interface WorkflowNode {
@@ -165,10 +166,18 @@ export function readyNodes(
 }
 
 /**
- * Aggregate status. Any 'failed' node fails the run immediately (fail-fast
- * precedence — checked before completeness); all nodes 'done' completes it;
- * anything else (undispatched / pending / running / retrying) keeps it
- * running.
+ * Aggregate status. Any UNSUCCESSFUL TERMINAL node fails the run immediately
+ * (fail-fast precedence — checked before completeness); all nodes 'done'
+ * completes it; anything else (undispatched / pending / running / retrying)
+ * keeps it running.
+ *
+ * `cancelled` counts as a run failure (keeper ruling 2026-07-26, design
+ * review F1): once a node is cancelled, every node downstream of it can never
+ * become ready (readiness requires deps 'done'), so continuing the run cannot
+ * finish it — reporting 'running' forever was the bug. Hosts that need to tell
+ * "failed" from "cancelled" read it off the node session's state /
+ * cancelReason, which the returned `states` map carries; the aggregate status
+ * deliberately stays a three-value verdict.
  */
 export function graphStatus(
   graph: WorkflowGraph,
@@ -177,7 +186,7 @@ export function graphStatus(
   let allDone = true;
   for (const node of graph.nodes) {
     const state = stateOf(states, node.id);
-    if (state === 'failed') return 'failed';
+    if (state !== undefined && isUnsuccessfulTerminal(state)) return 'failed';
     if (state !== 'done') allDone = false;
   }
   return allDone ? 'done' : 'running';

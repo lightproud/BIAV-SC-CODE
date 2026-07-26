@@ -20,8 +20,15 @@ export type GoalVerdict =
  * - continue:   not achieved, rounds remain, re-initiate with feedback
  * - impossible: evaluator declared the goal unreachable, stop
  * - exhausted:  round budget spent without attainment, stop
+ * - cancelled:  the host cancelled a round's session, stop (0.78.0)
+ *
+ * `cancelled` is NEVER returned by nextGoalAction: it is not a verdict about
+ * the goal, it is the host having said "stop, forever" about one round's
+ * session. GoalChaser settles on it WITHOUT consulting the evaluator (asking
+ * the judge to rule on a round the host itself cancelled is meaningless), so
+ * this pure core keeps its four-verdict decision table unchanged.
  */
-export type GoalAction = 'done' | 'continue' | 'impossible' | 'exhausted';
+export type GoalAction = 'done' | 'continue' | 'impossible' | 'exhausted' | 'cancelled';
 
 /**
  * Precedence (fixed): achieved beats everything; impossible beats

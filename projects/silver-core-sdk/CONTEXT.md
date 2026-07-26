@@ -69,11 +69,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.77.0`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-maestro-sdk` = `0.77.0`
+**当前版本 `0.78.0`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-maestro-sdk` = `0.78.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.78.0（2026-07-26）：锁步对齐**——本包**零代码改动**。家族版本钟因 silver-core-maestro-sdk 0.78.0（设计审视四缝全修：`cancelled` 终态穿透场景层 / 驱动器并发上限 / 台账保留缝 / 长跑组件中止缝）整体前进，详见该包 CHANGELOG。
 
 **v0.77.0（2026-07-26）：Windows 正确性清扫（家族史上第一次非 Linux CI 实跑 + 守密人现场反馈
 「SDK 在 windows 环境工具调用经常犯蠢」）**——3200+ 测试一直全绿，却**一条都看不见**这些问题：

@@ -272,14 +272,74 @@ const CAS_CHECKS: Array<[string, Check]> = [
   ],
 ];
 
+/**
+ * OPTIONAL deleteSession checks (0.78.0, design review F3): run only when the
+ * store implements the retention seam. The contract's hard part is that
+ * deleting a session must delete ITS QUERY ROWS too — a store that removes
+ * only the session row leaves exactly the accretion the seam exists to bound,
+ * and the orphans would resurface under a re-used id.
+ */
+const DELETE_CHECKS: Array<[string, Check]> = [
+  [
+    'deleteSession removes the session row and reports true',
+    async (store) => {
+      await store.putSession(session({ state: 'done' }));
+      const removed = await store.deleteSession!('s1');
+      if (removed !== true) fail('delete', 'deleting an existing session returned false');
+      const got = await store.getSession('s1');
+      if (got !== null) fail('delete', 'session still readable after deleteSession');
+      const listed = await store.listSessions();
+      if (listed.some((s) => s.id === 's1')) fail('delete', 'deleted session still listed');
+    },
+  ],
+  [
+    "deleteSession removes the session's query rows too",
+    async (store) => {
+      await store.putSession(session({ state: 'done' }));
+      await store.appendQuery(query({ id: 'q1', attempt: 1 }));
+      await store.appendQuery(query({ id: 'q2', attempt: 2 }));
+      await store.deleteSession!('s1');
+      const rows = await store.listQueries('s1');
+      if (rows.length !== 0) {
+        fail('delete', `${rows.length} orphan query row(s) survived deleteSession`);
+      }
+    },
+  ],
+  [
+    'deleteSession leaves OTHER sessions and their queries intact',
+    async (store) => {
+      await store.putSession(session({ id: 's1', state: 'done' }));
+      await store.putSession(session({ id: 's2', state: 'done' }));
+      await store.appendQuery(query({ id: 'q1', sessionId: 's1' }));
+      await store.appendQuery(query({ id: 'q2', sessionId: 's2' }));
+      await store.deleteSession!('s1');
+      if ((await store.getSession('s2')) === null) fail('delete', 'deleted a bystander session');
+      const rows = await store.listQueries('s2');
+      if (rows.length !== 1) fail('delete', `bystander query rows clobbered: ${rows.length}`);
+    },
+  ],
+  [
+    'deleteSession on an unknown id reports false and changes nothing',
+    async (store) => {
+      await store.putSession(session({ state: 'done' }));
+      const removed = await store.deleteSession!('nope');
+      if (removed !== false) fail('delete', 'deleting an absent session returned true');
+      if ((await store.getSession('s1')) === null) fail('delete', 'no-op delete removed a row');
+    },
+  ],
+];
+
 /** The check names, in run order (for report display / count pinning).
- *  Base checks only; pass { withPutSessionIf: true } to include the optional
- *  conditional-put checks appended when a store implements that seam. */
-export function ledgerStoreContractCheckNames(opts?: { withPutSessionIf?: boolean }): string[] {
+ *  Base checks only; the optional flags append the seam checks that a store
+ *  implementing those seams is additionally run through. */
+export function ledgerStoreContractCheckNames(opts?: {
+  withPutSessionIf?: boolean;
+  withDeleteSession?: boolean;
+}): string[] {
   const names = CHECKS.map(([name]) => name);
-  return opts?.withPutSessionIf === true
-    ? [...names, ...CAS_CHECKS.map(([name]) => name)]
-    : names;
+  if (opts?.withPutSessionIf === true) names.push(...CAS_CHECKS.map(([name]) => name));
+  if (opts?.withDeleteSession === true) names.push(...DELETE_CHECKS.map(([name]) => name));
+  return names;
 }
 
 /**
@@ -294,12 +354,16 @@ export async function runLedgerStoreContractSuite(
   // falls back to the base checks, each of which lands the failure in the
   // report through its own makeStore call.
   let hasCas = false;
+  let hasDelete = false;
   try {
-    hasCas = (await makeStore()).putSessionIf !== undefined;
+    const probe = await makeStore();
+    hasCas = probe.putSessionIf !== undefined;
+    hasDelete = probe.deleteSession !== undefined;
   } catch {
     hasCas = false;
+    hasDelete = false;
   }
-  const checks = hasCas ? [...CHECKS, ...CAS_CHECKS] : CHECKS;
+  const checks = [...CHECKS, ...(hasCas ? CAS_CHECKS : []), ...(hasDelete ? DELETE_CHECKS : [])];
   const results: LedgerStoreContractResult[] = [];
   for (const [name, check] of checks) {
     try {

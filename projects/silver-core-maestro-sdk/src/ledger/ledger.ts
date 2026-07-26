@@ -24,7 +24,13 @@ import { systemClock } from '../clock.js';
 import type { LedgerStore, SessionFilter } from './store.js';
 import type { QueryOutcome, QueryRecord, SessionRecord } from './types.js';
 import type { RetryPolicy } from './state.js';
-import { DEFAULT_RETRY_POLICY, InvalidTransitionError, backoffDelayMs, transition } from './state.js';
+import {
+  DEFAULT_RETRY_POLICY,
+  InvalidTransitionError,
+  backoffDelayMs,
+  isTerminal,
+  transition,
+} from './state.js';
 
 export interface TaskLedgerOptions {
   store: LedgerStore;
@@ -287,17 +293,39 @@ export class TaskLedger {
    * listed here (the dueBefore filter requires nextRunAt !== null) — that is
    * what makes dispatch({ runAt: null }) + claimSession race-free against a
    * co-resident driver polling claimDue.
+   *
+   * `opts.limit` (0.78.0) stops after that many SUCCESSFUL claims — the batch
+   * bound backing LedgerDriver.maxConcurrent (design review 2026-07-26 F2).
+   * It is counted in claims, not in listed candidates, so a limit of 3 always
+   * returns 3 claims when 3 are claimable, even if earlier candidates were
+   * moved by a rival between the listing and the claim. Sessions past the
+   * limit are left completely untouched — still due, still `pending` /
+   * `retrying`, with no attempts increment and no lease — so the next call
+   * picks them up as if this one had never run. Unset = claim everything due
+   * (prior behavior byte-for-byte).
    */
-  async claimDue(now: number = this.#clock.now()): Promise<SessionRecord[]> {
+  async claimDue(
+    now: number = this.#clock.now(),
+    opts: { limit?: number } = {},
+  ): Promise<SessionRecord[]> {
     if (!Number.isFinite(now)) {
       throw new RangeError(`claimDue: now must be a finite number, got ${now}`);
     }
+    if (opts.limit !== undefined && (!Number.isInteger(opts.limit) || opts.limit < 0)) {
+      throw new RangeError(
+        `claimDue: limit must be an integer >= 0 when given, got ${opts.limit}`,
+      );
+    }
+    // A limit of 0 must not even reach the store: the driver's zero-slot tick
+    // relies on "claim nothing" being free of side effects and of I/O.
+    if (opts.limit === 0) return [];
     const due = await this.#store.listSessions({
       states: ['pending', 'retrying'],
       dueBefore: now,
     });
     const claimed: SessionRecord[] = [];
     for (const listed of due) {
+      if (opts.limit !== undefined && claimed.length >= opts.limit) break;
       // Per-session isolation (audit r2): one session's failure must not
       // abandon the rest of the batch. A session whose claim write is not
       // applied is simply not returned; whatever the store actually holds
@@ -511,6 +539,11 @@ export class TaskLedger {
       // Terminal branch: the attempt is already settled; backfill or throw
       // exactly as the transition graph dictates (terminal states accept no
       // event) — never both, and a rejected call never touches the store.
+      // terminal-literal-ok: this is "settled BY AN ATTEMPT", deliberately NOT
+      // the terminal set — `cancelled` is terminal too but is handled by its
+      // own branch above (no backfill: a cancel's audit row belongs to
+      // cancelSession). Widening this to isTerminal would let a late attempt
+      // result backfill into a cancelled session.
       if (session.state === 'done' || session.state === 'failed') {
         if (backfillable(session.state === 'done' ? 'ok' : 'failure')) {
           await this.#store.appendQuery(this.#queryRow(sessionId, session.attempts, result));
@@ -696,6 +729,60 @@ export class TaskLedger {
         }
         return { ...updated, revision: (session.revision ?? 0) + 1 };
       }
+    });
+  }
+
+  /**
+   * Purge a TERMINAL session and its query rows (0.78.0, design review
+   * 2026-07-26 F3): the host's retention primitive. The ledger is otherwise
+   * append-only forever — a daily production loop accretes sessions and audit
+   * rows with nothing reclaiming them — and a host reclaiming space behind the
+   * SDK's back would also bypass the per-session mutex and the CAS fence, so
+   * the operation belongs here.
+   *
+   * Contract:
+   * - Requires the store's OPTIONAL `deleteSession` seam; without it this
+   *   throws a TypeError naming the seam rather than silently no-opping (a
+   *   retention sweep that quietly reclaims nothing is worse than one that
+   *   fails, because the growth keeps going while the host believes it does
+   *   not).
+   * - Refuses NON-TERMINAL sessions (RangeError): purging a `running` session
+   *   would strand its in-flight attempt with nowhere to settle, and purging a
+   *   `pending`/`retrying` one silently cancels work without the cancel audit
+   *   trail that cancelSession exists to leave. Cancel first, then purge.
+   * - Returns false for an unknown id, so a sweep over stale ids is
+   *   idempotent.
+   * - Takes the session's mutex, so it cannot interleave with a co-resident
+   *   read or write of the same session on this instance. Across PROCESSES
+   *   there is no CAS to fence a purge (the row is gone, not versioned) —
+   *   purge from one place, on sessions old enough that nothing is looking at
+   *   them.
+   *
+   * HAZARD, by design and not fixable here: for sessions whose id IS
+   * bookkeeping, deleting the row deletes the bookkeeping. Purging
+   * `sched:{specId}:{fireAt}` rows makes Scheduler recovery lose that spec's
+   * footprint and re-anchor at `now`; purging `wf:{graph}:{run}:{node}` rows
+   * makes a WorkflowRun re-dispatch that node as if it had never run. Both are
+   * the resume contract working as documented, so a retention policy must keep
+   * the newest fire per spec and must not touch unfinished runs.
+   */
+  async purgeSession(sessionId: string): Promise<boolean> {
+    const del = this.#store.deleteSession;
+    if (del === undefined) {
+      throw new TypeError(
+        'purgeSession: the injected LedgerStore does not implement the optional deleteSession seam',
+      );
+    }
+    return this.#withLock(sessionId, async () => {
+      const session = await this.#store.getSession(sessionId);
+      if (session === null) return false;
+      if (!isTerminal(session.state)) {
+        throw new RangeError(
+          `purgeSession: session '${sessionId}' is '${session.state}', not terminal — ` +
+            'cancel or settle it first (purging live work strands its attempt)',
+        );
+      }
+      return del.call(this.#store, sessionId);
     });
   }
 
