@@ -50,6 +50,28 @@ because every one of them ran in the POSIX dialect on a POSIX host.
   still wins, and nothing new leaks into the child environment). The candidate
   list is also de-duplicated — `ProgramFiles` and `ProgramW6432` are the same
   directory on any 64-bit host, so every candidate was probed twice.
+- **`add/removeDirectories` compared directory grants with a bare `path.resolve`**,
+  so on Windows `C:\Work\Data` and `c:/work/data` were two different strings for
+  one directory: a revocation could miss the grant it meant to cancel. Routed
+  through the same canonical space (`directoryKey`). Found by inspection while
+  fixing the rules above, not by the probe — no test varies the spelling.
+- **`EnterWorktree` rejected every valid target on Windows.** git prints POSIX
+  separators even there (`rev-parse --show-toplevel`, `worktree list
+  --porcelain` both say `C:/Users/...`), so a REGISTERED worktree never matched
+  the Node-side spelling and the tool answered "is not a registered worktree"
+  for all of them. Normalized at the boundary the paths cross back over.
+- **A missing `cwd` was reported as a missing shell.** spawn ENOENT has two
+  causes; the Bash tool collapsed both into `No POSIX shell found`, so a host
+  with a bad working directory was confidently sent off to install Git Bash —
+  worse than a raw errno, because it sounds authoritative. Split, with a
+  negative-controlled regression.
+- **The background-shell state directory leaked on Windows.** The tree kill
+  routes through taskkill and is asynchronous, so `dispose()`'s immediate
+  `rmSync` lost the race and the best-effort catch swallowed it silently. Now
+  retried briefly. NOTE, recorded because it is counter-intuitive: `rmSync`'s
+  `maxRetries` sleeps SYNCHRONOUSLY and blocks the very event loop the reaping
+  needs, so a LARGER budget does not help — anything wanting a guarantee has to
+  await.
 - **Glob and Grep spoke a different path dialect from the rest of the SDK.**
   `fast-glob` always emits POSIX separators, so on Windows they reported
   `C:/Users/x/a.txt` while Read/Write/Edit, error messages and `cwd` all said
@@ -69,7 +91,10 @@ teardown retries `rmSync` past EBUSY, the worktree suite canonicalizes
 `os.tmpdir()`'s 8.3 short name against the long name git reports, and the
 sandbox/file-store suites stop hardcoding POSIX separators.
 
-No behavior change on Linux or macOS: full suite 3236 passed + 5 skipped.
+No behavior change on Linux or macOS: full suite 3239 passed + 5 skipped.
+Measured on the probe, agent SDK unit suite: Windows 15 failed files -> 1
+(a teardown race, fixed by awaiting), macOS -> 0. maestro passed 362/362 on
+both platforms with no changes at any point.
 
 ## 0.76.0 — 2026-07-22
 
