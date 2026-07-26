@@ -14,7 +14,7 @@ from uuid import uuid4
 
 from aggregator_base import (
     BILIBILI_MORIMENS_CREATORS, COLLAB_KEYWORDS, HOURS_LOOKBACK,
-    MAX_ITEMS_PER_FETCHER, REPO_ROOT, logger, strip_html_tags,
+    MAX_ITEMS_PER_FETCHER, logger, strip_html_tags,
 )
 from news_common import bilibili_spi_cookies, get_wbi_mixin_key, sign_wbi_params
 from sources import REGION_APPS  # 区服 app 标识单一真相源（2026-06-21 采集源命名规范）

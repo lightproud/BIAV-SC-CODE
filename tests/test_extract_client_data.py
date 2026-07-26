@@ -5,7 +5,6 @@ so we inject lightweight stubs into ``sys.modules`` before importing. No real
 UnityPy / PIL / client files are touched; all I/O runs through tempfile.
 """
 
-import json
 import sys
 import tempfile
 import types

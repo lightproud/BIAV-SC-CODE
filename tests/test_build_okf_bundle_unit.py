@@ -5,7 +5,6 @@
 """
 from __future__ import annotations
 
-import json
 import sys
 import tarfile
 from pathlib import Path
@@ -16,39 +15,40 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 import build_kb_index as bki
 import build_okf_bundle as bok
+import okf_frontmatter as okfm
 import okf_pointer_layers as opl
 
 
 # --- _yaml_scalar -----------------------------------------------------------
 
 def test_yaml_scalar_quotes_and_escapes():
-    assert bok._yaml_scalar("abc") == '"abc"'
+    assert okfm._yaml_scalar("abc") == '"abc"'
     # backslash + quote escaped
-    assert bok._yaml_scalar('a"b') == '"a\\"b"'
-    assert bok._yaml_scalar("a\\b") == '"a\\\\b"'
+    assert okfm._yaml_scalar('a"b') == '"a\\"b"'
+    assert okfm._yaml_scalar("a\\b") == '"a\\\\b"'
 
 
 def test_yaml_scalar_strips_newlines_and_cr():
-    out = bok._yaml_scalar("line1\nline2\r more")
+    out = okfm._yaml_scalar("line1\nline2\r more")
     assert "\n" not in out and "\r" not in out
     assert out.startswith('"') and out.endswith('"')
 
 
 def test_yaml_scalar_coerces_non_str():
-    assert bok._yaml_scalar(123) == '"123"'
+    assert okfm._yaml_scalar(123) == '"123"'
 
 
 # --- frontmatter ------------------------------------------------------------
 
 def test_frontmatter_requires_type():
     with pytest.raises(AssertionError):
-        bok.frontmatter({"title": "x"})
+        okfm.frontmatter({"title": "x"})
     with pytest.raises(AssertionError):
-        bok.frontmatter({"type": ""})
+        okfm.frontmatter({"type": ""})
 
 
 def test_frontmatter_orders_known_keys_first():
-    fm = bok.frontmatter({
+    fm = okfm.frontmatter({
         "timestamp": "2026-01-01",
         "type": "character",
         "title": "Erica",
@@ -62,19 +62,19 @@ def test_frontmatter_orders_known_keys_first():
 
 
 def test_frontmatter_emits_list_as_inline_array():
-    fm = bok.frontmatter({"type": "t", "tags": ["a", "b"]})
+    fm = okfm.frontmatter({"type": "t", "tags": ["a", "b"]})
     assert 'tags: ["a", "b"]' in fm
 
 
 def test_frontmatter_skips_empty_values():
-    fm = bok.frontmatter({"type": "t", "title": "", "description": None, "tags": []})
+    fm = okfm.frontmatter({"type": "t", "title": "", "description": None, "tags": []})
     assert "title" not in fm
     assert "description" not in fm
     assert "tags" not in fm
 
 
 def test_frontmatter_includes_unknown_keys_after_known():
-    fm = bok.frontmatter({"type": "t", "custom_key": "v"})
+    fm = okfm.frontmatter({"type": "t", "custom_key": "v"})
     assert 'custom_key: "v"' in fm
 
 

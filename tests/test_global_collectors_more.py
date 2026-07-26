@@ -1,7 +1,7 @@
 import importlib
 import sys
 import unittest
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 from unittest import mock
 

@@ -14,7 +14,6 @@ community/news-output 的归档路径解析**共用 archive_layout 单一真相�
 """
 from __future__ import annotations
 
-import csv
 import json
 import re
 import sys
@@ -28,47 +27,13 @@ TODAY = date.today().isoformat()
 sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
 import archive_layout  # noqa: E402  归档布局单一真相源（community/news-output 路径推导共用）
 
-# ---------------------------------------------------------------------------
-# YAML frontmatter helpers — 与 build_okf_bundle 同契约（刻意自持，避免循环 import）
-# ---------------------------------------------------------------------------
-
-_FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
-
-
-def _yaml_scalar(value: str) -> str:
-    s = str(value).replace("\r", " ").replace("\n", " ").strip()
-    s = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{s}"'
-
-
-def frontmatter(fields: dict) -> str:
-    assert fields.get("type"), "OKF concept frontmatter MUST carry a non-empty 'type'"
-    lines = ["---"]
-    order = ["type", "title", "description", "resource", "tags", "timestamp"]
-    for key in order + [k for k in fields if k not in order]:
-        if key not in fields:
-            continue
-        val = fields[key]
-        if val is None or val == "" or val == []:
-            continue
-        if isinstance(val, list):
-            inner = ", ".join(_yaml_scalar(v) for v in val)
-            lines.append(f"{key}: [{inner}]")
-        else:
-            lines.append(f"{key}: {_yaml_scalar(val)}")
-    lines.append("---")
-    return "\n".join(lines)
-
-
-def write_concept(path: Path, fields: dict, body: str) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(frontmatter(fields) + "\n\n" + body.rstrip() + "\n", encoding="utf-8")
-
-
-def write_plain(path: Path, body: str) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(body.rstrip() + "\n", encoding="utf-8")
-
+# frontmatter 读写单一真相源：与 build_okf_bundle 同契约，且现在**同一份实现**
+# （原「刻意自持避免循环 import」的抄写已下沉到 okf_frontmatter，无循环可言）。
+from okf_frontmatter import (  # noqa: E402
+    _FM_RE,
+    write_concept,
+    write_plain,
+)
 
 # ---------------------------------------------------------------------------
 # Shared derivation helpers (deterministic, zero-throw: single file never aborts a layer)

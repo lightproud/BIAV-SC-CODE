@@ -11,7 +11,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-import silver_tokenizer as st
 from silver_tokenizer import tokenize, domain_dict, _seg_cjk, _walk_strings
 
 

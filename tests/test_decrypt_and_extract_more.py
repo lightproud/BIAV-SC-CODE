@@ -13,7 +13,6 @@ import types
 from pathlib import Path
 from unittest import mock
 
-import pytest
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "projects" / "wiki" / "scripts"
 sys.path.insert(0, str(SCRIPTS))

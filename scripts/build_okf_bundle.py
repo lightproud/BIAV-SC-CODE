@@ -36,6 +36,13 @@ import archive_layout  # noqa: E402  归档布局单一真相源（source 指针
 import build_kb_index  # noqa: E402  运行时导航索引生成器（消费本 bundle，跑在末尾）
 import okf_pointer_layers as opl  # noqa: E402  全仓知识组织：新增指针概念层（放指针不放本体）
 import silver_aliases  # noqa: E402  厚锚别名侧表（chunk3；缺表优雅返空，构建不炸）
+# frontmatter 读写单一真相源（写方 / 读方同源，见 okf_frontmatter.py）
+from okf_frontmatter import (  # noqa: E402
+    _read_frontmatter,
+    frontmatter,
+    write_concept,
+    write_plain,
+)
 
 CHARACTERS_SRC = REPO / "projects/wiki/data/processed/characters.json"
 SOURCE_HEALTH = REPO / "projects/news/output/source-health.json"
@@ -43,51 +50,6 @@ NEWS_DATA = REPO / "projects/news/data"
 STORY_DIR = REPO / "projects/wiki/data/processed/story"
 
 TODAY = date.today().isoformat()
-
-# ---------------------------------------------------------------------------
-# YAML frontmatter helpers (minimal, dependency-free; OKF frontmatter is a
-# small flat set of scalar/list fields so we hand-emit conformant YAML).
-# ---------------------------------------------------------------------------
-
-def _yaml_scalar(value: str) -> str:
-    """Quote a scalar so it round-trips through any YAML parser."""
-    s = str(value).replace("\r", " ").replace("\n", " ").strip()
-    # Always double-quote; escape backslash and quote.
-    s = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{s}"'
-
-
-def frontmatter(fields: dict) -> str:
-    """Emit a YAML frontmatter block. ``type`` is required by OKF."""
-    assert fields.get("type"), "OKF concept frontmatter MUST carry a non-empty 'type'"
-    lines = ["---"]
-    # priority order per OKF spec: type, title, description, resource, tags, timestamp
-    order = ["type", "title", "description", "resource", "tags", "timestamp"]
-    for key in order + [k for k in fields if k not in order]:
-        if key not in fields:
-            continue
-        val = fields[key]
-        if val is None or val == "" or val == []:
-            continue
-        if isinstance(val, list):
-            inner = ", ".join(_yaml_scalar(v) for v in val)
-            lines.append(f"{key}: [{inner}]")
-        else:
-            lines.append(f"{key}: {_yaml_scalar(val)}")
-    lines.append("---")
-    return "\n".join(lines)
-
-
-def write_concept(path: Path, fields: dict, body: str) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(frontmatter(fields) + "\n\n" + body.rstrip() + "\n", encoding="utf-8")
-
-
-def write_plain(path: Path, body: str) -> None:
-    """Reserved files (index.md / log.md) carry NO frontmatter."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(body.rstrip() + "\n", encoding="utf-8")
-
 
 # ---------------------------------------------------------------------------
 # Layer 1: characters (一概念一文件) — high-value wiki concept layer
@@ -626,25 +588,7 @@ OKF 的「格式即契约，两端工具独立可换」正是银芯→黑池**�
 # ---------------------------------------------------------------------------
 
 RESERVED = {"index.md", "log.md"}
-_FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
 _LINK_RE = re.compile(r"\]\((/[A-Za-z0-9_./-]+\.md)\)")
-
-
-def _read_frontmatter(text: str) -> dict:
-    m = _FM_RE.match(text)
-    fields: dict = {}
-    if not m:
-        return fields
-    for line in m.group(1).splitlines():
-        if not line.strip() or line.startswith(" ") or ":" not in line:
-            continue
-        key, _, val = line.partition(":")
-        key, val = key.strip(), val.strip()
-        if val.startswith("[") and val.endswith("]"):
-            fields[key] = [v.strip().strip('"') for v in val[1:-1].split(",") if v.strip()]
-        else:
-            fields[key] = val.strip('"')
-    return fields
 
 
 # Deployed-page deep-links (verified live 200 on GitHub Pages). The visualizer is

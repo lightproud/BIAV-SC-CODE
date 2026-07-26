@@ -5,11 +5,9 @@
 
 import io
 import json
-import os
 import sys
 import tarfile
 import urllib.request
-from contextlib import contextmanager
 from pathlib import Path
 
 import pytest

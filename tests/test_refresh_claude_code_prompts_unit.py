@@ -11,7 +11,6 @@ Pinned semantics（读码确认的意图，逐条钉死）：
   - 克隆失败 / 空克隆（rev-parse HEAD 炸）-> CalledProcessError 响亮上抛，DEST 原封不动。
 """
 
-import shutil
 import subprocess
 import sys
 from pathlib import Path
