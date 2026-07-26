@@ -183,6 +183,40 @@ jobs:
         if: steps.changes.outputs.run == 'true'
         run: node scripts/check-version-bump.mjs
 
+  # macOS leg (keeper ruling 2026-07-26, after the platform probe measured it
+  # fully green: 3239 passed / 0 failed). A SEPARATE job, deliberately NOT an
+  # `os` matrix on `unit` above — a matrix renames that job to
+  # "unit tests (ubuntu-latest)", and its current name IS a required status
+  # check on main, so matrixing it would deadlock every PR waiting for a check
+  # name that no longer exists.
+  #
+  # Not required either: this leg reports, it does not gate. Windows stays on
+  # the manual probe for one more observation round before it earns a standing
+  # leg (same ruling).
+  unit-macos:
+    name: Silver Core Agent SDK / unit tests (macOS)
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Test (keyless, includes emulator e2e)
+        run: npm test
+
   conformance:
     name: Silver Core Agent SDK / conformance
     # Conformance suite M1-M3 (design final 2026-07-05): the full L1-L4
