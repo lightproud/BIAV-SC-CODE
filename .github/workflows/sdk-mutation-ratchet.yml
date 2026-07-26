@@ -56,17 +56,50 @@ jobs:
       - id: read
         run: |
           set -euo pipefail
+          # Cadence gate (keeper ruling 2026-07-26, product review P2). A target
+          # may carry "cadence": "monthly"; absent means weekly. Monthly targets
+          # guard module families with zero real call sites — they keep their
+          # floors and tests, they just do not need re-measuring every week.
+          #
+          # Monthly rounds fire on the FIRST scheduled Monday of the month
+          # (the cron is Mondays, so day-of-month <= 7 is that Monday). ANY
+          # manual dispatch runs the full set: when a human comes looking, they
+          # get everything.
+          INCLUDE_MONTHLY=0
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            INCLUDE_MONTHLY=1
+          elif [ "$(date -u +%d)" -le 07 ]; then
+            INCLUDE_MONTHLY=1
+          fi
+          echo "include_monthly=$INCLUDE_MONTHLY (event=${{ github.event_name }}, day=$(date -u +%d))"
           emit() {
             local file="$1" key="$2"
-            local list
-            list=$(node -e "
+            local list skipped
+            list=$(INCLUDE_MONTHLY="$INCLUDE_MONTHLY" node -e "
               const b = require('./$file');
-              const names = (b.targets ?? []).map((t) => t.name);
-              if (names.length === 0) { console.error('no targets in $file'); process.exit(2); }
+              const all = b.targets ?? [];
+              if (all.length === 0) { console.error('no targets in $file'); process.exit(2); }
+              const monthly = process.env.INCLUDE_MONTHLY === '1';
+              const names = all
+                .filter((t) => monthly || (t.cadence ?? 'weekly') !== 'monthly')
+                .map((t) => t.name);
+              if (names.length === 0) { console.error('cadence filter emptied $file'); process.exit(2); }
               process.stdout.write(JSON.stringify(names));
+            ")
+            # No silent caps: whatever this round does NOT measure gets named.
+            skipped=$(INCLUDE_MONTHLY="$INCLUDE_MONTHLY" node -e "
+              const b = require('./$file');
+              const monthly = process.env.INCLUDE_MONTHLY === '1';
+              const names = (b.targets ?? [])
+                .filter((t) => !monthly && (t.cadence ?? 'weekly') === 'monthly')
+                .map((t) => t.name);
+              process.stdout.write(names.join(', '));
             ")
             echo "$key=$list" >> "$GITHUB_OUTPUT"
             echo "$key: $list"
+            if [ -n "$skipped" ]; then
+              echo "$key SKIPPED this round (monthly cadence): $skipped"
+            fi
           }
           emit projects/silver-core-sdk/mutation-ratchet.json agent
           emit projects/silver-core-maestro-sdk/mutation-ratchet.json maestro

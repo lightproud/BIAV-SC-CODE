@@ -1097,7 +1097,19 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Build 银芯 OKF v0.1 bundle.")
     ap.add_argument("--tarball", metavar="PATH",
                     help="额外打包 bundle 为 .tar.gz（银芯→黑池单向输出物）")
+    ap.add_argument("--allow-missing-archive", action="store_true",
+                    help="放行「社区归档数据源整体缺席」这一情形（默认拒绝生成）——"
+                         "只在数据湖确已废弃、就是要让那些指针概念消失时使用")
     args = ap.parse_args()
+
+    # 数据源在场检查，**刻意跑在 rmtree 之前**：本函数的形状是「先擦后写」，
+    # 所以输入静默降级就等于静默删除。缺席时必须在擦掉任何东西之前就退出。
+    # 详见 okf_pointer_layers.preflight_archive_source 的长注（2026-07-26 亲历两次）。
+    try:
+        preflight_flags = opl.preflight_archive_source(allow_missing=args.allow_missing_archive)
+    except opl.ArchiveSourceMissing as exc:
+        print(f"build_okf_bundle: 拒绝生成 —— {exc}", file=sys.stderr)
+        raise SystemExit(2) from exc
 
     if BUNDLE.exists():
         shutil.rmtree(BUNDLE)
@@ -1126,6 +1138,7 @@ def main() -> None:
     print(f"  visualizer: okf/visualizer.html (self-contained)")
     print(f"  kb_index: okf/kb_index.json ({kb['stats']['concepts']} concepts / "
           f"{kb['stats']['terms']} terms — 运行时导航底座)")
+    discipline_flags = preflight_flags + discipline_flags
     if discipline_flags:
         print(f"  discipline flags ({len(discipline_flags)}):")
         for fl in discipline_flags:

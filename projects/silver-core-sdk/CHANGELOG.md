@@ -16,6 +16,15 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.79.0 — 2026-07-26
+
+Lockstep alignment only — no agent-side changes. The family clock advanced for
+silver-core-maestro-sdk 0.79.0 (reopen semantics + its CONCURRENCY doc + the
+ratchet cadence split). Two entries in THIS ledger were corrected in the same
+batch: 0.72.0 and 0.70.0 were lockstep no-ops written as "Lockstep alignment
+with …", which the new `scripts/sdk_substantive_versions.py` parser scored as
+substantive changes; they now use the canonical opening. Content unchanged.
+
 ## 0.78.1 — 2026-07-26
 
 Lockstep alignment only — **no changes to this package**. The family version
@@ -186,8 +195,8 @@ that had been deferred to the keeper rather than fixed in-batch.
 
 ## 0.72.0 — 2026-07-18
 
-Lockstep alignment with silver-core-maestro-sdk 0.72.0 (T56 audit round 2:
-16 defects fixed, incl. three P1s). No agent-side changes.
+Lockstep alignment only — no agent-side changes. Bumped with silver-core-maestro-sdk 0.72.0 (T56 audit round 2:
+16 defects fixed, incl. three P1s).
 
 ## 0.71.3 — 2026-07-18
 
@@ -384,7 +393,7 @@ are covered by the W10-1 kill-tests.
 
 ## 0.70.0 — 2026-07-18
 
-Lockstep alignment with silver-core-maestro-sdk 0.70.0 (maestro audit
+Lockstep alignment only — no agent-side changes. Bumped with silver-core-maestro-sdk 0.70.0 (maestro audit
 round 1: 29 defects fixed + integration suites). No agent-side changes.
 
 ## 0.69.0 — 2026-07-18

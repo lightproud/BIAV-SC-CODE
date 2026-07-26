@@ -95,6 +95,29 @@ export interface SessionRecord {
    * cancelled" field-by-field.
    */
   cancelReason?: string | null;
+  /**
+   * The session this one reopens (0.79.0, design review F5 — keeper ruling
+   * 2026-07-26, option 甲). Set by `TaskLedger.reopenSession`, absent on every
+   * session that is not a reopen.
+   *
+   * Why a NEW session with a link, rather than a `failed -> pending` edge:
+   * terminal immutability is what the CAS fence, idempotent dispatch and
+   * "a restart never resurrects a settled session" all rest on. Reopening in
+   * place would make `done`/`failed` mean "settled for now", and every
+   * invariant that reads a terminal as final would have to be re-audited.
+   * So the closed state machine is untouched — what was missing was not an
+   * edge, it was the LINK: hosts already reopened by minting a new id
+   * (`store-patrol.mjs` appended `:r2`, `:r3`), and paid for it by having one
+   * logical job scattered across rows nothing tied together.
+   */
+  reopenOf?: string;
+  /**
+   * 1 for an original session, 2 for its first reopen, and so on (0.79.0).
+   * Derived from the predecessor at reopen time so a host can order a chain
+   * without walking it, and so "how many times did this job get reopened"
+   * is one field read rather than a traversal.
+   */
+  attemptRound?: number;
 }
 
 /** Query record: one execution attempt. Rounds are appended, never edited. */

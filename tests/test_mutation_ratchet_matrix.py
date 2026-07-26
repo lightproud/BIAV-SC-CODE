@@ -92,3 +92,60 @@ def test_every_floor_has_a_name_and_a_number(key: str) -> None:
     for t in json.loads(BASELINES[key].read_text(encoding="utf-8"))["targets"]:
         assert t.get("name"), f"{key}: 存在无 name 的靶 {t}"
         assert isinstance(t.get("floor"), (int, float)), f"{key}: 靶 {t.get('name')} 无数值地板"
+
+
+# ---------------------------------------------------------------------------
+# Cadence 分档（守密人 2026-07-26 裁定，产品审视 P2）
+#
+# 三个 maestro 靶守的是**全仓零真实调用点**的模块（goal / delivery / 声明式加载），
+# 六靶周检里三靶花在没人调用的代码上，故降为月检。这里的风险与 T64 同源、只是更轻：
+# **一个月才测一次的地板，如果 cadence 值写错、或过滤器被人删掉，会重新变成「没人跑的
+# 地板」而无人喊。** 故 cadence 本身也要有守卫。
+# ---------------------------------------------------------------------------
+
+VALID_CADENCE = {"weekly", "monthly"}
+
+
+@pytest.mark.parametrize("key", sorted(BASELINES))
+def test_cadence_values_are_from_the_closed_set(key: str) -> None:
+    """拼错的 cadence（'month' / 'Monthly'）会被过滤器当成 weekly 静默通过——
+    那不是错误的一边：靶照跑，只是分档没生效。所以拼写要在这里被钉死。"""
+    for t in json.loads(BASELINES[key].read_text(encoding="utf-8"))["targets"]:
+        cadence = t.get("cadence")
+        assert cadence is None or cadence in VALID_CADENCE, (
+            f"{key}: 靶 {t.get('name')} 的 cadence={cadence!r} 不在 {sorted(VALID_CADENCE)} 内"
+        )
+
+
+def test_the_targets_job_still_applies_a_cadence_filter() -> None:
+    """过滤器被删 = 月检靶悄悄回到周检（无害）**或**周检靶被漏掉（有害）。
+    不论哪一种，「baseline 写了 cadence 而生成器不看」都是两份真相源的老病复发。"""
+    body = yaml.dump(_workflow()["jobs"]["targets"], allow_unicode=True)
+    assert "cadence" in body, "targets job 不再读 cadence，但 baseline 里还写着——生成链与真相源脱节"
+    assert "INCLUDE_MONTHLY" in body, "cadence 门控变量消失"
+
+
+def test_monthly_targets_are_reachable_at_all() -> None:
+    """**本组最要紧的一条**：月检靶必须真有跑得到的路径。
+
+    降档的代价是「一个月才测一次」，不是「再也不测」——T64 的教训正是一个地板躺在
+    baseline 里从未被测过。这里断言 targets job 里确实存在把 INCLUDE_MONTHLY 置 1 的
+    分支（非 schedule 事件，或月初那个周一），否则月检靶就成了永不执行的死靶。
+    """
+    body = yaml.dump(_workflow()["jobs"]["targets"], allow_unicode=True)
+    assert "INCLUDE_MONTHLY=1" in body, "没有任何把 INCLUDE_MONTHLY 置 1 的分支——月检靶永不执行"
+    assert "date -u +%d" in body, "月检窗口的判据（月内日）不见了"
+
+
+def test_skipped_targets_are_printed_not_silently_dropped() -> None:
+    """无声上限就是撒谎:一轮没测的靶必须被点名，否则日志读起来像「全测了」。"""
+    body = yaml.dump(_workflow()["jobs"]["targets"], allow_unicode=True)
+    assert "SKIPPED this round" in body, "本轮跳过的靶未被打印——静默上限"
+
+
+def test_not_every_target_is_monthly() -> None:
+    """全员月检 = 周检工作流名存实亡；至少要有一个靶每周真跑。"""
+    for key in BASELINES:
+        targets = json.loads(BASELINES[key].read_text(encoding="utf-8"))["targets"]
+        weekly = [t for t in targets if t.get("cadence", "weekly") != "monthly"]
+        assert weekly, f"{key}: 所有靶都是月检，周检矩阵会空"

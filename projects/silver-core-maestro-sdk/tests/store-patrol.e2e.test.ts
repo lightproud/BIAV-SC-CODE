@@ -193,7 +193,9 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
     expect(result.failures[0].attempts).toBe(3);
     const ledgerFile = JSON.parse(fs.readFileSync(path.join(sandbox, 'state', 'ledger.json'), 'utf8'));
     expect(ledgerFile.queries.map((q: { outcome: string }) => q.outcome)).toEqual(['timeout', 'timeout', 'timeout']);
-    // A rerun the same day opens a fresh :rN retry session (failed is terminal).
+    // A rerun the same day REOPENS the failed session (failed is terminal, and
+    // 0.79.0's reopenSession owns the successor-id convention the example used
+    // to hand-roll: `#r{round}`, plus reopenOf/attemptRound provenance).
     storefront.hangRequests.forEach((r) => r.destroy());
     const retry = await drive(runStorePatrol({
       targets: [{ id: 'steam-appdetails', url: `${baseUrl}/appdetails`, extract: 'steam-appdetails', key: '77' }],
@@ -202,8 +204,12 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
       ...fastOpts,
     }));
     expect(retry.failures).toHaveLength(0);
-    expect(retry.sessions[0].id).toBe('patrol:steam-appdetails:2026-07-18:r2');
+    expect(retry.sessions[0].id).toBe('patrol:steam-appdetails:2026-07-18#r2');
     expect(retry.sessions[0].state).toBe('done');
+    // Provenance, which the old `:rN` convention could not carry: the reopen
+    // names its predecessor, and the chain reassembles without parsing ids.
+    expect(retry.sessions[0].reopenOf).toBe('patrol:steam-appdetails:2026-07-18');
+    expect(retry.sessions[0].attemptRound).toBe(2);
   }, 15_000);
 
   it('crash-orphaned running session is swept into the retry path and recovered (G1)', async () => {

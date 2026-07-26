@@ -733,6 +733,139 @@ export class TaskLedger {
   }
 
   /**
+   * Reopen a settled session as a NEW session that links back to it (0.79.0,
+   * design review F5 — keeper ruling 2026-07-26, option 甲).
+   *
+   * The closed state machine is deliberately UNTOUCHED. Terminal immutability
+   * is what the CAS fence, idempotent dispatch and "a restart never
+   * resurrects a settled session" all rest on; adding a `failed -> pending`
+   * edge would make `done`/`failed` mean "settled for now" and put every
+   * invariant that treats a terminal as final back up for audit. What was
+   * actually missing was never an edge — it was the LINK. Hosts already
+   * reopened by minting a new id (`examples/store-patrol.mjs` appended
+   * `:r2`, `:r3` in a loop) and paid three costs for it: one logical job
+   * scattered across rows nothing tied together, an audit that had to be
+   * reassembled by id prefix, and every host inventing its own convention.
+   * This method makes the SDK own the convention.
+   *
+   * Contract:
+   * - The predecessor must exist and be TERMINAL (RangeError otherwise —
+   *   reopening live work would run the same job twice).
+   * - `cancelled` predecessors are reopenable BY DEFAULT NO: a cancel means
+   *   "stop this, forever", so reopening one silently defies the user.
+   *   Pass `{ force: true }` when the host genuinely means "the user cancelled
+   *   it, now they asked for it again" — the link records what happened either
+   *   way.
+   * - The new session id defaults to `{predecessorId}#r{round}`, which keeps
+   *   the whole chain greppable by prefix. `#` is used rather than `:`
+   *   because `:` is the session-key segment separator that four id builders
+   *   (schedule / workflow / goal / delivery) are forbidden from containing.
+   *   Pass `id` to override.
+   * - `intent`, `payload` and `maxAttempts` default to the predecessor's, so
+   *   the common case ("run that again") is a one-argument call; each can be
+   *   overridden.
+   * - Dispatch is the normal `dispatch()` path — same duplicate-id guard, so
+   *   two hosts racing a reopen produce one session, not two, and the loser
+   *   gets `DuplicateSessionError`.
+   */
+  async reopenSession(
+    sessionId: string,
+    opts: {
+      id?: string;
+      intent?: string;
+      payload?: unknown;
+      maxAttempts?: number;
+      runAt?: number | null;
+      /** Allow reopening a CANCELLED predecessor (default false). */
+      force?: boolean;
+    } = {},
+  ): Promise<SessionRecord> {
+    const previous = await this.#store.getSession(sessionId);
+    if (previous === null) {
+      throw new Error(`reopenSession: unknown session '${sessionId}'`);
+    }
+    if (!isTerminal(previous.state)) {
+      throw new RangeError(
+        `reopenSession: session '${sessionId}' is '${previous.state}', not terminal — ` +
+          'reopening live work would run the same job twice',
+      );
+    }
+    if (previous.state === 'cancelled' && opts.force !== true) {
+      throw new RangeError(
+        `reopenSession: session '${sessionId}' was cancelled` +
+          (previous.cancelReason != null ? ` (${previous.cancelReason})` : '') +
+          " — a cancel means 'stop this, forever'; pass { force: true } to reopen anyway",
+      );
+    }
+    const round = (previous.attemptRound ?? 1) + 1;
+    // Derive the successor id from the chain's ROOT, not from the predecessor:
+    // appending to the predecessor accumulates suffixes (job -> job#r2 ->
+    // job#r2#r3 -> ...), which is both unbounded and unreadable. Stripping a
+    // trailing `#r<n>` first keeps the chain flat — job, job#r2, job#r3 — so
+    // the whole chain stays greppable by one prefix, which is the property the
+    // hand-rolled conventions were reaching for. (Caught by this method's own
+    // regression lock on first run.)
+    const base = previous.id.replace(/#r\d+$/, '');
+    const created = await this.dispatch({
+      id: opts.id ?? `${base}#r${round}`,
+      intent: opts.intent ?? previous.intent,
+      payload: 'payload' in opts ? opts.payload : previous.payload,
+      ...(opts.maxAttempts !== undefined
+        ? { maxAttempts: opts.maxAttempts }
+        : { maxAttempts: previous.maxAttempts }),
+      ...(opts.runAt !== undefined ? { runAt: opts.runAt } : {}),
+    });
+    // Stamp the link AFTER the create wins, so a duplicate-id loser never
+    // writes provenance onto a row it did not create.
+    return this.#withLock(created.id, async () => {
+      const fresh = (await this.#store.getSession(created.id)) ?? created;
+      const linked: SessionRecord = { ...fresh, reopenOf: previous.id, attemptRound: round };
+      const won = await this.#putGuarded(linked, fresh.revision ?? 0);
+      if (!won) {
+        throw new ClaimConflictError(created.id, 'reopen link write lost to a concurrent writer');
+      }
+      return { ...linked, revision: (fresh.revision ?? 0) + 1 };
+    });
+  }
+
+  /**
+   * Every session in a reopen chain, oldest first (0.79.0). Walks `reopenOf`
+   * backwards from `sessionId` to the original, then forward through whatever
+   * reopened it — so passing ANY member returns the whole chain, which is the
+   * point: an auditor holding one row should not have to know whether it is
+   * the first or the last.
+   *
+   * Cycle-safe (a hand-edited store could point a chain at itself) and
+   * bounded: the walk stops at the first id it has already seen.
+   */
+  async reopenChain(sessionId: string): Promise<SessionRecord[]> {
+    const seen = new Set<string>();
+    // Backwards to the root.
+    let cursor: SessionRecord | null = await this.#store.getSession(sessionId);
+    if (cursor === null) return [];
+    const backwards: SessionRecord[] = [];
+    while (cursor !== null && !seen.has(cursor.id)) {
+      seen.add(cursor.id);
+      backwards.push(cursor);
+      const prev: string | undefined = cursor.reopenOf;
+      cursor = prev === undefined ? null : await this.#store.getSession(prev);
+    }
+    backwards.reverse();
+    // Forwards from the tail: successors are whatever names it in reopenOf.
+    const all = await this.#store.listSessions();
+    const chain = [...backwards];
+    for (;;) {
+      const tail = chain[chain.length - 1];
+      if (tail === undefined) break;
+      const next = all.find((s) => s.reopenOf === tail.id && !seen.has(s.id));
+      if (next === undefined) break;
+      seen.add(next.id);
+      chain.push(next);
+    }
+    return chain.map((s) => ({ ...s }));
+  }
+
+  /**
    * Purge a TERMINAL session and its query rows (0.78.0, design review
    * 2026-07-26 F3): the host's retention primitive. The ledger is otherwise
    * append-only forever — a daily production loop accretes sessions and audit

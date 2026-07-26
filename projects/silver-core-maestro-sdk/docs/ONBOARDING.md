@@ -120,6 +120,11 @@ if (!report.passed) console.error(report.results.filter((r) => !r.ok));
 | **保留策略** | 台账**只增不减**,永久累积 | store 实现 `deleteSession?`,经 `ledger.purgeSession(id)` 清理**终态**会话 |
 | **放弃口** | `WorkflowRun.run()` / `GoalChaser.chase()` **无限等待** | 传 `{ signal }`,或至少设 `drainTimeoutMs` |
 
+**失败之后要重跑怎么办**:别自己造 `:r2` 这样的新 id(那是 0.79.0 之前每个宿主各自
+发明的做法,代价是同一件事在台账里裂成互不相干的几行)。用 `ledger.reopenSession(id)`——
+它造一条链回前驱的新会话、拒绝重开非终态、默认拒绝重开已取消的,`reopenChain(id)` 再把
+整条链还原出来。细节见 `CONCURRENCY.md` §6.5。
+
 **保留策略的反作用,先读再动手**:有些会话 id **本身就是簿记**。删
 `sched:{specId}:{fireAt}` 会让 `Scheduler` 恢复丢失足迹并重锚(那个 spec 会被当成从未跑过);
 删 `wf:{graph}:{run}:{node}` 会让工作流重发该节点。**保留策略须保住每个 spec 的最新触发点,
