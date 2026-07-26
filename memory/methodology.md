@@ -346,3 +346,76 @@ proposal/dead-man-switch-design-20260726.md` §3 选择四）。`findings` 非�
   `memory/decisions.md` 同日「CI required 检查维持自查自合」条，节拍表其余条款不动）
 - **零产出源清账**：bahamut / arca_live / note_com / twitter 于 07-19 前逐一
   修复或明文退役（移出 KNOWN_SOURCES + 注册表除名 + CONTEXT 记理由）
+
+---
+
+## 防漂移：哨兵化标尺（守密人 2026-07-26 裁定四项落地后结晶）
+
+本仓治漂移的主手法叫**哨兵**（sentinel）：把一条「靠人/AI 记得住」的对应关系，改成一条
+「机器每次都查」的对应关系。`tests/test_claude_md_dates.py` 把它写在自己开头——
+**「本哨兵把『同步』从承诺变成保障」**，这是全套手法的一句话纲领。
+
+### 判据（一句话）
+
+**它是否依赖某人在正确的时刻想起某件事？** 是 → 迟早漂移 → 该哨兵化。
+
+CLAUDE.md §6.2 早写过同一句的另一个说法：「把弱约定（文档）升级为强约束（脚本）」。
+lessons-learned 的毕业纪律写的是第三个说法：「文字劝告是弱约束，真防护在工具层」
+（实证 #28/#34/#39 三记文字防不住复发、pre-push 钩子一次根治）。**同一条规律，三处独立发现。**
+
+### 设计三戒（2026-07-26 三条实缝各贡献一戒）
+
+1. **粒度要对齐事实，别对齐文件**。`memory_freshness.py` 管档案级 git 龄，而
+   `project-status.md` 天天被别的子项目改、git 龄永远新鲜——SDK 那一节烂在里面 12 个发布无人喊。
+   哨兵盯的必须是**那条具体的对应关系**（CHANGELOG 最新版本号 ↔ 状态节），不是承载它的文件。
+2. **只钉机器判得了的，判不了的别硬钉**。机器能判「最新版本号有没有出现」，判不了「摘要写得好不好」；
+   钉前者足以让 12 版落后当场翻红，钉后者只会制造噪音与豁免。**够用即止**是设计目标，不是妥协。
+3. **前置步骤会掩盖产物的自洽性**。CI 永远先 build 再 test，于是「`npm test` 自己能不能跑」
+   这个问题在 CI 里根本不存在。**凡是文档里写给人照抄的命令，都该有一条腿在干净环境里实跑**
+   （`.github/workflows/family-cold-start.yml`）。
+   本戒与上面的**「首跑实证纪律」是同一条规律的两端**——那条说「没跑过的机制，绿和坏长得
+   一模一样」，本戒说「跑过了但被前置步骤兜着，绿同样不作数」。合起来读：**一个机制只有在
+   它真实的起始条件下跑通过，才算存在**。
+
+### 与「生成取代对账」的分工（招一 vs 哨兵，2026-07-26 同日两路落地）
+
+同日另一路落了**招一·生成取代对账**（`scripts/build_status_facts.py` 把版本 / 规模 / 台账
+条数生成进 `memory/project-status.md` 的 STATUS-FACTS 块）。**生成严格强于哨兵**——它让漂移
+不可能发生，而哨兵只是发现漂移。故次序是：**能生成的先生成，生成不了的才架哨兵。**
+
+生成不了的是哪一类：**叙述**。「当前版本是 0.76.0」可以生成；「0.75.0 做了 R7 会话末回写
+可观测性、堵的是黑池进度卡静默变陈」不能生成——那是判断。而叙述层照样会烂：实证 2026-07-26，
+`project-status.md` 顶部的机器块已正确写着 maestro 0.76.0，下方 maestro 叙述节**仍停在 0.69.0**，
+生成块对它一无所知。`tests/test_status_doc_facts.py` 守的正是这一层（发布台账最新一版必须在
+叙述里留下痕迹），与生成块不重叠。
+
+### 两条配套纪律
+
+- **空 allowlist 是目标**。豁免每条须写明理由，且必须是「经核实的哨兵已知盲区」而非「懒得改」。
+  真实漂移应当 fail，由守密人裁「补回写」还是「加豁免」，而非默认吞掉。
+- **新哨兵必须做负控**。「加了测试」不等于「测试会咬」——`tests/test_mutation_ratchet_matrix.py`
+  撤腿转红、本轮四条负控（缺版本号 / 兄弟节不串 / 散文版本不冒充 / 节改名响亮失败）都是这个动作。
+  没做负控的哨兵，与没有哨兵之间只差一次运气。
+
+### 覆盖现状（新增须在此登记，便于下一个会话知道哪些角落已有岗）
+
+**先看生成层**（漂移不可能，非「被发现」）：`scripts/build_status_facts.py`（版本 / 规模 /
+台账条数生成进 STATUS-FACTS 块，守卫 `tests/test_status_facts.py`）· `sdk-mutation-ratchet.yml`
+矩阵改生成（地板清单即唯一源，不再两份手写）。**生成层盖不到的，才由下表的哨兵站岗。**
+
+| 哨兵 | 盯的对应关系 |
+|------|-------------|
+| `tests/test_claude_md.py` | CLAUDE.md 引用的路径 ↔ 磁盘实况（正向） |
+| `tests/test_claude_md_coverage.py` | 核心脚本 ↔ 权威档提及（反向孤儿） |
+| `tests/test_claude_md_dates.py` | CLAUDE.md 裁定日期 ↔ decisions 台账（跨档） |
+| `tests/test_status_facts.py` | 生成块 ↔ 权威源（重算逐字比对，2026-07-26 招一） |
+| `tests/test_status_doc_facts.py` | CHANGELOG 最新版本 ↔ package.json ↔ 状态**叙述层**（生成块够不到的那层，2026-07-26 新增） |
+| `tests/test_memory_freshness.py` | lessons 指针完整性 + 编号不变量 |
+| `tests/test_ledger_discipline.py` | todo 台账编号 / 分节纪律（2026-07-26 招二） |
+| `tests/test_mutation_ratchet_matrix.py` | 变异地板清单 ↔ CI 矩阵腿（双向） |
+| `scripts/check_decisions_consistency.py` | decisions 层内部硬不变量 |
+| `scripts/dead_man_switch.py` | 定时机制的**缺席**检测（巡检器自己哑掉谁来喊，2026-07-26 招三） |
+| `projects/silver-core-sdk/scripts/check-version-bump.mjs` | 包内三方版本对账 + 单调递增 |
+| `.github/scripts/check-dep-direction.mjs` | maestro → agent 单向依赖 |
+| `.github/workflows/family-cold-start.yml` | 文档里写给人照抄的命令 ↔ 干净环境实跑（周检，2026-07-26 新增） |
+| `.github/workflows/sdk-platform-probe.yml` | 家族的绿 ↔ 非 Linux 平台（手动探路，2026-07-26 新增） |
