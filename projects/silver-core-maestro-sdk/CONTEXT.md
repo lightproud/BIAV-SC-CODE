@@ -28,6 +28,14 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式:�
 
 ## 当前状态
 
+<!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
+
+**当前版本 `0.76.0`** · 发布日 2026-07-22 · 家族锁步对端 `silver-core-agent-sdk` = `0.76.0`
+
+> 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
+
+<!-- CONTEXT-FACTS:END -->
+
 第零战(monorepo 迁移)+ 第一战(任务台账 + 驱动器,0.2.0)完成:
 
 - 封闭状态机(`pending | running | retrying | failed | done`,定稿回填需求档 §4)

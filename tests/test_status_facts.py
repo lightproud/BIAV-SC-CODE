@@ -30,6 +30,31 @@ def test_block_is_present() -> None:
     )
 
 
+def test_context_blocks_are_present() -> None:
+    """两包 CONTEXT.md 必须带版本标签块（2026-07-26「3 推进」把招一射程延伸到 CONTEXT）。
+
+    单独钉存在性的理由：块被删掉时，`tests/test_status_doc_facts.py` 的叙述断言仍会绿
+    （叙述里通常也写着版本号），于是版本标签**悄悄退回手抄状态**而无人知晓。
+    同步性由下面的 apply(check_only) 一并覆盖，此处只管「块还在不在」。
+    """
+    for name in bsf.CONTEXT_PACKAGES:
+        ctx = bsf.PACKAGES[name] / "CONTEXT.md"
+        text = ctx.read_text(encoding="utf-8")
+        assert bsf.CONTEXT_BEGIN in text and bsf.CONTEXT_END in text, (
+            f"{name}/CONTEXT.md 缺机器生成版本块：跑 `python3 scripts/build_status_facts.py`"
+        )
+
+
+def test_context_blocks_carry_the_real_version() -> None:
+    """独立复核（不经生成器）：块里的号必须是 package.json 的真号。"""
+    for name in bsf.CONTEXT_PACKAGES:
+        path = bsf.PACKAGES[name]
+        version = json.loads((path / "package.json").read_text(encoding="utf-8"))["version"]
+        text = (path / "CONTEXT.md").read_text(encoding="utf-8")
+        block = text.split(bsf.CONTEXT_BEGIN, 1)[1].split(bsf.CONTEXT_END, 1)[0]
+        assert f"`{version}`" in block, f"{name}/CONTEXT.md 版本块内缺真实版本 {version}"
+
+
 def test_block_is_in_sync_with_the_authoritative_sources() -> None:
     """块必须是仓库当前状态的纯函数——不同步说明有人手改了数字，或权威源变了没重算。"""
     assert bsf.apply(check_only=True) == 0, (

@@ -67,6 +67,14 @@ src/
 
 ## 当前状态
 
+<!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
+
+**当前版本 `0.76.0`** · 发布日 2026-07-22 · 家族锁步对端 `silver-core-maestro-sdk` = `0.76.0`
+
+> 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
+
+<!-- CONTEXT-FACTS:END -->
+
 > **回写摘要（2026-07-26 审视补记，守密人裁定「补顶部摘要 + 实测数字」）**：本节逐条叙述此前
 > 停在 v0.69.0，其后 **12 个发布（0.70.0 → 0.76.0）未回写**，现以一条摘要合并补齐，逐版全文
 > 见 `CHANGELOG.md`（唯一发布权威，不在此复刻）：

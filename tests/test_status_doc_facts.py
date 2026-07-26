@@ -59,8 +59,26 @@ ALLOWLIST: dict[str, str] = {
 }
 
 
+# 机器生成块的通用形态（`<!-- X:BEGIN … -->` … `<!-- X:END -->`）。**搜叙述前必须剥掉**——
+# 见下方 _narrative 的自架空说明。
+GENERATED_BLOCK_RE = re.compile(
+    r"<!--\s*[A-Z-]+:BEGIN\b.*?<!--\s*[A-Z-]+:END\s*-->", re.S
+)
+
+
 def _read(path: Path) -> str:
     return path.read_text(encoding="utf-8")
+
+
+def _narrative(text: str) -> str:
+    """剥掉所有机器生成块，只留人写的叙述。
+
+    **本函数是本哨兵不被架空的唯一依据**。2026-07-26「招一推进」把版本标签生成进了
+    `CONTEXT.md`（CONTEXT-FACTS 块）与 `project-status.md`（STATUS-FACTS 块）；若照旧在整节
+    里搜版本号，生成块自己就带着那个号——断言永远为真，哨兵活着但什么也不守，而且**红不了**，
+    没人会发现它已经死了。生成层每扩一次射程，都要回头检查是否吃掉了某个哨兵的判据。
+    """
+    return GENERATED_BLOCK_RE.sub("", text)
 
 
 def _latest_changelog_version(changelog_text: str) -> str | None:
@@ -111,8 +129,13 @@ class StatusDocFactsTest(unittest.TestCase):
                     "发布台账与包版本必须同步（消费方按版本 pin tarball）",
                 )
 
-    def test_latest_version_reaches_context_md(self):
-        """最新版本号必须出现在该包 CONTEXT.md 的「当前状态」节内。"""
+    def test_latest_version_reaches_context_narrative(self):
+        """最新版本号必须出现在该包 CONTEXT.md「当前状态」节的**人写叙述**里。
+
+        版本标签本身自 2026-07-26「招一推进」起由 CONTEXT-FACTS 块生成，那一维已无从漂移；
+        本条守的是**叙述有没有跟上**——生成块可以正确写着 0.76.0，而下方叙事仍停在 0.69.0
+        （实证：同日 project-status 的 maestro 节正是这个样子）。故搜索前先 `_narrative` 剥块。
+        """
         for pkg, ctx_heading, _ in WATCHED_PACKAGES:
             with self.subTest(package=pkg):
                 if pkg in ALLOWLIST:
@@ -125,16 +148,19 @@ class StatusDocFactsTest(unittest.TestCase):
                 )
                 self.assertIn(
                     latest,
-                    section,
-                    f"{pkg}/CONTEXT.md「{ctx_heading}」节未提及最新版本 {latest}——"
-                    "状态档落后于发布台账（2026-07-26 落后 12 版的同款漂移）。"
-                    "回写一条摘要即可，逐版全文仍以 CHANGELOG 为唯一权威",
+                    _narrative(section),
+                    f"{pkg}/CONTEXT.md「{ctx_heading}」节的叙述未提及最新版本 {latest}"
+                    "（机器生成块不算数，已剥除）——叙述落后于发布台账"
+                    "（2026-07-26 落后 12 版的同款漂移）。回写一条摘要即可，"
+                    "逐版全文仍以 CHANGELOG 为唯一权威",
                 )
 
-    def test_latest_version_reaches_project_status(self):
-        """最新版本号必须出现在 memory/project-status.md 对应子项目节内。
+    def test_latest_version_reaches_project_status_narrative(self):
+        """最新版本号必须出现在 memory/project-status.md 对应子项目节的**人写叙述**里。
 
         CLAUDE.md §5.3 定该档为「状态唯一权威，进度数字只在此维护」——权威档落后即失权威。
+        同样剥掉生成块再搜：STATUS-FACTS 块目前在别的节，但它若哪天被挪进子项目节，
+        不剥块的断言就地变成永真。**不能靠「块碰巧不在这一节」活着。**
         """
         status_text = _read(PROJECT_STATUS)
         for pkg, _, status_heading in WATCHED_PACKAGES:
@@ -152,10 +178,40 @@ class StatusDocFactsTest(unittest.TestCase):
                 )
                 self.assertIn(
                     latest,
-                    section,
-                    f"memory/project-status.md「{status_heading}」节未提及最新版本 {latest}"
-                    "——状态唯一权威档落后于发布台账（CLAUDE.md §5.3）",
+                    _narrative(section),
+                    f"memory/project-status.md「{status_heading}」节的叙述未提及最新版本 "
+                    f"{latest}（机器生成块不算数，已剥除）——状态唯一权威档落后于发布台账"
+                    "（CLAUDE.md §5.3）",
                 )
+
+    def test_narrative_stripping_is_not_vacuous(self):
+        """非空控：版本号**只**出现在生成块里时，叙述检查必须仍然判负。
+
+        这是本哨兵与生成层共存的命门。没有这一条，「招一又扩了一次射程」就能在无人察觉的
+        情况下把上面两条断言变成永真——测试照常绿，守的东西却没了。
+        """
+        only_in_block = (
+            "## 当前状态\n\n"
+            "<!-- CONTEXT-FACTS:BEGIN 机器生成 -->\n"
+            "**当前版本 `9.9.9`**\n"
+            "<!-- CONTEXT-FACTS:END -->\n\n"
+            "**v1.0.0（旧）**：陈年叙述。\n"
+        )
+        section = _section(only_in_block, "## 当前状态")
+        self.assertIn("9.9.9", section, "前提：整节里确实有该版本号（在生成块内）")
+        self.assertNotIn(
+            "9.9.9",
+            _narrative(section),
+            "剥块失败——生成块里的版本号漏进了叙述搜索面，两条叙述断言就地失效",
+        )
+        # 叙述里真有版本号时不得误杀
+        with_narrative = only_in_block + "\n**v9.9.9（新）**：这一版做了什么。\n"
+        self.assertIn(
+            "9.9.9",
+            _narrative(_section(with_narrative, "## 当前状态")),
+            "误杀——叙述里写了版本号却被剥掉了",
+        )
+
 
     def test_watched_packages_all_exist(self):
         """受管包目录与其三件套档案都在——防「包改名/删档后哨兵静默空转」。"""
