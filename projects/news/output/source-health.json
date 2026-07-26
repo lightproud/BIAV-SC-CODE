@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T10:46:14.011826+00:00",
+  "updated_at": "2026-07-26T13:17:44.722610+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1122
   },
   "validation_drops": {
-    "generated_at": "2026-07-26T10:45:29.258822+00:00",
+    "generated_at": "2026-07-26T13:17:00.785476+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -18,7 +18,7 @@
       "last_success_date": "2026-07-26",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3104,
+      "total_items": 3105,
       "errors": []
     },
     "steam": {
@@ -26,7 +26,7 @@
       "last_success_date": "2026-07-26",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5302,
+      "total_items": 5303,
       "errors": []
     },
     "taptap": {
@@ -50,7 +50,7 @@
       "last_success_date": "2026-07-26",
       "last_check_date": "2026-07-26",
       "consecutive_silent_days": 0,
-      "total_items": 3066,
+      "total_items": 3069,
       "errors": []
     },
     "reddit": {
@@ -82,7 +82,7 @@
       "last_success_date": "2026-07-26",
       "last_check_date": "2026-07-26",
       "consecutive_silent_days": 0,
-      "total_items": 11342,
+      "total_items": 11353,
       "errors": []
     },
     "bahamut": {
@@ -90,7 +90,7 @@
       "last_success_date": "2026-07-26",
       "last_check_date": "2026-07-26",
       "consecutive_silent_days": 0,
-      "total_items": 402,
+      "total_items": 403,
       "errors": []
     },
     "arca_live": {
@@ -119,10 +119,10 @@
     },
     "pixiv": {
       "level": "active",
-      "last_success_date": "2026-07-26",
+      "last_success_date": "2026-07-27",
       "last_check_date": "2026-07-26",
       "consecutive_silent_days": 0,
-      "total_items": 588,
+      "total_items": 589,
       "errors": []
     },
     "note_com": {
@@ -138,7 +138,7 @@
       "last_success_date": "2026-07-26",
       "last_check_date": "2026-07-26",
       "consecutive_silent_days": 0,
-      "total_items": 453,
+      "total_items": 456,
       "errors": []
     },
     "stopgame": {
@@ -154,7 +154,7 @@
       "last_success_date": "2026-07-18",
       "last_check_date": "2026-07-26",
       "consecutive_silent_days": 8,
-      "total_items": 8508,
+      "total_items": 8528,
       "errors": []
     },
     "twitter": {
