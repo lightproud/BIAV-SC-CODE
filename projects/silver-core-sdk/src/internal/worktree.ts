@@ -20,7 +20,7 @@
 import { execFile } from 'node:child_process';
 import { appendFile, mkdir, mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { isAbsolute, join, resolve } from 'node:path';
+import { isAbsolute, join, resolve, sep } from 'node:path';
 import { promisify } from 'node:util';
 
 const execFileP = promisify(execFile);
@@ -111,6 +111,22 @@ export async function removeWorktreeIfClean(
 export const WORKTREES_SUBDIR = join('.claude', 'worktrees');
 
 /**
+ * git speaks POSIX separators even on Windows: `rev-parse --show-toplevel` and
+ * `worktree list --porcelain` both print `C:/Users/...`, while everything on
+ * the Node side of this SDK holds `C:\\Users\\...`. Comparing the two makes a
+ * REGISTERED worktree look unregistered, which is why EnterWorktree rejected
+ * every valid target on Windows with "is not a registered worktree" — found by
+ * the 2026-07-26 platform probe. Every path that crosses back from git is
+ * normalized here, at the boundary, so no caller has to know.
+ *
+ * No-op off Windows (`path.sep === '/'`), where a backslash is a legal
+ * filename character and must never be rewritten.
+ */
+function fromGitPath(p: string): string {
+  return sep === '\\' ? p.replace(/\//g, '\\') : p;
+}
+
+/**
  * Resolve the repository toplevel for `cwd`, or an error when `cwd` is not
  * inside a git work tree (or git is unavailable).
  */
@@ -121,7 +137,7 @@ export async function repoToplevel(
     const { stdout } = await execFileP('git', ['rev-parse', '--show-toplevel'], { cwd });
     const dir = stdout.trim();
     if (dir.length === 0) return { error: 'git rev-parse returned an empty toplevel' };
-    return { dir };
+    return { dir: fromGitPath(dir) };
   } catch (err) {
     return { error: err instanceof Error ? err.message : String(err) };
   }
@@ -139,7 +155,9 @@ export async function listWorktrees(
     const { stdout } = await execFileP('git', ['worktree', 'list', '--porcelain'], { cwd });
     const paths: string[] = [];
     for (const line of stdout.split('\n')) {
-      if (line.startsWith('worktree ')) paths.push(line.slice('worktree '.length).trim());
+      if (line.startsWith('worktree ')) {
+        paths.push(fromGitPath(line.slice('worktree '.length).trim()));
+      }
     }
     return { paths };
   } catch (err) {

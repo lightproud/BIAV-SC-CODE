@@ -187,9 +187,18 @@ describe('Bash tool', () => {
 
   it('runs the command in ctx.cwd', async () => {
     const dir = await makeDir('bash-cwd');
-    const res = await bashTool.execute({ command: 'pwd' }, makeCtx(dir));
+    const res = await bashTool.execute({ command: 'pwd -P' }, makeCtx(dir));
     expect(res.isError).toBeFalsy();
-    expect(text(res).trim()).toBe(await realpath(dir));
+    // Compare against the SHELL's own spelling, not Node's. Git Bash reports
+    // MSYS paths (`/tmp/...`, `/c/Users/...`) and macOS resolves `/var` to
+    // `/private/var`; both are correct for their platform, and neither is what
+    // "the command ran in ctx.cwd" means (2026-07-26 platform probe). Asking
+    // the shell keeps the assertion about the claim instead of the dialect.
+    const spoken = await bashTool.execute(
+      { command: `cd '${dir}' && pwd -P` },
+      makeCtx(dir),
+    );
+    expect(text(res).trim()).toBe(text(spoken).trim());
   });
 
   it('makes merged ctx.env visible to the command', async () => {

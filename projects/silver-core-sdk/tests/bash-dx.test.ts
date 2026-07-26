@@ -96,9 +96,14 @@ describe('Bash cmd-habit correction on exit 127', () => {
   });
 
   it('leaves dir (GNU coreutils) untouched — deliberately NOT in the word list', async () => {
+    // `dir` ships with GNU coreutils (Linux, Git Bash) but NOT with BSD
+    // userland, so on macOS the command genuinely exits 127 and the assertion
+    // below would be testing the platform, not the word list (2026-07-26
+    // platform probe). The claim under test — `dir` is absent from the
+    // cmd.exe-only word list — is asserted unconditionally right after.
     const dir = await makeDir('cmd-dir');
     const res = await bashTool.execute({ command: 'dir .' }, makeCtx(dir));
-    expect(res.isError).toBeFalsy();
+    if (process.platform !== 'darwin') expect(res.isError).toBeFalsy();
     expect(text(res)).not.toContain(HINT_MARKER);
   });
 
