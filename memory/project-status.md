@@ -266,6 +266,22 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **当前版本 v0.76.0（2026-07-22）· 0.70.0→0.76.0 合并摘要（2026-07-26 审视回写，守密人裁定
+  「补顶部摘要 + 实测数字」）**：本节此前停在 v0.69.0，其后 **12 个发布未回写**，现合并补齐一条；
+  逐版全文以 `projects/silver-core-sdk/CHANGELOG.md` 为唯一发布权威（不在此复刻）。
+  **0.70.0 / 0.72.0 / 0.73.0 / 0.74.0 / 0.76.0 = 锁步对齐**（agent 侧零代码，跟随 maestro 的 T56
+  审计 1/2/4/5 轮 + `cancelled` 终态）；**0.70.1** 权限 deny 绕过修复（裸子 shell `(rm -rf x)` /
+  花括号组曾 DENY fail-open，新增 `stripGroupWrappers`，只放宽 deny/ask 位、allow 分支仍严格）；
+  **0.71.0** testbed 漏缝 G4 采纳（`MemoryStore.read?(path)` 原样读回，模型面六命令字节不变）；
+  **0.71.1/0.71.2/0.71.3** T51 审计 r3 三批（批 N+P / R+S+T / O+Q，合计 39 条 STILL-LIVE 修复带
+  回归锁；含发货打包三修与版本/评估/变异三守卫加固）；**0.72.1** WV2-4 收口（OpenAI 臂仅在端点
+  **声明**为推理端点时才丢 `temperature != 1`）；**0.75.0** R7 会话末回写可观测性
+  （`SDKMemoryHealth.sessionEndUpdate` 九态 + `Query.memoryHealthSnapshot()`）+ 上游 corpus
+  重同步 ccVersion 2.1.213。
+  **实测复核（2026-07-26 本地现跑）**：三处版本常量一致 · `tsc --noEmit` 零错误 · vitest
+  **3215 通过 + 6 skipped / 196 文件**（原记 3017，**+198**）· tarball 1640 KB / 解包 5.85 MB ·
+  `npm audit` 0 漏洞 · 家族锁步 agent = maestro = 0.76.0 · maestro 362 绿 / testbed 33 绿 ·
+  依赖方向守卫 + 版本纪律守卫均 OK。
 - **v0.69.0（2026-07-18，守密人待办批 SDK 侧 1–3 项）**：① 迁移文档刷新
   `docs/MIGRATION-0.3x-to-0.68.md`（取代 0.52 版：斜杠退役 0.63 / MultiEdit 生命弧 /
   npm 两连改名 / 锁步制 + 13 步黑池升级检查单——黑池升级咽喉铺平）；② 记忆便签三件套

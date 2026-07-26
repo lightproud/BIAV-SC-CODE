@@ -192,6 +192,29 @@ notebook surface — COMPAT.md marks it UNSUPPORTED). The authoritative list is
 `tool()` + `createSdkMcpServer()`, or connect external MCP servers
 (stdio and streamable HTTP) via `options.mcpServers`.
 
+## Sandbox coverage is Linux-only — know your host platform
+
+The Bash sandbox has exactly one backend: **bubblewrap, Linux only**. On every
+other platform no backend resolves, so `Bash` runs **UNSANDBOXED** and the
+sandbox guidance prompts are not emitted (the engine says so once through the
+`debug` callback). This is the same honesty posture as official Claude Code,
+which also ships no sandbox on Windows — it is a documented limit, not a bug.
+
+The consequence an embedder must plan around: **on a Windows or macOS host, the
+process-isolation layer is absent and the ONLY thing standing between a model
+and the machine is the permission layer** — `permissionMode`, `allowedTools` /
+`disallowedTools` rules, hooks, and `canUseTool`. On Linux the two layers are
+defence in depth; elsewhere the permission layer is load-bearing alone. Hosts
+that ship on Windows (BPT Desktop / Electron is the reference consumer) should
+size their `Bash` rules for that reality rather than assume the sandbox row in
+the compatibility matrix applies to them.
+
+Two related caveats that hold even where the sandbox DOES resolve: it does not
+scrub the environment by default (opt in with `SandboxOptions.envScrub`), and
+bubblewrap gives a sandboxed command no SIGTERM grace window. Full detail, and
+the per-knob breakdown, live in the `sandbox` and `Bash` rows of
+[docs/COMPAT.md](docs/COMPAT.md).
+
 ## Memory (cross-session, BPT-EXTENSION)
 
 `options.memory` enables a `memory_20250818`-equivalent six-command memory
