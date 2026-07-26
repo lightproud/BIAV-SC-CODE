@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (109)
+# 银芯正式产物（报告/分析） (110)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -42,6 +42,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [bpt-stack-ontology-design-notes-20260710](/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md) - 本档归档 2026-07-08 至 07-10 会话对 BPT 栈分层的完整探索。**除 §3 不变量台账按纪律（格式：md）
 * [data-layer-detachment-evaluation-20260719](/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md) - KIMI3 静态审查判「主仓同时承担源码 + 事实档案 + 社区数据 + AI 指令 + 发布流水线」为最大战略风险，（格式：md）
 * [discord-layout-unification-20260710](/resource/resource-proposal-discord-layout-unification-20260710.md) - 当前三服布局不一致（历史原因：Global 先建、后来的 guild 走 `guilds/` 分层）：（格式：md）
+* [drift-resistant-architecture-20260726](/resource/resource-proposal-drift-resistant-architecture-20260726.md) - 一天内检出的全部漂移，按**它当初是怎么产生的**分类（不按严重度）：（格式：md）
 * [internal-ai-platform-plan-202604](/resource/resource-proposal-internal-ai-platform-plan-202604.md) - 制作人 Light 提出将 BIAV 从个人 AI 终端扩展为团队级内部 AI 工具平台，替代 Qoder，核心逻辑：（格式：md）
 * [news-push-format-20260712](/resource/resource-proposal-news-push-format-20260712.md) - 采集侧已稳（全量档案 + 3 小时节拍自动跑、日采北京 15 点档）；待定的是**输出侧最后一公里**：（格式：md）
 * [silver-core-maintenance-cadence-20260702](/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md) - M7 验收 =「二核心使命基础设施齐备 + 自动化跑稳 + 至少一种贡献流程跑顺」。（格式：md）

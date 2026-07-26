@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-26",
   "stats": {
-    "nodes": 371,
-    "edges": 406
+    "nodes": 372,
+    "edges": 407
   },
   "nodes": [
     {
@@ -2731,6 +2731,17 @@
       "id": "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "type": "documentation",
       "title": "discord-layout-unification-20260710",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
+      "type": "documentation",
+      "title": "drift-resistant-architecture-20260726",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5628,6 +5639,12 @@
     },
     {
       "source": "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

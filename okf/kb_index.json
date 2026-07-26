@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 371,
-    "edges": 406,
-    "terms": 6665,
+    "concepts": 372,
+    "edges": 407,
+    "terms": 6680,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 138,
+      "documentation": 139,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 109,
+      "resource": 110,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 237
+      "search": 238
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 109
+      "count": 110
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 105
+      "degree": 106
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3473,6 +3473,20 @@
       "title": "discord-layout-unification-20260710",
       "description": "当前三服布局不一致（历史原因：Global 先建、后来的 guild 走 `guilds/` 分层）：（格式：md）",
       "resource": "/Public-Info-Pool/Resource/proposal/discord-layout-unification-20260710.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-proposal-drift-resistant-architecture-20260726.md": {
+      "type": "documentation",
+      "title": "drift-resistant-architecture-20260726",
+      "description": "一天内检出的全部漂移，按**它当初是怎么产生的**分类（不按严重度）：（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/drift-resistant-architecture-20260726.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -6881,6 +6895,11 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-news-push-format-20260712.md",
         "提及:艾瑞卡",
         "mention"
@@ -8994,6 +9013,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-drift-resistant-architecture-20260726.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-news-push-format-20260712.md": [
       [
         "/characters/15603.md",
@@ -10052,6 +10078,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -10355,6 +10382,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "archive": [
@@ -11351,6 +11379,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11730,6 +11759,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -12076,6 +12106,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -12274,6 +12305,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -12552,6 +12584,9 @@
     ],
     "dreams": [
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
+    ],
+    "drift": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "drive": [
       "/projects/silver-core-sdk-doc-openai-protocol.md"
@@ -13385,6 +13420,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -13898,6 +13934,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -14440,6 +14477,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -15192,6 +15230,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -15542,6 +15581,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -15622,6 +15662,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -16063,6 +16104,9 @@
     "resilience": [
       "/projects/silver-core-sdk-doc-resilience.md"
     ],
+    "resistant": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+    ],
     "resource": [
       "/README.md",
       "/memory/memory-ext-todo.md",
@@ -16104,6 +16148,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -17140,6 +17185,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -17688,7 +17734,8 @@
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
     ],
     "一天": [
-      "/characters/15577.md"
+      "/characters/15577.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "一层": [
       "/characters/15565.md"
@@ -18270,6 +18317,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -18379,6 +18427,9 @@
     ],
     "不屈": [
       "/characters/77923.md"
+    ],
+    "不按": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "不放": [
       "/README.md",
@@ -18553,6 +18604,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -18905,6 +18957,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -19173,6 +19226,7 @@
     ],
     "严重": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "个不": [
@@ -19586,6 +19640,9 @@
     "久记": [
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
     ],
+    "么产": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+    ],
     "么会": [
       "/characters/15566.md"
     ],
@@ -19980,7 +20037,8 @@
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "产生": [
-      "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+      "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "产的": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -20255,6 +20313,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -21259,6 +21318,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -21547,6 +21607,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -22368,6 +22429,7 @@
     "全部": [
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "全量": [
@@ -22727,6 +22789,9 @@
     "内承": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
     ],
+    "内检": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+    ],
     "内网": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -22970,6 +23035,7 @@
       "/README.md"
     ],
     "出的": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "出相": [
@@ -23239,7 +23305,8 @@
       "/characters/94451.md",
       "/characters/95786.md",
       "/memory/memory-ext-biav-info-classification.md",
-      "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
+      "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "分级": [
       "/memory/memory-ext-discord-archiver-design.md",
@@ -23298,6 +23365,9 @@
     ],
     "初始": [
       "/characters/15601.md"
+    ],
+    "初是": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "删除": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
@@ -23580,6 +23650,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -27003,6 +27074,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -27426,6 +27498,9 @@
     "大需": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
     ],
+    "天内": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+    ],
     "天地": [
       "/characters/15570.md"
     ],
@@ -27845,6 +27920,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -28166,6 +28242,9 @@
     ],
     "它干": [
       "/projects/news-archive-sources-registry.md"
+    ],
+    "它当": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "它把": [
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
@@ -28500,6 +28579,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -30512,6 +30592,9 @@
     ],
     "当全": [
       "/README.md"
+    ],
+    "当初": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "当前": [
       "/memory/decisions.md",
@@ -32600,6 +32683,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -32728,6 +32812,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "按严": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "按个": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
@@ -33192,6 +33279,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -33550,6 +33638,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -33997,6 +34086,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -34301,6 +34391,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -35394,6 +35485,9 @@
     "是弥": [
       "/characters/15603.md"
     ],
+    "是怎": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+    ],
     "是扫": [
       "/characters/15571.md"
     ],
@@ -36131,6 +36225,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -36591,6 +36686,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -37247,6 +37343,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -37483,6 +37580,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -37857,6 +37955,9 @@
     "梨子": [
       "/characters/15586.md"
     ],
+    "检出": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+    ],
     "检查": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -38027,6 +38128,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -38437,6 +38539,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -39356,6 +39459,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "漂移": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "漆黑": [
@@ -40358,6 +40462,9 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
+    "生的": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+    ],
     "生都": [
       "/characters/125346.md"
     ],
@@ -40901,6 +41008,9 @@
       "/characters/15575.md",
       "/characters/15582.md",
       "/characters/15594.md"
+    ],
+    "的全": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "的六": [
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
@@ -45860,6 +45970,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -46602,6 +46713,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -47022,6 +47134,9 @@
     "部消": [
       "/README.md"
     ],
+    "部漂": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+    ],
     "部社": [
       "/memory/memory-archive-contribution-protocol-hub.md"
     ],
@@ -47219,6 +47334,7 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "重度": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "重建": [
@@ -47678,6 +47794,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -47951,6 +48068,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -49308,6 +49426,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "archive": [
@@ -49911,6 +50030,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -50250,6 +50370,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -50435,6 +50556,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -50645,6 +50767,9 @@
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
+    ],
+    "drift": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "drops": [
       "/wiki-data/wiki-data-drops-by-item.md"
@@ -51225,6 +51350,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -51941,6 +52067,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -52132,6 +52259,9 @@
     ],
     "resilience": [
       "/projects/silver-core-sdk-doc-resilience.md"
+    ],
+    "resistant": [
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
     "retention": [
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md"
@@ -52593,6 +52723,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
