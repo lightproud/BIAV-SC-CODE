@@ -25,8 +25,9 @@ REPO = Path(__file__).resolve().parent.parent
 # 不够把一份清单抄进来——这正是要卡的那条线。
 CAPS = {
     "CLAUDE.md": (550, "下沉到 memory/ 或 OKF bundle，正文只留一行指针"),
-    # 472 行，几乎与 CLAUDE.md 齐平，而它同样是「动手前必读」——最该先瘦的一份。
-    "projects/silver-core-sdk/CONTEXT.md": (500, "下沉到 projects/silver-core-sdk/docs/"),
+    # 2026-07-26 瘦身：472 → 138 行（发布编年史下沉 CHANGELOG）。上限随之从 500 收到
+    # 200——**瘦完不收上限，等于给回涨预留了 360 行的空间**，那次瘦身也就白做了。
+    "projects/silver-core-sdk/CONTEXT.md": (200, "发布叙述交给 CHANGELOG.md；设计理由进 docs/"),
     "projects/silver-core-maestro-sdk/CONTEXT.md": (200, "下沉到该包 docs/ 或 CHANGELOG"),
 }
 
