@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 45,
-      "scripts_top": 39,
+      "scripts_top": 40,
       "scripts_news": 32,
       "scripts_wiki": 6,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 5,
       "projects": 7,
-      "total": 149
+      "total": 150
     },
     "reachability": {
-      "live": 77,
+      "live": 78,
       "test-only": 0,
       "orphaned": 0
     }
@@ -545,6 +545,15 @@
       "id": "compact_discord_archive.py",
       "path": "scripts/compact_discord_archive.py",
       "summary": "Discord 存量归档批量紧凑化（S2）—— 把已落盘的 721 万条记录一次性压成紧凑 schema。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "consumption_audit.py",
+      "path": "scripts/consumption_audit.py",
+      "summary": "产出↔消费对账 —— 「没人读的产物，该退役而不是被更好地监控」。",
       "planes": [
         "cli"
       ],

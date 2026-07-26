@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-26
-- 功能总数：**149**
-- 脚本可达性：活 77 / 仅测试 0 / 孤儿 0
+- 功能总数：**150**
+- 脚本可达性：活 78 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 45 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 39 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 40 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
@@ -127,7 +127,7 @@
 - **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
   `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（39）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（40）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -151,6 +151,8 @@
   `scripts/check_decisions_consistency.py`
 - **`compact_discord_archive.py`** _[活:cli]_ — Discord 存量归档批量紧凑化（S2）—— 把已落盘的 721 万条记录一次性压成紧凑 schema。  
   `scripts/compact_discord_archive.py`
+- **`consumption_audit.py`** _[活:cli]_ — 产出↔消费对账 —— 「没人读的产物，该退役而不是被更好地监控」。  
+  `scripts/consumption_audit.py`
 - **`dead_man_switch.py`** _[活:cli+workflow]_ — 死手开关 —— 只数空座位，不听课。  
   `scripts/dead_man_switch.py`
 - **`deliverable_path.py`** _[活:cli+command]_ — deliverable_path.py — 银芯产物路径生成器 / 注册表守卫  
