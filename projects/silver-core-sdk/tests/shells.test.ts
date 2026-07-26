@@ -8,6 +8,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import os from 'node:os';
 import path from 'node:path';
 import fs from 'node:fs';
+import { rm } from 'node:fs/promises';
 
 import {
   createShellManager,
@@ -27,9 +28,17 @@ beforeEach(() => {
   sandbox = fs.mkdtempSync(path.join(os.tmpdir(), 'bpt-shells-'));
   manager = undefined;
 });
-afterEach(() => {
+afterEach(async () => {
   manager?.dispose();
-  fs.rmSync(sandbox, { recursive: true, force: true });
+  // ASYNC rm, not rmSync-with-retries. Windows releases a killed child's
+  // handles asynchronously and the tree kill routes through taskkill, so the
+  // directory is busy for a moment after dispose() returns — but `rmSync`'s
+  // `maxRetries` sleeps SYNCHRONOUSLY, blocking the very event loop that has
+  // to run the reaping callbacks. It burns the whole retry budget without
+  // letting anything progress, which is why 10x50ms and then 30x100ms both
+  // still lost the race on the 2026-07-26 probe. Awaiting yields, so the
+  // retries are actually spent waiting rather than spinning.
+  await rm(sandbox, { recursive: true, force: true, maxRetries: 30, retryDelay: 100 });
 });
 
 function makeCtx(withManager: boolean): ToolContext {
@@ -102,6 +111,27 @@ describe('ShellManager', () => {
     manager = undefined;
   });
 });
+
+
+/**
+ * Assert the shell's cwd IS `dir` — WITHOUT comparing path spellings.
+ *
+ * Every string form of this assertion has now failed on some platform
+ * (2026-07-26 probe): macOS resolves `/var` to `/private/var`; Git Bash reports
+ * MSYS paths; and worse, Git Bash reaches ONE directory through TWO mounts, so
+ * `pwd -P` legitimately answers `/tmp/x` or `/c/Users/.../Temp/x` depending on
+ * how the shell got there. All of those are the same directory, and none of
+ * them is what "the cwd persisted" means.
+ *
+ * So stop asking for a name and ask a question only the right directory can
+ * answer: read a marker through a RELATIVE path. It resolves against whatever
+ * the shell's actual cwd is, on any host, through any mount.
+ */
+async function expectShellCwdIs(ctx: ToolContext, dir: string, tag: string): Promise<void> {
+  fs.writeFileSync(path.join(dir, `${tag}.marker`), tag);
+  const out = await bashTool.execute({ command: `cat ./${tag}.marker` }, ctx);
+  expect(text(out.content).trim(), `shell cwd is not ${dir}`).toBe(tag);
+}
 
 describe('Bash run_in_background + BashOutput + KillShell', () => {
   it('background launch acks with an id; BashOutput reads incrementally', async () => {
@@ -290,8 +320,7 @@ describe('Bash persistent cwd/env state', () => {
     const sub = path.join(sandbox, 'subdir');
     fs.mkdirSync(sub);
     await bashTool.execute({ command: `cd '${sub}'` }, ctx);
-    const out = await bashTool.execute({ command: 'pwd' }, ctx);
-    expect(text(out.content).trim().split('\n')[0]).toBe(fs.realpathSync(sub));
+    await expectShellCwdIs(ctx, sub, 'cd-persists');
   });
 
   it('exported variables persist across Bash calls', async () => {
@@ -318,8 +347,8 @@ describe('Bash persistent cwd/env state', () => {
     const sub = path.join(sandbox, 'stateless');
     fs.mkdirSync(sub);
     await bashTool.execute({ command: `cd '${sub}'` }, ctx);
-    const out = await bashTool.execute({ command: 'pwd' }, ctx);
-    expect(text(out.content).trim()).toBe(fs.realpathSync(sandbox));
+    // No manager: the cd must NOT stick — the next call is back at ctx.cwd.
+    await expectShellCwdIs(ctx, sandbox, 'stateless');
   });
 });
 
@@ -340,22 +369,14 @@ describe('forkShellSession — per-subagent persistent-state fork (audit 2026-07
     const ctxB: ToolContext = { ...ctx, shells: forkShellSession(manager!) };
 
     // A child sees the parent's persistent cwd that existed at spawn time.
-    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctxA))).toBe(
-      fs.realpathSync(parentDir),
-    );
+    await expectShellCwdIs(ctxA, parentDir, 'fork-a-sees-parent');
     // A cd's away; B's SUBSEQUENT Bash call must NOT inherit A's cwd.
     await bashTool.execute({ command: `cd '${aDir}'` }, ctxA);
-    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctxB))).toBe(
-      fs.realpathSync(parentDir),
-    );
+    await expectShellCwdIs(ctxB, parentDir, 'fork-b-sees-parent');
     // ... and A keeps its own cwd across its own calls.
-    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctxA))).toBe(
-      fs.realpathSync(aDir),
-    );
+    await expectShellCwdIs(ctxA, aDir, 'fork-a-keeps-own');
     // The parent's next foreground Bash is untouched by A's cd.
-    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctx))).toBe(
-      fs.realpathSync(parentDir),
-    );
+    await expectShellCwdIs(ctx, parentDir, 'fork-parent-untouched');
   });
 
   it('a child export does not leak to the parent; the child sees parent exports from spawn time', async () => {

@@ -7,6 +7,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { tmpdir } from 'node:os';
 
 // Mock DNS so hostname-based SSRF resolution is deterministic + offline.
 vi.mock('node:dns/promises', () => ({ lookup: vi.fn() }));
@@ -39,7 +40,7 @@ const mockLookup = vi.mocked(lookup);
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: {},
     signal: new AbortController().signal,

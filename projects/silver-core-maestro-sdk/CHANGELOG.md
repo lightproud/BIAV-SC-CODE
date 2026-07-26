@@ -12,6 +12,19 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.77.0 — 2026-07-26
+
+Lockstep alignment only — no maestro-SDK code change. The agent SDK landed the
+Windows correctness sweep from the first non-Linux CI run this family has ever
+had: path-scoped permission rules that failed open (and, the other way, over-
+matched) on Windows, the Bash tool vanishing under a curated host env, and
+Glob/Grep emitting a different path dialect from every other surface. See the
+agent CHANGELOG 0.77.0.
+
+Worth recording on this side: **maestro passed the Windows probe 362/362 with
+no changes at all**, on the same run that failed 15 of the agent SDK's test
+files. The orchestration layer carries no host-path or shell assumptions.
+
 ## 0.76.0 — 2026-07-22
 
 The `cancelled` closed terminal (BPT requirement P0-D1, 2026-07-22: a

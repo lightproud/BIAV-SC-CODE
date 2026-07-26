@@ -24,6 +24,7 @@
  */
 
 import { describe, expect, it, vi } from 'vitest';
+import { tmpdir } from 'node:os';
 
 import { DefaultHookRunner } from '../src/hooks/runner.js';
 import { matcherMatches } from '../src/hooks/matcher.js';
@@ -43,7 +44,7 @@ import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
 
 const PRE_INPUT: HookInput = {
   session_id: 'sess-r4-hooks',
-  cwd: '/tmp',
+  cwd: tmpdir(),
   hook_event_name: 'PreToolUse',
   tool_name: 'Bash',
   tool_input: { command: 'ls' },
@@ -102,7 +103,7 @@ describe('V1-2: oversized hook input is bounded before the condition evaluation'
     const huge = 'A'.repeat(500_000);
     const input: HookInput = {
       session_id: 's',
-      cwd: '/tmp',
+      cwd: tmpdir(),
       hook_event_name: 'PreToolUse',
       tool_name: 'Bash',
       tool_input: { command: huge },
@@ -136,7 +137,7 @@ describe('R7j-1: a circular hook input does not crash the condition gate', () =>
     circular['self'] = circular; // self-reference: bare JSON.stringify would throw
     const input = {
       session_id: 's',
-      cwd: '/tmp',
+      cwd: tmpdir(),
       hook_event_name: 'PostToolUse',
       tool_name: 'Write',
       tool_input: { file_path: '/a' },

@@ -8,6 +8,7 @@
  */
 
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { tmpdir } from 'node:os';
 
 import { matchToolName, parseRule, ruleMatches } from '../src/permissions/rules.js';
 import { DefaultPermissionGate } from '../src/permissions/gate.js';
@@ -86,7 +87,7 @@ function sleep(ms: number, signal?: AbortSignal): Promise<void> {
 
 const PRE_TOOL_INPUT: HookInput = {
   session_id: 'sess-module-e',
-  cwd: '/tmp',
+  cwd: tmpdir(),
   hook_event_name: 'PreToolUse',
   tool_name: 'Bash',
   tool_input: { command: 'ls' },
@@ -1014,7 +1015,7 @@ describe('DefaultHookRunner', () => {
     });
     const input: HookInput = {
       session_id: 's',
-      cwd: '/tmp',
+      cwd: tmpdir(),
       hook_event_name: 'SessionStart',
       source: 'startup',
     };
@@ -1406,7 +1407,7 @@ describe('DefaultHookRunner', () => {
     });
     const input: HookInput = {
       session_id: 's',
-      cwd: '/tmp',
+      cwd: tmpdir(),
       hook_event_name: 'PostToolUse',
       tool_name: 'Bash',
       tool_input: {},

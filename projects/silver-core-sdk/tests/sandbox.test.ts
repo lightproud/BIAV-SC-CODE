@@ -24,6 +24,7 @@ import { createShellManager } from '../src/tools/shells.js';
 import {
   BASH_DESCRIPTION,
   BASH_SANDBOX_FRAGMENTS,
+  BASH_WIN32_NOTE,
   buildBashSandboxNote,
 } from '../src/tools/descriptions.js';
 import type { SandboxBackend, SandboxContext, ToolContext } from '../src/types.js';
@@ -163,7 +164,7 @@ describe('Bash foreground execute over a fake backend', () => {
   it('runs wrapped: the sandbox env marker is visible', async () => {
     const sbx = fakeCtx();
     const tool = createBashTool(sbx);
-    const res = await tool.execute({ command: 'echo "$BPT_SBX"' }, makeCtx('/tmp', { sandbox: sbx }));
+    const res = await tool.execute({ command: 'echo "$BPT_SBX"' }, makeCtx(tmpdir(), { sandbox: sbx }));
     expect(content(res).trim()).toBe('1');
     expect((sbx.backend as ReturnType<typeof makeFake>).calls).toHaveLength(1);
   });
@@ -171,7 +172,7 @@ describe('Bash foreground execute over a fake backend', () => {
     const sbx = fakeCtx({ allowEscape: false });
     const res = await createBashTool(sbx).execute(
       { command: 'echo hi', dangerouslyDisableSandbox: true },
-      makeCtx('/tmp', { sandbox: sbx }),
+      makeCtx(tmpdir(), { sandbox: sbx }),
     );
     expect(res.isError).toBe(true);
     expect(content(res)).toContain('disabled by policy');
@@ -182,7 +183,7 @@ describe('Bash foreground execute over a fake backend', () => {
     const sbx = fakeCtx();
     const res = await createBashTool(sbx).execute(
       { command: 'echo hi', dangerouslyDisableSandbox: true },
-      makeCtx('/tmp', { sandbox: sbx }),
+      makeCtx(tmpdir(), { sandbox: sbx }),
     );
     expect(content(res).trim()).toBe('hi');
     expect((sbx.backend as ReturnType<typeof makeFake>).calls).toHaveLength(0);
@@ -190,7 +191,7 @@ describe('Bash foreground execute over a fake backend', () => {
   it('no sandbox on the context: the escape flag is a no-op, not an error (E7-02)', async () => {
     const res = await createBashTool().execute(
       { command: 'echo hi', dangerouslyDisableSandbox: true },
-      makeCtx('/tmp'),
+      makeCtx(tmpdir()),
     );
     expect(res.isError).not.toBe(true);
     expect(content(res).trim()).toBe('hi');
@@ -245,7 +246,7 @@ describe('Bash surfaces the evidence hint on a sandboxed failure', () => {
     const sbx = fakeCtx();
     const res = await createBashTool(sbx).execute(
       { command: 'echo "Permission denied" 1>&2; exit 1' },
-      makeCtx('/tmp', { sandbox: sbx }),
+      makeCtx(tmpdir(), { sandbox: sbx }),
     );
     expect(res.isError).toBe(true);
     expect(content(res)).toContain('[sandbox]');
@@ -254,7 +255,7 @@ describe('Bash surfaces the evidence hint on a sandboxed failure', () => {
   it('does NOT append a hint on an unsandboxed failure', async () => {
     const res = await createBashTool().execute(
       { command: 'echo "Permission denied" 1>&2; exit 1' },
-      makeCtx('/tmp'),
+      makeCtx(tmpdir()),
     );
     expect(content(res)).not.toContain('[sandbox]');
   });
@@ -272,14 +273,25 @@ describe('Bash description + schema gating', () => {
   // E7-02: the escape param is ALWAYS in the schema (official parity); the
   // red-line gating now applies to the DESCRIPTION only. Runtime semantics per
   // state are covered by the execute() tests above/below.
+  // "Byte-identical" means identical to the description THIS PLATFORM ships:
+  // on win32 the gated BASH_WIN32_NOTE is appended by design (createBashTool),
+  // so comparing to the bare base there asserts a platform bug that is not one.
+  // Same idiom as tests/tool-descriptions.test.ts (2026-07-26 Windows probe).
+  const expectedBashDescription =
+    process.platform === 'win32'
+      ? BASH_DESCRIPTION + '\n\n' + BASH_WIN32_NOTE
+      : BASH_DESCRIPTION;
+
   it('unsandboxed tool: description byte-identical + mentions no sandbox; schema keeps the (no-op) escape param', () => {
     const tool = createBashTool();
-    expect(tool.description).toBe(BASH_DESCRIPTION);
-    expect(tool.description.toLowerCase()).not.toContain('sandbox');
+    expect(tool.description).toBe(expectedBashDescription);
+    // The win32 note names Windows shells to steer AWAY from them; the word
+    // under test is the SANDBOX section, which must still be absent.
+    expect(tool.description).not.toContain('# Sandbox');
     expect(tool.inputSchema.properties).toHaveProperty('dangerouslyDisableSandbox');
   });
   it('createBuiltinTools() default Bash is byte-identical', () => {
-    expect(createBuiltinTools().get('Bash')!.description).toBe(BASH_DESCRIPTION);
+    expect(createBuiltinTools().get('Bash')!.description).toBe(expectedBashDescription);
   });
   it('active sandbox: description carries the note + schema has the escape param', () => {
     const tool = createBashTool(fakeCtx());

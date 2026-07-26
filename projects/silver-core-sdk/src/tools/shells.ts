@@ -233,7 +233,16 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
       shells.clear();
       if (stateDir !== '') {
         try {
-          rmSync(stateDir, { recursive: true, force: true });
+          // The tree kill above routes through taskkill on Windows and is
+          // ASYNCHRONOUS, so the just-killed shell can still hold the state
+          // files here and the directory leaks silently (the catch below is
+          // best-effort by design and would never say so). A short bounded
+          // retry reclaims it in the common case. Deliberately modest, and
+          // deliberately NOT larger: `rmSync`'s retry sleeps SYNCHRONOUSLY and
+          // blocks the event loop the reaping needs, so a long budget would
+          // stall query teardown and still not help (2026-07-26 platform
+          // probe). Callers wanting a guarantee should await their own cleanup.
+          rmSync(stateDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 20 });
         } catch {
           /* best-effort */
         }

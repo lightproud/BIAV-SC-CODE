@@ -55,6 +55,22 @@ jobs:
         run: npm ci
       - name: Typecheck (agent SDK)
         run: npm run typecheck --workspace silver-core-agent-sdk
+      # Output is tee'd so the FINAL step can replay the failure list into the
+      # log tail. Without that, the agent suite's verdict sits mid-log above the
+      # maestro run and the cleanup chatter, where `get_job_logs` (tail-only)
+      # cannot reach it — three probe rounds were spent reading around it.
+      # `set -o pipefail` keeps vitest's exit code instead of tee's (lesson #52).
+      - name: Unit suite (agent SDK)
+        shell: bash
+        run: |
+          set -o pipefail
+          npm test --workspace silver-core-agent-sdk 2>&1 | tee "$RUNNER_TEMP/agent-suite.log"
+      - name: Build + unit suite (maestro SDK)
+        if: always()
+        run: |
+          npm run build --workspace silver-core-agent-sdk
+          npm run build --workspace silver-core-maestro-sdk
+          npm test --workspace silver-core-maestro-sdk
       # Shell-resolver diagnostic (added after round 1, 2026-07-26): the first
       # probe failed ~24 Bash-path tests with "No POSIX shell found", yet the
       # runner demonstrably has C:\Program Files\Git\bin\git.exe and the
@@ -62,9 +78,11 @@ jobs:
       # env var is absent/differently cased under the runner shell, or bash.exe
       # is not where git.exe is — this step tells us which, instead of leaving
       # the whole cluster classified as "probably environment".
-      # Non-fatal on purpose: it is instrumentation, not a gate.
+      # Runs LAST and `if: always()`: a diagnostic buried mid-log above a
+      # thousand lines of test output cannot be read from the API tail — it has to
+      # sit next to the failure it explains. Non-fatal: instrumentation, not a gate.
       - name: Diagnose the Windows shell resolver
-        if: runner.os == 'Windows'
+        if: always() && runner.os == 'Windows'
         continue-on-error: true
         shell: pwsh
         run: |
@@ -79,15 +97,24 @@ jobs:
             "$env:LOCALAPPDATA\Programs\Git\bin\bash.exe"
           )) { Write-Host ("exists {0,-5} {1}" -f (Test-Path $p), $p) }
           node -e "const e=process.env; const s={...e}; console.log('spread keeps ProgramFiles:', 'ProgramFiles' in s, JSON.stringify(s.ProgramFiles ?? null));"
-      # The suite is expected to surface platform assumptions here — path
-      # separators, shell resolution, process-group kills, and the sandbox
-      # backend that only resolves on Linux. A red run is DATA, not a failure
-      # of the probe; the run log is the deliverable.
-      - name: Unit suite (agent SDK)
-        run: npm test --workspace silver-core-agent-sdk
-      - name: Build + unit suite (maestro SDK)
+          node -e "import('./projects/silver-core-sdk/dist/tools/shell-resolve.js').then(m => console.log('resolvePosixShells ->', JSON.stringify(m.resolvePosixShells({...process.env})))).catch(e => console.log('resolver import failed:', e.message));"
+      # Replay the agent suite's verdict LAST, so the run is diagnosable from
+      # the API's tail-only log view on every platform (the shell diagnostic
+      # above is Windows-only; this one is not).
+      - name: Agent suite failure summary
         if: always()
+        shell: bash
         run: |
-          npm run build --workspace silver-core-agent-sdk
-          npm run build --workspace silver-core-maestro-sdk
-          npm test --workspace silver-core-maestro-sdk
+          f="$RUNNER_TEMP/agent-suite.log"
+          if [ ! -f "$f" ]; then echo "(no agent suite log — the step never ran)"; exit 0; fi
+          # Strip ANSI first: vitest colorizes, so `FAIL` is preceded by an
+          # escape sequence and a naive ^-anchored grep matches nothing —
+          # which is exactly what the first version of this step reported.
+          plain="$RUNNER_TEMP/agent-suite.plain.log"
+          sed -E $'s/\x1b\\[[0-9;]*[A-Za-z]//g' "$f" > "$plain"
+          echo "===== agent suite: failed test files ====="
+          grep -E '^\s*FAIL\s' "$plain" | sed -E 's/^\s+//' | sort -u || true
+          echo "===== agent suite: assertion messages ====="
+          grep -E '^\s*(AssertionError|Error|TypeError|SyntaxError):' "$plain" | sort -u | head -40 || true
+          echo "===== agent suite: tally ====="
+          grep -E 'Test Files |Tests  ' "$plain" || true

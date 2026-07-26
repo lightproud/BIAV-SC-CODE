@@ -14,6 +14,7 @@ import { AbortError } from '../errors.js';
 import { guardRegexPattern } from '../internal/regex-guard.js';
 import { sliceSurrogateSafe } from '../internal/text.js';
 import { GREP_DESCRIPTION } from './descriptions.js';
+import { toNativePath } from './fsutil.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -471,9 +472,13 @@ export const grepTool: BuiltinTool = {
         // on sibling loop links, uninterruptible). ripgrep default parity.
         followSymbolicLinks: false,
       });
+      // Host-native separators from here on (fast-glob emits POSIX ones): every
+      // downstream use — the files_with_matches listing, `path:line:` prefixes,
+      // the oversize-skipped note — must speak the same dialect as the rest of
+      // the tool surface. See toNativePath.
       files = rawEntries
         .filter((e) => e.dirent.isFile() || e.dirent.isSymbolicLink())
-        .map((e) => e.path);
+        .map((e) => toNativePath(e.path));
       if (globPattern && typePatterns) {
         // glob narrowed further by type extensions.
         const exts = extensionsForType(typePatterns);

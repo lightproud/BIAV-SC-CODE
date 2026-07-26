@@ -9,10 +9,30 @@
  */
 
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
+import {
+  existsSync,
+  mkdtempSync,
+  readFileSync,
+  realpathSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs';
+import { tmpdir as osTmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
+
+/**
+ * The LONG form of the temp root.
+ *
+ * On Windows `os.tmpdir()` hands back the 8.3 short name
+ * (`C:\Users\RUNNER~1\...`) while git — and therefore every path these tools
+ * report — uses the long one (`C:\Users\runneradmin\...`). A fixture built from
+ * the short name then fails against tool output built from the long one, on a
+ * difference that is not a difference: one directory, two spellings
+ * (2026-07-26 platform probe). Canonicalizing once here puts both sides in the
+ * spelling the tool actually emits. No-op off Windows.
+ */
+const tmpdir = (): string => realpathSync.native(osTmpdir());
 
 import type {
   ShellManager,
@@ -51,7 +71,7 @@ afterEach(() => {
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: process.env as Record<string, string | undefined>,
     signal: new AbortController().signal,

@@ -439,4 +439,5 @@ lessons-learned 的毕业纪律写的是第三个说法：「文字劝告是弱�
 | `projects/silver-core-sdk/scripts/check-version-bump.mjs` | 包内三方版本对账 + 单调递增 |
 | `.github/scripts/check-dep-direction.mjs` | maestro → agent 单向依赖 |
 | `.github/workflows/family-cold-start.yml` | 文档里写给人照抄的命令 ↔ 干净环境实跑（周检，2026-07-26 新增） |
-| `.github/workflows/sdk-platform-probe.yml` | 家族的绿 ↔ 非 Linux 平台（手动探路，2026-07-26 新增） |
+| `.github/workflows/sdk-platform-probe.yml` | 家族的绿 ↔ 非 Linux 平台（手动双平台探路；判词 tee 到日志尾，2026-07-26 新增） |
+| `silver-core-sdk.yml` job `unit-macos` | agent 单测 ↔ macOS（常规腿、不设 required；Windows 观察一轮后再入，守密人 2026-07-26 裁） |

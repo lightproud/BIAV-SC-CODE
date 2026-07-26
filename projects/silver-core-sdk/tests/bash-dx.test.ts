@@ -96,9 +96,14 @@ describe('Bash cmd-habit correction on exit 127', () => {
   });
 
   it('leaves dir (GNU coreutils) untouched — deliberately NOT in the word list', async () => {
+    // `dir` ships with GNU coreutils (Linux, Git Bash) but NOT with BSD
+    // userland, so on macOS the command genuinely exits 127 and the assertion
+    // below would be testing the platform, not the word list (2026-07-26
+    // platform probe). The claim under test — `dir` is absent from the
+    // cmd.exe-only word list — is asserted unconditionally right after.
     const dir = await makeDir('cmd-dir');
     const res = await bashTool.execute({ command: 'dir .' }, makeCtx(dir));
-    expect(res.isError).toBeFalsy();
+    if (process.platform !== 'darwin') expect(res.isError).toBeFalsy();
     expect(text(res)).not.toContain(HINT_MARKER);
   });
 
@@ -123,8 +128,13 @@ describe('Bash cmd-habit correction on exit 127', () => {
 
   it('skips leading env assignments when extracting the first word', async () => {
     const dir = await makeDir('cmd-env');
+    // `del`, not `findstr`: findstr.exe is a REAL Windows binary on System32,
+    // which Git Bash has on PATH — it runs and exits 1, so the 127 the hint
+    // keys on never happens (2026-07-26 platform probe). `del` is a cmd.exe
+    // BUILTIN with no executable anywhere, so it 127s on every host, which is
+    // what this test is actually about.
     const res = await bashTool.execute(
-      { command: 'FOO=1 findstr pattern file.txt' },
+      { command: 'FOO=1 del pattern file.txt' },
       makeCtx(dir),
     );
     expect(res.isError).toBe(true);

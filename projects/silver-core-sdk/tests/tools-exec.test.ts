@@ -186,10 +186,32 @@ describe('Bash tool', () => {
   });
 
   it('runs the command in ctx.cwd', async () => {
+    // Read a marker through a RELATIVE path rather than comparing path
+    // spellings: macOS resolves /var -> /private/var, and Git Bash reaches one
+    // directory through two mounts (`/tmp/x` and `/c/Users/.../Temp/x` are the
+    // same place), so every string form of this assertion is a test of the
+    // dialect rather than of the claim (2026-07-26 platform probe). A relative
+    // read resolves against whatever the shell's real cwd is, on any host.
     const dir = await makeDir('bash-cwd');
-    const res = await bashTool.execute({ command: 'pwd' }, makeCtx(dir));
+    await writeFile(path.join(dir, 'cwd.marker'), 'in-ctx-cwd');
+    const res = await bashTool.execute({ command: 'cat ./cwd.marker' }, makeCtx(dir));
     expect(res.isError).toBeFalsy();
-    expect(text(res).trim()).toBe(await realpath(dir));
+    expect(text(res).trim()).toBe('in-ctx-cwd');
+  });
+
+  it('a missing cwd is reported AS a missing cwd, not as a missing shell', async () => {
+    // Both surface as spawn ENOENT. Reporting the first as the second sent a
+    // host with a bad working directory off to install Git Bash — confidently
+    // wrong advice, which is worse than a raw errno (2026-07-26 probe, where a
+    // POSIX-only '/tmp' in a test resolved to a non-existent C:\tmp).
+    const gone = path.join(root, 'definitely-not-here');
+    await expect(
+      bashTool.execute({ command: 'echo hi' }, makeCtx(gone)),
+    ).rejects.toThrow(/working directory does not exist/);
+    // ...and the shell guidance is NOT what the caller is told.
+    await expect(
+      bashTool.execute({ command: 'echo hi' }, makeCtx(gone)),
+    ).rejects.not.toThrow(/No POSIX shell found/);
   });
 
   it('makes merged ctx.env visible to the command', async () => {

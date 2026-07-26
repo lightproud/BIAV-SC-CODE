@@ -8,6 +8,7 @@
  */
 
 import { spawn } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js';
 import { createTreeKiller } from './kill-plan.js';
 import { AbortError, ConfigurationError } from '../errors.js';
@@ -598,7 +599,20 @@ async function execute(
       // Typed (audit 2026-07-10): this was the last bare `Error` in src/ — an
       // unspawnable shell is an environment/configuration problem, and the
       // stable `code` lets a host route it without parsing the message.
-      const detail = outcome.error.code === 'ENOENT' ? SHELL_NOT_FOUND_GUIDANCE : outcome.error.message;
+      // ENOENT from spawn has TWO causes and they need different advice: the
+      // interpreter is missing, or `cwd` does not exist. Reporting the second
+      // as the first told a host with a bad working directory to go install Git
+      // Bash — a wrong answer that is worse than a raw errno because it sounds
+      // authoritative (2026-07-26 platform probe, where a POSIX-only `/tmp`
+      // resolved to a non-existent `C:\tmp`). Distinguish them.
+      let detail: string;
+      if (outcome.error.code !== 'ENOENT') {
+        detail = outcome.error.message;
+      } else if (!existsSync(ctx.cwd)) {
+        detail = `working directory does not exist: ${ctx.cwd}`;
+      } else {
+        detail = SHELL_NOT_FOUND_GUIDANCE;
+      }
       throw new ConfigurationError(`Bash: failed to spawn a shell: ${detail}`);
     }
 

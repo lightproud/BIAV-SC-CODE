@@ -18,6 +18,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
+import { tmpdir } from 'node:os';
 
 import type {
   SpawnSubagentFn,
@@ -36,7 +37,7 @@ import { taskCreateTool, taskGetTool, taskUpdateTool } from '../src/tools/task.j
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: {},
     signal: new AbortController().signal,

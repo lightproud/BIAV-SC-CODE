@@ -5,6 +5,7 @@
  */
 
 import { existsSync, readFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -25,7 +26,7 @@ import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
 
 const INPUT: HookInput = {
   session_id: 's1',
-  cwd: '/tmp',
+  cwd: tmpdir(),
   hook_event_name: 'PreToolUse',
   tool_name: 'Bash',
   tool_input: { command: 'ls' },
@@ -195,7 +196,7 @@ describe('DefaultHookRunner condition gate', () => {
   it('uses the stop variant for Stop events', async () => {
     const t = new MockTransport([textReplyEvents('{"ok":false,"reason":"insufficient evidence in transcript"}')]);
     const cb = vi.fn();
-    const stopInput = { session_id: 's1', cwd: '/tmp', hook_event_name: 'Stop' } as HookInput;
+    const stopInput = { session_id: 's1', cwd: tmpdir(), hook_event_name: 'Stop' } as HookInput;
     const runner = new DefaultHookRunner({
       hooks: { Stop: [{ condition: 'the tests passed', hooks: [cb] }] },
       debug: () => {},

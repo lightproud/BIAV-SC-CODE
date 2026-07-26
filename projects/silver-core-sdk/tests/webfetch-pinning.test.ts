@@ -15,6 +15,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { tmpdir } from 'node:os';
 import { EventEmitter } from 'node:events';
 import { Readable } from 'node:stream';
 
@@ -40,7 +41,7 @@ const mockRequest = vi.mocked(httpsRequest);
 
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
   return {
-    cwd: '/tmp',
+    cwd: tmpdir(),
     additionalDirectories: [],
     env: {},
     signal: new AbortController().signal,

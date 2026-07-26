@@ -34,23 +34,44 @@ export const SHELL_NOT_FOUND_GUIDANCE =
   'install Git for Windows (Git Bash) or set CLAUDE_CODE_GIT_BASH_PATH to ' +
   'the full path of bash.exe.';
 
-/** Standard Git-for-Windows bash.exe locations, most common first. */
+/**
+ * Standard Git-for-Windows bash.exe locations, most common first.
+ *
+ * Install roots are read from the caller's env FIRST, then from `process.env`
+ * as a fallback (2026-07-26 Windows probe). Those roots are host installation
+ * facts — where Git happens to live on this machine — not session
+ * configuration, and a host that hands the SDK a CURATED `options.env`
+ * (`{ PATH, HOME, … }`, which is exactly what a hardened Electron host does)
+ * otherwise loses `ProgramFiles` and with it the entire Bash tool: the resolver
+ * returns nothing and every call dies with "No POSIX shell found". Scrubbing a
+ * variable out of the CHILD's environment is a legitimate thing for a host to
+ * want; being unable to LOCATE the interpreter because of it is not.
+ *
+ * The fallback only ever reads the three root vars, never leaks them into the
+ * spawned environment (that stays `ctx.env`), and never overrides a root the
+ * caller did supply.
+ */
 function gitBashProbes(env: Record<string, string | undefined>): string[] {
-  const roots = [
-    env['ProgramFiles'],
-    env['ProgramFiles(x86)'],
-    env['ProgramW6432'],
-  ].filter((r): r is string => typeof r === 'string' && r.length > 0);
+  const root = (name: string): string | undefined => {
+    const v = env[name] ?? process.env[name];
+    return typeof v === 'string' && v.length > 0 ? v : undefined;
+  };
+  const roots = ['ProgramFiles', 'ProgramFiles(x86)', 'ProgramW6432']
+    .map(root)
+    .filter((r): r is string => r !== undefined);
   const probes: string[] = [];
-  for (const root of roots) {
-    probes.push(winJoin(root, 'Git', 'bin', 'bash.exe'));
-    probes.push(winJoin(root, 'Git', 'usr', 'bin', 'bash.exe'));
+  for (const r of roots) {
+    probes.push(winJoin(r, 'Git', 'bin', 'bash.exe'));
+    probes.push(winJoin(r, 'Git', 'usr', 'bin', 'bash.exe'));
   }
-  const localAppData = env['LOCALAPPDATA'] ?? env['LocalAppData'];
-  if (typeof localAppData === 'string' && localAppData.length > 0) {
+  const localAppData = root('LOCALAPPDATA') ?? root('LocalAppData');
+  if (localAppData !== undefined) {
     probes.push(winJoin(localAppData, 'Programs', 'Git', 'bin', 'bash.exe'));
   }
-  return probes;
+  // De-duplicate: on a 64-bit host ProgramFiles and ProgramW6432 are the SAME
+  // directory, so the un-deduped list probed (and, on a miss, spawn-tried)
+  // every candidate twice — observed verbatim in the probe's resolver dump.
+  return [...new Set(probes)];
 }
 
 /**
