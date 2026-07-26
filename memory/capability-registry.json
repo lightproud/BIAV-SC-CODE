@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 45,
-      "scripts_top": 40,
+      "scripts_top": 41,
       "scripts_news": 32,
       "scripts_wiki": 5,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 5,
       "projects": 7,
-      "total": 149
+      "total": 150
     },
     "reachability": {
-      "live": 77,
+      "live": 78,
       "test-only": 0,
       "orphaned": 0
     }
@@ -798,6 +798,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "sdk_substantive_versions.py",
+      "path": "scripts/sdk_substantive_versions.py",
+      "summary": "哪些版本对**你这个包的消费方**有实质变更（T70，守密人 2026-07-26 裁定）。",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },
