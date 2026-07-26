@@ -286,6 +286,9 @@ _WIKI_DOMAIN = {
     "character_index": "index",
     "aliases": "index",  # 厚锚别名侧表（chunk3）：角色索引的 sibling 扩展
     "language_config": "localization", "panel_text": "localization",
+    # 版本台账（2026-07-26 check_version 落点改现行数据层后新增）：它记的是产品时间线
+    # 本身，既非剧情也非玩法，故单列 meta 域，不硬塞进 index 混淆语义。
+    "versions": "meta",
 }
 
 
