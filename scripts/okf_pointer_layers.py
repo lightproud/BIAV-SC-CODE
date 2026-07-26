@@ -353,6 +353,66 @@ def _archive_resource(name: str) -> str | None:
     return None
 
 
+class ArchiveSourceMissing(RuntimeError):
+    """归档数据源整体缺席——生成器必须拒绝生成，而不是把概念当「该删」删掉。"""
+
+
+def preflight_archive_source(*, allow_missing: bool = False) -> list[str]:
+    """在**任何写盘之前**核实社区归档数据源在场；不在场则抛 ArchiveSourceMissing。
+
+    为什么需要这道门(2026-07-26 会话两次亲历):`build_okf_bundle.main()` 的形状是
+    **先 `shutil.rmtree(okf/)` 再整体重建**。于是「删除」根本不是一个决策——它是
+    「先擦后写」遇上**静默降级的输入**的副作用:本地会话没设 `BIAV_SC_DATA_ROOT`
+    (数据湖 2026-07-20 已迁出 code 仓)时,每个平台的存在性检查都落空、指针一个不
+    生成,重建完就少了 17 个 community 概念 + 对应 sources 概念,**7,968 行删除**,
+    而生成器**一声不吭**——它认为自己只是如实反映了「磁盘上没有」。
+
+    这正是「生成取代对账」这套投资的背面:**生成器的权威性建立在数据源在场**;
+    源缺席时它不喊,只删。CI 侧安全(`build-okf-bundle.yml` clone 数据仓并设 env),
+    风险全在本地会话——一个不知情的会话跑一次生成器再提交,就静默删掉整层。
+
+    判据刻意定在**根级而非平台级**,以区分两种外观相同的情形:
+      - 单个平台目录消失 = 该平台真的退役 → 原有的逐平台跳过是对的,不拦;
+      - 索引声明了 N 个平台而**一个都解析不到** = 数据源整体缺席 → 拦。
+    再加一条**过半消失**的响亮告警(不拦,拦了会在真实迁移期变成墙)。
+
+    Returns: 告警行(可空)。allow_missing=True 时只告警不抛——留给「数据湖真没了」
+    这种合法情形的逃生口,免得守卫本身变成不可绕过的墙。
+    """
+    idx_path = REPO / "projects" / "news" / "index" / "community_index.json"
+    if not idx_path.exists():
+        return []
+    try:
+        platforms = json.loads(idx_path.read_text(encoding="utf-8")).get("platforms", {})
+    except (json.JSONDecodeError, OSError):
+        return []
+    expected = sorted(platforms)
+    if not expected:
+        return []
+    resolved = [name for name in expected if _archive_resource(name) is not None]
+    missing = len(expected) - len(resolved)
+    root = archive_layout.community_root()
+    if not resolved:
+        message = (
+            f"归档数据源整体缺席：community_index.json 声明 {len(expected)} 个平台，"
+            f"在 {root} 下一个都解析不到。\n"
+            "  生成器**拒绝生成**——继续跑会先 rmtree(okf/) 再重建，而重建不出来的\n"
+            "  概念就等于被静默删除（2026-07-26 实测：17 个 community 概念 / 7,968 行）。\n"
+            "  数据湖 2026-07-20 已迁出 code 仓，本地消费须先 clone BIAV-SC-DATA 并设\n"
+            "  BIAV_SC_DATA_ROOT 指向它（见 CLAUDE.md §5.2）。\n"
+            "  数据湖确已废弃、就是要删这些概念时，加 --allow-missing-archive 显式放行。"
+        )
+        if not allow_missing:
+            raise ArchiveSourceMissing(message)
+        return [f"归档数据源整体缺席，经 --allow-missing-archive 放行（{len(expected)} 个平台指针将全部消失）"]
+    if missing * 2 > len(expected):
+        return [
+            f"归档数据源过半缺席：{len(expected)} 个平台中 {missing} 个解析不到"
+            f"（根 = {root}）；不拦，但若非真实退役请先核实 BIAV_SC_DATA_ROOT"
+        ]
+    return []
+
+
 def build_community() -> tuple[list[dict], list[str]]:
     idx_path = REPO / "projects" / "news" / "index" / "community_index.json"
     flags: list[str] = []

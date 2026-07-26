@@ -272,6 +272,12 @@ def test_export_tarball(bundle, tmp_path):
 
 
 # --- main() with BUNDLE redirected to tmp (real okf/ untouched) -------------
+#
+# 这三个 main() 测试都显式带 `--allow-missing-archive`（2026-07-26 新增守卫）。
+# 它们测的是**构建器机制**（重定向、tarball、不碰真 okf/），跑在 sparse / 无数据湖的
+# 环境里；而守卫默认拒绝「社区归档数据源整体缺席」的生成，正是为了挡住本地会话静默
+# 删掉 17 个 community 概念。**这里显式放行而不是把守卫调松**：测试环境的缺席是已知
+# 且无害的，写成旗标就把这个事实留在了调用点上，而不是让守卫为了迁就测试变弱。
 
 def _repo_tmp_bundle():
     """A unique bundle dir under REPO (main() prints BUNDLE.relative_to(REPO))."""
@@ -300,7 +306,7 @@ def test_main_builds_full_bundle(monkeypatch, capsys):
     import shutil
     b = _repo_tmp_bundle()
     _redirect_bundle(monkeypatch, b)
-    monkeypatch.setattr(sys, "argv", ["build_okf_bundle.py"])
+    monkeypatch.setattr(sys, "argv", ["build_okf_bundle.py", "--allow-missing-archive"])
     try:
         bok.main()
         assert (b / "index.md").exists()
@@ -337,7 +343,7 @@ def test_main_leaves_the_tracked_bundle_untouched(monkeypatch, capsys):
 
     b = _repo_tmp_bundle()
     _redirect_bundle(monkeypatch, b)
-    monkeypatch.setattr(sys, "argv", ["build_okf_bundle.py"])
+    monkeypatch.setattr(sys, "argv", ["build_okf_bundle.py", "--allow-missing-archive"])
     try:
         bok.main()
         capsys.readouterr()
@@ -356,7 +362,8 @@ def test_main_with_tarball(tmp_path, monkeypatch):
     _redirect_bundle(monkeypatch, b)
     tarball = tmp_path / "out.tar.gz"
     monkeypatch.setattr(sys, "argv",
-                        ["build_okf_bundle.py", "--tarball", str(tarball)])
+                        ["build_okf_bundle.py", "--allow-missing-archive",
+                         "--tarball", str(tarball)])
     try:
         bok.main()
         assert tarball.exists()

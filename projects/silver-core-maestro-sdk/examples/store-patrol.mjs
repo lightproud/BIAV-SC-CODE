@@ -208,23 +208,41 @@ export async function runStorePatrol(opts) {
     return { outcome: 'ok', summary: changed ? `${target.id}: CHANGED` : `${target.id}: unchanged` };
   };
 
-  // Idempotent daily dispatch: one session per target per day; if an earlier
-  // run today already FAILED terminally, open a fresh :rN retry session.
+  // Idempotent daily dispatch: one session per target per day. If an earlier
+  // run today already FAILED terminally, reopen it.
+  //
+  // This used to be a hand-rolled loop that minted `:r2`, `:r3` ids of its own
+  // (design review F5: the closed state machine has no reopen edge, so every
+  // host invented a convention, and one logical job ended up scattered across
+  // rows nothing tied together). 0.79.0's `reopenSession` owns the convention:
+  // it mints the successor id, stamps `reopenOf` + `attemptRound`, and refuses
+  // to reopen anything non-terminal. `reopenChain()` reassembles the day's
+  // attempts without parsing id prefixes.
   const sessionIds = [];
   for (const target of targets) {
     const baseId = `patrol:${target.id}:${today}`;
     let id = baseId;
-    let n = 1;
     let existing = await ledger.getSession(id);
-    while (existing !== null && existing.state === 'failed') {
-      id = `${baseId}:r${(n += 1)}`;
-      existing = await ledger.getSession(id);
-    }
     if (existing === null) {
       await ledger.dispatch({ id, intent: `store-patrol ${target.id} ${today}`, payload: { target } });
       log(`dispatched ${id}`);
     } else {
-      log(`skipping ${id} (already ${existing.state})`);
+      // Walk to the newest link in today's chain, then reopen it if it failed.
+      const chain = await ledger.reopenChain(baseId);
+      const newest = chain[chain.length - 1] ?? existing;
+      if (newest.state === 'failed') {
+        // Pass the CURRENT target explicitly. reopenSession inherits the
+        // predecessor's payload by default ("run that again"), which is the
+        // wrong default here: the registry may have been edited between runs,
+        // and inheriting would rerun the old endpoint. The e2e caught exactly
+        // this — the retry re-hit the hung URL it was supposed to be moving off.
+        const reopened = await ledger.reopenSession(newest.id, { payload: { target } });
+        id = reopened.id;
+        log(`reopened ${newest.id} -> ${id} (round ${reopened.attemptRound})`);
+      } else {
+        id = newest.id;
+        log(`skipping ${id} (already ${newest.state})`);
+      }
     }
     sessionIds.push(id);
   }

@@ -10,7 +10,8 @@
       "2026-07-18 audit-r1 fixes re-measured": "Post audit-round-1 fixes: ledger-state holds 100.00 (87 killed); workflow-graph rises 97.14 -> 97.84 (135 killed + 1 timeout, same 3 equivalence-class survivors); schedule-spec measures 99.49 within the 100 floor's 0.75pp tolerance (190 killed + 6 timeout, 1 survivor = the floor+1/-1 steps mutant made behaviorally equivalent by the C1 advance loop, which re-derives the same lattice point; the C1 fix replaced an untestable 8-iteration escape with deterministic flatness detection and deleted firesBetween's unreachable in-loop guard). Floors unchanged.",
       "2026-07-26 design-review F1 — two targeted files grew, floors NOT pre-measured": "0.78.0 added code to two ratchet targets: state.ts (floor 100.00) gained UNSUCCESSFUL_TERMINAL_STATES + isTerminal/isUnsuccessfulTerminal, and workflow/graph.ts (floor 98.04) changed graphStatus's dominating condition to isUnsuccessfulTerminal(state). Both are exhaustively pinned by tests/terminal-vocabulary.test.ts (every predicate asserted over all six SESSION_STATES, plus a by-name table) and tests/design-review-20260726.test.ts, so the new branches SHOULD be fully killed — but this was NOT measured locally, deliberately: an in-place Stryker run instruments the working tree (the repo's own documented hazard, learned the hard way 2026-07-26). If the weekly sdk-mutation-ratchet run reds on either target it is the file-growth kind, same as the T63 precedent —補杀 first, re-baseline only on a keeper ruling. src/internal/wait.ts (new) has no ratchet target: it is 14 lines of abortable-sleep plumbing behind the two components' own behavioral locks, and adding a floor nobody has measured would be a number pretending to be a baseline.",
       "2026-07-18 T56 r2 floor adjustment (keeper ruling 可)": "Keeper-ruled floor changes after the round-2 defect fixes reshaped the mutant populations: schedule-spec 100 -> 97.77 and workflow-load 100 -> 98.04 (remaining survivors are analyzed equivalence classes: correction-loop-absorbed step estimates, performance-only fast-forward period selection, regex-$ end-anchor; kill rounds exhausted at 94.20->97.77 and 95.19->98.04); workflow-graph RAISED 97.14 -> 98.04 in the same batch. Only-up discipline resumes from these values."
-    }
+    },
+    "cadence": "Optional per-target field: 'weekly' (default when absent) or 'monthly'. Keeper ruling 2026-07-26 (product review P2): three of the six maestro targets sit on module families with ZERO real call sites anywhere in the repo outside their own tests — goal, delivery and the declarative workflow loader — so half the weekly ratchet budget was spent guarding code nobody calls. They move to monthly rather than out: the code, the tests and the floors all stay (annotated experimental in README, not deprecated), and a floor nobody measures is not a ratchet — the T64 lesson. Monthly rounds fire on the FIRST scheduled Monday of each month; any manual workflow_dispatch runs the full set regardless of cadence. The skipped names are PRINTED every round, because a silent cap reads as 'we covered everything' when it did not."
   },
   "targets": [
     {
@@ -31,17 +32,20 @@
     {
       "name": "goal-decision",
       "mutate": "src/goal/decision.ts",
-      "floor": 100.0
+      "floor": 100.0,
+      "cadence": "monthly"
     },
     {
       "name": "delivery-channel",
       "mutate": "src/delivery/channel.ts",
-      "floor": 100.0
+      "floor": 100.0,
+      "cadence": "monthly"
     },
     {
       "name": "workflow-load",
       "mutate": "src/workflow/load.ts",
-      "floor": 98.04
+      "floor": 98.04,
+      "cadence": "monthly"
     }
   ]
 }

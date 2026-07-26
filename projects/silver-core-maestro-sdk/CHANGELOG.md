@@ -12,6 +12,74 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.79.0 — 2026-07-26
+
+Reopen semantics (T67 / design review F5 — keeper ruling 2026-07-26, option 甲:
+a NEW session that links back, not a `failed -> pending` edge), plus the
+follow-ups the keeper approved from the product review.
+
+**`TaskLedger.reopenSession(id, opts?)` / `reopenChain(id)`.** The closed state
+machine is deliberately UNTOUCHED. Terminal immutability is what the CAS fence,
+idempotent dispatch and "a restart never resurrects a settled session" all rest
+on; a reopen edge would make `done`/`failed` mean "settled for now" and put
+every invariant that treats a terminal as final back up for audit. What was
+missing was never an edge — it was the LINK: hosts already reopened by minting
+ids of their own (`examples/store-patrol.mjs` appended `:r2`, `:r3` in a loop)
+and paid three costs for it — one logical job scattered across rows nothing tied
+together, an audit that had to be reassembled by id prefix, and every host
+inventing its own convention. The SDK now owns the convention.
+
+- `reopenSession` requires a TERMINAL predecessor (RangeError otherwise —
+  reopening live work would run the same job twice) and refuses a `cancelled`
+  one unless `{ force: true }`: a cancel means "stop this, forever", so a
+  routine retry loop must not silently undo it. `done` is reopenable too —
+  this is rerun, not only repair.
+- The successor id defaults to `{root}#r{round}`, derived from the chain ROOT
+  rather than the predecessor. Appending to the predecessor accumulates
+  (`job#r2#r3#r4`); flat ids keep the whole chain greppable by one prefix,
+  which is what the hand-rolled conventions were reaching for. This method's
+  own regression lock caught the accumulating version on first run. `#` rather
+  than `:` because `:` is the session-key segment separator four id builders
+  are forbidden from containing.
+- `intent` / `payload` / `maxAttempts` inherit from the predecessor so the
+  common case is a one-argument call; each is overridable. **Overriding
+  payload matters**: the store-patrol e2e caught the example inheriting a stale
+  target and re-hitting the endpoint it was supposed to be moving off.
+- New `SessionRecord` fields `reopenOf` / `attemptRound` (pure additive, absent
+  on every pre-0.79.0 row). `reopenChain` returns the whole chain oldest-first
+  from ANY member — an auditor holding one row should not need to know whether
+  it is the first or the last — and is cycle-safe against a hand-edited store.
+- `store-patrol.mjs` drops its hand-rolled `:rN` loop for the real API, which
+  is the point of option 甲.
+
+**`docs/CONCURRENCY.md`** (T68): the package's second doc and the one the
+product review called its largest gap. per-session mutex vs CAS fence (and why
+neither substitutes for the other), claim leases, settle-then-append and what a
+crash in the commit window costs, the three terminals' differing semantics, why
+the concurrency cap must live at the claim and not in the executor, driver
+generation semantics, a store checklist, and the known boundaries stated rather
+than omitted.
+
+**Ratchet cadence** (T69): `mutation-ratchet.json` targets may carry
+`"cadence": "monthly"`. The three maestro targets sitting on module families
+with zero real call sites move there — half the weekly budget was guarding code
+nobody calls. They keep their floors and tests; monthly rounds fire on the first
+scheduled Monday, any manual dispatch runs everything, and skipped names are
+PRINTED because a silent cap reads as "we covered everything" when it did not.
+Three new governance assertions guard the cadence itself (T64's disease in
+milder form: a floor measured once a month is still a floor nobody watches if
+the filter breaks).
+
+**Lockstep wording** (T70): no-op entries are pinned to the machine-readable
+`Lockstep alignment only` opening, and `scripts/sdk_substantive_versions.py`
+turns that into a per-package "versions that actually changed something for
+you" list — the thing a consumer pinning tarballs by version needs. The guard
+caught two real drifts on its first run (agent 0.72.0 / 0.70.0 said "Lockstep
+alignment **with** … No agent-side changes", which the parser scored as
+substantive); both corrected.
+
+Tests 404 -> 421.
+
 ## 0.78.1 — 2026-07-26
 
 Product-review remediation (`Public-Info-Pool/Resource/repo-engineering/

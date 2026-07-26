@@ -16,6 +16,15 @@ agent 所需的脏活(循环、调度、重试、恢复、台账)做成可复用
 
 需求全文:`Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md`
 
+## 文档
+
+- **`docs/ONBOARDING.md`** — 30 分钟接上一个循环任务。**含你要写的那个 `LedgerStore`
+  的可复制样板**(内存版 + 单文件 JSON 版)、四条最常踩的陷阱、最小接线骨架。
+  **先读这份。**
+- **`docs/CONCURRENCY.md`** — 并发、竞态与崩溃语义:per-session 互斥 / 可选 CAS 围栏 /
+  认领租约 / settle-then-append 提交点 / 六态三终态 / 「哪些 id 本身就是簿记」。
+  **要注入自己的 store、或要跑不止一个驱动器,先读这份。**
+
 ## 身份声明(as-is)
 
 本仓为一个游戏项目的**副产品**,按 as-is 提供:**无支持承诺,issue / PR 可能

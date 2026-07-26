@@ -36,11 +36,21 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.78.1`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-agent-sdk` = `0.78.1`
+**当前版本 `0.79.0`** · 发布日 2026-07-26 · 家族锁步对端 `silver-core-agent-sdk` = `0.79.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.79.0（2026-07-26）：重开语义 + 三项余项推进**（守密人「1.写 2.3.4.5.6.按你建议推进」）。
+**T67 重开（甲案）**：`reopenSession` / `reopenChain`——新会话 + `reopenOf`/`attemptRound` 链，
+**封闭状态机分毫未动**（终态不可变是 CAS 围栏 / 幂等派发 / 重启不复活的共同立足点；缺的从来不是一条边，
+是那个**链接**）。前驱须终态 · `cancelled` 默认拒绝需 `force` · 后继 id 从**链根**派生（累加版被自己的回归锁首跑抓到）·
+payload 可覆盖（e2e 抓到示例继承旧 target 重打本该迁离的端点）。`store-patrol.mjs` 弃手写 `:rN` 环改用真 API。
+**T68 `docs/CONCURRENCY.md`**（本包第二份文档，产品审视列为最大缺口）。
+**T69 变异棘轮 `cadence` 分档**：三个零消费靶降月检（加字段不删腿），cadence 自身加三条治理断言。
+**T70 空转措辞钉死 + `scripts/sdk_substantive_versions.py`**（守卫首跑抓到两条真漂移）。
+测试 404 → **421**。
 
 **v0.78.1（2026-07-26）：产品审视四项裁定**——审视档
 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-product-review-20260726.md`（同日第二轮，
@@ -90,7 +100,8 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
   配置零新代码)——首个**生产**循环任务长在台账 + 驱动器上:Morimens Steam 双端点
   (appdetails 价格/发行面 + appreviews 评价总量面)每日指纹比对,快照 + 变更日志落
   `Public-Info-Pool/Record/store-patrol/`;台账经宿主文件店持久化,跨重启恢复真实生效;
-- 幂等派发键 `patrol:{target}:{date}`(同日重跑跳过,failed 终态自动 r2 重开);
+- 幂等派发键 `patrol:{target}:{date}`(同日重跑跳过;failed 终态经 0.79.0 `reopenSession` 重开为 `#r2`,
+  原为手写 `:r2` 后缀,见 v0.79.0 条);
   驱动器超时经 AbortSignal 真中断 fetch;全部失败反映到进程退出码(CI 可见);
 - CI `store-patrol.yml` 每日北京 15:15(07:15 UTC)自动跑,机器提交带 [skip ci];
 - e2e `tests/store-patrol.e2e.test.ts` 四场景(基线/跨日变更+幂等/500 重试/挂死超时耗尽);
