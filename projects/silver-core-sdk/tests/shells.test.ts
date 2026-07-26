@@ -8,6 +8,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import os from 'node:os';
 import path from 'node:path';
 import fs from 'node:fs';
+import { rm } from 'node:fs/promises';
 
 import {
   createShellManager,
@@ -27,17 +28,17 @@ beforeEach(() => {
   sandbox = fs.mkdtempSync(path.join(os.tmpdir(), 'bpt-shells-'));
   manager = undefined;
 });
-afterEach(() => {
+afterEach(async () => {
   manager?.dispose();
-  // maxRetries: Windows keeps a handle on a just-reaped child's files for a
-  // moment, so an immediate rmdir loses the race with EBUSY and fails the
-  // test in TEARDOWN — nothing to do with what was under test (2026-07-26
-  // platform probe). Retrying is the documented remedy; a no-op elsewhere.
-  // 30 x 100ms: the first attempt at 10 x 50ms still lost the race on the
-  // 2026-07-26 probe. Windows releases a dead child's handles asynchronously,
-  // and this suite launches background shells. Left to FAIL if 3s is not
-  // enough — that would be a real handle leak, not teardown noise.
-  fs.rmSync(sandbox, { recursive: true, force: true, maxRetries: 30, retryDelay: 100 });
+  // ASYNC rm, not rmSync-with-retries. Windows releases a killed child's
+  // handles asynchronously and the tree kill routes through taskkill, so the
+  // directory is busy for a moment after dispose() returns — but `rmSync`'s
+  // `maxRetries` sleeps SYNCHRONOUSLY, blocking the very event loop that has
+  // to run the reaping callbacks. It burns the whole retry budget without
+  // letting anything progress, which is why 10x50ms and then 30x100ms both
+  // still lost the race on the 2026-07-26 probe. Awaiting yields, so the
+  // retries are actually spent waiting rather than spinning.
+  await rm(sandbox, { recursive: true, force: true, maxRetries: 30, retryDelay: 100 });
 });
 
 function makeCtx(withManager: boolean): ToolContext {
