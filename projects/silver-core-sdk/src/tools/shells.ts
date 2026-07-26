@@ -233,7 +233,13 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
       shells.clear();
       if (stateDir !== '') {
         try {
-          rmSync(stateDir, { recursive: true, force: true });
+          // maxRetries: the SIGKILL above is asynchronous on Windows (it routes
+          // through taskkill), so the just-reaped shell can still hold the
+          // state files for a moment and the directory leaks silently — the
+          // catch below is best-effort by design and would never say so.
+          // A short bounded retry (<=100ms) reclaims it without turning query
+          // teardown into a blocking wait (2026-07-26 platform probe).
+          rmSync(stateDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 20 });
         } catch {
           /* best-effort */
         }
