@@ -209,6 +209,22 @@ that ship on Windows (BPT Desktop / Electron is the reference consumer) should
 size their `Bash` rules for that reality rather than assume the sandbox row in
 the compatibility matrix applies to them.
 
+**No Windows backend is planned** — a decision, not a backlog item (keeper
+ruling 2026-07-26). It rests on three findings: official Claude Code ships no
+Windows sandbox either, so this is the state of the art rather than a gap
+peculiar to this SDK; Windows offers no bubblewrap equivalent to port (a Job
+Object does not govern filesystem writes, AppContainer sits awkwardly around an
+arbitrary shell, and Windows Sandbox is VM-level and Pro-only), so building one
+would mean inventing a new isolation semantics rather than porting an existing
+one; and the "the consumer would not know" cost does not apply, because this
+section exists. Recording that decision did NOT remove the exposure. Plan for
+the permission layer being load-bearing on Windows **permanently, not
+provisionally.**
+
+macOS is a different case and is deliberately NOT covered by that ruling:
+official Claude Code does have a Seatbelt sandbox there, so the missing macOS
+backend remains an unimplemented gap rather than a settled decision.
+
 Two related caveats that hold even where the sandbox DOES resolve: it does not
 scrub the environment by default (opt in with `SandboxOptions.envScrub`), and
 bubblewrap gives a sandboxed command no SIGTERM grace window. Full detail, and
