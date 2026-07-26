@@ -4,8 +4,8 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-26
-- 功能总数：**150**
-- 脚本可达性：活 78 / 仅测试 0 / 孤儿 0
+- 功能总数：**149**
+- 脚本可达性：活 77 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
@@ -14,7 +14,7 @@
 | CI 自动化工作流（编排入口·定时/事件平面） | 45 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 40 |
 | news 采集器脚本 | 32 |
-| wiki 数据脚本 | 6 |
+| wiki 数据脚本 | 5 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 5 |
@@ -277,7 +277,7 @@
 - **`taptap_collector.py`** _[活:cli]_ — TapTap 社区采集器 - Playwright 无头浏览器方案  
   `projects/news/scripts/taptap_collector.py`
 
-## wiki 数据脚本（6）
+## wiki 数据脚本（5）
 
 - **`build_drop_index.py`** _[活:cli]_ — 构建掉落物索引。  
   `projects/wiki/scripts/build_drop_index.py`
@@ -287,8 +287,6 @@
   `projects/wiki/scripts/decrypt_and_extract.py`
 - **`extract_client_data.py`** _[活:cli+workflow]_ — 从客户端解包提取结构化游戏数据。  
   `projects/wiki/scripts/extract_client_data.py`
-- **`generate_rss.py`** _[活:cli+workflow]_ — generate_rss.py - Generate RSS and Atom feeds for the Morimens wiki.  
-  `projects/wiki/scripts/generate_rss.py`
 - **`validate_data.py`** _[活:cli+command+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
 

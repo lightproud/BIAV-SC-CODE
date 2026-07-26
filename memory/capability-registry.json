@@ -9,15 +9,15 @@
       "workflows": 45,
       "scripts_top": 40,
       "scripts_news": 32,
-      "scripts_wiki": 6,
+      "scripts_wiki": 5,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 5,
       "projects": 7,
-      "total": 150
+      "total": 149
     },
     "reachability": {
-      "live": 78,
+      "live": 77,
       "test-only": 0,
       "orphaned": 0
     }
@@ -1182,16 +1182,6 @@
       ],
       "status": "live",
       "note_zh": "从客户端解包提取结构化游戏数据。"
-    },
-    {
-      "id": "generate_rss.py",
-      "path": "projects/wiki/scripts/generate_rss.py",
-      "summary": "generate_rss.py - Generate RSS and Atom feeds for the Morimens wiki.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live"
     },
     {
       "id": "validate_data.py",
