@@ -258,3 +258,52 @@ export function rpcErrorToError(
     },
   );
 }
+
+/**
+ * Verify the version the server negotiated in `initialize` is one this client
+ * can speak, and return it (undefined when the server named none, which the
+ * spec tolerates — the client keeps its advertised default).
+ *
+ * Spec: the client SHOULD disconnect on an unsupported version rather than
+ * echo an unknown one into every later request (audit r4 Z6-1/Z6-2).
+ */
+export function negotiateProtocolVersion(
+  result: unknown,
+  label: string,
+  transport: 'stdio' | 'http',
+): string | undefined {
+  const pv = extractProtocolVersion(result);
+  if (pv !== undefined && !SUPPORTED_PROTOCOL_VERSIONS.includes(pv)) {
+    throw new McpError(
+      'mcp_invalid_response',
+      `MCP server '${label}' negotiated unsupported protocol version '${pv}' ` +
+        `(client supports ${SUPPORTED_PROTOCOL_VERSIONS.join(', ')})`,
+      { serverLabel: label, transport, phase: 'connect' },
+    );
+  }
+  return pv;
+}
+
+/**
+ * Drain `tools/list` across its cursor pagination, bounded by MAX_LIST_PAGES so
+ * a misbehaving server that never drops its cursor cannot loop forever. The
+ * caller supplies its own request function, which is the only per-transport part.
+ */
+export async function listToolsPaginated(
+  request: (method: string, params: Record<string, unknown>, signal?: AbortSignal) => Promise<unknown>,
+  label: string,
+  debug: (msg: string) => void,
+  signal?: AbortSignal,
+): Promise<McpToolDescriptor[]> {
+  const tools: McpToolDescriptor[] = [];
+  let cursor: string | undefined;
+  for (let page = 0; page < MAX_LIST_PAGES; page++) {
+    const result = await request('tools/list', cursor === undefined ? {} : { cursor }, signal);
+    const { list, nextCursor } = parseToolsListResult(result);
+    tools.push(...list);
+    if (!nextCursor) return tools;
+    cursor = nextCursor;
+  }
+  debug(`[mcp:${label}] tools/list pagination exceeded ${MAX_LIST_PAGES} pages; truncating`);
+  return tools;
+}

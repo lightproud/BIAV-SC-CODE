@@ -15,12 +15,10 @@
 import type {
   CallToolResult,
   ElicitationHandler,
-  JSONSchema,
   McpHttpServerConfig,
   McpResource,
   McpResourceContent,
   McpSSEServerConfig,
-  ToolAnnotations,
 } from '../types.js';
 import { AbortError, McpError, NotImplementedError } from '../errors.js';
 import { resolveElicitation } from './elicitation.js';
@@ -30,18 +28,17 @@ import { sliceSurrogateSafe } from '../internal/text.js';
 import {
   CLIENT_INFO,
   DEFAULT_REQUEST_TIMEOUT_MS,
-  MAX_LIST_PAGES,
   MCP_PROTOCOL_VERSION,
-  SUPPORTED_PROTOCOL_VERSIONS,
-  extractProtocolVersion,
   extractServerInfo,
+  listToolsPaginated,
+  negotiateProtocolVersion,
   normalizeCallToolResult,
   parseResourceContents,
   parseResourcesList,
-  parseToolsListResult,
-  rpcErrorToError as rpcErrorToErrorFor,
   type JsonRpcId,
   type JsonRpcMessage,
+  type McpToolDescriptor,
+  rpcErrorToError as rpcErrorToErrorFor,
 } from './protocol.js';
 
 /** Bound on the best-effort session-termination DELETE in close(): a dead or
@@ -116,21 +113,11 @@ export class HttpMcpConnection {
       signal,
     );
     this.info = extractServerInfo(result);
-    const pv = extractProtocolVersion(result);
-    if (pv !== undefined) {
-      // audit r4 Z6-1: reject a negotiated version we cannot speak instead of
-      // echoing an unknown version into every later request header.
-      if (!SUPPORTED_PROTOCOL_VERSIONS.includes(pv)) {
-        throw new McpError(
-          'mcp_invalid_response',
-          `MCP server '${this.label}' negotiated unsupported protocol version '${pv}' ` +
-            `(client supports ${SUPPORTED_PROTOCOL_VERSIONS.join(', ')})`,
-          { serverLabel: this.label, transport: 'http', phase: 'connect' },
-        );
-      }
-      // Echo the server-negotiated version in subsequent request headers.
-      this.protocolVersion = pv;
-    }
+    // audit r4 Z6-1: reject a negotiated version we cannot speak instead of
+    // echoing an unknown version into every later request header.
+    const pv = negotiateProtocolVersion(result, this.label, 'http');
+    // Echo the server-negotiated version in subsequent request headers.
+    if (pv !== undefined) this.protocolVersion = pv;
     this.initialized = true;
     await this.rpcNotify('notifications/initialized', undefined, signal);
   }
@@ -140,27 +127,14 @@ export class HttpMcpConnection {
     return this.info;
   }
 
-  /** tools/list with cursor pagination. */
-  async listTools(
-    signal?: AbortSignal,
-  ): Promise<Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }>> {
-    const tools: Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }> = [];
-    let cursor: string | undefined;
-    for (let page = 0; page < MAX_LIST_PAGES; page++) {
-      const result = await this.rpcRequest(
-        'tools/list',
-        cursor === undefined ? {} : { cursor },
-        signal,
-      );
-      const { list, nextCursor } = parseToolsListResult(result);
-      tools.push(...list);
-      if (!nextCursor) return tools;
-      cursor = nextCursor;
-    }
-    this.debug(
-      `[mcp:${this.label}] tools/list pagination exceeded ${MAX_LIST_PAGES} pages; truncating`,
+  /** tools/list with cursor pagination (shared drain, see protocol.ts). */
+  listTools(signal?: AbortSignal): Promise<McpToolDescriptor[]> {
+    return listToolsPaginated(
+      (method, params, sig) => this.rpcRequest(method, params, sig),
+      this.label,
+      this.debug,
+      signal,
     );
-    return tools;
   }
 
   /** tools/call; unknown result content types are stringified to text. */

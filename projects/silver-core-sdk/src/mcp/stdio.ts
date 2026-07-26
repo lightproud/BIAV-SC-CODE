@@ -11,11 +11,9 @@ import process from 'node:process';
 import type {
   CallToolResult,
   ElicitationHandler,
-  JSONSchema,
   McpResource,
   McpResourceContent,
   McpStdioServerConfig,
-  ToolAnnotations,
 } from '../types.js';
 import { AbortError, McpError } from '../errors.js';
 import { resolveElicitation } from './elicitation.js';
@@ -25,18 +23,17 @@ import { planProcessKill } from '../internal/process-kill.js';
 import {
   CLIENT_INFO,
   DEFAULT_REQUEST_TIMEOUT_MS,
-  MAX_LIST_PAGES,
   MCP_PROTOCOL_VERSION,
-  SUPPORTED_PROTOCOL_VERSIONS,
-  extractProtocolVersion,
   extractServerInfo,
+  listToolsPaginated,
+  negotiateProtocolVersion,
   normalizeCallToolResult,
   parseResourceContents,
   parseResourcesList,
-  parseToolsListResult,
-  rpcErrorToError as rpcErrorToErrorFor,
   type JsonRpcId,
   type JsonRpcMessage,
+  type McpToolDescriptor,
+  rpcErrorToError as rpcErrorToErrorFor,
 } from './protocol.js';
 
 const KILL_GRACE_MS = 2_000;
@@ -221,15 +218,7 @@ export class StdioMcpConnection {
     // (spec: the client SHOULD disconnect otherwise). An absent version is
     // tolerated (keep our advertised default); an explicit unsupported one
     // fails connect, which connectEntry surfaces as a 'failed' status.
-    const negotiated = extractProtocolVersion(initResult);
-    if (negotiated !== undefined && !SUPPORTED_PROTOCOL_VERSIONS.includes(negotiated)) {
-      throw new McpError(
-        'mcp_invalid_response',
-        `MCP server '${this.label}' negotiated unsupported protocol version '${negotiated}' ` +
-          `(client supports ${SUPPORTED_PROTOCOL_VERSIONS.join(', ')})`,
-        { serverLabel: this.label, transport: 'stdio', phase: 'connect' },
-      );
-    }
+    negotiateProtocolVersion(initResult, this.label, 'stdio');
     this.sendNotification('notifications/initialized');
   }
 
@@ -238,27 +227,14 @@ export class StdioMcpConnection {
     return this.info;
   }
 
-  /** tools/list with cursor pagination. */
-  async listTools(
-    signal?: AbortSignal,
-  ): Promise<Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }>> {
-    const tools: Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }> = [];
-    let cursor: string | undefined;
-    for (let page = 0; page < MAX_LIST_PAGES; page++) {
-      const result = await this.request(
-        'tools/list',
-        cursor === undefined ? {} : { cursor },
-        signal,
-      );
-      const { list, nextCursor } = parseToolsListResult(result);
-      tools.push(...list);
-      if (!nextCursor) return tools;
-      cursor = nextCursor;
-    }
-    this.debug(
-      `[mcp:${this.label}] tools/list pagination exceeded ${MAX_LIST_PAGES} pages; truncating`,
+  /** tools/list with cursor pagination (shared drain, see protocol.ts). */
+  listTools(signal?: AbortSignal): Promise<McpToolDescriptor[]> {
+    return listToolsPaginated(
+      (method, params, sig) => this.request(method, params, sig),
+      this.label,
+      this.debug,
+      signal,
     );
-    return tools;
   }
 
   /** tools/call; unknown result content types are stringified to text. */
