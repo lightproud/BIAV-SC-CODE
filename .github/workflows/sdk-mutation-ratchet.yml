@@ -37,7 +37,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [permissions, transport-openai, transport-anthropic, sessions]
+        # loop-support joined 2026-07-26 (todo T64 item 1): its floor 94.35 had
+        # sat in mutation-ratchet.json since 2026-07-17 with no matching matrix
+        # leg, so it was never re-measured — a floor nobody checks is not a
+        # ratchet. The testbed's ratchet inspector reported the gap daily.
+        target: [permissions, transport-openai, transport-anthropic, sessions, loop-support]
     # Single-target dispatch: matrix legs cannot be pruned (matrix context is
     # unavailable in job-level if), so every REAL step carries the same gate —
     # an echo+exit-0 "skip step" gates nothing (audit H4). Empty/absent input
