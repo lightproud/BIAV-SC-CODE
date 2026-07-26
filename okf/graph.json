@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-26",
   "stats": {
-    "nodes": 374,
-    "edges": 410
+    "nodes": 375,
+    "edges": 411
   },
   "nodes": [
     {
@@ -3190,6 +3190,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
+      "type": "documentation",
+      "title": "maestro-sdk-design-review-20260726",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "type": "documentation",
       "title": "markdown-consistency-audit-20260628",
@@ -5763,6 +5774,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
