@@ -1,0 +1,79 @@
+name: Dead Man Switch
+
+# 只数空座位，不听课（设计档 Public-Info-Pool/Resource/proposal/
+# dead-man-switch-design-20260726.md，守密人 2026-07-26 裁定「按建议推进」）。
+#
+# 靶：不是「机制报错时告诉我」（工作流失败会红，已有），而是**「机制该出声却没出声时
+# 告诉我」**——2026-07-26 前全仓为零，于是 store-patrol 连红 7 天、
+# community-platform-backup 建成次日即坏且从未触发，都无人知晓。
+#
+# 拉模式：本作业查 Actions API 覆盖**全部**带 cron 的工作流，阈值由各自的 cron 推导
+# （清单只有一份，就是工作流文件本身）。加新定时工作流零改动即被纳入监控。
+#
+# 互看：本工作流被 testbed 巡检的 ci-status 名单列入（projects/silver-core-testbed/
+# targets/inspect.targets.json），而本工作流反过来监控 testbed-patrol——两个不同宿主
+# 互看，任一哑掉由另一方报。最后一道是人：status.json 自带 generated_at，
+# 月检档扫一眼（memory/methodology.md）。
+
+on:
+  schedule:
+    - cron: '50 7 * * *' # 每日北京 15:50，排在 store-patrol(15:15)/testbed(15:20) 之后
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dead-man-switch
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Ruleset 挡 GITHUB_TOKEN 推 main（todo T31）——机器提交走部署密钥。
+          # 这条是 2026-07-26 store-patrol 连红 7 天的直接教训，新工作流照此配。
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+            /Public-Info-Pool/Record/heartbeat/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      # 发现沉默要让作业变红（可见），但状态文件必须先落库——否则「有发现」等于
+      # 「没记录」，与 store-patrol 审计 H5 同一教训。
+      - name: Sweep for silent workflows
+        id: sweep
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/dead_man_switch.py
+      - name: Commit status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Public-Info-Pool/Record/heartbeat/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: dead man switch status [skip ci]"
+            for i in 1 2 3 4; do
+              if git pull --rebase origin main && git push origin main; then exit 0; fi
+              echo "Push attempt $i failed, retrying in ${i}s..."
+              sleep $i
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi
+      - name: Fail if any workflow went silent
+        if: steps.sweep.outcome == 'failure'
+        run: |
+          echo "死手开关有发现（STALE / NEVER），详见上方日志与 Public-Info-Pool/Record/heartbeat/status.json"
+          exit 1
