@@ -201,6 +201,21 @@ describe('Bash tool', () => {
     expect(text(res).trim()).toBe(text(spoken).trim());
   });
 
+  it('a missing cwd is reported AS a missing cwd, not as a missing shell', async () => {
+    // Both surface as spawn ENOENT. Reporting the first as the second sent a
+    // host with a bad working directory off to install Git Bash — confidently
+    // wrong advice, which is worse than a raw errno (2026-07-26 probe, where a
+    // POSIX-only '/tmp' in a test resolved to a non-existent C:\tmp).
+    const gone = path.join(root, 'definitely-not-here');
+    await expect(
+      bashTool.execute({ command: 'echo hi' }, makeCtx(gone)),
+    ).rejects.toThrow(/working directory does not exist/);
+    // ...and the shell guidance is NOT what the caller is told.
+    await expect(
+      bashTool.execute({ command: 'echo hi' }, makeCtx(gone)),
+    ).rejects.not.toThrow(/No POSIX shell found/);
+  });
+
   it('makes merged ctx.env visible to the command', async () => {
     const dir = await makeDir('bash-env');
     const ctx = makeCtx(dir, {

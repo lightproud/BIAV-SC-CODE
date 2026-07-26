@@ -164,7 +164,7 @@ describe('Bash foreground execute over a fake backend', () => {
   it('runs wrapped: the sandbox env marker is visible', async () => {
     const sbx = fakeCtx();
     const tool = createBashTool(sbx);
-    const res = await tool.execute({ command: 'echo "$BPT_SBX"' }, makeCtx('/tmp', { sandbox: sbx }));
+    const res = await tool.execute({ command: 'echo "$BPT_SBX"' }, makeCtx(tmpdir(), { sandbox: sbx }));
     expect(content(res).trim()).toBe('1');
     expect((sbx.backend as ReturnType<typeof makeFake>).calls).toHaveLength(1);
   });
@@ -172,7 +172,7 @@ describe('Bash foreground execute over a fake backend', () => {
     const sbx = fakeCtx({ allowEscape: false });
     const res = await createBashTool(sbx).execute(
       { command: 'echo hi', dangerouslyDisableSandbox: true },
-      makeCtx('/tmp', { sandbox: sbx }),
+      makeCtx(tmpdir(), { sandbox: sbx }),
     );
     expect(res.isError).toBe(true);
     expect(content(res)).toContain('disabled by policy');
@@ -183,7 +183,7 @@ describe('Bash foreground execute over a fake backend', () => {
     const sbx = fakeCtx();
     const res = await createBashTool(sbx).execute(
       { command: 'echo hi', dangerouslyDisableSandbox: true },
-      makeCtx('/tmp', { sandbox: sbx }),
+      makeCtx(tmpdir(), { sandbox: sbx }),
     );
     expect(content(res).trim()).toBe('hi');
     expect((sbx.backend as ReturnType<typeof makeFake>).calls).toHaveLength(0);
@@ -191,7 +191,7 @@ describe('Bash foreground execute over a fake backend', () => {
   it('no sandbox on the context: the escape flag is a no-op, not an error (E7-02)', async () => {
     const res = await createBashTool().execute(
       { command: 'echo hi', dangerouslyDisableSandbox: true },
-      makeCtx('/tmp'),
+      makeCtx(tmpdir()),
     );
     expect(res.isError).not.toBe(true);
     expect(content(res).trim()).toBe('hi');
@@ -246,7 +246,7 @@ describe('Bash surfaces the evidence hint on a sandboxed failure', () => {
     const sbx = fakeCtx();
     const res = await createBashTool(sbx).execute(
       { command: 'echo "Permission denied" 1>&2; exit 1' },
-      makeCtx('/tmp', { sandbox: sbx }),
+      makeCtx(tmpdir(), { sandbox: sbx }),
     );
     expect(res.isError).toBe(true);
     expect(content(res)).toContain('[sandbox]');
@@ -255,7 +255,7 @@ describe('Bash surfaces the evidence hint on a sandboxed failure', () => {
   it('does NOT append a hint on an unsandboxed failure', async () => {
     const res = await createBashTool().execute(
       { command: 'echo "Permission denied" 1>&2; exit 1' },
-      makeCtx('/tmp'),
+      makeCtx(tmpdir()),
     );
     expect(content(res)).not.toContain('[sandbox]');
   });
