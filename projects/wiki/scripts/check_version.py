@@ -24,8 +24,13 @@ FANDOM_RC_URL = (
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-VERSIONS_PATH = REPO_ROOT / "data" / "db" / "versions.json"
-META_PATH = REPO_ROOT / "data" / "db" / "meta.json"
+# 2026-07-26（守密人裁定「改写到现行数据层」）：原落点 data/db/ 已于 2026-06-15 裁定
+# **整层删除**（占位数据长期误导引用），本脚本却仍往那里写——**读侧优雅降级、写侧硬崩**，
+# 于是每周红一次、连红 5 周无人知，直到死手开关首跑把它数出来。
+# 现行唯一权威数据层是 data/processed/，故落点改此；**不重建已被裁定删除的 data/db/**。
+DATA_DIR = REPO_ROOT / "data" / "processed"
+VERSIONS_PATH = DATA_DIR / "versions.json"
+META_PATH = DATA_DIR / "meta.json"
 OUTPUT_PATH = REPO_ROOT / "output" / "version_check_result.json"
 
 
@@ -176,6 +181,7 @@ def create_stub_version(version: str, source: str) -> dict:
 
 def save_versions(versions_data: dict) -> None:
     """Save updated versions.json."""
+    VERSIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(VERSIONS_PATH, "w", encoding="utf-8") as f:
         json.dump(versions_data, f, ensure_ascii=False, indent=2)
         f.write("\n")
