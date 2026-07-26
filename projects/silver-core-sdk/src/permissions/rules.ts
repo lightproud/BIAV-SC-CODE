@@ -33,7 +33,49 @@ export type ParsedRule = { toolName: string; specifier?: string };
 export type MatchContext = {
   cwd?: string;
   knownServers?: ReadonlySet<string>;
+  /** Host path flavor for path-primary rule matching. Defaults to
+   *  `process.platform`; injectable so win32 semantics are testable off-Windows
+   *  (the same seam style as `resolvePosixShells`). */
+  platform?: NodeJS.Platform;
 };
+
+/**
+ * Path dialect used to resolve and compare path-primary rules.
+ *
+ * Windows broke path matching in BOTH directions until 2026-07-26 (found by the
+ * windows-latest platform probe, confirmed in the field as "the SDK's tool calls
+ * do dumb things on Windows"):
+ *
+ *   - a POSIX-shaped rule silently matched NOTHING. `path.resolve` yields
+ *     `C:\etc\a\b\secret`, while the rule and the glob machinery speak `/`, so a
+ *     deny `Read(//etc/**)` never fired — **a deny that fails OPEN**, on the one
+ *     platform the black-pool consumer ships on;
+ *   - a Windows-shaped rule OVER-matched. The single-`*` class is `[^/]*`, which
+ *     does not stop at a `\`, so `Read(C:\logs\*)` silently reached
+ *     `C:\logs\deep\nested\secret` — `*` crossing directory boundaries;
+ *   - and case was significant, so a deny on `C:/Secret/**` was bypassable by
+ *     asking for `c:\secret\x` — the same file, a different string.
+ *
+ * All three collapse once both sides are compared in ONE canonical space:
+ * `/` separators, lowercased. Applied **only under win32** — on POSIX a
+ * backslash is a legal filename character (folding it into a separator would
+ * open a fresh hole) and paths are case-SENSITIVE (lowercasing would make an
+ * allow match files it must not).
+ */
+type PathFlavor = { readonly impl: path.PlatformPath; readonly win: boolean };
+
+function pathFlavor(platform: NodeJS.Platform | undefined): PathFlavor {
+  const win = (platform ?? process.platform) === 'win32';
+  // On the real host this is exactly the `path` the code used before (path ===
+  // path.win32 on Windows, === path.posix elsewhere), so behavior off-Windows is
+  // byte-identical; naming the dialect only makes it injectable.
+  return { impl: win ? path.win32 : path.posix, win };
+}
+
+/** Canonical comparison form of an already-resolved absolute path. */
+function canonicalPath(p: string, flavor: PathFlavor): string {
+  return flavor.win ? p.replace(/\\/g, '/').toLowerCase() : p;
+}
 
 /**
  * Parse a raw rule string (`Tool` or `Tool(spec)`).
@@ -247,8 +289,44 @@ const PATH_PRIMARY_TOOLS: ReadonlySet<string> = new Set([
  * exactly; without it, an absolute path is still normalized (best effort — the
  * gate always supplies cwd in production).
  */
-function resolvePath(p: string, cwd: string | undefined): string {
-  return cwd !== undefined ? path.resolve(cwd, p) : path.normalize(p);
+function resolvePath(p: string, cwd: string | undefined, flavor: PathFlavor): string {
+  if (cwd !== undefined) return canonicalPath(flavor.impl.resolve(cwd, p), flavor);
+  // No cwd — BEST EFFORT (the gate always supplies one in production; this
+  // branch is reachable through the exported `ruleMatches`). Here, and only
+  // here, the win32 dialect is ASYMMETRIC between the two sides of a match:
+  //   normalize('git:')      -> '.\git:'   but normalize('git')        -> 'git'
+  //   normalize('//etc/foo/')-> '\\etc\foo\' (UNC kept) but
+  //   normalize('/etc/foo/x')-> '\etc\foo\x'
+  // Spec and value therefore normalize into different shapes and a deny that
+  // matches everywhere else silently stops matching — fail-open. `resolve()`
+  // collapses both (it has an absolute base to anchor against); with no cwd we
+  // reproduce that collapse explicitly so the two sides stay comparable.
+  // Both sides go through this same function, so a genuine UNC rule still
+  // matches a genuine UNC value — the shapes move together.
+  return canonicalPath(flavor.impl.normalize(p), flavor).replace(/^\.\//, '');
+}
+
+/**
+ * Canonical form of a raw rule SPECIFIER.
+ *
+ * Beyond the separator/case folding every path gets, one win32-only rewrite:
+ * a leading run of slashes collapses to one. `Read(//etc/**)` is the rule
+ * syntax's spelling of the ABSOLUTE path `/etc/**` (every path-scoped rule in
+ * this repo's suites is written that way), but `path.win32` reads `//etc/foo`
+ * as the UNC share `\\etc\foo`. Left alone, such a rule binds to a network host
+ * that does not exist and therefore matches nothing — a deny that fails OPEN,
+ * which is exactly the failure the windows-latest probe surfaced.
+ *
+ * **Accepted cost, stated plainly:** this makes a genuine UNC-scoped rule
+ * (`Read(\\\\server\\share\\**)`) unexpressible on win32 — it collapses to the
+ * drive-relative `/server/share/**`. UNC-scoped rules were already broken there
+ * (nothing matched at all before this fix), and the absolute spelling is what
+ * hosts actually write, so the common case wins and the exotic one is
+ * documented rather than half-supported. See docs/COMPAT.md.
+ */
+function canonicalSpec(spec: string, flavor: PathFlavor): string {
+  const c = canonicalPath(spec, flavor);
+  return flavor.win ? c.replace(/^\/\/+/, '/') : c;
 }
 
 /**
@@ -259,18 +337,23 @@ function resolvePath(p: string, cwd: string | undefined): string {
  * its own — the caller only USES the result when it DIFFERS from the lexical
  * path (audit r4 Y1-2).
  */
-function realpathBestEffort(abs: string): string {
-  if (!path.isAbsolute(abs)) return abs;
+function realpathBestEffort(abs: string, flavor: PathFlavor): string {
+  // realpath touches the REAL host fs, so it can only be meaningful when the
+  // flavor matches the host; under a simulated dialect (unit tests) nothing
+  // resolves and the input comes back unchanged, which is the documented
+  // degrade-to-lexical path.
+  if (!flavor.impl.isAbsolute(abs)) return abs;
   let current = abs;
   const tail: string[] = [];
   for (;;) {
     try {
       const real = fs.realpathSync(current);
-      return tail.length > 0 ? path.join(real, ...tail.reverse()) : real;
+      const joined = tail.length > 0 ? flavor.impl.join(real, ...tail.reverse()) : real;
+      return canonicalPath(joined, flavor);
     } catch {
-      const parent = path.dirname(current);
+      const parent = flavor.impl.dirname(current);
       if (parent === current) return abs; // reached the root; nothing resolved
-      tail.push(path.basename(current));
+      tail.push(flavor.impl.basename(current));
       current = parent;
     }
   }
@@ -329,17 +412,30 @@ function globToRegExp(pattern: string): RegExp {
  * Exact / trailing-`*` prefix / `:*`-base semantics stay the SDK's historical
  * "trailing wildcard = deep path prefix".
  */
-function matchResolvedValue(spec: string, nvalue: string, cwd: string | undefined): boolean {
+function matchResolvedValue(
+  rawSpec: string,
+  nvalue: string,
+  cwd: string | undefined,
+  flavor: PathFlavor,
+): boolean {
+  // Canonicalize the SPEC the same way as the value, so a rule written with
+  // Windows separators (`Read(C:\etc\**)`) and one written POSIX-style
+  // (`Read(//etc/**)`) both land in the `/` space the glob machinery speaks.
+  // Without this the wildcard tail keeps `\` and `**`/`*` lose their meaning.
+  const spec = canonicalSpec(rawSpec, flavor);
   const starIdx = spec.indexOf('*');
   if (starIdx === -1) {
-    return specifierMatches(resolvePath(spec, cwd), nvalue);
+    return specifierMatches(resolvePath(spec, cwd, flavor), nvalue);
   }
   // Normalize the literal prefix (collapse '.'/'..'), preserving a trailing
   // separator so `dir/*` stays segment-anchored.
   const rawPrefix = spec.slice(0, starIdx);
   const boundary = rawPrefix.endsWith('/');
-  let prefix = rawPrefix === '' ? '' : resolvePath(rawPrefix, cwd);
-  if (boundary && !prefix.endsWith(path.sep)) prefix += path.sep;
+  let prefix = rawPrefix === '' ? '' : resolvePath(rawPrefix, cwd, flavor);
+  // '/' not path.sep: both sides live in canonical space now, where the
+  // separator is '/' on every host (path.sep would re-introduce '\' on Windows
+  // and the boundary anchor would never match).
+  if (boundary && !prefix.endsWith('/')) prefix += '/';
   if (spec.indexOf('/', starIdx) !== -1) {
     // Interior wildcard: full glob match on the reassembled resolved spec.
     return globToRegExp(prefix + spec.slice(starIdx)).test(nvalue);
@@ -362,11 +458,16 @@ function matchResolvedValue(spec: string, nvalue: string, cwd: string | undefine
  * fires on a tunnel; an allow recognizes the real in-scope target), never
  * removes one, and degrades to the lexical result when realpath cannot resolve.
  */
-function pathSpecifierMatches(spec: string, value: string, cwd: string | undefined): boolean {
-  const nvalue = resolvePath(value, cwd);
-  if (matchResolvedValue(spec, nvalue, cwd)) return true;
-  const real = realpathBestEffort(nvalue);
-  return real !== nvalue && matchResolvedValue(spec, real, cwd);
+function pathSpecifierMatches(
+  spec: string,
+  value: string,
+  cwd: string | undefined,
+  flavor: PathFlavor,
+): boolean {
+  const nvalue = resolvePath(value, cwd, flavor);
+  if (matchResolvedValue(spec, nvalue, cwd, flavor)) return true;
+  const real = realpathBestEffort(nvalue, flavor);
+  return real !== nvalue && matchResolvedValue(spec, real, cwd, flavor);
 }
 
 /**
@@ -591,7 +692,7 @@ export function ruleMatches(
     );
   }
   if (PATH_PRIMARY_TOOLS.has(toolName)) {
-    return pathSpecifierMatches(spec, value, ctx?.cwd);
+    return pathSpecifierMatches(spec, value, ctx?.cwd, pathFlavor(ctx?.platform));
   }
   return specifierMatches(spec, value);
 }
