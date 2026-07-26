@@ -14,6 +14,7 @@ import {
   inspectLockstep,
   inspectRatchet,
   renderReport,
+  resolveWatchedWorkflows,
 } from '../src/inspectors.mjs';
 import { openMemory, readIfExists, stripView, writeReport } from '../src/memory.mjs';
 import { dream } from '../src/dream.mjs';
@@ -29,6 +30,31 @@ const fakeFetch = (routes) => async (url) => {
   }
   return { ok: false, status: 404, json: async () => ({}) };
 };
+
+describe('resolveWatchedWorkflows（监控名单派生，2026-07-26 治理裁定）', () => {
+  const targets = { workflows: ['test.yml'], heartbeat: 'hb.json' };
+  const hb = JSON.stringify({ entries: [{ workflow: 'update-news.yml' }, { workflow: 'store-patrol.yml' }] });
+
+  it('merges the hand-written residue with everything the dead-man switch covers', () => {
+    const got = resolveWatchedWorkflows(targets, () => hb);
+    expect(got).toEqual(['store-patrol.yml', 'test.yml', 'update-news.yml']);
+  });
+
+  it('keeps the manual entries that cannot be derived', () => {
+    // test.yml 是 PR 触发、无 cron——死手开关看不见它，只能人列。
+    expect(resolveWatchedWorkflows(targets, () => hb)).toContain('test.yml');
+  });
+
+  it('falls back to the manual list when the heartbeat file is absent', () => {
+    // 新克隆 / 首轮扫描之前：降级到手写名单，不炸、也不假装覆盖全部。
+    expect(resolveWatchedWorkflows(targets, () => { throw new Error('ENOENT'); })).toEqual(['test.yml']);
+  });
+
+  it('de-duplicates when a workflow appears on both sides', () => {
+    const both = { workflows: ['update-news.yml'], heartbeat: 'hb.json' };
+    expect(resolveWatchedWorkflows(both, () => hb)).toEqual(['store-patrol.yml', 'update-news.yml']);
+  });
+});
 
 describe('inspectCiStatus', () => {
   const targets = { repo: 'o/r', workflows: ['green.yml', 'red.yml', 'gone.yml'] };

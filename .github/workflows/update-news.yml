@@ -125,7 +125,8 @@ jobs:
                 git push origin main && break
               else
                 git checkout --theirs . 2>/dev/null || true
-                git add -A
+                # 同上：冲突解决限定在本作业的产出面，不放大到整棵工作树。
+                git add -A projects/news/output/ projects/news/data/
                 git -c core.editor=true rebase --continue \
                   && git push origin main && break
                 git rebase --abort 2>/dev/null || true

@@ -75,7 +75,9 @@ jobs:
                 git push origin main && exit 0
               else
                 git checkout --theirs . 2>/dev/null || true
-                git add -A
+                # 冲突解决也只 stage 本作业该提交的那棵子树：裸 `git add -A` 会把
+                # 工作树里任何意外产物（临时文件 / 其他步骤残留）一并推上 main。
+                git add -A Public-Info-Pool/Record/store-patrol/
                 git -c core.editor=true rebase --continue \
                   && git push origin main && exit 0
                 git rebase --abort 2>/dev/null || true
