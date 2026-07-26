@@ -55,8 +55,16 @@ jobs:
         run: npm ci
       - name: Typecheck (agent SDK)
         run: npm run typecheck --workspace silver-core-agent-sdk
+      # Output is tee'd so the FINAL step can replay the failure list into the
+      # log tail. Without that, the agent suite's verdict sits mid-log above the
+      # maestro run and the cleanup chatter, where `get_job_logs` (tail-only)
+      # cannot reach it — three probe rounds were spent reading around it.
+      # `set -o pipefail` keeps vitest's exit code instead of tee's (lesson #52).
       - name: Unit suite (agent SDK)
-        run: npm test --workspace silver-core-agent-sdk
+        shell: bash
+        run: |
+          set -o pipefail
+          npm test --workspace silver-core-agent-sdk 2>&1 | tee "$RUNNER_TEMP/agent-suite.log"
       - name: Build + unit suite (maestro SDK)
         if: always()
         run: |
@@ -90,3 +98,16 @@ jobs:
           )) { Write-Host ("exists {0,-5} {1}" -f (Test-Path $p), $p) }
           node -e "const e=process.env; const s={...e}; console.log('spread keeps ProgramFiles:', 'ProgramFiles' in s, JSON.stringify(s.ProgramFiles ?? null));"
           node -e "import('./projects/silver-core-sdk/dist/tools/shell-resolve.js').then(m => console.log('resolvePosixShells ->', JSON.stringify(m.resolvePosixShells({...process.env})))).catch(e => console.log('resolver import failed:', e.message));"
+      # Replay the agent suite's verdict LAST, so the run is diagnosable from
+      # the API's tail-only log view on every platform (the shell diagnostic
+      # above is Windows-only; this one is not).
+      - name: Agent suite failure summary
+        if: always()
+        shell: bash
+        run: |
+          f="$RUNNER_TEMP/agent-suite.log"
+          if [ ! -f "$f" ]; then echo "(no agent suite log — the step never ran)"; exit 0; fi
+          echo "===== agent suite: failed test files ====="
+          grep -E '^ *(FAIL|❯ .*\.test\.ts)' "$f" | sort -u || true
+          echo "===== agent suite: tally ====="
+          grep -E 'Test Files|Tests  ' "$f" || true
