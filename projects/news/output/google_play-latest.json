@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-26T13:17:00.760289+00:00",
+  "collected_at": "2026-07-26T16:02:03.296304+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 124,
+  "item_count": 125,
   "items": [
     {
       "source": "google_play",
@@ -977,6 +977,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-25T14:48:37",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 MORIMENS es excelente y muy original! Co",
+      "summary": "MORIMENS es excelente y muy original! Como nuevo jugador hay que invertirle tiempo hasta acostumbrarse a las mecanicas y distints facetas del juego, lo estoy jugando hace 2 semanas aproximadamente y si bien no lo domino al 100 % no puedo dejar de sentirme atraido por su historia y worldbuilding. Todo es misterioso, sinuoso y oscuro. AMO el arte y diseño de personajes y la musica tambien. Recomiendo jugarlo de noche, con tu bebida favorita, sin distracciones.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-16698971-341e-4652-b850-c2d16744e0be",
+      "author": "Andres Ponce",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-23T12:19:08",
       "lang": "es",
       "title": "[Google Play 好评] ★5 This game is just too good! The setting,",
@@ -1157,22 +1167,22 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-25T13:34:55",
+      "lang": "ja",
+      "title": "[Google Play 差评] ★1 おま国調整で数キャラだけ突出して強いバランス崩壊ゲーになってしまったかわいそうな",
+      "summary": "おま国調整で数キャラだけ突出して強いバランス崩壊ゲーになってしまったかわいそうなゲーム。敵の能力は強いキャラ基準で調整されるのでSSRも大半が息をしていない状態。 色んなキャラに使い道がある本家版(PC)で遊んだ方が良い",
+      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-01e2be07-3353-4f43-b01e-b82e7dacaa67",
+      "author": "sj yousai",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-21T13:36:52",
       "lang": "ja",
       "title": "[Google Play 好评] ★5 ゲームのシステム、ストーリー共に最高です。考えるのが面倒と思う方には向かないかも",
       "summary": "ゲームのシステム、ストーリー共に最高です。考えるのが面倒と思う方には向かないかもしれません。",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-cdd89aee-e1fe-449a-a5ee-766fc4db5d29",
       "author": "ゆうじ",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-19T22:59:32",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★4 (2026/07/20 07:57)現在戦闘中にクラッシュしてアプリが落ちるとい",
-      "summary": "(2026/07/20 07:57)現在戦闘中にクラッシュしてアプリが落ちるという不具合が起きていて、アプリ起動時の「修復」をしても治りません。10分に一回ほどの高頻度で戦闘中にのみクラッシュするのでできれば対処して欲しいです。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-9f7f71f9-9c69-4478-8e28-d11d35f41242",
-      "author": "電光石火",
       "engagement": 0
     },
     {
