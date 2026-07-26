@@ -16,6 +16,61 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.77.0 — 2026-07-26
+
+Windows correctness sweep — the first CI run this family ever had on a
+non-Linux runner (platform probe, keeper ruling 2026-07-26), plus the keeper's
+field report that the SDK's tool calls "do dumb things on Windows". 3200+ tests
+were green on Linux the entire time; none of them could see any of this,
+because every one of them ran in the POSIX dialect on a POSIX host.
+
+- **Path-scoped permission rules were broken in BOTH directions on Windows.**
+  `path.resolve` yields `C:\etc\a\b`, while rules and the glob matcher speak
+  `/`, so a POSIX-shaped deny (`Read(//etc/**)`) matched NOTHING — a deny that
+  FAILS OPEN on the one platform the consumer ships on. A Windows-shaped deny
+  (`Read(C:\etc\**)`) failed the other way: the single-`*` class `[^/]*` does
+  not stop at a backslash, so `*` crossed directory boundaries and OVER-matched.
+  Case was significant too, so a deny on `C:/Secret/**` was bypassable by asking
+  for `c:\secret\x` — the same file, a different string. All three collapse
+  once both sides are compared in one canonical space (`/` separators,
+  lowercased), applied **only** under win32: on POSIX a backslash is a legal
+  filename character and paths are case-sensitive, so folding either there would
+  open a fresh hole. The no-cwd best-effort branch of the exported `ruleMatches`
+  was asymmetric as well (win32 `normalize` turns `git:` into `.\git:` but
+  leaves `git` alone) and is now symmetric. **Accepted, documented cost:** a
+  leading `//` in a specifier is the rule syntax's ABSOLUTE spelling and is
+  collapsed before win32 can read it as a UNC share, so a genuinely UNC-scoped
+  rule is not expressible on win32 (it matched nothing before either).
+- **The Bash tool disappeared entirely under a curated host env.** Git-for-Windows
+  install roots (`ProgramFiles` / `ProgramW6432` / `LOCALAPPDATA`) were read only
+  from `options.env`, so a hardened host passing `{ PATH, HOME }` — what an
+  Electron app does — produced an empty candidate list and every Bash call died
+  with "No POSIX shell found". Those roots are host installation facts, not
+  session config: they now fall back to `process.env` (a caller-supplied root
+  still wins, and nothing new leaks into the child environment). The candidate
+  list is also de-duplicated — `ProgramFiles` and `ProgramW6432` are the same
+  directory on any 64-bit host, so every candidate was probed twice.
+- **Glob and Grep spoke a different path dialect from the rest of the SDK.**
+  `fast-glob` always emits POSIX separators, so on Windows they reported
+  `C:/Users/x/a.txt` while Read/Write/Edit, error messages and `cwd` all said
+  `C:\Users\x` — two spellings of one path in a single session for the model to
+  trip over. Enumerated paths are now normalized to host-native separators
+  (`toNativePath`). The existing Glob/Grep tests already asserted `path.join`
+  output, so this was always the intended contract; only the implementation had
+  drifted, invisibly.
+
+Test-side, so the suite is meaningful off Linux: `MatchContext.platform` makes
+the path dialect injectable and `tests/windows-path-semantics.test.ts` (20
+cases) asserts win32 behavior — including POSIX negative controls proving the
+fix is win32-scoped — on any host. A vitest plugin strips the shebang from
+imported `scripts/*.mjs` (four guard-script imports died at `SyntaxError` on
+Windows; the two shebang-less ones passed — an exact correlation). Windows
+teardown retries `rmSync` past EBUSY, the worktree suite canonicalizes
+`os.tmpdir()`'s 8.3 short name against the long name git reports, and the
+sandbox/file-store suites stop hardcoding POSIX separators.
+
+No behavior change on Linux or macOS: full suite 3236 passed + 5 skipped.
+
 ## 0.76.0 — 2026-07-22
 
 Lockstep alignment only — no agent-SDK code change. The maestro SDK added

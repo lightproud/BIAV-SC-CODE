@@ -82,10 +82,10 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.76.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.76.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.77.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.77.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
-| agent SDK 源文件 / 测试档 | 122 / 197 | 磁盘实况 |
+| agent SDK 源文件 / 测试档 | 122 / 198 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 16 / 29 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 128 | 磁盘实况 |
@@ -249,6 +249,10 @@
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
+> **v0.77.0（2026-07-26）**：锁步对齐 agent 侧 Windows 正确性清扫，本包零代码改动。
+> 值得记一笔——同轮 Windows 探路中 agent SDK 15 个测试档失败，**maestro 362/362 全绿且无需任何改动**，
+> 编排层不含宿主路径与 shell 假设。
+>
 > **当前版本 v0.76.0（2026-07-22）· 0.70.0→0.76.0 合并摘要（2026-07-26 哨兵首跑抓出补写）**：
 > 本节此前停在 0.69.0，与 agent 侧同款漂移，由新建的跨档对账哨兵
 > `tests/test_status_doc_facts.py` 首跑当场抓出。逐版全文以本包 `CHANGELOG.md` 为唯一权威。
@@ -307,6 +311,21 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.77.0（2026-07-26，Windows 正确性清扫——家族史上首次非 Linux CI 实跑 + 守密人现场反馈
+  「SDK 在 windows 环境工具调用经常犯蠢」）**：3200+ 测试一直全绿却一条都看不见，因为全部跑在
+  POSIX 宿主的 POSIX 方言下。三条真缺陷——① **路径域权限规则双向皆坏**：POSIX 写法 deny
+  （`Read(//etc/**)`）在 Windows 上匹配不到任何东西（**在黑池唯一发货平台上 fail-open 的 deny**），
+  Windows 写法 deny 则过度匹配（单 `*` 不在 `\` 处停、跨了目录边界），且大小写敏感可被 re-casing 绕开；
+  三者统一到规范空间（`/` 分隔 + 小写）后消失，**只在 win32 生效**（POSIX 上反斜杠是合法文件名字符、
+  大小写敏感，折叠即新洞）。明写代价：规则语法的 `//` 绝对写法在 win32 先折叠，故 UNC 域规则不可表达。
+  ② **宿主传受控 env 时 Bash 工具整个消失**：Git 安装根只从 `options.env` 读，硬化 Electron 宿主只传
+  `{PATH, HOME}` 即空候选表、每次调用死于「No POSIX shell found」；安装根属宿主装机事实，现回落
+  `process.env`（调用方给的根仍优先、不向子进程泄漏新变量）+ 候选表去重。③ **Glob/Grep 与其余工具面
+  路径方言不一致**：`fast-glob` 恒出 POSIX 分隔符，Windows 上一条路径两种拼写；现归一为原生分隔符
+  （既有测试本就按 `path.join` 断言，是实现漂了）。测试侧 `MatchContext.platform` 令方言可注入，
+  `tests/windows-path-semantics.test.ts` 20 例（含 POSIX 负控）在任意宿主断言 win32 行为；
+  vitest 插件剥 `scripts/*.mjs` shebang、拆卸重试越过 EBUSY、8.3 短名归一。
+  **Linux/macOS 零行为变化**，全量 **3236 通过 + 5 skipped**；maestro 同轮 **362/362 全绿零改动**。
 - **当前版本 v0.76.0（2026-07-22）· 0.70.0→0.76.0 合并摘要（2026-07-26 审视回写，守密人裁定
   「补顶部摘要 + 实测数字」）**：本节此前停在 v0.69.0，其后 **12 个发布未回写**，现合并补齐一条；
   逐版全文以 `projects/silver-core-sdk/CHANGELOG.md` 为唯一发布权威（不在此复刻）。
