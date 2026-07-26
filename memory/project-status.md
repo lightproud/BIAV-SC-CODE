@@ -90,7 +90,7 @@
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 129 | 磁盘实况 |
 | CI 工作流 / 其中定时 | 45 / 26 | `.github/workflows/` |
-| 挂账台账 开 / 已清 | 19 / 53 | `memory/todo.md` |
+| 挂账台账 开 / 已清 | 18 / 54 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->
 
