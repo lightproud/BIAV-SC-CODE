@@ -27,15 +27,32 @@ green.
 
 ## 状态
 
-五个模块族全部落地(与代理包锁步同版,版本见 `package.json`):封闭状态机台账
-(`TaskLedger` + `LedgerStore` 宿主注入缝)、持钟驱动器(`LedgerDriver`)、
-调度器(`Scheduler`,定点触发 + 错过补偿 + 跨重启恢复)、workflow 图
-(`validateGraph` / `WorkflowRun` + `loadWorkflowGraphFile` 声明式 md/json
-加载、坏文件降级跳过)、goal 追逐器(`GoalChaser`)、送达契约
-(`createDeliveryChannel`)。例程四份:最小 loop / schedule loop /
-workflow 扇出 / 记忆综合整理(`examples/memory-tidy.mjs`,黑池做梦例程原型),
-均只 import 两包公开面。生产循环:商店巡检(`examples/store-patrol.mjs`,
-每日 CI)。实时进度以 `memory/project-status.md` 为唯一权威。
+六个模块族全部落地(与代理包锁步同版,版本见 `package.json`)。但**「已落地」不等于
+「已经真实用过」**,故按两级标尺明标(守密人 2026-07-26 裁定,需求档 §6):
+
+**已验证**——存在不是为演示它而写的消费方(该消费方有自己的业务目的,把台账拿去用):
+
+- **封闭状态机台账** `TaskLedger` + `LedgerStore` 宿主注入缝
+- **持钟驱动器** `LedgerDriver`(并发上限见下节)
+- **调度器** `Scheduler`(定点触发 + 错过补偿 + 跨重启恢复)
+
+消费方两个,互不相干:生产商店巡检(`examples/store-patrol.mjs`,每日 CI,跨重启恢复与
+幂等派发键真实生效)+ 试金石自举巡检 daemon(`projects/silver-core-testbed/src/daemon.mjs`)。
+
+**实验面,无生产消费方**——接口面已证够用(例程/测试写得出来),但**尚无真实使用打磨**,
+签名与语义可能随第一个真实消费方调整:
+
+- **workflow 图执行** `validateGraph` / `WorkflowRun`(仅自家 demo `workflow-fanout.mjs`)
+- **workflow 声明式加载** `loadWorkflowGraphFile` / `parseWorkflowGraphSource`(零调用点)
+- **goal 追逐器** `GoalChaser`(零调用点)
+- **送达契约** `createDeliveryChannel`(零调用点;归属正当性见需求档 §1 判别式补维注)
+- **保留缝** `TaskLedger.purgeSession` + `LedgerStore.deleteSession?`(0.78.0 新增,尚未消费)
+
+标注不等于弃用:代码、测试、变异地板全部保留照跑;真实需求出现即升级并去标。
+
+例程四份(最小 loop / schedule loop / workflow 扇出 / 记忆综合整理
+`examples/memory-tidy.mjs`,黑池做梦例程原型),均只 import 两包公开面。
+实时进度以 `memory/project-status.md` 为唯一权威。
 
 ## 宿主必须自己决定的三件事(0.78.0)
 
@@ -68,5 +85,13 @@ workflow 扇出 / 记忆综合整理(`examples/memory-tidy.mjs`,黑池做梦例�
 ## 安装与家族结构
 
 两包版本钟**锁步同版**(守密人 2026-07-18 裁定,覆盖需求档 §2「永不同步」条):
-永远同号、家族整体 bump,CI 守卫版本相等。本包 peerDependency 声明兼容的
-代理版本区间。不做伞包——安装哪个包即用户对自身位形的声明。
+永远同号、家族整体 bump,CI 守卫版本相等。不做伞包——安装哪个包即用户对自身位形的声明。
+
+**本包不声明对代理 SDK 的依赖(0.78.1,守密人 2026-07-26 裁定,覆盖需求档 §2
+peerDependency 条)**:`src/` 对 `silver-core-agent-sdk` **零 import**,因此不声明
+peerDependency——npm 7+ 会自动安装 peer,而声明一个本库从不使用的包等于强迫每个
+消费方连带安装它,与硬性质①「零件可单独拿取、整箱不要」相违。**实际后果是好的**:
+只要一个跨重启恢复的任务台账 + 持钟驱动器的宿主,装本包就够
+(`examples/store-patrol.mjs` 正是这种宿主,它的 executor 是裸 HTTP)。要在 executor
+里调代理 SDK 的宿主,自行安装 `silver-core-agent-sdk` 并按锁步纪律取**同号**版本
+即可(本包与代理包永远同号,所以"配哪个版本"这个问题不需要查表)。

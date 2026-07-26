@@ -12,6 +12,73 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.78.1 — 2026-07-26
+
+Product-review remediation (`Public-Info-Pool/Resource/repo-engineering/
+maestro-sdk-product-review-20260726.md`; keeper ruled P1/P2/P3/P5 the same
+day). A second review of the same package from a different angle: the design
+review asked whether the code is correct, this one asked whether it works as a
+PRODUCT — who consumes it, whether each surface earns its place, what it saves
+consumers and what it demands of them.
+
+**P1 — the peerDependency on `silver-core-agent-sdk` is REMOVED** (keeper
+ruling: delete it). It had no code behind it: `src/` imports the agent SDK zero
+times (the two matches were prose in comments). npm 7+ auto-installs peers, so
+declaring one forced every consumer to install a package this library never
+uses — in direct conflict with hard property #1 ("every part can be taken
+alone, combined freely, or skipped entirely"). The `store-patrol` example says
+so itself: "the agent SDK is not needed here … agent-agnostic by design". The
+charter justified the peer dep as consuming the agent side's R6 version
+surface; it consumed nothing, and that clause is now struck with an override
+note. The information the declaration carried is supplied by the lockstep
+discipline instead — the two packages always share a version, so "which agent
+version goes with this?" needs no package metadata to answer. Hosts whose
+executor calls the agent SDK install it themselves at the same version.
+`devDependencies` keeps it (tests and two examples genuinely import it).
+
+**P2 — maturity is now stated per module family, two levels** (keeper ruling:
+annotate frozen + add the standard). Measured: `GoalChaser`,
+`createDeliveryChannel` and the declarative workflow loader have ZERO real call
+sites anywhere in the repo outside their own tests; `WorkflowRun` has exactly
+one, its own demo. `TaskLedger` / `LedgerDriver` / `Scheduler` have two
+unrelated real consumers (the production store patrol and the testbed daemon).
+The charter's acceptance standard ("if the example cannot be written, the API
+has a hole") tests FEASIBILITY, so a module serving only its own example always
+passes it. Added as the second level, charter §6: **verified** requires at
+least one consumer that was NOT written to demonstrate it. README now labels
+the three unproven families "实验面, 无生产消费方" — signatures and semantics may
+change with their first real consumer. Nothing is deprecated: code, tests and
+mutation floors all stay.
+
+**P3 — `docs/ONBOARDING.md`, the package's first doc** (keeper ruling: ship a
+documented sample, not code — §7's "no built-in storage implementation" stands).
+It answers the one question the package left unanswered: what your LedgerStore
+should look like. Both real consumers had hand-written a file-backed store, 43
+and 38 effective lines, 86% line-identical, and the package's only help was a
+16-check contract suite to verify your copy — the suite's existence concedes the
+job is easy to get wrong — without shipping the thing to copy. The doc carries a
+memory store, a single-file JSON store with its ceiling stated plainly, the four
+traps each mapped to the check that catches it, and the three host decisions
+with their defaults.
+
+`tests/onboarding-sample.test.ts` EXTRACTS the sample from the markdown, writes
+it to a temp .ts file, imports it and runs it through the contract suite — a
+sample consumers paste into production is load-bearing code, and shipping it
+unverified would be worse than shipping nothing. Negative-controlled: removing
+one line from the doc's sample reds the suite with "2 orphan query row(s)
+survived deleteSession".
+
+**P5 — the charter's placement discriminant gains its missing third dimension**
+(keeper ruling: keep delivery, fix the discriminant). `createDeliveryChannel`
+satisfied neither original criterion — `clock.now()` four times, all for
+timestamps, `setTimeout` zero times, and its own comment says it "executes
+inline by spec" — yet §3 had always assigned it to orchestration on the grounds
+of 触发权 (initiation rights). The rule was missing a dimension §3 was already
+using; delivery was not misplaced. Charter §1 now states it, with the boundary:
+initiation and audit belong to orchestration, presentation stays host-side.
+
+No runtime behavior changes in either package. Tests 400 -> 404.
+
 ## 0.78.0 — 2026-07-26
 
 Design-review remediation (`Public-Info-Pool/Resource/repo-engineering/
