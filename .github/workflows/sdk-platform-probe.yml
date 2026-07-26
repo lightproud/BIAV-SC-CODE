@@ -107,7 +107,14 @@ jobs:
         run: |
           f="$RUNNER_TEMP/agent-suite.log"
           if [ ! -f "$f" ]; then echo "(no agent suite log — the step never ran)"; exit 0; fi
+          # Strip ANSI first: vitest colorizes, so `FAIL` is preceded by an
+          # escape sequence and a naive ^-anchored grep matches nothing —
+          # which is exactly what the first version of this step reported.
+          plain="$RUNNER_TEMP/agent-suite.plain.log"
+          sed -E $'s/\x1b\\[[0-9;]*[A-Za-z]//g' "$f" > "$plain"
           echo "===== agent suite: failed test files ====="
-          grep -E '^ *(FAIL|❯ .*\.test\.ts)' "$f" | sort -u || true
+          grep -E '^\s*FAIL\s' "$plain" | sed -E 's/^\s+//' | sort -u || true
+          echo "===== agent suite: assertion messages ====="
+          grep -E '^\s*(AssertionError|Error|TypeError|SyntaxError):' "$plain" | sort -u | head -40 || true
           echo "===== agent suite: tally ====="
-          grep -E 'Test Files|Tests  ' "$f" || true
+          grep -E 'Test Files |Tests  ' "$plain" || true
