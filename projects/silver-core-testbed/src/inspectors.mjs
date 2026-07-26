@@ -37,9 +37,37 @@ async function githubJson(url, { fetchImpl = fetch, token, signal }) {
   return res.json();
 }
 
+/**
+ * 监控名单 = 手写残余 ∪ 死手开关已覆盖的定时工作流。
+ *
+ * 2026-07-26 治理裁定：名单里**能派生的部分不许手写**。死手开关的
+ * `Public-Info-Pool/Record/heartbeat/status.json` 已枚举全部带 cron 的工作流，
+ * 直接派生即可；手写清单缩到**派生不出来的那部分**——PR 触发的检查（test.yml 等）
+ * 没有 cron，死手开关看不见它们，只能人列。
+ *
+ * 缺文件（新克隆、首轮扫描之前）时退回纯手写名单：优雅降级，不硬依赖。
+ */
+export function resolveWatchedWorkflows(targets, readFileSync = null) {
+  const manual = targets.workflows ?? [];
+  const path = targets.heartbeat ?? 'Public-Info-Pool/Record/heartbeat/status.json';
+  const read = readFileSync ?? ((p) => nodeReadFileSync(p, 'utf-8'));
+  let derived = [];
+  try {
+    const status = JSON.parse(read(path));
+    derived = (status.entries ?? []).map((e) => e.workflow).filter(Boolean);
+  } catch {
+    derived = [];
+  }
+  return [...new Set([...manual, ...derived])].sort();
+}
+
 /** 1. CI workflow status: latest completed run conclusion per watched workflow. */
+
+import { readFileSync as nodeReadFileSync } from 'node:fs';
+
 export async function inspectCiStatus(targets, ctx) {
-  const { repo, workflows } = targets;
+  const { repo } = targets;
+  const workflows = resolveWatchedWorkflows(targets, ctx?.readFileSync);
   const findings = [];
   let green = 0;
   for (const wf of workflows) {

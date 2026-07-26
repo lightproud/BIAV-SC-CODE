@@ -6,19 +6,11 @@
   "repo": "lightproud/BIAV-SC-CODE",
   "ci-status": {
     "workflows": [
-      "test.yml",
-      "silver-core-sdk.yml",
       "silver-core-maestro-sdk.yml",
-      "sdk-mutation-ratchet.yml",
-      "store-patrol.yml",
-      "testbed-patrol.yml",
-      "update-news.yml",
-      "build-okf-bundle.yml",
-      "discord-archive.yml",
-      "collect-comments.yml",
-      "dead-man-switch.yml",
-      "collect-fanart.yml"
-    ]
+      "test.yml"
+    ],
+    "_note": "手写残余：**只列派生不出来的**——无 cron 的 PR 触发检查，死手开关看不见它们。带 cron 的一律由 Public-Info-Pool/Record/heartbeat/status.json 自动派生（resolveWatchedWorkflows），加新定时工作流零改动即被监控。",
+    "heartbeat": "Public-Info-Pool/Record/heartbeat/status.json"
   },
   "doc-links": {
     "roots": [
