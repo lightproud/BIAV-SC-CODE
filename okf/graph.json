@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-27",
   "stats": {
-    "nodes": 378,
+    "nodes": 379,
     "edges": 406
   },
   "nodes": [
@@ -3381,6 +3381,17 @@
       "id": "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "type": "documentation",
       "title": "sdk-cross-protocol-routing-bpt-handoff-20260713",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
+      "type": "documentation",
+      "title": "sdk-prompt-mechanism-audit-20260727",
       "tags": [
         "data_layer:curated",
         "deliverable",

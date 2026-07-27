@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (114)
+# 银芯正式产物（报告/分析） (115)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -100,6 +100,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [scs-req-orchestrator-sdk-20260717](/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md) - **银芯编排 SDK 持有分子:钟、跨会话状态、会话装配。它把"活得比一次调用久"的 agent 所需的脏活——循环、调度、重试、恢复、台账——做成可复用零件,
 * [scs-req-repositioning-loop-support-20260717](/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md) - 银芯 BIAV-SC 是黑池五层介质架构中的**引擎层**:最慢的介质、版本化、可替换的商品泵。它的职责由三条否定与一条肯定完整定义:（格式：md）
 * [sdk-cross-protocol-routing-bpt-handoff-20260713](/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md) - BPT 报障场景：主模型 `azure/gpt-5.6-sol`（openai-chat 协议）+ Haiku 档子代理映射（格式：md）
+* [sdk-prompt-mechanism-audit-20260727](/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md) - P2 已由截断纪律批（0.85.0）系统收口并有注册表测试守增量；P3 已由整理规程批（0.84.0）收口。（格式：md）
 * [silver-core-maestro-sdk-bug-audit-r1-20260718](/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md) - (查证官持「存疑即毙」缺省)→ 8 批文件不相交修复(每项配 fail-on-old 回归锁)（格式：md）
 * [silver-core-maestro-sdk-bug-audit-r2-20260718](/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md) - → 去重 → 对抗查证(存疑即毙,多项经查证官在 dist 上实证复现)→ 单脑修复配锁（格式：md）
 * [silver-core-maestro-sdk-bug-audit-r4-20260718](/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md) - 四路镜头猎手（混沌店 fail-before-effect / 双宿主竞跑 / 暧昧失败（格式：md）
