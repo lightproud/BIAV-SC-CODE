@@ -12,6 +12,37 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.83.0 — 2026-07-27
+
+**BREAKING (experimental goal family): `GoalVerdict` unified with the agent
+SDK's shape** (keeper ruling 2026-07-27, "改进方向换成统一判词类型").
+
+The trap this ends: both packages exported a type NAMED `GoalVerdict` with
+incompatible shapes — this package's `{achieved: boolean, feedback,
+impossible?}` vs the agent SDK's `{status: 'achieved' | 'not_achieved' |
+'impossible', reason?}`. A consumer wiring one evaluator into the other seam
+(the exact first-consumer path: BPT armed `options.goal` while also holding
+this package) produced verdicts the engine judges MALFORMED, and the engine's
+deliberate fail-open direction turns every malformed verdict into an ALLOWED
+stop — the goal silently never bites, the model "just stops". Diagnosed from
+the keeper's live BPT symptom report.
+
+- `GoalVerdict` is now `{status: 'achieved' | 'not_achieved' | 'impossible';
+  reason?: string}` — byte-identical to `silver-core-agent-sdk`'s, so ONE
+  host evaluator serves both seams via structural typing. Deliberately
+  declared here, not imported: this package still declares no dependency on
+  the agent SDK (hard property §1.2).
+- Migration: `{achieved: true}` → `{status: 'achieved'}`; `{achieved: false,
+  feedback: F}` → `{status: 'not_achieved', reason: F}`; `{achieved: false,
+  feedback: F, impossible: true}` → `{status: 'impossible', reason: F}`.
+- `nextGoalAction` decides on `status`; precedence and the four actions are
+  unchanged. `GoalRoundPayload.feedback` keeps its name (persisted payload
+  schema) and now carries the verdict's `reason`.
+- Breaking on an experimental surface: the goal family is annotated
+  "experimental, zero production consumers" in README §status, whose whole
+  point is that the first real consumer may reshape signatures — this is
+  that adjustment, made BEFORE GoalChaser's first wiring instead of after.
+
 ## 0.82.0 — 2026-07-27
 
 Lockstep alignment only — no changes to this package. The family clock advanced

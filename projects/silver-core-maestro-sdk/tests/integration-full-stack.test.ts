@@ -237,8 +237,8 @@ describe('scenario 2: goal chase co-resident with driver leaves other families u
       evaluator: async ({ round, summary }) => {
         evaluatorSummaries.push(summary);
         return round === 1
-          ? { achieved: false, feedback: 'add more detail' }
-          : { achieved: true };
+          ? { status: 'not_achieved', reason: 'add more detail' }
+          : { status: 'achieved' };
       },
     });
     const chasePromise = chaser.chase({

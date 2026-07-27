@@ -1,15 +1,16 @@
 /**
  * Exhaustive spec of the pure goal-chase decision core (mutation target):
  * all four actions, the fixed precedence order, the round == maxRounds
- * boundary, and the non-finite guards.
+ * boundary, and the non-finite guards. Verdict literals use the UNIFIED
+ * {status, reason?} shape (0.83.0) shared verbatim with the agent SDK.
  */
 import { describe, it, expect } from 'vitest';
 import { nextGoalAction } from '../src/goal/decision.js';
 import type { GoalVerdict } from '../src/goal/decision.js';
 
-const achieved: GoalVerdict = { achieved: true };
-const notYet: GoalVerdict = { achieved: false, feedback: 'more' };
-const impossible: GoalVerdict = { achieved: false, feedback: 'wall', impossible: true };
+const achieved: GoalVerdict = { status: 'achieved' };
+const notYet: GoalVerdict = { status: 'not_achieved', reason: 'more' };
+const impossible: GoalVerdict = { status: 'impossible', reason: 'wall' };
 
 describe('nextGoalAction: the four actions', () => {
   it('achieved => done', () => {
@@ -42,10 +43,13 @@ describe('nextGoalAction: precedence', () => {
     expect(nextGoalAction({ round: 7, maxRounds: 5, verdict: impossible })).toBe('impossible');
   });
 
-  it('explicit impossible: false behaves like absent', () => {
-    const v: GoalVerdict = { achieved: false, feedback: 'x', impossible: false };
-    expect(nextGoalAction({ round: 1, maxRounds: 5, verdict: v })).toBe('continue');
-    expect(nextGoalAction({ round: 5, maxRounds: 5, verdict: v })).toBe('exhausted');
+  it('a reason on any status never changes the action (reason is commentary)', () => {
+    expect(
+      nextGoalAction({ round: 1, maxRounds: 5, verdict: { status: 'achieved', reason: 'r' } }),
+    ).toBe('done');
+    const bare: GoalVerdict = { status: 'not_achieved' };
+    expect(nextGoalAction({ round: 1, maxRounds: 5, verdict: bare })).toBe('continue');
+    expect(nextGoalAction({ round: 5, maxRounds: 5, verdict: bare })).toBe('exhausted');
   });
 });
 
@@ -92,8 +96,20 @@ describe('nextGoalAction: non-finite guards', () => {
 
 describe('mutation kill round (2026-07-18)', () => {
   it('the non-finite guard message names both counters', () => {
-    expect(() => nextGoalAction({ round: NaN, maxRounds: 3, verdict: { achieved: true } })).toThrow(
-      'nextGoalAction: round and maxRounds must be finite, got round=NaN, maxRounds=3',
+    expect(() =>
+      nextGoalAction({ round: NaN, maxRounds: 3, verdict: { status: 'achieved' } }),
+    ).toThrow('nextGoalAction: round and maxRounds must be finite, got round=NaN, maxRounds=3');
+  });
+});
+
+describe('unified verdict shape (0.83.0): status literals are the discriminant', () => {
+  // Kills string-literal mutants on the two status comparisons: a verdict
+  // whose status is any OTHER member must not take that branch.
+  it("only status 'achieved' yields done; only 'impossible' yields impossible", () => {
+    const statuses: GoalVerdict['status'][] = ['achieved', 'not_achieved', 'impossible'];
+    const actions = statuses.map((status) =>
+      nextGoalAction({ round: 1, maxRounds: 5, verdict: { status } }),
     );
+    expect(actions).toEqual(['done', 'continue', 'impossible']);
   });
 });

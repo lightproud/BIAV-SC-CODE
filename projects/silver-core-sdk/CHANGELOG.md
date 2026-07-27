@@ -16,6 +16,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.83.0 — 2026-07-27
+
+Family verdict-type unification (keeper ruling 2026-07-27): this package's
+`GoalVerdict` `{status, reason?}` is now the ONE verdict shape family-wide —
+silver-core-maestro-sdk 0.83.0 migrated its `GoalChaser` evaluator verdict
+(previously `{achieved, feedback, impossible?}`) to it, so a single host
+evaluator serves both the engine's `options.goal` Stop gate and the maestro
+cross-query chase. No behavior change in this package; `options.goal` and its
+evaluator contract are untouched. The `GoalVerdict` doc comment in
+`src/types/subsystems.ts` now records the canonical-shape status (shape
+changes require a family-wide ruling). Context worth keeping: the two-shape
+era produced a live consumer trap — a maestro-shaped verdict fed to
+`options.goal` is judged malformed and the Stop gate's deliberate fail-open
+direction allows every stop, so the goal silently never bites (BPT symptom
+report 2026-07-27, "接了 goal 模型照样停").
+
 ## 0.82.0 — 2026-07-27
 
 Read refuses a whole-file read past 256KB, matching official Claude Code. Found

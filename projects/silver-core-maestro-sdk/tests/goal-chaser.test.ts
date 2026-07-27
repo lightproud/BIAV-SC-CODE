@@ -82,14 +82,14 @@ afterEach(() => {
 
 describe('validation', () => {
   it('rejects a non-finite / non-positive pollIntervalMs', () => {
-    const { ledger } = harness({ executor: () => ({ outcome: 'ok' }), verdicts: () => ({ achieved: true }) });
+    const { ledger } = harness({ executor: () => ({ outcome: 'ok' }), verdicts: () => ({ status: 'achieved' }) });
     expect(
-      () => new GoalChaser({ ledger, evaluator: async () => ({ achieved: true }), pollIntervalMs: Number.NaN }),
+      () => new GoalChaser({ ledger, evaluator: async () => ({ status: 'achieved' }), pollIntervalMs: Number.NaN }),
     ).toThrow(RangeError);
   });
 
   it('rejects empty id, empty description, and bad maxRounds', async () => {
-    const { chaser } = harness({ executor: () => ({ outcome: 'ok' }), verdicts: () => ({ achieved: true }) });
+    const { chaser } = harness({ executor: () => ({ outcome: 'ok' }), verdicts: () => ({ status: 'achieved' }) });
     await expect(chaser.chase({ id: '', description: 'd' })).rejects.toThrow(TypeError);
     await expect(chaser.chase({ id: 'g', description: '' })).rejects.toThrow(TypeError);
     await expect(chaser.chase({ id: 'g', description: 'd', maxRounds: 0 })).rejects.toThrow(RangeError);
@@ -102,7 +102,7 @@ describe('a goal achieved on round 2', () => {
     const { ledger, driver, chaser, dispatched, evalCalls, events } = harness({
       executor: (payload) => ({ outcome: 'ok', summary: `run:${payload.round}` }),
       verdicts: (round) =>
-        round === 1 ? { achieved: false, feedback: 'add sources' } : { achieved: true },
+        round === 1 ? { status: 'not_achieved', reason: 'add sources' } : { status: 'achieved' },
     });
     driver.start();
     const result = await drive(
@@ -148,7 +148,7 @@ describe('impossible short-circuit', () => {
   it('stops after the first impossible verdict with one session', async () => {
     const { driver, chaser, dispatched } = harness({
       executor: () => ({ outcome: 'ok', summary: 's' }),
-      verdicts: () => ({ achieved: false, feedback: 'no such data', impossible: true }),
+      verdicts: () => ({ status: 'impossible', reason: 'no such data' }),
     });
     driver.start();
     const result = await drive(driver, chaser.chase({ id: 'g2', description: 'find the lost tape' }));
@@ -163,7 +163,7 @@ describe('maxRounds exhaustion', () => {
   it('returns exhausted with N sessions and feedback threaded each round', async () => {
     const { driver, chaser, dispatched } = harness({
       executor: (payload) => ({ outcome: 'ok', summary: `run:${payload.round}` }),
-      verdicts: (round) => ({ achieved: false, feedback: `redo-${round}` }),
+      verdicts: (round) => ({ status: 'not_achieved', reason: `redo-${round}` }),
     });
     driver.start();
     const result = await drive(
@@ -183,7 +183,7 @@ describe('failed rounds still go to the evaluator', () => {
       executor: (payload) =>
         payload.round === 1 ? { outcome: 'error', error: 'crash' } : { outcome: 'ok', summary: 'fine' },
       verdicts: (round) =>
-        round === 1 ? { achieved: false, feedback: 'try harder' } : { achieved: true },
+        round === 1 ? { status: 'not_achieved', reason: 'try harder' } : { status: 'achieved' },
     });
     driver.start();
     const result = await drive(
@@ -204,7 +204,7 @@ describe('resume', () => {
     const { store, ledger, driver, chaser, dispatched, evalCalls } = harness({
       executor: (payload) => ({ outcome: 'ok', summary: `run:${payload.round}` }),
       verdicts: (round) =>
-        round === 2 ? { achieved: false, feedback: 'from-r2' } : { achieved: true },
+        round === 2 ? { status: 'not_achieved', reason: 'from-r2' } : { status: 'achieved' },
     });
     await store.putSession(seedSession(1, 'done'));
     await store.putSession(seedSession(2, 'done'));
@@ -243,7 +243,7 @@ describe('resume', () => {
   it('awaits an existing unfinished round instead of re-dispatching it', async () => {
     const { store, driver, chaser, dispatched } = harness({
       executor: (payload) => ({ outcome: 'ok', summary: `run:${payload.round}` }),
-      verdicts: () => ({ achieved: true }),
+      verdicts: () => ({ status: 'achieved' }),
     });
     // A pending round left behind by an interrupted chase; the driver picks
     // it up — chase() must wait on it, not dispatch a duplicate (which throws).
@@ -268,7 +268,7 @@ describe('drain timeout + id hygiene (review hardening 2026-07-18)', () => {
       const ledger = new TaskLedger({ store });
       const chaser = new GoalChaser({
         ledger,
-        evaluator: async () => ({ achieved: true }),
+        evaluator: async () => ({ status: 'achieved' }),
         pollIntervalMs: 50,
         drainTimeoutMs: 1_000,
       });
@@ -285,7 +285,7 @@ describe('drain timeout + id hygiene (review hardening 2026-07-18)', () => {
   });
   it("rejects goal ids containing ':' (session-key separator)", async () => {
     const ledger = new TaskLedger({ store: memoryStore() });
-    const chaser = new GoalChaser({ ledger, evaluator: async () => ({ achieved: true }) });
+    const chaser = new GoalChaser({ ledger, evaluator: async () => ({ status: 'achieved' }) });
     await expect(chaser.chase({ id: 'a:b', description: 'x' })).rejects.toThrow(/must not contain ':'/);
   });
 });
@@ -303,7 +303,7 @@ describe('concurrent chase of the same goal id (audit E1)', () => {
       if (evalCallCount === 2) {
         for (let i = 0; i < 4; i += 1) await Promise.resolve();
       }
-      return round === 1 ? { achieved: false, feedback: 'again' } : { achieved: true };
+      return round === 1 ? { status: 'not_achieved', reason: 'again' } : { status: 'achieved' };
     };
     const chaser = new GoalChaser({ ledger, evaluator, pollIntervalMs: 10 });
     const driver = new LedgerDriver({
@@ -336,7 +336,7 @@ describe('resume scan past maxRounds (audit E2)', () => {
   it('pre-seeded rounds 1..maxRounds+1: exhausted with ALL rounds listed, true latest re-judged, no new dispatch', async () => {
     const { store, chaser, dispatched, evalCalls } = harness({
       executor: () => ({ outcome: 'ok', summary: 's' }),
-      verdicts: () => ({ achieved: false, feedback: 'redo' }),
+      verdicts: () => ({ status: 'not_achieved', reason: 'redo' }),
     });
     // Rounds beyond the budget exist (a previous chase ran with a larger
     // maxRounds). The scan must find the TRUE latest round (3), not stop at

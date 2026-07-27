@@ -41,7 +41,9 @@ export interface GoalRunConfig {
 export interface GoalRoundPayload {
   goal: { id: string; description: string };
   data: unknown;
-  /** Previous round verdict's feedback; null on the first round. */
+  /** Previous round verdict's reason; null on the first round. (Field name
+   *  predates the 0.83.0 verdict unification and is kept — it is persisted
+   *  payload schema, and "feedback" is what the next round consumes it as.) */
   feedback: string | null;
   round: number;
 }
@@ -49,6 +51,8 @@ export interface GoalRoundPayload {
 /**
  * Host-injected judge: round data in, verdict out — no rendering. A FAILED
  * round is still judged (its verdict may continue the chase with feedback).
+ * The verdict shape is UNIFIED with the agent SDK's `options.goal` evaluator
+ * (0.83.0): one host evaluator can serve both seams.
  */
 export type GoalEvaluator = (round: {
   round: number;
@@ -228,9 +232,10 @@ export class GoalChaser {
         this.#emit({ type: 'goal:settled', goalId: config.id, action, rounds: rounds.length });
         return { action, rounds };
       }
-      // `?? null`: an any-cast verdict without feedback must not smuggle
-      // `undefined` into the next round's persisted payload (typed `| null`).
-      if (!verdict.achieved) feedback = verdict.feedback ?? null;
+      // action === 'continue' implies status 'not_achieved' here; `?? null`:
+      // an any-cast verdict without a reason must not smuggle `undefined`
+      // into the next round's persisted payload (typed `| null`).
+      feedback = verdict.reason ?? null;
       round += 1;
     }
   }
