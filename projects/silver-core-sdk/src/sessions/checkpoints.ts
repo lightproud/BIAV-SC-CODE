@@ -24,6 +24,7 @@ import {
   readSync,
   writeFileSync,
 } from 'node:fs';
+import { Buffer } from 'node:buffer';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -40,14 +41,34 @@ export type FileChange = {
   absPath: string;
   /** Blob filename holding the pre-image, or null when the file was created. */
   blob: string | null;
+  /**
+   * T74 option 甲 (keeper 2026-07-27): the pre-image EXCEEDED the blob-size
+   * cap at record time, so no blob exists and this file CANNOT be rewound.
+   * Deliberately a separate marker: `blob: null` alone means "file was
+   * CREATED this turn" and rewind DELETES it — reusing null for an over-cap
+   * pre-image would make rewind destroy the one file it cannot restore.
+   */
+  oversized?: true;
   /** Monotonic sequence number (ordering across turns). */
   seq: number;
 };
+
+/**
+ * Per-file blob cap (T74 甲, default 10 MB): a pre-image larger than this is
+ * recorded WITHOUT its bytes — the change stays in the timeline, marked
+ * `oversized`, and rewind names the file as unrecoverable instead of touching
+ * it. The honest-degradation trade-off the keeper ruled for: bounded disk in
+ * exchange for an explicit, named gap — never a silent 500MB blob and never a
+ * silently wrong rewind.
+ */
+export const DEFAULT_MAX_BLOB_BYTES = 10 * 1024 * 1024;
 
 export type FileCheckpointStoreConfig = {
   sessionDir?: string;
   env?: Record<string, string | undefined>;
   debug?: (msg: string) => void;
+  /** Per-file pre-image blob cap in bytes (T74 甲). Default 10 MB. */
+  maxBlobBytes?: number;
 };
 
 function errMessage(err: unknown): string {
@@ -74,10 +95,12 @@ export class FileCheckpointStore {
   // collision-free; the index line stores the full name, so rewind still reads
   // the exact pre-image it recorded.
   private readonly token = randomUUID().slice(0, 8);
+  private readonly maxBlobBytes: number;
 
   constructor(cfg: FileCheckpointStoreConfig = {}) {
     this.baseDir = join(resolveSessionsDir(cfg.sessionDir, cfg.env), 'checkpoints');
     this.debug = cfg.debug ?? (() => undefined);
+    this.maxBlobBytes = cfg.maxBlobBytes ?? DEFAULT_MAX_BLOB_BYTES;
   }
 
   /** Point the store at one session's checkpoint dir; recover the seq counter. */
@@ -147,18 +170,31 @@ export class FileCheckpointStore {
     const seq = this.seq;
     this.seq += 1;
     let blobName: string | null = null;
+    // T74 甲: an over-cap pre-image is recorded without its bytes, marked
+    // `oversized` so rewind treats it as unrecoverable rather than as a
+    // created-file deletion. Judged in BYTES (blob files are what they cost
+    // on disk), announced in the debug channel at record time.
+    const oversized =
+      preImage !== null && Buffer.byteLength(preImage, 'utf8') > this.maxBlobBytes;
     try {
       mkdirSync(this.dir, { recursive: true });
-      if (preImage !== null) {
+      if (preImage !== null && !oversized) {
         const blobs = this.blobsDir();
         mkdirSync(blobs, { recursive: true });
         blobName = `${seq}-${this.token}.blob`;
         writeFileSync(join(blobs, blobName), preImage, 'utf8');
       }
+      if (oversized) {
+        this.debug(
+          `checkpoint: pre-image of ${absPath} exceeds the ${this.maxBlobBytes}-byte ` +
+            `blob cap — recorded without bytes; this file cannot be rewound past this point`,
+        );
+      }
       const line: FileChange = {
         userMessageId: this.currentTurnId ?? '',
         absPath,
         blob: blobName,
+        ...(oversized ? { oversized: true as const } : {}),
         seq,
       };
       this.appendIndexLine(`${JSON.stringify(line)}\n`);
@@ -210,9 +246,11 @@ export class FileCheckpointStore {
     // changes is seq-sorted; every change at or after the target's position is
     // undone (a no-file-change target simply yields an empty, valid plan).
     const window = changes.filter((c) => c.seq >= startSeq);
-    const plan = new Map<string, string | null>();
+    const plan = new Map<string, { blob: string | null; oversized: boolean }>();
     for (const c of window) {
-      if (!plan.has(c.absPath)) plan.set(c.absPath, c.blob);
+      if (!plan.has(c.absPath)) {
+        plan.set(c.absPath, { blob: c.blob, oversized: c.oversized === true });
+      }
     }
 
     const restoredFiles: string[] = [];
@@ -223,7 +261,17 @@ export class FileCheckpointStore {
     // INCOMPLETE rewind as success while the on-disk state silently diverges
     // from the checkpoint.
     const failedFiles: string[] = [];
-    for (const [absPath, blob] of plan) {
+    // T74 甲: files whose pre-image exceeded the blob cap at record time. The
+    // rewind must NOT touch them (no bytes to restore, and deleting would
+    // destroy the only copy) — it names them instead, and the whole rewind
+    // honestly reports incomplete: the on-disk state will not match the
+    // checkpoint, and pretending otherwise is the one forbidden outcome.
+    const unrewindableFiles: string[] = [];
+    for (const [absPath, { blob, oversized }] of plan) {
+      if (oversized) {
+        unrewindableFiles.push(absPath);
+        continue;
+      }
       if (blob !== null) {
         if (!dryRun) {
           try {
@@ -258,16 +306,25 @@ export class FileCheckpointStore {
     // pre-alignment fields ride along as deprecated dual-track. A partial
     // failure (audit r4 Sfs-3) reports canRewind:false + an error so the
     // incomplete rewind is not mistaken for a clean one.
-    const incomplete = failedFiles.length > 0;
+    const incomplete = failedFiles.length > 0 || unrewindableFiles.length > 0;
+    const reasons: string[] = [];
+    if (failedFiles.length > 0) {
+      reasons.push(
+        `${failedFiles.length} file(s) could not be restored or deleted ` +
+          `(${failedFiles.join(', ')})`,
+      );
+    }
+    if (unrewindableFiles.length > 0) {
+      reasons.push(
+        `${unrewindableFiles.length} file(s) have no recorded pre-image — their ` +
+          `content exceeded the checkpoint blob cap when they were modified, so ` +
+          `they were left AS THEY ARE and cannot be rewound ` +
+          `(${unrewindableFiles.join(', ')})`,
+      );
+    }
     return {
       canRewind: !incomplete,
-      ...(incomplete
-        ? {
-            error:
-              `rewind incomplete: ${failedFiles.length} file(s) could not be ` +
-              `restored or deleted (${failedFiles.join(', ')})`,
-          }
-        : {}),
+      ...(incomplete ? { error: `rewind incomplete: ${reasons.join('; ')}` } : {}),
       filesChanged: [...restoredFiles, ...deletedFiles],
       checkpointId: userMessageId,
       restoredFiles,
@@ -425,6 +482,9 @@ export class FileCheckpointStore {
             userMessageId: typeof o.userMessageId === 'string' ? o.userMessageId : '',
             absPath: o.absPath,
             blob: o.blob ?? null,
+            // T74 甲: dropping this on read would turn an over-cap record back
+            // into a "created" record — and rewind would delete the file.
+            ...(o.oversized === true ? { oversized: true as const } : {}),
             seq: o.seq,
           });
         }

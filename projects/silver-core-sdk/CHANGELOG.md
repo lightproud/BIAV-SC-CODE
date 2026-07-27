@@ -16,6 +16,26 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.90.0 — 2026-07-27
+
+Checkpoint blob cap with honest degradation (todo T74, keeper ruling: option
+甲). `FileCheckpointStore.record()` used to capture the FULL pre-image of every
+mutated file with no size bound — a session touching a 500MB file silently
+stored a 500MB blob (sessions-domain audit P1-S2).
+
+- Pre-images over `maxBlobBytes` (default 10 MB, `DEFAULT_MAX_BLOB_BYTES`,
+  constructor-configurable) are recorded WITHOUT their bytes, marked
+  `oversized` in the index line. The marker is deliberately separate from
+  `blob: null`: null alone means "file was CREATED this turn" and rewind
+  DELETES it — reusing null for an over-cap pre-image would make rewind
+  destroy the one file it cannot restore. `readIndex()` round-trips the
+  marker for the same reason (dropping it on read would re-create exactly
+  that confusion; caught by the new tests on first run).
+- `rewind()` leaves oversized files AS THEY ARE, restores everything else in
+  the window, and reports `canRewind: false` with an error NAMING each
+  unrewindable file and why — an incomplete rewind must never read as a clean
+  one. Announced at record time too (debug channel).
+
 ## 0.89.0 — 2026-07-27
 
 The three divergence sweeps of 2026-07-27 become one repeatable command

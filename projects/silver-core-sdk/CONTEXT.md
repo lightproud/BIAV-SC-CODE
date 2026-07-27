@@ -71,7 +71,7 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.89.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.89.0`
+**当前版本 `0.90.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.90.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
@@ -89,6 +89,12 @@ unavailable、触界标 lower bound、零进程零调度（N1）。blob 上限�
 Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记；cards 校验两层豁免索引档
 （修 0.84.0 自种 P4 矛盾）。详见 CHANGELOG。
 **v0.87.1（2026-07-27）：嵌套路径普查（三扫）**（守密人「1 继续」）——前两轮普查比的都是**顶层键**，本轮把两边摊成**点号路径**（`contents[].blobSavedTo`、`gitOperation.commit.sha`）再比，专抓两类前两轮**结构上看不见**的差异：嵌在双方都声明的形状**里面**的字段，以及**两边都有、却待在不同类型里**的字段。**挖出一条真缺陷，而且是银芯自己的**：`timedOutAfterMs` 官方在**基类** `BashOutput` 里，0.85.0 却把它加在了银芯的**扩展类型**上。交出来的交集完全相同、没坏任何东西，而**任何顶层键比对都不可能发现它**——键在两边都存在，只是待错了地方。已移入基类。**其余全属平台绑定，只登记不声明**：`BashOutput.gitOperation.*`（官方**解析 git/gh 命令输出**成结构化 VCS 事实，银芯只跑 shell、不解析其输出，为填字段现造一个解析器不是对齐）· `ghRateLimitHint`/`staleReadFileStateHint`/`backgroundCwdHint`/`noOutputExpected` · `WebFetchOutput.artifactRead.*` · `gitDiff.repository`（在一个银芯声明了但从不产出的形状里）· `contents[].blobSavedTo` · AskUserQuestion 权限 UI 路径。~~九个类型逐层完全一致~~**（2026-07-27 由 v0.88.0 工具化重跑推翻：Glob / Grep / Workflow 三个并不一致——本轮手搓展平器只比了联合类型的第一支、也不匹配带引号的键，覆盖被高估了）**。**方法边界**：展平器只跟花括号深度与键名、不解析 TS 语义，故逐类型同时报**键总数**——数量级不对说明解析飞了，而不是类型真有差异。
+
+**v0.90.0（2026-07-27）：checkpoint blob 上限（T74 甲案）**——`record()` 原对每个被改文件存完整
+前像、无上限（sessions 补审 P1-S2）。超 10MB（可配）前像**不存字节、标 `oversized`**——刻意不复用
+`blob: null`（那意味着「本回合新建」，rewind 会**删档**，复用即让 rewind 摧毁唯一不能恢复的那个档；
+`readIndex()` 往返保留标记，丢了同样致命，新测试首跑即抓）。rewind 对超限档**原样不动**、点名
+不可恢复并整体报 `canRewind: false`——不完整的回滚绝不冒充干净回滚。
 
 **v0.89.0（2026-07-27）：类型面漂移检测工具化 —— 只报「新的」**（守密人「按你建议继续」）——同日三轮普查全是跑完即弃的手搓脚本，于是「上次扫到哪、哪些已经裁过」全靠人记，这正是漂移能反复回来的原因（第三轮挖到的恰是第二轮当天引入的）。收成 `scripts/type-parity.mjs`：**价值不在重跑比对，在于自动扣除已裁定项、只把新长出来的摆上台**（`RULED` 白名单，且**一条裁定吸收整棵子树**——裁了 `BashOutput:gitOperation` 就不会再冒出它十一个孩子）。一份每次都吐同样四十条已知差异的报告，人第二次就不看了。与 `description-coverage.mjs` 同族同纪律：**尺子不是门禁，恒 exit 0**——差异本就不该为零，红线纪律禁止声明未发货能力，机械拉平等于逼类型面承诺本包做不到的事。**首跑就挖出四条真缺陷，三条同一种：发货了却没声明**——`GrepInput` 从未声明 `'-o'`（`grep.ts` 三处代码路径早已实现；前几轮漏看是因为手搓展平器不匹配带引号的键，而 `-o` 只能那样写）· `WorkflowInput` 从未声明 `title`/`description`（两者都在发货的 `inputSchema` 里当运行标签）· `GlobOutput` 空着官方的 `totalMatches`/`countIsComplete`（本引擎先枚举全集再切片，数得准，`countIsComplete` 恒 `true`）。**声明面少报代码实际接受的东西，是 typed-not-populated 的镜像，误导方式一模一样**：照类型读的调用方会以为一个已发货的能力不存在。**解析器易出假发现**（不是响亮地失败，而是给出一条自信、具体、纯属虚构的差异，然后有人去「修」一个本来没错的类型——三轮手搓每轮都干过至少一次），故 `tests/type-parity.test.ts` 逐条钉住真踩过的坑：单行 `{}` 接口吞掉下一个块、纯别名伸进邻居的花括号、带引号的短横线键、内联索引签名凭空造出一个以索引变量命名的幽灵字段、官方 `@minItems` 元组展开（一个类型 83KB）把后续元素挂错父节点。**尚待守密人裁的三项**（**故意不自行并入 `RULED`**——那份白名单只有在「进去 = 人看过」时才有意义）：`AgentOutput` 的官方遥测/worktree/远程任务字段 · `AgentInput.team_name` · `FileReadOutput.source`（挂在官方 `file_unchanged` 结果分支上，缺的是**整条分支**而非一个字段）。
 
