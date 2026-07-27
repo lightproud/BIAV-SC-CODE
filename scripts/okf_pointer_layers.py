@@ -16,7 +16,6 @@ from __future__ import annotations
 
 import json
 import re
-import sys
 from datetime import date
 from pathlib import Path
 
@@ -24,8 +23,7 @@ REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
 TODAY = date.today().isoformat()
 
-sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
-import archive_layout  # noqa: E402  归档布局单一真相源（community/news-output 路径推导共用）
+from news_bridge import archive_layout  # noqa: E402  归档布局单一真相源（community/news-output 路径推导共用）
 
 # frontmatter 读写单一真相源：与 build_okf_bundle 同契约，且现在**同一份实现**
 # （原「刻意自持避免循环 import」的抄写已下沉到 okf_frontmatter，无循环可言）。

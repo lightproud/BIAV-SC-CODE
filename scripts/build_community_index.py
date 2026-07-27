@@ -34,9 +34,8 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
 from silver_tokenizer import tokenize  # noqa: E402  共享领域词典 FMM 分词
-import archive_layout  # noqa: E402  归档布局单一真相源（冷热分层统一开档）
+from news_bridge import archive_layout  # noqa: E402  归档布局单一真相源（冷热分层统一开档）
 
 REPO = Path(__file__).resolve().parent.parent
 # 社区源根：迁移后为 BPT 4R 的 Record/Community（各源摊平）；迁移前回落旧布局。

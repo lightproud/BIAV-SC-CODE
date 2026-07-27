@@ -22,9 +22,9 @@ import sys
 from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_REPO_ROOT / 'projects' / 'news' / 'scripts'))
-import archive_layout  # noqa: E402  分仓桥接：数据根 SSOT
-from discord_compact import compact_record  # noqa: E402
+sys.path.insert(0, str(_REPO_ROOT / 'scripts'))
+from news_bridge import archive_layout  # noqa: E402  分仓桥接：数据根 SSOT
+from discord_compact import compact_record  # noqa: E402  （桥已把采集层置入 sys.path）
 
 DISCORD_DIR = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 

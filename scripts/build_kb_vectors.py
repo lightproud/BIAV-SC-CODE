@@ -24,10 +24,10 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO / "scripts"
-NEWS_SCRIPTS = REPO / "projects" / "news" / "scripts"
-for _p in (str(SCRIPTS), str(NEWS_SCRIPTS)):
-    if _p not in sys.path:
-        sys.path.insert(0, _p)
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+# 采集层不在这里注入：本模块只经 build_community_index 间接触达归档层，而后者
+# 自己走 news_bridge（顶层→采集层的唯一桥）。
 
 import kb_vector  # noqa: E402  (同目录后端)
 

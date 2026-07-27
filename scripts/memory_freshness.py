@@ -26,8 +26,8 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
-import archive_layout  # noqa: E402  分仓桥接：社区数据根 SSOT
+sys.path.insert(0, str(REPO / "scripts"))
+from news_bridge import archive_layout  # noqa: E402  分仓桥接：社区数据根 SSOT
 LESSONS = REPO / "memory" / "lessons-learned.md"
 ARCHIVE = REPO / "memory" / "lessons-archive.md"
 
