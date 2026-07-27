@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-27T12:21:47.877656+00:00",
+  "collected_at": "2026-07-27T16:57:48.046200+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 129,
+  "item_count": 127,
   "items": [
     {
       "source": "google_play",
@@ -253,6 +253,16 @@
       "summary": "sinceramente es muy interesante y aunque mi celular apenas aguante este juego tengo planeado dedicarle al menos 6 meses y lo eliminare porque es muy fastidioso que se cierre el juego justo cuando el celular empieza con su sobrecalentamiento. 🗣️🔥🔥🔥",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-619cfbcc-951f-4699-84be-a35beef2e1ac",
       "author": "HOLA, NADIE",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-16T20:07:51",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 Советую эту игру всем любителям мрачной",
+      "summary": "Советую эту игру всем любителям мрачной эстетики и необычных гача-механик)) Сама скачала её ради коллаборации с новеллой Saya no Uta, но в итоге влюбилась в геймплей: боевая система на картах требует тактического мышления и действительно затягивает. К ф2п игрокам тут относятся на удивление лояльно — донат не давит, играется комфортно. На фоне однотипных проектов вроде игр Хойоверс эта игра стала для меня настоящим глотком свежего воздуха!!",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-5c05a9f6-bc60-4266-a7b3-46ceb449d3f4",
+      "author": "Тома",
       "engagement": 1
     },
     {
@@ -1137,16 +1147,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-27T15:53:58",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 juegazo",
-      "summary": "juegazo",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-a135ab20-e051-4c07-a08d-c1872e3fa654",
-      "author": "Antonio Jesus Ruiz Véliz",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-10T16:56:29",
       "lang": "it",
       "title": "[Google Play 好评] ★5 Best gatcha ever, I love the Lovecraftia",
@@ -1163,16 +1163,6 @@
       "summary": "5 stelle perché è un gioco multilingue compreso l'italiano cosa che ormai dovrebbero fare tutti giochi grazie all'IA",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-d2764bc5-5216-46e4-9594-094a54585b86",
       "author": "Daniele",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-16T20:07:51",
-      "lang": "ru",
-      "title": "[Google Play 好评] ★5 Советую эту игру всем любителям мрачной",
-      "summary": "Советую эту игру всем любителям мрачной эстетики и необычных гача-механик)) Сама скачала её ради коллаборации с новеллой Saya no Uta, но в итоге влюбилась в геймплей: боевая система на картах требует тактического мышления и действительно затягивает. К ф2п игрокам тут относятся на удивление лояльно — донат не давит, играется комфортно. На фоне однотипных проектов вроде игр Хойоверс эта игра стала для меня настоящим глотком свежего воздуха!!",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-5c05a9f6-bc60-4266-a7b3-46ceb449d3f4",
-      "author": "Тома",
       "engagement": 0
     },
     {
@@ -1283,16 +1273,6 @@
       "summary": "キャラクターがすごくいいです！",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-c6e1ed1e-0f3e-42de-b442-496472793a22",
       "author": "。くろめがね",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-27T12:26:53",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 クトゥルフ好きには堪らないゲーム",
-      "summary": "クトゥルフ好きには堪らないゲーム",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a1dd91a4-e4f1-4553-8a56-cefdf7f92a86",
-      "author": "林佑依佳",
       "engagement": 0
     }
   ]
