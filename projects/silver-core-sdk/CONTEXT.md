@@ -70,11 +70,19 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.83.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.83.0`
+**当前版本 `0.84.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.84.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.84.0（2026-07-27）：记忆索引纪律 + 整理规程**——真因不是缺检索腿：SDK 给了常驻索引**机制**
+（R6 每会话注入 `/memories/MEMORY.md` 头部）却没规定索引**条目写法**，且会话收尾提示词反过来命令
+模型把进度卡写**进**那一档，索引每会话增肥、撑过注入上限后头部变陈年散文、尾部静默丢弃（守密人 BPT
+现场反馈「开工要好几回 `memory` 调用才找得到东西」的根因）。四件：进度卡改落 `/memories/progress/`
+只留指针 · 索引纪律片段（两模式注入、前提不成立即跳过）· 写侧超限反压（读写共用同一度量）·
+`buildConsolidationPrompt()` + 四阶段整理规程。**层界守住 N1**：只给「该不该整理 / 怎么整理」，
+不给调度——helper 零 I/O 不起进程。整理是跨档大范围写，多租户须挂 S1。详见 CHANGELOG 与 docs/MEMORY.md。
 
 **v0.83.0（2026-07-27）：GoalVerdict 家族统一（本包零行为改动）**——本包 `{status: 'achieved'|'not_achieved'|'impossible', reason?}` 判词类型升格为家族**正典**：maestro 0.83.0 把 `GoalChaser` 评审判词（原 `{achieved, feedback, impossible?}`）迁为同形，自此一个宿主评审器经结构类型同时服务引擎 `options.goal` Stop 门与 maestro 跨 query 追逐两条缝。背景是首个真实消费者陷阱：BPT 接了 `options.goal` 后报「goal 没效果、模型照样停」，排查出两包**同名不同形** `GoalVerdict`——评审器误用 maestro 形状时，引擎按既定失败方向（阻断停止才是危险动作，评审器坏 = fail-open 放行）把 malformed verdict 放行为允许停止，goal 无声失效。本包仅在 `src/types/subsystems.ts` 的 `GoalVerdict` 注释补「正典地位 + 改形需家族级裁定」声明，`options.goal` 行为与评审器契约一字未动。
 

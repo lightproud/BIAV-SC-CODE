@@ -36,11 +36,14 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.83.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-agent-sdk` = `0.83.0`
+**当前版本 `0.84.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-agent-sdk` = `0.84.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.84.0（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.84.0
+（记忆索引纪律 + 整理规程）前进，详见该包 CHANGELOG。
 
 **v0.83.0（2026-07-27）：goal 判词统一为 agent SDK 正典形状（BREAKING，实验面）**——`GoalVerdict` 从 `{achieved: boolean, feedback, impossible?}` 迁为与 agent SDK **逐字同形**的 `{status: 'achieved'|'not_achieved'|'impossible', reason?}`。这终结一个已咬到首个真实消费者的陷阱：两包各自导出**同名不同形**判词，评审器接错缝时引擎判 malformed 并 fail-open 放行停止（BPT 2026-07-27 症状「接了 goal 模型照样停」的 SDK 侧根源之一）。统一后一个宿主评审器经结构类型同时服务两缝；**声明式重复、不跨包 import**（硬性质 §1.2 不声明对 agent 依赖）；`nextGoalAction` 改依 `status` 判分支、四动作与优先序不变；`GoalRoundPayload.feedback` 字段名保留（持久化 payload schema）、改承载判词 `reason`。迁移映射与破坏面理由见 CHANGELOG 0.83.0；goal 族仍属实验面（GoalChaser 零调用点），本次即「签名随首个真实消费方调整」条款的兑现，且赶在首次接线之前。
 

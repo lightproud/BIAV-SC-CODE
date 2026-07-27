@@ -15,8 +15,10 @@ import { ConfigurationError } from '../../errors.js';
 import { createLocalFilesystemMemoryStore } from './local-store.js';
 import { createMemoryHealth, createMemoryTool, MEMORY_TOOL_NAME } from './memory-tool.js';
 import { mountReadAccess, resolveMemoryMounts } from './mounts.js';
+import { recoverIndexLines } from './index-capacity.js';
+import { MEMORY_INDEX_PATH } from './paths.js';
 
-export { MEMORY_ROOT, MemoryPathError, validateMemoryPath } from './paths.js';
+export { MEMORY_INDEX_PATH, MEMORY_ROOT, MemoryPathError, validateMemoryPath } from './paths.js';
 export {
   describeMounts,
   filterAncestorListing,
@@ -54,6 +56,18 @@ export {
   createLocalMemoryFileOps,
 } from './local-store.js';
 export {
+  assessIndexCapacity,
+  indexCapacityWarning,
+  recoverIndexLines,
+  type IndexCaps,
+  type IndexCapacity,
+} from './index-capacity.js';
+export {
+  buildConsolidationPrompt,
+  MEMORY_CONSOLIDATION_PROTOCOL,
+  type ConsolidationPromptOptions,
+} from './consolidation.js';
+export {
   createMemoryHealth,
   createMemoryTool,
   memoryCommandSchema,
@@ -81,9 +95,6 @@ export {
 /** The official server-declared entry for native mode (docs: the entry is the
  *  entire configuration). */
 export const MEMORY_SERVER_TOOL = { type: 'memory_20250818', name: MEMORY_TOOL_NAME } as const;
-
-/** Virtual path of the resident index file (spec R6). */
-export const MEMORY_INDEX_PATH = '/memories/MEMORY.md';
 
 const INDEX_DEFAULT_MAX_LINES = 200;
 const INDEX_DEFAULT_MAX_BYTES = 25_600; // 25 KB
@@ -119,6 +130,14 @@ export type MemoryRuntime = {
   flushOnCompaction: boolean;
   /** R7: run the session-end progress-card round on normal termination. */
   sessionEndUpdate: boolean;
+  /**
+   * Inject the index-discipline fragment (keeper 2026-07-27). False when the
+   * fragment's own premise does not hold: an incognito session cannot write
+   * the index at all (S2), and with `indexInjection: false` nothing is loaded
+   * or truncated, so telling the model "only the head is loaded" would be a
+   * lie the model then optimizes for.
+   */
+  indexDiscipline: boolean;
   /**
    * Pitfall recording protocol (SCS-REQ-002 Phase 0 / REQ-3.2): null =
    * disabled (default, or forced by incognito — a write protocol on a
@@ -194,6 +213,12 @@ export function resolveMemoryRuntime(args: {
     mode,
     tool: createMemoryTool(store, {
       health,
+      // Write-side index back-pressure: the tool warns when a write leaves the
+      // resident index over the very caps buildIndexInjection() truncates at,
+      // so the model learns it NOW instead of silently losing the tail on
+      // every future load. Zero caps (indexInjection: false) = no warning:
+      // nothing is being truncated.
+      ...(maxLines > 0 && maxBytes > 0 ? { indexCaps: { maxLines, maxBytes } } : {}),
       ...(memory.limits !== undefined ? { limits: memory.limits } : {}),
       ...(memory.schema !== undefined ? { schema: memory.schema } : {}),
       ...(memory.cards !== undefined ? { cards: memory.cards } : {}),
@@ -206,6 +231,7 @@ export function resolveMemoryRuntime(args: {
     // S2: both R7 rounds are WRITE rounds; an incognito session never runs them.
     flushOnCompaction: !incognito && memory.flushOnCompaction !== false,
     sessionEndUpdate: !incognito && memory.sessionEndUpdate !== false,
+    indexDiscipline: !incognito && maxLines > 0 && maxBytes > 0,
     // Phase 0 (REQ-3.2): opt-in, and — like the R7 write rounds — never on an
     // incognito session.
     pitfalls:
@@ -236,21 +262,12 @@ export function resolveMemoryRuntime(args: {
         // injection, zero noise (spec R6 acceptance).
         return null;
       }
-      // The contract-fixed view format is `header\n{6-char number}\t{line}`*;
-      // strip the header and the line-number gutter to recover raw content.
-      const numbered = viewed.split('\n').slice(1);
-      let truncated = false;
-      // The store's own char-cap pagination notice is view CHROME, not memory
-      // content: without this strip it leaked into the injected index block
-      // verbatim (audit 2026-07-17 L27).
-      if (
-        numbered.length > 0 &&
-        /^\[Output truncated at \d+ characters\./.test(numbered[numbered.length - 1] as string)
-      ) {
-        numbered.pop();
-        truncated = true;
-      }
-      let lines = numbered.map((l) => l.replace(/^\s*\d+\t/, ''));
+      // Recover raw content from the view chrome (header + line-number gutter
+      // + the store's own pagination notice) — shared with the write-side
+      // capacity warning so both judge the same bytes (index-capacity.ts).
+      const recovered = recoverIndexLines(viewed);
+      let truncated = recovered.sawNotice;
+      let lines = recovered.lines;
       if (lines.length > maxLines) {
         lines = lines.slice(0, maxLines);
         truncated = true;

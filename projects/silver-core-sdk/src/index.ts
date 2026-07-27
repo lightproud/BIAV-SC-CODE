@@ -77,12 +77,14 @@ export {
   DEFAULT_CARDS_CONFIG,
   DEFAULT_MEMORY_LIMITS,
   INCOGNITO_MEMORY_ERROR,
+  MEMORY_CONSOLIDATION_PROTOCOL,
   MEMORY_INDEX_PATH,
   MEMORY_ROOT,
   MEMORY_SERVER_TOOL,
   MEMORY_TOOL_NAME,
   MemoryPathError,
   assessMemoryStoreHealth,
+  buildConsolidationPrompt,
   createLocalFilesystemMemoryStore,
   createLocalMemoryFileOps,
   createMemoryHealth,
@@ -104,6 +106,7 @@ export {
 } from './tools/memory/index.js';
 export type {
   AssessMemoryStoreHealthOptions,
+  ConsolidationPromptOptions,
   CreateMemoryStoreOptions,
   CreateMemoryToolOptions,
   MemoryCard,

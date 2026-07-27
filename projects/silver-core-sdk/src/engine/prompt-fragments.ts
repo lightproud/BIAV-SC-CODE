@@ -101,19 +101,59 @@ export const MEMORY_PITFALLS_FRAGMENT: PromptFragment = {
 export const MEMORY_COMPACTION_FLUSH_PROMPT =
   'Context compaction is about to summarize the older part of this conversation. ' +
   'Before that happens, use your `memory` tool to record any important progress, ' +
-  'decisions or state that is not yet saved (update /memories/MEMORY.md as the index). ' +
+  'decisions or state that is not yet saved — in the memory FILE each belongs to, ' +
+  'with at most a one-line pointer added to the /memories/MEMORY.md index. ' +
   'Skip anything already recorded. Then continue with the current task without stopping.';
 
 /**
  * Memory session-end progress-card prompt (spec R7, sdk-original): drives the
  * bounded memory-update round the query layer runs after a NORMAL end of
  * input (never after abort/error).
+ *
+ * The card goes in a FILE, not in the index (keeper diagnosis 2026-07-27).
+ * The earlier wording — "update /memories/MEMORY.md with a progress card" —
+ * put session content into the one file R6 loads into every future session's
+ * context: run per session, it grows the index past its injection cap until
+ * the head that IS loaded is old progress prose instead of routing, and the
+ * model has to `view` its way down the tree on every startup. Same information,
+ * one indirection later: card in its own file, one line in the index.
  */
 export const MEMORY_SESSION_END_PROMPT =
-  'The session is ending. Use your `memory` tool to update /memories/MEMORY.md with a ' +
-  'progress card for the next session: what was accomplished, what remains, and the ' +
-  'immediate next steps. Record any other durable facts or decisions from this session ' +
-  'in appropriate memory files. Keep it concise; then reply with a one-line confirmation.';
+  'The session is ending. Use your `memory` tool to record a progress card for the next ' +
+  'session — what was accomplished, what remains, and the immediate next steps — in a ' +
+  'memory FILE under /memories/progress/, UPDATING this task\'s existing card rather than ' +
+  'adding another. Record any other durable facts or decisions from this session in the ' +
+  'topic files they belong to. In /memories/MEMORY.md write only a one-line pointer per ' +
+  'file, never the card itself. Keep it concise; then reply with a one-line confirmation.';
+
+/**
+ * Memory index discipline (sdk-original, keeper ruling 2026-07-27): the SDK
+ * defines the resident-index MECHANISM (R6 loads the head of
+ * /memories/MEMORY.md into every session) but never told the model what an
+ * index entry should look like — so the file drifts into prose, overruns the
+ * injection cap, and stops routing. This fragment is that missing half.
+ *
+ * Injected in BOTH assembly modes: it directs WHAT the index should contain,
+ * layered on top of the base protocol (HOW the tool works), so it never
+ * duplicates the API-injected native-mode prompt. Not opt-in — the mechanism
+ * it completes is not opt-in either.
+ */
+export const MEMORY_INDEX_DISCIPLINE_FRAGMENT: PromptFragment = {
+  id: 'memory-index-discipline',
+  slug: 'sdk-original',
+  faithful: false,
+  gate: (has) => has('memory'),
+  text:
+    'MEMORY INDEX:\n' +
+    '/memories/MEMORY.md is an INDEX, not a memory. Only its head is loaded into ' +
+    'context at session start, and anything past that limit is silently dropped — an ' +
+    'index that fills up with content stops being able to route you, and the entries at ' +
+    'its end become invisible.\n' +
+    'Write one line per entry, roughly 150 characters or less: ' +
+    '"- <title> (<file path>) — one-line hook". Never write memory content directly ' +
+    'into the index; content goes in the file the line points at. When you add a memory ' +
+    'file, add its line; when you delete or merge one, remove or merge its line.',
+};
 
 /**
  * Automation-continuation fragment (BPT-EXTENSION, keeper memo 2026-07-18
