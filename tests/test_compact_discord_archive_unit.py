@@ -15,7 +15,7 @@ import unittest.mock
 from pathlib import Path
 
 _ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_ROOT / 'projects' / 'news' / 'scripts'))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 # compact_discord_archive 在 scripts/ 下，且 import 时会 sys.path 注入 discord_compact
 _spec = importlib.util.spec_from_file_location(

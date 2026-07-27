@@ -13,8 +13,7 @@ import sys
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_REPO))
-sys.path.insert(0, str(_REPO / "projects/wiki/scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 from projects.wiki.scripts.parse_voice_lines import parse_voice_lua  # noqa: E402
 

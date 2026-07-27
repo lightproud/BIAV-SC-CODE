@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 import sdk_substantive_versions as ssv  # noqa: E402
 
 SCRIPT = REPO / "scripts" / "sdk_substantive_versions.py"

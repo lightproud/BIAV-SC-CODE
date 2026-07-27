@@ -2,7 +2,7 @@ import sys
 import unittest
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 from discord_archiver import GLOBAL_GUILD_ID
 from discord_list_guilds import KNOWN_GUILDS, VOLUNTEER_GUILD_ID, classify_guilds

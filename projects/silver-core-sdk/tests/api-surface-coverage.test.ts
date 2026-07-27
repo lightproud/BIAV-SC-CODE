@@ -65,7 +65,14 @@ function parseBlock(source: string, re: RegExp): string {
   return m[0];
 }
 
-const typesSource = readFileSync(join(__dirname, '..', 'src', 'types.ts'), 'utf8');
+// src/types.ts 自 2026-07-27 结构审视 P7 起是 barrel，声明都在 src/types/ 下。
+// 拼接整层而不是只读 barrel——否则这条守卫会静默地什么也检不到。
+const typesDir = join(__dirname, '..', 'src', 'types');
+const typesSource = readdirSync(typesDir)
+  .filter((f) => f.endsWith('.ts'))
+  .sort()
+  .map((f) => readFileSync(join(typesDir, f), 'utf8'))
+  .join('\n');
 const optionsFields = [
   ...parseBlock(typesSource, /export (?:interface|type) Options[\s\S]*?\n\}/).matchAll(
     /^\s{2}(\w+)\??:/gm,

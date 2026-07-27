@@ -417,7 +417,7 @@ wiki 旧结构化层的 6 个占位 JSON（2026-06-15 裁定清空者）。**守
 
 | 场景 | 命令 |
 |------|------|
-| 运行验证程序（全量单测）| `pytest tests/ -v`（pytest 未随 requirements 收口，云容器缺则先 `pip install pytest`）|
+| 运行验证程序（全量单测）| `pytest tests/ -v`（pytest 未随 requirements 收口，云容器缺则先 `pip install pytest`）。**路径知识三处真相源，别再各写各的**（T72，2026-07-27）：pytest 走 `pyproject.toml` 的 `pythonpath`；`python tests/test_x.py` 直跑走 `tests/_paths.py`（档首 `import _paths`）；顶层脚本取采集层走 `scripts/news_bridge.py`。守卫 `tests/test_test_isolation.py` |
 | 单文件 / 单用例 | `pytest tests/test_<模块>.py -v` / `pytest tests/ -k "<关键词>" -v` |
 | CLAUDE.md 对账三卫 | `pytest tests/test_claude_md*.py -v`（路径引用 / 覆盖 / 日期一致性；**改本档案后必跑**）|
 | wiki 本地开发 | `cd projects/wiki && npm run dev`（VitePress dev）|

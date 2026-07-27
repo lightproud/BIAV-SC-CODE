@@ -12,7 +12,7 @@ from pathlib import Path
 from unittest import mock
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "projects" / "wiki" / "scripts"
-sys.path.insert(0, str(SCRIPTS))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 from unitypy_stub import install_unitypy_stub  # noqa: E402  桩单一真相源
 install_unitypy_stub()

@@ -13,14 +13,19 @@
 
 import { spawnSync } from 'node:child_process';
 import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 
 const examplesDir = fileURLToPath(new URL('../examples/', import.meta.url));
-const typesSource = readFileSync(
-  fileURLToPath(new URL('../src/types.ts', import.meta.url)),
-  'utf8',
-);
+// src/types.ts 自 2026-07-27 结构审视 P7 起是 barrel；声明在 src/types/ 下，
+// 故拼接整层（只读 barrel 会让本守卫检不到任何 message 形状）。
+const typesDir = fileURLToPath(new URL('../src/types/', import.meta.url));
+const typesSource = readdirSync(typesDir)
+  .filter((f) => f.endsWith('.ts'))
+  .sort()
+  .map((f) => readFileSync(join(typesDir, f), 'utf8'))
+  .join('\n');
 
 const exampleFiles = readdirSync(examplesDir).filter((f) => f.endsWith('.mjs'));
 

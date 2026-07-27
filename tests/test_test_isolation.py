@@ -29,11 +29,14 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 TESTS = REPO / "tests"
 
-#: conftest.py 已经为所有测试注入的目录（无需各档自报）。
-#: 不含 conftest 的注入——本条守的是「档内注入能否独立支撑」（即 `python
-#: tests/test_x.py` 直跑的场景，conftest 根本不参与）。只算 pytest / 直跑都会
-#: 提供的测试档自身目录。conftest 的兜底是给全量跑用的，不该让守卫放水。
+#: 直跑场景下必然可用的目录：测试档自身所在目录（sys.path[0]）。
+#: 刻意**不含** conftest 与 pyproject 的注入——本条守的是「档内自报能否独立
+#: 支撑 `python tests/test_x.py`」，而 conftest / pyproject 只服务 pytest 那条路。
+#: 让守卫吃兜底，就等于让它替自己该抓的问题打掩护。
 _CONFTEST_DIRS = [TESTS]
+
+#: `import _paths` 引导的目录（T72）——路径知识的唯一真相源，档内不再各写各的。
+_PATHS_MODULE = TESTS / "_paths.py"
 
 #: 标准库 / 第三方 / 测试自身的辅助模块，不参与「必须能在仓内找到」的判定。
 _IGNORED_PREFIXES = ("pytest", "unittest", "vitest")
@@ -82,6 +85,19 @@ def _injected_dirs(tree: ast.AST) -> list[Path]:
     consts = _module_level_paths(tree)
     dirs: list[Path] = list(_CONFTEST_DIRS)
 
+    # `import _paths`（T72 的直跑引导）等同于引入它声明的全部源目录。
+    # 认这一条，是为了让「收敛到一处」成为守卫承认的正解，而不是让 117 个档
+    # 为了讨好守卫把路径又抄回去。
+    for node in ast.walk(tree):
+        names = (
+            [a.name for a in node.names] if isinstance(node, ast.Import)
+            else [node.module or ""] if isinstance(node, ast.ImportFrom)
+            else []
+        )
+        if "_paths" in names:
+            dirs.extend(_paths_source_dirs())
+            break
+
     # 循环形态：`for _p in (str(SCRIPTS), str(NEWS_SCRIPTS)): sys.path.insert(0, _p)`
     # ——注入参数是循环变量，逐个把迭代元素当作一次注入展开。
     for node in ast.walk(tree):
@@ -110,6 +126,22 @@ def _injected_dirs(tree: ast.AST) -> list[Path]:
             parts.extend(_path_literals(arg, consts))
         dirs.append(REPO.joinpath(*parts) if parts else REPO)
     return dirs
+
+
+def _paths_source_dirs() -> list[Path]:
+    """从 tests/_paths.py 自己的 SOURCE_DIRS 读——不在本档复述一份，
+    否则真相源就又变回两处了。"""
+    tree = ast.parse(_PATHS_MODULE.read_text(encoding="utf-8"))
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and any(
+            isinstance(t, ast.Name) and t.id == "SOURCE_DIRS" for t in node.targets
+        ):
+            return [
+                REPO / e.value
+                for e in node.value.elts
+                if isinstance(e, ast.Constant) and isinstance(e.value, str)
+            ]
+    raise AssertionError("tests/_paths.py 必须声明 SOURCE_DIRS")
 
 
 def _bare_imports(tree: ast.AST) -> set[str]:
@@ -198,3 +230,45 @@ def test_mutmut_sources_exist() -> None:
         if line.strip().endswith(".py") and not (REPO / line.strip()).exists()
     ]
     assert not missing, f"setup.cfg source_paths 指向不存在的文件：{missing}"
+
+
+def test_paths_module_agrees_with_pyproject() -> None:
+    """两条路径必须看到同一组目录。
+
+    `pytest tests/` 走 pyproject 的 pythonpath，`python tests/test_x.py` 走
+    tests/_paths.py。两边一旦不同步，「pytest 绿而直跑挂」的老毛病就会换个方向
+    复发——那正是 T72 要收掉的病。
+    """
+    import tomllib
+
+    cfg = tomllib.loads((REPO / "pyproject.toml").read_text(encoding="utf-8"))
+    declared = set(cfg["tool"]["pytest"]["ini_options"]["pythonpath"])
+    guided = {p.relative_to(REPO).as_posix() or "." for p in _paths_source_dirs()}
+    # `.` 在两边的写法不同（"." vs 空相对路径），归一后比较
+    assert {d.rstrip("/") or "." for d in declared} == guided, (
+        f"pyproject pythonpath {sorted(declared)} 与 tests/_paths.py SOURCE_DIRS "
+        f"{sorted(guided)} 不一致"
+    )
+
+
+def test_no_test_file_hand_rolls_a_source_path() -> None:
+    """测试档不得在模块级自行拼装源目录路径——那正是 T72 收敛掉的 117 处抄本。
+
+    只管模块级：测试**函数体内**为验证行为而临时改 sys.path 是夹具，不是抄本
+    （tests/test_news_bridge.py 就有一处，刻意放行）。
+    """
+    offenders: list[str] = []
+    for p in sorted(TESTS.glob("test_*.py")):
+        tree = ast.parse(p.read_text(encoding="utf-8"))
+        for node in tree.body:
+            # 函数/类定义整棵跳过：里面的注入是该用例的夹具，不是模块级抄本。
+            # （`ast.dump` 会展开子树，不跳就会把夹具当抄本告——本条第一版的误报。）
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+                continue
+            dumped = ast.dump(node)
+            if "attr='path'" in dumped and ("attr='insert'" in dumped or "attr='append'" in dumped):
+                offenders.append(f"{p.name}:{node.lineno}")
+    assert not offenders, (
+        "以下测试档在模块级手写了 sys.path 注入，请改为 `import _paths`"
+        f"（路径知识的唯一真相源）：{offenders}"
+    )

@@ -36,9 +36,7 @@ REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO / "scripts"
 NEWS_SCRIPTS = REPO / "projects" / "news" / "scripts"
 
-for _p in (str(SCRIPTS), str(NEWS_SCRIPTS)):
-    if _p not in sys.path:
-        sys.path.insert(0, _p)
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import build_okf_bundle  # noqa: E402
 import build_community_index  # noqa: E402

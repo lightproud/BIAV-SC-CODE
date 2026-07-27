@@ -24,7 +24,7 @@ from pathlib import Path
 import pytest
 
 REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 import okf_pointer_layers as opl  # noqa: E402
 
 BUILDER = REPO / "scripts" / "build_okf_bundle.py"
