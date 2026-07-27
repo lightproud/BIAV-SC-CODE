@@ -34,6 +34,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { sliceSurrogateSafe } from '../internal/text.js';
+import { MAX_READ_OUTPUT_CHARS } from './fsutil.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { SDK_USER_AGENT } from '../version.js';
 import { WEBFETCH_DESCRIPTION } from './descriptions.js';
@@ -41,7 +42,18 @@ import { WEBFETCH_DESCRIPTION } from './descriptions.js';
 const FETCH_TIMEOUT_MS = 30_000;
 const MAX_REDIRECTS = 5;
 const MAX_BODY_BYTES = 5 * 1024 * 1024;
-const MAX_OUTPUT_CHARS = 100_000;
+/**
+ * A fetched page enters the context as raw text, exactly like a Read of a
+ * remote file, so it shares Read's cap. (Claude Code's 100_000 is NOT the same
+ * quantity: there it bounds the markdown handed to a summarizer model, and only
+ * that model's summary reaches the context. This harness has no summarizer, so
+ * copying that number made WebFetch the one tool able to push 100K chars of the
+ * least controllable source — an arbitrary web page — straight into the
+ * context, twice what a local Read may push. Referenced, not re-literalled, so
+ * the two gates cannot drift apart; fsutil.ts:32 already documents the
+ * intended alignment.)
+ */
+const MAX_OUTPUT_CHARS = MAX_READ_OUTPUT_CHARS;
 const USER_AGENT = SDK_USER_AGENT;
 const ACCEPT_HEADER =
   'text/html,application/xhtml+xml,application/xml;q=0.9,application/json,text/plain;q=0.8,*/*;q=0.5';

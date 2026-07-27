@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.80.0 — 2026-07-27
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.80.0 (tool-output limits realigned with Claude Code
+2.1.141: WebFetch cap 100_000 → Read's 50_000, Grep `head_limit` default 250 in
+every output mode, Bash stream cap keeps the tail instead of the head).
+
 ## 0.79.1 — 2026-07-27
 
 Lockstep alignment only — no changes to this package. The family clock advanced

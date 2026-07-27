@@ -16,6 +16,60 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.80.0 — 2026-07-27
+
+Tool-output limits realigned with Claude Code 2.1.141 (keeper delivery note,
+constants read out of the shipped `claude.exe`). Three independent default
+changes; every one of them narrows or redirects what a tool pushes into the
+context, so none is source-compatible-only — hence the minor bump.
+
+- **WebFetch output cap 100_000 → 50_000 chars**, now expressed as
+  `MAX_READ_OUTPUT_CHARS` rather than a second literal. The official 100_000
+  bounds the markdown handed to a SUMMARIZER model, and only that model's
+  summary reaches the context; this engine has no summarizer, so the same
+  number was gating raw page text going straight into the context — making
+  WebFetch the one tool allowed twice a local Read's budget, for the least
+  controllable source there is. `fsutil.ts` had documented the intended
+  alignment ("~50K aligns with the WebFetch cap") since the cap was added; the
+  code now matches the comment, and the shared constant keeps the two gates
+  from drifting apart again.
+- **Grep `head_limit` defaults to 250 in ALL THREE output modes** (was: 250 for
+  `content`, unlimited for `count` / `files_with_matches` — OPT-1, v0.13.0).
+  OPT-1's premise was that a truncated count is a WRONG count; the fix it
+  shipped alongside — every mode announcing its own cut — already answers that,
+  so the unlimited default was buying nothing while letting one broad search
+  return thousands of entries. `head_limit=0` remains the explicit way to buy a
+  provably complete result, and the schema text (which claimed 250 for every
+  mode all along) is now true.
+- **Bash stdout/stderr cap keeps the LAST 30_000 chars, not the first**, with
+  the marker moved to the front (`[truncated: earlier output dropped]`). A long
+  command's verdict — build result, test summary, final error — is in its
+  closing lines; head-keeping discarded exactly that and retained the compiler
+  chatter. Claude Code truncates from the front for the same reason. New
+  `sliceTailSurrogateSafe` in `internal/text.ts` mirrors `sliceSurrogateSafe`
+  for the opposite boundary (a tail cut strands a LOW surrogate, not a high
+  one). Memory note: the buffer is trimmed after appending, so the peak is
+  cap + one chunk instead of a hard 30_000.
+
+Deliberately NOT changed: Read's unit of measure. Claude Code counts tokens
+(25_000, plus a 262_144-byte hard refusal); this SDK counts characters
+(50_000). Matching it would mean a tokenizer dependency at runtime, and
+character counting is the LOOSER of the two on the workload that matters here —
+50K chars of Chinese is roughly 50K tokens, twice the official budget, where
+50K chars of English code is about 12K. Tightening, if ever wanted, is a lower
+character threshold, not a tokenizer.
+
+Consumers on `count` / `files_with_matches` who relied on the implicit
+completeness must pass `head_limit: 0`; consumers parsing the Bash truncation
+marker must match it at the START of the stream text.
+
+Five tests added (one per changed default, plus the tail-slice surrogate
+boundary and a WebFetch assertion tied to the imported Read constant): 3,247
+measured, of which 2 fail for an unrelated pre-existing reason — the 2026-07-27
+upstream prompt-snapshot refresh (76fe5e6) renamed
+`system-prompt-coordinator-worker-instructions.md` to `agent-prompt-…`, so the
+two archive-anchor governance tests red on HEAD as well.
+
 ## 0.79.1 — 2026-07-27
 
 Internal dedup, no surface or behaviour change. The retry / backoff / error-body
