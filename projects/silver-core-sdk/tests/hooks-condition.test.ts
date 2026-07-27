@@ -78,16 +78,16 @@ describe('parseHookCondition (fails CLOSED)', () => {
 describe('evaluateHookCondition', () => {
   it('uses the base prompt by default and the stop prompt for stop:true', async () => {
     const t1 = new MockTransport([textReplyEvents('{"ok":true,"reason":"met"}')]);
-    await evaluateHookCondition({ condition: 'c', context: 'ctx' }, { transport: t1 });
+    await evaluateHookCondition({ condition: 'c', context: 'ctx' }, { transport: t1, model: 'haiku' });
     expect(t1.requests[0]?.system).toBe(HOOK_CONDITION_SYSTEM);
 
     const t2 = new MockTransport([textReplyEvents('{"ok":false,"reason":"x"}')]);
-    await evaluateHookCondition({ condition: 'c', context: 'ctx', stop: true }, { transport: t2 });
+    await evaluateHookCondition({ condition: 'c', context: 'ctx', stop: true }, { transport: t2, model: 'haiku' });
     expect(t2.requests[0]?.system).toBe(HOOK_STOP_CONDITION_SYSTEM);
   });
   it('sends condition + context in the user turn at temperature 0', async () => {
     const t = new MockTransport([textReplyEvents('{"ok":true,"reason":"met"}')]);
-    await evaluateHookCondition({ condition: 'CI is green', context: 'run #7 passed' }, { transport: t });
+    await evaluateHookCondition({ condition: 'CI is green', context: 'run #7 passed' }, { transport: t, model: 'haiku' });
     const user = t.requests[0]?.messages[0]?.content;
     expect(typeof user === 'string' && user.includes('CI is green')).toBe(true);
     expect(typeof user === 'string' && user.includes('run #7 passed')).toBe(true);
@@ -101,7 +101,7 @@ describe('evaluateHookCondition', () => {
         throw new Error('no credential');
       },
     };
-    const r = await evaluateHookCondition({ condition: 'c', context: 'x' }, { transport: throwing });
+    const r = await evaluateHookCondition({ condition: 'c', context: 'x' }, { transport: throwing, model: 'haiku' });
     expect(r.ok).toBe(false);
     expect(r.reason).toContain('no credential');
   });
@@ -120,7 +120,7 @@ describe('DefaultHookRunner condition gate', () => {
     const runner = new DefaultHookRunner({
       hooks: { PreToolUse: [{ hooks: [cb] }] },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     await runner.run('PreToolUse', INPUT, undefined, 'Bash', signal());
     expect(cb).toHaveBeenCalledTimes(1);
@@ -133,7 +133,7 @@ describe('DefaultHookRunner condition gate', () => {
     const runner = new DefaultHookRunner({
       hooks: { PreToolUse: [{ condition: 'the command is read-only', hooks: [cb] }] },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     await runner.run('PreToolUse', INPUT, undefined, 'Bash', signal());
     expect(cb).toHaveBeenCalledTimes(1);
@@ -149,7 +149,7 @@ describe('DefaultHookRunner condition gate', () => {
     const runner = new DefaultHookRunner({
       hooks: { PreToolUse: [{ condition: 'the command is read-only', hooks: [cb] }] },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     const agg = await runner.run('PreToolUse', INPUT, undefined, 'Bash', signal());
     expect(cb).not.toHaveBeenCalled();
@@ -168,7 +168,7 @@ describe('DefaultHookRunner condition gate', () => {
     const runner = new DefaultHookRunner({
       hooks: { PreToolUse: [{ condition: 'x', hooks: [cb] }] },
       debug: () => {},
-      conditionOptions: { transport: throwing },
+      conditionOptions: { transport: throwing, model: 'haiku' },
     });
     await runner.run('PreToolUse', INPUT, undefined, 'Bash', signal());
     expect(cb).not.toHaveBeenCalled();
@@ -186,7 +186,7 @@ describe('DefaultHookRunner condition gate', () => {
         ],
       },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     await runner.run('PreToolUse', INPUT, undefined, 'Bash', signal());
     expect(gated).not.toHaveBeenCalled();
@@ -200,7 +200,7 @@ describe('DefaultHookRunner condition gate', () => {
     const runner = new DefaultHookRunner({
       hooks: { Stop: [{ condition: 'the tests passed', hooks: [cb] }] },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     await runner.run('Stop', stopInput, undefined, undefined, signal());
     expect(t.requests[0]?.system).toBe(HOOK_STOP_CONDITION_SYSTEM);
@@ -248,4 +248,38 @@ describe('hook-condition prompt provenance (corpus-sync guard, Track B parity)',
       expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
     });
   }
+});
+
+// ---------------------------------------------------------------------------
+// 0.94.0: query()-wired condition calls inherit the SESSION model
+// ---------------------------------------------------------------------------
+
+describe('query()-wired condition calls inherit the session model (0.94.0)', () => {
+  it('the Stop-condition evaluator request carries options.model, not a baked-in id', async () => {
+    // No built-in default model anywhere: the engine threads the session model
+    // into conditionOptions (same inheritance rule as the compaction
+    // summarizer), so a gateway-specific id chosen by the consumer is the one
+    // the evaluator drives — never a package-internal constant.
+    const { query } = await import('../src/index.js');
+    const { makeSSEFetch } = await import('./helpers/sse-fetch.js');
+    const fetchStub = makeSSEFetch([
+      textReplyEvents('done'),
+      textReplyEvents('{"ok": true, "reason": "finished"}'),
+    ]);
+    const q = query({
+      prompt: 'work',
+      options: {
+        model: 'gateway/custom-model-id',
+        provider: { apiKey: 'test-key', fetch: fetchStub, promptCaching: false },
+        persistSession: false,
+        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        hooks: {
+          Stop: [{ condition: 'the work is finished', hooks: [async () => ({})] }],
+        },
+      },
+    });
+    for await (const m of q) void m;
+    expect(fetchStub.requests).toHaveLength(2);
+    expect(fetchStub.requests[1]!.body.model).toBe('gateway/custom-model-id');
+  });
 });

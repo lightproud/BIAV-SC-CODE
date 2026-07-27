@@ -96,6 +96,9 @@ async function captureArm(armKind, scenario) {
         cwd,
         maxTurns: 3,
         env: baseEnv(emulator.url),
+        // 0.94.0: no built-in default model — pin the id both arms previously
+        // defaulted to, so the frozen wire reference stays byte-identical.
+        model: 'claude-sonnet-4-5',
         ...(armKind === 'bpt'
           ? { sessionDir: join(cwd, '.sessions'), systemPrompt: { type: 'preset', preset: 'claude_code' } }
           : {}),

@@ -273,6 +273,9 @@ function cutResponseAfterTextDeltas(res, n) {
  *  error result — the error IS the evidence). */
 async function drive(sdk, ws, { prompts, options }) {
   const merged = {
+    // 0.94.0: the SDK ships no built-in default model — the harness (a
+    // consumer) pins the id its runs always used; callers may override.
+    model: 'claude-sonnet-4-5',
     permissionMode: 'bypassPermissions',
     allowDangerouslySkipPermissions: true,
     ...options,

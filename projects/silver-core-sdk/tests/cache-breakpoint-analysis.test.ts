@@ -83,6 +83,7 @@ async function capture(
     const q: Query = query({
       prompt: opts.multiTurn ? 'Read wire.txt then say done.' : 'Say OK.',
       options: {
+        model: 'claude-sonnet-4-5',
         cwd,
         maxTurns: 3,
         sessionDir: join(cwd, '.sessions'),

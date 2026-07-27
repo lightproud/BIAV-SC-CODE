@@ -359,6 +359,31 @@ compaction calls through the same seam). The factory-standard
 `createSubagentTransportResolver()` ignores `purpose`, so standard users
 only rebuild, not rewrite.
 
+### 3.10 Post-window (0.94.0): no built-in default model ids — `DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` removed
+
+Landed after this document's 0.68 window but recorded here because it is a
+**surface removal** against the frozen 0.3x export list (the second and third
+ever, after §3.3): the SDK no longer ships ANY "no model named → use this
+specific id" fallback (SCS request 2026-07-28, black-pool sdk-bridge — a baked
+official id is wrong for every non-Anthropic gateway and fails silently until
+the gateway 400s on a model string the consumer never wrote).
+
+- `query()` without `options.model` and without `ANTHROPIC_MODEL` now throws
+  a `ConfigurationError` at construction (was: silent `claude-sonnet-4-5`).
+- `runUtilityCall` / the 8 generator wrappers / `adversarialVerify` /
+  `runVerification` / `evaluateHookCondition` called directly without
+  `opts.model` now reject with a `ConfigurationError` (was: silent
+  `claude-haiku-4-5`). The engine's own internal calls (hook `condition`
+  evaluation) inherit the session model, like the compaction summarizer
+  always has.
+- The constants `DEFAULT_UTILITY_MODEL` and `VERIFIER_DEFAULT_MODEL` are
+  REMOVED from the export surface (pinned in the fixture's `knownRemovals`).
+  A consumer that imported them should pass its own gateway-known id where
+  it previously leaned on the default.
+
+Consumers that already pass a full gateway id on every call site (the
+black-pool iron rule) see zero behavior change.
+
 ## 4. New capability inventory 0.53 → 0.68 (adopt-at-will)
 
 For orientation — everything here is opt-in and absent from the 0.3x mental

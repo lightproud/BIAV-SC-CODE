@@ -44,6 +44,7 @@ let result = null;
 const q = sdk.query({
   prompt: 'Say the reply.',
   options: {
+    model: 'claude-sonnet-4-5',
     provider: { apiKey: 'test-key', baseUrl: `http://127.0.0.1:${port}`, fetch: fetchWrap },
     cwd,
     sessionDir: join(cwd, '.sessions'),

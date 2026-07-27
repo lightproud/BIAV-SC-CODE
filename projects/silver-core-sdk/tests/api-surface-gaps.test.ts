@@ -10,7 +10,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   COMMAND_INJECTION_TOKEN,
-  DEFAULT_UTILITY_MODEL,
+  ConfigurationError,
   NotImplementedError,
   buildSelectorUserTurn,
   parseCommandPrefix,
@@ -18,7 +18,6 @@ import {
   resolveUtilityTransport,
   runVerification,
   runUtilityCall,
-  VERIFIER_DEFAULT_MODEL,
 } from '../src/index.js';
 import { AnthropicTransport } from '../src/transport/anthropic.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
@@ -48,15 +47,25 @@ describe('COMMAND_INJECTION_TOKEN', () => {
   });
 });
 
-describe('DEFAULT_UTILITY_MODEL', () => {
-  it('is the cheap utility tier (haiku), distinct from the verifier default only if overridden', () => {
-    expect(DEFAULT_UTILITY_MODEL).toContain('haiku');
-    expect(VERIFIER_DEFAULT_MODEL).toContain('haiku');
-  });
-  it('runUtilityCall resolves it as the wire model when no override is given', async () => {
+describe('utility calls ship no built-in default model (0.94.0)', () => {
+  it('runUtilityCall rejects with a ConfigurationError when no model is named', async () => {
     const t = new MockTransport([textReplyEvents('ok')]);
-    await runUtilityCall('system', 'user', { transport: t }, 128);
-    expect(t.requests[0]?.model).toContain('haiku');
+    await expect(
+      runUtilityCall('system', 'user', { transport: t }, 128),
+    ).rejects.toThrow(ConfigurationError);
+    // Fail-loud means fail EARLY: the transport must never see the request.
+    expect(t.requests).toHaveLength(0);
+  });
+  it("rejects 'inherit' too — a utility call has no parent model to inherit", async () => {
+    const t = new MockTransport([textReplyEvents('ok')]);
+    await expect(
+      runUtilityCall('system', 'user', { transport: t, model: 'inherit' }, 128),
+    ).rejects.toThrow(/model is required/);
+  });
+  it('drives the explicitly named model verbatim (alias resolution still applies)', async () => {
+    const t = new MockTransport([textReplyEvents('ok')]);
+    await runUtilityCall('system', 'user', { transport: t, model: 'haiku' }, 128);
+    expect(t.requests[0]?.model).toBe('claude-haiku-4-5');
   });
 });
 
@@ -76,13 +85,16 @@ describe('runVerification', () => {
     const t = new MockTransport([
       textReplyEvents('{"verdict":"CONFIRMED","quote":"q","rationale":"r"}'),
     ]);
-    const r = await runVerification({ summary: 's', context: 'c' }, { transport: t });
+    const r = await runVerification(
+      { summary: 's', context: 'c' },
+      { transport: t, model: 'haiku' },
+    );
     expect(r.verdict).toBe('CONFIRMED');
     expect(r.keep).toBe(true);
   });
   it('fails closed on a garbage reply (REFUTED, keep false)', async () => {
     const t = new MockTransport([textReplyEvents('!!! not a verdict !!!')]);
-    const r = await runVerification({ summary: 's' }, { transport: t });
+    const r = await runVerification({ summary: 's' }, { transport: t, model: 'haiku' });
     expect(r.verdict).toBe('REFUTED');
     expect(r.keep).toBe(false);
   });

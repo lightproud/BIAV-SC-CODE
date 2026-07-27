@@ -97,6 +97,16 @@ const KNOWN_REMOVED_OPTIONS_FIELDS = new Set(
     .map((k) => k.slice('Options.'.length)),
 );
 
+// Value/type exports sanctioned for removal (fixture keys WITHOUT the
+// 'Options.' prefix). First entries: DEFAULT_UTILITY_MODEL and
+// VERIFIER_DEFAULT_MODEL, removed 0.94.0 — no baked-in model-id fallbacks
+// (SCS request 2026-07-28); see docs/MIGRATION-0.3x-to-0.68.md.
+const KNOWN_REMOVED_VALUE_EXPORTS = new Set(
+  Object.keys(fixture._meta.knownRemovals).filter(
+    (k) => !k.startsWith('Options.'),
+  ),
+);
+
 describe('legacy 0.3x surface lock (fixture: legacy-0-3x-surface.json)', () => {
   // One compiler program shared across the assertions below (it is the slow part).
   const current = enumerateCurrentSurface();
@@ -107,14 +117,17 @@ describe('legacy 0.3x surface lock (fixture: legacy-0-3x-surface.json)', () => {
   for (const version of ['0.30.0', '0.37.1', '0.39.0'] as const) {
     const frozen = fixture[version];
 
-    it(`every ${version} VALUE export is still a value export`, () => {
+    it(`every ${version} VALUE export is still a value export (minus pinned known removals)`, () => {
       const missing = frozen.valueExports.filter(
-        (name) => !current.values.has(name),
+        (name) =>
+          !current.values.has(name) && !KNOWN_REMOVED_VALUE_EXPORTS.has(name),
       );
       expect(missing).toEqual([]);
       // And they are real runtime bindings, not just compiler symbols.
       const unbound = frozen.valueExports.filter(
-        (name) => (sdk as Record<string, unknown>)[name] === undefined,
+        (name) =>
+          !KNOWN_REMOVED_VALUE_EXPORTS.has(name) &&
+          (sdk as Record<string, unknown>)[name] === undefined,
       );
       expect(unbound).toEqual([]);
     });
@@ -123,7 +136,10 @@ describe('legacy 0.3x surface lock (fixture: legacy-0-3x-surface.json)', () => {
       // A former type-only name may legally be PROMOTED to a value export
       // (value exports also carry their type); it must not vanish.
       const missing = frozen.typeExports.filter(
-        (name) => !current.types.has(name) && !current.values.has(name),
+        (name) =>
+          !current.types.has(name) &&
+          !current.values.has(name) &&
+          !KNOWN_REMOVED_VALUE_EXPORTS.has(name),
       );
       expect(missing).toEqual([]);
     });
@@ -142,7 +158,11 @@ describe('legacy 0.3x surface lock (fixture: legacy-0-3x-surface.json)', () => {
     for (const field of KNOWN_REMOVED_OPTIONS_FIELDS) {
       expect(current.optionsFields.has(field)).toBe(false);
     }
-    // If this ever flips (the field returns), the migration doc's "breaking"
+    for (const name of KNOWN_REMOVED_VALUE_EXPORTS) {
+      expect(current.values.has(name)).toBe(false);
+      expect((sdk as Record<string, unknown>)[name]).toBeUndefined();
+    }
+    // If this ever flips (the export returns), the migration doc's "breaking"
     // entry is stale — update docs/MIGRATION-0.3x-to-0.68.md and the fixture.
   });
 });

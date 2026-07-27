@@ -45,6 +45,9 @@ import {
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JUDGE_MODEL = 'claude-sonnet-5'; // PINNED — keeper ruling 2026-07-11.
+// Session model for LIVE behavior runs. 0.94.0 removed the SDK's built-in
+// default model, so the runner (a consumer) pins the id its runs always used.
+const SESSION_MODEL = 'claude-sonnet-4-5';
 const API_URL = 'https://api.anthropic.com/v1/messages';
 
 const args = process.argv.slice(2);
@@ -336,6 +339,7 @@ async function runBehavior() {
         // The SDK gates bypassPermissions behind the explicit opt-in flag
         // (first LIVE round 2026-07-12 run #58 caught the missing pair).
         const { transcript, result } = await runPhase(sdk, phase, ws, {
+          model: SESSION_MODEL,
           permissionMode: 'bypassPermissions',
           allowDangerouslySkipPermissions: true,
           // Envelope questions (e.g. tok-06) judge measured prompt size, not

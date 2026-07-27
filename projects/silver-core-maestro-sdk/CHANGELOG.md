@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.94.0 — 2026-07-28
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.94.0 (BREAKING: no built-in default model ids —
+missing `model` now throws instead of silently substituting a baked-in id;
+`DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` removed).
+
 ## 0.93.0 — 2026-07-28
 
 **锁步对齐**(无本包运行时改动)。agent SDK 0.93.0 修复 recap 截断丢最新进度
@@ -99,6 +106,7 @@ the keeper's live BPT symptom report.
   "experimental, zero production consumers" in README §status, whose whole
   point is that the first real consumer may reshape signatures — this is
   that adjustment, made BEFORE GoalChaser's first wiring instead of after.
+
 ## 0.84.0 — 2026-07-27
 
 Lockstep alignment only — no changes to this package. The family clock advanced

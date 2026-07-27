@@ -16,6 +16,46 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.94.0 — 2026-07-28
+
+**BREAKING: no built-in default model ids** (SCS request 2026-07-28, black-pool
+sdk-bridge production incident: a consumer code path that missed `model` made
+the SDK silently substitute the baked-in `claude-sonnet-4-5`, which the
+consumer's gateway rejected — the error surfaced as a delayed gateway 400
+carrying a model string that appears nowhere in the consumer's code). The
+package cannot know which ids a consumer's gateway serves, so it no longer
+ships ANY "no model named → use this specific id" fallback; a missing model
+now fails loud, immediately, at the call site (Plan A of the request).
+
+- `query()`: `options.model ?? env.ANTHROPIC_MODEL`, else a
+  `ConfigurationError` at construction (was: silent `claude-sonnet-4-5`).
+  Both remaining sources are consumer-owned.
+- `runUtilityCall` (and therefore all 8 generator wrappers, the tips
+  selector/evaluator, `adversarialVerify`/`runVerification` and a direct
+  `evaluateHookCondition`): missing/empty/`'inherit'` `opts.model` rejects
+  with a `ConfigurationError` BEFORE the transport sees a request (was:
+  silent `claude-haiku-4-5`). The type stays optional so `opts = {}`
+  signatures remain source-compatible; the check is at the wire boundary.
+- Engine-internal condition calls (hook `condition` matchers, goal Stop
+  gate) now INHERIT the session model via `conditionOptions` — the same rule
+  the compaction summarizer has always used with `compaction.model` unset.
+  Behavior note: on default-model-reliant setups these calls previously ran
+  on Haiku; they now run on the session model the consumer chose (remap via
+  `options.modelAliases` or a cheap-tier session model if cost matters).
+- Exports REMOVED: `DEFAULT_UTILITY_MODEL`, `VERIFIER_DEFAULT_MODEL`
+  (surface removal pinned in `tests/fixtures/legacy-0-3x-surface.json`
+  `knownRemovals`; migration entry docs/MIGRATION-0.3x-to-0.68.md §3.10).
+- Docs: README env table, COMPAT `model` row downgraded FULL → PARTIAL as a
+  deliberate divergence from the official SDK's default-model behavior,
+  ARCHITECTURE construction note + error-class whitelist (`src/generators/`
+  may construct `ConfigurationError`), SUBAGENTS three-seam note,
+  OPENAI-PROTOCOL `modelMap` row.
+- Conformance harnesses (arm.mjs / run-wire.mjs / L1+wire tests) now pin
+  `claude-sonnet-4-5` explicitly — the id they previously inherited from the
+  engine default — so every frozen baseline and the thinking model-gate
+  stay byte-identical. Consumers that already pass a full gateway id on
+  every call site (the black-pool iron rule) see zero behavior change.
+
 ## 0.93.0 — 2026-07-28
 
 **修复：recap 截断丢最新进度（BPT P1 需求单,一次 3 小时活锁事故的根因）。** BPT 会话
@@ -405,6 +445,7 @@ era produced a live consumer trap — a maestro-shaped verdict fed to
 `options.goal` is judged malformed and the Stop gate's deliberate fail-open
 direction allows every stop, so the goal silently never bites (BPT symptom
 report 2026-07-27, "接了 goal 模型照样停").
+
 ## 0.84.0 — 2026-07-27
 
 Memory index discipline + a consolidation protocol. Diagnosis behind it (keeper
@@ -1242,7 +1283,6 @@ that changes shipped runtime code in EITHER package bumps BOTH package.json
 versions; the untouched package's changelog gets a one-line lockstep
 alignment note. No agent-side code changes in this release.
 
-
 ## 0.67.2 — 2026-07-18
 
 T52 r4 audit — Tier 3 (low / cosmetic + eval + descriptions) fix campaign:
@@ -1407,7 +1447,6 @@ named after the Morimens conductor-awakened). Rename scope is unchanged from
 directory `projects/silver-core-sdk/` stay put. `npm pack` output becomes
 `silver-core-agent-sdk-<version>.tgz` from this version on. No feature or
 behavior changes.
-
 
 ## 0.66.1 — 2026-07-18
 
@@ -1598,7 +1637,6 @@ Regression lock: `tests/audit-t50-batch-l.test.ts` (21 cases) plus two existing
 assertions realigned to the fixed behavior (sandbox argv order; worktree
 baseHead-unknown keep). Full vitest green (post-rebase onto batches E–K +
 0.65.0 MultiEdit removal).
-
 
 ## 0.65.5 — 2026-07-18
 
@@ -1844,6 +1882,7 @@ No new surfaces beyond one internal helper module and `AsyncQueue.pending()`.
   markers (E2); the structured-output instruction is sent even when every
   caller segment filters to empty, instead of shipping `system: []` with no
   schema (E3).
+
 ## 0.65.0 — 2026-07-17
 
 **BREAKING** — MultiEdit REMOVED (keeper 2026-07-17, hard alignment with
@@ -1931,6 +1970,7 @@ still ships and works, so it still must not corrupt.)
   AFTER the permission check used to run the command outside the sandbox
   without the dedicated escape ask; the smuggled flag is now stripped
   (trusted-side rewrite) and logged.
+
 ## 0.64.5 — 2026-07-17
 
 T50 batch H: memory-tool correctness, all 6 defects from the second-pass audit
@@ -1967,6 +2007,7 @@ exported mount helpers.
 - Adjacent hardening: the single replacement is spliced by index instead of
   `String.replace`, so `$&`-style replacement patterns in `new_str` are
   written literally instead of expanding.
+
 ## 0.64.4 — 2026-07-17
 
 MultiEdit DEPRECATED — align with upstream (keeper 2026-07-17). Official Claude
@@ -1979,6 +2020,7 @@ and `docs/COMPAT.md` marks it DEPRECATED. Full removal is a future-major
 follow-up, gated on confirming no consumer depends on it (`src/tools/index.ts`
 still registers it in the default builtin set). Files: `src/tools/descriptions.ts`
 (MULTIEDIT_DESCRIPTION), `docs/COMPAT.md`.
+
 ## 0.64.3 — 2026-07-17
 
 T49 batch D: 65 low-severity fixes from the 100-defect audit
@@ -2135,7 +2177,6 @@ batch A). 16 code fixes, 2 audit-entry re-adjudications, regression tests in
   published connection (live child process, nothing ever closing it).
 - **M20** tools/webfetch: 204/205 are reported as honest bodyless successes
   instead of `unsupported content type "unknown"` errors.
-
 
 ## 0.64.1 — 2026-07-17
 
@@ -2796,6 +2837,7 @@ L-13 (monitor kill-timer registration) deliberately skipped — the timer is
 already unref'd (harmless) and wiring it into the private killTimers map
 risks colliding with the SIGTERM->SIGKILL upgrade timer keyed on the same
 id; not worth it for a no-op leak.
+
 ## 0.59.0 — 2026-07-14
 
 New capability: `/loop` interval-loop primitive (`src/prompt-loop.ts`,
@@ -3034,6 +3076,7 @@ mutation-lock suites still pass without re-baselining). +12 test cases
 (transport: role-only, usage-only, empty-first-delta, no-terminator truncation,
 empty-text-finish_reason, tool_call-fragment; translator content tracking x3;
 engine end-to-end error_code x3); docs/OPENAI-PROTOCOL.md updated.
+
 ## 0.55.1 — 2026-07-13
 
 **Degraded empty stream no longer billed as a silent success (BPT "空 stopReason
@@ -3267,6 +3310,7 @@ test. Ranked:
   floor, disable thinking rather than emit a guaranteed-400 request.
 
 +11 regression tests. Full suite 2171 passing + 2 skipped; typecheck + build clean.
+
 ## 0.53.5 — 2026-07-13
 
 **Conversation-stability follow-up: the three deferred light items from 0.53.4
@@ -3752,7 +3796,6 @@ Baseline 1786 → full suite green with +25 review regression tests; `tsc` +
 SessionManager auto-resume resource/accounting semantics, the auto-mode
 `allowedTools` question, sandbox writable-dir sync, and a P2 long-tail.
 
-
 ## 0.48.0 — 2026-07-11
 
 **Memory governance P0 set (spec S1–S4, BPT-EXTENSION — docs/MEMORY-GOVERNANCE.md)**:
@@ -4106,6 +4149,7 @@ the main conversation).
   stream self-heals and the loop yields the assistant reply — the black-pool
   crash regression). Full suite 1554 pass / 2 skip (rebased onto 0.35.0's
   OpenAI translating transport; no interaction).
+
 ## 0.37.0 — 2026-07-10
 
 **Audit debt payoff** (full ledger:

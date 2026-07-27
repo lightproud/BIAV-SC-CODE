@@ -198,6 +198,7 @@ describe('options.goal wiring (query assembly)', () => {
     const q = query({
       prompt: 'work',
       options: {
+        model: 'claude-sonnet-4-5',
         provider: {
           apiKey: 'test-key',
           fetch: makeSSEFetch([textReplyEvents('round 1'), textReplyEvents('round 2')]),

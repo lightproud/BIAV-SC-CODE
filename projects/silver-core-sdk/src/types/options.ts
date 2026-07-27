@@ -504,6 +504,14 @@ export type Options = {
   maxThinkingTokens?: number;
   maxTurns?: number;
   mcpServers?: Record<string, McpServerConfig>;
+  /**
+   * Model id for the session. Effectively REQUIRED since 0.94.0: when absent,
+   * query() falls back to the ANTHROPIC_MODEL environment variable, and when
+   * that is also unset it throws a ConfigurationError — this SDK ships no
+   * built-in default model id (deliberate divergence from the official SDK;
+   * the package cannot know which ids the consumer's gateway serves, and a
+   * silent baked-in fallback surfaces only as a delayed gateway 400).
+   */
   model?: string;
   permissionMode?: PermissionMode;
   /**

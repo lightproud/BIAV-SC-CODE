@@ -317,6 +317,7 @@ describe('node client end-to-end (emulator agent loop)', () => {
       const q = query({
         prompt: 'node-client e2e',
         options: {
+          model: 'claude-sonnet-4-5',
           provider: { apiKey: 'k', baseUrl: emu.url, httpClient: 'node' },
           persistSession: false,
           maxTurns: 20,
@@ -342,6 +343,7 @@ describe('node client end-to-end (emulator agent loop)', () => {
       const q = query({
         prompt: 'hang',
         options: {
+          model: 'claude-sonnet-4-5',
           provider: { apiKey: 'k', baseUrl: emu.url, httpClient: 'node' },
           persistSession: false,
         },

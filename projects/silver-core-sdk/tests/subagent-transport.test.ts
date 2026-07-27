@@ -473,6 +473,7 @@ describe('utility-call transport routing (runUtilityCall.resolveTransport)', () 
       'ls -la',
       {
         provider: { protocol: 'openai-chat' },
+        model: 'haiku',
         resolveTransport: (model) => {
           seen.push(model);
           return utility;
@@ -482,7 +483,7 @@ describe('utility-call transport routing (runUtilityCall.resolveTransport)', () 
     );
     expect(text).toBe('classified: safe');
     expect(utility.requests).toHaveLength(1);
-    // The resolver receives the RESOLVED utility model (default Haiku tier).
+    // The resolver receives the RESOLVED utility model (alias -> wire id).
     expect(seen).toEqual([utility.requests[0]!.model]);
     expect(utility.requests[0]!.model).toBe('claude-haiku-4-5');
   });
@@ -490,7 +491,7 @@ describe('utility-call transport routing (runUtilityCall.resolveTransport)', () 
   it('explicit transport injection still wins over resolveTransport', async () => {
     const injected = new MockTransport([textReplyEvents('ok')]);
     const resolver = vi.fn();
-    await runUtilityCall('sys', 'user', { transport: injected, resolveTransport: resolver }, 64);
+    await runUtilityCall('sys', 'user', { transport: injected, resolveTransport: resolver, model: 'haiku' }, 64);
     expect(injected.requests).toHaveLength(1);
     expect(resolver).not.toHaveBeenCalled();
   });
