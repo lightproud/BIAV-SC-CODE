@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-27T06:29:47.013883+00:00",
+  "collected_at": "2026-07-27T12:21:47.877656+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 6,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-27T09:43:49+00:00",
+      "lang": "schinese",
+      "title": "[负面] 福利很好，让我每个角色都能吃满90抽大保底",
+      "summary": "福利很好，让我每个角色都能吃满90抽大保底",
+      "url": "https://steamcommunity.com/profiles/76561199357643775/recommended/3052450",
+      "author": "76561199357643775",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "福利很好，让我每个角色都能吃满90抽大保底",
+      "timestamp_created": 1785145429,
+      "playtime_forever": 12257
+    },
     {
       "source": "steam",
       "time": "2026-07-27T02:10:20+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "such a good game, everyone should play it <33",
       "timestamp_created": 1785118220,
-      "playtime_forever": 5814
+      "playtime_forever": 5839
     },
     {
       "source": "steam",
@@ -79,51 +94,6 @@
       "review": "经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、游戏性弱、禁用词多的国风特点也是一点没落。\r\n真的有些勾起我的创伤回忆了。我不知道如今世界发生了什么，但是童年时记忆的快乐游戏的厂商都不见了，取而代之的是一大堆模板化、同质化、骗氪化的垃圾游戏蓬勃发展。\r\n不推荐游玩。",
       "timestamp_created": 1785104814,
       "playtime_forever": 17598
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-26T11:45:59+00:00",
-      "lang": "french",
-      "title": "[正面] belle intrigue . le seul probleme est la traductio...",
-      "summary": "belle intrigue . le seul probleme est la traduction de chat gpt",
-      "url": "https://steamcommunity.com/profiles/76561199810518100/recommended/3052450",
-      "author": "76561199810518100",
-      "engagement": 0,
-      "language": "french",
-      "voted_up": true,
-      "review": "belle intrigue . le seul probleme est la traduction de chat gpt",
-      "timestamp_created": 1785066359,
-      "playtime_forever": 7070
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-26T09:06:21+00:00",
-      "lang": "koreana",
-      "title": "[正面] 게임성과 스토리는 좋습니다. 전략게임 좋아하시는 분 추천",
-      "summary": "게임성과 스토리는 좋습니다. 전략게임 좋아하시는 분 추천",
-      "url": "https://steamcommunity.com/profiles/76561199877208264/recommended/3052450",
-      "author": "76561199877208264",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "게임성과 스토리는 좋습니다. 전략게임 좋아하시는 분 추천",
-      "timestamp_created": 1785056781,
-      "playtime_forever": 2950
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-26T06:57:50+00:00",
-      "lang": "english",
-      "title": "[正面] Honestly, best gacha game I ever played",
-      "summary": "Honestly, best gacha game I ever played",
-      "url": "https://steamcommunity.com/profiles/76561198776414567/recommended/3052450",
-      "author": "76561198776414567",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Honestly, best gacha game I ever played",
-      "timestamp_created": 1785049070,
-      "playtime_forever": 5154
     }
   ]
 }
