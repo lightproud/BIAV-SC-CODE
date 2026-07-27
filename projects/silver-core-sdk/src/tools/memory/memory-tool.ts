@@ -330,7 +330,11 @@ export function createMemoryTool(
             if (bytesOf(cmd.file_text) > limits.maxFileBytes) {
               return done(errorResult(fileTooLargeError(path, limits.maxFileBytes)));
             }
-            if (toolOptions.schema === 'cards') {
+            // The index is exempt from cards validation (keeper 2026-07-27):
+            // the index-discipline fragment requires one-line pointer entries
+            // there, which are not cards — see store.ts checkWrite for the
+            // same exemption at the engine layer.
+            if (toolOptions.schema === 'cards' && path !== MEMORY_INDEX_PATH) {
               const invalid = validateCardsContent(cmd.file_text, cardsCfg);
               if (invalid !== null) return done(errorResult(invalid));
             }

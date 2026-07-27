@@ -179,7 +179,9 @@ describe('Bash structured result', () => {
     );
     const s = res.structuredOutput as BashStructuredOutput;
     expect(s.truncated).toBe(true);
-    expect(text(res)).toContain('[truncated: earlier output dropped]');
+    // 0.87.0 three-question marker: the flag derives from the marker SHAPE
+    // (leading dropped count), so flag and rendered text cannot disagree.
+    expect(text(res)).toMatch(/\[\d+ earlier chars dropped:/);
   });
 });
 

@@ -70,21 +70,22 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.86.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.86.0`
+**当前版本 `0.87.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.87.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
+**v0.87.0（2026-07-27）：截断纪律全家对齐 + cards 索引豁免**——上限砍内容须答三问（丢多少/为何/
+怎么拿回）、流式保尾。后台 shell 流「命中 500K 即永久失聪」改保尾保留窗（丢弃计数入契约 + gap 标记）；
+Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记；cards 校验两层豁免索引档
+（修 0.84.0 自种 P4 矛盾）。详见 CHANGELOG。
+
 **v0.86.0（2026-07-27）：主循环提示词补回开篇句 + 输出类型普查（续）**（守密人「1 对齐官方 4 续」+ 逐条裁定）——① **补回官方那句 “Text you write between tool calls may not be shown to the user.”**：银芯此前只搬了结论、没搬**理由**；缺了前提，整段就从「事实的后果」退化成「风格偏好」，而**前提缺失的规则是模型最先绕过的那条**。已对官方 2.1.220 逐字核实；字节金样**有意重生成**，差异经核实**只有这一句**（四个工具集各一处）。**官方 `# Focus mode` 整块刻意不复刻**——它为「用户只看得到最终消息」这一 UI 模式覆盖沟通行为，本 SDK 无此模式，为进不去的模式发指令，与描述未发货工具是同一条红线。② **15 个 `*Output` 逐字段比完**：**9 个完全一致**（FileEdit / Task 五件 / EnterWorktree / TodoWrite / Monitor）；6 个有官方独有字段，守密人裁「逐条再看」——**这一类并不齐整**：`ReadMcpResourceOutput.error` **加了并真产出**（非 UI 绑定：工具本有失败路径，调用方此前分不清「读失败」与「读到空」）；`WebSearchOutput` **整体补产出**（原议题 `searchCount` 其实是伪命题——每次调用只打一次后端、恒为 1；真缺口是它**根本没有结构化结果**，而 `query`/`results`/`durationSeconds` 全能填；报的是**过滤后**命中，免得结构化数字与文本对不上）；其余四条**只登记不声明**（`FileWrite.userModified`、`ExitPlanMode.planWasEdited`、`AskUserQuestion.afkTimeoutMs`/`annotations`、`Workflow` 远程任务字段——Workflow 的真障碍**不在可选字段**，而在官方**必填**判别式 `status: 'async_launched'`，本 SDK 同步跑工作流，填它等于断言一次没发生的启动）。**射程边界照实写**：本次是**顶层字段**比对，嵌套差异首轮漏看（`contents[].blobSavedTo` 是人工复读才发现的），其余嵌套字段可能仍未扫。
 
-**v0.84.0（2026-07-27）：记忆索引纪律 + 整理规程**——真因不是缺检索腿：SDK 给了常驻索引**机制**
-（R6 每会话注入 `/memories/MEMORY.md` 头部）却没规定索引**条目写法**，且会话收尾提示词反过来命令
-模型把进度卡写**进**那一档，索引每会话增肥、撑过注入上限后头部变陈年散文、尾部静默丢弃（守密人 BPT
-现场反馈「开工要好几回 `memory` 调用才找得到东西」的根因）。四件：进度卡改落 `/memories/progress/`
-只留指针 · 索引纪律片段（两模式注入、前提不成立即跳过）· 写侧超限反压（读写共用同一度量）·
-`buildConsolidationPrompt()` + 四阶段整理规程。**层界守住 N1**：只给「该不该整理 / 怎么整理」，
-不给调度——helper 零 I/O 不起进程。整理是跨档大范围写，多租户须挂 S1。详见 CHANGELOG 与 docs/MEMORY.md。
+**v0.84.0（2026-07-27）：记忆索引纪律 + 整理规程**——SDK 给了常驻索引机制却没规定条目写法，且会话
+收尾提示词命令模型把进度卡写**进**索引档（守密人 BPT 现场反馈根因）。进度卡改落 `/memories/progress/`
+只留指针 · 索引纪律片段 · 写侧超限反压 · 四阶段整理规程。层界守 N1 不给调度；多租户须挂 S1。
 
 **v0.85.0（2026-07-27）：GoalVerdict 家族统一（本包零行为改动）**——本包 `{status: 'achieved'|'not_achieved'|'impossible', reason?}` 判词类型升格为家族**正典**：maestro 0.85.0 把 `GoalChaser` 评审判词（原 `{achieved, feedback, impossible?}`）迁为同形，自此一个宿主评审器经结构类型同时服务引擎 `options.goal` Stop 门与 maestro 跨 query 追逐两条缝。背景是首个真实消费者陷阱：BPT 接了 `options.goal` 后报「goal 没效果、模型照样停」，排查出两包**同名不同形** `GoalVerdict`——评审器误用 maestro 形状时，引擎按既定失败方向（阻断停止才是危险动作，评审器坏 = fail-open 放行）把 malformed verdict 放行为允许停止，goal 无声失效。本包仅在 `src/types/subsystems.ts` 的 `GoalVerdict` 注释补「正典地位 + 改形需家族级裁定」声明，`options.goal` 行为与评审器契约一字未动。
 **v0.85.0（2026-07-27）：工具真正产出结构化结果 + MCP 接受列表扩容**（偏离普查轴一 / 轴四守密人裁定）——**先订正普查自己的一处结论**：首轮只 grep `outputSchema`、没找到就报「银芯零输出面」，**错了**——`types/tools.ts` 里 `GlobOutput`/`GrepOutput`/`WebFetchOutput`/`FileReadOutput`/`BashOutput`/Task 五件**早已按官方形状声明**，缺的是**从来没人产出**（typed-not-populated）。于是改动比原先设想的小得多也好得多：**复用既有类型、不另造一套**。① `ToolResultPayload.structuredOutput` 承载机器可读结果，Read/Glob/Grep/Bash/WebFetch 在**每条终态分支**都产出（含空结果与失败——调用方不该需要区分「没有结构化结果」与「没有匹配」）；② 引擎按 tool_use_id 收集整批，经 **WeakMap 侧信道**（`engine/tool-use-results.ts`）挂到用户轮而**不是加字段**——`APIMessageParam` 是**Anthropic 线格式**，多挂一个属性要么发去 API、要么逼后来每个调用点都记得先剥掉；③ `query()` 读回并以`toolUseResult` 发给消费方。**形状差异（有意）**：官方是裸对象（它一消息一 tool_result），本引擎一轮批处理，故为 **tool_use_id 为键的 record**。新增可直接读到的事实：Glob `truncated` · Grep `appliedLimit`/`appliedOffset`/`truncated` · Bash `exitCode`/`interrupted`/`timedOutAfterMs`/`truncated` · Read `truncatedByCharCap`（**按本 SDK 的字符度量命名**，官方 `truncatedByTokenCap` 数的是 token，同名不同单位读起来像对齐、跑起来是漂移）。13 条测试，含一条**跑真引擎**的接缝测试（工具级绿说明不了值有没有传出去）。

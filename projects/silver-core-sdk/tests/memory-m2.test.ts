@@ -742,12 +742,15 @@ describe('R9: cards mode in the store engine + tool layer', () => {
   });
 
   it('str_replace producing invalid cards is rejected and the file is unchanged', async () => {
+    // On a TOPIC file — the resident index is exempt from cards validation
+    // (keeper 2026-07-27: the index-discipline fragment requires pointer
+    // lines there; see tests/memory-consolidation.test.ts for the exemption).
     const store = createLocalFilesystemMemoryStore(baseDir, { schema: 'cards' });
-    await store.create('/memories/MEMORY.md', VALID_CARD);
+    await store.create('/memories/team.md', VALID_CARD);
     await expect(
-      store.strReplace('/memories/MEMORY.md', '依据: 2026-07-04 团队约定', undefined),
+      store.strReplace('/memories/team.md', '依据: 2026-07-04 团队约定', undefined),
     ).rejects.toThrow(/cards-mode validation failed/);
-    expect(await store.view('/memories/MEMORY.md')).toContain('依据: 2026-07-04 团队约定');
+    expect(await store.view('/memories/team.md')).toContain('依据: 2026-07-04 团队约定');
   });
 
   it('tool-layer create validation shields a directly-implemented store', async () => {

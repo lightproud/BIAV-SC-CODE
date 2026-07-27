@@ -33,6 +33,7 @@ BUNDLE = REPO / "okf"
 
 from news_bridge import archive_layout  # noqa: E402  归档布局单一真相源（source 指针落点推导）
 import build_kb_index  # noqa: E402  运行时导航索引生成器（消费本 bundle，跑在末尾）
+import kb_coverage  # noqa: E402  知识文件清点共用真相源（覆盖哨兵两档制存量清单）
 import okf_pointer_layers as opl  # noqa: E402  全仓知识组织：新增指针概念层（放指针不放本体）
 import silver_aliases  # noqa: E402  厚锚别名侧表（chunk3；缺表优雅返空，构建不炸）
 # frontmatter 读写单一真相源（写方 / 读方同源，见 okf_frontmatter.py）
@@ -1072,6 +1073,11 @@ def main() -> None:
     # 运行时导航层底座：扫描刚生成的 bundle（concept + graph）造 kb_index.json。
     # 必须跑在 build_visualizer 之后（依赖 graph.json）、tarball 之前（随单向输出物一起走）。
     kb = build_kb_index.build_kb_index()
+    # 覆盖哨兵两档制的存量清单（2026-07-27）：重建时点的知识文件存量落
+    # okf/coverage_inventory.json。哨兵据此分档——清单内未覆盖=硬红（生成器
+    # 见过仍漏），清单外=待下次重建收编的软报。语义是「重建时点」，故只在
+    # 此处刷新，别处不得调 write_inventory。
+    kb_coverage.write_inventory(REPO, BUNDLE)
     total = sum(counts.values())
     print(f"OKF bundle built at {BUNDLE.relative_to(REPO)}/")
     for k, v in counts.items():

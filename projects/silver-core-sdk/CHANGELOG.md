@@ -16,6 +16,42 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.87.0 — 2026-07-27
+
+Truncation discipline, family-wide (keeper ruling, same-day review batch) — any
+cap that drops content must answer three questions in its notice: HOW MUCH was
+dropped, WHY (which cap), and HOW to get it back; stream-shaped output retains
+the TAIL. Grep and Read already complied; this release brings the rest of the
+family to the same line, plus one review-found contradiction fix.
+
+- **Background shell streams keep the tail now** (`shells.ts`): the 500K cap
+  used to keep the HEAD and go permanently deaf — every later chunk silently
+  dropped, no disk copy, a five-word past-tense marker, while the model read
+  `(no new output)` as "quietly running". Now a retention window drops
+  oldest-first with exact counts (`droppedOut`/`droppedErr` replace the boolean
+  flags in the BackgroundShell contract), cursors are absolute stream offsets,
+  and a reader that fell behind gets a gap marker with the count, the cap, and
+  the recovery path. Stall detection compares logical totals so a capped stream
+  is never mistaken for a stalled one.
+- **Foreground Bash marker** upgraded from `[truncated: earlier output
+  dropped]` to the exact dropped count + cap + redirect-to-file recovery; the
+  structured result's `truncated` flag now derives from the marker SHAPE
+  (regex), keeping the 0.85.0 coupling intact under the per-run count.
+- **WebFetch footer** upgraded from `[truncated]` (five characters, no amount,
+  no cap, no recovery) to the full-page char count, the output cap, the 5MB
+  fetch cap when it bit, and the narrow-the-URL recovery path.
+- **Glob footer** now states the subset rule (most recently modified), the
+  total, and how to reach the rest; **workflow progress cap** names its line
+  limit instead of a bare `[...] progress truncated`.
+- **Cards mode exempts the resident index** (review-found P4 contradiction in
+  0.84.0: the index-discipline fragment demands one-line pointer entries in
+  /memories/MEMORY.md while R9 cards validation rejected any non-card content
+  there). The index is an index, not a memory: both validation layers now skip
+  `MEMORY_INDEX_PATH`.
+- **`tests/truncation-discipline.test.ts`**: pins the repaired notices AND
+  carries a registry test — any new truncation site in `src/tools/` must
+  register and cover its message, or the suite reds.
+
 ## 0.86.0 — 2026-07-27
 
 Prompt alignment + the second half of the output-type sweep (keeper: "1 对齐官方

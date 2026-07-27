@@ -642,15 +642,37 @@ export const webFetchTool: BuiltinTool = {
         contentType.toLowerCase().includes('html') || /^\s*<(?:!doctype|html)\b/i.test(bodyText);
       let text = isHtml ? htmlToText(bodyText) : bodyText;
 
-      let truncated = overflow;
-      if (text.length > MAX_OUTPUT_CHARS) {
+      // Truncation discipline (keeper ruling 2026-07-27): a cut answers three
+      // questions — how much was dropped, why, and how to get it back. The old
+      // footer was five characters ("[truncated]"): no amount, no cap, no
+      // recovery path, while Read's footer carries all three for the SAME
+      // 50000-char constant.
+      const fullChars = text.length;
+      let truncated = false;
+      if (fullChars > MAX_OUTPUT_CHARS) {
         // WV5-5 (audit r3): surrogate-safe slice so the output cap never leaves
         // a lone surrogate at the boundary.
         text = sliceSurrogateSafe(text, MAX_OUTPUT_CHARS);
         truncated = true;
       }
-      if (truncated) {
-        text += '\n\n[truncated]';
+      if (truncated || overflow) {
+        const notes: string[] = [];
+        if (overflow) {
+          notes.push(
+            `the source exceeded the ${MAX_BODY_BYTES}-byte fetch cap, so ` +
+              `everything beyond that was never fetched`,
+          );
+        }
+        if (truncated) {
+          notes.push(
+            `the fetched page converted to ${fullChars} chars and only the ` +
+              `first ${text.length} are shown (output cap ${MAX_OUTPUT_CHARS})`,
+          );
+        }
+        text +=
+          `\n\n[Output truncated: ${notes.join('; ')}. The tail was dropped; ` +
+          `fetch a more specific URL (a sub-page, an anchor, a raw/plain view) ` +
+          `to reach the part that was cut off.]`;
       }
 
       ctx.debug(`WebFetch: ${current.toString()} -> ${text.length} chars (${contentType})`);
