@@ -69,11 +69,26 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.79.1`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.79.1`
+**当前版本 `0.80.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.80.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.80.0（2026-07-27）：工具输出上限对齐 Claude Code 2.1.141**——守密人交付单三处独立改动
+（常量取自 `claude.exe` 内含明文 JS）。① **WebFetch 上限 100_000 → 复用 Read 的 50_000**：
+官方那个数管的是「喂给摘要小模型的输入」、主上下文只收摘要，本 SDK 直连无摘要层，同一个数字
+在这里变成「原文直灌主上下文」，反让 WebFetch 成为唯一能塞进两倍 Read 额度的工具，而它拉的
+还是最不可控的外部网页；现改为引用 `MAX_READ_OUTPUT_CHARS` 常量，两道闸门从此无法各自漂移
+（`fsutil.ts` 注释里「~50K aligns with the WebFetch cap」的本意终于对上代码）。
+② **Grep `head_limit` 三种 output_mode 统一默认 250**（原 `count` / `files_with_matches` 默认无限，
+OPT-1 v0.13.0）：OPT-1 担忧的「截断的 count 是错的 count」已由同批落地的「每种模式都追加截断提示」
+解决，无限默认不再多买到诚实，却让一次宽泛检索能吐几千条；要可证完整仍显式传 `head_limit=0`。
+③ **Bash 输出截断改保尾去头**，标记移到开头（`[truncated: earlier output dropped]`）：长命令的
+结论在末尾——构建成败 / 测试汇总 / 最终报错，原保头恰好切掉要看的、留下编译噪音；新增
+`sliceTailSurrogateSafe` 镜像 helper（尾切要丢的是**开头低位**代理，与头切相反）。
+**刻意不改**：Read 的计量单位仍按字符（官方按 token 25,000 + 256KB 拒读），对齐需引入 tokenizer
+运行时依赖，且字符计量在中文场景反而更宽（50K 中文字符 ≈ 50K token，是官方两倍）。
 
 **v0.79.1（2026-07-27）：内部去重，零表面变化**——重试/退避/错误体/流错误/空闲看门狗从
 `transport/anthropic.ts` 与 `transport/openai.ts` 各抄一份收敛为 `transport/http-retry.ts`；
