@@ -34,10 +34,8 @@ import { AbortError } from '../src/errors.js';
 import type {
   BuiltinTool,
   EngineConfig,
-  McpRegistry,
   SessionStore,
   SpawnSubagentParams,
-  StoredSession,
   StreamRequest,
   Transport,
 } from '../src/internal/contracts.js';
@@ -45,9 +43,7 @@ import type {
   AgentDefinition,
   ApiKeySource,
   APIMessageParam,
-  CallToolResult,
   HookInput,
-  McpServerStatus,
   RawMessageStreamEvent,
   SandboxBackend,
   SandboxContext,
@@ -58,50 +54,11 @@ import {
   textReplyEvents,
   toolUseReplyEvents,
 } from './helpers/mock-transport.js';
+import { FakeMcp, FakeStore, recordingTool } from './helpers/engine-fakes.js';
 
 // ---------------------------------------------------------------------------
 // Fakes / builders (trimmed twins of tests/subagents.test.ts)
 // ---------------------------------------------------------------------------
-
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'x' }], isError: true };
-  }
-  async reconnect(): Promise<void> {}
-  setEnabled(): void {}
-  async setServers() {
-    return { servers: [] };
-  }
-  async closeAll(): Promise<void> {}
-}
-
-class FakeStore implements SessionStore {
-  readonly entries = new Map<string, Array<Record<string, unknown>>>();
-  append(sessionId: string, entry: Record<string, unknown>): void {
-    const arr = this.entries.get(sessionId) ?? [];
-    arr.push(entry);
-    this.entries.set(sessionId, arr);
-  }
-  async load(): Promise<StoredSession | null> {
-    return null;
-  }
-  async list(): Promise<StoredSession[]> {
-    return [];
-  }
-  async latestSessionId(): Promise<string | null> {
-    return null;
-  }
-}
 
 /**
  * Scripted transport where any script slot may be the sentinel 'hang': that
@@ -138,22 +95,6 @@ class FlexTransport implements Transport {
       yield ev;
     }
   }
-}
-
-function recordingTool(
-  name: string,
-  executed: Array<Record<string, unknown>>,
-): BuiltinTool {
-  return {
-    name,
-    description: `fake ${name}`,
-    inputSchema: { type: 'object', properties: {} },
-    readOnly: true,
-    async execute(input) {
-      executed.push(input);
-      return { content: `${name} ran` };
-    },
-  };
 }
 
 type Harness = {
@@ -325,7 +266,7 @@ describe('K7: AgentDefinition.tools matches builtins with pattern semantics', ()
         toolUseReplyEvents('Read', { file_path: '/a' }, { model: 'claude-sonnet-4-5' }),
         textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
       ],
-      baseBuiltins: new Map([['Read', recordingTool('Read', executed)]]),
+      baseBuiltins: new Map([['Read', recordingTool('Read', executed, { readOnly: true })]]),
       agents: { star: { description: 's', prompt: 'p', tools: ['*'] } },
     });
     const res = await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'star' }));
@@ -341,8 +282,8 @@ describe('K7: AgentDefinition.tools matches builtins with pattern semantics', ()
     const h = makeRuntime({
       scripts: [textReplyEvents('done', { model: 'claude-sonnet-4-5' })],
       baseBuiltins: new Map([
-        ['Read', recordingTool('Read', executed)],
-        ['Write', recordingTool('Write', executed)],
+        ['Read', recordingTool('Read', executed, { readOnly: true })],
+        ['Write', recordingTool('Write', executed, { readOnly: true })],
       ]),
       agents: { narrow: { description: 'n', prompt: 'p', tools: ['Read'] } },
     });
@@ -387,7 +328,7 @@ describe('K2: SendMessage continuation repairs a dangling tool_use tail', () => 
         toolUseReplyEvents('Read', { file_path: '/a' }, { model: 'claude-sonnet-4-5' }),
         textReplyEvents('continued fine', { model: 'claude-sonnet-4-5' }),
       ],
-      baseBuiltins: new Map([['Read', recordingTool('Read', executed)]]),
+      baseBuiltins: new Map([['Read', recordingTool('Read', executed, { readOnly: true })]]),
       // The first turn's cost already exceeds the budget: the run pre-stops
       // with the assistant tool_use turn UNPAIRED at the history tail.
       engineConfig: { maxBudgetUsd: 1e-9 },
@@ -472,7 +413,7 @@ describe('K4: a killed child run keeps its billed spend in the usage ledger', ()
     ]);
     const h = makeRuntime({
       transport,
-      baseBuiltins: new Map([['Read', recordingTool('Read', executed)]]),
+      baseBuiltins: new Map([['Read', recordingTool('Read', executed, { readOnly: true })]]),
     });
     const res = await h.runtime.makeSpawnFn(0)(baseParams({ runInBackground: true }));
     await waitFor(() => transport.requests.length === 2);

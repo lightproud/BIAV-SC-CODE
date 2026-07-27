@@ -24,15 +24,12 @@ import { DefaultPermissionGate } from '../src/permissions/gate.js';
 import type {
   BuiltinTool,
   EngineConfig,
-  McpRegistry,
   SpawnSubagentParams,
   Transport,
 } from '../src/internal/contracts.js';
 import type {
   AgentDefinition,
   APIMessageParam,
-  CallToolResult,
-  McpServerStatus,
   ProviderConfig,
   RawMessageStreamEvent,
   SubagentTransportHandle,
@@ -41,28 +38,7 @@ import type {
   ThinkingConfigParam,
 } from '../src/types.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
-
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'x' }], isError: true };
-  }
-  async reconnect(): Promise<void> {}
-  setEnabled(): void {}
-  async setServers() {
-    return { servers: [] };
-  }
-  async closeAll(): Promise<void> {}
-}
+import { FakeMcp } from './helpers/engine-fakes.js';
 
 function makeConfig(overrides: Partial<EngineConfig> = {}): EngineConfig {
   return {

@@ -21,15 +21,12 @@ import type {
   EngineConfig,
   EngineDeps,
   HookRunner,
-  McpRegistry,
 } from '../src/internal/contracts.js';
 import type {
   BudgetExhaustedHookInput,
   BudgetThresholdHookInput,
-  CallToolResult,
   HookEvent,
   HookInput,
-  McpServerStatus,
   SDKMessage,
   SDKResultMessage,
 } from '../src/types.js';
@@ -38,25 +35,7 @@ import {
   textReplyEvents,
   toolUseReplyEvents,
 } from './helpers/mock-transport.js';
-
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(_qualifiedName: string): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'unexpected mcp call' }], isError: true };
-  }
-  async reconnect(_serverName: string): Promise<void> {}
-  setEnabled(_serverName: string, _enabled: boolean): void {}
-  async closeAll(): Promise<void> {}
-}
+import { FakeMcp } from './helpers/engine-fakes.js';
 
 /** Records every budget-event invocation; neutral aggregate for the rest. */
 class BudgetEventRecorder implements HookRunner {

@@ -29,22 +29,19 @@ import { DefaultPermissionGate } from '../src/permissions/gate.js';
 import type {
   BuiltinTool,
   EngineConfig,
-  McpRegistry,
   SessionStore,
   SpawnSubagentParams,
-  StoredSession,
   StreamRequest,
   ToolContext,
 } from '../src/internal/contracts.js';
 import type {
   AgentDefinition,
   APIMessageParam,
-  CallToolResult,
-  McpServerStatus,
   RawMessageStreamEvent,
 } from '../src/types.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
 import { AbortError } from '../src/errors.js';
+import { FakeMcp, FakeStore } from './helpers/engine-fakes.js';
 
 /** Completes the initial run (stream call 0), then stalls every later stream
  *  (the SendMessage continuation): one event to touch the watchdog, then silent
@@ -74,46 +71,6 @@ class StallOnContinuationTransport extends MockTransport {
 // ---------------------------------------------------------------------------
 // Fakes / builders (same shapes as tests/subagents.test.ts)
 // ---------------------------------------------------------------------------
-
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'x' }], isError: true };
-  }
-  async reconnect(): Promise<void> {}
-  setEnabled(): void {}
-  async setServers() {
-    return { servers: [] };
-  }
-  async closeAll(): Promise<void> {}
-}
-
-class FakeStore implements SessionStore {
-  readonly entries = new Map<string, Array<Record<string, unknown>>>();
-  append(sessionId: string, entry: Record<string, unknown>): void {
-    const arr = this.entries.get(sessionId) ?? [];
-    arr.push(entry);
-    this.entries.set(sessionId, arr);
-  }
-  async load(): Promise<StoredSession | null> {
-    return null;
-  }
-  async list(): Promise<StoredSession[]> {
-    return [];
-  }
-  async latestSessionId(): Promise<string | null> {
-    return null;
-  }
-}
 
 /** MockTransport whose Nth stream() call waits for an external gate first. */
 class GatedTransport extends MockTransport {
