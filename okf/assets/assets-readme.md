@@ -4,7 +4,7 @@ title: "README"
 description: "python assets/data/validate.py"
 resource: "/assets/data/README.md"
 tags: ["data_layer:curated", "fact-bible"]
-timestamp: "2026-07-26"
+timestamp: "2026-07-27"
 ---
 
 # 指针概念
