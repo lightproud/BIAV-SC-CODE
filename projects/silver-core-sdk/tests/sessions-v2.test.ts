@@ -736,3 +736,78 @@ describe('resolveTranscriptPath', () => {
     expect(resolveTranscriptPath(undefined, 'sess-x')).toBeUndefined();
   });
 });
+
+// ---------------------------------------------------------------------------
+// T74 甲 (keeper 2026-07-27): blob-size cap with honest degradation
+// ---------------------------------------------------------------------------
+
+describe('FileCheckpointStore blob cap (T74 option 甲)', () => {
+  it('records an over-cap pre-image WITHOUT bytes and leaves the file alone on rewind', async () => {
+    const target = join(dir, 'big.txt');
+    await writeFile(target, 'HUGE-OLD', 'utf8');
+    const cp = new FileCheckpointStore({ sessionDir: dir, maxBlobBytes: 4 });
+    cp.bind('sess-cap');
+    cp.beginTurn('m1');
+    cp.record(target, 'HUGE-OLD'); // 8 bytes > 4-byte cap
+    await writeFile(target, 'NEW', 'utf8');
+
+    const res = await cp.rewind('m1', {});
+    // The rewind is honestly INCOMPLETE: it names the file and the reason,
+    // and it must not delete it — blob:null alone means "created" and would
+    // have destroyed the only copy (the exact confusion the marker prevents).
+    expect(res.canRewind).toBe(false);
+    expect(res.error).toContain('cannot be rewound');
+    expect(res.error).toContain('blob cap');
+    expect(res.error).toContain(target);
+    expect(await readFile(target, 'utf8')).toBe('NEW');
+    // No blob was written for the over-cap file.
+    expect(res.restoredFiles).toEqual([]);
+    expect(res.deletedFiles).toEqual([]);
+  });
+
+  it('under-cap files in the same window still restore; the gap stays named', async () => {
+    const small = join(dir, 'small.txt');
+    const big = join(dir, 'big2.txt');
+    await writeFile(small, 'S-OLD', 'utf8');
+    await writeFile(big, 'B-OLD-LONG', 'utf8');
+    const cp = new FileCheckpointStore({ sessionDir: dir, maxBlobBytes: 6 });
+    cp.bind('sess-cap2');
+    cp.beginTurn('m1');
+    cp.record(small, 'S-OLD'); // 5 bytes, under cap
+    cp.record(big, 'B-OLD-LONG'); // 10 bytes, over cap
+    await writeFile(small, 'S-NEW', 'utf8');
+    await writeFile(big, 'B-NEW', 'utf8');
+
+    const res = await cp.rewind('m1', {});
+    expect(res.canRewind).toBe(false); // the WHOLE rewind reports incomplete
+    expect(await readFile(small, 'utf8')).toBe('S-OLD'); // restorable part applied
+    expect(await readFile(big, 'utf8')).toBe('B-NEW'); // untouched, named in error
+    expect(res.error).toContain('big2.txt');
+  });
+
+  it('a created file (blob null, NOT oversized) is still deleted on rewind', async () => {
+    const created = join(dir, 'made.txt');
+    const cp = new FileCheckpointStore({ sessionDir: dir, maxBlobBytes: 4 });
+    cp.bind('sess-cap3');
+    cp.beginTurn('m1');
+    cp.record(created, null); // creation: no pre-image, legitimately deletable
+    await writeFile(created, 'NEW', 'utf8');
+
+    const res = await cp.rewind('m1', {});
+    expect(res.canRewind).toBe(true);
+    expect(res.deletedFiles).toEqual([created]);
+  });
+
+  it('the default cap admits normal-sized pre-images unchanged', async () => {
+    const target = join(dir, 'norm.txt');
+    await writeFile(target, 'OLD', 'utf8');
+    const cp = new FileCheckpointStore({ sessionDir: dir });
+    cp.bind('sess-cap4');
+    cp.beginTurn('m1');
+    cp.record(target, 'OLD');
+    await writeFile(target, 'NEW', 'utf8');
+    const res = await cp.rewind('m1', {});
+    expect(res.canRewind).toBe(true);
+    expect(await readFile(target, 'utf8')).toBe('OLD');
+  });
+});
