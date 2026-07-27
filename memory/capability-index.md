@@ -3,16 +3,16 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-26
-- 功能总数：**150**
-- 脚本可达性：活 78 / 仅测试 0 / 孤儿 0
+- 生成日期：2026-07-27
+- 功能总数：**151**
+- 脚本可达性：活 79 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 45 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 41 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 42 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 5 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
@@ -127,7 +127,7 @@
 - **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
   `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（41）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（42）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -185,6 +185,8 @@
   `scripts/mcp_server.py`
 - **`memory_freshness.py`** _[活:cli+command]_ — memory_freshness.py — 记忆档案保鲜巡检器（确定性零 ML 零常驻）。  
   `scripts/memory_freshness.py`
+- **`okf_frontmatter.py`** _[活:import]_ — okf_frontmatter.py — OKF frontmatter 读写单一真相源（import-only 库）。  
+  `scripts/okf_frontmatter.py`
 - **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
