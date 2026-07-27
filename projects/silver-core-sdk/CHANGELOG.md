@@ -16,6 +16,57 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.81.0 — 2026-07-27
+
+Read's truncation footer now carries all THREE parts of the official banner
+instead of only the first. Minor rather than patch: the footer is part of the
+model-facing contract and its wording changes what the model does next.
+
+Reported symptom (keeper, from observed behaviour): one Read of a ~1500-line
+source file was followed by SIX consecutive auto-paged Reads that walked the
+file to its end, pushing 300K+ chars into the context, with no sign of the model
+deciding for itself when to stop. Our footer ended `Use offset=1301 to continue
+reading.` and said nothing else.
+
+**The diagnosis was half right, and the half that was wrong is worth recording.**
+The delivery note held that official Claude Code never states a computed offset,
+only "the offset parameter". Checked against the official npm artifact for
+2.1.220 (`@anthropic-ai/claude-code-linux-x64`), it states one: "…Call Read with
+offset=${I+1} limit=${I} for the next page, or Grep to find a specific section.
+Do NOT answer from this page alone if the answer may be further in the file."
+So the value was never the difference. The difference was that our footer
+offered NOTHING ELSE — one page, one move, no cheaper route, no caution. Keeper
+ruled for official parity over the further-reaching variant.
+
+- Both truncation branches (character cap and line limit) now end: next-page
+  offset, `use Grep to find a specific section`, and `Do NOT answer from this
+  page alone if the answer may be further in the file`. The last clause guards a
+  failure mode the old footer had no defence against at all — answering
+  confidently off page one.
+- The large-file Grep hint fires on SIZE ALONE. It previously also required a
+  row past the 2000-char per-line cap, and ordinary source (TS/Lua/Python) has
+  no such rows, so the conjunction was almost never true and the hint
+  effectively never fired. The 256KB threshold is unchanged; it had NO test
+  coverage before this change, which is consistent with it never having fired.
+- Read's description is updated to match all three parts.
+
+`MAX_READ_OUTPUT_CHARS` is deliberately untouched at 50000: the problem was
+never how much one call returns, and lowering the cap would make a genuine
+cover-to-cover read page twice as often.
+
+**Numeric baseline, now independently corroborated.** 0.80.2 recorded that the
+v0.80.0 limits rested solely on a one-off 2.1.141 binary extraction with nothing
+in-repo to check them against, and that re-verification needed a machine with
+Claude Code installed. That was wrong: the official binary is a public npm
+artifact (`@anthropic-ai/claude-code-linux-x64`, a platform optionalDependency
+of `@anthropic-ai/claude-code`), and this repo's own conformance job already
+installs the official arm transiently. Extracted from 2.1.220 here: Read output
+cap **25000 tokens** (`CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS`, default 25000),
+Bash output **30000 default / 150000 max** (`BASH_MAX_OUTPUT_LENGTH`), and Grep
+`head_limit` "Defaults to 250 when unspecified. Pass 0 for unlimited" verbatim.
+All three match the 2.1.141 figures the v0.80.0 work was built on — unchanged
+across 79 releases. docs/COMPAT.md is corrected accordingly.
+
 ## 0.80.2 — 2026-07-27
 
 Baseline realignment against the refreshed 2.1.216-era archive snapshot (keeper

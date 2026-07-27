@@ -102,7 +102,13 @@ describe('Read total-output cap (boundary matrix)', () => {
     const file = await writeFileLines(dir, 'many-short.txt', Array.from({ length: 3000 }, (_, i) => `l${i}`));
     const res = await readTool.execute({ file_path: file }, makeCtx(dir));
     const c = contentOf(res);
-    expect(c).toContain('Showing lines 1-2000 of 3000. Use offset=2001 to continue reading.');
+    // 2026-07-27: the footer carries all three parts of the official 2.1.220
+    // banner. The stated offset was NOT the cause of the six-page auto-paging
+    // run (official states one too) — what was missing were the other two
+    // parts, so those are what these assertions pin.
+    expect(c).toContain('Showing lines 1-2000 of 3000. Call Read with offset=2001 for the next page');
+    expect(c).toContain('use Grep to find a specific section');
+    expect(c).toContain('Do NOT answer from this page alone');
     expect(c).not.toContain('truncated at');
   });
 
@@ -119,17 +125,52 @@ describe('Read total-output cap (boundary matrix)', () => {
     const lastShown = Number(m![1]);
     expect(lastShown).toBeLessThan(2000);
     expect(lastShown).toBeGreaterThanOrEqual(25); // never-empty invariant
-    expect(c).toContain(`Use offset=${lastShown + 1} to continue reading.`);
+    expect(c).toContain(`Call Read with offset=${lastShown + 1} for the next page`);
+    expect(c).toContain('use Grep to find a specific section');
+    expect(c).toContain('Do NOT answer from this page alone');
     // §B consistency: the actual body has exactly `lastShown` numbered rows
     const body = c.split('\n\n(')[0];
     expect(body.split('\n')).toHaveLength(lastShown);
+  });
+
+  // §D, widened 2026-07-27. The hint used to require `truncatedLines > 0` —
+  // a row past the 2000-char per-line cap — on top of the size threshold.
+  // Ordinary source files (TS/Lua/Python) do not have rows that wide, so the
+  // conjunction was practically never true and the hint effectively never
+  // fired: the only route the model was ever shown was "page again". These two
+  // cases pin the new rule (size alone) and the threshold that still bounds it.
+  it('§D: a large file of ORDINARY-width lines now gets the Grep hint', async () => {
+    const dir = await makeSandbox();
+    // 4000 x ~80 chars ~= 320KB > 256KB, every row far below the per-line cap.
+    const file = await writeFileLines(
+      dir,
+      'big-normal.ts',
+      Array.from({ length: 4000 }, (_, i) => `const value${i} = ${'x'.repeat(60)};`),
+    );
+    const c = contentOf(await readTool.execute({ file_path: file }, makeCtx(dir)));
+    expect(c).toContain('This file is large; consider the Grep tool');
+    // The stale precondition must be gone, not merely satisfied by accident.
+    expect(c).not.toContain('very long lines');
+  });
+
+  it('§D: a file under the size threshold still gets no Grep hint', async () => {
+    const dir = await makeSandbox();
+    // ~100KB: over the 50K char cap (so the footer exists) but under 256KB.
+    const file = await writeFileLines(
+      dir,
+      'medium.ts',
+      Array.from({ length: 1200 }, (_, i) => `const v${i} = ${'y'.repeat(60)};`),
+    );
+    const c = contentOf(await readTool.execute({ file_path: file }, makeCtx(dir)));
+    expect(c).toContain('output truncated at');
+    expect(c).not.toContain('consider the Grep tool');
   });
 
   it('§3 case 3: offset continuation reads the window after the cap', async () => {
     const dir = await makeSandbox();
     const file = await writeFileLines(dir, 'wide.txt', Array.from({ length: 2000 }, (_, i) => `${i}:` + 'w'.repeat(500)));
     const first = contentOf(await readTool.execute({ file_path: file }, makeCtx(dir)));
-    const off = Number(first.match(/Use offset=(\d+)/)![1]);
+    const off = Number(first.match(/offset=(\d+) for the next page/)![1]);
     const second = contentOf(await readTool.execute({ file_path: file, offset: off }, makeCtx(dir)));
     // the second read starts exactly where the first stopped
     expect(second).toContain(`${String(off).padStart(6)}\t${off - 1}:`);

@@ -36,11 +36,13 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.80.2`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-agent-sdk` = `0.80.2`
+**当前版本 `0.81.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-agent-sdk` = `0.81.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.81.0（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.81.0（Read 截断页脚补齐官方三件套 + 大档 Grep 提示改为只看体积 + 数值基准经官方 npm 发行物获独立佐证）前进。
 
 **v0.80.2（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.80.2（对齐 2.1.216 快照基准：第三条指空 slug 修复 + 缺档守卫扩及 adapted 条目 + 新增吻合度尺子）前进。
 

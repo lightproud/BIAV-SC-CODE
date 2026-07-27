@@ -107,9 +107,13 @@ describe('Read tool', () => {
     expect(content).toContain(catLine(3, 'L3'));
     expect(content).not.toContain('L1');
     expect(content).not.toContain('L4');
-    // Continuation hint names the shown window, the total, and the next offset.
+    // Continuation hint names the shown window, the total, the next offset —
+    // and, since 2026-07-27, the two parts the official 2.1.220 banner carries
+    // that this one used to omit: the Grep alternative and the caution.
     expect(content).toMatch(/lines 2-3 of 5/);
     expect(content).toMatch(/offset=4/);
+    expect(content).toMatch(/use Grep to find a specific section/);
+    expect(content).toMatch(/Do NOT answer from this page alone/);
   });
 
   it('clamps zero/negative offsets to line 1', async () => {
@@ -154,6 +158,8 @@ describe('Read tool', () => {
     expect(content).not.toContain('line-2001');
     expect(content).toMatch(/lines 1-2000 of 2005/);
     expect(content).toMatch(/offset=2001/);
+    expect(content).toMatch(/use Grep to find a specific section/);
+    expect(content).toMatch(/Do NOT answer from this page alone/);
   });
 
   it('returns a system-reminder-style note (not an error) for an empty file', async () => {
