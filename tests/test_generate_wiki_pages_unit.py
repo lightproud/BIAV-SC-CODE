@@ -1,4 +1,4 @@
-"""Breadth coverage for scripts/generate_wiki_pages.py.
+"""Breadth coverage for projects/wiki/scripts/generate_wiki_pages.py.
 
 Strategy: every generate_* function reads JSON from module global PROCESSED_DIR
 and writes markdown into DOCS_DIR. We point both at tmp_path, seed synthetic
@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects/wiki/scripts"))
 
 import generate_wiki_pages as gwp
 

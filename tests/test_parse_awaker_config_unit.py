@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects/wiki/scripts"))
 
 import parse_awaker_config as pac  # noqa: E402
 

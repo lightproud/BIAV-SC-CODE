@@ -4,17 +4,17 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-27
-- 功能总数：**151**
-- 脚本可达性：活 79 / 仅测试 0 / 孤儿 0
+- 功能总数：**152**
+- 脚本可达性：活 80 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 45 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 42 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 36 |
 | news 采集器脚本 | 32 |
-| wiki 数据脚本 | 5 |
+| wiki 数据脚本 | 12 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 5 |
@@ -127,7 +127,7 @@
 - **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
   `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（42）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（36）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -159,8 +159,6 @@
   `scripts/deliverable_path.py`
 - **`extract_aliases.py`** _[活:cli]_ — extract_aliases.py — 厚锚别名生成期工作面（AI 自动识别的落表 CLI）。  
   `scripts/extract_aliases.py`
-- **`generate_wiki_pages.py`** _[活:cli+workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
-  `scripts/generate_wiki_pages.py`
 - **`kb_ab.py`** _[活:cli]_ — kb_ab.py — 知识库 vs 朴素搜索 反事实 A/B（北极星评判体系 #3）。  
   `scripts/kb_ab.py`
 - **`kb_anchor.py`** _[活:mcp]_ — kb_anchor.py — 先锚后扩合流（§八 8.3「厚锚撑向量」检索侧合流，import-only 库）。  
@@ -179,26 +177,16 @@
   `scripts/kb_telemetry.py`
 - **`kb_vector.py`** _[活:mcp]_ — kb_vector.py — 银芯向量检索腿（长尾语义召回后端，import-only 库）。  
   `scripts/kb_vector.py`
-- **`lua_parse.py`** _[活:import]_ — 解包 Lua 表 dump 的共享解析库，供各 parse_* CLI 工具调用。  
-  `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
 - **`memory_freshness.py`** _[活:cli+command]_ — memory_freshness.py — 记忆档案保鲜巡检器（确定性零 ML 零常驻）。  
   `scripts/memory_freshness.py`
+- **`news_bridge.py`** _[活:import]_ — news_bridge.py — 顶层脚本层访问采集层模块的**唯一桥**（import-only 库）。  
+  `scripts/news_bridge.py`
 - **`okf_frontmatter.py`** _[活:import]_ — okf_frontmatter.py — OKF frontmatter 读写单一真相源（import-only 库）。  
   `scripts/okf_frontmatter.py`
 - **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
-- **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
-  `scripts/parse_awaker_config.py`
-- **`parse_cg_gallery.py`** _[活:cli]_ — [CLI 手动] 解析 CG 画廊清单为分章 JSON。  
-  `scripts/parse_cg_gallery.py`
-- **`parse_collection_hall.py`** _[活:cli]_ — [CLI 手动] 解析 CollectionHall.lua 为世界观百科 JSON。  
-  `scripts/parse_collection_hall.py`
-- **`parse_item_stories.py`** _[活:cli]_ — [CLI 手动] 解析 Item.lua 提取带背景故事的道具。  
-  `scripts/parse_item_stories.py`
-- **`parse_voice_lines.py`** _[活:cli]_ — [CLI 手动] 解析 Voice.lua 为 wiki 语音页 JSON。  
-  `scripts/parse_voice_lines.py`
 - **`refresh_claude_code_prompts.py`** _[活:cli+workflow]_ — Refresh the archived Claude Code system-prompts reference from upstream.  
   `scripts/refresh_claude_code_prompts.py`
 - **`report_render.py`** _[活:cli+command+workflow]_ — 银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。  
@@ -281,7 +269,7 @@
 - **`taptap_collector.py`** _[活:cli]_ — TapTap 社区采集器 - Playwright 无头浏览器方案  
   `projects/news/scripts/taptap_collector.py`
 
-## wiki 数据脚本（5）
+## wiki 数据脚本（12）
 
 - **`build_drop_index.py`** _[活:cli]_ — 构建掉落物索引。  
   `projects/wiki/scripts/build_drop_index.py`
@@ -291,6 +279,20 @@
   `projects/wiki/scripts/decrypt_and_extract.py`
 - **`extract_client_data.py`** _[活:cli+workflow]_ — 从客户端解包提取结构化游戏数据。  
   `projects/wiki/scripts/extract_client_data.py`
+- **`generate_wiki_pages.py`** _[活:cli+workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
+  `projects/wiki/scripts/generate_wiki_pages.py`
+- **`lua_parse.py`** _[活:import]_ — Shared parser for runtime-extracted Lua table dumps.  
+  `projects/wiki/scripts/lua_parse.py`
+- **`parse_awaker_config.py`** _[活:cli]_ — Parse AwakerConfig.lua into structured character profiles JSON.  
+  `projects/wiki/scripts/parse_awaker_config.py`
+- **`parse_cg_gallery.py`** _[活:cli]_ — Parse art_assets manifest.json to extract CG gallery data grouped by chapter.  
+  `projects/wiki/scripts/parse_cg_gallery.py`
+- **`parse_collection_hall.py`** _[活:cli]_ — Parse CollectionHall.lua into structured JSON for world lore encyclopedia.  
+  `projects/wiki/scripts/parse_collection_hall.py`
+- **`parse_item_stories.py`** _[活:cli]_ — Parse Item.lua to extract items with background stories (StoryDesc field).  
+  `projects/wiki/scripts/parse_item_stories.py`
+- **`parse_voice_lines.py`** _[活:cli]_ — Parse Voice.lua into structured JSON for wiki voice lines page.  
+  `projects/wiki/scripts/parse_voice_lines.py`
 - **`validate_data.py`** _[活:cli+command+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
 

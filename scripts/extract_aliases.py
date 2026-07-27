@@ -33,10 +33,9 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "scripts"))
-sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
 
 import silver_aliases  # noqa: E402
-import archive_layout  # noqa: E402  分仓桥接：社区数据根 SSOT
+from news_bridge import archive_layout  # noqa: E402  分仓桥接：社区数据根 SSOT
 
 COMMUNITY = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 GAPS_PATH = REPO / "Public-Info-Pool" / "Rough" / "alias_gaps.jsonl"

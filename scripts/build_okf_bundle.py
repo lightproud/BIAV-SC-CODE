@@ -31,8 +31,7 @@ import sys
 REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
 
-sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
-import archive_layout  # noqa: E402  归档布局单一真相源（source 指针落点推导）
+from news_bridge import archive_layout  # noqa: E402  归档布局单一真相源（source 指针落点推导）
 import build_kb_index  # noqa: E402  运行时导航索引生成器（消费本 bundle，跑在末尾）
 import okf_pointer_layers as opl  # noqa: E402  全仓知识组织：新增指针概念层（放指针不放本体）
 import silver_aliases  # noqa: E402  厚锚别名侧表（chunk3；缺表优雅返空，构建不炸）

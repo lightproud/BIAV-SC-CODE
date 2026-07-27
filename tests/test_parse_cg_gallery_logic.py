@@ -14,7 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from scripts.parse_cg_gallery import parse_cg_gallery  # noqa: E402
+from projects.wiki.scripts.parse_cg_gallery import parse_cg_gallery  # noqa: E402
 
 
 def _manifest(tmp_path, files):

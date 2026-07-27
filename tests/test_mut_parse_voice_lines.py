@@ -1,7 +1,7 @@
 """Mutation-testing twin for parse_voice_lines.
 
 Package-path imports so mutmut's runtime trampoline keys (derived from the
-file path `scripts/parse_voice_lines.py`) line up, while the second sys.path
+file path `projects/wiki/scripts/parse_voice_lines.py`) line up, while the second sys.path
 entry lets the module's bare `from lua_parse import parse_lua_blocks` resolve.
 Uses the REAL parse_lua_blocks against tmp Lua files.
 
@@ -14,9 +14,9 @@ from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_REPO))
-sys.path.insert(0, str(_REPO / "scripts"))
+sys.path.insert(0, str(_REPO / "projects/wiki/scripts"))
 
-from scripts.parse_voice_lines import parse_voice_lua  # noqa: E402
+from projects.wiki.scripts.parse_voice_lines import parse_voice_lua  # noqa: E402
 
 
 def _write(tmp_path, lua_text):

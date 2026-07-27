@@ -37,7 +37,7 @@ Public-Info-Pool/Reference/Game-Unpacked/   客户端一手解包 text（Lua表�
   → 顶层 scripts/parse_*.py    解析器（awaker_config / voice_lines / collection_hall / item_stories；
                                 cg_gallery 读 data/extracted/art_assets/——wiki 侧独占件）
   → data/processed/            加工 JSON（characters.json 可信基线 + 剧情层 story/ 等）
-  → 顶层 scripts/generate_wiki_pages.py   生成 VitePress Markdown 页（由 deploy-site.yml 驱动）
+  → scripts/generate_wiki_pages.py（本子项目内，2026-07-27 P6 自顶层归位）   生成 VitePress Markdown 页（由 deploy-site.yml 驱动）
   → docs/                      站点源（VitePress 构建 → gh-pages /wiki/ 子路径）
 ```
 
@@ -86,7 +86,7 @@ npm run dev         # 本地开发
 npm run docs:build  # 构建（node --stack-size=65536，应对大体积内嵌页）
 
 # 重新生成静态页（须在仓库根）
-python3 scripts/generate_wiki_pages.py
+python3 projects/wiki/scripts/generate_wiki_pages.py
 
 # 数据校验（processed 基线 + 遗留 schema SKIP 语义）
 python3 projects/wiki/scripts/validate_data.py

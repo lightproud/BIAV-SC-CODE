@@ -88,9 +88,9 @@
 | agent SDK 源文件 / 测试档 | 124 / 198 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
-| Python 测试档 | 133 | 磁盘实况 |
+| Python 测试档 | 136 | 磁盘实况 |
 | CI 工作流 / 其中定时 | 45 / 26 | `.github/workflows/` |
-| 挂账台账 开 / 已清 | 17 / 60 | `memory/todo.md` |
+| 挂账台账 开 / 已清 | 18 / 60 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->
 

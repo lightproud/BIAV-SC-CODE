@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 45,
-      "scripts_top": 42,
+      "scripts_top": 36,
       "scripts_news": 32,
-      "scripts_wiki": 5,
+      "scripts_wiki": 12,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 5,
       "projects": 7,
-      "total": 151
+      "total": 152
     },
     "reachability": {
-      "live": 79,
+      "live": 80,
       "test-only": 0,
       "orphaned": 0
     }
@@ -589,16 +589,6 @@
       "status": "live"
     },
     {
-      "id": "generate_wiki_pages.py",
-      "path": "scripts/generate_wiki_pages.py",
-      "summary": "Generate VitePress Markdown pages from processed JSON data.",
-      "planes": [
-        "cli",
-        "workflow"
-      ],
-      "status": "live"
-    },
-    {
       "id": "kb_ab.py",
       "path": "scripts/kb_ab.py",
       "summary": "kb_ab.py — 知识库 vs 朴素搜索 反事实 A/B（北极星评判体系 #3）。",
@@ -681,16 +671,6 @@
       "status": "live"
     },
     {
-      "id": "lua_parse.py",
-      "path": "scripts/lua_parse.py",
-      "summary": "Shared parser for runtime-extracted Lua table dumps.",
-      "planes": [
-        "import"
-      ],
-      "status": "live",
-      "note_zh": "解包 Lua 表 dump 的共享解析库，供各 parse_* CLI 工具调用。"
-    },
-    {
       "id": "mcp_server.py",
       "path": "scripts/mcp_server.py",
       "summary": "mcp_server.py — BIAV-SC Memory MCP Server",
@@ -712,6 +692,15 @@
       "status": "live"
     },
     {
+      "id": "news_bridge.py",
+      "path": "scripts/news_bridge.py",
+      "summary": "news_bridge.py — 顶层脚本层访问采集层模块的**唯一桥**（import-only 库）。",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
       "id": "okf_frontmatter.py",
       "path": "scripts/okf_frontmatter.py",
       "summary": "okf_frontmatter.py — OKF frontmatter 读写单一真相源（import-only 库）。",
@@ -728,56 +717,6 @@
         "workflow"
       ],
       "status": "live"
-    },
-    {
-      "id": "parse_awaker_config.py",
-      "path": "scripts/parse_awaker_config.py",
-      "summary": "Parse AwakerConfig.lua into structured character profiles JSON.",
-      "planes": [
-        "cli"
-      ],
-      "status": "live",
-      "note_zh": "[CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。"
-    },
-    {
-      "id": "parse_cg_gallery.py",
-      "path": "scripts/parse_cg_gallery.py",
-      "summary": "Parse art_assets manifest.json to extract CG gallery data grouped by chapter.",
-      "planes": [
-        "cli"
-      ],
-      "status": "live",
-      "note_zh": "[CLI 手动] 解析 CG 画廊清单为分章 JSON。"
-    },
-    {
-      "id": "parse_collection_hall.py",
-      "path": "scripts/parse_collection_hall.py",
-      "summary": "Parse CollectionHall.lua into structured JSON for world lore encyclopedia.",
-      "planes": [
-        "cli"
-      ],
-      "status": "live",
-      "note_zh": "[CLI 手动] 解析 CollectionHall.lua 为世界观百科 JSON。"
-    },
-    {
-      "id": "parse_item_stories.py",
-      "path": "scripts/parse_item_stories.py",
-      "summary": "Parse Item.lua to extract items with background stories (StoryDesc field).",
-      "planes": [
-        "cli"
-      ],
-      "status": "live",
-      "note_zh": "[CLI 手动] 解析 Item.lua 提取带背景故事的道具。"
-    },
-    {
-      "id": "parse_voice_lines.py",
-      "path": "scripts/parse_voice_lines.py",
-      "summary": "Parse Voice.lua into structured JSON for wiki voice lines page.",
-      "planes": [
-        "cli"
-      ],
-      "status": "live",
-      "note_zh": "[CLI 手动] 解析 Voice.lua 为 wiki 语音页 JSON。"
     },
     {
       "id": "refresh_claude_code_prompts.py",
@@ -1200,6 +1139,70 @@
       ],
       "status": "live",
       "note_zh": "从客户端解包提取结构化游戏数据。"
+    },
+    {
+      "id": "generate_wiki_pages.py",
+      "path": "projects/wiki/scripts/generate_wiki_pages.py",
+      "summary": "Generate VitePress Markdown pages from processed JSON data.",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "lua_parse.py",
+      "path": "projects/wiki/scripts/lua_parse.py",
+      "summary": "Shared parser for runtime-extracted Lua table dumps.",
+      "planes": [
+        "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "parse_awaker_config.py",
+      "path": "projects/wiki/scripts/parse_awaker_config.py",
+      "summary": "Parse AwakerConfig.lua into structured character profiles JSON.",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "parse_cg_gallery.py",
+      "path": "projects/wiki/scripts/parse_cg_gallery.py",
+      "summary": "Parse art_assets manifest.json to extract CG gallery data grouped by chapter.",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "parse_collection_hall.py",
+      "path": "projects/wiki/scripts/parse_collection_hall.py",
+      "summary": "Parse CollectionHall.lua into structured JSON for world lore encyclopedia.",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "parse_item_stories.py",
+      "path": "projects/wiki/scripts/parse_item_stories.py",
+      "summary": "Parse Item.lua to extract items with background stories (StoryDesc field).",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "parse_voice_lines.py",
+      "path": "projects/wiki/scripts/parse_voice_lines.py",
+      "summary": "Parse Voice.lua into structured JSON for wiki voice lines page.",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
     },
     {
       "id": "validate_data.py",

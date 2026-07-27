@@ -1,6 +1,6 @@
 """wiki 运行时数据桥契约测试——生成端与消费端的「对菜单」。
 
-生成端：scripts/generate_wiki_pages.py generate_runtime_data() 产出
+生成端：projects/wiki/scripts/generate_wiki_pages.py generate_runtime_data() 产出
 characters.runtime.json（已有单测钉生成行为）。
 消费端：projects/wiki/docs/.vitepress/theme/data/characters.ts 以
 MorimensCharacter 接口消费该 JSON——但 TS 无运行时校验，生成端改字段名
