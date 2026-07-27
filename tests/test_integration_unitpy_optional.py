@@ -57,7 +57,7 @@ import UnityPy  # noqa: E402  genuine module (guard above guarantees real instal
 
 REPO = Path(__file__).resolve().parent.parent
 WIKI_SCRIPTS = REPO / "projects" / "wiki" / "scripts"
-sys.path.insert(0, str(WIKI_SCRIPTS))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 
 def test_extract_client_data_imports_with_real_unitypy():

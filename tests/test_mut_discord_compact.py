@@ -16,7 +16,7 @@ from pathlib import Path
 
 # Repo root on path so `projects` resolves as a namespace package in every run
 # mode (plain pytest, python -m pytest, and mutmut's mutants/ copy).
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 from projects.news.scripts.discord_compact import (  # noqa: E402
     compact_record,

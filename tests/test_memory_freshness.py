@@ -13,7 +13,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import memory_freshness as mf  # noqa: E402
 

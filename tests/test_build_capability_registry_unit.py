@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import build_capability_registry as bcr  # noqa: E402
 

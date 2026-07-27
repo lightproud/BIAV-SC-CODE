@@ -13,7 +13,7 @@ normal fast pytest module.
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 from projects.wiki.scripts.lua_parse import parse_lua_blocks, _scan_block_body  # noqa: E402
 

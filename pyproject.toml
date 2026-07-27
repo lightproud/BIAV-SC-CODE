@@ -1,0 +1,44 @@
+# 银芯 Python 侧工程配置（结构审视 T72，守密人 2026-07-27 裁定「做」）。
+#
+# ## 这个文件解决什么
+#
+# 本仓 Python 侧长期不是包：模块以裸 basename 互相 import，路径靠每个档自己往
+# `sys.path` 里塞——审视实测 164 处。真正的代价不是那些行本身，而是**路径知识
+# 散落在 164 个地方**：迁一次目录就得挨个追，追漏了不会有任何静态检查报警，只在
+# 运行时炸 ImportError；2026-07-27 的 P3 迁档就漏了 8 处，而且全量测试照常报绿
+# （pytest 单进程共享 sys.path，先收集的档替后面的铺了路）。
+#
+# ## 为什么不做「真」包化
+#
+# 「真」包化要把脚本改成 `python -m` 运行。实测本仓 CI 有 28 处、MCP 服务端 1 处
+# 全部是 `python <路径>.py` 形态，零处用 `-m`；改运行方式会同时打断 CI、MCP 配置
+# 和守密人的手动用法，收益却只是形式上「像个包」。审视给 T72 的判词是「危害已消，
+# 剩余是形式」——所以这里做的是**把散落的路径知识收敛成真相源**，而不是为了名分
+# 去动运行形态。
+#
+# ## 收敛后的三处真相源（全仓再无第四处知道这些目录在哪）
+#
+#   1. 本文件 `[tool.pytest.ini_options] pythonpath` —— pytest 场景（pytest 7+
+#      原生机制，取代 conftest.py 里的手工注入）
+#   2. `tests/_paths.py` —— `python tests/test_x.py` 直跑场景（conftest 与本文件
+#      都不参与那条路径；70 个测试档带 `__main__` 入口，这个能力不牺牲）
+#   3. `scripts/news_bridge.py` —— 顶层脚本层取采集层 SSOT（结构审视 P4）
+#
+# 守卫：`tests/test_test_isolation.py` 钉死「不得再出现第四处手写路径」。
+
+[project]
+name = "biav-sc"
+version = "0.0.0"
+description = "银芯（BIAV-SC）Python 侧工程配置——不发布，仅用于收敛工具链配置"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+# pytest 原生的路径注入（7.0+）。这一行取代了 conftest.py 里的手工 sys.path 拼装，
+# 也让测试档不必再各自抄一遍「三个源目录在哪」。
+pythonpath = [
+    ".",                        # `from projects.news.scripts.x import` 的包路径形态（mutmut twin 用）
+    "scripts",
+    "projects/news/scripts",
+    "projects/wiki/scripts",
+]
+testpaths = ["tests"]

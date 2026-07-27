@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Put the REPO ROOT on the path so `scripts` resolves as a namespace package
 # in every run mode (plain `pytest`, `python -m pytest`, and mutmut's copy).
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 from scripts.silver_tokenizer import (  # noqa: E402
     tokenize,

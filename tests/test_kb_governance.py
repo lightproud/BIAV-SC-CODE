@@ -17,8 +17,7 @@ import pytest
 
 REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
-sys.path.insert(0, str(REPO / "scripts"))
-sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import build_okf_bundle as bok  # noqa: E402
 import okf_pointer_layers as opl  # noqa: E402

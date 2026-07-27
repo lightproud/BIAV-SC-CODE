@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import archive_layout as al  # noqa: E402
 

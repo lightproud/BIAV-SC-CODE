@@ -16,7 +16,7 @@ import pytest
 jsonschema = pytest.importorskip("jsonschema")
 
 REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import split_output  # noqa: E402
 

@@ -31,7 +31,7 @@ REPO = Path(__file__).resolve().parent.parent
 WIKI_SCRIPTS = REPO / "projects" / "wiki" / "scripts"
 REAL_SCHEMA_DIR = REPO / "projects" / "wiki" / "data" / "schemas"
 
-sys.path.insert(0, str(WIKI_SCRIPTS))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import validate_data as vd  # noqa: E402
 

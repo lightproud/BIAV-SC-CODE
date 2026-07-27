@@ -15,8 +15,7 @@ from pathlib import Path
 _REPO = Path(__file__).resolve().parent.parent
 # repo root -> resolves the `projects.news.scripts.*` namespace package;
 # the news scripts dir -> resolves data_quality's bare sibling imports.
-sys.path.insert(0, str(_REPO))
-sys.path.insert(0, str(_REPO / "projects" / "news" / "scripts"))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 from projects.news.scripts.data_quality import (  # noqa: E402
     normalize_engagement,

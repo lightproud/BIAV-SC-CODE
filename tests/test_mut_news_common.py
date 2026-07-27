@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import projects.news.scripts.news_common as nc  # noqa: E402
 

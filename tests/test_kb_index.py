@@ -23,7 +23,7 @@ REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO / "scripts"
 BUNDLE = REPO / "okf"
 INDEX_PATH = BUNDLE / "kb_index.json"
-sys.path.insert(0, str(SCRIPTS))
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 
 # ---------------------------------------------------------------------------

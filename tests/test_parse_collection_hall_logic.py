@@ -15,8 +15,7 @@ import sys
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(_REPO))                 # resolves `scripts.<module>` key
-sys.path.insert(0, str(_REPO / "projects/wiki/scripts"))  # resolves bare `from lua_parse import`
+import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 from projects.wiki.scripts.parse_collection_hall import parse_collection_hall  # noqa: E402
 
