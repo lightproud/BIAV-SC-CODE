@@ -149,6 +149,8 @@ export type GrepInput = {
   '-B'?: number;
   '-A'?: number;
   '-C'?: number;
+  /** Print only the matched parts of each line (rg `-o`). Content mode only. */
+  '-o'?: boolean;
   context?: number;
   head_limit?: number;
   offset?: number;
@@ -248,6 +250,10 @@ export type WorkflowInput = {
   name?: string;
   scriptPath?: string;
   args?: unknown;
+  /** Run label overriding `meta.name` in the result header. */
+  title?: string;
+  /** Run label overriding `meta.description` in the result summary line. */
+  description?: string;
   resumeFromRunId?: string;
 };
 
@@ -492,6 +498,12 @@ export type GlobOutput = {
   numFiles: number;
   filenames: string[];
   truncated: boolean;
+  /** Matches found before the display cap. Honest here because this engine
+   *  enumerates the full result set and then slices it. */
+  totalMatches?: number;
+  /** Whether `totalMatches` is exact rather than a floor. Always true here —
+   *  unlike official, nothing upstream of the slice truncates its own output. */
+  countIsComplete?: boolean;
 };
 
 /** Output of the Grep tool. Shape varies by `mode`. */

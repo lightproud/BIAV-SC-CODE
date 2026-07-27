@@ -82,10 +82,10 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.88.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.88.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.89.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.89.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
-| agent SDK 源文件 / 测试档 | 139 / 202 | 磁盘实况 |
+| agent SDK 源文件 / 测试档 | 139 / 203 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 137 | 磁盘实况 |
@@ -249,6 +249,7 @@
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
+> **v0.89.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.89.0（类型面漂移检测工具化，首跑挖出四条「发货了却没声明」的类型缺陷）前进。
 > **v0.88.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.88.0（处方卡型 + sessions 体检面）前进。
 > **v0.87.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.87.0（截断纪律全家对齐 + cards 索引豁免）前进。
 > **v0.86.1（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.87.1（嵌套路径普查：timedOutAfterMs 移回基类）前进。
@@ -336,6 +337,9 @@
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
 - **v0.84.0（2026-07-27）**：记忆索引纪律 + 整理规程——修的是「SDK 给了常驻索引机制却没规定索引条目该长什么样，且会话收尾提示词命令模型把进度卡写进索引档」这个自伤缺口（守密人 BPT 现场反馈：开工要好几回工具调用才找得到东西）。进度卡改落 `/memories/progress/`、索引只留指针；新增索引纪律片段（两模式注入、前提不成立即跳过）；写侧超限反压（读写共用同一度量，明说尾部已不可见）；`buildConsolidationPrompt()` + 四阶段整理规程，由 `assessMemoryStoreHealth()` 结果渲染待办。**层界守住**：只给「该不该整理 / 怎么整理」，不给调度（N1 未破，零新进程）。新增测试 28。
 - **v0.87.0（2026-07-27）**：截断纪律全家对齐——任何上限砍内容须答三问（丢多少/为何/怎么拿回）、流式保尾。后台 shell 流永久失聪缺陷修复（保尾保留窗 + 丢弃计数 + gap 标记）；Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记；cards 校验两层豁免索引档（修 0.84.0 自种 P4 矛盾）。另修哨兵两档制 + test.yml push 盲区 + 门禁 hooksPath 警告（仓侧）。
+- **v0.89.0（2026-07-27）**：**类型面漂移检测工具化——只报「新的」**（守密人「按你建议继续」）——同日三轮普查全是跑完即弃的手搓脚本，「上次扫到哪、哪些已裁过」全靠人记，这正是漂移反复回来的原因（第三轮挖到的恰是第二轮当天引入的）。收成 `projects/silver-core-sdk/scripts/type-parity.mjs`：**价值不在重跑比对，在于自动扣除已裁定项、只把新长出来的摆上台**（`RULED` 白名单，一条裁定吸收整棵子树）——每次都吐同样四十条已知差异的报告，人第二次就不看了。恒 exit 0（尺子不是门禁：红线纪律禁止声明未发货能力，机械拉平等于逼类型面承诺做不到的事）。**首跑挖出四条真缺陷，三条同一种「发货了却没声明」**：`GrepInput` 未声明 `-o`（实现早在，前几轮漏因不匹配带引号键）· `WorkflowInput` 未声明 `title`/`description`（都在发货 schema 里）· `GlobOutput` 空着 `totalMatches`/`countIsComplete`（本引擎先枚举全集再切片，数得准）。**声明面少报代码实际接受的东西 = typed-not-populated 的镜像**。解析器出的是**假发现**不是响亮失败，故 `tests/type-parity.test.ts` 钉住历次真踩过的坑（单行 `{}` 吞下一块、纯别名伸进邻居花括号、带引号短横线键、索引签名造幽灵字段、官方 `@minItems` 元组展开挂错父节点）。**三项待守密人裁**：`AgentOutput` 官方遥测/worktree 字段 · `AgentInput.team_name` · `FileReadOutput.source`（缺的是整条 `file_unchanged` 分支）——**故意不自行并入白名单**。
+- **v0.87.1（2026-07-27）**：**嵌套路径普查（三扫）**（守密人「1 继续」）——前两轮比顶层键，本轮摊成**点号路径**再比，专抓两类前两轮**结构上看不见**的差异。**挖出一条真缺陷、是银芯自己的**：`timedOutAfterMs` 官方在**基类** `BashOutput`，0.85.0 却加在银芯**扩展类型**上——交集相同、没坏东西，但**顶层键比对永远发现不了**（键两边都有、待错了地方），已移回基类。其余全属平台绑定只登记：`gitOperation.*`（官方解析 git/gh 输出成结构化 VCS 事实）· `artifactRead.*` · `blobSavedTo` 等。~~九个类型逐层完全一致~~（**已由 v0.89.0 工具化重跑推翻**：Glob / Grep / Workflow 并不一致，本轮手搓展平器只比联合类型第一支、不匹配带引号的键，覆盖被高估）。**方法边界**：展平器不解析 TS 语义，故同时报键总数，数量级不对即解析飞了。
+
 - **v0.88.0（2026-07-27）**：处方卡型（A1）+ sessions 体检面（P1-S1）——cards 模式增处方卡（意图/步骤/结果/适用边界，按字段集判型、混用按名拒绝；进度卡映射处方型，解 P1-3）；`assessSessionStoreHealth()` 照 memory 体检成例补 sessions 域「机制无规程」缺口（会话数/字节/腐化/孤儿 checkpoint，外部店报 unavailable）；blob 上限挂 T74 待裁。审计报告补 sessions 节。
 - **v0.87.1（2026-07-27）**：**嵌套路径普查（三扫）**（守密人「1 继续」）——前两轮比顶层键，本轮摊成**点号路径**再比，专抓两类前两轮**结构上看不见**的差异。**挖出一条真缺陷、是银芯自己的**：`timedOutAfterMs` 官方在**基类** `BashOutput`，0.85.0 却加在银芯**扩展类型**上——交集相同、没坏东西，但**顶层键比对永远发现不了**（键两边都有、待错了地方），已移回基类。其余全属平台绑定只登记：`gitOperation.*`（官方解析 git/gh 输出成结构化 VCS 事实）· `artifactRead.*` · `blobSavedTo` 等。**九个类型逐层完全一致**。**方法边界**：展平器不解析 TS 语义，故同时报键总数，数量级不对即解析飞了。
 - **v0.86.0（2026-07-27）**：**主循环提示词补回开篇句 + 输出类型普查（续）**（守密人「1 对齐官方 4 续」）——① 补回官方「Text you write between tool calls may not be shown to the user.」——银芯只搬了结论没搬**理由**，缺前提的规则是模型最先绕过的那条；字节金样有意重生成、差异经核实只有这一句（四个工具集各一处）。**官方 `# Focus mode` 整块刻意不复刻**（为进不去的 UI 模式发指令 = 描述未发货能力）。② **15 个 `*Output` 逐字段比完：9 个完全一致**（FileEdit / Task 五件 / EnterWorktree / TodoWrite / Monitor）；6 个有官方独有字段，守密人裁「逐条再看」，**这一类并不齐整**——`ReadMcpResourceOutput.error` **加了并真产出**（非 UI 绑定，调用方此前分不清「读失败」与「读到空」）；`WebSearchOutput` **整体补产出**（原议题 `searchCount` 是伪命题、恒为 1，真缺口是它根本没有结构化结果；报**过滤后**命中免得与文本对不上）；其余四条**只登记不声明**（Workflow 的真障碍不在可选字段，而在必填判别式 `status:'async_launched'`——本 SDK 同步跑工作流，填它等于断言一次没发生的启动）。**射程边界**：本次为**顶层字段**比对，嵌套差异首轮漏看（`contents[].blobSavedTo` 靠人工复读才发现）。测试 3,295 → **3,297**。

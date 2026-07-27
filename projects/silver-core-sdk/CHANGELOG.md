@@ -16,6 +16,59 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.89.0 — 2026-07-27
+
+The three divergence sweeps of 2026-07-27 become one repeatable command
+(keeper: "按你建议继续"). `scripts/type-parity.mjs` diffs this SDK's tool
+Input/Output types against official's `sdk-tools.d.ts` by dotted path.
+
+**The point is not re-running the comparison — it is reporting only what is
+NEW.** Each of the three hand-rolled sweeps was throwaway, so "where did we get
+to, what was already decided" lived in someone's head, which is precisely why
+drift kept coming back (the third sweep caught a defect the second had
+introduced that same day). Divergences the keeper has already adjudicated go
+into a `RULED` allowlist and are deducted automatically; a `RULED` entry
+absorbs its whole subtree, so ruling on `BashOutput:gitOperation` does not
+leave eleven of its children in the report. A report that prints the same forty
+known rows every time gets skipped the second time — that kind of list is worth
+nothing.
+
+Report-only, always exit 0, same discipline as `description-coverage.mjs`, and
+for the same reason: the difference SHOULD NOT be zero. Red-line discipline
+forbids declaring capabilities this package does not ship, so mechanically
+flattening the two type surfaces would force this one to promise things it
+cannot do. Which gap to close and which to record is a human call. Absent the
+official d.ts the command prints how to obtain it and still exits 0 — a ruler
+should not red someone's pipeline just because it had nothing to measure.
+
+**Four real defects on its first honest run, three of them the same kind —
+shipped but undeclared:**
+
+- `GrepInput` never declared `'-o'`, which `grep.ts` has implemented all along
+  (three separate code paths).
+- `WorkflowInput` never declared `title` / `description`, both present in the
+  shipped `inputSchema` as run labels.
+- `GlobOutput` left official's `totalMatches` / `countIsComplete` empty even
+  though this engine enumerates the full match set before slicing it. Now
+  populated, and `countIsComplete` is honestly always `true` here — unlike
+  official, nothing upstream of the cap truncates its own output.
+
+A declared surface that under-reports what the code actually accepts is the
+mirror image of typed-not-populated, and just as misleading: a caller reading
+the types concludes a shipped feature does not exist.
+
+**Parser correctness is load-bearing, so it is pinned by tests.** A
+mis-parsing comparator does not fail loudly — it reports a confident, specific,
+entirely fictional divergence, and someone then "fixes" a type that was never
+wrong. All three hand-rolled sweeps did exactly that at least once.
+`tests/type-parity.test.ts` pins the traps that actually sprang: single-line
+`{}` interfaces swallowing the next block, alias declarations reaching into a
+neighbour's braces, quoted dash-flag keys, inline index signatures inventing a
+phantom field named after the index variable, and official's `@minItems`
+tuple expansion (83KB for one type) re-parenting its later elements. Each type
+also reports both sides' key counts as a parse-health sentinel: a count off by
+an order of magnitude means the parse flew off, not that the types diverged.
+
 ## 0.88.0 — 2026-07-27
 
 Prescription cards (A1) + the sessions-domain health scan (audit P1-S1) — the
