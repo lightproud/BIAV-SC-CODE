@@ -29,6 +29,11 @@ CAPS = {
     # 200——**瘦完不收上限，等于给回涨预留了 360 行的空间**，那次瘦身也就白做了。
     "projects/silver-core-sdk/CONTEXT.md": (200, "发布叙述交给 CHANGELOG.md；设计理由进 docs/"),
     "projects/silver-core-maestro-sdk/CONTEXT.md": (200, "下沉到该包 docs/ 或 CHANGELOG"),
+    # 2026-07-27 治理精简（守密人「全套」裁定）：1,123 → 477 行。SDK 一节独占 685 行
+    # （全档 61%）的发布编年史下沉 `memory/archive/sdk-status-chronicle-20260727.md`，
+    # 因为发布史的唯一权威本就是该包 CHANGELOG。它是**每会话要读的状态权威**——权威档
+    # 不该是全仓最长的档。上限 520 给 43 行余量：够写一个新子项目节，不够再长回一部编年史。
+    "memory/project-status.md": (520, "逐版叙述交给各包 CHANGELOG；历史轮次进 memory/archive/"),
 }
 
 
