@@ -6,42 +6,9 @@
 
 import { describe, it, expect, vi } from 'vitest';
 import { TaskLedger } from '../src/ledger/ledger.js';
-import type { LedgerStore, SessionFilter } from '../src/ledger/store.js';
-import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
 import { createDeliveryChannel } from '../src/delivery/channel.js';
 import type { DeliveryMessage } from '../src/delivery/channel.js';
-
-/** Minimal in-memory store; DEDICATED to the delivery channel by design. */
-function memoryStore(): LedgerStore & { sessions: Map<string, SessionRecord> } {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  return {
-    sessions,
-    async putSession(record) {
-      sessions.set(record.id, { ...record });
-    },
-    async getSession(id) {
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter?: SessionFilter) {
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) {
-        all = all.filter((s) => filter.states!.includes(s.state));
-      }
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(record) {
-      queries.push({ ...record });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-}
+import { memoryStore } from './helpers/memory-store.js';
 
 function testClock(startAt = 1_000) {
   let t = startAt;

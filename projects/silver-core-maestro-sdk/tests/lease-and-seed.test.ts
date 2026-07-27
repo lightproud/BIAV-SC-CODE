@@ -11,37 +11,8 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { LedgerDriver } from '../src/driver.js';
 import { TaskLedger } from '../src/ledger/ledger.js';
-import type { LedgerStore, SessionFilter } from '../src/ledger/store.js';
-import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
 import { Scheduler, scheduleSessionId } from '../src/schedule/scheduler.js';
-
-function memoryStore(): LedgerStore {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  return {
-    async putSession(r) {
-      sessions.set(r.id, { ...r });
-    },
-    async getSession(id) {
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter?: SessionFilter) {
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) all = all.filter((s) => filter.states!.includes(s.state));
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(r) {
-      queries.push({ ...r });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-}
+import { memoryStore } from './helpers/memory-store.js';
 
 const T0 = 1_000_000;
 

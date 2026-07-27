@@ -12,53 +12,8 @@ import { InvalidTransitionError } from '../src/ledger/state.js';
 import { LedgerDriver, type DriverEvent } from '../src/driver.js';
 import { Scheduler } from '../src/schedule/scheduler.js';
 import { createDeliveryChannel } from '../src/delivery/channel.js';
-import type { LedgerStore, SessionFilter } from '../src/ledger/store.js';
-import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
-
-function memoryStore(opts: { cas?: boolean } = {}): LedgerStore & {
-  raw: () => { sessions: Map<string, SessionRecord>; queries: QueryRecord[] };
-} {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  const store: ReturnType<typeof memoryStore> = {
-    raw: () => ({ sessions, queries }),
-    async putSession(r) {
-      sessions.set(r.id, { ...r });
-    },
-    async getSession(id) {
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter?: SessionFilter) {
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) all = all.filter((s) => filter.states!.includes(s.state));
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(r) {
-      queries.push({ ...r });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-  if (opts.cas === true) {
-    store.putSessionIf = async (r, expected) => {
-      const current = sessions.get(r.id);
-      if (expected === null) {
-        if (current !== undefined) return false;
-        sessions.set(r.id, { ...r });
-        return true;
-      }
-      if (current === undefined || (current.revision ?? 0) !== expected) return false;
-      sessions.set(r.id, { ...r });
-      return true;
-    };
-  }
-  return store;
-}
+import type { SessionRecord } from '../src/ledger/types.js';
+import { memoryStore } from './helpers/memory-store.js';
 
 const T0 = 1_000_000;
 

@@ -15,9 +15,9 @@ import {
   runLedgerStoreContractSuite,
   ledgerStoreContractCheckNames,
 } from '../src/ledger/contract-suite.js';
-import type { LedgerStore, SessionFilter } from '../src/ledger/store.js';
-import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
+import type { SessionRecord } from '../src/ledger/types.js';
 import { Scheduler } from '../src/schedule/scheduler.js';
+import { memoryStore } from './helpers/memory-store.js';
 
 function mulberry32(seed: number): () => number {
   let a = seed >>> 0;
@@ -28,69 +28,6 @@ function mulberry32(seed: number): () => number {
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
-}
-
-/**
- * In-memory store; `cas: true` implements putSessionIf (the audit-r4 seam);
- * `hop` injects randomized microtask yields to force real interleavings
- * between two TaskLedger hosts sharing the store.
- */
-function memoryStore(opts: { cas?: boolean; hop?: () => number } = {}): LedgerStore & {
-  raw: () => { sessions: Map<string, SessionRecord>; queries: QueryRecord[] };
-} {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  const yieldSome = async (): Promise<void> => {
-    if (opts.hop === undefined) return;
-    const hops = Math.floor(opts.hop() * 3);
-    for (let i = 0; i < hops; i += 1) await Promise.resolve();
-  };
-  const store: LedgerStore & { raw: () => { sessions: Map<string, SessionRecord>; queries: QueryRecord[] } } = {
-    raw: () => ({ sessions, queries }),
-    async putSession(r) {
-      await yieldSome();
-      sessions.set(r.id, { ...r });
-    },
-    async getSession(id) {
-      await yieldSome();
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter?: SessionFilter) {
-      await yieldSome();
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) all = all.filter((s) => filter.states!.includes(s.state));
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(r) {
-      await yieldSome();
-      queries.push({ ...r });
-    },
-    async listQueries(sessionId) {
-      await yieldSome();
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-  if (opts.cas === true) {
-    store.putSessionIf = async (r, expected) => {
-      // The compare and the write are a single synchronous block — atomic
-      // with respect to other store calls, as the seam contract requires.
-      await yieldSome();
-      const current = sessions.get(r.id);
-      if (expected === null) {
-        if (current !== undefined) return false;
-        sessions.set(r.id, { ...r });
-        return true;
-      }
-      if (current === undefined || (current.revision ?? 0) !== expected) return false;
-      sessions.set(r.id, { ...r });
-      return true;
-    };
-  }
-  return store;
 }
 
 const T0 = 1_000_000;

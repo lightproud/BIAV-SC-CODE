@@ -10,50 +10,9 @@ import { LedgerDriver } from '../src/driver.js';
 import { Scheduler } from '../src/schedule/scheduler.js';
 import { nextFireAt, firesBetween } from '../src/schedule/spec.js';
 import { validateGraph, GraphError } from '../src/workflow/graph.js';
-import type { LedgerStore, SessionFilter } from '../src/ledger/store.js';
-import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
-
-function memoryStore(): LedgerStore & {
-  sessions: Map<string, SessionRecord>;
-  queries: QueryRecord[];
-  failNextPutSession: () => void;
-} {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  let failPut = false;
-  return {
-    sessions,
-    queries,
-    failNextPutSession() {
-      failPut = true;
-    },
-    async putSession(r) {
-      if (failPut) {
-        failPut = false;
-        throw new Error('store hiccup');
-      }
-      sessions.set(r.id, { ...r });
-    },
-    async getSession(id) {
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter?: SessionFilter) {
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) all = all.filter((s) => filter.states!.includes(s.state));
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(r) {
-      queries.push({ ...r });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-}
+import type { SessionFilter } from '../src/ledger/store.js';
+import type { SessionRecord } from '../src/ledger/types.js';
+import { memoryStore } from './helpers/memory-store.js';
 
 const clockAt = (t: number) => ({ now: () => t });
 

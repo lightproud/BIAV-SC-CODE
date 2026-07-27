@@ -8,41 +8,11 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TaskLedger } from '../src/ledger/ledger.js';
 import { LedgerDriver } from '../src/driver.js';
 import type { ExecutorResult } from '../src/driver.js';
-import type { LedgerStore } from '../src/ledger/store.js';
-import type { QueryRecord, SessionRecord, SessionState } from '../src/ledger/types.js';
+import type { SessionRecord, SessionState } from '../src/ledger/types.js';
 import { GoalChaser, goalRoundSessionId } from '../src/goal/chaser.js';
 import type { GoalChaserEvent, GoalEvaluator, GoalRoundPayload } from '../src/goal/chaser.js';
 import type { GoalVerdict } from '../src/goal/decision.js';
-
-function memoryStore(): LedgerStore {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  return {
-    async putSession(record) {
-      sessions.set(record.id, { ...record });
-    },
-    async getSession(id) {
-      const record = sessions.get(id);
-      return record === undefined ? null : { ...record };
-    },
-    async listSessions(filter) {
-      let all = [...sessions.values()];
-      const states = filter?.states;
-      if (states !== undefined) all = all.filter((s) => states.includes(s.state));
-      const dueBefore = filter?.dueBefore;
-      if (dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= dueBefore);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(record) {
-      queries.push({ ...record });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-}
+import { memoryStore } from './helpers/memory-store.js';
 
 interface EvalCall {
   round: number;
