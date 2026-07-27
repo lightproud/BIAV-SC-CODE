@@ -193,7 +193,7 @@ describe('webFetchTool', () => {
       fetchImpl: fetchReturning(new Response(big, { headers: { 'content-type': 'text/plain' } })),
     });
     const r = await webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx);
-    expect(String(r.content)).toContain('[truncated]');
+    expect(String(r.content)).toContain('[Output truncated:');
     expect(String(r.content).length).toBeLessThan(200_000);
   });
 
@@ -210,7 +210,7 @@ describe('webFetchTool', () => {
     });
     const r = await webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx);
     const body = String(r.content);
-    expect(body).toBe(`${'y'.repeat(MAX_READ_OUTPUT_CHARS)}\n\n[truncated]`);
+    expect(body.startsWith(`${'y'.repeat(MAX_READ_OUTPUT_CHARS)}\n\n[Output truncated:`)).toBe(true);
     expect(MAX_READ_OUTPUT_CHARS).toBeLessThan(100_000);
   });
 
@@ -312,7 +312,7 @@ describe('webFetchTool', () => {
     const ctx = makeCtx({ fetchImpl: fetchReturning(resp) });
     const r = await webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx);
     expect(r.isError).toBeUndefined();
-    expect(String(r.content)).toContain('[truncated]');
+    expect(String(r.content)).toContain('[Output truncated:');
     // The reader is cancelled shortly past the cap; before the fix arrayBuffer()
     // drained all 20MB into memory. The bound allows a couple of extra chunks:
     // the correct overflow check reads one chunk to fill the cap and one more to

@@ -158,7 +158,9 @@ export const globTool: BuiltinTool = {
     const lines = capped.map((e) => e.path);
     if (sorted.length > MAX_RESULTS) {
       lines.push(
-        `(Results truncated: showing first ${MAX_RESULTS} of ${sorted.length} matches)`,
+        `(Results truncated: showing the ${MAX_RESULTS} most recently modified ` +
+          `of ${sorted.length} matches. Narrow the pattern or search a more ` +
+          `specific path to reach the rest.)`,
       );
     }
     return {

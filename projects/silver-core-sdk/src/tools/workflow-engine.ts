@@ -782,7 +782,12 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
 
   const pushProgress = (line: string): void => {
     if (progress.length < MAX_PROGRESS_LINES) progress.push(line);
-    else if (progress.length === MAX_PROGRESS_LINES) progress.push('[...] progress truncated');
+    else if (progress.length === MAX_PROGRESS_LINES) {
+      progress.push(
+        `[...] progress transcript capped at ${MAX_PROGRESS_LINES} lines; ` +
+          `later lines are dropped (full sequence available via debug logging)`,
+      );
+    }
     opts.debug(`Workflow: ${line}`);
   };
 

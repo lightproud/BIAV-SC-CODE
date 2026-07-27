@@ -334,11 +334,18 @@ export type BackgroundShell = {
   id: string;
   command: string;
   pid: number | undefined;
+  /** Retained window of the stream (the TAIL once the cap overflows). */
   stdout: string;
-  stdoutTruncated: boolean;
+  /** Chars dropped from the FRONT of stdout by the retention window (0 =
+   *  nothing dropped; the window then holds the whole stream). The stored
+   *  string covers logical offsets [droppedOut, droppedOut + stdout.length). */
+  droppedOut: number;
   stderr: string;
-  stderrTruncated: boolean;
-  /** Incremental-read cursors (BashOutput returns only new output). */
+  droppedErr: number;
+  /** Incremental-read cursors as ABSOLUTE logical stream offsets (BashOutput
+   *  returns only new output). A cursor behind the window start means the
+   *  reader missed dropped output — readers surface that as an explicit gap
+   *  marker, never silently. */
   cursorOut: number;
   cursorErr: number;
   status: BackgroundShellStatus;

@@ -36,9 +36,10 @@ const KILL_GRACE_MS = 2_000;
  */
 const FLUSH_GRACE_MS = 200;
 
-/** Leading marker a capped stream carries; also the `truncated` signal in the
- *  structured result, so the two can never disagree. */
-const BASH_TRUNCATION_MARKER = '[truncated: earlier output dropped]';
+/** Leading marker shape a capped stream carries (the dropped count varies per
+ *  run); also the `truncated` signal in the structured result, so the two can
+ *  never disagree. */
+const BASH_TRUNCATION_MARKER_RE = /^\[\d+ earlier chars dropped:/;
 
 /**
  * Accumulates stream output, keeping only the LAST STREAM_CAP_CHARS chars.
@@ -55,18 +56,24 @@ const BASH_TRUNCATION_MARKER = '[truncated: earlier output dropped]';
  */
 class CappedStream {
   private buf = '';
-  private truncated = false;
+  private dropped = 0;
 
   append(chunk: string): void {
     this.buf += chunk;
     if (this.buf.length > STREAM_CAP_CHARS) {
+      const before = this.buf.length;
       this.buf = sliceTailSurrogateSafe(this.buf, STREAM_CAP_CHARS);
-      this.truncated = true;
+      this.dropped += before - this.buf.length;
     }
   }
 
   text(): string {
-    return this.truncated ? `${BASH_TRUNCATION_MARKER}\n${this.buf}` : this.buf;
+    // Truncation discipline (keeper 2026-07-27): how much, why, how to recover.
+    return this.dropped > 0
+      ? `[${this.dropped} earlier chars dropped: output exceeded the ` +
+          `${STREAM_CAP_CHARS}-char cap and only the tail is kept. For the full ` +
+          `output, redirect to a file (command > out.log 2>&1) and read it.]\n${this.buf}`
+      : this.buf;
   }
 }
 
@@ -509,8 +516,8 @@ function bashStructured(
     exitCode: outcome.code,
     ...(opts.timedOutAfterMs !== undefined && { timedOutAfterMs: opts.timedOutAfterMs }),
     truncated:
-      outcome.stdout.startsWith(BASH_TRUNCATION_MARKER) ||
-      outcome.stderr.startsWith(BASH_TRUNCATION_MARKER),
+      BASH_TRUNCATION_MARKER_RE.test(outcome.stdout) ||
+      BASH_TRUNCATION_MARKER_RE.test(outcome.stderr),
   };
 }
 

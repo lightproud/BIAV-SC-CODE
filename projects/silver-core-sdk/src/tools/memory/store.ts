@@ -33,7 +33,7 @@ import { Buffer } from 'node:buffer';
 import type { MemoryStore } from '../../internal/contracts.js';
 import { MemoryToolError } from '../../errors.js';
 import { sliceSurrogateSafe } from '../../internal/text.js';
-import { MEMORY_ROOT, validateMemoryPath } from './paths.js';
+import { MEMORY_INDEX_PATH, MEMORY_ROOT, validateMemoryPath } from './paths.js';
 import {
   DEFAULT_CARDS_CONFIG,
   validateCardsContent,
@@ -204,7 +204,12 @@ export function createMemoryStore(
     if (Buffer.byteLength(content, 'utf8') > limits.maxFileBytes) {
       throw new MemoryToolError(fileTooLargeError(path, limits.maxFileBytes));
     }
-    if (options.schema === 'cards') {
+    // The resident index is EXEMPT from cards validation (keeper 2026-07-27):
+    // the index is an index, not a memory — R9 cards discipline governs memory
+    // bodies, while the index-discipline fragment requires one-line pointer
+    // entries there. Without this exemption the two harness rules contradict:
+    // the prompt demands pointer lines the cards validator then rejects.
+    if (options.schema === 'cards' && path !== MEMORY_INDEX_PATH) {
       const invalid = validateCardsContent(content, cardsCfg);
       if (invalid !== null) throw new MemoryToolError(invalid);
     }

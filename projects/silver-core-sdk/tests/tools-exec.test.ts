@@ -30,7 +30,12 @@ import type {
 
 /** The Bash stream cap's marker, kept in one place so the cap tests below read
  *  as assertions about WHERE the cut happened, not about marker spelling. */
-const BASH_TRUNCATION_MARKER = '[truncated: earlier output dropped]';
+/** The three-question cap marker (keeper 2026-07-27): how much / why / how
+ *  to recover. Parameterized by the exact dropped count the buffer reports. */
+const bashMarker = (dropped: number): string =>
+  `[${dropped} earlier chars dropped: output exceeded the 30000-char cap and ` +
+  `only the tail is kept. For the full output, redirect to a file ` +
+  `(command > out.log 2>&1) and read it.]`;
 
 let root: string;
 
@@ -173,7 +178,7 @@ describe('Bash tool', () => {
       makeCtx(dir),
     );
     expect(res.isError).toBeFalsy();
-    expect(text(res)).toBe(`${BASH_TRUNCATION_MARKER}\n${'a'.repeat(30000)}`);
+    expect(text(res)).toBe(`${bashMarker(10000)}\n${'a'.repeat(30000)}`);
   });
 
   // 2026-07-27 (limits alignment): the cap keeps the TAIL, not the head. A long
@@ -190,7 +195,7 @@ describe('Bash tool', () => {
     const out = text(res);
     // Exactly the final 30000 chars of the 40012-char stream, marker in front.
     expect(out).toBe(
-      `${BASH_TRUNCATION_MARKER}\n${'a'.repeat(30000 - 'VERDICT-LAST'.length)}VERDICT-LAST`,
+      `${bashMarker(10012)}\n${'a'.repeat(30000 - 'VERDICT-LAST'.length)}VERDICT-LAST`,
     );
   });
 
@@ -203,8 +208,8 @@ describe('Bash tool', () => {
     expect(res.isError).toBeFalsy();
     const parts = text(res).split('\n[stderr]\n');
     expect(parts).toHaveLength(2);
-    expect(parts[0]).toBe(`${BASH_TRUNCATION_MARKER}\n${'x'.repeat(30000)}`);
-    expect(parts[1]).toBe(`${BASH_TRUNCATION_MARKER}\n${'x'.repeat(30000)}`);
+    expect(parts[0]).toBe(`${bashMarker(10000)}\n${'x'.repeat(30000)}`);
+    expect(parts[1]).toBe(`${bashMarker(10000)}\n${'x'.repeat(30000)}`);
   });
 
   it('runs the command in ctx.cwd', async () => {
@@ -386,7 +391,9 @@ describe('Glob tool', () => {
     const lines = text(res).split('\n');
     expect(lines).toHaveLength(101);
     expect(lines[100]).toBe(
-      '(Results truncated: showing first 100 of 105 matches)',
+      '(Results truncated: showing the 100 most recently modified of 105 ' +
+        'matches. Narrow the pattern or search a more specific path to reach ' +
+        'the rest.)',
     );
     // The first 100 lines are all real paths inside the sandbox.
     for (const line of lines.slice(0, 100)) {

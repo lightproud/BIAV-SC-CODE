@@ -3,14 +3,14 @@ name: Run Tests
 on:
   push:
     branches: [main]
-    paths:
-      - 'scripts/**'
-      - 'projects/news/scripts/**'
-      - 'tests/**'
-      - 'CLAUDE.md'
-      - 'memory/decisions.md'
-      - 'memory/decisions-archive.md'
-      - '.github/workflows/test.yml'
+    # NO paths filter on push either (keeper ruling 2026-07-27). The old filter
+    # (scripts/tests/CLAUDE.md/decisions) meant a merge touching only
+    # projects/** or memory/project-status.md never re-ran the suite ON MAIN —
+    # #850 landed with a known-red pytest step and main's own CI simply never
+    # looked (the sentinel red cleared minutes later via the OKF rebuild, but
+    # that was verified by hand, not by this workflow). The suite is ~20s on a
+    # sparse checkout; running it on every non-[skip ci] push to main closes
+    # the blind spot at negligible cost.
   pull_request:
     # NO paths filter on purpose. History: `test` was a required status check
     # (ruleset) until 2026-06-21, when the keeper removed it because full

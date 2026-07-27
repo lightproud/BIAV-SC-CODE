@@ -50,21 +50,30 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
     stateDir = '';
   }
 
+  // Retention window: keep the TAIL, drop from the FRONT (keeper ruling
+  // 2026-07-27, truncation-discipline batch). The old behavior kept the head
+  // and went permanently deaf at the cap — for a log stream the value is in
+  // the tail (the test verdict, the build failure), so the cap used to keep
+  // 500K chars of preamble and discard the one line that mattered. Dropped
+  // chars are COUNTED, never silent: readers surface a gap marker when their
+  // cursor falls behind the window start.
   const append = (
     shellRec: BackgroundShell,
     stream: 'stdout' | 'stderr',
     chunk: string,
   ): void => {
-    const truncatedKey = stream === 'stdout' ? 'stdoutTruncated' : 'stderrTruncated';
-    if (shellRec[truncatedKey]) return;
-    const current = shellRec[stream];
-    const remaining = BG_STREAM_CAP_CHARS - current.length;
-    if (chunk.length <= remaining) {
-      shellRec[stream] = current + chunk;
-    } else {
-      shellRec[stream] = current + chunk.slice(0, remaining);
-      shellRec[truncatedKey] = true;
+    const droppedKey = stream === 'stdout' ? 'droppedOut' : 'droppedErr';
+    let next = shellRec[stream] + chunk;
+    if (next.length > BG_STREAM_CAP_CHARS) {
+      let cut = next.length - BG_STREAM_CAP_CHARS;
+      // Never let the window start on a low surrogate (a front-cut can land
+      // mid-pair; one extra char restores a valid boundary).
+      const c = next.charCodeAt(cut);
+      if (c >= 0xdc00 && c <= 0xdfff) cut += 1;
+      shellRec[droppedKey] += cut;
+      next = next.slice(cut);
     }
+    shellRec[stream] = next;
   };
 
   return {
@@ -124,9 +133,9 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         command,
         pid: child.pid,
         stdout: '',
-        stdoutTruncated: false,
+        droppedOut: 0,
         stderr: '',
-        stderrTruncated: false,
+        droppedErr: 0,
         cursorOut: 0,
         cursorErr: 0,
         status: 'running',
@@ -361,16 +370,34 @@ function filterLines(chunk: string, filter: string | undefined): string {
  * cap, i.e. no more data is coming), everything is consumed.
  */
 function consumeWindow(
-  data: string,
-  cursor: number,
+  stored: string,
+  dropped: number,
+  cursorAbs: number,
   holdPartialTail: boolean,
-): { chunk: string; nextCursor: number } {
+): { chunk: string; nextCursor: number; gap: number } {
+  // The stored string covers logical offsets [dropped, dropped+stored.length);
+  // a cursor behind the window start means output was dropped before this
+  // reader saw it — the caller surfaces `gap` as an explicit marker.
+  const startAbs = Math.max(cursorAbs, dropped);
+  const gap = startAbs - cursorAbs;
+  const rel = startAbs - dropped;
   if (!holdPartialTail) {
-    return { chunk: data.slice(cursor), nextCursor: data.length };
+    return { chunk: stored.slice(rel), nextCursor: dropped + stored.length, gap };
   }
-  const lastNl = data.lastIndexOf('\n');
-  const end = lastNl >= cursor ? lastNl + 1 : cursor;
-  return { chunk: data.slice(cursor, end), nextCursor: end };
+  const lastNl = stored.lastIndexOf('\n');
+  const endRel = lastNl >= rel ? lastNl + 1 : rel;
+  return { chunk: stored.slice(rel, endRel), nextCursor: dropped + endRel, gap };
+}
+
+/** The gap marker readers emit when the retention window dropped output they
+ *  had not read yet: how much, why, and how to avoid losing more. */
+function gapMarker(stream: 'stdout' | 'stderr', gap: number): string {
+  return (
+    `[${gap} chars of ${stream} were dropped before this point: unread output ` +
+    `beyond the ${BG_STREAM_CAP_CHARS}-char retention window is discarded ` +
+    `oldest-first. Read more often, or redirect the command's output to a ` +
+    `file and read the file instead.]`
+  );
 }
 
 /**
@@ -464,31 +491,36 @@ export const bashOutputTool: BuiltinTool = {
     // poll — because a stalled tail is a stable prompt, not a line still being
     // written. The split-line case F4 protects (bytes arriving between polls)
     // is untouched: a growing stream is never treated as stalled.
+    // Stall detection compares LOGICAL stream totals (dropped + window), not
+    // window lengths: a stream pinned at the retention cap keeps a constant
+    // window length while still growing.
+    const totalOut = rec.droppedOut + rec.stdout.length;
+    const totalErr = rec.droppedErr + rec.stderr.length;
     const prev = lastPolledLen.get(rec);
-    const stalledOut = prev !== undefined && prev.out === rec.stdout.length;
-    const stalledErr = prev !== undefined && prev.err === rec.stderr.length;
-    const winOut = consumeWindow(
-      rec.stdout,
-      rec.cursorOut,
-      holding && !rec.stdoutTruncated && !stalledOut,
-    );
-    const winErr = consumeWindow(
-      rec.stderr,
-      rec.cursorErr,
-      holding && !rec.stderrTruncated && !stalledErr,
-    );
+    const stalledOut = prev !== undefined && prev.out === totalOut;
+    const stalledErr = prev !== undefined && prev.err === totalErr;
+    const winOut = consumeWindow(rec.stdout, rec.droppedOut, rec.cursorOut, holding && !stalledOut);
+    const winErr = consumeWindow(rec.stderr, rec.droppedErr, rec.cursorErr, holding && !stalledErr);
     rec.cursorOut = winOut.nextCursor;
     rec.cursorErr = winErr.nextCursor;
-    lastPolledLen.set(rec, { out: rec.stdout.length, err: rec.stderr.length });
+    lastPolledLen.set(rec, { out: totalOut, err: totalErr });
 
     const parts: string[] = [describeStatus(rec)];
     const out = filterLines(winOut.chunk, filter);
     const err = filterLines(winErr.chunk, filter);
+    // A reader that fell behind the retention window gets the gap stated in
+    // place — how much, why, and how to avoid losing more — never a silent
+    // resume from the window start.
+    if (winOut.gap > 0) parts.push(gapMarker('stdout', winOut.gap));
     if (out.length > 0) parts.push(out);
-    if (err.length > 0) parts.push(`[stderr]\n${err}`);
-    if (out.length === 0 && err.length === 0) parts.push('(no new output)');
-    if (rec.stdoutTruncated || rec.stderrTruncated) {
-      parts.push('[output truncated at the accumulation cap]');
+    if (winErr.gap > 0 || err.length > 0) {
+      const errParts: string[] = [];
+      if (winErr.gap > 0) errParts.push(gapMarker('stderr', winErr.gap));
+      if (err.length > 0) errParts.push(err);
+      parts.push(`[stderr]\n${errParts.join('\n')}`);
+    }
+    if (out.length === 0 && err.length === 0 && winOut.gap === 0 && winErr.gap === 0) {
+      parts.push('(no new output)');
     }
     return { content: parts.join('\n') };
   },
@@ -559,16 +591,21 @@ const TASK_OUTPUT_POLL_MS = 50;
 
 /** Drain output accumulated since the last read and advance the cursors. */
 function drainNewOutput(rec: BackgroundShell): string {
-  const newOut = rec.stdout.slice(rec.cursorOut);
-  const newErr = rec.stderr.slice(rec.cursorErr);
-  rec.cursorOut = rec.stdout.length;
-  rec.cursorErr = rec.stderr.length;
+  const winOut = consumeWindow(rec.stdout, rec.droppedOut, rec.cursorOut, false);
+  const winErr = consumeWindow(rec.stderr, rec.droppedErr, rec.cursorErr, false);
+  rec.cursorOut = winOut.nextCursor;
+  rec.cursorErr = winErr.nextCursor;
   const parts: string[] = [describeStatus(rec)];
-  if (newOut.length > 0) parts.push(newOut);
-  if (newErr.length > 0) parts.push(`[stderr]\n${newErr}`);
-  if (newOut.length === 0 && newErr.length === 0) parts.push('(no new output)');
-  if (rec.stdoutTruncated || rec.stderrTruncated) {
-    parts.push('[output truncated at the accumulation cap]');
+  if (winOut.gap > 0) parts.push(gapMarker('stdout', winOut.gap));
+  if (winOut.chunk.length > 0) parts.push(winOut.chunk);
+  if (winErr.gap > 0 || winErr.chunk.length > 0) {
+    const errParts: string[] = [];
+    if (winErr.gap > 0) errParts.push(gapMarker('stderr', winErr.gap));
+    if (winErr.chunk.length > 0) errParts.push(winErr.chunk);
+    parts.push(`[stderr]\n${errParts.join('\n')}`);
+  }
+  if (winOut.chunk.length === 0 && winErr.chunk.length === 0 && winOut.gap === 0 && winErr.gap === 0) {
+    parts.push('(no new output)');
   }
   return parts.join('\n');
 }
@@ -632,7 +669,9 @@ export const taskOutputTool: BuiltinTool = {
         // dispose, subagent aborts, MCP close) queues behind it. Bail on abort
         // like every other builtin (audit 2026-07-10 P0-3).
         if (ctx.signal.aborted) throw new AbortError();
-        const hasNew = rec.stdout.length > rec.cursorOut || rec.stderr.length > rec.cursorErr;
+        const hasNew =
+          rec.droppedOut + rec.stdout.length > rec.cursorOut ||
+          rec.droppedErr + rec.stderr.length > rec.cursorErr;
         if (hasNew || rec.status !== 'running') break;
         await new Promise<void>((resolve) => {
           const t = setTimeout(resolve, TASK_OUTPUT_POLL_MS);

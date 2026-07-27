@@ -233,6 +233,20 @@ def main() -> int:
               f"要么被改名、要么 REQUIRED_CHECKS 过期。先修这个，别跑。\033[0m")
         return 2
 
+    # pre-push 钩子装配自检（2026-07-27 复核发现：新容器必漏 §7.4 的一次性
+    # `git config core.hooksPath .githooks`，撞车防线在不知情中缺席——#850 与
+    # #851 相隔 2 分钟落 main，靠 textual 合并碰巧干净过关）。警告不拦（CI 等
+    # 无推送场景不适用），但必须被念出来。
+    if (REPO / ".githooks").is_dir():
+        hooks = subprocess.run(
+            ["git", "config", "core.hooksPath"],
+            cwd=REPO, capture_output=True, text=True,
+        ).stdout.strip()
+        if hooks != ".githooks":
+            print("\033[33m警告：core.hooksPath 未指向 .githooks——pre-push 自动"
+                  " rebase 防线不在场（§7.4：每个新克隆/容器跑一次 "
+                  "`git config core.hooksPath .githooks`）。\033[0m")
+
     live = {"gate"} | ({"setup", "needs-arm"} if args.with_setup else set())
     runnable = [s for s in steps if s.kind in live]
     skipped = [s for s in steps if s not in runnable]

@@ -6,36 +6,30 @@
 逼「建层 / 补指针 / 显式豁免」。自动化 ultracode 批判员当初的人工活（曾漏 CLAUDE.md、extracted/）。
 
 sparse checkout（归档层缺席）下相应 glob 自动落空、跳过，不放水。
+
+两档制（守密人 2026-07-27 裁定，修「哨兵与 §6.1 打架」）：§6.1 明文内容 PR 不必
+随包重建 OKF（合并 main 后自动重建收编），旧哨兵却对任何新知识文件立即硬红——
+每加一个文件必带红过门，逼人肉豁免。现按 okf/coverage_inventory.json（上次重建
+时点的知识文件存量，build_okf_bundle.py 落）分两档：**清单内未覆盖 = 生成器见过
+仍漏 = 硬红**；**清单外未覆盖 = 重建后新增 = 软报（打印待收编清单）不红**——下次
+重建把它收进清单，届时仍未覆盖照样硬红，洞最多活一个重建周期。清单缺席时回退
+旧全严格行为。
 """
 from __future__ import annotations
 
 import re
 from pathlib import Path
 
+import _paths  # noqa: F401
+import kb_coverage
+
 REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
 RESERVED = {"index.md", "log.md"}
 FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
 
-# 应被知识库覆盖的「知识文件」glob（相对仓根）。纯代码/生成物/瞬态不在内。
-KNOWLEDGE_GLOBS = [
-    "assets/data/*.json", "assets/data/*.md",
-    "assets/data/character-personas/*.json", "assets/data/character-personas/*.md",
-    "memory/*.md", "memory/*.json",
-    "memory/active/*.md", "memory/research/*.md", "memory/strategy/*.md",
-    "projects/wiki/data/processed/*.json", "projects/wiki/data/processed/*.md",
-    "projects/wiki/data/processed/story/*.json", "projects/wiki/data/processed/story/*.md",
-    "projects/wiki/data/schemas/*.json",
-    "projects/news/index/community_index.json",
-    "projects/news/output/*-latest.json",
-    "Public-Info-Pool/Resource/*/*.md",
-    "projects/news/CONTEXT.md", "projects/wiki/CONTEXT.md", "projects/site/CONTEXT.md",
-    "projects/game/CONTEXT.md", "projects/silver-core-sdk/CONTEXT.md",
-    "projects/silver-core-sdk/docs/*.md",
-    "projects/site/design/*.html", "projects/site/design/*.css",
-]
-# 单列的顶层知识文件
-KNOWLEDGE_FILES = ["CLAUDE.md", "README.md", "RELEASES.md"]
+# 知识文件 glob 单一真相源已下沉 scripts/kb_coverage.py（生成器落存量清单
+# 用同一份，抄两份必漂移）。
 
 # 正当不覆盖的例外（每条须有理由；覆盖到位后可删条以复归严格）。
 ALLOWLIST = {
@@ -75,22 +69,33 @@ def test_every_knowledge_file_is_covered():
     targets = _resource_targets()
     assert targets, "无任何概念 resource——bundle 可能未生成"
 
-    knowledge: set[str] = set()
-    for g in KNOWLEDGE_GLOBS:
-        for p in REPO.glob(g):
-            if p.is_file():
-                knowledge.add(p.relative_to(REPO).as_posix())
-    for f in KNOWLEDGE_FILES:
-        if (REPO / f).exists():
-            knowledge.add(f)
-
+    knowledge = kb_coverage.collect_knowledge_files(REPO)
     uncovered = sorted(
         rel for rel in knowledge
         if rel not in ALLOWLIST and not _covered(rel, targets)
     )
-    assert uncovered == [], (
-        "知识库假完备——以下知识文件无任何概念指向（建层/补指针 okf_pointer_layers，"
-        f"或加 ALLOWLIST 附理由）：{uncovered}"
+
+    inventory = kb_coverage.read_inventory(REPO)
+    if inventory is None:
+        # 清单缺席（重建尚未产出过）：回退旧全严格行为。
+        assert uncovered == [], (
+            "知识库假完备——以下知识文件无任何概念指向（建层/补指针 okf_pointer_layers，"
+            f"或加 ALLOWLIST 附理由）：{uncovered}"
+        )
+        return
+
+    hard = [rel for rel in uncovered if rel in inventory]
+    pending = [rel for rel in uncovered if rel not in inventory]
+    if pending:
+        # 重建后新增、待下次 OKF 重建收编（§6.1 push 触发器）。软报不红——
+        # 但下次重建后它进清单，仍未覆盖即硬红。
+        print(
+            "kb-coverage: pending next OKF rebuild (added after the last one, "
+            f"not failing yet): {pending}"
+        )
+    assert hard == [], (
+        "知识库假完备——以下知识文件在上次 OKF 重建时已存在、生成器仍未覆盖"
+        f"（建层/补指针 okf_pointer_layers，或加 ALLOWLIST 附理由）：{hard}"
     )
 
 
