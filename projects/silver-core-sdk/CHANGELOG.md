@@ -16,6 +16,36 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.87.1 — 2026-07-27
+
+Nested-path sweep against official 2.1.220 — the third and last axis of the
+divergence work (keeper: "1 继续"). The two earlier sweeps compared TOP-LEVEL
+keys; this one flattens both sides into dotted paths and diffs those.
+
+**One real defect, and it was ours.** `timedOutAfterMs` lives in official's BASE
+`BashOutput`; 0.85.0 put it on this SDK's EXTENSION type instead. The resulting
+intersection is identical — nothing broke, no consumer could tell — and NO
+top-level key diff could ever have flagged it, because the key was present on
+both sides. It was in the wrong place, which is a shape a key-set comparison is
+structurally blind to. Moved to the base type; the extension keeps only
+`exitCode` and `truncated`, which official genuinely lacks.
+
+Everything else the sweep found is platform-bound and recorded in
+docs/COMPAT.md rather than declared: `BashOutput.gitOperation.*` (official
+parses git/gh command OUTPUT into structured VCS facts — this SDK has no such
+parser), `ghRateLimitHint` / `staleReadFileStateHint` / `backgroundCwdHint` /
+`noOutputExpected`, `WebFetchOutput.artifactRead.*`, `gitDiff.repository` inside
+a shape this SDK declares but never populates, `contents[].blobSavedTo`, and the
+AskUserQuestion permission-UI paths already ruled on.
+
+Nine types are identical at EVERY depth: Glob, Grep, WebSearch, Monitor, the
+Task quintet, TodoWrite, EnterWorktree, ExitPlanMode, Workflow.
+
+Method limit stated in COMPAT rather than implied: the flattener tracks brace
+depth and key names, not TypeScript semantics. Per-type key counts are reported
+next to each diff so a mis-parse shows up as a wrong order of magnitude instead
+of masquerading as a divergence.
+
 ## 0.87.0 — 2026-07-27
 
 Truncation discipline, family-wide (keeper ruling, same-day review batch) — any
@@ -51,7 +81,6 @@ family to the same line, plus one review-found contradiction fix.
 - **`tests/truncation-discipline.test.ts`**: pins the repaired notices AND
   carries a registry test — any new truncation site in `src/tools/` must
   register and cover its message, or the suite reds.
-
 ## 0.86.0 — 2026-07-27
 
 Prompt alignment + the second half of the output-type sweep (keeper: "1 对齐官方
