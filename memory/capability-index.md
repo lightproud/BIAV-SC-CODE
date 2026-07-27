@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-27
-- 功能总数：**153**
-- 脚本可达性：活 81 / 仅测试 0 / 孤儿 0
+- 功能总数：**154**
+- 脚本可达性：活 82 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 45 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 38 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 12 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
@@ -127,7 +127,7 @@
 - **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
   `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（37）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（38）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -163,6 +163,8 @@
   `scripts/kb_ab.py`
 - **`kb_anchor.py`** _[活:mcp]_ — kb_anchor.py — 先锚后扩合流（§八 8.3「厚锚撑向量」检索侧合流，import-only 库）。  
   `scripts/kb_anchor.py`
+- **`kb_coverage.py`** _[活:import]_ — 知识文件清点（KB 覆盖哨兵与 OKF 生成器的共用真相源）。  
+  `scripts/kb_coverage.py`
 - **`kb_eval.py`** _[活:cli]_ — kb_eval.py — 知识库需求侧有效性评分器（北极星评判体系 #1，黄金问题集）。  
   `scripts/kb_eval.py`
 - **`kb_golden_gen.py`** _[活:cli]_ — kb_golden_gen.py — 图驱动黄金集自动生成器（评判体系 #1 扩容）。  

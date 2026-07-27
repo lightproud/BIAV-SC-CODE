@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 45,
-      "scripts_top": 37,
+      "scripts_top": 38,
       "scripts_news": 32,
       "scripts_wiki": 12,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 5,
       "projects": 7,
-      "total": 153
+      "total": 154
     },
     "reachability": {
-      "live": 81,
+      "live": 82,
       "test-only": 0,
       "orphaned": 0
     }
@@ -603,6 +603,15 @@
       "summary": "kb_anchor.py — 先锚后扩合流（§八 8.3「厚锚撑向量」检索侧合流，import-only 库）。",
       "planes": [
         "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_coverage.py",
+      "path": "scripts/kb_coverage.py",
+      "summary": "知识文件清点（KB 覆盖哨兵与 OKF 生成器的共用真相源）。",
+      "planes": [
+        "import"
       ],
       "status": "live"
     },
