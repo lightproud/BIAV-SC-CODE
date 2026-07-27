@@ -218,7 +218,7 @@ Usage:
 - The file_path parameter must be an absolute path, not a relative path
 - By default, it reads up to 2000 lines starting from the beginning of the file
 - Any lines longer than 2000 characters will be truncated
-- Output is also capped at ~50000 characters total; when truncated, a footer shows the exact line range returned and the offset to continue reading from
+- Output is also capped at ~50000 characters total; when truncated, a footer shows the exact line range returned, the offset for the next page, and a reminder to consider Grep instead of paging - do not answer from one page alone if the answer may be further in the file
 - Results are returned using cat -n format, with line numbers starting at 1
 - You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters
 - This tool allows you to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as this is a multimodal model.

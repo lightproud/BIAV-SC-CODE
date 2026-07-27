@@ -444,16 +444,35 @@ test, applied to faithful and adapted alike. That makes three dangling slugs fro
 this one snapshot: two reddened main for six hours (v0.80.1), this third was
 found only by hand.
 
-**Numeric basis — NOT realignable in-repo, and that boundary matters.** The
-v0.80.0 limits work was measured against constants extracted from a 2.1.141
-`claude.exe`. The archive layer cannot refresh those: the reconstruction
-template-izes exactly the numbers (`${MAX_LINES_CONSTANT}` and friends), and the
-grep fragments carry no parameter-level docs at all — so the `head_limit` default
-of 250, Read's 25,000-token cap, Bash's 30,000 and WebFetch's 100,000 rest solely
-on that one extraction and are NOT independently corroborated by anything now in
-this repository. Re-verifying them needs another binary extraction on a machine
-that has Claude Code installed. Until then, treat the numeric column of the
-v0.80.0 changelog entry as sourced-once, not continuously guarded.
+**Numeric basis — corroborated 2026-07-27 against 2.1.220 (this paragraph
+replaces an incorrect one).** The ARCHIVE layer genuinely cannot supply these:
+the reconstruction template-izes exactly the numbers (`${MAX_LINES_CONSTANT}`
+and friends) and the grep fragments carry no parameter-level docs. From that,
+v0.80.2 concluded the figures could not be re-verified without a machine that
+has Claude Code installed. **That conclusion was wrong, and the way it was
+reached is the instructive part**: the keeper's extraction happened to run
+against a locally installed `claude.exe`, and that one path was mistaken for the
+only path. The official binary is a public npm artifact — a platform
+`optionalDependency` of `@anthropic-ai/claude-code`
+(`@anthropic-ai/claude-code-linux-x64` and siblings) — and this repository's own
+conformance job already installs the official arm transiently with `--no-save`.
+It is squarely inside the clean-room boundary's clause ①, which admits official
+release-channel artifacts.
+
+Extracted from 2.1.220 and cross-checked against the 2.1.141 figures the
+v0.80.0 work was built on:
+
+| Constant | 2.1.141 (keeper) | 2.1.220 (verified here) | |
+|---|---|---|---|
+| Read output cap | 25,000 tokens | `25000`, env `CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS` | unchanged |
+| Bash output | 30,000 default / 150,000 max | `30000` / `150000`, env `BASH_MAX_OUTPUT_LENGTH` | unchanged |
+| Grep `head_limit` | 250, all three modes | "Defaults to 250 when unspecified. Pass 0 for unlimited" verbatim | unchanged |
+
+Unchanged across 79 releases, so the v0.80.0 limits work stands on corroborated
+ground rather than a single reading. Two caveats kept honest: WebFetch's 100,000
+was not re-located in this pass (the 2.1.220 build does not expose the same
+symbol shape), and the extraction is a point-in-time check, not a standing
+guard — nothing re-runs it automatically.
 
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 

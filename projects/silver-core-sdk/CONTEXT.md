@@ -70,11 +70,14 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.80.2`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.80.2`
+**当前版本 `0.81.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.81.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.81.0（2026-07-27）：Read 截断页脚补齐官方三件套 + 数值基准获独立佐证**——守密人报的现象：一次 Read 读约 1500 行源码后，模型**连发六轮自动翻页**把整档翻完、上下文推到 300K+ 字符。旧页脚只说一句「Use offset=1301 to continue reading.」，**别的什么都不给**。**交付单的诊断对了一半，错的那一半值得记**：它认为官方从不给具体值，只说「the offset parameter」；对着**官方 npm 发行物 2.1.220** 提取实测，官方**也给值**——「…Call Read with offset=${I+1} limit=${I} for the next page, **or Grep to find a specific section**. **Do NOT answer from this page alone** if the answer may be further in the file.」。可见具体值从不是差别，差别是银芯只给了三件套的**第一件**：一条路、一个动作、没有更便宜的替代、没有告诫。守密人裁定取官方口径。两处截断分支（字符上限 / 行数上限）现均补齐三件套；大档 Grep 提示改为**只看体积**（原还要求存在超 2000 字符的长行，而 TS/Lua/Python 普通源码根本没有那种行，故该提示**几乎从未触发过**——它此前零测试覆盖，正与此吻合），256KB 阈值不动。`MAX_READ_OUTPUT_CHARS` 刻意不动。
+**同批订正 0.80.2 的一处错误结论**：那条说数值基准「须在装有 Claude Code 的机器上才能重新提取」——**错了**。官方二进制是**公开 npm 发行物**（`@anthropic-ai/claude-code` 的平台 optionalDependency），本仓一致性作业本就`--no-save` 装它作对照臂，属净室边界①「官方发行渠道产物」。已就地提取 2.1.220 实测：Read 输出上限 **25000 token**、Bash 输出 **30000 默认 / 150000 上限**、Grep `head_limit` **「Defaults to 250 when unspecified」逐字**——与 0.80.0 所依据的 2.1.141 三项**全部一致**，79 个版本未变。WebFetch 的 100000 本轮未再定位到，照实记。
 
 **v0.80.2（2026-07-27）：对齐 2.1.216 快照基准**（守密人裁「3 也直接对齐基准」）——基准同时从两个方向陈旧了，且只有一个方向能在仓内修，两者都记进 `docs/COMPAT.md`「Baseline realignment」。① **手工挖出第三条指空 slug**：`SendMessage` 引用的 `tool-description-sendmessagetool` 被快照改名，却因**缺档检查搭在锚点检查里、而锚点检查跳过 adapted 条目**而长期报绿——现把「引用的档案必须存在」拆成独立测试，faithful / adapted 一视同仁。同一次快照造了三条指空 slug：两条让 main 红了六小时（0.80.1），这条根本没守卫在看。② 新增 `scripts/description-coverage.mjs`，把「散文基准漂没漂」从人工比对变成一条命令（逐档报还剩多少逐字吻合 + 该档 ccVersion）。**报告体恒 exit 0**：吻合度本就不该是 100%——红线纪律禁止描述未发货能力，硬拉满等于逼描述去吹本包做不到的事。实测 30 档里 18 档 100%（Grep 对 2.1.217、Glob 对 2.1.215），低分端全是已登记改编（SendMessage 11% / EnterWorktree 25%）。**射程边界照实写**：0.80.0 那批**数值上限对不了**——重建档把数字模板化（`${MAX_LINES_CONSTANT}`）、grep 档没有参数级文档，故 250 / 25,000 / 30,000 / 100,000 仍只靠那一次 2.1.141 二进制提取支撑，仓内无任何东西能独立佐证，重新核验需在装有 Claude Code 的机器上再提取一次。发货运行时改动仅一个 slug 字符串及其注释，**描述文本未动**，提示词字节与缓存键不变。
 
