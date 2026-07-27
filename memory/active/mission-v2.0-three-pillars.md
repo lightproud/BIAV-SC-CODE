@@ -96,7 +96,7 @@
 
 - `memory/morimens-context.md` — 游戏世界观（v2.0 三新使命 #2 知识底座的事实源；路径修正：原误标 `assets/data/`）
 - `assets/data/card-system.json` — 卡牌系统结构化（Code-memory 2026-04-26 落档）
-- `projects/wiki/data/extracted/categorized/character_data.txt` — 72 角色基线一手解包字段（**原 `data/db/characters.json` 结构化层 2026-06-15 守密人裁定清空，W2 以解包字段重建**，见 project-status）
+- `projects/wiki/data/processed/characters.json` — **现行唯一权威**：W2 可信基线 72 真实角色、一手解包、无合成占位（见 project-status）。历史层已全数退场：原 `data/db/characters.json` 占位结构化层 2026-06-15 守密人裁定清空；其自举源解包 text 层（Reference 层 Game-Unpacked 目录）2026-07-12 裁定整层删除，**追溯只能走 Releases「解包」桶二进制重解**（CLAUDE.md §6.3）
 
 ---
 

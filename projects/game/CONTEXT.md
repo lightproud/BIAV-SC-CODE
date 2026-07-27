@@ -37,7 +37,7 @@
 - [ ] 后续：更多唤醒体 / 武器进化树 / 真实立绘接入 / 音效
 
 ## 依赖
-- 角色数据 — 现行源 `projects/wiki/data/processed/characters.json`（72 真实角色，一手解包；底层原始字段 `projects/wiki/data/extracted/categorized/character_data.txt`）。**原 `projects/wiki/data/db/characters.json` 占位结构化层 2026-06-15 已清空、勿引用**；W2 可信基线已重建（72 齐）
+- 角色数据 — 现行源 `projects/wiki/data/processed/characters.json`（72 真实角色，一手解包）。两个历史层均已退场、勿引用：`data/db/` 占位结构化层 2026-06-15 清空；其自举源解包 text 层 2026-07-12 整层删除（追溯走 Releases「解包」桶二进制重解，CLAUDE.md §6.3）
 - `projects/game/config/` — 游戏配置（已建立，2026-06-03 MVP 随附）：`characters.json` / `enemies.json` / `upgrades.json` / `waves.json` / `weapons.json` + `config.js` 加载器（原设想的单文件 `game-config.json` 未采用）
 - `assets/images/` — 图片素材
 
