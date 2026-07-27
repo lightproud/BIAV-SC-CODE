@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 377,
+    "concepts": 378,
     "edges": 406,
-    "terms": 6724,
+    "terms": 6746,
     "by_type": {
       "character": 72,
       "dataset": 95,
-      "documentation": 142,
+      "documentation": 143,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 23,
       "projects": 28,
-      "resource": 113,
+      "resource": 114,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 243
+      "search": 244
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 113
+      "count": 114
     },
     "sources": {
       "index": "/sources/index.md",
@@ -4160,6 +4160,20 @@
       "title": "oss-cc-engine-designs-survey-20260704",
       "description": "Research deliverable for `projects/bpt-agent-sdk`. Goal: survey notable open-source Claude Code（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/oss-cc-engine-designs-survey-20260704.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md": {
+      "type": "documentation",
+      "title": "plugmem-vs-silver-core-memory-20260727",
+      "description": "本报告的全部**判词**建立在架构对照上，不建立在 A 的评测分上——即便其分数全部作废，§3 的分层判词依然成立。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/plugmem-vs-silver-core-memory-20260727.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -10194,6 +10208,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -11501,6 +11516,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -11670,6 +11686,7 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -11887,6 +11904,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -12239,6 +12257,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -12445,6 +12464,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -12766,6 +12786,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -13559,6 +13580,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -14077,6 +14099,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -14622,6 +14645,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -14739,6 +14763,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/wiki-data/wiki-data-feature-unlock.md",
       "/wiki-data/wiki-data-item-stories.md",
@@ -15248,6 +15273,9 @@
     "playbook": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "plugmem": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "point": [
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md"
@@ -15380,6 +15408,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -15819,6 +15848,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -16139,6 +16169,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -16305,6 +16336,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -16686,6 +16718,7 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -17358,6 +17391,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -17663,6 +17697,7 @@
       "/README.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "w3": [
@@ -18504,6 +18539,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -18573,6 +18609,9 @@
     ],
     "不屈": [
       "/characters/77923.md"
+    ],
+    "不建": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "不按": [
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
@@ -18799,6 +18838,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -19153,6 +19193,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -20534,6 +20575,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -21548,6 +21590,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -21842,6 +21885,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -22058,7 +22102,8 @@
     ],
     "作废": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "作战": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md"
@@ -22215,6 +22260,9 @@
     "供追": [
       "/memory/contribution-protocol.md"
     ],
+    "依然": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "依赖": [
       "/README.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
@@ -22234,6 +22282,9 @@
     ],
     "侵蚀": [
       "/characters/77923.md"
+    ],
+    "便其": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "便宜": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -22626,6 +22677,7 @@
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "全量": [
@@ -22834,6 +22886,9 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md"
+    ],
+    "其分": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "其后": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md"
@@ -23317,6 +23372,9 @@
     "刃进": [
       "/characters/15588.md"
     ],
+    "分上": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "分为": [
       "/memory/memory-ext-lessons-archive.md"
     ],
@@ -23342,7 +23400,8 @@
     "分层": [
       "/memory/memory-ext-testing-strategy.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
-      "/resource/resource-proposal-discord-layout-unification-20260710.md"
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "分布": [
       "/memory/memory-ext-knowledge-layer-design.md",
@@ -23362,7 +23421,8 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
     "分数": [
-      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "分析": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -23576,6 +23636,9 @@
     ],
     "判断": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
+    "判词": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "利刃": [
       "/characters/15582.md",
@@ -23894,6 +23957,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -24620,6 +24684,9 @@
     ],
     "危机": [
       "/characters/15566.md"
+    ],
+    "即便": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "即单": [
       "/README.md"
@@ -26005,6 +26072,9 @@
     "告核": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
+    "告的": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "周会": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
@@ -26645,6 +26715,9 @@
     "在无": [
       "/characters/15574.md",
       "/characters/54116.md"
+    ],
+    "在架": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "在此": [
       "/characters/94450.md",
@@ -27343,6 +27416,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -28197,6 +28271,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -28861,6 +28936,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -29251,6 +29327,7 @@
     ],
     "对照": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "对联": [
@@ -29530,6 +29607,9 @@
     ],
     "层分": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
+    ],
+    "层判": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "层即": [
       "/sources/appstore.md",
@@ -30573,6 +30653,9 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
+    ],
+    "建立": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "建计": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -32032,7 +32115,8 @@
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "成立": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "成簇": [
       "/README.md"
@@ -32463,6 +32547,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "报展": [
@@ -32986,6 +33071,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -33587,6 +33673,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -33951,6 +34038,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -34404,6 +34492,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -34714,6 +34803,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -34930,6 +35020,9 @@
     ],
     "敬的": [
       "/characters/15589.md"
+    ],
+    "数全": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "数字": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
@@ -36562,6 +36655,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -36673,6 +36767,7 @@
       "/characters/15591.md"
     ],
     "本报": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "本抽": [
@@ -37029,6 +37124,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -37336,6 +37432,9 @@
     "构周": [
       "/memory/memory-archive-bpt-architecture-summary-template.md"
     ],
+    "构对": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "构层": [
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
@@ -37476,6 +37575,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "枷锁": [
@@ -37696,6 +37796,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -37937,6 +38038,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -38491,6 +38593,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -38907,6 +39010,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -39511,6 +39615,9 @@
     "测全": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
+    "测分": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "测到": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
     ],
@@ -40001,11 +40108,17 @@
     "焰裹": [
       "/characters/77913.md"
     ],
+    "然成": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "然是": [
       "/characters/15564.md"
     ],
     "然迸": [
       "/characters/125346.md"
+    ],
+    "照上": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "照实": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -41356,7 +41469,8 @@
       "/characters/15594.md"
     ],
     "的全": [
-      "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
+      "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "的六": [
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
@@ -41375,7 +41489,8 @@
     "的分": [
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-knowledge-layer-design.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "的创": [
       "/characters/77926.md"
@@ -41885,6 +42000,9 @@
     "的证": [
       "/characters/15591.md",
       "/characters/15594.md"
+    ],
+    "的评": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "的诅": [
       "/characters/15579.md"
@@ -43001,6 +43119,9 @@
     ],
     "立可": [
       "/README.md"
+    ],
+    "立在": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "立开": [
       "/README.md"
@@ -45543,6 +45664,9 @@
     "评是": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
+    "评测": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "评的": [
       "/story/story_research_todo.md"
     ],
@@ -45584,6 +45708,9 @@
     "诊断": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md"
+    ],
+    "词依": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "词典": [
       "/README.md",
@@ -46383,6 +46510,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -47132,6 +47260,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -47479,6 +47608,9 @@
     ],
     "郁姿": [
       "/characters/15601.md"
+    ],
+    "部作": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "部信": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -48230,6 +48362,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -48508,6 +48641,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -50280,6 +50414,7 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -50490,6 +50625,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -50835,6 +50971,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -51028,6 +51165,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -51261,6 +51399,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -51832,6 +51971,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -52101,7 +52241,8 @@
       "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
-      "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
+      "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "merge": [
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
@@ -52409,6 +52550,9 @@
       "/characters/94450.md",
       "/characters/95786.md"
     ],
+    "plugmem": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+    ],
     "point": [
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md"
@@ -52640,6 +52784,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -52930,6 +53075,7 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -53230,6 +53376,7 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -53373,6 +53520,7 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "vs": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "weekly": [

@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (113)
+# 银芯正式产物（报告/分析） (114)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -90,6 +90,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [news-collector-merge-plan-202606](/resource/resource-repo-engineering-news-collector-merge-plan-202606.md) - 日期：2026-06-02（格式：md）
 * [official-cc-prompt-architecture-inference-20260704](/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md) - **能，而且能推断出相当完整的架构骨架。** 官方「系统提示词」不是一整块，而是 `tools/updatePrompts.js` 揭示的**片段合成树**——
 * [oss-cc-engine-designs-survey-20260704](/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md) - Research deliverable for `projects/bpt-agent-sdk`. Goal: survey notable open-sou
+* [plugmem-vs-silver-core-memory-20260727](/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md) - 本报告的全部**判词**建立在架构对照上，不建立在 A 的评测分上——即便其分数全部作废，§3 的分层判词依然成立。（格式：md）
 * [repo-audit-20260603](/resource/resource-repo-engineering-repo-audit-20260603.md) - 动态编排工作流派发 5 路并行审计代理，分区无重叠：（格式：md）
 * [repo-audit-20260603-r2](/resource/resource-repo-engineering-repo-audit-20260603-r2.md) - round1 的 35 条修复推送后，本轮 5 路代理在**修复后基线**上复审，三轴并行：回归审查 + 遗留复核 + 新扫描。（格式：md）
 * [repo-health-assessment-20260602](/resource/resource-repo-engineering-repo-health-assessment-20260602.md) - 代码工程质量本身扎实——防御式错误处理、原子写、单一真相源、共享 helper 抽取、CI 自愈/防腐机制成熟。系统性扣分集中在三处结构性落差：（格式：md）
