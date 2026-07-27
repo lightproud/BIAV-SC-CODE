@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-27T02:42:01.792473+00:00",
+  "collected_at": "2026-07-27T06:29:47.013883+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 8,
@@ -18,7 +18,7 @@
       "voted_up": true,
       "review": "such a good game, everyone should play it <33",
       "timestamp_created": 1785118220,
-      "playtime_forever": 5574
+      "playtime_forever": 5814
     },
     {
       "source": "steam",
@@ -108,7 +108,7 @@
       "voted_up": true,
       "review": "게임성과 스토리는 좋습니다. 전략게임 좋아하시는 분 추천",
       "timestamp_created": 1785056781,
-      "playtime_forever": 2860
+      "playtime_forever": 2950
     },
     {
       "source": "steam",
@@ -123,7 +123,7 @@
       "voted_up": true,
       "review": "Honestly, best gacha game I ever played",
       "timestamp_created": 1785049070,
-      "playtime_forever": 5091
+      "playtime_forever": 5154
     }
   ]
 }
