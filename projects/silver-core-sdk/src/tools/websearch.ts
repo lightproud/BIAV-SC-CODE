@@ -16,7 +16,7 @@ import type {
   ToolContext,
   ToolResultPayload,
 } from '../internal/contracts.js';
-import type { WebSearchResult } from '../types.js';
+import type { WebSearchOutput, WebSearchResult } from '../types.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { WEBSEARCH_DESCRIPTION } from './descriptions.js';
 
@@ -139,6 +139,7 @@ export const webSearchTool: BuiltinTool = {
       );
     }
 
+    const searchStartedAt = Date.now();
     let raw: WebSearchResult[] | string;
     try {
       raw = await ctx.webSearch(query, {
@@ -152,7 +153,16 @@ export const webSearchTool: BuiltinTool = {
     }
 
     if (typeof raw === 'string') {
-      return { content: raw };
+      // A pre-rendered backend string: the official shape allows a bare string
+      // among `results`, so it round-trips without inventing structure.
+      return {
+        content: raw,
+        structuredOutput: {
+          query,
+          results: [raw],
+          durationSeconds: (Date.now() - searchStartedAt) / 1000,
+        } satisfies WebSearchOutput,
+      };
     }
     if (!Array.isArray(raw)) {
       return errorResult('WebSearch failed: backend returned an unexpected value.');
@@ -160,6 +170,25 @@ export const webSearchTool: BuiltinTool = {
 
     const filtered = filterResults(raw, allowed.value, blocked.value);
     ctx.debug(`WebSearch: "${query}" -> ${raw.length} results, ${filtered.length} after filter`);
-    return { content: renderResults(filtered) };
+    return {
+      content: renderResults(filtered),
+      // The POST-FILTER set, matching what the text reports: a consumer reading
+      // the structured result and a model reading the text must not be looking
+      // at different numbers of hits.
+      //
+      // `searchCount` (official, optional) is deliberately NOT set: this tool
+      // makes exactly one backend call per invocation, so it would be a
+      // constant 1 — a field whose only content is "yes, this ran".
+      structuredOutput: {
+        query,
+        results: [
+          {
+            tool_use_id: '',
+            content: filtered.map((r) => ({ title: r.title, url: r.url })),
+          },
+        ],
+        durationSeconds: (Date.now() - searchStartedAt) / 1000,
+      } satisfies WebSearchOutput,
+    };
   },
 };

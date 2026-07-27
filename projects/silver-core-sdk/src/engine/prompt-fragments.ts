@@ -406,7 +406,14 @@ export const MAIN_LOOP_BODY: PromptFragment[] = [
     id: 'final-message-completeness',
     slug: 'system-prompt-outcome-first-communication-style',
     faithful: true,
-    text: 'Everything the user needs from this turn — answers, summaries, findings, conclusions, deliverables — must be in the final text message of your turn, with no tool calls after it. Keep text between tool calls to brief status notes. If something important appeared only mid-turn or in your thinking, restate it in that final message.',
+    // Leading sentence restored 2026-07-27 (keeper ruling "对齐官方"). The
+    // official block opens with it; this reproduction had only the conclusion.
+    // It is the REASON the rest of the rule holds — without it the paragraph
+    // reads as a style preference rather than as a consequence of how the
+    // surface actually behaves, and a rule whose premise is missing is the
+    // first one a model reasons its way out of. Verified verbatim in the
+    // official 2.1.220 artifact.
+    text: 'Text you write between tool calls may not be shown to the user. Everything the user needs from this turn — answers, summaries, findings, conclusions, deliverables — must be in the final text message of your turn, with no tool calls after it. Keep text between tool calls to brief status notes. If something important appeared only mid-turn or in your thinking, restate it in that final message.',
   },
   {
     id: 'lead-with-outcome',

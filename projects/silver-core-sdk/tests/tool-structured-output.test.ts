@@ -190,6 +190,47 @@ describe('Bash structured result', () => {
 // loop with a real tool and reads the turn the loop appended.
 // ---------------------------------------------------------------------------
 
+describe('WebSearch / MCP-resource structured results (output-type sweep, 续)', () => {
+  it('WebSearch reports the query and the POST-FILTER hits', async () => {
+    const { webSearchTool } = await import('../src/tools/websearch.js');
+    const ctx = {
+      ...makeCtx('/tmp'),
+      webSearch: async () => [
+        { title: 'kept', url: 'https://ok.example/a' },
+        { title: 'dropped', url: 'https://no.example/b' },
+      ],
+    } as unknown as ToolContext;
+    const res = await webSearchTool.execute(
+      { query: 'q', allowed_domains: ['ok.example'] },
+      ctx,
+    );
+    const s = res.structuredOutput as {
+      query: string;
+      results: Array<{ content: Array<{ url: string }> }>;
+      durationSeconds: number;
+      searchCount?: number;
+    };
+    expect(s.query).toBe('q');
+    // Post-filter, so the structured hit count and the rendered text agree —
+    // a consumer and the model must not be reading different numbers.
+    expect(s.results[0]!.content.map((c) => c.url)).toEqual(['https://ok.example/a']);
+    expect(typeof s.durationSeconds).toBe('number');
+    // Official's optional searchCount is deliberately absent: one backend call
+    // per invocation makes it a constant 1.
+    expect(s.searchCount).toBeUndefined();
+  });
+
+  it('ReadMcpResourceTool reports a structured error, not just an error string', async () => {
+    const { readMcpResourceTool } = await import('../src/tools/resources.js');
+    const res = await readMcpResourceTool.execute({ server: 's', uri: 'u' }, makeCtx('/tmp'));
+    expect(res.isError).toBe(true);
+    const s = res.structuredOutput as { contents: unknown[]; error?: string };
+    // Without this, a caller cannot tell a FAILED read from an EMPTY one.
+    expect(s.contents).toEqual([]);
+    expect(s.error).toContain('no MCP servers are configured');
+  });
+});
+
 describe('structured results reach the turn the loop appends', () => {
   it('the side-channel returns what was attached, and nothing for other turns', async () => {
     const { attachToolUseResults, readToolUseResults } = await import(

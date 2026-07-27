@@ -525,6 +525,40 @@ quoted keys).
 (37 of them), the main-loop system prompt, the permission/hook layer, the MCP
 protocol layer, and WebFetch's 100,000 (not re-located in the 2.1.220 build).
 
+## Output-type sweep vs official 2.1.220 (2026-07-27, 续)
+
+Second half of the divergence sweep: the 15 official `*Output` types for tools
+this SDK ships, compared FIELD BY FIELD against `types/tools.ts`.
+
+**Nine match exactly**: `FileEditOutput`, the Task quintet (`TaskCreate` /
+`TaskGet` / `TaskList` / `TaskUpdate` / `TaskStop`), `EnterWorktreeOutput`,
+`TodoWriteOutput`, `MonitorOutput`.
+
+**Six carry official-only fields.** Keeper ruled these one at a time rather
+than as a class, and the class turned out not to be uniform:
+
+| Field | Verdict | Why |
+|---|---|---|
+| `ReadMcpResourceOutput.error` | **ADDED + populated** | Not UI-bound at all. The tool has real failure paths (no servers configured, bad arguments, throwing server), and a caller reading the structured result could not tell a FAILED read from an EMPTY one. |
+| `WebSearchOutput` (whole shape) | **populated**, `searchCount` skipped | The sweep's framing was wrong: the interesting gap was not `searchCount` but that WebSearch produced NO structured result at all, while `query` / `results` / `durationSeconds` are all genuinely available. `searchCount` stays unset — one backend call per invocation makes it a constant 1, a field whose only content is "yes, this ran". |
+| `FileWriteOutput.userModified` | log only | Requires tracking whether the user edited the file between read and write — an editor-integration fact this SDK has no source for. |
+| `ExitPlanModeOutput.planWasEdited` | log only | Official's own comment scopes it to "CCR web UI or Ctrl+G". No such surface here. |
+| `AskUserQuestionOutput.afkTimeoutMs` / `annotations` | log only | Official permission-component UI, same ruling as the input-side fields above. |
+| `WorkflowOutput.sessionUrl` / `taskType` / `workflow*` | log only | The blocker is NOT the optional fields: official's REQUIRED discriminator is `status: 'async_launched'`, and this SDK runs workflows SYNCHRONOUSLY. Populating the official shape would mean asserting a launch that did not happen. |
+
+The four "log only" rows share one reason worth stating plainly: declaring a
+field nothing will ever populate is exactly the typed-not-populated pattern the
+0.85.0 work existed to remove. A consumer typed against official that reads one
+of those four fields will not compile here — and would have read `undefined`
+anyway.
+
+**Scope limit, stated because the first pass missed it**: this comparison comes
+from a TOP-LEVEL field diff. Nested differences went unseen initially —
+official's `ReadMcpResourceOutput.contents[].blobSavedTo` (where binary blob
+content was saved) is one, found only on a manual re-read, and it stays
+unshipped because this SDK does not spill blobs to disk. Other nested fields
+may remain unswept.
+
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 
 The model-side tool descriptions in `src/tools/descriptions.ts` are FAITHFUL
