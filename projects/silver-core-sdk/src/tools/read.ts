@@ -20,6 +20,7 @@ import {
   resolveAbs,
 } from './fsutil.js';
 import { READ_DESCRIPTION } from './descriptions.js';
+import type { ReadOutput as ReadStructuredOutput } from '../types/tool-outputs.js';
 
 const DEFAULT_LINE_LIMIT = 2000;
 
@@ -451,6 +452,20 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
             'instead of reading page by page.)';
         }
         content += footer;
+        return {
+          content,
+          structuredOutput: {
+            type: 'text',
+            file: {
+              filePath: abs,
+              content: fmt.text,
+              numLines: shownLines,
+              startLine,
+              totalLines: total,
+              truncatedByCharCap: true,
+            },
+          } satisfies ReadStructuredOutput,
+        };
       } else if (realLastShown < total) {
         // Line-count limit (or offset window) bounded the output, chars did not.
         // Same wording as the char-cap branch above: the trigger differs, the
@@ -461,7 +476,19 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
           `Grep to find a specific section. Do NOT answer from this page alone ` +
           `if the answer may be further in the file.)`;
       }
-      return { content };
+      return {
+        content,
+        structuredOutput: {
+          type: 'text',
+          file: {
+            filePath: abs,
+            content: fmt.text,
+            numLines: shownLines,
+            startLine,
+            totalLines: total,
+          },
+        } satisfies ReadStructuredOutput,
+      };
     } catch (e) {
       if (isAbortError(e)) {
         throw new AbortError('Read was aborted');

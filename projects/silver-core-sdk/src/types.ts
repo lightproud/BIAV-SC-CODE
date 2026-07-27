@@ -33,3 +33,13 @@ export * from './types/subsystems.js';
 export * from './types/query.js';
 // 官方工具输入/输出类型面（原 src/tool-types.ts，P7 归位；零名字冲突，实测 47 vs 219）
 export * from './types/tools.js';
+
+// 结构化工具结果（2026-07-27 偏离普查后新增；形状与理由见该档头注）
+export type {
+  ReadOutput,
+  ReadTextOutputWithCap,
+  BashStructuredOutput,
+  GrepStructuredOutput,
+  WebFetchStructuredOutput,
+  ToolUseResults,
+} from './types/tool-outputs.js';

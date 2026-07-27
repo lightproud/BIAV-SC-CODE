@@ -58,6 +58,11 @@ function mkToolError(toolUseId: string, message: string): ToolResultBlockParam {
  */
 export type ToolExecOutcome = {
   result: ToolResultBlockParam;
+  /** Machine-readable result from the tool, carried alongside the API block so
+   *  the loop can attach it to the emitted user message as `toolUseResult`.
+   *  The API's tool_result has no structured channel, so it cannot ride there
+   *  (2026-07-27, structured-output surface). */
+  structured?: unknown;
   stop?: { reason: string };
   defer?: {
     // Official field names (canonical) + legacy names, dual-track per T1-4.
@@ -583,7 +588,7 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       content: Array.isArray(content) && content.length === 0 ? '' : content,
     };
     if (payload.isError === true) result.is_error = true;
-    return { result, stop };
+    return { result, stop, structured: payload.structuredOutput };
   }
 
   return { isReadOnlyTool, isParallelSafeTool, executeToolUse };

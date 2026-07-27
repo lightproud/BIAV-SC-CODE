@@ -15,6 +15,7 @@ import { guardRegexPattern } from '../internal/regex-guard.js';
 import { sliceSurrogateSafe } from '../internal/text.js';
 import { GREP_DESCRIPTION } from './descriptions.js';
 import { toNativePath } from './fsutil.js';
+import type { GrepStructuredOutput } from '../types/tool-outputs.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -633,7 +634,18 @@ export const grepTool: BuiltinTool = {
         : '';
 
     if (!anyMatch) {
-      return { content: `No matches found${oversizeNote}` };
+      return {
+        content: `No matches found${oversizeNote}`,
+        structuredOutput: {
+          mode: outputMode,
+          numFiles: 0,
+          filenames: [],
+          numLines: outputMode === 'content' ? 0 : undefined,
+          appliedLimit: headLimit,
+          appliedOffset: offset,
+          truncated: scanStoppedEarly,
+        } satisfies GrepStructuredOutput,
+      };
     }
     const capped = limited
       ? out.slice(offset, offset + headLimit)
@@ -670,6 +682,25 @@ export const grepTool: BuiltinTool = {
         `${files.length - scannedFiles} file(s) not scanned — more matches may exist;` +
         ` raise head_limit or set head_limit=0 for the complete result)`;
     }
-    return { content: content + oversizeNote };
+    return {
+      content: content + oversizeNote,
+      // appliedLimit / appliedOffset report what the call ACTUALLY used after
+      // defaulting — previously inferable only from the footer sentence, and
+      // exactly what a caller needs to page correctly.
+      structuredOutput: {
+        mode: outputMode,
+        // In files_with_matches mode every emitted row IS a path, so the count
+        // and the list are exact. In the other modes a row is a match line or a
+        // per-file count, so `filenames` would be a guess — left empty rather
+        // than filled with something derived-looking but wrong.
+        numFiles:
+          outputMode === 'files_with_matches' ? capped.length : scannedFiles,
+        filenames: outputMode === 'files_with_matches' ? [...capped] : [],
+        numLines: outputMode === 'content' ? capped.length : undefined,
+        appliedLimit: headLimit,
+        appliedOffset: offset,
+        truncated: displayTruncated || matchesCut || scanStoppedEarly,
+      } satisfies GrepStructuredOutput,
+    };
   },
 };

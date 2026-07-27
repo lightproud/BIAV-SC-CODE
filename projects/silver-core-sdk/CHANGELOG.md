@@ -16,6 +16,21 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.85.0 — 2026-07-27
+
+Family verdict-type unification (keeper ruling 2026-07-27): this package's
+`GoalVerdict` `{status, reason?}` is now the ONE verdict shape family-wide —
+silver-core-maestro-sdk 0.85.0 migrated its `GoalChaser` evaluator verdict
+(previously `{achieved, feedback, impossible?}`) to it, so a single host
+evaluator serves both the engine's `options.goal` Stop gate and the maestro
+cross-query chase. No behavior change in this package; `options.goal` and its
+evaluator contract are untouched. The `GoalVerdict` doc comment in
+`src/types/subsystems.ts` now records the canonical-shape status (shape
+changes require a family-wide ruling). Context worth keeping: the two-shape
+era produced a live consumer trap — a maestro-shaped verdict fed to
+`options.goal` is judged malformed and the Stop gate's deliberate fail-open
+direction allows every stop, so the goal silently never bites (BPT symptom
+report 2026-07-27, "接了 goal 模型照样停").
 ## 0.84.0 — 2026-07-27
 
 Memory index discipline + a consolidation protocol. Diagnosis behind it (keeper
@@ -61,19 +76,56 @@ New tests: 25 (`tests/memory-consolidation.test.ts`) + 3 wiring cases.
 
 ## 0.83.0 — 2026-07-27
 
-Family verdict-type unification (keeper ruling 2026-07-27): this package's
-`GoalVerdict` `{status, reason?}` is now the ONE verdict shape family-wide —
-silver-core-maestro-sdk 0.83.0 migrated its `GoalChaser` evaluator verdict
-(previously `{achieved, feedback, impossible?}`) to it, so a single host
-evaluator serves both the engine's `options.goal` Stop gate and the maestro
-cross-query chase. No behavior change in this package; `options.goal` and its
-evaluator contract are untouched. The `GoalVerdict` doc comment in
-`src/types/subsystems.ts` now records the canonical-shape status (shape
-changes require a family-wide ruling). Context worth keeping: the two-shape
-era produced a live consumer trap — a maestro-shaped verdict fed to
-`options.goal` is judged malformed and the Stop gate's deliberate fail-open
-direction allows every stop, so the goal silently never bites (BPT symptom
-report 2026-07-27, "接了 goal 模型照样停").
+Tools now PRODUCE the structured results this package had been declaring all
+along, and consumers receive them as `toolUseResult` on the tool_result user
+message. From axes 1 and 4 of the divergence sweep (keeper rulings: build the
+structured output surface in full; widen the MCP accept list and research the
+newer revision).
+
+**A correction to the sweep's own finding, because it shaped the work.** The
+first pass grepped for `outputSchema`, found none, and reported "this SDK
+declares no output surface at all". Wrong: `types/tools.ts` already carried
+`GlobOutput`, `GrepOutput`, `WebFetchOutput`, `FileReadOutput`, `BashOutput`
+and the Task quintet, faithfully shaped after official. What was missing was
+that nothing ever POPULATED them — typed-not-populated. The fix is therefore
+much smaller and much better than the one first scoped: the existing types are
+consumed, not duplicated, and `types/tool-outputs.ts` adds only what genuinely
+did not exist.
+
+- `ToolResultPayload.structuredOutput` carries a tool's machine-readable
+  result; Read, Glob, Grep, Bash and WebFetch populate it on every terminal
+  branch (including empty results and failures — a caller must not have to
+  distinguish "no structured result" from "no matches").
+- The engine collects a batch's results keyed by tool_use_id and attaches them
+  to the user turn via a WeakMap side-channel (`engine/tool-use-results.ts`),
+  NOT a field: `APIMessageParam` is the Anthropic wire shape, and an extra
+  property on it either reaches the API or forces a strip-before-send step
+  every future call site must remember. `query()` reads the channel back and
+  emits `toolUseResult` on `SDKUserMessage`.
+- Shape divergence, deliberate: official carries a BARE object because it emits
+  one tool_result per message; this engine batches a turn's results into one
+  message, so the field is a record keyed by tool_use_id. Emitting one message
+  per result instead would change turn structure for every existing consumer.
+- New facts a consumer previously had to parse out of prose: Glob `truncated`,
+  Grep `appliedLimit` / `appliedOffset` / `truncated`, Bash `exitCode` /
+  `interrupted` / `timedOutAfterMs` / `truncated`, Read `truncatedByCharCap`
+  (named for THIS SDK's measure — official's `truncatedByTokenCap` counts
+  tokens, and a same-named field with a different unit reads as parity and
+  behaves as drift).
+- 13 tests, including a loop-level one that runs a real Glob through the engine
+  and reads the turn the engine appended — a green tool-level assertion says
+  nothing about whether the value travels.
+
+**MCP accept list widened** to include `2024-10-07`: official accepts five
+revisions, this client accepted three, so a server pinned to the oldest was
+refused here and served there. The ADVERTISED revision deliberately stays at
+`2025-06-18`. Official advertises `2025-11-25`, whose addition is an async task
+surface (`tasks/get`, `tasks/list`, `tasks/status`, `tasks/result`,
+`tasks/cancel`) plus the `io.modelcontextprotocol/related-task` and `/skills`
+extensions — none implemented here. Advertising a revision whose semantics are
+unshipped is the same red line as describing an unshipped capability, and
+`2025-11-25` is kept out of the accept list for the same reason: failing at
+connect is more legible than failing later on a task method that does not exist.
 
 ## 0.82.0 — 2026-07-27
 

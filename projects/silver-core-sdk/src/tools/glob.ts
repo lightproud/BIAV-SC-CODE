@@ -11,6 +11,7 @@ import * as path from 'node:path';
 import { AbortError } from '../errors.js';
 import { GLOB_DESCRIPTION } from './descriptions.js';
 import { toNativePath } from './fsutil.js';
+import type { GlobOutput as GlobStructuredOutput } from '../types/tools.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -45,6 +46,7 @@ export const globTool: BuiltinTool = {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
+    const startedAt = Date.now();
     const pattern = input['pattern'];
     if (typeof pattern !== 'string' || pattern.length === 0) {
       return {
@@ -130,7 +132,15 @@ export const globTool: BuiltinTool = {
     if (ctx.signal.aborted) throw new AbortError();
 
     if (files.length === 0) {
-      return { content: 'No files found' };
+      return {
+        content: 'No files found',
+        structuredOutput: {
+          durationMs: Date.now() - startedAt,
+          numFiles: 0,
+          filenames: [],
+          truncated: false,
+        } satisfies GlobStructuredOutput,
+      };
     }
 
     // Newest first, with a deterministic path tiebreak (V6-2, audit r4): mtime
@@ -151,6 +161,16 @@ export const globTool: BuiltinTool = {
         `(Results truncated: showing first ${MAX_RESULTS} of ${sorted.length} matches)`,
       );
     }
-    return { content: lines.join('\n') };
+    return {
+      content: lines.join('\n'),
+      // `truncated` is the fact a caller most often needs and could previously
+      // only get by string-matching the "(Results truncated: ...)" line.
+      structuredOutput: {
+        durationMs: Date.now() - startedAt,
+        numFiles: capped.length,
+        filenames: capped.map((e) => e.path),
+        truncated: sorted.length > MAX_RESULTS,
+      } satisfies GlobStructuredOutput,
+    };
   },
 };

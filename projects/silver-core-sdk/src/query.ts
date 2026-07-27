@@ -7,6 +7,7 @@
  */
 
 import { randomUUID } from 'node:crypto';
+import { readToolUseResults } from './engine/tool-use-results.js';
 
 import { AbortError, ConfigurationError, isAbortError } from './errors.js';
 import type {
@@ -1274,12 +1275,16 @@ export function query(args: {
               // (keeper ruling 2026-07-13: message uuids persist at write time).
               const entryUuid = randomUUID();
               persistParam(sess.sessionId, entry, entryUuid);
+              // Structured tool results ride a side-channel keyed by the turn
+              // object (see engine/tool-use-results.ts for why not a field).
+              const toolUseResult = readToolUseResults(entry);
               yield {
                 type: 'user',
                 uuid: entryUuid,
                 session_id: sess.sessionId,
                 message: { role: 'user', content: entry.content },
                 parent_tool_use_id: null,
+                ...(toolUseResult !== undefined && { toolUseResult }),
               };
             }
           }

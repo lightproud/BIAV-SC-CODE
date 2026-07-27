@@ -9,6 +9,7 @@
  */
 
 import type { NormalizedProviderError } from '../error-normalize.js';
+import type { ToolUseResults } from './tool-outputs.js';
 import type { HookEvent } from './hooks.js';
 import type { SDKMemoryHealth } from './options.js';
 import type { PermissionMode, SDKPermissionDenial } from './permissions.js';
@@ -59,6 +60,18 @@ export type SDKUserMessage = {
   parent_tool_use_id: string | null;
   /** NEW-IN-DOCS. typed-not-populated. */
   origin?: SDKMessageOrigin;
+  /**
+   * Structured results for the tool_result blocks this message carries, keyed
+   * by tool_use_id (2026-07-27). Present only on engine-emitted tool_result
+   * turns where at least one tool produced one.
+   *
+   * Official carries a BARE object here because it emits one tool_result per
+   * message; this engine batches a turn's results into one message, so the
+   * key is required to tell them apart. Documented as a shape divergence in
+   * docs/COMPAT.md rather than papered over by emitting one message per
+   * result, which would change turn structure for every existing consumer.
+   */
+  toolUseResult?: ToolUseResults;
 };
 
 export type SDKUserMessageReplay = {

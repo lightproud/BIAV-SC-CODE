@@ -12,13 +12,7 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
-## 0.84.0 — 2026-07-27
-
-Lockstep alignment only — no changes to this package. The family clock advanced
-for silver-core-agent-sdk 0.84.0 (memory index discipline + consolidation
-protocol).
-
-## 0.83.0 — 2026-07-27
+## 0.85.0 — 2026-07-27
 
 **BREAKING (experimental goal family): `GoalVerdict` unified with the agent
 SDK's shape** (keeper ruling 2026-07-27, "改进方向换成统一判词类型").
@@ -48,6 +42,17 @@ the keeper's live BPT symptom report.
   "experimental, zero production consumers" in README §status, whose whole
   point is that the first real consumer may reshape signatures — this is
   that adjustment, made BEFORE GoalChaser's first wiring instead of after.
+## 0.84.0 — 2026-07-27
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.84.0 (memory index discipline + consolidation
+protocol).
+
+## 0.83.0 — 2026-07-27
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.83.0 (tools populate structured results, surfaced as
+`toolUseResult`; MCP accept list widened to the oldest official revision).
 
 ## 0.82.0 — 2026-07-27
 
