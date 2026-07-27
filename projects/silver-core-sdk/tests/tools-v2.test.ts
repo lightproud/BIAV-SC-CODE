@@ -7,7 +7,6 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { tmpdir } from 'node:os';
 
 // Mock DNS so hostname-based SSRF resolution is deterministic + offline.
 vi.mock('node:dns/promises', () => ({ lookup: vi.fn() }));
@@ -27,7 +26,6 @@ import {
   parseElicitationParams,
 } from '../src/mcp/elicitation.js';
 import { HttpMcpConnection } from '../src/mcp/http.js';
-import type { ToolContext } from '../src/internal/contracts.js';
 import type {
   WebSearchResult,
   UserQuestionAnswer,
@@ -35,19 +33,9 @@ import type {
   ElicitationHandler,
 } from '../src/types.js';
 import { AbortError } from '../src/errors.js';
+import { toolContext as makeCtx } from './helpers/tool-context.js';
 
 const mockLookup = vi.mocked(lookup);
-
-function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...overrides,
-  };
-}
 
 /** Build a fetch-shaped stub returning the given Response (or per-call list). */
 function fetchReturning(...responses: Response[]): typeof fetch {

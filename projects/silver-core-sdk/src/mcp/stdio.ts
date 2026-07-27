@@ -10,44 +10,43 @@ import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
 import process from 'node:process';
 import type {
   CallToolResult,
-  CallToolResultContent,
   ElicitationHandler,
-  JSONSchema,
   McpResource,
   McpResourceContent,
   McpStdioServerConfig,
-  ToolAnnotations,
 } from '../types.js';
 import { AbortError, McpError } from '../errors.js';
 import { resolveElicitation } from './elicitation.js';
 import { planProcessKill } from '../internal/process-kill.js';
-import { SDK_VERSION } from '../version.js';
+// Wire-shape layer shared with http.ts — constants, the JSON-RPC message shape
+// and every pure result parser live there once (see protocol.ts).
+import {
+  CLIENT_INFO,
+  DEFAULT_REQUEST_TIMEOUT_MS,
+  MCP_PROTOCOL_VERSION,
+  extractServerInfo,
+  listToolsPaginated,
+  negotiateProtocolVersion,
+  normalizeCallToolResult,
+  parseResourceContents,
+  parseResourcesList,
+  type JsonRpcId,
+  type JsonRpcMessage,
+  type McpToolDescriptor,
+  rpcErrorToError as rpcErrorToErrorFor,
+} from './protocol.js';
 
-const MCP_PROTOCOL_VERSION = '2025-06-18';
-/** Protocol revisions this clean-room client can speak; a server negotiating
- *  anything outside this set fails connect (audit r4 Z6-2). Mirrors http.ts. */
-const SUPPORTED_PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26', '2024-11-05'];
-const CLIENT_INFO = { name: 'silver-core-sdk', version: SDK_VERSION } as const;
-const DEFAULT_REQUEST_TIMEOUT_MS = 60_000;
 const KILL_GRACE_MS = 2_000;
-/** Safety cap on tools/list pagination to avoid a misbehaving-server loop. */
-const MAX_LIST_PAGES = 100;
 /** W8-2 (audit r3): max bytes an unterminated stdout line may accumulate
  *  before we treat the stream as hostile. One JSON-RPC message per line; a
  *  server (or MITM) that never emits `\n` would otherwise grow the buffer
  *  without bound → OOM. 16 MiB is far above any legitimate MCP message. */
 const MAX_STDOUT_LINE_BYTES = 16 * 1024 * 1024;
 
-type JsonRpcId = string | number;
-
-type JsonRpcMessage = {
-  jsonrpc?: unknown;
-  id?: JsonRpcId | null;
-  method?: unknown;
-  params?: unknown;
-  result?: unknown;
-  error?: { code?: number; message?: string } | null;
-};
+/** This connection's transport tag, bound once into the shared JSON-RPC error
+ *  wrapper so every call site reads exactly as it did before. */
+const rpcErrorToError = (label: string, error: { code?: number; message?: string }): Error =>
+  rpcErrorToErrorFor(label, error, 'stdio');
 
 type PendingRequest = {
   resolve: (value: unknown) => void;
@@ -219,15 +218,7 @@ export class StdioMcpConnection {
     // (spec: the client SHOULD disconnect otherwise). An absent version is
     // tolerated (keep our advertised default); an explicit unsupported one
     // fails connect, which connectEntry surfaces as a 'failed' status.
-    const negotiated = extractProtocolVersion(initResult);
-    if (negotiated !== undefined && !SUPPORTED_PROTOCOL_VERSIONS.includes(negotiated)) {
-      throw new McpError(
-        'mcp_invalid_response',
-        `MCP server '${this.label}' negotiated unsupported protocol version '${negotiated}' ` +
-          `(client supports ${SUPPORTED_PROTOCOL_VERSIONS.join(', ')})`,
-        { serverLabel: this.label, transport: 'stdio', phase: 'connect' },
-      );
-    }
+    negotiateProtocolVersion(initResult, this.label, 'stdio');
     this.sendNotification('notifications/initialized');
   }
 
@@ -236,27 +227,14 @@ export class StdioMcpConnection {
     return this.info;
   }
 
-  /** tools/list with cursor pagination. */
-  async listTools(
-    signal?: AbortSignal,
-  ): Promise<Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }>> {
-    const tools: Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }> = [];
-    let cursor: string | undefined;
-    for (let page = 0; page < MAX_LIST_PAGES; page++) {
-      const result = await this.request(
-        'tools/list',
-        cursor === undefined ? {} : { cursor },
-        signal,
-      );
-      const { list, nextCursor } = parseToolsListResult(result);
-      tools.push(...list);
-      if (!nextCursor) return tools;
-      cursor = nextCursor;
-    }
-    this.debug(
-      `[mcp:${this.label}] tools/list pagination exceeded ${MAX_LIST_PAGES} pages; truncating`,
+  /** tools/list with cursor pagination (shared drain, see protocol.ts). */
+  listTools(signal?: AbortSignal): Promise<McpToolDescriptor[]> {
+    return listToolsPaginated(
+      (method, params, sig) => this.request(method, params, sig),
+      this.label,
+      this.debug,
+      signal,
     );
-    return tools;
   }
 
   /** tools/call; unknown result content types are stringified to text. */
@@ -573,202 +551,6 @@ export class StdioMcpConnection {
     this.pending.clear();
     for (const entry of entries) entry.reject(err);
   }
-}
-
-// -- shared-shape helpers (kept module-private; see registry for consumers) --
-
-function extractServerInfo(result: unknown): { name: string; version: string } | undefined {
-  if (result && typeof result === 'object' && 'serverInfo' in result) {
-    const si = (result as { serverInfo?: unknown }).serverInfo;
-    if (si && typeof si === 'object') {
-      const { name, version } = si as { name?: unknown; version?: unknown };
-      return {
-        name: typeof name === 'string' ? name : 'unknown',
-        version: typeof version === 'string' ? version : 'unknown',
-      };
-    }
-  }
-  return undefined;
-}
-
-/** The non-empty string protocolVersion from an initialize result, else
- *  undefined (audit r4 Z6-2). */
-function extractProtocolVersion(result: unknown): string | undefined {
-  if (result && typeof result === 'object') {
-    const pv = (result as { protocolVersion?: unknown }).protocolVersion;
-    if (typeof pv === 'string' && pv.length > 0) return pv;
-  }
-  return undefined;
-}
-
-/** Coerce a raw MCP tool `annotations` object into ToolAnnotations, keeping
- * only well-typed known fields; undefined when nothing usable is present. */
-function parseToolAnnotations(raw: unknown): ToolAnnotations | undefined {
-  if (!raw || typeof raw !== 'object') return undefined;
-  const a = raw as Record<string, unknown>;
-  const out: ToolAnnotations = {};
-  if (typeof a.title === 'string') out.title = a.title;
-  if (typeof a.readOnlyHint === 'boolean') out.readOnlyHint = a.readOnlyHint;
-  if (typeof a.destructiveHint === 'boolean') out.destructiveHint = a.destructiveHint;
-  if (typeof a.idempotentHint === 'boolean') out.idempotentHint = a.idempotentHint;
-  if (typeof a.openWorldHint === 'boolean') out.openWorldHint = a.openWorldHint;
-  return Object.keys(out).length > 0 ? out : undefined;
-}
-
-function parseToolsListResult(result: unknown): {
-  list: Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }>;
-  nextCursor?: string;
-} {
-  const list: Array<{ name: string; description?: string; inputSchema: JSONSchema; annotations?: ToolAnnotations }> = [];
-  if (!result || typeof result !== 'object') return { list };
-  const obj = result as { tools?: unknown; nextCursor?: unknown };
-  if (Array.isArray(obj.tools)) {
-    for (const raw of obj.tools) {
-      if (!raw || typeof raw !== 'object') continue;
-      const t = raw as {
-        name?: unknown;
-        description?: unknown;
-        inputSchema?: unknown;
-        annotations?: unknown;
-      };
-      if (typeof t.name !== 'string' || t.name.length === 0) continue;
-      const annotations = parseToolAnnotations(t.annotations);
-      list.push({
-        name: t.name,
-        description: typeof t.description === 'string' ? t.description : undefined,
-        inputSchema:
-          t.inputSchema && typeof t.inputSchema === 'object' && !Array.isArray(t.inputSchema)
-            ? (t.inputSchema as JSONSchema)
-            : { type: 'object' },
-        ...(annotations !== undefined ? { annotations } : {}),
-      });
-    }
-  }
-  const nextCursor =
-    typeof obj.nextCursor === 'string' && obj.nextCursor.length > 0
-      ? obj.nextCursor
-      : undefined;
-  return { list, nextCursor };
-}
-
-function normalizeCallToolResult(raw: unknown): CallToolResult {
-  if (!raw || typeof raw !== 'object') {
-    return { content: [{ type: 'text', text: JSON.stringify(raw ?? null) }] };
-  }
-  const obj = raw as { content?: unknown; isError?: unknown; structuredContent?: unknown };
-  const content: CallToolResultContent[] = [];
-  if (Array.isArray(obj.content)) {
-    for (const item of obj.content) content.push(normalizeContentItem(item));
-  }
-  const result: CallToolResult = { content };
-  if (obj.isError === true) result.isError = true;
-  if (obj.structuredContent !== undefined) result.structuredContent = obj.structuredContent;
-  return result;
-}
-
-/** Parse a resources/list JSON-RPC result into McpResource[]. */
-export function parseResourcesList(raw: unknown): McpResource[] {
-  const arr = (raw as { resources?: unknown } | null)?.resources;
-  if (!Array.isArray(arr)) return [];
-  const out: McpResource[] = [];
-  for (const item of arr) {
-    if (!item || typeof item !== 'object') continue;
-    const r = item as Record<string, unknown>;
-    if (typeof r.uri !== 'string') continue;
-    const res: McpResource = { uri: r.uri };
-    if (typeof r.name === 'string') res.name = r.name;
-    if (typeof r.description === 'string') res.description = r.description;
-    if (typeof r.mimeType === 'string') res.mimeType = r.mimeType;
-    out.push(res);
-  }
-  return out;
-}
-
-/** Parse a resources/read JSON-RPC result into McpResourceContent[]. */
-export function parseResourceContents(raw: unknown): McpResourceContent[] {
-  const arr = (raw as { contents?: unknown } | null)?.contents;
-  if (!Array.isArray(arr)) return [];
-  const out: McpResourceContent[] = [];
-  for (const item of arr) {
-    if (!item || typeof item !== 'object') continue;
-    const c = item as Record<string, unknown>;
-    if (typeof c.uri !== 'string') continue;
-    const content: McpResourceContent = { uri: c.uri };
-    if (typeof c.mimeType === 'string') content.mimeType = c.mimeType;
-    if (typeof c.text === 'string') content.text = c.text;
-    if (typeof c.blob === 'string') content.blob = c.blob;
-    out.push(content);
-  }
-  return out;
-}
-
-function normalizeContentItem(item: unknown): CallToolResultContent {
-  if (item && typeof item === 'object') {
-    const t = item as {
-      type?: unknown;
-      text?: unknown;
-      data?: unknown;
-      mimeType?: unknown;
-      resource?: unknown;
-    };
-    if (t.type === 'text' && typeof t.text === 'string') {
-      return { type: 'text', text: t.text };
-    }
-    if (t.type === 'image' && typeof t.data === 'string' && typeof t.mimeType === 'string') {
-      return { type: 'image', data: t.data, mimeType: t.mimeType };
-    }
-    if (t.type === 'audio' && typeof t.data === 'string' && typeof t.mimeType === 'string') {
-      return { type: 'audio', data: t.data, mimeType: t.mimeType };
-    }
-    if (t.type === 'resource_link' && typeof (t as { uri?: unknown }).uri === 'string') {
-      const rl = t as {
-        uri: string;
-        name?: unknown;
-        description?: unknown;
-        mimeType?: unknown;
-      };
-      const out: CallToolResultContent = { type: 'resource_link', uri: rl.uri };
-      if (typeof rl.name === 'string') out.name = rl.name;
-      if (typeof rl.description === 'string') out.description = rl.description;
-      if (typeof rl.mimeType === 'string') out.mimeType = rl.mimeType;
-      return out;
-    }
-    if (t.type === 'resource' && t.resource && typeof t.resource === 'object') {
-      const r = t.resource as {
-        uri?: unknown;
-        mimeType?: unknown;
-        text?: unknown;
-        blob?: unknown;
-      };
-      if (typeof r.uri === 'string') {
-        const resource: { uri: string; mimeType?: string; text?: string; blob?: string } = {
-          uri: r.uri,
-        };
-        if (typeof r.mimeType === 'string') resource.mimeType = r.mimeType;
-        if (typeof r.text === 'string') resource.text = r.text;
-        // BlobResourceContents (MCP spec): base64 binary payload — dropping it
-        // silently emptied embedded binary resources (audit 2026-07-17 L36).
-        if (typeof r.blob === 'string') resource.blob = r.blob;
-        return { type: 'resource', resource };
-      }
-    }
-  }
-  // Unknown content types are surfaced as stringified text rather than dropped.
-  return { type: 'text', text: JSON.stringify(item ?? null) };
-}
-
-function rpcErrorToError(label: string, error: { code?: number; message?: string }): Error {
-  const code = typeof error.code === 'number' ? ` ${String(error.code)}` : '';
-  return new McpError(
-    'mcp_rpc_error',
-    `MCP server '${label}' returned JSON-RPC error${code}: ${error.message ?? 'unknown error'}`,
-    {
-      serverLabel: label,
-      transport: 'stdio',
-      phase: 'request',
-      ...(typeof error.code === 'number' ? { rpcCode: error.code } : {}),
-    },
-  );
 }
 
 function errMessage(err: unknown): string {

@@ -58,6 +58,7 @@ import {
 } from './helpers/mock-transport.js';
 import { makeSSEFetch } from './helpers/sse-fetch.js';
 import { stampSigningModel } from '../src/engine/thinking-provenance.js';
+import { FakeMcp } from './helpers/engine-fakes.js';
 
 // ---------------------------------------------------------------------------
 // Fakes
@@ -170,26 +171,6 @@ class FakeHookRunner implements HookRunner {
       updatedToolOutput: s.updatedToolOutput,
     };
   }
-}
-
-/** Empty MCP registry (no servers, no tools). */
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(_qualifiedName: string): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'unexpected mcp call' }], isError: true };
-  }
-  async reconnect(_serverName: string): Promise<void> {}
-  setEnabled(_serverName: string, _enabled: boolean): void {}
-  async closeAll(): Promise<void> {}
 }
 
 function makeFakeReadTool(

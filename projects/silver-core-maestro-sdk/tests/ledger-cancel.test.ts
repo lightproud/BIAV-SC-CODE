@@ -12,43 +12,9 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 import { TaskLedger } from '../src/ledger/ledger.js';
 import { InvalidTransitionError } from '../src/ledger/state.js';
 import { LedgerDriver, type DriverEvent } from '../src/driver.js';
-import type { LedgerStore, SessionFilter } from '../src/ledger/store.js';
-import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
-
-function memoryStore(): LedgerStore & {
-  sessions: Map<string, SessionRecord>;
-  queries: QueryRecord[];
-} {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  return {
-    sessions,
-    queries,
-    async putSession(record) {
-      sessions.set(record.id, { ...record });
-    },
-    async getSession(id) {
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter?: SessionFilter) {
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) {
-        all = all.filter((s) => filter.states!.includes(s.state));
-      }
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(record) {
-      queries.push({ ...record });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-}
+import type { LedgerStore } from '../src/ledger/store.js';
+import type { SessionRecord } from '../src/ledger/types.js';
+import { memoryStore } from './helpers/memory-store.js';
 
 /** memoryStore + a compliant putSessionIf (revision CAS), audit-r4 style. */
 function casStore() {

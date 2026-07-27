@@ -24,27 +24,16 @@ import { AbortError } from '../src/errors.js';
 import { createToolDispatcher, mapMcpResult } from '../src/engine/tool-dispatch.js';
 import type {
   BuiltinTool,
-  ToolContext,
   ToolDispatchRecord,
 } from '../src/internal/contracts.js';
 import type { CallToolResult, ToolUseBlock } from '../src/types.js';
+import { toolContext as makeCtx } from './helpers/tool-context.js';
 
 // A module-private sentinel for stubs that must never be reached (never
 // `new Error(...)`, per the SDK's error discipline).
 class StubError extends Error {}
 
 const LONE_SURROGATE = /[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/;
-
-function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...overrides,
-  };
-}
 
 function toolBlock(name: string, input: Record<string, unknown> = {}): ToolUseBlock {
   return { type: 'tool_use', id: 'tu_1', name, input };

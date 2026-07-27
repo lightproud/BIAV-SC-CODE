@@ -25,7 +25,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { editTool } from '../src/tools/edit.js';
 import { runAgentLoop } from '../src/engine/loop.js';
-import { MessageAccumulator, toolInputTruncationOf } from '../src/engine/accumulator.js';
+import { MessageAccumulator } from '../src/engine/accumulator.js';
 import { evaluateStructuredOutput } from '../src/engine/structured-output.js';
 import { OpenAIChatTransport } from '../src/transport/openai.js';
 import { parseSSE } from '../src/transport/sse.js';
@@ -36,7 +36,6 @@ import type {
   EngineConfig,
   EngineDeps,
   HookRunner,
-  McpRegistry,
   PermissionGate,
   StreamRequest,
   ToolContext,
@@ -45,8 +44,6 @@ import type {
 import type {
   ApiKeySource,
   APIMessageParam,
-  CallToolResult,
-  McpServerStatus,
   RawMessageStreamEvent,
   SDKMessage,
   SDKResultMessage,
@@ -54,29 +51,11 @@ import type {
   SubagentTransportRequest,
 } from '../src/types.js';
 import { MockTransport } from './helpers/mock-transport.js';
+import { FakeMcp } from './helpers/engine-fakes.js';
 
 // ---------------------------------------------------------------------------
 // Shared minimal engine fakes (mirrors engine.test.ts)
 // ---------------------------------------------------------------------------
-
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'unexpected mcp call' }], isError: true };
-  }
-  async reconnect(): Promise<void> {}
-  setEnabled(): void {}
-  async closeAll(): Promise<void> {}
-}
 
 const allowAllGate: PermissionGate = {
   async check(_t, input) {

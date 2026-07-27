@@ -1,15 +1,22 @@
 /**
- * Minimal engine collaborators for driving runAgentLoop in tests that only care
- * about the transport/error path (no tools, no hooks, no MCP). Mirrors the
- * inline fakes in engine.test.ts, extracted so other suites can reuse them.
+ * Minimal engine collaborators for driving runAgentLoop in tests.
+ *
+ * These started as inline fakes in engine.test.ts. They were then pasted into
+ * suite after suite — FakeMcp alone had 14 definitions across the tests/ tree
+ * in 5 slightly different shapes (some with setServers, some without, differing
+ * only in an error string nothing asserts). This module is now the one home:
+ * add a method here when the contract grows, instead of hunting copies.
  */
 
 import type {
   AggregatedHookResult,
+  BuiltinTool,
   HookRunner,
   McpRegistry,
   PermissionCheckResult,
   PermissionGate,
+  SessionStore,
+  StoredSession,
 } from '../../src/internal/contracts.js';
 import type {
   CallToolResult,
@@ -73,5 +80,46 @@ export class FakeMcp implements McpRegistry {
   }
   async reconnect(_serverName: string): Promise<void> {}
   setEnabled(_serverName: string, _enabled: boolean): void {}
+  async setServers() {
+    return { servers: [] };
+  }
   async closeAll(): Promise<void> {}
+}
+
+/** Session store that records appended entries and reads back as empty. */
+export class FakeStore implements SessionStore {
+  readonly entries = new Map<string, Array<Record<string, unknown>>>();
+  append(sessionId: string, entry: Record<string, unknown>): void {
+    const arr = this.entries.get(sessionId) ?? [];
+    arr.push(entry);
+    this.entries.set(sessionId, arr);
+  }
+  async load(): Promise<StoredSession | null> {
+    return null;
+  }
+  async list(): Promise<StoredSession[]> {
+    return [];
+  }
+  async latestSessionId(): Promise<string | null> {
+    return null;
+  }
+}
+
+/** Builtin tool that pushes each input it receives onto `executed`. */
+export function recordingTool(
+  name: string,
+  executed: Array<Record<string, unknown>>,
+  opts: { readOnly?: boolean; isFileEdit?: boolean } = {},
+): BuiltinTool {
+  return {
+    name,
+    description: `fake ${name}`,
+    inputSchema: { type: 'object', properties: {} },
+    readOnly: opts.readOnly ?? false,
+    isFileEdit: opts.isFileEdit,
+    async execute(input) {
+      executed.push(input);
+      return { content: `${name} ran` };
+    },
+  };
 }

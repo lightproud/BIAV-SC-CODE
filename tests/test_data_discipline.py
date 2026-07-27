@@ -27,13 +27,10 @@ into ``tmp_path`` via monkeypatch, never into real ``projects/news`` data.
 """
 from __future__ import annotations
 
-import importlib
 import json
 import re
 import sys
 from pathlib import Path
-
-import pytest
 
 REPO = Path(__file__).resolve().parent.parent
 SCRIPTS = REPO / "scripts"

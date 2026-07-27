@@ -26,7 +26,6 @@ import type {
   EngineConfig,
   EngineDeps,
   HookRunner,
-  McpRegistry,
   PermissionGate,
   StreamRequest,
   Transport,
@@ -34,13 +33,12 @@ import type {
 import type {
   ApiKeySource,
   APIMessageParam,
-  CallToolResult,
-  McpServerStatus,
   RawMessageStreamEvent,
   SDKMessage,
   SDKResultMessage,
 } from '../src/types.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
+import { FakeMcp } from './helpers/engine-fakes.js';
 
 // ---------------------------------------------------------------------------
 // Shared minimal engine fakes (mirrors t49-batch-b.test.ts)
@@ -48,25 +46,6 @@ import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
 
 /** Module-private test-harness sentinel (error-discipline: no bare Error). */
 class HarnessError extends Error {}
-
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'unexpected mcp call' }], isError: true };
-  }
-  async reconnect(): Promise<void> {}
-  setEnabled(): void {}
-  async closeAll(): Promise<void> {}
-}
 
 const allowAllGate: PermissionGate = {
   async check(_t, input) {

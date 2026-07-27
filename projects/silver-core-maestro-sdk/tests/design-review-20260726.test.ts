@@ -27,44 +27,7 @@ import {
   type SessionRecord,
   type WorkflowGraph,
 } from 'silver-core-maestro-sdk';
-
-/** Host store; `withDelete` toggles the optional 0.78.0 retention seam. */
-function hostStore(opts: { withDelete?: boolean } = {}): LedgerStore {
-  const sessions = new Map<string, SessionRecord>();
-  let queries: QueryRecord[] = [];
-  const store: LedgerStore = {
-    async putSession(r) {
-      sessions.set(r.id, { ...r });
-    },
-    async getSession(id) {
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter?: SessionFilter) {
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) all = all.filter((s) => filter.states!.includes(s.state));
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(r) {
-      queries.push({ ...r });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-  if (opts.withDelete === true) {
-    store.deleteSession = async (id) => {
-      if (!sessions.has(id)) return false;
-      sessions.delete(id);
-      queries = queries.filter((q) => q.sessionId !== id);
-      return true;
-    };
-  }
-  return store;
-}
+import { hostStore } from './helpers/host-store.js';
 
 const ledgerOf = (store: LedgerStore, over: { claimLeaseMs?: number } = {}): TaskLedger =>
   new TaskLedger({ store, clock: { now: () => Date.now() }, ...over });

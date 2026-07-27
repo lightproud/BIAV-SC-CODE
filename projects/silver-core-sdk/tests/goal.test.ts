@@ -18,40 +18,19 @@ import { DefaultPermissionGate } from '../src/permissions/gate.js';
 import { ConfigurationError } from '../src/errors.js';
 import { query } from '../src/query.js';
 import type {
-  CallToolResult,
   EngineConfig,
   EngineDeps,
-  McpRegistry,
 } from '../src/internal/contracts.js';
 import type {
   APIMessageParam,
   GoalEvent,
   GoalVerdict,
-  McpServerStatus,
   SDKMessage,
   SDKResultMessage,
 } from '../src/types.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
 import { makeSSEFetch } from './helpers/sse-fetch.js';
-
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(_qualifiedName: string): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'unexpected mcp call' }], isError: true };
-  }
-  async reconnect(_serverName: string): Promise<void> {}
-  setEnabled(_serverName: string, _enabled: boolean): void {}
-  async closeAll(): Promise<void> {}
-}
+import { FakeMcp } from './helpers/engine-fakes.js';
 
 function makeDeps(transport: MockTransport, hooks: DefaultHookRunner): EngineDeps {
   return {

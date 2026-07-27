@@ -29,6 +29,9 @@ from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
+# frontmatter 解析单一真相源（与 bundle 写方同源，见 okf_frontmatter.py）
+from okf_frontmatter import _read_frontmatter
+
 REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
 INDEX_PATH = BUNDLE / "kb_index.json"
@@ -48,7 +51,6 @@ def tier_of(section: str) -> str:
     return "skeleton" if section in SKELETON_LAYERS else "search"
 
 
-_FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
 # strip a leading frontmatter block to leave the searchable body
 _BODY_RE = re.compile(r"^---\n.*?\n---\n", re.DOTALL)
 # lightweight markdown noise removal so tokenizer sees words, not syntax
@@ -60,24 +62,6 @@ def _tokenize(text: str) -> list[str]:
     from silver_tokenizer import tokenize  # scripts/ is on sys.path when run/imported
 
     return tokenize(text)
-
-
-def _read_frontmatter(text: str) -> dict:
-    """Minimal flat-YAML frontmatter parser (same shape as build_okf_bundle)."""
-    m = _FM_RE.match(text)
-    fields: dict = {}
-    if not m:
-        return fields
-    for line in m.group(1).splitlines():
-        if not line.strip() or line.startswith(" ") or ":" not in line:
-            continue
-        key, _, val = line.partition(":")
-        key, val = key.strip(), val.strip()
-        if val.startswith("[") and val.endswith("]"):
-            fields[key] = [v.strip().strip('"') for v in val[1:-1].split(",") if v.strip()]
-        else:
-            fields[key] = val.strip('"')
-    return fields
 
 
 def _body_of(text: str) -> str:

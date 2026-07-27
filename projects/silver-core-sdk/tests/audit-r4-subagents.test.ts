@@ -34,18 +34,14 @@ import { AbortError } from '../src/errors.js';
 import type {
   BuiltinTool,
   EngineConfig,
-  McpRegistry,
   SessionStore,
   SpawnSubagentParams,
-  StoredSession,
   ToolContext,
   Transport,
 } from '../src/internal/contracts.js';
 import type {
   AgentDefinition,
   APIMessageParam,
-  CallToolResult,
-  McpServerStatus,
   Options,
   RawMessageStreamEvent,
   SDKMessage,
@@ -55,68 +51,11 @@ import {
   textReplyEvents,
   toolUseReplyEvents,
 } from './helpers/mock-transport.js';
+import { FakeMcp, FakeStore, recordingTool } from './helpers/engine-fakes.js';
 
 // ---------------------------------------------------------------------------
 // Fakes / builders (subagents.test.ts conventions, trimmed)
 // ---------------------------------------------------------------------------
-
-class FakeMcp implements McpRegistry {
-  async connectAll(): Promise<void> {}
-  statuses(): McpServerStatus[] {
-    return [];
-  }
-  allTools(): [] {
-    return [];
-  }
-  has(): boolean {
-    return false;
-  }
-  async call(): Promise<CallToolResult> {
-    return { content: [{ type: 'text', text: 'x' }], isError: true };
-  }
-  async reconnect(): Promise<void> {}
-  setEnabled(): void {}
-  async setServers() {
-    return { servers: [] };
-  }
-  async closeAll(): Promise<void> {}
-}
-
-class FakeStore implements SessionStore {
-  readonly entries = new Map<string, Array<Record<string, unknown>>>();
-  append(sessionId: string, entry: Record<string, unknown>): void {
-    const arr = this.entries.get(sessionId) ?? [];
-    arr.push(entry);
-    this.entries.set(sessionId, arr);
-  }
-  async load(): Promise<StoredSession | null> {
-    return null;
-  }
-  async list(): Promise<StoredSession[]> {
-    return [];
-  }
-  async latestSessionId(): Promise<string | null> {
-    return null;
-  }
-}
-
-function recordingTool(
-  name: string,
-  executed: Array<Record<string, unknown>>,
-  opts: { readOnly?: boolean; isFileEdit?: boolean } = {},
-): BuiltinTool {
-  return {
-    name,
-    description: `fake ${name}`,
-    inputSchema: { type: 'object', properties: {} },
-    readOnly: opts.readOnly ?? false,
-    isFileEdit: opts.isFileEdit,
-    async execute(input) {
-      executed.push(input);
-      return { content: `${name} ran` };
-    },
-  };
-}
 
 function makeConfig(overrides: Partial<EngineConfig> = {}): EngineConfig {
   return {

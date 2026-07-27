@@ -6,9 +6,6 @@ All network calls go through fetch_json, which we monkeypatch; no real HTTP.
 import json
 import sys
 from pathlib import Path
-from unittest import mock
-
-import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects/wiki/scripts"))
 

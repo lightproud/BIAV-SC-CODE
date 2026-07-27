@@ -7,7 +7,6 @@ DOM 调试写入异常、review/topic body 的额外解析分支。
 """
 
 import asyncio
-import json
 import sys
 import tempfile
 import unittest

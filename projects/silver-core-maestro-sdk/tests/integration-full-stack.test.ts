@@ -31,43 +31,11 @@ import {
   type Executor,
   type GoalChaserEvent,
   type GoalRoundPayload,
-  type LedgerStore,
-  type QueryRecord,
   type ScheduleSpec,
-  type SessionFilter,
-  type SessionRecord,
   type WorkflowGraph,
   type WorkflowNodePayload,
 } from 'silver-core-maestro-sdk';
-
-/** Host storage battery written against the public LedgerStore seam only. */
-function hostStore(): LedgerStore {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  return {
-    async putSession(r) {
-      sessions.set(r.id, { ...r });
-    },
-    async getSession(id) {
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter?: SessionFilter) {
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) all = all.filter((s) => filter.states!.includes(s.state));
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(r) {
-      queries.push({ ...r });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-}
+import { hostStore } from './helpers/host-store.js';
 
 /** The a->(b,c)->d diamond used by scenarios 1-3. */
 function diamondGraph(): WorkflowGraph {

@@ -15,7 +15,6 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { tmpdir } from 'node:os';
 import { EventEmitter } from 'node:events';
 import { Readable } from 'node:stream';
 
@@ -34,21 +33,10 @@ import {
   webFetchTool,
   type PinnedAddress,
 } from '../src/tools/webfetch.js';
-import type { ToolContext } from '../src/internal/contracts.js';
+import { toolContext as makeCtx } from './helpers/tool-context.js';
 
 const mockLookup = vi.mocked(lookup);
 const mockRequest = vi.mocked(httpsRequest);
-
-function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...overrides,
-  };
-}
 
 /** Fake IncomingMessage: a Readable with the http response metadata bolted on. */
 function fakeResponse(

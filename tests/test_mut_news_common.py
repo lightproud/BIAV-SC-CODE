@@ -9,14 +9,10 @@ _WBI_MIXIN_KEY_ENC_TAB 以「黄金值一击全钉」处理（任一表项变动
 Hermetic：socket / requests / time.sleep 全部打桩，零网络。
 Imports via PACKAGE path so mutmut's trampoline keys match.
 """
-import hashlib
 import json
 import sys
-import types
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from unittest import mock
-
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))

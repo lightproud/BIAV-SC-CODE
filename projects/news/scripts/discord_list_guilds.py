@@ -22,7 +22,6 @@ from pathlib import Path
 
 # 复用归档器的 Global guild 常量；已登记清单从布局 SSOT 注册表派生（单一映射源）。
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from discord_archiver import GLOBAL_GUILD_ID  # noqa: E402
 from archive_layout import DISCORD_GUILD_REGIONS, discord_root  # noqa: E402
 
 API_BASE = 'https://discord.com/api/v10'

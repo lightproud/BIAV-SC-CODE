@@ -10,35 +10,8 @@ import {
   runLedgerStoreContractSuite,
 } from '../src/ledger/contract-suite.js';
 import type { LedgerStore } from '../src/ledger/store.js';
-import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
-
-function memoryStore(): LedgerStore {
-  const sessions = new Map<string, SessionRecord>();
-  const queries: QueryRecord[] = [];
-  return {
-    async putSession(record) {
-      sessions.set(record.id, { ...record });
-    },
-    async getSession(id) {
-      const r = sessions.get(id);
-      return r === undefined ? null : { ...r };
-    },
-    async listSessions(filter) {
-      let all = [...sessions.values()];
-      if (filter?.states !== undefined) all = all.filter((s) => filter.states!.includes(s.state));
-      if (filter?.dueBefore !== undefined) {
-        all = all.filter((s) => s.nextRunAt !== null && s.nextRunAt <= filter.dueBefore!);
-      }
-      return all.map((s) => ({ ...s }));
-    },
-    async appendQuery(record) {
-      queries.push({ ...record });
-    },
-    async listQueries(sessionId) {
-      return queries.filter((q) => q.sessionId === sessionId).map((q) => ({ ...q }));
-    },
-  };
-}
+import type { SessionRecord } from '../src/ledger/types.js';
+import { memoryStore } from './helpers/memory-store.js';
 
 describe('runLedgerStoreContractSuite', () => {
   it('passes a compliant store and reports every check', async () => {

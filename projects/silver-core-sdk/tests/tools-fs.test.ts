@@ -20,6 +20,7 @@ import {
 } from '../src/sessions/checkpoints.js';
 import { AbortError } from '../src/errors.js';
 import type { ToolContext } from '../src/internal/contracts.js';
+import { toolContextIn as makeCtx } from './helpers/tool-context.js';
 
 /** Sandboxes created during the current test; removed in afterEach. */
 let sandboxes: string[] = [];
@@ -28,17 +29,6 @@ async function makeSandbox(prefix = 'bpt-fs-'): Promise<string> {
   const dir = await mkdtemp(path.join(os.tmpdir(), prefix));
   sandboxes.push(dir);
   return dir;
-}
-
-function makeCtx(cwd: string, extra: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd,
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...extra,
-  };
 }
 
 function abortedCtx(cwd: string): ToolContext {

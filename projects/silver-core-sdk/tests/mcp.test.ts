@@ -19,7 +19,8 @@ import { z } from 'zod';
 
 import { createSdkMcpServer, SdkMcpConnection, tool } from '../src/mcp/sdk-server.js';
 import { HttpMcpConnection } from '../src/mcp/http.js';
-import { parseResourcesList, parseResourceContents, StdioMcpConnection } from '../src/mcp/stdio.js';
+import { StdioMcpConnection } from '../src/mcp/stdio.js';
+import { parseResourcesList, parseResourceContents } from '../src/mcp/protocol.js';
 import { DefaultMcpRegistry } from '../src/mcp/registry.js';
 import type { CallToolResult, ElicitationHandler, SdkMcpToolDefinition } from '../src/types.js';
 

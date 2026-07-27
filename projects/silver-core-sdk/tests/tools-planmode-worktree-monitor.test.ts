@@ -55,6 +55,7 @@ import {
   repoToplevel,
   worktreeBranch,
 } from '../src/internal/worktree.js';
+import { toolContext } from './helpers/tool-context.js';
 
 // ---------------------------------------------------------------------------
 // Shared fixtures
@@ -69,15 +70,12 @@ afterEach(() => {
   tempDirs = [];
 });
 
+/** Shared builder, but with the REAL process env — these suites shell out. */
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
+  return toolContext({
     env: process.env as Record<string, string | undefined>,
-    signal: new AbortController().signal,
-    debug: () => {},
     ...overrides,
-  };
+  });
 }
 
 function text(r: ToolResultPayload): string {

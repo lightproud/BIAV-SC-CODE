@@ -15,7 +15,6 @@
  */
 
 import { readFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -24,22 +23,11 @@ import { describe, it, expect } from 'vitest';
 import { webSearchTool } from '../src/tools/websearch.js';
 import { createBuiltinTools } from '../src/tools/index.js';
 import { WEBSEARCH_DESCRIPTION } from '../src/tools/descriptions.js';
-import type { ToolContext } from '../src/internal/contracts.js';
 import type { WebSearchResult } from '../src/types.js';
+import { toolContext as makeCtx } from './helpers/tool-context.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const COMPAT_MD = join(here, '..', 'docs', 'COMPAT.md');
-
-function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...overrides,
-  };
-}
 
 // ---------------------------------------------------------------------------
 // Sd-1 — WebSearch renders markdown hyperlinks (impl fix)
