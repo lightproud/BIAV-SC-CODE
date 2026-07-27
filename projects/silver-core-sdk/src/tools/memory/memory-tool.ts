@@ -27,7 +27,13 @@ import type {
 } from '../../internal/contracts.js';
 import type { JSONSchema, SDKMemoryHealth } from '../../types.js';
 import { AbortError, isAbortError } from '../../errors.js';
-import { MEMORY_ROOT, validateMemoryPath } from './paths.js';
+import { MEMORY_INDEX_PATH, MEMORY_ROOT, validateMemoryPath } from './paths.js';
+import {
+  assessIndexCapacity,
+  indexCapacityWarning,
+  recoverIndexLines,
+  type IndexCaps,
+} from './index-capacity.js';
 import {
   DEFAULT_CARDS_CONFIG,
   validateCardsContent,
@@ -183,6 +189,11 @@ export type CreateMemoryToolOptions = {
   cards?: Partial<MemoryCardsConfig>;
   /** S1 scope routing: resolved mounts (null / absent = unrestricted). */
   mounts?: ResolvedMemoryMounts;
+  /** R6 read-side caps. Present = a write that leaves /memories/MEMORY.md over
+   *  them gets the capacity warning appended to its (successful) result;
+   *  absent = the index is not being injected, so nothing is being truncated
+   *  and there is nothing to warn about. */
+  indexCaps?: IndexCaps;
   /** S2 incognito: reject every write command (view stays available). */
   incognitoReadOnly?: boolean;
 };
@@ -227,6 +238,25 @@ export function createMemoryTool(
       return subtreeReadOnlyMountError(mounts, path);
     }
     return null;
+  };
+  /** Write-side index back-pressure: after a SUCCESSFUL write to the resident
+   *  index, re-read its head and warn when the read side would now truncate it
+   *  — otherwise the model keeps appending into a tail no future session ever
+   *  loads (keeper diagnosis 2026-07-27). Reads one line past the cap so
+   *  overflow is detectable in a single round-trip; deliberately NOT counted in
+   *  the R8 read counters (this is harness I/O, like the R6 injection read, not
+   *  a read the model asked for). Any failure yields no warning: a successful
+   *  write must never be turned into an error by its own advisory. */
+  const indexCaps = toolOptions.indexCaps;
+  const indexWarning = async (path: string): Promise<string> => {
+    if (indexCaps === undefined || path !== MEMORY_INDEX_PATH) return '';
+    try {
+      const viewed = await store.view(path, [1, indexCaps.maxLines + 1]);
+      const capacity = assessIndexCapacity(recoverIndexLines(viewed).lines, indexCaps);
+      return capacity.over ? indexCapacityWarning(path, capacity, indexCaps) : '';
+    } catch {
+      return '';
+    }
   };
   return {
     name: MEMORY_TOOL_NAME,
@@ -312,7 +342,7 @@ export function createMemoryTool(
               health.writes += 1;
               health.bytesWritten += bytesOf(cmd.file_text);
             }
-            return done({ content: created });
+            return done({ content: created + (await indexWarning(path)) });
           }
           case 'str_replace': {
             const path = validateMemoryPath(cmd.path);
@@ -332,7 +362,7 @@ export function createMemoryTool(
               health.writes += 1;
               health.bytesWritten += bytesOf(cmd.new_str ?? '');
             }
-            return done({ content: replacedContent });
+            return done({ content: replacedContent + (await indexWarning(path)) });
           }
           case 'insert': {
             const path = validateMemoryPath(cmd.path);
@@ -349,7 +379,7 @@ export function createMemoryTool(
               health.writes += 1;
               health.bytesWritten += bytesOf(cmd.insert_text);
             }
-            return done({ content: inserted });
+            return done({ content: inserted + (await indexWarning(path)) });
           }
           case 'delete': {
             const path = validateMemoryPath(cmd.path);
@@ -384,7 +414,8 @@ export function createMemoryTool(
             if (denied !== null) return done(errorResult(denied));
             const renamed = await store.rename(oldPath, newPath);
             if (health !== undefined) health.writes += 1;
-            return done({ content: renamed });
+            // Renaming a file ONTO the index makes it the index — same check.
+            return done({ content: renamed + (await indexWarning(newPath)) });
           }
         }
       } catch (e) {

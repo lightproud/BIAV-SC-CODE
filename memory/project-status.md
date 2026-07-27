@@ -82,10 +82,10 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.79.1` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.79.1` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.80.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.80.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
-| agent SDK 源文件 / 测试档 | 134 / 198 | 磁盘实况 |
+| agent SDK 源文件 / 测试档 | 136 / 199 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 137 | 磁盘实况 |
@@ -249,6 +249,7 @@
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
+> **v0.80.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.80.0（记忆索引纪律 + 整理规程）前进。
 > **v0.79.1（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.79.1（transport / MCP 内部去重）前进。
 >
 > **v0.79.0（2026-07-26）**：**重开语义（T67 甲案）+ 三项余项推进**（守密人「按你建议推进」）——`TaskLedger.reopenSession`/`reopenChain`（新会话 + `reopenOf`/`attemptRound` 链，**封闭状态机未动**：终态不可变是 CAS 围栏/幂等派发/重启不复活的共同立足点，缺的从来不是边而是链接；前驱须终态、`cancelled` 默认拒绝、后继 id 从链根派生、payload 可覆盖）· **T68** `docs/CONCURRENCY.md`（本包第二份文档）· **T69** 棘轮 `cadence` 分档（三个零消费靶降月检，加字段不删腿，cadence 自身三条治理断言）· **T70** 空转措辞钉死 + `scripts/sdk_substantive_versions.py`（守卫首跑抓到两条真漂移）。测试 404 → **421**。
@@ -316,6 +317,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.80.0（2026-07-27）**：记忆索引纪律 + 整理规程——修的是「SDK 给了常驻索引机制却没规定索引条目该长什么样，且会话收尾提示词命令模型把进度卡写进索引档」这个自伤缺口（守密人 BPT 现场反馈：开工要好几回工具调用才找得到东西）。进度卡改落 `/memories/progress/`、索引只留指针；新增索引纪律片段（两模式注入、前提不成立即跳过）；写侧超限反压（读写共用同一度量，明说尾部已不可见）；`buildConsolidationPrompt()` + 四阶段整理规程，由 `assessMemoryStoreHealth()` 结果渲染待办。**层界守住**：只给「该不该整理 / 怎么整理」，不给调度（N1 未破，零新进程）。新增测试 28。
 - **v0.79.1（2026-07-27）**：内部去重，零表面/行为变化——重试退避与 JSON-RPC 两族重复实现分别收敛为 `transport/http-retry.ts` / `mcp/protocol.ts`，六档净 −288 行。随 #835 合并时漏 bump 致版本门禁在 main 红约一小时，本版为补票（详见 CHANGELOG）。
 - **v0.79.0（2026-07-26，锁步对齐）**：本包**零代码改动**；随 maestro 0.79.0 前进，同批订正本包 0.72.0/0.70.0 两条空转条目措辞（内容未变）。
 - **v0.78.1（2026-07-26，锁步对齐）**：本包**零代码改动**；家族版本钟随 maestro 0.78.1（产品审视四裁，含删除其对本包的无支撑 peerDependency）整体前进。

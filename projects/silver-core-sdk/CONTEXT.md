@@ -69,11 +69,25 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.79.1`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.79.1`
+**当前版本 `0.80.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.80.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.80.0（2026-07-27）：记忆索引纪律 + 整理规程**——起于守密人现场反馈（BPT 在产：
+记录堆积、每次开工要好几回 `memory` 工具调用才找得到东西）。真因不是缺检索腿，而是 SDK 给了
+常驻索引**机制**（R6 每会话注入 `/memories/MEMORY.md` 头部）却从没规定索引**条目该长什么样**，
+且 `MEMORY_SESSION_END_PROMPT` 反过来命令模型把进度卡写**进**那一档——每会话一次，索引撑过
+注入上限，被载入的头部变成陈年进度散文而非路由，尾部每次加载被静默丢弃。四件事收口：
+① 进度卡改落 `/memories/progress/`，索引只留一行指针；② 新增索引纪律片段（两模式均注入、非
+opt-in，前提不成立时——隐身 / 关闭索引注入——自动跳过，不对模型撒谎）；③ **写侧反压**：写完索引
+超 R6 上限即在成功回执后追加告警，明说尾部**已经**不可见，读写两侧共用同一份度量；
+④ `buildConsolidationPrompt()` + 四阶段整理规程（orient / gather / merge / **prune the index**），
+由体检结果渲染待办、对扫不到的维度明说盲区。**层界守住（N1 未破）**：SDK 只给「该不该整理」
+与「怎么整理」，**不给**「何时跑 / 用什么模型 / 跑在哪台机」——helper 零 I/O、不起任何进程，
+返回字符串由消费方自己 `query()`。**安全**：整理是跨档大范围写，多租户下必须挂 S1 挂载点。
+新增测试 28。
 
 **v0.79.1（2026-07-27）：内部去重，零表面变化**——重试/退避/错误体/流错误/空闲看门狗从
 `transport/anthropic.ts` 与 `transport/openai.ts` 各抄一份收敛为 `transport/http-retry.ts`；

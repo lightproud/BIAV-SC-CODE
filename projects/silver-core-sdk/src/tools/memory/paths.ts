@@ -16,6 +16,11 @@
 
 export const MEMORY_ROOT = '/memories';
 
+/** Virtual path of the resident index file (spec R6). Lives here rather than
+ *  in the assembly module so the TOOL layer can recognize an index write
+ *  without importing its own parent (index.ts imports memory-tool.ts). */
+export const MEMORY_INDEX_PATH = `${MEMORY_ROOT}/MEMORY.md`;
+
 /** Thrown on any invalid memory path; `message` is the tool_result content. */
 export class MemoryPathError extends Error {
   constructor(message: string) {

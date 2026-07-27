@@ -238,6 +238,82 @@ The five dimensions, each honest about its limits:
 Scans are bounded (`maxEntries`, default 4096); hitting the bound sets
 `truncatedScan: true` instead of silently under-reporting.
 
+## Index discipline + consolidation (keeper 2026-07-27)
+
+Field diagnosis from BPT in production: sessions burned several `memory`
+round-trips at startup just to find anything, on a store whose record count
+kept climbing. The cause was NOT missing retrieval. The SDK shipped the
+resident-index mechanism (R6) without ever saying what an index ENTRY should
+be, and `MEMORY_SESSION_END_PROMPT` told the model to write the progress card
+INTO `/memories/MEMORY.md`. Once per session, that grows the index past its own
+injection cap: the head that IS loaded becomes old progress prose instead of
+routing, the tail is silently dropped on every load, and the model has to walk
+the tree by hand. Read-side truncation with no write-side signal is a one-way
+mirror — the model never learns the tail it wrote is already invisible.
+
+Three pieces close it, plus one deliberate non-piece:
+
+**1. The card goes in a file, the pointer goes in the index.** The session-end
+round now writes to `/memories/progress/` (updating the task's existing card)
+and adds only a one-line pointer to the index; the compaction-flush prompt says
+the same. Same information, one indirection later.
+
+**2. `MEMORY_INDEX_DISCIPLINE_FRAGMENT`** — one line per entry, ~150 characters,
+`- <title> (<file path>) — one-line hook`, never memory content in the index.
+Injected in BOTH assembly modes (the R6 mechanism is SDK-side, so the
+API-injected native prompt says nothing about it) and NOT opt-in — the mechanism
+it completes is not opt-in either. It IS skipped when its own premise fails:
+incognito (S2 makes the index unwritable) or `indexInjection: false` (nothing is
+loaded or truncated, so "only the head is loaded" would be a claim the model
+would then falsely optimize for).
+
+**3. Write-side back-pressure.** A successful write that leaves the index over
+the R6 caps gets a warning appended to its result — stating the tail is ALREADY
+invisible, not that it may become so, and prescribing the fix in the index's own
+terms. Both sides judge by one shared measurement (`index-capacity.ts`): a
+warning that fired on a different threshold than the injection truncates at
+would be worse than no warning. The harness read-back is bounded (one line past
+the cap, single round-trip), is NOT booked into the R8 read counters (it is
+harness I/O, like the R6 injection read), and a failing read-back yields no
+warning — a successful write is never turned into an error by its own advisory.
+
+**4. Consolidation — the protocol, not the schedule.**
+
+```ts
+import { assessMemoryStoreHealth, buildConsolidationPrompt, query } from 'silver-core-agent-sdk';
+
+const health = await assessMemoryStoreHealth(ops, { counters: last.metrics?.memoryHealth });
+if (health.warnDirectories.length > 0 || !health.supersede.intact) {
+  for await (const m of query({
+    prompt: buildConsolidationPrompt(health, { instructions: 'Never touch /memories/team.' }),
+    options: {
+      memory: { store, mounts: [{ path: `/memories/users/${userId}`, mode: 'read-write' }] },
+    },
+  })) { /* ... */ }
+}
+```
+
+`MEMORY_CONSOLIDATION_PROTOCOL` is the four-phase skeleton — orient / gather /
+merge / **prune the index** — and `buildConsolidationPrompt` renders a health
+assessment into the round's task list: waterline directories, stale files
+(oldest first), oversized files, broken supersede chains, a write-heavy
+read/write ratio. Findings the scan could NOT make are stated, never omitted: a
+backend without mtimes gets an explicit blind spot, a bounded scan gets a
+LOWER-bound note, and a clean store gets a phase-1+4 pass instead of invented
+work.
+
+**The layer boundary (spec N1 intact).** The SDK gives (a) whether to tidy —
+`assessMemoryStoreHealth()`, and (b) how to tidy — this protocol. It does NOT
+give (c) when to run it, on what model, on whose machine: `buildConsolidationPrompt`
+performs no I/O and starts nothing, it returns a string the consumer passes to
+its own `query()`. No process, no scheduler, no background pipeline.
+
+**SECURITY — read before wiring this up.** A consolidation round is a broad,
+cross-file WRITE pass. On a multi-tenant store it MUST run under S1 mounts
+instantiated for the scope being tidied, exactly like an interactive session.
+"It's only a background task" is not a reason to hand it the whole tree — it is
+the reason it needs the routing most, since no one is watching it work.
+
 ## Reference formats (spec R1)
 
 Golden-tested against the official docs (`tests/memory-golden.test.ts`);
@@ -318,6 +394,9 @@ quality over ~2 weeks of runtime is the go/no-go signal for loop 3
 | Local-filesystem store | `src/tools/memory/local-store.ts` |
 | Contract test suite (publishable) | `src/tools/memory/contract-suite.ts` |
 | Assembly runtime (mode/store/index resolution) | `src/tools/memory/index.ts` |
+| Index capacity (read+write shared measurement) | `src/tools/memory/index-capacity.ts` |
+| Consolidation protocol + prompt builder | `src/tools/memory/consolidation.ts` |
+| Store health assessment | `src/tools/memory/health.ts` |
 | `MemoryStore` / `MemoryOptions` types | `src/types.ts` (re-exported via contracts) |
 | Protocol fragment | `src/engine/prompt-fragments.ts` |
 | Server-tool passthrough | `EngineConfig.serverTools` + `engine/loop.ts` buildToolDefs |

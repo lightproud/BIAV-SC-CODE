@@ -16,6 +16,49 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.80.0 — 2026-07-27
+
+Memory index discipline + a consolidation protocol. Diagnosis behind it (keeper
+field report from BPT in production): sessions were burning several `memory`
+tool round-trips at startup just to find anything, on a store whose record count
+kept climbing. Root cause was not retrieval — it was that the SDK shipped the
+resident-index MECHANISM (R6 loads the head of `/memories/MEMORY.md` into every
+session) without ever saying what an index ENTRY should be, while
+`MEMORY_SESSION_END_PROMPT` actively told the model to write the progress card
+INTO that same file. Run once per session, that grows the index past its own
+injection cap until the head that does get loaded is old progress prose instead
+of routing, and the tail is silently dropped on every load.
+
+- **Session-end round writes the card to a FILE** (`/memories/progress/`),
+  updating the task's existing card, and puts only a one-line pointer in the
+  index. The compaction-flush prompt says the same. Same information, one
+  indirection later.
+- **`MEMORY_INDEX_DISCIPLINE_FRAGMENT`** (sdk-original, both assembly modes,
+  not opt-in — the mechanism it completes is not opt-in): one line per entry,
+  ~150 chars, never memory content in the index. Skipped when its own premise
+  fails — incognito (S2: the index cannot be written at all) or
+  `indexInjection: false` (nothing is loaded or truncated, so the fragment's
+  claim would be false).
+- **Write-side index back-pressure**: a successful write that leaves
+  `/memories/MEMORY.md` over the R6 caps gets a warning appended to its result
+  — stating the tail is ALREADY invisible, not that it may become so. Read and
+  write sides now judge by ONE shared measurement (`index-capacity.ts`), since a
+  warning on a different threshold than the truncation would be worse than none.
+  The harness read-back is not booked into the R8 read counters, and a failing
+  read-back never turns a successful write into an error.
+- **`buildConsolidationPrompt(assessment, options?)` + `MEMORY_CONSOLIDATION_PROTOCOL`**:
+  the HOW of tidying, rendered from an `assessMemoryStoreHealth()` scan into a
+  four-phase round (orient / gather / merge / **prune the index**) with a task
+  list derived from what the scan found — and explicit about what it could not
+  see (a backend without mtimes gets a stated blind spot, a bounded scan gets a
+  LOWER-bound note). Layer boundary held: this adds no process and no scheduler
+  (spec N1). It returns a STRING the consumer passes to its own `query()`, on
+  its own machine, on its own clock. **Security**: a consolidation round is a
+  broad cross-file write pass — on a multi-tenant store it must run under S1
+  mounts for the scope being tidied, exactly like an interactive session.
+
+New tests: 25 (`tests/memory-consolidation.test.ts`) + 3 wiring cases.
+
 ## 0.79.1 — 2026-07-27
 
 Internal dedup, no surface or behaviour change. The retry / backoff / error-body

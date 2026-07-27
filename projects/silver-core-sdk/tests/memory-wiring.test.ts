@@ -29,7 +29,11 @@ import {
 import { ConfigurationError } from '../src/errors.js';
 import { encodeOpenAIRequest } from '../src/transport/openai.js';
 import { resolveMemoryRuntime } from '../src/tools/memory/index.js';
-import { MEMORY_PITFALLS_FRAGMENT, MEMORY_PROTOCOL_FRAGMENT } from '../src/engine/prompt-fragments.js';
+import {
+  MEMORY_PITFALLS_FRAGMENT,
+  MEMORY_PROTOCOL_FRAGMENT,
+  MEMORY_SESSION_END_PROMPT,
+} from '../src/engine/prompt-fragments.js';
 import type { Options, SDKMessage, SDKResultMessage } from '../src/types.js';
 import { makeSSEFetch, type SSEFetchStub } from './helpers/sse-fetch.js';
 import { textReplyEvents, toolUseReplyEvents } from './helpers/mock-transport.js';
@@ -187,6 +191,51 @@ describe('memory mode B (custom tool)', () => {
     expect(system).toContain('Only record facts about the SDK.');
     // The injected fragment is the docs-faithful reproduction.
     expect(MEMORY_PROTOCOL_FRAGMENT.faithful).toBe(true);
+  });
+});
+
+describe('memory index discipline (keeper 2026-07-27)', () => {
+  it('is injected by default in BOTH modes — the R6 mechanism is not opt-in', async () => {
+    for (const mode of ['custom', 'native'] as const) {
+      const stub = makeSSEFetch([textReplyEvents('ok')]);
+      await collect('hi', baseOptions(stub, { memory: { mode, sessionEndUpdate: false } }));
+      const system = JSON.stringify(stub.requests[0]!.body['system']);
+      expect(system).toContain('MEMORY INDEX:');
+      expect(system).toContain('is an INDEX, not a memory');
+      expect(system).toContain('Never write memory content directly');
+    }
+  });
+
+  it('is skipped when its own premise fails (index injection off / incognito)', async () => {
+    const stub = makeSSEFetch([textReplyEvents('ok')]);
+    await collect(
+      'hi',
+      baseOptions(stub, {
+        memory: { mode: 'custom', sessionEndUpdate: false, indexInjection: false },
+      }),
+    );
+    // Nothing is loaded or truncated, so "only the head is loaded" would be a
+    // claim the model would then optimize for falsely.
+    expect(JSON.stringify(stub.requests[0]!.body['system'])).not.toContain('MEMORY INDEX:');
+
+    const off = resolveMemoryRuntime({
+      memory: {},
+      cwd,
+      protocol: 'anthropic',
+      incognito: true,
+      debug: () => {},
+    });
+    expect(off.indexDiscipline).toBe(false);
+    const on = resolveMemoryRuntime({ memory: {}, cwd, protocol: 'anthropic', debug: () => {} });
+    expect(on.indexDiscipline).toBe(true);
+  });
+
+  it('the session-end round writes the card to a FILE and only a pointer to the index', () => {
+    // The regression this locks: the earlier wording put the progress card
+    // INTO /memories/MEMORY.md, growing the one file R6 loads every session.
+    expect(MEMORY_SESSION_END_PROMPT).toContain('/memories/progress/');
+    expect(MEMORY_SESSION_END_PROMPT).toContain('one-line pointer per');
+    expect(MEMORY_SESSION_END_PROMPT).not.toContain('update /memories/MEMORY.md with a');
   });
 });
 

@@ -55,6 +55,7 @@ import { SessionAccounting } from './query-accounting.js';
 import { appendSystemInjection, buildEngineConfig } from './engine/config-builder.js';
 import {
   MEMORY_COMPACTION_FLUSH_PROMPT,
+  MEMORY_INDEX_DISCIPLINE_FRAGMENT,
   MEMORY_PITFALLS_FRAGMENT,
   MEMORY_PROTOCOL_FRAGMENT,
   MEMORY_SESSION_END_PROMPT,
@@ -1099,6 +1100,16 @@ export function query(args: {
         const parts: Array<{ label: string; text: string }> = [];
         if (memory.mode === 'custom') {
           parts.push({ label: 'memory-protocol', text: MEMORY_PROTOCOL_FRAGMENT.text });
+        }
+        // Index discipline (keeper 2026-07-27): what an index ENTRY should be,
+        // in both modes — the R6 mechanism is SDK-side, so the API-injected
+        // native prompt says nothing about it. Skipped when its premise fails
+        // (incognito / index injection off); see MemoryRuntime.indexDiscipline.
+        if (memory.indexDiscipline) {
+          parts.push({
+            label: 'memory-index-discipline',
+            text: MEMORY_INDEX_DISCIPLINE_FRAGMENT.text,
+          });
         }
         // Phase 0 (REQ-3.2): the pitfall-recording protocol applies in BOTH
         // modes — it layers consumer guidance (WHAT to record) on top of the
