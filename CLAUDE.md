@@ -424,6 +424,7 @@ wiki 旧结构化层的 6 个占位 JSON（2026-06-15 裁定清空者）。**守
 | wiki 构建产出 | `cd projects/wiki && npm run docs:build` |
 | 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
 | 跨档案检索 | `rg "<关键词>" memory/ assets/`（ripgrep） |
+| **合并前门禁**（跑齐 CI 会跑的）| `python3 scripts/premerge_gate.py [--list] [--with-setup] [--sparse]`（**把「CI 会红在哪」从凭记忆升格为算出来**：从 `.github/workflows/` 里五个 required 检查对应的 job **派生**门禁步骤清单并逐条跑——`pytest`/`vitest` 跑不到的那十几条（Typecheck / Build / **Version-bump guard** / conformance 棘轮 / Publishability / 依赖方向）正是 2026-07-27 让 main 两次变红的盲区。`--sparse` 另按 CI 的稀疏检出形态复跑 pytest（第二类差集：同命令不同检出形态判词可相反）。跳过的步骤一律点名，缺仓外对照臂的 conformance 步骤默认跳过（缺臂跑会产出假红）。清单守卫 `tests/test_premerge_gate.py`）|
 | 死手开关（沉默检测）| `python3 scripts/dead_man_switch.py [--dry-run]`（**只数空座位**：查全部带 cron 工作流的最近一次成功，超阈值报 `STALE`、从无成功报 `NEVER`；阈值由各自 cron 推导 ×2 + 宽限，状态落 `Public-Info-Pool/Record/heartbeat/status.json`，CI `dead-man-switch.yml` 每日北京 15:50；设计档见 `Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md`，单测 `tests/test_dead_man_switch.py`）|
 | 产出↔消费对账 | `python3 scripts/consumption_audit.py [--dry-run]`（**找没人读的产物**：静态引用图判「谁在读」，零消费 / 仅档案提及 / 经解析器读三档，报告落 `Public-Info-Pool/Record/heartbeat/consumption.json`；**候选清单供人裁、不是退役触发器**——静态图看不见守密人翻阅 / 会话内读档 / 黑池侧消费；单测 `tests/test_consumption_audit.py`）|
 | 状态档事实块重算 | `python3 scripts/build_status_facts.py [--check]`（`memory/project-status.md` 的版本 / 规模 / 台账数字 **+ 两包 `CONTEXT.md` 的版本标签块**由权威源生成，**勿手抄**；同步守卫 `tests/test_status_facts.py`，叙述新鲜度另由 `tests/test_status_doc_facts.py` 守）|
@@ -495,11 +496,17 @@ MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具
   required + paths 过滤会让 docs-only PR 卡死，2026-06-21 坑）；live-budget job 仍 `if: event_name` 门控、PR 不烧预算。
   **require branches up to date 仍不勾**（2026-07-11 裁定沿用；pre-push 自动 rebase + §7.6 对话内自查兜底撞车）。
   **合并纪律（2026-07-11 同日会话操作口径修订，见 `memory/decisions.md`「题库定稿 + 对话内合并纪律」条）**：
-  判定门 = **对话内直接跑全量测试**（`pytest tests/`，涉 SDK 加 vitest；涉两包组合加 testbed），绿即合并——
-  **不以围等 GitHub CI 为工作环节**（不为 CI 安排轮询 / 计时器 / 自检回执）；required 检查保留为 GitHub 侧物理门禁，
-  合并瞬时被其挡下则等其转绿重试一次即可。**绝不**把「CI 会拦」当成「免自查」。历程：2026-06-21 撤检查改自查自合 →
-  2026-07-10 批准重启（撤检查的两条理由已随 07-02 sparse checkout 改造消失）→ 2026-07-11 勾选生效 + 同日操作口径修订 →
-  2026-07-18 扩为五检查（家族组合入门）。
+  判定门 = **合并前跑 `python3 scripts/premerge_gate.py`**（涉路径 / 档案判据加 `--sparse`），绿即合并——
+  **不以围等 GitHub CI 为工作环节**（不为 CI 安排轮询 / 计时器 / 自检回执）。
+  **⚠ required 检查不是物理门禁（2026-07-27 实测订正）**：原措辞写「required 保留为 GitHub 侧物理门禁，
+  合并瞬时被其挡下则等其转绿重试一次」——**实测它一次也没挡下过**。#835 / #836 / #837 三连均在检查
+  `in_progress` 时合并成功（建 PR 到合并 18 秒，检查耗时 90–120 秒，**结构上不可能等到报出**），
+  合并身份对规则集存在 bypass（规则集配置无 API 可读，此为行为反推）。故**全部安全性落在合并前那一道门上**，
+  它必须跑齐 CI 会跑的东西——`pytest` / `vitest` 只覆盖其中一部分，2026-07-27 两次 main 变红
+  （#835 漏 version-bump guard、#836 漏稀疏检出形态差异）正出自这个差集。**绝不**把「CI 会拦」当成「免自查」——
+  CI 根本不拦。历程：2026-06-21 撤检查改自查自合 → 2026-07-10 批准重启（撤检查的两条理由已随 07-02
+  sparse checkout 改造消失）→ 2026-07-11 勾选生效 + 同日操作口径修订 → 2026-07-18 扩为五检查（家族组合入门）
+  → **2026-07-27 判定门升格为 `premerge_gate.py`、「物理门禁」措辞作废**（守密人两项交互裁定）。
 - **直接合并 main + PR 订阅可选（守密人 2026-06-14 裁定、2026-06-21 修订）**：
   Web 环境强制建 PR，但任务完成且验证通过后**默认立即合并 main**（squash），不停留等待。
   PR 订阅由**退订不再强制**：若会话被环境自动订阅（出现 `<github-webhook-activity>` 提示）
