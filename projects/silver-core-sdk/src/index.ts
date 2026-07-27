@@ -150,6 +150,13 @@ export type {
   SystemPartRole,
 } from './internal/contracts.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
+// Sessions-domain health scan (audit P1-S1, keeper 2026-07-27): the trigger
+// surface for host-side session cleanup, mirroring assessMemoryStoreHealth.
+export {
+  assessSessionStoreHealth,
+  type AssessSessionStoreHealthOptions,
+  type SessionStoreAssessment,
+} from './sessions/health.js';
 export {
   getSessionMessages,
   getSessionToolCalls,

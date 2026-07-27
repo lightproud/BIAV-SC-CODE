@@ -70,11 +70,18 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.87.1`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.87.1`
+**当前版本 `0.88.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.88.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.88.0（2026-07-27）：处方卡型（A1）+ sessions 体检面（P1-S1）**——cards 模式增第二卡型
+**处方卡**（意图/步骤/结果/适用边界，按字段集判型；单卡混用两型按名拒绝，结构化错误重述两模板；
+进度卡映射处方型，解审计 P1-3 削足适履）；`MemoryCard` 改 kind 判别联合。新增
+`assessSessionStoreHealth()`：sessions 目录只增不减而 `deleteSession` 无「何时清」信号——照
+memory 体检成例给会话数/转录与 checkpoint 字节/腐化/最大会话/孤儿 checkpoint 目录，外部店诚实报
+unavailable、触界标 lower bound、零进程零调度（N1）。blob 上限属正确性取舍挂 T74 待裁不静默选边。
 
 **v0.87.0（2026-07-27）：截断纪律全家对齐 + cards 索引豁免**——上限砍内容须答三问（丢多少/为何/
 怎么拿回）、流式保尾。后台 shell 流「命中 500K 即永久失聪」改保尾保留窗（丢弃计数入契约 + gap 标记）；
