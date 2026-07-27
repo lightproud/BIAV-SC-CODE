@@ -2,7 +2,7 @@
   "generated": "2026-07-27",
   "stats": {
     "nodes": 376,
-    "edges": 407
+    "edges": 409
   },
   "nodes": [
     {
@@ -4537,6 +4537,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15581.md",
       "rel": "提及:莉莉",
       "rel_type": "mention"
@@ -5943,6 +5949,12 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
