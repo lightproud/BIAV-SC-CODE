@@ -428,7 +428,8 @@ export const COORDINATOR_MODE_PROMPT_PROVENANCE = {
 /**
  * Coordinator worker instructions — a faithful OPEN reproduction of the
  * official coordinator-assigned-worker prompt (archive slug
- * system-prompt-coordinator-worker-instructions, ccVersion 2.1.213 — synced
+ * agent-prompt-coordinator-worker-instructions — renamed from system-prompt-…
+ * in the 2.1.216 snapshot; ccVersion 2.1.213 — synced
  * 2026-07-20 when upstream flipped the no-subagents rule to bounded fan-out),
  * with the single \`\${AGENT_TOOL_NAME}\` variable resolved to Agent.
  * Corpus-sync guard: tests/subagents.test.ts.
@@ -471,9 +472,16 @@ Structure your response as:
 Good summary: "Added Redis cache implementation. Tests pass, typecheck clean. Committed abc123."
 Bad summary: "I looked at files X, Y, and Z. Y has the changes you mentioned."`;
 
-/** Provenance for the coordinator-worker instructions surface. */
+/**
+ * Provenance for the coordinator-worker instructions surface.
+ *
+ * Slug updated 2026-07-27 (upstream 2.1.173 -> 2.1.216): the reconstruction was
+ * renamed `system-prompt-…` -> `agent-prompt-…` with the rest of that snapshot's
+ * naming pass. Rename only as far as this surface is concerned — all 15 anchor
+ * sentences the corpus-sync guard extracts are still present verbatim below.
+ */
 export const COORDINATOR_WORKER_PROVENANCE = {
-  slug: 'system-prompt-coordinator-worker-instructions',
+  slug: 'agent-prompt-coordinator-worker-instructions',
   faithful: true,
 } as const;
 

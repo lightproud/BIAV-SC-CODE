@@ -138,10 +138,20 @@ export const CONTINUATION_FRAGMENT: PromptFragment = {
     'control (say exactly what is missing).',
 };
 
-/** The identity intro (always first). */
+/**
+ * The identity intro (always first).
+ *
+ * Re-anchored 2026-07-27 (upstream 2.1.173 -> 2.1.216): the three standalone
+ * `system-prompt-interactive-agent-intro-*` files were folded into the single
+ * `system-prompt-harness-instructions` reconstruction, and the old slug's file
+ * no longer exists. The sentence itself did not change — it now lives in that
+ * file's opening template, as the branch taken when no output style is
+ * configured. `faithful` therefore still holds, but note what it is faithful
+ * TO: one BRANCH of a templated source, not the file end to end.
+ */
 export const MAIN_LOOP_INTRO: PromptFragment = {
   id: 'intro',
-  slug: 'system-prompt-interactive-agent-intro-short',
+  slug: 'system-prompt-harness-instructions',
   faithful: true,
   text: 'You are an interactive agent that helps users with software engineering tasks.',
 };

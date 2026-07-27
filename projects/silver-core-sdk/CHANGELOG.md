@@ -16,6 +16,36 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.80.1 — 2026-07-27
+
+Two prompt-provenance slugs re-pointed after the upstream snapshot moved under
+them (2.1.173 -> 2.1.216, refreshed onto main by cron in 76fe5e6). Both had
+been left naming files that no longer exist, so the two corpus-sync guards —
+the tests whose whole job is to turn upstream drift into a failure instead of a
+silent divergence — were red on main. They did their job; this is the follow-up
+they were asking for.
+
+- `COORDINATOR_WORKER_PROVENANCE.slug`:
+  `system-prompt-coordinator-worker-instructions` ->
+  `agent-prompt-coordinator-worker-instructions`. A rename in upstream's
+  naming pass; all 15 anchor sentences the guard extracts are still present in
+  the shipped instructions verbatim, so nothing but the slug moved.
+- `MAIN_LOOP_INTRO.slug`: `system-prompt-interactive-agent-intro-short` ->
+  `system-prompt-harness-instructions`. Upstream folded the three standalone
+  intro files into one harness-instructions reconstruction; the sentence is
+  unchanged, now living in that file's opening template as the no-output-style
+  branch. Still `faithful: true`, with a comment recording what it is faithful
+  TO: one branch of a templated source, not the file end to end.
+
+No shipped prompt TEXT changed — only the two provenance pointers and their
+comments. Guarded surfaces re-verified green (23 tests across the two files).
+
+Outside the package, the cron that refreshes the snapshot
+(`refresh-claude-code-prompts.yml`) now runs these two guards after refreshing
+and BEFORE committing, and pushes nothing when they red. That cron commits with
+`[skip ci]` straight to main, so until now the breakage it caused surfaced only
+in the next unrelated PR's merge gate — which is exactly how it was found.
+
 ## 0.80.0 — 2026-07-27
 
 Tool-output limits realigned with Claude Code 2.1.141 (keeper delivery note,
