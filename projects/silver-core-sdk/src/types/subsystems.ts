@@ -76,6 +76,12 @@ export type LoopStopProposal = {
  * `not_achieved` blocks the stop and re-drives the loop with `reason`;
  * `achieved` and `impossible` (the judged escape hatch) allow the stop and
  * disarm the goal.
+ *
+ * CANONICAL family-wide shape (keeper ruling 2026-07-27):
+ * silver-core-maestro-sdk's `GoalChaser` evaluator verdict is structurally
+ * identical since 0.83.0, so one host evaluator serves both seams. Changing
+ * this shape requires a family-wide ruling — the maestro side re-declares it
+ * verbatim (no cross-package import; dependency direction stays clean).
  */
 export type GoalVerdict = {
   status: 'achieved' | 'not_achieved' | 'impossible';

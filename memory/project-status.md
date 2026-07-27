@@ -82,8 +82,8 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.82.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.82.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.83.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.83.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 134 / 198 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
@@ -249,6 +249,7 @@
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
+> **v0.83.0（2026-07-27，goal 判词家族统一）**：**BREAKING（实验面）**——`GoalVerdict` 迁移为与 agent SDK 逐字同形的 `{status: 'achieved'|'not_achieved'|'impossible', reason?}`（原 `{achieved, feedback, impossible?}`）。起因：BPT 接入后报「goal 没效果、模型照样停」，排查定位两包**同名不同形**判词——评审器误用另一包形状时引擎按设计 fail-open 把 malformed verdict 放行为允许停止，goal 无声失效。守密人裁「统一判词类型」：agent 侧 `{status}` 为正典（BPT 实接层不动），Maestro goal 族（零调用点实验面）赶在 GoalChaser 首次接线前迁移；声明式重复不跨包 import（硬性质 §1.2），一个宿主评审器经结构类型同时服务两缝；`GoalRoundPayload.feedback` 字段名保留、改承载 `reason`。迁移映射见 CHANGELOG 0.83.0。
 > **v0.82.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.82.0（Read 通读 >256KB 拒绝）前进。
 >
 > **v0.81.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.81.0（Read 截断页脚补齐官方三件套）前进。
@@ -326,6 +327,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.83.0（2026-07-27）**：**GoalVerdict 家族统一（本包零行为改动）**——本包 `{status, reason?}` 判词升格家族**正典**，maestro 0.83.0 将 GoalChaser 评审判词迁为同形，一个宿主评审器同时服务引擎 `options.goal` Stop 门与跨 query 追逐两缝。留档背景：两形并存期产出真实消费者陷阱——maestro 形判词喂进 `options.goal` 被引擎判 malformed、fail-open 放行停止（防评审器坏死锁死代理的既定失败方向），症状即 BPT 2026-07-27 所报「接了 goal 模型照样停」。`options.goal` 语义与评审器契约未动，仅 `GoalVerdict` 注释补正典地位声明。
 - **v0.82.0（2026-07-27）**：**Read 通读 >256KB 改为拒绝 + 首次对官方二进制做偏离普查**（守密人问「还能查到有哪些我们与官方不一致」）——第一次拿**官方发行物本体**（npm 平台包 + `sdk-tools.d.ts`）而非第三方重建档做四轴对照。**工具集**：官方 18 个工具银芯没有（多为绑定 Anthropic 云侧服务）。**输入 schema**：Bash/Read/Write/Edit/Glob/**Grep 15 字段**/WebFetch/WebSearch/Task 五件/Workflow/两个 PlanMode/EnterWorktree **全部一致**；真差异仅 `AskUserQuestion` 缺三个**回程字段**（守密人裁「只登记不改」——它们服务官方权限组件 UI，本 SDK 无那套组件）。**数值**：Read 25000 token / Bash 30000·150000 / **Glob 100** / Grep 250 均一致，唯一缺口 = 官方 `maxSizeBytes`=262144 拒通读，银芯此前只有 50MB OOM 守卫（松 200 倍）——**已按守密人裁定补上**，只拦通读、带 offset/limit 放行。**两条经复核是假象、如实记档**（`EnterPlanModeInput` 官方就是 `{}`；Grep 短横线键与 `TaskListInput` 亦一致）。未扫轴照实标注：官方 `*Output` 37 个 / 主循环提示词 / 权限钩子层 / MCP 协议层 / WebFetch 的 100000。
 - **v0.81.0（2026-07-27）**：**Read 截断页脚补齐官方三件套 + 数值基准获独立佐证**——守密人报「一次 Read 后模型连发六轮自动翻页、上下文推到 300K+ 字符」，旧页脚只给一句「Use offset=N to continue reading.」别无他物。**交付单诊断对了一半**：它认为官方从不给具体值，实测**官方 2.1.220 也给值**，且同时给 **Grep 替代路径**与**「不要单凭本页作答」告诫**——差别从不在那个值，在银芯只给了三件套的第一件。守密人裁定取官方口径，两处截断分支均补齐；大档 Grep 提示改为**只看体积**（原还要求有超 2000 字符长行，普通源码没有那种行，故几乎从未触发、且零测试覆盖）。**同批订正 0.80.2 的错误结论**——「数值基准须在装有 Claude Code 的机器上才能提取」是错的：官方二进制是**公开 npm 发行物**（平台 optionalDependency），本仓一致性作业本就装它作对照臂。已提取 2.1.220：Read **25000 token** / Bash **30000 默认 · 150000 上限** / Grep **「Defaults to 250」逐字**，与 2.1.141 三项全部一致（79 版未变）。
 - **v0.80.2（2026-07-27）**：**对齐 2.1.216 快照基准**（守密人裁「3 也直接对齐基准」）——① 手工挖出**第三条指空 slug**（`SendMessage` 引用被快照改名），真因是**缺档检查搭在锚点检查里、而锚点检查跳过 adapted 条目**，现拆为独立测试 faithful/adapted 一视同仁；② 新增 `projects/silver-core-sdk/scripts/description-coverage.mjs`——把「散文基准漂没漂」变成一条命令，**报告体恒 exit 0**（吻合度本就不该满分：红线纪律禁止描述未发货能力）。实测 30 档 18 档 100%，低分端全是已登记改编。**射程边界**：0.80.0 那批**数值上限对不了**（重建档把数字模板化、grep 档无参数级文档），仍只靠一次 2.1.141 二进制提取支撑，重新核验须在装有 Claude Code 的机器上再提取。

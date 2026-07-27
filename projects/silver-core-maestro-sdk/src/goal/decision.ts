@@ -6,13 +6,23 @@
  */
 
 /**
- * Host evaluator's judgment of one round. `impossible` may only accompany a
- * non-achieved verdict: it marks the goal as unreachable regardless of
- * remaining rounds.
+ * Host evaluator's judgment of one round.
+ *
+ * UNIFIED SHAPE (0.83.0, keeper ruling 2026-07-27): this is byte-for-byte
+ * the agent SDK's `GoalVerdict` (silver-core-agent-sdk `options.goal`
+ * evaluator verdict). The two packages previously exported same-NAME
+ * different-SHAPE verdicts ({achieved, feedback} here vs {status, reason}
+ * there); a consumer wiring one evaluator into the other seam produced a
+ * "malformed verdict" that the engine fail-opens into an allowed stop — the
+ * goal silently never bites. One shape ends that trap: a single evaluator
+ * now serves both seams via structural typing. Deliberately DECLARED here
+ * rather than imported — this package declares no dependency on the agent
+ * SDK (hard property §1.2, no privileged channel); identity is structural.
  */
-export type GoalVerdict =
-  | { achieved: true }
-  | { achieved: false; feedback: string; impossible?: boolean };
+export type GoalVerdict = {
+  status: 'achieved' | 'not_achieved' | 'impossible';
+  reason?: string;
+};
 
 /**
  * What the chase does next:
@@ -48,8 +58,8 @@ export function nextGoalAction(input: {
       `nextGoalAction: round and maxRounds must be finite, got round=${round}, maxRounds=${maxRounds}`,
     );
   }
-  if (verdict.achieved) return 'done';
-  if (verdict.impossible === true) return 'impossible';
+  if (verdict.status === 'achieved') return 'done';
+  if (verdict.status === 'impossible') return 'impossible';
   if (round >= maxRounds) return 'exhausted';
   return 'continue';
 }

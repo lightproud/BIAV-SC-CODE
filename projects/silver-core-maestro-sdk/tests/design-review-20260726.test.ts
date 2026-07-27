@@ -105,7 +105,7 @@ describe('F1 the cancelled terminal reaches the scenario layer', () => {
       ledger,
       evaluator: async () => {
         judged += 1;
-        return { achieved: true };
+        return { status: 'achieved' };
       },
       pollIntervalMs: 10,
       drainTimeoutMs: 100,
@@ -132,7 +132,7 @@ describe('F1 the cancelled terminal reaches the scenario layer', () => {
       ledger,
       evaluator: async () => {
         judged += 1;
-        return { achieved: true };
+        return { status: 'achieved' };
       },
       pollIntervalMs: 10,
       drainTimeoutMs: 500,
@@ -438,7 +438,7 @@ describe('F4 the abort seam on the long-running components', () => {
     const ledger = ledgerOf(hostStore());
     const chaser = new GoalChaser({
       ledger,
-      evaluator: async () => ({ achieved: true }),
+      evaluator: async () => ({ status: 'achieved' }),
       pollIntervalMs: 50,
     });
     const controller = new AbortController();
