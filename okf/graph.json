@@ -2,7 +2,7 @@
   "generated": "2026-07-27",
   "stats": {
     "nodes": 376,
-    "edges": 409
+    "edges": 411
   },
   "nodes": [
     {
@@ -4531,6 +4531,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77913.md",
+      "rel": "提及:凯蒂古拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
@@ -5943,6 +5949,12 @@
       "source": "/sources/bahamut.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/77913.md",
+      "rel": "提及:凯蒂古拉",
       "rel_type": "mention"
     },
     {

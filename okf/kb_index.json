@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 376,
-    "edges": 409,
+    "edges": 411,
     "terms": 6703,
     "by_type": {
       "character": 72,
@@ -1028,7 +1028,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/characters/77914.md": {
       "type": "character",
@@ -1273,7 +1273,7 @@
     "/community/community-appstore.md": {
       "type": "dataset",
       "title": "appstore 社区全量档案",
-      "description": "appstore 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 33 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 33 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1324,7 +1324,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 11
+      "degree": 12
     },
     "/community/community-discord.md": {
       "type": "dataset",
@@ -1497,7 +1497,7 @@
     "/community/community-weixin.md": {
       "type": "dataset",
       "title": "weixin 社区全量档案",
-      "description": "weixin 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 12 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weixin 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 12 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4577,7 +4577,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3117 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3132 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4586,7 +4586,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 11
+      "degree": 12
     },
     "/sources/discord.md": {
       "type": "dataset",
@@ -4605,7 +4605,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1808 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1810 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4675,7 +4675,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 457 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 458 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4745,7 +4745,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2219 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2260 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4759,7 +4759,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11400 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11412 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4773,7 +4773,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8608 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8628 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4787,7 +4787,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3081 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3088 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -7199,6 +7199,16 @@
     ],
     "/characters/77913.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
+      [
         "/story/STORY_RESEARCH.md",
         "提及:凯蒂古拉",
         "mention"
@@ -7511,6 +7521,11 @@
       ]
     ],
     "/community/community-bilibili.md": [
+      [
+        "/characters/77913.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
@@ -9403,6 +9418,11 @@
       ]
     ],
     "/sources/bilibili.md": [
+      [
+        "/characters/77913.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
@@ -18008,8 +18028,7 @@
     "万级": [
       "/community/community-discord.md",
       "/community/community-index.md",
-      "/community/community-weibo.md",
-      "/community/community-weixin.md"
+      "/community/community-weibo.md"
     ],
     "万能": [
       "/characters/15590.md",
@@ -24418,12 +24437,12 @@
       "/community/community-stopgame.md"
     ],
     "千级": [
-      "/community/community-appstore.md",
       "/community/community-bilibili.md",
       "/community/community-google-play.md",
       "/community/community-reddit.md",
       "/community/community-steam.md",
       "/community/community-taptap.md",
+      "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
     ],
@@ -41208,6 +41227,7 @@
       "/community/community-index.md"
     ],
     "百级": [
+      "/community/community-appstore.md",
       "/community/community-arca-live.md",
       "/community/community-bahamut.md",
       "/community/community-pixiv.md",
