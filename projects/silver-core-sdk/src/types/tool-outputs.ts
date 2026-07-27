@@ -76,7 +76,6 @@ export type ReadOutput = ReadTextOutputWithCap | Exclude<FileReadOutput, { type:
  */
 export type BashStructuredOutput = BashOutput & {
   exitCode: number | null;
-  timedOutAfterMs?: number;
   truncated: boolean;
 };
 

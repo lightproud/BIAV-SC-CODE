@@ -344,6 +344,12 @@ export type BashOutput = {
   stderr: string;
   rawOutputPath?: string;
   interrupted: boolean;
+  /** How long the command ran before a timeout killed it. Official carries
+   *  this in the BASE type; it was added to this SDK's extension type instead
+   *  (0.85.0) and moved here 2026-07-27 by the NESTED-path sweep — a field in
+   *  the wrong type is a divergence a top-level key diff cannot see, because
+   *  the key existed on both sides, just not in the same place. */
+  timedOutAfterMs?: number;
   isImage?: boolean;
   backgroundTaskId?: string;
   backgroundedByUser?: boolean;

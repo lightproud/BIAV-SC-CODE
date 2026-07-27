@@ -559,6 +559,42 @@ content was saved) is one, found only on a manual re-read, and it stays
 unshipped because this SDK does not spill blobs to disk. Other nested fields
 may remain unswept.
 
+## Nested-path sweep vs official 2.1.220 (2026-07-27, 三扫)
+
+The previous two sweeps compared TOP-LEVEL keys. This one flattens both sides
+into dotted paths (`contents[].blobSavedTo`, `gitOperation.commit.sha`) and
+diffs those, which surfaces two classes the earlier passes were structurally
+blind to: fields nested inside a shape both sides declare, and fields present
+on both sides but living in DIFFERENT types.
+
+**One real defect, and it was this SDK's own.** `timedOutAfterMs` sits in
+official's BASE `BashOutput`; 0.85.0 added it to this SDK's EXTENSION type
+instead. The resulting intersection is identical, so nothing broke and no
+top-level key diff could ever have flagged it — the key existed on both sides.
+Moved to the base type. A sweep that only compares key SETS cannot see a field
+in the wrong place.
+
+**Everything else nested is platform-bound**, recorded not added:
+
+| Path | Why unshipped |
+|---|---|
+| `BashOutput.gitOperation.*` (9 paths: commit sha/kind, pr number/url/action, push branch, branch action/ref) | Official parses git / gh command OUTPUT to report structured VCS operations. This SDK runs the shell and reports what it printed; it has no git-output parser and inventing one to fill a field is not a parity fix. |
+| `BashOutput.ghRateLimitHint`, `staleReadFileStateHint`, `backgroundCwdHint`, `noOutputExpected` | Official heuristics over its own session state. |
+| `WebFetchOutput.artifactRead.slug` / `.ver` | Anthropic artifacts, a surface this SDK does not have. |
+| `FileWriteOutput` / `FileEditOutput` `.gitDiff.repository` | Inside the `gitDiff` shape this SDK declares but never populates (no git plumbing). Completing an unpopulated shape adds nothing a caller can read. |
+| `ReadMcpResourceOutput.contents[].blobSavedTo` | This SDK does not spill binary blobs to disk. |
+| `AskUserQuestionOutput.answers.*` / `annotations.*` | Official permission-component UI, same ruling as the input side. |
+
+**Nine types are identical at every depth**: Glob, Grep, WebSearch, Monitor,
+the Task quintet, TodoWrite, EnterWorktree, ExitPlanMode, Workflow.
+
+**Method limit, stated because it bounds what "swept" means here**: the
+comparison uses a brace-depth flattener, not a TypeScript parser — it tracks
+key names and nesting, so it agrees with itself on both sides but would mis-read
+exotic constructs (conditional types, deep generics). Key COUNTS per type are
+printed alongside the diff for exactly this reason: a count in the wrong order
+of magnitude means the parse went wrong, not that the types diverged.
+
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 
 The model-side tool descriptions in `src/tools/descriptions.ts` are FAITHFUL
