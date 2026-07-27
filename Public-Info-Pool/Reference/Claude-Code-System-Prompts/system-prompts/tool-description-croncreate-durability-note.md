@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: CronCreate (durability note)'
-description: CronCreate insert (shown when durable-cron is enabled) explaining the durable: true vs false trade-off
-ccVersion: 2.1.173
+name: "Tool Description: CronCreate (durability note)"
+description: "CronCreate insert (shown when durable-cron is enabled) explaining the durable: true vs false trade-off"
+ccVersion: "2.1.173"
 -->
 ## Durability
 

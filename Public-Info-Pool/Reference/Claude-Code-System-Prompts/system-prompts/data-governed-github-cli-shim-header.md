@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Governed GitHub CLI shim header'
-description: Header comments for the per-session governed GitHub CLI shim that routes github.com gh traffic through the agent proxy while preserving customer-token and GitHub Enterprise traffic
-ccVersion: 2.1.202
+name: "Data: Governed GitHub CLI shim header"
+description: "Header comments for the per-session governed GitHub CLI shim that routes github.com gh traffic through the agent proxy while preserving customer-token and GitHub Enterprise traffic"
+ccVersion: "2.1.202"
 -->
 #!/bin/sh
 # claude agent-proxy governed-git gh shim (auto-generated; per-session).

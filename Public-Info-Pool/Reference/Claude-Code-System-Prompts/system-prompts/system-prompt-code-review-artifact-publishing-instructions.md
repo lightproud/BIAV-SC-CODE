@@ -1,11 +1,11 @@
 <!--
-name: 'System Prompt: Code review artifact publishing instructions'
-description: Instructions for publishing code review findings as a shareable artifact after review results are produced
-ccVersion: 2.1.198
+name: "System Prompt: Code review artifact publishing instructions"
+description: "Instructions for publishing code review findings as a shareable artifact after review results are produced"
+ccVersion: "2.1.198"
 variables:
-  - ARTIFACT_DESIGN_SKILL_NAME
-  - ARTIFACT_TOOL_NAME
-  - ARTIFACT_ITERATION_FOOTER
+  - "ARTIFACT_DESIGN_SKILL_NAME"
+  - "ARTIFACT_TOOL_NAME"
+  - "ARTIFACT_ITERATION_FOOTER"
 -->
 
 

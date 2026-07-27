@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Streaming reference — Python'
-description: Python streaming reference including sync/async streaming and handling different content types
-ccVersion: 2.1.203
+name: "Data: Streaming reference — Python"
+description: "Python streaming reference including sync/async streaming and handling different content types"
+ccVersion: "2.1.219"
 -->
 # Streaming — Python
 
@@ -51,13 +51,13 @@ No final-message accumulation is done for you in this form.
 
 Claude may return text, thinking blocks, or tool use. Handle each appropriately:
 
-> **Fable 5 / Opus 4.8 / Opus 4.7 / Opus 4.6:** Use `thinking: {type: "adaptive"}`. On older models, use `thinking: {type: "enabled", budget_tokens: N}` instead.
+> **Fable 5 / {{OPUS_NAME}} / Opus 4.8 / Opus 4.7 / Opus 4.6:** Use `thinking: {type: "adaptive"}`. On {{OPUS_NAME}} adaptive is also what you get by omitting `thinking` entirely. On older models, use `thinking: {type: "enabled", budget_tokens: N}` instead.
 
 ```python
 with client.messages.stream(
     model="{{OPUS_ID}}",
     max_tokens=64000,
-    thinking={"type": "adaptive", "display": "summarized"},  # display opt-in: default is omitted (empty thinking text) on Fable 5 / Mythos 5 / Opus 4.8 / 4.7
+    thinking={"type": "adaptive", "display": "summarized"},  # display opt-in: default is omitted (empty thinking text) on Fable 5 / Mythos 5 / {{OPUS_NAME}} / Opus 4.8 / 4.7
     messages=[{"role": "user", "content": "Analyze this problem"}]
 ) as stream:
     for event in stream:

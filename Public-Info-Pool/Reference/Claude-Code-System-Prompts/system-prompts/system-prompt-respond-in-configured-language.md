@@ -1,9 +1,9 @@
 <!--
-name: 'System Prompt: Respond in configured language'
-description: Directs all responses, explanations, and code commentary into a configured language
-ccVersion: 2.1.173
+name: "System Prompt: Respond in configured language"
+description: "Directs all responses, explanations, and code commentary into a configured language"
+ccVersion: "2.1.173"
 variables:
-  - LANGUAGE_NAME
+  - "LANGUAGE_NAME"
 -->
 # Language
 Always respond in ${LANGUAGE_NAME}. Use ${LANGUAGE_NAME} for all explanations, comments, and communications with the user. Technical terms and code identifiers should remain in their original form.

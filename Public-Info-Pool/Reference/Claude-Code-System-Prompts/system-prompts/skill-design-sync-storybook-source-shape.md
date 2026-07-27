@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Design sync Storybook source shape'
-description: Design sync sub-skill instructions for using a repo's Storybook as the fidelity oracle when building, validating, matching, uploading, and re-syncing component previews
-ccVersion: 2.1.199
+name: "Skill: Design sync Storybook source shape"
+description: "Design sync sub-skill instructions for using a repo's Storybook as the fidelity oracle when building, validating, matching, uploading, and re-syncing component previews"
+ccVersion: "2.1.199"
 -->
 # Storybook source shape
 

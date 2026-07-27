@@ -1,7 +1,7 @@
 <!--
-name: 'Data: GitHub Actions workflow for @claude mentions'
-description: GitHub Actions workflow template for triggering Claude Code via @claude mentions
-ccVersion: 2.1.108
+name: "Data: GitHub Actions workflow for @claude mentions"
+description: "GitHub Actions workflow template for triggering Claude Code via @claude mentions"
+ccVersion: "2.1.108"
 -->
 name: Claude Code
 

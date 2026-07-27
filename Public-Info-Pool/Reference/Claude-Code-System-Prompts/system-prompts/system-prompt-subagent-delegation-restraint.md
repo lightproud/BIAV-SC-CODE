@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Subagent delegation restraint'
-description: Guides Claude to delegate work only when it is genuinely independent, large enough to justify a fresh context, or naturally parallel, while avoiding excessive or redundant subagents and not redoing delegated work
-ccVersion: 2.1.215
+name: "System Prompt: Subagent delegation restraint"
+description: "Guides Claude to delegate work only when it is genuinely independent, large enough to justify a fresh context, or naturally parallel, while avoiding excessive or redundant subagents and not redoing delegated work"
+ccVersion: "2.1.215"
 -->
 ## Delegating to subagents
 

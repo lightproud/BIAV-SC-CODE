@@ -1,12 +1,19 @@
 /**
- * OPT-1 (count/files_with_matches complete by default + honest truncation) and
- * OPT-5 (full-scan telemetry signal) for the Grep tool. 2026-07-07.
+ * OPT-1 (honest truncation in every mode) and OPT-5 (full-scan telemetry
+ * signal) for the Grep tool. 2026-07-07, revised 2026-07-27.
  *
- * Before: every mode shared a flat DEFAULT_HEAD_LIMIT=250, so a `count` over a
- * repo with >250 matching files silently reported the first 250 — a WRONG
- * number with no indication. After: count/files_with_matches default to
- * complete (one small entry per file); content keeps the 250 flood guard; any
- * cap-induced truncation is announced; and a debug line reports scan coverage.
+ * Original OPT-1: every mode shared a flat DEFAULT_HEAD_LIMIT=250, so a `count`
+ * over a repo with >250 matching files silently reported the first 250 — a
+ * WRONG number with no indication. Two things were done about it: the cut was
+ * made ANNOUNCED in every mode, and count/files_with_matches were additionally
+ * defaulted to unlimited.
+ *
+ * 2026-07-27 (limits alignment with Claude Code, which defaults 250 in all
+ * three modes): the second half is withdrawn — the announcement alone answers
+ * the silence, while an unlimited default let one broad search return thousands
+ * of paths. The default is 250 everywhere; `head_limit: 0` buys completeness
+ * explicitly. These tests therefore assert completeness ON head_limit=0, and
+ * pin the 250 default separately.
  */
 
 import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
@@ -47,23 +54,44 @@ function contentOf(res: { content: unknown }): string {
   return typeof res.content === 'string' ? res.content : JSON.stringify(res.content);
 }
 
-describe('OPT-1: count / files_with_matches are complete by default', () => {
-  it('count over >250 matching files reports ALL of them, not the first 250', async () => {
+describe('OPT-1: count / files_with_matches are complete on head_limit=0', () => {
+  it('count with head_limit=0 reports ALL matching files, not the first 250', async () => {
     const dir = await makeCorpus(300);
-    const c = contentOf(await grepTool.execute({ pattern: 'NEEDLE', path: dir, output_mode: 'count' }, makeCtx(dir)));
+    const c = contentOf(
+      await grepTool.execute({ pattern: 'NEEDLE', path: dir, output_mode: 'count', head_limit: 0 }, makeCtx(dir)),
+    );
     const lines = c.split('\n').filter((l) => /:\d+$/.test(l));
     expect(lines).toHaveLength(300); // complete, not capped at 250
     expect(c).not.toContain('truncated'); // complete -> no footer
   });
 
-  it('files_with_matches over >250 files lists all of them', async () => {
+  it('files_with_matches with head_limit=0 lists all of them', async () => {
     const dir = await makeCorpus(300);
     const c = contentOf(
-      await grepTool.execute({ pattern: 'NEEDLE', path: dir, output_mode: 'files_with_matches' }, makeCtx(dir)),
+      await grepTool.execute(
+        { pattern: 'NEEDLE', path: dir, output_mode: 'files_with_matches', head_limit: 0 },
+        makeCtx(dir),
+      ),
     );
     expect(c.split('\n').filter((l) => l.endsWith('.txt'))).toHaveLength(300);
     expect(c).not.toContain('truncated');
   });
+
+  // 2026-07-27: the DEFAULT is 250 in every mode (Claude Code parity). Pinned
+  // per non-content mode, because the old code branched on output_mode here
+  // and a regression would silently restore the unlimited default.
+  it.each(['count', 'files_with_matches'] as const)(
+    'defaults %s to 250 entries and says the scan stopped short',
+    async (mode) => {
+      const dir = await makeCorpus(300);
+      const c = contentOf(await grepTool.execute({ pattern: 'NEEDLE', path: dir, output_mode: mode }, makeCtx(dir)));
+      const rows = c.split('\n').filter((l) => (mode === 'count' ? /:\d+$/.test(l) : l.endsWith('.txt')));
+      expect(rows).toHaveLength(250);
+      // Not a silent cut: the footer names the cap and the way out.
+      expect(c).toContain('head_limit=250');
+      expect(c).toContain('head_limit=0 for the complete result');
+    },
+  );
 
   it('an explicit head_limit still bounds count, and announces the truncation', async () => {
     const dir = await makeCorpus(300);
@@ -105,7 +133,12 @@ describe('OPT-5: full-scan telemetry on the debug channel', () => {
   it('a complete count reports full_scan=true and files_scanned == files_total', async () => {
     const dir = await makeCorpus(300);
     const logs: string[] = [];
-    await grepTool.execute({ pattern: 'NEEDLE', path: dir, output_mode: 'count' }, makeCtx(dir, (m) => logs.push(m)));
+    // head_limit=0 since 2026-07-27: only an explicitly unlimited search scans
+    // the whole corpus, so only it can report full coverage.
+    await grepTool.execute(
+      { pattern: 'NEEDLE', path: dir, output_mode: 'count', head_limit: 0 },
+      makeCtx(dir, (m) => logs.push(m)),
+    );
     const scan = logs.find((l) => l.startsWith('grep.scan'));
     expect(scan).toBeDefined();
     expect(scan).toContain('full_scan=true');

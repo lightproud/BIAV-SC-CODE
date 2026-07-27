@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: RefreshMcpTools prompt'
-description: Tool prompt for refreshing one or all connected MCP servers tool lists and interpreting per-server results
-ccVersion: 2.1.211
+name: "Tool Description: RefreshMcpTools prompt"
+description: "Tool prompt for refreshing one or all connected MCP servers tool lists and interpreting per-server results"
+ccVersion: "2.1.211"
 -->
 Re-query the tool lists of connected MCP servers and update the available tools.
 

@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Artifact explainer'
-description: Instructions for creating explainer artifacts with numbered-step or section walkthrough structures from the built-in template
-ccVersion: 2.1.208
+name: "Skill: Artifact explainer"
+description: "Instructions for creating explainer artifacts with numbered-step or section walkthrough structures from the built-in template"
+ccVersion: "2.1.208"
 -->
 ---
 name: artifact-explainer

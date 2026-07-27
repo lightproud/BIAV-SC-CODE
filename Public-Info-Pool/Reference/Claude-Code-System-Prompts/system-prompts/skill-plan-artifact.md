@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Plan Artifact'
-description: Skill instructions for creating or customizing shareable plan artifacts from implementation plans, design docs, or RFCs
-ccVersion: 2.1.208
+name: "Skill: Plan Artifact"
+description: "Skill instructions for creating or customizing shareable plan artifacts from implementation plans, design docs, or RFCs"
+ccVersion: "2.1.208"
 -->
 ---
 name: plan-artifact

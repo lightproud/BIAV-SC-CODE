@@ -218,7 +218,8 @@ Usage:
 - The file_path parameter must be an absolute path, not a relative path
 - By default, it reads up to 2000 lines starting from the beginning of the file
 - Any lines longer than 2000 characters will be truncated
-- Output is also capped at ~50000 characters total; when truncated, a footer shows the exact line range returned and the offset to continue reading from
+- Files larger than 256KB will return an error; use offset and limit for larger files, or Grep to find what you need
+- Output is also capped at ~50000 characters total; when truncated, a footer shows the exact line range returned, the offset for the next page, and a reminder to consider Grep instead of paging - do not answer from one page alone if the answer may be further in the file
 - Results are returned using cat -n format, with line numbers starting at 1
 - You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters
 - This tool allows you to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as this is a multimodal model.
@@ -815,8 +816,9 @@ The tool result includes a runId. To resume after a failure or script edit, rela
 
 /**
  * SendMessage (O-B2) — ADAPTED reproduction of the agent-teams SendMessage
- * description (archive slug tool-description-sendmessagetool, ccVersion
- * 2.1.199). Adaptations, per the red-line discipline (never describe an
+ * description (archive slug tool-description-sendmessage — renamed from
+ * tool-description-sendmessagetool in the 2.1.216 snapshot; ccVersion 2.1.199
+ * at the time of reproduction). Adaptations, per the red-line discipline (never describe an
  * unshipped capability): teammate-NAME addressing, the `"main"` address and
  * the automatic teammate-delivery sentence are omitted (this SDK ships no
  * agent-teams naming machinery — agentId addressing only); the official
@@ -903,7 +905,7 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   {
     tool: 'SendMessage',
     faithful: false,
-    slugs: ['tool-description-sendmessagetool'],
+    slugs: ['tool-description-sendmessage'],
   },
 ];
 

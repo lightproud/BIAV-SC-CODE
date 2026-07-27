@@ -24,7 +24,7 @@ import type {
   SpawnSubagentParams,
   ToolResultPayload,
 } from '../src/internal/contracts.js';
-import { sliceSurrogateSafe } from '../src/internal/text.js';
+import { sliceSurrogateSafe, sliceTailSurrogateSafe } from '../src/internal/text.js';
 import { parseWorkflowMeta } from '../src/tools/workflow-engine.js';
 import { createWorkflowTool, workflowTool } from '../src/tools/workflow.js';
 import { taskCreateTool, taskGetTool, taskUpdateTool } from '../src/tools/task.js';
@@ -302,6 +302,21 @@ describe('R7s-3: result truncation never splits a surrogate pair', () => {
     expect(sliceSurrogateSafe(s, 3)).toBe('ab'); // cut lands mid-pair
     expect(sliceSurrogateSafe(s, 4)).toBe(s); // clean cut keeps the pair
     expect(LONE_SURROGATE.test(sliceSurrogateSafe(s, 3))).toBe(false);
+  });
+
+  // 2026-07-27: the tail mirror, added for the Bash cap, which keeps the END of
+  // a stream. Its boundary case is the OPPOSITE half of the pair — a head cut
+  // strands a high surrogate, a tail cut strands a LOW one — so a copy-paste of
+  // the head implementation would pass a lone surrogate straight through.
+  it('sliceTailSurrogateSafe drops a leading low surrogate at the cut', () => {
+    const s = '\u{1F600}ab';
+    expect(sliceTailSurrogateSafe(s, 3)).toBe('ab'); // cut lands mid-pair
+    expect(sliceTailSurrogateSafe(s, 4)).toBe(s); // clean cut keeps the pair
+    expect(LONE_SURROGATE.test(sliceTailSurrogateSafe(s, 3))).toBe(false);
+    // Keeps the END, unlike its head-side twin, and never over-reads or throws.
+    expect(sliceTailSurrogateSafe('abcdef', 2)).toBe('ef');
+    expect(sliceTailSurrogateSafe('abc', 99)).toBe('abc');
+    expect(sliceTailSurrogateSafe('abc', 0)).toBe('');
   });
 
   it('a >100k result with an emoji straddling the cap truncates cleanly', async () => {

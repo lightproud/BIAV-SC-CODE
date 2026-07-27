@@ -1,10 +1,10 @@
 <!--
-name: 'Skill: Plugin eval authoring interview'
-description: Guided interview for creating Claude plugin eval suites under evals/ with gated inputs, graders, calibration, and cost checks
-ccVersion: 2.1.203
+name: "Skill: Plugin eval authoring interview"
+description: "Guided interview for creating Claude plugin eval suites under evals/ with gated inputs, graders, calibration, and cost checks"
+ccVersion: "2.1.203"
 variables:
-  - PLUGIN_PATH
-  - SUGGESTED_CASE_SLUG_NOTE
+  - "PLUGIN_PATH"
+  - "SUGGESTED_CASE_SLUG_NOTE"
 -->
 # Eval-authoring interview
 

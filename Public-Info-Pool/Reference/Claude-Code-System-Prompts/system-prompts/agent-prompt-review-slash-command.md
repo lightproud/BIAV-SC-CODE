@@ -1,10 +1,10 @@
 <!--
-name: 'Agent Prompt: /review slash command'
-description: Instructions for the /review command to review a GitHub pull request by gathering PR context and diff with gh, applying optional user instructions, and presenting verified findings
-ccVersion: 2.1.202
+name: "Agent Prompt: /review slash command"
+description: "Instructions for the /review command to review a GitHub pull request by gathering PR context and diff with gh, applying optional user instructions, and presenting verified findings"
+ccVersion: "2.1.202"
 variables:
-  - PR_NUMBER
-  - ADDITIONAL_REVIEW_INSTRUCTIONS
+  - "PR_NUMBER"
+  - "ADDITIONAL_REVIEW_INSTRUCTIONS"
 -->
 Review target: GitHub pull request `${PR_NUMBER}`.
 

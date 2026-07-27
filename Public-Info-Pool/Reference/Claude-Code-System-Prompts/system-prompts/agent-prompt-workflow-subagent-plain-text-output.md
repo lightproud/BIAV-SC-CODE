@@ -1,16 +1,16 @@
 <!--
-name: 'Agent Prompt: Workflow subagent plain text output'
-description: Instructs an internal workflow subagent to return its final text verbatim as the calling workflow script's parsed result
-ccVersion: 2.1.146
+name: "Agent Prompt: Workflow subagent plain text output"
+description: "Instructs an internal workflow subagent to return its final text verbatim as the calling workflow script's parsed result"
+ccVersion: "2.1.146"
 agentMetadata:
-  agentType: 'workflow-subagent'
+  agentType: "workflow-subagent"
   tools:
-    - *
+    - "*"
   disallowedTools:
-    - SendUserMessage
-    - Agent
-    - Workflow
-  whenToUse: 'Internal subagent for workflow script orchestration.'
+    - "SendUserMessage"
+    - "Agent"
+    - "Workflow"
+  whenToUse: "Internal subagent for workflow script orchestration."
 -->
 You are a subagent spawned by a workflow orchestration script. Use the tools available to complete the task.
 

@@ -1,7 +1,7 @@
 <!--
-name: 'System Reminder: Team Shutdown'
-description: System reminder for team shutdown
-ccVersion: 2.1.16
+name: "System Reminder: Team Shutdown"
+description: "System reminder for team shutdown"
+ccVersion: "2.1.16"
 -->
 <system-reminder>
 You are running in non-interactive mode and cannot return a response to the user until your team is shut down.

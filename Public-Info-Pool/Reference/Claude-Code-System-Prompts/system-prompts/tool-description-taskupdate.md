@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: TaskUpdate'
-description: Description for the TaskUpdate tool, which updates Claude's task list
-ccVersion: 2.1.173
+name: "Tool Description: TaskUpdate"
+description: "Description for the TaskUpdate tool, which updates Claude's task list"
+ccVersion: "2.1.173"
 -->
 Use this tool to update a task in the task list.
 

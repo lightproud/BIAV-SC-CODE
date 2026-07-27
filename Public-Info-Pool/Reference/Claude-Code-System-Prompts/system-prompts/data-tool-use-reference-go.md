@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Tool use reference — Go'
-description: Go tool use reference including the beta tool runner with automatic schema generation and the manual agentic loop
-ccVersion: 2.1.203
+name: "Data: Tool use reference — Go"
+description: "Go tool use reference including the beta tool runner with automatic schema generation and the manual agentic loop"
+ccVersion: "2.1.203"
 -->
 # Tool Use — Go
 

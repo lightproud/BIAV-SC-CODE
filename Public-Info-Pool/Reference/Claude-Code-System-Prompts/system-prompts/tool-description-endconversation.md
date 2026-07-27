@@ -1,9 +1,9 @@
 <!--
-name: 'Tool Description: EndConversation'
-description: Defines when the assistant may use the EndConversation tool and the safety constraints that forbid ending the conversation
-ccVersion: 2.1.206
+name: "Tool Description: EndConversation"
+description: "Defines when the assistant may use the EndConversation tool and the safety constraints that forbid ending the conversation"
+ccVersion: "2.1.206"
 variables:
-  - END_CONVERSATION_TOOL_NAME
+  - "END_CONVERSATION_TOOL_NAME"
 -->
 End the current conversation. Use only for sustained user abuse or when the user explicitly requests a demonstration of this tool. This will close the conversation and prevent any further messages from being sent.
 

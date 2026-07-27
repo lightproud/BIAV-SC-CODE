@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Update config settings file locations'
-description: Where Claude Code stores settings.json across scopes
-ccVersion: 2.1.210
+name: "Skill: Update config settings file locations"
+description: "Where Claude Code stores settings.json across scopes"
+ccVersion: "2.1.210"
 -->
 ## Settings File Locations
 

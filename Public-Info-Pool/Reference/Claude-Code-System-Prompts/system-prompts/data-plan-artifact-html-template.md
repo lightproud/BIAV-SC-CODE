@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Plan artifact HTML template'
-description: Standalone HTML template used for published plan artifacts, including layout, fill contract, and light/dark styling
-ccVersion: 2.1.212
+name: "Data: Plan artifact HTML template"
+description: "Standalone HTML template used for published plan artifacts, including layout, fill contract, and light/dark styling"
+ccVersion: "2.1.212"
 -->
 <!--
 name: plan

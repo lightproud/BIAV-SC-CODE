@@ -399,12 +399,131 @@ SDK implements the agent loop directly against the public Messages API:
 | TaskStop | FULL | v0.31.0 (2026-07-08): official-named successor to KillShell — SIGTERM→SIGKILL on the background shell's process group. Takes `task_id` (or deprecated `shell_id`); already-terminal tasks report their status without re-killing. v0.42.0 (O-B2): `task_id` ALSO accepts a subagent agentId (official v2.1.198 semantics) — checked against the subagent registry before falling through to shells; a non-running subagent reports its status without kill events |
 | SendMessage | PARTIAL | v0.42.0 (O-B2): continue a previously spawned subagent with its FULL transcript intact (the runtime retains every child's live history for the query's life; per-agent serialization; stopped workers revivable). `{to, summary?, message}` — `to` is an agentId ONLY: teammate NAMES, the `"main"` address and peer-origin message emission belong to the agent-teams naming machinery this SDK does not ship (SDKMessageOrigin `peer`/`coordinator` + TeammateIdle stay typed-not-emitted). Foreground children reply as the tool result; background children ack + reply on a later drained turn as official `<task-notification>` XML (drain format aligned to the archive shape in the same batch). Root-loop-only: isolated children never see the tool; fork children keep the schema (prefix byte-match) and get an honest error. Coordinator presets ship alongside (COORDINATOR_MODE_PROMPT adapted + COORDINATOR_WORKER_AGENT faithful, agents.ts) |
 | Glob | PARTIAL | fast-glob, mtime-sorted newest-first; official 2.1.201 emitted ASCENDING order under ascending-utimes pins, so ordering parity with the live engine is not established - path sets agree (conformance run-l3 L3-GLOB-01, KD-L3-20, 2026-07-05) |
-| Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat (crossover diagnostic 2026-07-07). v0.13.0 fixed the silent 250-cap truncation: `count`/`files_with_matches` default COMPLETE, all modes announce truncation, `grep.scan` debug telemetry added. Pure-JS is the standing choice; ripgrep would enter only via a keeper ruling |
-| WebFetch / WebSearch | PARTIAL | registered in v0.2. Host-callback / direct-API subsets of the official server-side tools (audit r4 Sd-1..Sd-4) — see "Tool-description ↔ implementation fidelity" below. WebSearch is a host callback (`options.webSearch`, not an in-API search, no US-only gate) rendering `WebSearchResult[]` to text with markdown-hyperlink links; WebFetch hard-truncates oversized content to 100000 chars rather than model-summarizing (no summarizer model) |
+| Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat (crossover diagnostic 2026-07-07). v0.13.0 fixed the silent 250-cap truncation; v0.80.0 kept the announcement half and withdrew the other: `head_limit` defaults to 250 in ALL THREE output modes as in Claude Code (v0.13.0–0.79.1 defaulted `count`/`files_with_matches` to unlimited), every mode announces its own truncation, `head_limit=0` buys a provably complete result, `grep.scan` debug telemetry reports scan coverage. Pure-JS is the standing choice; ripgrep would enter only via a keeper ruling |
+| WebFetch / WebSearch | PARTIAL | registered in v0.2. Host-callback / direct-API subsets of the official server-side tools (audit r4 Sd-1..Sd-4) — see "Tool-description ↔ implementation fidelity" below. WebSearch is a host callback (`options.webSearch`, not an in-API search, no US-only gate) rendering `WebSearchResult[]` to text with markdown-hyperlink links; WebFetch hard-truncates oversized content to the Read output cap (50000 chars) rather than model-summarizing (no summarizer model); v0.80.0 lowered it from 100000 — the official number bounds a summarizer's INPUT, not context-bound text |
 | TodoWrite | PARTIAL | v0.7: OFF by default (Task quadruplet is the default surface); `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only, per official 0.3.142 |
 | Agent | PARTIAL | the subagent spawn tool; v0.7 gains `model`/`isolation:'worktree'` and the official required set [description, prompt] (subagent_type defaults to general-purpose). Residual param delta = our BPT-only `fork` extension |
 | MultiEdit | REMOVED | SDK-original v0.61.0–0.64.4 (same-file atomic batch edit — edits applied sequentially on one snapshot, all-or-nothing write, single pre-image for rewind, same read-before-write gate as Edit; never had an official parity target — upstream retired MultiEdit in favour of repeated Edit calls, so support was vs our own documented semantics with an authored, not reproduced, description). **v0.65.0: REMOVED (audit r4 Y5-3, keeper alignment) — the tool no longer ships. It is absent from `createBuiltinTools` (tests/tool-parity.test.ts pins the shipped set) and is once again a red-line token that no SHIPPED description may reference (tests/red-line-tool-names.test.ts; `descriptions.ts` header lists it under "retired 0.65.0"). Lifecycle: shipped 2026-07-15, DEPRECATED-but-shipping in v0.64.4, hard-removed in v0.65.0. Consumers use repeated Edit calls (each against live file state, avoiding the snapshot-ambiguity MultiEdit's own not-found triage existed to explain); recoverable from git history if a real consumer need resurfaces.** |
 | NotebookEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface) |
+
+## Baseline realignment against the 2.1.216 snapshot (2026-07-27)
+
+The comparison basis had gone stale in two different ways at once, and they are
+worth keeping apart because only one of them is fixable inside this repo.
+
+**Prose basis — realigned, and now measurable on demand.** The archive layer the
+descriptions are reproduced from was refreshed to the 2.1.216-era snapshot; the
+per-fragment `ccVersion` values it carries now span 2.1.14 – 2.1.217 (each
+fragment is stamped with the release it was last observed in, so a spread is
+normal — an unchanged clause keeps its old stamp). `node
+scripts/description-coverage.mjs` reports, per cited fragment, how much of it is
+still reproduced verbatim here. Measured 2026-07-27, 30 cited fragments:
+
+| Coverage | Fragments | Reading |
+|---|---|---|
+| 100% | 18 | Bash (9 of its 10), Edit, Write ×2, Grep (2.1.217), Glob (2.1.215), the Task quadruplet, ExitPlanMode |
+| 80–97% | 4 | Bash git-commit (35/36), Workflow (119/144), AskUserQuestion, WebFetch |
+| 25–71% | 6 | WebSearch, Read, Monitor, TodoWrite, EnterPlanMode, EnterWorktree |
+| 11% | 1 | SendMessage — agentId-only addressing, the largest documented adaptation |
+| n/a | 1 | `bash-timeout`: entirely template, no stable sentence to measure |
+
+Low coverage is NOT a defect signal here and the guard deliberately does not gate
+on it: this SDK refuses to describe capabilities it does not ship (red-line
+discipline), so the WebFetch summarizer clause, Monitor's push channel,
+EnterWorktree's unshipped half and SendMessage's teammate-name addressing are all
+*supposed* to be missing. The guard asks only "does this description still
+recognise its source" (≥1 stable anchor). The coverage number is a signal for a
+human to read, which is why the command exists and why it always exits 0.
+
+**One real defect the realignment found**: `SendMessage` cited
+`tool-description-sendmessagetool`, which the snapshot renamed to
+`tool-description-sendmessage`. It went unnoticed because the existence check
+rode inside the anchor check, which skips adapted entries — so an adapted
+description could point into thin air and stay green. Existence is now its own
+test, applied to faithful and adapted alike. That makes three dangling slugs from
+this one snapshot: two reddened main for six hours (v0.80.1), this third was
+found only by hand.
+
+**Numeric basis — corroborated 2026-07-27 against 2.1.220 (this paragraph
+replaces an incorrect one).** The ARCHIVE layer genuinely cannot supply these:
+the reconstruction template-izes exactly the numbers (`${MAX_LINES_CONSTANT}`
+and friends) and the grep fragments carry no parameter-level docs. From that,
+v0.80.2 concluded the figures could not be re-verified without a machine that
+has Claude Code installed. **That conclusion was wrong, and the way it was
+reached is the instructive part**: the keeper's extraction happened to run
+against a locally installed `claude.exe`, and that one path was mistaken for the
+only path. The official binary is a public npm artifact — a platform
+`optionalDependency` of `@anthropic-ai/claude-code`
+(`@anthropic-ai/claude-code-linux-x64` and siblings) — and this repository's own
+conformance job already installs the official arm transiently with `--no-save`.
+It is squarely inside the clean-room boundary's clause ①, which admits official
+release-channel artifacts.
+
+Extracted from 2.1.220 and cross-checked against the 2.1.141 figures the
+v0.80.0 work was built on:
+
+| Constant | 2.1.141 (keeper) | 2.1.220 (verified here) | |
+|---|---|---|---|
+| Read output cap | 25,000 tokens | `25000`, env `CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS` | unchanged |
+| Bash output | 30,000 default / 150,000 max | `30000` / `150000`, env `BASH_MAX_OUTPUT_LENGTH` | unchanged |
+| Grep `head_limit` | 250, all three modes | "Defaults to 250 when unspecified. Pass 0 for unlimited" verbatim | unchanged |
+
+Unchanged across 79 releases, so the v0.80.0 limits work stands on corroborated
+ground rather than a single reading. Two caveats kept honest: WebFetch's 100,000
+was not re-located in this pass (the 2.1.220 build does not expose the same
+symbol shape), and the extraction is a point-in-time check, not a standing
+guard — nothing re-runs it automatically.
+
+## Divergence sweep vs the official 2.1.220 binary (2026-07-27)
+
+First systematic comparison against the OFFICIAL ARTIFACT rather than the
+third-party reconstruction: the npm platform package
+(`@anthropic-ai/claude-code-linux-x64`) plus the `sdk-tools.d.ts` type
+definitions shipped in the wrapper package. Four axes swept; two of the four
+findings turned out to be parser artifacts and are recorded as such, because a
+divergence list that quietly carries phantoms is worse than none.
+
+**Tool set.** 18 official tools this SDK does not ship: `Artifact`,
+`ClaudeDesign`, `CronCreate`/`CronDelete`/`CronList`, `ExitWorktree`, `Mcp`,
+`NotebookEdit`, `Projects`, `ProposeSkills`, `PushNotification`, `REPL`,
+`RefreshMcpTools`, `RemoteTrigger`, `ReportFindings`, `ScheduleWakeup`,
+`SendFeedback`, `ShowOnboardingRolePicker`. Most are bound to Anthropic-side
+services this SDK has no counterpart for. Three tools go the other way:
+`BashOutput` and `KillShell` (upstream replaced them with
+`TaskOutput`/`TaskStop`, which this SDK also ships — both pairs are kept) and
+`SendMessage` (not exported in the official d.ts).
+
+**Input schemas — one real gap.** Field-for-field, `Bash`, `Read`, `Write`,
+`Edit`, `Glob`, `Grep` (all 15 fields), `WebFetch`, `WebSearch`, the Task
+quintet, `Workflow`, `ExitPlanMode`, `EnterPlanMode` and `EnterWorktree` MATCH.
+
+- `AskUserQuestion` — official also carries `answers` ("User answers collected
+  by the permission component"), `annotations` (per-question `preview`/`notes`)
+  and `metadata.source` (analytics). All three are ROUND-TRIP fields written
+  back by the official permission-component UI; this SDK routes the tool to a
+  host callback and has no such component. **Keeper ruling 2026-07-27: log, do
+  not add** — declaring fields nothing populates would describe an unshipped
+  capability, which the red-line discipline forbids.
+- `Monitor` — official also carries `ws`/`url`/`protocols` (the WebSocket
+  source). Already documented above as an honest subset.
+
+**Numeric constants.** Read output cap 25,000 tokens, Bash output
+30,000/150,000, Glob `maxResults ?? 100` and Grep's "Defaults to 250 when
+unspecified" all match this SDK (Read's is 50,000 CHARACTERS by the
+documented measure divergence). One gap found and CLOSED in v0.82.0: official
+refuses a whole-file read past `maxSizeBytes` = 262144 (256KB) with
+`FileTooLargeError`, while this SDK's only size limit was the 50MB OOM guard.
+
+**Recorded as NOT divergences** (first-pass regex artifacts, corrected on
+re-check with a brace-balanced parse): `EnterPlanModeInput` is `{}` upstream and
+here — the four fields first attributed to it belong to the adjacent
+`TaskCreateInput`; `TaskListInput` is likewise `{}` on both sides; and Grep's
+`-i`/`-n`/`-A`/`-B`/`-C`/`-o` exist upstream too (the first parser did not match
+quoted keys).
+
+**Not swept, stated so the coverage is not overread**: official `*Output` types
+(37 of them), the main-loop system prompt, the permission/hook layer, the MCP
+protocol layer, and WebFetch's 100,000 (not re-located in the 2.1.220 build).
 
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 
@@ -441,8 +560,13 @@ divergences):
 - **WebFetch — "Results may be summarized if the content is very large" (Sd-3,
   HONEST-SUBSET).** Faithful text describing the official small-model summarizer.
   This direct-API engine has NO summarizer model: `webFetchTool` returns the
-  converted page text HARD-TRUNCATED to 100000 chars (`MAX_OUTPUT_CHARS`) with a
-  `[truncated]` marker, never a model-authored summary. The `prompt` input is
+  converted page text HARD-TRUNCATED to 50000 chars (`MAX_OUTPUT_CHARS`, which
+  is `MAX_READ_OUTPUT_CHARS` — a fetched page enters the context exactly like a
+  Read of a remote file) with a `[truncated]` marker, never a model-authored
+  summary. Copying the official 100000 (v0.2–0.79.1) mistook the quantity: there
+  it gates the markdown fed to the summarizer and only the summary reaches the
+  context, so it made WebFetch the one tool able to push twice a Read's budget
+  into the context, from the least controllable source. The `prompt` input is
   consumed by the model's own next turn over the returned text (see the webfetch.ts
   header).
 - **Bash — "The shell environment is initialized from the user's profile" (Sd-5,

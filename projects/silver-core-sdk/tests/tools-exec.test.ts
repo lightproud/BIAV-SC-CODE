@@ -28,6 +28,10 @@ import type {
   ToolResultPayload,
 } from '../src/internal/contracts.js';
 
+/** The Bash stream cap's marker, kept in one place so the cap tests below read
+ *  as assertions about WHERE the cut happened, not about marker spelling. */
+const BASH_TRUNCATION_MARKER = '[truncated: earlier output dropped]';
+
 let root: string;
 
 beforeAll(async () => {
@@ -162,14 +166,32 @@ describe('Bash tool', () => {
     expect(elapsed).toBeLessThan(3000);
   });
 
-  it('caps stdout at 30000 chars with a [truncated] marker', async () => {
+  it('caps stdout at 30000 chars with a leading truncation marker', async () => {
     const dir = await makeDir('bash-cap');
     const res = await bashTool.execute(
       { command: 'head -c 40000 /dev/zero | tr "\\0" a' },
       makeCtx(dir),
     );
     expect(res.isError).toBeFalsy();
-    expect(text(res)).toBe(`${'a'.repeat(30000)}\n[truncated]`);
+    expect(text(res)).toBe(`${BASH_TRUNCATION_MARKER}\n${'a'.repeat(30000)}`);
+  });
+
+  // 2026-07-27 (limits alignment): the cap keeps the TAIL, not the head. A long
+  // command's verdict — build result, test summary, final error — is in its
+  // last lines; the old head-keeping cap discarded exactly that and kept the
+  // opening noise. Claude Code truncates from the front for the same reason.
+  it('keeps the END of an over-cap stream, dropping the beginning', async () => {
+    const dir = await makeDir('bash-cap-tail');
+    const res = await bashTool.execute(
+      { command: 'head -c 40000 /dev/zero | tr "\\0" a; printf "VERDICT-LAST"' },
+      makeCtx(dir),
+    );
+    expect(res.isError).toBeFalsy();
+    const out = text(res);
+    // Exactly the final 30000 chars of the 40012-char stream, marker in front.
+    expect(out).toBe(
+      `${BASH_TRUNCATION_MARKER}\n${'a'.repeat(30000 - 'VERDICT-LAST'.length)}VERDICT-LAST`,
+    );
   });
 
   it('caps stdout and stderr independently (per-stream cap)', async () => {
@@ -181,8 +203,8 @@ describe('Bash tool', () => {
     expect(res.isError).toBeFalsy();
     const parts = text(res).split('\n[stderr]\n');
     expect(parts).toHaveLength(2);
-    expect(parts[0]).toBe(`${'x'.repeat(30000)}\n[truncated]`);
-    expect(parts[1]).toBe(`${'x'.repeat(30000)}\n[truncated]`);
+    expect(parts[0]).toBe(`${BASH_TRUNCATION_MARKER}\n${'x'.repeat(30000)}`);
+    expect(parts[1]).toBe(`${BASH_TRUNCATION_MARKER}\n${'x'.repeat(30000)}`);
   });
 
   it('runs the command in ctx.cwd', async () => {

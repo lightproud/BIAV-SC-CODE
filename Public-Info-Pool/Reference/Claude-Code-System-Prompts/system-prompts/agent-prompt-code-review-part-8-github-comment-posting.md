@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: /code-review part 8 GitHub comment posting'
-description: Optional /code-review instructions for posting findings as GitHub inline PR comments when --comment is passed
-ccVersion: 2.1.147
+name: "Agent Prompt: /code-review part 8 GitHub comment posting"
+description: "Optional /code-review instructions for posting findings as GitHub inline PR comments when --comment is passed"
+ccVersion: "2.1.147"
 -->
 
 

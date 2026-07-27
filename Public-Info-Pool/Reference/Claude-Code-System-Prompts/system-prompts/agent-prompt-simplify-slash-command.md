@@ -1,14 +1,14 @@
 <!--
-name: 'Agent Prompt: /simplify slash command'
-description: Instructions for the /simplify slash command that reviews changed code for reuse, simplification, efficiency, and altitude cleanups, then applies the fixes
-ccVersion: 2.1.154
+name: "Agent Prompt: /simplify slash command"
+description: "Instructions for the /simplify slash command that reviews changed code for reuse, simplification, efficiency, and altitude cleanups, then applies the fixes"
+ccVersion: "2.1.154"
 variables:
-  - DIFF_GATHERING_PHASE
-  - AGENT_TOOL_NAME
-  - REUSE_FINDER_ANGLE_BLOCK
-  - SIMPLIFICATION_FINDER_ANGLE_BLOCK
-  - EFFICIENCY_FINDER_ANGLE_BLOCK
-  - ALTITUDE_FINDER_ANGLE_BLOCK
+  - "DIFF_GATHERING_PHASE"
+  - "AGENT_TOOL_NAME"
+  - "REUSE_FINDER_ANGLE_BLOCK"
+  - "SIMPLIFICATION_FINDER_ANGLE_BLOCK"
+  - "EFFICIENCY_FINDER_ANGLE_BLOCK"
+  - "ALTITUDE_FINDER_ANGLE_BLOCK"
 -->
 `/simplify → 4 cleanup agents in parallel → apply the fixes`
 

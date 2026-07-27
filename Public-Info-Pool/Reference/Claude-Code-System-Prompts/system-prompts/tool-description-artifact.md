@@ -1,9 +1,9 @@
 <!--
-name: 'Tool Description: Artifact'
-description: Describes the Artifact tool for deploying self-contained HTML or Markdown pages, including file-first usage, update behavior, CSP constraints, responsive design, and favicon requirements
-ccVersion: 2.1.212
+name: "Tool Description: Artifact"
+description: "Describes the Artifact tool for deploying self-contained HTML or Markdown pages, including file-first usage, update behavior, CSP constraints, responsive design, and favicon requirements"
+ccVersion: "2.1.212"
 variables:
-  - ARTIFACT_DESIGN_SKILL_NAME
+  - "ARTIFACT_DESIGN_SKILL_NAME"
 -->
 Render an HTML or Markdown file to an Artifact — a default-private web page hosted on claude.ai that the user can later choose to share with their teammates. Use this when communicating visually would be clearer than terminal text. Publishing proactively is fine for your own work-product — artifacts start private. The exception is content that could mislead or cause harm if shared onward: anything imitating a real organization, person, or record, or content the user framed as sensitive. Build those as files, and let the user decide whether they get a URL.
 

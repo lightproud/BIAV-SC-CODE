@@ -1,12 +1,12 @@
 <!--
-name: 'Skill: Import to Claude Code'
-description: Generated SKILL.md instructing Claude to finish importing leftover foreign-agent config that `claude import` could not map automatically
-ccVersion: 2.1.213
+name: "Skill: Import to Claude Code"
+description: "Generated SKILL.md instructing Claude to finish importing leftover foreign-agent config that `claude import` could not map automatically"
+ccVersion: "2.1.213"
 variables:
-  - IMPORT_SOURCES
-  - IMPORT_SOURCE
-  - FORMAT_UNMAPPED_SOURCE_SECTION_FN
-  - EXISTING_FALLBACK_SECTIONS
+  - "IMPORT_SOURCES"
+  - "IMPORT_SOURCE"
+  - "FORMAT_UNMAPPED_SOURCE_SECTION_FN"
+  - "EXISTING_FALLBACK_SECTIONS"
 -->
 ---
 name: import-to-claude-code

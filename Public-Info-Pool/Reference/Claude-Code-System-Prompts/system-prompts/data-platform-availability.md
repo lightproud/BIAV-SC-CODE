@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Platform availability'
-description: Feature availability matrix across Claude API provider platforms (first-party, Claude Platform on AWS, Bedrock, Vertex, and Foundry)
-ccVersion: 2.1.182
+name: "Data: Platform availability"
+description: "Feature availability matrix across Claude API provider platforms (first-party, Claude Platform on AWS, Bedrock, Vertex, and Foundry)"
+ccVersion: "2.1.219"
 -->
 # Platform Availability
 
@@ -46,7 +46,7 @@ Columns: **1P** = first-party Claude API, **P-AWS** = Claude Platform on AWS (An
 | &nbsp;&nbsp;Files API | β | β | ❌ | ❌ | β | |
 | &nbsp;&nbsp;Models API | ✅ | ✅ | ❌ | ❌ | ❌ | |
 | **Other** | | | | | | |
-| &nbsp;&nbsp;Mid-conversation system messages | ✅ | ✅ | ❌ | ❌ | ❌ | {{OPUS_NAME}} only |
+| &nbsp;&nbsp;Mid-conversation system messages | ✅ | ✅ | ❌ | ❌ | ❌ | {{OPUS_NAME}}, {{PREV_OPUS_NAME}}, {{FABLE_NAME}}, {{MYTHOS_NAME}}; not {{SONNET_NAME}} |
 | &nbsp;&nbsp;Fast mode | β | ❌ | ❌ | ❌ | ❌ | Research preview, beta `fast-mode-2026-02-01`, first-party API only |
 | &nbsp;&nbsp;Cache diagnostics | β | ❌ | ❌ | ❌ | ❌ | First-party API only |
 | &nbsp;&nbsp;Task budgets | β | β | ❌ | ❌ | ❌ | Beta header `task-budgets-2026-03-13`; 3P availability not documented — assume unsupported |

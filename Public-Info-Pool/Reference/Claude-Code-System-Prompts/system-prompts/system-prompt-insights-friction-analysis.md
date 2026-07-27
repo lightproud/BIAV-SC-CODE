@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Insights friction analysis'
-description: Analyzes aggregated usage data to identify friction patterns and categorize recurring issues
-ccVersion: 2.1.30
+name: "System Prompt: Insights friction analysis"
+description: "Analyzes aggregated usage data to identify friction patterns and categorize recurring issues"
+ccVersion: "2.1.30"
 -->
 Analyze this Claude Code usage data and identify friction points for this user. Use second person ("you").
 

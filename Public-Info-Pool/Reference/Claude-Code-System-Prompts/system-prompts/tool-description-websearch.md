@@ -1,9 +1,9 @@
 <!--
-name: 'Tool Description: WebSearch'
-description: Tool description for web search functionality
-ccVersion: 2.1.120
+name: "Tool Description: WebSearch"
+description: "Tool description for web search functionality"
+ccVersion: "2.1.120"
 variables:
-  - CURRENT_MONTH_YEAR
+  - "CURRENT_MONTH_YEAR"
 -->
 
 - Allows Claude to search the web and use the results to inform responses

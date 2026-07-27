@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: Snooze (delay and reason guidance)'
-description: Extends the snooze tool description with guidance on choosing delaySeconds relative to the 5-minute prompt cache TTL and writing informative reason fields
-ccVersion: 2.1.207
+name: "Tool Description: Snooze (delay and reason guidance)"
+description: "Extends the snooze tool description with guidance on choosing delaySeconds relative to the 5-minute prompt cache TTL and writing informative reason fields"
+ccVersion: "2.1.207"
 -->
 Schedule when to resume work in /loop dynamic mode — the user invoked /loop without an interval, asking you to self-pace iterations of a specific task.
 

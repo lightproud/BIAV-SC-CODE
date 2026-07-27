@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: RefreshMcpTools'
-description: Describes when and how to refresh connected MCP servers tool lists to recover missing or stale tools
-ccVersion: 2.1.211
+name: "Tool Description: RefreshMcpTools"
+description: "Describes when and how to refresh connected MCP servers tool lists to recover missing or stale tools"
+ccVersion: "2.1.211"
 -->
 Re-queries the tool list of connected MCP servers and updates the set of available tools, reporting which tools were added or removed.
 

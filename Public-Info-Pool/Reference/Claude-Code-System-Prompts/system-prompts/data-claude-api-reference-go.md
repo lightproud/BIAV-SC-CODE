@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Claude API reference — Go'
-description: Go SDK reference including installation, client initialization, model constants, basic requests, and thinking
-ccVersion: 2.1.182
+name: "Data: Claude API reference — Go"
+description: "Go SDK reference"
+ccVersion: "2.1.219"
 -->
 # Claude API — Go
 
@@ -34,7 +34,9 @@ client := anthropic.NewClient(
 
 ## Model Constants
 
-The Go SDK provides typed model constants: `anthropic.ModelClaudeFable5`, `anthropic.ModelClaudeOpus4_8`, `anthropic.ModelClaudeOpus4_7`, `anthropic.ModelClaudeSonnet4_6`, `anthropic.ModelClaudeHaiku4_5_20251001`. Use `ModelClaudeOpus4_8` unless the user specifies otherwise; if they ask for Fable or the most powerful model, use `anthropic.ModelClaudeFable5` (see `shared/models.md` for the full resolution table).
+The Go SDK provides typed model constants: `anthropic.ModelClaudeFable5`, `anthropic.ModelClaudeOpus4_8`, `anthropic.ModelClaudeOpus4_7`, `anthropic.ModelClaudeSonnet4_6`, `anthropic.ModelClaudeHaiku4_5_20251001`. Default to {{OPUS_NAME}} unless the user specifies otherwise; if they ask for Fable or the most powerful model, use `anthropic.ModelClaudeFable5` (see `shared/models.md` for the full resolution table).
+
+`anthropic.Model` is an alias for `string`, so a model with no typed constant yet — including {{OPUS_NAME}} — is passed as the plain id: `Model: "{{OPUS_ID}}"`. Check the SDK release notes for a typed `{{OPUS_NAME}}` constant before assuming one exists.
 
 ---
 
@@ -42,7 +44,7 @@ The Go SDK provides typed model constants: `anthropic.ModelClaudeFable5`, `anthr
 
 ```go
 response, err := client.Messages.New(context.Background(), anthropic.MessageNewParams{
-    Model:     anthropic.ModelClaudeOpus4_8,
+    Model:     "{{OPUS_ID}}",
     MaxTokens: 16000,
     Messages: []anthropic.MessageParam{
         anthropic.NewUserMessage(anthropic.NewTextBlock("What is the capital of France?")),
@@ -98,10 +100,11 @@ for _, block := range resp.Content {
 }
 ```
 
-> **Fable 5, Opus 4.8, Opus 4.7, Opus 4.6, and Sonnet 4.6:** Use adaptive thinking (above). `ThinkingConfigParamOfEnabled(budgetTokens)` is removed on Fable 5, Opus 4.8, and 4.7 (400 if sent); deprecated on Opus 4.6 and Sonnet 4.6.
+> **Fable 5, {{OPUS_NAME}}, Opus 4.8, Opus 4.7, Opus 4.6, and Sonnet 4.6:** Use adaptive thinking (above). `ThinkingConfigParamOfEnabled(budgetTokens)` is removed on Fable 5, {{OPUS_NAME}}, Opus 4.8, and 4.7 (400 if sent); deprecated on Opus 4.6 and Sonnet 4.6.
+> **{{OPUS_NAME}}:** thinking is on by default — leaving `Thinking` unset runs adaptive (the adaptive union is equivalent), unlike Opus 4.8/4.7 where leaving it unset meant no thinking.
 > **Older models:** Use `anthropic.ThinkingConfigParamOfEnabled(N)` (budget must be < `MaxTokens`, min 1024).
 
-To disable: `anthropic.ThinkingConfigParamUnion{OfDisabled: &anthropic.ThinkingConfigDisabledParam{}}`.
+To disable: `anthropic.ThinkingConfigParamUnion{OfDisabled: &anthropic.ThinkingConfigDisabledParam{}}`. On {{OPUS_NAME}} that is accepted only at effort `high` or lower — pairing it with `xhigh`/`max` returns a 400.
 
 ---
 
@@ -133,7 +136,7 @@ if resp.StopReason == anthropic.StopReasonRefusal {
 }
 ```
 
-**Refusal fallbacks ({{FABLE_NAME}}) — opt in by default.** Fallbacks are opt-in: without them a refused request simply stops. In `{{FABLE_ID}}` code, include `Fallbacks: []anthropic.BetaFallbackParam{{Model: "{{OPUS_ID}}"}}` plus the `anthropic.AnthropicBetaServerSideFallback2026_06_01` beta on `client.Beta.Messages.New` by default — a policy decline is re-served by the fallback model inside the same call. Not available on Amazon Bedrock, Vertex AI, or Microsoft Foundry — register the client-side middleware there: `option.WithMiddleware(betafallback.BetaRefusalFallbackMiddleware(...))` from `lib/betafallback`, with per-conversation state via `betafallback.WithBetaFallbackState(&betafallback.BetaFallbackState{})`. Full semantics (billing, sticky routing, streaming) and a runnable example: `shared/model-migration.md` → Migrating to {{FABLE_NAME}} → `refusal` stop reason, and the Go SDK repo's `examples/` (WebFetch via `shared/live-sources.md`).
+**Refusal fallbacks ({{FABLE_NAME}}) — opt in by default.** Fallbacks are opt-in: without them a refused request simply stops. In `{{FABLE_ID}}` code, include `Fallbacks: []anthropic.BetaFallbackParam{{Model: "{{PREV_OPUS_ID}}"}}` plus the `anthropic.AnthropicBetaServerSideFallback2026_06_01` beta on `client.Beta.Messages.New` by default — a policy decline is re-served by the fallback model inside the same call. Not available on Amazon Bedrock, Vertex AI, or Microsoft Foundry — register the client-side middleware there: `option.WithMiddleware(betafallback.BetaRefusalFallbackMiddleware(...))` from `lib/betafallback`, with per-conversation state via `betafallback.WithBetaFallbackState(&betafallback.BetaFallbackState{})`. Full semantics (billing, sticky routing, streaming) and a runnable example: `shared/model-migration.md` → Migrating to {{FABLE_NAME}} → `refusal` stop reason, and the Go SDK repo's `examples/` (WebFetch via `shared/live-sources.md`).
 
 ---
 
@@ -160,7 +163,7 @@ Use `Beta.Messages.New` with `ContextManagement` on `BetaMessageNewParams`. Ther
 
 ```go
 params := anthropic.BetaMessageNewParams{
-    Model:     anthropic.ModelClaudeOpus4_8,  // also supported: ModelClaudeSonnet4_6
+    Model:     "{{OPUS_ID}}",  // also supported: ModelClaudeOpus4_8, ModelClaudeSonnet4_6
     MaxTokens: 16000,
     Betas:     []anthropic.AnthropicBeta{"compact-2026-01-12"},
     ContextManagement: anthropic.BetaContextManagementConfigParam{

@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Managed Agents self-hosted sandboxes'
-description: Reference documentation for running Managed Agents tool execution in self-hosted infrastructure, including environment setup, workers, webhook-driven wake, orchestration, monitoring, credentials, and security responsibilities
-ccVersion: 2.1.172
+name: "Data: Managed Agents self-hosted sandboxes"
+description: "Reference documentation for running Managed Agents tool execution in self-hosted infrastructure, including environment setup, workers, webhook-driven wake, orchestration, monitoring, credentials, and security responsibilities"
+ccVersion: "2.1.172"
 -->
 # Managed Agents — Self-Hosted Sandboxes
 

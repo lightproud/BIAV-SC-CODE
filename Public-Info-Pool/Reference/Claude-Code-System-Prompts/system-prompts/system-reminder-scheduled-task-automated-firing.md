@@ -1,9 +1,9 @@
 <!--
-name: 'System Reminder: Scheduled task automated firing'
-description: Marks a scheduled turn as an automated firing of a stored prompt and warns that no live user approval or confirmation has occurred
-ccVersion: 2.1.213
+name: "System Reminder: Scheduled task automated firing"
+description: "Marks a scheduled turn as an automated firing of a stored prompt and warns that no live user approval or confirmation has occurred"
+ccVersion: "2.1.213"
 variables:
-  - SCHEDULED_TASK_HEADER
+  - "SCHEDULED_TASK_HEADER"
 -->
 ${SCHEDULED_TASK_HEADER}
 This turn was started automatically by a schedule, not typed live by the user.

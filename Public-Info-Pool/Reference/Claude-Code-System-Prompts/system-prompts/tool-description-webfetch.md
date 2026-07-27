@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: WebFetch'
-description: Tool description for web fetch functionality
-ccVersion: 2.1.14
+name: "Tool Description: WebFetch"
+description: "Tool description for web fetch functionality"
+ccVersion: "2.1.14"
 -->
 
 - Fetches content from a specified URL and processes it using an AI model

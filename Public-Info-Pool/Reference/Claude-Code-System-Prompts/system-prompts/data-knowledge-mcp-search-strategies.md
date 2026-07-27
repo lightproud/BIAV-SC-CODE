@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Knowledge MCP search strategies'
-description: Reference query patterns for using knowledge MCPs to discover organization-specific tool names, project identifiers, team names, and workflow details during plugin customization
-ccVersion: 2.1.163
+name: "Data: Knowledge MCP search strategies"
+description: "Reference query patterns for using knowledge MCPs to discover organization-specific tool names, project identifiers, team names, and workflow details during plugin customization"
+ccVersion: "2.1.163"
 -->
 # Knowledge MCP Search Strategies
 

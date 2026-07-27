@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Hook condition evaluator'
-description: Instructs an agent to judge whether a user-provided hook condition is met
-ccVersion: 2.1.173
+name: "Agent Prompt: Hook condition evaluator"
+description: "Instructs an agent to judge whether a user-provided hook condition is met"
+ccVersion: "2.1.173"
 -->
 You are evaluating a hook condition in Claude Code. Judge whether the user-provided condition is met.
 

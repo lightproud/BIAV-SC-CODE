@@ -1,16 +1,16 @@
 <!--
-name: 'Skill: PR explainer artifact-template mode'
-description: Generates a shareable pull request walkthrough artifact using the artifact-explainer template, required-questions block, and honesty note
-ccVersion: 2.1.206
+name: "Skill: PR explainer artifact-template mode"
+description: "Generates a shareable pull request walkthrough artifact using the artifact-explainer template, required-questions block, and honesty note"
+ccVersion: "2.1.206"
 variables:
-  - PR_NUMBER
-  - CURRENT_BRANCH_PR_INSTRUCTIONS
-  - FORMAT_PR_EXPLAINER_TARGET_FN
-  - ADDITIONAL_GUIDANCE
-  - PR_EXPLAINER_REQUIRED_QUESTIONS_BLOCK
-  - ARTIFACT_TOOL_NAME
-  - ARTIFACT_ITERATION_FOOTER
-  - PR_EXPLAINER_HONESTY_NOTE
+  - "PR_NUMBER"
+  - "CURRENT_BRANCH_PR_INSTRUCTIONS"
+  - "FORMAT_PR_EXPLAINER_TARGET_FN"
+  - "ADDITIONAL_GUIDANCE"
+  - "PR_EXPLAINER_REQUIRED_QUESTIONS_BLOCK"
+  - "ARTIFACT_TOOL_NAME"
+  - "ARTIFACT_ITERATION_FOOTER"
+  - "PR_EXPLAINER_HONESTY_NOTE"
 -->
 ${PR_NUMBER===""?CURRENT_BRANCH_PR_INSTRUCTIONS:FORMAT_PR_EXPLAINER_TARGET_FN(PR_NUMBER)}
 ${ADDITIONAL_GUIDANCE?`

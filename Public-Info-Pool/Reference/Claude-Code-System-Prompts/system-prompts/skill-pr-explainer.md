@@ -1,15 +1,15 @@
 <!--
-name: 'Skill: PR explainer'
-description: Generates a shareable pull request walkthrough artifact covering what changed, why, and where reviewers should focus
-ccVersion: 2.1.202
+name: "Skill: PR explainer"
+description: "Generates a shareable pull request walkthrough artifact covering what changed, why, and where reviewers should focus"
+ccVersion: "2.1.202"
 variables:
-  - PR_NUMBER
-  - CURRENT_BRANCH_PR_INSTRUCTIONS
-  - FORMAT_PR_EXPLAINER_TARGET_FN
-  - ADDITIONAL_GUIDANCE
-  - ARTIFACT_TOOL_NAME
-  - ARTIFACT_DESIGN_SKILL_NAME
-  - ARTIFACT_ITERATION_FOOTER
+  - "PR_NUMBER"
+  - "CURRENT_BRANCH_PR_INSTRUCTIONS"
+  - "FORMAT_PR_EXPLAINER_TARGET_FN"
+  - "ADDITIONAL_GUIDANCE"
+  - "ARTIFACT_TOOL_NAME"
+  - "ARTIFACT_DESIGN_SKILL_NAME"
+  - "ARTIFACT_ITERATION_FOOTER"
 -->
 ${PR_NUMBER===""?CURRENT_BRANCH_PR_INSTRUCTIONS:FORMAT_PR_EXPLAINER_TARGET_FN(PR_NUMBER)}
 ${ADDITIONAL_GUIDANCE?`

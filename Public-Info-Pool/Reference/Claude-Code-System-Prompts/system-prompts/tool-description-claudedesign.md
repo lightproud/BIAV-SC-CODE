@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: ClaudeDesign'
-description: Describes the ClaudeDesign tool for working with claude.ai/design projects, including project and file operations, previews, plan tokens, and live design output conventions
-ccVersion: 2.1.211
+name: "Tool Description: ClaudeDesign"
+description: "Describes the ClaudeDesign tool for working with claude.ai/design projects, including project and file operations, previews, plan tokens, and live design output conventions"
+ccVersion: "2.1.211"
 -->
 Work with Claude Design (claude.ai/design) — a collaborative canvas for decks, prototypes, landing pages, and UI mockups backed by your team's design system.
 

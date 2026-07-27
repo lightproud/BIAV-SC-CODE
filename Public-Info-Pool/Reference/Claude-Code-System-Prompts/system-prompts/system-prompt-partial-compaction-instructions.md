@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Partial compaction instructions'
-description: Instructions on how to compact when the user decided to compact only a portion of the conversation, with a structured summary format and analysis process
-ccVersion: 2.1.205
+name: "System Prompt: Partial compaction instructions"
+description: "Instructions on how to compact when the user decided to compact only a portion of the conversation, with a structured summary format and analysis process"
+ccVersion: "2.1.205"
 -->
 Your task is to create a detailed summary of this conversation. This summary will be placed at the start of a continuing session; newer messages that build on this context will follow after your summary (you do not see them here). Summarize thoroughly so that someone reading only your summary and then the newer messages can fully understand what happened and continue the work.
 

@@ -1,13 +1,13 @@
 <!--
-name: 'Data: Claude gateway landing page'
-description: HTML status page served at a Claude Code gateway root, showing the gateway logo, the running gateway URL, the identity-provider host, an OAuth discovery link, and the gateway version
-ccVersion: 2.1.195
+name: "Data: Claude gateway landing page"
+description: "HTML status page served at a Claude Code gateway root, showing the gateway logo, the running gateway URL, the identity-provider host, an OAuth discovery link, and the gateway version"
+ccVersion: "2.1.195"
 variables:
-  - GATEWAY_ASCII_LOGO
-  - GATEWAY_URL
-  - IDENTITY_PROVIDER_HOST
-  - HTML_ESCAPE_FN
-  - GATEWAY_VERSION
+  - "GATEWAY_ASCII_LOGO"
+  - "GATEWAY_URL"
+  - "IDENTITY_PROVIDER_HOST"
+  - "HTML_ESCAPE_FN"
+  - "GATEWAY_VERSION"
 -->
 <!doctype html>
 <html>

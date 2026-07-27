@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Run app'
-description: Skill for launching and driving the current project's app through its real runtime surface using project-specific run skills or fallback patterns
-ccVersion: 2.1.145
+name: "Skill: Run app"
+description: "Skill for launching and driving the current project's app through its real runtime surface using project-specific run skills or fallback patterns"
+ccVersion: "2.1.145"
 -->
 ---
 name: run

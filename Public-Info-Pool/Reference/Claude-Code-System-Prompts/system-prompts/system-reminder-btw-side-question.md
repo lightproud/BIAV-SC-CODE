@@ -1,9 +1,9 @@
 <!--
-name: 'System Reminder: /btw side question'
-description: System reminder for /btw slash command side questions without tools
-ccVersion: 2.1.74
+name: "System Reminder: /btw side question"
+description: "System reminder for /btw slash command side questions without tools"
+ccVersion: "2.1.74"
 variables:
-  - SIDE_QUESTION
+  - "SIDE_QUESTION"
 -->
 <system-reminder>This is a side question from the user. You must answer this question directly in a single response.
 

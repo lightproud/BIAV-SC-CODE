@@ -1,9 +1,9 @@
 <!--
-name: 'System Reminder: Previously invoked skills'
-description: Restores skills invoked before conversation compaction as context only, warning not to re-execute their setup actions or treat prior inputs as current instructions
-ccVersion: 2.1.119
+name: "System Reminder: Previously invoked skills"
+description: "Restores skills invoked before conversation compaction as context only, warning not to re-execute their setup actions or treat prior inputs as current instructions"
+ccVersion: "2.1.119"
 variables:
-  - FORMATTED_SKILLS_LIST
+  - "FORMATTED_SKILLS_LIST"
 -->
 The following skills were invoked EARLIER in this session (before the conversation was compacted), not on the current turn. They are shown here for context only so you remain aware of their guidelines.
 

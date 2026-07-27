@@ -327,20 +327,18 @@ describe('graph.ts properties', () => {
 });
 
 describe('decision.ts properties', () => {
-  const arbVerdict: fc.Arbitrary<GoalVerdict> = fc.oneof(
-    fc.constant<GoalVerdict>({ achieved: true }),
-    fc.record({
-      achieved: fc.constant(false as const),
-      feedback: fc.string(),
-      impossible: fc.option(fc.boolean(), { nil: undefined }),
-    }) as fc.Arbitrary<GoalVerdict>,
-  );
+  // Unified verdict shape (0.83.0): {status, reason?} — identical to the
+  // agent SDK's options.goal verdict; reason is commentary, never decisive.
+  const arbVerdict: fc.Arbitrary<GoalVerdict> = fc.record({
+    status: fc.constantFrom<GoalVerdict['status']>('achieved', 'not_achieved', 'impossible'),
+    reason: fc.option(fc.string(), { nil: undefined }),
+  }) as fc.Arbitrary<GoalVerdict>;
   it('total + precedence: achieved > impossible > exhausted > continue', () => {
     fc.assert(
       fc.property(fc.integer({ min: 0, max: 100 }), fc.integer({ min: 1, max: 100 }), arbVerdict, (round, maxRounds, verdict) => {
         const action = nextGoalAction({ round, maxRounds, verdict });
-        if (verdict.achieved) expect(action).toBe('done');
-        else if (verdict.impossible === true) expect(action).toBe('impossible');
+        if (verdict.status === 'achieved') expect(action).toBe('done');
+        else if (verdict.status === 'impossible') expect(action).toBe('impossible');
         else if (round >= maxRounds) expect(action).toBe('exhausted');
         else expect(action).toBe('continue');
       }),

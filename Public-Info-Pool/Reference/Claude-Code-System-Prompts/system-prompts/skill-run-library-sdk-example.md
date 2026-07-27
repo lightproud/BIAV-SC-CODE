@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Run library SDK example'
-description: Example file for the Run app skill showing how to document building, testing, and smoke-checking a library or SDK at its public package boundary
-ccVersion: 2.1.145
+name: "Skill: Run library SDK example"
+description: "Example file for the Run app skill showing how to document building, testing, and smoke-checking a library or SDK at its public package boundary"
+ccVersion: "2.1.145"
 -->
 # Example: Library / SDK
 

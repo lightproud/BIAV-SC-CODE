@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: ExitWorktree'
-description: Roughly, the reverse of the ExitWorktree
-ccVersion: 2.1.72
+name: "Tool Description: ExitWorktree"
+description: "Roughly, the reverse of the ExitWorktree"
+ccVersion: "2.1.72"
 -->
 Exit a worktree session created by EnterWorktree and return the session to the original working directory.
 

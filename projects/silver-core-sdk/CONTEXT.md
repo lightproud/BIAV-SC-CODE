@@ -57,6 +57,7 @@ src/
 | 构建 | `npm run build`（ESM + d.ts → dist/） |
 | 单测 | `npm test`（vitest，mock 传输层，零网络；含仿真器端到端集成测试） |
 | 真机 smoke | `ANTHROPIC_API_KEY=... node tests/integration/live-real-api.mjs`（需先 `npm run build`；打真 api.anthropic.com） |
+| 描述基准吻合度 | `node scripts/description-coverage.mjs [--json] [--min=N]`（**尺子不是门禁**：逐条报本包描述对所引快照档还剩多少逐字吻合 + 该档 ccVersion。吻合度本就不该满分——红线纪律禁止描述未发货能力，硬拉满等于逼描述吹本包做不到的事，故**恒 exit 0**、低分要人来分「已登记改编」还是「上游加了新话没跟」。需先 `npm run build`。射程边界：重建档把数字上限模板化，**数值常量在仓内无法核验**）|
 | 双层评估 runEvals（SCS-REQ-002 环二） | `node scripts/run-evals.mjs`（底线层 = 全量 vitest pass/fail；行为层 = `evals/` 20 题 + `claude-sonnet-5` 判卷——12 题 prompt-session + 8 题 Phase 2 harness（`scripts/eval-harnesses.mjs` 故障注入/resume/压缩压力），无 key 走 STUB 验管线；`--judge-batches` 走 Batches API 五折判卷。评估集为守密人定稿权保护路径，任何改动须 `node scripts/update-evals-manifest.mjs` 重签清单，否则治理测试红。回归门禁 `node scripts/check-eval-regression.mjs`（REQ-2.2，报警不阻断）） |
 
 ## 测试三层
@@ -69,25 +70,57 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.80.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.80.0`
+**当前版本 `0.84.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.84.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
-**v0.80.0（2026-07-27）：记忆索引纪律 + 整理规程**——起于守密人现场反馈（BPT 在产：
-记录堆积、每次开工要好几回 `memory` 工具调用才找得到东西）。真因不是缺检索腿，而是 SDK 给了
-常驻索引**机制**（R6 每会话注入 `/memories/MEMORY.md` 头部）却从没规定索引**条目该长什么样**，
-且 `MEMORY_SESSION_END_PROMPT` 反过来命令模型把进度卡写**进**那一档——每会话一次，索引撑过
-注入上限，被载入的头部变成陈年进度散文而非路由，尾部每次加载被静默丢弃。四件事收口：
-① 进度卡改落 `/memories/progress/`，索引只留一行指针；② 新增索引纪律片段（两模式均注入、非
-opt-in，前提不成立时——隐身 / 关闭索引注入——自动跳过，不对模型撒谎）；③ **写侧反压**：写完索引
-超 R6 上限即在成功回执后追加告警，明说尾部**已经**不可见，读写两侧共用同一份度量；
-④ `buildConsolidationPrompt()` + 四阶段整理规程（orient / gather / merge / **prune the index**），
-由体检结果渲染待办、对扫不到的维度明说盲区。**层界守住（N1 未破）**：SDK 只给「该不该整理」
-与「怎么整理」，**不给**「何时跑 / 用什么模型 / 跑在哪台机」——helper 零 I/O、不起任何进程，
-返回字符串由消费方自己 `query()`。**安全**：整理是跨档大范围写，多租户下必须挂 S1 挂载点。
-新增测试 28。
+**v0.84.0（2026-07-27）：记忆索引纪律 + 整理规程**——真因不是缺检索腿：SDK 给了常驻索引**机制**
+（R6 每会话注入 `/memories/MEMORY.md` 头部）却没规定索引**条目写法**，且会话收尾提示词反过来命令
+模型把进度卡写**进**那一档，索引每会话增肥、撑过注入上限后头部变陈年散文、尾部静默丢弃（守密人 BPT
+现场反馈「开工要好几回 `memory` 调用才找得到东西」的根因）。四件：进度卡改落 `/memories/progress/`
+只留指针 · 索引纪律片段（两模式注入、前提不成立即跳过）· 写侧超限反压（读写共用同一度量）·
+`buildConsolidationPrompt()` + 四阶段整理规程。**层界守住 N1**：只给「该不该整理 / 怎么整理」，
+不给调度——helper 零 I/O 不起进程。整理是跨档大范围写，多租户须挂 S1。详见 CHANGELOG 与 docs/MEMORY.md。
+
+**v0.83.0（2026-07-27）：GoalVerdict 家族统一（本包零行为改动）**——本包 `{status: 'achieved'|'not_achieved'|'impossible', reason?}` 判词类型升格为家族**正典**：maestro 0.83.0 把 `GoalChaser` 评审判词（原 `{achieved, feedback, impossible?}`）迁为同形，自此一个宿主评审器经结构类型同时服务引擎 `options.goal` Stop 门与 maestro 跨 query 追逐两条缝。背景是首个真实消费者陷阱：BPT 接了 `options.goal` 后报「goal 没效果、模型照样停」，排查出两包**同名不同形** `GoalVerdict`——评审器误用 maestro 形状时，引擎按既定失败方向（阻断停止才是危险动作，评审器坏 = fail-open 放行）把 malformed verdict 放行为允许停止，goal 无声失效。本包仅在 `src/types/subsystems.ts` 的 `GoalVerdict` 注释补「正典地位 + 改形需家族级裁定」声明，`options.goal` 行为与评审器契约一字未动。
+
+**v0.82.0（2026-07-27）：Read 通读 >256KB 改为拒绝 + 首次对官方二进制做偏离普查**——守密人问「还能查到有哪些我们与官方不一致」，遂第一次拿**官方发行物本体**（npm 平台包 + `sdk-tools.d.ts`）而非第三方重建档做四轴对照。**唯一改代码的一条**：官方 `maxSizeBytes`=262144 拒通读，银芯此前只有 50MB OOM 守卫（松 200 倍，于是 30MB 日志会被真读进内存再几乎全丢）。现两条上限各司其职——256KB **导向**（「这不是 Read 该干的事」）、50MB **保命**（「这会撑死进程」）；**只拦通读**，带 offset/limit 放行（官方错误文案与工具描述两处都写明这是逃生口）。**属破坏性变更**：读 256KB–50MB 档的消费方会突然报错，修法机械（加 offset/limit 或改 Grep）且错误文案已写明。
+**同批查出但按守密人裁定只登记不改**：`AskUserQuestion` 缺官方三个**回程字段**（`answers`/`annotations`/`metadata.source`）——它们服务于官方权限组件 UI 回填与遥测，本 SDK 是宿主回调、无那套组件，加了就是描述未发货能力。**另有两条经复核是假象、如实记档**：`EnterPlanModeInput` 官方就是 `{}`（一致），Grep 的 `-i/-A/-B/-C/-o` 与 `TaskListInput` 亦一致——首轮正则不认带引号键、且被单行 `{}` 接口串块骗了三次。
+详见 `docs/COMPAT.md`「Divergence sweep」。
+
+**v0.81.0（2026-07-27）：Read 截断页脚补齐官方三件套 + 数值基准获独立佐证**——守密人报的现象：一次 Read 读约 1500 行源码后，模型**连发六轮自动翻页**把整档翻完、上下文推到 300K+ 字符。旧页脚只说一句「Use offset=1301 to continue reading.」，**别的什么都不给**。**交付单的诊断对了一半，错的那一半值得记**：它认为官方从不给具体值，只说「the offset parameter」；对着**官方 npm 发行物 2.1.220** 提取实测，官方**也给值**——「…Call Read with offset=${I+1} limit=${I} for the next page, **or Grep to find a specific section**. **Do NOT answer from this page alone** if the answer may be further in the file.」。可见具体值从不是差别，差别是银芯只给了三件套的**第一件**：一条路、一个动作、没有更便宜的替代、没有告诫。守密人裁定取官方口径。两处截断分支（字符上限 / 行数上限）现均补齐三件套；大档 Grep 提示改为**只看体积**（原还要求存在超 2000 字符的长行，而 TS/Lua/Python 普通源码根本没有那种行，故该提示**几乎从未触发过**——它此前零测试覆盖，正与此吻合），256KB 阈值不动。`MAX_READ_OUTPUT_CHARS` 刻意不动。
+**同批订正 0.80.2 的一处错误结论**：那条说数值基准「须在装有 Claude Code 的机器上才能重新提取」——**错了**。官方二进制是**公开 npm 发行物**（`@anthropic-ai/claude-code` 的平台 optionalDependency），本仓一致性作业本就`--no-save` 装它作对照臂，属净室边界①「官方发行渠道产物」。已就地提取 2.1.220 实测：Read 输出上限 **25000 token**、Bash 输出 **30000 默认 / 150000 上限**、Grep `head_limit` **「Defaults to 250 when unspecified」逐字**——与 0.80.0 所依据的 2.1.141 三项**全部一致**，79 个版本未变。WebFetch 的 100000 本轮未再定位到，照实记。
+
+**v0.80.2（2026-07-27）：对齐 2.1.216 快照基准**（守密人裁「3 也直接对齐基准」）——基准同时从两个方向陈旧了，且只有一个方向能在仓内修，两者都记进 `docs/COMPAT.md`「Baseline realignment」。① **手工挖出第三条指空 slug**：`SendMessage` 引用的 `tool-description-sendmessagetool` 被快照改名，却因**缺档检查搭在锚点检查里、而锚点检查跳过 adapted 条目**而长期报绿——现把「引用的档案必须存在」拆成独立测试，faithful / adapted 一视同仁。同一次快照造了三条指空 slug：两条让 main 红了六小时（0.80.1），这条根本没守卫在看。② 新增 `scripts/description-coverage.mjs`，把「散文基准漂没漂」从人工比对变成一条命令（逐档报还剩多少逐字吻合 + 该档 ccVersion）。**报告体恒 exit 0**：吻合度本就不该是 100%——红线纪律禁止描述未发货能力，硬拉满等于逼描述去吹本包做不到的事。实测 30 档里 18 档 100%（Grep 对 2.1.217、Glob 对 2.1.215），低分端全是已登记改编（SendMessage 11% / EnterWorktree 25%）。**射程边界照实写**：0.80.0 那批**数值上限对不了**——重建档把数字模板化（`${MAX_LINES_CONSTANT}`）、grep 档没有参数级文档，故 250 / 25,000 / 30,000 / 100,000 仍只靠那一次 2.1.141 二进制提取支撑，仓内无任何东西能独立佐证，重新核验需在装有 Claude Code 的机器上再提取一次。发货运行时改动仅一个 slug 字符串及其注释，**描述文本未动**，提示词字节与缓存键不变。
+
+**v0.80.1（2026-07-27）：两条提示词溯源 slug 改锚 + 给刷新 cron 补自检**——上游快照
+2.1.173 → 2.1.216（今日 cron 76fe5e6 直推 main）改名 24 档、删 5 档，两条 slug 指空，
+两条 corpus-sync 守卫在 main 上报红。① `COORDINATOR_WORKER_PROVENANCE.slug` 随上游命名
+规范化改指 `agent-prompt-coordinator-worker-instructions`（守卫抽出的 15 个锚点句在
+shipped 文本里逐字仍在，只动 slug）；② `MAIN_LOOP_INTRO.slug` 改指
+`system-prompt-harness-instructions`——上游把三个 intro 小档合并进它，那句话逐字未变、
+现居该档开篇模板的「无 output style」分支，故 `faithful: true` 仍成立，但注释里写明它
+faithful 于**模板档的一个分支**而非整档。**零 shipped 提示词文本改动**。
+包外同批：`refresh-claude-code-prompts.yml` 刷新后、提交前就地跑这两条守卫，**红则不提交
+不直推**——该 cron 带 `[skip ci]` 直推 main，此前它捅的破绽要等下一个不相干 PR 跑门禁才
+暴露（本次正是这么被发现的）。
+
+**v0.80.0（2026-07-27）：工具输出上限对齐 Claude Code 2.1.141**——守密人交付单三处独立改动
+（常量取自 `claude.exe` 内含明文 JS）。① **WebFetch 上限 100_000 → 复用 Read 的 50_000**：
+官方那个数管的是「喂给摘要小模型的输入」、主上下文只收摘要，本 SDK 直连无摘要层，同一个数字
+在这里变成「原文直灌主上下文」，反让 WebFetch 成为唯一能塞进两倍 Read 额度的工具，而它拉的
+还是最不可控的外部网页；现改为引用 `MAX_READ_OUTPUT_CHARS` 常量，两道闸门从此无法各自漂移
+（`fsutil.ts` 注释里「~50K aligns with the WebFetch cap」的本意终于对上代码）。
+② **Grep `head_limit` 三种 output_mode 统一默认 250**（原 `count` / `files_with_matches` 默认无限，
+OPT-1 v0.13.0）：OPT-1 担忧的「截断的 count 是错的 count」已由同批落地的「每种模式都追加截断提示」
+解决，无限默认不再多买到诚实，却让一次宽泛检索能吐几千条；要可证完整仍显式传 `head_limit=0`。
+③ **Bash 输出截断改保尾去头**，标记移到开头（`[truncated: earlier output dropped]`）：长命令的
+结论在末尾——构建成败 / 测试汇总 / 最终报错，原保头恰好切掉要看的、留下编译噪音；新增
+`sliceTailSurrogateSafe` 镜像 helper（尾切要丢的是**开头低位**代理，与头切相反）。
+**刻意不改**：Read 的计量单位仍按字符（官方按 token 25,000 + 256KB 拒读），对齐需引入 tokenizer
+运行时依赖，且字符计量在中文场景反而更宽（50K 中文字符 ≈ 50K token，是官方两倍）。
 
 **v0.79.1（2026-07-27）：内部去重，零表面变化**——重试/退避/错误体/流错误/空闲看门狗从
 `transport/anthropic.ts` 与 `transport/openai.ts` 各抄一份收敛为 `transport/http-retry.ts`；

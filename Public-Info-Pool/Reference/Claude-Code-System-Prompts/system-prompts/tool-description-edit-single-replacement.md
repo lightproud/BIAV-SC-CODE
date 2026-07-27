@@ -1,10 +1,10 @@
 <!--
-name: 'Tool Description: Edit single replacement'
-description: Tool description for performing exact string replacement in a file, including prior-read and line-prefix requirements
-ccVersion: 2.1.173
+name: "Tool Description: Edit single replacement"
+description: "Tool description for performing exact string replacement in a file, including prior-read and line-prefix requirements"
+ccVersion: "2.1.173"
 variables:
-  - READ_TOOL_NAME
-  - SUPPORTS_COLON_LINE_PREFIX
+  - "READ_TOOL_NAME"
+  - "SUPPORTS_COLON_LINE_PREFIX"
 -->
 Performs exact string replacement in a file.
 

@@ -1,10 +1,10 @@
 <!--
-name: 'System Reminder: Plan awaiting team-lead approval'
-description: Reminder laying out what happens after a plan is submitted for team-lead approval
-ccVersion: 2.1.173
+name: "System Reminder: Plan awaiting team-lead approval"
+description: "Reminder laying out what happens after a plan is submitted for team-lead approval"
+ccVersion: "2.1.173"
 variables:
-  - PLAN_FILE_PATH
-  - REQUEST_ID
+  - "PLAN_FILE_PATH"
+  - "REQUEST_ID"
 -->
 Your plan has been submitted to the team lead for approval.
 

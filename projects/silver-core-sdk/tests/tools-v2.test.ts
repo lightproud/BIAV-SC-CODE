@@ -13,6 +13,7 @@ vi.mock('node:dns/promises', () => ({ lookup: vi.fn() }));
 import { lookup } from 'node:dns/promises';
 
 import { webFetchTool, readCappedBody } from '../src/tools/webfetch.js';
+import { MAX_READ_OUTPUT_CHARS } from '../src/tools/fsutil.js';
 import { webSearchTool } from '../src/tools/websearch.js';
 import { askUserQuestionTool } from '../src/tools/askuserquestion.js';
 import { todoWriteTool } from '../src/tools/todo.js';
@@ -194,6 +195,23 @@ describe('webFetchTool', () => {
     const r = await webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx);
     expect(String(r.content)).toContain('[truncated]');
     expect(String(r.content).length).toBeLessThan(200_000);
+  });
+
+  // 2026-07-27 (limits alignment): the cap is Read's cap, not Claude Code's
+  // 100_000. That number bounds the markdown handed to a SUMMARIZER model
+  // there, and only the summary reaches the context; this harness has no
+  // summarizer, so the fetched page lands in the context verbatim — a Read of
+  // a remote file, held to a Read's budget. Asserted against the imported
+  // constant so the two gates cannot drift apart unnoticed.
+  it('caps fetched text at the Read output cap, not at 100_000', async () => {
+    const big = 'y'.repeat(200_000);
+    const ctx = makeCtx({
+      fetchImpl: fetchReturning(new Response(big, { headers: { 'content-type': 'text/plain' } })),
+    });
+    const r = await webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx);
+    const body = String(r.content);
+    expect(body).toBe(`${'y'.repeat(MAX_READ_OUTPUT_CHARS)}\n\n[truncated]`);
+    expect(MAX_READ_OUTPUT_CHARS).toBeLessThan(100_000);
   });
 
   it('follows a same-host redirect', async () => {

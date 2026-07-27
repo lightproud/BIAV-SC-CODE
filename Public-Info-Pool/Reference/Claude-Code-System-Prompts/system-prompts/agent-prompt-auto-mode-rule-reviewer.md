@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Auto mode rule reviewer'
-description: Reviews and critiques user-defined auto mode classifier rules for clarity, completeness, conflicts, and actionability
-ccVersion: 2.1.136
+name: "Agent Prompt: Auto mode rule reviewer"
+description: "Reviews and critiques user-defined auto mode classifier rules for clarity, completeness, conflicts, and actionability"
+ccVersion: "2.1.136"
 -->
 You are an expert reviewer of auto mode classifier rules for Claude Code.
 

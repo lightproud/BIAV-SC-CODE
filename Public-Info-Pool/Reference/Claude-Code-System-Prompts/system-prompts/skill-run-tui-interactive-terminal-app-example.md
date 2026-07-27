@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Run TUI interactive terminal app example'
-description: Example file for the Run app skill showing how to drive an interactive terminal app with tmux, readiness polling, pane capture, key references, and cleanup
-ccVersion: 2.1.145
+name: "Skill: Run TUI interactive terminal app example"
+description: "Example file for the Run app skill showing how to drive an interactive terminal app with tmux, readiness polling, pane capture, key references, and cleanup"
+ccVersion: "2.1.145"
 -->
 # Example: TUI / interactive terminal app
 

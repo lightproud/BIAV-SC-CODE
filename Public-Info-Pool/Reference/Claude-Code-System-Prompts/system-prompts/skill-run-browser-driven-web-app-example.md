@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Run browser-driven web app example'
-description: Example file for the Run app skill showing how to start a web dev server, drive it with chromium-cli, capture screenshots, and document app-specific gotchas
-ccVersion: 2.1.213
+name: "Skill: Run browser-driven web app example"
+description: "Example file for the Run app skill showing how to start a web dev server, drive it with chromium-cli, capture screenshots, and document app-specific gotchas"
+ccVersion: "2.1.213"
 -->
 # Example: Browser-driven web app
 

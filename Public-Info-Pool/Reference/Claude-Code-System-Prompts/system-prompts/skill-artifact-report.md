@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Artifact report'
-description: Instructions for creating long-form report artifacts with a masthead, table of contents, structured sections, and optional appendix from the built-in template
-ccVersion: 2.1.208
+name: "Skill: Artifact report"
+description: "Instructions for creating long-form report artifacts with a masthead, table of contents, structured sections, and optional appendix from the built-in template"
+ccVersion: "2.1.208"
 -->
 ---
 name: artifact-report

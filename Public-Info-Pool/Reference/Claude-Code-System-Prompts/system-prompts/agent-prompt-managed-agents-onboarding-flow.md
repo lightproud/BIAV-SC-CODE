@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Managed Agents onboarding flow'
-description: Interactive interview script that helps users configure a Managed Agent by describing the task, proposing tools and resources, setting up the environment and session, testing access, and emitting integration code
-ccVersion: 2.1.182
+name: "Agent Prompt: Managed Agents onboarding flow"
+description: "Interactive interview script that helps users configure a Managed Agent by describing the task, proposing tools and resources, setting up the environment and session, testing access, and emitting integration code"
+ccVersion: "2.1.218"
 -->
 # Managed Agents — Onboarding Flow
 
@@ -54,7 +54,7 @@ Usually zero or one question:
 - `user.define_outcome` + rubric — when §2 settled on an Outcome; the harness iterates and grades until the rubric passes.
 - **Scheduled shape?** Skip per-session kickoff entirely — create a **deployment** (`deployments.create()` with `schedule` + `initial_events`); each firing creates the session autonomously. See `shared/managed-agents-scheduled-deployments.md`.
 
-Mechanics to bake into the runtime code: session creation blocks until resources mount (bad mounts surface there, before tokens); open the event stream *before* sending the kickoff; break on `session.status_terminated`, or `session.status_idle` with a terminal `stop_reason` — anything except `requires_action` (`shared/managed-agents-client-patterns.md` Pattern 5); usage lands on `span.model_request_end`; artifacts land in `/mnt/session/outputs/` (`files.list({scope_id: session.id, ...})`).
+Mechanics to bake into the runtime code: session creation resolves resources (a bad mount surfaces there, before tokens) but does not itself provision the sandbox; open the event stream *before* sending the kickoff; break on `session.status_terminated`, or `session.status_idle` with a terminal `stop_reason` — anything except `requires_action` (`shared/managed-agents-client-patterns.md` Pattern 5); usage lands on `span.model_request_end`; artifacts land in `/mnt/session/outputs/` (`files.list({scope_id: session.id, ...})`).
 
 ## 5. Integrate — emit the code
 

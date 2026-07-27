@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Message Batches API reference — Python'
-description: Python Batches API reference including batch creation, status polling, and result retrieval at 50% cost
-ccVersion: 2.1.118
+name: "Data: Message Batches API reference — Python"
+description: "Python Batches API reference including batch creation, status polling, and result retrieval at 50% cost"
+ccVersion: "2.1.118"
 -->
 # Message Batches API — Python
 

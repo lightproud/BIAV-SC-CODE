@@ -1,11 +1,11 @@
 <!--
-name: 'Tool Description: Agent (when to launch subagents)'
-description: Describes _when_ to use the Agent tool - for launching specialized subagent subprocesses to autonomously handle complex multi-step tasks
-ccVersion: 2.1.178
+name: "Tool Description: Agent (when to launch subagents)"
+description: "Describes _when_ to use the Agent tool - for launching specialized subagent subprocesses to autonomously handle complex multi-step tasks"
+ccVersion: "2.1.178"
 variables:
-  - AGENT_TYPES_BLOCK
-  - CAN_FORK_CONTEXT
-  - AGENT_TOOL_NAME
+  - "AGENT_TYPES_BLOCK"
+  - "CAN_FORK_CONTEXT"
+  - "AGENT_TOOL_NAME"
 -->
 Launch a new agent to handle complex, multi-step tasks. Each agent type has specific capabilities and tools available to it.
 

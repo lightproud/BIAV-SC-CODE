@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Remote plan mode (ultraplan)'
-description: System reminder injected during remote planning sessions that instructs Claude to explore the codebase, produce a diagram-rich plan via ExitPlanMode, and implement it with a pull request upon approval
-ccVersion: 2.1.92
+name: "System Prompt: Remote plan mode (ultraplan)"
+description: "System reminder injected during remote planning sessions that instructs Claude to explore the codebase, produce a diagram-rich plan via ExitPlanMode, and implement it with a pull request upon approval"
+ccVersion: "2.1.92"
 -->
 <system-reminder>
 You're running in a remote planning session. The user triggered this from their local terminal.

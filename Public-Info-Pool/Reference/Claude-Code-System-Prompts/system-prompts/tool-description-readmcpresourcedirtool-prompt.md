@@ -1,9 +1,9 @@
 <!--
-name: 'Tool Description: ReadMcpResourceDirTool prompt'
-description: Tool prompt for listing direct children of an MCP directory resource and explaining the required server and uri parameters
-ccVersion: 2.1.186
+name: "Tool Description: ReadMcpResourceDirTool prompt"
+description: "Tool prompt for listing direct children of an MCP directory resource and explaining the required server and uri parameters"
+ccVersion: "2.1.186"
 variables:
-  - DIRECTORY_MIME_TYPE
+  - "DIRECTORY_MIME_TYPE"
 -->
 
 List the direct children of a directory resource on an MCP server (`resources/directory/read`).

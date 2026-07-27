@@ -1,11 +1,11 @@
 <!--
-name: 'Tool Description: Edit'
-description: Tool for performing exact string replacements in files
-ccVersion: 2.1.136
+name: "Tool Description: Edit"
+description: "Tool for performing exact string replacements in files"
+ccVersion: "2.1.136"
 variables:
-  - MUST_READ_FIRST_FN
-  - LINE_NUMBER_PREFIX_FORMAT
-  - ADDITIONAL_EDIT_GUIDELINES_NOTE
+  - "MUST_READ_FIRST_FN"
+  - "LINE_NUMBER_PREFIX_FORMAT"
+  - "ADDITIONAL_EDIT_GUIDELINES_NOTE"
 -->
 Performs exact string replacements in files.
 

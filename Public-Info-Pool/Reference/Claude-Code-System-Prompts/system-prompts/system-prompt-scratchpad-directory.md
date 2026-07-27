@@ -1,9 +1,9 @@
 <!--
-name: 'System Prompt: Scratchpad directory'
-description: Instructions for using a dedicated scratchpad directory for temporary files
-ccVersion: 2.1.178
+name: "System Prompt: Scratchpad directory"
+description: "Instructions for using a dedicated scratchpad directory for temporary files"
+ccVersion: "2.1.178"
 variables:
-  - SCRATCHPAD_DIR_FN
+  - "SCRATCHPAD_DIR_FN"
 -->
 # Scratchpad Directory
 

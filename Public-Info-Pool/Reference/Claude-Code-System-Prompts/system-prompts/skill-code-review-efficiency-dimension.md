@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: /code-review efficiency dimension'
-description: Code-review pass that surfaces wasted effort the diff adds — duplicate computation or I/O, avoidable serialization, large scopes held by closures — and points to the cheaper option
-ccVersion: 2.1.173
+name: "Skill: /code-review efficiency dimension"
+description: "Code-review pass that surfaces wasted effort the diff adds — duplicate computation or I/O, avoidable serialization, large scopes held by closures — and points to the cheaper option"
+ccVersion: "2.1.173"
 -->
 ### Efficiency
 

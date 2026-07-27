@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: SendFeedback drafting guidance'
-description: Instructs when and how to queue factual local Claude Code feedback drafts without interrupting the user, duplicating issues, guessing details, or including sensitive information
-ccVersion: 2.1.212
+name: "Tool Description: SendFeedback drafting guidance"
+description: "Instructs when and how to queue factual local Claude Code feedback drafts without interrupting the user, duplicating issues, guessing details, or including sensitive information"
+ccVersion: "2.1.212"
 -->
 Use this tool to draft feedback about Claude Code (the product) when you hit a high-signal moment:
 - a reproducible tool or product failure was just resolved or abandoned

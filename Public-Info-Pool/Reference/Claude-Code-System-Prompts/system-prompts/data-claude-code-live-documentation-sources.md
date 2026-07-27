@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Claude Code live documentation sources'
-description: WebFetch URLs for fetching current Claude Code documentation from official sources
-ccVersion: 2.1.202
+name: "Data: Claude Code live documentation sources"
+description: "WebFetch URLs for fetching current Claude Code documentation from official sources"
+ccVersion: "2.1.202"
 -->
 # Live Documentation Sources
 

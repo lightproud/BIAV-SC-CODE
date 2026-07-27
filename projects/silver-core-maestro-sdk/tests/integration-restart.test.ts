@@ -452,8 +452,8 @@ describe('scenario 3: goal chase resumes at round 2, round 1 untouched', () => {
         judged.push({ round, summary });
         const verdict: GoalVerdict =
           round === 1
-            ? { achieved: false, feedback: 'expand section 2' }
-            : { achieved: true };
+            ? { status: 'not_achieved', reason: 'expand section 2' }
+            : { status: 'achieved' };
         return verdict;
       },
       pollIntervalMs: 10,

@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Conversation summarization'
-description: System prompt for creating detailed conversation summaries
-ccVersion: 2.1.205
+name: "Agent Prompt: Conversation summarization"
+description: "System prompt for creating detailed conversation summaries"
+ccVersion: "2.1.205"
 -->
 Your task is to create a detailed summary of the conversation so far, paying close attention to the user's explicit requests and your previous actions.
 This summary should be thorough in capturing technical details, code patterns, and architectural decisions that would be essential for continuing development work without losing context.

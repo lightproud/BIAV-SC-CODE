@@ -250,14 +250,15 @@ Input field names are part of the compat surface (hooks read them):
   `spawn('bash', ['-c', command], { cwd, env })` (fallback `sh` if bash
   missing). Timeout default 120000, max 600000 → SIGTERM then SIGKILL after
   2s grace. Abort signal kills likewise. Capture stdout+stderr, each capped
-  at 30000 chars with `[truncated]` marker. Non-zero exit → isError, content
+  at the LAST 30000 chars (v0.80.0; a long command's verdict is in its final
+  lines) with a leading `[truncated: earlier output dropped]` marker. Non-zero exit → isError, content
   includes exit code + streams. Never throw for command failure (only for
   spawn impossibility).
 - `tools/glob.ts` — name `Glob`, readOnly. Input `{ pattern: string; path?: string }`.
   fast-glob (`dot: false`, ignore `**/node_modules/**`, `**/.git/**`),
   results sorted by mtime desc, capped at 100 paths + truncation note; no
   matches → "No files found".
-- `tools/grep.ts` — name `Grep`, readOnly. Input `{ pattern, path?, glob?, type?, output_mode? ('files_with_matches' default | 'content' | 'count'), -i?, -n? (default true), -A?, -B?, -C?, multiline?, head_limit? (default 250) }`.
+- `tools/grep.ts` — name `Grep`, readOnly. Input `{ pattern, path?, glob?, type?, output_mode? ('files_with_matches' default | 'content' | 'count'), -i?, -n? (default true), -A?, -B?, -C?, multiline?, head_limit? (default 250 in every output_mode; 0 = unlimited) }`.
   Enumerate files via fast-glob (same ignores; `type` maps: js/ts/py/rust/go/
   java/c/cpp/md/json → extension globs), skip binaries and files >10MB,
   JS `RegExp` (flags: i when `-i`, m always, s when multiline), per-file

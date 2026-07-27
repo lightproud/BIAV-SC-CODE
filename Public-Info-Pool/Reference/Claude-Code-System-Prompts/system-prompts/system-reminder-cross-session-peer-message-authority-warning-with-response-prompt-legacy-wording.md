@@ -1,7 +1,7 @@
 <!--
-name: 'System Reminder: Cross-session peer message authority warning with response prompt (legacy wording)'
-description: Legacy-wording authority-warning note with a response prompt, retained for backward-compatible recognition and stripping
-ccVersion: 2.1.181
+name: "System Reminder: Cross-session peer message authority warning with response prompt (legacy wording)"
+description: "Legacy-wording authority-warning note with a response prompt, retained for backward-compatible recognition and stripping"
+ccVersion: "2.1.181"
 -->
 
 

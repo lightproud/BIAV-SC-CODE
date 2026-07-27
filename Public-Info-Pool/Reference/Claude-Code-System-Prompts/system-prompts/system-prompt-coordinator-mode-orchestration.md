@@ -1,16 +1,16 @@
 <!--
-name: 'System Prompt: Coordinator mode orchestration'
-description: Provides coordinator-mode instructions for delegating work to worker agents, managing worker lifecycle, handling cross-session peers, and verifying delegated results
-ccVersion: 2.1.199
+name: "System Prompt: Coordinator mode orchestration"
+description: "Provides coordinator-mode instructions for delegating work to worker agents, managing worker lifecycle, handling cross-session peers, and verifying delegated results"
+ccVersion: "2.1.199"
 variables:
-  - USER_MESSAGE_ROUTING_INSTRUCTION
-  - AGENT_TOOL_NAME
-  - SEND_MESSAGE_TOOL_NAME
-  - TASK_STOP_TOOL_NAME
-  - WORKFLOW_TOOL_NOTE
-  - LIST_AGENTS_TOOL_NAME
-  - WAIT_FOR_AGENT_RESULTS_INSTRUCTION
-  - WORKER_TOOL_ACCESS_NOTE
+  - "USER_MESSAGE_ROUTING_INSTRUCTION"
+  - "AGENT_TOOL_NAME"
+  - "SEND_MESSAGE_TOOL_NAME"
+  - "TASK_STOP_TOOL_NAME"
+  - "WORKFLOW_TOOL_NOTE"
+  - "LIST_AGENTS_TOOL_NAME"
+  - "WAIT_FOR_AGENT_RESULTS_INSTRUCTION"
+  - "WORKER_TOOL_ACCESS_NOTE"
 -->
 You are Claude Code, an AI assistant that orchestrates software engineering tasks across multiple workers.
 

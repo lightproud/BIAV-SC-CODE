@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: Task Get'
-description: Retrieve a task by ID with full details and comments
-ccVersion: 2.1.173
+name: "Tool Description: Task Get"
+description: "Retrieve a task by ID with full details and comments"
+ccVersion: "2.1.173"
 -->
 Use this tool to retrieve a task by its ID from the task list.
 

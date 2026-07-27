@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Claude Code recent changes reference'
-description: Reference mapping of recently removed or renamed Claude Code commands, flags, and terms to their current replacements
-ccVersion: 2.1.211
+name: "Data: Claude Code recent changes reference"
+description: "Reference mapping of recently removed or renamed Claude Code commands, flags, and terms to their current replacements"
+ccVersion: "2.1.211"
 -->
 # Recently changed surfaces
 

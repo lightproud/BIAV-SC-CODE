@@ -16,7 +16,7 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
-## 0.80.0 — 2026-07-27
+## 0.84.0 — 2026-07-27
 
 Memory index discipline + a consolidation protocol. Diagnosis behind it (keeper
 field report from BPT in production): sessions were burning several `memory`
@@ -58,6 +58,238 @@ of routing, and the tail is silently dropped on every load.
   mounts for the scope being tidied, exactly like an interactive session.
 
 New tests: 25 (`tests/memory-consolidation.test.ts`) + 3 wiring cases.
+
+## 0.83.0 — 2026-07-27
+
+Family verdict-type unification (keeper ruling 2026-07-27): this package's
+`GoalVerdict` `{status, reason?}` is now the ONE verdict shape family-wide —
+silver-core-maestro-sdk 0.83.0 migrated its `GoalChaser` evaluator verdict
+(previously `{achieved, feedback, impossible?}`) to it, so a single host
+evaluator serves both the engine's `options.goal` Stop gate and the maestro
+cross-query chase. No behavior change in this package; `options.goal` and its
+evaluator contract are untouched. The `GoalVerdict` doc comment in
+`src/types/subsystems.ts` now records the canonical-shape status (shape
+changes require a family-wide ruling). Context worth keeping: the two-shape
+era produced a live consumer trap — a maestro-shaped verdict fed to
+`options.goal` is judged malformed and the Stop gate's deliberate fail-open
+direction allows every stop, so the goal silently never bites (BPT symptom
+report 2026-07-27, "接了 goal 模型照样停").
+
+## 0.82.0 — 2026-07-27
+
+Read refuses a whole-file read past 256KB, matching official Claude Code. Found
+by a divergence sweep of the official 2.1.220 binary (keeper: "你还能从
+claude.exe 查到有哪些我们与官方不一致"), and ruled in by the keeper.
+
+Official refuses at `maxSizeBytes` = 262144 (`QLi=262144`, `FileTooLargeError`,
+remote-overridable via the `tengu_amber_wren` gate, which this SDK has no
+equivalent of). This SDK's only size limit was the 50MB OOM guard — 200x looser,
+so nothing stopped a 30MB log from being pulled into memory and then almost
+entirely discarded by the character cap. The two limits now coexist with
+distinct jobs: 256KB STEERS ("that is not what Read is for"), 50MB SURVIVES
+("this would kill the process").
+
+- The refusal applies ONLY to unbounded reads. A read carrying `offset` or
+  `limit` proceeds, which is the escape hatch the official text names in both
+  places it appears: the error ("Use offset and limit parameters to read
+  specific portions of the file") and the tool description ("use offset and
+  limit for larger files"). HONEST LIMIT: official's throw site is gated on an
+  internal `truncateOnByteLimit` flag whose per-call-path wiring was not pinned
+  down here, so the exemption is reproduced from the stated contract, not from
+  the observed branch.
+- Read's description gains the official sentence about the 256KB error.
+- **Breaking for a consumer that reads 256KB–50MB files whole.** The fix is
+  mechanical (add `offset`/`limit`, or use Grep) and the error says so.
+
+Interaction worth knowing: the large-file Grep hint (0.81.0) fires at the same
+256KB, so it is now reachable only on a BOUNDED read — which is precisely the
+caller it is for, someone already paging a file too big to page.
+
+Also from the same sweep, recorded in docs/COMPAT.md rather than changed:
+`AskUserQuestion` omits official's three round-trip fields (`answers`,
+`annotations`, `metadata.source`) — they exist to carry the official permission
+component's UI回填 and telemetry, and this SDK routes the tool to a host
+callback with no such component (keeper ruling: log, do not add). Two divergences
+the sweep first reported turned out to be parser artifacts and are NOT real:
+`EnterPlanModeInput` is `{}` upstream (matches), and Grep's dash-prefixed flags
+plus `TaskListInput` also match.
+
+## 0.81.0 — 2026-07-27
+
+Read's truncation footer now carries all THREE parts of the official banner
+instead of only the first. Minor rather than patch: the footer is part of the
+model-facing contract and its wording changes what the model does next.
+
+Reported symptom (keeper, from observed behaviour): one Read of a ~1500-line
+source file was followed by SIX consecutive auto-paged Reads that walked the
+file to its end, pushing 300K+ chars into the context, with no sign of the model
+deciding for itself when to stop. Our footer ended `Use offset=1301 to continue
+reading.` and said nothing else.
+
+**The diagnosis was half right, and the half that was wrong is worth recording.**
+The delivery note held that official Claude Code never states a computed offset,
+only "the offset parameter". Checked against the official npm artifact for
+2.1.220 (`@anthropic-ai/claude-code-linux-x64`), it states one: "…Call Read with
+offset=${I+1} limit=${I} for the next page, or Grep to find a specific section.
+Do NOT answer from this page alone if the answer may be further in the file."
+So the value was never the difference. The difference was that our footer
+offered NOTHING ELSE — one page, one move, no cheaper route, no caution. Keeper
+ruled for official parity over the further-reaching variant.
+
+- Both truncation branches (character cap and line limit) now end: next-page
+  offset, `use Grep to find a specific section`, and `Do NOT answer from this
+  page alone if the answer may be further in the file`. The last clause guards a
+  failure mode the old footer had no defence against at all — answering
+  confidently off page one.
+- The large-file Grep hint fires on SIZE ALONE. It previously also required a
+  row past the 2000-char per-line cap, and ordinary source (TS/Lua/Python) has
+  no such rows, so the conjunction was almost never true and the hint
+  effectively never fired. The 256KB threshold is unchanged; it had NO test
+  coverage before this change, which is consistent with it never having fired.
+- Read's description is updated to match all three parts.
+
+`MAX_READ_OUTPUT_CHARS` is deliberately untouched at 50000: the problem was
+never how much one call returns, and lowering the cap would make a genuine
+cover-to-cover read page twice as often.
+
+**Numeric baseline, now independently corroborated.** 0.80.2 recorded that the
+v0.80.0 limits rested solely on a one-off 2.1.141 binary extraction with nothing
+in-repo to check them against, and that re-verification needed a machine with
+Claude Code installed. That was wrong: the official binary is a public npm
+artifact (`@anthropic-ai/claude-code-linux-x64`, a platform optionalDependency
+of `@anthropic-ai/claude-code`), and this repo's own conformance job already
+installs the official arm transiently. Extracted from 2.1.220 here: Read output
+cap **25000 tokens** (`CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS`, default 25000),
+Bash output **30000 default / 150000 max** (`BASH_MAX_OUTPUT_LENGTH`), and Grep
+`head_limit` "Defaults to 250 when unspecified. Pass 0 for unlimited" verbatim.
+All three match the 2.1.141 figures the v0.80.0 work was built on — unchanged
+across 79 releases. docs/COMPAT.md is corrected accordingly.
+
+## 0.80.2 — 2026-07-27
+
+Baseline realignment against the refreshed 2.1.216-era archive snapshot (keeper
+ruling 2026-07-27, "3 也直接对齐基准"). The comparison basis had gone stale two
+ways at once, and only one of them is fixable in this repository — both are now
+recorded in docs/COMPAT.md under "Baseline realignment".
+
+- **A third dangling provenance slug, found by hand.** `SendMessage` cited
+  `tool-description-sendmessagetool`; the snapshot renamed it to
+  `tool-description-sendmessage`. It stayed green because the existence check
+  rode inside the anchor check, which skips ADAPTED entries — so an adapted
+  description could point at a deleted file indefinitely. Existence is now its
+  own test covering faithful and adapted alike. Same snapshot, three dangling
+  slugs: two reddened main for six hours (0.80.1), this one had no guard looking.
+- **`scripts/description-coverage.mjs`** turns "has the prose basis drifted?"
+  from a hand audit into a command: per cited fragment, how much is still
+  reproduced verbatim, with the fragment's ccVersion. Report-only, always exit 0
+  — coverage is SUPPOSED to be below 100% wherever the red-line discipline
+  forbids describing an unshipped capability, so gating on it would push the
+  descriptions into claiming things this SDK cannot do. Measured now: 18 of 30
+  fragments at 100% (Grep against 2.1.217, Glob against 2.1.215), the low end
+  being the documented adaptations (SendMessage 11%, EnterWorktree 25%).
+
+Honest boundary, stated because it is easy to misread this entry as more than it
+is: the NUMERIC limits from 0.80.0 are NOT realigned and cannot be from here. The
+reconstruction template-izes exactly the numbers (`${MAX_LINES_CONSTANT}`), and
+the grep fragments carry no parameter-level docs — so head_limit=250, Read's
+25,000 tokens, Bash's 30,000 and WebFetch's 100,000 still rest solely on the
+one-off 2.1.141 binary extraction, uncorroborated by anything in this repo.
+Re-verification needs another extraction on a machine with Claude Code installed.
+
+Shipped runtime delta: one slug string and its comment. No description text
+changed, so prompt bytes and cache keys are untouched.
+
+**Ledger note**: PR #845 carries this entry's title but merged an EMPTY diff.
+The work was committed onto a local `main` while the push targeted the
+same-named feature branch — which `git push -u origin <name>` resolves to the
+local BRANCH of that name, not to HEAD — so a stale branch was published and
+merged. Recorded rather than papered over: b3558ce changes zero files, and
+the content below actually landed in the follow-up merge. Anyone bisecting
+0.80.2 should ignore b3558ce entirely.
+
+## 0.80.1 — 2026-07-27
+
+Two prompt-provenance slugs re-pointed after the upstream snapshot moved under
+them (2.1.173 -> 2.1.216, refreshed onto main by cron in 76fe5e6). Both had
+been left naming files that no longer exist, so the two corpus-sync guards —
+the tests whose whole job is to turn upstream drift into a failure instead of a
+silent divergence — were red on main. They did their job; this is the follow-up
+they were asking for.
+
+- `COORDINATOR_WORKER_PROVENANCE.slug`:
+  `system-prompt-coordinator-worker-instructions` ->
+  `agent-prompt-coordinator-worker-instructions`. A rename in upstream's
+  naming pass; all 15 anchor sentences the guard extracts are still present in
+  the shipped instructions verbatim, so nothing but the slug moved.
+- `MAIN_LOOP_INTRO.slug`: `system-prompt-interactive-agent-intro-short` ->
+  `system-prompt-harness-instructions`. Upstream folded the three standalone
+  intro files into one harness-instructions reconstruction; the sentence is
+  unchanged, now living in that file's opening template as the no-output-style
+  branch. Still `faithful: true`, with a comment recording what it is faithful
+  TO: one branch of a templated source, not the file end to end.
+
+No shipped prompt TEXT changed — only the two provenance pointers and their
+comments. Guarded surfaces re-verified green (23 tests across the two files).
+
+Outside the package, the cron that refreshes the snapshot
+(`refresh-claude-code-prompts.yml`) now runs these two guards after refreshing
+and BEFORE committing, and pushes nothing when they red. That cron commits with
+`[skip ci]` straight to main, so until now the breakage it caused surfaced only
+in the next unrelated PR's merge gate — which is exactly how it was found.
+
+## 0.80.0 — 2026-07-27
+
+Tool-output limits realigned with Claude Code 2.1.141 (keeper delivery note,
+constants read out of the shipped `claude.exe`). Three independent default
+changes; every one of them narrows or redirects what a tool pushes into the
+context, so none is source-compatible-only — hence the minor bump.
+
+- **WebFetch output cap 100_000 → 50_000 chars**, now expressed as
+  `MAX_READ_OUTPUT_CHARS` rather than a second literal. The official 100_000
+  bounds the markdown handed to a SUMMARIZER model, and only that model's
+  summary reaches the context; this engine has no summarizer, so the same
+  number was gating raw page text going straight into the context — making
+  WebFetch the one tool allowed twice a local Read's budget, for the least
+  controllable source there is. `fsutil.ts` had documented the intended
+  alignment ("~50K aligns with the WebFetch cap") since the cap was added; the
+  code now matches the comment, and the shared constant keeps the two gates
+  from drifting apart again.
+- **Grep `head_limit` defaults to 250 in ALL THREE output modes** (was: 250 for
+  `content`, unlimited for `count` / `files_with_matches` — OPT-1, v0.13.0).
+  OPT-1's premise was that a truncated count is a WRONG count; the fix it
+  shipped alongside — every mode announcing its own cut — already answers that,
+  so the unlimited default was buying nothing while letting one broad search
+  return thousands of entries. `head_limit=0` remains the explicit way to buy a
+  provably complete result, and the schema text (which claimed 250 for every
+  mode all along) is now true.
+- **Bash stdout/stderr cap keeps the LAST 30_000 chars, not the first**, with
+  the marker moved to the front (`[truncated: earlier output dropped]`). A long
+  command's verdict — build result, test summary, final error — is in its
+  closing lines; head-keeping discarded exactly that and retained the compiler
+  chatter. Claude Code truncates from the front for the same reason. New
+  `sliceTailSurrogateSafe` in `internal/text.ts` mirrors `sliceSurrogateSafe`
+  for the opposite boundary (a tail cut strands a LOW surrogate, not a high
+  one). Memory note: the buffer is trimmed after appending, so the peak is
+  cap + one chunk instead of a hard 30_000.
+
+Deliberately NOT changed: Read's unit of measure. Claude Code counts tokens
+(25_000, plus a 262_144-byte hard refusal); this SDK counts characters
+(50_000). Matching it would mean a tokenizer dependency at runtime, and
+character counting is the LOOSER of the two on the workload that matters here —
+50K chars of Chinese is roughly 50K tokens, twice the official budget, where
+50K chars of English code is about 12K. Tightening, if ever wanted, is a lower
+character threshold, not a tokenizer.
+
+Consumers on `count` / `files_with_matches` who relied on the implicit
+completeness must pass `head_limit: 0`; consumers parsing the Bash truncation
+marker must match it at the START of the stream text.
+
+Five tests added (one per changed default, plus the tail-slice surrogate
+boundary and a WebFetch assertion tied to the imported Read constant): 3,247
+measured, of which 2 fail for an unrelated pre-existing reason — the 2026-07-27
+upstream prompt-snapshot refresh (76fe5e6) renamed
+`system-prompt-coordinator-worker-instructions.md` to `agent-prompt-…`, so the
+two archive-anchor governance tests red on HEAD as well.
 
 ## 0.79.1 — 2026-07-27
 

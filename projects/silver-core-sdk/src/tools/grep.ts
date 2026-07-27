@@ -367,14 +367,15 @@ export const grepTool: BuiltinTool = {
         isError: true,
       };
     }
-    // 0 = unlimited; undefined -> a MODE-DEPENDENT default.
-    // `content` can flood (many lines per file) so it keeps the 250 guard.
-    // `count` and `files_with_matches` emit ONE small entry per file, and a
-    // truncated result there is a WRONG count / an incomplete file list — a
-    // correctness bug, not a flood — so they default to COMPLETE (unlimited).
-    // An explicit head_limit still bounds every mode. (OPT-1, 2026-07-07:
-    // decoupled from the flat 250 that silently truncated counts.)
-    const defaultLimit = outputMode === 'content' ? DEFAULT_HEAD_LIMIT : 0;
+    // 0 = unlimited; undefined -> 250 in EVERY mode, as in Claude Code.
+    // An unlimited default was tried for `count` / `files_with_matches` (OPT-1,
+    // 2026-07-07) on the grounds that a truncated count is a WRONG count. But
+    // no cut is silent here — every mode appends the "results truncated" /
+    // "scan stopped" note below — so the honesty argument is already satisfied
+    // by the footer, while a repo-wide match set floods the context before the
+    // caller can react. Callers who need a provably complete count pass
+    // head_limit=0, which the schema text advertises.
+    const defaultLimit = DEFAULT_HEAD_LIMIT;
     const headLimit =
       typeof rawLimit === 'number' && Number.isFinite(rawLimit)
         ? Math.max(0, Math.floor(rawLimit))

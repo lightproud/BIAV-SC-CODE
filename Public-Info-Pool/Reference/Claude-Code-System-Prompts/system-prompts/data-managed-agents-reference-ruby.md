@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Managed Agents reference — Ruby'
-description: Reference guide for using the Anthropic Ruby SDK to create and manage agents, environments, and sessions
-ccVersion: 2.1.203
+name: "Data: Managed Agents reference — Ruby"
+description: "Reference guide for using the Anthropic Ruby SDK to create and manage agents, environments, and sessions"
+ccVersion: "2.1.203"
 -->
 # Managed Agents — Ruby
 

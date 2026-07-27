@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Token counting reference'
-description: Reference documentation for counting Claude model tokens with the Messages count_tokens endpoint and Anthropic SDK or CLI examples, including warnings against OpenAI tokenizers
-ccVersion: 2.1.163
+name: "Data: Token counting reference"
+description: "Reference documentation for counting Claude model tokens with the Messages count_tokens endpoint and Anthropic SDK or CLI examples, including warnings against OpenAI tokenizers"
+ccVersion: "2.1.163"
 -->
 # Token Counting
 

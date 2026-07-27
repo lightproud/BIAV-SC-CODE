@@ -1,10 +1,10 @@
 <!--
-name: 'Tool Description: TaskCreate'
-description: Tool description for TaskCreate tool
-ccVersion: 2.1.84
+name: "Tool Description: TaskCreate"
+description: "Tool description for TaskCreate tool"
+ccVersion: "2.1.84"
 variables:
-  - CONDTIONAL_TEAMMATES_NOTE
-  - CONDITIONAL_TASK_NOTES
+  - "CONDTIONAL_TEAMMATES_NOTE"
+  - "CONDITIONAL_TASK_NOTES"
 -->
 Use this tool to create a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.
 It also helps the user understand the progress of the task and overall progress of their requests.

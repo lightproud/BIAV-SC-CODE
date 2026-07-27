@@ -15,6 +15,7 @@ import { AbortError, ConfigurationError } from '../errors.js';
 import { BASH_DESCRIPTION, BASH_WIN32_NOTE, buildBashSandboxNote } from './descriptions.js';
 import { planShellSpawn, resolveSpawnEnv } from '../sandbox/backend.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
+import { sliceTailSurrogateSafe } from '../internal/text.js';
 import type { SandboxContext } from '../types.js';
 import type {
   BuiltinTool,
@@ -34,24 +35,33 @@ const KILL_GRACE_MS = 2_000;
  */
 const FLUSH_GRACE_MS = 200;
 
-/** Accumulates stream output, keeping only the first STREAM_CAP_CHARS chars. */
+/**
+ * Accumulates stream output, keeping only the LAST STREAM_CAP_CHARS chars.
+ *
+ * Keeping the HEAD instead (the shape until 2026-07-27) dropped exactly what a
+ * long command is run for: the build verdict, the test summary, the final
+ * error all land in the closing lines, while the retained head was compiler
+ * chatter. Claude Code truncates its command output from the front for the
+ * same reason. The marker moves to the front with the cut.
+ *
+ * Memory: the buffer is trimmed AFTER appending, so the instantaneous peak is
+ * STREAM_CAP_CHARS + one chunk rather than a hard 30,000 — stdout chunks are
+ * far below that and the excess is released on the next trim.
+ */
 class CappedStream {
   private buf = '';
   private truncated = false;
 
   append(chunk: string): void {
-    if (this.truncated) return;
-    const remaining = STREAM_CAP_CHARS - this.buf.length;
-    if (chunk.length <= remaining) {
-      this.buf += chunk;
-    } else {
-      this.buf += chunk.slice(0, remaining);
+    this.buf += chunk;
+    if (this.buf.length > STREAM_CAP_CHARS) {
+      this.buf = sliceTailSurrogateSafe(this.buf, STREAM_CAP_CHARS);
       this.truncated = true;
     }
   }
 
   text(): string {
-    return this.truncated ? `${this.buf}\n[truncated]` : this.buf;
+    return this.truncated ? `[truncated: earlier output dropped]\n${this.buf}` : this.buf;
   }
 }
 

@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Message Batches API — TypeScript'
-description: TypeScript usage guide for Claude's asynchronous Message Batches endpoint
-ccVersion: 2.1.173
+name: "Data: Message Batches API — TypeScript"
+description: "TypeScript usage guide for Claude's asynchronous Message Batches endpoint"
+ccVersion: "2.1.173"
 -->
 # Message Batches API — TypeScript
 

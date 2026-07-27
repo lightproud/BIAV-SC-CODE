@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Background agent state classifier'
-description: Classifies the tail of a background agent transcript as working, blocked, done, or failed and returns concise state JSON
-ccVersion: 2.1.205
+name: "Agent Prompt: Background agent state classifier"
+description: "Classifies the tail of a background agent transcript as working, blocked, done, or failed and returns concise state JSON"
+ccVersion: "2.1.205"
 -->
 A user kicked off a Claude Code agent to do a coding task and walked away. Read the tail of what the agent just said and decide which of four states it's in, so the system knows whether to notify the user.
 

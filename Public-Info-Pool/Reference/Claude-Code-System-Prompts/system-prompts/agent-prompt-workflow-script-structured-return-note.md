@@ -1,9 +1,9 @@
 <!--
-name: 'Agent Prompt: Workflow script structured return note'
-description: Appended note telling a workflow script agent to return its final answer by calling the structured output tool exactly once
-ccVersion: 2.1.173
+name: "Agent Prompt: Workflow script structured return note"
+description: "Appended note telling a workflow script agent to return its final answer by calling the structured output tool exactly once"
+ccVersion: "2.1.173"
 variables:
-  - STRUCTURED_OUTPUT_TOOL_NAME
+  - "STRUCTURED_OUTPUT_TOOL_NAME"
 -->
 
 

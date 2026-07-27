@@ -40,6 +40,29 @@ const MAX_PDF_PAGES_PER_READ = 20;
 const MAX_READ_BYTES = 50 * 1024 * 1024;
 
 /**
+ * Refuse a WHOLE-FILE read past this size and steer the caller to a bounded
+ * read or to Grep — official Claude Code's `maxSizeBytes`, 262144 (256KB),
+ * verified in the 2.1.220 binary (`QLi=262144`, `FileTooLargeError`; the
+ * official value is additionally overridable by the `tengu_amber_wren` remote
+ * feature gate, which this SDK has no equivalent of).
+ *
+ * Distinct from MAX_READ_BYTES above, which is an OOM guard at 50MB — 200x
+ * looser, and therefore never the thing that stops a 30MB log from being pulled
+ * into memory and then thrown away by the character cap. The two coexist on
+ * purpose: this one is a STEERING limit ("that is not what Read is for"), that
+ * one is a SURVIVAL limit ("this would kill the process").
+ *
+ * Bounded reads are exempt, which is the escape hatch the official text itself
+ * names: the error says "Use offset and limit parameters to read specific
+ * portions of the file", and the official tool description says "use offset and
+ * limit for larger files". HONEST LIMIT on the reproduction: the official throw
+ * site is gated on an internal `truncateOnByteLimit` flag whose exact wiring
+ * per call path was not established here, so "offset or limit ⇒ allowed" is
+ * reproduced from the stated contract rather than from the observed branch.
+ */
+const MAX_READ_FILE_BYTES = 262144;
+
+/**
  * Read `abs` while enforcing `maxBytes` DURING the read, not just before it:
  * the stat-based pre-check races a concurrent writer (TOCTOU — the file can
  * grow past the cap between stat and read, audit 2026-07-17 L22). Chunked fd
@@ -247,6 +270,23 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
             )}MB) read cap. Reading it whole would exhaust memory. Use the Grep tool to search it, or split the file into smaller pieces.`,
           );
         }
+        // Whole-file read of an oversized file: refuse and steer, as official
+        // Claude Code does at the same 256KB. Checked ONLY when neither offset
+        // nor limit was given — a bounded read is the escape hatch the refusal
+        // text itself names, so gating on the caller's intent (not on the
+        // file's size alone) is what makes the advice actionable.
+        if (
+          offsetRaw === undefined &&
+          limitRaw === undefined &&
+          st.size > MAX_READ_FILE_BYTES
+        ) {
+          return errorResult(
+            `Read failed: file content (${st.size} bytes) exceeds maximum allowed size ` +
+              `(${MAX_READ_FILE_BYTES} bytes). Use offset and limit parameters to read ` +
+              `specific portions of the file, or search for specific content with Grep ` +
+              `instead of reading the whole file.`,
+          );
+        }
       } catch (e) {
         if ((e as NodeJS.ErrnoException).code === 'ENOENT') {
           return errorResult(`Read failed: file does not exist: "${abs}".`);
@@ -375,22 +415,51 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
       let content = fmt.text;
       if (fmt.charCapped) {
         // Total-character cap took effect (may be tighter than the line limit).
+        //
+        // The footer carries all THREE parts of the official banner, not just
+        // the first (2026-07-27, keeper delivery note + keeper ruling on the
+        // measured evidence). Reported symptom: one Read of a ~1500-line file
+        // was followed by SIX consecutive auto-paged Reads that walked the file
+        // to its end and pushed 300K+ chars into the context, with no sign of
+        // the model deciding for itself when to stop.
+        //
+        // The diagnosis that a stated `offset=1301` is what caused it does NOT
+        // survive checking: official Claude Code 2.1.220 states one too — its
+        // auto-pagination banner reads "…Call Read with offset=${I+1}
+        // limit=${I} for the next page, or Grep to find a specific section. Do
+        // NOT answer from this page alone if the answer may be further in the
+        // file." (extracted from the official npm linux-x64 artifact). What
+        // this SDK was missing was the OTHER TWO parts: a cheaper alternative,
+        // and the caution against answering off one page. A footer whose only
+        // content is "here is the next page" leaves the model exactly one move.
         let footer =
           `\n\n(Showing lines ${startLine}-${realLastShown} of ${total}; ` +
           `output truncated at ${maxOutputChars} chars. ` +
-          `Use offset=${realLastShown + 1} to continue reading.)`;
-        // §D: a big file whose rows are also long — Grep is usually the better
-        // tool than paging through it. read.ts holds the byte size + long-line
-        // signal that an app-layer hook could only guess at.
-        if (fmt.truncatedLines > 0 && buf.length > GREP_HINT_FILE_BYTES) {
+          `Call Read with offset=${realLastShown + 1} for the next page, or use ` +
+          `Grep to find a specific section. Do NOT answer from this page alone ` +
+          `if the answer may be further in the file.)`;
+        // §D: a big file — Grep is usually the better tool than paging through
+        // it. The long-line precondition was dropped in the same pass: ordinary
+        // source (TS/Lua/Python) rarely has rows past the 2000-char per-line
+        // cap, so `truncatedLines > 0` was almost never true and the hint
+        // effectively never fired — leaving paging as the only route the model
+        // was ever shown. Size alone earns the hint; row width is beside the
+        // point.
+        if (buf.length > GREP_HINT_FILE_BYTES) {
           footer +=
-            '\n(This file is large and has very long lines; consider the Grep ' +
-            'tool to search it instead of reading page by page.)';
+            '\n(This file is large; consider the Grep tool to search it ' +
+            'instead of reading page by page.)';
         }
         content += footer;
       } else if (realLastShown < total) {
         // Line-count limit (or offset window) bounded the output, chars did not.
-        content += `\n\n(Showing lines ${startLine}-${realLastShown} of ${total}. Use offset=${realLastShown + 1} to continue reading.)`;
+        // Same wording as the char-cap branch above: the trigger differs, the
+        // incentive it creates does not.
+        content +=
+          `\n\n(Showing lines ${startLine}-${realLastShown} of ${total}. ` +
+          `Call Read with offset=${realLastShown + 1} for the next page, or use ` +
+          `Grep to find a specific section. Do NOT answer from this page alone ` +
+          `if the answer may be further in the file.)`;
       }
       return { content };
     } catch (e) {
