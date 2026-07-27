@@ -16,6 +16,45 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.82.0 — 2026-07-27
+
+Read refuses a whole-file read past 256KB, matching official Claude Code. Found
+by a divergence sweep of the official 2.1.220 binary (keeper: "你还能从
+claude.exe 查到有哪些我们与官方不一致"), and ruled in by the keeper.
+
+Official refuses at `maxSizeBytes` = 262144 (`QLi=262144`, `FileTooLargeError`,
+remote-overridable via the `tengu_amber_wren` gate, which this SDK has no
+equivalent of). This SDK's only size limit was the 50MB OOM guard — 200x looser,
+so nothing stopped a 30MB log from being pulled into memory and then almost
+entirely discarded by the character cap. The two limits now coexist with
+distinct jobs: 256KB STEERS ("that is not what Read is for"), 50MB SURVIVES
+("this would kill the process").
+
+- The refusal applies ONLY to unbounded reads. A read carrying `offset` or
+  `limit` proceeds, which is the escape hatch the official text names in both
+  places it appears: the error ("Use offset and limit parameters to read
+  specific portions of the file") and the tool description ("use offset and
+  limit for larger files"). HONEST LIMIT: official's throw site is gated on an
+  internal `truncateOnByteLimit` flag whose per-call-path wiring was not pinned
+  down here, so the exemption is reproduced from the stated contract, not from
+  the observed branch.
+- Read's description gains the official sentence about the 256KB error.
+- **Breaking for a consumer that reads 256KB–50MB files whole.** The fix is
+  mechanical (add `offset`/`limit`, or use Grep) and the error says so.
+
+Interaction worth knowing: the large-file Grep hint (0.81.0) fires at the same
+256KB, so it is now reachable only on a BOUNDED read — which is precisely the
+caller it is for, someone already paging a file too big to page.
+
+Also from the same sweep, recorded in docs/COMPAT.md rather than changed:
+`AskUserQuestion` omits official's three round-trip fields (`answers`,
+`annotations`, `metadata.source`) — they exist to carry the official permission
+component's UI回填 and telemetry, and this SDK routes the tool to a host
+callback with no such component (keeper ruling: log, do not add). Two divergences
+the sweep first reported turned out to be parser artifacts and are NOT real:
+`EnterPlanModeInput` is `{}` upstream (matches), and Grep's dash-prefixed flags
+plus `TaskListInput` also match.
+
 ## 0.81.0 — 2026-07-27
 
 Read's truncation footer now carries all THREE parts of the official banner

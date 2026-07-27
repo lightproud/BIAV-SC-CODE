@@ -114,16 +114,18 @@ describe('Read total-output cap (boundary matrix)', () => {
 
   it('§3 case 2: char cap hits first -> footer reports truncated at cap + offset', async () => {
     const dir = await makeSandbox();
-    // 2000 lines x 500 chars ~= 1MB: the 50K char cap bounds it near line ~90.
-    const file = await writeFileLines(dir, 'wide.txt', Array.from({ length: 2000 }, () => 'w'.repeat(500)));
+    // 400 lines x 500 chars ~= 200KB: over the 50K char cap, but UNDER the
+    // 256KB whole-file refusal added in 0.82.0 — this case is about the char
+    // cap, so it must stay on the side of the size limit that still reads.
+    const file = await writeFileLines(dir, 'wide.txt', Array.from({ length: 400 }, () => 'w'.repeat(500)));
     const res = await readTool.execute({ file_path: file }, makeCtx(dir));
     const c = contentOf(res);
     expect(c).toContain(`output truncated at ${MAX_READ_OUTPUT_CHARS} chars`);
     // footer must name the REAL last line (< 2000), not claim all 2000
-    const m = c.match(/Showing lines 1-(\d+) of 2000/);
+    const m = c.match(/Showing lines 1-(\d+) of 400/);
     expect(m).not.toBeNull();
     const lastShown = Number(m![1]);
-    expect(lastShown).toBeLessThan(2000);
+    expect(lastShown).toBeLessThan(400);
     expect(lastShown).toBeGreaterThanOrEqual(25); // never-empty invariant
     expect(c).toContain(`Call Read with offset=${lastShown + 1} for the next page`);
     expect(c).toContain('use Grep to find a specific section');
@@ -147,7 +149,10 @@ describe('Read total-output cap (boundary matrix)', () => {
       'big-normal.ts',
       Array.from({ length: 4000 }, (_, i) => `const value${i} = ${'x'.repeat(60)};`),
     );
-    const c = contentOf(await readTool.execute({ file_path: file }, makeCtx(dir)));
+    // A whole-file read of this size is now REFUSED (256KB, 0.82.0), so the
+    // hint is reachable only on a bounded read — which is exactly the caller
+    // the hint is for: someone already paging a file too big to page.
+    const c = contentOf(await readTool.execute({ file_path: file, offset: 1 }, makeCtx(dir)));
     expect(c).toContain('This file is large; consider the Grep tool');
     // The stale precondition must be gone, not merely satisfied by accident.
     expect(c).not.toContain('very long lines');
@@ -166,9 +171,65 @@ describe('Read total-output cap (boundary matrix)', () => {
     expect(c).not.toContain('consider the Grep tool');
   });
 
+  // 0.82.0: whole-file reads past 256KB are refused, matching official Claude
+  // Code's maxSizeBytes (QLi=262144, FileTooLargeError). The 50MB cap that used
+  // to be the only size limit is an OOM guard — 200x looser, so it never
+  // stopped a 30MB log from being read into memory and then mostly discarded.
+  describe('whole-file size refusal (official maxSizeBytes parity)', () => {
+    it('refuses an unbounded read past 256KB and names both escapes', async () => {
+      const dir = await makeSandbox();
+      const file = await writeFileLines(
+        dir,
+        'huge.log',
+        Array.from({ length: 6000 }, (_, i) => `${i} ${'z'.repeat(60)}`),
+      );
+      const res = await readTool.execute({ file_path: file }, makeCtx(dir));
+      expect(res.isError).toBe(true);
+      const c = contentOf(res);
+      expect(c).toContain('exceeds maximum allowed size');
+      expect(c).toContain('offset and limit');
+      expect(c).toContain('Grep');
+    });
+
+    it('allows the same file when offset is given (the documented escape hatch)', async () => {
+      const dir = await makeSandbox();
+      const file = await writeFileLines(
+        dir,
+        'huge.log',
+        Array.from({ length: 6000 }, (_, i) => `${i} ${'z'.repeat(60)}`),
+      );
+      const res = await readTool.execute({ file_path: file, offset: 10 }, makeCtx(dir));
+      expect(res.isError).toBeFalsy();
+      expect(contentOf(res)).not.toContain('exceeds maximum allowed size');
+    });
+
+    it('allows the same file when only limit is given', async () => {
+      const dir = await makeSandbox();
+      const file = await writeFileLines(
+        dir,
+        'huge.log',
+        Array.from({ length: 6000 }, (_, i) => `${i} ${'z'.repeat(60)}`),
+      );
+      const res = await readTool.execute({ file_path: file, limit: 20 }, makeCtx(dir));
+      expect(res.isError).toBeFalsy();
+    });
+
+    it('a file just under the threshold still reads whole', async () => {
+      const dir = await makeSandbox();
+      // ~200KB, under 256KB: unchanged behaviour, no refusal.
+      const file = await writeFileLines(
+        dir,
+        'ok.ts',
+        Array.from({ length: 3000 }, (_, i) => `const a${i} = ${'q'.repeat(50)};`),
+      );
+      const res = await readTool.execute({ file_path: file }, makeCtx(dir));
+      expect(res.isError).toBeFalsy();
+    });
+  });
+
   it('§3 case 3: offset continuation reads the window after the cap', async () => {
     const dir = await makeSandbox();
-    const file = await writeFileLines(dir, 'wide.txt', Array.from({ length: 2000 }, (_, i) => `${i}:` + 'w'.repeat(500)));
+    const file = await writeFileLines(dir, 'wide.txt', Array.from({ length: 400 }, (_, i) => `${i}:` + 'w'.repeat(500)));
     const first = contentOf(await readTool.execute({ file_path: file }, makeCtx(dir)));
     const off = Number(first.match(/offset=(\d+) for the next page/)![1]);
     const second = contentOf(await readTool.execute({ file_path: file, offset: off }, makeCtx(dir)));

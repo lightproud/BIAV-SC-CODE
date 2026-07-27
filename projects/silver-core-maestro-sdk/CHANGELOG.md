@@ -12,6 +12,12 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.82.0 — 2026-07-27
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.82.0 (Read refuses whole-file reads past 256KB, per
+official parity found in a divergence sweep of the 2.1.220 binary).
+
 ## 0.81.0 — 2026-07-27
 
 Lockstep alignment only — no changes to this package. The family clock advanced
