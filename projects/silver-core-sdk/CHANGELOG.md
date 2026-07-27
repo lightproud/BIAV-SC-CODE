@@ -16,6 +16,48 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.80.2 — 2026-07-27
+
+Baseline realignment against the refreshed 2.1.216-era archive snapshot (keeper
+ruling 2026-07-27, "3 也直接对齐基准"). The comparison basis had gone stale two
+ways at once, and only one of them is fixable in this repository — both are now
+recorded in docs/COMPAT.md under "Baseline realignment".
+
+- **A third dangling provenance slug, found by hand.** `SendMessage` cited
+  `tool-description-sendmessagetool`; the snapshot renamed it to
+  `tool-description-sendmessage`. It stayed green because the existence check
+  rode inside the anchor check, which skips ADAPTED entries — so an adapted
+  description could point at a deleted file indefinitely. Existence is now its
+  own test covering faithful and adapted alike. Same snapshot, three dangling
+  slugs: two reddened main for six hours (0.80.1), this one had no guard looking.
+- **`scripts/description-coverage.mjs`** turns "has the prose basis drifted?"
+  from a hand audit into a command: per cited fragment, how much is still
+  reproduced verbatim, with the fragment's ccVersion. Report-only, always exit 0
+  — coverage is SUPPOSED to be below 100% wherever the red-line discipline
+  forbids describing an unshipped capability, so gating on it would push the
+  descriptions into claiming things this SDK cannot do. Measured now: 18 of 30
+  fragments at 100% (Grep against 2.1.217, Glob against 2.1.215), the low end
+  being the documented adaptations (SendMessage 11%, EnterWorktree 25%).
+
+Honest boundary, stated because it is easy to misread this entry as more than it
+is: the NUMERIC limits from 0.80.0 are NOT realigned and cannot be from here. The
+reconstruction template-izes exactly the numbers (`${MAX_LINES_CONSTANT}`), and
+the grep fragments carry no parameter-level docs — so head_limit=250, Read's
+25,000 tokens, Bash's 30,000 and WebFetch's 100,000 still rest solely on the
+one-off 2.1.141 binary extraction, uncorroborated by anything in this repo.
+Re-verification needs another extraction on a machine with Claude Code installed.
+
+Shipped runtime delta: one slug string and its comment. No description text
+changed, so prompt bytes and cache keys are untouched.
+
+**Ledger note**: PR #845 carries this entry's title but merged an EMPTY diff.
+The work was committed onto a local `main` while the push targeted the
+same-named feature branch — which `git push -u origin <name>` resolves to the
+local BRANCH of that name, not to HEAD — so a stale branch was published and
+merged. Recorded rather than papered over: b3558ce changes zero files, and
+the content below actually landed in the follow-up merge. Anyone bisecting
+0.80.2 should ignore b3558ce entirely.
+
 ## 0.80.1 — 2026-07-27
 
 Two prompt-provenance slugs re-pointed after the upstream snapshot moved under

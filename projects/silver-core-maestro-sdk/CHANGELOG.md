@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.80.2 — 2026-07-27
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.80.2 (prompt-basis realignment against the 2.1.216
+snapshot: a third dangling provenance slug fixed, the existence guard widened to
+adapted entries, and a coverage ruler added).
+
 ## 0.80.1 — 2026-07-27
 
 Lockstep alignment only — no changes to this package. The family clock advanced

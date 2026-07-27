@@ -815,8 +815,9 @@ The tool result includes a runId. To resume after a failure or script edit, rela
 
 /**
  * SendMessage (O-B2) — ADAPTED reproduction of the agent-teams SendMessage
- * description (archive slug tool-description-sendmessagetool, ccVersion
- * 2.1.199). Adaptations, per the red-line discipline (never describe an
+ * description (archive slug tool-description-sendmessage — renamed from
+ * tool-description-sendmessagetool in the 2.1.216 snapshot; ccVersion 2.1.199
+ * at the time of reproduction). Adaptations, per the red-line discipline (never describe an
  * unshipped capability): teammate-NAME addressing, the `"main"` address and
  * the automatic teammate-delivery sentence are omitted (this SDK ships no
  * agent-teams naming machinery — agentId addressing only); the official
@@ -903,7 +904,7 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   {
     tool: 'SendMessage',
     faithful: false,
-    slugs: ['tool-description-sendmessagetool'],
+    slugs: ['tool-description-sendmessage'],
   },
 ];
 
