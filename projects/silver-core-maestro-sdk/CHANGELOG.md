@@ -12,6 +12,11 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.79.1 — 2026-07-27
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.79.1 (transport / MCP internal dedup).
+
 ## 0.79.0 — 2026-07-26
 
 Reopen semantics (T67 / design review F5 — keeper ruling 2026-07-26, option 甲:

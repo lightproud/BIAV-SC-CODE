@@ -18,11 +18,48 @@ CLAUDE.md §5.2 正面冲突；照着它走的会话会空手而归，还以为�
 from __future__ import annotations
 
 import re
+import subprocess
+from functools import lru_cache
 from pathlib import Path
 
 import pytest
 
 REPO = Path(__file__).resolve().parent.parent
+
+
+# ---------------------------------------------------------------------------
+# 真相源 = git 索引，不是文件系统。
+#
+# 首版问 `Path.exists()`，本地全绿、CI 当场红两条（`Public-Info-Pool/Record/` 与
+# `…/store-patrol/`）：`test.yml` 走 sparse checkout 排除了 `/Public-Info-Pool/Record/`，
+# 那些档案**在仓里、只是没被检出**。判词随 checkout 形态变化的守卫比没有守卫更坏——
+# 它会指着好路径喊落空，训练人无视它。
+#
+# sparse checkout 只给文件打 skip-worktree，**索引仍是完整的**，故 `git ls-files`
+# 在稀疏与全量检出下给出同一个答案。这也顺带修正了另一半：未被 git 跟踪的生成物
+# 从此不算「存在」——档案本就不该拿一份别人 clone 之后不存在的东西当指针。
+# ---------------------------------------------------------------------------
+@lru_cache(maxsize=1)
+def _tracked() -> frozenset[str]:
+    out = subprocess.run(
+        ["git", "-C", str(REPO), "ls-files"],
+        capture_output=True, text=True, check=True,
+    ).stdout
+    return frozenset(line for line in out.splitlines() if line)
+
+
+@lru_cache(maxsize=1)
+def _tracked_dirs() -> frozenset[str]:
+    dirs: set[str] = set()
+    for f in _tracked():
+        parts = f.split("/")
+        for i in range(1, len(parts)):
+            dirs.add("/".join(parts[:i]))
+    return frozenset(dirs)
+
+
+def _in_repo(path: str) -> bool:
+    return path in _tracked() or path in _tracked_dirs()
 
 # 被会话当指令执行的档案。dated 范例（example-*.md）是定格快照、不是指令，排除。
 def _curated_docs() -> list[Path]:
@@ -45,7 +82,11 @@ _PACKAGE_ROOTS = [
     "site",
     "game",
 ]
-BASES = [REPO] + [REPO / "projects" / p for p in _PACKAGE_ROOTS]
+BASES = [""] + [f"projects/{p}/" for p in _PACKAGE_ROOTS]
+
+
+def _candidates(path: str) -> list[str]:
+    return [base + path for base in BASES]
 
 # 只认这些顶层段开头的串是「仓内路径」，其余反引号内容（命令、字段名、URL）不管。
 ROOT_SEGMENTS = {
@@ -112,7 +153,7 @@ def _dangling(doc: Path) -> list[tuple[int, str]]:
                 continue
             if (rel_doc, raw) in EXCUSED:
                 continue
-            if any((base / path).exists() for base in BASES):
+            if any(_in_repo(c) for c in _candidates(path)):
                 continue
             out.append((lineno, raw))
     return out
@@ -145,6 +186,23 @@ def test_every_excuse_has_a_reason() -> None:
     """空理由的豁免等于没豁免——它只是把问题藏进了字典。"""
     empty = [k for k, v in EXCUSED.items() if not v.strip()]
     assert not empty, f"以下豁免没写理由: {empty}"
+
+
+def test_existence_is_decided_by_the_index_not_the_worktree() -> None:
+    """**本组自身的防复发条**：判据必须是 git 索引，不是文件系统。
+
+    首版问 `Path.exists()`，本地 25 绿而 CI 当场红——`test.yml` 走 sparse checkout
+    排除 `/Public-Info-Pool/Record/`，档案在仓里却没被检出，守卫指着好路径喊落空。
+    这里拿两条**当时正是这样红掉**的路径当哨兵：它们必须被判为「在仓内」。稀疏检出下
+    它们不在磁盘上，所以任何回退到文件系统的实现都会在这条上当场失败。
+    """
+    for sentinel in ("Public-Info-Pool/Record", "Public-Info-Pool/Record/store-patrol"):
+        assert _in_repo(sentinel), (
+            f"{sentinel} 被判为不在仓内——判据疑似退回文件系统。"
+            f"sparse checkout 下它不在磁盘上，但它在索引里。"
+        )
+    # 反向：索引里没有的东西不能因为磁盘上碰巧有（生成物 / 本地残留）就算数。
+    assert not _in_repo("okf/kb_index.json") or "okf/kb_index.json" in _tracked()
 
 
 def test_the_guard_actually_covers_the_operational_surface() -> None:

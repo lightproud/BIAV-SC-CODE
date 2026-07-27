@@ -16,6 +16,25 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.79.1 — 2026-07-27
+
+Internal dedup, no surface or behaviour change. The retry / backoff / error-body
+/ stream-error / idle-watchdog logic that had been copied across
+`transport/anthropic.ts` and `transport/openai.ts` moved into one shared
+`transport/http-retry.ts`; the JSON-RPC message shape / result parsing /
+pagination / version negotiation duplicated between `mcp/http.ts` and
+`mcp/stdio.ts` moved into `mcp/protocol.ts`. Net -288 lines across six src
+files. The unit suite (3,214 tests) and the api-surface guards passed unchanged
+through the move, which is the evidence that the surface did not shift.
+
+**Ledger note**: the change itself shipped in the merge of #835 (2026-07-27),
+which landed WITHOUT a bump — the version-bump guard reded on main and stayed
+red until this entry. Version 0.79.1 therefore labels content that was already
+on main under the 0.79.0 label for roughly one hour. Consumers pinning
+0.79.0 tarballs built in that window get the pre-refactor content; anything
+built after gets 0.79.1. Recorded rather than papered over: the guard did its
+job, the merge went around it.
+
 ## 0.79.0 — 2026-07-26
 
 Lockstep alignment only — no agent-side changes. The family clock advanced for
