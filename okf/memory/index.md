@@ -1,4 +1,4 @@
-# 银芯记忆层指针 (50)
+# 银芯记忆层指针 (51)
 
 每张卡是一份**指针** concept，正文权威在 `memory/**`，此处不复刻。核心 10 份 + 全层扩展。
 
@@ -53,6 +53,7 @@
 * [银芯-黑池单向接口规范](/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md) - 银芯（公开信息平台） ──→ 黑池（私有内部加工）
 * [贡献协议（原 active hub，已降档归档）](/memory/memory-archive-contribution-protocol-hub.md) - **一句话摘要**：贡献协议 v1.0 定义**外部社区贡献者**与**银芯仓库**的协作流程，覆盖 Issue 模板 / PR 流程 /
 * [待讨论事项](/memory/memory-archive-pending-discussions.md) - 待讨论事项
+* [Silver Core SDK 状态叙述归档（截至 2026-07-27）](/memory/memory-archive-sdk-status-chronicle-20260727.md) - 「补顶部摘要 + 实测数字」）**：本节此前停在 v0.69.0，其后 **12 个发布未回写**，现合并补齐一条；
 * [大文件存储方案讨论](/memory/memory-archive-storage-discussion.md) - 项目中有两类大文件存储需求：
 * [社区分析报告：V2.5.1「沙耶之歌」联动窗口（2026-05-18 → 05-26）](/memory/memory-research-community-analysis-2026-05-18-26.md) - 平台层分布（条目）：weibo 1,227 / reddit 710 / youtube 198 / steam 182 / weixin
 * [诊断备忘：discord 全量 3.2G 仍在 git —— 状态与瘦身下一步](/memory/memory-research-discord-archive-backfill-conflict.md) - 约 10,600 文件、3.2G 的绝大部分。这些 Releases 已有副本，删 git 不丢数据。

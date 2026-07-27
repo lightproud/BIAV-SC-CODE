@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-27",
   "stats": {
-    "nodes": 376,
-    "edges": 411
+    "nodes": 377,
+    "edges": 406
   },
   "nodes": [
     {
@@ -1421,6 +1421,18 @@
       "id": "/memory/memory-archive-pending-discussions.md",
       "type": "knowledge-pointer",
       "title": "待讨论事项",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "archive",
+        "frozen-snapshot"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-archive-sdk-status-chronicle-20260727.md",
+      "type": "knowledge-pointer",
+      "title": "Silver Core SDK 状态叙述归档（截至 2026-07-27）",
       "tags": [
         "memory",
         "data_layer:curated",
@@ -4615,18 +4627,6 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
       "rel_type": "mention"
@@ -4689,12 +4689,6 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-youtube.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4855,6 +4849,12 @@
     },
     {
       "source": "/memory/memory-archive-pending-discussions.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
@@ -6037,18 +6037,6 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
       "rel_type": "mention"
@@ -6063,12 +6051,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/youtube.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
