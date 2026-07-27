@@ -17,6 +17,14 @@ function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
 }
 
+/** An error result that ALSO carries the structured `error` field, so a
+ *  consumer reading `toolUseResult` can tell a failed read from an empty one
+ *  without string-matching the message (official `ReadMcpResourceOutput.error`
+ *  parity, 2026-07-27). */
+function resourceErrorResult(message: string): ToolResultPayload {
+  return { content: message, isError: true, structuredOutput: { contents: [], error: message } };
+}
+
 /** Diagnosable message for ANY thrown value (audit 2026-07-17 L74): a
  *  non-Error throw (string / object) rendered "failed: undefined" via the
  *  blind `(e as Error).message` cast, losing the diagnostic. */
@@ -79,22 +87,22 @@ export const readMcpResourceTool: BuiltinTool = {
   async execute(input: Record<string, unknown>, ctx: ToolContext): Promise<ToolResultPayload> {
     if (ctx.signal.aborted) throw new AbortError();
     if (!ctx.mcpResources) {
-      return errorResult('ReadMcpResourceTool: no MCP servers are configured.');
+      return resourceErrorResult('ReadMcpResourceTool: no MCP servers are configured.');
     }
     const server = input['server'];
     const uri = input['uri'];
     if (typeof server !== 'string' || server.length === 0) {
-      return errorResult('ReadMcpResourceTool: "server" must be a non-empty string.');
+      return resourceErrorResult('ReadMcpResourceTool: "server" must be a non-empty string.');
     }
     if (typeof uri !== 'string' || uri.length === 0) {
-      return errorResult('ReadMcpResourceTool: "uri" must be a non-empty string.');
+      return resourceErrorResult('ReadMcpResourceTool: "uri" must be a non-empty string.');
     }
     try {
       const contents = await ctx.mcpResources.read(server, uri, ctx.signal);
-      return { content: JSON.stringify(contents) };
+      return { content: JSON.stringify(contents), structuredOutput: { contents } };
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('ReadMcpResourceTool was aborted');
-      return errorResult(`ReadMcpResourceTool failed: ${thrownMessage(e)}`);
+      return resourceErrorResult(`ReadMcpResourceTool failed: ${thrownMessage(e)}`);
     }
   },
 };
@@ -120,22 +128,22 @@ export const readMcpResourceDirTool: BuiltinTool = {
   async execute(input: Record<string, unknown>, ctx: ToolContext): Promise<ToolResultPayload> {
     if (ctx.signal.aborted) throw new AbortError();
     if (!ctx.mcpResources) {
-      return errorResult('ReadMcpResourceDirTool: no MCP servers are configured.');
+      return resourceErrorResult('ReadMcpResourceDirTool: no MCP servers are configured.');
     }
     const server = input['server'];
     const uri = input['uri'];
     if (typeof server !== 'string' || server.length === 0) {
-      return errorResult('ReadMcpResourceDirTool: "server" must be a non-empty string.');
+      return resourceErrorResult('ReadMcpResourceDirTool: "server" must be a non-empty string.');
     }
     if (typeof uri !== 'string' || uri.length === 0) {
-      return errorResult('ReadMcpResourceDirTool: "uri" must be a non-empty string.');
+      return resourceErrorResult('ReadMcpResourceDirTool: "uri" must be a non-empty string.');
     }
     try {
       const children = await ctx.mcpResources.readDir(server, uri, ctx.signal);
       return { content: JSON.stringify(children) };
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('ReadMcpResourceDirTool was aborted');
-      return errorResult(`ReadMcpResourceDirTool failed: ${thrownMessage(e)}`);
+      return resourceErrorResult(`ReadMcpResourceDirTool failed: ${thrownMessage(e)}`);
     }
   },
 };

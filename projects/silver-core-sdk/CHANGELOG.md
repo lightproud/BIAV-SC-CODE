@@ -16,6 +16,51 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.86.0 — 2026-07-27
+
+Prompt alignment + the second half of the output-type sweep (keeper: "1 对齐官方
+4 续", then a per-item ruling on what the sweep found).
+
+**The main-loop block regains its opening sentence**: "Text you write between
+tool calls may not be shown to the user." Official's block opens with it; this
+reproduction carried only the conclusion. It is the REASON the rest of the rule
+holds — without it the paragraph reads as a style preference rather than as a
+consequence of how the surface behaves, and a rule whose premise is missing is
+the first one a model reasons its way out of. Verified verbatim in the official
+2.1.220 artifact. The byte-identity golden fixture was regenerated
+DELIBERATELY; its diff is exactly this sentence, in each of the four tool sets.
+
+Official's `# Focus mode` block is deliberately NOT reproduced: it overrides
+communication behaviour for a UI mode ("the user only sees your final text
+message") this SDK has no notion of, and shipping instructions for a mode that
+cannot be entered is the same red line as describing an unshipped tool.
+
+**Output-type sweep, 15 types compared field by field.** Nine match exactly
+(FileEdit, the Task quintet, EnterWorktree, TodoWrite, Monitor). Six carry
+official-only fields, ruled one at a time — the class was not uniform:
+
+- `ReadMcpResourceOutput.error` — ADDED and populated. Not UI-bound: the tool
+  has real failure paths, and a caller reading the structured result could not
+  tell a FAILED read from an EMPTY one.
+- `WebSearchOutput` — populated (`query` / `results` / `durationSeconds`). The
+  sweep's framing was wrong: the gap worth closing was not the `searchCount`
+  field but that WebSearch produced NO structured result at all. `searchCount`
+  stays unset — one backend call per invocation makes it a constant 1. The
+  reported hits are the POST-FILTER set, so the structured count and the
+  rendered text cannot disagree.
+- `FileWriteOutput.userModified`, `ExitPlanModeOutput.planWasEdited`,
+  `AskUserQuestionOutput.afkTimeoutMs`/`annotations`, and `WorkflowOutput`'s
+  remote-task fields — recorded in docs/COMPAT.md, not declared. Each needs a
+  UI or cloud surface this SDK does not have; for Workflow the blocker is not
+  the optional fields at all but the REQUIRED `status: 'async_launched'`
+  discriminator, which would assert a launch that never happened here (this SDK
+  runs workflows synchronously). Declaring fields nothing will populate is the
+  typed-not-populated pattern 0.85.0 existed to remove.
+
+Scope limit stated rather than implied: the comparison was a TOP-LEVEL field
+diff. `ReadMcpResourceOutput.contents[].blobSavedTo` was found only on a manual
+re-read, and other nested fields may remain unswept.
+
 ## 0.85.0 — 2026-07-27
 
 Family verdict-type unification (keeper ruling 2026-07-27): this package's

@@ -82,8 +82,8 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.85.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.85.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.86.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.86.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 138 / 200 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
@@ -249,6 +249,7 @@
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
+> **v0.86.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.86.0（主循环提示词补回开篇句 + 输出类型普查续：ReadMcpResource 错误字段 + WebSearch 结构化结果）前进。
 > **v0.84.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.84.0（记忆索引纪律 + 整理规程）前进。
 > **v0.85.0（2026-07-27，goal 判词家族统一）**：**BREAKING（实验面）**——`GoalVerdict` 迁移为与 agent SDK 逐字同形的 `{status: 'achieved'|'not_achieved'|'impossible', reason?}`（原 `{achieved, feedback, impossible?}`）。起因：BPT 接入后报「goal 没效果、模型照样停」，排查定位两包**同名不同形**判词——评审器误用另一包形状时引擎按设计 fail-open 把 malformed verdict 放行为允许停止，goal 无声失效。守密人裁「统一判词类型」：agent 侧 `{status}` 为正典（BPT 实接层不动），Maestro goal 族（零调用点实验面）赶在 GoalChaser 首次接线前迁移；声明式重复不跨包 import（硬性质 §1.2），一个宿主评审器经结构类型同时服务两缝；`GoalRoundPayload.feedback` 字段名保留、改承载 `reason`。迁移映射见 CHANGELOG 0.85.0。
 > **v0.85.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.85.0（工具产出结构化结果 + MCP 接受列表扩容）前进。
@@ -331,6 +332,7 @@
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
 - **v0.84.0（2026-07-27）**：记忆索引纪律 + 整理规程——修的是「SDK 给了常驻索引机制却没规定索引条目该长什么样，且会话收尾提示词命令模型把进度卡写进索引档」这个自伤缺口（守密人 BPT 现场反馈：开工要好几回工具调用才找得到东西）。进度卡改落 `/memories/progress/`、索引只留指针；新增索引纪律片段（两模式注入、前提不成立即跳过）；写侧超限反压（读写共用同一度量，明说尾部已不可见）；`buildConsolidationPrompt()` + 四阶段整理规程，由 `assessMemoryStoreHealth()` 结果渲染待办。**层界守住**：只给「该不该整理 / 怎么整理」，不给调度（N1 未破，零新进程）。新增测试 28。
+- **v0.86.0（2026-07-27）**：**主循环提示词补回开篇句 + 输出类型普查（续）**（守密人「1 对齐官方 4 续」）——① 补回官方「Text you write between tool calls may not be shown to the user.」——银芯只搬了结论没搬**理由**，缺前提的规则是模型最先绕过的那条；字节金样有意重生成、差异经核实只有这一句（四个工具集各一处）。**官方 `# Focus mode` 整块刻意不复刻**（为进不去的 UI 模式发指令 = 描述未发货能力）。② **15 个 `*Output` 逐字段比完：9 个完全一致**（FileEdit / Task 五件 / EnterWorktree / TodoWrite / Monitor）；6 个有官方独有字段，守密人裁「逐条再看」，**这一类并不齐整**——`ReadMcpResourceOutput.error` **加了并真产出**（非 UI 绑定，调用方此前分不清「读失败」与「读到空」）；`WebSearchOutput` **整体补产出**（原议题 `searchCount` 是伪命题、恒为 1，真缺口是它根本没有结构化结果；报**过滤后**命中免得与文本对不上）；其余四条**只登记不声明**（Workflow 的真障碍不在可选字段，而在必填判别式 `status:'async_launched'`——本 SDK 同步跑工作流，填它等于断言一次没发生的启动）。**射程边界**：本次为**顶层字段**比对，嵌套差异首轮漏看（`contents[].blobSavedTo` 靠人工复读才发现）。测试 3,295 → **3,297**。
 - **v0.85.0（2026-07-27）**：**GoalVerdict 家族统一（本包零行为改动）**——本包 `{status, reason?}` 判词升格家族**正典**，maestro 0.85.0 将 GoalChaser 评审判词迁为同形，一个宿主评审器同时服务引擎 `options.goal` Stop 门与跨 query 追逐两缝。留档背景：两形并存期产出真实消费者陷阱——maestro 形判词喂进 `options.goal` 被引擎判 malformed、fail-open 放行停止（防评审器坏死锁死代理的既定失败方向），症状即 BPT 2026-07-27 所报「接了 goal 模型照样停」。`options.goal` 语义与评审器契约未动，仅 `GoalVerdict` 注释补正典地位声明。
 - **v0.85.0（2026-07-27）**：**工具真正产出结构化结果 + MCP 接受列表扩容**（偏离普查轴一/轴四裁定）——**先订正普查自己的结论**：首轮只 grep `outputSchema` 就报「银芯零输出面」是**错的**，`types/tools.ts` 里官方形状的输出类型**早已齐备**，缺的是**从来没人产出**（typed-not-populated）；故改为**复用既有类型**、只补真缺的两三个。`ToolResultPayload.structuredOutput` + 引擎 **WeakMap 侧信道**（不往 Anthropic 线格式上加字段）+ `query()` 发 `toolUseResult`（**tool_use_id 为键的 record**，因本引擎一轮批处理、官方一消息一结果）。Read/Glob/Grep/Bash/WebFetch 每条终态分支均产出。MCP 接受列表加 `2024-10-07`；**提议版本仍留 `2025-06-18`**——官方的 `2025-11-25` 新增异步任务面（`tasks/*`）本包未实现，宣告它等于描述未发货能力。测试 3,254 → **3,267**。
 - **v0.82.0（2026-07-27）**：**Read 通读 >256KB 改为拒绝 + 首次对官方二进制做偏离普查**（守密人问「还能查到有哪些我们与官方不一致」）——第一次拿**官方发行物本体**（npm 平台包 + `sdk-tools.d.ts`）而非第三方重建档做四轴对照。**工具集**：官方 18 个工具银芯没有（多为绑定 Anthropic 云侧服务）。**输入 schema**：Bash/Read/Write/Edit/Glob/**Grep 15 字段**/WebFetch/WebSearch/Task 五件/Workflow/两个 PlanMode/EnterWorktree **全部一致**；真差异仅 `AskUserQuestion` 缺三个**回程字段**（守密人裁「只登记不改」——它们服务官方权限组件 UI，本 SDK 无那套组件）。**数值**：Read 25000 token / Bash 30000·150000 / **Glob 100** / Grep 250 均一致，唯一缺口 = 官方 `maxSizeBytes`=262144 拒通读，银芯此前只有 50MB OOM 守卫（松 200 倍）——**已按守密人裁定补上**，只拦通读、带 offset/limit 放行。**两条经复核是假象、如实记档**（`EnterPlanModeInput` 官方就是 `{}`；Grep 短横线键与 `TaskListInput` 亦一致）。未扫轴照实标注：官方 `*Output` 37 个 / 主循环提示词 / 权限钩子层 / MCP 协议层 / WebFetch 的 100000。

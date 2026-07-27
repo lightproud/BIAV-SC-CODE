@@ -516,6 +516,20 @@ export type ReadMcpResourceOutput = {
     mimeType?: string;
     text?: string;
   }>;
+  /**
+   * Human-readable error when the server could not read the resource
+   * (official parity, added 2026-07-27 by the output-type sweep). Unlike the
+   * other official-only fields that sweep found, this one is NOT bound to a UI
+   * this SDK lacks: the tool already has real failure paths (no servers
+   * configured, bad arguments, a throwing server), and a caller reading the
+   * structured result had no way to tell a failed read from an empty one.
+   *
+   * Scope note kept honest: the sweep compared TOP-LEVEL fields only, so
+   * nested differences went unseen on the first pass — official's
+   * `contents[].blobSavedTo` (where binary blob content was saved) is one such,
+   * and stays unshipped because this SDK does not spill blobs to disk.
+   */
+  error?: string;
 };
 
 /** Output of the TaskCreate tool. */
