@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-27
-- 功能总数：**152**
-- 脚本可达性：活 80 / 仅测试 0 / 孤儿 0
+- 功能总数：**153**
+- 脚本可达性：活 81 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 45 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 36 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 12 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
@@ -127,7 +127,7 @@
 - **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
   `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（36）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（37）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -187,6 +187,8 @@
   `scripts/okf_frontmatter.py`
 - **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
+- **`premerge_gate.py`** _[活:cli]_ — 合并前门禁 —— 把「CI 会跑什么」从凭记忆升格为算出来。  
+  `scripts/premerge_gate.py`
 - **`refresh_claude_code_prompts.py`** _[活:cli+workflow]_ — Refresh the archived Claude Code system-prompts reference from upstream.  
   `scripts/refresh_claude_code_prompts.py`
 - **`report_render.py`** _[活:cli+command+workflow]_ — 银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。  
