@@ -17,7 +17,6 @@ import { describe, expect, it } from 'vitest';
 import type {
   SpawnSubagentFn,
   SpawnSubagentParams,
-  ToolContext,
   ToolResultPayload,
 } from '../src/internal/contracts.js';
 import {
@@ -26,21 +25,11 @@ import {
 } from '../src/tools/workflow-engine.js';
 import { createWorkflowTool, workflowTool } from '../src/tools/workflow.js';
 import { createBuiltinTools } from '../src/tools/index.js';
+import { toolContext as makeCtx } from './helpers/tool-context.js';
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...overrides,
-  };
-}
 
 type SpawnStub = {
   spawn: SpawnSubagentFn;

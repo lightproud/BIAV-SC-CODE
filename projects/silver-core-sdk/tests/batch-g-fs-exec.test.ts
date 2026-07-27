@@ -46,9 +46,9 @@ import type {
   BackgroundShell,
   BuiltinTool,
   ShellManager,
-  ToolContext,
 } from '../src/internal/contracts.js';
 import type { SandboxContext } from '../src/types.js';
+import { toolContextIn as makeCtx, gatedToolContext as gatedCtx } from './helpers/tool-context.js';
 
 const posixIt = it.skipIf(process.platform === 'win32');
 
@@ -58,22 +58,6 @@ async function makeSandbox(): Promise<string> {
   const dir = await mkdtemp(path.join(tmpdir(), 'batch-g-test-'));
   sandboxes.push(dir);
   return dir;
-}
-
-function makeCtx(cwd: string, extra: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd,
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...extra,
-  };
-}
-
-/** A ctx whose read-before-write gate is armed and already unlocks `abs`. */
-function gatedCtx(cwd: string, abs: string, extra: Partial<ToolContext> = {}): ToolContext {
-  return makeCtx(cwd, { readFilePaths: new Set([abs]), ...extra });
 }
 
 let sandbox: string;

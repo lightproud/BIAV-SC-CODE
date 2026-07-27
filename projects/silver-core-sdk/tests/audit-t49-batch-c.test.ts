@@ -56,21 +56,11 @@ import type {
   SDKResultMessage,
 } from '../src/types.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
+import { toolContext as makeCtx } from './helpers/tool-context.js';
 
 // ---------------------------------------------------------------------------
 // shared helpers
 // ---------------------------------------------------------------------------
-
-function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...overrides,
-  };
-}
 
 const noHooks: HookRunner = {
   hasHooks: () => false,

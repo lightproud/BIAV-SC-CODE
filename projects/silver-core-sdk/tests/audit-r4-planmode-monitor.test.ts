@@ -15,7 +15,6 @@
  * createShellManager, disposed in afterEach.
  */
 
-import { tmpdir } from 'node:os';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import type {
@@ -28,6 +27,7 @@ import { createShellManager } from '../src/tools/shells.js';
 import { enterPlanModeTool } from '../src/tools/enterplanmode.js';
 import { exitPlanModeTool } from '../src/tools/exitplanmode.js';
 import { monitorTool } from '../src/tools/monitor.js';
+import { toolContext } from './helpers/tool-context.js';
 
 let managers: ShellManager[] = [];
 afterEach(() => {
@@ -41,15 +41,12 @@ function makeShells(): ShellManager {
   return m;
 }
 
+/** Shared builder, but with the REAL process env — these suites shell out. */
 function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
+  return toolContext({
     env: process.env as Record<string, string | undefined>,
-    signal: new AbortController().signal,
-    debug: () => {},
     ...overrides,
-  };
+  });
 }
 
 function text(r: ToolResultPayload): string {

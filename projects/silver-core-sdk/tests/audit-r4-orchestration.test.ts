@@ -18,33 +18,21 @@
  */
 
 import { describe, expect, it } from 'vitest';
-import { tmpdir } from 'node:os';
 
 import type {
   SpawnSubagentFn,
   SpawnSubagentParams,
-  ToolContext,
   ToolResultPayload,
 } from '../src/internal/contracts.js';
 import { sliceSurrogateSafe } from '../src/internal/text.js';
 import { parseWorkflowMeta } from '../src/tools/workflow-engine.js';
 import { createWorkflowTool, workflowTool } from '../src/tools/workflow.js';
 import { taskCreateTool, taskGetTool, taskUpdateTool } from '../src/tools/task.js';
+import { toolContext as makeCtx } from './helpers/tool-context.js';
 
 // ---------------------------------------------------------------------------
 // Helpers (tools-workflow.test.ts conventions)
 // ---------------------------------------------------------------------------
-
-function makeCtx(overrides: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd: tmpdir(),
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...overrides,
-  };
-}
 
 function makeSpawn(
   handler?: (p: SpawnSubagentParams) => Promise<string> | string,

@@ -43,7 +43,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { globTool } from '../src/tools/glob.js';
 import { grepTool } from '../src/tools/grep.js';
-import { readTool, createReadTool } from '../src/tools/read.js';
+import { readTool } from '../src/tools/read.js';
 import { writeTool } from '../src/tools/write.js';
 import { editTool } from '../src/tools/edit.js';
 import { bashOutputTool } from '../src/tools/shells.js';
@@ -51,8 +51,8 @@ import { formatCatN } from '../src/tools/fsutil.js';
 import type {
   BackgroundShell,
   ShellManager,
-  ToolContext,
 } from '../src/internal/contracts.js';
+import { toolContextIn as makeCtx, gatedToolContext as gatedCtx } from './helpers/tool-context.js';
 
 const posixIt = it.skipIf(process.platform === 'win32');
 
@@ -63,22 +63,6 @@ async function makeSandbox(): Promise<string> {
   const dir = await mkdtemp(path.join(tmpdir(), 'audit-r4-fs-'));
   sandboxes.push(dir);
   return dir;
-}
-
-function makeCtx(cwd: string, extra: Partial<ToolContext> = {}): ToolContext {
-  return {
-    cwd,
-    additionalDirectories: [],
-    env: {},
-    signal: new AbortController().signal,
-    debug: () => {},
-    ...extra,
-  };
-}
-
-/** A ctx whose read-before-write gate is armed and already unlocks `abs`. */
-function gatedCtx(cwd: string, abs: string, extra: Partial<ToolContext> = {}): ToolContext {
-  return makeCtx(cwd, { readFilePaths: new Set([abs]), ...extra });
 }
 
 function contentOf(r: { content: unknown }): string {
