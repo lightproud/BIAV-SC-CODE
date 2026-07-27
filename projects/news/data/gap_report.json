@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-27T16:58:22.518125+00:00",
-  "total_gaps": 251,
+  "generated_at": "2026-07-27T19:27:50.299970+00:00",
+  "total_gaps": 254,
   "platforms": {
     "appstore": {
       "missing_dates": [
@@ -189,9 +189,12 @@
     },
     "reddit": {
       "missing_dates": [
-        "2026-07-12"
+        "2026-07-12",
+        "2026-07-24",
+        "2026-07-25",
+        "2026-07-26"
       ],
-      "count": 1
+      "count": 4
     },
     "ruliweb": {
       "missing_dates": [

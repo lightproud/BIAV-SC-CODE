@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-27T16:57:48.046200+00:00",
+  "collected_at": "2026-07-27T19:26:23.478814+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -22,6 +22,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-07-27T02:10:20+00:00",
+      "lang": "english",
+      "title": "[正面] such a good game, everyone should play it <33",
+      "summary": "such a good game, everyone should play it <33",
+      "url": "https://steamcommunity.com/profiles/76561199811643437/recommended/3052450",
+      "author": "76561199811643437",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "such a good game, everyone should play it <33",
+      "timestamp_created": 1785118220,
+      "playtime_forever": 5839
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-27T17:08:20+00:00",
+      "lang": "english",
+      "title": "[正面] I hate gacha business models. I love Morimens. Thi...",
+      "summary": "I hate gacha business models. I love Morimens. This game is so good I don't care that it's a gacha. It's an anomaly of the genre in both quality and generosity. Imagine a surreal cosmic body horror visual novel combined with a card battler and that's what this is. The art is great, the audio is great, and the story and gameplay are great.",
+      "url": "https://steamcommunity.com/profiles/76561198052176994/recommended/3052450",
+      "author": "76561198052176994",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I hate gacha business models. I love Morimens. This game is so good I don't care that it's a gacha. It's an anomaly of the genre in both quality and generosity. Imagine a surreal cosmic body horror visual novel combined with a card battler and that's what this is. The art is great, the audio is great, and the story and gameplay are great.",
+      "timestamp_created": 1785172100,
+      "playtime_forever": 3816
+    },
+    {
+      "source": "steam",
       "time": "2026-07-27T13:29:34+00:00",
       "lang": "schinese",
       "title": "[正面] 第一次接触这种类型的游戏（算是吧 之前玩过一阵子白荆回廊）意外发现还挺有意思的ww",
@@ -37,21 +67,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-07-27T02:10:20+00:00",
-      "lang": "english",
-      "title": "[正面] such a good game, everyone should play it <33",
-      "summary": "such a good game, everyone should play it <33",
-      "url": "https://steamcommunity.com/profiles/76561199811643437/recommended/3052450",
-      "author": "76561199811643437",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "such a good game, everyone should play it <33",
-      "timestamp_created": 1785118220,
-      "playtime_forever": 5839
-    },
-    {
-      "source": "steam",
       "time": "2026-07-26T23:49:14+00:00",
       "lang": "english",
       "title": "[正面] Love the immersive narrative experience driven by...",
@@ -63,7 +78,7 @@
       "voted_up": true,
       "review": "Love the immersive narrative experience driven by steampunk meets dark fantasy world, soundtrack is awesome, unique art style, and the detective investigation themes are very intriguing",
       "timestamp_created": 1785109754,
-      "playtime_forever": 195
+      "playtime_forever": 296
     },
     {
       "source": "steam",
