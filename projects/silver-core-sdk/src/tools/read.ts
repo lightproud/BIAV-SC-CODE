@@ -40,6 +40,29 @@ const MAX_PDF_PAGES_PER_READ = 20;
 const MAX_READ_BYTES = 50 * 1024 * 1024;
 
 /**
+ * Refuse a WHOLE-FILE read past this size and steer the caller to a bounded
+ * read or to Grep — official Claude Code's `maxSizeBytes`, 262144 (256KB),
+ * verified in the 2.1.220 binary (`QLi=262144`, `FileTooLargeError`; the
+ * official value is additionally overridable by the `tengu_amber_wren` remote
+ * feature gate, which this SDK has no equivalent of).
+ *
+ * Distinct from MAX_READ_BYTES above, which is an OOM guard at 50MB — 200x
+ * looser, and therefore never the thing that stops a 30MB log from being pulled
+ * into memory and then thrown away by the character cap. The two coexist on
+ * purpose: this one is a STEERING limit ("that is not what Read is for"), that
+ * one is a SURVIVAL limit ("this would kill the process").
+ *
+ * Bounded reads are exempt, which is the escape hatch the official text itself
+ * names: the error says "Use offset and limit parameters to read specific
+ * portions of the file", and the official tool description says "use offset and
+ * limit for larger files". HONEST LIMIT on the reproduction: the official throw
+ * site is gated on an internal `truncateOnByteLimit` flag whose exact wiring
+ * per call path was not established here, so "offset or limit ⇒ allowed" is
+ * reproduced from the stated contract rather than from the observed branch.
+ */
+const MAX_READ_FILE_BYTES = 262144;
+
+/**
  * Read `abs` while enforcing `maxBytes` DURING the read, not just before it:
  * the stat-based pre-check races a concurrent writer (TOCTOU — the file can
  * grow past the cap between stat and read, audit 2026-07-17 L22). Chunked fd
@@ -245,6 +268,23 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
             `Read failed: "${abs}" is ${st.size} bytes, larger than the ${MAX_READ_BYTES}-byte (${Math.floor(
               MAX_READ_BYTES / (1024 * 1024),
             )}MB) read cap. Reading it whole would exhaust memory. Use the Grep tool to search it, or split the file into smaller pieces.`,
+          );
+        }
+        // Whole-file read of an oversized file: refuse and steer, as official
+        // Claude Code does at the same 256KB. Checked ONLY when neither offset
+        // nor limit was given — a bounded read is the escape hatch the refusal
+        // text itself names, so gating on the caller's intent (not on the
+        // file's size alone) is what makes the advice actionable.
+        if (
+          offsetRaw === undefined &&
+          limitRaw === undefined &&
+          st.size > MAX_READ_FILE_BYTES
+        ) {
+          return errorResult(
+            `Read failed: file content (${st.size} bytes) exceeds maximum allowed size ` +
+              `(${MAX_READ_FILE_BYTES} bytes). Use offset and limit parameters to read ` +
+              `specific portions of the file, or search for specific content with Grep ` +
+              `instead of reading the whole file.`,
           );
         }
       } catch (e) {

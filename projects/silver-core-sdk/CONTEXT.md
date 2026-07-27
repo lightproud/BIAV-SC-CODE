@@ -70,11 +70,15 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.81.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.81.0`
+**当前版本 `0.82.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.82.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.82.0（2026-07-27）：Read 通读 >256KB 改为拒绝 + 首次对官方二进制做偏离普查**——守密人问「还能查到有哪些我们与官方不一致」，遂第一次拿**官方发行物本体**（npm 平台包 + `sdk-tools.d.ts`）而非第三方重建档做四轴对照。**唯一改代码的一条**：官方 `maxSizeBytes`=262144 拒通读，银芯此前只有 50MB OOM 守卫（松 200 倍，于是 30MB 日志会被真读进内存再几乎全丢）。现两条上限各司其职——256KB **导向**（「这不是 Read 该干的事」）、50MB **保命**（「这会撑死进程」）；**只拦通读**，带 offset/limit 放行（官方错误文案与工具描述两处都写明这是逃生口）。**属破坏性变更**：读 256KB–50MB 档的消费方会突然报错，修法机械（加 offset/limit 或改 Grep）且错误文案已写明。
+**同批查出但按守密人裁定只登记不改**：`AskUserQuestion` 缺官方三个**回程字段**（`answers`/`annotations`/`metadata.source`）——它们服务于官方权限组件 UI 回填与遥测，本 SDK 是宿主回调、无那套组件，加了就是描述未发货能力。**另有两条经复核是假象、如实记档**：`EnterPlanModeInput` 官方就是 `{}`（一致），Grep 的 `-i/-A/-B/-C/-o` 与 `TaskListInput` 亦一致——首轮正则不认带引号键、且被单行 `{}` 接口串块骗了三次。
+详见 `docs/COMPAT.md`「Divergence sweep」。
 
 **v0.81.0（2026-07-27）：Read 截断页脚补齐官方三件套 + 数值基准获独立佐证**——守密人报的现象：一次 Read 读约 1500 行源码后，模型**连发六轮自动翻页**把整档翻完、上下文推到 300K+ 字符。旧页脚只说一句「Use offset=1301 to continue reading.」，**别的什么都不给**。**交付单的诊断对了一半，错的那一半值得记**：它认为官方从不给具体值，只说「the offset parameter」；对着**官方 npm 发行物 2.1.220** 提取实测，官方**也给值**——「…Call Read with offset=${I+1} limit=${I} for the next page, **or Grep to find a specific section**. **Do NOT answer from this page alone** if the answer may be further in the file.」。可见具体值从不是差别，差别是银芯只给了三件套的**第一件**：一条路、一个动作、没有更便宜的替代、没有告诫。守密人裁定取官方口径。两处截断分支（字符上限 / 行数上限）现均补齐三件套；大档 Grep 提示改为**只看体积**（原还要求存在超 2000 字符的长行，而 TS/Lua/Python 普通源码根本没有那种行，故该提示**几乎从未触发过**——它此前零测试覆盖，正与此吻合），256KB 阈值不动。`MAX_READ_OUTPUT_CHARS` 刻意不动。
 **同批订正 0.80.2 的一处错误结论**：那条说数值基准「须在装有 Claude Code 的机器上才能重新提取」——**错了**。官方二进制是**公开 npm 发行物**（`@anthropic-ai/claude-code` 的平台 optionalDependency），本仓一致性作业本就`--no-save` 装它作对照臂，属净室边界①「官方发行渠道产物」。已就地提取 2.1.220 实测：Read 输出上限 **25000 token**、Bash 输出 **30000 默认 / 150000 上限**、Grep `head_limit` **「Defaults to 250 when unspecified」逐字**——与 0.80.0 所依据的 2.1.141 三项**全部一致**，79 个版本未变。WebFetch 的 100000 本轮未再定位到，照实记。

@@ -474,6 +474,57 @@ was not re-located in this pass (the 2.1.220 build does not expose the same
 symbol shape), and the extraction is a point-in-time check, not a standing
 guard — nothing re-runs it automatically.
 
+## Divergence sweep vs the official 2.1.220 binary (2026-07-27)
+
+First systematic comparison against the OFFICIAL ARTIFACT rather than the
+third-party reconstruction: the npm platform package
+(`@anthropic-ai/claude-code-linux-x64`) plus the `sdk-tools.d.ts` type
+definitions shipped in the wrapper package. Four axes swept; two of the four
+findings turned out to be parser artifacts and are recorded as such, because a
+divergence list that quietly carries phantoms is worse than none.
+
+**Tool set.** 18 official tools this SDK does not ship: `Artifact`,
+`ClaudeDesign`, `CronCreate`/`CronDelete`/`CronList`, `ExitWorktree`, `Mcp`,
+`NotebookEdit`, `Projects`, `ProposeSkills`, `PushNotification`, `REPL`,
+`RefreshMcpTools`, `RemoteTrigger`, `ReportFindings`, `ScheduleWakeup`,
+`SendFeedback`, `ShowOnboardingRolePicker`. Most are bound to Anthropic-side
+services this SDK has no counterpart for. Three tools go the other way:
+`BashOutput` and `KillShell` (upstream replaced them with
+`TaskOutput`/`TaskStop`, which this SDK also ships — both pairs are kept) and
+`SendMessage` (not exported in the official d.ts).
+
+**Input schemas — one real gap.** Field-for-field, `Bash`, `Read`, `Write`,
+`Edit`, `Glob`, `Grep` (all 15 fields), `WebFetch`, `WebSearch`, the Task
+quintet, `Workflow`, `ExitPlanMode`, `EnterPlanMode` and `EnterWorktree` MATCH.
+
+- `AskUserQuestion` — official also carries `answers` ("User answers collected
+  by the permission component"), `annotations` (per-question `preview`/`notes`)
+  and `metadata.source` (analytics). All three are ROUND-TRIP fields written
+  back by the official permission-component UI; this SDK routes the tool to a
+  host callback and has no such component. **Keeper ruling 2026-07-27: log, do
+  not add** — declaring fields nothing populates would describe an unshipped
+  capability, which the red-line discipline forbids.
+- `Monitor` — official also carries `ws`/`url`/`protocols` (the WebSocket
+  source). Already documented above as an honest subset.
+
+**Numeric constants.** Read output cap 25,000 tokens, Bash output
+30,000/150,000, Glob `maxResults ?? 100` and Grep's "Defaults to 250 when
+unspecified" all match this SDK (Read's is 50,000 CHARACTERS by the
+documented measure divergence). One gap found and CLOSED in v0.82.0: official
+refuses a whole-file read past `maxSizeBytes` = 262144 (256KB) with
+`FileTooLargeError`, while this SDK's only size limit was the 50MB OOM guard.
+
+**Recorded as NOT divergences** (first-pass regex artifacts, corrected on
+re-check with a brace-balanced parse): `EnterPlanModeInput` is `{}` upstream and
+here — the four fields first attributed to it belong to the adjacent
+`TaskCreateInput`; `TaskListInput` is likewise `{}` on both sides; and Grep's
+`-i`/`-n`/`-A`/`-B`/`-C`/`-o` exist upstream too (the first parser did not match
+quoted keys).
+
+**Not swept, stated so the coverage is not overread**: official `*Output` types
+(37 of them), the main-loop system prompt, the permission/hook layer, the MCP
+protocol layer, and WebFetch's 100,000 (not re-located in the 2.1.220 build).
+
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 
 The model-side tool descriptions in `src/tools/descriptions.ts` are FAITHFUL
