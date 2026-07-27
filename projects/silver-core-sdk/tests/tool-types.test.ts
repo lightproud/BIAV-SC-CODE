@@ -2,7 +2,7 @@
  * T1 type-surface batch: official drop-in type exports.
  *
  * Covers (1) ToolInputSchemas / ToolOutputSchemas and their member types
- * (src/tool-types.ts, re-exported from the package root), (2) the four
+ * (src/types/tools.ts, re-exported from the package root), (2) the four
  * official type-name aliases (SDKControlInitializeResponse /
  * SDKFilesPersistedEvent / SDKRateLimitEvent / SDKAPIRetryMessage), (3) the
  * deferred_tool_use dual-track field names, and (4) CanUseTool's required
@@ -388,7 +388,7 @@ const taskUpdateOutput = {
 } satisfies TaskUpdateOutput;
 
 // TaskStop has an official output member (TaskOutput does not — it is absent
-// from the official ToolOutputSchemas union, mirrored in tool-types.ts).
+// from the official ToolOutputSchemas union, mirrored in types/tools.ts).
 const taskStopOutput = {
   message: 'Stopped background task bash_1',
   task_id: 'bash_1',
@@ -415,7 +415,7 @@ const webSearchOutput = {
 } satisfies WebSearchOutput;
 
 // B4c: Workflow output, official async-launch member VERBATIM (wire type over
-// runtime subset — the shipped tool runs synchronously; see src/tool-types.ts).
+// runtime subset — the shipped tool runs synchronously; see src/types/tools.ts).
 const workflowOutput = {
   status: 'async_launched',
   taskId: 'task_1',

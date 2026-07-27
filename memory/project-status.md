@@ -85,7 +85,7 @@
 | Silver Core Agent SDK 版本 | `0.79.1` | `projects/silver-core-sdk/package.json` |
 | Silver Core Maestro SDK 版本 | `0.79.1` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
-| agent SDK 源文件 / 测试档 | 124 / 198 | 磁盘实况 |
+| agent SDK 源文件 / 测试档 | 134 / 198 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 136 | 磁盘实况 |

@@ -65,6 +65,13 @@ version/internal/own files). `tests/import-discipline.test.ts` parses THIS
 table; an import not covered here turns the build red. Composition roots
 (`query.ts`, `session-manager.ts`, `index.ts`) may import everything.
 
+`src/types/` is CROSS-CUTTING, like `src/internal/`: anyone may import it, so it
+needs no row below. `src/types.ts` is a barrel over it (repo structure review
+P7, 2026-07-27 — the file had grown to 3760 lines, the largest source file here
+and the front door every module imports from). The split follows the section
+comments the file already carried, so the boundaries are the authors', not ones
+invented afterwards, and no import outside `src/types.ts` itself changed.
+
 | From | May import from |
 |------|-----------------|
 | `src/engine/` | `src/loop-support/` |

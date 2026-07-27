@@ -308,4 +308,4 @@ export type {
 export type * from './types.js';
 // Official tool input/output schema types (ToolInputSchemas / ToolOutputSchemas
 // and their members) — the drop-in consumer surface for typed tool interactions.
-export type * from './tool-types.js';
+export type * from './types/tools.js';

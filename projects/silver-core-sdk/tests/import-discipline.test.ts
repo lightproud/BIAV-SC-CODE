@@ -104,9 +104,12 @@ describe('import discipline (ARCHITECTURE.md "Import edges" is the authority)', 
         // Everywhere-allowed set.
         if (targetModule === '' && ALWAYS_ALLOWED_FILES.has(targetFile)) continue;
         if (targetModule === 'internal') continue;
+        // P7（2026-07-27）：src/types/ 是 src/types.ts 拆出的公开类型面，
+        // 与原来那一个 3760 行的文件同权——横切层，人人可 import。
+        if (targetModule === 'types') continue;
         if (targetModule === fromModule) continue;
-        // Root non-composition files (e.g. tool-types.ts) count as shared types.
-        if (targetModule === '' && targetFile === 'tool-types.ts') continue;
+        // 曾用于 src/tool-types.ts；该档已于 P7（2026-07-27）归位
+        // src/types/tools.ts，由上面的 targetModule === 'types' 覆盖。
         // Declared directed edge?
         const allowed = edges.get(fromModule);
         if (allowed !== undefined && allowed.has(targetModule)) continue;
