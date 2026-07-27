@@ -16,6 +16,36 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.88.0 — 2026-07-27
+
+Prescription cards (A1) + the sessions-domain health scan (audit P1-S1) — the
+"continue with the recommendations" batch.
+
+- **Cards mode grows a second kind.** `schema: 'cards'` files may now hold
+  **prescription** cards (意图 / 步骤 / 结果 / 适用边界 — reusable strategies)
+  alongside the existing **proposition** kind (结论 / 依据 / 过期条件 — facts),
+  told apart by field set. One propositional mould flattened every "how it was
+  done" (PlugMem evaluation A1) and every session-end progress card written
+  under cards mode (audit P1-3): a progress card now maps onto the prescription
+  kind (意图 = the task goal, 步骤 = done + remaining, 结果 = current state,
+  适用边界 = valid until the next session updates it). Mixing kinds in ONE card
+  is rejected by name — a silent pick would train the model on the wrong
+  template; the structured error restates BOTH formats. Type note:
+  `MemoryCard` is now a discriminated union on `kind`
+  ('proposition' | 'prescription') — consumers destructuring the old flat
+  shape add a kind check (cards is an opt-in surface).
+- **`assessSessionStoreHealth()`** (audit P1-S1): the sessions directory
+  accumulates — one transcript per session plus checkpoint blobs holding the
+  pre-image of every mutated file — and `deleteSession` existed with no signal
+  for WHEN. Same shape as `assessMemoryStoreHealth`: session count, transcript
+  vs checkpoint bytes, stale sessions (default 30 days), largest sessions,
+  orphan checkpoint dirs; an external sessionStore honestly reports
+  `available: false`, a hit scan bound reads as a lower bound. No deletion, no
+  scheduler (spec N1) — the host decides.
+- Blob-size cap for checkpoints deliberately NOT set here: capping means
+  "over-cap files cannot be rewound", a correctness trade-off parked for a
+  keeper ruling (todo T74) rather than silently chosen.
+
 ## 0.87.1 — 2026-07-27
 
 Nested-path sweep against official 2.1.220 — the third and last axis of the

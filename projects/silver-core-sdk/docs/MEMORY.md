@@ -42,9 +42,15 @@ M2 surface summary:
   "Session-end write-back observability" below.
 - **R9 cards mode** — `schema: 'cards'` + `memory.cards` (defaults 500
   chars/card, 50 cards/file): every written file must be `## <title>` cards
-  with 结论 / 依据 / 过期条件 fields (half- or full-width colons, multi-line
-  values); invalid writes return a structured error restating the format so
-  the model can retry.
+  in one of TWO kinds, told apart by field set (A1 extension, 2026-07-27) —
+  **proposition** (结论 / 依据 / 过期条件: facts) or **prescription** (意图 /
+  步骤 / 结果 / 适用边界: reusable strategies; a session-end progress card maps
+  here — 意图 = the task goal, 步骤 = done + remaining, 结果 = current state,
+  适用边界 = valid until the next session updates it). Half- or full-width
+  colons, multi-line values; mixing kinds in one card is rejected by name;
+  invalid writes return a structured error restating BOTH formats so the model
+  can retry. The resident index `/memories/MEMORY.md` is EXEMPT from cards
+  validation (it is an index, not a memory — 0.87.0).
 
 Requirements provenance: the r1 spec (2026-07-11) is archived verbatim at the
 bottom of this file. Implementation basis is exclusively the public Messages
