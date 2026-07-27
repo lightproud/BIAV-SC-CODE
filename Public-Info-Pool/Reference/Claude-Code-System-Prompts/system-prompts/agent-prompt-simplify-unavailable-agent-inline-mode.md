@@ -1,14 +1,14 @@
 <!--
-name: 'Agent Prompt: /simplify unavailable-agent inline mode'
-description: Runs the /simplify cleanup workflow inline across reuse, simplification, efficiency, and altitude angles when the Agent tool is unavailable
-ccVersion: 2.1.213
+name: "Agent Prompt: /simplify unavailable-agent inline mode"
+description: "Runs the /simplify cleanup workflow inline across reuse, simplification, efficiency, and altitude angles when the Agent tool is unavailable"
+ccVersion: "2.1.213"
 variables:
-  - AGENT_TOOL_NAME
-  - DIFF_GATHERING_PHASE
-  - REUSE_GUIDANCE
-  - SIMPLIFICATION_GUIDANCE
-  - EFFICIENCY_GUIDANCE
-  - ALTITUDE_GUIDANCE
+  - "AGENT_TOOL_NAME"
+  - "DIFF_GATHERING_PHASE"
+  - "REUSE_GUIDANCE"
+  - "SIMPLIFICATION_GUIDANCE"
+  - "EFFICIENCY_GUIDANCE"
+  - "ALTITUDE_GUIDANCE"
 -->
 `/simplify → ${AGENT_TOOL_NAME} tool unavailable → single-pass inline cleanup → apply the fixes`
 

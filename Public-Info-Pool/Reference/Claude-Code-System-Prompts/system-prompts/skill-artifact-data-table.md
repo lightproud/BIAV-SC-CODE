@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Artifact data table'
-description: Skill instructions for creating interactive data-table artifacts with sortable, filterable tabular data, safe JSON embedding, theming, and template-preservation requirements
-ccVersion: 2.1.208
+name: "Skill: Artifact data table"
+description: "Skill instructions for creating interactive data-table artifacts with sortable, filterable tabular data, safe JSON embedding, theming, and template-preservation requirements"
+ccVersion: "2.1.208"
 -->
 ---
 name: artifact-data-table

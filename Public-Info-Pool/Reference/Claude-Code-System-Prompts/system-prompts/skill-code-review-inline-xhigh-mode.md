@@ -1,18 +1,18 @@
 <!--
-name: 'Skill: Code Review inline xhigh mode'
-description: Extra-high inline /code-review prompt that runs ten finder angles, deduplicates without verification, sweeps for gaps, and returns up to fifteen findings
-ccVersion: 2.1.206
+name: "Skill: Code Review inline xhigh mode"
+description: "Extra-high inline /code-review prompt that runs ten finder angles, deduplicates without verification, sweeps for gaps, and returns up to fifteen findings"
+ccVersion: "2.1.206"
 variables:
-  - REVIEW_ANGLE_SHARED_INTRO
-  - REVIEW_CORRECTNESS_ANGLES
-  - REVIEW_REUSE_ANGLE
-  - REVIEW_SIMPLIFICATION_ANGLE
-  - REVIEW_EFFICIENCY_ANGLE
-  - REVIEW_ALTITUDE_ANGLE
-  - REVIEW_CONVENTIONS_ANGLE
-  - REVIEW_CANDIDATE_PRECEDENCE_NOTE
-  - FORMAT_REVIEW_OUTPUT_WITH_MINIMUM_FINDINGS_FN
-  - REVIEW_OUTPUT_FORMATTER_FN
+  - "REVIEW_ANGLE_SHARED_INTRO"
+  - "REVIEW_CORRECTNESS_ANGLES"
+  - "REVIEW_REUSE_ANGLE"
+  - "REVIEW_SIMPLIFICATION_ANGLE"
+  - "REVIEW_EFFICIENCY_ANGLE"
+  - "REVIEW_ALTITUDE_ANGLE"
+  - "REVIEW_CONVENTIONS_ANGLE"
+  - "REVIEW_CANDIDATE_PRECEDENCE_NOTE"
+  - "FORMAT_REVIEW_OUTPUT_WITH_MINIMUM_FINDINGS_FN"
+  - "REVIEW_OUTPUT_FORMATTER_FN"
 -->
 `xhigh effort → 10 inline angles → dedup (no verify) → sweep → ≤15 findings`
 

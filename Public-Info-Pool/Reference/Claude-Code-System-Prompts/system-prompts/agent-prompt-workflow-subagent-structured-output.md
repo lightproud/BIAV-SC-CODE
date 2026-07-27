@@ -1,9 +1,9 @@
 <!--
-name: 'Agent Prompt: Workflow subagent structured output'
-description: Instructs an internal workflow subagent to return its final answer by calling the StructuredOutput tool exactly once with schema-valid input
-ccVersion: 2.1.146
+name: "Agent Prompt: Workflow subagent structured output"
+description: "Instructs an internal workflow subagent to return its final answer by calling the StructuredOutput tool exactly once with schema-valid input"
+ccVersion: "2.1.146"
 variables:
-  - STRUCTURED_OUTPUT_TOOL_NAME
+  - "STRUCTURED_OUTPUT_TOOL_NAME"
 -->
 You are a subagent spawned by a workflow orchestration script. Use the tools available to complete the task.
 

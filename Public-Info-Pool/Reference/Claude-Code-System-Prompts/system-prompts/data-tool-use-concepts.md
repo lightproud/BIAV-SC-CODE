@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Tool use concepts'
-description: Conceptual foundations of tool use with the Claude API including tool definitions, tool choice, and best practices
-ccVersion: 2.1.203
+name: "Data: Tool use concepts"
+description: "Conceptual foundations of tool use with the Claude API including tool definitions, tool choice, and best practices"
+ccVersion: "2.1.219"
 -->
 # Tool Use Concepts
 
@@ -194,7 +194,7 @@ Web search and web fetch let Claude search the web and retrieve page content. Th
 ]
 ```
 
-### Dynamic Filtering (Fable 5 / Opus 4.8 / Opus 4.7 / Opus 4.6 / Sonnet 4.6)
+### Dynamic Filtering ({{OPUS_NAME}} / Fable 5 / Opus 4.8 / Opus 4.7 / Opus 4.6 / Sonnet 5 / Sonnet 4.6)
 
 The `web_search_20260209` and `web_fetch_20260209` versions support **dynamic filtering** — Claude writes and executes code to filter search results before they reach the context window, improving accuracy and token efficiency. Dynamic filtering is built into these tool versions and activates automatically; you do not need to separately declare the `code_execution` tool or pass any beta header.
 
@@ -232,6 +232,46 @@ The tool search tool lets Claude dynamically discover tools from large libraries
 For full documentation, use WebFetch:
 
 - URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool`
+
+---
+
+## Mid-conversation tool changes (Beta)
+
+**Beta header `mid-conversation-tool-changes-2026-07-01`; {{OPUS_NAME}} onward.** Normally `tools` is fixed for a conversation's lifetime — editing it changes the very front of the prompt prefix and invalidates the entire cache (see `prompt-caching.md` § Invalidation hierarchy). This feature lets you add and remove tools between turns while the cached prefix survives.
+
+Both operations are content blocks on a `{"role": "system", ...}` message appended to `messages[]`, and both reference a tool by name via a `tool_reference`:
+
+```python
+# Removal — must sit immediately before an assistant message, or last in messages.
+{"role": "system", "content": [
+    {"type": "tool_removal", "tool": {"type": "tool_reference", "name": "get_weather"}},
+]}
+
+# Addition — surfaces a tool declared up front with defer_loading.
+{"role": "system", "content": [
+    {"type": "tool_addition", "tool": {"type": "tool_reference", "name": "get_forecast"}},
+]}
+```
+
+**A tool you plan to add must already be declared in `tools[]` with `"defer_loading": True`.** Deferred tools are known to the request but not loaded into the model's context until a `tool_addition` surfaces them:
+
+```python
+tools = [
+    {"name": "get_weather", "description": "Get weather",
+     "input_schema": {"type": "object", "properties": {"city": {"type": "string"}}}},
+    {"name": "get_forecast", "description": "Get 5-day forecast",
+     "input_schema": {"type": "object", "properties": {"city": {"type": "string"}}},
+     "defer_loading": True},
+]
+```
+
+**To change a tool's definition**, do it across two requests: send a `tool_removal` for the old definition on the first, then carry the conversation forward with the updated entry in `tools[]` on the next.
+
+> ⚠️ Earlier previews used a different beta header and different block shapes; both are deprecated. Use `mid-conversation-tool-changes-2026-07-01` with `tool_addition` / `tool_removal` / `tool_reference`.
+
+SDK typings lag these blocks — pass them as plain dicts in Python, or add a `@ts-expect-error` in TypeScript.
+
+**Choosing between this and tool search:** tool search is for *discovery* — Claude finds what it needs from a large library on its own. Mid-conversation tool changes are for *control* — your application decides the tool set has changed (a mode switch, a resource that became available, a capability you want to revoke) and says so explicitly.
 
 ---
 
@@ -338,8 +378,20 @@ The advisor tool pairs a faster, lower-cost **executor** model (the top-level `m
 
 | Executor (request `model`) | Valid advisor (tool `model`) |
 |---|---|
-| `claude-haiku-4-5` / `claude-sonnet-4-6` / `claude-sonnet-5` / `claude-opus-4-6` / `claude-opus-4-7` | `claude-opus-4-8` or `claude-opus-4-7` |
-| `claude-opus-4-8` | `claude-opus-4-8` only |
+| `claude-haiku-4-5` / `claude-sonnet-4-6` / `{{SONNET_ID}}` / `claude-opus-4-6` / `claude-opus-4-7` | `{{OPUS_ID}}`, `{{FABLE_ID}}`, `{{MYTHOS_ID}}`, `claude-opus-4-8`, or `claude-opus-4-7` |
+| `claude-opus-4-8` | `{{OPUS_ID}}`, `{{FABLE_ID}}`, `{{MYTHOS_ID}}`, or `claude-opus-4-8` |
+| `{{OPUS_ID}}` | `{{OPUS_ID}}`, `{{FABLE_ID}}`, or `{{MYTHOS_ID}}` |
+| `{{FABLE_ID}}` | `{{FABLE_ID}}` or `{{OPUS_ID}}` |
+| `{{MYTHOS_ID}}` | `{{MYTHOS_ID}}` or `{{OPUS_ID}}` |
+
+> ⚠️ **The advisor's payload shape differs by advisor model.** The response block is always `advisor_tool_result`; what varies is its **`content`**, a discriminated union:
+>
+> | `content` type | Fields | When |
+> |---|---|---|
+> | `advisor_result` | `text`, `stop_reason` | Advisor returns plaintext (e.g. Opus 4.8) |
+> | `advisor_redacted_result` | `encrypted_content`, `stop_reason` | Advisor returns encrypted output — {{OPUS_NAME}}, {{FABLE_NAME}}, {{MYTHOS_NAME}} |
+>
+> So switch on `advisor_tool_result.content` type, not on the block type. Code that reads `.text` unconditionally gets nothing back from an {{OPUS_NAME}} advisor, because the payload is under `encrypted_content` instead — and you cannot read it, only replay it.
 
 Call via `client.beta.messages.create(...)` with `betas=["advisor-tool-2026-03-01"]` (or the `anthropic-beta: advisor-tool-2026-03-01` header). In multi-turn conversations, append the full `response.content` — including any `advisor_tool_result` blocks — back to `messages` on the next turn. If you remove the advisor tool from `tools` on a later turn while the history still contains `advisor_tool_result` blocks, the API returns a 400.
 
@@ -420,7 +472,7 @@ Two features are available:
 - **JSON outputs** (`output_config.format`): Control Claude's response format
 - **Strict tool use** (`strict: true`): Guarantee valid tool parameter schemas
 
-**Supported models:** {{FABLE_NAME}}, {{OPUS_NAME}}, {{SONNET_NAME}}, and {{HAIKU_NAME}}. Legacy models (Claude Opus 4.5, Claude Opus 4.1) also support structured outputs.
+**Supported models:** {{FABLE_NAME}}, {{OPUS_NAME}}, {{PREV_OPUS_NAME}}, {{SONNET_NAME}}, and {{HAIKU_NAME}}. Legacy models (Claude Opus 4.5, Claude Opus 4.1) also support structured outputs.
 
 > **Recommended:** Use `client.messages.parse()` which automatically validates responses against your schema. When using `messages.create()` directly, use `output_config: {format: {...}}`. The `output_format` convenience parameter is also accepted by some SDK methods (e.g., `.parse()`), but `output_config.format` is the canonical API-level parameter.
 

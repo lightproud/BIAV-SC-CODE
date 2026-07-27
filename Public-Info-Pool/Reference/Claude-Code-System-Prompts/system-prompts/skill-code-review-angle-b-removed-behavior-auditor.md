@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Code Review (Angle B — removed-behavior auditor)'
-description: Code-review finder angle that, for each deleted or rewritten line, names the behavior it guaranteed and confirms the new code still guarantees it
-ccVersion: 2.1.173
+name: "Skill: Code Review (Angle B — removed-behavior auditor)"
+description: "Code-review finder angle that, for each deleted or rewritten line, names the behavior it guaranteed and confirms the new code still guarantees it"
+ccVersion: "2.1.173"
 -->
 ### Angle B — removed-behavior auditor
 

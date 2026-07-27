@@ -1,23 +1,23 @@
 <!--
-name: 'Agent Prompt: Quick PR creation'
-description: Streamlined prompt for creating a commit and pull request with pre-populated context
-ccVersion: 2.1.206
+name: "Agent Prompt: Quick PR creation"
+description: "Streamlined prompt for creating a commit and pull request with pre-populated context"
+ccVersion: "2.1.206"
 variables:
-  - PREAMBLE_BLOCK
-  - SAFE_USER_VALUE
-  - WHOAMI_VALUE
-  - DEFAULT_BRANCH
-  - IS_BASH_ENV_FN
-  - REPO_PR_TEMPLATE_CONTEXT_BLOCK
-  - COMMIT_ATTRIBUTION_TEXT
-  - PR_EDIT_OPTIONS_NOTE
-  - PR_CREATE_OPTIONS_NOTE
-  - PR_WRITING_GUIDANCE_FN
-  - PR_SUMMARY_TEMPLATE_FN
-  - PR_TEST_PLAN_TEMPLATE_FN
-  - PR_BODY_EXTRA_SECTIONS
-  - PR_ATTRIBUTION_TEXT
-  - PR_SLACK_SHARING_FOLLOWUP_NOTE
+  - "PREAMBLE_BLOCK"
+  - "SAFE_USER_VALUE"
+  - "WHOAMI_VALUE"
+  - "DEFAULT_BRANCH"
+  - "IS_BASH_ENV_FN"
+  - "REPO_PR_TEMPLATE_CONTEXT_BLOCK"
+  - "COMMIT_ATTRIBUTION_TEXT"
+  - "PR_EDIT_OPTIONS_NOTE"
+  - "PR_CREATE_OPTIONS_NOTE"
+  - "PR_WRITING_GUIDANCE_FN"
+  - "PR_SUMMARY_TEMPLATE_FN"
+  - "PR_TEST_PLAN_TEMPLATE_FN"
+  - "PR_BODY_EXTRA_SECTIONS"
+  - "PR_ATTRIBUTION_TEXT"
+  - "PR_SLACK_SHARING_FOLLOWUP_NOTE"
 -->
 ${PREAMBLE_BLOCK}## Context
 

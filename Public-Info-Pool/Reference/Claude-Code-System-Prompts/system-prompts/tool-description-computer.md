@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: Computer'
-description: Main description for the Chrome browser computer automation tool
-ccVersion: 2.0.71
+name: "Tool Description: Computer"
+description: "Main description for the Chrome browser computer automation tool"
+ccVersion: "2.0.71"
 -->
 Use a mouse and keyboard to interact with a web browser, and take screenshots. If you don't have a valid tab ID, use tabs_context_mcp first to get available tabs.
 * Whenever you intend to click on an element like an icon, you should consult a screenshot to determine the coordinates of the element before moving the cursor.

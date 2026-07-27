@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Artifact runtime capability declarations'
-description: Defines Artifact runtime capability declaration, carry-forward, clearing, replacement, and contract pinning semantics
-ccVersion: 2.1.209
+name: "Data: Artifact runtime capability declarations"
+description: "Defines Artifact runtime capability declaration, carry-forward, clearing, replacement, and contract pinning semantics"
+ccVersion: "2.1.209"
 -->
 # Artifact runtime capabilities
 

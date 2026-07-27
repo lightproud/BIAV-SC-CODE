@@ -1,19 +1,19 @@
 <!--
-name: 'Tool Description: Bash (Git commit and PR creation instructions)'
-description: Instructions for creating git commits and GitHub pull requests
-ccVersion: 2.1.205
+name: "Tool Description: Bash (Git commit and PR creation instructions)"
+description: "Instructions for creating git commits and GitHub pull requests"
+ccVersion: "2.1.205"
 variables:
-  - LOADED_COMMANDS_CONTEXT
-  - COMMIT_CO_AUTHORED_BY_CLAUDE_CODE
-  - BASH_TOOL_NAME
-  - GET_TODO_TOOL_FN
-  - TASK_TOOL_NAME
-  - PR_INSTRUCTIONS_PREFIX
-  - PR_WRITING_GUIDANCE_BLOCK
-  - PR_GENERATED_WITH_CLAUDE_CODE
-  - PR_SUMMARY_TEMPLATE_FN
-  - PR_TEST_PLAN_TEMPLATE_FN
-  - PR_COMMON_OPERATIONS_NOTE
+  - "LOADED_COMMANDS_CONTEXT"
+  - "COMMIT_CO_AUTHORED_BY_CLAUDE_CODE"
+  - "BASH_TOOL_NAME"
+  - "GET_TODO_TOOL_FN"
+  - "TASK_TOOL_NAME"
+  - "PR_INSTRUCTIONS_PREFIX"
+  - "PR_WRITING_GUIDANCE_BLOCK"
+  - "PR_GENERATED_WITH_CLAUDE_CODE"
+  - "PR_SUMMARY_TEMPLATE_FN"
+  - "PR_TEST_PLAN_TEMPLATE_FN"
+  - "PR_COMMON_OPERATIONS_NOTE"
 -->
 ${LOADED_COMMANDS_CONTEXT.commit?`# Git
 - Never use git commands with the -i flag (like git rebase -i or git add -i) since they require interactive input which is not supported.

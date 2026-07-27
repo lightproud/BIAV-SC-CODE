@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Cowork plugin component schemas'
-description: Reference documentation for Cowork plugin component formats, including skills, agents, hooks, MCP servers, legacy commands, CONNECTORS.md, and README.md
-ccVersion: 2.1.163
+name: "Data: Cowork plugin component schemas"
+description: "Reference documentation for Cowork plugin component formats, including skills, agents, hooks, MCP servers, legacy commands, CONNECTORS.md, and README.md"
+ccVersion: "2.1.163"
 -->
 # Component Schemas
 

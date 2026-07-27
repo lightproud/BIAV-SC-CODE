@@ -1,7 +1,7 @@
 <!--
-name: 'System Reminder: Cross-session peer message authority warning with response prompt'
-description: Authority-warning note appended to a relayed peer message that also tells Claude to decide whether and how to reply via SendMessage after finishing its current task
-ccVersion: 2.1.181
+name: "System Reminder: Cross-session peer message authority warning with response prompt"
+description: "Authority-warning note appended to a relayed peer message that also tells Claude to decide whether and how to reply via SendMessage after finishing its current task"
+ccVersion: "2.1.181"
 -->
 
 

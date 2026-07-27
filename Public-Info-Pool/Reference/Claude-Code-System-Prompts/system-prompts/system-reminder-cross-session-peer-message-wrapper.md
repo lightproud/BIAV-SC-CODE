@@ -1,11 +1,11 @@
 <!--
-name: 'System Reminder: Cross-session peer message wrapper'
-description: Wraps an incoming cross-session peer message with a header, the message content, the authority warning, and an optional response prompt
-ccVersion: 2.1.181
+name: "System Reminder: Cross-session peer message wrapper"
+description: "Wraps an incoming cross-session peer message with a header, the message content, the authority warning, and an optional response prompt"
+ccVersion: "2.1.181"
 variables:
-  - PEER_MESSAGE_HEADER
-  - PEER_MESSAGE_CONTENT
-  - PEER_RESPONSE_NOTE
+  - "PEER_MESSAGE_HEADER"
+  - "PEER_MESSAGE_CONTENT"
+  - "PEER_RESPONSE_NOTE"
 -->
 ${PEER_MESSAGE_HEADER}
 ${PEER_MESSAGE_CONTENT}

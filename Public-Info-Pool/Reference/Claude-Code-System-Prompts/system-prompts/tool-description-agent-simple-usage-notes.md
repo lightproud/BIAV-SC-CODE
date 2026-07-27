@@ -1,19 +1,19 @@
 <!--
-name: 'Tool Description: Agent (simple usage notes)'
-description: Simplified usage notes for the Agent tool, including when to delegate, fork behavior, resumption, worktree isolation, background execution, parallel launches, and context restrictions
-ccVersion: 2.1.215
+name: "Tool Description: Agent (simple usage notes)"
+description: "Simplified usage notes for the Agent tool, including when to delegate, fork behavior, resumption, worktree isolation, background execution, parallel launches, and context restrictions"
+ccVersion: "2.1.215"
 variables:
-  - TOOL_BASE_DESCRIPTION
-  - HAS_PRO_RESTRICTION_NOTE
-  - IS_DEFAULT_SUBAGENT_STEERING_MODE
-  - FORK_CONTEXT_NOTE
-  - CAN_RUN_BACKGROUND_AGENTS
-  - SEND_MESSAGE_TOOL_NAME
-  - AGENT_TOOL_NAME
-  - CAN_FORK_CONTEXT
-  - REMOTE_ISOLATION_NOTE
-  - RUN_IN_BACKGROUND_NOTE
-  - CONTEXT_RESTRICTION_NOTE
+  - "TOOL_BASE_DESCRIPTION"
+  - "HAS_PRO_RESTRICTION_NOTE"
+  - "IS_DEFAULT_SUBAGENT_STEERING_MODE"
+  - "FORK_CONTEXT_NOTE"
+  - "CAN_RUN_BACKGROUND_AGENTS"
+  - "SEND_MESSAGE_TOOL_NAME"
+  - "AGENT_TOOL_NAME"
+  - "CAN_FORK_CONTEXT"
+  - "REMOTE_ISOLATION_NOTE"
+  - "RUN_IN_BACKGROUND_NOTE"
+  - "CONTEXT_RESTRICTION_NOTE"
 -->
 ${TOOL_BASE_DESCRIPTION}${HAS_PRO_RESTRICTION_NOTE?"":IS_DEFAULT_SUBAGENT_STEERING_MODE?`
 

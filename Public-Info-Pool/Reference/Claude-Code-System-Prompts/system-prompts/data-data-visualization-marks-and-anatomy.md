@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Data visualization marks and anatomy'
-description: Reference specifications for chart marks, spacing, labels, axes, legends, and stat-tile anatomy
-ccVersion: 2.1.198
+name: "Data: Data visualization marks and anatomy"
+description: "Reference specifications for chart marks, spacing, labels, axes, legends, and stat-tile anatomy"
+ccVersion: "2.1.198"
 -->
 # Marks & anatomy
 

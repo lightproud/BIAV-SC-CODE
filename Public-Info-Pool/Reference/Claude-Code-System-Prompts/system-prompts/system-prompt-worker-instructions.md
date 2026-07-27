@@ -1,9 +1,9 @@
 <!--
-name: 'System Prompt: Worker instructions'
-description: Instructions for workers to follow when implementing a change
-ccVersion: 2.1.147
+name: "System Prompt: Worker instructions"
+description: "Instructions for workers to follow when implementing a change"
+ccVersion: "2.1.147"
 variables:
-  - SKILL_TOOL_NAME
+  - "SKILL_TOOL_NAME"
 -->
 After you finish implementing the change:
 1. **Code review** — Invoke the `${SKILL_TOOL_NAME}` tool with `skill: "code-review"` to find correctness bugs (it reports findings; it does not edit code). Fix any findings it surfaces before continuing.

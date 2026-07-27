@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Claude API reference — PHP'
-description: PHP SDK reference
-ccVersion: 2.1.182
+name: "Data: Claude API reference — PHP"
+description: "PHP SDK reference"
+ccVersion: "2.1.219"
 -->
 # Claude API — PHP
 
@@ -104,7 +104,7 @@ use Anthropic\Messages\ThinkingBlock;
 $message = $client->messages->create(
     model: '{{OPUS_ID}}',
     maxTokens: 16000,
-    thinking: ['type' => 'adaptive', 'display' => 'summarized'], // display opt-in: default is omitted (empty thinking text) on Fable 5 / Mythos 5 / Opus 4.8 / 4.7
+    thinking: ['type' => 'adaptive', 'display' => 'summarized'], // display opt-in: default is omitted (empty thinking text) on Fable 5 / Mythos 5 / {{OPUS_NAME}} / Opus 4.8 / 4.7
     messages: [
         ['role' => 'user', 'content' => 'Solve: 27 * 453'],
     ],
@@ -122,7 +122,8 @@ foreach ($message->content as $block) {
 }
 ```
 
-> **Fable 5, Opus 4.8, Opus 4.7, Opus 4.6, and Sonnet 4.6:** Use adaptive thinking (above). `['type' => 'enabled', 'budgetTokens' => N]` is removed on Fable 5, Opus 4.8, and 4.7 (400 if sent); deprecated on Opus 4.6 and Sonnet 4.6.
+> **Fable 5, {{OPUS_NAME}}, Opus 4.8, Opus 4.7, Opus 4.6, and Sonnet 4.6:** Use adaptive thinking (above). `['type' => 'enabled', 'budgetTokens' => N]` is removed on Fable 5, {{OPUS_NAME}}, Opus 4.8, and 4.7 (400 if sent); deprecated on Opus 4.6 and Sonnet 4.6.
+> **{{OPUS_NAME}}:** thinking is on by default — omitting `thinking:` runs adaptive (`['type' => 'adaptive']` is equivalent), unlike Opus 4.8/4.7 where omitting it meant no thinking. `['type' => 'disabled']` is accepted only at effort `high` or lower; pairing it with `xhigh`/`max` returns a 400.
 > **Older models:** Use `thinking: ['type' => 'enabled', 'budgetTokens' => N]` (budget must be < `maxTokens`, min 1024).
 
 `$block->type === 'thinking'` also works for the check; `instanceof` narrows for PHPStan.
@@ -161,7 +162,7 @@ if ($message->stopReason === 'refusal' && $message->stopDetails !== null) {
 }
 ```
 
-**Refusal fallbacks ({{FABLE_NAME}}) — opt in by default.** Fallbacks are opt-in: without them a refused request simply stops. New `{{FABLE_ID}}` code should include the server-side `fallbacks` parameter (beta header `server-side-fallback-2026-06-01`, fallback model `{{OPUS_ID}}`, on the beta messages call) by default. The exact PHP binding (and the client-side middleware for providers without server-side support) is not documented here — WebFetch the PHP SDK repo's `examples/` from `shared/live-sources.md`; full semantics in `shared/model-migration.md` → Migrating to {{FABLE_NAME}} → `refusal` stop reason.
+**Refusal fallbacks ({{FABLE_NAME}}) — opt in by default.** Fallbacks are opt-in: without them a refused request simply stops. New `{{FABLE_ID}}` code should include the server-side `fallbacks` parameter (beta header `server-side-fallback-2026-06-01`, fallback model `{{PREV_OPUS_ID}}`, on the beta messages call) by default. The exact PHP binding (and the client-side middleware for providers without server-side support) is not documented here — WebFetch the PHP SDK repo's `examples/` from `shared/live-sources.md`; full semantics in `shared/model-migration.md` → Migrating to {{FABLE_NAME}} → `refusal` stop reason.
 
 ---
 

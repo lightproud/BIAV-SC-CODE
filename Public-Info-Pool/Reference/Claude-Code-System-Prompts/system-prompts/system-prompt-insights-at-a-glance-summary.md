@@ -1,15 +1,15 @@
 <!--
-name: 'System Prompt: Insights at a glance summary'
-description: Generates a concise 4-part summary (what's working, hindrances, quick wins, ambitious workflows) for the insights report
-ccVersion: 2.1.30
+name: "System Prompt: Insights at a glance summary"
+description: "Generates a concise 4-part summary (what's working, hindrances, quick wins, ambitious workflows) for the insights report"
+ccVersion: "2.1.30"
 variables:
-  - AGGREGATED_USAGE_DATA
-  - PROJECT_AREAS
-  - BIG_WINS
-  - FRICTION_CATEGORIES
-  - FEATURES_TO_TRY
-  - USAGE_PATTERNS_TO_ADOPT
-  - ON_THE_HORIZON
+  - "AGGREGATED_USAGE_DATA"
+  - "PROJECT_AREAS"
+  - "BIG_WINS"
+  - "FRICTION_CATEGORIES"
+  - "FEATURES_TO_TRY"
+  - "USAGE_PATTERNS_TO_ADOPT"
+  - "ON_THE_HORIZON"
 -->
 You're writing an "At a Glance" summary for a Claude Code usage insights report for Claude Code users. The goal is to help them understand their usage and improve how they can use Claude better, especially as models improve.
 

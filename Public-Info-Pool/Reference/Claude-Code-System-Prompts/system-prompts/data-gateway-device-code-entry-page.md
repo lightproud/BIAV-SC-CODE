@@ -1,9 +1,9 @@
 <!--
-name: 'Data: Gateway device code entry page'
-description: HTML verification page served at a gateway device endpoint, prompting the user to enter the short device code shown by Claude Code so they can sign in through their company identity provider
-ccVersion: 2.1.195
+name: "Data: Gateway device code entry page"
+description: "HTML verification page served at a gateway device endpoint, prompting the user to enter the short device code shown by Claude Code so they can sign in through their company identity provider"
+ccVersion: "2.1.195"
 variables:
-  - ERROR_CARD_BLOCK
+  - "ERROR_CARD_BLOCK"
 -->
 <span class="status warn">Connect device</span>
 <h1>Enter the code from your device.</h1>

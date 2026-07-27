@@ -1,7 +1,7 @@
 <!--
-name: 'Data: GitHub App installation PR description'
-description: Template for PR description when installing Claude Code GitHub App integration
-ccVersion: 2.1.113
+name: "Data: GitHub App installation PR description"
+description: "Template for PR description when installing Claude Code GitHub App integration"
+ccVersion: "2.1.113"
 -->
 ## 🤖 Installing Claude Code GitHub App
 

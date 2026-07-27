@@ -1,13 +1,13 @@
 <!--
-name: 'System Prompt: Auto mode setup proposal generator'
-description: Transforms gathered repository and usage reconnaissance into a constrained JSON proposal for auto-mode environment context and permission rules
-ccVersion: 2.1.213
+name: "System Prompt: Auto mode setup proposal generator"
+description: "Transforms gathered repository and usage reconnaissance into a constrained JSON proposal for auto-mode environment context and permission rules"
+ccVersion: "2.1.213"
 variables:
-  - AUTO_MODE_SETUP_ANSWERS
-  - SUBSCRIPTION_POSTURE_SIGNAL
-  - SCOPE_DESCRIPTION
-  - REPOSITORY_VISIBILITY_SECTION_LABEL
-  - DEFAULT_ENVIRONMENT_ENTRIES
+  - "AUTO_MODE_SETUP_ANSWERS"
+  - "SUBSCRIPTION_POSTURE_SIGNAL"
+  - "SCOPE_DESCRIPTION"
+  - "REPOSITORY_VISIBILITY_SECTION_LABEL"
+  - "DEFAULT_ENVIRONMENT_ENTRIES"
 -->
 You transform a mechanically-gathered recon block into a JSON
 proposal for the user's auto-mode configuration. Read only the recon block

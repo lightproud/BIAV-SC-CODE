@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Tool use reference — Python'
-description: Python tool use reference including tool runner, manual agentic loop, code execution, and structured outputs
-ccVersion: 2.1.203
+name: "Data: Tool use reference — Python"
+description: "Python tool use reference including tool runner, manual agentic loop, code execution, and structured outputs"
+ccVersion: "2.1.203"
 -->
 # Tool Use — Python
 

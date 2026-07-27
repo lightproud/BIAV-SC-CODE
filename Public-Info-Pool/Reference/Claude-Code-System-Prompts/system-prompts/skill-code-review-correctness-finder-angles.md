@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Code Review correctness finder angles'
-description: Shared /code-review finder-angle block covering line-by-line diff scanning, removed-behavior auditing, and cross-file tracing
-ccVersion: 2.1.206
+name: "Skill: Code Review correctness finder angles"
+description: "Shared /code-review finder-angle block covering line-by-line diff scanning, removed-behavior auditing, and cross-file tracing"
+ccVersion: "2.1.206"
 -->
 ### Angle A — line-by-line diff scan
 

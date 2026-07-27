@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: PushNotification'
-description: Tool description for PushNotification. This is a tool that sends a desktop notification in the user's terminal and pushes to their phone if Remote Control is connected.
-ccVersion: 2.1.199
+name: "Tool Description: PushNotification"
+description: "Tool description for PushNotification. This is a tool that sends a desktop notification in the user's terminal and pushes to their phone if Remote Control is connected."
+ccVersion: "2.1.199"
 -->
 This tool sends a desktop notification in the user's terminal. If Remote Control is connected, it also pushes to their phone. Either way, it pulls their attention from whatever they're doing — a meeting, another task, dinner — to this session. That's the cost. The benefit is they learn something now that they'd want to know now: a long task finished while they were away, a build is ready, you've hit something that needs their decision before you can continue.
 

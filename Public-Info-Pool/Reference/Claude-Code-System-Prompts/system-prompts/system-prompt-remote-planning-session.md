@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Remote planning session'
-description: System reminder that configures a remote planning session to explore the codebase, produce an implementation plan via ExitPlanMode, and handle plan approval, rejection, or teleportation back to the user's local terminal
-ccVersion: 2.1.89
+name: "System Prompt: Remote planning session"
+description: "System reminder that configures a remote planning session to explore the codebase, produce an implementation plan via ExitPlanMode, and handle plan approval, rejection, or teleportation back to the user's local terminal"
+ccVersion: "2.1.89"
 -->
 <system-reminder>
 You're running in a remote planning session. The user triggered this from their local terminal.

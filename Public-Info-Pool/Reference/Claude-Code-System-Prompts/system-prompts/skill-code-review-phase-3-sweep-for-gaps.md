@@ -1,9 +1,9 @@
 <!--
-name: 'Skill: Code Review (Phase 3 — sweep for gaps)'
-description: Final code-review sweep: a clean-slate reviewer re-reads the diff to catch defects the earlier passes missed
-ccVersion: 2.1.173
+name: "Skill: Code Review (Phase 3 — sweep for gaps)"
+description: "Final code-review sweep: a clean-slate reviewer re-reads the diff to catch defects the earlier passes missed"
+ccVersion: "2.1.173"
 variables:
-  - SWEEP_MISS_CATEGORIES
+  - "SWEEP_MISS_CATEGORIES"
 -->
 ## Phase 3 — Sweep for gaps
 

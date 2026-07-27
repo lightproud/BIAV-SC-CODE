@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Fork usage guidelines'
-description: Instructions for when to fork subagents and rules against reading fork output mid-flight or fabricating fork results
-ccVersion: 2.1.176
+name: "System Prompt: Fork usage guidelines"
+description: "Instructions for when to fork subagents and rules against reading fork output mid-flight or fabricating fork results"
+ccVersion: "2.1.176"
 -->
 
 

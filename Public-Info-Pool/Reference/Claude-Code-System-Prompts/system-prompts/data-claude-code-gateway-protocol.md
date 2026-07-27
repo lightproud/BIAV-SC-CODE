@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Claude Code gateway protocol'
-description: Markdown reference documenting the Claude Code gateway wire contract, including OAuth 2.0 device flow, RFC 8414 discovery, Messages API inference, managed settings, model discovery, OTLP telemetry, error envelopes, TLS certificate pinning, and proxying to Bedrock, Vertex, and Foundry
-ccVersion: 2.1.211
+name: "Data: Claude Code gateway protocol"
+description: "Markdown reference documenting the Claude Code gateway wire contract, including OAuth 2.0 device flow, RFC 8414 discovery, Messages API inference, managed settings, model discovery, OTLP telemetry, error envelopes, TLS certificate pinning, and proxying to Bedrock, Vertex, and Foundry"
+ccVersion: "2.1.211"
 -->
 # Claude Code gateway protocol
 

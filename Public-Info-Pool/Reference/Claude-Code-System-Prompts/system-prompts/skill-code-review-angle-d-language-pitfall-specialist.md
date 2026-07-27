@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Code Review (Angle D — language-pitfall specialist)'
-description: Code-review finder angle that hunts for the well-known traps of the diff's language or framework
-ccVersion: 2.1.173
+name: "Skill: Code Review (Angle D — language-pitfall specialist)"
+description: "Code-review finder angle that hunts for the well-known traps of the diff's language or framework"
+ccVersion: "2.1.173"
 -->
 ### Angle D — language-pitfall specialist
 

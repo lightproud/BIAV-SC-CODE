@@ -1,16 +1,16 @@
 <!--
-name: 'Skill: Dynamic pacing loop execution'
-description: Step-by-step instructions for executing a dynamic pacing loop that runs tasks, arms persistent monitors for event-gated waits, schedules fallback heartbeat ticks, and handles task notifications
-ccVersion: 2.1.202
+name: "Skill: Dynamic pacing loop execution"
+description: "Step-by-step instructions for executing a dynamic pacing loop that runs tasks, arms persistent monitors for event-gated waits, schedules fallback heartbeat ticks, and handles task notifications"
+ccVersion: "2.1.202"
 variables:
-  - TASK_RUN_LABEL
-  - MONITOR_TOOL_NAME
-  - SCHEDULE_WAKEUP_TOOL_NAME
-  - TASK_LIST_TOOL_NAME
-  - CONFIRMATION_MESSAGE
-  - DYNAMIC_MODE_SENTINEL
-  - TASK_STOP_TOOL_NAME
-  - ADDITIONAL_INFO_FN
+  - "TASK_RUN_LABEL"
+  - "MONITOR_TOOL_NAME"
+  - "SCHEDULE_WAKEUP_TOOL_NAME"
+  - "TASK_LIST_TOOL_NAME"
+  - "CONFIRMATION_MESSAGE"
+  - "DYNAMIC_MODE_SENTINEL"
+  - "TASK_STOP_TOOL_NAME"
+  - "ADDITIONAL_INFO_FN"
 -->
 1. **Run ${TASK_RUN_LABEL} now**, following the instructions inlined below.
 2. **If the next tick is gated on an event** (CI finishing, a PR comment, a log line) and no ${MONITOR_TOOL_NAME} is already running for it: arm one now with `persistent: true`. Its events wake this loop immediately — you do not wait for the ${SCHEDULE_WAKEUP_TOOL_NAME} deadline. Arm once; on later ticks call ${TASK_LIST_TOOL_NAME} first and skip if a monitor is already running.

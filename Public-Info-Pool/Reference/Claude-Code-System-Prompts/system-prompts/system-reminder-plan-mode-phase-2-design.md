@@ -1,10 +1,10 @@
 <!--
-name: 'System Reminder: Plan mode phase 2 design'
-description: Plan-mode phase 2 guidance for launching Plan agents to design an implementation approach after initial exploration
-ccVersion: 2.1.198
+name: "System Reminder: Plan mode phase 2 design"
+description: "Plan-mode phase 2 guidance for launching Plan agents to design an implementation approach after initial exploration"
+ccVersion: "2.1.198"
 variables:
-  - PLAN_AGENT
-  - PLAN_V2_AGENT_COUNT
+  - "PLAN_AGENT"
+  - "PLAN_V2_AGENT_COUNT"
 -->
 ### Phase 2: Design
 Goal: Design an implementation approach.

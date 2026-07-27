@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Managed Agents reference — PHP'
-description: Reference guide for using the Anthropic PHP SDK to create and manage agents, environments, and sessions
-ccVersion: 2.1.203
+name: "Data: Managed Agents reference — PHP"
+description: "Reference guide for using the Anthropic PHP SDK to create and manage agents, environments, and sessions"
+ccVersion: "2.1.203"
 -->
 # Managed Agents — PHP
 

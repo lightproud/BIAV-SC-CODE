@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Summarization no-tools guard'
-description: Shared prefix for compaction summarization agents that forbids tool use and requires plain text analysis and summary blocks
-ccVersion: 2.1.173
+name: "Agent Prompt: Summarization no-tools guard"
+description: "Shared prefix for compaction summarization agents that forbids tool use and requires plain text analysis and summary blocks"
+ccVersion: "2.1.173"
 -->
 CRITICAL: Respond with TEXT ONLY. Do NOT call any tools.
 

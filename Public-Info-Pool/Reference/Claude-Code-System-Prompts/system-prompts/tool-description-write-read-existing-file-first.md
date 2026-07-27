@@ -1,10 +1,10 @@
 <!--
-name: 'Tool Description: Write (read existing file first)'
-description: Tool description for Write in environments where existing files must be read before overwrite
-ccVersion: 2.1.140
+name: "Tool Description: Write (read existing file first)"
+description: "Tool description for Write in environments where existing files must be read before overwrite"
+ccVersion: "2.1.140"
 variables:
-  - READ_TOOL_NAME
-  - EDIT_TOOL_NAME
+  - "READ_TOOL_NAME"
+  - "EDIT_TOOL_NAME"
 -->
 Writes a file to the local filesystem, overwriting if one exists.
 

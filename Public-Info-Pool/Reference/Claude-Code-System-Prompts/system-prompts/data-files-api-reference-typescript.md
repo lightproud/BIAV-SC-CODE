@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Files API reference — TypeScript'
-description: TypeScript Files API reference including file upload, listing, deletion, and usage in messages
-ccVersion: 2.1.78
+name: "Data: Files API reference — TypeScript"
+description: "TypeScript Files API reference including file upload, listing, deletion, and usage in messages"
+ccVersion: "2.1.78"
 -->
 # Files API — TypeScript
 

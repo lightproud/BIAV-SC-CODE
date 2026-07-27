@@ -1,15 +1,15 @@
 <!--
-name: 'Tool Description: EnterPlanMode (ambiguous tasks)'
-description: Tool for entering plan mode when task has ambiguity
-ccVersion: 2.1.173
+name: "Tool Description: EnterPlanMode (ambiguous tasks)"
+description: "Tool for entering plan mode when task has ambiguity"
+ccVersion: "2.1.173"
 variables:
-  - USE_EMBEDDED_TOOLS_FN
-  - IS_BASH_ENV_FN
-  - GLOB_TOOL_NAME
-  - GREP_TOOL_NAME
-  - READ_TOOL_NAME
-  - ASK_USER_QUESTION_TOOL_NAME
-  - EXIT_PLAN_MODE_TOOL_NAME
+  - "USE_EMBEDDED_TOOLS_FN"
+  - "IS_BASH_ENV_FN"
+  - "GLOB_TOOL_NAME"
+  - "GREP_TOOL_NAME"
+  - "READ_TOOL_NAME"
+  - "ASK_USER_QUESTION_TOOL_NAME"
+  - "EXIT_PLAN_MODE_TOOL_NAME"
 -->
 ## What Happens in Plan Mode
 

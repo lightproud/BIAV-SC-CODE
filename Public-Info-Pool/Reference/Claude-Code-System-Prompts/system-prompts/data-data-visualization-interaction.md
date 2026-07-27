@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Data visualization interaction'
-description: Reference guidance for chart hover layers, tooltips, filters, linked highlighting, and interaction behavior
-ccVersion: 2.1.198
+name: "Data: Data visualization interaction"
+description: "Reference guidance for chart hover layers, tooltips, filters, linked highlighting, and interaction behavior"
+ccVersion: "2.1.198"
 -->
 # Interaction — tooltips & filters
 

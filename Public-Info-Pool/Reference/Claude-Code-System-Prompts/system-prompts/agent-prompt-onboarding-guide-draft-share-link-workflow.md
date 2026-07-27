@@ -1,9 +1,9 @@
 <!--
-name: 'Agent Prompt: Onboarding guide draft share link workflow'
-description: Adds instructions for sharing the draft ONBOARDING.md before review, then updating the same ShareOnboardingGuide link after the user answers the review questions
-ccVersion: 2.1.132
+name: "Agent Prompt: Onboarding guide draft share link workflow"
+description: "Adds instructions for sharing the draft ONBOARDING.md before review, then updating the same ShareOnboardingGuide link after the user answers the review questions"
+ccVersion: "2.1.132"
 variables:
-  - SHARE_ONBOARDING_GUIDE_TOOL_NAME
+  - "SHARE_ONBOARDING_GUIDE_TOOL_NAME"
 -->
 
 

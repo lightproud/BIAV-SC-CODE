@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: /code-review part 5 recall-biased verification phase'
-description: Recall-biased /code-review verification phase that treats realistic uncertain findings as plausible unless code refutes them
-ccVersion: 2.1.160
+name: "Agent Prompt: /code-review part 5 recall-biased verification phase"
+description: "Recall-biased /code-review verification phase that treats realistic uncertain findings as plausible unless code refutes them"
+ccVersion: "2.1.160"
 -->
 **PLAUSIBLE by default** — do not refute a candidate for being "speculative" or
 "depends on runtime state" when the state is realistic: concurrency races,

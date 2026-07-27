@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Claude API reference — cURL'
-description: Raw API reference for Claude API for use with cURL or else Raw HTTP
-ccVersion: 2.1.176
+name: "Data: Claude API reference — cURL"
+description: "Raw API reference for Claude API for use with cURL or else Raw HTTP"
+ccVersion: "2.1.219"
 -->
 # Claude API — cURL / Raw HTTP
 
@@ -187,11 +187,12 @@ For 1-hour TTL: `"cache_control": {"type": "ephemeral", "ttl": "1h"}`. Top-level
 
 ## Extended Thinking
 
-> **Fable 5, Opus 4.8, Opus 4.7, Opus 4.6, and Sonnet 4.6:** Use adaptive thinking. `budget_tokens` is removed on Fable 5, Opus 4.8, and 4.7 (400 if sent); deprecated on Opus 4.6 and Sonnet 4.6.
+> **Fable 5, {{OPUS_NAME}}, Opus 4.8, Opus 4.7, Opus 4.6, and Sonnet 4.6:** Use adaptive thinking. `budget_tokens` is removed on Fable 5, {{OPUS_NAME}}, Opus 4.8, and 4.7 (400 if sent); deprecated on Opus 4.6 and Sonnet 4.6.
+> **{{OPUS_NAME}}:** thinking is on by default — omitting `"thinking"` runs adaptive (`{"type": "adaptive"}` is equivalent), unlike Opus 4.8/4.7 where omitting it meant no thinking. `{"type": "disabled"}` is accepted only at effort `high` or lower; pairing it with `xhigh`/`max` returns a 400.
 > **Older models:** Use `"type": "enabled"` with `"budget_tokens": N` (must be < `max_tokens`, min 1024).
 
 ```bash
-# Fable 5 / Opus 4.8 / 4.7 / 4.6: adaptive thinking (recommended)
+# Fable 5 / {{OPUS_NAME}} / Opus 4.8 / 4.7 / 4.6: adaptive thinking (recommended)
 curl https://api.anthropic.com/v1/messages \
   -H "Content-Type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
@@ -225,7 +226,7 @@ response=$(curl -s https://api.anthropic.com/v1/messages \
   -d '{
     "model": "{{FABLE_ID}}",
     "max_tokens": 16000,
-    "fallbacks": [{"model": "{{OPUS_ID}}"}],
+    "fallbacks": [{"model": "{{PREV_OPUS_ID}}"}],
     "messages": [{"role": "user", "content": "Hello"}]
   }')
 
@@ -246,7 +247,7 @@ if [ "$(echo "$response" | jq -r '.stop_reason')" != "refusal" ] && \
 fi
 ```
 
-The header must be exactly `server-side-fallback-2026-06-01`. The parameter is rejected on the Batches API and unavailable on Amazon Bedrock, Vertex AI, and Microsoft Foundry. Full semantics (sticky routing, billing, streaming, echoing fallback turns back): `shared/model-migration.md` → Migrating to {{FABLE_NAME}} → `refusal` stop reason.
+The header must be exactly `server-side-fallback-2026-06-01` **for this array form**; the newer `fallbacks: "default"` scalar form uses `server-side-fallback-2026-07-01` instead (see `shared/model-migration.md` → Migrating to {{OPUS_NAME}} → New API features), and pairing either header with the other form returns a 400. The parameter is rejected on the Batches API and unavailable on Amazon Bedrock, Vertex AI, and Microsoft Foundry. Full semantics (sticky routing, billing, streaming, echoing fallback turns back): `shared/model-migration.md` → Migrating to {{FABLE_NAME}} → `refusal` stop reason.
 
 ---
 

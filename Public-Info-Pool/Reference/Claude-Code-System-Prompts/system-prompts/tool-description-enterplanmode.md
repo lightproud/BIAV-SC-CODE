@@ -1,11 +1,11 @@
 <!--
-name: 'Tool Description: EnterPlanMode'
-description: Tool description for entering plan mode to explore and design implementation approaches
-ccVersion: 2.1.215
+name: "Tool Description: EnterPlanMode"
+description: "Tool description for entering plan mode to explore and design implementation approaches"
+ccVersion: "2.1.215"
 variables:
-  - ASK_USER_QUESTION_TOOL_NAME
-  - CONDITIONAL_USE_AGENT_TOOL_INSTEAD_NOTE
-  - WHAT_HAPPENS_IN_PLAN_MODE_FN
+  - "ASK_USER_QUESTION_TOOL_NAME"
+  - "CONDITIONAL_USE_AGENT_TOOL_INSTEAD_NOTE"
+  - "WHAT_HAPPENS_IN_PLAN_MODE_FN"
 -->
 Use this tool proactively when you're about to start a non-trivial implementation task. Getting user sign-off on your approach before writing code prevents wasted effort and ensures alignment. This tool transitions you into plan mode where you can explore the codebase and design an implementation approach for user approval.
 

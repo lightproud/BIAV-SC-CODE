@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Agent Design Patterns'
-description: Reference guide covering decision heuristics for building agents on the Claude API, including tool surface design, context management, caching strategies, and composing tool calls
-ccVersion: 2.1.198
+name: "Skill: Agent Design Patterns"
+description: "Reference guide covering decision heuristics for building agents on the Claude API, including tool surface design, context management, caching strategies, and composing tool calls"
+ccVersion: "2.1.198"
 -->
 # Agent Design Patterns
 

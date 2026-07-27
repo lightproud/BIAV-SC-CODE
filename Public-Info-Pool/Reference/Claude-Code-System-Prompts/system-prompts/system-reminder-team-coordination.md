@@ -1,9 +1,9 @@
 <!--
-name: 'System Reminder: Team Coordination'
-description: System reminder for team coordination
-ccVersion: 2.1.178
+name: "System Reminder: Team Coordination"
+description: "System reminder for team coordination"
+ccVersion: "2.1.178"
 variables:
-  - TEAM_OBJECT
+  - "TEAM_OBJECT"
 -->
 <system-reminder>
 # Team Coordination

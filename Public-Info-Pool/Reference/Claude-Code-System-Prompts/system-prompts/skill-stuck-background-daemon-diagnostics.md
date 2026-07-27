@@ -1,14 +1,14 @@
 <!--
-name: 'Skill: /stuck (background-daemon diagnostics)'
-description: The background-daemon troubleshooting section of the /stuck skill
-ccVersion: 2.1.173
+name: "Skill: /stuck (background-daemon diagnostics)"
+description: "The background-daemon troubleshooting section of the /stuck skill"
+ccVersion: "2.1.173"
 variables:
-  - DAEMON_LOCK_CONTENT
-  - DAEMON_STATUS_CONTENT
-  - DAEMON_LOG_PATH
-  - DAEMON_LOG_SNIPPET
-  - WORKER_ROSTER_PATH_FN
-  - DAEMON_STATE_DIR_FN
+  - "DAEMON_LOCK_CONTENT"
+  - "DAEMON_STATUS_CONTENT"
+  - "DAEMON_LOG_PATH"
+  - "DAEMON_LOG_SNIPPET"
+  - "WORKER_ROSTER_PATH_FN"
+  - "DAEMON_STATE_DIR_FN"
 -->
 ## Daemon
 

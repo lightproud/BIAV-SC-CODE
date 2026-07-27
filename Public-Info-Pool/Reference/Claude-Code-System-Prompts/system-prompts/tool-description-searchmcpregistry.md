@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: SearchMcpRegistry'
-description: Describes the SearchMcpRegistry tool for discovering MCP connectors by keyword, including named-product and intent-based examples and install-state guidance
-ccVersion: 2.1.199
+name: "Tool Description: SearchMcpRegistry"
+description: "Describes the SearchMcpRegistry tool for discovering MCP connectors by keyword, including named-product and intent-based examples and install-state guidance"
+ccVersion: "2.1.199"
 -->
 Search the MCP connector registry by keyword. Call this when connecting to an MCP server might help complete the task — whether or not the user named a specific product.
 

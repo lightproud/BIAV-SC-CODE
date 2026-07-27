@@ -1,10 +1,10 @@
 <!--
-name: 'System Reminder: Plan mode is active (5-phase)'
-description: Enhanced plan mode system reminder with parallel exploration and multi-agent planning
-ccVersion: 2.1.198
+name: "System Reminder: Plan mode is active (5-phase)"
+description: "Enhanced plan mode system reminder with parallel exploration and multi-agent planning"
+ccVersion: "2.1.198"
 variables:
-  - EXPLORE_SUBAGENT
-  - PLAN_V2_EXPLORE_AGENT_COUNT
+  - "EXPLORE_SUBAGENT"
+  - "PLAN_V2_EXPLORE_AGENT_COUNT"
 -->
 ### Phase 1: Initial Understanding
 Goal: Gain a comprehensive understanding of the user's request by reading through code and asking them questions. Critical: In this phase you should only use the ${EXPLORE_SUBAGENT.agentType} subagent type.

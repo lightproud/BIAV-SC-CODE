@@ -1,10 +1,10 @@
 <!--
-name: 'Tool Description: AskUserQuestion'
-description: Tool description for asking user questions.
-ccVersion: 2.1.154
+name: "Tool Description: AskUserQuestion"
+description: "Tool description for asking user questions."
+ccVersion: "2.1.154"
 variables:
-  - ENTER_PLAN_MODE_TOOL_NAME
-  - EXIT_PLAN_MODE_TOOL_NAME
+  - "ENTER_PLAN_MODE_TOOL_NAME"
+  - "EXIT_PLAN_MODE_TOOL_NAME"
 -->
 Use this tool only when you are blocked on a decision that is genuinely the user's to make: one you cannot resolve from the request, the code, or sensible defaults.
 

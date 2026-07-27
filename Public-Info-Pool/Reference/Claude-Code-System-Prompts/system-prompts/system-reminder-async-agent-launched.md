@@ -1,10 +1,10 @@
 <!--
-name: 'System Reminder: Async agent launched'
-description: Warns Claude not to duplicate an asynchronously launched agent's work or read its full JSONL transcript output file
-ccVersion: 2.1.193
+name: "System Reminder: Async agent launched"
+description: "Warns Claude not to duplicate an asynchronously launched agent's work or read its full JSONL transcript output file"
+ccVersion: "2.1.193"
 variables:
-  - AGENT_OUTPUT_FILE
-  - READ_TOOL_NAME
+  - "AGENT_OUTPUT_FILE"
+  - "READ_TOOL_NAME"
 -->
 Do not duplicate this agent's work — avoid working with the same files or topics it is using.
 output_file: ${AGENT_OUTPUT_FILE.outputFile}

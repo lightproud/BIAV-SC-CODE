@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Run Electron desktop GUI app example'
-description: Example file for the Run app skill showing how to launch an Electron desktop app under xvfb and drive it through a Playwright REPL driver
-ccVersion: 2.1.145
+name: "Skill: Run Electron desktop GUI app example"
+description: "Example file for the Run app skill showing how to launch an Electron desktop app under xvfb and drive it through a Playwright REPL driver"
+ccVersion: "2.1.145"
 -->
 # Example: Electron / desktop GUI app
 

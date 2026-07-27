@@ -1,11 +1,11 @@
 <!--
-name: 'Tool Description: TaskList'
-description: Description for the TaskList tool, which lists all tasks in the task list
-ccVersion: 2.1.173
+name: "Tool Description: TaskList"
+description: "Description for the TaskList tool, which lists all tasks in the task list"
+ccVersion: "2.1.173"
 variables:
-  - TEAMMATE_TASKLIST_WHEN_TO_USE_NOTE
-  - TASKLIST_ID_OUTPUT_LINE
-  - TEAMMATE_WORKFLOW_BLOCK
+  - "TEAMMATE_TASKLIST_WHEN_TO_USE_NOTE"
+  - "TASKLIST_ID_OUTPUT_LINE"
+  - "TEAMMATE_WORKFLOW_BLOCK"
 -->
 Use this tool to list all tasks in the task list.
 

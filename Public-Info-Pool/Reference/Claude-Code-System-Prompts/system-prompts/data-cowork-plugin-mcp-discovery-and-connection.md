@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Cowork plugin MCP discovery and connection'
-description: Reference guidance for finding MCP connectors during plugin customization, using search and suggestion tools, mapping categories to keywords, and writing .mcp.json entries
-ccVersion: 2.1.163
+name: "Data: Cowork plugin MCP discovery and connection"
+description: "Reference guidance for finding MCP connectors during plugin customization, using search and suggestion tools, mapping categories to keywords, and writing .mcp.json entries"
+ccVersion: "2.1.163"
 -->
 # MCP Discovery and Connection
 

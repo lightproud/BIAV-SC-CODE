@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: Cowork onboarding role picker'
-description: Describes the Cowork onboarding role-picker tool that returns a selected or typed role and should only be used while setting up Cowork for the user's job function
-ccVersion: 2.1.172
+name: "Tool Description: Cowork onboarding role picker"
+description: "Describes the Cowork onboarding role-picker tool that returns a selected or typed role and should only be used while setting up Cowork for the user's job function"
+ccVersion: "2.1.172"
 -->
 Render a clickable role-picker chip row during Cowork onboarding. Call this when asking the user what kind of work they do so they can pick their role and get a matching plugin installed. The role list is hardcoded in the frontend — call with no args.
 

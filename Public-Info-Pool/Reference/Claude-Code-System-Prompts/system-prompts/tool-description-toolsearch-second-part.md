@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: ToolSearch (second part)'
-description: The bulk of the tool description.
-ccVersion: 2.1.178
+name: "Tool Description: ToolSearch (second part)"
+description: "The bulk of the tool description."
+ccVersion: "2.1.178"
 -->
  This tool takes a query, matches it against the deferred tool list, and returns the matched tools' complete JSONSchema definitions inside a <functions> block. Once a tool's schema appears in that result, it is callable exactly like any tool defined at the top of the prompt.
 

@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Claude Code configuration guide'
-description: Skill instructions for answering Claude Code configuration questions by checking the running build, bundled references, and current documentation
-ccVersion: 2.1.211
+name: "Skill: Claude Code configuration guide"
+description: "Skill instructions for answering Claude Code configuration questions by checking the running build, bundled references, and current documentation"
+ccVersion: "2.1.211"
 -->
 # Claude Code Configuration Guide
 

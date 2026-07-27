@@ -1,14 +1,15 @@
 <!--
-name: 'Agent Prompt: /code-review part 7 high effort mode'
-description: High-effort /code-review prompt that favors recall with three finder angles, recall-biased verification, and up to ten JSON findings
-ccVersion: 2.1.213
+name: "Agent Prompt: /code-review part 7 high effort mode"
+description: "High-effort /code-review prompt that favors recall with three finder angles, recall-biased verification, and up to ten JSON findings"
+ccVersion: "2.1.218"
 variables:
-  - DIFF_GATHERING_PHASE
-  - AGENT_TOOL_NAME
-  - BASE_FINDER_ANGLES_BLOCK
-  - CLEANUP_AND_ALTITUDE_CANDIDATES_NOTE
-  - RECALL_BIASED_VERIFY_PHASE
-  - OUTPUT_FORMAT_FN
+  - "DIFF_GATHERING_PHASE"
+  - "AGENT_TOOL_NAME"
+  - "AGENT_UNAVAILABLE_INSTRUCTIONS"
+  - "BASE_FINDER_ANGLES_BLOCK"
+  - "CLEANUP_AND_ALTITUDE_CANDIDATES_NOTE"
+  - "RECALL_BIASED_VERIFY_PHASE"
+  - "OUTPUT_FORMAT_FN"
 -->
 `high effort → 3+5 angles × 6 candidates → 1-vote verify (recall-biased) → ≤10 findings`
 
@@ -21,7 +22,7 @@ ${DIFF_GATHERING_PHASE}
 
 Run **8 independent finder angles** via the ${AGENT_TOOL_NAME} tool. Each
 surfaces **up to 6 candidate findings** with `file`, `line`, a one-line
-`summary`, and a concrete `failure_scenario`.
+`summary`, and a concrete `failure_scenario`. ${AGENT_UNAVAILABLE_INSTRUCTIONS}
 
 ${BASE_FINDER_ANGLES_BLOCK}
 ${CLEANUP_AND_ALTITUDE_CANDIDATES_NOTE}

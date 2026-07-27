@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Parameter: Computer action'
-description: Action parameter options for the Chrome browser computer tool
-ccVersion: 2.0.71
+name: "Tool Parameter: Computer action"
+description: "Action parameter options for the Chrome browser computer tool"
+ccVersion: "2.0.71"
 -->
 The action to perform:
 * `left_click`: Click the left mouse button at the specified coordinates.

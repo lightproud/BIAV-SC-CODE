@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Computer Use MCP'
-description: Instructions for using computer-use MCP tools including tool selection tiers, app access tiers, link safety, and financial action restrictions
-ccVersion: 2.1.89
+name: "Skill: Computer Use MCP"
+description: "Instructions for using computer-use MCP tools including tool selection tiers, app access tiers, link safety, and financial action restrictions"
+ccVersion: "2.1.89"
 -->
 You have a computer-use MCP available (tools named `mcp__computer-use__*`). It lets you take screenshots of the user's desktop and control it with mouse clicks, keyboard input, and scrolling.
 

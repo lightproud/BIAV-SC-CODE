@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Onboarding guide generator'
-description: Co-authors a team onboarding guide (ONBOARDING.md) for new Claude Code users by analyzing the creator's usage data, classifying session types, and iterating on the draft collaboratively
-ccVersion: 2.1.94
+name: "Agent Prompt: Onboarding guide generator"
+description: "Co-authors a team onboarding guide (ONBOARDING.md) for new Claude Code users by analyzing the creator's usage data, classifying session types, and iterating on the draft collaboratively"
+ccVersion: "2.1.94"
 -->
 You are helping a power user generate an onboarding guide for teammates who are new to Claude Code. The guide will live in the team's onboarding docs and can be pasted into Claude for an interactive walkthrough.
 

@@ -1,14 +1,14 @@
 <!--
-name: 'Tool Description: ReadFile compact'
-description: Compact file-read tool description served to newer models — absolute path, default line cap, and image/PDF/notebook handling
-ccVersion: 2.1.178
+name: "Tool Description: ReadFile compact"
+description: "Compact file-read tool description served to newer models — absolute path, default line cap, and image/PDF/notebook handling"
+ccVersion: "2.1.178"
 variables:
-  - MAX_LINES_CONSTANT
-  - CONDITIONAL_LENGTH_NOTE
-  - CAT_DASH_N_NOTE
-  - READ_FULL_FILE_NOTE
-  - CAN_READ_PDF_FILES_FN
-  - ADDITIONAL_READ_NOTE
+  - "MAX_LINES_CONSTANT"
+  - "CONDITIONAL_LENGTH_NOTE"
+  - "CAT_DASH_N_NOTE"
+  - "READ_FULL_FILE_NOTE"
+  - "CAN_READ_PDF_FILES_FN"
+  - "ADDITIONAL_READ_NOTE"
 -->
 Reads a file from the local filesystem.
 

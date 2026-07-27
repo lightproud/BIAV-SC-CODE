@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Claude Platform on AWS reference'
-description: Reference documentation for using the Claude Developer Platform through AWS infrastructure, including AnthropicAWS clients, required region and workspace configuration, SigV4 authentication, and short-term API keys
-ccVersion: 2.1.182
+name: "Data: Claude Platform on AWS reference"
+description: "Reference documentation for using the Claude Developer Platform through AWS infrastructure, including AnthropicAWS clients, required region and workspace configuration, SigV4 authentication, and short-term API keys"
+ccVersion: "2.1.182"
 -->
 # Claude Platform on AWS
 

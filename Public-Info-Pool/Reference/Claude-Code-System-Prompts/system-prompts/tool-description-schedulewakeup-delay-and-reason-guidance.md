@@ -1,11 +1,11 @@
 <!--
-name: 'Tool Description: ScheduleWakeup delay and reason guidance'
-description: Extends the ScheduleWakeup tool description with no-op reporting, prompt-cache-aware delay selection, and concise reason-field guidance
-ccVersion: 2.1.210
+name: "Tool Description: ScheduleWakeup delay and reason guidance"
+description: "Extends the ScheduleWakeup tool description with no-op reporting, prompt-cache-aware delay selection, and concise reason-field guidance"
+ccVersion: "2.1.210"
 variables:
-  - SCHEDULE_WAKEUP_BASE_DESCRIPTION
-  - INCLUDE_NOOP_GUIDANCE
-  - PROMPT_CACHE_TTL_CLASSIFICATION
+  - "SCHEDULE_WAKEUP_BASE_DESCRIPTION"
+  - "INCLUDE_NOOP_GUIDANCE"
+  - "PROMPT_CACHE_TTL_CLASSIFICATION"
 -->
 ${SCHEDULE_WAKEUP_BASE_DESCRIPTION}${INCLUDE_NOOP_GUIDANCE?`
 

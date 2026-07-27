@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Managed Agents reference — cURL'
-description: Provides cURL and raw HTTP request examples for the Managed Agents API including environment, agent, and session lifecycle operations
-ccVersion: 2.1.203
+name: "Data: Managed Agents reference — cURL"
+description: "Provides cURL and raw HTTP request examples for the Managed Agents API including environment, agent, and session lifecycle operations"
+ccVersion: "2.1.218"
 -->
 # Managed Agents — cURL / Raw HTTP
 
@@ -215,7 +215,7 @@ curl -X POST https://api.anthropic.com/v1/sessions/$SESSION_ID/events \
   -d '{
     "events": [
       {
-        "type": "interrupt"
+        "type": "user.interrupt"
       }
     ]
   }'

@@ -1,9 +1,9 @@
 <!--
-name: 'Tool Description: WebFetch (concise)'
-description: Concise tool description for WebFetch covering URL fetching, private URL limitations, redirects, and caching
-ccVersion: 2.1.176
+name: "Tool Description: WebFetch (concise)"
+description: "Concise tool description for WebFetch covering URL fetching, private URL limitations, redirects, and caching"
+ccVersion: "2.1.176"
 variables:
-  - IS_ARTIFACT_TOOL_ENABLED
+  - "IS_ARTIFACT_TOOL_ENABLED"
 -->
 Fetches a URL, converts the page to markdown, and answers `prompt` against it using a small fast model.
 

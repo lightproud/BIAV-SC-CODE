@@ -1,10 +1,10 @@
 <!--
-name: 'System Prompt: Background subagent delegation examples'
-description: Provides background subagent examples showing self-contained prompts, waiting-state responses, and later result reporting
-ccVersion: 2.1.211
+name: "System Prompt: Background subagent delegation examples"
+description: "Provides background subagent examples showing self-contained prompts, waiting-state responses, and later result reporting"
+ccVersion: "2.1.211"
 variables:
-  - AGENT_TOOL_NAME
-  - FRESH_AGENT_EXAMPLE
+  - "AGENT_TOOL_NAME"
+  - "FRESH_AGENT_EXAMPLE"
 -->
 Example usage:
 

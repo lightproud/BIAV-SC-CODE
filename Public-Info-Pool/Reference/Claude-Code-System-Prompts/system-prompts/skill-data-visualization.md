@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Data Visualization'
-description: Skill instructions for producing accessible, brand-neutral charts, graphs, dashboards, and data visualizations using a validated method
-ccVersion: 2.1.210
+name: "Skill: Data Visualization"
+description: "Skill instructions for producing accessible, brand-neutral charts, graphs, dashboards, and data visualizations using a validated method"
+ccVersion: "2.1.210"
 -->
 ---
 name: Data Visualization

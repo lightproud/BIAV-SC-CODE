@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: SendUserFile'
-description: Describes the SendUserFile tool for surfacing generated deliverable files to the user, with optional captions and normal or proactive status
-ccVersion: 2.1.196
+name: "Tool Description: SendUserFile"
+description: "Describes the SendUserFile tool for surfacing generated deliverable files to the user, with optional captions and normal or proactive status"
+ccVersion: "2.1.216"
 -->
 Send files to the user. Use this when the file *is* the deliverable — a generated diagram, a report, a screenshot, a built artifact — and you want it surfaced, not just mentioned. Paths can be absolute or relative to the current working directory.
 

@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Run skill template'
-description: Template file for the Run skill generator showing the frontmatter and section structure for a project-specific run skill
-ccVersion: 2.1.145
+name: "Skill: Run skill template"
+description: "Template file for the Run skill generator showing the frontmatter and section structure for a project-specific run skill"
+ccVersion: "2.1.145"
 -->
 ---
 name: run-<unit-name>

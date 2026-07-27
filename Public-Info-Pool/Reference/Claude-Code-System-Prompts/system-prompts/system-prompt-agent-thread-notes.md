@@ -1,9 +1,9 @@
 <!--
-name: 'System Prompt: Agent thread notes'
-description: Behavioral guidelines for agent threads covering absolute paths, response formatting, emoji avoidance, and tool call punctuation
-ccVersion: 2.1.187
+name: "System Prompt: Agent thread notes"
+description: "Behavioral guidelines for agent threads covering absolute paths, response formatting, emoji avoidance, and tool call punctuation"
+ccVersion: "2.1.187"
 variables:
-  - WRITE_TOOL_NAME
+  - "WRITE_TOOL_NAME"
 -->
 Notes:
 ${"- Agent threads always have their cwd reset between bash calls, as a result please only use absolute file paths."}

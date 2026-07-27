@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Teammate Communication'
-description: System prompt for teammate communication in swarm
-ccVersion: 2.1.173
+name: "System Prompt: Teammate Communication"
+description: "System prompt for teammate communication in swarm"
+ccVersion: "2.1.173"
 -->
 
 # Agent Teammate Communication

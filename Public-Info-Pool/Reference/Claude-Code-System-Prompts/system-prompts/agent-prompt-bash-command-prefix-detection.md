@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Bash command prefix detection'
-description: System prompt for detecting command prefixes and command injection
-ccVersion: 2.1.20
+name: "Agent Prompt: Bash command prefix detection"
+description: "System prompt for detecting command prefixes and command injection"
+ccVersion: "2.1.20"
 -->
 <policy_spec>
 # Claude Code Code Bash command prefix detection

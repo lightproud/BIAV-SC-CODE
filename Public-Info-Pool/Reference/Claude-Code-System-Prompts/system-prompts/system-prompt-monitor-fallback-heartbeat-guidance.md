@@ -1,12 +1,12 @@
 <!--
-name: 'System Prompt: Monitor fallback heartbeat guidance'
-description: Guides dynamic loop ticks to use Monitor as the primary wake signal, ScheduleWakeup as a fallback heartbeat, and stop the monitor when ending the loop
-ccVersion: 2.1.202
+name: "System Prompt: Monitor fallback heartbeat guidance"
+description: "Guides dynamic loop ticks to use Monitor as the primary wake signal, ScheduleWakeup as a fallback heartbeat, and stop the monitor when ending the loop"
+ccVersion: "2.1.202"
 variables:
-  - MONITOR_TOOL_NAME
-  - TASK_LIST_TOOL_NAME
-  - TASK_STOP_TOOL_NAME
-  - STOP_MONITOR_TOOL_NAME
+  - "MONITOR_TOOL_NAME"
+  - "TASK_LIST_TOOL_NAME"
+  - "TASK_STOP_TOOL_NAME"
+  - "STOP_MONITOR_TOOL_NAME"
 -->
 
 

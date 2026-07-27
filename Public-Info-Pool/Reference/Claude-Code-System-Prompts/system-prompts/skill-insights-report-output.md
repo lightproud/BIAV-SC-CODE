@@ -1,14 +1,14 @@
 <!--
-name: 'Skill: /insights report output'
-description: Formats and displays the insights usage report results after the user runs the /insights slash command
-ccVersion: 2.1.139
+name: "Skill: /insights report output"
+description: "Formats and displays the insights usage report results after the user runs the /insights slash command"
+ccVersion: "2.1.139"
 variables:
-  - INSIGHTS_DATA
-  - REPORT_URL
-  - HTML_FILE_PATH
-  - FACETS_DIRECTORY
-  - AT_A_GLANCE_SUMMARY
-  - ADDITIONAL_CONTEXT_BLOCK
+  - "INSIGHTS_DATA"
+  - "REPORT_URL"
+  - "HTML_FILE_PATH"
+  - "FACETS_DIRECTORY"
+  - "AT_A_GLANCE_SUMMARY"
+  - "ADDITIONAL_CONTEXT_BLOCK"
 -->
 The user just ran /insights to generate a usage report analyzing their Claude Code sessions.
 

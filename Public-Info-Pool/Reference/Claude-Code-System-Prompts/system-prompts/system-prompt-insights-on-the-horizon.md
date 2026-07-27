@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Insights on the horizon'
-description: Identifies ambitious future workflows and opportunities for autonomous AI-assisted development
-ccVersion: 2.1.30
+name: "System Prompt: Insights on the horizon"
+description: "Identifies ambitious future workflows and opportunities for autonomous AI-assisted development"
+ccVersion: "2.1.30"
 -->
 Analyze this Claude Code usage data and identify future opportunities.
 

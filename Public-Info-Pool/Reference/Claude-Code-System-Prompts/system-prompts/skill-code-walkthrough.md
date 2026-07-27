@@ -1,12 +1,12 @@
 <!--
-name: 'Skill: Code walkthrough'
-description: Generates an interactive explainer artifact for a file, directory, PR, or reference so newcomers can understand the code
-ccVersion: 2.1.198
+name: "Skill: Code walkthrough"
+description: "Generates an interactive explainer artifact for a file, directory, PR, or reference so newcomers can understand the code"
+ccVersion: "2.1.198"
 variables:
-  - WALKTHROUGH_TARGET
-  - ARTIFACT_TOOL_NAME
-  - ARTIFACT_DESIGN_SKILL_NAME
-  - ARTIFACT_ITERATION_FOOTER
+  - "WALKTHROUGH_TARGET"
+  - "ARTIFACT_TOOL_NAME"
+  - "ARTIFACT_DESIGN_SKILL_NAME"
+  - "ARTIFACT_ITERATION_FOOTER"
 -->
 ${WALKTHROUGH_TARGET===""?"No target was given. Ask the user which file, directory, or PR they want explained — one short question — and stop until they answer.":`Walkthrough target: `${WALKTHROUGH_TARGET}``}
 

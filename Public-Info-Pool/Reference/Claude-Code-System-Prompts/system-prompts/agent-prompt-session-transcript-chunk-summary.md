@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Session transcript chunk summary'
-description: Instructs an agent to summarize a chunk of a Claude Code session transcript concisely
-ccVersion: 2.1.173
+name: "Agent Prompt: Session transcript chunk summary"
+description: "Instructs an agent to summarize a chunk of a Claude Code session transcript concisely"
+ccVersion: "2.1.173"
 -->
 Summarize this portion of a Claude Code session transcript. Focus on:
 1. What the user asked for

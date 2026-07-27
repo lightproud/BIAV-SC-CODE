@@ -1,7 +1,7 @@
 <!--
-name: 'Tool Description: LSP'
-description: Description for the LSP tool.
-ccVersion: 2.1.162
+name: "Tool Description: LSP"
+description: "Description for the LSP tool."
+ccVersion: "2.1.162"
 -->
 Interact with Language Server Protocol (LSP) servers to get code intelligence features.
 

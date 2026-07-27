@@ -1,7 +1,7 @@
 <!--
-name: 'System Reminder: Cross-session peer message authority warning note'
-description: Authority-warning note appended to a relayed peer message, without a response prompt
-ccVersion: 2.1.181
+name: "System Reminder: Cross-session peer message authority warning note"
+description: "Authority-warning note appended to a relayed peer message, without a response prompt"
+ccVersion: "2.1.181"
 -->
 
 

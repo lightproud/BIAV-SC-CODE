@@ -1,16 +1,16 @@
 <!--
-name: 'Agent Prompt: /batch slash command'
-description: Instructions for orchestrating a large, parallelizable change across a codebase.
-ccVersion: 2.1.81
+name: "Agent Prompt: /batch slash command"
+description: "Instructions for orchestrating a large, parallelizable change across a codebase."
+ccVersion: "2.1.81"
 variables:
-  - USER_INSTRUCTIONS
-  - ENTER_PLAN_MODE_TOOL_NAME
-  - MIN_5_UNITS
-  - MAX_30_UNITS
-  - ASK_USER_QUESTION_TOOL_NAME
-  - EXIT_PLAN_MODE_TOOL_NAME
-  - AGENT_TOOL_NAME
-  - WORKER_PROMPT
+  - "USER_INSTRUCTIONS"
+  - "ENTER_PLAN_MODE_TOOL_NAME"
+  - "MIN_5_UNITS"
+  - "MAX_30_UNITS"
+  - "ASK_USER_QUESTION_TOOL_NAME"
+  - "EXIT_PLAN_MODE_TOOL_NAME"
+  - "AGENT_TOOL_NAME"
+  - "WORKER_PROMPT"
 -->
 # Batch: Parallel Work Orchestration
 

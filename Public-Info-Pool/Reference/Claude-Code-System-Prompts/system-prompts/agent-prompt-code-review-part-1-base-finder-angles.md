@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: /code-review part 1 base finder angles'
-description: Line-by-line diff scan instructions for the /code-review slash command's finder-angle phase
-ccVersion: 2.1.160
+name: "Agent Prompt: /code-review part 1 base finder angles"
+description: "Line-by-line diff scan instructions for the /code-review slash command's finder-angle phase"
+ccVersion: "2.1.160"
 -->
 ### Angle A — line-by-line diff scan
 

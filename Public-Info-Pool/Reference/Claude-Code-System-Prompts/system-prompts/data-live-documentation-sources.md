@@ -1,7 +1,7 @@
 <!--
-name: 'Data: Live documentation sources'
-description: WebFetch URLs for fetching current Claude API and Agent SDK documentation from official sources
-ccVersion: 2.1.203
+name: "Data: Live documentation sources"
+description: "WebFetch URLs for fetching current Claude API and Agent SDK documentation from official sources"
+ccVersion: "2.1.203"
 -->
 # Live Documentation Sources
 

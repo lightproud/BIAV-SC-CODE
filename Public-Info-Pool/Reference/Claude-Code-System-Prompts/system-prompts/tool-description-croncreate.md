@@ -1,15 +1,15 @@
 <!--
-name: 'Tool Description: CronCreate'
-description: Describes the CronCreate tool for enqueuing one-shot or recurring cron-based jobs with jitter and off-minute scheduling guidance
-ccVersion: 2.1.144
+name: "Tool Description: CronCreate"
+description: "Describes the CronCreate tool for enqueuing one-shot or recurring cron-based jobs with jitter and off-minute scheduling guidance"
+ccVersion: "2.1.144"
 variables:
-  - CRON_DURABILITY_SECTION
-  - IS_MONITOR_TOOL_ENABLED_FN
-  - CRON_CREATE_TOOL_NAME
-  - MONITOR_TOOL_NAME
-  - CRON_DURABLE_RUNTIME_NOTE
-  - CANCEL_TIMEFRAME_DAYS
-  - CRON_DELETE_TOOL_NAME
+  - "CRON_DURABILITY_SECTION"
+  - "IS_MONITOR_TOOL_ENABLED_FN"
+  - "CRON_CREATE_TOOL_NAME"
+  - "MONITOR_TOOL_NAME"
+  - "CRON_DURABLE_RUNTIME_NOTE"
+  - "CANCEL_TIMEFRAME_DAYS"
+  - "CRON_DELETE_TOOL_NAME"
 -->
 Schedule a prompt to be enqueued at a future time. Use for both recurring schedules and one-shot reminders.
 

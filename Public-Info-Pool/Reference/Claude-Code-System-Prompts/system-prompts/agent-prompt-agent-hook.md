@@ -1,11 +1,11 @@
 <!--
-name: 'Agent Prompt: Agent Hook'
-description: Prompt for an 'agent hook'
-ccVersion: 2.1.173
+name: "Agent Prompt: Agent Hook"
+description: "Prompt for an 'agent hook'"
+ccVersion: "2.1.173"
 variables:
-  - HOOK_EVALUATION_TASK_PROMPT
-  - TRANSCRIPT_PATH
-  - STRUCTURED_OUTPUT_TOOL_NAME
+  - "HOOK_EVALUATION_TASK_PROMPT"
+  - "TRANSCRIPT_PATH"
+  - "STRUCTURED_OUTPUT_TOOL_NAME"
 -->
 ${HOOK_EVALUATION_TASK_PROMPT} The conversation transcript is available at: ${TRANSCRIPT_PATH}
 You can read this file to analyze the conversation history if needed.

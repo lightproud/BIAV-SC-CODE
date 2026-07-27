@@ -1,7 +1,7 @@
 <!--
-name: 'Skill: Team onboarding guide'
-description: Template for onboarding a new teammate to a team's Claude Code setup, walking them through usage stats, setup checklists, MCP servers, skills, and team tips in a warm conversational style
-ccVersion: 2.1.94
+name: "Skill: Team onboarding guide"
+description: "Template for onboarding a new teammate to a team's Claude Code setup, walking them through usage stats, setup checklists, MCP servers, skills, and team tips in a warm conversational style"
+ccVersion: "2.1.94"
 -->
 # Welcome to [Team Name]
 

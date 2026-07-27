@@ -1,9 +1,9 @@
 <!--
-name: 'System Prompt: Isolated worktree shipping instructions'
-description: Guidance to commit, push, and open a draft PR after code changes made in an isolated worktree, with safeguards for main checkouts
-ccVersion: 2.1.205
+name: "System Prompt: Isolated worktree shipping instructions"
+description: "Guidance to commit, push, and open a draft PR after code changes made in an isolated worktree, with safeguards for main checkouts"
+ccVersion: "2.1.205"
 variables:
-  - WORKTREE_SHIPPING_SAFETY_NOTE
+  - "WORKTREE_SHIPPING_SAFETY_NOTE"
 -->
 
 

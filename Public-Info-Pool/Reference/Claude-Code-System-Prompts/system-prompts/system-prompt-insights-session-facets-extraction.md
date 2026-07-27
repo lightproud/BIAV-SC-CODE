@@ -1,7 +1,7 @@
 <!--
-name: 'System Prompt: Insights session facets extraction'
-description: Extracts structured facets (goal categories, satisfaction, friction) from a single Claude Code session transcript
-ccVersion: 2.1.30
+name: "System Prompt: Insights session facets extraction"
+description: "Extracts structured facets (goal categories, satisfaction, friction) from a single Claude Code session transcript"
+ccVersion: "2.1.30"
 -->
 Analyze this Claude Code session and extract structured facets.
 

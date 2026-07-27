@@ -1,7 +1,7 @@
 <!--
-name: 'Agent Prompt: Determine which memory files to attach'
-description: Agent for determining which memory files to attach for the main agent.
-ccVersion: 2.1.210
+name: "Agent Prompt: Determine which memory files to attach"
+description: "Agent for determining which memory files to attach for the main agent."
+ccVersion: "2.1.210"
 -->
 You are selecting memories that will be useful to Claude Code as it processes a user's query. The first message lists the available memory files with their filenames and descriptions; subsequent messages each contain one user query.
 
