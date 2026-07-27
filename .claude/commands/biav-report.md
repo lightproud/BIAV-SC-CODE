@@ -1,12 +1,15 @@
 Produce a silver-core community intelligence report (deep analysis / role recommendations / bug-fault list / weekly digest) from the full-archive layer, render it to a styled PDF + HTML, commit, push, and report back with hyperlinks. Use when the Keeper asks for a report, analysis, recommendation deck, or defect list built from community data.
 
-全程保持艾瑞卡人格（CLAUDE.md §2，不用 emoji、混合自称、功能性开头）。事实采信遵 §6.11（R1 并行任一失败=整次失败，扫描用单脚本；R2 SHA/行数/时序只引直接产出工具；R3 区分官方确认 vs 玩家报告、建议 vs 已落盘）。
+全程保持艾瑞卡人格（CLAUDE.md §2，不用 emoji、混合自称、功能性开头）。事实采信遵 §4.2（R1 并行任一失败=整次失败，扫描用单脚本；R2 SHA/行数/时序只引直接产出工具；R3 区分官方确认 vs 玩家报告、建议 vs 已落盘）。
 
-1. 确认数据层（§4 硬约束）：报告类一律走全量档案层 `Public-Info-Pool/Record/Community/`（2026-06-21 迁入，text 全量永驻 git），禁用输出层充全量（lesson #30）。日报/快查才用 `projects/news/output/*-latest.json`。
+0. **挂载数据湖**（T62 P2-5，2026-07-20 起的前置步）：社区全量档案**已迁出本仓**，本体在 **BIAV-SC-DATA** 数据仓。先 clone 该仓、设 `BIAV_SC_DATA_ROOT=<checkout 路径>`，取数一律经 `projects/news/scripts/archive_layout.py` 的 `community_root()` / `discord_root()` 解析（**归档布局单一真相源**，env 未设时回落在树默认，会读到空目录——空手而归即检查此步）。下文路径均为**数据湖内相对布局**，根 = `$BIAV_SC_DATA_ROOT`。
+
+1. 确认数据层（§4 硬约束）：报告类一律走全量档案层 `Record/Community/`，禁用输出层充全量（lesson #30）。日报/快查才用 `projects/news/output/*-latest.json`（这一份仍在本仓）。
 
 2. 单脚本提取（放 `/tmp/`，不并行多脚本）：
-   - Discord：`Public-Info-Pool/Record/Community/discord/channel_index.json` 映射 `{name→dir}`；消息在 `Public-Info-Pool/Record/Community/discord/channels/{id_suffix}/{date}.jsonl` 逐行 JSON，字段 `content`/`author_id`/`author_bot`(过滤bot)/`timestamp`/`reactions`。**紧凑 schema（缺字段=默认值，见 CLAUDE.md §5.2）：读取必用 `.get(默认)`**，需稳定全字段调 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。
-   - 平台：`Public-Info-Pool/Record/Community/{plat}/{date}.json`（含区服子层时为 `{plat}/{region}/{type}/{date}.json`；平台清单以 `ls Public-Info-Pool/Record/Community/` 为准），字段 `title`/`summary`/`lang`/`url`/`content_type`/`engagement`。
+   - **冷热分层（2026-07-12 起，硬规则）**：当月 + 上月为裸文本热层，**上上个月及更早为 `.gz` 冷层**。读文件一律经 `archive_layout.open_archive_text()` 透明双开，解析日期一律 `archive_layout.date_stem()`（`.json.gz` 的 `Path.stem` 残留 `.json`，直取 stem 会把冷层误判成缺口）；用 `rg` 跨档案检索时**必加 `-z`**，否则冷层整段查不到、且不会报错。
+   - Discord：频道反查唯一入口 `discord/{区服}/channel_index.json`（区服 ∈ `global` / `jp` / `volunteer`；映射 `id→{name,type,dir,status}`，status ∈ active/offline/orphan，缺省 active）；消息在 `discord/{区服}/channels/{id_suffix}/{date}.jsonl` 逐行 JSON，字段 `content`/`author_id`/`author_bot`(过滤bot)/`timestamp`/`reactions`。**紧凑 schema（缺字段=默认值，见 CLAUDE.md §5.2）：读取必用 `.get(默认)`**，需稳定全字段调 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。
+   - 平台：`Record/Community/{plat}/{date}.json`（含区服子层时为 `{plat}/{region}/{type}/{date}.json`；平台清单以 `ls "$BIAV_SC_DATA_ROOT/Record/Community/"` 为准），字段 `title`/`summary`/`lang`/`url`/`content_type`/`engagement`。
    - 限定窗口、去重、保留原文+平台+日期+反应数 → `/tmp/extract/*.txt` 供人工甄别。
    - 故障/官方动态报告优先锚定 `🔸有問必答┊official-q-a` 与 `🔸遊戲公告┊game-announcement`（带状态标签：处理中/已解决/Resolved）。
    - 多语言关键词扫描覆盖中/英/韩/俄/西/葡/越/泰/印尼/法/德/日；命中后人工读原文剔噪声（error↔terror、broken↔角色超模）。

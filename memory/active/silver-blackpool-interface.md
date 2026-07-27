@@ -38,7 +38,7 @@
 | 社区情报 | 日报改 Claude Code 会话内生成（原 `daily-latest.md` 定时产物已停用，见 project-status）| 黑池消费的每日动态 |
 | 平台数据 | `projects/news/output/{steam,bilibili,discord,...}-latest.json` | 黑池消费的平台原始数据（平台清单持续增加，以 `ls projects/news/output/` 为准）|
 | 全平台合并 | `projects/news/output/all-latest.json` | 黑池消费的合并视图 |
-| 角色数据库 | `projects/wiki/data/extracted/categorized/character_data.txt` | 黑池消费的事实圣经（**原 `data/db/characters.json` 结构化层 2026-06-15 清空，W2 以一手解包字段重建**）|
+| 角色数据库 | `projects/wiki/data/processed/characters.json` | 黑池消费的事实圣经（W2 可信基线 72 真实角色，**现行唯一权威**）。原 `data/db/characters.json` 占位层 2026-06-15 清空、其解包 text 自举源 2026-07-12 整层删除，追溯走 Releases「解包」桶重解 |
 | 游戏世界观 | `memory/morimens-context.md` | 黑池消费的领域知识 |
 | 设计决策 | `assets/data/design-decisions.json` | 黑池消费的产品哲学 |
 | 卡牌系统 | `assets/data/card-system.json` | 黑池消费的机制结构化 |

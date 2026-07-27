@@ -28,8 +28,8 @@ immediately. "morimens-context 把『X』定义为 A，但守密人此处似乎�
 
 ### Sharpen fuzzy language
 When a term is vague or overloaded, propose a precise canonical 银芯 term, listing
-the words to avoid. "守密人说『数据层』—— 指全量档案层（`Public-Info-Pool/Record/Community/`）还是
-输出展示层（`projects/news/output/`）？二者语义不可互换（§4.1）。"
+the words to avoid. "守密人说『数据层』—— 指全量档案层（BIAV-SC-DATA 数据仓 `Record/Community/`，
+经 `BIAV_SC_DATA_ROOT` 读）还是输出展示层（本仓 `projects/news/output/`）？二者语义不可互换（§4.1）。"
 
 ### Stress-test with scenarios
 When relationships are discussed, invent concrete edge-case scenarios that force the

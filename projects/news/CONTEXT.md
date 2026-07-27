@@ -8,6 +8,15 @@
 > `Public-Info-Pool/Resource/repo-engineering/community-archive-strategy-review-20260710.md`。
 > 实时进度权威在 `memory/project-status.md`）
 
+> **数据湖已迁出本仓（T62 P2-5，2026-07-20）——动手前必读。** 全量档案层
+> `Record/Community/` 的**本体在 BIAV-SC-DATA 数据仓**，code 仓的 `Public-Info-Pool/Record/`
+> 下只剩 heartbeat / store-patrol。本档以下出现的 `Public-Info-Pool/Record/Community/…`
+> 一律读作**数据湖内相对布局**，根 = `$BIAV_SC_DATA_ROOT`；采集写、CI clone、读侧
+> 全部经 `scripts/archive_layout.py` 的 `community_root()` / `discord_root()` 解析
+> （**归档布局单一真相源**，env 未设时回落在树默认，会静默读到空目录）。
+> **冷热分层**（2026-07-12 起）：当月 + 上月裸文本，上上月及更早为 `.gz`——读用
+> `open_archive_text()`、解析日期用 `date_stem()`、`rg` 检索必加 `-z`，否则冷层无声漏采。
+
 ## v2.0 新使命定位（2026-04-26 起）
 
 **news = 银芯二核心使命之 #1「黑池信息入口」核心载体**
@@ -119,7 +128,8 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 > 守密人 2026-06-21 拷问对齐定案。解决「来源名混乱、未含子类、区服拼名过细」三病。
 
 ### 核心原则
-1. **数据根 = `Public-Info-Pool/Record/Community/`**，无 `platforms/` 中间层。
+1. **数据根 = `Record/Community/`**（根 = `$BIAV_SC_DATA_ROOT`，见档首横幅；2026-07-20 前在树为
+   `Public-Info-Pool/Record/Community/`），无 `platforms/` 中间层。
 2. **层级 = `平台 / 区服 / 类型 / YYYY-MM-DD.json`**；区服在上、类型在下；**维度按需展开**（无区服平台省区服层，单类型平台省类型层）。
 3. **source 标识 = 归档相对路径**：如 `steam/jp/review`、`taptap/cn/post`、`youtube/global/comments`、`discord/global`、`weibo`。
 4. **区服准则**：不同 appid / 独立运营 → **拆区服目录**；同 appid 多国 → 留 `platform_region` 字段、不拆。

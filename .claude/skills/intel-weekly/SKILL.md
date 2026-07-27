@@ -11,8 +11,12 @@ description: Generate the Morimens weekly community intelligence report (社区�
 
 ## 硬口径（每条都是门禁）
 
-1. **数据层**：只用全量档案层 `Public-Info-Pool/Record/Community/`，禁用
-   `projects/news/output/` 选样层充全量。
+1. **数据层**：只用全量档案层 `Record/Community/`，禁用 `projects/news/output/` 选样层充全量。
+   该层**已迁出本仓**（T62 P2-5，2026-07-20）：本体在 **BIAV-SC-DATA** 数据仓，取数前先 clone
+   并设 `BIAV_SC_DATA_ROOT`，路径一律经 `projects/news/scripts/archive_layout.py` 的
+   `community_root()` / `discord_root()` 解析（单一真相源；env 未设会静默读到空目录）。
+   **冷热分层**：当月 + 上月裸文本，上上月及更早为 `.gz`——读用 `archive_layout.open_archive_text()`、
+   解析日期用 `date_stem()`、`rg` 检索**必加 `-z`**，否则冷层无声漏采。
 2. **双时间轴**：平台条目一律按 `time`（发布时间，换算 UTC+8）统计并按 `url` 去重；
    「窗口内被采集」≠「窗口内发布」，窗外发布的重采旧内容不计入本周信号，仅在多日快照
    可证明「窗口内热度增长」时引用并注明快照日期。Discord 按消息 `timestamp` 切窗。
