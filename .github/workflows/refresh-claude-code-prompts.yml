@@ -34,6 +34,40 @@ jobs:
       - name: Refresh upstream prompts snapshot
         run: python3 scripts/refresh_claude_code_prompts.py
 
+      # 自检（2026-07-27 守密人裁定）：本任务带 [skip ci] 直推 main，破绽要等下一个
+      # 不相干的 PR 跑门禁才暴露——2026-07-27 就是一次工具上限对齐替本任务扛了报红。
+      # SDK 侧有两条「提示词溯源锚点」守卫按 slug 指向本快照的具体档案，上游一改名 /
+      # 删档就断。故刷新后、提交前就地跑一遍：**红则不提交、不直推**，本任务自己报红。
+      # 快照本身没丢——上游仓库还在，修好 slug 后下一轮照常采回来。
+      # 第二道网：本任务持续失败会被 dead-man-switch.yml 按「最近一次成功超时」抓出。
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps (workspace root)
+        run: npm ci
+
+      - name: Provenance guard — refreshed snapshot must still anchor the SDK's faithful fragments
+        working-directory: projects/silver-core-sdk
+        run: npx vitest run tests/prompt-fragments-provenance.test.ts tests/sendmessage.test.ts
+
+      - name: Explain the drift (guard failed — snapshot NOT committed)
+        if: failure()
+        run: |
+          {
+            echo "## 提示词快照刷新被自检拦下"
+            echo
+            echo "上游快照已刷新，但 SDK 侧溯源锚点守卫报红，**本轮未提交、未直推 main**。"
+            echo
+            echo "多半是上游改名或删档，导致某条 \`slug\` 指空。修法："
+            echo
+            echo "1. 看上面守卫日志里点名的 slug；"
+            echo "2. 在 \`Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/\` 里找它的新名字（或合并去处）；"
+            echo "3. 改 \`projects/silver-core-sdk/src/engine/prompt-fragments.ts\` / \`src/subagents/agents.ts\` 里的 slug；"
+            echo "4. 改 slug 属 shipped 运行时改动，须 bump 版本（两包锁步）+ CHANGELOG 一行；"
+            echo "5. 合并后手动 \`workflow_dispatch\` 重跑本任务，把快照采回来。"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Commit refreshed snapshot
         run: |
           git config user.name "github-actions[bot]"

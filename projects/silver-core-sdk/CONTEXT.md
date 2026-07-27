@@ -69,11 +69,23 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.80.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.80.0`
+**当前版本 `0.80.1`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.80.1`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.80.1（2026-07-27）：两条提示词溯源 slug 改锚 + 给刷新 cron 补自检**——上游快照
+2.1.173 → 2.1.216（今日 cron 76fe5e6 直推 main）改名 24 档、删 5 档，两条 slug 指空，
+两条 corpus-sync 守卫在 main 上报红。① `COORDINATOR_WORKER_PROVENANCE.slug` 随上游命名
+规范化改指 `agent-prompt-coordinator-worker-instructions`（守卫抽出的 15 个锚点句在
+shipped 文本里逐字仍在，只动 slug）；② `MAIN_LOOP_INTRO.slug` 改指
+`system-prompt-harness-instructions`——上游把三个 intro 小档合并进它，那句话逐字未变、
+现居该档开篇模板的「无 output style」分支，故 `faithful: true` 仍成立，但注释里写明它
+faithful 于**模板档的一个分支**而非整档。**零 shipped 提示词文本改动**。
+包外同批：`refresh-claude-code-prompts.yml` 刷新后、提交前就地跑这两条守卫，**红则不提交
+不直推**——该 cron 带 `[skip ci]` 直推 main，此前它捅的破绽要等下一个不相干 PR 跑门禁才
+暴露（本次正是这么被发现的）。
 
 **v0.80.0（2026-07-27）：工具输出上限对齐 Claude Code 2.1.141**——守密人交付单三处独立改动
 （常量取自 `claude.exe` 内含明文 JS）。① **WebFetch 上限 100_000 → 复用 Read 的 50_000**：
