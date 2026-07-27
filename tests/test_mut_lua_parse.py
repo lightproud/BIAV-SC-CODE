@@ -15,7 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from scripts.lua_parse import parse_lua_blocks, _scan_block_body  # noqa: E402
+from projects.wiki.scripts.lua_parse import parse_lua_blocks, _scan_block_body  # noqa: E402
 
 
 # --- parse_lua_blocks: happy paths ---

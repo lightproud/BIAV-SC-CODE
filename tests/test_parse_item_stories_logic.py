@@ -14,9 +14,9 @@ from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_REPO))
-sys.path.insert(0, str(_REPO / "scripts"))
+sys.path.insert(0, str(_REPO / "projects/wiki/scripts"))
 
-from scripts.parse_item_stories import parse_item_stories  # noqa: E402
+from projects.wiki.scripts.parse_item_stories import parse_item_stories  # noqa: E402
 
 
 def _write(tmp_path, lua_text):

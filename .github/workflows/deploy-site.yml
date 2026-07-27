@@ -70,7 +70,7 @@ jobs:
         run: npm ci
 
       - name: Regenerate wiki pages with media assets
-        run: python scripts/generate_wiki_pages.py
+        run: python projects/wiki/scripts/generate_wiki_pages.py
 
       - name: Build wiki
         working-directory: projects/wiki
