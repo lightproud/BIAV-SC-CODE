@@ -1,22 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-27T19:26:23.478814+00:00",
+  "collected_at": "2026-07-27T22:06:57.299848+00:00",
   "source": "youtube",
   "data_layer": "output",
   "item_count": 18,
   "items": [
-    {
-      "source": "youtube",
-      "time": "2026-07-27T07:59:24Z",
-      "lang": "",
-      "title": "[Morimens] Flares&#39; Awakener Review - G-Lotan - The first Triple S tier unit in quite some time.",
-      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=mncJuoCnFoY",
-      "author": "Flares117",
-      "engagement": 4009,
-      "media_url": "https://i.ytimg.com/vi/mncJuoCnFoY/hqdefault.jpg",
-      "content_type": "video"
-    },
     {
       "source": "youtube",
       "time": "2026-07-27T08:28:53Z",
@@ -25,20 +13,8 @@
       "summary": "This'll just be a quick late night stream to have some fun and check out Lotan: Cetarchon AKA GLotan in D-Tide, Hard Story and ...",
       "url": "https://www.youtube.com/watch?v=y-hXbkHKbm4",
       "author": "Rose Guardian Reya",
-      "engagement": 1995,
+      "engagement": 2088,
       "media_url": "https://i.ytimg.com/vi/y-hXbkHKbm4/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-27T08:15:37Z",
-      "lang": "",
-      "title": "[Morimens] Extremely short G-Lotan Stream/Other content, then heading to work after a nap.",
-      "summary": "Don't know how long. Will be doing other stuff too.",
-      "url": "https://www.youtube.com/watch?v=NV3Rh6_vDR4",
-      "author": "Flares117",
-      "engagement": 1054,
-      "media_url": "https://i.ytimg.com/vi/NV3Rh6_vDR4/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -49,7 +25,7 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=GT4HMs1qIt8",
       "author": "Flares117",
-      "engagement": 696,
+      "engagement": 899,
       "media_url": "https://i.ytimg.com/vi/GT4HMs1qIt8/hqdefault.jpg",
       "content_type": "video"
     },
@@ -61,7 +37,7 @@
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=7n5zPKwNbjk",
       "author": "박현(Muyeong)",
-      "engagement": 266,
+      "engagement": 267,
       "media_url": "https://i.ytimg.com/vi/7n5zPKwNbjk/hqdefault.jpg",
       "content_type": "video"
     },
@@ -73,7 +49,7 @@
       "summary": "Aiming for E3, i have 145 pulls and first ssr guaranteed. Please morimens i know you hate me but i need the whale GENERAL ...",
       "url": "https://www.youtube.com/watch?v=0hhXCXgu6zI",
       "author": "Dumb Keeper ",
-      "engagement": 177,
+      "engagement": 233,
       "media_url": "https://i.ytimg.com/vi/0hhXCXgu6zI/hqdefault.jpg",
       "content_type": "video"
     },
@@ -85,20 +61,8 @@
       "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
       "url": "https://www.youtube.com/watch?v=5AQ0Mq3p8zY",
       "author": "OcteKG",
-      "engagement": 112,
+      "engagement": 130,
       "media_url": "https://i.ytimg.com/vi/5AQ0Mq3p8zY/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-27T16:53:44Z",
-      "lang": "",
-      "title": "[Morimens] The whale falls on us ~ Genesis Lotan is finally here? My lovely striking whale queen!",
-      "summary": "Yoz everyone, I'm Rozarai, a undead virtual YouTuber. Welcome to my stream and enjoy your stay! Socials Twitter: ...",
-      "url": "https://www.youtube.com/watch?v=CPjEhZi2skc",
-      "author": "Roz Arai Ch.",
-      "engagement": 38,
-      "media_url": "https://i.ytimg.com/vi/CPjEhZi2skc/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -109,8 +73,44 @@
       "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 今回は対人戦でのレートが初めての５千達成ということで、 前シーズンに ...",
       "url": "https://www.youtube.com/watch?v=kA6SiGpYL_I",
       "author": "薄めの『ゆゆ』",
-      "engagement": 34,
+      "engagement": 42,
       "media_url": "https://i.ytimg.com/vi/kA6SiGpYL_I/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-27T16:53:44Z",
+      "lang": "",
+      "title": "[Morimens] The whale falls on us ~ Genesis Lotan is finally here? My lovely striking whale queen!",
+      "summary": "Yoz everyone, I'm Rozarai, a undead virtual YouTuber. Welcome to my stream and enjoy your stay! Socials Twitter: ...",
+      "url": "https://www.youtube.com/watch?v=CPjEhZi2skc",
+      "author": "Roz Arai Ch.",
+      "engagement": 40,
+      "media_url": "https://i.ytimg.com/vi/CPjEhZi2skc/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-27T19:21:40Z",
+      "lang": "",
+      "title": "Latan Catarchone - новый Chaos в Morimens. Три копии хватит или до +4?",
+      "summary": "Новый патч привнес в Морименс нового персонажа. Генезис Лотан - привнесла новый Хаос в игру. Сколько копий нужно ...",
+      "url": "https://www.youtube.com/watch?v=4M-7f2RqBnk",
+      "author": "P.S. Starve",
+      "engagement": 35,
+      "media_url": "https://i.ytimg.com/vi/4M-7f2RqBnk/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-27T10:00:28Z",
+      "lang": "",
+      "title": "#忘卻前夜 #morimens Let’s go pull for Annihilation Rotan!來抽個蝕滅蘿坦吧!",
+      "summary": "忘卻前夜#morimens 抽的運氣不是太好,差點就沒法最低程度的測試了,預計這幾天會出新角色的隊伍測試~ I wasn't too lucky with my ...",
+      "url": "https://www.youtube.com/watch?v=kaYw9BCwuSI",
+      "author": "Noir",
+      "engagement": 19,
+      "media_url": "https://i.ytimg.com/vi/kaYw9BCwuSI/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -127,26 +127,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-27T10:00:28Z",
+      "time": "2026-07-27T20:35:39Z",
       "lang": "",
-      "title": "#忘卻前夜 #morimens Let’s go pull for Annihilation Rotan!來抽個蝕滅蘿坦吧!",
-      "summary": "忘卻前夜#morimens 抽的運氣不是太好,差點就沒法最低程度的測試了,預計這幾天會出新角色的隊伍測試~ I wasn't too lucky with my ...",
-      "url": "https://www.youtube.com/watch?v=kaYw9BCwuSI",
-      "author": "Noir",
-      "engagement": 17,
-      "media_url": "https://i.ytimg.com/vi/kaYw9BCwuSI/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-27T15:30:12Z",
-      "lang": "",
-      "title": "망각전야(Morimens) 융재 초차원 침식로탄 2파 5급 클리어 영상 07.20- 08.02",
-      "summary": "침식로탄 60렙 3돌 명륜명함 5/3/3/3/3/3 조사 작전-융재금지구역 제2파·Ⅴ급 경보——전투 재생 수호자:앤농(101354376) 침식·로탄, ...",
-      "url": "https://www.youtube.com/watch?v=cibiUIF-d40",
-      "author": "앤농",
-      "engagement": 6,
-      "media_url": "https://i.ytimg.com/vi/cibiUIF-d40/hqdefault.jpg",
+      "title": "Morimens GLotan Patch!",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=OQuVg62DZWo",
+      "author": "Nazoric",
+      "engagement": 12,
+      "media_url": "https://i.ytimg.com/vi/OQuVg62DZWo/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -157,8 +145,20 @@
       "summary": "I am a man of my word. After months of coaxing a simple comment was enough to finally break me. So today I hope you join me as ...",
       "url": "https://www.youtube.com/watch?v=WuC9GUXpOPY",
       "author": "LemonadeGang",
-      "engagement": 6,
+      "engagement": 11,
       "media_url": "https://i.ytimg.com/vi/WuC9GUXpOPY/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-27T15:30:12Z",
+      "lang": "",
+      "title": "망각전야(Morimens) 융재 초차원 침식로탄 2파 5급 클리어 영상 07.20- 08.02",
+      "summary": "침식로탄 60렙 3돌 명륜명함 5/3/3/3/3/3 조사 작전-융재금지구역 제2파·Ⅴ급 경보——전투 재생 수호자:앤농(101354376) 침식·로탄, ...",
+      "url": "https://www.youtube.com/watch?v=cibiUIF-d40",
+      "author": "앤농",
+      "engagement": 7,
+      "media_url": "https://i.ytimg.com/vi/cibiUIF-d40/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -175,26 +175,38 @@
     },
     {
       "source": "youtube",
+      "time": "2026-07-27T16:54:31Z",
+      "lang": "",
+      "title": "Morimens รีวิว+วิธีเล่น การสูญสลาย°โรทัน (Lotan Cetarchon)",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=bEENd5p9ARE",
+      "author": "RandomWithEndfield",
+      "engagement": 5,
+      "media_url": "https://i.ytimg.com/vi/bEENd5p9ARE/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-07-27T12:31:38Z",
       "lang": "",
       "title": "Morimens รีวิว+วิธีเล่น ดูเรซิน (Doresain)",
       "summary": "หากมีข้อมูลตกหล่น หรือเสียงไมล์แปลกๆรวมถึงเสียงหมาเห่า ต้องขออภัยด้วยนะครับ สามารถแชร์ทริกหรือวิธีการได้ที่ช่องคอมเม้นเลยนะคับ ...",
       "url": "https://www.youtube.com/watch?v=zEMocf7n4tY",
       "author": "RandomWithEndfield",
-      "engagement": 4,
+      "engagement": 5,
       "media_url": "https://i.ytimg.com/vi/zEMocf7n4tY/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-07-27T19:21:40Z",
+      "time": "2026-07-27T21:37:28Z",
       "lang": "",
-      "title": "Latan Catarchone - новый Chaos в Morimens. Три копии хватит или до +4?",
-      "summary": "Новый патч привнес в Морименс нового персонажа. Генезис Лотан - привнесла новый Хаос в игру. Сколько копий нужно ...",
-      "url": "https://www.youtube.com/watch?v=4M-7f2RqBnk",
-      "author": "P.S. Starve",
+      "title": "Morimens - Lotan Cetarchon - Arcade-N test (Against lvl 70 GDoll boss)",
+      "summary": "Idk Team used: Lotan: Cetarchon, Cetus Occasus, Undying Hungerbone, April Tribute Hameln, Eternal Requiem, Elevated Focus, ...",
+      "url": "https://www.youtube.com/watch?v=-V71rrusKE0",
+      "author": "Lord Britt",
       "engagement": 3,
-      "media_url": "https://i.ytimg.com/vi/4M-7f2RqBnk/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/-V71rrusKE0/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -207,18 +219,6 @@
       "author": "ACE 3",
       "engagement": 2,
       "media_url": "https://i.ytimg.com/vi/9gIfEfaLXXg/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-27T16:54:31Z",
-      "lang": "",
-      "title": "Morimens รีวิว+วิธีเล่น การสูญสลาย°โรทัน (Lotan Cetarchon)",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=bEENd5p9ARE",
-      "author": "RandomWithEndfield",
-      "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/bEENd5p9ARE/hqdefault.jpg",
       "content_type": "video"
     }
   ]

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-27T19:26:23.478814+00:00",
+  "collected_at": "2026-07-27T22:06:57.299848+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -33,7 +33,52 @@
       "voted_up": true,
       "review": "such a good game, everyone should play it <33",
       "timestamp_created": 1785118220,
-      "playtime_forever": 5839
+      "playtime_forever": 5978
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-26T22:26:54+00:00",
+      "lang": "schinese",
+      "title": "[负面] 经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、...",
+      "summary": "经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、游戏性弱、禁用词多的国风特点也是一点没落。\r\n真的有些勾起我的创伤回忆了。我不知道如今世界发生了什么，但是童年时记忆的快乐游戏的厂商都不见了，取而代之的是一大堆模板化、同质化、骗氪化的垃圾游戏蓬勃发展。\r\n不推荐游玩。",
+      "url": "https://steamcommunity.com/profiles/76561198253832125/recommended/3052450",
+      "author": "76561198253832125",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、游戏性弱、禁用词多的国风特点也是一点没落。\r\n真的有些勾起我的创伤回忆了。我不知道如今世界发生了什么，但是童年时记忆的快乐游戏的厂商都不见了，取而代之的是一大堆模板化、同质化、骗氪化的垃圾游戏蓬勃发展。\r\n不推荐游玩。",
+      "timestamp_created": 1785104814,
+      "playtime_forever": 17598
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-27T20:51:29+00:00",
+      "lang": "english",
+      "title": "[正面] it has saya",
+      "summary": "it has saya",
+      "url": "https://steamcommunity.com/profiles/76561199873532504/recommended/3052450",
+      "author": "76561199873532504",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "it has saya",
+      "timestamp_created": 1785185489,
+      "playtime_forever": 275
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-27T18:41:38+00:00",
+      "lang": "brazilian",
+      "title": "[正面] Jogo mt divertido\r\nPara um gaccha médio é simples...",
+      "summary": "Jogo mt divertido\r\nPara um gaccha médio é simples de entender e aprender",
+      "url": "https://steamcommunity.com/profiles/76561198205299469/recommended/3052450",
+      "author": "76561198205299469",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "Jogo mt divertido\r\nPara um gaccha médio é simples de entender e aprender",
+      "timestamp_created": 1785177698,
+      "playtime_forever": 1997
     },
     {
       "source": "steam",
@@ -109,21 +154,6 @@
       "review": "ㅤ",
       "timestamp_created": 1785108580,
       "playtime_forever": 356
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-26T22:26:54+00:00",
-      "lang": "schinese",
-      "title": "[负面] 经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、...",
-      "summary": "经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、游戏性弱、禁用词多的国风特点也是一点没落。\r\n真的有些勾起我的创伤回忆了。我不知道如今世界发生了什么，但是童年时记忆的快乐游戏的厂商都不见了，取而代之的是一大堆模板化、同质化、骗氪化的垃圾游戏蓬勃发展。\r\n不推荐游玩。",
-      "url": "https://steamcommunity.com/profiles/76561198253832125/recommended/3052450",
-      "author": "76561198253832125",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、游戏性弱、禁用词多的国风特点也是一点没落。\r\n真的有些勾起我的创伤回忆了。我不知道如今世界发生了什么，但是童年时记忆的快乐游戏的厂商都不见了，取而代之的是一大堆模板化、同质化、骗氪化的垃圾游戏蓬勃发展。\r\n不推荐游玩。",
-      "timestamp_created": 1785104814,
-      "playtime_forever": 17598
     }
   ]
 }
