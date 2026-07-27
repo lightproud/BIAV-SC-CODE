@@ -904,7 +904,7 @@
       "path": "projects/news/scripts/archive_layout.py",
       "summary": "archive_layout.py — 归档布局单一真相源（SSOT）。",
       "planes": [
-        "import"
+        "command"
       ],
       "status": "live"
     },

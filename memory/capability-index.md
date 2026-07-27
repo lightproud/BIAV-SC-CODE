@@ -226,7 +226,7 @@
   `projects/news/scripts/archive_discord.py`
 - **`archive_engine.py`** _[活:cli+workflow]_ — 通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除  
   `projects/news/scripts/archive_engine.py`
-- **`archive_layout.py`** _[活:import]_ — archive_layout.py — 归档布局单一真相源（SSOT）。  
+- **`archive_layout.py`** _[活:command]_ — archive_layout.py — 归档布局单一真相源（SSOT）。  
   `projects/news/scripts/archive_layout.py`
 - **`archive_platforms.py`** _[活:cli+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/  
   `projects/news/scripts/archive_platforms.py`
