@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-26T21:59:21.718661+00:00",
+  "collected_at": "2026-07-27T02:42:01.792473+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 128,
+  "item_count": 129,
   "items": [
     {
       "source": "google_play",
@@ -173,6 +173,16 @@
       "summary": "I'm starting to like the game but the subtitles ruined the story and sometimes it's just too fast to read. it ruined the Aigis story ending for me.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-66ed8864-af87-4a5a-9b51-53fd9dc816a0",
       "author": "Gabriel Gazo",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-03T07:53:37",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Really good game with a gameplay somewha",
+      "summary": "Really good game with a gameplay somewhat similar to slay the spire. The gacha aspect is free to play friendly, and progression is not hard. I love the art personally, and the stories are also really well written (I cried in some of them). I think the only thing that needs improvement is the UI of the loading screen and the combat screen, since there is no button feedback so if you clicked a button and it's loading you don't actually know that it's loading.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-76011579-765b-4aa8-9924-c12b460b9403",
+      "author": "Ethan B (Potatoooo)",
       "engagement": 1
     },
     {
@@ -627,16 +637,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-03T07:53:37",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Really good game with a gameplay somewha",
-      "summary": "Really good game with a gameplay somewhat similar to slay the spire. The gacha aspect is free to play friendly, and progression is not hard. I love the art personally, and the stories are also really well written (I cried in some of them). I think the only thing that needs improvement is the UI of the loading screen and the combat screen, since there is no button feedback so if you clicked a button and it's loading you don't actually know that it's loading.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-76011579-765b-4aa8-9924-c12b460b9403",
-      "author": "Ethan B (Potatoooo)",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-02T08:43:54",
       "lang": "en",
       "title": "[Google Play 好评] ★5 I really love the gameplay and the chara",
@@ -1003,6 +1003,16 @@
       "summary": "peak game",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-3029aa0d-5b35-4d8e-bea3-124f6105ae6a",
       "author": "Hamza",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-25T22:08:21",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 simplemente hermoso el juego",
+      "summary": "simplemente hermoso el juego",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-2e54c52d-a2d6-43a6-a8ee-949fd7e915aa",
+      "author": "Ronny Romero",
       "engagement": 0
     },
     {
