@@ -585,8 +585,13 @@ in the wrong place.
 | `ReadMcpResourceOutput.contents[].blobSavedTo` | This SDK does not spill binary blobs to disk. |
 | `AskUserQuestionOutput.answers.*` / `annotations.*` | Official permission-component UI, same ruling as the input side. |
 
-**Nine types are identical at every depth**: Glob, Grep, WebSearch, Monitor,
-the Task quintet, TodoWrite, EnterWorktree, ExitPlanMode, Workflow.
+~~**Nine types are identical at every depth**: Glob, Grep, WebSearch, Monitor,
+the Task quintet, TodoWrite, EnterWorktree, ExitPlanMode, Workflow.~~
+**RETRACTED 2026-07-27** by the tooled re-run below: Glob, Grep and Workflow
+were NOT identical. This hand-rolled pass compared only the first arm of a
+union type and did not match quoted keys, so it under-reported. Left struck
+through rather than deleted — a sweep that overstated its own coverage is
+itself the finding.
 
 **Method limit, stated because it bounds what "swept" means here**: the
 comparison uses a brace-depth flattener, not a TypeScript parser — it tracks
@@ -594,6 +599,44 @@ key names and nesting, so it agrees with itself on both sides but would mis-read
 exotic constructs (conditional types, deep generics). Key COUNTS per type are
 printed alongside the diff for exactly this reason: a count in the wrong order
 of magnitude means the parse went wrong, not that the types diverged.
+
+## Type-parity as a standing command (2026-07-27)
+
+The three sweeps above were throwaway scripts. `scripts/type-parity.mjs` makes
+the comparison repeatable, and — the actual point — makes it report only what is
+NEW: adjudicated divergences live in a `RULED` allowlist that is deducted
+automatically, and a `RULED` entry absorbs its whole subtree, so ruling once on
+`BashOutput:gitOperation` does not leave eleven children in the report. A list
+that prints the same forty known rows every time stops being read.
+
+    npm i --no-save @anthropic-ai/claude-code   # official arm, clean-room boundary ①
+    node scripts/type-parity.mjs [--all] [--json]
+
+Report-only, always exit 0 — same reasoning as `description-coverage.mjs`: the
+difference should not be zero, because red-line discipline forbids declaring
+capabilities this package does not ship.
+
+**Its first honest run found four defects the three hand passes had missed,
+three of them one kind — SHIPPED BUT UNDECLARED:**
+
+| Gap | Reality |
+|---|---|
+| `GrepInput['-o']` | Implemented in `grep.ts` across three code paths since the option landed; the type never said so. Missed before because the earlier flattener did not match quoted keys, and `-o` is only expressible as one. |
+| `WorkflowInput.title` / `.description` | Both present in the shipped `inputSchema` as run labels overriding `meta.name` / `meta.description`. |
+| `GlobOutput.totalMatches` / `.countIsComplete` | Now populated. Honest here because this engine enumerates the full match set and then slices it, so the count is exact rather than a floor — `countIsComplete` is always `true`, unlike official where an upstream search can truncate its own output. |
+
+A declared surface that under-reports what the code accepts is the mirror image
+of typed-not-populated and misleads the same way: a caller reading the types
+concludes a shipped feature is absent.
+
+**Open, awaiting a keeper ruling — deliberately NOT self-absorbed into
+`RULED`** (that allowlist is only meaningful if entries mean "a human looked"):
+
+| Path | Question |
+|---|---|
+| `AgentOutput` — `toolStats.*` (7), `usage.inference_geo` / `.iterations` / `.speed`, `worktreePath` / `worktreeBranch`, `agentType`, `modelsUsed`, `sessionUrl`, `taskId`, `isAsync`, `content.citations` | Official subagent telemetry / worktree / remote-task accounting. Some (`agentType`, a tool-call tally) this engine could honestly derive; most it cannot. |
+| `AgentInput.team_name` | Official teams; no such concept here. |
+| `FileReadOutput.source` | Sits on official's `file_unchanged` result arm — a startup-seeded CLAUDE.md dedup path this SDK does not ship at all. The gap is the whole arm, not the field. |
 
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 

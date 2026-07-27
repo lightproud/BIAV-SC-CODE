@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.89.0 — 2026-07-27
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.89.0 (`type-parity.mjs`: the three ad-hoc
+divergence sweeps become one command that reports only new drift; four
+shipped-but-undeclared type gaps closed).
+
 ## 0.88.0 — 2026-07-27
 
 Lockstep alignment only — no changes to this package. The family clock advanced

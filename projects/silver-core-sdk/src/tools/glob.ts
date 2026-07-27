@@ -139,6 +139,8 @@ export const globTool: BuiltinTool = {
           numFiles: 0,
           filenames: [],
           truncated: false,
+          totalMatches: 0,
+          countIsComplete: true,
         } satisfies GlobStructuredOutput,
       };
     }
@@ -172,6 +174,11 @@ export const globTool: BuiltinTool = {
         numFiles: capped.length,
         filenames: capped.map((e) => e.path),
         truncated: sorted.length > MAX_RESULTS,
+        // Official leaves these optional because its search can truncate its
+        // own output upstream of the cap; here the full set is enumerated and
+        // then sliced, so the count is exact rather than a floor.
+        totalMatches: sorted.length,
+        countIsComplete: true,
       } satisfies GlobStructuredOutput,
     };
   },
