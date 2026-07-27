@@ -30,7 +30,10 @@ REPO = Path(__file__).resolve().parent.parent
 TESTS = REPO / "tests"
 
 #: conftest.py 已经为所有测试注入的目录（无需各档自报）。
-_CONFTEST_DIRS = [REPO / "scripts", TESTS]  # conftest 注入 + pytest 自带的测试档目录
+#: 不含 conftest 的注入——本条守的是「档内注入能否独立支撑」（即 `python
+#: tests/test_x.py` 直跑的场景，conftest 根本不参与）。只算 pytest / 直跑都会
+#: 提供的测试档自身目录。conftest 的兜底是给全量跑用的，不该让守卫放水。
+_CONFTEST_DIRS = [TESTS]
 
 #: 标准库 / 第三方 / 测试自身的辅助模块，不参与「必须能在仓内找到」的判定。
 _IGNORED_PREFIXES = ("pytest", "unittest", "vitest")
