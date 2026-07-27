@@ -406,6 +406,55 @@ SDK implements the agent loop directly against the public Messages API:
 | MultiEdit | REMOVED | SDK-original v0.61.0–0.64.4 (same-file atomic batch edit — edits applied sequentially on one snapshot, all-or-nothing write, single pre-image for rewind, same read-before-write gate as Edit; never had an official parity target — upstream retired MultiEdit in favour of repeated Edit calls, so support was vs our own documented semantics with an authored, not reproduced, description). **v0.65.0: REMOVED (audit r4 Y5-3, keeper alignment) — the tool no longer ships. It is absent from `createBuiltinTools` (tests/tool-parity.test.ts pins the shipped set) and is once again a red-line token that no SHIPPED description may reference (tests/red-line-tool-names.test.ts; `descriptions.ts` header lists it under "retired 0.65.0"). Lifecycle: shipped 2026-07-15, DEPRECATED-but-shipping in v0.64.4, hard-removed in v0.65.0. Consumers use repeated Edit calls (each against live file state, avoiding the snapshot-ambiguity MultiEdit's own not-found triage existed to explain); recoverable from git history if a real consumer need resurfaces.** |
 | NotebookEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface) |
 
+## Baseline realignment against the 2.1.216 snapshot (2026-07-27)
+
+The comparison basis had gone stale in two different ways at once, and they are
+worth keeping apart because only one of them is fixable inside this repo.
+
+**Prose basis — realigned, and now measurable on demand.** The archive layer the
+descriptions are reproduced from was refreshed to the 2.1.216-era snapshot; the
+per-fragment `ccVersion` values it carries now span 2.1.14 – 2.1.217 (each
+fragment is stamped with the release it was last observed in, so a spread is
+normal — an unchanged clause keeps its old stamp). `node
+scripts/description-coverage.mjs` reports, per cited fragment, how much of it is
+still reproduced verbatim here. Measured 2026-07-27, 30 cited fragments:
+
+| Coverage | Fragments | Reading |
+|---|---|---|
+| 100% | 18 | Bash (9 of its 10), Edit, Write ×2, Grep (2.1.217), Glob (2.1.215), the Task quadruplet, ExitPlanMode |
+| 80–97% | 4 | Bash git-commit (35/36), Workflow (119/144), AskUserQuestion, WebFetch |
+| 25–71% | 6 | WebSearch, Read, Monitor, TodoWrite, EnterPlanMode, EnterWorktree |
+| 11% | 1 | SendMessage — agentId-only addressing, the largest documented adaptation |
+| n/a | 1 | `bash-timeout`: entirely template, no stable sentence to measure |
+
+Low coverage is NOT a defect signal here and the guard deliberately does not gate
+on it: this SDK refuses to describe capabilities it does not ship (red-line
+discipline), so the WebFetch summarizer clause, Monitor's push channel,
+EnterWorktree's unshipped half and SendMessage's teammate-name addressing are all
+*supposed* to be missing. The guard asks only "does this description still
+recognise its source" (≥1 stable anchor). The coverage number is a signal for a
+human to read, which is why the command exists and why it always exits 0.
+
+**One real defect the realignment found**: `SendMessage` cited
+`tool-description-sendmessagetool`, which the snapshot renamed to
+`tool-description-sendmessage`. It went unnoticed because the existence check
+rode inside the anchor check, which skips adapted entries — so an adapted
+description could point into thin air and stay green. Existence is now its own
+test, applied to faithful and adapted alike. That makes three dangling slugs from
+this one snapshot: two reddened main for six hours (v0.80.1), this third was
+found only by hand.
+
+**Numeric basis — NOT realignable in-repo, and that boundary matters.** The
+v0.80.0 limits work was measured against constants extracted from a 2.1.141
+`claude.exe`. The archive layer cannot refresh those: the reconstruction
+template-izes exactly the numbers (`${MAX_LINES_CONSTANT}` and friends), and the
+grep fragments carry no parameter-level docs at all — so the `head_limit` default
+of 250, Read's 25,000-token cap, Bash's 30,000 and WebFetch's 100,000 rest solely
+on that one extraction and are NOT independently corroborated by anything now in
+this repository. Re-verifying them needs another binary extraction on a machine
+that has Claude Code installed. Until then, treat the numeric column of the
+v0.80.0 changelog entry as sourced-once, not continuously guarded.
+
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 
 The model-side tool descriptions in `src/tools/descriptions.ts` are FAITHFUL

@@ -57,6 +57,7 @@ src/
 | 构建 | `npm run build`（ESM + d.ts → dist/） |
 | 单测 | `npm test`（vitest，mock 传输层，零网络；含仿真器端到端集成测试） |
 | 真机 smoke | `ANTHROPIC_API_KEY=... node tests/integration/live-real-api.mjs`（需先 `npm run build`；打真 api.anthropic.com） |
+| 描述基准吻合度 | `node scripts/description-coverage.mjs [--json] [--min=N]`（**尺子不是门禁**：逐条报本包描述对所引快照档还剩多少逐字吻合 + 该档 ccVersion。吻合度本就不该满分——红线纪律禁止描述未发货能力，硬拉满等于逼描述吹本包做不到的事，故**恒 exit 0**、低分要人来分「已登记改编」还是「上游加了新话没跟」。需先 `npm run build`。射程边界：重建档把数字上限模板化，**数值常量在仓内无法核验**）|
 | 双层评估 runEvals（SCS-REQ-002 环二） | `node scripts/run-evals.mjs`（底线层 = 全量 vitest pass/fail；行为层 = `evals/` 20 题 + `claude-sonnet-5` 判卷——12 题 prompt-session + 8 题 Phase 2 harness（`scripts/eval-harnesses.mjs` 故障注入/resume/压缩压力），无 key 走 STUB 验管线；`--judge-batches` 走 Batches API 五折判卷。评估集为守密人定稿权保护路径，任何改动须 `node scripts/update-evals-manifest.mjs` 重签清单，否则治理测试红。回归门禁 `node scripts/check-eval-regression.mjs`（REQ-2.2，报警不阻断）） |
 
 ## 测试三层
@@ -69,11 +70,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.80.1`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.80.1`
+**当前版本 `0.80.2`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.80.2`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.80.2（2026-07-27）：对齐 2.1.216 快照基准**（守密人裁「3 也直接对齐基准」）——基准同时从两个方向陈旧了，且只有一个方向能在仓内修，两者都记进 `docs/COMPAT.md`「Baseline realignment」。① **手工挖出第三条指空 slug**：`SendMessage` 引用的 `tool-description-sendmessagetool` 被快照改名，却因**缺档检查搭在锚点检查里、而锚点检查跳过 adapted 条目**而长期报绿——现把「引用的档案必须存在」拆成独立测试，faithful / adapted 一视同仁。同一次快照造了三条指空 slug：两条让 main 红了六小时（0.80.1），这条根本没守卫在看。② 新增 `scripts/description-coverage.mjs`，把「散文基准漂没漂」从人工比对变成一条命令（逐档报还剩多少逐字吻合 + 该档 ccVersion）。**报告体恒 exit 0**：吻合度本就不该是 100%——红线纪律禁止描述未发货能力，硬拉满等于逼描述去吹本包做不到的事。实测 30 档里 18 档 100%（Grep 对 2.1.217、Glob 对 2.1.215），低分端全是已登记改编（SendMessage 11% / EnterWorktree 25%）。**射程边界照实写**：0.80.0 那批**数值上限对不了**——重建档把数字模板化（`${MAX_LINES_CONSTANT}`）、grep 档没有参数级文档，故 250 / 25,000 / 30,000 / 100,000 仍只靠那一次 2.1.141 二进制提取支撑，仓内无任何东西能独立佐证，重新核验需在装有 Claude Code 的机器上再提取一次。发货运行时改动仅一个 slug 字符串及其注释，**描述文本未动**，提示词字节与缓存键不变。
 
 **v0.80.1（2026-07-27）：两条提示词溯源 slug 改锚 + 给刷新 cron 补自检**——上游快照
 2.1.173 → 2.1.216（今日 cron 76fe5e6 直推 main）改名 24 档、删 5 档，两条 slug 指空，

@@ -82,8 +82,8 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.80.1` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.80.1` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.80.2` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.80.2` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 134 / 198 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
@@ -249,6 +249,8 @@
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
+> **v0.80.2（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.80.2（对齐 2.1.216 快照基准）前进。
+>
 > **v0.80.1（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.80.1（两条提示词溯源 slug 改锚 + 刷新 cron 补自检）前进。
 >
 > **v0.80.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.80.0（工具输出上限对齐 Claude Code 2.1.141：WebFetch 100_000 → Read 的 50_000、Grep `head_limit` 三模式统一默认 250、Bash 输出截断改保尾去头）前进。
@@ -320,6 +322,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.80.2（2026-07-27）**：**对齐 2.1.216 快照基准**（守密人裁「3 也直接对齐基准」）——① 手工挖出**第三条指空 slug**（`SendMessage` 引用被快照改名），真因是**缺档检查搭在锚点检查里、而锚点检查跳过 adapted 条目**，现拆为独立测试 faithful/adapted 一视同仁；② 新增 `projects/silver-core-sdk/scripts/description-coverage.mjs`——把「散文基准漂没漂」变成一条命令，**报告体恒 exit 0**（吻合度本就不该满分：红线纪律禁止描述未发货能力）。实测 30 档 18 档 100%，低分端全是已登记改编。**射程边界**：0.80.0 那批**数值上限对不了**（重建档把数字模板化、grep 档无参数级文档），仍只靠一次 2.1.141 二进制提取支撑，重新核验须在装有 Claude Code 的机器上再提取。
 - **v0.80.1（2026-07-27）**：**两条提示词溯源 slug 改锚 + 给刷新 cron 补自检**（守密人 2026-07-27 交互裁「一并修 + 给 cron 补自检」）——上游快照 2.1.173 → 2.1.216（今日 cron 76fe5e6 带 `[skip ci]` 直推 main）改名 24 档 / 删 5 档，SDK 侧两条 slug 指空、两条 corpus-sync 守卫在 main 上报红。① `COORDINATOR_WORKER_PROVENANCE.slug` → `agent-prompt-coordinator-worker-instructions`（纯改名，守卫抽出的 15 个锚点句逐字仍在）· ② `MAIN_LOOP_INTRO.slug` → `system-prompt-harness-instructions`（上游把三个 intro 小档合并进它，原句未变、现居开篇模板的「无 output style」分支；`faithful` 仍成立，注释写明 faithful 于**分支**非整档）。**零 shipped 提示词文本改动**。同批给 `refresh-claude-code-prompts.yml` 补自检：刷新后、提交前跑这两条守卫，**红则不提交不直推**，第二道网是 dead-man-switch 按「最近一次成功超时」抓持续失败。
 - **v0.80.0（2026-07-27）**：**工具输出上限对齐 Claude Code 2.1.141**（守密人交付单三处独立改动，常量取自 `claude.exe` 内含明文 JS）——① WebFetch 上限 **100_000 → 复用 Read 的 50_000**（官方那个数管的是「喂摘要小模型的输入」、主上下文只收摘要；本 SDK 直连无摘要层，同一个数字变成「原文直灌主上下文」，反让 WebFetch 独享两倍 Read 额度，而它拉的是最不可控的外部网页；改为引用`MAX_READ_OUTPUT_CHARS` 常量防两闸门再漂移）· ② Grep `head_limit` **三种 output_mode 统一默认 250**（原 count / files_with_matches 默认无限；OPT-1 担忧的「截断的 count 是错的 count」已由同批的「每种模式都追加截断提示」解决，要可证完整仍显式传 `head_limit=0`）· ③ Bash 输出截断**改保尾去头**、标记移到开头（长命令的结论在末尾：构建成败 / 测试汇总 / 最终报错；新增 `sliceTailSurrogateSafe`镜像 helper，尾切丢的是开头低位代理）。**刻意不改** Read 的字符计量（对齐 token 需引入 tokenizer运行时依赖，且字符计量在中文场景反更宽）。测试新增 5 条（上限对齐三处各自钉死 + 尾切代理边界），本容器实测 **3,247 条**（3,239 通过 / 6 跳过 / **2 失败**——两条均为 2026-07-27 上游提示词快照刷新 76fe5e6 导致的档案锚点漂移治理测试，**HEAD 上同样红**，与本次改动无关）。
 - **v0.79.1（2026-07-27）**：内部去重，零表面/行为变化——重试退避与 JSON-RPC 两族重复实现分别收敛为 `transport/http-retry.ts` / `mcp/protocol.ts`，六档净 −288 行。随 #835 合并时漏 bump 致版本门禁在 main 红约一小时，本版为补票（详见 CHANGELOG）。

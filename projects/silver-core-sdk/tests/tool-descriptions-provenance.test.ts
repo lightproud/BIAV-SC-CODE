@@ -57,6 +57,32 @@ describe('tool-description provenance (corpus-sync guard)', () => {
     }
   });
 
+  /**
+   * A cited slug that names no file is broken provenance regardless of whether
+   * the description is faithful or adapted — an adapted description still has
+   * to say WHERE it was adapted FROM, and a pointer into thin air says nothing.
+   *
+   * Split out of the anchor check on 2026-07-27: the anchor check skips adapted
+   * entries (their text legitimately diverges), and the existence check used to
+   * ride along inside it. So when the 2.1.216 snapshot renamed
+   * tool-description-sendmessagetool -> tool-description-sendmessage, the
+   * SendMessage entry — adapted — pointed at a deleted file and the suite
+   * stayed green. Two of the three dangling slugs that snapshot created were
+   * caught the hard way (main went red for six hours); this third one was
+   * caught only by a hand audit, because the guard was not looking.
+   */
+  it.runIf(haveArchive)('every cited archive fragment exists, faithful or adapted', () => {
+    const dangling: string[] = [];
+    for (const p of TOOL_DESCRIPTION_PROVENANCE) {
+      for (const slug of p.slugs) {
+        if (!existsSync(join(ARCHIVE, `${slug}.md`))) {
+          dangling.push(`${p.tool}: cited archive fragment missing (${slug}.md)`);
+        }
+      }
+    }
+    expect(dangling, dangling.join('\n')).toEqual([]);
+  });
+
   it.runIf(haveArchive)('each faithful description still represents every archive fragment it cites', () => {
     const drifted: string[] = [];
     for (const p of TOOL_DESCRIPTION_PROVENANCE) {
