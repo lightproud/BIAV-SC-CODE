@@ -28,13 +28,39 @@ import type {
 import { McpError } from '../errors.js';
 import { SDK_VERSION } from '../version.js';
 
-/** Protocol revision this client advertises in `initialize`. */
+/**
+ * Protocol revision this client advertises in `initialize`.
+ *
+ * Official Claude Code 2.1.220 advertises `2025-11-25` (verified in the binary:
+ * `frt="2025-11-25"`). This client stays on `2025-06-18` DELIBERATELY: the
+ * newer revision's addition is an async task surface (`tasks/get`, `tasks/list`,
+ * `tasks/status`, `tasks/result`, `tasks/cancel`) plus the
+ * `io.modelcontextprotocol/related-task` and `/skills` extensions, none of which
+ * this client implements. Advertising a revision whose semantics are unshipped
+ * is the same red line as describing an unshipped capability — a server may
+ * legitimately expect those methods to work. The number moves when the
+ * semantics land, not before.
+ */
 export const MCP_PROTOCOL_VERSION = '2025-06-18';
 /** Protocol revisions this clean-room client can speak. A server that
  *  negotiates anything outside this set fails connect (spec: the client SHOULD
  *  disconnect on an unsupported version) instead of having the unknown version
- *  echoed into every later request (audit r4 Z6-1/Z6-2). */
-export const SUPPORTED_PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26', '2024-11-05'];
+ *  echoed into every later request (audit r4 Z6-1/Z6-2).
+ *
+ *  `2024-10-07` added 2026-07-27: official accepts five revisions
+ *  (`[frt, "2025-06-18", "2025-03-26", "2024-11-05", "2024-10-07"]`) and this
+ *  client accepted only three, so a server pinned to the oldest revision was
+ *  REFUSED here and served there. Widening what we tolerate costs nothing —
+ *  it is the accept list, not the advertised one, and every request still
+ *  carries the negotiated version. `2025-11-25` is deliberately NOT in this
+ *  list either: accepting a negotiation onto a revision whose task methods are
+ *  unimplemented would fail later and less legibly than failing at connect. */
+export const SUPPORTED_PROTOCOL_VERSIONS = [
+  '2025-06-18',
+  '2025-03-26',
+  '2024-11-05',
+  '2024-10-07',
+];
 export const CLIENT_INFO = { name: 'silver-core-sdk', version: SDK_VERSION } as const;
 export const DEFAULT_REQUEST_TIMEOUT_MS = 60_000;
 /** Safety cap on tools/list pagination to avoid a misbehaving-server loop. */

@@ -5,6 +5,7 @@
  */
 
 import { randomUUID } from 'node:crypto';
+import { attachToolUseResults } from './tool-use-results.js';
 
 import {
   AbortError,
@@ -1451,6 +1452,12 @@ export async function* runAgentLoop(
           return;
         }
         const results: ToolResultBlockParam[] = [];
+        // Structured results for this batch, keyed by tool_use_id. Official
+        // carries one `toolUseResult` per user message because it emits one
+        // tool_result per message; this engine batches a turn's results into
+        // ONE user turn, so a record keyed by id is the honest shape here
+        // (2026-07-27, structured-output surface).
+        const structuredResults: Record<string, unknown> = {};
         let batchStop: ToolExecOutcome['stop'];
         let batchDefer: ToolExecOutcome['defer'];
         // Execute in content order, but run a maximal run of >= 2 consecutive
@@ -1517,6 +1524,9 @@ export async function* runAgentLoop(
               for (const msg of outcome.observability) yield msg;
             }
             results.push(outcome.result);
+            if (outcome.structured !== undefined) {
+              structuredResults[toolUses[ti + g]!.id] = outcome.structured;
+            }
             if (outcome.stop !== undefined) {
               batchStop = outcome.stop;
               stoppedInGroup = true;
@@ -1562,6 +1572,9 @@ export async function* runAgentLoop(
         }
         pushAssistant(assistant.content, assistant.model);
         const userTurn: APIMessageParam = { role: 'user', content: results };
+        if (Object.keys(structuredResults).length > 0) {
+          attachToolUseResults(userTurn, structuredResults);
+        }
         history.push(userTurn);
         mirror(userTurn);
 

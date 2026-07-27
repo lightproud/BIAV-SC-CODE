@@ -115,6 +115,26 @@ export interface Transport {
 export type ToolResultPayload = {
   content: string | Array<TextBlockParam | ImageBlockParam | DocumentBlockParam>;
   isError?: boolean;
+  /**
+   * Machine-readable result, surfaced to SDK consumers as `toolUseResult` on
+   * the tool_result user message (2026-07-27, divergence sweep vs official
+   * 2.1.220 + keeper ruling "全量建结构化输出面").
+   *
+   * WHY it exists: official declares an `outputSchema` per tool and hands
+   * consumers a typed result; this SDK returned text only, so anything a
+   * consumer needed — did Glob truncate, how many matches did Grep really
+   * find, what exactly did Edit change — had to be re-derived by PARSING the
+   * human-facing string. Official's own type comment on
+   * `truncatedByTokenCap` states the principle outright: it "survives output
+   * reconstruction (unlike the render-time banner)". Text is a rendering;
+   * rendering is not an interface.
+   *
+   * NOT sent to the model — the Anthropic tool_result block has no structured
+   * channel, and duplicating the payload into the text would spend context to
+   * restate what the text already says. See `src/types/tool-outputs.ts` for
+   * the per-tool shapes.
+   */
+  structuredOutput?: unknown;
 };
 
 /**

@@ -35,6 +35,7 @@ import type {
 } from '../internal/contracts.js';
 import { sliceSurrogateSafe } from '../internal/text.js';
 import { MAX_READ_OUTPUT_CHARS } from './fsutil.js';
+import type { WebFetchStructuredOutput } from '../types/tool-outputs.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { SDK_USER_AGENT } from '../version.js';
 import { WEBFETCH_DESCRIPTION } from './descriptions.js';
@@ -491,6 +492,7 @@ export const webFetchTool: BuiltinTool = {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
+    const fetchStartedAt = Date.now();
     try {
       if (ctx.signal.aborted) throw new AbortError();
 
@@ -652,7 +654,21 @@ export const webFetchTool: BuiltinTool = {
       }
 
       ctx.debug(`WebFetch: ${current.toString()} -> ${text.length} chars (${contentType})`);
-      return { content: text };
+      return {
+        content: text,
+        structuredOutput: {
+          bytes: buf.length,
+          code: response.status,
+          codeText: response.statusText,
+          url: current.toString(),
+          durationMs: Date.now() - fetchStartedAt,
+          // `result` is the official field for the fetched body; this engine
+          // returns it verbatim (no summarizer), so the structured copy is the
+          // same text the model sees.
+          result: text,
+          truncated,
+        } satisfies WebFetchStructuredOutput,
+      };
     } catch (e) {
       // WV5-3 (audit r3): the fetch signal merges the turn signal with a 30s
       // per-request timeout. A REAL turn cancel (ctx.signal aborted) rethrows

@@ -16,6 +16,7 @@ import { BASH_DESCRIPTION, BASH_WIN32_NOTE, buildBashSandboxNote } from './descr
 import { planShellSpawn, resolveSpawnEnv } from '../sandbox/backend.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import { sliceTailSurrogateSafe } from '../internal/text.js';
+import type { BashStructuredOutput } from '../types/tool-outputs.js';
 import type { SandboxContext } from '../types.js';
 import type {
   BuiltinTool,
@@ -34,6 +35,10 @@ const KILL_GRACE_MS = 2_000;
  * never fire). The common case settles earlier, on 'close'.
  */
 const FLUSH_GRACE_MS = 200;
+
+/** Leading marker a capped stream carries; also the `truncated` signal in the
+ *  structured result, so the two can never disagree. */
+const BASH_TRUNCATION_MARKER = '[truncated: earlier output dropped]';
 
 /**
  * Accumulates stream output, keeping only the LAST STREAM_CAP_CHARS chars.
@@ -61,7 +66,7 @@ class CappedStream {
   }
 
   text(): string {
-    return this.truncated ? `[truncated: earlier output dropped]\n${this.buf}` : this.buf;
+    return this.truncated ? `${BASH_TRUNCATION_MARKER}\n${this.buf}` : this.buf;
   }
 }
 
@@ -490,6 +495,25 @@ export function createBashTool(
  *  the schema carries the always-on escape param (no-op here). */
 export const bashTool: BuiltinTool = createBashTool();
 
+/** Structured result shared by Bash's three terminal branches, so a consumer
+ *  reads the same shape whether the command succeeded, failed or timed out —
+ *  facts that were previously only recoverable by parsing the report string. */
+function bashStructured(
+  outcome: { stdout: string; stderr: string; code: number | null },
+  opts: { interrupted: boolean; timedOutAfterMs?: number },
+): BashStructuredOutput {
+  return {
+    stdout: outcome.stdout,
+    stderr: outcome.stderr,
+    interrupted: opts.interrupted,
+    exitCode: outcome.code,
+    ...(opts.timedOutAfterMs !== undefined && { timedOutAfterMs: opts.timedOutAfterMs }),
+    truncated:
+      outcome.stdout.startsWith(BASH_TRUNCATION_MARKER) ||
+      outcome.stderr.startsWith(BASH_TRUNCATION_MARKER),
+  };
+}
+
 async function execute(
     input: Record<string, unknown>,
     ctx: ToolContext,
@@ -636,11 +660,18 @@ async function execute(
           `Command timed out after ${timeoutMs}ms` +
           (streams.length > 0 ? `\n${streams}` : ''),
         isError: true,
+        structuredOutput: bashStructured(outcome, {
+          interrupted: true,
+          timedOutAfterMs: timeoutMs,
+        }),
       };
     }
 
     if (outcome.code === 0) {
-      return { content: streams.length > 0 ? streams : '(no output)' };
+      return {
+        content: streams.length > 0 ? streams : '(no output)',
+        structuredOutput: bashStructured(outcome, { interrupted: false }),
+      };
     }
 
     const failure =
@@ -669,5 +700,6 @@ async function execute(
     return {
       content: failure + (streams.length > 0 ? `\n${streams}` : '') + hint + cmdHint + sigHint,
       isError: true,
+      structuredOutput: bashStructured(outcome, { interrupted: false }),
     };
 }
