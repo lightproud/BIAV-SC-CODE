@@ -62,7 +62,13 @@ export async function dream(store, { date, inspectorIds, keepDays = 45 }) {
       continue;
     }
     const status = /- status: (\w+)/.exec(raw)?.[1] ?? 'warn';
-    if ((STATUS_RANK[status] ?? 2) > STATUS_RANK[worst]) worst = status;
+    // An off-vocabulary status must never BECOME `worst`: STATUS_RANK[worst]
+    // would then be undefined and every later `rank > undefined` is false, so
+    // a real 'fail' sitting behind it would be silently downgraded. Rank the
+    // unknown as warn and carry a known key forward (summaryLine still
+    // reports the raw status verbatim).
+    const ranked = STATUS_RANK[status] === undefined ? 'warn' : status;
+    if (STATUS_RANK[ranked] > STATUS_RANK[worst]) worst = ranked;
     perInspector.push(`${id}=${status}`);
     const findingCount = raw.split('\n').filter((l) => /^- \[(warn|fail)\]/.test(l)).length;
     if (findingCount > 0) sections.push({ id, findingCount });
@@ -70,10 +76,16 @@ export async function dream(store, { date, inspectorIds, keepDays = 45 }) {
 
   const summaryLine = perInspector.join(' ');
   const evidence = `reports/{${inspectorIds.join(',')}}/${day}.md — ${summaryLine}`;
+  // 全绿 is claimed from `worst`, NOT from "no warn/fail lines were found":
+  // a blocked patrol (rate-limited ratchet reports status blocked with only
+  // info findings) and a MISSING report file both produce zero finding lines
+  // and are emphatically not green — the old test declared 巡检全绿 over them.
   const conclusionBits =
-    sections.length === 0
-      ? `巡检全绿 (${summaryLine})`
-      : `整体 ${worst}: ` + sections.map((s) => `${s.id} ${s.findingCount} 条发现`).join('; ');
+    sections.length > 0
+      ? `整体 ${worst}: ` + sections.map((s) => `${s.id} ${s.findingCount} 条发现`).join('; ')
+      : worst === 'ok'
+        ? `巡检全绿 (${summaryLine})`
+        : `整体 ${worst}: 无 warn/fail 条目 (${summaryLine})`;
 
   const card = [
     `## 值班归并 ${day}`,

@@ -24,7 +24,7 @@
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
-import { LedgerDriver, Scheduler, TaskLedger } from 'silver-core-maestro-sdk';
+import { LedgerDriver, Scheduler, TaskLedger, isTerminal } from 'silver-core-maestro-sdk';
 
 /**
  * Host storage battery: the SDK's LedgerStore contract over one JSON file
@@ -138,7 +138,10 @@ export async function runScheduleLoop(opts) {
     }
     for (;;) {
       const sessions = await Promise.all(fired.map((id) => ledger.getSession(id)));
-      if (sessions.every((s) => s !== null && (s.state === 'done' || s.state === 'failed'))) break;
+      // Terminal test through the SDK's vocabulary, not a literal pair: a
+      // `cancelled` fire session reads as still-open to `done || failed` and
+      // the phase bails on its drain deadline instead of settling.
+      if (sessions.every((s) => s !== null && isTerminal(s.state))) break;
       if (Date.now() > deadline) await bail('drain deadline — fired sessions still open');
       await sleep(10);
     }

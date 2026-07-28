@@ -10,7 +10,7 @@ import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
 import { AbortError } from '../errors.js';
 import { GLOB_DESCRIPTION } from './descriptions.js';
-import { toNativePath } from './fsutil.js';
+import { toNativePath, toPosixGlob } from './fsutil.js';
 import type { GlobOutput as GlobStructuredOutput } from '../types/tools.js';
 import type {
   BuiltinTool,
@@ -77,7 +77,11 @@ export const globTool: BuiltinTool = {
       };
     }
 
-    const entries = await fg(pattern, {
+    // fast-glob only ever reads `/` as a separator in a PATTERN and treats `\`
+    // as an escape, so a Windows-spelled pattern (`src\**\*.ts` — the natural
+    // follow-up once results come back as `C:\repo\src\a.ts`) silently matched
+    // nothing. Normalized on win32 only; see fsutil.toPosixGlob.
+    const entries = await fg(toPosixGlob(pattern), {
       cwd: baseDir,
       absolute: true,
       // W7-3 (audit r3): `dot: false` made `**` silently skip files under

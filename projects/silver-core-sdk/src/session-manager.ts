@@ -957,9 +957,19 @@ export async function runConcurrent(
   const outcomes = new Array<RunConcurrentOutcome>(tasks.length);
   const collect = opts?.collectMessages === true;
   const onMessage = opts?.onMessage;
+  // A non-finite `concurrency` (Number(unset env)) used to survive both clamps
+  // as NaN, and `Array.from({ length: NaN })` builds ZERO workers: the batch
+  // resolved instantly having run NO task, returning an array of holes whose
+  // `.result` read throws on the consumer side. Treat it as unspecified.
+  const rawConcurrency = opts?.concurrency;
   const concurrency = Math.max(
     1,
-    Math.min(opts?.concurrency ?? 8, tasks.length || 1),
+    Math.floor(
+      Math.min(
+        Number.isFinite(rawConcurrency) ? (rawConcurrency as number) : 8,
+        tasks.length || 1,
+      ),
+    ),
   );
 
   let next = 0;

@@ -76,7 +76,14 @@ export function buildHost({
       // Serialize behind today's inspectors (driver claims everything due at
       // once; merging half-written days would be noise): wait bounded for
       // open inspect sessions to settle, then merge.
-      const deadline = Date.now() + 240_000;
+      // Bounded strictly BELOW the driver's attempt timeout. A wait that
+      // outlives queryTimeoutMs is aborted and the attempt settles as
+      // 'timeout' no matter what this executor returns — the merge would run,
+      // write the day's card, and still be booked as a failed attempt; with
+      // maxAttempts 2 the dream session then FAILS and --once exits 1 on a
+      // patrol whose card is sitting on disk. 240s against a 120s timeout made
+      // the "wait bounded, then merge" path unreachable by construction.
+      const deadline = Date.now() + Math.max(0, queryTimeoutMs - 30_000);
       for (;;) {
         const open = (await ledger.listSessions({ states: ['pending', 'running', 'retrying'] }))
           .filter((s) => s.intent.startsWith('inspect:') && s.id !== session.id);

@@ -54,9 +54,22 @@ const args = process.argv.slice(2);
 const baselineOnly = args.includes('--baseline-only');
 const behaviorOnly = args.includes('--behavior-only');
 const judgeBatches = args.includes('--judge-batches');
-const outDir = args.includes('--out')
-  ? args[args.indexOf('--out') + 1]
-  : join(root, 'evals-reports');
+// `--out` with a missing/flag-shaped value used to yield `undefined`, which
+// only blows up in mkdirSync AFTER the whole (possibly LIVE, billed) round has
+// run — the report is then never written. Reject it up front instead.
+const outArg = args.includes('--out') ? args[args.indexOf('--out') + 1] : undefined;
+if (args.includes('--out') && (outArg === undefined || outArg.startsWith('--'))) {
+  console.error('run-evals: --out needs a directory path');
+  process.exit(2);
+}
+// --baseline-only and --behavior-only are mutually exclusive: together they
+// null out BOTH layers, write an empty report and exit 0 — a green run that
+// evaluated nothing.
+if (baselineOnly && behaviorOnly) {
+  console.error('run-evals: --baseline-only and --behavior-only are mutually exclusive');
+  process.exit(2);
+}
+const outDir = outArg ?? join(root, 'evals-reports');
 const apiKey = process.env['ANTHROPIC_API_KEY'] ?? '';
 const live = apiKey.length > 0;
 
@@ -329,7 +342,23 @@ async function runBehavior() {
       }
       continue;
     }
-    const ws = seedWorkspace(question.harness);
+    // Seeding is per-question evidence gathering like everything else in this
+    // loop: a bad fixture (unknown GENERATE marker, unwritable seed path) must
+    // ERROR that ONE question, not throw out of runBehavior and abort the whole
+    // round — the report is written only at the very end, so an escape here
+    // discards every result already gathered (and, in LIVE mode, already paid
+    // for) and leaves a bare stack instead of a diagnosis.
+    let ws;
+    try {
+      ws = seedWorkspace(question.harness);
+    } catch (err) {
+      results.push({
+        ...base,
+        outcome: 'ERROR',
+        note: `harness seeding failed: ${String(err).slice(0, 400)}`,
+      });
+      continue;
+    }
     try {
       const phases = question.harness.phases ?? [question.harness];
       const evidence = { phases: [], harnessNotes: question.harness.envelope ?? null };

@@ -1360,7 +1360,47 @@ export function query(args: {
         // appended user turn as an SDKUserMessage (finding #27) and persist it,
         // in order, before the engine message that follows it.
         let historyTail = history.length;
+        // Q8 (emission contract): the engine MERGES a continuation user turn —
+        // a Stop-hook block reason, a structured-output correction, the
+        // pre-compaction memory-flush prompt — into the trailing user turn
+        // whenever the assistant turn in between was dropped as all-empty (a
+        // max_tokens cut mid-tool-use leaves only an orphan tool_use, which the
+        // C6 filter removes), replacing history[tail] with a NEW merged object
+        // instead of pushing. When that trailing turn was ALREADY flushed (the
+        // usual case: it is the tool_result turn surfaced at this turn's own
+        // assistant yield), historyTail has moved past the index, so the
+        // appended blocks reached the model but NEVER reached the consumer —
+        // the stream then shows two consecutive assistant turns with the user
+        // turn that provoked the second one missing entirely. Remember what was
+        // emitted for the last flushed entry so a later in-place merge can be
+        // surfaced as its own user message.
+        let lastFlushed: APIMessageParam | undefined;
+        let lastFlushedBlocks = 0;
         const flushToolResultUsers = function* (): Generator<SDKUserMessage> {
+          const tail = history[historyTail - 1];
+          if (
+            lastFlushed !== undefined &&
+            tail !== undefined &&
+            tail !== lastFlushed &&
+            tail.role === 'user'
+          ) {
+            const blocks = toContentBlocks(tail.content);
+            const appended = blocks.slice(lastFlushedBlocks);
+            lastFlushed = tail;
+            lastFlushedBlocks = blocks.length;
+            if (appended.length > 0) {
+              // Stream-only: the merged turn's own record is not re-persisted
+              // (a second consecutive user record on disk would break the
+              // resumed transcript's role alternation).
+              yield {
+                type: 'user',
+                uuid: randomUUID(),
+                session_id: sess.sessionId,
+                message: { role: 'user', content: appended },
+                parent_tool_use_id: null,
+              };
+            }
+          }
           while (historyTail < history.length) {
             const entry = history[historyTail];
             historyTail += 1;
@@ -1374,6 +1414,8 @@ export function query(args: {
               // Structured tool results ride a side-channel keyed by the turn
               // object (see engine/tool-use-results.ts for why not a field).
               const toolUseResult = readToolUseResults(entry);
+              lastFlushed = entry;
+              lastFlushedBlocks = toContentBlocks(entry.content).length;
               yield {
                 type: 'user',
                 uuid: entryUuid,
@@ -1468,14 +1510,26 @@ export function query(args: {
             persistTurnComplete(sess.sessionId, pendingUuid);
           }
         } catch (err) {
-          // Persist (but do not re-yield on error) any trailing tool_result
-          // user turn so the transcript stays durable across the failure. The
-          // pending_turn is deliberately LEFT dangling: a resume re-drives it.
+          // Persist any trailing tool_result user turn so the transcript stays
+          // durable across the failure. The pending_turn is deliberately LEFT
+          // dangling: a resume re-drives it.
+          // Q8 (emission contract): keep each (uuid, entry) pair too. The
+          // turn-level interrupt() branch below SURVIVES the failure — streaming
+          // mode keeps accepting input, string mode still yields a terminal
+          // result — and the consumer is still consuming there (the same
+          // reasoning L59 used for the drains). Dropping these left the host's
+          // stream-built transcript permanently missing a turn that IS on disk
+          // and IS replayed to the model on the very next request. The paths
+          // that do NOT survive (caller abort / close() / a consumer-injected
+          // throw()) still only persist, never yield.
+          const unstreamed: Array<{ uuid: string; entry: APIMessageParam }> = [];
           while (historyTail < history.length) {
             const entry = history[historyTail];
             historyTail += 1;
             if (entry !== undefined && entry.role === 'user') {
-              persistParam(sess.sessionId, entry);
+              const entryUuid = randomUUID();
+              persistParam(sess.sessionId, entry, entryUuid);
+              unstreamed.push({ uuid: entryUuid, entry });
             }
           }
           if (isAbortError(err)) {
@@ -1541,6 +1595,20 @@ export function query(args: {
             // observability events (SubagentStop hooks from aborted children,
             // mirror-error notices) that the in-turn drains never reached —
             // deliver them now; the consumer is still consuming on this path.
+            // Q8: the tool_result user turn(s) the batch completed before the
+            // cancel land first — they precede every lifecycle event queued by
+            // the teardown, and the terminal result below must stay last.
+            for (const u of unstreamed) {
+              const toolUseResult = readToolUseResults(u.entry);
+              yield {
+                type: 'user',
+                uuid: u.uuid,
+                session_id: sess.sessionId,
+                message: { role: 'user', content: u.entry.content },
+                parent_tool_use_id: null,
+                ...(toolUseResult !== undefined && { toolUseResult }),
+              };
+            }
             yield* drainMirror();
             yield* drainObs();
             if (!streamingMode) {

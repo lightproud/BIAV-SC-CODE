@@ -154,6 +154,11 @@ async function drillOutage() {
   child = startDaemon(sandbox);
   await sleep(4_000);
   child.kill('SIGTERM');
+  // Wait for the daemon to actually EXIT before reading the ledger (the other
+  // two stop points already do). A bare sleep raced the shutdown: the ledger
+  // could be read mid-write, so the compensation checks judged a half-written
+  // fire list and reported FAIL on a healthy daemon.
+  await new Promise((r) => child.on('exit', r));
   await sleep(1_000);
 
   const after = await openLedger(sandbox).listSessions();

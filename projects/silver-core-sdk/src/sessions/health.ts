@@ -177,11 +177,19 @@ export async function assessSessionStoreHealth(
   }
 
   const staleCutoff = now - staleAfterDays * DAY_MS;
+  // Both lists are sliced to LIST_CAP, so ties at the cutoff decide what the
+  // caller SEES. mtime/byte ties are ordinary (files written in the same ms,
+  // sessions of identical size) and the stable sort otherwise kept readdir
+  // order — a filesystem-dependent sequence, so the reported staleList/largest
+  // varied across runs and hosts for identical data. Break on the unique
+  // session id (same discipline as store.ts Rst-3 / file-store.ts Rst-4).
+  const byId = (a: readonly [string, number], b: readonly [string, number]): number =>
+    a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0;
   const stale = [...mtimes.entries()]
     .filter(([, m]) => m < staleCutoff)
-    .sort((a, b) => a[1] - b[1]);
+    .sort((a, b) => a[1] - b[1] || byId(a, b));
   const largest = [...perSession.entries()]
-    .sort((a, b) => b[1] - a[1])
+    .sort((a, b) => b[1] - a[1] || byId(a, b))
     .slice(0, LIST_CAP)
     .map(([sessionId, bytes]) => ({ sessionId, bytes }));
 

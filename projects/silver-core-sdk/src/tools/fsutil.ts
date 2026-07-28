@@ -82,6 +82,29 @@ export function toNativePath(p: string): string {
 }
 
 /**
+ * Glob-pattern form `fast-glob` can actually match: the INVERSE of toNativePath,
+ * applied to the pattern side.
+ *
+ * fast-glob (like every micromatch-based matcher) only ever speaks `/` in a
+ * PATTERN and reads `\` as an ESCAPE character. Since 0.77.0 Glob/Grep hand the
+ * model host-native paths (`C:\repo\src\a.ts`), so the natural next call is a
+ * Windows-spelled filter — `Grep({ glob: 'src\\**\\*.ts' })` — and that pattern
+ * does not merely under-match, it degrades to a search for a file literally
+ * named `src**.ts`: every escape is consumed, the wildcards die with them, and
+ * the tool answers "No files found" / "No matches found" over a tree full of
+ * hits. ripgrep, whose semantics Grep's description claims, normalizes the
+ * separator on Windows instead; match that.
+ *
+ * No-op off Windows, where a backslash is a legal filename character AND a
+ * meaningful glob escape — rewriting it there would break both. Safe on
+ * Windows precisely because neither use exists: `\` cannot appear in a Windows
+ * filename, so in a pattern it can only ever have meant a separator.
+ */
+export function toPosixGlob(pattern: string): string {
+  return path.sep === '\\' ? pattern.replace(/\\/g, '/') : pattern;
+}
+
+/**
  * True when `buf` is NOT valid UTF-8 (H1, audit T49). The read-modify-write
  * tools (Edit) decode with Buffer.toString('utf8'), which replaces
  * every invalid sequence with U+FFFD — writing that back re-encodes the
@@ -103,6 +126,15 @@ export function isLossyUtf8(buf: Buffer): boolean {
  * converted to `\r\n` (and the replacement normalized to `\r\n` so the file's
  * line-ending style is preserved). A needle that already contains `\r\n` was
  * authored against the raw bytes and is left alone.
+ *
+ * Second adaptation (same defect family, the branch F2 missed): the needle may
+ * match DIRECTLY on a CRLF file — a single-line `old_string` always does, since
+ * it carries no separator at all — while the REPLACEMENT introduces new lines
+ * with bare `\n`. Those bare newlines are then spliced verbatim into a CRLF
+ * file, leaving it with mixed endings (`alpha\r\nbeta\nadded\r\n`), which is
+ * exactly what a Windows checkout / `eol=crlf` `.gitattributes` tree must never
+ * get from an edit that changed two words. So on a file whose newlines are ALL
+ * CRLF, a replacement carrying bare `\n` is normalized to the file's style too.
  */
 export function adaptEditToLineEndings(
   text: string,
@@ -123,7 +155,29 @@ export function adaptEditToLineEndings(
       };
     }
   }
+  // Uniformly-CRLF file (every `\n` preceded by a `\r`) + a replacement holding
+  // a bare `\n`. Deliberately stricter than the `includes('\r\n')` test above:
+  // a MIXED file has no single style to preserve, so it is left exactly as the
+  // caller wrote it rather than being silently converted.
+  if (isCrlfOnly(text) && hasBareLf(newString)) {
+    return { oldString, newString: newString.replace(/\r?\n/g, '\r\n') };
+  }
   return { oldString, newString };
+}
+
+/** True when `s` contains a `\n` that is NOT preceded by a `\r`. Iterative and
+ *  allocation-free: this runs over whole file contents (up to the 50MB read
+ *  cap), where a recursive/slicing scan would be O(n²) and blow the stack. */
+function hasBareLf(s: string): boolean {
+  for (let i = s.indexOf('\n'); i !== -1; i = s.indexOf('\n', i + 1)) {
+    if (i === 0 || s.charCodeAt(i - 1) !== 13 /* \r */) return true;
+  }
+  return false;
+}
+
+/** True when the text has at least one newline and EVERY one of them is CRLF. */
+function isCrlfOnly(text: string): boolean {
+  return text.includes('\r\n') && !hasBareLf(text);
 }
 
 /** Heuristic binary sniff: any NUL byte anywhere in the buffer. The old

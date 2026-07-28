@@ -12,6 +12,29 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.98.0 — 2026-07-28
+
+Audit wave 9. This package's share, all in never-audited surfaces:
+
+- `scripts/check-mutation-ratchet.mjs`: the same two silent-exit-0 defects as
+  the agent-side twin (space-in-path main-module no-op; NaN floor passing
+  every score), kept functionally equal per the 2026-07-27 ruling.
+- `examples/store-patrol.mjs` (runs daily in CI): a corrupt committed
+  `ledger.json` killed the patrol at construction forever (now quarantined and
+  re-dispatched); a truncated `latest.json` baseline threw on every future
+  attempt for that storefront; snapshots were written non-atomically, so a
+  kill mid-write publishes a half-file the workflow commits anyway; a
+  `cancelled` session read as in-flight, burning the full 120 s drain timeout
+  and discarding healthy work; and the failure filter checked `'failed'` only,
+  so a never-patrolled target printed "all targets patrolled" and exited 0.
+- `examples/memory-tidy.mjs`: `readdirSync` fed directory entries to
+  `readFileSync`, so one nested dir under `fragments/` threw EISDIR on every
+  retry and consolidation never ran again.
+- `examples/{memory-tidy,schedule-loop,store-patrol}.mjs`: the literal
+  `done || failed` terminal spelling that `tests/terminal-vocabulary.test.ts`
+  forbids in `src/` — its scope note says "src only", and all three shipped
+  examples repeated it.
+
 ## 0.97.0 — 2026-07-28
 
 **锁步对齐**(无本包运行时改动)。agent SDK 0.97.0 从包入口导出权威 token 估算器

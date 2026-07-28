@@ -24,7 +24,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 /**
  * Turn a Stryker `mutate` glob (e.g. `src/transport/openai.ts`,
@@ -139,6 +139,17 @@ function main() {
     process.exit(2);
   }
   const tolerance = Number(baseline._meta?.tolerance_pp ?? 0.75);
+  // A non-numeric floor/tolerance makes floorWithGrace NaN, and `score < NaN`
+  // is ALWAYS false — a target entry that forgot `floor` (or a hand-edited
+  // tolerance) would pass every score silently. A floor nobody stated is not a
+  // baseline: say so instead of going green.
+  if (!Number.isFinite(target.floor) || !Number.isFinite(tolerance)) {
+    console.error(
+      `ratchet: target "${NAME}" has no usable numeric floor (floor=${JSON.stringify(target.floor)}, ` +
+        `tolerance_pp=${JSON.stringify(baseline._meta?.tolerance_pp)}) - a floor nobody measured cannot gate anything.`,
+    );
+    process.exit(2);
+  }
   const floorWithGrace = target.floor - tolerance;
 
   console.log(
@@ -167,6 +178,9 @@ function main() {
 }
 
 // Run only when invoked directly; importing for tests must not execute main().
-if (import.meta.url === `file://${process.argv[1]}`) {
+// pathToFileURL (not `file://` + path): import.meta.url percent-encodes, so a
+// checkout path containing a space (or any encodable char) never matched the
+// naive concatenation — the guard silently did NOTHING and the job went green.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main();
 }

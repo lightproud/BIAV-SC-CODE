@@ -145,7 +145,19 @@ export async function inspectDocLinks(targets, ctx) {
   let files = 0;
   let links = 0;
   for (const rootRel of targets.roots) {
-    for (const file of mdFiles(resolve(repoRoot, rootRel))) {
+    // A configured root that no longer exists makes mdFiles yield NOTHING
+    // (statSync throwIfNoEntry:false), so a renamed/deleted doc tree silently
+    // drops out of coverage and the sweep still reports green — all roots gone
+    // = 'ok' over zero files. Coverage loss is a finding, not a clean bill.
+    const rootAbs = resolve(repoRoot, rootRel);
+    if (!existsSync(rootAbs)) {
+      findings.push({
+        level: 'warn',
+        message: `doc root '${rootRel}' does not exist — swept nothing (renamed or deleted?)`,
+      });
+      continue;
+    }
+    for (const file of mdFiles(rootAbs)) {
       files += 1;
       const lines = readFileSync(file, 'utf8').split('\n');
       let inFence = false;
@@ -176,7 +188,11 @@ export async function inspectDocLinks(targets, ctx) {
     capped.push({ level: 'info', message: `finding list capped at 100 (${findings.length} total dead links)` });
   }
   return {
-    status: findings.some((f) => f.level === 'fail') ? 'fail' : 'ok',
+    status: findings.some((f) => f.level === 'fail')
+      ? 'fail'
+      : findings.some((f) => f.level === 'warn')
+        ? 'warn'
+        : 'ok',
     findings: capped,
     metrics: { files, links, dead: findings.filter((f) => f.level === 'fail').length },
   };
@@ -237,8 +253,20 @@ export async function inspectRatchet(targets, ctx) {
   const floors = [];
   for (const r of targets.ratchets) {
     const json = JSON.parse(readFileSync(resolve(repoRoot, r.file), 'utf8'));
+    const before = floors.length;
     for (const t of json.targets ?? []) {
       floors.push({ package: r.package, jobPrefix: r.jobPrefix, name: t.name, floor: t.floor });
+    }
+    // Zero floors parsed = zero floors checked, and the loop below then finds
+    // nothing to complain about: the inspector would report 'ok' while
+    // verifying NOTHING for this package (a renamed key, a stub file or an
+    // emptied targets list all land here). Same class as the per-floor
+    // "no matching job" warning below — unmeasured is a finding.
+    if (floors.length === before) {
+      findings.push({
+        level: 'warn',
+        message: `ratchet file '${r.file}' (${r.package}) declares no floors — this package's mutation scores are never checked`,
+      });
     }
   }
   let run;
