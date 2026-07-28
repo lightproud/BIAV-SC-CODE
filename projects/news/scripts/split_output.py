@@ -84,6 +84,18 @@ def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:
         return False
 
 
+def _timestamp_usable(time_str: str) -> bool:
+    """时间戳本身能否解析。与 `_is_recent` 分开问，是因为二者的 False 含义完全不同：
+    「太旧」是正常过滤，「解析不出」是上游采集器的字段坏了。"""
+    if not time_str:
+        return False
+    try:
+        datetime.fromisoformat(time_str)
+    except (ValueError, TypeError):
+        return False
+    return True
+
+
 def extract_item(raw: dict) -> dict:
     """从原始 news item 提取 Chat 会话关心的字段。"""
     item = {
@@ -175,17 +187,29 @@ def main() -> None:
     # 按规范化后的 source 分组，过滤超时数据
     by_source: dict[str, list[dict]] = {}
     skipped_old = 0
+    # 时间戳坏掉的条目原先也计进 skipped_old，打成「太旧被过滤」——把一个上游数据缺陷
+    # 报成了正常的窗口过滤。这类条目**永远**进不了输出层（不论窗口开多大），
+    # 而日志说的是「超出 24h 窗口」，照着这句话调窗口一条也救不回来。分开计数。
+    skipped_unparsable: dict[str, int] = {}
     for raw in raw_items:
         src = normalize_source(raw.get('source', 'unknown'))
         item = extract_steam_item(raw) if src == 'steam' else extract_item(raw)
         # 稀疏源（评论 / 公告 / 同人）使用更宽窗口，高频源沿用 MAX_AGE_HOURS
         max_age = OFFICIAL_MAX_AGE_HOURS if src in SPARSE_SOURCES else MAX_AGE_HOURS
+        if not _timestamp_usable(item.get('time', '')):
+            skipped_unparsable[src] = skipped_unparsable.get(src, 0) + 1
+            continue
         if not _is_recent(item.get('time', ''), max_age):
             skipped_old += 1
             continue
         by_source.setdefault(src, []).append(item)
     if skipped_old:
         print(f'  Filtered out {skipped_old} items (sparse>{OFFICIAL_MAX_AGE_HOURS}h, others>{MAX_AGE_HOURS}h)')
+    if skipped_unparsable:
+        total_bad = sum(skipped_unparsable.values())
+        print(f'  WARNING: dropped {total_bad} items with missing/unparsable time '
+              f'(NOT an age filter — these can never reach the output layer): '
+              f'{dict(sorted(skipped_unparsable.items()))}', file=sys.stderr)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f'Writing to {OUTPUT_DIR}/')

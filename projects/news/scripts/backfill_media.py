@@ -305,7 +305,14 @@ def main():
     save_manifest(manifest)
     ok = sum(1 for v in manifest.values() if v.get("status") == "ok")
     print(f"本次处理 {done}；状态 {stats}")
-    print(f"清单累计存活图 {ok} 张 / 候选 {len(seen)} URL。清单 {MANIFEST}")
+    # 分母与分子原先来自两个不同总体：`ok` 是**清单累计**（历轮所有成功），
+    # `len(seen)` 是**本轮扫到**的候选——而 collect_urls 在预算逼近时会提前 return，
+    # 本轮只扫到几百条时会打出「累计存活图 12000 张 / 候选 300 URL」这种分子远大于
+    # 分母的比值，读起来像覆盖率爆表。两个总体分别报，并点名本轮扫描是否被预算截断。
+    truncated = " ⚠ 本轮扫描/刷新被预算截断，候选数不代表全量" if _budget_exhausted() else ""
+    print(f"清单累计：{ok} 张存活 / {len(manifest)} 条记录。"
+          f"本轮扫到候选 {len(seen)} URL、待办 {len(todo)}、处理 {done}。{truncated}")
+    print(f"清单 {MANIFEST}")
 
 
 if __name__ == "__main__":

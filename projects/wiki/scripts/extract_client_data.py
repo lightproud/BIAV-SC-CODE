@@ -641,6 +641,12 @@ def main():
             print(f"    - {err}")
 
     stats_file = output_dir / "extraction_stats.json"
+    # The console line above printed the true count, but the *persisted* artifact
+    # kept only the first 50 with no record of how many were dropped: a run with
+    # 3000 per-object failures and one with exactly 50 produce byte-identical
+    # error lists. Record the total before truncating.
+    stats["error_count"] = len(stats["errors"])
+    stats["errors_truncated"] = len(stats["errors"]) > 50
     stats["errors"] = stats["errors"][:50]  # Truncate for JSON
     stats_file.write_text(json.dumps(stats, indent=2), encoding="utf-8")
     print(f"\n  Stats saved: {stats_file}")

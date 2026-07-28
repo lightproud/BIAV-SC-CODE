@@ -84,7 +84,15 @@ type RunStore = {
 const RUN_STORES = new WeakMap<object, RunStore>();
 
 function storeFor(ctx: ToolContext): RunStore {
-  const key = ctx.readFilePaths ?? ctx;
+  // `sessionKey` first — the formal per-query identity object (contracts.ts,
+  // audit 2026-07-10 F6) that task.ts / enterworktree.ts / todo.ts were all
+  // migrated to. Workflow was left on the historical readFilePaths key, so on a
+  // context carrying sessionKey but NO readFilePaths (a host that opts out of
+  // the read-before-write gate — contracts.ts documents that as legal) the key
+  // fell through to the per-TURN ToolContext object, and every run journal was
+  // unreachable on the next turn: `resumeFromRunId` answered "unknown run ID"
+  // for a run this same session had just produced.
+  const key = ctx.sessionKey ?? ctx.readFilePaths ?? ctx;
   let store = RUN_STORES.get(key);
   if (store === undefined) {
     store = { nextRunId: 1, journals: new Map() };

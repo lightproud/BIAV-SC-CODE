@@ -487,6 +487,15 @@ export const bashOutputTool: BuiltinTool = {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
+    // Pre-flight abort check — the one every other built-in performs and none
+    // of this file's four background-task tools did. It is load-bearing HERE
+    // rather than merely conventional: a read CONSUMES (the cursors advance
+    // below), and a turn that was cancelled mid-batch discards the result while
+    // the shell record survives the turn — so that window of output is gone for
+    // good and the next turn reports "(no new output)" over lines that existed.
+    // The same invariant the filter guards already state: never advance the
+    // cursors for a read whose output cannot be delivered.
+    if (ctx.signal.aborted) throw new AbortError();
     const id = input['bash_id'];
     if (typeof id !== 'string' || id.length === 0) {
       return { content: "BashOutput: 'bash_id' must be a non-empty string.", isError: true };
@@ -600,6 +609,10 @@ export const killShellTool: BuiltinTool = {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
+    // Pre-flight, as above. `signal` is the per-TURN signal while background
+    // shells are query-lifetime, so a kill queued behind an interrupt would
+    // terminate work the user only meant to stop WAITING on.
+    if (ctx.signal.aborted) throw new AbortError();
     const id = input['shell_id'];
     if (typeof id !== 'string' || id.length === 0) {
       return { content: "KillShell: 'shell_id' must be a non-empty string.", isError: true };
@@ -698,6 +711,10 @@ export const taskOutputTool: BuiltinTool = {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
+    // Pre-flight, as in BashOutput: drainNewOutput advances the same cursors,
+    // so a read on an already-cancelled turn destroys output nobody receives.
+    // The existing check inside the blocking loop covers only `block: true`.
+    if (ctx.signal.aborted) throw new AbortError();
     const id = input['task_id'];
     if (typeof id !== 'string' || id.length === 0) {
       return { content: "TaskOutput: 'task_id' must be a non-empty string.", isError: true };
@@ -762,6 +779,9 @@ export const taskStopTool: BuiltinTool = {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
+    // Pre-flight, as in KillShell: same per-turn-signal vs query-lifetime-task
+    // mismatch, and this one can also stop a background SUBAGENT.
+    if (ctx.signal.aborted) throw new AbortError();
     const taskId =
       typeof input['task_id'] === 'string' && input['task_id'].length > 0
         ? input['task_id']

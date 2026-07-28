@@ -43,9 +43,21 @@ GAP_SOURCES = [s for s in (list(KNOWN_SOURCES) + list(INDEPENDENT_ARCHIVE_SOURCE
                            + list(LEGACY_SOURCES)) if s != 'discord']
 
 
+# 本次扫描的覆盖台账（detect_gaps 每次重置）。「一个缺口都没有」与「一个源都没扫到」
+# 在原日志里长得一模一样：数据根未挂载（BIAV_SC_DATA_ROOT 未设 / data 仓未 clone）时
+# 每个源都只有 0 个日期文件，全部走 `len(dates) < 2` 的静默 continue，工具照报
+# 「No gaps detected in any platform archive.」、报告落 total_gaps: 0。
+# 2026-07-02 已因同款失明（扫空屋）天天报绿一次，这里把「扫了几个源」一并说出来。
+SCAN_STATS: dict[str, int] = {'sources_total': 0, 'sources_scanned': 0, 'sources_insufficient': 0}
+
+
 def detect_gaps(since: date | None = None) -> dict[str, list[str]]:
-    """Scan all registered source archives and return {source: [missing_date_str, ...]}."""
+    """Scan all registered source archives and return {source: [missing_date_str, ...]}.
+
+    副产物 SCAN_STATS 记录本轮实际能判连续性的源数（供调用方分辨「零缺口」与「零覆盖」）。
+    """
     gaps: dict[str, list[str]] = {}
+    SCAN_STATS.update(sources_total=len(GAP_SOURCES), sources_scanned=0, sources_insufficient=0)
 
     for source in GAP_SOURCES:
         dates: list[date] = []
@@ -58,7 +70,9 @@ def detect_gaps(since: date | None = None) -> dict[str, list[str]]:
         dates = sorted(set(dates))  # 分层后同日可有多区服文件，去重再判连续性
 
         if len(dates) < 2:
+            SCAN_STATS['sources_insufficient'] += 1
             continue
+        SCAN_STATS['sources_scanned'] += 1
 
         start = since if since and since > dates[0] else dates[0]
         end = dates[-1]
@@ -83,6 +97,8 @@ def write_gap_report(gaps: dict[str, list[str]]):
     report = {
         'generated_at': datetime.now(UTC).isoformat(),
         'total_gaps': sum(len(v) for v in gaps.values()),
+        # 覆盖披露：total_gaps=0 必须能与「一个源都没扫到」区分开（见 SCAN_STATS）
+        'coverage': dict(SCAN_STATS),
         'platforms': {
             source: {'missing_dates': dates, 'count': len(dates)}
             for source, dates in sorted(gaps.items())
@@ -114,8 +130,16 @@ def main():
         since = archive_layout.archive_today() - timedelta(days=DEFAULT_WINDOW_DAYS)
     gaps = detect_gaps(since=since)
 
+    scanned = SCAN_STATS['sources_scanned']
+    if not scanned:
+        logger.warning(
+            f'0 gaps reported but 0 sources were checkable: {SCAN_STATS["sources_total"]} '
+            f'registered source(s), none with >=2 dated archive files under {ARCHIVE_DIR} '
+            f'—— 这是「没扫到」而不是「没缺口」（数据根是否已挂载 BIAV_SC_DATA_ROOT？）'
+        )
     if not gaps:
-        logger.info('No gaps detected in any platform archive.')
+        logger.info(f'No gaps detected across {scanned} checkable platform archive(s) '
+                    f'({SCAN_STATS["sources_insufficient"]} source(s) had <2 dated files, not judgeable).')
         # 零缺口也要刷新报告（2026-07-02 验证编队 minor）：否则历史报告里的旧缺口
         # 落到检测窗口之外后永远没人擦，入库监控产物与工具日志自相矛盾。
         if not args.dry_run:

@@ -170,12 +170,22 @@ def missing_paths() -> list[str]:
 
 
 def staleness() -> list[str]:
+    """超龄档案清单。**测不出龄的档案单列**：`_git_age_days` 对任何异常（无 .git、
+    git 不在 PATH、稀疏检出未含该档、文件从未提交）一律返回 None，原先与「在保鲜期内」
+    合流成同一句「全部在保鲜期内」——那是拿「一个都没量到」冒充「量过且都新鲜」。"""
     out: list[str] = []
+    unmeasured: list[str] = []
     for pattern, limit in STALENESS_RULES:
         for f in sorted(REPO.glob(pattern)):
             age = _git_age_days(f)
-            if age is not None and age > limit:
+            if age is None:
+                unmeasured.append(str(f.relative_to(REPO)))
+            elif age > limit:
                 out.append(f"{f.relative_to(REPO)} 已 {age} 天未更新（阈值 {limit} 天）——巡检时人工复核其内容是否仍与现实一致")
+    if unmeasured:
+        out.append(f"[未测龄] {len(unmeasured)} 份档案取不到 git 提交时间（无 .git / 未提交 / 稀疏检出漏档），"
+                   f"其保鲜度本轮**未被检查**：{', '.join(unmeasured[:5])}"
+                   + (f" 等 {len(unmeasured)} 份" if len(unmeasured) > 5 else ""))
     return out
 
 

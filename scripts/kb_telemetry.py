@@ -57,7 +57,13 @@ def log_call(tool: str, query: str, result_ids: list[str] | None = None,
             "query": (query or "")[:200],
             "n": len(ids),
             "top": ids[0] if ids else None,
-            "ids": ids[:10],
+            # 全量记，不截断。原先记 `ids[:10]`，而 MCP 侧默认上限就大于 10
+            # （kb_neighbors 20 / kb_activate 15，封顶各 200 / 50）：排在第 11 名之后的
+            # 概念**确实被导航到了**，却在借阅记录里查无此人，于是 summarize 把它们算进
+            # `dead_concepts`「从未被触达——剪枝/改进候选」，reach_ratio 也随之偏低。
+            # 一份用来决定「哪些概念该剪掉」的报告，不能拿自己的记录上限冒充读者没读过。
+            # 上限本来就由工具的 limit 兜住（≤200 个 id/条），不存在无界增长。
+            "ids": ids,
         }
         p = log_path or (KB_USAGE_DIR / f"{now:%Y-%m-%d}.jsonl")
         p.parent.mkdir(parents=True, exist_ok=True)

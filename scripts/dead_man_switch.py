@@ -229,11 +229,20 @@ def build_status(
         record["note"] = note
         entries.append(record)
     findings = [e for e in entries if e.get("state") in ("stale", "never")]
+    # `watched` 数的是**座位**，不是**查成了的座位**：token 缺失 / 私仓 404 / 网络断时
+    # 每条都降级 unknown，findings 仍是 0，于是状态档与摘要行一起呈现
+    # 「watched=24 findings=0」——读起来是「盯了 24 个、全都健康」，实际是一个都没查到。
+    # findings 的语义不动（unknown 不是断言「它死了」），但**判过几个**必须同时出现，
+    # 否则这个守卫会以最像健康的方式失效——而守卫的信誉是一次性的。
+    unknown = [e for e in entries if e.get("state") == "unknown"]
+    judged = [e for e in entries if e.get("state") in ("ok", "stale", "never")]
     return {
         "generated_at": now.isoformat(),
         "threshold_factor": THRESHOLD_FACTOR,
         "grace_hours": GRACE_HOURS,
         "watched": len(entries),
+        "judged": len(judged),
+        "unknown": len(unknown),
         "findings": len(findings),
         "entries": entries,
     }
@@ -253,7 +262,11 @@ def main(argv: list[str] | None = None) -> int:
     for entry in status["entries"]:
         if entry.get("state") in ("stale", "never", "unknown"):
             print(f"  [{entry['state'].upper():7}] {entry['workflow']}: {entry.get('note')}")
-    print(f"死手开关：watched={status['watched']} findings={status['findings']}")
+    print(f"死手开关：watched={status['watched']} judged={status['judged']} "
+          f"unknown={status['unknown']} findings={status['findings']}")
+    if status["watched"] and not status["judged"]:
+        print("  ⚠ 一个工作流也没判成（全部 unknown）——findings=0 在此不代表健康，"
+              "多半是 GH_TOKEN 缺失或 Actions API 不可达。")
 
     if not args.dry_run:
         args.out.parent.mkdir(parents=True, exist_ok=True)

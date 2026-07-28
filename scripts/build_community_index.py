@@ -240,8 +240,15 @@ def build(max_files: int | None = None) -> dict:
                 for k, _ in c.most_common()[PRUNE_KEEP:]:
                     del c[k]
 
+    # 无日期条目台账：`if not day: continue` 与文件级 SKIPPED 是同一个病的两张脸——
+    # 一条 timestamp 为空 / 非 ISO 的 discord 消息（或没有 time 也没有 doc.date 的平台条目）
+    # 被无声丢掉，total_records 随之缩水，而 _meta 里没有任何痕迹。本 index 自称
+    # data_layer=full_archive，是 §4.1 完整性审计的取数层：少了多少必须写在脸上。
+    undated: Counter = Counter()
+
     for platform, day, text, lang, eng in iter_records(max_files):
         if not day:
+            undated[platform] += 1
             continue
         ym = day[:7]
         key = (platform, ym)
@@ -345,6 +352,9 @@ def build(max_files: int | None = None) -> dict:
             # 完整性披露：读不动而被跳过的档案在此点名，不静默缩水（§4.1）
             "skipped_file_count": len(SKIPPED),
             "skipped_files": SKIPPED[:50],
+            # 同款披露的条目级：日期缺失/不可解析而未计入 total_records 的条数
+            "undated_record_count": sum(undated.values()),
+            "undated_by_platform": dict(undated.most_common()),
         },
         "platforms": dict(sorted(platforms.items())),
         "timeline": timeline,
@@ -366,7 +376,8 @@ def main() -> None:
     os.replace(tmp, OUT)
     m = index["_meta"]
     print(f"community index -> {OUT.relative_to(REPO)}")
-    print(f"  records: {m['total_records']}  platforms: {m['platform_count']}")
+    print(f"  records: {m['total_records']}  platforms: {m['platform_count']}"
+          + (f"  (+{m['undated_record_count']} 条无可用日期，未计入)" if m["undated_record_count"] else ""))
     print(f"  months: {len(index['timeline'])}  size: {OUT.stat().st_size} bytes")
     if SKIPPED:
         # 响亮而非静默：完整性缺口必须在构建日志里现身（原先整份丢档零痕迹）
