@@ -149,6 +149,25 @@ export type {
   SystemCompositionPart,
   SystemPartRole,
 } from './internal/contracts.js';
+// BPT-EXTENSION (2026-07-28, black-pool request "从包入口导出 estimateTextTokens
+// 与 MAX_READ_OUTPUT_CHARS"): the authoritative token estimator, so a host can
+// pre-size NOT-YET-A-REQUEST material (draft input, memory snippets, KB
+// candidates) with the SAME arithmetic prompt_composition uses — retiring the
+// hand-mirrored copy ("改 SDK 该文件时须同步本函数" contracts are drift by
+// design). estimateMessagesTokens / estimateToolDefsTokens ride along so the
+// per-message +8 / per-block +3 structural overheads stop being hand-copied
+// too. Same lineage as buildSystemPromptParts (ADR 0014/0022): read-only,
+// zero side effects, exposes what the SDK already computes.
+export {
+  estimateTextTokens,
+  estimateMessagesTokens,
+  estimateToolDefsTokens,
+} from './engine/tokens.js';
+// The Read/WebFetch total-output cap (requested constant) plus the frozen
+// per-tool cap registry the black pool preferred — values imported from the
+// enforcing constants, never re-literalled (see tools/output-caps.ts).
+export { MAX_READ_OUTPUT_CHARS } from './tools/fsutil.js';
+export { TOOL_OUTPUT_CAPS } from './tools/output-caps.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
 // Sessions-domain health scan (audit P1-S1, keeper 2026-07-27): the trigger
 // surface for host-side session cleanup, mirroring assessMemoryStoreHealth.

@@ -54,7 +54,7 @@ const MAX_BODY_BYTES = 5 * 1024 * 1024;
  * the two gates cannot drift apart; fsutil.ts:32 already documents the
  * intended alignment.)
  */
-const MAX_OUTPUT_CHARS = MAX_READ_OUTPUT_CHARS;
+export const MAX_OUTPUT_CHARS = MAX_READ_OUTPUT_CHARS;
 const USER_AGENT = SDK_USER_AGENT;
 const ACCEPT_HEADER =
   'text/html,application/xhtml+xml,application/xml;q=0.9,application/json,text/plain;q=0.8,*/*;q=0.5';

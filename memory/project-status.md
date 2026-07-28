@@ -82,10 +82,10 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.96.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.96.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.97.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.97.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
-| agent SDK 源文件 / 测试档 | 139 / 206 | 磁盘实况 |
+| agent SDK 源文件 / 测试档 | 140 / 207 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 138 | 磁盘实况 |
@@ -220,11 +220,10 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
+- **v0.97.0（2026-07-28）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 0.97.0（从包入口导出权威 token 估算器三件与 `MAX_READ_OUTPUT_CHARS` / `TOOL_OUTPUT_CAPS` 只读上限集合）前进。
 - **v0.96.0（2026-07-28）**：**驱动器并发上限可被翻倍**——未 await 的 `stop()`+`start()`（代际机制明文支持的陈旧启动模式）令新旧两代 tick 并行，二者在 `claimDue` 落地前读到同一 `inflight.size`，各自认领满额；新增同步 `#reserved` 预留计数（await 前自增、`finally` 释放）封死窗口，无上限与单链稳态字节不变。
 - **v0.95.0（2026-07-28）**：**台账两处缺陷 + 驱动器并发上限竞态修正**（家族审计波及本包，非空转）——`reopenSession` 并发 CAS 落败永久丢溯源链接、`recordOutcome` 回填路径写入词表外 outcome、`stop()`+`start()` 交错令两代 tick 各自认领满额致并发翻倍。
 - **v0.94.0（2026-07-28）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 0.94.0（BREAKING：包内模型兜底默认值全数移除，缺 model 即抛错）前进。
-- **v0.93.0（2026-07-28）**：锁步对齐（本包零运行时改动）——agent SDK 0.93.0 修复 recap 截断丢最新进度（BPT P1 活锁根因）并扩截断纪律注册表到全 `src/`；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
-- **v0.92.1（2026-07-28）**：锁步对齐（本包零运行时改动）——agent SDK 0.92.1 修复「被拒绝的控制面覆写仍被留存并重放」；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
 
 > **一句话**：银芯编排 SDK——持有分子（钟 / 跨会话状态 / 会话装配），把「活得比一次调用久」的
 > agent 脏活做成可复用零件交宿主装配；与代理 SDK 分界 = 代理持原子（一次结构化调用）、编排持分子。
@@ -343,6 +342,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.97.0（2026-07-28）**：**导出权威 token 估算器 + 内建工具输出上限（黑池转派需求 2026-07-28）**——黑池「上下文构成」面板对未成请求素材（草稿 / 待注入记忆 / 知识库候选）只能手工镜像 SDK 估算算法，注释级「改 SDK 须同步本函数」人肉契约必然漂移。从包入口导出 `estimateTextTokens` / `estimateMessagesTokens` / `estimateToolDefsTokens`（引用级 re-export）与 `MAX_READ_OUTPUT_CHARS` + frozen `TOOL_OUTPUT_CAPS`（read 50000 / bash 30000 尾保留 / webFetch 50000 / grepHeadLimit 250 条目数，每值 import 自工具实际执行常量）。同 `buildSystemPromptParts` 先例（ADR 0014）：内部已有实现、只差入口 export。黑池删镜像后其既有测试断言即对齐验证。需求档已归档 `Public-Info-Pool/Resource/repo-engineering/scs-req-export-token-estimation-20260728.md`。原拟 0.95.0，两度与同日审计波次（#867 / #868）撞号，定 0.97.0。
 - **v0.96.0（2026-07-28）**：**审计第八波（换镜复扫已加固面）**——本包再修 6 处：query 层两处 user 轮叠加（非上限终态后，流式输入与会话收尾记忆轮各造一次 `roles must alternate` 400 且重试不可恢复）· MCP HTTP 会话过期时并发 `tools/call` 相互吃掉恢复守卫（一路裸抛 404，另一交错铸出两个服务端会话）· fork 读入把 JSON **数组**行当记录、经展开固化成幻影记录 · `file-store` 写侧吞 `ENAMETOOLONG`、读侧却上抛（同一 id 写静默丢、读直接炸）· goal 的 Stop 匹配器继承宿主 `failureMode:'closed'`，评审器**挂起**即被超时判 block、把循环永久困住（违反本模块「坏法官绝不困住循环」的明文不变量）。
 - **v0.95.0（2026-07-28）**：**多波缺陷审计（八波 59 分区）**——100+ 处经核实真实缺陷全修（崩溃面 / 线协议 `roles must alternate` 与工具对边界 / 权限 deny 七类绕过 / 原型污染与域名过滤绕过 / 子代理与会话竞态 / socket 与监听器泄漏 / 代理对截断与 NaN 守卫）；公开 API 与测试契约零改动。逐条见 CHANGELOG 与战报 `Public-Info-Pool/Resource/repo-engineering/sdk-bug-audit-multiwave-20260728.md`。
 - **v0.94.0（2026-07-28）**：**包内模型兜底默认值全数移除（BREAKING，黑池 sdk-bridge 转派需求 2026-07-28）**——黑池生产报错文案里出现其代码从未写过的 `claude-sonnet-4-5`，倒查出 `query.ts` 写死的 `DEFAULT_MODEL`：消费方任一路径漏传 `model`，包就静默换上一个自己都不知道对方网关认不认的 id，直到网关 400 才暴露。按黑池首选方案 A 根治：`query()` 缺 `options.model` 且缺 `ANTHROPIC_MODEL` → 构造期抛 `ConfigurationError`；`runUtilityCall` 全家缺 `opts.model` → 请求出门前拒；引擎内部 condition 调用改**继承会话模型**（与 compaction 摘要器同规）；`DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` 出口删除（0.3x 表面锁 `knownRemovals` 登记 + MIGRATION §3.10）。COMPAT `model` 行降 FULL → PARTIAL 如实记刻意偏离；一致性台架显式钉原默认 id，冻结基线字节不变；黑池已按铁律传全 id 的路径零行为变化。
