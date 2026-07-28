@@ -884,7 +884,14 @@ export class OpenAIStreamTranslator {
         delta: { type: 'text_delta', text: delta.refusal },
       });
     }
-    for (const tc of delta.tool_calls ?? []) {
+    // Null-tolerant on the CONTAINER, not just its elements: `?? []` only
+    // catches null/undefined, so a non-conforming gateway that streams
+    // `tool_calls` as a bare object ({index,id,function}) instead of a
+    // one-element array reaches `for...of` on a non-iterable and throws a
+    // TypeError that discards the whole turn. Treat a non-array as no tool
+    // fragments (the per-element guard below still filters null/primitive
+    // members of a real array).
+    for (const tc of Array.isArray(delta.tool_calls) ? delta.tool_calls : []) {
       if (tc === null || typeof tc !== 'object') continue; // gateway noise
       // A tool_call fragment is VALID assistant content the moment it carries
       // an id, a function name, or argument bytes — even before the block can
