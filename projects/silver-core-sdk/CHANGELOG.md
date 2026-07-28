@@ -16,6 +16,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.92.1 — 2026-07-28
+
+**修复：自动续跑时，被拒绝的控制面覆写仍被留存并重放。** 全仓缺陷扫描（#861）在
+TypeScript 侧首次 lint 扫描中查出，两条互相咬合、均已证伪验证：
+
+1. `session-manager` 的包裹层**先记账、后返回可能拒绝的 Promise**。
+   `setPermissionMode('bypassPermissions')` 未解锁时会 REJECT，但该模式已被写进
+   `pending` —— 一次被 query 拒绝、且被消费方正确 catch 的调用，照样污染了重放
+   状态，下一次透明自动续跑就把这个被拒绝的模式重放上去。重放一个被拒绝的覆写
+   本身就错。现改为 `await` 内层 setter 成功后才记账：失败的设置不留任何痕迹。
+
+2. `replayControlPlane` 声明为 `(): void`，调用三个返回 `Promise<void>` 的 setter
+   全不 await。叠加缺陷 1 后，那个必然拒绝的重放成了悬空 Promise —— Node ≥ 15 下
+   未处理的 rejection 默认**直接终止进程**，而 SDK 消费方连捕获的接缝都没有。
+   现改为 `async` 并在调用点 `await`。
+
+诚实边界：次序竞态目前**不可触发**（已核实四个 setter 体内首个 `await` 之前即完成
+赋值），按「潜伏」记；可触发的是拒绝路径。await 同时把「重放先于续跑被泵动」从
+**巧合**变成**结构保证**——将来任何人在 setter 顶部加一个 await，都不会再悄悄复活
+WV3-1 那个「续跑后工具调用仍跑在基础权限模式」的洞。
+
+新增回归 `WV3-1: a REFUSED control-plane override leaves no trace to replay`，
+同时钉住被接受的覆写仍须跨续跑存活。
+
 ## 0.92.0 — 2026-07-27
 
 **Workflow launches asynchronously** (keeper ruling 2026-07-27, "1 改").

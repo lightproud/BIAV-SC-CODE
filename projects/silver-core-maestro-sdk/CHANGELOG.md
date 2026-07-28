@@ -12,6 +12,12 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.92.1 — 2026-07-28
+
+**锁步对齐**（无本包运行时改动）。agent SDK 0.92.1 修复了自动续跑时「被拒绝的
+控制面覆写仍被留存并重放」——见 silver-core-sdk CHANGELOG。家族版本钟锁步
+（守密人 2026-07-18 裁定），故本包同步升位。
+
 ## 0.92.0 — 2026-07-27
 
 Lockstep alignment only — no changes to this package. The family clock advanced
