@@ -82,7 +82,9 @@ def _magnitude(n: int) -> str:
 
 def _size_of(path: Path) -> str:
     try:
-        if path.is_dir():
+        # 定点豁免理由：ruff 建议压成三元式，那会是一行 100+ 字符、把递归求和塞进
+        # 条件表达式中段——比现在的两分支难读。SIM108 在别处仍生效。
+        if path.is_dir():  # noqa: SIM108
             total = sum(f.stat().st_size for f in path.rglob("*") if f.is_file())
         else:
             total = path.stat().st_size
