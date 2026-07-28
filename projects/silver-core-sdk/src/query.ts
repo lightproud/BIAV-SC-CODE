@@ -1510,14 +1510,26 @@ export function query(args: {
             persistTurnComplete(sess.sessionId, pendingUuid);
           }
         } catch (err) {
-          // Persist (but do not re-yield on error) any trailing tool_result
-          // user turn so the transcript stays durable across the failure. The
-          // pending_turn is deliberately LEFT dangling: a resume re-drives it.
+          // Persist any trailing tool_result user turn so the transcript stays
+          // durable across the failure. The pending_turn is deliberately LEFT
+          // dangling: a resume re-drives it.
+          // Q8 (emission contract): keep each (uuid, entry) pair too. The
+          // turn-level interrupt() branch below SURVIVES the failure — streaming
+          // mode keeps accepting input, string mode still yields a terminal
+          // result — and the consumer is still consuming there (the same
+          // reasoning L59 used for the drains). Dropping these left the host's
+          // stream-built transcript permanently missing a turn that IS on disk
+          // and IS replayed to the model on the very next request. The paths
+          // that do NOT survive (caller abort / close() / a consumer-injected
+          // throw()) still only persist, never yield.
+          const unstreamed: Array<{ uuid: string; entry: APIMessageParam }> = [];
           while (historyTail < history.length) {
             const entry = history[historyTail];
             historyTail += 1;
             if (entry !== undefined && entry.role === 'user') {
-              persistParam(sess.sessionId, entry);
+              const entryUuid = randomUUID();
+              persistParam(sess.sessionId, entry, entryUuid);
+              unstreamed.push({ uuid: entryUuid, entry });
             }
           }
           if (isAbortError(err)) {
@@ -1583,6 +1595,20 @@ export function query(args: {
             // observability events (SubagentStop hooks from aborted children,
             // mirror-error notices) that the in-turn drains never reached —
             // deliver them now; the consumer is still consuming on this path.
+            // Q8: the tool_result user turn(s) the batch completed before the
+            // cancel land first — they precede every lifecycle event queued by
+            // the teardown, and the terminal result below must stay last.
+            for (const u of unstreamed) {
+              const toolUseResult = readToolUseResults(u.entry);
+              yield {
+                type: 'user',
+                uuid: u.uuid,
+                session_id: sess.sessionId,
+                message: { role: 'user', content: u.entry.content },
+                parent_tool_use_id: null,
+                ...(toolUseResult !== undefined && { toolUseResult }),
+              };
+            }
             yield* drainMirror();
             yield* drainObs();
             if (!streamingMode) {
