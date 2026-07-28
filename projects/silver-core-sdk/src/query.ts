@@ -332,6 +332,17 @@ export function query(args: {
   if (options.maxTurns !== undefined && Number.isNaN(options.maxTurns)) {
     throw new ConfigurationError('maxTurns must not be NaN');
   }
+  // Same NaN failure class as maxTurns above: a NaN maxThinkingTokens (e.g.
+  // parseInt on an unset env var) slips past config-builder's `> 0` opt-out
+  // test and lands verbatim in engineConfig.maxThinkingTokens. On a non-preset
+  // (or explicit thinking:{type:'enabled'} without its own budget) path it then
+  // resolves to `budget_tokens: NaN`, which serializes to null on the wire and
+  // 400s every turn on pre-adaptive models — reject it up front like maxTurns.
+  // (0/negative stay accepted: config-builder treats them as the explicit
+  // thinking opt-out.)
+  if (options.maxThinkingTokens !== undefined && Number.isNaN(options.maxThinkingTokens)) {
+    throw new ConfigurationError('maxThinkingTokens must not be NaN');
+  }
   // R1 structured prelude: the blocks are rendered by string concatenation,
   // so a missing/non-string content (typed but unchecked at runtime — L60,
   // audit 2026-07-17) would inject the literal text "undefined" into the
@@ -2293,6 +2304,19 @@ export function query(args: {
       engineConfig.model = model ?? initialModel;
     },
     async setMaxThinkingTokens(maxThinkingTokens: number | null): Promise<void> {
+      // A NaN budget (e.g. parseInt on an unset env var) is NOT a reset (null
+      // is): it sails past the `n > 0` / `n === undefined` branches below,
+      // leaving engineConfig.thinking unchanged while engineConfig.maxThinkingTokens
+      // becomes NaN — which resolves to `budget_tokens: NaN` on the next
+      // pre-adaptive request and 400s it, the exact silent-wire-corruption the
+      // sibling setModel('') / construction maxTurns guards prevent. Fail loud
+      // here too, so the session-manager's "a failed setter leaves no trace to
+      // replay" contract keeps NaN out of the resumed control-plane replay state.
+      if (typeof maxThinkingTokens === 'number' && Number.isNaN(maxThinkingTokens)) {
+        throw new ConfigurationError(
+          'setMaxThinkingTokens: maxThinkingTokens must not be NaN (pass a number or null to reset)',
+        );
+      }
       const n = maxThinkingTokens ?? undefined;
       engineConfig.maxThinkingTokens = n;
       // On the claude_code preset path (no explicit thinking config) the budget
