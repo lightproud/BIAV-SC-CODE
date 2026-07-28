@@ -1,7 +1,6 @@
 """Unit tests for validate_data.py (wiki JSON schema/cross-ref validator)."""
 
 import json
-import sys
 from pathlib import Path
 
 import pytest

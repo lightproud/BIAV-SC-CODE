@@ -5,7 +5,6 @@ so we inject lightweight stubs into ``sys.modules`` before importing. No real
 UnityPy / PIL / client files are touched; all I/O runs through tempfile.
 """
 
-import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -84,7 +83,7 @@ class TestDecodeScript(unittest.TestCase):
         self.assertEqual(ecd.decode_script("already text"), "already text")
 
     def test_utf8_bytes(self):
-        self.assertEqual(ecd.decode_script("héllo".encode("utf-8")), "héllo")
+        self.assertEqual(ecd.decode_script("héllo".encode()), "héllo")
 
     def test_bom_decoded_via_utf8_keeps_bom(self):
         # utf-8 succeeds on a BOM (never raises), so the BOM is preserved;

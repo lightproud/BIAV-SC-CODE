@@ -9,8 +9,6 @@ string mutants would require asserting every display name (pins data, not logic)
 — see setup.cfg. These assertions are the standing logic guard.
 """
 import json
-import sys
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 

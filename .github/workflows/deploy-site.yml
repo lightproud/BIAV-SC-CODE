@@ -111,22 +111,54 @@ jobs:
 
       - name: Enhanced build verification
         run: |
+          # 这一步此前是一道**拦不住任何东西的门**：所有失败模式都只 echo "WARNING"
+          # 而没有任何非零退出路径，于是空白/损坏的 HTML、乃至整个 dist/wiki/index.html
+          # 缺失，都会「验证通过」并照常部署上线。另有两处细节使它更宽：
+          #   - `for f in $(find dist ...)` 走词分割，文件名含空格即断成两截；
+          #   - dist 目录本身不存在时 find 报错但循环零轮，一切照样「OK」。
+          # 现在：先确认 dist 存在，再用 -print0/read -d '' 安全遍历，任何一条不合格
+          # 都累计进 failures，末尾非零退出——门要能关上才算门。
+          failures=0
+
+          if [ ! -d dist ]; then
+            echo "FAIL: dist/ 不存在——构建根本没产出"
+            exit 1
+          fi
+
           echo "=== Checking HTML files are not empty ==="
-          for f in $(find dist -name '*.html'); do
+          html_count=0
+          while IFS= read -r -d '' f; do
+            html_count=$((html_count + 1))
             if ! grep -q '<html' "$f" 2>/dev/null; then
-              echo "WARNING: $f may be empty or corrupted"
+              echo "FAIL: $f 疑似空档或已损坏（无 <html>）"
+              failures=$((failures + 1))
             else
               echo "OK: $f"
             fi
-          done
+          done < <(find dist -name '*.html' -print0)
+
+          if [ "$html_count" -eq 0 ]; then
+            echo "FAIL: dist/ 下一个 HTML 都没有"
+            failures=$((failures + 1))
+          fi
+
           echo ""
           echo "=== Checking wiki locale directories ==="
           # zh is the root locale via VitePress rewrites (zh/:rest* → :rest*)
           if [ -f "dist/wiki/index.html" ]; then
             echo "OK: dist/wiki/ (zh root) exists ($(find dist/wiki -maxdepth 1 -name '*.html' | wc -l) html files at root)"
           else
-            echo "WARNING: dist/wiki/index.html missing"
+            echo "FAIL: dist/wiki/index.html 缺失"
+            failures=$((failures + 1))
           fi
+
+          if [ "$failures" -gt 0 ]; then
+            echo ""
+            echo "构建验证失败 $failures 项——拒绝部署"
+            exit 1
+          fi
+          echo ""
+          echo "构建验证通过（HTML $html_count 份）"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

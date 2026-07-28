@@ -10,6 +10,7 @@ file listing paths.
 
 import sys
 from pathlib import Path
+from typing import ClassVar
 from unittest import mock
 
 
@@ -106,7 +107,6 @@ def test_gameassembly_brute_force_raises(tmp_path):
     def _bfk(path, *a):
         if "GameAssembly" in path:
             raise RuntimeError("ga boom")
-        return None
 
     with mock.patch.object(dae.UnityPy, "load", side_effect=err), \
          mock.patch.object(dae, "brute_force_key", side_effect=_bfk):
@@ -144,7 +144,6 @@ def test_unityplayer_brute_force_raises(tmp_path):
     def _bfk(path, *a):
         if "UnityPlayer" in path:
             raise RuntimeError("up boom")
-        return None
 
     with mock.patch.object(dae.UnityPy, "load", side_effect=err), \
          mock.patch.object(dae, "brute_force_key", side_effect=_bfk):
@@ -244,7 +243,8 @@ def test_env_cleanup_exception_swallowed(tmp_path):
     out = tmp_path / "out"
 
     class _BadEnv:
-        objects = []
+        # 空的只读桩字段，刻意挂类上
+        objects: ClassVar[list] = []
 
         @property
         def _files(self):

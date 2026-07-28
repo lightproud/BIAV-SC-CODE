@@ -81,10 +81,7 @@ def normalize_id(raw: str) -> str | None:
 
     # 2) bare stem or filename → match any id ending in it
     stem = raw.lstrip("/")
-    if not stem.endswith(".md"):
-        stem_md = stem + ".md"
-    else:
-        stem_md = stem
+    stem_md = stem + ".md" if not stem.endswith(".md") else stem
     hits = [cid for cid in concepts if cid.endswith("/" + stem_md)]
     if len(hits) == 1:
         return hits[0]

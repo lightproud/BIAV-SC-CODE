@@ -241,7 +241,6 @@
       "name": "Discord Cold Compress",
       "path": ".github/workflows/discord-cold-compress.yml",
       "triggers": [
-        "schedule",
         "manual"
       ]
     },
@@ -868,7 +867,7 @@
     {
       "id": "archive_platforms.py",
       "path": "projects/news/scripts/archive_platforms.py",
-      "summary": "多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/",
+      "summary": "多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期落全量档案层。",
       "planes": [
         "cli",
         "workflow"

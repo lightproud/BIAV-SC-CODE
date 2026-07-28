@@ -9,7 +9,6 @@ Asserts: AwakerVoiceContent-required filter, optional unlock_desc, id sort,
 character grouping by consecutive-id gap > 50 (boundary at exactly 50 vs 51),
 category split on '·', id_range string, line_count, and character_groups count.
 """
-import sys
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent

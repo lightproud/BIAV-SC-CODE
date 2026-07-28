@@ -6,7 +6,6 @@ dropped media/metadata guard would stay green). Imports via the package path so
 the assertions bind the same module object the rest of the suite uses.
 (split_output is intentionally not under the mutmut gate; see setup.cfg.)
 """
-import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 

@@ -1,6 +1,5 @@
 import sys
 import unittest
-from pathlib import Path
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -132,7 +131,7 @@ class TestFailureAggregation(unittest.TestCase):
         }
         patches = []
         for name, attr in attr_by_name.items():
-            fn = overrides.get(name, lambda: [])
+            fn = overrides.get(name, list)
             patches.append(mock.patch.object(global_collectors, attr, fn))
         for p in patches:
             p.start()

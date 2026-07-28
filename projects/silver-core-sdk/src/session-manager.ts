@@ -495,11 +495,28 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       maxThinkingTokensSet: boolean;
       retainedRegions: Map<string, Parameters<Query['setRetainedRegion']>[0]>;
     } = { retainedRegions: new Map(), maxThinkingTokensSet: false };
-    const replayControlPlane = (): void => {
-      if (pending.permissionMode !== undefined) q.setPermissionMode(pending.permissionMode);
-      if (pending.model !== undefined) q.setModel(pending.model);
-      if (pending.maxThinkingTokensSet) q.setMaxThinkingTokens(pending.maxThinkingTokens!);
-      for (const region of pending.retainedRegions.values()) q.setRetainedRegion(region);
+    // setPermissionMode / setModel / setMaxThinkingTokens all return Promise<void>.
+    // This replay used to call them WITHOUT awaiting (declared `(): void`), leaving
+    // two holes — stated precisely, because only one of them is live today:
+    //   1. Unhandled rejection (live). A rejecting setter — setPermissionMode runs
+    //      assertBypassUnlocked, which throws, and a throw inside an async function
+    //      is a REJECTION, not a sync throw — became a floating promise. On Node >= 15
+    //      an unhandled rejection terminates the process by default, and an SDK
+    //      consumer gets no seam to catch it.
+    //   2. Ordering (latent, not currently triggerable). Today each setter mutates
+    //      synchronously before its first `await`, so the mutation does land before
+    //      the resumed query is pumped. That guarantee is accidental: adding any
+    //      `await` ahead of the mutation would silently reinstate the exact WV3-1
+    //      defect this block exists to prevent — tool calls running at the BASE
+    //      permission mode after a resume — with no test to catch it.
+    // scheduleResume is already async and its sole call site awaits it, so awaiting
+    // here costs nothing and closes hole 1 while making hole 2 unreachable by
+    // construction rather than by coincidence.
+    const replayControlPlane = async (): Promise<void> => {
+      if (pending.permissionMode !== undefined) await q.setPermissionMode(pending.permissionMode);
+      if (pending.model !== undefined) await q.setModel(pending.model);
+      if (pending.maxThinkingTokensSet) await q.setMaxThinkingTokens(pending.maxThinkingTokens!);
+      for (const region of pending.retainedRegions.values()) await q.setRetainedRegion(region);
     };
 
     const maxResumes = recovery?.maxResumes ?? 2;
@@ -592,7 +609,11 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       q = start({ sessionId: sessionId! });
       // WV3-1: re-apply the runtime control-plane overrides the consumer set on
       // the retired query, so the resumed query does not silently drop to base.
-      replayControlPlane();
+      // Awaited on purpose: a rejecting setter would otherwise be an unhandled
+      // rejection (process-fatal on Node >= 15), and awaiting makes the
+      // "replay lands before the resumed query is pumped" ordering structural
+      // rather than a side effect of the setters happening to be await-free.
+      await replayControlPlane();
     };
 
     const wrapped: Query = {
@@ -708,18 +729,26 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       },
       interrupt: () => q.interrupt(),
       // WV3-1: record each override so a resume can replay it (see replayControlPlane).
-      setPermissionMode: (mode) => {
+      // Recorded only AFTER the inner setter resolves. Recording first was a real
+      // defect, not a style point: setPermissionMode('bypassPermissions') without the
+      // unlock flag REJECTS, yet the mode was already retained — so a call the query
+      // refused (and the consumer correctly caught) still poisoned `pending`, and the
+      // next transparent auto-resume replayed that refused mode. Replaying a refused
+      // override is wrong on its own terms, and combined with the unawaited replay it
+      // surfaced as an unhandled rejection (process-fatal on Node >= 15).
+      // A failed setter must leave no trace to replay.
+      setPermissionMode: async (mode) => {
+        await q.setPermissionMode(mode);
         pending.permissionMode = mode;
-        return q.setPermissionMode(mode);
       },
-      setModel: (model) => {
+      setModel: async (model) => {
+        await q.setModel(model);
         pending.model = model;
-        return q.setModel(model);
       },
-      setMaxThinkingTokens: (n) => {
+      setMaxThinkingTokens: async (n) => {
+        await q.setMaxThinkingTokens(n);
         pending.maxThinkingTokens = n;
         pending.maxThinkingTokensSet = true;
-        return q.setMaxThinkingTokens(n);
       },
       initializationResult: () => q.initializationResult(),
       supportedCommands: () => q.supportedCommands(),

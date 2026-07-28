@@ -1,7 +1,5 @@
 """discord_compact 紧凑 schema 单测：默认字段删除、非默认保留、幂等、可还原。"""
-import sys
 import unittest
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 from discord_compact import compact_record, expand_record  # noqa: E402

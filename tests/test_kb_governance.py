@@ -10,7 +10,6 @@ memory 白名单 / STORY_POINTERS），repo 一长它们会**和现实静默脱�
 from __future__ import annotations
 
 import re
-import sys
 from pathlib import Path
 
 import pytest

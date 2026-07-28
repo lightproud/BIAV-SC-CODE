@@ -26,11 +26,11 @@ from __future__ import annotations
 import json
 import re
 from collections import defaultdict
-from datetime import date
 from pathlib import Path
 
 # frontmatter 解析单一真相源（与 bundle 写方同源，见 okf_frontmatter.py）
 from okf_frontmatter import _read_frontmatter
+from news_bridge import archive_layout  # noqa: E402  日期基准 SSOT（北京日期）
 
 REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
@@ -127,7 +127,7 @@ def build_kb_index() -> dict:
         by_type[ctype].append(cid)
 
         # postings: title + description + tags + body
-        title_tag_text = " ".join([title] + tags)
+        title_tag_text = " ".join([title, *tags])
         for tok in set(_tokenize(title_tag_text)):
             title_postings[tok].add(cid)
             postings[tok].add(cid)
@@ -162,7 +162,7 @@ def build_kb_index() -> dict:
             entry["count"] += 1
 
     index = {
-        "generated": date.today().isoformat(),
+        "generated": archive_layout.archive_today().isoformat(),  # 北京日期，见 archive_layout
         "meta": {
             "data_layer": "curated_knowledge",
             "source": "okf/ bundle (concept frontmatter + body + graph edges)",

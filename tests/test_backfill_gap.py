@@ -5,7 +5,6 @@ monkeypatch ARCHIVE_DIR 到 tmp 目录，绝不污染真实 Community 归档、�
 """
 
 import json
-import sys
 import tempfile
 import unittest
 from datetime import datetime, timezone

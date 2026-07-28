@@ -16,14 +16,16 @@ from __future__ import annotations
 
 import json
 import re
-from datetime import date
 from pathlib import Path
+
+from news_bridge import archive_layout  # noqa: E402  归档布局单一真相源（community/news-output 路径推导共用）
 
 REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
-TODAY = date.today().isoformat()
-
-from news_bridge import archive_layout  # noqa: E402  归档布局单一真相源（community/news-output 路径推导共用）
+# 「今天」= 北京日期（archive_layout 是全仓日期基准 SSOT）。原 date.today() 取的是
+# **容器本地日期**：CI 在 UTC、守密人在 UTC+8，同一次重建在两处会盖出不同的
+# generated 戳记——生成物本该是确定性的。
+TODAY = archive_layout.archive_today().isoformat()
 
 # frontmatter 读写单一真相源：与 build_okf_bundle 同契约，且现在**同一份实现**
 # （原「刻意自持避免循环 import」的抄写已下沉到 okf_frontmatter，无循环可言）。

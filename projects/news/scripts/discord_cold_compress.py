@@ -39,7 +39,10 @@ DISCORD_ROOT = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_DATA_
 
 def default_cutoff(today: date | None = None) -> str:
     """冷月上界（不含）= 上月 'YYYY-MM'：month < cutoff 的即为冷月。"""
-    d = today or date.today()
+    # 「今天」取北京日期（归档桶名同基准）。原 date.today() 取容器本地日期，CI 为 UTC,
+    # 每天有 8 小时（北京 00:00–08:00）算出的月界比归档实际早一个月：月初那几小时
+    # 跑月度压冷会把「上月」当冷月一起压掉（上月按裁定应留热层）。
+    d = today or archive_layout.archive_today()
     year, month = (d.year, d.month - 1) if d.month > 1 else (d.year - 1, 12)
     return f'{year:04d}-{month:02d}'
 

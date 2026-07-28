@@ -8,8 +8,6 @@ handlers, and the in-memory prune() pruning path.
 from __future__ import annotations
 
 import json
-import sys
-from pathlib import Path
 
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）

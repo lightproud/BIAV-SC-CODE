@@ -13,7 +13,6 @@ import sys
 import tempfile
 import unittest
 from datetime import datetime, timezone
-from pathlib import Path
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -202,7 +201,7 @@ class TestSlimAndProcess(unittest.TestCase):
             arch = _make_archiver(tmp)
             slim = arch._slim_message(_msg(1, reactions=[{"emoji": {"name": "x"}, "count": 5}]))
             arch._update_daily_stats(slim, "general")
-            day = list(arch.daily_stats.values())[0]
+            day = next(iter(arch.daily_stats.values()))
             self.assertEqual(day["reactions_total"], 5)
             self.assertEqual(len(day["top_reacted"]), 1)
 
@@ -309,9 +308,9 @@ class TestHistoryMonth(unittest.TestCase):
     def test_channel_created_after_month_skipped(self):
         with tempfile.TemporaryDirectory() as tmp:
             arch = _make_archiver(tmp)
-            # channel id snowflake for 2026 → asking for 2023 month skips it
-            future_id = "1131791637933199470"  # 2023-ish actually; use a recent one
-            # Use a clearly-recent snowflake (2026)
+            # 频道 snowflake 晚于所查月份 → 该月直接跳过。
+            # （原先此处还留着一个写废又没删的 future_id 变量，注释自己都写着
+            #  "2023-ish actually; use a recent one"——读者会误以为它参与断言。）
             from discord_archiver import _sf_from_dt
             recent = _sf_from_dt(datetime(2026, 6, 1, tzinfo=timezone.utc))
             res = arch.fetch_channel_history_month(recent, "n", 2023, 1)

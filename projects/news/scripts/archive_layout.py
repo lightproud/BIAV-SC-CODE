@@ -23,11 +23,35 @@ from __future__ import annotations
 import gzip
 import os
 import re
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Iterator, TextIO
 
 # 归档文件名 = 日期；state.json / manifest 等辅助文件不参与日期语义
 DATE_STEM = re.compile(r'^\d{4}-\d{2}-\d{2}$')
+
+# ── 归档日期基准（北京时 UTC+8）────────────────────────────────────────────────
+# 归档分桶用的「日期」自始就是**北京日期**：archive_platforms / backfill_platforms /
+# backfill_gap 各自手写 `(dt + timedelta(hours=8)).strftime('%Y-%m-%d')` 落桶。
+# 但「今天是哪天」在若干读方处是 `date.today()`——那取的是**容器本地日期**，CI 容器
+# 为 UTC，于是每天有 8 小时（UTC 16:00–24:00 = 北京次日 00:00–08:00）算出的「今天」
+# 比归档桶名整整早一天：缺口检测把已归档的当天误报为缺、冷压月界算错一个月。
+# 日期基准自此只有这里一个答案，与 date_stem / build_relpath 同处布局 SSOT。
+BEIJING_TZ = timezone(timedelta(hours=8))
+
+
+def archive_today() -> date:
+    """归档语义下的「今天」= 北京日期（与写方分桶基准同源）。"""
+    return datetime.now(BEIJING_TZ).date()
+
+
+def archive_date_str(when: datetime | None = None) -> str:
+    """把时刻折算成归档桶名 YYYY-MM-DD（北京日期）；when=None 取当下。"""
+    if when is None:
+        return archive_today().isoformat()
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=timezone.utc)
+    return when.astimezone(BEIJING_TZ).strftime('%Y-%m-%d')
 
 # ── 数据湖根解析（分仓桥接 SSOT，T62 方案 B「兄弟 checkout + 环境根」）─────────
 # 分仓（BIAV-SC-CODE + BIAV-SC-DATA）后数据湖 Public-Info-Pool/Record 迁出至

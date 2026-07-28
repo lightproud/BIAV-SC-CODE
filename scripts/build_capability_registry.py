@@ -35,8 +35,8 @@ from __future__ import annotations
 import json
 import re
 import sys
-from datetime import date
 from pathlib import Path
+from news_bridge import archive_layout  # noqa: E402  日期基准 SSOT（北京日期）
 
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / "memory" / "capability-registry.json"
@@ -333,7 +333,7 @@ def build() -> dict:
     orch, _ = analyze_orchestration()
     registry = {
         "meta": {
-            "generated_at": date.today().isoformat(),
+            "generated_at": archive_layout.archive_today().isoformat(),  # 北京日期
             "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
             "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
             "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",

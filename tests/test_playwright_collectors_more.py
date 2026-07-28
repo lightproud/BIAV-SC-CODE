@@ -7,7 +7,6 @@ per-mode/per-keyword 异常 warning、顶层 Playwright 异常 warning、main()�
 
 import sys
 import unittest
-from pathlib import Path
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）

@@ -30,6 +30,17 @@ REALM_TAGLINE = {
 }
 
 
+
+def _load_json(path):
+    """读 JSON 并确保句柄关闭。
+
+    原先全档遍布 `json.load(open(path, encoding='utf-8'))`：句柄靠 CPython 引用计数
+    顺手回收，一旦解析中途抛异常（本档大量 try/except FileNotFoundError 的路径）
+    就悬着不放。生成一次站点要开几十个档，属实打实的描述符泄漏。
+    """
+    with open(path, encoding='utf-8') as f:
+        return json.load(f)
+
 def load_playstyle():
     """解析玩法层 character_skills.md → name → {realm, role, card}。
 
@@ -42,7 +53,7 @@ def load_playstyle():
     if not os.path.exists(path):
         return out
     realm = None
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, encoding='utf-8') as f:
         for ln in f:
             m = re.match(r'## (混沌|深海|血肉|超维)界域', ln)
             if m:
@@ -137,7 +148,7 @@ def generate_voice_lines():
         _generate_voice_lines_legacy()
         return
 
-    with open(map_path, 'r', encoding='utf-8') as f:
+    with open(map_path, encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']
@@ -334,7 +345,7 @@ def _voice_category(title):
 
 def _generate_voice_lines_legacy():
     """Legacy generator using voice_lines.json (no character mapping)."""
-    with open(f'{PROCESSED_DIR}/voice_lines.json', 'r', encoding='utf-8') as f:
+    with open(f'{PROCESSED_DIR}/voice_lines.json', encoding='utf-8') as f:
         data = json.load(f)
 
     lines = []
@@ -385,7 +396,7 @@ def _generate_voice_lines_legacy():
 
 def generate_collection_hall():
     """Generate collection hall / world lore page from world_lore.json."""
-    with open(f'{PROCESSED_DIR}/world_lore.json', 'r', encoding='utf-8') as f:
+    with open(f'{PROCESSED_DIR}/world_lore.json', encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']
@@ -461,16 +472,16 @@ def _release_pointer_lines(title, desc, hint):
 
 def generate_cg_gallery():
     """Generate CG gallery page with iOS Photos-style dense grid + lightbox."""
-    with open(f'{PROCESSED_DIR}/cg_gallery.json', 'r', encoding='utf-8') as f:
+    with open(f'{PROCESSED_DIR}/cg_gallery.json', encoding='utf-8') as f:
         data = json.load(f)
 
     available = set()
     public_dir = os.path.join(DOCS_DIR, 'public')
-    for root, dirs, files in os.walk(os.path.join(public_dir, 'cg')):
+    for root, _dirs, files in os.walk(os.path.join(public_dir, 'cg')):
         for fn in files:
             if fn.endswith('.png'):
                 available.add(os.path.relpath(os.path.join(root, fn), public_dir))
-    for root, dirs, files in os.walk(os.path.join(public_dir, 'scenebg')):
+    for root, _dirs, files in os.walk(os.path.join(public_dir, 'scenebg')):
         for fn in files:
             if fn.endswith('.png'):
                 available.add(os.path.relpath(os.path.join(root, fn), public_dir))
@@ -588,7 +599,7 @@ def generate_cg_gallery():
 
 def generate_item_stories():
     """Generate item stories page from item_stories.json."""
-    with open(f'{PROCESSED_DIR}/item_stories.json', 'r', encoding='utf-8') as f:
+    with open(f'{PROCESSED_DIR}/item_stories.json', encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']
@@ -675,10 +686,10 @@ def _gallery_from_dir(public_subdir, title, desc, sections_config):
                 else:
                     src = f'/{base_url}/{subdir}/{img}'
                     name = os.path.splitext(img)[0]
-                lines.append(f'<div style="flex: 0 1 200px; text-align: center;">')
+                lines.append('<div style="flex: 0 1 200px; text-align: center;">')
                 lines.append(f'<img src="{src}" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
                 lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">{name}</div>')
-                lines.append(f'</div>')
+                lines.append('</div>')
                 total += 1
             lines.append('</div>')
             lines.append('')
@@ -691,10 +702,10 @@ def _gallery_from_dir(public_subdir, title, desc, sections_config):
         for img in images:
             src = f'/{base_url}/{img}'
             name = os.path.splitext(img)[0]
-            lines.append(f'<div style="flex: 0 1 200px; text-align: center;">')
+            lines.append('<div style="flex: 0 1 200px; text-align: center;">')
             lines.append(f'<img src="{src}" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
             lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px;">{name}</div>')
-            lines.append(f'</div>')
+            lines.append('</div>')
             total += 1
         lines.append('</div>')
         lines.append('')
@@ -716,7 +727,7 @@ def generate_portraits_gallery():
     lines, total = _gallery_from_dir(
         'portraits',
         '角色立绘画廊',
-        f'数据来源：unpacked-assets Release（UnityPy 解包） | 478 张角色立绘，7 种规格',
+        '数据来源：unpacked-assets Release（UnityPy 解包） | 478 张角色立绘，7 种规格',
         sections,
     )
     with open(f'{DOCS_DIR}/portraits.md', 'w', encoding='utf-8') as f:
@@ -734,7 +745,7 @@ def generate_bunit_gallery():
     lines, total = _gallery_from_dir(
         'bunit',
         '战斗单位画廊',
-        f'数据来源：unpacked-assets Release（UnityPy 解包） | 317 张战斗单位贴图',
+        '数据来源：unpacked-assets Release（UnityPy 解包） | 317 张战斗单位贴图',
         sections,
     )
     with open(f'{DOCS_DIR}/battle-units.md', 'w', encoding='utf-8') as f:
@@ -779,7 +790,7 @@ def generate_icons_gallery():
     lines, total = _gallery_from_dir(
         'icon',
         '图标画廊',
-        f'数据来源：unpacked-assets Release（UnityPy 解包） | 169 个图标',
+        '数据来源：unpacked-assets Release（UnityPy 解包） | 169 个图标',
         sections,
     )
     with open(f'{DOCS_DIR}/icons.md', 'w', encoding='utf-8') as f:
@@ -841,10 +852,10 @@ def generate_ui_gallery():
             lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
             for img in images:
                 name = os.path.splitext(img)[0]
-                lines.append(f'<div style="flex: 0 1 200px; text-align: center;">')
+                lines.append('<div style="flex: 0 1 200px; text-align: center;">')
                 lines.append(f'<img :src="\'/portrait-card/card/{img}\'" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
                 lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px;">{name}</div>')
-                lines.append(f'</div>')
+                lines.append('</div>')
                 total += 1
             lines.append('</div>')
             lines.append('')
@@ -858,7 +869,7 @@ def generate_ui_gallery():
             label = section_labels.get(d, d)
             # Collect images recursively
             imgs = []
-            for root, dirs, files in os.walk(dpath):
+            for root, _dirs, files in os.walk(dpath):
                 for f in sorted(files):
                     if f.endswith('.png'):
                         rel = os.path.relpath(os.path.join(root, f), os.path.join(DOCS_DIR, 'public'))
@@ -869,10 +880,10 @@ def generate_ui_gallery():
             lines.append('')
             lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
             for rel, name in imgs:
-                lines.append(f'<div style="flex: 0 1 280px; text-align: center;">')
+                lines.append('<div style="flex: 0 1 280px; text-align: center;">')
                 lines.append(f'<img :src="\'/{rel}\'" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
                 lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">{name}</div>')
-                lines.append(f'</div>')
+                lines.append('</div>')
                 total += 1
             lines.append('</div>')
             lines.append('')
@@ -899,12 +910,12 @@ def generate_characters():
     """Generate character encyclopedia from characters.json, grouped by the
     守密人-confirmed category (playable / unreleased / easter_egg). Story
     unlock / gossip cross-refs come from character_index.json when present."""
-    with open(f'{PROCESSED_DIR}/characters.json', 'r', encoding='utf-8') as f:
+    with open(f'{PROCESSED_DIR}/characters.json', encoding='utf-8') as f:
         data = json.load(f)
 
     cidx = {}
     try:
-        with open(f'{PROCESSED_DIR}/character_index.json', 'r', encoding='utf-8') as f:
+        with open(f'{PROCESSED_DIR}/character_index.json', encoding='utf-8') as f:
             for c in json.load(f)['characters']:
                 cidx[c['id']] = c
     except (FileNotFoundError, KeyError):
@@ -1040,7 +1051,7 @@ def generate_awakener_pages(chars, by_cat, play, cidx):
     # 供详情页「登场剧情」回链。锚点方案须与 generate_story 保持一致。
     char_chapters = {}
     try:
-        sidx = json.load(open(f'{PROCESSED_DIR}/story/index.json', encoding='utf-8'))['index']
+        sidx = _load_json(f'{PROCESSED_DIR}/story/index.json')['index']
         for i, u in enumerate(sidx):
             for name in u.get('characters', []):
                 char_chapters.setdefault(name, []).append((u['unit'], f'chapter-{i}'))
@@ -1139,28 +1150,28 @@ def generate_awakener_pages(chars, by_cat, play, cidx):
     for ch in playable:
         p = play.get(ch['name'])
         (by_realm.setdefault(p['realm'], []).append((ch, p)) if p else no_realm.append(ch))
-    I = []
-    I.append('---')
-    I.append('title: 唤醒体列表')
-    I.append('---')
-    I.append('')
-    I.append('# 唤醒体列表')
-    I.append('')
-    I.append(f'> 共 {len(playable)} 位可玩唤醒体，按界域分组。点击进入详情页。')
-    I.append('')
+    out_lines = []
+    out_lines.append('---')
+    out_lines.append('title: 唤醒体列表')
+    out_lines.append('---')
+    out_lines.append('')
+    out_lines.append('# 唤醒体列表')
+    out_lines.append('')
+    out_lines.append(f'> 共 {len(playable)} 位可玩唤醒体，按界域分组。点击进入详情页。')
+    out_lines.append('')
     for realm in REALM_ORDER:
         grp = by_realm.get(realm, [])
         if not grp:
             continue
-        I.append(f'## {_realm_badge(realm)} {REALM_LABEL[realm]}（{len(grp)}）')
-        I.append('')
-        I.append('<div class="awakener-grid">')
+        out_lines.append(f'## {_realm_badge(realm)} {REALM_LABEL[realm]}（{len(grp)}）')
+        out_lines.append('')
+        out_lines.append('<div class="awakener-grid">')
         for ch, p in sorted(grp, key=lambda x: x[0]['id']):
-            I.append(_awakener_card(ch, p))
-        I.append('</div>')
-        I.append('')
+            out_lines.append(_awakener_card(ch, p))
+        out_lines.append('</div>')
+        out_lines.append('')
     with open(f'{out_dir}/index.md', 'w', encoding='utf-8') as f:
-        f.write('\n'.join(I))
+        f.write('\n'.join(out_lines))
     print(f'Awakener detail pages: {count} pages + index')
 
 
@@ -1171,7 +1182,7 @@ def generate_playstyle(playable, play):
     src = f'{PROCESSED_DIR}/character_skills.md'
     if not os.path.exists(src):
         return
-    with open(src, 'r', encoding='utf-8') as f:
+    with open(src, encoding='utf-8') as f:
         body = f.read()
     # 去掉原档一级标题（与本页标题重复），其余正文原样保留（含 [[toc]] 等）
     parts = body.split('\n', 1)
@@ -1208,7 +1219,7 @@ def generate_playstyle(playable, play):
 
 def generate_summon():
     """Generate summon/gacha page, deduplicated by title."""
-    with open(f'{PROCESSED_DIR}/summon.json', 'r', encoding='utf-8') as f:
+    with open(f'{PROCESSED_DIR}/summon.json', encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']
@@ -1318,7 +1329,7 @@ def generate_summon():
 
 def generate_stages():
     """Generate stage/dungeon navigation page from stages.json."""
-    with open(f'{PROCESSED_DIR}/stages.json', 'r', encoding='utf-8') as f:
+    with open(f'{PROCESSED_DIR}/stages.json', encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']
@@ -1411,7 +1422,7 @@ def generate_video_index():
 
     # Classify videos by filename prefix
     def _video_category(name):
-        if name.startswith('C0') or name.startswith('C20'):
+        if name.startswith(('C0', 'C20')):
             return '章节过场'
         if 'CG_SD' in name:
             return 'CG SD 动画'
@@ -1419,7 +1430,7 @@ def generate_video_index():
             return '场景过渡'
         if name.startswith('RD_'):
             return 'RD 场景'
-        if name.startswith('Vx_') or name.startswith('VX_'):
+        if name.startswith(('Vx_', 'VX_')):
             return '超维视频'
         if 'Logo' in name:
             return 'Logo'
@@ -1480,7 +1491,7 @@ def generate_video_index():
 
 def generate_panel_text():
     """Generate panel text reference page from panel_text.json, grouped by UI category."""
-    with open(f'{PROCESSED_DIR}/panel_text.json', 'r', encoding='utf-8') as f:
+    with open(f'{PROCESSED_DIR}/panel_text.json', encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']
@@ -1577,7 +1588,7 @@ def generate_update_notices():
     if not os.path.exists(src):
         print('update_notices.json absent (deleted per 2026-07-12 ruling) — skip')
         return
-    with open(src, 'r', encoding='utf-8') as f:
+    with open(src, encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']
@@ -1624,8 +1635,8 @@ def generate_update_notices():
     # Summary
     lines.append('## 内容概览')
     lines.append('')
-    lines.append(f'| 类别 | 数量 |')
-    lines.append(f'|------|------|')
+    lines.append('| 类别 | 数量 |')
+    lines.append('|------|------|')
     lines.append(f'| 完整版更新公告 | {len(full_notes)} |')
     lines.append(f'| 维护通知 | {len(maintenance)} |')
     lines.append(f'| 问题修复记录 | {len(bug_fixes)} |')
@@ -1647,7 +1658,7 @@ def generate_update_notices():
             first_line = text.split('\n')[0].strip()
             if len(first_line) > 100:
                 first_line = first_line[:97] + '...'
-            lines.append(f'<details>')
+            lines.append('<details>')
             lines.append(f'<summary>#{n["id"]} - {first_line}</summary>')
             lines.append('')
             # Render the full text with proper line breaks
@@ -1668,7 +1679,7 @@ def generate_update_notices():
         for n in feature_notes:
             text = n['text'].replace('\n', ' ').strip()
             if len(text) > 300:
-                lines.append(f'<details>')
+                lines.append('<details>')
                 lines.append(f'<summary>#{n["id"]} - {text[:80]}...</summary>')
                 lines.append('')
                 lines.append(text)
@@ -1726,7 +1737,7 @@ def generate_update_notices():
     if other:
         lines.append('## 其他公告内容')
         lines.append('')
-        lines.append(f'<details>')
+        lines.append('<details>')
         lines.append(f'<summary>展开查看其余 {len(other)} 条</summary>')
         lines.append('')
         for n in other:
@@ -1752,16 +1763,16 @@ def generate_story():
     import html as _html
     sd = f'{PROCESSED_DIR}/story'
     try:
-        idx = json.load(open(f'{sd}/index.json', encoding='utf-8'))['index']
-        lore = {e['id']: e for e in json.load(open(f'{sd}/lore_entries.json', encoding='utf-8'))['entries']}
-        sbu = json.load(open(f'{sd}/stages_by_unit.json', encoding='utf-8'))['by_unit']
+        idx = _load_json(f'{sd}/index.json')['index']
+        lore = {e['id']: e for e in _load_json(f'{sd}/lore_entries.json')['entries']}
+        sbu = _load_json(f'{sd}/stages_by_unit.json')['by_unit']
     except FileNotFoundError:
         print('Story layer not found; skipping story page')
         return
     # 角色名 → 详情页 id（用于「关联角色」交叉链接到 /zh/awakeners/{id}）
     name2id = {}
     try:
-        ci = json.load(open(f'{PROCESSED_DIR}/character_index.json', encoding='utf-8'))
+        ci = _load_json(f'{PROCESSED_DIR}/character_index.json')
         for c in (ci if isinstance(ci, list) else ci.get('characters', ci.values())):
             # 仅 playable 角色有详情页（generate_characters 只为 playable 出页），
             # 非 playable 链接会 404，故不收
@@ -1777,7 +1788,7 @@ def generate_story():
     # 关卡组引言：group_id → desc（取自 stages.json groups）
     gdesc = {}
     try:
-        for g in json.load(open(f'{PROCESSED_DIR}/stages.json', encoding='utf-8'))['groups']:
+        for g in _load_json(f'{PROCESSED_DIR}/stages.json')['groups']:
             gdesc[g['id']] = g.get('desc', '')
     except (FileNotFoundError, KeyError):
         pass
@@ -1914,7 +1925,7 @@ def generate_story():
 def generate_feature_unlock():
     """Generate 功能解锁条件 page from feature_unlock.json（此前未上架的解包数据）。"""
     try:
-        data = json.load(open(f'{PROCESSED_DIR}/feature_unlock.json', encoding='utf-8'))
+        data = _load_json(f'{PROCESSED_DIR}/feature_unlock.json')
     except FileNotFoundError:
         print('feature_unlock.json not found; skipping feature unlock page')
         return
@@ -1963,7 +1974,7 @@ def generate_potency():
     一手效果词条呈现（可搜索），不做合成关联（§4 数据纪律）。"""
     import re
     try:
-        data = json.load(open(f'{PROCESSED_DIR}/potency.json', encoding='utf-8'))
+        data = _load_json(f'{PROCESSED_DIR}/potency.json')
     except FileNotFoundError:
         print('potency.json not found; skipping potency page')
         return

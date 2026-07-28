@@ -1,6 +1,6 @@
-import sys
 import tempfile
 import unittest
+from typing import ClassVar
 from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -49,7 +49,8 @@ class TestValidateJsonSyntax(unittest.TestCase):
 
 
 class TestValidateCrossReferences(unittest.TestCase):
-    REALMS = {"realms": [{"id": "aequor", "legacy_id": "ocean"}]}
+    # 只读夹具，刻意挂类上供各用例共用
+    REALMS: ClassVar[dict] = {"realms": [{"id": "aequor", "legacy_id": "ocean"}]}
 
     def test_valid_realm_passes(self):
         loaded = {

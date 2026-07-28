@@ -9,7 +9,6 @@ the assertions bind the same module object the rest of the suite uses.
 class/IO make whole-file mutation noisy; see setup.cfg — so these explicit value
 assertions are the standing guard.)
 """
-import sys
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent

@@ -5,7 +5,6 @@ state.json 与 jsonl 走 tmp，monkeypatch 模块级 DATA_DIR。
 """
 
 import json
-import sys
 import unittest
 from pathlib import Path
 from unittest import mock

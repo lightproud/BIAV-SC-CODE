@@ -93,8 +93,8 @@ def collect(limit: int, max_files: int | None, min_len: int) -> list[dict]:
         return []
     quotas = _quotas(counts, limit)
     strides = {s: max(1, counts[s] // q) for s, q in quotas.items() if q > 0}
-    seen = {s: 0 for s in counts}
-    taken = {s: 0 for s in counts}
+    seen = dict.fromkeys(counts, 0)
+    taken = dict.fromkeys(counts, 0)
     rows: list[dict] = []
     for source, day, text, _lang, _eng in iter_records(max_files=max_files):
         text = (text or "").strip()
@@ -125,7 +125,9 @@ def embed_rows(rows: list[dict], backend: str, model: str) -> list[dict]:
         batch = rows[i:i + _EMBED_BATCH]
         vecs = kb_vector.embed([r["_text"] for r in batch], backend=backend,
                                model=model, input_type="document")
-        for r, v in zip(batch, vecs):
+        # strict=True：嵌入后端若少还一条向量，zip 会静默截断，剩下的记录被丢弃
+        # ——更坏的情形是错位，把向量挂到别的文档上，从此检索结果张冠李戴。
+        for r, v in zip(batch, vecs, strict=True):
             items.append({
                 "ref": r["ref"],
                 "source": r["source"],

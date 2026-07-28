@@ -1,7 +1,6 @@
 """Additional unit tests for parse_awaker_config.py — high-level parsers + main()."""
 
 import json
-import sys
 from pathlib import Path
 
 import pytest

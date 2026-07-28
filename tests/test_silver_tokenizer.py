@@ -5,9 +5,7 @@ silver_tokenizer 是 build_community_index 与 build_story_index 共用的分词
 本档案锁定其确定性契约：拉丁词切分 / 停用词去噪 / CJK 正向最大匹配 / bigram 回落 /
 领域词典自举不变量。纯词典 + 算术，零网络、零 ML，断言全部可复现。
 """
-import sys
 import unittest
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 

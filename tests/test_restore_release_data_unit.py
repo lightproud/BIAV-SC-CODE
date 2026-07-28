@@ -271,3 +271,85 @@ def test_main_parses_months(tmp_path, monkeypatch):
     ])
     rrd.main()
     assert captured["months"] == ["2026-01", "2026-02", "2026-03"]
+
+
+# ── tar 解压加固（扫描修复 2026-07-28）────────────────────────────────────────
+# 缺陷：原先直接 `tar.extractall(dest)`。extractall 默认完全信任归档内的成员名——
+# `../x` 或 `/etc/x` 会照写不误（Zip Slip），链接成员还能把后续写入重定向到任意路径。
+# 这条路径吃的是**从网络下载的 Release 资产**，且脚本常以仓库写权限运行：
+# 「资产是我们自己传的」不构成安全边界（资产可被替换、传输可被劫持）。
+
+
+def _make_tar(members, path):
+    with tarfile.open(path, "w:gz") as t:
+        for name, data in members:
+            ti = tarfile.TarInfo(name)
+            ti.size = len(data)
+            t.addfile(ti, io.BytesIO(data))
+
+
+def _extract(tmp_path, members, *, force_fallback=False):
+    """解压一份自造 tar。返回 (dest 内文件名, dest 之外新增文件名, 是否被拒绝)。"""
+    tgz = tmp_path / "a.tar.gz"
+    _make_tar(members, tgz)
+    dest = tmp_path / "dest"
+    dest.mkdir()
+
+    real_extractall = tarfile.TarFile.extractall
+
+    def no_filter(self, *args, **kwargs):
+        # 模拟 Python 3.11.3 及更早：extractall 不认识 filter= 参数
+        if "filter" in kwargs:
+            raise TypeError("extractall() got an unexpected keyword argument 'filter'")
+        return real_extractall(self, *args, **kwargs)
+
+    rejected = False
+    try:
+        if force_fallback:
+            tarfile.TarFile.extractall = no_filter
+        with tarfile.open(tgz, "r:gz") as t:
+            rrd._safe_extractall(t, dest)
+    except SystemExit:
+        rejected = True
+    finally:
+        if force_fallback:
+            tarfile.TarFile.extractall = real_extractall
+
+    inside = {p.name for p in dest.rglob("*") if p.is_file()}
+    escaped = {p.name for p in tmp_path.glob("*") if p.is_file() and p.name != "a.tar.gz"}
+    return inside, escaped, rejected
+
+
+def test_safe_extract_normal_member(tmp_path):
+    inside, escaped, rejected = _extract(tmp_path, [("channels/1/a.jsonl", b"ok")])
+    assert not rejected
+    assert "a.jsonl" in inside
+    assert escaped == set()
+
+
+def test_safe_extract_path_traversal_writes_nothing_outside(tmp_path):
+    """核心不变量：无论走哪条分支，dest 之外一个字节都不许落地，且以同一形态报错。"""
+    inside, escaped, rejected = _extract(tmp_path, [("../escaped.txt", b"pwn")])
+    assert rejected, "filter='data' 分支须与回退分支一样以 SystemExit 收场"
+    assert escaped == set()
+    assert "escaped.txt" not in inside
+
+
+def test_safe_extract_absolute_member_stays_inside(tmp_path):
+    _, escaped, _ = _extract(tmp_path, [("/tmp/pwned.txt", b"pwn")])
+    assert escaped == set()
+
+
+def test_safe_extract_fallback_rejects_traversal(tmp_path):
+    """3.11.3 及更早无 filter= 参数时走自实现校验，行为须与 filter='data' 一致。"""
+    _, escaped, rejected = _extract(tmp_path, [("../escaped.txt", b"pwn")], force_fallback=True)
+    assert rejected, "回退分支必须拒绝路径穿越成员"
+    assert escaped == set()
+
+
+def test_safe_extract_fallback_allows_normal_member(tmp_path):
+    inside, escaped, rejected = _extract(tmp_path, [("channels/1/a.jsonl", b"ok")],
+                                         force_fallback=True)
+    assert not rejected
+    assert "a.jsonl" in inside
+    assert escaped == set()

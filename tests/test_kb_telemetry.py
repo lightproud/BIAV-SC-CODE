@@ -113,10 +113,15 @@ def test_mcp_tools_wired_to_telemetry(tmp_path, monkeypatch):
                 def _d(fn): return fn
                 return _d
             def run(self, *_a, **_k): pass
-        m = types.ModuleType("mcp"); s = types.ModuleType("mcp.server")
-        f = types.ModuleType("mcp.server.fastmcp"); f.FastMCP = _FastMCP
-        s.fastmcp = f; m.server = s
-        sys.modules["mcp"] = m; sys.modules["mcp.server"] = s; sys.modules["mcp.server.fastmcp"] = f
+        m = types.ModuleType("mcp")
+        s = types.ModuleType("mcp.server")
+        f = types.ModuleType("mcp.server.fastmcp")
+        f.FastMCP = _FastMCP
+        s.fastmcp = f
+        m.server = s
+        sys.modules["mcp"] = m
+        sys.modules["mcp.server"] = s
+        sys.modules["mcp.server.fastmcp"] = f
     import mcp_server
 
     out = json.loads(mcp_server.kb_search("沙耶", limit=3))

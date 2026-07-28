@@ -67,7 +67,7 @@ NAV_TOOLS = [
     ("kb_get", "get", lambda: mcp_server.kb_get("125346")),
     ("kb_neighbors", "neighbors", lambda: mcp_server.kb_neighbors("125346")),
     ("kb_activate", "activate", lambda: mcp_server.kb_activate("沙耶")),
-    ("kb_overview", "overview", lambda: mcp_server.kb_overview()),
+    ("kb_overview", "overview", mcp_server.kb_overview),
 ]
 
 

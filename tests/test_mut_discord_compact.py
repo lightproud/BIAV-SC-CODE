@@ -11,8 +11,6 @@ runtime trampoline keys line up with the file-path-derived keys (the sibling
 unit test imports the bare module name, which mutmut cannot match). Also a
 normal, fast pytest module under plain `pytest tests/`.
 """
-import sys
-from pathlib import Path
 
 # Repo root on path so `projects` resolves as a namespace package in every run
 # mode (plain pytest, python -m pytest, and mutmut's mutants/ copy).

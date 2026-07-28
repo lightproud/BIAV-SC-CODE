@@ -25,6 +25,7 @@ silent_sources_audit.py — 沉默源审计（基于归档历史）
 """
 
 import argparse
+import itertools
 import json
 import sys
 from datetime import datetime, timezone, timedelta
@@ -119,7 +120,10 @@ def audit_source(source: str) -> dict:
                 total += len(data)
             else:
                 total += data.get('item_count', 0)
-        except Exception:
+        except Exception as exc:
+            # 本模块的职责就是「发现沉默」，自己却静默跳过读不动的档案：损坏档案会让
+            # 条目数少算，反而可能把一个真已 degraded 的源判成健康。必须出声。
+            print(f'  ! {source}: 跳过不可读归档 {f}: {type(exc).__name__}: {exc}', file=sys.stderr)
             continue
 
     # 区服分层后同一日期可有多文件（global/jp），归档天数按去重日期计
@@ -142,7 +146,8 @@ def leaf_cadence_days(dates: list[str]) -> int | None:
         ds = [datetime.strptime(d, '%Y-%m-%d') for d in tail]
     except ValueError:
         return None
-    gaps = sorted((b - a).days for a, b in zip(ds, ds[1:]))
+    # strict=False 是刻意的：相邻配对天然差一项，截断即预期行为
+    gaps = sorted((b - a).days for a, b in itertools.pairwise(ds))
     return gaps[len(gaps) // 2]
 
 
@@ -240,7 +245,7 @@ def classify(silent_days: int, total_items: int) -> str:
 
 
 def build_report() -> dict:
-    today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d')
+    today = archive_layout.archive_date_str()  # 日期基准 SSOT（北京日期，与归档桶名同源）
     entries = []
     # Audit window 只看 platforms/ 下的非 discord 源；discord 有独立生命周期
     platform_first_dates = []
@@ -468,8 +473,11 @@ def load_validation_drops() -> dict:
                     return {'generated_at': gen, 'total_dropped': 0, 'by_source': {},
                             'stale_ignored': True}
             return payload
-        except Exception:
-            pass
+        except Exception as exc:
+            # 丢弃台账读不动即等于「本轮零丢弃」——门控（P0-3）会因此放行一次
+            # 实际大量丢数的采集轮次。回落值保持不变，但不再无声无息。
+            print(f'  ! validation_drops 读取失败（按零丢弃回落）: {type(exc).__name__}: {exc}',
+                  file=sys.stderr)
     return {'generated_at': None, 'total_dropped': 0, 'by_source': {}}
 
 

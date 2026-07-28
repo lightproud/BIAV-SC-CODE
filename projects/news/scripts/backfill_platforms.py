@@ -73,7 +73,11 @@ def _platform_state(state: dict, name: str) -> dict:
 
 
 def _archive_items(source: str, items: list[dict]):
-    """Archive items into per-date files under data/platforms/{source}/."""
+    """Archive items into per-date files under <community_root>/<平台>[/区服][/类型]/。
+
+    落点由 archive_layout.resolve_write_layout + build_relpath 单一真相源算出；
+    旧注释写的 `data/platforms/{source}/` 已不是任何真实落点（读方照抄会全空）。
+    """
     if not items:
         return
 
@@ -82,12 +86,13 @@ def _archive_items(source: str, items: list[dict]):
     for item in items:
         t = item.get('time', '')
         try:
-            dt = datetime.fromisoformat(t)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
-            date_str = (dt + timedelta(hours=8)).strftime('%Y-%m-%d')
+            # 分桶基准走 archive_layout（日期 SSOT）：原手写换算对已带非 UTC 偏移的
+            # 时间戳（jp 源常见 +09:00）会把偏移算两遍，整批落进错的日期桶。
+            date_str = archive_layout.archive_date_str(datetime.fromisoformat(t))
         except (ValueError, TypeError):
-            date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+            # 兜底日期原为 UTC 日期，与上面的北京日期桶名不同基准——每天有 8 小时
+            # 会把坏时间戳的条目丢进相邻一天的桶里。
+            date_str = archive_layout.archive_date_str()
         by_date.setdefault(date_str, []).append(item)
 
     for date_str, date_items in by_date.items():
@@ -103,7 +108,7 @@ def _archive_items(source: str, items: list[dict]):
             try:
                 data = json.loads(path.read_text(encoding='utf-8'))
                 existing_items = data.get('items', [])
-            except Exception:
+            except (OSError, json.JSONDecodeError, AttributeError):
                 pass
 
         # Dedup by URL or title
@@ -702,7 +707,7 @@ BACKFILL_REGISTRY = {
 def show_status(state: dict):
     """Display backfill progress for all platforms."""
     print('=== 历史回溯进度 ===\n')
-    for name, fn in BACKFILL_REGISTRY.items():
+    for name in BACKFILL_REGISTRY:
         ps = state.get(name, {"page": 1, "done": False, "total": 0})
         status = '完成' if ps.get('done') else f'第 {ps.get("page", 1)} 页'
         total = ps.get('total', 0)
@@ -736,7 +741,7 @@ def main():
         total = 0
         for name, fn in BACKFILL_REGISTRY.items():
             if _is_time_up():
-                logger.warning(f'运行时间已达上限，剩余平台下次继续')
+                logger.warning('运行时间已达上限，剩余平台下次继续')
                 break
             ps = _platform_state(state, name)
             if ps.get('done'):

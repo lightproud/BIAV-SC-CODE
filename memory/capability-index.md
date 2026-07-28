@@ -82,7 +82,7 @@
   `.github/workflows/discord-archive-volunteer.yml`
 - **`Discord Archive`** _[schedule/manual]_ — 定时归档主 Discord 数据。  
   `.github/workflows/discord-archive.yml`
-- **`Discord Cold Compress`** _[schedule/manual]_ —   
+- **`Discord Cold Compress`** _[manual]_ —   
   `.github/workflows/discord-cold-compress.yml`
 - **`Discord Discover Guilds`** _[manual]_ — 定时发现新的 Discord 服务器。  
   `.github/workflows/discord-discover-guilds.yml`
@@ -220,7 +220,7 @@
   `projects/news/scripts/archive_engine.py`
 - **`archive_layout.py`** _[活:command]_ — archive_layout.py — 归档布局单一真相源（SSOT）。  
   `projects/news/scripts/archive_layout.py`
-- **`archive_platforms.py`** _[活:cli+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/  
+- **`archive_platforms.py`** _[活:cli+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期落全量档案层。  
   `projects/news/scripts/archive_platforms.py`
 - **`backfill_forum_starters.py`** _[活:cli+workflow]_ — backfill_forum_starters.py — 一次性回填所有 forum thread 的 starter 消息  
   `projects/news/scripts/backfill_forum_starters.py`

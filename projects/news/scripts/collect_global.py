@@ -110,7 +110,9 @@ def run_zero_cost_collectors() -> list[dict]:
         import global_collectors as c
         c._refresh_cutoff()
     except ImportError as e:
-        logger.error(f"Cannot import global_collectors module: {e}")
+        # exception() 而非 error()：核心采集模块导入失败是排障起点，丢掉 traceback
+        # 就只剩一句「Cannot import」，看不出到底是哪一层依赖缺失。
+        logger.exception(f"Cannot import global_collectors module: {e}")
         return items, []
 
     # 数据质量追踪器：更新各源状态，长期沉默的源自动 dormant 跳过
@@ -293,12 +295,12 @@ def load_existing_news() -> list[dict]:
 # Adaptive: match the lookback window used by collectors
 try:
     from collection_state import get_lookback_hours
-    MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 0)) or get_lookback_hours()
+    MAX_AGE_HOURS = news_common.env_int('MAX_AGE_HOURS', 0) or get_lookback_hours()
 except ImportError:
-    MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 24))
+    MAX_AGE_HOURS = news_common.env_int('MAX_AGE_HOURS', 24)
 
 # 稀疏源使用更宽时间窗口（SPARSE_SOURCES 来自 sources.py 单一真相源）
-SPARSE_MAX_AGE_HOURS = int(os.environ.get('SPARSE_MAX_AGE_HOURS', 30 * 24))
+SPARSE_MAX_AGE_HOURS = news_common.env_int('SPARSE_MAX_AGE_HOURS', 30 * 24)
 from sources import SPARSE_SOURCES
 
 
@@ -342,8 +344,7 @@ def merge_and_dedup(existing: list[dict], new_items: list[dict],
             seen[key] = converted
 
     # Sort by engagement descending
-    merged = sorted(seen.values(), key=lambda x: x.get('engagement', 0), reverse=True)
-    return merged
+    return sorted(seen.values(), key=lambda x: x.get('engagement', 0), reverse=True)
 
 
 def build_summary(items: list[dict]) -> str:

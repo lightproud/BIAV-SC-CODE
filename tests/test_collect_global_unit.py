@@ -138,7 +138,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
         }
         patches = []
         for name, attr in attr_by_name.items():
-            fn = overrides.get(name, lambda: [])
+            fn = overrides.get(name, list)
             patches.append(mock.patch.object(global_collectors, attr, fn))
         for p in patches:
             p.start()
@@ -166,7 +166,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
                 mock.patch.dict(sys.modules, {"data_quality": mock.MagicMock(
                     SilentPlatformTracker=mock.MagicMock(side_effect=Exception("off"))),
                     "playwright_collectors": pw_mod}):
-            self._patch_all_empty({"Arca.live": lambda: []})
+            self._patch_all_empty({"Arca.live": list})
             items, _ = cg.run_zero_cost_collectors()
         self.assertTrue(any(i["title"] == "pw" for i in items))
 

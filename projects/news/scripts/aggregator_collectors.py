@@ -16,6 +16,7 @@ from aggregator_base import (
     BILIBILI_MORIMENS_CREATORS, COLLAB_KEYWORDS, HOURS_LOOKBACK,
     MAX_ITEMS_PER_FETCHER, logger, strip_html_tags,
 )
+import news_common  # env_int 等共享工具（模块级用法）
 from news_common import bilibili_spi_cookies, get_wbi_mixin_key, sign_wbi_params
 from sources import REGION_APPS  # 区服 app 标识单一真相源（2026-06-21 采集源命名规范）
 import archive_layout  # discord 布局 SSOT（2026-07-10 方案甲）
@@ -50,7 +51,7 @@ def _fetch_reddit_comments(permalink: str, headers: dict, max_comments: int = 10
                 continue
             cd = c['data']
             body = cd.get('body', '')
-            if not body or body == '[deleted]' or body == '[removed]':
+            if not body or body in {'[deleted]', '[removed]'}:
                 continue
             results.append({
                 'author': f"u/{cd.get('author', '?')}",
@@ -87,14 +88,14 @@ def _extract_reddit_media(post_data: dict) -> str:
 
 def _fetch_reddit_rss(sub, headers, cutoff):
     """Fetch posts from Reddit RSS feed (more reliable than JSON API)."""
-    import xml.etree.ElementTree as ET
     items = []
     # old.reddit.com RSS 比 www.reddit.com 更稳定
     url = f'https://old.reddit.com/r/{sub}/.rss'
     try:
         resp = requests.get(url, headers=headers, timeout=15)
         resp.raise_for_status()
-        root = ET.fromstring(resp.text)
+        # 远端不可信 XML 走共享护栏（体积上限 + 拒 DOCTYPE/ENTITY），见 news_common
+        root = news_common.parse_xml_safely(resp.text)
         ns = {'atom': 'http://www.w3.org/2005/Atom'}
         for entry in root.findall('atom:entry', ns):
             title = entry.findtext('atom:title', '', ns).strip()
@@ -149,7 +150,7 @@ def _fetch_reddit_search(sub, headers, cutoff):
     """Last-resort fallback: use Reddit search to find posts about the subreddit topic."""
     items = []
     try:
-        url = f'https://www.reddit.com/search.json'
+        url = 'https://www.reddit.com/search.json'
         params = {
             'q': f'subreddit:{sub} OR {sub}',
             'sort': 'new',
@@ -765,7 +766,7 @@ def _fetch_steam_news_one(app_id, region):
     """
     # Steam News 单次 API 调用即可拿足 30 天窗口；count=100 保证不截断。
     url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=100&maxlength=500'
-    official_hours = int(os.environ.get('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24)))
+    official_hours = news_common.env_int('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=official_hours)
     items = []
 
@@ -915,12 +916,13 @@ def _load_discord_channel_index():
     dir_to_id: dict[str, str] = {}  # dir_suffix → channel_id
     if index_path.exists():
         try:
-            with open(index_path, 'r', encoding='utf-8') as f:
+            with open(index_path, encoding='utf-8') as f:
                 index = json.load(f)
             for cid, info in index.items():
                 ch_names[cid] = info.get('name', cid)
                 dir_to_id[info.get('dir', '')] = cid
-        except Exception:
+        # 只挡「索引档缺失 / 坏 JSON / 结构不是字典」，别的异常必须冒出来
+        except (OSError, json.JSONDecodeError, AttributeError):
             pass
     return ch_names, dir_to_id
 
@@ -943,7 +945,7 @@ def _read_discord_jsonl(date_str: str):
         channel_id = dir_to_id.get(dir_suffix, '')
         channel_name = ch_names.get(channel_id, dir_suffix)
         try:
-            with open(jsonl_path, 'r', encoding='utf-8') as f:
+            with open(jsonl_path, encoding='utf-8') as f:
                 for line in f:
                     line = line.strip()
                     if not line:
@@ -993,7 +995,7 @@ def fetch_discord_local():
         data_date = yesterday_str
     if stats_path.exists():
         try:
-            with open(stats_path, 'r', encoding='utf-8') as f:
+            with open(stats_path, encoding='utf-8') as f:
                 stats = json.load(f)
             msg_count = stats.get('messages', 0)
             authors = stats.get('unique_authors', 0)

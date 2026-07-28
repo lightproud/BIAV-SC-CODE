@@ -5,9 +5,7 @@
 """
 
 import asyncio
-import sys
 from datetime import datetime, timezone, timedelta
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 import taptap_collector  # noqa: E402

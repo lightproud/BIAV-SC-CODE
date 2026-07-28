@@ -17,7 +17,6 @@ test asserts they remain byte-identical across the run.
 """
 
 import json
-import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -100,9 +99,9 @@ def test_record_decision_roundtrip(tmp_path, monkeypatch):
     # The new row must sit in the 「### 全局」 subtable, BEFORE the anchor, and
     # must NOT have leaked into the 「### 子项目」 subtable.
     lines = on_disk.splitlines()
-    anchor_idx = next(i for i, l in enumerate(lines) if smt.DECISIONS_INSERT_ANCHOR in l)
-    new_idx = next(i for i, l in enumerate(lines) if "采用集成测试覆盖真实依赖路径" in l)
-    subproj_idx = next(i for i, l in enumerate(lines) if l.strip() == "### 子项目")
+    anchor_idx = next(i for i, ln in enumerate(lines) if smt.DECISIONS_INSERT_ANCHOR in ln)
+    new_idx = next(i for i, ln in enumerate(lines) if "采用集成测试覆盖真实依赖路径" in ln)
+    subproj_idx = next(i for i, ln in enumerate(lines) if ln.strip() == "### 子项目")
     assert new_idx < anchor_idx < subproj_idx
 
 
@@ -119,8 +118,8 @@ def test_record_lesson_roundtrip(tmp_path, monkeypatch):
     assert "集成测试缺口" in on_disk
     # New entry must be inserted ABOVE the 维护说明 trailer.
     lines = on_disk.splitlines()
-    new_idx = next(i for i, l in enumerate(lines) if l.startswith("## 3."))
-    trailer_idx = next(i for i, l in enumerate(lines) if l.startswith("> **维护说明**"))
+    new_idx = next(i for i, ln in enumerate(lines) if ln.startswith("## 3."))
+    trailer_idx = next(i for i, ln in enumerate(lines) if ln.startswith("> **维护说明**"))
     assert new_idx < trailer_idx
 
 

@@ -37,7 +37,12 @@ import urllib.request
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-OWNER_REPO = "lightproud/brain-in-a-vat"
+# 仓库标识：CI 内取 GITHUB_REPOSITORY（永远是当下真名），否则回落现名常量。
+# 此前硬编码的是**改名前**的 `lightproud/brain-in-a-vat`。今天它仍可达——GitHub 的
+# 改名重定向在起作用（实测 raw 与 releases 主机均 200），所以这不是「已经断了」;
+# 但把 §6.3 三张抢救网之一的还原路径押在一条重定向上并不合适：owner 一旦重新创建
+# 同名仓库，重定向即失效，而本脚本恰是数据永久丢失时的最后一手。
+OWNER_REPO = os.environ.get("GITHUB_REPOSITORY") or "lightproud/BIAV-SC-CODE"
 API = "https://api.github.com"
 
 
@@ -92,6 +97,37 @@ def download(url: str, dest: Path) -> None:
             fh.write(chunk)
 
 
+def _safe_extractall(tar: tarfile.TarFile, dest: Path) -> None:
+    """把 tar 解到 dest，拒绝任何会写到 dest 之外的成员。
+
+    tarfile.extractall 默认完全信任归档内的成员名：`../../x` 或 `/etc/x` 会照写不误
+    （Zip Slip），链接成员还能把后续写入重定向到任意路径。Python 3.12 起提供
+    `filter='data'` 做标准加固；3.11 没有该参数，故这里给出等价的显式校验，
+    两条路径行为一致。
+    """
+    try:
+        tar.extractall(dest, filter="data")  # Python 3.12+（及 3.11.4+ 的回移版）
+        return
+    except TypeError:
+        pass  # 3.11.3 及更早：无 filter 参数，走下面的显式校验
+    except tarfile.TarError as e:
+        # 两条分支的失败形态必须一致：filter='data' 抛的是 tarfile.FilterError 家族
+        # （OutsideDestinationError / AbsoluteLinkError 等），若原样上抛，调用方在
+        # 新旧 Python 上会看到完全不同的异常类型，出错信息也不指向本脚本。
+        raise SystemExit(f"[restore] 归档成员被安全过滤器拒绝: {e}") from e
+
+    root = dest.resolve()
+    for member in tar.getmembers():
+        if member.issym() or member.islnk():
+            raise SystemExit(f"[restore] 拒绝解压链接成员（可重定向写入）: {member.name!r}")
+        if not (member.isfile() or member.isdir()):
+            raise SystemExit(f"[restore] 拒绝解压特殊文件成员: {member.name!r}")
+        target = (root / member.name).resolve()
+        if target != root and root not in target.parents:
+            raise SystemExit(f"[restore] 拒绝越出目标目录的成员（路径穿越）: {member.name!r}")
+    tar.extractall(dest)  # noqa: S202  成员已逐个校验，不会越界
+
+
 def restore(tag: str, pattern: str, dest: Path, force: bool,
             months: list[str] | None = None) -> int:
     dest = (REPO / dest) if not dest.is_absolute() else dest
@@ -102,7 +138,7 @@ def restore(tag: str, pattern: str, dest: Path, force: bool,
         if not months:
             raise SystemExit(
                 f"[restore] release API unreachable ({e}); pass --months LO..HI to "
-                f"download via the github.com release host directly.")
+                f"download via the github.com release host directly.") from e
         print(f"[restore] release API unreachable ({e}); falling back to month expansion")
         assets = assets_from_months(tag, pattern, months)
     if not assets:
@@ -116,7 +152,14 @@ def restore(tag: str, pattern: str, dest: Path, force: bool,
             download(a["browser_download_url"], tgz)
             if a["name"].endswith((".tar.gz", ".tgz")):
                 with tarfile.open(tgz, "r:gz") as tar:
-                    tar.extractall(dest)      # 归档内是相对路径 channels/{id}/*.jsonl
+                    # 归档内**应当**是相对路径 channels/{id}/*.jsonl，但 extractall 会照
+                    # 单全收：成员名里的 `../` 或绝对路径能把文件写到 dest 之外（Zip Slip),
+                    # 符号链接成员还能把后续写入重定向到任意位置。这条路径吃的是从网络
+                    # 下载的 Release 资产，「我们自己传的」不是安全边界——资产可被替换、
+                    # 传输可被劫持，而这份脚本常以仓库写权限运行。
+                    # filter='data' 是 Python 3.12+ 的标准加固（拒绝绝对/穿越路径、
+                    # 剥离特殊文件与链接）；3.11 无此参数，退回自实现的同等校验。
+                    _safe_extractall(tar, dest)
             else:
                 # 非 tarball 资产（如 kb_vectors.json.gz 纯 gzip JSON）：按原名平拷贝。
                 shutil.copy2(tgz, dest / a["name"])

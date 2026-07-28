@@ -36,12 +36,12 @@ def test_relation_typing_names_edge_types():
 
 def test_layer_disambiguation_all_platforms():
     """凡同时有全量+抽样概念的平台，KB 都能靠 data_layer 唯一区分（防 lesson #30）。"""
-    l = kb_qual.probe_layer_disambiguation()
-    assert l["platforms_with_both_layers"] >= 10, "多层平台样本过少"
-    assert l["kb_can_disambiguate"] == l["platforms_with_both_layers"], (
+    layer = kb_qual.probe_layer_disambiguation()
+    assert layer["platforms_with_both_layers"] >= 10, "多层平台样本过少"
+    assert layer["kb_can_disambiguate"] == layer["platforms_with_both_layers"], (
         "存在 KB 无法区分全量 vs 抽样的平台"
     )
-    assert l["grep_can_disambiguate"] == 0
+    assert layer["grep_can_disambiguate"] == 0
 
 
 def test_identity_isolates_one_canonical():

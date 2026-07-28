@@ -5,7 +5,6 @@ kb_vector 是 §八「厚锚撑向量」的银芯参照实现（守密人 2026-0
 后端**（token 哈希袋）锁定管线契约：嵌入确定性 / 归一化 / 索引读写往返 / 余弦排序 /
 缺索引优雅降级。断言全部零网络、可复现（不触 Voyage）。
 """
-import sys
 import unittest
 from pathlib import Path
 
@@ -56,7 +55,7 @@ class TestIndexRoundtrip(unittest.TestCase):
         items = [
             {"ref": f"src:2026-01-0{i}", "source": "discord",
              "date": f"2026-01-0{i}", "preview": t, "vec": v}
-            for i, (t, v) in enumerate(zip(texts, vecs), start=1)
+            for i, (t, v) in enumerate(zip(texts, vecs, strict=True), start=1)
         ]
         kv.write_index(path, items, {"backend": "stub", "model": "stub",
                                      "dim": kv._STUB_DIM, "count": len(items),
@@ -108,7 +107,7 @@ class TestWriteDeterminism(unittest.TestCase):
         vecs = kv.embed_stub(["one two", "three four", "five six"])
         items = [{"ref": f"s:{i}", "source": "discord", "date": f"d{i}",
                   "preview": p, "vec": v}
-                 for i, (p, v) in enumerate(zip(["a", "b", "c"], vecs))]
+                 for i, (p, v) in enumerate(zip(["a", "b", "c"], vecs, strict=True))]
         meta = {"backend": "stub", "model": "stub", "dim": kv._STUB_DIM,
                 "count": 3, "data_layer": "full_archive"}
         with tempfile.TemporaryDirectory() as d:
@@ -130,7 +129,7 @@ class TestQueryEmbedDegrade(unittest.TestCase):
         vecs = kv.embed_stub(["msg one", "msg two"])
         items = [{"ref": f"discord:{i}", "source": "discord", "date": f"2026-01-0{i}",
                   "preview": t, "vec": v}
-                 for i, (t, v) in enumerate(zip(["msg one", "msg two"], vecs), 1)]
+                 for i, (t, v) in enumerate(zip(["msg one", "msg two"], vecs, strict=True), 1)]
         kv.write_index(path, items, {"backend": "voyage", "model": "voyage-3-lite",
                                      "dim": kv._STUB_DIM, "count": 2,
                                      "data_layer": "full_archive"})

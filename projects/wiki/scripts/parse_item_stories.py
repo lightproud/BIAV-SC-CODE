@@ -6,7 +6,7 @@ import json
 from lua_parse import parse_lua_blocks
 
 def parse_item_stories(path):
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, encoding='utf-8') as f:
         content = f.read()
 
     entries = []
@@ -54,7 +54,7 @@ def parse_item_stories(path):
         else:
             categories['other'].append(entry)
 
-    result = {
+    return {
         '_meta': {
             'source': 'Item.lua (runtime memory extraction)',
             'total_with_story': len(entries),
@@ -64,7 +64,6 @@ def parse_item_stories(path):
         'all_items': entries,
         'by_category': categories,
     }
-    return result
 
 
 if __name__ == '__main__':

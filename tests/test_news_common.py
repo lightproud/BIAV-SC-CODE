@@ -1,8 +1,7 @@
+import os
 import socket
-import sys
 import unittest
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 from unittest import mock
 
 import requests
@@ -449,3 +448,75 @@ class TestSafeGet(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# ── env_int / env_float 容错读取（扫描修复 2026-07-28）────────────────────────
+# 采集层原有 12 处 `int(os.environ.get('X', N))` 全在**模块顶层**。GitHub Actions 里
+# `env: X: ${{ inputs.x }}` 在 input 未填时注入的是**空字符串**（不是「未设置」），
+# `int('')` 抛 ValueError —— 发生在 import 期，整个采集模块加载失败、一轮数据全灭,
+# 报错还是一句与业务无关的 invalid literal。实测复现：
+#   HOURS_LOOKBACK="" python3 -c "import aggregator_base"  → ValueError
+class TestEnvIntFloat(unittest.TestCase):
+    def test_unset_returns_default(self):
+        with mock.patch.dict(os.environ, {}, clear=True):
+            self.assertEqual(news_common.env_int('X_UNSET', 7), 7)
+            self.assertEqual(news_common.env_float('X_UNSET', 0.5), 0.5)
+
+    def test_empty_string_returns_default(self):
+        """回归核心：空串是 Actions 未填 input 的实际注入值，绝不能抛。"""
+        with mock.patch.dict(os.environ, {'X_E': '', 'X_F': '   '}, clear=True):
+            self.assertEqual(news_common.env_int('X_E', 24), 24)
+            self.assertEqual(news_common.env_int('X_F', 24), 24)
+            self.assertEqual(news_common.env_float('X_E', 0.2), 0.2)
+
+    def test_garbage_returns_default_without_raising(self):
+        with mock.patch.dict(os.environ, {'X_G': 'abc'}, clear=True):
+            self.assertEqual(news_common.env_int('X_G', 500), 500)
+            self.assertEqual(news_common.env_float('X_G', 1.5), 1.5)
+
+    def test_valid_value_wins(self):
+        with mock.patch.dict(os.environ, {'X_V': ' 72 ', 'X_FV': '0.35'}, clear=True):
+            self.assertEqual(news_common.env_int('X_V', 24), 72)
+            self.assertAlmostEqual(news_common.env_float('X_FV', 0.2), 0.35)
+
+    def test_zero_is_honoured_not_treated_as_missing(self):
+        """0 是有效值（HOURS_LOOKBACK=0 用于触发自适应回溯），不得当缺失回落。"""
+        with mock.patch.dict(os.environ, {'X_Z': '0'}, clear=True):
+            self.assertEqual(news_common.env_int('X_Z', 24), 0)
+
+
+# ── 远端 XML 护栏（扫描修复 2026-07-28）───────────────────────────────────────
+# 两处 Reddit RSS 解析原先直接 ET.fromstring(远端文本)。ElementTree 不做外部实体
+# 解析，但对 DTD 内部实体的递归展开（billion laughs）与超大输入并无防护——一个被
+# 篡改或被劫持的 feed 就能把采集进程内存吃光，而这条链路每 3 小时无人值守跑一轮。
+# 不引入 defusedxml（新依赖），改用对 RSS/Atom 零误伤的两道护栏。
+class TestParseXmlSafely(unittest.TestCase):
+    def test_normal_atom_parses(self):
+        root = news_common.parse_xml_safely(
+            '<feed xmlns="http://www.w3.org/2005/Atom"><entry/></feed>')
+        self.assertTrue(root.tag.endswith('feed'))
+        self.assertEqual(len(list(root)), 1)
+
+    def test_doctype_rejected(self):
+        """billion laughs 必须靠 DTD；合法 RSS/Atom 从不需要 DTD，故整类拒掉。"""
+        payload = '<!DOCTYPE lolz [<!ENTITY a "xxxxxxxxxx">]><f>&a;</f>'
+        with self.assertRaises(ValueError):
+            news_common.parse_xml_safely(payload)
+
+    def test_bare_entity_declaration_rejected(self):
+        with self.assertRaises(ValueError):
+            news_common.parse_xml_safely('<!ENTITY x "y"><f/>')
+
+    def test_oversize_rejected(self):
+        big = '<f>' + ('x' * (news_common.MAX_XML_BYTES + 10)) + '</f>'
+        with self.assertRaises(ValueError):
+            news_common.parse_xml_safely(big)
+
+    def test_size_cap_is_configurable(self):
+        with self.assertRaises(ValueError):
+            news_common.parse_xml_safely('<f>hello</f>', max_bytes=4)
+
+    def test_malformed_xml_still_raises_not_silently_empty(self):
+        """畸形 feed 必须抛（两处调用方都有 except 兜底），不得静默返回空树。"""
+        with self.assertRaises(Exception):
+            news_common.parse_xml_safely('<f><unclosed></f>')

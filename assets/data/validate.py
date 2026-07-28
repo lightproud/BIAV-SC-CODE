@@ -129,7 +129,7 @@ def run_checks():
         tags = char_24.get("tags", [])
         desc = char_24.get("description", "")
         has_four_realm = (
-            isinstance(realms, list) and len(realms) >= 4
+            (isinstance(realms, list) and len(realms) >= 4)
             or "四领域" in desc
             or "four-realm" in desc.lower()
             or "四领域" in " ".join(tags)
@@ -137,7 +137,7 @@ def run_checks():
             or "全领域" in " ".join(tags)
         )
         if has_four_realm:
-            results.append((True, f"id=24 已标注四领域适性"))
+            results.append((True, "id=24 已标注四领域适性"))
         else:
             results.append((False, f"id=24 仅标注 realm=\"{realm}\"，缺少四领域适性说明"))
 
@@ -215,7 +215,7 @@ def run_checks():
         ref_count = meta.get("total_drop_references", 0)
         scanned = meta.get("stages_scanned", 0)
         if scanned == 0:
-            results.append((True, f"反向索引基线：尚未扫描 stage 数据（db/stages.json 为空 stub）"))
+            results.append((True, "反向索引基线：尚未扫描 stage 数据（db/stages.json 为空 stub）"))
         else:
             verdict = item_count > 0
             results.append((verdict, f"反向掉落索引：{item_count} 物品 / {ref_count} 边 / {scanned} stage 扫描"))

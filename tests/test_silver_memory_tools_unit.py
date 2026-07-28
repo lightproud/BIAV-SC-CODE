@@ -5,7 +5,6 @@ module path constants, so the real memory/*.md archives are NEVER touched.
 """
 
 import json
-import sys
 from pathlib import Path
 
 import pytest
@@ -149,7 +148,7 @@ def test_record_decision_with_anchor(sandbox):
     assert out["line_added"] == "| 新决策（因为 有理由） | 全局 | — |"
     text = smt.DECISIONS_FILE.read_text(encoding="utf-8")
     lines = text.splitlines()
-    anchor_idx = next(i for i, l in enumerate(lines) if smt.DECISIONS_INSERT_ANCHOR in l)
+    anchor_idx = next(i for i, ln in enumerate(lines) if smt.DECISIONS_INSERT_ANCHOR in ln)
     # new line inserted immediately before the anchor
     assert lines[anchor_idx - 1] == "| 新决策（因为 有理由） | 全局 | — |"
     # ARCH sub-table not polluted
@@ -247,8 +246,8 @@ def test_record_lesson_increments_id_before_maintenance(sandbox):
     # Inserted before the maintenance block / separator
     lines = text.splitlines()
     new_idx = lines.index("## 31. 抽样率失真")
-    sep_idx = next(i for i, l in enumerate(lines) if l.strip() == "---")
-    maint_idx = next(i for i, l in enumerate(lines) if l.startswith("> **维护说明**"))
+    sep_idx = next(i for i, ln in enumerate(lines) if ln.strip() == "---")
+    maint_idx = next(i for i, ln in enumerate(lines) if ln.startswith("> **维护说明**"))
     assert new_idx < sep_idx < maint_idx
 
 
@@ -330,7 +329,7 @@ def test_record_lesson_maintenance_without_separator(sandbox):
     assert out["lesson_id"] == "8"
     lines = smt.LESSONS_FILE.read_text(encoding="utf-8").splitlines()
     new_idx = lines.index("## 8. 无分隔追加")
-    maint_idx = next(i for i, l in enumerate(lines) if l.startswith("> **维护说明**"))
+    maint_idx = next(i for i, ln in enumerate(lines) if ln.startswith("> **维护说明**"))
     assert new_idx < maint_idx
 
 

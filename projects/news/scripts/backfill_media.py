@@ -20,9 +20,18 @@ Discord 附件 URL 的过期只在查询参数（ex/is/hm）；用 Bot Token 调
   python projects/news/scripts/backfill_media.py --no-discord                 # 只补持久平台源
   python projects/news/scripts/backfill_media.py --upload                     # 打包传 Releases
 """
-import os, sys, json, re, glob, time, argparse, subprocess, hashlib, html
+import os
+import sys
+import json
+import re
+import glob
+import time
+import argparse
+import subprocess
+import hashlib
+import html
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -42,12 +51,17 @@ REFRESH_BATCH = 50
 
 
 def load_manifest():
-    return json.load(open(MANIFEST, encoding="utf-8")) if os.path.isfile(MANIFEST) else {}
+    if not os.path.isfile(MANIFEST):
+        return {}
+    with open(MANIFEST, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def save_manifest(m):
     os.makedirs(os.path.dirname(MANIFEST), exist_ok=True)
-    json.dump(m, open(MANIFEST, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    # 原子替换：manifest 是回填断点续跑的唯一依据，写一半被中断即整份不可解析,
+    # 下一轮当作「无 manifest」从零重跑（既浪费带宽，也可能重复计费的 API 配额）。
+    news_common.dump_json_atomic(MANIFEST, m, indent=1)
 
 
 def ext_of(url, d="jpg"):
@@ -56,7 +70,10 @@ def ext_of(url, d="jpg"):
 
 
 def fname(url, source):
-    return f"{source}_{hashlib.md5(url.encode()).hexdigest()[:12]}.{ext_of(url)}"
+    # usedforsecurity=False：这里 md5 只用来把 URL 折成稳定文件名，与安全无关。
+    # 标出来不只是消 lint——**FIPS 模式的 Python 会让裸 hashlib.md5() 直接抛
+    # ValueError**，加了这个标志才继续可用。
+    return f"{source}_{hashlib.md5(url.encode(), usedforsecurity=False).hexdigest()[:12]}.{ext_of(url)}"
 
 
 def fetch(url, dest, source):
@@ -78,14 +95,69 @@ def fetch(url, dest, source):
         return f"err_{type(e).__name__}"
     if len(data) < 200:
         return "empty"
-    open(dest, "wb").write(data)
+    # 先写同目录临时文件再 os.replace：直接 open(dest,'wb').write(data) 一旦写一半
+    # 被中断（磁盘满 / 进程被杀），留下的半截文件在 manifest 里记的是 "ok",
+    # 后续轮次不会重下——半截图片就此永久入库。
+    tmp = f"{dest}.part"
+    with open(tmp, "wb") as f:
+        f.write(data)
+    os.replace(tmp, dest)
     return "ok"
+
+
+# ── 进程级预算（扫描修复 2026-07-28）──────────────────────────────────────────
+# 缺陷：`--budget` 原先只从**下载循环**开始计时，而它前面还压着三个真正昂贵的阶段:
+#   ① collect_urls 全量遍历社区档案（数百万条 discord JSONL + 全部平台 json）；
+#   ② 去重；
+#   ③ refresh_discord 对**全部**待办 discord 链接批量刷签名（每批一次 HTTP + 0.3s
+#      节流；待办上万即数千批）。
+# 三者都不受预算约束，于是 CI 作业在进入下载循环之前就先撞上 timeout-minutes: 90。
+# 实测后果（GitHub 侧取证）：backfill-media.yml 连续 37 天、500+ 次运行**没有一次
+# 成功**——每次都是「Backfill 步骤跑满 89 分 47 秒被杀 → 上传与提交 manifest 步骤
+# skipped」。manifest 从不落地，下一轮又从同一处重来，是个恒不前进的死循环。
+# （2026-07-26 曾把 cron 由每小时降为每日，判词是「排队顶掉待跑 run」——那是误诊:
+#  改为每日后的首跑 run#522 照样跑满 90 分钟被杀。真因在预算覆盖面，不在触发频率。）
+# 修法：预算改为**从进程启动算起的截止时刻**，三个阶段共用，任一阶段逼近即收尾,
+# 让作业总能走到「保存 manifest → 上传 → 提交」，从而每轮都有实际推进。
+_START = time.time()
+_DEADLINE: float | None = None
+
+
+def _set_budget(seconds: int) -> None:
+    global _DEADLINE
+    _DEADLINE = _START + seconds
+
+
+def _budget_left() -> float:
+    """剩余预算秒数；未设预算时返回正无穷。"""
+    return float('inf') if _DEADLINE is None else _DEADLINE - time.time()
+
+
+def _budget_exhausted(reserve: float = 0.0) -> bool:
+    """预算是否已耗尽。reserve 为给后续阶段预留的秒数。"""
+    return _budget_left() <= reserve
+
+
+def _reserve_for_downloads() -> float:
+    """给下载阶段预留的秒数 = 总预算的三成。
+
+    没有这条预留，遍历/刷新可以把预算吃干，下载一件都做不成——那一轮仍然「零推进」,
+    与超时被杀的结果没有区别。留出下载窗口，才能保证每轮至少补进一批文件并落 manifest。
+    """
+    if _DEADLINE is None:
+        return 0.0
+    return (_DEADLINE - _START) * 0.3
 
 
 def refresh_discord(urls, token):
     """批量把过期 Discord 链接换成新签名链接。返回 {original: refreshed}。"""
     out = {}
     for i in range(0, len(urls), REFRESH_BATCH):
+        # 给下载阶段留至少三成预算：链接刷新本身不产出任何已下载文件,
+        # 全花在刷新上等于这一轮又白跑。
+        if _budget_exhausted(reserve=_reserve_for_downloads()):
+            print(f"  预算逼近，刷新提前收尾：已刷 {i}/{len(urls)} 条链接")
+            break
         batch = urls[i:i + REFRESH_BATCH]
         body = json.dumps({"attachment_urls": batch}).encode()
         req = urllib.request.Request(REFRESH_API, data=body, method="POST", headers={
@@ -103,46 +175,61 @@ def refresh_discord(urls, token):
 
 def collect_urls(include_discord):
     urls = []
-    for fp in glob.glob(f"{SRC}/*/*.json"):
-        if "/discord/" in fp:           # discord 单独处理（下方 jsonl），非平台 json
-            continue
-        src = fp.split("/")[-2]; d = os.path.basename(fp)[:-5]
-        if len(d) != 10:
-            continue
-        try:
-            items = json.load(open(fp, encoding="utf-8"))
-        except Exception:
-            continue
-        items = items if isinstance(items, list) else items.get("items", [])
-        for it in items:
-            if isinstance(it, dict) and it.get("media_url"):
-                urls.append((it["media_url"], src, d))
+    # 遍历一律经 archive_layout（读方唯一入口）。原写法三处漏：
+    #   1. glob 只吃 `<平台>/<date>.json` 扁平层，分层平台（steam 家族 / appstore /
+    #      google_play / youtube 落 <平台>/<区服>/<类型>/）整批扫不到；
+    #   2. 冷层 `.json.gz` 一个都匹配不上（上上个月及更早全漏，CLAUDE.md §5.2）；
+    #   3. 日期茎用 basename[:-5] 手工切片，对 `.json.gz` 会切成 '2026-04-01.j',
+    #      长度校验随即判 != 10 丢弃——即便匹配上也照样丢。
+    src_root = Path(SRC)
+    sources = sorted(p.name for p in src_root.iterdir()
+                     if p.is_dir() and p.name != "discord") if src_root.is_dir() else []
+    for source in sources:
+        if _budget_exhausted(reserve=_reserve_for_downloads()):
+            print(f"  预算逼近，档案遍历提前收尾（停在平台 {source} 之前）")
+            return urls
+        for fpath in archive_layout.dated_files(source, src_root):
+            d = archive_layout.date_stem(fpath)
+            try:
+                with archive_layout.open_archive_text(fpath) as f:
+                    items = json.load(f)
+            # OSError 已覆盖 gzip.BadGzipFile（冷层坏档）
+            except (OSError, json.JSONDecodeError, UnicodeDecodeError):
+                continue
+            items = items if isinstance(items, list) else items.get("items", [])
+            for it in items:
+                if isinstance(it, dict) and it.get("media_url"):
+                    urls.append((it["media_url"], source, d))
     if include_discord:
         # 三区服全量遍历（2026-07-10 方案甲布局，新旧布局经 SSOT 回落）
-        import archive_layout
-        for fpath in archive_layout.iter_discord_message_files(Path(SRC) / "discord"):
-            fp = str(fpath)
-            # 冷热双扩展名（.jsonl / .jsonl.gz，2026-07-12 甲案）：按名截日期
-            d = os.path.basename(fp).replace(".jsonl.gz", "").replace(".jsonl", "")
+        for n_file, fpath in enumerate(archive_layout.iter_discord_message_files(src_root / "discord")):
+            # discord 是遍历量最大的一段（数百万条），每 200 档查一次预算
+            if n_file % 200 == 0 and _budget_exhausted(reserve=_reserve_for_downloads()):
+                print(f"  预算逼近，discord 遍历提前收尾（已扫 {n_file} 档）")
+                return urls
+            # 日期茎一律经 SSOT（CLAUDE.md §5.2），不再手工 replace 后缀
+            d = archive_layout.date_stem(fpath)
             if len(d) != 10:
                 continue
-            for line in archive_layout.open_archive_text(fp):
-                if '"content_type": "image' not in line:
-                    continue
-                try:
-                    m = json.loads(line)
-                except Exception:
-                    continue
-                for att in (m.get("attachments") or []):
-                    if str(att.get("content_type", "")).startswith("image") and att.get("url"):
-                        urls.append((att["url"], "discord", d))
+            with archive_layout.open_archive_text(fpath) as fh:
+                for line in fh:
+                    if '"content_type": "image' not in line:
+                        continue
+                    try:
+                        m = json.loads(line)
+                    except json.JSONDecodeError:  # 只挡坏行，不吞块内程序错误
+                        continue
+                    for att in (m.get("attachments") or []):
+                        if str(att.get("content_type", "")).startswith("image") and att.get("url"):
+                            urls.append((att["url"], "discord", d))
     return urls
 
 
 def upload_release():
     files = glob.glob(f"{FILES}/*")
     if not files:
-        print("无可上传文件"); return
+        print("无可上传文件")
+        return
     tar = f"{ROOT}/media/media-files.tar"
     subprocess.run(["tar", "-cf", tar, "-C", FILES, "."], check=True)
     # 2026-06-21 收敛：media 二进制并入「社区二创」community-assets（与 fanart 同桶），
@@ -162,14 +249,19 @@ def main():
     a = ap.parse_args()
 
     if a.upload:
-        upload_release(); return
+        upload_release()
+        return
+
+    # 预算从**进程启动**算起（见 _START 上方说明），而不是从下载循环算起
+    _set_budget(a.budget)
 
     os.makedirs(FILES, exist_ok=True)
     token = os.environ.get("DISCORD_BOT_TOKEN")
     manifest = load_manifest()
     urls = collect_urls(include_discord=not a.no_discord)
 
-    seen = set(); todo = []
+    seen = set()
+    todo = []
     for url, src, d in urls:
         if url in seen:
             continue
@@ -189,20 +281,25 @@ def main():
         print(f"警告：{len(disc)} 个 Discord 链接多已过期，但未提供 DISCORD_BOT_TOKEN，无法刷新；"
               f"将直接尝试原链接（多半 404）。设置 DISCORD_BOT_TOKEN 后续跑可补回。")
 
-    start = time.time(); done = 0; stats = {}
+    done = 0
+    stats = {}
     for url, src, d in todo:
-        if time.time() - start > a.budget:
-            print(f"预算耗尽，已处理 {done}/{len(todo)}，下次续跑"); break
+        if _budget_exhausted():
+            print(f"预算耗尽，已处理 {done}/{len(todo)}，下次续跑")
+            break
         dl_url = refreshed.get(url, url)
         fn = fname(url, src)
         status = fetch(dl_url, os.path.join(FILES, fn), src)
         manifest[url] = {"filename": fn if status == "ok" else None, "source": src,
                          "date": d, "status": status, "refreshed": url in refreshed,
-                         "checked_at": datetime.utcnow().isoformat()}
+                         # utcnow() 产出的是「无时区」datetime，isoformat() 不带 +00:00
+                         # 后缀——落档后读方无从分辨是 UTC 还是本地时；且 3.12 起已弃用。
+                         "checked_at": datetime.now(timezone.utc).isoformat()}
         stats[status] = stats.get(status, 0) + 1
         done += 1
         if done % 200 == 0:
-            save_manifest(manifest); print(f"  ...{done}/{len(todo)}")
+            save_manifest(manifest)
+            print(f"  ...{done}/{len(todo)}")
         time.sleep(a.delay)
 
     save_manifest(manifest)

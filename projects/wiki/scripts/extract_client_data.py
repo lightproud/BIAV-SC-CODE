@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import gc
+import importlib.util
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -28,7 +29,7 @@ if sys.platform == "win32":
     try:
         import ctypes
         ctypes.cdll.msvcrt._setmaxstdio(8192)
-    except Exception:
+    except (AttributeError, OSError, ImportError):
         pass
 
 try:
@@ -38,11 +39,10 @@ except ImportError:
     print("ERROR: UnityPy not installed. Run: pip install UnityPy", file=sys.stderr)
     sys.exit(1)
 
-try:
-    from PIL import Image
-    HAS_PIL = True
-except ImportError:
-    HAS_PIL = False
+# Pillow 只用于 Texture2D → PNG；缺库时整块能力优雅降级（HAS_PIL 门控）。
+# 用 find_spec 探测而非 import 未用名：后者会被静态检查判为「未使用的导入」,
+# 一次顺手清理就可能把探测本身删掉，令降级门控恒 False 而无人察觉。
+HAS_PIL = importlib.util.find_spec("PIL") is not None
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -290,7 +290,7 @@ def extract_monobehaviours(env, output_dir: Path, stats: dict) -> None:
                 stats["errors"].append(f"MonoBehaviour: {e}")
 
 
-def extract_textures(env, output_dir: Path, stats: dict, name_filter: str = None) -> None:
+def extract_textures(env, output_dir: Path, stats: dict, name_filter: str | None = None) -> None:
     """Extract Texture2D as PNG (for portraits)."""
     if not HAS_PIL:
         return
@@ -365,7 +365,8 @@ def _extract_single_file(
                 for f in getattr(env, "_files", {}).values():
                     if hasattr(f, "close"):
                         f.close()
-            except Exception:
+            # 收尾关句柄路径，刻意宽捕获：解包结果不能因关不掉句柄而作废
+            except Exception:  # noqa: BLE001,S110  teardown 绝不可上抛
                 pass
             del env
     stats["_rel"] = str(rel)
@@ -376,7 +377,7 @@ def scan_and_extract(
     game_data_dir: Path,
     output_dir: Path,
     extract_tex: bool = False,
-    tex_filter: str = None,
+    tex_filter: str | None = None,
     workers: int = 0,
     verbose: bool = False,
 ) -> dict:
@@ -601,7 +602,7 @@ def main():
 
     # Save stats
     print(f"\n{'=' * 60}")
-    print(f"Extraction complete:")
+    print("Extraction complete:")
     print(f"  Asset files scanned: {stats['asset_files_scanned']}")
     print(f"  Asset files failed:  {stats['asset_files_failed']}")
     print(f"  Direct files copied: {stats.get('direct_copied', 0)}")
@@ -613,7 +614,7 @@ def main():
     # Show object type summary (diagnostic)
     obj_types = stats.get("all_object_types", {})
     if obj_types:
-        print(f"\n  Unity object types found across all files:")
+        print("\n  Unity object types found across all files:")
         for t, c in sorted(obj_types.items(), key=lambda x: -x[1]):
             print(f"    {t}: {c}")
 

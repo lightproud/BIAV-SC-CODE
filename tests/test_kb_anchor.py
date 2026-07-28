@@ -4,7 +4,6 @@
 无 key / 无包、kb_vector.search 整体抛异常、索引缺失）都必须**函数内降级**——
 锚 + 别名照常返回，绝不把脊柱托底一起带崩。
 """
-import sys
 from pathlib import Path
 
 import pytest
@@ -19,7 +18,7 @@ def _stub_index(path: Path, texts: list[str]) -> None:
     vecs = kv.embed_stub(texts)
     items = [{"ref": f"discord:2026-01-0{i}", "source": "discord",
               "date": f"2026-01-0{i}", "preview": t, "vec": v}
-             for i, (t, v) in enumerate(zip(texts, vecs), 1)]
+             for i, (t, v) in enumerate(zip(texts, vecs, strict=True), 1)]
     kv.write_index(path, items, {"backend": "stub", "model": "stub",
                                  "dim": kv._STUB_DIM, "count": len(items),
                                  "data_layer": "full_archive"})
@@ -31,7 +30,7 @@ def _voyage_index(path: Path) -> None:
     vecs = kv.embed_stub(["msg one", "msg two"])
     items = [{"ref": f"discord:{i}", "source": "discord", "date": f"2026-01-0{i}",
               "preview": t, "vec": v}
-             for i, (t, v) in enumerate(zip(["msg one", "msg two"], vecs), 1)]
+             for i, (t, v) in enumerate(zip(["msg one", "msg two"], vecs, strict=True), 1)]
     kv.write_index(path, items, {"backend": "voyage", "model": "voyage-3-lite",
                                  "dim": kv._STUB_DIM, "count": 2,
                                  "data_layer": "full_archive"})

@@ -16,6 +16,7 @@ State file: projects/news/data/collection_state.json
 
 import json
 import logging
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -34,14 +35,21 @@ def _load_state() -> dict:
     if STATE_PATH.exists():
         try:
             return json.loads(STATE_PATH.read_text(encoding='utf-8'))
-        except Exception:
-            pass
+        except Exception as exc:
+            # 原为 `except: pass` 全静默。这个状态档决定自适应回溯窗口：损坏即回落
+            # 空 state → 窗口缩回 24h 默认值，CI 宕机期间该补的历史就此不补,
+            # 而日志里一个字都没有。补 warning 让「状态丢了」至少可见。
+            logger.warning(f'collection_state 读取失败（回落默认窗口）: {type(exc).__name__}: {exc}')
     return {}
 
 
 def _save_state(state: dict):
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding='utf-8')
+    # 原子替换：直写若在写一半被中断（CI runner 被回收是常态）便留下半截 JSON,
+    # 下一轮 _load_state 解析失败 → 状态归零、回溯窗口塌回 24h。
+    tmp = STATE_PATH.with_suffix(STATE_PATH.suffix + '.tmp')
+    tmp.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding='utf-8')
+    os.replace(tmp, STATE_PATH)
 
 
 def get_lookback_hours() -> int:

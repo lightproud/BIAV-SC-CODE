@@ -38,13 +38,12 @@ split_output.py — 按数据源分割 projects/news/output/news.json
 """
 
 import json
-import os
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 # ── 路径 ──────────────────────────────────────────────────────────────────────
-_REPO_ROOT = Path(__file__).parent.parent.parent.parent  # brain-in-a-vat/
+_REPO_ROOT = Path(__file__).parent.parent.parent.parent  # 仓根 BIAV-SC-CODE/
 INPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 
@@ -52,6 +51,8 @@ OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 # 过滤抽样，绝不可当全量数据用（lesson #30）。此前该身份纯靠约定、产物无机器可读
 # 标记；现落标，让消费端能程序化判别，把纪律从「人记」升级为「代码设防」。
 DATA_LAYER = 'output'
+
+import news_common  # noqa: E402  容错 env 读取（env_int：空串 env 不得在 import 期打死模块）
 
 # ── 数据源规范化 ──────────────────────────────────────────────────────────────
 # bilibili_articles / bilibili_dynamic 都归入 bilibili
@@ -67,7 +68,7 @@ except ImportError:
 MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else _default_hours
 
 # 稀疏源使用更宽时间窗口（SPARSE_SOURCES 来自 sources.py 单一真相源）
-OFFICIAL_MAX_AGE_HOURS = int(os.environ.get('OFFICIAL_MAX_AGE_HOURS', 30 * 24))
+OFFICIAL_MAX_AGE_HOURS = news_common.env_int('OFFICIAL_MAX_AGE_HOURS', 30 * 24)
 
 
 def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:

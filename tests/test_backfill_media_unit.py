@@ -270,3 +270,62 @@ class TestMain(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# ── 进程级预算（扫描修复 2026-07-28）──────────────────────────────────────────
+# 缺陷：--budget 原先只从**下载循环**开始计时，前面还压着 collect_urls 全量遍历
+# （数百万条 discord JSONL + 全部平台 json）、去重、以及 refresh_discord 对全部待办
+# 链接批量刷签名——三者都不受预算约束。CI 作业于是在进入下载循环之前就撞上
+# timeout-minutes: 90。GitHub 侧实测取证：backfill-media.yml 连续 37 天、500+ 次运行
+# 无一次成功，每次都是「Backfill 步骤跑满 89 分 47 秒被杀 → 上传与提交 manifest
+# 步骤 skipped」，manifest 从不落地，下一轮从同一处重来，恒不前进。
+class TestProcessWideBudget(unittest.TestCase):
+    def setUp(self):
+        # 每个用例重置全局截止时刻，避免互相污染
+        bm._DEADLINE = None
+
+    def tearDown(self):
+        bm._DEADLINE = None
+
+    def test_no_budget_means_unbounded(self):
+        self.assertEqual(bm._budget_left(), float("inf"))
+        self.assertFalse(bm._budget_exhausted())
+        self.assertEqual(bm._reserve_for_downloads(), 0.0)
+
+    def test_reserve_is_three_tenths_of_budget(self):
+        """必须给下载阶段留窗口：遍历/刷新吃干预算 = 那一轮仍然零推进。"""
+        bm._set_budget(1000)
+        self.assertAlmostEqual(bm._reserve_for_downloads(), 300.0, places=3)
+
+    def test_exhausted_respects_reserve(self):
+        with mock.patch.object(bm.time, "time", return_value=bm._START + 800):
+            bm._set_budget(1000)  # 截止时刻 = _START + 1000，此刻剩 200s
+            # 裸判：还剩 200s，未耗尽
+            self.assertFalse(bm._budget_exhausted())
+            # 但要为下载留 300s 时，200 < 300 → 视为耗尽，遍历/刷新须收尾
+            self.assertTrue(bm._budget_exhausted(reserve=300))
+
+    def test_refresh_discord_stops_when_budget_nearly_spent(self):
+        """刷新阶段必须能被预算叫停——原实现会一路刷到作业被杀。"""
+        bm._set_budget(1000)
+        urls = [f"https://cdn.discordapp.com/a{i}.png" for i in range(bm.REFRESH_BATCH * 5)]
+        # 预算已只剩 100s（< 三成预留 300s）→ 一批都不该发
+        with mock.patch.object(bm.time, "time", return_value=bm._START + 900), \
+                mock.patch.object(bm.urllib.request, "urlopen") as uo, \
+                mock.patch.object(bm.time, "sleep"):
+            out = bm.refresh_discord(urls, "tok")
+        self.assertEqual(out, {})
+        uo.assert_not_called()
+
+    def test_collect_urls_stops_walking_when_budget_nearly_spent(self):
+        """档案遍历必须能被预算叫停，且已收集的部分照常返回（增量补录，部分即有效）。"""
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "bilibili").mkdir()
+            (root / "reddit").mkdir()
+            bm._set_budget(1000)
+            with mock.patch.object(bm, "SRC", str(root)), \
+                    mock.patch.object(bm.time, "time", return_value=bm._START + 950):
+                urls = bm.collect_urls(include_discord=False)
+            self.assertEqual(urls, [])  # 一个平台都没来得及扫，但正常返回而非被杀

@@ -23,13 +23,19 @@ from __future__ import annotations
 import json
 import re
 from collections import Counter, defaultdict
-from datetime import date
 from pathlib import Path
+
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+from news_bridge import archive_layout  # noqa: E402  日期基准 SSOT（北京日期）
 
 REPO = Path(__file__).resolve().parent.parent
 STORY = REPO / "projects/wiki/data/processed/story"
 OUT = STORY / "story_search_index.json"
-TODAY = date.today().isoformat()
+# 「今天」= 北京日期（archive_layout 是全仓日期基准 SSOT）。原 date.today() 取的是
+# **容器本地日期**：CI 在 UTC、守密人在 UTC+8，同一次重建在两处会盖出不同的
+# generated 戳记——生成物本该是确定性的。
+TODAY = archive_layout.archive_today().isoformat()
 
 # 复用共享分词器（领域词典 FMM），避免分词逻辑漂移。
 import sys

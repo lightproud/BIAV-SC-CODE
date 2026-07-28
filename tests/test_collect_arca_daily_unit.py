@@ -8,7 +8,6 @@ Hermetic：fetch_arca_live / write_archive / subprocess.run / time.sleep 全部
 
 import sys
 import unittest
-from pathlib import Path
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -61,7 +60,7 @@ class TestCollectArcaDaily(unittest.TestCase):
              mock.patch.object(cad, "write_archive", write_archive), \
              mock.patch.object(cad.subprocess, "run", fake_git), \
              mock.patch.object(cad.time, "sleep") as fake_sleep, \
-             mock.patch.object(sys, "argv", ["collect_arca_daily.py"] + argv):
+             mock.patch.object(sys, "argv", ["collect_arca_daily.py", *argv]):
             code = cad.main()
         return code, fake_git, write_archive, fake_sleep
 

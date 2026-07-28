@@ -21,7 +21,8 @@ if sys.platform == "win32":
     try:
         import ctypes
         ctypes.cdll.msvcrt._setmaxstdio(8192)
-    except Exception:
+    # 只挡「拿不到 msvcrt / 调用被拒」，别的异常不该在这里消失
+    except (AttributeError, OSError, ImportError):
         pass
 
 try:
@@ -124,7 +125,7 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
     # Parse key_sig and data_sig from error message
     sigs = parse_signatures(error_msg)
     if sigs is None:
-        print(f"  Could not parse signatures from error message")
+        print("  Could not parse signatures from error message")
         print(f"  Error: {error_msg[:500]}")
         return None
     key_sig, data_sig = sigs
@@ -141,8 +142,7 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
         if key:
             print(f"\n  KEY FOUND (via metadata): {key}")
             return key
-        else:
-            print("\n  Key not found in global-metadata.dat")
+        print("\n  Key not found in global-metadata.dat")
     except Exception as e:
         print(f"\n  Brute-force error (metadata): {e}")
 
@@ -163,12 +163,11 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
             if key:
                 print(f"\n  KEY FOUND (via GameAssembly.dll): {key}")
                 return key
-            else:
-                print("  Key not found in GameAssembly.dll")
+            print("  Key not found in GameAssembly.dll")
         except Exception as e:
             print(f"  Brute-force error (GameAssembly): {e}")
     else:
-        print(f"\n  GameAssembly.dll not found")
+        print("\n  GameAssembly.dll not found")
 
     # Fallback 2: try UnityPlayer.dll
     for dll_name in ["UnityPlayer.dll", "baselib.dll"]:
@@ -266,7 +265,10 @@ def extract_with_key(
         for f in getattr(env, "_files", {}).values():
             if hasattr(f, "close"):
                 f.close()
-    except Exception:
+    # 这里刻意宽捕获：这是**收尾关句柄**路径，已完成的解包结果不能因为关不掉一个
+    # 句柄就被打断（单测 test_env_cleanup_exception_swallowed 钉的正是这条）。
+    # 与「干实事的块」不同——那些已逐个收窄到具体异常类型。
+    except Exception:  # noqa: BLE001,S110  teardown 绝不可上抛
         pass
     del env
     gc.collect()
@@ -344,7 +346,7 @@ def main():
         sys.exit(1)
 
     if key:
-        print(f"\nSetting decryption key...")
+        print("\nSetting decryption key...")
         UnityPy.set_assetbundle_decrypt_key(key)
 
     # Step 2: Extract priority bundles
@@ -377,7 +379,7 @@ def main():
 
     # Step 3: If successful, also extract art bundles with character data
     if total["text"] > 0 or total["mono"] > 0:
-        print(f"\nStep 3: Scanning character-related art bundles...")
+        print("\nStep 3: Scanning character-related art bundles...")
         print("-" * 60)
         char_keywords = ["char", "hero", "portrait", "avatar", "bust", "face", "npc"]
         count = 0
@@ -396,7 +398,7 @@ def main():
                     break
 
     print(f"\n{'=' * 60}")
-    print(f"TOTAL EXTRACTED:")
+    print("TOTAL EXTRACTED:")
     print(f"  TextAssets:      {total['text']}")
     print(f"  MonoBehaviours:  {total['mono']}")
     print(f"  Textures:        {total['tex']}")

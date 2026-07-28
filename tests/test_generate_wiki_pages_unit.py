@@ -6,7 +6,6 @@ minimal inputs, run the generator, and assert on key substrings of the written
 page. Pure helpers are exercised directly. No network, no real wiki tree.
 """
 import json
-import sys
 from pathlib import Path
 
 import pytest

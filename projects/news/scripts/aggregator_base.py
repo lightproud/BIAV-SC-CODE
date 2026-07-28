@@ -70,12 +70,12 @@ COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ
 # Adaptive lookback: expands automatically if CI was down
 try:
     from collection_state import get_lookback_hours
-    HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 0)) or get_lookback_hours()
+    HOURS_LOOKBACK = news_common.env_int('HOURS_LOOKBACK', 0) or get_lookback_hours()
 except ImportError:
-    HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
+    HOURS_LOOKBACK = news_common.env_int('HOURS_LOOKBACK', 24)
 # 分页采集的安全上限（单个 fetcher 最多拿多少条），防止窗口边界模糊或 API 返回错乱
 # 时采到无穷多。默认 500 够 24h 窗口用；环境变量 MAX_ITEMS_PER_FETCHER 可覆盖。
-MAX_ITEMS_PER_FETCHER = int(os.environ.get('MAX_ITEMS_PER_FETCHER', 500))
+MAX_ITEMS_PER_FETCHER = news_common.env_int('MAX_ITEMS_PER_FETCHER', 500)
 
 # Bilibili creator MIDs known to produce Morimens content
 # Format: mid (int) -> display name (str). Add more as confirmed.
@@ -139,7 +139,7 @@ def sanitize_url(url):
         return ''
     url = url.strip()
     # Normalize http to https for known platforms
-    if url.startswith('http://www.bilibili.com') or url.startswith('http://bilibili.com'):
+    if url.startswith(('http://www.bilibili.com', 'http://bilibili.com')):
         url = url.replace('http://', 'https://', 1)
     # Basic URL validation
     parsed = urlparse(url)
@@ -181,8 +181,7 @@ def validate_news_item(item):
     # Validate engagement is a non-negative number
     try:
         engagement = int(item['engagement'])
-        if engagement < 0:
-            engagement = 0
+        engagement = max(engagement, 0)
     except (ValueError, TypeError):
         engagement = 0
 

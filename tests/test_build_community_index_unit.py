@@ -167,7 +167,7 @@ def test_build_timeline_and_vol_index(synth_data):
     idx = bci.build()
     timeline = idx["timeline"]
     assert timeline, "timeline empty"
-    for ym, t in timeline.items():
+    for t in timeline.values():
         assert "count" in t and "by_platform" in t
         assert "vol_index" in t  # None for first months, set later
 
@@ -206,7 +206,8 @@ def test_build_records_without_day_skipped(tmp_path, monkeypatch):
 
 def _repo_tmp_out(prefix):
     """A unique JSON path under REPO (main() prints OUT.relative_to(REPO))."""
-    import tempfile, os
+    import tempfile
+    import os
     repo = Path(__file__).resolve().parent.parent
     fd, name = tempfile.mkstemp(suffix=".json", prefix=prefix, dir=repo)
     os.close(fd)

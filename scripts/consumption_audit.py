@@ -78,15 +78,25 @@ def produced_releases() -> dict[str, list[str]]:
 
 
 def _grep(needle: str) -> list[str]:
-    """全仓字面量检索，返回 `path:line`。用 git grep：只看被跟踪文件，不扫产物本身。"""
+    """全仓字面量检索，返回 `path:line`。用 git grep：只看被跟踪文件，不扫产物本身。
+
+    `-a`（--text）不是可选项：源码里只要混进一个裸控制字节（0x00 等），git grep 就把
+    整档判为二进制，输出退化成一行 `Binary file <path> matches`——**没有冒号分隔的
+    path:line**。下游 `hit.split(':', 1)[0]` 于是把整句当成路径，既匹配不上生产者
+    过滤，又被归进 "other" 桶：那一档里的真实消费关系凭空消失，而本工具的产出正是
+    「零消费 = 退役候选」的判据。本仓 2026-07-14 SDK 审计 L-1 记过同一病根
+    （裸 NUL 让 grep 系工具整档失明），此处从消费方一侧一并堵死。
+    """
     try:
         res = subprocess.run(
-            ["git", "grep", "-n", "-F", needle],
+            ["git", "grep", "-a", "-n", "-F", needle],
             cwd=REPO, capture_output=True, text=True, timeout=60,
         )
     except (OSError, subprocess.TimeoutExpired):
         return []
-    return [l for l in res.stdout.splitlines() if l.strip()]
+    # 双保险：任何不含 `path:line:` 形态的行一律丢弃，绝不让它冒充路径
+    return [ln for ln in res.stdout.splitlines()
+            if ln.strip() and not ln.startswith("Binary file ")]
 
 
 def _classify(hit_path: str) -> str:

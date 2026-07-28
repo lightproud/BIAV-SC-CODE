@@ -181,7 +181,7 @@ class DiscordArchiver:
     def _load_state(self) -> dict:
         if self.state_path.exists():
             try:
-                with open(self.state_path, 'r', encoding='utf-8') as f:
+                with open(self.state_path, encoding='utf-8') as f:
                     return json.load(f)
             except Exception as e:
                 logger.warning(f'Failed to load state: {e}')

@@ -9,7 +9,6 @@ the module's bare `from lua_parse import` resolve.
 NOT under the mutmut gate: keyword-list constants would need exhaustive
 per-keyword assertions to kill (pins data, not logic) — see setup.cfg.
 """
-import sys
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent

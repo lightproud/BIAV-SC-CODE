@@ -4,7 +4,6 @@
 指向合成档案，逐条触发 C0-C5 失败分支 + _active_section + main() 两个出口。
 """
 
-import sys
 from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"

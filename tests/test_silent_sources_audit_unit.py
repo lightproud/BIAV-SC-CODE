@@ -6,7 +6,6 @@ ARCHIVE_DIR / DISCORD_ARCHIVE_DIR / HEALTH_PATH monkeypatch 到 tmp 目录，
 
 import json
 import sys
-from pathlib import Path
 from unittest import mock
 
 import pytest
@@ -314,7 +313,7 @@ def test_suggest_prune_lists_all_buckets(capsys):
 # ── main ────────────────────────────────────────────────────────────────────
 
 def _run_main(argv):
-    with mock.patch.object(sys, "argv", ["silent_sources_audit.py"] + argv):
+    with mock.patch.object(sys, "argv", ["silent_sources_audit.py", *argv]):
         ssa.main()
 
 
@@ -504,8 +503,8 @@ def test_audit_leaves_layered_source(dirs):
     _write_leaf_day(adir, "appstore/global", "2026-07-02")
     _write_leaf_day(adir, "appstore/jp", "2026-06-01")
     leaves = ssa.audit_leaves("appstore")
-    assert {l["leaf"] for l in leaves} == {"appstore/global", "appstore/jp"}
-    jp = next(l for l in leaves if l["leaf"] == "appstore/jp")
+    assert {ln["leaf"] for ln in leaves} == {"appstore/global", "appstore/jp"}
+    jp = next(ln for ln in leaves if ln["leaf"] == "appstore/jp")
     assert jp["last_archive_date"] == "2026-06-01"
     assert jp["days_archived"] == 1
 
@@ -566,7 +565,7 @@ def test_write_health_embeds_stalled_leaves(dirs):
     report = ssa.build_report()
     ssa.write_health(report)
     health = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
-    stalled = {l["leaf"] for l in health["stalled_leaves"]}
+    stalled = {ln["leaf"] for ln in health["stalled_leaves"]}
     assert "appstore/jp" in stalled
     assert "appstore/global" not in stalled
 

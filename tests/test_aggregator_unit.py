@@ -5,8 +5,6 @@ hot 标记 / 空数据保护 / R1 核心源失败）。
 FAILURE_FLAG monkeypatch 到 tmp，绝不触网、绝不写真实 output 树。
 """
 
-import sys
-from pathlib import Path
 from unittest import mock
 
 import pytest

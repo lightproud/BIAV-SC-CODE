@@ -143,7 +143,7 @@ def missing_paths() -> list[str]:
     """
     community = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
     out: list[str] = []
-    files = [LESSONS] + sorted(REPO.glob("projects/*/CONTEXT.md"))
+    files = [LESSONS, *sorted(REPO.glob("projects/*/CONTEXT.md"))]
     for f in files:
         if not f.exists():
             continue
@@ -172,7 +172,7 @@ def staleness() -> list[str]:
 
 def header_date_drift() -> list[str]:
     out: list[str] = []
-    for f in sorted(REPO.glob("memory/*.md")) + [REPO / "CLAUDE.md"]:
+    for f in [*sorted(REPO.glob("memory/*.md")), REPO / "CLAUDE.md"]:
         if not f.exists():
             continue
         m = DATE_HEADER_RE.search(f.read_text(encoding="utf-8")[:2000])

@@ -124,7 +124,8 @@ def collect_media_urls() -> list[dict]:
         with open(NEWS_JSON, encoding='utf-8') as f:
             data = json.load(f)
     except (json.JSONDecodeError, OSError) as e:
-        logger.error(f'读取 news.json 失败: {e}')
+        # exception() 保留 traceback：JSONDecodeError 只印一句消息时看不出出错位置
+        logger.exception(f'读取 news.json 失败: {e}')
         return []
 
     items = []

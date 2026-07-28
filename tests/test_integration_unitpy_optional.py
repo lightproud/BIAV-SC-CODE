@@ -20,7 +20,6 @@ UnityPy <-> extract_client_data wiring imports and iterates without error.
 """
 
 import importlib.util
-import sys
 from pathlib import Path
 
 import pytest
@@ -67,7 +66,7 @@ def test_extract_client_data_imports_with_real_unitypy():
     asserts the same module imports cleanly against the genuine dependency and
     actually bound the real symbols.
     """
-    import extract_client_data as ecd  # noqa: WPS433 (intentional in-test import)
+    import extract_client_data as ecd
 
     assert ecd.UnityPy is UnityPy
     # ClassIDType must be the genuine enum, not a stub.
@@ -82,7 +81,7 @@ def test_extract_text_assets_on_real_empty_environment(tmp_path):
     iteration (env.objects, obj.type, ClassIDType comparison) is wired correctly
     end-to-end — the branch the stubbed unit tests could not validate.
     """
-    import extract_client_data as ecd  # noqa: WPS433
+    import extract_client_data as ecd
 
     env = UnityPy.Environment()  # real, empty environment — no proprietary bundle
     stats = {"text_assets": 0, "json_files": 0, "errors": []}

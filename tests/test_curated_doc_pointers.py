@@ -175,7 +175,7 @@ def test_excused_entries_still_point_at_something_real() -> None:
     """豁免表里的死条目会让本组慢慢变成摆设：档案改写后旧豁免仍挂着，
     下一条真落空就可能被人顺手塞进这张表。故豁免必须仍被其档案实际引用。"""
     stale = []
-    for (rel_doc, raw), _reason in EXCUSED.items():
+    for (rel_doc, raw) in EXCUSED:
         doc = REPO / rel_doc
         if not doc.exists() or f"`{raw}`" not in doc.read_text(encoding="utf-8"):
             stale.append(f"{rel_doc} → {raw}")

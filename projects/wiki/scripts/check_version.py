@@ -144,7 +144,7 @@ def load_versions() -> dict:
     if not VERSIONS_PATH.exists():
         print(f"[INFO] {VERSIONS_PATH} not found; continuing with empty version list")
         return {"versions": []}
-    with open(VERSIONS_PATH, "r", encoding="utf-8") as f:
+    with open(VERSIONS_PATH, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -153,7 +153,7 @@ def load_meta() -> dict:
     if not META_PATH.exists():
         print(f"[INFO] {META_PATH} not found; continuing with empty meta")
         return {}
-    with open(META_PATH, "r", encoding="utf-8") as f:
+    with open(META_PATH, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -225,7 +225,7 @@ def main() -> int:
         stub = create_stub_version(detected_version, "steam_news")
         versions_data["versions"].append(stub)
         save_versions(versions_data)
-        print(f"Stub entry added to versions.json")
+        print("Stub entry added to versions.json")
 
     # Compile result
     result = {
@@ -247,20 +247,19 @@ def main() -> int:
 
         github_output = os.environ.get("GITHUB_OUTPUT")
         if github_output:
-            with open(github_output, "a") as f:
-                f.write(f"new_version=true\n")
+            with open(github_output, "a", encoding="utf-8") as f:
+                f.write("new_version=true\n")
                 f.write(f"version={new_version_str}\n")
         print(f"::notice::New version detected: {new_version_str}")
         return 0
-    else:
-        import os
+    import os
 
-        github_output = os.environ.get("GITHUB_OUTPUT")
-        if github_output:
-            with open(github_output, "a") as f:
-                f.write("new_version=false\n")
-        print("No new version detected.")
-        return 0
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        with open(github_output, "a", encoding="utf-8") as f:
+            f.write("new_version=false\n")
+    print("No new version detected.")
+    return 0
 
 
 if __name__ == "__main__":

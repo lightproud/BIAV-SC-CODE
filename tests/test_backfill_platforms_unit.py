@@ -7,7 +7,6 @@ monkeypatch ARCHIVE_DIR / STATE_PATH 到 tmp，绝不污染真实 data 树、绝
 import json
 import sys
 from datetime import datetime, timezone
-from pathlib import Path
 from unittest import mock
 
 import pytest
@@ -396,8 +395,13 @@ def test_backfill_weixin_exception_breaks(paths, monkeypatch):
 def test_backfill_taptap_browser_failure_returns_zero(paths, monkeypatch):
     # asyncio.run raising simulates missing browser env
     import asyncio
+    # taptap_collector 必须一并替身：不替身则 `taptap_collector.collect(...)` 会真造出一个
+    # 协程对象，而 asyncio.run 被替身成抛异常 => 协程永不被 await，Python 在**任意后续
+    # 时点**抛 "coroutine 'collect' was never awaited" RuntimeWarning。该告警会随 GC
+    # 时机挂到别的用例名下（本仓实测每轮换一个受害者），是不可复现失败的经典来源；
+    # -W error::RuntimeWarning 下更会直接把无关用例判红。
+    monkeypatch.setitem(sys.modules, "taptap_collector", mock.MagicMock())
     monkeypatch.setattr(asyncio, "run", mock.Mock(side_effect=RuntimeError("no chromium")))
-    # taptap_collector may not be importable; the function wraps in try/except anyway
     state = {}
     assert bp.backfill_taptap(state, 5) == 0
 
@@ -430,7 +434,7 @@ def test_show_status_smoke(paths, capsys):
 # ── main ────────────────────────────────────────────────────────────────────
 
 def _run_main(argv):
-    with mock.patch.object(sys, "argv", ["backfill_platforms.py"] + argv):
+    with mock.patch.object(sys, "argv", ["backfill_platforms.py", *argv]):
         bp.main()
 
 

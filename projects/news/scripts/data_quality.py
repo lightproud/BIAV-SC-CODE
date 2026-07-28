@@ -17,7 +17,6 @@ import logging
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Optional
 from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -104,7 +103,7 @@ def normalize_engagement(item: dict) -> float:
         return (view * weights['view_weight'] +
                 like + coin * 2 + favorite * 2 + share * 3)
 
-    elif source == 'weibo':
+    if source == 'weibo':
         repost = metadata.get('reposts_count', 0) or 0
         comment = metadata.get('comments_count', 0) or 0
         like = metadata.get('attitudes_count', engagement) or engagement
@@ -113,7 +112,7 @@ def normalize_engagement(item: dict) -> float:
                 comment * weights['comment_weight'] +
                 like * weights['like_weight'])
 
-    elif source == 'youtube':
+    if source == 'youtube':
         # YouTube: views × 0.0001 + (like + comment)
         view = metadata.get('viewCount', engagement) or engagement
         like = metadata.get('likeCount', 0) or 0
@@ -123,9 +122,8 @@ def normalize_engagement(item: dict) -> float:
                 like * weights['interact_weight'] +
                 comment * weights['interact_weight'])
 
-    else:
-        # 其他平台直接使用 engagement
-        return engagement * weights.get('weight', 1.0)
+    # 其他平台直接使用 engagement
+    return engagement * weights.get('weight', 1.0)
 
 
 def is_hot_normalized(item: dict) -> bool:
@@ -159,7 +157,7 @@ class SilentPlatformTracker:
     def _load_health(self) -> dict:
         """加载健康数据。"""
         if self.health_path.exists():
-            with open(self.health_path, 'r', encoding='utf-8') as f:
+            with open(self.health_path, encoding='utf-8') as f:
                 return json.load(f)
         return {
             'updated_at': None,
@@ -173,7 +171,7 @@ class SilentPlatformTracker:
             json.dump(self.health_data, f, ensure_ascii=False, indent=2)
 
     def update_platform_status(self, platform: str, items_count: int,
-                               error: Optional[str] = None, note: Optional[str] = None):
+                               error: str | None = None, note: str | None = None):
         """
         更新平台状态。
 
@@ -310,7 +308,7 @@ def generate_health_report() -> dict:
     # 从最新采集数据补充信息
     all_latest_path = OUTPUT_DIR / 'all-latest.json'
     if all_latest_path.exists():
-        with open(all_latest_path, 'r', encoding='utf-8') as f:
+        with open(all_latest_path, encoding='utf-8') as f:
             latest = json.load(f)
 
         collected_at = latest.get('collected_at', 'unknown')

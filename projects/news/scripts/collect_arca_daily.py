@@ -22,11 +22,11 @@ import argparse
 import subprocess
 import sys
 import time
-from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import archive_layout  # noqa: E402  归档日期基准 SSOT（北京日期）
 from global_collectors import fetch_arca_live  # noqa: E402
 from archive_platforms import write_archive, item_date_utc8  # noqa: E402
 
@@ -45,7 +45,7 @@ def main() -> int:
         return 1
 
     # 按内容日期分桶落 Record/Community/arca_live/{date}.json（平铺源，无区服/类型层）
-    fallback = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d')
+    fallback = archive_layout.archive_date_str()  # 日期基准 SSOT（北京日期）
     by_date: dict[str, list] = {}
     for it in items:
         by_date.setdefault(item_date_utc8(it, fallback), []).append(it)
@@ -70,7 +70,13 @@ def main() -> int:
     bot_identity = ['-c', 'user.name=github-actions[bot]',
                     '-c', 'user.email=github-actions[bot]@users.noreply.github.com',
                     '-c', 'commit.gpgsign=false']
-    run('git', 'add', 'Public-Info-Pool/Record/Community/arca_live/')
+    # `git add` 的返回码必须查：它失败时暗室里什么都不会暂存，紧随其后的
+    # `diff --staged --quiet` 便会返回 0，脚本于是打印「无新增内容」并 return 0
+    # ——采到的数据被静默丢弃，且对外表现为一次成功的采集轮次。
+    added = run('git', 'add', 'Public-Info-Pool/Record/Community/arca_live/')
+    if added.returncode != 0:
+        print(f'FATAL: git add 失败: {added.stderr[:300]}', file=sys.stderr)
+        return 1
     diff = run('git', 'diff', '--staged', '--quiet')
     if diff.returncode == 0:
         print('无新增内容，无需提交')
@@ -82,11 +88,20 @@ def main() -> int:
         return 1
     for attempt in range(1, 5):
         pull = run('git', *bot_identity, 'pull', '--rebase', 'origin', 'main')
+        if pull.returncode != 0:
+            # rebase 冲突会把工作树留在 rebase 中途，后续每一轮都注定失败；必须先
+            # 收回半场再重试，否则 4 次重试全空转，且工作树被留在脏状态。
+            run('git', 'rebase', '--abort')
+            print(f'pull --rebase 第 {attempt} 次失败: {pull.stderr[:200]}', file=sys.stderr)
+            time.sleep(2 ** attempt)
+            continue
         push = run('git', 'push', 'origin', 'HEAD:main')
         if push.returncode == 0:
             print('已推送 main')
             return 0
-        print(f'push 第 {attempt} 次失败: {(pull.stderr or push.stderr)[:200]}', file=sys.stderr)
+        # 原写法 `pull.stderr or push.stderr`：git pull 成功时也往 stderr 写进度，
+        # 于是这里几乎永远印的是 pull 的噪声而不是 push 的真实错因。
+        print(f'push 第 {attempt} 次失败: {push.stderr[:200]}', file=sys.stderr)
         time.sleep(2 ** attempt)
     print('FATAL: push 重试 4 次均失败', file=sys.stderr)
     return 1

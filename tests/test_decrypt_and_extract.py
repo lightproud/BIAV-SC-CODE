@@ -5,7 +5,6 @@ inject a stub into ``sys.modules`` before importing. No real crypto, bundles,
 or client files are touched; all I/O runs through tempfile.
 """
 
-import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -64,7 +63,7 @@ class TestDecodeScript(unittest.TestCase):
         self.assertEqual(dae.decode_script("text"), "text")
 
     def test_utf8_bytes(self):
-        self.assertEqual(dae.decode_script("café".encode("utf-8")), "café")
+        self.assertEqual(dae.decode_script("café".encode()), "café")
 
     def test_bom_decoded_via_utf8_keeps_bom(self):
         # utf-8 succeeds on a BOM, so it is preserved (utf-8-sig is fallback-only)

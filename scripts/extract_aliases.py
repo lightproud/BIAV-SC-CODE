@@ -28,7 +28,6 @@ import argparse
 import json
 import subprocess
 import sys
-from datetime import date
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -106,7 +105,7 @@ def cmd_add(args: argparse.Namespace) -> int:
             "inferred_by": args.inferred_by,
         },
         "confirmed": False,  # 三墙：新条目一律未确认（压权重），确认走 confirm
-        "added": date.today().isoformat(),
+        "added": archive_layout.archive_today().isoformat(),  # 北京日期
     })
     _write_table(data)
     print(f"[extract_aliases] 已落表（未确认）：{args.alias} → {args.concept_id}")
@@ -153,7 +152,7 @@ def feed_gap(query: str) -> None:
     try:
         GAPS_PATH.parent.mkdir(parents=True, exist_ok=True)
         with GAPS_PATH.open("a", encoding="utf-8") as fh:
-            fh.write(json.dumps({"query": query, "added": date.today().isoformat()},
+            fh.write(json.dumps({"query": query, "added": archive_layout.archive_today().isoformat()},
                                 ensure_ascii=False) + "\n")
     except Exception:
         pass

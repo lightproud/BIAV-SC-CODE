@@ -47,17 +47,18 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from discord_archiver import DiscordArchiver, resolve_data_dir
 import archive_layout  # noqa: E402  冷热分层统一开档（2026-07-12 甲案）
+import news_common  # noqa: E402  容错 env 读取（env_int / env_float）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
 # 与归档器同一解析（DISCORD_GUILD_ID 选服，默认 global；2026-07-10 方案甲布局）
 DATA_DIR = resolve_data_dir(os.environ.get('DISCORD_GUILD_ID'))
-RUNTIME_BUDGET = int(os.environ.get('RUNTIME_BUDGET', 25 * 60))  # default 25 min
+RUNTIME_BUDGET = news_common.env_int('RUNTIME_BUDGET', 25 * 60)  # default 25 min
 DRY_RUN = os.environ.get('DRY_RUN', '').lower() in ('1', 'true', 'yes')
 # Per-thread sleep between API calls. Each thread costs 2 reqs (starter + parent),
 # so 0.2s ≈ 5 reqs/s, comfortably under Discord's per-bot global ceiling.
-RATE_LIMIT_SLEEP = float(os.environ.get('RATE_LIMIT_SLEEP', '0.2'))
+RATE_LIMIT_SLEEP = news_common.env_float('RATE_LIMIT_SLEEP', 0.2)
 
 # Priority threads — process these first regardless of state.channels iteration order.
 # Defaults to the known-missing Producer's Letter so it lands on the next cron run.
@@ -72,7 +73,7 @@ def load_state() -> dict:
     state_path = DATA_DIR / 'state.json'
     if not state_path.exists():
         return {}
-    with open(state_path, 'r', encoding='utf-8') as f:
+    with open(state_path, encoding='utf-8') as f:
         return json.load(f)
 
 
@@ -117,7 +118,7 @@ def main():
     skipped: set = set(bf.get('skipped_no_starter', []))
 
     channels = state.get('channels', {})
-    thread_keys = [k for k in channels.keys() if k.startswith('thread:')]
+    thread_keys = [k for k in channels if k.startswith('thread:')]
     pending = [k for k in thread_keys if k not in completed and k not in skipped]
 
     # Move priority threads to the front of the queue, regardless of source.

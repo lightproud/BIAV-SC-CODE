@@ -118,10 +118,15 @@ class TestMain(unittest.TestCase):
                            "attachments": [{"content_type": "image/png", "url": "https://d/a.png",
                                             "id": "att1", "filename": "a.png"}]})
         (cdir / "2026-06-01.jsonl").write_text(line + "\n\n", encoding="utf-8")
-        # pixiv platform json
-        pdir = root / "platforms" / "pixiv"
-        pdir.mkdir(parents=True)
-        (pdir / "2026-06-01.json").write_text(
+        # pixiv platform json —— 落点必须由 archive_layout 现算（与写方 backfill_platforms
+        # ._archive_items 同一条解析链）。原夹具手写 `platforms/pixiv/`，那是读方当年抄错的
+        # 路径、没有任何写方产出；夹具照抄错路径 => 单测把 bug 钉死成契约，线上恒采 0 条。
+        # 这正是本夹具上方注释里记的同一类坑（测试要走生产同一条解析链）。
+        import archive_layout as _al
+        _pf, _rg, _st = _al.resolve_write_layout("pixiv")
+        ppath = root / _al.build_relpath(_pf, _rg, _st, "2026-06-01")
+        ppath.parent.mkdir(parents=True, exist_ok=True)
+        ppath.write_text(
             json.dumps({"items": [{"media_url": "https://p/i.jpg", "author": "pa", "title": "t",
                                    "url": "https://pixiv/1"}]}), encoding="utf-8")
         return root
@@ -138,6 +143,31 @@ class TestMain(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
             self._build_root(d)
+            out = str(Path(d) / "out")
+            with mock.patch.dict(cf.os.environ, {"BIAV_SC_DATA_ROOT": d}):
+                self._run(["prog", "--date", "2026-06-01", "--out", out],
+                          {"BIAV_SC_DATA_ROOT": d}, out)
+            manifest = json.loads(Path(out, "gallery_manifest.json").read_text())
+            sources = {g["source"] for g in manifest}
+            self.assertIn("discord", sources)
+            self.assertIn("pixiv", sources)
+
+    def test_cold_layer_gz_archives_are_read(self):
+        """冷层（.gz）归档必须照样采到——回归：读方原先只 isfile() 裸文件。
+
+        冷热分层（CLAUDE.md §5.2）把上上个月及更早的 dated 归档压成 .gz。读方若只看
+        裸路径，历史日期恒判「无归档」跳过：不报错、不留痕、采集量静默归零。
+        """
+        import gzip
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            root = self._build_root(d)
+            # 把两个源的当日归档都压成冷层，裸文件删除（模拟月度压冷后的真实形态）
+            for raw in (root / "discord" / "channels" / "11111111" / "2026-06-01.jsonl",
+                        *root.glob("pixiv/**/2026-06-01.json")):
+                with gzip.open(str(raw) + ".gz", "wt", encoding="utf-8") as gz:
+                    gz.write(raw.read_text(encoding="utf-8"))
+                raw.unlink()
             out = str(Path(d) / "out")
             with mock.patch.dict(cf.os.environ, {"BIAV_SC_DATA_ROOT": d}):
                 self._run(["prog", "--date", "2026-06-01", "--out", out],

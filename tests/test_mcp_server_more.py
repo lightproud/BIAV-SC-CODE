@@ -24,7 +24,6 @@ class _BlockMCPFinder:
     def find_spec(self, name, path=None, target=None):
         if name == "mcp" or name.startswith("mcp."):
             raise ImportError(f"blocked: {name}")
-        return None
 
 
 def test_import_error_fallback_lists_tools(capsys, monkeypatch):
@@ -35,7 +34,7 @@ def test_import_error_fallback_lists_tools(capsys, monkeypatch):
             monkeypatch.delitem(sys.modules, mod, raising=False)
 
     finder = _BlockMCPFinder()
-    monkeypatch.setattr(sys, "meta_path", [finder] + sys.meta_path)
+    monkeypatch.setattr(sys, "meta_path", [finder, *sys.meta_path])
 
     spec = importlib.util.spec_from_file_location("mcp_server_fallback_probe",
                                                   str(MCP_SERVER_SRC))

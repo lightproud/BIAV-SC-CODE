@@ -26,7 +26,6 @@ import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-import xml.etree.ElementTree as ET
 
 import requests
 
@@ -47,9 +46,9 @@ OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
 try:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from collection_state import get_lookback_hours
-    HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "0")) or get_lookback_hours()
+    HOURS_LOOKBACK = news_common.env_int("HOURS_LOOKBACK", 0) or get_lookback_hours()
 except ImportError:
-    HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
+    HOURS_LOOKBACK = news_common.env_int("HOURS_LOOKBACK", 24)
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
 
@@ -115,6 +114,10 @@ def _post(url, json_data=None, headers=None, timeout=30):
                 raise
             logger.debug(f"Retry {attempt + 1} for {url}: {e}")
             time.sleep(attempt + 1)
+    # 循环内每条路径都 return 或 raise，落到这里说明重试上限与 `attempt == 2` 守卫
+    # 被改得不再匹配。不加这一行的话，函数会静默返回 None，调用方在 resp.json() 处
+    # 才炸出一句与真因无关的 AttributeError。
+    raise RuntimeError(f"_post 重试逻辑不自洽：未返回也未抛出（url={url}）")
 
 
 def _strip_html(text):
@@ -136,7 +139,8 @@ def _strip_html_tags(html: str) -> str:
 def _parse_reddit_rss(xml_text: str, sub: str) -> list:
     """Parse Reddit Atom RSS feed and return list of items."""
     ns = {"atom": "http://www.w3.org/2005/Atom"}
-    root = ET.fromstring(xml_text)
+    # 远端不可信 XML 走共享护栏（体积上限 + 拒 DOCTYPE/ENTITY），见 news_common
+    root = news_common.parse_xml_safely(xml_text)
     items = []
 
     for entry in root.findall("atom:entry", ns):
