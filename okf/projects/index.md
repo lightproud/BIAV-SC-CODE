@@ -1,4 +1,4 @@
-# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (28)
+# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (30)
 
 仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。
 
@@ -6,11 +6,13 @@
 
 * [CLAUDE.md（AI 统一入口 · 运行时强约束权威）](/projects/entry-claude-md.md) - 银芯是黑池的「眼睛和耳朵」：采集 + 整理外部信息往黑池送，黑池吃完不吐回。
 * [README.md（人 + AI 共用主入口）](/projects/entry-readme.md) - 忘却前夜（忘卻前夜 / Morimens）的**社区知识平台 + 黑池信息入口**。本仓库由忘却前夜官方授权制作人维护，引用公开可查阅的游戏资料。
-* [news 子项目上下文](/projects/project-news.md) - **news = 银芯二核心使命之 #1「黑池信息入口」核心载体**
-* [wiki 子项目上下文](/projects/project-wiki.md) - **原定位：银芯使命#2「社区共建知识底座」核心载体——该使命已于 2026-07-12 取消，
-* [site 子项目上下文](/projects/project-site.md) - **site = 银芯使命对外门户 / 三轴（site·news·wiki）发现入口**（非任一单一使命的载体；使命#2「社区共建知识底座」载体为 wiki，见
 * [game 子项目上下文](/projects/project-game.md) - **game = 守密人个人兴趣项目（主）+ 未来扩展可能 ⓐⓒ（备）**
+* [news 子项目上下文](/projects/project-news.md) - **news = 银芯二核心使命之 #1「黑池信息入口」核心载体**
+* [silver-core-maestro-sdk 子项目上下文](/projects/project-silver-core-maestro-sdk.md) - 编排 SDK 持有分子:钟、跨会话状态、会话装配。代理 SDK(`projects/silver-core-sdk/`,
 * [silver-core-sdk 子项目上下文](/projects/project-silver-core-sdk.md) - Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
+* [silver-core-testbed 子项目上下文](/projects/project-silver-core-testbed.md) - 1. **消费者，不是家族第三包**：`private: true`、版本恒 `0.0.0`（锁步豁免）、永不发布
+* [site 子项目上下文](/projects/project-site.md) - **site = 银芯使命对外门户 / 三轴（site·news·wiki）发现入口**（非任一单一使命的载体；使命#2「社区共建知识底座」载体为 wiki，见
+* [wiki 子项目上下文](/projects/project-wiki.md) - **原定位：银芯使命#2「社区共建知识底座」核心载体——该使命已于 2026-07-12 取消，
 * [silver-core-sdk ARCHITECTURE](/projects/silver-core-sdk-doc-architecture.md) - Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible
 * [silver-core-sdk COMPAT](/projects/silver-core-sdk-doc-compat.md) - **What this document is.** A reference record of how the official
 * [silver-core-sdk CONCURRENCY](/projects/silver-core-sdk-doc-concurrency.md) - The SDK supports true parallelism at three levels: **many conversations** over

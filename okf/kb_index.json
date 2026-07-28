@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 381,
-    "edges": 417,
-    "terms": 6813,
+    "concepts": 383,
+    "edges": 420,
+    "terms": 6825,
     "by_type": {
       "character": 72,
       "dataset": 95,
-      "documentation": 146,
+      "documentation": 148,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -24,7 +24,7 @@
       "community": 19,
       "memory": 51,
       "news-output": 23,
-      "projects": 28,
+      "projects": 30,
       "resource": 117,
       "sources": 20,
       "story": 11,
@@ -32,7 +32,7 @@
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 247
+      "search": 249
     }
   },
   "sections": {
@@ -58,7 +58,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 28
+      "count": 30
     },
     "resource": {
       "index": "/resource/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 27
+      "degree": 28
     },
     "/characters/130375.md": {
       "type": "character",
@@ -2600,7 +2600,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 7
+      "degree": 9
     },
     "/projects/entry-readme.md": {
       "type": "documentation",
@@ -2657,11 +2657,39 @@
       "tier": "search",
       "degree": 3
     },
+    "/projects/project-silver-core-maestro-sdk.md": {
+      "type": "documentation",
+      "title": "silver-core-maestro-sdk 子项目上下文",
+      "description": "编排 SDK 持有分子:钟、跨会话状态、会话装配。代理 SDK(`projects/silver-core-sdk/`,",
+      "resource": "/projects/silver-core-maestro-sdk/CONTEXT.md",
+      "tags": [
+        "data_layer:curated",
+        "sub-project-context",
+        "milestone"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 1
+    },
     "/projects/project-silver-core-sdk.md": {
       "type": "documentation",
       "title": "silver-core-sdk 子项目上下文",
       "description": "Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面",
       "resource": "/projects/silver-core-sdk/CONTEXT.md",
+      "tags": [
+        "data_layer:curated",
+        "sub-project-context",
+        "milestone"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 1
+    },
+    "/projects/project-silver-core-testbed.md": {
+      "type": "documentation",
+      "title": "silver-core-testbed 子项目上下文",
+      "description": "1. **消费者，不是家族第三包**：`private: true`、版本恒 `0.0.0`（锁步豁免）、永不发布",
+      "resource": "/projects/silver-core-testbed/CONTEXT.md",
       "tags": [
         "data_layer:curated",
         "sub-project-context",
@@ -4312,7 +4340,7 @@
     "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md": {
       "type": "documentation",
       "title": "sdk-bug-audit-multiwave-20260728",
-      "description": "对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-maestro-sdk` 3.7k 行 + `silver-core-testbed`）的**系统化缺陷审计**。守密人指令为「寻找 SDK 代码 500 个 BUG 并修复」。审计以分区并行 + 跨切面镜头推进，十四波共 105 个审计分区，全部修正落于分支 `claude/sdk-500-bugs-fix-sm7zer`（格式：md）",
+      "description": "对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-maestro-sdk` 3.7k 行 + `silver-core-testbed`）的**系统化缺陷审计**。守密人指令为「寻找 SDK 代码 500 个 BUG 并修复」。审计以分区并行 + 跨切面镜头推进，十七波共 129 个审计分区，全部修正落于分支 `claude/sdk-500-bugs-fix-sm7zer`（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/sdk-bug-audit-multiwave-20260728.md",
       "tags": [
         "data_layer:curated",
@@ -4634,7 +4662,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 476 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 478 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4648,7 +4676,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3210 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3213 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4760,7 +4788,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5324 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5327 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4774,7 +4802,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 152 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 155 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4783,7 +4811,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/sources/stopgame.md": {
       "type": "dataset",
@@ -4816,7 +4844,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2402 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2412 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4830,7 +4858,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11537 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11548 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4844,7 +4872,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8808 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8828 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4886,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3126 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3128 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5587,6 +5615,11 @@
       ],
       [
         "/sources/steam.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/sources/steam_discussion.md",
         "提及:Saya",
         "mention"
       ],
@@ -8774,7 +8807,17 @@
         "cross"
       ],
       [
+        "/projects/project-silver-core-maestro-sdk.md",
+        "入口→上下文",
+        "cross"
+      ],
+      [
         "/projects/project-silver-core-sdk.md",
+        "入口→上下文",
+        "cross"
+      ],
+      [
+        "/projects/project-silver-core-testbed.md",
         "入口→上下文",
         "cross"
       ],
@@ -8855,7 +8898,21 @@
         "cross"
       ]
     ],
+    "/projects/project-silver-core-maestro-sdk.md": [
+      [
+        "/projects/entry-claude-md.md",
+        "入口→上下文",
+        "cross"
+      ]
+    ],
     "/projects/project-silver-core-sdk.md": [
+      [
+        "/projects/entry-claude-md.md",
+        "入口→上下文",
+        "cross"
+      ]
+    ],
+    "/projects/project-silver-core-testbed.md": [
       [
         "/projects/entry-claude-md.md",
         "入口→上下文",
@@ -9724,6 +9781,11 @@
     ],
     "/sources/steam_discussion.md": [
       [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/news-output/news-output-steam-discussion.md",
         "抽样自",
         "cross"
@@ -10256,7 +10318,9 @@
       "/projects/entry-readme.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -11577,7 +11641,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -11804,7 +11870,9 @@
       "/memory/morimens-context.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
@@ -11836,7 +11904,9 @@
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-research-best-wiki-features.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
@@ -11969,7 +12039,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -12325,7 +12397,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -14192,7 +14266,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -14625,6 +14701,7 @@
       "/projects/silver-core-sdk-doc-errors.md"
     ],
     "maestro": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -14752,7 +14829,9 @@
       "/projects/entry-readme.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -15012,7 +15091,9 @@
     "milestone": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -15724,6 +15805,9 @@
     "principles": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
+    "private": [
+      "/projects/project-silver-core-testbed.md"
+    ],
     "processed": [
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
@@ -15773,7 +15857,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -15826,7 +15912,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -16811,6 +16899,7 @@
       "/README.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
@@ -16935,7 +17024,9 @@
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
@@ -17305,7 +17396,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -17481,6 +17574,7 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
     "testbed": [
+      "/projects/project-silver-core-testbed.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "testing": [
@@ -17711,6 +17805,7 @@
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
     "true": [
+      "/projects/project-silver-core-testbed.md",
       "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "ts": [
@@ -18287,6 +18382,9 @@
     "七天": [
       "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
+    "七波": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "七绪": [
       "/characters/15572.md",
       "/characters/15579.md"
@@ -18317,6 +18415,9 @@
     ],
     "三会": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+    ],
+    "三包": [
+      "/projects/project-silver-core-testbed.md"
     ],
     "三卫": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -18371,7 +18472,9 @@
     "上下": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
@@ -18458,7 +18561,9 @@
       "/memory/memory-ext-skill-authoring-standard.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
@@ -18511,6 +18616,9 @@
     ],
     "不动": [
       "/README.md"
+    ],
+    "不发": [
+      "/projects/project-silver-core-testbed.md"
     ],
     "不变": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -18682,7 +18790,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -18984,7 +19094,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -19342,7 +19454,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -20746,7 +20860,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -21116,6 +21232,7 @@
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "代理": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
@@ -21483,6 +21600,7 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -21772,7 +21890,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -22070,7 +22190,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -23700,6 +23822,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "分子": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "分层": [
@@ -24158,7 +24281,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -24816,11 +24941,11 @@
     "匿着": [
       "/characters/15560.md"
     ],
+    "十七": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "十分": [
       "/characters/15571.md"
-    ],
-    "十四": [
-      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "十条": [
       "/community/community-note-com.md",
@@ -25331,6 +25456,7 @@
       "/README.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
+      "/projects/project-silver-core-testbed.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "发性": [
@@ -26781,9 +26907,6 @@
     "四工": [
       "/README.md"
     ],
-    "四波": [
-      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
-    ],
     "四种": [
       "/characters/15583.md"
     ],
@@ -27650,7 +27773,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -28511,7 +28636,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -28723,7 +28850,9 @@
       "/memory/project-status.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -29183,7 +29312,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -29586,6 +29717,9 @@
     "家回": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "家族": [
+      "/projects/project-silver-core-testbed.md"
     ],
     "家普": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -33191,6 +33325,7 @@
       "/characters/94450.md"
     ],
     "持有": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "持续": [
@@ -33352,7 +33487,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -33960,7 +34097,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -34328,7 +34467,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -34788,7 +34929,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -35102,7 +35245,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -35925,6 +36070,9 @@
     "旋转": [
       "/characters/15562.md"
     ],
+    "族第": [
+      "/projects/project-silver-core-testbed.md"
+    ],
     "旗舰": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -36265,6 +36413,9 @@
     ],
     "是官": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
+    "是家": [
+      "/projects/project-silver-core-testbed.md"
     ],
     "是对": [
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
@@ -36614,6 +36765,7 @@
       "/memory/memory-ext-biav-info-classification.md"
     ],
     "有分": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "有副": [
@@ -36967,7 +37119,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -37188,6 +37342,9 @@
     ],
     "本彩": [
       "/characters/15591.md"
+    ],
+    "本恒": [
+      "/projects/project-silver-core-testbed.md"
     ],
     "本报": [
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
@@ -37439,7 +37596,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -38114,7 +38273,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -38917,7 +39078,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -39337,7 +39500,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -39558,6 +39723,9 @@
     "步必": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
+    "步豁": [
+      "/projects/project-silver-core-testbed.md"
+    ],
     "步验": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
@@ -39759,7 +39927,8 @@
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "永不": [
-      "/characters/77913.md"
+      "/characters/77913.md",
+      "/projects/project-silver-core-testbed.md"
     ],
     "永久": [
       "/characters/15577.md",
@@ -40142,7 +40311,8 @@
     ],
     "消费": [
       "/README.md",
-      "/memory/memory-ext-active-self-improvement-requirements.md"
+      "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/projects/project-silver-core-testbed.md"
     ],
     "消链": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -40659,6 +40829,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "版本": [
+      "/projects/project-silver-core-testbed.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
@@ -40832,6 +41003,7 @@
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/project-status.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
@@ -42633,7 +42805,9 @@
     "目上": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -43638,6 +43812,9 @@
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
+    "第三": [
+      "/projects/project-silver-core-testbed.md"
+    ],
     "第四": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
@@ -44346,6 +44523,7 @@
     ],
     "编排": [
       "/memory/capability-index.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
@@ -45563,6 +45741,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "装配": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
@@ -46307,6 +46486,7 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
     "话状": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "话结": [
@@ -46320,6 +46500,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "话装": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "话角": [
@@ -46481,6 +46662,9 @@
     "谷川": [
       "/characters/94450.md"
     ],
+    "豁免": [
+      "/projects/project-silver-core-testbed.md"
+    ],
     "象的": [
       "/characters/15560.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -46575,6 +46759,9 @@
     ],
     "费端": [
       "/README.md"
+    ],
+    "费者": [
+      "/projects/project-silver-core-testbed.md"
     ],
     "费节": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -46770,6 +46957,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "跨会": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
@@ -46900,7 +47088,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -47656,7 +47846,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -48767,7 +48959,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -49049,7 +49243,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -49291,6 +49487,9 @@
     ],
     "锁下": [
       "/characters/15574.md"
+    ],
+    "锁步": [
+      "/projects/project-silver-core-testbed.md"
     ],
     "锁链": [
       "/characters/15567.md"
@@ -49979,7 +50178,9 @@
       "/memory/project-status.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
@@ -50899,7 +51100,9 @@
       "/memory/morimens-context.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
@@ -50923,7 +51126,9 @@
     "core": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
@@ -51047,7 +51252,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -51396,7 +51603,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -52411,7 +52620,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
@@ -52679,6 +52890,7 @@
       "/memory/memory-ext-session-continuity.md"
     ],
     "maestro": [
+      "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -52821,7 +53033,9 @@
     "milestone": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -53167,7 +53381,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -53536,6 +53752,7 @@
     "sdk": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
@@ -53619,7 +53836,9 @@
     "silver": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
@@ -53774,7 +53993,9 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -53837,6 +54058,9 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
+    ],
+    "testbed": [
+      "/projects/project-silver-core-testbed.md"
     ],
     "text": [
       "/wiki-data/wiki-data-panel-text.md"
@@ -54164,7 +54388,9 @@
     "上下": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -54174,7 +54400,9 @@
     "下文": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -54626,7 +54854,9 @@
     "子项": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -55648,7 +55878,9 @@
     "目上": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -56191,7 +56423,9 @@
     "项目": [
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
+      "/projects/project-silver-core-testbed.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
