@@ -190,6 +190,34 @@ export function createSessionPersistence(
           // fork meta records `cwd`, not the source session's cwd (finding #39).
           const newId = randomUUID();
           const forkExtras = stored as ForkCopyExtras;
+          // A crashed source (dangling pending_turn) leaves the loaded history
+          // ending on an UNSETTLED tail: a bare interrupted user prompt, or a
+          // user(tool_result) turn whose assistant continuation never landed
+          // (repairPairing keeps that tool_result because its tool_use IS
+          // answered, so the history ends on `user`, not on an orphan assistant).
+          // Unlike a resume, the during-query fork deliberately does NOT redrive
+          // (it is a clean copy, not a crash recovery) and does not copy the
+          // pending_turn record, so carrying that unsettled tail would make the
+          // fork's FIRST new input either two consecutive user turns OR an
+          // assistant tool_use with no following tool_result — both 400 the API.
+          // Pop the tail back to the last SETTLED assistant turn (an assistant
+          // with no unanswered tool_use), so the fork branches from a valid,
+          // appendable point. Popping a trailing user can re-expose an
+          // assistant(tool_use) whose result we just dropped, so the check is
+          // "settled assistant", not merely "not a user turn".
+          const isSettledAssistant = (m: APIMessageParam): boolean =>
+            m.role === 'assistant' &&
+            (typeof m.content === 'string' ||
+              !m.content.some(
+                (b) => (b as { type?: unknown }).type === 'tool_use',
+              ));
+          const forkMessages = [...stored.messages];
+          while (
+            forkMessages.length > 0 &&
+            !isSettledAssistant(forkMessages[forkMessages.length - 1] as APIMessageParam)
+          ) {
+            forkMessages.pop();
+          }
           if (persist) {
             store.append(newId, {
               type: 'meta',
@@ -199,7 +227,7 @@ export function createSessionPersistence(
               firstPrompt: stored.firstPrompt,
               ...(sessionGitBranch !== undefined ? { gitBranch: sessionGitBranch } : {}),
             });
-            for (const m of stored.messages) {
+            for (const m of forkMessages) {
               // Fork copies mint FRESH identities (fork semantics - new ids,
               // consistently new): the source ids are not carried over.
               store.append(newId, {
@@ -245,7 +273,7 @@ export function createSessionPersistence(
           }
           return {
             sessionId: newId,
-            history: [...stored.messages],
+            history: forkMessages,
             resumed: true,
             needMeta: false,
           };
