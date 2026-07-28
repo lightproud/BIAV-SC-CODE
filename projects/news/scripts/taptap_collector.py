@@ -15,7 +15,7 @@ import json
 import logging
 import re
 import sys
-from datetime import datetime, timedelta, UTC
+from datetime import datetime, timedelta, timezone, UTC
 from pathlib import Path
 from typing import Any
 
@@ -33,6 +33,9 @@ REVIEW_URL = f"https://www.taptap.cn/app/{APP_ID}/review?type=new"
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATE_PATH = BASE_DIR / "data" / "state.json"
 DATA_DIR = BASE_DIR / "data"
+
+# taptap.cn 是国服站点：DOM 上的裸墙钟一律北京时（UTC+8），与归档分桶基准同源。
+_BEIJING_TZ = timezone(timedelta(hours=8))
 
 
 # ─── 增量状态 ─────────────────────────────────────────────────
@@ -540,9 +543,13 @@ def _raw_to_item(raw: dict, source: str, cutoff: datetime) -> dict | None:
     # DOM 兜底路径（API 拦截落空时才走）拿到的是页面 <time datetime="..."> 原文，
     # 可以是**不带时区**的 "2026-07-28 12:00:00"；朴素 datetime 与带时区的 cutoff
     # 相比会抛 TypeError，而该异常在 collect() 外层被 except 吞成一条 warning ——
-    # 整批帖子/评价一条不剩，且对外表现为「今天 TapTap 没内容」。缺时区按 UTC 解释。
+    # 整批帖子/评价一条不剩，且对外表现为「今天 TapTap 没内容」。
+    # 缺时区按**北京墙钟**（UTC+8）解释：taptap.cn 是国服站点，页面给的就是北京时间。
+    # 原按 UTC 解释等于把时间戳整体推后 8 小时——北京 16:00–23:59 的帖会被推进次日，
+    # 归档按北京日分桶（archive_layout）时整批落错一天的桶（每天错 8 小时之久）。
+    # API 路径的 created 由 epoch 造出、自带 +00:00，不受本分支影响。
     if created.tzinfo is None:
-        created = created.replace(tzinfo=UTC)
+        created = created.replace(tzinfo=_BEIJING_TZ)
     if created < cutoff:
         return None
 

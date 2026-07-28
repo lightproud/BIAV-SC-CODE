@@ -33,12 +33,20 @@ ARCHIVE_DIR = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA
 
 
 def _gap_bound(env_name: str, default: datetime, end_of_day: bool) -> datetime:
-    """Parse a YYYY-MM-DD gap bound from env, falling back to default."""
+    """Parse a YYYY-MM-DD gap bound from env, falling back to default.
+
+    日期按**北京日**（UTC+8）理解：缺口清单来自 repair_gaps，而归档桶名自始是
+    北京日期（archive_layout 日期基准 SSOT），落档也用 archive_date_str 折回北京日。
+    原实现把边界当 UTC 午夜，于是抓取窗口与要补的那一天整整错开 8 小时：
+    北京 04-13 的前 8 小时（UTC 04-12 16:00–24:00）永远抓不到、这一天补不齐；
+    而 UTC 04-13 16:00–24:00 抓到的条目会被 archive_date_str 落进 04-14 桶——
+    一个**没人报缺**的日子。窗口与桶自此同基准。
+    """
     raw = os.environ.get(env_name, '').strip()
     if not raw:
         return default
     try:
-        d = datetime.strptime(raw, '%Y-%m-%d').replace(tzinfo=UTC)
+        d = datetime.strptime(raw, '%Y-%m-%d').replace(tzinfo=archive_layout.BEIJING_TZ)
         return d.replace(hour=23, minute=59, second=59) if end_of_day else d
     except ValueError:
         logger.warning(f'{env_name}={raw!r} 非法（需 YYYY-MM-DD），改用默认 {default.date()}')
@@ -46,8 +54,10 @@ def _gap_bound(env_name: str, default: datetime, end_of_day: bool) -> datetime:
 
 
 # 缺口范围可由 workflow 经 GAP_START_DATE / GAP_END_DATE 覆盖；默认沿用历史 Apr 13-25。
-GAP_START = _gap_bound('GAP_START_DATE', datetime(2026, 4, 13, tzinfo=UTC), False)
-GAP_END = _gap_bound('GAP_END_DATE', datetime(2026, 4, 25, 23, 59, 59, tzinfo=UTC), True)
+GAP_START = _gap_bound('GAP_START_DATE',
+                       datetime(2026, 4, 13, tzinfo=archive_layout.BEIJING_TZ), False)
+GAP_END = _gap_bound('GAP_END_DATE',
+                     datetime(2026, 4, 25, 23, 59, 59, tzinfo=archive_layout.BEIJING_TZ), True)
 
 
 def _archive_items(source: str, items: list[dict]):
@@ -196,8 +206,10 @@ def backfill_youtube():
                     'q': keyword,
                     'type': 'video',
                     'order': 'date',
-                    'publishedAfter': GAP_START.strftime('%Y-%m-%dT%H:%M:%SZ'),
-                    'publishedBefore': GAP_END.strftime('%Y-%m-%dT%H:%M:%SZ'),
+                    # RFC3339 的 'Z' 是**字面 UTC**：边界是北京时刻，必须先
+                    # astimezone(UTC) 再格式化，否则墙钟原样贴个 Z 就整体偏 8 小时。
+                    'publishedAfter': GAP_START.astimezone(UTC).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                    'publishedBefore': GAP_END.astimezone(UTC).strftime('%Y-%m-%dT%H:%M:%SZ'),
                     'maxResults': 50,
                     'key': api_key,
                 },

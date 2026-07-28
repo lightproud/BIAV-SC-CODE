@@ -32,7 +32,7 @@ LESSONS = REPO / "memory" / "lessons-learned.md"
 ARCHIVE = REPO / "memory" / "lessons-archive.md"
 
 ENTRY_RE = re.compile(r"^## (\d+乙?)\. (.+)$", re.MULTILINE)
-MERGED_RE = re.compile(r"已并入\s*#(\d+)")
+MERGED_RE = re.compile(r"已并入\s*#(\d+乙?)")
 CASEFILE_REF_RE = re.compile(r"案卷\s*#(\d+乙?)")
 NEXT_NUM_RE = re.compile(r"下一条\s*=\s*#(\d+)")
 DATE_HEADER_RE = re.compile(r"最后更新[：:]\s*(\d{4}-\d{2}-\d{2})")
@@ -102,7 +102,10 @@ def gate_problems() -> list[str]:
                 problems.append(f"#{num} 标「已迁档/已毕业」，但 lessons-archive.md 无 ## {num}. 全文")
         else:  # active：案卷引用必须真实存在
             for cf in CASEFILE_REF_RE.findall(e["body"]):
-                if f"### 案卷 #{cf}" not in archive:
+                # 编号须整段匹配：裸子串法里「案卷 #4」被 `### 案卷 #42` 前缀吞掉，
+                # 「#5」被 `#50` 吞掉——指针指空，门禁却报绿（本门禁唯一的职责就是
+                # 不让指针指空）。故锚行首 + 断后继编号字符。
+                if not re.search(rf"^### 案卷 #{re.escape(cf)}(?![0-9乙])", archive, re.MULTILINE):
                     problems.append(f"#{num} 引用「案卷 #{cf}」，但归档层案卷区无该卷")
 
     # 编号对账：下一条 = 最高号 + 1

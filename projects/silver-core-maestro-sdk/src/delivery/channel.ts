@@ -136,12 +136,29 @@ export function createDeliveryChannel(opts: DeliveryChannelOptions): DeliveryCha
         });
         return { sessionId: session.id, delivered: false, error: text };
       }
-      await record({
-        outcome: 'ok',
-        startedAt,
-        endedAt: clock.now(),
-        attempt: claimed.attempts,
-      });
+      try {
+        await record({
+          outcome: 'ok',
+          startedAt,
+          endedAt: clock.now(),
+          attempt: claimed.attempts,
+        });
+      } catch (err) {
+        // The SEND ALREADY HAPPENED. Any bookkeeping failure after it (store
+        // outage, quota, a disk that filled between the claim and now) must
+        // not reject deliver(): a rejection reads as "not delivered", the
+        // host resends, and the sink accepts the same message twice — which
+        // is exactly what the lease-race absorption above exists to prevent,
+        // for the same reason (the SINK decides the message's fate, the
+        // bookkeeping does not). The audit gap is reported IN the receipt so
+        // it is never silent.
+        const text = err instanceof Error ? err.message : String(err);
+        return {
+          sessionId: session.id,
+          delivered: true,
+          error: `delivered, but the audit write failed: ${text}`,
+        };
+      }
       return { sessionId: session.id, delivered: true };
     },
   };

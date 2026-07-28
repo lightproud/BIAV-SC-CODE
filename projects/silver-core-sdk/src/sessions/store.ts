@@ -199,6 +199,45 @@ function repairPairing(
     alternating.push(msg);
   }
 
+  // Pass 4: the Messages API rejects a request whose FIRST message is not a
+  // user turn (`messages.0: Unexpected role "assistant". The first message
+  // must use the "user" role`) — the same whole-request kill as the
+  // alternation violation pass 3 heals, and passes 1-3 could not produce a
+  // leading user turn out of nothing. A leading assistant is REACHABLE two
+  // ways on a damaged transcript, and once it exists every later resume of
+  // that session 400s forever (the file never self-heals):
+  //  - the opening `user` line was torn/corrupt, so load() skipped it and the
+  //    surviving head is the assistant turn that answered it;
+  //  - load()'s empty-turn drop (L53) removed a legacy `content: []` opening
+  //    user turn, exposing the same head.
+  // Drop leading turns until a user turn heads the list. Removing an
+  // assistant can orphan tool_result blocks in the user turn it exposes
+  // (pass 2 allowed them against the assistant we just dropped), so those are
+  // re-cleaned here — emptying that turn exposes another assistant, hence the
+  // loop.
+  for (;;) {
+    const head = alternating[0];
+    if (head === undefined) break;
+    if (head.role === 'user') {
+      if (!Array.isArray(head.content)) break;
+      const filtered = head.content.filter((b) => !isToolResultBlock(b));
+      if (filtered.length === head.content.length) break;
+      debug(
+        `session store: dropped orphan tool_result block(s) from the leading user turn in ${sessionId}${JSONL_EXT}`,
+      );
+      if (filtered.length > 0) {
+        alternating[0] = { role: 'user', content: filtered };
+        break;
+      }
+      alternating.shift();
+      continue;
+    }
+    debug(
+      `session store: dropped leading ${head.role} turn in ${sessionId}${JSONL_EXT} (the API requires the first message to be a user turn)`,
+    );
+    alternating.shift();
+  }
+
   return alternating;
 }
 

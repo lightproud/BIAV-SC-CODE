@@ -220,6 +220,9 @@ def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
 # ============================================================
 
 _LESSON_HEADING_RE = re.compile(r"^##\s+(\d+)\.\s+")
+# 维护说明里的记账行「下一条 = #K」。它是 memory_freshness --gate 的硬不变量
+# （K 必须 = 当前最高号 + 1），也是人工落笔时唯一会照抄的号码来源。
+_NEXT_NUM_RE = re.compile(r"(下一条\s*=\s*#)(\d+)")
 
 
 def record_lesson(summary: str, context: str = "",
@@ -315,6 +318,14 @@ def record_lesson(summary: str, context: str = "",
 
     for offset, new_line in enumerate(block):
         lines.insert(insert_at + offset, new_line)
+
+    # 记账行同步：只追条目不改「下一条 = #K」，写完当场把 K 留在**刚用掉的号**上——
+    # memory_freshness --gate（随 required test 每 PR 把门）立刻判编号对账漂移，
+    # 而照着那行落笔的下一条会重用本号，与「编号持续追加不重用」直接相悖。
+    for idx, line in enumerate(lines):
+        if _NEXT_NUM_RE.search(line):
+            lines[idx] = _NEXT_NUM_RE.sub(rf"\g<1>{new_id + 1}", line, count=1)
+            break
 
     try:
         LESSONS_FILE.write_text(

@@ -43,10 +43,29 @@ function fail(label: string, detail: string): never {
   throw new ContractCheckFailure(`${label}: ${detail}`);
 }
 
+/**
+ * Recursively sort OBJECT keys (array order is left alone — it is significant
+ * in every list assertion below). The contract is a field-for-field
+ * round-trip, never a key ordering: a store that rebuilds rows from columns
+ * (SQL/ORM/KV) hands back the same record with its own key order, and a bare
+ * JSON.stringify comparison reported that compliant store as broken on the
+ * very first check.
+ */
+function canonical(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(canonical);
+  if (typeof value === 'object' && value !== null) {
+    const source = value as Record<string, unknown>;
+    const out: Record<string, unknown> = {};
+    for (const key of Object.keys(source).sort()) out[key] = canonical(source[key]);
+    return out;
+  }
+  return value;
+}
+
 function assertDeepEq(actual: unknown, expected: unknown, label: string): void {
-  const a = JSON.stringify(actual);
-  const e = JSON.stringify(expected);
-  if (a !== e) fail(label, `\n  expected: ${e}\n  actual:   ${a}`);
+  const a = JSON.stringify(canonical(actual));
+  const e = JSON.stringify(canonical(expected));
+  if (a !== e) fail(label, `\n  expected: ${JSON.stringify(expected)}\n  actual:   ${JSON.stringify(actual)}`);
 }
 
 const session = (over: Partial<SessionRecord> = {}): SessionRecord => ({
@@ -106,6 +125,14 @@ const CHECKS: Array<[string, Check]> = [
       if ('lastError' in got && got.lastError !== undefined) {
         fail('replace', `stale field survived a full-row replace: lastError=${got.lastError}`);
       }
+      // ...and BY ID: replace, not append. A row-appending store whose
+      // getSession returns the newest match passes everything above while
+      // listSessions still hands the previous generation of the row back to
+      // every caller (a stale 'pending' copy of a session that is now done).
+      const rows = (await store.listSessions()).filter((s) => s.id === 's1');
+      if (rows.length !== 1) {
+        fail('replace', `expected exactly one row for id 's1' after a replace, got ${rows.length}`);
+      }
     },
   ],
   [
@@ -147,10 +174,16 @@ const CHECKS: Array<[string, Check]> = [
     'listSessions applies dueBefore (nextRunAt non-null and <= dueBefore)',
     async (store) => {
       await store.putSession(session({ id: 'due', nextRunAt: 500 }));
+      // The boundary IS the contract: claimDue passes dueBefore = now and the
+      // ledger's own re-check inside the claim lock is `nextRunAt > now ->
+      // skip`. A store filtering with a strict `<` passed every other check
+      // here while silently withholding sessions due at exactly this instant
+      // — invisible on a wall clock, a permanent stall on a frozen one.
+      await store.putSession(session({ id: 'exact', nextRunAt: 1_000 }));
       await store.putSession(session({ id: 'later', nextRunAt: 5_000 }));
       await store.putSession(session({ id: 'unscheduled', state: 'running', nextRunAt: null }));
-      const ids = (await store.listSessions({ dueBefore: 1_000 })).map((s) => s.id);
-      assertDeepEq(ids, ['due'], 'dueBefore filter');
+      const ids = (await store.listSessions({ dueBefore: 1_000 })).map((s) => s.id).sort();
+      assertDeepEq(ids, ['due', 'exact'], 'dueBefore filter');
     },
   ],
   [
