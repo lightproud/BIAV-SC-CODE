@@ -164,7 +164,14 @@ def restore(tag: str, pattern: str, dest: Path, force: bool,
                 # 非 tarball 资产（如 kb_vectors.json.gz 纯 gzip JSON）：按原名平拷贝。
                 shutil.copy2(tgz, dest / a["name"])
             n += 1
-    print(f"[restore] restored {n} asset(s) into {dest.relative_to(REPO)}/")
+    # --dest 显式支持绝对路径（见上方 is_absolute 分支）；仓外目标 relative_to 会抛
+    # ValueError——那会让**已经成功还原**的一次运行以 traceback 收场（假失败），
+    # 而调用方通常据退出码决定要不要重跑。仅是打印，落不下相对路径就打绝对的。
+    try:
+        shown = dest.relative_to(REPO)
+    except ValueError:
+        shown = dest
+    print(f"[restore] restored {n} asset(s) into {shown}/")
     return n
 
 

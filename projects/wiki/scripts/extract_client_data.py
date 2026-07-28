@@ -98,6 +98,21 @@ def decode_script(script, stats: dict | None = None) -> str | None:
     return script
 
 
+def safe_asset_name(name) -> str:
+    """Reduce a Unity asset ``m_Name`` to one safe filename component.
+
+    ``m_Name`` comes straight out of the game binary and is never validated
+    by UnityPy. A name spelled ``../../x`` (or with a directory separator at
+    all) makes ``output_dir / name`` resolve *outside* the output directory,
+    so extracting an untrusted bundle could overwrite arbitrary files. Keep
+    only the last path component and refuse the traversal spellings.
+    """
+    cleaned = str(name).replace("\\", "/").split("/")[-1].replace("\x00", "").strip()
+    if cleaned in ("", ".", ".."):
+        return "_unnamed"
+    return cleaned
+
+
 def classify_text_extension(text: str, validate_json: bool = True) -> str:
     """Pick a file extension for an extracted TextAsset body.
 
@@ -247,7 +262,7 @@ def extract_text_assets(env, output_dir: Path, stats: dict) -> None:
                 # Determine extension
                 ext = classify_text_extension(text)
 
-                out_file = output_dir / "text" / f"{name}{ext}"
+                out_file = output_dir / "text" / f"{safe_asset_name(name)}{ext}"
                 out_file.parent.mkdir(parents=True, exist_ok=True)
                 out_file.write_text(text, encoding="utf-8")
                 stats["text_assets"] += 1
@@ -275,7 +290,7 @@ def extract_monobehaviours(env, output_dir: Path, stats: dict) -> None:
                 try:
                     tree = obj.read_typetree()
                     if tree and isinstance(tree, dict) and len(tree) > 2:
-                        out_file = output_dir / "mono" / f"{name}.json"
+                        out_file = output_dir / "mono" / f"{safe_asset_name(name)}.json"
                         out_file.parent.mkdir(parents=True, exist_ok=True)
                         out_file.write_text(
                             json.dumps(tree, ensure_ascii=False, indent=2, default=str),
@@ -297,6 +312,10 @@ def extract_textures(env, output_dir: Path, stats: dict, name_filter: str | None
 
     for obj in env.objects:
         if obj.type == ClassIDType.Texture2D:
+            # 先置空：`data` 只在 try 里赋值，一旦 obj.read() 自己抛异常，
+            # 下面 except 里的 getattr(data, ...) 会撞 NameError（首个对象）
+            # 或读到上一轮的残值（后续对象）——报错反而把整份 bundle 打断。
+            data = None
             try:
                 data = obj.read()
                 name = data.m_Name
@@ -311,7 +330,7 @@ def extract_textures(env, output_dir: Path, stats: dict, name_filter: str | None
                 if img.width < 32 or img.height < 32:
                     continue  # Skip tiny textures (icons, etc.)
 
-                out_file = output_dir / "textures" / f"{name}.png"
+                out_file = output_dir / "textures" / f"{safe_asset_name(name)}.png"
                 out_file.parent.mkdir(parents=True, exist_ok=True)
                 img.save(str(out_file))
                 stats["textures"] += 1
@@ -572,7 +591,7 @@ def main():
     # Auto-detect: if user passed game root (e.g. .../Morimens/), find *_Data inside
     game_data_dir = args.game_data_dir
     if not list(game_data_dir.glob("*.assets")) and not (game_data_dir / "StreamingAssets").exists():
-        for d in game_data_dir.iterdir():
+        for d in sorted(game_data_dir.iterdir()):
             if d.is_dir() and d.name.endswith("_Data"):
                 print(f"Auto-detected game data directory: {d.name}/")
                 game_data_dir = d

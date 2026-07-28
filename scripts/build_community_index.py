@@ -216,6 +216,10 @@ def iter_records(max_files: int | None = None):
 # --- 聚合 ---------------------------------------------------------------------
 
 def build(max_files: int | None = None) -> dict:
+    # 跳档台账是**本次构建**的完整性披露，不是进程累计：SKIPPED 是模块级列表，
+    # 同一进程内第二次 build() 会把上一次的跳档原样带进 _meta.skipped_files，
+    # 报出一批本次根本没读过的文件。每次构建开头清零。
+    SKIPPED.clear()
     # 每 (platform, ym) 的统计
     counts: dict[tuple[str, str], int] = defaultdict(int)
     eng_sum: dict[tuple[str, str], float] = defaultdict(float)
@@ -290,8 +294,23 @@ def build(max_files: int | None = None) -> dict:
     # 注意：与 per-platform 的 coverage（按天，抓整天断档）互补——本指数抓
     # 「天天有数据但单日量塌缩」那种 coverage 看不出的异常。
     sorted_months = sorted(timeline)
-    for i, ym in enumerate(sorted_months):
-        prior = [timeline[m]["count"] for m in sorted_months[max(0, i - 6):i]]
+    first_month = sorted_months[0] if sorted_months else ""
+    for ym in sorted_months:
+        # 「前 6 月」必须按**日历**取，不能按 timeline 里的前 6 个**条目**：零记录的
+        # 月份根本不在 timeline 里，按条目取会跳过空档去够更早的月份。本档实测有
+        # 2019-09 → 2023-07 这样几年的空档（早期零星错日记录），旧写法把 2023-07 的
+        # 量拿去除 2016–2019 那几条散记的中位数，得出的 vol_index 纯属噪声。
+        # 空档内的月份按 0 计（真的没数据）；早于首个观测月的不计（还没开始采集，
+        # 不是缺口）—— 连续时间线上二者等价，旧值不变。
+        y, mo = int(ym[:4]), int(ym[5:7])
+        prev_months = []
+        for _ in range(6):
+            mo -= 1
+            if mo == 0:
+                y, mo = y - 1, 12
+            prev_months.append(f"{y:04d}-{mo:02d}")
+        prior = [timeline[m]["count"] if m in timeline else 0
+                 for m in prev_months if m >= first_month]
         med = statistics.median(prior) if prior else 0
         timeline[ym]["vol_index"] = round(timeline[ym]["count"] / med, 2) if med else None
     timeline = {m: timeline[m] for m in sorted_months}

@@ -21,6 +21,7 @@ collect_video_comments 写旧读新、backfill 写平级与分层写方对冲的
 from __future__ import annotations
 
 import gzip
+import json
 import os
 import re
 from datetime import date, datetime, timedelta, timezone, UTC
@@ -262,6 +263,24 @@ def open_archive_text(path: Path | str, mode: str = 'rt') -> TextIO:
     if p.endswith('.gz'):
         return gzip.open(p, mode if 't' in mode else mode + 't', encoding='utf-8')
     return open(p, mode.replace('t', '') or 'r', encoding='utf-8')
+
+
+def read_cold_doc(path: Path | str) -> dict:
+    """同日期冷层文档：裸路径 `<date>.json` → 读 `<date>.json.gz`；无冷层 / 不可读返回 {}。
+
+    冷月被回填追加时写方会在 .gz 旁落一个裸旁车，读方（`dated_files` 冷热并出）
+    两个都读即全量——所以写方**必须先看冷层里已有什么**，只把增量写进旁车。
+    否则同一条目在 .gz 与旁车里各存一份，读方双计（lesson #30 同型的抽样失真）。
+    """
+    gz = Path(str(path) + '.gz')
+    if not gz.exists():
+        return {}
+    try:
+        with open_archive_text(gz) as fh:
+            doc = json.load(fh)
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
+        return {}
+    return doc if isinstance(doc, dict) else {}
 
 
 def iter_discord_message_files(discord_root: Path,

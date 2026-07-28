@@ -62,6 +62,12 @@ def mirror(src: Path, dst: Path) -> None:
             # 根级文件（rel_root 无 parts）按自身文件名判 SKIP_TOP
             if not rel_root.parts and name in SKIP_TOP:
                 continue
+            # 上游是第三方仓库（非 Anthropic 官方），本函数在 CI 里跑、结果直接提交进
+            # 公开仓库。git 能存符号链接，而 shutil.copy2 默认跟随链接**拷贝目标内容**：
+            # 上游一个 `foo.md -> /etc/passwd` 就能把 runner 上的任意文件搬进公开归档。
+            # 归档只要上游的普通文件，链接一律跳过（os.walk 已不递归链接目录）。
+            if (Path(root) / name).is_symlink():
+                continue
             rel = (rel_root / name).as_posix()
             keep.add(rel)
             target = dst / rel

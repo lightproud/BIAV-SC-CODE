@@ -1,7 +1,7 @@
 {
   "discord": {
     "base_dir": "Public-Info-Pool/Record/Community/discord",
-    "glob": "*/channels/*/*.jsonl",
+    "glob": ["*/channels/*/*.jsonl", "*/channels/*/*.jsonl.gz"],
     "group_by": "month_from_stem",
     "cutoff_days": 60,
     "release_tag": "community-data",

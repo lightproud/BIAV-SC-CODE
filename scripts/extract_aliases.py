@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -64,16 +65,38 @@ def _known_concept_ids() -> set[str]:
         return set()
 
 
+def _evidence_cmd(term: str) -> list[str]:
+    """检索命令：优先 ripgrep（`-z` 才看得见冷层 `.gz`），无则回落 grep。
+
+    CLAUDE.md §5.2 冷热分层——上上个月及更早的档案压成 `.gz`，即档案的绝大多数。
+    裸 `grep -rn` 对 gz 视而不见，于是「两个月前就在用的黑话」会被判成零命中。
+    `--no-ignore` 不可省：数据湖目录可能被 .gitignore 覆盖，rg 默认会整片跳过。
+    """
+    if shutil.which("rg"):
+        return ["rg", "-n", "-m", "1", "-z", "--no-ignore", "--no-heading",
+                "-e", term, str(COMMUNITY)]
+    return ["grep", "-rn", "-m", "1", "-e", term, str(COMMUNITY)]
+
+
 def cmd_grep_evidence(term: str, limit: int = 10) -> int:
     """在社区全量档案里核证据：打印真实 quote + 档案定位（provenance 素材）。"""
     try:
-        out = subprocess.run(
-            ["grep", "-rn", "-m", "1", term, str(COMMUNITY)],
-            capture_output=True, text=True, timeout=300,
-        ).stdout
+        proc = subprocess.run(
+            _evidence_cmd(term), capture_output=True, text=True, timeout=300,
+        )
     except (OSError, subprocess.TimeoutExpired) as e:
-        print(f"[extract_aliases] grep 失败：{e}", file=sys.stderr)
+        print(f"[extract_aliases] 档案检索失败：{e}", file=sys.stderr)
         return 1
+    out = proc.stdout
+    # 退出码 ≥2 = 检索器自身出错（档案根不存在、目录不可读……），与「零命中」是两回事：
+    # 混为一谈会让工具言之凿凿地报「证据不存在 → 不得落表」，而真相是它根本没看见档案
+    # （数据湖已迁 BIAV-SC-DATA，未设 BIAV_SC_DATA_ROOT 时正是此形态）。
+    if proc.returncode >= 2 and not out.strip():
+        print(f"[extract_aliases] 档案检索器报错（退出码 {proc.returncode}），"
+              f"**未能核证据**（≠ 零命中）：{proc.stderr.strip()[:300]}\n"
+              f"  档案根 = {COMMUNITY}（数据湖在 BIAV-SC-DATA，需设 BIAV_SC_DATA_ROOT）",
+              file=sys.stderr)
+        return 2
     lines = out.splitlines()[:limit]
     if not lines:
         print(f"[extract_aliases] 档案零命中：{term!r}（证据不存在 → 不得落表）")

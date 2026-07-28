@@ -78,9 +78,11 @@ def load_state() -> dict:
 
 
 def save_state(state: dict) -> None:
-    state_path = DATA_DIR / 'state.json'
-    with open(state_path, 'w', encoding='utf-8') as f:
-        json.dump(state, f, ensure_ascii=False, indent=2)
+    # 原子替换：state.json 同时装着归档器的增量游标与本脚本 10000+ 条 completed 进度,
+    # 而本脚本按 RUNTIME_BUDGET（默认 25 分钟）跑到一半就会被 CI 掐掉——直写正撞在
+    # 这个窗口上，留下半截 JSON 后归档器 `_load_state` 回落空 state：游标归零、全部
+    # thread 进度作废，下一轮从头重刷。
+    news_common.dump_json_atomic(DATA_DIR / 'state.json', state)
 
 
 def already_has_starter(forum_channel_id: str, date_str: str, msg_id: str) -> bool:

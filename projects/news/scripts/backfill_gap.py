@@ -81,7 +81,13 @@ def _archive_items(source: str, items: list[dict]):
             except (OSError, json.JSONDecodeError, AttributeError):
                 pass
 
+        # 冷层旁车语义：本脚本按定义补的是历史缺口，落点几乎必在冷月——此时 out_path
+        # 是 `.json.gz` 旁边的裸旁车，只能放 .gz 里没有的增量。不减去冷层条目，同一条
+        # 在 .gz 与旁车各存一份，而读方（dated_files 冷热并出）两个都读 → 全量层双计。
+        cold_items = archive_layout.read_cold_doc(out_path).get('items', [])
         existing_urls = {i.get('url', '') for i in existing if i.get('url')}
+        existing_urls |= {i.get('url', '') for i in cold_items
+                          if isinstance(i, dict) and i.get('url')}
         new_items = [i for i in date_items if i.get('url', '') not in existing_urls]
 
         if new_items:

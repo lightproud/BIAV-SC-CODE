@@ -223,7 +223,9 @@ def main() -> int:
 
         # Insert stub entry
         stub = create_stub_version(detected_version, "steam_news")
-        versions_data["versions"].append(stub)
+        # setdefault 而非直接下标：读侧（get_known_versions）容忍缺 "versions" 键,
+        # 写侧硬下标就会在同一份文件上 KeyError——每周 CI 红一次且只在真检出新版本时炸。
+        versions_data.setdefault("versions", []).append(stub)
         save_versions(versions_data)
         print("Stub entry added to versions.json")
 

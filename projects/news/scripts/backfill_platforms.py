@@ -40,6 +40,7 @@ STATE_PATH = _REPO_ROOT / 'projects' / 'news' / 'data' / 'backfill' / 'state.jso
 # Sibling scripts dir — global_collectors lives here
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # noqa: E402  归档布局单一真相源（2026-07-02 P0-1）
+import news_common  # noqa: E402  原子写单一真源（dump_json_atomic）
 ARCHIVE_DIR = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 # Max runtime per invocation (30 minutes, leaves buffer for workflow)
@@ -112,13 +113,23 @@ def _archive_items(source: str, items: list[dict]):
                 pass
 
         # Dedup by URL or title
-        seen = set()
+        def _key(it: dict) -> str:
+            return it.get('url', '').strip() or f"{it.get('title', '')[:60]}|{it.get('source', '')}"
+
+        # 冷层旁车语义：回填打到冷月时 path 是 .gz 旁边的裸旁车，只能放 .gz 里没有的
+        # 增量。把冷层条目预置进 seen（但不写回旁车），否则同一条在 .gz 与旁车各一份,
+        # 而读方 dated_files 冷热并出、两个都读 —— 全量档案层双计。
+        seen = {_key(i) for i in archive_layout.read_cold_doc(path).get('items', [])
+                if isinstance(i, dict)}
         merged = []
         for item in existing_items + date_items:
-            key = item.get('url', '').strip() or f"{item.get('title', '')[:60]}|{item.get('source', '')}"
+            key = _key(item)
             if key not in seen:
                 seen.add(key)
                 merged.append(item)
+
+        if not merged:  # 全部已在冷层，无增量可落——不动既有文件
+            continue
 
         merged.sort(key=lambda x: x.get('engagement', 0), reverse=True)
 
@@ -129,7 +140,9 @@ def _archive_items(source: str, items: list[dict]):
             'item_count': len(merged),
             'items': merged,
         }
-        path.write_text(json.dumps(archive_data, ensure_ascii=False, indent=2), encoding='utf-8')
+        # 原子替换：直写若在中途被中断（回溯作业有 30 分钟硬预算，超时即被杀）
+        # 会留下半截 JSON——读方 `except JSONDecodeError` 静默跳过，这一天的归档就此消失。
+        news_common.dump_json_atomic(path, archive_data)
 
 
 # ── Platform-specific backfill functions ──────────────────────────────────

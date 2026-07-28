@@ -79,10 +79,17 @@ def _load_graph() -> list[dict]:
     gp = BUNDLE / "graph.json"
     if not gp.exists():
         return []
+    # 原为 `except (...): return []` 静默吞掉。graph.json 损坏（写一半被打断 / 手改坏）
+    # 时那等于把**整个邻接层**悄悄清零：kb_index 照样写出一份「合法」索引，但每个概念
+    # degree=0、neighbors 全空，kb_neighbors / kb_activate 全库返回空——没有任何信号，
+    # 只看得出「知识库突然什么都联想不到」。空邻接不是可接受的降级，属契约破裂，须响亮失败。
     try:
         return json.loads(gp.read_text(encoding="utf-8")).get("edges", [])
-    except (json.JSONDecodeError, OSError):
-        return []
+    except (json.JSONDecodeError, OSError) as e:
+        raise RuntimeError(
+            f"okf/graph.json 不可读/已损坏（{type(e).__name__}: {e}）——"
+            "继续构建会产出零邻接的 kb_index.json；先重跑 scripts/build_okf_bundle.py"
+        ) from e
 
 
 def build_kb_index() -> dict:
