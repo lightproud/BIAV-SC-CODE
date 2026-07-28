@@ -529,15 +529,35 @@ const COMMAND_WRAPPERS: ReadonlySet<string> = new Set([
   'setsid', 'stdbuf', 'nice', 'ionice', 'time', 'timeout', 'xargs', 'bash', 'sh',
 ]);
 
+/**
+ * Compound-command KEYWORDS that sit immediately before a command the shell
+ * still runs (`if rm …`, `then rm …`, `while rm …`, `do rm …`). A `;`/newline
+ * split leaves a segment like `then rm -rf /` whose FIRST token is the keyword,
+ * not `rm`, so a `Bash(rm:*)` deny never matched it (a deny fail-open on
+ * `if true; then rm -rf /; fi`, `for x in a; do rm -rf /; done`, …). Peeled only
+ * in DENY/ASK position (denyMatchCandidates), like COMMAND_WRAPPERS — purely
+ * additive, so it can only ever make a deny fire, never widen an allow (allow
+ * still matches the literal segment and falls through to prompting). Loop-header
+ * keywords (`for`/`case`/`select`/`in`) precede a NAME, not a command, so the
+ * executed body is reached via its own `do`/`then` segment and they need no
+ * entry here. */
+const SHELL_KEYWORD_PREFIXES: ReadonlySet<string> = new Set([
+  'if', 'then', 'elif', 'else', 'while', 'until', 'do',
+]);
+
 /** Bound on wrapper/flag/arg tokens peeled from one segment; a real command
  *  reaches its command word well within this. */
 const MAX_COMMAND_UNWRAP = 8;
 
 /** Strip shell quoting/escaping from a single command WORD so an obfuscated
  *  command word matches its plain form: `\rm` / `"rm"` / `'rm'` -> `rm`
- *  (audit r4 V4-1). */
+ *  (audit r4 V4-1). The leading `$` of ANSI-C / locale quoting (`$'rm'`,
+ *  `$"rm"`) is dropped too: `$'rm'` is the literal string `rm` the shell then
+ *  executes, so without this a `Bash(rm:*)` deny failed OPEN on `$'rm' -rf /`.
+ *  A `$` NOT immediately followed by a quote (a real `$VAR` expansion) is
+ *  untouched. */
 function deobfuscateWord(word: string): string {
-  return word.replace(/['"\\]/g, '');
+  return word.replace(/\$(?=['"])/g, '').replace(/['"\\]/g, '');
 }
 
 /** First whitespace-delimited token and the trimmed remainder of a command. */
@@ -621,7 +641,10 @@ function denyMatchCandidates(segment: string): string[] {
       out.add(rest === '' ? word : `${word} ${rest}`);
       // Peel a leading wrapper, or - once already inside a wrapper (i > 0) - a
       // wrapper's own arg token. A non-wrapper head token is the real command.
-      const peelable = COMMAND_WRAPPERS.has(word) || (i > 0 && isWrapperArgToken(first));
+      const peelable =
+        COMMAND_WRAPPERS.has(word) ||
+        SHELL_KEYWORD_PREFIXES.has(word) ||
+        (i > 0 && isWrapperArgToken(first));
       if (!peelable || rest === '') break;
       cur = rest;
       out.add(rest);
