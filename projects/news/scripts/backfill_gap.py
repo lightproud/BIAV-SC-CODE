@@ -59,11 +59,9 @@ def _archive_items(source: str, items: list[dict]):
         if not t:
             continue
         try:
-            dt = datetime.fromisoformat(t)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
-            # 与 backfill_platforms / archive_platforms 统一用 UTC+8 分桶，避免跨归档器双桶
-            date_str = (dt + timedelta(hours=8)).strftime('%Y-%m-%d')
+            # 与 backfill_platforms / archive_platforms 统一分桶：基准经 archive_layout
+            # 单一真相源（原三处各自手写换算，且对非 UTC 偏移会把偏移算两遍）
+            date_str = archive_layout.archive_date_str(datetime.fromisoformat(t))
             by_date[date_str].append(item)
         except Exception:
             continue

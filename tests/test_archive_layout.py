@@ -8,6 +8,7 @@ build_relpath 写下的文件，iter_source_files/dated_files 以同一源名必
 """
 
 import json
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import pytest
@@ -188,3 +189,41 @@ def test_data_root_env_expanduser(monkeypatch):
     """env 支持 ~ 展开（兄弟 checkout 常在家目录并列）。"""
     monkeypatch.setenv("BIAV_SC_DATA_ROOT", "~/biav-sc-data")
     assert str(al.pool_root()).startswith(str(Path("~").expanduser()))
+
+
+# ── 归档日期基准（北京日期 SSOT，扫描修复 2026-07-28）──────────────────────────
+# 归档桶名自始是北京日期（写方 archive_platforms / backfill_platforms / backfill_gap
+# 各自手写 `+ timedelta(hours=8)` 落桶）。三处手写都有同一个洞：对**已带非 UTC 偏移**
+# 的时间戳也一律加 8 小时 = 把偏移算了两遍；jp 源（+09:00）晚间条目因此整批落进次日桶。
+# 基准收敛进 archive_layout 后由下列用例钉死。
+
+def test_archive_date_str_naive_treated_as_utc():
+    """无时区时间戳按 UTC 解读，再折算北京日期（与旧行为等价）。"""
+    assert al.archive_date_str(datetime(2026, 4, 13, 20, 0, 0)) == "2026-04-14"
+    assert al.archive_date_str(datetime(2026, 4, 13, 15, 59, 0)) == "2026-04-13"
+
+
+def test_archive_date_str_utc_offset_explicit():
+    """显式 +00:00 与 naive 同解。"""
+    assert al.archive_date_str(
+        datetime(2026, 4, 13, 20, 0, 0, tzinfo=timezone.utc)) == "2026-04-14"
+
+
+def test_archive_date_str_non_utc_offset_not_double_counted():
+    """回归：+09:00 的 23:30 真实北京时是同日 22:30，不得被算进次日桶。
+
+    旧手写换算 `(dt + timedelta(hours=8)).strftime(...)` 会得到 2026-06-02——
+    对 jp 区服全体晚间条目系统性偏一天。
+    """
+    jst = timezone(timedelta(hours=9))
+    assert al.archive_date_str(datetime(2026, 6, 1, 23, 30, tzinfo=jst)) == "2026-06-01"
+    # 西向偏移同样不得反向偏：UTC-07:00 的 10:00 = 北京次日 01:00
+    pdt = timezone(timedelta(hours=-7))
+    assert al.archive_date_str(datetime(2026, 6, 1, 10, 0, tzinfo=pdt)) == "2026-06-02"
+
+
+def test_archive_today_is_beijing_date():
+    """「今天」= 北京日期，不随容器本地时区漂移（CI 为 UTC，每天差 8 小时的窗口）。"""
+    now_bj = datetime.now(timezone(timedelta(hours=8))).date()
+    assert al.archive_today() == now_bj
+    assert al.archive_date_str() == now_bj.isoformat()

@@ -240,7 +240,7 @@ def classify(silent_days: int, total_items: int) -> str:
 
 
 def build_report() -> dict:
-    today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d')
+    today = archive_layout.archive_date_str()  # 日期基准 SSOT（北京日期，与归档桶名同源）
     entries = []
     # Audit window 只看 platforms/ 下的非 discord 源；discord 有独立生命周期
     platform_first_dates = []

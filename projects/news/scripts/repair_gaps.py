@@ -109,7 +109,9 @@ def main():
     elif args.full:
         since = None
     else:
-        since = date.today() - timedelta(days=DEFAULT_WINDOW_DAYS)
+        # 窗口基准取北京日期（与归档桶名同源）。原 date.today() 在 UTC 容器里
+        # 每天有 8 小时比归档日期早一天，缺口检测把当天已归档的源误报为缺。
+        since = archive_layout.archive_today() - timedelta(days=DEFAULT_WINDOW_DAYS)
     gaps = detect_gaps(since=since)
 
     if not gaps:

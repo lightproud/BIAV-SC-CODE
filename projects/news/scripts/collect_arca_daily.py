@@ -22,11 +22,11 @@ import argparse
 import subprocess
 import sys
 import time
-from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import archive_layout  # noqa: E402  归档日期基准 SSOT（北京日期）
 from global_collectors import fetch_arca_live  # noqa: E402
 from archive_platforms import write_archive, item_date_utc8  # noqa: E402
 
@@ -45,7 +45,7 @@ def main() -> int:
         return 1
 
     # 按内容日期分桶落 Record/Community/arca_live/{date}.json（平铺源，无区服/类型层）
-    fallback = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d')
+    fallback = archive_layout.archive_date_str()  # 日期基准 SSOT（北京日期）
     by_date: dict[str, list] = {}
     for it in items:
         by_date.setdefault(item_date_utc8(it, fallback), []).append(it)

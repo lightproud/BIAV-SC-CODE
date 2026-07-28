@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
 """
-多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/
+多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期落全量档案层。
 
-存储结构:
-  projects/news/data/platforms/
-  ├── steam/
-  │   └── YYYY-MM-DD.json
-  ├── bilibili/
-  │   └── YYYY-MM-DD.json
-  ├── official/
-  │   └── YYYY-MM-DD.json
-  ├── reddit/
-  │   └── YYYY-MM-DD.json
-  ├── youtube/
-  │   └── YYYY-MM-DD.json
-  └── taptap/
-      └── YYYY-MM-DD.json
+存储结构（落点由 archive_layout 单一真相源算出，本文档只描述形态）:
+  <数据湖>/Record/Community/          # 根 = env BIAV_SC_DATA_ROOT 或在树 Public-Info-Pool/
+  ├── bilibili/YYYY-MM-DD.json        # 无区服维度的平台平铺
+  ├── reddit/YYYY-MM-DD.json
+  └── steam/<区服>/<类型>/YYYY-MM-DD.json   # 分层平台（steam 家族/appstore/google_play/youtube）
+  冷热分层：上上个月及更早为 .json.gz（读方一律经 archive_layout.open_archive_text）。
+
+  旧文档在此画的 `projects/news/data/platforms/` 树已不是任何真实落点——2026-06-21
+  平台摊平进 Record/Community、T62 §7甲 又整体迁出 code 仓；照旧文档写读方即扫空屋。
+
+日期语义：桶名是**北京日期**（UTC+8），基准取 archive_layout.archive_date_str/archive_today。
 
 Discord 不在此处理（已有 discord_archiver.py 独立归档）。
 
@@ -40,7 +37,7 @@ import argparse
 import json
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -85,10 +82,9 @@ def item_date_utc8(item: dict, fallback: str) -> str:
     if not t:
         return fallback
     try:
-        dt = datetime.fromisoformat(t)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return (dt + timedelta(hours=8)).strftime('%Y-%m-%d')
+        # 换算走 archive_layout（日期基准 SSOT）；原手写 `dt + timedelta(hours=8)` 还有个
+        # 隐患：对已带非 UTC 偏移的 dt 也一律加 8 小时，等于把偏移算了两遍。
+        return archive_layout.archive_date_str(datetime.fromisoformat(t))
     except (ValueError, TypeError):
         return fallback
 
@@ -202,20 +198,24 @@ def show_stats():
             print(f'  {platform:12s}  (无归档)')
             continue
 
-        files = sorted(platform_dir.rglob('*.json'))  # rglob 兼容甲方案分层(区服/类型子目录)
+        # 遍历经 archive_layout（分层 + 冷热双扩展名一并产出）。原写法 rglob('*.json')
+        # 只吃裸文件，冷层 .json.gz 一个不数；且 `f.stem` 对 `2026-04-01.json.gz` 返回
+        # '2026-04-01.json'，排序后印出来的首末日期直接带上 .json 后缀。
+        files = archive_layout.dated_files(platform, ARCHIVE_DIR)
         if not files:
             print(f'  {platform:12s}  (无归档)')
             continue
 
         file_count = len(files)
         item_count = 0
-        dates = sorted(f.stem for f in files)
+        dates = sorted(archive_layout.date_stem(f) for f in files)
         first_date = dates[0]
         last_date = dates[-1]
 
         for f in files:
             try:
-                data = json.loads(f.read_text(encoding='utf-8'))
+                with archive_layout.open_archive_text(f) as fh:
+                    data = json.load(fh)
                 item_count += data.get('item_count', 0)
             except Exception:
                 pass
@@ -225,12 +225,20 @@ def show_stats():
         total_items += item_count
 
     # Discord stats (from its own archive)
-    discord_daily = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'activity_daily'
-    if discord_daily.exists():
-        dc_files = sorted(discord_daily.glob('*.json'))
-        if dc_files:
-            print(f'  {"discord":12s}  {len(dc_files):3d} 天         ({dc_files[0].stem} ~ {dc_files[-1].stem})  [独立归档]')
-            total_files += len(dc_files)
+    # 落点问 archive_layout。原写法钉死在迁移前的在树旧根
+    # `projects/news/data/discord/activity_daily`——T62 §7甲 把数据湖迁出 code 仓后
+    # 该目录恒不存在，discord 那一行于是从统计里静默消失（既不报错也不显示「无归档」）。
+    dc_files: list[Path] = []
+    droot = archive_layout.discord_root()
+    for region_dir in archive_layout.discord_region_roots(droot).values():
+        stats_dir = region_dir / 'activity_daily'
+        if stats_dir.is_dir():
+            dc_files.extend(f for f in stats_dir.iterdir()
+                            if archive_layout.DATE_STEM.match(archive_layout.date_stem(f)))
+    if dc_files:
+        dc_dates = sorted(archive_layout.date_stem(f) for f in dc_files)
+        print(f'  {"discord":12s}  {len(dc_files):3d} 天         ({dc_dates[0]} ~ {dc_dates[-1]})  [独立归档]')
+        total_files += len(dc_files)
 
     print(f'\n  合计：{total_files} 天 / {total_items} 条目')
 
@@ -247,7 +255,7 @@ def main():
         show_stats()
         return
 
-    today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d')
+    today = archive_layout.archive_date_str()
 
     if args.date:
         print(f'归档日期（限定）：{args.date}')
