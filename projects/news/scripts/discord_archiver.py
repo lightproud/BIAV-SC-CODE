@@ -29,6 +29,7 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from discord_compact import compact_record  # noqa: E402  紧凑 schema 单一权威定义
+import news_common  # noqa: E402  原子写 JSON 单一真源（dump_json_atomic）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -135,6 +136,22 @@ def request_with_retry(method, url, max_retries=3, backoff_base=2, **kwargs):
     raise last_exc
 
 
+def _ends_cleanly(path: Path) -> bool:
+    """JSONL 文件是否以完整行收尾（空文件视为干净）。追加写前的半截行探测。"""
+    try:
+        size = path.stat().st_size
+    except OSError:
+        return True
+    if size == 0:
+        return True
+    try:
+        with open(path, 'rb') as fh:
+            fh.seek(-1, os.SEEK_END)
+            return fh.read(1) == b'\n'
+    except OSError:
+        return True
+
+
 def _is_forbidden(exc) -> bool:
     """True if the exception is a Discord 403 — bot lacks permission to read the channel."""
     resp = getattr(exc, 'response', None)
@@ -167,6 +184,8 @@ class DiscordArchiver:
         self._pending_threads: list = []
         # Per-run cache of JSONL file → set of already-stored message IDs (dedup guard)
         self._file_ids_cache: dict = {}
+        # Per-run set of JSONL files whose tail was already checked for a torn line
+        self._tail_checked: set = set()
         # Per-run cache of months already uploaded to Releases (archive-aware backfill)
         self._archived_months_cache: set | None = None
         self.daily_stats: dict = defaultdict(lambda: {
@@ -199,10 +218,17 @@ class DiscordArchiver:
         return {'channels': {}, 'historical_month': None, 'last_run': None}
 
     def _save_state(self):
+        # 原子替换（news_common.dump_json_atomic 单一真源）：本档是**全部**断点续传
+        # 依据——每频道增量游标 / 历史回填指针 / history_backfill_complete 闩锁 /
+        # empty_months / forbidden 标记。直写在 json.dump 流式吐字节的中途被杀
+        # （CI 作业超时、runner 回收、磁盘写满）就留下半截 JSON，而 _load_state
+        # `except Exception` 一律回落 `{'channels': {}, ...}`：**整份游标归零**。
+        # 后果不是少存一次，而是下一轮把每个频道当新频道冷启动重抓、历史指针
+        # 重置回上个月从头再走一遍（_init_historical_month 的永动机正是靠
+        # history_backfill_complete 闩锁挡住的，闩锁也一并没了）。
+        # 同一个 state.json 的另一个写方 backfill_forum_starters.py 早已走原子写。
         self.state['last_run'] = datetime.now(UTC).isoformat()
-        self.state_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(self.state_path, 'w', encoding='utf-8') as f:
-            json.dump(self.state, f, ensure_ascii=False, indent=2)
+        news_common.dump_json_atomic(self.state_path, self.state)
 
     def _ch_state(self, channel_id) -> dict:
         """Return (and initialise if missing) per-channel state dict."""
@@ -255,6 +281,16 @@ class DiscordArchiver:
         # 写盘紧凑 schema（缺字段=默认值契约，见 discord_compact）；内存 slim 保持完整
         # 供线程队列等内部逻辑读 has_thread/thread_id。
         with open(file_path, 'a', encoding='utf-8') as f:
+            # 追加前先确认上一行是完整的（以 \n 收尾）。上一轮若在刷盘中途被杀
+            # （作业超时 / 磁盘写满短写），文件尾部会留下一条**没有换行**的半截
+            # 记录；直接追加会把新记录粘在它后面拼成一行 —— 这一行谁也解析不了,
+            # 于是**被粘上去的那条新消息也一起报废**，而 _file_ids 读不出它的 id、
+            # 增量游标却已越过它，这条消息从此永久缺失（实测：1003 号消息消失）。
+            # 补一个换行即可让损坏只停留在原来那半截上，重抓的记录干净落地。
+            if file_path not in self._tail_checked:
+                self._tail_checked.add(file_path)
+                if not _ends_cleanly(file_path):
+                    f.write('\n')
             f.write(json.dumps(compact_record(slim), ensure_ascii=False) + '\n')
         ids.add(msg_id)
         return True
@@ -280,9 +316,7 @@ class DiscordArchiver:
             ],
         }
         meta_path = self.data_dir / 'guild_meta.json'
-        meta_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(meta_path, 'w', encoding='utf-8') as f:
-            json.dump(meta, f, ensure_ascii=False, indent=2)
+        news_common.dump_json_atomic(meta_path, meta)   # 半截 JSON 无人可读，原子替换
         logger.info(f'Guild meta saved: {len(channels)} channels')
         return channels
 
@@ -315,9 +349,11 @@ class DiscordArchiver:
             except (OSError, json.JSONDecodeError):
                 logger.warning('channel_index.json unreadable, rebuilding from scratch')
         index = discord_reconcile.merge_channel_index(existing, current)
-        index_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(index_path, 'w', encoding='utf-8') as f:
-            json.dump(index, f, ensure_ascii=False, indent=2)
+        # 原子替换：直写被中断留下的半截索引会被上面的 `except json.JSONDecodeError`
+        # 判成「unreadable, rebuilding from scratch」——offline/orphan 历史条目
+        # 全部蒸发，正是 T35 那 498 个不可反查孤儿目录的成因（合并式更新救不了
+        # 一份读不出来的旧档）。同文件的另一个写方 discord_reconcile 已走原子写。
+        news_common.dump_json_atomic(index_path, index)
         offline = sum(1 for v in index.values() if v.get('status') == 'offline')
         orphan = sum(1 for v in index.values() if v.get('status') == 'orphan')
         logger.info(f'Channel index saved: {len(index)} entries '
@@ -566,17 +602,34 @@ class DiscordArchiver:
         if self._archived_months_cache is not None:
             return self._archived_months_cache
         months: set = set()
-        log_path = self.data_dir / 'archive-log.json'
-        try:
-            with open(log_path, encoding='utf-8') as f:
-                for entry in json.load(f):
-                    # Engine writes the month under 'group' (group_by=month_from_stem);
-                    # legacy archive_discord entries used 'month'. Read both.
-                    month = entry.get('group') or entry.get('month')
-                    if entry.get('uploaded_to_releases') and month:
-                        months.add(month)
-        except (FileNotFoundError, json.JSONDecodeError):
-            pass
+        # 日志落点 = **引擎的 base_dir**，即 discord 根（archive_sources.json 里
+        # "base_dir": "Public-Info-Pool/Record/Community/discord"），不是本归档器的
+        # 区服目录。2026-07-10 方案甲把 Global 从 discord/ 根迁进 discord/global/ 之后,
+        # 只看 self.data_dir 的这一处就再也读不到那份日志了：本守卫恒返回空集,
+        # 「该月已在 Releases → 跳过重抓」从此一次都不成立。触发点正是 state.json
+        # 丢失/重置（见 _save_state）——历史指针退回上个月重走，本该被跳过的 33 个
+        # 已归档月份逐个重抓，45 分钟预算全耗在已有数据上，真正缺的月份永远轮不到。
+        # 两处都读：区服目录（旧根特例 / 单测）+ discord 根（引擎实际写入处）。
+        log_paths = [self.data_dir / 'archive-log.json']
+        engine_log = archive_layout.discord_root() / 'archive-log.json'
+        if engine_log not in log_paths:
+            log_paths.append(engine_log)
+        for log_path in log_paths:
+            try:
+                with open(log_path, encoding='utf-8') as f:
+                    entries = json.load(f)
+            except (OSError, json.JSONDecodeError):
+                continue
+            if not isinstance(entries, list):
+                continue
+            for entry in entries:
+                if not isinstance(entry, dict):
+                    continue
+                # Engine writes the month under 'group' (group_by=month_from_stem);
+                # legacy archive_discord entries used 'month'. Read both.
+                month = entry.get('group') or entry.get('month')
+                if entry.get('uploaded_to_releases') and month:
+                    months.add(month)
         self._archived_months_cache = months
         return months
 
@@ -1022,12 +1075,42 @@ class DiscordArchiver:
                             seen.add(item['id'])
                             deduped.append(item)
                     output['top_reacted_messages'] = deduped[:20]
-                except Exception:
-                    pass
-            with open(file_path, 'w', encoding='utf-8') as f:
-                json.dump(output, f, ensure_ascii=False, indent=2)
+                except Exception as exc:
+                    # 静默 pass = 「读不出旧档就当它不存在」，而下一行紧接着把
+                    # **只含本轮增量**的 output 覆盖上去：一天 503 条的统计被
+                    # 悄悄改写成 3 条。JSONL 里的消息还在，可 _write_msg 的去重
+                    # 守卫让这些消息**再也不会**被重新计入统计（重抓即 return
+                    # False → _update_daily_stats 不执行），差额永久不可回收。
+                    # 至少让它出现在 CI 日志里。
+                    logger.warning(
+                        f'activity_daily {existing_path.name} 读取失败，本日旧统计'
+                        f'将被本轮增量覆盖（不可回收）: {type(exc).__name__}: {exc}'
+                    )
+            # 原子替换：直写在中途被杀即留下半截 JSON，下一轮走的正是上面那条
+            # 「读不出来 → 用本轮增量覆盖」的路，累计计数就此清零。
+            news_common.dump_json_atomic(file_path, output)
 
         logger.info(f'Daily stats saved for {len(self.daily_stats)} day(s)')
+
+    def _flush_on_exit(self):
+        """收尾落盘：日统计 + state，异常路径也必须走一遍。
+
+        为什么必须放 finally：消息一经 _write_msg 就**已经持久化**在 JSONL 里,
+        而它对应的日统计只攒在内存 self.daily_stats 里、等整轮跑完才写盘。中途
+        抛异常（_write_msg 撞 ENOSPC、畸形 payload、作业被取消 → KeyboardInterrupt）
+        时，那批消息留在 JSONL、统计凭空消失；下一轮重抓这些消息，_write_msg 的
+        去重守卫返回 False，_update_daily_stats 便**永不再执行**——activity_daily
+        与 JSONL 之间的这笔差额没有任何补记路径（实测：50 条消息落盘，
+        activity_daily 连当天那个文件都不存在）。
+        """
+        try:
+            self._save_daily_stats()
+        except Exception:
+            logger.exception('收尾保存 activity_daily 失败')
+        try:
+            self._save_state()
+        except Exception:
+            logger.exception('收尾保存 state.json 失败')
 
     # ── Main pipeline ─────────────────────────────────────────────────────────
 
@@ -1036,7 +1119,16 @@ class DiscordArchiver:
         Regular run: dual-track parallel execution.
           Track 1 — Incremental: fetch new messages since last run (all channels)
           Track 2 — Historical:  backfill one calendar month per run (text channels)
+
+        收尾落盘走 finally（见 _flush_on_exit）：中途抛异常时 JSONL 已持久化的
+        消息不能只剩「统计从未记过」这一个结局。
         """
+        try:
+            self._run_tracks()
+        finally:
+            self._flush_on_exit()
+
+    def _run_tracks(self):
         run_start = time.time()
         logger.info(f'Discord archiver v2 starting (guild {self.guild_id})...')
 
@@ -1125,10 +1217,7 @@ class DiscordArchiver:
                     break
                 self._fetch_thread_incremental(thread_id)
 
-        # ── Daily stats + final state save ──
-        self._save_daily_stats()
-        self._save_state()
-
+        # Daily stats + final state save 由 run() 的 finally 统一收尾
         elapsed = int(time.time() - run_start)
         logger.info(
             f'Archival complete: {total_incremental} incremental msgs, '
@@ -1141,6 +1230,12 @@ class DiscordArchiver:
         History-only mode: skip incremental, dedicate full runtime to historical backfill.
         Used by the dedicated history-backfill workflow for maximum throughput.
         """
+        try:
+            self._run_history_tracks()
+        finally:
+            self._flush_on_exit()
+
+    def _run_history_tracks(self):
         run_start = time.time()
         logger.info(f'Discord archiver HISTORY-ONLY mode (guild {self.guild_id})...')
 
@@ -1195,8 +1290,7 @@ class DiscordArchiver:
             else:
                 break
 
-        self._save_daily_stats()
-        self._save_state()
+        # 收尾落盘由 run_history_only() 的 finally 统一执行
         elapsed = int(time.time() - run_start)
         logger.info(
             f'History-only complete: {months_completed} months, '

@@ -72,8 +72,12 @@ jobs:
             echo "All push attempts failed"
             exit 1
           fi
-      - name: Fail if any workflow went silent
+      - name: Fail if any workflow went silent (or if nothing could be judged)
         if: steps.sweep.outcome == 'failure'
         run: |
-          echo "死手开关有发现（STALE / NEVER），详见上方日志与 Public-Info-Pool/Record/heartbeat/status.json"
+          echo "死手开关判红。两种可能，看 status.json 的 judged / unknown 分辨："
+          echo "  1) 有发现（STALE / NEVER）——某个定时件该出声没出声；"
+          echo "  2) judged=0——守卫自己失明（GH_TOKEN 失效 / Actions API 不通 /"
+          echo "     看守名单为空），此时 findings=0 不代表健康。"
+          echo "详见上方日志与 Public-Info-Pool/Record/heartbeat/status.json"
           exit 1

@@ -787,7 +787,17 @@ export function query(args: {
     options,
     cwd,
     initialModel,
-    builtinToolNames: [...builtinTools.keys()],
+    // The harness prompt's "Available tools:" roster must name every tool the
+    // main loop actually advertises. The memory tool is registered into
+    // mainLoopBuiltins (custom mode) or as the server-declared entry (native
+    // mode) — either way it reaches the wire `tools` — but it lives outside
+    // `builtinTools`, so the roster omitted it while the injected memory
+    // protocol told the model to "use your `memory` tool": a tool the prompt's
+    // own inventory said did not exist.
+    builtinToolNames:
+      memory !== null
+        ? [...builtinTools.keys(), MEMORY_TOOL_NAME]
+        : [...builtinTools.keys()],
     debug,
   });
   // Memory mode A ("native"): advertise the official typed entry verbatim;
@@ -1041,6 +1051,13 @@ export function query(args: {
     // Session accounting extracted to query-accounting.ts (audit 2026-07-10
     // P2-3A): additive counters + the single ModelUsage merge rule.
     const acct = new SessionAccounting();
+    // R1: cumulative floors for the per-result accounting delta records
+    // (turns tracked too, so an interrupted turn's record — L58 — carries
+    // an honest turn delta and getSessionAccounting sums stay whole).
+    // Y5-2 (audit wave17): declared at RUN scope, not inside the try, so the
+    // teardown residual-spend record below can read the same floor.
+    let lastPersistedCostUsd = 0;
+    let lastPersistedTurns = 0;
     // 待裁⑤: the last result yielded to the consumer. The session-end memory
     // round and any late background-subagent usage grow `acct` AFTER this was
     // yielded, so a corrected final result is emitted at teardown when the
@@ -1190,11 +1207,6 @@ export function query(args: {
       let needMeta = sess.needMeta;
       // R1: the structured prelude rides the FIRST genuine prompt only.
       let preludePending = true;
-      // R1: cumulative floors for the per-result accounting delta records
-      // (turns tracked too, so an interrupted turn's record — L58 — carries
-      // an honest turn delta and getSessionAccounting sums stay whole).
-      let lastPersistedCostUsd = 0;
-      let lastPersistedTurns = 0;
 
       // File checkpointing: bind the disk-backed store to this session so
       // Write/Edit pre-images are captured and Query.rewindFiles() can restore.
@@ -2191,6 +2203,32 @@ export function query(args: {
       // Drain it into the session totals so the corrected final result at the
       // end of teardown reports it (the per-result folds at 1195/1234 miss it).
       acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
+      // Y5-2 (audit wave17): that late spend reached the CORRECTED final
+      // result's total_cost_usd but never reached the PERSISTED accounting
+      // ledger — every per-result record was written before this fold, and
+      // the corrected result itself writes none. getSessionAccounting() (the
+      // documented "read a session's accounting BEFORE injecting the next
+      // turn" seam) therefore under-reported the session by the whole
+      // background-child bill, and a host that gates the next injection on
+      // that number overspends. Persist the residual as its own delta record,
+      // same shape/floor discipline as the L58 interrupt record.
+      if (persist && resolvedSessionId !== '') {
+        const residualCostUsd = acct.cost - lastPersistedCostUsd;
+        const residualTurns = acct.turns - lastPersistedTurns;
+        if (residualCostUsd > 0 || residualTurns > 0) {
+          lastPersistedCostUsd = acct.cost;
+          lastPersistedTurns = acct.turns;
+          store.append(resolvedSessionId, {
+            type: 'accounting',
+            uuid: randomUUID(),
+            session_id: resolvedSessionId,
+            timestamp: Date.now(),
+            cost_delta_usd: residualCostUsd > 0 ? residualCostUsd : 0,
+            total_cost_usd: acct.cost,
+            num_turns: residualTurns > 0 ? residualTurns : 0,
+          });
+        }
+      }
       // Release cross-protocol transports the resolver handed the QUERY layer
       // with owned: true (utility/compaction routing); the subagent runtime
       // disposed its own set inside settleAll() above.

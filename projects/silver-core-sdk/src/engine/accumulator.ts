@@ -8,6 +8,7 @@ import type {
   APIAssistantMessage,
   ContentBlock,
   RawMessageStreamEvent,
+  ServerToolUse,
   StopReason,
   Usage,
 } from '../types.js';
@@ -82,6 +83,13 @@ export type DeltaUsage = Partial<{
   input_tokens: number;
   cache_creation_input_tokens: number | null;
   cache_read_input_tokens: number | null;
+  /** Server-tool call counts. Same widened-shape reasoning as the two cache
+   *  fields above (audit wave17 Y5-1): message_start CANNOT carry a search
+   *  count (the searches run during generation), so message_delta is the only
+   *  frame that ever reports it — dropping it here made
+   *  ModelUsage.webSearchRequests permanently 0 and left the per-search
+   *  server-tool charge in pricing.ts unreachable. */
+  server_tool_use: ServerToolUse | null;
 }>;
 
 /**
@@ -118,6 +126,21 @@ export function foldMessageDeltaUsage(u: Usage, deltaUsage: DeltaUsage | undefin
       u.cache_read_input_tokens ?? 0,
       deltaUsage.cache_read_input_tokens,
     );
+  }
+  // Y5-1: server-tool counts are cumulative like the input-side fields, so
+  // keep the running MAX. Written back onto the WIRE shape (`server_tool_use`)
+  // because that is what normalizeUsage reads; the flat NonNullableUsage
+  // mirror is refreshed by the loop's recovery fold (engine/loop.ts), which
+  // hands recordUsage its sink directly without re-normalizing.
+  const searches = deltaUsage.server_tool_use?.web_search_requests;
+  if (searches !== undefined) {
+    u.server_tool_use = {
+      ...(u.server_tool_use ?? {}),
+      web_search_requests: Math.max(
+        u.server_tool_use?.web_search_requests ?? 0,
+        searches,
+      ),
+    };
   }
 }
 

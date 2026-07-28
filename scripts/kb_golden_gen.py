@@ -105,8 +105,14 @@ def generate(k: int = 3, per_seed_disjoint: int = 4) -> dict:
             e["output"].append(cid)
     for p, e in sorted(plat.items()):
         if e["full"] and e["output"]:
-            add(f"{p} 全量档案", [e["full"][0].rsplit("/", 1)[-1].replace(".md", "")],
-                "search", "layer_aware", False)
+            # expect 落**完整 concept id**，不落裸 stem。kb_eval 判命中是 `sub in rid`
+            # 子串匹配，而概念 id 之间大量互为前缀（community-youtube ⊂
+            # community-youtube-comments、news-output-steam ⊂ news-output-steam-discussion
+            # 等 13 对）。裸 stem 会让「youtube 全量档案」被**另一个平台**的档案概念
+            # （youtube_comments）判为 rank-1 命中，而真正的 /community/community-youtube.md
+            # 压根没进 top-k——这条题恰恰是用来证明 KB 分得清层与平台的，却在给错答案打分。
+            # 完整 id 自带 `.md` 结尾，不可能是另一个 id 的子串。
+            add(f"{p} 全量档案", [e["full"][0]], "search", "layer_aware", False)
 
     return {"version": "generated", "k": k, "min_hit_rate": 0.0,
             "min_distinctive_hit_rate": 0.0, "questions": qs}

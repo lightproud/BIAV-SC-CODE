@@ -140,7 +140,10 @@ def scheduled_workflows(workflow_dir: Path = WORKFLOW_DIR) -> dict[str, list[str
         re.MULTILINE,
     )
     found: dict[str, list[str]] = {}
-    for path in sorted(workflow_dir.glob("*.yml")):
+    # `.yml` 与 `.yaml` **都要收**：GitHub 视二者等价，只认前者时，一个
+    # `nightly.yaml` 里的定时件从看守名单里整件蒸发，而摘要行照报 watched=N
+    # findings=0——与下面「引号写法」那条同一个病根（漏网面是拉模式的死穴）。
+    for path in sorted([*workflow_dir.glob("*.yml"), *workflow_dir.glob("*.yaml")]):
         crons = [
             (single or double or bare).strip()
             for single, double, bare in line.findall(path.read_text(encoding="utf-8"))
@@ -274,7 +277,20 @@ def main(argv: list[str] | None = None) -> int:
             json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
         print(f"状态已写入 {args.out}")
-    return 1 if status["findings"] else 0
+    if status["findings"]:
+        return 1
+    # 「一个都没判成」必须**也是红**，不能只打印一行警告就退 0。守卫退 0 的后果比
+    # 别处严重：本工作流自己也在被看守名单里，而它的判据是「最近一次成功」——
+    # 退 0 就是一次成功。于是 GH_TOKEN 失效 / Actions API 不通的日子里，死手开关
+    # 天天绿灯、天天刷新 status.json 的 generated_at、天天把自己的「最近一次成功」
+    # 顶到今天，**连它自己的失明都监控不到**（实测：token 无效时 watched=26
+    # judged=0 unknown=26 findings=0，退出码 0）。watched=0（看守名单为空，如
+    # .github/workflows 缺失或被稀疏检出裁掉）同理——那是在什么都没查的情况下报平安。
+    if not status["judged"]:
+        print("  ⚠ 判红：本轮 judged=0（看守名单为空或全部查询失败），"
+              "findings=0 在此不是「全都健康」，而是「一个都没查到」。")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

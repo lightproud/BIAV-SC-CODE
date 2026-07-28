@@ -175,13 +175,25 @@ def staleness() -> list[str]:
     合流成同一句「全部在保鲜期内」——那是拿「一个都没量到」冒充「量过且都新鲜」。"""
     out: list[str] = []
     unmeasured: list[str] = []
+    uncovered: list[str] = []
     for pattern, limit in STALENESS_RULES:
-        for f in sorted(REPO.glob(pattern)):
+        matched = sorted(REPO.glob(pattern))
+        if not matched:
+            # 规则一件都没匹配上 = 这条保鲜规则**已经不覆盖任何东西**，而报告照打
+            # 「全部在保鲜期内」。同「未测龄」那条是同一个病根的上一层：拿「一个都没
+            # 找到」冒充「找过且都新鲜」。触发形态：档案改名 / 拆分（2026-07-27 刚拆过
+            # project-status）、目录迁走、稀疏检出裁掉——三种都让规则静默失效。
+            uncovered.append(f"{pattern}（阈值 {limit} 天）")
+            continue
+        for f in matched:
             age = _git_age_days(f)
             if age is None:
                 unmeasured.append(str(f.relative_to(REPO)))
             elif age > limit:
                 out.append(f"{f.relative_to(REPO)} 已 {age} 天未更新（阈值 {limit} 天）——巡检时人工复核其内容是否仍与现实一致")
+    if uncovered:
+        out.append(f"[规则落空] {len(uncovered)} 条保鲜规则匹配不到任何档案，"
+                   f"其覆盖对象本轮**未被检查**（多半是档案改名 / 迁走）：{', '.join(uncovered)}")
     if unmeasured:
         out.append(f"[未测龄] {len(unmeasured)} 份档案取不到 git 提交时间（无 .git / 未提交 / 稀疏检出漏档），"
                    f"其保鲜度本轮**未被检查**：{', '.join(unmeasured[:5])}"

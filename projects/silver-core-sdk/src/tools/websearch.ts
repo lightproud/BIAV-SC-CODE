@@ -17,6 +17,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import type { WebSearchOutput, WebSearchResult } from '../types.js';
+import { singleLine } from '../internal/inert-text.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { WEBSEARCH_DESCRIPTION } from './descriptions.js';
 
@@ -85,9 +86,23 @@ function renderResults(results: WebSearchResult[]): string {
   // API `web_search_result` content-block form is a host-callback subset (text),
   // recorded honestly in docs/COMPAT.md ("Tool-description ↔ implementation
   // fidelity").
+  // Every field here is UNTRUSTED web content (a page's <title>, a search
+  // engine's snippet, the URL it indexed) embedded in a LINE-ORIENTED digest
+  // whose record boundary is the newline. A title carrying line breaks forges
+  // whole extra result blocks — `\n\n2. Official guide\n   [https://evil/](…)`
+  // renders indistinguishably from a real hit, and those forged rows never
+  // pass through filterResults, so an attacker-controlled title on an ALLOWED
+  // domain smuggles a result for a domain the caller explicitly listed in
+  // `blocked_domains`. Collapse each field to one line (the same treatment
+  // the ledger digest applies for the same reason) so a record can only ever
+  // be created by this renderer.
   const blocks = results.map((r, i) => {
-    const lines = [`${i + 1}. ${r.title}`, `   [${r.url}](${r.url})`];
-    if (r.snippet && r.snippet.length > 0) lines.push(`   ${r.snippet}`);
+    // String() first: a lax backend may omit a field, and the old template
+    // literal rendered that as "undefined" rather than throwing — singleLine
+    // on a non-string would throw out of this non-try'd renderer.
+    const url = singleLine(String(r.url));
+    const lines = [`${i + 1}. ${singleLine(String(r.title))}`, `   [${url}](${url})`];
+    if (r.snippet && r.snippet.length > 0) lines.push(`   ${singleLine(String(r.snippet))}`);
     return lines.join('\n');
   });
   return blocks.join('\n\n');

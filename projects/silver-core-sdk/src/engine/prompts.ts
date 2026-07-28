@@ -16,6 +16,7 @@
 
 import type { Options } from '../types.js';
 import type { SystemCompositionPart } from '../internal/contracts.js';
+import { neutralizeClosingTag } from '../internal/inert-text.js';
 import { assembleMainLoop } from './prompt-assembler.js';
 import { estimateTextTokens } from './tokens.js';
 
@@ -231,10 +232,18 @@ export function buildSystemPromptParts(
   // Framed as a system-reminder and kept in the STABLE prefix (stable per
   // project -> cacheable), reproducing how the official runtime carries them.
   if (ctx.projectInstructions !== undefined && ctx.projectInstructions.length > 0) {
+    // The file contents are DATA inside a fence the model parses as STRUCTURE:
+    // a CLAUDE.md / AGENTS.md that contains a literal `</system-reminder>`
+    // (a repo documenting agent harnesses, or a hostile clone) closes the fence
+    // early, so everything after it is delivered as top-level harness text
+    // instead of as project instructions — and the real terminator trails as a
+    // stray tag. Same envelope discipline the prelude (query.ts) and retained
+    // regions already apply via internal/inert-text.
     const block =
       `\n\n<system-reminder>\nThe following instructions come from ` +
       `CLAUDE.md / AGENTS.md files in the project. Follow them as if the user ` +
-      `wrote them.\n\n${ctx.projectInstructions}\n</system-reminder>`;
+      `wrote them.\n\n${neutralizeClosingTag(ctx.projectInstructions, 'system-reminder')}` +
+      `\n</system-reminder>`;
     project += block;
     parts.push({
       role: 'codebase-instructions',

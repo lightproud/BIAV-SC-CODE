@@ -43,6 +43,7 @@ from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 import archive_layout  # 分仓桥接：社区数据根 SSOT（同目录）
+import news_common  # 原子写 JSON 单一真源（dump_json_atomic）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -272,9 +273,14 @@ def load_log(log_path: Path) -> list[dict]:
 
 
 def save_log(log_path: Path, log: list[dict]):
-    log_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(log_path, 'w', encoding='utf-8') as f:
-        json.dump(log, f, ensure_ascii=False, indent=2)
+    # 原子替换（news_common.dump_json_atomic 单一真源）：这份日志是「哪一桶已经
+    # 传上 Releases」的**唯一**记录。直写若在中途被杀就留下半截 JSON，而
+    # load_log 对 JSONDecodeError 一律 `return []`——整份归档史当场归零：
+    # 下一轮成功归档只写回本轮那几桶，rebuild_releases_index 据此重建的
+    # releases-index.json 就把此前所有月桶条目一并抹掉（藏宝图上的坑全没了,
+    # 而 Release 里的资产还在，只是没人再指得到），且 discord 归档器的
+    # 「该月已归档 → 跳过重抓」守卫同时失效。
+    news_common.dump_json_atomic(log_path, log)
 
 
 def rebuild_releases_index(registry: dict):
@@ -349,13 +355,6 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
                 failed_groups.append(group)
                 continue
 
-        if cfg.get('after_archive') == 'git_rm':
-            removed = git_rm_files(files)
-            logger.info(f'Removed {removed} files from git for {group}')
-
-        if uploaded:
-            archive_path.unlink(missing_ok=True)
-
         entry = {
             'source': source_id,
             'group': group,
@@ -380,7 +379,22 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
                 break
         else:
             log.append(entry)
+        # 先记账，再删源文件。原顺序是 git_rm → 删本地 tarball → 写日志：上传
+        # 已经成功、源文件也已 git_rm 掉，进程若在这之后、写日志之前被杀
+        # （monthly-cleanup 工作流跑几百 MB tar，被杀是真会发生的），资产躺在
+        # Release 里，本地源没了，而日志里没有这一桶——重跑时 discover 已经找不到
+        # 任何文件，这条记录**永远补不回来**：releases-index.json 从此漏掉一个
+        # 真实存在的月桶（藏宝图缺了一个坑），discord 归档器的「已归档 → 跳过重抓」
+        # 也认不出它。日志先落盘则最坏只是多留一份源文件，下轮重删即可（幂等）。
         save_log(log_path, log)
+
+        if cfg.get('after_archive') == 'git_rm':
+            removed = git_rm_files(files)
+            logger.info(f'Removed {removed} files from git for {group}')
+
+        if uploaded:
+            archive_path.unlink(missing_ok=True)
+
         archived_groups += 1
         archived_files += len(files)
 

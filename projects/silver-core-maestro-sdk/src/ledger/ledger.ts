@@ -323,8 +323,25 @@ export class TaskLedger {
       states: ['pending', 'retrying'],
       dueBefore: now,
     });
+    // OLDEST-DUE FIRST. The store contract deliberately fixes no listing ORDER
+    // (store.ts documents the two filters and nothing else; the shipped
+    // contract suite compares id SETS, sorting before every assertion), so
+    // without this the limit carved its batch out of an arbitrary slice.
+    // Two contract-compliant stores then claim different sessions from the
+    // same ledger state, and a store listing newest-first (an `ORDER BY
+    // created DESC`, a KV scan) STARVES the longest-waiting work outright:
+    // three always-due sessions under LedgerDriver.maxConcurrent = 1 gave the
+    // slot to the same session on all 30 ticks while the other two never ran
+    // once. nextRunAt is non-null for every listed row (the dueBefore filter
+    // requires it) and createdAt breaks a same-instant tie into dispatch
+    // order; a full tie on both keeps the store's own order (Array#sort is
+    // stable), which is the most this seam can promise without inventing a
+    // rank the record does not carry.
+    const candidates = [...due].sort(
+      (a, b) => (a.nextRunAt ?? 0) - (b.nextRunAt ?? 0) || a.createdAt - b.createdAt,
+    );
     const claimed: SessionRecord[] = [];
-    for (const listed of due) {
+    for (const listed of candidates) {
       if (opts.limit !== undefined && claimed.length >= opts.limit) break;
       // Per-session isolation (audit r2): one session's failure must not
       // abandon the rest of the batch. A session whose claim write is not
