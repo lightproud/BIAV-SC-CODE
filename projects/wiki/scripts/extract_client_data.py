@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import gc
+import importlib.util
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -38,11 +39,10 @@ except ImportError:
     print("ERROR: UnityPy not installed. Run: pip install UnityPy", file=sys.stderr)
     sys.exit(1)
 
-try:
-    from PIL import Image
-    HAS_PIL = True
-except ImportError:
-    HAS_PIL = False
+# Pillow 只用于 Texture2D → PNG；缺库时整块能力优雅降级（HAS_PIL 门控）。
+# 用 find_spec 探测而非 import 未用名：后者会被静态检查判为「未使用的导入」,
+# 一次顺手清理就可能把探测本身删掉，令降级门控恒 False 而无人察觉。
+HAS_PIL = importlib.util.find_spec("PIL") is not None
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -290,7 +290,7 @@ def extract_monobehaviours(env, output_dir: Path, stats: dict) -> None:
                 stats["errors"].append(f"MonoBehaviour: {e}")
 
 
-def extract_textures(env, output_dir: Path, stats: dict, name_filter: str = None) -> None:
+def extract_textures(env, output_dir: Path, stats: dict, name_filter: str | None = None) -> None:
     """Extract Texture2D as PNG (for portraits)."""
     if not HAS_PIL:
         return
@@ -376,7 +376,7 @@ def scan_and_extract(
     game_data_dir: Path,
     output_dir: Path,
     extract_tex: bool = False,
-    tex_filter: str = None,
+    tex_filter: str | None = None,
     workers: int = 0,
     verbose: bool = False,
 ) -> dict:

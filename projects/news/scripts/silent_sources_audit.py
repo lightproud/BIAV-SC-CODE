@@ -25,6 +25,7 @@ silent_sources_audit.py — 沉默源审计（基于归档历史）
 """
 
 import argparse
+import itertools
 import json
 import sys
 from datetime import datetime, timezone, timedelta
@@ -146,7 +147,7 @@ def leaf_cadence_days(dates: list[str]) -> int | None:
     except ValueError:
         return None
     # strict=False 是刻意的：相邻配对天然差一项，截断即预期行为
-    gaps = sorted((b - a).days for a, b in zip(ds, ds[1:], strict=False))
+    gaps = sorted((b - a).days for a, b in itertools.pairwise(ds))
     return gaps[len(gaps) // 2]
 
 

@@ -130,7 +130,7 @@ export const extractors = {
   },
 };
 
-const USER_AGENT = 'biav-store-patrol/1.0 (+https://github.com/lightproud/brain-in-a-vat)';
+const USER_AGENT = 'biav-store-patrol/1.0 (+https://github.com/lightproud/BIAV-SC-CODE)';
 
 /**
  * One patrol run: dispatch one ledger session per target (idempotent per

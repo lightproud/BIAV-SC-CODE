@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/lightproud/brain-in-a-vat/projects/news/schema/platform-data.schema.json",
+  "$id": "https://github.com/lightproud/BIAV-SC-CODE/projects/news/schema/platform-data.schema.json",
   "title": "Platform Data",
   "description": "忘却前夜（Morimens）各平台数据统一格式。自动采集和手动采集均使用此格式。",
   "type": "object",

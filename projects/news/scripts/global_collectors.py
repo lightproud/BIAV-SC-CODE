@@ -115,6 +115,10 @@ def _post(url, json_data=None, headers=None, timeout=30):
                 raise
             logger.debug(f"Retry {attempt + 1} for {url}: {e}")
             time.sleep(attempt + 1)
+    # 循环内每条路径都 return 或 raise，落到这里说明重试上限与 `attempt == 2` 守卫
+    # 被改得不再匹配。不加这一行的话，函数会静默返回 None，调用方在 resp.json() 处
+    # 才炸出一句与真因无关的 AttributeError。
+    raise RuntimeError(f"_post 重试逻辑不自洽：未返回也未抛出（url={url}）")
 
 
 def _strip_html(text):

@@ -46,7 +46,7 @@ FANART_CH = ["同人创作", "art-and-memes", "官方素材", "official-material
              "fanart", "创作", "二创", "绘"]
 HEADERS = {"User-Agent": "Mozilla/5.0 (silver-core fanart collector)"}
 # Discord API 要求合规 Bot User-Agent（DiscordBot (url, version)），否则可能被拒
-DISCORD_UA = "DiscordBot (https://github.com/lightproud/brain-in-a-vat, 1.0)"
+DISCORD_UA = "DiscordBot (https://github.com/lightproud/BIAV-SC-CODE, 1.0)"
 REFRESH_API = "https://discord.com/api/v10/attachments/refresh-urls"
 
 

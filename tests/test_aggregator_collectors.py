@@ -519,7 +519,6 @@ class TestFetchBilibiliSearch(unittest.TestCase):
         results = [{"bvid": "BV1", "pubdate": _recent_ts(), "title": "kw vid",
                     "view": 100, "author": "up"}]
         resp = FakeResponse(json_data={"data": {"result": results}})
-        empty = FakeResponse(json_data={"data": {"result": []}})
         with mock.patch.object(ac, "_bilibili_headers", return_value={}), \
                 mock.patch.object(ac, "get_wbi_mixin_key", return_value="key"), \
                 mock.patch.object(ac, "sign_wbi_params", side_effect=lambda p, k: p), \

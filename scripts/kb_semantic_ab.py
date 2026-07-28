@@ -81,7 +81,6 @@ def _vector_ranker(corpus: list[tuple[str, str]], backend: str):
     """一次性嵌入语料，返回 rank(query,k)->[doc_id]（余弦，确定性 tie-break 同 kb_vector.search）。"""
     import kb_vector as kv
 
-    doc_ids = [cid for cid, _ in corpus]
     doc_vecs = kv.embed([t for _, t in corpus], backend=backend, input_type="document")
 
     def rank(query: str, k: int) -> list[str]:

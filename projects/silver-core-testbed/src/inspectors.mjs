@@ -18,7 +18,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 
-const UA = 'silver-core-testbed/0.0 (+https://github.com/lightproud/brain-in-a-vat)';
+const UA = 'silver-core-testbed/0.0 (+https://github.com/lightproud/BIAV-SC-CODE)';
 
 async function githubJson(url, { fetchImpl = fetch, token, signal }) {
   const headers = { 'user-agent': UA, accept: 'application/vnd.github+json' };

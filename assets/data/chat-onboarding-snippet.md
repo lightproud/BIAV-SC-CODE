@@ -11,7 +11,7 @@
 ## 复制下面这段（含围栏）粘到 chat
 
 ````
-你将分析【忘却前夜】（Morimens）的社区数据。所有原始数据托管在公开 GitHub 仓库 `lightproud/brain-in-a-vat`。请通过 raw.githubusercontent.com 直接 fetch 文件——不需要登录，无 rate limit 困扰下可自由读取。
+你将分析【忘却前夜】（Morimens）的社区数据。所有原始数据托管在公开 GitHub 仓库 `lightproud/BIAV-SC-CODE`。请通过 raw.githubusercontent.com 直接 fetch 文件——不需要登录，无 rate limit 困扰下可自由读取。
 
 ## 数据架构（读之前必看）
 
@@ -27,7 +27,7 @@
 ## Raw URL 模板
 
 ```
-https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/<PATH>
+https://raw.githubusercontent.com/lightproud/BIAV-SC-CODE/main/<PATH>
 ```
 
 ## 全量档案层目录（16 平台 + Discord）
@@ -65,7 +65,7 @@ https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/<PATH>
 ## 仓库主索引
 
 `CLAUDE.md`（仓库根目录）—— 统一入口：完整数据架构 + 知识模块索引 + 数据消费纪律。读它即可上手：
-https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/CLAUDE.md
+https://raw.githubusercontent.com/lightproud/BIAV-SC-CODE/main/CLAUDE.md
 
 平台数据层逐源清单见 `CLAUDE.md` §5.2 社区情报 + `memory/project-status.md`（原 `data-layer-audit.md` 随多会话架构 2026-06 退役删除）。
 ````
@@ -75,10 +75,10 @@ https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/CLAUDE.md
 ## 这个文件本身的 raw URL（守密人可直接发链接而非粘贴文本）
 
 ```
-https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/assets/data/chat-onboarding-snippet.md
+https://raw.githubusercontent.com/lightproud/BIAV-SC-CODE/main/assets/data/chat-onboarding-snippet.md
 ```
 
 发给 chat 时一句话即可：
 
 > 帮我分析忘却前夜社区数据，先 fetch 这个 onboarding：
-> https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/assets/data/chat-onboarding-snippet.md
+> https://raw.githubusercontent.com/lightproud/BIAV-SC-CODE/main/assets/data/chat-onboarding-snippet.md

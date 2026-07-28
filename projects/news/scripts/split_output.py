@@ -38,13 +38,12 @@ split_output.py — 按数据源分割 projects/news/output/news.json
 """
 
 import json
-import os
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 # ── 路径 ──────────────────────────────────────────────────────────────────────
-_REPO_ROOT = Path(__file__).parent.parent.parent.parent  # brain-in-a-vat/
+_REPO_ROOT = Path(__file__).parent.parent.parent.parent  # 仓根 BIAV-SC-CODE/
 INPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 
