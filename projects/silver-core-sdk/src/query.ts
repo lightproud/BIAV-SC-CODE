@@ -1360,7 +1360,47 @@ export function query(args: {
         // appended user turn as an SDKUserMessage (finding #27) and persist it,
         // in order, before the engine message that follows it.
         let historyTail = history.length;
+        // Q8 (emission contract): the engine MERGES a continuation user turn —
+        // a Stop-hook block reason, a structured-output correction, the
+        // pre-compaction memory-flush prompt — into the trailing user turn
+        // whenever the assistant turn in between was dropped as all-empty (a
+        // max_tokens cut mid-tool-use leaves only an orphan tool_use, which the
+        // C6 filter removes), replacing history[tail] with a NEW merged object
+        // instead of pushing. When that trailing turn was ALREADY flushed (the
+        // usual case: it is the tool_result turn surfaced at this turn's own
+        // assistant yield), historyTail has moved past the index, so the
+        // appended blocks reached the model but NEVER reached the consumer —
+        // the stream then shows two consecutive assistant turns with the user
+        // turn that provoked the second one missing entirely. Remember what was
+        // emitted for the last flushed entry so a later in-place merge can be
+        // surfaced as its own user message.
+        let lastFlushed: APIMessageParam | undefined;
+        let lastFlushedBlocks = 0;
         const flushToolResultUsers = function* (): Generator<SDKUserMessage> {
+          const tail = history[historyTail - 1];
+          if (
+            lastFlushed !== undefined &&
+            tail !== undefined &&
+            tail !== lastFlushed &&
+            tail.role === 'user'
+          ) {
+            const blocks = toContentBlocks(tail.content);
+            const appended = blocks.slice(lastFlushedBlocks);
+            lastFlushed = tail;
+            lastFlushedBlocks = blocks.length;
+            if (appended.length > 0) {
+              // Stream-only: the merged turn's own record is not re-persisted
+              // (a second consecutive user record on disk would break the
+              // resumed transcript's role alternation).
+              yield {
+                type: 'user',
+                uuid: randomUUID(),
+                session_id: sess.sessionId,
+                message: { role: 'user', content: appended },
+                parent_tool_use_id: null,
+              };
+            }
+          }
           while (historyTail < history.length) {
             const entry = history[historyTail];
             historyTail += 1;
