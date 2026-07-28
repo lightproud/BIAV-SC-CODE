@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-28T05:47:15.818061+00:00",
+  "collected_at": "2026-07-28T08:32:05.550798+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -18,7 +18,37 @@
       "voted_up": false,
       "review": "福利很好，让我每个角色都能吃满90抽大保底",
       "timestamp_created": 1785145429,
-      "playtime_forever": 12257
+      "playtime_forever": 12261
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-28T07:30:50+00:00",
+      "lang": "schinese",
+      "title": "[正面] 不好玩",
+      "summary": "不好玩",
+      "url": "https://steamcommunity.com/profiles/76561199518322390/recommended/3052450",
+      "author": "76561199518322390",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "不好玩",
+      "timestamp_created": 1785223850,
+      "playtime_forever": 12474
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-28T06:14:24+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561199743621794/recommended/3052450",
+      "author": "76561199743621794",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1785219264,
+      "playtime_forever": 307
     },
     {
       "source": "steam",
@@ -63,7 +93,7 @@
       "voted_up": true,
       "review": "it has saya",
       "timestamp_created": 1785185489,
-      "playtime_forever": 451
+      "playtime_forever": 536
     },
     {
       "source": "steam",

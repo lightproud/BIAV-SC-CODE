@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-28T05:47:15.818061+00:00",
+  "collected_at": "2026-07-28T08:32:05.550798+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "source": "steam_discussion",
@@ -17,13 +17,13 @@
     },
     {
       "source": "steam_discussion",
-      "time": "2026-07-27T22:01:24+00:00",
+      "time": "2026-07-28T06:28:38+00:00",
       "lang": "en",
       "title": "[Steam论坛] Who should I pull for in the Triune Verdant Banner?",
       "summary": "Hellot: Catena, Corposanct or Pollux?",
       "url": "https://steamcommunity.com/app/3052450/discussions/0/594062684485358631/",
       "author": "Kalderman (Ain't it nice?)",
-      "engagement": 11
+      "engagement": 12
     },
     {
       "source": "steam_discussion",
@@ -44,6 +44,16 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/594062392369063214/",
       "author": "ZerOxygeNeedEd",
       "engagement": 2
+    },
+    {
+      "source": "steam_discussion",
+      "time": "2026-07-28T06:19:35+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] Как получить &quot;Ядро перерождения&quot;?",
+      "summary": "недавно вернулась в игру и зашла как к себе, так и к подруге на аккаунт. играли мы одинаково (я чуть дольше), но у нее на акке появилось \"Ядро перерождения\" - этакий селектор любого персонажа, а у меня - нет. я точно уверена, что у меня его никогда не было/я его никогда не использовала. м...",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/594062684485456508/",
+      "author": "выходное пособие",
+      "engagement": 1
     }
   ]
 }
