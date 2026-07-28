@@ -18,3 +18,9 @@ tree-sitter>=0.21.0
 # 日报 / 报告 PDF 渲染（report_render.py，缺失时只产 Markdown）
 markdown>=3.5
 weasyprint>=60.0
+
+# --- 静态门禁（2026-07-28 全仓缺陷扫描后立，棘轮式，配置见 pyproject.toml [tool.ruff]）---
+# **版本钉死是刻意的**：不钉的话 ruff 一升级新增几条规则，门禁会在与本次改动无关的
+# PR 上突然变红——那种红灯教会人的是「lint 不可信」，接着整条门禁就被关掉了。
+# 升级 ruff 走一次刻意的动作：升这一行 + 该修的修 / 该进 ignore 的进 ignore。
+ruff==0.15.8

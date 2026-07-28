@@ -64,9 +64,21 @@ jobs:
           # vanish with it and the build_html branch would importorskip to fake
           # green. weasyprint itself stays out per the render-deps-on-demand
           # stance; only render()'s thin PDF shell is skipped without it.
-          pip install pytest pytest-cov jsonschema markdown
+          # ruff 显式装在这里、**不靠下面那条 `|| true` 的 best-effort 安装**：
+          # scripts/requirements.txt 的安装是容错的（weasyprint 原生构建可能失败），
+          # 门禁工具挂在一条允许失败的线上，等于门禁本身可以静默消失。
+          # 版本与 scripts/requirements.txt 同步（钉死理由见该档）。
+          pip install pytest pytest-cov jsonschema markdown ruff==0.15.8
           [ -f projects/news/requirements.txt ] && pip install -r projects/news/requirements.txt || true
           [ -f scripts/requirements.txt ] && pip install -r scripts/requirements.txt || true
+      - name: Lint (ruff, 棘轮式静态门禁)
+        # 2026-07-28 全仓缺陷扫描一次性清出 488 项静态可测缺陷后立此门。清扫是止血，
+        # 门禁才是缝合——没有它，下一个会话照样能写出同样的 json.load(open(...))。
+        # 棘轮设计（select 取整族 + ignore 逐条记欠账）见 pyproject.toml [tool.ruff]：
+        # 已清零的 619 条规则全部在保护之下，任一条重新出现即红；收紧的方式是从
+        # ignore 里删一条。ruff 版本钉死在 scripts/requirements.txt（理由见该档）。
+        # 放在跑测试之前：lint 秒级、测试 20 秒，先报便宜的那个。
+        run: ruff check .
       - name: Run tests
         # Coverage gate history: 10 -> 35 -> 90 -> 85. A dynamic-orchestration
         # test sweep on 2026-06-21 lifted TOTAL coverage 43% -> ~94% (CI scope).
