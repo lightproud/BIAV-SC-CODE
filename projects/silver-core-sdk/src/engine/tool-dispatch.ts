@@ -173,6 +173,21 @@ export function mapMcpResult(res: CallToolResult): ToolResultPayload {
         }
         break;
       }
+      default: {
+        // W1-6 (audit r5): a content part this switch does not model — a newer
+        // MCP spec revision, or a server that invents a type — fell out of the
+        // switch and was dropped with NO trace. A single-part result then
+        // collapsed to '' by the empty filter below, so the model saw an empty
+        // tool_result and could not tell the call from a no-op. Every other
+        // undeliverable part in this function degrades to an explicit marker
+        // ("never dropped silently"); apply the same rule to the unmodeled ones.
+        const kind = (part as { type?: unknown }).type;
+        parts.push({
+          type: 'text',
+          text: `[unsupported MCP content part of type ${JSON.stringify(kind)}]`,
+        });
+        break;
+      }
     }
   }
   // Surface a structuredContent payload as trailing JSON text so the model
