@@ -16,6 +16,48 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.2.0 — 2026-07-28
+
+Audit wave 14 — two new cross-cutting lenses (idempotency, resource limits)
+plus fourth passes over sessions/subagents and transport by lifecycle rather
+than by file.
+
+- **A leak that stops the process exiting** (`transport/http-retry.ts`): the
+  bounded error-body drain calls `response.text()`, which **locks** the stream,
+  so when the 10 s cap fires `body.cancel()` rejects with
+  `ReadableStream is locked` into a swallowing catch and the underlying
+  source's cancel never runs — while `.finally(releaseSignals)` has already
+  detached both the caller-abort and request-timeout legs, so nothing can abort
+  that fetch again. A 503 with a stalled body is retryable, so each of up to 11
+  attempts leaves a never-settling read pinning a ref'd keep-alive socket; the
+  turn completes normally and the process can no longer exit. Two mechanisms
+  each thought they owned cancellation.
+- **A field nothing ever wrote** (`subagents/runtime.ts`): `parent_agent_id` is
+  read back in `session-functions.ts`, but no writer existed anywhere in `src/`
+  — the official field's stated purpose, rebuilding depth-2+ agent trees from
+  persisted metadata, reported `null` for every message this SDK has ever
+  written.
+- **Identity that changes on every read**: subagent sidechain records were
+  persisted with no `uuid`, so the reader's documented *legacy* fallback minted
+  a fresh `randomUUID()` each time — two reads of the same turn returned
+  different identities and the read-time dedup could never collapse a
+  double-materialized child transcript.
+- `provider.baseUrl: ''` is not nullish, so it beat both the env var and the
+  default and produced a relative endpoint; `fetch`'s URL-parse `TypeError` is
+  classified as a retryable network error, so a config typo burns 11 doomed
+  POSTs across minutes of backoff. The env leg three tokens away already
+  guarded with `nonEmpty`; the provider leg did not, on both transports.
+- A retained region **removed** at runtime came back after a transparent
+  auto-resume; `Query.close()` was a fourth generator exit that never settled
+  the manager ledger, leaking one per closed query into `usage()` for the
+  manager's life; the mirroring store kept a permanent buffer and chain entry
+  per session id, and every subagent transcript is its own id, so a fan-out
+  grows both maps monotonically.
+- Resource limits: the `meta` parser had no recursion depth cap and its
+  `RangeError` escaped the pre-flight's catch (which only converts its own
+  error type); `mcp/http`'s plain-JSON branch buffered the whole body while the
+  SSE branch caps at the named 16 MiB frame ceiling and stdio caps per line.
+
 ## 1.1.0 — 2026-07-28
 
 Audit wave 13. Three defects here permanently break a session or a request:
