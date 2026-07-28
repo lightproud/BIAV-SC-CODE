@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -160,8 +161,14 @@ def reconcile_region(region_root: Path, names: dict | None = None,
     stats['index_after'] = len(index)
     if not dry_run:
         index_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(index_path, 'w', encoding='utf-8') as f:
+        # 原子替换：channel_index.json 是频道反查的唯一入口，写一半被中断即整份不可解析。
+        # 归档器 `_save_channel_index` 读不出就「rebuilding from scratch」——offline/orphan
+        # 条目当场蒸发（正是 T35 要治的 498 孤儿目录形态），而孤儿名字自全仓压扁后
+        # 已无 git 历史可再回收（CLAUDE.md §6.3），一次撕裂即永久失名。
+        tmp = index_path.with_name(index_path.name + '.tmp')
+        with open(tmp, 'w', encoding='utf-8') as f:
             json.dump(index, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, index_path)
     return stats
 
 

@@ -52,6 +52,12 @@ SOURCE_ALIASES = {
     'bilibili_articles': 'bilibili',
     'bilibili_dynamic': 'bilibili',
     'steam_review': 'steam',
+    # taptap_collector 的 topic 帖子仍以 'taptap_post' 出稿，而 ARCH-01 收敛后
+    # 这条能力被 AC fetch_taptap 吸收、直接汇入主线 news.json。清单里却只登记了
+    # taptap_review —— 于是每一条 TapTap 帖子都在 validate_news_item 被判
+    # "unknown source" 整批丢弃（与 2026-07-02 taptap_review 单轮丢 108 条同型）。
+    # 归一到 taptap（论坛帖桶），校验放行、split/archive 照旧落 taptap/。
+    'taptap_post': 'taptap',
 }
 
 # 稀疏源（split_output + collect_global 历史两份清单的并集）

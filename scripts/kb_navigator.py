@@ -29,7 +29,7 @@ _BODY_RE = re.compile(r"^---\n.*?\n---\n", re.DOTALL)
 
 
 class KBIndexMissing(FileNotFoundError):
-    """Raised when the navigation index has not been built yet."""
+    """Raised when the navigation index is not usable (absent or unreadable)."""
 
 
 @lru_cache(maxsize=1)
@@ -39,7 +39,18 @@ def load_index() -> dict:
             "okf/kb_index.json 未生成 — 先运行 scripts/build_kb_index.py"
             "（或 scripts/build_okf_bundle.py）。"
         )
-    return json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+    # 索引**存在但读不动**（写一半被打断 / 部分检出 / 手改坏）此前会让 json.load 抛
+    # JSONDecodeError 直穿 MCP 边界——那里只接 KBIndexMissing，于是导航五件（search /
+    # get / neighbors / activate / overview）齐齐抛栈，而不是按契约返回「先重建索引」的
+    # 结构化 error（向量腿与合流腿因捕获面更宽仍能降级，唯独白盒脊柱整片崩）。
+    # 「不可用」与「不存在」对调用方是同一件事：都得先重建。
+    try:
+        return json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError, UnicodeDecodeError) as e:
+        raise KBIndexMissing(
+            f"okf/kb_index.json 存在但不可解析（{type(e).__name__}: {e}）— "
+            "重跑 scripts/build_kb_index.py（或 scripts/build_okf_bundle.py）重建。"
+        ) from e
 
 
 def _summary(cid: str, concept: dict, extra: dict | None = None) -> dict:
