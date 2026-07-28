@@ -63,6 +63,10 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
+        with:
+          # VitePress lastUpdated 读 git 提交时间；默认浅检出只有一个提交，
+          # 每页都会被戳成本次部署的时间而非内容真实的最后修改时间。
+          fetch-depth: 0
 
       - name: Download lightweight art assets from Release
         env:
