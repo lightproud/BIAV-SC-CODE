@@ -53,6 +53,8 @@ OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 # 标记；现落标，让消费端能程序化判别，把纪律从「人记」升级为「代码设防」。
 DATA_LAYER = 'output'
 
+import news_common  # noqa: E402  容错 env 读取（env_int：空串 env 不得在 import 期打死模块）
+
 # ── 数据源规范化 ──────────────────────────────────────────────────────────────
 # bilibili_articles / bilibili_dynamic 都归入 bilibili
 from sources import KNOWN_SOURCES, SPARSE_SOURCES, normalize_source
@@ -67,7 +69,7 @@ except ImportError:
 MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else _default_hours
 
 # 稀疏源使用更宽时间窗口（SPARSE_SOURCES 来自 sources.py 单一真相源）
-OFFICIAL_MAX_AGE_HOURS = int(os.environ.get('OFFICIAL_MAX_AGE_HOURS', 30 * 24))
+OFFICIAL_MAX_AGE_HOURS = news_common.env_int('OFFICIAL_MAX_AGE_HOURS', 30 * 24)
 
 
 def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:

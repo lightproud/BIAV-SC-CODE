@@ -56,7 +56,7 @@ def test_frontmatter_orders_known_keys_first():
     lines = fm.splitlines()
     assert lines[0] == "---" and lines[-1] == "---"
     # type appears before timestamp because of priority order
-    keys = [l.split(":")[0] for l in lines[1:-1]]
+    keys = [ln.split(":")[0] for ln in lines[1:-1]]
     assert keys.index("type") < keys.index("timestamp")
     assert keys.index("type") < keys.index("title")
 

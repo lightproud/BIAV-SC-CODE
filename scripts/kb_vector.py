@@ -110,7 +110,10 @@ def _l2_normalize(v: list[float]) -> list[float]:
 
 def _cosine_prenorm(a: list[float], b: list[float]) -> float:
     """两个**已归一化**向量的余弦 = 点积。"""
-    return sum(x * y for x, y in zip(a, b))
+    # strict=True 不是形式：两个向量维度不同（换模型 / 换后端 / 缓存被截断）时
+    # zip 会静默只算公共前缀，返回一个「看着正常」的相似度——检索排序自此悄悄错,
+    # 且没有任何异常可循。维度不匹配属契约破裂，宁可当场炸。
+    return sum(x * y for x, y in zip(a, b, strict=True))
 
 
 # --------------------------------------------------------------------------- #

@@ -125,7 +125,9 @@ def embed_rows(rows: list[dict], backend: str, model: str) -> list[dict]:
         batch = rows[i:i + _EMBED_BATCH]
         vecs = kb_vector.embed([r["_text"] for r in batch], backend=backend,
                                model=model, input_type="document")
-        for r, v in zip(batch, vecs):
+        # strict=True：嵌入后端若少还一条向量，zip 会静默截断，剩下的记录被丢弃
+        # ——更坏的情形是错位，把向量挂到别的文档上，从此检索结果张冠李戴。
+        for r, v in zip(batch, vecs, strict=True):
             items.append({
                 "ref": r["ref"],
                 "source": r["source"],

@@ -1139,28 +1139,28 @@ def generate_awakener_pages(chars, by_cat, play, cidx):
     for ch in playable:
         p = play.get(ch['name'])
         (by_realm.setdefault(p['realm'], []).append((ch, p)) if p else no_realm.append(ch))
-    I = []
-    I.append('---')
-    I.append('title: 唤醒体列表')
-    I.append('---')
-    I.append('')
-    I.append('# 唤醒体列表')
-    I.append('')
-    I.append(f'> 共 {len(playable)} 位可玩唤醒体，按界域分组。点击进入详情页。')
-    I.append('')
+    out_lines = []
+    out_lines.append('---')
+    out_lines.append('title: 唤醒体列表')
+    out_lines.append('---')
+    out_lines.append('')
+    out_lines.append('# 唤醒体列表')
+    out_lines.append('')
+    out_lines.append(f'> 共 {len(playable)} 位可玩唤醒体，按界域分组。点击进入详情页。')
+    out_lines.append('')
     for realm in REALM_ORDER:
         grp = by_realm.get(realm, [])
         if not grp:
             continue
-        I.append(f'## {_realm_badge(realm)} {REALM_LABEL[realm]}（{len(grp)}）')
-        I.append('')
-        I.append('<div class="awakener-grid">')
+        out_lines.append(f'## {_realm_badge(realm)} {REALM_LABEL[realm]}（{len(grp)}）')
+        out_lines.append('')
+        out_lines.append('<div class="awakener-grid">')
         for ch, p in sorted(grp, key=lambda x: x[0]['id']):
-            I.append(_awakener_card(ch, p))
-        I.append('</div>')
-        I.append('')
+            out_lines.append(_awakener_card(ch, p))
+        out_lines.append('</div>')
+        out_lines.append('')
     with open(f'{out_dir}/index.md', 'w', encoding='utf-8') as f:
-        f.write('\n'.join(I))
+        f.write('\n'.join(out_lines))
     print(f'Awakener detail pages: {count} pages + index')
 
 

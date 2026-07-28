@@ -1,3 +1,4 @@
+import os
 import socket
 import unittest
 from datetime import datetime, timedelta, timezone
@@ -447,3 +448,38 @@ class TestSafeGet(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# ── env_int / env_float 容错读取（扫描修复 2026-07-28）────────────────────────
+# 采集层原有 12 处 `int(os.environ.get('X', N))` 全在**模块顶层**。GitHub Actions 里
+# `env: X: ${{ inputs.x }}` 在 input 未填时注入的是**空字符串**（不是「未设置」），
+# `int('')` 抛 ValueError —— 发生在 import 期，整个采集模块加载失败、一轮数据全灭,
+# 报错还是一句与业务无关的 invalid literal。实测复现：
+#   HOURS_LOOKBACK="" python3 -c "import aggregator_base"  → ValueError
+class TestEnvIntFloat(unittest.TestCase):
+    def test_unset_returns_default(self):
+        with mock.patch.dict(os.environ, {}, clear=True):
+            self.assertEqual(news_common.env_int('X_UNSET', 7), 7)
+            self.assertEqual(news_common.env_float('X_UNSET', 0.5), 0.5)
+
+    def test_empty_string_returns_default(self):
+        """回归核心：空串是 Actions 未填 input 的实际注入值，绝不能抛。"""
+        with mock.patch.dict(os.environ, {'X_E': '', 'X_F': '   '}, clear=True):
+            self.assertEqual(news_common.env_int('X_E', 24), 24)
+            self.assertEqual(news_common.env_int('X_F', 24), 24)
+            self.assertEqual(news_common.env_float('X_E', 0.2), 0.2)
+
+    def test_garbage_returns_default_without_raising(self):
+        with mock.patch.dict(os.environ, {'X_G': 'abc'}, clear=True):
+            self.assertEqual(news_common.env_int('X_G', 500), 500)
+            self.assertEqual(news_common.env_float('X_G', 1.5), 1.5)
+
+    def test_valid_value_wins(self):
+        with mock.patch.dict(os.environ, {'X_V': ' 72 ', 'X_FV': '0.35'}, clear=True):
+            self.assertEqual(news_common.env_int('X_V', 24), 72)
+            self.assertAlmostEqual(news_common.env_float('X_FV', 0.2), 0.35)
+
+    def test_zero_is_honoured_not_treated_as_missing(self):
+        """0 是有效值（HOURS_LOOKBACK=0 用于触发自适应回溯），不得当缺失回落。"""
+        with mock.patch.dict(os.environ, {'X_Z': '0'}, clear=True):
+            self.assertEqual(news_common.env_int('X_Z', 24), 0)

@@ -32,7 +32,7 @@ def _sections() -> tuple[list[str], list[str]]:
 
 
 def _ids(lines: list[str]) -> list[str]:
-    return [m.group(1) for m in (ROW.match(l) for l in lines) if m]
+    return [m.group(1) for m in (ROW.match(ln) for ln in lines) if m]
 
 
 def _row_blocks(lines: list[str]) -> list[tuple[str, str]]:
@@ -56,7 +56,7 @@ def _row_blocks(lines: list[str]) -> list[tuple[str, str]]:
 
 def test_ids_are_unique_within_each_table() -> None:
     """同一张表内不得重号。"""
-    for name, lines in zip(("开账", "已清"), _sections()):
+    for name, lines in zip(("开账", "已清"), _sections(), strict=True):
         ids = _ids(lines)
         dupes = sorted({i for i in ids if ids.count(i) > 1})
         assert not dupes, f"{name}表内重号: {dupes}"
@@ -98,6 +98,6 @@ def test_open_rows_carry_a_category_and_a_source_pointer() -> None:
 
 def test_no_placeholder_ids() -> None:
     """占位号（T0 / C0）不是账，出现即为模板残留。"""
-    for name, lines in zip(("开账", "已清"), _sections()):
+    for name, lines in zip(("开账", "已清"), _sections(), strict=True):
         placeholders = [i for i in _ids(lines) if i in {"T0", "C0"}]
         assert not placeholders, f"{name}表含占位编号: {placeholders}"

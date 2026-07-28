@@ -64,7 +64,7 @@ def parse_voice_lua(path):
         }
         for cat, lines in categories.items():
             char_data['categories'][cat] = [
-                dict(l.items()) for l in lines
+                dict(ln.items()) for ln in lines
             ]
         characters.append(char_data)
 

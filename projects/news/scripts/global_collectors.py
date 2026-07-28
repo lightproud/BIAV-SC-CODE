@@ -47,9 +47,9 @@ OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
 try:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from collection_state import get_lookback_hours
-    HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "0")) or get_lookback_hours()
+    HOURS_LOOKBACK = news_common.env_int("HOURS_LOOKBACK", 0) or get_lookback_hours()
 except ImportError:
-    HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
+    HOURS_LOOKBACK = news_common.env_int("HOURS_LOOKBACK", 24)
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
 

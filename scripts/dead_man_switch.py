@@ -84,7 +84,9 @@ def fire_times(cron: str, start: datetime, days: int = SAMPLE_DAYS) -> list[date
     if len(fields) != 5:
         raise ValueError(f"cron 须为 5 段: {cron!r}")
     minutes, hours, doms, months, dows = (
-        parse_field(f, lo, hi) for f, (lo, hi) in zip(fields, CRON_BOUNDS)
+        # strict=True：fields 已校验为 5 段、CRON_BOUNDS 恒 5 项，此处钉死二者同长,
+        # 将来任一侧改动而另一侧漏改时当场报错，而不是静默少解析一段 cron。
+        parse_field(f, lo, hi) for f, (lo, hi) in zip(fields, CRON_BOUNDS, strict=True)
     )
     out: list[datetime] = []
     for offset in range(days):
@@ -114,7 +116,8 @@ def expected_interval_hours(crons: Iterable[str], reference: datetime) -> float:
     if len(stamps) < 2:
         raise ValueError("采样窗口内触发次数不足，无法推导间隔")
     gaps = [
-        (b - a).total_seconds() / 3600.0 for a, b in zip(stamps, stamps[1:])
+        # strict=False 是刻意的：相邻配对天然差一项，截断即预期行为
+        (b - a).total_seconds() / 3600.0 for a, b in zip(stamps, stamps[1:], strict=False)
     ]
     return max(gaps)
 

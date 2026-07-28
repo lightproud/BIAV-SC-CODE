@@ -293,12 +293,12 @@ def load_existing_news() -> list[dict]:
 # Adaptive: match the lookback window used by collectors
 try:
     from collection_state import get_lookback_hours
-    MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 0)) or get_lookback_hours()
+    MAX_AGE_HOURS = news_common.env_int('MAX_AGE_HOURS', 0) or get_lookback_hours()
 except ImportError:
-    MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 24))
+    MAX_AGE_HOURS = news_common.env_int('MAX_AGE_HOURS', 24)
 
 # 稀疏源使用更宽时间窗口（SPARSE_SOURCES 来自 sources.py 单一真相源）
-SPARSE_MAX_AGE_HOURS = int(os.environ.get('SPARSE_MAX_AGE_HOURS', 30 * 24))
+SPARSE_MAX_AGE_HOURS = news_common.env_int('SPARSE_MAX_AGE_HOURS', 30 * 24)
 from sources import SPARSE_SOURCES
 
 

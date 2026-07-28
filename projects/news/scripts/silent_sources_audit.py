@@ -145,7 +145,8 @@ def leaf_cadence_days(dates: list[str]) -> int | None:
         ds = [datetime.strptime(d, '%Y-%m-%d') for d in tail]
     except ValueError:
         return None
-    gaps = sorted((b - a).days for a, b in zip(ds, ds[1:]))
+    # strict=False 是刻意的：相邻配对天然差一项，截断即预期行为
+    gaps = sorted((b - a).days for a, b in zip(ds, ds[1:], strict=False))
     return gaps[len(gaps) // 2]
 
 

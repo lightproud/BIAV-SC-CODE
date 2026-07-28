@@ -181,6 +181,6 @@ def test_embed_rows_batches_and_drops_fulltext(monkeypatch):
     rows = bkv.collect(limit=10, max_files=None, min_len=8)
     items = bkv.embed_rows(rows, backend="stub", model="whatever")
     assert len(items) == len(rows)
-    for it, r in zip(items, rows):
+    for it, r in zip(items, rows, strict=True):
         assert it["ref"] == r["ref"] and "_text" not in it
         assert isinstance(it["vec"], list) and len(it["vec"]) > 0

@@ -30,6 +30,37 @@ from urllib3.util import connection as _urllib3_connection
 MAX_REDIRECTS = 5
 
 
+def env_int(name: str, default: int) -> int:
+    """读环境变量为 int，取不到 / 取到废值一律回落 default（绝不抛）。
+
+    为什么需要它：采集层原有 12 处 `int(os.environ.get('X', N))` 全在**模块顶层**。
+    GitHub Actions 里 `env: X: ${{ inputs.x }}` 在 input 未填时注入的是**空字符串**
+    （不是「未设置」），`int('')` 抛 ValueError —— 而它发生在 import 期，于是
+    整个采集模块加载失败、一轮数据全灭，报错还是一句与业务无关的 invalid literal。
+    实测：`HOURS_LOOKBACK="" python3 -c "import aggregator_base"` 直接 ValueError。
+    """
+    raw = os.environ.get(name)
+    if raw is None or not str(raw).strip():
+        return default
+    try:
+        return int(str(raw).strip())
+    except (TypeError, ValueError):
+        print(f'[news_common] 环境变量 {name}={raw!r} 非整数，回落默认值 {default}')
+        return default
+
+
+def env_float(name: str, default: float) -> float:
+    """env_int 的浮点版；同样绝不因废值抛异常。"""
+    raw = os.environ.get(name)
+    if raw is None or not str(raw).strip():
+        return default
+    try:
+        return float(str(raw).strip())
+    except (TypeError, ValueError):
+        print(f'[news_common] 环境变量 {name}={raw!r} 非数值，回落默认值 {default}')
+        return default
+
+
 def _resolve_safe_ip(host):
     """解析 host（IPv4+IPv6，经 socket.getaddrinfo），返回首个公网可达 IP 字符串；
     任一解析地址落私有/环回/链路本地/保留/多播/未指定段则视为不安全，返回 None。

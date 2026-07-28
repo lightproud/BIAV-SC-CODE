@@ -158,9 +158,9 @@ def _print(rep: dict) -> None:
     print("KB 质性能力报告（测 grep 给不了知识的维度——hit@k 测不出的那些）")
     print(f"  KB 交付 {rep['dimensions_kb_delivers']}/{rep['dimensions_total']} 个质性维度；"
           f"grep 结构上交付 {rep['dimensions_grep_delivers']}/{rep['dimensions_total']}")
-    l = rep["layer"]
-    print(f"  ① 层判定：{l['platforms_with_both_layers']} 个平台同时有全量+抽样概念，"
-          f"KB 能区分 {l['kb_can_disambiguate']}、grep {l['grep_can_disambiguate']}"
+    layer = rep["layer"]
+    print(f"  ① 层判定：{layer['platforms_with_both_layers']} 个平台同时有全量+抽样概念，"
+          f"KB 能区分 {layer['kb_can_disambiguate']}、grep {layer['grep_can_disambiguate']}"
           f"（grep 会把抽样当全量→lesson #30）")
     i = rep["identity"]
     print(f"  ② 身份：{i['names_probed']} 个角色名，KB 隔出唯一规范身份 {i['kb_isolates_canonical']}、grep {i['grep_isolates_canonical']}")

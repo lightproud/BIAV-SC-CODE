@@ -86,7 +86,9 @@ def _vector_ranker(corpus: list[tuple[str, str]], backend: str):
 
     def rank(query: str, k: int) -> list[str]:
         qv = kv.embed([query], backend=backend, input_type="query")[0]
-        scored = [(kv._cosine_prenorm(qv, dv), cid) for (cid, _), dv in zip(corpus, doc_vecs)]
+        # strict=True：语料与向量一一对应是评测有效性的前提，错位即整份对照失真
+        scored = [(kv._cosine_prenorm(qv, dv), cid)
+                  for (cid, _), dv in zip(corpus, doc_vecs, strict=True)]
         scored.sort(key=lambda r: (-r[0], r[1]))
         return [cid for _s, cid in scored[:k]]
 

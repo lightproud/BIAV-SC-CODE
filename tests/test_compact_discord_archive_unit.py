@@ -55,7 +55,7 @@ class TestProcessFile(unittest.TestCase):
         self._tmpdir.rmdir()
 
     def _read_records(self):
-        return [json.loads(l) for l in self.f.read_text(encoding='utf-8').splitlines() if l]
+        return [json.loads(ln) for ln in self.f.read_text(encoding='utf-8').splitlines() if ln]
 
     def test_compacts_and_shrinks(self):
         _write_jsonl(self.f, [_full_record(), _full_record(id='2')])
@@ -156,7 +156,7 @@ class TestMain(unittest.TestCase):
         # 全部文件已紧凑：默认值字段消失、恒留字段与记录数无损
         total = 0
         for f in self.files:
-            recs = [json.loads(l) for l in f.read_text(encoding='utf-8').splitlines() if l]
+            recs = [json.loads(ln) for ln in f.read_text(encoding='utf-8').splitlines() if ln]
             total += len(recs)
             for r in recs:
                 self.assertNotIn('pinned', r)

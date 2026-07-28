@@ -86,7 +86,7 @@ def _grep(needle: str) -> list[str]:
         )
     except (OSError, subprocess.TimeoutExpired):
         return []
-    return [l for l in res.stdout.splitlines() if l.strip()]
+    return [ln for ln in res.stdout.splitlines() if ln.strip()]
 
 
 def _classify(hit_path: str) -> str:

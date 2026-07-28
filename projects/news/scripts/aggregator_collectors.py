@@ -16,6 +16,7 @@ from aggregator_base import (
     BILIBILI_MORIMENS_CREATORS, COLLAB_KEYWORDS, HOURS_LOOKBACK,
     MAX_ITEMS_PER_FETCHER, logger, strip_html_tags,
 )
+import news_common  # env_int 等共享工具（模块级用法）
 from news_common import bilibili_spi_cookies, get_wbi_mixin_key, sign_wbi_params
 from sources import REGION_APPS  # 区服 app 标识单一真相源（2026-06-21 采集源命名规范）
 import archive_layout  # discord 布局 SSOT（2026-07-10 方案甲）
@@ -765,7 +766,7 @@ def _fetch_steam_news_one(app_id, region):
     """
     # Steam News 单次 API 调用即可拿足 30 天窗口；count=100 保证不截断。
     url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=100&maxlength=500'
-    official_hours = int(os.environ.get('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24)))
+    official_hours = news_common.env_int('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=official_hours)
     items = []
 
