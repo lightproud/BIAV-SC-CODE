@@ -11,8 +11,9 @@ Tested and working:
 """
 
 import logging
+import re
 import sys
-from datetime import datetime, UTC
+from datetime import datetime, timedelta, timezone, UTC
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -106,6 +107,33 @@ def _parse_taptap_card(card) -> dict:
     return None
 
 
+_KST = timezone(timedelta(hours=9))
+
+
+def _parse_arca_time(text: str) -> tuple[str, bool]:
+    """解析 arca.live 列表 `.col-time` 文本，返回 (ISO, is_approximate)。
+
+    arca.live 是韩国站点，当日帖只显示**韩国墙钟** "HH:MM"（KST=UTC+9）。共享的
+    parse_relative_time 把裸 "HH:MM" 按 UTC 解读：韩国傍晚 20:00 的帖被记成 20:00 UTC,
+    而彼时 UTC 才 11:00 —— 判定为「未来」再回退一整天，时间戳直接偏早约 32 小时。
+    后果是该帖被 24h 时窗过滤掉、或落进前一天的归档桶（归档按北京日分桶）。
+    故 "HH:MM" 按 KST 构造；其余格式（"MM.DD" 日期级 / 相对时间 / ISO）仍走共享真源。
+    """
+    s = (text or '').strip()
+    m = re.match(r'^(\d{1,2}):(\d{2})$', s)
+    if m:
+        now_kst = datetime.now(_KST)
+        try:
+            dt = now_kst.replace(hour=int(m.group(1)), minute=int(m.group(2)),
+                                 second=0, microsecond=0)
+        except ValueError:
+            return _parse_relative_time(s)
+        if dt > now_kst:  # 显示时刻晚于当前韩国时间 = 昨天的帖
+            dt -= timedelta(days=1)
+        return dt.isoformat(), False
+    return _parse_relative_time(s)
+
+
 def _parse_arca_row(row, mode: str) -> dict:
     """从一个 Arca.live .vrow 元素解析出 item dict；无标题返回 None。"""
     title_el = row.query_selector('.title')
@@ -123,7 +151,7 @@ def _parse_arca_row(row, mode: str) -> dict:
     if href and not href.startswith('http'):
         href = f'https://arca.live{href}'
 
-    parsed_time, time_approx = _parse_relative_time(time_text)
+    parsed_time, time_approx = _parse_arca_time(time_text)
     item = {
         'title': title[:100],
         'summary': '',

@@ -975,6 +975,12 @@ class DiscordArchiver:
                         output['channel_activity'][ch] = output['channel_activity'].get(ch, 0) + cnt
                     for h, cnt in existing.get('hourly_activity', {}).items():
                         output['hourly_activity'][h] = output['hourly_activity'].get(h, 0) + cnt
+                    # message_types 与 messages 同源累计，却漏了这一并轨：归档器每小时
+                    # 跑一轮，第二轮起本字段被本轮那几条消息的分布**整体覆盖**，于是
+                    # 同一份日统计里 messages=503 而 message_types 合计只有 3 —— 自相
+                    # 矛盾且不可事后还原（原始分布已被覆盖）。
+                    for mt, cnt in existing.get('message_types', {}).items():
+                        output['message_types'][mt] = output['message_types'].get(mt, 0) + cnt
                     all_top = top_reacted + existing.get('top_reacted_messages', [])
                     seen: set = set()
                     deduped = []

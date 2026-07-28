@@ -23,6 +23,12 @@ JSON key，content 正文仅 8.2%；多数字段近 100% 恒为默认值。本�
 _ALWAYS = ('id', 'channel_id', 'author_id', 'author_name', 'content', 'timestamp')
 # 非空才留（容器 / 可空标量）
 _KEEP_IF_TRUTHY = ('edited_timestamp', 'mentions', 'reactions', 'attachments', 'embeds', 'reply_to')
+# 论坛帖注记（仅 forum 频道消息带）：discord_archiver._fetch_forum_thread /
+# backfill_forum_starters 会把所属帖的标题、所属论坛频道、标签、是否首楼贴到 slim 上，
+# 但本压缩器是白名单式重建 —— 未登记的键一律被丢弃，落盘那一刻这些注记就永久消失
+# （帖子归档在**论坛频道**目录里，没有 thread_title 便无从知道某条属于哪个帖）。
+# 补登记，非空才留：普通频道消息不带这些键，紧凑度与既有契约不受影响。
+_KEEP_FORUM_META = ('thread_title', 'forum_channel_id', 'thread_tags', 'is_thread_starter')
 
 
 def compact_record(rec: dict) -> dict:
@@ -49,7 +55,7 @@ def compact_record(rec: dict) -> dict:
         out['has_thread'] = rec['has_thread']
     if rec.get('thread_id') is not None:
         out['thread_id'] = rec['thread_id']
-    for k in _KEEP_IF_TRUTHY:
+    for k in _KEEP_IF_TRUTHY + _KEEP_FORUM_META:
         v = rec.get(k)
         if v:                      # 非空 list / 非 null / 非空串
             out[k] = v

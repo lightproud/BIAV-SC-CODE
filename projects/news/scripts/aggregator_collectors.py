@@ -836,7 +836,6 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
     }
     cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
     items = []
-    stopped_by_cutoff = False
 
     try:
         for page in range(1, max_pages + 1):
@@ -866,8 +865,12 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
                 if m_ts:
                     lastpost = datetime.fromtimestamp(int(m_ts.group(1)), tz=UTC)
                     if lastpost < cutoff:
-                        stopped_by_cutoff = True
-                        break
+                        # 列表页首部是**置顶帖**（class 同为 forum_topic），其最后回复
+                        # 往往是几个月前。原实现一见旧帖就 break 整页 —— 只要板块挂着
+                        # 一个陈旧置顶，第 0 个块就把整轮采集掐断，日志报
+                        # 「fetched 0 threads」，与「今天真没人发帖」完全无法区分。
+                        # 改为跳过该帖；整页无新帖时由下面 page_added == 0 收尾停翻。
+                        continue
                     time_str, approx = lastpost.isoformat(), False
                 else:
                     time_str, approx = datetime.now(UTC).isoformat(), True
@@ -902,7 +905,7 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
                 items.append(item)
                 page_added += 1
 
-            if stopped_by_cutoff or page_added == 0:
+            if page_added == 0:
                 break
             time.sleep(0.5)
 

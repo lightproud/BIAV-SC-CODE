@@ -537,6 +537,12 @@ def _raw_to_item(raw: dict, source: str, cutoff: datetime) -> dict | None:
         created = datetime.fromisoformat(raw["created"])
     except Exception:
         created = datetime.now(UTC)
+    # DOM 兜底路径（API 拦截落空时才走）拿到的是页面 <time datetime="..."> 原文，
+    # 可以是**不带时区**的 "2026-07-28 12:00:00"；朴素 datetime 与带时区的 cutoff
+    # 相比会抛 TypeError，而该异常在 collect() 外层被 except 吞成一条 warning ——
+    # 整批帖子/评价一条不剩，且对外表现为「今天 TapTap 没内容」。缺时区按 UTC 解释。
+    if created.tzinfo is None:
+        created = created.replace(tzinfo=UTC)
     if created < cutoff:
         return None
 
