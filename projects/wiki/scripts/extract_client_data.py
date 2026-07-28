@@ -256,6 +256,14 @@ def extract_text_assets(env, output_dir: Path, stats: dict) -> None:
                 if text is None:
                     continue
 
+                # 去 BOM：`bytes.decode("utf-8")` 对 BOM **不报错**，于是 U+FEFF
+                # 原样留在首字符；而 Python 的 str.strip() 不把 U+FEFF 当空白，
+                # 于是 classify_text_extension 看不到开头的 `{`/`[`/`--`，一份
+                # 带 BOM 的 JSON 配置表会被判成 .txt 落盘；即便落成 .json，
+                # map_to_wiki_schema 的 json.loads 也会因首字符 BOM 抛错被
+                # `except JSONDecodeError: continue` 静默跳过——两条路都是**无声丢表**。
+                text = text.lstrip("\ufeff")
+
                 if not text or len(text.strip()) < 2:
                     continue
 
@@ -515,7 +523,11 @@ def map_to_wiki_schema(output_dir: Path) -> dict:
 
     for json_file in sorted(text_dir.glob("*.json")):
         try:
-            data = json.loads(json_file.read_text("utf-8"))
+            # utf-8-sig（而非 utf-8）：带 BOM 的配置表用 utf-8 读出来首字符是
+            # U+FEFF，json.loads 直接抛 JSONDecodeError，然后被下面的 continue
+            # 静默吃掉 —— 整张表从 schema 映射里凭空消失。utf-8-sig 在无 BOM 时
+            # 与 utf-8 完全等价，故无副作用。
+            data = json.loads(json_file.read_text("utf-8-sig"))
         except (json.JSONDecodeError, UnicodeDecodeError):
             continue
 
@@ -641,6 +653,12 @@ def main():
             print(f"    - {err}")
 
     stats_file = output_dir / "extraction_stats.json"
+    # The console line above printed the true count, but the *persisted* artifact
+    # kept only the first 50 with no record of how many were dropped: a run with
+    # 3000 per-object failures and one with exactly 50 produce byte-identical
+    # error lists. Record the total before truncating.
+    stats["error_count"] = len(stats["errors"])
+    stats["errors_truncated"] = len(stats["errors"]) > 50
     stats["errors"] = stats["errors"][:50]  # Truncate for JSON
     stats_file.write_text(json.dumps(stats, indent=2), encoding="utf-8")
     print(f"\n  Stats saved: {stats_file}")

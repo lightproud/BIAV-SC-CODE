@@ -242,7 +242,19 @@ export class DefaultPermissionGate implements PermissionGate {
       // (effectiveInput) could otherwise slip a classifier-DENY payload past
       // the classifier, which was still judging the pre-rewrite call (audit
       // 2026-07-17 L29). Identical to `input` when no hook rewrote.
-      const cls = this.classifier(toolName, effectiveInput, { readOnly, isFileEdit });
+      // The classifier is a HOST-supplied callback (PermissionGateConfig.
+      // classifier) on the same hot path as canUseTool, and a throw from it was
+      // the only host callback whose failure ESCAPED check() — past the gate,
+      // past dispatch, killing the whole run with no decision recorded. Fail
+      // CLOSED like the canUseTool-throw path below: a broken classifier must
+      // never be the reason a call proceeds, and never a reason the run dies.
+      let cls: ReturnType<ToolClassifier>;
+      try {
+        cls = this.classifier(toolName, effectiveInput, { readOnly, isFileEdit });
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        return this.deny(toolName, toolUseID, input, 'auto classifier', `classifier threw: ${msg}`);
+      }
       if (cls === 'deny') {
         return this.deny(toolName, toolUseID, input, 'auto classifier');
       }
@@ -377,6 +389,41 @@ export class DefaultPermissionGate implements PermissionGate {
 
   getMode(): PermissionMode {
     return this.mode;
+  }
+
+  /**
+   * The session rule sets, expressed as the `addRules` updates that would
+   * rebuild them on a fresh gate.
+   *
+   * Exists so a subagent's gate can inherit what the host denied MID-SESSION.
+   * A child gate is built from the construction-time option arrays, so before
+   * this it saw only the rules that existed when the query was created: a host
+   * whose `canUseTool` returned `addRules/deny/session` had its denial honored
+   * on the main loop and silently ignored by every subagent spawned afterwards
+   * — the child executed exactly what the host had just forbidden. The mode was
+   * already read live at spawn, which is what made the gap easy to miss: half
+   * the session state reached children and half did not.
+   *
+   * Rules are returned in behavior order deny -> ask -> allow. Order does not
+   * affect the outcome (check() consults the sets independently, deny first),
+   * but replaying denials first keeps a partially-applied result fail-closed.
+   */
+  exportSessionRules(): PermissionUpdate[] {
+    const updates: PermissionUpdate[] = [];
+    for (const behavior of ['deny', 'ask', 'allow'] as const) {
+      const rules = this.sessionRulesFor(behavior);
+      if (rules.length === 0) continue;
+      updates.push({
+        type: 'addRules',
+        behavior,
+        destination: 'session',
+        rules: rules.map((r) => ({
+          toolName: r.toolName,
+          ...(r.specifier !== undefined ? { ruleContent: r.specifier } : {}),
+        })),
+      });
+    }
+    return updates;
   }
 
   applyUpdates(updates: PermissionUpdate[]): void {

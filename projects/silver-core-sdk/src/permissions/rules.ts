@@ -486,11 +486,44 @@ function pathSpecifierMatches(
   value: string,
   cwd: string | undefined,
   flavor: PathFlavor,
+  segmentMode?: 'all' | 'any',
 ): boolean {
   const nvalue = resolvePath(value, cwd, flavor);
   if (matchResolvedValue(spec, nvalue, cwd, flavor)) return true;
   const real = realpathBestEffort(nvalue, flavor);
-  return real !== nvalue && matchResolvedValue(spec, real, cwd, flavor);
+  if (real !== nvalue && matchResolvedValue(spec, real, cwd, flavor)) return true;
+  // Deny/ask position only (see isInertBasenameSpec).
+  if (segmentMode !== 'any') return false;
+  const cspec = canonicalSpec(spec, flavor);
+  if (!isInertBasenameSpec(cspec)) return false;
+  const re = globToRegExp(cspec);
+  return re.test(basenameOf(nvalue)) || (real !== nvalue && re.test(basenameOf(real)));
+}
+
+/** Last `/`-delimited segment of a path already in canonical (`/`) space. */
+function basenameOf(p: string): string {
+  return p.slice(p.lastIndexOf('/') + 1);
+}
+
+/**
+ * A path specifier that can match NOTHING, on ANY input: no separator, and a
+ * LEADING wildcard so there is no literal prefix to anchor against cwd —
+ * `Read(*.env)`, `Read(*secret*)`. Tool values always resolve to an ABSOLUTE
+ * path and a single `*` never crosses `/`, so the compiled `^[^/]*\.env$` can
+ * never match `/w/secret.env`: the rule is INERT, and a deny written that way
+ * silently never fires on any file. (`Read(*)` / `Read(**)` are excluded — a
+ * pure wildcard run already matches everything through the prefix branch, and
+ * `Read(**​/*.env)` / `Read(secret*)` carry a separator or a literal prefix and
+ * match today.)
+ *
+ * Such a spec is a BASENAME pattern — gitignore reads a separator-less pattern
+ * against the basename at any depth — so pathSpecifierMatches re-tests it that
+ * way in DENY/ASK position ONLY. Purely additive, exactly like the deny-side
+ * command unwrapping: a deny that could never fire now fires, while an allow
+ * still requires the explicit `**​/` form and can never be widened by this.
+ */
+function isInertBasenameSpec(spec: string): boolean {
+  return spec.startsWith('*') && !spec.includes('/') && !/^\*+$/.test(spec);
 }
 
 /**
@@ -587,6 +620,21 @@ function isWrapperArgToken(token: string): boolean {
 }
 
 /**
+ * An option token that may carry its value as a SEPARATE following token
+ * (`sudo -u root rm …`, `timeout -s KILL 5 rm …`, `env -u FOO rm …`,
+ * `xargs -I {} rm …`). Peeling the FLAG alone left the walk staring at the
+ * flag's VALUE (`root`, `KILL`, `FOO`, `{}`) — a non-wrapper, non-flag token —
+ * so the unwrap stopped one token short of the real command and a `Bash(rm:*)`
+ * deny FAILED OPEN on ordinary, unobfuscated commands. An option carrying its
+ * value inline (`--signal=KILL`, `-n10`) needs no extra token, and the `=` form
+ * is excluded by the charset. Used only in DENY/ASK position, and only to offer
+ * MORE candidates, so it can make a deny fire but never widen an allow.
+ */
+function takesSeparateValue(token: string): boolean {
+  return /^--?[A-Za-z][A-Za-z0-9-]*$/.test(token);
+}
+
+/**
  * Strip shell GROUP wrappers so a deny/ask scoped to the inner command sees
  * through a bare subshell / brace group (audit r3 W10-1 — `(rm -rf x)` and
  * `{ rm -rf x; }` were deny fail-open: the segment starts with `(`/`{`, so a
@@ -624,6 +672,9 @@ function denyMatchCandidates(segment: string): string[] {
     out.add(seed);
     out.add(stripEnvAssignments(seed));
     let cur = stripEnvAssignments(seed);
+    // Set when the token just peeled was an option that may take its value as a
+    // separate token; the NEXT token is then that value, not the command word.
+    let flagValuePending = false;
     for (let i = 0; i < MAX_COMMAND_UNWRAP; i++) {
       const { first, rest } = splitFirstToken(cur);
       if (first === '') break;
@@ -644,8 +695,9 @@ function denyMatchCandidates(segment: string): string[] {
       const peelable =
         COMMAND_WRAPPERS.has(word) ||
         SHELL_KEYWORD_PREFIXES.has(word) ||
-        (i > 0 && isWrapperArgToken(first));
+        (i > 0 && (isWrapperArgToken(first) || flagValuePending));
       if (!peelable || rest === '') break;
+      flagValuePending = i > 0 && takesSeparateValue(first);
       cur = rest;
       out.add(rest);
     }
@@ -770,7 +822,7 @@ export function ruleMatches(
     );
   }
   if (PATH_PRIMARY_TOOLS.has(toolName)) {
-    return pathSpecifierMatches(spec, value, ctx?.cwd, pathFlavor(ctx?.platform));
+    return pathSpecifierMatches(spec, value, ctx?.cwd, pathFlavor(ctx?.platform), segmentMode);
   }
   return specifierMatches(spec, value);
 }

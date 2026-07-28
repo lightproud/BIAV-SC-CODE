@@ -926,13 +926,22 @@ _VISUALIZER_HTML = r"""<!DOCTYPE html>
 <script>
 const G = __GRAPH_DATA__;
 const palette = ["#89b4fa","#a6e3a1","#f9e2af","#f38ba8","#cba6f7","#94e2d5","#fab387","#f5c2e7"];
+// 节点 title/type/tags/id 源自生成的 frontmatter（最终溯源到游戏文件、社区文本、产物文件名），
+// 走 innerHTML 前必须转义：一个叫 `<img src=x onerror=...>` 的交付物文件名，否则会在
+// GitHub Pages 上的 /kb/ 页面执行。
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const types = [...new Set(G.nodes.map(n=>n.type))];
 const colorOf = t => palette[types.indexOf(t) % palette.length];
 const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+// 力导向是 O(V²)/帧：381 概念 = 7.2 万对，而 bundle 每出一份产物就多一个节点。原来
+// requestAnimationFrame 永远在跑，布局早就收敛了仍按帧烧这份平方开销（标签页永久占满
+// 一核；图再涨几倍即变成持续卡顿）。收敛即停摆，任何交互再唤醒。
+let settled=false;
 let W,H,dpr=1; function resize(){dpr=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;
-  cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';} resize(); addEventListener('resize',resize);
+  cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';settled=false;} resize(); addEventListener('resize',resize);
 document.getElementById('meta').textContent = `${G.stats.nodes} 概念 / ${G.stats.edges} 关系 · ${G.generated}`;
-document.getElementById('legend').innerHTML = types.map(t=>`<span><i class="dot" style="background:${colorOf(t)}"></i>${t}</span>`).join('');
+document.getElementById('legend').innerHTML = types.map(t=>`<span><i class="dot" style="background:${colorOf(t)}"></i>${esc(t)}</span>`).join('');
 
 // typed edges: high-signal (variant/lore/link) drawn bold on top, cv faint below
 const EDGE_STYLE = {
@@ -960,7 +969,12 @@ function sim(){
   for(const n of N){n.vx*=0.85;n.vy*=0.85;}
   for(let i=0;i<N.length;i++)for(let j=i+1;j<N.length;j++){
     let dx=N[i].x-N[j].x, dy=N[i].y-N[j].y, d2=dx*dx+dy*dy+0.01, d=Math.sqrt(d2);
-    let f=1400/d2; if(d<1){d=1;} let fx=dx/d*f, fy=dy/d*f;
+    // 斥力近场必须封顶：`if(d<1)` 只钳了方向除数、没钳量级，两点几乎重合时
+    // 1400/d² 会给出十万级的单帧冲量，把节点甩出视口。初始位置就是半径 200 的圆
+    // 上撒点、天然有重合，于是布局**永不收敛**——实测 4000 帧后仍有 298/381 个节点
+    // 以 >1px/帧 乱窜、坐标横跨 ±2 万像素（视口 1200×800），标签糊成一片、点不中。
+    // 只封 d<6 的近场（d≥6 与原式逐位相同），实测 1240 帧内收敛静止。
+    let f=1400/Math.max(d2,36); if(d<1){d=1;} let fx=dx/d*f, fy=dy/d*f;
     N[i].vx+=fx;N[i].vy+=fy;N[j].vx-=fx;N[j].vy-=fy;
   }
   for(const e of E){
@@ -968,8 +982,11 @@ function sim(){
     let f=(d-90)*0.02,fx=dx/d*f,fy=dy/d*f;
     a.vx+=fx;a.vy+=fy;b.vx-=fx;b.vy-=fy;
   }
+  let mv=0;
   for(const n of N){let dx=W/2-n.x,dy=H/2-n.y;n.vx+=dx*0.0008;n.vy+=dy*0.0008;
-    if(n!==(drag&&drag.node)){n.x+=n.vx;n.y+=n.vy;}}
+    if(n!==(drag&&drag.node)){n.x+=n.vx;n.y+=n.vy;}
+    mv=Math.max(mv,Math.abs(n.vx)+Math.abs(n.vy));}
+  settled = mv < 0.1;  // 收敛判据：全场最大速度 <0.1px/帧（≈6px/秒，肉眼静止）
 }
 function draw(){
   ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);
@@ -984,7 +1001,7 @@ function draw(){
       ctx.fillText(n.title, n.x+r+3/cam.k, n.y+4/cam.k);}
   }
 }
-function loop(){sim();draw();requestAnimationFrame(loop);} loop();
+function loop(){if(!settled)sim();draw();requestAnimationFrame(loop);} loop();
 
 function screenToWorld(mx,my){return {x:(mx-cam.x)/cam.k, y:(my-cam.y)/cam.k};}
 function pick(mx,my,tol){const p=screenToWorld(mx,my);let best=null,bd=1e9;
@@ -993,21 +1010,24 @@ function pick(mx,my,tol){const p=screenToWorld(mx,my);let best=null,bd=1e9;
 const tip=document.getElementById('tip');
 let down=null, moved=false;
 cv.addEventListener('mousedown',e=>{const i=pick(e.clientX,e.clientY);down={x:e.clientX,y:e.clientY,i};moved=false;
-  if(i!=null){drag={node:N[i]};}else{pan={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y};}});
+  if(i!=null){drag={node:N[i]};settled=false;}else{pan={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y};}});
 addEventListener('mousemove',e=>{
   if(down && Math.abs(e.clientX-down.x)+Math.abs(e.clientY-down.y)>4) moved=true;
-  if(drag){const p=screenToWorld(e.clientX,e.clientY);drag.node.x=p.x;drag.node.y=p.y;drag.node.vx=0;drag.node.vy=0;}
+  if(drag){const p=screenToWorld(e.clientX,e.clientY);drag.node.x=p.x;drag.node.y=p.y;drag.node.vx=0;drag.node.vy=0;settled=false;}
   else if(pan){cam.x=pan.cx+(e.clientX-pan.x);cam.y=pan.cy+(e.clientY-pan.y);}
   const i=pick(e.clientX,e.clientY);
   cv.style.cursor = i==null ? 'default' : (N[i].url ? 'pointer' : 'grab');
   if(i!=null){const n=N[i];tip.style.display='block';tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY+12)+'px';
-    tip.innerHTML=`<b>${n.title}</b><br><span style="color:#7f849c">${n.type}</span><br>${(n.tags||[]).join(' · ')}<br><span style="color:#585b70">${n.id}</span>`+(n.url?'<br><span style="color:#f9e2af">▸ 点击查看档案</span>':'');}
+    tip.innerHTML=`<b>${esc(n.title)}</b><br><span style="color:#7f849c">${esc(n.type)}</span><br>${(n.tags||[]).map(esc).join(' · ')}<br><span style="color:#585b70">${esc(n.id)}</span>`+(n.url?'<br><span style="color:#f9e2af">▸ 点击查看档案</span>':'');}
   else tip.style.display='none';});
 addEventListener('mouseup',()=>{
   if(down && !moved && down.i!=null){const n=N[down.i]; if(n.url) window.open('../'+n.url,'_blank','noopener');}
   drag=null;pan=null;down=null;});
 cv.addEventListener('wheel',e=>{e.preventDefault();const s=e.deltaY<0?1.1:0.9;
-  const wx=(e.clientX-cam.x)/cam.k,wy=(e.clientY-cam.y)/cam.k;cam.k*=s;
+  // 与捏合同一区间钳位：滚轮原本无界，往外滚几十格后 cam.k→0，标签字号 11/cam.k 涨到
+  // 十万像素级、线宽同理，浏览器光栅化这一帧就卡死；往里滚则坐标溢出、图整个飞出视口。
+  const wx=(e.clientX-cam.x)/cam.k,wy=(e.clientY-cam.y)/cam.k;
+  cam.k=Math.max(0.15,Math.min(6,cam.k*s));
   cam.x=e.clientX-wx*cam.k;cam.y=e.clientY-wy*cam.k;},{passive:false});
 
 // ---- touch (mobile): 1-finger drag/pan + tap-to-open, 2-finger pinch zoom ----
@@ -1015,7 +1035,7 @@ function tpos(t){const r=cv.getBoundingClientRect();return {x:t.clientX-r.left,y
 let tNode=null,tPan=null,pinch=null,tStart=null,tMoved=false;
 cv.addEventListener('touchstart',e=>{e.preventDefault();
   if(e.touches.length===1){const p=tpos(e.touches[0]),i=pick(p.x,p.y,22);tStart={x:p.x,y:p.y,i};tMoved=false;
-    if(i!=null){tNode=N[i];}else{tPan={x:p.x,y:p.y,cx:cam.x,cy:cam.y};}}
+    if(i!=null){tNode=N[i];settled=false;}else{tPan={x:p.x,y:p.y,cx:cam.x,cy:cam.y};}}
   else if(e.touches.length===2){tNode=null;tPan=null;tStart=null;
     const a=tpos(e.touches[0]),b=tpos(e.touches[1]);
     pinch={d:Math.hypot(a.x-b.x,a.y-b.y)||1,mx:(a.x+b.x)/2,my:(a.y+b.y)/2};}
@@ -1029,7 +1049,7 @@ cv.addEventListener('touchmove',e=>{e.preventDefault();
     pinch.d=d;pinch.mx=mx;pinch.my=my;}
   else if(e.touches.length===1){const p=tpos(e.touches[0]);
     if(tStart&&Math.abs(p.x-tStart.x)+Math.abs(p.y-tStart.y)>6)tMoved=true;
-    if(tNode){const w=screenToWorld(p.x,p.y);tNode.x=w.x;tNode.y=w.y;tNode.vx=0;tNode.vy=0;}
+    if(tNode){const w=screenToWorld(p.x,p.y);tNode.x=w.x;tNode.y=w.y;tNode.vx=0;tNode.vy=0;settled=false;}
     else if(tPan){cam.x=tPan.cx+(p.x-tPan.x);cam.y=tPan.cy+(p.y-tPan.y);}}
 },{passive:false});
 cv.addEventListener('touchend',e=>{

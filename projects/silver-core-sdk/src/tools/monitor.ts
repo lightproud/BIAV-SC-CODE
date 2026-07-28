@@ -26,6 +26,7 @@
  * goes through the permission gate under the same rules.
  */
 
+import { existsSync } from 'node:fs';
 import type {
   BuiltinTool,
   ToolContext,
@@ -163,8 +164,18 @@ export const monitorTool: BuiltinTool = {
       if (!launched.error.includes('ENOENT')) break;
     }
     if ('error' in launched) {
+      // The other half of the "same launch path as Bash run_in_background"
+      // claim: spawn ENOENT has TWO causes — the interpreter is missing, or
+      // `cwd` does not exist — and BOTH Bash chains disambiguate them. Monitor
+      // reported the raw `spawn bash ENOENT` for a deleted working directory,
+      // sending the host off to install Git Bash: a wrong answer that sounds
+      // authoritative (the 2026-07-26 platform probe's finding, ported here).
+      const detail =
+        launched.error.includes('ENOENT') && !existsSync(ctx.cwd)
+          ? `working directory does not exist: ${ctx.cwd}`
+          : launched.error;
       return {
-        content: `Monitor failed: could not launch the watch: ${launched.error}`,
+        content: `Monitor failed: could not launch the watch: ${detail}`,
         isError: true,
       };
     }

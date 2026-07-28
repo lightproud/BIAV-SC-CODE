@@ -497,6 +497,11 @@ export interface PermissionGate {
   setMode(mode: PermissionMode): void;
   getMode(): PermissionMode;
   applyUpdates(updates: PermissionUpdate[]): void;
+  /**
+   * Session rules as replayable `addRules` updates, so a child gate can
+   * inherit mid-session denials the same way it already inherits the mode.
+   */
+  exportSessionRules(): PermissionUpdate[];
   denials(): SDKPermissionDenial[];
 }
 

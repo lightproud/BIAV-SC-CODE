@@ -8,6 +8,7 @@ import type {
   APIAssistantMessage,
   ContentBlock,
   RawMessageStreamEvent,
+  StopReason,
   Usage,
 } from '../types.js';
 
@@ -278,8 +279,19 @@ export class MessageAccumulator {
         // message_delta, but a usage-only / gateway-rewritten extra frame with
         // stop_reason omitted would overwrite the delivered stop_reason with
         // undefined and flip the finalize/salvage classification.
-        msg.stop_reason = event.delta.stop_reason ?? msg.stop_reason;
-        msg.stop_sequence = event.delta.stop_sequence ?? msg.stop_sequence;
+        // W1-5 (audit r5): C4 guarded the FIELD but not the CONTAINER. The very
+        // frame C4 postulates — a "usage-only" message_delta — is most naturally
+        // written with no `delta` key at all, and dereferencing it threw a bare
+        // TypeError out of feed(): not an APIConnectionError, so no salvage, no
+        // replay classification, just a dead turn on a frame that carried
+        // nothing but a token count. Absent delta = nothing to update.
+        const terminal = event.delta as
+          | { stop_reason?: StopReason; stop_sequence?: string | null }
+          | undefined;
+        if (terminal !== undefined) {
+          msg.stop_reason = terminal.stop_reason ?? msg.stop_reason;
+          msg.stop_sequence = terminal.stop_sequence ?? msg.stop_sequence;
+        }
         // Usage merge (V8-1 / U1-4): output_tokens replace; input-side fields
         // (including BOTH cache fields) keep max — the API may re-report
         // cumulative input counts. Folded through the shared helper so this

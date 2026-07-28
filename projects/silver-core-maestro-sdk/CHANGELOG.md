@@ -12,6 +12,51 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.3.0 — 2026-07-28
+
+Audit waves 15 and 16 reached this package directly.
+
+- `driver.ts` — `LedgerDriver` dereferenced the host executor's result outside
+  its try/catch. An executor with a missing `return` rejected the attempt whose
+  tracked promise has no handler until `stop()`, so the Node host died with
+  `ERR_UNHANDLED_REJECTION` and the session was stranded in `running` — against
+  the documented "the driver never crashes on executor failure". Now booked as
+  a failed attempt; the session settles to `retrying`.
+- `goal/chaser.ts` — the verdict an evaluator returns was never validated,
+  while the agent SDK validates the same 0.83.0-unified shape. An evaluator
+  still speaking the pre-unification `{achieved, feedback}` shape is caught
+  loudly on the agent side but fell through here as "not achieved": a chase
+  whose evaluator reported success on round 1 ran five real driver-executed
+  rounds and settled `exhausted`.
+- `workflow/load.ts` — the markdown fence scanner tracked "inside a fence" as a
+  boolean and ignored backtick-run length. Since markdown's own way to quote a
+  fenced example is a longer fence, a three-backtick line inside a
+  four-backtick block was read as closing it: a documentation example could be
+  loaded and dispatched **instead of** the real graph, and the ordinary
+  wrapped-example form was rejected as having no graph at all. Now follows
+  CommonMark: a closing fence carries no info string and is at least as long as
+  the opener.
+- `workflow/load.ts` — a UTF-8 BOM was treated as insignificant by the format
+  sniffer (`trimStart` removes it, so the file routed to the JSON path) and
+  then as significant by `JSON.parse`. A byte-for-byte valid graph saved by
+  Notepad or PowerShell was silently skipped.
+- `schedule/spec.ts` — `nextFireAt`'s `dailyAt` branch corrupted the fire point
+  for first-century timestamps. `Date.UTC(year, …)` remaps years 0–99 to
+  `1900+year` while `getUTCFullYear()` reports the true year, so the round trip
+  landed ~1900 years away and `firesBetween` silently returned none of the due
+  fires. Rebuilt without the remap and proven bit-identical to `Date.UTC` over
+  700,000 randomized tuples outside that window. Not reachable from a live
+  consumer; recorded because it is a demonstrable wrong output plus silent
+  loss, at the same standard of edge the module already refuses elsewhere.
+
+Ledger corrections (no runtime change): the breaking `GoalVerdict` unification
+was filed under 0.85.0 while 0.83.0 — the version it actually shipped in — was
+labelled "lockstep alignment only". A consumer reading that would take 0.83.0
+as a free re-pin and find their `{achieved, feedback}` evaluator never settling
+on success. The 0.90.0 entry had been truncated to an orphan fragment, and
+three no-op entries were written in wording the substantive-version tool cannot
+recognize. All restored to what git says shipped.
+
 ## 1.2.0 — 2026-07-28
 
 Lockstep alignment only — no changes to this package. The family clock advanced
@@ -88,7 +133,7 @@ Audit wave 9. This package's share, all in never-audited surfaces:
 
 ## 0.97.0 — 2026-07-28
 
-**锁步对齐**(无本包运行时改动)。agent SDK 0.97.0 从包入口导出权威 token 估算器
+Lockstep alignment only — **锁步对齐**,无本包运行时改动。agent SDK 0.97.0 从包入口导出权威 token 估算器
 (`estimateTextTokens` / `estimateMessagesTokens` / `estimateToolDefsTokens`)与内建
 工具输出上限(`MAX_READ_OUTPUT_CHARS` + frozen `TOOL_OUTPUT_CAPS` 集合),黑池可删
 手工镜像——见 silver-core-sdk CHANGELOG。家族版本钟锁步(守密人 2026-07-18 裁定),
@@ -126,13 +171,13 @@ missing `model` now throws instead of silently substituting a baked-in id;
 
 ## 0.93.0 — 2026-07-28
 
-**锁步对齐**(无本包运行时改动)。agent SDK 0.93.0 修复 recap 截断丢最新进度
+Lockstep alignment only — **锁步对齐**,无本包运行时改动。agent SDK 0.93.0 修复 recap 截断丢最新进度
 (BPT P1 活锁事故根因,`buildRecap` 改头尾双保留)并把截断纪律注册表扩到全 `src/`——
 见 silver-core-sdk CHANGELOG。家族版本钟锁步(守密人 2026-07-18 裁定),故本包同步升位。
 
 ## 0.92.1 — 2026-07-28
 
-**锁步对齐**（无本包运行时改动）。agent SDK 0.92.1 修复了自动续跑时「被拒绝的
+Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 0.92.1 修复了自动续跑时「被拒绝的
 控制面覆写仍被留存并重放」——见 silver-core-sdk CHANGELOG。家族版本钟锁步
 （守密人 2026-07-18 裁定），故本包同步升位。
 
@@ -150,6 +195,7 @@ produce structured results; the zero-producer set gets a census guard).
 
 ## 0.90.0 — 2026-07-27
 
+Lockstep alignment only — no changes to this package. The family clock advanced
 for silver-core-agent-sdk 0.90.0 (checkpoint blob cap, T74 option 甲).
 
 ## 0.89.0 — 2026-07-27
@@ -183,6 +229,18 @@ output-type sweep 续 adds ReadMcpResource error + WebSearch structured results)
 
 ## 0.85.0 — 2026-07-27
 
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.85.0 (tools populate structured results, surfaced as
+`toolUseResult`; MCP accept list widened to the oldest official revision).
+
+## 0.84.0 — 2026-07-27
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.84.0 (memory index discipline + consolidation
+protocol).
+
+## 0.83.0 — 2026-07-27
+
 **BREAKING (experimental goal family): `GoalVerdict` unified with the agent
 SDK's shape** (keeper ruling 2026-07-27, "改进方向换成统一判词类型").
 
@@ -211,18 +269,6 @@ the keeper's live BPT symptom report.
   "experimental, zero production consumers" in README §status, whose whole
   point is that the first real consumer may reshape signatures — this is
   that adjustment, made BEFORE GoalChaser's first wiring instead of after.
-
-## 0.84.0 — 2026-07-27
-
-Lockstep alignment only — no changes to this package. The family clock advanced
-for silver-core-agent-sdk 0.84.0 (memory index discipline + consolidation
-protocol).
-
-## 0.83.0 — 2026-07-27
-
-Lockstep alignment only — no changes to this package. The family clock advanced
-for silver-core-agent-sdk 0.83.0 (tools populate structured results, surfaced as
-`toolUseResult`; MCP accept list widened to the oldest official revision).
 
 ## 0.82.0 — 2026-07-27
 

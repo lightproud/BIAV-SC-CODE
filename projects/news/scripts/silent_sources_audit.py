@@ -346,14 +346,25 @@ def write_health(report: dict) -> None:
             level = e['level']
             silent = e['silent_days'] if e['silent_days'] < 9999 else report['window_days']
 
-        platforms[e['source']] = {
+        prev = existing.get(e['source'], {})
+        entry = {
             'level': level,
             'last_success_date': e['last_archive_date'],
-            'last_check_date': existing.get(e['source'], {}).get('last_check_date'),
+            'last_check_date': prev.get('last_check_date'),
             'consecutive_silent_days': silent,
             'total_items': e['total_items'],
-            'errors': [],
+            # errors 原先无条件重置为 []。本步骤在 update-news.yml 里紧跟 aggregator
+            # 同一作业运行（第 92 行采集 → 第 107 行 --write），于是 tracker 本轮刚记下的
+            # 采集异常当场被抹平——入库的 source-health.json 里每个平台恒为 errors: []，
+            # 一个每小时都在抛异常的源与一个从未出过错的源在报表上一模一样。
+            # 种子化只该补全归档侧的统计，不该销毁另一写方的错误台账。
+            'errors': prev.get('errors', []),
         }
+        # 降级原因标注（如「待配 NGA_COOKIE」）同理：由 tracker 写、恢复产出时由 tracker 清，
+        # 种子化不是「恢复产出」，不得代它清除。
+        if prev.get('note') and level != 'active':
+            entry['note'] = prev['note']
+        platforms[e['source']] = entry
 
     payload = {
         'updated_at': datetime.now(UTC).isoformat(),

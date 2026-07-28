@@ -139,12 +139,13 @@ def main() -> int:
     parser.add_argument('--region', default=None, help='只处理指定区服')
     args = parser.parse_args()
     cutoff = args.cutoff or default_cutoff()
-    logger.info(f'冷月上界（不含）: {cutoff}')
+    logger.info(f'冷月上界（不含）: {cutoff}{"  [dry-run：不写任何文件]" if args.dry_run else ""}')
     t = run(cutoff, dry_run=args.dry_run, region=args.region)
-    logger.info(
-        f"合计: 压缩 {t['compressed']} / 并轨 {t['merged']} 文件，"
-        f"{t['raw_bytes'] / 1048576:.0f} MB → {t['gz_bytes'] / 1048576:.0f} MB"
-    )
+    # dry-run 时压缩没跑，gz_bytes 恒 0；原合计行照打 `N MB → 0 MB`，读起来像压到了零字节。
+    sizes = (f"待压 {t['raw_bytes'] / 1048576:.0f} MB（压后体积 dry-run 不可知）  [dry-run]"
+             if args.dry_run
+             else f"{t['raw_bytes'] / 1048576:.0f} MB → {t['gz_bytes'] / 1048576:.0f} MB")
+    logger.info(f"合计: 压缩 {t['compressed']} / 并轨 {t['merged']} 文件，{sizes}")
     return 0
 
 

@@ -1146,7 +1146,6 @@ export async function* runAgentLoop(
             !memoryFlushInjected &&
             wouldAutoCompact(deps.requestView, config, overheadTokens, lastActualPromptTokens)
           ) {
-            memoryFlushInjected = true;
             let flushVetoed = false;
             if (deps.hooks.hasHooks('PreCompact')) {
               const agg = await deps.hooks.run(
@@ -1167,6 +1166,14 @@ export async function* runAgentLoop(
               }
             }
             if (!flushVetoed) {
+              // W1-3: latch ONLY once the opportunity was actually injected.
+              // Latching before the veto check burned the episode's single
+              // write opportunity on a hook that merely denied THIS check: the
+              // next iteration took the fold branch, whose own PreCompact run
+              // may allow (a transient deny — "busy", a rate-limited evaluator),
+              // and the context was summarized away with zero flush turns ever
+              // offered. A persistent deny is unchanged (no flush, no fold).
+              memoryFlushInjected = true;
               const flushTurn: APIMessageParam = {
                 role: 'user',
                 content: [{ type: 'text', text: config.memoryFlush.prompt }],
@@ -1294,8 +1301,24 @@ export async function* runAgentLoop(
             // surface the ORIGINAL error instead: no invalid-signature 400 loop,
             // no double tool execution. (Auto-recovering read-only rewind-restart
             // is a scoped follow-up; clean-fail is the stable choice for now.)
+            // W1-1: the withhold is about a STALE THINKING SIGNATURE, so it may
+            // only fire when the protected turn actually CARRIES a thinking /
+            // redacted_thinking block. Keying it on the signing model alone
+            // withheld the switch on EVERY mid-tool-loop turn — pushAssistant
+            // stamps every turn with the model that produced it, so the stamp
+            // never equals config.fallbackModel — which made fallbackModel
+            // silently inert for any tool loop whenever thinking is off (the
+            // default) or the turn simply produced none. Nothing to invalidate
+            // -> let the fallback do its job.
             const protIdx = protectedTurnIndex(reqMsgs);
-            if (protIdx >= 0 && signingModelOf(reqMsgs[protIdx]!) !== config.fallbackModel) {
+            const protTurn = protIdx >= 0 ? reqMsgs[protIdx] : undefined;
+            const protHasThinking =
+              protTurn !== undefined &&
+              Array.isArray(protTurn.content) &&
+              protTurn.content.some(
+                (b) => b.type === 'thinking' || b.type === 'redacted_thinking',
+              );
+            if (protHasThinking && signingModelOf(protTurn!) !== config.fallbackModel) {
               deps.debug(
                 `engine: fallback to ${config.fallbackModel} withheld — the in-flight ` +
                   `tool-loop turn is signed by the failing model ${model} and its thinking ` +
@@ -1352,6 +1375,20 @@ export async function* runAgentLoop(
 
       numTurns += 1;
       lastStopReason = assistant.stop_reason;
+      // W1-4: the model id this turn is STAMPED with must be the id the strip
+      // side compares against. stripStaleThinking is called with the REQUEST
+      // model (streamAttempt's useModel), while the stamp used the RESPONSE
+      // model — and those two differ whenever the request id is not the
+      // canonical dated id: every Bedrock (`us.anthropic.claude-…-v1:0`) and
+      // Vertex (`claude-…@region`) id, and every bare alias the API resolves to
+      // a dated snapshot. The stamp then never matched, so EVERY closed turn's
+      // thinking was stripped on EVERY later request of a plain same-model
+      // session — breaking the cached message prefix each turn and (for a
+      // thinking-only turn) dropping the turn outright. `model` here is the
+      // model the attempt that produced `assistant` actually ran on (the replay
+      // / fallback paths both update it before re-issuing), so it is exactly
+      // the id the next request's strip will compare with.
+      const turnSigningModel = model;
 
       // --- Yield assistant message + MessageDisplay hooks. ------------------
       const assistantUuid = randomUUID();
@@ -1457,7 +1494,7 @@ export async function* runAgentLoop(
         // context, never persist the unexecutable tool_use unpaired.
         pushAssistant(
           assistant.content.filter((b) => b.type !== 'tool_use'),
-          assistant.model,
+          turnSigningModel,
         );
         yield errorResult(
           'error_during_execution',
@@ -1483,7 +1520,7 @@ export async function* runAgentLoop(
         // drop the orphan tool_use.
         pushAssistant(
           assistant.content.filter((b) => b.type !== 'tool_use'),
-          assistant.model,
+          turnSigningModel,
         );
         deps.debug('engine: model declined (stop_reason: refusal)');
         yield errorResult(
@@ -1502,7 +1539,7 @@ export async function* runAgentLoop(
       // for(;;) has no top-of-loop turn check, so a runaway pause loop would
       // otherwise never terminate).
       if (assistant.stop_reason === 'pause_turn') {
-        pushAssistant(assistant.content, assistant.model);
+        pushAssistant(assistant.content, turnSigningModel);
         if (config.maxTurns !== undefined && numTurns >= config.maxTurns) {
           yield errorResult('error_max_turns', `Reached maxTurns limit (${config.maxTurns})`);
           return;
@@ -1535,7 +1572,7 @@ export async function* runAgentLoop(
         // the session store's repairPairing.
         const preToolBudgetStop = budgetStopReason();
         if (preToolBudgetStop !== undefined) {
-          pushAssistant(assistant.content, assistant.model);
+          pushAssistant(assistant.content, turnSigningModel);
           deps.debug(
             `engine: budget pre-stop - ${toolUses.length} requested tool call(s) ` +
               `not executed (${preToolBudgetStop})`,
@@ -1602,6 +1639,18 @@ export async function* runAgentLoop(
           let stoppedInGroup = false;
           for (let g = 0; g < outcomes.length; g += 1) {
             if (stoppedInGroup) {
+              // W1-2: masking the RESULT must not swallow the observability the
+              // masked member already produced. A concurrent member that was
+              // itself DENIED had its denial recorded in the gate's ledger, so
+              // it rides `permission_denials` on the terminal result — while
+              // its permission_denied message never reached the stream, leaving
+              // the two surfaces of the same run disagreeing (a host that
+              // watches the message stream sees one denial, the result reports
+              // two). Surface it; only the tool_result stays masked.
+              const masked = outcomes[g]!;
+              if (masked.observability !== undefined) {
+                for (const msg of masked.observability) yield msg;
+              }
               results.push(
                 mkToolError(
                   toolUses[ti + g]!.id,
@@ -1656,14 +1705,14 @@ export async function* runAgentLoop(
                 ),
               );
             }
-            pushAssistant(assistant.content, assistant.model);
+            pushAssistant(assistant.content, turnSigningModel);
             const crashTurn: APIMessageParam = { role: 'user', content: results };
             history.push(crashTurn);
             mirror(crashTurn);
           }
           throw err;
         }
-        pushAssistant(assistant.content, assistant.model);
+        pushAssistant(assistant.content, turnSigningModel);
         const userTurn: APIMessageParam = { role: 'user', content: results };
         if (Object.keys(structuredResults).length > 0) {
           attachToolUseResults(userTurn, structuredResults);
@@ -1766,7 +1815,7 @@ export async function* runAgentLoop(
           // 400s EVERY later request of this query (audit 2026-07-10 P0-2).
           pushAssistant(
             assistant.content.filter((b) => b.type !== 'tool_use'),
-            assistant.model,
+            turnSigningModel,
           );
           const maxRetries =
             config.maxStructuredOutputRetries ?? DEFAULT_STRUCTURED_OUTPUT_RETRIES;
@@ -1821,7 +1870,7 @@ export async function* runAgentLoop(
           // end too, so any tool_use here is an unexecuted max_tokens orphan.
           pushAssistant(
             assistant.content.filter((b) => b.type !== 'tool_use'),
-            assistant.model,
+            turnSigningModel,
           );
           const bgTurn: APIMessageParam = { role: 'user', content: extra };
           // Alternation-safe: a natural-end turn cut at max_tokens mid-tool-use
@@ -1859,7 +1908,7 @@ export async function* runAgentLoop(
       // tool_result"). Drop such orphans from the PERSISTED turn (the yielded
       // assistant message already carried the raw content).
       const naturalEndContent = assistant.content.filter((b) => b.type !== 'tool_use');
-      pushAssistant(naturalEndContent, assistant.model);
+      pushAssistant(naturalEndContent, turnSigningModel);
       // ROOT LOOP ONLY: the Stop hook fires exclusively for the root loop; a
       // subagent's natural end is governed by SubagentStop (runtime-level). The
       // gate wraps the hook's INVOCATION, not merely its 'block' decision

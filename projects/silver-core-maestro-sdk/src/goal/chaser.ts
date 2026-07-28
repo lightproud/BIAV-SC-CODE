@@ -233,6 +233,30 @@ export class GoalChaser {
       }
       const summary = await this.#lastOkSummary(terminal.id);
       const verdict = await this.#evaluator({ round, session: terminal, summary });
+      // The verdict shape is the family-wide contract (0.83.0) and this is the
+      // only door it enters by — so validate it here, as the agent SDK's twin
+      // seam does (hooks/goal.ts `isVerdict`). Unvalidated, an off-vocabulary
+      // or absent `status` fell through nextGoalAction's else-branch as
+      // 'not_achieved': a host evaluator still speaking the pre-0.83.0
+      // { achieved, feedback } shape — the exact trap the unification closed —
+      // reported the goal MET and the chase silently dispatched maxRounds of
+      // real, paid rounds and settled 'exhausted'. Both packages must refuse a
+      // malformed verdict; the direction differs by seam (the agent side
+      // fail-opens because blocking is its dangerous act, here continuing is).
+      const candidate: unknown = verdict;
+      if (
+        typeof candidate !== 'object' ||
+        candidate === null ||
+        (verdict.status !== 'achieved' &&
+          verdict.status !== 'not_achieved' &&
+          verdict.status !== 'impossible')
+      ) {
+        throw new TypeError(
+          `GoalChaser.chase: evaluator returned a malformed verdict for round ${round} of ` +
+            `goal '${config.id}' — expected { status: 'achieved' | 'not_achieved' | 'impossible', ` +
+            `reason?: string }, got ${JSON.stringify(verdict)}`,
+        );
+      }
       const action = nextGoalAction({ round, maxRounds, verdict });
       rounds.push(terminal);
       this.#emit({ type: 'goal:round', goalId: config.id, round, session: terminal, verdict, action });

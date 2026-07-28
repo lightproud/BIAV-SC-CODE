@@ -286,6 +286,22 @@ export class LedgerDriver {
       if (timeoutHandle !== null) this.#clock.clearTimeout(timeoutHandle);
       this.#controllers.delete(controller);
     }
+    // A host executor that resolves with NOTHING (a missing `return`) or with
+    // a non-object is out of contract, exactly like the agent SDK's canUseTool
+    // callback returning undefined (that seam guards it — audit r4 Rg-2 — and
+    // fails closed). Here the dereference below sits OUTSIDE the try/catch
+    // above, so it rejected #runAttempt, whose tracked promise carries no
+    // handler until stop() attaches one: an unhandled rejection that KILLS the
+    // Node host and leaves the session stranded in 'running'. Book it as a
+    // failed attempt instead — the documented "the driver never crashes on
+    // executor failure" contract.
+    const raw: unknown = result;
+    if (typeof raw !== 'object' || raw === null) {
+      result = {
+        outcome: 'error',
+        error: `executor resolved with a non-ExecutorResult value (${raw === undefined ? 'undefined' : typeof raw})`,
+      };
+    }
     const outcome: QueryOutcome = timedOut ? 'timeout' : result.outcome === 'ok' ? 'ok' : 'error';
     // One payload, reused verbatim on retry: the executor result must not be
     // discarded just because the first bookkeeping write failed.

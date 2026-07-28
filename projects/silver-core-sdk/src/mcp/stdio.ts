@@ -145,6 +145,20 @@ export class StdioMcpConnection {
       const text = chunk.trim();
       if (text) this.debug(`[mcp:${this.label}] stderr: ${text}`);
     });
+    // The READ halves need the same guard the stdin write half already has: an
+    // 'error' event on an EventEmitter with no listener is re-thrown as an
+    // UNCAUGHT exception, which kills the HOST process — not just this MCP
+    // connection. A child stdio pipe errors whenever it is torn down abruptly
+    // rather than closed cleanly (ECONNRESET/EPIPE/EIO on the pipe); the most
+    // reliable trigger is close()'s own teardown, which on Windows reaps the
+    // tree with `taskkill /T /F` and resets the still-open stdio pipes. One
+    // misbehaving MCP server must never take the host down with it.
+    child.stdout.on('error', (err: Error) => {
+      this.debug(`[mcp:${this.label}] stdout error: ${err.message}`);
+    });
+    child.stderr.on('error', (err: Error) => {
+      this.debug(`[mcp:${this.label}] stderr error: ${err.message}`);
+    });
     // Prevent EPIPE on stdin from crashing the host process.
     child.stdin.on('error', (err: Error) => {
       this.debug(`[mcp:${this.label}] stdin error: ${err.message}`);

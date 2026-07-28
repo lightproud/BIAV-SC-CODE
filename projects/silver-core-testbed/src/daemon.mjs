@@ -201,6 +201,10 @@ async function main() {
   const swept = await crashSweep(host.ledger, log);
   if (swept.length > 0) log(`crash sweep settled ${swept.length} orphaned running session(s)`);
 
+  // Boundary for "failed during THIS run" (see the --once contract in the
+  // header). Taken AFTER the crash sweep so an orphan this run rescued and
+  // then exhausted still counts, and before anything is fired.
+  const runStartedAt = Date.now();
   host.scheduler.start();
   host.driver.start();
   log(`daemon up pid=${process.pid} mode=${once ? 'once' : 'soak'}`);
@@ -212,9 +216,17 @@ async function main() {
     await host.scheduler.stop();
     const drained = await drain(host.ledger);
     await host.driver.stop();
+    // Only sessions that went terminal DURING this run. A fixed one-hour
+    // look-back was a proxy for that and got it wrong whenever two rounds
+    // land inside the same hour (a workflow_dispatch re-run after a red
+    // scheduled round, a drill, a local rerun): the second round fires
+    // nothing, executes nothing — every fire point already has a footprint —
+    // and still exits 1, blaming the FIRST round's terminal sessions. A
+    // terminal session can never be retried, so a failure older than this
+    // run's start is by construction not this run's verdict.
     const failed = (await host.ledger.listSessions({ states: ['failed'] }))
-      .filter((s) => s.updatedAt >= Date.now() - 3_600_000);
-    log(`once-run complete drained=${drained} recentFailed=${failed.length}`);
+      .filter((s) => s.updatedAt >= runStartedAt);
+    log(`once-run complete drained=${drained} failedThisRun=${failed.length}`);
     for (const s of failed) log(`  failed: ${s.id} — ${s.lastError}`);
     process.exit(drained && failed.length === 0 ? 0 : 1);
   }

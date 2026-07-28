@@ -88,11 +88,23 @@ mutmut-stats.json
 node_modules/
 
 # Public-Info-Pool/Record/Community: 社区全量档案数据湖 2026-07-20 迁 BIAV-SC-DATA（T62 P2-5 §7甲）。
-# 采集/消费经 BIAV_SC_DATA_ROOT 指向 data 仓 checkout；本仓不再跟踪（git 历史保留可恢复）。
+# 采集/消费经 BIAV_SC_DATA_ROOT 指向 data 仓 checkout；本仓不再跟踪。
+# 还原路径 = BIAV-SC-DATA 数据仓 + community-data Release（CLAUDE.md §6.3 三张网）——
+# 2026-07-20 全仓压扁后 git 历史已不可追，原「历史保留可恢复」措辞作废。
 # store-patrol / kb-usage 等非数据湖子目录不受影响，仍留本仓。
 Public-Info-Pool/Record/Community/
 
 # 审计期临时探针（绝不入仓）
+# 收口的是一条实测教训：审计子代理留下的探针被 `git add -A` 扫进提交，
+# 此后每波都要人工 git rm --cached 一次。模式覆盖实际出现过的全部命名形态。
 *probe.tmp.*
 .probe/
 __probe/
+zz-probe*
+*probe*.test.ts
+*probe*.test.mts
+vitest.probe.*
+# 例外：下面三个是仓内正式档案，不是探针，必须继续跟踪。
+!.github/workflows/sdk-platform-probe.yml
+!projects/silver-core-sdk/tests/integration/cache-probe.mjs
+!projects/silver-core-sdk/tests/integration/preconnect-probe.mjs

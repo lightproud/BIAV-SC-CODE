@@ -344,9 +344,27 @@ equality. Consumer rules:
 
 - Pin **both tarballs to the same version number**
   (`silver-core-agent-sdk-0.68.0.tgz` + `silver-core-maestro-sdk-0.68.0.tgz`).
-- The maestro package declares `peerDependencies:
-  "silver-core-agent-sdk": ">=0.68.0 <1.0.0"` — installing a mixed-version
-  pair fails peer resolution by design.
+- **Nothing enforces the pair at install time — pinning both is entirely on
+  you.** At 0.68.0 the maestro package declared `peerDependencies:
+  "silver-core-agent-sdk": ">=0.68.0 <1.0.0"`, so a mixed pair failed peer
+  resolution. That declaration was **REMOVED in 0.78.1** (keeper ruling
+  2026-07-26: `src/` has zero imports of the agent SDK, and npm 7+ auto-installs
+  peers, which would force the agent package on maestro-only hosts — see the
+  maestro README "安装与家族结构"). Since 0.78.1 `silver-core-maestro-sdk`'s
+  `package.json` has **no `peerDependencies` block at all**: installing
+  `silver-core-agent-sdk-1.2.0.tgz` next to `silver-core-maestro-sdk-1.0.0.tgz`
+  succeeds silently. Do not hand-copy the old `<1.0.0` range into your own
+  manifest either — the family has been on the 1.x line since 1.0.0, so that
+  range now excludes every current version and `ERESOLVE`s. Verify the pair
+  yourself — both tarball filenames must carry the same number, and after
+  install `node_modules/silver-core-agent-sdk/package.json` `version` must equal
+  both `node_modules/silver-core-maestro-sdk/package.json` `version` and the
+  maestro package's exported `MAESTRO_SDK_VERSION` constant (the agent package
+  exports no version constant; its number is readable from its `package.json`
+  or from the `silver-core-sdk/<version>` User-Agent). Lockstep
+  equality is enforced only in THIS repo's CI
+  (`.github/scripts/check-dep-direction.mjs` section D), never on the consumer
+  side.
 - Agent-only consumers are unaffected beyond the version number (0.68.0
   itself contains no agent-side code change).
 

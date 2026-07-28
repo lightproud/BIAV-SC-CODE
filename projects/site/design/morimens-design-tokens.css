@@ -30,8 +30,15 @@
 
   /* ── TEXT PALETTE ──
      10% of visible area. Always on dark backgrounds.
-     Contrast ratios vs bg-abyss:
-       primary = 11.2:1 ✓  muted = 7.1:1 ✓  dim = 4.6:1 ✓ */
+     Measured WCAG 2.x contrast vs --m-bg-abyss (#0a0b10):
+       primary = 16.54:1 (AA/AAA pass)
+       muted   =  8.58:1 (AA/AAA pass)
+       dim     =  4.14:1 (BELOW AA 4.5:1 for normal-size text)
+     vs --m-bg-surface (#0f1018) the dim value drops further to 3.99:1.
+     => --m-text-dim is a DECORATIVE tier only: captions, meta lines,
+        non-essential labels. Never use it for text a reader must read.
+        (Earlier revisions of this file certified dim as "4.6:1 pass";
+         that number was wrong and the pass mark with it.) */
   --m-text-primary: #f0ebe0;
   --m-text-muted:   #b5aa98;
   --m-text-dim:     #7a7265;

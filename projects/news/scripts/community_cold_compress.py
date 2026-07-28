@@ -166,18 +166,23 @@ def main() -> int:
     parser.add_argument('--scope', choices=['all', 'discord', 'platforms'], default='all')
     args = parser.parse_args()
     cutoff = args.cutoff or dcc.default_cutoff()
-    logger.info(f'冷月上界（不含）: {cutoff}  scope={args.scope}')
+    logger.info(f'冷月上界（不含）: {cutoff}  scope={args.scope}'
+                f'{"  [dry-run：不写任何文件]" if args.dry_run else ""}')
+    # dry-run 下 gz_bytes 恒为 0（压缩根本没跑），而合计行照旧打 `X MB → 0.0 MB`——
+    # 读起来是「压到零字节」这种不可能的 100% 收益。dry-run 时不报压后体积，只报待压量。
+    def _sizes(t: dict) -> str:
+        if args.dry_run:
+            return f"待压 {t['raw_bytes'] / 1048576:.1f} MB（压后体积 dry-run 不可知）  [dry-run]"
+        return f"{t['raw_bytes'] / 1048576:.1f} MB → {t['gz_bytes'] / 1048576:.1f} MB"
+
     if args.scope in ('all', 'discord'):
         t = dcc.run(cutoff, dry_run=args.dry_run)
-        logger.info(f"discord 合计: 压缩 {t['compressed']} / 并轨 {t['merged']}，"
-                    f"{t['raw_bytes'] / 1048576:.0f} MB → {t['gz_bytes'] / 1048576:.0f} MB")
+        logger.info(f"discord 合计: 压缩 {t['compressed']} / 并轨 {t['merged']}，{_sizes(t)}")
         a = compress_activity_daily(cutoff, dry_run=args.dry_run)
-        logger.info(f"activity_daily 合计: 压缩 {a['compressed']} / raw胜出重压 {a['superseded']}，"
-                    f"{a['raw_bytes'] / 1048576:.1f} MB → {a['gz_bytes'] / 1048576:.1f} MB")
+        logger.info(f"activity_daily 合计: 压缩 {a['compressed']} / raw胜出重压 {a['superseded']}，{_sizes(a)}")
     if args.scope in ('all', 'platforms'):
         t = compress_platforms(cutoff, dry_run=args.dry_run)
-        logger.info(f"平台合计: 压缩 {t['compressed']} / 并轨 {t['merged']} / 保留 {t['kept']}，"
-                    f"{t['raw_bytes'] / 1048576:.1f} MB → {t['gz_bytes'] / 1048576:.1f} MB")
+        logger.info(f"平台合计: 压缩 {t['compressed']} / 并轨 {t['merged']} / 保留 {t['kept']}，{_sizes(t)}")
     return 0
 
 

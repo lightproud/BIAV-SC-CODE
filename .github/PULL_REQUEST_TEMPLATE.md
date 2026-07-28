@@ -14,7 +14,7 @@
 
 - [ ] 数据补全（Wiki characters / wheels / items / banners / stages / lore）
 - [ ] 翻译贡献（zh / en / ja）
-- [ ] 文档完善（CLAUDE.md / BIAV-SC.md / README.md / 子项目 CONTEXT.md）
+- [ ] 文档完善（CLAUDE.md / README.md / 子项目 CONTEXT.md / memory 档案）
 - [ ] Bug 修复
 - [ ] 视觉/前端改进（site / wiki theme / news 模板）
 - [ ] 其他（请说明）：

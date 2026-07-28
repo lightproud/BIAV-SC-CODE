@@ -63,6 +63,21 @@ function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
 }
 
+/** Diagnosable message for ANY thrown value (audit 2026-07-17 L74). L74 fixed
+ *  websearch.ts and resources.ts — the two tools that call a HOST-supplied
+ *  callback — and missed WebFetch, which calls one too (`ctx.fetchImpl`). An
+ *  injected fetch rejecting with a string or a plain object rendered
+ *  "WebFetch failed: undefined" through the blind `(e as Error).message` cast,
+ *  losing the only diagnostic there was. */
+function thrownMessage(e: unknown): string {
+  if (e instanceof Error) return e.message;
+  if (e !== null && typeof e === 'object') {
+    const m = (e as { message?: unknown }).message;
+    if (typeof m === 'string') return m;
+  }
+  return String(e);
+}
+
 // -- SSRF address classification --------------------------------------------
 
 function ipv4ToInt(ip: string): number | null {
@@ -645,8 +660,24 @@ export const webFetchTool: BuiltinTool = {
           }
           if (next.host !== current.host) {
             // Cross-host redirect: hand back to the model rather than following.
+            const handoff = `Redirected to ${next.toString()} ; call WebFetch again with that URL to continue.`;
             return {
-              content: `Redirected to ${next.toString()} ; call WebFetch again with that URL to continue.`,
+              content: handoff,
+              // Terminal NON-error branch, so it owes the structured result the
+              // fetched branch already emits (Grep's per-branch sweep): without
+              // it a consumer cannot tell a redirect handoff from a tool that
+              // never ran. Every field is a fact in hand — `result` is the text
+              // the model sees (the documented invariant for this field) and
+              // `bytes` is 0 because the hop's body was cancelled unread.
+              structuredOutput: {
+                bytes: 0,
+                code: res.status,
+                codeText: res.statusText,
+                url: current.toString(),
+                durationMs: Date.now() - fetchStartedAt,
+                result: handoff,
+                truncated: false,
+              } satisfies WebFetchStructuredOutput,
             };
           }
           if (hop === MAX_REDIRECTS) {
@@ -693,8 +724,20 @@ export const webFetchTool: BuiltinTool = {
         if (emptyBody !== null && typeof emptyBody.cancel === 'function') {
           void emptyBody.cancel().catch(() => {});
         }
+        const emptyNote = `HTTP ${response.status} ${response.statusText || 'No Content'}: the request succeeded and returned no content.`;
         return {
-          content: `HTTP ${response.status} ${response.statusText || 'No Content'}: the request succeeded and returned no content.`,
+          content: emptyNote,
+          // Same per-branch hole as the redirect handoff above: a bodyless
+          // SUCCESS is still a completed fetch and must report like one.
+          structuredOutput: {
+            bytes: 0,
+            code: response.status,
+            codeText: response.statusText,
+            url: current.toString(),
+            durationMs: Date.now() - fetchStartedAt,
+            result: emptyNote,
+            truncated: false,
+          } satisfies WebFetchStructuredOutput,
         };
       }
 
@@ -786,7 +829,7 @@ export const webFetchTool: BuiltinTool = {
         if (ctx.signal.aborted) throw new AbortError('WebFetch was aborted');
         return errorResult(`WebFetch failed: request timed out after ${FETCH_TIMEOUT_MS}ms`);
       }
-      return errorResult(`WebFetch failed: ${(e as Error).message}`);
+      return errorResult(`WebFetch failed: ${thrownMessage(e)}`);
     }
   },
 };

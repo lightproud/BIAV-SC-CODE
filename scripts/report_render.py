@@ -3,7 +3,7 @@
 
 用途：把 Public-Info-Pool/Resource 下的报告 markdown 渲染成银芯标准视觉（封面 + 目录 +
 暗金主题 + Noto Serif/Sans CJK + 大字号手机适配）的 PDF 与 HTML。视觉规范见
-memory/style-guide.md（CLAUDE.md §6.12）；生产流程见 .claude/skills/biav-report。
+memory/style-guide.md（CLAUDE.md §5.3 档案表）；生产流程见 .claude/commands/biav-report.md。
 
 依赖（ephemeral 容器每次会话可能需重装）：
     pip install weasyprint markdown
@@ -22,6 +22,8 @@ import re
 import os
 from pathlib import Path
 import argparse
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 def parse_frontmatter(raw):
@@ -263,8 +265,10 @@ def render(src, title, subtitle, meta, cover_note='弥萨格大学数据库终�
     # 悬着不刷盘，随后 weasyprint 就着同一份文档产 PDF，HTML 却可能只落了半截。
     with open(out_html, 'w', encoding='utf-8') as f:
         f.write(doc)
-    # base_url=cwd 让正文 markdown 的相对图片路径（相对仓库根）可被解析嵌入
-    HTML(string=doc, base_url=str(Path.cwd())).write_pdf(out_pdf)
+    # 正文里的图片路径一律**相对仓库根**（如 projects/news/data/fanart/...），故 base_url
+    # 必须钉在仓库根：原来取 Path.cwd()，在仓库根之外跑一次（cd 进 Resource 目录、CI 里
+    # 换工作目录）weasyprint 只会记一条 warning 就继续，PDF 静悄悄少掉整个同人图画廊。
+    HTML(string=doc, base_url=str(REPO_ROOT)).write_pdf(out_pdf)
     return out_html, out_pdf, n_toc, Path(out_pdf).stat().st_size
 
 

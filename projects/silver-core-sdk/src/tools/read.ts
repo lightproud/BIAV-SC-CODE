@@ -411,6 +411,21 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
         ctx.readFilePaths?.add(abs);
         return {
           content: `<system-reminder>The file "${abs}" exists but is empty (0 bytes).</system-reminder>`,
+          // Every OTHER terminal branch of Read (image / pdf / text, capped or
+          // not) emits the structured result; this one did not, so a consumer
+          // reading `toolUseResult` could not tell "the file is empty" from "the
+          // tool never ran" — the same per-branch hole the Grep sweep closed. The
+          // zeros here are facts, not fillers: a 0-byte file HAS zero lines.
+          structuredOutput: {
+            type: 'text',
+            file: {
+              filePath: abs,
+              content: '',
+              numLines: 0,
+              startLine,
+              totalLines: 0,
+            },
+          } satisfies ReadStructuredOutput,
         };
       }
 

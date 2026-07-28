@@ -377,10 +377,16 @@ def main():
     logger.info(f'合并去重后: {len(merged)} items')
 
     # Step 4: Write back
+    # `sources_run` 原先赋的是 **条目数**（`len(global_items)`）——落进入库的 news.json
+    # 就是 `"sources_run": 1439`，而全球采集器统共只有二十来个。一个名字说「跑了几个源」、
+    # 值却是「收了几条」的字段，读者按字面读到的是一个不存在的规模。名字归名字，数归数：
+    # 前者报本轮真正产出条目的去重源数，条目数另立 `items_collected`。
+    producing_sources = {i.get('source') for i in global_items if i.get('source')}
     output = {
         'updated_at': datetime.now(UTC).isoformat(),
         'summary': build_summary(merged),
-        'sources_run': len(global_items),
+        'sources_run': len(producing_sources),
+        'items_collected': len(global_items),
         'news': merged,
     }
 

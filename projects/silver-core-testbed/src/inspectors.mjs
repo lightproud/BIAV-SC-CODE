@@ -37,6 +37,26 @@ async function githubJson(url, { fetchImpl = fetch, token, signal }) {
   return res.json();
 }
 
+const DEFAULT_HEARTBEAT_PATH = 'Public-Info-Pool/Record/heartbeat/status.json';
+
+/**
+ * The cron-covered half of the watch list, read out of the dead-man switch's
+ * roster — or `null` when that roster could not be read at all.
+ *
+ * The null-vs-empty distinction is the whole point: "the roster says no cron
+ * workflows exist" and "the roster is not on disk" produce the same merged
+ * list but mean opposite things, and only the caller can decide whether the
+ * second one is a coverage loss worth reporting.
+ */
+export function deriveWatchedWorkflows(targets, read) {
+  try {
+    const status = JSON.parse(read(targets.heartbeat ?? DEFAULT_HEARTBEAT_PATH));
+    return (status.entries ?? []).map((e) => e.workflow).filter(Boolean);
+  } catch {
+    return null;
+  }
+}
+
 /**
  * 监控名单 = 手写残余 ∪ 死手开关已覆盖的定时工作流。
  *
@@ -46,18 +66,12 @@ async function githubJson(url, { fetchImpl = fetch, token, signal }) {
  * 没有 cron，死手开关看不见它们，只能人列。
  *
  * 缺文件（新克隆、首轮扫描之前）时退回纯手写名单：优雅降级，不硬依赖。
+ * 降级本身由 inspectCiStatus 报成 warn——降级可以，静默不行。
  */
 export function resolveWatchedWorkflows(targets, readFileSync = null) {
   const manual = targets.workflows ?? [];
-  const path = targets.heartbeat ?? 'Public-Info-Pool/Record/heartbeat/status.json';
   const read = readFileSync ?? ((p) => nodeReadFileSync(p, 'utf-8'));
-  let derived = [];
-  try {
-    const status = JSON.parse(read(path));
-    derived = (status.entries ?? []).map((e) => e.workflow).filter(Boolean);
-  } catch {
-    derived = [];
-  }
+  const derived = deriveWatchedWorkflows(targets, read) ?? [];
   return [...new Set([...manual, ...derived])].sort();
 }
 
@@ -74,9 +88,32 @@ export async function inspectCiStatus(targets, ctx) {
   // derivation actually runs; graceful degrade to manual on a missing file.
   const reader =
     ctx?.readFileSync ??
-    (ctx?.repoRoot ? (p) => nodeReadFileSync(resolve(ctx.repoRoot, p), 'utf-8') : undefined);
-  const workflows = resolveWatchedWorkflows(targets, reader);
+    (ctx?.repoRoot
+      ? (p) => nodeReadFileSync(resolve(ctx.repoRoot, p), 'utf-8')
+      : (p) => nodeReadFileSync(p, 'utf-8'));
+  const manual = targets.workflows ?? [];
+  const derived = deriveWatchedWorkflows(targets, reader);
+  const workflows = [...new Set([...manual, ...(derived ?? [])])].sort();
   const findings = [];
+  // Coverage loss is a finding, not a clean bill (same rule as doc-links'
+  // missing-root warning and ratchet's floor-with-no-job warning). A host
+  // that CONFIGURED a heartbeat roster is promising cron coverage; when that
+  // roster is unreadable the watch list silently shrinks to the hand-written
+  // residue and the sweep reports green over every scheduled workflow it can
+  // no longer see. Observed in production: the patrol CI checks out sparsely
+  // and excludes Public-Info-Pool/Record/, so 2026-07-27 and 07-28 both
+  // reported `watched: 2, green: 2, status: ok` — with three known-red cron
+  // workflows among the 25 that had dropped out of the list.
+  if (targets.heartbeat !== undefined && (derived === null || derived.length === 0)) {
+    findings.push({
+      level: 'warn',
+      message:
+        `heartbeat roster '${targets.heartbeat}' ` +
+        (derived === null ? 'could not be read' : 'lists no workflows') +
+        ` — the watch list collapsed to the ${manual.length} hand-written entr` +
+        `${manual.length === 1 ? 'y' : 'ies'}; every cron workflow is UNWATCHED this sweep`,
+    });
+  }
   let green = 0;
   for (const wf of workflows) {
     let data;
@@ -306,10 +343,24 @@ export async function inspectRatchet(targets, ctx) {
         level: 'warn',
         message: `floor '${f.name}' (${f.package}, ${f.floor}) has NO matching job in the weekly matrix — this floor is never re-measured`,
       });
-    } else if (job.conclusion !== 'success' && job.conclusion !== 'skipped') {
+    } else if (job.conclusion === 'failure') {
+      // The ratchet job fails EXACTLY when the measured score is under the
+      // floor, so 'failure' is the one conclusion that licenses that claim.
       findings.push({
         level: 'fail',
-        message: `ratchet job '${job.name}' concluded ${job.conclusion} — score below floor ${f.floor} (${job.html_url})`,
+        message: `ratchet job '${job.name}' concluded failure — score below floor ${f.floor} (${job.html_url})`,
+      });
+    } else if (job.conclusion !== 'success' && job.conclusion !== 'skipped') {
+      // 'cancelled' / 'timed_out' / 'action_required' / null mean the job
+      // never produced a score at all. Reporting them as "score below floor"
+      // invents a measurement that was never taken — the 2026-07-26 patrol
+      // report asserted "concluded cancelled — score below floor 82.97" for
+      // two targets whose Stryker round had been cut short. Unmeasured is a
+      // finding, but it is the SAME finding as "no matching job", not a
+      // ratchet breach.
+      findings.push({
+        level: 'warn',
+        message: `ratchet job '${job.name}' concluded ${job.conclusion} — floor ${f.floor} was NOT measured this round (${job.html_url})`,
       });
     }
   }

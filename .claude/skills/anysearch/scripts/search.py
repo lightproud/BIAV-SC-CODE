@@ -70,10 +70,20 @@ def main():
         content = (r.get("content") or r.get("description") or "").strip()
         if len(content) > 600:
             content = content[:600] + "…"
-        print(f"[{i}] {r.get('title', '').strip()}")
-        print(f"    {r.get('url', '')}")
-        if r.get("score") is not None:
-            print(f"    score={r['score']:.1f}")
+        # JSON null is a normal value for these fields (PDF/image hits often
+        # carry no title); `.get(key, default)` only defends against a MISSING
+        # key, so every read below goes through `or` / a type check instead.
+        print(f"[{i}] {(r.get('title') or '').strip()}")
+        url = (r.get("url") or "").strip()
+        if url:
+            print(f"    {url}")
+        score = r.get("score")
+        if isinstance(score, bool):
+            score = None
+        if isinstance(score, (int, float)):
+            print(f"    score={score:.1f}")
+        elif score:
+            print(f"    score={score}")
         if content:
             print(f"    {content}")
         print()

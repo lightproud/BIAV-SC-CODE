@@ -328,6 +328,14 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
     log_path = base_dir / 'archive-log.json'
     log = load_log(log_path)
 
+    # 收尾那行 `complete: N groups, M files` 原先直接打 discover 的总数——而下面的循环
+    # 在上传失败时 `continue`，那一桶既没上传也没落日志。上传失败（gh 未登录 / release
+    # create 403 / 网络断）时，日志照旧宣布「complete: 3 groups, 500 files」，
+    # 而实际归档 0 桶：报告说做完了，状态是一件没做。故只计真正走完的桶。
+    archived_groups = 0
+    archived_files = 0
+    failed_groups: list[str] = []
+
     for group, files in by_group.items():
         logger.info(f'--- archiving [{source_id}] {group} ---')
         archive_path, archive_size = create_tarball(cfg, base_dir, group, files)
@@ -338,6 +346,7 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
             if not uploaded:
                 logger.error(f'Upload failed for {group}, keeping files')
                 archive_path.unlink(missing_ok=True)
+                failed_groups.append(group)
                 continue
 
         if cfg.get('after_archive') == 'git_rm':
@@ -372,10 +381,20 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
         else:
             log.append(entry)
         save_log(log_path, log)
+        archived_groups += 1
+        archived_files += len(files)
 
     if cfg.get('clean_empty_dirs'):
         clean_empty_dirs(base_dir, [f for fs in by_group.values() for f in fs])
-    logger.info(f'[{source_id}] complete: {len(by_group)} groups, {total_files} files')
+    logger.info(
+        f'[{source_id}] complete: {archived_groups}/{len(by_group)} groups, '
+        f'{archived_files}/{total_files} files'
+    )
+    if failed_groups:
+        logger.error(
+            f'[{source_id}] {len(failed_groups)} group(s) NOT archived (upload failed): '
+            f'{", ".join(failed_groups)}'
+        )
 
 
 def main(argv: list[str] | None = None):

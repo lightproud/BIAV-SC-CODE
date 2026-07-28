@@ -140,7 +140,12 @@ export const readMcpResourceDirTool: BuiltinTool = {
     }
     try {
       const children = await ctx.mcpResources.readDir(server, uri, ctx.signal);
-      return { content: JSON.stringify(children) };
+      // This tool emitted the structured payload on every FAILURE branch
+      // (resourceErrorResult) and none on SUCCESS — the exact inverse of its
+      // sibling readMcpResourceTool, and of what a consumer needs: the listing
+      // was reachable only by re-parsing the JSON text. Same `contents` key the
+      // error branches already commit to, so one shape covers both outcomes.
+      return { content: JSON.stringify(children), structuredOutput: { contents: children } };
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('ReadMcpResourceDirTool was aborted');
       return resourceErrorResult(`ReadMcpResourceDirTool failed: ${thrownMessage(e)}`);
