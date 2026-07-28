@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.3.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.3.0`
+**当前版本 `1.4.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.4.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.4.0（2026-07-28）：审计第十七波**——Read 把路径原样插进 `system-reminder` 围栏，一个 0 字节文件靠**文件名**就能伪造出带框架权威的注入（项目指令 CLAUDE.md 同款）；WebSearch 结果 title 里一个换行伪造出完整额外记录、**绕开 `blocked_domains`**；`server_tool_use` 从未被折叠，网页搜索费**一次都没计过**、预算闸门可被整笔突破；分段系统提示下消息缓存断点被整个撤掉，4 槽只用 2、每回合把全部历史当新 token 重发。
 
 **v1.3.0（2026-07-28）：审计第十五 + 十六波**——`Read(*.env)` 是一条**永不匹配**的空规则（无字面前缀编译成 `^[^/]*\.env$`，取值恒为绝对路径），宿主以为已封实则全放行；`Bash(rm:*)` 拦不住 `sudo -u root rm -rf /`（剥旗标后停在旗标的值上）；子代理不继承会话期 deny 规则，执行的正是宿主刚禁止的动作；`auto` 分类器抛出整个逃出 `check()`；钩子 condition 门的模型评估无超时可永久挂住工具调用；MCP stdio 的 stdout/stderr 无 error 监听，一个服务器管道被拆即杀掉整个宿主。
 
