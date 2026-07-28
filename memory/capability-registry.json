@@ -201,6 +201,7 @@
       "name": "Deploy Site",
       "path": ".github/workflows/deploy-site.yml",
       "triggers": [
+        "schedule",
         "push",
         "manual"
       ],

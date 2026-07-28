@@ -74,7 +74,7 @@
   `.github/workflows/dead-man-switch.yml`
 - **`Delete Release`** _[manual]_ —   
   `.github/workflows/delete-release.yml`
-- **`Deploy Site`** _[push/manual]_ — push 触发部署 site 静态站。  
+- **`Deploy Site`** _[schedule/push/manual]_ — push 触发部署 site 静态站。  
   `.github/workflows/deploy-site.yml`
 - **`Discord Archive (JP)`** _[schedule/manual]_ — 定时归档日服 Discord 数据。  
   `.github/workflows/discord-archive-jp.yml`
