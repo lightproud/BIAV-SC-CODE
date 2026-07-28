@@ -818,13 +818,29 @@ export class TaskLedger {
     // Stamp the link AFTER the create wins, so a duplicate-id loser never
     // writes provenance onto a row it did not create.
     return this.#withLock(created.id, async () => {
-      const fresh = (await this.#store.getSession(created.id)) ?? created;
-      const linked: SessionRecord = { ...fresh, reopenOf: previous.id, attemptRound: round };
-      const won = await this.#putGuarded(linked, fresh.revision ?? 0);
-      if (!won) {
-        throw new ClaimConflictError(created.id, 'reopen link write lost to a concurrent writer');
+      // Bounded CAS retry (same discipline as cancelSession): stamping the
+      // reopenOf/attemptRound provenance is state-independent and compatible
+      // with whatever a rival did to the freshly-dispatched row — a co-resident
+      // driver in another process can CLAIM it (it is due now) in the window
+      // between the create winning and this link write. Re-read and re-apply
+      // onto the CURRENT row instead of surfacing a conflict: a bare throw here
+      // strands a session THIS call created permanently unlinked, and a caller
+      // retry then hits DuplicateSessionError (the session already exists), so
+      // the link could never land at all and the reopen chain stays unwalkable.
+      for (let round2 = 0; ; round2 += 1) {
+        const fresh = (await this.#store.getSession(created.id)) ?? created;
+        const linked: SessionRecord = { ...fresh, reopenOf: previous.id, attemptRound: round };
+        const won = await this.#putGuarded(linked, fresh.revision ?? 0);
+        if (won) {
+          return { ...linked, revision: (fresh.revision ?? 0) + 1 };
+        }
+        if (round2 >= 4) {
+          throw new ClaimConflictError(
+            created.id,
+            'reopen link write lost to concurrent writers repeatedly',
+          );
+        }
       }
-      return { ...linked, revision: (fresh.revision ?? 0) + 1 };
     });
   }
 
