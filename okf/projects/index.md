@@ -27,8 +27,8 @@
 * [silver-core-sdk RESILIENCE](/projects/silver-core-sdk-doc-resilience.md) - Audience: consumers running this SDK over imperfect links (corporate
 * [silver-core-sdk SUBAGENTS](/projects/silver-core-sdk-doc-subagents.md) - Goal: wire a host (BPT) to the SDK's subagent surface the way Claude Code uses
 * [silver-core-sdk TOOL-PARITY](/projects/silver-core-sdk-doc-tool-parity.md) - Why this file exists: the SDK reproduces the **Claude Code CLI agent** tool
-* [site design · morimens-design-system-guide.html](/projects/site-design-morimens-design-system-guide.md) - site 设计系统权威（morimens-design-system-guide.html，21.1KB）：设计令牌 / 组件规范来源。
-* [site design · morimens-design-tokens.css](/projects/site-design-morimens-design-tokens.md) - site 设计系统权威（morimens-design-tokens.css，6.7KB）：设计令牌 / 组件规范来源。
+* [site design · morimens-design-system-guide.html](/projects/site-design-morimens-design-system-guide.md) - site 设计系统权威（morimens-design-system-guide.html，22.7KB）：设计令牌 / 组件规范来源。
+* [site design · morimens-design-tokens.css](/projects/site-design-morimens-design-tokens.md) - site 设计系统权威（morimens-design-tokens.css，7.2KB）：设计令牌 / 组件规范来源。
 * [archive_sources.json（归档注册表）](/projects/news-archive-sources-registry.md) - T2 数据层归档声明式注册表：哪些来源归档到哪、如何驱逐（archive_engine 读它干活）。
 * [Releases 藏宝图](/projects/releases-treasure-map.md) - 合并自 art-assets-v2 + audio-assets-v1 + audio-raw-v1 + video-assets-v1 + （2026-06
 * [测试策略](/projects/doc-testing-strategy.md) - 银芯的测试不靠单一数字护城。三层护栏各管一件事，互相补盲：
