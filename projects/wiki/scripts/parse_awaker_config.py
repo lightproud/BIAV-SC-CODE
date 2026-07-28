@@ -9,8 +9,26 @@ LUA_DIR = 'Public-Info-Pool/Reference/Game-Unpacked/Lua表还原'
 OUT_DIR = 'projects/wiki/data/processed'
 
 
+def first_value(value, default=''):
+    """把 parse_lua_table 的「重复键 → list」形态压回单值。
+
+    parse_lua_table 对同一块内重复出现的键（典型来源：块体里嵌套的子表带同名
+    字段，正则一视同仁地平摊收走）收成 list。Introduction / AwakerIntroduction /
+    PotencyDesc 三处显式处理过，其余字段没有：`clean_markup(['a','b'])` 会在
+    re.sub 上抛 TypeError **中途炸掉整轮 main()**（此时 characters.json /
+    summon.json 已落盘，输出目录留下半套产物）；不走 clean_markup 的字段
+    （Name / Title / Gender ...）则更糟——list 原样序列化进 JSON，产物里出现
+    `"name": ["第一关","内层"]`，schema 与站点渲染一起跟着歪，且**不报错**。
+    取首个：块自身的顶层字段在文档序上先于嵌套子表，与既有 `[0]` 取法一致。
+    """
+    if isinstance(value, list):
+        return value[0] if value else default
+    return value
+
+
 def clean_markup(text):
     """Remove Unity rich text / custom markup tags, keep display text."""
+    text = first_value(text)
     text = re.sub(r'<color=[^>]+>', '', text)
     text = re.sub(r'</color>', '', text)
     text = re.sub(r'<size=[^>]+>', '', text)
@@ -69,16 +87,16 @@ def parse_awaker_config():
 
         char = {
             'id': cid,
-            'name': entry.get('Name', ''),
-            'title': entry.get('Title', ''),
-            'gender': entry.get('Gender', ''),
-            'birthday': entry.get('Age', ''),
-            'height': entry.get('Height', ''),
-            'weight': entry.get('Weight', ''),
-            'gi': entry.get('Gi', ''),
-            'voice_actor': entry.get('VoiceActor', ''),
-            'painter': entry.get('Painter', ''),
-            'characteristic': entry.get('Characteristic', ''),
+            'name': first_value(entry.get('Name', '')),
+            'title': first_value(entry.get('Title', '')),
+            'gender': first_value(entry.get('Gender', '')),
+            'birthday': first_value(entry.get('Age', '')),
+            'height': first_value(entry.get('Height', '')),
+            'weight': first_value(entry.get('Weight', '')),
+            'gi': first_value(entry.get('Gi', '')),
+            'voice_actor': first_value(entry.get('VoiceActor', '')),
+            'painter': first_value(entry.get('Painter', '')),
+            'characteristic': first_value(entry.get('Characteristic', '')),
             'introduction': clean_markup(intro),
             'gameplay_intro': clean_markup(awaker_intro),
             'summon_slogan': clean_markup(entry.get('SummonSlogan', '')),
@@ -96,8 +114,8 @@ def parse_summon():
         entry = data[sid]
         banner = {
             'id': sid,
-            'name': entry.get('Name', ''),
-            'title': entry.get('Title', ''),
+            'name': first_value(entry.get('Name', '')),
+            'title': first_value(entry.get('Title', '')),
             'desc': clean_markup(entry.get('Desc', '')),
             'short_desc': clean_markup(entry.get('ShortDesc', '')),
             'rate_up': clean_markup(entry.get('ProbabilityUpDesc', '')),
@@ -119,7 +137,7 @@ def parse_stages():
         entry = stages[sid]
         stage_list.append({
             'id': sid,
-            'name': entry.get('Name', ''),
+            'name': first_value(entry.get('Name', '')),
             'desc': clean_markup(entry.get('Desc', '')),
         })
 
@@ -128,9 +146,9 @@ def parse_stages():
         entry = groups[gid]
         group_list.append({
             'id': gid,
-            'name': entry.get('Name', ''),
+            'name': first_value(entry.get('Name', '')),
             'desc': clean_markup(entry.get('Desc', '')),
-            'type': entry.get('TypeText', ''),
+            'type': first_value(entry.get('TypeText', '')),
             'reward_desc': clean_markup(entry.get('StageGroupRewardDescription', '')),
         })
 
@@ -148,7 +166,7 @@ def parse_potency():
             desc = desc[0]
         potencies.append({
             'id': pid,
-            'name': entry.get('PotencyName', ''),
+            'name': first_value(entry.get('PotencyName', '')),
             'desc': clean_markup(desc),
         })
     return potencies
@@ -161,7 +179,7 @@ def parse_tasks():
         entry = data[tid]
         tasks.append({
             'id': tid,
-            'name': entry.get('Name', ''),
+            'name': first_value(entry.get('Name', '')),
             'desc': clean_markup(entry.get('Desc', '')),
         })
     return tasks
@@ -174,7 +192,7 @@ def parse_feature_unlock():
         entry = data[fid]
         features.append({
             'id': fid,
-            'feature_name': entry.get('FeatureName', ''),
+            'feature_name': first_value(entry.get('FeatureName', '')),
             'lock_tip': clean_markup(entry.get('LockTip', '')),
             'unlock_desc': clean_markup(entry.get('UnlockDesc', '')),
         })

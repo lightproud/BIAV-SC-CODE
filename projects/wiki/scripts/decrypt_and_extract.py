@@ -229,6 +229,12 @@ def extract_with_key(
                 if text is None:
                     continue
 
+                # 去 BOM：utf-8 解码 BOM **不报错**，U+FEFF 会原样留在首字符，
+                # 而 str.strip() 不把它当空白 —— classify_text_extension 于是
+                # 看不到开头的 `{`/`[`/`--`，一份带 BOM 的 JSON 配置表被判成
+                # .txt 落盘（且 BOM 一并写进文件，下游 json.loads 再度失败）。
+                text = text.lstrip("\ufeff")
+
                 if not text or len(text.strip()) < 2:
                     continue
 

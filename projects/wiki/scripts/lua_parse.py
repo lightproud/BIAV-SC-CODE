@@ -8,7 +8,11 @@ pairs returned here.
 import re
 
 _HEADER = re.compile(r'\[(\d+)\]\s*=\s*\{')
-_FIELD = re.compile(r'(\w+)\s*=\s*"((?:[^"\\]|\\.)*)"\s*,')
+# 不要求尾随逗号：块内**最后一个**字段常写成 `K = "v" }`（无尾逗号），
+# 旧式 `..."\s*,` 会把它整条漏掉——而这些字段往往正是各调用方的准入闸
+# （StoryDesc / AwakerVoiceContent / Title），漏掉字段 = **整条记录**被静默丢弃。
+# 与 parse_awaker_config.parse_lua_table 的同类正则保持一致。
+_FIELD = re.compile(r'(\w+)\s*=\s*"((?:[^"\\]|\\.)*)"')
 
 
 def _scan_block_body(content: str, start: int) -> tuple[str, int]:

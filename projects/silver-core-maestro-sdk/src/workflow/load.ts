@@ -31,25 +31,45 @@ export type WorkflowGraphLoadResult =
  * example blocks, silently loading the wrong definition. Fences only count
  * when opened at top level with <= 3 leading spaces; any other fence opens an
  * opaque region skipped until its closing line.
+ *
+ * The opening run's LENGTH is tracked (audit wave 16). Markdown's own way to
+ * quote a fenced example is a LONGER fence around it (````md … ```json … ```
+ * … ````), and a length-blind scanner read the inner 3-backtick closer as
+ * closing the outer 4-backtick region: the scanner then believed it was back
+ * at top level halfway through a documentation block. That mis-tracking both
+ * swallowed the real definition (a valid capability file loaded as
+ * `{ ok: false }` — the hot-layer gate silently skipping a workflow the host
+ * did write) and, when the quoted block held a bare fence before its ```json
+ * example, CAPTURED THE EXAMPLE — the exact "silently loading the wrong
+ * definition" failure audit r2 exists to prevent. CommonMark's rule is the
+ * fix: a closing fence carries NO info string and is at least as long as the
+ * opener; anything else is content of the open region.
  */
 function extractTopLevelFence(source: string): string | null {
   const lines = source.split('\n');
-  let inOtherFence = false;
+  /** Backtick count of the currently open fence; 0 = at top level. */
+  let openLen = 0;
   let capturing = false;
   const body: string[] = [];
   for (const line of lines) {
-    const m = /^ {0,3}```(.*)$/.exec(line);
+    const m = /^ {0,3}(`{3,})(.*)$/.exec(line);
     if (m !== null) {
-      // The capture group always participates in a match (possibly empty),
-      // so no ?? fallback exists here — it would be dead code.
-      const info = (m[1] as string).trim();
-      if (capturing) return body.join('\n');
-      if (inOtherFence) {
-        if (info === '') inOtherFence = false;
+      // Both capture groups always participate in a match (the info string
+      // possibly empty), so no ?? fallback exists here — it would be dead code.
+      const ticks = (m[1] as string).length;
+      const info = (m[2] as string).trim();
+      if (openLen > 0) {
+        if (info === '' && ticks >= openLen) {
+          if (capturing) return body.join('\n');
+          openLen = 0;
+        } else if (capturing) {
+          // A fence line that cannot close this block is body content.
+          body.push(line);
+        }
         continue;
       }
       if (info === 'json' || info === 'workflow') capturing = true;
-      else inOtherFence = true;
+      openLen = ticks;
       continue;
     }
     if (capturing) body.push(line);
@@ -87,7 +107,15 @@ export function parseWorkflowGraphSource(
   }
   let parsed: unknown;
   try {
-    parsed = JSON.parse(jsonText);
+    // A leading UTF-8 BOM is stripped (audit wave 16): `readFile(…, 'utf8')`
+    // hands it through verbatim and JSON.parse rejects it, so a definition
+    // file saved by an editor that prepends one (Windows Notepad, PowerShell
+    // Set-Content) degraded to skip with "not valid JSON: Unexpected token".
+    // The module already treated the BOM as insignificant on the way in — the
+    // format sniff above trims it before testing for '{' and classifies such
+    // a source as json — so parsing the un-stripped text contradicted the
+    // sniff that routed it here. RFC 8259 §8.1 sanctions ignoring it.
+    parsed = JSON.parse(jsonText.replace(/^\uFEFF/, ''));
   } catch (err) {
     return fail(`graph definition is not valid JSON: ${(err as Error).message}`);
   }
