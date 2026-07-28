@@ -4565,6 +4565,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15599.md",
       "rel": "提及:萨尔瓦多",
       "rel_type": "mention"
@@ -4627,12 +4633,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
       "rel_type": "mention"
     },
     {
@@ -5987,6 +5987,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15599.md",
       "rel": "提及:萨尔瓦多",
       "rel_type": "mention"
@@ -6049,12 +6055,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
       "rel_type": "mention"
     },
     {

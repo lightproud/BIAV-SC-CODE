@@ -380,7 +380,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 0
     },
     "/characters/15563.md": {
       "type": "character",
@@ -436,7 +436,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/characters/15567.md": {
       "type": "character",
@@ -4606,7 +4606,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 451 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 452 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4620,7 +4620,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3182 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3188 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4648,7 +4648,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1813 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1814 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4732,7 +4732,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5315 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5317 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4746,7 +4746,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 151 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 152 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4788,7 +4788,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2338 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2346 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4802,7 +4802,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11487 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11498 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4816,7 +4816,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8728 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8748 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4830,7 +4830,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3114 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3118 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5668,18 +5668,6 @@
         "mention"
       ]
     ],
-    "/characters/15562.md": [
-      [
-        "/community/community-bilibili.md",
-        "提及:莉兹",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
-        "提及:莉兹",
-        "mention"
-      ]
-    ],
     "/characters/15563.md": [
       [
         "/characters/15569.md",
@@ -5753,7 +5741,17 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:希莱斯特",
         "mention"
       ],
@@ -7562,6 +7560,11 @@
     ],
     "/community/community-bilibili.md": [
       [
+        "/characters/15566.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
         "/characters/15599.md",
         "提及:萨尔瓦多",
         "mention"
@@ -7614,11 +7617,6 @@
       [
         "/characters/77921.md",
         "提及:卡拉布",
-        "mention"
-      ],
-      [
-        "/characters/15562.md",
-        "提及:莉兹",
         "mention"
       ],
       [
@@ -9461,6 +9459,11 @@
     ],
     "/sources/bilibili.md": [
       [
+        "/characters/15566.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
         "/characters/15599.md",
         "提及:萨尔瓦多",
         "mention"
@@ -9513,11 +9516,6 @@
       [
         "/characters/77921.md",
         "提及:卡拉布",
-        "mention"
-      ],
-      [
-        "/characters/15562.md",
-        "提及:莉兹",
         "mention"
       ],
       [
