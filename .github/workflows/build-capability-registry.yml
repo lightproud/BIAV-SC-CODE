@@ -15,6 +15,18 @@ on:
       - '.claude/commands/**'
       - '.claude/skills/**'
       - 'memory/capability-annotations.json'
+      # 2026-07-28 扫描补齐：以下三条同为 build_capability_registry.py 的**判据输入**，
+      # 却不在触发面上——而本工作流**没有任何 cron 兜底**，所以漏掉即永久漂移：
+      #   - .mcp.json：collect_roots() 从它认「mcp 平面」。改它（换/摘服务端）会让
+      #     mcp_server.py 及其整条 import 闭包实际失去入口，目录却继续写「live (mcp)」。
+      #   - .claude/settings.json：同函数认「hook 平面」（当前为空，正因如此更容易漏）。
+      #   - tests/**：test_refs() 决定一个部件是 `test-only` 还是 `orphaned`。删掉某脚本
+      #     的最后一个测试引用后，孤儿检测仍旧报它「有测试覆盖」——守卫对一个已无人
+      #     引用的部件出具清白证明，比不检测更坏。
+      # 本任务只在结果真变了才提交，多数轮次是空跑，代价可忽略。
+      - '.mcp.json'
+      - '.claude/settings.json'
+      - 'tests/**'
   workflow_dispatch:
 
 concurrency:

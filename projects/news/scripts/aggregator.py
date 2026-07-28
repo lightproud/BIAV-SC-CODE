@@ -227,12 +227,8 @@ def run():
 
     logger.info(f'Done! {len(unique_news)} items written to {OUTPUT_PATH}')
 
-    # Record successful run for adaptive lookback
-    try:
-        from collection_state import mark_collection_done
-        mark_collection_done(item_count=len(unique_news))
-    except ImportError:
-        pass
+    global LAST_ITEM_COUNT
+    LAST_ITEM_COUNT = len(unique_news)
 
     # §4.2 R1: 输出已落盘保全数据；任一核心源失败写哨兵，由 workflow 末尾标红（H9），
     # 不再非零退出（那会跳过后续 collect_global/split/archive/commit，丢掉成功源数据）。
@@ -244,8 +240,31 @@ def run():
     return True
 
 
+LAST_ITEM_COUNT = 0
+
+
+def mark_collected(item_count: int):
+    """推进「采集到此为止」水位（collection_state.last_collected_at）。
+
+    水位只能在**整条链路都干净**时推进。它决定下一轮的回溯窗口
+    （get_lookback_hours = max(24h, 距上次成功的间隔)），也就是说：某一轮
+    明明有源没采到却照样把水位推到「现在」，那段没采到的时间就再也不会
+    被任何后续窗口覆盖——窗口被水位一路顶着，永远只回看 24 小时。
+    典型：reddit（R1 硬失败源）被 CI 出口 IP 拦 30 小时，期间每 3 小时一轮
+    AC 照样标记成功；恢复那一轮回溯窗口仍是 24h，最早那 6 小时的帖子
+    整段静默丢失。原调用点在 run() 内、且排在核心源失败判定之前，
+    连 collect_global 全球采集阶段都还没跑，是双重的「部分成功即推进水位」。
+    """
+    try:
+        from collection_state import mark_collection_done
+    except ImportError:
+        return
+    mark_collection_done(item_count=item_count)
+
+
 if __name__ == '__main__':
-    run()
+    ac_ok = run()
+    gc_ok = True
     # ARCH-01 统一入口（goal 2026-06-20「合并所有采集器功能到 AC」）：全球平台采集 +
     # 最终合并 / 全量层（news-raw）亦在本入口完成，collect_global 降为被调库，不再单独
     # 作为 workflow 步骤（否则会与本链路重复采集）。run() 已把 AC 项写入 news.json；
@@ -257,12 +276,25 @@ if __name__ == '__main__':
         # collect_global.main() 在全球采集器全空时 sys.exit(1)（lesson #2 空数据保护）。
         # AC 输出已落盘保全，沿用非阻断语义（workflow continue-on-error + 哨兵兜底）。
         if exc.code:
+            gc_ok = False
             logger.warning(
                 f'global collectors signaled empty/failure (exit {exc.code}); '
                 'AC output preserved, pipeline continues'
             )
     except Exception as exc:
+        gc_ok = False
         logger.error(f'global collectors phase failed: {exc}; AC output preserved')
+
+    # 水位只在两段采集都干净时推进（见 mark_collected 的说明）。任一段失败就
+    # 让水位停在原处：下一轮 get_lookback_hours 自动把窗口拉宽到覆盖这段空档
+    # （封顶 7 天），失败期间漏掉的条目还有机会补回来。
+    if ac_ok and gc_ok:
+        mark_collected(LAST_ITEM_COUNT)
+    else:
+        logger.warning(
+            'collection watermark NOT advanced (partial run): '
+            f'ac_ok={ac_ok} gc_ok={gc_ok} — next run widens its lookback window'
+        )
     # P0-3（2026-07-02）：本次运行的校验丢弃计数落盘（零丢弃也写零值文件），
     # 由 silent_sources_audit --write 并入 source-health、--strict 参与告警门控。
     # 覆盖范围 = AC 校验链路（validate_all_news）；GC 侧（collect_global）不走

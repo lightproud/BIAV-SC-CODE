@@ -36,13 +36,13 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.3.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `1.3.0`
+**当前版本 `1.4.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `1.4.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
-**v1.3.0（2026-07-28）：审计第十五 + 十六波（本包份额）**——驱动器在 try/catch 外解引用执行器返回值，少一个 `return` 即让宿主以未处理拒绝崩溃、会话搁浅 `running`；`GoalChaser` 从不校验评审器判词形状，旧形状评审器报成功却实跑满轮落 `exhausted`；工作流加载器围栏扫描器不看反引号根数，文档示例图可顶替真图被派发，BOM 文件被静默跳过；`nextFireAt` 撞 `Date.UTC` 两位年份重映射。另订正台账：破坏性 `GoalVerdict` 统一被记错版本。
+**v1.4.0（2026-07-28）：审计第十七波（本包份额）**——两处只被测试替身宽容挡住的真缺陷：`claimDue` 把并发上限套在存储**恰好**返回的顺序上（契约根本不规定顺序），对合规的最新在前存储实测 30 tick 里两个会话一次没跑；`systemClock.setTimeout` 未封顶，超 2^31-1 ms 溢出成 1 ms，30 天的 `queryTimeoutMs` 反而让每次尝试都来不及完成。
 
 
 

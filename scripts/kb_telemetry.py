@@ -108,13 +108,21 @@ def summarize(log_path: Path | None = None) -> dict:
 
     all_ids = _all_concept_ids()
     reached = set(reach)
+    # 「触达概念」只能数**概念**。埋点是全工具共用的（mcp_server._log），而两条腿记的
+    # id 根本不是同一物种：kb_search / kb_get / kb_neighbors / kb_activate / kb_anchor
+    # 记 concept id，**kb_vector_search 记的是长尾档案 ref**（Public-Info-Pool/Record/
+    # Community/... 之类的行指针）。原先把两者混进一个集合直接计数，于是每一次向量腿
+    # 调用（单次可返 50 条 ref）都会把 distinct_concepts_reached 往上顶，reach_ratio
+    # 甚至能冲破 100%——一份用来回答「知识库到底被用到了多少」的报告，拿别人的借阅
+    # 记录充自己的读者数。dead_concepts 本来就是集合差、不受影响，故只修计数口径。
+    reached_concepts = (reached & all_ids) if all_ids else reached
     dead = sorted(all_ids - reached) if all_ids else []
     return {
         "total_calls": len(calls),
         "by_tool": dict(by_tool.most_common()),
-        "distinct_concepts_reached": len(reached),
+        "distinct_concepts_reached": len(reached_concepts),
         "total_concepts": len(all_ids),
-        "reach_ratio": round(len(reached) / len(all_ids), 4) if all_ids else None,
+        "reach_ratio": round(len(reached_concepts) / len(all_ids), 4) if all_ids else None,
         "top_reached": reach.most_common(15),
         "zero_hit_queries": zero_hit.most_common(20),
         "dead_concepts_count": len(dead),

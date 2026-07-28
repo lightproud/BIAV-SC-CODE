@@ -25,12 +25,14 @@ export type DerivedSystemField = {
   system: string | TextBlockParam[];
   /** The matching applyCacheControl systemBoundary for this shape. */
   boundary: 'first' | 'last' | 'dual' | 'preserve';
-  /** True when the forwarded caller blocks ALREADY SPEND cache-breakpoint
-   *  budget (at least one carries cache_control), so the loop must not add a
-   *  message breakpoint on top — 4-cap budget. Caller blocks that carry no
-   *  breakpoint at all (or an array that filtered down to nothing) spend
-   *  nothing, so the message breakpoint stays available. */
+  /** Boolean summary of `callerCacheMarkers` (> 0): the forwarded caller blocks
+   *  place at least one cache_control breakpoint of their own. */
   callerBlocks: boolean;
+  /** How many cache-breakpoint slots the forwarded caller blocks ALREADY SPEND.
+   *  The API caps a request at 4 breakpoints and the engine reserves one for
+   *  the tool schemas, so the loop may still add its message breakpoint while
+   *  this is below 3 (config-builder caps segment markers at 3). */
+  callerCacheMarkers: number;
 };
 
 /**
@@ -96,13 +98,22 @@ export function deriveSystemField(
           ? ('first' as const)
           : ('last' as const);
   // The 4-cap is the ONLY reason the loop drops the message breakpoint on this
-  // seam: tools(1) + up to three caller markers already fills it. Segment
-  // blocks that mark NOTHING (a host that layers its prompt but leaves caching
-  // to the engine, or a segments array that filtered down to empty) spend zero
-  // slots — reporting "caller owns the budget" there silently disabled
-  // conversation caching for the whole session while three slots sat unused.
-  const callerSpendsBudget =
-    callerBlocks !== undefined &&
-    callerBlocks.some((b) => b.cache_control !== undefined && b.cache_control !== null);
-  return { system, boundary, callerBlocks: callerSpendsBudget };
+  // seam: tools(1) + up to three caller markers already fills it. So COUNT the
+  // markers rather than answering yes/no. Segment blocks that mark NOTHING (a
+  // host that layers its prompt but leaves caching to the engine, or a segments
+  // array that filtered down to empty) spend zero slots — reporting "caller owns
+  // the budget" there silently disabled conversation caching for the whole
+  // session while three slots sat unused. The same is true of a host that marks
+  // ONE or TWO segments: tools(1) + markers(<=2) + message(1) still fits inside
+  // 4, yet the boolean test dropped the message breakpoint anyway, so every turn
+  // of a long tool loop re-sent the ENTIRE message history as fresh input tokens
+  // with two breakpoint slots unused.
+  const callerCacheMarkers =
+    callerBlocks === undefined
+      ? 0
+      : callerBlocks.reduce(
+          (n, b) => n + (b.cache_control !== undefined && b.cache_control !== null ? 1 : 0),
+          0,
+        );
+  return { system, boundary, callerBlocks: callerCacheMarkers > 0, callerCacheMarkers };
 }

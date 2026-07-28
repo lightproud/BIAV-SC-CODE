@@ -156,20 +156,38 @@ class SilentPlatformTracker:
         self.health_data = self._load_health()
 
     def _load_health(self) -> dict:
-        """加载健康数据。"""
+        """加载健康数据。损坏档不许把整个追踪器炸掉——回落空表 + 响亮告警。
+
+        原实现直接 `json.load`：半截 JSON 让**构造函数**抛 JSONDecodeError,
+        而两个调用方一个 `except ImportError`、一个 `except Exception: debug`,
+        于是 tracker 永远是 None——沉默追踪整个哑掉，且没人再写这个文件、
+        坏档会被工作流 `git add output/` 提交进仓库长期驻留（自愈路径为零）。
+        """
         if self.health_path.exists():
-            with open(self.health_path, encoding='utf-8') as f:
-                return json.load(f)
+            try:
+                with open(self.health_path, encoding='utf-8') as f:
+                    data = json.load(f)
+                if isinstance(data, dict) and isinstance(data.get('platforms'), dict):
+                    return data
+                logger.warning(f'source-health 结构异常（回落空表）: {self.health_path}')
+            except (OSError, json.JSONDecodeError, UnicodeDecodeError) as exc:
+                logger.warning(
+                    f'source-health 读取失败（回落空表，沉默天数计数将从零重建）: '
+                    f'{type(exc).__name__}: {exc}'
+                )
         return {
             'updated_at': None,
             'platforms': {},
         }
 
     def _save_health(self):
-        """保存健康数据。"""
+        """保存健康数据（原子替换，见 news_common.dump_json_atomic）。
+
+        本档每更新一个平台就落一次盘（一轮采集十几次），直写在中途被杀即留下
+        半截 JSON —— 见 _load_health 里那条「坏档 = 追踪器永久哑掉」的链路。
+        """
         self.health_data['updated_at'] = datetime.now(UTC).isoformat()
-        with open(self.health_path, 'w', encoding='utf-8') as f:
-            json.dump(self.health_data, f, ensure_ascii=False, indent=2)
+        news_common.dump_json_atomic(self.health_path, self.health_data)
 
     def update_platform_status(self, platform: str, items_count: int,
                                error: str | None = None, note: str | None = None):

@@ -7,8 +7,12 @@ RELEASES.md）。但「全量档案层」分析索引（build_community_index.py
 索引即可丢弃——数据本体仍只留 Releases，git 零膨胀（守密人 2026-06-21 裁定：
 构建期取用还原，不拿回 git）。
 
-幂等：已存在且非空的目标目录默认跳过下载（--force 覆盖）。无第三方依赖（urllib +
-tarfile）。公开 repo 的 release 资产可匿名下载；私有 repo 在 CI 用 GITHUB_TOKEN。
+幂等：归档解包是覆盖/补全，已存在的目标目录照常在其上重解（`--force` 只关掉那句提示，
+不改变下载行为）。无第三方依赖（urllib + tarfile）。公开 repo 的 release 资产可匿名
+下载；私有 repo 在 CI 用 GITHUB_TOKEN。
+
+退出码（抢救网的绿色只许有一种含义）：0 = 匹配到的资产**全部**还原成功；
+非零 = 一件都没匹配上，或有任何一件下载 / 解包失败（失败者逐件点名）。
 
 资产形态两类：``.tar.gz``/``.tgz`` 解包进 dest；其余（如向量索引 ``kb_vectors.json.gz``
 ——纯 gzip JSON，非 tarball）按原名平拷贝进 dest（勿对非 tar 资产走 tarfile，会炸
@@ -92,9 +96,29 @@ def assets_from_months(tag: str, pattern: str, months: list[str]) -> list[dict]:
 
 
 def download(url: str, dest: Path) -> None:
+    """下载到 dest，并**核对 Content-Length**——短读一律判失败，绝不留半截文件。
+
+    urllib 的 `read(n)` 在连接被提前关闭时**返回空串而不抛异常**（CPython 自己在
+    http/client.py 注着「Ideally, we would raise IncompleteRead」），于是 `while chunk :=`
+    正常收尾、调用方看到的是一次成功。落到本脚本上：`kb_vectors.json.gz` 这类非 tarball
+    资产会被**逐字拷进 dest**，`restore` 照打「restored 1 asset(s)」并退 0——一次静默的
+    半截还原。而本脚本是 §6.3 三张抢救网之一，它的「成功」不许有第二种含义。
+    """
+    written = 0
     with urllib.request.urlopen(_req(url), timeout=600) as resp, dest.open("wb") as fh:
+        # 假响应对象（单测）没有 getheader：拿不到声明长度就跳过核对，不改既有契约。
+        try:
+            raw = resp.getheader("Content-Length")
+            declared = int(raw) if raw is not None else None
+        except (AttributeError, TypeError, ValueError):
+            declared = None
         while chunk := resp.read(1 << 20):
             fh.write(chunk)
+            written += len(chunk)
+    if declared is not None and written != declared:
+        dest.unlink(missing_ok=True)  # 半截文件比没有更坏：它会被下游当成完整档案读
+        raise OSError(
+            f"下载不完整: {url} 声明 {declared} 字节，实收 {written} 字节（已删除半截文件）")
 
 
 def _safe_extractall(tar: tarfile.TarFile, dest: Path) -> None:
@@ -145,24 +169,36 @@ def restore(tag: str, pattern: str, dest: Path, force: bool,
         print(f"[restore] no asset matches {pattern!r} in release {tag!r}")
         return 0
     n = 0
+    failed: list[str] = []
     with tempfile.TemporaryDirectory() as tmp:
         for a in sorted(assets, key=lambda x: x["name"]):
             tgz = Path(tmp) / a["name"]
             print(f"[restore] {a['name']} ({a['size'] / 1e6:.1f} MB)")
-            download(a["browser_download_url"], tgz)
-            if a["name"].endswith((".tar.gz", ".tgz")):
-                with tarfile.open(tgz, "r:gz") as tar:
-                    # 归档内**应当**是相对路径 channels/{id}/*.jsonl，但 extractall 会照
-                    # 单全收：成员名里的 `../` 或绝对路径能把文件写到 dest 之外（Zip Slip),
-                    # 符号链接成员还能把后续写入重定向到任意位置。这条路径吃的是从网络
-                    # 下载的 Release 资产，「我们自己传的」不是安全边界——资产可被替换、
-                    # 传输可被劫持，而这份脚本常以仓库写权限运行。
-                    # filter='data' 是 Python 3.12+ 的标准加固（拒绝绝对/穿越路径、
-                    # 剥离特殊文件与链接）；3.11 无此参数，退回自实现的同等校验。
-                    _safe_extractall(tar, dest)
-            else:
-                # 非 tarball 资产（如 kb_vectors.json.gz 纯 gzip JSON）：按原名平拷贝。
-                shutil.copy2(tgz, dest / a["name"])
+            # 逐件兜住：原先第一件失败就整轮抛出，后面的月份**一件都不再试**——
+            # 33 个月的历史里缺一个月的资产，就永远拿不到它后面的 28 个月，而现场只留
+            # 一份 traceback，没有「哪些还原成了 / 哪些没有」的清单。改为每件独立记账、
+            # 跑完再统一判红：能救的全救回来，救不回的逐件点名。
+            try:
+                download(a["browser_download_url"], tgz)
+                if a["name"].endswith((".tar.gz", ".tgz")):
+                    with tarfile.open(tgz, "r:gz") as tar:
+                        # 归档内**应当**是相对路径 channels/{id}/*.jsonl，但 extractall 会照
+                        # 单全收：成员名里的 `../` 或绝对路径能把文件写到 dest 之外（Zip Slip),
+                        # 符号链接成员还能把后续写入重定向到任意位置。这条路径吃的是从网络
+                        # 下载的 Release 资产，「我们自己传的」不是安全边界——资产可被替换、
+                        # 传输可被劫持，而这份脚本常以仓库写权限运行。
+                        # filter='data' 是 Python 3.12+ 的标准加固（拒绝绝对/穿越路径、
+                        # 剥离特殊文件与链接）；3.11 无此参数，退回自实现的同等校验。
+                        _safe_extractall(tar, dest)
+                else:
+                    # 非 tarball 资产（如 kb_vectors.json.gz 纯 gzip JSON）：按原名平拷贝。
+                    shutil.copy2(tgz, dest / a["name"])
+            except (OSError, tarfile.TarError, EOFError) as e:
+                # SystemExit（_safe_extractall 的安全拒绝）不在此列：那是**必须整轮中止**
+                # 的安全事件，不是「这一件没拿到」。
+                print(f"[restore] !! {a['name']} 失败: {type(e).__name__}: {e}")
+                failed.append(a["name"])
+                continue
             n += 1
     # --dest 显式支持绝对路径（见上方 is_absolute 分支）；仓外目标 relative_to 会抛
     # ValueError——那会让**已经成功还原**的一次运行以 traceback 收场（假失败），
@@ -172,10 +208,14 @@ def restore(tag: str, pattern: str, dest: Path, force: bool,
     except ValueError:
         shown = dest
     print(f"[restore] restored {n} asset(s) into {shown}/")
+    if failed:
+        raise SystemExit(
+            f"[restore] {len(failed)}/{len(assets)} 件未还原（本次为**部分还原**，"
+            f"dest 内容不完整）: {', '.join(failed)}")
     return n
 
 
-def main() -> None:
+def main() -> int:
     ap = argparse.ArgumentParser(description="Restore full-archive data from a GitHub Release (build-time, ephemeral).")
     ap.add_argument("--tag", required=True, help="release tag, e.g. community-data")
     ap.add_argument("--pattern", required=True, help="asset name glob, e.g. 'discord-archive-*.tar.gz'")
@@ -195,8 +235,16 @@ def main() -> None:
     if dest.exists() and any(dest.iterdir()) and not args.force:
         # 已有数据：仍补下载（归档解包是覆盖/补全，幂等安全），但提示。
         print(f"[restore] dest {args.dest} non-empty — extracting on top (idempotent). Use --force to force.")
-    restore(args.tag, args.pattern, args.dest, args.force, months)
+    n = restore(args.tag, args.pattern, args.dest, args.force, months)
+    if not n:
+        # 「一件都没匹配上」不是成功。tag 改名、资产改后缀、pattern 打错——三种都让
+        # 这条 §6.3 抢救网**一声不吭地退 0**，而链式调用（`restore && build_index`）
+        # 会照常往下走，在一个空目录上建索引。抢救网的绿色只许有一种含义。
+        print("[restore] 未还原任何资产 —— 视为失败（检查 --tag / --pattern 是否仍与 "
+              "Release 资产名一致）")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

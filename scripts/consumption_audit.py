@@ -45,16 +45,22 @@ RELEASE_RE = re.compile(r"gh release upload\s+\"?([A-Za-z][\w.-]*)\"?", re.MULTI
 # 消费面：按文件类型分档，判「谁在读」时权重不同（代码 > 工作流 > 档案）。
 CONSUMER_GLOBS = {
     "script": ["scripts/**/*.py", "projects/**/scripts/**/*.py", "projects/**/src/**/*.mjs"],
-    "workflow": [".github/workflows/*.yml"],
+    "workflow": [".github/workflows/*.yml", ".github/workflows/*.yaml"],
     "test": ["tests/**/*.py"],
     "doc": ["*.md", "memory/**/*.md", "projects/*/CONTEXT.md", ".claude/**/*.md"],
 }
 
 
+def _workflow_files() -> list[Path]:
+    """全部工作流档。**`.yml` 与 `.yaml` 都要收**——GitHub 两种后缀等价，只认前者时，
+    一个 `nightly.yaml` 里的产出会整件从对账里蒸发，而报告仍报「产出 N 件」看不出缺口。"""
+    return sorted([*WORKFLOW_DIR.glob("*.yml"), *WORKFLOW_DIR.glob("*.yaml")])
+
+
 def produced_paths() -> dict[str, list[str]]:
     """{产出路径: [声明它的工作流...]}。`git add -A` 无信息量，跳过。"""
     produced: dict[str, list[str]] = {}
-    for wf in sorted(WORKFLOW_DIR.glob("*.yml")):
+    for wf in _workflow_files():
         text = wf.read_text(encoding="utf-8")
         for line in GIT_ADD_RE.findall(text):
             for token in line.split():
@@ -70,11 +76,15 @@ def produced_paths() -> dict[str, list[str]]:
 def produced_releases() -> dict[str, list[str]]:
     """{release tag: [上传它的工作流...]}。"""
     out: dict[str, list[str]] = {}
-    for wf in sorted(WORKFLOW_DIR.glob("*.yml")):
+    for wf in _workflow_files():
         for tag in RELEASE_RE.findall(wf.read_text(encoding="utf-8")):
             if tag and not tag.startswith("$"):
                 out.setdefault(tag, []).append(wf.name)
     return out
+
+
+class SearchUnavailable(RuntimeError):
+    """检索本身没跑成——与「跑成了但没命中」是两件事，绝不许合流成同一个空清单。"""
 
 
 def _grep(needle: str) -> list[str]:
@@ -99,8 +109,17 @@ def _grep(needle: str) -> list[str]:
             # 变 U+FFFD，那些行照旧被 _classify 归进 "other" 桶，不影响任何判据。
             errors="replace",
         )
-    except (OSError, subprocess.TimeoutExpired):
-        return []
+    except (OSError, subprocess.TimeoutExpired) as e:
+        raise SearchUnavailable(f"git grep 没能执行（{type(e).__name__}: {e}）") from e
+    # git grep 的退出码有三档：0 = 有命中、1 = 跑成了但零命中、**≥2 = 出错**。
+    # 原先三档一律返回 []，于是「检索垮了」与「确实没人读」在下游完全同形——
+    # 每一件产出都拿到零命中、全判 orphan，报告照打「零消费 25 件」并退 0。
+    # 实测：把 REPO 指向一个非 git 目录（tarball 导出 / zip 下载 / 丢了 .git 的容器），
+    # 25 件产出 25 件被判死件，而这份清单正是「该退役什么」的判据。
+    if res.returncode >= 2:
+        raise SearchUnavailable(
+            f"git grep 退出码 {res.returncode}（{res.stderr.strip()[:200]}）—— "
+            f"检索没跑成，任何「零消费」结论都是假的")
     # 双保险：任何不含 `path:line:` 形态的行一律丢弃，绝不让它冒充路径
     return [ln for ln in res.stdout.splitlines()
             if ln.strip() and not ln.startswith("Binary file ")]
@@ -213,7 +232,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
 
-    report = build_report()
+    try:
+        report = build_report()
+    except SearchUnavailable as e:
+        # 报告不写、退出码非零：宁可什么都不说，也不写一份「全是死件」的假账
+        # 盖在上一轮真账上——下一个读者只会看到一份时间戳崭新的报告。
+        print(f"产出↔消费对账中止：{e}", file=sys.stderr)
+        return 2
     marks = {"orphan": "ORPHAN  ", "doc-only": "DOC-ONLY"}
     for entry in report["entries"]:
         if entry["verdict"] in ("orphan", "doc-only"):

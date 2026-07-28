@@ -33,10 +33,21 @@ def _graph() -> dict:
     return json.loads(GRAPH.read_text(encoding="utf-8")) if GRAPH.exists() else {"edges": []}
 
 
+def _or_live(concepts: dict | None) -> dict:
+    """注入优先、缺省才读活索引。
+
+    原写法是 `concepts = concepts or _concepts()`——**空 dict 是 falsy**，于是「拿一个
+    空知识库来体检」这件事会被静默换成「体检线上那份 okf/」：调用方传 {} 却拿回 381 个
+    概念 / 72 个角色的满分报告。probe 的全部意义是如实评价交给它的那份语料，换语料等于
+    报告的是另一个对象的成绩。None 才是「没给语料」，{} 是「给了个空的」。
+    """
+    return _concepts() if concepts is None else concepts
+
+
 def probe_layer_disambiguation(concepts: dict | None = None) -> dict:
     """层判定：凡同时有全量档案 + 输出抽样概念的平台，KB 靠 data_layer tag 能**唯一区分**
     「全量 vs 抽样」；grep over 原始源无此字段、三个一视同仁 → 会把抽样当全量（lesson #30）。"""
-    concepts = concepts or _concepts()
+    concepts = _or_live(concepts)
     plat = {}
     for cid, c in concepts.items():
         tags = c.get("tags", [])
@@ -49,12 +60,21 @@ def probe_layer_disambiguation(concepts: dict | None = None) -> dict:
         if "data_layer:output" in tags:
             e["output"].append(cid)
     both = {p: e for p, e in plat.items() if e["full"] and e["output"]}
-    # KB 能区分 = 该平台的全量与输出概念各自带明确 data_layer tag（可唯一挑出全量）
-    kb_ok = sum(1 for e in both.values() if e["full"] and e["output"])
+    # KB 能区分 = 该平台的全量与输出概念**互不重叠**（每个概念只属一层，能唯一挑出全量）。
+    # 原判据是 `if e["full"] and e["output"]`——那正是 `both` 的定义本身，于是
+    # kb_can_disambiguate 恒等于 platforms_with_both_layers，比值永远 1.00：一个**结构上
+    # 不可能失败**的指标，却被当成「KB 真的分得清层」的证据摆在报告里。真正会出事的形态
+    # 它一个也抓不到——某平台的概念同时挂 data_layer:full_archive 与 data_layer:output
+    # （指针层标错、或全量与输出被合并成一个概念）时，该平台的层归属是**歧义的**，
+    # 消费方照 tag 取「全量」会取到抽样，就是 lesson #30 本身；旧判据仍给它满分。
+    ambiguous = {p: sorted(set(e["full"]) & set(e["output"])) for p, e in both.items()}
+    ambiguous = {p: v for p, v in ambiguous.items() if v}
+    kb_ok = len(both) - len(ambiguous)
     return {
         "platforms_with_both_layers": len(both),
         "kb_can_disambiguate": kb_ok,
         "grep_can_disambiguate": 0,  # 原始源无 data_layer 字段，结构上给不了层知识
+        "ambiguous_platforms": ambiguous,  # 同一概念身兼两层 = 层归属歧义（lesson #30 的种子）
         "sample": sorted(both)[:6],
         "meaning": "grep 找到 discord 相关文本，却分不清全量档案 vs 输出抽样→lesson #30；KB 靠 data_layer 唯一区分",
     }
@@ -64,7 +84,7 @@ def probe_identity_canonical(concepts: dict | None = None,
                              names: list[str] | None = None) -> dict:
     """身份消歧：一个角色名，KB 有**唯一** type=character 规范概念；正文提及它的非角色概念另有多个。
     grep 返回全部出现、分不清「X 这个概念」和「提到 X 的报告」。KB 靠 type 隔出规范身份。"""
-    concepts = concepts or _concepts()
+    concepts = _or_live(concepts)
     names = names or ["沙耶", "徐", "萝坦", "奥吉尔", "达芙黛尔"]
     per = []
     ok = 0
@@ -88,7 +108,7 @@ def probe_identity_canonical(concepts: dict | None = None,
 def probe_boundary_enumeration(concepts: dict | None = None) -> dict:
     """边界枚举：KB 能给出**闭合完整**的概念集合（如『全部角色概念』『全部 full_archive 概念』）；
     grep 只返回文本出现、永远给不了『概念的集合』、更给不了『这就是全部』的边界。"""
-    concepts = concepts or _concepts()
+    concepts = _or_live(concepts)
     from collections import Counter
     by_type = Counter(c.get("type") for c in concepts.values())
     full_archive = sum(1 for c in concepts.values()
@@ -98,7 +118,12 @@ def probe_boundary_enumeration(concepts: dict | None = None) -> dict:
         "characters_enumerable": by_type.get("character", 0),
         "full_archive_enumerable": full_archive,
         "by_type": dict(by_type.most_common()),
-        "kb_can_enumerate_bounded": True,
+        # 「可枚举有界」必须由语料算出，不能写死。原为字面量 True——于是把一个**空知识库**
+        # 交给本 probe，它照样报 `kb_can_enumerate_bounded: True`、evaluate() 照样把这一维
+        # 计进 dimensions_kb_delivers（实测：空 KB 得 1/4，报告还印「KB 可枚举有界（0 角色 /
+        # 0 全量概念）」）。零候选集上算出来的「能力」不是能力，是一句口号。
+        # 判据：确实有概念、且每个概念有可归类的 type（枚举得出「关于 X 的全部就这些」）。
+        "kb_can_enumerate_bounded": bool(concepts) and None not in by_type,
         "grep_can_enumerate_bounded": False,       # grep 给不了「概念的完整集合」与「这就是全部」
         "meaning": "KB 能答『关于 X 的全部概念就这些』（可枚举有界）；grep 只能给文本命中、无法界定完整集合",
     }
@@ -108,8 +133,8 @@ def probe_relation_typing(concepts: dict | None = None, graph: dict | None = Non
     """类型化关系：白盒图每条边带**关系类型**（variant/lore/cv/mention/cross）——KB 能答
     『A 与 B 是什么关系』（本源萝坦↔萝坦=variant、萝坦↔奥吉尔=lore 同篇）。grep 结构上只能给
     **共现**（两名出现在同一文本），给不了「这是哪种关系」——类型是白盒图独有、hit@k 测不出。"""
-    concepts = concepts or _concepts()
-    graph = graph or _graph()
+    concepts = _or_live(concepts)
+    graph = _graph() if graph is None else graph
     from collections import Counter
     typed = Counter()
     exemplars: dict[str, dict] = {}
@@ -135,7 +160,7 @@ def probe_relation_typing(concepts: dict | None = None, graph: dict | None = Non
 
 
 def evaluate(concepts: dict | None = None) -> dict:
-    concepts = concepts or _concepts()
+    concepts = _or_live(concepts)
     layer = probe_layer_disambiguation(concepts)
     identity = probe_identity_canonical(concepts)
     boundary = probe_boundary_enumeration(concepts)

@@ -604,8 +604,18 @@ def build_projects() -> list[dict]:
                 "id": cid, "type": "documentation", "title": title,
                 "description": blurb or title, "resource": _rel(p), "tags": tags,
             })
-    for name in ("news", "wiki", "site", "game", "silver-core-sdk"):
-        ctx = REPO / "projects" / name / "CONTEXT.md"
+    # 子项目清单**从磁盘发现**（排序保确定性），不再硬编码五个名字。硬编码的后果已经发生：
+    # silver-core-maestro-sdk 与 silver-core-testbed 建起来之后，两份 CONTEXT.md
+    # （CLAUDE.md §6「动手前必读」）从未进过知识库——`kb_search("silver-core-maestro-sdk
+    # 子项目上下文")` 的第一名是**另一个 SDK** 的 CONTEXT，maestro 那份一条都够不到。
+    # 名单写死时，新子项目的上下文就是知识库永远看不见的暗物质。
+    _proj_root = REPO / "projects"
+    _subprojects = sorted(
+        p.name for p in _proj_root.iterdir()
+        if p.is_dir() and (p / "CONTEXT.md").is_file()
+    ) if _proj_root.is_dir() else []
+    for name in _subprojects:
+        ctx = _proj_root / name / "CONTEXT.md"
         if ctx.exists():
             _t, blurb = md_title_blurb(ctx)
             entries.append({

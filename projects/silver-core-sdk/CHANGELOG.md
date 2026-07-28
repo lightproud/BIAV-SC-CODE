@@ -16,6 +16,66 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.4.0 — 2026-07-28
+
+Audit wave 17 — four lenses no earlier wave had used: untrusted tool output as
+a structure-forging channel, fault injection, backward-compat drift, and
+"what is the test double letting through".
+
+Untrusted content forging structure the model reads as authoritative:
+
+- `tools/read.ts` interpolated the resolved path verbatim into a
+  `<system-reminder>` envelope. A zero-byte file whose *name* closes that fence
+  and opens another injects attacker text carrying the harness's own authority
+  — and every character needed is legal in a filename, since the `/` comes from
+  the path separator. `query.ts` already neutralized the same fence with a
+  comment naming this exact attack; this was the last unescaped construction of
+  it in `src/`.
+- `engine/prompts.ts` had the same hole for project instructions: CLAUDE.md /
+  AGENTS.md text went raw into its envelope, so a file containing the literal
+  closing tag split its own frame and the remainder arrived as top-level
+  harness text.
+- `tools/websearch.ts` interpolated backend `title`/`url`/`snippet` into a
+  newline-delimited numbered digest, so a line break in a title forges whole
+  additional result records. Those forged records never pass through
+  `filterResults` — which means `blocked_domains` is bypassed entirely: a page
+  on an allowed domain can render a well-formed entry for an explicitly
+  blocked one.
+
+Cost and caching:
+
+- `server_tool_use` was dropped when folding `message_delta` usage. The
+  transport is streaming-only and `message_start` structurally cannot carry a
+  search count, so web-search charges were **never billed in any real run** and
+  `maxBudgetUsd` could be overrun by the entire server-tool bill without the
+  gate tripping.
+- Late background-subagent spend folded during teardown reached the final
+  result but no persisted accounting record, so `getSessionAccounting()` — the
+  seam hosts read before injecting the next turn — could miss almost all of a
+  session's cost.
+- On the segmented system-prompt seam the loop suppressed the message cache
+  breakpoint whenever the caller had marked anything at all, leaving 2 of 4
+  breakpoints in use and re-sending the whole message history as fresh input
+  tokens every turn. The segment marker cap is 3, so a slot is always free.
+- The tool roster omitted the memory tool while the memory-protocol block in
+  the same system prompt told the model to use it.
+
+Maestro:
+
+- `claimDue` applied its `limit` — the bound behind `LedgerDriver.maxConcurrent`
+  — to the store's raw listing order. The `LedgerStore` contract fixes no order
+  (the shipped contract suite sorts ids before every comparison), so a
+  compliant store listing newest-first starved due work outright: measured
+  `{A:0, B:0, C:30}` over 30 ticks at `maxConcurrent: 1`. Candidates are now
+  ordered oldest-due-first, ties keeping store order via a stable sort.
+- `systemClock.setTimeout` passed delays straight to the global, where past
+  2^31-1 ms Node does not sleep longer — it overflows to 1 ms. A
+  `queryTimeoutMs` of 30 days passed the constructor's validation and then
+  aborted every attempt before the executor's first `await` resumed; the same
+  inversion turns a deliberately rare `pollIntervalMs` into a 1 ms hammer on
+  the store. Now capped on the way to the global only, matching the clamps the
+  agent SDK already applies in three places.
+
 ## 1.3.0 — 2026-07-28
 
 Audit waves 15 and 16 — the permission/hook interaction surface, the protocol

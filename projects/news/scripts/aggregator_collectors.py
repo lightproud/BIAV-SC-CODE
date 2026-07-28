@@ -952,15 +952,29 @@ def _read_discord_jsonl(date_str: str):
         channel_id = dir_to_id.get(dir_suffix, '')
         channel_name = ch_names.get(channel_id, dir_suffix)
         try:
+            bad_lines = 0
             with open(jsonl_path, encoding='utf-8') as f:
                 for line in f:
                     line = line.strip()
                     if not line:
                         continue
-                    msg = json.loads(line)
+                    # 单行坏了只跳这一行。原写法把 json.loads 摊在外层
+                    # `except Exception` 下：归档器上一轮被杀留下的一条半截行
+                    # （或被它粘坏的那一行）一出现，整个文件**剩下的全部消息**
+                    # 连读都不读就放弃了——500 条的频道日档只剩坏行之前那几十条,
+                    # 日报静默缩水，日志里只有一句读取失败看不出丢了多少。
+                    try:
+                        msg = json.loads(line)
+                    except json.JSONDecodeError:
+                        bad_lines += 1
+                        continue
                     msg['_channel_name'] = channel_name
                     messages.append(msg)
-        except Exception as e:
+            if bad_lines:
+                logger.warning(
+                    f'Discord JSONL {jsonl_path.name}: skipped {bad_lines} malformed line(s)'
+                )
+        except OSError as e:
             logger.warning(f'Discord JSONL read error {jsonl_path}: {e}')
     return messages
 

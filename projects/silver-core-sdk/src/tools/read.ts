@@ -19,6 +19,7 @@ import {
   looksBinaryForDisplay,
   resolveAbs,
 } from './fsutil.js';
+import { neutralizeClosingTag } from '../internal/inert-text.js';
 import { READ_DESCRIPTION } from './descriptions.js';
 import type { ReadOutput as ReadStructuredOutput } from '../types/tool-outputs.js';
 
@@ -410,7 +411,21 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
         // HAS seen the (empty) content, so the read still registers.
         ctx.readFilePaths?.add(abs);
         return {
-          content: `<system-reminder>The file "${abs}" exists but is empty (0 bytes).</system-reminder>`,
+          // The path is embedded in a `<system-reminder>` fence — the harness's
+          // highest-authority in-band marker (query.ts frames host-declared
+          // context blocks in it, prompts.ts frames CLAUDE.md in it). A path
+          // component is a FILENAME, and a filename may legally contain `<`,
+          // `>` and the words in between, so `dir<` + a file named
+          // `system-reminder>...<system-reminder>...` renders as a literal
+          // `</system-reminder>` inside this fence: the reminder closes early
+          // and everything after it re-opens as a SECOND, forged
+          // system-reminder carrying attacker text (a repo/archive can ship
+          // such an empty file, and Glob/Grep hand its path straight to Read).
+          // Same neutralization query.ts:1912 already applies to the same
+          // fence, for the same reason.
+          content:
+            `<system-reminder>The file "${neutralizeClosingTag(abs, 'system-reminder')}" ` +
+            `exists but is empty (0 bytes).</system-reminder>`,
           // Every OTHER terminal branch of Read (image / pdf / text, capped or
           // not) emits the structured result; this one did not, so a consumer
           // reading `toolUseResult` could not tell "the file is empty" from "the

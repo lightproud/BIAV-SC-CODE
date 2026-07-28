@@ -474,8 +474,36 @@ def render_markdown(registry: dict) -> str:
     return "\n".join(lines)
 
 
+def _freeze_date_if_unchanged(registry: dict) -> dict:
+    """内容没变时沿用已落盘的 `generated_at`，别让日历自己制造「过期」。
+
+    `meta.generated_at` 是当日北京日期，于是**只要跨一天**，重算结果就与committed 版本
+    差一行——`--check`（自称「CI 用，非零退出=过期」）会在源码一个字没动的情况下报
+    「功能目录已过期」，写模式则每次触发都产出一个只改日期的噪声提交。同仓的
+    `build_status_facts.py` 早把这条纪律写进了 docstring：「块内不含时间戳——它是仓库
+    当前状态的纯函数，掺入 generated_at 会让块每次重算都变，反而没法比」。
+    此处不能直接删字段（已落盘的目录里有它），故取等价做法：**只有内容真变了才动日期**，
+    于是 generated_at 的语义从「上次跑了脚本」收紧成「上次内容发生变化」——更诚实，
+    且 `--check` 与写模式重新对齐（两者都以「内容是否变化」为唯一判据）。
+    """
+    if not REGISTRY.exists():
+        return registry
+    try:
+        old = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return registry
+    old_date = (old.get("meta") or {}).get("generated_at")
+    if not old_date:
+        return registry
+    probe = json.loads(json.dumps(registry))  # 深拷贝，别改到调用方手里的对象
+    probe["meta"]["generated_at"] = old_date
+    if probe == old:
+        registry["meta"]["generated_at"] = old_date
+    return registry
+
+
 def main() -> int:
-    registry = build()
+    registry = _freeze_date_if_unchanged(build())
     new_json = json.dumps(registry, ensure_ascii=False, indent=2) + "\n"
     new_md = render_markdown(registry)
 

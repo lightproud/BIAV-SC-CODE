@@ -124,12 +124,31 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          # Sparse checkout excludes the 2.4G archive/reference layers so the
+          # Sparse checkout excludes the heavy archive/reference layers so the
           # Node job only pulls the ~100MB of code it needs.
+          #
+          # The prompts mirror is RE-INCLUDED deliberately (2026-07-28 scan fix).
+          # Eleven suite files (prompt-fragments-provenance / tool-descriptions-
+          # provenance / sendmessage / subagents / tips / verifier / sandbox /
+          # compaction / generators / hooks-condition …) are corpus-sync guards:
+          # they pin this package's `faithful` prompt fragments and tool
+          # descriptions to the archived upstream text, and every one of them is
+          # written `it.runIf(haveArchive)` — absent the snapshot they SKIP and
+          # the file still reports PASS. With `/Public-Info-Pool/Reference/`
+          # excluded that was the state of EVERY CI run: measured on this tree,
+          # tests/prompt-fragments-provenance.test.ts is "3 passed" with the
+          # snapshot and "1 passed | 2 skipped" without — and a fragment whose
+          # `slug` no longer exists upstream (the exact drift these guards were
+          # built for) fails loudly in the first case and is invisible in the
+          # second. So the required `unit tests` check certified prompt
+          # provenance it never once looked at. The mirror is 4.6MB of markdown;
+          # the 2.4G that motivated the exclusion was Game-Unpacked, deleted
+          # 2026-07-12. Record/ (the multi-GB layer) stays out.
           sparse-checkout: |
             /*
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
+            /Public-Info-Pool/Reference/Claude-Code-System-Prompts/
           sparse-checkout-cone-mode: false
           # fetch-depth 2: the version-bump guard diffs HEAD~1 (squash merge =
           # one commit; the guard skips gracefully when no parent exists).
@@ -200,10 +219,14 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
+          # Prompts mirror re-included — same reason as the `unit` job above:
+          # without it the corpus-sync guards skip and this leg reports a pass
+          # over assertions that never ran.
           sparse-checkout: |
             /*
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
+            /Public-Info-Pool/Reference/Claude-Code-System-Prompts/
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v6
         with:

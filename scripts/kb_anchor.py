@@ -114,9 +114,16 @@ def anchor_expand(query: str, anchor_limit: int = 3, tail_limit: int = 8,
         }
 
     # ---- 3) 据锚去杂：命中锚词 / 别名的 tail 排前并标记；未命中降序不删 ----
-    if expansion_terms and tail.get("results"):
+    # 单字 CJK 锚词（如角色「徐」）**不进去杂匹配面**：它仍留在 expanded_query 里喂向量腿
+    # （召回不丢），但拿它去 preview 里做子串判定必然误伤——社区散句里的「徐州」「徐徐图之」
+    # 会被判 anchored=true、连同 anchor_matched:["徐"] 一起排到真正相关的片段**前面**，
+    # 等于用一个不存在的关联给长尾重新排序。本模块已为拉丁别名加了整词边界（防 Saya 撞
+    # Sayaka）；CJK 没有可用的词边界，单字的唯一正解就是不参与判定。二字及以上照旧。
+    match_terms = [t for t in expansion_terms
+                   if len(t) > 1 or re.fullmatch(r"[A-Za-z0-9]", t)]
+    if match_terms and tail.get("results"):
         matchers = []
-        for t in expansion_terms:
+        for t in match_terms:
             if re.fullmatch(r"[A-Za-z0-9 .'\-]+", t):
                 matchers.append((t, re.compile(
                     rf"(?<![A-Za-z0-9]){re.escape(t)}(?![A-Za-z0-9])", re.IGNORECASE)))

@@ -14,6 +14,22 @@ on:
       - 'scripts/build_okf_bundle.py'
       - 'scripts/okf_pointer_layers.py'
       - 'scripts/build_kb_index.py'
+      # 生成器 import 的库层（2026-07-28 扫描补齐）。上面三条只列了入口文件，
+      # 而 bundle 的字节由这几个模块直接决定：
+      #   - okf_frontmatter：**每一个** concept 文件的 frontmatter 写法（转义规则一改，
+      #     全 bundle 改）；三处抄写正是收敛到此模块的原因，它不该反倒漏在触发面外。
+      #   - kb_coverage：build_okf_bundle 末尾 write_inventory() 写进 bundle 的清点存量。
+      #   - silver_aliases：别名概念与 alias_map（数据侧 aliases.json 已在下面覆盖，代码侧没有）。
+      #   - news_bridge / archive_layout：指针层的落点全由归档布局 SSOT 推导。
+      # 漏在触发面外 = 改了这些的 PR 合入后 committed okf/ 与生成器对不上，而唯一
+      # 会对账结构的 test_kb_governance 在 Record/Community 缺席时**永久 skip**
+      # （该目录自 T62 §7甲 起在 code 仓里根本不存在），于是没有任何东西会红——
+      # 运行时导航（kb_index.json）一路读旧格式，只等每日 cron 兜底。
+      - 'scripts/okf_frontmatter.py'
+      - 'scripts/kb_coverage.py'
+      - 'scripts/silver_aliases.py'
+      - 'scripts/news_bridge.py'
+      - 'projects/news/scripts/archive_layout.py'
       # wiki 数据层（characters / story / aliases / schemas / 解包结构化）
       - 'projects/wiki/data/processed/**'
       - 'projects/wiki/data/schemas/**'

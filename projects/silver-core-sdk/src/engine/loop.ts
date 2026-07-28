@@ -170,7 +170,16 @@ function foldUsageEvent(sink: UsageSink, event: RawMessageStreamEvent): void {
       cache_read_input_tokens: 0,
     };
     sink.usage = base;
-    foldMessageDeltaUsage(base, event.usage as DeltaUsage | undefined);
+    const du = event.usage as DeltaUsage | undefined;
+    foldMessageDeltaUsage(base, du);
+    // Y5-1: the sink is handed straight to recordUsage() without passing
+    // through normalizeUsage(), so mirror the wire-shaped server-tool count
+    // onto the flat NonNullableUsage field the pricing/ledger side reads —
+    // else a salvaged/retried attempt's web searches are billed at $0.
+    const searches = du?.server_tool_use?.web_search_requests;
+    if (searches !== undefined) {
+      base.web_search_requests = Math.max(base.web_search_requests ?? 0, searches);
+    }
   }
 }
 
@@ -979,9 +988,14 @@ export async function* runAgentLoop(
     const outgoing = applyCacheControl(request, {
       enabled: cachingOn,
       cacheTtl: config.cacheTtl,
-      // Caller-authored segments already carry their own breakpoints; don't add
-      // a message breakpoint too or the request could exceed the 4-cap.
-      cacheMessages: !derived.callerBlocks,
+      // Caller-authored segments carry their own breakpoints; add the message
+      // breakpoint only while the 4-cap has room — tools(1) + the caller's
+      // markers + this one. config-builder caps segment markers at 3, so a
+      // count below 3 always leaves a free slot. (Testing "did the caller mark
+      // ANYTHING" instead assumed the worst case: a host that marked a single
+      // shared segment lost conversation caching entirely, re-sending the whole
+      // message history as fresh input every turn with two slots unused.)
+      cacheMessages: derived.callerCacheMarkers < 3,
       cacheSystemBoundary: derived.boundary,
     });
     // Prompt-composition observability (BPT-EXTENSION): describe the request the

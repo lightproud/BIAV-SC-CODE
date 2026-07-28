@@ -12,6 +12,32 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.4.0 — 2026-07-28
+
+Audit wave 17 reached this package directly — two defects that only a test
+double's permissiveness had been hiding.
+
+- `ledger/ledger.ts` — `claimDue` applied `opts.limit`, the batch bound behind
+  `LedgerDriver.maxConcurrent`, to whatever order the store happened to return.
+  Every test double is `Map`-backed, so listing order coincidentally equals
+  dispatch order and therefore due order; the real `LedgerStore` contract fixes
+  no order at all, and the shipped contract suite deliberately sorts ids before
+  comparing. Against a contract-compliant store listing newest-first with
+  `maxConcurrent: 1` and three always-due sessions, one session took the slot on
+  all 30 ticks and the other two never ran. Even in-memory, three sessions due
+  at 5000/1000/100 ms claimed the *least* overdue. Candidates are now ordered by
+  `nextRunAt` then `createdAt`, exact ties keeping the store's order.
+- `clock.ts` — `systemClock.setTimeout` handed the delay straight to the global
+  timer. Beyond 2^31-1 ms Node does not sleep longer, it overflows to 1 ms, so
+  every millisecond knob inverts at the top of its range: a 30-day
+  `queryTimeoutMs` passed the driver's finite/positive validation and then
+  aborted each attempt before the executor's first `await` resumed, settling it
+  `retrying` with `lastError: 'timeout'` so no attempt could ever complete. The
+  same inversion turns a deliberately rare `pollIntervalMs` — driver and
+  scheduler alike — into a 1 ms hammer on the host's store. Capped at the
+  ceiling on the way to the global only; injected clocks and NaN/Infinity are
+  untouched.
+
 ## 1.3.0 — 2026-07-28
 
 Audit waves 15 and 16 reached this package directly.

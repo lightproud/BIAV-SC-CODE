@@ -178,14 +178,46 @@ def _normalise(run: str) -> tuple[str, str | None]:
     return run, None
 
 
+# 「说了失败却退 0」的已知工具标记。退出码是本门禁判定通过与否的**唯一**依据，
+# 而工具链会骗人：pytest 9.1.1 + pytest-cov 7.1.0 下 `--cov-fail-under` 打印
+# 「FAIL Required test coverage of N% not reached」之后**退 0**，于是本门禁把它
+# 判成通过——release 1.3.0（合并 686b8d5）就是这样带着 91.63% 的覆盖率过门的。
+#
+# 这正是本门禁自己要防的那类错（守卫报绿却什么都没查），所以这里不能只信退出码：
+# 命中任一标记即判失败，无论退出码是多少。加新条目的门槛是「实测该工具确实会
+# 打印失败判词却退 0」——不是凭印象往里塞正则。
+SILENT_FAILURE_MARKERS = (
+    "FAIL Required test coverage",
+    "Coverage failure:",
+)
+
+
 def _run(step: Step) -> bool:
     cwd = (REPO / step.workdir).resolve()
     print(f"\n\033[1m▶ [{step.check}] {step.name}\033[0m  (cwd={step.workdir})")
     cmd, note = _normalise(step.run)
     if note:
         print(f"  \033[33m↺ 已调整：{note}\033[0m")
-    proc = subprocess.run(["bash", "-euo", "pipefail", "-c", cmd], cwd=cwd)
+    # 边流式回显边留底：留底是为了扫上面那些标记，回显是为了长步骤不显得卡死。
+    proc = subprocess.Popen(
+        ["bash", "-euo", "pipefail", "-c", cmd], cwd=cwd,
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1,
+    )
+    captured: list[str] = []
+    assert proc.stdout is not None
+    for line in proc.stdout:
+        sys.stdout.write(line)
+        captured.append(line)
+    proc.wait()
+    tail = "".join(captured)
+
     ok = proc.returncode == 0
+    if ok:
+        hit = next((m for m in SILENT_FAILURE_MARKERS if m in tail), None)
+        if hit is not None:
+            ok = False
+            print(f"  \033[31m⚠ 该步骤退出码为 0，但输出里有失败判词「{hit}」"
+                  f"——按静默失败处理（工具退出码不可信，见 SILENT_FAILURE_MARKERS）\033[0m")
     print(f"  {'✓ 通过' if ok else f'✗ 失败 (exit {proc.returncode})'}")
     return ok
 
