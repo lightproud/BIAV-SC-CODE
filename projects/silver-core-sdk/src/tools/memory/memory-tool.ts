@@ -120,6 +120,13 @@ const MEMORY_INPUT_SCHEMA: JSONSchema = {
     view_range: {
       type: 'array',
       items: { type: 'integer' },
+      // The validator above is `z.tuple([int, int])` — EXACTLY two elements.
+      // Without these bounds the advertised schema accepted any-length integer
+      // array (`view_range: [10]` reads as "from line 10" and is wire-valid),
+      // and the call then died in zod with a generic "Invalid memory command"
+      // instead of never being emitted in that shape.
+      minItems: 2,
+      maxItems: 2,
       description:
         'view only, optional: [start_line, end_line] (1-indexed; end -1 = end of file).',
     },

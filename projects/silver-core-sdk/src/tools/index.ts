@@ -167,10 +167,19 @@ export function enumerateBuiltinToolMetadata(cfg?: {
  * so listing both surfaces is safe. Deferring NEVER removes a tool — it stays in
  * createBuiltinTools() (faithful) and still executes if called (has()-stays-true),
  * exactly like a deferred MCP tool.
+ *
+ * KEEP THIS IN SYNC with createBuiltinTools(): the set was written at 0.34.0
+ * and three built-ins registered afterwards (EnterPlanMode + ReadMcpResourceDirTool
+ * at 0.62.0, SendMessage at 0.42.0) had silently stayed HOT — none of them is in
+ * the reflexive core above, and two of them are the direct mirror/sibling of an
+ * already-cold entry (ExitPlanMode, ReadMcpResourceTool), so the split was
+ * advertising half of each pair inline. A new built-in belongs here unless it is
+ * named in the hot core.
  */
 export const DEFAULT_DEFERRED_BUILTINS: readonly string[] = [
   'Workflow',
   'Monitor',
+  'EnterPlanMode',
   'ExitPlanMode',
   'EnterWorktree',
   'WebFetch',
@@ -186,6 +195,8 @@ export const DEFAULT_DEFERRED_BUILTINS: readonly string[] = [
   'TodoWrite',
   'ListMcpResourcesTool',
   'ReadMcpResourceTool',
+  'ReadMcpResourceDirTool',
+  'SendMessage',
 ];
 
 /**
