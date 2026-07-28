@@ -56,7 +56,7 @@
 import { Buffer } from 'node:buffer';
 import { appendFile, mkdir, open, readFile, readdir, rm, stat } from 'node:fs/promises';
 import { homedir } from 'node:os';
-import { dirname, join, resolve } from 'node:path';
+import { dirname, join, resolve, sep } from 'node:path';
 
 import type {
   SessionKey,
@@ -121,10 +121,20 @@ export function decodeKeyComponent(name: string): string {
 }
 
 /** Expand a leading `~`/`~/` to the home directory (proposal usage shows
- *  `fileSessionStore('~/.bpt/sessions')`). */
+ *  `fileSessionStore('~/.bpt/sessions')`).
+ *
+ *  On Windows the separator after `~` is a BACKSLASH (`~\.bpt\sessions` is what
+ *  PowerShell prints and what a host writing a native path passes), and the
+ *  `'~/'`-only probe missed it: the tilde stayed literal, `resolve()` then made
+ *  it CWD-relative, and every transcript landed in a junk `.\~\.bpt\sessions`
+ *  tree instead of the user's home — silently, since the store creates its own
+ *  directories. The backslash form is accepted ONLY under win32: on POSIX a
+ *  backslash is a legal filename character, so `~\x` there really is a
+ *  directory named `~\x` and must not be reinterpreted. */
 function expandTilde(dir: string): string {
   if (dir === '~') return homedir();
   if (dir.startsWith('~/')) return join(homedir(), dir.slice(2));
+  if (sep === '\\' && dir.startsWith('~\\')) return join(homedir(), dir.slice(2));
   return dir;
 }
 
