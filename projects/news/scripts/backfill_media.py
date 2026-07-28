@@ -70,7 +70,10 @@ def ext_of(url, d="jpg"):
 
 
 def fname(url, source):
-    return f"{source}_{hashlib.md5(url.encode()).hexdigest()[:12]}.{ext_of(url)}"
+    # usedforsecurity=False：这里 md5 只用来把 URL 折成稳定文件名，与安全无关。
+    # 标出来不只是消 lint——**FIPS 模式的 Python 会让裸 hashlib.md5() 直接抛
+    # ValueError**，加了这个标志才继续可用。
+    return f"{source}_{hashlib.md5(url.encode(), usedforsecurity=False).hexdigest()[:12]}.{ext_of(url)}"
 
 
 def fetch(url, dest, source):
@@ -224,7 +227,8 @@ def collect_urls(include_discord):
 def upload_release():
     files = glob.glob(f"{FILES}/*")
     if not files:
-        print("无可上传文件"); return
+        print("无可上传文件")
+        return
     tar = f"{ROOT}/media/media-files.tar"
     subprocess.run(["tar", "-cf", tar, "-C", FILES, "."], check=True)
     # 2026-06-21 收敛：media 二进制并入「社区二创」community-assets（与 fanart 同桶），
@@ -244,7 +248,8 @@ def main():
     a = ap.parse_args()
 
     if a.upload:
-        upload_release(); return
+        upload_release()
+        return
 
     # 预算从**进程启动**算起（见 _START 上方说明），而不是从下载循环算起
     _set_budget(a.budget)
@@ -254,7 +259,8 @@ def main():
     manifest = load_manifest()
     urls = collect_urls(include_discord=not a.no_discord)
 
-    seen = set(); todo = []
+    seen = set()
+    todo = []
     for url, src, d in urls:
         if url in seen:
             continue
@@ -278,7 +284,8 @@ def main():
     stats = {}
     for url, src, d in todo:
         if _budget_exhausted():
-            print(f"预算耗尽，已处理 {done}/{len(todo)}，下次续跑"); break
+            print(f"预算耗尽，已处理 {done}/{len(todo)}，下次续跑")
+            break
         dl_url = refreshed.get(url, url)
         fn = fname(url, src)
         status = fetch(dl_url, os.path.join(FILES, fn), src)
@@ -290,7 +297,8 @@ def main():
         stats[status] = stats.get(status, 0) + 1
         done += 1
         if done % 200 == 0:
-            save_manifest(manifest); print(f"  ...{done}/{len(todo)}")
+            save_manifest(manifest)
+            print(f"  ...{done}/{len(todo)}")
         time.sleep(a.delay)
 
     save_manifest(manifest)

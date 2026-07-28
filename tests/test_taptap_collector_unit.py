@@ -147,7 +147,7 @@ class TestExtractTopics(unittest.TestCase):
                 mock.patch.object(tt.news_common, "parse_relative_time",
                                   return_value=("2026-01-01T00:00:00+00:00", True)):
             out = _run(tt._extract_topics(page, max_scrolls=1))
-        self.assertEqual(out, [] if not out else out)  # no crash
+        self.assertEqual(out, out if out else [])  # no crash
 
 
 class TestExtractTopicsDom(unittest.TestCase):

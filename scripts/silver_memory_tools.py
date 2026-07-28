@@ -277,16 +277,13 @@ def record_lesson(summary: str, context: str = "",
     insert_at = len(lines)
     for idx in range(len(lines) - 1, -1, -1):
         line = lines[idx]
-        if line.startswith("> **维护说明**") or line.startswith("> 维护说明"):
+        if line.startswith(("> **维护说明**", "> 维护说明")):
             # 向上回退到最近的非空行之后
             j = idx - 1
             while j >= 0 and lines[j].strip() == "":
                 j -= 1
             # 再看是否有 `---` 分隔线
-            if j >= 0 and lines[j].strip() == "---":
-                insert_at = j
-            else:
-                insert_at = idx
+            insert_at = j if j >= 0 and lines[j].strip() == "---" else idx
             break
 
     # 插入块（去掉首个多余空行若紧接已是空行）

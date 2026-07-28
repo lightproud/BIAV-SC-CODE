@@ -41,7 +41,7 @@ def frontmatter(fields: dict) -> str:
         if key not in fields:
             continue
         val = fields[key]
-        if val is None or val == "" or val == []:
+        if val is None or val in ("", []):
             continue
         if isinstance(val, list):
             inner = ", ".join(_yaml_scalar(v) for v in val)

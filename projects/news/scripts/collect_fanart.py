@@ -169,7 +169,8 @@ def main():
             if not isinstance(it, dict) or not it.get("media_url"):
                 continue
             url = it["media_url"]
-            fn = f"pixiv_{hashlib.md5(url.encode()).hexdigest()[:10]}.{ext_of(url)}"
+            # usedforsecurity=False：仅用于折算文件名；亦保证 FIPS 模式下不抛 ValueError
+            fn = f"pixiv_{hashlib.md5(url.encode(), usedforsecurity=False).hexdigest()[:10]}.{ext_of(url)}"
             status = fetch(url, os.path.join(a.out, fn), referer="https://www.pixiv.net/")
             gallery.append({"source": "pixiv", "channel": "pixiv",
                             "author": it.get("author", ""),

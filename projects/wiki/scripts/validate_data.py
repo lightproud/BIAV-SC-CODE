@@ -268,14 +268,13 @@ def main() -> int:
         for err in all_errors:
             print(err)
         return 1
-    else:
-        total_files = len(db_loaded) + len(processed_loaded)
-        schemas_checked = 0
-        if HAS_JSONSCHEMA:
-            schemas_checked = (sum(1 for f in SCHEMA_MAP if f in db_loaded)
-                               + sum(1 for f in PROCESSED_SCHEMA_MAP if f in processed_loaded))
-        print(f"ALL PASSED: {total_files} files checked, {schemas_checked} schemas validated")
-        return 0
+    total_files = len(db_loaded) + len(processed_loaded)
+    schemas_checked = 0
+    if HAS_JSONSCHEMA:
+        schemas_checked = (sum(1 for f in SCHEMA_MAP if f in db_loaded)
+                           + sum(1 for f in PROCESSED_SCHEMA_MAP if f in processed_loaded))
+    print(f"ALL PASSED: {total_files} files checked, {schemas_checked} schemas validated")
+    return 0
 
 
 if __name__ == "__main__":

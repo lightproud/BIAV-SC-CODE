@@ -103,7 +103,7 @@ def normalize_engagement(item: dict) -> float:
         return (view * weights['view_weight'] +
                 like + coin * 2 + favorite * 2 + share * 3)
 
-    elif source == 'weibo':
+    if source == 'weibo':
         repost = metadata.get('reposts_count', 0) or 0
         comment = metadata.get('comments_count', 0) or 0
         like = metadata.get('attitudes_count', engagement) or engagement
@@ -112,7 +112,7 @@ def normalize_engagement(item: dict) -> float:
                 comment * weights['comment_weight'] +
                 like * weights['like_weight'])
 
-    elif source == 'youtube':
+    if source == 'youtube':
         # YouTube: views × 0.0001 + (like + comment)
         view = metadata.get('viewCount', engagement) or engagement
         like = metadata.get('likeCount', 0) or 0
@@ -122,9 +122,8 @@ def normalize_engagement(item: dict) -> float:
                 like * weights['interact_weight'] +
                 comment * weights['interact_weight'])
 
-    else:
-        # 其他平台直接使用 engagement
-        return engagement * weights.get('weight', 1.0)
+    # 其他平台直接使用 engagement
+    return engagement * weights.get('weight', 1.0)
 
 
 def is_hot_normalized(item: dict) -> bool:

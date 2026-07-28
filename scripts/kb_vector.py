@@ -73,7 +73,8 @@ def embed_stub(texts: list[str], dim: int = _STUB_DIM) -> list[list[float]]:
     for t in texts:
         v = [0.0] * dim
         for tok in _stub_tokens(t or ""):
-            h = int(hashlib.md5(tok.encode("utf-8")).hexdigest(), 16)
+            # usedforsecurity=False：确定性哈希分桶，非安全用途（兼 FIPS 模式可用）
+            h = int(hashlib.md5(tok.encode("utf-8"), usedforsecurity=False).hexdigest(), 16)
             v[h % dim] += 1.0
         out.append(_l2_normalize(v))
     return out

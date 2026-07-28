@@ -252,15 +252,14 @@ def main() -> int:
                 f.write(f"version={new_version_str}\n")
         print(f"::notice::New version detected: {new_version_str}")
         return 0
-    else:
-        import os
+    import os
 
-        github_output = os.environ.get("GITHUB_OUTPUT")
-        if github_output:
-            with open(github_output, "a", encoding="utf-8") as f:
-                f.write("new_version=false\n")
-        print("No new version detected.")
-        return 0
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        with open(github_output, "a", encoding="utf-8") as f:
+            f.write("new_version=false\n")
+    print("No new version detected.")
+    return 0
 
 
 if __name__ == "__main__":

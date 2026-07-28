@@ -477,11 +477,11 @@ def generate_cg_gallery():
 
     available = set()
     public_dir = os.path.join(DOCS_DIR, 'public')
-    for root, dirs, files in os.walk(os.path.join(public_dir, 'cg')):
+    for root, _dirs, files in os.walk(os.path.join(public_dir, 'cg')):
         for fn in files:
             if fn.endswith('.png'):
                 available.add(os.path.relpath(os.path.join(root, fn), public_dir))
-    for root, dirs, files in os.walk(os.path.join(public_dir, 'scenebg')):
+    for root, _dirs, files in os.walk(os.path.join(public_dir, 'scenebg')):
         for fn in files:
             if fn.endswith('.png'):
                 available.add(os.path.relpath(os.path.join(root, fn), public_dir))
@@ -869,7 +869,7 @@ def generate_ui_gallery():
             label = section_labels.get(d, d)
             # Collect images recursively
             imgs = []
-            for root, dirs, files in os.walk(dpath):
+            for root, _dirs, files in os.walk(dpath):
                 for f in sorted(files):
                     if f.endswith('.png'):
                         rel = os.path.relpath(os.path.join(root, f), os.path.join(DOCS_DIR, 'public'))
@@ -1422,7 +1422,7 @@ def generate_video_index():
 
     # Classify videos by filename prefix
     def _video_category(name):
-        if name.startswith('C0') or name.startswith('C20'):
+        if name.startswith(('C0', 'C20')):
             return '章节过场'
         if 'CG_SD' in name:
             return 'CG SD 动画'
@@ -1430,7 +1430,7 @@ def generate_video_index():
             return '场景过渡'
         if name.startswith('RD_'):
             return 'RD 场景'
-        if name.startswith('Vx_') or name.startswith('VX_'):
+        if name.startswith(('Vx_', 'VX_')):
             return '超维视频'
         if 'Logo' in name:
             return 'Logo'

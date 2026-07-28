@@ -10,6 +10,7 @@ file listing paths.
 
 import sys
 from pathlib import Path
+from typing import ClassVar
 from unittest import mock
 
 
@@ -242,7 +243,8 @@ def test_env_cleanup_exception_swallowed(tmp_path):
     out = tmp_path / "out"
 
     class _BadEnv:
-        objects = []
+        # 空的只读桩字段，刻意挂类上
+        objects: ClassVar[list] = []
 
         @property
         def _files(self):

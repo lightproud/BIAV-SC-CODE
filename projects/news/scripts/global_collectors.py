@@ -26,7 +26,6 @@ import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-import xml.etree.ElementTree as ET
 
 import requests
 
@@ -140,7 +139,8 @@ def _strip_html_tags(html: str) -> str:
 def _parse_reddit_rss(xml_text: str, sub: str) -> list:
     """Parse Reddit Atom RSS feed and return list of items."""
     ns = {"atom": "http://www.w3.org/2005/Atom"}
-    root = ET.fromstring(xml_text)
+    # 远端不可信 XML 走共享护栏（体积上限 + 拒 DOCTYPE/ENTITY），见 news_common
+    root = news_common.parse_xml_safely(xml_text)
     items = []
 
     for entry in root.findall("atom:entry", ns):

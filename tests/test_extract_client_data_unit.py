@@ -111,7 +111,7 @@ class TestScanAndExtractParallel:
             }
 
         monkeypatch.setattr(ecd, "ProcessPoolExecutor", _FakeExecutor)
-        monkeypatch.setattr(ecd, "as_completed", lambda futs: list(futs))
+        monkeypatch.setattr(ecd, "as_completed", list)
         monkeypatch.setattr(ecd, "_extract_single_file", _fake_extract)
         stats = ecd.scan_and_extract(root, tmp_path / "out", workers=2, verbose=True)
         assert stats["asset_files_scanned"] == 2

@@ -11,6 +11,7 @@ Imports via PACKAGE path so mutmut's trampoline keys match.
 """
 import json
 from datetime import datetime, timedelta, timezone
+from typing import ClassVar
 import pytest
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -216,9 +217,12 @@ class _Resp:
 
 class _FakeSession:
     """回放队列式 Session 桩：记录 GET 序列与全量 kwargs，弹出预设响应。"""
-    queue = []
-    calls = []
-    kwargs = []
+    # ClassVar 是刻意的：三条都是**跨实例共享**的录制队列（桩每次 GET 都 new 一个
+    # 实例，记录必须落在类上）。不标注则读者会误以为是实例字段，改成实例属性会
+    # 让断言全部读不到数据。用例之间由各自 setUp 显式清空。
+    queue: ClassVar[list] = []
+    calls: ClassVar[list] = []
+    kwargs: ClassVar[list] = []
 
     def __init__(self):
         pass
@@ -281,8 +285,9 @@ def test_safe_get_rejects_bad_scheme_upfront(fake_session):
 # ── get_with_retry：重试节拍 + header 合并 ──────────────────────────────────
 
 class _RetrySession:
-    outcomes = []
-    calls = []
+    # 同上：跨实例共享的录制列表，刻意挂在类上
+    outcomes: ClassVar[list] = []
+    calls: ClassVar[list] = []
 
     def __init__(self):
         self.max_redirects = None

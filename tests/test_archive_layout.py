@@ -199,8 +199,9 @@ def test_data_root_env_expanduser(monkeypatch):
 
 def test_archive_date_str_naive_treated_as_utc():
     """无时区时间戳按 UTC 解读，再折算北京日期（与旧行为等价）。"""
-    assert al.archive_date_str(datetime(2026, 4, 13, 20, 0, 0)) == "2026-04-14"
-    assert al.archive_date_str(datetime(2026, 4, 13, 15, 59, 0)) == "2026-04-13"
+    # 裸 datetime 是本用例的**被测对象**（无时区输入按 UTC 解读），不可加 tzinfo
+    assert al.archive_date_str(datetime(2026, 4, 13, 20, 0, 0)) == "2026-04-14"  # noqa: DTZ001
+    assert al.archive_date_str(datetime(2026, 4, 13, 15, 59, 0)) == "2026-04-13"  # noqa: DTZ001
 
 
 def test_archive_date_str_utc_offset_explicit():

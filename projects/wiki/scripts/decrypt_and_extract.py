@@ -141,8 +141,7 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
         if key:
             print(f"\n  KEY FOUND (via metadata): {key}")
             return key
-        else:
-            print("\n  Key not found in global-metadata.dat")
+        print("\n  Key not found in global-metadata.dat")
     except Exception as e:
         print(f"\n  Brute-force error (metadata): {e}")
 
@@ -163,8 +162,7 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
             if key:
                 print(f"\n  KEY FOUND (via GameAssembly.dll): {key}")
                 return key
-            else:
-                print("  Key not found in GameAssembly.dll")
+            print("  Key not found in GameAssembly.dll")
         except Exception as e:
             print(f"  Brute-force error (GameAssembly): {e}")
     else:

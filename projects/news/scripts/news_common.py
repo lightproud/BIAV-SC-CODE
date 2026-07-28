@@ -22,6 +22,7 @@ import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
+from xml.etree import ElementTree as ET
 
 import requests
 from urllib3.util import connection as _urllib3_connection
@@ -59,6 +60,34 @@ def env_float(name: str, default: float) -> float:
     except (TypeError, ValueError):
         print(f'[news_common] 环境变量 {name}={raw!r} 非数值，回落默认值 {default}')
         return default
+
+
+# 远端 XML 解析上限：Reddit Atom 单页实测 < 200 KB，5 MB 已是极宽的余量。
+MAX_XML_BYTES = 5 * 1024 * 1024
+_DOCTYPE_RE = re.compile(rb"<!\s*(DOCTYPE|ENTITY)", re.IGNORECASE)
+
+
+def parse_xml_safely(xml_text, *, max_bytes: int = MAX_XML_BYTES):
+    """解析**远端不可信** XML（Reddit RSS 等），带两道与依赖无关的护栏。
+
+    背景：两处 RSS 解析直接 `xml.etree.ElementTree.fromstring(远端文本)`。
+    ElementTree 不做外部实体解析，但对 DTD 内部实体的递归展开（billion laughs）
+    与超大输入并无防护——一个被篡改或被劫持的 feed 就能把采集进程的内存吃光,
+    而这条链路每 3 小时自动跑一轮、无人值守。
+
+    不引入 defusedxml（新依赖），改用两条对 RSS/Atom 零误伤的护栏：
+      ① 体积上限——正常 feed 与之相差两个数量级；
+      ② 拒绝任何带 DOCTYPE / ENTITY 声明的文档——合法的 RSS/Atom **不需要** DTD,
+         而 billion laughs 类攻击必须靠它。
+
+    返回 ElementTree.Element；不合格输入抛 ValueError（调用方两处均已有 except 兜底）。
+    """
+    raw = xml_text.encode("utf-8", "replace") if isinstance(xml_text, str) else bytes(xml_text)
+    if len(raw) > max_bytes:
+        raise ValueError(f"XML 超出体积上限（{len(raw)} > {max_bytes} 字节），拒绝解析")
+    if _DOCTYPE_RE.search(raw):
+        raise ValueError("XML 含 DOCTYPE/ENTITY 声明，拒绝解析（RSS/Atom 无需 DTD）")
+    return ET.fromstring(raw)  # noqa: S314  两道护栏已在上方拦下 DTD 与超大输入
 
 
 def _resolve_safe_ip(host):
@@ -420,7 +449,9 @@ def sign_wbi_params(params, mixin_key):
     params = dict(params)
     params['wts'] = int(time.time())
     query = urlencode(sorted(params.items()))
-    params['w_rid'] = hashlib.md5((query + mixin_key).encode()).hexdigest()
+    # md5 是 Bilibili WBI 协议**规定**的摘要算法，不可替换；usedforsecurity=False
+    # 表明银芯并非拿它当安全原语，同时保证 FIPS 模式下不抛 ValueError。
+    params['w_rid'] = hashlib.md5((query + mixin_key).encode(), usedforsecurity=False).hexdigest()
     return params
 
 

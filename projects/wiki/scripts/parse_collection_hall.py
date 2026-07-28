@@ -73,7 +73,7 @@ def parse_collection_hall(path):
         if not categorized:
             categories['uncategorized'].append(entry)
 
-    result = {
+    return {
         '_meta': {
             'source': 'CollectionHall.lua (runtime memory extraction)',
             'total_entries': len(entries),
@@ -85,7 +85,6 @@ def parse_collection_hall(path):
         'all_entries': entries,
         'by_category': categories,
     }
-    return result
 
 
 if __name__ == '__main__':

@@ -52,7 +52,7 @@ def mirror(src: Path, dst: Path) -> None:
     """
     # 采集上游相对路径全集（跳过 SKIP_TOP 顶层条目）
     keep: set[str] = set()
-    for root, dirs, files in os.walk(src):
+    for root, dirs, files in os.walk(src):  # dirs 用于剪枝（下方 dirs[:] = []）
         rel_root = Path(root).relative_to(src)
         top = rel_root.parts[0] if rel_root.parts else ""
         if top in SKIP_TOP:
@@ -76,7 +76,7 @@ def mirror(src: Path, dst: Path) -> None:
                 continue
             (Path(root) / name).unlink()
     # 清理空目录
-    for root, dirs, files in os.walk(dst, topdown=False):
+    for root, _dirs, _files in os.walk(dst, topdown=False):
         p = Path(root)
         if p != dst and not any(p.iterdir()):
             p.rmdir()

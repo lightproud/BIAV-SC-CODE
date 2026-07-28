@@ -82,7 +82,7 @@ def parse_cg_gallery(manifest_path):
 
     # Sort chapters
     sorted_chapters = []
-    for key in sorted(chapters.keys(), key=lambda x: int(x)):
+    for key in sorted(chapters.keys(), key=int):
         ch = chapters[key]
         ch['image_count'] = len(ch['images'])
         ch['images'].sort(key=lambda x: x['name'])
@@ -98,7 +98,7 @@ def parse_cg_gallery(manifest_path):
         total_special += sg['image_count']
         sorted_specials.append(sg)
 
-    result = {
+    return {
         '_meta': {
             'source': 'art_assets/manifest.json (UnityPy extraction)',
             'total_cg': len(cg_entries),
@@ -110,7 +110,6 @@ def parse_cg_gallery(manifest_path):
         'special': sorted_specials,
     }
 
-    return result
 
 
 if __name__ == '__main__':

@@ -49,10 +49,7 @@ def parse_voice_lua(path):
         for line in group:
             title = line['title']
             # Extract category from title (before the dot)
-            if '·' in title:
-                cat = title.split('·')[0]
-            else:
-                cat = title
+            cat = title.split('·')[0] if '·' in title else title
             if cat not in categories:
                 categories[cat] = []
             categories[cat].append(line)
@@ -68,7 +65,7 @@ def parse_voice_lua(path):
             ]
         characters.append(char_data)
 
-    result = {
+    return {
         '_meta': {
             'source': 'Voice.lua (runtime memory extraction)',
             'total_lines': len(entries),
@@ -77,7 +74,6 @@ def parse_voice_lua(path):
         },
         'characters': characters,
     }
-    return result
 
 
 if __name__ == '__main__':

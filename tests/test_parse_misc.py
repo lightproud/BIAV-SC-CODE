@@ -1,6 +1,7 @@
 import json
 import tempfile
 import unittest
+from typing import ClassVar
 from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -81,7 +82,8 @@ class TestParseItemStories(unittest.TestCase):
 
 
 class TestParseCgGallery(unittest.TestCase):
-    MANIFEST = {
+    # 只读夹具，刻意挂类上供各用例共用
+    MANIFEST: ClassVar[dict] = {
         'files': [
             {'path': 'cg/c01/b.png', 'name': 'b', 'size': 2},
             {'path': 'cg/c01/a.png', 'name': 'a', 'size': 1},

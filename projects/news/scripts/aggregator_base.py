@@ -139,7 +139,7 @@ def sanitize_url(url):
         return ''
     url = url.strip()
     # Normalize http to https for known platforms
-    if url.startswith('http://www.bilibili.com') or url.startswith('http://bilibili.com'):
+    if url.startswith(('http://www.bilibili.com', 'http://bilibili.com')):
         url = url.replace('http://', 'https://', 1)
     # Basic URL validation
     parsed = urlparse(url)

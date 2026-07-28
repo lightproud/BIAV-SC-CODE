@@ -110,7 +110,9 @@ def run_zero_cost_collectors() -> list[dict]:
         import global_collectors as c
         c._refresh_cutoff()
     except ImportError as e:
-        logger.error(f"Cannot import global_collectors module: {e}")
+        # exception() 而非 error()：核心采集模块导入失败是排障起点，丢掉 traceback
+        # 就只剩一句「Cannot import」，看不出到底是哪一层依赖缺失。
+        logger.exception(f"Cannot import global_collectors module: {e}")
         return items, []
 
     # 数据质量追踪器：更新各源状态，长期沉默的源自动 dormant 跳过
@@ -342,8 +344,7 @@ def merge_and_dedup(existing: list[dict], new_items: list[dict],
             seen[key] = converted
 
     # Sort by engagement descending
-    merged = sorted(seen.values(), key=lambda x: x.get('engagement', 0), reverse=True)
-    return merged
+    return sorted(seen.values(), key=lambda x: x.get('engagement', 0), reverse=True)
 
 
 def build_summary(items: list[dict]) -> str:

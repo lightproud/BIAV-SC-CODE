@@ -45,7 +45,8 @@ class PrePushHookHarness(unittest.TestCase):
         seed = tmp / "seed"
         _git(tmp, "clone", "-q", str(self.origin), str(seed))
         (seed / "base.txt").write_text("base\n", encoding="utf-8")
-        _git(seed, "add", "."); _git(seed, "commit", "-qm", "base")
+        _git(seed, "add", ".")
+        _git(seed, "commit", "-qm", "base")
         _git(seed, "push", "-q", "origin", "main")
 
         # 被测克隆：装配真实钩子（与 CLAUDE.md §7.4 相同的 hooksPath 方式）
@@ -66,13 +67,15 @@ class PrePushHookHarness(unittest.TestCase):
 
     def _advance_origin_main(self, fname="upstream.txt", content="upstream\n"):
         (self.other / fname).write_text(content, encoding="utf-8")
-        _git(self.other, "add", "."); _git(self.other, "commit", "-qm", f"advance {fname}")
+        _git(self.other, "add", ".")
+        _git(self.other, "commit", "-qm", f"advance {fname}")
         _git(self.other, "push", "-q", "origin", "main")
 
     def _feature_commit(self, fname="feature.txt", content="feature\n"):
         _git(self.work, "checkout", "-qb", "feature")
         (self.work / fname).write_text(content, encoding="utf-8")
-        _git(self.work, "add", "."); _git(self.work, "commit", "-qm", f"feature {fname}")
+        _git(self.work, "add", ".")
+        _git(self.work, "commit", "-qm", f"feature {fname}")
 
     def test_fresh_base_passes_first_push(self):
         self._feature_commit()

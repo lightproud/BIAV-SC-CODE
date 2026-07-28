@@ -218,8 +218,11 @@ def test_discord_region_roots_legacy_fallback(tmp_path):
 def test_iter_discord_message_files_region_filter(tmp_path):
     g = tmp_path / 'global' / 'channels' / '0470'
     j = tmp_path / 'jp' / 'channels' / '4902'
-    g.mkdir(parents=True); j.mkdir(parents=True)
-    gf = g / '2026-07-01.jsonl'; jf = j / '2026-07-01.jsonl'
-    gf.write_text('', encoding='utf-8'); jf.write_text('', encoding='utf-8')
+    g.mkdir(parents=True)
+    j.mkdir(parents=True)
+    gf = g / '2026-07-01.jsonl'
+    jf = j / '2026-07-01.jsonl'
+    gf.write_text('', encoding='utf-8')
+    jf.write_text('', encoding='utf-8')
     assert set(iter_discord_message_files(tmp_path)) == {gf, jf}
     assert list(iter_discord_message_files(tmp_path, region='jp')) == [jf]

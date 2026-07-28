@@ -51,7 +51,7 @@ def _fetch_reddit_comments(permalink: str, headers: dict, max_comments: int = 10
                 continue
             cd = c['data']
             body = cd.get('body', '')
-            if not body or body == '[deleted]' or body == '[removed]':
+            if not body or body in {'[deleted]', '[removed]'}:
                 continue
             results.append({
                 'author': f"u/{cd.get('author', '?')}",
@@ -88,14 +88,14 @@ def _extract_reddit_media(post_data: dict) -> str:
 
 def _fetch_reddit_rss(sub, headers, cutoff):
     """Fetch posts from Reddit RSS feed (more reliable than JSON API)."""
-    import xml.etree.ElementTree as ET
     items = []
     # old.reddit.com RSS 比 www.reddit.com 更稳定
     url = f'https://old.reddit.com/r/{sub}/.rss'
     try:
         resp = requests.get(url, headers=headers, timeout=15)
         resp.raise_for_status()
-        root = ET.fromstring(resp.text)
+        # 远端不可信 XML 走共享护栏（体积上限 + 拒 DOCTYPE/ENTITY），见 news_common
+        root = news_common.parse_xml_safely(resp.text)
         ns = {'atom': 'http://www.w3.org/2005/Atom'}
         for entry in root.findall('atom:entry', ns):
             title = entry.findtext('atom:title', '', ns).strip()

@@ -192,16 +192,15 @@ def _unescape_lua_string(s):
         ch = m.group(1)
         if ch == 'n':
             return '\n'
-        elif ch == 't':
+        if ch == 't':
             return '\t'
-        elif ch == '"':
+        if ch == '"':
             return '"'
-        elif ch == '/':
+        if ch == '/':
             return '/'
-        elif ch == '\\':
+        if ch == '\\':
             return '\\'
-        else:
-            return ch
+        return ch
     return re.sub(r'\\\\(.)', _replace_escape, s)
 
 
