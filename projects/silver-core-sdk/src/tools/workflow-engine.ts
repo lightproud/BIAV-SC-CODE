@@ -63,6 +63,7 @@
 import * as os from 'node:os';
 import * as vm from 'node:vm';
 import { AbortError } from '../errors.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import { evaluateStructuredOutput } from '../internal/structured-output.js';
 import type { JSONSchema } from '../types.js';
 import type { SpawnSubagentFn } from '../internal/contracts.js';
@@ -191,7 +192,8 @@ class LiteralParser {
   ) {}
 
   private fail(msg: string): never {
-    const at = this.src.slice(this.i, this.i + 24).replace(/\n/g, '\\n');
+    // Surrogate-safe snippet: the message reaches the tool result verbatim.
+    const at = sliceSurrogateSafe(this.src.slice(this.i, this.i + 24), 24).replace(/\n/g, '\\n');
     throw new MetaParseError(`${msg} (at offset ${this.i}: "${at}...")`);
   }
 
@@ -495,16 +497,29 @@ const PRELUDE = `'use strict';
   const decode = (channel) =>
     channel === null || channel === undefined ? null : JSON.parse(channel).v;
 
-  globalThis.agent = async (prompt, opts) => decode(await hostAgent(prompt, opts));
-  globalThis.parallel = async (thunks) => Array.from(await hostParallel(thunks));
-  globalThis.pipeline = async (items, ...stages) =>
-    Array.from(await hostPipeline(items, stages));
+  // Backstop branch: a hook promise the script never awaits (fire-and-forget
+  // agent(), or a script that throws before awaiting a stored call) must not
+  // crash the host with an unhandled rejection when it fails or aborts. The
+  // extra .catch() branch marks the rejection handled while awaiting callers
+  // still observe it on the returned promise.
+  const backstop = (promise) => {
+    promise.catch(() => {});
+    return promise;
+  };
+
+  globalThis.agent = (prompt, opts) =>
+    backstop((async () => decode(await hostAgent(prompt, opts)))());
+  globalThis.parallel = (thunks) =>
+    backstop((async () => Array.from(await hostParallel(thunks)))());
+  globalThis.pipeline = (items, ...stages) =>
+    backstop((async () => Array.from(await hostPipeline(items, stages)))());
   globalThis.phase = (title) => { hostPhase(title); };
   globalThis.log = (message) => { hostLog(message); };
-  globalThis.workflow = async (ref, childArgs) => {
-    const channel = await hostWorkflow(ref, childArgs);
-    return channel === undefined ? undefined : JSON.parse(channel).v;
-  };
+  globalThis.workflow = (ref, childArgs) =>
+    backstop((async () => {
+      const channel = await hostWorkflow(ref, childArgs);
+      return channel === undefined ? undefined : JSON.parse(channel).v;
+    })());
   // Simplified budget surface: no token-target channel in this SDK (see the
   // engine module header) — total is always null, spent() 0, remaining() Inf.
   globalThis.budget = Object.freeze({
@@ -567,10 +582,11 @@ class Semaphore {
   private readonly max: number;
 
   constructor(max: number) {
-    // A non-positive cap can never grant a slot: the first acquire() queues
-    // forever and the workflow deadlocks silently (audit 2026-07-17 L39 —
-    // a caller-supplied maxConcurrentAgents:0). Clamp to serial execution.
-    this.max = Math.max(1, max);
+    // A non-positive (or NaN) cap can never grant a slot: the first acquire()
+    // queues forever and the workflow deadlocks silently (audit 2026-07-17
+    // L39 — a caller-supplied maxConcurrentAgents:0; Math.max(1, NaN) is NaN,
+    // so NaN slipped the old clamp). Clamp to serial execution.
+    this.max = max >= 1 ? max : 1;
   }
 
   acquire(): Promise<() => void> {
@@ -777,7 +793,16 @@ export function checkWorkflowSyntax(
 }
 
 export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRunResult> {
-  const limits: WorkflowLimits = { ...defaultWorkflowLimits(), ...opts.limits };
+  // Merge per-field, not by spread: spreading `{maxConcurrentAgents: undefined}`
+  // (type-legal for Partial<WorkflowLimits>) over the defaults would hand the
+  // semaphore undefined and deadlock the first agent() call, and an undefined
+  // maxTotalAgents would disable the runaway backstop outright.
+  const defaults = defaultWorkflowLimits();
+  const limits: WorkflowLimits = {
+    maxConcurrentAgents: opts.limits?.maxConcurrentAgents ?? defaults.maxConcurrentAgents,
+    maxTotalAgents: opts.limits?.maxTotalAgents ?? defaults.maxTotalAgents,
+    maxCollectionItems: opts.limits?.maxCollectionItems ?? defaults.maxCollectionItems,
+  };
   const progress: string[] = [];
   const journal: WorkflowJournalEntry[] = [];
   const semaphore = new Semaphore(limits.maxConcurrentAgents);
@@ -840,7 +865,8 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
       );
     }
     const label =
-      agentOpts.label ?? (promptRaw.length > 48 ? `${promptRaw.slice(0, 45)}...` : promptRaw);
+      agentOpts.label ??
+      (promptRaw.length > 48 ? `${sliceSurrogateSafe(promptRaw, 45)}...` : promptRaw);
     const phaseTag = agentOpts.phase ?? currentPhase;
     const display = phaseTag !== undefined ? `${label} [${phaseTag}]` : label;
 
@@ -915,7 +941,9 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
         return null;
       }
       if (res.isError) {
-        pushProgress(`[agent#${index}] ${display}: failed (${res.content.slice(0, 120)})`);
+        pushProgress(
+          `[agent#${index}] ${display}: failed (${sliceSurrogateSafe(res.content, 120)})`,
+        );
         return null;
       }
       // G1 (audit r2): `runInBackground: false` above is a REQUEST, not a

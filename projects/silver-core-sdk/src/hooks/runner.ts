@@ -127,13 +127,21 @@ function previewJson(value: unknown): string {
 function stringifyConditionInput(input: HookInput): string {
   let text: string;
   try {
-    const seen = new WeakSet<object>();
+    // Ancestor-stack cycle detection: a mark-every-visited WeakSet also flagged
+    // SHARED (non-circular) references as '[Circular]', hiding real tool_input/
+    // tool_response content from the evaluator. Only an ancestor repeat is a
+    // true cycle; the replacer's `this` is the holder, so the stack unwinds as
+    // stringify backs out of siblings.
+    const ancestors: object[] = [];
     text =
-      JSON.stringify(input, (_key, val: unknown) => {
+      JSON.stringify(input, function (this: unknown, _key, val: unknown) {
         if (typeof val === 'bigint') return `${val}n`;
         if (typeof val === 'object' && val !== null) {
-          if (seen.has(val)) return '[Circular]';
-          seen.add(val);
+          while (ancestors.length > 0 && ancestors[ancestors.length - 1] !== this) {
+            ancestors.pop();
+          }
+          if (ancestors.includes(val)) return '[Circular]';
+          ancestors.push(val);
         }
         return val;
       }) ?? 'null';
@@ -276,7 +284,17 @@ export class DefaultHookRunner implements HookRunner {
     // closed) skipped the callbacks on every stop. Append a bounded tail of
     // the transcript so content conditions are actually decidable.
     if (stop) {
-      const tp = (input as { transcript_path?: unknown }).transcript_path;
+      // SubagentStop's judging material is the SUBAGENT's transcript
+      // (agent_transcript_path); the base transcript_path on that event is the
+      // MAIN session's. Reading only transcript_path judged a subagent
+      // condition against the wrong transcript.
+      const rec = input as { transcript_path?: unknown; agent_transcript_path?: unknown };
+      const tp =
+        event === 'SubagentStop' &&
+        typeof rec.agent_transcript_path === 'string' &&
+        rec.agent_transcript_path !== ''
+          ? rec.agent_transcript_path
+          : rec.transcript_path;
       if (typeof tp === 'string' && tp !== '') {
         const tail = readFileTail(tp, CONDITION_TRANSCRIPT_TAIL_BYTES);
         if (tail !== '') context += `\n\nTranscript tail:\n${tail}`;

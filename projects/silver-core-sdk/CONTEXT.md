@@ -71,11 +71,17 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.94.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.94.0`
+**当前版本 `0.95.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.95.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.95.0（2026-07-28）：多波缺陷审计（八波 59 分区）**——100+ 处经核实真实缺陷全修，
+每处均有具体失败输入；公开 API 与测试契约零改动。覆盖崩溃面（宽容输入致整轮丢弃）、线协议
+（连续同角色轮 / 工具对边界 / MCP 跨会话 id）、权限 deny 七类绕过、原型污染与域名过滤绕过、
+子代理与会话状态竞态、socket 与监听器泄漏、代理对截断与 NaN 守卫。战报见
+`Public-Info-Pool/Resource/repo-engineering/sdk-bug-audit-multiwave-20260728.md`。
 
 **v0.94.0（2026-07-28）：包内模型兜底默认值全数移除（BREAKING，黑池 sdk-bridge 转派需求）**——
 触发事件：黑池生产两次报错，报错文案里的 `claude-sonnet-4-5` 在黑池任何配置里都不存在——它是

@@ -253,7 +253,7 @@ export function buildSystemPromptParts(
   // like `append`): the undefined path has no segments to carry.
   if (opt !== undefined && Array.isArray(opt.appendSegments)) {
     for (const seg of opt.appendSegments) {
-      if (seg !== null && typeof seg.text === 'string' && seg.text.length > 0) {
+      if (seg !== null && typeof seg === 'object' && typeof seg.text === 'string' && seg.text.length > 0) {
         project += `\n\n${seg.text}`;
         parts.push({ role: 'append', label: seg.label, estTokens: estimateTextTokens(seg.text) });
       }

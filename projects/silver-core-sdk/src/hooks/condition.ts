@@ -145,6 +145,17 @@ export function parseHookCondition(raw: string): HookConditionResult {
         ? 'condition met (no reason given)'
         : 'condition not met (no reason given)';
   const result: HookConditionResult = { ok, reason };
+  // A clean verdict requires `ok` to be an actual boolean. A reply that parses
+  // to an object but omits `ok` (or gives a non-boolean) is NOT a verdict — the
+  // evaluator failed to answer, functionally identical to an unparseable reply.
+  // Mark it evaluationFailed so a failureMode-'closed' matcher ADMITS its
+  // callbacks (M13 routing) instead of silently skipping them; without this a
+  // conditioned deny hook fails OPEN whenever the evaluator returns a malformed
+  // JSON object (a far more common LLM failure than non-JSON garbage, which is
+  // the only shape the earlier guard caught). `ok:false` boolean stays a clean
+  // verdict (evaluationFailed absent), so the default failureMode 'open' path is
+  // byte-identical.
+  if (typeof rec.ok !== 'boolean') result.evaluationFailed = true;
   // `impossible` is only meaningful on a NOT-met verdict (per the stop prompt).
   if (!ok && rec.impossible === true) result.impossible = true;
   return result;

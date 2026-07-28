@@ -234,7 +234,17 @@ export function createMemoryStore(
       if (entry.kind === 'directory') {
         out.push({ size: formatFileSize(entry.sizeBytes), rel: `${rel}/` });
         if (depth < 2) {
-          await collectListing(`${dirPath}/${entry.name}`, rel, depth + 1, out);
+          // A single unlistable child (an escaping symlink refused by the
+          // backend's realpath guard, a permission denial, or a directory that
+          // vanished mid-scan) must not abort the whole `view` — otherwise one
+          // hostile `/memories/link -> /etc` planted in the tree locks the
+          // model out of listing its entire memory root. Skip the subtree and
+          // keep the rest of the listing (same resilience as health.ts's BFS).
+          try {
+            await collectListing(`${dirPath}/${entry.name}`, rel, depth + 1, out);
+          } catch {
+            // subtree not listable; the directory entry itself still shows.
+          }
         }
       } else {
         out.push({ size: formatFileSize(entry.sizeBytes), rel });

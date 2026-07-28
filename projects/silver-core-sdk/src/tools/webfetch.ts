@@ -361,9 +361,18 @@ function decodeEntities(text: string): string {
 
 function htmlToText(html: string): string {
   const withoutBlocks = html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<!--[\s\S]*?-->/g, ' ');
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    // An UNCLOSED script/style/comment runs to EOF per the HTML parsing rules.
+    // The 5MB body cap routinely cuts a page mid-<script>, deleting the
+    // closing tag — the lazy paired regexes above then leave the whole block,
+    // and megabytes of raw JS leak into the output as page prose. Any such
+    // opener surviving the paired strips has no closing tag left, so cut it
+    // (and everything after it) here; the optional `>` group also covers a cut
+    // landing inside the opening tag itself.
+    .replace(/<(?:script|style)\b[^>]*(?:>[\s\S]*)?$/i, ' ')
+    .replace(/<!--[\s\S]*$/, ' ');
   const withoutTags = withoutBlocks.replace(/<[^>]+>/g, ' ');
   const decoded = decodeEntities(withoutTags);
   return decoded.replace(/[ \t\r\f\v]+/g, ' ').replace(/\s*\n\s*/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
@@ -688,7 +697,10 @@ export const webFetchTool: BuiltinTool = {
           // returns it verbatim (no summarizer), so the structured copy is the
           // same text the model sees.
           result: text,
-          truncated,
+          // A body-cap overflow is as much "cut short" as the char cap: a page
+          // whose tail was never fetched must not read as complete just
+          // because its converted text fit the output cap.
+          truncated: truncated || overflow,
         } satisfies WebFetchStructuredOutput,
       };
     } catch (e) {

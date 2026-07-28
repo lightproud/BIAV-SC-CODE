@@ -67,7 +67,15 @@ import { readFileSync as nodeReadFileSync } from 'node:fs';
 
 export async function inspectCiStatus(targets, ctx) {
   const { repo } = targets;
-  const workflows = resolveWatchedWorkflows(targets, ctx?.readFileSync);
+  // targets.heartbeat is repo-root-relative; the daemon runs with cwd = the
+  // testbed package, so a cwd-relative read never finds it and the whole
+  // cron-derived watch list silently collapses to the hand-written residue.
+  // Resolve against ctx.repoRoot (which the daemon already supplies) so the
+  // derivation actually runs; graceful degrade to manual on a missing file.
+  const reader =
+    ctx?.readFileSync ??
+    (ctx?.repoRoot ? (p) => nodeReadFileSync(resolve(ctx.repoRoot, p), 'utf-8') : undefined);
+  const workflows = resolveWatchedWorkflows(targets, reader);
   const findings = [];
   let green = 0;
   for (const wf of workflows) {
@@ -79,9 +87,14 @@ export async function inspectCiStatus(targets, ctx) {
       );
     } catch (err) {
       if (err.rateLimited) {
+        // Keep the findings already gathered this sweep — a red build found
+        // before the rate limit must NOT be buried under a bare 'blocked'.
         return {
-          status: 'blocked',
-          findings: [{ level: 'info', message: `rate-limited before '${wf}' — partial sweep (${green} green so far)` }],
+          status: findings.some((f) => f.level === 'fail') ? 'fail' : 'blocked',
+          findings: [
+            ...findings,
+            { level: 'info', message: `rate-limited before '${wf}' — partial sweep (${green} green so far)` },
+          ],
           metrics: { watched: workflows.length, swept: findings.length + green },
         };
       }

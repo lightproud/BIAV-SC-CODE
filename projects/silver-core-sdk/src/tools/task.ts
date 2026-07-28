@@ -389,7 +389,17 @@ export const taskUpdateTool: BuiltinTool = {
     if (metadata.value !== undefined) {
       for (const [key, value] of Object.entries(metadata.value)) {
         if (value === null) delete task.metadata[key];
-        else task.metadata[key] = value;
+        else {
+          // Define, not assign: a "__proto__" key (an own property after the
+          // wire's JSON.parse) must land as an own property here too, instead
+          // of silently rewriting the metadata object's prototype.
+          Object.defineProperty(task.metadata, key, {
+            value,
+            writable: true,
+            enumerable: true,
+            configurable: true,
+          });
+        }
       }
       updatedFields.push('metadata');
     }

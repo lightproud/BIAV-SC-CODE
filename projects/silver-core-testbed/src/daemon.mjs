@@ -223,14 +223,25 @@ async function main() {
   }, 30_000);
   heartbeat.unref?.();
 
+  let shuttingDown = false;
   const shutdown = async (sig) => {
+    // Re-entrancy guard: a second signal (SIGINT after SIGTERM, or a repeated
+    // SIGTERM) must not run the teardown twice. The finally block guarantees
+    // the pid file is removed and the process exits even if a stop() rejects —
+    // otherwise a thrown stop leaves a stale pid file (driverctl thinks the
+    // daemon is still alive) and the rejection goes unhandled.
+    if (shuttingDown) return;
+    shuttingDown = true;
     log(`${sig} received — stopping`);
     clearInterval(heartbeat);
-    await host.scheduler.stop();
-    await host.driver.stop();
-    rmSync(pidFile, { force: true });
-    log('daemon down');
-    process.exit(0);
+    try {
+      await host.scheduler.stop();
+      await host.driver.stop();
+    } finally {
+      rmSync(pidFile, { force: true });
+      log('daemon down');
+      process.exit(0);
+    }
   };
   process.on('SIGTERM', () => void shutdown('SIGTERM'));
   process.on('SIGINT', () => void shutdown('SIGINT'));

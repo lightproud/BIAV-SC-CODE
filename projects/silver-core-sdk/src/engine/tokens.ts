@@ -99,9 +99,12 @@ function estimateBlockTokens(block: ContentBlockParam): number {
     case 'redacted_thinking':
       return estimateTextTokens(block.data);
     case 'tool_use':
+      // A tool_use with an absent/undefined input makes JSON.stringify return
+      // undefined, and iterating undefined crashes the whole history estimate
+      // (same runtime shape the recap path guards against — audit r4 R7j-4).
       return (
         estimateTextTokens(block.name) +
-        estimateTextTokens(JSON.stringify(block.input))
+        estimateTextTokens(JSON.stringify(block.input) ?? '{}')
       );
     case 'tool_result':
       return estimateToolResultTokens(block.content);

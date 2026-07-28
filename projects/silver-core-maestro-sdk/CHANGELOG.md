@@ -12,6 +12,18 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.95.0 — 2026-07-28
+
+Defect audit fixes in the task ledger (family-wide audit wave):
+
+- `reopenSession`: a concurrent CAS loss on the provenance link write abandoned
+  `reopenOf`/`attemptRound` permanently, leaving the reopen chain unwalkable.
+  Now retries the state-independent provenance re-apply (mirrors
+  `cancelSession`).
+- `recordOutcome`: the backfill-repair path appended an off-vocabulary
+  `outcome` string verbatim into the append-only audit row; now validated
+  against `{ok,error,timeout}` at entry.
+
 ## 0.94.0 — 2026-07-28
 
 Lockstep alignment only — no changes to this package. The family clock advanced

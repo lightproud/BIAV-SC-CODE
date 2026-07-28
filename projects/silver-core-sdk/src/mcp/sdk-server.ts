@@ -168,6 +168,17 @@ export function createSdkMcpServer(options: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tools?: Array<SdkMcpToolDefinition<any>>;
 }): McpSdkServerConfigWithInstance {
+  // S2 (server-side half, charset): the server NAME is embedded in every
+  // advertised `mcp__<server>__<tool>` wire name, so a name outside the
+  // Messages API charset (CJK, spaces, ...) 400s the ENTIRE request exactly
+  // like a bad tool name — and tool()'s check cannot see it. Fail fast here.
+  if (!/^[a-zA-Z0-9_-]+$/.test(options.name)) {
+    throw new ConfigurationError(
+      `SDK MCP server name '${options.name}' is invalid: server names must ` +
+        `match ^[a-zA-Z0-9_-]+$ (ASCII letters, digits, '_', '-') because ` +
+        `they are embedded in the advertised mcp__<server>__<tool> names`,
+    );
+  }
   const tools = new Map<string, SdkMcpToolDefinition>();
   for (const def of options.tools ?? []) {
     // audit r4 R7e-2: a null/undefined entry (a `cond && tool(...)` that fell

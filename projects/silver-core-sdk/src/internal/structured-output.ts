@@ -401,7 +401,18 @@ function validateValue(
       }
     }
 
-    if ('additionalProperties' in s) {
+    // `patternProperties` is NOT modeled here. When it is present the validator
+    // cannot tell which keys it covers, so enforcing additionalProperties would
+    // WRONGLY reject a pattern-covered property (e.g. {"x_1":1} against
+    // patternProperties:{'^x_':…}+additionalProperties:false) — violating this
+    // module's documented leniency ("never fails on a keyword it does not
+    // model"). Stay lenient on additionalProperties whenever patternProperties
+    // is present.
+    const hasPatternProperties =
+      s.patternProperties !== null &&
+      typeof s.patternProperties === 'object' &&
+      !Array.isArray(s.patternProperties);
+    if ('additionalProperties' in s && !hasPatternProperties) {
       const ap = s.additionalProperties;
       const known = props ? new Set(Object.keys(props)) : new Set<string>();
       for (const key of Object.keys(obj)) {

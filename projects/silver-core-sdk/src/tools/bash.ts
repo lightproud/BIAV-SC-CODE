@@ -592,10 +592,24 @@ async function execute(
       for (const shell of bgShells) {
         launched = await ctx.shells.spawnBackground(shell, bgCommand, ctx, disableSandbox);
         if (!('error' in launched)) break;
+        // Mirror the foreground chain: only ENOENT falls through to the next
+        // candidate. Any other spawn failure (e.g. EACCES on an explicit
+        // CLAUDE_CODE_GIT_BASH_PATH) is terminal — silently degrading to a
+        // different interpreter is the wrong-shell trap shell-resolve.ts
+        // exists to prevent.
+        if (!launched.error.includes('ENOENT')) break;
       }
       if ('error' in launched) {
+        // ENOENT here has the same two causes as the foreground chain below:
+        // the interpreter is missing, or `cwd` does not exist — and reporting
+        // the second as the first sends the host chasing a shell install
+        // (2026-07-26 probe; the foreground path got this disambiguation).
+        const detail =
+          launched.error.includes('ENOENT') && !existsSync(ctx.cwd)
+            ? `working directory does not exist: ${ctx.cwd}`
+            : launched.error;
         return {
-          content: `Bash: failed to launch background shell: ${launched.error}`,
+          content: `Bash: failed to launch background shell: ${detail}`,
           isError: true,
         };
       }

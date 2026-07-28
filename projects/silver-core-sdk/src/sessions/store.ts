@@ -345,7 +345,19 @@ export class JsonlSessionStore implements SessionStore {
       return;
     }
     const file = this.filePath(sessionId);
-    let line = `${JSON.stringify(entry)}\n`;
+    let line: string;
+    try {
+      // Inside the guard on purpose: a circular / BigInt-bearing entry makes
+      // JSON.stringify throw, and append's contract is "never crash the run"
+      // (entries can arrive from an embedder's external store via the mirror's
+      // materialize path, so their shape is not fully under our control).
+      line = `${JSON.stringify(entry)}\n`;
+    } catch (err) {
+      this.debug(
+        `session store: append failed for ${sessionId}: entry not serializable (${err instanceof Error ? err.message : String(err)})`,
+      );
+      return;
+    }
     try {
       if (!this.dirEnsured) {
         mkdirSync(this.dir, { recursive: true });
@@ -740,9 +752,23 @@ export class JsonlSessionStore implements SessionStore {
     for (const name of names) {
       if (!name.endsWith(JSONL_EXT)) continue;
       const id = name.slice(0, -JSONL_EXT.length);
+      // Skip ids the store itself refuses (list()/loadInfo already hide them):
+      // picking a foreign-named file here made `continue: true` resolve to a
+      // session whose load AND appends are then refused — a silently
+      // unpersisted run.
+      if (!isSafeSessionId(id)) continue;
       try {
         const st = await stat(join(this.dir, name));
-        if (latest !== null && st.mtimeMs <= latest.mtimeMs) continue;
+        // Same-mtime ties break on the (unique) id, matching list()'s ordering
+        // (audit r4 Rst-3) — otherwise readdir order decided which same-ms
+        // session `continue: true` resumed, varying across runs/filesystems
+        // and disagreeing with list()[0].
+        if (
+          latest !== null &&
+          (st.mtimeMs < latest.mtimeMs ||
+            (st.mtimeMs === latest.mtimeMs && id > latest.id))
+        )
+          continue;
         // A subagent SIDECHAIN transcript lives in the same dir keyed by
         // agentId; `continue: true` (resume the most-recent session) must NEVER
         // pick one — it records only assistant turns behind a `sidechain_start`

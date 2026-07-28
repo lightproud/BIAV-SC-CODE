@@ -118,12 +118,21 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
   const transportFaultTotal =
     transport === null ? null : Object.values(transport).reduce((a, b) => a + b, 0);
 
+  // U7-4 parity: token/cost/tool counters are non-negative, but isRunLogRecord
+  // validates TYPE only, not sign — a shape-valid ledger line carrying a
+  // negative number (valid JSON) otherwise sums in and drags an aggregate
+  // negative: total calls to 0 flips `calls > 0` and HIDES a real failure rate,
+  // a negative cache_read zeroes/negates the cache-hit denominator. The
+  // transport block above already clamps this class and query-accounting uses
+  // finite(); this closes the same gap for these sums.
+  const nonNeg = (x: number): number => (Number.isFinite(x) && x > 0 ? x : 0);
+
   let tokens: DayAggregate['tokens'] = null;
   if (records.length > 0) {
-    const input = records.reduce((a, r) => a + r.usage.input_tokens, 0);
-    const output = records.reduce((a, r) => a + r.usage.output_tokens, 0);
-    const cacheRead = records.reduce((a, r) => a + r.usage.cache_read_input_tokens, 0);
-    const cacheCreation = records.reduce((a, r) => a + r.usage.cache_creation_input_tokens, 0);
+    const input = records.reduce((a, r) => a + nonNeg(r.usage.input_tokens), 0);
+    const output = records.reduce((a, r) => a + nonNeg(r.usage.output_tokens), 0);
+    const cacheRead = records.reduce((a, r) => a + nonNeg(r.usage.cache_read_input_tokens), 0);
+    const cacheCreation = records.reduce((a, r) => a + nonNeg(r.usage.cache_creation_input_tokens), 0);
     // audit r4 U7-1/U7-3: include cache_creation in the cache-hit denominator
     // — cache_read / (input + cache_read + cache_creation) — matching the
     // authoritative SDKRunMetrics.cacheHitRatio definition; omitting it
@@ -135,7 +144,7 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
       cacheRead,
       cacheCreation,
       cacheHitRate: denom > 0 ? cacheRead / denom : null,
-      costUsd: records.reduce((a, r) => a + r.total_cost_usd, 0),
+      costUsd: records.reduce((a, r) => a + nonNeg(r.total_cost_usd), 0),
     };
   }
 
@@ -146,8 +155,8 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
   for (const r of records) {
     for (const t of r.per_tool ?? []) {
       sawToolData = true;
-      calls += t.calls;
-      errors += t.errors;
+      calls += nonNeg(t.calls);
+      errors += nonNeg(t.errors);
     }
   }
   if (sawToolData) {

@@ -325,6 +325,24 @@ export function query(args: {
   if (options.maxBudgetUsd !== undefined && !(options.maxBudgetUsd > 0)) {
     throw new ConfigurationError('maxBudgetUsd must be a positive number');
   }
+  // Same failure class as the NaN budget above: a NaN maxTurns (e.g. parseInt
+  // on an unset env var) makes every `acct.turns >= maxTurns` check false, so
+  // the cap goes silently dark for the whole session — fail loud instead.
+  // (0/negative stay accepted: they trip loudly on the first pre-turn check.)
+  if (options.maxTurns !== undefined && Number.isNaN(options.maxTurns)) {
+    throw new ConfigurationError('maxTurns must not be NaN');
+  }
+  // Same NaN failure class as maxTurns above: a NaN maxThinkingTokens (e.g.
+  // parseInt on an unset env var) slips past config-builder's `> 0` opt-out
+  // test and lands verbatim in engineConfig.maxThinkingTokens. On a non-preset
+  // (or explicit thinking:{type:'enabled'} without its own budget) path it then
+  // resolves to `budget_tokens: NaN`, which serializes to null on the wire and
+  // 400s every turn on pre-adaptive models — reject it up front like maxTurns.
+  // (0/negative stay accepted: config-builder treats them as the explicit
+  // thinking opt-out.)
+  if (options.maxThinkingTokens !== undefined && Number.isNaN(options.maxThinkingTokens)) {
+    throw new ConfigurationError('maxThinkingTokens must not be NaN');
+  }
   // R1 structured prelude: the blocks are rendered by string concatenation,
   // so a missing/non-string content (typed but unchecked at runtime — L60,
   // audit 2026-07-17) would inject the literal text "undefined" into the
@@ -1046,21 +1064,31 @@ export function query(args: {
       subtype: 'error_during_execution' | 'error_max_budget_usd' | 'error_max_turns',
       sessionId: string,
       errorMessage: string,
-    ): SDKResultMessage => ({
-      type: 'result',
-      subtype,
-      uuid: randomUUID(),
-      session_id: sessionId,
-      is_error: true,
-      errorMessage,
-      // Official surface: stop_reason is required on the error arm. These are
-      // QUERY-LAYER synthetic results (no engine turn ran), so null is the
-      // honest value — no API stop_reason exists for this result.
-      stop_reason: null,
-      // Official-surface parallel of errorMessage (reference SDK: string[]).
-      errors: [errorMessage],
-      ...resultCommon(),
-    });
+    ): SDKResultMessage => {
+      const r: SDKResultMessage = {
+        type: 'result',
+        subtype,
+        uuid: randomUUID(),
+        session_id: sessionId,
+        is_error: true,
+        errorMessage,
+        // Official surface: stop_reason is required on the error arm. These are
+        // QUERY-LAYER synthetic results (no engine turn ran), so null is the
+        // honest value — no API stop_reason exists for this result.
+        stop_reason: null,
+        // Official-surface parallel of errorMessage (reference SDK: string[]).
+        errors: [errorMessage],
+        ...resultCommon(),
+      };
+      // Every terminalResult() is yielded at its call site, so track it as the
+      // last consumer-visible result. Without this, the teardown-corrected
+      // final result (待裁⑤) re-emitted an OLDER engine result — the stream of
+      // an interrupted/capped run then ENDED on a stale success-shaped result
+      // after its error terminal (the memory round's absorbed terminal is
+      // covered by the preRoundResult save/restore).
+      lastYieldedResult = r;
+      return r;
+    };
 
     const blockedResult = (
       sessionId: string,
@@ -1971,6 +1999,12 @@ export function query(args: {
             );
           }
           if (gen !== undefined) {
+            // 'ran' requires the drive to complete CLEANLY: a round cut down by
+            // interrupt() (streaming mode yields no result; string mode yields
+            // a synthetic is_error terminal) or ended by an is_error engine
+            // result never updated the card, so stamping 'ran' there hid the
+            // exact staleness R7 observability exists to expose.
+            let roundCompleted = false;
             for (;;) {
               let it: IteratorResult<SDKMessage, 'stop' | 'continue'>;
               try {
@@ -1983,10 +2017,11 @@ export function query(args: {
                 break;
               }
               if (it.done === true) {
-                memory.health.sessionEndUpdate = 'ran';
+                if (roundCompleted) memory.health.sessionEndUpdate = 'ran';
                 break;
               }
               const msg = it.value;
+              if (msg.type === 'result') roundCompleted = msg.is_error !== true;
               // A consumer-injected throw()/return() resumes AT this yield and
               // propagates out of the round (through the finally below).
               if (msg.type !== 'result') yield msg;
@@ -2254,9 +2289,34 @@ export function query(args: {
       gate.setMode(mode);
     },
     async setModel(model?: string): Promise<void> {
+      // An explicit empty string is NOT a reset (undefined is): it sails past
+      // `?? initialModel` and sets engineConfig.model to '', which the next turn
+      // sends verbatim — re-introducing the exact SILENT gateway-400 the
+      // construction guard (options.model / ANTHROPIC_MODEL '' -> throw) was
+      // added to prevent. Fail loud at this sibling entry point too; the
+      // session-manager's "a failed setter leaves no trace to replay" contract
+      // then keeps '' out of the resumed control-plane replay state.
+      if (model === '') {
+        throw new ConfigurationError(
+          'setModel: model must be a non-empty id (pass undefined to reset to the initial model)',
+        );
+      }
       engineConfig.model = model ?? initialModel;
     },
     async setMaxThinkingTokens(maxThinkingTokens: number | null): Promise<void> {
+      // A NaN budget (e.g. parseInt on an unset env var) is NOT a reset (null
+      // is): it sails past the `n > 0` / `n === undefined` branches below,
+      // leaving engineConfig.thinking unchanged while engineConfig.maxThinkingTokens
+      // becomes NaN — which resolves to `budget_tokens: NaN` on the next
+      // pre-adaptive request and 400s it, the exact silent-wire-corruption the
+      // sibling setModel('') / construction maxTurns guards prevent. Fail loud
+      // here too, so the session-manager's "a failed setter leaves no trace to
+      // replay" contract keeps NaN out of the resumed control-plane replay state.
+      if (typeof maxThinkingTokens === 'number' && Number.isNaN(maxThinkingTokens)) {
+        throw new ConfigurationError(
+          'setMaxThinkingTokens: maxThinkingTokens must not be NaN (pass a number or null to reset)',
+        );
+      }
       const n = maxThinkingTokens ?? undefined;
       engineConfig.maxThinkingTokens = n;
       // On the claude_code preset path (no explicit thinking config) the budget
@@ -2330,6 +2390,10 @@ export function query(args: {
       const afterNames = new Set(after.map((s) => s.name));
       const added = after.filter((s) => !before.has(s.name)).map((s) => s.name);
       const removed = [...before].filter((n) => !afterNames.has(n));
+      // Drop a removed server's config provenance: a later re-add under the
+      // same name is a dynamic registration, and a stale map entry would make
+      // mcpServerStatus() report the old 'project'/'local' scope for it.
+      for (const n of removed) mcpScopeByName.delete(n);
       const errors: Record<string, string> = {};
       for (const s of after) {
         if (s.status === 'failed') errors[s.name] = s.error ?? 'connection failed';

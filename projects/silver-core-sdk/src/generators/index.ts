@@ -221,9 +221,10 @@ export async function generateSessionTitle(
   if (title !== null) return title;
   // N7 (audit r2): the raw-reply fallback is for a BARE-STRING reply only. A
   // JSON reply missing the expected field must not leak the serialized blob
-  // (`{"name":"..."}`) as a user-visible title.
+  // (`{"name":"..."}`) as a user-visible title. An empty/fence-only reply must
+  // not surface a blank title either — same failure class, same default.
   if (obj !== null) return 'Untitled session';
-  return stripToPlain(raw);
+  return stripToPlain(raw) || 'Untitled session';
 }
 
 // ---------------------------------------------------------------------------
@@ -270,7 +271,7 @@ export async function generateTitleAndBranch(
   // title when the reply parsed but lacked the field.
   const title =
     readStringField(obj, 'title') ??
-    (obj !== null ? 'Untitled session' : stripToPlain(raw));
+    (obj !== null ? 'Untitled session' : stripToPlain(raw) || 'Untitled session');
   const rawBranch = readStringField(obj, 'branch') ?? '';
   return { title, branch: normalizeBranch(rawBranch, title) };
 }
@@ -379,6 +380,10 @@ export function parseAwaySummary(raw: string): string {
     // true `*emph*` — no whitespace adjacent to either delimiter — is unwrapped.
     .replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
+    // Trim surrounding whitespace BEFORE the quote trim: fence-stripping leaves
+    // a trailing newline, behind which a closing quote was invisible to the
+    // $-anchored class — the recap kept a dangling unbalanced quote.
+    .trim()
     // Trim wrapping quotes, incl. both smart double AND smart single quotes.
     .replace(/^["'“”‘’]+|["'“”‘’]+$/g, '')
     .replace(/\s*\n+\s*/g, ' ')
@@ -533,6 +538,10 @@ function stripToPlain(raw: string): string {
   return raw
     .replace(/```[a-z]*\n?/gi, '')
     .replace(/```/g, '')
+    // Trim BEFORE the quote strip: fence removal leaves a trailing newline
+    // that hid a closing quote from the $-anchored class (dangling quote in
+    // the fallback title).
+    .trim()
     .replace(/^["'`]+|["'`]+$/g, '')
     .trim();
 }

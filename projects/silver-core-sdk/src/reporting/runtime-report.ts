@@ -74,6 +74,17 @@ function fmtPct(x: number): string {
   return `${(x * 100).toFixed(1)}%`;
 }
 
+/** Non-negative, finite guard — parity with compare-reports.ts's nonNeg
+ *  (audit r4 U7-4). isRunLogRecord validates TYPE only, not sign: a
+ *  shape-valid ledger line carrying a negative/NaN/Infinite number (valid
+ *  JSON from an external producer) otherwise sums straight into the token /
+ *  cost / tool aggregates, both dragging them negative AND drifting them away
+ *  from compareReports() — which already clamps this class — violating the
+ *  "the comparison can never drift from what the daily report said" invariant. */
+function nonNeg(x: number): number {
+  return Number.isFinite(x) && x > 0 ? x : 0;
+}
+
 /** Deterministic code-unit string order — a stable secondary sort key so
  *  equal-primary-key rows keep one fixed relative order across runs instead of
  *  reshuffling at a slice() cutoff (audit r4 Rst-1/Rst-2). */
@@ -118,6 +129,10 @@ function isRunLogRecord(x: unknown): x is RunLogRecord {
     for (const t of pt) {
       if (typeof t !== 'object' || t === null) return false;
       const tool = t as Record<string, unknown>;
+      // `name` is dereferenced by the aggregation (toolAgg Map key + rendered
+      // row); a per_tool entry missing it must join the bad-line counter, not
+      // poison the tools table with an `undefined`-named row.
+      if (typeof tool['name'] !== 'string') return false;
       if (typeof tool['calls'] !== 'number' || typeof tool['errors'] !== 'number') return false;
     }
   }
@@ -239,12 +254,19 @@ export async function generateRuntimeReport(
     transport = {};
     for (const r of transportRecords) {
       for (const [k, v] of Object.entries(r.transport_health!)) {
-        transport[k] = (transport[k] ?? 0) + (typeof v === 'number' ? v : 0);
+        // audit r4 U7-4 (parity with compare-reports.ts): a fault counter is
+        // non-negative — a negative/NaN value from a corrupt/external ledger
+        // line clamps to 0 rather than summing in. Unclamped it both drifts
+        // the totals away from compareReports() (which clamps) and can drag
+        // `faults` <= 0 below, silently suppressing the unrecovered flag on a
+        // genuinely errored session.
+        const n = typeof v === 'number' && v > 0 ? v : 0;
+        transport[k] = (transport[k] ?? 0) + n;
       }
       // "Unrecovered" = the run still ended as an error while its ledger shows
       // transport faults: the recoverable layers were not enough.
       const faults = Object.values(r.transport_health!).reduce(
-        (a, b) => a + (typeof b === 'number' ? b : 0),
+        (a, b) => a + (typeof b === 'number' && b > 0 ? b : 0),
         0,
       );
       if (r.is_error && faults > 0 && r.incognito !== true) {
@@ -259,10 +281,10 @@ export async function generateRuntimeReport(
   // 2. tokens
   let tokens: RuntimeReportResult['summary']['tokens'] = null;
   if (records.length > 0) {
-    const input = records.reduce((a, r) => a + r.usage.input_tokens, 0);
-    const output = records.reduce((a, r) => a + r.usage.output_tokens, 0);
-    const cacheRead = records.reduce((a, r) => a + r.usage.cache_read_input_tokens, 0);
-    const cacheCreation = records.reduce((a, r) => a + r.usage.cache_creation_input_tokens, 0);
+    const input = records.reduce((a, r) => a + nonNeg(r.usage.input_tokens), 0);
+    const output = records.reduce((a, r) => a + nonNeg(r.usage.output_tokens), 0);
+    const cacheRead = records.reduce((a, r) => a + nonNeg(r.usage.cache_read_input_tokens), 0);
+    const cacheCreation = records.reduce((a, r) => a + nonNeg(r.usage.cache_creation_input_tokens), 0);
     // audit r4 U7-1/U7-3: the cache-hit denominator must include
     // cache_creation — cache_read / (input + cache_read + cache_creation) —
     // matching the authoritative SDKRunMetrics.cacheHitRatio definition.
@@ -276,7 +298,7 @@ export async function generateRuntimeReport(
       cacheRead,
       cacheCreation,
       cacheHitRate: denom > 0 ? cacheRead / denom : null,
-      costUsd: records.reduce((a, r) => a + r.total_cost_usd, 0),
+      costUsd: records.reduce((a, r) => a + nonNeg(r.total_cost_usd), 0),
     };
   }
   const byScenario = new Map<string, RunLogRecord[]>();
@@ -292,8 +314,8 @@ export async function generateRuntimeReport(
   for (const r of records) {
     for (const t of r.per_tool ?? []) {
       const cur = toolAgg.get(t.name) ?? { calls: 0, errors: 0 };
-      cur.calls += t.calls;
-      cur.errors += t.errors;
+      cur.calls += nonNeg(t.calls);
+      cur.errors += nonNeg(t.errors);
       toolAgg.set(t.name, cur);
     }
   }

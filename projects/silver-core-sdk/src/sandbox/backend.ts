@@ -78,7 +78,10 @@ export function resolveSandboxBackend(
   platform: NodeJS.Platform = process.platform,
 ): SandboxBackend | null {
   if (opt === false) return null;
-  if (typeof opt === 'object') {
+  // `typeof null === 'object'`, so guard against null before dereferencing —
+  // otherwise a JS host passing `sandbox: null` throws a TypeError out of a
+  // function documented to never throw.
+  if (typeof opt === 'object' && opt !== null) {
     if (opt.enabled === false) return null;
     if (opt.backend !== undefined) return opt.backend; // injected (tests / host Seatbelt)
   }
@@ -118,9 +121,15 @@ export const DEFAULT_SANDBOX_ENV_ALLOWLIST: readonly string[] = [
 export function resolveEnvAllowlist(
   envScrub: boolean | { allow?: readonly string[] } | undefined,
 ): readonly string[] | undefined {
-  if (envScrub === undefined || envScrub === false) return undefined;
   if (envScrub === true) return DEFAULT_SANDBOX_ENV_ALLOWLIST;
-  return envScrub.allow ?? DEFAULT_SANDBOX_ENV_ALLOWLIST;
+  // `typeof null === 'object'`, so guard null before dereferencing `.allow` —
+  // otherwise a JS host passing `sandbox: { envScrub: null }` throws a TypeError
+  // out of the query-layer sandbox assembly (mirrors the resolveSandboxBackend
+  // null guard for `sandbox: null`). undefined/false/null all mean "no scrub".
+  if (typeof envScrub === 'object' && envScrub !== null) {
+    return envScrub.allow ?? DEFAULT_SANDBOX_ENV_ALLOWLIST;
+  }
+  return undefined;
 }
 
 /**

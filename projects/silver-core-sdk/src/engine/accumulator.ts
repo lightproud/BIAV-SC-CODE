@@ -443,8 +443,9 @@ export class MessageAccumulator {
       // No deltas at all: keep whatever content_block_start seeded ({}).
       return { ok: true, value: block.initialInput };
     }
+    let parsed: unknown;
     try {
-      return { ok: true, value: JSON.parse(block.partialJson) as Record<string, unknown> };
+      parsed = JSON.parse(block.partialJson);
     } catch (err) {
       // H4: not a throw — a truncated input must degrade (see module header
       // marker docs), not void the turn. Reason is byte-bounded for logs.
@@ -456,6 +457,21 @@ export class MessageAccumulator {
           `(${(err as Error).message}); accumulated prefix: ${snippet}`,
       };
     }
+    // A tool_use `input` MUST be a JSON object. A top-level array / number /
+    // string / boolean / null parses cleanly but yields an API-invalid shape:
+    // `input:[...]`/`input:123`/`input:null` would be executed as if intact
+    // (unstamped) and 400 on replay. Route a non-object parse through the same
+    // H4 non-executable stamp path as a truncated input, not straight through.
+    if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      const kind = parsed === null ? 'null' : Array.isArray(parsed) ? 'array' : typeof parsed;
+      return {
+        ok: false,
+        reason:
+          `tool_use input JSON for tool "${block.name}" was not a JSON object ` +
+          `(top-level ${kind}); accumulated prefix: ${block.partialJson.slice(0, 200)}`,
+      };
+    }
+    return { ok: true, value: parsed as Record<string, unknown> };
   }
 
   private requireMessage(context: string): APIAssistantMessage {

@@ -36,11 +36,15 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.94.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.94.0`
+**当前版本 `0.95.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.95.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.95.0（2026-07-28）：台账两处缺陷 + 驱动器并发竞态**——家族审计波及本包（非空转）：
+`reopenSession` 并发 CAS 落败永久丢溯源链接；`recordOutcome` 回填路径写入词表外 outcome；
+`stop()`+`start()` 交错令两代 tick 各自认领满额、并发翻倍（新增同步预留计数封顶）。
 
 **v0.94.0（2026-07-28）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.94.0
 （BREAKING：包内模型兜底默认值全数移除——缺 model 即抛 `ConfigurationError`，

@@ -68,13 +68,23 @@ const zeroUsage = (): NonNullableUsage => ({
 });
 
 function addUsage(a: NonNullableUsage, b: NonNullableUsage): NonNullableUsage {
-  return {
+  const sum: NonNullableUsage = {
     input_tokens: a.input_tokens + b.input_tokens,
     output_tokens: a.output_tokens + b.output_tokens,
     cache_creation_input_tokens:
       a.cache_creation_input_tokens + b.cache_creation_input_tokens,
     cache_read_input_tokens: a.cache_read_input_tokens + b.cache_read_input_tokens,
   };
+  // Carry the server-tool web-search count through the fold (mirrors the
+  // query-accounting.ts fix, audit 2026-07-17 T4): dropping it here stripped
+  // web_search_requests from every ledger sum, so mgr.usage() reported 0
+  // searches for web-search-heavy sessions. Conditional so a manager that
+  // never saw the field keeps the historical shape.
+  if (a.web_search_requests !== undefined || b.web_search_requests !== undefined) {
+    sum.web_search_requests =
+      (a.web_search_requests ?? 0) + (b.web_search_requests ?? 0);
+  }
+  return sum;
 }
 
 /** Additive merge of one per-model usage map into an accumulator (same
@@ -606,14 +616,26 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       }
       // No prompt is re-sent (the resumed query's §5.2 redrive continues the
       // interrupted turn against the persisted history).
-      q = start({ sessionId: sessionId! });
       // WV3-1: re-apply the runtime control-plane overrides the consumer set on
       // the retired query, so the resumed query does not silently drop to base.
       // Awaited on purpose: a rejecting setter would otherwise be an unhandled
       // rejection (process-fatal on Node >= 15), and awaiting makes the
       // "replay lands before the resumed query is pumped" ordering structural
       // rather than a side effect of the setters happening to be await-free.
-      await replayControlPlane();
+      // Guarded: constructing the resume query (start) or replaying a setter can
+      // THROW (start's synchronous option validation; a replayed setter the
+      // fresh query rejects — the very rejection the comment above anticipates).
+      // Both scheduleResume call sites `await` it un-caught, so an escaping
+      // rejection would leave THIS ledger in `ledgers[]` forever — usage().queries
+      // over-counts it and the settled-aggregate eviction never runs. Settle the
+      // ledger before the failure propagates, matching every other exit path.
+      try {
+        q = start({ sessionId: sessionId! });
+        await replayControlPlane();
+      } catch (err) {
+        settleLedger(ledger);
+        throw err;
+      }
     };
 
     const wrapped: Query = {
@@ -766,9 +788,14 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       memoryHealthSnapshot: () => q.memoryHealthSnapshot(),
       setRetainedRegion: (region) => {
         // Region carries its own id; a re-set overwrites, matching the query's
-        // own last-write-wins semantics for a given region id.
+        // own last-write-wins semantics for a given region id. Recorded only
+        // AFTER the inner setter accepts (it throws ConfigurationError on an
+        // over-cap declaration): a refused region must leave no trace, or the
+        // next transparent auto-resume replays it and the replay's rejection
+        // kills the resume (same rule as setPermissionMode above).
+        const r = q.setRetainedRegion(region);
         pending.retainedRegions.set(region.id, region);
-        return q.setRetainedRegion(region);
+        return r;
       },
       removeRetainedRegion: (id) => {
         pending.retainedRegions.delete(id);
@@ -806,30 +833,40 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         effective.sessionStore !== undefined &&
         recovery?.autoResume !== false &&
         typeof queryArgs.prompt === 'string';
-      return runManaged(
-        (resume) =>
-          query({
-            // On a resume re-drive no prompt is re-sent: an immediately-closing
-            // input stream lets the resumed query's §5.2 redrive continue the
-            // interrupted turn, then end.
-            prompt: resume !== undefined ? emptyInputStream() : queryArgs.prompt,
-            // J1 (audit r2): forkSession must NOT survive into the resume
-            // re-drive. The caller's forkSession applies to the ORIGINAL
-            // query; carried into supervision it turned every recovery attempt
-            // into a fork — a fresh transcript copy per attempt (fork-of-fork
-            // compounding), no §5.2 redrive of the interrupted turn (a fork
-            // has no dangling checkpoint), and with the empty input stream the
-            // "recovered" run simply ended, leaving the consumer's stream
-            // silently un-resumed.
-            options:
-              resume !== undefined
-                ? { ...effective, resume: resume.sessionId, forkSession: false }
-                : effective,
-            _internal: { transport, mcpRegistry: shared },
-          }),
-        ledger,
-        supervise,
-      );
+      try {
+        return runManaged(
+          (resume) =>
+            query({
+              // On a resume re-drive no prompt is re-sent: an immediately-closing
+              // input stream lets the resumed query's §5.2 redrive continue the
+              // interrupted turn, then end.
+              prompt: resume !== undefined ? emptyInputStream() : queryArgs.prompt,
+              // J1 (audit r2): forkSession must NOT survive into the resume
+              // re-drive. The caller's forkSession applies to the ORIGINAL
+              // query; carried into supervision it turned every recovery attempt
+              // into a fork — a fresh transcript copy per attempt (fork-of-fork
+              // compounding), no §5.2 redrive of the interrupted turn (a fork
+              // has no dangling checkpoint), and with the empty input stream the
+              // "recovered" run simply ended, leaving the consumer's stream
+              // silently un-resumed.
+              options:
+                resume !== undefined
+                  ? { ...effective, resume: resume.sessionId, forkSession: false }
+                  : effective,
+              _internal: { transport, mcpRegistry: shared },
+            }),
+          ledger,
+          supervise,
+        );
+      } catch (err) {
+        // query() rejects bad options SYNCHRONOUSLY (ConfigurationError). The
+        // ledger was already registered; leaving it would count a query that
+        // never started in usage().queries forever and leak one ledger per
+        // failed call. Un-register (not settle — nothing ran) and rethrow.
+        const idx = ledgers.indexOf(ledger);
+        if (idx !== -1) ledgers.splice(idx, 1);
+        throw err;
+      }
     },
 
     usage(): SessionManagerUsage {

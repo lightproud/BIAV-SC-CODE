@@ -56,10 +56,14 @@ function mergeModelUsage(
   modelId: string,
   mu: ModelUsage,
 ): void {
+  // Sls-1 parity for the per-model fold: costUSD is the arithmetic-derived
+  // figure (tokens × consumer price table), so a NaN price entry otherwise
+  // poisons modelUsage.costUSD for every later result/summary — the same
+  // permanent poisoning finite() already blocks on acct.cost.
   const prev = target[modelId];
   target[modelId] =
     prev === undefined
-      ? { ...mu }
+      ? { ...mu, costUSD: finite(mu.costUSD) }
       : {
           inputTokens: prev.inputTokens + mu.inputTokens,
           outputTokens: prev.outputTokens + mu.outputTokens,
@@ -67,7 +71,7 @@ function mergeModelUsage(
           cacheCreationInputTokens:
             prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
           webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
-          costUSD: prev.costUSD + mu.costUSD,
+          costUSD: prev.costUSD + finite(mu.costUSD),
           contextWindow: mu.contextWindow ?? prev.contextWindow,
           maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens,
         };

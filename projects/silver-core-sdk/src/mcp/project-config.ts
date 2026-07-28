@@ -111,7 +111,19 @@ function expandEnvVars(
   if (Array.isArray(value)) return value.map((v) => expandEnvVars(v, env));
   if (value !== null && typeof value === 'object') {
     const out: Record<string, unknown> = {};
-    for (const [k, v] of Object.entries(value)) out[k] = expandEnvVars(v, env);
+    for (const [k, v] of Object.entries(value)) {
+      // Y7-3, one level down: JSON.parse creates `__proto__` as an OWN key, so
+      // a nested key with that name (e.g. inside `env`) would hit the prototype
+      // setter under bracket assignment — dropping the key AND polluting the
+      // rebuilt object's prototype chain, which `'command' in config` style
+      // checks later read. defineProperty writes a real own data property.
+      Object.defineProperty(out, k, {
+        value: expandEnvVars(v, env),
+        enumerable: true,
+        writable: true,
+        configurable: true,
+      });
+    }
     return out;
   }
   return value;

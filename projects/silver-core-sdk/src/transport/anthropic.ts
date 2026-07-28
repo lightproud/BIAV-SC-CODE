@@ -302,9 +302,16 @@ export class AnthropicTransport implements Transport {
       // message_stop frame; if it did not and CONTENT was already delivered,
       // the server dropped mid-generation (a truncation, not a completion).
       let sawStopReason = false;
-      // Whether any content_block_start arrived: distinguishes a start-only
-      // stream (empty, benign — returns normally, the deliberate existing
-      // behavior) from one that delivered a PARTIAL answer then dropped.
+      // Whether any content was delivered to the consumer: a content_block_start
+      // OR a content_block_delta. Distinguishes a start-only stream (empty,
+      // benign — returns normally, the deliberate existing behavior) from one
+      // that delivered a PARTIAL answer then dropped. Keying on delta too (not
+      // just start) is load-bearing: a translating gateway can emit a
+      // content_block_delta with NO preceding content_block_start, and that delta
+      // is ALREADY yielded to the consumer below — so it must count as consumed
+      // content, or the empty-stream retry gate would REPLAY a partially consumed
+      // turn (U2-1's exact hazard, reached via the start-less delta path its
+      // content_block_start-only flag missed).
       let sawContentBlock = false;
       try {
         resetIdle();
@@ -313,6 +320,14 @@ export class AnthropicTransport implements Transport {
           let parsed: unknown;
           try {
             parsed = JSON.parse(frame.data);
+            // A payload that parses but is not a JSON object (`null`, a bare
+            // number/string) is as foreign as non-JSON: `null` crashed the
+            // `.type` probes below, and a primitive would be YIELDED to the
+            // consumer as a bogus stream event. Route it through the same
+            // event-less-skip / malformed-frame handling.
+            if (parsed === null || typeof parsed !== 'object') {
+              throw new TypeError('SSE payload is not a JSON object');
+            }
           } catch (err) {
             // Anthropic-native frames ALWAYS carry an event name. An event-less
             // frame that is not JSON is foreign framing noise from a translating
@@ -325,13 +340,13 @@ export class AnthropicTransport implements Transport {
             if (frame.event === undefined) {
               this.debug(
                 `transport: skipping event-less non-JSON SSE frame after ${eventCount} event(s): ` +
-                  frame.data.slice(0, 120),
+                  sliceSurrogateSafe(frame.data, 120),
               );
               continue;
             }
             throw new APIConnectionError(
               `Malformed SSE payload for event "${frame.event}" after ${eventCount} event(s): ` +
-                frame.data.slice(0, 120),
+                sliceSurrogateSafe(frame.data, 120),
               err,
               'sse_malformed_frame',
             );
@@ -365,7 +380,9 @@ export class AnthropicTransport implements Transport {
           // Finding M2 — a message_delta with a non-null stop_reason marks the
           // content as complete (message_stop merely closes the SSE channel).
           const parsedType = (parsed as { type?: string }).type;
-          if (parsedType === 'content_block_start') sawContentBlock = true;
+          if (parsedType === 'content_block_start' || parsedType === 'content_block_delta') {
+            sawContentBlock = true;
+          }
           if (parsedType === 'message_delta') {
             const sr = (parsed as { delta?: { stop_reason?: unknown } }).delta?.stop_reason;
             if (sr !== null && sr !== undefined) sawStopReason = true;

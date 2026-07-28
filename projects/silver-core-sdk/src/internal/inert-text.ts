@@ -26,9 +26,14 @@ export function neutralizeClosingTag(text: string, tag: string): string {
 
 /**
  * Escape a value for use inside a double-quoted pseudo-XML attribute
- * (`title="..."`): `&` `"` `<` `>` become entities and CR/LF collapse to a
- * space, so the value can neither break out of the quotes nor fork the tag
+ * (`title="..."`): `&` `"` `<` `>` become entities and any line break collapses
+ * to a space, so the value can neither break out of the quotes nor fork the tag
  * across lines.
+ *
+ * The line-break class is the FULL Unicode set (NEL U+0085, LINE/PARAGRAPH
+ * SEPARATOR U+2028/U+2029, VT/FF), not just CR/LF — the same U6-3 gap fixed in
+ * singleLine: a NEL/LS/PS left in a title is a line break to a model/renderer
+ * and forks the tag across lines, exactly what this helper promises to prevent.
  */
 export function escapeTagAttr(value: string): string {
   return value
@@ -36,7 +41,7 @@ export function escapeTagAttr(value: string): string {
     .replace(/"/g, '&quot;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/[\r\n]+/g, ' ');
+    .replace(/[\r\n\v\f\u0085\u2028\u2029]+/g, ' ');
 }
 
 /**

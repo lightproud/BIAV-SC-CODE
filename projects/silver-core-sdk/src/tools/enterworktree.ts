@@ -37,7 +37,7 @@
  * ToolContext itself for bare tool use.
  */
 
-import { writeFileSync } from 'node:fs';
+import { realpathSync, writeFileSync } from 'node:fs';
 import { randomBytes } from 'node:crypto';
 import { join, resolve } from 'node:path';
 
@@ -167,7 +167,18 @@ export const enterWorktreeTool: BuiltinTool = {
 
     // ---- switch into an existing worktree (`path`) --------------------------
     if (typeof rawPath === 'string') {
-      const target = resolve(ctx.cwd, rawPath);
+      let target = resolve(ctx.cwd, rawPath);
+      // `git worktree list` prints canonicalized paths (symlinks resolved), so
+      // when the session cwd is itself under a symlink (macOS /tmp -> /private,
+      // NFS automounts, Fedora /home -> /var/home) a plain resolve() makes every
+      // registered worktree compare unequal and get wrongly rejected. Match git
+      // by canonicalizing; a non-existent path throws and keeps its resolved
+      // form, which correctly fails the registration check below.
+      try {
+        target = realpathSync(target);
+      } catch {
+        /* path does not exist -> keep resolved form; it won't be in the git list */
+      }
       const listed = await listWorktrees(ctx.cwd);
       if ('error' in listed) {
         return errorResult(`not inside a git repository (${listed.error.trim()}).`);

@@ -455,14 +455,18 @@ function matchResolvedValue(
   // separator is '/' on every host (path.sep would re-introduce '\' on Windows
   // and the boundary anchor would never match).
   if (boundary && !prefix.endsWith('/')) prefix += '/';
-  if (spec.indexOf('/', starIdx) !== -1) {
-    // Interior wildcard: full glob match on the reassembled resolved spec.
-    return globToRegExp(prefix + spec.slice(starIdx)).test(nvalue);
+  const tail = spec.slice(starIdx);
+  if (!/^\*+$/.test(tail)) {
+    // Wildcard with structure after it — a later separator (`/etc/**/secret`)
+    // OR a literal tail (`/etc/*.conf`): full glob match on the reassembled
+    // resolved spec. The trailing-prefix shortcut below can only express a bare
+    // trailing `*`/`**`, so a literal tail used to match NOTHING (a deny that
+    // failed OPEN — `Read(/etc/*.conf)` never fired on `/etc/foo.conf`).
+    return globToRegExp(prefix + tail).test(nvalue);
   }
-  // Trailing-only wildcard: collapse a leading '**' run to a single '*' and hand
+  // Trailing-only wildcard: collapse the '*'/'**' run to a single '*' and hand
   // the reassembled spec to the shared matcher (RP2).
-  const suffix = spec.slice(starIdx).replace(/^\*+/, '*');
-  return specifierMatches(prefix + suffix, nvalue);
+  return specifierMatches(prefix + '*', nvalue);
 }
 
 /**
@@ -495,8 +499,12 @@ function pathSpecifierMatches(
  * scoped to it must see the real command, not the assignment (M2-2), and a
  * suggestion built from it must key off the command, not `FOO=1` (M2-4).
  * Requires trailing whitespace so a bare `FOO=1` (no command) is left intact.
+ * The value is a run of quoted chunks and plain characters — quotes can appear
+ * MID-value (`A=a"b c" rm …` assigns `ab c`), which the previous single
+ * `"…"`-or-bare alternation mis-lexed: it stripped only `A=a"b `, so the
+ * candidate never started with the real command and a deny failed OPEN.
  */
-const ENV_ASSIGN_PREFIX = /^\s*[A-Za-z_][A-Za-z0-9_]*=(?:"[^"]*"|'[^']*'|[^\s]*)\s+/;
+const ENV_ASSIGN_PREFIX = /^\s*[A-Za-z_][A-Za-z0-9_]*=(?:"[^"]*"|'[^']*'|[^\s"'])*\s+/;
 
 /** Strip a run of leading environment assignments from a shell command. */
 function stripEnvAssignments(command: string): string {
@@ -521,15 +529,35 @@ const COMMAND_WRAPPERS: ReadonlySet<string> = new Set([
   'setsid', 'stdbuf', 'nice', 'ionice', 'time', 'timeout', 'xargs', 'bash', 'sh',
 ]);
 
+/**
+ * Compound-command KEYWORDS that sit immediately before a command the shell
+ * still runs (`if rm …`, `then rm …`, `while rm …`, `do rm …`). A `;`/newline
+ * split leaves a segment like `then rm -rf /` whose FIRST token is the keyword,
+ * not `rm`, so a `Bash(rm:*)` deny never matched it (a deny fail-open on
+ * `if true; then rm -rf /; fi`, `for x in a; do rm -rf /; done`, …). Peeled only
+ * in DENY/ASK position (denyMatchCandidates), like COMMAND_WRAPPERS — purely
+ * additive, so it can only ever make a deny fire, never widen an allow (allow
+ * still matches the literal segment and falls through to prompting). Loop-header
+ * keywords (`for`/`case`/`select`/`in`) precede a NAME, not a command, so the
+ * executed body is reached via its own `do`/`then` segment and they need no
+ * entry here. */
+const SHELL_KEYWORD_PREFIXES: ReadonlySet<string> = new Set([
+  'if', 'then', 'elif', 'else', 'while', 'until', 'do',
+]);
+
 /** Bound on wrapper/flag/arg tokens peeled from one segment; a real command
  *  reaches its command word well within this. */
 const MAX_COMMAND_UNWRAP = 8;
 
 /** Strip shell quoting/escaping from a single command WORD so an obfuscated
  *  command word matches its plain form: `\rm` / `"rm"` / `'rm'` -> `rm`
- *  (audit r4 V4-1). */
+ *  (audit r4 V4-1). The leading `$` of ANSI-C / locale quoting (`$'rm'`,
+ *  `$"rm"`) is dropped too: `$'rm'` is the literal string `rm` the shell then
+ *  executes, so without this a `Bash(rm:*)` deny failed OPEN on `$'rm' -rf /`.
+ *  A `$` NOT immediately followed by a quote (a real `$VAR` expansion) is
+ *  untouched. */
 function deobfuscateWord(word: string): string {
-  return word.replace(/['"\\]/g, '');
+  return word.replace(/\$(?=['"])/g, '').replace(/['"\\]/g, '');
 }
 
 /** First whitespace-delimited token and the trimmed remainder of a command. */
@@ -539,6 +567,13 @@ function splitFirstToken(command: string): { first: string; rest: string } {
   if (idx === -1) return { first: s, rest: '' };
   return { first: s.slice(0, idx), rest: s.slice(idx).trim() };
 }
+
+/** A leading REDIRECTION token (`</dev/null`, `2>err`, `>>log`, `&>log`) —
+ *  possibly a bare operator with a detached target word (`> file cmd`) —
+ *  placed before the command word. The shell still runs the command that
+ *  follows, so a deny/ask must peel it: `</dev/null rm -rf x` was a deny
+ *  fail-open (the segment's first token was `</dev/null`, never `rm`). */
+const REDIRECTION_PREFIX = /^(?:\d*(?:>>?|<)|&>>?)/;
 
 /** A wrapper's own leading arg (flag / `VAR=val` / bare number-or-duration)
  *  that sits before the real command, peeled only once already inside a
@@ -556,13 +591,14 @@ function isWrapperArgToken(token: string): boolean {
  * through a bare subshell / brace group (audit r3 W10-1 — `(rm -rf x)` and
  * `{ rm -rf x; }` were deny fail-open: the segment starts with `(`/`{`, so a
  * `Bash(rm:*)` deny never matched and a bare `Bash` allow auto-ran it).
- * Leading run of `(` / `{` / whitespace, trailing run of `)` / `}` / `;` /
- * whitespace — nested groups (`((rm))`) collapse in one pass. Deny/ask
+ * Leading run of `(` / `{` / `!` (pipeline negation — `! rm -rf x` still runs
+ * rm, only the exit status flips) / whitespace, trailing run of `)` / `}` /
+ * `;` / whitespace — nested groups (`((rm))`) collapse in one pass. Deny/ask
  * position only (candidates below): an allow must keep matching the literal
  * form, so a grouped command still falls through to prompting.
  */
 function stripGroupWrappers(segment: string): string {
-  return segment.replace(/^[\s({]+/, '').replace(/[\s)};]+$/, '');
+  return segment.replace(/^[\s({!]+/, '').replace(/[\s)};]+$/, '');
 }
 
 /**
@@ -571,9 +607,9 @@ function stripGroupWrappers(segment: string): string {
  * matches a rule scoped to the real command. Always includes the raw segment
  * and its env-stripped form (the prior behavior); additionally de-obfuscates
  * the command word, peels leading wrappers (plus a wrapper's own
- * flag/assignment/duration args), and sees through subshell / brace grouping,
- * so `sudo \rm -rf /`, `timeout 5 rm …`, `eval "rm -rf /"` and `(rm -rf /)`
- * all reach `rm`. Purely additive - it only ever offers MORE candidates, so a
+ * flag/assignment/duration args) and leading redirections, and sees through
+ * subshell / brace grouping, so `sudo \rm -rf /`, `timeout 5 rm …`,
+ * `eval "rm -rf /"`, `</dev/null rm …` and `(rm -rf /)` all reach `rm`. Purely additive - it only ever offers MORE candidates, so a
  * deny/ask can fire but an existing match is never lost.
  */
 function denyMatchCandidates(segment: string): string[] {
@@ -591,11 +627,24 @@ function denyMatchCandidates(segment: string): string[] {
     for (let i = 0; i < MAX_COMMAND_UNWRAP; i++) {
       const { first, rest } = splitFirstToken(cur);
       if (first === '') break;
+      // A redirection before the command word does not change which command
+      // runs; peel it (and a detached target word) so the deny still fires.
+      const redir = REDIRECTION_PREFIX.exec(first);
+      if (redir !== null) {
+        const next = redir[0] === first ? splitFirstToken(rest).rest : rest;
+        if (next === '') break;
+        out.add(next);
+        cur = next;
+        continue;
+      }
       const word = deobfuscateWord(first);
       out.add(rest === '' ? word : `${word} ${rest}`);
       // Peel a leading wrapper, or - once already inside a wrapper (i > 0) - a
       // wrapper's own arg token. A non-wrapper head token is the real command.
-      const peelable = COMMAND_WRAPPERS.has(word) || (i > 0 && isWrapperArgToken(first));
+      const peelable =
+        COMMAND_WRAPPERS.has(word) ||
+        SHELL_KEYWORD_PREFIXES.has(word) ||
+        (i > 0 && isWrapperArgToken(first));
       if (!peelable || rest === '') break;
       cur = rest;
       out.add(rest);
@@ -641,6 +690,16 @@ function hasInjectionConstruct(command: string): boolean {
  * rule LESS likely to match every segment, so it falls through to prompting,
  * never to a wider allow. This is what stops `allowed && dangerous` from riding
  * in on a prefix rule scoped to `allowed`.
+ *
+ * The single-`&` separator carries a `(?<![<>])` guard so an fd-DUPLICATION
+ * redirection's `&` (`>&`, `<&`, `2>&1`) is NOT treated as a chain operator.
+ * Splitting there orphaned the fd digit into the next segment (`2>&1 rm -rf /`
+ * -> `2>` + `1 rm -rf /`), which no longer starts with a recognizable leading
+ * redirection, so the deny-position redirection peel never reached `rm` and a
+ * `Bash(rm:*)` deny FAILED OPEN on a valid leading-redirect command. Kept whole
+ * (`2>&1 rm -rf /`), the first token is a redirection the peel strips, so the
+ * deny fires. Background `&`, `|&`, `&&`/`||` and a trailing/detached `&` are
+ * unaffected (their `&` is not preceded by `<`/`>`).
  */
 export function decomposeBashCommand(command: string): {
   segments: string[];
@@ -648,7 +707,7 @@ export function decomposeBashCommand(command: string): {
 } {
   const hasInjection = hasInjectionConstruct(command);
   const segments = command
-    .split(/(?:&&|\|\||[;\n|&])/)
+    .split(/(?:&&|\|\||[;\n|]|(?<![<>])&)/)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
   return { segments: segments.length > 0 ? segments : [command.trim()], hasInjection };

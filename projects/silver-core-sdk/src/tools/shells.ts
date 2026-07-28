@@ -498,7 +498,13 @@ export const bashOutputTool: BuiltinTool = {
     if (rec === undefined) {
       return { content: `BashOutput: no background shell with id "${id}".`, isError: true };
     }
-    const filter = typeof input['filter'] === 'string' ? input['filter'] : undefined;
+    // An empty filter is a no-op in filterLines; treating it as ACTIVE would
+    // still engage the F4 partial-line holdback below and withhold an
+    // UNFILTERED trailing tail for an extra poll. Normalize it away.
+    const filter =
+      typeof input['filter'] === 'string' && input['filter'].length > 0
+        ? input['filter']
+        : undefined;
     // ReDoS guard (audit 2026-07-14 M-2, shared with Grep and hooks/matcher):
     // the filter regex runs per line over up to 500K chars of accumulated
     // shell output, synchronously. Reject risky patterns with a message the
