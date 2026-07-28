@@ -16,6 +16,36 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.95.0 — 2026-07-28
+
+Multi-wave defect audit (8 waves, 59 partitions across both SDKs + testbed):
+100+ verified defects fixed, each with a concrete failing input. No public API
+change; no test contract altered (any fix that reddened an existing test was
+reverted).
+
+- **Crash-on-tolerant-input**: `null` chunks / `delta` / `tool_calls` elements
+  in the OpenAI stream, `tool_use` with absent `input` in the token estimator,
+  MCP image parts missing `mimeType`/`data`, non-object top-level tool input.
+- **Wire-protocol**: consecutive same-role turns on the memory-flush and
+  empty-assistant continuation paths (`roles must alternate` 400), compaction
+  `foldViaApi` double-user turn, tool_use/tool_result pair split at the
+  compaction boundary, duplicate tool names across `tools/list` pages, MCP HTTP
+  404 recovery replaying a fire-and-forget response onto a new session.
+- **Permissions (deny fail-open)**: `2>&1 rm …` fd-duplication, `! rm …`
+  pipeline negation, leading redirection, `A=a"b c" rm …` env lexing, glob
+  tails like `Read(/etc/*.conf)`, `if true; then rm …; fi` keyword prefixes,
+  `$'rm'` ANSI-C quoting.
+- **Other security**: prototype pollution in MCP project-config, unbounded
+  error-body read, trailing-dot host bypassing WebSearch domain filters,
+  malformed hook-condition objects failing open, ReDoS false negatives.
+- **State/race/leak**: subagent kill/epoch races, session fork from a crashed
+  source, maestro ledger reopen CAS race, keep-alive socket pinned by a
+  null-body response, MCP stdio life-controller not aborted on child crash,
+  several session-manager ledger leaks.
+- **Correctness/edge**: surrogate-pair truncation across the codebase, NaN
+  guards (`maxTurns`, `maxThinkingTokens`, model costs), report aggregates
+  lacking a non-negative clamp, memory `view` truncating its own header.
+
 ## 0.94.0 — 2026-07-28
 
 **BREAKING: no built-in default model ids** (SCS request 2026-07-28, black-pool

@@ -36,7 +36,7 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.94.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.94.0`
+**当前版本 `0.95.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.95.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
