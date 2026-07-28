@@ -153,6 +153,14 @@ export const monitorTool: BuiltinTool = {
     for (const shell of candidates) {
       launched = await shellsMgr.spawnBackground(shell, watchCommand, ctx);
       if (!('error' in launched)) break;
+      // Mirror the Bash foreground/background chains: only ENOENT (this
+      // candidate is absent) falls through to the next shell. Any other spawn
+      // failure (e.g. EACCES on an explicit CLAUDE_CODE_GIT_BASH_PATH) is
+      // terminal — silently degrading to a different interpreter is the
+      // wrong-shell trap shell-resolve.ts exists to prevent. Without this the
+      // comment above ("same launch path as Bash run_in_background") was a
+      // false claim: Bash stops at the failing shell, Monitor kept going.
+      if (!launched.error.includes('ENOENT')) break;
     }
     if ('error' in launched) {
       return {

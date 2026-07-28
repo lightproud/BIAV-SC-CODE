@@ -240,6 +240,13 @@ export function createNodeFetch(opts: { freeSocketTtlMs?: number } = {}): NodeFe
             const responseBody = isNullBodyStatus(status)
               ? null
               : (Readable.toWeb(res) as unknown as ReadableStream<Uint8Array>);
+            // A null-body response (204/205/304/101) has no web stream, so
+            // nothing ever consumes `res`. A paused IncomingMessage never emits
+            // 'end', so the keep-alive Agent never reclaims the socket: it stays
+            // pinned in `agent.sockets` (ref'd, defeating process-exit unref)
+            // and the NEXT request re-pays a full TCP+TLS handshake instead of
+            // riding the warm socket. Drain it so the socket returns to the pool.
+            if (responseBody === null) res.resume();
             resolve(
               new Response(responseBody, {
                 status,
