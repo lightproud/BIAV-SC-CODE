@@ -25,7 +25,7 @@
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
-import { LedgerDriver, Scheduler, TaskLedger } from 'silver-core-maestro-sdk';
+import { LedgerDriver, Scheduler, TaskLedger, isTerminal } from 'silver-core-maestro-sdk';
 import {
   assessMemoryStoreHealth,
   createLocalMemoryFileOps,
@@ -104,7 +104,15 @@ export async function tidyOnce({ ops, store, memoriesDir, softWaterline, staleAf
   const fragmentsOnDisk = join(memoriesDir, 'fragments');
   const names = [];
   if (fragmentCount > 0 && existsSync(fragmentsOnDisk)) {
-    for (const entry of readdirSync(fragmentsOnDisk).sort()) {
+    // FILES only: the waterline counts direct file children, but the memory
+    // tree may nest (each subdirectory gets its own waterline). Feeding a
+    // subdirectory name to readFileSync below throws EISDIR, and the retry
+    // throws it again — one nested dir under fragments/ and the consolidation
+    // pass never runs again.
+    for (const entry of readdirSync(fragmentsOnDisk, { withFileTypes: true })
+      .filter((e) => e.isFile())
+      .map((e) => e.name)
+      .sort()) {
       names.push(`${FRAGMENTS_DIR}/${entry}`);
     }
   }
@@ -214,7 +222,10 @@ export async function runMemoryTidy(opts) {
   await scheduler.stop();
   for (;;) {
     const s = await ledger.getSession(fired[0]);
-    if (s !== null && (s.state === 'done' || s.state === 'failed')) break;
+    // Terminal test through the SDK's vocabulary, not a literal pair: a
+    // `cancelled` session reads as still-open to `done || failed` and the
+    // drain spins to its deadline instead of settling.
+    if (s !== null && isTerminal(s.state)) break;
     if (Date.now() > deadline) await bail('drain deadline — tidy session still open');
     await sleep(10);
   }

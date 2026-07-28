@@ -201,7 +201,15 @@ export async function assessMemoryStoreHealth(
         'staleness not assessable (MemoryDirEntry.mtimeMs is optional)',
     };
   } else {
-    const byAge = [...fileMtimes.entries()].sort((a, b) => a[1] - b[1]);
+    // Tiebreak on the (unique) path: mtime ties are ordinary (a batch of files
+    // written in the same millisecond) and the stable sort otherwise inherited
+    // the backend's `list()` enumeration order, which is unspecified — so
+    // `oldestFile` and the STALE_LIST_CAP-capped `staleList` named different
+    // files across runs/backends for identical trees. `collectListing` in
+    // store.ts already sorts by name for the same reason.
+    const byAge = [...fileMtimes.entries()].sort(
+      (a, b) => a[1] - b[1] || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0),
+    );
     const staleCutoff = now - staleAfterDays * DAY_MS;
     const stale = byAge.filter(([, m]) => m < staleCutoff);
     const oldest = byAge[0];

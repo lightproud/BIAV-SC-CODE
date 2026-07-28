@@ -205,7 +205,15 @@ async function pruneDayFiles(
   now: Date,
   retentionDays: number,
 ): Promise<void> {
-  const cutoff = new Date(now.getTime() - retentionDays * 86_400_000).toISOString().slice(0, 10);
+  const cutoffMs = now.getTime() - retentionDays * 86_400_000;
+  // A retention window whose cutoff is not a representable Date — Infinity
+  // ("keep everything") or any value past the ±8.64e15 ms ECMAScript time
+  // range — made toISOString() throw a RangeError straight out of a path this
+  // function documents as best-effort ("observability must never throw"), and
+  // it threw AFTER the report was already written. Nothing can be older than
+  // an unrepresentable cutoff, so there is simply nothing to prune.
+  if (!Number.isFinite(cutoffMs) || Math.abs(cutoffMs) > 8.64e15) return;
+  const cutoff = new Date(cutoffMs).toISOString().slice(0, 10);
   let names: string[] = [];
   try {
     names = await readdir(dir);

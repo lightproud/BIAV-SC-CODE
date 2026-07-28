@@ -31,7 +31,37 @@ import {
 } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { TaskLedger, LedgerDriver } from 'silver-core-maestro-sdk';
+import { TaskLedger, LedgerDriver, isTerminal, isUnsuccessfulTerminal } from 'silver-core-maestro-sdk';
+
+/**
+ * Load the ledger file, QUARANTINING anything unreadable. An unattended daily
+ * job must not be killable by one bad byte: the file is committed to git, so a
+ * botched rebase-conflict resolution (the push-retry loop in the workflow can
+ * stage a conflicted file) or a process killed mid-write leaves JSON that
+ * throws here — before a single target is patrolled — and then EVERY future
+ * run dies the same way. Move the bad file aside (evidence survives, it is
+ * committed next to the good one) and start from an empty ledger; the day's
+ * sessions simply re-dispatch and the archive itself is untouched.
+ */
+function loadLedgerState(filePath) {
+  if (!existsSync(filePath)) return { sessions: {}, queries: [] };
+  try {
+    const parsed = JSON.parse(readFileSync(filePath, 'utf8'));
+    if (
+      parsed === null ||
+      typeof parsed !== 'object' ||
+      typeof parsed.sessions !== 'object' ||
+      parsed.sessions === null ||
+      !Array.isArray(parsed.queries)
+    ) {
+      throw new Error('ledger file is not a { sessions, queries } object');
+    }
+    return parsed;
+  } catch {
+    renameSync(filePath, `${filePath}.corrupt-${Date.now()}`);
+    return { sessions: {}, queries: [] };
+  }
+}
 
 /**
  * Host storage battery: the SDK's LedgerStore contract over one JSON file
@@ -39,9 +69,7 @@ import { TaskLedger, LedgerDriver } from 'silver-core-maestro-sdk';
  * a patrol job needs exactly this much.
  */
 export function fileLedgerStore(filePath) {
-  const state = existsSync(filePath)
-    ? JSON.parse(readFileSync(filePath, 'utf8'))
-    : { sessions: {}, queries: [] };
+  const state = loadLedgerState(filePath);
   const save = () => {
     mkdirSync(dirname(filePath), { recursive: true });
     const tmp = filePath + '.tmp';
@@ -132,6 +160,31 @@ export const extractors = {
 
 const USER_AGENT = 'biav-store-patrol/1.0 (+https://github.com/lightproud/BIAV-SC-CODE)';
 
+/** Snapshot write, same atomic discipline as the ledger file: a plain
+ *  writeFileSync truncates first, so a process killed between truncate and
+ *  flush leaves a half-file — and the workflow commits the archive even when
+ *  the patrol step failed (continue-on-error), so that half-file reaches main. */
+function writeJsonAtomic(path, value) {
+  const tmp = `${path}.tmp`;
+  writeFileSync(tmp, JSON.stringify(value, null, 2) + '\n');
+  renameSync(tmp, path);
+}
+
+/** Previous signature, or null when there is no USABLE baseline. Corrupt
+ *  latest.json must not wedge the target: unguarded, the parse throws inside
+ *  every attempt of every future run, so that storefront is never snapshotted
+ *  again and the job goes red daily until a human notices. Treating it as "no
+ *  baseline" self-heals — one honest `from: null` change entry, file rewritten. */
+function readLatestSnapshot(path) {
+  if (!existsSync(path)) return null;
+  try {
+    const parsed = JSON.parse(readFileSync(path, 'utf8'));
+    return parsed !== null && typeof parsed === 'object' ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * One patrol run: dispatch one ledger session per target (idempotent per
  * target × day; a failed earlier run gets a fresh :rN retry session), let the
@@ -187,7 +240,7 @@ export async function runStorePatrol(opts) {
     const dir = join(archiveDir, target.id);
     mkdirSync(dir, { recursive: true });
     const latestPath = join(dir, 'latest.json');
-    const prev = existsSync(latestPath) ? JSON.parse(readFileSync(latestPath, 'utf8')) : null;
+    const prev = readLatestSnapshot(latestPath);
     const changed = prev === null || JSON.stringify(prev.signature) !== JSON.stringify(signature);
     const snapshot = {
       target: target.id,
@@ -196,9 +249,9 @@ export async function runStorePatrol(opts) {
       checked_at: new Date().toISOString(),
       signature,
     };
-    writeFileSync(join(dir, `${today}.json`), JSON.stringify(snapshot, null, 2) + '\n');
+    writeJsonAtomic(join(dir, `${today}.json`), snapshot);
     if (changed) {
-      writeFileSync(latestPath, JSON.stringify(snapshot, null, 2) + '\n');
+      writeJsonAtomic(latestPath, snapshot);
       appendFileSync(
         join(dir, 'changes.jsonl'),
         JSON.stringify({ at: snapshot.checked_at, target: target.id, from: prev?.signature ?? null, to: signature }) + '\n',
@@ -262,7 +315,11 @@ export async function runStorePatrol(opts) {
   const deadline = Date.now() + (opts.drainTimeoutMs ?? 120_000);
   for (;;) {
     const sessions = await Promise.all(sessionIds.map((id) => ledger.getSession(id)));
-    if (sessions.every((s) => s !== null && (s.state === 'done' || s.state === 'failed'))) break;
+    // Terminal test through the SDK's vocabulary, never a literal pair: the
+    // state set grew a third terminal (`cancelled`) and a hand-spelled
+    // `done || failed` reads it as still in flight — the patrol would then
+    // burn the whole drain timeout and throw, failing the healthy targets too.
+    if (sessions.every((s) => s !== null && isTerminal(s.state))) break;
     if (Date.now() > deadline) {
       await driver.stop();
       throw new Error('store-patrol: drain timeout — sessions still open');
@@ -272,7 +329,10 @@ export async function runStorePatrol(opts) {
   await driver.stop();
 
   const sessions = await Promise.all(sessionIds.map((id) => ledger.getSession(id)));
-  const failures = sessions.filter((s) => s.state === 'failed');
+  // Every unsuccessful terminal counts, not just `failed`: a target that ended
+  // `cancelled` was NOT patrolled, and reporting "all targets patrolled" with
+  // exit 0 would be a false clean bill of health.
+  const failures = sessions.filter((s) => isUnsuccessfulTerminal(s.state));
   return { sessions, failures, changes };
 }
 

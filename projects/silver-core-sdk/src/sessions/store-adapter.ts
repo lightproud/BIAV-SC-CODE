@@ -30,6 +30,11 @@ import type {
 
 const NUL = '\u0000';
 const DEFAULT_LOAD_TIMEOUT_MS = 60_000;
+/** Node's setTimeout ceiling: a larger delay silently overflows to ~1ms, so an
+ *  `Options.loadTimeoutMs` meant to RELAX the mirror budget (e.g. 30 days as
+ *  "practically never") would instead reject EVERY external load/append after
+ *  1ms. Same clamp the transports / hook runner / monitor already apply. */
+const MAX_LOAD_TIMEOUT_MS = 2_147_483_647;
 const DEFAULT_BACKOFF_BASE_MS = 50;
 const DEFAULT_DEBOUNCE_MS = 20;
 const MAX_APPEND_ATTEMPTS = 3;
@@ -127,9 +132,20 @@ export class InMemorySessionStore implements ExternalSessionStore {
       const prev = latest.get(sessionId);
       if (prev === undefined || mtime > prev) latest.set(sessionId, mtime);
     }
+    // Break mtime ties on the (unique) session id, matching
+    // FileSessionStore.listSessions (audit r4 Rst-4) and JsonlSessionStore.list
+    // (Rst-3). Two appends landing in the SAME millisecond are ordinary here
+    // (Date.now() granularity), and without a tiebreak the stable sort kept
+    // this.data insertion order — so the two shipped ExternalSessionStore
+    // implementations answered "newest first" differently for identical data,
+    // and `continue: true` resumed the FIRST-created same-ms session.
     return [...latest.entries()]
       .map(([sessionId, mtime]) => ({ sessionId, mtime }))
-      .sort((a, b) => b.mtime - a.mtime);
+      .sort(
+        (a, b) =>
+          b.mtime - a.mtime ||
+          (a.sessionId < b.sessionId ? -1 : a.sessionId > b.sessionId ? 1 : 0),
+      );
   }
 
   async delete(key: SessionKey): Promise<void> {
@@ -221,7 +237,15 @@ export class MirroringSessionStore implements InternalTranscriptStore {
   ) {
     this.projectKey = config.projectKey;
     this.flushMode = config.flush ?? 'batched';
-    this.loadTimeoutMs = config.loadTimeoutMs ?? DEFAULT_LOAD_TIMEOUT_MS;
+    // A non-finite budget (Number(unset env)) would land NaN in setTimeout,
+    // which coerces to 0 — every mirror op failing after ~1ms instead of
+    // waiting. Fall back to the default; clamp the finite range to the timer
+    // ceiling so an over-large budget bounds rather than instantly expires.
+    const rawLoadTimeout = config.loadTimeoutMs;
+    this.loadTimeoutMs =
+      rawLoadTimeout !== undefined && Number.isFinite(rawLoadTimeout) && rawLoadTimeout > 0
+        ? Math.min(rawLoadTimeout, MAX_LOAD_TIMEOUT_MS)
+        : DEFAULT_LOAD_TIMEOUT_MS;
     this.backoffBaseMs = config.backoffBaseMs ?? DEFAULT_BACKOFF_BASE_MS;
     this.debounceMs = config.debounceMs ?? DEFAULT_DEBOUNCE_MS;
     this.debug = config.debug ?? (() => undefined);
@@ -354,7 +378,16 @@ export class MirroringSessionStore implements InternalTranscriptStore {
           : await this.materializeAndLoad(sessionId, entries);
       if (s !== null) out.push(s);
     }
-    out.sort((a, b) => b.lastModified - a.lastModified);
+    // Same-lastModified ties break on the (unique) session id, matching the
+    // local JsonlSessionStore.list ordering (audit r4 Rst-3). Without it the
+    // stable sort inherited the EXTERNAL store's listing order, so the same two
+    // same-ms sessions listed newest-first differently depending on an
+    // arbitrary remote enumeration — and disagreed with the local path.
+    out.sort(
+      (a, b) =>
+        b.lastModified - a.lastModified ||
+        (a.sessionId < b.sessionId ? -1 : a.sessionId > b.sessionId ? 1 : 0),
+    );
     return out;
   }
 
@@ -366,8 +399,16 @@ export class MirroringSessionStore implements InternalTranscriptStore {
       const listed = await this.withTimeout(this.external.listSessions(this.projectKey));
       if (listed.length === 0) return null;
       // Newest first, then skip sidechain transcripts (the guard the local
-      // store applies) — return the newest genuine conversation.
-      const sorted = [...listed].sort((a, b) => b.mtime - a.mtime);
+      // store applies) — return the newest genuine conversation. Same-mtime
+      // ties break on the (unique) id so this agrees with list() above and with
+      // JsonlSessionStore.latestSessionId (audit r4 Rst-3); otherwise the
+      // external store's arbitrary listing order decided which same-ms session
+      // `continue: true` resumed.
+      const sorted = [...listed].sort(
+        (a, b) =>
+          b.mtime - a.mtime ||
+          (a.sessionId < b.sessionId ? -1 : a.sessionId > b.sessionId ? 1 : 0),
+      );
       for (const e of sorted) {
         if (!(await this.externalIsSidechain(e.sessionId))) return e.sessionId;
       }

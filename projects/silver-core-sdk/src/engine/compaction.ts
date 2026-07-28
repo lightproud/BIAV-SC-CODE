@@ -471,7 +471,12 @@ function shedToolResultContent(
   seen.add(content);
 
   // 2. TRUNCATE — head+tail pointer-ization for oversized content.
-  if (budget <= 0) return content;
+  // `!(budget > 0)` rather than `budget <= 0`: a NaN budget (Number() over an
+  // unset env var reaching compaction.preTierMaxToolResultChars) passed the
+  // `<= 0` test, then every arithmetic below produced NaN — headLen/tailLen NaN
+  // sliced to empty strings, so the whole tool_result was REPLACED by the
+  // literal marker "[…NaN chars elided…]". Non-finite = pre-tier truncation off.
+  if (!(budget > 0)) return content;
   const chars = Array.from(content); // codepoint array: no split surrogate pairs
   if (chars.length <= budget) return content;
   const headLen = Math.ceil(budget / 2);
