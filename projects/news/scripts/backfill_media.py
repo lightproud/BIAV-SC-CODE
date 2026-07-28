@@ -102,10 +102,59 @@ def fetch(url, dest, source):
     return "ok"
 
 
+# ── 进程级预算（扫描修复 2026-07-28）──────────────────────────────────────────
+# 缺陷：`--budget` 原先只从**下载循环**开始计时，而它前面还压着三个真正昂贵的阶段:
+#   ① collect_urls 全量遍历社区档案（数百万条 discord JSONL + 全部平台 json）；
+#   ② 去重；
+#   ③ refresh_discord 对**全部**待办 discord 链接批量刷签名（每批一次 HTTP + 0.3s
+#      节流；待办上万即数千批）。
+# 三者都不受预算约束，于是 CI 作业在进入下载循环之前就先撞上 timeout-minutes: 90。
+# 实测后果（GitHub 侧取证）：backfill-media.yml 连续 37 天、500+ 次运行**没有一次
+# 成功**——每次都是「Backfill 步骤跑满 89 分 47 秒被杀 → 上传与提交 manifest 步骤
+# skipped」。manifest 从不落地，下一轮又从同一处重来，是个恒不前进的死循环。
+# （2026-07-26 曾把 cron 由每小时降为每日，判词是「排队顶掉待跑 run」——那是误诊:
+#  改为每日后的首跑 run#522 照样跑满 90 分钟被杀。真因在预算覆盖面，不在触发频率。）
+# 修法：预算改为**从进程启动算起的截止时刻**，三个阶段共用，任一阶段逼近即收尾,
+# 让作业总能走到「保存 manifest → 上传 → 提交」，从而每轮都有实际推进。
+_START = time.time()
+_DEADLINE: float | None = None
+
+
+def _set_budget(seconds: int) -> None:
+    global _DEADLINE
+    _DEADLINE = _START + seconds
+
+
+def _budget_left() -> float:
+    """剩余预算秒数；未设预算时返回正无穷。"""
+    return float('inf') if _DEADLINE is None else _DEADLINE - time.time()
+
+
+def _budget_exhausted(reserve: float = 0.0) -> bool:
+    """预算是否已耗尽。reserve 为给后续阶段预留的秒数。"""
+    return _budget_left() <= reserve
+
+
+def _reserve_for_downloads() -> float:
+    """给下载阶段预留的秒数 = 总预算的三成。
+
+    没有这条预留，遍历/刷新可以把预算吃干，下载一件都做不成——那一轮仍然「零推进」,
+    与超时被杀的结果没有区别。留出下载窗口，才能保证每轮至少补进一批文件并落 manifest。
+    """
+    if _DEADLINE is None:
+        return 0.0
+    return (_DEADLINE - _START) * 0.3
+
+
 def refresh_discord(urls, token):
     """批量把过期 Discord 链接换成新签名链接。返回 {original: refreshed}。"""
     out = {}
     for i in range(0, len(urls), REFRESH_BATCH):
+        # 给下载阶段留至少三成预算：链接刷新本身不产出任何已下载文件,
+        # 全花在刷新上等于这一轮又白跑。
+        if _budget_exhausted(reserve=_reserve_for_downloads()):
+            print(f"  预算逼近，刷新提前收尾：已刷 {i}/{len(urls)} 条链接")
+            break
         batch = urls[i:i + REFRESH_BATCH]
         body = json.dumps({"attachment_urls": batch}).encode()
         req = urllib.request.Request(REFRESH_API, data=body, method="POST", headers={
@@ -133,6 +182,9 @@ def collect_urls(include_discord):
     sources = sorted(p.name for p in src_root.iterdir()
                      if p.is_dir() and p.name != "discord") if src_root.is_dir() else []
     for source in sources:
+        if _budget_exhausted(reserve=_reserve_for_downloads()):
+            print(f"  预算逼近，档案遍历提前收尾（停在平台 {source} 之前）")
+            return urls
         for fpath in archive_layout.dated_files(source, src_root):
             d = archive_layout.date_stem(fpath)
             try:
@@ -146,7 +198,11 @@ def collect_urls(include_discord):
                     urls.append((it["media_url"], source, d))
     if include_discord:
         # 三区服全量遍历（2026-07-10 方案甲布局，新旧布局经 SSOT 回落）
-        for fpath in archive_layout.iter_discord_message_files(src_root / "discord"):
+        for n_file, fpath in enumerate(archive_layout.iter_discord_message_files(src_root / "discord")):
+            # discord 是遍历量最大的一段（数百万条），每 200 档查一次预算
+            if n_file % 200 == 0 and _budget_exhausted(reserve=_reserve_for_downloads()):
+                print(f"  预算逼近，discord 遍历提前收尾（已扫 {n_file} 档）")
+                return urls
             # 日期茎一律经 SSOT（CLAUDE.md §5.2），不再手工 replace 后缀
             d = archive_layout.date_stem(fpath)
             if len(d) != 10:
@@ -190,6 +246,9 @@ def main():
     if a.upload:
         upload_release(); return
 
+    # 预算从**进程启动**算起（见 _START 上方说明），而不是从下载循环算起
+    _set_budget(a.budget)
+
     os.makedirs(FILES, exist_ok=True)
     token = os.environ.get("DISCORD_BOT_TOKEN")
     manifest = load_manifest()
@@ -215,9 +274,10 @@ def main():
         print(f"警告：{len(disc)} 个 Discord 链接多已过期，但未提供 DISCORD_BOT_TOKEN，无法刷新；"
               f"将直接尝试原链接（多半 404）。设置 DISCORD_BOT_TOKEN 后续跑可补回。")
 
-    start = time.time(); done = 0; stats = {}
+    done = 0
+    stats = {}
     for url, src, d in todo:
-        if time.time() - start > a.budget:
+        if _budget_exhausted():
             print(f"预算耗尽，已处理 {done}/{len(todo)}，下次续跑"); break
         dl_url = refreshed.get(url, url)
         fn = fname(url, src)

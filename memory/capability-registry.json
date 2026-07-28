@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-27",
+    "generated_at": "2026-07-28",
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
@@ -241,7 +241,6 @@
       "name": "Discord Cold Compress",
       "path": ".github/workflows/discord-cold-compress.yml",
       "triggers": [
-        "schedule",
         "manual"
       ]
     },
@@ -868,7 +867,7 @@
     {
       "id": "archive_platforms.py",
       "path": "projects/news/scripts/archive_platforms.py",
-      "summary": "多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期存入 data/platforms/",
+      "summary": "多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期落全量档案层。",
       "planes": [
         "cli",
         "workflow"

@@ -1,12 +1,23 @@
 name: Discord Cold Compress
 
-# 月度压冷（守密人 2026-07-12 甲案裁定）：每到新月份，把上上个月及更早的
-# discord dated JSONL 压成 .jsonl.gz（当月 + 上月保持裸文本热层）。幂等可重入。
+# 月度压冷（守密人 2026-07-12 甲案裁定）：把上上个月及更早的 discord dated JSONL
+# 压成 .jsonl.gz（当月 + 上月保持裸文本热层）。幂等可重入。
 # T62 P2-3c 已切换（2026-07-19）：操作 **BIAV-SC-DATA** 的 discord 存量
 # （discord_cold_compress 经 discord_root() 分仓桥接），提交推 data 仓。
+#
+# ⚠ 本工作流**只保留手动派发**（扫描修复 2026-07-28）。此前它带 cron '23 3 2 * *',
+# 与 community-cold-compress.yml **同一分钟**触发，而后者跑的
+# `community_cold_compress.py --scope all` 内部就调用 `discord_cold_compress.run()`
+# ——同一批 discord 归档被两个作业并发压缩。两者当时还分处不同 concurrency 组，
+# GitHub 因此完全不会把它们串行化。具体后果：
+#   1. 压冷语义是「读裸档 → 并轨进 .gz → 删裸档」。A 删掉裸档后，早先已读入裸档的 B
+#      仍会写出自己那份 .gz，最后写者胜——B 的 .gz 可能缺掉 A 并轨进去的记录；
+#   2. 两个作业都 `git add -A` 并推同一个 data 仓 main，落败方 rebase 后推上去的是
+#      另一份树状态。
+# 受影响的是社区全量档案——CLAUDE.md §6.3 仅剩三张抢救网之一。
+# 月度执行唯一入口 = community-cold-compress.yml（§5.2 明定的「总入口」）；
+# 本档保留 workflow_dispatch，供只压 discord 的手动补跑。
 on:
-  schedule:
-    - cron: '23 3 2 * *'   # 每月 2 日 03:23 UTC（错峰归档器整点轮）
   workflow_dispatch:
     inputs:
       cutoff:
@@ -14,8 +25,10 @@ on:
         required: false
         default: ''
 
+# 与 community-cold-compress 共用一个 concurrency 组：手动补跑与月度总入口
+# 决不能同时动同一批档案（组名不同 = 不串行化，正是上面那条并发缺陷的成因）。
 concurrency:
-  group: discord-cold-compress
+  group: community-cold-compress
   cancel-in-progress: false
 
 permissions:
