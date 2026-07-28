@@ -108,7 +108,11 @@ def _title_anchors(query: str) -> dict[str, str]:
     if not query:
         return out
     idx = load_index()
-    cands: list[tuple[str, str]] = []
+    # 同名概念（如两个「詹金」）必须**一起**参与占位：claimed 掩码的用途是「长标题优先、
+    # 短标题不得再吃已被占的字」，而同一标题的第二个概念并不是「更短的内部子串」——
+    # 按 cid 逐个处理会让先来者占满掩码、后来者被误判成子串而丢锚（同名角色只锚到一个，
+    # 检索分与扩散激活种子能量随 cid 字典序偏袒其一）。故按标题分组，命中即全组成锚。
+    by_title: dict[str, list[str]] = {}
     for cid, c in idx["concepts"].items():
         t = (c.get("title") or "").strip()
         if not t or len(t) > len(query):
@@ -116,9 +120,9 @@ def _title_anchors(query: str) -> dict[str, str]:
         if len(t) == 1 and not ("一" <= t <= "鿿"):
             continue
         if t in query:
-            cands.append((t, cid))
+            by_title.setdefault(t, []).append(cid)
     claimed = [False] * len(query)
-    for t, cid in sorted(cands, key=lambda x: (-len(x[0]), x[1])):
+    for t in sorted(by_title, key=lambda s: (-len(s), min(by_title[s]))):
         anchored = False
         start = query.find(t)
         while start >= 0:
@@ -128,7 +132,8 @@ def _title_anchors(query: str) -> dict[str, str]:
                     claimed[j] = True
             start = query.find(t, start + 1)
         if anchored:
-            out[cid] = t
+            for cid in sorted(by_title[t]):
+                out[cid] = t
     return out
 
 
@@ -192,11 +197,50 @@ def search(query: str, limit: int = 8, type_filter: str | None = None) -> dict:
     }
 
 
+def _reserved_entry(raw: str) -> dict | None:
+    """OKF 保留名（``index.md`` / ``log.md``）的分区入口页。
+
+    保留名按 OKF 规范不是 concept，故不进索引 ``concepts``——但 ``overview()`` 恰恰把
+    ``/{section}/index.md`` 当作各分区的「入口索引」发给调用方（LLMwiki 楼层平面图）。
+    照着平面图去 ``get`` 却报「未找到 concept」= 图上每一扇门都打不开。这些文件在 bundle
+    内真实存在且正是分区目录本身，故按入口页直供正文（仍是放指针不放本体：正文只是清单）。
+    """
+    rel = (raw or "").strip().lstrip("/")
+    if not rel or Path(rel).name not in RESERVED:
+        return None
+    fpath = BUNDLE / rel
+    try:  # 拒绝 ../ 逃逸：只认 bundle 内的保留名
+        fpath.resolve().relative_to(BUNDLE.resolve())
+    except ValueError:
+        return None
+    if not fpath.is_file():
+        return None
+    body = _BODY_RE.sub("", fpath.read_text(encoding="utf-8"), count=1).strip()
+    section = rel.split("/")[0] if "/" in rel else ""
+    return {
+        "id": "/" + rel,
+        "type": "section-index",
+        "title": body.splitlines()[0].lstrip("# ").strip() if body else rel,
+        "description": "",
+        "resource": "",
+        "tags": [],
+        "tier": None,
+        "degree": 0,
+        "section": section,
+        "body": body,
+        "neighbors": [],
+        "neighbor_count": 0,
+    }
+
+
 def get(concept_id: str) -> dict:
     """Return a concept's full record: metadata + body markdown + neighbors."""
     idx = load_index()
     cid = normalize_id(concept_id)
     if cid is None:
+        entry = _reserved_entry(concept_id)
+        if entry is not None:
+            return entry
         return {"error": f"未找到 concept: {concept_id}",
                 "hint": "用 kb_search 先检索，或传规范 id 如 /characters/125346.md"}
     concept = idx["concepts"][cid]
@@ -230,6 +274,7 @@ def neighbors(concept_id: str, limit: int = 20, rel_filter: str | None = None) -
     adj = idx.get("neighbors", {}).get(cid, [])
     if rel_filter:
         adj = [pair for pair in adj if pair[1] == rel_filter]
+    total = len(adj)  # 过滤后的总数：与 search 的 total_matches 同口径
     limit = max(1, min(int(limit or 20), 200))
     concepts = idx["concepts"]
     items = [
@@ -240,7 +285,9 @@ def neighbors(concept_id: str, limit: int = 20, rel_filter: str | None = None) -
     return {
         "id": cid,
         "title": concepts.get(cid, {}).get("title"),
-        "total_neighbors": len(idx.get("neighbors", {}).get(cid, [])),
+        # rel_filter 生效时报**过滤后**的总数：原先报未过滤总数，调用方看到
+        # returned=1 / total=4 会以为另 3 条被 limit 截断、加大 limit 重查仍是那 1 条。
+        "total_neighbors": total,
         "returned": len(items),
         "rel_filter": rel_filter,
         "neighbors": items,
@@ -322,6 +369,7 @@ def activate(seed: str, hops: int = 2, decay: float = 0.5, limit: int = 15) -> d
     frontier = dict(seeds)
     for _h in range(hops):
         nxt: dict[str, float] = {}
+        nxt_via: dict[str, str] = {}
         for node, act in frontier.items():
             for pair in neighbors.get(node, []):
                 nid = pair[0]
@@ -337,10 +385,14 @@ def activate(seed: str, hops: int = 2, decay: float = 0.5, limit: int = 15) -> d
                     continue
                 if contrib > nxt.get(nid, 0.0):
                     nxt[nid] = contrib
-                via.setdefault(nid, f"{pair[1]} ({rel_type})")
+                    nxt_via[nid] = f"{pair[1]} ({rel_type})"
+        # via 必须记**产出这个激活值的那条边**：原先 setdefault 记的是「第一次撞见」的边，
+        # 于是「activation 取 max 路径、via 说另一条路」——报出 0.09 却署名 cv 边（权重 0.15
+        # 根本传不出 0.09）。溯源标签与分数必须同源，否则联想召回的解释是错的。
         for nid, add in nxt.items():
             if add > activation.get(nid, 0.0):
                 activation[nid] = add
+                via[nid] = nxt_via[nid]
         frontier = nxt
         if not frontier:
             break

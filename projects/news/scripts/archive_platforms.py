@@ -43,6 +43,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sources import ARCHIVE_PLATFORMS, normalize_source
 import archive_layout
+import news_common  # 原子写单一真源（dump_json_atomic）
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
@@ -131,12 +132,20 @@ def merge_items(existing_items: list[dict], new_items: list[dict]) -> list[dict]
 def write_archive(platform: str, region: str | None, subtype: str | None,
                   date_str: str, new_items: list[dict]) -> int:
     """Merge new_items into the (platform, region, subtype, date) archive. Returns final count."""
+    path = archive_path(platform, region, subtype, date_str)
+    # 冷层已有本日 .gz 时，裸文件只是**旁车**：写进去的必须是 .gz 里没有的增量。
+    # 不减去冷层条目，同一条会在 .gz 与旁车各存一份，而读方（dated_files 冷热并出）
+    # 两个都读 —— 全量档案层直接双计，直到下次月度压冷并轨才自愈。
+    cold_keys = {item_key(i) for i in archive_layout.read_cold_doc(path).get('items', [])
+                 if isinstance(i, dict)}
+    if cold_keys:
+        new_items = [i for i in new_items if item_key(i) not in cold_keys]
+
     existing = load_existing_archive(platform, region, subtype, date_str)
     merged = merge_items(existing.get('items', []), new_items)
     if not merged:
         return 0
 
-    path = archive_path(platform, region, subtype, date_str)
     path.parent.mkdir(parents=True, exist_ok=True)
 
     archive_data = {
@@ -150,8 +159,10 @@ def write_archive(platform: str, region: str | None, subtype: str | None,
         archive_data['region'] = region
     if subtype:
         archive_data['content_subtype'] = subtype
-    with open(path, 'w', encoding='utf-8') as f:
-        json.dump(archive_data, f, ensure_ascii=False, indent=2)
+    # 原子替换：全量档案层的日文件动辄数 MB，直写若在 json.dump 中途被中断
+    # （CI runner 回收 / OOM）就留下半截 JSON——读方一律 `except JSONDecodeError: continue`,
+    # 于是这一天的归档静默消失，且下轮写方读不出旧条目、合并基线也跟着丢。
+    news_common.dump_json_atomic(path, archive_data)
     return len(merged)
 
 

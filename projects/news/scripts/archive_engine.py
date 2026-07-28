@@ -18,7 +18,8 @@
 每来源日志: <base_dir>/archive-log.json（含 source/tag 字段，向后兼容旧 Discord 日志）
 统一索引: projects/news/data/releases-index.json（自动生成，治「Release 好难认」）
 
-来源配置字段: base_dir(来源根目录) / glob(文件匹配) / group_by(分桶:
+来源配置字段: base_dir(来源根目录) / glob(文件匹配，单模式或模式列表——冷热分层来源
+须同时列 `*.jsonl` 与 `*.jsonl.gz`) / group_by(分桶:
 month_from_stem 按文件名 YYYY-MM-DD 取 YYYY-MM | month_from_parent_dir 按父目录名
 YYYY-MM-DD 取 YYYY-MM（日期在目录名，如 fanart）| single) / group_label(single 桶名) /
 cutoff_days(仅归档早于 N 天; null=不限龄) / after_archive(git_rm|keep) /
@@ -74,7 +75,8 @@ def load_registry() -> dict:
 def group_of(path: Path, group_by: str, group_label: str) -> str:
     """文件归属哪个桶。"""
     if group_by == 'month_from_stem':
-        return path.stem[:7]  # YYYY-MM-DD -> YYYY-MM
+        # 日期茎经布局 SSOT：冷层 `2026-04-01.jsonl.gz` 的 Path.stem 残留 '.jsonl'
+        return archive_layout.date_stem(path)[:7]  # YYYY-MM-DD -> YYYY-MM
     if group_by == 'month_from_parent_dir':
         return path.parent.name[:7]  # 父目录 YYYY-MM-DD -> YYYY-MM（日期在目录名，如 fanart）
     if group_by == 'single':
@@ -87,11 +89,29 @@ def is_eligible(path: Path, group_by: str, cutoff_date: str | None) -> bool:
     if cutoff_date is None:
         return True
     if group_by == 'month_from_stem':
-        return path.stem < cutoff_date  # 与原 archive_discord 逐字节等价
+        # date_stem 对裸 .jsonl 与 Path.stem 逐字节等价，另把冷层 .gz 的双后缀剥干净
+        return archive_layout.date_stem(path) < cutoff_date
     if group_by == 'month_from_parent_dir':
         return path.parent.name < cutoff_date  # 父目录 YYYY-MM-DD 逐字节比较
     # 无日期语义的来源不应配 cutoff_days；保守判为可归档
     return True
+
+
+def _iter_candidates(cfg: dict, base_dir: Path):
+    """按注册表 glob 产出候选文件。glob 可为单模式或模式列表（冷热双扩展名）。
+
+    冷热分层后 dated 归档一半是 `.jsonl.gz`：单一 `*.jsonl` 模式把整个冷层扫不到,
+    而 cutoff_days 恰恰只放行冷层年龄的文件——两者相乘等于「一个文件都不归档」。
+    """
+    patterns = cfg['glob']
+    if isinstance(patterns, str):
+        patterns = [patterns]
+    seen: set[Path] = set()
+    for pattern in patterns:
+        for f in base_dir.glob(pattern):
+            if f not in seen:
+                seen.add(f)
+                yield f
 
 
 def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, list[Path]]:
@@ -104,7 +124,7 @@ def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, li
 
     if force_groups:
         wanted = set(force_groups)
-        for f in base_dir.glob(cfg['glob']):
+        for f in _iter_candidates(cfg, base_dir):
             if not f.is_file():  # glob 可能命中目录（如 fanart 的 thumbs/），只归档文件
                 continue
             g = group_of(f, group_by, group_label)
@@ -117,7 +137,7 @@ def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, li
             cutoff = datetime.now(UTC) - timedelta(days=cutoff_days)
             cutoff_date = cutoff.strftime('%Y-%m-%d')
             logger.info(f'Cutoff date: {cutoff_date} ({cutoff_days} days ago)')
-        for f in base_dir.glob(cfg['glob']):
+        for f in _iter_candidates(cfg, base_dir):
             if not f.is_file():  # glob 可能命中目录（如 fanart 的 thumbs/），只归档文件
                 continue
             if is_eligible(f, group_by, cutoff_date):

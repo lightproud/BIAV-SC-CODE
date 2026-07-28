@@ -870,7 +870,8 @@ def generate_ui_gallery():
             label = section_labels.get(d, d)
             # Collect images recursively
             imgs = []
-            for root, _dirs, files in os.walk(dpath):
+            for root, subdirs, files in os.walk(dpath):
+                subdirs.sort()  # os.walk 的目录序取自 scandir，不排则同一份资产两次生成排序不同
                 for f in sorted(files):
                     if f.endswith('.png'):
                         rel = os.path.relpath(os.path.join(root, f), os.path.join(DOCS_DIR, 'public'))
@@ -1377,8 +1378,10 @@ def generate_audio_index():
     """Generate audio page. If OGG files exist locally, embed inline players."""
     RELEASE_URL = 'https://github.com/lightproud/BIAV-SC-CODE/releases/tag'
     audio_dir = f'{DOCS_DIR}/public/audio'
-    ogg_files = sorted(glob.glob(f'{audio_dir}/**/*.ogg', recursive=True) +
-                       glob.glob(f'{audio_dir}/*.ogg'))
+    # `**` 在 recursive=True 下已含「零级目录」，故它自己就覆盖顶层 *.ogg；
+    # 再并上 `{dir}/*.ogg` 会让每个顶层音轨**出现两次**（播放器重复、计数虚高）。
+    ogg_files = sorted(set(glob.glob(f'{audio_dir}/**/*.ogg', recursive=True)) |
+                       set(glob.glob(f'{audio_dir}/*.ogg')))
 
     lines = []
     lines.append('# 音频资产')
@@ -1418,8 +1421,9 @@ def generate_video_index():
     """Generate video page. If MP4 files exist locally, embed inline players."""
     RELEASE_URL = 'https://github.com/lightproud/BIAV-SC-CODE/releases/tag'
     video_dir = f'{DOCS_DIR}/public/video'
-    mp4_files = sorted(glob.glob(f'{video_dir}/**/*.mp4', recursive=True) +
-                       glob.glob(f'{video_dir}/*.mp4'))
+    # 同 generate_audio_index：两个 glob 的结果在顶层文件上重叠，须去重
+    mp4_files = sorted(set(glob.glob(f'{video_dir}/**/*.mp4', recursive=True)) |
+                       set(glob.glob(f'{video_dir}/*.mp4')))
 
     # Classify videos by filename prefix
     def _video_category(name):

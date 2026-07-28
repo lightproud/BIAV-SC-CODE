@@ -17,6 +17,7 @@
 """
 
 import asyncio
+import hashlib
 import json
 import os
 import re
@@ -567,9 +568,13 @@ def _parse_weibo_time(created_str):
     s = (created_str or "").strip()
     if s:
         # "昨天 HH:MM" = yesterday HH:MM（精确到分钟，通用函数只到天级）
+        # 微博给的是**北京墙钟**（UTC+8）。原实现拿 UTC 的「昨天」+ 直接 replace 时分,
+        # 等于把 14:30 当成 UTC 14:30 —— 整条时间戳偏 8 小时，既可能把昨夜的帖挤出
+        # 24h 窗口，也会让归档按北京日分桶时落错日期。故按 UTC+8 构造再原样输出。
         m = re.match(r"昨天\s*(\d{1,2}):(\d{2})", s)
         if m:
-            yesterday = datetime.now(UTC) - timedelta(days=1)
+            cst = timezone(timedelta(hours=8))
+            yesterday = datetime.now(cst) - timedelta(days=1)
             dt = yesterday.replace(hour=int(m.group(1)), minute=int(m.group(2)), second=0, microsecond=0)
             return dt.isoformat(), False
 
@@ -805,8 +810,18 @@ def _fetch_appstore_reviews_one(appstore_id, region, countries):
                 f"https://itunes.apple.com/{country}/rss/customerreviews/id={appstore_id}/sortBy=mostRecent/json",
             ).json()
             entries = data.get("feed", {}).get("entry", [])
+            # Apple 的 JSON-ified RSS 在「只有一条 entry」时把数组塌成对象。原写法直接
+            # for 遍历：拿到 dict 就变成遍历它的**键字符串**，下一行 str.get 抛
+            # AttributeError，被本函数的 except 吞成一条 debug ——该国当轮 0 条评论,
+            # 与「今天真没人评价」完全无法区分。故先归一为列表，再逐条守 dict。
+            if isinstance(entries, dict):
+                entries = [entries]
             review_url = f"https://apps.apple.com/{country}/app/id{appstore_id}?see-all=reviews"
             for entry in entries:
+                # feed 首条是 app 自身元信息（无 im:rating），不是评论，放行会造出
+                # 一条标题为游戏名、评分 0 的假评论。
+                if not isinstance(entry, dict) or "im:rating" not in entry:
+                    continue
                 rating = int(entry.get("im:rating", {}).get("label", "0"))
                 # RSS entry id 是评论唯一标识。不追加锚点时同 country 数十条评论共用 review_url，
                 # 致 dedup_key（URL 优先）碰撞、每 country 仅存活 1 条。fragment 使每条 key 唯一。
@@ -1432,13 +1447,19 @@ def fetch_stopgame():
                 review_time = page_time_str
                 review_approx = page_time_approx
 
+            # URL 追加内容哈希锚点：所有评测原本共用同一个游戏页 URL，而下游
+            # dedup_key 以 URL 优先 —— 整批评测会塌成 1 条（且被评分条挤掉，因为
+            # 它 engagement 更高），玩家评测实际上一条都存不下来。哈希取自正文,
+            # 跨轮次恒定，故不会把同一条评测反复当新条目采。
+            review_anchor = hashlib.md5(text.encode("utf-8"),
+                                        usedforsecurity=False).hexdigest()[:10]
             item = _make_item(
                 title=f"[StopGame] {text[:60]}",
                 summary=text,
                 source="stopgame",
                 platform_region="ru",
                 time_str=review_time,
-                url="https://stopgame.ru/game/morimens",
+                url=f"https://stopgame.ru/game/morimens#sg-{review_anchor}",
                 engagement=0,
                 is_hot=False,
                 author="",

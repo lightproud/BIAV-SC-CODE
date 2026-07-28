@@ -48,7 +48,14 @@ def list_personas() -> list[dict]:
 
 
 def load_persona(character_id: str) -> dict | None:
-    """Load a character persona by ID."""
+    """Load a character persona by ID.
+
+    角色 id 是**文件名的一段**，不是路径：本函数经 MCP 工具 `character_persona`
+    直吃外部入参，未校验即等于「把仓外任意 *.json 当角色卡读回并回显」
+    （`../../..../foo` 会越出 PERSONAS_DIR）。故只放行裸标识符。
+    """
+    if not character_id or character_id != Path(character_id).name:
+        return None
     fp = PERSONAS_DIR / f"{character_id}.json"
     if not fp.exists():
         return None

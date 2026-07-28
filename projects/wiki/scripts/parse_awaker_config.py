@@ -37,8 +37,11 @@ def parse_lua_table(filepath):
         entry_id = int(m.group(1))
         content = m.group(2)
         fields = {}
-        for fm in re.finditer(r'(\w+)\s*=\s*"([^"]*)"', content):
-            key, val = fm.group(1), fm.group(2)
+        # 转义感知：`[^"]*` 会在字段值内的 \" 处**提前收尾**，把后半句悄悄丢掉
+        # （值被截断、且不报错，产物只是看起来「短」）。与本档
+        # parse_lua_string_table / lua_parse.py 用同一套转义规则。
+        for fm in re.finditer(r'(\w+)\s*=\s*"((?:[^"\\]|\\.)*)"', content):
+            key, val = fm.group(1), fm.group(2).replace('\\"', '"')
             if key in fields:
                 if isinstance(fields[key], list):
                     fields[key].append(val)

@@ -221,11 +221,15 @@ def fetch_reddit(subreddits=None):
             try:
                 resp = requests.get(url, headers=headers, timeout=15)
                 resp.raise_for_status()
+                # JSON 解析必须与请求同罩：Reddit 封禁 / 限流时常回 200 + HTML 拦截页，
+                # 解析放在 try 外则 ValueError 直接冒出 fetch_reddit——既绕过下面为此
+                # 情形准备的 RSS/search 回退，又把本轮已采到的条目一并带走，且 reddit
+                # 属 §4.2 R1 硬失败源，整轮被判失败。
+                data = resp.json().get('data', {})
             except Exception as e:
                 fatal_error = e
                 break
 
-            data = resp.json().get('data', {})
             posts = data.get('children', []) or []
             if not posts:
                 break

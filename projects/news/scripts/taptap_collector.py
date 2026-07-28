@@ -572,21 +572,25 @@ def _filter_incremental(
 
     - 非回溯模式遇到 last_id 即短路停止（已处理到上次位置）。
     - 回溯模式不短路，仅靠 cutoff 控深度。
-    - new_last_id 取第一条带 id 的条目；若已有 last_id 则沿用。
-    从原 collect() 内联循环提升为模块级纯函数（对外行为不变）。
+    - new_last_id 取**本批**第一条带 id 的条目（即本轮见到的最新一条）；本批一条
+      带 id 的都没有（含首条即命中 last_id 而短路）时才沿用旧 last_id。
+      原实现把 new_last_id 初始化为 last_id 后只在其为空时赋值 —— 游标一旦写过
+      就永远冻在首轮那条上：轻则每轮把它之后的条目全部重采一遍，重则该锚点若是
+      长期置顶帖（topic?type=official 常有），此后每轮在第 0 条就 break，帖子/评价
+      恒为 0 条且不报任何错。
     """
-    new_last_id = last_id
     items: list[dict] = []
+    batch_first_id = ""
     for raw in raw_items:
         item_id = raw.get("item_id", "")
         if not backfill and item_id and item_id == last_id:
             break
-        if item_id and not new_last_id:
-            new_last_id = item_id
+        if item_id and not batch_first_id:
+            batch_first_id = item_id
         item = _raw_to_item(raw, source, cutoff)
         if item:
             items.append(item)
-    return items, new_last_id
+    return items, (batch_first_id or last_id)
 
 
 # ─── 主入口 ───────────────────────────────────────────────────

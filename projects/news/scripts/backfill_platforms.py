@@ -40,6 +40,7 @@ STATE_PATH = _REPO_ROOT / 'projects' / 'news' / 'data' / 'backfill' / 'state.jso
 # Sibling scripts dir — global_collectors lives here
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # noqa: E402  归档布局单一真相源（2026-07-02 P0-1）
+import news_common  # noqa: E402  原子写单一真源（dump_json_atomic）
 ARCHIVE_DIR = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 # Max runtime per invocation (30 minutes, leaves buffer for workflow)

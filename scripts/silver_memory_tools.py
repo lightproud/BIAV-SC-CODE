@@ -106,6 +106,26 @@ def current_continuity() -> dict:
 DECISIONS_INSERT_ANCHOR = "<!-- DECISIONS-INSERT-ANCHOR -->"
 
 
+def _one_line(s: str) -> str:
+    """折成单行：换行 / 制表 / 连续空白一律并成一个空格。
+
+    写入面吃的是自由文本（MCP 工具入参）。带换行的 summary 经 `lines.insert`
+    落盘后会**在表格 / 标题中间劈出新行**——3 列表被截断、后半截漂在表外，
+    档案结构就此损坏且无任何报错。
+    """
+    return " ".join(str(s).split())
+
+
+def _cell(s: str) -> str:
+    """markdown 表格单元格转义：折单行 + 转义 `|`。
+
+    summary 里一个裸 `|`（如「A|B 二选一」）会把 3 列行撑成 4 列，
+    与 check_decisions_consistency C2 锁定的 schema 脱节（该检查只验表头，
+    不会发现被撑坏的数据行）。
+    """
+    return _one_line(s).replace("|", "\\|")
+
+
 def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
     """档案写入 —— 追加一行到 memory/decisions.md 的「当前有效决策 / 全局」表末尾。
 
@@ -141,7 +161,7 @@ def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
     if rationale.strip():
         body = f"{body}（因为 {rationale.strip()}）"
 
-    new_line = f"| {body} | {scope.strip()} | — |"
+    new_line = f"| {_cell(body)} | {_cell(scope)} | — |"
 
     try:
         text = DECISIONS_FILE.read_text(encoding="utf-8")
@@ -254,13 +274,16 @@ def record_lesson(summary: str, context: str = "",
                 continue
     new_id = max_id + 1
 
-    title_line = f"## {new_id}. {summary.strip()}"
+    # 一律折单行：带换行的 summary 会把 `## N. 标题` 劈成「标题 + 漂在外面的正文」，
+    # 若其中恰含 `## 99. …` 形状的行，下次 record_lesson 的编号扫描还会跟着跳号
+    # （CLAUDE.md §5.3「编号持续追加不重用」的台账就此错位）。
+    title_line = f"## {new_id}. {_one_line(summary)}"
 
     # 守密人 2026-07-12 格式裁定：坑 / 准则 / 防护（防护行仅在给出时落）。
-    trap_line = summary.strip()
+    trap_line = _one_line(summary)
     if context.strip():
-        trap_line = f"{trap_line}（触发场景：{context.strip()}）"
-    principle_line = principle.strip() or "（待守密人补充）"
+        trap_line = f"{trap_line}（触发场景：{_one_line(context)}）"
+    principle_line = _one_line(principle) or "（待守密人补充）"
 
     block = [
         "",
@@ -270,7 +293,7 @@ def record_lesson(summary: str, context: str = "",
         f"- **准则**：{principle_line}",
     ]
     if guard.strip():
-        block.append(f"- **防护/案卷**：{guard.strip()}")
+        block.append(f"- **防护/案卷**：{_one_line(guard)}")
     block.append("")
 
     # 定位「维护说明」引言块（以 `> **维护说明**` 开头）

@@ -67,6 +67,19 @@ def decode_script(script):
     return script
 
 
+def safe_asset_name(name) -> str:
+    """Reduce a Unity asset ``m_Name`` to one safe filename component.
+
+    ``m_Name`` is attacker-controlled data from the game binary; a name
+    containing ``/``、``\\`` or ``..`` would make ``output_dir / name``
+    resolve outside the output directory and overwrite unrelated files.
+    """
+    cleaned = str(name).replace("\\", "/").split("/")[-1].replace("\x00", "").strip()
+    if cleaned in ("", ".", ".."):
+        return "_unnamed"
+    return cleaned
+
+
 def classify_text_extension(text: str) -> str:
     """Pick a file extension for an extracted TextAsset body.
 
@@ -90,7 +103,7 @@ def find_paths(game_root: Path) -> dict:
     """Auto-detect key paths."""
     # Find *_Data directory
     data_dir = None
-    for d in game_root.iterdir():
+    for d in sorted(game_root.iterdir()):
         if d.is_dir() and d.name.endswith("_Data"):
             data_dir = d
             break
@@ -221,7 +234,7 @@ def extract_with_key(
 
                 ext = classify_text_extension(text)
 
-                out = output_dir / "text" / f"{name}{ext}"
+                out = output_dir / "text" / f"{safe_asset_name(name)}{ext}"
                 out.parent.mkdir(parents=True, exist_ok=True)
                 out.write_text(text, encoding="utf-8")
                 stats["text"] += 1
@@ -234,7 +247,7 @@ def extract_with_key(
                 try:
                     tree = obj.read_typetree()
                     if tree and isinstance(tree, dict) and len(tree) > 2:
-                        out = output_dir / "mono" / f"{name}.json"
+                        out = output_dir / "mono" / f"{safe_asset_name(name)}.json"
                         out.parent.mkdir(parents=True, exist_ok=True)
                         out.write_text(
                             json.dumps(tree, ensure_ascii=False, indent=2, default=str),
@@ -250,7 +263,7 @@ def extract_with_key(
                 try:
                     img = data.image
                     if img.width >= 64 and img.height >= 64:
-                        out = output_dir / "textures" / f"{name}.png"
+                        out = output_dir / "textures" / f"{safe_asset_name(name)}.png"
                         out.parent.mkdir(parents=True, exist_ok=True)
                         img.save(str(out))
                         stats["tex"] += 1

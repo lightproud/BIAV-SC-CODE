@@ -186,15 +186,19 @@ def validate_cross_references(loaded: dict[str, object]) -> list[str]:
         all_chars = list(chars_data.get("characters", []))
         all_chars.extend(chars_data.get("sr_characters", []))
 
+    # 唯一 id 是**无条件**检查：详情页落点 docs/zh/awakeners/{id}.md 直接用 id 命名,
+    # 重复 id = 后写的页悄悄覆盖前一张。此前该检查只挂在「realms.json 缺席」分支里,
+    # 一旦 db 层重建、realms.json 回来, 撞 id 就再没人拦。
+    seen_ids: dict[str, str] = {}
+    for char in all_chars:
+        cid = str(char.get("id", "unknown"))
+        if cid in seen_ids:
+            errors.append(f"  FAIL  characters.json: duplicate id '{cid}'")
+        else:
+            seen_ids[cid] = char.get("slug", "")
+
     if not realms_data:
         print(f"  SKIP  Realm cross-reference (realms.json absent); checked {len(all_chars)} character ids only")
-        seen_ids: dict[str, str] = {}
-        for char in all_chars:
-            cid = str(char.get("id", "unknown"))
-            if cid in seen_ids:
-                errors.append(f"  FAIL  characters.json: duplicate id '{cid}'")
-            else:
-                seen_ids[cid] = char.get("slug", "")
         if not errors:
             print(f"  PASS  Cross-references: {len(all_chars)} unique character ids")
         return errors
