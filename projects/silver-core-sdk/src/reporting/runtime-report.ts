@@ -118,6 +118,10 @@ function isRunLogRecord(x: unknown): x is RunLogRecord {
     for (const t of pt) {
       if (typeof t !== 'object' || t === null) return false;
       const tool = t as Record<string, unknown>;
+      // `name` is dereferenced by the aggregation (toolAgg Map key + rendered
+      // row); a per_tool entry missing it must join the bad-line counter, not
+      // poison the tools table with an `undefined`-named row.
+      if (typeof tool['name'] !== 'string') return false;
       if (typeof tool['calls'] !== 'number' || typeof tool['errors'] !== 'number') return false;
     }
   }
@@ -239,12 +243,19 @@ export async function generateRuntimeReport(
     transport = {};
     for (const r of transportRecords) {
       for (const [k, v] of Object.entries(r.transport_health!)) {
-        transport[k] = (transport[k] ?? 0) + (typeof v === 'number' ? v : 0);
+        // audit r4 U7-4 (parity with compare-reports.ts): a fault counter is
+        // non-negative — a negative/NaN value from a corrupt/external ledger
+        // line clamps to 0 rather than summing in. Unclamped it both drifts
+        // the totals away from compareReports() (which clamps) and can drag
+        // `faults` <= 0 below, silently suppressing the unrecovered flag on a
+        // genuinely errored session.
+        const n = typeof v === 'number' && v > 0 ? v : 0;
+        transport[k] = (transport[k] ?? 0) + n;
       }
       // "Unrecovered" = the run still ended as an error while its ledger shows
       // transport faults: the recoverable layers were not enough.
       const faults = Object.values(r.transport_health!).reduce(
-        (a, b) => a + (typeof b === 'number' ? b : 0),
+        (a, b) => a + (typeof b === 'number' && b > 0 ? b : 0),
         0,
       );
       if (r.is_error && faults > 0 && r.incognito !== true) {

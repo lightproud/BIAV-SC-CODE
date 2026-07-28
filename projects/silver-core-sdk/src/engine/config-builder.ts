@@ -111,7 +111,7 @@ export function buildEngineConfig(args: {
     // 4 API breakpoints total; reserve 1 for the tool schemas -> up to 3 here.
     let budget = 3;
     systemBlocks = (Array.isArray(sp.segments) ? sp.segments : [])
-      .filter((s) => s !== null && typeof s.text === 'string' && s.text.length > 0)
+      .filter((s) => s !== null && typeof s === 'object' && typeof s.text === 'string' && s.text.length > 0)
       .map((s) => {
         const block: TextBlockParam = { type: 'text', text: s.text };
         if (s.cache === true && segmentCachingEnabled) {
@@ -142,7 +142,7 @@ export function buildEngineConfig(args: {
     // is its own append part (segments form has no engine-owned base), plus the
     // trailing structured-output block when present.
     const segParts: SystemCompositionPart[] = (Array.isArray(sp.segments) ? sp.segments : [])
-      .filter((s) => s !== null && typeof s.text === 'string' && s.text.length > 0)
+      .filter((s) => s !== null && typeof s === 'object' && typeof s.text === 'string' && s.text.length > 0)
       .map((s) => ({
         role: 'segment' as const,
         label: s.label,
