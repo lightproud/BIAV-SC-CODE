@@ -253,7 +253,15 @@ export const editTool: BuiltinTool = {
         `.${path.basename(target)}.${process.pid}.${randomBytes(6).toString('hex')}.tmp`,
       );
       try {
-        await writeFile(tmp, updated, { encoding: 'utf8', signal: ctx.signal });
+        // Create the tmp file with the prior mode from the start (as write.ts
+        // does): without it the tmp is born 0o666&~umask, so a 0o600 secret's
+        // content sits group/other-readable until the chmod below lands. The
+        // umask can only clear bits, never widen past priorMode.
+        await writeFile(tmp, updated, {
+          encoding: 'utf8',
+          signal: ctx.signal,
+          ...(priorMode !== undefined ? { mode: priorMode } : {}),
+        });
         if (priorMode !== undefined) await chmod(tmp, priorMode);
         await rename(tmp, target);
       } catch (e) {

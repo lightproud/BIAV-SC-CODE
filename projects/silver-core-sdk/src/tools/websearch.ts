@@ -34,7 +34,12 @@ function parseDomainList(
     return { ok: false, message: `WebSearch failed: "${field}" must be an array of strings.` };
   }
   const cleaned = (value as string[])
-    .map((d) => d.trim().toLowerCase())
+    // Strip the leading-dot convention (".example.com" = domain+subdomains):
+    // kept verbatim it can never match a hostname — hostMatches would test
+    // endsWith("..example.com") — so a dotted blocked_domains entry silently
+    // blocked nothing and a dotted allowed_domains entry filtered out
+    // everything.
+    .map((d) => d.trim().toLowerCase().replace(/^\.+/, ''))
     .filter((d) => d.length > 0);
   return { ok: true, value: cleaned.length > 0 ? cleaned : undefined };
 }
