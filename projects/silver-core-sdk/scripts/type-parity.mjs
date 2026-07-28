@@ -31,7 +31,7 @@
  */
 
 import { existsSync, readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -268,4 +268,9 @@ function main() {
   return 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) process.exit(main());
+// pathToFileURL（不是 `file://` + 路径拼接）：import.meta.url 会百分号编码，
+// 于是检出路径里只要有一个空格，直连拼出来的串永远对不上——命令一声不吭什么都不打印
+// 就 exit 0，看起来像「没有漂移」。
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  process.exit(main());
+}

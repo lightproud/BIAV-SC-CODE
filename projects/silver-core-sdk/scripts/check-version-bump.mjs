@@ -133,6 +133,20 @@ function runGuard() {
   // benign skip. A real git failure (corrupt object, not-a-repo) must NOT be
   // swallowed as exit 0 — that silently disables the guard. Probe for the
   // parent first; if it exists but the diff still throws, that is a real error.
+  // The parent probe alone cannot tell "root/shallow commit" from "git is
+  // unusable here" — `git rev-parse` exits non-zero for BOTH, so a run outside
+  // a repository (exported tree, missing git binary) took the benign skip and
+  // exited 0 with the guard doing nothing. Establish that we are in a repo
+  // first; only then is a missing HEAD~1 the documented benign case.
+  try {
+    git('rev-parse --git-dir');
+  } catch (err) {
+    console.error(
+      `version-bump guard FAILED: git is not usable in this directory: ${err}. ` +
+        'This is not a shallow clone — the guard cannot verify anything here, so it must not report green.',
+    );
+    process.exit(1);
+  }
   let hasParent = false;
   try {
     git('rev-parse --verify --quiet HEAD~1');

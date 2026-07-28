@@ -50,7 +50,12 @@ export function seedWorkspace(harness) {
   const cwd = mkdtempSync(join(tmpdir(), 'evals-ws-'));
   const memBase = join(cwd, '.eval-memory');
   for (const [rel, content] of Object.entries(harness.seedFiles ?? {})) {
-    writeFileSync(join(cwd, rel), expandFixture(content));
+    const p = join(cwd, rel);
+    // Nested seed paths ("docs/report.md") need their parent created first —
+    // seedMemory below always did, seedFiles did not, so a nested seedFiles key
+    // died with a bare ENOENT before the question ever ran.
+    mkdirSync(dirname(p), { recursive: true });
+    writeFileSync(p, expandFixture(content));
   }
   for (const [vpath, content] of Object.entries(harness.seedMemory ?? {})) {
     const p = join(memBase, vpath.replace(/^\//, ''));
