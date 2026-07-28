@@ -119,7 +119,10 @@ def audit_source(source: str) -> dict:
                 total += len(data)
             else:
                 total += data.get('item_count', 0)
-        except Exception:
+        except Exception as exc:
+            # 本模块的职责就是「发现沉默」，自己却静默跳过读不动的档案：损坏档案会让
+            # 条目数少算，反而可能把一个真已 degraded 的源判成健康。必须出声。
+            print(f'  ! {source}: 跳过不可读归档 {f}: {type(exc).__name__}: {exc}', file=sys.stderr)
             continue
 
     # 区服分层后同一日期可有多文件（global/jp），归档天数按去重日期计
@@ -468,8 +471,11 @@ def load_validation_drops() -> dict:
                     return {'generated_at': gen, 'total_dropped': 0, 'by_source': {},
                             'stale_ignored': True}
             return payload
-        except Exception:
-            pass
+        except Exception as exc:
+            # 丢弃台账读不动即等于「本轮零丢弃」——门控（P0-3）会因此放行一次
+            # 实际大量丢数的采集轮次。回落值保持不变，但不再无声无息。
+            print(f'  ! validation_drops 读取失败（按零丢弃回落）: {type(exc).__name__}: {exc}',
+                  file=sys.stderr)
     return {'generated_at': None, 'total_dropped': 0, 'by_source': {}}
 
 

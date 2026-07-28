@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import calendar
 import statistics
@@ -115,6 +116,19 @@ def _sources():
                 yield d.name, d
 
 
+# ── 跳档台账（扫描修复 2026-07-28）────────────────────────────────────────────
+# 三个 emitter 原本对读不动的档案一律 `except: continue` —— 整份文件被静默丢弃。
+# 本索引的全部价值在**完整性**（_meta.data_layer=full_archive，§4.1 长窗口分析 /
+# 完整性审计的取数层），静默丢档意味着 total 少了没人知道：既不报错，也不在产物里
+# 留任何痕迹，下游把缩水后的数字当全量用。故改为「照旧不中断，但响亮计数」：
+# 跳过的档案计入 SKIPPED 并落进产物 _meta.skipped_files，构建时 stderr 亦告警。
+SKIPPED: list[dict] = []
+
+
+def _note_skip(path, exc: BaseException) -> None:
+    SKIPPED.append({"file": str(path), "error": f"{type(exc).__name__}: {exc}"[:200]})
+
+
 def _emit_discord(d):
     """discord：channels/ 与 guilds/ 下 *.jsonl[.gz]，{content,timestamp,reactions}。
     冷热分层（2026-07-12 甲案）：冷月为 .gz，经 archive_layout 统一开档透明读。"""
@@ -133,7 +147,8 @@ def _emit_discord(d):
                     reacts = it.get("reactions", "[]")
                     eng = len(reacts) if isinstance(reacts, list) else 0
                     yield _ymd(it.get("timestamp", "")), text, lang_of(text), eng
-        except Exception:
+        except Exception as exc:
+            _note_skip(f, exc)
             continue
 
 
@@ -154,7 +169,8 @@ def _emit_comments(d):
                     likes = it.get("likes", 0)
                     eng = likes if isinstance(likes, (int, float)) else 0
                     yield _ymd(it.get("published") or it.get("time", "")), text, lang_of(text), eng
-        except Exception:
+        except Exception as exc:
+            _note_skip(f, exc)
             continue
 
 
@@ -164,7 +180,8 @@ def _emit_platform(d):
         try:
             with archive_layout.open_archive_text(f) as fh:
                 doc = json.load(fh)
-        except Exception:
+        except Exception as exc:
+            _note_skip(f, exc)
             continue
         items = doc.get("items", doc) if isinstance(doc, dict) else doc
         if not isinstance(items, list):
@@ -296,9 +313,19 @@ def build(max_files: int | None = None) -> dict:
                        "如 2026-02/03 天天有数据但量崩 30 倍）。二者互补判采集异常。",
             "drilldown": "全文钻取回落到 by_month 指向的 dated 原文件 ripgrep；"
                          "本 index 是路标，非全文本体（放指针不放本体）。",
-            "data_note": "discord 全量历史 2026-06-21 de-tier 后永驻 git"
-                         "（Record/Community/discord/），直接读取，无需从 Release 还原；"
-                         "community-data release 已退役删除。",
+            # 订正（扫描修复 2026-07-28）：原 data_note 两处与现状矛盾——
+            #   (1) 写「永驻 git（Record/Community/discord/）」，但 T62 P2-5 §7甲
+            #       已于 2026-07-20 把数据湖迁出 code 仓，现经 BIAV_SC_DATA_ROOT 读；
+            #   (2) 写「community-data release 已退役删除」，而 CLAUDE.md §6.3 把该
+            #       Release 明列为仅剩三张抢救网之一（删任一即等同永久丢失）。
+            #       产物元数据说它没了，是会直接导致误删的错误记载。
+            "data_note": "discord 全量历史驻 BIAV-SC-DATA 数据仓 Record/Community/discord/，"
+                         "经环境变量 BIAV_SC_DATA_ROOT 解析读取（T62 §7甲，2026-07-20 迁出 code 仓）；"
+                         "community-data / community-assets Release 为在役抢救网之一"
+                         "（CLAUDE.md §6.3），未退役、不得删除。",
+            # 完整性披露：读不动而被跳过的档案在此点名，不静默缩水（§4.1）
+            "skipped_file_count": len(SKIPPED),
+            "skipped_files": SKIPPED[:50],
         },
         "platforms": dict(sorted(platforms.items())),
         "timeline": timeline,
@@ -313,11 +340,21 @@ def main() -> None:
 
     index = build(args.max_files)
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
+    # 原子替换：本索引是全量分析取数层，直写若被中断即留下半截 JSON,
+    # 消费方（艾瑞卡 / 周报生产线）读到的是不可解析的残档。
+    tmp = OUT.with_suffix(OUT.suffix + ".tmp")
+    tmp.write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
+    os.replace(tmp, OUT)
     m = index["_meta"]
     print(f"community index -> {OUT.relative_to(REPO)}")
     print(f"  records: {m['total_records']}  platforms: {m['platform_count']}")
     print(f"  months: {len(index['timeline'])}  size: {OUT.stat().st_size} bytes")
+    if SKIPPED:
+        # 响亮而非静默：完整性缺口必须在构建日志里现身（原先整份丢档零痕迹）
+        print(f"  WARNING: {len(SKIPPED)} 个档案读取失败被跳过（已记入 _meta.skipped_files）",
+              file=sys.stderr)
+        for s in SKIPPED[:10]:
+            print(f"    - {s['file']}: {s['error']}", file=sys.stderr)
 
 
 if __name__ == "__main__":

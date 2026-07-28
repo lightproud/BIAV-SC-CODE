@@ -1,0 +1,221 @@
+{
+ "_meta": {
+  "generated": "2026-07-28",
+  "data_layer": "full_archive",
+  "source_root": "/tmp/pytest-of-root/pytest-20/test_main_writes_index0/data/",
+  "total_records": 4,
+  "platform_count": 3,
+  "method": "deterministic lexical aggregate; tokenizer = domain-dict FMM (self-bootstrapped from characters/cards/story; bigram fallback); sentiment = seed-lexicon polarity (coarse, NOT semantic/ML)",
+  "signals": "per-platform coverage = 当月有数据天数/总天数（抓整天断档）；timeline vol_index = 本月量/前6月中位数（抓单日量塌缩，如 2026-02/03 天天有数据但量崩 30 倍）。二者互补判采集异常。",
+  "drilldown": "全文钻取回落到 by_month 指向的 dated 原文件 ripgrep；本 index 是路标，非全文本体（放指针不放本体）。",
+  "data_note": "discord 全量历史驻 BIAV-SC-DATA 数据仓 Record/Community/discord/，经环境变量 BIAV_SC_DATA_ROOT 解析读取（T62 §7甲，2026-07-20 迁出 code 仓）；community-data / community-assets Release 为在役抢救网之一（CLAUDE.md §6.3），未退役、不得删除。",
+  "skipped_file_count": 8,
+  "skipped_files": [
+   {
+    "file": "/tmp/pytest-of-root/pytest-20/test_discord_outer_exception_s0/data/discord/channels/c/2026-06-01.jsonl",
+    "error": "OSError: simulated discord read failure"
+   },
+   {
+    "file": "/tmp/pytest-of-root/pytest-20/test_comments_outer_exception_0/data/platforms/x_comments/c.jsonl",
+    "error": "OSError: simulated comments read failure"
+   },
+   {
+    "file": "/tmp/pytest-of-root/pytest-20/test_iter_records_yields_all_l0/data/platforms/bilibili/broken.json",
+    "error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+   },
+   {
+    "file": "/tmp/pytest-of-root/pytest-20/test_iter_records_discord_reac0/data/platforms/bilibili/broken.json",
+    "error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+   },
+   {
+    "file": "/tmp/pytest-of-root/pytest-20/test_build_aggregates_syntheti0/data/platforms/bilibili/broken.json",
+    "error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+   },
+   {
+    "file": "/tmp/pytest-of-root/pytest-20/test_build_timeline_and_vol_in0/data/platforms/bilibili/broken.json",
+    "error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+   },
+   {
+    "file": "/tmp/pytest-of-root/pytest-20/test_build_top_terms_by_month0/data/platforms/bilibili/broken.json",
+    "error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+   },
+   {
+    "file": "/tmp/pytest-of-root/pytest-20/test_main_writes_index0/data/platforms/bilibili/broken.json",
+    "error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+   }
+  ]
+ },
+ "platforms": {
+  "bilibili": {
+   "total": 2,
+   "by_month": {
+    "2026-06": {
+     "count": 2,
+     "engagement": 10.0,
+     "langs": {
+      "zh": 1,
+      "en": 1
+     },
+     "sentiment": {
+      "pos": 2,
+      "neg": 1
+     },
+     "coverage": {
+      "active_days": 2,
+      "month_days": 30,
+      "ratio": 0.07
+     },
+     "top_terms": [
+      [
+       "game",
+       1
+      ],
+      [
+       "love",
+       1
+      ],
+      [
+       "好玩",
+       1
+      ],
+      [
+       "bug",
+       1
+      ],
+      [
+       "report",
+       1
+      ]
+     ]
+    }
+   },
+   "first_month": "2026-06",
+   "last_month": "2026-06"
+  },
+  "discord": {
+   "total": 1,
+   "by_month": {
+    "2026-06": {
+     "count": 1,
+     "engagement": 3.0,
+     "langs": {
+      "en": 1
+     },
+     "sentiment": {
+      "pos": 1,
+      "neg": 0
+     },
+     "coverage": {
+      "active_days": 1,
+      "month_days": 30,
+      "ratio": 0.03
+     },
+     "top_terms": [
+      [
+       "discord",
+       1
+      ],
+      [
+       "msg",
+       1
+      ],
+      [
+       "good",
+       1
+      ]
+     ]
+    }
+   },
+   "first_month": "2026-06",
+   "last_month": "2026-06"
+  },
+  "youtube_comments": {
+   "total": 1,
+   "by_month": {
+    "2026-06": {
+     "count": 1,
+     "engagement": 5.0,
+     "langs": {
+      "en": 1
+     },
+     "sentiment": {
+      "pos": 1,
+      "neg": 0
+     },
+     "coverage": {
+      "active_days": 1,
+      "month_days": 30,
+      "ratio": 0.03
+     },
+     "top_terms": [
+      [
+       "nice",
+       1
+      ],
+      [
+       "video",
+       1
+      ]
+     ]
+    }
+   },
+   "first_month": "2026-06",
+   "last_month": "2026-06"
+  }
+ },
+ "timeline": {
+  "2026-06": {
+   "count": 4,
+   "by_platform": {
+    "discord": 1,
+    "bilibili": 2,
+    "youtube_comments": 1
+   },
+   "vol_index": null
+  }
+ },
+ "top_terms_by_month": {
+  "2026-06": [
+   [
+    "discord",
+    1
+   ],
+   [
+    "msg",
+    1
+   ],
+   [
+    "good",
+    1
+   ],
+   [
+    "game",
+    1
+   ],
+   [
+    "love",
+    1
+   ],
+   [
+    "好玩",
+    1
+   ],
+   [
+    "bug",
+    1
+   ],
+   [
+    "report",
+    1
+   ],
+   [
+    "nice",
+    1
+   ],
+   [
+    "video",
+    1
+   ]
+  ]
+ }
+}

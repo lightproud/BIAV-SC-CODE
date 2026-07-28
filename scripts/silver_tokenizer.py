@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
 from functools import lru_cache
 from pathlib import Path
@@ -90,8 +91,15 @@ def domain_dict() -> tuple[frozenset[str], int]:
         from silver_aliases import confirmed_cjk_aliases
         for a in confirmed_cjk_aliases():
             add(a)
-    except Exception:
-        pass
+    except (ImportError, FileNotFoundError):
+        pass  # 侧表/模块缺失 = 契约内的优雅降级，静默正确
+    except Exception as exc:
+        # 原为 `except Exception: pass` 一律吞。侧表**存在但损坏**（JSON 语法错、
+        # schema 变形）与「侧表缺失」是两回事：前者会让分词词典静默少掉一批别名,
+        # 而本分词器是社区索引 / 剧情索引 / KB 的共用底座——词典缩水即全线分析口径
+        # 悄悄改变，且没有任何信号。故按类型分流：缺失静默，损坏必须出声。
+        logging.getLogger(__name__).warning(
+            f'别名侧表存在但不可用，分词词典缺该批别名: {type(exc).__name__}: {exc}')
 
     # 3) 剧情单元名 / 简称
     uf = REPO / "projects/wiki/data/processed/story/story_units.json"

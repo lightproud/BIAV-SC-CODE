@@ -217,8 +217,9 @@ def show_stats():
                 with archive_layout.open_archive_text(f) as fh:
                     data = json.load(fh)
                 item_count += data.get('item_count', 0)
-            except Exception:
-                pass
+            except Exception as exc:
+                # 静默 pass 会让损坏档案把条目数悄悄少算，统计看着正常实则缩水
+                print(f'    ! 跳过不可读归档 {f.name}: {type(exc).__name__}: {exc}', file=sys.stderr)
 
         print(f'  {platform:12s}  {file_count:3d} 天  {item_count:5d} 条  ({first_date} ~ {last_date})')
         total_files += file_count
