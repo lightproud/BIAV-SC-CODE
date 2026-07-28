@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-27T22:06:57.299848+00:00",
+  "collected_at": "2026-07-28T02:18:46.298233+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 127,
+  "item_count": 128,
   "items": [
     {
       "source": "google_play",
@@ -333,6 +333,16 @@
       "summary": "赞✨👍！",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-76f8661b-513b-45d0-b27c-a667dc06df2f",
       "author": "Zhi Shao Tan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-27T01:14:23",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Have been playing this game since last y",
+      "summary": "Have been playing this game since last year and honestly, it is so f2p and rewards are generous. Love the story and characters design in this game. The gacha has a soft pity too, a higher chance of getting the character you want. Easy to farm and save up too. Very much love this game and will continue to play :3",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-2fa09fff-17c4-4869-b090-2083cfc84126",
+      "author": "Ena",
       "engagement": 0
     },
     {
@@ -713,16 +723,6 @@
       "summary": "this game is way too good, its totally different from all the usual gacha games! the story is actually different and unique and i really love it. gameplay: 8.9/10 characters: 10/10 voice acting: 10/10 story: 10/10 optimization pc: 10/10 optimization mobile: 7.5/10 overall a very good game.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-b3e4a24f-856e-48d0-8ea8-9c5022ce7c6b",
       "author": "chibu squish",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-29T02:03:16",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 I'd say, it's a chill game with lots of",
-      "summary": "I'd say, it's a chill game with lots of rewards. Keep it up with the updates! Love your game.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-8535f0cf-b0ea-45b1-bef2-912cd2831e50",
-      "author": "allen jayme",
       "engagement": 0
     },
     {
@@ -1163,6 +1163,16 @@
       "summary": "5 stelle perché è un gioco multilingue compreso l'italiano cosa che ormai dovrebbero fare tutti giochi grazie all'IA",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-d2764bc5-5216-46e4-9594-094a54585b86",
       "author": "Daniele",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-27T00:07:09",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★4 Скачала игру пару дней назад, очень нрав",
+      "summary": "Скачала игру пару дней назад, очень нравится. Угадывается стилистика других всем нам известних игр. Ещё нравится, что работают на широкую аудиторию благодаря переводу на многие языки, пускай и машинные. Хотелось бы в будущем увидеть побольше анимаций у персонажей во время диалогов и в списке персонажей. И в целом проработку персов в тех же побочных квестах с их историей, по типу немного иной одежды или поз. Даже если есть упор на нейросеть во время создания персонажей, потенциал есть, молодцы:)",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-5ce66c25-e46e-447f-9f65-542c8ef9e942",
+      "author": "Виктория Яковлева",
       "engagement": 0
     },
     {

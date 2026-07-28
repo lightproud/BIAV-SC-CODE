@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-27T22:06:57.299848+00:00",
+  "collected_at": "2026-07-28T02:18:46.298233+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -22,33 +22,18 @@
     },
     {
       "source": "steam",
-      "time": "2026-07-27T02:10:20+00:00",
+      "time": "2026-07-27T22:03:15+00:00",
       "lang": "english",
-      "title": "[正面] such a good game, everyone should play it <33",
-      "summary": "such a good game, everyone should play it <33",
-      "url": "https://steamcommunity.com/profiles/76561199811643437/recommended/3052450",
-      "author": "76561199811643437",
-      "engagement": 1,
+      "title": "[正面] I downloaded this game out of pure boredom and wan...",
+      "summary": "I downloaded this game out of pure boredom and wanting to find something cool to play. Best decision i've made. I love this game, the story and the art style. I started with having this on my ipad and decided to add it to my laptop as well. Totally recommend",
+      "url": "https://steamcommunity.com/profiles/76561199212573824/recommended/3052450",
+      "author": "76561199212573824",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "such a good game, everyone should play it <33",
-      "timestamp_created": 1785118220,
-      "playtime_forever": 5978
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-26T22:26:54+00:00",
-      "lang": "schinese",
-      "title": "[负面] 经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、...",
-      "summary": "经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、游戏性弱、禁用词多的国风特点也是一点没落。\r\n真的有些勾起我的创伤回忆了。我不知道如今世界发生了什么，但是童年时记忆的快乐游戏的厂商都不见了，取而代之的是一大堆模板化、同质化、骗氪化的垃圾游戏蓬勃发展。\r\n不推荐游玩。",
-      "url": "https://steamcommunity.com/profiles/76561198253832125/recommended/3052450",
-      "author": "76561198253832125",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "经典骗氪网游。\r\n只能说喜欢花钱玩抽卡游戏的那种，还是很对味的。与此同时，不把玩家当人、平衡性不好、游戏性弱、禁用词多的国风特点也是一点没落。\r\n真的有些勾起我的创伤回忆了。我不知道如今世界发生了什么，但是童年时记忆的快乐游戏的厂商都不见了，取而代之的是一大堆模板化、同质化、骗氪化的垃圾游戏蓬勃发展。\r\n不推荐游玩。",
-      "timestamp_created": 1785104814,
-      "playtime_forever": 17598
+      "review": "I downloaded this game out of pure boredom and wanting to find something cool to play. Best decision i've made. I love this game, the story and the art style. I started with having this on my ipad and decided to add it to my laptop as well. Totally recommend",
+      "timestamp_created": 1785189795,
+      "playtime_forever": 220
     },
     {
       "source": "steam",
@@ -63,7 +48,7 @@
       "voted_up": true,
       "review": "it has saya",
       "timestamp_created": 1785185489,
-      "playtime_forever": 275
+      "playtime_forever": 335
     },
     {
       "source": "steam",
@@ -109,51 +94,6 @@
       "review": "第一次接触这种类型的游戏（算是吧 之前玩过一阵子白荆回廊）意外发现还挺有意思的ww",
       "timestamp_created": 1785158974,
       "playtime_forever": 415
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-26T23:49:14+00:00",
-      "lang": "english",
-      "title": "[正面] Love the immersive narrative experience driven by...",
-      "summary": "Love the immersive narrative experience driven by steampunk meets dark fantasy world, soundtrack is awesome, unique art style, and the detective investigation themes are very intriguing",
-      "url": "https://steamcommunity.com/profiles/76561199651179760/recommended/3052450",
-      "author": "76561199651179760",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Love the immersive narrative experience driven by steampunk meets dark fantasy world, soundtrack is awesome, unique art style, and the detective investigation themes are very intriguing",
-      "timestamp_created": 1785109754,
-      "playtime_forever": 296
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-26T23:49:08+00:00",
-      "lang": "russian",
-      "title": "[正面] у меня вообще игра не запускается?\nв смысле даже э...",
-      "summary": "у меня вообще игра не запускается?\nв смысле даже экрана загрузки нету",
-      "url": "https://steamcommunity.com/profiles/76561198406087348/recommended/3052450",
-      "author": "76561198406087348",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "у меня вообще игра не запускается?\nв смысле даже экрана загрузки нету",
-      "timestamp_created": 1785109748,
-      "playtime_forever": 3614
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-26T23:29:40+00:00",
-      "lang": "tchinese",
-      "title": "[正面] ㅤ",
-      "summary": "ㅤ",
-      "url": "https://steamcommunity.com/profiles/76561199185609382/recommended/3052450",
-      "author": "76561199185609382",
-      "engagement": 0,
-      "language": "tchinese",
-      "voted_up": true,
-      "review": "ㅤ",
-      "timestamp_created": 1785108580,
-      "playtime_forever": 356
     }
   ]
 }
