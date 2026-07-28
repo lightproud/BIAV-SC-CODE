@@ -8,7 +8,7 @@ build_relpath 写下的文件，iter_source_files/dated_files 以同一源名必
 """
 
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone, UTC
 from pathlib import Path
 
 import pytest
@@ -207,7 +207,7 @@ def test_archive_date_str_naive_treated_as_utc():
 def test_archive_date_str_utc_offset_explicit():
     """显式 +00:00 与 naive 同解。"""
     assert al.archive_date_str(
-        datetime(2026, 4, 13, 20, 0, 0, tzinfo=timezone.utc)) == "2026-04-14"
+        datetime(2026, 4, 13, 20, 0, 0, tzinfo=UTC)) == "2026-04-14"
 
 
 def test_archive_date_str_non_utc_offset_not_double_counted():

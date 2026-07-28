@@ -39,7 +39,7 @@ split_output.py — 按数据源分割 projects/news/output/news.json
 
 import json
 import sys
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 # ── 路径 ──────────────────────────────────────────────────────────────────────
@@ -78,8 +78,8 @@ def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:
     try:
         dt = datetime.fromisoformat(time_str)
         if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return (datetime.now(timezone.utc) - dt) < timedelta(hours=max_hours)
+            dt = dt.replace(tzinfo=UTC)
+        return (datetime.now(UTC) - dt) < timedelta(hours=max_hours)
     except (ValueError, TypeError):
         return False
 
@@ -118,7 +118,7 @@ def extract_steam_item(raw: dict) -> dict:
     timestamp_created = meta.get('timestamp_created', 0)
     if not timestamp_created and raw.get('time'):
         try:
-            dt = datetime.fromisoformat(raw['time'].replace('Z', '+00:00'))
+            dt = datetime.fromisoformat(raw['time'])
             timestamp_created = int(dt.timestamp())
         except (ValueError, TypeError):
             pass
@@ -168,7 +168,7 @@ def main() -> None:
     with open(INPUT_PATH, encoding='utf-8') as f:
         data = json.load(f)
 
-    collected_at = data.get('updated_at', datetime.now(timezone.utc).isoformat())
+    collected_at = data.get('updated_at', datetime.now(UTC).isoformat())
     raw_items: list[dict] = data.get('news', [])
 
     # 按规范化后的 source 分组，过滤超时数据

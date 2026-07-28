@@ -51,7 +51,7 @@ def _run(*args: str, env_root: str | None = None) -> subprocess.CompletedProcess
     )
 
 
-@pytest.fixture()
+@pytest.fixture
 def absent_root(tmp_path: Path) -> str:
     """一个存在但空的数据根——「数据湖没 clone / env 没设」的精确复现。"""
     root = tmp_path / "empty-data-repo"
@@ -59,20 +59,17 @@ def absent_root(tmp_path: Path) -> str:
     return str(root)
 
 
-def test_guard_refuses_when_the_archive_source_is_entirely_absent(absent_root: str) -> None:
+def test_guard_refuses_when_the_archive_source_is_entirely_absent(
+    absent_root: str, monkeypatch: pytest.MonkeyPatch,
+) -> None:
     if not _expected_platforms():
         pytest.skip("community_index.json 无平台声明，本守卫无对象")
+    # env 装配移出 raises 块（原先连同 try/finally 一起塞在里面）：装配语句一旦
+    # 自己抛出同型异常，这条测试就会**因错误的原因通过**。monkeypatch 亦自动收尾,
+    # 手写 try/finally 恢复 env 的那一段随之整段消失。
+    monkeypatch.setenv("BIAV_SC_DATA_ROOT", absent_root)
     with pytest.raises(opl.ArchiveSourceMissing) as exc:
-        import os
-        old = os.environ.get("BIAV_SC_DATA_ROOT")
-        os.environ["BIAV_SC_DATA_ROOT"] = absent_root
-        try:
-            opl.preflight_archive_source()
-        finally:
-            if old is None:
-                os.environ.pop("BIAV_SC_DATA_ROOT", None)
-            else:
-                os.environ["BIAV_SC_DATA_ROOT"] = old
+        opl.preflight_archive_source()
     message = str(exc.value)
     # 报文必须自带出路，否则撞上的人只知道被拦、不知道怎么办。
     assert "BIAV_SC_DATA_ROOT" in message

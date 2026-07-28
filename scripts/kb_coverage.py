@@ -14,7 +14,10 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 # 应被知识库覆盖的「知识文件」glob（相对仓根）。纯代码/生成物/瞬态不在内。
 KNOWLEDGE_GLOBS = [

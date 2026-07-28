@@ -151,9 +151,9 @@ def _bare_imports(tree: ast.AST) -> set[str]:
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
             out |= {a.name for a in node.names if "." not in a.name}
-        elif isinstance(node, ast.ImportFrom):
-            if node.level == 0 and node.module and "." not in node.module:
-                out.add(node.module)
+        elif (isinstance(node, ast.ImportFrom)
+              and node.level == 0 and node.module and "." not in node.module):
+            out.add(node.module)
     return out
 
 
@@ -208,7 +208,7 @@ def test_package_path_imports_point_at_real_files() -> None:
     offenders: list[str] = []
     for p in sorted(TESTS.glob("test_*.py")):
         src = p.read_text(encoding="utf-8")
-        for m in re.finditer(r"^from ((?:scripts|projects)[\w.]*) import ", src, re.M):
+        for m in re.finditer(r"^from ((?:scripts|projects)[\w.]*) import ", src, re.MULTILINE):
             rel = m.group(1).replace(".", "/")
             # 模块（x.py）或命名空间包目录（x/）都算数得上
             if not (REPO / f"{rel}.py").exists() and not (REPO / rel).is_dir():
@@ -222,7 +222,7 @@ def test_mutmut_sources_exist() -> None:
     漏改不会让任何测试变红，只会让 mutmut 静静地少测一个模块。
     """
     cfg = (REPO / "setup.cfg").read_text(encoding="utf-8")
-    block = re.search(r"^source_paths\s*=(.*?)(?=^\w|\Z)", cfg, re.M | re.S)
+    block = re.search(r"^source_paths\s*=(.*?)(?=^\w|\Z)", cfg, re.MULTILINE | re.DOTALL)
     assert block, "setup.cfg 缺少 [mutmut] source_paths"
     missing = [
         line.strip()

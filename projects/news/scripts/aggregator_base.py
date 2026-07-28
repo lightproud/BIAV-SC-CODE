@@ -113,7 +113,9 @@ def _get_with_retry(url, retries=2, backoff=1.0, **kwargs):
     last_exc = None
     for attempt in range(retries + 1):
         try:
-            resp = requests.get(url, **kwargs)
+            # S113 误报：上面 `kwargs.setdefault('timeout', 15)` 已保证必带超时,
+            # ruff 只看这一行的字面参数，看不见 kwargs 里已经有了。
+            resp = requests.get(url, **kwargs)  # noqa: S113
             if resp.status_code < 500 or attempt == retries:
                 return resp
             last_exc = Exception(f'HTTP {resp.status_code}')
@@ -188,7 +190,7 @@ def validate_news_item(item):
     # Validate time format (ISO 8601)
     try:
         if isinstance(item['time'], str):
-            datetime.fromisoformat(item['time'].replace('Z', '+00:00'))
+            datetime.fromisoformat(item['time'])
     except (ValueError, TypeError):
         logger.warning(f'Validation: invalid time format for: {item["title"][:50]}')
         return False, None

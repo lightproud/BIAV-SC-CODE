@@ -266,8 +266,7 @@ def parse_language_config():
         val = data[key]
         # Strip _CN suffix if present
         display_key = key
-        if display_key.endswith('_CN'):
-            display_key = display_key[:-3]
+        display_key = display_key.removesuffix('_CN')
         entries.append({
             'key': key,
             'display_key': display_key,

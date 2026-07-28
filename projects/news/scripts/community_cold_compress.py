@@ -154,7 +154,7 @@ def compress_platforms(cutoff: str, dry_run: bool = False) -> dict:
             logger.info(
                 f"{pdir.name}: 压缩 {pstats['compressed']} / 并轨 {pstats['merged']} / 保留 {pstats['kept']}，"
                 f"{pstats['raw_bytes'] / 1048576:.1f} MB → {pstats['gz_bytes'] / 1048576:.1f} MB"
-                + ('  [dry-run]' if dry_run else '')
+                f"{'  [dry-run]' if dry_run else ''}"
             )
     return totals
 

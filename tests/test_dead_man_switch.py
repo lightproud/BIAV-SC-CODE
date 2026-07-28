@@ -7,7 +7,7 @@
 """
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 import pytest
@@ -17,7 +17,7 @@ import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml�
 
 import dead_man_switch as dms  # noqa: E402
 
-NOW = datetime(2026, 7, 26, 0, 0, tzinfo=timezone.utc)
+NOW = datetime(2026, 7, 26, 0, 0, tzinfo=UTC)
 
 
 class TestCronFields:
@@ -32,7 +32,9 @@ class TestCronFields:
 
     @pytest.mark.parametrize("bad", ["*/0", "99", "5-1", "60"])
     def test_illegal_specs_raise(self, bad):
-        with pytest.raises(ValueError):
+        # match 不是形式：裸 raises(ValueError) 连「解析器自己写崩了」抛的 ValueError
+        # 都算通过，测试于是分不清「正确地拒绝了非法输入」和「根本没走到校验」。
+        with pytest.raises(ValueError, match=r"步长必须为正|字段越界"):
             dms.parse_field(bad, 0, 59)
 
 
@@ -40,7 +42,7 @@ class TestExpectedInterval:
     """真实节拍必须算对——这些正是仓内在用的 cron。"""
 
     @pytest.mark.parametrize(
-        "cron,hours",
+        ("cron", "hours"),
         [
             ("0 */3 * * *", 3.0),      # update-news
             ("40 * * * *", 1.0),       # backfill-media
@@ -60,7 +62,7 @@ class TestExpectedInterval:
         assert dms.expected_interval_hours(["0 7 * * *", "0 6 1 * *"], NOW) == pytest.approx(24.0)
 
     def test_five_fields_required(self):
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match=r"cron 须为 5 段"):
             dms.expected_interval_hours(["0 7 * *"], NOW)
 
 

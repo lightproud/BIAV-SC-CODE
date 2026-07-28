@@ -223,7 +223,8 @@ def build_greeting(persona: dict, platform: str = "silver_core") -> str:
     if not greetings:
         return f"{name}已启动。"
 
-    greeting = random.choice(greetings)
+    # S311 非缺陷：随机挑一句问候语，与密码学无关（本仓无任何安全用途依赖它）。
+    greeting = random.choice(greetings)  # noqa: S311
 
     if platform == "black_pool":
         role = mapping.get("role_in_black_pool", "")

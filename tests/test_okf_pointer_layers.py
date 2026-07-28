@@ -64,7 +64,7 @@ def test_new_layer_has_concepts(layer):
     assert _concepts(layer), f"层 {layer} 无概念——run scripts/build_okf_bundle.py"
 
 
-@pytest.mark.parametrize("layer,expected_dl", sorted(NEW_LAYERS.items()))
+@pytest.mark.parametrize(("layer", "expected_dl"), sorted(NEW_LAYERS.items()))
 def test_layer_data_layer_discipline(layer, expected_dl):
     """每概念必带某 data_layer tag；非文档类概念须为该层主 data_layer（防 lesson #30）。
 

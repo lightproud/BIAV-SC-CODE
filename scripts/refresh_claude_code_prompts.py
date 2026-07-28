@@ -93,7 +93,7 @@ def detect_version(clone: Path) -> str:
     sp = clone / "system-prompts"
     if sp.is_dir():
         for f in sorted(sp.glob("*.md")):
-            m = re.search(r"^version:\s*v?(\d+\.\d+\.\d+)", f.read_text(encoding="utf-8"), re.M)
+            m = re.search(r"^version:\s*v?(\d+\.\d+\.\d+)", f.read_text(encoding="utf-8"), re.MULTILINE)
             if m:
                 return m.group(1)
     return "unknown"

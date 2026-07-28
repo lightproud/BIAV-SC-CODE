@@ -86,7 +86,7 @@ def test_build_relpath_flat_and_region_only():
 
 # ── resolve_write_layout：写方唯一落点 ───────────────────────────────────────
 
-@pytest.mark.parametrize('source,expected', [
+@pytest.mark.parametrize(('source', 'expected'), [
     ('steam', ('steam', 'global', 'review')),
     ('official', ('steam', 'global', 'news')),
     ('steam_discussion', ('steam', 'global', 'discussion')),
@@ -113,7 +113,7 @@ def test_resolve_write_layout_subtype_forces_region():
 
 # ── iter_source_files / dated_files：读方唯一遍历 ────────────────────────────
 
-@pytest.fixture()
+@pytest.fixture
 def tree(tmp_path):
     def mk(rel, content='[]'):
         p = tmp_path / rel

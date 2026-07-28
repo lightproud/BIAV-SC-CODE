@@ -6,7 +6,7 @@ dropped media/metadata guard would stay green). Imports via the package path so
 the assertions bind the same module object the rest of the suite uses.
 (split_output is intentionally not under the mutmut gate; see setup.cfg.)
 """
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent
@@ -20,7 +20,7 @@ from projects.news.scripts.split_output import (  # noqa: E402
 
 
 def _iso(hours_ago: float) -> str:
-    return (datetime.now(timezone.utc) - timedelta(hours=hours_ago)).isoformat()
+    return (datetime.now(UTC) - timedelta(hours=hours_ago)).isoformat()
 
 
 # --- _is_recent: the time-window comparison ---
@@ -43,7 +43,7 @@ def test_window_is_strict_upper_bound():
 
 
 def test_naive_timestamp_treated_as_utc():
-    naive = (datetime.now(timezone.utc) - timedelta(hours=1)).replace(
+    naive = (datetime.now(UTC) - timedelta(hours=1)).replace(
         tzinfo=None).isoformat()
     assert _is_recent(naive, max_hours=24) is True
 

@@ -36,7 +36,7 @@ def runtime() -> list:
 
 def _interface_fields(ts: str) -> tuple[set, set]:
     """从 MorimensCharacter 接口抽 (必填字段集, 可选字段集)。"""
-    m = re.search(r"export interface MorimensCharacter \{(.*?)\n\}", ts, re.S)
+    m = re.search(r"export interface MorimensCharacter \{(.*?)\n\}", ts, re.DOTALL)
     assert m, "characters.ts 中找不到 MorimensCharacter 接口声明"
     required, optional = set(), set()
     for line in m.group(1).splitlines():
@@ -47,7 +47,7 @@ def _interface_fields(ts: str) -> tuple[set, set]:
 
 
 def _label_keys(ts: str, const_name: str) -> set:
-    m = re.search(const_name + r"[^=]*= \{(.*?)\}", ts, re.S)
+    m = re.search(const_name + r"[^=]*= \{(.*?)\}", ts, re.DOTALL)
     assert m, f"characters.ts 中找不到 {const_name}"
     return set(re.findall(r"(\w+):\s*'", m.group(1)))
 

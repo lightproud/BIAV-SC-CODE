@@ -17,7 +17,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 
 # 复用归档器的 Global guild 常量；已登记清单从布局 SSOT 注册表派生（单一映射源）。
@@ -105,7 +105,7 @@ def main() -> int:
         print(f"  - {r['id']}  {r['name']}  [{mark}]")
 
     snapshot = {
-        'probed_at': datetime.now(timezone.utc).isoformat(),
+        'probed_at': datetime.now(UTC).isoformat(),
         'bot_guild_count': len(rows),
         'guilds': rows,
         'unregistered': unregistered,

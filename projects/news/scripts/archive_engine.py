@@ -38,7 +38,7 @@ import os
 import subprocess
 import tarfile
 from collections import defaultdict
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 import archive_layout  # 分仓桥接：社区数据根 SSOT（同目录）
@@ -114,7 +114,7 @@ def discover(cfg: dict, base_dir: Path, force_groups: list[str]) -> dict[str, li
         cutoff_date = None
         cutoff_days = cfg.get('cutoff_days')
         if cutoff_days is not None:
-            cutoff = datetime.now(timezone.utc) - timedelta(days=cutoff_days)
+            cutoff = datetime.now(UTC) - timedelta(days=cutoff_days)
             cutoff_date = cutoff.strftime('%Y-%m-%d')
             logger.info(f'Cutoff date: {cutoff_date} ({cutoff_days} days ago)')
         for f in base_dir.glob(cfg['glob']):
@@ -335,7 +335,7 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
             'files': len(files),
             'archive_size_bytes': archive_size,
             'uploaded_to_releases': uploaded,
-            'archived_at': datetime.now(timezone.utc).isoformat(),
+            'archived_at': datetime.now(UTC).isoformat(),
         })
         save_log(log_path, log)
 

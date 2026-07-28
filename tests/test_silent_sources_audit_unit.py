@@ -13,6 +13,7 @@ import pytest
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
 import silent_sources_audit as ssa  # noqa: E402
+from datetime import UTC
 
 
 # ── compute_silent_days ─────────────────────────────────────────────────────
@@ -404,10 +405,10 @@ def test_non_date_files_ignored(dirs):
 # ── P0-3 校验丢弃门控 ────────────────────────────────────────────────────────
 
 def test_drop_alarms_threshold(tmp_path, monkeypatch):
-    from datetime import datetime, timezone
+    from datetime import datetime
     p = tmp_path / "validation-drops.json"
     p.write_text(json.dumps({
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "total_dropped": 113,
         "by_source": {"taptap_review": 108, "weibo": 5},
     }), encoding="utf-8")
@@ -426,8 +427,8 @@ def test_write_health_embeds_validation_drops(dirs, tmp_path, monkeypatch):
     _, adir, _ = dirs
     _write_platform_day(adir, "reddit", "2026-07-01", 3)
     p = tmp_path / "validation-drops.json"
-    from datetime import datetime, timezone
-    p.write_text(json.dumps({"generated_at": datetime.now(timezone.utc).isoformat(),
+    from datetime import datetime
+    p.write_text(json.dumps({"generated_at": datetime.now(UTC).isoformat(),
                              "total_dropped": 7,
                              "by_source": {"ghost": 7}}), encoding="utf-8")
     monkeypatch.setattr(ssa, "DROPS_PATH", p)
@@ -439,8 +440,8 @@ def test_write_health_embeds_validation_drops(dirs, tmp_path, monkeypatch):
 
 def test_stale_drops_file_ignored(tmp_path, monkeypatch):
     """崩溃轮残留的旧 drops 文件不得被当作本轮重复告警（验证编队 minor）。"""
-    from datetime import datetime, timezone, timedelta
-    old = (datetime.now(timezone.utc) - timedelta(hours=5)).isoformat()
+    from datetime import datetime, timedelta
+    old = (datetime.now(UTC) - timedelta(hours=5)).isoformat()
     p = tmp_path / "validation-drops.json"
     p.write_text(json.dumps({"generated_at": old, "total_dropped": 108,
                              "by_source": {"taptap_review": 108}}), encoding="utf-8")
@@ -451,8 +452,8 @@ def test_stale_drops_file_ignored(tmp_path, monkeypatch):
 
 
 def test_fresh_drops_file_honoured(tmp_path, monkeypatch):
-    from datetime import datetime, timezone
-    now = datetime.now(timezone.utc).isoformat()
+    from datetime import datetime
+    now = datetime.now(UTC).isoformat()
     p = tmp_path / "validation-drops.json"
     p.write_text(json.dumps({"generated_at": now, "total_dropped": 108,
                              "by_source": {"taptap_review": 108}}), encoding="utf-8")
@@ -554,9 +555,9 @@ def test_write_health_embeds_stalled_leaves(dirs):
     # build_report() 用真实当日（UTC+8）判定，夹具日期必须相对当日生成：
     # global 写到当日（永不 stalled），jp 固定 2026-06 旧档（永远 stalled）。
     # 写死 2026-07 固定日期的旧夹具是日期定时炸弹（2026-07-14 起自然变红）。
-    from datetime import datetime, timedelta, timezone
+    from datetime import datetime, timedelta
     _, adir, _ = dirs
-    today = datetime.now(timezone.utc) + timedelta(hours=8)
+    today = datetime.now(UTC) + timedelta(hours=8)
     for d in range(1, 11):
         _write_leaf_day(adir, "appstore/jp", f"2026-06-{d:02d}")
     for i in range(10):

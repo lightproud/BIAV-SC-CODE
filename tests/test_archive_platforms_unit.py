@@ -70,7 +70,7 @@ class TestLoadNews(unittest.TestCase):
                 mock.patch.object(ap, "INPUT_NEWS", Path("/nonexistent/news.json")):
             self.assertEqual(ap.load_news(), [])
 
-    def test_reads_raw_when_present(self, tmp=None):
+    def test_reads_raw_when_present(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
             raw = Path(d) / "raw.json"

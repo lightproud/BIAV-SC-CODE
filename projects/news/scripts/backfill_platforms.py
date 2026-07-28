@@ -28,7 +28,7 @@ import sys
 import time
 import logging
 import argparse
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
@@ -124,7 +124,7 @@ def _archive_items(source: str, items: list[dict]):
 
         archive_data = {
             'date': date_str,
-            'archived_at': datetime.now(timezone.utc).isoformat(),
+            'archived_at': datetime.now(UTC).isoformat(),
             'source': source,
             'item_count': len(merged),
             'items': merged,
@@ -167,7 +167,7 @@ def backfill_bilibili(state: dict, max_pages: int) -> int:
                         summary=v.get("description", ""),
                         source="bilibili",
                         platform_region="cn",
-                        time_str=datetime.fromtimestamp(v.get("pubdate", 0), tz=timezone.utc).isoformat()
+                        time_str=datetime.fromtimestamp(v.get("pubdate", 0), tz=UTC).isoformat()
                             if v.get("pubdate") else "",
                         url=v.get("arcurl", ""),
                         engagement=v.get("play", 0) + v.get("favorites", 0),
@@ -373,7 +373,7 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
             items = []
             for review in reviews:
                 ts = review.get('timestamp_created', 0)
-                created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                created = datetime.fromtimestamp(ts, tz=UTC)
                 voted_up = review.get('voted_up', False)
                 sentiment = '正面' if voted_up else '负面'
                 review_text = review.get('review', '')
@@ -518,7 +518,7 @@ def backfill_ruliweb(state: dict, max_pages: int) -> int:
                     if not url.startswith("http"):
                         url = f"https://bbs.ruliweb.com{url}"
 
-                    time_str = datetime.now(timezone.utc).isoformat()
+                    time_str = datetime.now(UTC).isoformat()
                     time_approx = True
                     if result_idx < len(result_dates):
                         date_text = result_dates[result_idx].strip()
@@ -526,7 +526,7 @@ def backfill_ruliweb(state: dict, max_pages: int) -> int:
                         if date_m:
                             try:
                                 dt = datetime(int(date_m.group(1)), int(date_m.group(2)),
-                                              int(date_m.group(3)), tzinfo=timezone.utc)
+                                              int(date_m.group(3)), tzinfo=UTC)
                                 time_str = dt.isoformat()
                                 time_approx = False
                             except ValueError:
@@ -610,11 +610,11 @@ def backfill_weixin(state: dict, max_pages: int) -> int:
                     if not title:
                         continue
 
-                    time_str = datetime.now(timezone.utc).isoformat()
+                    time_str = datetime.now(UTC).isoformat()
                     time_approx = True
                     if result_idx < len(ts_list):
                         try:
-                            dt = datetime.fromtimestamp(ts_list[result_idx], tz=timezone.utc)
+                            dt = datetime.fromtimestamp(ts_list[result_idx], tz=UTC)
                             time_str = dt.isoformat()
                             time_approx = False
                         except (ValueError, OSError):
@@ -668,7 +668,7 @@ def backfill_taptap(state: dict, max_pages: int) -> int:
     久远；浏览器采集需 CI 带 Chromium 环境，本地无浏览器时返回 0 不报错。
     """
     ps = _platform_state(state, 'taptap')
-    cutoff = datetime.now(timezone.utc) - timedelta(days=180)
+    cutoff = datetime.now(UTC) - timedelta(days=180)
     try:
         import asyncio
         import taptap_collector
@@ -686,7 +686,7 @@ def backfill_taptap(state: dict, max_pages: int) -> int:
     count = len(topics) + len(reviews)
     ps['total'] = ps.get('total', 0) + count
     ps['page'] = ps.get('page', 1) + 1
-    ps['last_run'] = datetime.now(timezone.utc).isoformat()
+    ps['last_run'] = datetime.now(UTC).isoformat()
     return count
 
 

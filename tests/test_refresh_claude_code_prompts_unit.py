@@ -76,7 +76,7 @@ def _make_fake_run(tree: dict[str, str], sha: str = "a" * 40,
     return fake_run
 
 
-@pytest.fixture()
+@pytest.fixture
 def dest(tmp_path, monkeypatch):
     """把 DEST 指向 tmp 参照池副本——真实 Public-Info-Pool 绝不入镜。"""
     d = tmp_path / "pool" / "Claude-Code-System-Prompts"

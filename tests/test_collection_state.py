@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from unittest import mock
 
@@ -11,7 +11,7 @@ import collection_state
 
 
 def _iso_hours_ago(hours):
-    return (datetime.now(timezone.utc) - timedelta(hours=hours)).isoformat()
+    return (datetime.now(UTC) - timedelta(hours=hours)).isoformat()
 
 
 class _StatePathMixin(unittest.TestCase):
@@ -57,7 +57,7 @@ class TestGetLookbackHours(_StatePathMixin):
         self.assertEqual(collection_state.get_lookback_hours(), collection_state.MAX_HOURS)
 
     def test_naive_timestamp_assumed_utc(self):
-        naive = (datetime.now(timezone.utc) - timedelta(hours=50)).replace(tzinfo=None)
+        naive = (datetime.now(UTC) - timedelta(hours=50)).replace(tzinfo=None)
         self._write_state({"last_collected_at": naive.isoformat()})
         result = collection_state.get_lookback_hours()
         self.assertGreater(result, collection_state.DEFAULT_HOURS)

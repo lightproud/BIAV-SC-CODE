@@ -49,7 +49,8 @@ def generate(k: int = 3, per_seed_disjoint: int = 4) -> dict:
 
     concepts = json.loads((BUNDLE / "kb_index.json").read_text(encoding="utf-8"))["concepts"]
     graph = json.loads((BUNDLE / "graph.json").read_text(encoding="utf-8"))
-    title = lambda cid: concepts.get(cid, {}).get("title", "")
+    def title(cid):
+        return concepts.get(cid, {}).get("title", "")
     chars = sorted(cid for cid, c in concepts.items() if c.get("type") == "character")
 
     seen: set[tuple] = set()

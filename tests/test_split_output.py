@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from unittest import mock
 
@@ -10,7 +10,7 @@ import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml�
 import split_output
 
 
-def _iso_hours_ago(hours, tz=timezone.utc):
+def _iso_hours_ago(hours, tz=UTC):
     return (datetime.now(tz) - timedelta(hours=hours)).isoformat()
 
 
@@ -30,7 +30,7 @@ class TestIsRecent(unittest.TestCase):
         self.assertFalse(split_output._is_recent(_iso_hours_ago(24), max_hours=24))
 
     def test_naive_timestamp_assumed_utc(self):
-        naive = (datetime.now(timezone.utc) - timedelta(hours=1)).replace(tzinfo=None)
+        naive = (datetime.now(UTC) - timedelta(hours=1)).replace(tzinfo=None)
         self.assertTrue(split_output._is_recent(naive.isoformat(), max_hours=24))
 
     def test_empty_string_not_recent(self):
@@ -110,7 +110,7 @@ class TestExtractSteamItem(unittest.TestCase):
     def test_timestamp_derived_from_time_when_meta_missing(self):
         raw = {"time": "2026-06-09T00:00:00Z", "summary": "s"}
         item = split_output.extract_steam_item(raw)
-        expected = int(datetime(2026, 6, 9, tzinfo=timezone.utc).timestamp())
+        expected = int(datetime(2026, 6, 9, tzinfo=UTC).timestamp())
         self.assertEqual(item["timestamp_created"], expected)
 
     def test_bad_time_leaves_timestamp_zero(self):

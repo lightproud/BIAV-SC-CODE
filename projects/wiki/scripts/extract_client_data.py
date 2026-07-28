@@ -431,9 +431,7 @@ def scan_and_extract(
                 ): af
                 for af in unity_files
             }
-            done_count = 0
-            for future in as_completed(futures):
-                done_count += 1
+            for done_count, future in enumerate(as_completed(futures), 1):
                 result = future.result()
                 rel = result.pop("_rel", "?")
                 obj_types = result.pop("object_types", {})

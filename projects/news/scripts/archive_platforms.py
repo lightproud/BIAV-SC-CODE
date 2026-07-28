@@ -37,7 +37,7 @@ import argparse
 import json
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -141,7 +141,7 @@ def write_archive(platform: str, region: str | None, subtype: str | None,
 
     archive_data = {
         'date': date_str,
-        'archived_at': datetime.now(timezone.utc).isoformat(),
+        'archived_at': datetime.now(UTC).isoformat(),
         'source': platform,
         'item_count': len(merged),
         'items': merged,

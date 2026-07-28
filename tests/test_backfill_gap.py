@@ -7,7 +7,7 @@ monkeypatch ARCHIVE_DIR 到 tmp 目录，绝不污染真实 Community 归档、�
 import json
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 from unittest import mock
 
@@ -18,22 +18,22 @@ import backfill_gap  # noqa: E402
 
 class TestGapBound(unittest.TestCase):
     def test_missing_env_uses_default(self):
-        default = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        default = datetime(2026, 1, 1, tzinfo=UTC)
         with mock.patch.dict(backfill_gap.os.environ, {}, clear=True):
             self.assertEqual(backfill_gap._gap_bound("X", default, False), default)
 
     def test_valid_start_of_day(self):
         with mock.patch.dict(backfill_gap.os.environ, {"X": "2026-03-15"}):
-            out = backfill_gap._gap_bound("X", datetime(2026, 1, 1, tzinfo=timezone.utc), False)
+            out = backfill_gap._gap_bound("X", datetime(2026, 1, 1, tzinfo=UTC), False)
         self.assertEqual((out.year, out.month, out.day, out.hour), (2026, 3, 15, 0))
 
     def test_valid_end_of_day(self):
         with mock.patch.dict(backfill_gap.os.environ, {"X": "2026-03-15"}):
-            out = backfill_gap._gap_bound("X", datetime(2026, 1, 1, tzinfo=timezone.utc), True)
+            out = backfill_gap._gap_bound("X", datetime(2026, 1, 1, tzinfo=UTC), True)
         self.assertEqual((out.hour, out.minute, out.second), (23, 59, 59))
 
     def test_invalid_falls_back_to_default(self):
-        default = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        default = datetime(2026, 1, 1, tzinfo=UTC)
         with mock.patch.dict(backfill_gap.os.environ, {"X": "not-a-date"}):
             self.assertEqual(backfill_gap._gap_bound("X", default, False), default)
 

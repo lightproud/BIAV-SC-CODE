@@ -18,7 +18,7 @@ import re
 import subprocess
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -48,7 +48,7 @@ def url_to_filename(url: str, source: str) -> str:
     parsed = urlparse(url)
     path = parsed.path
     # Extract extension from URL path
-    ext_match = re.search(r'\.(jpg|jpeg|png|gif|webp|avif|mp4|webm|svg)(\?|$)', path, re.I)
+    ext_match = re.search(r'\.(jpg|jpeg|png|gif|webp|avif|mp4|webm|svg)(\?|$)', path, re.IGNORECASE)
     ext = ext_match.group(1).lower() if ext_match else 'jpg'
     return f'{source}_{url_hash}.{ext}'
 
@@ -123,9 +123,9 @@ def collect_media_urls() -> list[dict]:
     try:
         with open(NEWS_JSON, encoding='utf-8') as f:
             data = json.load(f)
-    except (json.JSONDecodeError, OSError) as e:
+    except (json.JSONDecodeError, OSError):
         # exception() 保留 traceback：JSONDecodeError 只印一句消息时看不出出错位置
-        logger.exception(f'读取 news.json 失败: {e}')
+        logger.exception('读取 news.json 失败')
         return []
 
     items = []
@@ -171,7 +171,7 @@ def download_new_media(items: list[dict], manifest: dict, max_downloads: int = 3
                 'source': item['source'],
                 'title': item['title'],
                 'time': item['time'],
-                'downloaded_at': datetime.now(timezone.utc).isoformat(),
+                'downloaded_at': datetime.now(UTC).isoformat(),
             }
             new_count += 1
             continue
@@ -183,14 +183,14 @@ def download_new_media(items: list[dict], manifest: dict, max_downloads: int = 3
                 'source': item['source'],
                 'title': item['title'],
                 'time': item['time'],
-                'downloaded_at': datetime.now(timezone.utc).isoformat(),
+                'downloaded_at': datetime.now(UTC).isoformat(),
             }
             new_count += 1
         else:
             failed[url] = {
                 'source': item['source'],
                 'reason': 'download_failed',
-                'attempted_at': datetime.now(timezone.utc).isoformat(),
+                'attempted_at': datetime.now(UTC).isoformat(),
             }
 
     manifest['downloaded'] = downloaded
@@ -221,7 +221,7 @@ def archive_to_release(manifest: dict):
 
     logger.info(f'媒体目录 {size_mb:.1f}MB >= {ARCHIVE_THRESHOLD_MB}MB，开始归档...')
 
-    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    today = datetime.now(UTC).strftime('%Y-%m-%d')
     archive_name = f'media-archive-{today}.tar.gz'
     archive_path = MEDIA_DIR.parent / archive_name
 

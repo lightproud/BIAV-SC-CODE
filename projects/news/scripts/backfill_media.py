@@ -31,7 +31,7 @@ import subprocess
 import hashlib
 import html
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -51,21 +51,21 @@ REFRESH_BATCH = 50
 
 
 def load_manifest():
-    if not os.path.isfile(MANIFEST):
+    if not Path(MANIFEST).is_file():
         return {}
     with open(MANIFEST, encoding="utf-8") as f:
         return json.load(f)
 
 
 def save_manifest(m):
-    os.makedirs(os.path.dirname(MANIFEST), exist_ok=True)
+    Path(MANIFEST).parent.mkdir(parents=True, exist_ok=True)
     # 原子替换：manifest 是回填断点续跑的唯一依据，写一半被中断即整份不可解析,
     # 下一轮当作「无 manifest」从零重跑（既浪费带宽，也可能重复计费的 API 配额）。
     news_common.dump_json_atomic(MANIFEST, m, indent=1)
 
 
 def ext_of(url, d="jpg"):
-    m = re.search(r"\.(jpg|jpeg|png|gif|webp|mp4)(\?|$)", url, re.I)
+    m = re.search(r"\.(jpg|jpeg|png|gif|webp|mp4)(\?|$)", url, re.IGNORECASE)
     return m.group(1).lower() if m else d
 
 
@@ -294,7 +294,7 @@ def main():
                          "date": d, "status": status, "refreshed": url in refreshed,
                          # utcnow() 产出的是「无时区」datetime，isoformat() 不带 +00:00
                          # 后缀——落档后读方无从分辨是 UTC 还是本地时；且 3.12 起已弃用。
-                         "checked_at": datetime.now(timezone.utc).isoformat()}
+                         "checked_at": datetime.now(UTC).isoformat()}
         stats[status] = stats.get(status, 0) + 1
         done += 1
         if done % 200 == 0:

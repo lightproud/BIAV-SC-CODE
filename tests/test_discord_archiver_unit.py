@@ -12,7 +12,7 @@ import os
 import sys
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -312,7 +312,7 @@ class TestHistoryMonth(unittest.TestCase):
             # （原先此处还留着一个写废又没删的 future_id 变量，注释自己都写着
             #  "2023-ish actually; use a recent one"——读者会误以为它参与断言。）
             from discord_archiver import _sf_from_dt
-            recent = _sf_from_dt(datetime(2026, 6, 1, tzinfo=timezone.utc))
+            recent = _sf_from_dt(datetime(2026, 6, 1, tzinfo=UTC))
             res = arch.fetch_channel_history_month(recent, "n", 2023, 1)
             self.assertEqual(res, -1)
 
@@ -320,7 +320,7 @@ class TestHistoryMonth(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             arch = _make_archiver(tmp)
             from discord_archiver import _sf_from_dt
-            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=timezone.utc))
+            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=UTC))
             arch.state["channels"][str(old_id)] = {"empty_months": ["2025-05"]}
             called = []
             arch._api = lambda *a, **k: called.append(1) or []
@@ -332,7 +332,7 @@ class TestHistoryMonth(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             arch = _make_archiver(tmp)
             from discord_archiver import _sf_from_dt
-            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=timezone.utc))
+            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=UTC))
             _, before_sf = _month_bounds(2025, 5)
             arch.state["channels"][str(old_id)] = {
                 "last_historical_month": "2025-05",
@@ -345,7 +345,7 @@ class TestHistoryMonth(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             arch = _make_archiver(tmp)
             from discord_archiver import _sf_from_dt
-            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=timezone.utc))
+            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=UTC))
             after_sf, before_sf = _month_bounds(2025, 5)
             mid = str((int(after_sf) + int(before_sf)) // 2)
             calls = [0]
@@ -365,7 +365,7 @@ class TestHistoryMonth(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             arch = _make_archiver(tmp)
             from discord_archiver import _sf_from_dt
-            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=timezone.utc))
+            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=UTC))
             with mock.patch.object(arch, "_api", side_effect=_HTTPError(403)), \
                     mock.patch.object(da.time, "sleep"):
                 arch.fetch_channel_history_month(old_id, "n", 2025, 5)
@@ -375,7 +375,7 @@ class TestHistoryMonth(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             arch = _make_archiver(tmp)
             from discord_archiver import _sf_from_dt
-            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=timezone.utc))
+            old_id = _sf_from_dt(datetime(2024, 1, 1, tzinfo=UTC))
             with mock.patch.object(arch, "_api", return_value=[]), \
                     mock.patch.object(da.time, "sleep"):
                 res = arch.fetch_channel_history_month(old_id, "n", 2025, 5)

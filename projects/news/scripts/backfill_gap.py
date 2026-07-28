@@ -17,7 +17,7 @@ import sys
 import os
 import logging
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from urllib.parse import quote
 
@@ -38,7 +38,7 @@ def _gap_bound(env_name: str, default: datetime, end_of_day: bool) -> datetime:
     if not raw:
         return default
     try:
-        d = datetime.strptime(raw, '%Y-%m-%d').replace(tzinfo=timezone.utc)
+        d = datetime.strptime(raw, '%Y-%m-%d').replace(tzinfo=UTC)
         return d.replace(hour=23, minute=59, second=59) if end_of_day else d
     except ValueError:
         logger.warning(f'{env_name}={raw!r} 非法（需 YYYY-MM-DD），改用默认 {default.date()}')
@@ -46,8 +46,8 @@ def _gap_bound(env_name: str, default: datetime, end_of_day: bool) -> datetime:
 
 
 # 缺口范围可由 workflow 经 GAP_START_DATE / GAP_END_DATE 覆盖；默认沿用历史 Apr 13-25。
-GAP_START = _gap_bound('GAP_START_DATE', datetime(2026, 4, 13, tzinfo=timezone.utc), False)
-GAP_END = _gap_bound('GAP_END_DATE', datetime(2026, 4, 25, 23, 59, 59, tzinfo=timezone.utc), True)
+GAP_START = _gap_bound('GAP_START_DATE', datetime(2026, 4, 13, tzinfo=UTC), False)
+GAP_END = _gap_bound('GAP_END_DATE', datetime(2026, 4, 25, 23, 59, 59, tzinfo=UTC), True)
 
 
 def _archive_items(source: str, items: list[dict]):
@@ -88,7 +88,7 @@ def _archive_items(source: str, items: list[dict]):
             merged = existing + new_items
             out_data = {
                 'date': date_str,
-                'archived_at': datetime.now(timezone.utc).isoformat(),
+                'archived_at': datetime.now(UTC).isoformat(),
                 'source': source,
                 'item_count': len(merged),
                 'items': merged,
@@ -130,7 +130,7 @@ def backfill_reddit():
                 oldest = None
                 for post in posts:
                     d = post['data']
-                    created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
+                    created = datetime.fromtimestamp(d['created_utc'], tz=UTC)
                     oldest = created
                     if created < GAP_START:
                         continue
@@ -257,7 +257,7 @@ def backfill_bilibili():
                     pubdate = v.get('pubdate', 0)
                     if not pubdate:
                         continue
-                    created = datetime.fromtimestamp(pubdate, tz=timezone.utc)
+                    created = datetime.fromtimestamp(pubdate, tz=UTC)
                     if created < GAP_START or created > GAP_END:
                         continue
                     items.append(_make_item(
@@ -329,7 +329,7 @@ def backfill_weibo():
                     try:
                         dt = datetime.fromisoformat(time_str)
                         if dt.tzinfo is None:
-                            dt = dt.replace(tzinfo=timezone.utc)
+                            dt = dt.replace(tzinfo=UTC)
                         if dt < GAP_START or dt > GAP_END:
                             continue
                     except (ValueError, TypeError):  # 只挡坏时间戳
@@ -399,7 +399,7 @@ def backfill_steam_reviews():
             oldest = None
             for review in reviews:
                 ts = review.get('timestamp_created', 0)
-                created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                created = datetime.fromtimestamp(ts, tz=UTC)
                 oldest = created
 
                 if created < GAP_START:

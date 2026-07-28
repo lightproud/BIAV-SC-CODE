@@ -31,7 +31,7 @@ from news_bridge import archive_layout  # noqa: E402  分仓桥接：社区数�
 LESSONS = REPO / "memory" / "lessons-learned.md"
 ARCHIVE = REPO / "memory" / "lessons-archive.md"
 
-ENTRY_RE = re.compile(r"^## (\d+乙?)\. (.+)$", re.M)
+ENTRY_RE = re.compile(r"^## (\d+乙?)\. (.+)$", re.MULTILINE)
 MERGED_RE = re.compile(r"已并入\s*#(\d+)")
 CASEFILE_REF_RE = re.compile(r"案卷\s*#(\d+乙?)")
 NEXT_NUM_RE = re.compile(r"下一条\s*=\s*#(\d+)")
@@ -92,7 +92,7 @@ def gate_problems() -> list[str]:
             elif t["kind"] != "active":
                 problems.append(f"#{num} 已并入 #{target}，但 #{target} 非在役条目（{t['kind']}）")
         elif e["kind"] == "archived":
-            if not re.search(rf"^## {re.escape(num)}\. ", archive, re.M):
+            if not re.search(rf"^## {re.escape(num)}\. ", archive, re.MULTILINE):
                 problems.append(f"#{num} 标「已迁档/已毕业」，但 lessons-archive.md 无 ## {num}. 全文")
         else:  # active：案卷引用必须真实存在
             for cf in CASEFILE_REF_RE.findall(e["body"]):
@@ -119,7 +119,7 @@ def _git_age_days(path: Path) -> int | None:
         ).stdout.strip()
         if not ts:
             return None
-        return (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromtimestamp(int(ts), dt.timezone.utc)).days
+        return (dt.datetime.now(dt.UTC) - dt.datetime.fromtimestamp(int(ts), dt.UTC)).days
     except Exception:
         return None
 
@@ -130,7 +130,7 @@ def _git_last_date(path: Path) -> dt.date | None:
             ["git", "log", "-1", "--format=%ct", "--", str(path.relative_to(REPO))],
             capture_output=True, text=True, cwd=REPO, check=True,
         ).stdout.strip()
-        return dt.datetime.fromtimestamp(int(ts), dt.timezone.utc).date() if ts else None
+        return dt.datetime.fromtimestamp(int(ts), dt.UTC).date() if ts else None
     except Exception:
         return None
 

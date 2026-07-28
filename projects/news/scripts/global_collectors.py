@@ -23,7 +23,7 @@ import re
 import sys
 import logging
 import time
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta, UTC
 from pathlib import Path
 
 
@@ -49,13 +49,13 @@ try:
     HOURS_LOOKBACK = news_common.env_int("HOURS_LOOKBACK", 0) or get_lookback_hours()
 except ImportError:
     HOURS_LOOKBACK = news_common.env_int("HOURS_LOOKBACK", 24)
-CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+CUTOFF = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
 
 
 def _refresh_cutoff():
     """Refresh the global CUTOFF so long-running processes (scheduler) use current time."""
     global CUTOFF
-    CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    CUTOFF = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
 
 # 多语言搜索关键词
 KEYWORDS = {
@@ -160,7 +160,7 @@ def _parse_reddit_rss(xml_text: str, sub: str) -> list:
         if not updated_str:
             continue
         try:
-            created = datetime.fromisoformat(updated_str.replace("Z", "+00:00"))
+            created = datetime.fromisoformat(updated_str)
         except ValueError:
             continue
         if created < CUTOFF:
@@ -207,7 +207,7 @@ def fetch_reddit(subreddits=None):
 
             for post in posts:
                 d = post["data"]
-                created = datetime.fromtimestamp(d["created_utc"], tz=timezone.utc)
+                created = datetime.fromtimestamp(d["created_utc"], tz=UTC)
                 if created < CUTOFF:
                     continue
 
@@ -280,7 +280,7 @@ def fetch_bilibili():
                 pubdate = v.get("pubdate", 0)
                 if not pubdate:
                     continue
-                created = datetime.fromtimestamp(pubdate, tz=timezone.utc)
+                created = datetime.fromtimestamp(pubdate, tz=UTC)
                 if created < CUTOFF:
                     continue
 
@@ -569,7 +569,7 @@ def _parse_weibo_time(created_str):
         # "昨天 HH:MM" = yesterday HH:MM（精确到分钟，通用函数只到天级）
         m = re.match(r"昨天\s*(\d{1,2}):(\d{2})", s)
         if m:
-            yesterday = datetime.now(timezone.utc) - timedelta(days=1)
+            yesterday = datetime.now(UTC) - timedelta(days=1)
             dt = yesterday.replace(hour=int(m.group(1)), minute=int(m.group(2)), second=0, microsecond=0)
             return dt.isoformat(), False
 
@@ -675,7 +675,7 @@ def fetch_arca_live():
                 seen_urls.add(url)
 
                 m_time = _re.search(r'<time datetime="([^"]+)"', row)
-                time_str = m_time.group(1) if m_time else datetime.now(timezone.utc).isoformat()
+                time_str = m_time.group(1) if m_time else datetime.now(UTC).isoformat()
                 m_view = _re.search(r'class="vcol col-view">\s*([\d,]+)', row)
                 m_rate = _re.search(r'class="vcol col-rate">\s*(-?[\d,]+)', row)
                 m_cmt = _re.search(r'class="comment-count">\s*\[(\d+)\]', row)
@@ -872,7 +872,7 @@ def fetch_pixiv():
                     summary=illust.get("description", "") if illust.get("description") else "",
                     source="pixiv",
                     platform_region="global",
-                    time_str=illust.get("createDate") or datetime.now(timezone.utc).isoformat(),
+                    time_str=illust.get("createDate") or datetime.now(UTC).isoformat(),
                     url=f"https://www.pixiv.net/artworks/{illust_id}",
                     engagement=bookmark + like,
                     is_hot=bookmark > 500,
@@ -956,7 +956,7 @@ def _fetch_google_play_one(gp_package, arch_region, locales):
                     source="google_play",
                     platform_region=region,
                     region=arch_region,  # 甲方案：global（多 locale）/ jp（AltPlus 独立包）→ google_play/<区服>/
-                    time_str=review["at"].isoformat() if review.get("at") else datetime.now(timezone.utc).isoformat(),
+                    time_str=review["at"].isoformat() if review.get("at") else datetime.now(UTC).isoformat(),
                     # URL 追加 reviewId 锚点：评论页 URL 仅含 id+hl，同语言数十条评论会共用同一
                     # URL，致 dedup_key（URL 优先）碰撞、每语言仅存活 1 条（丢失 ~98% 评论）。
                     # fragment 使每条 key 唯一，不影响链接访问，跨轮次去重仍按恒定 reviewId 生效。
@@ -1103,7 +1103,7 @@ def fetch_weixin():
                 time_approx = True
                 if result_idx < len(ts_list):
                     try:
-                        dt = datetime.fromtimestamp(ts_list[result_idx], tz=timezone.utc)
+                        dt = datetime.fromtimestamp(ts_list[result_idx], tz=UTC)
                         time_str = dt.isoformat()
                         time_approx = False
                     except (ValueError, OSError):
@@ -1114,14 +1114,14 @@ def fetch_weixin():
                     date_m = _re.search(r'(\d{4})[-/年](\d{1,2})[-/月](\d{1,2})', meta)
                     if date_m:
                         try:
-                            dt = datetime(int(date_m.group(1)), int(date_m.group(2)), int(date_m.group(3)), tzinfo=timezone.utc)
+                            dt = datetime(int(date_m.group(1)), int(date_m.group(2)), int(date_m.group(3)), tzinfo=UTC)
                             time_str = dt.isoformat()
                             time_approx = False
                         except ValueError:
                             pass
 
                 if not time_str:
-                    time_str = datetime.now(timezone.utc).isoformat()
+                    time_str = datetime.now(UTC).isoformat()
                     time_approx = True
 
                 item = _make_item(
@@ -1198,7 +1198,7 @@ def fetch_note_com():
                     summary=news_common.strip_html(_field("description"))[:200],
                     source="note_com",
                     platform_region="jp",
-                    time_str=time_str or datetime.now(timezone.utc).isoformat(),
+                    time_str=time_str or datetime.now(UTC).isoformat(),
                     url=url,
                     engagement=0,
                     is_hot=False,
@@ -1284,13 +1284,13 @@ def fetch_ruliweb():
                             dt = datetime.strptime(raw, "%Y.%m.%d")
                         # KST = UTC+9
                         dt = dt.replace(tzinfo=timezone(timedelta(hours=9)))
-                        time_str = dt.astimezone(timezone.utc).isoformat()
+                        time_str = dt.astimezone(UTC).isoformat()
                         time_approx = False
                     except ValueError:
                         pass
 
                 if not time_str:
-                    time_str = datetime.now(timezone.utc).isoformat()
+                    time_str = datetime.now(UTC).isoformat()
                     time_approx = True
 
                 desc_m = _re.search(r'<span class="desc">\s*(.+?)\s*</span>', block, _re.DOTALL)
@@ -1363,21 +1363,21 @@ def fetch_stopgame():
             date_iso = _re.search(r'(\d{4})-(\d{1,2})-(\d{1,2})', html)
             if date_ru:
                 try:
-                    dt = datetime(int(date_ru.group(3)), int(date_ru.group(2)), int(date_ru.group(1)), tzinfo=timezone.utc)
+                    dt = datetime(int(date_ru.group(3)), int(date_ru.group(2)), int(date_ru.group(1)), tzinfo=UTC)
                     page_time_str = dt.isoformat()
                     page_time_approx = False
                 except ValueError:
                     pass
             elif date_iso:
                 try:
-                    dt = datetime(int(date_iso.group(1)), int(date_iso.group(2)), int(date_iso.group(3)), tzinfo=timezone.utc)
+                    dt = datetime(int(date_iso.group(1)), int(date_iso.group(2)), int(date_iso.group(3)), tzinfo=UTC)
                     page_time_str = dt.isoformat()
                     page_time_approx = False
                 except ValueError:
                     pass
 
         if not page_time_str:
-            page_time_str = datetime.now(timezone.utc).isoformat()
+            page_time_str = datetime.now(UTC).isoformat()
             page_time_approx = True
 
         if rating_match:
@@ -1407,11 +1407,11 @@ def fetch_stopgame():
             html, _re.DOTALL
         )
 
-        review_idx = 0
-        for match in _re.finditer(
+        # enumerate 取代手写计数器（循环体内无 continue，语义等价）
+        for review_idx, match in enumerate(_re.finditer(
             r'class="[^"]*review-text[^"]*"[^>]*>([^<]{10,300})',
             html, _re.DOTALL
-        ):
+        )):
             text = match.group(1).strip()
             review_time = ""
             review_approx = True
@@ -1423,7 +1423,7 @@ def fetch_stopgame():
                 elif rd_ru:
                     parts = rd_ru.split(".")
                     try:
-                        dt = datetime(int(parts[2]), int(parts[1]), int(parts[0]), tzinfo=timezone.utc)
+                        dt = datetime(int(parts[2]), int(parts[1]), int(parts[0]), tzinfo=UTC)
                         review_time = dt.isoformat()
                         review_approx = False
                     except (ValueError, IndexError):
@@ -1447,7 +1447,6 @@ def fetch_stopgame():
             if review_approx:
                 item["time_is_approximate"] = True
             items.append(item)
-            review_idx += 1
 
         logger.info(f"StopGame: {len(items)} items")
     except Exception as e:

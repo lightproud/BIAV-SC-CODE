@@ -15,7 +15,7 @@ Usage:
 import json
 import logging
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 from collections import defaultdict
 
@@ -166,7 +166,7 @@ class SilentPlatformTracker:
 
     def _save_health(self):
         """保存健康数据。"""
-        self.health_data['updated_at'] = datetime.now(timezone.utc).isoformat()
+        self.health_data['updated_at'] = datetime.now(UTC).isoformat()
         with open(self.health_path, 'w', encoding='utf-8') as f:
             json.dump(self.health_data, f, ensure_ascii=False, indent=2)
 
@@ -181,7 +181,7 @@ class SilentPlatformTracker:
             error: 如果失败，错误信息
             note: 降级原因标注（如「待配 NGA_COOKIE」），恢复产出后自动清除
         """
-        today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        today = datetime.now(UTC).strftime('%Y-%m-%d')
 
         if platform not in self.health_data['platforms']:
             self.health_data['platforms'][platform] = {
@@ -244,12 +244,12 @@ class SilentPlatformTracker:
         p = self.health_data['platforms'].get(platform, {})
         if p.get('level', self.LEVEL_ACTIVE) != self.LEVEL_DORMANT:
             return False
-        today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+        today = datetime.now(UTC).strftime('%Y-%m-%d')
         return p.get('last_check_date') == today
 
     def get_report(self) -> dict:
         """生成健康报告。"""
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
 
         active = []
         degraded = []

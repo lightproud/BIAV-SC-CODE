@@ -40,6 +40,7 @@ import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml�
 import build_okf_bundle  # noqa: E402
 import build_community_index  # noqa: E402
 import split_output  # noqa: E402
+from datetime import UTC
 
 
 # Minimal frontmatter parser mirroring the bundle's own (top-level keys only).
@@ -274,8 +275,8 @@ class TestOutputIsSubsetOfArchive:
 
     @staticmethod
     def _recent(hours_ago=1):
-        from datetime import datetime, timedelta, timezone
-        return (datetime.now(timezone.utc) - timedelta(hours=hours_ago)).isoformat()
+        from datetime import datetime, timedelta
+        return (datetime.now(UTC) - timedelta(hours=hours_ago)).isoformat()
 
     def test_output_count_never_exceeds_archive(self, tmp_path, monkeypatch):
         """Every output-layer file's item_count <= the archive item count.

@@ -16,7 +16,10 @@ OKF concept = 一份带 YAML frontmatter 的 markdown。「怎么把 fields 写�
 from __future__ import annotations
 
 import re
-from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 # 一段 markdown 开头的 frontmatter 块（`---` 包裹，DOTALL 跨行）。
 _FM_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)

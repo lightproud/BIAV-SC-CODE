@@ -42,16 +42,16 @@ LOCKSTEP_PREFIX = "Lockstep alignment only"
 #: 「这条其实是空转」的其他说法——用来抓「换个措辞写空转」的漂移。
 #: 命中其一但**不以规范开头起头**的条目 = 格式违规。
 _NOOP_HINTS = (
-    re.compile(r"no changes to this package", re.I),
+    re.compile(r"no changes to this package", re.IGNORECASE),
     # "No agent-side changes." / "no maestro-side change" —— 首次跑守卫即抓到 0.72.0
     # 用的正是这个说法（内容确是空转，措辞却非规范开头，自动清单把它误报成实质变更）。
-    re.compile(r"\bno\s+\w+[- ]side\s+changes?\b", re.I),
-    re.compile(r"\bno\s+\w+([- ]SDK)?\s+code\s+changes?\b", re.I),
+    re.compile(r"\bno\s+\w+[- ]side\s+changes?\b", re.IGNORECASE),
+    re.compile(r"\bno\s+\w+([- ]SDK)?\s+code\s+changes?\b", re.IGNORECASE),
     re.compile(r"本包\*{0,2}零代码改动"),
     re.compile(r"本包无改动"),
 )
 
-_HEADING = re.compile(r"^## (\d+\.\d+\.\d+)(?:\s+[—-]\s+(\S+))?\s*$", re.M)
+_HEADING = re.compile(r"^## (\d+\.\d+\.\d+)(?:\s+[—-]\s+(\S+))?\s*$", re.MULTILINE)
 
 
 @dataclass(frozen=True)

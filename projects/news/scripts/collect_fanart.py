@@ -92,7 +92,7 @@ def fetch(url, dest, referer=None):
 
 
 def ext_of(url, default="jpg"):
-    m = re.search(r"\.(jpg|jpeg|png|gif|webp)(\?|$)", url, re.I)
+    m = re.search(r"\.(jpg|jpeg|png|gif|webp)(\?|$)", url, re.IGNORECASE)
     return m.group(1).lower() if m else default
 
 

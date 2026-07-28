@@ -71,7 +71,7 @@ NAV_TOOLS = [
 ]
 
 
-@pytest.mark.parametrize("tool_name,backend_fn,call", NAV_TOOLS,
+@pytest.mark.parametrize(("tool_name", "backend_fn", "call"), NAV_TOOLS,
                          ids=[t[0] for t in NAV_TOOLS])
 def test_nav_tool_returns_error_json_when_index_missing(monkeypatch, tool_name, backend_fn, call):
     monkeypatch.setattr(kb_navigator, backend_fn, _raise_missing)
