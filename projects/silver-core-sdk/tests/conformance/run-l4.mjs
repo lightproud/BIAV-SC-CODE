@@ -238,6 +238,12 @@ async function runL4Scenario(armKind, scenario) {
         cwd,
         maxTurns: scenario.maxTurns ?? 4,
         env: baseEnv(emulator.url),
+        // 0.94.0: the engine ships no built-in default model, so the harness
+        // pins the id both arms previously defaulted to — keeping the frozen
+        // L4 baseline byte-identical (same pin as arm.mjs / run-wire.mjs).
+        // Without it EVERY bpt-arm fault case dies with "model is required"
+        // before the injected fault is ever reached.
+        model: 'claude-sonnet-4-5',
         ...(armKind === 'bpt' ? { sessionDir: join(cwd, '.sessions') } : {}),
         ...(scenario.options ?? {}),
       },

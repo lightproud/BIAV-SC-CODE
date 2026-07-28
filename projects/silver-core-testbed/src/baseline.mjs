@@ -18,7 +18,7 @@
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { TaskLedger, firesBetween } from 'silver-core-maestro-sdk';
+import { TaskLedger, firesBetween, isTerminal } from 'silver-core-maestro-sdk';
 import { fileLedgerStore } from './store.mjs';
 import { TESTBED_ROOT } from './daemon.mjs';
 
@@ -43,13 +43,16 @@ export async function exportBaseline({
   let attemptRows = 0;
   for (const s of sessions) {
     const cls = (byClass[classOf(s.intent)] ??= {
-      sessions: 0, done: 0, failed: 0, open: 0, attempts: 0, stalls: 0,
+      sessions: 0, done: 0, failed: 0, cancelled: 0, open: 0, attempts: 0, stalls: 0,
     });
     cls.sessions += 1;
     cls.attempts += s.attempts;
-    if (s.state === 'done') cls.done += 1;
-    else if (s.state === 'failed') cls.failed += 1;
-    else cls.open += 1;
+    // Terminal-ness comes from the SDK predicate, never from a hand-listed set:
+    // `cancelled` (0.76.0) is terminal, and counting it as `open` would report a
+    // settled session as in flight forever. A seventh terminal state appears as
+    // its own key here rather than silently landing in `open`.
+    if (!isTerminal(s.state)) cls.open += 1;
+    else cls[s.state] = (cls[s.state] ?? 0) + 1;
     for (const q of await ledger.listQueries(s.id)) {
       attemptRows += 1;
       if (q.outcome !== 'ok') {
@@ -60,7 +63,7 @@ export async function exportBaseline({
     }
   }
   for (const cls of Object.values(byClass)) {
-    const terminal = cls.done + cls.failed;
+    const terminal = cls.sessions - cls.open;
     cls.completionRate = terminal === 0 ? null : +(cls.done / terminal).toFixed(4);
   }
 
@@ -92,7 +95,7 @@ export async function exportBaseline({
     };
   }
 
-  const terminalAll = sessions.filter((s) => s.state === 'done' || s.state === 'failed');
+  const terminalAll = sessions.filter((s) => isTerminal(s.state));
   const baseline = {
     note:
       'silver-core-testbed effect baseline — derived ENTIRELY from the task ledger ' +
@@ -106,6 +109,7 @@ export async function exportBaseline({
       terminal: terminalAll.length,
       done: terminalAll.filter((s) => s.state === 'done').length,
       failed: terminalAll.filter((s) => s.state === 'failed').length,
+      cancelled: terminalAll.filter((s) => s.state === 'cancelled').length,
       completionRate:
         terminalAll.length === 0
           ? null

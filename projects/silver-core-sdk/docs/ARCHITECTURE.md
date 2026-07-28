@@ -431,7 +431,7 @@ design rule.)
 
 `examples/` — `basic.ts` (string prompt, print messages), `custom-tools.ts`
 (sdk MCP server with one tool), `streaming-input.ts`, `hooks-permissions.ts`.
-Examples import from `'silver-core-sdk'` (package self-reference OK) or
+Examples import from `'silver-core-agent-sdk'` (package self-reference OK) or
 relative `../src/index.js` — use relative for runnable-without-publish.
 
 `README.md` — quickstart, drop-in migration notes

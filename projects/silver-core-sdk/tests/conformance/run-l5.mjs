@@ -797,6 +797,19 @@ console.log('content-blind self-audit: PASS');
 // --- Exit semantics (header contract) ----------------------------------------------
 
 if (SMOKE) {
+  // Coverage guard: the smoke gate is `no bpt row failed`, which is
+  // vacuously true when no bpt row EXISTS. A task id renamed out of
+  // L5_TASKS silently shrank the smoke trio (and, with all three gone,
+  // reduced the CI gate to a zero-run green). Assert the trio actually ran.
+  const ranTasks = new Set(rows.filter((r) => r.arm === 'bpt').map((r) => r.task));
+  const missing = SMOKE_TASK_IDS.filter((id) => !ranTasks.has(id));
+  if (missing.length > 0) {
+    console.error(
+      `\nFAIL: smoke coverage loss - ${missing.length} of ${SMOKE_TASK_IDS.length} smoke task(s) never ran ` +
+        `(missing from L5_TASKS / SMOKE_SCRIPTS?): ${missing.join(', ')}`,
+    );
+    process.exit(1);
+  }
   const bptFailures = rows.filter((r) => r.arm === 'bpt' && !r.passed);
   if (bptFailures.length > 0) {
     console.error(

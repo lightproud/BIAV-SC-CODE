@@ -130,9 +130,22 @@ def scheduled_workflows(workflow_dir: Path = WORKFLOW_DIR) -> dict[str, list[str
     """{工作流文件名: [cron...]}，只收带 schedule 的。纯 dispatch 的本就不该定期出声。"""
     import re
 
+    # 三种写法都认：单引号 / 双引号 / 裸值（YAML 三者等价，作者随手换一种是完全合法的编辑）。
+    # 旧式只认单引号——一个 `- cron: "0 7 * * *"` 就会让该工作流**整个从看守名单里蒸发**，
+    # 而死手开关照旧报 watched=N-1、findings=0：守卫对一个已死的定时件保持全程沉默，
+    # 正是本脚本存在要消灭的那种沉默。（`build_status_facts.py` 数「其中定时」用的是
+    # `^\s*-\s*cron:`，不挑引号——两边判据分叉时，台账数字与看守数字会无声对不上。）
+    line = re.compile(
+        r"^[ \t]*-[ \t]*cron:[ \t]*(?:'([^']*)'|\"([^\"]*)\"|([^#\r\n]+?))[ \t]*(?:#.*)?$",
+        re.MULTILINE,
+    )
     found: dict[str, list[str]] = {}
     for path in sorted(workflow_dir.glob("*.yml")):
-        crons = re.findall(r"^\s*-\s*cron:\s*'([^']+)'", path.read_text(encoding="utf-8"), re.MULTILINE)
+        crons = [
+            (single or double or bare).strip()
+            for single, double, bare in line.findall(path.read_text(encoding="utf-8"))
+        ]
+        crons = [c for c in crons if c]
         if crons:
             found[path.name] = crons
     return found

@@ -117,6 +117,12 @@ async function runL2Scenario(armKind, scenario, { timeoutMs = 120_000 } = {}) {
     cwd,
     maxTurns: 4,
     env: baseEnv(emulator.url, scenario.env ?? {}),
+    // 0.94.0: the engine ships no built-in default model, so the harness pins
+    // the id both arms previously defaulted to — keeping the frozen L2
+    // baseline byte-identical (same pin as arm.mjs / run-wire.mjs). Without
+    // it EVERY bpt-arm scenario dies with "model is required" and the L2 leg
+    // of the differential compares nothing.
+    model: 'claude-sonnet-4-5',
     ...(armKind === 'bpt' ? { sessionDir: join(cwd, '.sessions') } : {}),
     ...(scenario.options ?? {}),
     ...(scenario.makeOptions ? scenario.makeOptions({ cwd, host }) : {}),
@@ -128,6 +134,11 @@ async function runL2Scenario(armKind, scenario, { timeoutMs = 120_000 } = {}) {
   const timer = setTimeout(() => ac.abort(), timeoutMs);
   let error;
   let interrupted = false;
+  // A failing interrupt() used to be swallowed into ac.abort(), which stops
+  // turn 2 just as well - so an engine that LOST interrupt() still satisfied
+  // s10's `postCount === 1` decider. Record the throw so the scenario can no
+  // longer be certified by the fallback (audit 2026-07-28).
+  let interruptError;
   try {
     const q = query({ prompt: scenario.prompt, options });
     for await (const m of q) {
@@ -138,7 +149,10 @@ async function runL2Scenario(armKind, scenario, { timeoutMs = 120_000 } = {}) {
         // an engine that resolves the control response via this stream.
         Promise.resolve()
           .then(() => q.interrupt())
-          .catch(() => ac.abort());
+          .catch((err) => {
+            interruptError = String(err?.message ?? err).slice(0, 200);
+            ac.abort();
+          });
       }
     }
   } catch (err) {
@@ -156,6 +170,7 @@ async function runL2Scenario(armKind, scenario, { timeoutMs = 120_000 } = {}) {
     arm: armKind,
     scenario: scenario.id,
     error,
+    interruptError,
     messages,
     host,
     fs,
@@ -195,6 +210,8 @@ async function runResumeScenario(armKind, scenario, { timeoutMs = 120_000 } = {}
           cwd,
           maxTurns: 4,
           env,
+          // Same 0.94.0 model pin as runL2Scenario above (no built-in default).
+          model: 'claude-sonnet-4-5',
           ...(armKind === 'bpt' ? { sessionDir: join(cwd, '.sessions') } : {}),
           ...extra,
         },
@@ -275,6 +292,10 @@ function checksVerdict(expected, checks) {
 function evaluate(scenario, run, armKind) {
   const failures = [...checksVerdict(scenario.expect, run.checks)];
   if (scenario.check) failures.push(...scenario.check(run));
+  // The interrupt driver's abort fallback masks a broken interrupt(): report
+  // it as a failure on BOTH arms instead of letting ac.abort() satisfy the
+  // scenario's postCount decider.
+  if (run.interruptError) failures.push(`interrupt() threw: ${run.interruptError}`);
   if (scenario.checkResume && run.resume) failures.push(...scenario.checkResume(run.resume));
   // Arm-driver errors: on the BPT arm any throw during an expected-complete
   // run is our regression (this SDK ends every run with a result message).

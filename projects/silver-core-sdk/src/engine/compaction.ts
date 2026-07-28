@@ -294,6 +294,41 @@ export function partitionForCompaction(
   const estimate = (msgs: APIMessageParam[]): number =>
     Math.round(estimateMessagesTokens(msgs) * calibration);
 
+  // Suffix sums, ONE backward pass (scale defect, wave10). Every candidate cut
+  // used to be scored with `messages.slice(i)` + a fresh estimate/turn-count
+  // over that whole suffix — O(n) work per candidate, so O(n²) per compaction
+  // check. Measured on a plain alternating history: 4k msgs 87ms, 8k 430ms,
+  // 16k 2.3s, and 130k did not finish in 2 minutes. Those counts are ORDINARY
+  // for the tool-loop workload this function exists to serve (a 200k window
+  // holds ~20k eight-token turns; a 1M window ~100k), and the check runs on
+  // every sub-turn. The estimator is additive per message and genuine-turn
+  // counting is a per-message predicate, so suffix sums give bit-identical
+  // numbers in O(n) total. estimateMessagesTokens([msg]) hits the same
+  // per-message WeakMap cache the full-history call above just populated.
+  const suffixTokens = new Array<number>(messages.length + 1).fill(0);
+  const suffixTurns = new Array<number>(messages.length + 1).fill(0);
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const msg = messages[i];
+    suffixTokens[i] =
+      suffixTokens[i + 1]! + (msg === undefined ? 0 : estimateMessagesTokens([msg]));
+    suffixTurns[i] =
+      suffixTurns[i + 1]! + (msg !== undefined && isGenuineUserTurn(msg) ? 1 : 0);
+  }
+  const estimateSuffix = (i: number): number => Math.round(suffixTokens[i]! * calibration);
+  // Also NOT `Math.max(...arr)`: a spread call passes one argument per element
+  // and V8 throws RangeError past ~125k of them — reachable on a large-window
+  // history with that many candidate cuts.
+  const maxOf = (xs: number[]): number => {
+    let m = xs[0]!;
+    for (const x of xs) if (x > m) m = x;
+    return m;
+  };
+  const minOf = (xs: number[]): number => {
+    let m = xs[0]!;
+    for (const x of xs) if (x < m) m = x;
+    return m;
+  };
+
   // Candidate cut points: indices of GENUINE user turns (a real prompt, i.e.
   // a user message that is NOT a tool_result-only turn). i=0 is excluded
   // (empty prefix); i=messages.length is a degenerate empty-suffix candidate.
@@ -311,14 +346,11 @@ export function partitionForCompaction(
     // most aggressive safe cut is the LAST genuine user turn: it keeps at least
     // the current prompt verbatim under any configuration.
     const candidates = [...genuine];
-    const evaluated = candidates.map((i) => {
-      const suffix = messages.slice(i);
-      return {
-        i,
-        tokens: estimate(suffix),
-        turns: countGenuineUserTurns(suffix),
-      };
-    });
+    const evaluated = candidates.map((i) => ({
+      i,
+      tokens: estimateSuffix(i),
+      turns: suffixTurns[i]!,
+    }));
 
     const both = evaluated.filter(
       (c) => c.tokens <= keepBudget && c.turns >= cfg.minRecentTurns,
@@ -326,16 +358,16 @@ export function partitionForCompaction(
     if (both.length > 0) {
       // Largest cut index within budget that still keeps minRecentTurns -> the
       // minimal viable suffix, maximizing the fold.
-      chosen = Math.max(...both.map((c) => c.i));
+      chosen = maxOf(both.map((c) => c.i));
     } else {
       const withTurns = evaluated.filter((c) => c.turns >= cfg.minRecentTurns);
       if (withTurns.length > 0) {
         // minRecentTurns cannot fit in keepBudget: honor minRecentTurns anyway.
-        chosen = Math.max(...withTurns.map((c) => c.i));
+        chosen = maxOf(withTurns.map((c) => c.i));
       } else {
         // Not enough genuine user turns exist to satisfy minRecentTurns: keep as
         // much as possible (smallest genuine cut index).
-        chosen = Math.min(...genuine);
+        chosen = minOf(genuine);
       }
     }
   } else {
@@ -357,14 +389,12 @@ export function partitionForCompaction(
       }
     }
     if (asstCuts.length === 0) return null; // no safe boundary to fold at
-    const fitting = asstCuts.filter(
-      (i) => estimate(messages.slice(i)) <= keepBudget,
-    );
+    const fitting = asstCuts.filter((i) => estimateSuffix(i) <= keepBudget);
     // Smallest fitting cut = MOST recent context retained under budget. If even
     // the smallest suffix overflows the keep budget, fall to the largest cut
     // (best-effort minimal suffix); performCompaction's suffix pre-tier then
     // sheds the remaining bulk so the request still fits the window.
-    chosen = fitting.length > 0 ? Math.min(...fitting) : Math.max(...asstCuts);
+    chosen = fitting.length > 0 ? minOf(fitting) : maxOf(asstCuts);
   }
 
   const prefix = messages.slice(0, chosen);
@@ -957,13 +987,6 @@ function isGenuineUserTurn(msg: APIMessageParam): boolean {
   return !msg.content.some((b) => b.type === 'tool_result');
 }
 
-function countGenuineUserTurns(messages: APIMessageParam[]): number {
-  let n = 0;
-  for (const msg of messages) {
-    if (isGenuineUserTurn(msg)) n += 1;
-  }
-  return n;
-}
 
 
 /** Structural, deterministic recap of the folded prefix (capped). */

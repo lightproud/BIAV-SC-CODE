@@ -72,6 +72,20 @@ def known_types(reg: dict) -> dict:
     return reg.get("types", {})
 
 
+def rev_suffix(rev: str) -> str:
+    """修订号 -> `-rN` 后缀。非正整数一律 die，不许崩在 int() 上。
+
+    本脚本的契约是「不合规就打印『拒绝: 原因』并退 1」。裸 `int(args.rev)` 破了这条：
+    `--rev r2`（照着产出的 `-r2` 回填，最自然的手误）会抛 ValueError 吐一屏 traceback，
+    人看不出是自己写错了还是守卫坏了。
+    """
+    if not rev:
+        return ""
+    if not rev.isdigit():
+        die(f"修订号 '{rev}' 形式不合规：须为正整数（如 --rev 2 生成 -r2）。")
+    return f"-r{rev}" if int(rev) > 1 else ""
+
+
 def cmd_path(args) -> None:
     reg = _load_registry()
     types = known_types(reg)
@@ -88,7 +102,7 @@ def cmd_path(args) -> None:
     if not DATE_RE.match(args.date):
         die(f"日期 '{args.date}' 形式不合规：须 YYYYMMDD 或区间 YYYYMMDD-DD。")
     ext = args.ext.lstrip(".")
-    rev = f"-r{args.rev}" if args.rev and int(args.rev) > 1 else ""
+    rev = rev_suffix(args.rev)
     name = f"{args.topic}-{args.date}{rev}.{ext}"
     rel = Path("Public-Info-Pool/Resource") / t / name
     print(rel.as_posix())
@@ -130,8 +144,10 @@ def cmd_promote(args) -> None:
     check_form("主题", args.topic)
     if not DATE_RE.match(args.date):
         die(f"日期 '{args.date}' 形式不合规。")
-    ext = (args.ext or src.suffix.lstrip(".")) or "md"
-    rev = f"-r{args.rev}" if args.rev and int(args.rev) > 1 else ""
+    # `.lstrip(".")` 与 cmd_path 对齐：漏了它，`--ext .pdf` 会生成 `foo-20260621..pdf`
+    # （双点），即同一个脚本对同一个输入算出两种落点——路径生成器的立身之本正是这个不能歪。
+    ext = (args.ext.lstrip(".") or src.suffix.lstrip(".")) or "md"
+    rev = rev_suffix(args.rev)
     dst = RESOURCE / args.type / f"{args.topic}-{args.date}{rev}.{ext}"
     dst.parent.mkdir(parents=True, exist_ok=True)
     src.rename(dst)

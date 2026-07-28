@@ -19,7 +19,7 @@ an Anthropic-protocol shim in front.
 ## Enabling
 
 ```ts
-import { query } from 'silver-core-sdk';
+import { query } from 'silver-core-agent-sdk';
 
 for await (const msg of query({
   prompt: 'Summarize README.md',
@@ -271,7 +271,7 @@ an isolated child rides the parent transport unconditionally and the gateway
 naming convention in the SDK. The host owns the model→protocol table:
 
 ```ts
-import { query, createSubagentTransportResolver } from 'silver-core-sdk';
+import { query, createSubagentTransportResolver } from 'silver-core-agent-sdk';
 
 const q = query({
   prompt,

@@ -26,7 +26,7 @@ for (const task of tasks) {
 ## `runConcurrent` — drive N conversations in parallel
 
 ```ts
-import { createBptSession, runConcurrent } from 'silver-core-sdk';
+import { createBptSession, runConcurrent } from 'silver-core-agent-sdk';
 
 const mgr = createBptSession({ /* provider, mcpServers, ... */ });
 const outcomes = await runConcurrent(

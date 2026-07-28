@@ -73,6 +73,16 @@ function evaluateArm(scenario, result, armKey) {
   const failures = [];
   const normTexts = [];
   if (result.error) failures.push(`run error: ${result.error}`);
+  // The per-step differential only ever indexes toolResults[0..steps-1], so a
+  // SURPLUS tool_result (a tool dispatched twice, a duplicated result block)
+  // was invisible on both arms - the arms could execute a different number of
+  // tools and still score CONTENT_MATCH. A shortfall is already caught below
+  // ("missing tool_result"); this closes the other side.
+  if (result.toolResults.length > scenario.steps.length) {
+    failures.push(
+      `${result.toolResults.length} tool_result(s) for ${scenario.steps.length} declared step(s) - unexpected extra tool execution`,
+    );
+  }
   const env = envOf(result);
   scenario.steps.forEach((step, i) => {
     const tr = result.toolResults[i];

@@ -51,7 +51,12 @@ _NOOP_HINTS = (
     re.compile(r"本包无改动"),
 )
 
-_HEADING = re.compile(r"^## (\d+\.\d+\.\d+)(?:\s+[—-]\s+(\S+))?\s*$", re.MULTILINE)
+#: 发布标题。**结尾不锚死**：旧式 `…(\S+)\s*$` 要求日期后一无所有，于是
+#: `## 0.6.1 — 2026-07-05 (retroactive label)`（agent CHANGELOG 实存）整条匹配不上——
+#: 该版本既不进「实质变更」清单，其正文也**永远不被 format_violations 扫到**：
+#: 措辞守卫对这一段全程失明却照报 OK，正是本脚本自己 docstring 里说的那种「清单看起来
+#: 完全正常」。日期收紧成 ISO 形状，标题尾部的补注由 `.*` 吞掉。
+_HEADING = re.compile(r"^## (\d+\.\d+\.\d+)(?:\s+[—-]\s+(\d{4}-\d{2}-\d{2}))?.*$", re.MULTILINE)
 
 
 @dataclass(frozen=True)

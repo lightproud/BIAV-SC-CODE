@@ -312,6 +312,22 @@ function firstOpener(text: string, from = 0): number {
 type ValidationError = { path: string; message: string };
 
 /**
+ * Append every error of a child validation onto the parent's list.
+ *
+ * NOT `parent.push(...child)`: a spread call passes one ARGUMENT per element,
+ * and V8 caps that at ~125k — so a model answering `{"data":[…]}` with an
+ * array of ~130k schema-violating items (a ~260KB reply, well inside a 64k
+ * max_tokens budget) made the recursive validator throw
+ * `RangeError: Maximum call stack size exceeded` instead of returning the
+ * violations. The engine calls evaluateStructuredOutput unguarded, so that
+ * RangeError escaped the query as a crash — an ordinary schema mismatch that
+ * the bounded correction-retry loop is built to handle.
+ */
+function pushAll(target: ValidationError[], errs: ValidationError[]): void {
+  for (const e of errs) target.push(e);
+}
+
+/**
  * Walk `schema` against `value`, collecting ValidationError[]. Supported
  * keywords (the documented common subset): type, enum, const, required,
  * properties, items (object + tuple form), additionalProperties, $ref
@@ -396,7 +412,7 @@ function validateValue(
     if (props) {
       for (const key of Object.keys(props)) {
         if (hasOwn(key)) {
-          errors.push(...validateValue(obj[key], props[key], root, joinPath(path, key), refDepth));
+          pushAll(errors, validateValue(obj[key], props[key], root, joinPath(path, key), refDepth));
         }
       }
     }
@@ -420,7 +436,7 @@ function validateValue(
         if (ap === false) {
           errors.push({ path: joinPath(path, key), message: 'additional property not allowed' });
         } else if (ap !== null && typeof ap === 'object') {
-          errors.push(...validateValue(obj[key], ap, root, joinPath(path, key), refDepth));
+          pushAll(errors, validateValue(obj[key], ap, root, joinPath(path, key), refDepth));
         }
       }
     }
@@ -430,11 +446,11 @@ function validateValue(
   if (Array.isArray(value)) {
     if (Array.isArray(s.items)) {
       for (let i = 0; i < s.items.length && i < value.length; i += 1) {
-        errors.push(...validateValue(value[i], s.items[i], root, `${path}[${i}]`, refDepth));
+        pushAll(errors, validateValue(value[i], s.items[i], root, `${path}[${i}]`, refDepth));
       }
     } else if (s.items !== undefined) {
       for (let i = 0; i < value.length; i += 1) {
-        errors.push(...validateValue(value[i], s.items, root, `${path}[${i}]`, refDepth));
+        pushAll(errors, validateValue(value[i], s.items, root, `${path}[${i}]`, refDepth));
       }
     }
     if (typeof s.minItems === 'number' && value.length < s.minItems) {

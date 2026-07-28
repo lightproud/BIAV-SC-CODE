@@ -19,7 +19,7 @@ import { spawn } from 'node:child_process';
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { TaskLedger } from 'silver-core-maestro-sdk';
+import { TaskLedger, isTerminal } from 'silver-core-maestro-sdk';
 import { fileLedgerStore } from '../src/store.mjs';
 
 const HERE = resolve(fileURLToPath(import.meta.url), '..');
@@ -122,7 +122,10 @@ async function drillKill9() {
   const orphanFinal = orphans.length === 0 ? null : await reopened.getSession(orphans[0].id);
   checks.push({
     name: 'the orphaned session itself reached a healthy state after restart',
-    pass: orphanFinal === null || orphanFinal.state === 'done' || orphanFinal.state === 'retrying' || orphanFinal.state === 'failed',
+    // "Healthy" = settled or actively retrying, i.e. NOT stuck in pending/running.
+    // Spelling the healthy set by hand missed `cancelled` (0.76.0), which would
+    // have reported a legitimately settled orphan as a drill failure.
+    pass: orphanFinal === null || isTerminal(orphanFinal.state) || orphanFinal.state === 'retrying',
     detail: orphanFinal === null ? 'n/a' : `${orphanFinal.id} -> ${orphanFinal.state}`,
   });
   checks.push({

@@ -118,7 +118,7 @@ The SDK persists sessions; a consumer that auto-resumes makes
 process-level failures invisible too. The pattern (BPT Desktop):
 
 ```ts
-import { query } from 'silver-core-sdk';
+import { query } from 'silver-core-agent-sdk';
 
 async function resilientQuery(prompt: string, options: Options) {
   let resumeId: string | undefined;

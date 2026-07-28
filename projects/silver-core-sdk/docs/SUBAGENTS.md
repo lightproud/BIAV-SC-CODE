@@ -30,7 +30,7 @@ shipped behavior of `src/subagents/*` (`agent-tool.ts` / `agents.ts` /
 `AgentDefinition`:
 
 ```ts
-import { query, type AgentDefinition } from 'silver-core-sdk';
+import { query, type AgentDefinition } from 'silver-core-agent-sdk';
 
 const agents: Record<string, AgentDefinition> = {
   'code-explorer': {
@@ -188,7 +188,7 @@ non-existent capability.
 ## 7. Worked example
 
 ```ts
-import { query, buildWorkerForkPrompt, WORKER_FORK_AGENT } from 'silver-core-sdk';
+import { query, buildWorkerForkPrompt, WORKER_FORK_AGENT } from 'silver-core-agent-sdk';
 
 const agents = {
   explorer: {
