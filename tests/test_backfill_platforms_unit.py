@@ -13,6 +13,7 @@ import pytest
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
+from archive_layout import BEIJING_TZ  # noqa: E402  归档分桶时区单一真相源
 import backfill_platforms as bp  # noqa: E402
 import global_collectors as gc  # noqa: E402
 
@@ -102,7 +103,9 @@ def test_archive_items_naive_time_treated_utc(paths):
 
 def test_archive_items_bad_time_falls_back_to_now(paths):
     adir, _ = paths
-    today = datetime.now(UTC).strftime("%Y-%m-%d")
+    # 归档分桶一律北京日期（archive_layout.archive_today），故断言也须用北京钟：
+    # 用 UTC 会在每天 16:00 UTC 之后跨日、令本例无故转红 8 小时。
+    today = datetime.now(BEIJING_TZ).strftime("%Y-%m-%d")
     bp._archive_items("reddit", [{"url": "u1", "time": "garbage"}])
     assert (adir / "reddit" / f"{today}.json").exists()
 

@@ -53,6 +53,33 @@ export function errorMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err);
 }
 
+/**
+ * A network failure's message ALONE is unactionable: undici raises
+ * `TypeError: fetch failed` for DNS misses, refused connections and TLS
+ * rejections alike, and the fact that tells them apart (`ENOTFOUND`,
+ * `ECONNREFUSED`, `UNABLE_TO_VERIFY_LEAF_SIGNATURE`, ...) sits on `err.cause`.
+ * The cause IS attached to the thrown APIConnectionError, but every surface
+ * that renders `error.message` (including this SDK's own
+ * normalizeProviderError) showed only the useless wrapper. Fold the first
+ * cause that carries a code/message into the text. Cycle-guarded and
+ * depth-bounded; never throws.
+ */
+export function describeNetworkFailure(err: unknown): string {
+  const head = errorMessage(err);
+  const seen = new Set<unknown>();
+  let cur: unknown = (err as { cause?: unknown } | null)?.cause;
+  for (let depth = 0; depth < 4 && cur !== undefined && cur !== null; depth += 1) {
+    if (seen.has(cur)) break;
+    seen.add(cur);
+    const code = (cur as { code?: unknown }).code;
+    const detail =
+      typeof code === 'string' && code.length > 0 ? code : errorMessage(cur);
+    if (detail.length > 0 && detail !== head) return `${head} (${detail})`;
+    cur = (cur as { cause?: unknown }).cause;
+  }
+  return head;
+}
+
 /** Abortable sleep; rejects with AbortError when the signal fires. */
 export function sleep(ms: number, signal: AbortSignal | undefined): Promise<void> {
   return new Promise<void>((resolve, reject) => {
@@ -286,7 +313,17 @@ export async function requestWithRetries(req: RetryableRequest): Promise<Accepte
         await backoff(retryBudget.used, undefined, callerSignal, debug, debugPrefix);
         continue;
       }
-      throw new APIConnectionError(`Failed to reach ${endpoint}: ${errorMessage(err)}`, err);
+      // The per-attempt timeout aborts with a DOMException whose message
+      // ("This operation was aborted") reads like a CALLER cancellation and
+      // names neither the budget that expired nor the knob that sets it — the
+      // reader cannot tell "raise provider.timeoutMs" from "my code aborted".
+      // (A genuine caller abort already returned above.)
+      throw new APIConnectionError(
+        timeoutSignal.aborted
+          ? `Failed to reach ${endpoint}: request timed out after ${timeoutMs}ms (provider.timeoutMs)`
+          : `Failed to reach ${endpoint}: ${describeNetworkFailure(err)}`,
+        err,
+      );
     }
 
     if (response.ok) {
