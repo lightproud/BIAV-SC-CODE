@@ -41,6 +41,11 @@ export type DayAggregate = {
   /** Lines readWindow rejected as wrong-shape (N5: a half-corrupt ledger must
    *  not silently read as a traffic drop — REQ-1.1 "absence is a fact"). */
   badLines: number;
+  /** Ledger files (or the ledger dir) that EXIST but could not be read —
+   *  EACCES / EMFILE / ELOOP / EISDIR, anything but ENOENT. Sibling of
+   *  badLines: without it an fs fault on one side reads as a genuine traffic
+   *  collapse and the delta table reports a fabricated improvement. */
+  readErrors: number;
 };
 
 export type MetricDelta = {
@@ -87,7 +92,7 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
   // consumers are guarded at the shared readWindow choke point — its
   // isRunLogRecord() validator diverts wrong-shape lines into the bad-line
   // counter, so every record that reaches this loop is safe to dereference.
-  const { records, badLines } = await readWindow(logDir, from, to);
+  const { records, badLines, readErrors } = await readWindow(logDir, from, to);
 
   const named = records.filter((r) => r.incognito !== true);
   const sessions = new Set(named.map((r) => r.session_id));
@@ -178,6 +183,7 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
     // data, violating the explicit-null contract every sibling metric obeys.
     failures: records.length > 0 ? named.filter((r) => r.is_error).length : null,
     badLines,
+    readErrors,
   };
 }
 
@@ -230,8 +236,8 @@ export async function compareReports(
   const lines: string[] = [
     `# compareReports — ${dateA} → ${dateB}`,
     '',
-    `- A: ${dateA} — ${a.records} records (${a.sessions} sessions${a.records === 0 ? ', 无数据' : ''}${a.badLines > 0 ? `, ${a.badLines} 坏行被剔` : ''})`,
-    `- B: ${dateB} — ${b.records} records (${b.sessions} sessions${b.records === 0 ? ', 无数据' : ''}${b.badLines > 0 ? `, ${b.badLines} 坏行被剔` : ''})`,
+    `- A: ${dateA} — ${a.records} records (${a.sessions} sessions${a.records === 0 ? ', 无数据' : ''}${a.badLines > 0 ? `, ${a.badLines} 坏行被剔` : ''}${a.readErrors > 0 ? `, ${a.readErrors} 个日志文件不可读——本侧数字不完整` : ''})`,
+    `- B: ${dateB} — ${b.records} records (${b.sessions} sessions${b.records === 0 ? ', 无数据' : ''}${b.badLines > 0 ? `, ${b.badLines} 坏行被剔` : ''}${b.readErrors > 0 ? `, ${b.readErrors} 个日志文件不可读——本侧数字不完整` : ''})`,
     '',
     '| metric | A | B | delta (B-A) |',
     '|---|---|---|---|',

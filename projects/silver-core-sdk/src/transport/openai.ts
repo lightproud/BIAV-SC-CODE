@@ -825,16 +825,25 @@ export class OpenAIStreamTranslator {
     // → contentSeen never flipped → the empty-finish guard wrongly rejected the
     // whole turn as empty_message. Flatten an array of text-ish parts to a
     // joined string first.
+    // Null-tolerant on the ELEMENTS, not just on the container — the twin of
+    // the per-element `tc === null` guard in the tool_calls loop below. A
+    // gateway that leaves a null (or undefined) hole in the parts array — the
+    // same shape that already forced `choices: [null]` / `delta: null`
+    // tolerance — made `(p as { text }).text` throw
+    // `TypeError: Cannot read properties of null (reading 'text')` straight out
+    // of feed(). That TypeError is raised INSIDE streamRequest's try, so the
+    // whole turn was discarded as a mid-stream truncation over one null hole,
+    // which is exactly the loss WV2-3 was written to prevent.
     const flattenContent = (v: unknown): unknown => {
       if (!Array.isArray(v)) return v;
       const text = v
-        .map((p) =>
-          typeof p === 'string'
-            ? p
-            : typeof (p as { text?: unknown }).text === 'string'
-              ? (p as { text: string }).text
-              : '',
-        )
+        .map((p) => {
+          if (typeof p === 'string') return p;
+          if (p === null || p === undefined) return '';
+          return typeof (p as { text?: unknown }).text === 'string'
+            ? (p as { text: string }).text
+            : '';
+        })
         .join('');
       return text;
     };

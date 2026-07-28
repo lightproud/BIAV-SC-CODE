@@ -152,6 +152,57 @@ function safeStringify(obj: Record<string, unknown>): string {
   }
 }
 
+/**
+ * Read a FOREIGN error's `.message` without trusting it to be a string — or to
+ * be readable at all (audit wave 16 X9). Branches 5/6 already survive both
+ * shapes (they go through safeStringify / summarizeObject), but the plain-Error
+ * branch fed `err.message` straight into `boundMessage`, whose first act is
+ * `text.trim()`. A gateway/HTTP wrapper that assigns the parsed error BODY to
+ * `.message` (an axios-style wrapper that overwrites `.message` with the parsed
+ * `{ code, detail }` body) therefore blew up with `TypeError: text.trim is not
+ * a function` STRAIGHT OUT of the one function documented "Never throws" — and
+ * out of the engine's error chain, which is the exact穿透 this module exists to
+ * close. A `.message` getter that throws (a Proxy / lazily-materialized error)
+ * is the same class. Never throws.
+ */
+function safeErrorText(err: Error): string {
+  let raw: unknown;
+  try {
+    raw = err.message;
+  } catch {
+    raw = undefined;
+  }
+  if (typeof raw === 'string' && raw.length > 0) return raw;
+  if (raw !== undefined && raw !== null) {
+    if (typeof raw === 'object') return safeStringify(raw as Record<string, unknown>);
+    try {
+      return String(raw);
+    } catch {
+      /* a Symbol / throwing valueOf — fall through to the class fallback */
+    }
+  }
+  try {
+    // Error.prototype.toString reads `.message` again, so this needs the same
+    // guard as the direct read above.
+    const s = String(err);
+    return typeof s === 'string' && s.length > 0 ? s : 'Unknown provider error';
+  } catch {
+    return 'Unknown provider error';
+  }
+}
+
+/** A foreign error's `.name`, guarded the same way as safeErrorText: `name` is
+ *  read on EVERY foreign error (the AbortError discriminator and the reported
+ *  `name` field), so a throwing/non-string name must not escape either. */
+function safeErrorName(err: Error): string {
+  try {
+    const n = (err as { name?: unknown }).name;
+    return typeof n === 'string' && n.length > 0 ? n : 'Error';
+  } catch {
+    return 'Error';
+  }
+}
+
 /** Request-id under any of the accepted spellings, top-level or nested. */
 function pickRequestId(obj: Record<string, unknown>): string | undefined {
   const keys = ['request_id', 'requestId', 'x-request-id', 'X-Request-Id'];
@@ -306,6 +357,10 @@ interface NestedErrorSignal {
   status?: number;
   code?: string;
   requestId?: string;
+  /** Server-requested wait carried by a buried APIStatusError (Retry-After).
+   *  Dropping it made a WRAPPED 429 retry instantly while the same error
+   *  thrown bare honored the wait (audit wave 16 X9). */
+  retryAfterMs?: number;
   retryable: boolean;
   phase?: NormalizedProviderError['phase'];
 }
@@ -338,6 +393,7 @@ function signalFromNested(root: unknown): NestedErrorSignal | null {
         status: value.status,
         code: value.providerErrorCode ?? value.errorType,
         requestId: value.requestId,
+        ...(value.retryAfterMs !== undefined ? { retryAfterMs: value.retryAfterMs } : {}),
         retryable: isRetryableHttpStatus(value.status),
         phase: 'response',
       };
@@ -447,10 +503,12 @@ export function normalizeProviderError(
   }
 
   // 3) Abort — a caller cancellation, not an upstream fault; never retryable.
-  if (err instanceof AbortError || (err instanceof Error && err.name === 'AbortError')) {
+  if (err instanceof AbortError || (err instanceof Error && safeErrorName(err) === 'AbortError')) {
     return base({
       name: 'AbortError',
-      message: boundMessage(err instanceof Error ? err.message : 'The operation was aborted'),
+      message: boundMessage(
+        err instanceof Error ? safeErrorText(err) : 'The operation was aborted',
+      ),
       retryable: false,
       phase: 'request',
       rawType: 'aborted',
@@ -484,23 +542,41 @@ export function normalizeProviderError(
     // adopt the most informative buried cause / AggregateError member so a
     // `fetch failed`(cause:ECONNREFUSED) stays retryable and an
     // AggregateError([429]) is not mis-reported as terminal.
+    let retryAfterMs: number | undefined;
     if (status === undefined && !retryable) {
-      const nested = signalFromNested(err);
+      // Guarded like every other traversal of a FOREIGN object here: the walk
+      // reads `.code` / `.errors` / `.cause` off arbitrary values, any of which
+      // can be a throwing getter, and this function never throws.
+      let nested: NestedErrorSignal | null = null;
+      try {
+        nested = signalFromNested(err);
+      } catch {
+        nested = null;
+      }
       if (nested !== null) {
         status = nested.status ?? status;
         code = code ?? nested.code;
         requestId = requestId ?? nested.requestId;
         retryable = nested.retryable;
         phase = phase ?? nested.phase;
+        // audit wave 16 X9: the buried status error's Retry-After must ride
+        // along too. Harvesting status/code/requestId but dropping
+        // retryAfterMs made a WRAPPED 429 (a generic wrapper carrying the 429
+        // on `.cause`, or `AggregateError([<429 retry-after 30s>])`)
+        // report retryable:true with NO server-requested wait, so a host that
+        // honors retryAfterMs re-issued immediately into the same rate limit
+        // — while the identical error thrown UNWRAPPED waits the full 30s.
+        retryAfterMs = nested.retryAfterMs;
       }
     }
     return base({
-      name: err.name || 'Error',
-      message: boundMessage(err.message || String(err)),
+      name: safeErrorName(err),
+      message: boundMessage(safeErrorText(err)),
       status,
       code,
       requestId,
       retryable,
+      ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
       ...(phase !== undefined ? { phase } : {}),
       rawType: sdkCode,
     });

@@ -237,6 +237,31 @@ export class HttpMcpConnection {
     }
     if (signal?.aborted) throw new AbortError();
 
+    // A session re-initialize is IN FLIGHT (a sibling request hit the expiry
+    // 404 and is re-handshaking). reinitializeSession nulls this.sessionId for
+    // the duration, so a request issued inside that window goes out with NO
+    // session id at all — and the 404 it earns back cannot be recovered,
+    // because the recovery gate below requires `sentSessionId !== undefined`.
+    // The request is simply LOST (surfaced as a raw HTTP 404, i.e. an isError
+    // tool result), even though the connection healed a millisecond later.
+    // Wait for the handshake and ride the fresh session instead. Only real
+    // REQUESTS wait: the handshake's own messages would deadlock on their own
+    // promise, and a fire-and-forget reply carries a JSON-RPC id that is
+    // meaningless outside the session that issued the matching request (the
+    // same reasoning that keeps them out of the replay gate below). A failed
+    // handshake is not fatal here — fall through and let this request surface
+    // its own error.
+    if (expectId !== null && payload.method !== 'initialize') {
+      const reinit = this.reinitPromise;
+      if (reinit !== undefined) {
+        await reinit.catch(() => undefined);
+        if (this.closeController.signal.aborted) {
+          throw new AbortError(`MCP HTTP connection '${this.label}' closed`);
+        }
+        if (signal?.aborted) throw new AbortError();
+      }
+    }
+
     // Single controller drives fetch + body read; we track why it fired so
     // caller aborts surface as AbortError and timeouts as plain errors.
     const controller = new AbortController();

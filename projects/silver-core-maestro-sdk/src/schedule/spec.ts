@@ -86,12 +86,22 @@ export function nextFireAt(spec: ScheduleSpec, after: number): number {
   if (spec.dailyAt !== undefined) {
     const { hour, minute } = spec.dailyAt;
     const d = new Date(after);
-    const sameDay = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), hour, minute);
-    // Date.UTC normalizes day overflow, so month/year rollover is exact.
-    const fire =
-      sameDay > after
-        ? sameDay
-        : Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1, hour, minute);
+    // Day overflow is normalized (so month/year rollover is exact), but the
+    // year is set through setUTCFullYear rather than Date.UTC: Date.UTC remaps
+    // years 0-99 to 1900+year, while getUTCFullYear reports the TRUE year, so
+    // the round trip for a first-century `after` landed 1900 years late (and
+    // on the wrong day, year 0 being a leap year where 1900 is not) — a fire
+    // point smaller than the whole window, which made firesBetween return []
+    // for a window that provably holds fire points. Identical to Date.UTC for
+    // every year outside 0-99 (verified exhaustively), NaN out of range.
+    const at = (dayOfMonth: number): number => {
+      const t = new Date(0);
+      t.setUTCFullYear(d.getUTCFullYear(), d.getUTCMonth(), dayOfMonth);
+      t.setUTCHours(hour, minute, 0, 0);
+      return t.getTime();
+    };
+    const sameDay = at(d.getUTCDate());
+    const fire = sameDay > after ? sameDay : at(d.getUTCDate() + 1);
     // Beyond the JS Date range (|after| > 8.64e15) the calendar math above is
     // NaN; NaN would silently poison every downstream comparison, so refuse.
     if (!Number.isFinite(fire)) {

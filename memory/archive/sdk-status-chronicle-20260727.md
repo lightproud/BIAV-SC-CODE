@@ -692,3 +692,17 @@
 - **v0.82.0（2026-07-27）**：**Read 通读 >256KB 改为拒绝 + 首次对官方二进制做偏离普查**（守密人问「还能查到有哪些我们与官方不一致」）——第一次拿**官方发行物本体**（npm 平台包 + `sdk-tools.d.ts`）而非第三方重建档做四轴对照。**工具集**：官方 18 个工具银芯没有（多为绑定 Anthropic 云侧服务）。**输入 schema**：Bash/Read/Write/Edit/Glob/**Grep 15 字段**/WebFetch/WebSearch/Task 五件/Workflow/两个 PlanMode/EnterWorktree **全部一致**；真差异仅 `AskUserQuestion` 缺三个**回程字段**（守密人裁「只登记不改」——它们服务官方权限组件 UI，本 SDK 无那套组件）。**数值**：Read 25000 token / Bash 30000·150000 / **Glob 100** / Grep 250 均一致，唯一缺口 = 官方 `maxSizeBytes`=262144 拒通读，银芯此前只有 50MB OOM 守卫（松 200 倍）——**已按守密人裁定补上**，只拦通读、带 offset/limit 放行。**两条经复核是假象、如实记档**（`EnterPlanModeInput` 官方就是 `{}`；Grep 短横线键与 `TaskListInput` 亦一致）。未扫轴照实标注：官方 `*Output` 37 个 / 主循环提示词 / 权限钩子层 / MCP 协议层 / WebFetch 的 100000。
 - **v0.88.0（2026-07-27）**：处方卡型（A1）+ sessions 体检面（P1-S1）——cards 模式增处方卡（意图/步骤/结果/适用边界，按字段集判型、混用按名拒绝；进度卡映射处方型，解 P1-3）；`assessSessionStoreHealth()` 照 memory 体检成例补 sessions 域「机制无规程」缺口（会话数/字节/腐化/孤儿 checkpoint，外部店报 unavailable）；blob 上限挂 T74 待裁。审计报告补 sessions 节。
 - **v0.85.0（2026-07-27）**：**GoalVerdict 家族统一（本包零行为改动）**——本包 `{status, reason?}` 判词升格家族**正典**，maestro 0.85.0 将 GoalChaser 评审判词迁为同形，一个宿主评审器同时服务引擎 `options.goal` Stop 门与跨 query 追逐两缝。留档背景：两形并存期产出真实消费者陷阱——maestro 形判词喂进 `options.goal` 被引擎判 malformed、fail-open 放行停止（防评审器坏死锁死代理的既定失败方向），症状即 BPT 2026-07-27 所报「接了 goal 模型照样停」。`options.goal` 语义与评审器契约未动，仅 `GoalVerdict` 注释补正典地位声明。
+
+## 2026-07-28 迁入（审计十五/十六波扩写腾行）
+
+> 状态档有 520 行硬上限（`tests/test_claude_md_size.py`），审计波次的叙述条目逐波增长。
+> 按「不抬上限、把历史挪进归档层」的既定处置，以下条目逐字迁入，一字未改。
+
+### Silver Core SDK
+
+- **v0.77.0（2026-07-26，Windows 正确性清扫——家族史上首次非 Linux CI 实跑 + 守密人现场反馈
+
+### Silver Core Maestro SDK
+
+- **v0.94.0（2026-07-28）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 0.94.0（BREAKING：包内模型兜底默认值全数移除，缺 model 即抛错）前进。
+

@@ -38,10 +38,20 @@ jobs:
           ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
           # Sparse: the doc-links inspector reads only README/RELEASES/SDK
           # trees; the multi-GB archive layers stay out.
+          #
+          # heartbeat/ is re-included deliberately: the CI-status inspector
+          # derives its watch roster from Record/heartbeat/status.json, and
+          # with the whole of Record/ excluded that read failed in every
+          # unattended round. The roster silently collapsed to the two
+          # hand-written entries and the patrol reported "ok, 2 watched,
+          # 2 green" — 25 of 27 workflows, including ones it had itself
+          # reported red the day before, went unwatched while the report
+          # looked clean. It is a single small json file.
           sparse-checkout: |
             /*
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
+            /Public-Info-Pool/Record/heartbeat/
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v6
         with:

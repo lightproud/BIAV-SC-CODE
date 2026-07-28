@@ -495,7 +495,23 @@ function tryParseArray(raw: string): string[] | null {
         }
       }
     }
-    if (end < 0) return null; // never balanced: no later top-level candidate
+    // A candidate that ran off the END of the text (never balanced) needs the
+    // same distinction extractJsonObject already makes (audit r4 Z3-1); this
+    // parser stopped dead instead (audit wave 16 X9):
+    //   - a genuine TRUNCATED array opening (first non-space char is a '"'
+    //     element or ']') swallows every later '[' as nested, so stop;
+    //   - a STRAY '[' in prose ("pick from options[0 onwards: [\"db.md\"]")
+    //     can still be followed by the real array — keep scanning. Returning
+    //     null there did NOT fail safe: the newline/comma fallback splitter
+    //     then re-parsed the prose and silently kept only the LAST filename,
+    //     handing the caller a plausible-looking selection missing files the
+    //     model actually chose.
+    if (end < 0) {
+      const rest = trimmed.slice(start + 1).replace(/^\s+/, '');
+      if (rest.startsWith('"') || rest.startsWith(']')) return null;
+      start = trimmed.indexOf('[', start + 1);
+      continue;
+    }
     try {
       const arr = JSON.parse(trimmed.slice(start, end + 1)) as unknown;
       if (Array.isArray(arr)) {

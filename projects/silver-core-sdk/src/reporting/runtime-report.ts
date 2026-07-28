@@ -139,19 +139,38 @@ function isRunLogRecord(x: unknown): x is RunLogRecord {
   return true;
 }
 
+/** True for the one fs failure that genuinely means "there is nothing here":
+ *  the file/directory does not exist. Every OTHER errno (EACCES, EMFILE,
+ *  ELOOP, EISDIR, EIO, ENOTDIR, …) means the data EXISTS but could not be
+ *  read — a fault, not an absence. */
+function isMissing(err: unknown): boolean {
+  return (err as NodeJS.ErrnoException | null)?.code === 'ENOENT';
+}
+
 /** Parse every ledger line in the window (bad lines are counted, not fatal).
  *  Internal contract shared with compare-reports.ts — not part of the
- *  public package surface. */
+ *  public package surface.
+ *
+ *  `readErrors` counts ledger files (or the ledger directory itself) that
+ *  EXIST but could not be read. Swallowing those into "no records" made an
+ *  fs fault indistinguishable from a genuinely empty ledger: an EACCES /
+ *  EMFILE / ELOOP on a day file holding 500 records rendered a report that
+ *  asserted 无数据 for every section — REQ-1.1's "absence is a fact, no
+ *  silent omissions" read backwards. Renderers disclose the count; only a
+ *  真·ENOENT (the file vanished between readdir and read — the concurrent
+ *  pruneDayFiles case audit 2026-07-17 L42 covers, or no ledger yet) stays
+ *  silent, because there really is nothing to report. */
 export async function readWindow(
   logDir: string,
   from: Date,
   to: Date,
-): Promise<{ records: RunLogRecord[]; badLines: number }> {
+): Promise<{ records: RunLogRecord[]; badLines: number; readErrors: number }> {
   let names: string[] = [];
+  let readErrors = 0;
   try {
     names = (await readdir(logDir)).filter((n) => /^runlog-\d{4}-\d{2}-\d{2}\.jsonl$/.test(n));
-  } catch {
-    return { records: [], badLines: 0 };
+  } catch (err) {
+    return { records: [], badLines: 0, readErrors: isMissing(err) ? 0 : 1 };
   }
   // Day files: only days intersecting the window need reading.
   const fromDay = from.toISOString().slice(0, 10);
@@ -163,11 +182,14 @@ export async function readWindow(
     if (day < fromDay || day > toDay) continue;
     // A day file can vanish between readdir and this read (concurrent
     // pruneDayFiles / external cleanup); observability reads never throw
-    // (audit 2026-07-17 L42) — skip the missing file.
+    // (audit 2026-07-17 L42) — skip the missing file. Any OTHER fs failure
+    // is a fault over data that IS there: count it so the report discloses
+    // it instead of silently reporting a quiet day.
     let text: string;
     try {
       text = await readFile(join(logDir, name), 'utf8');
-    } catch {
+    } catch (err) {
+      if (!isMissing(err)) readErrors += 1;
       continue;
     }
     for (const line of text.split('\n')) {
@@ -195,7 +217,7 @@ export async function readWindow(
       }
     }
   }
-  return { records, badLines };
+  return { records, badLines, readErrors };
 }
 
 /** Delete day-stamped files older than the retention window (best-effort). */
@@ -249,7 +271,7 @@ export async function generateRuntimeReport(
   const windowMs = windowHours * 3_600_000;
   const from = new Date(now.getTime() - windowMs);
   const topN = options.topN ?? 5;
-  const { records, badLines } = await readWindow(options.logDir, from, now);
+  const { records, badLines, readErrors } = await readWindow(options.logDir, from, now);
 
   const named = records.filter((r) => r.incognito !== true);
   const sessions = new Set(named.map((r) => r.session_id));
@@ -353,7 +375,10 @@ export async function generateRuntimeReport(
     `# Runtime report — ${date}`,
     '',
     `- window: ${from.toISOString()} → ${now.toISOString()} (${windowHours}h)`,
-    `- records: ${records.length} (${sessions.size} sessions, ${records.length - named.length} incognito${badLines > 0 ? `, ${badLines} unparseable lines skipped` : ''})`,
+    // An UNREADABLE ledger file is disclosed separately from a bad line: it
+    // means the window's numbers below are incomplete by an unknown amount,
+    // so the report must never be read as "a quiet day".
+    `- records: ${records.length} (${sessions.size} sessions, ${records.length - named.length} incognito${badLines > 0 ? `, ${badLines} unparseable lines skipped` : ''}${readErrors > 0 ? `, ${readErrors} ledger file(s) UNREADABLE — figures below are incomplete` : ''})`,
     '',
     '## 1. 传输健康 (transportHealth)',
   ];

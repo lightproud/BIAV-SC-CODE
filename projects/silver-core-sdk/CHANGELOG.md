@@ -16,6 +16,136 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.3.0 — 2026-07-28
+
+Audit waves 15 and 16 — the permission/hook interaction surface, the protocol
+edges (MCP stdio and streamable HTTP), turn lifecycle, and a fault-injection
+pass over the degraded-mode machinery.
+
+Security and permission correctness:
+
+- `Read(*.env)` — and the same shape on `Write`/`Edit`/`NotebookEdit` — was
+  **inert**. With no literal prefix the spec compiled to `^[^/]*\.env$` while
+  values always resolve absolute, so a single `*` never crossed a `/` and the
+  rule matched no input in any directory. Hosts believed `.env` reads were
+  denied; every one was allowed. Deny/ask position now re-tests a
+  separator-less leading-wildcard spec against the resolved basename,
+  gitignore-style; allow position is byte-identical.
+- Deny rules failed open on a wrapper option whose value is a separate token:
+  `Bash(rm:*)` did not deny `sudo -u root rm -rf /`, `timeout -s KILL 5 rm …`,
+  `env -u FOO rm …` or `xargs -I {} rm …`. The unwrap peeled the flag, landed
+  on the flag's value, and stopped one token short of the command.
+- A throwing host `classifier` in `auto` mode escaped `check()` entirely — past
+  the gate and past dispatch — killing the run with no decision and no recorded
+  denial, while the sibling `canUseTool` seam fails closed on the same failure.
+  A throw is now a recorded deny at stage `auto classifier`.
+- Subagents did not inherit **session** permission rules. A gate is built from
+  the construction-time option arrays, so rules a host added mid-session via
+  `canUseTool` -> `updatedPermissions` were honored on the main loop and
+  silently ignored by every subagent spawned afterwards — the child executed
+  exactly what the host had just forbidden. The permission mode was already
+  read live at spawn, which is what hid the gap. New `exportSessionRules()` on
+  the gate; the subagent runtime replays it onto every child.
+
+Liveness and protocol:
+
+- The hook runner's `condition` gate ran a blocking model evaluation bounded by
+  nothing but the caller's abort signal, so a provider that accepts and never
+  streams hung every gated tool call forever despite the matcher declaring a
+  `timeout`. The evaluation now gets the same per-matcher budget.
+- `mcp/stdio.ts` registered an `'error'` listener on the child's stdin but not
+  on stdout/stderr. An `'error'` with no listener is re-thrown as an uncaught
+  exception, so one MCP server's abrupt pipe teardown killed the whole agent
+  host — every other server, the in-flight turn, and the session.
+- `mcp/http.ts` lost an in-flight request across session recovery: while
+  `reinitializeSession()` had nulled the session id, a concurrently issued
+  request POSTed with no `Mcp-Session-Id`, earned a 404, and was refused by the
+  recovery gate. Real requests now await the in-flight re-handshake.
+- `transport/openai.ts` guarded the array-form delta container but not its
+  elements, so a single `null` member threw out of `feed()` and the whole
+  turn was discarded as a mid-stream truncation — the exact loss the
+  array-form support exists to prevent.
+- The streaming accumulator's guard covered `stop_reason` but not the `delta`
+  container, so a usage-only `message_delta` threw a bare `TypeError` — not an
+  `APIConnectionError`, so no salvage and no replay. A frame carrying only a
+  token count killed the turn.
+- An unmodeled MCP content part was dropped with no trace; a single-part result
+  then collapsed to `''`, leaving the model an empty tool_result
+  indistinguishable from a no-op.
+
+Turn lifecycle:
+
+- `fallbackModel` was inert for every tool loop: the mid-loop withhold keyed on
+  the signing model, which is never the fallback, so with thinking off a 429 on
+  turn 2 surfaced as a terminal error with the fallback never attempted.
+- A same-model session stripped its own thinking every turn — the stamp used
+  the response model while the comparison uses the request model, and those
+  differ for every Bedrock/Vertex id and every alias resolved to a dated
+  snapshot. Every closed turn's thinking was dropped from every later request.
+- A transient PreCompact deny permanently consumed the memory-flush
+  opportunity: the latch was set before the veto check, so the next fold
+  summarized the context away with zero flush turns offered.
+- Masked concurrent-group members lost their `permission_denied` messages while
+  their denials still rode the result, so the stream and the result disagreed
+  on the denial count.
+
+Degraded modes (fault injection):
+
+- `error-normalize` — the module the engine relies on never to throw — threw.
+  An error whose `.message` had been overwritten with a parsed body object, or
+  whose `.message`/`.name` getter throws, died on `text.trim()`, so the raw
+  failure reached the host with no provider, retryability or request id.
+- A wrapped 429 lost its `Retry-After`: `retryAfterMs` was not harvested from a
+  buried `APIStatusError`, so a host honoring the field re-issued immediately
+  into the same rate limit purely because of the wrapper.
+- An unreadable runtime-report ledger read as a quiet day. Every fs error was
+  swallowed, so an EACCES/EMFILE day rendered byte-identical to a genuinely
+  empty one and the comparison view reported a fabricated traffic collapse.
+  Only ENOENT stays silent now; other errnos are counted and disclosed
+  (additive `readErrors` field on the exported `DayAggregate`).
+- Memory-file selection silently lost files: a stray `[` in prose made the
+  array parse bail, yielding a plausible non-empty selection missing a file the
+  model actually chose.
+- The tip selector `JSON.stringify`d host-supplied `sessionMetadata` unguarded,
+  so a circular reference or a BigInt in that open bag killed the turn instead
+  of degrading to "no tip".
+
+Maestro:
+
+- `LedgerDriver` dereferenced the host executor's result outside its try/catch,
+  so an executor with a missing `return` produced an unhandled rejection and
+  stranded the session in `running`, against the documented "the driver never
+  crashes on executor failure".
+- `GoalChaser` never validated the verdict shape its evaluator returns, while
+  the agent SDK validates the same unified shape — a pre-unification evaluator
+  reporting success on round 1 ran five real driver-executed rounds and settled
+  `exhausted`.
+- The workflow loader's fence scanner ignored backtick-run length, so a
+  three-backtick line inside a four-backtick block was read as closing it: a
+  documentation example could be loaded and dispatched **instead of** the real
+  graph, and the ordinary wrapped-example form was rejected outright. Now
+  follows CommonMark's rule.
+- A UTF-8 BOM routed a graph to the JSON path (`trimStart` removes it) but
+  `JSON.parse` then received the untrimmed text, so a valid graph saved by
+  Notepad or PowerShell was silently skipped.
+- `nextFireAt`'s `dailyAt` branch corrupted the fire point for first-century
+  timestamps: `Date.UTC` remaps years 0–99 to 1900+year while
+  `getUTCFullYear()` reports the true year, so the round trip landed ~1900
+  years away and due fires were silently lost. Rebuilt without the remap,
+  proven bit-identical to `Date.UTC` over 700,000 tuples outside that window.
+- `runMemoryStoreContractSuite` reported `(e as Error).message`, so a store
+  rejecting with a non-Error yielded `error: undefined` in the very failure
+  report the docs tell hosts to print.
+
+Documentation ledger corrections (no code change): the breaking `GoalVerdict`
+unification was filed under 0.85.0 while the version it actually shipped in,
+0.83.0, was labelled "no changes to this package" — inverting the substantive
+-version list consumers use to decide whether to re-pin. The agent side carried
+the mirror-image swap. Both bodies restored to what git says shipped; three
+no-op entries rewritten in the machine-readable wording, and the wording guard
+taught the phrasing this repo actually uses. The 0.3x migration guide's claim
+that maestro declares a `peerDependencies` backstop was removed in 0.78.1.
+
 ## 1.2.0 — 2026-07-28
 
 Audit wave 14 — two new cross-cutting lenses (idempotency, resource limits)
@@ -734,65 +864,6 @@ re-read, and other nested fields may remain unswept.
 
 ## 0.85.0 — 2026-07-27
 
-Family verdict-type unification (keeper ruling 2026-07-27): this package's
-`GoalVerdict` `{status, reason?}` is now the ONE verdict shape family-wide —
-silver-core-maestro-sdk 0.85.0 migrated its `GoalChaser` evaluator verdict
-(previously `{achieved, feedback, impossible?}`) to it, so a single host
-evaluator serves both the engine's `options.goal` Stop gate and the maestro
-cross-query chase. No behavior change in this package; `options.goal` and its
-evaluator contract are untouched. The `GoalVerdict` doc comment in
-`src/types/subsystems.ts` now records the canonical-shape status (shape
-changes require a family-wide ruling). Context worth keeping: the two-shape
-era produced a live consumer trap — a maestro-shaped verdict fed to
-`options.goal` is judged malformed and the Stop gate's deliberate fail-open
-direction allows every stop, so the goal silently never bites (BPT symptom
-report 2026-07-27, "接了 goal 模型照样停").
-
-## 0.84.0 — 2026-07-27
-
-Memory index discipline + a consolidation protocol. Diagnosis behind it (keeper
-field report from BPT in production): sessions were burning several `memory`
-tool round-trips at startup just to find anything, on a store whose record count
-kept climbing. Root cause was not retrieval — it was that the SDK shipped the
-resident-index MECHANISM (R6 loads the head of `/memories/MEMORY.md` into every
-session) without ever saying what an index ENTRY should be, while
-`MEMORY_SESSION_END_PROMPT` actively told the model to write the progress card
-INTO that same file. Run once per session, that grows the index past its own
-injection cap until the head that does get loaded is old progress prose instead
-of routing, and the tail is silently dropped on every load.
-
-- **Session-end round writes the card to a FILE** (`/memories/progress/`),
-  updating the task's existing card, and puts only a one-line pointer in the
-  index. The compaction-flush prompt says the same. Same information, one
-  indirection later.
-- **`MEMORY_INDEX_DISCIPLINE_FRAGMENT`** (sdk-original, both assembly modes,
-  not opt-in — the mechanism it completes is not opt-in): one line per entry,
-  ~150 chars, never memory content in the index. Skipped when its own premise
-  fails — incognito (S2: the index cannot be written at all) or
-  `indexInjection: false` (nothing is loaded or truncated, so the fragment's
-  claim would be false).
-- **Write-side index back-pressure**: a successful write that leaves
-  `/memories/MEMORY.md` over the R6 caps gets a warning appended to its result
-  — stating the tail is ALREADY invisible, not that it may become so. Read and
-  write sides now judge by ONE shared measurement (`index-capacity.ts`), since a
-  warning on a different threshold than the truncation would be worse than none.
-  The harness read-back is not booked into the R8 read counters, and a failing
-  read-back never turns a successful write into an error.
-- **`buildConsolidationPrompt(assessment, options?)` + `MEMORY_CONSOLIDATION_PROTOCOL`**:
-  the HOW of tidying, rendered from an `assessMemoryStoreHealth()` scan into a
-  four-phase round (orient / gather / merge / **prune the index**) with a task
-  list derived from what the scan found — and explicit about what it could not
-  see (a backend without mtimes gets a stated blind spot, a bounded scan gets a
-  LOWER-bound note). Layer boundary held: this adds no process and no scheduler
-  (spec N1). It returns a STRING the consumer passes to its own `query()`, on
-  its own machine, on its own clock. **Security**: a consolidation round is a
-  broad cross-file write pass — on a multi-tenant store it must run under S1
-  mounts for the scope being tidied, exactly like an interactive session.
-
-New tests: 25 (`tests/memory-consolidation.test.ts`) + 3 wiring cases.
-
-## 0.83.0 — 2026-07-27
-
 Tools now PRODUCE the structured results this package had been declaring all
 along, and consumers receive them as `toolUseResult` on the tool_result user
 message. From axes 1 and 4 of the divergence sweep (keeper rulings: build the
@@ -843,6 +914,65 @@ extensions — none implemented here. Advertising a revision whose semantics are
 unshipped is the same red line as describing an unshipped capability, and
 `2025-11-25` is kept out of the accept list for the same reason: failing at
 connect is more legible than failing later on a task method that does not exist.
+
+## 0.84.0 — 2026-07-27
+
+Memory index discipline + a consolidation protocol. Diagnosis behind it (keeper
+field report from BPT in production): sessions were burning several `memory`
+tool round-trips at startup just to find anything, on a store whose record count
+kept climbing. Root cause was not retrieval — it was that the SDK shipped the
+resident-index MECHANISM (R6 loads the head of `/memories/MEMORY.md` into every
+session) without ever saying what an index ENTRY should be, while
+`MEMORY_SESSION_END_PROMPT` actively told the model to write the progress card
+INTO that same file. Run once per session, that grows the index past its own
+injection cap until the head that does get loaded is old progress prose instead
+of routing, and the tail is silently dropped on every load.
+
+- **Session-end round writes the card to a FILE** (`/memories/progress/`),
+  updating the task's existing card, and puts only a one-line pointer in the
+  index. The compaction-flush prompt says the same. Same information, one
+  indirection later.
+- **`MEMORY_INDEX_DISCIPLINE_FRAGMENT`** (sdk-original, both assembly modes,
+  not opt-in — the mechanism it completes is not opt-in): one line per entry,
+  ~150 chars, never memory content in the index. Skipped when its own premise
+  fails — incognito (S2: the index cannot be written at all) or
+  `indexInjection: false` (nothing is loaded or truncated, so the fragment's
+  claim would be false).
+- **Write-side index back-pressure**: a successful write that leaves
+  `/memories/MEMORY.md` over the R6 caps gets a warning appended to its result
+  — stating the tail is ALREADY invisible, not that it may become so. Read and
+  write sides now judge by ONE shared measurement (`index-capacity.ts`), since a
+  warning on a different threshold than the truncation would be worse than none.
+  The harness read-back is not booked into the R8 read counters, and a failing
+  read-back never turns a successful write into an error.
+- **`buildConsolidationPrompt(assessment, options?)` + `MEMORY_CONSOLIDATION_PROTOCOL`**:
+  the HOW of tidying, rendered from an `assessMemoryStoreHealth()` scan into a
+  four-phase round (orient / gather / merge / **prune the index**) with a task
+  list derived from what the scan found — and explicit about what it could not
+  see (a backend without mtimes gets a stated blind spot, a bounded scan gets a
+  LOWER-bound note). Layer boundary held: this adds no process and no scheduler
+  (spec N1). It returns a STRING the consumer passes to its own `query()`, on
+  its own machine, on its own clock. **Security**: a consolidation round is a
+  broad cross-file write pass — on a multi-tenant store it must run under S1
+  mounts for the scope being tidied, exactly like an interactive session.
+
+New tests: 25 (`tests/memory-consolidation.test.ts`) + 3 wiring cases.
+
+## 0.83.0 — 2026-07-27
+
+Family verdict-type unification (keeper ruling 2026-07-27): this package's
+`GoalVerdict` `{status, reason?}` is now the ONE verdict shape family-wide —
+silver-core-maestro-sdk 0.83.0 migrated its `GoalChaser` evaluator verdict
+(previously `{achieved, feedback, impossible?}`) to it, so a single host
+evaluator serves both the engine's `options.goal` Stop gate and the maestro
+cross-query chase. No behavior change in this package; `options.goal` and its
+evaluator contract are untouched. The `GoalVerdict` doc comment in
+`src/types/subsystems.ts` now records the canonical-shape status (shape
+changes require a family-wide ruling). Context worth keeping: the two-shape
+era produced a live consumer trap — a maestro-shaped verdict fed to
+`options.goal` is judged malformed and the Stop gate's deliberate fail-open
+direction allows every stop, so the goal silently never bites (BPT symptom
+report 2026-07-27, "接了 goal 模型照样停").
 
 ## 0.82.0 — 2026-07-27
 

@@ -82,6 +82,40 @@ export async function selectContextTip(
   return parseContextTip(raw, input.eligibleIds, catalog);
 }
 
+/**
+ * Serialize session metadata for the selector prompt WITHOUT letting the host's
+ * own object shape break the turn (audit wave 16 X9). `TipSessionMetadata` is
+ * an open bag (`[key: string]: unknown`), so hosts hang real session objects on
+ * it — and a back-reference (`meta.session.metadata === meta`) or a BigInt
+ * counter makes JSON.stringify throw a bare TypeError straight out of
+ * selectContextTip, killing the host's turn over a subsystem whose documented
+ * contract is "fails SAFE to no tip". Drop the offending entries instead: the
+ * serializable metadata still reaches the model, and a wholly unserializable
+ * bag degrades to `{}` (no tip context) rather than an exception.
+ */
+function safeMetaJson(meta: TipSessionMetadata): string {
+  try {
+    const s = JSON.stringify(meta);
+    if (typeof s === 'string') return s;
+  } catch {
+    /* circular / BigInt / throwing toJSON — fall through to per-key salvage */
+  }
+  const salvaged: Record<string, unknown> = {};
+  for (const key of Object.keys(meta)) {
+    try {
+      const v = meta[key];
+      if (JSON.stringify(v) !== undefined) salvaged[key] = v;
+    } catch {
+      /* this one entry is not serializable; the rest still are */
+    }
+  }
+  try {
+    return JSON.stringify(salvaged);
+  } catch {
+    return '{}';
+  }
+}
+
 /** Assemble the selector user turn (transcript + eligibility + metadata). */
 export function buildSelectorUserTurn(input: SelectContextTipInput): string {
   const meta = input.sessionMetadata ?? {};
@@ -92,7 +126,7 @@ export function buildSelectorUserTurn(input: SelectContextTipInput): string {
   // prompt verbatim and impersonate structure. Defang every pseudo-XML tag by
   // escaping the brackets; JSON has no angle brackets in its grammar, so the
   // serialized shape the model reads stays intact.
-  const metaJson = JSON.stringify(meta).replace(/[<>]/g, (c) => (c === '<' ? '&lt;' : '&gt;'));
+  const metaJson = safeMetaJson(meta).replace(/[<>]/g, (c) => (c === '<' ? '&lt;' : '&gt;'));
   // N9 (audit 2026-07-17): the transcript is UNTRUSTED text sitting right
   // before the structured eligibility blocks — unfenced, it can forge its own
   // <eligible_ids> block and steer the selection. Fence it and neutralize the

@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.2.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.2.0`
+**当前版本 `1.3.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.3.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.3.0（2026-07-28）：审计第十五 + 十六波**——`Read(*.env)` 是一条**永不匹配**的空规则（无字面前缀编译成 `^[^/]*\.env$`，取值恒为绝对路径），宿主以为已封实则全放行；`Bash(rm:*)` 拦不住 `sudo -u root rm -rf /`（剥旗标后停在旗标的值上）；子代理不继承会话期 deny 规则，执行的正是宿主刚禁止的动作；`auto` 分类器抛出整个逃出 `check()`；钩子 condition 门的模型评估无超时可永久挂住工具调用；MCP stdio 的 stdout/stderr 无 error 监听，一个服务器管道被拆即杀掉整个宿主。
 
 **v1.2.0（2026-07-28）：审计第十四波**——有界错误体读取锁流后无人能再中止 fetch，503 重试每次留一个永不结算的读取钉住 socket，进程退不出去；`parent_agent_id` 从无写入方故永远为 null；子代理记录无 uuid 致每次读都换身份；另修幂等性与资源上限两镜头共 12 处。
 

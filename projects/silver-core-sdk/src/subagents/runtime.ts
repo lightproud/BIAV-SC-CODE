@@ -1282,6 +1282,26 @@ export function createSubagentRuntime(
         debug,
       });
 
+      // The gate above is built from the CONSTRUCTION-TIME option arrays, so
+      // without this it carried none of the rules the host added mid-session
+      // (canUseTool returning addRules/deny with destination:'session'). The
+      // parent loop honored such a denial and every subagent spawned after it
+      // did not — the child executed exactly what the host had just forbidden.
+      // The mode was already read live at spawn, which is what hid the gap:
+      // half of the session permission state reached children, half did not.
+      //
+      // Replayed for BOTH child kinds. A fork is the parent continued under
+      // another budget, and an isolated child is narrower by construction; in
+      // neither reading may a mid-session denial evaporate by spawning.
+      const inheritedSessionRules = parentGate.exportSessionRules();
+      if (inheritedSessionRules.length > 0) {
+        childGate.applyUpdates(inheritedSessionRules);
+        debug(
+          `subagent "${resolved.type}": inherited ${inheritedSessionRules.length} ` +
+            'session rule update(s) from the parent gate',
+        );
+      }
+
       // Per-call model override (Agent tool `model`, E7-02): beats
       // agentDef.model for an isolated child; a fork ALWAYS inherits the
       // parent model (the cached prefix must byte-match), so the override is
