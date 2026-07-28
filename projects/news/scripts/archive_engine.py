@@ -43,7 +43,6 @@ from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 import archive_layout  # 分仓桥接：社区数据根 SSOT（同目录）
-import news_common  # 原子写 JSON 单一真源（dump_json_atomic）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -273,14 +272,24 @@ def load_log(log_path: Path) -> list[dict]:
 
 
 def save_log(log_path: Path, log: list[dict]):
-    # 原子替换（news_common.dump_json_atomic 单一真源）：这份日志是「哪一桶已经
-    # 传上 Releases」的**唯一**记录。直写若在中途被杀就留下半截 JSON，而
+    # 原子替换（同目录临时文件 + os.replace，与 community_cold_compress /
+    # discord_reconcile 同一手法；本模块刻意只吃标准库——collect-fanart /
+    # recover-fanart 两个工作流不装 requirements，引 news_common 会当场 import 失败）。
+    # 这份日志是「哪一桶已经传上 Releases」的**唯一**记录。直写若在中途被杀就留下半截 JSON，而
     # load_log 对 JSONDecodeError 一律 `return []`——整份归档史当场归零：
     # 下一轮成功归档只写回本轮那几桶，rebuild_releases_index 据此重建的
     # releases-index.json 就把此前所有月桶条目一并抹掉（藏宝图上的坑全没了,
     # 而 Release 里的资产还在，只是没人再指得到），且 discord 归档器的
     # 「该月已归档 → 跳过重抓」守卫同时失效。
-    news_common.dump_json_atomic(log_path, log)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = log_path.with_name(log_path.name + '.tmp')
+    try:
+        with open(tmp, 'w', encoding='utf-8') as f:
+            json.dump(log, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, log_path)
+    except BaseException:
+        tmp.unlink(missing_ok=True)
+        raise
 
 
 def rebuild_releases_index(registry: dict):
