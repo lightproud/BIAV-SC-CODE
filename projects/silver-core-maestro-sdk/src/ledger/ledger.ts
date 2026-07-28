@@ -473,6 +473,16 @@ export class TaskLedger {
         "recordOutcome: outcome 'cancelled' is reserved for cancelSession()",
       );
     }
+    // Reject any other non-attempt outcome (JS host / JSON round-trip / any-cast
+    // can smuggle an off-vocabulary string). The general settle path rejects it
+    // via transition(), but the backfill-repair path would append it VERBATIM
+    // into the append-only audit row, corrupting the QueryOutcome contract for
+    // every downstream reader. Guard where it enters, same as 'cancelled'.
+    if (result.outcome !== 'ok' && result.outcome !== 'error' && result.outcome !== 'timeout') {
+      throw new RangeError(
+        `recordOutcome: outcome must be one of 'ok' | 'error' | 'timeout', got ${JSON.stringify(result.outcome)}`,
+      );
+    }
     for (const key of ['startedAt', 'endedAt'] as const) {
       // NaN/Infinity would be persisted verbatim into the append-only audit
       // row — and a JSON-backed store silently rewrites NaN to null,
