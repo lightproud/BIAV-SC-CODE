@@ -312,9 +312,22 @@ export function createMemoryTool(
               }
               viewed = filterAncestorListing(mounts!, path, viewed);
             }
-            // Tool-layer truncation (idempotent over the engine's own) so the
-            // R8 view cap holds for directly-implemented stores too.
-            const body = truncateViewBody(viewed, limits.maxViewChars);
+            // Tool-layer truncation so the R8 view cap holds for
+            // directly-implemented stores too. The engine caps the numbered
+            // BODY (not the header line) at maxViewChars; applying the cap to
+            // header+body here would re-cut engine output whose body already
+            // fits — dropping real trailing lines and stamping a FALSE
+            // pagination notice on a file the engine served whole (the header
+            // pushes header+body past the cap even when the body is under it).
+            // Cap the body only (everything after the first header line),
+            // matching the engine, so this is a true no-op over engine output
+            // while still bounding a direct store's body.
+            const headerEnd = viewed.indexOf('\n');
+            const body =
+              headerEnd < 0
+                ? truncateViewBody(viewed, limits.maxViewChars)
+                : viewed.slice(0, headerEnd + 1) +
+                  truncateViewBody(viewed.slice(headerEnd + 1), limits.maxViewChars);
             if (health !== undefined) {
               health.reads += 1;
               health.bytesRead += bytesOf(body);
