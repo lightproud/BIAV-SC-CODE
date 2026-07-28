@@ -14,6 +14,7 @@ import type {
   AgentInfo,
   APIMessageParam,
   APIUserMessage,
+  ContentBlockParam,
   McpServerConfig,
   McpSetServersResult,
   ModelInfo,
@@ -1212,6 +1213,52 @@ export function query(args: {
       const requestView = { messages: [...history] };
 
       /**
+       * Append a top-level USER turn to the wire arrays (history + the mirrored
+       * requestView), MERGING into a trailing user turn when one already exists
+       * so role alternation is preserved. Normally the previous turn ends on an
+       * assistant turn and this is a plain push; but a NON-CAP terminal leaves
+       * history ending on a tool_result user turn — a permission / PostToolUse
+       * `continue:false` stop (batchStop) or a deferred tool call both return
+       * after pushing the tool_result user turn — and a resumed transcript can
+       * likewise end on an unanswered user turn. Stacking the next streaming
+       * input (or the session-end prompt) as a SECOND consecutive user turn then
+       * 400s "roles must alternate" on the next request, and every retry re-sends
+       * the same invalid history. Merge instead (mirrors loop.ts pushUserTurn and
+       * sessions/store repairPairing). history and requestView share the SAME
+       * trailing turn object (engine pushes mirror the same reference; compaction
+       * only ever splices requestView's front), so replace it in both.
+       */
+      const toContentBlocks = (c: APIMessageParam['content']): ContentBlockParam[] =>
+        typeof c === 'string' ? [{ type: 'text', text: c }] : c;
+      const appendUserTurnToWire = (param: APIMessageParam): void => {
+        const tail = history[history.length - 1];
+        if (tail === undefined || tail.role !== 'user') {
+          history.push(param);
+          requestView.messages.push(param);
+          return;
+        }
+        const merged: APIMessageParam = {
+          role: 'user',
+          content: [...toContentBlocks(tail.content), ...toContentBlocks(param.content)],
+        };
+        history[history.length - 1] = merged;
+        const rv = requestView.messages;
+        if (rv.length > 0 && rv[rv.length - 1] === tail) {
+          rv[rv.length - 1] = merged;
+        } else if (rv.length > 0 && rv[rv.length - 1]?.role === 'user') {
+          rv[rv.length - 1] = {
+            role: 'user',
+            content: [
+              ...toContentBlocks(rv[rv.length - 1]!.content),
+              ...toContentBlocks(param.content),
+            ],
+          };
+        } else {
+          rv.push(param);
+        }
+      };
+
+      /**
        * Drive ONE user turn's engine loop: build the per-turn deps, bracket
        * the API request segment with the §5.2 write-ahead checkpoint, run the
        * engine, and yield/persist its output exactly as the input loop did
@@ -1835,8 +1882,7 @@ export function query(args: {
           needMeta = false;
         }
         const userParam: APIMessageParam = { role: 'user', content: message.content };
-        history.push(userParam);
-        requestView.messages.push(userParam);
+        appendUserTurnToWire(userParam);
         yield echoed;
 
         // 4. Enforce session-wide limits BEFORE the turn, and arm the engine
@@ -1976,8 +2022,7 @@ export function query(args: {
               role: 'user',
               content: [{ type: 'text', text: MEMORY_SESSION_END_PROMPT }],
             };
-            history.push(endParam);
-            requestView.messages.push(endParam);
+            appendUserTurnToWire(endParam);
             persistParam(sess.sessionId, endParam);
             // Bound the round: a progress card is a couple of tool turns, not
             // a task — and never more budget/turns than the session cap has left

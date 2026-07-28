@@ -113,6 +113,15 @@ export class LedgerDriver {
   // abort and await ONLY its own generation's work, never the restarted one's.
   readonly #inflight = new Map<Promise<void>, number>();
   readonly #controllers = new Map<AbortController, number>();
+  /**
+   * Slots claimed by a tick but not yet landed in #inflight (the window while
+   * its claimDue is awaited). Counted into the free-slot arithmetic so a
+   * SECOND tick body running concurrently — a non-awaited stop()+start() can
+   * put an old and a new generation in flight at once (audit r2) — does not
+   * read the same pre-claim #inflight.size and each claim a full
+   * maxConcurrent, launching 2x the cap of paid attempts.
+   */
+  #reserved = 0;
 
   constructor(opts: LedgerDriverOptions) {
     this.#ledger = opts.ledger;
@@ -220,17 +229,28 @@ export class LedgerDriver {
       const limit =
         this.#maxConcurrent === undefined
           ? undefined
-          : Math.max(0, this.#maxConcurrent - this.#inflight.size);
-      const claimed = limit === 0 ? [] : await this.#ledger.claimDue(this.#clock.now(), { limit });
-      // Attempts are started even if stop() began while claimDue was in
-      // flight: stop() awaits this tick and then aborts them, so the claims
-      // settle into 'retrying' (resumable) instead of stranding in 'running'.
-      for (const session of claimed) {
-        const attempt = this.#runAttempt(session, generation);
-        const tracked: Promise<void> = attempt.finally(() => {
-          this.#inflight.delete(tracked);
-        });
-        this.#inflight.set(tracked, generation);
+          : Math.max(0, this.#maxConcurrent - this.#inflight.size - this.#reserved);
+      // Reserve the slots SYNCHRONOUSLY (before the claimDue await yields), so
+      // a concurrently-running tick body sees them consumed and never
+      // double-claims the cap. Released once the claims have landed in
+      // #inflight (or claimDue failed) — the read-compute-reserve above runs
+      // to the await with no interleaving point, so the reservation is atomic
+      // against the other tick.
+      if (limit !== undefined) this.#reserved += limit;
+      try {
+        const claimed = limit === 0 ? [] : await this.#ledger.claimDue(this.#clock.now(), { limit });
+        // Attempts are started even if stop() began while claimDue was in
+        // flight: stop() awaits this tick and then aborts them, so the claims
+        // settle into 'retrying' (resumable) instead of stranding in 'running'.
+        for (const session of claimed) {
+          const attempt = this.#runAttempt(session, generation);
+          const tracked: Promise<void> = attempt.finally(() => {
+            this.#inflight.delete(tracked);
+          });
+          this.#inflight.set(tracked, generation);
+        }
+      } finally {
+        if (limit !== undefined) this.#reserved -= limit;
       }
     } catch (error) {
       this.#emit({ type: 'driver:error', error });

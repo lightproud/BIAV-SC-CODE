@@ -71,11 +71,16 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.95.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.95.0`
+**当前版本 `0.96.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.96.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.96.0（2026-07-28）：审计第八波（换镜复扫）**——本包再修 6 处：query 层两处 user 轮叠加
+（`roles must alternate` 400 且重试不可恢复）· MCP HTTP 并发请求相互吃掉会话过期恢复守卫 ·
+fork 读入把 JSON 数组行固化成幻影记录 · `file-store` 写吞读抛的 `ENAMETOOLONG` 不对称 ·
+goal 匹配器继承 `failureMode:'closed'` 致挂起评审器把循环永久困住。
 
 **v0.95.0（2026-07-28）：多波缺陷审计（八波 59 分区）**——100+ 处经核实真实缺陷全修，
 每处均有具体失败输入；公开 API 与测试契约零改动。覆盖崩溃面（宽容输入致整轮丢弃）、线协议

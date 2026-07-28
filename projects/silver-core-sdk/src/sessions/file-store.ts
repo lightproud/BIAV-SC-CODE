@@ -128,12 +128,16 @@ function expandTilde(dir: string): string {
   return dir;
 }
 
-function isEnoent(err: unknown): boolean {
+function isErrno(err: unknown, code: string): boolean {
   return (
     typeof err === 'object' &&
     err !== null &&
-    (err as NodeJS.ErrnoException).code === 'ENOENT'
+    (err as NodeJS.ErrnoException).code === code
   );
+}
+
+function isEnoent(err: unknown): boolean {
+  return isErrno(err, 'ENOENT');
 }
 
 /**
@@ -243,7 +247,15 @@ export class FileSessionStore implements SessionStore {
     try {
       raw = await readFile(this.filePath(key), 'utf8');
     } catch (err) {
-      if (isEnoent(err)) return null;
+      // A key that cannot name a real transcript file — nonexistent (ENOENT), a
+      // path component that is a plain file (ENOTDIR), or a component too long
+      // for the filesystem (ENAMETOOLONG) — is "not found", NOT a fatal error.
+      // append() deliberately swallows the very same errors (WV3-3 names
+      // ENAMETOOLONG), so an over-long embedder/attacker-controlled sessionId
+      // that append() silently no-op'd must not make load() throw an uncaught
+      // error into getSessionMessages/readSessionEntries (which do not wrap
+      // load()). Genuine IO faults (EACCES / EIO) still throw so they surface.
+      if (isNotASessionDir(err) || isErrno(err, 'ENAMETOOLONG')) return null;
       throw err;
     }
     const out: SessionStoreEntry[] = [];
