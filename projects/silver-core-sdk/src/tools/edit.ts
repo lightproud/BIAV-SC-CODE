@@ -30,6 +30,7 @@ import {
   resolveAbs,
 } from './fsutil.js';
 import { EDIT_DESCRIPTION } from './descriptions.js';
+import type { EditStructuredOutput } from '../types/tool-outputs.js';
 
 /** Context lines shown around the first edit site in the success snippet. */
 const SNIPPET_CONTEXT_LINES = 2;
@@ -271,6 +272,17 @@ export const editTool: BuiltinTool = {
         content:
           `Replaced ${replaced} occurrence${replaced === 1 ? '' : 's'} of old_string in "${abs}".\n` +
           `Snippet around the first edit site:\n${snippet}`,
+        // `text` IS the original content — Edit had to read it to apply the
+        // replacement, so `originalFile` costs nothing extra here (unlike
+        // Write, which does not otherwise read what it replaces).
+        structuredOutput: {
+          filePath: abs,
+          oldString: effOld,
+          newString: effNew,
+          originalFile: text,
+          replaceAll,
+          replacedCount: replaced,
+        } satisfies EditStructuredOutput,
       };
     } catch (e) {
       if (isAbortError(e)) {

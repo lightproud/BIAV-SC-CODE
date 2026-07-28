@@ -281,6 +281,28 @@ describe('EnterWorktree', () => {
     });
   });
 
+  it('reports path and branch as a structured result, not only as prose', async () => {
+    // The three facts EnterWorktree returns were previously reachable only by
+    // splitting `worktreePath: …\nworktreeBranch: …\n<message>` back apart.
+    // This is the one output type in the 2026-07-27 batch that comes out
+    // COMPLETE — every official field is a fact the tool already holds.
+    const repo = makeGitRepo();
+    const ctx = makeCtx({ cwd: repo, readFilePaths: new Set() });
+    const r = await enterWorktreeTool.execute({ name: 'structured-wt' }, ctx);
+    expect(r.isError, text(r)).toBeUndefined();
+    const s = r.structuredOutput as {
+      worktreePath: string;
+      worktreeBranch?: string;
+      message: string;
+    };
+    expect(s.worktreePath).toBe(join(repo, '.claude', 'worktrees', 'structured-wt'));
+    expect(s.worktreeBranch).toBe('structured-wt');
+    expect(s.message.length).toBeGreaterThan(0);
+    // The structured path must be the one the session actually switched to —
+    // the two disagreeing is the failure mode that makes the surface harmful.
+    expect(s.worktreePath).toBe(ctx.cwd);
+  });
+
   it('generates a random name when none is given', async () => {
     const repo = makeGitRepo();
     const ctx = makeCtx({ cwd: repo, readFilePaths: new Set() });

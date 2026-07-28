@@ -1,10 +1,18 @@
 /**
  * Built-in TodoWrite tool: maintain a structured task checklist.
  *
- * Stateless by design - the model resends the complete list on every call, so
- * the tool simply validates the payload and renders a markdown checklist plus a
- * one-line count summary back as the tool_result. A dedicated SDK message
- * variant is deferred (see docs/COMPAT.md).
+ * Stateless from the MODEL's side by design - it resends the complete list on
+ * every call, and the tool validates the payload and renders a markdown
+ * checklist plus a one-line count summary back as the tool_result. A dedicated
+ * SDK message variant is deferred (see docs/COMPAT.md).
+ *
+ * The tool does keep ONE piece of per-session state: the previous list, so the
+ * structured result can report the TRANSITION (`oldTodos` -> `newTodos`) the
+ * way official does. Without it a caller sees the new list and has to diff it
+ * against a copy it was never given — which is the whole reason official
+ * carries both halves. Stored on the session-key WeakMap (the sanctioned
+ * per-query state pattern, contracts.ts `sessionKey`) so it dies with the
+ * query and never leaks between sessions.
  */
 
 import type {
@@ -14,6 +22,7 @@ import type {
 } from '../internal/contracts.js';
 import { AbortError } from '../errors.js';
 import { TODOWRITE_DESCRIPTION } from './descriptions.js';
+import type { TodoWriteStructuredOutput } from '../types/tool-outputs.js';
 
 type TodoStatus = 'pending' | 'in_progress' | 'completed';
 const STATUSES: readonly TodoStatus[] = ['pending', 'in_progress', 'completed'];
@@ -26,6 +35,20 @@ type TodoItem = {
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
+}
+
+/** Previous list per query. WeakMap on the session key: no cleanup hook needed,
+ *  and a context with no sessionKey (bare tool use in a unit test) simply gets
+ *  an empty previous list rather than sharing one process-wide. */
+const previousTodos = new WeakMap<object, TodoItem[]>();
+const NO_SESSION_KEY: TodoItem[] = [];
+
+function takePrevious(ctx: ToolContext, next: TodoItem[]): TodoItem[] {
+  const key = ctx.sessionKey;
+  if (key === undefined) return NO_SESSION_KEY;
+  const prior = previousTodos.get(key) ?? [];
+  previousTodos.set(key, next);
+  return prior;
 }
 
 export const todoWriteTool: BuiltinTool = {
@@ -120,6 +143,10 @@ export const todoWriteTool: BuiltinTool = {
 
     const summary = `Todos: ${pending} pending, ${inProgress} in progress, ${completed} completed.`;
     const content = lines.length > 0 ? `${summary}\n${lines.join('\n')}` : summary;
-    return { content };
+    const oldTodos = takePrevious(ctx, todos);
+    return {
+      content,
+      structuredOutput: { oldTodos, newTodos: todos } satisfies TodoWriteStructuredOutput,
+    };
   },
 };

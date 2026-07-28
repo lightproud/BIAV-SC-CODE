@@ -16,6 +16,63 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.91.0 — 2026-07-27
+
+Four more tools produce structured results, and the zero-producer set gets a
+census (keeper rulings 2026-07-27: "全补" + "整体记档并入白名单").
+
+**What the type-parity command could not see.** It compares DECLARED shapes and
+never asks whether anything EMITS them, and its first run walked straight into
+the consequence: it reported `AgentOutput` as missing twenty official fields
+when the truth is that nothing in this SDK has ever populated `AgentOutput` at
+all. A census of the tool layer then found four MORE types declared,
+official-shaped, and never filled — Write, Edit, TodoWrite, EnterWorktree —
+with every fact reachable only by parsing the human-facing sentence.
+
+- **Write** emits `type` / `filePath` / `content` / `bytes`, plus
+  `originalFile` when checkpointing captured a pre-image. `bytes` is the
+  sharpest case in the whole batch: the number was already computed, then spent
+  on string interpolation and thrown away.
+- **Edit** emits `filePath` / `oldString` / `newString` / `originalFile` /
+  `replaceAll` / `replacedCount`. The pre-image is free here — Edit had to read
+  the file to apply the replacement.
+- **TodoWrite** emits `oldTodos` / `newTodos`, COMPLETE. This needed one new
+  thing: the tool kept no state (the model resends the whole list), so
+  `oldTodos` did not exist to report. The previous list now persists on the
+  session-key WeakMap — the sanctioned per-query pattern — which is what lets a
+  caller see the TRANSITION instead of diffing against a copy it was never
+  handed.
+- **EnterWorktree** emits `worktreePath` / `worktreeBranch` / `message`,
+  COMPLETE.
+
+`structuredPatch` and `gitDiff` stay absent (no diff engine, no git plumbing);
+an empty patch array would read as "no changes".
+
+**Absence is reported as absence.** Write's `originalFile` is OMITTED, not
+`null`, when no pre-image was captured — `null` already means "there was no
+prior file", so collapsing "unknown" into "did not exist" would make the field
+actively misleading. Two tests pin exactly this, because it is the kind of
+distinction that quietly erodes.
+
+**A census, not a rule.** `tests/structured-output-census.test.ts` pins the
+roster of tools that deliberately emit nothing, each with its reason, and fails
+on a new tool that ships silent OR on a stale entry whose tool started emitting.
+"Every tool must emit" would be the wrong rule — several genuinely have no
+machine-readable fact beyond their sentence, and forcing a shape onto them
+recreates typed-not-populated. What actually goes wrong is SILENT growth: four
+tools sat unpopulated for many versions because nothing was counting.
+
+**Adjudicated unshipped**, now deducted by `type-parity.mjs` (18 new `RULED`
+entries): `AgentOutput`'s telemetry / worktree / remote-task fields,
+`AgentInput.team_name`, `FileReadOutput.source`. The Agent row is recorded
+rather than filled on purpose — arguing over individual fields before the tool
+has any structured producer is backwards. The drift report is back to clean.
+
+`Workflow` remains open: official's `WorkflowOutput` requires
+`status: 'async_launched'` and this engine runs workflows synchronously, so
+emitting that literal would hand the caller a claim ticket for goods it is
+already holding. Being closed by making the behaviour match, tracked separately.
+
 ## 0.90.0 — 2026-07-27
 
 Checkpoint blob cap with honest degradation (todo T74, keeper ruling: option

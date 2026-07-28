@@ -27,6 +27,7 @@ import type {
 import { AbortError, isAbortError } from '../errors.js';
 import { looksBinary, resolveAbs } from './fsutil.js';
 import { WRITE_DESCRIPTION } from './descriptions.js';
+import type { WriteStructuredOutput } from '../types/tool-outputs.js';
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
@@ -73,6 +74,9 @@ export const writeTool: BuiltinTool = {
 
       // Determine created-vs-overwritten before writing; reject directories.
       let existedBefore = false;
+      // Kept when checkpointing captured a lossless pre-image; feeds
+      // `originalFile` on the structured result (never re-read just for it).
+      let preImage: string | null | undefined;
       let priorMode: number | undefined;
       try {
         const st = await stat(abs);
@@ -125,6 +129,7 @@ export const writeTool: BuiltinTool = {
       // file whose pre-image we never captured.
       if (ctx.recordFileChange !== undefined) {
         if (!existedBefore) {
+          preImage = null;
           ctx.recordFileChange(abs, null);
         } else {
           let buf: Buffer | undefined;
@@ -137,6 +142,7 @@ export const writeTool: BuiltinTool = {
             const asText = buf.toString('utf8');
             const roundTrips = Buffer.from(asText, 'utf8').equals(buf);
             if (roundTrips && !looksBinary(buf)) {
+              preImage = asText;
               ctx.recordFileChange(abs, asText);
             } else {
               // Non-UTF-8 / binary existing file: cannot capture losslessly
@@ -205,6 +211,15 @@ export const writeTool: BuiltinTool = {
         content: existedBefore
           ? `Overwrote existing file "${abs}" (${bytes} bytes written).`
           : `Created new file "${abs}" (${bytes} bytes written).`,
+        // `bytes` was already computed for the sentence above; a caller should
+        // not have to parse that sentence back apart to learn it.
+        structuredOutput: {
+          type: existedBefore ? 'update' : 'create',
+          filePath: abs,
+          content,
+          bytes,
+          ...(preImage !== undefined ? { originalFile: preImage } : {}),
+        } satisfies WriteStructuredOutput,
       };
     } catch (e) {
       if (isAbortError(e)) {
