@@ -100,8 +100,15 @@ export interface SubagentRuntime {
    * child forks its persistent cwd/env namespace from it (audit 2026-07-14
    * M-10), so nested children seed from their immediate parent, not the root.
    * Omitted -> the runtime's query-wide manager (the root loop's session).
+   * `parentAgentId` is the agentId of the SPAWNING subagent (omitted at the
+   * root loop, whose children are depth-1); it is stamped onto each child's
+   * persisted sidechain turns as `parent_agent_id`.
    */
-  makeSpawnFn(depth: number, parentShells?: ShellManager): SpawnSubagentFn;
+  makeSpawnFn(
+    depth: number,
+    parentShells?: ShellManager,
+    parentAgentId?: string,
+  ): SpawnSubagentFn;
   /** Pull + clear completed background-subagent result notes (root loop drains). */
   drainCompletedResults(): TextBlockParam[];
   /** Pull + reset the accumulated child usage/cost/modelUsage. */
@@ -822,6 +829,11 @@ export function createSubagentRuntime(
     /** The RAW spawning tool_use id ('' when the tool passed none) — NOT the
      *  agentId-fallback correlation id; task_*.tool_use_id must be honest. */
     toolUseId: string;
+    /** agentId of the SPAWNING subagent, or undefined for a depth-1 child
+     *  (spawned by the main loop). Persisted as `parent_agent_id` on this
+     *  child's sidechain turns — the official field getSessionMessages reads
+     *  back to rebuild depth-2+ agent trees from disk. */
+    parentAgentId?: string;
   };
 
   /** Cumulative real figures from one child run (feeds <usage> notification). */
@@ -916,6 +928,16 @@ export function createSubagentRuntime(
     // children; the `fork` flag on the markers distinguishes them.
     const recordSidechain = persist && store !== undefined;
     const parentToolUseId = sidechain.parentToolUseId ?? null;
+    // Official `parent_agent_id` (0.3.202): the agentId of the subagent that
+    // spawned THIS one. entryToSessionMessage has always read it back, but no
+    // writer ever produced it — so the field it exists for ("build depth-2+
+    // agent trees from disk-persisted metadata") reported null for every
+    // message this SDK ever persisted. Omitted (not null) for a depth-1 child,
+    // where the reader's absent -> null fallback is the correct answer.
+    const parentAgentIdFields =
+      sidechain.parentAgentId !== undefined
+        ? { parent_agent_id: sidechain.parentAgentId }
+        : {};
     if (recordSidechain && store !== undefined) {
       // sidechain_start ONCE, at the child's birth (待裁②). A SendMessage
       // continuation re-enters this function but must NOT write a second start;
@@ -952,6 +974,7 @@ export function createSubagentRuntime(
           timestamp: new Date().toISOString(),
           isSidechain: true,
           parent_tool_use_id: parentToolUseId,
+          ...parentAgentIdFields,
           message: { role: seedTurn.role, content: seedTurn.content },
         });
       }
@@ -1007,6 +1030,7 @@ export function createSubagentRuntime(
             timestamp: new Date().toISOString(),
             isSidechain: true,
             parent_tool_use_id: parentToolUseId,
+            ...parentAgentIdFields,
             message: { role: 'assistant', content: msg.message.content },
           });
         }
@@ -1056,7 +1080,11 @@ export function createSubagentRuntime(
   }
 
   // --- The spawn closure factory -------------------------------------------
-  function makeSpawnFn(depth: number, parentShells?: ShellManager): SpawnSubagentFn {
+  function makeSpawnFn(
+    depth: number,
+    parentShells?: ShellManager,
+    parentAgentId?: string,
+  ): SpawnSubagentFn {
     // The shell session this spawner's CALLER runs on: children fork their
     // persistent cwd/env namespace from it (audit 2026-07-14 M-10). The root
     // loop's spawner (depth 0, no override) forks from the query-wide manager.
@@ -1472,8 +1500,9 @@ export function createSubagentRuntime(
         signal: childSignal,
         debug,
         // Nested spawns fork their shell namespace from THIS child's session
-        // (lineage seeding), not from the root manager.
-        spawnSubagent: makeSpawnFn(childDepth, childShells),
+        // (lineage seeding), not from the root manager, and record THIS child
+        // as their `parent_agent_id` so the agent tree is reconstructible.
+        spawnSubagent: makeSpawnFn(childDepth, childShells, agentId),
         // KNOWN LIMIT for worktree isolation: the SEED is the parent's last
         // recorded cwd, which may lie outside the worktree, so the child's
         // first Bash call can still start outside it (its later cds are its
@@ -1552,6 +1581,7 @@ export function createSubagentRuntime(
         parentToolUseId: childConfig.parentToolUseId,
         description: taskDescription,
         toolUseId: params.toolUseId,
+        ...(parentAgentId !== undefined ? { parentAgentId } : {}),
       };
 
       // O-B2: retain the child for later SendMessage continuation. `history`
