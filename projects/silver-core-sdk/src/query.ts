@@ -1414,6 +1414,8 @@ export function query(args: {
               // Structured tool results ride a side-channel keyed by the turn
               // object (see engine/tool-use-results.ts for why not a field).
               const toolUseResult = readToolUseResults(entry);
+              lastFlushed = entry;
+              lastFlushedBlocks = toContentBlocks(entry.content).length;
               yield {
                 type: 'user',
                 uuid: entryUuid,
