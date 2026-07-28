@@ -1146,7 +1146,6 @@ export async function* runAgentLoop(
             !memoryFlushInjected &&
             wouldAutoCompact(deps.requestView, config, overheadTokens, lastActualPromptTokens)
           ) {
-            memoryFlushInjected = true;
             let flushVetoed = false;
             if (deps.hooks.hasHooks('PreCompact')) {
               const agg = await deps.hooks.run(
@@ -1167,6 +1166,14 @@ export async function* runAgentLoop(
               }
             }
             if (!flushVetoed) {
+              // W1-3: latch ONLY once the opportunity was actually injected.
+              // Latching before the veto check burned the episode's single
+              // write opportunity on a hook that merely denied THIS check: the
+              // next iteration took the fold branch, whose own PreCompact run
+              // may allow (a transient deny — "busy", a rate-limited evaluator),
+              // and the context was summarized away with zero flush turns ever
+              // offered. A persistent deny is unchanged (no flush, no fold).
+              memoryFlushInjected = true;
               const flushTurn: APIMessageParam = {
                 role: 'user',
                 content: [{ type: 'text', text: config.memoryFlush.prompt }],
@@ -1294,8 +1301,24 @@ export async function* runAgentLoop(
             // surface the ORIGINAL error instead: no invalid-signature 400 loop,
             // no double tool execution. (Auto-recovering read-only rewind-restart
             // is a scoped follow-up; clean-fail is the stable choice for now.)
+            // W1-1: the withhold is about a STALE THINKING SIGNATURE, so it may
+            // only fire when the protected turn actually CARRIES a thinking /
+            // redacted_thinking block. Keying it on the signing model alone
+            // withheld the switch on EVERY mid-tool-loop turn — pushAssistant
+            // stamps every turn with the model that produced it, so the stamp
+            // never equals config.fallbackModel — which made fallbackModel
+            // silently inert for any tool loop whenever thinking is off (the
+            // default) or the turn simply produced none. Nothing to invalidate
+            // -> let the fallback do its job.
             const protIdx = protectedTurnIndex(reqMsgs);
-            if (protIdx >= 0 && signingModelOf(reqMsgs[protIdx]!) !== config.fallbackModel) {
+            const protTurn = protIdx >= 0 ? reqMsgs[protIdx] : undefined;
+            const protHasThinking =
+              protTurn !== undefined &&
+              Array.isArray(protTurn.content) &&
+              protTurn.content.some(
+                (b) => b.type === 'thinking' || b.type === 'redacted_thinking',
+              );
+            if (protHasThinking && signingModelOf(protTurn!) !== config.fallbackModel) {
               deps.debug(
                 `engine: fallback to ${config.fallbackModel} withheld — the in-flight ` +
                   `tool-loop turn is signed by the failing model ${model} and its thinking ` +
@@ -1602,6 +1625,18 @@ export async function* runAgentLoop(
           let stoppedInGroup = false;
           for (let g = 0; g < outcomes.length; g += 1) {
             if (stoppedInGroup) {
+              // W1-2: masking the RESULT must not swallow the observability the
+              // masked member already produced. A concurrent member that was
+              // itself DENIED had its denial recorded in the gate's ledger, so
+              // it rides `permission_denials` on the terminal result — while
+              // its permission_denied message never reached the stream, leaving
+              // the two surfaces of the same run disagreeing (a host that
+              // watches the message stream sees one denial, the result reports
+              // two). Surface it; only the tool_result stays masked.
+              const masked = outcomes[g]!;
+              if (masked.observability !== undefined) {
+                for (const msg of masked.observability) yield msg;
+              }
               results.push(
                 mkToolError(
                   toolUses[ti + g]!.id,

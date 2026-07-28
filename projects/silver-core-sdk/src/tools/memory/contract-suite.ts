@@ -546,7 +546,17 @@ export async function runMemoryStoreContractSuite(
       await check.run(store);
       results.push({ name: check.name, ok: true });
     } catch (e) {
-      results.push({ name: check.name, ok: false, error: (e as Error).message });
+      // Non-Error throws are ordinary in host store implementations (a rejected
+      // driver promise carrying a string/code object, `throw 'ENOENT'`), and
+      // `(e as Error).message` on one is `undefined` — the report then says the
+      // check failed and gives no reason at all. The family twin,
+      // runLedgerStoreContractSuite, already narrows this; keep the two
+      // deliverable suites reporting failures the same way.
+      results.push({
+        name: check.name,
+        ok: false,
+        error: e instanceof Error ? e.message : String(e),
+      });
     }
   }
   const failed = results.filter((r) => !r.ok).length;
