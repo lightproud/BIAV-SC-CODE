@@ -31,7 +31,6 @@ import calendar
 import statistics
 import sys
 from collections import Counter, defaultdict
-from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -43,7 +42,10 @@ REPO = Path(__file__).resolve().parent.parent
 COMMUNITY_NEW = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 DATA_OLD = REPO / "projects/news/data"
 OUT = REPO / "projects/news/index/community_index.json"
-TODAY = date.today().isoformat()
+# 「今天」= 北京日期（archive_layout 是全仓日期基准 SSOT）。原 date.today() 取的是
+# **容器本地日期**：CI 在 UTC、守密人在 UTC+8，同一次重建在两处会盖出不同的
+# generated 戳记——生成物本该是确定性的。
+TODAY = archive_layout.archive_today().isoformat()
 
 TOP_TERMS = 40          # 每 (平台×月) / 每月保留的高频词数
 PRUNE_EVERY = 500_000   # 处理多少条后裁剪一次计数器（限内存）
@@ -141,7 +143,7 @@ def _emit_discord(d):
                         continue
                     try:
                         it = json.loads(line)
-                    except Exception:
+                    except json.JSONDecodeError:  # 只挡坏行
                         continue
                     text = str(it.get("content", ""))
                     reacts = it.get("reactions", "[]")
@@ -163,7 +165,7 @@ def _emit_comments(d):
                         continue
                     try:
                         it = json.loads(line)
-                    except Exception:
+                    except json.JSONDecodeError:  # 只挡坏行
                         continue
                     text = str(it.get("text", ""))
                     likes = it.get("likes", 0)

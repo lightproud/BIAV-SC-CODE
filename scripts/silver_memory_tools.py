@@ -86,7 +86,7 @@ def current_continuity() -> dict:
             candidates = sorted(DIGESTS_DIR.glob(f"*-{sid_short}.md"))
             if candidates:
                 base["last_session_file"] = str(candidates[-1])
-        except Exception:
+        except OSError:  # 目录不可读；别的异常不该静默
             pass
 
     # 推导 topics_hint

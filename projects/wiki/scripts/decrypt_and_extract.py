@@ -21,7 +21,8 @@ if sys.platform == "win32":
     try:
         import ctypes
         ctypes.cdll.msvcrt._setmaxstdio(8192)
-    except Exception:
+    # 只挡「拿不到 msvcrt / 调用被拒」，别的异常不该在这里消失
+    except (AttributeError, OSError, ImportError):
         pass
 
 try:
@@ -264,7 +265,10 @@ def extract_with_key(
         for f in getattr(env, "_files", {}).values():
             if hasattr(f, "close"):
                 f.close()
-    except Exception:
+    # 这里刻意宽捕获：这是**收尾关句柄**路径，已完成的解包结果不能因为关不掉一个
+    # 句柄就被打断（单测 test_env_cleanup_exception_swallowed 钉的正是这条）。
+    # 与「干实事的块」不同——那些已逐个收窄到具体异常类型。
+    except Exception:  # noqa: BLE001,S110  teardown 绝不可上抛
         pass
     del env
     gc.collect()

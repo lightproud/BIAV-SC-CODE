@@ -92,11 +92,14 @@ def _jobs_by_check_name() -> dict[str, tuple[Path, str, dict, str]]:
 
     检查名 = job 的 `name`，没写 `name` 时 GitHub 用 job id——两种都认。
     """
+    import yaml  # 同 _load 的延迟导入理由；异常收窄需要它在本作用域可见
+
     found: dict[str, tuple[Path, str, dict, str]] = {}
     for wf in sorted(WORKFLOWS.glob("*.yml")):
         try:
             doc = _load(wf)
-        except Exception:
+        # 只挡「读不动 / YAML 语法坏」；解析器以外的异常必须冒出来
+        except (OSError, UnicodeDecodeError, yaml.YAMLError):
             continue
         for jid, job in ((doc or {}).get("jobs") or {}).items():
             if not isinstance(job, dict):

@@ -246,7 +246,7 @@ def load_log(log_path: Path) -> list[dict]:
         try:
             with open(log_path, encoding='utf-8') as f:
                 return json.load(f)
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             pass
     return []
 

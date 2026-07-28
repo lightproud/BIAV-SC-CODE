@@ -68,7 +68,7 @@ def discover_videos(key):
         try:
             with open(fp, encoding="utf-8") as f:
                 items = json.load(f)
-        except Exception:
+        except (OSError, json.JSONDecodeError):
             continue
         for it in (items if isinstance(items, list) else []):
             u = it.get("url", "")
@@ -133,7 +133,7 @@ def main():
             for line in f:
                 try:
                     known.add(json.loads(line)["id"])
-                except Exception:
+                except (json.JSONDecodeError, KeyError, TypeError):  # 坏行 / 缺 id
                     pass
     state = {}
     sp = f"{DEST}/state.json"

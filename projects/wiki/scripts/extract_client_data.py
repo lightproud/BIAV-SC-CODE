@@ -29,7 +29,7 @@ if sys.platform == "win32":
     try:
         import ctypes
         ctypes.cdll.msvcrt._setmaxstdio(8192)
-    except Exception:
+    except (AttributeError, OSError, ImportError):
         pass
 
 try:
@@ -365,7 +365,8 @@ def _extract_single_file(
                 for f in getattr(env, "_files", {}).values():
                     if hasattr(f, "close"):
                         f.close()
-            except Exception:
+            # 收尾关句柄路径，刻意宽捕获：解包结果不能因关不掉句柄而作废
+            except Exception:  # noqa: BLE001,S110  teardown 绝不可上抛
                 pass
             del env
     stats["_rel"] = str(rel)

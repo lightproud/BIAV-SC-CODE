@@ -24,7 +24,6 @@ import json
 import re
 import shutil
 import tarfile
-from datetime import date
 from pathlib import Path
 import sys
 
@@ -49,7 +48,10 @@ SOURCE_HEALTH = REPO / "projects/news/output/source-health.json"
 NEWS_DATA = REPO / "projects/news/data"
 STORY_DIR = REPO / "projects/wiki/data/processed/story"
 
-TODAY = date.today().isoformat()
+# 「今天」= 北京日期（archive_layout 是全仓日期基准 SSOT）。原 date.today() 取的是
+# **容器本地日期**：CI 在 UTC、守密人在 UTC+8，同一次重建在两处会盖出不同的
+# generated 戳记——生成物本该是确定性的。
+TODAY = archive_layout.archive_today().isoformat()
 
 # ---------------------------------------------------------------------------
 # Layer 1: characters (一概念一文件) — high-value wiki concept layer

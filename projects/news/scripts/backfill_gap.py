@@ -63,7 +63,7 @@ def _archive_items(source: str, items: list[dict]):
             # 单一真相源（原三处各自手写换算，且对非 UTC 偏移会把偏移算两遍）
             date_str = archive_layout.archive_date_str(datetime.fromisoformat(t))
             by_date[date_str].append(item)
-        except Exception:
+        except (ValueError, TypeError):  # 只挡坏时间戳，别的异常必须冒出来
             continue
 
     for date_str, date_items in by_date.items():
@@ -78,7 +78,7 @@ def _archive_items(source: str, items: list[dict]):
                 existing = data.get('items', [])
                 if data.get('_gap_repaired') and not existing:
                     existing = []
-            except Exception:
+            except (OSError, json.JSONDecodeError, AttributeError):
                 pass
 
         existing_urls = {i.get('url', '') for i in existing if i.get('url')}
@@ -332,7 +332,7 @@ def backfill_weibo():
                             dt = dt.replace(tzinfo=timezone.utc)
                         if dt < GAP_START or dt > GAP_END:
                             continue
-                    except Exception:
+                    except (ValueError, TypeError):  # 只挡坏时间戳
                         continue
 
                     text = mblog.get('text', '')
@@ -471,7 +471,7 @@ def cleanup_empty_placeholders():
                 if data.get('_gap_repaired') and not data.get('items'):
                     path.unlink()
                     removed += 1
-            except Exception:
+            except (OSError, json.JSONDecodeError, AttributeError):
                 continue
     logger.info(f'Cleaned up {removed} empty placeholder files')
     return removed

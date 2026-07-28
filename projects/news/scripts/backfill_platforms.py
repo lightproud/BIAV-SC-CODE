@@ -108,7 +108,7 @@ def _archive_items(source: str, items: list[dict]):
             try:
                 data = json.loads(path.read_text(encoding='utf-8'))
                 existing_items = data.get('items', [])
-            except Exception:
+            except (OSError, json.JSONDecodeError, AttributeError):
                 pass
 
         # Dedup by URL or title

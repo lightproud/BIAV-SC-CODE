@@ -66,7 +66,7 @@ def refresh_discord(urls, token):
             detail = ""
             try:
                 detail = e.read().decode()[:300]
-            except Exception:
+            except (OSError, UnicodeDecodeError):  # 读不出错误正文而已，无碍主流程
                 pass
             print(f"  refresh 批 {i // 50} 失败: HTTP {e.code} {detail}")
         except Exception as e:
@@ -129,7 +129,7 @@ def main():
                 continue
             try:
                 m = json.loads(line)
-            except Exception:
+            except json.JSONDecodeError:  # 只挡坏行，不吞块内程序错误
                 continue
             for att in (m.get("attachments") or []):
                 if not str(att.get("content_type", "")).startswith("image"):

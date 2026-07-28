@@ -193,7 +193,8 @@ def collect_urls(include_discord):
             try:
                 with archive_layout.open_archive_text(fpath) as f:
                     items = json.load(f)
-            except Exception:
+            # OSError 已覆盖 gzip.BadGzipFile（冷层坏档）
+            except (OSError, json.JSONDecodeError, UnicodeDecodeError):
                 continue
             items = items if isinstance(items, list) else items.get("items", [])
             for it in items:
@@ -216,7 +217,7 @@ def collect_urls(include_discord):
                         continue
                     try:
                         m = json.loads(line)
-                    except Exception:
+                    except json.JSONDecodeError:  # 只挡坏行，不吞块内程序错误
                         continue
                     for att in (m.get("attachments") or []):
                         if str(att.get("content_type", "")).startswith("image") and att.get("url"):

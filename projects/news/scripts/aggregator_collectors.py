@@ -921,7 +921,8 @@ def _load_discord_channel_index():
             for cid, info in index.items():
                 ch_names[cid] = info.get('name', cid)
                 dir_to_id[info.get('dir', '')] = cid
-        except Exception:
+        # 只挡「索引档缺失 / 坏 JSON / 结构不是字典」，别的异常必须冒出来
+        except (OSError, json.JSONDecodeError, AttributeError):
             pass
     return ch_names, dir_to_id
 
