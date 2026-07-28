@@ -101,13 +101,23 @@ export function sleep(ms: number, signal: AbortSignal | undefined): Promise<void
 
 /** Read a response body as text, bounded by ERROR_BODY_TIMEOUT_MS and the
  *  given abort signal. Rejection means "body unavailable" — callers fall
- *  back to the status line. */
+ *  back to the status line.
+ *
+ *  The drain OWNS a reader instead of calling `response.text()`. `text()` LOCKS
+ *  the body stream for its whole lifetime, so the `response.body.cancel()` the
+ *  abort / cap paths used to call rejected with "ReadableStream is locked"
+ *  (swallowed) and the stalled body was never released. Nothing else could
+ *  release it either: requestWithRetries detaches the caller AND request-timeout
+ *  abort listeners from the per-attempt controller the moment this settles, so a
+ *  gateway that sends error headers and then goes silent left one never-settling
+ *  read pinning a ref'd socket — per retry, for the life of the process. */
 export function readBodyTextBounded(
   response: Response,
   signal: AbortSignal | undefined,
 ): Promise<string> {
   return new Promise<string>((resolve, reject) => {
     let settled = false;
+    const reader = response.body?.getReader();
     const settle = (fn: () => void): void => {
       if (settled) return;
       settled = true;
@@ -116,7 +126,8 @@ export function readBodyTextBounded(
       fn();
     };
     const cancelBody = (): void => {
-      void response.body?.cancel().catch(() => {});
+      if (reader !== undefined) void reader.cancel().catch(() => {});
+      else void response.body?.cancel().catch(() => {});
     };
     const onAbort = (): void => {
       cancelBody();
@@ -132,10 +143,28 @@ export function readBodyTextBounded(
       return;
     }
     signal?.addEventListener('abort', onAbort, { once: true });
-    response.text().then(
-      (text) => settle(() => resolve(text)),
-      (err) => settle(() => reject(err instanceof Error ? err : new Error(String(err)))),
-    );
+    if (reader === undefined) {
+      settle(() => resolve(''));
+      return;
+    }
+    const decoder = new TextDecoder('utf-8');
+    let text = '';
+    const pump = (): void => {
+      reader.read().then(
+        ({ done, value }) => {
+          if (settled) return;
+          if (done) {
+            text += decoder.decode();
+            settle(() => resolve(text));
+            return;
+          }
+          text += decoder.decode(value, { stream: true });
+          pump();
+        },
+        (err) => settle(() => reject(err instanceof Error ? err : new Error(String(err)))),
+      );
+    };
+    pump();
   });
 }
 
