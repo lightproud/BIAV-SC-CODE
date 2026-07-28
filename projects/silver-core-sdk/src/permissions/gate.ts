@@ -242,7 +242,19 @@ export class DefaultPermissionGate implements PermissionGate {
       // (effectiveInput) could otherwise slip a classifier-DENY payload past
       // the classifier, which was still judging the pre-rewrite call (audit
       // 2026-07-17 L29). Identical to `input` when no hook rewrote.
-      const cls = this.classifier(toolName, effectiveInput, { readOnly, isFileEdit });
+      // The classifier is a HOST-supplied callback (PermissionGateConfig.
+      // classifier) on the same hot path as canUseTool, and a throw from it was
+      // the only host callback whose failure ESCAPED check() — past the gate,
+      // past dispatch, killing the whole run with no decision recorded. Fail
+      // CLOSED like the canUseTool-throw path below: a broken classifier must
+      // never be the reason a call proceeds, and never a reason the run dies.
+      let cls: ReturnType<ToolClassifier>;
+      try {
+        cls = this.classifier(toolName, effectiveInput, { readOnly, isFileEdit });
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        return this.deny(toolName, toolUseID, input, 'auto classifier', `classifier threw: ${msg}`);
+      }
       if (cls === 'deny') {
         return this.deny(toolName, toolUseID, input, 'auto classifier');
       }

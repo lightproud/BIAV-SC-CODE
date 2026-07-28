@@ -155,6 +155,23 @@ function stringifyConditionInput(input: HookInput): string {
     : text;
 }
 
+/**
+ * The wall-clock budget one matcher gets, in ms: `matcher.timeout` seconds, or
+ * the 60s default. Clamped to the 32-bit timer ceiling so a huge value bounds
+ * the work instead of overflowing to ~1ms (audit r4 Rnum-1). Shared by the
+ * callback runner AND the condition gate, so both legs of a matcher are bounded
+ * by the SAME budget the matcher declares.
+ */
+function matcherTimeoutMs(matcher: HookCallbackMatcher): number {
+  const seconds =
+    typeof matcher.timeout === 'number' &&
+    Number.isFinite(matcher.timeout) &&
+    matcher.timeout > 0
+      ? matcher.timeout
+      : DEFAULT_TIMEOUT_SECONDS;
+  return Math.min(seconds * 1000, MAX_TIMER_MS);
+}
+
 function abortRejection(signal: AbortSignal): Promise<never> {
   return new Promise((_resolve, reject) => {
     if (signal.aborted) {
@@ -213,20 +230,13 @@ export class DefaultHookRunner implements HookRunner {
       failureMode: 'open' | 'closed';
     }> = [];
     for (const matcher of admitted) {
-      const seconds =
-        typeof matcher.timeout === 'number' &&
-        Number.isFinite(matcher.timeout) &&
-        matcher.timeout > 0
-          ? matcher.timeout
-          : DEFAULT_TIMEOUT_SECONDS;
       // Per-matcher failure policy wins over the runner-wide setting (audit
       // 2026-07-14 M-1): a security-critical matcher can fail closed while
       // the global default keeps official drop-in parity ('open').
       const failureMode = matcher.failureMode ?? this.failureMode;
+      const timeoutMs = matcherTimeoutMs(matcher);
       for (const cb of matcher.hooks) {
-        // audit r4 Rnum-1: clamp to the 32-bit timer ceiling so a huge
-        // matcher.timeout bounds the callback instead of overflowing to ~1ms.
-        tasks.push({ cb, timeoutMs: Math.min(seconds * 1000, MAX_TIMER_MS), failureMode });
+        tasks.push({ cb, timeoutMs, failureMode });
       }
     }
 
@@ -310,11 +320,27 @@ export class DefaultHookRunner implements HookRunner {
     const verdicts = await Promise.all(
       matched.map(async (m) => {
         if (typeof m.condition !== 'string' || m.condition.length === 0) return true;
+        // The condition gate is a MODEL CALL sitting in the tool-dispatch
+        // critical path, and it was bounded by nothing but the caller's
+        // AbortSignal: a hung provider (or a transport that ignores the signal)
+        // stalled every gated tool call FOREVER, while `matcher.timeout` — the
+        // budget the matcher actually declares — bounded only its callbacks.
+        // Give the evaluation the same budget, and race it the same way runOne
+        // races a callback so an unresponsive transport cannot outlive it. A
+        // trip lands in the catch below and is routed by the matcher's
+        // failureMode exactly like any other evaluation failure.
+        const conditionSignal = AbortSignal.any([
+          signal,
+          AbortSignal.timeout(matcherTimeoutMs(m)),
+        ]);
         try {
-          const r = await evaluateHookCondition(
-            { condition: m.condition, context, stop },
-            { ...this.conditionOptions, signal },
-          );
+          const r = await Promise.race([
+            evaluateHookCondition(
+              { condition: m.condition, context, stop },
+              { ...this.conditionOptions, signal: conditionSignal },
+            ),
+            abortRejection(conditionSignal),
+          ]);
           if (r.evaluationFailed === true) {
             const admit = failedAdmits(m);
             this.debug(
@@ -337,7 +363,14 @@ export class DefaultHookRunner implements HookRunner {
           // failure is routed by the matcher's failureMode exactly like the
           // in-band evaluationFailed path above.
           if (signal.aborted) throw err;
-          const msg = err instanceof Error ? err.message : String(err);
+          // The outer signal is not aborted here, so an aborted conditionSignal
+          // can only be this matcher's own evaluation budget expiring — name it
+          // (and the value to raise) instead of reporting a bare abort message.
+          const msg = conditionSignal.aborted
+            ? `timed out after ${matcherTimeoutMs(m)}ms (matcher.timeout)`
+            : err instanceof Error
+              ? err.message
+              : String(err);
           const admit = failedAdmits(m);
           this.debug(
             `hooks(${event}): condition evaluation failed (${msg}); ` +
