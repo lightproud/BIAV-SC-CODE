@@ -31,12 +31,36 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     if: github.ref == 'refs/heads/main'
+    env:
+      BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
     steps:
       - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      # 2026-07-28 扫描修复：本工作流跑的 collect_fanart.py 是从 **discord 归档**里
+      # 挑二创附件的——档案自 T62 §7甲（2026-07-20）起住在 BIAV-SC-DATA 数据仓。
+      # 同族的 collect-fanart.yml 当时补了 clone + BIAV_SC_DATA_ROOT，本档漏了：
+      # 于是 archive_layout.community_root() 回落在树默认，脚本第一步就去开
+      # `Public-Info-Pool/Record/Community/discord/global/channel_index.json`
+      # ——那条路径在 code 仓里已不存在，实测 FileNotFoundError 直接崩。
+      # 即「同人图全量补录」这条抢救路线自 07-20 起一次也跑不成，而它只有手动
+      # 触发、没有 cron，死手开关（只数带 cron 的空座位）结构上看不见它。
+      - name: Clone BIAV-SC-DATA（PAT，数据根：读 discord 归档挑附件）
+        env:
+          DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DATA_TOKEN:-}" ]; then
+            echo "::error::secret BIAV_SC_DATA_TOKEN 未配置"; exit 1
+          fi
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
+          chmod 600 ~/.git-credentials
+          # 只读用途（产物直传 release，不回写数据仓），浅克隆即可
+          git clone --depth 1 https://github.com/lightproud/BIAV-SC-DATA.git data-repo
 
       - name: Recover fan art across window (refresh Discord URLs)
         env:
