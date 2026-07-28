@@ -34,6 +34,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # noqa: E402  归档布局单一真相源（分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认）
+import news_common  # noqa: E402  原子 JSON 写单一真源（dump_json_atomic）
 
 API = "https://www.googleapis.com/youtube/v3"
 # 分仓桥接：youtube_comments 写根 + youtube 读 glob 均随 community_root() 换位（data 仓 / 在树默认）
@@ -65,7 +66,8 @@ def discover_videos(key):
     # 复用已归档 youtube 视频 URL 里的 video id（递归覆盖区服/类型分层）
     for fp in glob.glob(YT_ARCHIVE_GLOB, recursive=True):
         try:
-            items = json.load(open(fp, encoding="utf-8"))
+            with open(fp, encoding="utf-8") as f:
+                items = json.load(f)
         except Exception:
             continue
         for it in (items if isinstance(items, list) else []):
@@ -127,15 +129,17 @@ def main():
     store = f"{DEST}/comments.jsonl"
     known = set()
     if os.path.isfile(store):
-        for line in open(store, encoding="utf-8"):
-            try:
-                known.add(json.loads(line)["id"])
-            except Exception:
-                pass
+        with open(store, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    known.add(json.loads(line)["id"])
+                except Exception:
+                    pass
     state = {}
     sp = f"{DEST}/state.json"
     if os.path.isfile(sp):
-        state = json.load(open(sp, encoding="utf-8"))
+        with open(sp, encoding="utf-8") as f:
+            state = json.load(f)
 
     videos = discover_videos(key)
     print(f"候选视频 {len(videos)}；库内已有评论 {len(known)} 条")
@@ -145,18 +149,21 @@ def main():
         for vid, (title, ch) in videos.items():
             rows, exhausted = fetch_video_comments(key, vid, known, a.max_pages)
             for r in rows:
-                r["video_title"] = title; r["channel"] = ch
+                r["video_title"] = title
+                r["channel"] = ch
                 r["video_url"] = f"https://www.youtube.com/watch?v={vid}"
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
                 run_new.append(r)
             state[vid] = {"title": title, "channel": ch, "exhausted": exhausted,
                           "last_run": a.date}
-    json.dump(state, open(sp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    # 原子写：state.json 是增量续采的唯一断点依据，直写 open('w') 若在写一半被中断
+    # 便留下半截 JSON，下一轮 json.load 抛异常 => 整份状态丢失、全部视频从头重翻页
+    # （YouTube API 有每日配额，重翻即烧配额）。
+    news_common.dump_json_atomic(sp, state, indent=1)
 
     # 当次快照（按 likes 排序，供报告引用）
     run_new.sort(key=lambda x: -x.get("likes", 0))
-    json.dump(run_new, open(f"{DEST}/{a.date}.json", "w", encoding="utf-8"),
-              ensure_ascii=False, indent=1)
+    news_common.dump_json_atomic(f"{DEST}/{a.date}.json", run_new, indent=1)
     print(f"本次新增 {len(run_new)} 条；累积库共 {len(known)} 条 → {store}")
 
 

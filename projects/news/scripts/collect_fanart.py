@@ -107,16 +107,23 @@ def main():
 
     # ---- Discord 二创频道附件：先收集，再（带 token）刷新过期链接，最后下载 ----
     _gdir = _discord_global_dir()
-    idx = json.load(open(_gdir / "channel_index.json", encoding="utf-8"))
+    with open(_gdir / "channel_index.json", encoding="utf-8") as _f:
+        idx = json.load(_f)
     dir2name = {v["dir"]: v["name"] for v in idx.values()}
     disc = []  # [{channel, author, text, orig_filename, url, fn}]
     for d, name in dir2name.items():
         if not any(k in name for k in FANART_CH):
             continue
-        fp = _gdir / "channels" / d / f"{a.date}.jsonl"
-        if not os.path.isfile(fp):
+        # 冷热分层（CLAUDE.md §5.2）：上上个月及更早的 dated 归档已压成 .jsonl.gz。
+        # 原写法只 isfile() 裸 .jsonl，于是任何进了冷层的日期都静默判「无归档」跳过
+        # ——历史日期的二创采集恒为 0 条，且不报任何错。读方必须走冷热双开入口。
+        raw = _gdir / "channels" / d / f"{a.date}.jsonl"
+        fp = raw if raw.is_file() else raw.with_suffix(".jsonl.gz")
+        if not fp.is_file():
             continue
-        for line in open(fp, encoding="utf-8"):
+        with archive_layout.open_archive_text(fp) as _fh:
+            lines = _fh.readlines()
+        for line in lines:
             line = line.strip()
             if not line:
                 continue
@@ -148,9 +155,15 @@ def main():
                         "file": x["fn"] if status == "ok" else None, "status": status})
 
     # ---- Pixiv ----
-    pfp = str(_community_root() / "platforms" / "pixiv" / f"{a.date}.json")
-    if os.path.isfile(pfp):
-        items = json.load(open(pfp, encoding="utf-8"))
+    # 落点一律问 archive_layout（写方同源）。原写法硬编码 `platforms/pixiv/`——多出的
+    # `platforms/` 一段没有任何写方产出（写方是 community_root/<平台>/<date>.json），
+    # 于是 isfile() 恒 False，pixiv 二创永远采到 0 条且不报任何错。
+    _pf, _rg, _st = archive_layout.resolve_write_layout("pixiv")
+    _praw = _community_root() / archive_layout.build_relpath(_pf, _rg, _st, a.date)
+    pfp = _praw if _praw.is_file() else _praw.with_suffix(".json.gz")
+    if pfp.is_file():
+        with archive_layout.open_archive_text(pfp) as _f:
+            items = json.load(_f)
         items = items if isinstance(items, list) else items.get("items", [])
         for it in items:
             if not isinstance(it, dict) or not it.get("media_url"):
@@ -165,8 +178,8 @@ def main():
                             "file": fn if status == "ok" else None, "status": status})
 
     ok = [g for g in gallery if g["status"] == "ok"]
-    json.dump(gallery, open(os.path.join(a.out, "gallery_manifest.json"), "w", encoding="utf-8"),
-              ensure_ascii=False, indent=2)
+    with open(os.path.join(a.out, "gallery_manifest.json"), "w", encoding="utf-8") as _f:
+        json.dump(gallery, _f, ensure_ascii=False, indent=2)
     by_status = {}
     for g in gallery:
         by_status[g["status"]] = by_status.get(g["status"], 0) + 1

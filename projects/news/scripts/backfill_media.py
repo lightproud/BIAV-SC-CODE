@@ -31,7 +31,7 @@ import subprocess
 import hashlib
 import html
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -51,12 +51,17 @@ REFRESH_BATCH = 50
 
 
 def load_manifest():
-    return json.load(open(MANIFEST, encoding="utf-8")) if os.path.isfile(MANIFEST) else {}
+    if not os.path.isfile(MANIFEST):
+        return {}
+    with open(MANIFEST, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def save_manifest(m):
     os.makedirs(os.path.dirname(MANIFEST), exist_ok=True)
-    json.dump(m, open(MANIFEST, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    # 原子替换：manifest 是回填断点续跑的唯一依据，写一半被中断即整份不可解析,
+    # 下一轮当作「无 manifest」从零重跑（既浪费带宽，也可能重复计费的 API 配额）。
+    news_common.dump_json_atomic(MANIFEST, m, indent=1)
 
 
 def ext_of(url, d="jpg"):
@@ -87,7 +92,13 @@ def fetch(url, dest, source):
         return f"err_{type(e).__name__}"
     if len(data) < 200:
         return "empty"
-    open(dest, "wb").write(data)
+    # 先写同目录临时文件再 os.replace：直接 open(dest,'wb').write(data) 一旦写一半
+    # 被中断（磁盘满 / 进程被杀），留下的半截文件在 manifest 里记的是 "ok",
+    # 后续轮次不会重下——半截图片就此永久入库。
+    tmp = f"{dest}.part"
+    with open(tmp, "wb") as f:
+        f.write(data)
+    os.replace(tmp, dest)
     return "ok"
 
 
@@ -112,39 +123,45 @@ def refresh_discord(urls, token):
 
 def collect_urls(include_discord):
     urls = []
-    for fp in glob.glob(f"{SRC}/*/*.json"):
-        if "/discord/" in fp:           # discord 单独处理（下方 jsonl），非平台 json
-            continue
-        src = fp.split("/")[-2]; d = os.path.basename(fp)[:-5]
-        if len(d) != 10:
-            continue
-        try:
-            items = json.load(open(fp, encoding="utf-8"))
-        except Exception:
-            continue
-        items = items if isinstance(items, list) else items.get("items", [])
-        for it in items:
-            if isinstance(it, dict) and it.get("media_url"):
-                urls.append((it["media_url"], src, d))
+    # 遍历一律经 archive_layout（读方唯一入口）。原写法三处漏：
+    #   1. glob 只吃 `<平台>/<date>.json` 扁平层，分层平台（steam 家族 / appstore /
+    #      google_play / youtube 落 <平台>/<区服>/<类型>/）整批扫不到；
+    #   2. 冷层 `.json.gz` 一个都匹配不上（上上个月及更早全漏，CLAUDE.md §5.2）；
+    #   3. 日期茎用 basename[:-5] 手工切片，对 `.json.gz` 会切成 '2026-04-01.j',
+    #      长度校验随即判 != 10 丢弃——即便匹配上也照样丢。
+    src_root = Path(SRC)
+    sources = sorted(p.name for p in src_root.iterdir()
+                     if p.is_dir() and p.name != "discord") if src_root.is_dir() else []
+    for source in sources:
+        for fpath in archive_layout.dated_files(source, src_root):
+            d = archive_layout.date_stem(fpath)
+            try:
+                with archive_layout.open_archive_text(fpath) as f:
+                    items = json.load(f)
+            except Exception:
+                continue
+            items = items if isinstance(items, list) else items.get("items", [])
+            for it in items:
+                if isinstance(it, dict) and it.get("media_url"):
+                    urls.append((it["media_url"], source, d))
     if include_discord:
         # 三区服全量遍历（2026-07-10 方案甲布局，新旧布局经 SSOT 回落）
-        import archive_layout
-        for fpath in archive_layout.iter_discord_message_files(Path(SRC) / "discord"):
-            fp = str(fpath)
-            # 冷热双扩展名（.jsonl / .jsonl.gz，2026-07-12 甲案）：按名截日期
-            d = os.path.basename(fp).replace(".jsonl.gz", "").replace(".jsonl", "")
+        for fpath in archive_layout.iter_discord_message_files(src_root / "discord"):
+            # 日期茎一律经 SSOT（CLAUDE.md §5.2），不再手工 replace 后缀
+            d = archive_layout.date_stem(fpath)
             if len(d) != 10:
                 continue
-            for line in archive_layout.open_archive_text(fp):
-                if '"content_type": "image' not in line:
-                    continue
-                try:
-                    m = json.loads(line)
-                except Exception:
-                    continue
-                for att in (m.get("attachments") or []):
-                    if str(att.get("content_type", "")).startswith("image") and att.get("url"):
-                        urls.append((att["url"], "discord", d))
+            with archive_layout.open_archive_text(fpath) as fh:
+                for line in fh:
+                    if '"content_type": "image' not in line:
+                        continue
+                    try:
+                        m = json.loads(line)
+                    except Exception:
+                        continue
+                    for att in (m.get("attachments") or []):
+                        if str(att.get("content_type", "")).startswith("image") and att.get("url"):
+                            urls.append((att["url"], "discord", d))
     return urls
 
 
@@ -207,7 +224,9 @@ def main():
         status = fetch(dl_url, os.path.join(FILES, fn), src)
         manifest[url] = {"filename": fn if status == "ok" else None, "source": src,
                          "date": d, "status": status, "refreshed": url in refreshed,
-                         "checked_at": datetime.utcnow().isoformat()}
+                         # utcnow() 产出的是「无时区」datetime，isoformat() 不带 +00:00
+                         # 后缀——落档后读方无从分辨是 UTC 还是本地时；且 3.12 起已弃用。
+                         "checked_at": datetime.now(timezone.utc).isoformat()}
         stats[status] = stats.get(status, 0) + 1
         done += 1
         if done % 200 == 0:

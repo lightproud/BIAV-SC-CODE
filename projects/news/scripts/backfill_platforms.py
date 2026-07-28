@@ -73,7 +73,11 @@ def _platform_state(state: dict, name: str) -> dict:
 
 
 def _archive_items(source: str, items: list[dict]):
-    """Archive items into per-date files under data/platforms/{source}/."""
+    """Archive items into per-date files under <community_root>/<平台>[/区服][/类型]/。
+
+    落点由 archive_layout.resolve_write_layout + build_relpath 单一真相源算出；
+    旧注释写的 `data/platforms/{source}/` 已不是任何真实落点（读方照抄会全空）。
+    """
     if not items:
         return
 
