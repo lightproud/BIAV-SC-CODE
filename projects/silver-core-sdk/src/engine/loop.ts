@@ -24,6 +24,7 @@ import type {
   APIMessageParam,
   APIToolDefinitionParam,
   ContentBlock,
+  ContentBlockParam,
   JSONSchema,
   ModelUsage,
   NonNullableUsage,
@@ -565,6 +566,52 @@ export async function* runAgentLoop(
     mirror(turn);
   };
 
+  /** Merge two user turns into one, preserving both string and block content. */
+  const mergeUserTurns = (a: APIMessageParam, b: APIMessageParam): APIMessageParam => {
+    if (typeof a.content === 'string' && typeof b.content === 'string') {
+      return { role: 'user', content: `${a.content}\n\n${b.content}` };
+    }
+    const toBlocks = (c: string | ContentBlockParam[]): ContentBlockParam[] =>
+      typeof c === 'string' ? [{ type: 'text', text: c }] : c;
+    return { role: 'user', content: [...toBlocks(a.content), ...toBlocks(b.content)] };
+  };
+
+  /**
+   * Append a continuation USER turn to history (+ the mirrored request view),
+   * MERGING into a trailing user turn when one already exists so role
+   * alternation is preserved. A second consecutive user turn arises when the
+   * previous assistant turn was skipped by pushAssistant as all-empty (a
+   * max_tokens cut mid-tool-use leaves only an orphan tool_use, which the C6
+   * filter drops), or when the injection point already ends on a user turn (the
+   * pre-compaction memory flush fires mid tool-loop, right after a tool_result
+   * user turn). On the wire two adjacent user turns 400 "roles must alternate",
+   * and every retry re-sends the same invalid history — so merge instead of
+   * stacking (mirrors the sessions/store + subagent-runtime alternation fixes).
+   */
+  const pushUserTurn = (turn: APIMessageParam): void => {
+    const tail = history[history.length - 1];
+    if (tail === undefined || tail.role !== 'user') {
+      history.push(turn);
+      mirror(turn);
+      return;
+    }
+    const merged = mergeUserTurns(tail, turn);
+    history[history.length - 1] = merged;
+    const rv = deps.requestView?.messages;
+    if (rv !== undefined && rv !== history) {
+      // history and the request view share the SAME trailing turn object (every
+      // push mirrors the same reference; compaction only ever splices the
+      // front), so replace it with the same merged object to keep them in sync.
+      if (rv.length > 0 && rv[rv.length - 1] === tail) {
+        rv[rv.length - 1] = merged;
+      } else if (rv.length > 0 && rv[rv.length - 1]?.role === 'user') {
+        rv[rv.length - 1] = mergeUserTurns(rv[rv.length - 1]!, turn);
+      } else {
+        rv.push(turn);
+      }
+    }
+  };
+
   /** Tool defs are rebuilt once per TURN (loop iteration) so tool-search
    *  "load on demand" surfaces newly-loaded schemas per turn — for BOTH
    *  deferred MCP tools (via deps.mcp.allTools() filtering) and deferred COLD
@@ -1081,8 +1128,10 @@ export async function* runAgentLoop(
                 role: 'user',
                 content: [{ type: 'text', text: config.memoryFlush.prompt }],
               };
-              history.push(flushTurn);
-              mirror(flushTurn);
+              // Alternation-safe: the compaction trigger commonly fires mid
+              // tool-loop, where the view already ends on a tool_result user
+              // turn — a bare push would stack two user turns and 400.
+              pushUserTurn(flushTurn);
               deps.debug('memory flush: injected pre-compaction write opportunity');
             }
           } else {
@@ -1705,8 +1754,10 @@ export async function* runAgentLoop(
             role: 'user',
             content: outcome.correction,
           };
-          history.push(correctionTurn);
-          mirror(correctionTurn);
+          // Alternation-safe: a structured-output turn cut at max_tokens
+          // mid-tool-use carries only an orphan tool_use; pushAssistant above
+          // drops it as all-empty, so a bare push would stack two user turns.
+          pushUserTurn(correctionTurn);
           continue;
         }
         structuredValue = outcome.value;
@@ -1730,8 +1781,10 @@ export async function* runAgentLoop(
             assistant.model,
           );
           const bgTurn: APIMessageParam = { role: 'user', content: extra };
-          history.push(bgTurn);
-          mirror(bgTurn);
+          // Alternation-safe: a natural-end turn cut at max_tokens mid-tool-use
+          // leaves only an orphan tool_use, dropped as all-empty by
+          // pushAssistant above — a bare push would stack two user turns.
+          pushUserTurn(bgTurn);
           // A follow-up assistant turn now becomes billable; honor the same caps
           // as the tool-continue / structured-retry paths so surfacing a drained
           // result cannot bust maxTurns / maxBudgetUsd.
@@ -1806,8 +1859,10 @@ export async function* runAgentLoop(
           deps.debug(`engine: Stop hook blocked the stop; continuing (${reason})`);
           stopHookActive = true;
           const blockTurn: APIMessageParam = { role: 'user', content: reason };
-          history.push(blockTurn);
-          mirror(blockTurn);
+          // Alternation-safe: when the stopped turn was cut at max_tokens
+          // mid-tool-use, pushAssistant above dropped its all-empty content, so
+          // a bare push of the block reason would stack two user turns.
+          pushUserTurn(blockTurn);
           // The forced follow-up assistant turn is billable: honor the same
           // caps as the tool-continue / structured-retry / bg-drain paths so a
           // stubborn Stop hook cannot bust maxTurns / maxBudgetUsd.
