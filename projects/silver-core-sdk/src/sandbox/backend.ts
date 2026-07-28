@@ -121,9 +121,15 @@ export const DEFAULT_SANDBOX_ENV_ALLOWLIST: readonly string[] = [
 export function resolveEnvAllowlist(
   envScrub: boolean | { allow?: readonly string[] } | undefined,
 ): readonly string[] | undefined {
-  if (envScrub === undefined || envScrub === false) return undefined;
   if (envScrub === true) return DEFAULT_SANDBOX_ENV_ALLOWLIST;
-  return envScrub.allow ?? DEFAULT_SANDBOX_ENV_ALLOWLIST;
+  // `typeof null === 'object'`, so guard null before dereferencing `.allow` —
+  // otherwise a JS host passing `sandbox: { envScrub: null }` throws a TypeError
+  // out of the query-layer sandbox assembly (mirrors the resolveSandboxBackend
+  // null guard for `sandbox: null`). undefined/false/null all mean "no scrub".
+  if (typeof envScrub === 'object' && envScrub !== null) {
+    return envScrub.allow ?? DEFAULT_SANDBOX_ENV_ALLOWLIST;
+  }
+  return undefined;
 }
 
 /**
