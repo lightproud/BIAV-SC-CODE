@@ -333,13 +333,13 @@ export class AnthropicTransport implements Transport {
             if (frame.event === undefined) {
               this.debug(
                 `transport: skipping event-less non-JSON SSE frame after ${eventCount} event(s): ` +
-                  frame.data.slice(0, 120),
+                  sliceSurrogateSafe(frame.data, 120),
               );
               continue;
             }
             throw new APIConnectionError(
               `Malformed SSE payload for event "${frame.event}" after ${eventCount} event(s): ` +
-                frame.data.slice(0, 120),
+                sliceSurrogateSafe(frame.data, 120),
               err,
               'sse_malformed_frame',
             );

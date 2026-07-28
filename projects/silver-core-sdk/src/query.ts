@@ -2278,6 +2278,18 @@ export function query(args: {
       gate.setMode(mode);
     },
     async setModel(model?: string): Promise<void> {
+      // An explicit empty string is NOT a reset (undefined is): it sails past
+      // `?? initialModel` and sets engineConfig.model to '', which the next turn
+      // sends verbatim — re-introducing the exact SILENT gateway-400 the
+      // construction guard (options.model / ANTHROPIC_MODEL '' -> throw) was
+      // added to prevent. Fail loud at this sibling entry point too; the
+      // session-manager's "a failed setter leaves no trace to replay" contract
+      // then keeps '' out of the resumed control-plane replay state.
+      if (model === '') {
+        throw new ConfigurationError(
+          'setModel: model must be a non-empty id (pass undefined to reset to the initial model)',
+        );
+      }
       engineConfig.model = model ?? initialModel;
     },
     async setMaxThinkingTokens(maxThinkingTokens: number | null): Promise<void> {
