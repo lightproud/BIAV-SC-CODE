@@ -302,9 +302,16 @@ export class AnthropicTransport implements Transport {
       // message_stop frame; if it did not and CONTENT was already delivered,
       // the server dropped mid-generation (a truncation, not a completion).
       let sawStopReason = false;
-      // Whether any content_block_start arrived: distinguishes a start-only
-      // stream (empty, benign — returns normally, the deliberate existing
-      // behavior) from one that delivered a PARTIAL answer then dropped.
+      // Whether any content was delivered to the consumer: a content_block_start
+      // OR a content_block_delta. Distinguishes a start-only stream (empty,
+      // benign — returns normally, the deliberate existing behavior) from one
+      // that delivered a PARTIAL answer then dropped. Keying on delta too (not
+      // just start) is load-bearing: a translating gateway can emit a
+      // content_block_delta with NO preceding content_block_start, and that delta
+      // is ALREADY yielded to the consumer below — so it must count as consumed
+      // content, or the empty-stream retry gate would REPLAY a partially consumed
+      // turn (U2-1's exact hazard, reached via the start-less delta path its
+      // content_block_start-only flag missed).
       let sawContentBlock = false;
       try {
         resetIdle();
@@ -373,7 +380,9 @@ export class AnthropicTransport implements Transport {
           // Finding M2 — a message_delta with a non-null stop_reason marks the
           // content as complete (message_stop merely closes the SSE channel).
           const parsedType = (parsed as { type?: string }).type;
-          if (parsedType === 'content_block_start') sawContentBlock = true;
+          if (parsedType === 'content_block_start' || parsedType === 'content_block_delta') {
+            sawContentBlock = true;
+          }
           if (parsedType === 'message_delta') {
             const sr = (parsed as { delta?: { stop_reason?: unknown } }).delta?.stop_reason;
             if (sr !== null && sr !== undefined) sawStopReason = true;
