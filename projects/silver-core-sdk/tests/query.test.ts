@@ -402,7 +402,7 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
       return sys
         .slice(0, lastBp + 1)
         .map((b) => b.text ?? '')
-        .join(' ');
+        .join('\u0000');
     };
     const toolsJson = (body: { tools?: unknown }): string => JSON.stringify(body.tools ?? null);
 
