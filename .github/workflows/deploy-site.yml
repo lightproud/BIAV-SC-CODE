@@ -161,7 +161,7 @@ jobs:
           echo "构建验证通过（HTML $html_count 份）"
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
 
