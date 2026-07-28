@@ -4589,6 +4589,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15575.md",
+      "rel": "提及:法洛思",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15583.md",
       "rel": "提及:奥尔拉",
       "rel_type": "mention"
@@ -4597,6 +4603,12 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15585.md",
       "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15588.md",
+      "rel": "提及:艾尔瓦",
       "rel_type": "mention"
     },
     {
@@ -4621,18 +4633,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15562.md",
       "rel": "提及:莉兹",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
       "rel_type": "mention"
     },
     {
@@ -6011,6 +6011,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15575.md",
+      "rel": "提及:法洛思",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15583.md",
       "rel": "提及:奥尔拉",
       "rel_type": "mention"
@@ -6019,6 +6025,12 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15585.md",
       "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15588.md",
+      "rel": "提及:艾尔瓦",
       "rel_type": "mention"
     },
     {
@@ -6043,18 +6055,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15562.md",
       "rel": "提及:莉兹",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
       "rel_type": "mention"
     },
     {

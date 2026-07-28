@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "note_com 社区数据源"
-description: "note_com 平台采集档案，全量 31 条，健康度 active。"
+description: "note_com 平台采集档案，全量 44 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/note_com/"
 tags: ["data_layer:full_archive", "platform:note_com", "health:active"]
-timestamp: "2026-07-28T02:19:46.777584+00:00"
+timestamp: "2026-07-28T05:48:23.764082+00:00"
 ---
 
 # 数据层指针
@@ -16,7 +16,7 @@ timestamp: "2026-07-28T02:19:46.777584+00:00"
 | 平台 | note_com |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/note_com/` |
 | 输出展示层（抽样） | `projects/news/output/note_com-latest.json` |
-| 全量条数 | 31 |
+| 全量条数 | 44 |
 | 采集健康度 | active |
 | 最后成功 | 2026-07-26 |
 
