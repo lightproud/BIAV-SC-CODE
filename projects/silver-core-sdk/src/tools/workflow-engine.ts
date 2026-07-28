@@ -746,6 +746,36 @@ const SYNC_EVAL_TIMEOUT_MS = 30_000;
 // The engine
 // ---------------------------------------------------------------------------
 
+/**
+ * Compile-only pre-flight: parse `meta` and syntax-check the body WITHOUT
+ * running it. Returns the parsed meta, or an error message.
+ *
+ * Exists because the tool went async (v0.92.0). Official specifies Workflow
+ * "throws on ... child syntax error" while otherwise returning immediately, and
+ * those two are only compatible if the syntax verdict is reachable BEFORE the
+ * run is detached. Without this, a typo'd script would ack as launched and its
+ * error would surface a turn later as a task result — turning a mistake the
+ * caller could fix instantly into one it has to go looking for.
+ *
+ * Deliberately the same two steps `executeScript` performs (meta parse, then
+ * `new vm.Script`), so a script that passes here cannot fail the run's own
+ * syntax stage. Nothing is executed: `new vm.Script` compiles.
+ */
+export function checkWorkflowSyntax(
+  script: string,
+): { ok: true; meta: WorkflowMeta } | { ok: false; error: string } {
+  const parsed = parseWorkflowMeta(script);
+  if (!parsed.ok) return { ok: false, error: parsed.error };
+  try {
+    new vm.Script(`(async () => { 'use strict';\n${parsed.body}\n})()`, {
+      filename: 'workflow.mjs',
+    });
+  } catch (err) {
+    return { ok: false, error: `script failed its syntax check: ${errorMessage(err)}` };
+  }
+  return { ok: true, meta: parsed.meta };
+}
+
 export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRunResult> {
   const limits: WorkflowLimits = { ...defaultWorkflowLimits(), ...opts.limits };
   const progress: string[] = [];

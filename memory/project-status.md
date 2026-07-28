@@ -82,10 +82,10 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.91.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.91.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.92.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.92.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
-| agent SDK 源文件 / 测试档 | 139 / 205 | 磁盘实况 |
+| agent SDK 源文件 / 测试档 | 139 / 206 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 137 | 磁盘实况 |
@@ -249,6 +249,7 @@
 > schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
+> **v0.92.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.92.0（Workflow 改真异步启动）前进。
 > **v0.91.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.91.0（四工具补结构化产出 + 零产出面台账守卫）前进。
 
 > **v0.90.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.90.0（checkpoint blob 上限，T74 甲案）前进。
@@ -340,6 +341,7 @@
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
 - **v0.84.0（2026-07-27）**：记忆索引纪律 + 整理规程——修的是「SDK 给了常驻索引机制却没规定索引条目该长什么样，且会话收尾提示词命令模型把进度卡写进索引档」这个自伤缺口（守密人 BPT 现场反馈：开工要好几回工具调用才找得到东西）。进度卡改落 `/memories/progress/`、索引只留指针；新增索引纪律片段（两模式注入、前提不成立即跳过）；写侧超限反压（读写共用同一度量，明说尾部已不可见）；`buildConsolidationPrompt()` + 四阶段整理规程，由 `assessMemoryStoreHealth()` 结果渲染待办。**层界守住**：只给「该不该整理 / 怎么整理」，不给调度（N1 未破，零新进程）。新增测试 28。
 - **v0.87.0（2026-07-27）**：截断纪律全家对齐——任何上限砍内容须答三问（丢多少/为何/怎么拿回）、流式保尾。后台 shell 流永久失聪缺陷修复（保尾保留窗 + 丢弃计数 + gap 标记）；Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记；cards 校验两层豁免索引档（修 0.84.0 自种 P4 矛盾）。另修哨兵两档制 + test.yml push 盲区 + 门禁 hooksPath 警告（仓侧）。
+- **v0.92.0（2026-07-27）**：**Workflow 改为真异步启动**（守密人「1 改」）——**对调用方是行为破坏性变更**：工具不再返回跑完的结果。官方后台启动、立即返回 `{status:'async_launched', taskId}`；本工具原先把整个工作流跑在工具调用里。**类型层调和不了，而假装对齐比留缺口更坏**——同步跑完再交那个字面量，等于给一张「货已在你手上」的取件凭证，调用方会去找一个在凭证打印前就结束的任务。**改的是行为**。**接进既有后台 id 空间**（新增 `ShellManager.registerTask`，`TaskOutput` 读 / `TaskStop` 停，不另立注册表也不另加工具；id 与 `bash_N` 共用计数器永不撞号，`pid: undefined` 对 promise 是实话）。**新增 `ToolContext.lifeSignal`**（查询级信号）：`ctx.signal` 是**按回合**的，挂在它上面是这里最坏的一种错——回执照发、回合边界静默死掉、调用方永远等不到；回归测试**做了反向对照**（接回 `ctx.signal` 确实转红，首跑就绿的竞态测试不算证据）。**语法错保持同步**（新增只编译不执行的 `checkWorkflowSyntax`：官方同时要求「立即返回」与「语法错抛出」，只有脱手前拿到判词才同时成立）。**停止优先于完成**（被停报 `killed` 不报 `completed`）。**三件刻意不声称**：无 `<task-notification>` 推送（引擎对工具发起的后台工作没有这条通道，回执改指 `TaskOutput`）· 无 `transcriptDir` · **没宿主就不谎称异步**（`query()` 外无 `lifeSignal`，就地跑完并明说）。`WorkflowOutput` 由此真填充、Workflow 移出零产出台账——0.91.0 那道守卫的**陈条检查**改动后首跑即抓到毕业。另清陈账：`'TaskStop'` 早已发货却仍挂在描述红线禁提清单上（红线是「绝不提未发货的」，把已发货的留着会反转成「绝不提我们有的」）。
 - **v0.91.0（2026-07-27）**：**四个工具补上结构化产出 + 零产出面立台账**（守密人「全补」+「整体记档并入白名单」两裁）——**暴露的是 type-parity 的射程边界**：它比**声明的形状**、不问**有没有人产出**，首跑遂一本正经报 `AgentOutput` 差 20 个字段——实情是本 SDK **从没有代码填过 `AgentOutput`**，等于精确地量一个空盒子。顺线做工具层普查又揪出**四个「声明了官方形状、一行没填」**的类型，事实全都只能靠解析人话字符串拿到：**Write**（`type`/`filePath`/`content`/`bytes` + 有 checkpoint 时的 `originalFile`；`bytes` **早就算好了**、拼进句子扔掉，全批最刺眼）· **Edit**（含 `replacedCount`，前像不额外花钱）· **TodoWrite**（`oldTodos`/`newTodos` 完整，为此把上一版单子存进 session-key WeakMap，调用方才看得到**迁移**）· **EnterWorktree**（三字段完整）。`structuredPatch`/`gitDiff` 不填——无差分引擎与 git 管线，空数组会被读成「没有改动」。**缺就报缺**：Write 的 `originalFile` 没抓到前像时**省略**而非 `null`（`null` 已表示「原本没这个文件」，把「不知道」塌缩成「不存在」是主动误导）。**立台账不立规矩**：`tests/structured-output-census.test.ts` 钉住刻意不产出的名单+理由，新工具静默上线红、陈条也红——「所有工具都必须产出」是错规矩（会再造 typed-not-populated），真正出事的是**静默增长**。**18 条并入白名单**，漂移报告归零。**Workflow 仍开着**（必填 `status:'async_launched'` 与同步执行冲突，守密人已裁改行为对齐，另轮跟进）。
 
 - **v0.90.0（2026-07-27）**：checkpoint blob 上限（T74 甲案）——超 10MB 前像不存字节、标 `oversized`（刻意不复用 `blob: null`——那意味「新建」，rewind 会删档；`readIndex()` 往返保留标记，丢即致命）；rewind 对超限档原样不动、点名不可恢复并整体报 `canRewind: false`。销 T74。

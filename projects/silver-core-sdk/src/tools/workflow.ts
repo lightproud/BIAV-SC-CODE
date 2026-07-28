@@ -12,17 +12,34 @@
  * are implemented as run labels (they override meta.name / meta.description
  * in the result header) so the params surface byte-matches the reference.
  *
- * HONEST ADAPTATION (documented in the tool description): the official tool
- * launches the workflow in the background and returns
- * `{status: "async_launched", taskId, ...}` immediately, with the result
- * arriving later as a task notification. This SDK has no background-task
- * delivery channel for tools (same gap as Monitor's push delivery), so the
- * workflow runs SYNCHRONOUSLY inside the tool call and the tool result
- * carries the consolidated outcome directly: the script's return value
- * (JSON-serialized), the progress transcript (phase()/log()/per-agent lines),
- * the runId for resume, and the persisted script path. The official
- * WorkflowOutput wire type is kept verbatim in src/tool-types.ts (wire type
- * over runtime subset — the MonitorInput.ws precedent).
+ * ASYNC since v0.92.0 (keeper ruling 2026-07-27, "1 改"). Official launches the
+ * workflow in the background and returns `{status: "async_launched", taskId}`
+ * immediately; this tool did the opposite — it ran the whole workflow inside
+ * the tool call and returned the finished result. The two could not be
+ * reconciled at the type level, and faking it was worse than the gap: emitting
+ * `status: 'async_launched'` from a synchronous run hands the caller a claim
+ * ticket for goods it is already holding, and it will go looking for a task
+ * that finished before the ticket was printed. So the BEHAVIOUR moved.
+ *
+ * The run is registered in the SAME background-task id space TaskOutput and
+ * TaskStop already serve (`ShellManager.registerTask`), rather than getting a
+ * registry and a pair of tools of its own — a model holding a task id should
+ * not have to know which kind of background thing produced it.
+ *
+ * Three things this deliberately does NOT claim:
+ *  - No `<task-notification>` push. Official's harness delivers one; this
+ *    engine has no such channel for tool-launched work (the subagent runtime's
+ *    drain is agent-only). The ack says "read it with TaskOutput", which is
+ *    what actually happens, instead of promising a delivery that never comes.
+ *  - No `transcriptDir`. There is none; the field stays absent.
+ *  - Syntax errors stay SYNCHRONOUS (`checkWorkflowSyntax` pre-flight), the way
+ *    official documents them. A typo must not ack as launched and surface a
+ *    turn later.
+ *
+ * Requires a query-lifetime signal (`ctx.lifeSignal`) and a shell manager. With
+ * either missing — bare tool use outside query() — the tool runs the workflow
+ * synchronously and says so, rather than detaching work onto a per-turn signal
+ * that would kill it at the turn boundary.
  *
  * Run journals are kept per session, keyed on the shared `readFilePaths` Set
  * exactly like the Task tools' store (src/tools/task.ts precedent), so a
@@ -40,10 +57,13 @@ import type {
 } from '../internal/contracts.js';
 import { AbortError } from '../errors.js';
 import {
+  checkWorkflowSyntax,
   runWorkflow,
   type WorkflowJournalEntry,
   type WorkflowLimits,
+  type WorkflowRunResult,
 } from './workflow-engine.js';
+import type { WorkflowOutput } from '../types/tools.js';
 import { WORKFLOW_DESCRIPTION } from './descriptions.js';
 import { sliceSurrogateSafe } from '../internal/text.js';
 
@@ -283,60 +303,135 @@ export function createWorkflowTool(overrides?: {
         }
       }
 
-      const result = await runWorkflow({
+      const runOptions = {
         script: source,
         args: input['args'],
         spawnSubagent: ctx.spawnSubagent,
-        signal: ctx.signal,
         debug: ctx.debug,
         ...(overrides?.limits !== undefined ? { limits: overrides.limits } : {}),
         ...(resumeJournal !== undefined ? { resumeJournal } : {}),
-        resolveWorkflow: (n) => resolveNamedWorkflow(n, ctx.cwd).source,
+        resolveWorkflow: (n: string) => resolveNamedWorkflow(n, ctx.cwd).source,
         readScript: readScriptFile,
-      });
+      };
 
-      // Syntax stage: the script never ran — nothing to resume, no runId.
-      if (!result.ok && result.stage === 'syntax') {
+      // Pre-flight. Official documents Workflow as returning immediately AND
+      // as throwing on a syntax error; both hold only if the verdict is
+      // reached before the run detaches. A typo'd script must not ack as
+      // launched and then surface its error a turn later.
+      const syntax = checkWorkflowSyntax(source);
+      if (!syntax.ok) {
         return errorResult(
-          `Workflow failed its syntax check and did not start.\nerror: ${result.error}`,
+          `Workflow failed its syntax check and did not start.\nerror: ${syntax.error}`,
         );
       }
+      const metaName = title ?? syntax.meta.name ?? '(unknown)';
+      const summary = description ?? syntax.meta.description;
 
-      // The run started (even if it then failed): mint a runId and store the
-      // journal so a fixed script can resume over the completed prefix.
       const runId = `wf-run-${store.nextRunId}`;
       store.nextRunId += 1;
-      store.journals.set(runId, result.journal);
 
-      const lines: string[] = [];
-      const metaName = title ?? result.meta?.name ?? '(unknown)';
-      lines.push(
-        result.ok ? `Workflow completed: ${metaName}` : `Workflow failed: ${metaName}`,
-      );
-      const summary = description ?? result.meta?.description;
-      if (summary !== undefined) {
-        lines.push(`summary: ${summary}`);
+      /** Shared renderer so the async transcript and the sync fallback agree. */
+      const renderResult = (result: WorkflowRunResult): string => {
+        const lines: string[] = [
+          result.ok ? `Workflow completed: ${metaName}` : `Workflow failed: ${metaName}`,
+        ];
+        if (summary !== undefined) lines.push(`summary: ${summary}`);
+        lines.push(`runId: ${runId} (pass as resumeFromRunId to resume; same session only)`);
+        if (persistedPath !== undefined) {
+          lines.push(
+            `scriptPath: ${persistedPath} (edit and re-invoke with {scriptPath} to iterate)`,
+          );
+        }
+        lines.push(`agents: ${result.agentsLive} run live, ${result.agentsCached} from cache`);
+        if (result.progress.length > 0) lines.push('--- progress ---', ...result.progress);
+        if (result.ok) {
+          lines.push('--- result ---', serializeValue(result.value));
+        } else {
+          lines.push('--- error ---', result.error);
+          if (result.stack !== undefined) lines.push(result.stack);
+        }
+        return lines.join('\n');
+      };
+
+      const shells = ctx.shells;
+      const lifeSignal = ctx.lifeSignal;
+
+      // SYNCHRONOUS FALLBACK. Reached only outside query() (bare tool use, unit
+      // tests): with no query-lifetime signal there is nothing safe to detach
+      // onto — driving background work off the per-TURN signal would ack the
+      // launch and then kill the run at the turn boundary, silently. Running
+      // it here and saying so is the honest degradation.
+      if (shells === undefined || lifeSignal === undefined) {
+        const result = await runWorkflow({ ...runOptions, signal: ctx.signal });
+        if (!result.ok && result.stage === 'syntax') {
+          return errorResult(
+            `Workflow failed its syntax check and did not start.\nerror: ${result.error}`,
+          );
+        }
+        store.journals.set(runId, result.journal);
+        const body = renderResult(result);
+        ctx.debug(`Workflow: run ${runId} ("${metaName}") finished inline (no background host)`);
+        return {
+          content:
+            'Ran inline: this context has no background-task host, so the workflow ' +
+            `did NOT launch asynchronously.\n${body}`,
+          ...(result.ok ? {} : { isError: true }),
+        };
       }
-      lines.push(`runId: ${runId} (pass as resumeFromRunId to resume; same session only)`);
+
+      // ASYNC PATH. The run is driven by the QUERY-lifetime signal plus its own
+      // stop controller, never by the turn signal.
+      const stopper = new AbortController();
+      const handle = shells.registerTask({
+        label: `Workflow: ${metaName}`,
+        onStop: () => stopper.abort(),
+      });
+      const runSignal = AbortSignal.any([lifeSignal, stopper.signal]);
+
+      handle.write(`Workflow launched: ${metaName} (taskId: ${handle.id}, runId: ${runId})`);
+      void (async () => {
+        try {
+          const result = await runWorkflow({ ...runOptions, signal: runSignal });
+          store.journals.set(runId, result.journal);
+          handle.write(renderResult(result));
+          handle.finish(result.ok ? 0 : 1);
+          ctx.debug(
+            `Workflow: run ${runId} ("${metaName}") ${result.ok ? 'completed' : 'failed'} ` +
+              `in background task ${handle.id}`,
+          );
+        } catch (err) {
+          // An abort here is a TaskStop or query teardown; `finish` keeps the
+          // 'killed' verdict a stop already recorded rather than overwriting
+          // it with 'failed'.
+          const message = err instanceof Error ? err.message : String(err);
+          handle.writeErr(`Workflow aborted: ${message}`);
+          handle.finish(1);
+          ctx.debug(`Workflow: background task ${handle.id} aborted: ${message}`);
+        }
+      })();
+
+      const ack = [
+        `Launched workflow "${metaName}" in the background.`,
+        `taskId: ${handle.id} — read its progress and result with TaskOutput, stop it with TaskStop.`,
+        `runId: ${runId} (pass as resumeFromRunId to resume; same session only)`,
+      ];
+      if (summary !== undefined) ack.splice(1, 0, `summary: ${summary}`);
       if (persistedPath !== undefined) {
-        lines.push(`scriptPath: ${persistedPath} (edit and re-invoke with {scriptPath} to iterate)`);
+        ack.push(`scriptPath: ${persistedPath} (edit and re-invoke with {scriptPath} to iterate)`);
       }
-      lines.push(`agents: ${result.agentsLive} run live, ${result.agentsCached} from cache`);
-      if (result.progress.length > 0) {
-        lines.push('--- progress ---', ...result.progress);
-      }
-      if (result.ok) {
-        lines.push('--- result ---', serializeValue(result.value));
-        ctx.debug(
-          `Workflow: run ${runId} ("${metaName}") completed — ` +
-            `${result.agentsLive} live, ${result.agentsCached} cached`,
-        );
-        return { content: lines.join('\n') };
-      }
-      lines.push('--- error ---', result.error);
-      if (result.stack !== undefined) lines.push(result.stack);
-      ctx.debug(`Workflow: run ${runId} ("${metaName}") failed: ${result.error}`);
-      return { content: lines.join('\n'), isError: true };
+      return {
+        content: ack.join('\n'),
+        // Now honestly official-shaped: the launch really did happen, and the
+        // id really is one TaskOutput/TaskStop accept. `transcriptDir` stays
+        // absent — this engine has none.
+        structuredOutput: {
+          status: 'async_launched',
+          taskId: handle.id,
+          runId,
+          ...(summary !== undefined ? { summary } : {}),
+          ...(persistedPath !== undefined ? { scriptPath: persistedPath } : {}),
+        } satisfies WorkflowOutput,
+      };
     },
   };
 }

@@ -1204,6 +1204,10 @@ export function query(args: {
           ),
           env,
           signal: turnSignal,
+          // Query-lifetime signal, distinct from the per-turn `signal` above:
+          // background work launched by a tool must outlive the turn that
+          // launched it (contracts.ts `lifeSignal`).
+          lifeSignal,
           debug,
           spawnSubagent: subagentRuntime.makeSpawnFn(0),
           // O-B2 SendMessage/TaskStop bridge — ROOT loop only by design (the

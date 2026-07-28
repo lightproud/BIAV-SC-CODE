@@ -49,7 +49,12 @@ describe('faithful tool descriptions', () => {
       'MultiEdit',
       // 'ExitPlanMode' removed 2026-07-05 (B4b): the tool now ships.
       'ExitWorktree',
-      'TaskStop',
+      // 'TaskStop' removed 2026-07-27 (v0.92.0): STALE entry — the tool has
+      // shipped for a while (registered in src/tools/index.ts alongside
+      // TaskOutput/BashOutput/KillShell), and async Workflow now legitimately
+      // points the model at it. The red line is "never name what we do not
+      // ship"; keeping a shipped tool on the list inverts it into "never name
+      // what we DO ship", which suppresses honest guidance.
       'PowerShell',
       'SlashCommand',
       'computer use',
@@ -80,11 +85,17 @@ describe('faithful tool descriptions', () => {
     expect(wf).not.toMatch(/\bsummariz/i);
   });
 
-  it('Workflow description states the honest synchronous adaptation and the shipped caps', () => {
-    // The official tool is async (task-notification delivery); ours runs the
-    // workflow synchronously inside the tool call — the description must say
-    // so and must not promise the unshipped async machinery.
-    expect(D.WORKFLOW_DESCRIPTION).toContain('runs synchronously inside the tool call');
+  it('Workflow description states the async launch it actually ships, and no more', () => {
+    // v0.92.0: the tool went genuinely async, so the description no longer
+    // carries the synchronous-adaptation note. What it must still NOT do is
+    // promise the parts of official's async story this engine does not ship —
+    // there is no <task-notification> push for tool-launched work and no
+    // /workflows progress UI. The model is pointed at TaskOutput/TaskStop,
+    // which is what actually reads and stops the run.
+    expect(D.WORKFLOW_DESCRIPTION).toContain('returns immediately with a task ID');
+    expect(D.WORKFLOW_DESCRIPTION).toContain('TaskOutput');
+    expect(D.WORKFLOW_DESCRIPTION).toContain('TaskStop');
+    expect(D.WORKFLOW_DESCRIPTION).not.toContain('runs synchronously inside the tool call');
     expect(D.WORKFLOW_DESCRIPTION).not.toContain('task-notification');
     expect(D.WORKFLOW_DESCRIPTION).not.toContain('/workflows to watch');
     // budget is honestly described as the null stub (no token-target channel).
