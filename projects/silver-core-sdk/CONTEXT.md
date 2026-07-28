@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.0.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.0.0`
+**当前版本 `1.1.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.1.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.1.0（2026-07-28）：审计第十三波**——三处令会话/请求永久损坏：跨服务器重名工具名 400 掉整请求；repairPairing 不保证历史以 user 轮开头，被吃掉开场行的会话此后每次 resume 都 400 且永不自愈；system-field 在调用方未标断点时空置四分之三缓存槽、整段对话每回合重新计费。另修时区四处。
 
 **v1.0.0（2026-07-28）：审计第十二波**——两处工具定义缺陷令 API 从首条消息起拒绝整个会话（外部 MCP 工具名无字符集校验、input_schema 守卫停在 API 真正校验的字段上一层），皆藏于「mock transport 不校验请求体」这一盲区；另修 tip 接收提示词注入、价格覆写被硬编码比率吞掉、null content 崩溃、去重窗口永不重开、八条误导性错误消息。
 

@@ -12,6 +12,29 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.1.0 — 2026-07-28
+
+Audit wave 13 — the store contract suite could certify a broken store, which
+is the worst possible defect in a deliverable a HOST runs to validate its own
+implementation:
+
+- the `dueBefore` check names `<= dueBefore` but only ever tested
+  `500 <= 1000`, so a store filtering with a strict `<` passes 13/13 while
+  withholding every session due on the exact poll instant — a skipped tick on
+  a wall clock, a permanent stall on a frozen one.
+- "create-or-replace **by id**" never asserted one row per id, so a
+  row-appending store with newest-match-wins `getSession` passes while
+  `listSessions` keeps handing callers the previous generations of the row.
+- `assertDeepEq` compared `JSON.stringify` output, making object **key order**
+  part of the contract, so a store that round-trips every field correctly but
+  rebuilds rows from columns fails. Keys are now canonicalized recursively;
+  array order stays significant.
+
+Also: `goal/chaser.ts` — an abort landing while the host's evaluator was
+deciding still bought one more round; the loop dispatched round N+1 and the
+driver executed it before `#awaitTerminal` rejected. `WorkflowRun.run()`
+already had the symmetric pre-tick guard.
+
 ## 1.0.0 — 2026-07-28
 
 Lockstep alignment only — no changes to this package. The family clock advanced
