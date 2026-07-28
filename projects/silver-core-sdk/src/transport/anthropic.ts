@@ -129,8 +129,16 @@ export class AnthropicTransport implements Transport {
       (resolveHttpClient(this.provider, cfg.env) === 'node' ? getNodeFetch() : undefined);
     const maxConcurrent = resolveMaxConcurrent(this.provider, cfg.env);
     this.slots = maxConcurrent > 0 ? new RequestSemaphore(maxConcurrent) : null;
+    // nonEmpty on the PROVIDER leg too, not just the env leg: an empty
+    // `baseUrl: ''` (a host doing `baseUrl: process.env.GW ?? ''`) is not
+    // nullish, so it used to win over both the env var and the default and
+    // produce the RELATIVE endpoint '/v1/messages'. fetch cannot parse that, so
+    // every attempt threw — and requestWithRetries classifies a fetch throw as a
+    // retryable network error, burning the whole budget (11 POSTs, minutes of
+    // backoff) before surfacing "Failed to reach /v1/messages". Treat it as
+    // unset, exactly as the env leg already does.
     const base = (
-      this.provider.baseUrl ??
+      nonEmpty(this.provider.baseUrl) ??
       nonEmpty(cfg.env.ANTHROPIC_BASE_URL) ??
       DEFAULT_BASE_URL
     ).replace(/\/+$/, '');

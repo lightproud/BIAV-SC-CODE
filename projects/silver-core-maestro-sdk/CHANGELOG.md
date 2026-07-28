@@ -12,6 +12,14 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.2.0 — 2026-07-28
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 1.2.0 (audit wave 14: a bounded-drain leak that
+prevents process exit, `parent_agent_id` never written by any code path,
+per-read subagent identity churn, and two new cross-cutting lenses —
+idempotency and resource limits).
+
 ## 1.1.0 — 2026-07-28
 
 Audit wave 13 — the store contract suite could certify a broken store, which

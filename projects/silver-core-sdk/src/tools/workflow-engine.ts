@@ -185,11 +185,40 @@ function skipTrivia(src: string, i: number): number {
 const IDENT_START = /[A-Za-z_$]/;
 const IDENT_PART = /[A-Za-z0-9_$]/;
 
+/**
+ * Nesting ceiling for the `meta` literal. The parser is recursive-descent
+ * (parseValue -> parseObject/parseArray -> parseValue), so nesting depth in
+ * the SOURCE is call-stack depth in the host: a script whose meta opens a few
+ * ten-thousand brackets (`meta = [[[[...`) overflows the V8 stack, and the
+ * resulting RangeError is NOT a MetaParseError, so parseWorkflowMeta's catch
+ * rethrows it instead of returning the `{ok:false, error}` verdict every
+ * caller (checkWorkflowSyntax's pre-flight included) is written against.
+ * Real meta blocks are 3 levels deep (`phases: [{title}]`); 64 is
+ * unreachable for legitimate input and far below the stack limit.
+ */
+const MAX_META_DEPTH = 64;
+
 class LiteralParser {
+  /** Current recursion depth (see MAX_META_DEPTH). */
+  private depth = 0;
+
   constructor(
     private readonly src: string,
     public i: number,
   ) {}
+
+  /** Recurse into a nested literal, refusing input deeper than the ceiling. */
+  private nest<T>(parse: () => T): T {
+    if (this.depth >= MAX_META_DEPTH) {
+      this.fail(`meta literal nested deeper than ${MAX_META_DEPTH} levels`);
+    }
+    this.depth += 1;
+    try {
+      return parse();
+    } finally {
+      this.depth -= 1;
+    }
+  }
 
   private fail(msg: string): never {
     // Surrogate-safe snippet: the message reaches the tool result verbatim.
@@ -209,8 +238,8 @@ class LiteralParser {
     this.trivia();
     const c = this.peek();
     if (c === undefined) this.fail('meta literal ended unexpectedly');
-    if (c === '{') return this.parseObject();
-    if (c === '[') return this.parseArray();
+    if (c === '{') return this.nest(() => this.parseObject());
+    if (c === '[') return this.nest(() => this.parseArray());
     if (c === '"' || c === "'") return this.parseString();
     if (c === '`') {
       this.fail('meta must be a pure literal: template literals are not allowed');

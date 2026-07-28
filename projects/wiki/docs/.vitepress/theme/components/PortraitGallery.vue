@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { withBase } from 'vitepress'
 import type { MorimensCharacter } from '../data/characters'
 
 const props = defineProps<{ character: MorimensCharacter }>()
 
 const items = computed(() => {
+  // 站点挂 /BIAV-SC-CODE/wiki/ 子路径：站内绝对路径一律过 withBase，
+  // 否则每张立绘（含回退图）都指向站根、张张 404。
   const out: Array<{ key: string; label: string; src: string }> = []
   const p = props.character.portraits
-  if (p?.default) out.push({ key: 'default', label: '初始形态', src: p.default })
-  if (p?.awaker) out.push({ key: 'awaker', label: '觉醒形态', src: p.awaker })
-  ;(p?.skins || []).forEach((s, i) => out.push({ key: `skin-${i}`, label: `皮肤 ${i + 1}`, src: s }))
+  if (p?.default) out.push({ key: 'default', label: '初始形态', src: withBase(p.default) })
+  if (p?.awaker) out.push({ key: 'awaker', label: '觉醒形态', src: withBase(p.awaker) })
+  ;(p?.skins || []).forEach((s, i) => out.push({ key: `skin-${i}`, label: `皮肤 ${i + 1}`, src: withBase(s) }))
   if (out.length === 0) {
-    out.push({ key: 'fallback', label: '默认立绘', src: `/portraits/${props.character.slug}.png` })
+    out.push({ key: 'fallback', label: '默认立绘', src: withBase(`/portraits/${props.character.slug}.png`) })
   }
   return out
 })

@@ -82,14 +82,14 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `1.1.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `1.1.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `1.2.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `1.2.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 140 / 207 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 138 | 磁盘实况 |
-| CI 工作流 / 其中定时 | 45 / 25 | `.github/workflows/` |
+| CI 工作流 / 其中定时 | 45 / 26 | `.github/workflows/` |
 | 挂账台账 开 / 已清 | 18 / 62 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->
@@ -220,6 +220,7 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
+- **v1.2.0（2026-07-28）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 1.2.0（审计第十四波：阻止进程退出的有界读取泄漏、从无写入方的 `parent_agent_id`、每次读都变的子代理身份，以及幂等性与资源上限两个新横切镜头）前进。
 - **v1.1.0（2026-07-28）**：**审计第十三波**——**存储契约套件会给坏存储发合格证**（它是交付给宿主验证自家实现的东西，误判通过是此处最坏的缺陷）：`dueBefore` 检查名为 `<=` 却只测过 `500 <= 1000`，用严格小于过滤的存储照样 13/13 通过、却永久扣留每个恰在轮询时刻到期的会话；「按 id 创建或替换」从不断言一 id 一行，追加式存储照样通过而 `listSessions` 一直把旧世代交给调用方；`assertDeepEq` 比 `JSON.stringify` 输出，把**键序**写进了契约，字段全对但按列重建行的存储反而不合格。另修 goal 追逐器：中止落在宿主评审器决策期间仍会多买一轮，循环已派发第 N+1 轮且驱动器执行之后 `#awaitTerminal` 才拒绝（`WorkflowRun.run()` 早有对称守卫）。
 - **v1.0.0（2026-07-28）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 1.0.0（审计第十二波：两处令 API 拒绝整会话的工具定义缺陷、tip 接收提示词注入、价格覆写被吞、八条误导性错误消息）前进。
 - **v0.99.0（2026-07-28）**：**审计第十波（本包份额）**——`docs/ONBOARDING.md` 称契约套件有「16 项」，实为 13 项基础 + 2 项可选缝检查，宿主按 `report.total === 16` 断言会误判三项静默未跑；另本包 `terminal-vocabulary` 守卫射程注明「仅 src」，testbed 的基线导出器与浸泡演练都在射程外重复了被禁写法（已在 testbed 侧修正，规则归属本包故并记）。
@@ -346,6 +347,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v1.2.0（2026-07-28）**：**审计第十四波**（两个新横切镜头：幂等性、资源上限；sessions/subagents 与 transport 按生命周期而非按档案的第四轮）——①**一个让进程退不出去的泄漏**：有界错误体读取调用 `response.text()` 会**锁住**流，10 秒上限触发时 `body.cancel()` 抛 `ReadableStream is locked` 被空 catch 吞掉、底层源的 cancel 从未运行；而 `.finally(releaseSignals)` 已把调用方中止与请求超时两条腿都摘下——**此后没有任何东西能中止那个 fetch**。503 可重试，故最多 11 次尝试各留一个永不结算的读取钉住 ref 住的 keep-alive socket，回合正常完成而进程再也退不出去（两个机制各自以为自己拥有取消权）· ②**一个从没有人写过的字段**：`parent_agent_id` 在 `session-functions.ts` 被读回，而全 `src/` 无任何写入方——该官方字段声称的用途（从磁盘元数据重建二层以上代理树）对本 SDK 写过的每条消息都报 `null` · ③**每次读都换一个身份**：子代理旁链记录不带 `uuid`，读取端的「遗留兼容」回退每次现造新 UUID，同一轮两次读出不同身份、去重永远合不拢 · ④`provider.baseUrl: ''` 非 nullish，压过环境变量与默认值产出相对端点，`fetch` 的 URL 解析错误被归类为可重试网络错误，一个配置笔误烧掉 11 次注定失败的 POST（同文件三个 token 外的环境变量分支早有 `nonEmpty` 守卫，provider 分支没有，两个传输都是）· ⑤运行期**移除**的保留区在透明自动续跑后复活；`Query.close()` 是第四条从不结算管理器台账的生成器出口，每关一个查询泄漏一条并被 `usage()` 折算终生；镜像存储按会话 id 永久保留缓冲与链条，而每个子代理转录都是独立 id，扇出即单调增长 · ⑥资源上限：`meta` 解析器无递归深度上限且其 `RangeError` 会绕过预检 catch，`mcp/http` 的纯 JSON 分支整体缓冲而 SSE 分支有 16 MiB 上限、stdio 有单行上限。
 - **v1.1.0（2026-07-28）**：**审计第十三波**——三处令会话或请求**永久损坏**：①`registry.allTools()` 跨服务器发出重名限定工具名，而一处重名即 400 掉**整个** Messages 请求、会话每回合都死（服务器 `a` 的 `b__c` 与服务器 `a__b` 的 `c` 同归 `mcp__a__b__c`；同类碰撞在单服务器分页与调用路由上早已处理，唯独广告路径没守）· ②`repairPairing` 有孤儿工具对与角色交替两轮修复，却没有一轮保证重放历史**以 user 轮开头**，而 `load()` 有两条路径会吃掉开头的 user 行（首行撕裂被当非法 JSON 跳过；空轮守卫丢掉遗留的 `content: []` 开场轮）→ API 回 `messages.0: Unexpected role "assistant"`，此后该会话**每次 resume/continue/fork 都从第一轮 400，且档案永不自愈** · ③`system-field` 在调用方**没标**任何缓存断点时仍报 `callerBlocks: true`，请求只带工具断点出门，四个短时槽空置三个、整段对话每回合按未缓存重新计费。另修时区镜头四处（巴哈姆特台北时区、TapTap DOM 路径、`backfill_gap` 窗口与桶相位差 8 小时、`source-health` 两写入方时钟不一致）。两处替身盲区（假存储 `load()` 恒返回 null、仿真器不校验请求体）正是 ②能熬过前十二波的原因。
 - **v1.0.0（2026-07-28）**：**审计第十二波**——两处令 API **从首条消息起拒绝整个会话**的工具定义缺陷，且同藏一个盲区：mock transport 记录每个请求却不校验任何内容，故从无测试断言过引擎组装的 `tools[]` 是 API 会接受的东西。①外部 MCP 服务器的 `mcp__{server}__{tool}` 名原样上线、无字符集校验（进程内 SDK 服务器**有**校验、OpenAI 编码器也警告自家 64 字符规则，唯独 anthropic 这条路两样都没有）：第三方服务器暴露 `search.web`（点号在 MCP 合法、在线上非法）即令整请求被拒，而每回合都重发同一份清单，会话从第一条消息起就死，报错还只给工具下标不给服务器名 · ②`normalizeInputSchema`——那个正因「宽容服务器的坏 schema 会杀死共用该清单的每个请求」而存在的守卫——只判「是不是普通对象」就停在 API 真正校验的字段上一层，`{}`（无参 MCP 工具的常见产出）直接 400。另修：**tip 提示词注入**（模型自写的 tip 未折行即插入行式表头，可伪造「用户说太好用了」的续文自评正面）· **价格覆写被吞**（`cacheTtl:'1h'` 下显式声明的 `cacheWrite` 让位给硬编码比率，声明 $9 却按 $2 计费，低报成本与预算上限）· **估算器崩溃**（`content: null` 的消息抛 TypeError，压缩触发器与公开估算器全查询失效）· **去重窗口永不重开**（`record()` 在年龄驱逐之前就对重复键短路，过了 `maxAgeMs` 仍永久压制，除非中间恰好记过别的键）· **验证器坍缩与真判词无法区分** · **沙箱 TMPDIR 为空时解析到只读根** · 八条把读者指向无辜组件的错误消息。
 - **v0.99.0（2026-07-28）**：**审计第十波（首扫仓库自身的守卫机器）**——主线是**「守卫报 OK 却什么都没查」**：①**一致性台在零次比较上出具合格判词**——0.94.0 移除包内默认模型后 `run-l2`/`run-l4` 从未钉 `options.model`，L2 十五个场景死了十四个、L4 十五个故障用例全死在构造期（104 项检查失败、零次 POST），两条腿照常报告；另有八处标尺自身的洞（L1 算出官方臂检查失败却丢弃，两臂在 result 子型/正文/tool_result 条数上分歧仍记 MATCH；L3 只看预期条数故多出的 tool_result 隐形；某 L2 场景把任何抛错都当作权限互锁生效的证据；抛错的 `interrupt()` 被吞成 abort 而判据照样满足；sse-hang 遇未知标记发完整事件集而非失败；CI 把关的无钥烟测在零行时空绿）· ②**规模**（`htmlToText` 对 200KB 裸 `<` 卡 35 秒、5MB 上限下达数小时，且是**同步正则、超时与 AbortSignal 都打不断**；`partitionForCompaction` 每次检查 O(n²)，16k 消息 2.3 秒、130k 跑不完；`store.load` 整档读入，705MB 转录抛 RangeError 被裸 catch 吞掉、恢复静默报「无此会话」并开空对话继续往同一档追加，而 `list()` 仍宣称可恢复）· ③**消费者会照抄的文档**（README 的 `options.goal` 示例用了不存在的 API 形状：照抄即抛，猜名字改写则被判畸形判词而**放行每一次停止**，目标门无声失效；MIGRATION 给出 0.67 改名前的包名，另六份文档 13 处 import 解析不到，day-one 升级金丝雀因此永远认证本地检出而非安装的 tarball）· ④**守卫射程外**（`terminal-vocabulary` 只管 maestro `src/`，testbed 的基线导出器——评测数据源——与 kill-9 演练都在射程外手写终态判断，`cancelled` 会话永远算在飞、虚高完成率）。战报见 `Public-Info-Pool/Resource/repo-engineering/sdk-bug-audit-multiwave-20260728.md`。
@@ -360,8 +362,6 @@
 
 - **v0.87.1（2026-07-27）**：**嵌套路径普查（三扫）**（守密人「1 继续」）——前两轮比顶层键，本轮摊成**点号路径**再比，专抓两类前两轮**结构上看不见**的差异。**挖出一条真缺陷、是银芯自己的**：`timedOutAfterMs` 官方在**基类** `BashOutput`，0.85.0 却加在银芯**扩展类型**上——交集相同、没坏东西，但**顶层键比对永远发现不了**（键两边都有、待错了地方），已移回基类。其余全属平台绑定只登记：`gitOperation.*`（官方解析 git/gh 输出成结构化 VCS 事实）· `artifactRead.*` · `blobSavedTo` 等。~~九个类型逐层完全一致~~（**已由 v0.89.0 工具化重跑推翻**：Glob / Grep / Workflow 并不一致，本轮手搓展平器只比联合类型第一支、不匹配带引号的键，覆盖被高估）。**方法边界**：展平器不解析 TS 语义，故同时报键总数，数量级不对即解析飞了。
 
-- **v0.88.0（2026-07-27）**：处方卡型（A1）+ sessions 体检面（P1-S1）——cards 模式增处方卡（意图/步骤/结果/适用边界，按字段集判型、混用按名拒绝；进度卡映射处方型，解 P1-3）；`assessSessionStoreHealth()` 照 memory 体检成例补 sessions 域「机制无规程」缺口（会话数/字节/腐化/孤儿 checkpoint，外部店报 unavailable）；blob 上限挂 T74 待裁。审计报告补 sessions 节。
-- **v0.85.0（2026-07-27）**：**GoalVerdict 家族统一（本包零行为改动）**——本包 `{status, reason?}` 判词升格家族**正典**，maestro 0.85.0 将 GoalChaser 评审判词迁为同形，一个宿主评审器同时服务引擎 `options.goal` Stop 门与跨 query 追逐两缝。留档背景：两形并存期产出真实消费者陷阱——maestro 形判词喂进 `options.goal` 被引擎判 malformed、fail-open 放行停止（防评审器坏死锁死代理的既定失败方向），症状即 BPT 2026-07-27 所报「接了 goal 模型照样停」。`options.goal` 语义与评审器契约未动，仅 `GoalVerdict` 注释补正典地位声明。
 - **v0.79.1（2026-07-27）**：内部去重，零表面/行为变化——重试退避与 JSON-RPC 两族重复实现分别收敛为 `transport/http-retry.ts` / `mcp/protocol.ts`，六档净 −288 行。随 #835 合并时漏 bump 致版本门禁在 main 红约一小时，本版为补票（详见 CHANGELOG）。
 - **v0.77.0（2026-07-26，Windows 正确性清扫——家族史上首次非 Linux CI 实跑 + 守密人现场反馈
   「SDK 在 windows 环境工具调用经常犯蠢」）**：3200+ 测试一直全绿却一条都看不见，因为全部跑在

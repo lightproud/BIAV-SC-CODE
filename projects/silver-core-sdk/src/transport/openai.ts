@@ -1174,8 +1174,13 @@ export class OpenAIChatTransport implements Transport {
       (resolveHttpClient(this.provider, cfg.env) === 'node' ? getNodeFetch() : undefined);
     const maxConcurrent = resolveMaxConcurrent(this.provider, cfg.env);
     this.slots = maxConcurrent > 0 ? new RequestSemaphore(maxConcurrent) : null;
+    // nonEmpty on the PROVIDER leg too (twin of the Anthropic arm): `baseUrl: ''`
+    // is not nullish, so it beat the env var and the default and yielded the
+    // relative endpoint '/chat/completions', which fetch cannot parse — and a
+    // fetch throw is classified as a retryable network error, burning the whole
+    // retry budget before the config typo surfaces.
     const base = (
-      this.provider.baseUrl ??
+      nonEmpty(this.provider.baseUrl) ??
       nonEmpty(cfg.env.OPENAI_BASE_URL) ??
       DEFAULT_BASE_URL
     ).replace(/\/+$/, '');

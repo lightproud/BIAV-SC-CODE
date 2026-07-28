@@ -48,6 +48,11 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (silver-core fanart collector)"}
 # Discord API 要求合规 Bot User-Agent（DiscordBot (url, version)），否则可能被拒
 DISCORD_UA = "DiscordBot (https://github.com/lightproud/BIAV-SC-CODE, 1.0)"
 REFRESH_API = "https://discord.com/api/v10/attachments/refresh-urls"
+# 单文件下载上限（与 download_media.MAX_FILE_SIZE_MB 同口径）。下载目标是
+# **社区任意成员贴出来的**附件 URL，体积完全由外部决定：原写法 `r.read()` 无参,
+# 一条 4 GB 的附件链接就能把整个采集进程的内存吃光（CI runner 直接 OOM 被杀,
+# 当轮 gallery 全灭）。改为**读到上限即止**——超限的图不是图，丢掉即可。
+MAX_FILE_BYTES = 20 * 1024 * 1024
 
 
 def refresh_discord(urls, token):
@@ -76,14 +81,30 @@ def refresh_discord(urls, token):
 
 
 def fetch(url, dest, referer=None):
+    # 已在盘上的直接认账，不重下。本采集器按日期目录产出，而 recover-fanart 的补录窗口
+    # （默认 4 天）与 collect-fanart 每日跑必然重叠——同一日期会被反复采。重跑时 Discord
+    # 签名链接多半已过期（无 token 或刷新失败即 404），于是每条都判 http_404 / file=None,
+    # 把 gallery_manifest.json 整份重写成「一张都没下到」，而图片文件本身仍躺在同一目录
+    # （月桶 tar 连同旧图一起打包）——清单当场与实物矛盾，日报据此嵌不出任何图。
+    # 跳过已存在文件让重跑成为真正的 no-op（顺带省一轮带宽与 CDN 敲门）。
+    _dest = Path(dest)
+    if _dest.is_file() and _dest.stat().st_size >= 200:
+        return "ok"
     req = urllib.request.Request(url, headers={**HEADERS, **({"Referer": referer} if referer else {})})
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
-            data = r.read()
+            # 多读 1 字节用于判超限：读满 MAX_FILE_BYTES+1 说明本体 > 上限。
+            data = r.read(MAX_FILE_BYTES + 1)
+        if len(data) > MAX_FILE_BYTES:
+            return "too_large"
         if len(data) < 200:
             return "empty"
-        with open(dest, "wb") as f:
+        # 先写同目录临时文件再 os.replace：直写一旦在中途被杀（工作流 30 分钟超时）
+        # 会留下半截图片，而上面「已存在即认账」会把这半截当完好文件永久收编。
+        tmp = f"{dest}.part"
+        with open(tmp, "wb") as f:
             f.write(data)
+        os.replace(tmp, dest)
         return "ok"
     except urllib.error.HTTPError as e:
         return f"http_{e.code}"

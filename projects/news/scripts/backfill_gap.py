@@ -95,10 +95,25 @@ def _archive_items(source: str, items: list[dict]):
         # 是 `.json.gz` 旁边的裸旁车，只能放 .gz 里没有的增量。不减去冷层条目，同一条
         # 在 .gz 与旁车各存一份，而读方（dated_files 冷热并出）两个都读 → 全量层双计。
         cold_items = archive_layout.read_cold_doc(out_path).get('items', [])
-        existing_urls = {i.get('url', '') for i in existing if i.get('url')}
-        existing_urls |= {i.get('url', '') for i in cold_items
-                          if isinstance(i, dict) and i.get('url')}
-        new_items = [i for i in date_items if i.get('url', '') not in existing_urls]
+
+        # 去重键须对**无 url 条目**也成立（与 backfill_platforms._key /
+        # archive_platforms.item_key 同构）。原写法只收非空 url 进集合、再拿
+        # `i.get('url','')` 去比：url 缺失的条目（如 bilibili 的 arcurl 偶发为空）
+        # 键恒为 '' 而 '' 从不在集合里，于是**每次重跑都被判为新条目再追加一遍**。
+        # 本脚本的缺口窗口是固定日期区间、天生反复重跑，一条无 url 的条目跑 N 次就在
+        # 全量档案层里躺 N 份，item_count 与真实条数一起失真。
+        def _key(it: dict) -> str:
+            return it.get('url', '').strip() or f"{it.get('title', '')[:60]}|{it.get('source', '')}"
+
+        existing_urls = {_key(i) for i in existing if isinstance(i, dict)}
+        existing_urls |= {_key(i) for i in cold_items if isinstance(i, dict)}
+        new_items = []
+        for i in date_items:
+            k = _key(i)
+            if k in existing_urls:
+                continue
+            existing_urls.add(k)   # 同轮内重复条目也只落一份
+            new_items.append(i)
 
         if new_items:
             merged = existing + new_items

@@ -161,9 +161,30 @@ def main():
     # （YouTube API 有每日配额，重翻即烧配额）。
     news_common.dump_json_atomic(sp, state, indent=1)
 
-    # 当次快照（按 likes 排序，供报告引用）
+    # 当次快照（按 likes 排序，供报告引用）。
+    # 与同日既有快照并轨后再写：run_new 只含**本轮新采**的评论，而累积库 comments.jsonl
+    # 是跨轮去重的——同一天第二次跑（CI 重跑失败作业 / workflow_dispatch 补同一日期）
+    # 时全部评论都已在库，run_new 恒为空，直写就把当日快照清成 `[]`，当日「PV 视频评论」
+    # 报告数据凭空蒸发（累积库还在，快照层已毁）。
+    snap_path = Path(f"{DEST}/{a.date}.json")
+    merged = []
+    seen_ids = set()
+    if snap_path.is_file():
+        try:
+            prev = json.loads(snap_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            prev = []
+        for r in prev if isinstance(prev, list) else []:
+            if isinstance(r, dict) and r.get("id") not in seen_ids:
+                seen_ids.add(r.get("id"))
+                merged.append(r)
+    for r in run_new:
+        if r.get("id") not in seen_ids:
+            seen_ids.add(r.get("id"))
+            merged.append(r)
+    merged.sort(key=lambda x: -x.get("likes", 0))
     run_new.sort(key=lambda x: -x.get("likes", 0))
-    news_common.dump_json_atomic(f"{DEST}/{a.date}.json", run_new, indent=1)
+    news_common.dump_json_atomic(str(snap_path), merged, indent=1)
     print(f"本次新增 {len(run_new)} 条；累积库共 {len(known)} 条 → {store}")
 
 

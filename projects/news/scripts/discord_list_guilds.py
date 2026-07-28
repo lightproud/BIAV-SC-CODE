@@ -25,6 +25,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from archive_layout import DISCORD_GUILD_REGIONS, discord_root  # noqa: E402
 
 API_BASE = 'https://discord.com/api/v10'
+# 429 退避的本地硬顶（与 discord_archiver.MAX_RETRY_AFTER_SECONDS 同口径）。
+MAX_RETRY_AFTER_SECONDS = 60
 
 # 已登记服务器（归档计划已覆盖）。不在此表的 guild = 待接入候选。
 # 2026-07-10 方案甲：清单 = archive_layout.DISCORD_GUILD_REGIONS，归档至 discord/<区服>/。
@@ -67,7 +69,10 @@ def _get(path, headers, **params):
     for _ in range(4):
         resp = requests.get(url, headers=headers, params=params, timeout=15)
         if resp.status_code == 429:
-            wait = max(resp.json().get('retry_after', 2), 2)
+            # retry_after 是**服务端**给的秒数，无上限照睡等于把本进程的存活时间
+            # 交给对端：一个 retry_after=86400 的 429（全局限流 / 中间层拦截）会让
+            # 工具干睡到作业超时被杀。夹到 60 秒，荒谬值很快耗尽这 4 次重试并如实报错。
+            wait = min(max(resp.json().get('retry_after', 2), 2), MAX_RETRY_AFTER_SECONDS)
             time.sleep(wait)
             continue
         return resp

@@ -352,8 +352,28 @@ export class HttpMcpConnection {
       }
 
       let data: unknown;
+      let bodyText: string | null;
       try {
-        data = await response.json();
+        bodyText = await readBoundedText(response, MAX_SSE_BUFFER_BYTES);
+      } catch {
+        throw new McpError(
+          'mcp_invalid_response',
+          `MCP server '${this.label}' returned an invalid JSON response body`,
+          { serverLabel: this.label, transport: 'http', phase: 'request' },
+        );
+      }
+      // Same ceiling the SSE and stdio framings enforce: past it the peer is
+      // not speaking JSON-RPC, and `response.json()` would have buffered the
+      // whole thing first (the one framing branch W8-2 left uncapped).
+      if (bodyText === null) {
+        throw new McpError(
+          'mcp_invalid_response',
+          `MCP server '${this.label}' JSON response body exceeded ${MAX_SSE_BUFFER_BYTES} bytes; aborting`,
+          { serverLabel: this.label, transport: 'http', phase: 'request' },
+        );
+      }
+      try {
+        data = JSON.parse(bodyText);
       } catch {
         throw new McpError(
           'mcp_invalid_response',
@@ -651,6 +671,38 @@ async function safeReadText(response: Response): Promise<string> {
     return out.trim();
   } catch {
     return '';
+  } finally {
+    try {
+      await reader.cancel();
+    } catch {
+      // Stream already closed or errored; nothing to release.
+    }
+  }
+}
+
+/**
+ * Read a response body as text, giving up once `maxBytes` have accumulated.
+ * Returns `null` when the body is over the ceiling (the caller turns that into
+ * an mcp_invalid_response), so an oversized body costs `maxBytes` of memory
+ * instead of however much the peer decided to send. `response.json()` /
+ * `response.text()` buffer the WHOLE body first, which is the OOM W8-2 closed
+ * for the SSE framing and MAX_STDOUT_LINE_BYTES closes for stdio.
+ */
+async function readBoundedText(response: Response, maxBytes: number): Promise<string | null> {
+  const body = response.body;
+  if (!body) return '';
+  const reader = body.getReader();
+  try {
+    const decoder = new TextDecoder();
+    let out = '';
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      out += decoder.decode(value, { stream: true });
+      if (out.length > maxBytes) return null;
+    }
+    out += decoder.decode();
+    return out;
   } finally {
     try {
       await reader.cancel();

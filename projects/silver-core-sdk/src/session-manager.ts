@@ -385,6 +385,20 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         if (r.done === true) settleLedger(ledger);
         return r;
       },
+      // close() is the FOURTH exit (besides next()-done, return() and throw()),
+      // and the only one that ends the run WITHOUT the consumer pulling again:
+      // a host that calls mgr.query(...).close() never observes `done`, so the
+      // ledger stayed in `ledgers[]` forever — usage().queries kept counting a
+      // finished conversation live and the settled-aggregate eviction (L61)
+      // never ran, leaking one ledger per closed query. Settling is idempotent
+      // (settleLedger no-ops once evicted), so a later drain is unaffected.
+      close: (): void => {
+        try {
+          q.close();
+        } finally {
+          settleLedger(ledger);
+        }
+      },
       [Symbol.asyncIterator](): Query {
         return wrapped;
       },
@@ -504,7 +518,18 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       maxThinkingTokens?: Parameters<Query['setMaxThinkingTokens']>[0];
       maxThinkingTokensSet: boolean;
       retainedRegions: Map<string, Parameters<Query['setRetainedRegion']>[0]>;
-    } = { retainedRegions: new Map(), maxThinkingTokensSet: false };
+      /** Ids the consumer REMOVED. The adds-only map above cannot express a
+       *  removal, and a fresh query re-seeds its retention store from
+       *  `options.compaction.retainedRegions` — so a region the host declared
+       *  on the options and then removed at runtime came BACK, verbatim, in
+       *  every post-resume request. Same WV3-1 defect as the setters, in the
+       *  subtract direction. Replayed after the adds (see replayControlPlane). */
+      removedRegions: Set<string>;
+    } = {
+      retainedRegions: new Map(),
+      removedRegions: new Set(),
+      maxThinkingTokensSet: false,
+    };
     // setPermissionMode / setModel / setMaxThinkingTokens all return Promise<void>.
     // This replay used to call them WITHOUT awaiting (declared `(): void`), leaving
     // two holes — stated precisely, because only one of them is live today:
@@ -527,6 +552,10 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       if (pending.model !== undefined) await q.setModel(pending.model);
       if (pending.maxThinkingTokensSet) await q.setMaxThinkingTokens(pending.maxThinkingTokens!);
       for (const region of pending.retainedRegions.values()) await q.setRetainedRegion(region);
+      // Adds first, then removes: a region that was removed and later re-set is
+      // in retainedRegions and NOT in removedRegions, so it survives; one that
+      // was set and later removed is only in removedRegions, so it stays gone.
+      for (const id of pending.removedRegions) q.removeRetainedRegion(id);
     };
 
     const maxResumes = recovery?.maxResumes ?? 2;
@@ -795,14 +824,27 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         // kills the resume (same rule as setPermissionMode above).
         const r = q.setRetainedRegion(region);
         pending.retainedRegions.set(region.id, region);
+        pending.removedRegions.delete(region.id);
         return r;
       },
       removeRetainedRegion: (id) => {
         pending.retainedRegions.delete(id);
+        // Record the removal itself, not just the absence of an add: the
+        // resumed query re-seeds from options.compaction.retainedRegions, so
+        // without this the removed region reappears in every later request.
+        pending.removedRegions.add(id);
         return q.removeRetainedRegion(id);
       },
       streamInput: (stream) => q.streamInput(stream),
-      close: () => q.close(),
+      // Same fourth-exit settle as instrumentUsage: close() ends the run with
+      // no further pull, so without this the supervised ledger leaks too.
+      close: (): void => {
+        try {
+          q.close();
+        } finally {
+          settleLedger(ledger);
+        }
+      },
     };
     return wrapped;
   }

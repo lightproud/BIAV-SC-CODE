@@ -347,7 +347,7 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
         if uploaded:
             archive_path.unlink(missing_ok=True)
 
-        log.append({
+        entry = {
             'source': source_id,
             'group': group,
             'tag': cfg.get('release_tag') or cfg['tag_template'].format(group=group),
@@ -356,7 +356,21 @@ def archive_source(source_id: str, cfg: dict, args) -> None:
             'archive_size_bytes': archive_size,
             'uploaded_to_releases': uploaded,
             'archived_at': datetime.now(UTC).isoformat(),
-        })
+        }
+        # 每桶一条：**替换**同 (source, group) 旧条目，不追加。上传本身是 --clobber
+        # 幂等的，日志却是纯 append——而重跑是常态：`after_archive: keep` 的来源
+        # （discord）文件归档后原地留存，下一轮 cutoff 又把同一批月桶全部重新发现；
+        # fanart 的 recover 工作流也按月 `--force-group` 重传。追加式日志于是让
+        # archive-log.json 每轮为每个桶再长一条，rebuild_releases_index 逐条产出索引行
+        # → releases-index.json 里同一个月桶出现 N 份（files/size 各不相同），
+        # 「统一索引治 Release 好难认」反而变成认不出哪份是现行的。
+        for i, prev in enumerate(log):
+            if (prev.get('source', source_id) == source_id
+                    and (prev.get('group') or prev.get('month')) == group):
+                log[i] = entry
+                break
+        else:
+            log.append(entry)
         save_log(log_path, log)
 
     if cfg.get('clean_empty_dirs'):
