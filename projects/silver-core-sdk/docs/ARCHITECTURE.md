@@ -393,8 +393,9 @@ design rule.)
 
 `query.ts`
 - `export function query({ prompt, options }: { prompt: string | AsyncIterable<SDKUserMessage>; options?: Options }): Query`
-- Construction: resolve cwd/env/model (default model
-  `env.ANTHROPIC_MODEL ?? 'claude-sonnet-4-5'`), sessionId (resume >
+- Construction: resolve cwd/env/model (`options.model ?? env.ANTHROPIC_MODEL`,
+  else throw `ConfigurationError` — no built-in default model id since
+  0.94.0), sessionId (resume >
   sessionId > randomUUID; `continue: true` → latest stored), history from
   store when resuming (forkSession → copy under new id), transport, tools
   (filtered by `options.tools` array form; preset/undefined → all), gate,
@@ -469,6 +470,7 @@ build red.
 | `src/mcp/` | `McpError`, `NotImplementedError`, `ConfigurationError` |
 | `src/sessions/` | `ConfigurationError` |
 | `src/query.ts` | `ConfigurationError` |
+| `src/generators/` | `ConfigurationError` |
 | `src/session-manager.ts` | `ConfigurationError` |
 | `src/hooks/goal.ts` | `ConfigurationError` |
 | `src/loop-support/` | `ConfigurationError` |

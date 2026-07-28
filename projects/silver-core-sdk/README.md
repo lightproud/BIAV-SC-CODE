@@ -114,7 +114,7 @@ including the consumer-side session auto-resume recipe.
 | `ANTHROPIC_API_KEY` | API key auth (sent as `x-api-key`) |
 | `ANTHROPIC_AUTH_TOKEN` | Bearer token auth for gateways (sent as `Authorization: Bearer ...`) |
 | `ANTHROPIC_BASE_URL` | API base URL (default `https://api.anthropic.com`) |
-| `ANTHROPIC_MODEL` | Default model when `options.model` is not set (fallback `claude-sonnet-4-5`) |
+| `ANTHROPIC_MODEL` | Model when `options.model` is not set. **No further fallback (0.94.0)**: with both unset, `query()` throws a `ConfigurationError` — the SDK ships no built-in default model id |
 | `OPENAI_API_KEY` / `OPENAI_BASE_URL` | Credential / base URL for `provider.protocol: 'openai-chat'` (see docs/OPENAI-PROTOCOL.md) |
 | `BPT_AGENT_HOME` | Home directory for SDK state; sessions live in `$BPT_AGENT_HOME/sessions` (default `~/.bpt-agent/sessions`) |
 | `BPT_MAX_CONCURRENT_REQUESTS` | Cap on concurrent in-flight API requests through one transport (default unlimited) |

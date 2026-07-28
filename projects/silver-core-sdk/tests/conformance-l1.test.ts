@@ -61,6 +61,9 @@ async function runOurArm(scenario: (typeof SCENARIOS)[number]): Promise<SDKMessa
         sessionDir: join(cwd, '.sessions'),
         // Deterministic Bash output regardless of host bwrap presence.
         sandbox: false,
+        // 0.94.0: no built-in default model — pin the id the harness
+        // previously inherited from the engine default.
+        model: 'claude-sonnet-4-5',
         env: {
           PATH: process.env.PATH,
           HOME: process.env.HOME,

@@ -27,14 +27,6 @@ export type Verdict = 'CONFIRMED' | 'PLAUSIBLE' | 'REFUTED';
 
 const VERDICTS: ReadonlySet<string> = new Set(['CONFIRMED', 'PLAUSIBLE', 'REFUTED']);
 
-/**
- * Default model for verification. Matches the shipped utility-runtime default
- * (Haiku): verification is a bounded single-turn classification, and defaulting
- * to a costlier model would be an untested "verifies better" bet. Overridable
- * via opts.model when a consumer wants heavier adversarial reasoning.
- */
-export const VERIFIER_DEFAULT_MODEL = 'claude-haiku-4-5';
-
 /** The verdict a garbled/ambiguous reply collapses to (fail-closed target). */
 export const SAFE_VERDICT: Verdict = 'REFUTED';
 
@@ -93,8 +85,11 @@ export function buildVerifierUserTurn(f: Finding): string {
 }
 
 /**
- * Run the single-shot verification call and return a typed verdict. Defaults to
- * VERIFIER_DEFAULT_MODEL (overridable via opts.model).
+ * Run the single-shot verification call and return a typed verdict. opts.model
+ * is required (runUtilityCall throws a ConfigurationError without it): the SDK
+ * ships no built-in default model id. A cheap tier is the sensible choice —
+ * verification is a bounded single-turn classification — but the id is the
+ * consumer's to pick; only their gateway knows which ids it serves.
  */
 export async function runVerification(
   finding: Finding,
@@ -103,7 +98,7 @@ export async function runVerification(
   const raw = await runUtilityCall(
     VERIFY_VERDICT_SYSTEM,
     buildVerifierUserTurn(finding),
-    { ...opts, model: opts.model ?? VERIFIER_DEFAULT_MODEL },
+    opts,
     512,
   );
   return parseVerdict(raw);

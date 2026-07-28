@@ -5,8 +5,12 @@
  * with a faithful reproduced system prompt (see prompts.ts) — the same shape
  * the compaction summarizer (foldViaApi) already uses, factored out so each
  * feature is a thin wrapper: build a system+user pair, run it, parse the
- * output. Utility calls default to a cheap model (Haiku) via resolveModelAlias,
- * because these are mechanical single-turn classifications, not agentic work.
+ * output. Utility calls carry NO built-in default model (SCS request
+ * 2026-07-28): the caller must name the model (a cheap tier is the sensible
+ * choice — these are mechanical single-turn classifications, not agentic
+ * work), because the package cannot know which model ids the consumer's
+ * gateway serves, and a baked fallback id fails silently until the gateway
+ * 400s on a string the consumer never wrote.
  *
  * The module is import-only (no side effects at import) and constructs its own
  * transport from public options so a caller can fire a utility call OUTSIDE a
@@ -15,27 +19,31 @@
  * A transport can also be injected (opts.transport) for offline unit tests.
  */
 
-import { AbortError } from '../errors.js';
+import { AbortError, ConfigurationError } from '../errors.js';
 import { createProviderTransport } from '../transport/factory.js';
 import { MessageAccumulator } from '../engine/accumulator.js';
 import { resolveModelAlias } from '../internal/model-alias.js';
 import type { APIMessageParam, ProviderConfig } from '../types.js';
 import type { StreamRequest, Transport } from '../internal/contracts.js';
 
-/** Default cheap model alias for utility calls (mechanical single-turn work). */
-export const DEFAULT_UTILITY_MODEL = 'claude-haiku-4-5';
-
 /**
  * Public options for a utility model call. `provider` + `betas` mirror the main
- * `query()` Options so the same credentials/gateway apply; `model` overrides
- * the default cheap model (short aliases like `haiku`/`sonnet` are resolved).
+ * `query()` Options so the same credentials/gateway apply; `model` names the
+ * model to drive (short aliases like `haiku`/`sonnet` are resolved).
  */
 export interface UtilityCallOptions {
   /** Credential / base-URL / retry config, same shape as query() options. */
   provider?: ProviderConfig;
   /** Beta flags forwarded via the `anthropic-beta` header. */
   betas?: string[];
-  /** Model override (alias or full id). Default: DEFAULT_UTILITY_MODEL. */
+  /**
+   * Model to drive (alias or full id). REQUIRED at runtime since 0.94.0:
+   * utility calls ship no built-in default model id — a missing model throws
+   * a ConfigurationError at the call site instead of silently substituting an
+   * id the consumer's gateway may not serve. (Kept optional on the type so
+   * `opts: UtilityCallOptions = {}` signatures stay source-compatible; the
+   * check is enforced where the wire model is resolved.)
+   */
   model?: string;
   /**
    * Host overrides for the short model aliases (same shape and precedence as
@@ -125,11 +133,18 @@ export async function runUtilityCall(
   opts: UtilityCallOptions,
   maxTokensDefault: number,
 ): Promise<string> {
-  const model = resolveModelAlias(
-    opts.model ?? DEFAULT_UTILITY_MODEL,
-    DEFAULT_UTILITY_MODEL,
-    opts.modelAliases,
-  );
+  // Fail loud, at the call site, when no model was named (SCS request
+  // 2026-07-28): a silent baked-in fallback surfaces as a delayed gateway 400
+  // carrying a model id the caller never wrote. `'inherit'` is likewise not a
+  // resolvable id here — utility calls run outside a session, so there is no
+  // parent model to inherit.
+  if (opts.model === undefined || opts.model === '' || opts.model === 'inherit') {
+    throw new ConfigurationError(
+      'model is required: pass opts.model — utility calls ship no built-in ' +
+        'default model id (the package cannot know which ids your gateway serves)',
+    );
+  }
+  const model = resolveModelAlias(opts.model, opts.model, opts.modelAliases);
   // Transport precedence: explicit injection (tests) > cross-protocol
   // resolver keyed by the resolved model (v0.55.0) > provider-built default.
   const transport =

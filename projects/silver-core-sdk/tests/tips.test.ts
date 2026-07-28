@@ -149,7 +149,7 @@ describe('context-tips over a mock transport', () => {
         sessionMetadata: { numStartups: 8 },
         catalog: CATALOG, // host extension at call time (see WATCH_SITUATION)
       },
-      { transport: t },
+      { transport: t, model: 'haiku' },
     );
     expect(r.hasTip).toBe(true);
     const system = t.requests[0]?.system as string;
@@ -165,7 +165,7 @@ describe('context-tips over a mock transport', () => {
     ];
     await selectContextTip(
       { transcript: 'x', eligibleIds: ['billing'], catalog },
-      { transport: t },
+      { transport: t, model: 'haiku' },
     );
     const system = t.requests[0]?.system as string;
     expect(system).toContain('costs $$$ and a $& token literally.');
@@ -174,7 +174,7 @@ describe('context-tips over a mock transport', () => {
     const t = new MockTransport([textReplyEvents('{"acted_on":true,"reception":"positive"}')]);
     const r = await evaluateTipReception(
       { tip: 'try watch mode', action: 'enable watch mode', transcriptAfter: 'User: nice, watch mode worked!' },
-      { transport: t },
+      { transport: t, model: 'haiku' },
     );
     expect(r).toEqual({ actedOn: true, reception: 'positive' });
   });

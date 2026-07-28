@@ -70,7 +70,7 @@ provider: {
 | `maxTokensParam` | `'max_tokens'` | Wire param carrying the output-token cap. api.openai.com reasoning models require `'max_completion_tokens'`; most gateways accept the default. |
 | `reasoningEffort` | unset | Forwarded verbatim as `reasoning_effort` (the OpenAI-native reasoning knob; see thinking note below). |
 | `extraBody` | unset | Extra top-level body fields merged into every request (gateway params, e.g. `{ enable_thinking: false }`). Translator-owned keys win on conflict, EXCEPT `stream_options`: declaring it in `extraBody` (e.g. `{ stream_options: null }`) overrides the default `{ include_usage: true }`, the one escape hatch for gateways that 400 on `stream_options`. |
-| `modelMap` | unset | Wire-model remapping `{resolvedId: endpointModel}` applied just before encoding — ONE knob that also catches the Claude defaults baked into generators / verifier / subagent aliases (e.g. `{'claude-haiku-4-5': 'gpt-4o-mini'}`). Unmapped `claude-*` ids log a debug warning. |
+| `modelMap` | unset | Wire-model remapping `{resolvedId: endpointModel}` applied just before encoding — ONE knob that also catches the Claude ids the built-in subagent alias table resolves to (e.g. `{'claude-haiku-4-5': 'gpt-4o-mini'}`); since 0.94.0 generators/verifier bake in no default id of their own (the caller names the model). Unmapped `claude-*` ids log a debug warning. |
 | `authHeaderName` | `'authorization'` | Credential header. The default sends `Bearer <key>`; any other name (e.g. Azure's `'api-key'`) sends the raw key under that header. |
 | `extraQueryParams` | unset | Query params appended to the endpoint URL (e.g. `{'api-version': '2024-06-01'}` for Azure-style gateways). |
 

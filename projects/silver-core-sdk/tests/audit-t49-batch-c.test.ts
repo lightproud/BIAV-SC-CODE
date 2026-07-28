@@ -492,7 +492,7 @@ describe('M12 — Stop-condition evaluator sees the transcript tail', () => {
         ],
       },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     const input = {
       session_id: 's1',
@@ -536,7 +536,7 @@ describe('M13 — condition-evaluation failure routes by failureMode', () => {
         ],
       },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     const agg = await runner.run(
       'PreToolUse',
@@ -573,7 +573,7 @@ describe('M13 — condition-evaluation failure routes by failureMode', () => {
         ],
       },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     await runner.run(
       'PreToolUse',

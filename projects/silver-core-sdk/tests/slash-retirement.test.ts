@@ -32,6 +32,7 @@ async function firstWireUserText(prompt: string): Promise<string> {
   const q = query({
     prompt,
     options: {
+      model: 'claude-sonnet-4-5',
       provider: { apiKey: 'test-key', fetch: fetchStub, promptCaching: false },
       persistSession: false,
       env: { PATH: process.env.PATH, HOME: process.env.HOME },
@@ -69,6 +70,7 @@ describe('slash text passes through VERBATIM (regression lock)', () => {
     const q = query({
       prompt: '/compact',
       options: {
+        model: 'claude-sonnet-4-5',
         provider: { apiKey: 'test-key', fetch: fetchStub, promptCaching: false },
         persistSession: false,
         env: { PATH: process.env.PATH, HOME: process.env.HOME },

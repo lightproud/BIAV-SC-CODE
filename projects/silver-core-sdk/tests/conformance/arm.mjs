@@ -216,6 +216,10 @@ export async function runScenario(armKind, scenario, { timeoutMs = 120_000 } = {
         // tool_result outputs do not depend on host bwrap presence. (A scenario
         // may re-enable it via options/buildOptions to test sandbox behavior.)
         sandbox: false,
+        // 0.94.0: the engine ships no built-in default model, so the harness
+        // pins the id both arms previously defaulted to — keeping every frozen
+        // baseline (thinking model-gate included) byte-identical.
+        model: 'claude-sonnet-4-5',
         // Session persistence is engine-internal state, not stream grammar;
         // keep this SDK's store inside the throwaway cwd.
         ...(armKind === 'bpt' ? { sessionDir: join(cwd, '.sessions') } : {}),

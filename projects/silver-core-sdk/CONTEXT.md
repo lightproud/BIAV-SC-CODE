@@ -71,12 +71,22 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.93.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.93.0`
+**当前版本 `0.94.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.94.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
+**v0.94.0（2026-07-28）：包内模型兜底默认值全数移除（BREAKING，黑池 sdk-bridge 转派需求）**——
+触发事件：黑池生产两次报错，报错文案里的 `claude-sonnet-4-5` 在黑池任何配置里都不存在——它是
+`query.ts` 里写死的 `DEFAULT_MODEL`，消费方漏传 `model` 时被静默换上、直到网关 400 才第一次现身。
+结构问题不是「兜底值旧了」，是**包内置了一个错误来源**：包不知道消费方网关认哪些 id，兜什么都是错的。
+按黑池首选方案 A 根治：`query()` 缺 `options.model` 且缺 `ANTHROPIC_MODEL` → 构造期即抛
+`ConfigurationError`；`runUtilityCall` 全家（8 生成器 / tips / verifier / 直调 condition 评估）缺
+`opts.model` → 请求出门前即拒；引擎内部 condition 调用改**继承会话模型**（与 compaction 摘要器同规）；
+`DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` 两出口删除（0.3x 表面锁走 `knownRemovals`
+登记通道，MIGRATION §3.10 记破坏性条目）。一致性台架显式钉住原默认 id，全部冻结基线字节不变；
+COMPAT `model` 行降 FULL → PARTIAL 如实记「刻意偏离官方」。已按铁律传全网关 id 的黑池现有调用路径零行为变化。
 **v0.93.0（2026-07-28）：recap 截断丢最新进度（BPT P1 需求单，3 小时活锁事故根因）**——确定性折叠的 `buildRecap` 超 4000 字符上限时取**前** 4000 字符即最早历史，最新进度（结尾几十行工具调用）必被截掉；模型每次折叠后从头重读（BPT 会话 4e2d03e0：3h15m 内 840 Read / 777 compact / 0 修改）。改**头尾双保留**：首行结构声明 + 尽可能多的完整结尾行，中间三问纪律标记衔接（丢多少/为何/怎么拿回），按行切不留半个 JSON，单行独超预算走 `sliceTailSurrogateSafe` 保尾。同轮把**截断纪律注册表扩到全 `src/` 递归**（0.87.0 守卫只扫 `src/tools`，engine 层结构性在射程外——本缺陷因此从未被「全家对齐」覆盖）；豁免走白名单，扩围浮现 30 档案逐条登记，除本条外均「登记即可」。验收先红后绿：旧实现下「recap 含最后一次 Read offset」断言必红。
 
 **v0.92.1（2026-07-28）：自动续跑时被拒绝的控制面覆写仍被留存并重放**（全仓缺陷扫描 #861，TypeScript 侧首次 lint 扫描查出）——两条互相咬合：① 包裹层**先记账、后返回可能拒绝的 Promise**，`setPermissionMode('bypassPermissions')` 未解锁时会 REJECT，但该模式已写进 `pending`，一次被 query 拒绝、且被消费方正确 catch 的调用照样污染了重放状态；② `replayControlPlane` 声明 `(): void`、三个返回 Promise 的 setter 全不 await，叠加①后那个必然拒绝的重放成了悬空 Promise——Node ≥ 15 下未处理的 rejection **直接终止进程**，SDK 消费方连捕获的接缝都没有。改为「内层成功才记账」+ 调用点 await。**诚实边界**：次序竞态目前不可触发（四个 setter 首个 await 之前即完成赋值），按潜伏记；可触发的是拒绝路径。await 同时把「重放先于续跑被泵动」从**巧合**变成**结构保证**。两条均已证伪验证（回退任一，新增用例即红）。

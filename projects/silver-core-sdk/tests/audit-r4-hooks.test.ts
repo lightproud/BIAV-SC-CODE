@@ -98,7 +98,7 @@ describe('V1-2: oversized hook input is bounded before the condition evaluation'
     const runner = new DefaultHookRunner({
       hooks: { PreToolUse: [{ condition: 'the command is safe', hooks: [cb] }] },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     const huge = 'A'.repeat(500_000);
     const input: HookInput = {
@@ -131,7 +131,7 @@ describe('R7j-1: a circular hook input does not crash the condition gate', () =>
     const runner = new DefaultHookRunner({
       hooks: { PostToolUse: [{ condition: 'a file was written', hooks: [cb] }] },
       debug: () => {},
-      conditionOptions: { transport: t },
+      conditionOptions: { transport: t, model: 'haiku' },
     });
     const circular: Record<string, unknown> = { detail: 'wrote /a' };
     circular['self'] = circular; // self-reference: bare JSON.stringify would throw

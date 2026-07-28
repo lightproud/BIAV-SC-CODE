@@ -97,7 +97,6 @@ import { createSubagentRuntime } from './subagents/runtime.js';
 import { createAgentTool } from './subagents/agent-tool.js';
 import { loadProjectMcpServers } from './mcp/project-config.js';
 
-const DEFAULT_MODEL = 'claude-sonnet-4-5';
 /** S3 tool-call record: cap on the persisted input JSON (the full input lives
  *  in the assistant message's tool_use block with the same tool_use_id). */
 const TOOL_RECORD_INPUT_MAX_CHARS = 2048;
@@ -267,7 +266,20 @@ export function query(args: {
     }
   }
 
-  const initialModel = options.model ?? env.ANTHROPIC_MODEL ?? DEFAULT_MODEL;
+  // NO built-in default model (SCS request 2026-07-28, black-pool sdk-bridge):
+  // the package cannot know which ids the consumer's gateway serves, so a baked
+  // fallback id is wrong for every non-Anthropic gateway and fails SILENTLY —
+  // the consumer first learns it exists when the gateway 400s on a model string
+  // that appears nowhere in their code. Fail loud at the call boundary instead:
+  // both remaining sources (options.model, ANTHROPIC_MODEL) are consumer-owned.
+  const initialModel = options.model ?? env.ANTHROPIC_MODEL;
+  if (initialModel === undefined || initialModel === '') {
+    throw new ConfigurationError(
+      'model is required: pass options.model or set ANTHROPIC_MODEL — this ' +
+        'SDK ships no built-in default model id (the package cannot know ' +
+        "which ids your gateway serves)",
+    );
+  }
 
   // --- Collaborators ---------------------------------------------------------
   const outer = options.abortController ?? new AbortController();
@@ -584,6 +596,11 @@ export function query(args: {
       betas: options.betas,
       env,
       debug,
+      // The condition call INHERITS the session model (same rule as the
+      // compaction summarizer with compaction.model unset): utility calls have
+      // no built-in default model, and the engine hardcodes no model choice —
+      // the consumer already picked this id for the session.
+      model: initialModel,
       // Host alias overrides also govern the condition call's utility model
       // (same table as subagent spawn / compaction summarizer).
       ...(options.modelAliases !== undefined

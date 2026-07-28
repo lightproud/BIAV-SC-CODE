@@ -215,7 +215,7 @@ describe('normalizeBranch', () => {
 describe('generators over a mock transport', () => {
   it('detectCommandPrefix returns a typed verdict and sends the command as the user turn', async () => {
     const t = new MockTransport([textReplyEvents('git commit')]);
-    const r = await detectCommandPrefix('git commit -m "x"', { transport: t });
+    const r = await detectCommandPrefix('git commit -m "x"', { transport: t, model: 'haiku' });
     expect(r).toEqual({ kind: 'prefix', prefix: 'git commit' });
     expect(t.requests[0]?.system).toBe(COMMAND_PREFIX_SYSTEM);
     expect(t.requests[0]?.messages[0]).toEqual({ role: 'user', content: 'git commit -m "x"' });
@@ -223,9 +223,9 @@ describe('generators over a mock transport', () => {
     expect(t.requests[0]?.temperature).toBe(0);
   });
 
-  it('detectCommandPrefix defaults to the cheap Haiku model', async () => {
+  it('detectCommandPrefix resolves a short model alias onto the wire id (no built-in default, 0.94.0)', async () => {
     const t = new MockTransport([textReplyEvents('none')]);
-    await detectCommandPrefix('git push', { transport: t });
+    await detectCommandPrefix('git push', { transport: t, model: 'haiku' });
     expect(t.requests[0]?.model).toBe('claude-haiku-4-5');
   });
 
@@ -235,7 +235,7 @@ describe('generators over a mock transport', () => {
     ]);
     const r = await classifyBackgroundState(
       { tail: 'All tests pass.', previousState: 'working' },
-      { transport: t },
+      { transport: t, model: 'haiku' },
     );
     expect(r.state).toBe('done');
     const content = t.requests[0]?.messages[0]?.content;
@@ -247,6 +247,7 @@ describe('generators over a mock transport', () => {
     const t = new MockTransport([textReplyEvents('{"title":"Fix login button on mobile"}')]);
     const title = await generateSessionTitle('User wants to fix the mobile login button', {
       transport: t,
+      model: 'haiku',
     });
     expect(title).toBe('Fix login button on mobile');
     const content = t.requests[0]?.messages[0]?.content;
@@ -257,7 +258,7 @@ describe('generators over a mock transport', () => {
     const t = new MockTransport([
       textReplyEvents('{"title":"Add OAuth authentication","branch":"Add OAuth"}'),
     ]);
-    const r = await generateTitleAndBranch('Add OAuth login to the app', { transport: t });
+    const r = await generateTitleAndBranch('Add OAuth login to the app', { transport: t, model: 'haiku' });
     expect(r.title).toBe('Add OAuth authentication');
     expect(r.branch).toBe('claude/add-oauth');
     expect(t.requests[0]?.system).toContain('Add OAuth login to the app');
@@ -268,6 +269,7 @@ describe('generators over a mock transport', () => {
     const t = new MockTransport([textReplyEvents('{"title":"Track costs","branch":"track-costs"}')]);
     await generateTitleAndBranch('reduce costs $$$ and audit the $& handler and $`prefix', {
       transport: t,
+      model: 'haiku',
     });
     const system = t.requests[0]?.system as string;
     // The $$ / $& / $` must appear verbatim, not expanded as replace-macros.
@@ -277,15 +279,15 @@ describe('generators over a mock transport', () => {
 
   it('generateSessionName returns a kebab slug', async () => {
     const t = new MockTransport([textReplyEvents('{"name":"Fix Login Bug"}')]);
-    const name = await generateSessionName('long conversation transcript', { transport: t });
+    const name = await generateSessionName('long conversation transcript', { transport: t, model: 'haiku' });
     expect(name).toBe('fix-login-bug');
   });
 
-  it('generateAwaySummary sends the tail as the user turn at the default model', async () => {
+  it('generateAwaySummary sends the tail as the user turn at the named model', async () => {
     const t = new MockTransport([
       textReplyEvents('Refactoring the auth module; next, run the test suite.'),
     ]);
-    const recap = await generateAwaySummary('...transcript tail...', { transport: t });
+    const recap = await generateAwaySummary('...transcript tail...', { transport: t, model: 'haiku' });
     expect(recap).toBe('Refactoring the auth module; next, run the test suite.');
     expect(t.requests[0]?.system).toBe(AWAY_SUMMARY_SYSTEM);
     // audit r4 Rpr-2: the tail is fenced + neutralized before it rides into the
@@ -366,7 +368,7 @@ describe('selectMemoryFilesToAttach over a mock transport', () => {
         ],
         query: 'why is the query slow?',
       },
-      { transport: t },
+      { transport: t, model: 'haiku' },
     );
     expect(out).toEqual(['db.md']);
     const user = t.requests[0]?.messages[0]?.content;
@@ -375,14 +377,14 @@ describe('selectMemoryFilesToAttach over a mock transport', () => {
   });
   it('short-circuits to [] with no model call when there are no available files', async () => {
     const t = new MockTransport([]);
-    const out = await selectMemoryFilesToAttach({ available: [], query: 'x' }, { transport: t });
+    const out = await selectMemoryFilesToAttach({ available: [], query: 'x' }, { transport: t, model: 'haiku' });
     expect(out).toEqual([]);
     expect(t.requests).toHaveLength(0);
   });
 
   it('a bare-string reply still yields a usable title (fallback path)', async () => {
     const t = new MockTransport([textReplyEvents('Fix the flaky test')]);
-    const title = await generateSessionTitle('...', { transport: t });
+    const title = await generateSessionTitle('...', { transport: t, model: 'haiku' });
     expect(title).toBe('Fix the flaky test');
   });
 

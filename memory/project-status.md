@@ -82,8 +82,8 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.93.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.93.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.94.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.94.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 139 / 206 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
@@ -220,6 +220,7 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
+- **v0.94.0（2026-07-28）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 0.94.0（BREAKING：包内模型兜底默认值全数移除，缺 model 即抛错）前进。
 - **v0.93.0（2026-07-28）**：锁步对齐（本包零运行时改动）——agent SDK 0.93.0 修复 recap 截断丢最新进度（BPT P1 活锁根因）并扩截断纪律注册表到全 `src/`；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
 - **v0.92.1（2026-07-28）**：锁步对齐（本包零运行时改动）——agent SDK 0.92.1 修复「被拒绝的控制面覆写仍被留存并重放」；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
 
@@ -340,6 +341,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.94.0（2026-07-28）**：**包内模型兜底默认值全数移除（BREAKING，黑池 sdk-bridge 转派需求 2026-07-28）**——黑池生产报错文案里出现其代码从未写过的 `claude-sonnet-4-5`，倒查出 `query.ts` 写死的 `DEFAULT_MODEL`：消费方任一路径漏传 `model`，包就静默换上一个自己都不知道对方网关认不认的 id，直到网关 400 才暴露。按黑池首选方案 A 根治：`query()` 缺 `options.model` 且缺 `ANTHROPIC_MODEL` → 构造期抛 `ConfigurationError`；`runUtilityCall` 全家缺 `opts.model` → 请求出门前拒；引擎内部 condition 调用改**继承会话模型**（与 compaction 摘要器同规）；`DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` 出口删除（0.3x 表面锁 `knownRemovals` 登记 + MIGRATION §3.10）。COMPAT `model` 行降 FULL → PARTIAL 如实记刻意偏离；一致性台架显式钉原默认 id，冻结基线字节不变；黑池已按铁律传全 id 的路径零行为变化。
 - **v0.93.0（2026-07-28）**：修 recap 截断丢最新进度（BPT P1 需求单，3 小时活锁事故根因）——确定性折叠 `buildRecap` 超 4000 上限取前 4000 字符即最早历史，最新进度必被截掉，模型每次折叠后从头重读（BPT 会话 4e2d03e0：840 Read / 777 compact / 0 修改）。改头尾双保留（首行结构声明 + 完整结尾行 + 三问标记衔接，按行切、单行独超走保尾切分）；截断纪律注册表扩到全 `src/` 递归（旧守卫只扫 `src/tools`，engine 层结构性在射程外），豁免走白名单、扩围浮现 30 档案逐条登记。验收先红后绿。详见 CHANGELOG。
 - **v0.92.1（2026-07-28）**：修自动续跑时「被拒绝的控制面覆写仍被留存并重放」（全仓缺陷扫描 PR #861，TS 侧首次 lint 扫描查出）——包裹层先记账后返回可能拒绝的 Promise，加上 `replayControlPlane` 三个 setter 全不 await，叠加成悬空 Promise（Node ≥ 15 下未处理 rejection 直接终止进程）。改为「内层成功才记账」+ 调用点 await；两条均已证伪验证。次序竞态目前不可触发，按潜伏记。详见 CHANGELOG。
 - **v0.84.0（2026-07-27）**：记忆索引纪律 + 整理规程——修的是「SDK 给了常驻索引机制却没规定索引条目该长什么样，且会话收尾提示词命令模型把进度卡写进索引档」这个自伤缺口（守密人 BPT 现场反馈：开工要好几回工具调用才找得到东西）。进度卡改落 `/memories/progress/`、索引只留指针；新增索引纪律片段（两模式注入、前提不成立即跳过）；写侧超限反压（读写共用同一度量，明说尾部已不可见）；`buildConsolidationPrompt()` + 四阶段整理规程，由 `assessMemoryStoreHealth()` 结果渲染待办。**层界守住**：只给「该不该整理 / 怎么整理」，不给调度（N1 未破，零新进程）。新增测试 28。
@@ -361,8 +363,6 @@
 - **v0.80.1（2026-07-27）**：**两条提示词溯源 slug 改锚 + 给刷新 cron 补自检**（守密人 2026-07-27 交互裁「一并修 + 给 cron 补自检」）——上游快照 2.1.173 → 2.1.216（今日 cron 76fe5e6 带 `[skip ci]` 直推 main）改名 24 档 / 删 5 档，SDK 侧两条 slug 指空、两条 corpus-sync 守卫在 main 上报红。① `COORDINATOR_WORKER_PROVENANCE.slug` → `agent-prompt-coordinator-worker-instructions`（纯改名，守卫抽出的 15 个锚点句逐字仍在）· ② `MAIN_LOOP_INTRO.slug` → `system-prompt-harness-instructions`（上游把三个 intro 小档合并进它，原句未变、现居开篇模板的「无 output style」分支；`faithful` 仍成立，注释写明 faithful 于**分支**非整档）。**零 shipped 提示词文本改动**。同批给 `refresh-claude-code-prompts.yml` 补自检：刷新后、提交前跑这两条守卫，**红则不提交不直推**，第二道网是 dead-man-switch 按「最近一次成功超时」抓持续失败。
 - **v0.80.0（2026-07-27）**：**工具输出上限对齐 Claude Code 2.1.141**（守密人交付单三处独立改动，常量取自 `claude.exe` 内含明文 JS）——① WebFetch 上限 **100_000 → 复用 Read 的 50_000**（官方那个数管的是「喂摘要小模型的输入」、主上下文只收摘要；本 SDK 直连无摘要层，同一个数字变成「原文直灌主上下文」，反让 WebFetch 独享两倍 Read 额度，而它拉的是最不可控的外部网页；改为引用`MAX_READ_OUTPUT_CHARS` 常量防两闸门再漂移）· ② Grep `head_limit` **三种 output_mode 统一默认 250**（原 count / files_with_matches 默认无限；OPT-1 担忧的「截断的 count 是错的 count」已由同批的「每种模式都追加截断提示」解决，要可证完整仍显式传 `head_limit=0`）· ③ Bash 输出截断**改保尾去头**、标记移到开头（长命令的结论在末尾：构建成败 / 测试汇总 / 最终报错；新增 `sliceTailSurrogateSafe`镜像 helper，尾切丢的是开头低位代理）。**刻意不改** Read 的字符计量（对齐 token 需引入 tokenizer运行时依赖，且字符计量在中文场景反更宽）。测试新增 5 条（上限对齐三处各自钉死 + 尾切代理边界），本容器实测 **3,247 条**（3,239 通过 / 6 跳过 / **2 失败**——两条均为 2026-07-27 上游提示词快照刷新 76fe5e6 导致的档案锚点漂移治理测试，**HEAD 上同样红**，与本次改动无关）。
 - **v0.79.1（2026-07-27）**：内部去重，零表面/行为变化——重试退避与 JSON-RPC 两族重复实现分别收敛为 `transport/http-retry.ts` / `mcp/protocol.ts`，六档净 −288 行。随 #835 合并时漏 bump 致版本门禁在 main 红约一小时，本版为补票（详见 CHANGELOG）。
-- **v0.79.0（2026-07-26，锁步对齐）**：本包**零代码改动**；随 maestro 0.79.0 前进，同批订正本包 0.72.0/0.70.0 两条空转条目措辞（内容未变）。
-- **v0.78.1（2026-07-26，锁步对齐）**：本包**零代码改动**；家族版本钟随 maestro 0.78.1（产品审视四裁，含删除其对本包的无支撑 peerDependency）整体前进。
 - **v0.77.0（2026-07-26，Windows 正确性清扫——家族史上首次非 Linux CI 实跑 + 守密人现场反馈
   「SDK 在 windows 环境工具调用经常犯蠢」）**：3200+ 测试一直全绿却一条都看不见，因为全部跑在
   POSIX 宿主的 POSIX 方言下。三条真缺陷——① **路径域权限规则双向皆坏**：POSIX 写法 deny

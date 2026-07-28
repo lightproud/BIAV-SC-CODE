@@ -44,6 +44,7 @@ async function driveOurArm(captureBodies: boolean) {
         maxTurns: 2,
         sessionDir: join(cwd, '.sessions'),
         sandbox: false,
+        model: 'claude-sonnet-4-5',
         systemPrompt: { type: 'preset', preset: 'claude_code' },
         env: {
           PATH: process.env.PATH,
@@ -198,8 +199,9 @@ const TOOL_GAPS = ['Agent:params'];
 // block; official's sits on the LAST - a cache-boundary PLACEMENT gap (E7-03
 // territory). Present on every scenario alongside thinking + toolCacheBreakpoints.
 //
-// thinking (2026-07-05, model-gate fix): the wire harness uses the engine
-// DEFAULT_MODEL (claude-sonnet-4-5), which is PRE-4.6 and rejects
+// thinking (2026-07-05, model-gate fix): the wire harness pins
+// claude-sonnet-4-5 (0.94.0: previously the engine default, now explicit —
+// the engine ships no built-in default model), which is PRE-4.6 and rejects
 // {type:'adaptive'} at the API — so our arm now correctly emits
 // {type:'enabled', budget_tokens} there. The official STRUCTURAL reference
 // builds {type:'adaptive'} unconditionally (it never validates against the
@@ -245,6 +247,10 @@ async function ourCapture(scenario: WireScenario) {
         maxTurns: 3,
         sessionDir: join(cwd, '.sessions'),
         sandbox: false,
+        // 0.94.0: no built-in default model — pin the id the harness
+        // previously inherited from the engine default, keeping the frozen
+        // reference (thinking model-gate included) byte-identical.
+        model: 'claude-sonnet-4-5',
         systemPrompt: { type: 'preset', preset: 'claude_code' },
         env: {
           PATH: process.env.PATH,

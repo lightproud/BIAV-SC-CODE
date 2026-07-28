@@ -11,7 +11,6 @@ import { describe, expect, it } from 'vitest';
 
 import {
   SAFE_VERDICT,
-  VERIFIER_DEFAULT_MODEL,
   adversarialVerify,
   buildVerifierUserTurn,
   parseVerdict,
@@ -154,16 +153,21 @@ describe('buildVerifierUserTurn', () => {
 describe('adversarialVerify over a mock transport', () => {
   it('sends the verdict system prompt at temperature 0 and returns the verdict', async () => {
     const t = new MockTransport([textReplyEvents('{"verdict":"REFUTED","rationale":"guarded"}')]);
-    const r = await adversarialVerify({ summary: 's', context: 'code' }, { transport: t });
+    const r = await adversarialVerify(
+      { summary: 's', context: 'code' },
+      { transport: t, model: 'haiku' },
+    );
     expect(r.verdict).toBe('REFUTED');
     expect(r.keep).toBe(false);
     expect(t.requests[0]?.system).toBe(VERIFY_VERDICT_SYSTEM);
     expect(t.requests[0]?.temperature).toBe(0);
   });
-  it('defaults to VERIFIER_DEFAULT_MODEL and honors opts.model override', async () => {
+  it('requires opts.model (no built-in default, 0.94.0) and drives the named model', async () => {
     const t1 = new MockTransport([textReplyEvents('{"verdict":"CONFIRMED","rationale":"x"}')]);
-    await adversarialVerify({ summary: 's' }, { transport: t1 });
-    expect(t1.requests[0]?.model).toBe(VERIFIER_DEFAULT_MODEL);
+    await expect(adversarialVerify({ summary: 's' }, { transport: t1 })).rejects.toThrow(
+      /model is required/,
+    );
+    expect(t1.requests).toHaveLength(0); // fail EARLY: the transport never sees it
     const t2 = new MockTransport([textReplyEvents('{"verdict":"CONFIRMED","rationale":"x"}')]);
     await adversarialVerify({ summary: 's' }, { transport: t2, model: 'claude-sonnet-4-5' });
     expect(t2.requests[0]?.model).toBe('claude-sonnet-4-5');
@@ -182,7 +186,10 @@ describe('adversarialVerify over a mock transport', () => {
       },
     };
     await expect(
-      adversarialVerify({ summary: 's' }, { transport: abortingTransport, signal: controller.signal }),
+      adversarialVerify(
+        { summary: 's' },
+        { transport: abortingTransport, signal: controller.signal, model: 'haiku' },
+      ),
     ).rejects.toThrow();
   });
 });

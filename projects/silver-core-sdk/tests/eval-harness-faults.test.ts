@@ -94,6 +94,7 @@ async function run(
   const q = query({
     prompt: 'Say the reply.',
     options: {
+      model: 'claude-sonnet-4-5',
       provider: { apiKey: 'test-key', baseUrl, fetch: fetchWrap, ...extraProvider },
       cwd: sandbox,
       sessionDir: path.join(sandbox, '.sessions'),

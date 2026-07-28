@@ -21,7 +21,9 @@
       }
     },
     "knownRemovals": {
-      "Options.harnessPromptVariant": "removed 0.33.0 (keeper ruling 2026-07-08: variant ladder collapsed to the single v5 default) — present in the 0.30.0 snapshot only; see docs/MIGRATION-0.3x-to-0.68.md"
+      "Options.harnessPromptVariant": "removed 0.33.0 (keeper ruling 2026-07-08: variant ladder collapsed to the single v5 default) — present in the 0.30.0 snapshot only; see docs/MIGRATION-0.3x-to-0.68.md",
+      "DEFAULT_UTILITY_MODEL": "removed 0.94.0 (SCS request 2026-07-28, black-pool sdk-bridge: no baked-in model-id fallbacks — the package cannot know which ids the consumer's gateway serves; a missing model now throws a ConfigurationError at the call site instead of silently substituting this id); see docs/MIGRATION-0.3x-to-0.68.md",
+      "VERIFIER_DEFAULT_MODEL": "removed 0.94.0 (same ruling as DEFAULT_UTILITY_MODEL: no baked-in model-id fallbacks; adversarialVerify/runVerification now require opts.model); see docs/MIGRATION-0.3x-to-0.68.md"
     }
   },
   "0.30.0": {

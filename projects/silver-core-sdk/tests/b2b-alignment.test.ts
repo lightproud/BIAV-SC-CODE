@@ -84,6 +84,7 @@ describe('T2-3: official ACCEPTED Options fields are typed + warn once each', ()
       debug: true,
       stderr: (d) => lines.push(d),
       persistSession: false,
+      model: 'claude-sonnet-4-5',
       provider: { apiKey: 'test-key' },
       cwd,
       env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
@@ -196,6 +197,7 @@ describe('T2-2/T2-7: MCP surface official shapes', () => {
     const q = query({
       prompt: pendingInput(),
       options: {
+        model: 'claude-sonnet-4-5',
         persistSession: false,
         provider: { apiKey: 'test-key' },
         cwd,
@@ -416,6 +418,7 @@ describe('session-face tail items', () => {
       query({
         prompt: 'hi',
         options: {
+          model: 'claude-sonnet-4-5',
           provider: { apiKey: 'test-key' },
           sessionDir,
           cwd,

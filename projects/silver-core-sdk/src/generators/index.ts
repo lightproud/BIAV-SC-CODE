@@ -539,7 +539,6 @@ function stripToPlain(raw: string): string {
 
 export type { UtilityCallOptions } from './runtime.js';
 export {
-  DEFAULT_UTILITY_MODEL,
   runUtilityCall,
   extractJsonObject,
   resolveUtilityTransport,

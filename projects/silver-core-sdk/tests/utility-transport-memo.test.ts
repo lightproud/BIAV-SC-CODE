@@ -70,7 +70,7 @@ function okSseResponse(text: string): Response {
 describe('utility transport memoization (audit 2026-07-14 L-4)', () => {
   it('the same provider-config reference resolves to the SAME transport instance', () => {
     const provider: ProviderConfig = { apiKey: 'k' };
-    const opts: UtilityCallOptions = { provider, env: { BPT_HTTP_CLIENT: 'fetch' } };
+    const opts: UtilityCallOptions = { provider, env: { BPT_HTTP_CLIENT: 'fetch' }, model: 'haiku' };
     const t1 = resolveUtilityTransport(opts);
     const t2 = resolveUtilityTransport(opts);
     expect(t2).toBe(t1);
@@ -117,7 +117,7 @@ describe('utility transport memoization (audit 2026-07-14 L-4)', () => {
     // before the fix each utility call constructed its own transport, so two
     // calls meant two probes.
     const provider: ProviderConfig = { apiKey: 'k', preconnect: true, fetch: countingFetch };
-    const opts: UtilityCallOptions = { provider, env: { BPT_HTTP_CLIENT: 'fetch' } };
+    const opts: UtilityCallOptions = { provider, env: { BPT_HTTP_CLIENT: 'fetch' }, model: 'haiku' };
 
     const first = await runUtilityCall('system', 'user one', opts, 64);
     const second = await runUtilityCall('system', 'user two', opts, 64);

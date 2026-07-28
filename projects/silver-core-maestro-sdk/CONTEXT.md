@@ -36,12 +36,15 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.93.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.93.0`
+**当前版本 `0.94.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.94.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
+**v0.94.0（2026-07-28）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.94.0
+（BREAKING：包内模型兜底默认值全数移除——缺 model 即抛 `ConfigurationError`，
+`DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` 出口删除）前进，详见该包 CHANGELOG。
 **v0.93.0（2026-07-28）：锁步对齐**（本包零运行时改动）——agent SDK 0.93.0 修复 recap 截断丢最新进度（BPT P1 活锁事故根因，`buildRecap` 改头尾双保留）并把截断纪律注册表扩到全 `src/`；家族版本钟锁步，本包同步升位。
 
 **v0.92.1（2026-07-28）：锁步对齐**（本包零运行时改动）——agent SDK 0.92.1 修复自动续跑时「被拒绝的控制面覆写仍被留存并重放」；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
@@ -67,9 +70,6 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 **v0.81.0 / 0.80.2 / 0.80.1 / 0.80.0（2026-07-27）：锁步对齐四连**——本包**零代码改动**，
 家族版本钟随 agent SDK 同号前进（Read 截断页脚三件套 · 快照基准对齐 + 吻合度尺子 ·
 溯源 slug 改锚 + cron 自检 · 工具输出上限对齐 2.1.141）。逐版叙述见该包 CHANGELOG。
-
-**v0.79.1（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.79.1
-（transport / MCP 内部去重）前进。
 
 **v0.79.0（2026-07-26）：重开语义 + 三项余项推进**（守密人「1.写 2.3.4.5.6.按你建议推进」）。
 **T67 重开（甲案）**：`reopenSession` / `reopenChain`——新会话 + `reopenOf`/`attemptRound` 链，
@@ -109,10 +109,6 @@ payload 可覆盖（e2e 抓到示例继承旧 target 重打本该迁离的端点
 **F4** `run({signal})` / `chase(config,{signal})` 收 AbortSignal，共用的 `waitOrAbort` 恒清定时器。
 测试 362 → **400**；三套机制均经逐条回退负控实证（6 例转红）后还原。
 **未纳入（不在裁定射程）**：`Scheduler` 恢复仍做无过滤全表扫；F5「重开」语义仍挂待裁。
-
-**v0.77.0（2026-07-26）：锁步对齐（agent 侧 Windows 正确性清扫）**——本包零代码改动。
-值得记一笔：同一轮 Windows 探路里 agent SDK 15 个测试档失败，**maestro 362/362 全绿、无需任何改动**——
-编排层不含宿主路径与 shell 假设。详见 agent CHANGELOG 0.77.0。
 
 第零战(monorepo 迁移)+ 第一战(任务台账 + 驱动器,0.2.0)完成:
 

@@ -216,6 +216,7 @@ describe('LoopControl registration (opt-in)', () => {
     const off = query({
       prompt: 'hi',
       options: {
+        model: 'claude-sonnet-4-5',
         provider: { apiKey: 'k', fetch: makeSSEFetch([textReplyEvents('a')]) },
         persistSession: false,
         env: { PATH: process.env.PATH, HOME: process.env.HOME },
@@ -228,6 +229,7 @@ describe('LoopControl registration (opt-in)', () => {
     const on = query({
       prompt: 'hi',
       options: {
+        model: 'claude-sonnet-4-5',
         provider: { apiKey: 'k', fetch: makeSSEFetch([textReplyEvents('a')]) },
         persistSession: false,
         env: { PATH: process.env.PATH, HOME: process.env.HOME },

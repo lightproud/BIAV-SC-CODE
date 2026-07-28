@@ -87,9 +87,12 @@ remappable. Absent the option, a full gateway id in `AgentDefinition.model`
 (or the Agent tool's `model` param) is still passed through untouched.
 
 > Note: the same table + override pair backs the compaction summarizer
-> (`compaction.model`) and the utility-call defaults (which hardcode
-> `claude-haiku-4-5`): `options.modelAliases` flows to all three seams, and
-> hosts calling generators directly pass `opts.modelAliases`.
+> (`compaction.model`) and utility calls: `options.modelAliases` flows to all
+> three seams, and hosts calling generators directly pass `opts.modelAliases`.
+> Since 0.94.0 no seam hardcodes a fallback id — the compaction summarizer and
+> the engine's internal condition calls inherit the SESSION model when no
+> override names one, and a direct utility/verifier call without `opts.model`
+> throws a `ConfigurationError`.
 
 ## 4. Invocation patterns (Claude Code style)
 

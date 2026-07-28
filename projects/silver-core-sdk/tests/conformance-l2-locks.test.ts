@@ -543,9 +543,8 @@ describe('L2 lock: env passthrough to the transport', () => {
 });
 
 describe('L2 lock: model resolution order', () => {
-  it('options.model > env.ANTHROPIC_MODEL > built-in default', async () => {
+  it('options.model > env.ANTHROPIC_MODEL > throw (no built-in default, 0.94.0)', async () => {
     const fetchStub = makeSSEFetch([
-      textReplyEvents('ok'),
       textReplyEvents('ok'),
       textReplyEvents('ok'),
     ]);
@@ -570,8 +569,14 @@ describe('L2 lock: model resolution order', () => {
     );
     expect(fetchStub.requests[1]!.body.model).toBe('model-from-env');
 
-    await collect(query({ prompt: 'hi', options: opts({ model: undefined }) }));
-    expect(fetchStub.requests[2]!.body.model).toBe('claude-sonnet-4-5');
+    // 0.94.0 (SCS request 2026-07-28): NO built-in default model. Both
+    // remaining sources absent -> a ConfigurationError at the call site, not
+    // a silent baked-in id that surfaces as a delayed gateway 400. The throw
+    // is synchronous (construction-time), before any request is issued.
+    expect(() => query({ prompt: 'hi', options: opts({ model: undefined }) })).toThrow(
+      /model is required/,
+    );
+    expect(fetchStub.requests).toHaveLength(2);
   });
 });
 
