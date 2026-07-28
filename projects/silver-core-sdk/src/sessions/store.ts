@@ -26,7 +26,7 @@ import {
   openSync,
   readSync,
 } from 'node:fs';
-import { readFile, readdir, stat } from 'node:fs/promises';
+import { readdir, stat } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { createInterface } from 'node:readline';
@@ -399,9 +399,19 @@ export class JsonlSessionStore implements SessionStore {
       return null;
     }
     const file = this.filePath(sessionId);
-    let raw: string;
+    // Streamed line-by-line, NOT readFile(file,'utf8') (scale defect, wave10).
+    // A transcript is append-only for the life of a session and every tool
+    // result lands in it, so a long-running agent's JSONL passes V8's ~512MB
+    // max string length; `readFile` with an encoding then throws
+    // `RangeError: Invalid string length` (measured on a 780MB transcript) and
+    // the bare `catch { return null }` reported it as "no such session" —
+    // resume SILENTLY started an empty conversation and kept appending to the
+    // same file. list()/loadInfo() already stream, so the session stayed
+    // listed as resumable the whole time. Streaming also halves peak memory
+    // (the whole file plus its split array were both resident).
+    let stream: ReturnType<typeof createReadStream>;
     try {
-      raw = await readFile(file, 'utf8');
+      stream = createReadStream(file, { encoding: 'utf8' });
     } catch {
       return null;
     }
@@ -429,10 +439,13 @@ export class JsonlSessionStore implements SessionStore {
     const accountingRecords: Array<Record<string, unknown>> = [];
     const toolCallRecords: Array<Record<string, unknown>> = [];
 
-    const lines = raw.split('\n');
-    for (let i = 0; i < lines.length; i += 1) {
-      const line = lines[i]?.trim();
-      if (line === undefined || line.length === 0) continue;
+    try {
+      const rl = createInterface({ input: stream, crlfDelay: Infinity });
+      let i = -1;
+      for await (const rawLine of rl) {
+      i += 1;
+      const line = rawLine.trim();
+      if (line.length === 0) continue;
 
       let parsed: unknown;
       try {
@@ -535,6 +548,20 @@ export class JsonlSessionStore implements SessionStore {
       this.debug(
         `session store: skipping unrecognized line ${i + 1} in ${sessionId}${JSONL_EXT}`,
       );
+      }
+    } catch (err) {
+      // A missing file is an ordinary "no such session"; anything else is a
+      // real read fault and must not masquerade as one (the silent-null bug
+      // above). Either way load() still never throws.
+      this.debug(
+        `session store: load failed for ${sessionId}${JSONL_EXT}: ${
+          err instanceof Error ? err.message : String(err)
+        }`,
+      );
+      return null;
+    } finally {
+      // Mirrors loadInfo's L6 fd hygiene: destroy on every exit path.
+      stream.destroy();
     }
 
     let lastModified = createdAt ?? Date.now();

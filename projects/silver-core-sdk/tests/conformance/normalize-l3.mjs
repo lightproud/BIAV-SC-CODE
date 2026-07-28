@@ -365,7 +365,12 @@ export function compareToolResultTexts(
   if (o.applied.has('gutter-arrow') && u.applied.has('gutter-tab')) {
     kdHits.add('KD-L3-01');
   }
-  if (o.applied.has('system-reminder') && !u.applied.has('system-reminder')) {
+  // Direction-SYMMETRIC: N6 strips the appendix on BOTH arms, so recording
+  // only the official-only direction meant an OURS-only appendix (our Read
+  // returns an all-<system-reminder> body for an empty file, src/tools/read.ts)
+  // was normalized away on our side and compared equal - a genuine output
+  // difference scored CONTENT_MATCH with no id reported (audit 2026-07-28).
+  if (o.applied.has('system-reminder') !== u.applied.has('system-reminder')) {
     kdHits.add('KD-L3-02');
   }
 

@@ -8,8 +8,14 @@ on:
       - 'projects/wiki/scripts/validate_data.py'
       - '.github/workflows/validate-data.yml'
   pull_request:
+    # 与 push 路径**逐条对齐**（2026-07-28 扫描修复）。此前 PR 过滤只列 data/**，
+    # 于是改 `validate_data.py`（校验器本体）或改本工作流的 PR **完全不触发本检查**——
+    # 一个把校验放宽 / 弄坏的 PR 全程绿灯合入，破绽要等下一个碰 data/** 的 PR 才现形。
+    # 门必须为它自己所守护的文件而开。
     paths:
       - 'projects/wiki/data/**'
+      - 'projects/wiki/scripts/validate_data.py'
+      - '.github/workflows/validate-data.yml'
   workflow_dispatch:
 
 concurrency:

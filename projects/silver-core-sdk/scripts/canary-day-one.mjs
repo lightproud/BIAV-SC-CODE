@@ -42,8 +42,8 @@ const LIVE_MODEL = MODEL_ARG ? MODEL_ARG.slice('--model='.length) : 'claude-haik
 let sdk;
 let sdkOrigin;
 try {
-  sdk = await import('silver-core-sdk');
-  sdkOrigin = 'package "silver-core-sdk"';
+  sdk = await import('silver-core-agent-sdk');
+  sdkOrigin = 'package "silver-core-agent-sdk"';
 } catch {
   const local = new URL('../dist/index.js', import.meta.url);
   try {
@@ -52,7 +52,7 @@ try {
   } catch {
     console.error(
       'canary: cannot resolve the SDK. Either run inside an app that has\n' +
-        'silver-core-sdk installed, or build a checkout first (npm run build).',
+        'silver-core-agent-sdk installed, or build a checkout first (npm run build).',
     );
     process.exit(1);
   }
@@ -62,7 +62,7 @@ const { query } = sdk;
 function sdkVersion() {
   try {
     const entry = import.meta.resolve
-      ? fileURLToPath(import.meta.resolve('silver-core-sdk'))
+      ? fileURLToPath(import.meta.resolve('silver-core-agent-sdk'))
       : null;
     const root = entry ? path.dirname(path.dirname(entry)) : path.dirname(path.dirname(fileURLToPath(new URL('../dist/index.js', import.meta.url))));
     const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));

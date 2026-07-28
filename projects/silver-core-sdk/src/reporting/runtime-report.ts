@@ -442,14 +442,18 @@ export async function generateRuntimeReport(
     if (retentionDays > 0) {
       await pruneDayFiles(outDir, /^runtime-report-(\d{4}-\d{2}-\d{2})\.md$/, now, retentionDays);
     }
-    if (options.ledgerRetentionDays !== undefined && options.ledgerRetentionDays > 0) {
-      await pruneDayFiles(
-        options.logDir,
-        /^runlog-(\d{4}-\d{2}-\d{2})\.jsonl$/,
-        now,
-        options.ledgerRetentionDays,
-      );
-    }
+  }
+  // Ledger retention is INDEPENDENT of whether a report file was written:
+  // `outDir: null` is documented as "don't write, return only", not as
+  // "ignore ledgerRetentionDays". Nesting this inside the write branch let a
+  // consumer who explicitly opted into a bounded ledger grow it forever.
+  if (options.ledgerRetentionDays !== undefined && options.ledgerRetentionDays > 0) {
+    await pruneDayFiles(
+      options.logDir,
+      /^runlog-(\d{4}-\d{2}-\d{2})\.jsonl$/,
+      now,
+      options.ledgerRetentionDays,
+    );
   }
 
   return {

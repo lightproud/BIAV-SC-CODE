@@ -36,7 +36,7 @@ otherwise the report's tool-call section reads their runs as "无数据"
 ## Daily report (`generateRuntimeReport`)
 
 ```ts
-import { generateRuntimeReport } from 'silver-core-sdk';
+import { generateRuntimeReport } from 'silver-core-agent-sdk';
 
 const { path, markdown, summary } = await generateRuntimeReport({
   logDir: '/var/bpt/runlog',          // where the day files live
@@ -63,7 +63,7 @@ new runtime dependencies.
 ## Trend comparison (`compareReports`, REQ-1.2)
 
 ```ts
-import { compareReports } from 'silver-core-sdk';
+import { compareReports } from 'silver-core-agent-sdk';
 
 const { a, b, deltas, markdown } = await compareReports(
   '2026-07-10', '2026-07-11',            // UTC days; B is the "after" side

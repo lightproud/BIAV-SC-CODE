@@ -61,7 +61,7 @@ helpers it links — clean-room discipline unchanged.
 ## Quick start
 
 ```ts
-import { query } from 'silver-core-sdk';
+import { query } from 'silver-core-agent-sdk';
 
 for await (const m of query({
   prompt: 'Remember that customer Acme Corp prefers email follow-ups.',
@@ -113,7 +113,7 @@ Two implementation levels — prefer the first:
    / `delete` / `rename` over virtual `/memories/...` paths) and wrap them:
 
    ```ts
-   import { createMemoryStore, type MemoryFileOps } from 'silver-core-sdk';
+   import { createMemoryStore, type MemoryFileOps } from 'silver-core-agent-sdk';
    const store = createMemoryStore(myOps /* MemoryFileOps */);
    ```
 
@@ -130,7 +130,7 @@ Two implementation levels — prefer the first:
 Either way, validate with the publishable contract suite (R3 acceptance):
 
 ```ts
-import { runMemoryStoreContractSuite } from 'silver-core-sdk';
+import { runMemoryStoreContractSuite } from 'silver-core-agent-sdk';
 const report = await runMemoryStoreContractSuite(() => makeFreshEmptyStore());
 // report.passed === true  <=>  contract-compliant
 ```
@@ -211,7 +211,7 @@ an async scan a host runs when it decides to, not something the engine
 computes per result.
 
 ```ts
-import { assessMemoryStoreHealth, createLocalMemoryFileOps } from 'silver-core-sdk';
+import { assessMemoryStoreHealth, createLocalMemoryFileOps } from 'silver-core-agent-sdk';
 
 const ops = createLocalMemoryFileOps('<baseDir>/memories');
 const health = await assessMemoryStoreHealth(ops, {

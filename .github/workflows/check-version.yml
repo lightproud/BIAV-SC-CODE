@@ -35,6 +35,17 @@ jobs:
         id: check
         run: python projects/wiki/scripts/check_version.py
 
+      # 自检（2026-07-28 扫描修复，照 refresh-claude-code-prompts.yml 的既有范式）：
+      # 本任务把自动生成的 stub 条目写进 projects/wiki/data/processed/versions.json，
+      # 再带 **[skip ci]** 直推 main——而 validate-data.yml 正是靠 push 到
+      # `projects/wiki/data/**` 触发的。[skip ci] 一挂，那道 schema 门就对**机器写入的
+      # 数据**永久关闭：抓错的版本串写出不合 schema 的 stub，main 照样全绿，破绽要等
+      # 下一个恰好碰 data/** 的人工 PR 才现形。故落库前就地验一遍：红则不提交、不直推。
+      - name: Validate wiki data before committing ([skip ci] 会跳过 validate-data.yml)
+        run: |
+          pip install jsonschema
+          python projects/wiki/scripts/validate_data.py
+
       - name: Check for changes
         id: changes
         run: |

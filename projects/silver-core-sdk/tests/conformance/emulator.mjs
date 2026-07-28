@@ -181,9 +181,19 @@ export function startEmulator(scripts, { captureBodies = false } = {}) {
         // Frames through the hangAfter event type, then silence forever -
         // the client sees a live but stalled stream. The response is
         // registered for forced destruction at close() time.
+        const hangAfter = script.hangAfter ?? 'message_start';
+        const upTo = script.events.findIndex((e) => e.type === hangAfter);
+        if (upTo === -1) {
+          // Same loud-fail discipline as sse-truncated's cutMarker: a mistyped
+          // or upstream-renamed hangAfter silently emitted the COMPLETE event
+          // set, so the engine saw a finished message and the "stalls
+          // mid-stream" fault under test never actually injected.
+          res.writeHead(500, { 'content-type': 'application/json' });
+          res.end(JSON.stringify({ type: 'error', error: { type: 'api_error', message: `emulator: sse-hang hangAfter event not found: ${hangAfter}` } }));
+          return;
+        }
         res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' });
-        const upTo = script.events.findIndex((e) => e.type === (script.hangAfter ?? 'message_start'));
-        res.write(sse(script.events.slice(0, upTo === -1 ? script.events.length : upTo + 1)));
+        res.write(sse(script.events.slice(0, upTo + 1)));
         hungResponses.add(res);
         res.on('close', () => hungResponses.delete(res));
         return;

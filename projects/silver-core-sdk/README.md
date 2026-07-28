@@ -245,12 +245,13 @@ start (capped; lazily `view` the rest). See [docs/MEMORY.md](./docs/MEMORY.md).
 ## Session goals (`options.goal`, BPT-EXTENSION)
 
 `options.goal` arms a session-scoped Stop gate: when the agent tries to stop,
-a host-injected evaluator judges the transcript against the goal. "not met"
-blocks the stop (the reason is fed back as a user turn and the loop keeps
-working — engine `maxTurns` / `maxBudgetUsd` still cap it); "met" and the
-`impossible` escape hatch both disarm; an errored / unparseable / context-less
-evaluation ALLOWS the stop and keeps the goal armed — a broken judge must
-never trap the agent in a forced loop. Wire it once into a query:
+a host-injected `evaluator` judges the transcript against the goal and returns
+a `GoalVerdict` (`{ status, reason? }`). `status: 'not_achieved'` blocks the
+stop (the reason is fed back as a user turn and the loop keeps working — engine
+`maxTurns` / `maxBudgetUsd` still cap it); `'achieved'` and the `'impossible'`
+escape hatch both disarm; an errored / unparseable / context-less evaluation
+ALLOWS the stop and keeps the goal armed — a broken judge must never trap the
+agent in a forced loop. Wire it once into a query:
 
 ```ts
 const q = query({
@@ -258,7 +259,10 @@ const q = query({
   options: {
     goal: {
       goal: 'all tests pass and the changelog is updated',
-      evaluate: async (transcript) => ({ met: false, reason: 'changelog not touched' }),
+      evaluator: async ({ context }) => ({
+        status: 'not_achieved',
+        reason: 'changelog not touched',
+      }),
       maxBlocks: 5, // safety cap on consecutive re-drives
     },
   },

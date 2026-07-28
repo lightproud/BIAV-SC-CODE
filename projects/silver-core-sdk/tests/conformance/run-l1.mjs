@@ -41,7 +41,12 @@ const outPath = typeof args.out === 'string' ? args.out : join(HERE, '..', '..',
 function checksVerdict(expected, checks) {
   const failures = [];
   if (checks.resultSubtype !== expected.resultSubtype) failures.push(`resultSubtype ${checks.resultSubtype} != ${expected.resultSubtype}`);
-  if (expected.resultText !== undefined && checks.resultText !== null && !checks.resultText.includes(expected.resultText)) {
+  // An ABSENT result text is a miss, not a skip: `checks.resultText !== null`
+  // used to wave the assertion through whenever result.result was missing or
+  // non-string, so an engine that stopped carrying the assistant text on a
+  // success-subtype result still scored clean here. (run-l2's checksVerdict
+  // already treats null as a failure; this aligns L1 with it.)
+  if (expected.resultText !== undefined && (checks.resultText === null || !checks.resultText.includes(expected.resultText))) {
     failures.push(`resultText missing "${expected.resultText}"`);
   }
   if (checks.toolResults !== expected.toolResults) failures.push(`toolResults ${checks.toolResults} != ${expected.toolResults}`);
@@ -77,6 +82,19 @@ for (const scenario of SCENARIOS) {
   }
   if (row.bpt && row.official && !row.official.unavailable) {
     row.compare = compareStreams(row.official.tokens, row.bpt.tokens);
+    // `expect` is asserted IDENTICALLY on both arms (scenarios.mjs contract:
+    // "a check failing on ONE arm is an engine difference"), but the official
+    // arm's checkFailures were computed and then dropped on the floor - a row
+    // whose token grammar aligned still scored MATCH while the two engines
+    // disagreed on result subtype / result text / tool_result count. Mirrors
+    // run-l3's `row.official.failures.length > 0 -> anyDivergent` rule.
+    if (row.official.checkFailures.length > 0) {
+      row.compare.verdict = 'DIVERGENT';
+      row.compare.divergences = [
+        ...row.compare.divergences,
+        { officialCheckFailures: row.official.checkFailures },
+      ];
+    }
     if (row.compare.verdict === 'DIVERGENT') divergent += 1;
   }
   matrix.scenarios.push(row);

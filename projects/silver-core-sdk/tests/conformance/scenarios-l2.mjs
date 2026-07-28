@@ -219,8 +219,20 @@ export const SCENARIOS_L2 = [
       const failures = [];
       if (run.postCount !== 0) failures.push(`postCount ${run.postCount} != 0 (model was called despite missing interlock)`);
       const result = resultOf(run.messages);
-      const refused = Boolean(run.error) || (result && result.subtype !== 'success');
-      if (!refused) failures.push('no observable refusal (no error thrown and no error result)');
+      // A THROWN error only counts as the interlock refusal when it names the
+      // interlock. `Boolean(run.error)` alone certified the gate on ANY throw:
+      // when the harness lost its model pin the arm died at construction
+      // (0 POSTs, unrelated ConfigurationError) and this row still reported a
+      // clean pass - a gate that never ran, scored as enforced (audit 2026-07-28).
+      const interlockError =
+        typeof run.error === 'string' &&
+        /allowDangerouslySkipPermissions|bypassPermissions/i.test(run.error);
+      const refused = interlockError || (result && result.subtype !== 'success');
+      if (!refused) {
+        failures.push(
+          `no observable interlock refusal (error=${JSON.stringify(run.error ?? null)}, result subtype=${result?.subtype ?? 'none'})`,
+        );
+      }
       if (run.checks.resultText?.includes('UNREACHED')) failures.push('UNREACHED text produced');
       return failures;
     },

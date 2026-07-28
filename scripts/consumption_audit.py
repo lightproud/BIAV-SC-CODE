@@ -91,6 +91,13 @@ def _grep(needle: str) -> list[str]:
         res = subprocess.run(
             ["git", "grep", "-a", "-n", "-F", needle],
             cwd=REPO, capture_output=True, text=True, timeout=60,
+            # `-a` 的代价：命中若落在二进制档（PNG / PDF），git 会把该档的原始字节
+            # 当文本吐出来，其中必有非 UTF-8 序列。默认 errors="strict" 会让
+            # subprocess 在解码时抛 UnicodeDecodeError——它不是 OSError，逃出下面的
+            # except，**整个审计当场崩**（2026-07-28 实测：needle `okf` 命中
+            # assets/images/portraits/*.png，本脚本每次跑都炸）。改 replace：坏字节
+            # 变 U+FFFD，那些行照旧被 _classify 归进 "other" 桶，不影响任何判据。
+            errors="replace",
         )
     except (OSError, subprocess.TimeoutExpired):
         return []

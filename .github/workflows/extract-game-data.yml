@@ -22,7 +22,11 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  # 只读即可（2026-07-28 扫描收紧）：本作业全程只 `gh release view` / `gh release
+  # download` 取客户端包，解包产物落 projects/wiki/output/ 就地留在 runner——没有任何
+  # commit / push / release upload 步骤。而它由 `release: published` 触发，即**任何人
+  # 发布一个 release 都能让这枚令牌带写权限跑起来**；给它 write 是白送的爆炸半径。
+  contents: read
 
 jobs:
   extract:

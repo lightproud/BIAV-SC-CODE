@@ -12,6 +12,15 @@ on:
       - 'projects/site/**'
       - 'projects/wiki/docs/**'
       - 'projects/wiki/package.json'
+      # 2026-07-28 扫描补齐：以下两条是本工作流**自己执行**的输入，却不在触发面上——
+      #   - generate_wiki_pages.py：下面「Regenerate wiki pages」直接跑它，它的产出正是
+      #     「Enhanced build verification」要验的那批 HTML；改坏它不触发部署，于是构建
+      #     验证门对它永远不开，main 一路绿，站点静静停在上一次部署，直到某次无关的
+      #     site 改动触发部署才炸——报错点离病因已隔了好几次提交。
+      #   - package-lock.json：`npm ci` 装的是它、不是 package.json；只改锁文件的
+      #     依赖升级同样绕过整条构建验证。
+      - 'projects/wiki/package-lock.json'
+      - 'projects/wiki/scripts/generate_wiki_pages.py'
       - 'projects/news/index.html'
       - 'Public-Info-Pool/Resource/proposal/**'
       - 'okf/visualizer.html'

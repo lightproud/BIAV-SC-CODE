@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.98.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.98.0`
+**当前版本 `0.99.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.99.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.99.0（2026-07-28）：审计第十波**——首扫仓库自身守卫机器。一致性台在零次比较上出具合格判词（L2 死 14/15、L4 全死）；htmlToText 与 compaction 的二次方卡死；705MB 转录静默读作「无此会话」；README goal 示例照抄即抛、猜写则放行每次停止。
 
 **v0.98.0（2026-07-28）：审计第九波**——首扫从未审计面（构建/CI/评测脚本、发货示例）+ 四个新横切镜头。
 本包份额：守卫静默退出 0（棘轮/版本/type-parity/run-evals）· 发射契约两处（续接 user 轮永不进流、

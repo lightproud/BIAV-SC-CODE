@@ -9,11 +9,14 @@ Compatibility surface is pinned to the official **0.3.201** baseline
 (docs/COMPAT.md is the authoritative per-field ledger; docs/POSITIONING.md is
 the strategy anchor — surface tracked, behavior deliberately not).
 
-> **Renamed 2026-07-10 (0.41.0)**: this package was previously named
-> `bpt-agent-sdk`. Consumers upgrading across the rename must update the
-> dependency name in `package.json` and the pinned tarball filename
-> (`bpt-agent-sdk-<version>.tgz` -> `silver-core-sdk-<version>.tgz`) — the
-> import specifier follows the package name. No API change is involved.
+> **Renamed**: the npm name is now `silver-core-agent-sdk`, reached via
+> `bpt-agent-sdk` -> `silver-core-sdk` (0.41.0) -> `@biav/agent-sdk` (0.66.0)
+> -> `silver-core-agent-sdk` (0.67.0). Consumers upgrading across any of these
+> must update the dependency name in `package.json` and the pinned tarball
+> filename (`silver-core-agent-sdk-<version>.tgz`) — the import specifier
+> follows the package name. No API change is involved; the full chain and its
+> runtime-identity caveats are in
+> [MIGRATION-0.3x-to-0.68.md](./MIGRATION-0.3x-to-0.68.md) §3.1.
 
 ## 1. The one-line swap
 
@@ -21,14 +24,14 @@ the strategy anchor — surface tracked, behavior deliberately not).
 // before
 import { query, tool, createSdkMcpServer } from '@anthropic-ai/claude-agent-sdk';
 // after
-import { query, tool, createSdkMcpServer } from 'silver-core-sdk';
+import { query, tool, createSdkMcpServer } from 'silver-core-agent-sdk';
 ```
 
 Install from the packed tarball (the sanctioned distribution line — this
 package is not published to npm):
 
 ```bash
-npm install /path/to/silver-core-sdk-<version>.tgz
+npm install /path/to/silver-core-agent-sdk-<version>.tgz
 ```
 
 Build a tarball from a checkout with `npm run build && npm pack`.

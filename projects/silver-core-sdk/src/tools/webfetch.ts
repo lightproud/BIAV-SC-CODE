@@ -359,11 +359,84 @@ function decodeEntities(text: string): string {
   return text.replace(/&(?:amp|lt|gt|quot|apos|nbsp|#39);/g, (m) => ENTITIES[m] ?? m);
 }
 
+/**
+ * Strip every `<tag …>…</tag>` pair, replacing each with `repl` — the LINEAR
+ * equivalent of `text.replace(/<tag\b[^>]*>[\s\S]*?<\/tag\s*>/gi, repl)`.
+ *
+ * Scale defect (wave10): the lazy paired regex re-scans to END OF INPUT for
+ * every opener that has no closer after it, so its cost is O(openers × length)
+ * — quadratic on a body this tool has no control over. Measured: 20k
+ * `<script src=x>` openers in a 1.3MB body took 2.1s, and the fetch body cap
+ * is 5MB, where the same shape (~300k openers, no closer) runs for HOURS with
+ * the event loop pinned and the AbortSignal powerless (the work is one
+ * synchronous regex call). A 5MB page of `<script…>` is a two-line web server.
+ *
+ * Exactly equivalent because closers are found in increasing positions: once
+ * no closer exists at or after some offset, no LATER opener can match either,
+ * so the scan can stop instead of retrying every remaining opener. Both cursors
+ * only move forward, making the whole pass linear.
+ */
+function stripPairedBlocks(text: string, tag: string, repl: string): string {
+  const open = new RegExp(`<${tag}\\b[^>]*>`, 'gi');
+  const close = new RegExp(`</${tag}\\s*>`, 'gi');
+  let out = '';
+  let copied = 0;
+  let m: RegExpExecArray | null;
+  while ((m = open.exec(text)) !== null) {
+    close.lastIndex = m.index + m[0].length;
+    const c = close.exec(text);
+    if (c === null) break; // no closer left anywhere: no later opener can match
+    const end = c.index + c[0].length;
+    out += text.slice(copied, m.index) + repl;
+    copied = end;
+    open.lastIndex = end;
+  }
+  return copied === 0 ? text : out + text.slice(copied);
+}
+
+/** Strip every `<!-- … -->` comment — the LINEAR, literal-indexOf equivalent of
+ *  `.replace(/<!--[\s\S]*?-->/g, repl)`, quadratic for the same reason. */
+function stripComments(text: string, repl: string): string {
+  let out = '';
+  let copied = 0;
+  for (let i = text.indexOf('<!--'); i !== -1; i = text.indexOf('<!--', copied)) {
+    const end = text.indexOf('-->', i + 4);
+    if (end === -1) break; // unterminated: the tail rule below cuts it
+    out += text.slice(copied, i) + repl;
+    copied = end + 3;
+  }
+  return copied === 0 ? text : out + text.slice(copied);
+}
+
+/**
+ * Strip every `<…>` tag — the LINEAR equivalent of `.replace(/<[^>]+>/g, ' ')`.
+ *
+ * The worst of the family: `[^>]+` backtracks one character at a time at EVERY
+ * `<` that has no `>` after it, so a body of bare `<` characters is O(n²) with
+ * a huge constant. Measured: 200KB of `<` took 35 SECONDS; at the 5MB body cap
+ * that is hours of a pinned event loop. `<` with no `>` needs no server
+ * cooperation at all — a truncated page can end that way.
+ */
+function stripTags(text: string, repl: string): string {
+  let out = '';
+  let copied = 0;
+  for (let lt = text.indexOf('<'); lt !== -1; lt = text.indexOf('<', lt + 1)) {
+    const gt = text.indexOf('>', lt + 1);
+    if (gt === -1) break; // no `>` left: no later `<` can close either
+    // `[^>]+` needs at least one character, so a bare `<>` is not a tag.
+    if (gt === lt + 1) continue;
+    out += text.slice(copied, lt) + repl;
+    copied = gt + 1;
+    lt = gt; // resume after the tag (the loop's ++ moves to gt+1)
+  }
+  return copied === 0 ? text : out + text.slice(copied);
+}
+
 function htmlToText(html: string): string {
-  const withoutBlocks = html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ')
-    .replace(/<!--[\s\S]*?-->/g, ' ')
+  const withoutBlocks = stripComments(
+    stripPairedBlocks(stripPairedBlocks(html, 'script', ' '), 'style', ' '),
+    ' ',
+  )
     // An UNCLOSED script/style/comment runs to EOF per the HTML parsing rules.
     // The 5MB body cap routinely cuts a page mid-<script>, deleting the
     // closing tag — the lazy paired regexes above then leave the whole block,
@@ -373,7 +446,7 @@ function htmlToText(html: string): string {
     // landing inside the opening tag itself.
     .replace(/<(?:script|style)\b[^>]*(?:>[\s\S]*)?$/i, ' ')
     .replace(/<!--[\s\S]*$/, ' ');
-  const withoutTags = withoutBlocks.replace(/<[^>]+>/g, ' ');
+  const withoutTags = stripTags(withoutBlocks, ' ');
   const decoded = decodeEntities(withoutTags);
   return decoded.replace(/[ \t\r\f\v]+/g, ' ').replace(/\s*\n\s*/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
 }

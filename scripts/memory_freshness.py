@@ -78,6 +78,12 @@ def gate_problems() -> list[str]:
     text = LESSONS.read_text(encoding="utf-8")
     archive = ARCHIVE.read_text(encoding="utf-8")
     entries = _entries(text)
+    if not entries:
+        # 空转防线：下面每一项检查都是「遍历 entries」，条目解析为零时它们**全部空跑**，
+        # 编号对账那条也因 `elif nums and ...` 被短路——门禁于是在什么都没查的情况下报绿。
+        # 主档换个标题层级（`## 40.` → `### 40.`）或被截断即触发。守卫不许无声降级为零覆盖。
+        return [f"{LESSONS.name} 解析不出任何 `## N. 标题` 条目——指针完整性与编号对账"
+                f"会全部空转，判红而非静默放行（检查主档标题结构是否被改动）"]
 
     for num, e in entries.items():
         if e["kind"] == "merged":

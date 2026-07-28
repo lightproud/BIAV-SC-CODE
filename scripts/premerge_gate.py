@@ -203,6 +203,17 @@ def sparse_selfcheck() -> bool:
                        capture_output=True)
         shutil.rmtree(work, ignore_errors=True)
     print("\n\033[1m▶ [稀疏检出复现] 按 test.yml 的 sparse 模式跑 pytest\033[0m")
+    # 这一腿跑的是 **HEAD**（worktree add 只检出已提交内容），而上面那 13 条门禁步骤跑的是
+    # 工作树。树脏时两者测的不是同一份代码，而结尾却照打「✓ 稀疏检出下同样通过」——
+    # 那句话就成了对**没测过的代码**的断言。尤其反讽的是：--sparse 存在的理由正是路径 /
+    # 档案判据类改动，而这类改动没提交时恰恰一条也不在这一腿的射程内。故必须点名。
+    dirty = subprocess.run(
+        ["git", "-C", str(REPO), "status", "--porcelain"],
+        capture_output=True, text=True, errors="replace",
+    ).stdout.strip()
+    if dirty:
+        print(f"  \033[33m警告：工作树有 {len(dirty.splitlines())} 处未提交改动，本腿只覆盖 "
+              f"HEAD——先提交，否则这一腿对你正要合并的改动一无所知。\033[0m")
     subprocess.run(["git", "-C", str(REPO), "worktree", "add", "--detach", str(work), "HEAD"],
                    check=True, capture_output=True)
     try:

@@ -12,6 +12,19 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.99.0 — 2026-07-28
+
+Audit wave 10. This package's share:
+
+- `docs/ONBOARDING.md` claimed a 16-check `LedgerStore` contract suite; the
+  base set is 13 with 2 optional seam checks, so a host asserting
+  `report.total === 16` concludes three checks silently failed to run.
+- Guard-scope gap (fixed in the testbed, recorded here because the rule is
+  this package's): `tests/terminal-vocabulary.test.ts` forbids the literal
+  `done || failed` spelling but declares scope "src/ only" — the testbed's
+  baseline exporter and soak drill both repeated it, so `cancelled` sessions
+  never reached a terminal bucket.
+
 ## 0.98.0 — 2026-07-28
 
 Audit wave 9. This package's share, all in never-audited surfaces:
