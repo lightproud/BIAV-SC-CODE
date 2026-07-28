@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 381,
-    "edges": 419,
+    "edges": 417,
     "terms": 6813,
     "by_type": {
       "character": 72,
@@ -394,7 +394,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 9
     },
     "/characters/15564.md": {
       "type": "character",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/15577.md": {
       "type": "character",
@@ -901,7 +901,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/15600.md": {
       "type": "character",
@@ -1492,7 +1492,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 8
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -4312,7 +4312,7 @@
     "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md": {
       "type": "documentation",
       "title": "sdk-bug-audit-multiwave-20260728",
-      "description": "对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-maestro-sdk` 3.7k 行 + `silver-core-testbed`）的**系统化缺陷审计**。守密人指令为「寻找 SDK 代码 500 个 BUG 并修复」。审计以分区并行 + 跨切面镜头推进，十二波共 93 个审计分区，全部修正落于分支 `claude/sdk-500-bugs-fix-sm7zer`，（格式：md）",
+      "description": "对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-maestro-sdk` 3.7k 行 + `silver-core-testbed`）的**系统化缺陷审计**。守密人指令为「寻找 SDK 代码 500 个 BUG 并修复」。审计以分区并行 + 跨切面镜头推进，十三波共 99 个审计分区，全部修正落于分支 `claude/sdk-500-bugs-fix-sm7zer`，（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/sdk-bug-audit-multiwave-20260728.md",
       "tags": [
         "data_layer:curated",
@@ -4606,7 +4606,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 957 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 959 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4634,7 +4634,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 453 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 476 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4648,7 +4648,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3205 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3210 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4676,7 +4676,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1816 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1818 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4746,7 +4746,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 461 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 462 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4760,7 +4760,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5322 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5324 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4788,7 +4788,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 100 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 101 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4816,7 +4816,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2362 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2402 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4830,7 +4830,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11522 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11537 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4839,12 +4839,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 8
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8788 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8808 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4858,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3124 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3126 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5723,6 +5723,11 @@
         "cv"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-lessons-archive.md",
         "提及:图鲁",
         "mention"
@@ -5744,6 +5749,11 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:图鲁",
         "mention"
       ],
@@ -6059,22 +6069,12 @@
         "variant"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/memory/memory-research-community-analysis-2026-05-18-26.md",
         "提及:墨菲",
         "mention"
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:墨菲",
         "mention"
       ],
@@ -6572,17 +6572,7 @@
         "mention"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
         "/sources/bilibili.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:萨尔瓦多",
         "mention"
       ],
@@ -7917,11 +7907,6 @@
     ],
     "/community/community-weibo.md": [
       [
-        "/characters/15599.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
         "/characters/77917.md",
         "提及:波吕克斯",
         "mention"
@@ -7932,13 +7917,13 @@
         "mention"
       ],
       [
-        "/characters/15569.md",
-        "提及:萝坦",
+        "/characters/15563.md",
+        "提及:图鲁",
         "mention"
       ],
       [
-        "/characters/15576.md",
-        "提及:墨菲",
+        "/characters/15569.md",
+        "提及:萝坦",
         "mention"
       ],
       [
@@ -9777,11 +9762,6 @@
     ],
     "/sources/weibo.md": [
       [
-        "/characters/15599.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
         "/characters/77917.md",
         "提及:波吕克斯",
         "mention"
@@ -9792,13 +9772,13 @@
         "mention"
       ],
       [
-        "/characters/15569.md",
-        "提及:萝坦",
+        "/characters/15563.md",
+        "提及:图鲁",
         "mention"
       ],
       [
-        "/characters/15576.md",
-        "提及:墨菲",
+        "/characters/15569.md",
+        "提及:萝坦",
         "mention"
       ],
       [
@@ -18361,6 +18341,9 @@
       "/README.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
+    "三波": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "三浦": [
       "/characters/15603.md"
     ],
@@ -20366,9 +20349,6 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/projects/project-news.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
-    ],
-    "二波": [
-      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "二进": [
       "/assets/assets-images.md"
@@ -24839,7 +24819,7 @@
     "匿着": [
       "/characters/15560.md"
     ],
-    "十二": [
+    "十三": [
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "十分": [
