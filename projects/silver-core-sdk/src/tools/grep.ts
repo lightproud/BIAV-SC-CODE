@@ -14,7 +14,7 @@ import { AbortError } from '../errors.js';
 import { guardRegexPattern } from '../internal/regex-guard.js';
 import { sliceSurrogateSafe } from '../internal/text.js';
 import { GREP_DESCRIPTION } from './descriptions.js';
-import { toNativePath } from './fsutil.js';
+import { toNativePath, toPosixGlob } from './fsutil.js';
 import type { GrepStructuredOutput } from '../types/tool-outputs.js';
 import type {
   BuiltinTool,
@@ -428,7 +428,11 @@ export const grepTool: BuiltinTool = {
     const rawGlob = input['glob'];
     const globPattern =
       typeof rawGlob === 'string' && rawGlob.length > 0
-        ? normalizeGlobDepth(rawGlob)
+        ? // toPosixGlob first: a Windows-spelled filter (`src\**\*.ts`) must
+          // become `src/**/*.ts` BEFORE the depth check, or its separators stay
+          // invisible to normalizeGlobDepth and it gets a spurious `**/` prefix
+          // on top of an already-dead escaped pattern (fsutil.toPosixGlob).
+          normalizeGlobDepth(toPosixGlob(rawGlob))
         : undefined;
 
     // --- File enumeration ---------------------------------------------------

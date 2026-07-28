@@ -144,7 +144,25 @@ const GREP_HINT_FILE_BYTES = 256 * 1024;
 
 /** Build a Read tool bound to the given output limits (spec §E). `readTool`
  *  below is the default-limits instance for direct imports / no-config use. */
-export function createReadTool(limits?: ReadLimits): BuiltinTool {
+export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
+  // A NON-FINITE tunable (Number() over an unset env var yields NaN) does not
+  // merely mis-size the cap — it DISABLES it: every `length > NaN` /
+  // `running + addition > NaN` comparison in formatCatN is false, so the whole
+  // window is emitted uncapped, untruncated and with no footer — the exact
+  // context flood the total-char cap exists to bound. Drop such entries so the
+  // `?? DEFAULT` fallbacks at both use sites apply (finite values, including
+  // the deliberate 0 / MAX_SAFE_INTEGER ones, pass through unchanged).
+  const limits: ReadLimits | undefined =
+    rawLimits === undefined
+      ? undefined
+      : {
+          ...(Number.isFinite(rawLimits.maxOutputChars)
+            ? { maxOutputChars: rawLimits.maxOutputChars }
+            : {}),
+          ...(Number.isFinite(rawLimits.maxLineChars)
+            ? { maxLineChars: rawLimits.maxLineChars }
+            : {}),
+        };
   return {
   name: 'Read',
   description: READ_DESCRIPTION,

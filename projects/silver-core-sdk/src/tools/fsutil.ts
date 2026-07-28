@@ -82,6 +82,29 @@ export function toNativePath(p: string): string {
 }
 
 /**
+ * Glob-pattern form `fast-glob` can actually match: the INVERSE of toNativePath,
+ * applied to the pattern side.
+ *
+ * fast-glob (like every micromatch-based matcher) only ever speaks `/` in a
+ * PATTERN and reads `\` as an ESCAPE character. Since 0.77.0 Glob/Grep hand the
+ * model host-native paths (`C:\repo\src\a.ts`), so the natural next call is a
+ * Windows-spelled filter — `Grep({ glob: 'src\\**\\*.ts' })` — and that pattern
+ * does not merely under-match, it degrades to a search for a file literally
+ * named `src**.ts`: every escape is consumed, the wildcards die with them, and
+ * the tool answers "No files found" / "No matches found" over a tree full of
+ * hits. ripgrep, whose semantics Grep's description claims, normalizes the
+ * separator on Windows instead; match that.
+ *
+ * No-op off Windows, where a backslash is a legal filename character AND a
+ * meaningful glob escape — rewriting it there would break both. Safe on
+ * Windows precisely because neither use exists: `\` cannot appear in a Windows
+ * filename, so in a pattern it can only ever have meant a separator.
+ */
+export function toPosixGlob(pattern: string): string {
+  return path.sep === '\\' ? pattern.replace(/\\/g, '/') : pattern;
+}
+
+/**
  * True when `buf` is NOT valid UTF-8 (H1, audit T49). The read-modify-write
  * tools (Edit) decode with Buffer.toString('utf8'), which replaces
  * every invalid sequence with U+FFFD — writing that back re-encodes the
