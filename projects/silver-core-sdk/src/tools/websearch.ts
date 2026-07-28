@@ -96,6 +96,25 @@ function renderResults(results: WebSearchResult[]): string {
 /** Diagnosable message for ANY thrown value (audit 2026-07-17 L74): a
  *  non-Error throw (string / object) rendered "failed: undefined" via the
  *  blind `(e as Error).message` cast, losing the diagnostic. */
+/**
+ * What this tool can honestly populate. `results[].tool_use_id` is REQUIRED in
+ * the official-shaped `WebSearchOutput`, but `execute(input, ctx)` is never
+ * handed the tool_use id — the engine holds it and the tool contract does not
+ * pass it down. It was previously emitted as `''`, which is exactly the failure
+ * `src/types/tool-outputs.ts` names: "an absent optional field is honest; a
+ * zero-filled one is not" — a consumer joining on that id would join every
+ * WebSearch result to the same empty key.
+ *
+ * So the field is OMITTED rather than faked, following the same producing-side
+ * doctrine the sibling producers use for facts this engine does not hold
+ * (`WriteStructuredOutput` omits `structuredPatch` / `gitDiff`,
+ * `EditStructuredOutput` omits `userModified`). Local and unexported: the
+ * exported `WebSearchOutput` shape is untouched.
+ */
+type WebSearchStructuredOutput = Omit<WebSearchOutput, 'results'> & {
+  results: Array<{ content: Array<{ title: string; url: string }> } | string>;
+};
+
 function thrownMessage(e: unknown): string {
   if (e instanceof Error) return e.message;
   if (e !== null && typeof e === 'object') {
@@ -188,16 +207,16 @@ export const webSearchTool: BuiltinTool = {
       // `searchCount` (official, optional) is deliberately NOT set: this tool
       // makes exactly one backend call per invocation, so it would be a
       // constant 1 — a field whose only content is "yes, this ran".
+      // `tool_use_id` is absent, not empty — see WebSearchStructuredOutput.
       structuredOutput: {
         query,
         results: [
           {
-            tool_use_id: '',
             content: filtered.map((r) => ({ title: r.title, url: r.url })),
           },
         ],
         durationSeconds: (Date.now() - searchStartedAt) / 1000,
-      } satisfies WebSearchOutput,
+      } satisfies WebSearchStructuredOutput,
     };
   },
 };

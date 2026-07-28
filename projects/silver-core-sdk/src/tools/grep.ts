@@ -660,7 +660,23 @@ export const grepTool: BuiltinTool = {
       // Zero collected rows despite anyMatch: only zero-length matches (which
       // emit nothing, ripgrep semantics) — genuinely no reportable matches.
       if (out.length === 0) {
-        return { content: `No matches found${oversizeNote}` };
+        return {
+          content: `No matches found${oversizeNote}`,
+          // Same shape (and the same honest zeros) as the `!anyMatch` branch
+          // above: a run that reports nothing still ran, and a consumer that
+          // gets `undefined` here cannot tell it apart from a tool that never
+          // executed. The module-level census guard only asks whether the FILE
+          // mentions structuredOutput, so a per-branch hole is invisible to it.
+          structuredOutput: {
+            mode: outputMode,
+            numFiles: 0,
+            filenames: [],
+            numLines: outputMode === 'content' ? 0 : undefined,
+            appliedLimit: headLimit,
+            appliedOffset: offset,
+            truncated: scanStoppedEarly,
+          } satisfies GrepStructuredOutput,
+        };
       }
       // L17 (audit 2026-07-17): matches DO exist, the offset just skipped
       // past all of them — "No matches found" masked real hits.
@@ -669,6 +685,20 @@ export const grepTool: BuiltinTool = {
           `No results in the requested window: offset=${offset} skips all ` +
           `${out.length} collected result(s). Matches exist — lower offset.` +
           oversizeNote,
+        // The window is empty, so every count reports the WINDOW (zero), not
+        // the collected set — `numMatches`/`filenames` describing rows the
+        // caller did not receive would contradict the text. `out.length` (how
+        // many exist beyond the window) is stated in the sentence and is not
+        // an official field, so it is not invented here.
+        structuredOutput: {
+          mode: outputMode,
+          numFiles: outputMode === 'files_with_matches' ? 0 : scannedFiles,
+          filenames: [],
+          numLines: outputMode === 'content' ? 0 : undefined,
+          appliedLimit: headLimit,
+          appliedOffset: offset,
+          truncated: matchesCut || scanStoppedEarly,
+        } satisfies GrepStructuredOutput,
       };
     }
     // OPT-1: never truncate silently. When the head_limit cap cut the scan or

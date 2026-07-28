@@ -111,7 +111,9 @@ function toDisplayLines(text: string): string[] {
  * Sniff an image media type from MAGIC BYTES (content, not extension — a
  * mislabeled `.txt` PNG is still an image). Returns undefined for non-images.
  */
-function detectImageMediaType(buf: Buffer): string | undefined {
+function detectImageMediaType(
+  buf: Buffer,
+): 'image/png' | 'image/jpeg' | 'image/gif' | 'image/webp' | undefined {
   if (
     buf.length >= 8 &&
     buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4e && buf[3] === 0x47
@@ -325,6 +327,10 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
       if (imageMediaType !== undefined) {
         ctx.debug(`Read: ${abs} as ${imageMediaType} (${buf.length} bytes)`);
         ctx.readFilePaths?.add(abs);
+        // One string, referenced twice (JS strings are immutable and shared by
+        // reference), so carrying the bytes in the structured result costs
+        // nothing beyond the content block that already holds them.
+        const base64 = buf.toString('base64');
         return {
           content: [
             {
@@ -332,10 +338,23 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
               source: {
                 type: 'base64',
                 media_type: imageMediaType,
-                data: buf.toString('base64'),
+                data: base64,
               },
             },
           ],
+          // The `image` arm of the exported ReadOutput union was declared and
+          // never emitted, so a consumer could not tell an image read from a
+          // tool that produced nothing. `dimensions` stays ABSENT: it needs an
+          // image decoder this SDK does not ship, and zeroed width/height would
+          // read as "a 0x0 image" rather than "not measured".
+          structuredOutput: {
+            type: 'image',
+            file: {
+              base64,
+              type: imageMediaType,
+              originalSize: buf.length,
+            },
+          } satisfies ReadStructuredOutput,
         };
       }
 
@@ -356,6 +375,7 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
         }
         ctx.debug(`Read: ${abs} as application/pdf (${buf.length} bytes)`);
         ctx.readFilePaths?.add(abs);
+        const base64 = buf.toString('base64'); // shared with the block below
         return {
           content: [
             {
@@ -363,10 +383,16 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
               source: {
                 type: 'base64',
                 media_type: 'application/pdf',
-                data: buf.toString('base64'),
+                data: base64,
               },
             },
           ],
+          // The `pdf` arm, likewise declared and never emitted. Every field it
+          // requires is a fact already in hand here.
+          structuredOutput: {
+            type: 'pdf',
+            file: { filePath: abs, base64, originalSize: buf.length },
+          } satisfies ReadStructuredOutput,
         };
       }
 
