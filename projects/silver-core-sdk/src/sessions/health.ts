@@ -121,6 +121,7 @@ export async function assessSessionStoreHealth(
   }
 
   let truncatedScan = false;
+  let transcriptScanTruncated = false;
   const perSession = new Map<string, number>();
   const mtimes = new Map<string, number>();
   let transcriptBytes = 0;
@@ -129,6 +130,7 @@ export async function assessSessionStoreHealth(
     if (!name.endsWith(JSONL_EXT)) continue;
     if ((budget.left -= 1) < 0) {
       truncatedScan = true;
+      transcriptScanTruncated = true;
       break;
     }
     const id = name.slice(0, -JSONL_EXT.length);
@@ -157,8 +159,17 @@ export async function assessSessionStoreHealth(
       truncatedScan = truncatedScan || sized.truncated;
       if (perSession.has(id)) {
         perSession.set(id, (perSession.get(id) ?? 0) + sized.bytes);
-      } else {
+      } else if (!transcriptScanTruncated) {
         orphanCheckpointDirs.push(id);
+      } else {
+        // The transcript scan stopped at the budget, so absence from
+        // perSession does NOT mean the transcript is gone — confirm before
+        // flagging, or a live session's checkpoints read as deletable orphans.
+        try {
+          await stat(join(dir, `${id}${JSONL_EXT}`));
+        } catch {
+          orphanCheckpointDirs.push(id);
+        }
       }
     }
   } catch {

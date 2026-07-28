@@ -101,7 +101,17 @@ export function createGoalStopHooks(
   const goal = config.goal.trim();
   let armed = true;
   let blocks = 0;
-  const emit = (event: GoalEvent) => config.onEvent?.(event);
+  // Observability, never control flow: a throwing host onEvent would escape
+  // onStop and be misread by the hook runner as a callback failure — in the
+  // not_achieved branch the block verdict would be DISCARDED (fail-open
+  // default) and the goal gate would silently stop enforcing.
+  const emit = (event: GoalEvent) => {
+    try {
+      config.onEvent?.(event);
+    } catch {
+      /* observer errors never alter the verdict */
+    }
+  };
 
   function contextOf(input: StopHookInput): string {
     const parts: string[] = [];

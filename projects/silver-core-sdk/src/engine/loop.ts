@@ -44,6 +44,7 @@ import type {
   RetryInfo,
   StreamRequest,
 } from '../internal/contracts.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import {
   MessageAccumulator,
   foldMessageDeltaUsage,
@@ -510,7 +511,7 @@ export async function* runAgentLoop(
               .filter((b) => b.type === 'text')
               .map((b) => (b as { type: 'text'; text: string }).text)
               .join(' ');
-      return text.length > 500 ? text.slice(0, 500) + '…' : text;
+      return text.length > 500 ? sliceSurrogateSafe(text, 500) + '…' : text;
     }
     return '';
   };

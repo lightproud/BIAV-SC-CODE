@@ -84,17 +84,18 @@ export async function resolveElicitation(
   // short-circuit a disconnected/tore-down session still invoked the host
   // handler (audit 2026-07-17 L33).
   if (signal.aborted) return { action: 'decline' };
+  // WV4-2 (audit r3): race the handler against the abort signal so a handler
+  // that never resolves (and ignores the passed signal) cannot hang the wire
+  // indefinitely — an abort mid-await declines rather than blocks forever.
+  // The listener is removed once the race settles: the signal is the
+  // connection-lifetime controller, so leaving it attached accumulated one
+  // listener per elicitation for the life of the connection.
+  let onAbort: (() => void) | undefined;
   try {
     const request = parseElicitationParams(params);
-    // WV4-2 (audit r3): race the handler against the abort signal so a handler
-    // that never resolves (and ignores the passed signal) cannot hang the wire
-    // indefinitely — an abort mid-await declines rather than blocks forever.
     const abortDecline = new Promise<ElicitationResult>((resolve) => {
-      if (signal.aborted) {
-        resolve({ action: 'decline' });
-        return;
-      }
-      signal.addEventListener('abort', () => resolve({ action: 'decline' }), { once: true });
+      onAbort = (): void => resolve({ action: 'decline' });
+      signal.addEventListener('abort', onAbort, { once: true });
     });
     const result: ElicitationResult = await Promise.race([
       handler(request, { signal }),
@@ -103,5 +104,7 @@ export async function resolveElicitation(
     return normalizeResult(result, request.requestedSchema);
   } catch {
     return { action: 'decline' };
+  } finally {
+    if (onAbort) signal.removeEventListener('abort', onAbort);
   }
 }

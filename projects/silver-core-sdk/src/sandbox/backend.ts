@@ -78,7 +78,10 @@ export function resolveSandboxBackend(
   platform: NodeJS.Platform = process.platform,
 ): SandboxBackend | null {
   if (opt === false) return null;
-  if (typeof opt === 'object') {
+  // `typeof null === 'object'`, so guard against null before dereferencing —
+  // otherwise a JS host passing `sandbox: null` throws a TypeError out of a
+  // function documented to never throw.
+  if (typeof opt === 'object' && opt !== null) {
     if (opt.enabled === false) return null;
     if (opt.backend !== undefined) return opt.backend; // injected (tests / host Seatbelt)
   }

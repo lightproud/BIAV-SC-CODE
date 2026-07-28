@@ -172,11 +172,12 @@ export function formatCatN(
   for (let i = 0; i < lines.length; i++) {
     const raw = lines[i] ?? '';
     let text: string;
+    let lineTruncated = false;
     if (raw.length > maxLineChars) {
       // WV5-4 (audit r3): surrogate-safe slice so the per-line cap never leaves
       // a lone surrogate (the total-cap branch below already uses this helper).
       text = `${sliceSurrogateSafe(raw, maxLineChars)}…[line truncated: ${raw.length} chars total]`;
-      truncatedLines += 1;
+      lineTruncated = true;
     } else {
       text = raw;
     }
@@ -195,11 +196,15 @@ export function formatCatN(
         // footer fires.
         const room = Math.max(0, maxOutputChars - prefix.length);
         out.push(`${prefix}${sliceSurrogateSafe(text, room)}`);
+        if (lineTruncated) truncatedLines += 1;
       }
       charCapped = true;
       break;
     }
     out.push(formatted);
+    // Counted only when the line is actually EMITTED: a per-line-truncated row
+    // dropped whole by the total cap must not inflate the emitted-rows count.
+    if (lineTruncated) truncatedLines += 1;
     running += addition;
   }
   return { text: out.join('\n'), linesEmitted: out.length, charCapped, truncatedLines };

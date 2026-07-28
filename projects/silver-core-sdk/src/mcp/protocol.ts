@@ -321,15 +321,19 @@ export async function listToolsPaginated(
   debug: (msg: string) => void,
   signal?: AbortSignal,
 ): Promise<McpToolDescriptor[]> {
-  const tools: McpToolDescriptor[] = [];
+  // Keyed by name: a cursor shift between page fetches (server data changing
+  // mid-drain) can repeat a tool on a later page, and ONE duplicate advertised
+  // tool name 400s the entire Messages API request, poisoning every turn.
+  // Last definition wins, matching the SDK server's Map semantics.
+  const tools = new Map<string, McpToolDescriptor>();
   let cursor: string | undefined;
   for (let page = 0; page < MAX_LIST_PAGES; page++) {
     const result = await request('tools/list', cursor === undefined ? {} : { cursor }, signal);
     const { list, nextCursor } = parseToolsListResult(result);
-    tools.push(...list);
-    if (!nextCursor) return tools;
+    for (const t of list) tools.set(t.name, t);
+    if (!nextCursor) return [...tools.values()];
     cursor = nextCursor;
   }
   debug(`[mcp:${label}] tools/list pagination exceeded ${MAX_LIST_PAGES} pages; truncating`);
-  return tools;
+  return [...tools.values()];
 }

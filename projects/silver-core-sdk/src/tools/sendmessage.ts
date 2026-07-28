@@ -20,6 +20,7 @@ import type {
   ToolContext,
   ToolResultPayload,
 } from '../internal/contracts.js';
+import { AbortError } from '../errors.js';
 import { SENDMESSAGE_DESCRIPTION } from './descriptions.js';
 
 export const sendMessageTool: BuiltinTool = {
@@ -53,6 +54,10 @@ export const sendMessageTool: BuiltinTool = {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
+    // A turn that is already cancelled must not deliver a message into the
+    // child's transcript (same pre-flight every other built-in performs).
+    if (ctx.signal.aborted) throw new AbortError();
+
     const to = input['to'];
     if (typeof to !== 'string' || to.length === 0) {
       return {

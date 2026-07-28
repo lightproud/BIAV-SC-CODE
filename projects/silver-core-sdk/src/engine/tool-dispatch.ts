@@ -92,7 +92,10 @@ export function mapMcpResult(res: CallToolResult): ToolResultPayload {
   for (const part of res.content ?? []) {
     switch (part.type) {
       case 'text':
-        parts.push({ type: 'text', text: part.text });
+        // A lax server may omit `text`; an undefined here crashes the empty-
+        // block filter below (and would 400 on the wire). Same field-omission
+        // guard as the accumulator's delta handlers.
+        parts.push({ type: 'text', text: part.text ?? '' });
         break;
       case 'image': {
         // Whitelist the mimeType HERE (v0.56.0): an MCP server is free to
@@ -101,18 +104,28 @@ export function mapMcpResult(res: CallToolResult): ToolResultPayload {
         // the Anthropic protocol (and is unrepresentable on openai-chat).
         // Degrade to an explicit text marker instead — never dropped silently.
         const mediaType = normalizeImageMediaType(part.mimeType);
+        // A lax server may omit `data` too: an image block with undefined
+        // data rides into the next API request and 400s the whole turn, the
+        // same failure class as an off-vocabulary media_type. Degrade both
+        // to the explicit text marker — never dropped silently.
+        const data: string | undefined = part.data;
         parts.push(
-          mediaType !== undefined
+          mediaType !== undefined && data !== undefined
             ? {
                 type: 'image',
-                source: { type: 'base64', media_type: mediaType, data: part.data },
+                source: { type: 'base64', media_type: mediaType, data },
               }
-            : {
-                type: 'text',
-                text:
-                  `[image omitted: unsupported media type "${part.mimeType}"; ` +
-                  `supported: ${SUPPORTED_IMAGE_MEDIA_TYPES_LIST}]`,
-              },
+            : mediaType === undefined
+              ? {
+                  type: 'text',
+                  text:
+                    `[image omitted: unsupported media type "${part.mimeType}"; ` +
+                    `supported: ${SUPPORTED_IMAGE_MEDIA_TYPES_LIST}]`,
+                }
+              : {
+                  type: 'text',
+                  text: '[image omitted: server sent no image data]',
+                },
         );
         break;
       }
@@ -557,7 +570,20 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
           // internal state). Never let one hook's bad output crash the run:
           // keep the original tool output and warn.
           try {
-            content = JSON.stringify(post.updatedToolOutput);
+            // JSON.stringify returns undefined (no throw) for a function /
+            // symbol payload; assigning that would ride an undefined content
+            // on the tool_result (and crash appendContext below).
+            const serialized = JSON.stringify(post.updatedToolOutput) as
+              | string
+              | undefined;
+            if (serialized !== undefined) {
+              content = serialized;
+            } else {
+              deps.debug(
+                `engine: PostToolUse updatedToolOutput serialized to ` +
+                  `undefined; keeping the original tool output`,
+              );
+            }
           } catch (err) {
             const why = err instanceof Error ? err.message : String(err);
             deps.debug(

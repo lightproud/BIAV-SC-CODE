@@ -230,17 +230,27 @@ export function createNodeFetch(opts: { freeSocketTtlMs?: number } = {}): NodeFe
           signal: init.signal ?? undefined,
         },
         (res) => {
-          const status = res.statusCode ?? 0;
-          const responseBody = isNullBodyStatus(status)
-            ? null
-            : (Readable.toWeb(res) as unknown as ReadableStream<Uint8Array>);
-          resolve(
-            new Response(responseBody, {
-              status,
-              statusText: res.statusMessage ?? '',
-              headers: toHeaders(res.headers),
-            }),
-          );
+          // Guard the whole callback: a throw here (e.g. the Response
+          // constructor's RangeError on a status outside 200-599 — some
+          // gateways answer 999) is otherwise an UNCAUGHT event-handler
+          // exception that crashes the process instead of rejecting the
+          // fetch promise the transports know how to handle.
+          try {
+            const status = res.statusCode ?? 0;
+            const responseBody = isNullBodyStatus(status)
+              ? null
+              : (Readable.toWeb(res) as unknown as ReadableStream<Uint8Array>);
+            resolve(
+              new Response(responseBody, {
+                status,
+                statusText: res.statusMessage ?? '',
+                headers: toHeaders(res.headers),
+              }),
+            );
+          } catch (err) {
+            res.destroy();
+            reject(err instanceof Error ? err : new Error(String(err)));
+          }
         },
       );
       req.on('error', reject);

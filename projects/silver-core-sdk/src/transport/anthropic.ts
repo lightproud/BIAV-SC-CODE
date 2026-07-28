@@ -313,6 +313,14 @@ export class AnthropicTransport implements Transport {
           let parsed: unknown;
           try {
             parsed = JSON.parse(frame.data);
+            // A payload that parses but is not a JSON object (`null`, a bare
+            // number/string) is as foreign as non-JSON: `null` crashed the
+            // `.type` probes below, and a primitive would be YIELDED to the
+            // consumer as a bogus stream event. Route it through the same
+            // event-less-skip / malformed-frame handling.
+            if (parsed === null || typeof parsed !== 'object') {
+              throw new TypeError('SSE payload is not a JSON object');
+            }
           } catch (err) {
             // Anthropic-native frames ALWAYS carry an event name. An event-less
             // frame that is not JSON is foreign framing noise from a translating

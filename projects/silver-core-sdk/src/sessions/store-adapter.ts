@@ -66,11 +66,30 @@ export class InMemorySessionStore implements ExternalSessionStore {
   private readonly data = new Map<string, SessionStoreEntry[]>();
   private readonly mtimes = new Map<string, number>();
 
+  /** Escape a key component so the NUL-joined composite key stays injective
+   *  even when a component itself contains NUL (ids arrive straight from an
+   *  embedder's request): without this, {sessionId:'a', subpath:'b\0c'} and
+   *  {sessionId:'a\0b', subpath:'c'} collide onto ONE key, and deleting
+   *  session 'a' cascades into session 'a\0x'. '%' is escaped first so the
+   *  encoding stays reversible. */
+  private static escapeComponent(c: string): string {
+    return c.split('%').join('%25').split(NUL).join('%00');
+  }
+
+  private static unescapeComponent(c: string): string {
+    return c.split('%00').join(NUL).split('%25').join('%');
+  }
+
   private keyStr(key: SessionKey): string {
-    return `${key.projectKey}${NUL}${key.sessionId}${NUL}${key.subpath ?? ''}`;
+    const esc = InMemorySessionStore.escapeComponent;
+    return `${esc(key.projectKey)}${NUL}${esc(key.sessionId)}${NUL}${esc(key.subpath ?? '')}`;
   }
 
   async append(key: SessionKey, entries: SessionStoreEntry[]): Promise<void> {
+    // Match FileSessionStore's empty-batch early-return (J4): an empty append
+    // must not mint a phantom key — it would list as a fresh-mtime session and
+    // continue:true could pick it over the real latest conversation.
+    if (entries.length === 0) return;
     const k = this.keyStr(key);
     let list = this.data.get(k);
     if (list === undefined) {
@@ -98,13 +117,15 @@ export class InMemorySessionStore implements ExternalSessionStore {
 
   async listSessions(projectKey: string): Promise<SessionStoreListEntry[]> {
     const latest = new Map<string, number>();
+    const pkEnc = InMemorySessionStore.escapeComponent(projectKey);
     for (const k of this.data.keys()) {
-      const [pk, sessionId, subpath] = k.split(NUL);
-      if (pk !== projectKey) continue;
+      const [pk, sessionIdEnc, subpath] = k.split(NUL);
+      if (pk !== pkEnc) continue;
       if (subpath !== '') continue; // main transcript only
+      const sessionId = InMemorySessionStore.unescapeComponent(sessionIdEnc ?? '');
       const mtime = this.mtimes.get(k) ?? 0;
-      const prev = latest.get(sessionId ?? '');
-      if (prev === undefined || mtime > prev) latest.set(sessionId ?? '', mtime);
+      const prev = latest.get(sessionId);
+      if (prev === undefined || mtime > prev) latest.set(sessionId, mtime);
     }
     return [...latest.entries()]
       .map(([sessionId, mtime]) => ({ sessionId, mtime }))
@@ -114,7 +135,8 @@ export class InMemorySessionStore implements ExternalSessionStore {
   async delete(key: SessionKey): Promise<void> {
     const isMain = key.subpath === undefined || key.subpath === '';
     if (isMain) {
-      const prefix = `${key.projectKey}${NUL}${key.sessionId}${NUL}`;
+      const esc = InMemorySessionStore.escapeComponent;
+      const prefix = `${esc(key.projectKey)}${NUL}${esc(key.sessionId)}${NUL}`;
       for (const k of [...this.data.keys()]) {
         if (k.startsWith(prefix)) {
           this.data.delete(k);
@@ -129,12 +151,13 @@ export class InMemorySessionStore implements ExternalSessionStore {
   }
 
   async listSubkeys(key: { projectKey: string; sessionId: string }): Promise<string[]> {
-    const prefix = `${key.projectKey}${NUL}${key.sessionId}${NUL}`;
+    const esc = InMemorySessionStore.escapeComponent;
+    const prefix = `${esc(key.projectKey)}${NUL}${esc(key.sessionId)}${NUL}`;
     const out: string[] = [];
     for (const k of this.data.keys()) {
       if (!k.startsWith(prefix)) continue;
       const subpath = k.slice(prefix.length);
-      if (subpath !== '') out.push(subpath);
+      if (subpath !== '') out.push(InMemorySessionStore.unescapeComponent(subpath));
     }
     return out;
   }

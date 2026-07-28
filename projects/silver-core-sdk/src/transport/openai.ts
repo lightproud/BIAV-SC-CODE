@@ -633,7 +633,7 @@ type OpenAIChunk = {
   model?: string;
   choices?: Array<{
     index?: number;
-    delta?: {
+    delta?: null | {
       role?: string;
       content?: string | null;
       /** Structured-output / safety refusal text. OpenAI streams a decline HERE,
@@ -642,7 +642,7 @@ type OpenAIChunk = {
       /** DeepSeek-style reasoning stream; some gateways use `reasoning`. */
       reasoning_content?: string | null;
       reasoning?: string | null;
-      tool_calls?: Array<{
+      tool_calls?: Array<null | {
         index?: number;
         id?: string;
         type?: string;
@@ -652,7 +652,7 @@ type OpenAIChunk = {
       function_call?: { name?: string; arguments?: string } | null;
     };
     finish_reason?: string | null;
-  }>;
+  } | null>;
   usage?: {
     prompt_tokens?: number;
     completion_tokens?: number;
@@ -805,8 +805,11 @@ export class OpenAIStreamTranslator {
           : {}),
       };
     }
+    // Null-tolerant like every other delta field: some gateways emit
+    // `choices: [null]` / `delta: null` on terminal frames; a raw property
+    // access on those threw a TypeError that killed the whole turn.
     const choice = chunk.choices?.[0];
-    if (choice === undefined) return events;
+    if (choice === undefined || choice === null) return events;
     // Only a non-empty finish_reason string counts as an explicit terminal
     // marker: the requirement's "empty finish" shape may carry finish_reason:''
     // (or null), which must NOT be read as a real end-of-message.
@@ -814,7 +817,7 @@ export class OpenAIStreamTranslator {
       this.finishReason = choice.finish_reason;
     }
     const delta = choice.delta;
-    if (delta === undefined) return events;
+    if (delta === undefined || delta === null) return events;
 
     // WV2-3 (audit r3): some OpenAI-compatible / multimodal gateways stream
     // `content` (and reasoning) as an ARRAY of parts, not a bare string. Only
@@ -882,6 +885,7 @@ export class OpenAIStreamTranslator {
       });
     }
     for (const tc of delta.tool_calls ?? []) {
+      if (tc === null || typeof tc !== 'object') continue; // gateway noise
       // A tool_call fragment is VALID assistant content the moment it carries
       // an id, a function name, or argument bytes — even before the block can
       // be emitted (a fragmented-id gateway holds the block open). An empty
@@ -1242,7 +1246,13 @@ export class OpenAIChatTransport implements Transport {
       // The encode error is already locatable and byte-free (media_type +
       // block path only); mirror it on the debug channel and surface as-is.
       this.debug(`openai transport: request encoding failed (${errorMessage(err)})`);
-      throw err;
+      if (err instanceof ConfigurationError) throw err;
+      // A raw stringify failure (e.g. a caller-built circular tool input)
+      // gets the same typed surface as the Anthropic arm (audit r4 R7j-3)
+      // instead of an opaque uncaught TypeError.
+      throw new ConfigurationError(
+        `Chat Completions request body is not serializable: ${errorMessage(err)}`,
+      );
     }
     const headers = this.buildHeaders(this.credential);
     // timeoutMs: 0 disables the whole-request timeout, consistent with the
@@ -1338,7 +1348,15 @@ export class OpenAIChatTransport implements Transport {
           }
           let parsed: OpenAIChunk;
           try {
-            parsed = JSON.parse(data) as OpenAIChunk;
+            const raw = JSON.parse(data) as unknown;
+            // A payload that parses but is not a JSON object (`null`, a bare
+            // number/string) is as malformed as non-JSON: `null` crashed the
+            // `.error` probe below, and a primitive fed to the translator
+            // would falsely "start" the message.
+            if (raw === null || typeof raw !== 'object') {
+              throw new TypeError('SSE payload is not a JSON object');
+            }
+            parsed = raw as OpenAIChunk;
           } catch (err) {
             throw new APIConnectionError(
               `Malformed Chat Completions SSE payload after ${chunkCount} chunk(s): ` +

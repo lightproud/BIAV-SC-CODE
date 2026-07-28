@@ -171,13 +171,18 @@ export class HttpMcpConnection {
     return parseResourcesList(result);
   }
 
-  /** Terminate the server-side session (spec SHOULD: HTTP DELETE with the
-   *  session id), then cancel all in-flight requests; further calls fail with
-   *  AbortError. The DELETE is best-effort — servers MAY answer 405, and a
-   *  dead server must never make close() hang or throw — but skipping it
-   *  leaked one live server-side session per teardown until expiry. */
+  /** Cancel all in-flight requests, then terminate the server-side session
+   *  (spec SHOULD: HTTP DELETE with the session id); further calls fail with
+   *  AbortError. Aborting FIRST matters: with the DELETE first, an in-flight
+   *  request could see the freshly-terminated session's 404 and run the
+   *  session-expiry recovery — re-initializing a NEW server-side session (and
+   *  replaying its call) during teardown, which nothing ever terminates. The
+   *  DELETE is best-effort — servers MAY answer 405, and a dead server must
+   *  never make close() hang or throw — but skipping it leaked one live
+   *  server-side session per teardown until expiry. */
   async close(): Promise<void> {
     if (this.closeController.signal.aborted) return;
+    this.closeController.abort();
     if (this.sessionId !== undefined && this.initialized) {
       try {
         const controller = new AbortController();
@@ -197,7 +202,6 @@ export class HttpMcpConnection {
         // Best-effort only: the server may not support explicit termination.
       }
     }
-    this.closeController.abort();
   }
 
   // -- HTTP plumbing ---------------------------------------------------------
@@ -577,11 +581,34 @@ function extractResponse(data: unknown, id: JsonRpcId, label: string): unknown {
   );
 }
 
+/** Bound on the error-body detail read below: truncate() keeps only 300 chars,
+ *  so buffering an unbounded hostile body via text() was the same OOM class as
+ *  W8-2 — read a small prefix and cancel the rest. */
+const MAX_ERROR_DETAIL_CHARS = 8 * 1024;
+
 async function safeReadText(response: Response): Promise<string> {
+  const body = response.body;
+  if (!body) return '';
+  const reader = body.getReader();
   try {
-    return (await response.text()).trim();
+    const decoder = new TextDecoder();
+    let out = '';
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      out += decoder.decode(value, { stream: true });
+      if (out.length >= MAX_ERROR_DETAIL_CHARS) break;
+    }
+    out += decoder.decode();
+    return out.trim();
   } catch {
     return '';
+  } finally {
+    try {
+      await reader.cancel();
+    } catch {
+      // Stream already closed or errored; nothing to release.
+    }
   }
 }
 

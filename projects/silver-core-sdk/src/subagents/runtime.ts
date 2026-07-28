@@ -1220,7 +1220,13 @@ export function createSubagentRuntime(
         allowedTools,
         disallowedTools: forkActive
           ? [...(disallowedTools ?? [])]
-          : [...(disallowedTools ?? []), ...(agentDef.disallowedTools ?? [])],
+          : [
+              ...(disallowedTools ?? []),
+              // Sag-3/4 apply to the GATE too: a bare-string field spread here
+              // character-by-character, silently dropping every specifier deny
+              // rule (fail-open), and a non-iterable value crashed the spawn.
+              ...coerceToolPatternList(agentDef.disallowedTools),
+            ],
         canUseTool,
         // audit r4 Y1-1: the child gate must know the SAME cwd + MCP server set
         // the parent gate does, or RP1/RP2 path hardening and I2 MCP scoping go
@@ -1290,9 +1296,14 @@ export function createSubagentRuntime(
           // M15 (audit 2026-07-17): SubagentStart already fired above — a host
           // that pairs Start/Stop for per-agent resource accounting leaked one
           // unit per failed resolution. Close the pair on this early exit too.
-          await fireSubagentStop(agentId, resolved.type, params.signal).catch(
-            () => undefined,
-          );
+          // Fresh signal: the resolution may have failed BECAUSE params.signal
+          // aborted, and an already-aborted signal would skip the very Stop
+          // this close-the-pair exists to fire.
+          await fireSubagentStop(
+            agentId,
+            resolved.type,
+            new AbortController().signal,
+          ).catch(() => undefined);
           emitTask({
             type: 'system',
             subtype: 'task_updated',
@@ -1750,6 +1761,16 @@ export function createSubagentRuntime(
         // continues; rethrow ONLY for a genuine abort (cancellation must always
         // propagate — V2-1 — whether it arrived as an AbortError or a set signal).
         if (!isAbortError(err) && !params.signal.aborted && !outerSignal.aborted) {
+          // task_started was emitted at spawn: close the observability pair on
+          // this degrade path too (L41 class — without a terminal task_updated
+          // the host's tracker shows the agent running forever). Guarded so a
+          // raced kill's own terminal events are not contradicted.
+          if (record.status === 'failed') {
+            emitTaskFinished(agentId, {
+              text: err instanceof Error ? err.message : String(err),
+              isError: true,
+            });
+          }
           return {
             content:
               `Subagent failed (agentId: ${agentId}): ` +
@@ -1816,6 +1837,12 @@ export function createSubagentRuntime(
     // same repo root and rewire the record's cwd for this and later episodes;
     // the episode-end release below mirrors the spawn path (clean = removed,
     // work = kept).
+    // Mark running BEFORE the worktree await below: a kill landing during that
+    // await must see a RUNNING record (abort path) — with the previous
+    // episode's terminal status still in place it took the "not_running"
+    // branch (epoch bump only, no abort), and this already-dequeued
+    // continuation then revived the child the host was just told is stopped.
+    record.status = 'running';
     let releaseEpisodeWorktree: (() => Promise<void>) | undefined;
     if (record.worktreeRepoRoot !== undefined && !existsSync(record.config.cwd)) {
       const repoRoot = record.worktreeRepoRoot;
@@ -1823,8 +1850,11 @@ export function createSubagentRuntime(
       if ('error' in wt) {
         const message =
           `could not re-provision the isolation worktree for continuation: ${wt.error}`;
-        record.status = 'failed';
-        emitTaskFinished(agentId, { text: message, isError: true });
+        // Do not clobber a kill that landed during the await above.
+        if (record.status === 'running') {
+          record.status = 'failed';
+          emitTaskFinished(agentId, { text: message, isError: true });
+        }
         return {
           text: message,
           isError: true,
@@ -1863,7 +1893,6 @@ export function createSubagentRuntime(
       debug(`subagent ${agentId}: continuation worktree re-provisioned at ${episodeDir}`);
     }
 
-    record.status = 'running';
     // K2 (audit r2 2026-07-17): repair the transcript tail BEFORE appending
     // the continuation message. A worker whose last episode pre-stopped on an
     // unpaired assistant tool_use turn (budget/turn gate fires before the tool
@@ -1957,6 +1986,15 @@ export function createSubagentRuntime(
           `aborted by the stall watchdog`;
         emitTaskFinished(agentId, { text: message, isError: true });
         return { text: message, isError: true, usage: { totalTokens: 0, toolUses: 0, durationMs: 0 } };
+      }
+      // A real (non-abort) failure needs a terminal task_updated too, or the
+      // host's tracker shows the continuation running forever (kill/abort
+      // paths emit at their own sites). Guarded against a raced kill.
+      if (!isAbortError(err) && record.status === 'failed') {
+        emitTaskFinished(agentId, {
+          text: err instanceof Error ? err.message : String(err),
+          isError: true,
+        });
       }
       throw err;
     } finally {

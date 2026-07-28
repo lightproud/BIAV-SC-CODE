@@ -325,6 +325,13 @@ export function query(args: {
   if (options.maxBudgetUsd !== undefined && !(options.maxBudgetUsd > 0)) {
     throw new ConfigurationError('maxBudgetUsd must be a positive number');
   }
+  // Same failure class as the NaN budget above: a NaN maxTurns (e.g. parseInt
+  // on an unset env var) makes every `acct.turns >= maxTurns` check false, so
+  // the cap goes silently dark for the whole session — fail loud instead.
+  // (0/negative stay accepted: they trip loudly on the first pre-turn check.)
+  if (options.maxTurns !== undefined && Number.isNaN(options.maxTurns)) {
+    throw new ConfigurationError('maxTurns must not be NaN');
+  }
   // R1 structured prelude: the blocks are rendered by string concatenation,
   // so a missing/non-string content (typed but unchecked at runtime — L60,
   // audit 2026-07-17) would inject the literal text "undefined" into the
@@ -1046,21 +1053,31 @@ export function query(args: {
       subtype: 'error_during_execution' | 'error_max_budget_usd' | 'error_max_turns',
       sessionId: string,
       errorMessage: string,
-    ): SDKResultMessage => ({
-      type: 'result',
-      subtype,
-      uuid: randomUUID(),
-      session_id: sessionId,
-      is_error: true,
-      errorMessage,
-      // Official surface: stop_reason is required on the error arm. These are
-      // QUERY-LAYER synthetic results (no engine turn ran), so null is the
-      // honest value — no API stop_reason exists for this result.
-      stop_reason: null,
-      // Official-surface parallel of errorMessage (reference SDK: string[]).
-      errors: [errorMessage],
-      ...resultCommon(),
-    });
+    ): SDKResultMessage => {
+      const r: SDKResultMessage = {
+        type: 'result',
+        subtype,
+        uuid: randomUUID(),
+        session_id: sessionId,
+        is_error: true,
+        errorMessage,
+        // Official surface: stop_reason is required on the error arm. These are
+        // QUERY-LAYER synthetic results (no engine turn ran), so null is the
+        // honest value — no API stop_reason exists for this result.
+        stop_reason: null,
+        // Official-surface parallel of errorMessage (reference SDK: string[]).
+        errors: [errorMessage],
+        ...resultCommon(),
+      };
+      // Every terminalResult() is yielded at its call site, so track it as the
+      // last consumer-visible result. Without this, the teardown-corrected
+      // final result (待裁⑤) re-emitted an OLDER engine result — the stream of
+      // an interrupted/capped run then ENDED on a stale success-shaped result
+      // after its error terminal (the memory round's absorbed terminal is
+      // covered by the preRoundResult save/restore).
+      lastYieldedResult = r;
+      return r;
+    };
 
     const blockedResult = (
       sessionId: string,
@@ -1971,6 +1988,12 @@ export function query(args: {
             );
           }
           if (gen !== undefined) {
+            // 'ran' requires the drive to complete CLEANLY: a round cut down by
+            // interrupt() (streaming mode yields no result; string mode yields
+            // a synthetic is_error terminal) or ended by an is_error engine
+            // result never updated the card, so stamping 'ran' there hid the
+            // exact staleness R7 observability exists to expose.
+            let roundCompleted = false;
             for (;;) {
               let it: IteratorResult<SDKMessage, 'stop' | 'continue'>;
               try {
@@ -1983,10 +2006,11 @@ export function query(args: {
                 break;
               }
               if (it.done === true) {
-                memory.health.sessionEndUpdate = 'ran';
+                if (roundCompleted) memory.health.sessionEndUpdate = 'ran';
                 break;
               }
               const msg = it.value;
+              if (msg.type === 'result') roundCompleted = msg.is_error !== true;
               // A consumer-injected throw()/return() resumes AT this yield and
               // propagates out of the round (through the finally below).
               if (msg.type !== 'result') yield msg;
@@ -2330,6 +2354,10 @@ export function query(args: {
       const afterNames = new Set(after.map((s) => s.name));
       const added = after.filter((s) => !before.has(s.name)).map((s) => s.name);
       const removed = [...before].filter((n) => !afterNames.has(n));
+      // Drop a removed server's config provenance: a later re-add under the
+      // same name is a dynamic registration, and a stale map entry would make
+      // mcpServerStatus() report the old 'project'/'local' scope for it.
+      for (const n of removed) mcpScopeByName.delete(n);
       const errors: Record<string, string> = {};
       for (const s of after) {
         if (s.status === 'failed') errors[s.name] = s.error ?? 'connection failed';
