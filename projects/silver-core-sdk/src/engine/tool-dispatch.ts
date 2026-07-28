@@ -103,7 +103,12 @@ export function mapMcpResult(res: CallToolResult): ToolResultPayload {
         // media_type riding into the next API request 400s the WHOLE turn on
         // the Anthropic protocol (and is unrepresentable on openai-chat).
         // Degrade to an explicit text marker instead — never dropped silently.
-        const mediaType = normalizeImageMediaType(part.mimeType);
+        // A lax server may OMIT mimeType entirely (same threat model as the
+        // omitted `data` guarded below): normalizeImageMediaType(undefined)
+        // would throw on `.indexOf`, crashing the whole mapMcpResult. Guard it
+        // to undefined the same way the embedded-resource path below does.
+        const mediaType =
+          part.mimeType !== undefined ? normalizeImageMediaType(part.mimeType) : undefined;
         // A lax server may omit `data` too: an image block with undefined
         // data rides into the next API request and 400s the whole turn, the
         // same failure class as an off-vocabulary media_type. Degrade both
