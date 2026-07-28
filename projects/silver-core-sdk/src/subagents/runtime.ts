@@ -2180,11 +2180,31 @@ export function createSubagentRuntime(
             });
           })
           .catch((err) => {
-            debug(
-              `SendMessage continuation for ${agentId} failed: ${
-                err instanceof Error ? err.message : String(err)
-              }`,
-            );
+            const message = err instanceof Error ? err.message : String(err);
+            debug(`SendMessage continuation for ${agentId} failed: ${message}`);
+            // Mirror the initial background run's crash-surfacing: a real
+            // (non-abort) throw out of the continuation must still reach the
+            // coordinator via completedBuffer. The model was told "reply will
+            // be delivered on a later turn", and the .then above only runs for
+            // a RESOLVED turn (success or error-RESULT) — a THROWN failure
+            // (an unexpected exception from the child loop) would otherwise
+            // vanish into the debug line above and hang a coordinator waiting
+            // on the reply. An abort is a stopTask/close kill whose
+            // notification is emitted at the kill site (same exclusion the
+            // initial background run applies).
+            if (!isAbortError(err)) {
+              const recapPrefix =
+                outgoingRecap !== undefined ? `"${outgoingRecap}" — ` : '';
+              completedBuffer.push({
+                type: 'text',
+                text: formatTaskNotification({
+                  agentId,
+                  status: 'failed',
+                  summary: `${recapPrefix}Agent "${record.description}" failed: ${resultPreview(message)}`,
+                  result: message,
+                }),
+              });
+            }
           });
         trackBackgroundPromise(delivery);
         return {
@@ -2264,6 +2284,17 @@ export function createSubagentRuntime(
       // their record controller; completed records are left untouched.
       for (const record of childRegistry.values()) {
         if (record.status === 'running') record.controller.abort();
+        // Invalidate any SendMessage continuation still QUEUED behind the run
+        // this abort just cancelled: bump the epoch exactly like killAgent
+        // (K5/Y3-1) so a queued continuation drops at its dequeue guard instead
+        // of finding the record controller already aborted, minting a FRESH
+        // controller, and reviving the child after query teardown. abortAll
+        // runs on query close, past which outerSignal is not (necessarily)
+        // aborted — a revived continuation's contSignal (outerSignal + fresh
+        // controller) would then be un-aborted and run a full child loop
+        // unbounded, escaping the very cancellation abortAll exists to perform.
+        // Teardown-only, so no legitimate later SendMessage is invalidated.
+        record.epoch += 1;
       }
     },
   };
