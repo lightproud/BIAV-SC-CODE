@@ -1,26 +1,26 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-28T16:41:35.679069+00:00",
+  "collected_at": "2026-07-28T19:22:04.585772+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 41,
+  "item_count": 38,
   "items": [
     {
       "source": "bilibili",
       "time": "2026-07-28T04:00:00+00:00",
       "lang": "zh",
       "title": "明明是由铁条组成的蛆，在我眼中却是美丽的少女",
-      "summary": "明明是由铁条组成的怪物，在我眼中却是美丽的少女。\n我叫郁纪，是一名历史武术爱好者，因为全家一起参加真剑试合，双亲不幸去世。\n我侥幸活了下来，但愈发渴望打剑的大脑却扭曲了我的感官，在我眼中的世界里天地万物都化作各式各样的刀枪剑戟。楼房是剑馆，路面是橡胶垫木地板泥路草地，昔日的挚友全是穿着护具的铁条蛆。寻常饭菜尝起来像是沾满汗液发酵的护具臭味，空气永远弥漫着钢铁与剑油的味道，现实对我而言永无止境的酷刑，无数次我都想一走了之，直到在剑馆遇见沙耶。\n世界唯有沙耶在我眼中是干净纯粹，身着白裙的黑发少女。但沙耶根本不\n  └ 集块岩 (6赞): 滚一晚床单醒来发现被无麻环切了\n  └ ModernSorcery (303赞): 梅耶之歌\n  └ 加纳酷米空_channel (98赞): 真剑试合没绷住",
+      "summary": "明明是由铁条组成的怪物，在我眼中却是美丽的少女。\n我叫郁纪，是一名历史武术爱好者，因为全家一起参加真剑试合，双亲不幸去世。\n我侥幸活了下来，但愈发渴望打剑的大脑却扭曲了我的感官，在我眼中的世界里天地万物都化作各式各样的刀枪剑戟。楼房是剑馆，路面是橡胶垫木地板泥路草地，昔日的挚友全是穿着护具的铁条蛆。寻常饭菜尝起来像是沾满汗液发酵的护具臭味，空气永远弥漫着钢铁与剑油的味道，现实对我而言永无止境的酷刑，无数次我都想一走了之，直到在剑馆遇见沙耶。\n世界唯有沙耶在我眼中是干净纯粹，身着白裙的黑发少女。但沙耶根本不\n  └ 集块岩 (8赞): 滚一晚床单醒来发现被无麻环切了\n  └ ModernSorcery (317赞): 梅耶之歌\n  └ 加纳酷米空_channel (103赞): 真剑试合没绷住",
       "url": "https://www.bilibili.com/video/BV1V23N6iEAq",
       "author": "WTGA文韬哥阿",
-      "engagement": 13364,
+      "engagement": 15234,
       "media_url": "https://i2.hdslb.com/bfs/archive/3cb5d05a54328877bcf84f170578ead772f037f0.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 13239,
-        "comment_count": 125,
+        "play": 15100,
+        "comment_count": 134,
         "comments_fetched": 3,
-        "danmaku": 29
+        "danmaku": 34
       }
     },
     {
@@ -28,15 +28,15 @@
       "time": "2026-07-28T07:03:38+00:00",
       "lang": "zh",
       "title": "【忘却前夜】蚀灭罗坦攻略：抽取建议、配队、命轮、密契",
-      "summary": "└ 金发女人丨型 (55赞): 严肃学习\n  └ 暗弑二炽渊 (17赞): 这次新角色技能设计的真烂，小巧思全放防老角色上了，像国内二游一样，技能设计一坨，只有数值爆了老角色，然后活动还是和没有一样[藏狐]\n  └ 月球上最后的外星人 (5赞): xp不管直接抽爆[星星眼]",
+      "summary": "└ 金发女人丨型 (56赞): 严肃学习\n  └ 暗弑二炽渊 (17赞): 这次新角色技能设计的真烂，小巧思全放防老角色上了，像国内二游一样，技能设计一坨，只有数值爆了老角色，然后活动还是和没有一样[藏狐]\n  └ 多多猪猪猫 (1赞): 魔龙魔龙老师～这次的纪行命轮推荐克+12嘛[星星眼]",
       "url": "https://www.bilibili.com/video/BV1PA3i6TE5x",
       "author": "魔龙_D",
-      "engagement": 3401,
+      "engagement": 3641,
       "media_url": "https://i1.hdslb.com/bfs/archive/12013503b6b43c35e15978f5c5c09af07b41dc92.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 3362,
-        "comment_count": 39,
+        "play": 3601,
+        "comment_count": 40,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -46,35 +46,17 @@
       "time": "2026-07-28T11:52:05+00:00",
       "lang": "zh",
       "title": "【原初·混沌】介绍&amp;杂谈",
-      "summary": "└ 没事哦没事 (15赞): 狂气上限那一点不太认可，可能对于高配玩家来说可以打出大数字，有好有坏，但对于大部分普通玩家特别是新手来说200狂就是屎，配置不够一场战斗充不出一条狂，开不出大打不死怪就要吃战损，没有80＋90+账号等级的血量吃不住战损就要爆死扛，没有好的命轮密契的死扛也不够，最后就是怎么打都难受\n  └ 花岚天音Amane (13赞): 来支持了[超天酱表情包_期待]\n我也是觉得神混沌是很明显的在防老角色，想卖新卡逼氪……只能说希望以后还会有普通混沌的角色了[美少女万华镜表情包_叹气]\n  └ 月球上最后的外星人 (6赞): 萨摩为爱发电[星星眼]",
+      "summary": "└ 没事哦没事 (20赞): 狂气上限那一点不太认可，可能对于高配玩家来说可以打出大数字，有好有坏，但对于大部分普通玩家特别是新手来说200狂就是屎，配置不够一场战斗充不出一条狂，开不出大打不死怪就要吃战损，没有80＋90+账号等级的血量吃不住战损就要爆死扛，没有好的命轮密契的死扛也不够，最后就是怎么打都难受\n  └ 花岚天音Amane (15赞): 来支持了[超天酱表情包_期待]\n我也是觉得神混沌是很明显的在防老角色，想卖新卡逼氪……只能说希望以后还会有普通混沌的角色了[美少女万华镜表情包_叹气]\n  └ 月球上最后的外星人 (6赞): 萨摩为爱发电[星星眼]",
       "url": "https://www.bilibili.com/video/BV17v3q6PEtn",
       "author": "萨摩_不耶",
-      "engagement": 2191,
+      "engagement": 2557,
       "media_url": "https://i0.hdslb.com/bfs/archive/7048c8a9eaf10a2e9b1ada7c54448353eb394a7f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 2135,
-        "comment_count": 56,
+        "play": 2497,
+        "comment_count": 60,
         "comments_fetched": 3,
-        "danmaku": 11
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-27T17:18:05+00:00",
-      "lang": "zh",
-      "title": "蚀灭罗坦的个人看法及抽取建议【忘却前夜】",
-      "summary": "2费无条件加力量和运转\n4费卡本质0费，能对群数值还比很多角色大招都高\n神混沌还给强效和银钥\n个人认为蚀萝无论是本体还是当挂件都很强\n  └ 赛琳娜的希望之花 (0赞): upup，这个沙耶的背景是怎么设置出来的，我只能单单放唤醒体欸\n  └ 绘绘绘绘名 (3赞): 不推荐抽高启玩大招除了索敌和启动问题外，还有就是各种打击增伤大招吃不到，这点很难受\n  └ 想睡交喵 (1赞): 专武还是要的吧，对大招和指令卡增幅都很大，指令卡都视为打击，给七十爆伤接近多一半伤害了，大招吃满甚至有200爆伤，缺点就是太专了[保卫萝卜_哭哭]",
-      "url": "https://www.bilibili.com/video/BV1Kf3A6SEd8",
-      "author": "绘绘绘绘名",
-      "engagement": 2059,
-      "media_url": "https://i1.hdslb.com/bfs/archive/9b19a2e7a8a1a7d0905cbf7f458a46270b1a662d.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 2045,
-        "comment_count": 14,
-        "comments_fetched": 3,
-        "danmaku": 1
+        "danmaku": 12
       }
     },
     {
@@ -82,14 +64,14 @@
       "time": "2026-07-27T22:35:21+00:00",
       "lang": "zh",
       "title": "萝坦：就你叫大眼是吧",
-      "summary": "└ 梦荷渠 (15赞): 医生力量与独立易伤神力，蜘蛛拐指令卡神力，石萝数值神力，玫瑰赠伤神力。。。全部融为一炉[笑哭]\n  └ 何不与奥姨共枕乎 (4赞): 牢托最吓哭的一集，什么叫一刀下去倒欠几管血[笑哭]\n  └ iq2233 (14赞): 把我托当成路边一条踢飞了[笑哭]",
+      "summary": "└ 梦荷渠 (16赞): 医生力量与独立易伤神力，蜘蛛拐指令卡神力，石萝数值神力，玫瑰赠伤神力。。。全部融为一炉[笑哭]\n  └ 何不与奥姨共枕乎 (5赞): 牢托最吓哭的一集，什么叫一刀下去倒欠几管血[笑哭]\n  └ iq2233 (15赞): 把我托当成路边一条踢飞了[笑哭]",
       "url": "https://www.bilibili.com/video/BV17z3N63EFa",
       "author": "缄默2373",
-      "engagement": 1586,
+      "engagement": 1653,
       "media_url": "https://i1.hdslb.com/bfs/archive/e44735b5f339c01d2aca665ddaa5456cd71188c9.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1576,
+        "play": 1643,
         "comment_count": 10,
         "comments_fetched": 3,
         "danmaku": 3
@@ -100,33 +82,33 @@
       "time": "2026-07-28T06:34:45+00:00",
       "lang": "zh",
       "title": "【忘却淋夜】蚀灭萝坦！展示你真正的女性力量吧",
-      "summary": "淋系视频注意，内容纯属虚构，无恶意诋毁，不良引导，视频中所用语言皆为虚构和节目效果，无任何针对和低俗作用，请仔细了解淋的含义再决定是否观看\n对号入座前请仔细阅读文案\n顺带卖一下利兹同人文：cv50971229\nBGM：Land-YOU,瀧沢一留 - 霞桜\n  └ 步饷罔了 (15赞): 为什么不加强老头\n  └ 雪山红豆 (7赞): 只抑制老头强度何意味\n  └ Basilico埜图日记 (7赞): 這個詞匯量 才女來的",
+      "summary": "淋系视频注意，内容纯属虚构，无恶意诋毁，不良引导，视频中所用语言皆为虚构和节目效果，无任何针对和低俗作用，请仔细了解淋的含义再决定是否观看\n对号入座前请仔细阅读文案\n顺带卖一下利兹同人文：cv50971229\nBGM：Land-YOU,瀧沢一留 - 霞桜\n  └ 步饷罔了 (15赞): 为什么不加强老头\n  └ Basilico埜图日记 (8赞): 這個詞匯量 才女來的\n  └ 寿司豆子 (2赞): 你兹的剧情怎么会。。。",
       "url": "https://www.bilibili.com/video/BV1Ma3i67ESZ",
       "author": "花葉月",
-      "engagement": 1266,
+      "engagement": 1359,
       "media_url": "https://i1.hdslb.com/bfs/archive/197b75f1928d2560f238b1b33041c402c1a53f0e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1248,
-        "comment_count": 18,
+        "play": 1340,
+        "comment_count": 19,
         "comments_fetched": 3,
         "danmaku": 0
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-07-27T16:48:43+00:00",
+      "time": "2026-07-28T14:08:31+00:00",
       "lang": "zh",
-      "title": "【忘却前夜】纯挂件蚀鲸和鸟弟真的还挺搭的",
-      "summary": "-\n  └ 秋弥空蝉 (18赞): 在这个大C频出花式1T2T的世界，我们鸟弟还在研究如何落地舒服，如果活下来成长，不得不说也是一股清流[藏狐]\n  └ 嘎啦嘎啦果 (7赞): 玩下来感觉九选三比三选一强多了。\n\n看了下回放，怎么进超维空间也有混搭界域的副作用？？？？我们不是混沌吗？\n\n挂件湿巾应该带双子黑的，但是因为想吃小骑士专造效果，又不想两个双子黑爆牌，所以就埋骨地了。\n\n感觉还是带脑中之音比较稳妥，反正鸟弟站久了都有伤害，不差专钥这点。\n混超鸟弟缺生存缺银钥，第一回合开了觉醒之后大概率没算力导致蹲坑，但湿巾开局给的2000银钥就很大程度缓解了这一痛点。\n多的黑印买的造物也可以弥补不少生存。\n九选三经常会有生存钥令，也缓解了生存问题。另外还能摇出很多给暴击率的钥令，可以帮很多低配没法一波流的四月鸟弟补一点暴击率。这么一看，搭配湿巾的鸟弟好像带红悸更好？\n  └ 库姆琪 (0赞): 太奢侈了。",
-      "url": "https://www.bilibili.com/video/BV1me3P6RESx",
-      "author": "嘎啦嘎啦果",
-      "engagement": 1117,
-      "media_url": "https://i1.hdslb.com/bfs/archive/393b1f8b6ac6d998a3d3e4dae9aadd0c196a918a.jpg",
+      "title": "战斗不如尖塔，剧情借鉴爱手艺，平衡也一坨，什么时候圈钱跑路",
+      "summary": "└ 濯玛克兹 (0赞): [给心心]\n  └ 克拉肯饲养员 (1赞): 我嘞个jt8-3\n  └ 克拉肯饲养员 (1赞): 他不会圈啊[doge]送这么多，照国内游戏给你个10连你就要狠狠感恩戴德了，敢说福利不好马上就有人要打过来了",
+      "url": "https://www.bilibili.com/video/BV1r13i6qE4H",
+      "author": "全忘却最尊重圣婴之人",
+      "engagement": 688,
+      "media_url": "https://i2.hdslb.com/bfs/archive/1ad60afb85768cecc19f5bcb3b9d8c246f30fb98.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1098,
-        "comment_count": 19,
+        "play": 679,
+        "comment_count": 9,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -136,14 +118,14 @@
       "time": "2026-07-28T09:07:30+00:00",
       "lang": "zh",
       "title": "忘却前夜何意味？",
-      "summary": "我的沉默震耳欲聋……\n  └ FM两万伦琴 (4赞): 这期视频起因是想做sp萝坦立绘和战斗小人图像分析，结果先被雷霆差分气笑了……\n  └ DarkBlackDragon (6赞): 5771最丑表情差分，支持up吐槽",
+      "summary": "我的沉默震耳欲聋……\n  └ DarkBlackDragon (8赞): 5771最丑表情差分，支持up吐槽\n  └ FM两万伦琴 (4赞): 这期视频起因是想做sp萝坦立绘和战斗小人图像分析，结果先被雷霆差分气笑了……",
       "url": "https://www.bilibili.com/video/BV1tg3v6kEsa",
       "author": "FM两万伦琴",
-      "engagement": 563,
+      "engagement": 649,
       "media_url": "https://i1.hdslb.com/bfs/archive/dadec7d6d38744d98060133e20763daa20a2ded4.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 561,
+        "play": 647,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 3
@@ -151,19 +133,19 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-27T17:39:32+00:00",
+      "time": "2026-07-28T14:11:17+00:00",
       "lang": "zh",
-      "title": "【忘却前夜】蚀庞双C&amp;原初混沌米粒试玩",
-      "summary": "在原初混沌里米粒三次觉醒都可以开初始钥令\n蚀萝可作为道中银钥供给、精英boss战摔炮副C使用，bug修复后可带梦游仙境蹲坑\n庞忘带入药了\n  └ Cosmic_Worm (0赞): 米粒这个多段觉醒太适配神混沌了",
-      "url": "https://www.bilibili.com/video/BV1uQ3A6sE1u",
-      "author": "朝星-",
-      "engagement": 524,
-      "media_url": "https://i2.hdslb.com/bfs/archive/d2418e758515644de160d455b9aeb37bf41b7ce6.jpg",
+      "title": "[忘却前夜]今天最后悔的事就是抽了没用的萝坦超限",
+      "summary": "现在融灾敌方boss血量的水温远远没达到超限萝的总伤。。好后悔了\n  └ iq2233 (2赞): 我了boss不够总伤，吓哭了\n  └ 萝卜芯片 (0赞): BGM是什么啊[NIYA表情包_吃瓜]\n  └ AsterOst (0赞): 没绷住，劲大无需多言",
+      "url": "https://www.bilibili.com/video/BV1Lw3q6oEch",
+      "author": "护林犬",
+      "engagement": 645,
+      "media_url": "https://i1.hdslb.com/bfs/archive/15cb2b631abfc73d14b3123b47c0c69964c154d9.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 523,
-        "comment_count": 1,
-        "comments_fetched": 1,
+        "play": 642,
+        "comment_count": 3,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -175,11 +157,11 @@
       "summary": "対其实我打完出来才发现命轮带错了。打的全程完全没意识到不对劲。出来一看结算页面气笑了\n  └ _未_闻_花_名_ (0赞): 道理我都懂，莫丝怎么把自己建模吃了[笑哭]",
       "url": "https://www.bilibili.com/video/BV1dc3N6TEoT",
       "author": "花岚天音Amane",
-      "engagement": 511,
+      "engagement": 557,
       "media_url": "https://i1.hdslb.com/bfs/archive/7ff26c072539ecb6b2ada5e6abbfe9b02c97dd4d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 509,
+        "play": 555,
         "comment_count": 2,
         "comments_fetched": 1,
         "danmaku": 0
@@ -193,11 +175,11 @@
       "summary": "技巧分享：\n1、辅助推荐莱克，运转、爆发、双暴，萝坦黑印主属性能反哺莱克。\n2、钥令推荐「一声枪响」，道中虚弱易伤+蓄力爆发，和莱克有联动。\n3、其它队友推荐艾瑞卡汀克特，造价低，相性好：\n· 莱克和汀都有防御双发，能够吃满艾瑞卡的戒备。\n· 汀的算力和莱的过牌联动，运转丝滑，一秒铸剑。\n· 艾、汀、莱的临时力量 / 双暴很好配合萝坦爆发。\n· 命轮刚需核心溶解，最好携带一个 +2 手牌上限。\n4、超维空间很好的辅助铸剑，基本等于送 2 层，极大降低生存压力。\n5、新混沌对于艾瑞卡这种高银钥属性但缺乏额外\n  └ 和我一起逃跑吧i (1赞): 严肃学习 删的x费 入药好像确实没啥必要\n  └ 夏·卷 (1赞): 问问莱汀艾最低练度有什么要求吗🥺\n  └ 和我一起逃跑吧i (1赞): [星星眼]就喜欢这种可以带上很多闲置角色的玩法",
       "url": "https://www.bilibili.com/video/BV1Gy3v6JEZ8",
       "author": "法兰雀丝卡-",
-      "engagement": 452,
+      "engagement": 535,
       "media_url": "https://i0.hdslb.com/bfs/archive/b9ce57bc5a7190d3a5bedd84bbb11fc635f66973.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 441,
+        "play": 524,
         "comment_count": 11,
         "comments_fetched": 3,
         "danmaku": 1
@@ -211,30 +193,12 @@
       "summary": "-\n  └ 嘎啦嘎啦果 (0赞): 道中有张随时对轴的屏障很舒服，塔薇主要是拿永久力量和半个生存位还有给buff之类的，大招拿徐2有永久降力，拿艾3可以白拿6费，拿羊2皮2皮4效果都不错，还有菲2杜3雪莲1有永久力量也还行，菲3雷3神3神2保生存，其他牌就挺烂的，最值的就是沙耶0了\n  └ 嘎啦嘎啦果 (0赞): 老头收人头快了一点，生存稍微强一些，其他不怎么样，就是提供的高额爆伤可以让蚀鲸不抽专武了\n  └ 嘎啦嘎啦果 (0赞): 深海塔薇，能毒能反能充气能奶能给过牌和算力，能偷力（最重要的功能），除了水母和法洛思的牌别拿之外，其他都能拿",
       "url": "https://www.bilibili.com/video/BV17x3Y69E9K",
       "author": "嘎啦嘎啦果",
-      "engagement": 438,
+      "engagement": 480,
       "media_url": "https://i2.hdslb.com/bfs/archive/3dece54c408983a3e8ae994185ea83747742ffd0.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 428,
+        "play": 470,
         "comment_count": 10,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-28T14:08:31+00:00",
-      "lang": "zh",
-      "title": "战斗不如尖塔，剧情借鉴爱手艺，平衡也一坨，什么时候圈钱跑路",
-      "summary": "└ 克拉肯饲养员 (0赞): 他不会圈啊[doge]送这么多，照国内游戏给你个10连你就要狠狠感恩戴德了，敢说福利不好马上就有人要打过来了\n  └ 克拉肯饲养员 (0赞): 我嘞个jt8-3\n  └ 唬隌洳鄞 (0赞): 还不在圈嘛[星星眼]",
-      "url": "https://www.bilibili.com/video/BV1r13i6qE4H",
-      "author": "全忘却最尊重圣婴之人",
-      "engagement": 393,
-      "media_url": "https://i2.hdslb.com/bfs/archive/1ad60afb85768cecc19f5bcb3b9d8c246f30fb98.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 386,
-        "comment_count": 7,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -244,33 +208,15 @@
       "time": "2026-07-28T11:01:59+00:00",
       "lang": "zh",
       "title": "打出使命感的石螺有多恐怖，无限ing",
-      "summary": "-\n  └ 秋吉特 (2赞): 好像看懂了，是不是要妙手印刻2费卡，再用汀克特变0费，把牌库抽光再打出就能一直洗回牌库了再抽回了？🤔🤔🤔\n  └ 爱莉厨114514号 (2赞): 宁妃:能不能给我个痛快，这牌是洗回不是过掉能卡出这个也是醉了[笑哭]这个不算bug\n  └ 朝星- (1赞): [椎名菜羽_偷瞄]这么长，回放能看吗",
+      "summary": "-\n  └ 爱莉厨114514号 (3赞): 宁妃:能不能给我个痛快，这牌是洗回不是过掉能卡出这个也是醉了[笑哭]这个不算bug\n  └ 秋吉特 (2赞): 好像看懂了，是不是要妙手印刻2费卡，再用汀克特变0费，把牌库抽光再打出就能一直洗回牌库了再抽回了？🤔🤔🤔\n  └ 朝星- (1赞): [椎名菜羽_偷瞄]这么长，回放能看吗",
       "url": "https://www.bilibili.com/video/BV1o73B6eEnD",
       "author": "永恒残月",
-      "engagement": 364,
+      "engagement": 446,
       "media_url": "https://i0.hdslb.com/bfs/archive/07869c57cace52cd4c692c3b858adc43a8270fb5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 347,
+        "play": 429,
         "comment_count": 17,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-27T23:10:50+00:00",
-      "lang": "zh",
-      "title": "虽然但是你游得出金率，什么时候这么高了？",
-      "summary": "-\n  └ 贾丘我是你的狗 (5赞): 答案是欺诈，本体让你很快抽到，等你想补3启和超限的时候就狠狠下毒[笑哭]\n  └ 是阿飘生 (2赞): 成为5771的守蜜人\n  └ 冰露泡月球 (1赞): 不知道啊，我本体就吃满了90大保底，已经好久没有这么酣畅淋漓的抽卡过了",
-      "url": "https://www.bilibili.com/video/BV1ew3N6iERV",
-      "author": "电汽工程",
-      "engagement": 350,
-      "media_url": "https://i0.hdslb.com/bfs/archive/4fbcf8c07d7a66208b1b6b7b3d20873d8c6e82c7.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 342,
-        "comment_count": 8,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -283,11 +229,11 @@
       "summary": "昨天galo摸鱼乐队第一首就是这个，挺惊喜的\n歌曲：ガラスのくつ\n链接：https://music.163.com/song?id=872628&amp;uct2=U2FsdGVkX19yJMaHxrXH6Vay7kIQawVN9OeidUSx7ew=\n  └ 耕司青海瑶 (1赞): [打call][打call][打call]",
       "url": "https://www.bilibili.com/video/BV1vSgZ6nEmW",
       "author": "萌萌哒的黑洞哥",
-      "engagement": 343,
+      "engagement": 383,
       "media_url": "https://i0.hdslb.com/bfs/archive/c1c68adb5e21a6f06c24900a26d293d2ee90f626.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 342,
+        "play": 382,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 1
@@ -295,37 +241,19 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-28T14:11:17+00:00",
+      "time": "2026-07-27T23:10:50+00:00",
       "lang": "zh",
-      "title": "[忘却前夜]今天最后悔的事就是抽了没用的萝坦超限",
-      "summary": "现在融灾敌方boss血量的水温远远没达到超限萝的总伤。。好后悔了\n  └ iq2233 (1赞): 我了boss不够总伤，吓哭了\n  └ AsterOst (0赞): 没绷住，劲大无需多言\n  └ 萝卜芯片 (0赞): BGM是什么啊[NIYA表情包_吃瓜]",
-      "url": "https://www.bilibili.com/video/BV1Lw3q6oEch",
-      "author": "护林犬",
-      "engagement": 310,
-      "media_url": "https://i1.hdslb.com/bfs/archive/15cb2b631abfc73d14b3123b47c0c69964c154d9.jpg",
+      "title": "虽然但是你游得出金率，什么时候这么高了？",
+      "summary": "-\n  └ 贾丘我是你的狗 (5赞): 答案是欺诈，本体让你很快抽到，等你想补3启和超限的时候就狠狠下毒[笑哭]\n  └ 是阿飘生 (2赞): 成为5771的守蜜人\n  └ 冰露泡月球 (1赞): 不知道啊，我本体就吃满了90大保底，已经好久没有这么酣畅淋漓的抽卡过了",
+      "url": "https://www.bilibili.com/video/BV1ew3N6iERV",
+      "author": "电汽工程",
+      "engagement": 362,
+      "media_url": "https://i0.hdslb.com/bfs/archive/4fbcf8c07d7a66208b1b6b7b3d20873d8c6e82c7.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 307,
-        "comment_count": 3,
+        "play": 354,
+        "comment_count": 8,
         "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-27T17:41:02+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】中低配24过融灾5-5",
-      "summary": "12朵尔是必要的，小骑士可替换，塔维提上限，不过换成娜娜也可以\n天胡造物说是\n有戒指就是简单），一点凹点都没有\n  └ 跳段木偶舞 (0赞): 法则朵尔带灵魂诞生生存能力真的非常强，和法则女仆一样是一位被低估了的角色\n  └ 耳背的梨子 (0赞): 何意味",
-      "url": "https://www.bilibili.com/video/BV1uQ3A6sE1W",
-      "author": "跳段木偶舞",
-      "engagement": 306,
-      "media_url": "https://i0.hdslb.com/bfs/archive/3de8d8f52272fcaf55184f4b38feee37f3eadf25.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 303,
-        "comment_count": 3,
-        "comments_fetched": 2,
         "danmaku": 0
       }
     },
@@ -334,33 +262,15 @@
       "time": "2026-07-28T07:53:12+00:00",
       "lang": "zh",
       "title": "【过程存档】今天是我们的地表最强修格斯女士！",
-      "summary": "-\n  └ Kzi99-XmvxiaL (3赞): 呃我也不知道为啥这么糊可能画布开太大了，原图放在这里\n  └ 丰川祥子-忍界大战 (1赞): @魂魄魄睡不醒 @半醒的鱼yyy\n  └ 冥中宇宙 (0赞): 忘却前夜[打call][打call][打call]",
+      "summary": "-\n  └ 丰川祥子-忍界大战 (2赞): @魂魄魄睡不醒 @半醒的鱼yyy\n  └ Kzi99-XmvxiaL (3赞): 呃我也不知道为啥这么糊可能画布开太大了，原图放在这里\n  └ 你分钟时间 (0赞): [星星眼]",
       "url": "https://www.bilibili.com/video/BV1nu3i6AER4",
       "author": "Kzi99-XmvxiaL",
-      "engagement": 299,
+      "engagement": 321,
       "media_url": "https://i2.hdslb.com/bfs/archive/7324837db2f2780672b9943aa34210b82e525f4e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 292,
+        "play": 314,
         "comment_count": 7,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-27T17:40:06+00:00",
-      "lang": "zh",
-      "title": "[忘却前夜]  蚀灭-罗坦  5-5",
-      "summary": "晕，难打的要死。。。。\n  └ 梦依流苏_myls (1赞): 厉害了\n  └ 结局顶顶顶顶顶 (1赞): 厉害了\n  └ 烟已归 (1赞): 厉害了",
-      "url": "https://www.bilibili.com/video/BV1Xx3P6cEdf",
-      "author": "静寂夏至",
-      "engagement": 247,
-      "media_url": "https://i0.hdslb.com/bfs/archive/5f822f1c9354d1b679a4844e6a880af29c30cb65.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 243,
-        "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -373,13 +283,31 @@
       "summary": "3启还是太难凹羊2t了\n单靠指令卡打死第一阶段，然后巨剑在手2t开始吃觉醒增伤，还有命轮增伤\n但是我没指令卡我打个der的召唤怪\n觉醒开始回合巨剑在手\n命轮是回合结束才加爆伤\n完全就是蹲坑的\n打别的BOSS2t应该会好很多，至少不会召唤怪，然后直接就是50减伤（）\n  └ 上好佳薯片丶 (0赞): 老大好强喵[打call]\n  └ 苍崎橙子灬 (0赞): 感觉还是莱克环娜双检索最好，本来带的塔薇感觉手感太便秘了",
       "url": "https://www.bilibili.com/video/BV1Hx3v6aEtd",
       "author": "偶陈陈陈",
-      "engagement": 225,
+      "engagement": 265,
       "media_url": "https://i2.hdslb.com/bfs/archive/e015bb1789a934621f441d67255bb237f67f78a0.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 223,
+        "play": 263,
         "comment_count": 2,
         "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-28T10:55:26+00:00",
+      "lang": "zh",
+      "title": "神超C萝2t羊",
+      "summary": "本来还想着吃追击强效加伤\n但是又成功记错追击触发步骤\n笨蛋操作\n  └ 只摘桃花换酒钱 (0赞): 长刀太权威了，我试了好几把超限大萝➕阿拉，故意没买阿拉专造都能2T羊妈",
+      "url": "https://www.bilibili.com/video/BV1oJ3B6AEqj",
+      "author": "偶陈陈陈",
+      "engagement": 184,
+      "media_url": "https://i2.hdslb.com/bfs/archive/57adc173dae421cd77374b4345a2f48e3589e0dc.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 183,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -391,30 +319,12 @@
       "summary": "-\n  └ 嘎啦嘎啦果 (2赞): 回来了啊[打call]\n  └ 嘻嘻snd (1赞): 🍭㊗️\n  └ 夏茉琳SummerRing (1赞): 强强太饱了喵",
       "url": "https://www.bilibili.com/video/BV12B3i6GEDC",
       "author": "露白蝉寒",
-      "engagement": 173,
+      "engagement": 184,
       "media_url": "https://i2.hdslb.com/bfs/archive/64fdc07f04c1b1796d03330a79bfdc2dfddf7d1c.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 166,
+        "play": 177,
         "comment_count": 7,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-28T04:23:37+00:00",
-      "lang": "zh",
-      "title": "希莱斯特同人仿官OST:希莱斯特EP·翱翔碧空之鸟|01 船海一日—A Day at Sea",
-      "summary": "希莱斯特同人仿官OST:希莱斯特EP·邀翔碧空之鸟|01 船海一日—A Day at Sea\n永无边境的海与天空构成她生命的所有，偶尔划过天际的飞鸟成为了唯一的伙伴。\n《希莱斯特同人OST:希莱斯特EP·邀翔碧空之鸟》\n被人们束缚在桅杆的洁白圣女抬眸远眺，她在海面上看见了飞鸟，也看见了自己。\n  └ ksuty (3赞): 霍霍，没想到现在还能见到希莱斯特同人的说\n  └ 御坂19131号 (2赞): 豪庭\n  └ 自定义文本输入 (2赞): 老大，我爱你[打call][打call][打call]",
-      "url": "https://www.bilibili.com/video/BV17u3e6sE2X",
-      "author": "母亲在注视着你",
-      "engagement": 171,
-      "media_url": "https://i1.hdslb.com/bfs/archive/9be3521cd4e33a2f712a075aa17c29d19213746a.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 167,
-        "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -427,11 +337,11 @@
       "summary": "加强毒队\n  └ 玖玖_子 (0赞): 还活着呢[星星眼]\n  └ 跳段木偶舞 (0赞): 领导 尼还活着੭ ᐕ)੭*⁾⁾\n  └ 夢遊遊遊遊 (0赞): 你是？",
       "url": "https://www.bilibili.com/video/BV1RJ3i6sEwY",
       "author": "风凤_WP",
-      "engagement": 163,
+      "engagement": 178,
       "media_url": "https://i1.hdslb.com/bfs/archive/30eb2c80fca69d2a5fba9577697c6ca12119fe36.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 160,
+        "play": 175,
         "comment_count": 3,
         "comments_fetched": 3,
         "danmaku": 0
@@ -439,19 +349,55 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-28T10:55:26+00:00",
+      "time": "2026-07-28T04:23:37+00:00",
       "lang": "zh",
-      "title": "神超C萝2t羊",
-      "summary": "本来还想着吃追击强效加伤\n但是又成功记错追击触发步骤\n笨蛋操作\n  └ 只摘桃花换酒钱 (0赞): 长刀太权威了，我试了好几把超限大萝➕阿拉，故意没买阿拉专造都能2T羊妈",
-      "url": "https://www.bilibili.com/video/BV1oJ3B6AEqj",
-      "author": "偶陈陈陈",
-      "engagement": 154,
-      "media_url": "https://i2.hdslb.com/bfs/archive/57adc173dae421cd77374b4345a2f48e3589e0dc.jpg",
+      "title": "希莱斯特同人仿官OST:希莱斯特EP·翱翔碧空之鸟|01 船海一日—A Day at Sea",
+      "summary": "希莱斯特同人仿官OST:希莱斯特EP·邀翔碧空之鸟|01 船海一日—A Day at Sea\n永无边境的海与天空构成她生命的所有，偶尔划过天际的飞鸟成为了唯一的伙伴。\n《希莱斯特同人OST:希莱斯特EP·邀翔碧空之鸟》\n被人们束缚在桅杆的洁白圣女抬眸远眺，她在海面上看见了飞鸟，也看见了自己。\n  └ ksuty (3赞): 霍霍，没想到现在还能见到希莱斯特同人的说\n  └ 御坂19131号 (2赞): 豪庭\n  └ 自定义文本输入 (2赞): 老大，我爱你[打call][打call][打call]",
+      "url": "https://www.bilibili.com/video/BV17u3e6sE2X",
+      "author": "母亲在注视着你",
+      "engagement": 174,
+      "media_url": "https://i1.hdslb.com/bfs/archive/9be3521cd4e33a2f712a075aa17c29d19213746a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 153,
-        "comment_count": 1,
-        "comments_fetched": 1,
+        "play": 170,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-28T14:02:55+00:00",
+      "lang": "zh",
+      "title": "（一）忘却前夜下载与账号注册",
+      "summary": "下期预告：助战设置（排行榜复制uid）、常驻池抽取建议（不知道选啥就深海，都强）、配队规划、氪金方案\n  └ 燃え落ちない翼 (0赞): 雀魂一出来真没绷住[Alice In Cradle 格拉提亚 表情包_生草][Alice In Cradle 格拉提亚 表情包_生草]\n  └ 奕奕艺艺 (0赞): 我了，这么保姆的攻略吗\n  └ ini-01 (0赞): 类杀戮尖塔也有氪金点吗，我看看多少抽一个肾上腺素",
+      "url": "https://www.bilibili.com/video/BV1km3i6KEHD",
+      "author": "绘绘绘绘名",
+      "engagement": 172,
+      "media_url": "https://i1.hdslb.com/bfs/archive/edd0398edc9773b015048dea602eae0633bf3b8e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 167,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-28T08:17:23+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌画画过程发发",
+      "summary": "对不起中间过程有血腥内容结果没有展示出来。\n  └ 凛子万奈 (0赞): 好康喵，请继续努力画喵[FGO_耶]\n  └ 哈基沙大玉 (0赞): 可爱捏\n  └ 耕司青海瑶 (0赞): [喜欢][喜欢][喜欢]",
+      "url": "https://www.bilibili.com/video/BV1nb3v6hEhW",
+      "author": "Windows窗口zzz",
+      "engagement": 163,
+      "media_url": "https://i0.hdslb.com/bfs/archive/e592aa26134622eb12aff43624e9cfbd687ad159.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 155,
+        "comment_count": 8,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -463,31 +409,13 @@
       "summary": "嘻嘻\n  └ 静寂夏至 (2赞): 好强大....这就是.......大佬吗",
       "url": "https://www.bilibili.com/video/BV17i3N6VEZ7",
       "author": "寂榕",
-      "engagement": 146,
+      "engagement": 159,
       "media_url": "https://i2.hdslb.com/bfs/archive/9a2bdac66e57404184e70ab03033db083df45e2b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 145,
+        "play": 158,
         "comment_count": 1,
         "comments_fetched": 1,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-28T14:02:55+00:00",
-      "lang": "zh",
-      "title": "（一）忘却前夜下载与账号注册",
-      "summary": "下期预告：助战设置（排行榜复制uid）、常驻池抽取建议（不知道选啥就深海，都强）、配队规划、氪金方案\n  └ 奕奕艺艺 (0赞): 我了，这么保姆的攻略吗\n  └ ini-01 (0赞): 类杀戮尖塔也有氪金点吗，我看看多少抽一个肾上腺素\n  └ 燃え落ちない翼 (0赞): 雀魂一出来真没绷住[Alice In Cradle 格拉提亚 表情包_生草][Alice In Cradle 格拉提亚 表情包_生草]",
-      "url": "https://www.bilibili.com/video/BV1km3i6KEHD",
-      "author": "绘绘绘绘名",
-      "engagement": 142,
-      "media_url": "https://i1.hdslb.com/bfs/archive/edd0398edc9773b015048dea602eae0633bf3b8e.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 139,
-        "comment_count": 3,
-        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -499,11 +427,11 @@
       "summary": "这个比羊妈好打多了......",
       "url": "https://www.bilibili.com/video/BV1gy3Y6rEmF",
       "author": "静寂夏至",
-      "engagement": 133,
+      "engagement": 136,
       "media_url": "https://i1.hdslb.com/bfs/archive/1224f7204d94003e31c594026d07d79a132dd1ef.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 133,
+        "play": 136,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -511,19 +439,19 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-27T19:08:32+00:00",
+      "time": "2026-07-28T15:31:12+00:00",
       "lang": "zh",
-      "title": "「忘却前夜」+4卡斯托尔主c融灾2-5",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1jB3A6PEk4",
-      "author": "第零类假象",
-      "engagement": 129,
-      "media_url": "https://i0.hdslb.com/bfs/archive/024569286b9c4982549db778992feae09d454919.jpg",
+      "title": "⚡正道的光⚡",
+      "summary": "-\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]\n  └ 哲学の真理 (0赞): [打call]",
+      "url": "https://www.bilibili.com/video/BV1gd3z6tE4P",
+      "author": "小龙猫大能力",
+      "engagement": 135,
+      "media_url": "https://i2.hdslb.com/bfs/archive/ec3d9d73619eee368254f0e687e79a2eda2cb292.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 129,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 133,
+        "comment_count": 2,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
@@ -535,30 +463,12 @@
       "summary": "感觉我进步了挺多的，其实我感觉好好笑啊，这个哔哩哔哩跟我的那一个生活日志一样，画了什么就发什么，梦到什么发什么也没删过\n  └ 折鸽下滑_ (1赞): 良作无人\n  └ 耕司青海瑶 (1赞): [打call][喜欢][喜欢][喜欢]\n  └ 猪妞真的很可爱 (1赞): 图片",
       "url": "https://www.bilibili.com/video/BV1Ua3i6jEHT",
       "author": "猪妞真的很可爱",
-      "engagement": 125,
+      "engagement": 131,
       "media_url": "https://i1.hdslb.com/bfs/archive/fed1854eb9732ff36a8b9214a7d27cad769cb195.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 121,
+        "play": 127,
         "comment_count": 4,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-28T08:17:23+00:00",
-      "lang": "zh",
-      "title": "沙耶之歌画画过程发发",
-      "summary": "对不起中间过程有血腥内容结果没有展示出来。\n  └ 耕司青海瑶 (0赞): [喜欢][喜欢][喜欢]\n  └ 千导院枫 (0赞): 很可爱\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
-      "url": "https://www.bilibili.com/video/BV1nb3v6hEhW",
-      "author": "Windows窗口zzz",
-      "engagement": 115,
-      "media_url": "https://i0.hdslb.com/bfs/archive/e592aa26134622eb12aff43624e9cfbd687ad159.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 109,
-        "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -571,11 +481,11 @@
       "summary": "要睡着了\n  └ 碧空晴月 (0赞): nb",
       "url": "https://www.bilibili.com/video/BV1Rn3i69ExC",
       "author": "生活仍在继续12138",
-      "engagement": 81,
+      "engagement": 86,
       "media_url": "https://i2.hdslb.com/bfs/archive/cc62f2053180ef71105194db84cf3dd1af8d7429.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 80,
+        "play": 85,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -586,16 +496,16 @@
       "time": "2026-07-28T13:52:57+00:00",
       "lang": "zh",
       "title": "￴",
-      "summary": "",
+      "summary": "-\n  └ 纾琬 (0赞): [呲牙]",
       "url": "https://www.bilibili.com/video/BV1yy3i6MEwZ",
       "author": "13Y0UNG",
-      "engagement": 59,
+      "engagement": 70,
       "media_url": "https://i0.hdslb.com/bfs/archive/4427a68b8274a26db8069a9de118a0321eea66f8.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 58,
+        "play": 69,
         "comment_count": 1,
-        "comments_fetched": 0,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -607,11 +517,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1LkKB6SEBJ",
       "author": "不可燃抹茶果冻",
-      "engagement": 51,
+      "engagement": 65,
       "media_url": "https://i0.hdslb.com/bfs/archive/71de1aef3ce7ceafd4f5bee6b49ee5087c4fd0f9.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 51,
+        "play": 65,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -619,17 +529,17 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-28T02:21:18+00:00",
+      "time": "2026-07-28T17:00:27+00:00",
       "lang": "zh",
-      "title": "抽卡歪了，打打蛾子回血",
-      "summary": "我的蚀萝全变成艾尔瓦和诺谛拉了，哭哭。只好去打主线困难挖银芯。\n血肉茉夏8T无死扛无灵知H2-12。太伟大了，茉夏大人！",
-      "url": "https://www.bilibili.com/video/BV1Sx3e6kEdc",
-      "author": "卡组大发明家",
-      "engagement": 39,
-      "media_url": "https://i2.hdslb.com/bfs/archive/96abe444bbea927184330d040dbb6d796eb513c1.jpg",
+      "title": "3启C萝神血1t羊",
+      "summary": "吓哭了沙耶大人",
+      "url": "https://www.bilibili.com/video/BV1xs3z6UEGx",
+      "author": "偶陈陈陈",
+      "engagement": 50,
+      "media_url": "https://i2.hdslb.com/bfs/archive/69a747a2351e50e3a1cde5d533cc0ab2149193b2.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 39,
+        "play": 50,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -643,13 +553,49 @@
       "summary": "屑鸟又来翻唱了\n《沙耶之歌》『沙耶の唄』\n原唱：伊藤香奈子/いとうかなこ\n翻唱：up（朱鷺）\n无论是唱歌还是配音都很一般，学习中希望未来有所进步，轻喷喵\n  └ 哈基沙大玉 (1赞): [鸣潮2周年同人绘画_看你][鸣潮2周年同人绘画_看你][鸣潮2周年同人绘画_看你]\n  └ 假雨辰 (0赞): 美味",
       "url": "https://www.bilibili.com/video/BV11L3v6uEB1",
       "author": "朱鷺トキ",
-      "engagement": 38,
+      "engagement": 41,
       "media_url": "https://i1.hdslb.com/bfs/archive/778a81e10081d1905c3ef77f006b5c6867d776f0.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 36,
+        "play": 39,
         "comment_count": 2,
         "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-28T02:21:18+00:00",
+      "lang": "zh",
+      "title": "抽卡歪了，打打蛾子回血",
+      "summary": "我的蚀萝全变成艾尔瓦和诺谛拉了，哭哭。只好去打主线困难挖银芯。\n血肉茉夏8T无死扛无灵知H2-12。太伟大了，茉夏大人！",
+      "url": "https://www.bilibili.com/video/BV1Sx3e6kEdc",
+      "author": "卡组大发明家",
+      "engagement": 40,
+      "media_url": "https://i2.hdslb.com/bfs/archive/96abe444bbea927184330d040dbb6d796eb513c1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 40,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-28T18:09:10+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】尤乌罗坦5-5",
+      "summary": "娱乐玩法\n尤乌负责解决道中+一阶段+叠力量\n罗坦什么都不用干等到尤乌搞定所有后当个力量触发器解决二阶段就行）\n罗坦的小垃圾占手牌了有点烦（）\n不过正常玩法的话有戒指尤乌自己带输出命轮7回合也差不多杀了\n  └ 缄默2373 (1赞): 老大好强喵",
+      "url": "https://www.bilibili.com/video/BV1Xt3B6oE7X",
+      "author": "跳段木偶舞",
+      "engagement": 31,
+      "media_url": "https://i1.hdslb.com/bfs/archive/b7bfbdb54738a6b0b958d96ab59508ec03561960.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 29,
+        "comment_count": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -673,17 +619,35 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-07-28T14:38:41+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌海娜ovo",
+      "summary": "-\n  └ 是无宇吖 (0赞): 终于更新了[打call]\n  └ 是无宇吖 (0赞): [以闪亮之名_爱你哦][以闪亮之名_爱你哦][以闪亮之名_爱你哦]\n  └ 西历2263 (0赞): 时隔七个月的更新，可以可以我看了",
+      "url": "https://www.bilibili.com/video/BV1df3i6ZEaP",
+      "author": "YANGXIEE",
+      "engagement": 18,
+      "media_url": "https://i2.hdslb.com/bfs/archive/b9629deeb443756c8c8551378132fed9b0eebc4f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 15,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-07-28T13:40:58+00:00",
       "lang": "zh",
       "title": "抽沙耶 《忘却前夜》",
       "summary": "└ FuXiaoYaoYe (1赞): [OK]",
       "url": "https://www.bilibili.com/video/BV1zU3i6vEfq",
       "author": "FuXiaoYaoYe",
-      "engagement": 13,
+      "engagement": 17,
       "media_url": "https://i2.hdslb.com/bfs/archive/211f53fb164e9b1e1becb8e69ae272534c3c9ef9.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 12,
+        "play": 16,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -691,19 +655,19 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-28T14:38:41+00:00",
+      "time": "2026-07-28T13:30:00+00:00",
       "lang": "zh",
-      "title": "沙耶之歌海娜ovo",
-      "summary": "-\n  └ 是无宇吖 (0赞): 终于更新了[打call]\n  └ 是无宇吖 (0赞): [以闪亮之名_爱你哦][以闪亮之名_爱你哦][以闪亮之名_爱你哦]\n  └ 西历2263 (0赞): 时隔七个月的更新，可以可以我看了",
-      "url": "https://www.bilibili.com/video/BV1df3i6ZEaP",
-      "author": "YANGXIEE",
-      "engagement": 13,
-      "media_url": "https://i2.hdslb.com/bfs/archive/b9629deeb443756c8c8551378132fed9b0eebc4f.jpg",
+      "title": "最开始是猫狗然后是脏器甚至……那所医院究竟发生了什么",
+      "summary": "确实不好",
+      "url": "https://www.bilibili.com/video/BV1ec3A6bEAL",
+      "author": "朗克清",
+      "engagement": 8,
+      "media_url": "https://i2.hdslb.com/bfs/archive/9a9ae801024ebdb43a937276e10139fd21f1366d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 10,
-        "comment_count": 3,
-        "comments_fetched": 3,
+        "play": 8,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -720,24 +684,6 @@
       "content_type": "image",
       "metadata": {
         "play": 3,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-28T13:30:00+00:00",
-      "lang": "zh",
-      "title": "最开始是猫狗然后是脏器甚至……那所医院究竟发生了什么",
-      "summary": "确实不好",
-      "url": "https://www.bilibili.com/video/BV1ec3A6bEAL",
-      "author": "朗克清",
-      "engagement": 0,
-      "media_url": "https://i2.hdslb.com/bfs/archive/9a9ae801024ebdb43a937276e10139fd21f1366d.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 0,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
