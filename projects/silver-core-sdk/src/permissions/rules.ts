@@ -667,6 +667,16 @@ function hasInjectionConstruct(command: string): boolean {
  * rule LESS likely to match every segment, so it falls through to prompting,
  * never to a wider allow. This is what stops `allowed && dangerous` from riding
  * in on a prefix rule scoped to `allowed`.
+ *
+ * The single-`&` separator carries a `(?<![<>])` guard so an fd-DUPLICATION
+ * redirection's `&` (`>&`, `<&`, `2>&1`) is NOT treated as a chain operator.
+ * Splitting there orphaned the fd digit into the next segment (`2>&1 rm -rf /`
+ * -> `2>` + `1 rm -rf /`), which no longer starts with a recognizable leading
+ * redirection, so the deny-position redirection peel never reached `rm` and a
+ * `Bash(rm:*)` deny FAILED OPEN on a valid leading-redirect command. Kept whole
+ * (`2>&1 rm -rf /`), the first token is a redirection the peel strips, so the
+ * deny fires. Background `&`, `|&`, `&&`/`||` and a trailing/detached `&` are
+ * unaffected (their `&` is not preceded by `<`/`>`).
  */
 export function decomposeBashCommand(command: string): {
   segments: string[];
@@ -674,7 +684,7 @@ export function decomposeBashCommand(command: string): {
 } {
   const hasInjection = hasInjectionConstruct(command);
   const segments = command
-    .split(/(?:&&|\|\||[;\n|&])/)
+    .split(/(?:&&|\|\||[;\n|]|(?<![<>])&)/)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
   return { segments: segments.length > 0 ? segments : [command.trim()], hasInjection };
