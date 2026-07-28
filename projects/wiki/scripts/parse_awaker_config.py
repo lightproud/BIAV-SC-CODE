@@ -25,7 +25,7 @@ def clean_markup(text):
 
 def parse_lua_table(filepath):
     """Parse a Lua table file into dict of {id: {field: value}}."""
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, encoding='utf-8') as f:
         text = f.read()
 
     result = {}
@@ -207,7 +207,7 @@ def _unescape_lua_string(s):
 
 def parse_lua_string_table(filepath):
     """Parse a Lua table of ["key"] = "value" pairs (no nested blocks)."""
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, encoding='utf-8') as f:
         text = f.read()
 
     result = {}
@@ -220,7 +220,7 @@ def parse_lua_string_table(filepath):
 
 def parse_lua_indexed_string_table(filepath):
     """Parse a Lua table of [n] = "value" pairs (integer-indexed strings)."""
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, encoding='utf-8') as f:
         text = f.read()
 
     result = {}
@@ -392,7 +392,7 @@ def main():
             'total_categories': len(categories),
             'generated': '2026-04-26',
         },
-        'categories': {cat: items for cat, items in sorted(categories.items())},
+        'categories': dict(sorted(categories.items())),
     }
     with open(os.path.join(OUT_DIR, 'panel_text.json'), 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)

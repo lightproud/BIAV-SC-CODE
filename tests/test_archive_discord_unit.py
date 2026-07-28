@@ -3,9 +3,7 @@
 委派 archive_engine.main，整段 mock；--force-month → --force-group 映射是唯一逻辑。
 """
 
-import sys
 import unittest
-from pathlib import Path
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）

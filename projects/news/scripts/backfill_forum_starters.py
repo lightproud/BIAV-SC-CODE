@@ -72,7 +72,7 @@ def load_state() -> dict:
     state_path = DATA_DIR / 'state.json'
     if not state_path.exists():
         return {}
-    with open(state_path, 'r', encoding='utf-8') as f:
+    with open(state_path, encoding='utf-8') as f:
         return json.load(f)
 
 
@@ -117,7 +117,7 @@ def main():
     skipped: set = set(bf.get('skipped_no_starter', []))
 
     channels = state.get('channels', {})
-    thread_keys = [k for k in channels.keys() if k.startswith('thread:')]
+    thread_keys = [k for k in channels if k.startswith('thread:')]
     pending = [k for k in thread_keys if k not in completed and k not in skipped]
 
     # Move priority threads to the front of the queue, regardless of source.

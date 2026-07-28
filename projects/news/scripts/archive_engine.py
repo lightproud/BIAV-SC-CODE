@@ -65,7 +65,7 @@ def _resolve_base_dir(base_dir_rel: str) -> Path:
 # ---------- 注册表 ----------
 
 def load_registry() -> dict:
-    with open(REGISTRY_PATH, 'r', encoding='utf-8') as f:
+    with open(REGISTRY_PATH, encoding='utf-8') as f:
         return json.load(f)
 
 
@@ -244,7 +244,7 @@ def clean_empty_dirs(base_dir: Path, files: list[Path]):
 def load_log(log_path: Path) -> list[dict]:
     if log_path.exists():
         try:
-            with open(log_path, 'r', encoding='utf-8') as f:
+            with open(log_path, encoding='utf-8') as f:
                 return json.load(f)
         except Exception:
             pass

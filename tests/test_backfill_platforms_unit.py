@@ -7,7 +7,6 @@ monkeypatch ARCHIVE_DIR / STATE_PATH 到 tmp，绝不污染真实 data 树、绝
 import json
 import sys
 from datetime import datetime, timezone
-from pathlib import Path
 from unittest import mock
 
 import pytest
@@ -430,7 +429,7 @@ def test_show_status_smoke(paths, capsys):
 # ── main ────────────────────────────────────────────────────────────────────
 
 def _run_main(argv):
-    with mock.patch.object(sys, "argv", ["backfill_platforms.py"] + argv):
+    with mock.patch.object(sys, "argv", ["backfill_platforms.py", *argv]):
         bp.main()
 
 

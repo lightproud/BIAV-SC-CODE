@@ -99,7 +99,7 @@ def anchor_expand(query: str, anchor_limit: int = 3, tail_limit: int = 8,
         _feed_gap(query)  # §8.4 锚不到 → 自动喂别名候选
 
     # ---- 2) 后扩（向量长尾）——函数内吞全异常，锚 + 别名照常返回 ----
-    expanded_query = " ".join([query] + expansion_terms)
+    expanded_query = " ".join([query, *expansion_terms])
     try:
         import kb_vector
 

@@ -18,7 +18,6 @@ globals are redirected (via monkeypatch) into tmp_path.
 
 import json
 import shutil
-import sys
 from pathlib import Path
 
 import pytest

@@ -5,7 +5,6 @@ monkeypatch ARCHIVE_DIR 到 tmp，绝不触网、绝不污染真实 Community �
 """
 
 import json
-import sys
 import tempfile
 import unittest
 from datetime import timedelta

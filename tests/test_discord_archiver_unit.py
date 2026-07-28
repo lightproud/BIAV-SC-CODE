@@ -13,7 +13,6 @@ import sys
 import tempfile
 import unittest
 from datetime import datetime, timezone
-from pathlib import Path
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -202,7 +201,7 @@ class TestSlimAndProcess(unittest.TestCase):
             arch = _make_archiver(tmp)
             slim = arch._slim_message(_msg(1, reactions=[{"emoji": {"name": "x"}, "count": 5}]))
             arch._update_daily_stats(slim, "general")
-            day = list(arch.daily_stats.values())[0]
+            day = next(iter(arch.daily_stats.values()))
             self.assertEqual(day["reactions_total"], 5)
             self.assertEqual(len(day["top_reacted"]), 1)
 

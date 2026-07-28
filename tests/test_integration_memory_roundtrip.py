@@ -17,7 +17,6 @@ test asserts they remain byte-identical across the run.
 """
 
 import json
-import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent

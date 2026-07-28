@@ -6,7 +6,6 @@ unlock_type）。main() 会写真实 OUT 文件、依赖多份解包源，故不
 """
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 
 import pytest

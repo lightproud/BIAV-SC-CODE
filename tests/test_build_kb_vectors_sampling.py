@@ -6,7 +6,6 @@
 剩余）+ 源内跨步抽样（跨全频道全时间均匀落点）。
 """
 import sys
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 

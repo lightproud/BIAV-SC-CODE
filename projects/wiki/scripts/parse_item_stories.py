@@ -6,7 +6,7 @@ import json
 from lua_parse import parse_lua_blocks
 
 def parse_item_stories(path):
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, encoding='utf-8') as f:
         content = f.read()
 
     entries = []

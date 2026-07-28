@@ -4,7 +4,6 @@
 无 key / 无包、kb_vector.search 整体抛异常、索引缺失）都必须**函数内降级**——
 锚 + 别名照常返回，绝不把脊柱托底一起带崩。
 """
-import sys
 from pathlib import Path
 
 import pytest

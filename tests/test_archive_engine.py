@@ -1,4 +1,3 @@
-import sys
 import tarfile
 import tempfile
 import unittest

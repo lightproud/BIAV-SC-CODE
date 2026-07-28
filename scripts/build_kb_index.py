@@ -127,7 +127,7 @@ def build_kb_index() -> dict:
         by_type[ctype].append(cid)
 
         # postings: title + description + tags + body
-        title_tag_text = " ".join([title] + tags)
+        title_tag_text = " ".join([title, *tags])
         for tok in set(_tokenize(title_tag_text)):
             title_postings[tok].add(cid)
             postings[tok].add(cid)

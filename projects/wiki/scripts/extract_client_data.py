@@ -601,7 +601,7 @@ def main():
 
     # Save stats
     print(f"\n{'=' * 60}")
-    print(f"Extraction complete:")
+    print("Extraction complete:")
     print(f"  Asset files scanned: {stats['asset_files_scanned']}")
     print(f"  Asset files failed:  {stats['asset_files_failed']}")
     print(f"  Direct files copied: {stats.get('direct_copied', 0)}")
@@ -613,7 +613,7 @@ def main():
     # Show object type summary (diagnostic)
     obj_types = stats.get("all_object_types", {})
     if obj_types:
-        print(f"\n  Unity object types found across all files:")
+        print("\n  Unity object types found across all files:")
         for t, c in sorted(obj_types.items(), key=lambda x: -x[1]):
             print(f"    {t}: {c}")
 

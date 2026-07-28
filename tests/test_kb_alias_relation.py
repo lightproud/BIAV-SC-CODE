@@ -11,7 +11,6 @@ kb_neighbors / kb_activate 能顺 `提及:{别名}` mention 边跳到角色概�
 根本轮不到。故断言别名标签边存在 = 断言「只写别名的文档 → 角色」关系腿真实存在。
 """
 import json
-import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent

@@ -9,8 +9,6 @@ dedicated, package-qualified twin scoped by `pytest_add_cli_args_test_selection`
 
 It is also a normal, fast pytest module: it passes under `pytest tests/` too.
 """
-import sys
-from pathlib import Path
 
 # Put the REPO ROOT on the path so `scripts` resolves as a namespace package
 # in every run mode (plain `pytest`, `python -m pytest`, and mutmut's copy).

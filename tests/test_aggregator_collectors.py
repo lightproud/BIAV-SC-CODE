@@ -8,7 +8,6 @@
 
 import json
 import os
-import sys
 import unittest
 from datetime import datetime, timezone, timedelta
 from pathlib import Path

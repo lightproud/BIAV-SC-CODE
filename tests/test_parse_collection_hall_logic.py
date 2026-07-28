@@ -11,7 +11,6 @@ NOT under the mutmut gate: this module carries large keyword-list constants
 whose string mutants would require exhaustively asserting every keyword (pins
 data, not logic) — see setup.cfg. These value assertions are the standing guard.
 """
-import sys
 from pathlib import Path
 
 _REPO = Path(__file__).resolve().parent.parent

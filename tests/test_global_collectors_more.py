@@ -2,7 +2,6 @@ import importlib
 import sys
 import unittest
 from datetime import datetime, timezone
-from pathlib import Path
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）

@@ -200,24 +200,24 @@ def fetch_weibo_playwright() -> List[Dict]:
     Tested: 15 articles found with content.
     """
     items = []
-    
+
     try:
         from playwright.sync_api import sync_playwright
-        
+
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             page.set_default_timeout(TIMEOUT_MS)
-            
+
             # 移动版无需登录
             url = 'https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C'
-            logger.info(f'微博: 访问移动版')
+            logger.info('微博: 访问移动版')
             page.goto(url, wait_until='networkidle')
             page.wait_for_timeout(3000)
-            
+
             articles = page.query_selector_all('article')
             logger.info(f'微博: 找到 {len(articles)} 条微博')
-            
+
             for article in articles[:20]:
                 try:
                     item = _parse_weibo_article(article)
@@ -225,11 +225,11 @@ def fetch_weibo_playwright() -> List[Dict]:
                         items.append(item)
                 except Exception:
                     continue
-            
+
             browser.close()
     except Exception as e:
         logger.warning(f'微博 Playwright 失败: {e}')
-    
+
     logger.info(f'微博 Playwright: fetched {len(items)} items')
     return items
 
@@ -240,25 +240,25 @@ def fetch_taptap_playwright() -> List[Dict]:
     Note: Direct app page returns 405, try search instead.
     """
     items = []
-    
+
     try:
         from playwright.sync_api import sync_playwright
-        
+
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             page.set_default_timeout(TIMEOUT_MS)
-            
+
             # 搜索页
             url = 'https://www.taptap.cn/search?keyword=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C'
-            logger.info(f'TapTap: 访问搜索页')
+            logger.info('TapTap: 访问搜索页')
             page.goto(url, wait_until='networkidle')
             page.wait_for_timeout(3000)
-            
+
             # 尝试获取游戏卡片
             cards = page.query_selector_all('.app-card, .search-item, [class*="app"]')
             logger.info(f'TapTap: 找到 {len(cards)} 个卡片')
-            
+
             for card in cards[:10]:
                 try:
                     item = _parse_taptap_card(card)
@@ -266,11 +266,11 @@ def fetch_taptap_playwright() -> List[Dict]:
                         items.append(item)
                 except Exception:
                     continue
-            
+
             browser.close()
     except Exception as e:
         logger.warning(f'TapTap Playwright 失败: {e}')
-    
+
     logger.info(f'TapTap Playwright: fetched {len(items)} items')
     return items
 

@@ -3,7 +3,6 @@ generate_characters -> generate_awakener_pages + generate_playstyle, and
 generate_story. Synthetic minimal datasets in tmp_path; no real wiki tree.
 """
 import json
-import sys
 from pathlib import Path
 
 import pytest

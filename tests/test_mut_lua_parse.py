@@ -10,8 +10,6 @@ dropped guard that line coverage waves through must turn these red.
 Comprehensive on purpose (mutmut only credits the tests it runs), and also a
 normal fast pytest module.
 """
-import sys
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 

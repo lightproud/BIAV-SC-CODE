@@ -20,7 +20,16 @@ Discord 附件 URL 的过期只在查询参数（ex/is/hm）；用 Bot Token 调
   python projects/news/scripts/backfill_media.py --no-discord                 # 只补持久平台源
   python projects/news/scripts/backfill_media.py --upload                     # 打包传 Releases
 """
-import os, sys, json, re, glob, time, argparse, subprocess, hashlib, html
+import os
+import sys
+import json
+import re
+import glob
+import time
+import argparse
+import subprocess
+import hashlib
+import html
 import urllib.request
 from datetime import datetime
 from pathlib import Path

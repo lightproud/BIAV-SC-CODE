@@ -702,7 +702,7 @@ BACKFILL_REGISTRY = {
 def show_status(state: dict):
     """Display backfill progress for all platforms."""
     print('=== 历史回溯进度 ===\n')
-    for name, fn in BACKFILL_REGISTRY.items():
+    for name in BACKFILL_REGISTRY:
         ps = state.get(name, {"page": 1, "done": False, "total": 0})
         status = '完成' if ps.get('done') else f'第 {ps.get("page", 1)} 页'
         total = ps.get('total', 0)
@@ -736,7 +736,7 @@ def main():
         total = 0
         for name, fn in BACKFILL_REGISTRY.items():
             if _is_time_up():
-                logger.warning(f'运行时间已达上限，剩余平台下次继续')
+                logger.warning('运行时间已达上限，剩余平台下次继续')
                 break
             ps = _platform_state(state, name)
             if ps.get('done'):

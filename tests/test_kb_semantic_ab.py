@@ -14,7 +14,6 @@ harness 的诚实性与管线契约，断言全部零网络、可复现（不触
 """
 import sys
 import unittest
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 

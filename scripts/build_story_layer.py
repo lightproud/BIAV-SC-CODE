@@ -13,9 +13,27 @@ Reproducible regeneration of projects/wiki/data/processed/story/:
 Originals (Game-Unpacked/*) are read-only; desc / lock_tip kept byte-for-byte.
 """
 # NOTE: 源数据层 Public-Info-Pool/Reference/Game-Unpacked/ 已于 2026-07-12 守密人裁定整层删除
-#       （wiki 冻结后解析管线停派）。重跑本脚本前先从 git 历史或 Releases「解包」桶还原源数据。
+#       （wiki 冻结后解析管线停派）。重跑本脚本前须先还原源数据——**唯一路径 = Releases
+#       「解包」桶二进制重解**（extract-game-data.yml + projects/wiki/scripts/extract_client_data.py
+#       + parse_*.py）；git 历史一路已随 2026-07-20 全仓压扁失效，见 CLAUDE.md §6.3。
 import json
 import re
+
+
+def _dump_json(payload, path):
+    """原子性无关、但编码确定的 JSON 落盘。
+
+    历史缺陷：此前各处写 `json.dump(payload, open(path, 'w'), ensure_ascii=False)`——
+    既不关句柄，又把编码交给 locale 决定；`ensure_ascii=False` 下中文正文一旦碰上
+    非 UTF-8 locale（CI 容器常见 POSIX/ANSI_X3.4-1968）即 UnicodeEncodeError 或写出乱码。
+    """
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+
+def _load_json(path):
+    with open(path, encoding='utf-8') as f:
+        return json.load(f)
 
 UNPACKED = 'Public-Info-Pool/Reference/Game-Unpacked'
 DESC_SRC = f'{UNPACKED}/全部游戏数据/收藏馆_CollectionHall.txt'
@@ -25,10 +43,11 @@ OUT = f'{PROCESSED}/story'
 
 def load_desc():
     descs = {}
-    for line in open(DESC_SRC, encoding='utf-8', errors='ignore'):
-        m = re.match(r'CollectionHall_(\d+)_Desc\|(.*)', line.rstrip('\n'))
-        if m:
-            descs[int(m.group(1))] = m.group(2)
+    with open(DESC_SRC, encoding='utf-8', errors='ignore') as f:
+        for line in f:
+            m = re.match(r'CollectionHall_(\d+)_Desc\|(.*)', line.rstrip('\n'))
+            if m:
+                descs[int(m.group(1))] = m.group(2)
     return descs
 
 
@@ -95,14 +114,14 @@ def classify_unit(name):
 
 
 def main():
-    wl = json.load(open(f'{PROCESSED}/world_lore.json', encoding='utf-8'))
+    wl = _load_json(f'{PROCESSED}/world_lore.json')
     entries_raw = {e['id']: e for e in wl['all_entries']}
     id2cat = {}
     for cat, lst in wl['by_category'].items():
         for e in lst:
             id2cat[e['id']] = cat
     descs = load_desc()
-    bio_ids = {x['id']: x['character'] for x in json.load(open(f'{PROCESSED}/story_character_map.json', encoding='utf-8'))['assigned']}
+    bio_ids = {x['id']: x['character'] for x in _load_json(f'{PROCESSED}/story_character_map.json')['assigned']}
 
     main_titles, star_titles = chapter_title_maps(entries_raw.values())
     unit_of = make_parser(main_titles, star_titles)
@@ -118,14 +137,14 @@ def main():
             'story_unit': unit_of(lt), 'category': cat,
             'has_description': eid in descs,
         })
-    json.dump({'_meta': {
+    _dump_json({'_meta': {
         'purpose': 'CollectionHall 全量 lore:world_lore(title/lock_tip)+ collection_story.txt(desc 逐字)+ 剧情单元解析 + 角色小传标记',
         'source_raw': 'Game-Unpacked/全部游戏数据/收藏馆_CollectionHall.txt, Game-Unpacked/Lua表还原/CollectionHall.lua',
         'note': 'desc/lock_tip 为原始文本逐字;解析器覆盖 序章/主线第N章/星辰篇第N章/意识潜游,含关卡号(N-M)与困难格式',
         'total': len(lore), 'with_description': sum(1 for x in lore if x['has_description']),
         'mapped_to_unit': sum(1 for x in lore if x['story_unit']),
         'generated': '2026-06-21'}, 'entries': lore},
-        open(f'{OUT}/lore_entries.json', 'w'), ensure_ascii=False, indent=2)
+        f'{OUT}/lore_entries.json')
 
     # 2. story_units
     units = {}
@@ -147,7 +166,7 @@ def main():
         u['order'] = i
 
     # 3. stages_by_unit (exact-match group name to unit short_name)
-    st = json.load(open(f'{PROCESSED}/stages.json', encoding='utf-8'))
+    st = _load_json(f'{PROCESSED}/stages.json')
     short2unit = {u['short_name']: u['unit'] for u in unit_list}
     unit_groups = {}
     for g in st['groups']:
@@ -159,23 +178,23 @@ def main():
         u['stage_group_ids'] = [x['group_id'] for x in unit_groups.get(u['unit'], [])]
         u['stage_group_count'] = len(u['stage_group_ids'])
 
-    json.dump({'_meta': {
+    _dump_json({'_meta': {
         'purpose': '剧情单元脊柱:序章 / 调查行动主线 / 星辰篇 / 意识潜游',
         'types': 'prologue, main_chapter, star_chapter(星辰篇), mind_dive',
         'note': 'mind_dive 的 order 按首条 lore id 近似;star_chapter 为第二剧情弧',
         'total_units': len(unit_list), 'generated': '2026-06-21'}, 'units': unit_list},
-        open(f'{OUT}/story_units.json', 'w'), ensure_ascii=False, indent=2)
+        f'{OUT}/story_units.json')
 
     by_unit = {u['unit']: units[u['unit']] for u in unit_list}
-    json.dump({'_meta': {'purpose': '剧情单元 -> lore id 列表', 'covered_entries': sum(len(v) for v in by_unit.values()),
-               'generated': '2026-06-21'}, 'by_unit': by_unit},
-              open(f'{OUT}/lore_by_unit.json', 'w'), ensure_ascii=False, indent=2)
+    _dump_json({'_meta': {'purpose': '剧情单元 -> lore id 列表', 'covered_entries': sum(len(v) for v in by_unit.values()),
+                'generated': '2026-06-21'}, 'by_unit': by_unit},
+               f'{OUT}/lore_by_unit.json')
 
-    json.dump({'_meta': {'purpose': '剧情单元 -> 关卡组', 'matching': '组名归一化后精确等于单元短名',
-               'limitation': 'Stage/StageGroup 无外键,仅到关卡组层级',
-               'matched_groups': sum(len(v) for v in unit_groups.values()), 'covered_units': len(unit_groups),
-               'generated': '2026-06-21'}, 'by_unit': unit_groups},
-              open(f'{OUT}/stages_by_unit.json', 'w'), ensure_ascii=False, indent=2)
+    _dump_json({'_meta': {'purpose': '剧情单元 -> 关卡组', 'matching': '组名归一化后精确等于单元短名',
+                'limitation': 'Stage/StageGroup 无外键,仅到关卡组层级',
+                'matched_groups': sum(len(v) for v in unit_groups.values()), 'covered_units': len(unit_groups),
+                'generated': '2026-06-21'}, 'by_unit': unit_groups},
+               f'{OUT}/stages_by_unit.json')
 
     # 4. character_story_links
     lore_by_id = {e['id']: e for e in lore}
@@ -183,7 +202,8 @@ def main():
     def unlock_type(lt):
         if not lt:
             return 'unknown'
-        if lt.startswith('唤醒') or '唤醒' in lt and '后解锁' in lt:
+        # 括号显式化：`and` 优先于 `or`，裸写时读者极易误读成 (A or B) and C。
+        if lt.startswith('唤醒') or ('唤醒' in lt and '后解锁' in lt):
             return 'acquire_character'
         if '星辰篇' in lt:
             return 'star_arc'
@@ -205,15 +225,15 @@ def main():
                       'unlock_condition': e.get('lock_tip', ''),
                       'unlock_type': unlock_type(e.get('lock_tip', '')),
                       'story_unit': e.get('story_unit')})
-    json.dump({'_meta': {'purpose': '角色 -> 故事链路', 'total': len(links), 'generated': '2026-06-21'},
-               'links': sorted(links, key=lambda x: x['bio_lore_id'])},
-              open(f'{OUT}/character_story_links.json', 'w'), ensure_ascii=False, indent=2)
+    _dump_json({'_meta': {'purpose': '角色 -> 故事链路', 'total': len(links), 'generated': '2026-06-21'},
+                'links': sorted(links, key=lambda x: x['bio_lore_id'])},
+               f'{OUT}/character_story_links.json')
 
     # 5. index
     char_by_unit = {}
-    for l in links:
-        if l['story_unit']:
-            char_by_unit.setdefault(l['story_unit'], []).append(l['character'])
+    for link in links:
+        if link['story_unit']:
+            char_by_unit.setdefault(link['story_unit'], []).append(link['character'])
     idx = []
     for u in unit_list:
         idx.append({'unit': u['unit'], 'type': u['type'], 'order': u['order'],
@@ -221,9 +241,9 @@ def main():
                     'lore_ids': by_unit.get(u['unit'], []), 'lore_count': u['lore_count'],
                     'stage_group_ids': u['stage_group_ids'], 'stage_group_count': u['stage_group_count'],
                     'characters': sorted(set(char_by_unit.get(u['unit'], [])))})
-    json.dump({'_meta': {'purpose': '故事主索引:每单元聚合 lore/关卡组/登场角色',
-               'total_units': len(idx), 'generated': '2026-06-21'}, 'index': idx},
-              open(f'{OUT}/index.json', 'w'), ensure_ascii=False, indent=2)
+    _dump_json({'_meta': {'purpose': '故事主索引:每单元聚合 lore/关卡组/登场角色',
+                'total_units': len(idx), 'generated': '2026-06-21'}, 'index': idx},
+               f'{OUT}/index.json')
 
     print(f"lore: {len(lore)} ({sum(1 for x in lore if x['story_unit'])} mapped to {len(unit_list)} units)")
     for u in unit_list:

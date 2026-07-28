@@ -11,7 +11,6 @@ Imports via PACKAGE path (`projects.news.scripts.archive_layout`) so mutmut's
 runtime trampoline keys line up with the file-path-derived keys. Also a normal,
 fast pytest module under plain `pytest tests/`.
 """
-import sys
 from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -50,10 +49,10 @@ def test_folded_source_layout_exact():
 def test_claimed_subtypes_excludes_self_host():
     # steam 源自身宿主即 steam（_src == _plat），其 review 子目录不入认领表；
     # 认领表只挡「别的折叠源」认走的子目录，防宿主递归双计
-    assert CLAIMED_SUBTYPES == {
+    assert {
         'steam': {'news', 'discussion'},
         'taptap': {'review'},
-    }
+    } == CLAIMED_SUBTYPES
 
 
 def test_default_region_and_subtype_exact():

@@ -5,8 +5,6 @@
 防御回归：侧表缺失 / 空 / 损坏一律优雅返空——构建期 import 绝不能炸。
 """
 import json
-import sys
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 

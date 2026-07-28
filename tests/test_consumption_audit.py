@@ -11,7 +11,6 @@
 """
 from __future__ import annotations
 
-import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -139,8 +138,8 @@ class TestSelfPollution:
 
 def test_report_carries_its_blind_spots(monkeypatch):
     """盲区声明是报告的一部分——省掉它，读者会把「零消费」当成「确实没人要」。"""
-    monkeypatch.setattr(ca, "produced_paths", lambda: {})
-    monkeypatch.setattr(ca, "produced_releases", lambda: {})
+    monkeypatch.setattr(ca, "produced_paths", dict)
+    monkeypatch.setattr(ca, "produced_releases", dict)
     report = ca.build_report()
     assert report["method"] == "static-reference-graph"
     assert len(report["blind_spots"]) == 3

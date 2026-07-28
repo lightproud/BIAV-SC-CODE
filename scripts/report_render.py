@@ -18,7 +18,9 @@ frontmatter 约定（YAML 风格 key: value）：
     title / subtitle / basis / author / generated
 封面 meta 默认 = basis + "产出：{author} · {generated}"，可用 --meta 覆盖。
 """
-import re, os, argparse
+import re
+import os
+import argparse
 
 
 def parse_frontmatter(raw):

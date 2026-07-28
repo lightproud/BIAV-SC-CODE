@@ -20,7 +20,6 @@ UnityPy <-> extract_client_data wiring imports and iterates without error.
 """
 
 import importlib.util
-import sys
 from pathlib import Path
 
 import pytest

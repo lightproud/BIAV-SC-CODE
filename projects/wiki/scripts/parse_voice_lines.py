@@ -6,7 +6,7 @@ import json
 from lua_parse import parse_lua_blocks
 
 def parse_voice_lua(path):
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, encoding='utf-8') as f:
         content = f.read()
 
     entries = []
@@ -64,7 +64,7 @@ def parse_voice_lua(path):
         }
         for cat, lines in categories.items():
             char_data['categories'][cat] = [
-                {k: v for k, v in l.items()} for l in lines
+                dict(l.items()) for l in lines
             ]
         characters.append(char_data)
 

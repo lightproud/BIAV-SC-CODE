@@ -159,7 +159,7 @@ class SilentPlatformTracker:
     def _load_health(self) -> dict:
         """加载健康数据。"""
         if self.health_path.exists():
-            with open(self.health_path, 'r', encoding='utf-8') as f:
+            with open(self.health_path, encoding='utf-8') as f:
                 return json.load(f)
         return {
             'updated_at': None,
@@ -173,7 +173,7 @@ class SilentPlatformTracker:
             json.dump(self.health_data, f, ensure_ascii=False, indent=2)
 
     def update_platform_status(self, platform: str, items_count: int,
-                               error: Optional[str] = None, note: Optional[str] = None):
+                               error: str | None = None, note: str | None = None):
         """
         更新平台状态。
 
@@ -310,7 +310,7 @@ def generate_health_report() -> dict:
     # 从最新采集数据补充信息
     all_latest_path = OUTPUT_DIR / 'all-latest.json'
     if all_latest_path.exists():
-        with open(all_latest_path, 'r', encoding='utf-8') as f:
+        with open(all_latest_path, encoding='utf-8') as f:
             latest = json.load(f)
 
         collected_at = latest.get('collected_at', 'unknown')

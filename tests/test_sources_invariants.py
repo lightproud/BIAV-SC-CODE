@@ -9,9 +9,7 @@ sources.py 是 7 个生产脚本共享的源清单 SSOT，其存在理由就是�
   1) 模块内部不变量（KNOWN 去重 / ARCHIVE = KNOWN - discord / 子集关系 / 别名闭包 …）
   2) 跨模块同步（sources.BACKFILL_PLATFORMS == backfill_platforms.BACKFILL_REGISTRY.keys()）
 """
-import sys
 import unittest
-from pathlib import Path
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 import sources  # noqa: E402

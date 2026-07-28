@@ -196,7 +196,7 @@ def build_sources() -> int:
             "description": f"{name} 平台采集档案，全量 {total} 条，健康度 {level}。",
             "resource": archive,  # 指向全量档案层本体
             # data_layer 标签是硬纪律：消费端据此区分全量 vs 输出，防 lesson #30
-            "tags": [f"data_layer:full_archive", f"platform:{name}", f"health:{level}"],
+            "tags": ["data_layer:full_archive", f"platform:{name}", f"health:{level}"],
             "timestamp": updated,
         }
         body = [
@@ -612,7 +612,7 @@ def _node_url(rel: str) -> str | None:
     return None
 
 
-def structural_parts(bundle: Path) -> "tuple[dict, set]":
+def structural_parts(bundle: Path) -> tuple[dict, set]:
     """返回 bundle 的**结构组件**（未哈希）：concept 映射 `rel → (type, resource, tags元组)`
     + 边集合 `{(source, target, rel_type)}`。只覆盖结构、排除易变量（timestamp/活计数）。
 
@@ -1084,7 +1084,7 @@ def main() -> None:
         print(f"  {k}: {v} concepts")
     print(f"  total: {total} concepts")
     print(f"  graph: {graph['stats']['nodes']} nodes / {graph['stats']['edges']} edges")
-    print(f"  visualizer: okf/visualizer.html (self-contained)")
+    print("  visualizer: okf/visualizer.html (self-contained)")
     print(f"  kb_index: okf/kb_index.json ({kb['stats']['concepts']} concepts / "
           f"{kb['stats']['terms']} terms — 运行时导航底座)")
     discipline_flags = preflight_flags + discipline_flags

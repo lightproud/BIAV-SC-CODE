@@ -93,8 +93,8 @@ def collect(limit: int, max_files: int | None, min_len: int) -> list[dict]:
         return []
     quotas = _quotas(counts, limit)
     strides = {s: max(1, counts[s] // q) for s, q in quotas.items() if q > 0}
-    seen = {s: 0 for s in counts}
-    taken = {s: 0 for s in counts}
+    seen = dict.fromkeys(counts, 0)
+    taken = dict.fromkeys(counts, 0)
     rows: list[dict] = []
     for source, day, text, _lang, _eng in iter_records(max_files=max_files):
         text = (text or "").strip()

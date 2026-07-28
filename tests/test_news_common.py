@@ -1,8 +1,6 @@
 import socket
-import sys
 import unittest
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 from unittest import mock
 
 import requests

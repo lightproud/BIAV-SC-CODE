@@ -119,7 +119,7 @@ def test_write_gap_report_empty(archive):
 # ── main ───────────────────────────────────────────────────────────────────
 
 def _run_main(argv):
-    with mock.patch.object(sys, "argv", ["repair_gaps.py"] + argv):
+    with mock.patch.object(sys, "argv", ["repair_gaps.py", *argv]):
         repair_gaps.main()
 
 

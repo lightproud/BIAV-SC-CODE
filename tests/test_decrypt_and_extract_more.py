@@ -106,7 +106,6 @@ def test_gameassembly_brute_force_raises(tmp_path):
     def _bfk(path, *a):
         if "GameAssembly" in path:
             raise RuntimeError("ga boom")
-        return None
 
     with mock.patch.object(dae.UnityPy, "load", side_effect=err), \
          mock.patch.object(dae, "brute_force_key", side_effect=_bfk):
@@ -144,7 +143,6 @@ def test_unityplayer_brute_force_raises(tmp_path):
     def _bfk(path, *a):
         if "UnityPlayer" in path:
             raise RuntimeError("up boom")
-        return None
 
     with mock.patch.object(dae.UnityPy, "load", side_effect=err), \
          mock.patch.object(dae, "brute_force_key", side_effect=_bfk):

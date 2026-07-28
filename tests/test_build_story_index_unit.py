@@ -7,7 +7,6 @@
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 import pytest
@@ -145,7 +144,8 @@ def test_main_writes_index(monkeypatch, capsys):
     OUT must live under REPO because main() prints OUT.relative_to(REPO).
     Use a unique repo-local temp file and clean it up.
     """
-    import tempfile, os
+    import tempfile
+    import os
     repo = Path(__file__).resolve().parent.parent
     fd, name = tempfile.mkstemp(suffix=".json", prefix="_unit_si_", dir=repo)
     os.close(fd)

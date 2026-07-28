@@ -5,7 +5,6 @@ module path constants, so the real memory/*.md archives are NEVER touched.
 """
 
 import json
-import sys
 from pathlib import Path
 
 import pytest

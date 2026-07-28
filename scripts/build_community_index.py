@@ -63,7 +63,7 @@ def polarity(tokens: list[str]) -> tuple[int, int]:
 
 def lang_of(text: str, declared: str = "") -> str:
     if declared:
-        return declared.split("-")[0].lower()
+        return declared.split("-", maxsplit=1)[0].lower()
     if re.search(r"[぀-ゟ゠-ヿ]", text):
         return "ja"
     if re.search(r"[가-힣]", text):

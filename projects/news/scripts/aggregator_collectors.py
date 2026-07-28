@@ -149,7 +149,7 @@ def _fetch_reddit_search(sub, headers, cutoff):
     """Last-resort fallback: use Reddit search to find posts about the subreddit topic."""
     items = []
     try:
-        url = f'https://www.reddit.com/search.json'
+        url = 'https://www.reddit.com/search.json'
         params = {
             'q': f'subreddit:{sub} OR {sub}',
             'sort': 'new',
@@ -915,7 +915,7 @@ def _load_discord_channel_index():
     dir_to_id: dict[str, str] = {}  # dir_suffix → channel_id
     if index_path.exists():
         try:
-            with open(index_path, 'r', encoding='utf-8') as f:
+            with open(index_path, encoding='utf-8') as f:
                 index = json.load(f)
             for cid, info in index.items():
                 ch_names[cid] = info.get('name', cid)
@@ -943,7 +943,7 @@ def _read_discord_jsonl(date_str: str):
         channel_id = dir_to_id.get(dir_suffix, '')
         channel_name = ch_names.get(channel_id, dir_suffix)
         try:
-            with open(jsonl_path, 'r', encoding='utf-8') as f:
+            with open(jsonl_path, encoding='utf-8') as f:
                 for line in f:
                     line = line.strip()
                     if not line:
@@ -993,7 +993,7 @@ def fetch_discord_local():
         data_date = yesterday_str
     if stats_path.exists():
         try:
-            with open(stats_path, 'r', encoding='utf-8') as f:
+            with open(stats_path, encoding='utf-8') as f:
                 stats = json.load(f)
             msg_count = stats.get('messages', 0)
             authors = stats.get('unique_authors', 0)

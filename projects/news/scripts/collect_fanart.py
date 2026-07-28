@@ -12,7 +12,14 @@
   DISCORD_BOT_TOKEN=xxx python projects/news/scripts/collect_fanart.py --date 2026-06-01 --out projects/news/data/fanart/2026-06-01
 输出：out/ 下图片文件 + gallery_manifest.json（每条含 source/channel/author/text/file/status）。
 """
-import os, json, re, time, argparse, hashlib, urllib.request, urllib.error
+import os
+import json
+import re
+import time
+import argparse
+import hashlib
+import urllib.request
+import urllib.error
 import sys
 from pathlib import Path
 

@@ -5,7 +5,6 @@ kb_vector 是 §八「厚锚撑向量」的银芯参照实现（守密人 2026-0
 后端**（token 哈希袋）锁定管线契约：嵌入确定性 / 归一化 / 索引读写往返 / 余弦排序 /
 缺索引优雅降级。断言全部零网络、可复现（不触 Voyage）。
 """
-import sys
 import unittest
 from pathlib import Path
 

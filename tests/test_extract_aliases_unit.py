@@ -57,9 +57,9 @@ def _write_characters(path: Path, ids):
 
 def _add_args(**over):
     """cmd_add 的最小合法参数集（出身牌四件套齐全）。"""
-    base = dict(concept_id="15602", alias="融朵", source="bilibili",
-                ref="Record/Community/bilibili/2026-07-01.jsonl",
-                quote="打融朵攻略来了", inferred_by="session-test")
+    base = {"concept_id": "15602", "alias": "融朵", "source": "bilibili",
+                "ref": "Record/Community/bilibili/2026-07-01.jsonl",
+                "quote": "打融朵攻略来了", "inferred_by": "session-test"}
     base.update(over)
     import argparse
     return argparse.Namespace(**base)

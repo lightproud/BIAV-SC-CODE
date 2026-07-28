@@ -52,7 +52,7 @@ def load_stages(source: str) -> tuple[list[dict], str]:
         return data.get("stages", []), "db/stages.json"
 
     if not PROCESSED_STAGES.exists():
-        print(f"  [ERROR] no stages source available")
+        print("  [ERROR] no stages source available")
         sys.exit(2)
     with open(PROCESSED_STAGES, encoding="utf-8") as f:
         data = json.load(f)

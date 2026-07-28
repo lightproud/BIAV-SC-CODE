@@ -181,8 +181,7 @@ def validate_news_item(item):
     # Validate engagement is a non-negative number
     try:
         engagement = int(item['engagement'])
-        if engagement < 0:
-            engagement = 0
+        engagement = max(engagement, 0)
     except (ValueError, TypeError):
         engagement = 0
 

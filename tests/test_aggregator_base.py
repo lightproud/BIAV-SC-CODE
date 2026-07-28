@@ -1,6 +1,5 @@
 import sys
 import unittest
-from pathlib import Path
 from unittest import mock
 
 import requests
@@ -377,9 +376,12 @@ class TestValidationDrops(unittest.TestCase):
         self.assertNotIn('reddit', aggregator_base.VALIDATION_DROPS)
 
     def test_write_validation_drops_zero_state(self):
-        import tempfile, json as j, os
+        import tempfile
+        import json as j
+        import os
         with tempfile.TemporaryDirectory() as d:
             p = os.path.join(d, 'drops.json')
             payload = aggregator_base.write_validation_drops(p)
             self.assertEqual(payload['total_dropped'], 0)
-            self.assertEqual(j.load(open(p))['by_source'], {})
+            with open(p, encoding='utf-8') as fh:
+                self.assertEqual(j.load(fh)['by_source'], {})

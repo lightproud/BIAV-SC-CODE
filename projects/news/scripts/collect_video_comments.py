@@ -21,7 +21,14 @@
 用法：
   YOUTUBE_API_KEY=xxx python projects/news/scripts/collect_video_comments.py --date 2026-06-03
 """
-import os, sys, json, glob, argparse, urllib.request, urllib.parse, urllib.error
+import os
+import sys
+import json
+import glob
+import argparse
+import urllib.request
+import urllib.parse
+import urllib.error
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -118,7 +125,7 @@ def main():
 
     # 载入累积库 + 已知 id
     store = f"{DEST}/comments.jsonl"
-    known = set();
+    known = set()
     if os.path.isfile(store):
         for line in open(store, encoding="utf-8"):
             try:

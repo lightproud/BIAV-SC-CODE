@@ -4,7 +4,6 @@
 PR 触碰 decisions*.md / CLAUDE.md 时由 test.yml 自动 gate。详见该脚本头注。
 """
 
-import sys
 from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"

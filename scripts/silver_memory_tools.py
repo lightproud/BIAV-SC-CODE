@@ -249,8 +249,7 @@ def record_lesson(summary: str, context: str = "",
         if m:
             try:
                 n = int(m.group(1))
-                if n > max_id:
-                    max_id = n
+                max_id = max(max_id, n)
             except ValueError:
                 continue
     new_id = max_id + 1

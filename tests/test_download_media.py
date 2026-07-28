@@ -5,7 +5,6 @@ tmp 目录)、subprocess (gh CLI) 一律 mock，绝不污染真实 data/media �
 """
 
 import json
-import sys
 import tempfile
 import unittest
 from pathlib import Path

@@ -10,9 +10,7 @@ Hermetic：socket / requests / time.sleep 全部打桩，零网络。
 Imports via PACKAGE path so mutmut's trampoline keys match.
 """
 import json
-import sys
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
 import pytest
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）

@@ -6,7 +6,7 @@ import json
 from lua_parse import parse_lua_blocks
 
 def parse_collection_hall(path):
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, encoding='utf-8') as f:
         content = f.read()
 
     entries = []
@@ -18,9 +18,9 @@ def parse_collection_hall(path):
             'id': entry_id,
             'title': fields['Title'],
         }
-        if 'Desc' in fields and fields['Desc']:
+        if fields.get('Desc'):
             entry['desc'] = fields['Desc']
-        if 'LockTip' in fields and fields['LockTip']:
+        if fields.get('LockTip'):
             entry['lock_tip'] = fields['LockTip']
         entries.append(entry)
 

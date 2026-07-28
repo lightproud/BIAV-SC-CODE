@@ -8,7 +8,6 @@ build_relpath 写下的文件，iter_source_files/dated_files 以同一源名必
 """
 
 import json
-import sys
 from pathlib import Path
 
 import pytest

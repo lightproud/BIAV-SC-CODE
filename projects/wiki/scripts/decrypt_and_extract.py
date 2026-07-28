@@ -124,7 +124,7 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
     # Parse key_sig and data_sig from error message
     sigs = parse_signatures(error_msg)
     if sigs is None:
-        print(f"  Could not parse signatures from error message")
+        print("  Could not parse signatures from error message")
         print(f"  Error: {error_msg[:500]}")
         return None
     key_sig, data_sig = sigs
@@ -168,7 +168,7 @@ def try_brute_force(metadata_path: Path, sample_ab: Path) -> bytes | None:
         except Exception as e:
             print(f"  Brute-force error (GameAssembly): {e}")
     else:
-        print(f"\n  GameAssembly.dll not found")
+        print("\n  GameAssembly.dll not found")
 
     # Fallback 2: try UnityPlayer.dll
     for dll_name in ["UnityPlayer.dll", "baselib.dll"]:
@@ -344,7 +344,7 @@ def main():
         sys.exit(1)
 
     if key:
-        print(f"\nSetting decryption key...")
+        print("\nSetting decryption key...")
         UnityPy.set_assetbundle_decrypt_key(key)
 
     # Step 2: Extract priority bundles
@@ -377,7 +377,7 @@ def main():
 
     # Step 3: If successful, also extract art bundles with character data
     if total["text"] > 0 or total["mono"] > 0:
-        print(f"\nStep 3: Scanning character-related art bundles...")
+        print("\nStep 3: Scanning character-related art bundles...")
         print("-" * 60)
         char_keywords = ["char", "hero", "portrait", "avatar", "bust", "face", "npc"]
         count = 0
@@ -396,7 +396,7 @@ def main():
                     break
 
     print(f"\n{'=' * 60}")
-    print(f"TOTAL EXTRACTED:")
+    print("TOTAL EXTRACTED:")
     print(f"  TextAssets:      {total['text']}")
     print(f"  MonoBehaviours:  {total['mono']}")
     print(f"  Textures:        {total['tex']}")

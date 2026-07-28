@@ -6,7 +6,6 @@ ARCHIVE_DIR / DISCORD_ARCHIVE_DIR / HEALTH_PATH monkeypatch 到 tmp 目录，
 
 import json
 import sys
-from pathlib import Path
 from unittest import mock
 
 import pytest
@@ -314,7 +313,7 @@ def test_suggest_prune_lists_all_buckets(capsys):
 # ── main ────────────────────────────────────────────────────────────────────
 
 def _run_main(argv):
-    with mock.patch.object(sys, "argv", ["silent_sources_audit.py"] + argv):
+    with mock.patch.object(sys, "argv", ["silent_sources_audit.py", *argv]):
         ssa.main()
 
 
