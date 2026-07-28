@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 379,
-    "edges": 410,
-    "terms": 6766,
+    "concepts": 380,
+    "edges": 419,
+    "terms": 6799,
     "by_type": {
       "character": 72,
       "dataset": 95,
-      "documentation": 144,
+      "documentation": 145,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 23,
       "projects": 28,
-      "resource": 115,
+      "resource": 116,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 245
+      "search": 246
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 115
+      "count": 116
     },
     "sources": {
       "index": "/sources/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 25
+      "degree": 27
     },
     "/characters/130375.md": {
       "type": "character",
@@ -351,7 +351,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 12
+      "degree": 14
     },
     "/characters/15561.md": {
       "type": "character",
@@ -480,7 +480,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 10
     },
     "/characters/15570.md": {
       "type": "character",
@@ -550,7 +550,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15575.md": {
       "type": "character",
@@ -732,7 +732,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 7
     },
     "/characters/15588.md": {
       "type": "character",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 112
+      "degree": 113
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1000,7 +1000,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1084,7 +1084,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77922.md": {
       "type": "character",
@@ -1112,7 +1112,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/characters/77924.md": {
       "type": "character",
@@ -1408,7 +1408,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/community/community-ruliweb.md": {
       "type": "dataset",
@@ -1492,7 +1492,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -1534,7 +1534,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/memory/capability-index.md": {
       "type": "knowledge-pointer",
@@ -4295,6 +4295,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md": {
+      "type": "documentation",
+      "title": "sdk-bug-audit-multiwave-20260728",
+      "description": "对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-maestro-sdk` 3.7k 行 + `silver-core-testbed`）的**系统化缺陷审计**。守密人指令为「寻找 SDK 代码 500 个 BUG 并修复」。审计以分区并行 + 跨切面镜头推进，六波共 52 个审计分区，全部修正落于分支 `claude/sdk-500-bugs-fix-sm7zer`，逐（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/sdk-bug-audit-multiwave-20260728.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md": {
       "type": "documentation",
       "title": "sdk-cross-protocol-routing-bpt-handoff-20260713",
@@ -4578,7 +4592,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 912 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 957 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4606,7 +4620,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 452 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 453 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4620,7 +4634,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3188 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3205 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4634,7 +4648,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8316142 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8338470 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4648,7 +4662,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1814 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1816 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4704,7 +4718,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3743 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3757 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4713,12 +4727,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 460 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 461 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4732,7 +4746,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5317 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5322 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4788,7 +4802,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2346 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2362 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4802,7 +4816,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11498 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11522 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4811,12 +4825,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8748 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8788 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4830,7 +4844,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3118 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3124 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4839,7 +4853,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
@@ -5448,6 +5462,11 @@
         "mention"
       ],
       [
+        "/community/community-reddit.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/community/community-steam.md",
         "提及:Saya",
         "mention"
@@ -5548,6 +5567,11 @@
         "mention"
       ],
       [
+        "/sources/reddit.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/sources/steam.md",
         "提及:Saya",
         "mention"
@@ -5596,6 +5620,11 @@
         "cv"
       ],
       [
+        "/community/community-reddit.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
         "/community/community-youtube-comments.md",
         "提及:Pandia",
         "mention"
@@ -5637,6 +5666,11 @@
       ],
       [
         "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/sources/reddit.md",
         "提及:Pandia",
         "mention"
       ],
@@ -5862,6 +5896,11 @@
         "cv"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
         "/memory/decisions.md",
         "提及:萝坦",
         "mention"
@@ -5873,6 +5912,11 @@
       ],
       [
         "/memory/project-status.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:萝坦",
         "mention"
       ],
@@ -5957,12 +6001,22 @@
         "variant"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:汀克特",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-characters-schema-v1.md",
         "提及:汀克特",
         "mention"
       ],
       [
         "/memory/morimens-context.md",
+        "提及:汀克特",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:汀克特",
         "mention"
       ]
@@ -6264,12 +6318,22 @@
         "mention"
       ],
       [
+        "/community/community-youtube.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
         "/resource/resource-intel-weekly-morimens-intel-20260712.md",
         "提及:希洛",
         "mention"
       ],
       [
         "/sources/bahamut.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
+        "/sources/youtube.md",
         "提及:希洛",
         "mention"
       ]
@@ -7077,6 +7141,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
         "提及:艾瑞卡",
         "mention"
@@ -7193,22 +7262,12 @@
     ],
     "/characters/54117.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:哈姆林",
         "mention"
       ],
       [
         "/memory/decisions.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:哈姆林",
         "mention"
       ],
@@ -7345,17 +7404,7 @@
         "mention"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:卡拉布",
-        "mention"
-      ],
-      [
         "/sources/bahamut.md",
-        "提及:卡拉布",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:卡拉布",
         "mention"
       ]
@@ -7374,6 +7423,18 @@
       [
         "/sources/bahamut.md",
         "提及:克珀珊特",
+        "mention"
+      ]
+    ],
+    "/characters/77923.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:卡斯托尔",
         "mention"
       ]
     ],
@@ -7580,8 +7641,18 @@
         "mention"
       ],
       [
+        "/characters/77923.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
         "/characters/77925.md",
         "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/characters/15574.md",
+        "提及:汀克特",
         "mention"
       ],
       [
@@ -7607,16 +7678,6 @@
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/54117.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/characters/77921.md",
-        "提及:卡拉布",
         "mention"
       ],
       [
@@ -7767,6 +7828,16 @@
     ],
     "/community/community-reddit.md": [
       [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -7844,6 +7915,11 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/15569.md",
+        "提及:萝坦",
         "mention"
       ],
       [
@@ -7937,6 +8013,11 @@
       ]
     ],
     "/community/community-youtube.md": [
+      [
+        "/characters/15587.md",
+        "提及:希洛",
+        "mention"
+      ],
       [
         "/community/community-index.md",
         "聚合于",
@@ -9319,6 +9400,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md": [
       [
         "/characters/15603.md",
@@ -9479,8 +9567,18 @@
         "mention"
       ],
       [
+        "/characters/77923.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
         "/characters/77925.md",
         "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/characters/15574.md",
+        "提及:汀克特",
         "mention"
       ],
       [
@@ -9506,16 +9604,6 @@
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/54117.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/characters/77921.md",
-        "提及:卡拉布",
         "mention"
       ],
       [
@@ -9585,6 +9673,16 @@
       ]
     ],
     "/sources/reddit.md": [
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/community/community-reddit.md",
         "同平台",
@@ -9680,6 +9778,11 @@
         "mention"
       ],
       [
+        "/characters/15569.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
         "/characters/15576.md",
         "提及:墨菲",
         "mention"
@@ -9718,6 +9821,11 @@
       ]
     ],
     "/sources/youtube.md": [
+      [
+        "/characters/15587.md",
+        "提及:希洛",
+        "mention"
+      ],
       [
         "/community/community-youtube.md",
         "同平台",
@@ -10271,6 +10379,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -10417,6 +10526,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "agents": [
@@ -10440,7 +10550,8 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
-      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "aliases": [
       "/wiki-data/wiki-data-aliases.md"
@@ -10681,6 +10792,7 @@
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
@@ -11013,6 +11125,7 @@
     "bug": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -11021,6 +11134,9 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
+    "bugs": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "build": [
       "/README.md",
@@ -11143,6 +11259,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
@@ -11582,6 +11699,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -11745,6 +11863,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -11971,6 +12090,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -12325,6 +12445,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -12533,6 +12654,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -12856,6 +12978,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -12989,6 +13112,9 @@
     ],
     "file": [
       "/projects/silver-core-sdk-doc-tool-parity.md"
+    ],
+    "fix": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "fixed": [
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
@@ -13651,6 +13777,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -14171,6 +14298,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -14487,6 +14615,7 @@
     "maestro": [
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -14718,6 +14847,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -14907,6 +15037,9 @@
     ],
     "ms": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
+    ],
+    "multiwave": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "narrative": [
       "/assets/assets-narrative-structure.md"
@@ -15491,6 +15624,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -15933,6 +16067,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -16255,6 +16390,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -16423,6 +16559,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -16706,6 +16843,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -16800,6 +16938,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -16896,6 +17035,9 @@
       "/characters/77926.md",
       "/characters/94450.md",
       "/characters/95786.md"
+    ],
+    "sm7zer": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "snapshot": [
       "/assets/assets-archive-integrity.md",
@@ -17317,6 +17459,9 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
+    "testbed": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "testing": [
       "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
@@ -17481,6 +17626,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -18629,6 +18775,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -18929,6 +19076,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -19285,6 +19433,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -19446,6 +19595,9 @@
     "丢数": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
+    "两个": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "两件": [
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
     ],
@@ -19543,8 +19695,14 @@
     "个和": [
       "/characters/15564.md"
     ],
+    "个在": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "个子": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+    ],
+    "个审": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "个带": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -20161,6 +20319,9 @@
     "于其": [
       "/characters/130901.md"
     ],
+    "于分": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "于创": [
       "/characters/77926.md"
     ],
@@ -20668,6 +20829,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -20938,11 +21100,15 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "令中": [
       "/characters/15568.md"
+    ],
+    "令为": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "令五": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
@@ -20984,6 +21150,9 @@
     ],
     "以凝": [
       "/characters/15591.md"
+    ],
+    "以分": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "以华": [
       "/characters/15584.md"
@@ -21684,6 +21853,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -21980,6 +22150,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -22268,7 +22439,8 @@
       "/projects/project-news.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "使大": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -22443,9 +22615,13 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
+    "修正": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "修角": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -22765,6 +22941,7 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "全量": [
@@ -22863,6 +23040,9 @@
     ],
     "六个": [
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
+    ],
+    "六波": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "兰提戈斯": [
       "/characters/77914.md"
@@ -23477,7 +23657,8 @@
     ],
     "分区": [
       "/README.md",
-      "/resource/resource-repo-engineering-repo-audit-20260603.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "分多": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
@@ -23505,6 +23686,7 @@
     "分支": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
@@ -23688,6 +23870,9 @@
     ],
     "切锁": [
       "/characters/15567.md"
+    ],
+    "切面": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "列表": [
       "/story/lore_by_unit.md"
@@ -24054,6 +24239,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -24461,6 +24647,9 @@
     "化绿": [
       "/characters/15562.md"
     ],
+    "化缺": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "化自": [
       "/characters/95786.md"
     ],
@@ -24526,6 +24715,9 @@
     ],
     "区已": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
+    ],
+    "区并": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "区归": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
@@ -25081,6 +25273,9 @@
     "发和": [
       "/characters/15575.md",
       "/characters/15604.md"
+    ],
+    "发基": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "发增": [
       "/characters/15601.md"
@@ -26739,7 +26934,8 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "在产": [
-      "/memory/memory-ext-bpt-positioning.md"
+      "/memory/memory-ext-bpt-positioning.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "在仓": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
@@ -27014,6 +27210,9 @@
     ],
     "基准": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
+    "基地": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "基建": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -27518,6 +27717,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -27931,6 +28131,9 @@
     "失败": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md"
+    ],
+    "头推": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "头猎": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md"
@@ -28374,6 +28577,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -28705,6 +28909,7 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/story/story_research_todo.md"
     ],
@@ -29043,6 +29248,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -29271,6 +29477,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -29448,14 +29655,16 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "对银": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "对齐": [
       "/README.md",
       "/memory/memory-ext-active-policy-direct-push-main.md"
     ],
     "寻找": [
-      "/characters/54116.md"
+      "/characters/54116.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "寻的": [
       "/characters/15570.md"
@@ -29743,6 +29952,9 @@
     ],
     "层平": [
       "/README.md"
+    ],
+    "层开": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "层归": [
       "/projects/news-archive-sources-registry.md"
@@ -30488,6 +30700,9 @@
     "并使": [
       "/characters/15574.md"
     ],
+    "并修": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "并入": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
@@ -30547,7 +30762,8 @@
     ],
     "并行": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
-      "/resource/resource-repo-engineering-repo-audit-20260603.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "并补": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md"
@@ -30637,6 +30853,9 @@
     ],
     "应能": [
       "/characters/15571.md"
+    ],
+    "底层": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "底座": [
       "/README.md",
@@ -30788,7 +31007,8 @@
     "开发": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "开可": [
       "/projects/entry-readme.md"
@@ -32928,7 +33148,8 @@
     ],
     "指令": [
       "/characters/15568.md",
-      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
+      "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "指令卡": [
       "/characters/15560.md",
@@ -33191,6 +33412,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -33599,6 +33821,9 @@
     "推测": [
       "/story/story_research_todo.md"
     ],
+    "推进": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "推送": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
@@ -33794,6 +34019,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -34160,6 +34386,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -34618,6 +34845,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -34930,6 +35158,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -36790,6 +37019,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -37260,6 +37490,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -37933,6 +38164,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -38176,6 +38408,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -38732,6 +38965,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -39150,6 +39384,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -39205,6 +39440,9 @@
     ],
     "正的": [
       "/characters/15602.md"
+    ],
+    "正落": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "正面": [
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
@@ -39635,6 +39873,9 @@
     ],
     "法零": [
       "/community/community-index.md"
+    ],
+    "波共": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "波吕克斯": [
       "/characters/77917.md"
@@ -43517,6 +43758,7 @@
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
@@ -43912,6 +44154,9 @@
     "统代": [
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
+    "统化": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "统性": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -44078,6 +44323,7 @@
     ],
     "缺陷": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "网对": [
@@ -44794,7 +45040,8 @@
     ],
     "芯使": [
       "/projects/project-site.md",
-      "/projects/project-wiki.md"
+      "/projects/project-wiki.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "芯全": [
       "/memory/capability-index.md"
@@ -44955,6 +45202,9 @@
     ],
     "落下": [
       "/characters/77913.md"
+    ],
+    "落于": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "落在": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
@@ -45470,6 +45720,9 @@
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
+    "计以": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "计入": [
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
     ],
@@ -45477,7 +45730,8 @@
       "/memory/memory-ext-biav-info-classification.md"
     ],
     "计分": [
-      "/memory/memory-ext-discord-archiver-design.md"
+      "/memory/memory-ext-discord-archiver-design.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "计划": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -46438,6 +46692,9 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
+    "跨切": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "跨组": [
       "/README.md"
     ],
@@ -46679,6 +46936,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -47430,6 +47688,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -47638,6 +47897,9 @@
     "通晓": [
       "/characters/54116.md"
     ],
+    "通用": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "通电": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
@@ -47779,6 +48041,9 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/projects/entry-claude-md.md"
+    ],
+    "部修": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "部分": [
       "/characters/15592.md",
@@ -48533,6 +48798,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -48813,6 +49079,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -48913,6 +49180,7 @@
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "银钥": [
@@ -48986,6 +49254,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md"
     ],
     "长堆": [
@@ -49285,6 +49554,9 @@
     "陪伴": [
       "/characters/125346.md"
     ],
+    "陷审": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
     "陷集": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -49574,6 +49846,9 @@
     ],
     "面账": [
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md"
+    ],
+    "面镜": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "面集": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -50226,6 +50501,7 @@
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
@@ -50378,6 +50654,7 @@
     ],
     "bug": [
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md",
@@ -50799,6 +51076,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -51146,6 +51424,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -51341,6 +51620,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -51576,6 +51856,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -52149,6 +52430,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -52457,6 +52739,9 @@
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-intel-weekly-morimens-intel-20260712.md"
+    ],
+    "multiwave": [
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
     "narrative": [
       "/assets/assets-narrative-structure.md"
@@ -52967,6 +53252,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -53195,6 +53481,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -53561,6 +53848,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
