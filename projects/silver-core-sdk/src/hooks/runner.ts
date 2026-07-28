@@ -441,6 +441,16 @@ export class DefaultHookRunner implements HookRunner {
       return result;
     } catch (err) {
       const msg = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
+      // "failed or timed out" lumped two causes with DIFFERENT fixes (repair
+      // the callback vs raise matcher.timeout) into one phrase, and the budget
+      // that expired — the value needed to raise it, defaulted when the
+      // matcher sets no timeout — appeared nowhere. The runner knows which
+      // happened: the outer signal is not aborted here, so an aborted
+      // `combined` can only be this callback's own timeout leg.
+      const timedOut = !signal.aborted && combined.aborted;
+      const causeText = timedOut
+        ? `timed out after ${timeoutMs}ms (matcher.timeout)`
+        : `failed (${msg})`;
       // Outer-signal cancellation is 'cancelled'; a callback failure or its
       // own timeout is 'error'.
       respond({
@@ -455,11 +465,11 @@ export class DefaultHookRunner implements HookRunner {
       // run() rethrows AbortError right after.
       if (failureMode === 'closed' && !signal.aborted) {
         this.debug(
-          `hooks(${event}): callback failed or timed out; failureMode 'closed' denies (${msg})`,
+          `hooks(${event}): callback ${causeText}; failureMode 'closed' denies`,
         );
         return {
           decision: 'block',
-          reason: `hook "${hookName}" failed or timed out (${msg}); denied by failureMode 'closed'`,
+          reason: `hook "${hookName}" ${causeText}; denied by failureMode 'closed'`,
         };
       }
       // Loud fail-open notice (audit 2026-07-14 M-1): the hook DID fail and
@@ -467,10 +477,10 @@ export class DefaultHookRunner implements HookRunner {
       // proceeds as if the hook had no opinion. A quiet one-liner here let a
       // crashed PreToolUse security hook be bypassed invisibly.
       this.debug(
-        `hooks(${event}): WARNING hook "${hookName}" failed or timed out and its ` +
+        `hooks(${event}): WARNING hook "${hookName}" ${causeText} and its ` +
           `outcome was DISCARDED fail-open (failureMode 'open'): the tool call ` +
           `proceeds as if the hook had no opinion. Set failureMode 'closed' on ` +
-          `the matcher (or Options.hookFailureMode) to fail safe. (${msg})`,
+          `the matcher (or Options.hookFailureMode) to fail safe.`,
       );
       return undefined;
     }

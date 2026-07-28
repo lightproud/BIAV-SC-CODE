@@ -13,6 +13,8 @@ JSON key，content 正文仅 8.2%；多数字段近 100% 恒为默认值。本�
   非默认才留: type(!=0) / author_bot(true) / pinned(true) / flags(!=0) /
               has_thread(true) / thread_id(!=null)
   channel_id: 保留（变体 A——每行自足，grep 命中即知归属，不寄生 channel_index.json）
+  论坛注记  : thread_title / forum_channel_id / thread_tags / is_thread_starter 非空才留
+              （仅 forum 频道消息带；缺字段 = 该消息不属于任何论坛帖）
 
 读取方约定：缺字段按默认值解释——
   type→0  author_bot→False  pinned→False  flags→0  has_thread→False

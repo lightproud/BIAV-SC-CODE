@@ -631,7 +631,29 @@ export async function* runAgentLoop(
    *  the debug log, instead of letting one bad tool take the request down. */
   const normalizeInputSchema = (name: string, schema: unknown): JSONSchema => {
     if (typeof schema === 'object' && schema !== null && !Array.isArray(schema)) {
-      return schema as JSONSchema;
+      // Being a plain object is NOT enough: the API's input_schema requires the
+      // literal `"type": "object"`, so a lax server's `{}` or
+      // `{properties:{…}}` (type omitted) 400s with
+      // `tools.N.custom.input_schema.type: Field required`, and a
+      // `{"type":"array"}` with `Input should be 'object'` — the same
+      // whole-request kill this guard exists to prevent, one level deeper.
+      // A type-less schema keeps its properties (just gains the required
+      // discriminator); a wrong-typed one cannot describe an argument object
+      // at all and degrades to the safe empty-object schema.
+      const declared = (schema as { type?: unknown }).type;
+      if (declared === 'object') return schema as JSONSchema;
+      if (declared === undefined) {
+        deps.debug(
+          `engine: tool "${name}" has an input schema without \`type\`; ` +
+            'stamped type:"object" (the API requires it)',
+        );
+        return { ...(schema as JSONSchema), type: 'object' };
+      }
+      deps.debug(
+        `engine: tool "${name}" declares input schema type ${JSON.stringify(declared)}, ` +
+          'which the API rejects (must be "object"); normalized to the empty object schema',
+      );
+      return { type: 'object', properties: {} };
     }
     deps.debug(
       `engine: tool "${name}" has ${
@@ -640,6 +662,18 @@ export async function* runAgentLoop(
     );
     return { type: 'object', properties: {} };
   };
+  /** The Messages API constrains every advertised tool name to
+   *  `^[a-zA-Z0-9_-]{1,128}$` and rejects the WHOLE request on a violation
+   *  (`tools.N.custom.name: String should match pattern`), so one badly named
+   *  tool kills every turn of the session — not just its own calls. In-process
+   *  SDK servers are validated at construction (mcp/sdk-server.ts), but an
+   *  EXTERNAL stdio/http server's name comes from the host's `mcpServers` key
+   *  and its tool names come off the wire from third-party code, so
+   *  `mcp__{server}__{tool}` can carry a dot/space/CJK or blow past 128 chars
+   *  with nothing in between. Skip such an entry loudly (mirroring
+   *  isValidServerTool) instead of advertising a definition the API refuses. */
+  const isWireSafeToolName = (name: string): boolean =>
+    /^[a-zA-Z0-9_-]{1,128}$/.test(name);
   /** Server-declared typed entries are sent WITHOUT input_schema — only
    *  types the API defines server-side (e.g. memory_20250818) may do that.
    *  A `type:'custom'` (or type-less) entry is a misconfiguration: the API
@@ -677,6 +711,15 @@ export async function* runAgentLoop(
       });
     }
     for (const entry of deps.mcp.allTools()) {
+      if (!isWireSafeToolName(entry.qualifiedName)) {
+        deps.debug(
+          `engine: MCP tool "${entry.toolName}" from server "${entry.serverName}" ` +
+            `yields the wire name "${entry.qualifiedName}", which violates the API's ` +
+            'tool-name constraint ^[a-zA-Z0-9_-]{1,128}$ and would reject EVERY ' +
+            'request in this session; tool skipped (rename the server and/or the tool)',
+        );
+        continue;
+      }
       defs.push({
         name: entry.qualifiedName,
         description: entry.description,

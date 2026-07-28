@@ -100,7 +100,6 @@ export class ReportLedger {
     if (key.length === 0) {
       throw new ConfigurationError('ledger key must be a non-empty string');
     }
-    if (this.byKey.has(key)) return false;
     const at = opts?.at ?? Date.now();
     // A non-finite timestamp (NaN/Infinity) OR one outside the representable
     // Date range (±8.64e15, audit r4 Rdt-2) would make digest() throw
@@ -113,6 +112,15 @@ export class ReportLedger {
         'ledger entry timestamp (at) must be a finite epoch-ms within the representable Date range',
       );
     }
+    // Age-evict BEFORE the duplicate check, using THIS call's clock reading.
+    // Otherwise the dedup short-circuit below answers from an entry the age
+    // window already expired, and a RECURRING event whose key is the only one
+    // ever recorded can never be re-reported: record() returned false forever
+    // because eviction only ran after a successful insert (an unrelated key
+    // had to arrive to unstick it). maxAgeMs exists precisely to reopen the
+    // dedup window; the check must see the post-eviction state.
+    if (this.maxAgeMs !== undefined) this.prune(at);
+    if (this.byKey.has(key)) return false;
     const entry: LedgerEntry = { key, at };
     if (opts?.summary !== undefined) entry.summary = opts.summary;
     this.byKey.set(key, entry);

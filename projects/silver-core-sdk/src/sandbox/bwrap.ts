@@ -64,6 +64,14 @@ export class BwrapBackend implements SandboxBackend {
     // (audit 2026-07-17 Q5).
     args.push('--dev', '/dev', '--proc', '/proc');
     args.push('--die-with-parent', '--chdir', req.cwd, '--', req.shell, '-c', req.command);
-    return { command: 'bwrap', args, env: { TMPDIR: req.tmpDir } };
+    // Only overlay $TMPDIR when there IS a sandbox tmp dir. The query layer
+    // leaves tmpDir as '' when mkdtemp fails (it degrades instead of aborting
+    // the query), and exporting TMPDIR='' is worse than leaving it alone:
+    // every `$TMPDIR/x` in a sandboxed command then resolves to `/x` — a write
+    // at the read-only filesystem root — while an untouched TMPDIR keeps the
+    // inherited value the command would have used unsandboxed.
+    return req.tmpDir.length === 0
+      ? { command: 'bwrap', args }
+      : { command: 'bwrap', args, env: { TMPDIR: req.tmpDir } };
   }
 }
