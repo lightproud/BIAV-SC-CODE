@@ -43,7 +43,10 @@ const character = computed(() => {
     <footer class="m-sheet__footer">
       <span>last_verified: {{ character.last_verified }}</span>
       <span>status: {{ character.status }}</span>
-      <span>source: {{ character.source.extracted_from }}</span>
+      <!-- 数据桥 characters.runtime.json 不产 source/last_verified 字段：
+           直取 character.source.extracted_from 会在 SSR 期抛 TypeError，
+           整站构建（连带 87 张页面）一并炸掉。一律可选链 + 占位。 -->
+      <span>source: {{ character.source?.extracted_from ?? '—' }}</span>
     </footer>
   </article>
   <div v-else class="m-sheet__missing">

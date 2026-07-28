@@ -55,6 +55,15 @@ def resolve_data_dir(guild_id: str | None = None) -> Path:
 REQUEST_DELAY = 0.25          # seconds between API calls (Discord allows 50 req/s per bot)
 MAX_RUNTIME_SECONDS = 45 * 60         # 45-minute limit (GitHub Actions safe margin)
 MAX_MESSAGES_PER_CHANNEL = 5000     # incremental cap per channel per run
+# 429 `retry_after` 由**服务端**给值，本地无上限地照睡是把整轮跑的进度权交了出去:
+# 一个 retry_after=86400 的响应（全局限流 / Cloudflare 拦截 / 被篡改的中间层）就让
+# 进程干睡到 CI 作业超时被杀 —— 45 分钟预算 `_is_time_up()` 检查不到睡眠里,
+# state.json 也来不及落盘，下一轮从同一处重来。夹到一分钟：真限流时退避照样有效,
+# 荒谬值则很快耗尽 max_retries、抛给调用方跳过该频道，本轮其余频道继续推进。
+MAX_RETRY_AFTER_SECONDS = 60
+# 论坛归档帖分页上限（每页 100 帖 → 20,000 帖）。分页游标是服务端给的
+# archive_timestamp，游标不前进 + has_more 恒真即为无限循环兼无限累积。
+MAX_ARCHIVED_THREAD_PAGES = 200
 
 
 # ── Snowflake helpers ────────────────────────────────────────────────────────
@@ -105,7 +114,8 @@ def request_with_retry(method, url, max_retries=3, backoff_base=2, **kwargs):
             # S113 误报：上方 `kwargs.setdefault('timeout', 15)` 已保证必带超时。
             resp = requests.request(method, url, **kwargs)  # noqa: S113
             if resp.status_code == 429:
-                retry_after = max(resp.json().get('retry_after', 5), 2.0)
+                retry_after = min(max(resp.json().get('retry_after', 5), 2.0),
+                                  MAX_RETRY_AFTER_SECONDS)
                 logger.warning(f'Rate limited, waiting {retry_after}s...')
                 time.sleep(retry_after)
                 continue
@@ -724,7 +734,16 @@ class DiscordArchiver:
         threads = []
         before = None
         page = 0
-        while True:
+        while page < MAX_ARCHIVED_THREAD_PAGES:
+            # 与本类其余抓取循环同一纪律：45 分钟预算到点即收尾。原先此循环
+            # （及分页游标）完全由服务端说了算——`has_more` 恒 true 且
+            # `archive_timestamp` 不前进（服务端 bug / 被篡改的响应）时，本循环
+            # 既不停也不受预算约束，`threads` 一路 extend 到把内存吃光。
+            if self._is_time_up():
+                logger.warning(
+                    f'Runtime limit during archived-thread paging: {channel_name}({forum_channel_id})'
+                )
+                break
             params: dict = {'limit': 100}
             if before:
                 params['before'] = before
@@ -748,6 +767,11 @@ class DiscordArchiver:
             if not before:
                 break
             time.sleep(REQUEST_DELAY)
+        if page >= MAX_ARCHIVED_THREAD_PAGES:
+            logger.warning(
+                f'Forum {channel_name}({forum_channel_id}): 归档帖分页触顶 '
+                f'{MAX_ARCHIVED_THREAD_PAGES} 页，其余留待下轮'
+            )
         logger.info(
             f'Forum {channel_name}({forum_channel_id}): {len(threads)} archived threads found'
         )
@@ -910,7 +934,16 @@ class DiscordArchiver:
         last_id = self._ch_state(ch_key).get('last_message_id', '0')
         total = 0
 
-        while True:
+        # 与 fetch_channel_incremental 同一对护栏（本循环原先两条都没有）：
+        # ① 每轮消息上限——一条被刷屏 / 被 bot 灌爆的 thread（后 100 条不断有新的,
+        #    `len(messages) < 100` 那条出口永远不成立）能让本循环无限翻页,
+        #    `daily_stats` 随每条消息累积、内存一路涨；
+        # ② 45 分钟运行预算——本循环是**唯一**不看 `_is_time_up()` 的抓取循环,
+        #    一条热 thread 就能把整轮跑拖到 CI 超时被杀，state 不落盘、零推进。
+        while total < MAX_MESSAGES_PER_CHANNEL:
+            if self._is_time_up():
+                logger.warning(f'Runtime limit during thread fetch: {thread_id}')
+                break
             params = {'limit': 100}
             if last_id != '0':
                 params['after'] = last_id

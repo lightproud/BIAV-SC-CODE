@@ -243,26 +243,45 @@ def archive_to_release(manifest: dict):
     # Try to upload via gh CLI
     try:
         tag = f'media-{today}'
-        subprocess.run(
-            ['gh', 'release', 'create', tag, str(archive_path),
-             '--title', f'Media Archive {today}',
-             '--notes', f'Auto-archived {len(media_files)} media files ({size_mb:.0f}MB)'],
-            check=True, capture_output=True, text=True,
-        )
+        # create-or-clobber（与 archive_engine.upload_to_release 同一纪律）：裸 create
+        # 对已存在的同名 tag 必然报「release already exists」而整块落进下面的 except
+        # ——本地文件于是永远不被清理，媒体目录只涨不落，当天此后每一次运行都撞同一堵墙。
+        # 触发不需要什么奇景：上传成功后、unlink 循环前进程被杀（作业超时 / runner 回收）
+        # 就已经是这个局面，光重跑修不回来。create 失败即退回 upload --clobber 覆盖同名资产。
+        try:
+            subprocess.run(
+                ['gh', 'release', 'create', tag, str(archive_path),
+                 '--title', f'Media Archive {today}',
+                 '--notes', f'Auto-archived {len(media_files)} media files ({size_mb:.0f}MB)'],
+                check=True, capture_output=True, text=True,
+            )
+        except subprocess.CalledProcessError:
+            subprocess.run(
+                ['gh', 'release', 'upload', tag, str(archive_path), '--clobber'],
+                check=True, capture_output=True, text=True,
+            )
         logger.info(f'已上传到 GitHub Release: {tag}')
 
         # Clean up local files after successful upload
         for f in media_files:
-            f.unlink()
+            f.unlink(missing_ok=True)
         archive_path.unlink(missing_ok=True)
 
-        # Update manifest
-        manifest.setdefault('archived', []).append({
+        # Update manifest —— 每个 tag 一条：同日二次归档（--clobber 覆盖同名资产）
+        # 若照旧 append，台账里会出现两条同 tag 记录，读者无从判断哪条对应现存资产。
+        record = {
             'tag': tag,
             'date': today,
             'files': len(media_files),
             'size_mb': round(size_mb, 1),
-        })
+        }
+        archived = manifest.setdefault('archived', [])
+        for i, prev in enumerate(archived):
+            if prev.get('tag') == tag:
+                archived[i] = record
+                break
+        else:
+            archived.append(record)
         logger.info(f'已清理 {len(media_files)} 个本地文件')
     except (subprocess.CalledProcessError, FileNotFoundError) as e:
         logger.warning(f'gh CLI 上传失败 ({e})，归档文件保留在: {archive_path}')

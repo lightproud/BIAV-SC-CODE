@@ -8,6 +8,13 @@ export default defineConfig({
   ignoreDeadLinks: true,
   lang: 'zh-CN',
 
+  // docs/public/data 是指向 projects/wiki/data 的符号链接（供站点直取 JSON 数据集）。
+  // VitePress 的页面 glob 会跟随该链接，把数据层里的 README / TODO / RESEARCH_NOTES /
+  // STORY_RESEARCH / character_skills 六份**内部工作档**当成源页面编译，产出
+  // dist/public/data/processed/*.html 六张无人导航的孤儿页（且其中的相对链接失效，
+  // 全靠 ignoreDeadLinks 压着不报）。public/ 只应作静态资产目录，永不作页面源。
+  srcExclude: ['public/**'],
+
   head: [
     ['meta', { name: 'keywords', content: '忘却前夜,Morimens,wiki,收藏馆,语音,CG,命轮,密契,克苏鲁,roguelite' }],
     ['meta', { name: 'theme-color', content: '#c5a356' }],

@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { withBase } from 'vitepress'
 import type { MorimensCharacter } from '../data/characters'
 import { REALM_LABELS, ROLE_LABELS } from '../data/characters'
 
 const props = defineProps<{ character: MorimensCharacter }>()
 
 const portraitUrl = computed(() => {
+  // 站点挂 /BIAV-SC-CODE/wiki/ 子路径：站内绝对路径必须过 withBase，
+  // 否则回退立绘指向站根 /portraits/…（子路径外），必 404。
   const p = props.character.portraits?.default
-  return p || `/portraits/${props.character.slug}.png`
+  return withBase(p || `/portraits/${props.character.slug}.png`)
 })
 
 const realmLabel = computed(() => {
@@ -48,7 +51,7 @@ const rarityLabel = computed(() => props.character.rarity || '—')
           <dt>稀有度</dt><dd>{{ rarityLabel }}</dd>
         </div>
         <div class="m-infobox__stat"><dt>性别</dt><dd>{{ character.gender }}</dd></div>
-        <div class="m-infobox__stat"><dt>生日</dt><dd>{{ character.age }}</dd></div>
+        <div class="m-infobox__stat"><dt>生日</dt><dd>{{ character.birthday }}</dd></div>
         <div class="m-infobox__stat"><dt>身高</dt><dd>{{ character.height }}</dd></div>
         <div class="m-infobox__stat"><dt>体重</dt><dd>{{ character.weight }}</dd></div>
         <div class="m-infobox__stat"><dt>Gi</dt><dd>{{ character.gi }}</dd></div>

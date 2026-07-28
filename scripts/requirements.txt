@@ -4,6 +4,14 @@
 # --- MCP 服务端（mcp_server.py，对接知识层工具调用）---
 mcp>=1.0.0
 
+# --- 合并前门禁（premerge_gate.py 解析 .github/workflows/*.yml 派生门禁步骤）---
+# **不是可选依赖**：premerge_gate 连 `--list` 都要 import yaml（派生 29 条步骤靠解析
+# 工作流 YAML），缺了就是 ModuleNotFoundError、整条门禁跑不起来。此前它只声明在
+# projects/wiki/requirements.txt 里（且那条是给一个已不存在的 generate_pages.py 写的，
+# wiki 脚本层现在没有任何档 import yaml），装了 scripts/requirements.txt 的干净容器
+# 反而没有它——而 CLAUDE.md §7.6 把「合并前跑 premerge_gate」定为唯一那道安全门。
+PyYAML>=6.0
+
 # --- 客户端资源解包（extract_art.py）---
 UnityPy>=1.10.0
 

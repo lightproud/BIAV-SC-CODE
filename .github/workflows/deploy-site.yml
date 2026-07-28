@@ -21,10 +21,31 @@ on:
       #     依赖升级同样绕过整条构建验证。
       - 'projects/wiki/package-lock.json'
       - 'projects/wiki/scripts/generate_wiki_pages.py'
+      # generate_wiki_pages.py 在下面的「Regenerate wiki pages」里**读这一层**
+      # （characters.json / character_index.json / voice_lines.json / world_lore.json /
+      # cg_gallery.json / item_stories.json），部署页面正是由它现场推导出来的。
+      # 只改数据层不改 docs/ 时，站点内容会变而部署不触发——线上停在旧数据。
+      - 'projects/wiki/data/processed/**'
       - 'projects/news/index.html'
       - 'Public-Info-Pool/Resource/proposal/**'
       - 'okf/visualizer.html'
       - '.github/workflows/deploy-site.yml'
+  # 每日兜底重部署（2026-07-28 扫描补齐）。
+  #
+  # 下面「Assemble site」把 projects/news/output/news.json 拷成 dist/news/data/news.json，
+  # 而 /news/ 页面运行时正是 fetch('data/news.json')——那份 JSON 是这条工作流的**输入**，
+  # 却触发不了它：采集器每 3 小时重写它，提交一律带 `[skip ci]`，GitHub 因此跳过整个
+  # push 的工作流分发。所以**把该路径加进上面的 paths 是无效修法**（加了也永不触发），
+  # 只能靠定时兜底。结果是 /news/ 的数据此前只能搭别的 site 改动的顺风车才更新，
+  # 无人改站点的时间段里线上可以停在数周前的快照，而采集照跑、看不出任何异常。
+  #
+  # 同样理由的既有先例：build-analysis-index.yml 走 schedule-only、
+  # build-okf-bundle.yml 刻意把每小时归档层排除在 paths 外并用每日 cron 兜底。
+  # 取每日而非每 3 小时：本工作流要从 Release 拉美术资产 + npm ci + 构建 wiki（~20 分钟），
+  # 跟采集同频重跑不划算；日更把陈旧上限从「数周」压到「一天」。
+  # 副作用（正向）：带 cron 后本工作流进入 dead-man-switch.yml 的沉默检测射程。
+  schedule:
+    - cron: '35 8 * * *'   # 每日 08:35 UTC（北京 16:35），错开 15 点档采集群与 16:40 档
   workflow_dispatch:
 
 concurrency:
