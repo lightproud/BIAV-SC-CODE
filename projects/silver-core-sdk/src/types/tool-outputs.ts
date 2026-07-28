@@ -33,9 +33,13 @@
 
 import type {
   BashOutput,
+  EnterWorktreeOutput,
+  FileEditOutput,
   FileReadOutput,
+  FileWriteOutput,
   GlobOutput,
   GrepOutput,
+  TodoWriteOutput,
   WebFetchOutput,
 } from './tools.js';
 
@@ -78,6 +82,63 @@ export type BashStructuredOutput = BashOutput & {
   exitCode: number | null;
   truncated: boolean;
 };
+
+/**
+ * Write / Edit / TodoWrite / EnterWorktree — the second batch of producers
+ * (keeper ruling 2026-07-27, "全补").
+ *
+ * These four were found by `scripts/type-parity.mjs`'s first run and the
+ * follow-up producer census: each already DECLARED an official-shaped output
+ * type in `types/tools.ts`, none had ever populated it, and every fact a
+ * caller wanted was reachable only by parsing the human-facing sentence —
+ * `Overwrote existing file "/x" (1234 bytes written).` is not an interface.
+ * Write is the sharpest case: `bytes` was already computed and then spent on
+ * string interpolation.
+ *
+ * What stays absent, and why absence is the honest answer:
+ * - `structuredPatch` (Write, Edit) needs a diff algorithm this SDK does not
+ *   ship. An empty array would read as "no changes".
+ * - `gitDiff` (Write, Edit) needs git plumbing this SDK does not ship.
+ * - `userModified` (Edit) is official's editor-integration signal; adjudicated
+ *   unshipped, see docs/COMPAT.md.
+ * - `originalFile` (Write) is captured only when file checkpointing is on —
+ *   Write does not otherwise read the file it is about to replace, and forcing
+ *   a read to fill a field would make every write pay for it. Optional here,
+ *   required in official: a documented divergence, not a silent one.
+ */
+export type WriteStructuredOutput = Omit<
+  FileWriteOutput,
+  'structuredPatch' | 'originalFile' | 'gitDiff'
+> & {
+  /** Present when file checkpointing captured a lossless pre-image. */
+  originalFile?: string | null;
+  /** UTF-8 byte length actually written. Not an official field; this engine
+   *  computes it for its own message and a caller should not have to re-derive
+   *  it from `content`. */
+  bytes: number;
+};
+
+export type EditStructuredOutput = Omit<
+  FileEditOutput,
+  'structuredPatch' | 'gitDiff' | 'userModified'
+> & {
+  /** How many occurrences were actually replaced (1 unless `replace_all`).
+   *  Official carries this only inside `structuredPatch`, which this engine
+   *  cannot build. */
+  replacedCount: number;
+};
+
+/** Complete — every field is a fact this tool already holds. */
+export type EnterWorktreeStructuredOutput = EnterWorktreeOutput;
+
+/**
+ * Complete, but note what had to be built to make it so: `oldTodos` demanded
+ * per-session state the tool never kept (it validated the incoming list and
+ * rendered it). The list now persists on the session-key WeakMap — the sanctioned
+ * per-query state pattern — so a caller can see the TRANSITION rather than just
+ * the new list. A first call in a session honestly reports `oldTodos: []`.
+ */
+export type TodoWriteStructuredOutput = TodoWriteOutput;
 
 /** The per-message map described in the module header. */
 export type ToolUseResults = Record<string, unknown>;

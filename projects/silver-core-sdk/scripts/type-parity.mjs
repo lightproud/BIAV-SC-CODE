@@ -79,6 +79,21 @@ const RULED = new Set([
   // 官方靠这对字段报「截断前共多少」；本引擎的 rg 流式读到上限即停，
   // 拿不到未截断总数，填即编造（理由全文见 src/types/tool-outputs.ts 头注）。
   'GrepOutput:totalFiles', 'GrepOutput:totalLines',
+  // ---- 守密人 2026-07-27 第二批裁定（「整体记档并入白名单」）----
+  // 官方子代理遥测 / worktree 会计 / 远程任务模型。本 SDK 的 Agent 工具连结构化
+  // 产出方都还没有（见 docs/COMPAT.md「零产出 Output 类型台账」），在没有产出方的
+  // 前提下讨论补哪个字段是顺序反了；要动先立产出方。
+  'AgentOutput:agentType', 'AgentOutput:modelsUsed', 'AgentOutput:content.citations',
+  'AgentOutput:toolStats', 'AgentOutput:usage.inference_geo',
+  'AgentOutput:usage.speed', 'AgentOutput:usage.iterations',
+  'AgentOutput:worktreePath', 'AgentOutput:worktreeBranch',
+  'AgentOutput:isAsync', 'AgentOutput:sessionUrl', 'AgentOutput:taskId',
+  // 官方 teams，本 SDK 无此设施。
+  'AgentInput:team_name',
+  // 挂在官方 `file_unchanged` 结果分支上（启动期预置 CLAUDE.md 去重）。本 SDK
+  // 没有那条分支，缺的是**整条分支**而非一个字段——展平比对只露出该分支独有的
+  // 那个字段，此为其固有盲区，已在 COMPAT.md 写明。
+  'FileReadOutput:source',
 ]);
 
 /** 官方名 -> 本 SDK 名（同物异名）。 */

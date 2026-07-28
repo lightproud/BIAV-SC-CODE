@@ -71,7 +71,7 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.90.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.90.0`
+**当前版本 `0.91.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.91.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
@@ -89,6 +89,8 @@ unavailable、触界标 lower bound、零进程零调度（N1）。blob 上限�
 Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记；cards 校验两层豁免索引档
 （修 0.84.0 自种 P4 矛盾）。详见 CHANGELOG。
 **v0.87.1（2026-07-27）：嵌套路径普查（三扫）**（守密人「1 继续」）——前两轮普查比的都是**顶层键**，本轮把两边摊成**点号路径**（`contents[].blobSavedTo`、`gitOperation.commit.sha`）再比，专抓两类前两轮**结构上看不见**的差异：嵌在双方都声明的形状**里面**的字段，以及**两边都有、却待在不同类型里**的字段。**挖出一条真缺陷，而且是银芯自己的**：`timedOutAfterMs` 官方在**基类** `BashOutput` 里，0.85.0 却把它加在了银芯的**扩展类型**上。交出来的交集完全相同、没坏任何东西，而**任何顶层键比对都不可能发现它**——键在两边都存在，只是待错了地方。已移入基类。**其余全属平台绑定，只登记不声明**：`BashOutput.gitOperation.*`（官方**解析 git/gh 命令输出**成结构化 VCS 事实，银芯只跑 shell、不解析其输出，为填字段现造一个解析器不是对齐）· `ghRateLimitHint`/`staleReadFileStateHint`/`backgroundCwdHint`/`noOutputExpected` · `WebFetchOutput.artifactRead.*` · `gitDiff.repository`（在一个银芯声明了但从不产出的形状里）· `contents[].blobSavedTo` · AskUserQuestion 权限 UI 路径。~~九个类型逐层完全一致~~**（2026-07-27 由 v0.88.0 工具化重跑推翻：Glob / Grep / Workflow 三个并不一致——本轮手搓展平器只比了联合类型的第一支、也不匹配带引号的键，覆盖被高估了）**。**方法边界**：展平器只跟花括号深度与键名、不解析 TS 语义，故逐类型同时报**键总数**——数量级不对说明解析飞了，而不是类型真有差异。
+
+**v0.91.0（2026-07-27）：四个工具补上结构化产出 + 零产出面立台账**（守密人「全补」+「整体记档并入白名单」两裁）——**这一轮暴露的是 type-parity 那把尺子的射程边界**：它比的是**声明的形状**，不问**有没有人产出**，于是首跑一本正经地报 `AgentOutput` 差 20 个字段——而实情是本 SDK **从来没有任何代码填过 `AgentOutput`**，等于在很精确地量一个空盒子。顺着这条线做工具层普查，又揪出**四个「声明了官方形状、一行没填」**的类型，且每个的事实都**只能靠解析人话字符串**才拿得到。**Write** 补 `type`/`filePath`/`content`/`bytes`（+ 有 checkpoint 时的 `originalFile`）——`bytes` 是全批最刺眼的一个：数字**早就算好了**，然后拼进句子里扔掉了；**Edit** 补 `filePath`/`oldString`/`newString`/`originalFile`/`replaceAll`/`replacedCount`（前像不额外花钱——Edit 本来就得读全文才能替换）；**TodoWrite** 补 `oldTodos`/`newTodos`**完整**，为此新增一件东西：该工具原本零状态（模型每次重发整张单），`oldTodos` 根本不存在，现把上一版单子存进 **session-key WeakMap**（既定的按查询状态模式），调用方这才看得到**迁移**而不是只看到新单子；**EnterWorktree** 补三字段**完整**。`structuredPatch`/`gitDiff` 仍不填——没有差分引擎与 git 管线，填个空数组会被读成「没有改动」。**缺就报缺**：Write 的 `originalFile` 在没抓到前像时是**省略**而非 `null`——`null` 已经表示「原本没有这个文件」，把「不知道」塌缩成「不存在」会让字段主动误导（两条测试专钉这一点）。**立的是台账不是规矩**：`tests/structured-output-census.test.ts` 钉住「刻意不产出」的名单+逐条理由，新工具静默上线会红、名单里已经开始产出的陈条也会红。「所有工具都必须产出」是错的规矩——有些工具确实没有超出那句话之外的机器可读事实，硬套形状就是再造 typed-not-populated；真正会出事的是**静默增长**（四个工具躺了很多版没人数）。**18 条并入白名单**：`AgentOutput` 遥测/worktree/远程任务字段、`AgentInput.team_name`、`FileReadOutput.source`；Agent 那行**刻意只记档不补**——在工具连产出方都没有时争论补哪个字段是顺序反了。漂移报告已归零。**Workflow 仍开着**：官方 `WorkflowOutput` 必填 `status:'async_launched'`，本引擎同步跑完才返回，交这个字面量等于给一张「货已在你手上」的取件凭证；守密人已裁定改行为对齐，另轮跟进。
 
 **v0.90.0（2026-07-27）：checkpoint blob 上限（T74 甲案）**——`record()` 原对每个被改文件存完整
 前像、无上限（sessions 补审 P1-S2）。超 10MB（可配）前像**不存字节、标 `oversized`**——刻意不复用

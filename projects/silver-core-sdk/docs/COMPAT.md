@@ -638,6 +638,66 @@ concludes a shipped feature is absent.
 | `AgentInput.team_name` | Official teams; no such concept here. |
 | `FileReadOutput.source` | Sits on official's `file_unchanged` result arm — a startup-seeded CLAUDE.md dedup path this SDK does not ship at all. The gap is the whole arm, not the field. |
 
+## Zero-producer output types — the census (2026-07-27)
+
+`type-parity.mjs` compares DECLARED shapes. It never asks whether anything
+EMITS them, and its first run walked straight into the consequence: it reported
+`AgentOutput` as missing twenty official fields when the truth is that nothing
+in this SDK has ever populated `AgentOutput` at all. Measuring the shape of an
+empty box very precisely.
+
+A census of the tool layer found **four types declared, official-shaped, and
+never filled**, with every fact reachable only by parsing the sentence. All
+four are now producers (keeper ruling, "全补"):
+
+| Tool | Now emits | Still absent, and why |
+|---|---|---|
+| Write | `type` / `filePath` / `content` / `bytes`, plus `originalFile` when checkpointing captured a pre-image | `structuredPatch` (no diff engine), `gitDiff` (no git plumbing). `originalFile` is optional here and required in official: Write does not otherwise read the file it replaces, and forcing a read to fill a field would tax every write |
+| Edit | `filePath` / `oldString` / `newString` / `originalFile` / `replaceAll` / `replacedCount` | `structuredPatch`, `gitDiff`, `userModified` (official editor integration) |
+| TodoWrite | `oldTodos` / `newTodos` — **complete** | — (required adding per-session state; see below) |
+| EnterWorktree | `worktreePath` / `worktreeBranch` / `message` — **complete** | — |
+
+`Write.bytes` is the sharpest illustration of the whole class: the number was
+already computed, then spent on string interpolation and discarded.
+
+TodoWrite needed one new thing. It kept no state — the model resends the whole
+list each call — so `oldTodos` did not exist to report. It now persists the
+previous list on the session-key WeakMap (the sanctioned per-query pattern),
+which is what lets a caller see the TRANSITION instead of diffing against a
+copy it was never handed. A session's first call honestly reports `[]`.
+
+**Absence is reported as absence.** Write's `originalFile` is omitted, not
+`null`, when no pre-image was captured — `null` already means "there was no
+prior file", and collapsing "unknown" into "did not exist" would make the field
+actively misleading. Same reasoning as `truncatedByCharCap` vs official's
+`truncatedByTokenCap`: a field that reads as parity and behaves as drift is
+worse than an honestly different one.
+
+Tools that deliberately emit nothing are on a named ledger in
+`tests/structured-output-census.test.ts`, each with its reason, and the test
+fails on a new tool that ships silent OR on a stale entry whose tool started
+emitting. The rule is not "every tool must emit" — several genuinely have no
+machine-readable fact beyond their sentence, and forcing a shape onto them
+recreates typed-not-populated. The rule is that nothing joins the silent set
+without someone writing down why.
+
+**Adjudicated unshipped (keeper ruling 2026-07-27, "整体记档并入白名单"), now
+deducted by `type-parity.mjs`:**
+
+| Surface | Ruling |
+|---|---|
+| `AgentOutput.toolStats.*`, `usage.inference_geo` / `.speed` / `.iterations`, `worktreePath` / `worktreeBranch`, `agentType`, `modelsUsed`, `content.citations`, `isAsync` / `sessionUrl` / `taskId` | The Agent tool has no structured producer at all. Arguing over individual fields before there is a producer is backwards: stand up the producer first, and the fields follow. Recorded, not added |
+| `AgentInput.team_name` | Official teams; no such concept here. Pure scope |
+| `FileReadOutput.source` | Sits on official's `file_unchanged` arm (startup-seeded CLAUDE.md dedup). This SDK lacks the WHOLE ARM — the flattener surfaces only the one field unique to it, which is that method's blind spot, stated here so the row is not misread as a one-field gap |
+| `Monitor`, `ExitPlanMode`, `AskUserQuestion` outputs | Official background-task ids / multi-agent approval chain / permission-component UI. No honest source |
+
+**Open**: `Workflow`. Official's `WorkflowOutput` requires
+`status: 'async_launched'`, and this engine runs workflows synchronously — the
+result is already in hand when the tool returns. Emitting that literal would
+hand the caller a claim ticket for goods it is already holding, which is worse
+than handing it nothing. The keeper has ruled to close this by making the
+behaviour match (真异步), tracked separately; until then the tool returns text.
+
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 
 The model-side tool descriptions in `src/tools/descriptions.ts` are FAITHFUL

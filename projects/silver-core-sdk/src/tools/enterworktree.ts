@@ -54,6 +54,7 @@ import {
   worktreeBranch,
 } from '../internal/worktree.js';
 import { ENTERWORKTREE_DESCRIPTION } from './descriptions.js';
+import type { EnterWorktreeStructuredOutput } from '../types/tool-outputs.js';
 
 /** Worktree-session state for one query. */
 export type WorktreeSession = {
@@ -111,7 +112,15 @@ function renderOutput(
   const lines = [`worktreePath: ${worktreePath}`];
   if (branch !== undefined) lines.push(`worktreeBranch: ${branch}`);
   lines.push(message);
-  return { content: lines.join('\n') };
+  return {
+    content: lines.join('\n'),
+    // Complete: every field of the official shape is a fact already in hand.
+    structuredOutput: {
+      worktreePath,
+      ...(branch !== undefined ? { worktreeBranch: branch } : {}),
+      message,
+    } satisfies EnterWorktreeStructuredOutput,
+  };
 }
 
 export const enterWorktreeTool: BuiltinTool = {

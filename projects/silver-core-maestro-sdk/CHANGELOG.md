@@ -12,9 +12,14 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
-## 0.90.0 — 2026-07-27
+## 0.91.0 — 2026-07-27
 
 Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 0.91.0 (Write / Edit / TodoWrite / EnterWorktree
+produce structured results; the zero-producer set gets a census guard).
+
+## 0.90.0 — 2026-07-27
+
 for silver-core-agent-sdk 0.90.0 (checkpoint blob cap, T74 option 甲).
 
 ## 0.89.0 — 2026-07-27
