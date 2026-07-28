@@ -55,9 +55,10 @@ Code-site 会话负责：
   - 设计系统：`design/morimens-design-tokens.css` 为视觉 Token 真值源，`public/index.html` 与 `public/biav/index.html` 通过 `<link rel="stylesheet">` 引入并以 `var(--m-*, fallback)` 模式映射；改 design-tokens.css 即全站生效（D-token-unify 已落地）
 - **biav 子页**：已上线（D-biav，`public/biav/index.html`），项目说明页面，含命名缘由 / 银芯系统 / 二核心使命（2026-07-02 由三新使命改） / 仓库结构 / 入口协议五段
 - **404 页**：色彩与字重已对齐主站，含返回主站/Wiki/News/仓库四入口
-- **部署流水线**：使用 `peaceiris/actions-gh-pages@v4` 推送到 gh-pages 分支
+- **部署流水线**：`actions/upload-pages-artifact` + `actions/deploy-pages`（T62，2026-07-22 起）
   - **2026-04-26 改造**：site 部署改为 `cp -r projects/site/public/. dist/` 递归，未来 `public/` 下任何子目录或新增文件自动部署，不需再追加 cp 行
-- **GitHub Pages Source**：设为 gh-pages 分支（Settings → Pages）
+  - **2026-07-22 改造（T62）**：从 `peaceiris/actions-gh-pages@v4` 推 gh-pages 分支迁到 Pages artifact 部署，~553M 构建产物不再作为常驻分支留在仓库
+- **GitHub Pages Source**：设为 **GitHub Actions**（Settings → Pages）。**不可改回 gh-pages 分支**——改回则 `actions/deploy-pages` 步骤失败，全站停在上一次部署
 - **站点地址**：`https://lightproud.github.io/BIAV-SC-CODE/`
 
 ## 部署架构
@@ -74,31 +75,36 @@ https://lightproud.github.io/BIAV-SC-CODE/
 └── /docs/    ← Public-Info-Pool/Resource/proposal/biav-project-plan-202603.{html,pdf}（如存在；deliverables/ 已 2026-06-21 迁此）
 ```
 
-> design/ 通过 `deploy-site.yml:92` 的 `cp -r projects/site/design dist/design` 部署到外网，
+> design/ 通过 `deploy-site.yml` 「Assemble site」步的 `cp -r projects/site/design dist/design` 部署到外网
+> （目录下无 index.html，直接访问 `/design/` 会落 404，须按完整文件名访问），
 > 即 `morimens-design-tokens.css` 与 `morimens-design-system-guide.html` 是**对外可见**的开发者文档，
 > 维护时需保证内容时效性（属 P0 级一致性约束）。
 
 ### 部署方法
 
-使用 `peaceiris/actions-gh-pages@v4`，将 `dist/` 目录推送到 `gh-pages` 分支。
-GitHub Pages 从 gh-pages 分支读取静态文件。
+`actions/upload-pages-artifact@v3` 上传 `dist/`，`actions/deploy-pages@v4` 部署（T62，2026-07-22 起）。
 
-**不使用** `actions/deploy-pages@v4`（artifact 方式），因为旧 workflow 遗留的
-environment 部署记录会阻止新 workflow 部署（详见 `memory/lessons-learned.md` #9）。
+> **本节 2026-07-28 订正**：此处原写「**不使用** `actions/deploy-pages@v4`（artifact 方式）」并要求
+> Pages Source 设为 gh-pages 分支——该判词已随 T62 迁移作废，且**照旧文操作会直接打断部署**
+> （Source 不是 "GitHub Actions" 时 `actions/deploy-pages` 步骤失败）。
 
 ### 构建流程
 
 1. checkout → setup-node → npm ci（wiki 依赖）
 2. VitePress build（`projects/wiki/` 下）
-3. 组装 dist/：主站 index.html + wiki 构建产物 + news 页面 + .nojekyll
-4. 验证构建产物（检查关键文件存在性和大小）
-5. 推送到 gh-pages 分支
+3. 组装 dist/：主站 index.html + design/ + wiki 构建产物 + news 页面 + kb（okf/visualizer.html）+ docs + .nojekyll
+4. 验证构建产物（关键文件存在性 + HTML 非空/非损坏，任一不合格非零退出拒绝部署）
+5. `upload-pages-artifact` → `deploy-pages`
 
 ### 触发条件
 
 push to main 且路径匹配（`deploy-site.yml` paths）：`projects/site/**`、
-`projects/wiki/docs/**`、`projects/wiki/package.json`、`projects/news/index.html`、
-`Public-Info-Pool/Resource/proposal/**`（原 `deliverables/**`，2026-06-21 迁移）、`.github/workflows/deploy-site.yml`。
+`projects/wiki/docs/**`、`projects/wiki/package.json`、`projects/wiki/package-lock.json`、
+`projects/wiki/scripts/generate_wiki_pages.py`、`projects/wiki/data/processed/**`、
+`projects/news/index.html`、`Public-Info-Pool/Resource/proposal/**`（原 `deliverables/**`，2026-06-21 迁移）、
+`okf/visualizer.html`、`.github/workflows/deploy-site.yml`。
+另有每日 cron 兜底（`35 8 * * *` UTC / 北京 16:35）刷新 `/news/` 数据——采集器重写的
+`projects/news/output/news.json` 提交带 `[skip ci]`，放进 paths 也永不触发。
 也支持 `workflow_dispatch` 手动触发。旧 `site/**` 路径已不在触发列表（与下文 2026-04-20 B1a 清理记述一致）。
 
 ## 文件位置说明

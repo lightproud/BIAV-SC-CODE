@@ -3,7 +3,7 @@
 
 用途：把 Public-Info-Pool/Resource 下的报告 markdown 渲染成银芯标准视觉（封面 + 目录 +
 暗金主题 + Noto Serif/Sans CJK + 大字号手机适配）的 PDF 与 HTML。视觉规范见
-memory/style-guide.md（CLAUDE.md §6.12）；生产流程见 .claude/skills/biav-report。
+memory/style-guide.md（CLAUDE.md §5.3 档案表）；生产流程见 .claude/commands/biav-report.md。
 
 依赖（ephemeral 容器每次会话可能需重装）：
     pip install weasyprint markdown

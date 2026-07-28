@@ -29,7 +29,10 @@
   td:first-child{color:var(--txt);font-weight:500;white-space:nowrap}
   .note{background:var(--gg);border-left:2px solid var(--gold-d);padding:14px 18px;border-radius:0 4px 4px 0;margin:16px 0;font-size:14px;color:var(--txt-m)}
   .note strong{color:var(--gold-l)}
-  .file-tree{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:20px;margin:16px 0;font-family:var(--mono);font-size:13px;line-height:1.8;color:var(--txt-m)}
+  /* white-space:pre 必需：本块是纯文本 ASCII 目录树，靠换行与对齐空格表意。
+     缺它则默认 white-space:normal 把换行和连续空格全折成一个空格，整棵树塌成一行流水句。
+     overflow-x:auto 与本页 pre 块同策：窄屏内部横向滚动，不撑破页面。 */
+  .file-tree{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:20px;margin:16px 0;font-family:var(--mono);font-size:13px;line-height:1.8;color:var(--txt-m);white-space:pre;overflow-x:auto}
   .file-tree .dir{color:var(--gold)}
   .file-tree .new{color:#6aad7a}
   .file-tree .mod{color:#c5a356}
@@ -63,8 +66,7 @@
   </table>
 
   <h3>文件交付清单（2026-04-26 实际路径）</h3>
-  <div class="file-tree">
-<span class="dir">BIAV-SC-CODE/</span>
+  <div class="file-tree"><span class="dir">BIAV-SC-CODE/</span>
 ├── <span class="dir">projects/site/</span>
 │   ├── <span class="dir">design/</span>
 │   │   ├── <span class="mod">morimens-design-tokens.css</span>      <span class="badge badge-keep">已落地</span> 共享 Token 真值源
@@ -77,12 +79,14 @@
 │   ├── <span class="mod">morimens-design-tokens.css</span>     <span class="badge badge-keep">已落地</span> Token 副本
 │   └── <span class="mod">morimens-vitepress-theme.css</span>   <span class="badge badge-keep">已落地</span> 主题覆盖
 └── <span class="dir">.github/workflows/</span>
-    └── <span class="mod">deploy-site.yml</span>                <span class="badge badge-keep">已落地</span> 组装 dist 推 gh-pages
-  </div>
+    └── <span class="mod">deploy-site.yml</span>                <span class="badge badge-keep">已落地</span> 组装 dist 传 Pages artifact</div>
 
   <div class="note"><strong>部署事实：</strong><code>deploy-site.yml</code> 通过 <code>cp -r projects/site/design dist/design</code>
-  把 design/ 目录整体推送到 <code>gh-pages</code> 分支，因此本文件与 Token CSS 都是**对外可访问的公开文档**，
-  访问路径为 <code>https://lightproud.github.io/BIAV-SC-CODE/design/</code>。维护时需保持时效性。</div>
+  把 design/ 目录整体装进 Pages artifact（T62，2026-07-22 起由 <code>actions/deploy-pages</code> 部署，
+  不再推 <code>gh-pages</code> 分支），因此本文件与 Token CSS 都是<strong>对外可访问的公开文档</strong>。
+  <code>/design/</code> 目录下没有 index.html，直接访问目录会落到 404 页；两份文件须按完整文件名访问：
+  <code>https://lightproud.github.io/BIAV-SC-CODE/design/morimens-design-system-guide.html</code>
+  与 <code>.../design/morimens-design-tokens.css</code>。维护时需保持时效性。</div>
 </div>
 
 <!-- ═══ 02 TOKEN SYSTEM ═══ -->
@@ -121,14 +125,25 @@
   <div class="sec-desc">纯静态 HTML，源文件在 <code>projects/site/public/index.html</code>。是外部访问者接触项目的第一触点。</div>
 
   <h3>部署方式（自动）</h3>
-  <p>不再手动 cp 到根目录。push 到 main 触发 <code>.github/workflows/deploy-site.yml</code>，由 workflow 在 dist/ 中组装 site + wiki + news 后通过 <code>peaceiris/actions-gh-pages@v4</code> 推送至 <code>gh-pages</code> 分支。</p>
+  <p>不再手动 cp 到根目录。push 到 main 触发 <code>.github/workflows/deploy-site.yml</code>，由 workflow 在 dist/ 中组装
+  site + wiki + news + kb 后，用 <code>actions/upload-pages-artifact</code> 上传、<code>actions/deploy-pages</code> 部署
+  （T62，2026-07-22 起；此前的 <code>peaceiris/actions-gh-pages@v4</code> 推 <code>gh-pages</code> 分支方式已退役）。</p>
 
   <pre><code># 触发路径（任一匹配即触发部署）
 projects/site/**
 projects/wiki/docs/**
 projects/wiki/package.json
+projects/wiki/package-lock.json
+projects/wiki/scripts/generate_wiki_pages.py
+projects/wiki/data/processed/**
 projects/news/index.html
-.github/workflows/deploy-site.yml</code></pre>
+Public-Info-Pool/Resource/proposal/**
+okf/visualizer.html
+.github/workflows/deploy-site.yml
+
+# 另有每日 cron 兜底（08:35 UTC / 北京 16:35）+ workflow_dispatch。
+# 采集器重写的 projects/news/output/news.json 提交带 [skip ci]，
+# 放进 paths 也永不触发，只能靠 cron 刷新 /news/ 数据。</code></pre>
 
   <h3>当前状态（2026-04-26 修订）</h3>
   <table>
@@ -138,7 +153,7 @@ projects/news/index.html
     <tr><td>OG Image</td><td><span class="badge badge-mod">待补</span></td><td>已加 og:url / og:locale / twitter:card meta，但 og:image PNG 资产仍待设计师产出 1200×630</td></tr>
     <tr><td>Favicon</td><td><span class="badge badge-keep">已落地</span></td><td>inline SVG dataURL，宋体「夜」字 + 主金 + 深渊底，无外部依赖</td></tr>
     <tr><td>Mission 段</td><td><span class="badge badge-keep">已落地</span></td><td>D-mission（commit <code>6347ad3</code>）在 hero 与 features 之间新增三新使命展示（壹/贰/叁）</td></tr>
-    <tr><td>Pages Source</td><td><span class="badge badge-keep">已落地</span></td><td>GitHub Pages Source = <code>gh-pages</code> 分支</td></tr>
+    <tr><td>Pages Source</td><td><span class="badge badge-keep">已落地</span></td><td>GitHub Pages Source = <code>GitHub Actions</code>（T62 起；若被改回 <code>gh-pages</code> 分支，<code>actions/deploy-pages</code> 步骤会失败，整站停在上一次部署）</td></tr>
   </table>
 </div>
 
@@ -268,7 +283,7 @@ npm run dev
     <tr><td>一屏一主题</td><td>全幅区块独占至少一个 viewport 高度</td></tr>
     <tr><td>标题必须宋体</td><td>h1–h3 用 <code>--m-font-title</code>，不可用黑体</td></tr>
     <tr><td>所有新颜色必须走 Token</td><td>禁止硬编码色值。新增颜色需先加入 Token 文件</td></tr>
-    <tr><td>对比度 ≥ 4.5:1</td><td>WCAG AA 标准。主文本 on 深渊底 = 11.2:1 (达标)</td></tr>
+    <tr><td>对比度 ≥ 4.5:1</td><td>WCAG AA 标准。实测 on 深渊底：<code>--m-text-primary</code> 16.54:1（达标）、<code>--m-text-muted</code> 8.58:1（达标）、<code>--m-text-dim</code> <strong>4.14:1（不达标）</strong>——dim 仅作装饰层，正文与必读信息不得使用</td></tr>
     <tr><td><code>prefers-reduced-motion</code></td><td>所有动画必须在 reduced-motion 下归零</td></tr>
   </table>
 </div>
@@ -327,7 +342,7 @@ npm run dev
     <tr><td>3</td><td>修改 <code>index.ts</code> 引入新 CSS</td><td>Wiki</td><td><span class="badge badge-keep">已落地</span></td></tr>
     <tr><td>4</td><td>本地 <code>npm run dev</code> 验证</td><td>Wiki</td><td><span class="badge badge-keep">已落地</span></td></tr>
     <tr><td>5</td><td>主页 <code>index.html</code> 通过 deploy-site.yml 自动部署</td><td>主页</td><td><span class="badge badge-keep">已落地</span></td></tr>
-    <tr><td>6</td><td>GitHub Pages Source = gh-pages</td><td>部署</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>6</td><td>GitHub Pages Source = GitHub Actions（T62 起，非 gh-pages 分支）</td><td>部署</td><td><span class="badge badge-keep">已落地</span></td></tr>
     <tr><td>7</td><td>主页社区链接真实化（D-fix）</td><td>主页</td><td><span class="badge badge-keep">已落地</span></td></tr>
     <tr><td>8</td><td>主页 Mission 段（D-mission）</td><td>主页</td><td><span class="badge badge-keep">已落地</span></td></tr>
     <tr><td>9</td><td>Favicon（inline SVG）+ SEO meta（og:url / canonical / twitter:card）</td><td>主页</td><td><span class="badge badge-keep">已落地</span></td></tr>

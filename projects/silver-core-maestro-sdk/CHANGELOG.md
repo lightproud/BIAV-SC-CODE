@@ -88,7 +88,7 @@ Audit wave 9. This package's share, all in never-audited surfaces:
 
 ## 0.97.0 — 2026-07-28
 
-**锁步对齐**(无本包运行时改动)。agent SDK 0.97.0 从包入口导出权威 token 估算器
+Lockstep alignment only — **锁步对齐**,无本包运行时改动。agent SDK 0.97.0 从包入口导出权威 token 估算器
 (`estimateTextTokens` / `estimateMessagesTokens` / `estimateToolDefsTokens`)与内建
 工具输出上限(`MAX_READ_OUTPUT_CHARS` + frozen `TOOL_OUTPUT_CAPS` 集合),黑池可删
 手工镜像——见 silver-core-sdk CHANGELOG。家族版本钟锁步(守密人 2026-07-18 裁定),
@@ -126,13 +126,13 @@ missing `model` now throws instead of silently substituting a baked-in id;
 
 ## 0.93.0 — 2026-07-28
 
-**锁步对齐**(无本包运行时改动)。agent SDK 0.93.0 修复 recap 截断丢最新进度
+Lockstep alignment only — **锁步对齐**,无本包运行时改动。agent SDK 0.93.0 修复 recap 截断丢最新进度
 (BPT P1 活锁事故根因,`buildRecap` 改头尾双保留)并把截断纪律注册表扩到全 `src/`——
 见 silver-core-sdk CHANGELOG。家族版本钟锁步(守密人 2026-07-18 裁定),故本包同步升位。
 
 ## 0.92.1 — 2026-07-28
 
-**锁步对齐**（无本包运行时改动）。agent SDK 0.92.1 修复了自动续跑时「被拒绝的
+Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 0.92.1 修复了自动续跑时「被拒绝的
 控制面覆写仍被留存并重放」——见 silver-core-sdk CHANGELOG。家族版本钟锁步
 （守密人 2026-07-18 裁定），故本包同步升位。
 
