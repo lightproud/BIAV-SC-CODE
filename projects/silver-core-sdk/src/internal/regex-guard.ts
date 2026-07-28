@@ -98,7 +98,29 @@ export function hasNestedQuantifier(pattern: string): boolean {
   // Do two classes share any member? Identical descriptors certainly do; for
   // the rest a small probe set decides shorthand/bracket intersection exactly
   // enough (misses only on exotic ranges, matching the old exact-equality gap).
-  const CLASS_PROBES = ['0', 'a', 'A', '_', '-', ' ', '\n', '.', '!', '\\'];
+  // Must span the common ASCII ranges (all digits + letters), or two genuinely
+  // overlapping bracket classes whose only shared member is unprobed —
+  // `([0-9]|[5-9])+`, `([a-m]|[m-z])+`, `([ab]|[bc])+` — slip through as a
+  // false-negative ReDoS (guard returns null, the pattern is then compiled and
+  // freezes the event loop on an adversarial subject). A probe can only reveal a
+  // REAL shared member, never a false overlap, so widening is monotonically safe
+  // (provably-disjoint pairs like `\w`/`\s` stay disjoint).
+  const CLASS_PROBES = [
+    ...'0123456789',
+    ...'abcdefghijklmnopqrstuvwxyz',
+    ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    '_',
+    '-',
+    ' ',
+    '\t',
+    '\n',
+    '.',
+    '!',
+    '\\',
+    '/',
+    '@',
+    '#',
+  ];
   const classesOverlap = (a: string, b: string): boolean =>
     a === b || CLASS_PROBES.some((p) => classMatchesChar(a, p) && classMatchesChar(b, p));
   const atomOverlap = (a: string | null, b: string | null): boolean => {

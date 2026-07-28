@@ -128,8 +128,15 @@ function pickStatus(obj: Record<string, unknown>): number | undefined {
 /** Pull a machine code slug out of an arbitrary error-ish object. A numeric
  *  `code` (some gateways put the HTTP status there) is NOT a slug. */
 function pickCode(obj: Record<string, unknown>): string | undefined {
-  const raw = obj.code ?? obj.type ?? obj.error_code;
-  return typeof raw === 'string' && raw.length > 0 ? raw : undefined;
+  // Take the first candidate that is a non-empty STRING slug. A `??` chain
+  // short-circuits on a numeric `code` (a gateway that puts the HTTP status
+  // there — see pickStatus), leaving `raw` a number that fails the string test
+  // and swallowing a real slug carried in `type`/`error_code`. Skip non-string
+  // candidates instead so the slug survives.
+  for (const raw of [obj.code, obj.type, obj.error_code]) {
+    if (typeof raw === 'string' && raw.length > 0) return raw;
+  }
+  return undefined;
 }
 
 /** JSON.stringify that upholds this layer's "never throws" contract: a circular
