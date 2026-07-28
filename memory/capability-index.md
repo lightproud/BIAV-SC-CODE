@@ -3,7 +3,7 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-28
+- 生成日期：2026-07-29
 - 功能总数：**154**
 - 脚本可达性：活 82 / 仅测试 0 / 孤儿 0
 
@@ -189,7 +189,7 @@
   `scripts/okf_frontmatter.py`
 - **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
-- **`premerge_gate.py`** _[活:cli]_ — 合并前门禁 —— 把「CI 会跑什么」从凭记忆升格为算出来。  
+- **`premerge_gate.py`** _[活:cli+command]_ — 合并前门禁 —— 把「CI 会跑什么」从凭记忆升格为算出来。  
   `scripts/premerge_gate.py`
 - **`refresh_claude_code_prompts.py`** _[活:cli+workflow]_ — Refresh the archived Claude Code system-prompts reference from upstream.  
   `scripts/refresh_claude_code_prompts.py`
@@ -268,7 +268,7 @@
   `projects/news/scripts/silent_sources_audit.py`
 - **`sources.py`** _[活:import]_ — sources.py — 采集源单一真相源（single source of truth）  
   `projects/news/scripts/sources.py`
-- **`split_output.py`** _[活:cli+workflow]_ — split_output.py — 按数据源分割 projects/news/output/news.json  
+- **`split_output.py`** _[活:cli+command+workflow]_ — split_output.py — 按数据源分割 projects/news/output/news.json  
   `projects/news/scripts/split_output.py`
 - **`taptap_collector.py`** _[活:cli]_ — TapTap 社区采集器 - Playwright 无头浏览器方案  
   `projects/news/scripts/taptap_collector.py`
