@@ -691,12 +691,47 @@ deducted by `type-parity.mjs`:**
 | `FileReadOutput.source` | Sits on official's `file_unchanged` arm (startup-seeded CLAUDE.md dedup). This SDK lacks the WHOLE ARM — the flattener surfaces only the one field unique to it, which is that method's blind spot, stated here so the row is not misread as a one-field gap |
 | `Monitor`, `ExitPlanMode`, `AskUserQuestion` outputs | Official background-task ids / multi-agent approval chain / permission-component UI. No honest source |
 
-**Open**: `Workflow`. Official's `WorkflowOutput` requires
-`status: 'async_launched'`, and this engine runs workflows synchronously — the
-result is already in hand when the tool returns. Emitting that literal would
-hand the caller a claim ticket for goods it is already holding, which is worse
-than handing it nothing. The keeper has ruled to close this by making the
-behaviour match (真异步), tracked separately; until then the tool returns text.
+**Closed 2026-07-27 (v0.92.0): `Workflow` went genuinely async.** Official's
+`WorkflowOutput` requires `status: 'async_launched'` and this engine ran
+workflows synchronously — the result was already in hand when the tool
+returned. That could not be reconciled at the type level, and faking it was
+worse than the gap: the literal hands the caller a claim ticket for goods it is
+already holding, and it will go looking for a task that finished before the
+ticket was printed. The keeper ruled to move the BEHAVIOUR ("1 改"). See the
+Workflow section below.
+
+## Workflow: async launch (v0.92.0)
+
+The run is registered in the SAME background-task id space `TaskOutput` and
+`TaskStop` already serve (`ShellManager.registerTask`), rather than getting a
+registry and a pair of tools of its own. A model holding a task id should not
+have to know which kind of background thing produced it.
+
+| Piece | Where it landed |
+|---|---|
+| Id space | `ShellManager.registerTask({label, onStop})` mints `task_N` from the same counter as `bash_N`, so a task id can never collide with a shell id. The record is the same `BackgroundShell` shape: `pid` is `undefined` (a promise, not a process) and `kill` routes to `onStop` instead of a signal |
+| Lifetime | New `ToolContext.lifeSignal` — the QUERY-lifetime signal. `ctx.signal` is per-TURN, and detaching background work onto it is the worst kind of bug: the launch acks, the work dies silently at the turn boundary, the caller waits forever. The subagent runtime has always used a query-lifetime signal internally for exactly this; the field makes it available to the tool layer |
+| Syntax errors | Stay SYNCHRONOUS via a new compile-only `checkWorkflowSyntax()` pre-flight. Official documents Workflow as returning immediately AND as throwing on a syntax error; both hold only if the verdict is reached before the run detaches |
+| Stop | `TaskStop` → `onStop` → abort. A stop that lands first WINS: the task reports `killed`, never `completed` |
+
+**Three things this deliberately does not claim.** No `<task-notification>`
+push — official's harness delivers one, this engine has no such channel for
+tool-launched work (the subagent runtime's drain is agent-only), so the ack
+points at `TaskOutput` because that is what actually reads the result. No
+`transcriptDir` — there is none, and the field stays absent. No async claim
+without a host: outside `query()` there is no `lifeSignal` to detach onto, so
+the tool runs the workflow inline and **says so** in its result rather than
+returning an `async_launched` it did not perform.
+
+**Behaviour change for consumers.** A caller that previously got the finished
+result from the tool call now gets an ack and must read `TaskOutput`. That is
+the cost of the alignment, and it is why this is a minor bump with the change
+stated plainly rather than a quiet type edit.
+
+Retired alongside it: `'TaskStop'` sat on the red-line forbidden-mention list
+in `tests/tool-descriptions.test.ts` long after the tool shipped. The red line
+is "never name what we do not ship"; a shipped tool on that list inverts it
+into "never name what we DO ship" and suppresses honest guidance.
 
 ## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
 

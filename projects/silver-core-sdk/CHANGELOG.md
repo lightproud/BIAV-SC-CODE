@@ -16,6 +16,62 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.92.0 — 2026-07-27
+
+**Workflow launches asynchronously** (keeper ruling 2026-07-27, "1 改").
+BEHAVIOUR CHANGE for callers: the tool no longer returns the finished result.
+
+Official launches the workflow in the background and returns
+`{status: 'async_launched', taskId}`; this tool ran the whole workflow inside
+the tool call and returned the outcome. The two could not be reconciled at the
+type level, and faking the shape would have been worse than the gap — emitting
+`status: 'async_launched'` from a synchronous run hands the caller a claim
+ticket for goods it is already holding, and it will then go looking for a task
+that finished before the ticket was printed. So the behaviour moved.
+
+- **Same id space as the rest of the background work.** The run registers via
+  the new `ShellManager.registerTask({label, onStop})`, so `TaskOutput` reads
+  its progress and result and `TaskStop` stops it — no second registry, no
+  second pair of tools. A model holding a task id should not have to know which
+  kind of background thing produced it. Ids come off the same counter as
+  `bash_N` (never collide) with a `task_` prefix; the record carries
+  `pid: undefined`, which is the truth for a promise, and `kill` routes to
+  `onStop` rather than a signal.
+- **New `ToolContext.lifeSignal`** — the query-lifetime signal. `ctx.signal` is
+  per-TURN, and detaching background work onto it is the worst failure shape
+  available here: the launch acks, the run dies silently at the turn boundary,
+  and the caller waits for a result that will never arrive. The subagent
+  runtime has always used a query-lifetime signal internally for exactly this;
+  this exposes it to the tool layer. A regression test pins it, and the test
+  was confirmed to go red when the tool is wired back to `ctx.signal` — a
+  green-on-first-run test for a race is not yet evidence of anything.
+- **Syntax errors stay synchronous**, via a new compile-only
+  `checkWorkflowSyntax()`. Official documents Workflow as returning immediately
+  AND as throwing on a syntax error; both hold only if the verdict is reached
+  before the run detaches. A typo must not ack as launched and surface its
+  error a turn later.
+- **A stop wins over a completion.** A task killed mid-flight reports `killed`,
+  never `completed` — the same precedence the process exit handler applies.
+
+**Three things this deliberately does not claim.** No `<task-notification>`
+push: official's harness delivers one, this engine has no such channel for
+tool-launched work, so the ack points at `TaskOutput` because that is what
+actually reads the result. No `transcriptDir`: there is none. And no async
+claim without a host — outside `query()` there is no `lifeSignal` to detach
+onto, so the tool runs the workflow inline and SAYS so instead of returning an
+`async_launched` it did not perform.
+
+`WorkflowOutput` is now populated and honestly official-shaped, which moves
+Workflow off the zero-producer ledger. The census guard added in 0.91.0 caught
+that transition on its first run after the change — its stale-entry check is
+what flagged that the tool had graduated.
+
+Also retired: `'TaskStop'` had been sitting on the red-line forbidden-mention
+list in `tests/tool-descriptions.test.ts` long after the tool shipped. The red
+line is "never name a tool we do not ship"; leaving a shipped tool on it
+inverts the rule into "never name what we DO ship" and suppresses honest
+guidance.
+
 ## 0.91.0 — 2026-07-27
 
 Four more tools produce structured results, and the zero-producer set gets a

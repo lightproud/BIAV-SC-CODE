@@ -38,8 +38,6 @@ const NO_STRUCTURED_OUTPUT: Record<string, string> = {
   monitor: "MonitorOutput.taskId is official's background-task id space; this Monitor is a subset",
   sendmessage: 'official declares no output type for this tool',
   task: 'the task-ledger quintet returns its rows as text; no official output shape diverges from it',
-  workflow:
-    "official's WorkflowOutput requires status:'async_launched'; emitting it would assert a launch this engine never made (open item, COMPAT.md)",
   // Not tools — module-level helpers that merely contain a `name:` literal.
   descriptions: 'not a tool module (description constants)',
   shells: 'declares BashOutput/KillShell/TaskOutput/TaskStop, whose facts ride the shell records',
@@ -80,8 +78,13 @@ describe('structured-output census', () => {
     }
   });
 
-  it('the four tools ruled in on 2026-07-27 do emit', () => {
-    for (const mod of ['write', 'edit', 'todo', 'enterworktree']) {
+  it('the tools ruled in on 2026-07-27 do emit', () => {
+    // `workflow` joined this list by GRADUATING: it left the ledger above when
+    // the tool went async (v0.92.0) and could finally satisfy official's
+    // required `status: 'async_launched'` honestly. The stale-entry check
+    // caught that transition on the first run after the change, which is the
+    // behaviour the ledger exists for.
+    for (const mod of ['write', 'edit', 'todo', 'enterworktree', 'workflow']) {
       expect(emitsStructuredOutput(mod), `${mod} 应当产出结构化结果`).toBe(true);
     }
   });

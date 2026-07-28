@@ -217,6 +217,18 @@ export type ToolContext = {
    *  cwd/env). Wired per query; absent -> Bash is stateless and
    *  BashOutput/KillShell report unavailability. */
   shells?: ShellManager;
+  /**
+   * QUERY-lifetime abort signal (v0.92.0). `signal` above is per-TURN — it
+   * fires when the turn ends — so anything meant to outlive the turn that
+   * launched it must not be driven by it. Detaching background work onto
+   * `signal` produces the worst kind of bug: the launch acks, the work dies
+   * silently at turn boundary, and the caller waits for a result that will
+   * never come. The subagent runtime has always used a query-lifetime signal
+   * internally for exactly this; this field is that signal, made available to
+   * the tool layer. Absent -> a tool must refuse to go background rather than
+   * fall back to the turn signal.
+   */
+  lifeSignal?: AbortSignal;
   /** v0.6 sandbox state (G-SANDBOX). Present -> Bash wraps commands with the
    *  resolved backend by default; absent -> Bash runs unsandboxed (no backend
    *  on this platform, or explicitly disabled). */
@@ -357,6 +369,25 @@ export type BackgroundShell = {
   kill: (sig: string) => void;
 };
 
+/** Writer handle for a registered non-process background task. */
+export type BackgroundTaskHandle = {
+  /** The task id — hand this to the model; TaskOutput/TaskStop accept it. */
+  id: string;
+  /** Append to the task's readable stream (what TaskOutput drains). */
+  write(chunk: string): void;
+  /** Append to the task's error stream. */
+  writeErr(chunk: string): void;
+  /**
+   * Settle the task. `exitCode` 0 = completed, non-zero = failed; the terminal
+   * status honors an earlier stop request (a task killed mid-flight reports
+   * `killed`, never `completed`) — the same precedence the process exit
+   * handler applies, so one stop semantics covers both kinds of task.
+   */
+  finish(exitCode: number | null): void;
+  /** Whether a stop was requested (the run should wind down). */
+  readonly stopRequested: boolean;
+};
+
 /** Per-query shell session state: background shells + the persistent
  *  foreground cwd/env snapshot the Bash tool replays between calls. */
 export interface ShellManager {
@@ -377,6 +408,19 @@ export interface ShellManager {
     disableSandbox?: boolean,
   ): Promise<{ id: string } | { error: string }>;
   get(id: string): BackgroundShell | undefined;
+  /**
+   * Register a NON-PROCESS background task in the same id space TaskOutput /
+   * TaskStop already serve (v0.92.0, for async Workflow).
+   *
+   * Why here rather than a registry of its own: the read and stop surfaces
+   * already exist and are the ones official uses for background work. A second
+   * id space would mean a second pair of tools, and a model holding an id with
+   * no way to tell which tool reads it. The record is the same
+   * `BackgroundShell` shape — `pid` is undefined and `kill` routes to `onStop`
+   * instead of a signal, which is honest for a task that is a promise rather
+   * than a process.
+   */
+  registerTask(params: { label: string; onStop: () => void }): BackgroundTaskHandle;
   /** Kill one background shell (SIGTERM, then SIGKILL after a grace). */
   kill(id: string): boolean;
   /** Kill every background shell and remove the state dir (query close). */

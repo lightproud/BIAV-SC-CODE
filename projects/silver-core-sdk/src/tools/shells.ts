@@ -199,6 +199,51 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
       return shells.get(id);
     },
 
+    registerTask({ label, onStop }) {
+      // Same counter as spawnBackground so a task id can never collide with a
+      // shell id; distinct prefix so a reader can tell them apart at a glance.
+      const id = `task_${nextId++}`;
+      const rec: BackgroundShell = {
+        id,
+        command: label,
+        pid: undefined, // a promise, not a process — undefined is the truth
+        stdout: '',
+        droppedOut: 0,
+        stderr: '',
+        droppedErr: 0,
+        cursorOut: 0,
+        cursorErr: 0,
+        status: 'running',
+        killRequested: false,
+        exitCode: null,
+        exitSignal: null,
+        // The signal argument is meaningless for a promise; SIGTERM and
+        // SIGKILL both mean "wind down". Idempotent, so the kill() escalation
+        // timer firing after the task already settled is harmless.
+        kill: () => onStop(),
+      };
+      shells.set(id, rec);
+      return {
+        id,
+        write: (chunk) => append(rec, 'stdout', chunk),
+        writeErr: (chunk) => append(rec, 'stderr', chunk),
+        finish: (exitCode) => {
+          if (rec.status !== 'running') return; // a stop already settled it
+          rec.exitCode = exitCode;
+          // A stop that landed first WINS: reporting 'completed' for a task
+          // someone killed would contradict the notice the kill site sent.
+          rec.status = rec.killRequested
+            ? 'killed'
+            : exitCode === 0
+              ? 'completed'
+              : 'failed';
+        },
+        get stopRequested() {
+          return rec.killRequested;
+        },
+      };
+    },
+
     kill(id) {
       const rec = shells.get(id);
       if (rec === undefined) return false;
@@ -306,6 +351,9 @@ export function forkShellSession(parent: ShellManager): ShellManager {
     spawnBackground: (shell, command, ctx, disableSandbox) =>
       parent.spawnBackground(shell, command, ctx, disableSandbox),
     get: (id) => parent.get(id),
+    // Delegated like every other registry op: a fork owns only its cwd/env
+    // namespace, never a private copy of the query's background work.
+    registerTask: (params) => parent.registerTask(params),
     kill: (id) => parent.kill(id),
     // Scoped dispose: drop only this fork's namespace. Background shells
     // belong to the query-wide manager and are disposed there.
