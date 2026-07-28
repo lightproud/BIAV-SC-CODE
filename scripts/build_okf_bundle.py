@@ -463,7 +463,12 @@ def build_root(counts: dict) -> None:
         "projects": "子项目 projects · CONTEXT/藏宝图/工程文档指针",
     }
     for layer, label in _LAYER_LABEL.items():
-        if layer in counts:
+        # 只列**真的写出了目录**的层：build_unpacked / build_extracted 在源数据缺席时
+        # 直接 return []（不调 write_layer，也就没有 index.md），但 counts 里仍留下
+        # 一个 0 —— 于是总入口给出 `/unpacked/index.md`、`/extracted/index.md` 两条
+        # 死链，而 bundle 表面看还「完整」（0 concept 也是个数）。以 index.md 在场
+        # 为准，任何跳过写盘的层一律不进章节表。
+        if layer in counts and (BUNDLE / layer / "index.md").exists():
             idx.append(f"* [{label.split(' · ')[0]}](/{layer}/index.md) - {counts[layer]} concept · {label.split(' · ',1)[1] if ' · ' in label else ''}")
     idx += [
         "",
