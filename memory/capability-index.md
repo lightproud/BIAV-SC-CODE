@@ -3,7 +3,7 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-27
+- 生成日期：2026-07-28
 - 功能总数：**154**
 - 脚本可达性：活 82 / 仅测试 0 / 孤儿 0
 
