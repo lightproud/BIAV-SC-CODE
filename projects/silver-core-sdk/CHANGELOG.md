@@ -16,6 +16,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.97.0 — 2026-07-28
+
+**导出权威 token 估算器 + 内建工具输出上限**(黑池转派需求 2026-07-28
+「从包入口导出 estimateTextTokens 与 MAX_READ_OUTPUT_CHARS」,与
+`buildSystemPromptParts` / `enumerateBuiltinToolMetadata`(ADR 0014)同类:
+内部已有实现,只差入口一行 export)。此前黑池「上下文构成」面板对尚未成为请求的
+素材(草稿输入 / 待注入记忆 / 知识库候选)只能手工镜像一份同算法,靠注释里的
+「改 SDK 该文件时须同步」人肉契约对齐——必然漂移。现从包入口正规导出,黑池可删镜像。
+
+- 新导出 `estimateTextTokens` / `estimateMessagesTokens` /
+  `estimateToolDefsTokens`(`engine/tokens.ts` 原实现,零改动零副作用):
+  CJK 码点 ~1 token/字、其余按 UTF-16 码元 /4 向上取整;每消息 +8 / 每块 +3
+  结构开销随 messages 级导出一并拿到,`classifyTranscript` 的手抄口径同样可删。
+- 新导出 `MAX_READ_OUTPUT_CHARS`(50000,Read/WebFetch 共用)与黑池更希望的
+  只读集合 `TOOL_OUTPUT_CAPS`(frozen:`read` 50000 头保留 / `bash` 30000
+  尾保留 / `webFetch` 50000 / `grepHeadLimit` 250 条目数;每值均 import 自
+  各工具实际执行的常量,不重抄字面量,工具改上限则集合同 commit 跟随)。
+  语义与单位差异记在 `tools/output-caps.ts` 模块文档,属契约一部分。
+- 为此把 `bash.ts` `STREAM_CAP_CHARS` / `grep.ts` `DEFAULT_HEAD_LIMIT` /
+  `webfetch.ts` `MAX_OUTPUT_CHARS` 加了 `export`(值与行为不变)。
+- 验收测试 `tests/output-caps-export.test.ts`:入口导出与内部实现同一函数引用
+  (最强防漂移断言)+ 样例值 + 集合与各权威常量逐键相等 + frozen。
+- 版本注:原拟 0.95.0,两度与同日先并入 main 的审计波次(#867 / #868)撞号,定 0.97.0。
+
 ## 0.96.0 — 2026-07-28
 
 Audit wave 8 (fresh lenses over already-hardened surfaces): 6 further verified

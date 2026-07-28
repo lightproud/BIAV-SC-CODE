@@ -12,6 +12,14 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.97.0 — 2026-07-28
+
+**锁步对齐**(无本包运行时改动)。agent SDK 0.97.0 从包入口导出权威 token 估算器
+(`estimateTextTokens` / `estimateMessagesTokens` / `estimateToolDefsTokens`)与内建
+工具输出上限(`MAX_READ_OUTPUT_CHARS` + frozen `TOOL_OUTPUT_CAPS` 集合),黑池可删
+手工镜像——见 silver-core-sdk CHANGELOG。家族版本钟锁步(守密人 2026-07-18 裁定),
+故本包同步升位。
+
 ## 0.96.0 — 2026-07-28
 
 Audit wave 8: `LedgerDriver` could run **2x** `maxConcurrent`. A non-awaited

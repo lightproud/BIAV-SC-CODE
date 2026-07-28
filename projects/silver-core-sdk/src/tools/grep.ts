@@ -24,7 +24,9 @@ import type {
 
 const IGNORE_PATTERNS = ['**/node_modules/**', '**/.git/**'];
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
-const DEFAULT_HEAD_LIMIT = 250;
+/** Default cap on returned lines/entries (NOT characters) when the caller
+ *  passes no head_limit. Exported for TOOL_OUTPUT_CAPS (tools/output-caps.ts). */
+export const DEFAULT_HEAD_LIMIT = 250;
 const MAX_LINE_DISPLAY_CHARS = 2000;
 
 /** File-type name -> glob patterns (mirrors common ripgrep type sets). */

@@ -36,11 +36,15 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.96.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.96.0`
+**当前版本 `0.97.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.97.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.97.0（2026-07-28）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.97.0
+（从包入口导出权威 token 估算器三件与 `MAX_READ_OUTPUT_CHARS` / `TOOL_OUTPUT_CAPS`
+只读上限集合，黑池「上下文构成」面板可删手工镜像）前进，详见该包 CHANGELOG。
 
 **v0.96.0（2026-07-28）：驱动器并发上限可被翻倍**——未 await 的 `stop()`+`start()` 令两代 tick 并行各自认领满额；新增同步 `#reserved` 预留计数封窗。
 
@@ -53,11 +57,7 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 `DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` 出口删除）前进，详见该包 CHANGELOG。
 **v0.93.0（2026-07-28）：锁步对齐**（本包零运行时改动）——agent SDK 0.93.0 修复 recap 截断丢最新进度（BPT P1 活锁事故根因，`buildRecap` 改头尾双保留）并把截断纪律注册表扩到全 `src/`；家族版本钟锁步，本包同步升位。
 
-**v0.92.0（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.92.0（Workflow 改真异步启动，对该工具调用方为行为破坏性变更）前进。
-
 **v0.91.0 / v0.90.0（2026-07-27）：锁步对齐两连**——本包**零代码改动**。家族版本钟随 agent SDK 同号前进（四工具补结构化产出 + 零产出面台账守卫 · checkpoint blob 上限 T74 甲案）。
-
-**v0.89.0（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.89.0（类型面漂移检测工具化：`type-parity.mjs` 只报新漂移，首跑挖出四条「发货了却没声明」的类型缺陷）前进。
 
 **v0.88.0 / v0.87.x（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK
 0.87.0（截断纪律全家对齐）、0.87.1（嵌套路径普查）、0.88.0（处方卡型 + sessions 体检面）

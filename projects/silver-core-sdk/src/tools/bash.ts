@@ -26,7 +26,10 @@ import type {
 
 const DEFAULT_TIMEOUT_MS = 120_000;
 const MAX_TIMEOUT_MS = 600_000;
-const STREAM_CAP_CHARS = 30_000;
+/** Cap on the TOTAL characters one Bash call returns (tail-kept: when output
+ *  exceeds the cap, the EARLIEST chars are dropped and a leading marker says
+ *  how many). Exported for TOOL_OUTPUT_CAPS (tools/output-caps.ts). */
+export const STREAM_CAP_CHARS = 30_000;
 const KILL_GRACE_MS = 2_000;
 /**
  * After the direct shell exits, how long to let its stdout/stderr pipes flush

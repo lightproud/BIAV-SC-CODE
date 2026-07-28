@@ -71,11 +71,21 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.96.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.96.0`
+**当前版本 `0.97.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.97.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.97.0（2026-07-28）：导出权威 token 估算器 + 内建工具输出上限（黑池转派需求）**——
+黑池「上下文构成」面板此前对未成请求的素材（草稿输入 / 待注入记忆 / 知识库候选）只能手工
+镜像 SDK 估算算法，靠注释级「改 SDK 须同步」人肉契约对齐——必然漂移。现从包入口正规导出
+`estimateTextTokens` / `estimateMessagesTokens` / `estimateToolDefsTokens`（引用级
+re-export，与内部同一函数）与 `MAX_READ_OUTPUT_CHARS`（50000）+ frozen `TOOL_OUTPUT_CAPS`
+（read 50000 / bash 30000 尾保留 / webFetch 50000 / grepHeadLimit 250 条目数；每值 import
+自各工具实际执行的常量，不重抄字面量）。与 `buildSystemPromptParts`（ADR 0014/0022）同类：
+内部已有实现、只差入口 export。验收测试 `tests/output-caps-export.test.ts`。原拟 0.95.0，
+两度与同日审计波次（#867 / #868）撞号，定 0.97.0。
 
 **v0.96.0（2026-07-28）：审计第八波（换镜复扫）**——本包再修 6 处：query 层两处 user 轮叠加
 （`roles must alternate` 400 且重试不可恢复）· MCP HTTP 并发请求相互吃掉会话过期恢复守卫 ·
