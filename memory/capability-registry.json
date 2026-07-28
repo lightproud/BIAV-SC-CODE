@@ -611,7 +611,7 @@
       "path": "scripts/kb_coverage.py",
       "summary": "知识文件清点（KB 覆盖哨兵与 OKF 生成器的共用真相源）。",
       "planes": [
-        "import"
+        "workflow"
       ],
       "status": "live"
     },
@@ -685,7 +685,8 @@
       "summary": "mcp_server.py — BIAV-SC Memory MCP Server",
       "planes": [
         "cli",
-        "mcp"
+        "mcp",
+        "workflow"
       ],
       "status": "live",
       "note_zh": "MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。"
@@ -705,7 +706,7 @@
       "path": "scripts/news_bridge.py",
       "summary": "news_bridge.py — 顶层脚本层访问采集层模块的**唯一桥**（import-only 库）。",
       "planes": [
-        "import"
+        "workflow"
       ],
       "status": "live"
     },
@@ -714,7 +715,7 @@
       "path": "scripts/okf_frontmatter.py",
       "summary": "okf_frontmatter.py — OKF frontmatter 读写单一真相源（import-only 库）。",
       "planes": [
-        "import"
+        "workflow"
       ],
       "status": "live"
     },
@@ -733,7 +734,8 @@
       "summary": "合并前门禁 —— 把「CI 会跑什么」从凭记忆升格为算出来。",
       "planes": [
         "cli",
-        "command"
+        "command",
+        "workflow"
       ],
       "status": "live"
     },
@@ -782,7 +784,7 @@
       "path": "scripts/silver_aliases.py",
       "summary": "silver_aliases.py — 厚锚别名侧表读取层（import-only 库）。",
       "planes": [
-        "import"
+        "workflow"
       ],
       "status": "live"
     },
@@ -862,7 +864,8 @@
       "path": "projects/news/scripts/archive_layout.py",
       "summary": "archive_layout.py — 归档布局单一真相源（SSOT）。",
       "planes": [
-        "command"
+        "command",
+        "workflow"
       ],
       "status": "live"
     },

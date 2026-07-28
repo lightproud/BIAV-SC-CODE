@@ -163,7 +163,7 @@
   `scripts/kb_ab.py`
 - **`kb_anchor.py`** _[活:mcp]_ — kb_anchor.py — 先锚后扩合流（§八 8.3「厚锚撑向量」检索侧合流，import-only 库）。  
   `scripts/kb_anchor.py`
-- **`kb_coverage.py`** _[活:import]_ — 知识文件清点（KB 覆盖哨兵与 OKF 生成器的共用真相源）。  
+- **`kb_coverage.py`** _[活:workflow]_ — 知识文件清点（KB 覆盖哨兵与 OKF 生成器的共用真相源）。  
   `scripts/kb_coverage.py`
 - **`kb_eval.py`** _[活:cli]_ — kb_eval.py — 知识库需求侧有效性评分器（北极星评判体系 #1，黄金问题集）。  
   `scripts/kb_eval.py`
@@ -179,17 +179,17 @@
   `scripts/kb_telemetry.py`
 - **`kb_vector.py`** _[活:mcp]_ — kb_vector.py — 银芯向量检索腿（长尾语义召回后端，import-only 库）。  
   `scripts/kb_vector.py`
-- **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
+- **`mcp_server.py`** _[活:cli+mcp+workflow]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
 - **`memory_freshness.py`** _[活:cli+command]_ — memory_freshness.py — 记忆档案保鲜巡检器（确定性零 ML 零常驻）。  
   `scripts/memory_freshness.py`
-- **`news_bridge.py`** _[活:import]_ — news_bridge.py — 顶层脚本层访问采集层模块的**唯一桥**（import-only 库）。  
+- **`news_bridge.py`** _[活:workflow]_ — news_bridge.py — 顶层脚本层访问采集层模块的**唯一桥**（import-only 库）。  
   `scripts/news_bridge.py`
-- **`okf_frontmatter.py`** _[活:import]_ — okf_frontmatter.py — OKF frontmatter 读写单一真相源（import-only 库）。  
+- **`okf_frontmatter.py`** _[活:workflow]_ — okf_frontmatter.py — OKF frontmatter 读写单一真相源（import-only 库）。  
   `scripts/okf_frontmatter.py`
 - **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
-- **`premerge_gate.py`** _[活:cli+command]_ — 合并前门禁 —— 把「CI 会跑什么」从凭记忆升格为算出来。  
+- **`premerge_gate.py`** _[活:cli+command+workflow]_ — 合并前门禁 —— 把「CI 会跑什么」从凭记忆升格为算出来。  
   `scripts/premerge_gate.py`
 - **`refresh_claude_code_prompts.py`** _[活:cli+workflow]_ — Refresh the archived Claude Code system-prompts reference from upstream.  
   `scripts/refresh_claude_code_prompts.py`
@@ -199,7 +199,7 @@
   `scripts/restore_release_data.py`
 - **`sdk_substantive_versions.py`** _[活:cli]_ — 哪些版本对**你这个包的消费方**有实质变更（T70，守密人 2026-07-26 裁定）。  
   `scripts/sdk_substantive_versions.py`
-- **`silver_aliases.py`** _[活:import]_ — silver_aliases.py — 厚锚别名侧表读取层（import-only 库）。  
+- **`silver_aliases.py`** _[活:workflow]_ — silver_aliases.py — 厚锚别名侧表读取层（import-only 库）。  
   `scripts/silver_aliases.py`
 - **`silver_memory_tools.py`** _[活:cli+mcp]_ — 记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。  
   `scripts/silver_memory_tools.py`
@@ -218,7 +218,7 @@
   `projects/news/scripts/archive_discord.py`
 - **`archive_engine.py`** _[活:cli+workflow]_ — 通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除  
   `projects/news/scripts/archive_engine.py`
-- **`archive_layout.py`** _[活:command]_ — archive_layout.py — 归档布局单一真相源（SSOT）。  
+- **`archive_layout.py`** _[活:command+workflow]_ — archive_layout.py — 归档布局单一真相源（SSOT）。  
   `projects/news/scripts/archive_layout.py`
 - **`archive_platforms.py`** _[活:cli+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期落全量档案层。  
   `projects/news/scripts/archive_platforms.py`
