@@ -83,6 +83,12 @@ export function estimateContentTokens(
   if (typeof content === 'string') {
     return estimateTextTokens(content);
   }
+  // A non-array content (`null` is the common one — an OpenAI-shaped tool-call
+  // turn writes `content: null`, and a JSON round-trip turns an absent content
+  // into null too) used to reach `for...of null` and throw a TypeError out of
+  // the WHOLE history estimate — i.e. out of the compaction trigger and out of
+  // the public estimateMessagesTokens. Contribute nothing instead of crashing.
+  if (!Array.isArray(content)) return 0;
   let total = 0;
   for (const block of content) {
     total += PER_BLOCK_OVERHEAD_TOKENS + estimateBlockTokens(block);
@@ -126,10 +132,12 @@ function estimateBlockTokens(block: ContentBlockParam): number {
 function estimateToolResultTokens(
   content: import('../types.js').ToolResultBlockParam['content'],
 ): number {
-  if (content === undefined) return 0;
   if (typeof content === 'string') {
     return estimateTextTokens(content);
   }
+  // undefined, `null`, or any non-array shape: nothing to charge, and never a
+  // `for...of null` TypeError (same round-trip hazard as estimateContentTokens).
+  if (!Array.isArray(content)) return 0;
   let total = 0;
   for (const part of content) {
     if (part.type === 'text') {
@@ -166,6 +174,10 @@ const messageTokenCache = new WeakMap<
 
 function contentLen(content: APIMessageParam['content']): number {
   if (typeof content === 'string') return content.length;
+  // Same non-array guard as estimateContentTokens: this validator runs FIRST
+  // for every message, so an unguarded `null` content crashed here before the
+  // estimator itself could absorb it.
+  if (!Array.isArray(content)) return 0;
   // Block count alone missed a same-count in-place TEXT rewrite (a 4-char
   // block growing to 4,000 chars kept returning the stale ~1-token estimate).
   // Fingerprint per-block text sizes too — still O(blocks) per validation,

@@ -200,8 +200,14 @@ export type MirroringConfig = {
 /** Internal sentinel: a mirror append attempt exceeded its timeout budget. */
 class MirrorTimeoutError extends Error {
   override name = 'MirrorTimeoutError';
-  constructor() {
-    super('external sessionStore operation timed out');
+  /** The budget is the whole point of this error: on the append path the text
+   *  is what a host sees (the `mirror_error` system event carries it and
+   *  nothing else), and without the number — plus the knob that sets it — a
+   *  slow external store reads as "timed out" with nothing to turn. */
+  constructor(timeoutMs: number) {
+    super(
+      `external sessionStore operation timed out after ${timeoutMs}ms (options.loadTimeoutMs)`,
+    );
   }
 }
 
@@ -522,7 +528,10 @@ export class MirroringSessionStore implements InternalTranscriptStore {
    */
   private withTimeout<T>(p: Promise<T>): Promise<T> {
     return new Promise<T>((resolve, reject) => {
-      const timer = setTimeout(() => reject(new MirrorTimeoutError()), this.loadTimeoutMs);
+      const timer = setTimeout(
+        () => reject(new MirrorTimeoutError(this.loadTimeoutMs)),
+        this.loadTimeoutMs,
+      );
       if (typeof timer.unref === 'function') timer.unref();
       p.then(
         (v) => {
