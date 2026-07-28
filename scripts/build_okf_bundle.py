@@ -986,7 +986,7 @@ function sim(){
   for(const n of N){let dx=W/2-n.x,dy=H/2-n.y;n.vx+=dx*0.0008;n.vy+=dy*0.0008;
     if(n!==(drag&&drag.node)){n.x+=n.vx;n.y+=n.vy;}
     mv=Math.max(mv,Math.abs(n.vx)+Math.abs(n.vy));}
-  settled = mv < 0.05;  // 收敛判据：全场最大速度低于半像素/10帧
+  settled = mv < 0.1;  // 收敛判据：全场最大速度 <0.1px/帧（≈6px/秒，肉眼静止）
 }
 function draw(){
   ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);
