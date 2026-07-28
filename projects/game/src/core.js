@@ -424,6 +424,10 @@
   }
 
   function triggerLevelUp(state) {
+    // 终局状态（won / lost）已判定，不得被升级态覆盖：
+    // Boss 阵亡同帧其 200 灵知落在玩家身上被即时拾取 → 升级会把 won 冲掉，
+    // 结算界面永不弹出，而 bossSpawned 已置位、Boss 已消失 → 该局再无胜利可能。
+    if (state.status !== 'playing' && state.status !== 'levelup') return;
     state.pendingUpgrades = rollUpgrades(state);
     if (state.pendingUpgrades.length) state.status = 'levelup';
   }

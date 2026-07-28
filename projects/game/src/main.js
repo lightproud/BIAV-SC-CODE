@@ -37,6 +37,7 @@
   // ---------- 开始一局 ----------
   function startGame(charId) {
     state = Core.createGame(config, charId, (Date.now() & 0xffff) || 1, WORLD);
+    if (input && input.destroy) input.destroy(); // 撤下上一局的键盘监听，防止逐局累积
     input = Input.createInput();
     $('select').classList.add('hidden');
     $('end').classList.add('hidden');

@@ -16,8 +16,9 @@ not merely *reading* a glossary for vocabulary (any skill can do that in one lin
 "glossary + ADR" idea onto the existing knowledge layer:
 
 - **术语 (glossary)** → `memory/morimens-context.md` 「核心术语」table for
-  worldview/game terms; the term tables in `CLAUDE.md §5` for system/architecture
-  terms. A sub-project's own jargon goes in its `projects/<x>/CONTEXT.md`.
+  worldview/game terms; the architecture tables in `CLAUDE.md §1` for system/architecture
+  terms (§5 收敛为路由器后不再承载术语表，别往那里写). A sub-project's own jargon goes
+  in its `projects/<x>/CONTEXT.md`.
 - **决策 (decisions, the ADR equivalent)** → `memory/decisions.md`「当前有效决策」table.
 
 ## During the session
