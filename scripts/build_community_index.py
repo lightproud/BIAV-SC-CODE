@@ -200,11 +200,9 @@ def _emit_platform(d):
 
 
 def iter_records(max_files: int | None = None):
-    seen = 0
-    for name, d in _sources():
+    for seen, (name, d) in enumerate(_sources()):
         if max_files and seen >= max_files:
             return
-        seen += 1
         if name == "discord":
             emitter = _emit_discord(d)
         elif name.endswith("_comments"):

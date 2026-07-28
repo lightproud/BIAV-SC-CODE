@@ -50,8 +50,7 @@ class TestOpenArchiveText(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             gz = Path(tmp) / 'c.jsonl.gz'
             with open(gz, 'wb') as f:
-                for mid in ('1', '2'):
-                    f.write(gzip.compress((_msg(mid) + '\n').encode('utf-8')))
+                f.writelines(gzip.compress((_msg(mid) + '\n').encode('utf-8')) for mid in ('1', '2'))
             with archive_layout.open_archive_text(gz) as f:
                 lines = [ln for ln in f if ln.strip()]
             self.assertEqual(len(lines), 2)

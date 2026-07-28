@@ -26,6 +26,7 @@ import argparse
 import json
 from collections import Counter
 from pathlib import Path
+from datetime import UTC
 
 REPO = Path(__file__).resolve().parent.parent
 # 借阅记录唯一落点（git-tracked，按日一文件，跨会话累计；2026-07-11 方案甲）。
@@ -46,9 +47,9 @@ def log_call(tool: str, query: str, result_ids: list[str] | None = None,
              log_path: Path | None = None) -> None:
     """追一条使用记录（best-effort，绝不抛出）。只该由 MCP 消费边界调用。"""
     try:
-        from datetime import datetime, timezone
+        from datetime import datetime
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         ids = list(result_ids or [])
         rec = {
             "ts": now.isoformat(),

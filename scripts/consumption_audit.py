@@ -40,8 +40,8 @@ SELF_PATHS = {
 }
 
 # 产出声明：工作流里 `git add <路径...>` 与 `gh release upload <tag>`。
-GIT_ADD_RE = re.compile(r"^\s*git add\s+(.+)$", re.M)
-RELEASE_RE = re.compile(r"gh release upload\s+\"?([A-Za-z][\w.-]*)\"?", re.M)
+GIT_ADD_RE = re.compile(r"^\s*git add\s+(.+)$", re.MULTILINE)
+RELEASE_RE = re.compile(r"gh release upload\s+\"?([A-Za-z][\w.-]*)\"?", re.MULTILINE)
 # 消费面：按文件类型分档，判「谁在读」时权重不同（代码 > 工作流 > 档案）。
 CONSUMER_GLOBS = {
     "script": ["scripts/**/*.py", "projects/**/scripts/**/*.py", "projects/**/src/**/*.mjs"],

@@ -12,9 +12,8 @@ Tested and working:
 
 import logging
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
-from typing import List, Dict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # 时间归一单一真源（H4）
@@ -43,7 +42,7 @@ def _parse_relative_time(text: str) -> tuple[str, bool]:
 # 这些函数只依赖被传入对象的 query_selector / inner_text / get_attribute 接口，
 # 不触碰网络或浏览器，保持原 fetch_* 内联逻辑的行为不变。
 
-def _parse_weibo_article(article) -> Dict:
+def _parse_weibo_article(article) -> dict:
     """从一个 Weibo article 元素解析出 item dict；不合格返回 None。"""
     text_el = article.query_selector('.weibo-text, .content, p')
     if not text_el:
@@ -81,7 +80,7 @@ def _parse_weibo_article(article) -> Dict:
     return item
 
 
-def _parse_taptap_card(card) -> Dict:
+def _parse_taptap_card(card) -> dict:
     """从一个 TapTap card 元素解析出 item dict；无有效 /app/ 链接返回 None。"""
     title_el = card.query_selector('.app-name, .title, h3')
     title = title_el.inner_text().strip() if title_el else ''
@@ -96,7 +95,7 @@ def _parse_taptap_card(card) -> Dict:
             'title': f'[TapTap] {title or "忘却前夜"}',
             'summary': '',
             'source': 'taptap',
-            'time': datetime.now(timezone.utc).isoformat(),
+            'time': datetime.now(UTC).isoformat(),
             'time_is_approximate': True,
             'url': href,
             'engagement': 0,
@@ -107,7 +106,7 @@ def _parse_taptap_card(card) -> Dict:
     return None
 
 
-def _parse_arca_row(row, mode: str) -> Dict:
+def _parse_arca_row(row, mode: str) -> dict:
     """从一个 Arca.live .vrow 元素解析出 item dict；无标题返回 None。"""
     title_el = row.query_selector('.title')
     time_el = row.query_selector('.col-time')
@@ -143,7 +142,7 @@ def _parse_arca_row(row, mode: str) -> Dict:
     return item
 
 
-def _parse_ruliweb_link(link) -> Dict:
+def _parse_ruliweb_link(link) -> dict:
     """从一个 Ruliweb a.subject_link 元素解析出 item dict；无标题返回 None。"""
     title = link.inner_text().strip()
     href = link.get_attribute('href') or ''
@@ -155,7 +154,7 @@ def _parse_ruliweb_link(link) -> Dict:
         'title': title[:100],
         'summary': '',
         'source': 'ruliweb',
-        'time': datetime.now(timezone.utc).isoformat(),
+        'time': datetime.now(UTC).isoformat(),
         'time_is_approximate': True,
         'url': href,
         'engagement': 0,
@@ -167,7 +166,7 @@ def _parse_ruliweb_link(link) -> Dict:
     }
 
 
-def _parse_bahamut_row(row) -> Dict:
+def _parse_bahamut_row(row) -> dict:
     """从一个 Bahamut 搜索结果行元素解析出 item dict；无标题返回 None。"""
     title_el = row.query_selector('.b-list__main__title, a[href*="C.php"]')
     if not title_el:
@@ -182,7 +181,7 @@ def _parse_bahamut_row(row) -> Dict:
         'title': title[:100],
         'summary': '',
         'source': 'bahamut',
-        'time': datetime.now(timezone.utc).isoformat(),
+        'time': datetime.now(UTC).isoformat(),
         'time_is_approximate': True,
         'url': href,
         'engagement': 0,
@@ -194,7 +193,7 @@ def _parse_bahamut_row(row) -> Dict:
     }
 
 
-def fetch_weibo_playwright() -> List[Dict]:
+def fetch_weibo_playwright() -> list[dict]:
     """
     Fetch Weibo search results using mobile version.
     Tested: 15 articles found with content.
@@ -223,7 +222,12 @@ def fetch_weibo_playwright() -> List[Dict]:
                     item = _parse_weibo_article(article)
                     if item is not None:
                         items.append(item)
-                except Exception:
+                # 逐条解析是 best-effort（页面结构常变，单条失败不该毁掉整轮），但
+                # 原先的裸 `except Exception: continue` 连解析器**自己写崩**都一起
+                # 吞掉——结构改版导致的全军覆没与「今天就是没几条」长得一模一样。
+                # 照旧不中断，但出声：条数对不上时日志里有据可查。
+                except Exception as exc:
+                    logger.debug(f'跳过一条解析失败的article: {type(exc).__name__}: {exc}')
                     continue
 
             browser.close()
@@ -234,7 +238,7 @@ def fetch_weibo_playwright() -> List[Dict]:
     return items
 
 
-def fetch_taptap_playwright() -> List[Dict]:
+def fetch_taptap_playwright() -> list[dict]:
     """
     Fetch TapTap game page.
     Note: Direct app page returns 405, try search instead.
@@ -264,7 +268,12 @@ def fetch_taptap_playwright() -> List[Dict]:
                     item = _parse_taptap_card(card)
                     if item is not None:
                         items.append(item)
-                except Exception:
+                # 逐条解析是 best-effort（页面结构常变，单条失败不该毁掉整轮），但
+                # 原先的裸 `except Exception: continue` 连解析器**自己写崩**都一起
+                # 吞掉——结构改版导致的全军覆没与「今天就是没几条」长得一模一样。
+                # 照旧不中断，但出声：条数对不上时日志里有据可查。
+                except Exception as exc:
+                    logger.debug(f'跳过一条解析失败的card: {type(exc).__name__}: {exc}')
                     continue
 
             browser.close()
@@ -277,7 +286,7 @@ def fetch_taptap_playwright() -> List[Dict]:
 
 # ── Korean platforms ──────────────────────────────────────────────────────
 
-def fetch_arca_live_playwright() -> List[Dict]:
+def fetch_arca_live_playwright() -> list[dict]:
     """
     Fetch Arca.live forgettingeve channel via Playwright (bypasses Cloudflare).
     """
@@ -322,7 +331,7 @@ def fetch_arca_live_playwright() -> List[Dict]:
     return items
 
 
-def fetch_ruliweb_playwright() -> List[Dict]:
+def fetch_ruliweb_playwright() -> list[dict]:
     """
     Fetch Ruliweb search results via Playwright.
     """
@@ -364,7 +373,7 @@ def fetch_ruliweb_playwright() -> List[Dict]:
 
 # ── Japanese platforms ────────────────────────────────────────────────────
 
-def fetch_bahamut_playwright() -> List[Dict]:
+def fetch_bahamut_playwright() -> list[dict]:
     """
     Fetch Bahamut (gamer.com.tw) search results via Playwright.
     """

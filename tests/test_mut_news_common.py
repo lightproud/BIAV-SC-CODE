@@ -10,7 +10,7 @@ Hermetic：socket / requests / time.sleep 全部打桩，零网络。
 Imports via PACKAGE path so mutmut's trampoline keys match.
 """
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from typing import ClassVar
 import pytest
 
@@ -28,7 +28,7 @@ def test_strip_html():
     assert nc.strip_html('plain') == 'plain'
 
 
-@pytest.mark.parametrize('raw,masked', [
+@pytest.mark.parametrize(('raw', 'masked'), [
     ('https://x/api?key=SECRET&q=1', 'https://x/api?key=***&q=1'),
     ('https://x?api_key=abc', 'https://x?api_key=***'),
     ('https://x?access_token=t.t-t', 'https://x?access_token=***'),
@@ -52,7 +52,7 @@ def _close(iso, expected_dt, tol=8):
 
 
 def _now():
-    return datetime.now(timezone.utc)
+    return datetime.now(UTC)
 
 
 def test_prt_empty_is_approximate():
@@ -77,7 +77,7 @@ def test_prt_iso_passthrough_with_z():
     assert (iso, approx) == ('2026-07-11T15:00:00+00:00', False)
 
 
-@pytest.mark.parametrize('text,delta', [
+@pytest.mark.parametrize(('text', 'delta'), [
     ('刚刚', timedelta()),
     ('5分钟前', timedelta(minutes=5)),
     ('3小时前', timedelta(hours=3)),
@@ -169,13 +169,13 @@ def _fake_gai(*addrs, fail=False):
     return gai
 
 
-@pytest.mark.parametrize('addrs,ok', [
+@pytest.mark.parametrize(('addrs', 'ok'), [
     (('93.184.216.34',), True),
     (('10.0.0.5',), False),                      # 私网
     (('127.0.0.1',), False),                     # 环回
     (('169.254.1.1',), False),                   # 链路本地
     (('224.0.0.1',), False),                     # 多播
-    (('0.0.0.0',), False),                       # 未指定
+    (('0.0.0.0',), False),  # noqa: S104  这是 SSRF 守卫的**被测输入**，不是监听地址
     (('93.184.216.34', '10.0.0.5'), False),      # 任一不安全即拒（AAAA 混入）
     (('2606:2800:220:1::1',), True),             # 公网 v6
     (('fe80::1',), False),                       # v6 链路本地
@@ -236,7 +236,7 @@ class _FakeSession:
         return _FakeSession.queue.pop(0)
 
 
-@pytest.fixture()
+@pytest.fixture
 def fake_session(monkeypatch):
     _FakeSession.queue = []
     _FakeSession.calls = []
@@ -307,7 +307,7 @@ class _OkResp:
         pass
 
 
-@pytest.fixture()
+@pytest.fixture
 def retry_env(monkeypatch):
     _RetrySession.outcomes = []
     _RetrySession.calls = []
@@ -591,7 +591,7 @@ class _FrozenDT(datetime):
         return cls._frozen
 
 
-@pytest.fixture()
+@pytest.fixture
 def frozen_now(monkeypatch):
     def freeze(dt):
         _FrozenDT._frozen = dt
@@ -601,7 +601,7 @@ def frozen_now(monkeypatch):
 
 
 def test_prt_month_day_dot_exact(frozen_now):
-    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 123456, tzinfo=timezone.utc))
+    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 123456, tzinfo=UTC))
     # 过去的 MM.DD → 当年精确零点（钉 month/day 映射与 hour/min/sec/µs 全置零）
     assert nc.parse_relative_time('3.5') == ('2026-03-05T00:00:00+00:00', False)
     # 未来的 MM.DD → 回退恰一年
@@ -610,7 +610,7 @@ def test_prt_month_day_dot_exact(frozen_now):
 
 def test_prt_month_day_dash_slash_exact(frozen_now):
     # 短横 / 斜线形态此前漏测（首跑 m=None 变异存活的病根）
-    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 123456, tzinfo=timezone.utc))
+    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 123456, tzinfo=UTC))
     assert nc.parse_relative_time('3-5') == ('2026-03-05T00:00:00+00:00', False)
     assert nc.parse_relative_time('03/05') == ('2026-03-05T00:00:00+00:00', False)
     assert nc.parse_relative_time('12-31') == ('2025-12-31T00:00:00+00:00', False)
@@ -619,13 +619,13 @@ def test_prt_month_day_dash_slash_exact(frozen_now):
 
 def test_prt_month_day_equal_boundary_no_rollback(frozen_now):
     # dt == now 恰相等：> 判定不回退（>= 变异体在此翻车）
-    frozen_now(datetime(2026, 7, 11, 0, 0, 0, 0, tzinfo=timezone.utc))
+    frozen_now(datetime(2026, 7, 11, 0, 0, 0, 0, tzinfo=UTC))
     assert nc.parse_relative_time('7.11') == ('2026-07-11T00:00:00+00:00', False)
     assert nc.parse_relative_time('7-11') == ('2026-07-11T00:00:00+00:00', False)
 
 
 def test_prt_hhmm_exact(frozen_now):
-    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 987654, tzinfo=timezone.utc))
+    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 987654, tzinfo=UTC))
     # 过去时刻 → 当日精确到分（sec/µs 全置零）
     assert nc.parse_relative_time('09:15') == ('2026-07-11T09:15:00+00:00', False)
     # 未来时刻 → 回退恰一天
@@ -633,13 +633,13 @@ def test_prt_hhmm_exact(frozen_now):
 
 
 def test_prt_hhmm_equal_boundary_no_rollback(frozen_now):
-    frozen_now(datetime(2026, 7, 11, 10, 20, 0, 0, tzinfo=timezone.utc))
+    frozen_now(datetime(2026, 7, 11, 10, 20, 0, 0, tzinfo=UTC))
     assert nc.parse_relative_time('10:20') == ('2026-07-11T10:20:00+00:00', False)
 
 
 def test_prt_seconds_ago_exact(frozen_now):
     # 击杀 delta_map 'second' 键变异：此前英文相对时间漏测 seconds 单位
-    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 0, tzinfo=timezone.utc))
+    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 0, tzinfo=UTC))
     assert nc.parse_relative_time('30 seconds ago') == \
         ('2026-07-11T10:20:00+00:00', False)
     assert nc.parse_relative_time('2 weeks ago') == \

@@ -15,7 +15,7 @@ import json
 import logging
 import re
 import sys
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from typing import Any
 
@@ -179,7 +179,7 @@ def _parse_topic_api_body(body: dict) -> list[dict]:
             ts = int(ts) if ts.isdigit() else 0
         if ts > 1e12:  # 毫秒转秒
             ts = ts // 1000
-        created = datetime.fromtimestamp(ts, tz=timezone.utc) if ts else datetime.now(timezone.utc)
+        created = datetime.fromtimestamp(ts, tz=UTC) if ts else datetime.now(UTC)
 
         like_count = _parse_num(item.get("like_count") or item.get("likes") or item.get("vote_count") or 0)
         comment_count = _parse_num(item.get("comment_count") or item.get("comments") or item.get("reply_count") or 0)
@@ -380,7 +380,7 @@ def _parse_review_api_body(body: dict) -> list[dict]:
             ts = int(ts) if ts.isdigit() else 0
         if ts > 1e12:
             ts = ts // 1000
-        created = datetime.fromtimestamp(ts, tz=timezone.utc) if ts else datetime.now(timezone.utc)
+        created = datetime.fromtimestamp(ts, tz=UTC) if ts else datetime.now(UTC)
 
         like_count = _parse_num(item.get("like_count") or item.get("likes") or 0)
 
@@ -536,7 +536,7 @@ def _raw_to_item(raw: dict, source: str, cutoff: datetime) -> dict | None:
     try:
         created = datetime.fromisoformat(raw["created"])
     except Exception:
-        created = datetime.now(timezone.utc)
+        created = datetime.now(UTC)
     if created < cutoff:
         return None
 
@@ -610,7 +610,7 @@ async def collect(
     from playwright.async_api import async_playwright
 
     if cutoff is None:
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
 
     topic_raw: list[dict] = []
     review_raw: list[dict] = []
@@ -667,7 +667,7 @@ async def collect(
     taptap_state.update({
         "last_post_id": new_last_post_id,
         "last_review_id": new_last_review_id,
-        "last_run": datetime.now(timezone.utc).isoformat(),
+        "last_run": datetime.now(UTC).isoformat(),
     })
     state["taptap"] = taptap_state
     _save_state(state)

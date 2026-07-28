@@ -1,7 +1,7 @@
 import os
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -93,32 +93,32 @@ class TestColdStartBackfill(unittest.TestCase):
 class TestSnowflakeHelpers(unittest.TestCase):
     def test_discord_epoch_constant(self):
         # 2015-01-01T00:00:00Z in milliseconds — the documented Discord epoch.
-        epoch = datetime(2015, 1, 1, tzinfo=timezone.utc)
+        epoch = datetime(2015, 1, 1, tzinfo=UTC)
         self.assertEqual(DISCORD_EPOCH_MS, int(epoch.timestamp() * 1000))
 
     def test_epoch_maps_to_snowflake_zero(self):
-        epoch = datetime(2015, 1, 1, tzinfo=timezone.utc)
+        epoch = datetime(2015, 1, 1, tzinfo=UTC)
         self.assertEqual(_sf_from_dt(epoch), "0")
 
     def test_snowflake_zero_maps_to_epoch(self):
-        self.assertEqual(_dt_from_sf("0"), datetime(2015, 1, 1, tzinfo=timezone.utc))
+        self.assertEqual(_dt_from_sf("0"), datetime(2015, 1, 1, tzinfo=UTC))
 
     def test_pre_epoch_datetime_clamps_to_zero(self):
         # Datetimes before the Discord epoch must not produce negative snowflakes.
-        self.assertEqual(_sf_from_dt(datetime(2014, 6, 1, tzinfo=timezone.utc)), "0")
+        self.assertEqual(_sf_from_dt(datetime(2014, 6, 1, tzinfo=UTC)), "0")
 
     def test_round_trip_millisecond_precision(self):
         # dt -> snowflake -> dt is exact for millisecond-precision datetimes.
-        dt = datetime(2023, 7, 15, 12, 34, 56, 789000, tzinfo=timezone.utc)
+        dt = datetime(2023, 7, 15, 12, 34, 56, 789000, tzinfo=UTC)
         self.assertEqual(_dt_from_sf(_sf_from_dt(dt)), dt)
 
     def test_round_trip_accepts_int_snowflake(self):
-        dt = datetime(2026, 6, 10, tzinfo=timezone.utc)
+        dt = datetime(2026, 6, 10, tzinfo=UTC)
         self.assertEqual(_dt_from_sf(int(_sf_from_dt(dt))), dt)
 
     def test_snowflake_low_22_bits_are_worker_bits(self):
         # Worker/process/increment bits below bit 22 must not change the timestamp.
-        dt = datetime(2024, 1, 1, tzinfo=timezone.utc)
+        dt = datetime(2024, 1, 1, tzinfo=UTC)
         sf = int(_sf_from_dt(dt))
         self.assertEqual(_dt_from_sf(sf + (1 << 22) - 1), dt)
 
@@ -126,13 +126,13 @@ class TestSnowflakeHelpers(unittest.TestCase):
 class TestMonthBounds(unittest.TestCase):
     def test_regular_month(self):
         after_sf, before_sf = _month_bounds(2026, 3)
-        self.assertEqual(_dt_from_sf(after_sf), datetime(2026, 3, 1, tzinfo=timezone.utc))
-        self.assertEqual(_dt_from_sf(before_sf), datetime(2026, 4, 1, tzinfo=timezone.utc))
+        self.assertEqual(_dt_from_sf(after_sf), datetime(2026, 3, 1, tzinfo=UTC))
+        self.assertEqual(_dt_from_sf(before_sf), datetime(2026, 4, 1, tzinfo=UTC))
 
     def test_december_rolls_over_to_next_year(self):
         after_sf, before_sf = _month_bounds(2025, 12)
-        self.assertEqual(_dt_from_sf(after_sf), datetime(2025, 12, 1, tzinfo=timezone.utc))
-        self.assertEqual(_dt_from_sf(before_sf), datetime(2026, 1, 1, tzinfo=timezone.utc))
+        self.assertEqual(_dt_from_sf(after_sf), datetime(2025, 12, 1, tzinfo=UTC))
+        self.assertEqual(_dt_from_sf(before_sf), datetime(2026, 1, 1, tzinfo=UTC))
 
     def test_leap_year_february_spans_29_days(self):
         after_sf, before_sf = _month_bounds(2024, 2)

@@ -23,7 +23,7 @@ import os
 import sys
 import time
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 from collections import defaultdict
 
@@ -71,14 +71,14 @@ def _sf_from_dt(dt: datetime) -> str:
 def _dt_from_sf(snowflake: str | int) -> datetime:
     """Extract UTC datetime from a Discord snowflake ID."""
     ts_ms = (int(snowflake) >> 22) + DISCORD_EPOCH_MS
-    return datetime.fromtimestamp(ts_ms / 1000, tz=timezone.utc)
+    return datetime.fromtimestamp(ts_ms / 1000, tz=UTC)
 
 
 def _month_bounds(year: int, month: int):
     """Return (after_sf, before_sf) snowflake strings bracketing a calendar month."""
-    start = datetime(year, month, 1, tzinfo=timezone.utc)
-    end = datetime(year + 1, 1, 1, tzinfo=timezone.utc) if month == 12 \
-        else datetime(year, month + 1, 1, tzinfo=timezone.utc)
+    start = datetime(year, month, 1, tzinfo=UTC)
+    end = datetime(year + 1, 1, 1, tzinfo=UTC) if month == 12 \
+        else datetime(year, month + 1, 1, tzinfo=UTC)
     return _sf_from_dt(start), _sf_from_dt(end)
 
 
@@ -102,7 +102,8 @@ def request_with_retry(method, url, max_retries=3, backoff_base=2, **kwargs):
 
     for attempt in range(max_retries + 1):
         try:
-            resp = requests.request(method, url, **kwargs)
+            # S113 误报：上方 `kwargs.setdefault('timeout', 15)` 已保证必带超时。
+            resp = requests.request(method, url, **kwargs)  # noqa: S113
             if resp.status_code == 429:
                 retry_after = max(resp.json().get('retry_after', 5), 2.0)
                 logger.warning(f'Rate limited, waiting {retry_after}s...')
@@ -188,7 +189,7 @@ class DiscordArchiver:
         return {'channels': {}, 'historical_month': None, 'last_run': None}
 
     def _save_state(self):
-        self.state['last_run'] = datetime.now(timezone.utc).isoformat()
+        self.state['last_run'] = datetime.now(UTC).isoformat()
         self.state_path.parent.mkdir(parents=True, exist_ok=True)
         with open(self.state_path, 'w', encoding='utf-8') as f:
             json.dump(self.state, f, ensure_ascii=False, indent=2)
@@ -255,7 +256,7 @@ class DiscordArchiver:
         channels = self._api(f'/guilds/{self.guild_id}/channels')
         meta = {
             'guild_id': self.guild_id,
-            'updated_at': datetime.now(timezone.utc).isoformat(),
+            'updated_at': datetime.now(UTC).isoformat(),
             'channels': [
                 {
                     'id': ch['id'],
@@ -370,10 +371,10 @@ class DiscordArchiver:
         """Slim, write to JSONL, update daily stats, queue threads."""
         slim = self._slim_message(msg)
         try:
-            ts = datetime.fromisoformat(slim['timestamp'].replace('Z', '+00:00'))
+            ts = datetime.fromisoformat(slim['timestamp'])
             date_str = ts.strftime('%Y-%m-%d')
         except (ValueError, TypeError):
-            date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+            date_str = datetime.now(UTC).strftime('%Y-%m-%d')
         # H5: 仅在新写入时计入日统计，重复抓取不再膨胀 activity_daily 计数
         if self._write_msg(channel_id, date_str, slim):
             self._update_daily_stats(slim, channel_name)
@@ -383,7 +384,7 @@ class DiscordArchiver:
 
     def _update_daily_stats(self, slim: dict, channel_name: str = ''):
         try:
-            ts = datetime.fromisoformat(slim['timestamp'].replace('Z', '+00:00'))
+            ts = datetime.fromisoformat(slim['timestamp'])
         except (ValueError, TypeError):
             return
         date_str = ts.strftime('%Y-%m-%d')
@@ -540,7 +541,7 @@ class DiscordArchiver:
         if self.state.get('history_backfill_complete'):
             return
         if not self.state.get('historical_month'):
-            now = datetime.now(timezone.utc)
+            now = datetime.now(UTC)
             y, m = _prev_month(now.year, now.month)
             self.state['historical_month'] = _mstr(y, m)
             self._save_state()
@@ -794,10 +795,10 @@ class DiscordArchiver:
                     slim.update(thread_meta)
                     slim['is_thread_starter'] = True
                     try:
-                        ts = datetime.fromisoformat(slim['timestamp'].replace('Z', '+00:00'))
+                        ts = datetime.fromisoformat(slim['timestamp'])
                         date_str = ts.strftime('%Y-%m-%d')
                     except (ValueError, TypeError):
-                        date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+                        date_str = datetime.now(UTC).strftime('%Y-%m-%d')
                     # H5: 仅在新写入时计入日统计
                     if self._write_msg(forum_channel_id, date_str, slim):
                         self._update_daily_stats(slim, thread_meta.get('thread_title', ''))
@@ -826,10 +827,10 @@ class DiscordArchiver:
                 # Annotate with thread metadata so consumers know which post this belongs to
                 slim.update(thread_meta)
                 try:
-                    ts = datetime.fromisoformat(slim['timestamp'].replace('Z', '+00:00'))
+                    ts = datetime.fromisoformat(slim['timestamp'])
                     date_str = ts.strftime('%Y-%m-%d')
                 except (ValueError, TypeError):
-                    date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+                    date_str = datetime.now(UTC).strftime('%Y-%m-%d')
                 # Store under the forum channel directory, not the individual thread directory
                 # H5: 仅在新写入时计入日统计
                 if self._write_msg(forum_channel_id, date_str, slim):

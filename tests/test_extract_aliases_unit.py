@@ -14,7 +14,6 @@ confirm 后才进白盒消费面。所有 fixture 全走 tmp_path，绝不碰真
 """
 import json
 import sys
-from datetime import date
 from pathlib import Path
 
 import pytest
@@ -128,7 +127,11 @@ def test_add_writes_entry_with_three_walls(sandbox):
                     "inferred_by": "session-test"}
     # 墙三：新条目一律未确认（压权重）
     assert row["confirmed"] is False
-    assert row["added"] == date.today().isoformat()
+    # 与生产同一日期基准：extract_aliases 写的是 archive_layout.archive_today()
+    # （北京日期）。这里若用 date.today()（容器本地日期），CI 在 UTC 时每天有
+    # 8 小时（北京 00:00–08:00）两者不等，测试会偶发变红——本轮扫描把生产侧
+    # 改成北京基准时埋下的隐患，随即由 DTZ011 欠账推进抓出。
+    assert row["added"] == ea.archive_layout.archive_today().isoformat()
     assert row["concept_id"] == "15602"
     assert row["alias"] == "融朵"
 
@@ -276,7 +279,7 @@ def test_feed_gap_appends_jsonl(sandbox):
     assert len(lines) == 3
     rec = json.loads(lines[0])
     assert rec["query"] == "锚不到的黑话"
-    assert rec["added"] == date.today().isoformat()
+    assert rec["added"] == ea.archive_layout.archive_today().isoformat()
 
 
 def test_feed_gap_never_raises(sandbox, monkeypatch):

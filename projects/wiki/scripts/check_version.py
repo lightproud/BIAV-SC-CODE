@@ -13,7 +13,7 @@ import json
 import sys
 import urllib.request
 import urllib.error
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 
 STEAM_APP_ID = "3052450"
@@ -47,7 +47,7 @@ def fetch_json(url: str, timeout: int = 30) -> dict | None:
 
 def check_steam_version() -> dict:
     """Query Steam store API for the latest app details."""
-    result = {"source": "steam", "checked_at": datetime.now(timezone.utc).isoformat()}
+    result = {"source": "steam", "checked_at": datetime.now(UTC).isoformat()}
 
     data = fetch_json(STEAM_API_URL)
     if not data:
@@ -84,7 +84,7 @@ def check_steam_version() -> dict:
             {
                 "title": item.get("title", ""),
                 "date": datetime.fromtimestamp(
-                    item.get("date", 0), tz=timezone.utc
+                    item.get("date", 0), tz=UTC
                 ).isoformat(),
                 "url": item.get("url", ""),
             }
@@ -96,7 +96,7 @@ def check_steam_version() -> dict:
 
 def check_fandom_changes() -> dict:
     """Check Fandom wiki recent changes for new content."""
-    result = {"source": "fandom", "checked_at": datetime.now(timezone.utc).isoformat()}
+    result = {"source": "fandom", "checked_at": datetime.now(UTC).isoformat()}
 
     data = fetch_json(FANDOM_RC_URL)
     if not data:
@@ -164,7 +164,7 @@ def get_known_versions(versions_data: dict) -> set[str]:
 
 def create_stub_version(version: str, source: str) -> dict:
     """Create a stub version entry for a newly detected version."""
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     return {
         "version": version,
         "title": f"{version}版本（自动检测）",
@@ -197,7 +197,7 @@ def save_result(result: dict) -> None:
 
 def main() -> int:
     print("=== Morimens Version Check ===")
-    print(f"Time: {datetime.now(timezone.utc).isoformat()}")
+    print(f"Time: {datetime.now(UTC).isoformat()}")
 
     # Load current data
     versions_data = load_versions()
@@ -229,7 +229,7 @@ def main() -> int:
 
     # Compile result
     result = {
-        "checked_at": datetime.now(timezone.utc).isoformat(),
+        "checked_at": datetime.now(UTC).isoformat(),
         "current_version": current_version,
         "known_versions": sorted(known_versions),
         "new_version_found": new_version_found,

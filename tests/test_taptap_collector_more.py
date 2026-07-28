@@ -9,7 +9,7 @@ DOM 调试写入异常、review/topic body 的额外解析分支。
 import asyncio
 import tempfile
 import unittest
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from unittest import mock
 
@@ -82,7 +82,7 @@ class TestAutoscrollEdge(unittest.TestCase):
             async def wait_for_timeout(self, _):
                 pass
 
-        cutoff = datetime.now(timezone.utc) - timedelta(days=1)
+        cutoff = datetime.now(UTC) - timedelta(days=1)
         items = _run(tc._autoscroll_collect(
             P(), lambda b: b.get("items", []), captured, max_scrolls=1, cutoff=cutoff))
         self.assertEqual(len(items), 1)
@@ -90,7 +90,7 @@ class TestAutoscrollEdge(unittest.TestCase):
     def test_scroll_evaluate_exception_swallowed(self):
         # page.evaluate 抛异常 → except pass (124-125)，仍正常合并首屏
         captured = [("u", {"items": [{"item_id": "1",
-                    "created": datetime.now(timezone.utc).isoformat()}]})]
+                    "created": datetime.now(UTC).isoformat()}]})]
 
         class P:
             async def evaluate(self, _):
@@ -240,14 +240,14 @@ class TestParseBodyExtraBranches(unittest.TestCase):
 
     def test_review_string_timestamp(self):
         # ts 为数字字符串 → int(ts) (380)
-        sec = int(datetime(2026, 1, 1, tzinfo=timezone.utc).timestamp())
+        sec = int(datetime(2026, 1, 1, tzinfo=UTC).timestamp())
         body = {"data": {"reviews": [{"content": "x", "id": 1, "created_at": str(sec)}]}}
         out = tc._parse_review_api_body(body)
         self.assertTrue(out[0]["created"].startswith("2026-01-01"))
 
     def test_review_ms_timestamp_converted(self):
         # ts > 1e12 → 毫秒转秒 (382)
-        ms = int(datetime(2026, 1, 1, tzinfo=timezone.utc).timestamp() * 1000)
+        ms = int(datetime(2026, 1, 1, tzinfo=UTC).timestamp() * 1000)
         body = {"data": {"reviews": [{"content": "x", "id": 1, "created_time": ms}]}}
         out = tc._parse_review_api_body(body)
         self.assertTrue(out[0]["created"].startswith("2026-01-01"))

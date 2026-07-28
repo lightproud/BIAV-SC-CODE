@@ -6,7 +6,7 @@ data/ 目录。覆盖 _parse_num / API body 解析 / DOM 时间委托 / 状态�
 """
 
 import unittest
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from unittest import mock
 
@@ -85,13 +85,13 @@ class TestParseTopicApiBody(unittest.TestCase):
         self.assertEqual(len(out[0]["title"]), 100)
 
     def test_ms_timestamp_converted(self):
-        ms = int(datetime(2026, 1, 1, tzinfo=timezone.utc).timestamp() * 1000)
+        ms = int(datetime(2026, 1, 1, tzinfo=UTC).timestamp() * 1000)
         body = {"data": [{"title": "X", "id": 1, "created_time": ms}]}
         out = taptap_collector._parse_topic_api_body(body)
         self.assertTrue(out[0]["created"].startswith("2026-01-01"))
 
     def test_string_timestamp(self):
-        sec = int(datetime(2026, 1, 1, tzinfo=timezone.utc).timestamp())
+        sec = int(datetime(2026, 1, 1, tzinfo=UTC).timestamp())
         body = {"data": [{"title": "X", "id": 1, "created_at": str(sec)}]}
         out = taptap_collector._parse_topic_api_body(body)
         self.assertTrue(out[0]["created"].startswith("2026-01-01"))
@@ -163,7 +163,7 @@ class TestStateIO(unittest.TestCase):
 
 
 def _raw(item_id="", days_ago=0, like=0, comment=0):
-    t = (datetime.now(timezone.utc) - timedelta(days=days_ago)).isoformat()
+    t = (datetime.now(UTC) - timedelta(days=days_ago)).isoformat()
     return {
         "title": f"t{item_id}", "summary": "s", "like_count": like,
         "comment_count": comment, "created": t, "url": f"u{item_id}",
@@ -173,7 +173,7 @@ def _raw(item_id="", days_ago=0, like=0, comment=0):
 
 class TestRawToItem(unittest.TestCase):
     def setUp(self):
-        self.cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        self.cutoff = datetime.now(UTC) - timedelta(hours=24)
 
     def test_recent_item_converted(self):
         out = taptap_collector._raw_to_item(_raw("1", like=10, comment=5), "taptap_post", self.cutoff)
@@ -201,7 +201,7 @@ class TestRawToItem(unittest.TestCase):
 
 class TestFilterIncremental(unittest.TestCase):
     def setUp(self):
-        self.cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        self.cutoff = datetime.now(UTC) - timedelta(hours=24)
 
     def test_records_first_id_as_new_last(self):
         items, new_last = taptap_collector._filter_incremental(

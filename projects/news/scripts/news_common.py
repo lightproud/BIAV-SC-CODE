@@ -19,7 +19,7 @@ import re
 import socket
 import tempfile
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from urllib.parse import urlparse
 from xml.etree import ElementTree as ET
@@ -219,7 +219,7 @@ def parse_relative_time(value):
 
     is_approximate=True 仅当输入为空或完全无法解析（回退为当前时间）。
     """
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     if not value or not str(value).strip():
         return now.isoformat(), True
 
@@ -229,7 +229,7 @@ def parse_relative_time(value):
             ts = float(value)
             if ts > 1e11:
                 ts /= 1000.0
-            return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat(), False
+            return datetime.fromtimestamp(ts, tz=UTC).isoformat(), False
         except (ValueError, OverflowError, OSError):
             return now.isoformat(), True
 
@@ -237,7 +237,7 @@ def parse_relative_time(value):
 
     # Try ISO format first
     try:
-        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        dt = datetime.fromisoformat(s)
         return dt.isoformat(), False
     except (ValueError, TypeError):
         pass
@@ -302,7 +302,7 @@ def parse_relative_time(value):
     m = re.match(r"(\d{4})\.(\d{1,2})\.(\d{1,2})", s)
     if m:
         try:
-            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=UTC)
             return dt.isoformat(), False
         except ValueError:
             pass
@@ -321,7 +321,7 @@ def parse_relative_time(value):
     m = re.match(r"(\d{4})[-/](\d{1,2})[-/](\d{1,2})", s)
     if m:
         try:
-            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=UTC)
             return dt.isoformat(), False
         except ValueError:
             pass
@@ -510,7 +510,7 @@ def dump_json_atomic(path, obj, *, indent=2):
         os.replace(tmp, path)
     except BaseException:
         try:
-            os.unlink(tmp)
+            Path(tmp).unlink()
         except OSError:
             pass
         raise

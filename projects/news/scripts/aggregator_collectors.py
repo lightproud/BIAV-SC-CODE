@@ -8,7 +8,7 @@ import json
 import os
 import time
 import requests
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from uuid import uuid4
 
@@ -108,7 +108,7 @@ def _fetch_reddit_rss(sub, headers, cutoff):
 
             # Parse time
             try:
-                post_time = datetime.fromisoformat(updated.replace('Z', '+00:00'))
+                post_time = datetime.fromisoformat(updated)
             except (ValueError, TypeError):
                 continue
             if post_time < cutoff:
@@ -162,7 +162,7 @@ def _fetch_reddit_search(sub, headers, cutoff):
         posts = resp.json().get('data', {}).get('children', []) or []
         for post in posts:
             d = post.get('data', {})
-            created = datetime.fromtimestamp(d.get('created_utc', 0), tz=timezone.utc)
+            created = datetime.fromtimestamp(d.get('created_utc', 0), tz=UTC)
             if created < cutoff:
                 continue
             permalink = d.get('permalink', '')
@@ -202,7 +202,7 @@ def fetch_reddit(subreddits=None):
         'Accept': 'application/json, text/html;q=0.9, */*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.9',
     }
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
 
     for sub in subreddits:
         # old.reddit.com 对非登录流量的封禁比 www 更宽松
@@ -232,7 +232,7 @@ def fetch_reddit(subreddits=None):
 
             for post in posts:
                 d = post['data']
-                created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
+                created = datetime.fromtimestamp(d['created_utc'], tz=UTC)
                 if created < cutoff:
                     stopped_by_cutoff = True
                     break
@@ -397,7 +397,7 @@ def _fetch_bilibili_space():
     """Fetch videos from known Morimens creators via space API (primary path)."""
     items = []
     headers = _bilibili_headers()
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
     mixin_key = get_wbi_mixin_key(headers)
     if not mixin_key:
         logger.warning('Bilibili wbi key fetch failed (no cache)')
@@ -445,7 +445,7 @@ def _fetch_bilibili_space():
 
             for v in vlist:
                 pubdate = v.get('created', 0)
-                created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
+                created = datetime.fromtimestamp(pubdate, tz=UTC) if pubdate else None
                 if not created:
                     continue
                 if created < cutoff:
@@ -475,7 +475,7 @@ def _fetch_bilibili_search():
     """
     items = []
     headers = _bilibili_headers()
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
     mixin_key = get_wbi_mixin_key(headers)
 
     search_keywords = ['忘却前夜', '忘卻前夜'] + [k for k in COLLAB_KEYWORDS if k.strip()]
@@ -525,7 +525,7 @@ def _fetch_bilibili_search():
 
             for v in results:
                 pubdate = v.get('pubdate', 0)
-                created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
+                created = datetime.fromtimestamp(pubdate, tz=UTC) if pubdate else None
                 if not created:
                     continue
                 if created < cutoff:
@@ -565,7 +565,7 @@ def fetch_taptap():
     旧评价会插队），因此固定扫描数页后按 cutoff 过滤，而不是遇旧即停。
     """
     app_id = os.environ.get('TAPTAP_APP_ID') or '364992'
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
     items = []
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
@@ -595,7 +595,7 @@ def fetch_taptap():
             ts = moment.get('publish_time') or moment.get('created_time')
             if not ts:
                 continue
-            created = datetime.fromtimestamp(ts, tz=timezone.utc)
+            created = datetime.fromtimestamp(ts, tz=UTC)
             if created < cutoff:
                 continue
             text = strip_html_tags((review.get('contents', {}) or {}).get('text', '') or '')
@@ -662,7 +662,7 @@ def _fetch_steam_reviews_one(app_id, region):
     """
     import subprocess as _sp
     from urllib.parse import quote
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
     items = []
     cursor = '*'
     page = 0
@@ -693,7 +693,7 @@ def _fetch_steam_reviews_one(app_id, region):
 
             for review in reviews:
                 ts = review.get('timestamp_created', 0)
-                created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                created = datetime.fromtimestamp(ts, tz=UTC)
                 if created < cutoff:
                     stopped_by_cutoff = True
                     break
@@ -767,7 +767,7 @@ def _fetch_steam_news_one(app_id, region):
     # Steam News 单次 API 调用即可拿足 30 天窗口；count=100 保证不截断。
     url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=100&maxlength=500'
     official_hours = news_common.env_int('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24))
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=official_hours)
+    cutoff = datetime.now(UTC) - timedelta(hours=official_hours)
     items = []
 
     try:
@@ -777,7 +777,7 @@ def _fetch_steam_news_one(app_id, region):
 
         for n in news_items:
             ts = n.get('date', 0)
-            created = datetime.fromtimestamp(ts, tz=timezone.utc) if ts else None
+            created = datetime.fromtimestamp(ts, tz=UTC) if ts else None
             if not created or created < cutoff:
                 continue
 
@@ -830,7 +830,7 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,ko;q=0.7,ja;q=0.6',
     }
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
     items = []
     stopped_by_cutoff = False
 
@@ -860,13 +860,13 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
 
                 m_ts = _re.search(r'class="forum_topic_lastpost"[^>]*data-timestamp="(\d+)"', block)
                 if m_ts:
-                    lastpost = datetime.fromtimestamp(int(m_ts.group(1)), tz=timezone.utc)
+                    lastpost = datetime.fromtimestamp(int(m_ts.group(1)), tz=UTC)
                     if lastpost < cutoff:
                         stopped_by_cutoff = True
                         break
                     time_str, approx = lastpost.isoformat(), False
                 else:
-                    time_str, approx = datetime.now(timezone.utc).isoformat(), True
+                    time_str, approx = datetime.now(UTC).isoformat(), True
 
                 m_author = _re.search(r'class="forum_topic_op"[^>]*>\s*([^<]+?)\s*</div>', block)
                 author = m_author.group(1).strip() if m_author else ''
@@ -982,8 +982,8 @@ def fetch_discord_local():
     No API calls — purely local file reads from the archiver's output.
     """
     discord_dir = _discord_data_dir()
-    today_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
-    yesterday_str = (datetime.now(timezone.utc) - timedelta(days=1)).strftime('%Y-%m-%d')
+    today_str = datetime.now(UTC).strftime('%Y-%m-%d')
+    yesterday_str = (datetime.now(UTC) - timedelta(days=1)).strftime('%Y-%m-%d')
     items = []
     guild_id = os.environ.get('DISCORD_GUILD_ID', '1131791637933199470')
 
@@ -1057,7 +1057,7 @@ def fetch_discord_local():
         channel = msg.get('_channel_name', '')
         channel_id = msg.get('channel_id', '')
         msg_id = msg.get('id', '')
-        msg_time = msg.get('timestamp', datetime.now(timezone.utc).isoformat())
+        msg_time = msg.get('timestamp', datetime.now(UTC).isoformat())
         react_total = sum(r.get('count', 0) for r in msg.get('reactions', []))
 
         # Format attachment info

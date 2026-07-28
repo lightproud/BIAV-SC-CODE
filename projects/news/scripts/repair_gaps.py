@@ -23,7 +23,7 @@ import json
 import argparse
 import logging
 import sys
-from datetime import datetime, date, timezone, timedelta
+from datetime import datetime, date, timedelta, UTC
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -81,7 +81,7 @@ def write_gap_report(gaps: dict[str, list[str]]):
     """Write a JSON report of detected gaps for monitoring, without creating placeholder files."""
     report_path = REPORT_PATH
     report = {
-        'generated_at': datetime.now(timezone.utc).isoformat(),
+        'generated_at': datetime.now(UTC).isoformat(),
         'total_gaps': sum(len(v) for v in gaps.values()),
         'platforms': {
             source: {'missing_dates': dates, 'count': len(dates)}

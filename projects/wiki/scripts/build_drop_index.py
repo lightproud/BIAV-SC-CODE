@@ -28,7 +28,7 @@ import argparse
 import json
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -102,7 +102,7 @@ def main() -> int:
             "stages_scanned": len(stages),
             "items_with_sources": item_count,
             "total_drop_references": total_refs,
-            "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "generated": datetime.now(UTC).isoformat(timespec="seconds"),
         },
         "drops_by_item": index,
     }

@@ -9,7 +9,7 @@
 import json
 import os
 import unittest
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from unittest import mock
 
@@ -41,12 +41,12 @@ class FakeResponse:
 
 def _recent_ts():
     """返回一个肯定落在 cutoff 窗口内的 unix 时间戳。"""
-    return int(datetime.now(timezone.utc).timestamp())
+    return int(datetime.now(UTC).timestamp())
 
 
 def _old_ts():
     """返回一个肯定早于 cutoff 窗口的 unix 时间戳。"""
-    return int((datetime.now(timezone.utc) - timedelta(days=30)).timestamp())
+    return int((datetime.now(UTC) - timedelta(days=30)).timestamp())
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -178,7 +178,7 @@ class TestFetchRedditRss(unittest.TestCase):
         <feed xmlns="http://www.w3.org/2005/Atom">{body}</feed>"""
 
     def test_parses_recent_entry(self):
-        now = datetime.now(timezone.utc).isoformat()
+        now = datetime.now(UTC).isoformat()
         xml = self._rss([{
             "title": "Hot topic",
             "link": "https://reddit.com/r/x/1",
@@ -187,7 +187,7 @@ class TestFetchRedditRss(unittest.TestCase):
             "content": "&lt;p&gt;body text&lt;/p&gt;",
         }])
         resp = FakeResponse(text=xml)
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", return_value=resp):
             out = ac._fetch_reddit_rss("Morimens", {}, cutoff)
         self.assertEqual(len(out), 1)
@@ -197,10 +197,10 @@ class TestFetchRedditRss(unittest.TestCase):
         self.assertEqual(out[0]["metadata"], {"via": "rss"})
 
     def test_old_entry_filtered_by_cutoff(self):
-        old = (datetime.now(timezone.utc) - timedelta(days=30)).isoformat()
+        old = (datetime.now(UTC) - timedelta(days=30)).isoformat()
         xml = self._rss([{"title": "Old", "updated": old}])
         resp = FakeResponse(text=xml)
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", return_value=resp):
             out = ac._fetch_reddit_rss("x", {}, cutoff)
         self.assertEqual(out, [])
@@ -208,24 +208,24 @@ class TestFetchRedditRss(unittest.TestCase):
     def test_bad_time_entry_skipped(self):
         xml = self._rss([{"title": "Bad", "updated": "not-a-date"}])
         resp = FakeResponse(text=xml)
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", return_value=resp):
             out = ac._fetch_reddit_rss("x", {}, cutoff)
         self.assertEqual(out, [])
 
     def test_image_extracted_from_content(self):
-        now = datetime.now(timezone.utc).isoformat()
+        now = datetime.now(UTC).isoformat()
         content = '&lt;img src="https://i.redd.it/pic.png"&gt;hello'
         xml = self._rss([{"title": "T", "updated": now, "content": content}])
         resp = FakeResponse(text=xml)
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", return_value=resp):
             out = ac._fetch_reddit_rss("x", {}, cutoff)
         self.assertEqual(out[0]["media_url"], "https://i.redd.it/pic.png")
         self.assertEqual(out[0]["content_type"], "image")
 
     def test_network_failure_returns_empty(self):
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", side_effect=RuntimeError("403")):
             out = ac._fetch_reddit_rss("x", {}, cutoff)
         self.assertEqual(out, [])
@@ -245,7 +245,7 @@ class TestFetchRedditSearch(unittest.TestCase):
             }
         }]
         resp = FakeResponse(json_data={"data": {"children": children}})
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", return_value=resp):
             out = ac._fetch_reddit_search("Morimens", {}, cutoff)
         self.assertEqual(len(out), 1)
@@ -257,7 +257,7 @@ class TestFetchRedditSearch(unittest.TestCase):
     def test_old_post_filtered(self):
         children = [{"data": {"created_utc": _old_ts(), "title": "old"}}]
         resp = FakeResponse(json_data={"data": {"children": children}})
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", return_value=resp):
             out = ac._fetch_reddit_search("x", {}, cutoff)
         self.assertEqual(out, [])
@@ -265,13 +265,13 @@ class TestFetchRedditSearch(unittest.TestCase):
     def test_low_score_not_hot(self):
         children = [{"data": {"created_utc": _recent_ts(), "title": "t", "score": 5}}]
         resp = FakeResponse(json_data={"data": {"children": children}})
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", return_value=resp):
             out = ac._fetch_reddit_search("x", {}, cutoff)
         self.assertFalse(out[0]["is_hot"])
 
     def test_network_failure_returns_empty(self):
-        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        cutoff = datetime.now(UTC) - timedelta(hours=24)
         with mock.patch.object(ac.requests, "get", side_effect=RuntimeError("down")):
             out = ac._fetch_reddit_search("x", {}, cutoff)
         self.assertEqual(out, [])
@@ -401,7 +401,7 @@ class TestBilibiliItem(unittest.TestCase):
         self.sleep_patcher.stop()
 
     def _created(self):
-        return datetime(2026, 6, 10, tzinfo=timezone.utc)
+        return datetime(2026, 6, 10, tzinfo=UTC)
 
     def test_basic_fields(self):
         v = {
@@ -787,7 +787,7 @@ class TestFetchSteamNews(unittest.TestCase):
 
     def test_old_news_filtered(self):
         # OFFICIAL_HOURS_LOOKBACK 默认 30 天，造一条 60 天前的
-        old = int((datetime.now(timezone.utc) - timedelta(days=60)).timestamp())
+        old = int((datetime.now(UTC) - timedelta(days=60)).timestamp())
         news = {"title": "T", "date": old}
         resp = FakeResponse(json_data={"appnews": {"newsitems": [news]}})
         with mock.patch.object(ac.requests, "get", return_value=resp):

@@ -19,7 +19,7 @@
 """
 
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 
 from aggregator_base import (
     OUTPUT_PATH, _get_playwright_collectors,
@@ -178,7 +178,7 @@ def run():
         # Normalize URL for dedup (http→https, trailing slash)
         url = (item.get('url') or '').replace('http://', 'https://').rstrip('/')
         title_key = item['title'].lower().strip()[:50]
-        dedup_key = url if url else title_key
+        dedup_key = url or title_key
         if dedup_key not in seen_keys:
             seen_keys.add(dedup_key)
             # Also add title key to catch same content with different URLs
@@ -202,7 +202,7 @@ def run():
         else:
             logger.warning('No existing news.json found and no new data — writing empty placeholder.')
             output = {
-                'updated_at': datetime.now(timezone.utc).isoformat(),
+                'updated_at': datetime.now(UTC).isoformat(),
                 'summary': '暂无最新动态。',
                 'news': [],
             }
@@ -218,7 +218,7 @@ def run():
 
     # Write output
     output = {
-        'updated_at': datetime.now(timezone.utc).isoformat(),
+        'updated_at': datetime.now(UTC).isoformat(),
         'summary': summary,
         'news': unique_news,
     }

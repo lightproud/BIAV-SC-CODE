@@ -11,7 +11,7 @@ env-patch + 假 _api 风格。
 import os
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -144,8 +144,8 @@ class TestHistoryBoundaries(unittest.TestCase):
     def test_batch_crossing_month_end_stops_at_boundary(self):
         with tempfile.TemporaryDirectory() as tmp:
             arch = _make_archiver(tmp)
-            in_month = _sf_from_dt(datetime(2026, 5, 10, tzinfo=timezone.utc))
-            next_month = _sf_from_dt(datetime(2026, 6, 2, tzinfo=timezone.utc))
+            in_month = _sf_from_dt(datetime(2026, 5, 10, tzinfo=UTC))
+            next_month = _sf_from_dt(datetime(2026, 6, 2, tzinfo=UTC))
             batch = [_msg(in_month, ts="2026-05-10T00:00:00+00:00"),
                      _msg(next_month, ts="2026-06-02T00:00:00+00:00")]
             with mock.patch.object(arch, "_api", return_value=batch), \
@@ -224,7 +224,7 @@ class TestForumFailureIsolation(unittest.TestCase):
                                                                   "thread_title": "帖",
                                                                   "forum_channel_id": "forum1"})
             self.assertEqual(total, 1)
-            today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+            today = datetime.now(UTC).strftime("%Y-%m-%d")
             self.assertTrue((arch.data_dir / "channels" / "forum1" / f"{today}.jsonl").exists(),
                             "坏时间戳回退今日日期，消息不得丢弃")
 

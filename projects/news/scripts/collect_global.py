@@ -20,7 +20,7 @@ import os
 import sys
 import logging
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
@@ -109,10 +109,11 @@ def run_zero_cost_collectors() -> list[dict]:
     try:
         import global_collectors as c
         c._refresh_cutoff()
-    except ImportError as e:
+    except ImportError:
         # exception() 而非 error()：核心采集模块导入失败是排障起点，丢掉 traceback
         # 就只剩一句「Cannot import」，看不出到底是哪一层依赖缺失。
-        logger.exception(f"Cannot import global_collectors module: {e}")
+        # exception() 已自带完整 traceback（含异常本身），再把 {e} 拼进消息是重复。
+        logger.exception("Cannot import global_collectors module")
         return items, []
 
     # 数据质量追踪器：更新各源状态，长期沉默的源自动 dormant 跳过
@@ -312,8 +313,8 @@ def _is_recent(time_str: str, source: str = '') -> bool:
     try:
         dt = datetime.fromisoformat(time_str)
         if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return (datetime.now(timezone.utc) - dt) < timedelta(hours=max_hours)
+            dt = dt.replace(tzinfo=UTC)
+        return (datetime.now(UTC) - dt) < timedelta(hours=max_hours)
     except (ValueError, TypeError):
         return False
 
@@ -377,7 +378,7 @@ def main():
 
     # Step 4: Write back
     output = {
-        'updated_at': datetime.now(timezone.utc).isoformat(),
+        'updated_at': datetime.now(UTC).isoformat(),
         'summary': build_summary(merged),
         'sources_run': len(global_items),
         'news': merged,

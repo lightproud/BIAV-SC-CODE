@@ -1,7 +1,7 @@
 import importlib
 import sys
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -10,7 +10,7 @@ import global_collectors as gc
 
 
 # 固定的过去 CUTOFF，使时间过滤逻辑确定可测。
-PAST_CUTOFF = datetime(2020, 1, 1, tzinfo=timezone.utc)
+PAST_CUTOFF = datetime(2020, 1, 1, tzinfo=UTC)
 RECENT = "2026-06-19T00:00:00+00:00"  # 远晚于 PAST_CUTOFF
 OLD = "2019-01-01T00:00:00+00:00"     # 早于 PAST_CUTOFF
 
@@ -39,9 +39,9 @@ class TestModuleHelpers(unittest.TestCase):
         # _refresh_cutoff 重算全局 CUTOFF（line 58）
         original = gc.CUTOFF
         try:
-            gc.CUTOFF = datetime(1999, 1, 1, tzinfo=timezone.utc)
+            gc.CUTOFF = datetime(1999, 1, 1, tzinfo=UTC)
             gc._refresh_cutoff()
-            self.assertGreater(gc.CUTOFF, datetime(2020, 1, 1, tzinfo=timezone.utc))
+            self.assertGreater(gc.CUTOFF, datetime(2020, 1, 1, tzinfo=UTC))
         finally:
             gc.CUTOFF = original
 
@@ -121,7 +121,7 @@ class TestFetchRedditGenericSub(unittest.TestCase):
         data = {"data": {"children": [
             {"data": {
                 "title": "Random gacha thread",
-                "created_utc": datetime(2026, 6, 19, tzinfo=timezone.utc).timestamp(),
+                "created_utc": datetime(2026, 6, 19, tzinfo=UTC).timestamp(),
                 "selftext": "",
                 "permalink": "/r/gachagaming/x",
                 "score": 1, "num_comments": 0, "author": "z",
@@ -146,7 +146,7 @@ class TestFetchBilibiliExtra(unittest.TestCase):
         # spi 返回 cookie → 设 Cookie 头（line 260）；mixin_key 存在 → sign_wbi_params（line 267）
         resp = FakeResp(json_data={"data": {"result": [{
             "title": "忘却前夜", "description": "d",
-            "pubdate": datetime(2026, 6, 19, tzinfo=timezone.utc).timestamp(),
+            "pubdate": datetime(2026, 6, 19, tzinfo=UTC).timestamp(),
             "play": 5, "danmaku": 1, "arcurl": "https://b", "author": "u",
             "typename": "游戏", "pic": "https://p",
         }]}})
@@ -163,7 +163,7 @@ class TestFetchBilibiliExtra(unittest.TestCase):
         # created < CUTOFF → 跳过（line 280）
         resp = FakeResp(json_data={"data": {"result": [{
             "title": "x",
-            "pubdate": datetime(2019, 1, 1, tzinfo=timezone.utc).timestamp(),
+            "pubdate": datetime(2019, 1, 1, tzinfo=UTC).timestamp(),
         }]}})
         with mock.patch.object(gc.news_common, "bilibili_spi_cookies", return_value={}), \
                 mock.patch.object(gc.news_common, "get_wbi_mixin_key", return_value=None), \

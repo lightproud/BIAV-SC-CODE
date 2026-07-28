@@ -24,7 +24,6 @@ import json
 import logging
 import os
 import sys
-from datetime import date
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
@@ -34,6 +33,10 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # noqa: E402  归档布局单一真相源（2026-07-02 P0-1）
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from datetime import date
 DISCORD_ROOT = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 
 
@@ -124,7 +127,7 @@ def run(cutoff: str, dry_run: bool = False, region: str | None = None) -> dict:
         logger.info(
             f"{r}: 压缩 {rstats['compressed']} / 并轨 {rstats['merged']} 文件，"
             f"{rstats['raw_bytes'] / 1048576:.0f} MB → {rstats['gz_bytes'] / 1048576:.0f} MB"
-            + ('  [dry-run]' if dry_run else '')
+            f"{'  [dry-run]' if dry_run else ''}"
         )
     return totals
 

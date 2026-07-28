@@ -6,7 +6,7 @@ monkeypatch ARCHIVE_DIR / STATE_PATH 到 tmp，绝不污染真实 data 树、绝
 
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from unittest import mock
 
 import pytest
@@ -102,7 +102,7 @@ def test_archive_items_naive_time_treated_utc(paths):
 
 def test_archive_items_bad_time_falls_back_to_now(paths):
     adir, _ = paths
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = datetime.now(UTC).strftime("%Y-%m-%d")
     bp._archive_items("reddit", [{"url": "u1", "time": "garbage"}])
     assert (adir / "reddit" / f"{today}.json").exists()
 
@@ -167,7 +167,7 @@ def test_backfill_bilibili_done_short_circuits(paths):
 
 
 def test_backfill_bilibili_collects(paths, monkeypatch):
-    pubdate = int(datetime(2026, 4, 13, tzinfo=timezone.utc).timestamp())
+    pubdate = int(datetime(2026, 4, 13, tzinfo=UTC).timestamp())
     full = _resp({"data": {"result": [
         {"pubdate": pubdate, "title": '<em class="keyword">M</em>orimens',
          "description": "d", "arcurl": "http://x", "play": 20000,
@@ -269,7 +269,7 @@ def _curl(stdout, returncode=0):
 
 
 def test_backfill_steam_collects(paths, monkeypatch):
-    ts = int(datetime(2026, 4, 13, tzinfo=timezone.utc).timestamp())
+    ts = int(datetime(2026, 4, 13, tzinfo=UTC).timestamp())
     body = json.dumps({"reviews": [
         {"timestamp_created": ts, "language": "en", "voted_up": True,
          "review": "x" * 60, "author": {"steamid": "s1"}, "votes_up": 20},

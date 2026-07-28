@@ -12,6 +12,7 @@ sync is moot.
 """
 import json
 import os
+from pathlib import Path
 import glob
 
 PROCESSED_DIR = 'projects/wiki/data/processed'
@@ -50,7 +51,7 @@ def load_playstyle():
     import re
     path = f'{PROCESSED_DIR}/character_skills.md'
     out = {}
-    if not os.path.exists(path):
+    if not Path(path).exists():
         return out
     realm = None
     with open(path, encoding='utf-8') as f:
@@ -143,7 +144,7 @@ def generate_voice_lines():
     where a mapping exists, with unmapped lines in a separate section.
     """
     map_path = f'{PROCESSED_DIR}/voice_character_map.json'
-    if not os.path.exists(map_path):
+    if not Path(map_path).exists():
         # Fallback to legacy voice_lines.json
         _generate_voice_lines_legacy()
         return
@@ -586,7 +587,7 @@ def generate_cg_gallery():
         lines.append('')
         lines.append('<div class="cg-grid" @click="openCg">')
         for f in scenebg_files:
-            name = os.path.splitext(os.path.basename(f))[0]
+            name = os.path.splitext(Path(f).name)[0]
             lines.append(f'<img :src="\'/{f}\'" alt="{name}" loading="lazy" />')
             displayed += 1
         lines.append('</div>')
@@ -1061,9 +1062,9 @@ def generate_awakener_pages(chars, by_cat, play, cidx):
     out_dir = f'{DOCS_DIR}/zh/awakeners'
     os.makedirs(out_dir, exist_ok=True)
     # 清掉旧的烂尾样板页（pandia.md 依赖已清空的 db 数据层）
-    stale = f'{out_dir}/pandia.md'
-    if os.path.exists(stale):
-        os.remove(stale)
+    stale = Path(f'{out_dir}/pandia.md')
+    if stale.exists():
+        stale.unlink()
 
     playable = by_cat.get('playable', [])
     count = 0
@@ -1180,7 +1181,7 @@ def generate_playstyle(playable, play):
     并把每张卡开头的角色名链到其详情页。"""
     import re
     src = f'{PROCESSED_DIR}/character_skills.md'
-    if not os.path.exists(src):
+    if not Path(src).exists():
         return
     with open(src, encoding='utf-8') as f:
         body = f.read()
@@ -1390,7 +1391,7 @@ def generate_audio_index():
         lines.append('')
         for ogg in ogg_files:
             rel = os.path.relpath(ogg, f'{DOCS_DIR}/public')
-            name = os.path.splitext(os.path.basename(ogg))[0]
+            name = os.path.splitext(Path(ogg).name)[0]
             lines.append(f'**{name}**')
             lines.append('')
             lines.append(f'<audio controls preload="none" src="/{rel}"></audio>')
@@ -1452,7 +1453,7 @@ def generate_video_index():
 
         cats = {}
         for mp4 in mp4_files:
-            name = os.path.splitext(os.path.basename(mp4))[0]
+            name = os.path.splitext(Path(mp4).name)[0]
             cat = _video_category(name)
             if cat not in cats:
                 cats[cat] = []
@@ -1463,7 +1464,7 @@ def generate_video_index():
             lines.append('')
             for mp4 in files:
                 rel = os.path.relpath(mp4, f'{DOCS_DIR}/public')
-                name = os.path.splitext(os.path.basename(mp4))[0]
+                name = os.path.splitext(Path(mp4).name)[0]
                 lines.append(f'### {name}')
                 lines.append('')
                 lines.append(f'<video controls preload="none" width="100%" src="/{rel}"></video>')
@@ -1585,7 +1586,7 @@ def generate_update_notices():
     import re as _re
 
     src = f'{PROCESSED_DIR}/update_notices.json'
-    if not os.path.exists(src):
+    if not Path(src).exists():
         print('update_notices.json absent (deleted per 2026-07-12 ruling) — skip')
         return
     with open(src, encoding='utf-8') as f:

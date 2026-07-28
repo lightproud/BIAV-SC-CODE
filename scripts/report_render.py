@@ -20,11 +20,12 @@ frontmatter 约定（YAML 风格 key: value）：
 """
 import re
 import os
+from pathlib import Path
 import argparse
 
 
 def parse_frontmatter(raw):
-    m = re.match(r'^---\n(.*?)\n---\n', raw, re.S)
+    m = re.match(r'^---\n(.*?)\n---\n', raw, re.DOTALL)
     fm = {}
     if not m:
         return fm, raw
@@ -263,8 +264,8 @@ def render(src, title, subtitle, meta, cover_note='弥萨格大学数据库终�
     with open(out_html, 'w', encoding='utf-8') as f:
         f.write(doc)
     # base_url=cwd 让正文 markdown 的相对图片路径（相对仓库根）可被解析嵌入
-    HTML(string=doc, base_url=os.getcwd()).write_pdf(out_pdf)
-    return out_html, out_pdf, n_toc, os.path.getsize(out_pdf)
+    HTML(string=doc, base_url=str(Path.cwd())).write_pdf(out_pdf)
+    return out_html, out_pdf, n_toc, Path(out_pdf).stat().st_size
 
 
 def main():

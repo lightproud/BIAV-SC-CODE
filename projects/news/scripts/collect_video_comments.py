@@ -30,7 +30,7 @@ import urllib.request
 import urllib.parse
 import urllib.error
 from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_layout  # noqa: E402  归档布局单一真相源（分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认）
@@ -104,7 +104,7 @@ def fetch_video_comments(key, vid, known_ids, max_pages):
                              "text": (c.get("textDisplay") or "")[:1000],
                              "likes": c.get("likeCount", 0),
                              "published": c.get("publishedAt", ""),
-                             "fetched_at": datetime.now(timezone.utc).isoformat()})
+                             "fetched_at": datetime.now(UTC).isoformat()})
         token = data.get("nextPageToken")
         if page_new == 0:        # 整页都已知 → 已追上最新
             return new_rows, True
@@ -128,7 +128,7 @@ def main():
     # 载入累积库 + 已知 id
     store = f"{DEST}/comments.jsonl"
     known = set()
-    if os.path.isfile(store):
+    if Path(store).is_file():
         with open(store, encoding="utf-8") as f:
             for line in f:
                 try:
@@ -137,7 +137,7 @@ def main():
                     pass
     state = {}
     sp = f"{DEST}/state.json"
-    if os.path.isfile(sp):
+    if Path(sp).is_file():
         with open(sp, encoding="utf-8") as f:
             state = json.load(f)
 

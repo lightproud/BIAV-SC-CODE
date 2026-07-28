@@ -96,7 +96,7 @@ class TestFailureAggregation(unittest.TestCase):
         # Neutralize side-effecting helpers so the run is fully in-memory.
         # _refresh_cutoff just resets module time state; make it a no-op.
         self._patches = [
-            mock.patch.object(global_collectors, "_refresh_cutoff", lambda: None),
+            mock.patch.object(global_collectors, "_refresh_cutoff", return_value=None),
             # No tracker → no dormant skipping, no state-file writes.
             mock.patch.dict(sys.modules, {"data_quality": mock.MagicMock(
                 SilentPlatformTracker=mock.MagicMock(side_effect=Exception("disabled")))}),
@@ -165,7 +165,7 @@ class TestFailureAggregation(unittest.TestCase):
         # (temp file + os.replace), which bypasses builtins.open — so stub it out to a
         # no-op, otherwise the test would clobber the real projects/news/output/*.json.
         with mock.patch.object(collect_global, "load_existing_news", return_value=[]), \
-                mock.patch.object(news_common, "dump_json_atomic", lambda *a, **k: None):
+                mock.patch.object(news_common, "dump_json_atomic", return_value=None):
             with self.assertRaises(SystemExit) as cm:
                 collect_global.main()
         self.assertEqual(cm.exception.code, 1)

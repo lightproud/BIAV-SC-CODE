@@ -17,7 +17,7 @@ State file: projects/news/data/collection_state.json
 import json
 import logging
 import os
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
@@ -67,8 +67,8 @@ def get_lookback_hours() -> int:
     try:
         last_dt = datetime.fromisoformat(last_run)
         if last_dt.tzinfo is None:
-            last_dt = last_dt.replace(tzinfo=timezone.utc)
-        gap = datetime.now(timezone.utc) - last_dt
+            last_dt = last_dt.replace(tzinfo=UTC)
+        gap = datetime.now(UTC) - last_dt
         gap_hours = int(gap.total_seconds() / 3600) + BUFFER_HOURS
         result = max(DEFAULT_HOURS, min(gap_hours, MAX_HOURS))
         if gap_hours > DEFAULT_HOURS:
@@ -87,7 +87,7 @@ def get_lookback_hours() -> int:
 def mark_collection_done(item_count: int = 0):
     """Record that a collection run completed successfully."""
     state = _load_state()
-    now = datetime.now(timezone.utc).isoformat()
+    now = datetime.now(UTC).isoformat()
     state['last_collected_at'] = now
     state['last_item_count'] = item_count
 

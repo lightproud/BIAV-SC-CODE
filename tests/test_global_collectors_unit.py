@@ -8,7 +8,7 @@ mocked; CUTOFF pinned to the past so recency filters pass.
 
 import sys
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -16,7 +16,7 @@ import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml�
 import global_collectors as gc
 
 
-PAST_CUTOFF = datetime(2020, 1, 1, tzinfo=timezone.utc)
+PAST_CUTOFF = datetime(2020, 1, 1, tzinfo=UTC)
 RECENT = "2026-06-19T00:00:00+00:00"
 
 
@@ -105,7 +105,7 @@ class TestFetchGooglePlaySuccess(unittest.TestCase):
     def test_collects_reviews(self):
         review = {
             "score": 5, "content": "love it",
-            "at": datetime(2026, 6, 19, tzinfo=timezone.utc),
+            "at": datetime(2026, 6, 19, tzinfo=UTC),
             "thumbsUpCount": 7, "userName": "fan",
         }
         fake_mod = mock.MagicMock()

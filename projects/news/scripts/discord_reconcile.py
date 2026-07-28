@@ -179,7 +179,7 @@ def main() -> int:
         logger.info(
             f"{region}: 目录 {stats['dirs']} / 索引 {stats['index_before']}→{stats['index_after']} / "
             f"孤儿 {stats['orphans']}（回收到名字 {stats['named']}，ID 不可恢复 {stats['unrecovered']}）"
-            + ('  [dry-run]' if args.dry_run else '')
+            f"{'  [dry-run]' if args.dry_run else ''}"
         )
     return 0
 

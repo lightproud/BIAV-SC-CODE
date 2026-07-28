@@ -1,7 +1,7 @@
 import os
 import socket
 import unittest
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from unittest import mock
 
 import requests
@@ -162,7 +162,7 @@ class TestRedactSecrets(unittest.TestCase):
 class TestParseRelativeTime(unittest.TestCase):
     def _hours_delta(self, iso):
         dt = datetime.fromisoformat(iso)
-        return (datetime.now(timezone.utc) - dt).total_seconds() / 3600
+        return (datetime.now(UTC) - dt).total_seconds() / 3600
 
     def test_empty_is_approximate(self):
         iso, approx = news_common.parse_relative_time("")
@@ -246,10 +246,10 @@ class TestParseRelativeTime(unittest.TestCase):
 
     def test_dotted_mm_dd_rolls_back_year_if_future(self):
         # A MM.DD in the future relative to now must roll back one year.
-        future = datetime.now(timezone.utc) + timedelta(days=40)
+        future = datetime.now(UTC) + timedelta(days=40)
         iso, approx = news_common.parse_relative_time(f"{future.month:02d}.{future.day:02d}")
         self.assertFalse(approx)
-        self.assertLessEqual(datetime.fromisoformat(iso), datetime.now(timezone.utc))
+        self.assertLessEqual(datetime.fromisoformat(iso), datetime.now(UTC))
 
     def test_invalid_dotted_full_date_falls_through(self):
         # Month 13 fails datetime() → ValueError swallowed → approximate fallback.
@@ -278,7 +278,7 @@ class TestParseRelativeTime(unittest.TestCase):
         iso, approx = news_common.parse_relative_time("08:30")
         self.assertFalse(approx)
         # Resolves to today (or yesterday if 08:30 is still in the future).
-        self.assertLessEqual(datetime.fromisoformat(iso), datetime.now(timezone.utc))
+        self.assertLessEqual(datetime.fromisoformat(iso), datetime.now(UTC))
 
     def test_invalid_hh_mm_falls_through(self):
         iso, approx = news_common.parse_relative_time("99:99")
@@ -518,5 +518,8 @@ class TestParseXmlSafely(unittest.TestCase):
 
     def test_malformed_xml_still_raises_not_silently_empty(self):
         """畸形 feed 必须抛（两处调用方都有 except 兜底），不得静默返回空树。"""
-        with self.assertRaises(Exception):
+        # 钉死具体类型：assertRaises(Exception) 连 AttributeError / TypeError 都算通过,
+        # 于是「护栏把自己写崩了」也能骗过这条断言。
+        from xml.etree.ElementTree import ParseError
+        with self.assertRaises(ParseError):
             news_common.parse_xml_safely('<f><unclosed></f>')

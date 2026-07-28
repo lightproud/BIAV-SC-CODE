@@ -40,7 +40,7 @@ import os
 import sys
 import time
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 
 # Reuse the archiver's API + state machinery
@@ -111,9 +111,9 @@ def main():
     bf = state.setdefault('forum_starter_backfill', {
         'completed': [],
         'skipped_no_starter': [],
-        'started_at': datetime.now(timezone.utc).isoformat(),
+        'started_at': datetime.now(UTC).isoformat(),
     })
-    bf['last_run_at'] = datetime.now(timezone.utc).isoformat()
+    bf['last_run_at'] = datetime.now(UTC).isoformat()
     completed: set = set(bf.get('completed', []))
     skipped: set = set(bf.get('skipped_no_starter', []))
 
@@ -193,10 +193,10 @@ def main():
             continue
 
         try:
-            ts = datetime.fromisoformat(starter['timestamp'].replace('Z', '+00:00'))
+            ts = datetime.fromisoformat(starter['timestamp'])
             date_str = ts.strftime('%Y-%m-%d')
         except (ValueError, TypeError, KeyError):
-            date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+            date_str = datetime.now(UTC).strftime('%Y-%m-%d')
 
         msg_id = str(starter['id'])
         if already_has_starter(forum_channel_id, date_str, msg_id):

@@ -40,7 +40,7 @@ PROJECT_STATUS = ROOT / "memory" / "project-status.md"
 
 # CHANGELOG 里的发布标题形态：`## 0.76.0 — 2026-07-22`。散文里的版本提及（「as of 0.41.0」）
 # 永远不是 `## ` 标题，故不会被误当成最新发布——与 check-version-bump.mjs 同款判据。
-CHANGELOG_HEADING_RE = re.compile(r"^##\s+(\d+\.\d+\.\d+)\b", re.M)
+CHANGELOG_HEADING_RE = re.compile(r"^##\s+(\d+\.\d+\.\d+)\b", re.MULTILINE)
 
 # 受管包：每项 = (包目录名, CONTEXT.md 内的状态节标题, project-status.md 内的节标题前缀)。
 # 节标题前缀须能唯一定位——「## Silver Core SDK」与「## Silver Core Maestro SDK」不同前缀，
@@ -62,7 +62,7 @@ ALLOWLIST: dict[str, str] = {
 # 机器生成块的通用形态（`<!-- X:BEGIN … -->` … `<!-- X:END -->`）。**搜叙述前必须剥掉**——
 # 见下方 _narrative 的自架空说明。
 GENERATED_BLOCK_RE = re.compile(
-    r"<!--\s*[A-Z-]+:BEGIN\b.*?<!--\s*[A-Z-]+:END\s*-->", re.S
+    r"<!--\s*[A-Z-]+:BEGIN\b.*?<!--\s*[A-Z-]+:END\s*-->", re.DOTALL
 )
 
 

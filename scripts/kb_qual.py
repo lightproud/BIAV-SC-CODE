@@ -113,7 +113,8 @@ def probe_relation_typing(concepts: dict | None = None, graph: dict | None = Non
     from collections import Counter
     typed = Counter()
     exemplars: dict[str, dict] = {}
-    title = lambda cid: concepts.get(cid, {}).get("title", "") or cid
+    def title(cid):
+        return concepts.get(cid, {}).get("title", "") or cid
     for e in graph.get("edges", []):
         rt = e.get("rel_type")
         if not rt:

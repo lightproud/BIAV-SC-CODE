@@ -658,6 +658,17 @@ def structural_fingerprint(bundle: Path) -> str:
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
 
 
+def _cnode(cid) -> str:
+    """角色概念的 bundle 内路径。
+
+    原为 build_graph 内部的 lambda；E731（禁 lambda 赋值）的自动修把它变成**嵌套
+    def**，而 McCabe 把嵌套函数计 +1 —— build_graph 的复杂度因此 50→51，撞上刚钉好的
+    C901 阈值。两条规则在此互相拉扯，正解不是抬阈值（棘轮只许往下调），而是注意到
+    这个函数**不捕获任何外层变量**、本就该在模块级。
+    """
+    return f"/characters/{cid}.md"
+
+
 def build_graph() -> dict:
     """Scan the bundle into a {nodes, edges} graph for the visualizer.
 
@@ -713,7 +724,6 @@ def build_graph() -> dict:
         for tgt in _LINK_RE.findall(text):
             add_edge(src, tgt, "link", "link")
 
-    cnode = lambda cid: f"/characters/{cid}.md"
     cdata = json.loads(CHARACTERS_SRC.read_text(encoding="utf-8")).get("characters", [])
     by_name = {c["name"]: c for c in cdata if c.get("name")}
 
@@ -726,7 +736,7 @@ def build_graph() -> dict:
         elif name.startswith("本源") and len(name) > 2:
             base = name[2:]
         if base and base in by_name and base != name:
-            add_edge(cnode(c["id"]), cnode(by_name[base]["id"]), "变体", "variant")
+            add_edge(_cnode(c["id"]), _cnode(by_name[base]["id"]), "变体", "variant")
 
     # 2) lore co-mention edges — two characters named in the same lore entry body
     lore_path = STORY_DIR / "lore_entries.json"
@@ -738,7 +748,7 @@ def build_graph() -> dict:
             blob = f"{e.get('title', '')} {e.get('desc') or ''} {e.get('lock_tip') or ''}"
             hit = sorted({n for n in long_names if n in blob})
             for a, b in combinations(hit, 2):
-                add_edge(cnode(long_names[a]), cnode(long_names[b]), "同篇提及", "lore")
+                add_edge(_cnode(long_names[a]), _cnode(long_names[b]), "同篇提及", "lore")
 
     # 3) CV cluster edges (demoted, faint) — same voice actor, star from rep
     cv_groups: dict[str, list[int]] = {}
@@ -748,9 +758,9 @@ def build_graph() -> dict:
     for cv, members in cv_groups.items():
         if len(members) < 2:
             continue
-        rep = cnode(members[0])
+        rep = _cnode(members[0])
         for m in members[1:]:
-            add_edge(rep, cnode(m), f"CV:{cv}", "cv")
+            add_edge(rep, _cnode(m), f"CV:{cv}", "cv")
 
     # 提及边（Pillar A+，2026-07-04）：从策展正文里确定性抽「谁点名了谁」，把孤岛连进骨架。
     # 白盒办法做联想（区别于向量黑盒）：概念指向的正文源若字面点名某角色（distinctive
@@ -794,9 +804,9 @@ def build_graph() -> dict:
                 elif (src.suffix in _TEXT_SUFFIX and src.exists()
                       and src.stat().st_size <= _SCAN_SIZE_CAP):
                     out.append(src.read_text(encoding="utf-8"))
-            elif low.endswith(".md") and any(low.startswith(p) for p in _CURATED):
-                if src.exists() and src.stat().st_size <= _SCAN_SIZE_CAP:
-                    out.append(src.read_text(encoding="utf-8"))
+            elif (low.endswith(".md") and any(low.startswith(p) for p in _CURATED)
+                  and src.exists() and src.stat().st_size <= _SCAN_SIZE_CAP):
+                out.append(src.read_text(encoding="utf-8"))
         except OSError:
             pass
         return out
@@ -831,7 +841,7 @@ def build_graph() -> dict:
         hit = 0
         for name in names_by_len:
             if name in text:
-                add_edge(nid, cnode(by_name[name]["id"]), f"提及:{name}", "mention")
+                add_edge(nid, _cnode(by_name[name]["id"]), f"提及:{name}", "mention")
                 hit += 1
                 if hit >= 12:  # 单概念提及边封顶，防超大文档连成星
                     break
@@ -839,7 +849,7 @@ def build_graph() -> dict:
             if hit >= 12:
                 break
             if pat.search(text) if pat else (alias in text):
-                add_edge(nid, cnode(target), f"提及:{alias}", "mention")
+                add_edge(nid, _cnode(target), f"提及:{alias}", "mention")
                 hit += 1
 
     # 模式化跨层关系边（全仓知识组织 2026-07-04）：让新增指针层可被 kb_neighbors 顺图导航，

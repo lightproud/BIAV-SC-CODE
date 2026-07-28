@@ -66,12 +66,9 @@ def test_no_top_level_script_imports_archive_layout_directly() -> None:
     for p in _top_level_scripts():
         tree = ast.parse(p.read_text(encoding="utf-8"))
         for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                if any(a.name == "archive_layout" for a in node.names):
-                    offenders.append(p.name)
-            elif isinstance(node, ast.ImportFrom):
-                if node.module == "archive_layout":
-                    offenders.append(p.name)
+            if (isinstance(node, ast.Import) and any(
+                    a.name == "archive_layout" for a in node.names)) or (isinstance(node, ast.ImportFrom) and node.module == "archive_layout"):
+                offenders.append(p.name)
     assert not offenders, (
         f"以下顶层脚本直接 import archive_layout，请改经 news_bridge：{sorted(set(offenders))}"
     )

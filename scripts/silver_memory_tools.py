@@ -20,7 +20,7 @@ from __future__ import annotations
 
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from pathlib import Path
 from typing import Any
 
@@ -260,7 +260,7 @@ def record_lesson(summary: str, context: str = "",
     trap_line = summary.strip()
     if context.strip():
         trap_line = f"{trap_line}（触发场景：{context.strip()}）"
-    principle_line = principle.strip() if principle.strip() else "（待守密人补充）"
+    principle_line = principle.strip() or "（待守密人补充）"
 
     block = [
         "",
@@ -316,7 +316,7 @@ def record_lesson(summary: str, context: str = "",
 
 def _self_check() -> None:
     """手工运行时打印各工具的探测结果。"""
-    now = datetime.now(timezone.utc).isoformat()
+    now = datetime.now(UTC).isoformat()
     print(f"[silver_memory_tools] self-check @ {now}")
     print(f"  REPO_ROOT     = {REPO_ROOT}")
     print(f"  DIGESTS_DIR   = {DIGESTS_DIR} (exists={DIGESTS_DIR.exists()})")

@@ -84,7 +84,7 @@ def _valid_character() -> dict:
     }
 
 
-@pytest.fixture()
+@pytest.fixture
 def schema_env(tmp_path, monkeypatch):
     """Copy the REAL schemas into tmp_path and redirect SCHEMA_DIR/DB_DIR there.
 

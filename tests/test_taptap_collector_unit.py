@@ -11,7 +11,7 @@ import asyncio
 import sys
 import tempfile
 import unittest
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from unittest import mock
 
@@ -70,14 +70,14 @@ class TestAutoscrollCollect(unittest.TestCase):
 
     def test_stops_when_cutoff_reached(self):
         # an item older than cutoff in the very first merge → loop short-circuits
-        old_iso = (datetime.now(timezone.utc) - timedelta(days=30)).isoformat()
+        old_iso = (datetime.now(UTC) - timedelta(days=30)).isoformat()
         captured = [("u", [{"title": "old", "item_id": "1", "created": old_iso}])]
 
         def parse_fn(body):
             # body is already a list of pre-parsed items here
             return body if isinstance(body, list) else []
 
-        cutoff = datetime.now(timezone.utc) - timedelta(days=1)
+        cutoff = datetime.now(UTC) - timedelta(days=1)
         page = FakePage()
         out = _run(tt._autoscroll_collect(page, parse_fn, captured, 5, cutoff))
         self.assertEqual(len(out), 1)
@@ -147,7 +147,7 @@ class TestExtractTopics(unittest.TestCase):
                 mock.patch.object(tt.news_common, "parse_relative_time",
                                   return_value=("2026-01-01T00:00:00+00:00", True)):
             out = _run(tt._extract_topics(page, max_scrolls=1))
-        self.assertEqual(out, out if out else [])  # no crash
+        self.assertEqual(out, out or [])  # no crash
 
 
 class TestExtractTopicsDom(unittest.TestCase):
@@ -312,7 +312,7 @@ class TestCollect(unittest.TestCase):
 
     def test_collect_happy_path(self):
         page = FakePage()
-        recent = datetime.now(timezone.utc).isoformat()
+        recent = datetime.now(UTC).isoformat()
 
         async def fake_topics(p, ms, cutoff):
             return [{"title": "post", "item_id": "p1", "created": recent,

@@ -5,7 +5,7 @@
 """
 
 import asyncio
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 import taptap_collector  # noqa: E402
@@ -17,7 +17,7 @@ def _parse(body):
 
 
 def _item(iid, days_ago=0):
-    t = (datetime.now(timezone.utc) - timedelta(days=days_ago)).isoformat()
+    t = (datetime.now(UTC) - timedelta(days=days_ago)).isoformat()
     return {"item_id": iid, "url": f"https://t/{iid}", "title": f"t{iid}", "created": t}
 
 
@@ -60,7 +60,7 @@ def test_autoscroll_stops_at_cutoff_depth():
         [_item("c", days_ago=1)],  # 不应被抓到（已在上一轮后 break）
     ]
     page = _MockPage(batches, captured)
-    cutoff = datetime.now(timezone.utc) - timedelta(days=180)
+    cutoff = datetime.now(UTC) - timedelta(days=180)
     items = asyncio.run(
         taptap_collector._autoscroll_collect(page, _parse, captured, max_scrolls=10, cutoff=cutoff)
     )

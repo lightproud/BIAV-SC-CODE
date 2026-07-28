@@ -23,14 +23,18 @@
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 import os
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
-from typing import Callable, Iterable
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Callable, Iterable
 
 REPO = Path(__file__).resolve().parent.parent
 WORKFLOW_DIR = REPO / ".github" / "workflows"
@@ -117,7 +121,7 @@ def expected_interval_hours(crons: Iterable[str], reference: datetime) -> float:
         raise ValueError("采样窗口内触发次数不足，无法推导间隔")
     gaps = [
         # strict=False 是刻意的：相邻配对天然差一项，截断即预期行为
-        (b - a).total_seconds() / 3600.0 for a, b in zip(stamps, stamps[1:], strict=False)
+        (b - a).total_seconds() / 3600.0 for a, b in itertools.pairwise(stamps)
     ]
     return max(gaps)
 
@@ -128,7 +132,7 @@ def scheduled_workflows(workflow_dir: Path = WORKFLOW_DIR) -> dict[str, list[str
 
     found: dict[str, list[str]] = {}
     for path in sorted(workflow_dir.glob("*.yml")):
-        crons = re.findall(r"^\s*-\s*cron:\s*'([^']+)'", path.read_text(encoding="utf-8"), re.M)
+        crons = re.findall(r"^\s*-\s*cron:\s*'([^']+)'", path.read_text(encoding="utf-8"), re.MULTILINE)
         if crons:
             found[path.name] = crons
     return found
@@ -162,7 +166,7 @@ def github_fetcher(repo: str, token: str | None) -> Callable[[str], dict]:
 def _parse_ts(value: str | None) -> datetime | None:
     if not value:
         return None
-    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    return datetime.fromisoformat(value)
 
 
 def classify(entry: dict, now: datetime) -> tuple[str, str]:
@@ -230,7 +234,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
-    now = datetime.now(timezone.utc).replace(second=0, microsecond=0)
+    now = datetime.now(UTC).replace(second=0, microsecond=0)
     status = build_status(github_fetcher(args.repo, token), now)
 
     for entry in status["entries"]:

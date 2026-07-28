@@ -28,7 +28,7 @@ import argparse
 import itertools
 import json
 import sys
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
@@ -356,7 +356,7 @@ def write_health(report: dict) -> None:
         }
 
     payload = {
-        'updated_at': datetime.now(timezone.utc).isoformat(),
+        'updated_at': datetime.now(UTC).isoformat(),
         'seeded_from': 'silent_sources_audit',
         'audit_window': {
             'start': report['window_start'],
@@ -468,7 +468,7 @@ def load_validation_drops() -> dict:
             payload = json.loads(DROPS_PATH.read_text(encoding='utf-8'))
             gen = payload.get('generated_at')
             if gen:
-                age = datetime.now(timezone.utc) - datetime.fromisoformat(gen)
+                age = datetime.now(UTC) - datetime.fromisoformat(gen)
                 if age > timedelta(hours=DROPS_MAX_AGE_HOURS):
                     return {'generated_at': gen, 'total_dropped': 0, 'by_source': {},
                             'stale_ignored': True}

@@ -9,7 +9,7 @@ Hermetic: every collector mocked, all output writes stubbed, no network.
 import sys
 import tempfile
 import unittest
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, UTC
 from pathlib import Path
 from unittest import mock
 
@@ -64,15 +64,15 @@ class TestRecency(unittest.TestCase):
         self.assertFalse(cg._is_recent(""))
 
     def test_recent_true(self):
-        now = datetime.now(timezone.utc).isoformat()
+        now = datetime.now(UTC).isoformat()
         self.assertTrue(cg._is_recent(now))
 
     def test_old_false(self):
-        old = (datetime.now(timezone.utc) - timedelta(days=400)).isoformat()
+        old = (datetime.now(UTC) - timedelta(days=400)).isoformat()
         self.assertFalse(cg._is_recent(old))
 
     def test_naive_datetime_assumed_utc(self):
-        now = datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
+        now = datetime.now(UTC).replace(tzinfo=None).isoformat()
         self.assertTrue(cg._is_recent(now))
 
     def test_bad_time_false(self):
@@ -80,7 +80,7 @@ class TestRecency(unittest.TestCase):
 
     def test_sparse_source_wider_window(self):
         # 20 days old: too old for default 24h, but within sparse 30d
-        mid = (datetime.now(timezone.utc) - timedelta(days=20)).isoformat()
+        mid = (datetime.now(UTC) - timedelta(days=20)).isoformat()
         sparse = next(iter(cg.SPARSE_SOURCES)) if cg.SPARSE_SOURCES else None
         if sparse:
             self.assertTrue(cg._is_recent(mid, sparse))
@@ -150,7 +150,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
         tracker.should_skip_platform.return_value = True
         fake_dq = mock.MagicMock()
         fake_dq.SilentPlatformTracker.return_value = tracker
-        with mock.patch.object(global_collectors, "_refresh_cutoff", lambda: None), \
+        with mock.patch.object(global_collectors, "_refresh_cutoff", return_value=None), \
                 mock.patch.dict(sys.modules, {"data_quality": fake_dq,
                                               "playwright_collectors": None}):
             self._patch_all_empty({"Twitter": lambda: [_item("t", "https://t/1")]})
@@ -162,7 +162,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
         # Arca.live returns [] via HTTP → playwright fallback yields items.
         pw_mod = mock.MagicMock()
         pw_mod.fetch_arca_live_playwright = lambda: [_item("pw", "https://pw/1")]
-        with mock.patch.object(global_collectors, "_refresh_cutoff", lambda: None), \
+        with mock.patch.object(global_collectors, "_refresh_cutoff", return_value=None), \
                 mock.patch.dict(sys.modules, {"data_quality": mock.MagicMock(
                     SilentPlatformTracker=mock.MagicMock(side_effect=Exception("off"))),
                     "playwright_collectors": pw_mod}):
@@ -178,7 +178,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
         def boom():
             raise RuntimeError("http down")
 
-        with mock.patch.object(global_collectors, "_refresh_cutoff", lambda: None), \
+        with mock.patch.object(global_collectors, "_refresh_cutoff", return_value=None), \
                 mock.patch.dict(sys.modules, {"data_quality": mock.MagicMock(
                     SilentPlatformTracker=mock.MagicMock(side_effect=Exception("off"))),
                     "playwright_collectors": pw_mod}):
@@ -188,7 +188,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
 
     def test_auth_gated_zero_graceful(self):
         # Google Play is auth-gated; with no key env + 0 items → graceful, no fail.
-        with mock.patch.object(global_collectors, "_refresh_cutoff", lambda: None), \
+        with mock.patch.object(global_collectors, "_refresh_cutoff", return_value=None), \
                 mock.patch.dict(sys.modules, {"data_quality": mock.MagicMock(
                     SilentPlatformTracker=mock.MagicMock(side_effect=Exception("off"))),
                     "playwright_collectors": None}), \
@@ -210,7 +210,7 @@ class TestMain(unittest.TestCase):
 
     def test_success_writes_and_returns(self):
         items = [{"title": "T", "url": "https://x/1", "engagement": 9,
-                  "time": datetime.now(timezone.utc).isoformat(), "source": "twitter"}]
+                  "time": datetime.now(UTC).isoformat(), "source": "twitter"}]
         with mock.patch.object(cg, "run_zero_cost_collectors", return_value=(items, [])), \
                 mock.patch.object(cg, "load_existing_news", return_value=[]), \
                 mock.patch.object(news_common, "dump_json_atomic") as dump:
@@ -220,11 +220,11 @@ class TestMain(unittest.TestCase):
 
     def test_core_failure_exits_after_write(self):
         items = [{"title": "T", "url": "https://x/1", "engagement": 9,
-                  "time": datetime.now(timezone.utc).isoformat(), "source": "twitter"}]
+                  "time": datetime.now(UTC).isoformat(), "source": "twitter"}]
         with mock.patch.object(cg, "run_zero_cost_collectors",
                                return_value=(items, [("youtube", "down")])), \
                 mock.patch.object(cg, "load_existing_news", return_value=[]), \
-                mock.patch.object(news_common, "dump_json_atomic", lambda *a, **k: None):
+                mock.patch.object(news_common, "dump_json_atomic", return_value=None):
             with self.assertRaises(SystemExit) as cm:
                 cg.main()
         self.assertEqual(cm.exception.code, 1)

@@ -51,7 +51,7 @@ PACKAGES = {
 CONTEXT_PACKAGES = ("silver-core-agent-sdk", "silver-core-maestro-sdk")
 
 # CHANGELOG 发布标题：`## 0.76.0 — 2026-07-22`（破折号为全角 em dash）。日期可缺，缺则标注。
-CHANGELOG_HEADING_RE = re.compile(r"^##\s+(\d+\.\d+\.\d+)\s*(?:—|--|-)?\s*(\d{4}-\d{2}-\d{2})?", re.M)
+CHANGELOG_HEADING_RE = re.compile(r"^##\s+(\d+\.\d+\.\d+)\s*(?:—|--|-)?\s*(\d{4}-\d{2}-\d{2})?", re.MULTILINE)
 
 
 def _pkg(path: Path) -> dict:
@@ -73,7 +73,7 @@ def _ledger_counts() -> tuple[int, int]:
     text = (REPO / "memory" / "todo.md").read_text(encoding="utf-8")
     body = text.split("## 开账", 1)[1]
     open_part, closed_part = body.split("## 已清", 1)
-    row = re.compile(r"^\|\s*[TC]\d+\s*\|", re.M)
+    row = re.compile(r"^\|\s*[TC]\d+\s*\|", re.MULTILINE)
     return len(row.findall(open_part)), len(row.findall(closed_part))
 
 
@@ -81,7 +81,7 @@ def render() -> str:
     versions = {name: _pkg(path)["version"] for name, path in PACKAGES.items()}
     agent, maestro, testbed = (PACKAGES[k] for k in PACKAGES)
     workflows = sorted((REPO / ".github" / "workflows").glob("*.yml"))
-    scheduled = [p for p in workflows if re.search(r"^\s*-\s*cron:", p.read_text(encoding="utf-8"), re.M)]
+    scheduled = [p for p in workflows if re.search(r"^\s*-\s*cron:", p.read_text(encoding="utf-8"), re.MULTILINE)]
     open_rows, closed_rows = _ledger_counts()
 
     lines = [

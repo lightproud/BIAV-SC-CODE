@@ -1,6 +1,6 @@
 import sys
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
@@ -9,7 +9,7 @@ import global_collectors as gc
 
 
 # 固定的过去 CUTOFF，使时间过滤逻辑确定可测。
-PAST_CUTOFF = datetime(2020, 1, 1, tzinfo=timezone.utc)
+PAST_CUTOFF = datetime(2020, 1, 1, tzinfo=UTC)
 RECENT = "2026-06-19T00:00:00+00:00"  # 远晚于 PAST_CUTOFF
 OLD = "2019-01-01T00:00:00+00:00"     # 早于 PAST_CUTOFF
 
@@ -180,7 +180,7 @@ class TestFetchReddit(unittest.TestCase):
         return {"data": {"children": [
             {"data": {
                 "title": "Morimens update",
-                "created_utc": datetime(2026, 6, 19, tzinfo=timezone.utc).timestamp(),
+                "created_utc": datetime(2026, 6, 19, tzinfo=UTC).timestamp(),
                 "selftext": "details",
                 "permalink": "/r/Morimens/abc",
                 "score": 150,
@@ -203,7 +203,7 @@ class TestFetchReddit(unittest.TestCase):
     def test_old_post_filtered(self):
         data = self._post_json()
         data["data"]["children"][0]["data"]["created_utc"] = \
-            datetime(2019, 1, 1, tzinfo=timezone.utc).timestamp()
+            datetime(2019, 1, 1, tzinfo=UTC).timestamp()
         with mock.patch.object(gc, "_get", return_value=FakeResp(json_data=data)):
             self.assertEqual(gc.fetch_reddit(["Morimens"]), [])
 
@@ -237,7 +237,7 @@ class TestFetchBilibili(unittest.TestCase):
         return FakeResp(json_data={"data": {"result": [{
             "title": "忘却前夜实况",
             "description": "desc",
-            "pubdate": datetime(2026, 6, 19, tzinfo=timezone.utc).timestamp(),
+            "pubdate": datetime(2026, 6, 19, tzinfo=UTC).timestamp(),
             "play": 20000,
             "danmaku": 100,
             "arcurl": "https://bili/v1",

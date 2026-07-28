@@ -23,9 +23,12 @@ from __future__ import annotations
 import gzip
 import os
 import re
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone, UTC
 from pathlib import Path
-from typing import Iterator, TextIO
+from typing import TextIO, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Iterator
 
 # 归档文件名 = 日期；state.json / manifest 等辅助文件不参与日期语义
 DATE_STEM = re.compile(r'^\d{4}-\d{2}-\d{2}$')
@@ -50,7 +53,7 @@ def archive_date_str(when: datetime | None = None) -> str:
     if when is None:
         return archive_today().isoformat()
     if when.tzinfo is None:
-        when = when.replace(tzinfo=timezone.utc)
+        when = when.replace(tzinfo=UTC)
     return when.astimezone(BEIJING_TZ).strftime('%Y-%m-%d')
 
 # ── 数据湖根解析（分仓桥接 SSOT，T62 方案 B「兄弟 checkout + 环境根」）─────────
