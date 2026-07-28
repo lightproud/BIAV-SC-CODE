@@ -12,6 +12,12 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.93.0 — 2026-07-28
+
+**锁步对齐**(无本包运行时改动)。agent SDK 0.93.0 修复 recap 截断丢最新进度
+(BPT P1 活锁事故根因,`buildRecap` 改头尾双保留)并把截断纪律注册表扩到全 `src/`——
+见 silver-core-sdk CHANGELOG。家族版本钟锁步(守密人 2026-07-18 裁定),故本包同步升位。
+
 ## 0.92.1 — 2026-07-28
 
 **锁步对齐**（无本包运行时改动）。agent SDK 0.92.1 修复了自动续跑时「被拒绝的

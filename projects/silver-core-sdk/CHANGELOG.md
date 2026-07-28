@@ -16,6 +16,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.93.0 — 2026-07-28
+
+**修复：recap 截断丢最新进度（BPT P1 需求单,一次 3 小时活锁事故的根因）。** BPT 会话
+4e2d03e0(未开 `useApiSummary`,走确定性折叠)在「通读大文件」任务中活锁:3 小时 15 分
+840 次 Read / 777 次 compact / 0 次有效修改。根因是 `buildRecap` 超过 4000 字符上限时
+取**前** 4000 字符——即最早的历史。recap 的价值分布两头重:首行是结构声明,结尾几十行
+是最新进度;头部截断恰好把后者全部丢掉,模型在每次折叠后看到的历史里进度真实不存在,
+于是从头重读——在被截断的信息面前这是正确决策,错在截断方向。
+
+1. **`buildRecap` 改头尾双保留**:超限时保留首行结构声明 + 尽可能多的**完整**结尾行
+   (按行切,不把 `{"offset":2` 这样的半个 JSON 参数留给模型);中间以三问纪律标记衔接
+   (丢了多少行多少字符 / 哪个上限 / 怎么拿回)。单行独超预算时以
+   `sliceTailSurrogateSafe` 保尾切分(最新调用参数在行尾)。总长仍受 4000 上限约束
+   (标记按最坏位数预留)。
+
+2. **截断纪律注册表扩到全 `src/`**(0.87.0「全家对齐」守卫只扫 `src/tools`,engine 层
+   截断点结构性在射程外——本缺陷因此从未被对齐)。豁免改走白名单而非目录边界;扩围后
+   浮现并登记 30 个档案(engine 5 个真实截断点、tools/memory 8 个、transport/types 等
+   注释级提及),除本条修复外均为「登记即可」(方向合理或非上下文截断)。
+
+验收:构造超限 prefix 断言 recap 含最后一次 Read 的 offset(旧实现必不含,先红后绿已验);
+首行 `[Conversation summary` 保留(既有测试继续通过);新切分点 surrogate 安全性按奇偶
+扫描(整行保留路径 + 单行截尾路径各 14 种 padding)。
+
 ## 0.92.1 — 2026-07-28
 
 **修复：自动续跑时，被拒绝的控制面覆写仍被留存并重放。** 全仓缺陷扫描（#861）在

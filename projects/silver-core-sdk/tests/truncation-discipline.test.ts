@@ -123,34 +123,112 @@ describe('glob result cap', () => {
   });
 });
 
+describe('recap body cap (engine/compaction, head+tail retention)', () => {
+  it('over-cap recap keeps the header AND the newest lines, with a three-question gap marker', async () => {
+    // BPT P1 2026-07-28: the old head-only cut kept the OLDEST recap lines,
+    // so after every fold the model saw its original intent but never its
+    // progress (session 4e2d03e0: 840 Reads / 777 compacts / 0 edits, 3h15m).
+    const { foldDeterministic } = await import('../src/engine/compaction.js');
+    const prefix = Array.from({ length: 80 }, (_, i) => ({
+      role: 'assistant' as const,
+      content: [
+        {
+          type: 'tool_use' as const,
+          id: `t${i}`,
+          name: 'Read',
+          input: { file_path: '/w/big.py', offset: 1 + i * 40, limit: 40 },
+        },
+      ],
+    }));
+    const fold = foldDeterministic(prefix, null);
+    const recap = (fold[1]!.content as Array<{ text: string }>)[0]!.text;
+    // Structure declaration survives; the newest call survives.
+    expect(recap.startsWith('[Conversation summary')).toBe(true);
+    expect(recap).toContain(`"offset":${1 + 79 * 40}`);
+    // Three questions: how much / why (which cap) / how to recover.
+    expect(recap).toMatch(/\d+ older recap line\(s\) \(\d+ chars\) elided/);
+    expect(recap).toContain('4000-char cap');
+    expect(recap).toContain('files or persistent memory');
+  });
+});
+
 describe('registry: truncation sites must be inventoried', () => {
-  it('every src/tools file that emits a truncation notice is a known site', async () => {
+  it('every src file that mentions truncation is a known site', async () => {
     // Adding a NEW cap with a notice? Add the file here AND cover its message
     // in this suite (three questions: how much / why / how to recover).
     // Removing one? Remove it here. A file appearing only on one side reds.
+    //
+    // Scope (BPT P1 2026-07-28): ALL of src/, recursively. The 0.87.0
+    // "whole-family alignment" guard only watched src/tools, so engine-layer
+    // caps — buildRecap's head-only recap cut among them — sat structurally
+    // outside its sight and were never aligned. Exemptions now go through
+    // this whitelist, not through a directory boundary.
     const KNOWN_SITES = new Set([
-      'descriptions.ts', // documents other tools' caps, emits none itself
-      'glob.ts',
-      'grep.ts',
-      'read.ts',
-      'shells.ts', // gap marker via "discarded oldest-first" wording
-      'bash.ts', // foreground tail-keep cap, three-question marker
-      'edit.ts', // comment-only mention (never truncates)
-      'webfetch.ts',
-      'workflow.ts',
-      'workflow-engine.ts',
-      'fsutil.ts', // shared Read/WebFetch footer builder
-      'monitor.ts',
-      'task.ts',
-      'toolsearch.ts',
-      'sendmessage.ts',
-      'resources.ts',
+      // --- tools: real caps with covered notices ---
+      'tools/glob.ts',
+      'tools/grep.ts',
+      'tools/read.ts',
+      'tools/shells.ts', // gap marker via "discarded oldest-first" wording
+      'tools/bash.ts', // foreground tail-keep cap, three-question marker
+      'tools/webfetch.ts',
+      'tools/workflow.ts',
+      'tools/workflow-engine.ts',
+      'tools/fsutil.ts', // shared Read/WebFetch footer builder
+      'tools/monitor.ts',
+      'tools/task.ts',
+      'tools/toolsearch.ts',
+      'tools/sendmessage.ts',
+      'tools/resources.ts',
+      'tools/descriptions.ts', // documents other tools' caps, emits none itself
+      'tools/edit.ts', // comment-only mention (never truncates)
+      // --- tools/memory: view caps + scan bounds ---
+      'tools/memory/store.ts', // viewTruncationNotice: cap + view_range recovery
+      'tools/memory/memory-tool.ts', // R8 view truncation + create size cap
+      'tools/memory/index.ts', // UTF-8 byte-boundary head load, "only the head" honesty
+      'tools/memory/index-capacity.ts', // read/write-side capacity warnings (no silent cut)
+      'tools/memory/health.ts', // truncatedScan flag: scan bound, numbers = lower bound
+      'tools/memory/consolidation.ts', // consumes truncatedScan, comment-level
+      'tools/memory/contract-suite.ts', // comment-only (corruption diagnosis)
+      'tools/memory/local-store.ts', // comment-only (atomic-write rationale)
+      // --- engine (the layer the old guard never saw) ---
+      'engine/compaction.ts', // recap body cap: head+tail, three-question gap marker (BPT P1); shed tool_result head+tail pointer-ization; per-line recap caps (head, single-line summaries)
+      'engine/runtime-context.ts', // instruction-files byte cap: tail-keep with explicit marker
+      'engine/tool-dispatch.ts', // record summary cap (head, surrogate-safe; diagnostic record, not model-facing context)
+      'engine/loop.ts', // budget:exhausted lastAssistantText 500-char head cut (summary nature, acceptable) + E3 truncated-stream SIGNALING (not a cap)
+      'engine/accumulator.ts', // H4 truncated tool_use input: 200-char diagnostic snippet (head, diagnostic) + truncation stamping
+      'engine/config-builder.ts', // comment-only (continuation rationale)
+      // --- everything else that matches the scan regex ---
+      'error-normalize.ts', // surrogate-safe error-message cut (diagnostic)
+      'errors.ts', // comment-only (truncated-turn docs)
+      'generators/index.ts', // comment-only
+      'generators/runtime.ts', // comment-only (truncated-reply handling docs)
+      'index.ts', // re-export name mention (truncateViewBody)
+      'internal/contracts.ts', // type docs
+      'internal/text.ts', // the shared slice primitives themselves
+      'loop-support/retention.ts', // explicitly NEVER truncates — raises instead
+      'mcp/http.ts', // 300-char error-detail cut (diagnostic)
+      'mcp/protocol.ts', // tools/list pagination cap, logged via debug
+      'query.ts', // tool-record input cap (diagnostic record; full input lives in the assistant message)
+      'reporting/run-log.ts', // surrogate-safe 300-char log cut (diagnostic)
+      'sessions/health.ts', // truncatedScan bound flag (lower-bound honesty)
+      'transport/anthropic.ts', // error-body cut (diagnostic) + mid-stream truncated-turn signaling
+      'transport/openai.ts', // truncated-turn signaling (not a cap)
+      'transport/http-retry.ts', // midStreamTruncation flagging (signal, not a cap)
+      'types/messages.ts', // type docs (E3 salvaged-turn field)
+      'types/options.ts', // type docs
+      'types/query.ts', // type docs
+      'types/subsystems.ts', // type docs
+      'types/tool-outputs.ts', // type docs
+      'types/tools.ts', // type docs
+      'verifier/index.ts', // comment-only (fails closed on truncation)
     ]);
-    const toolsDir = join(process.cwd(), 'src', 'tools');
-    const files = (await readdir(toolsDir)).filter((f) => f.endsWith('.ts'));
+    const srcDir = join(process.cwd(), 'src');
+    const files = (await readdir(srcDir, { recursive: true }))
+      .map((f) => String(f).replaceAll('\\', '/'))
+      .filter((f) => f.endsWith('.ts'));
     const offenders: string[] = [];
     for (const f of files) {
-      const body = await readFile(join(toolsDir, f), 'utf8');
+      const body = await readFile(join(srcDir, f), 'utf8');
       const emits = /truncat|discarded oldest-first/i.test(body);
       if (emits && !KNOWN_SITES.has(f)) offenders.push(f);
     }

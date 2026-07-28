@@ -341,8 +341,9 @@ describe('D4: recap truncation is surrogate-safe', () => {
   });
 
   it('recap body cap stays surrogate-safe across boundary parities', () => {
-    // Sweep the cap offset across parities/line positions so at least one pad
-    // forces the 4000-char body cap to land inside an emoji run.
+    // Head+tail retention (BPT P1 2026-07-28) keeps whole lines, so the body
+    // cap itself never cuts mid-line here — but the sweep still guards the
+    // per-line caps composing with the body cap: no lone surrogate anywhere.
     for (let padLen = 0; padLen < 14; padLen += 1) {
       const prefix: APIMessageParam[] = [
         { role: 'user', content: 'x'.repeat(padLen + 1) },
@@ -355,9 +356,93 @@ describe('D4: recap truncation is surrogate-safe', () => {
       }
       const fold = foldDeterministic(prefix, null);
       const recap = (fold[1]!.content as Array<{ text: string }>)[0]!.text;
-      expect(recap).toContain('…[truncated]');
+      expect(recap).toContain('elided');
       expect(hasLoneSurrogate(recap)).toBe(false);
     }
+  });
+
+  it('single-line tail slice stays surrogate-safe across boundary parities', () => {
+    // One assistant turn whose tool-call roster alone busts the body budget
+    // forces the tail-slice path; the pad sweeps the cut point across
+    // parities so at least one lands inside an emoji's surrogate pair.
+    for (let padLen = 0; padLen < 14; padLen += 1) {
+      const calls = Array.from({ length: 60 }, (_, i) => ({
+        type: 'tool_use' as const,
+        id: `t${i}`,
+        name: i === 0 ? 'pad' : 'Emoji',
+        input: i === 0 ? { p: 'x'.repeat(padLen) } : { a: '😀'.repeat(40) },
+      }));
+      const fold = foldDeterministic(
+        [{ role: 'assistant', content: calls }],
+        null,
+      );
+      const recap = (fold[1]!.content as Array<{ text: string }>)[0]!.text;
+      expect(recap).toContain('elided');
+      expect(hasLoneSurrogate(recap)).toBe(false);
+    }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Recap head+tail retention (BPT P1 2026-07-28): the fold must keep the
+// NEWEST progress, not the oldest intent. Root cause of BPT session 4e2d03e0
+// (840 Reads / 777 compacts / 0 edits in 3h15m): the head-only cut dropped
+// every recent Read offset, so the model restarted the file walk after every
+// fold — a correct decision on truncated information.
+// ---------------------------------------------------------------------------
+
+describe('recap head+tail retention keeps newest progress', () => {
+  it('an over-cap recap still contains the LAST tool call and its arguments', () => {
+    const prefix: APIMessageParam[] = [];
+    // Enough misc turns to push the recap body well past the 4000-char cap.
+    for (let i = 0; i < 60; i += 1) {
+      prefix.push({ role: 'user', content: `misc turn ${i} ` + 'x'.repeat(80) });
+    }
+    // Then a Read walk with increasing offsets — the progress that matters.
+    for (let i = 0; i < 20; i += 1) {
+      prefix.push({
+        role: 'assistant',
+        content: [
+          {
+            type: 'tool_use',
+            id: `read${i}`,
+            name: 'Read',
+            input: { file_path: '/w/translate_panorama.py', offset: 1 + i * 40, limit: 40 },
+          },
+        ],
+      });
+      prefix.push({
+        role: 'user',
+        content: [{ type: 'tool_result', tool_use_id: `read${i}`, content: 'chunk' }],
+      });
+    }
+    const fold = foldDeterministic(prefix, null);
+    const recap = (fold[1]!.content as Array<{ text: string }>)[0]!.text;
+    // Header (structure declaration) survives…
+    expect(recap.startsWith('[Conversation summary')).toBe(true);
+    // …and so does the newest progress: the final Read's offset (761).
+    expect(recap).toContain('"offset":761');
+    // The gap marker answers the three questions: how much / why / recovery.
+    expect(recap).toMatch(/\d+ older recap line\(s\) \(\d+ chars\) elided/);
+    expect(recap).toContain('4000-char cap');
+    expect(recap).toContain('files or persistent memory');
+    // Whole-line retention: no recap line is a cut-off JSON fragment.
+    const lines = recap.split('\n');
+    for (const line of lines.slice(2)) {
+      expect(line.endsWith('…') || !line.includes('{"') || line.trim().endsWith('}')).toBe(true);
+    }
+    // The cap still binds (header + marker + tail all inside it).
+    expect(recap.length).toBeLessThanOrEqual(4000);
+  });
+
+  it('under the cap: no gap marker, nothing dropped', () => {
+    const fold = foldDeterministic(
+      [{ role: 'user', content: 'short prompt' }],
+      null,
+    );
+    const recap = (fold[1]!.content as Array<{ text: string }>)[0]!.text;
+    expect(recap).not.toContain('elided');
+    expect(recap).toContain('short prompt');
   });
 });
 

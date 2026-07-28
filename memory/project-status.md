@@ -82,8 +82,8 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.92.1` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.92.1` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.93.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.93.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 139 / 206 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
@@ -220,6 +220,7 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
+- **v0.93.0（2026-07-28）**：锁步对齐（本包零运行时改动）——agent SDK 0.93.0 修复 recap 截断丢最新进度（BPT P1 活锁根因）并扩截断纪律注册表到全 `src/`；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
 - **v0.92.1（2026-07-28）**：锁步对齐（本包零运行时改动）——agent SDK 0.92.1 修复「被拒绝的控制面覆写仍被留存并重放」；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
 
 > **一句话**：银芯编排 SDK——持有分子（钟 / 跨会话状态 / 会话装配），把「活得比一次调用久」的
@@ -256,8 +257,6 @@
 
 > **v0.90.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.90.0（checkpoint blob 上限，T74 甲案）前进。
 > **v0.89.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.89.0（类型面漂移检测工具化，首跑挖出四条「发货了却没声明」的类型缺陷）前进。
-> **v0.88.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.88.0（处方卡型 + sessions 体检面）前进。
-> **v0.87.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.87.0（截断纪律全家对齐 + cards 索引豁免）前进。
 > **v0.86.1（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.87.1（嵌套路径普查：timedOutAfterMs 移回基类）前进。
 > **v0.86.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.86.0（主循环提示词补回开篇句 + 输出类型普查续：ReadMcpResource 错误字段 + WebSearch 结构化结果）前进。
 > **v0.84.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.84.0（记忆索引纪律 + 整理规程）前进。
@@ -341,6 +340,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.93.0（2026-07-28）**：修 recap 截断丢最新进度（BPT P1 需求单，3 小时活锁事故根因）——确定性折叠 `buildRecap` 超 4000 上限取前 4000 字符即最早历史，最新进度必被截掉，模型每次折叠后从头重读（BPT 会话 4e2d03e0：840 Read / 777 compact / 0 修改）。改头尾双保留（首行结构声明 + 完整结尾行 + 三问标记衔接，按行切、单行独超走保尾切分）；截断纪律注册表扩到全 `src/` 递归（旧守卫只扫 `src/tools`，engine 层结构性在射程外），豁免走白名单、扩围浮现 30 档案逐条登记。验收先红后绿。详见 CHANGELOG。
 - **v0.92.1（2026-07-28）**：修自动续跑时「被拒绝的控制面覆写仍被留存并重放」（全仓缺陷扫描 PR #861，TS 侧首次 lint 扫描查出）——包裹层先记账后返回可能拒绝的 Promise，加上 `replayControlPlane` 三个 setter 全不 await，叠加成悬空 Promise（Node ≥ 15 下未处理 rejection 直接终止进程）。改为「内层成功才记账」+ 调用点 await；两条均已证伪验证。次序竞态目前不可触发，按潜伏记。详见 CHANGELOG。
 - **v0.84.0（2026-07-27）**：记忆索引纪律 + 整理规程——修的是「SDK 给了常驻索引机制却没规定索引条目该长什么样，且会话收尾提示词命令模型把进度卡写进索引档」这个自伤缺口（守密人 BPT 现场反馈：开工要好几回工具调用才找得到东西）。进度卡改落 `/memories/progress/`、索引只留指针；新增索引纪律片段（两模式注入、前提不成立即跳过）；写侧超限反压（读写共用同一度量，明说尾部已不可见）；`buildConsolidationPrompt()` + 四阶段整理规程，由 `assessMemoryStoreHealth()` 结果渲染待办。**层界守住**：只给「该不该整理 / 怎么整理」，不给调度（N1 未破，零新进程）。新增测试 28。
 - **v0.87.0（2026-07-27）**：截断纪律全家对齐——任何上限砍内容须答三问（丢多少/为何/怎么拿回）、流式保尾。后台 shell 流永久失聪缺陷修复（保尾保留窗 + 丢弃计数 + gap 标记）；Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记；cards 校验两层豁免索引档（修 0.84.0 自种 P4 矛盾）。另修哨兵两档制 + test.yml push 盲区 + 门禁 hooksPath 警告（仓侧）。

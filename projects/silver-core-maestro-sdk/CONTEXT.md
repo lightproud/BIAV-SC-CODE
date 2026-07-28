@@ -36,11 +36,13 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.92.1`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.92.1`
+**当前版本 `0.93.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.93.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.93.0（2026-07-28）：锁步对齐**（本包零运行时改动）——agent SDK 0.93.0 修复 recap 截断丢最新进度（BPT P1 活锁事故根因，`buildRecap` 改头尾双保留）并把截断纪律注册表扩到全 `src/`；家族版本钟锁步，本包同步升位。
 
 **v0.92.1（2026-07-28）：锁步对齐**（本包零运行时改动）——agent SDK 0.92.1 修复自动续跑时「被拒绝的控制面覆写仍被留存并重放」；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
 
@@ -53,8 +55,6 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 **v0.88.0 / v0.87.x（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK
 0.87.0（截断纪律全家对齐）、0.87.1（嵌套路径普查）、0.88.0（处方卡型 + sessions 体检面）
 前进，逐版详见该包 CHANGELOG。
-
-**v0.86.0（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.86.0（主循环提示词补回开篇句 + 输出类型普查续：ReadMcpResource 错误字段 + WebSearch 结构化结果）前进。
 
 **v0.84.0（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.84.0
 （记忆索引纪律 + 整理规程）前进，详见该包 CHANGELOG。

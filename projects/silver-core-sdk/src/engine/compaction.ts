@@ -38,7 +38,7 @@ import type {
   StreamRequest,
 } from '../internal/contracts.js';
 import { resolveModelAlias } from '../internal/model-alias.js';
-import { sliceSurrogateSafe } from '../internal/text.js';
+import { sliceSurrogateSafe, sliceTailSurrogateSafe } from '../internal/text.js';
 import { RetentionStore } from '../loop-support/retention.js';
 import { MessageAccumulator } from './accumulator.js';
 import { contextWindowFor } from './context-window.js';
@@ -944,15 +944,55 @@ function countGenuineUserTurns(messages: APIMessageParam[]): number {
 
 /** Structural, deterministic recap of the folded prefix (capped). */
 function buildRecap(prefix: APIMessageParam[]): string {
-  const lines: string[] = [
-    `[Conversation summary — the earlier ${prefix.length} messages were compacted to save context.]`,
-  ];
+  const header = `[Conversation summary — the earlier ${prefix.length} messages were compacted to save context.]`;
+  const lines: string[] = [];
   for (const msg of prefix) {
     lines.push(...recapLines(msg));
   }
-  const body = lines.join('\n');
+  const body = header + '\n' + lines.join('\n');
   if (body.length <= RECAP_CHAR_CAP) return body;
-  return sliceSurrogateSafe(body, RECAP_CHAR_CAP) + '…[truncated]';
+
+  // Head+tail retention (BPT P1 2026-07-28). A recap's value is bimodal: the
+  // header states WHAT was folded, the NEWEST lines state where the work got
+  // to. The old head-only cut kept the oldest lines and dropped the newest,
+  // so after every fold the model saw its original intent but never its
+  // progress — and correctly restarted from scratch, forever (BPT session
+  // 4e2d03e0: 840 Reads / 777 compacts / 0 edits in 3h15m). Keep the header
+  // plus as many complete newest lines as fit, and bridge the gap with a
+  // three-question marker (how much / why / how to recover). Whole lines
+  // only: half an `Assistant called: … {"offset":2` JSON is worse than none.
+  const gapMarker = (droppedLines: number, droppedChars: number): string =>
+    `[…${droppedLines} older recap line(s) (${droppedChars} chars) elided — ` +
+    `the recap exceeded its ${RECAP_CHAR_CAP}-char cap, so only the newest ` +
+    `lines are kept below. The elided lines summarized the OLDEST compacted ` +
+    `activity; recover durable state from files or persistent memory, not ` +
+    `from this recap.]`;
+  // Reserve worst-case marker space up front (real digits are never longer),
+  // so header + marker + kept tail stays within RECAP_CHAR_CAP.
+  const budget =
+    RECAP_CHAR_CAP - header.length - (gapMarker(lines.length, body.length).length + 1);
+  let keptChars = 0;
+  let keptFrom = lines.length;
+  while (keptFrom > 0) {
+    const cost = lines[keptFrom - 1]!.length + 1; // +1 joining newline
+    if (keptChars + cost > budget) break;
+    keptChars += cost;
+    keptFrom -= 1;
+  }
+  const kept = lines.slice(keptFrom);
+  let droppedChars = 0;
+  for (let i = 0; i < keptFrom; i += 1) droppedChars += lines[i]!.length;
+  if (kept.length === 0 && lines.length > 0) {
+    // The single newest line alone busts the budget (e.g. one assistant turn
+    // with a very long tool-call roster). Keep its TAIL — the newest calls
+    // and their arguments live at the end — with a surrogate-safe cut.
+    keptFrom = lines.length - 1;
+    const tail = sliceTailSurrogateSafe(lines[keptFrom]!, Math.max(0, budget - 2));
+    // droppedChars summed ALL lines above; the retained tail is no longer dropped.
+    droppedChars -= tail.length;
+    kept.push('…' + tail);
+  }
+  return [header, gapMarker(keptFrom, droppedChars), ...kept].join('\n');
 }
 
 function recapLines(msg: APIMessageParam): string[] {
