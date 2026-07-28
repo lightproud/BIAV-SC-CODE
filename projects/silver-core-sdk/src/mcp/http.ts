@@ -283,6 +283,16 @@ export class HttpMcpConnection {
         response.status === 404 &&
         this.sessionId !== undefined &&
         !retriedAfterSessionLoss &&
+        // Only a real REQUEST (awaiting a reply) may be replayed onto a fresh
+        // session. A fire-and-forget message (expectId === null: an elicitation
+        // reply / method-not-found reply from answerServerRequest, or a
+        // notification) carries a JSON-RPC id that is meaningful ONLY within the
+        // session that issued the matching request. Re-initializing and
+        // replaying such a RESPONSE onto a brand-new session — which never made
+        // that request — is a cross-session id-context violation (the new
+        // server sees a response for an unknown id) plus a needless reconnect;
+        // let it surface/log its 404 instead.
+        expectId !== null &&
         // Never recover the handshake's own messages: a 404 inside connect()
         // would recurse connect() -> post() -> connect() unboundedly.
         payload.method !== 'initialize' &&
