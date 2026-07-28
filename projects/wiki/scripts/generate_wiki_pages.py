@@ -30,6 +30,17 @@ REALM_TAGLINE = {
 }
 
 
+
+def _load_json(path):
+    """读 JSON 并确保句柄关闭。
+
+    原先全档遍布 `json.load(open(path, encoding='utf-8'))`：句柄靠 CPython 引用计数
+    顺手回收，一旦解析中途抛异常（本档大量 try/except FileNotFoundError 的路径）
+    就悬着不放。生成一次站点要开几十个档，属实打实的描述符泄漏。
+    """
+    with open(path, encoding='utf-8') as f:
+        return json.load(f)
+
 def load_playstyle():
     """解析玩法层 character_skills.md → name → {realm, role, card}。
 
@@ -1040,7 +1051,7 @@ def generate_awakener_pages(chars, by_cat, play, cidx):
     # 供详情页「登场剧情」回链。锚点方案须与 generate_story 保持一致。
     char_chapters = {}
     try:
-        sidx = json.load(open(f'{PROCESSED_DIR}/story/index.json', encoding='utf-8'))['index']
+        sidx = _load_json(f'{PROCESSED_DIR}/story/index.json')['index']
         for i, u in enumerate(sidx):
             for name in u.get('characters', []):
                 char_chapters.setdefault(name, []).append((u['unit'], f'chapter-{i}'))
@@ -1752,16 +1763,16 @@ def generate_story():
     import html as _html
     sd = f'{PROCESSED_DIR}/story'
     try:
-        idx = json.load(open(f'{sd}/index.json', encoding='utf-8'))['index']
-        lore = {e['id']: e for e in json.load(open(f'{sd}/lore_entries.json', encoding='utf-8'))['entries']}
-        sbu = json.load(open(f'{sd}/stages_by_unit.json', encoding='utf-8'))['by_unit']
+        idx = _load_json(f'{sd}/index.json')['index']
+        lore = {e['id']: e for e in _load_json(f'{sd}/lore_entries.json')['entries']}
+        sbu = _load_json(f'{sd}/stages_by_unit.json')['by_unit']
     except FileNotFoundError:
         print('Story layer not found; skipping story page')
         return
     # 角色名 → 详情页 id（用于「关联角色」交叉链接到 /zh/awakeners/{id}）
     name2id = {}
     try:
-        ci = json.load(open(f'{PROCESSED_DIR}/character_index.json', encoding='utf-8'))
+        ci = _load_json(f'{PROCESSED_DIR}/character_index.json')
         for c in (ci if isinstance(ci, list) else ci.get('characters', ci.values())):
             # 仅 playable 角色有详情页（generate_characters 只为 playable 出页），
             # 非 playable 链接会 404，故不收
@@ -1777,7 +1788,7 @@ def generate_story():
     # 关卡组引言：group_id → desc（取自 stages.json groups）
     gdesc = {}
     try:
-        for g in json.load(open(f'{PROCESSED_DIR}/stages.json', encoding='utf-8'))['groups']:
+        for g in _load_json(f'{PROCESSED_DIR}/stages.json')['groups']:
             gdesc[g['id']] = g.get('desc', '')
     except (FileNotFoundError, KeyError):
         pass
@@ -1914,7 +1925,7 @@ def generate_story():
 def generate_feature_unlock():
     """Generate 功能解锁条件 page from feature_unlock.json（此前未上架的解包数据）。"""
     try:
-        data = json.load(open(f'{PROCESSED_DIR}/feature_unlock.json', encoding='utf-8'))
+        data = _load_json(f'{PROCESSED_DIR}/feature_unlock.json')
     except FileNotFoundError:
         print('feature_unlock.json not found; skipping feature unlock page')
         return
@@ -1963,7 +1974,7 @@ def generate_potency():
     一手效果词条呈现（可搜索），不做合成关联（§4 数据纪律）。"""
     import re
     try:
-        data = json.load(open(f'{PROCESSED_DIR}/potency.json', encoding='utf-8'))
+        data = _load_json(f'{PROCESSED_DIR}/potency.json')
     except FileNotFoundError:
         print('potency.json not found; skipping potency page')
         return

@@ -239,6 +239,44 @@ describe('supervised auto-resume', () => {
     await mgr.close();
   });
 
+  it('WV3-1: a REFUSED control-plane override leaves no trace to replay', async () => {
+    // Two coupled defects, both reachable, verified by reverting each in turn:
+    //   1. the wrapper recorded `pending.permissionMode` BEFORE awaiting the inner
+    //      setter. setPermissionMode('bypassPermissions') without the unlock flag
+    //      REJECTS — yet the refused mode was already retained, so a call the query
+    //      refused (and the consumer correctly caught) poisoned the replay state;
+    //   2. replayControlPlane then called the setters WITHOUT awaiting, so on the
+    //      next transparent auto-resume that poisoned mode rejected into a floating
+    //      promise. On Node >= 15 an unhandled rejection terminates the process, and
+    //      an SDK consumer has no seam to catch it. (Reverting the await alone makes
+    //      this test fail with an error that escapes the test body entirely.)
+    // Correct behaviour: a refused setter records nothing, so the auto-resume
+    // replays only overrides the query actually accepted and completes normally.
+    const store = new InMemorySessionStore();
+    const { fn, calls } = scriptedFetch(['crash', textReplyEvents('recovered')]);
+    vi.stubGlobal('fetch', fn);
+
+    const mgr = createBptSession(
+      managerOptions({ sessionStore: store, recovery: { autoResume: true, maxResumes: 2 } }),
+    );
+    const q = mgr.query({ prompt: 'hello keeper' });
+
+    // The query refuses the mode; the consumer handles the failure properly.
+    await expect(q.setPermissionMode('bypassPermissions')).rejects.toBeInstanceOf(Error);
+    // An override the query DID accept must still survive the resume (WV3-1 proper).
+    await q.setModel('claude-opus-4-1');
+
+    const messages = await collect(q);
+
+    expect(calls()).toBe(2); // crash, then redrive — the resume was not derailed
+    expect(messages.some((m) => m.type === 'result')).toBe(true);
+    const bodyOf = (i: number): { model?: string } =>
+      JSON.parse(String((fn.mock.calls[i]?.[1] as RequestInit | undefined)?.body ?? '{}'));
+    expect(bodyOf(1).model).toBe('claude-opus-4-1');
+
+    await mgr.close();
+  });
+
   it('①b retires the abandoned query (full teardown) BEFORE re-driving (audit 2026-07-14 H-2)', async () => {
     // Before the fix, scheduleResume only swapped `q = start(...)`: the old
     // query generator stayed suspended at the yield that surfaced the error

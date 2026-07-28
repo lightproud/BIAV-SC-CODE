@@ -254,10 +254,14 @@ def render(src, title, subtitle, meta, cover_note='弥萨格大学数据库终�
 
     base = os.path.splitext(src)[0] + (f'-{theme}' if theme != 'dark' else '') + ('-mobile' if mobile else '')
     out_html, out_pdf = base + '.html', base + '.pdf'
-    raw = open(src, encoding='utf-8').read()
+    with open(src, encoding='utf-8') as f:
+        raw = f.read()
     _, body_md = parse_frontmatter(raw)
     doc, n_toc = build_html(body_md, title, subtitle, meta, cover_note, mobile, theme)
-    open(out_html, 'w', encoding='utf-8').write(doc)
+    # 写侧尤其要 with：`open(...).write(doc)` 在 CPython 之外（或异常路径下）句柄
+    # 悬着不刷盘，随后 weasyprint 就着同一份文档产 PDF，HTML 却可能只落了半截。
+    with open(out_html, 'w', encoding='utf-8') as f:
+        f.write(doc)
     # base_url=cwd 让正文 markdown 的相对图片路径（相对仓库根）可被解析嵌入
     HTML(string=doc, base_url=os.getcwd()).write_pdf(out_pdf)
     return out_html, out_pdf, n_toc, os.path.getsize(out_pdf)
@@ -276,7 +280,8 @@ def main():
                     help='配色主题：dark=黑金 v3.0(默认) / cream=乳白金(style-guide v3.0,打印日光友好)')
     a = ap.parse_args()
 
-    fm, _ = parse_frontmatter(open(a.src, encoding='utf-8').read())
+    with open(a.src, encoding='utf-8') as f:
+        fm, _ = parse_frontmatter(f.read())
     title = a.title or fm.get('title', '银芯报告')
     subtitle = a.subtitle or fm.get('subtitle', '')
     if a.meta:
