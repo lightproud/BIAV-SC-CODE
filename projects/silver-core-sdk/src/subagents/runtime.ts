@@ -2153,20 +2153,6 @@ export function createSubagentRuntime(
         // reply arrives on a later drained turn as a <task-notification>.
         const delivery = turn
           .then((result) => {
-            // Kill-race guard (mirror the initial background completion path's
-            // `record.status === 'running'` guard): a stopTask/TaskStop can land
-            // AFTER runContinuation computed its result but BEFORE this delivery
-            // runs — killAgent then flips the record to 'killed', bumps the
-            // epoch, and emits the terminal 'stopped' notification at its own
-            // site. runContinuation's terminal guard already saw 'killed' and
-            // skipped its own emit, but this delivery push was UNGUARDED, so it
-            // pushed a 'completed'/'replied' reply note (and a contradicting
-            // task_notification) on top of the kill's 'stopped'. Respect the
-            // kill: drop the reply note. A legitimately revived-then-completed
-            // continuation ends 'completed'/'failed' (never 'killed') here, and
-            // a stop landing on an already-terminal continuation takes killAgent's
-            // not_running branch (leaves status 'completed'), so neither is skipped.
-            if (record.status === 'killed') return;
             const recapPrefix = outgoingRecap !== undefined ? `"${outgoingRecap}" — ` : '';
             completedBuffer.push({
               type: 'text',
