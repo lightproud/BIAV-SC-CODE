@@ -36,11 +36,13 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.92.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-agent-sdk` = `0.92.0`
+**当前版本 `0.92.1`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.92.1`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.92.1（2026-07-28）：锁步对齐**（本包零运行时改动）——agent SDK 0.92.1 修复自动续跑时「被拒绝的控制面覆写仍被留存并重放」；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
 
 **v0.92.0（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.92.0（Workflow 改真异步启动，对该工具调用方为行为破坏性变更）前进。
 

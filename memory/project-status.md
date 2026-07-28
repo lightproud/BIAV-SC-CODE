@@ -82,8 +82,8 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `0.92.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `0.92.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `0.92.1` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `0.92.1` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 139 / 206 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
@@ -220,6 +220,8 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
+- **v0.92.1（2026-07-28）**：锁步对齐（本包零运行时改动）——agent SDK 0.92.1 修复「被拒绝的控制面覆写仍被留存并重放」；家族版本钟锁步（守密人 2026-07-18 裁定），本包同步升位。
+
 > **一句话**：银芯编排 SDK——持有分子（钟 / 跨会话状态 / 会话装配），把「活得比一次调用久」的
 > agent 脏活做成可复用零件交宿主装配；与代理 SDK 分界 = 代理持原子（一次结构化调用）、编排持分子。
 > 需求裁定书 `Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md`。
@@ -339,6 +341,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.92.1（2026-07-28）**：修自动续跑时「被拒绝的控制面覆写仍被留存并重放」（全仓缺陷扫描 PR #861，TS 侧首次 lint 扫描查出）——包裹层先记账后返回可能拒绝的 Promise，加上 `replayControlPlane` 三个 setter 全不 await，叠加成悬空 Promise（Node ≥ 15 下未处理 rejection 直接终止进程）。改为「内层成功才记账」+ 调用点 await；两条均已证伪验证。次序竞态目前不可触发，按潜伏记。详见 CHANGELOG。
 - **v0.84.0（2026-07-27）**：记忆索引纪律 + 整理规程——修的是「SDK 给了常驻索引机制却没规定索引条目该长什么样，且会话收尾提示词命令模型把进度卡写进索引档」这个自伤缺口（守密人 BPT 现场反馈：开工要好几回工具调用才找得到东西）。进度卡改落 `/memories/progress/`、索引只留指针；新增索引纪律片段（两模式注入、前提不成立即跳过）；写侧超限反压（读写共用同一度量，明说尾部已不可见）；`buildConsolidationPrompt()` + 四阶段整理规程，由 `assessMemoryStoreHealth()` 结果渲染待办。**层界守住**：只给「该不该整理 / 怎么整理」，不给调度（N1 未破，零新进程）。新增测试 28。
 - **v0.87.0（2026-07-27）**：截断纪律全家对齐——任何上限砍内容须答三问（丢多少/为何/怎么拿回）、流式保尾。后台 shell 流永久失聪缺陷修复（保尾保留窗 + 丢弃计数 + gap 标记）；Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记；cards 校验两层豁免索引档（修 0.84.0 自种 P4 矛盾）。另修哨兵两档制 + test.yml push 盲区 + 门禁 hooksPath 警告（仓侧）。
 - **v0.92.0（2026-07-27）**：**Workflow 改为真异步启动**（守密人「1 改」）——**对调用方是行为破坏性变更**：工具不再返回跑完的结果。官方后台启动、立即返回 `{status:'async_launched', taskId}`；本工具原先把整个工作流跑在工具调用里。**类型层调和不了，而假装对齐比留缺口更坏**——同步跑完再交那个字面量，等于给一张「货已在你手上」的取件凭证，调用方会去找一个在凭证打印前就结束的任务。**改的是行为**。**接进既有后台 id 空间**（新增 `ShellManager.registerTask`，`TaskOutput` 读 / `TaskStop` 停，不另立注册表也不另加工具；id 与 `bash_N` 共用计数器永不撞号，`pid: undefined` 对 promise 是实话）。**新增 `ToolContext.lifeSignal`**（查询级信号）：`ctx.signal` 是**按回合**的，挂在它上面是这里最坏的一种错——回执照发、回合边界静默死掉、调用方永远等不到；回归测试**做了反向对照**（接回 `ctx.signal` 确实转红，首跑就绿的竞态测试不算证据）。**语法错保持同步**（新增只编译不执行的 `checkWorkflowSyntax`：官方同时要求「立即返回」与「语法错抛出」，只有脱手前拿到判词才同时成立）。**停止优先于完成**（被停报 `killed` 不报 `completed`）。**三件刻意不声称**：无 `<task-notification>` 推送（引擎对工具发起的后台工作没有这条通道，回执改指 `TaskOutput`）· 无 `transcriptDir` · **没宿主就不谎称异步**（`query()` 外无 `lifeSignal`，就地跑完并明说）。`WorkflowOutput` 由此真填充、Workflow 移出零产出台账——0.91.0 那道守卫的**陈条检查**改动后首跑即抓到毕业。另清陈账：`'TaskStop'` 早已发货却仍挂在描述红线禁提清单上（红线是「绝不提未发货的」，把已发货的留着会反转成「绝不提我们有的」）。
@@ -349,7 +352,6 @@
 - **v0.87.1（2026-07-27）**：**嵌套路径普查（三扫）**（守密人「1 继续」）——前两轮比顶层键，本轮摊成**点号路径**再比，专抓两类前两轮**结构上看不见**的差异。**挖出一条真缺陷、是银芯自己的**：`timedOutAfterMs` 官方在**基类** `BashOutput`，0.85.0 却加在银芯**扩展类型**上——交集相同、没坏东西，但**顶层键比对永远发现不了**（键两边都有、待错了地方），已移回基类。其余全属平台绑定只登记：`gitOperation.*`（官方解析 git/gh 输出成结构化 VCS 事实）· `artifactRead.*` · `blobSavedTo` 等。~~九个类型逐层完全一致~~（**已由 v0.89.0 工具化重跑推翻**：Glob / Grep / Workflow 并不一致，本轮手搓展平器只比联合类型第一支、不匹配带引号的键，覆盖被高估）。**方法边界**：展平器不解析 TS 语义，故同时报键总数，数量级不对即解析飞了。
 
 - **v0.88.0（2026-07-27）**：处方卡型（A1）+ sessions 体检面（P1-S1）——cards 模式增处方卡（意图/步骤/结果/适用边界，按字段集判型、混用按名拒绝；进度卡映射处方型，解 P1-3）；`assessSessionStoreHealth()` 照 memory 体检成例补 sessions 域「机制无规程」缺口（会话数/字节/腐化/孤儿 checkpoint，外部店报 unavailable）；blob 上限挂 T74 待裁。审计报告补 sessions 节。
-- **v0.87.1（2026-07-27）**：**嵌套路径普查（三扫）**（守密人「1 继续」）——前两轮比顶层键，本轮摊成**点号路径**再比，专抓两类前两轮**结构上看不见**的差异。**挖出一条真缺陷、是银芯自己的**：`timedOutAfterMs` 官方在**基类** `BashOutput`，0.85.0 却加在银芯**扩展类型**上——交集相同、没坏东西，但**顶层键比对永远发现不了**（键两边都有、待错了地方），已移回基类。其余全属平台绑定只登记：`gitOperation.*`（官方解析 git/gh 输出成结构化 VCS 事实）· `artifactRead.*` · `blobSavedTo` 等。**九个类型逐层完全一致**。**方法边界**：展平器不解析 TS 语义，故同时报键总数，数量级不对即解析飞了。
 - **v0.86.0（2026-07-27）**：**主循环提示词补回开篇句 + 输出类型普查（续）**（守密人「1 对齐官方 4 续」）——① 补回官方「Text you write between tool calls may not be shown to the user.」——银芯只搬了结论没搬**理由**，缺前提的规则是模型最先绕过的那条；字节金样有意重生成、差异经核实只有这一句（四个工具集各一处）。**官方 `# Focus mode` 整块刻意不复刻**（为进不去的 UI 模式发指令 = 描述未发货能力）。② **15 个 `*Output` 逐字段比完：9 个完全一致**（FileEdit / Task 五件 / EnterWorktree / TodoWrite / Monitor）；6 个有官方独有字段，守密人裁「逐条再看」，**这一类并不齐整**——`ReadMcpResourceOutput.error` **加了并真产出**（非 UI 绑定，调用方此前分不清「读失败」与「读到空」）；`WebSearchOutput` **整体补产出**（原议题 `searchCount` 是伪命题、恒为 1，真缺口是它根本没有结构化结果；报**过滤后**命中免得与文本对不上）；其余四条**只登记不声明**（Workflow 的真障碍不在可选字段，而在必填判别式 `status:'async_launched'`——本 SDK 同步跑工作流，填它等于断言一次没发生的启动）。**射程边界**：本次为**顶层字段**比对，嵌套差异首轮漏看（`contents[].blobSavedTo` 靠人工复读才发现）。测试 3,295 → **3,297**。
 - **v0.85.0（2026-07-27）**：**GoalVerdict 家族统一（本包零行为改动）**——本包 `{status, reason?}` 判词升格家族**正典**，maestro 0.85.0 将 GoalChaser 评审判词迁为同形，一个宿主评审器同时服务引擎 `options.goal` Stop 门与跨 query 追逐两缝。留档背景：两形并存期产出真实消费者陷阱——maestro 形判词喂进 `options.goal` 被引擎判 malformed、fail-open 放行停止（防评审器坏死锁死代理的既定失败方向），症状即 BPT 2026-07-27 所报「接了 goal 模型照样停」。`options.goal` 语义与评审器契约未动，仅 `GoalVerdict` 注释补正典地位声明。
 - **v0.85.0（2026-07-27）**：**工具真正产出结构化结果 + MCP 接受列表扩容**（偏离普查轴一/轴四裁定）——**先订正普查自己的结论**：首轮只 grep `outputSchema` 就报「银芯零输出面」是**错的**，`types/tools.ts` 里官方形状的输出类型**早已齐备**，缺的是**从来没人产出**（typed-not-populated）；故改为**复用既有类型**、只补真缺的两三个。`ToolResultPayload.structuredOutput` + 引擎 **WeakMap 侧信道**（不往 Anthropic 线格式上加字段）+ `query()` 发 `toolUseResult`（**tool_use_id 为键的 record**，因本引擎一轮批处理、官方一消息一结果）。Read/Glob/Grep/Bash/WebFetch 每条终态分支均产出。MCP 接受列表加 `2024-10-07`；**提议版本仍留 `2025-06-18`**——官方的 `2025-11-25` 新增异步任务面（`tasks/*`）本包未实现，宣告它等于描述未发货能力。测试 3,254 → **3,267**。
@@ -361,7 +363,6 @@
 - **v0.79.1（2026-07-27）**：内部去重，零表面/行为变化——重试退避与 JSON-RPC 两族重复实现分别收敛为 `transport/http-retry.ts` / `mcp/protocol.ts`，六档净 −288 行。随 #835 合并时漏 bump 致版本门禁在 main 红约一小时，本版为补票（详见 CHANGELOG）。
 - **v0.79.0（2026-07-26，锁步对齐）**：本包**零代码改动**；随 maestro 0.79.0 前进，同批订正本包 0.72.0/0.70.0 两条空转条目措辞（内容未变）。
 - **v0.78.1（2026-07-26，锁步对齐）**：本包**零代码改动**；家族版本钟随 maestro 0.78.1（产品审视四裁，含删除其对本包的无支撑 peerDependency）整体前进。
-- **v0.78.0（2026-07-26，锁步对齐）**：本包**零代码改动**；家族版本钟随 maestro 0.78.0（设计审视四缝全修）整体前进，详见 maestro CHANGELOG。
 - **v0.77.0（2026-07-26，Windows 正确性清扫——家族史上首次非 Linux CI 实跑 + 守密人现场反馈
   「SDK 在 windows 环境工具调用经常犯蠢」）**：3200+ 测试一直全绿却一条都看不见，因为全部跑在
   POSIX 宿主的 POSIX 方言下。三条真缺陷——① **路径域权限规则双向皆坏**：POSIX 写法 deny

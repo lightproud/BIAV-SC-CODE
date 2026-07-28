@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.92.0`** · 发布日 2026-07-27 · 家族锁步对端 `silver-core-maestro-sdk` = `0.92.0`
+**当前版本 `0.92.1`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.92.1`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.92.1（2026-07-28）：自动续跑时被拒绝的控制面覆写仍被留存并重放**（全仓缺陷扫描 #861，TypeScript 侧首次 lint 扫描查出）——两条互相咬合：① 包裹层**先记账、后返回可能拒绝的 Promise**，`setPermissionMode('bypassPermissions')` 未解锁时会 REJECT，但该模式已写进 `pending`，一次被 query 拒绝、且被消费方正确 catch 的调用照样污染了重放状态；② `replayControlPlane` 声明 `(): void`、三个返回 Promise 的 setter 全不 await，叠加①后那个必然拒绝的重放成了悬空 Promise——Node ≥ 15 下未处理的 rejection **直接终止进程**，SDK 消费方连捕获的接缝都没有。改为「内层成功才记账」+ 调用点 await。**诚实边界**：次序竞态目前不可触发（四个 setter 首个 await 之前即完成赋值），按潜伏记；可触发的是拒绝路径。await 同时把「重放先于续跑被泵动」从**巧合**变成**结构保证**。两条均已证伪验证（回退任一，新增用例即红）。
 
 **v0.88.0（2026-07-27）：处方卡型（A1）+ sessions 体检面（P1-S1）**——cards 模式增第二卡型
 **处方卡**（意图/步骤/结果/适用边界，按字段集判型；单卡混用两型按名拒绝，结构化错误重述两模板；
