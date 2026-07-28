@@ -16,9 +16,27 @@ import { dirname } from 'node:path';
 
 /** @returns a LedgerStore persisted in `filePath` (created lazily). */
 export function fileLedgerStore(filePath) {
-  const state = existsSync(filePath)
+  const raw = existsSync(filePath)
     ? JSON.parse(readFileSync(filePath, 'utf8'))
     : { sessions: {}, queries: [] };
+  // The session map is keyed by HOST-supplied ids (spec ids, workflow node
+  // ids, `delivery:{uuid}` …). A plain `{}` inherits Object.prototype, so an
+  // id that happens to name a prototype member breaks the store in two
+  // directions that the Map-backed in-memory reference store cannot exhibit:
+  //   - `sessions['__proto__'] = row` hits the prototype SETTER, so the row is
+  //     never stored as an own key — it vanishes from Object.values() (and
+  //     from the JSON on disk), i.e. dispatch reports success and the session
+  //     is lost forever;
+  //   - `sessions['toString']` / `['constructor']` read back an INHERITED
+  //     member on an empty store, so getSession returns a bogus non-null
+  //     record and TaskLedger.dispatch rejects a brand-new id as a duplicate.
+  // A null-prototype map has no inherited members and no setters, so every
+  // string key round-trips. (Same hazard the SDK's .mcp.json loader closed
+  // with defineProperty — audit r4 Y7-3.)
+  const state = {
+    sessions: Object.assign(Object.create(null), raw.sessions),
+    queries: raw.queries ?? [],
+  };
   const save = () => {
     mkdirSync(dirname(filePath), { recursive: true });
     const tmp = filePath + '.tmp';
