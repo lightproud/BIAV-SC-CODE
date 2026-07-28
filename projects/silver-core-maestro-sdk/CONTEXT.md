@@ -42,6 +42,10 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:END -->
 
+**v0.95.0（2026-07-28）：台账两处缺陷 + 驱动器并发竞态**——家族审计波及本包（非空转）：
+`reopenSession` 并发 CAS 落败永久丢溯源链接；`recordOutcome` 回填路径写入词表外 outcome；
+`stop()`+`start()` 交错令两代 tick 各自认领满额、并发翻倍（新增同步预留计数封顶）。
+
 **v0.94.0（2026-07-28）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.94.0
 （BREAKING：包内模型兜底默认值全数移除——缺 model 即抛 `ConfigurationError`，
 `DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` 出口删除）前进，详见该包 CHANGELOG。

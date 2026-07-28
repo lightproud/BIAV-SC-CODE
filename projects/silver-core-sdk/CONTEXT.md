@@ -77,6 +77,12 @@ src/
 
 <!-- CONTEXT-FACTS:END -->
 
+**v0.95.0（2026-07-28）：多波缺陷审计（八波 59 分区）**——100+ 处经核实真实缺陷全修，
+每处均有具体失败输入；公开 API 与测试契约零改动。覆盖崩溃面（宽容输入致整轮丢弃）、线协议
+（连续同角色轮 / 工具对边界 / MCP 跨会话 id）、权限 deny 七类绕过、原型污染与域名过滤绕过、
+子代理与会话状态竞态、socket 与监听器泄漏、代理对截断与 NaN 守卫。战报见
+`Public-Info-Pool/Resource/repo-engineering/sdk-bug-audit-multiwave-20260728.md`。
+
 **v0.94.0（2026-07-28）：包内模型兜底默认值全数移除（BREAKING，黑池 sdk-bridge 转派需求）**——
 触发事件：黑池生产两次报错，报错文案里的 `claude-sonnet-4-5` 在黑池任何配置里都不存在——它是
 `query.ts` 里写死的 `DEFAULT_MODEL`，消费方漏传 `model` 时被静默换上、直到网关 400 才第一次现身。
