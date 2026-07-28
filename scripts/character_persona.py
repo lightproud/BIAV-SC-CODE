@@ -15,12 +15,15 @@ Usage:
 """
 
 import json
+import logging
 import random
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 PERSONAS_DIR = REPO / "assets" / "data" / "character-personas"
+
+_log = logging.getLogger(__name__)
 
 
 # ============================================================
@@ -42,7 +45,11 @@ def list_personas() -> list[dict]:
                 "realm": data.get("realm", ""),
                 "version": data.get("version", "1.0.0"),
             })
-        except (json.JSONDecodeError, KeyError, OSError):
+        except (json.JSONDecodeError, KeyError, OSError) as exc:
+            # 跳过契约不变（调用方按「可用角色清单」消费），但**不再无声**：角色卡是
+            # 事实圣经层，一份写坏 / 截断的卡在此静默消失后，`--list` 与 MCP
+            # `action:list` 会如实报「没有这个角色」——把「档案损坏」呈现成「角色不存在」。
+            _log.warning("角色卡不可用，已跳过 %s: %s: %s", fp.name, type(exc).__name__, exc)
             continue
     return personas
 
@@ -61,7 +68,9 @@ def load_persona(character_id: str) -> dict | None:
         return None
     try:
         return json.loads(fp.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
+    except (json.JSONDecodeError, OSError) as exc:
+        # 同上：文件在但读不动 ≠ 角色不存在，返回值契约不动，但必须留下信号。
+        _log.warning("角色卡存在但不可解析 %s: %s: %s", fp.name, type(exc).__name__, exc)
         return None
 
 

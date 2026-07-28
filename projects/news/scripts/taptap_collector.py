@@ -548,8 +548,13 @@ def _raw_to_item(raw: dict, source: str, cutoff: datetime) -> dict | None:
     # 原按 UTC 解释等于把时间戳整体推后 8 小时——北京 16:00–23:59 的帖会被推进次日，
     # 归档按北京日分桶（archive_layout）时整批落错一天的桶（每天错 8 小时之久）。
     # API 路径的 created 由 epoch 造出、自带 +00:00，不受本分支影响。
+    time_str = raw["created"]
     if created.tzinfo is None:
         created = created.replace(tzinfo=_BEIJING_TZ)
+        # 补齐时区后必须把带偏移的形态**发下去**：下游 archive_platforms.item_date_utc8
+        # 对无时区串一律按 UTC 折算北京日，光在本函数内补时区只修了 cutoff 比较，
+        # 归档桶仍然错。仅在原串确实无时区时替换，坏时间戳照旧原样落校验层拒绝。
+        time_str = created.isoformat()
     if created < cutoff:
         return None
 
@@ -563,7 +568,7 @@ def _raw_to_item(raw: dict, source: str, cutoff: datetime) -> dict | None:
         "source": source,
         "platform_region": "cn",
         "lang": "zh",
-        "time": raw["created"],
+        "time": time_str,
         "url": raw.get("url", ""),
         "engagement": engagement,
         "is_hot": like_count > 50,

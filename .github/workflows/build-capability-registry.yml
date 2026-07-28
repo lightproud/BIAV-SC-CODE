@@ -7,6 +7,10 @@ on:
       - '.github/workflows/**'
       - 'scripts/**'
       - 'projects/news/scripts/**'
+      # wiki 脚本层同样被 build_capability_registry.py 扫进目录（SCRIPT_DIRS 三层之一）；
+      # 漏在触发器外 = 增删 wiki 脚本后目录不重建，条目与计数悄悄对不上现实
+      # （2026-07-27 P3/P6 把 parse_* 与 wiki 生成器整批迁进该目录后，缺口尤其大）。
+      - 'projects/wiki/scripts/**'
       - 'projects/*/CONTEXT.md'
       - '.claude/commands/**'
       - '.claude/skills/**'
