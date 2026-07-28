@@ -91,3 +91,8 @@ node_modules/
 # 采集/消费经 BIAV_SC_DATA_ROOT 指向 data 仓 checkout；本仓不再跟踪（git 历史保留可恢复）。
 # store-patrol / kb-usage 等非数据湖子目录不受影响，仍留本仓。
 Public-Info-Pool/Record/Community/
+
+# 审计期临时探针（绝不入仓）
+*probe.tmp.*
+.probe/
+__probe/
