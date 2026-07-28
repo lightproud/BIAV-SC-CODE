@@ -25,8 +25,11 @@ export type DerivedSystemField = {
   system: string | TextBlockParam[];
   /** The matching applyCacheControl systemBoundary for this shape. */
   boundary: 'first' | 'last' | 'dual' | 'preserve';
-  /** True when caller-authored segment blocks were forwarded verbatim (the
-   *  loop must then NOT add a message breakpoint — 4-cap budget). */
+  /** True when the forwarded caller blocks ALREADY SPEND cache-breakpoint
+   *  budget (at least one carries cache_control), so the loop must not add a
+   *  message breakpoint on top — 4-cap budget. Caller blocks that carry no
+   *  breakpoint at all (or an array that filtered down to nothing) spend
+   *  nothing, so the message breakpoint stays available. */
   callerBlocks: boolean;
 };
 
@@ -92,5 +95,14 @@ export function deriveSystemField(
         : splitSystem
           ? ('first' as const)
           : ('last' as const);
-  return { system, boundary, callerBlocks: callerBlocks !== undefined };
+  // The 4-cap is the ONLY reason the loop drops the message breakpoint on this
+  // seam: tools(1) + up to three caller markers already fills it. Segment
+  // blocks that mark NOTHING (a host that layers its prompt but leaves caching
+  // to the engine, or a segments array that filtered down to empty) spend zero
+  // slots — reporting "caller owns the budget" there silently disabled
+  // conversation caching for the whole session while three slots sat unused.
+  const callerSpendsBudget =
+    callerBlocks !== undefined &&
+    callerBlocks.some((b) => b.cache_control !== undefined && b.cache_control !== null);
+  return { system, boundary, callerBlocks: callerSpendsBudget };
 }

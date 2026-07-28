@@ -176,6 +176,14 @@ export class GoalChaser {
     let feedback: string | null = null;
 
     for (;;) {
+      // Checked BEFORE the round is dispatched, the same discipline
+      // WorkflowRun.run() applies before its tick: an abort that lands while
+      // the (host-supplied, arbitrarily slow) evaluator is deciding must not
+      // buy the chase one more round. Without this, an abandon signal raised
+      // mid-evaluation still dispatched the NEXT round session, which the
+      // host's driver then claimed and executed — real work initiated after
+      // the host said stop, and only then did #awaitTerminal reject.
+      opts.signal?.throwIfAborted();
       if (pending === null) {
         const sessionId = goalRoundSessionId(config.id, round);
         const payload: GoalRoundPayload = {

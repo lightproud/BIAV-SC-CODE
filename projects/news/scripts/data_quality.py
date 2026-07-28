@@ -21,6 +21,7 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # 落盘脱敏单一真源（H3）
+import archive_layout  # 日期基准单一真相源（北京日期）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -181,7 +182,13 @@ class SilentPlatformTracker:
             error: 如果失败，错误信息
             note: 降级原因标注（如「待配 NGA_COOKIE」），恢复产出后自动清除
         """
-        today = datetime.now(UTC).strftime('%Y-%m-%d')
+        # 「今天」取北京日期：source-health.json 的同名字段另有一个写方
+        # （silent_sources_audit.write_health，last_success_date 直接取**北京**归档桶名、
+        # consecutive_silent_days 也按北京 today 算）。原 datetime.now(UTC) 让同一字段
+        # 被两套时钟轮流覆写：北京 00:00–08:00 这 8 小时里 UTC 日期比桶名早一天，
+        # 于是「今天已成功」的守卫对不上（last_success_date 永不等于 today），
+        # 静默天数被多记一天，报表里的 last_success 也随最后写方在两个日期间跳。
+        today = archive_layout.archive_date_str()
 
         if platform not in self.health_data['platforms']:
             self.health_data['platforms'][platform] = {
@@ -244,7 +251,7 @@ class SilentPlatformTracker:
         p = self.health_data['platforms'].get(platform, {})
         if p.get('level', self.LEVEL_ACTIVE) != self.LEVEL_DORMANT:
             return False
-        today = datetime.now(UTC).strftime('%Y-%m-%d')
+        today = archive_layout.archive_date_str()  # 与写方 update_platform_status 同基准
         return p.get('last_check_date') == today
 
     def get_report(self) -> dict:

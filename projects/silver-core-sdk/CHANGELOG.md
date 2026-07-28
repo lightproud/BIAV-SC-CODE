@@ -16,6 +16,33 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.1.0 — 2026-07-28
+
+Audit wave 13. Three defects here permanently break a session or a request:
+
+- `mcp/registry.ts` — `allTools()` emitted **duplicate qualified tool names
+  across servers**, and one duplicate 400s the entire Messages API request, so
+  every turn of the session dies. Server `a` exposing `b__c` and server `a__b`
+  exposing `c` both qualify to `mcp__a__b__c`. The same collision class is
+  already handled within one server's pages and already resolved for call
+  routing — only the advertisement path was unguarded.
+- `sessions/store.ts` — `repairPairing` has passes for orphan
+  `tool_use`/`tool_result` and for role alternation, but none guaranteeing the
+  replayed history **starts** with a user turn, and `load()` can eat the
+  opening user line two ways (a torn first line skipped as invalid JSON; the
+  empty-turn guard dropping a legacy `content: []` opener). The API answers
+  `messages.0: Unexpected role "assistant"`, so every resume, continue and fork
+  of that session 400s from its first turn — forever, because the file never
+  self-heals.
+- `engine/system-field.ts` — a caller-supplied system array that marks **no**
+  cache breakpoints still reported `callerBlocks: true`, so the request went
+  out with only the tools marker: three of four ephemeral slots unused and the
+  whole conversation re-billed uncached every turn.
+
+Both test doubles are blind to the store defect — `FakeStore.load()` always
+returns `null` and the conformance emulator validates nothing about the request
+body — which is why it survived twelve prior waves.
+
 ## 1.0.0 — 2026-07-28
 
 Audit wave 12. Two findings kill a whole session from its first message, and

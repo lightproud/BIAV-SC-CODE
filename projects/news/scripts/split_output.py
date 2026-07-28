@@ -155,8 +155,9 @@ def write_source_file(source: str, items: list[dict], collected_at: str) -> None
         'item_count': len(items),
         'items': items,
     }
-    with open(path, 'w', encoding='utf-8') as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+    # 原子写（news_common.dump_json_atomic 单一真源）：*-latest.json 是黑池 / 前端的
+    # 正式接口面，直写 open('w') 若在写一半被中断会留下半截 JSON，消费端读到即崩。
+    news_common.dump_json_atomic(path, payload)
     print(f'  {source}-latest.json  ({len(items)} items)')
 
 
@@ -191,28 +192,40 @@ def main() -> None:
 
     # 写各数据源文件
     all_items: list[dict] = []
+    written: set[str] = set()
     for source in KNOWN_SOURCES:
         items = by_source.get(source, [])
         write_source_file(source, items, collected_at)
+        written.add(source)
         all_items.extend(items)
 
     # 写入未知数据源（容纳未来新源）
     for source, items in by_source.items():
         if source not in KNOWN_SOURCES:
             write_source_file(source, items, collected_at)
+            written.add(source)
             all_items.extend(items)
+
+    # 退役源清零：源改名 / 停采后（历史实例 nga、taptap_post）它既不在 KNOWN_SOURCES、
+    # 本轮也不出现在 by_source，其 *-latest.json 会永远冻在最后一次有数据的那天，
+    # 而下游（okf news-output 指针层 / kb_coverage / 黑池）按 glob 一律当「当前输出层」读，
+    # 于是陈旧条目被当成最新热点。KNOWN 源本来每轮都会被重写成空，此处把同一语义补给退役源。
+    for stale in sorted(OUTPUT_DIR.glob('*-latest.json')):
+        source = stale.name[: -len('-latest.json')]
+        if source == 'all' or source in written:
+            continue
+        write_source_file(source, [], collected_at)
 
     # 写合并文件（契约字段与 write_source_file 同构，勿漂移）
     all_path = OUTPUT_DIR / 'all-latest.json'
-    with open(all_path, 'w', encoding='utf-8') as f:
-        json.dump({
-            'contract_version': 1,
-            'collected_at': collected_at,
-            'source': 'all',
-            'data_layer': DATA_LAYER,
-            'item_count': len(all_items),
-            'items': all_items,
-        }, f, ensure_ascii=False, indent=2)
+    news_common.dump_json_atomic(all_path, {
+        'contract_version': 1,
+        'collected_at': collected_at,
+        'source': 'all',
+        'data_layer': DATA_LAYER,
+        'item_count': len(all_items),
+        'items': all_items,
+    })
     print(f'  all-latest.json  ({len(all_items)} items)')
     print(f'Done. collected_at={collected_at}')
 

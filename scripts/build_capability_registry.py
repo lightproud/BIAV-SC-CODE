@@ -129,6 +129,13 @@ def collect_roots(known: set[str]) -> dict[str, set[str]]:
         for b in py_refs(p.read_text(encoding="utf-8", errors="ignore"), known):
             add(b, "command")
 
+    # 仓内技能：与 slash 命令同属「人工平面」（见本文件生成的编排平面表），故同标
+    # command。漏扫技能 = 只被某技能调起的 import-only 部件被判 orphaned、在功能目录里
+    # 写成「建议隔离待裁」——守卫对活件发退役建议，比不检测更坏。
+    for p in (ROOT / ".claude" / "skills").rglob("*.md"):
+        for b in py_refs(p.read_text(encoding="utf-8", errors="ignore"), known):
+            add(b, "command")
+
     # 会话钩子：settings.json 里引用的脚本（当前为空）
     settings = ROOT / ".claude" / "settings.json"
     if settings.exists():

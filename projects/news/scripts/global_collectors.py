@@ -991,6 +991,34 @@ def _fetch_google_play_one(gp_package, arch_region, locales):
 # 忘卻前夜 Morimens 哈啦板板編（2026-07-10 实测 https://forum.gamer.com.tw/A.php?bsn=78829）
 BAHAMUT_DEFAULT_BSN = "78829"
 
+# 巴哈姆特是台湾站点，列表页 `b-list__time__edittime` 对**当日**帖只给裸墙钟
+# "HH:MM"（台北时 UTC+8），更早的帖才给 "MM/DD"。
+_BAHAMUT_TZ = timezone(timedelta(hours=8))
+
+
+def _parse_bahamut_time(text):
+    """解析巴哈姆特 edittime，返回 (ISO, is_approximate)。
+
+    裸 "HH:MM" 必须按台北时（UTC+8）构造：共享的 parse_relative_time 把它当 UTC
+    墙钟，于是台北 20:00 的帖被记成 20:00 UTC —— 彼时 UTC 才 12:00，判定为「未来」
+    再整体回退一天，时间戳偏早 32 小时（台北 00:00–07:59 的帖不触发回退，仍偏早
+    16 小时）。后果是该帖落进前一天甚至前两天的归档桶（归档按北京日分桶）。
+    其余格式（"MM/DD" 日期级 / 相对时间 / ISO）时区无涉，仍走共享真源。
+    """
+    s = (text or "").strip()
+    m = re.match(r"^(\d{1,2}):(\d{2})$", s)
+    if m:
+        now_tpe = datetime.now(_BAHAMUT_TZ)
+        try:
+            dt = now_tpe.replace(hour=int(m.group(1)), minute=int(m.group(2)),
+                                 second=0, microsecond=0)
+        except ValueError:
+            return news_common.parse_relative_time(s)
+        if dt > now_tpe:  # 显示时刻晚于当前台北时间 = 昨天的帖
+            dt -= timedelta(days=1)
+        return dt.isoformat(), False
+    return news_common.parse_relative_time(s)
+
 
 def fetch_bahamut():
     """巴哈姆特忘却前夜专板帖列表（B.php 列表页 HTML）。台湾最大游戏社区。
@@ -1033,7 +1061,7 @@ def fetch_bahamut():
             m_time = _re.search(r'b-list__time__edittime">\s*<a[^>]*>([^<]+)</a>', row, _re.DOTALL)
             gp = int(m_gp.group(1).replace(",", "")) if m_gp else 0
             interact = int(m_int.group(1).replace(",", "")) if m_int else 0
-            baha_time, baha_approx = news_common.parse_relative_time(
+            baha_time, baha_approx = _parse_bahamut_time(
                 m_time.group(1).strip() if m_time else None)
             items.append(_make_item(
                 title=title,

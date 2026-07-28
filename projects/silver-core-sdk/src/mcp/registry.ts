@@ -161,10 +161,40 @@ export class DefaultMcpRegistry implements McpRegistry {
 
   allTools(): McpToolEntry[] {
     const tools: McpToolEntry[] = [];
+    const seen = new Set<string>();
+    let collision = false;
     for (const entry of this.entries) {
-      if (entry.enabled && entry.baseStatus === 'connected') tools.push(...entry.tools);
+      if (!entry.enabled || entry.baseStatus !== 'connected') continue;
+      for (const tool of entry.tools) {
+        if (seen.has(tool.qualifiedName)) collision = true;
+        else seen.add(tool.qualifiedName);
+        tools.push(tool);
+      }
     }
-    return tools;
+    if (!collision) return tools;
+    // ACROSS-SERVER duplicate qualified name. listToolsPaginated already dedupes
+    // one server's pages because ONE duplicate advertised tool name 400s the
+    // ENTIRE Messages API request (poisoning every turn of the session); two
+    // servers can produce the same `mcp__{server}__{tool}` too, whenever one
+    // server name is a `__`-extension of another (server 'a' tool 'b__c' vs
+    // server 'a__b' tool 'c' — the same collision entryForQualifiedName below
+    // already resolves for CALL routing). Keep exactly the entry that call()
+    // would route to (longest server name, matching that resolver's ordering)
+    // so what is advertised is what actually executes.
+    const byName = new Map<string, McpToolEntry>();
+    for (const tool of tools) {
+      const prev = byName.get(tool.qualifiedName);
+      if (prev === undefined || tool.serverName.length > prev.serverName.length) {
+        byName.set(tool.qualifiedName, tool);
+      }
+    }
+    this.debug(
+      `[mcp] ${String(tools.length - byName.size)} MCP tool(s) collide on an ` +
+        'already-taken qualified name (server names differing by "__"); keeping the ' +
+        'definition the call router resolves to, since duplicate tool names reject ' +
+        'the whole request',
+    );
+    return [...byName.values()];
   }
 
   has(qualifiedName: string): boolean {

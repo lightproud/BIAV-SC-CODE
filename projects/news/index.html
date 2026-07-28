@@ -393,7 +393,7 @@
         </div>
         <div class="stat-item">
             <div class="stat-value" id="stat-engagement">--</div>
-            <div class="stat-label">总互动量</div>
+            <div class="stat-label">本页热点互动量</div>
         </div>
     </div>
 
@@ -404,7 +404,6 @@
         <button class="filter-btn" data-filter="twitter">Twitter/X</button>
         <button class="filter-btn" data-filter="bilibili">B站</button>
         <button class="filter-btn" data-filter="taptap">TapTap</button>
-        <button class="filter-btn" data-filter="nga">NGA</button>
         <button class="filter-btn" data-filter="discord">Discord</button>
         <button class="filter-btn" data-filter="youtube">YouTube</button>
     </div>
@@ -428,9 +427,9 @@
     </main>
 
     <footer class="footer">
-        <p>忘却前夜 Morimens 社区热点聚合 &mdash; 数据每小时自动更新</p>
+        <p>忘却前夜 Morimens 社区热点聚合 &mdash; 采集管线每 3 小时运行一轮，本页数据以上方「最后更新」时间为准</p>
         <p style="margin-top:0.5rem;">
-            数据来源：Reddit · Twitter/X · Bilibili · TapTap · NGA · Discord · YouTube
+            数据来源：Reddit · Twitter/X · Bilibili · TapTap · Discord · YouTube · Steam · 微博 等
         </p>
     </footer>
 
@@ -475,6 +474,15 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        // 总结正文来自采集内容（无 LLM key 时直接拼接社区标题原文，有 key 时为模型回文），
+        // 二者都是不可信输入，直接 innerHTML 即存储型 XSS。整体转义后只放行
+        // 生成侧约定的 <span class='highlight'> 高亮标记。
+        function sanitizeSummary(text) {
+            return escapeHtml(String(text))
+                .replace(/&lt;span class=['"]highlight['"]&gt;/g, '<span class="highlight">')
+                .replace(/&lt;\/span&gt;/g, '</span>');
         }
 
         function renderCard(item) {
@@ -542,7 +550,7 @@
                     `最后更新：${new Date(data.updated_at).toLocaleString('zh-CN')}`;
 
                 if (data.summary) {
-                    document.getElementById('summary-text').innerHTML = data.summary;
+                    document.getElementById('summary-text').innerHTML = sanitizeSummary(data.summary);
                 }
 
                 updateStats(data);

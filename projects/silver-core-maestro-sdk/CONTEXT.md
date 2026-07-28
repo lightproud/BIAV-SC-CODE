@@ -36,17 +36,17 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.0.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `1.0.0`
+**当前版本 `1.1.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `1.1.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
+**v1.1.0（2026-07-28）：审计第十三波**——存储契约套件会给坏存储发合格证（dueBefore 边界只测过不相等的样例、不断言一 id 一行、把键序写进契约）；goal 追逐器中止时仍多买一轮。
+
 **v1.0.0（2026-07-28）：锁步对齐**——本包零代码改动，随 agent SDK 1.0.0（审计第十二波）前进。
 
-**v0.99.0（2026-07-28）：审计第十波**——ONBOARDING 契约套件计数（16 → 13+2 可选缝）；terminal-vocabulary 射程外的 testbed 两处重复犯规已修。
 
-**v0.98.0（2026-07-28）：审计第九波**——棘轮守卫两处静默退出 0；`store-patrol`（每日在产）五处，含损坏 ledger 令巡检永久停摆、非原子写发布半截文件、未巡检目标误报「全部完毕」并退出 0。
 
 **v0.97.0（2026-07-28）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.97.0
 （从包入口导出权威 token 估算器三件与 `MAX_READ_OUTPUT_CHARS` / `TOOL_OUTPUT_CAPS`
