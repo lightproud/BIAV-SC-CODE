@@ -16,6 +16,51 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.99.0 — 2026-07-28
+
+Audit wave 10 — first-ever passes over the repo's own guard machinery (CI
+workflow definitions, the conformance harness, the Python guard layer) plus
+docs-vs-code drift and a scale lens. The through-line: **guards that reported
+OK while checking nothing.**
+
+- **The conformance rig was certifying on zero comparisons.** Since 0.94.0
+  removed the built-in default model, `run-l2` and `run-l4` never pinned
+  `options.model`, so 14 of 15 L2 scenarios and all 15 L4 fault cases died at
+  construction — 104 check failures, zero POSTs — while the legs still
+  reported. Eight further holes in the rulers themselves: L1 computed the
+  official arm's check failures then discarded them (arms could disagree on
+  result subtype, text and tool_result count and still score MATCH); L3
+  inspected only the expected number of tool_results, so a surplus one was
+  invisible; an L2 scenario accepted any thrown error as proof the permission
+  interlock fired; a throwing `interrupt()` was swallowed into an abort that
+  satisfied the decider anyway; the L3 normalizer recorded a strip asymmetry
+  one-directionally; `sse-hang` emitted the complete event set on an unknown
+  marker instead of failing; the CI-gating keyless smoke was vacuously green
+  with zero rows.
+- **Scale**: `htmlToText` was quadratic — 35 s on 200KB of bare `<` (hours at
+  the 5MB body cap) inside one synchronous regex call that neither the request
+  timeout nor the AbortSignal can interrupt; `partitionForCompaction` was
+  O(n²) per check (16k messages 2.3 s, 130k never finished); `store.load`
+  slurped the transcript, so a 705MB file threw `RangeError` inside a bare
+  catch and resume silently reported "no such session", started an empty
+  conversation and kept appending to the same file while `list()` still
+  advertised it as resumable; the structured-output validator spread child
+  errors and blew the 125k spread-argument limit on a large invalid array,
+  escaping the bounded correction-retry loop as a query crash.
+- **Docs the consumer executes**: the README `options.goal` example used an
+  API shape that does not exist — copy-pasting throws, and the near-miss guess
+  is rejected as a malformed verdict, which ALLOWS every stop, so the goal gate
+  silently never fires. `MIGRATION.md` named the pre-0.67 package; 13 more
+  unresolvable import specifiers across six shipped docs; the day-one upgrade
+  canary therefore always certified the local checkout instead of the installed
+  tarball. `ledgerRetentionDays` was nested inside the report-write branch, so
+  summary-only hosts got an unbounded ledger.
+- **Guard scope gaps**: `terminal-vocabulary` is scoped to maestro `src/`; the
+  testbed baseline exporter (the declared evaluation data source) and the
+  kill-9 soak drill both sit one package out and hand-spelled the forbidden
+  terminal check, so a cancelled session reads as in-flight forever and
+  silently inflates the reported completion rate.
+
 ## 0.98.0 — 2026-07-28
 
 Audit wave 9 — first-ever passes over never-audited surfaces (build/CI/eval
