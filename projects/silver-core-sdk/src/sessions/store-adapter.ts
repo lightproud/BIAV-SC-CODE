@@ -476,17 +476,34 @@ export class MirroringSessionStore implements InternalTranscriptStore {
   private flushKey(sessionId: string): Promise<void> {
     const prev = this.chains.get(sessionId) ?? Promise.resolve();
     const next = prev.then(() => this.doFlush(sessionId));
-    this.chains.set(
-      sessionId,
-      next.catch(() => undefined),
-    );
+    // Drop the chain entry once THIS link settles and nothing queued behind it
+    // (the tail is still us). Without the prune both maps kept one permanent
+    // entry per session id — and every SUBAGENT transcript is its own id
+    // (runtime.ts appends child turns under `agentId`), so a long-lived
+    // coordinator that spawns hundreds of children grew `chains`/`buffers`
+    // without bound AND made each debounced flushAll() fan Promise.all over
+    // every agent that ever ran. Same push-only leak shape as the background
+    // finalizer set (audit r4 Stim-1).
+    let tracked: Promise<void>;
+    tracked = next.catch(() => undefined).then(() => {
+      if (this.chains.get(sessionId) === tracked) this.chains.delete(sessionId);
+    });
+    this.chains.set(sessionId, tracked);
     return next;
   }
 
   private async doFlush(sessionId: string): Promise<void> {
     const buf = this.buffers.get(sessionId);
-    if (buf === undefined || buf.length === 0) return;
+    if (buf === undefined || buf.length === 0) {
+      // An emptied buffer is dead weight: append() re-creates it on demand.
+      if (buf !== undefined) this.buffers.delete(sessionId);
+      return;
+    }
     const batch = buf.splice(0, buf.length);
+    // Same reason: the array is drained, so release the map slot. `batch`
+    // already holds the entries, and a concurrent append() simply installs a
+    // fresh array under this key.
+    this.buffers.delete(sessionId);
     const key: SessionKey = { projectKey: this.projectKey, sessionId };
     try {
       await this.appendWithRetry(key, batch);

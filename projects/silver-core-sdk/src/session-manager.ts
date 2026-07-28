@@ -385,6 +385,20 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         if (r.done === true) settleLedger(ledger);
         return r;
       },
+      // close() is the FOURTH exit (besides next()-done, return() and throw()),
+      // and the only one that ends the run WITHOUT the consumer pulling again:
+      // a host that calls mgr.query(...).close() never observes `done`, so the
+      // ledger stayed in `ledgers[]` forever — usage().queries kept counting a
+      // finished conversation live and the settled-aggregate eviction (L61)
+      // never ran, leaking one ledger per closed query. Settling is idempotent
+      // (settleLedger no-ops once evicted), so a later drain is unaffected.
+      close: (): void => {
+        try {
+          q.close();
+        } finally {
+          settleLedger(ledger);
+        }
+      },
       [Symbol.asyncIterator](): Query {
         return wrapped;
       },
@@ -822,7 +836,15 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         return q.removeRetainedRegion(id);
       },
       streamInput: (stream) => q.streamInput(stream),
-      close: () => q.close(),
+      // Same fourth-exit settle as instrumentUsage: close() ends the run with
+      // no further pull, so without this the supervised ledger leaks too.
+      close: (): void => {
+        try {
+          q.close();
+        } finally {
+          settleLedger(ledger);
+        }
+      },
     };
     return wrapped;
   }

@@ -940,6 +940,15 @@ export function createSubagentRuntime(
       if (seedTurn !== undefined) {
         store.append(agentId, {
           type: 'user',
+          // A child transcript's message records carried NO uuid, unlike every
+          // main-session record (persistParam/persistAssistant stamp one at
+          // write time — keeper ruling 2026-07-13). The read path mints a
+          // fallback for a missing uuid, so getSessionMessages(agentId)
+          // returned a DIFFERENT identity for the same turn on every call, and
+          // the read-time uuid dedup (finding H2) could never collapse a
+          // double-materialized child transcript. Stamp it at write time here
+          // too, so a subagent transcript has stable message identity.
+          uuid: randomUUID(),
           timestamp: new Date().toISOString(),
           isSidechain: true,
           parent_tool_use_id: parentToolUseId,
@@ -993,6 +1002,8 @@ export function createSubagentRuntime(
         if (recordSidechain && store !== undefined) {
           store.append(agentId, {
             type: 'assistant',
+            // Stable write-time identity, same as the seed turn above.
+            uuid: randomUUID(),
             timestamp: new Date().toISOString(),
             isSidechain: true,
             parent_tool_use_id: parentToolUseId,
