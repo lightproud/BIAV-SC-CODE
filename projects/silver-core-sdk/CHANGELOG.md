@@ -16,6 +16,60 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.0.0 — 2026-07-28
+
+Audit wave 12. Two findings kill a whole session from its first message, and
+both hid behind the same blind spot: the mock transport records every request
+and validates none of it, so no test had ever asserted that the `tools[]` the
+engine assembles is something the Messages API accepts.
+
+- `buildToolDefs` advertised an external MCP server's `mcp__{server}__{tool}`
+  name verbatim with no charset check. In-process SDK servers **are**
+  validated and the OpenAI encoder warns on its own 64-char rule; the
+  anthropic path had neither. A third-party server exposing `search.web`
+  (dots are legal in MCP, illegal on the wire) makes the API reject the
+  entire request, and every turn re-sends the same list — so the session is
+  dead from the first message while the error names a tool index rather than
+  the offending server. Such entries are now skipped loudly.
+- `normalizeInputSchema` — the guard that exists because a lax server's bad
+  `input_schema` kills every request sharing the tool list — checked only "is
+  a plain object" and stopped one level above the field the API validates.
+  `{}`, what parameterless MCP tools commonly emit, 400s with
+  `input_schema.type: Field required`.
+
+Also fixed:
+
+- **Prompt injection via a tip** (`tips/index.ts`): the reception evaluator
+  interpolated the model-written tip into line-oriented header lines ahead of
+  the fenced transcript without collapsing newlines, so a tip carrying a
+  forged `Transcript after the tip:` continuation scored itself `positive`.
+- **Price override discarded** (`engine/pricing.ts`): with `cacheTtl: '1h'` an
+  explicitly declared `PriceOverride.cacheWrite` was thrown away for the
+  hardcoded Claude ratio, billing $2/MTok where the override said $9 —
+  under-reporting both cost and `maxBudgetUsd` on exactly the models overrides
+  exist for.
+- **Estimator crash** (`engine/tokens.ts`): a message whose `content` is null
+  (the OpenAI tool-call turn shape, and what a JSON round-trip of an absent
+  content produces) threw a TypeError, killing the compaction trigger and the
+  public estimator for the whole query.
+- **Dedup window never reopens** (`loop-support/ledger.ts`): `record()`
+  short-circuited on a duplicate key before age eviction, so a recurring key
+  stayed suppressed forever past `maxAgeMs` — unless an unrelated key happened
+  to be recorded in between.
+- **Verifier collapse indistinguishable from a verdict** (`verifier/index.ts`):
+  a JSON reply with an absent or unrecognized `verdict` became REFUTED without
+  `parseFailed`, so the caller that flag exists for discarded a valid finding
+  instead of retrying.
+- **Sandbox TMPDIR** (`sandbox/bwrap.ts`): when the host's `mkdtempSync`
+  degrades to an empty tmp dir, every sandboxed command ran with `TMPDIR=''`,
+  resolving `$TMPDIR/f` to `/f` — a write at the read-only sandbox root.
+- Eight error messages that pointed the reader at the wrong component,
+  including `rewindFiles()` reporting "File rewinding is not enabled" on a
+  query where the option **is** set, a throwing `onUserQuestion` handler
+  reported to the model as "User declined to answer" (an event that never
+  happened), and undici's opaque `fetch failed` leaving DNS, connection-refused
+  and TLS indistinguishable.
+
 ## 0.99.0 — 2026-07-28
 
 Audit wave 10 — first-ever passes over the repo's own guard machinery (CI

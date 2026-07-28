@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.0.0 — 2026-07-28
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 1.0.0 (audit wave 12: two tool-definition defects that
+made the API reject every request of a session, a tip-reception prompt
+injection, a discarded price override, and eight misdirecting error messages).
+
 ## 0.99.0 — 2026-07-28
 
 Audit wave 10. This package's share:

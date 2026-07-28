@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.99.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.99.0`
+**当前版本 `1.0.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.0.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.0.0（2026-07-28）：审计第十二波**——两处工具定义缺陷令 API 从首条消息起拒绝整个会话（外部 MCP 工具名无字符集校验、input_schema 守卫停在 API 真正校验的字段上一层），皆藏于「mock transport 不校验请求体」这一盲区；另修 tip 接收提示词注入、价格覆写被硬编码比率吞掉、null content 崩溃、去重窗口永不重开、八条误导性错误消息。
 
 **v0.99.0（2026-07-28）：审计第十波**——首扫仓库自身守卫机器。一致性台在零次比较上出具合格判词（L2 死 14/15、L4 全死）；htmlToText 与 compaction 的二次方卡死；705MB 转录静默读作「无此会话」；README goal 示例照抄即抛、猜写则放行每次停止。
 
