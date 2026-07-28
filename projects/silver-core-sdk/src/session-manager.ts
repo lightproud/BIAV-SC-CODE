@@ -616,14 +616,26 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       }
       // No prompt is re-sent (the resumed query's §5.2 redrive continues the
       // interrupted turn against the persisted history).
-      q = start({ sessionId: sessionId! });
       // WV3-1: re-apply the runtime control-plane overrides the consumer set on
       // the retired query, so the resumed query does not silently drop to base.
       // Awaited on purpose: a rejecting setter would otherwise be an unhandled
       // rejection (process-fatal on Node >= 15), and awaiting makes the
       // "replay lands before the resumed query is pumped" ordering structural
       // rather than a side effect of the setters happening to be await-free.
-      await replayControlPlane();
+      // Guarded: constructing the resume query (start) or replaying a setter can
+      // THROW (start's synchronous option validation; a replayed setter the
+      // fresh query rejects — the very rejection the comment above anticipates).
+      // Both scheduleResume call sites `await` it un-caught, so an escaping
+      // rejection would leave THIS ledger in `ledgers[]` forever — usage().queries
+      // over-counts it and the settled-aggregate eviction never runs. Settle the
+      // ledger before the failure propagates, matching every other exit path.
+      try {
+        q = start({ sessionId: sessionId! });
+        await replayControlPlane();
+      } catch (err) {
+        settleLedger(ledger);
+        throw err;
+      }
     };
 
     const wrapped: Query = {
