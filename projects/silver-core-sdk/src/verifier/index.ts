@@ -142,7 +142,15 @@ export function parseVerdict(raw: string): VerificationResult {
     const rationale = typeof rec.rationale === 'string' ? rec.rationale : '';
     const confirms =
       typeof rec.confirms === 'string' && rec.confirms.length > 0 ? rec.confirms : undefined;
-    return buildResult(verdict, quote, rationale, confirms);
+    const result = buildResult(verdict, quote, rationale, confirms);
+    // An absent/unrecognized `verdict` field is a GARBLED reply, not a model
+    // refute: the collapse to SAFE_VERDICT above is the fail-closed default,
+    // so it carries the same parseFailed marker as an unparseable reply.
+    // Without it a caller cannot tell "the verifier judged this refuted" from
+    // "the model never emitted a verdict" and silently discards a valid
+    // finding instead of retrying (the exact distinction parseFailed exists for).
+    if (!VERDICTS.has(v)) result.parseFailed = true;
+    return result;
   }
   // No authoritative JSON reply. If the reply ATTEMPTED one (the `{"` object-
   // literal signature — see the N3 note above), a parse failure — e.g. a reply

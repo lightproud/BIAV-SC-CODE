@@ -503,10 +503,30 @@ export class DefaultMcpRegistry implements McpRegistry {
         return new SdkMcpConnection((config as McpSdkServerConfigWithInstance).instance, {
           debug: this.debug,
         });
-      default:
+      default: {
+        // Untyped configs reach here from `.mcp.json` (JSON, so the TS union
+        // does not guard them). The old text said "expected ... an http url"
+        // even when the entry DID carry a url — the reader then re-checked a
+        // field that was already right instead of the missing `type`
+        // discriminator. Name what this entry actually looks like.
+        const cfg = config as Record<string, unknown>;
+        let detail: string;
+        if (cfg['type'] !== undefined) {
+          detail = `unsupported transport type ${JSON.stringify(cfg['type'])} (expected 'stdio', 'http' or 'sdk')`;
+        } else if (typeof cfg['url'] === 'string') {
+          detail = `it declares a url but no transport type — add "type": "http"`;
+        } else if (cfg['command'] !== undefined) {
+          detail = `its "command" is ${typeof cfg['command']}, not a string`;
+        } else {
+          const keys = Object.keys(cfg);
+          detail =
+            `it declares neither a stdio "command", an http "url" (with "type": "http"), ` +
+            `nor an sdk "instance" (keys present: ${keys.length > 0 ? keys.join(', ') : 'none'})`;
+        }
         throw new ConfigurationError(
-          `MCP server '${name}' has an unrecognized configuration (expected a stdio command, an http url, or an sdk instance)`,
+          `MCP server '${name}' has an unusable configuration: ${detail}`,
         );
+      }
     }
   }
 

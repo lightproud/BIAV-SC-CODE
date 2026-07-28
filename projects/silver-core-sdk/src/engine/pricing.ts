@@ -19,6 +19,10 @@ type PriceEntry = {
   cacheWrite: number;
   /** USD per MTok of cache-read input tokens. */
   cacheRead: number;
+  /** True when `cacheWrite` was DECLARED by a caller override rather than
+   *  derived from the Claude-shaped input x1.25 default. The 1h TTL rule
+   *  (input x2) is a Claude-table ratio and must not overwrite a declared rate. */
+  cacheWriteDeclared?: boolean;
 };
 
 /** Static price table (USD per MTok). Longest matching prefix wins. cacheWrite
@@ -85,6 +89,7 @@ function matchOverride(
     output: o.output,
     cacheWrite: o.cacheWrite ?? o.input * 1.25,
     cacheRead: o.cacheRead ?? o.input * 0.1,
+    cacheWriteDeclared: o.cacheWrite !== undefined,
   };
 }
 
@@ -155,7 +160,13 @@ export function estimateCostUsd(
   const serverToolCost =
     (usage.web_search_requests ?? 0) * WEB_SEARCH_USD_PER_CALL;
   if (best === undefined) return serverToolCost;
-  const cacheWriteRate = cacheTtl === '1h' ? best.input * 2 : best.cacheWrite;
+  // The 1h rule (input x2) is a ratio of the STATIC Claude table. A caller
+  // override that DECLARES cacheWrite prices an endpoint the table cannot know
+  // about (that is why the override exists), so substituting the Claude ratio
+  // there discards the only rate the host actually supplied and books a number
+  // nobody configured — silently under/over-reporting cost and maxBudgetUsd.
+  const cacheWriteRate =
+    cacheTtl === '1h' && best.cacheWriteDeclared !== true ? best.input * 2 : best.cacheWrite;
   return (
     (usage.input_tokens * best.input +
       usage.output_tokens * best.output +

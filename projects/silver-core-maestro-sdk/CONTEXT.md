@@ -36,11 +36,13 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.99.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `0.99.0`
+**当前版本 `1.0.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-agent-sdk` = `1.0.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.0.0（2026-07-28）：锁步对齐**——本包零代码改动，随 agent SDK 1.0.0（审计第十二波）前进。
 
 **v0.99.0（2026-07-28）：审计第十波**——ONBOARDING 契约套件计数（16 → 13+2 可选缝）；terminal-vocabulary 射程外的 testbed 两处重复犯规已修。
 
@@ -50,7 +52,6 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 （从包入口导出权威 token 估算器三件与 `MAX_READ_OUTPUT_CHARS` / `TOOL_OUTPUT_CAPS`
 只读上限集合，黑池「上下文构成」面板可删手工镜像）前进，详见该包 CHANGELOG。
 
-**v0.96.0（2026-07-28）：驱动器并发上限可被翻倍**——未 await 的 `stop()`+`start()` 令两代 tick 并行各自认领满额；新增同步 `#reserved` 预留计数封窗。
 
 **v0.95.0（2026-07-28）：台账两处缺陷 + 驱动器并发竞态**——家族审计波及本包（非空转）：
 `reopenSession` 并发 CAS 落败永久丢溯源链接；`recordOutcome` 回填路径写入词表外 outcome；
@@ -59,7 +60,6 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 **v0.94.0（2026-07-28）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.94.0
 （BREAKING：包内模型兜底默认值全数移除——缺 model 即抛 `ConfigurationError`，
 `DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` 出口删除）前进，详见该包 CHANGELOG。
-**v0.93.0（2026-07-28）：锁步对齐**（本包零运行时改动）——agent SDK 0.93.0 修复 recap 截断丢最新进度（BPT P1 活锁事故根因，`buildRecap` 改头尾双保留）并把截断纪律注册表扩到全 `src/`；家族版本钟锁步，本包同步升位。
 
 
 **v0.88.0 / v0.87.x（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK

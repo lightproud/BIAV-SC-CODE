@@ -31,5 +31,7 @@ Memory audit + sync playbook（记忆巡检手册，守密人 2026-07-12 裁定�
 
 ## D. 收尾
 
-12. 待裁项 AskUserQuestion 逐个呈上；获裁后按 §7.6 流程（对话内全量测试绿即合并）落盘。
+12. 待裁项 AskUserQuestion 逐个呈上；获裁后按 §7.6 流程落盘——判定门是
+    `python3 scripts/premerge_gate.py`（2026-07-27 起；`pytest` 只覆盖 CI 的一部分，
+    required 检查实测拦不住合并，安全性全落在合并前这一道门上），绿即合并。
 13. Report all changes made——合并后附总结体（§7.6 ⓪–④）。

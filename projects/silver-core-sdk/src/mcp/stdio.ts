@@ -70,6 +70,9 @@ export class StdioMcpConnection {
   private readonly pending = new Map<JsonRpcId, PendingRequest>();
   private closed = false;
   private info: { name: string; version: string } | undefined;
+  /** Exit code/signal of the server process, captured on 'exit' so the error
+   *  raised on 'close' can NAME why the server died (see describeExit). */
+  private lastExit: { code: number | null; signal: NodeJS.Signals | null } | null = null;
   private readonly elicitation?: ElicitationHandler;
   /** Aborts in-flight elicitation handlers when the connection closes. */
   private readonly lifeController = new AbortController();
@@ -176,6 +179,12 @@ export class StdioMcpConnection {
       this.debug(
         `[mcp:${this.label}] process exited (code=${String(code)}, signal=${String(sig)})`,
       );
+      // The exit code / signal is the one fact that tells a consumer WHY the
+      // server died (127 = launcher could not find it, 1 = it crashed on its
+      // own config, SIGKILL = the OOM killer). It used to reach the debug
+      // channel only, so the surfaced error — 'exited before responding' —
+      // was unactionable whenever debug was off (the default).
+      this.lastExit = { code, signal: sig };
       // Fail fast for NEW requests, but do NOT reject pending ones yet
       // (audit r2 I3): a server that writes its final response and exits
       // immediately may still have that response sitting in the stdout pipe
@@ -207,7 +216,7 @@ export class StdioMcpConnection {
       this.failAllPending(
         new McpError(
           'mcp_server_exited',
-          `MCP server '${this.label}' exited before responding`,
+          `MCP server '${this.label}' exited before responding${this.describeExit()}`,
           { serverLabel: this.label, transport: 'stdio' },
         ),
       );
@@ -553,6 +562,16 @@ export class StdioMcpConnection {
       return;
     }
     this.dispatch(msg);
+  }
+
+  /** ` (exit code N)` / ` (killed by SIGTERM)` — empty when the process death
+   *  carried neither (no 'exit' seen, e.g. a pre-spawn failure). */
+  private describeExit(): string {
+    const e = this.lastExit;
+    if (e === null) return '';
+    if (e.signal !== null) return ` (killed by ${e.signal})`;
+    if (e.code !== null) return ` (exit code ${e.code})`;
+    return '';
   }
 
   private failAllPending(err: Error): void {

@@ -216,7 +216,13 @@ export class FileCheckpointStore {
   ): Promise<RewindFilesResult> {
     const dryRun = options.dryRun === true;
     if (this.dir === null) {
-      throw new ConfigurationError('File rewinding is not enabled');
+      // `dir` is null only when bind() never ran, or ran and REFUSED the
+      // session id as unsafe. Saying "not enabled" named the wrong cause: the
+      // feature is on (this store exists), the store just has no session dir.
+      throw new ConfigurationError(
+        'File rewinding is unavailable: this checkpoint store is not bound to a ' +
+          'session (bind() was never called, or the session id was rejected as unsafe)',
+      );
     }
     const changes = this.readIndex();
     // Position the target turn. audit r4 V3-3: prefer the turn_start MARKER seq

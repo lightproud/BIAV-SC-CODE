@@ -4,8 +4,10 @@
  *
  * Routes to the host handler wired via options.onUserQuestion (-> ctx.askUser).
  * When no handler is configured the tool returns a not-configured error. A
- * handler returning null (or throwing) is treated as "user declined" and yields
- * an isError result. Answers are rendered per header.
+ * handler returning null is treated as "user declined"; a handler that THROWS
+ * takes the same declined-style path but says so as a handler failure (naming
+ * the thrown reason) instead of claiming a choice the user never made. Both
+ * yield an isError result. Answers are rendered per header.
  *
  * Plumbing: this is a tool-execute callback, NOT permission-gate interception -
  * answers do not pass through the gate's updatedInput/denial ledger.
@@ -185,7 +187,16 @@ export const askUserQuestionTool: BuiltinTool = {
       answers = await ctx.askUser(parsed.value, { signal: ctx.signal });
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('AskUserQuestion was aborted');
-      return errorResult('User declined to answer.');
+      // A THROWING handler is a HOST fault, not a user decision. The old text
+      // asserted "User declined to answer." — a cause that never happened —
+      // and the thrown reason was swallowed whole, so a host whose question
+      // bridge was broken saw nothing anywhere. Same flow (declined-style
+      // isError result), honest attribution.
+      const reason = e instanceof Error ? e.message : String(e);
+      ctx.debug(`AskUserQuestion: the onUserQuestion handler threw: ${reason}`);
+      return errorResult(
+        `AskUserQuestion failed: the options.onUserQuestion handler threw (${reason}); treating as declined.`,
+      );
     }
 
     if (answers === null) {

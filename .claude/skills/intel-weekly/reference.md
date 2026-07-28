@@ -2,14 +2,20 @@
 
 ## §1 档案层路径与 schema
 
+- **路径根 = `$BIAV_SC_DATA_ROOT`**（数据湖 T62 P2-5 已迁出 code 仓，2026-07-20）：下列全部为
+  湖内相对路径，程序内一律经 `archive_layout.community_root()` / `discord_root()` 解析。
+- **冷月带 `.gz`**：上上月及更早的 dated 文件（含 `activity_daily/`）压成 `.json.gz` / `.jsonl.gz`，
+  下列 `{date}.json` / `{date}.jsonl` 实际形态为 `…json[.gz]` / `…jsonl[.gz]`——枚举用 `*.json*`、
+  开档用 `open_archive_text()`、取日期用 `date_stem()`。只 glob 裸后缀 = 无声只剩近两月。
 - Discord 三服：`Record/Community/discord/{global|jp|volunteer}/`
   - `activity_daily/{date}.json`：`messages` / `unique_authors` / `channel_activity`（键为频道名）
-  - `channel_index.json`：`{channel_id: {name, dir}}`；消息在 `channels/{dir}/{date}.jsonl`
+  - `channel_index.json`：`{channel_id: {name, type, dir, status}}`（status 缺省 active，
+    offline/orphan 为已下线目录）；消息在 `channels/{dir}/{date}.jsonl`
   - 消息字段：`id / author_id / author_name / channel_id / content / timestamp`（紧凑 schema，
     读取一律 `.get(默认)`；过滤 `author_bot`）
 - 平台：`Record/Community/{plat}/[{region}/{type}/]{date}.json`，条目字段
   `title / summary / lang / url / time / engagement / author / content_type`
-- 平台清单以 `ls Record/Community/` 为准（当前 15 源；appstore/bahamut/note_com 低频）。
+- 平台清单以 `ls "$BIAV_SC_DATA_ROOT/Record/Community/"` 为准（appstore/bahamut/note_com 低频）。
 
 ## §2 关键词扫描组（起点，按当期事件增补）
 
@@ -31,8 +37,9 @@ event:  （当期版本/联动关键词）
 
 ## §4 趋势计算
 
-- Discord：global 服 `activity_daily` 按周一分桶求和，取近 13 周。
-- Steam：全部 `steam/**/review/*.json` 条目按 `url` 去重 → 按发布时间（UTC+8）周分桶 →
+- Discord：global 服 `activity_daily` 按周一分桶求和，取近 13 周（13 周里只有近两月是热层，
+  其余为 `.gz`——枚举 `activity_daily/*.json*`、经 `open_archive_text()` 开档，否则曲线只剩尾巴）。
+- Steam：全部 `steam/**/review/*.json*`（含冷层 `.json.gz`）条目按 `url` 去重 → 按发布时间（UTC+8）周分桶 →
   以 `[正面]`/`[负面]` 标题前缀计好评率。历史归档深度：Steam 至 2024-08、Discord 至 2023，
   三个月对比随取随算，不预存中间表。
 
@@ -40,8 +47,9 @@ event:  （当期版本/联动关键词）
 
 fanart 月度包在 Releases `community-assets` / `fanart-archive-{YYYY-MM}.tar.gz`
 （`{date}/discord_{attachment_id}.{ext}` + `gallery_manifest.json`，manifest 的 author 是数字 ID）。
-署名：拿文件名里的 attachment_id 在 `Record/Community/discord/` 全档 `grep -rm1`，
-命中行即原消息 JSON，取 `author_name`。查不到（bot 补录/跨月）用「…ID 尾 6 位」并注明。
+署名：拿文件名里的 attachment_id 在 `"$BIAV_SC_DATA_ROOT/Record/Community/discord/"` 全档
+`rg -z -m1`（**必须 `-z`**：跨月查作者会落到 `.gz` 冷层，明文 grep 在那里既不命中也不报错，
+只会让整批图退化成「ID 尾号」无名署名），命中行即原消息 JSON，取 `author_name`。查不到（bot 补录/跨月）用「…ID 尾 6 位」并注明。
 嵌入前缩图（长边 ≤700px，JPEG q84）落 `projects/news/data/fanart/`（gitignored，仅渲染用）。
 
 ## §6 已知坑

@@ -16,7 +16,7 @@ import {
   runUtilityCall,
   type UtilityCallOptions,
 } from '../generators/runtime.js';
-import { neutralizeClosingTag } from '../internal/inert-text.js';
+import { neutralizeClosingTag, singleLine } from '../internal/inert-text.js';
 import {
   CONTEXT_TIP_CATALOG,
   renderCatalog,
@@ -171,8 +171,14 @@ export async function evaluateTipReception(
   // after the tip) and directly steers the verdict — unfenced, it can forge a
   // "reception":"positive" line and fabricate a favorable judgement. Fence it
   // and neutralize the terminator like the sibling selector (buildSelectorUserTurn).
+  // The tip text is MODEL-generated (the selector wrote it from an untrusted
+  // transcript) and sits on line-oriented header lines ahead of the fenced
+  // block. An embedded newline lets it forge its own `Transcript after the
+  // tip:` header + `<transcript>` block — a fabricated "user thanked us"
+  // continuation the evaluator reads as a positive reception. One line per
+  // header field, same discipline as the ledger digest.
   const user =
-    `Tip shown: ${input.tip}\nSuggested action: ${input.action}\n\n` +
+    `Tip shown: ${singleLine(input.tip)}\nSuggested action: ${singleLine(input.action)}\n\n` +
     `Transcript after the tip:\n<transcript>\n${neutralizeClosingTag(input.transcriptAfter, 'transcript')}\n</transcript>`;
   const raw = await runUtilityCall(system, user, opts, 128);
   return parseTipReception(raw);

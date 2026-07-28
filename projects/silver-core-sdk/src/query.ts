@@ -2524,7 +2524,16 @@ export function query(args: {
       }
       await initDeferred.promise.catch(() => undefined);
       if (checkpointStore === null) {
-        throw new ConfigurationError('File rewinding is not enabled');
+        // Reaching here means enableFileCheckpointing IS set (guarded above) —
+        // repeating "not enabled" sent the caller to re-check an option that is
+        // already correct. The real cause: the store is created and bound when
+        // the generator starts its first turn, so a query that was closed or
+        // aborted before then has nothing to rewind.
+        throw new ConfigurationError(
+          'File rewinding is unavailable: enableFileCheckpointing is set, but no ' +
+            'checkpoint store was bound — this query ended (closed/aborted) before ' +
+            'its first turn, so no session was ever checkpointed',
+        );
       }
       return checkpointStore.rewind(userMessageId, { dryRun: opts?.dryRun === true });
     },
