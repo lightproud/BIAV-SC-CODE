@@ -567,14 +567,33 @@ async function foldViaApi(
     // An assistant turn left empty by the strip would itself 400 (empty
     // content); drop it — the summary is mechanical and loses nothing.
     .filter((m) => !Array.isArray(m.content) || m.content.length > 0);
+  // The summarizer nudge is a user turn. When summaryPrefix already ENDS with a
+  // user turn — GUARANTEED in the pure-tool-loop fallback, whose partition prefix
+  // ends on a user(tool_result) turn — appending a SECOND user turn makes the
+  // summary request 400 "roles must alternate" (see sessions/store.ts, query.ts).
+  // That 400 is caught and degraded to the deterministic fold, so useApiSummary
+  // silently NEVER worked for tool-loop histories (the SDK's headline workload)
+  // AND still billed the failed call. Merge the nudge into the trailing user turn
+  // instead (mirrors the sessions/store.ts alternation fix); genuine-turn folds
+  // (prefix ends on an assistant turn) are unchanged.
+  const nudge = 'Summarize the conversation above per the instructions.';
+  const summaryMessages: APIMessageParam[] = [...summaryPrefix];
+  const tail = summaryMessages[summaryMessages.length - 1];
+  if (tail !== undefined && tail.role === 'user') {
+    const mergedContent: ContentBlockParam[] =
+      typeof tail.content === 'string'
+        ? [{ type: 'text', text: tail.content }]
+        : [...tail.content];
+    mergedContent.push({ type: 'text', text: nudge });
+    summaryMessages[summaryMessages.length - 1] = { role: 'user', content: mergedContent };
+  } else {
+    summaryMessages.push({ role: 'user', content: nudge });
+  }
   const req: StreamRequest = {
     model: summaryModel,
     max_tokens: Math.min(4096, config.maxOutputTokens),
     system,
-    messages: [
-      ...summaryPrefix,
-      { role: 'user', content: 'Summarize the conversation above per the instructions.' },
-    ],
+    messages: summaryMessages,
     signal,
   };
   // Cross-protocol routing (v0.55.0): compaction.model may be served on a
