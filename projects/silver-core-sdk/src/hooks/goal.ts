@@ -193,5 +193,12 @@ export function createGoalStopHooks(
     };
   }
 
-  return { Stop: [{ hooks: [onStop] }] };
+  // Pin the goal matcher's failure direction to 'open' so the module's
+  // invariant (a broken judge NEVER traps the loop) holds even when the host
+  // sets Options.hookFailureMode 'closed'. onStop handles its own throws /
+  // malformed verdicts internally (returns allow), but a HANGING evaluator is
+  // caught by the runner's timeout — and under a global 'closed' that timeout
+  // would be converted into a DENY that blocks the stop (bypassing maxBlocks)
+  // and traps the agent. 'open' here keeps a timed-out goal stop fail-open.
+  return { Stop: [{ hooks: [onStop], failureMode: 'open' }] };
 }

@@ -71,6 +71,9 @@ export class HttpMcpConnection {
 
   private nextId = 1;
   private sessionId: string | undefined;
+  /** In-flight session-expiry re-initialize, shared so concurrent recoveries
+   *  coalesce into ONE handshake instead of N (see reinitializeSession). */
+  private reinitPromise: Promise<void> | undefined;
   private initialized = false;
   private protocolVersion = MCP_PROTOCOL_VERSION;
   private info: { name: string; version: string } | undefined;
@@ -260,6 +263,13 @@ export class HttpMcpConnection {
     if (signal?.aborted) onCallerAbort();
     else if (this.closeController.signal.aborted) onClose();
 
+    // The session id THIS request is about to carry, captured before the fetch
+    // (and before any concurrent request can mutate this.sessionId). The
+    // session-expiry recovery below keys off this local, NOT the live
+    // this.sessionId: a parallel in-flight request that already nulled
+    // this.sessionId mid-recovery would otherwise make our own 404 fail the
+    // `!== undefined` guard and surface as a raw HTTP 404 — a lost request.
+    const sentSessionId = this.sessionId;
     try {
       const response = await fetch(this.url, {
         method: 'POST',
@@ -281,7 +291,7 @@ export class HttpMcpConnection {
       if (
         !response.ok &&
         response.status === 404 &&
-        this.sessionId !== undefined &&
+        sentSessionId !== undefined &&
         !retriedAfterSessionLoss &&
         // Only a real REQUEST (awaiting a reply) may be replayed onto a fresh
         // session. A fire-and-forget message (expectId === null: an elicitation
@@ -303,9 +313,7 @@ export class HttpMcpConnection {
           `[mcp:${this.label}] HTTP 404 with a session id — session expired; ` +
             `re-initializing and retrying once`,
         );
-        this.sessionId = undefined;
-        this.initialized = false;
-        await this.connect(signal);
+        await this.reinitializeSession(sentSessionId);
         return await this.post(payload, expectId, signal, true);
       }
 
@@ -386,6 +394,36 @@ export class HttpMcpConnection {
       signal?.removeEventListener('abort', onCallerAbort);
       this.closeController.signal.removeEventListener('abort', onClose);
     }
+  }
+
+  /**
+   * Re-run the initialize handshake after a session-expiry 404, coalescing
+   * concurrent recoveries so N parallel expired requests trigger ONE handshake
+   * rather than N. Without coalescing, parallel in-flight calls each recovered
+   * independently: one re-init would install a fresh session that the sibling's
+   * own re-init then orphaned (a leaked server-side session that nothing ever
+   * DELETEs). `sentSessionId` is the session THIS request carried; if a
+   * concurrent recovery has already finished and installed a newer session,
+   * there is nothing to re-initialize — the caller just replays on it.
+   */
+  private async reinitializeSession(sentSessionId: string): Promise<void> {
+    // A concurrent recovery already completed and installed a fresh session:
+    // skip the handshake entirely and let the caller replay on the new session.
+    if (this.initialized && this.sessionId !== undefined && this.sessionId !== sentSessionId) {
+      return;
+    }
+    if (this.reinitPromise === undefined) {
+      this.sessionId = undefined;
+      this.initialized = false;
+      // Drive the shared handshake off the connection's own close signal, not
+      // any single caller's: a reconnect the other in-flight requests depend on
+      // must not die because THIS caller aborted (that caller still bails
+      // promptly on its own signal when post() replays after this resolves).
+      this.reinitPromise = this.connect().finally(() => {
+        this.reinitPromise = undefined;
+      });
+    }
+    await this.reinitPromise;
   }
 
   private buildHeaders(): Record<string, string> {

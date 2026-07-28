@@ -16,6 +16,39 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.96.0 — 2026-07-28
+
+Audit wave 8 (fresh lenses over already-hardened surfaces): 6 further verified
+defects in this package.
+
+- `query.ts` (state, x2): the two query-layer user-turn appends stacked a
+  second consecutive user turn after a **non-cap terminal** (permission
+  interrupt / PostToolUse `continue:false` / deferred tool), which leaves the
+  history ending on a `tool_result` user turn. The next streaming input, and
+  the session-end memory round, then produced `user`+`user` → 400 "roles must
+  alternate", unrecoverable across retries. Both now merge into a trailing
+  user turn (same helper shape the engine and session store already use).
+- `mcp/http.ts` (race): with two `tools/call` in flight when the server
+  session expires, the first 404 handler nulls `sessionId`, so the second sees
+  the recovery guard as false and throws the raw 404 to its caller; the
+  alternate interleaving mints two server sessions and orphans one. The guard
+  now keys off the session id captured **before** the fetch, and overlapping
+  recoveries coalesce onto one handshake.
+- `sessions/session-functions.ts` (edge-case): the entry reader accepted a
+  JSON **array** line (`typeof [] === 'object'`), which `forkSession` then
+  spread into a phantom `{"0":…}` record — baking transient corruption
+  permanently into the fork. Its two sibling readers already rejected arrays.
+- `sessions/file-store.ts` (crash): `append` deliberately swallows
+  `ENAMETOOLONG`, but `load` re-threw it, so an over-long session id that the
+  write silently dropped made the paired read throw into
+  `getSessionMessages`. `ENOENT`/`ENOTDIR`/`ENAMETOOLONG` now all read as
+  "not found"; genuine IO faults still throw.
+- `hooks/goal.ts` (error-handling): the structured-goal Stop matcher
+  inherited the host's global `hookFailureMode`, so with `'closed'` a
+  **hanging** evaluator became a runner-timeout `block` — trapping the agent
+  loop forever, exactly the invariant the module documents ("a broken judge
+  never traps the loop"). Its matcher now pins `failureMode: 'open'`.
+
 ## 0.95.0 — 2026-07-28
 
 Multi-wave defect audit (8 waves, 59 partitions across both SDKs + testbed):

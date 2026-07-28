@@ -12,6 +12,17 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.96.0 — 2026-07-28
+
+Audit wave 8: `LedgerDriver` could run **2x** `maxConcurrent`. A non-awaited
+`stop()` then `start()` — the stale-start pattern the generation machinery
+explicitly supports — leaves an old- and new-generation tick body running
+concurrently; both compute `limit = maxConcurrent - inflight.size` from the
+same pre-claim size (claims land in `#inflight` only after the awaited
+`claimDue`), so each claims a full cap. A synchronous `#reserved` counter,
+incremented before the await and released in `finally`, closes the window.
+Unbounded and single-chain steady-state behavior are byte-unchanged.
+
 ## 0.95.0 — 2026-07-28
 
 Defect audit fixes in the task ledger (family-wide audit wave):

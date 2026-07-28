@@ -85,7 +85,14 @@ async function readLocalEntries(
     if (t.length === 0) continue;
     try {
       const o = JSON.parse(t);
-      if (o !== null && typeof o === 'object') {
+      // Reject arrays as line debris, matching the two sibling read paths
+      // (store.ts load treats a non-object as unrecognized; FileSessionStore
+      // .load drops `Array.isArray(parsed)`). Without this an array line
+      // (`[1,2,3]` — a corrupt middle, hand-edit, or crash artifact) was pushed
+      // as an entry, and forkSession then spread it into a phantom
+      // `{"0":1,"1":2,...}` record — baking fresh corruption into the fork
+      // permanently (a JSONL entry is always an object; a scalar/array never is).
+      if (o !== null && typeof o === 'object' && !Array.isArray(o)) {
         const rec = o as Record<string, unknown>;
         if (typeof rec.uuid === 'string') {
           if (seenUuids.has(rec.uuid)) continue;
