@@ -12,7 +12,7 @@
 * [sentinel-baseline](/assets/assets-sentinel-baseline.md) - sentinel-baseline 事实数据
 * [README](/assets/assets-readme.md) - python assets/data/validate.py
 * [VERSION](/assets/assets-version.md) - 事实圣经 (Fact Bible)
-* [chat-onboarding-snippet](/assets/assets-chat-onboarding-snippet.md) - 你将分析【忘却前夜】（Morimens）的社区数据。所有原始数据托管在公开 GitHub 仓库 `lightproud/brain-in-a-vat`。请通过
+* [chat-onboarding-snippet](/assets/assets-chat-onboarding-snippet.md) - 你将分析【忘却前夜】（Morimens）的社区数据。所有原始数据托管在公开 GitHub 仓库 `lightproud/BIAV-SC-CODE`。请通过 ra
 * [erica](/assets/persona-erica.md) - erica 角色人格数据
 * [erica-speech-canon](/assets/persona-erica-speech-canon.md) - **接入银芯的 AI 使用建议**：
 * [公开图像资产](/assets/assets-images.md) - 立绘 / CG 等公开图像资产目录（10.0MB），二进制本体原地。

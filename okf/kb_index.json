@@ -122,7 +122,7 @@
     "/assets/assets-chat-onboarding-snippet.md": {
       "type": "reference",
       "title": "chat-onboarding-snippet",
-      "description": "你将分析【忘却前夜】（Morimens）的社区数据。所有原始数据托管在公开 GitHub 仓库 `lightproud/brain-in-a-vat`。请通过 raw.githubusercontent.com 直接 fetch 文件——不需要登录，无 rate limit 困扰下可自由读取。",
+      "description": "你将分析【忘却前夜】（Morimens）的社区数据。所有原始数据托管在公开 GitHub 仓库 `lightproud/BIAV-SC-CODE`。请通过 raw.githubusercontent.com 直接 fetch 文件——不需要登录，无 rate limit 困扰下可自由读取。",
       "resource": "/assets/data/chat-onboarding-snippet.md",
       "tags": [
         "data_layer:curated",
@@ -10761,6 +10761,7 @@
       "/memory/memory-ext-research-best-wiki-features.md"
     ],
     "biav": [
+      "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-lessons-archive.md",
       "/projects/silver-core-sdk-doc-positioning.md",
@@ -11007,7 +11008,6 @@
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "brain": [
-      "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
@@ -11193,6 +11193,7 @@
       "/sources/taptap_review.md"
     ],
     "code": [
+      "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -16604,6 +16605,7 @@
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md"
     ],
     "sc": [
+      "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-lessons-archive.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
@@ -17677,7 +17679,6 @@
       "/assets/assets-readme.md"
     ],
     "vat": [
-      "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
