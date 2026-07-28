@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-28T02:18:46.298233+00:00",
+  "collected_at": "2026-07-28T05:47:15.818061+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -13,12 +13,27 @@
       "summary": "福利很好，让我每个角色都能吃满90抽大保底",
       "url": "https://steamcommunity.com/profiles/76561199357643775/recommended/3052450",
       "author": "76561199357643775",
-      "engagement": 1,
+      "engagement": 2,
       "language": "schinese",
       "voted_up": false,
       "review": "福利很好，让我每个角色都能吃满90抽大保底",
       "timestamp_created": 1785145429,
       "playtime_forever": 12257
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-28T03:23:28+00:00",
+      "lang": "schinese",
+      "title": "[负面] 如果你想抽A角色请去B，C，D，E，F，G。。。。。角色up卡池。\n你都歪成这样，你不会指望我给你花...",
+      "summary": "如果你想抽A角色请去B，C，D，E，F，G。。。。。角色up卡池。\n你都歪成这样，你不会指望我给你花钱吧",
+      "url": "https://steamcommunity.com/profiles/76561198105691932/recommended/3052450",
+      "author": "76561198105691932",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "如果你想抽A角色请去B，C，D，E，F，G。。。。。角色up卡池。\n你都歪成这样，你不会指望我给你花钱吧",
+      "timestamp_created": 1785209008,
+      "playtime_forever": 27
     },
     {
       "source": "steam",
@@ -48,7 +63,7 @@
       "voted_up": true,
       "review": "it has saya",
       "timestamp_created": 1785185489,
-      "playtime_forever": 335
+      "playtime_forever": 451
     },
     {
       "source": "steam",
