@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-28",
   "stats": {
-    "nodes": 380,
+    "nodes": 381,
     "edges": 419
   },
   "nodes": [
@@ -3348,6 +3348,17 @@
       "id": "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "type": "documentation",
       "title": "retired-modules-audit-202606",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "type": "documentation",
+      "title": "scs-req-export-token-estimation-20260728",
       "tags": [
         "data_layer:curated",
         "deliverable",
