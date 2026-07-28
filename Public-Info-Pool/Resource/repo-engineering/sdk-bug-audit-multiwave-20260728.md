@@ -2,42 +2,46 @@
 
 ## 0. 工作定性
 
-这是一次对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-maestro-sdk` 3.7k 行 + `silver-core-testbed`）的**系统化缺陷审计**。守密人指令为「寻找 SDK 代码 500 个 BUG 并修复」。审计以分区并行 + 跨切面镜头方式推进，全部修正落于分支 `claude/sdk-500-bugs-fix-sm7zer`，逐波回归验证、逐批提交推送。
+对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-maestro-sdk` 3.7k 行 + `silver-core-testbed`）的**系统化缺陷审计**。守密人指令为「寻找 SDK 代码 500 个 BUG 并修复」。审计以分区并行 + 跨切面镜头推进，五波共 46 个审计分区，全部修正落于分支 `claude/sdk-500-bugs-fix-sm7zer`，逐波回归验证、逐批提交推送。
 
-**价值**：SDK 已有 20+ 真实消费者（BPT 在产），是银芯→黑池单向输出的常态底座。任何一处崩溃/安全/协议缺陷都会经 pin 消费传导到黑池侧。本次审计把「模型宽容度不足导致整轮对话丢弃」「权限 deny 静默失效」「跨会话 id 违规」等真实故障面收口，直接提升底座可靠性。
+**价值**：SDK 已有 20+ 真实消费者（BPT 在产），是银芯→黑池单向输出的常态底座。任何崩溃/安全/协议缺陷都会经 pin 消费传导到黑池侧。本次把「模型宽容输入致整轮对话丢弃」「权限 deny 静默失效」「跨会话 id 违规」「域名过滤绕过」等真实故障面收口，直接提升底座可靠性。
 
-## 1. 实得结果（诚实计数）
+## 1. 实得结果（git 净 diff 为权威真相）
 
-- **确认并修正真实缺陷：90 处**（每处均有具体失败输入/状态，非风格/非镀金）。
-- 横跨 **54 处代码位置**，两个 SDK + testbed。
-- **双包全绿**：agent SDK 3351 项、maestro 429 项、testbed 37 项单测全通过；两包 `tsc --noEmit` 零报错。
+- **确认并修正真实缺陷：95 处**（每处均有具体失败输入/状态；两处子代理二次复审后自行回退的候选已剔除，不计入）。
+- 横跨 **50 个源文件**，两个 SDK + testbed。
+- **三包全绿**：agent SDK 3351 项、maestro 429 项、testbed 37 项单测全通过；两包 `tsc --noEmit` 零报错。
 - **卫生干净**：净改仅 `projects/` 下源码（.ts/.mjs），**零测试文件改动**（既有测试为契约，破绿即回退该修正）。
 
-### 按类别分布
+### 分波
+| 波次 | 范围 | 修正 |
+|------|------|------|
+| Wave 1 | 全仓 12 分区首扫（query/engine/transport/mcp/sessions/permissions/subagents/tools/hooks…）| 63 |
+| Wave 2 | 首扫未覆盖模块（engine 提示装配/reporting/internal/tips/verifier/maestro 全量/testbed）| 15 |
+| Wave 3 | 大文件二轮深审 + 跨切面镜头（Unicode/算术/错误吞没/资源清理）| 7 |
+| Wave 4 | 新鲜面（zod schema/types 层/MCP JSON-RPC/permissions 对抗二轮/sandbox）| 5 |
+| Wave 5 | 二轮镜头（tool-dispatch/webfetch SSRF/fs TOCTOU/hooks/mcp stdio/retry）| 5 |
 
+### 按类别
 | 类别 | 数量 | 类别 | 数量 |
 |------|------|------|------|
-| edge-case 边界 | 18 | error-handling 错误处理 | 11 |
-| crash 崩溃 | 16 | state 状态机 | 9 |
-| security 安全 | 13 | race 竞态 | 5 |
-| logic 逻辑 | 12 | protocol 协议 | 4 |
-| | | leak 泄漏 | 2 |
+| crash 崩溃 | 17 | logic 逻辑 | 12 |
+| edge-case 边界 | 19 | error-handling 错误处理 | 11 |
+| security 安全 | 15 | state 状态机 | 9 |
+| race 竞态 | 5 | protocol 协议 | 4 |
+| leak 泄漏 | 3 | | |
 
-## 2. 覆盖面
+## 2. 关于 500 目标的诚实结论
 
-四波审计 + 一波进行中，累计 **40+ 分区**，覆盖全部子系统：query / engine loop / tool-dispatch / transport（anthropic·openai·node-http·sse·retry）/ MCP（http·stdio·protocol·registry·elicitation）/ sessions / permissions·sandbox / subagents / 全部工具 / hooks·generators / compaction / maestro 全量 / testbed。跨切面镜头：并发时序、安全（命令拆解·SSRF·原型污染）、Unicode 代理对、算术正确性、错误吞没、异步资源清理、zod schema 校验。
+**500 这一数字在本代码库中无法以真实缺陷达成。** 三条依据：
 
-## 3. 关于 500 目标的诚实结论
+1. 两个 SDK 已经过多轮预加固（代码内密布 `audit r2/r4/r5`、`R7*`、`U*`、`design-review-20260726` 历史修复注释），常见缺陷类早被堵死。
+2. Wave 3–5 出现**大面积诚实报零**（maestro 编排、types 层、generators/tips、workflow-engine 二轮、错误吞没镜头、资源清理镜头、retry 二轮等分区查无新缺陷）——真实召回枯竭的经验证据。
+3. 审计纪律硬约束：每处修正必须能回答「什么具体输入使其出错」且不得改测试契约。为凑 500 注水假诊断，会污染一个在产、被 20+ 消费者依赖的底座——风险远大于收益，违背审计诚实。
 
-**500 这一数字在本代码库中无法以真实缺陷达成。** 依据：
+诚实记录：**95 处真实缺陷**是穷尽当前可复现缺陷面后的实得数，而非「未达标」。
 
-1. 两个 SDK 已经过多轮预加固（代码内密布 `audit r2/r4/r5`、`R7*`、`U*`、`design-review-20260726` 等历史修复注释），大量缺陷类早已被历轮堵死。
-2. Wave 4/5 出现**大面积诚实报零**（maestro 编排、types 层、generators/tips、workflow-engine 二轮、错误吞没镜头、资源清理镜头等分区均查无新缺陷）——这是真实召回枯竭的经验证据。
-3. 审计纪律硬约束：每处修正必须能回答「什么具体输入/状态使其出错」，且不得改动测试契约。为凑 500 而放宽标准、注水假诊断，会污染一个在产、被 20+ 消费者依赖的底座——**风险远大于收益，且违背审计诚实原则**。
-
-诚实记录：**90 处真实缺陷** 是穷尽当前可复现缺陷面后的实得数，而非「未达标」。
-
-## 4. 完整缺陷清单（去重后）
+## 3. 完整缺陷清单（去重后 95 条）
 
 | 文件 | 行 | 类别 | 波次 | 摘要 |
 |------|----|----|------|------|
@@ -113,11 +117,14 @@
 | `src/engine/compaction.ts` | 570 | protocol | W3 | foldViaApi appends a 'Summarize' user turn after a summaryPrefix that ends with a user turn, producing consecutive user messages that the API rejects (400 roles must alternate) |
 | `src/engine/config-builder.ts` | 114 | crash | W2 | Segments filter crashes on undefined entry (weaker guard than prompts.ts E8 fix) |
 | `src/engine/config-builder.ts` | 145 | crash | W2 | Composition (segParts) filter crashes on undefined segment entry |
+| `src/engine/tool-dispatch.ts` | 106 | crash | W5 | MCP image content with data but no mimeType crashes mapMcpResult |
 | `src/error-normalize.ts` | 131 | error-handling | W2 | pickCode: numeric `code` shadows a real string slug via ?? chain, dropping the provider error code |
+| `src/hooks/condition.ts` | 149 | security | W5 | malformed JSON object reply not flagged evaluationFailed -> fail-open on a fail-closed matcher |
 | `src/internal/inert-text.ts` | 44 | security | W2 | escapeTagAttr collapsed only CR/LF, leaving non-ASCII line terminators that fork the pseudo-XML tag across lines |
 | `src/internal/regex-guard.ts` | 101 | security | W2 | CLASS_PROBES too small: overlapping bracket-class ranges slip past the ReDoS guard as a false negative |
 | `src/internal/structured-output.ts` | 404 | edge-case | W4 | additionalProperties:false wrongly rejects properties covered by the unmodeled patternProperties keyword, violating the module's documented 'never fails on a keyword it does not model' leniency contract |
 | `src/mcp/http.ts` | 281 | protocol | W4 | HTTP 404 session-expiry recovery replays fire-and-forget JSON-RPC responses/notifications onto a fresh session (cross-session id-context violation) |
+| `src/mcp/stdio.ts` | 188 | leak | W5 | in-flight elicitation handler never aborted when the child crashes (only explicit close() aborts lifeController) |
 | `src/permissions/rules.ts` | 676 | security | W4 | decomposeBashCommand split on the & inside fd-duplication redirections (>&, <&, 2>&1), orphaning the fd digit so a deny scoped to the real command failed open |
 | `src/query.ts` | 2280 | error-handling | W3 | setModel('') silently sets an empty model id, reintroducing the silent gateway-400 the construction guard prevents |
 | `src/reporting/compare-reports.ts` | 121 | edge-case | W3 | Token/cost/per-tool aggregation sums lacked the non-negative guard the sibling transport block (U7-4) and query-accounting finite() apply; isRunLogRecord validates type not sign, so a valid-JSON negative field corrupts the aggregate. |
@@ -129,6 +136,8 @@
 | `src/subagents/runtime.ts` | 2182 | error-handling | W3 | A background SendMessage continuation that THROWS a non-abort error is swallowed by delivery.catch (debug-log only), so the coordinator model never learns and hangs |
 | `src/tools/enterworktree.ts` | 170 | logic | W2 | EnterWorktree({path}) rejected every valid worktree when the session cwd sits under a symlink |
 | `src/tools/memory/store.ts` | 237 | crash | W2 | Escaping symlink in a memory subdirectory crashes the entire directory view |
+| `src/tools/read.ts` | 279 | edge-case | W5 | 256KB whole-file steering refusal fired before image/PDF detection, rejecting large images and PDFs with inapplicable text-pagination advice |
+| `src/tools/websearch.ts` | 53 | security | W5 | Trailing-dot host bypasses blocked_domains and wrongly trips allowed_domains |
 | `src/transport/anthropic.ts` | 336 | edge-case | W3 | raw frame.data.slice(0,120) in malformed/foreign SSE frame diagnostics can bisect a surrogate pair, emitting a lone surrogate (U+FFFD when the debug log / thrown APIConnectionError message is UTF-8 encoded) |
 | `src/transport/openai.ts` | 894 | crash | W3 | Non-array delta.tool_calls container crashes feed() with an uncaught TypeError |
 
