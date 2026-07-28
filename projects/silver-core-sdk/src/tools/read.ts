@@ -271,23 +271,6 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
             )}MB) read cap. Reading it whole would exhaust memory. Use the Grep tool to search it, or split the file into smaller pieces.`,
           );
         }
-        // Whole-file read of an oversized file: refuse and steer, as official
-        // Claude Code does at the same 256KB. Checked ONLY when neither offset
-        // nor limit was given — a bounded read is the escape hatch the refusal
-        // text itself names, so gating on the caller's intent (not on the
-        // file's size alone) is what makes the advice actionable.
-        if (
-          offsetRaw === undefined &&
-          limitRaw === undefined &&
-          st.size > MAX_READ_FILE_BYTES
-        ) {
-          return errorResult(
-            `Read failed: file content (${st.size} bytes) exceeds maximum allowed size ` +
-              `(${MAX_READ_FILE_BYTES} bytes). Use offset and limit parameters to read ` +
-              `specific portions of the file, or search for specific content with Grep ` +
-              `instead of reading the whole file.`,
-          );
-        }
       } catch (e) {
         if ((e as NodeJS.ErrnoException).code === 'ENOENT') {
           return errorResult(`Read failed: file does not exist: "${abs}".`);
@@ -385,6 +368,29 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
         return {
           content: `<system-reminder>The file "${abs}" exists but is empty (0 bytes).</system-reminder>`,
         };
+      }
+
+      // Whole-file read of an oversized TEXT file: refuse and steer, as official
+      // Claude Code does at the same 256KB. Checked ONLY when neither offset nor
+      // limit was given — a bounded read is the escape hatch the refusal text
+      // itself names, so gating on the caller's intent (not on the file's size
+      // alone) is what makes the advice actionable. Applied HERE, after the
+      // image/PDF returns, not up in the stat block: offset/limit are text-only
+      // knobs, so this steering refusal (whose advice is "use offset and limit")
+      // must never reject an image or PDF — those routinely exceed 256KB and
+      // have no page-slice/offset escape at all (audit wave5: a 300KB screenshot
+      // was refused with text-pagination advice it could not act on).
+      if (
+        offsetRaw === undefined &&
+        limitRaw === undefined &&
+        buf.length > MAX_READ_FILE_BYTES
+      ) {
+        return errorResult(
+          `Read failed: file content (${buf.length} bytes) exceeds maximum allowed size ` +
+            `(${MAX_READ_FILE_BYTES} bytes). Use offset and limit parameters to read ` +
+            `specific portions of the file, or search for specific content with Grep ` +
+            `instead of reading the whole file.`,
+        );
       }
 
       const lines = toDisplayLines(buf.toString('utf8'));

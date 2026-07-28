@@ -39,7 +39,7 @@ function parseDomainList(
     // endsWith("..example.com") — so a dotted blocked_domains entry silently
     // blocked nothing and a dotted allowed_domains entry filtered out
     // everything.
-    .map((d) => d.trim().toLowerCase().replace(/^\.+/, ''))
+    .map((d) => d.trim().toLowerCase().replace(/^\.+/, '').replace(/\.+$/, ''))
     .filter((d) => d.length > 0);
   return { ok: true, value: cleaned.length > 0 ? cleaned : undefined };
 }
@@ -52,7 +52,11 @@ function hostMatches(host: string, domain: string): boolean {
 /** Extract a lowercase hostname from a result URL; '' when unparseable. */
 function hostOf(url: string): string {
   try {
-    return new URL(url).hostname.toLowerCase();
+    // Strip a trailing dot (absolute-FQDN form): "spam.com." and "spam.com"
+    // are the same host, but hostMatches would test endsWith(".spam.com") on
+    // "spam.com." and miss — a trailing-dot result URL silently slips past a
+    // blocked_domains entry and is wrongly dropped by an allowed_domains one.
+    return new URL(url).hostname.toLowerCase().replace(/\.+$/, '');
   } catch {
     return '';
   }

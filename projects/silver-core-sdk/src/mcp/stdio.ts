@@ -187,6 +187,15 @@ export class StdioMcpConnection {
     });
     child.on('close', () => {
       this.closed = true;
+      // Wave5-L7 (leak): a child that CRASHES mid-session fires 'close'
+      // automatically WITHOUT anyone calling close(), so lifeController — the
+      // only thing that aborts an in-flight server-initiated elicitation
+      // handler — was never signalled. A host handler that ignores its signal
+      // (or is awaiting user input) then runs forever, defeating WV4-2's race-
+      // against-abort protection precisely in the crash case. Abort here so the
+      // handler settles to decline on any process death, not only explicit
+      // close(). Idempotent with close()'s abort.
+      this.lifeController.abort();
       // Rmcp-1 (audit r4): a server that writes its final response WITHOUT a
       // trailing newline then exits leaves that response in stdoutBuffer — the
       // onStdout line loop only consumes up to '\n'. 'close' fires after stdio
