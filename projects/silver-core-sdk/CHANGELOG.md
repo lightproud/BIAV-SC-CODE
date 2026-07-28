@@ -16,6 +16,53 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.98.0 — 2026-07-28
+
+Audit wave 9 — first-ever passes over never-audited surfaces (build/CI/eval
+scripts, shipped examples) plus four new cross-cutting lenses (determinism,
+numeric boundaries, platform portability, the SDKMessage emission contract).
+43 verified defects family-wide; this package's share:
+
+- **Guards that silently exited 0 while running nothing** (highest-value
+  class): `check-mutation-ratchet` compared a raw `file://` concat against a
+  percent-encoded `import.meta.url`, so any checkout path containing a space
+  turned the required CI leg into a no-op; a target with a non-numeric floor
+  made every score pass through a NaN comparison. `check-version-bump`
+  swallowed "not a git repository" as the benign shallow-clone skip.
+  `type-parity` had the same `file://` no-op and printed nothing, reading as
+  "no drift". `run-evals` discarded the report of a billed LIVE round on a
+  valueless `--out`; `--baseline-only --behavior-only` evaluated nothing and
+  exited 0; one bad fixture escaped the per-question try and lost every
+  already-judged result. `eval-harnesses` wrote seed files without mkdir -p.
+- **Emission contract** (`query.ts`): a continuation user turn the engine
+  merged in place was persisted and sent to the model but never reached the
+  consumer's stream; on a turn-level interrupt the trailing tool_result turn
+  was persisted and dropped from the stream, so a streaming host's transcript
+  diverged from disk permanently.
+- **Numeric boundaries**: `loadTimeoutMs` of 30 days overflowed the 32-bit
+  timer to 1 ms and failed every session load; `preTierMaxToolResultChars:
+  NaN` destroyed every oversized tool_result, replacing it with
+  `[…NaN chars elided…]`; `runConcurrent({concurrency: NaN})` built zero
+  workers and returned array holes; `retentionDays: Infinity` threw
+  `RangeError` out of a path documented never to throw; a non-finite
+  `readLimits` entry disabled the cap instead of resizing it.
+- **Determinism**: `latestSessionId()` and `list()` disagreed on same-mtime
+  sessions, so `continue: true` resumed a session other than the one the list
+  showed as newest; the shipped `InMemorySessionStore` and `FileSessionStore`
+  answered `listSessions()` differently for the same tie; memory and session
+  health reports named files by unspecified readdir order.
+- **Platform**: Edit rewrote a uniformly-CRLF file with mixed endings;
+  Windows-spelled globs silently matched nothing (fast-glob reads a backslash
+  as an escape); a tilde-backslash session root wrote every transcript under
+  the cwd.
+- **Per-branch output gaps**: two of Grep's four terminal branches emitted no
+  `structuredOutput`; WebSearch filled the required `tool_use_id` with `''`
+  (now absent — honest); Read's image/PDF branches never emitted theirs.
+- Registry drift: three built-ins registered after 0.34.0 were never added to
+  `DEFAULT_DEFERRED_BUILTINS`, shipping hot while their siblings stayed cold;
+  the memory tool advertised an unbounded `view_range` while the validator
+  enforced a 2-tuple.
+
 ## 0.97.0 — 2026-07-28
 
 **导出权威 token 估算器 + 内建工具输出上限**(黑池转派需求 2026-07-28

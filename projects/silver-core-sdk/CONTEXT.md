@@ -71,11 +71,15 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `0.97.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.97.0`
+**当前版本 `0.98.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `0.98.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v0.98.0（2026-07-28）：审计第九波**——首扫从未审计面（构建/CI/评测脚本、发货示例）+ 四个新横切镜头。
+本包份额：守卫静默退出 0（棘轮/版本/type-parity/run-evals）· 发射契约两处（续接 user 轮永不进流、
+中断时 tool_result 轮落盘却不发射）· 数值边界五处 · 确定性四处 · 平台三处 · 分支级产出缺口三处。
 
 **v0.97.0（2026-07-28）：导出权威 token 估算器 + 内建工具输出上限（黑池转派需求）**——
 黑池「上下文构成」面板此前对未成请求的素材（草稿输入 / 待注入记忆 / 知识库候选）只能手工
