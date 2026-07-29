@@ -263,18 +263,34 @@ describe('translator fallbacks', () => {
     expect(() => t.finish()).toThrowError(/stream ended before any chunk arrived/);
   });
 
-  it('a tool_call delta WITHOUT a function member is tolerated (no crash, id still adopted)', () => {
+  // Keeper ruling 2026-07-29 (待裁①): a tool_use block minted with `name: ''`
+  // is one the ENGINE CAN NEVER DISPATCH — it burns a round trip on
+  // `No such tool: ` and forces stop_reason 'tool_use' for a call that does not
+  // exist. finish()'s second pass already refused to mint exactly that shape;
+  // the first pass now agrees. This test keeps its original intent — a
+  // function-less tool_call delta must not CRASH the translator — and drops the
+  // id-adoption assertion the ruling reversed.
+  it('a tool_call delta WITHOUT a function member is tolerated (no crash, no undispatchable block)', () => {
     const t = new OpenAIStreamTranslator('gpt-4o');
     const out: RawMessageStreamEvent[] = [];
-    out.push(
-      ...t.feed({ id: 'c1', choices: [{ index: 0, delta: { role: 'assistant', tool_calls: [{ index: 0, id: 'call_bare' }] } }] } as never),
+    expect(() => {
+      out.push(
+        ...t.feed({ id: 'c1', choices: [{ index: 0, delta: { role: 'assistant', tool_calls: [{ index: 0, id: 'call_bare' }] } }] } as never),
+      );
+      out.push(...t.finish());
+    }).not.toThrow();
+    // No tool_use block at all: a nameless call is not dispatchable.
+    expect(
+      out.filter(
+        (e) => e.type === 'content_block_start' && e.content_block.type === 'tool_use',
+      ),
+    ).toHaveLength(0);
+    // ...and no fabricated tool_use stop_reason with nothing to dispatch.
+    const delta = out.find(
+      (e): e is Extract<RawMessageStreamEvent, { type: 'message_delta' }> =>
+        e.type === 'message_delta',
     );
-    out.push(...t.finish());
-    const start = out.find(
-      (e): e is Extract<RawMessageStreamEvent, { type: 'content_block_start' }> =>
-        e.type === 'content_block_start' && e.content_block.type === 'tool_use',
-    )!;
-    expect((start.content_block as { id: string }).id).toBe('call_bare');
+    expect(delta?.delta.stop_reason).not.toBe('tool_use');
   });
 
   it('three block kinds close in ascending index order at finish', () => {

@@ -962,7 +962,15 @@ export class OpenAIStreamTranslator {
       // Gateways always complete the name before argument bytes begin, so
       // first-args is the earliest safe emission point; conforming single-chunk
       // senders (id + full name + args together) see no deferral at all.
-      if (buf.id !== undefined && buf.args.length > 0) {
+      // A NAME is required, not just an id (keeper ruling 2026-07-29): the
+      // block_start carries the tool name verbatim, and a block minted with
+      // `name: ''` is one the engine can never dispatch — it burns a round trip
+      // on `No such tool: ` and forces stop_reason 'tool_use' for a call that
+      // does not exist. Conforming gateways always complete the name before
+      // argument bytes begin (see the deferral note above), so this costs them
+      // nothing; a gateway that never sends a name has its bytes routed by
+      // finish()'s pass 2 into the sibling block they belong to.
+      if (buf.id !== undefined && buf.name !== '' && buf.args.length > 0) {
         if (!buf.emitted) {
           buf.index = this.openBlock(events, key, {
             type: 'tool_use',
@@ -1053,22 +1061,20 @@ export class OpenAIStreamTranslator {
     // here, with a synthetic id as the best-effort fallback. Runs before the
     // orphan pass so a late-flushed sibling is a valid merge target.
     //
-    // NOTE (audit wave 19, investigated and left as-is): the gate is "id OR
-    // name", so a buffer that collected an id but never a NAME is opened with
-    // `name: ''` — a block the engine cannot dispatch, which is exactly what
-    // pass 2 below refuses to mint. It is reachable by the mirror of pass 2's
-    // own 待裁④ scenario (a gateway splitting ONE call across an index-LESS id
-    // fragment and an index-only name/args fragment), where the measured
-    // output is TWO blocks: `{id:'call_abc', name:''}` plus
-    // `{id:'call_0', name:'get_weather'}`. Tightening the gate to require a
-    // name is NOT done here because the id-only tolerance is deliberately
-    // pinned by tests/openai-mutation-kills-r5.test.ts ("a tool_call delta
-    // WITHOUT a function member is tolerated ... id still adopted"), which
-    // asserts the block IS emitted for a lone id-only fragment. Changing it
-    // needs a ruling on which of the two behaviours is intended.
+    // The gate requires a NAME (keeper ruling 2026-07-29). It used to be "id OR
+    // name", so a buffer that collected an id but never a NAME was opened with
+    // `name: ''` — exactly the block pass 2 below refuses to mint, one function
+    // apart. It is reachable by the mirror of pass 2's own scenario (a gateway
+    // splitting ONE call across an index-LESS id fragment and an index-only
+    // name/args fragment), where the measured output was TWO blocks:
+    // `{id:'call_abc', name:''}` plus `{id:'call_0', name:'get_weather'}`. The
+    // first is undispatchable: it costs a round trip on `No such tool: ` and
+    // forces stop_reason 'tool_use' for a call that does not exist. A nameless
+    // buffer now falls through to pass 2, which merges its argument bytes into
+    // the sibling block they belong to (or drops them when there is no sibling).
     for (const [key, buf] of this.toolBuffers) {
       if (buf.emitted) continue;
-      if (buf.id === undefined && buf.name === '') continue; // orphans: pass 2
+      if (buf.name === '') continue; // nameless / orphans: pass 2
       buf.index = this.openBlock(events, key, {
         type: 'tool_use',
         id: buf.id ?? `call_${this.nextIndex}`,
@@ -1136,9 +1142,13 @@ export class OpenAIStreamTranslator {
     // dispatchable tool call and must not force stop_reason:'tool_use' with no
     // matching block; count only buffers carrying a real dispatch signal.
     // (audit r4 Roa-4.)
-    const hasRealTool = [...this.toolBuffers.values()].some(
-      (b) => b.emitted || b.id !== undefined || b.name !== '',
-    );
+    // Only a block that was actually EMITTED is a dispatchable tool call. The
+    // previous `id !== undefined` arm counted a nameless id-only buffer, which
+    // (since the pass-1 gate now requires a name) opens no block at all — that
+    // would force stop_reason 'tool_use' with no matching block, the one shape
+    // the pass-2 note below calls out as forbidden. Every NAMED buffer is
+    // emitted by pass 1, so `emitted` covers them all.
+    const hasRealTool = [...this.toolBuffers.values()].some((b) => b.emitted);
     // A delta.refusal that arrived with no stronger terminal signal (an
     // explicit tool/length/content_filter reason still wins) maps to
     // stop_reason 'refusal' rather than a fabricated 'end_turn'. (audit r4 Roa-1.)
