@@ -41,11 +41,12 @@ KNOWN_SOURCES = [
     'stopgame',
     # 中文补充
     'weixin',
-    # 官方 X 账号时间线（syndication 接口，无 key；仅官方号，无关键词搜索）
-    'twitter',
     # TapTap 评论流（taptap_collector 衍生 source，与 taptap 论坛帖分桶归档；走主线 news.json）
     'taptap_review',
 ]
+# twitter 已摘除（守密人 2026-07-30 裁定，归档完整性审计待裁项④）：挂名 1,126 天审计窗口
+# 零产出、归档目录从未存在（syndication 接口 API 墙）。采集器 fetch_twitter 保留在
+# global_collectors 但不再入 collect_global 编排；未来要采集须重新登记并接回编排。
 
 # 原始源名 → 规范源名
 SOURCE_ALIASES = {
@@ -70,7 +71,6 @@ SPARSE_SOURCES = {
     'note_com', 'ruliweb', 'arca_live', 'bahamut',
     'taptap', 'taptap_review',
     'discord',
-    'twitter',  # 官方号公告，发布不频繁，用 30 天宽窗
 }
 
 # 主管线核心源（aggregator.py 直采）。长期 0 产出 = 采集故障，健康门控据此告警。
@@ -123,7 +123,7 @@ REGION_APPS = {
     'steam':       {'global': '3052450',                  'jp': '4226130'},
     'appstore':    {'global': '6447354150',               'jp': '6743462069'},
     'google_play': {'global': 'com.qookkagames.z1.gp.hk', 'jp': 'jp.co.altplus.boukyakuzenya'},
-    'twitter':     {'global': 'MorimensOfcl',             'jp': 'bokyakuzenya'},
+    # twitter 条目已随源摘除迁出（2026-07-30）：句柄→区服映射内聚 global_collectors._TWITTER_REGION_BY_HANDLE
     # YouTube：global 存 @handle（采集前需 channels.list?forHandle 转 channelId）；
     # jp 已解析为 channelId（频道「忘却前夜【日本版公式】」，2026-06-22 网络检索 + 频道页标题核验）。
     'youtube':     {'global': '@morimensofficial',        'jp': 'UCF6iFnr28T4KjmVvPakmU3g'},

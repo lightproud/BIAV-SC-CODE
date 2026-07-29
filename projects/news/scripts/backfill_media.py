@@ -10,7 +10,7 @@ Discord 附件 URL 的过期只在查询参数（ex/is/hm）；用 Bot Token 调
   1. 扫 platforms/*/*.json 的 media_url + discord/channels/*/*.jsonl 的 image 附件（全历史）；
   2. Discord 过期 URL 经 refresh-urls 批量刷新（需 DISCORD_BOT_TOKEN，bot 须能访问该频道）；
   3. 按源带正确 Referer 下载到 media/files/（gitignore，不进 git）；
-  4. 写 media/backfill_manifest.json（进 git 的文本清单）；
+  4. 写 <pool>/Record/media/backfill_manifest.json（文本台账，随数据仓进 git；2026-07-30 迁数据湖）；
   5. --upload：打包 media/files/ 传 GitHub Releases（tag=community-assets「社区二创」，需 GH_TOKEN）。
 
 清单已 ok 的跳过（可续跑）；--budget 秒级预算，超时优雅退出。
@@ -42,7 +42,10 @@ import requests
 ROOT = "projects/news/data"            # media 输出（二进制，gitignore，留原地）
 SRC = str(archive_layout.community_root())  # 源读取根（分仓桥接：随 community_root() 换位 data 仓 / 在树）
 FILES = f"{ROOT}/media/files"
-MANIFEST = f"{ROOT}/media/backfill_manifest.json"
+# manifest 随数据湖走（守密人 2026-07-30 裁定）：<pool>/Record/media/backfill_manifest.json。
+# 原 code 仓路径被 .gitignore 整目录忽略（#876）致 CI 落档步骤连败 38 天。
+MANIFEST = str(archive_layout.media_manifest_path())
+_LEGACY_MANIFEST = f"{ROOT}/media/backfill_manifest.json"  # 迁移前旧址，只读回退
 UA = "Mozilla/5.0 (silver-core media backfill)"
 REFERER = {"pixiv": "https://www.pixiv.net/", "bilibili": "https://www.bilibili.com/"}
 RELEASE_TAG = "community-assets"  # 2026-06-21 收敛：media 并入「社区二创」桶
@@ -51,9 +54,12 @@ REFRESH_BATCH = 50
 
 
 def load_manifest():
-    if not Path(MANIFEST).is_file():
+    # 新址缺档时回退读旧址（一次性迁移兜底）：保住 06-21 前最后一份断点台账，
+    # 避免迁移当口从零重下全部媒体。写方只写新址，旧址自然淘汰。
+    path = MANIFEST if Path(MANIFEST).is_file() else _LEGACY_MANIFEST
+    if not Path(path).is_file():
         return {}
-    with open(MANIFEST, encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
