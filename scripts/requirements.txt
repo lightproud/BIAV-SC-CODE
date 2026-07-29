@@ -2,7 +2,10 @@
 # 标准库不在此列。本地模块（dream_*、memory_search、knowledge_graph 等）为仓库内文件，非依赖。
 
 # --- MCP 服务端（mcp_server.py，对接知识层工具调用）---
-mcp>=1.0.0
+# 上限 pin 是刻意的（守密人 2026-07-29 裁定，MCP 2026-07-28 规范应对三裁②）：
+# 官方 Python SDK 若随新规范发不兼容大版本，无上限地板会让云容器装机时静默换血，
+# 坏点以「新会话 MCP 服务端起不来」形式突然出现。验证过 2.x 再抬这一行。
+mcp>=1.0.0,<2
 
 # --- 合并前门禁（premerge_gate.py 解析 .github/workflows/*.yml 派生门禁步骤）---
 # **不是可选依赖**：premerge_gate 连 `--list` 都要 import yaml（派生 29 条步骤靠解析
