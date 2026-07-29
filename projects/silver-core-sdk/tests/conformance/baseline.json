@@ -8,7 +8,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -17,7 +18,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -27,7 +29,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-05"
+          "KD-05",
+          "KD-13"
         ],
         "engineFinding": false
       }
@@ -38,7 +41,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -48,7 +52,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-07"
+          "KD-07",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -60,7 +65,8 @@
           "KD-04",
           "KD-05",
           "KD-08",
-          "KD-09"
+          "KD-09",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -68,7 +74,8 @@
         "verdict": "MATCH_WITH_KNOWN_DIFFS",
         "kdIds": [
           "KD-01",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -82,7 +89,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -91,7 +99,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -101,7 +110,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-06"
+          "KD-06",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -111,7 +121,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-06"
+          "KD-06",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -120,7 +131,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -128,7 +140,8 @@
         "verdict": "DIVERGENT",
         "kdIds": [
           "KD-01",
-          "KD-02"
+          "KD-02",
+          "KD-13"
         ],
         "engineFinding": true
       },
@@ -137,7 +150,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -147,7 +161,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-06"
+          "KD-06",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -156,7 +171,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -166,7 +182,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-06"
+          "KD-06",
+          "KD-13"
         ],
         "engineFinding": false
       }
@@ -241,8 +258,10 @@
         "engineFinding": false
       },
       "L3-GLOB-02": {
-        "verdict": "CONTENT_MATCH",
-        "kdIds": [],
+        "verdict": "CONTENT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-L3-15"
+        ],
         "engineFinding": false
       },
       "L3-GLOB-03": {
@@ -371,7 +390,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-12"
+          "KD-12",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -382,7 +402,8 @@
           "KD-02",
           "KD-04",
           "KD-05",
-          "KD-12"
+          "KD-12",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -391,7 +412,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -400,7 +422,8 @@
         "kdIds": [
           "KD-01",
           "KD-02",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -409,6 +432,7 @@
         "kdIds": [
           "KD-01",
           "KD-04",
+          "KD-13",
           "KD-L4-05"
         ],
         "engineFinding": false
@@ -417,7 +441,8 @@
         "verdict": "FAULT_KNOWN_DIFF",
         "kdIds": [
           "KD-01",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -426,6 +451,7 @@
         "kdIds": [
           "KD-01",
           "KD-04",
+          "KD-13",
           "KD-L4-01"
         ],
         "engineFinding": false
@@ -436,7 +462,8 @@
           "KD-01",
           "KD-02",
           "KD-03",
-          "KD-04"
+          "KD-04",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -447,6 +474,7 @@
           "KD-02",
           "KD-04",
           "KD-05",
+          "KD-13",
           "KD-L4-08"
         ],
         "engineFinding": false
@@ -457,6 +485,7 @@
           "KD-01",
           "KD-02",
           "KD-04",
+          "KD-13",
           "KD-L4-01"
         ],
         "engineFinding": false
@@ -467,6 +496,7 @@
           "KD-01",
           "KD-04",
           "KD-05",
+          "KD-13",
           "KD-L4-02"
         ],
         "engineFinding": false
@@ -477,7 +507,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-05"
+          "KD-05",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -487,7 +518,8 @@
           "KD-01",
           "KD-02",
           "KD-04",
-          "KD-05"
+          "KD-05",
+          "KD-13"
         ],
         "engineFinding": false
       },
@@ -498,6 +530,7 @@
           "KD-02",
           "KD-04",
           "KD-05",
+          "KD-13",
           "KD-L4-07"
         ],
         "engineFinding": false
@@ -508,6 +541,7 @@
           "KD-01",
           "KD-02",
           "KD-04",
+          "KD-13",
           "KD-L4-06"
         ],
         "engineFinding": false
