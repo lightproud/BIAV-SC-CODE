@@ -115,6 +115,25 @@ export class SessionAccounting {
     }
   }
 
+  /**
+   * Fold one bounded UTILITY model call's usage into the session totals
+   * (r1 §二 billing: the memory-attachment picker is a real model call — it
+   * must land in the same account as the turns it rides between). Utility
+   * calls carry no num_turns / apiMs; only usage, cost and modelUsage fold.
+   */
+  foldUtilityUsage(modelId: string, usage: NonNullableUsage, costUSD = 0): void {
+    this.cost += finite(costUSD);
+    this.usage = addUsage(this.usage, usage);
+    mergeModelUsage(this.modelUsage, modelId, {
+      inputTokens: usage.input_tokens,
+      outputTokens: usage.output_tokens,
+      cacheReadInputTokens: usage.cache_read_input_tokens,
+      cacheCreationInputTokens: usage.cache_creation_input_tokens,
+      webSearchRequests: usage.web_search_requests ?? 0,
+      costUSD: finite(costUSD),
+    });
+  }
+
   /** Fold drained subagent usage/cost/modelUsage into the session totals. */
   foldSubagentUsage(ledger: {
     usage: NonNullableUsage;

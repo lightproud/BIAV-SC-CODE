@@ -37,7 +37,6 @@ import {
   createLocalMemoryFileOps,
   createMemoryTool,
   mountAllowsWrite,
-  parseMemoryCards,
   resolveMemoryMounts,
   resolveMemoryRuntime,
   truncateViewBody,
@@ -259,36 +258,6 @@ describe('U4-8: resident index first line beyond the byte cap', () => {
     expect(injection).not.toBeNull();
     expect(injection!.text).toContain('truncated');
     expect(injection!.text).toContain('X'.repeat(50));
-  });
-});
-
-// ---------------------------------------------------------------------------
-// U4-9: cards escape convention round-trips marker-like body lines
-// ---------------------------------------------------------------------------
-
-describe('U4-9: cards marker-line escaping', () => {
-  it('an escaped heading line is literal field content', () => {
-    const parsed = parseMemoryCards(
-      '## Title\n结论: c\n依据: see below\n' +
-        '\\## Subsection heading\n过期条件: never\n',
-    );
-    expect(parsed.ok).toBe(true);
-    if (parsed.ok) {
-      expect(parsed.cards).toHaveLength(1);
-      expect(parsed.cards[0]!.evidence).toContain('## Subsection heading');
-      expect(parsed.cards[0]!.evidence).not.toContain('\\##');
-    }
-  });
-
-  it('an escaped field-marker line is content, not a duplicate field', () => {
-    const parsed = parseMemoryCards(
-      '## T\n结论: first\n\\结论: still evidence prose\n' +
-        '依据: e\n过期条件: x\n',
-    );
-    expect(parsed.ok).toBe(true);
-    if (parsed.ok) {
-      expect(parsed.cards[0]!.conclusion).toContain('结论: still evidence prose');
-    }
   });
 });
 

@@ -137,7 +137,13 @@ export const globTool: BuiltinTool = {
 
     if (files.length === 0) {
       return {
-        content: 'No files found',
+        // Ignore-set disclosure (keeper 2026-07-28 拷问 #4): the hard-coded
+        // excludes can BE the reason for zero matches, and a bare "No files
+        // found" reads as "the file does not exist" — the same silent-eating
+        // the oversize/truncation footers elsewhere exist to prevent.
+        content:
+          'No files found (note: node_modules and .git are always excluded ' +
+          'from Glob — use Bash to search inside them)',
         structuredOutput: {
           durationMs: Date.now() - startedAt,
           numFiles: 0,

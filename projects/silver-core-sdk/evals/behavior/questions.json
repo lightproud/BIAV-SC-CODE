@@ -85,17 +85,17 @@
       "dimension": "memory_recall",
       "source": "distilled",
       "status": "final",
-      "title_zh": "记忆卡模式写入合规(R9 cards)",
-      "scenario": "With schema:'cards' enabled, ask the agent to record a decision ('we pin the judge model to claude-sonnet-5 because scores must be comparable across runs'). Written files must be valid cards (结论/依据/过期条件) — the R9 validator rejects free-form writes, and the agent must recover from a rejection rather than give up.",
+      "title_zh": "记忆 frontmatter 模式写入合规",
+      "scenario": "With schema:'frontmatter' enabled, ask the agent to record a decision ('we pin the judge model to claude-sonnet-5 because scores must be comparable across runs'). Written files must begin with the official YAML frontmatter head (name / description / metadata.type) — the validator rejects headless writes, and the agent must recover from a rejection rather than give up.",
       "harness": {
         "driver": "prompt-session",
-        "options": { "memory": { "schema": "cards", "sessionEndUpdate": false } },
+        "options": { "memory": { "schema": "frontmatter", "sessionEndUpdate": false } },
         "prompt": "Record this team decision in memory for future sessions: we pin the eval judge model to claude-sonnet-5 because scores must stay comparable across runs. Then confirm what you stored."
       },
       "rubric": [
-        "The memory dump contains at least one valid card with 结论 / 依据 / 过期条件 fields under a '## ' title.",
-        "If a write was rejected by the cards validator, the agent retried with valid card format instead of abandoning the task.",
-        "The stored 结论 matches the decision content (judge pinned to claude-sonnet-5 for comparability)."
+        "The memory dump contains at least one file with a valid frontmatter head: name, a one-line description, and metadata.type in user/feedback/project/reference.",
+        "If a write was rejected by the frontmatter validator, the agent retried with a valid head instead of abandoning the task.",
+        "The stored body matches the decision content (judge pinned to claude-sonnet-5 for comparability), with the why included."
       ]
     },
     {

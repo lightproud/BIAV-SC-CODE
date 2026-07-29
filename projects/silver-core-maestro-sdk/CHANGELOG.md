@@ -12,49 +12,80 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
-## 1.8.3 — 2026-07-29
+## 2.0.7 — 2026-07-29
+
+
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.3 为审计第二十四波
 （折叠比例旋钮缺 NaN 守卫导致自动折叠整场静默失效 · `ReportLedger.record` 不校验字段类型
 致折叠中途抛裸 TypeError），见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18
 裁定），故本包同步升位。
 
-## 1.8.2 — 2026-07-29
+## 2.0.6 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.2 为审计第二十三波
 （校验器行式摘要未折行 · 两份会话存储的撕裂尾自愈被失败写入解除 · `loadInfo` 缺 uuid 去重），
 见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
 
-## 1.8.1 — 2026-07-29
+## 2.0.5 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.1 为审计第二十二波
 （命令前缀分类器不回校命令 · 钩子条件判定器不围栏不可信输入），见 silver-core-sdk CHANGELOG。
 家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
 
-## 1.8.0 — 2026-07-29
+## 2.0.4 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.0 新开
 **后台任务第二投递通道**（`Options.onBackgroundEvent`，守密人 2026-07-29 裁定对齐官方
 对话／后台分流），并借此让 `abortAll()` 真的发出终止事件，见 silver-core-sdk CHANGELOG。
 家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
 
-## 1.7.0 — 2026-07-29
+## 2.0.3 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.7.0 关掉两项守密人
 裁定（OpenAI 空名工具块不再铸造 · Bash 输出上限改为真总量），两者皆为行为变更，
 见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
 
-## 1.6.0 — 2026-07-29
+## 2.0.2 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.6.0 是审计
 第二十一波（结构化输出严格提取 / 公开 token 估算器 / 文件回滚计划三处静默失败），
 见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
 
-## 1.5.0 — 2026-07-29
+## 2.0.1 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.5.0 是审计
 第十九、二十波（工具 / 会话 / 子代理 / 传输 / 权限 / 钩子 / MCP 配置十余处真实缺陷），
 见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
+
+> **版本编号说明（2026-07-29）**：本条原编为 1.8.3。合并 main 时发现 main 已由另一条 PR（#879，T75 记忆前置元数据）推进到 **2.0.0**——而 1.5.0–1.8.2 只存在于本审计分支、从未从 main 发布。本条遂重编为 **2.0.1**（2.0.0 之上的补丁），使版本单调且与守密人 2026-07-29 规则一致：**修复动末位**。台账里 1.8.2 → 2.0.0 仍是一次干净单步（首位 +1、其下归零）。
+
+## 2.0.0 — 2026-07-29
+
+Lockstep alignment only — no changes to this package's own runtime. The family
+clock advanced for silver-core-agent-sdk 2.0.0 (T75 design round shipped:
+BREAKING cards-mode removal + `schema: 'frontmatter'` + official guidance
+injection + selective memory attachment; see the agent SDK CHANGELOG for the
+cards→frontmatter migration notes). Major because lockstep mirrors the family
+clock — this package's own surface has no breaking change; consumers of the
+agent SDK's cards exports must migrate before pinning the 2.0.0 pair.
+
+## 1.6.0 — 2026-07-29
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 1.6.0 (T75 second grilling: dream transcripts signal
+source + consolidationToolOptions read-only harness floor; frontmatter +
+selective-attachment r1 requirements doc filed).
+
+## 1.5.0 — 2026-07-29
+
+Lockstep alignment only — no changes to this package. The family clock advanced
+for silver-core-agent-sdk 1.5.0 (tools/memory alignment audit + the ten 拷问
+rulings: memory one-way-mirror fix and two-state capacity warning, ToolSearch
+official grammar and <functions> encoding, Bash output-cap knob, AskUserQuestion
+plan-mode/preview/oneOf, Agent description reproduction + description-governance
+completeness guard, Glob/Grep ignore-set disclosure, Read path unification +
+256KB tightening, Grep rg-dialect shim, hot/cold partition guard).
 ## 1.4.1 — 2026-07-29
 
 Lockstep alignment with silver-core-agent-sdk 1.4.1 (`setServers()` incremental

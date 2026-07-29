@@ -66,7 +66,9 @@ export type SdkPluginConfig = {
 };
 
 /** Official built-in-tool behavior config (Options.toolConfig).
- *  ACCEPTED-IGNORED in this SDK: AskUserQuestion renders no preview layer. */
+ *  ACCEPTED-IGNORED in this SDK: the SDK itself renders nothing — option
+ *  `preview` fragments ARE accepted and forwarded to the host handler
+ *  (2026-07-28 ruling), but this format hint has no SDK-side consumer. */
 export type ToolConfig = {
   askUserQuestion?: {
     previewFormat?: 'markdown' | 'html';
@@ -120,6 +122,20 @@ export type ReadLimits = {
   maxOutputChars?: number;
   /** Characters kept per line before the per-line truncation marker. */
   maxLineChars?: number;
+};
+
+/**
+ * BPT-EXTENSION: tunable Bash output limits, symmetric with ReadLimits
+ * (2026-07-28 alignment audit — the cap used to be a hard-coded 30000 with no
+ * knob, half of the official two-tier design: Claude Code defaults to 30000
+ * and allows raising to 150000 via BASH_MAX_OUTPUT_LENGTH). Resolution order:
+ * this option, then the BASH_MAX_OUTPUT_LENGTH env var, then 30000 — every
+ * source clamped to the official 150000 ceiling.
+ */
+export type BashLimits = {
+  /** Total characters one Bash call returns (tail-kept; the dropped-chars
+   *  marker leads the output). Clamped to [1, 150000]. */
+  maxOutputChars?: number;
 };
 
 /**
@@ -249,16 +265,45 @@ export type MemoryOptions = {
     maxViewChars?: number;
   };
   /**
-   * Structured memory-card mode (spec R9): 'cards' requires every written
-   * memory file to be one or more cards with the fixed fields 结论 / 依据 /
-   * 过期条件 under a `## <title>` heading. Invalid content is rejected with a
-   * structured error the model can retry from. Aimed at models with weak
-   * write-side discipline; omit for free-form writing.
+   * Frontmatter memory schema (keeper ruling 2026-07-29, T75 r1 §一):
+   * 'frontmatter' requires every written memory file to begin with the
+   * official Claude Code memory frontmatter head — required `name` and
+   * one-line `description` (<= 150 chars), `metadata.type` in
+   * user | feedback | project | reference, optional `metadata.pinned`.
+   * Invalid content is rejected with a structured error that restates the
+   * format and the delete+create migration path. Also injects the official
+   * memory-instructions guidance (when_to_save / body_structure per type)
+   * into the system tail, and is the hard prerequisite for `attachment`.
+   * Omit for free-form writing. The resident index /memories/MEMORY.md is
+   * exempt. (The former 'cards' mode was retired in 2.0.0 — cards was a
+   * BPT-EXTENSION, not a Claude memory shape; see docs/MEMORY.md migration
+   * notes.)
    */
-  schema?: 'cards';
-  /** Card limits for schema 'cards'. Defaults: maxCardChars 500,
-   *  maxCardsPerFile 50. */
-  cards?: { maxCardChars?: number; maxCardsPerFile?: number };
+  schema?: 'frontmatter';
+  /**
+   * Selective memory attachment (T75 r1 §二; official "determine which
+   * memory files to attach" shape): at session assembly, after the R6 index
+   * injection, one bounded picker model call selects up to `maxFiles` (<= 5)
+   * memory files relevant to the first prompt by filename + frontmatter
+   * description; their full content is injected into the system tail under
+   * the same background-context-and-verify envelope as the index. Opt-in and
+   * BILLED (the picker is a real model call, folded into session usage
+   * accounting); requires `schema: 'frontmatter'` (ConfigurationError
+   * otherwise — without descriptions the picker has no relevance signal).
+   * Frontmatter `pinned: true` files bypass the picker, always attach, do
+   * not count against maxFiles, and take priority within the 25600-byte
+   * total budget (over-budget selections are dropped at file boundaries and
+   * disclosed). S1 mounts bound the candidate set; incognito sessions still
+   * attach (attachment is a read). A failed picker degrades to pinned-only
+   * attachment — never a blocked session.
+   */
+  attachment?: {
+    enabled: true;
+    /** 1..5; default 5 (the official picker ceiling). */
+    maxFiles?: number;
+    /** Picker call settings; `model` defaults to the session model. */
+    picker?: { model?: string };
+  };
   /**
    * Compaction flush (spec R7): when auto-compaction is about to fold the
    * conversation, first give the model one write opportunity ("record
@@ -269,12 +314,14 @@ export type MemoryOptions = {
   flushOnCompaction?: boolean;
   /**
    * Session-end progress card (spec R7): when the query ends NORMALLY (never
-   * on abort or error), run one bounded memory-update round ("update the
-   * progress card in /memories/MEMORY.md"). Its assistant/user messages are
-   * streamed, its result message is absorbed into session accounting instead
-   * of being yielded (the task's own final result stays the last result the
-   * consumer sees). Default true when memory is enabled; set false to
-   * disable.
+   * on abort or error), run one bounded memory-update round — the progress
+   * card lives under `/memories/progress/`, with only a one-line pointer in
+   * the index (keeper 2026-07-27 ruling; writing the card INTO MEMORY.md was
+   * the bug that ruling removed — see prompt-fragments.ts R7). Its
+   * assistant/user messages are streamed, its result message is absorbed into
+   * session accounting instead of being yielded (the task's own final result
+   * stays the last result the consumer sees). Default true when memory is
+   * enabled; set false to disable.
    */
   sessionEndUpdate?: boolean;
   /**
@@ -350,6 +397,10 @@ export type SDKMemoryHealth = {
   /** UTF-8 bytes of content handed to write commands (file_text /
    *  insert_text / new_str). */
   bytesWritten: number;
+  /** Estimated tokens of the selective-attachment injection (r1 §二), 0 when
+   *  attachment is off or attached nothing — the read-side residency cost of
+   *  the attached memory files, next to indexInjectionTokens below. */
+  attachmentInjectionTokens: number;
   /** Estimated tokens of the resident memory-index injection (R6), so the
    *  read-side residency cost shows up on the bill. */
   indexInjectionTokens: number;
@@ -403,6 +454,8 @@ export type Options = {
   additionalDirectories?: string[];
   /** Read output limits (BPT-EXTENSION); omit for the defaults. */
   readLimits?: ReadLimits;
+  /** Bash output limits (BPT-EXTENSION); omit for env/default resolution. */
+  bashLimits?: BashLimits;
   /** Programmatic subagent definitions (type-compatible; execution in v0.2). */
   agents?: Record<string, AgentDefinition>;
   allowedTools?: string[];

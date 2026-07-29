@@ -67,7 +67,7 @@ function parseQuestions(raw: unknown): ParseOk | ParseErr {
         message: `AskUserQuestion failed: questions[${i}].options must be a non-empty array.`,
       };
     }
-    const options: Array<{ label: string; description?: string }> = [];
+    const options: Array<{ label: string; description?: string; preview?: string }> = [];
     for (let j = 0; j < rawOptions.length; j++) {
       const opt = rawOptions[j];
       if (typeof opt === 'string') {
@@ -86,13 +86,20 @@ function parseQuestions(raw: unknown): ParseOk | ParseErr {
             message: `AskUserQuestion failed: questions[${i}].options[${j}].label must be a non-empty string.`,
           };
         }
-        const normalized: { label: string; description?: string } = { label: o['label'] as string };
+        const normalized: { label: string; description?: string; preview?: string } = {
+          label: o['label'] as string,
+        };
         if (typeof o['description'] === 'string') normalized.description = o['description'] as string;
+        // Official `preview` field: accepted and forwarded verbatim to the
+        // host handler; rendering is the host UI's choice (keeper 2026-07-28
+        // "三处全补" — accept honestly, never draw). Official constraint:
+        // single-select only, enforced after multiSelect is known below.
+        if (typeof o['preview'] === 'string') normalized.preview = o['preview'] as string;
         options.push(normalized);
       } else {
         return {
           ok: false,
-          message: `AskUserQuestion failed: questions[${i}].options[${j}] must be a string or {label, description?} object.`,
+          message: `AskUserQuestion failed: questions[${i}].options[${j}] must be a string or {label, description?, preview?} object.`,
         };
       }
     }
@@ -102,6 +109,12 @@ function parseQuestions(raw: unknown): ParseOk | ParseErr {
       return {
         ok: false,
         message: `AskUserQuestion failed: questions[${i}].multiSelect must be a boolean when provided.`,
+      };
+    }
+    if (multiSelectRaw === true && options.some((o) => o.preview !== undefined)) {
+      return {
+        ok: false,
+        message: `AskUserQuestion failed: questions[${i}] uses preview on a multiSelect question — previews are only supported for single-select questions.`,
       };
     }
 
@@ -153,8 +166,27 @@ export const askUserQuestionTool: BuiltinTool = {
             options: {
               type: 'array',
               minItems: 1,
-              description: 'Answer options: a string, or {label, description?}.',
-              items: {},
+              description:
+                'Answer options: a string, or {label, description?, preview?}. ' +
+                '`preview` is a self-contained HTML fragment the host UI may ' +
+                'render when the option is focused (single-select questions only).',
+              // The real accepted shapes, expressed instead of `{}` (the old
+              // zero-constraint schema left the model to guess from prose —
+              // 2026-07-28 keeper ruling "三处全补").
+              items: {
+                oneOf: [
+                  { type: 'string', minLength: 1 },
+                  {
+                    type: 'object',
+                    properties: {
+                      label: { type: 'string', minLength: 1 },
+                      description: { type: 'string' },
+                      preview: { type: 'string' },
+                    },
+                    required: ['label'],
+                  },
+                ],
+              },
             },
             multiSelect: {
               type: 'boolean',

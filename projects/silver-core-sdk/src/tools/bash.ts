@@ -17,7 +17,7 @@ import { planShellSpawn, resolveSpawnEnv } from '../sandbox/backend.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import { sliceTailSurrogateSafe } from '../internal/text.js';
 import type { BashStructuredOutput } from '../types/tool-outputs.js';
-import type { SandboxContext } from '../types.js';
+import type { BashLimits, SandboxContext } from '../types.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -52,6 +52,32 @@ const MAX_TIMEOUT_MS = 600_000;
  * trim, so a truncated result is cap + marker.
  */
 export const STREAM_CAP_CHARS = 30_000;
+/** Official maximum the configured cap is clamped to (Claude Code's own
+ *  BASH_MAX_OUTPUT_LENGTH ceiling). */
+export const MAX_STREAM_CAP_CHARS = 150_000;
+
+/** Resolve the effective output cap: options.bashLimits.maxOutputChars wins,
+ *  then the official BASH_MAX_OUTPUT_LENGTH env var, then the 30000 default —
+ *  every source clamped to the official 150000 ceiling. Non-finite / non-int /
+ *  non-positive values are IGNORED (fall through), never propagated: a NaN cap
+ *  would destroy every capped output (0.98.0 numeric-boundary lens). */
+export function resolveBashOutputCap(
+  limits?: BashLimits,
+  env?: Record<string, string | undefined>,
+): number {
+  const candidates: unknown[] = [
+    limits?.maxOutputChars,
+    env?.['BASH_MAX_OUTPUT_LENGTH'] !== undefined
+      ? Number.parseInt(env['BASH_MAX_OUTPUT_LENGTH'] as string, 10)
+      : undefined,
+  ];
+  for (const c of candidates) {
+    if (typeof c === 'number' && Number.isInteger(c) && c > 0) {
+      return Math.min(c, MAX_STREAM_CAP_CHARS);
+    }
+  }
+  return STREAM_CAP_CHARS;
+}
 const KILL_GRACE_MS = 2_000;
 /**
  * After the direct shell exits, how long to let its stdout/stderr pipes flush
@@ -78,11 +104,16 @@ class CappedStream {
   private buf = '';
   private dropped = 0;
 
+  /** The per-call resolved cap (resolveBashOutputCap), not the bare default:
+   *  the two-tier knob and the SHARED-total semantics are independent changes
+   *  that landed concurrently, and both belong here. */
+  constructor(private readonly cap: number = STREAM_CAP_CHARS) {}
+
   append(chunk: string): void {
     this.buf += chunk;
-    if (this.buf.length > STREAM_CAP_CHARS) {
+    if (this.buf.length > this.cap) {
       const before = this.buf.length;
-      this.buf = sliceTailSurrogateSafe(this.buf, STREAM_CAP_CHARS);
+      this.buf = sliceTailSurrogateSafe(this.buf, this.cap);
       this.dropped += before - this.buf.length;
     }
   }
@@ -112,10 +143,10 @@ class CappedStream {
 }
 
 /** Truncation discipline (keeper 2026-07-27): how much, why, how to recover. */
-function truncationMarker(dropped: number): string {
+function truncationMarker(dropped: number, cap: number = STREAM_CAP_CHARS): string {
   return (
     `[${dropped} earlier chars dropped: output exceeded the ` +
-    `${STREAM_CAP_CHARS}-char cap and only the tail is kept. For the full ` +
+    `${cap}-char cap and only the tail is kept. For the full ` +
     `output, redirect to a file (command > out.log 2>&1) and read it.]\n`
   );
 }
@@ -132,10 +163,11 @@ function applyTotalCap(
   rawStdout: string,
   rawStderr: string,
   priorDropped: number,
+  cap: number = STREAM_CAP_CHARS,
 ): { stdout: string; stderr: string; dropped: number } {
   let out = rawStdout;
   let err = rawStderr;
-  let over = out.length + err.length - STREAM_CAP_CHARS;
+  let over = out.length + err.length - cap;
   if (over > 0 && out.length > 0) {
     const keep = Math.max(0, out.length - over);
     const trimmed = keep === 0 ? '' : sliceTailSurrogateSafe(out, keep);
@@ -149,7 +181,7 @@ function applyTotalCap(
   const dropped =
     priorDropped + (rawStdout.length - out.length) + (rawStderr.length - err.length);
   if (dropped === 0) return { stdout: out, stderr: err, dropped: 0 };
-  const marker = truncationMarker(dropped);
+  const marker = truncationMarker(dropped, cap);
   if (out.length > 0 || err.length === 0) out = marker + out;
   else err = marker + err;
   return { stdout: out, stderr: err, dropped };
@@ -177,6 +209,7 @@ function runShell(
   ctx: ToolContext,
   timeoutMs: number,
   disableSandbox: boolean,
+  capChars: number = STREAM_CAP_CHARS,
 ): Promise<RunOutcome> {
   return new Promise((resolve) => {
     // Wrap through the sandbox backend (default-on) unless unsandboxed or the
@@ -210,8 +243,8 @@ function runShell(
       return;
     }
 
-    const stdout = new CappedStream();
-    const stderr = new CappedStream();
+    const stdout = new CappedStream(capChars);
+    const stderr = new CappedStream(capChars);
     let settled = false;
     let spawned = false;
     let timedOut = false;
@@ -280,6 +313,7 @@ function runShell(
         stdout.raw(),
         stderr.raw(),
         stdout.droppedChars + stderr.droppedChars,
+        capChars,
       );
       resolve({
         kind: 'exit',
@@ -318,6 +352,7 @@ function runShell(
         stdout.raw(),
         stderr.raw(),
         stdout.droppedChars + stderr.droppedChars,
+        capChars,
       );
       resolve({
         kind: 'exit',
@@ -547,7 +582,9 @@ export function sandboxSignalHint(code: number | null, sandboxed: boolean): stri
 export function createBashTool(
   sandbox?: SandboxContext,
   platform: NodeJS.Platform = process.platform,
+  limits?: BashLimits,
 ): BuiltinTool {
+  const capChars = resolveBashOutputCap(limits);
   const active = sandbox !== undefined;
   const mode = sandbox?.allowEscape === false ? 'mandatory' : 'default';
   let description = BASH_DESCRIPTION;
@@ -588,7 +625,9 @@ export function createBashTool(
     description,
     inputSchema: { type: 'object', properties, required: ['command'] },
     readOnly: false,
-    execute,
+    // Bind the resolved output cap; the default (30000) path stays
+    // behavior-identical to the pre-knob execute.
+    execute: (input, ctx) => execute(input, ctx, capChars),
   };
 }
 
@@ -618,6 +657,7 @@ function bashStructured(
 async function execute(
     input: Record<string, unknown>,
     ctx: ToolContext,
+    capChars: number = STREAM_CAP_CHARS,
   ): Promise<ToolResultPayload> {
     const command = input['command'];
     if (typeof command !== 'string' || command.length === 0) {
@@ -737,7 +777,7 @@ async function execute(
     };
     for (const shell of shells) {
       if (ctx.signal.aborted) throw new AbortError();
-      outcome = await runShell(shell, effective, ctx, timeoutMs, disableSandbox);
+      outcome = await runShell(shell, effective, ctx, timeoutMs, disableSandbox, capChars);
       if (!(outcome.kind === 'spawn-error' && outcome.error.code === 'ENOENT')) break;
       ctx.debug(`Bash: ${shell} not found, trying the next shell candidate`);
     }

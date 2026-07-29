@@ -52,9 +52,19 @@ export type IndexCapacity = {
   byteCount: number;
   /** The read would lose content at injection time. */
   over: boolean;
-  /** Which cap it breached first ('lines' wins when both do). */
-  breached: 'lines' | 'bytes' | null;
+  /** Not over yet, but within APPROACH_RATIO of either cap — the official
+   *  two-state warning's early tier (keeper 2026-07-28 拷问 #9: warn BEFORE
+   *  the tail goes invisible, not only after). */
+  approaching: boolean;
+  /** Which cap it breached first ('lines' wins when both do; 'view' means the
+   *  store's own char cap cut the read before the line/byte caps could even be
+   *  measured — the strongest possible over-signal, since the injection reads
+   *  through the same view). */
+  breached: 'lines' | 'bytes' | 'view' | null;
 };
+
+/** Fraction of a cap at which the approaching tier fires. */
+export const APPROACH_RATIO = 0.8;
 
 /**
  * Judge recovered index lines against the caps.
@@ -70,35 +80,85 @@ export function assessIndexCapacity(lines: string[], caps: IndexCaps): IndexCapa
   );
   const overLines = lines.length > caps.maxLines;
   const overBytes = byteCount > caps.maxBytes;
+  const over = overLines || overBytes;
   return {
     lineCount: lines.length,
     byteCount,
-    over: overLines || overBytes,
+    over,
+    approaching:
+      !over &&
+      (lines.length >= caps.maxLines * APPROACH_RATIO ||
+        byteCount >= caps.maxBytes * APPROACH_RATIO),
     breached: overLines ? 'lines' : overBytes ? 'bytes' : null,
   };
 }
 
 /**
- * The warning appended to a successful index write that left the index over
- * its read caps. States the consequence (the tail is ALREADY invisible, not
- * "may become"), because a warning the model reads as advisory changes
- * nothing — and states the fix in the index's own terms: pointers, not prose.
+ * The ONE viewed-index judgment both sides must share: recover the lines AND
+ * fold the store's own view-cap truncation (`sawNotice`) into the verdict.
+ *
+ * Judging `recoverIndexLines(viewed).lines` alone re-opens the one-way mirror
+ * this module exists to close: the store's char cap (default maxViewChars
+ * 16000) is SMALLER than the default index byte cap (25600), so a dense ASCII
+ * index gets cut by the view first — the write side then counts ~111 recovered
+ * lines, finds them under the 200-line cap, and never warns, while the read
+ * side (same view) injects the same truncated head. A truncated view IS the
+ * over-limit condition, whatever the line/byte math says of the surviving head
+ * (2026-07-28 alignment audit, keeper-ruled fix).
+ */
+export function assessViewedIndex(
+  viewed: string,
+  caps: IndexCaps,
+): { lines: string[]; capacity: IndexCapacity } {
+  const { lines, sawNotice } = recoverIndexLines(viewed);
+  const capacity = assessIndexCapacity(lines, caps);
+  if (sawNotice && !capacity.over) {
+    return { lines, capacity: { ...capacity, over: true, approaching: false, breached: 'view' } };
+  }
+  if (sawNotice && capacity.breached === null) {
+    return { lines, capacity: { ...capacity, breached: 'view' } };
+  }
+  return { lines, capacity };
+}
+
+/**
+ * The warning appended to a successful index write, in the official TWO-STATE
+ * shape (keeper 2026-07-28 拷问 #9): `over` states the consequence (the tail
+ * is ALREADY invisible, not "may become"), because a warning the model reads
+ * as advisory changes nothing; `approaching` fires early with the same fix so
+ * the over state is ideally never reached. Both states name the TARGET size
+ * ("to under <targetDesc>") — a warning without a target invites one-line
+ * token trims that leave the index over the cap.
  */
 export function indexCapacityWarning(
   path: string,
   capacity: IndexCapacity,
   caps: IndexCaps,
 ): string {
+  const targetDesc = `${caps.maxLines} lines / ${caps.maxBytes} bytes`;
+  const fix =
+    `to under ${targetDesc} now: keep one line per entry ` +
+    `("- [<title>](<file path>) — one-line hook"), move any detail into the topic ` +
+    `file it points at, and merge or drop stale entries.`;
+  if (!capacity.over) {
+    return (
+      `\n\nNOTICE: ${path} is at ${capacity.lineCount} lines / ` +
+      `${capacity.byteCount} bytes, approaching its ${targetDesc} read limit. ` +
+      `Compact it ${fix}`
+    );
+  }
   const measured =
-    capacity.breached === 'lines'
-      ? `over ${caps.maxLines} lines`
-      : `${capacity.byteCount} bytes, over the ${caps.maxBytes}-byte limit`;
+    capacity.breached === 'view'
+      ? `so large that the store's own view limit truncated the read before ` +
+        `the ${caps.maxLines}-line / ${caps.maxBytes}-byte index caps could ` +
+        `even be measured`
+      : capacity.breached === 'lines'
+        ? `over ${caps.maxLines} lines`
+        : `${capacity.byteCount} bytes, over the ${caps.maxBytes}-byte limit`;
   return (
     `\n\nWARNING: ${path} is now ${measured}. Only the head is loaded into ` +
     `context at session start — everything past the limit is silently dropped, ` +
-    `so entries at the end are ALREADY invisible to future sessions. Compact it ` +
-    `now: the index is an index, not a memory — one line per entry ` +
-    `("- <title> (<file path>) — one-line hook"), move any detail into the topic ` +
-    `file it points at, and merge or drop stale entries.`
+    `so entries at the end are ALREADY invisible to future sessions. The index ` +
+    `is an index, not a memory — rewrite it ${fix}`
   );
 }

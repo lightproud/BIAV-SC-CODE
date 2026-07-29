@@ -22,6 +22,12 @@ import { AbortError } from '../errors.js';
 import { guardRegexPattern } from '../internal/regex-guard.js';
 import { planShellSpawn, resolveSpawnEnv } from '../sandbox/backend.js';
 import { createTreeKiller, terminalStatus } from './kill-plan.js';
+import {
+  BASHOUTPUT_DESCRIPTION,
+  KILLSHELL_DESCRIPTION,
+  TASKOUTPUT_DESCRIPTION,
+  TASKSTOP_DESCRIPTION,
+} from './descriptions.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type {
   BackgroundShell,
@@ -462,10 +468,7 @@ const lastPolledLen = new WeakMap<
 
 export const bashOutputTool: BuiltinTool = {
   name: 'BashOutput',
-  description:
-    'Read NEW output from a background shell started with Bash ' +
-    'run_in_background (output since the previous BashOutput call), plus its ' +
-    'current status. Optional `filter` is a regex applied per line.',
+  description: BASHOUTPUT_DESCRIPTION,
   inputSchema: {
     type: 'object',
     properties: {
@@ -591,8 +594,7 @@ export const bashOutputTool: BuiltinTool = {
 
 export const killShellTool: BuiltinTool = {
   name: 'KillShell',
-  description:
-    'Kill a background shell started with Bash run_in_background, by its id.',
+  description: KILLSHELL_DESCRIPTION,
   inputSchema: {
     type: 'object',
     properties: {
@@ -679,11 +681,7 @@ function drainNewOutput(rec: BackgroundShell): string {
 
 export const taskOutputTool: BuiltinTool = {
   name: 'TaskOutput',
-  description:
-    'Retrieve output from a running or completed background task (started with ' +
-    'Bash run_in_background or Monitor), plus its current status. Returns the ' +
-    'output accumulated since the previous TaskOutput read. Set `block: true` to ' +
-    'wait up to `timeout` ms for new output before returning.',
+  description: TASKOUTPUT_DESCRIPTION,
   inputSchema: {
     type: 'object',
     properties: {
@@ -756,10 +754,7 @@ export const taskOutputTool: BuiltinTool = {
 
 export const taskStopTool: BuiltinTool = {
   name: 'TaskStop',
-  description:
-    'Stop a running background task or shell by id (started with Bash ' +
-    'run_in_background or Monitor). Pass `task_id`; `shell_id` is a deprecated ' +
-    'alias for the same id.',
+  description: TASKSTOP_DESCRIPTION,
   inputSchema: {
     type: 'object',
     properties: {

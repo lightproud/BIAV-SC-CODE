@@ -188,6 +188,7 @@ describe('registry: truncation sites must be inventoried', () => {
       'tools/memory/index.ts', // UTF-8 byte-boundary head load, "only the head" honesty
       'tools/memory/index-capacity.ts', // read/write-side capacity warnings (no silent cut)
       'tools/memory/health.ts', // truncatedScan flag: scan bound, numbers = lower bound
+      'tools/memory/attachment.ts', // byte budget cuts at FILE boundaries + discloses omissions by path; scan bound reported truncated (covered in memory-attachment.test.ts)
       'tools/memory/consolidation.ts', // consumes truncatedScan, comment-level
       'tools/memory/contract-suite.ts', // comment-only (corruption diagnosis)
       'tools/memory/local-store.ts', // comment-only (atomic-write rationale)

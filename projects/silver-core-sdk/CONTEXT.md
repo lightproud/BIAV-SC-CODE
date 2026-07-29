@@ -91,25 +91,33 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.8.3`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.8.3`
+**当前版本 `2.0.7`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.0.7`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
-**v1.8.3（2026-07-29）：审计第二十四波**——两个旋钮没守住它自己档案已写明的规矩：①折叠的两个**比例**旋钮缺 NaN 守卫（同函数为 `contextWindowTokens` 挡了、注释还点名兄弟旋钮都挡了），`??` 不拦 NaN，`autoThresholdRatio` 为 NaN 即 `triggerAt` 为 NaN、比较恒假——**整场会话自动折叠静默失效且无告警**，实测可复现；②`ReportLedger.record` 校验时间戳（理由正是「坏值会在折叠中途抛」）却不校验 key/summary 类型，而 `deserialize` 校验了——非字符串绕过空值检查，最终在 `toRetainedRegion()` 里抛裸 TypeError。
+**v2.0.7（2026-07-29）：审计第二十四波**——两个旋钮没守住它自己档案已写明的规矩：①折叠的两个**比例**旋钮缺 NaN 守卫（同函数为 `contextWindowTokens` 挡了、注释还点名兄弟旋钮都挡了），`??` 不拦 NaN，`autoThresholdRatio` 为 NaN 即 `triggerAt` 为 NaN、比较恒假——**整场会话自动折叠静默失效且无告警**，实测可复现；②`ReportLedger.record` 校验时间戳（理由正是「坏值会在折叠中途抛」）却不校验 key/summary 类型，而 `deserialize` 校验了——非字符串绕过空值检查，最终在 `toRetainedRegion()` 里抛裸 TypeError。
 
-**v1.8.2（2026-07-29）：审计第二十三波**——三处没守住本仓自己在别处已写明的承诺：①校验器发现块是行式摘要却未折行（同形状三处兄弟都用了 `singleLine`；伪造一行即可把真缺陷说成 REFUTED 逐出评审）；②两份会话存储的撕裂尾自愈被**失败的写入**解除（标志打在写入之前，写失败即空耗，下一次成功追加粘上撕裂尾、两条记录一起丢），现改为落地后才打标志；③`loadInfo` 缺 `load` 那道 uuid 去重，部分双写档案下二者对「是否中断」互相打架，而所有列表行都取自 `loadInfo`。
+**v2.0.6（2026-07-29）：审计第二十三波**——三处没守住本仓自己在别处已写明的承诺：①校验器发现块是行式摘要却未折行（同形状三处兄弟都用了 `singleLine`；伪造一行即可把真缺陷说成 REFUTED 逐出评审）；②两份会话存储的撕裂尾自愈被**失败的写入**解除（标志打在写入之前，写失败即空耗，下一次成功追加粘上撕裂尾、两条记录一起丢），现改为落地后才打标志；③`loadInfo` 缺 `load` 那道 uuid 去重，部分双写档案下二者对「是否中断」互相打架，而所有列表行都取自 `loadInfo`。
 
-**v1.8.1（2026-07-29）：审计第二十二波**——安全相关分类器对待外来文本的两处不对称：①命令前缀分类器不回校自己的答案（提示词自己写死「前缀必须是命令的前缀」，解析器却收不到命令；报错命令的前缀即可命中良性白名单、自动放行未被允许的命令），现一律回校、非前缀 fail-closed；②钩子条件判定器是唯一不给不可信输入加围栏的（`context` 含 `tool_response`，而该判词门控钩子执行含 DENY 钩子），现 `<context>` 围栏 + 闭合标签中和，只动用户轮不碰 faithful 系统提示词。
+**v2.0.5（2026-07-29）：审计第二十二波**——安全相关分类器对待外来文本的两处不对称：①命令前缀分类器不回校自己的答案（提示词自己写死「前缀必须是命令的前缀」，解析器却收不到命令；报错命令的前缀即可命中良性白名单、自动放行未被允许的命令），现一律回校、非前缀 fail-closed；②钩子条件判定器是唯一不给不可信输入加围栏的（`context` 含 `tool_response`，而该判词门控钩子执行含 DENY 钩子），现 `<context>` 围栏 + 闭合标签中和，只动用户轮不碰 faithful 系统提示词。
 
-**v1.8.0（2026-07-29）：后台任务第二投递通道**（待裁②裁定）——新增 `Options.onBackgroundEvent`，后台任务生命周期事件在产生那一刻直接交宿主、不再挤进拉取式对话流（不双发；不设则行为逐字节不变）。借此关掉 `abortAll()` **不发终止事件**、宿主台账把被杀的后台子代理永远记作 running 的缺陷——它此前发不出来，正因为单通道下收尾事件会落在终态结果之后。射程：Monitor 推送 / Workflow 通知 / `background_tasks_changed` 仍不发，缺的是源事件而非投递方式。
+**v2.0.4（2026-07-29）：后台任务第二投递通道**（待裁②裁定）——新增 `Options.onBackgroundEvent`，后台任务生命周期事件在产生那一刻直接交宿主、不再挤进拉取式对话流（不双发；不设则行为逐字节不变）。借此关掉 `abortAll()` **不发终止事件**、宿主台账把被杀的后台子代理永远记作 running 的缺陷——它此前发不出来，正因为单通道下收尾事件会落在终态结果之后。射程：Monitor 推送 / Workflow 通知 / `background_tasks_changed` 仍不发，缺的是源事件而非投递方式。
 
-**v1.7.0（2026-07-29）：关掉两项守密人裁定（皆为行为变更）**——OpenAI 传输层不再铸造 `name: ''` 的工具块（网关拆包时会多出一个白烧 `No such tool:` 来回、还把 `stop_reason` 顶成 `tool_use` 的幽灵块）；Bash 输出上限从「每流各 30,000」改为**两流共用一份总预算**，实测 60,352 → 30,180，让已导出的 `TOOL_OUTPUT_CAPS.bash` 对消费方**真的成立**（此前消费方台账翻倍低估）。真相侧以官方提示词语料裁定。
+**v2.0.3（2026-07-29）：关掉两项守密人裁定（皆为行为变更）**——OpenAI 传输层不再铸造 `name: ''` 的工具块（网关拆包时会多出一个白烧 `No such tool:` 来回、还把 `stop_reason` 顶成 `tool_use` 的幽灵块）；Bash 输出上限从「每流各 30,000」改为**两流共用一份总预算**，实测 60,352 → 30,180，让已导出的 `TOOL_OUTPUT_CAPS.bash` 对消费方**真的成立**（此前消费方台账翻倍低估）。真相侧以官方提示词语料裁定。
 
-**v1.6.0（2026-07-29）：审计第二十一波**——三处**静默失败还报成功**：结构化输出的 strict 围栏提取把 ```json5 标记、被截断的收尾围栏、以及「答案在第二个围栏」全判无效，而 workflow 的 `agent({schema})` 没有重试通道、该项直接丢；公开的 `estimateMessagesTokens` 被宿主现搭草稿里的 BigInt / 循环引用抛穿，经历史估算还会打死此后每轮压缩检查；文件回滚计划以原始路径字符串为键，符号链接或大小写不敏感文件系统下一个文件占两个坑，实测回滚成一个**任何检查点都不存在**的中途状态却报 `canRewind:true`。
+**v2.0.2（2026-07-29）：审计第二十一波**——三处**静默失败还报成功**：结构化输出的 strict 围栏提取把 ```json5 标记、被截断的收尾围栏、以及「答案在第二个围栏」全判无效，而 workflow 的 `agent({schema})` 没有重试通道、该项直接丢；公开的 `estimateMessagesTokens` 被宿主现搭草稿里的 BigInt / 循环引用抛穿，经历史估算还会打死此后每轮压缩检查；文件回滚计划以原始路径字符串为键，符号链接或大小写不敏感文件系统下一个文件占两个坑，实测回滚成一个**任何检查点都不存在**的中途状态却报 `canRewind:true`。
 
-**v1.5.0（2026-07-29）：审计第十九、二十波**——`Monitor` 会开 shell 却不在主参数表里，**任何命令域规则对它都不成立**（`Monitor(rm:*)` 静默失效、工具照跑）；会话 `add/removeDirectories` 是条死线，网关认真算、送进零读取方的字段，**撤销了的目录在沙箱里仍然可写**；钩子 legacy `decision` 无失败关闭护栏，最自然的 `{decision:'deny'}` 被静默丢弃；自称「Never throws」的 `.mcp.json` 加载器被深嵌套配置爆栈打死 query 构造；另有 workflow-engine 跳数组洞、Grep 行记录可被含换行文件名伪造、compaction 的 NaN 窗口令自动压缩静默失效、拼错的 `baseUrl` 烧光重试梯等波十九十二处，以及一个让整档被判为二进制的裸 NUL 字节。
+**v2.0.1（2026-07-29）：审计第十九、二十波**——`Monitor` 会开 shell 却不在主参数表里，**任何命令域规则对它都不成立**（`Monitor(rm:*)` 静默失效、工具照跑）；会话 `add/removeDirectories` 是条死线，网关认真算、送进零读取方的字段，**撤销了的目录在沙箱里仍然可写**；钩子 legacy `decision` 无失败关闭护栏，最自然的 `{decision:'deny'}` 被静默丢弃；自称「Never throws」的 `.mcp.json` 加载器被深嵌套配置爆栈打死 query 构造；另有 workflow-engine 跳数组洞、Grep 行记录可被含换行文件名伪造、compaction 的 NaN 窗口令自动压缩静默失效、拼错的 `baseUrl` 烧光重试梯等波十九十二处，以及一个让整档被判为二进制的裸 NUL 字节。
+**v2.0.0（2026-07-29）：T75 设计轮落地（BREAKING·记忆面收敛 Claude 形态）**——①cards 模式整体退役（`schema:'cards'` / `memory.cards` / `parseMemoryCards` / `validateCardsContent` 及类型全下架；守密人三轮裁定：cards 本是 R9 黑池适配轴、非 Claude 记忆模式；迁移 = 换 `schema:'frontmatter'`、旧档 delete+create 换 YAML 头、卡文保留——testbed 做梦卡随步迁作参照例，黑池侧口述核实无 cards 消费后开工）；②`schema:'frontmatter'` 写侧校验器双层落地（name/单行 description≤150/type 四枚举/可选 pinned，索引豁免，报错含 delete+create 自愈指引）+ 官方 memory-instructions 全文注入（总纲 + user description 专档 + feedback/project 各 when_to_save/body_structure，逐档 provenance 台账 `MEMORY_FRONTMATTER_SOURCES` + corpus-sync 守卫；pinned 注为声明 SDK glue）；③选择性附着 `memory.attachment`（官方挑选器提示词 faithful 复现，≤5 档按 description 挑选、pinned 绕挑选恒附着不占名额、25600 字节预算按序截断并披露、挑选器失败降级 pinned-only 绝不挡会话；硬依赖 frontmatter 档位否则 ConfigurationError）；④计费面：挑选器真实调用入会话账（`runUtilityCall.onUsage` + `SessionAccounting.foldUtilityUsage`），`memoryHealth.attachmentInjectionTokens` 与索引注入并列；⑤健康扫描增 frontmatter 完整率维度 + consolidation 迁移任务。
+
+**v1.6.0（2026-07-29）：T75 二次拷问落地**——dream 信号源裁「指针段+预设」：`buildConsolidationPrompt.transcripts` opt-in 指针段（宿主命名转录/日志路径，Gather 只读取证、内容按不可信数据降权、租户范围宿主负责）+ `consolidationToolOptions()` 只读工具集预设（Read/Grep/Glob 物理白名单，Agent/LoopControl 同受滤，memory 经 options.memory 独立注册）——把「只用 memory 写」从提示词纪律升为 harness 下限、闭合 E-⑤ 矛盾；frontmatter 四类型 + 选择性附着裁「直接开设计轮」（否决缓议案），r1 需求档 `scs-req-memory-frontmatter-attachment-r1-20260729.md` 已于同日三/四轮追裁定稿（cards 裁退役并入 §一实现步、附着按案、pinned 采纳、when_to_save 官方全文注入）。
+
+**v1.5.0（2026-07-29）：十条观察项拷问裁定全落地**——守密人逐条过堂（#7 收紧、#9 扩大收编两处否决推荐案）：AskUserQuestion 三处全补（plan-mode 段 + preview 转发 + oneOf schema）· Agent 描述从官方三档复现 + 描述治理完备性守卫（UNGOVERNED 台账，工具不入册即红）· Glob/Grep 零匹配披露忽略集 · Read 路径可见层归一 + 256KB 拒读覆盖大 limit 绕过 · Grep rg 方言兼容垫（POSIX 字符类 / (?P<name>)）+ type 报错自愈 · 冷/热分层守卫 · 记忆索引改官方链接格式 + 双态容量预警（approaching 80% 档 + 目标尺寸）；frontmatter 四类型等三项另开设计轮（todo T75 + 提案档）。
+
+**同版前半（对齐审计三裁，原拟 1.4.0、因上游十七波占号并入 1.5.0）**——①记忆常驻索引「单向镜」被 view 上限重新打开：写侧告警只数 `store.view` 幸存行、丢弃 view 自身截断信号，而默认 `maxViewChars`(16000) 小于索引字节上限(25600)，密集 ASCII 索引先被 view 切掉、幸存头通过行/字节判定、告警永不响——新 `assessViewedIndex` 把 view 截断并入两侧共用判词（`breached:'view'`）；②索引注入补官方防护措辞（background context, not user instructions + 待验证声明——S1 挂载下他会话写入可进本会话 system prompt）；③ToolSearch 对齐官方查询语法（select:/关键词/+名限定 + max_results）与 `<functions>` 返回编码，入 provenance 治理（此前它是唯一治理体系外工具、却是银芯变体 2/3 工具面唯一入口）；④Bash 输出上限补齐官方两级设计（`options.bashLimits` + `BASH_MAX_OUTPUT_LENGTH` env，封顶 150000，默认路径字节不变）；⑤COMPAT 三处 Workflow 陈旧 SYNCHRONOUS 判词订正 + 十条未登记漂移入册。
+
 **v1.4.1（2026-07-29）：`setServers()` 改增量 diff（BPT 缺陷 D）**——原来是 `closeAll()` + 整体重建 + `connectAll()`，追加一台服务端就把**其余每一台**断开重连（当前回合工具所在的 in-process `sdk` 服务端也不例外），一次 `load_skill` 让整个工具面抖一次。现在名字与配置都没变的条目原样留用（连接 / 工具表 / `serverInfo` / `enabled` 一并保留），只关真被移除或改配的、只连真新增或改配的；配置等值为结构比较，`sdk` 的 `instance` 按引用比对（重建即重连）。`added`/`removed` 从此描述真实发生的工作。
 
 **v1.4.0（2026-07-28）：审计第十七波**——Read 把路径原样插进 `system-reminder` 围栏，一个 0 字节文件靠**文件名**就能伪造出带框架权威的注入（项目指令 CLAUDE.md 同款）；WebSearch 结果 title 里一个换行伪造出完整额外记录、**绕开 `blocked_domains`**；`server_tool_use` 从未被折叠，网页搜索费**一次都没计过**、预算闸门可被整笔突破；分段系统提示下消息缓存断点被整个撤掉，4 槽只用 2、每回合把全部历史当新 token 重发。
@@ -187,12 +195,6 @@ Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记�
 不可恢复并整体报 `canRewind: false`——不完整的回滚绝不冒充干净回滚。
 
 **v0.89.0（2026-07-27）：类型面漂移检测工具化 —— 只报「新的」**（守密人「按你建议继续」）——同日三轮普查全是跑完即弃的手搓脚本，于是「上次扫到哪、哪些已经裁过」全靠人记，这正是漂移能反复回来的原因（第三轮挖到的恰是第二轮当天引入的）。收成 `scripts/type-parity.mjs`：**价值不在重跑比对，在于自动扣除已裁定项、只把新长出来的摆上台**（`RULED` 白名单，且**一条裁定吸收整棵子树**——裁了 `BashOutput:gitOperation` 就不会再冒出它十一个孩子）。一份每次都吐同样四十条已知差异的报告，人第二次就不看了。与 `description-coverage.mjs` 同族同纪律：**尺子不是门禁，恒 exit 0**——差异本就不该为零，红线纪律禁止声明未发货能力，机械拉平等于逼类型面承诺本包做不到的事。**首跑就挖出四条真缺陷，三条同一种：发货了却没声明**——`GrepInput` 从未声明 `'-o'`（`grep.ts` 三处代码路径早已实现；前几轮漏看是因为手搓展平器不匹配带引号的键，而 `-o` 只能那样写）· `WorkflowInput` 从未声明 `title`/`description`（两者都在发货的 `inputSchema` 里当运行标签）· `GlobOutput` 空着官方的 `totalMatches`/`countIsComplete`（本引擎先枚举全集再切片，数得准，`countIsComplete` 恒 `true`）。**声明面少报代码实际接受的东西，是 typed-not-populated 的镜像，误导方式一模一样**：照类型读的调用方会以为一个已发货的能力不存在。**解析器易出假发现**（不是响亮地失败，而是给出一条自信、具体、纯属虚构的差异，然后有人去「修」一个本来没错的类型——三轮手搓每轮都干过至少一次），故 `tests/type-parity.test.ts` 逐条钉住真踩过的坑：单行 `{}` 接口吞掉下一个块、纯别名伸进邻居的花括号、带引号的短横线键、内联索引签名凭空造出一个以索引变量命名的幽灵字段、官方 `@minItems` 元组展开（一个类型 83KB）把后续元素挂错父节点。**尚待守密人裁的三项**（**故意不自行并入 `RULED`**——那份白名单只有在「进去 = 人看过」时才有意义）：`AgentOutput` 的官方遥测/worktree/远程任务字段 · `AgentInput.team_name` · `FileReadOutput.source`（挂在官方 `file_unchanged` 结果分支上，缺的是**整条分支**而非一个字段）。
-
-**v0.86.0（2026-07-27）：主循环提示词补回开篇句 + 输出类型普查（续）**（守密人「1 对齐官方 4 续」+ 逐条裁定）——① **补回官方那句 “Text you write between tool calls may not be shown to the user.”**：银芯此前只搬了结论、没搬**理由**；缺了前提，整段就从「事实的后果」退化成「风格偏好」，而**前提缺失的规则是模型最先绕过的那条**。已对官方 2.1.220 逐字核实；字节金样**有意重生成**，差异经核实**只有这一句**（四个工具集各一处）。**官方 `# Focus mode` 整块刻意不复刻**——它为「用户只看得到最终消息」这一 UI 模式覆盖沟通行为，本 SDK 无此模式，为进不去的模式发指令，与描述未发货工具是同一条红线。② **15 个 `*Output` 逐字段比完**：**9 个完全一致**（FileEdit / Task 五件 / EnterWorktree / TodoWrite / Monitor）；6 个有官方独有字段，守密人裁「逐条再看」——**这一类并不齐整**：`ReadMcpResourceOutput.error` **加了并真产出**（非 UI 绑定：工具本有失败路径，调用方此前分不清「读失败」与「读到空」）；`WebSearchOutput` **整体补产出**（原议题 `searchCount` 其实是伪命题——每次调用只打一次后端、恒为 1；真缺口是它**根本没有结构化结果**，而 `query`/`results`/`durationSeconds` 全能填；报的是**过滤后**命中，免得结构化数字与文本对不上）；其余四条**只登记不声明**（`FileWrite.userModified`、`ExitPlanMode.planWasEdited`、`AskUserQuestion.afkTimeoutMs`/`annotations`、`Workflow` 远程任务字段——Workflow 的真障碍**不在可选字段**，而在官方**必填**判别式 `status: 'async_launched'`，本 SDK 同步跑工作流，填它等于断言一次没发生的启动）。**射程边界照实写**：本次是**顶层字段**比对，嵌套差异首轮漏看（`contents[].blobSavedTo` 是人工复读才发现的），其余嵌套字段可能仍未扫。
-
-**v0.84.0（2026-07-27）：记忆索引纪律 + 整理规程**——SDK 给了常驻索引机制却没规定条目写法，且会话
-收尾提示词命令模型把进度卡写**进**索引档（守密人 BPT 现场反馈根因）。进度卡改落 `/memories/progress/`
-只留指针 · 索引纪律片段 · 写侧超限反压 · 四阶段整理规程。层界守 N1 不给调度；多租户须挂 S1。
 
 > 更早版本的发布叙述已下沉 `CHANGELOG.md`（本档有 200 行封顶，`tests/test_claude_md_size.py` 守——
 > 路由器不许长成目录；撞线时的正确动作是下沉，不是抬上限）。
