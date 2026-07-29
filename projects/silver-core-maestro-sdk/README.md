@@ -24,6 +24,9 @@ agent 所需的脏活(循环、调度、重试、恢复、台账)做成可复用
 - **`docs/CONCURRENCY.md`** — 并发、竞态与崩溃语义:per-session 互斥 / 可选 CAS 围栏 /
   认领租约 / settle-then-append 提交点 / 六态三终态 / 「哪些 id 本身就是簿记」。
   **要注入自己的 store、或要跑不止一个驱动器,先读这份。**
+- **`docs/ASSEMBLY.md`** — 四原语接线谱(设计第三轮,2026-07-29):loop / 例程 /
+  goal / 后台任务各自怎么用现有零件拼出来,含注入式 AgentExecutor 的装配案与
+  Cowork 确认门(manualClaim 节点)。**要把 agent SDK 的 query() 装进执行座位,先读这份。**
 
 ## 身份声明(as-is)
 
@@ -36,7 +39,7 @@ green.
 
 ## 状态
 
-六个模块族全部落地(与代理包锁步同版,版本见 `package.json`)。但**「已落地」不等于
+八个模块族全部落地(与代理包锁步同版,版本见 `package.json`)。但**「已落地」不等于
 「已经真实用过」**,故按两级标尺明标(守密人 2026-07-26 裁定,需求档 §6):
 
 **已验证**——存在不是为演示它而写的消费方(该消费方有自己的业务目的,把台账拿去用):
@@ -51,16 +54,24 @@ green.
 **实验面,无生产消费方**——接口面已证够用(例程/测试写得出来),但**尚无真实使用打磨**,
 签名与语义可能随第一个真实消费方调整:
 
-- **workflow 图执行** `validateGraph` / `WorkflowRun`(仅自家 demo `workflow-fanout.mjs`)
+- **workflow 图执行** `validateGraph` / `WorkflowRun`(仅自家 demo `workflow-fanout.mjs`;
+  2.2.0 起支持确认门节点 `manualClaim`,Cowork awaiting_confirm 的投影载体)
 - **workflow 声明式加载** `loadWorkflowGraphFile` / `parseWorkflowGraphSource`(零调用点)
 - **goal 追逐器** `GoalChaser`(零调用点)
 - **送达契约** `createDeliveryChannel`(零调用点;归属正当性见需求档 §1 判别式补维注)
 - **保留缝** `TaskLedger.purgeSession` + `LedgerStore.deleteSession?`(0.78.0 新增,尚未消费)
+- **装配执行器** `createAgentExecutor` + 三具名提取器(2.2.0,设计第三轮裁2:注入式,
+  宿主递 query 函数,本包对代理 SDK 保持零 import;**指定首消费方**:memory-tidy
+  生产化或 BPT Cowork 执行节点——设计档 §10)
+- **例程管理面** `RoutineManager`(2.2.0,设计第三轮裁4:命名/停启/triggerNow/状态反查;
+  **指定首消费方**:testbed daemon 或 store-patrol 例程面改造——设计档 §10)
 
 标注不等于弃用:代码、测试、变异地板全部保留照跑;真实需求出现即升级并去标。
+设计第三轮全档:`Public-Info-Pool/Resource/repo-engineering/maestro-sdk-agent-assembly-design-20260729.md`。
 
-例程四份(最小 loop / schedule loop / workflow 扇出 / 记忆综合整理
-`examples/memory-tidy.mjs`,黑池做梦例程原型),均只 import 两包公开面。
+例程五份(最小 loop / schedule loop / workflow 扇出 / 记忆综合整理
+`examples/memory-tidy.mjs`(黑池做梦例程原型)/ agent 值班循环
+`examples/agent-loop.mjs`(注入式装配的活体证明,无钥可跑)),均只 import 两包公开面。
 实时进度以 `memory/project-status.md` 为唯一权威。
 
 ## 宿主必须自己决定的三件事(0.78.0)

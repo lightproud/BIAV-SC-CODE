@@ -95,6 +95,12 @@ export interface OutcomeInput {
    * unfenced legacy behavior (the current attempt is assumed).
    */
   attempt?: number;
+  /**
+   * What the attempt cost in USD, persisted verbatim onto the query row
+   * (design round 3 ruling D2). Must be finite and >= 0 when given — the
+   * ledger transcribes, never computes.
+   */
+  costUsd?: number;
 }
 
 export interface CancelSessionInput {
@@ -514,6 +520,17 @@ export class TaskLedger {
     ) {
       throw new RangeError(
         `recordOutcome: attempt must be an integer >= 1 when given, got ${result.attempt}`,
+      );
+    }
+    if (
+      result.costUsd !== undefined &&
+      (!Number.isFinite(result.costUsd) || result.costUsd < 0)
+    ) {
+      // Same reasoning as startedAt/endedAt: NaN survives a JSON round trip
+      // as null and a negative cost is nonsense — reject where it enters
+      // rather than persist a poisoned audit row.
+      throw new RangeError(
+        `recordOutcome: costUsd must be a finite number >= 0 when given, got ${result.costUsd}`,
       );
     }
     return this.#withLock(sessionId, async () => {
@@ -972,6 +989,7 @@ export class TaskLedger {
       outcome: result.outcome,
       ...(result.error !== undefined ? { error: result.error } : {}),
       ...(result.summary !== undefined ? { summary: result.summary } : {}),
+      ...(result.costUsd !== undefined ? { costUsd: result.costUsd } : {}),
     };
   }
 

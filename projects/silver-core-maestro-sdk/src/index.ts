@@ -22,7 +22,7 @@
  * LedgerDriver.
  */
 
-export const MAESTRO_SDK_VERSION = '2.1.0';
+export const MAESTRO_SDK_VERSION = '2.2.0';
 
 // Clock seam
 export type { Clock } from './clock.js';
@@ -88,6 +88,27 @@ export { ScheduleSpecError, validateSpec, nextFireAt, firesBetween } from './sch
 export type { ScheduleSpec } from './schedule/spec.js';
 export { Scheduler, scheduleSessionId } from './schedule/scheduler.js';
 export type { SchedulerOptions, SchedulerEvent } from './schedule/scheduler.js';
+// Fire-point footprint parsing — one parser shared by Scheduler recovery and
+// the RoutineManager reverse-lookup (design round 3, 2026-07-29).
+export {
+  SCHEDULE_FIRE_SEGMENT,
+  MANUAL_FIRE_SEGMENT,
+  MAX_FIRE_POINT_MS,
+  parseFirePoint,
+  latestFirePoint,
+} from './schedule/footprint.js';
+
+// Routine management surface (campaign 8, design round 3 ruling 裁4: the
+// duty-routine face — name / enable / disable / trigger-now / status).
+// EXPERIMENTAL SURFACE until its designated first consumer lands (§10 of the
+// design doc: testbed daemon or store-patrol routine-face migration).
+export { RoutineManager, manualFireSessionId } from './routine/manager.js';
+export type {
+  RoutineSpec,
+  RoutineStatus,
+  RoutineEvent,
+  RoutineManagerOptions,
+} from './routine/manager.js';
 
 // Workflow graph executor (campaign 4: 声明式图,图定义是数据)
 export { GraphError, validateGraph, readyNodes, graphStatus } from './workflow/graph.js';
@@ -124,3 +145,24 @@ export type {
   DeliveryChannel,
   DeliveryChannelOptions,
 } from './delivery/channel.js';
+
+// Agent assembly (campaign 7, design round 3 ruling 裁2: the injected
+// AgentExecutor — fills the driver's executor seat with a host-provided
+// agent-SDK query function; zero imports of the agent SDK, structural
+// shapes re-declared under the GoalVerdict discipline).
+// EXPERIMENTAL SURFACE until its designated first consumer lands (§10 of
+// the design doc: memory-tidy productionization or BPT Cowork step 4).
+export {
+  createAgentExecutor,
+  extractPlainAgent,
+  extractGoalRound,
+  extractWorkflowNode,
+} from './assembly/agent-executor.js';
+export type {
+  AgentQueryHandle,
+  AgentQueryFn,
+  AgentRunRequest,
+  AgentRunPayload,
+  AgentRunResult,
+  AgentExecutorOptions,
+} from './assembly/agent-executor.js';

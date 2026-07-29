@@ -22,6 +22,17 @@ export interface WorkflowNode {
   deps?: string[];
   /** Per-node retry ceiling forwarded to the ledger session. */
   maxAttempts?: number;
+  /**
+   * Confirmation-gate node (design round 3, 2026-07-29): when true, the node
+   * is dispatched with `runAt: null` — it parks ready in `pending` with
+   * `manualClaim`, invisible to claimDue, until the host claims it
+   * (`claimSession`, typically a human confirming a plan) and records its
+   * outcome. Zero new states: this reuses the ledger's existing manual-claim
+   * vocabulary (the delivery channel's dispatch pattern). Only the literal
+   * `true` is legal — the graph is hot-layer data, and a truthy-but-not-true
+   * value (1, 'yes') is a malformed definition, not a gate.
+   */
+  manualClaim?: true;
 }
 
 export interface WorkflowGraph {
@@ -100,6 +111,17 @@ export function validateGraph(graph: WorkflowGraph): void {
     ) {
       throw new GraphError(
         `node '${node.id}' maxAttempts must be an integer >= 1, got ${node.maxAttempts}`,
+      );
+    }
+    // Only the literal `true` opens a confirmation gate: graph definitions
+    // are hot-layer data (JSON files), and a truthy 1 / 'yes' silently
+    // becoming a gate — or a falsy 0 silently NOT becoming one — is exactly
+    // the class of quiet misload the loader's skip gate exists to refuse.
+    if (node.manualClaim !== undefined && node.manualClaim !== true) {
+      throw new GraphError(
+        `node '${node.id}' manualClaim must be the literal true when present, got ${JSON.stringify(
+          node.manualClaim,
+        )}`,
       );
     }
     byId.set(node.id, node);

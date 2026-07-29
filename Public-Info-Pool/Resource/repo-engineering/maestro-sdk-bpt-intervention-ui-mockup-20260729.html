@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPT 介入面样机 — Maestro SDK 第三轮设计审视随档</title>
+<style>
+  /* 品牌黑金方案（memory/style-guide.md v3.0）：金 = 产品层，银白 = SDK/技术层，零冷色零 emoji */
+  :root {
+    --bg: #0a0b10; --card: #131210; --card2: #1a1915;
+    --gold: #d2ab58; --gold-bright: #ecd48d; --gold-dim: #9c8850;
+    --ink: #f2ede2; --ink-sub: #b8ad9c; --ink-low: #7a7468;
+    --silver: #e8e4da; --silver-dim: #c9c3b6;
+    --good: #7aad5a; --bad: #c25a4a;
+    --bd: rgba(242,237,226,.14); --bd-gold: rgba(210,171,88,.32);
+    --gold-wash: rgba(210,171,88,.07); --silver-wash: rgba(242,237,226,.05);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Noto Sans SC", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-weight: 500; font-size: 15px; line-height: 1.9; min-height: 100vh;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 28px 20px 80px; }
+  .doc-head { text-align: center; padding: 14px 0 26px; }
+  .doc-head .eyebrow { font-size: 11px; letter-spacing: 5px; color: var(--gold); font-weight: 500; }
+  .doc-head h1 { font-family: "Noto Serif SC", "Noto Serif CJK SC", serif; font-weight: 700; font-size: 26px; color: var(--gold-bright); letter-spacing: 2px; margin: 6px 0 2px; }
+  .doc-head .sub { font-size: 13px; color: var(--ink-low); }
+  .doc-head .rule { width: 56px; height: 2px; background: var(--gold); margin: 14px auto 0; }
+  .note { border: .5px solid var(--bd); border-left: 3px solid var(--gold); background: var(--gold-wash); border-radius: 3px; padding: 10px 16px; font-size: 13px; color: var(--ink-sub); margin-bottom: 22px; }
+  .note b { color: var(--gold-bright); font-weight: 700; }
+
+  .tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .tab { background: var(--card); border: .5px solid var(--bd); color: var(--ink-sub); border-radius: 3px; padding: 7px 18px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit; }
+  .tab.on { border-color: var(--bd-gold); color: var(--gold-bright); background: var(--gold-wash); }
+  .view { display: none; } .view.on { display: block; animation: fadein .5s ease; }
+  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .view.on, .modal-box { animation: none !important; } }
+
+  .panel { background: var(--card); border: .5px solid var(--bd); border-radius: 4px; padding: 16px 18px; margin-bottom: 18px; }
+  .panel-title { font-size: 12px; letter-spacing: 3px; color: var(--gold); font-weight: 700; margin-bottom: 10px; }
+  .panel-title .tag { float: right; letter-spacing: 0; color: var(--ink-low); font-weight: 500; }
+
+  .row { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-bottom: .5px solid var(--bd); flex-wrap: wrap; }
+  .row:last-child { border-bottom: none; }
+  .row .name { font-weight: 700; color: var(--ink); min-width: 150px; }
+  .row .meta { font-size: 13px; color: var(--ink-sub); flex: 1; min-width: 140px; }
+  .row .meta em { font-style: normal; color: var(--gold-bright); }
+
+  .btn { background: var(--card2); border: .5px solid var(--bd-gold); color: var(--gold-bright); border-radius: 3px; padding: 4px 12px; font-size: 12.5px; font-weight: 700; cursor: pointer; font-family: inherit; white-space: nowrap; }
+  .btn:hover { background: var(--gold-wash); }
+  .btn.silver { border-color: rgba(242,237,226,.4); color: var(--silver); }
+  .btn.danger { border-color: rgba(194,90,74,.55); color: #d98a7c; }
+  .btn.ghost { border-color: var(--bd); color: var(--ink-sub); }
+
+  .toggle { width: 40px; height: 20px; border-radius: 10px; border: .5px solid var(--bd-gold); background: var(--card2); position: relative; cursor: pointer; flex: none; }
+  .toggle::after { content: ""; position: absolute; top: 2px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--ink-low); transition: .18s; }
+  .toggle.on::after { left: 21px; background: var(--gold); }
+
+  .badge { font-size: 11.5px; font-weight: 700; padding: 1px 9px; border-radius: 9px; border: .5px solid; white-space: nowrap; }
+  .b-running   { color: var(--gold-bright); border-color: var(--bd-gold); background: var(--gold-wash); }
+  .b-queued    { color: var(--ink-sub); border-color: var(--bd); }
+  .b-confirm   { color: var(--gold); border-color: var(--gold); background: var(--gold-wash); }
+  .b-delivered { color: var(--good); border-color: rgba(122,173,90,.5); background: rgba(122,173,90,.07); }
+  .b-failed    { color: #d98a7c; border-color: rgba(194,90,74,.5); background: rgba(194,90,74,.07); }
+  .b-cancelled { color: var(--silver-dim); border-color: rgba(242,237,226,.3); background: var(--silver-wash); }
+  .b-planning  { color: var(--gold-bright); border-color: var(--bd-gold); }
+  .b-revising  { color: var(--gold); border-color: var(--bd-gold); }
+  .b-done      { color: var(--good); border-color: rgba(122,173,90,.5); }
+  .b-pending   { color: var(--ink-low); border-color: var(--bd); }
+
+  .filters { display: flex; gap: 8px; font-size: 13px; color: var(--ink-sub); margin: 4px 0 8px; flex-wrap: wrap; }
+  .filters span { border: .5px solid var(--bd); border-radius: 3px; padding: 1px 10px; }
+  .filters span.on { color: var(--gold-bright); border-color: var(--bd-gold); }
+
+  .steps { display: flex; gap: 6px; align-items: stretch; flex-wrap: wrap; margin: 8px 0 4px; }
+  .step { flex: 1; min-width: 118px; background: var(--card2); border: .5px solid var(--bd); border-radius: 3px; padding: 8px 10px; }
+  .step.hot { border-color: var(--bd-gold); background: var(--gold-wash); }
+  .step .s-name { font-weight: 700; font-size: 13.5px; color: var(--ink); }
+  .step .s-sub { font-size: 11.5px; color: var(--ink-low); line-height: 1.6; margin-top: 2px; }
+  .step-arrow { align-self: center; color: var(--gold); font-size: 13px; flex: none; }
+
+  .confirm-card { border: .5px solid var(--bd-gold); background: var(--gold-wash); border-radius: 4px; padding: 14px 16px; margin-top: 12px; }
+  .confirm-card h4 { font-size: 14.5px; color: var(--gold-bright); margin-bottom: 6px; }
+  .confirm-card ul { list-style: none; font-size: 13.5px; color: var(--ink-sub); margin-bottom: 10px; }
+  .confirm-card li::before { content: "◆ "; color: var(--gold); font-size: 10px; }
+  .confirm-card .acts { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .feed { background: var(--card2); border: .5px solid rgba(242,237,226,.22); border-radius: 3px; padding: 10px 14px; font-size: 12.5px; color: var(--silver-dim); font-family: "SF Mono", Consolas, "Courier New", monospace; line-height: 1.8; max-height: 168px; overflow-y: auto; }
+  .feed .t { color: var(--ink-low); margin-right: 8px; }
+  .feed .k { color: var(--silver); font-weight: 700; }
+  .feed-cap { font-size: 11.5px; letter-spacing: 2px; color: var(--silver-dim); margin: 12px 0 5px; font-weight: 700; }
+
+  .acts-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; padding-top: 12px; border-top: .5px solid var(--bd); }
+  .cost { font-size: 13px; color: var(--ink-sub); margin-top: 10px; }
+  .cost b { color: var(--gold-bright); font-family: "Noto Serif SC", serif; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: var(--card2); color: var(--gold-bright); font-weight: 700; padding: 7px 9px; border: .5px solid var(--bd); text-align: left; }
+  td { padding: 6px 9px; border: .5px solid var(--bd); color: var(--ink-sub); vertical-align: top; line-height: 1.7; }
+  tr:nth-child(even) td { background: rgba(210,171,88,.04); }
+  td code, .sdk code { font-family: "SF Mono", Consolas, monospace; font-size: 12px; color: var(--silver); background: var(--silver-wash); border: .5px solid rgba(242,237,226,.18); border-radius: 2px; padding: 0 4px; }
+  td .who { font-size: 11px; font-weight: 700; border-radius: 2px; padding: 0 5px; margin-right: 4px; }
+  .who-m { color: var(--silver); border: .5px solid rgba(242,237,226,.35); }
+  .who-a { color: var(--gold-bright); border: .5px solid var(--bd-gold); }
+  .who-h { color: var(--ink-low); border: .5px solid var(--bd); }
+
+  .modal-mask { display: none; position: fixed; inset: 0; background: rgba(4,4,7,.72); z-index: 40; }
+  .modal-mask.on { display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .modal-box { background: var(--card); border: .5px solid var(--bd-gold); border-radius: 5px; max-width: 620px; width: 100%; padding: 20px 22px; animation: fadein .3s ease; max-height: 86vh; overflow-y: auto; }
+  .modal-box .m-eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--gold); font-weight: 700; }
+  .modal-box h3 { font-family: "Noto Serif SC", serif; font-size: 18px; color: var(--gold-bright); margin: 4px 0 10px; }
+  .sdk { background: var(--card2); border: .5px solid rgba(242,237,226,.22); border-left: 3px solid var(--gold); border-radius: 3px; padding: 12px 14px; font-family: "SF Mono", Consolas, monospace; font-size: 12.5px; color: var(--silver); line-height: 1.8; white-space: pre-wrap; word-break: break-all; margin: 8px 0; }
+  .modal-box .m-note { font-size: 13px; color: var(--ink-sub); }
+  .modal-box .m-note b { color: var(--gold-bright); }
+  .modal-close { margin-top: 14px; }
+
+  .deco { text-align: center; color: #3a382c; font-size: 10px; letter-spacing: 6px; margin-top: 36px; }
+  .foot { text-align: center; font-size: 11px; color: var(--ink-low); letter-spacing: 1.5px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="doc-head">
+    <div class="eyebrow">DESIGN MOCKUP</div>
+    <h1>BPT 客户端介入面样机</h1>
+    <div class="sub">Maestro SDK 第三轮设计审视随档 · 2026-07-29 · 数据为前端模拟</div>
+    <div class="rule"></div>
+  </div>
+
+  <div class="note">
+    本样机是设计档 <b>maestro-sdk-agent-assembly-design-20260729.md §9</b> 的活体演示：
+    页面骨架沿 Cowork 产品档 §5，本档补「介入面」。<b>点击任何介入按钮</b>，先弹出该动作映射的
+    SDK 调用（金框 = 产品层动作，银白 = SDK/数据面），再执行前端模拟的状态流转。台账为唯一真相源，
+    此处全部状态由假台账 JSON 驱动。
+  </div>
+
+  <div class="tabs">
+    <button class="tab on" data-v="inbox">任务收件箱</button>
+    <button class="tab" data-v="detail">任务详情页</button>
+    <button class="tab" data-v="map">动作映射总表</button>
+  </div>
+
+  <!-- ============ 视图一：收件箱 ============ -->
+  <div class="view on" id="v-inbox">
+    <div class="panel">
+      <div class="panel-title">值班例程区<span class="tag">RoutineManager.list() 数据面直读</span></div>
+      <div id="routine-rows"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">任务流<span class="tag">ledger.listSessions() + Cowork 五态投影</span></div>
+      <div class="filters" id="task-filters"></div>
+      <div id="task-rows"></div>
+    </div>
+  </div>
+
+  <!-- ============ 视图二：详情页 ============ -->
+  <div class="view" id="v-detail">
+    <div class="panel" id="detail-panel"></div>
+  </div>
+
+  <!-- ============ 视图三：映射总表 ============ -->
+  <div class="view" id="v-map">
+    <div class="panel">
+      <div class="panel-title">UI 动作 → SDK 调用 映射总表<span class="tag">设计档 §9.2 同源</span></div>
+      <table>
+        <tr><th style="width:26%">UI 动作</th><th>调用</th><th style="width:34%">备注</th></tr>
+        <tr><td>暂停 / 恢复例程</td><td><span class="who who-m">maestro</span><code>RoutineManager.disable(id) / enable(id)</code></td><td>enabled 表由宿主持久化（D4 丙案）</td></tr>
+        <tr><td>立即巡检 / 立即执行</td><td><span class="who who-m">maestro</span><code>RoutineManager.triggerNow(id)</code></td><td>幂等键 manual:{id}:{firedAt}，双击安全</td></tr>
+        <tr><td>下次触发倒计时</td><td><span class="who who-m">maestro</span><code>RoutineManager.list() → nextFireAt</code></td><td>disabled 显示「已停用」</td></tr>
+        <tr><td>例程最近结果徽标</td><td><span class="who who-m">maestro</span><code>RoutineStatus.lastSession.state / lastError</code></td><td></td></tr>
+        <tr><td>收件箱任务流</td><td><span class="who who-m">maestro</span><code>ledger.listSessions(filter)</code> + 投影表</td><td>台账 = 唯一真相源</td></tr>
+        <tr><td>确认计划</td><td><span class="who who-m">maestro</span><code>ledger.claimSession(gateId)</code> → <code>recordOutcome({outcome:'ok'})</code></td><td>确认门的 executor 是人</td></tr>
+        <tr><td>修改计划（revising）</td><td><span class="who who-m">maestro</span><code>ledger.reopenSession(planNodeId, {payload: 用户意见})</code></td><td>attemptRound = 修订轮数</td></tr>
+        <tr><td>全部拒绝</td><td><span class="who who-m">maestro</span><code>ledger.cancelSession(gateId, {reason:'user-rejected'})</code></td><td>fail-fast 收束整图</td></tr>
+        <tr><td>取消运行中任务</td><td><span class="who who-m">maestro</span><code>ledger.cancelSession(id, {reason:'user'})</code></td><td>一等终局，永不自动重跑</td></tr>
+        <tr><td>一键重试</td><td><span class="who who-m">maestro</span><code>ledger.reopenSession(id)</code></td><td>cancelled 前驱须 force:true，UI 二次确认</td></tr>
+        <tr><td>中止 goal 追逐（可回头）</td><td><span class="who who-h">宿主</span><code>AbortController.abort()</code>（chase opts.signal）</td><td>轮记录保留，同 id 再 chase 即续</td></tr>
+        <tr><td>终止 goal 追逐（永久）</td><td><span class="who who-m">maestro</span><code>ledger.cancelSession(goalRoundSessionId(id, n))</code></td><td>chase settle 'cancelled'</td></tr>
+        <tr><td>查看子代理进度</td><td><span class="who who-m">maestro</span>AgentExecutor <code>onMessage</code> 过河的 <code>task_progress</code> 渲染</td><td>只进详情页实时区，不进收件箱</td></tr>
+        <tr><td>停掉后台子代理</td><td><span class="who who-a">agent</span><code>Query.stopTask(taskId)</code></td><td>引擎领地（宿主持 query 句柄时）</td></tr>
+        <tr><td>查任务成本</td><td><span class="who who-m">maestro</span><code>ledger.listQueries(id) → Σ costUsd</code>（D2）</td><td>链上累计沿 reopenChain 再求和</td></tr>
+        <tr><td>交付通知（钉钉）</td><td><span class="who who-m">maestro</span><code>createDeliveryChannel({ledger, sink}).deliver(msg)</code></td><td>审计先行；sink 失败落回执不抛</td></tr>
+        <tr><td>运行中调预算</td><td>不可用（诚实标注）</td><td>预算在创建时 payload.agent.maxBudgetUsd 定死；调 = 取消后带新预算 reopen</td></tr>
+        <tr><td>断线重连恢复视图</td><td><span class="who who-m">maestro</span><code>listSessions()</code> + <code>RoutineManager.list()</code> 全量重拉</td><td>台账跨重启，「断线无感」由数据面免费兑现</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="deco">◇ ◇ ◇</div>
+  <div class="foot">B.I.A.V. STUDIO · 银芯 SILVER CORE · 样机数据为前端模拟，不含真实台账</div>
+</div>
+
+<!-- 动作 → SDK 调用弹层 -->
+<div class="modal-mask" id="modal">
+  <div class="modal-box">
+    <div class="m-eyebrow">UI 动作 → SDK 调用</div>
+    <h3 id="m-title"></h3>
+    <div class="sdk" id="m-code"></div>
+    <div class="m-note" id="m-note"></div>
+    <div class="acts modal-close"><button class="btn" id="m-ok">执行（模拟）</button>
+    <button class="btn ghost" id="m-cancel">关闭</button></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+/* ---------- 假台账（演示数据；形态仿 store-patrol 真实会话，已脱敏改写） ---------- */
+const now = Date.now();
+const H = 3600e3, M = 60e3;
+const state = {
+  routines: [
+    { id: "store-patrol", name: "每日商店巡检", enabled: true,  nextFireAt: now + 2*H + 13*M, last: "done",   lastErr: null },
+    { id: "memory-tidy",  name: "记忆整理（做梦）", enabled: true,  nextFireAt: now + 11*H + 40*M, last: "done", lastErr: null },
+    { id: "weekly-intel", name: "社区周报",     enabled: false, nextFireAt: null,             last: "failed", lastErr: "judge quota exhausted" },
+  ],
+  tasks: [
+    { id: "goal:weekly-report", title: "周报生成（goal 追逐 第 2/5 轮）", cowork: "running",  kind: "goal",     cost: 1.24, q: 4 },
+    { id: "wf:comp-analysis",   title: "竞品分析",                    cowork: "awaiting_confirm", kind: "workflow", cost: 0.31, q: 1 },
+    { id: "patrol:0729",        title: "商店巡检 07-29",              cowork: "delivered", kind: "script",   cost: 0,    q: 1 },
+    { id: "agent:banner-copy",  title: "活动文案草拟",                cowork: "failed",    kind: "agent",    cost: 0.52, q: 3 },
+    { id: "agent:old-brief",    title: "旧简报归并（守密人手动取消）",   cowork: "cancelled", kind: "agent",    cost: 0.08, q: 1 },
+  ],
+  // 竞品分析 workflow 图节点（plan → gate(manualClaim) → execute → deliver）
+  wf: { plan: "done", gate: "awaiting", execute: "idle", deliver: "idle", revision: 1 },
+  selected: "wf:comp-analysis",
+  feed: [],
+  feedTimer: null,
+};
+const COWORK_BADGE = {
+  running: ["b-running", "running"], planning: ["b-planning", "planning"],
+  awaiting_confirm: ["b-confirm", "待确认"], delivered: ["b-delivered", "delivered"],
+  failed: ["b-failed", "failed"], cancelled: ["b-cancelled", "已取消"],
+  queued: ["b-queued", "queued"], revising: ["b-revising", "revising"],
+};
+
+/* ---------- 弹层：先亮 SDK 调用，确认后执行模拟 ---------- */
+const modal = document.getElementById("modal");
+let pendingFn = null;
+function askThen(title, code, note, fn) {
+  document.getElementById("m-title").textContent = title;
+  document.getElementById("m-code").textContent = code;
+  document.getElementById("m-note").innerHTML = note || "";
+  pendingFn = fn || null;
+  modal.classList.add("on");
+}
+document.getElementById("m-ok").onclick = () => { modal.classList.remove("on"); if (pendingFn) pendingFn(); pendingFn = null; };
+document.getElementById("m-cancel").onclick = () => { modal.classList.remove("on"); pendingFn = null; };
+
+/* ---------- 视图切换 ---------- */
+document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
+  document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x === t));
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("on"));
+  document.getElementById("v-" + t.dataset.v).classList.add("on");
+});
+function gotoDetail(id) {
+  state.selected = id;
+  document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x.dataset.v === "detail"));
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("on"));
+  document.getElementById("v-detail").classList.add("on");
+  render();
+}
+
+/* ---------- 渲染：值班例程区 ---------- */
+function fmtIn(ms) {
+  if (ms == null) return "已停用";
+  const d = ms - Date.now(); if (d <= 0) return "到点待发";
+  const h = Math.floor(d / H), m = Math.floor((d % H) / M);
+  return (h ? h + "h" : "") + m + "m 后";
+}
+function renderRoutines() {
+  const el = document.getElementById("routine-rows"); el.innerHTML = "";
+  state.routines.forEach(r => {
+    const row = document.createElement("div"); row.className = "row";
+    const lastBadge = r.last === "done"
+      ? '<span class="badge b-done">上次 done</span>'
+      : '<span class="badge b-failed">上次 failed</span>';
+    row.innerHTML =
+      '<span class="name">' + r.name + '</span>' +
+      '<span class="meta">下次触发 <em>' + fmtIn(r.enabled ? r.nextFireAt : null) + '</em>' +
+      (r.lastErr && r.last !== "done" ? ' · <span style="color:#d98a7c">' + r.lastErr + '</span>' : '') + '</span>' +
+      lastBadge;
+    const tg = document.createElement("div");
+    tg.className = "toggle" + (r.enabled ? " on" : "");
+    tg.title = r.enabled ? "停用" : "启用";
+    tg.onclick = () => askThen(
+      (r.enabled ? "暂停例程：" : "恢复例程：") + r.name,
+      "routineManager." + (r.enabled ? "disable" : "enable") + "('" + r.id + "');\n" +
+      "// RoutineEvent { type: 'routine:" + (r.enabled ? "disabled" : "enabled") + "' } 出缝\n" +
+      "// enabled 表由宿主（BPT DB）持久化 —— D4 丙案",
+      "数据面在 SDK、渲染在宿主：开关状态翻转经事件出缝，界面只是读数。",
+      () => { r.enabled = !r.enabled;
+              if (r.enabled && r.nextFireAt == null) r.nextFireAt = Date.now() + 24*H;
+              render(); });
+    const fire = document.createElement("button");
+    fire.className = "btn"; fire.textContent = "立即触发";
+    fire.onclick = () => askThen(
+      "立即触发：" + r.name,
+      "await routineManager.triggerNow('" + r.id + "');\n" +
+      "// 幂等键 manual:{id}:{firedAt} —— 独立前缀，绝不落 sched:\n" +
+      "// （sched: 会污染 Scheduler 恢复足迹、吞掉补偿窗口）\n" +
+      "// 同毫秒重复调用命中 DuplicateSessionError，双击安全",
+      "派发后由 LedgerDriver 认领执行，进度回到任务流。",
+      () => { r.last = "done"; render(); });
+    row.appendChild(tg); row.appendChild(fire); el.appendChild(row);
+  });
+}
+
+/* ---------- 渲染：任务流 ---------- */
+function renderTasks() {
+  const counts = { running: 0, awaiting_confirm: 0, done: 0 };
+  state.tasks.forEach(t => {
+    if (t.cowork === "running" || t.cowork === "planning" || t.cowork === "revising") counts.running++;
+    else if (t.cowork === "awaiting_confirm") counts.awaiting_confirm++;
+    else counts.done++;
+  });
+  document.getElementById("task-filters").innerHTML =
+    '<span class="on">进行中(' + counts.running + ')</span>' +
+    '<span>待确认(' + counts.awaiting_confirm + ')</span>' +
+    '<span>已收尾(' + counts.done + ')</span>';
+  const el = document.getElementById("task-rows"); el.innerHTML = "";
+  state.tasks.forEach(t => {
+    const [cls, label] = COWORK_BADGE[t.cowork];
+    const row = document.createElement("div"); row.className = "row";
+    row.innerHTML = '<span style="color:var(--gold);font-size:10px">◆</span>' +
+      '<span class="name" style="min-width:230px">' + t.title + '</span>' +
+      '<span class="meta">' + t.id + '</span>' +
+      '<span class="badge ' + cls + '">' + label + '</span>';
+    const go = document.createElement("button");
+    go.className = "btn silver"; go.textContent = t.cowork === "awaiting_confirm" ? "去确认" : "详情";
+    go.onclick = () => gotoDetail(t.id);
+    row.appendChild(go); el.appendChild(row);
+  });
+}
+
+/* ---------- 渲染：详情页 ---------- */
+function stepBadge(s) {
+  if (s === "done") return '<span class="badge b-done">done</span>';
+  if (s === "running") return '<span class="badge b-running">running</span>';
+  if (s === "awaiting") return '<span class="badge b-confirm">待确认</span>';
+  if (s === "cancelled") return '<span class="badge b-cancelled">cancelled</span>';
+  if (s === "failed") return '<span class="badge b-failed">failed</span>';
+  return '<span class="badge b-pending">未派发</span>';
+}
+function renderDetail() {
+  const p = document.getElementById("detail-panel");
+  const t = state.tasks.find(x => x.id === state.selected);
+  if (!t) { p.innerHTML = ""; return; }
+  const costLine = '<div class="cost">本任务累计 <b>$' + t.cost.toFixed(2) + '</b>（' + t.q +
+    ' 次查询，Σ listQueries → costUsd；链上累计沿 reopenChain 再求和）</div>';
+
+  if (t.kind === "workflow") {
+    const w = state.wf;
+    let html = '<div class="panel-title">任务详情 · ' + t.title +
+      '<span class="tag">workflow 图：plan → 确认门(manualClaim) → execute → deliver</span></div>';
+    html += '<div class="steps">' +
+      '<div class="step"><div class="s-name">计划</div><div class="s-sub">' + stepBadge(w.plan) +
+        (w.revision > 1 ? ' 修订轮 r' + w.revision : '') + '</div></div><div class="step-arrow">→</div>' +
+      '<div class="step' + (w.gate === "awaiting" ? " hot" : "") + '"><div class="s-name">确认门</div><div class="s-sub">' + stepBadge(w.gate) + ' pending+manualClaim</div></div><div class="step-arrow">→</div>' +
+      '<div class="step"><div class="s-name">执行</div><div class="s-sub">' + stepBadge(w.execute) + '</div></div><div class="step-arrow">→</div>' +
+      '<div class="step"><div class="s-name">交付</div><div class="s-sub">' + stepBadge(w.deliver) + '</div></div></div>';
+    if (w.gate === "awaiting") {
+      html += '<div class="confirm-card"><h4>计划待确认（共 4 步，预估 35 分钟）</h4><ul>' +
+        '<li>拉取三款竞品商店页与评论摘要（输入：目标清单 / 产出：原始快照）</li>' +
+        '<li>逐项对比定价与活动节奏（产出：对比矩阵）</li>' +
+        '<li>结合社区档案层情绪信号交叉验证（产出：验证注记）</li>' +
+        '<li>汇总为对外分析简报（产出：简报 markdown，写回集中在确认之后）</li></ul>' +
+        '<div class="acts"><button class="btn" id="d-confirm">确认计划</button>' +
+        '<button class="btn silver" id="d-revise">修改计划</button>' +
+        '<button class="btn danger" id="d-reject">全部拒绝</button></div></div>';
+    }
+    if (w.execute === "running") {
+      html += '<div class="feed-cap">子代理实时区（AgentExecutor.onMessage 过河的 task_* 消息）</div>' +
+        '<div class="feed" id="feed"></div>';
+    }
+    html += '<div class="acts-bar">' +
+      '<button class="btn danger" id="d-cancel">取消任务</button>' +
+      '<button class="btn" id="d-retry">一键重试</button>' +
+      '<button class="btn ghost" id="d-back">返回收件箱</button></div>' + costLine;
+    p.innerHTML = html;
+    bindWorkflowActions(t);
+  } else if (t.kind === "goal") {
+    let html = '<div class="panel-title">任务详情 · ' + t.title +
+      '<span class="tag">GoalChaser：每轮 = 一个台账会话 goal:{id}:round-{n}</span></div>';
+    html += '<div class="steps">' +
+      '<div class="step"><div class="s-name">round-1</div><div class="s-sub"><span class="badge b-done">done</span> 判词 not_achieved</div></div><div class="step-arrow">→</div>' +
+      '<div class="step hot"><div class="s-name">round-2</div><div class="s-sub">' + stepBadge(t.cowork === "running" ? "running" : (t.cowork === "cancelled" ? "cancelled" : "done")) + ' feedback 已注入</div></div><div class="step-arrow">→</div>' +
+      '<div class="step"><div class="s-name">round-3…5</div><div class="s-sub"><span class="badge b-pending">预算内待发</span></div></div></div>';
+    html += '<div class="acts-bar">' +
+      '<button class="btn silver" id="g-abort">中止追逐（可回头）</button>' +
+      '<button class="btn danger" id="g-kill">终止追逐（永久）</button>' +
+      '<button class="btn ghost" id="d-back">返回收件箱</button></div>' + costLine;
+    p.innerHTML = html;
+    bindGoalActions(t);
+  } else {
+    const [cls, label] = COWORK_BADGE[t.cowork];
+    let html = '<div class="panel-title">任务详情 · ' + t.title +
+      '<span class="tag">' + (t.kind === "script" ? "脚本任务（store-patrol 模式，executor 纯 HTTP）" : "跨会话 agent 任务") + '</span></div>' +
+      '<div class="row"><span class="name">' + t.id + '</span><span class="meta">台账终态</span><span class="badge ' + cls + '">' + label + '</span></div>';
+    html += '<div class="acts-bar">' +
+      (t.cowork !== "cancelled" && t.cowork !== "delivered" && t.cowork !== "failed"
+        ? '<button class="btn danger" id="d-cancel">取消任务</button>' : '') +
+      (t.cowork === "failed" || t.cowork === "cancelled"
+        ? '<button class="btn" id="d-retry">一键重试</button>' : '') +
+      '<button class="btn ghost" id="d-back">返回收件箱</button></div>' + costLine;
+    p.innerHTML = html;
+    bindPlainActions(t);
+  }
+}
+
+/* ---------- 详情页动作绑定 ---------- */
+function backBind() {
+  const b = document.getElementById("d-back");
+  if (b) b.onclick = () => {
+    document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x.dataset.v === "inbox"));
+    document.querySelectorAll(".view").forEach(v => v.classList.remove("on"));
+    document.getElementById("v-inbox").classList.add("on");
+  };
+}
+function bindWorkflowActions(t) {
+  backBind();
+  const w = state.wf;
+  const q = id => document.getElementById(id);
+  if (q("d-confirm")) q("d-confirm").onclick = () => askThen(
+    "确认计划",
+    "// 确认门的 executor 是人：\n" +
+    "await ledger.claimSession('wf:comp-analysis:run-1:gate');\n" +
+    "await ledger.recordOutcome('wf:comp-analysis:run-1:gate',\n" +
+    "  { outcome: 'ok', summary: '守密人确认' });\n" +
+    "// 下一次 WorkflowRun.tick()：execute 节点就绪并派发",
+    "确认门节点由 <b>dispatch({ runAt: null })</b> 派发（pending+manualClaim，claimDue 永不认领）——零新状态。",
+    () => { w.gate = "done"; w.execute = "running"; t.cowork = "running"; render(); startFeed(t); });
+  if (q("d-revise")) q("d-revise").onclick = () => askThen(
+    "修改计划（revising）",
+    "await ledger.reopenSession('wf:comp-analysis:run-1:plan', {\n" +
+    "  payload: { revise: '第 2 步加入日服对比' } });\n" +
+    "// T67 甲案：新会话 id = {root}#r" + (w.revision + 1) + "，reopenOf 链接，\n" +
+    "// attemptRound = 修订轮数；封闭状态机分毫未动",
+    "plan 节点重开重跑，产出新计划后确认门重新挂起。",
+    () => { w.revision += 1; w.plan = "running"; w.gate = "idle"; t.cowork = "revising"; render();
+            setTimeout(() => { w.plan = "done"; w.gate = "awaiting"; t.cowork = "awaiting_confirm"; render(); }, 1600); });
+  if (q("d-reject")) q("d-reject").onclick = () => askThen(
+    "全部拒绝",
+    "await ledger.cancelSession('wf:comp-analysis:run-1:gate',\n" +
+    "  { reason: 'user-rejected' });\n" +
+    "// cancelled 为一等终局（0.76.0）：永不自动重跑；\n" +
+    "// workflow fail-fast —— 下游节点永不就绪，整图收束",
+    "Cowork 投影按 D7 建议单列「已取消」，不并入 failed。",
+    () => { w.gate = "cancelled"; t.cowork = "cancelled"; stopFeed(); render(); });
+  if (q("d-cancel")) q("d-cancel").onclick = () => askThen(
+    "取消任务",
+    "await ledger.cancelSession('" + t.id + "', { reason: 'user' });\n" +
+    "// 在飞 attempt 的迟到结果撞上 InvalidTransitionError —— \n" +
+    "// 这是取消契约在工作，不是故障（0.76.0）",
+    "",
+    () => { if (w.execute === "running") w.execute = "cancelled"; else if (w.gate === "awaiting") w.gate = "cancelled";
+            t.cowork = "cancelled"; stopFeed(); render(); });
+  if (q("d-retry")) q("d-retry").onclick = () => {
+    const wasCancelled = t.cowork === "cancelled";
+    askThen(
+      "一键重试" + (wasCancelled ? "（前驱是 cancelled：需 force）" : ""),
+      "await ledger.reopenSession('" + t.id + "'" +
+      (wasCancelled ? ", { force: true }" : "") + ");\n" +
+      (wasCancelled
+        ? "// cancelled 前驱默认拒绝重开 —— force 是显式越过用户取消意图，\n// UI 必须二次确认后才携带 force:true"
+        : "// failed 前驱直接重开，后继 id 从链根派生（{root}#rN）"),
+      wasCancelled ? "<b>二次确认</b>：该任务是守密人手动取消的，重试将越过取消意图。" : "",
+      () => { state.wf = { plan: "done", gate: "awaiting", execute: "idle", deliver: "idle", revision: state.wf.revision };
+              t.cowork = "awaiting_confirm"; render(); });
+  };
+}
+function bindGoalActions(t) {
+  backBind();
+  const q = id => document.getElementById(id);
+  if (q("g-abort")) q("g-abort").onclick = () => askThen(
+    "中止追逐（可回头）",
+    "abortController.abort();   // chase(config, { signal }) 的缝（F4）\n" +
+    "// 轮记录留在台账；下次 chase('weekly-report') 的 resume 扫描\n" +
+    "// 从既有轮接续，不重跑已完轮",
+    "宿主侧动作：AbortController 由装配 chase 的宿主持有。",
+    () => { t.cowork = "queued"; render(); });
+  if (q("g-kill")) q("g-kill").onclick = () => askThen(
+    "终止追逐（永久）",
+    "await ledger.cancelSession(goalRoundSessionId('weekly-report', 2));\n" +
+    "// 0.78.0：cancelled 轮 settle 整个 chase（action 'cancelled'），\n" +
+    "// 不问 evaluator，不再发起 round-3",
+    "",
+    () => { t.cowork = "cancelled"; render(); });
+}
+function bindPlainActions(t) {
+  backBind();
+  const q = id => document.getElementById(id);
+  if (q("d-cancel")) q("d-cancel").onclick = () => askThen(
+    "取消任务",
+    "await ledger.cancelSession('" + t.id + "', { reason: 'user' });",
+    "", () => { t.cowork = "cancelled"; render(); });
+  if (q("d-retry")) q("d-retry").onclick = () => {
+    const wasCancelled = t.cowork === "cancelled";
+    askThen("一键重试" + (wasCancelled ? "（前驱是 cancelled：需 force）" : ""),
+      "await ledger.reopenSession('" + t.id + "'" + (wasCancelled ? ", { force: true }" : "") + ");",
+      wasCancelled ? "<b>二次确认</b>：重试将越过用户的取消意图。" : "",
+      () => { t.cowork = "running"; render();
+              setTimeout(() => { t.cowork = "delivered"; render(); }, 2000); });
+  };
+}
+
+/* ---------- 子代理实时区模拟（task_* 消息过河） ---------- */
+const FEED_SCRIPT = [
+  ["task_started",  "spawn 子代理 research-a（竞品页抓取）"],
+  ["task_started",  "spawn 子代理 research-b（评论摘要）"],
+  ["task_progress", "research-a · last_tool: WebFetch · turn 2"],
+  ["task_progress", "research-b · last_tool: Grep · turn 3"],
+  ["task_updated",  "research-a → completed"],
+  ["task_updated",  "research-b → completed"],
+  ["result",        "execute 节点 outcome ok · costUsd 0.47 · agentSessionId sc-9f21"],
+];
+function startFeed(t) {
+  stopFeed(); state.feed = []; let i = 0;
+  state.feedTimer = setInterval(() => {
+    if (i >= FEED_SCRIPT.length) {
+      stopFeed();
+      state.wf.execute = "done"; state.wf.deliver = "running"; t.cost += 0.47; t.q += 1; render();
+      setTimeout(() => {
+        askThen("交付通知（deliver 节点）",
+          "const channel = createDeliveryChannel({ ledger,\n" +
+          "  sink: dingtalkWebhookSink });   // 宿主注入，SDK 不含送达实现\n" +
+          "await channel.deliver({ title: '竞品分析已交付',\n" +
+          "  body: '简报入库，点击查看', channel: 'cowork-inbox' });\n" +
+          "// 审计先行：dispatch(runAt:null)+claimSession 落账在 sink 之前；\n" +
+          "// sink 失败落回执 { delivered:false }，不抛",
+          "delivery 族由此获得首个真实消费方（设计档 §10）。",
+          () => { state.wf.deliver = "done"; t.cowork = "delivered"; render(); });
+      }, 500);
+      return;
+    }
+    const [k, msg] = FEED_SCRIPT[i++];
+    state.feed.push({ k, msg, at: new Date().toLocaleTimeString("zh-CN", { hour12: false }) });
+    const el = document.getElementById("feed");
+    if (el) {
+      el.innerHTML = state.feed.map(f =>
+        '<div><span class="t">' + f.at + '</span><span class="k">' + f.k + '</span> ' + f.msg + '</div>').join("");
+      el.scrollTop = el.scrollHeight;
+    }
+  }, 1100);
+}
+function stopFeed() { if (state.feedTimer) { clearInterval(state.feedTimer); state.feedTimer = null; } }
+
+/* ---------- 总渲染 ---------- */
+function render() { renderRoutines(); renderTasks(); renderDetail(); }
+render();
+setInterval(() => renderRoutines(), 30e3); // 倒计时刷新
+</script>
+</body>
+</html>

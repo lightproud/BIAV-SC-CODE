@@ -12,6 +12,59 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 2.2.0 — 2026-07-29
+
+Design round 3 shipped (`maestro-sdk-agent-assembly-design-20260729.md`; keeper
+rulings 裁1–裁5 + D2–D8, all settled interactively 2026-07-29). Four
+primitives — loop / routine / goal / background tasks — assembled on the
+existing families with two new modules and two field-level extensions:
+
+- **`assembly/agent-executor.ts` (campaign 7, ruling 裁2 — INJECTED, never
+  imported)**: `createAgentExecutor({ query, extract?, onMessage?, onResult?,
+  interruptGraceMs?, clock? })` fills the LedgerDriver executor seat with a
+  host-provided agent-SDK `query` function. Minimal structural shapes
+  (`AgentQueryHandle` / `AgentQueryFn`) re-declared under the GoalVerdict
+  verbatim-no-import discipline; the package keeps zero imports of and zero
+  runtime dependency on silver-core-agent-sdk (P1 stands). Named extractors
+  `extractPlainAgent` (payload.agent, Scheduler-envelope aware) /
+  `extractGoalRound` (host formatter over GoalRoundPayload) /
+  `extractWorkflowNode` (payload.node.agent). Fail-loud on request-less
+  payloads; abort bridges interrupt() → grace → close(); the last
+  `type: 'result'` message folds into the outcome; no automatic cross-attempt
+  resume (ruling D6 — recovery is the host's explicit reopen + payload.resume).
+  EXPERIMENTAL until its designated first consumer lands (design doc §10).
+- **`routine/manager.ts` (campaign 8, ruling 裁4)**: `RoutineManager` — the
+  duty-routine management face over the Scheduler (name / enable / disable /
+  triggerNow / list / get with lastFireAt + nextFireAt + lastSession).
+  Enabled-state is pure memory + host persistence (ruling D4 — no
+  RoutineStore seam). Manual fires mint `manual:{id}:{firedAt}`
+  (`manualFireSessionId`), a segment DELIBERATELY invisible to Scheduler
+  recovery; same-millisecond double fires adopt the existing session.
+  EXPERIMENTAL until its designated first consumer lands (design doc §10).
+- **`schedule/footprint.ts`**: the fire-point footprint parser extracted from
+  `Scheduler.#recover` into one shared pure core (`parseFirePoint` /
+  `latestFirePoint` / segment constants) — recovery behavior byte-for-byte
+  unchanged, and the RoutineManager reverse-lookup consumes the SAME parser
+  instead of a second copy that would drift.
+- **`WorkflowNode.manualClaim?: true` (ruling 裁3)**: confirmation-gate
+  nodes. A gate dispatches with `runAt: null` (pending + manualClaim,
+  invisible to claimDue) until the host claims and settles it — the Cowork
+  `awaiting_confirm` projection with ZERO new states; only the literal
+  `true` validates (hot-layer JSON discipline). Reject = cancelSession
+  (fail-fast); revise = reopen the plan node (T67 chains).
+- **`QueryRecord.costUsd?` / `OutcomeInput.costUsd?` / `ExecutorResult.costUsd?`
+  (ruling D2)**: attempt cost as a generic query-surface dimension. The
+  ledger transcribes (finite, >= 0 — rejected where it enters), never
+  computes; the driver forwards it verbatim; cumulative cost = Σ listQueries
+  (× reopenChain for a whole job).
+- **`docs/ASSEMBLY.md` + `examples/agent-loop.mjs`** (ruling D3 — no
+  LoopRunner; the combination IS the loop): the four-primitive wiring guide
+  and the fifth example, keyless-runnable proof of the injection shape
+  (RoutineManager triggerNow → driver → injected stub/real query → costed
+  ledger closeout).
+- Tests: +50 (schedule-footprint / agent-executor / routine-manager /
+  workflow-gate / ledger-cost / agent-loop e2e), 479 total.
+
 ## 2.1.0 — 2026-07-29
 
 Lockstep alignment only — silver-core-agent-sdk 2.1.0 (AskUserQuestion reports

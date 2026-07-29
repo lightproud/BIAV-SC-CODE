@@ -24,6 +24,13 @@ export type ExecutorResult = {
   outcome: 'ok' | 'error';
   error?: string;
   summary?: string;
+  /**
+   * What the attempt cost in USD (design round 3 ruling D2): forwarded
+   * verbatim into the query row's costUsd. An agent executor transcribes the
+   * engine's own estimate here; a timeout still forwards it — the attempt
+   * spent the money whether or not it finished.
+   */
+  costUsd?: number;
 };
 
 /**
@@ -309,6 +316,7 @@ export class LedgerDriver {
       outcome,
       ...(result.error !== undefined ? { error: result.error } : {}),
       ...(result.summary !== undefined ? { summary: result.summary } : {}),
+      ...(result.costUsd !== undefined ? { costUsd: result.costUsd } : {}),
       startedAt,
       endedAt: this.#clock.now(),
       // Fence on the claimed attempt (audit r4): if this attempt outran its

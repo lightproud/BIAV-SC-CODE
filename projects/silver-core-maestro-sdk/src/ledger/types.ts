@@ -132,4 +132,16 @@ export interface QueryRecord {
   error?: string;
   /** Bounded, host-facing result summary (data plane; rendering is host-side). */
   summary?: string;
+  /**
+   * What this attempt cost, in USD (design round 3 ruling D2, 2026-07-29):
+   * an optional generic dimension of the query surface — "what is running,
+   * what failed, what did it cost" is one query set serving every scenario
+   * (§4). The ledger never computes prices; the value is reported by the
+   * executor (an agent executor transcribes the engine's own estimate) and
+   * stored verbatim. Cumulative cost of a session = sum over listQueries;
+   * of a reopen chain = sum again along reopenChain. Absent on every row
+   * whose executor reported none (0.79.0 optional-field precedent; the
+   * state machine and event set are untouched).
+   */
+  costUsd?: number;
 }
