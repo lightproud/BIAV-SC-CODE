@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-29",
+  "generated": "2026-07-30",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 385,
-    "edges": 426,
-    "terms": 6851,
+    "concepts": 387,
+    "edges": 427,
+    "terms": 6885,
     "by_type": {
       "character": 72,
       "dataset": 95,
-      "documentation": 150,
+      "documentation": 152,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 23,
       "projects": 30,
-      "resource": 119,
+      "resource": 121,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 251
+      "search": 253
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 119
+      "count": 121
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 111
+      "degree": 112
     },
     "/characters/15604.md": {
       "type": "character",
@@ -4113,6 +4113,34 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md": {
+      "type": "documentation",
+      "title": "maestro-sdk-agent-assembly-design-20260729",
+      "description": "第一轮问「代码写得对不对」，第二轮问「作为产品是否成立」。第二轮的判词是：**一个被证明「造得出」、但只有一半被证明「有人要」的产品**——已验证三族（ledger / driver / scheduler）的两个消费方都在银芯仓内，实验面三族（goal / delivery / workflow）零真实调用点。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/maestro-sdk-agent-assembly-design-20260729.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md": {
+      "type": "documentation",
+      "title": "maestro-sdk-bpt-intervention-ui-mockup-20260729",
+      "description": "repo-engineering 产物（html）（格式：html）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/maestro-sdk-bpt-intervention-ui-mockup-20260729.html",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md": {
       "type": "documentation",
       "title": "maestro-sdk-design-review-20260726",
@@ -7201,6 +7229,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
         "提及:艾瑞卡",
         "mention"
@@ -9454,6 +9487,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md": [
       [
         "/characters/15603.md",
@@ -10510,6 +10550,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -10673,6 +10715,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -10899,7 +10942,8 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
     ],
     "assembly": [
-      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "assertcontentblind": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
@@ -11268,6 +11312,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
@@ -11845,6 +11890,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -12246,6 +12293,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -12606,6 +12655,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -12818,6 +12869,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -12857,6 +12910,9 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
+    ],
+    "delivery": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "delta": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
@@ -12903,6 +12959,7 @@
       "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
     ],
     "designs": [
@@ -13074,6 +13131,9 @@
     "drive": [
       "/projects/silver-core-sdk-doc-openai-protocol.md"
     ],
+    "driver": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "drop": [
       "/wiki-data/wiki-data-drops-by-item.md"
     ],
@@ -13144,6 +13204,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -13621,6 +13683,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "google": [
@@ -13963,6 +14026,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -14048,6 +14113,9 @@
     ],
     "internal": [
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+    ],
+    "intervention": [
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md"
     ],
     "interview": [
       "/assets/assets-interview-2026-04.md"
@@ -14489,6 +14557,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -14649,7 +14719,8 @@
     ],
     "ledger": [
       "/projects/silver-core-sdk-doc-reporting.md",
-      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "leg": [
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
@@ -14823,6 +14894,8 @@
     ],
     "maestro": [
       "/projects/project-silver-core-maestro-sdk.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -15044,6 +15117,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -15242,6 +15316,9 @@
       "/community/community-timeline.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
+    "mockup": [
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md"
     ],
     "modules": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -15829,6 +15906,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -16283,6 +16362,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -16609,6 +16690,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -16783,6 +16866,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -16997,6 +17082,9 @@
     "scan": [
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md"
     ],
+    "scheduler": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "schema": [
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/wiki-data/wiki-schema-banners-schema.md",
@@ -17088,6 +17176,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
@@ -17869,6 +17959,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -17971,7 +18063,8 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
-      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md"
     ],
     "unification": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
@@ -18279,6 +18372,7 @@
     "workflow": [
       "/memory/memory-ext-workflow-api-key-audit.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "world": [
@@ -18368,7 +18462,8 @@
       "/characters/77917.md"
     ],
     "一半": [
-      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "一单": [
       "/projects/project-site.md"
@@ -18508,6 +18603,7 @@
     ],
     "一轮": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "一遍": [
@@ -18581,6 +18677,9 @@
     ],
     "三态": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
+    "三族": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "三服": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
@@ -19044,6 +19143,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -19118,7 +19219,8 @@
     "不对": [
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "不少": [
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
@@ -19350,6 +19452,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -19712,6 +19816,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -19896,6 +20002,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "两个": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
     ],
@@ -20046,11 +20153,17 @@
     "个测": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md"
     ],
+    "个消": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "个符": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md"
     ],
     "个衰": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "个被": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "个语": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
@@ -20171,6 +20284,9 @@
     ],
     "为一": [
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
+    ],
+    "为产": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "为什": [
       "/characters/15566.md"
@@ -20620,6 +20736,9 @@
       "/projects/project-news.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
+    "二轮": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "二进": [
       "/assets/assets-images.md"
     ],
@@ -20781,7 +20900,8 @@
     ],
     "产品": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
-      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "产物": [
       "/README.md",
@@ -20797,6 +20917,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "产生": [
@@ -20913,6 +21034,9 @@
     "人能": [
       "/characters/77917.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "人要": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "人说": [
       "/characters/15576.md"
@@ -21123,6 +21247,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -21294,6 +21420,7 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "仓内": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "仓同": [
@@ -21410,6 +21537,7 @@
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
@@ -21867,6 +21995,9 @@
     "似死": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
+    "但只": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "但存": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
@@ -22155,6 +22286,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -22457,6 +22590,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -22668,7 +22803,8 @@
       "/README.md",
       "/characters/54116.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
-      "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
+      "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "作人": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -23718,6 +23854,9 @@
     "写入": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
+    "写得": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "写零": [
       "/README.md"
     ],
@@ -24242,6 +24381,7 @@
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "判词": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "利刃": [
@@ -24557,6 +24697,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -25155,6 +25297,9 @@
     ],
     "半径": [
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
+    ],
+    "半被": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "华丽": [
       "/characters/15584.md"
@@ -25958,7 +26103,8 @@
     ],
     "只有": [
       "/characters/15584.md",
-      "/characters/15602.md"
+      "/characters/15602.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "只留": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
@@ -26670,6 +26816,9 @@
     "否必": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
+    "否成": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "含义": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
@@ -26903,6 +27052,9 @@
     ],
     "品形": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
+    "品是": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "品本": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
@@ -27401,7 +27553,8 @@
       "/characters/15574.md"
     ],
     "在银": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "在错": [
       "/story/story_research_todo.md"
@@ -28054,6 +28207,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -28919,6 +29074,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -29598,6 +29755,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -29789,9 +29948,15 @@
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md"
     ],
+    "实调": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "实际": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+    ],
+    "实验": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "実久": [
       "/characters/15565.md",
@@ -29939,7 +30104,8 @@
     ],
     "对不": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "对你": [
       "/characters/54116.md"
@@ -30787,7 +30953,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "已验": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "巴拉": [
       "/characters/122587.md",
@@ -31757,6 +31924,9 @@
     "得先": [
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
     ],
+    "得出": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "得到": [
       "/characters/130901.md"
     ],
@@ -31771,6 +31941,9 @@
     ],
     "得她": [
       "/characters/15584.md"
+    ],
+    "得对": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "得易": [
       "/characters/15591.md"
@@ -32826,6 +32999,7 @@
     ],
     "成立": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "成簇": [
@@ -33782,6 +33956,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -34394,6 +34570,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -34766,6 +34944,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -35230,6 +35410,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -35548,6 +35730,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -36256,6 +36440,9 @@
     "方还": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
+    "方都": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "方队": [
       "/characters/77926.md"
     ],
@@ -36604,7 +36791,8 @@
       "/characters/77925.md"
     ],
     "是否": [
-      "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
+      "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "是她": [
       "/characters/15591.md"
@@ -36952,6 +37140,7 @@
     ],
     "有一": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
     ],
     "有两": [
@@ -36959,7 +37148,8 @@
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
     ],
     "有人": [
-      "/characters/15602.md"
+      "/characters/15602.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "有什": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
@@ -37433,6 +37623,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -37913,6 +38105,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -38592,6 +38786,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -38839,6 +39035,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -39404,6 +39602,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -39828,6 +40028,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -40539,7 +40741,8 @@
     "消费": [
       "/README.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
-      "/projects/project-silver-core-testbed.md"
+      "/projects/project-silver-core-testbed.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "消链": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -41880,6 +42083,7 @@
       "/memory/memory-ext-workflow-api-key-audit.md"
     ],
     "用点": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "用狂": [
@@ -42270,6 +42474,9 @@
       "/characters/125346.md",
       "/characters/15572.md"
     ],
+    "的两": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "的中": [
       "/characters/15580.md"
     ],
@@ -42283,7 +42490,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "的产": [
-      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "的人": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
@@ -42351,6 +42559,9 @@
     ],
     "的创": [
       "/characters/77926.md"
+    ],
+    "的判": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "的利": [
       "/characters/15582.md"
@@ -43133,6 +43344,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "真实": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "真对": [
@@ -43292,6 +43504,9 @@
     ],
     "码主": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
+    ],
+    "码写": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "码加": [
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
@@ -44039,8 +44254,14 @@
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
+    "第一": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "第三": [
       "/projects/project-silver-core-testbed.md"
+    ],
+    "第二": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "第四": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md",
@@ -45522,7 +45743,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
-      "/memory/memory-ext-active-silver-blackpool-interface.md"
+      "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "芯任": [
       "/README.md"
@@ -45921,6 +46143,9 @@
     ],
     "被系": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "被证": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "被静": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -46467,6 +46692,9 @@
     "访确": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "证三": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "证世": [
       "/characters/77926.md"
     ],
@@ -46562,7 +46790,8 @@
     ],
     "证明": [
       "/characters/15591.md",
-      "/characters/15594.md"
+      "/characters/15594.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "证确": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -46629,6 +46858,7 @@
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "词是": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "词检": [
@@ -46890,6 +47120,7 @@
     "调用": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
@@ -46994,6 +47225,9 @@
     "贵的": [
       "/characters/77917.md",
       "/resource/resource-proposal-dead-man-switch-design-20260726.md"
+    ],
+    "费方": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "费本": [
       "/README.md"
@@ -47433,6 +47667,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -47702,7 +47938,8 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "轮的": [
-      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "轮真": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
@@ -47712,6 +47949,9 @@
     ],
     "轮门": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
+    ],
+    "轮问": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "软的": [
       "/characters/15576.md"
@@ -48196,6 +48436,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -48467,6 +48709,9 @@
     "造大": [
       "/characters/54117.md"
     ],
+    "造得": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "造成": [
       "/characters/130901.md",
       "/characters/15560.md",
@@ -48636,7 +48881,8 @@
     ],
     "都在": [
       "/characters/77925.md",
-      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "都对": [
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
@@ -49315,6 +49561,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -49601,6 +49849,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -49718,6 +49968,7 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -50242,6 +50493,9 @@
     "零残": [
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md"
     ],
+    "零真": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
+    ],
     "零背": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
@@ -50364,6 +50618,9 @@
     ],
     "靠近": [
       "/characters/15586.md"
+    ],
+    "面三": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "面向": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
@@ -50635,8 +50892,12 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
+    ],
+    "验面": [
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "骨架": [
       "/memory/memory-ext-knowledge-layer-design.md",
@@ -50881,7 +51142,8 @@
     "agent": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
-      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "aggregate": [
       "/news-output/news-output-all.md",
@@ -51032,7 +51294,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "assembly": [
-      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "assessment": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -51204,6 +51467,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "bug": [
@@ -51624,6 +51888,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -51977,6 +52243,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -52176,6 +52444,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -52250,6 +52520,7 @@
       "/resource/resource-proposal-dead-man-switch-design-20260726.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
     ],
     "designs": [
@@ -52414,6 +52685,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -52733,6 +53006,9 @@
     "internal": [
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
+    "intervention": [
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md"
+    ],
     "interview": [
       "/assets/assets-interview-2026-04.md"
     ],
@@ -53008,6 +53284,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -53177,6 +53455,8 @@
     ],
     "maestro": [
       "/projects/project-silver-core-maestro-sdk.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -53331,6 +53611,9 @@
     "ml": [
       "/community/community-index.md",
       "/community/community-timeline.md"
+    ],
+    "mockup": [
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md"
     ],
     "modules": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -53841,6 +54124,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -54090,6 +54375,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
@@ -54455,6 +54742,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -54508,7 +54797,8 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
-      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md"
     ],
     "unification": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"

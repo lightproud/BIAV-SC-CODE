@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-29",
+  "generated": "2026-07-30",
   "stats": {
-    "nodes": 385,
-    "edges": 426
+    "nodes": 387,
+    "edges": 427
   },
   "nodes": [
     {
@@ -3235,6 +3235,28 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "type": "documentation",
+      "title": "maestro-sdk-agent-assembly-design-20260729",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
+      "type": "documentation",
+      "title": "maestro-sdk-bpt-intervention-ui-mockup-20260729",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "type": "documentation",
       "title": "maestro-sdk-design-review-20260726",
@@ -5921,6 +5943,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
