@@ -263,3 +263,45 @@ export function formatCatN(
   }
   return { text: out.join('\n'), linesEmitted: out.length, charCapped, truncatedLines };
 }
+
+/** Keys shown by describeInputShape before eliding the rest. */
+const SHAPE_KEYS_SHOWN = 10;
+
+/**
+ * One-line diagnosis appended to a parameter type-check failure: what actually
+ * arrived in place of the expected field, plus the input's key set. Lets a
+ * reader (the model, or a human scanning the transcript) tell "the model sent
+ * the wrong shape" from "a hook / gateway rewrite dropped the field" at a
+ * glance — a bare `must be a string` cannot distinguish the two, and the
+ * 2026-07-29 BPT case (a PreToolUse updatedInput REPLACING Edit's input with a
+ * path-only object) burned several blind retries on exactly that ambiguity.
+ * Key names only — never values, which may hold secrets or whole file bodies.
+ */
+export function describeInputShape(
+  input: Record<string, unknown>,
+  field: string,
+): string {
+  const v = input[field];
+  const kind =
+    v === undefined
+      ? field in input
+        ? 'undefined'
+        : 'absent'
+      : v === null
+        ? 'null'
+        : v === ''
+          ? 'an empty string'
+          : Array.isArray(v)
+            ? 'an array'
+            : typeof v === 'object'
+              ? 'an object'
+              : `of type ${typeof v}`;
+  const keys = Object.keys(input);
+  const shown = keys
+    .slice(0, SHAPE_KEYS_SHOWN)
+    .map((k) => JSON.stringify(k))
+    .join(', ');
+  const suffix =
+    keys.length > SHAPE_KEYS_SHOWN ? `, +${keys.length - SHAPE_KEYS_SHOWN} more` : '';
+  return `"${field}" was ${kind}; received input keys: [${shown}${suffix}]`;
+}

@@ -155,6 +155,8 @@ export class DefaultPermissionGate implements PermissionGate {
        * escaping it. With no canUseTool handler (or dontAsk) it fails closed.
        */
       sandboxEscape?: boolean;
+      /** Schema-required input keys, for the dropped-key diagnostic below. */
+      requiredInputKeys?: readonly string[];
     },
   ): Promise<PermissionCheckResult> {
     const { toolUseID, signal, readOnly, isFileEdit, hook } = opts;
@@ -167,6 +169,15 @@ export class DefaultPermissionGate implements PermissionGate {
     // A hook allow/ask may rewrite the input; that rewrite is what a deny rule
     // must be re-checked against and what canUseTool ultimately approves.
     const effectiveInput = (hookAllow || hookAsk) ? (hook?.updatedInput ?? input) : input;
+    if ((hookAllow || hookAsk) && hook?.updatedInput !== undefined) {
+      this.warnDroppedRequiredKeys(
+        'PreToolUse hook',
+        toolName,
+        input,
+        hook.updatedInput,
+        opts.requiredInputKeys,
+      );
+    }
 
     // ----- STEP 1: hooks -----------------------------------------------------
     if (hookDeny) {
@@ -366,6 +377,15 @@ export class DefaultPermissionGate implements PermissionGate {
       // before allowing. Deny wins outright - a denied call applies no session
       // permission updates.
       const eff = result.updatedInput ?? baseInput;
+      if (result.updatedInput !== undefined) {
+        this.warnDroppedRequiredKeys(
+          'canUseTool callback',
+          toolName,
+          baseInput,
+          result.updatedInput,
+          opts.requiredInputKeys,
+        );
+      }
       const denied = this.disallowedDeny(toolName, toolUseID, eff);
       if (denied) return denied;
       if (result.updatedPermissions && result.updatedPermissions.length > 0) {
@@ -593,6 +613,39 @@ export class DefaultPermissionGate implements PermissionGate {
     if (behavior === 'allow') this.sessionAllowRules = rules;
     else if (behavior === 'deny') this.sessionDenyRules = rules;
     else this.sessionAskRules = rules;
+  }
+
+  /**
+   * Dropped-required-key diagnostic (keeper ruling 2026-07-29). `updatedInput`
+   * REPLACES the input wholesale — official semantics, not a merge. A host
+   * that returns only the fields it changed silently drops every other field,
+   * and the tool then rejects a "missing" required parameter the model DID
+   * send; from the transcript that reads as a flaky tool (the BPT Edit
+   * `old_string` case: a path-normalizing hook returned a path-only object, so
+   * Read kept working while every Edit failed). Behavior is unchanged — the
+   * rewrite still wins — but the drop is named here while it happens. Only
+   * keys the ORIGINAL input actually carried count: a key the model never
+   * sent is the model's omission, not the rewriter's.
+   */
+  private warnDroppedRequiredKeys(
+    source: string,
+    toolName: string,
+    original: Record<string, unknown>,
+    updated: Record<string, unknown>,
+    requiredKeys: readonly string[] | undefined,
+  ): void {
+    if (requiredKeys === undefined || requiredKeys.length === 0) return;
+    if (updated === original) return;
+    const dropped = requiredKeys.filter(
+      (k) => original[k] !== undefined && updated[k] === undefined,
+    );
+    if (dropped.length === 0) return;
+    this.debug(
+      `permissions: ${source} updatedInput for "${toolName}" dropped required ` +
+        `input key(s) ${dropped.map((k) => `"${k}"`).join(', ')} that the model sent - ` +
+        `updatedInput REPLACES the input (it is not merged); return the FULL ` +
+        `input with your changes applied`,
+    );
   }
 
   /** Record the denial and build a message naming the tool and deciding stage. */

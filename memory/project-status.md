@@ -82,10 +82,10 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `2.2.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `2.2.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `2.2.1` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `2.2.1` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
-| agent SDK 源文件 / 测试档 | 141 / 211 | 磁盘实况 |
+| agent SDK 源文件 / 测试档 | 141 / 212 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 20 / 40 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 144 | 磁盘实况 |
@@ -220,8 +220,8 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
+- **v2.2.1（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 2.2.1（输入形状诊断）前进。
 - **v2.2.0（2026-07-29）**：**设计第三轮落地（四原语装配，agent 侧纯锁步）**——设计档 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-agent-assembly-design-20260729.md`（裁1–裁5 + D2–D8 十一项当日交互裁定）当日实现：第七族 `assembly/agent-executor.ts`（**注入式** `createAgentExecutor` + `extractPlainAgent`/`extractGoalRound`/`extractWorkflowNode`——宿主递 query 函数进驱动器执行座位，本包对 agent SDK 维持零 import 零依赖、P1 不重开；fail-loud 无请求即响亮落错；abort 桥接 interrupt→宽限→close；重试=重跑，恢复=宿主 reopen+payload.resume，D6）+ 第八族 `routine/manager.ts`（`RoutineManager` 值班例程管理面：命名/停启/triggerNow/lastFireAt·nextFireAt·lastSession 反查；停启表纯内存+宿主持久化 D4；手动触发幂等键 `manual:{id}:{firedAt}` **独立段永不污染 Scheduler 恢复足迹**）+ 足迹解析抽出 `schedule/footprint.ts` 单一共享纯核（Scheduler 恢复行为逐字节不变）+ `WorkflowNode.manualClaim` 确认门节点（`runAt:null` 派发停在 pending+manualClaim，Cowork awaiting_confirm 投影**零新状态**，裁3；拒绝=cancelSession fail-fast、修订=reopen 链）+ `QueryRecord.costUsd` 成本入账（D2：executor 转录引擎估算，驱动器转发，Σ listQueries 即会话累计）+ `docs/ASSEMBLY.md` 四原语接线谱 + 例程五号 `agent-loop.mjs`（无钥可跑的注入式活体证明；**不建 LoopRunner，组合即 loop**，D3；宪章 §3 已补 D8 覆盖注）。测试 429→479（+50）。两新族按两级标尺标实验面并**随档指定首消费方**（设计档 §10——memory-tidy 生产化 / BPT Cowork / testbed·store-patrol 例程面改造），防 P2 判词重演。
-- **v2.1.0（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 2.1.0（AskUserQuestion 结局语义分离 + 结构化 `outcome`）前进。
 - **v1.6.0 / v1.4.1（2026-07-29）**：锁步对齐两连（本包零代码改动）——家族版本钟随 agent SDK 1.6.0（T75 二次拷问：dream 信号源指针段 + 巡回只读预设）与 1.4.1（`setServers()` 改增量 diff，BPT 缺陷 D）前进。
 - **v2.0.0（2026-07-29）**：**锁步对齐（家族首个 major，本包零运行时改动）**——随 agent SDK 2.0.0（T75：cards 退役 BREAKING + frontmatter + 选择性附着）前进；本包面无破坏，agent 侧 cards 消费者先迁移再 pin。
 - **v1.4.0（2026-07-28）**：**审计第十七波（本包份额）**——两处**只被测试替身的宽容挡住**的真缺陷：①`claimDue` 把 `limit`（即 `LedgerDriver.maxConcurrent` 的批量上限）套在存储**恰好**返回的顺序上，而 `LedgerStore` 契约**根本不规定顺序**（随包契约套件比对前一律先排序 id，即顺序刻意在契约外）。全部测试替身都是 Map 支撑、列举序恰好等于派发序也就等于到期序，于是这条从来没被测过：对一个**完全合规**、按最新在前列举的存储，`maxConcurrent: 1` + 三个恒到期会话，实测 30 个 tick 里同一个会话占满槽位、另两个**一次没跑**；即便在内存存储上，5000/1000/100ms 三个到期点也会认领**最不逾期**的那个。现按 `nextRunAt` → `createdAt` 排序，完全并列者靠稳定排序保留存储序 · ②**32 位定时器溢出把每个毫秒旋钮顶部反转**：`systemClock.setTimeout` 把延时直接交给全局定时器，而超过 2^31-1 ms 后 Node 不是睡更久、是**溢出成 1 ms**。30 天的 `queryTimeoutMs` 通过了构造期的有限/正数校验，然后在执行器第一个 `await` 恢复之前就中止了每一次尝试、落 `retrying` + `lastError: 'timeout'`——**没有任何一次尝试可能完成**；同一反转把刻意设稀的 `pollIntervalMs`（驱动器与调度器皆然）变成对宿主存储的 1 ms 锤击。仅在交给全局的那一步封顶，注入钟与 NaN/Infinity 不动。
@@ -347,8 +347,8 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v2.2.1（2026-07-29）**：**输入形状诊断（守密人裁定 2026-07-29，BPT Edit `old_string` 盲试循环案）**——黑池会话里 Edit 连报 `"old_string" must be a string`、模型换多个 old_string 重试均同错、误判「工具层暂时故障」，银芯排查判定 SDK 自身路径全数无辜（截断输入两代都不执行：0.63.1 前抛协议错、H4 起打标拒执行；两臂拼装零「JSON 修补」），真因锁定宿主侧改写——头号嫌疑 = PreToolUse `updatedInput` 只回传改过的路径字段，而 `updatedInput` 语义是**整体替换非合并**（与官方一致），故 Read（只需 file_path）一路正常、Edit 必炸。两条诊断增强落地、零行为变化：①Edit/Write 参数类型报错保留历史前缀、追加实际收到的形状（`"old_string" was absent; received input keys: ["file_path"]`，只给键名防泄密）；②权限门 `check` 增诊断性 `requiredInputKeys`（只喂内建工具一手 schema，MCP 第三方 schema 不可信故跳过），hook / canUseTool 两处替换缝若丢掉模型确实发过的必填键，debug 日志点名改写方 + 明示「return the FULL input」；模型本就没发的键不赖改写方。`tests/input-shape-diagnostics.test.ts` 11 例锁定；全量 3438 绿。memory 工具「/memories/pitfalls 越界」报错同场核验为挂载访问控制设计内行为，非缺陷。
 - **v2.2.0（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 maestro SDK 2.2.0（设计第三轮四原语装配：注入式 AgentExecutor / RoutineManager / workflow 确认门 / costUsd 入账）前进；本包刻意零供给，执行座位只消费公开 `query()` 面（硬性质 §1.2 的成立证明）。
-- **v2.1.0（2026-07-29）**：**AskUserQuestion 不再把宿主侧机械事实翻译成「用户拒绝回答」（BPT 请求 D1/D2/D3）**——原实现把三种毫不相干的结局压成同一句 `User declined to answer.`：handler **抛异常**（IPC 断 / 渲染进程崩 / 宿主 bug）、handler 返回 `null`（契约里中性的「没有答案数组」信号——问询窗口关了 / 无 UI / 宿主策略跳过）、以及真正的拒答。前两种与用户意愿毫无关系，而模型读到「拒绝」就会向用户复述一个从未发生的动作——黑池的问询 UI **根本没有取消按钮**，SDK 报的是其用户物理上做不到的事。现两条路径只陈述机械事实（「没拿到答案」）并明说意图未知；`null` 路径追加「不要假定用户拒绝」防模型把文案不再断言的东西重新推断回来。抛异常路径改走 `thrownMessage()`（`resources.ts` / `webfetch.ts` / `websearch.ts` 同款助手），非 `Error` 抛值（字符串 / `{message}` 对象）不再渲染成 `undefined`。**新增结构化产出** `AskUserQuestionStructuredOutput`（包根导出）：`outcome`（`answered` / `no_answer` / `handler_error` / `not_configured` / `invalid_input`）+ 本 SDK 自有的 `UserQuestionAnswer[]` + 失败时的 `error`——此前消费方区分「宿主故障」与「无答案」**只能字符串匹配那句写死的英文**，正是 `internal/contracts.ts` 明文禁止的（「Text is a rendering; rendering is not an interface」），且已让 SDK 的内部措辞在黑池 PostToolUse 钩子里事实上变成公开契约（改一个词即静默失配）。**故意不设** `declined` 成员：那属于「宿主能说出用户拒绝了」的场合，永不由 SDK 推断。官方 `AskUserQuestionOutput`（permission-component 的 answers 映射 / annotations / afkTimeoutMs）**维持 2026-07-27 裁定不发货**，本次发的是回调真正产出的事实（与当初加 `ReadMcpResourceOutput.error` 同一条理由）。零产出面台账 `structured-output-census` 中 `askuserquestion` 毕业除名。行为不变项经测试锁定：abort 形抛值仍抛 `AbortError` 不产 tool_result，正常答案仍按 header 渲染。
 - **v2.0.0（2026-07-29）**：**T75 设计轮实现落地（首个 major·BREAKING·记忆面收敛 Claude 形态）**——黑池 cards 消费面经守密人交互核实「无消费」清门后当日实现：①cards 模式整体退役（`schema:'cards'` / `memory.cards` / `parseMemoryCards` / `validateCardsContent` 及类型全下架；迁移 = 换 `schema:'frontmatter'`、旧档 delete+create 换 YAML 头卡文保留，testbed 做梦卡随步迁作参照例）；②`schema:'frontmatter'` 写侧校验器双层落地 + 官方 memory-instructions 全文 verbatim 注入（`MEMORY_FRONTMATTER_SOURCES` 逐档 provenance + corpus-sync 守卫）；③选择性附着 `memory.attachment`（官方挑选器提示词、≤5 档、pinned 恒附着不占名额、25600 字节预算披露截断、失败降级 pinned-only、硬依赖 frontmatter）+ 计费面（挑选器 usage 入会话账、`attachmentInjectionTokens` 入 memoryHealth）+ 健康扫描 frontmatter 完整率维度；T75 销案，COMPAT #9 行转 SHIPPED。
 - **v1.6.0（2026-07-29）**：**T75 二次拷问落地**——dream 信号源「指针段+预设」（`transcripts` opt-in + `consolidationToolOptions()` 只读 harness 下限，闭合 E-⑤）；frontmatter + 选择性附着「直接开设计轮」，r1 需求档已于同日三/四轮追裁定稿（cards 裁退役并入 §一实现步、附着按案、pinned 采纳、when_to_save 官方全文注入）。
 - **v1.5.0（2026-07-29）**：**十条观察项拷问裁定全落地**——守密人逐条过堂（#7 收紧、#9 扩大收编两处否决推荐案）：AskUserQuestion 三处全补 · Agent 描述官方复现 + 描述治理完备性守卫 · Glob/Grep 忽略集披露 · Read 路径归一 + 256KB 拒读堵大 limit 绕过 · Grep rg 方言兼容垫 + type 报错自愈 · 冷/热分层守卫 · 记忆索引官方链接格式 + 双态容量预警；frontmatter 等三项挂 T75 设计轮。

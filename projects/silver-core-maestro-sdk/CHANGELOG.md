@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 2.2.1 — 2026-07-29
+
+Lockstep alignment only — silver-core-agent-sdk 2.2.1 (input-shape
+diagnostics: Edit/Write type errors name the actual received shape, and the
+permission gate names the hook/canUseTool whose `updatedInput` replacement
+dropped a schema-required key). No maestro-side changes.
+
 ## 2.2.0 — 2026-07-29
 
 Design round 3 shipped (`maestro-sdk-agent-assembly-design-20260729.md`; keeper

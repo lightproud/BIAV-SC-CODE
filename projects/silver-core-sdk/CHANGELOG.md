@@ -16,6 +16,49 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 2.2.1 — 2026-07-29
+
+Input-shape diagnostics: a required parameter that vanishes between the model
+and a tool is now tellable from a model mistake (keeper ruling 2026-07-29,
+after the BPT `Edit failed: "old_string" must be a string.` retry loop).
+
+Root cause of that loop, established by the silver-core investigation: the
+SDK's own paths were exonerated (a truncated tool_use input never executes —
+pre-0.63.1 threw, H4+ stamps it non-executable; both stream arms append
+argument bytes verbatim with no JSON "repair"), so an input that ARRIVES as
+valid JSON with `file_path` but no `old_string` was reshaped by a host-side
+rewrite — the prime suspect being a PreToolUse `updatedInput` that returned
+only the path field it changed. `updatedInput` REPLACES the input wholesale
+(official semantics, not a merge), which also explains the tell: Read
+(path-only schema) kept working while every Edit failed. Neither diagnostic
+changes behavior; both make the next such case one transcript read instead of
+a blind-retry session.
+
+- **Edit/Write type-check errors name the ACTUAL received shape.** New
+  internal helper `fsutil.describeInputShape` (not package-root exported)
+  appends the offending field's kind (`absent` / `undefined` / `null` / `an
+  empty string` / `an array` / `an object` / `of type number`) and the
+  received key list, first 10 keys then `+N more`. Key NAMES only, never
+  values (values may hold secrets or whole file bodies). Historic prefixes
+  are preserved verbatim (`Edit failed: "old_string" must be a string`), so
+  hosts matching on them keep matching; the shape rides in a trailing
+  parenthetical.
+- **The permission gate names the party whose rewrite dropped a required
+  key.** `gate.check` opts grow diagnostic-only `requiredInputKeys`
+  (internal contract, fed by tool-dispatch from BUILT-IN tool schemas only —
+  MCP schemas are third-party and `required` there is unreliable). At both
+  rewrite seams (PreToolUse hook `updatedInput`, canUseTool `updatedInput`)
+  the gate debug-logs which required key(s) present in the original input are
+  missing after the replacement, names the rewriting party, and states the
+  replace-not-merge rule with the fix ("return the FULL input with your
+  changes applied"). Keys the model never sent are the model's omission and
+  are not blamed on the rewriter; the rewrite itself still wins unchanged.
+- `tests/input-shape-diagnostics.test.ts` (11 tests): shape descriptor kinds /
+  key-elision / no-values-ever; Edit path-only (the BPT case), wrong-typed
+  array, Write path-only; gate warning at both seams, silence when every
+  required key survives, silence for model-omitted keys, and the
+  requiredInputKeys-absent (MCP) skip.
+
 ## 2.2.0 — 2026-07-29
 
 Lockstep alignment only — no changes to this package. The family clock

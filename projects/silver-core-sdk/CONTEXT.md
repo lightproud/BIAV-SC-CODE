@@ -71,12 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `2.2.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.2.0`
+**当前版本 `2.2.1`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.2.1`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
+**v2.2.1（2026-07-29）：输入形状诊断——「参数在路上被谁弄丢」一眼可辨（守密人裁定，BPT Edit old_string 盲试循环案）**——Edit/Write 参数类型报错在历史文案前缀不变的前提下追加实际收到的形状（缺席字段的种类 + 键清单，只给键名不给值）；权限门 `check` 新增诊断性 `requiredInputKeys`（tool-dispatch 只喂内建工具 schema），PreToolUse hook / canUseTool 两处 `updatedInput` 整体替换若丢掉模型确实发过的必填键，debug 日志点名改写方并明示「replace 非 merge」。零行为变化；11 项新测试锁定。
 **v2.2.0（2026-07-29）：锁步对齐**——本包零代码改动，随 maestro SDK 2.2.0（设计第三轮：注入式 AgentExecutor / RoutineManager 例程管理面 / workflow 确认门 / query 行成本入账）前进。本包刻意零供给：执行座位只消费公开 `query()` 面——硬性质 §1.2 成立的证明，不是缺口。
 
 **v2.1.0（2026-07-29）：AskUserQuestion 只报「怎么结束的」，不替宿主断言用户意图（BPT 请求）**——handler 抛异常与返回 `null` 曾共用同一句 `User declined to answer.`，两者都是宿主侧机械事实，模型据此向用户复述从未发生的拒答（黑池 UI 连取消按钮都没有）。现两路各说各的机械事实并明示「意图未知」，抛值经 `thrownMessage()` 保住诊断；新增结构化产出 `AskUserQuestionStructuredOutput`（`outcome` 五态 + 本包自有 `UserQuestionAnswer[]` + `error`），消费方分流不必再字符串匹配写死文案。官方 permission-component 形状仍不发货。
