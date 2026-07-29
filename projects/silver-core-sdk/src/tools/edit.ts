@@ -24,6 +24,7 @@ import type {
 import { AbortError, isAbortError } from '../errors.js';
 import {
   adaptEditToLineEndings,
+  describeInputShape,
   formatCatN,
   isLossyUtf8,
   looksBinary,
@@ -108,21 +109,35 @@ export const editTool: BuiltinTool = {
         throw new AbortError();
       }
 
+      // Type-check failures name the ACTUAL shape received (keys + offending
+      // field's kind): a required field that vanishes between the model and
+      // the tool (hook updatedInput replacement, gateway rewrite) is otherwise
+      // indistinguishable from a model mistake, and reads as a flaky tool.
       const filePath = input['file_path'];
       if (typeof filePath !== 'string' || filePath.length === 0) {
-        return errorResult('Edit failed: "file_path" must be a non-empty string.');
+        return errorResult(
+          'Edit failed: "file_path" must be a non-empty string ' +
+            `(${describeInputShape(input, 'file_path')}).`,
+        );
       }
       const oldString = input['old_string'];
       if (typeof oldString !== 'string') {
-        return errorResult('Edit failed: "old_string" must be a string.');
+        return errorResult(
+          `Edit failed: "old_string" must be a string (${describeInputShape(input, 'old_string')}).`,
+        );
       }
       const newString = input['new_string'];
       if (typeof newString !== 'string') {
-        return errorResult('Edit failed: "new_string" must be a string.');
+        return errorResult(
+          `Edit failed: "new_string" must be a string (${describeInputShape(input, 'new_string')}).`,
+        );
       }
       const replaceAllRaw = input['replace_all'];
       if (replaceAllRaw !== undefined && typeof replaceAllRaw !== 'boolean') {
-        return errorResult('Edit failed: "replace_all" must be a boolean when provided.');
+        return errorResult(
+          'Edit failed: "replace_all" must be a boolean when provided ' +
+            `(${describeInputShape(input, 'replace_all')}).`,
+        );
       }
       const replaceAll = replaceAllRaw === true;
 

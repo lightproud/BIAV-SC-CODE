@@ -509,6 +509,17 @@ export type GlobOutput = {
 /** Output of the Grep tool. Shape varies by `mode`. */
 export type GrepOutput = {
   mode?: 'content' | 'files_with_matches' | 'count';
+  /**
+   * MODE-DEPENDENT, and the two readings differ (documented 2026-07-29 — the
+   * semantics were always this way, the contract just never said so, so a
+   * consumer carrying the `files_with_matches` intuition over to `count` read
+   * an inflated number as "files that matched"):
+   * - `files_with_matches`: files that MATCHED (the listed ones).
+   * - `content` / `count`: files SCANNED — the corpus this call actually read,
+   *   including files with no match and ones skipped as unreadable/binary/
+   *   oversize. In those modes the rows are lines or per-file counts, so a
+   *   matched-file tally is not what the field can honestly carry.
+   */
   numFiles: number;
   filenames: string[];
   content?: string;

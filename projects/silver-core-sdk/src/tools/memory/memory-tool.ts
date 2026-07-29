@@ -446,7 +446,15 @@ export function createMemoryTool(
         if (isAbortError(e)) {
           throw new AbortError('memory was aborted');
         }
-        return done(errorResult((e as Error).message));
+        // An injected MemoryStore (database / intranet backend) may reject with
+        // a NON-Error value (a bare string, a driver `{code}` object). The
+        // `(e as Error).message` cast then read `undefined`, so the failure rode
+        // out as an is_error tool_result with `content: undefined` — no reason
+        // for the model, and an undefined content that dispatch does not
+        // normalize (it collapses only empty ARRAYS), risking a 400 on the next
+        // turn. Same non-Error guard the sibling host-callback tools already
+        // carry (contract-suite / resources / webfetch / websearch, L74).
+        return done(errorResult(e instanceof Error ? e.message : String(e)));
       }
     },
   };

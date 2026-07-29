@@ -16,6 +16,161 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 2.2.3 — 2026-07-29
+
+The rest of the 2.2.2 audit's observation batch, ruled in ("修复 then merge"):
+the remaining silent fallbacks, plus three places the tool told the caller
+something that was not true. Same principle throughout — an option that is
+PRESENT but mis-typed is named, never quietly replaced with a default;
+`undefined` (omitted) stays the one silent path.
+
+- **Grep/Glob `path` non-string silently searched the cwd.** `path: ["src"]`
+  or `path: 123` fell back to `.` and returned a full-confidence answer for the
+  WRONG scope — the failure Read already refuses by type-checking its own path.
+  Both tools now reject it.
+- **Grep option params were dropped silently when mis-typed.** `'-i': "true"`
+  searched case-sensitively; `'-C': "2"` collapsed the context to zero;
+  `glob: ["*.ts","*.tsx"]` (the natural reading of ripgrep's repeatable `-g`)
+  discarded the filter and searched the whole tree; a string / NaN `head_limit`
+  reverted to 250. All of `-i` / `-n` / `multiline` / `-o` (booleans) and
+  `-A` / `-B` / `-C` / `context` / `offset` / `head_limit` (counts) plus `glob`
+  now error, and the glob message says how to spell a multi-extension filter
+  here (`"*.{ts,tsx}"`). The V6-3 negative-`head_limit` rejection is now served
+  by that shared guard instead of its own check.
+- **Grep claimed an ignore set that had not applied.** An explicit FILE target
+  bypasses `node_modules`/`.git` filtering entirely — it can BE a file inside
+  `node_modules` — yet a zero-match result still appended "node_modules and
+  .git are always excluded". Disclosed only for directory searches now; three
+  existing assertions that had encoded the inaccurate text were corrected.
+- **Bash `structuredOutput.truncated` was sniffed out of its own rendered
+  text.** A regex over stdout/stderr looked for the truncation marker, so
+  `printf '[5 earlier chars dropped: x'` reported truncation that never
+  happened — while `CappedStream` held the real dropped count and never
+  published it. The flag now comes from that measurement (the marker sniff
+  survives only as a fallback for a synthesized outcome carrying none).
+- **Bash background launch had no structured output.** The shell id — the one
+  fact that branch produces — was reachable only by regexing it back out of
+  "Command running in background with id: bash_1". It now rides
+  `backgroundTaskId`, the official field for it; the stream fields are honestly
+  empty (nothing read yet, no exit code). This was the last data-bearing
+  success branch in the tool without a structured result.
+- **A NUL byte in a Bash command was reported as a shell-config failure.**
+  `spawn` throws synchronously on it, which surfaced as
+  `ConfigurationError: Bash: failed to spawn a shell` — an ENVIRONMENT verdict
+  for a MODEL-correctable argument, sending the host to check its shell
+  install. Rejected up front now, with a message naming the actual problem.
+- **SendMessage let a bridge throw fall through to the dispatcher.** Every
+  sibling host-callback tool wraps its callback; this one did not, so a failure
+  lost this tool's error voice and a non-Error throw rendered as `undefined`.
+  Wrapped, with the same `thrownMessage` helper (L74).
+- **`GrepOutput.numFiles` is mode-dependent and the contract never said so.**
+  It counts MATCHED files in `files_with_matches` but SCANNED files in
+  `content`/`count`, so a consumer carrying the first intuition into the second
+  read an inflated number as "files that matched". Documented on the type; the
+  behavior is unchanged (it is the honest count available in those modes).
+- Also: a truncation cut landing right after a `--` hunk separator left that
+  separator dangling as the last row, spending one of the caller's `head_limit`
+  rows on nothing; trailing separators are now dropped. And `displayTruncated`
+  is documented as defense-in-depth — it is unreachable today (collection is
+  capped, so `matchesCut` is what reports a cut) and deliberately NOT relaxed
+  to `>=`, which would report truncation for a scan that ended with exactly
+  `head_limit` rows.
+- `tests/tool-param-robustness.test.ts` grows to 21 tests.
+
+## 2.2.2 — 2026-07-29
+
+Tool-call parameter robustness: a follow-up sweep for the same family as the
+2.2.1 BPT case — tool params that SILENTLY produce a wrong result (or crash the
+whole call) instead of working or erroring diagnosably. Seven fixes from a
+three-agent audit of the full tool surface; the permission-flag lens (a
+mutating tool mislabeled `readOnly` would auto-approve in every mode) came back
+clean, as did mount/boundary enforcement and worktree/plan state.
+
+- **Grep `glob: "!*.test.ts"` emptied the corpus (HIGH).** A lone negative glob
+  has nothing to subtract from — fast-glob returns `[]` for a pattern list with
+  no positive member — so ripgrep's `-g '!x'` idiom ("search everything EXCEPT
+  x", which the "built on ripgrep" description invites and `normalizeGlobDepth`
+  models by passing `!` through) reported "No matches found" over files that
+  plainly contained the needle. Now a lone negation enumerates `['**/*', '!x']`,
+  excluding from all files; the type-extension post-filter still narrows a
+  `glob:'!x' + type:'js'` call. `Glob` had the identical bug for a lone-negative
+  `pattern` (`!**/*.md` → "No files found") and the identical fix.
+- **Bash `run_in_background: "true"` (a string) silently ran FOREGROUND (HIGH).**
+  The strict `=== true` check let a string fall through to inline execution, so
+  a long-running server the model meant to detach was run inline and then
+  SIGTERM/SIGKILL'd at the 120s timeout — no diagnostic. A non-boolean is now
+  rejected with a message naming the received type; `undefined` is the ordinary
+  foreground path.
+- **Bash `timeout: "5000"` (a string) silently used the 120s default (MED).** A
+  model that believed it had capped a dangerous command at 5s ran it under the
+  default instead. A present-but-non-positive-finite-number `timeout` is now
+  rejected diagnosably (`undefined` still means "use the default"). Both Bash
+  fixes follow the 2.2.1 diagnose-don't-guess stance Read/Grep already take.
+- **WebSearch crashed on a `null` backend element (MED).** `filterResults` /
+  `renderResults` run OUTSIDE the backend try/catch and dereference `r.url`, so
+  a single `null` in the results array threw a bare TypeError that dispatch
+  turned into a generic "Tool WebSearch failed" — losing every real hit. Null /
+  non-object entries are now dropped before filter/render, matching the tool's
+  existing lax-backend tolerance and the per-element guards in
+  askuserquestion / todo.
+- **AskUserQuestion answer text could forge extra record lines (LOW).** The
+  line-oriented answer digest embedded host-handler strings without collapsing
+  newlines, so an answer carrying `\n` forged a second `Header: value` record —
+  the same forgery WebSearch's `renderResults` was hardened against in 1.4.0.
+  `header` and each answer now pass through `singleLine`.
+- **memory tool surfaced a non-Error store rejection as `content: undefined`
+  (MED).** An injected `MemoryStore` (the documented database/intranet seam)
+  rejecting with a non-Error value (`throw 'db down'`, a driver `{code}` object)
+  hit `(e as Error).message` → `undefined`, so the failure rode out as an
+  is_error result with no reason and an undefined content dispatch does not
+  normalize. Now `String()`-coerced — the same L74 non-Error guard the sibling
+  host-callback tools (contract-suite / resources / webfetch / websearch /
+  askuserquestion) already carry; the runtime memory tool was the one miss.
+- `tests/tool-param-robustness.test.ts` (11 tests) locks all seven.
+
+## 2.2.1 — 2026-07-29
+
+Input-shape diagnostics: a required parameter that vanishes between the model
+and a tool is now tellable from a model mistake (keeper ruling 2026-07-29,
+after the BPT `Edit failed: "old_string" must be a string.` retry loop).
+
+Root cause of that loop, established by the silver-core investigation: the
+SDK's own paths were exonerated (a truncated tool_use input never executes —
+pre-0.63.1 threw, H4+ stamps it non-executable; both stream arms append
+argument bytes verbatim with no JSON "repair"), so an input that ARRIVES as
+valid JSON with `file_path` but no `old_string` was reshaped by a host-side
+rewrite — the prime suspect being a PreToolUse `updatedInput` that returned
+only the path field it changed. `updatedInput` REPLACES the input wholesale
+(official semantics, not a merge), which also explains the tell: Read
+(path-only schema) kept working while every Edit failed. Neither diagnostic
+changes behavior; both make the next such case one transcript read instead of
+a blind-retry session.
+
+- **Edit/Write type-check errors name the ACTUAL received shape.** New
+  internal helper `fsutil.describeInputShape` (not package-root exported)
+  appends the offending field's kind (`absent` / `undefined` / `null` / `an
+  empty string` / `an array` / `an object` / `of type number`) and the
+  received key list, first 10 keys then `+N more`. Key NAMES only, never
+  values (values may hold secrets or whole file bodies). Historic prefixes
+  are preserved verbatim (`Edit failed: "old_string" must be a string`), so
+  hosts matching on them keep matching; the shape rides in a trailing
+  parenthetical.
+- **The permission gate names the party whose rewrite dropped a required
+  key.** `gate.check` opts grow diagnostic-only `requiredInputKeys`
+  (internal contract, fed by tool-dispatch from BUILT-IN tool schemas only —
+  MCP schemas are third-party and `required` there is unreliable). At both
+  rewrite seams (PreToolUse hook `updatedInput`, canUseTool `updatedInput`)
+  the gate debug-logs which required key(s) present in the original input are
+  missing after the replacement, names the rewriting party, and states the
+  replace-not-merge rule with the fix ("return the FULL input with your
+  changes applied"). Keys the model never sent are the model's omission and
+  are not blamed on the rewriter; the rewrite itself still wins unchanged.
+- `tests/input-shape-diagnostics.test.ts` (11 tests): shape descriptor kinds /
+  key-elision / no-values-ever; Edit path-only (the BPT case), wrong-typed
+  array, Write path-only; gate warning at both seams, silence when every
+  required key survives, silence for model-omitted keys, and the
+  requiredInputKeys-absent (MCP) skip.
+
 ## 2.2.0 — 2026-07-29
 
 Lockstep alignment only — no changes to this package. The family clock

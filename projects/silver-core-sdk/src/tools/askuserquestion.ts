@@ -38,6 +38,7 @@ import type {
 import type { UserQuestion, UserQuestionAnswer } from '../types.js';
 import type { AskUserQuestionStructuredOutput } from '../types/tool-outputs.js';
 import { AbortError, isAbortError } from '../errors.js';
+import { singleLine } from '../internal/inert-text.js';
 import { ASKUSERQUESTION_DESCRIPTION } from './descriptions.js';
 
 /** Diagnosable message for ANY thrown value (same helper as resources.ts /
@@ -177,11 +178,19 @@ function renderAnswers(answers: UserQuestionAnswer[]): string {
   // untrusted input here — an element missing its `answers` array threw an
   // uncaught TypeError (`undefined.join`) OUTSIDE the execute try/catch and
   // crashed into the engine, while every sibling path degrades to isError.
+  // This digest is LINE-ORIENTED: each answer is one `\n`-separated record. The
+  // header and answer strings are host-handler output, so an embedded newline
+  // forges an extra "Header: value" record — the same forgery WebSearch's
+  // renderResults collapses for untrusted web content. Pass both through
+  // singleLine so a record can only ever be created by this renderer.
   return answers
     .map((a) => {
-      const header = typeof a?.header === 'string' ? a.header : '(missing header)';
+      const header = typeof a?.header === 'string' ? singleLine(a.header) : '(missing header)';
       const list = Array.isArray(a?.answers)
-        ? a.answers.filter((x): x is string => typeof x === 'string').join(', ')
+        ? a.answers
+            .filter((x): x is string => typeof x === 'string')
+            .map(singleLine)
+            .join(', ')
         : '(malformed answer)';
       return `${header}: ${list}`;
     })

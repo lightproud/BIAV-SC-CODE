@@ -492,6 +492,11 @@ export interface PermissionGate {
       /** v0.6 G-SANDBOX: this call requested `dangerouslyDisableSandbox`; the
        *  escape must route to an ask (never auto-allow) except bypassPermissions. */
       sandboxEscape?: boolean;
+      /** The tool's schema-required input keys (built-in tools only). Purely
+       *  diagnostic: when a hook / canUseTool updatedInput REPLACES the input
+       *  and a required key the model DID send goes missing, the gate names
+       *  the dropping party in the debug log (behavior is never changed). */
+      requiredInputKeys?: readonly string[];
     },
   ): Promise<PermissionCheckResult>;
   setMode(mode: PermissionMode): void;

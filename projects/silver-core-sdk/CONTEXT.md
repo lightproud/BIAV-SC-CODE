@@ -71,12 +71,17 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `2.2.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.2.0`
+**当前版本 `2.2.3`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.2.3`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
+**v2.2.3（2026-07-29）：观察项批收口（守密人裁「修复 然后合并」）**——2.2.2 审计留在观察位的静默回落全线收紧 + 三处「工具说了不实话」订正：①Grep/Glob `path` 非字符串静默搜 cwd（错作用域、满置信答案）改报错；②Grep 选项 present-but-mis-typed 一律点名（`-i`/`-n`/`multiline`/`-o` 布尔组、`-A`/`-B`/`-C`/`context`/`offset`/`head_limit` 计数组、`glob` 数组形并给 `"*.{ts,tsx}"` 写法），V6-3 负 head_limit 拒收改由该共享守卫承担；③Grep 对**显式文件目标**不再声称「node_modules/.git 已排除」（该过滤对具名文件根本没跑，文件甚至可能就在 node_modules 里），三处编码旧不实文案的既有断言同步订正；④Bash `truncated` 由 `CappedStream` **真实丢弃计数**产出（原正则嗅探自家渲染文本，命令 echo 一行标记形字符串即假阳性）；⑤Bash 后台 ack 补 `backgroundTaskId` 结构化产出（shell id 原只能从人话里正则抠，是本工具最后一个无结构化的数据型成功分支）；⑥Bash 命令含 NUL 字节由 `ConfigurationError`「shell 装配故障」（环境判词）改为命令错（模型可自纠）；⑦SendMessage 包裹 `bridge.send`，非 Error 抛值不再渲染 undefined；⑧`GrepOutput.numFiles` 跨模式语义（命中数 vs 扫描数）落进类型契约。另修截断恰落 `--` 分隔行后的悬空分隔符；`displayTruncated` 写明为纵深防御（今日结构不可达，且**刻意不放宽为 `>=`**——那会让恰好填满 head_limit 的自然结束误报截断）。测试 21 例。
+
+**v2.2.2（2026-07-29）：工具调用参数健壮性七修（2.2.1 同族续扫，三代理审计全工具面）**——同 2.2.1 那一族「参数静默出错而非诊断报错」的缺陷：①Grep `glob:"!*.test.ts"` 纯否定 glob 令 fast-glob 返回空、把含命中的语料报成「No matches」（HIGH，补 `**/*` 正向基作排除底；Glob 纯否定 `pattern` 同 bug 同修）· ②Bash `run_in_background:"true"`（字符串）经严格 `=== true` 静默转前台、长驻服务被超时杀死（HIGH，改诊断报错）· ③Bash `timeout:"5000"`（字符串）静默回落 120s 默认、自以为设了 5s 紧箍（MED，改诊断报错）· ④WebSearch 后端数组含 `null` 元素在 try 外崩 `r.url`、整批结果丢失（MED，filter/render 前丢非对象元素）· ⑤AskUserQuestion 应答文本未过 singleLine、换行伪造额外记录行（LOW，同 WebSearch 1.4.0 已修同型）· ⑥memory 注入 store 非 Error 抛值 `(e as Error).message` 得 undefined、报错无因且 content undefined（MED，String 化，L74 同族唯一漏网）。权限旗镜头（写工具误标 readOnly 会全模式自动放行）审计判 CLEAN。`tests/tool-param-robustness.test.ts` 11 例锁定；全量 3450 绿。
+
+**v2.2.1（2026-07-29）：输入形状诊断——「参数在路上被谁弄丢」一眼可辨（守密人裁定，BPT Edit old_string 盲试循环案）**——Edit/Write 参数类型报错在历史文案前缀不变的前提下追加实际收到的形状（缺席字段的种类 + 键清单，只给键名不给值）；权限门 `check` 新增诊断性 `requiredInputKeys`（tool-dispatch 只喂内建工具 schema），PreToolUse hook / canUseTool 两处 `updatedInput` 整体替换若丢掉模型确实发过的必填键，debug 日志点名改写方并明示「replace 非 merge」。零行为变化；11 项新测试锁定。
 **v2.2.0（2026-07-29）：锁步对齐**——本包零代码改动，随 maestro SDK 2.2.0（设计第三轮：注入式 AgentExecutor / RoutineManager 例程管理面 / workflow 确认门 / query 行成本入账）前进。本包刻意零供给：执行座位只消费公开 `query()` 面——硬性质 §1.2 成立的证明，不是缺口。
 
 **v2.1.0（2026-07-29）：AskUserQuestion 只报「怎么结束的」，不替宿主断言用户意图（BPT 请求）**——handler 抛异常与返回 `null` 曾共用同一句 `User declined to answer.`，两者都是宿主侧机械事实，模型据此向用户复述从未发生的拒答（黑池 UI 连取消按钮都没有）。现两路各说各的机械事实并明示「意图未知」，抛值经 `thrownMessage()` 保住诊断；新增结构化产出 `AskUserQuestionStructuredOutput`（`outcome` 五态 + 本包自有 `UserQuestionAnswer[]` + `error`），消费方分流不必再字符串匹配写死文案。官方 permission-component 形状仍不发货。

@@ -272,15 +272,22 @@ describe('bug-fix: a NUL byte in the command does not crash the tool', () => {
     await rm(nulDir, { recursive: true, force: true });
   });
 
-  it('spawn throwing synchronously (NUL in argv) surfaces as ConfigurationError, not a raw TypeError', async () => {
-    // Node's spawn throws ERR_INVALID_ARG_VALUE synchronously for a NUL byte;
-    // the foreground path must fold that into the spawn-error -> ConfigurationError
-    // contract like the background path does, never reject with a bare TypeError.
-    const { ConfigurationError } = await import('../src/errors.js');
+  it('a NUL byte is a command error the model can fix, not a shell-config verdict', async () => {
+    // Node's spawn throws ERR_INVALID_ARG_VALUE synchronously for a NUL byte.
+    // The original fix folded that into the spawn-error -> ConfigurationError
+    // path so it could never escape as a raw TypeError — that invariant still
+    // holds below. But ConfigurationError says "your ENVIRONMENT is broken",
+    // which sent a host to check its shell install over one bad character in a
+    // model-authored string (2026-07-29 sweep). The byte is now rejected up
+    // front as an ordinary tool error naming the real problem; still no throw.
     const nul = String.fromCharCode(0); // built at runtime; no control char in source
-    await expect(
-      bashTool.execute({ command: `echo hi${nul}there` }, makeCtx(nulDir)),
-    ).rejects.toBeInstanceOf(ConfigurationError);
+    const res = await bashTool.execute(
+      { command: `echo hi${nul}there` },
+      makeCtx(nulDir),
+    );
+    expect(res.isError).toBe(true);
+    expect(String(res.content)).toContain('NUL byte');
+    expect(String(res.content)).not.toContain('failed to spawn a shell');
   });
 });
 

@@ -102,6 +102,14 @@ class CappedStream {
     }
   }
 
+  /** Characters the cap actually discarded — the GROUND TRUTH for the
+   *  structured `truncated` flag, which used to be re-derived by regexing the
+   *  rendered marker back out of the text (so a command echoing a marker-shaped
+   *  line reported truncation that never happened). 2026-07-29 sweep. */
+  droppedChars(): number {
+    return this.dropped;
+  }
+
   text(): string {
     // Truncation discipline (keeper 2026-07-27): how much, why, how to recover.
     return this.dropped > 0
@@ -122,6 +130,9 @@ type RunOutcome =
       stderr: string;
       timedOut: boolean;
       aborted: boolean;
+      /** True when the output cap actually dropped characters, measured by the
+       *  CappedStream itself rather than sniffed back out of the rendered text. */
+      truncated: boolean;
     };
 
 /** Spawn one shell and wait for it to finish; never rejects. */
@@ -239,6 +250,7 @@ function runShell(
         stderr: stderr.text(),
         timedOut,
         aborted,
+        truncated: stdout.droppedChars() > 0 || stderr.droppedChars() > 0,
       });
     };
 
@@ -271,6 +283,7 @@ function runShell(
         stderr: `${stderr.text()}\n[process error] ${error.message}`.trim(),
         timedOut,
         aborted,
+        truncated: stdout.droppedChars() > 0 || stderr.droppedChars() > 0,
       });
     });
 
@@ -546,7 +559,12 @@ export const bashTool: BuiltinTool = createBashTool();
  *  reads the same shape whether the command succeeded, failed or timed out —
  *  facts that were previously only recoverable by parsing the report string. */
 function bashStructured(
-  outcome: { stdout: string; stderr: string; code: number | null },
+  outcome: {
+    stdout: string;
+    stderr: string;
+    code: number | null;
+    truncated?: boolean;
+  },
   opts: { interrupted: boolean; timedOutAfterMs?: number },
 ): BashStructuredOutput {
   return {
@@ -555,9 +573,15 @@ function bashStructured(
     interrupted: opts.interrupted,
     exitCode: outcome.code,
     ...(opts.timedOutAfterMs !== undefined && { timedOutAfterMs: opts.timedOutAfterMs }),
+    // The run's OWN measurement (CappedStream.droppedChars), not a regex over
+    // the rendered text: a command printing a marker-shaped line — `printf '[5
+    // earlier chars dropped: x'` — used to set this flag with zero truncation.
+    // The marker sniff stays only as the fallback for a synthesized outcome
+    // that carries no measurement (never reached from the live run paths).
     truncated:
-      BASH_TRUNCATION_MARKER_RE.test(outcome.stdout) ||
-      BASH_TRUNCATION_MARKER_RE.test(outcome.stderr),
+      outcome.truncated ??
+      (BASH_TRUNCATION_MARKER_RE.test(outcome.stdout) ||
+        BASH_TRUNCATION_MARKER_RE.test(outcome.stderr)),
   };
 }
 
@@ -570,6 +594,19 @@ async function execute(
     if (typeof command !== 'string' || command.length === 0) {
       return {
         content: "Bash: 'command' must be a non-empty string.",
+        isError: true,
+      };
+    }
+    // A NUL byte in the command makes child_process.spawn throw synchronously,
+    // which used to surface as `ConfigurationError: failed to spawn a shell` —
+    // an ENVIRONMENT verdict for a MODEL-correctable argument, sending the host
+    // to check its shell install over a bad character. Reject it here, where the
+    // message can name the real problem (2026-07-29 sweep).
+    if (command.includes('\0')) {
+      return {
+        content:
+          "Bash: 'command' must not contain a NUL byte (\\0); it cannot be passed " +
+          'to a shell. Remove it, or write the bytes to a file and process that.',
         isError: true,
       };
     }
@@ -598,13 +635,44 @@ async function execute(
       ctx.debug('Bash: dangerouslyDisableSandbox ignored (no sandbox active on this context)');
     }
 
+    // Diagnose a mis-shaped timeout instead of silently substituting the
+    // default: a model that sends `timeout: "5000"` (a string — a routine
+    // gateway/model deformation) believed it had capped a dangerous command at
+    // 5s, while the old silent fallback ran it under the 120s default. An
+    // out-of-contract value is named and rejected (the same diagnose-don't-guess
+    // stance Read/Grep take on their numeric params); `undefined` still means
+    // "use the default", the only honest silent case.
     const rawTimeout = input['timeout'];
+    if (
+      rawTimeout !== undefined &&
+      (typeof rawTimeout !== 'number' || !Number.isFinite(rawTimeout) || rawTimeout <= 0)
+    ) {
+      return {
+        content:
+          `Bash: "timeout" must be a positive, finite number of milliseconds when ` +
+          `provided (received ${JSON.stringify(rawTimeout)} of type ${typeof rawTimeout}).`,
+        isError: true,
+      };
+    }
     const timeoutMs =
-      typeof rawTimeout === 'number' &&
-      Number.isFinite(rawTimeout) &&
-      rawTimeout > 0
+      typeof rawTimeout === 'number'
         ? Math.min(rawTimeout, MAX_TIMEOUT_MS)
         : DEFAULT_TIMEOUT_MS;
+
+    // Same stance for run_in_background: `"true"` (a string) silently fell
+    // through the strict `=== true` check below to FOREGROUND execution, so a
+    // long-running server the model meant to detach was run inline and then
+    // SIGTERM/SIGKILL'd at the timeout — with no diagnostic. Reject a non-boolean
+    // instead of guessing; `undefined` is the ordinary foreground path.
+    const rawBackground = input['run_in_background'];
+    if (rawBackground !== undefined && typeof rawBackground !== 'boolean') {
+      return {
+        content:
+          `Bash: "run_in_background" must be a boolean when provided ` +
+          `(received ${JSON.stringify(rawBackground)} of type ${typeof rawBackground}).`,
+        isError: true,
+      };
+    }
 
     // Background launch (v0.5): detach via the ShellManager and ack with the
     // shell id; the model polls with BashOutput / stops with KillShell.
@@ -658,6 +726,20 @@ async function execute(
         content:
           `Command running in background with id: ${launched.id}\n` +
           'Use BashOutput to read its output and KillShell to stop it.',
+        // The shell id is the ONE fact this branch produces, and it used to be
+        // reachable only by regexing it back out of the sentence above — the
+        // exact "a rendering is not an interface" failure the structured surface
+        // exists to end. It was the last data-bearing success branch in this
+        // tool without one (2026-07-29 sweep). The stream fields are honestly
+        // empty: nothing has been read yet, and the command has not exited.
+        structuredOutput: {
+          stdout: '',
+          stderr: '',
+          interrupted: false,
+          backgroundTaskId: launched.id,
+          exitCode: null,
+          truncated: false,
+        } satisfies BashStructuredOutput,
       };
     }
 

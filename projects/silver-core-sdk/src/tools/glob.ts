@@ -57,6 +57,17 @@ export const globTool: BuiltinTool = {
     if (ctx.signal.aborted) throw new AbortError();
 
     const rawPath = input['path'];
+    // A non-string `path` (`["src"]`, a number) used to fall back to the cwd and
+    // answer for the WRONG directory with full confidence — Read type-checks its
+    // path for exactly this reason; Glob now matches (2026-07-29 sweep).
+    if (rawPath !== undefined && typeof rawPath !== 'string') {
+      return {
+        content:
+          `Glob: 'path' must be a string when provided (received a ` +
+          `${Array.isArray(rawPath) ? 'array' : typeof rawPath}).`,
+        isError: true,
+      };
+    }
     const baseDir = path.resolve(
       ctx.cwd,
       typeof rawPath === 'string' && rawPath.length > 0 ? rawPath : '.',
@@ -81,7 +92,14 @@ export const globTool: BuiltinTool = {
     // as an escape, so a Windows-spelled pattern (`src\**\*.ts` — the natural
     // follow-up once results come back as `C:\repo\src\a.ts`) silently matched
     // nothing. Normalized on win32 only; see fsutil.toPosixGlob.
-    const entries = await fg(toPosixGlob(pattern), {
+    // A LONE negative pattern (`!**/*.md`) has nothing to subtract from — fast-
+    // glob returns [] for a pattern list with no positive member, so a caller
+    // reaching for the gitignore/ripgrep "everything except" idiom got "No
+    // files found" instead. Prepend `**/*` so the negation excludes from all
+    // files; a positive pattern is passed through unchanged.
+    const posixPattern = toPosixGlob(pattern);
+    const globArg = posixPattern.startsWith('!') ? ['**/*', posixPattern] : posixPattern;
+    const entries = await fg(globArg, {
       cwd: baseDir,
       absolute: true,
       // W7-3 (audit r3): `dot: false` made `**` silently skip files under

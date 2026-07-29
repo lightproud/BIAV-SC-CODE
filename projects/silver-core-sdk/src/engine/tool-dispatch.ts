@@ -422,6 +422,11 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       signal,
       readOnly: isReadOnlyTool(toolName),
       isFileEdit: builtin?.isFileEdit ?? false,
+      // Feeds the gate's dropped-required-key diagnostic (an updatedInput that
+      // REPLACES the input and loses a key the model sent gets named in the
+      // debug log). Built-in schemas only: first-party and typed; MCP schemas
+      // are third-party, with `required` often absent or unreliable.
+      requiredInputKeys: builtin?.inputSchema.required,
       sandboxEscape,
       decisionReason: sandboxEscape
         ? 'dangerouslyDisableSandbox requested (command will run OUTSIDE the sandbox)'

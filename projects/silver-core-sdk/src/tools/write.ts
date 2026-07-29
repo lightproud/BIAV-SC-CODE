@@ -25,7 +25,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { looksBinary, resolveAbs } from './fsutil.js';
+import { describeInputShape, looksBinary, resolveAbs } from './fsutil.js';
 import { WRITE_DESCRIPTION } from './descriptions.js';
 import type { WriteStructuredOutput } from '../types/tool-outputs.js';
 
@@ -61,13 +61,21 @@ export const writeTool: BuiltinTool = {
         throw new AbortError();
       }
 
+      // Same rationale as Edit: name the ACTUAL received shape so a dropped
+      // field (hook updatedInput replacement, gateway rewrite) is tellable
+      // from a model mistake without guessing.
       const filePath = input['file_path'];
       if (typeof filePath !== 'string' || filePath.length === 0) {
-        return errorResult('Write failed: "file_path" must be a non-empty string.');
+        return errorResult(
+          'Write failed: "file_path" must be a non-empty string ' +
+            `(${describeInputShape(input, 'file_path')}).`,
+        );
       }
       const content = input['content'];
       if (typeof content !== 'string') {
-        return errorResult('Write failed: "content" must be a string.');
+        return errorResult(
+          `Write failed: "content" must be a string (${describeInputShape(input, 'content')}).`,
+        );
       }
 
       const abs = resolveAbs(ctx.cwd, filePath);

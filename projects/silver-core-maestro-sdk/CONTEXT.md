@@ -36,12 +36,17 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `2.2.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-agent-sdk` = `2.2.0`
+**当前版本 `2.2.3`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-agent-sdk` = `2.2.3`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
+**v2.2.3（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.2.3（观察项批收口：Grep/Glob 作用域与选项参数类型错误改诊断报错、Grep 不再声称未生效的忽略集、Bash 截断标志改用真实计数 + 后台 ack 补结构化产出、NUL 字节归类为命令错、SendMessage 包裹桥调用）前进。
+
+**v2.2.2（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.2.2（工具调用参数健壮性七修：否定 glob 不再清空 Grep/Glob、Bash run_in_background/timeout 类型错误改诊断报错、WebSearch 容 null 后端元素、AskUserQuestion 应答防伪造行、memory 非 Error 抛值 String 化）前进。
+
+**v2.2.1（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.2.1（输入形状诊断：参数类型报错带实际收到的键清单、权限门点名丢必填键的改写方）前进。
 **v2.2.0（2026-07-29）：设计第三轮落地（四原语装配）**——设计档 `maestro-sdk-agent-assembly-design-20260729.md` 全部裁定（裁1–裁5 + D2–D8）当日实现：新增第七族 `assembly/agent-executor.ts`（**注入式** `createAgentExecutor` + 三具名提取器——宿主递 query 函数，本包对 agent SDK 维持零 import 零依赖，P1 不动；重试=重跑，恢复走 reopen+payload.resume，D6）与第八族 `routine/manager.ts`（`RoutineManager` 值班例程管理面：命名/停启/triggerNow/状态反查；停启表纯内存+宿主持久化，D4；手动触发 `manual:` 段永不污染 Scheduler 恢复足迹）；足迹解析抽出 `schedule/footprint.ts` 单一共享纯核；`WorkflowNode.manualClaim` 确认门节点（runAt:null 派发，Cowork awaiting_confirm 投影零新状态，裁3）；`QueryRecord.costUsd` 成本入账（D2，驱动器转发 `ExecutorResult.costUsd`）；四原语接线谱 `projects/silver-core-maestro-sdk/docs/ASSEMBLY.md` + 例程五号 `agent-loop.mjs`（不建 LoopRunner，组合即 loop，D3）。测试 +50 至 479。两新族按两级标尺标**实验面**，指定首消费方见设计档 §10。
 
 **v2.1.0（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.1.0（AskUserQuestion 结局语义分离 + 结构化 `outcome`）前进。
