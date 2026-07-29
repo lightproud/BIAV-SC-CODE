@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-07-29",
+    "generated_at": "2026-07-30",
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
@@ -12,9 +12,9 @@
       "scripts_wiki": 12,
       "mcp_tools": 11,
       "commands": 4,
-      "skills": 5,
+      "skills": 6,
       "projects": 7,
-      "total": 154
+      "total": 155
     },
     "reachability": {
       "live": 82,
@@ -1354,6 +1354,12 @@
       "path": ".claude/skills/intel-weekly/SKILL.md",
       "name": "intel-weekly",
       "summary": "Generate the Morimens weekly community intelligence report (社区情报周报) from the full archive layer. Use when asked for the weekly report, 周报, community intel digest, or a windowed community summary. Produces a fixed-skeleton Chinese report (trend + role routing + business topics with embedded risk sentinels + bug list + player request list + credited fanart gallery + volume map) rendered as mobile PDF in brand themes."
+    },
+    {
+      "id": "last30days",
+      "path": ".claude/skills/last30days/SKILL.md",
+      "name": "last30days",
+      "summary": ">-"
     }
   ],
   "projects": [
