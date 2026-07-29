@@ -358,33 +358,93 @@ export class DefaultMcpRegistry implements McpRegistry {
     entry.enabled = enabled;
   }
 
-  /** Replace the live server set: tear down current connections, swap in the
-   *  new configs, and connect them. The caller reads statuses()/diffs for the
-   *  public McpSetServersResult (query.ts owns the official shape). */
+  /**
+   * Replace the live server set INCREMENTALLY (BPT finding D, 2026-07-29).
+   *
+   * Was: closeAll() + rebuild every entry + connectAll(). One call therefore
+   * bounced EVERY connected server — including the in-process 'sdk' ones the
+   * current turn's own tools are served by — so a mid-conversation
+   * setMcpServers() (a skill load, say) made the whole tool surface flicker
+   * even when the caller only meant to append one server.
+   *
+   * Now: same name AND structurally equal config => the existing entry is kept
+   * verbatim, connection, tools, serverInfo and enabled flag included. Only
+   * genuinely removed (or reconfigured) servers are closed, and only genuinely
+   * new (or reconfigured) ones connect. A kept server is never touched, so the
+   * added/removed the caller derives from statuses() describes real work.
+   *
+   * The caller reads statuses()/diffs for the public McpSetServersResult
+   * (query.ts owns the official shape).
+   */
   async setServers(servers: Record<string, McpServerConfig>): Promise<void> {
-    await this.closeAll();
-    const next: ServerEntry[] = Object.entries(servers).map(([name, config]) => ({
-      name,
-      config,
-      connection: null,
-      baseStatus: 'pending' as const,
-      tools: [],
-      enabled: true,
-    }));
+    const byName = new Map<string, ServerEntry>();
+    for (const entry of this.entries) {
+      if (!byName.has(entry.name)) byName.set(entry.name, entry);
+    }
+
+    const next: ServerEntry[] = [];
+    const kept = new Set<ServerEntry>();
+    const added: string[] = [];
+    const reconfigured: string[] = [];
+    for (const [name, config] of Object.entries(servers)) {
+      const prev = byName.get(name);
+      // A retired entry is dead for good (connectEntry refuses to start a new
+      // connect on it), so re-registering that name must build a FRESH entry
+      // even when the config is identical.
+      if (prev !== undefined && prev.retired !== true && configsEqual(prev.config, config)) {
+        kept.add(prev);
+        next.push(prev);
+        continue;
+      }
+      (prev === undefined ? added : reconfigured).push(name);
+      next.push({
+        name,
+        config,
+        connection: null,
+        baseStatus: 'pending' as const,
+        tools: [],
+        enabled: true,
+      });
+    }
+    const dropped = this.entries.filter((entry) => !kept.has(entry));
+    const removed = dropped
+      .filter((entry) => !Object.prototype.hasOwnProperty.call(servers, entry.name))
+      .map((entry) => entry.name);
+    this.debug(
+      `[mcp] setServers: kept ${String(kept.size)}, added ${String(added.length)}` +
+        `${added.length > 0 ? ` (${added.join(', ')})` : ''}, removed ${String(removed.length)}` +
+        `${removed.length > 0 ? ` (${removed.join(', ')})` : ''}, reconfigured ` +
+        `${String(reconfigured.length)}${reconfigured.length > 0 ? ` (${reconfigured.join(', ')})` : ''}`,
+    );
+
     this.entries.splice(0, this.entries.length, ...next);
+    // Close the abandoned entries BEFORE connecting the new ones. A server
+    // whose config CHANGED appears on both lists (old entry dropped, fresh
+    // entry added under the same name); running the two phases concurrently
+    // would spawn the replacement child / open the second HTTP session while
+    // the outgoing one is still alive.
+    await this.retireAndClose(dropped);
     await this.connectAll();
   }
 
   /** Close every connection (best-effort, parallel). */
   async closeAll(): Promise<void> {
+    // Snapshot: retireAndClose awaits in-flight handshakes, and this.entries is
+    // a live array that setServers() may splice underneath it.
+    await this.retireAndClose([...this.entries]);
+  }
+
+  /** Retire and close a SUBSET of entries (closeAll passes all of them;
+   *  setServers passes only the ones the new set abandons). */
+  private async retireAndClose(entries: readonly ServerEntry[]): Promise<void> {
     // audit 2026-07-14 M-4: retire every entry FIRST, synchronously, so a
     // handshake that resolves while we await below sees the flag and closes
     // its fresh connection instead of publishing onto an abandoned entry.
-    // (setServers() replaces the entry array afterwards; the query teardown
-    // paths never reconnect a closed registry, so retirement is final.)
-    for (const entry of this.entries) entry.retired = true;
+    // (setServers() has already dropped these entries from the array; the query
+    // teardown paths never reconnect a closed registry, so retirement is final.)
+    for (const entry of entries) entry.retired = true;
     await Promise.all(
-      this.entries.map(async (entry) => {
+      entries.map(async (entry) => {
         // Await any in-flight handshake so the child it may have spawned is
         // settled before we sweep: it either published entry.connection
         // (closed below) or self-closed on the retired flag. connectEntryInner
@@ -597,6 +657,46 @@ function errorResult(text: string): CallToolResult {
 
 function errMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err);
+}
+
+/**
+ * Can a same-named server keep its live connection across setServers()?
+ *
+ * Structural equality over the config, with two deliberate rules:
+ *  - keys whose value is `undefined` are absent (`{command:'x', args:undefined}`
+ *    is the same server as `{command:'x'}` — an optional field a caller spelled
+ *    out is not a reconfiguration);
+ *  - anything that is not a plain object or array compares by IDENTITY. That
+ *    covers the 'sdk' transport's `instance` (its `tools` is a Map holding
+ *    handler closures): a freshly built instance is treated as a different
+ *    server and reconnects, which is the safe direction — the handlers may not
+ *    be the ones that are already live.
+ */
+function configsEqual(a: McpServerConfig, b: McpServerConfig): boolean {
+  return deepEqual(a, b);
+}
+
+function deepEqual(a: unknown, b: unknown): boolean {
+  if (Object.is(a, b)) return true;
+  if (Array.isArray(a) || Array.isArray(b)) {
+    if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length) return false;
+    return a.every((v, i) => deepEqual(v, b[i]));
+  }
+  if (!isPlainObject(a) || !isPlainObject(b)) return false;
+  const aKeys = definedKeys(a);
+  const bKeys = definedKeys(b);
+  if (aKeys.length !== bKeys.length) return false;
+  return aKeys.every((k) => Object.prototype.hasOwnProperty.call(b, k) && deepEqual(a[k], b[k]));
+}
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  if (typeof value !== 'object' || value === null) return false;
+  const proto: unknown = Object.getPrototypeOf(value);
+  return proto === Object.prototype || proto === null;
+}
+
+function definedKeys(obj: Record<string, unknown>): string[] {
+  return Object.keys(obj).filter((k) => obj[k] !== undefined);
 }
 
 /**

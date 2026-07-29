@@ -36,6 +36,10 @@ Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.5.0 是审计
 第十九、二十波（工具 / 会话 / 子代理 / 传输 / 权限 / 钩子 / MCP 配置十余处真实缺陷），
 见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
+## 1.4.1 — 2026-07-29
+
+Lockstep alignment with silver-core-agent-sdk 1.4.1 (`setServers()` incremental
+diff, BPT finding D). This package is untouched.
 
 ## 1.4.0 — 2026-07-28
 
