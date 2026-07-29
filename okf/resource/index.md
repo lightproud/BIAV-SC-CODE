@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (124)
+# 银芯正式产物（报告/分析） (125)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -84,6 +84,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [claude-desktop-ui-wireframe-20260704](/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md) - repo-engineering 产物（html）（格式：html）
 * [community-archive-strategy-review-20260710](/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md) - 社区信息归档主线整体处于**「架构已成型、运行基本健康、收尾债集中在文档与验收」**状态。（格式：md）
 * [kb-vector-remaining-handoff-20260705](/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md) - 银芯已建向量检索腿（§八「厚锚撑向量」的活体参照实现，守密人 2026-07-05 裁定(A) 解除零 ML 红线，**scoped**：白盒脊柱仍零 ML，只
+* [last30days-skill-research-20260729](/resource/resource-repo-engineering-last30days-skill-research-20260729.md) - 定位一句话：**「按赞数、转发数、真金赔率排序的搜索引擎，搜的是人不是编辑」**——Google 聚合编辑内容，它并行搜 Reddit / X / YouTub
 * [maestro-sdk-agent-assembly-design-20260729](/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md) - 第一轮问「代码写得对不对」，第二轮问「作为产品是否成立」。第二轮的判词是：**一个被证明「造得出」、但只有一半被证明「有人要」的产品**——已验证三族（ledg
 * [maestro-sdk-bpt-intervention-ui-mockup-20260729](/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md) - repo-engineering 产物（html）（格式：html）
 * [maestro-sdk-design-review-20260726](/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md) - 这个包的**工程质量高于本仓平均线**，且高出不少。值得先记账的四件事：（格式：md）

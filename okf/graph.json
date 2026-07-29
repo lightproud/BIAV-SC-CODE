@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-30",
   "stats": {
-    "nodes": 390,
+    "nodes": 391,
     "edges": 431
   },
   "nodes": [
@@ -3227,6 +3227,17 @@
       "id": "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "type": "documentation",
       "title": "kb-vector-remaining-handoff-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
+      "type": "documentation",
+      "title": "last30days-skill-research-20260729",
       "tags": [
         "data_layer:curated",
         "deliverable",
