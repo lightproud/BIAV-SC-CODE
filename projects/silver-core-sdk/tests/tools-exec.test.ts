@@ -20,6 +20,7 @@ import * as os from 'node:os';
 import * as path from 'node:path';
 
 import { bashTool } from '../src/tools/bash.js';
+import { TOOL_OUTPUT_CAPS } from '../src/tools/output-caps.js';
 import { globTool } from '../src/tools/glob.js';
 import { grepTool } from '../src/tools/grep.js';
 import { AbortError } from '../src/errors.js';
@@ -199,17 +200,32 @@ describe('Bash tool', () => {
     );
   });
 
-  it('caps stdout and stderr independently (per-stream cap)', async () => {
+  // Keeper ruling 2026-07-29 (待裁③, "align with official Claude Code"): the
+  // cap is a TOTAL across stdout+stderr, not a per-stream allowance. The
+  // official prompt corpus states one quantity to the model ("Bash output is
+  // limited to ${MAX_OUTPUT_CHARS} chars") with no per-stream language, and
+  // this engine EXPORTS the number as TOOL_OUTPUT_CAPS.bash so a consumer can
+  // mirror its context accounting — under the old shape that export
+  // under-counted by 2x (measured: 60,352 chars returned against a stated
+  // 30,000). This test previously pinned the per-stream shape; it now pins the
+  // total, keeping its original subject (a command that floods BOTH streams).
+  it('caps stdout and stderr against ONE shared total allowance', async () => {
     const dir = await makeDir('bash-cap2');
     const cmd =
       'big=$(head -c 40000 /dev/zero | tr "\\0" x); ' +
       'printf "%s" "$big"; printf "%s" "$big" 1>&2';
     const res = await bashTool.execute({ command: cmd }, makeCtx(dir));
     expect(res.isError).toBeFalsy();
-    const parts = text(res).split('\n[stderr]\n');
-    expect(parts).toHaveLength(2);
-    expect(parts[0]).toBe(`${bashMarker(10000)}\n${'x'.repeat(30000)}`);
-    expect(parts[1]).toBe(`${bashMarker(10000)}\n${'x'.repeat(30000)}`);
+    // 80,000 chars produced, 30,000 kept. stdout is the call's EARLIEST output
+    // and is dropped first, so the whole allowance goes to stderr's tail and
+    // stdout renders as nothing at all; the ONE call-level marker rides the
+    // first stream that still has content, reporting the true total dropped.
+    expect(text(res)).toBe(`[stderr]\n${bashMarker(50000)}\n${'x'.repeat(30000)}`);
+    // The EXPORTED contract is now true of what the command actually returned.
+    const so = (res as { structuredOutput?: { stdout: string; stderr: string } })
+      .structuredOutput!;
+    expect(so.stdout).toBe('');
+    expect(so.stderr.length - `${bashMarker(50000)}\n`.length).toBe(TOOL_OUTPUT_CAPS.bash);
   });
 
   it('runs the command in ctx.cwd', async () => {

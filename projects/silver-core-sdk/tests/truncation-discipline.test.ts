@@ -180,6 +180,7 @@ describe('registry: truncation sites must be inventoried', () => {
       'tools/sendmessage.ts',
       'tools/resources.ts',
       'tools/descriptions.ts', // documents other tools' caps, emits none itself
+      'tools/output-caps.ts', // the caps MAP: documents every cap's semantics, emits none itself
       'tools/edit.ts', // comment-only mention (never truncates)
       // --- tools/memory: view caps + scan bounds ---
       'tools/memory/store.ts', // viewTruncationNotice: cap + view_range recovery

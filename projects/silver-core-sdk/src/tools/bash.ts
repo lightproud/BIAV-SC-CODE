@@ -26,9 +26,31 @@ import type {
 
 const DEFAULT_TIMEOUT_MS = 120_000;
 const MAX_TIMEOUT_MS = 600_000;
-/** Cap on the TOTAL characters one Bash call returns (tail-kept: when output
- *  exceeds the cap, the EARLIEST chars are dropped and a leading marker says
- *  how many). Exported for TOOL_OUTPUT_CAPS (tools/output-caps.ts). */
+/**
+ * Cap on the TOTAL characters one Bash call returns — stdout and stderr share
+ * ONE allowance (tail-kept: the EARLIEST chars are dropped and a single leading
+ * marker says how many). Exported for TOOL_OUTPUT_CAPS (tools/output-caps.ts).
+ *
+ * It was PER STREAM until 2026-07-29: two independent CappedStream instances,
+ * each bounded at 30,000, so the real ceiling was double what both this
+ * constant's own doc and the EXPORTED `TOOL_OUTPUT_CAPS.bash` promised.
+ * Measured, 50,000 bytes to each stream in one call returned 60,352 characters
+ * against a stated cap of 30,000 — and that export exists precisely so a
+ * consumer can mirror this engine's context accounting without re-deriving it,
+ * so the error rode straight into the consumer's ledger at 2x.
+ *
+ * Resolved toward the DOCUMENTED semantics on the keeper's 2026-07-29 ruling
+ * ("align with official Claude Code"): the official prompt corpus states the
+ * contract to the model as a single quantity — "Bash output is limited to
+ * ${MAX_OUTPUT_CHARS} chars" (system-reminder-read-truncation-retry-guidance),
+ * "If the output exceeds ${MAX_OUTPUT_CHARS_FN()} characters, output will be
+ * truncated" (tool-description-powershell) — with no per-stream language
+ * anywhere in it. The name keeps its old `STREAM_` prefix only so the export
+ * surface does not churn; the semantics are total.
+ *
+ * The one-line truncation marker is metadata ABOUT the cut, added after the
+ * trim, so a truncated result is cap + marker.
+ */
 export const STREAM_CAP_CHARS = 30_000;
 const KILL_GRACE_MS = 2_000;
 /**
@@ -78,18 +100,59 @@ class CappedStream {
    * re-run the command redirected to a file for output that was already
    * complete. The counter cannot be forged by command output.
    */
-  get truncated(): boolean {
-    return this.dropped > 0;
+  get droppedChars(): number {
+    return this.dropped;
   }
 
-  text(): string {
-    // Truncation discipline (keeper 2026-07-27): how much, why, how to recover.
-    return this.dropped > 0
-      ? `[${this.dropped} earlier chars dropped: output exceeded the ` +
-          `${STREAM_CAP_CHARS}-char cap and only the tail is kept. For the full ` +
-          `output, redirect to a file (command > out.log 2>&1) and read it.]\n${this.buf}`
-      : this.buf;
+  /** Retained bytes WITHOUT the truncation marker: the marker is written once
+   *  for the whole call (applyTotalCap), not once per stream. */
+  raw(): string {
+    return this.buf;
   }
+}
+
+/** Truncation discipline (keeper 2026-07-27): how much, why, how to recover. */
+function truncationMarker(dropped: number): string {
+  return (
+    `[${dropped} earlier chars dropped: output exceeded the ` +
+    `${STREAM_CAP_CHARS}-char cap and only the tail is kept. For the full ` +
+    `output, redirect to a file (command > out.log 2>&1) and read it.]\n`
+  );
+}
+
+/**
+ * Enforce the SHARED total cap across the pair and attach one marker.
+ *
+ * stdout renders first, so its head is the call's earliest output and is
+ * dropped first; stderr's head goes only if stderr alone still exceeds the cap.
+ * `priorDropped` carries what each stream's own memory bound already discarded,
+ * so the marker reports the call's true total.
+ */
+function applyTotalCap(
+  rawStdout: string,
+  rawStderr: string,
+  priorDropped: number,
+): { stdout: string; stderr: string; dropped: number } {
+  let out = rawStdout;
+  let err = rawStderr;
+  let over = out.length + err.length - STREAM_CAP_CHARS;
+  if (over > 0 && out.length > 0) {
+    const keep = Math.max(0, out.length - over);
+    const trimmed = keep === 0 ? '' : sliceTailSurrogateSafe(out, keep);
+    over -= out.length - trimmed.length;
+    out = trimmed;
+  }
+  if (over > 0 && err.length > 0) {
+    const keep = Math.max(0, err.length - over);
+    err = keep === 0 ? '' : sliceTailSurrogateSafe(err, keep);
+  }
+  const dropped =
+    priorDropped + (rawStdout.length - out.length) + (rawStderr.length - err.length);
+  if (dropped === 0) return { stdout: out, stderr: err, dropped: 0 };
+  const marker = truncationMarker(dropped);
+  if (out.length > 0 || err.length === 0) out = marker + out;
+  else err = marker + err;
+  return { stdout: out, stderr: err, dropped };
 }
 
 type RunOutcome =
@@ -100,7 +163,8 @@ type RunOutcome =
       signal: NodeJS.Signals | null;
       stdout: string;
       stderr: string;
-      /** Either stream lost chars to STREAM_CAP_CHARS (counter-derived). */
+      /** The call's output exceeded the SHARED STREAM_CAP_CHARS allowance
+       *  (counter-derived, never re-sniffed from the rendered text). */
       truncated: boolean;
       timedOut: boolean;
       aborted: boolean;
@@ -212,13 +276,18 @@ function runShell(
       if (settled) return;
       settled = true;
       cleanup();
+      const capped = applyTotalCap(
+        stdout.raw(),
+        stderr.raw(),
+        stdout.droppedChars + stderr.droppedChars,
+      );
       resolve({
         kind: 'exit',
         code: exitCode,
         signal: exitSignal,
-        stdout: stdout.text(),
-        stderr: stderr.text(),
-        truncated: stdout.truncated || stderr.truncated,
+        stdout: capped.stdout,
+        stderr: capped.stderr,
+        truncated: capped.dropped > 0,
         timedOut,
         aborted,
       });
@@ -245,13 +314,20 @@ function runShell(
       // Post-spawn errors (e.g. kill failures) are folded into the result.
       settled = true;
       cleanup();
+      const capped = applyTotalCap(
+        stdout.raw(),
+        stderr.raw(),
+        stdout.droppedChars + stderr.droppedChars,
+      );
       resolve({
         kind: 'exit',
         code: null,
         signal: null,
-        stdout: stdout.text(),
-        stderr: `${stderr.text()}\n[process error] ${error.message}`.trim(),
-        truncated: stdout.truncated || stderr.truncated,
+        stdout: capped.stdout,
+        // The process-error note is diagnostics ABOUT the failure, not command
+        // output, so it rides outside the cap like the truncation marker.
+        stderr: `${capped.stderr}\n[process error] ${error.message}`.trim(),
+        truncated: capped.dropped > 0,
         timedOut,
         aborted,
       });

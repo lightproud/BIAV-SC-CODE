@@ -12,8 +12,14 @@
  * Semantics vary by key and are part of the contract:
  * - `read`     — max TOTAL characters one Read returns (head-kept, cut on a
  *                line boundary; fsutil.ts MAX_READ_OUTPUT_CHARS).
- * - `bash`     — max TOTAL characters one Bash call returns (TAIL-kept: the
- *                earliest chars are dropped first; bash.ts STREAM_CAP_CHARS).
+ * - `bash`     — max TOTAL characters one Bash call returns, stdout and stderr
+ *                sharing ONE allowance (TAIL-kept: the earliest chars are
+ *                dropped first; bash.ts STREAM_CAP_CHARS). It was enforced PER
+ *                STREAM until 2026-07-29, so the real ceiling was double this
+ *                number and a consumer mirroring this map under-counted Bash
+ *                output 2x. A truncated result additionally carries one
+ *                one-line marker naming how many characters were dropped; the
+ *                cap governs the command output, not that marker.
  * - `webFetch` — max TOTAL characters one WebFetch returns (head-kept;
  *                webfetch.ts aliases the Read cap by reference).
  * - `grepHeadLimit` — default max returned lines/ENTRIES (not characters)
