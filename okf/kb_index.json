@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 387,
-    "edges": 427,
-    "terms": 6885,
+    "concepts": 388,
+    "edges": 430,
+    "terms": 6896,
     "by_type": {
       "character": 72,
       "dataset": 95,
-      "documentation": 152,
+      "documentation": 153,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 23,
       "projects": 30,
-      "resource": 121,
+      "resource": 122,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 253
+      "search": 254
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 121
+      "count": 122
     },
     "sources": {
       "index": "/sources/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 30
+      "degree": 32
     },
     "/characters/130375.md": {
       "type": "character",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 112
+      "degree": 113
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1352,7 +1352,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/community/community-index.md": {
       "type": "dataset",
@@ -4183,6 +4183,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md": {
+      "type": "documentation",
+      "title": "mcp-2026-07-28-impact-20260729",
+      "description": "代码扫描（file:line 可回核）。「建议」均标注为建议，未与「已落盘」混写（§4.2 R3）。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/mcp-2026-07-28-impact-20260729.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md": {
       "type": "documentation",
       "title": "memory-tool-usage-prompt-20260714",
@@ -4690,7 +4704,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 959 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 960 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4718,7 +4732,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 479 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 498 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4732,7 +4746,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3232 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3233 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4760,7 +4774,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1823 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1824 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4769,7 +4783,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/sources/note_com.md": {
       "type": "dataset",
@@ -4802,7 +4816,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 608 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 609 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4816,7 +4830,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3778 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3784 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4872,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 156 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 157 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4872,7 +4886,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 101 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 102 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4900,7 +4914,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2453 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2494 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4914,7 +4928,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11621 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11635 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4928,7 +4942,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8948 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8968 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5560,6 +5574,11 @@
         "mention"
       ],
       [
+        "/community/community-google-play.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/community/community-reddit.md",
         "提及:Saya",
         "mention"
@@ -5667,6 +5686,11 @@
       [
         "/sources/bahamut.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/sources/google_play.md",
+        "提及:Saya",
         "mention"
       ],
       [
@@ -7249,6 +7273,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
         "提及:艾瑞卡",
         "mention"
@@ -7832,6 +7861,11 @@
       ]
     ],
     "/community/community-google-play.md": [
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/community/community-index.md",
         "聚合于",
@@ -9515,6 +9549,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md": [
       [
         "/characters/15603.md",
@@ -9799,6 +9840,11 @@
       ]
     ],
     "/sources/google_play.md": [
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/community/community-google-play.md",
         "同平台",
@@ -10555,6 +10601,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -11895,6 +11942,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -12298,6 +12346,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -12660,6 +12709,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -12874,6 +12924,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -13209,6 +13260,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -13372,7 +13424,8 @@
       "/assets/assets-chat-onboarding-snippet.md"
     ],
     "file": [
-      "/projects/silver-core-sdk-doc-tool-parity.md"
+      "/projects/silver-core-sdk-doc-tool-parity.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "fix": [
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
@@ -13888,6 +13941,9 @@
     "images": [
       "/assets/assets-images.md"
     ],
+    "impact": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
+    ],
     "imperfect": [
       "/projects/silver-core-sdk-doc-resilience.md"
     ],
@@ -14031,6 +14087,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -14562,6 +14619,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -14812,7 +14870,8 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "line": [
-      "/projects/silver-core-sdk-doc-migration-0-3x-to-0-68.md"
+      "/projects/silver-core-sdk-doc-migration-0-3x-to-0-68.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "lines": [
       "/wiki-data/wiki-data-voice-lines.md"
@@ -14962,7 +15021,8 @@
     ],
     "mcp": [
       "/README.md",
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "md": [
       "/README.md",
@@ -15121,6 +15181,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -15911,6 +15972,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -16367,6 +16429,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -16476,6 +16539,7 @@
     ],
     "r3": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md"
     ],
     "r4": [
@@ -16695,6 +16759,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -16871,6 +16936,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -17964,6 +18030,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -19148,6 +19215,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -19457,6 +19525,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -19821,6 +19890,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -20345,6 +20415,9 @@
     ],
     "为底": [
       "/README.md"
+    ],
+    "为建": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "为怒": [
       "/characters/15581.md"
@@ -21252,6 +21325,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -21538,6 +21612,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
@@ -22291,6 +22366,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -22595,6 +22671,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -24702,6 +24779,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -26210,6 +26288,9 @@
     "可动": [
       "/README.md"
     ],
+    "可回": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
+    ],
     "可复": [
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
@@ -27295,6 +27376,9 @@
     "回收": [
       "/characters/15565.md"
     ],
+    "回核": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
+    ],
     "回流": [
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
@@ -27629,6 +27713,9 @@
     ],
     "均带": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "均标": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "均水": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -28212,6 +28299,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -29079,6 +29167,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -29760,6 +29849,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -30930,7 +31020,8 @@
       "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "已落": [
-      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "已被": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -31528,7 +31619,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "建议": [
-      "/assets/persona-erica-speech-canon.md"
+      "/assets/persona-erica-speech-canon.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "建设": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
@@ -33263,6 +33355,7 @@
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
     "扫的": [
@@ -33961,6 +34054,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -34575,6 +34669,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -34949,6 +35044,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -35415,6 +35511,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -35735,6 +35832,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -37338,6 +37436,9 @@
     "木下": [
       "/characters/15564.md"
     ],
+    "未与": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
+    ],
     "未使": [
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
@@ -37628,6 +37729,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -38110,6 +38212,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -38618,6 +38721,9 @@
     "标层": [
       "/README.md"
     ],
+    "标注": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
+    ],
     "标称": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
@@ -38791,6 +38897,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -39040,6 +39147,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -39607,6 +39715,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -40033,6 +40142,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -40548,6 +40658,9 @@
     "波吕克斯": [
       "/characters/77917.md"
     ],
+    "注为": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
+    ],
     "注入": [
       "/characters/15600.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -40778,6 +40891,9 @@
     ],
     "混为": [
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
+    ],
+    "混写": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "混沌": [
       "/characters/15604.md",
@@ -43520,6 +43636,9 @@
     "码库": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
+    "码扫": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
+    ],
     "码核": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
@@ -45939,6 +46058,9 @@
       "/characters/15592.md",
       "/characters/77923.md"
     ],
+    "落盘": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
+    ],
     "落黑": [
       "/characters/15604.md"
     ],
@@ -47672,6 +47794,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -48441,6 +48564,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -49566,6 +49690,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -49854,6 +49979,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -51893,6 +52019,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -52248,6 +52375,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -52449,6 +52577,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -52690,6 +52819,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -52976,6 +53106,9 @@
     ],
     "image": [
       "/assets/assets-images.md"
+    ],
+    "impact": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "impl": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
@@ -53289,6 +53422,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -53492,6 +53626,9 @@
     ],
     "matrix": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md"
+    ],
+    "mcp": [
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
     "md": [
       "/memory/capability-index.md",
@@ -54129,6 +54266,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -54747,6 +54885,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",

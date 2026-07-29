@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (121)
+# 银芯正式产物（报告/分析） (122)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -89,6 +89,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [maestro-sdk-design-review-20260726](/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md) - 这个包的**工程质量高于本仓平均线**，且高出不少。值得先记账的四件事：（格式：md）
 * [maestro-sdk-product-review-20260726](/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md) - 先记正面账，且这笔账是硬的：（格式：md）
 * [markdown-consistency-audit-20260628](/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md) - **状态报告**：动态编排扫描完毕。覆盖全仓 **300** 个 md 档案，账本抽取 **744** 条可验证声明（落在 246 个档案），按 14 条矛盾轴
+* [mcp-2026-07-28-impact-20260729](/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md) - 代码扫描（file:line 可回核）。「建议」均标注为建议，未与「已落盘」混写（§4.2 R3）。（格式：md）
 * [memory-tool-usage-prompt-20260714](/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md) - 你有一块持久记忆区，根路径 `/memories`，通过 memory 工具的六个命令操作：（格式：md）
 * [news-collector-merge-plan-202606](/resource/resource-repo-engineering-news-collector-merge-plan-202606.md) - 日期：2026-06-02（格式：md）
 * [official-cc-prompt-architecture-inference-20260704](/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md) - **能，而且能推断出相当完整的架构骨架。** 官方「系统提示词」不是一整块，而是 `tools/updatePrompts.js` 揭示的**片段合成树**——
