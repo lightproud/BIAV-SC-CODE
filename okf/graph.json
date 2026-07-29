@@ -2,7 +2,7 @@
   "generated": "2026-07-29",
   "stats": {
     "nodes": 383,
-    "edges": 420
+    "edges": 424
   },
   "nodes": [
     {
@@ -4687,6 +4687,12 @@
     },
     {
       "source": "/community/community-reddit.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"
@@ -4785,6 +4791,12 @@
       "source": "/community/community-youtube.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6133,6 +6145,12 @@
     },
     {
       "source": "/sources/reddit.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"
@@ -6189,6 +6207,12 @@
       "source": "/sources/youtube.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
