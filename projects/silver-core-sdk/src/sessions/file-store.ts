@@ -235,13 +235,20 @@ export class FileSessionStore implements SessionStore {
       const file = this.filePath(key);
       await mkdir(dirname(file), { recursive: true });
       let prefix = '';
+      let healed = false;
       if (!this.tailChecked.has(file)) {
-        this.tailChecked.add(file);
+        healed = true;
         if (await this.endsWithoutNewline(file)) prefix = '\n';
       }
       let payload = prefix;
       for (const e of entries) payload += `${JSON.stringify(e)}\n`;
       await appendFile(file, payload, { encoding: 'utf8', flag: 'a' });
+      // Marked only after the write LANDED — same reasoning as the sync twin
+      // in sessions/store.ts: a failed append that had already consumed the
+      // flag leaves the next one to glue onto the torn tail and lose both
+      // records, which is what the heal is for. This store swallows every fs
+      // error, so the disarm was completely silent here.
+      if (healed) this.tailChecked.add(file);
     } catch {
       // best-effort: a transcript write failure must not break the caller.
     }

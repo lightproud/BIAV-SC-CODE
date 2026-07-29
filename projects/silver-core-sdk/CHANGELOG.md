@@ -16,6 +16,41 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.8.2 — 2026-07-29
+
+Audit wave 23 — three sites that break a promise the codebase itself already
+states somewhere else.
+
+**The verifier's finding block is a line-oriented digest built without
+singleLine().** `buildVerifierUserTurn` renders one `- key: value` record per
+line from a Finding, and a Finding is produced by a finder model reading the
+adversarial code under review — so a summary carries whatever that code steered
+it into carrying. An embedded newline forges extra records. Three sibling call
+sites of this exact shape already collapse their values (ledger.ts, tips,
+websearch), and singleLine's own doc names "a key/summary" as the thing that
+forges them. The direction that matters is suppression: a forged line arguing
+the finding away turns a real defect REFUTED and drops it from the review. The
+fenced `context` field stays multi-line — code needs its newlines.
+
+**Both session stores let a FAILED append disarm the torn-tail heal.** The heal
+is a one-shot per-file flag: the first append checks whether a previous process
+died mid-write and, if so, prefixes a newline so the crash "corrupts only
+itself, never the next record" (its own words). The flag was marked BEFORE the
+write. When that write failed — dir removed, ENOSPC, EISDIR — nothing reached
+disk, yet the file counted as checked, so the next successful append glued onto
+the torn tail and BOTH records were lost. Exactly the outcome the heal exists
+to prevent. The mark now follows a landed write, in the sync store and its
+async twin alike; FileSessionStore swallows every fs error, so there the disarm
+was completely silent.
+
+**loadInfo() lacked the uuid dedup load() has.** The two loops answer the same
+question about the same file. A partially double-materialized transcript (a
+racing cross-host loader that appended part of a second copy) can repeat a
+`pending_turn` whose `turn_complete` is not repeated with it — a dangling
+checkpoint load() correctly drops and loadInfo() reported. Every listing row
+(list / listSessions / getSessionInfo) comes from loadInfo(), so a session
+showed as interrupted while resuming it found nothing to re-drive.
+
 ## 1.8.1 — 2026-07-29
 
 Audit wave 22 — two defects in what a security-relevant classifier does with

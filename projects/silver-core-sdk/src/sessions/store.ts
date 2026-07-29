@@ -450,11 +450,21 @@ export class JsonlSessionStore implements SessionStore {
       // lines would be lost on load — this way the crash corrupts only
       // itself, never the next record. A racing double check at worst writes
       // an extra blank line, which load() skips.
+      // The flag is consumed only by a write that LANDED. Marking it before
+      // the append disarmed the heal on a failed one: the first append to a
+      // torn file computes the '\n' prefix, the write throws (dir removed,
+      // ENOSPC, EACCES), nothing reaches disk — and the NEXT append, seeing
+      // the file already "checked", glues onto the torn tail and loses both
+      // records. That is the exact outcome this heal exists to prevent, so the
+      // mark now follows the successful write; a retried check costs one
+      // last-byte read.
+      let healed = false;
       if (!this.tailChecked.has(file)) {
-        this.tailChecked.add(file);
+        healed = true;
         if (this.endsWithoutNewlineSync(file)) line = `\n${line}`;
       }
       appendFileSync(file, line, 'utf8');
+      if (healed) this.tailChecked.add(file);
     } catch {
       // The directory may have been removed after we ensured it: re-ensure
       // and retry ONCE before giving up (append must never throw).
@@ -462,6 +472,8 @@ export class JsonlSessionStore implements SessionStore {
         mkdirSync(this.dir, { recursive: true });
         this.dirEnsured = true;
         appendFileSync(file, line, 'utf8');
+        // This retry landed the (already prefixed) line: the tail is healed.
+        this.tailChecked.add(file);
       } catch (err) {
         this.debug(
           `session store: append failed for ${sessionId}: ${err instanceof Error ? err.message : String(err)}`,
@@ -735,6 +747,8 @@ export class JsonlSessionStore implements SessionStore {
     let tag: string | undefined;
     let gitBranch: string | undefined;
     const openPending = new Map<string, string | undefined>();
+    // Read-time uuid dedup, mirroring load() (finding H2).
+    const seenUuids = new Set<string>();
     let stream: ReturnType<typeof createReadStream>;
     try {
       stream = createReadStream(file, { encoding: 'utf8' });
@@ -773,6 +787,19 @@ export class JsonlSessionStore implements SessionStore {
         }
         if (typeof parsed !== 'object' || parsed === null) continue;
         const entry = parsed as Record<string, unknown>;
+        // Finding H2 dedup, same as load() (see the seenUuids note there). It
+        // was missing HERE, and the two loops answer the same question about
+        // the same file: a partially double-materialized transcript (a racing
+        // cross-host loader that appended part of a second copy) can repeat a
+        // `pending_turn` whose `turn_complete` is not repeated with it, leaving
+        // this loop with a dangling checkpoint that load() correctly drops.
+        // list() / listSessions / getSessionInfo all source their rows here, so
+        // a listing marked a settled session as interrupted while resuming it
+        // found nothing to re-drive — the two disagreeing about one file.
+        if (typeof entry.uuid === 'string') {
+          if (seenUuids.has(entry.uuid)) continue;
+          seenUuids.add(entry.uuid);
+        }
         if (entry.type === 'meta') {
           if (typeof entry.createdAt === 'number') createdAt = entry.createdAt;
           if (typeof entry.firstPrompt === 'string') firstPrompt = entry.firstPrompt;

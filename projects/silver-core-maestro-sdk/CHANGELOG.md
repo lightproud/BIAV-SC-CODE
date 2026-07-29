@@ -12,6 +12,12 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.8.2 — 2026-07-29
+
+Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.2 为审计第二十三波
+（校验器行式摘要未折行 · 两份会话存储的撕裂尾自愈被失败写入解除 · `loadInfo` 缺 uuid 去重），
+见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
+
 ## 1.8.1 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.1 为审计第二十二波

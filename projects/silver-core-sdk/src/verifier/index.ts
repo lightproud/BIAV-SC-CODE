@@ -19,7 +19,7 @@ import {
   runUtilityCall,
   type UtilityCallOptions,
 } from '../generators/runtime.js';
-import { neutralizeClosingTag } from '../internal/inert-text.js';
+import { neutralizeClosingTag, singleLine } from '../internal/inert-text.js';
 import { VERIFY_VERDICT_SYSTEM } from './prompts.js';
 
 /** The three possible verdicts for a candidate finding. */
@@ -70,16 +70,32 @@ export function buildVerifierUserTurn(f: Finding): string {
     const inert = neutralizeClosingTag(f.context, 'context');
     parts.push(`Diff / relevant code:\n<context>\n${inert}\n</context>`);
   }
+  // The finding block is a LINE-ORIENTED digest: one `- key: value` record per
+  // line. An embedded newline in any value forges extra records — the failure
+  // mode singleLine() exists for, whose own doc names "a key/summary" as the
+  // thing that forges them. Three sibling call sites of this exact shape
+  // already collapse their values (ledger.ts `- ${key} — ${summary}`,
+  // tips/index.ts `Tip shown: …`, websearch.ts result lines); this one did not,
+  // even though its fields are the LEAST trustworthy of the four: a Finding is
+  // produced by a finder model reading the adversarial code under review, so a
+  // summary can carry whatever that code steered it into carrying.
+  //
+  // The direction that matters is suppression: forging a line that argues the
+  // finding away turns a real defect REFUTED and drops it from the review. The
+  // context field above is deliberately NOT collapsed — it is fenced (N1) and
+  // code needs its newlines to be readable as code.
   const location =
     f.file !== undefined
       ? f.line !== undefined
-        ? `${f.file}:${f.line}`
-        : f.file
+        ? `${singleLine(f.file)}:${f.line}`
+        : singleLine(f.file)
       : undefined;
-  const finding: string[] = [`- summary: ${f.summary}`];
-  if (f.failureScenario !== undefined) finding.push(`- failure scenario: ${f.failureScenario}`);
+  const finding: string[] = [`- summary: ${singleLine(f.summary)}`];
+  if (f.failureScenario !== undefined) {
+    finding.push(`- failure scenario: ${singleLine(f.failureScenario)}`);
+  }
   if (location !== undefined) finding.push(`- location: ${location}`);
-  if (f.category !== undefined) finding.push(`- category: ${f.category}`);
+  if (f.category !== undefined) finding.push(`- category: ${singleLine(f.category)}`);
   parts.push('Candidate finding:\n' + finding.join('\n'));
   return parts.join('\n\n');
 }

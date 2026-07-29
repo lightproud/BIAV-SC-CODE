@@ -91,11 +91,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.8.1`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.8.1`
+**当前版本 `1.8.2`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.8.2`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.8.2（2026-07-29）：审计第二十三波**——三处没守住本仓自己在别处已写明的承诺：①校验器发现块是行式摘要却未折行（同形状三处兄弟都用了 `singleLine`；伪造一行即可把真缺陷说成 REFUTED 逐出评审）；②两份会话存储的撕裂尾自愈被**失败的写入**解除（标志打在写入之前，写失败即空耗，下一次成功追加粘上撕裂尾、两条记录一起丢），现改为落地后才打标志；③`loadInfo` 缺 `load` 那道 uuid 去重，部分双写档案下二者对「是否中断」互相打架，而所有列表行都取自 `loadInfo`。
 
 **v1.8.1（2026-07-29）：审计第二十二波**——安全相关分类器对待外来文本的两处不对称：①命令前缀分类器不回校自己的答案（提示词自己写死「前缀必须是命令的前缀」，解析器却收不到命令；报错命令的前缀即可命中良性白名单、自动放行未被允许的命令），现一律回校、非前缀 fail-closed；②钩子条件判定器是唯一不给不可信输入加围栏的（`context` 含 `tool_response`，而该判词门控钩子执行含 DENY 钩子），现 `<context>` 围栏 + 闭合标签中和，只动用户轮不碰 faithful 系统提示词。
 
