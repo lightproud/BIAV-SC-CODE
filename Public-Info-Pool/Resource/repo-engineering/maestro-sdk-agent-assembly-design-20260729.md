@@ -2,7 +2,7 @@
 
 - 日期：2026-07-29
 - 审视人：艾瑞卡（守密人派发：「继续审视设计 Maestro SDK，让它能够基于 Agent SDK 实现 loop、例程、goal、后台任务（子代理和脚本），并给出 BPT 客户端介入的 UI 设计案例」）
-- 状态：设计档（本轮零 src 代码；已裁项按裁定记档，待裁项见 §12）
+- 状态：设计档，**裁定完毕**（本轮零 src 代码；裁1–裁5 + D2/D3/D4/D6/D7/D8 全部经守密人 2026-07-29 交互裁定，见 §12；实现另轮）
 - 前两轮指针：`maestro-sdk-design-review-20260726.md`（F1–F6，问「写得对不对」，已全落地）· `maestro-sdk-product-review-20260726.md`（P1–P6，问「有没有人要」，已全裁定）
 - 宪章：`scs-req-orchestrator-sdk-20260717.md`（三硬性质 / 判别式三维 / §7 非目标）；代理侧地基 `scs-req-repositioning-loop-support-20260717.md`（R1–R6）
 - 随档样机：`maestro-sdk-bpt-intervention-ui-mockup-20260729.html`（可交互 HTML，§9 的活体演示）
@@ -44,7 +44,7 @@
 | AgentExecutor（§3） | 通过：可单拿（不用则递自己的 executor，纯 HTTP 宿主零连带） | 通过：只消费 agent SDK 公开面（query 返回值迭代 + interrupt/close），宿主徒手可复刻每一行 | 通过：onMessage/onResult 只出数据 | 通过：它本身活在一次 attempt 内，但它是「跨调用状态」的执行座位填充物——属宪章 §1「会话装配」职责 | 通过：不管 query 内部（子代理消息只转发不解释） | 不触碰 |
 | RoutineManager（§5） | 通过：不用则直接用 Scheduler | 通过：纯台账反查 + Scheduler 组合 | 通过：list()/get() 返回数据，渲染宿主侧 | 通过：等墙钟（第二维） | **边界句**：`name` / `nextFireAt` / `list` 是数据出缝；若未来有人提「Routine 面板组件」即越「不做界面显示」线，当场拒绝 | 不触碰 |
 | `WorkflowNode.manualClaim`（§8） | 通过：可选字段，缺省行为逐字节不变 | 通过：纯台账词汇（dispatch runAt:null 已存在，delivery 已在用） | 通过 | 通过：等外部事件（人的确认，第二维） | 通过 | 不触碰（复用既有 manualClaim 语义，零新状态零新边） |
-| `QueryRecord.costUsd?`（§3.4，待裁 D2） | 通过 | 通过：值由宿主经 onResult 侧递入或 executor 填报，SDK 不算价 | 通过 | 通过：跨场景查询面通用维度（宪章 §4） | 通过 | 不触碰状态集；**触碰记录形状**——0.79.0 加可选字段有先例，仍单列待裁 |
+| `QueryRecord.costUsd?`（§3.4，已裁 D2） | 通过 | 通过：值由宿主经 onResult 侧递入或 executor 填报，SDK 不算价 | 通过 | 通过：跨场景查询面通用维度（宪章 §4） | 通过 | 不触碰状态集；**触碰记录形状**——0.79.0 加可选字段有先例，已单列裁定（D2 取甲） |
 | `docs/ASSEMBLY.md` + `examples/agent-loop.mjs`（§4） | 通过：文档与例程，零运行时面 | 通过：例程只准 import 两包公开面（宪章 §6 铁律） | 通过 | 不适用 | 通过 | 不触碰 |
 | Cowork 五态投影表（§8） | 不适用：**文档约定，非 SDK 代码**——投影发生在宿主渲染层 | 通过 | 通过：这正是「数据面在 SDK、渲染在宿主」的教科书应用 | 不适用 | 通过：投影表不是界面实现 | 不触碰 |
 
@@ -169,12 +169,12 @@ export function extractWorkflowNode(session: SessionRecord): AgentRunRequest | n
 4. **观测过河**：每条消息先递 `onMessage` 再入折叠逻辑。子代理 task_* 四件由此到达宿主 UI 实时区——**引擎领地不被跨越**（消息是引擎公开流的转发，不是对 query 内部的干预），宪章 §7「不管 query 内部」无损。
 5. **禁做清单**：不在 executor 内重试（重试是台账状态机的事）；不在 executor 内持墙钟做周期（钟在驱动器与调度器）；不解释 prompt 文本（斜杠已永久退出引擎，编排层同样不碰）。
 
-### 3.4 成本记账（待裁 D2，推荐甲）
+### 3.4 成本记账（已裁 D2：取甲，加字段）
 
-- 甲【推荐】：`QueryRecord` 增可选 `costUsd?: number`，`OutcomeInput` 对应增可选入参。理由：成本是宪章 §4「查询面跨场景通用」的通用维度（在跑什么、挂了什么、**花了多少**），BPT 收件箱与周报都要按会话汇总成本；跨 attempt 累计 = Σ listQueries，跨修订链累计 = 沿 reopenChain 再 Σ——全在查询面一次算清。0.79.0（reopenOf / attemptRound）有加可选字段先例，状态集与事件集零触碰。
+- 甲【已裁】：`QueryRecord` 增可选 `costUsd?: number`，`OutcomeInput` 对应增可选入参。理由：成本是宪章 §4「查询面跨场景通用」的通用维度（在跑什么、挂了什么、**花了多少**），BPT 收件箱与周报都要按会话汇总成本；跨 attempt 累计 = Σ listQueries，跨修订链累计 = 沿 reopenChain 再 Σ——全在查询面一次算清。0.79.0（reopenOf / attemptRound）有加可选字段先例，状态集与事件集零触碰。
 - 乙：不动 schema，成本只走 `onResult` 缝由宿主自记。代价：每个宿主重建一套成本账（P3 转嫁教训重演），且台账查询面自身答不了「这条链花了多少」。
 
-### 3.5 跨 attempt 自动 resume：刻意不做（待裁 D6，推荐维持不做）
+### 3.5 跨 attempt 自动 resume：刻意不做（已裁 D6：不做）
 
 重试的语义是**重跑**（幂等假设），不是**续聊**。若 executor 在 attempt 2 自动带上 attempt 1 的 agentSessionId 续接，会得到「半份上下文 + 半份重跑」的杂交语义，且台账无法审计两次 attempt 的边界。恢复语义由宿主显式表达：`reopenSession(id, { payload: { agent: { ...原请求, resume: 上次的 agentSessionId } } })`——重开链（T67 甲案）本就是「显式续命」的正门。`AgentRunResult.agentSessionId` 经 `onResult` 出缝正是为此准备的钥匙。
 
@@ -190,7 +190,7 @@ export function extractWorkflowNode(session: SessionRecord): AgentRunRequest | n
 
 ---
 
-## §4 loop 骨架：组合即 loop（待裁 D3，推荐不建 LoopRunner）
+## §4 loop 骨架：组合即 loop（已裁 D3：不建 LoopRunner）
 
 宪章 §3 写了「loop 骨架：周期轮询 + 预算帽 + 跨重启恢复，长在台账上」，但实现从未出现同名模块——它一直是例程里的宿主装配代码。本轮判定这**不是漏项，是正确答案**，理由三条：
 
@@ -203,7 +203,7 @@ export function extractWorkflowNode(session: SessionRecord): AgentRunRequest | n
 - **`docs/ASSEMBLY.md`**（本包第三份 docs）：四原语各一节接线谱——loop（Scheduler + Driver + AgentExecutor）、例程（RoutineManager + Driver）、goal（GoalChaser + Driver + extractGoalRound）、后台任务（三层呈现 + 介入动作表）。同时吸收 README「宿主必须自己决定的三件事」，向 T68 遗留的 OPERATIONS.md 靠拢或合并（实现轮酌定）。
 - **`examples/agent-loop.mjs`**（第五份例程）：把 memory-tidy 例程的 executor 座位换成 `createAgentExecutor` 的最小演示；宪章 §6 铁律照守（只准 import 两包公开面）——**这份例程同时是注入式接法的活体证明**：例程写得出来 = AgentQueryHandle 形状面无漏缝。
 
-配套（待裁 D8，推荐补注）：宪章 §3「loop 骨架」条加覆盖注——「loop 骨架 = 组合谱系文档（ASSEMBLY.md），不建同名模块；2026-07-29 第三轮审视裁定」。
+配套（已裁 D8：补注，实现轮随 PR 落宪章）：宪章 §3「loop 骨架」条加覆盖注——「loop 骨架 = 组合谱系文档（ASSEMBLY.md），不建同名模块；2026-07-29 第三轮审视裁定」。
 
 ---
 
@@ -277,7 +277,7 @@ export class RoutineManager {
 
 - **内部持一个 Scheduler**（specs = enabled 子集）。enable/disable = `stop()` → 以新子集重建 → `start()`：Scheduler 轮询无状态、足迹在台账、generation 纪律现成，重建零代价——不给 Scheduler 加热改缝（改一处不如包一层）。
 - **`lastFireAt` 反查须与 Scheduler 恢复共用同一解析**：`#recover` 的足迹解析（前缀匹配 + 严格数字后缀 + 8.64e15 上界三重防御）是审计 r2/r4/r5 逐条打磨过的私有逻辑；RoutineManager 若自行复刻即造出第二份会漂移的解析。实现轮把它抽为 `schedule/spec.ts` 导出纯函数（如 `latestFirePoint(sessionIds, specId)`，同时识别 `sched:` 与 `manual:` 前缀——manual 计入 lastFireAt 展示，但 Scheduler 恢复仍只认 `sched:`，两侧消费同一函数不同前缀集）。这也是把 F3 附带发现的全表扫成本**顺手收口**的机会：解析函数以 id 集合为入参，扫描策略（全表 / 前缀过滤）由调用方决定，实现轮可一并评估 `listSessions` 前缀过滤缝（不在本轮射程，如实挂账）。
-- **停启状态存哪（待裁 D4，推荐丙）**：甲 复用 LedgerStore（否——Routine 不是 session，硬塞进会话表是语义污染）；乙 新 RoutineStore 注入缝（会复制 P3 债：每宿主再手写一份易错 store，而全部状态只有一张 enabled 表）；丙【推荐】纯内存 + `initiallyDisabled` 入参 + 事件出缝，持久化归宿主（BPT 有 DB，例程一行 JSON；「库不是框架」的最小案）。
+- **停启状态存哪（已裁 D4：取丙，纯内存）**：甲 复用 LedgerStore（否——Routine 不是 session，硬塞进会话表是语义污染）；乙 新 RoutineStore 注入缝（会复制 P3 债：每宿主再手写一份易错 store，而全部状态只有一张 enabled 表）；丙【已裁】纯内存 + `initiallyDisabled` 入参 + 事件出缝，持久化归宿主（BPT 有 DB，例程一行 JSON；「库不是框架」的最小案）。
 - `RoutineSpec.name` 沿用 ScheduleSpec 的 id 纪律（不含冒号的约束在 id，name 自由文本）。
 
 ---
@@ -372,7 +372,7 @@ export interface WorkflowNode {
 | delivered | 末节点 `done`，交付动作 = `createDeliveryChannel` 推钉钉 sink（宿主注入 webhook） | **delivery 族由此获得首个真实消费方**（§10） |
 | revising | plan 节点 reopen 链：`reopenSession(planNode, { payload: 携用户修改意见 })`，`attemptRound` 即修订轮数 | T67 甲案直接复用；`reopenSession` 支持 runAt 入参，修订后可重挂确认门 |
 | failed | 任一节点 `failed`（fail-fast 收束整图） | 「一键重试」= `reopenSession`（cancelled 前驱需 `force: true`，UI 应二次确认） |
-| （产品档未列） | `cancelled` | 待裁 D7，推荐 UI 单列「已取消」而非并入 failed：0.76.0 裁定 cancelled 是与 failed 可区分的一等终局，投影层不得把它抹回去 |
+| （产品档未列） | `cancelled` | 已裁 D7：UI 单列「已取消」，不并入 failed——0.76.0 裁定 cancelled 是与 failed 可区分的一等终局，投影层不得把它抹回去 |
 
 - 确认动作 = 宿主 `claimSession(gateId)` → 立即 `recordOutcome({ outcome: 'ok', summary: '守密人确认' })`——确认门的 executor 是人。
 - 拒绝 = `cancelSession(gateId, { reason: 'user-rejected' })` → fail-fast 收束整图。
@@ -458,7 +458,7 @@ export interface WorkflowNode {
 | 1 | P1（删 peerDependency） | 裁2 注入式与之兼容；若未来改判 import 案，须显式重开 P1，不得当实现细节滑过 |
 | 2 | 六态封闭 + T67 终态不可变 | 全档零新状态零新边；确认门 / 修订 / 重试全部复用既有词汇 |
 | 3 | 「goal 不入表」 | AgentRunPayload / GoalRoundPayload 只进 payload，台账 schema 对 goal 语义保持无知 |
-| 4 | `QueryRecord.costUsd`（D2） | 动记录形状不动状态集；0.79.0 先例在，仍须显式裁定 |
+| 4 | `QueryRecord.costUsd`（D2） | 动记录形状不动状态集；0.79.0 先例在，已显式裁定（取甲） |
 | 5 | 「不做界面显示」 | RoutineManager 全部方法返回数据；样机是**档案交付物**（银芯 Resource 层），不是 SDK 组件——SDK 不含一行渲染代码 |
 | 6 | `manual:` 幂等键前缀 | 硬约束：绝不可落 `sched:`（污染 Scheduler 恢复足迹、移动补偿窗口）；足迹解析抽纯函数由两侧共用，防第二份漂移解析 |
 | 7 | 「已验证」两级标尺 | §10 随档写死首消费方与去标路径；缺此节则本档自身违反 P2 处置纪律 |
@@ -477,15 +477,17 @@ export interface WorkflowNode {
 - 裁4 例程 = 定时例程原语，RoutineManager 立项（§5）
 - 裁5 UI 案例加重为可交互样机（随档 html）
 
-**待裁**（逐项交互呈裁，本档只记推荐案）：
+**已裁第二批**（2026-07-29 同日守密人逐项交互裁定，均取推荐案）：
 
-| # | 事项 | 推荐 | 位置 |
+| # | 事项 | 裁定 | 位置 |
 |---|---|---|---|
-| D2 | `QueryRecord.costUsd?` 可选字段 vs 仅 onResult 观测缝 | 加字段（甲） | §3.4 |
-| D3 | LoopRunner 建 / 不建 | 不建，代之 ASSEMBLY.md + agent-loop 例程 | §4 |
-| D4 | Routine 停启状态存储 | 纯内存 + 宿主持久化（丙） | §5.3 |
-| D6 | 跨 attempt 自动 resume | 维持不做，恢复走 reopen + payload.resume | §3.5 |
-| D7 | `cancelled` 在 Cowork UI 单列 | 单列「已取消」，不并入 failed | §8.2 |
-| D8 | 宪章 §3「loop 骨架」条补覆盖注 | 补注（组合谱系文档，不建同名模块） | §4 |
+| D2 | `QueryRecord.costUsd?` 可选字段 vs 仅 onResult 观测缝 | **加字段（甲）** | §3.4 |
+| D3 | LoopRunner 建 / 不建 | **不建**，代之 ASSEMBLY.md + agent-loop 例程 | §4 |
+| D4 | Routine 停启状态存储 | **纯内存 + 宿主持久化（丙）** | §5.3 |
+| D6 | 跨 attempt 自动 resume | **不做**，恢复走 reopen + payload.resume | §3.5 |
+| D7 | `cancelled` 在 Cowork UI 呈现 | **单列「已取消」**，不并入 failed | §8.2 |
+| D8 | 宪章 §3「loop 骨架」条补覆盖注 | **补注**（实现轮随 PR 落宪章） | §4 |
 
 （编号缺 D1 / D5：原候选项已并入裁2 / 裁3，留号防指针断链。）
+
+本档全部设计决策至此裁定完毕，实现轮待守密人派发（范围：assembly 族 + routine 族 + `WorkflowNode.manualClaim` + `QueryRecord.costUsd` + ASSEMBLY.md + agent-loop 例程 + 宪章补注，家族一次 minor 锁步齐发）。
