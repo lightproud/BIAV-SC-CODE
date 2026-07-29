@@ -124,6 +124,17 @@ jobs:
       # lives here. The pytest flag is kept for its inline report only. Do NOT
       # delete this step in the belief the flag above covers it: verify by
       # raising the threshold and confirming the job actually goes red.
+      #
+      # Two follow-up questions were put to the keeper on 2026-07-29 and both
+      # were ruled "keep as is" — recorded here so a later session does not
+      # read either as an oversight and "fix" it:
+      #   1. Leave `pip install pytest pytest-cov` UNPINNED. This step does not
+      #      depend on pytest-cov's exit-code behaviour, so pinning would buy
+      #      nothing here while adding upgrade maintenance.
+      #   2. Keep the floor at 92 even though actual is now 93. The standing
+      #      2026-07-11 stance above — the floor chases actual, never leads it
+      #      — governs, and 92 has not yet been exercised by a gate that
+      #      actually fails.
       - name: Enforce the coverage floor (the pytest flag above cannot)
         run: |
           set -euo pipefail
