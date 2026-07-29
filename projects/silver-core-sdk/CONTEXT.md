@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.4.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.4.0`
+**当前版本 `1.4.1`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.4.1`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.4.1（2026-07-29）：`setServers()` 改增量 diff（BPT 缺陷 D）**——原来是 `closeAll()` + 整体重建 + `connectAll()`，追加一台服务端就把**其余每一台**断开重连（当前回合工具所在的 in-process `sdk` 服务端也不例外），一次 `load_skill` 让整个工具面抖一次。现在名字与配置都没变的条目原样留用（连接 / 工具表 / `serverInfo` / `enabled` 一并保留），只关真被移除或改配的、只连真新增或改配的；配置等值为结构比较，`sdk` 的 `instance` 按引用比对（重建即重连）。`added`/`removed` 从此描述真实发生的工作。
 
 **v1.4.0（2026-07-28）：审计第十七波**——Read 把路径原样插进 `system-reminder` 围栏，一个 0 字节文件靠**文件名**就能伪造出带框架权威的注入（项目指令 CLAUDE.md 同款）；WebSearch 结果 title 里一个换行伪造出完整额外记录、**绕开 `blocked_domains`**；`server_tool_use` 从未被折叠，网页搜索费**一次都没计过**、预算闸门可被整笔突破；分段系统提示下消息缓存断点被整个撤掉，4 槽只用 2、每回合把全部历史当新 token 重发。
 
