@@ -11,6 +11,7 @@ import type { Clock } from '../clock.js';
 import { systemClock } from '../clock.js';
 import type { TaskLedger } from '../ledger/ledger.js';
 import { DuplicateSessionError } from '../ledger/ledger.js';
+import { latestFirePoint } from './footprint.js';
 import type { ScheduleSpec } from './spec.js';
 import { firesBetween, validateSpec } from './spec.js';
 
@@ -174,32 +175,21 @@ export class Scheduler {
    * Cross-restart recovery (§6.2): the newest fireAt per spec is parsed back
    * out of the ledger's session ids. Specs with no ledger footprint start at
    * now — deliberately no epoch backfill.
+   *
+   * The parse itself (strict numeric suffix, Date-range bound — audit
+   * r2/r4/r5 hardening) lives in schedule/footprint.ts, shared with the
+   * RoutineManager's status reverse-lookup: one parser, two consumers, no
+   * second copy to drift (design round 3, 2026-07-29). Recovery scans the
+   * `sched:` segment ONLY — manual fires (`manual:` segment) must never move
+   * the footprint, or they would swallow due points inside the compensation
+   * window.
    */
   async #recover(): Promise<void> {
     const sessions = await this.#ledger.listSessions();
+    const ids = sessions.map((session) => session.id);
     const now = this.#clock.now();
     for (const spec of this.#specs) {
-      const prefix = `sched:${spec.id}:`;
-      let latest: number | null = null;
-      for (const session of sessions) {
-        if (!session.id.startsWith(prefix)) continue;
-        const suffix = session.id.slice(prefix.length);
-        // Strict numeric-only (audit r2): Number('') and Number('  ') are 0,
-        // so a malformed id like 'sched:x:' would recover lastFired = 0 and
-        // trigger a catastrophic epoch catch-up. A fractional part is legal
-        // (r5): validateSpec allows fractional `every`, so fireAt — and the
-        // session id minted from it — can carry a decimal point; rejecting
-        // it here made a restarted scheduler lose the footprint and silently
-        // re-anchor.
-        if (!/^\d+(\.\d+)?$/.test(suffix)) continue;
-        const fireAt = Number(suffix);
-        // Digits beyond the representable epoch range (audit r4): one
-        // poisoned row like 'sched:x:99…9' would otherwise pin lastFired in
-        // the far future and silently starve the spec forever. The bound is
-        // the JS Date range (±8.64e15 ms), which also keeps it a safe integer.
-        if (fireAt > 8_640_000_000_000_000) continue;
-        if (latest === null || fireAt > latest) latest = fireAt;
-      }
+      const latest = latestFirePoint(ids, spec.id);
       // seedFirstRun (gap G3): a footprint-less spec starts one cadence back,
       // so the window (lastFired, now] holds AT MOST its single most recent
       // due point — identical fire set under catchUp 'latest' and 'all'.

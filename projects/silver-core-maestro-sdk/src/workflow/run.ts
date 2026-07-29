@@ -149,6 +149,11 @@ export class WorkflowRun {
         intent: node.intent,
         payload,
         ...(node.maxAttempts !== undefined ? { maxAttempts: node.maxAttempts } : {}),
+        // Confirmation gate (design round 3): a manualClaim node parks in
+        // `pending` invisible to claimDue until the host claims it —
+        // readiness/status math upstream is untouched (the gate is just a
+        // dispatched, not-yet-terminal node from the graph's point of view).
+        ...(node.manualClaim === true ? { runAt: null } : {}),
       });
     } catch (error) {
       // Duplicate id = a previous run already dispatched this node; keeping

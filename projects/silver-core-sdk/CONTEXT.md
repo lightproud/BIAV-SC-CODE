@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `2.1.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.1.0`
+**当前版本 `2.2.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.2.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v2.2.0（2026-07-29）：锁步对齐**——本包零代码改动，随 maestro SDK 2.2.0（设计第三轮：注入式 AgentExecutor / RoutineManager 例程管理面 / workflow 确认门 / query 行成本入账）前进。本包刻意零供给：执行座位只消费公开 `query()` 面——硬性质 §1.2 成立的证明，不是缺口。
 
 **v2.1.0（2026-07-29）：AskUserQuestion 只报「怎么结束的」，不替宿主断言用户意图（BPT 请求）**——handler 抛异常与返回 `null` 曾共用同一句 `User declined to answer.`，两者都是宿主侧机械事实，模型据此向用户复述从未发生的拒答（黑池 UI 连取消按钮都没有）。现两路各说各的机械事实并明示「意图未知」，抛值经 `thrownMessage()` 保住诊断；新增结构化产出 `AskUserQuestionStructuredOutput`（`outcome` 五态 + 本包自有 `UserQuestionAnswer[]` + `error`），消费方分流不必再字符串匹配写死文案。官方 permission-component 形状仍不发货。
 **v2.0.0（2026-07-29）：T75 设计轮落地（BREAKING·记忆面收敛 Claude 形态）**——①cards 模式整体退役（`schema:'cards'` / `memory.cards` / `parseMemoryCards` / `validateCardsContent` 及类型全下架；守密人三轮裁定：cards 本是 R9 黑池适配轴、非 Claude 记忆模式；迁移 = 换 `schema:'frontmatter'`、旧档 delete+create 换 YAML 头、卡文保留——testbed 做梦卡随步迁作参照例，黑池侧口述核实无 cards 消费后开工）；②`schema:'frontmatter'` 写侧校验器双层落地（name/单行 description≤150/type 四枚举/可选 pinned，索引豁免，报错含 delete+create 自愈指引）+ 官方 memory-instructions 全文注入（总纲 + user description 专档 + feedback/project 各 when_to_save/body_structure，逐档 provenance 台账 `MEMORY_FRONTMATTER_SOURCES` + corpus-sync 守卫；pinned 注为声明 SDK glue）；③选择性附着 `memory.attachment`（官方挑选器提示词 faithful 复现，≤5 档按 description 挑选、pinned 绕挑选恒附着不占名额、25600 字节预算按序截断并披露、挑选器失败降级 pinned-only 绝不挡会话；硬依赖 frontmatter 档位否则 ConfigurationError）；④计费面：挑选器真实调用入会话账（`runUtilityCall.onUsage` + `SessionAccounting.foldUtilityUsage`），`memoryHealth.attachmentInjectionTokens` 与索引注入并列；⑤健康扫描增 frontmatter 完整率维度 + consolidation 迁移任务。

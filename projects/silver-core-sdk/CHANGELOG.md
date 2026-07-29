@@ -16,6 +16,15 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 2.2.0 — 2026-07-29
+
+Lockstep alignment only — no changes to this package. The family clock
+advanced for silver-core-maestro-sdk 2.2.0 (design round 3: injected
+AgentExecutor assembly seat, RoutineManager duty face, workflow
+confirmation-gate nodes, per-attempt costUsd on the query row). This package
+deliberately ships nothing for it: the executor seat consumes only the
+public `query()` surface — hard property §1.2 holding, not an omission.
+
 ## 2.1.0 — 2026-07-29
 
 AskUserQuestion stops translating host-side mechanics into a claim about what
