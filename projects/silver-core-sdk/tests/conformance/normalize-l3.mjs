@@ -223,9 +223,10 @@ export const KNOWN_TOOL_DIVERGENCES = [
   {
     id: 'KD-L3-15',
     tool: 'Glob/Grep',
-    note: 'empty-result sentinel / truncation-note wording: ours \'No files found\' / \'No matches found\' vs official variants (observed live: official Grep answers a no-match files_with_matches search with \'No files found\').',
+    note: 'empty-result sentinel / truncation-note wording: ours \'No files found\' / \'No matches found\' vs official variants (observed live: official Grep answers a no-match files_with_matches search with \'No files found\'). Extended 2026-07-29 (0.3.215 re-ratification): ours may carry the zero-match ignore-disclosure suffix "(note: node_modules and .git are always excluded ...)" - a DELIBERATE deviation (keeper ruling 2026-07-28 拷问 #4: the hard-coded excludes can BE the reason nothing matched, a bare no-match reads as absence; glob.ts/grep.ts IGNORE_DISCLOSURE), while official 2.1.215 answers the bare sentinel. Suffix is matched exactly so any OTHER wording drift on our side still surfaces.',
     applies: (o, u) =>
-      /^No (files|matches) found$/.test(u) && /no (files|matches)/i.test(o),
+      /^No (files|matches) found( \(note: node_modules and \.git are always excluded from (Glob|Grep) — use Bash to search inside them\))?$/.test(u) &&
+      /no (files|matches)/i.test(o),
   },
   {
     id: 'KD-L3-16',
