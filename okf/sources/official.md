@@ -4,7 +4,7 @@ title: "official 社区数据源"
 description: "official 平台采集档案，全量 347 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/steam/global/news/"
 tags: ["data_layer:full_archive", "platform:official", "health:active"]
-timestamp: "2026-07-29T11:27:34.055803+00:00"
+timestamp: "2026-07-29T14:07:20.003511+00:00"
 ---
 
 # 数据层指针
