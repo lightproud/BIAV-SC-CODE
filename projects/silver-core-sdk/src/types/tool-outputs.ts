@@ -42,6 +42,7 @@ import type {
   TodoWriteOutput,
   WebFetchOutput,
 } from './tools.js';
+import type { UserQuestionAnswer } from './subsystems.js';
 
 export type { BashOutput, FileReadOutput, GlobOutput };
 
@@ -139,6 +140,52 @@ export type EnterWorktreeStructuredOutput = EnterWorktreeOutput;
  * the new list. A first call in a session honestly reports `oldTodos: []`.
  */
 export type TodoWriteStructuredOutput = TodoWriteOutput;
+
+/**
+ * AskUserQuestion — deliberately NOT official's `AskUserQuestionOutput`.
+ *
+ * The keeper ruled on 2026-07-27 that official's shape (`answers` as a
+ * `Record<string, string>`, `annotations`, `afkTimeoutMs`) is its
+ * permission-component's round-trip UI state and stays unshipped: this SDK
+ * routes the tool to a host callback and has no such component, so declaring
+ * those fields would describe a capability that does not exist. That ruling
+ * still holds and nothing below reaches for it.
+ *
+ * What this shape reports instead is a fact the SDK genuinely owns — HOW the
+ * call ended — and it exists for the same reason `ReadMcpResourceOutput.error`
+ * was added and populated: without it, a caller cannot tell one ending from
+ * another except by string-matching the human-facing sentence. Three of the
+ * four failure endings are host-side mechanics with nothing to do with the
+ * user's wishes, and the old code rendered two of them with the same words
+ * ("User declined to answer."), which made the distinction unrecoverable AND
+ * asserted a refusal that never happened (BPT request 2026-07-29).
+ *
+ * `answers` carries this SDK's own `UserQuestionAnswer[]` — what the host
+ * handler actually returned, unflattened. The rendered text joins each
+ * question's selections with ", ", which is lossy the moment a label contains
+ * that separator; a caller that needs the selections should read them here.
+ * Empty on every non-`answered` outcome, mirroring the `contents: []` of the
+ * resource tools' error results.
+ */
+export type AskUserQuestionStructuredOutput = {
+  /**
+   * - `answered` — the host returned answers (possibly an empty array).
+   * - `no_answer` — the handler returned `null`: no answers were collected,
+   *   for a reason only the host knows. NOT a statement about the user.
+   * - `handler_error` — the handler threw, or returned a non-array value. A
+   *   host fault; the user may never have seen the question.
+   * - `not_configured` — no `options.onUserQuestion` was wired at all.
+   * - `invalid_input` — the model's `questions` payload failed validation, so
+   *   nothing was ever put to a human.
+   *
+   * A future `declined` member is reserved for the day a host can SAY the user
+   * refused; the SDK will never infer it.
+   */
+  outcome: 'answered' | 'no_answer' | 'handler_error' | 'not_configured' | 'invalid_input';
+  answers: UserQuestionAnswer[];
+  /** The failure message, verbatim; absent on `answered`. */
+  error?: string;
+};
 
 /** The per-message map described in the module header. */
 export type ToolUseResults = Record<string, unknown>;

@@ -30,8 +30,6 @@ const TOOLS_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'to
  * requires stating why the tool has no machine-readable fact worth reporting.
  */
 const NO_STRUCTURED_OUTPUT: Record<string, string> = {
-  askuserquestion:
-    'the answer map is official permission-component UI state; adjudicated unshipped (COMPAT.md)',
   enterplanmode: 'official declares no output type for this tool',
   exitplanmode:
     'official fields are its multi-agent approval chain (awaitingLeaderApproval / requestId)',
@@ -84,7 +82,12 @@ describe('structured-output census', () => {
     // required `status: 'async_launched'` honestly. The stale-entry check
     // caught that transition on the first run after the change, which is the
     // behaviour the ledger exists for.
-    for (const mod of ['write', 'edit', 'todo', 'enterworktree', 'workflow']) {
+    // `askuserquestion` graduated the same way (2026-07-29): its exemption
+    // spoke only of official's answer MAP, and stayed on the ledger while the
+    // tool's four failure endings were distinguishable by nothing but their
+    // English wording. The fact it owns — HOW the call ended — was never the
+    // field the exemption was about.
+    for (const mod of ['write', 'edit', 'todo', 'enterworktree', 'workflow', 'askuserquestion']) {
       expect(emitsStructuredOutput(mod), `${mod} 应当产出结构化结果`).toBe(true);
     }
   });

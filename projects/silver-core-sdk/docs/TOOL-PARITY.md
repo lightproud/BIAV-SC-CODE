@@ -43,7 +43,7 @@ Registered by `createBuiltinTools` (`src/tools/index.ts`).
 | Monitor | `monitor.ts` | poll model (no event push) |
 | WebFetch | `webfetch.ts` | |
 | WebSearch | `websearch.ts` | |
-| AskUserQuestion | `askuserquestion.ts` | host answers via `onUserQuestion` |
+| AskUserQuestion | `askuserquestion.ts` | host answers via `onUserQuestion`; every exit reports a mechanical `outcome`, never an inferred user intent |
 | TaskCreate / TaskGet / TaskUpdate / TaskList | `tasks` | (TodoWrite legacy, behind `CLAUDE_CODE_ENABLE_TASKS=0`) |
 | TaskOutput / TaskStop | `shells.ts` | background-task read/stop |
 | TodoWrite | legacy | only when `CLAUDE_CODE_ENABLE_TASKS=0` |

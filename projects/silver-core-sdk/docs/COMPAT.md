@@ -543,7 +543,7 @@ than as a class, and the class turned out not to be uniform:
 | `WebSearchOutput` (whole shape) | **populated**, `searchCount` skipped | The sweep's framing was wrong: the interesting gap was not `searchCount` but that WebSearch produced NO structured result at all, while `query` / `results` / `durationSeconds` are all genuinely available. `searchCount` stays unset — one backend call per invocation makes it a constant 1, a field whose only content is "yes, this ran". |
 | `FileWriteOutput.userModified` | log only | Requires tracking whether the user edited the file between read and write — an editor-integration fact this SDK has no source for. |
 | `ExitPlanModeOutput.planWasEdited` | log only | Official's own comment scopes it to "CCR web UI or Ctrl+G". No such surface here. |
-| `AskUserQuestionOutput.afkTimeoutMs` / `annotations` | log only | Official permission-component UI, same ruling as the input-side fields above. |
+| `AskUserQuestionOutput.afkTimeoutMs` / `annotations` / `answers` (official's `Record<string, string>` map) | log only, **still** | Official permission-component UI, same ruling as the input-side fields above. Unchanged by the 2026-07-29 work below: that shipped an SDK-OWN structured result (`AskUserQuestionStructuredOutput`, `outcome` + this SDK's own `UserQuestionAnswer[]`), which is a fact the host callback genuinely produces — it does not reach for official's UI-bound shape. |
 | `WorkflowOutput.sessionUrl` / `taskType` / `workflow*` | log only *(verdict OVERTAKEN by v0.92.0 — kept as the scan-time record)* | The blocker this sweep recorded — "this SDK runs workflows SYNCHRONOUSLY, populating `status: 'async_launched'` would assert a launch that did not happen" — was REMOVED by v0.92.0's true async launch: `WorkflowOutput` is now genuinely populated and Workflow left the zero-output ledger (see the v0.92.0 section below). `sessionUrl` / `taskType` remain unpopulated (no session URL space, no task-type taxonomy here). |
 
 The four "log only" rows share one reason worth stating plainly: declaring a
@@ -689,7 +689,7 @@ deducted by `type-parity.mjs`:**
 | `AgentOutput.toolStats.*`, `usage.inference_geo` / `.speed` / `.iterations`, `worktreePath` / `worktreeBranch`, `agentType`, `modelsUsed`, `content.citations`, `isAsync` / `sessionUrl` / `taskId` | The Agent tool has no structured producer at all. Arguing over individual fields before there is a producer is backwards: stand up the producer first, and the fields follow. Recorded, not added |
 | `AgentInput.team_name` | Official teams; no such concept here. Pure scope |
 | `FileReadOutput.source` | Sits on official's `file_unchanged` arm (startup-seeded CLAUDE.md dedup). This SDK lacks the WHOLE ARM — the flattener surfaces only the one field unique to it, which is that method's blind spot, stated here so the row is not misread as a one-field gap |
-| `Monitor`, `ExitPlanMode`, `AskUserQuestion` outputs | Official background-task ids / multi-agent approval chain / permission-component UI. No honest source |
+| `Monitor`, `ExitPlanMode`, `AskUserQuestion` outputs | Official background-task ids / multi-agent approval chain / permission-component UI. No honest source. (AskUserQuestion since ships its OWN structured result — outcome + handler answers — which is not this row's official shape; see the ledger row above.) |
 
 **Closed 2026-07-27 (v0.92.0): `Workflow` went genuinely async.** Official's
 `WorkflowOutput` requires `status: 'async_launched'` and this engine ran
