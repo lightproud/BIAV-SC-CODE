@@ -91,9 +91,60 @@ export function estimateContentTokens(
   if (!Array.isArray(content)) return 0;
   let total = 0;
   for (const block of content) {
-    total += PER_BLOCK_OVERHEAD_TOKENS + estimateBlockTokens(block);
+    // A block whose accessor throws (a Proxy / lazily-materialized draft block)
+    // must cost the caller an estimate, not an exception: the per-block read is
+    // the last unguarded step on the public path.
+    let blockTokens: number;
+    try {
+      blockTokens = estimateBlockTokens(block);
+    } catch {
+      blockTokens = 0;
+    }
+    total += PER_BLOCK_OVERHEAD_TOKENS + blockTokens;
   }
   return total;
+}
+
+/**
+ * JSON serialization that upholds this module's estimate-or-degrade contract.
+ *
+ * Every crash-shaped hazard this file has already fixed (a `for...of null`, an
+ * `undefined` return turning the total into NaN) was fixed because it escaped
+ * "out of the compaction trigger AND out of the public estimateMessagesTokens".
+ * A THROWING `JSON.stringify` is that same escape by a different door, and it
+ * is the one shape a HOST-BUILT draft actually hits: `estimateMessagesTokens`
+ * has been public since 0.97.0 precisely so a host can measure material it has
+ * NOT sent yet — objects assembled in JS, never round-tripped through JSON, so
+ * a BigInt field (a database id) or a back-reference is ordinary rather than
+ * exotic. Measured: both threw a TypeError straight out of the public export,
+ * and a circular block reached through the history estimate kills every
+ * subsequent turn's compaction check.
+ *
+ * Degrade instead: re-serialize with a replacer that names BigInts and cuts
+ * cycles, so the estimate still reflects the real size. Never throws.
+ */
+function safeJson(value: unknown): string {
+  try {
+    return JSON.stringify(value) ?? '';
+  } catch {
+    try {
+      const seen = new WeakSet<object>();
+      return (
+        JSON.stringify(value, (_k, v: unknown) => {
+          if (typeof v === 'bigint') return `${v.toString()}n`;
+          if (typeof v === 'object' && v !== null) {
+            if (seen.has(v)) return '[Circular]';
+            seen.add(v);
+          }
+          return v;
+        }) ?? ''
+      );
+    } catch {
+      // A throwing getter / non-serializable exotic: charge nothing for the
+      // payload rather than taking the whole estimate down.
+      return '';
+    }
+  }
 }
 
 function estimateBlockTokens(block: ContentBlockParam): number {
@@ -110,7 +161,7 @@ function estimateBlockTokens(block: ContentBlockParam): number {
       // (same runtime shape the recap path guards against — audit r4 R7j-4).
       return (
         estimateTextTokens(block.name) +
-        estimateTextTokens(JSON.stringify(block.input) ?? '{}')
+        estimateTextTokens(safeJson(block.input))
       );
     case 'tool_result':
       return estimateToolResultTokens(block.content);
@@ -125,7 +176,7 @@ function estimateBlockTokens(block: ContentBlockParam): number {
       // block silently disabled auto-compaction, the knownPromptFloor 400
       // safety net, and the memory flush at once. Estimate the serialized
       // block instead — conservative but finite.
-      return estimateTextTokens(JSON.stringify(block));
+      return estimateTextTokens(safeJson(block));
   }
 }
 
@@ -184,9 +235,15 @@ function contentLen(content: APIMessageParam['content']): number {
   // no full codepoint rescan.
   let n = content.length;
   for (const block of content) {
-    const b = block as { text?: unknown; thinking?: unknown };
-    if (typeof b.text === 'string') n += b.text.length;
-    else if (typeof b.thinking === 'string') n += b.thinking.length;
+    // This validator runs FIRST for every message, so a throwing accessor here
+    // escaped before the estimator itself could absorb it.
+    try {
+      const b = block as { text?: unknown; thinking?: unknown };
+      if (typeof b.text === 'string') n += b.text.length;
+      else if (typeof b.thinking === 'string') n += b.thinking.length;
+    } catch {
+      /* unreadable block: contributes nothing to the fingerprint */
+    }
   }
   return n;
 }
@@ -214,5 +271,5 @@ export function estimateMessagesTokens(messages: APIMessageParam[]): number {
  *  estimator so CJK-described tools charge the overhead they actually cost. */
 export function estimateToolDefsTokens(defs: APIToolDefinitionParam[]): number {
   if (defs.length === 0) return 0;
-  return estimateTextTokens(JSON.stringify(defs));
+  return estimateTextTokens(safeJson(defs));
 }
