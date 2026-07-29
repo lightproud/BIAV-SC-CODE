@@ -31,18 +31,21 @@ metadata:
 
 ### 1.2 设计案
 
-- **落点**：新增 `schema: 'frontmatter'` 档位（与现行 `schema: 'cards'` 平级、互斥），
-  写侧校验器 `frontmatter.ts`（对称 cards.ts）：frontmatter 存在性 / 必填字段（name、
-  description）/ type 枚举 / description 单行长度上限（~150 字符，对齐索引行预算）。
-  索引文件 `/memories/MEMORY.md` 豁免（同 cards 先例）。
-- **cards 关系裁定（本档需守密人三选一）**：
-  - **甲（推荐）**：三档并立 `schema: 'cards' | 'frontmatter' | undefined(自由)`，互斥、
-    逐项目选。理由：cards 面向写侧纪律弱的模型（国产模型场景），frontmatter 面向
-    附着/巩固消费——目标人群不同，强行合并（frontmatter 头 + cards 体）会把两套校验
-    错误叠在同一次写入上，模型重试负担翻倍。
-  - 乙：合并档位（frontmatter 头 + cards 体同时校验），一套体例通吃。
-  - 丙：cards 退役、frontmatter 独存（需先证实 cards 无在产消费者——目前 types 注释
-    明标其目标场景，不建议）。
+- **落点**：新增 `schema: 'frontmatter'` 档位（cards 已裁退役——见下条，落地后 `schema`
+  仅 `'frontmatter' | undefined`），写侧校验器 `frontmatter.ts`（结构对称被移除的
+  cards.ts）：frontmatter 存在性 / 必填字段（name、description）/ type 枚举 /
+  description 单行长度上限（~150 字符，对齐索引行预算）。
+  索引文件 `/memories/MEMORY.md` 豁免（沿用 cards 时期先例）。
+- **cards 关系【已裁：丙·cards 退役】（守密人 2026-07-29 二轮交互裁定，否决推荐甲案）**：
+  裁定语境——cards 本非 Claude 记忆模式（R9 属黑池适配轴、2026-07-11 需求书裁定、COMPAT
+  诚实标 BPT-EXTENSION），守密人核实出身后裁记忆面收敛 Claude 形态、cards 移除。
+  **执行并入 §一实现步**（消费者只面对一次破坏性迁移）：`schema: 'cards'` 档位 +
+  `memory.cards` 配置 + `cards.ts` 校验器 + 相关导出一并移除，`schema` 收敛为
+  `'frontmatter' | undefined(自由)`；semver 诚实——移除已发货公开选项为 BREAKING，
+  该步发 **2.0.0**（家族锁步）并附 CHANGELOG 迁移注记。
+  **在产消费者迁移清单**：① testbed 每日做梦归并卡（`validateCardsContent` 准入）随步
+  迁 frontmatter 体例（卡文内容可保留，头部换 YAML frontmatter）；② 黑池侧若已 pin 消费
+  cards 需按迁移注记升级（实现前守密人向黑池确认消费面即可，按「需求非数据」纪律口述）。
 - **迁移悬崖（两向都要提示）**：任一档位下触碰旧体例文件的 `str_replace`/`insert` 会被
   全量校验拒绝（COMPAT #34 既有事实）——校验错误消息须附「delete + create 重写为新体例」
   的自愈指引；docs/MEMORY.md 增「已有内容下切换档位」小节。
@@ -84,8 +87,8 @@ contract-suite 不扩（校验在工具层，store 契约不变）；COMPAT #9 �
 
 ## 三、排期与依赖
 
-1. 本档定稿（守密人裁 §1.2 cards 关系三选一 + §2.2 形态确认）→ 2. §一实现（独立可发）
-→ 3. §二实现（依赖 §一）。两步各自 minor 版本、锁步发货；COMPAT #9 行随每步更新。
+1. 本档定稿（§1.2 已裁丙；余 §2.2 形态确认 + §四开放问题）→ 2. §一实现（frontmatter 落地 +
+cards 退役同步，**BREAKING → 2.0.0**）→ 3. §二实现（依赖 §一，minor）。锁步发货；COMPAT #9 行随每步更新。
 
 ## 四、开放问题（定稿时一并裁）
 
