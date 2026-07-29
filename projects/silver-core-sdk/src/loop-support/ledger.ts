@@ -97,8 +97,22 @@ export class ReportLedger {
    * to callers who then trusted `has(key)` for exactly-once semantics).
    */
   record(key: string, opts?: { at?: number; summary?: string }): boolean {
-    if (key.length === 0) {
+    // Type-check both strings, for the same reason the timestamp is checked
+    // below and with the same verdict deserialize() already reaches: a
+    // non-string reaches digest() as `singleLine(value)` and dies there with a
+    // bare `text.replace is not a function` — a TypeError, not a
+    // ConfigurationError — inside toRetainedRegion(), i.e. MID-COMPACTION.
+    // `key.length === 0` alone did not catch it: a number's `.length` is
+    // undefined, so `undefined === 0` is false and the value sailed through.
+    // Ledger keys and summaries derive from EXTERNAL event data (the same
+    // premise L2-7 states one screen down), so a JS host, an untyped payload
+    // or an `as any` is the ordinary case, not an exotic one. Fail loud at the
+    // write, where the caller can still see which event did it.
+    if (typeof key !== 'string' || key.length === 0) {
       throw new ConfigurationError('ledger key must be a non-empty string');
+    }
+    if (opts?.summary !== undefined && typeof opts.summary !== 'string') {
+      throw new ConfigurationError('ledger entry summary must be a string');
     }
     const at = opts?.at ?? Date.now();
     // A non-finite timestamp (NaN/Infinity) OR one outside the representable

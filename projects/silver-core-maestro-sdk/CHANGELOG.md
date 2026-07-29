@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.8.3 — 2026-07-29
+
+Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.3 为审计第二十四波
+（折叠比例旋钮缺 NaN 守卫导致自动折叠整场静默失效 · `ReportLedger.record` 不校验字段类型
+致折叠中途抛裸 TypeError），见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18
+裁定），故本包同步升位。
+
 ## 1.8.2 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.2 为审计第二十三波

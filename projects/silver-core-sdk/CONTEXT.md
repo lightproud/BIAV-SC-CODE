@@ -91,11 +91,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.8.2`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.8.2`
+**当前版本 `1.8.3`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.8.3`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.8.3（2026-07-29）：审计第二十四波**——两个旋钮没守住它自己档案已写明的规矩：①折叠的两个**比例**旋钮缺 NaN 守卫（同函数为 `contextWindowTokens` 挡了、注释还点名兄弟旋钮都挡了），`??` 不拦 NaN，`autoThresholdRatio` 为 NaN 即 `triggerAt` 为 NaN、比较恒假——**整场会话自动折叠静默失效且无告警**，实测可复现；②`ReportLedger.record` 校验时间戳（理由正是「坏值会在折叠中途抛」）却不校验 key/summary 类型，而 `deserialize` 校验了——非字符串绕过空值检查，最终在 `toRetainedRegion()` 里抛裸 TypeError。
 
 **v1.8.2（2026-07-29）：审计第二十三波**——三处没守住本仓自己在别处已写明的承诺：①校验器发现块是行式摘要却未折行（同形状三处兄弟都用了 `singleLine`；伪造一行即可把真缺陷说成 REFUTED 逐出评审）；②两份会话存储的撕裂尾自愈被**失败的写入**解除（标志打在写入之前，写失败即空耗，下一次成功追加粘上撕裂尾、两条记录一起丢），现改为落地后才打标志；③`loadInfo` 缺 `load` 那道 uuid 去重，部分双写档案下二者对「是否中断」互相打架，而所有列表行都取自 `loadInfo`。
 
@@ -191,10 +193,6 @@ Bash/WebFetch/Glob/workflow 标记补齐；注册表测试逼新截断点登记�
 **v0.84.0（2026-07-27）：记忆索引纪律 + 整理规程**——SDK 给了常驻索引机制却没规定条目写法，且会话
 收尾提示词命令模型把进度卡写**进**索引档（守密人 BPT 现场反馈根因）。进度卡改落 `/memories/progress/`
 只留指针 · 索引纪律片段 · 写侧超限反压 · 四阶段整理规程。层界守 N1 不给调度；多租户须挂 S1。
-
-**v0.85.0（2026-07-27）：GoalVerdict 家族统一（本包零行为改动）**——本包 `{status: 'achieved'|'not_achieved'|'impossible', reason?}` 判词类型升格为家族**正典**：maestro 0.85.0 把 `GoalChaser` 评审判词（原 `{achieved, feedback, impossible?}`）迁为同形，自此一个宿主评审器经结构类型同时服务引擎 `options.goal` Stop 门与 maestro 跨 query 追逐两条缝。背景是首个真实消费者陷阱：BPT 接了 `options.goal` 后报「goal 没效果、模型照样停」，排查出两包**同名不同形** `GoalVerdict`——评审器误用 maestro 形状时，引擎按既定失败方向（阻断停止才是危险动作，评审器坏 = fail-open 放行）把 malformed verdict 放行为允许停止，goal 无声失效。本包仅在 `src/types/subsystems.ts` 的 `GoalVerdict` 注释补「正典地位 + 改形需家族级裁定」声明，`options.goal` 行为与评审器契约一字未动。
-**v0.85.0（2026-07-27）：工具真正产出结构化结果 + MCP 接受列表扩容**（偏离普查轴一 / 轴四守密人裁定）——**先订正普查自己的一处结论**：首轮只 grep `outputSchema`、没找到就报「银芯零输出面」，**错了**——`types/tools.ts` 里 `GlobOutput`/`GrepOutput`/`WebFetchOutput`/`FileReadOutput`/`BashOutput`/Task 五件**早已按官方形状声明**，缺的是**从来没人产出**（typed-not-populated）。于是改动比原先设想的小得多也好得多：**复用既有类型、不另造一套**。① `ToolResultPayload.structuredOutput` 承载机器可读结果，Read/Glob/Grep/Bash/WebFetch 在**每条终态分支**都产出（含空结果与失败——调用方不该需要区分「没有结构化结果」与「没有匹配」）；② 引擎按 tool_use_id 收集整批，经 **WeakMap 侧信道**（`engine/tool-use-results.ts`）挂到用户轮而**不是加字段**——`APIMessageParam` 是**Anthropic 线格式**，多挂一个属性要么发去 API、要么逼后来每个调用点都记得先剥掉；③ `query()` 读回并以`toolUseResult` 发给消费方。**形状差异（有意）**：官方是裸对象（它一消息一 tool_result），本引擎一轮批处理，故为 **tool_use_id 为键的 record**。新增可直接读到的事实：Glob `truncated` · Grep `appliedLimit`/`appliedOffset`/`truncated` · Bash `exitCode`/`interrupted`/`timedOutAfterMs`/`truncated` · Read `truncatedByCharCap`（**按本 SDK 的字符度量命名**，官方 `truncatedByTokenCap` 数的是 token，同名不同单位读起来像对齐、跑起来是漂移）。13 条测试，含一条**跑真引擎**的接缝测试（工具级绿说明不了值有没有传出去）。
-**MCP 接受列表**加 `2024-10-07`（官方接受 5 个、银芯只接受 3 个，钉在最老修订的服务器在官方能连、在银芯被拒）；**提议版本仍留 `2025-06-18`**——官方提议 `2025-11-25`，其新增是**异步任务面**（`tasks/get`·`list`·`status`·`result`·`cancel`）与 `related-task`/`skills` 两扩展，本包一个都没实现；**宣告一个语义未发货的版本号，与描述未发货能力是同一条红线**。
 
 > 更早版本的发布叙述已下沉 `CHANGELOG.md`（本档有 200 行封顶，`tests/test_claude_md_size.py` 守——
 > 路由器不许长成目录；撞线时的正确动作是下沉，不是抬上限）。

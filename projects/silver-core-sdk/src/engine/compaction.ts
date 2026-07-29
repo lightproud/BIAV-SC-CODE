@@ -197,14 +197,44 @@ export function extractSummaryFromReply(text: string): string {
 // ---------------------------------------------------------------------------
 
 /** Resolve user CompactionOptions into a fully-defaulted CompactionConfig. */
+/**
+ * A knob value that is usable, or `undefined` so the caller's `??` default
+ * takes over — the remedy this file already applies to contextWindowTokens
+ * ("Treat NaN as unset so ... a working configuration").
+ *
+ * `??` alone does NOT catch NaN, and NaN is the ordinary shape of a misread
+ * knob: `Number(process.env.SOMETHING)` over an unset variable. Every sibling
+ * knob in this file guards it — preTierMaxToolResultChars at its use site with
+ * `!(budget > 0)`, contextWindowTokens right below — but the two RATIOS did
+ * not, and NaN propagates through them into comparisons that are all false:
+ * `triggerAt = floor(budget * NaN)` is NaN, `preTokens >= NaN` is false, so
+ * auto-compaction never fires again for the WHOLE session, with no warning.
+ * That is the exact outcome the contextWindowTokens note describes ("auto-
+ * compaction plus the knownPromptFloor 'prompt too long' safety net both
+ * silently dead"), reached through a different knob.
+ *
+ * A ratio outside (0, 1] is rejected for the same reason rather than on taste:
+ * above 1 the trigger can never be reached (silently dead again), at or below
+ * 0 it is reached always (the fold churn the degenerate-window guard exists to
+ * prevent). Both are the failure this guard is for, not a preference.
+ */
+function usableRatio(v: number | undefined): number | undefined {
+  return v !== undefined && Number.isFinite(v) && v > 0 && v <= 1 ? v : undefined;
+}
+
+/** Same rule for a count knob: finite, non-negative, integral. */
+function usableCount(v: number | undefined): number | undefined {
+  return v !== undefined && Number.isFinite(v) && v >= 0 ? Math.floor(v) : undefined;
+}
+
 export function buildCompactionConfig(
   opt: CompactionOptions | undefined,
 ): CompactionConfig {
   return {
     enabled: opt?.enabled ?? true,
-    autoThresholdRatio: opt?.autoThresholdRatio ?? 0.85,
-    keepRatio: opt?.keepRatio ?? 0.3,
-    minRecentTurns: opt?.minRecentTurns ?? 2,
+    autoThresholdRatio: usableRatio(opt?.autoThresholdRatio) ?? 0.85,
+    keepRatio: usableRatio(opt?.keepRatio) ?? 0.3,
+    minRecentTurns: usableCount(opt?.minRecentTurns) ?? 2,
     useApiSummary: opt?.useApiSummary ?? false,
     customInstructions: opt?.customInstructions,
     // A NaN window (Number()/parseInt over an unset env var reaching

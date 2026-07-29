@@ -16,6 +16,38 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.8.3 — 2026-07-29
+
+Audit wave 24 — two knobs whose own file already states the rule they break.
+
+**A misread compaction ratio killed auto-compaction for the whole session, in
+silence.** `buildCompactionConfig` guards `contextWindowTokens` against NaN and
+its comment names the sibling knobs that do the same
+(preTierMaxToolResultChars, loadTimeoutMs, setMaxThinkingTokens, runConcurrent
+concurrency — all verified to actually guard). The two RATIOS did not. `??`
+does not catch NaN, and NaN is the ordinary shape of a misread knob:
+`Number(process.env.UNSET)`. A NaN `autoThresholdRatio` makes
+`triggerAt = floor(budget * NaN)` NaN, so `preTokens >= triggerAt` is false
+forever — measured on a 4000-message history: default config folds, NaN ratio
+never folds, no warning. That is verbatim the outcome the contextWindowTokens
+note describes ("auto-compaction plus the knownPromptFloor 'prompt too long'
+safety net both silently dead"), reached through a different knob. Ratios
+outside (0, 1] are rejected for the reason each breaks — above 1 the trigger is
+unreachable, at or below 0 it fires always — and `minRecentTurns` gets the same
+treatment. Invalid values fall back to the default, the remedy this same
+function already chose for the window.
+
+**ReportLedger.record() let a bad field through to die mid-compaction.** It
+type-checks the timestamp precisely because a bad one "would make digest()
+throw ... the latter mid-compaction", and `deserialize()` type-checks key and
+summary — but `record()` checked neither. `key.length === 0` cannot catch a
+non-string (a number's `.length` is `undefined`, so `undefined === 0` is
+false). Measured: `record('k', {summary: 123})` returns true, then
+`toRetainedRegion()` throws a bare `TypeError: text.replace is not a function`
+inside a fold. Ledger keys and summaries derive from external event data — the
+premise the module states one screen down — so an untyped payload is the
+ordinary case. Both now fail loud at the write, as ConfigurationError.
+
 ## 1.8.2 — 2026-07-29
 
 Audit wave 23 — three sites that break a promise the codebase itself already
