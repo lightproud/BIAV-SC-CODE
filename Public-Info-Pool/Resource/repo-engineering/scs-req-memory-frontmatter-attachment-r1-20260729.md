@@ -1,6 +1,8 @@
 # SCS-REQ：记忆 frontmatter 四类型 + 选择性附着（r1 设计轮需求档）
 
-- 日期：2026-07-29（北京时间）· 状态：**r1 草案，待守密人定稿**（定稿前不排实现）
+- 日期：2026-07-29（北京时间）· 状态：**已定稿**（守密人 2026-07-29 四轮交互裁定收官：
+  §1.2 丙·cards 退役 / §2.2 按 r1 案 / §四 pinned 采纳暂定案 / §四 when_to_save 官方全文注入；
+  按 §三排期进入实现）
 - 来源：守密人 2026-07-29 T75 拷问裁定「直接开设计轮」（不等黑池实测证据，本档即设计轮产出；
   同轮第 1 项 dream 信号源已随 agent SDK 1.6.0 落地——`transcripts` 指针段 +
   `consolidationToolOptions()` 预设）。
@@ -65,7 +67,7 @@ contract-suite 不扩（校验在工具层，store 契约不变）；COMPAT #9 �
 内容以 `<system-reminder>` 信封附着进会话（背景语境非指令、附「验证仍存在」防护——
 本包 R6 索引注入已带同款措辞）；对 user/project 类保守。
 
-### 2.2 设计案
+### 2.2 设计案【已裁：按 r1 案定稿】（守密人 2026-07-29 四轮交互裁定）
 
 - **形态**：`options.memory.attachment?: { enabled: true, maxFiles?: number(≤5),
   picker?: { model?: string } }`，**opt-in、计费可见**（挑选器是一次真实模型调用；
@@ -87,12 +89,18 @@ contract-suite 不扩（校验在工具层，store 契约不变）；COMPAT #9 �
 
 ## 三、排期与依赖
 
-1. 本档定稿（§1.2 已裁丙；余 §2.2 形态确认 + §四开放问题）→ 2. §一实现（frontmatter 落地 +
+1. 本档定稿（§1.2 已裁丙、§2.2 已裁按 r1 案；余 §四两开放问题）→ 2. §一实现（frontmatter 落地 +
 cards 退役同步，**BREAKING → 2.0.0**）→ 3. §二实现（依赖 §一，minor）。锁步发货；COMPAT #9 行随每步更新。
 
-## 四、开放问题（定稿时一并裁）
+## 四、开放问题（已全裁，2026-07-29 四轮）
 
-- `pinned` 字段语义：官方用于挑选保护（pinned 恒附着？）——r1 暂定「pinned 文件绕过
-  挑选器直接附着、不占 maxFiles 名额」，是否采纳待裁。
-- 四类型的 when_to_save 提示词（官方 8 档）是否随 frontmatter 档位注入——r1 暂定注入
-  精简版（sdk-original 标注），全文复现待描述治理轮统一处理。
+- `pinned` 字段语义【已裁：采纳 r1 暂定案】（守密人 2026-07-29 四轮交互裁定）：pinned 文件
+  绕过挑选器直接附着、不占 maxFiles 名额，仍受 25600 字节总预算约束且优先入预算。
+  裁定语境——官方原文 pinned =「适用于所有未来会话」，恒附着在官方即挑选器外机制，
+  本案忠实该语义并补预算护栏防滥 pin 撞爆上下文。
+- 四类型的 when_to_save / body_structure 提示词注入面【已裁：官方全文直接注入】（守密人
+  2026-07-29 四轮交互裁定，**否决推荐的精简版案**）：随 `schema:'frontmatter'` 档位注入
+  官方相关提示词**全文**（verbatim，provenance 标注对齐 descriptions.ts 治理纪律，入
+  `UNGOVERNED_TOOL_DESCRIPTIONS` 完备性守卫辖域），不等描述治理轮。口径订正：官方相关
+  提示词实为 feedback / project 各 save-guidance + body-structure 四档 + 总纲
+  `memory-instructions` 与 description 专档（r1 原写「官方 8 档」偶大，以镜像 `ls` 为准）。
