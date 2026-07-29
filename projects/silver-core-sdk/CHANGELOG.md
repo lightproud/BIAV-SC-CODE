@@ -16,6 +16,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.6.0 — 2026-07-29
+
+T75 second grilling (keeper rulings on the memory charter-expansion items):
+
+- **Dream signal source（指针段 + 预设）**: `buildConsolidationPrompt` gains an
+  opt-in `transcripts` input — host-named session-transcript/log paths the
+  Gather phase may READ for durable facts the memories never captured (the
+  official dream shape's gather-recent-signal leg). No new process, no
+  scheduler, no discovery: the host names the files and owns tenant scoping
+  (S1 mounts govern /memories virtual paths only — boundary now stated in
+  MEMORY-GOVERNANCE). Transcript content is downweighted as untrusted data,
+  and all writes still go through the memory tool.
+- **`consolidationToolOptions()`**: the consolidation round's harness floor —
+  a partial Options bundle (`tools: ['Read','Grep','Glob']`) that physically
+  restricts the round to read-only investigation tools; the memory tool rides
+  `options.memory`, and Agent/LoopControl honor the same filter, so the round
+  cannot spawn a fully-armed subagent either. Closes the audit E-⑤ gap
+  ("memory tool only" was prompt discipline while design principle 4 demands
+  a harness floor). E2E-pinned: memory + Read/Grep/Glob on the wire,
+  Write/Edit/Bash/Agent/Workflow off.
+- **Frontmatter taxonomy + selective attachment（直接开设计轮）**: ruled
+  straight to a design round (the wait-for-evidence recommendation was
+  overridden); r1 requirements doc
+  `Public-Info-Pool/Resource/repo-engineering/scs-req-memory-frontmatter-attachment-r1-20260729.md`
+  filed for keeper finalization — cards-relationship three-way call (recommended:
+  three coexisting schema tiers), attachment picker shape (opt-in, billed,
+  hard-depends on frontmatter), pinned semantics and when_to_save injection as
+  open questions. No runtime change until finalized.
+
 ## 1.5.0 — 2026-07-29
 
 拷问 rulings on the ten registered alignment observations (keeper interview

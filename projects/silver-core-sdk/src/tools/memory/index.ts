@@ -65,6 +65,7 @@ export {
 } from './index-capacity.js';
 export {
   buildConsolidationPrompt,
+  consolidationToolOptions,
   MEMORY_CONSOLIDATION_PROTOCOL,
   type ConsolidationPromptOptions,
 } from './consolidation.js';

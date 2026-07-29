@@ -82,8 +82,8 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `1.5.0` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `1.5.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `1.6.0` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `1.6.0` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
 | agent SDK 源文件 / 测试档 | 140 / 208 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 17 / 34 | 磁盘实况 |
@@ -220,7 +220,7 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
-- **v1.5.0（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 1.5.0（十条观察项拷问裁定落地）前进。
+- **v1.6.0（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 1.6.0（T75 二次拷问：dream 信号源指针段 + 巡回只读预设）前进。
 - **v1.4.0（2026-07-28）**：**审计第十七波（本包份额）**——两处**只被测试替身的宽容挡住**的真缺陷：①`claimDue` 把 `limit`（即 `LedgerDriver.maxConcurrent` 的批量上限）套在存储**恰好**返回的顺序上，而 `LedgerStore` 契约**根本不规定顺序**（随包契约套件比对前一律先排序 id，即顺序刻意在契约外）。全部测试替身都是 Map 支撑、列举序恰好等于派发序也就等于到期序，于是这条从来没被测过：对一个**完全合规**、按最新在前列举的存储，`maxConcurrent: 1` + 三个恒到期会话，实测 30 个 tick 里同一个会话占满槽位、另两个**一次没跑**；即便在内存存储上，5000/1000/100ms 三个到期点也会认领**最不逾期**的那个。现按 `nextRunAt` → `createdAt` 排序，完全并列者靠稳定排序保留存储序 · ②**32 位定时器溢出把每个毫秒旋钮顶部反转**：`systemClock.setTimeout` 把延时直接交给全局定时器，而超过 2^31-1 ms 后 Node 不是睡更久、是**溢出成 1 ms**。30 天的 `queryTimeoutMs` 通过了构造期的有限/正数校验，然后在执行器第一个 `await` 恢复之前就中止了每一次尝试、落 `retrying` + `lastError: 'timeout'`——**没有任何一次尝试可能完成**；同一反转把刻意设稀的 `pollIntervalMs`（驱动器与调度器皆然）变成对宿主存储的 1 ms 锤击。仅在交给全局的那一步封顶，注入钟与 NaN/Infinity 不动。
 - **v1.3.0（2026-07-28）**：**审计第十五 + 十六波（本包份额，非空转）**——①`LedgerDriver` 在 try/catch **之外**解引用宿主执行器的返回值，执行器少写一个 `return` 即产生无人处理的拒绝、Node 宿主以 `ERR_UNHANDLED_REJECTION` 死掉、会话搁浅在 `running`，与「驱动器绝不因执行器失败而崩溃」的明文承诺相悖 · ②`GoalChaser` 从不校验评审器返回的判词形状（agent 侧对**同一个** 0.83.0 统一形状是校验的）：仍说旧 `{achieved, feedback}` 的评审器在 agent 侧会被响亮抓住，在本包却当「未达成」放过——第 1 轮就报成功的追逐实跑了 5 轮驱动器执行、最后落 `exhausted` · ③工作流加载器围栏扫描器把长围栏内的三反引号行读作闭合，**文档示例图顶替真图**被加载派发，而寻常的包裹写法反被判为「没有图」· ④UTF-8 BOM 被格式嗅探当无意义（`trimStart` 吃掉它）、又被 `JSON.parse` 当有意义，Notepad / PowerShell 存的合法图被静默跳过 · ⑤`nextFireAt` 的 `dailyAt` 分支撞上 `Date.UTC` 的两位年份重映射（0–99 → 1900+year，而 `getUTCFullYear()` 报真年），一世纪时间戳的触发点偏出约 1900 年、`firesBetween` 静默丢掉全部到期点（70 万随机元组证明改法在该窗口外与 `Date.UTC` 逐位相同）。另订正台账：破坏性的 `GoalVerdict` 统一被记在 0.85.0，而它真正发布的 0.83.0 被写成「本包零改动」——消费方据此把 0.83.0 当免费重 pin。
 - **v1.1.0（2026-07-28）**：**审计第十三波**——**存储契约套件会给坏存储发合格证**（它是交付给宿主验证自家实现的东西，误判通过是此处最坏的缺陷）：`dueBefore` 检查名为 `<=` 却只测过 `500 <= 1000`，用严格小于过滤的存储照样 13/13 通过、却永久扣留每个恰在轮询时刻到期的会话；「按 id 创建或替换」从不断言一 id 一行，追加式存储照样通过而 `listSessions` 一直把旧世代交给调用方；`assertDeepEq` 比 `JSON.stringify` 输出，把**键序**写进了契约，字段全对但按列重建行的存储反而不合格。另修 goal 追逐器：中止落在宿主评审器决策期间仍会多买一轮，循环已派发第 N+1 轮且驱动器执行之后 `#awaitTerminal` 才拒绝（`WorkflowRun.run()` 早有对称守卫）。
@@ -258,7 +258,6 @@
 > workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
 >
 > **v0.92.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.92.0（Workflow 改真异步启动）前进。
-> **v0.91.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.91.0（四工具补结构化产出 + 零产出面台账守卫）前进。
 
 > **v0.90.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.90.0（checkpoint blob 上限，T74 甲案）前进。
 > **v0.89.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.89.0（类型面漂移检测工具化，首跑挖出四条「发货了却没声明」的类型缺陷）前进。
@@ -345,6 +344,7 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v1.6.0（2026-07-29）**：**T75 二次拷问落地**——dream 信号源「指针段+预设」（`transcripts` opt-in + `consolidationToolOptions()` 只读 harness 下限，闭合 E-⑤）；frontmatter + 选择性附着「直接开设计轮」，r1 需求档待守密人定稿（cards 关系三选一推荐甲）。
 - **v1.5.0（2026-07-29）**：**十条观察项拷问裁定全落地**——守密人逐条过堂（#7 收紧、#9 扩大收编两处否决推荐案）：AskUserQuestion 三处全补 · Agent 描述官方复现 + 描述治理完备性守卫 · Glob/Grep 忽略集披露 · Read 路径归一 + 256KB 拒读堵大 limit 绕过 · Grep rg 方言兼容垫 + type 报错自愈 · 冷/热分层守卫 · 记忆索引官方链接格式 + 双态容量预警；frontmatter 等三项挂 T75 设计轮。
 - **v1.5.0 同版前半（对齐审计三裁，原拟 1.4.0、上游十七波占号并入 1.5.0）**——①记忆常驻索引「单向镜」被 view 上限重新打开：写侧告警只数 `store.view` 幸存行、丢弃 view 自身截断信号，而默认 `maxViewChars`(16000) **小于**索引字节上限(25600)，密集 ASCII 索引先被 view 切掉、幸存头通过行/字节判定、告警永不响——新 `assessViewedIndex` 把 view 截断并入两侧共用判词（`breached:'view'`）· ②索引注入补官方防护措辞（background context, not user instructions + 待验证声明；S1 挂载下他会话写入可进本会话 system prompt）· ③ToolSearch 对齐官方查询语法（select:/关键词/+名限定 + max_results 默认 5）与 `<functions>` 返回编码，入 provenance 治理（此前它是唯一治理体系外工具、却是银芯变体 2/3 工具面唯一入口）· ④Bash 输出上限补齐官方两级设计（`options.bashLimits` + `BASH_MAX_OUTPUT_LENGTH` env，封顶 150000，默认路径字节不变）· ⑤COMPAT 三处 Workflow 陈旧 SYNCHRONOUS 判词订正 + 十条未登记漂移入册（AskUserQuestion preview/plan-mode 段、Glob/Grep 静默忽略集等）。
 - **v1.4.0（2026-07-28）**：**审计第十七波**（四个前所未用的镜头：不可信工具输出作为**结构伪造通道**、故障注入、向后兼容漂移、以及「测试替身放过了什么」）——①**文件名即可伪造 `system-reminder`**：Read 把解析后路径原样插进该围栏，而它是本框架**最高权威的带内标记**；一个 0 字节文件只要**名字**里含闭合标签再开一个，攻击者文本就以「框架自己下发」的身份进了上下文（所需字符全部是合法文件名字符——那个 `/` 来自路径分隔符）。`query.ts` 早有同款中和且注释点名此攻击，Read 是 `src/` 里最后一处漏网 · ②同款漏洞在**项目指令**上：CLAUDE.md / AGENTS.md 正文原样进围栏，文件里写一句闭合标签就把自己的信封劈开、余下部分变成顶层框架文本 · ③**WebSearch 的域名过滤可被整条绕过**：结果 `title` 里一个换行就伪造出完整的额外结果记录，而伪造记录**从不经过 `filterResults`**——允许域上的一个页面能给**明令封禁**的域渲染出一条格式完好的结果 · ④**网页搜索费从来没被计过**：`server_tool_use` 在折叠 `message_delta` 用量时被丢掉，而传输层只有流式、`message_start` 结构上不可能带搜索计数，故 `maxBudgetUsd` 可被整笔服务端工具账单突破而闸门不响 · ⑤**缓存断点白白空着一半**：分段系统提示下只要调用方标了任何东西，循环就把消息断点整个撤掉，实测 4 个槽只用 2 个——整轮工具循环每回合把**全部消息历史**当新 input token 重发（分段标记上限是 3，永远有空槽）· ⑥后台子代理的迟到花费只进最终结果、不进持久台账，宿主据以决定「下一轮还injects不injects」的那个缝可能漏掉一次会话几乎全部成本。

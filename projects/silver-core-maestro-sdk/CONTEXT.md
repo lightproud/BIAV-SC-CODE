@@ -36,13 +36,13 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.5.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-agent-sdk` = `1.5.0`
+**当前版本 `1.6.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-agent-sdk` = `1.6.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
 
-**v1.5.0（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 1.5.0（十条观察项拷问裁定落地）前进。
+**v1.6.0（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 1.6.0（T75 二次拷问：dream 信号源 + 巡回只读预设）前进。
 
 **v1.4.0（2026-07-28）：审计第十七波（本包份额）**——两处只被测试替身宽容挡住的真缺陷：`claimDue` 把并发上限套在存储**恰好**返回的顺序上（契约根本不规定顺序），对合规的最新在前存储实测 30 tick 里两个会话一次没跑；`systemClock.setTimeout` 未封顶，超 2^31-1 ms 溢出成 1 ms，30 天的 `queryTimeoutMs` 反而让每次尝试都来不及完成。
 

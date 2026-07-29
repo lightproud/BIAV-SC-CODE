@@ -306,13 +306,24 @@ prompt.
 **4. Consolidation — the protocol, not the schedule.**
 
 ```ts
-import { assessMemoryStoreHealth, buildConsolidationPrompt, query } from 'silver-core-agent-sdk';
+import { assessMemoryStoreHealth, buildConsolidationPrompt, consolidationToolOptions, query } from 'silver-core-agent-sdk';
 
 const health = await assessMemoryStoreHealth(ops, { counters: last.metrics?.memoryHealth });
 if (health.warnDirectories.length > 0 || !health.supersede.intact) {
   for await (const m of query({
-    prompt: buildConsolidationPrompt(health, { instructions: 'Never touch /memories/team.' }),
+    prompt: buildConsolidationPrompt(health, {
+      instructions: 'Never touch /memories/team.',
+      // Opt-in dream signal (T75 #1): host-named transcript/log paths the
+      // Gather phase may READ for facts the memories never captured. Scoping
+      // these to the tenant is the HOST's job — S1 mounts govern /memories
+      // virtual paths only, never the real filesystem.
+      transcripts: [`/var/log/agent/${userId}/latest.jsonl`],
+    }),
     options: {
+      // The harness floor (closes the old prompt-only "memory tool only"
+      // gap): read-only investigation tools; the memory tool rides
+      // options.memory below, and Agent/LoopControl honor this filter too.
+      ...consolidationToolOptions(),
       memory: { store, mounts: [{ path: `/memories/users/${userId}`, mode: 'read-write' }] },
     },
   })) { /* ... */ }

@@ -85,6 +85,7 @@ export {
   MemoryPathError,
   assessMemoryStoreHealth,
   buildConsolidationPrompt,
+  consolidationToolOptions,
   createLocalFilesystemMemoryStore,
   createLocalMemoryFileOps,
   createMemoryHealth,

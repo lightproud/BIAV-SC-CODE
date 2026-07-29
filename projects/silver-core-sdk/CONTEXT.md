@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.5.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.5.0`
+**当前版本 `1.6.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.6.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.6.0（2026-07-29）：T75 二次拷问落地**——dream 信号源裁「指针段+预设」：`buildConsolidationPrompt.transcripts` opt-in 指针段（宿主命名转录/日志路径，Gather 只读取证、内容按不可信数据降权、租户范围宿主负责）+ `consolidationToolOptions()` 只读工具集预设（Read/Grep/Glob 物理白名单，Agent/LoopControl 同受滤，memory 经 options.memory 独立注册）——把「只用 memory 写」从提示词纪律升为 harness 下限、闭合 E-⑤ 矛盾；frontmatter 四类型 + 选择性附着裁「直接开设计轮」（否决缓议案），r1 需求档 `scs-req-memory-frontmatter-attachment-r1-20260729.md` 待守密人定稿（cards 关系三选一推荐甲·三档并立）。
 
 **v1.5.0（2026-07-29）：十条观察项拷问裁定全落地**——守密人逐条过堂（#7 收紧、#9 扩大收编两处否决推荐案）：AskUserQuestion 三处全补（plan-mode 段 + preview 转发 + oneOf schema）· Agent 描述从官方三档复现 + 描述治理完备性守卫（UNGOVERNED 台账，工具不入册即红）· Glob/Grep 零匹配披露忽略集 · Read 路径可见层归一 + 256KB 拒读覆盖大 limit 绕过 · Grep rg 方言兼容垫（POSIX 字符类 / (?P<name>)）+ type 报错自愈 · 冷/热分层守卫 · 记忆索引改官方链接格式 + 双态容量预警（approaching 80% 档 + 目标尺寸）；frontmatter 四类型等三项另开设计轮（todo T75 + 提案档）。
 
