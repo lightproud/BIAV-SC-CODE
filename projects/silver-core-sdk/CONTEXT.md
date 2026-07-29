@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.7.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.7.0`
+**当前版本 `1.8.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.8.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.8.0（2026-07-29）：后台任务第二投递通道**（待裁②裁定）——新增 `Options.onBackgroundEvent`，后台任务生命周期事件在产生那一刻直接交宿主、不再挤进拉取式对话流（不双发；不设则行为逐字节不变）。借此关掉 `abortAll()` **不发终止事件**、宿主台账把被杀的后台子代理永远记作 running 的缺陷——它此前发不出来，正因为单通道下收尾事件会落在终态结果之后。射程：Monitor 推送 / Workflow 通知 / `background_tasks_changed` 仍不发，缺的是源事件而非投递方式。
 
 **v1.7.0（2026-07-29）：关掉两项守密人裁定（皆为行为变更）**——OpenAI 传输层不再铸造 `name: ''` 的工具块（网关拆包时会多出一个白烧 `No such tool:` 来回、还把 `stop_reason` 顶成 `tool_use` 的幽灵块）；Bash 输出上限从「每流各 30,000」改为**两流共用一份总预算**，实测 60,352 → 30,180，让已导出的 `TOOL_OUTPUT_CAPS.bash` 对消费方**真的成立**（此前消费方台账翻倍低估）。真相侧以官方提示词语料裁定。
 

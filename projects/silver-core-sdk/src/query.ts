@@ -76,6 +76,8 @@ import { AsyncQueue, createDeferred } from './internal/async.js';
 import { sliceSurrogateSafe } from './internal/text.js';
 import { neutralizeClosingTag } from './internal/inert-text.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
+import { BACKGROUND_EVENT_SUBTYPES } from './types/messages.js';
+import type { SDKBackgroundEvent } from './types.js';
 import { SDK_VERSION } from './version.js';
 import { JsonlSessionStore, resolveTranscriptPath } from './sessions/store.js';
 import { MirroringSessionStore, encodeProjectKey } from './sessions/store-adapter.js';
@@ -462,7 +464,41 @@ export function query(args: {
   // message pump drain it at message boundaries. Single queue, splice-drained:
   // each event surfaces exactly once, in production order.
   const obsQueue: SDKMessage[] = [];
+  /**
+   * v0.8 SECOND CHANNEL (keeper ruling 2026-07-29): when the host supplies
+   * `onBackgroundEvent`, background-task lifecycle events are handed to it at
+   * production time instead of being queued for the pull-based stream — the
+   * official conversation / background-task split. Absent, every event stays in
+   * the stream exactly as before (drop-in compatible), and nothing below can
+   * observe a difference.
+   *
+   * A throwing host sink is swallowed to a debug line: observability must never
+   * alter or abort a run, the same posture the hook runner's lifecycle sink and
+   * the goal gate's onEvent already take.
+   */
+  const backgroundSink = options.onBackgroundEvent;
+  const isBackgroundEvent = (msg: SDKMessage): msg is SDKBackgroundEvent =>
+    msg.type === 'system' &&
+    (BACKGROUND_EVENT_SUBTYPES as readonly string[]).includes(
+      (msg as { subtype?: unknown }).subtype as string,
+    );
+  const emitBackground =
+    backgroundSink === undefined
+      ? undefined
+      : (msg: SDKBackgroundEvent): void => {
+          try {
+            backgroundSink(msg);
+          } catch (err) {
+            debug(
+              `onBackgroundEvent threw (ignored): ${err instanceof Error ? err.message : String(err)}`,
+            );
+          }
+        };
   const emitObs = (msg: SDKMessage): void => {
+    if (emitBackground !== undefined && isBackgroundEvent(msg)) {
+      emitBackground(msg);
+      return;
+    }
     obsQueue.push(msg);
   };
   const drainObservability = (): SDKMessage[] => obsQueue.splice(0, obsQueue.length);
@@ -927,6 +963,9 @@ export function query(args: {
     sessionId: () => resolvedSessionId,
     debug,
     emitObservability: emitObs,
+    // Lets abortAll() emit its terminal events: they are legitimate only when a
+    // second delivery channel exists (see runtime.ts abortAll).
+    hasBackgroundChannel: emitBackground !== undefined,
     shells,
     sandbox: sandboxCtx,
     readFilePaths,

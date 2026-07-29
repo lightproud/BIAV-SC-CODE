@@ -16,6 +16,7 @@ import type { PermissionMode, SDKPermissionDenial } from './permissions.js';
 import type { SlashCommand } from './query.js';
 import type { SDKDeferredToolUse } from './subsystems.js';
 import type { APIAssistantMessage, APIUserMessage, ModelUsage, NonNullableUsage, RawMessageStreamEvent, StopReason } from './wire.js';
+import type { SDKBackgroundTasksChangedMessage } from './prompt.js';
 
 // ---------------------------------------------------------------------------
 // SDK messages
@@ -404,6 +405,41 @@ export type SDKToolUseSummaryMessage = {
  *  encoding, v0.7). EMITTED when the Agent tool spawns a subagent (foreground
  *  or background); task_id is the agentId. `task_type` is always
  *  'local_agent' (this engine spawns no local_bash/remote_agent tasks). */
+/**
+ * The BACKGROUND-TASK lifecycle family — the events official Claude Code
+ * delivers OUTSIDE the conversation, monitored separately from the assistant
+ * stream rather than interleaved with it.
+ *
+ * This engine has always had the message TYPES for that world and emits four of
+ * them, but they rode the SAME single pull-based SDKMessage stream as the
+ * conversation, because there was no second delivery surface. Three modules say
+ * so in their own words: `tools/monitor.ts` ("NO push delivery ... needs an
+ * engine channel this SDK does not have"), `tools/workflow.ts` ("the engine has
+ * no such channel for tool-launched work"), and `SDKBackgroundTasksChangedMessage`
+ * ("TYPED, not emitted — the shell registry has no change-notification channel
+ * into the pull-based stream").
+ *
+ * One channel is what made "a result ends the stream" bind background events
+ * too: a terminal event produced during teardown had nowhere legitimate to land.
+ * `Options.onBackgroundEvent` is that second surface (keeper ruling 2026-07-29).
+ */
+export type SDKBackgroundEvent =
+  | SDKTaskStartedMessage
+  | SDKTaskProgressMessage
+  | SDKTaskUpdatedMessage
+  | SDKTaskNotificationMessage
+  | SDKBackgroundTasksChangedMessage;
+
+/** Subtypes routed to `Options.onBackgroundEvent`. Single source of truth for
+ *  the split, so the runtime predicate and this union cannot drift apart. */
+export const BACKGROUND_EVENT_SUBTYPES = [
+  'task_started',
+  'task_progress',
+  'task_updated',
+  'task_notification',
+  'background_tasks_changed',
+] as const;
+
 export type SDKTaskStartedMessage = {
   type: 'system';
   subtype: 'task_started';

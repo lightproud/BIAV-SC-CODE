@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.8.0 — 2026-07-29
+
+Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.8.0 新开
+**后台任务第二投递通道**（`Options.onBackgroundEvent`，守密人 2026-07-29 裁定对齐官方
+对话／后台分流），并借此让 `abortAll()` 真的发出终止事件，见 silver-core-sdk CHANGELOG。
+家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
+
 ## 1.7.0 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.7.0 关掉两项守密人

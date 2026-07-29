@@ -16,6 +16,42 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.8.0 — 2026-07-29
+
+**A second delivery channel for background-task events** (待裁②, keeper ruling
+2026-07-29: align with the official conversation / background-task split).
+
+New `Options.onBackgroundEvent`. When set, `task_started` / `task_progress` /
+`task_updated` / `task_notification` / `background_tasks_changed` are delivered
+to it at the moment they are produced, instead of being queued into the
+pull-based SDKMessage stream. Not dual-emitted — an event delivered there does
+not also appear in the stream, so a host never has to de-duplicate. Leaving the
+option unset keeps the previous behavior byte-for-byte, so this is a drop-in
+compatible addition.
+
+Why it had to be a channel and not a patch: this engine already had the message
+TYPES for that world and emitted four of them, but everything rode ONE
+pull-based stream, and three modules said so in their own words —
+`tools/monitor.ts` ("NO push delivery ... needs an engine channel this SDK does
+not have"), `tools/workflow.ts` ("the engine has no such channel for
+tool-launched work"), `SDKBackgroundTasksChangedMessage` ("TYPED, not emitted").
+One channel is what made "a result ends the stream" bind background events too.
+
+The defect that motivated it, now fixed: `abortAll()` — the teardown path that
+kills still-running background subagents — emitted NO terminal event, unlike
+`stopTask` / `killAgent`, so a host task tracker kept a killed child showing as
+"running" forever. It could not emit one before, because `abortAll` runs in the
+query's teardown finally and a queued event would land BEHIND the terminal
+result. It now emits `task_updated` with `patch.status: 'killed'` (the official
+vocabulary `killAgent` already uses) — **only when the second channel exists**.
+Without the channel the previous silence is preserved deliberately: trading a
+missing event for a broken stream contract is not a fix.
+
+Scope stated plainly — what this does NOT yet do: `Monitor` still has no push
+delivery, `Workflow` still emits no task notification, and
+`background_tasks_changed` is still not emitted. Those need SOURCE events that
+do not exist yet; what changed is that a way to deliver them now does.
+
 ## 1.7.0 — 2026-07-29
 
 Two keeper rulings closed. **Both change observable behavior**, and each one

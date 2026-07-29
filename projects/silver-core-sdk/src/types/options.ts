@@ -13,6 +13,7 @@ import type { AgentDefinition, McpServerConfig } from './mcp.js';
 import type { CanUseTool, PermissionMode } from './permissions.js';
 import type { ProviderConfig, SandboxOptions, SubagentTransportResolver, ThinkingConfigParam } from './provider.js';
 import type { CompactionOptions, ElicitationHandler, GoalConfig, LoopStopProposal, OutputFormatConfig, ResilienceOptions, SessionStore, StructuredPrelude, UserQuestionHandler, WebSearchHandler } from './subsystems.js';
+import type { SDKBackgroundEvent } from './messages.js';
 import type { ToolChoice } from './wire.js';
 import type { Readable, Writable } from 'node:stream';
 
@@ -682,6 +683,28 @@ export type Options = {
   onUserQuestion?: UserQuestionHandler;
   /** v0.2: answers MCP server elicitation requests (else auto-declined). */
   onElicitation?: ElicitationHandler;
+  /**
+   * SECOND DELIVERY CHANNEL for background-task lifecycle events (keeper ruling
+   * 2026-07-29: align with the official conversation / background-task split).
+   *
+   * When set, `task_started` / `task_progress` / `task_updated` /
+   * `task_notification` / `background_tasks_changed` are delivered HERE, at the
+   * moment they are produced, instead of being queued into the pull-based
+   * SDKMessage stream. That is what lets a terminal event exist at all for work
+   * cancelled during teardown: the stream's "a result ends the stream" contract
+   * cannot carry one, and until this existed a background child killed by query
+   * teardown left a host task tracker showing it as still running forever.
+   *
+   * NOT dual-emitted: an event delivered here does NOT also appear in the
+   * stream, so a host never has to de-duplicate. Leaving this unset keeps the
+   * previous behavior byte-for-byte (every event stays in the stream), so this
+   * is a drop-in-compatible addition.
+   *
+   * Called synchronously and never awaited; a throw is caught and logged to the
+   * debug channel, never propagated — observability must not be able to alter
+   * or abort the run (the same posture as every other host callback here).
+   */
+  onBackgroundEvent?: (event: SDKBackgroundEvent) => void;
   /** BPT extension: allow WebFetch to reach localhost/private IPs (default false). */
   allowPrivateWebFetch?: boolean;
   /** BPT-EXTENSION: cross-session memory tool (memory_20250818 equivalence);

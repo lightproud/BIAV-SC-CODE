@@ -190,6 +190,16 @@ export type SubagentRuntimeOptions = {
    *  child loop); forwarded into every childDeps verbatim. Owned-transport
    *  disposal belongs to the query layer that composed it. */
   transportForModel?: EngineDeps['transportForModel'];
+  /**
+   * Whether the query layer has a SECOND delivery channel for background-task
+   * events (`Options.onBackgroundEvent`). abortAll() emits its terminal events
+   * only when this is true: without a second channel they would be queued for
+   * the pull-based stream and land BEHIND the terminal SDKResultMessage, since
+   * abortAll runs in the query's teardown finally — the "a result ends the
+   * stream" contract (tests/query.test.ts #14). With the channel, a teardown
+   * event has somewhere legitimate to go.
+   */
+  hasBackgroundChannel?: boolean;
   /** Transcript store; child transcripts persist under {agentId} when set. */
   store?: SessionStore;
   persist?: boolean;
@@ -2418,15 +2428,31 @@ export function createSubagentRuntime(
       if (allSettled) disposeOwnedTransports();
     },
     abortAll(): void {
-      // NOTE (audit wave19, investigated + deliberately NOT changed): a child
-      // killed here gets no terminal task_updated, unlike one stopped via
-      // stopTask/killAgent — so a host task tracker keeps it "running". Emitting
-      // one here is wrong all the same: abortAll runs in the query's teardown
-      // finally, AFTER the final result was yielded, and query.ts drains
-      // observability again past that point — the event would land BEHIND the
-      // terminal SDKResultMessage and break the "a result ends the stream"
-      // contract (tests/query.test.ts "#14" pins it). Teardown is the one
-      // cancellation site with no consumer left to inform.
+      // A child killed here used to get NO terminal task_updated, unlike one
+      // stopped via stopTask/killAgent, so a host task tracker kept it
+      // "running" forever. The event could not be emitted while this engine had
+      // ONE delivery channel: abortAll runs in the query's teardown finally,
+      // after the final result was yielded, so a queued event would land BEHIND
+      // the terminal SDKResultMessage and break "a result ends the stream"
+      // (tests/query.test.ts #14).
+      //
+      // With the second channel (Options.onBackgroundEvent, keeper ruling
+      // 2026-07-29) the event has somewhere legitimate to go — it is a
+      // background-task fact, not a conversation message. Emitted only when
+      // that channel exists; without it the previous silence is preserved
+      // rather than trading one defect for a broken stream contract.
+      if (opts.hasBackgroundChannel === true) {
+        for (const [taskId] of backgroundTasks) {
+          emitTask({
+            type: 'system',
+            subtype: 'task_updated',
+            task_id: taskId,
+            // Same vocabulary killAgent uses for an externally stopped task:
+            // the official patch.status word is 'killed', not 'cancelled'.
+            patch: { status: 'killed', end_time: Date.now() },
+          });
+        }
+      }
       for (const { controller } of backgroundTasks.values()) {
         controller.abort();
       }
