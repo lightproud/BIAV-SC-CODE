@@ -253,7 +253,12 @@ export type WebSearchHandler = (
 export type UserQuestion = {
   question: string;
   header: string;
-  options: Array<{ label: string; description?: string }>;
+  /** `preview` (official option field, 2026-07-28 keeper ruling "三处全补"):
+   *  a self-contained HTML fragment the HOST may render when the option is
+   *  focused. The SDK accepts and forwards it verbatim to the host handler —
+   *  whether it is rendered is the host UI's choice (honest-ACCEPTED: the SDK
+   *  itself draws nothing). Official constraint: single-select questions only. */
+  options: Array<{ label: string; description?: string; preview?: string }>;
   multiSelect?: boolean;
 };
 

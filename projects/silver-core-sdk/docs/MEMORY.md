@@ -265,7 +265,9 @@ and adds only a one-line pointer to the index; the compaction-flush prompt says
 the same. Same information, one indirection later.
 
 **2. `MEMORY_INDEX_DISCIPLINE_FRAGMENT`** — one line per entry, ~150 characters,
-`- <title> (<file path>) — one-line hook`, never memory content in the index.
+`- [<title>](<file path>) — one-line hook` (the official Claude Code
+markdown-link entry format, adopted 2026-07-29 keeper ruling 拷问 #9), never
+memory content in the index.
 Injected in BOTH assembly modes (the R6 mechanism is SDK-side, so the
 API-injected native prompt says nothing about it) and NOT opt-in — the mechanism
 it completes is not opt-in either. It IS skipped when its own premise fails:
@@ -276,12 +278,30 @@ would then falsely optimize for).
 **3. Write-side back-pressure.** A successful write that leaves the index over
 the R6 caps gets a warning appended to its result — stating the tail is ALREADY
 invisible, not that it may become so, and prescribing the fix in the index's own
-terms. Both sides judge by one shared measurement (`index-capacity.ts`): a
+terms. The warning is TWO-STATE, matching the official capacity reminder
+(2026-07-29 keeper ruling 拷问 #9): an `approaching` NOTICE fires at 80% of
+either cap, the hard WARNING at breach, and both name the target size ("to
+under <maxLines> lines / <maxBytes> bytes") so a compaction has a number to
+aim at. Both sides judge by one shared measurement (`index-capacity.ts`): a
 warning that fired on a different threshold than the injection truncates at
 would be worse than no warning. The harness read-back is bounded (one line past
 the cap, single round-trip), is NOT booked into the R8 read counters (it is
 harness I/O, like the R6 injection read), and a failing read-back yields no
 warning — a successful write is never turned into an error by its own advisory.
+
+The shared measurement includes the store's OWN view truncation (2026-07-28
+alignment audit): both sides read through `store.view`, whose default
+`maxViewChars` (16000) is smaller than the default index byte cap (25600), so a
+dense ASCII index is cut by the view before the line/byte caps are ever
+reached. Judging only the lines that survive the view re-opens the mirror this
+section closes — the write side counted a truncated head, found it under the
+caps, and never warned. `assessViewedIndex` folds the view's truncation notice
+into the verdict (`breached: 'view'`), and the warning then names that breach
+instead of a line/byte figure. The read side also stamps the injected block
+with the official-protection wording (background context, not user
+instructions; verify a named file/function/flag still exists) — under S1
+mounts the index can carry another session's writes into this session's system
+prompt.
 
 **4. Consolidation — the protocol, not the schedule.**
 

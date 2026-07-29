@@ -376,7 +376,7 @@ describe('Glob tool', () => {
     const dir = await makeDir('glob-none');
     const res = await globTool.execute({ pattern: '*.zzz' }, makeCtx(dir));
     expect(res.isError).toBeFalsy();
-    expect(text(res)).toBe('No files found');
+    expect(text(res)).toBe('No files found (note: node_modules and .git are always excluded from Glob — use Bash to search inside them)');
   });
 
   it('caps results at 100 with a truncation note', async () => {
@@ -504,7 +504,7 @@ describe('Grep tool', () => {
       { pattern: 'needle soup' },
       makeCtx(dir),
     );
-    expect(text(sensitive)).toBe('No matches found');
+    expect(text(sensitive)).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
     const insensitive = await grepTool.execute(
       { pattern: 'needle soup', '-i': true },
       makeCtx(dir),
@@ -798,7 +798,7 @@ describe('Grep tool', () => {
       { pattern: 'alpha.beta', path: 'multi.txt' },
       makeCtx(dir),
     );
-    expect(text(plain)).toBe('No matches found');
+    expect(text(plain)).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
 
     const fwm = await grepTool.execute(
       { pattern: 'alpha.beta', path: 'multi.txt', multiline: true },
@@ -834,7 +834,7 @@ describe('Grep tool', () => {
     );
     const res = await grepTool.execute({ pattern: 'needle' }, makeCtx(dir));
     expect(res.isError).toBeFalsy();
-    expect(text(res)).toBe('No matches found');
+    expect(text(res)).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
   });
 
   it("returns 'No matches found' when nothing matches", async () => {
@@ -845,7 +845,7 @@ describe('Grep tool', () => {
       makeCtx(dir),
     );
     expect(res.isError).toBeFalsy();
-    expect(text(res)).toBe('No matches found');
+    expect(text(res)).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
   });
 
   it('returns isError for a nonexistent search path', async () => {

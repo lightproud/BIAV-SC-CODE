@@ -20,6 +20,9 @@ import * as path from 'node:path';
 import {
   bashTool,
   createBashTool,
+  MAX_STREAM_CAP_CHARS,
+  resolveBashOutputCap,
+  STREAM_CAP_CHARS,
   windowsCmdHint,
   withPersistentState,
 } from '../src/tools/bash.js';
@@ -278,5 +281,44 @@ describe('bug-fix: a NUL byte in the command does not crash the tool', () => {
     await expect(
       bashTool.execute({ command: `echo hi${nul}there` }, makeCtx(nulDir)),
     ).rejects.toBeInstanceOf(ConfigurationError);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Output-cap knob (options.bashLimits / BASH_MAX_OUTPUT_LENGTH, 2026-07-28
+// alignment audit): official two-tier design — 30000 default, raisable to a
+// 150000 ceiling. The cap used to be the hard-coded constant alone.
+// ---------------------------------------------------------------------------
+
+describe('Bash output-cap resolution and per-tool binding', () => {
+  it('resolves option > env > default, clamped to the official ceiling', () => {
+    expect(resolveBashOutputCap()).toBe(STREAM_CAP_CHARS);
+    expect(resolveBashOutputCap({ maxOutputChars: 60_000 })).toBe(60_000);
+    expect(resolveBashOutputCap(undefined, { BASH_MAX_OUTPUT_LENGTH: '50000' })).toBe(50_000);
+    // Option wins over env.
+    expect(
+      resolveBashOutputCap({ maxOutputChars: 40_000 }, { BASH_MAX_OUTPUT_LENGTH: '50000' }),
+    ).toBe(40_000);
+    // Clamped to the official 150000 ceiling.
+    expect(resolveBashOutputCap({ maxOutputChars: 9_999_999 })).toBe(MAX_STREAM_CAP_CHARS);
+    // Invalid values fall through, never propagate (NaN would destroy output).
+    expect(resolveBashOutputCap({ maxOutputChars: Number.NaN })).toBe(STREAM_CAP_CHARS);
+    expect(resolveBashOutputCap({ maxOutputChars: -5 })).toBe(STREAM_CAP_CHARS);
+    expect(resolveBashOutputCap(undefined, { BASH_MAX_OUTPUT_LENGTH: 'lots' })).toBe(
+      STREAM_CAP_CHARS,
+    );
+  });
+
+  it('a raised cap keeps output the default cap would have truncated', async () => {
+    const dir = await makeDir('cap-raised');
+    // ~45k chars of output: over the 30000 default, under a 100000 cap.
+    const cmd = 'for i in $(seq 1 1500); do printf "%030d\\n" "$i"; done';
+    const capped = text(await bashTool.execute({ command: cmd }, makeCtx(dir)));
+    expect(capped).toMatch(/^\[\d+ earlier chars dropped:/);
+
+    const raised = createBashTool(undefined, process.platform, { maxOutputChars: 100_000 });
+    const full = text(await raised.execute({ command: cmd }, makeCtx(dir)));
+    expect(full).not.toMatch(/earlier chars dropped/);
+    expect(full).toContain('000001\n');
   });
 });

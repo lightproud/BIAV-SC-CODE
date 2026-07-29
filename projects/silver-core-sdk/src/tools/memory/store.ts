@@ -22,7 +22,13 @@
  *  - the >999,999-line view error uses the docs wording ("exceeds maximum
  *    line limit"), not the reference helper's variant;
  *  - insert's missing-file error uses the docs wording (no "Please provide a
- *    valid path." tail), unlike str_replace's, which has it.
+ *    valid path." tail), unlike str_replace's, which has it;
+ *  - insert strips ONE trailing newline from insert_text before splicing
+ *    (`"foo\n"` and `"foo"` insert identically). No archive/docs evidence
+ *    either way — kept as-is (keeper 2026-07-28 拷问 #10: behavior stands,
+ *    the omission from this list was the defect), and note insert is the one
+ *    write command whose success string returns no snippet, so the caller
+ *    cannot observe the difference from the result text.
  *
  * Error results are THROWN as MemoryToolError whose message is the exact
  * reference string; the memory tool converts a throw into an is_error

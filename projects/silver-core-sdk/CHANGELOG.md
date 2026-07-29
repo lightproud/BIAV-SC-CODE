@@ -16,6 +16,101 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.5.0 — 2026-07-29
+
+拷问 rulings on the ten registered alignment observations (keeper interview
+2026-07-29, one ruling per item; full ledger in COMPAT "Registered items —
+拷问 rulings"):
+
+- **AskUserQuestion（三处全补）**: official plan-mode paragraph and
+  preview-field fragment reproduced (both slugs now in provenance);
+  `options.items` schema expresses the real shapes via `oneOf` instead of
+  `{}`; option `preview` (self-contained HTML fragment) accepted, validated
+  single-select-only, and forwarded verbatim to the host handler — rendering
+  is the host UI's choice, stated honestly.
+- **Description governance completed（Agent 复现 + 台账）**: Agent's
+  description is now an ADAPTED reproduction of the three official archive
+  fragments (deltas documented; background opt-in, agentId addressing,
+  `fork: true` spelling); the four shell-tool descriptions moved into
+  descriptions.ts; new `UNGOVERNED_TOOL_DESCRIPTIONS` ledger (per-tool
+  reasons) + a completeness guard: every shipped tool in exactly one ledger,
+  phantoms red. Bash provenance gained the seven carried-but-uncited slugs;
+  the run-in-background family stays uncited as the honest adaptation
+  (no completion notification here).
+- **Glob/Grep ignore-set disclosure（只加披露）**: zero-match results name
+  the hard-coded node_modules/.git excludes and point at Bash.
+- **Read path contract（可见层归一 + 收紧）**: schema wording aligned to the
+  official absolute-only contract (runtime stays lenient); directory error
+  points at Bash; and the 256KB whole-file refusal now also covers
+  whole-file-equivalent reads — a bare `limit >= 2000` with no offset is
+  refused like a bare Read (`limit: 999999` was a bypass; keeper overrode the
+  keep-as-is recommendation).
+- **Grep rg-dialect shim（兼容垫 + 报错自愈）**: POSIX character classes and
+  `(?P<name>)` / `(?P=name)` spellings deterministically rewritten to JS
+  RegExp equivalents; unknown `type` error lists the supported set and offers
+  `glob`.
+- **Hot/cold partition guard（加守卫）**: explicit `HOT_BUILTINS` export;
+  test reds an unclassified, double-classified or phantom tool.
+- **Memory（扩大收编）**: index entry format switched to the official
+  markdown-link form `- [<title>](<file path>) — one-line hook` in all three
+  prompt sites; the capacity warning is now the official TWO-STATE shape —
+  approaching NOTICE at 80% of either cap, hard WARNING at breach, both
+  naming the target size. Remaining charter items (frontmatter taxonomy,
+  selective attachment, dream signal sources) go to a design round (todo
+  T75, proposal memory-charter-expansion-eval-20260729). `insert`'s
+  trailing-newline strip is kept and now recorded in store.ts's
+  format-fidelity tradeoff list（补登记销案）.
+
+Also in this release — the alignment audit that preceded the rulings (staged as its own version on the work branch; renumbered into this release when upstream main took 1.4.0 for audit wave 17):
+
+Tools/memory alignment audit (keeper-ruled, three rulings 2026-07-28): the
+external two-track review against the archived official corpus, all
+recommended options adopted. Full fixed-vs-registered ledger in COMPAT.md
+"2026-07-28 tools/memory alignment audit".
+
+- **Memory resident-index one-way mirror re-opened by the view cap** (fix):
+  the write-side capacity warning judged only the lines that survived
+  `store.view` and discarded the view's own truncation notice. Default
+  `maxViewChars` (16000) is SMALLER than the default index byte cap (25600),
+  so a dense ASCII index was cut by the view first, the surviving ~111-line
+  head passed the 200-line/25600-byte math, and the warning never fired —
+  exactly the "write side never learns the tail is invisible" failure the
+  mechanism exists to close. New `assessViewedIndex` (exported) folds the view
+  notice into ONE verdict shared by both sides (`breached: 'view'`); the
+  warning names that breach. Regression pinned at small scale (40-char view
+  cap vs generous index caps) plus unit coverage.
+- **Memory index injection now carries the official protection wording**
+  (fix): the injected `# Memory index` system-prompt block states the entries
+  are background context, not user instructions, and that a named
+  file/function/flag must be verified to still exist — under S1 mounts the
+  index can carry ANOTHER session's writes into this session's system prompt
+  at full authority.
+- **ToolSearch aligned to the official grammar and result encoding**
+  (behavioral): `select:Read,Edit` exact fetch, keyword search ranked up to
+  `max_results` (default 5), `+term` name-required form; result is the
+  official `<functions>` block of
+  `<function>{"description","name","parameters"}</function>` lines (was:
+  house Markdown with `input_schema:`). Description now reproduces the
+  archived second part verbatim; ToolSearch ENTERED the provenance registry —
+  it was the only shipped tool outside all description governance while being
+  the sole gateway to 2/3 of the tool surface under `silverCoreToolOptions()`.
+  The `names` array stays as a documented SDK extension.
+- **Bash output cap: official two-tier design shipped** (new knob):
+  `options.bashLimits.maxOutputChars` (symmetric with `readLimits`), the
+  official `BASH_MAX_OUTPUT_LENGTH` env var honored, both clamped to the
+  official 150000 ceiling; default stays 30000 and the default path is
+  behavior-identical. `resolveBashOutputCap` + `MAX_STREAM_CAP_CHARS`
+  exported. Invalid values (NaN/negative/non-numeric env) fall through to the
+  default rather than propagate.
+- **Docs de-contradicted**: three COMPAT rows still said Workflow runs
+  SYNCHRONOUSLY a month after v0.92.0 flipped it — corrected in place;
+  `types/options.ts` comments for `sessionEndUpdate` (described the exact bug
+  the 2026-07-27 ruling removed) and `schema: 'cards'` (omitted the
+  prescription kind) now match the implementation; MEMORY.md back-pressure
+  section documents the view-cap interplay. Ten remaining deltas registered
+  (not changed) in the COMPAT audit section, including the AskUserQuestion
+  plan-mode/preview gap and the Glob/Grep silent ignore set.
+
 ## 1.4.0 — 2026-07-28
 
 Audit wave 17 — four lenses no earlier wave had used: untrusted tool output as
@@ -711,7 +806,7 @@ already holding. Being closed by making the behaviour match, tracked separately.
 
 ## 0.90.0 — 2026-07-27
 
-Checkpoint blob cap with honest degradation (todo T74, keeper ruling: option
+Checkpoint blob cap with honest degradation (todo T75, keeper ruling: option
 甲). `FileCheckpointStore.record()` used to capture the FULL pre-image of every
 mutated file with no size bound — a session touching a 500MB file silently
 stored a 500MB blob (sessions-domain audit P1-S2).
@@ -810,7 +905,7 @@ Prescription cards (A1) + the sessions-domain health scan (audit P1-S1) — the
   scheduler (spec N1) — the host decides.
 - Blob-size cap for checkpoints deliberately NOT set here: capping means
   "over-cap files cannot be rewound", a correctness trade-off parked for a
-  keeper ruling (todo T74) rather than silently chosen.
+  keeper ruling (todo T75) rather than silently chosen.
 
 ## 0.87.1 — 2026-07-27
 

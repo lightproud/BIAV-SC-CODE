@@ -37,7 +37,8 @@ import { SDK_VERSION } from '../version.js';
 import { createReadTool, readTool } from './read.js';
 import { writeTool } from './write.js';
 import { editTool } from './edit.js';
-import { bashTool, createBashTool } from './bash.js';
+import { bashTool, createBashTool, resolveBashOutputCap, STREAM_CAP_CHARS } from './bash.js';
+import type { BashLimits } from '../types.js';
 import type { JSONSchema, ReadLimits, SandboxContext } from '../types.js';
 import { globTool } from './glob.js';
 import { grepTool } from './grep.js';
@@ -67,14 +68,23 @@ export function createBuiltinTools(cfg?: {
   env?: Record<string, string | undefined>;
   /** Read output limits (spec §E). Undefined -> the default-limits readTool. */
   readLimits?: ReadLimits;
+  /** Bash output limits (BPT-EXTENSION, symmetric with readLimits). Undefined
+   *  -> the official BASH_MAX_OUTPUT_LENGTH env var, then the 30000 default. */
+  bashLimits?: BashLimits;
 }): Map<string, BuiltinTool> {
   const env = cfg?.env ?? process.env;
   const legacyTodo = env['CLAUDE_CODE_ENABLE_TASKS'] === '0';
+  // Resolve the Bash cap from option -> env -> default; only a non-default
+  // resolution forces a fresh tool (the default path keeps the shared,
+  // byte-identical `bashTool`).
+  const bashCap = resolveBashOutputCap(cfg?.bashLimits, env);
   const tools: BuiltinTool[] = [
     cfg?.readLimits !== undefined ? createReadTool(cfg.readLimits) : readTool,
     writeTool,
     editTool,
-    cfg?.sandbox !== undefined ? createBashTool(cfg.sandbox) : bashTool,
+    cfg?.sandbox !== undefined || bashCap !== STREAM_CAP_CHARS
+      ? createBashTool(cfg?.sandbox, process.platform, { maxOutputChars: bashCap })
+      : bashTool,
     bashOutputTool,
     killShellTool,
     taskOutputTool,
@@ -140,6 +150,7 @@ export function enumerateBuiltinToolMetadata(cfg?: {
   sandbox?: SandboxContext;
   env?: Record<string, string | undefined>;
   readLimits?: ReadLimits;
+  bashLimits?: BashLimits;
 }): BuiltinToolMetadata[] {
   return [...createBuiltinTools(cfg).values()].map((t) => ({
     name: t.name,
@@ -197,6 +208,31 @@ export const DEFAULT_DEFERRED_BUILTINS: readonly string[] = [
   'ReadMcpResourceTool',
   'ReadMcpResourceDirTool',
   'SendMessage',
+];
+
+/**
+ * The HOT set, stated explicitly (keeper 2026-07-28 拷问 #8): built-ins whose
+ * schemas stay inline every turn under unified tool-search, because the model
+ * reaches for them reflexively and deferral would trade a fixed schema cost
+ * for an extra round-trip per use. Together with DEFAULT_DEFERRED_BUILTINS
+ * this PARTITIONS the built-in surface — tests/toolsearch-builtins.test.ts
+ * asserts every tool createBuiltinTools() can emit (plus the query-wired
+ * Agent/ToolSearch/memory/LoopControl) is in exactly one of the two lists, so
+ * a new tool cannot silently default to HOT the way three post-registration
+ * tools once did (the "KEEP IN SYNC" comment era this guard retires).
+ */
+export const HOT_BUILTINS: readonly string[] = [
+  'Read',
+  'Write',
+  'Edit',
+  'Bash',
+  'Glob',
+  'Grep',
+  'AskUserQuestion',
+  'Agent',
+  'ToolSearch',
+  'memory',
+  'LoopControl',
 ];
 
 /**
@@ -261,6 +297,7 @@ export function declareEngineSurface(cfg?: {
   sandbox?: SandboxContext;
   env?: Record<string, string | undefined>;
   readLimits?: ReadLimits;
+  bashLimits?: BashLimits;
 }): EngineSurfaceDeclaration {
   return {
     engine: SDK_VERSION,

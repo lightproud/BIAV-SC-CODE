@@ -710,6 +710,7 @@ export function query(args: {
   const allBuiltins = createBuiltinTools({
     sandbox: sandboxCtx,
     readLimits: options.readLimits,
+    bashLimits: options.bashLimits,
   });
   let builtinTools: Map<string, BuiltinTool>;
   if (Array.isArray(options.tools)) {

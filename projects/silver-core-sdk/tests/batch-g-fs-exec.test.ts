@@ -376,7 +376,7 @@ describe('F6: Grep multiline CRLF consistency', () => {
       { pattern: 'foo\\r\\nbar', path: file, multiline: true, output_mode: 'content' },
       makeCtx(sandbox),
     );
-    expect(String(res.content)).toBe('No matches found');
+    expect(String(res.content)).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
   });
 });
 

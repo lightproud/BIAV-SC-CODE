@@ -19,6 +19,7 @@ import {
   MEMORY_CONSOLIDATION_PROTOCOL,
   MEMORY_INDEX_PATH,
   assessIndexCapacity,
+  assessViewedIndex,
   buildConsolidationPrompt,
   createMemoryStore,
   createMemoryTool,
@@ -131,6 +132,44 @@ describe('index capacity measurement', () => {
     expect(warning).toContain('an index, not a memory');
     expect(warning).toContain('one line per entry');
   });
+
+  it('fires the approaching tier before the cap, with a target size (official two-state)', () => {
+    // 4 of 5 lines = 80% — the early tier, not yet over.
+    const at = assessIndexCapacity(['a', 'b', 'c', 'd'], CAPS);
+    expect(at.over).toBe(false);
+    expect(at.approaching).toBe(true);
+    const notice = indexCapacityWarning(MEMORY_INDEX_PATH, at, CAPS);
+    expect(notice).toContain('NOTICE');
+    expect(notice).toContain('approaching');
+    expect(notice).toContain('to under 5 lines / 200 bytes');
+    // Official markdown-link entry format (keeper 2026-07-28 拷问 #9).
+    expect(notice).toContain('- [<title>](<file path>)');
+    // Well under the caps: neither tier.
+    expect(assessIndexCapacity(['a', 'b'], CAPS).approaching).toBe(false);
+  });
+
+  it('folds the store view-cap notice into the verdict (the re-opened one-way mirror)', () => {
+    // The store's own char cap cut the read: only 2 lines survive, well under
+    // the line/byte caps — judging the surviving lines alone says "fine".
+    const viewed =
+      "Here's the content of /memories/MEMORY.md with line numbers:\n" +
+      '     1\t- a (a.md) — hook\n' +
+      '     2\t- b (b.md) — hook\n' +
+      '[Output truncated at 40 characters. Use the view_range parameter to view the rest of the file.]';
+    const { capacity } = assessViewedIndex(viewed, CAPS);
+    expect(capacity.over).toBe(true);
+    expect(capacity.breached).toBe('view');
+    // And the warning names the actual breach, not a line/byte figure.
+    const warning = indexCapacityWarning(MEMORY_INDEX_PATH, capacity, CAPS);
+    expect(warning).toContain("store's own view limit truncated the read");
+  });
+
+  it('assessViewedIndex without a notice matches the plain capacity verdict', () => {
+    const viewed = "Here's the content of x with line numbers:\n     1\tonly";
+    const { lines, capacity } = assessViewedIndex(viewed, CAPS);
+    expect(lines).toEqual(['only']);
+    expect(capacity).toEqual(assessIndexCapacity(['only'], CAPS));
+  });
 });
 
 describe('write-side index back-pressure (memory tool)', () => {
@@ -156,6 +195,25 @@ describe('write-side index back-pressure (memory tool)', () => {
       file_text: 'l1\nl2\n',
     });
     expect(res.content).not.toContain('WARNING');
+  });
+
+  it('warns when the store view cap truncates the read, even with the caps unbreached', async () => {
+    // Default-config regression (2026-07-28 audit): maxViewChars (16000) is
+    // SMALLER than the default index byte cap (25600), so a dense index gets
+    // cut by the view first and the surviving head passes the line/byte math.
+    // Modeled here at small scale: a 40-char view cap against generous caps.
+    const tool = createMemoryTool(
+      createMemoryStore(memoryOps(), { limits: { maxViewChars: 40 } }),
+      { indexCaps: { maxLines: 200, maxBytes: 25_600 } },
+    );
+    const res = await run(tool, {
+      command: 'create',
+      path: MEMORY_INDEX_PATH,
+      file_text: Array.from({ length: 20 }, (_, i) => `- entry ${i} (t${i}.md) — hook`).join('\n'),
+    });
+    expect(res.isError).toBeUndefined();
+    expect(res.content).toContain('WARNING');
+    expect(res.content).toContain("store's own view limit truncated the read");
   });
 
   it('never warns about a non-index file, however long', async () => {

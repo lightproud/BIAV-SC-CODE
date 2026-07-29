@@ -21,10 +21,12 @@ import {
   query,
   silverCoreToolOptions,
   DEFAULT_DEFERRED_BUILTINS,
+  HOT_BUILTINS,
   type Options,
   type Query,
   type SDKMessage,
 } from '../src/index.js';
+import { createBuiltinTools } from '../src/tools/index.js';
 import {
   DeferredMcpRegistry,
   makeToolSearchTool,
@@ -109,13 +111,14 @@ describe('DeferredMcpRegistry — cold built-ins', () => {
     reg.activateIfNeeded(true);
     const ts = makeToolSearchTool(reg);
 
-    // Exact-name load of a built-in.
+    // Exact-name load of a built-in — official <functions> result encoding.
     const r1 = await ts.execute({ names: ['Workflow'] }, fakeCtx);
-    expect(r1.content as string).toContain('Workflow');
-    expect(r1.content as string).toContain('input_schema');
+    expect(r1.content as string).toContain('<functions>');
+    expect(r1.content as string).toContain('"name":"Workflow"');
+    expect(r1.content as string).toContain('"parameters"');
     expect(reg.isBuiltinDeferred('Workflow')).toBe(false);
 
-    // Substring query spanning both kinds (the shared `loaded` namespace).
+    // Keyword query spanning both kinds (the shared `loaded` namespace).
     const r2 = await ts.execute({ query: 'issue' }, fakeCtx);
     expect(r2.content as string).toContain('mcp__gh__issue');
     expect(reg.allTools().map((t) => t.qualifiedName)).toContain('mcp__gh__issue');
@@ -123,6 +126,37 @@ describe('DeferredMcpRegistry — cold built-ins', () => {
     // No match still guides.
     const r3 = await ts.execute({ query: 'nonexistent-zzz' }, fakeCtx);
     expect(r3.content as string).toContain('No tools matched');
+  });
+
+  it('supports the official query grammar: select:, +name-required, max_results', async () => {
+    const reg = new DeferredMcpRegistry(
+      fakeRegistry([mcpEntry('slack', 'send'), mcpEntry('slack', 'read'), mcpEntry('gh', 'send')]),
+      {},
+    );
+    reg.attachColdBuiltins([coldEntry('Workflow'), coldEntry('Monitor')]);
+    reg.activateIfNeeded(true);
+    const ts = makeToolSearchTool(reg);
+
+    // select: fetches exact names (comma-separated), no ranking cap.
+    const sel = await ts.execute(
+      { query: 'select:Workflow,mcp__gh__send' },
+      fakeCtx,
+    );
+    expect(sel.content as string).toContain('"name":"Workflow"');
+    expect(sel.content as string).toContain('"name":"mcp__gh__send"');
+    expect(sel.content as string).not.toContain('"name":"Monitor"');
+    expect(reg.isBuiltinDeferred('Workflow')).toBe(false);
+
+    // +term requires the term in the NAME: gh's `send` (description also says
+    // "send") must NOT match "+slack send".
+    const plus = await ts.execute({ query: '+slack send' }, fakeCtx);
+    expect(plus.content as string).toContain('"name":"mcp__slack__send"');
+    expect(plus.content as string).not.toContain('"name":"mcp__gh__send"');
+
+    // max_results caps keyword matches ("does" appears in every description).
+    const capped = await ts.execute({ query: 'does', max_results: 2 }, fakeCtx);
+    const hits = (capped.content as string).match(/<function>/g) ?? [];
+    expect(hits.length).toBe(2);
   });
 });
 
@@ -281,5 +315,35 @@ describe('DEFAULT_DEFERRED_BUILTINS', () => {
     for (const hot of [...HOT, 'Agent', 'AskUserQuestion', 'ToolSearch']) {
       expect(DEFAULT_DEFERRED_BUILTINS).not.toContain(hot);
     }
+  });
+
+  /**
+   * Hot/cold PARTITION guard (keeper 2026-07-28 拷问 #8): every tool the
+   * factory can emit — plus the query-wired conditionals — is in exactly one
+   * of HOT_BUILTINS / DEFAULT_DEFERRED_BUILTINS. Before this, classification
+   * was a "KEEP IN SYNC" comment, and three post-registration tools silently
+   * defaulted to HOT; now an unclassified new tool is a red test, same as an
+   * unregistered output cap.
+   */
+  it('every shipped tool is classified HOT or COLD, never both, never neither', () => {
+    const shipped = new Set<string>([
+      ...createBuiltinTools().keys(),
+      ...createBuiltinTools({ env: { CLAUDE_CODE_ENABLE_TASKS: '0' } }).keys(),
+      'Agent',
+      'ToolSearch',
+      'memory',
+      'LoopControl',
+    ]);
+    const hot = new Set(HOT_BUILTINS);
+    const cold = new Set(DEFAULT_DEFERRED_BUILTINS);
+
+    const unclassified = [...shipped].filter((t) => !hot.has(t) && !cold.has(t));
+    expect(unclassified, `unclassified tools: ${unclassified.join(', ')}`).toEqual([]);
+
+    const both = [...hot].filter((t) => cold.has(t));
+    expect(both, `tools in BOTH lists: ${both.join(', ')}`).toEqual([]);
+
+    const phantoms = [...hot, ...cold].filter((t) => !shipped.has(t));
+    expect(phantoms, `classified but unshipped: ${phantoms.join(', ')}`).toEqual([]);
   });
 });

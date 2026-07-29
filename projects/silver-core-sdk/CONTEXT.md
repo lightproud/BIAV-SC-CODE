@@ -71,11 +71,15 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.4.0`** · 发布日 2026-07-28 · 家族锁步对端 `silver-core-maestro-sdk` = `1.4.0`
+**当前版本 `1.5.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.5.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.5.0（2026-07-29）：十条观察项拷问裁定全落地**——守密人逐条过堂（#7 收紧、#9 扩大收编两处否决推荐案）：AskUserQuestion 三处全补（plan-mode 段 + preview 转发 + oneOf schema）· Agent 描述从官方三档复现 + 描述治理完备性守卫（UNGOVERNED 台账，工具不入册即红）· Glob/Grep 零匹配披露忽略集 · Read 路径可见层归一 + 256KB 拒读覆盖大 limit 绕过 · Grep rg 方言兼容垫（POSIX 字符类 / (?P<name>)）+ type 报错自愈 · 冷/热分层守卫 · 记忆索引改官方链接格式 + 双态容量预警（approaching 80% 档 + 目标尺寸）；frontmatter 四类型等三项另开设计轮（todo T75 + 提案档）。
+
+**同版前半（对齐审计三裁，原拟 1.4.0、因上游十七波占号并入 1.5.0）**——①记忆常驻索引「单向镜」被 view 上限重新打开：写侧告警只数 `store.view` 幸存行、丢弃 view 自身截断信号，而默认 `maxViewChars`(16000) 小于索引字节上限(25600)，密集 ASCII 索引先被 view 切掉、幸存头通过行/字节判定、告警永不响——新 `assessViewedIndex` 把 view 截断并入两侧共用判词（`breached:'view'`）；②索引注入补官方防护措辞（background context, not user instructions + 待验证声明——S1 挂载下他会话写入可进本会话 system prompt）；③ToolSearch 对齐官方查询语法（select:/关键词/+名限定 + max_results）与 `<functions>` 返回编码，入 provenance 治理（此前它是唯一治理体系外工具、却是银芯变体 2/3 工具面唯一入口）；④Bash 输出上限补齐官方两级设计（`options.bashLimits` + `BASH_MAX_OUTPUT_LENGTH` env，封顶 150000，默认路径字节不变）；⑤COMPAT 三处 Workflow 陈旧 SYNCHRONOUS 判词订正 + 十条未登记漂移入册。
 
 **v1.4.0（2026-07-28）：审计第十七波**——Read 把路径原样插进 `system-reminder` 围栏，一个 0 字节文件靠**文件名**就能伪造出带框架权威的注入（项目指令 CLAUDE.md 同款）；WebSearch 结果 title 里一个换行伪造出完整额外记录、**绕开 `blocked_domains`**；`server_tool_use` 从未被折叠，网页搜索费**一次都没计过**、预算闸门可被整笔突破；分段系统提示下消息缓存断点被整个撤掉，4 槽只用 2、每回合把全部历史当新 token 重发。
 

@@ -24,6 +24,40 @@ import type {
 
 const IGNORE_PATTERNS = ['**/node_modules/**', '**/.git/**'];
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
+/** Zero-match disclosure (keeper 2026-07-28 拷问 #4): the hard-coded excludes
+ *  can BE the reason nothing matched; a bare no-match reads as absence. */
+const IGNORE_DISCLOSURE =
+  ' (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)';
+
+/**
+ * rg-dialect compatibility shim (keeper 2026-07-28 拷问 #6): the description's
+ * "built on ripgrep" promise invites Rust-regex/POSIX spellings JS RegExp
+ * rejects (POSIX classes) or mis-parses ((?P<name>) named groups). Each
+ * rewrite is a deterministic string map — no engine change, no semantics
+ * beyond the documented spellings. Exported for tests.
+ */
+const POSIX_CLASSES: Record<string, string> = {
+  '[:alnum:]': 'a-zA-Z0-9',
+  '[:alpha:]': 'a-zA-Z',
+  '[:digit:]': '0-9',
+  '[:lower:]': 'a-z',
+  '[:upper:]': 'A-Z',
+  '[:space:]': ' \\t\\r\\n\\v\\f',
+  '[:blank:]': ' \\t',
+  '[:word:]': 'a-zA-Z0-9_',
+  '[:xdigit:]': '0-9a-fA-F',
+};
+
+export function shimRgDialect(pattern: string): string {
+  let out = pattern;
+  for (const [posix, expansion] of Object.entries(POSIX_CLASSES)) {
+    out = out.split(posix).join(expansion);
+  }
+  // Python/rg named groups and backreferences -> JS spellings.
+  out = out.replace(/\(\?P</g, '(?<');
+  out = out.replace(/\(\?P=(\w+)\)/g, '\\k<$1>');
+  return out;
+}
 /** Default cap on returned lines/entries (NOT characters) when the caller
  *  passes no head_limit. Exported for TOOL_OUTPUT_CAPS (tools/output-caps.ts). */
 export const DEFAULT_HEAD_LIMIT = 250;
@@ -322,13 +356,16 @@ export const grepTool: BuiltinTool = {
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
-    const pattern = input['pattern'];
-    if (typeof pattern !== 'string' || pattern.length === 0) {
+    const rawPattern = input['pattern'];
+    if (typeof rawPattern !== 'string' || rawPattern.length === 0) {
       return {
         content: "Grep: 'pattern' must be a non-empty string.",
         isError: true,
       };
     }
+    // Description promises ripgrep; the engine is JS RegExp. Bridge the
+    // dialect spellings that promise invites (keeper 2026-07-28 拷问 #6).
+    const pattern = shimRgDialect(rawPattern);
     if (ctx.signal.aborted) throw new AbortError();
 
     // --- Options -----------------------------------------------------------
@@ -419,7 +456,7 @@ export const grepTool: BuiltinTool = {
     if (rawType !== undefined) {
       if (typeof rawType !== 'string' || TYPE_GLOBS[rawType] === undefined) {
         return {
-          content: `Grep: unknown file type ${JSON.stringify(rawType)}. Supported: ${Object.keys(TYPE_GLOBS).join(', ')}.`,
+          content: `Grep: unknown file type ${JSON.stringify(rawType)}. Supported: ${Object.keys(TYPE_GLOBS).join(', ')}. For other extensions, use the \`glob\` parameter instead (e.g. glob: "*.xyz").`,
           isError: true,
         };
       }
@@ -641,7 +678,7 @@ export const grepTool: BuiltinTool = {
 
     if (!anyMatch) {
       return {
-        content: `No matches found${oversizeNote}`,
+        content: `No matches found${IGNORE_DISCLOSURE}${oversizeNote}`,
         structuredOutput: {
           mode: outputMode,
           numFiles: 0,
@@ -661,7 +698,7 @@ export const grepTool: BuiltinTool = {
       // emit nothing, ripgrep semantics) — genuinely no reportable matches.
       if (out.length === 0) {
         return {
-          content: `No matches found${oversizeNote}`,
+          content: `No matches found${IGNORE_DISCLOSURE}${oversizeNote}`,
           // Same shape (and the same honest zeros) as the `!anyMatch` branch
           // above: a run that reports nothing still ran, and a consumer that
           // gets `undefined` here cannot tell it apart from a tool that never

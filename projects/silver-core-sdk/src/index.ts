@@ -67,7 +67,7 @@ export type {
 // deferred behind the ToolSearch builtin when options.toolSearch === true) and
 // the 银芯/SVN-world variant options bundle. The faithful createBuiltinTools()
 // factory is unchanged; both of these are opt-in caller surfaces.
-export { DEFAULT_DEFERRED_BUILTINS, silverCoreToolOptions } from './tools/index.js';
+export { DEFAULT_DEFERRED_BUILTINS, HOT_BUILTINS, silverCoreToolOptions } from './tools/index.js';
 // Memory system (BPT-EXTENSION, docs/MEMORY.md): the MemoryStore contract and
 // MemoryOptions ride the types.js export; here are the store engine (implement
 // the MemoryFileOps primitives, inherit the byte-exact reference formats), the
@@ -168,6 +168,9 @@ export {
 // enforcing constants, never re-literalled (see tools/output-caps.ts).
 export { MAX_READ_OUTPUT_CHARS } from './tools/fsutil.js';
 export { TOOL_OUTPUT_CAPS } from './tools/output-caps.js';
+// Bash output-cap knob (options.bashLimits, symmetric with readLimits): the
+// resolver and ceiling a host needs to predict the effective cap.
+export { MAX_STREAM_CAP_CHARS, resolveBashOutputCap } from './tools/bash.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
 // Sessions-domain health scan (audit P1-S1, keeper 2026-07-27): the trigger
 // surface for host-side session cleanup, mirroring assessMemoryStoreHealth.

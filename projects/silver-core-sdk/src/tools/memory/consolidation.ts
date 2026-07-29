@@ -58,7 +58,7 @@ export const MEMORY_CONSOLIDATION_PROTOCOL =
   'creating them; prefer deleting a stale file over leaving it to rot.\n' +
   `Phase 4 — Prune the index: rewrite ${MEMORY_INDEX_PATH} so it is an INDEX ` +
   'and nothing else — one line per entry, roughly 150 characters or less, ' +
-  '"- <title> (<file path>) — one-line hook". Never leave memory CONTENT in the ' +
+  '"- [<title>](<file path>) — one-line hook". Never leave memory CONTENT in the ' +
   'index: content belongs in the file the line points at. Drop entries whose ' +
   'files no longer exist, and merge entries that point at the same subject.\n' +
   'Report at the end: what you merged, what you deleted, and what you chose to ' +

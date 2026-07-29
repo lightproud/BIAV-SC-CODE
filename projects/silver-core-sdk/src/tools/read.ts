@@ -59,8 +59,11 @@ const MAX_READ_BYTES = 50 * 1024 * 1024;
  * portions of the file", and the official tool description says "use offset and
  * limit for larger files". HONEST LIMIT on the reproduction: the official throw
  * site is gated on an internal `truncateOnByteLimit` flag whose exact wiring
- * per call path was not established here, so "offset or limit ⇒ allowed" is
- * reproduced from the stated contract rather than from the observed branch.
+ * per call path was not established here, so the exemption is reproduced from
+ * the stated contract rather than from the observed branch — TIGHTENED
+ * 2026-07-28 (keeper 拷问 #7): "bounded" means offset given, or limit BELOW
+ * the default window; a bare limit >= 2000 requests at least what a bare Read
+ * would and is refused like one (`limit: 999999` was a bypass).
  */
 const MAX_READ_FILE_BYTES = 262144;
 
@@ -175,7 +178,12 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
     properties: {
       file_path: {
         type: 'string',
-        description: 'Path of the file to read (absolute or cwd-relative).',
+        // Official wording (keeper 2026-07-28 拷问 #5): the description, this
+        // schema and the runtime used to give THREE different path contracts.
+        // The model-visible layers now both say absolute-only; the runtime
+        // stays lenient (resolves cwd-relative) — wider than the stated
+        // contract, invisible to a model that follows it.
+        description: 'The absolute path to the file to read (not a relative path).',
       },
       offset: {
         type: 'number',
@@ -271,8 +279,12 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
       try {
         const st = await stat(abs);
         if (st.isDirectory()) {
+          // Points at Bash, matching the description's own alternative list
+          // (keeper 2026-07-28 拷问 #5 — the error used to say Glob while the
+          // description said Bash, and the model's next move contradicted its
+          // prior).
           return errorResult(
-            `Read failed: "${abs}" is a directory, not a file. Use the Glob tool to list its contents.`,
+            `Read failed: "${abs}" is a directory, not a file. Use the Bash tool (ls) to list its contents.`,
           );
         }
         // F3 (audit 2026-07-17): the directory check alone lets special files
@@ -454,11 +466,14 @@ export function createReadTool(rawLimits?: ReadLimits): BuiltinTool {
       // must never reject an image or PDF — those routinely exceed 256KB and
       // have no page-slice/offset escape at all (audit wave5: a 300KB screenshot
       // was refused with text-pagination advice it could not act on).
-      if (
-        offsetRaw === undefined &&
-        limitRaw === undefined &&
-        buf.length > MAX_READ_FILE_BYTES
-      ) {
+      // Tightened (keeper 2026-07-28 拷问 #7): a bare `limit` at or above the
+      // default window, with no offset, is a whole-file read in effect — a
+      // bare Read (limit absent = the same 2000-line window) IS refused for
+      // this file, so `limit: 999999` slipping past the refusal was a bypass,
+      // not an escape hatch. A sub-default limit or any offset remains a
+      // genuinely bounded read and passes.
+      const wholeFileEquivalent = offsetRaw === undefined && limit >= DEFAULT_LINE_LIMIT;
+      if (wholeFileEquivalent && buf.length > MAX_READ_FILE_BYTES) {
         return errorResult(
           `Read failed: file content (${buf.length} bytes) exceeds maximum allowed size ` +
             `(${MAX_READ_FILE_BYTES} bytes). Use offset and limit parameters to read ` +

@@ -65,7 +65,9 @@ export type SdkPluginConfig = {
 };
 
 /** Official built-in-tool behavior config (Options.toolConfig).
- *  ACCEPTED-IGNORED in this SDK: AskUserQuestion renders no preview layer. */
+ *  ACCEPTED-IGNORED in this SDK: the SDK itself renders nothing — option
+ *  `preview` fragments ARE accepted and forwarded to the host handler
+ *  (2026-07-28 ruling), but this format hint has no SDK-side consumer. */
 export type ToolConfig = {
   askUserQuestion?: {
     previewFormat?: 'markdown' | 'html';
@@ -119,6 +121,20 @@ export type ReadLimits = {
   maxOutputChars?: number;
   /** Characters kept per line before the per-line truncation marker. */
   maxLineChars?: number;
+};
+
+/**
+ * BPT-EXTENSION: tunable Bash output limits, symmetric with ReadLimits
+ * (2026-07-28 alignment audit — the cap used to be a hard-coded 30000 with no
+ * knob, half of the official two-tier design: Claude Code defaults to 30000
+ * and allows raising to 150000 via BASH_MAX_OUTPUT_LENGTH). Resolution order:
+ * this option, then the BASH_MAX_OUTPUT_LENGTH env var, then 30000 — every
+ * source clamped to the official 150000 ceiling.
+ */
+export type BashLimits = {
+  /** Total characters one Bash call returns (tail-kept; the dropped-chars
+   *  marker leads the output). Clamped to [1, 150000]. */
+  maxOutputChars?: number;
 };
 
 /**
@@ -249,10 +265,13 @@ export type MemoryOptions = {
   };
   /**
    * Structured memory-card mode (spec R9): 'cards' requires every written
-   * memory file to be one or more cards with the fixed fields 结论 / 依据 /
-   * 过期条件 under a `## <title>` heading. Invalid content is rejected with a
-   * structured error the model can retry from. Aimed at models with weak
-   * write-side discipline; omit for free-form writing.
+   * memory file to be one or more cards under a `## <title>` heading, in one
+   * of TWO kinds distinguished by their field set (mixing kinds in one card is
+   * rejected by name): proposition cards with 结论 / 依据 / 过期条件, or
+   * prescription cards with 意图 / 步骤 / 结果 / 适用边界 (cards.ts A1
+   * extension). Invalid content is rejected with a structured error the model
+   * can retry from. Aimed at models with weak write-side discipline; omit for
+   * free-form writing. The resident index /memories/MEMORY.md is exempt.
    */
   schema?: 'cards';
   /** Card limits for schema 'cards'. Defaults: maxCardChars 500,
@@ -268,12 +287,14 @@ export type MemoryOptions = {
   flushOnCompaction?: boolean;
   /**
    * Session-end progress card (spec R7): when the query ends NORMALLY (never
-   * on abort or error), run one bounded memory-update round ("update the
-   * progress card in /memories/MEMORY.md"). Its assistant/user messages are
-   * streamed, its result message is absorbed into session accounting instead
-   * of being yielded (the task's own final result stays the last result the
-   * consumer sees). Default true when memory is enabled; set false to
-   * disable.
+   * on abort or error), run one bounded memory-update round — the progress
+   * card lives under `/memories/progress/`, with only a one-line pointer in
+   * the index (keeper 2026-07-27 ruling; writing the card INTO MEMORY.md was
+   * the bug that ruling removed — see prompt-fragments.ts R7). Its
+   * assistant/user messages are streamed, its result message is absorbed into
+   * session accounting instead of being yielded (the task's own final result
+   * stays the last result the consumer sees). Default true when memory is
+   * enabled; set false to disable.
    */
   sessionEndUpdate?: boolean;
   /**
@@ -402,6 +423,8 @@ export type Options = {
   additionalDirectories?: string[];
   /** Read output limits (BPT-EXTENSION); omit for the defaults. */
   readLimits?: ReadLimits;
+  /** Bash output limits (BPT-EXTENSION); omit for env/default resolution. */
+  bashLimits?: BashLimits;
   /** Programmatic subagent definitions (type-compatible; execution in v0.2). */
   agents?: Record<string, AgentDefinition>;
   allowedTools?: string[];

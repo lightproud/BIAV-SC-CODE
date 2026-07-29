@@ -29,9 +29,8 @@ import type { JSONSchema, SDKMemoryHealth } from '../../types.js';
 import { AbortError, isAbortError } from '../../errors.js';
 import { MEMORY_INDEX_PATH, MEMORY_ROOT, validateMemoryPath } from './paths.js';
 import {
-  assessIndexCapacity,
+  assessViewedIndex,
   indexCapacityWarning,
-  recoverIndexLines,
   type IndexCaps,
 } from './index-capacity.js';
 import {
@@ -259,8 +258,14 @@ export function createMemoryTool(
     if (indexCaps === undefined || path !== MEMORY_INDEX_PATH) return '';
     try {
       const viewed = await store.view(path, [1, indexCaps.maxLines + 1]);
-      const capacity = assessIndexCapacity(recoverIndexLines(viewed).lines, indexCaps);
-      return capacity.over ? indexCapacityWarning(path, capacity, indexCaps) : '';
+      // assessViewedIndex folds the store's own view-cap truncation into the
+      // verdict — dropping that signal was exactly the one-way mirror this
+      // warning exists to close (index-capacity.ts, 2026-07-28 audit).
+      const { capacity } = assessViewedIndex(viewed, indexCaps);
+      // Two-state (official shape): over warns hard, approaching warns early.
+      return capacity.over || capacity.approaching
+        ? indexCapacityWarning(path, capacity, indexCaps)
+        : '';
     } catch {
       return '';
     }

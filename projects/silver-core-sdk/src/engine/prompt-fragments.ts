@@ -150,7 +150,7 @@ export const MEMORY_INDEX_DISCIPLINE_FRAGMENT: PromptFragment = {
     'index that fills up with content stops being able to route you, and the entries at ' +
     'its end become invisible.\n' +
     'Write one line per entry, roughly 150 characters or less: ' +
-    '"- <title> (<file path>) — one-line hook". Never write memory content directly ' +
+    '"- [<title>](<file path>) — one-line hook". Never write memory content directly ' +
     'into the index; content goes in the file the line points at. When you add a memory ' +
     'file, add its line; when you delete or merge one, remove or merge its line.',
 };
