@@ -4645,6 +4645,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15574.md",
       "rel": "提及:汀克特",
       "rel_type": "mention"
@@ -4671,12 +4677,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15588.md",
       "rel": "提及:艾尔瓦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
       "rel_type": "mention"
     },
     {
@@ -6103,6 +6103,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15574.md",
       "rel": "提及:汀克特",
       "rel_type": "mention"
@@ -6129,12 +6135,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15588.md",
       "rel": "提及:艾尔瓦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
       "rel_type": "mention"
     },
     {
