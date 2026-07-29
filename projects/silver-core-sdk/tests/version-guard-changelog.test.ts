@@ -11,6 +11,7 @@
  * assert the invariant holds on the real repo right now.
  */
 
+import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -220,5 +221,41 @@ describe('CHANGELOG version sequence (the squash-proof half)', () => {
       expect(vs).toContain(older);
       expect(vs).toContain(newer);
     }
+  });
+});
+
+/**
+ * Merge commits (found by premerge_gate.py, 2026-07-29).
+ *
+ * The guard's diff rule assumes main's squash-merge discipline — one merge,
+ * one commit, compare HEAD to HEAD~1. A real merge commit on a feature branch
+ * breaks that assumption: diffing against FIRST-parent HEAD~1 attributes the
+ * other parent's already-released runtime changes to this commit and demands a
+ * bump for code that shipped elsewhere. Merging main's 1.4.1 into a branch at
+ * 1.8.0 red-flagged a commit that introduced nothing.
+ */
+describe('merge-commit handling', () => {
+  it('the guard exits clean on the current HEAD whatever its shape', () => {
+    // Runs the real guard as a subprocess: an assertion on the pure helpers
+    // would not have caught this, since the bug was in the diff plumbing.
+    const r = spawnSync(process.execPath, [join(PKG, 'scripts/check-version-bump.mjs')], {
+      cwd: PKG,
+      encoding: 'utf8',
+    });
+    expect(r.stderr + r.stdout).not.toContain('FAILED');
+    expect(r.status).toBe(0);
+  });
+
+  it('states that standing invariants are NOT part of the skip', () => {
+    // The skip covers the diff rule only. If it ever swallowed the three-way
+    // reconciliation or the sequence check, a merge commit would become a hole
+    // big enough to ship a mismatched version through.
+    const src = readFileSync(join(PKG, 'scripts/check-version-bump.mjs'), 'utf8');
+    const mergeSkip = src.slice(src.indexOf('parentCount > 1'));
+    expect(mergeSkip).toContain('Standing invariants');
+    // The sequence + three-way checks must be positioned BEFORE the skip.
+    expect(src.indexOf('sequenceViolations(changelog)')).toBeLessThan(
+      src.indexOf('parentCount > 1'),
+    );
   });
 });

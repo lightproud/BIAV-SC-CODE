@@ -269,6 +269,33 @@ function runGuard() {
     );
     process.exit(1);
   }
+  // A MERGE commit ships no NEW runtime content: every line in it came from a
+  // parent that already went through this guard on its own branch. Diffing it
+  // against first-parent HEAD~1 misattributes the OTHER parent's already-
+  // released code to this commit and demands a bump for it — which is exactly
+  // what happened merging main's 1.4.1 (#878) into a branch sitting at 1.8.0:
+  // the merge carried in released runtime changes with no version move, and
+  // the guard red-flagged a commit that introduced nothing.
+  //
+  // This does not weaken CI on main. Main is squash-merge only (one merge =
+  // one commit, stated at the top of this file), so a merge commit never
+  // appears there; this path is reachable from a feature branch and from
+  // premerge_gate.py. The standing invariants above — three-way reconciliation
+  // and the CHANGELOG sequence — run regardless and are NOT skipped here.
+  let parentCount = 0;
+  try {
+    parentCount = git('rev-list --parents -n 1 HEAD').trim().split(/\s+/).length - 1;
+  } catch {
+    parentCount = 0;
+  }
+  if (parentCount > 1) {
+    console.log(
+      `version-bump guard: HEAD is a merge commit (${parentCount} parents) - its runtime ` +
+        'content came from parents already guarded on their own branches; skipping the diff ' +
+        'rule. Standing invariants (three-way sync, CHANGELOG sequence) checked and OK.',
+    );
+    process.exit(0);
+  }
   let hasParent = false;
   try {
     git('rev-parse --verify --quiet HEAD~1');
