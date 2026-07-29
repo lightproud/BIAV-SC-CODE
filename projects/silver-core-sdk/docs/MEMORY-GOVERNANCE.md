@@ -35,6 +35,14 @@ const q = query({ prompt, options: {
 }});
 ```
 
+**Scope boundary (T75 #1, 2026-07-29):** mounts govern `/memories` VIRTUAL
+paths only — never the real filesystem. A consolidation round that opts into
+the `transcripts` signal source (`buildConsolidationPrompt({ transcripts })`)
+reads host-named files with the ordinary Read/Grep tools, entirely outside
+this mechanism: scoping those paths to the tenant being tidied is the HOST's
+responsibility, and the round should run under `consolidationToolOptions()`
+so it holds no writer that could touch them.
+
 Semantics (enforced at the SDK tool layer in `src/tools/memory/memory-tool.ts`,
 AFTER R4 path validation and BEFORE the store is called — never via the system
 prompt):

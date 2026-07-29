@@ -48,7 +48,7 @@ tests/     store-contract（LedgerStore 契约套件 14 例）· inspectors · s
   补偿（cron 落点刻意晚于 07:00 UTC fire point，**每天都走一遍补偿路径**）→ 驱动器
   执行 → 报告入记忆区 → 做梦归并卡 → 台账与记忆区提交 `[skip ci]`。
 - **做梦任务**：读当日四报告 → 归并成 R9 三段卡（结论/依据/过期条件，经 agent SDK
-  `validateCardsContent` 校验后才准入库）→ 刷新 `MEMORY.md` 常驻索引 → 45 天保留剪除
+  `validateMemoryFrontmatter` 校验后才准入库）→ 刷新 `MEMORY.md` 常驻索引 → 45 天保留剪除
   （R8 64 文件/目录限额卫生）。记忆工具 + 台账 + 调度三件套全部真实使用；巡检器与
   做梦均为确定性执行器（无模型调用，无人值守 cron 不带 key）——`tokensPerTask` 槽位
   留给三配置端点对照实验。

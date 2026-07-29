@@ -27,6 +27,7 @@ import type {
   McpServerStatus,
   CallToolResult,
 } from '../types.js';
+import { TOOLSEARCH_DESCRIPTION } from './descriptions.js';
 
 export const TOOL_SEARCH_NAME = 'ToolSearch';
 export const DEFERRED_THRESHOLD = 50;
@@ -186,7 +187,7 @@ export class DeferredMcpRegistry implements McpRegistry {
 /** A ToolSearch-searchable entry, normalized across the two deferred kinds
  *  (MCP tools and cold built-ins) so ONE search path covers both — the
  *  unification. */
-type UnifiedEntry = {
+export type UnifiedEntry = {
   /** Key marked loaded + the exact name the model then calls: an MCP qualified
    *  name or a bare built-in name. */
   loadKey: string;
@@ -233,42 +234,121 @@ function describeCatalog(catalog: UnifiedEntry[]): string {
   return lines.join('\n');
 }
 
+/** Official result encoding (archive tool-description-toolsearch-second-part,
+ *  2.1.178): each matched tool is one `<function>{"description","name",
+ *  "parameters"}</function>` line inside a `<functions>` block — the same
+ *  encoding as the request's top-of-prompt tool list, so a loaded tool reads
+ *  exactly like an always-present one. Key order matters only for byte
+ *  stability of our own output, not for the model; keep it fixed anyway. */
 function renderMatch(t: UnifiedEntry): string {
-  return (
-    `## ${t.loadKey}\n` +
-    `${t.description ?? '(no description)'}\n` +
-    `input_schema: ${JSON.stringify(t.schema)}`
-  );
+  return `<function>${JSON.stringify({
+    description: t.description ?? '',
+    name: t.loadKey,
+    parameters: t.schema,
+  })}</function>`;
+}
+
+function renderFunctionsBlock(matched: UnifiedEntry[]): string {
+  return `<functions>\n${matched.map(renderMatch).join('\n')}\n</functions>`;
+}
+
+export const TOOL_SEARCH_DEFAULT_MAX_RESULTS = 5;
+
+/** Tokenize a keyword query; a leading `+` marks a term REQUIRED in the tool
+ *  name (official "+slack send" form). */
+function parseQueryTerms(query: string): { required: string[]; ranked: string[] } {
+  const required: string[] = [];
+  const ranked: string[] = [];
+  for (const raw of query.split(/\s+/)) {
+    if (raw.length === 0) continue;
+    if (raw.startsWith('+') && raw.length > 1) required.push(raw.slice(1).toLowerCase());
+    else ranked.push(raw.toLowerCase());
+  }
+  return { required, ranked };
 }
 
 /**
- * Build the ONE ToolSearch builtin. execute({query?,names?}) filters the
- * unified catalog — deferred MCP tools AND cold built-ins — by substring
- * (name/description) or an exact names[] match, marks the matches loaded (one
- * shared namespace), and returns their schemas so the model can call them on
- * the next turn. A built-in and an MCP tool are loaded through the exact same
- * path; the caller need not know which kind a name is.
+ * Match the unified catalog against the three official query forms:
+ *  - `select:Read,Edit,Grep`  — exact names (case-insensitive fallback);
+ *  - `notebook jupyter`       — keyword search, up to maxResults best matches;
+ *  - `+slack send`            — require "slack" in the NAME, rank by the rest.
+ * Exported for tests.
+ */
+export function matchCatalog(
+  catalog: UnifiedEntry[],
+  query: string,
+  maxResults: number,
+): UnifiedEntry[] {
+  if (query.toLowerCase().startsWith('select:')) {
+    const wanted = query
+      .slice('select:'.length)
+      .split(',')
+      .map((n) => n.trim())
+      .filter((n) => n.length > 0);
+    const out: UnifiedEntry[] = [];
+    for (const name of wanted) {
+      const exact = catalog.find((t) => t.loadKey === name);
+      const hit =
+        exact ?? catalog.find((t) => t.loadKey.toLowerCase() === name.toLowerCase());
+      if (hit !== undefined && !out.includes(hit)) out.push(hit);
+    }
+    return out; // direct selection: the caller named them, no ranking cap
+  }
+  const { required, ranked } = parseQueryTerms(query);
+  const scored: { entry: UnifiedEntry; score: number }[] = [];
+  for (const t of catalog) {
+    const name = t.loadKey.toLowerCase();
+    const desc = (t.description ?? '').toLowerCase();
+    if (!required.every((term) => name.includes(term))) continue;
+    let score = 0;
+    for (const term of ranked) {
+      if (name.includes(term)) score += 2; // a name hit outranks a description hit
+      else if (desc.includes(term)) score += 1;
+    }
+    // A required-only query ("+slack") matches on the requirement alone;
+    // otherwise at least one ranked term must land.
+    if (score > 0 || (required.length > 0 && ranked.length === 0)) {
+      scored.push({ entry: t, score });
+    }
+  }
+  scored.sort((a, b) => b.score - a.score); // stable: catalog order breaks ties
+  return scored.slice(0, maxResults).map((s) => s.entry);
+}
+
+/**
+ * Build the ONE ToolSearch builtin. execute({query?, max_results?, names?})
+ * matches the unified catalog — deferred MCP tools AND cold built-ins — via
+ * the official query grammar (select: / keywords / +name-required), or the
+ * SDK-extension exact `names` array, marks the matches loaded (one shared
+ * namespace), and returns their full schemas in the official `<functions>`
+ * block so the model can call them from the next turn on. A built-in and an
+ * MCP tool are loaded through the exact same path; the caller need not know
+ * which kind a name is.
  */
 export function makeToolSearchTool(reg: DeferredMcpRegistry): BuiltinTool {
   return {
     name: TOOL_SEARCH_NAME,
-    description:
-      'Search for and load additional tools whose schemas are not yet in ' +
-      'context. Pass a `query` substring (matched against tool name and ' +
-      'description) or an exact `names` array. Matching tools are loaded and ' +
-      'their input schemas returned so you can call them on the next turn.',
+    description: TOOLSEARCH_DESCRIPTION,
     readOnly: true,
     inputSchema: {
       type: 'object',
       properties: {
         query: {
           type: 'string',
-          description: 'Substring matched against tool name and description.',
+          description:
+            'Query to find deferred tools. Use "select:<tool_name>" for direct ' +
+            'selection, or keywords to search.',
+        },
+        max_results: {
+          type: 'number',
+          description: `Maximum number of results to return (default: ${TOOL_SEARCH_DEFAULT_MAX_RESULTS})`,
         },
         names: {
           type: 'array',
           items: { type: 'string' },
-          description: 'Exact tool names to load (MCP qualified names or built-in names).',
+          description:
+            'SDK extension: exact tool names to load (MCP qualified names or ' +
+            'built-in names); equivalent to a select: query.',
         },
       },
     },
@@ -281,18 +361,18 @@ export function makeToolSearchTool(reg: DeferredMcpRegistry): BuiltinTool {
         ? input.names.filter((n): n is string => typeof n === 'string')
         : undefined;
       const query = typeof input.query === 'string' ? input.query.trim() : '';
+      const rawMax = input.max_results;
+      const maxResults =
+        typeof rawMax === 'number' && Number.isInteger(rawMax) && rawMax > 0
+          ? rawMax
+          : TOOL_SEARCH_DEFAULT_MAX_RESULTS;
 
       let matched: UnifiedEntry[];
       if (names !== undefined && names.length > 0) {
         const set = new Set(names);
         matched = catalog.filter((t) => set.has(t.loadKey));
       } else if (query.length > 0) {
-        const q = query.toLowerCase();
-        matched = catalog.filter(
-          (t) =>
-            t.loadKey.toLowerCase().includes(q) ||
-            (t.description ?? '').toLowerCase().includes(q),
-        );
+        matched = matchCatalog(catalog, query, maxResults);
       } else {
         // No filter -> return guidance listing what is available.
         return { content: describeCatalog(catalog) };
@@ -303,10 +383,11 @@ export function makeToolSearchTool(reg: DeferredMcpRegistry): BuiltinTool {
       }
 
       reg.markLoaded(matched.map((t) => t.loadKey));
-      const body = matched.map(renderMatch).join('\n\n');
       return {
         content:
-          `Loaded ${matched.length} tool(s); you can now call them directly.\n\n${body}`,
+          `Loaded ${matched.length} tool(s); they are now callable exactly like ` +
+          `any tool defined at the top of the prompt.\n\n` +
+          renderFunctionsBlock(matched),
       };
     },
   };

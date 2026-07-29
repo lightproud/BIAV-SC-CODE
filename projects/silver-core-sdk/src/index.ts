@@ -67,17 +67,22 @@ export type {
 // deferred behind the ToolSearch builtin when options.toolSearch === true) and
 // the 银芯/SVN-world variant options bundle. The faithful createBuiltinTools()
 // factory is unchanged; both of these are opt-in caller surfaces.
-export { DEFAULT_DEFERRED_BUILTINS, silverCoreToolOptions } from './tools/index.js';
+export { DEFAULT_DEFERRED_BUILTINS, HOT_BUILTINS, silverCoreToolOptions } from './tools/index.js';
 // Memory system (BPT-EXTENSION, docs/MEMORY.md): the MemoryStore contract and
 // MemoryOptions ride the types.js export; here are the store engine (implement
 // the MemoryFileOps primitives, inherit the byte-exact reference formats), the
 // built-in local-filesystem store, the SDK-layer path validator, and the
 // contract test suite a hosting application runs against its own store.
 export {
-  DEFAULT_CARDS_CONFIG,
+  ATTACHMENT_MAX_BYTES,
+  ATTACHMENT_MAX_FILES,
   DEFAULT_MEMORY_LIMITS,
+  FRONTMATTER_DESCRIPTION_MAX_CHARS,
   INCOGNITO_MEMORY_ERROR,
+  MEMORY_ATTACH_PICKER_PROVENANCE,
+  MEMORY_ATTACH_PICKER_SYSTEM,
   MEMORY_CONSOLIDATION_PROTOCOL,
+  MEMORY_FRONTMATTER_TYPES,
   MEMORY_INDEX_PATH,
   MEMORY_ROOT,
   MEMORY_SERVER_TOOL,
@@ -85,6 +90,7 @@ export {
   MemoryPathError,
   assessMemoryStoreHealth,
   buildConsolidationPrompt,
+  consolidationToolOptions,
   createLocalFilesystemMemoryStore,
   createLocalMemoryFileOps,
   createMemoryHealth,
@@ -94,14 +100,14 @@ export {
   mountAllowsWrite,
   mountReadAccess,
   outsideMountsError,
-  parseMemoryCards,
+  parseMemoryFrontmatter,
   readOnlyMountError,
   resolveMemoryMounts,
   runMemoryStoreContractSuite,
   subtreeContainsReadOnlyMount,
   subtreeReadOnlyMountError,
   truncateViewBody,
-  validateCardsContent,
+  validateMemoryFrontmatter,
   validateMemoryPath,
 } from './tools/memory/index.js';
 export type {
@@ -109,12 +115,14 @@ export type {
   ConsolidationPromptOptions,
   CreateMemoryStoreOptions,
   CreateMemoryToolOptions,
-  MemoryCard,
-  MemoryCardsConfig,
+  FrontmatterParseResult,
+  MemoryAttachmentCandidate,
   MemoryDirEntry,
   MemoryDirectoryWaterline,
   MemoryEntryStat,
   MemoryFileOps,
+  MemoryFrontmatter,
+  MemoryFrontmatterType,
   MemoryLimits,
   MemoryStalenessReport,
   MemoryStoreAssessment,
@@ -168,6 +176,9 @@ export {
 // enforcing constants, never re-literalled (see tools/output-caps.ts).
 export { MAX_READ_OUTPUT_CHARS } from './tools/fsutil.js';
 export { TOOL_OUTPUT_CAPS } from './tools/output-caps.js';
+// Bash output-cap knob (options.bashLimits, symmetric with readLimits): the
+// resolver and ceiling a host needs to predict the effective cap.
+export { MAX_STREAM_CAP_CHARS, resolveBashOutputCap } from './tools/bash.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
 // Sessions-domain health scan (audit P1-S1, keeper 2026-07-27): the trigger
 // surface for host-side session cleanup, mirroring assessMemoryStoreHealth.

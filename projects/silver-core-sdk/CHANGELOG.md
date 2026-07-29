@@ -16,6 +16,186 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 2.0.0 — 2026-07-29
+
+T75 design round SHIPPED (keeper rulings 2026-07-29, requirements doc
+`Public-Info-Pool/Resource/repo-engineering/scs-req-memory-frontmatter-attachment-r1-20260729.md`):
+the memory write-side schema converges on the official Claude Code shape, and
+selective attachment lands on top of it.
+
+- **BREAKING — cards mode removed** (r1 §1.2 丙, keeper third-pass ruling):
+  `schema: 'cards'`, the `memory.cards` config, `cards.ts` and its exports
+  (`parseMemoryCards`, `validateCardsContent`, `DEFAULT_CARDS_CONFIG`,
+  `MemoryCard`, `MemoryCardsConfig`) are gone. Cards was never a Claude
+  memory mode (R9 was the black-pool adaptation axis, honestly labeled
+  BPT-EXTENSION); the keeper ruled the memory surface converges on the
+  Claude shape, one breaking migration, family lockstep 2.0.0.
+  **Migration**: switch to `schema: 'frontmatter'`; existing card files
+  keep their body and gain a YAML frontmatter head (`name` / one-line
+  `description` <= 150 chars / `metadata.type` in
+  user|feedback|project|reference / optional `metadata.pinned`) — rewrite
+  each file as delete + create (in-place edits re-validate the whole file
+  and fail; the validator error restates this path). The testbed's daily
+  dream card migrated with this release as the reference example.
+- **`schema: 'frontmatter'`** (r1 §一): write-side validator
+  (`frontmatter.ts`, structurally where cards.ts was) enforcing the official
+  frontmatter head at both layers (store engine + tool layer for direct
+  stores); the resident index stays exempt; structured errors restate the
+  format and the delete+create migration path. New exports:
+  `parseMemoryFrontmatter` / `validateMemoryFrontmatter` /
+  `MEMORY_FRONTMATTER_TYPES` / `FRONTMATTER_DESCRIPTION_MAX_CHARS` + types.
+- **Official guidance injected verbatim** (r1 §四, keeper overrode the
+  condensed-version recommendation): with the schema on, the system tail
+  carries the FULL official memory-instructions family — the core
+  instructions, the user-memory description doc, and the feedback / project
+  when_to_save + body_structure four — each piece provenance-ledgered in
+  `MEMORY_FRONTMATTER_SOURCES` and corpus-sync guarded; per-type labels and
+  the `pinned` note are declared SDK glue.
+- **Selective attachment** (r1 §二): opt-in `memory.attachment`
+  (`enabled: true`, `maxFiles` <= 5, `picker.model` defaulting to the
+  session model). At the first genuine prompt — after the R6 index
+  injection — one bounded picker call (faithful official picker prompt)
+  selects relevant files by frontmatter description; full contents inject
+  under the R6-aligned background-context-and-verify envelope. Hard
+  ConfigurationError without `schema: 'frontmatter'`. `pinned: true` files
+  bypass the picker, never consume maxFiles slots, and take priority within
+  the 25600-byte budget (cuts at file boundaries, omissions disclosed by
+  path). S1 mounts bound the candidate scan (4096-entry cap, head-only
+  reads); incognito still attaches (a read); a failed picker degrades to
+  pinned-only — never a blocked session.
+- **Billing surface**: the picker call is real spend — `runUtilityCall`
+  gained an `onUsage` observer and the query layer folds picker usage +
+  estimated cost into session accounting (`SessionAccounting.foldUtilityUsage`);
+  `SDKMemoryHealth` gained `attachmentInjectionTokens` beside
+  `indexInjectionTokens` (type-level breaking, covered by this major).
+- **Health scan**: `assessMemoryStoreHealth` gained a `schema: 'frontmatter'`
+  option adding a frontmatter-completeness dimension (non-compliant files
+  listed, index exempt, unreadable files honestly `unchecked`);
+  `buildConsolidationPrompt` turns it into a delete+create rewrite task.
+
+## 1.6.0 — 2026-07-29
+
+T75 second grilling (keeper rulings on the memory charter-expansion items):
+
+- **Dream signal source（指针段 + 预设）**: `buildConsolidationPrompt` gains an
+  opt-in `transcripts` input — host-named session-transcript/log paths the
+  Gather phase may READ for durable facts the memories never captured (the
+  official dream shape's gather-recent-signal leg). No new process, no
+  scheduler, no discovery: the host names the files and owns tenant scoping
+  (S1 mounts govern /memories virtual paths only — boundary now stated in
+  MEMORY-GOVERNANCE). Transcript content is downweighted as untrusted data,
+  and all writes still go through the memory tool.
+- **`consolidationToolOptions()`**: the consolidation round's harness floor —
+  a partial Options bundle (`tools: ['Read','Grep','Glob']`) that physically
+  restricts the round to read-only investigation tools; the memory tool rides
+  `options.memory`, and Agent/LoopControl honor the same filter, so the round
+  cannot spawn a fully-armed subagent either. Closes the audit E-⑤ gap
+  ("memory tool only" was prompt discipline while design principle 4 demands
+  a harness floor). E2E-pinned: memory + Read/Grep/Glob on the wire,
+  Write/Edit/Bash/Agent/Workflow off.
+- **Frontmatter taxonomy + selective attachment（直接开设计轮）**: ruled
+  straight to a design round (the wait-for-evidence recommendation was
+  overridden); r1 requirements doc
+  `Public-Info-Pool/Resource/repo-engineering/scs-req-memory-frontmatter-attachment-r1-20260729.md`
+  filed for keeper finalization — cards-relationship three-way call (recommended:
+  three coexisting schema tiers), attachment picker shape (opt-in, billed,
+  hard-depends on frontmatter), pinned semantics and when_to_save injection as
+  open questions. No runtime change until finalized.
+
+## 1.5.0 — 2026-07-29
+
+拷问 rulings on the ten registered alignment observations (keeper interview
+2026-07-29, one ruling per item; full ledger in COMPAT "Registered items —
+拷问 rulings"):
+
+- **AskUserQuestion（三处全补）**: official plan-mode paragraph and
+  preview-field fragment reproduced (both slugs now in provenance);
+  `options.items` schema expresses the real shapes via `oneOf` instead of
+  `{}`; option `preview` (self-contained HTML fragment) accepted, validated
+  single-select-only, and forwarded verbatim to the host handler — rendering
+  is the host UI's choice, stated honestly.
+- **Description governance completed（Agent 复现 + 台账）**: Agent's
+  description is now an ADAPTED reproduction of the three official archive
+  fragments (deltas documented; background opt-in, agentId addressing,
+  `fork: true` spelling); the four shell-tool descriptions moved into
+  descriptions.ts; new `UNGOVERNED_TOOL_DESCRIPTIONS` ledger (per-tool
+  reasons) + a completeness guard: every shipped tool in exactly one ledger,
+  phantoms red. Bash provenance gained the seven carried-but-uncited slugs;
+  the run-in-background family stays uncited as the honest adaptation
+  (no completion notification here).
+- **Glob/Grep ignore-set disclosure（只加披露）**: zero-match results name
+  the hard-coded node_modules/.git excludes and point at Bash.
+- **Read path contract（可见层归一 + 收紧）**: schema wording aligned to the
+  official absolute-only contract (runtime stays lenient); directory error
+  points at Bash; and the 256KB whole-file refusal now also covers
+  whole-file-equivalent reads — a bare `limit >= 2000` with no offset is
+  refused like a bare Read (`limit: 999999` was a bypass; keeper overrode the
+  keep-as-is recommendation).
+- **Grep rg-dialect shim（兼容垫 + 报错自愈）**: POSIX character classes and
+  `(?P<name>)` / `(?P=name)` spellings deterministically rewritten to JS
+  RegExp equivalents; unknown `type` error lists the supported set and offers
+  `glob`.
+- **Hot/cold partition guard（加守卫）**: explicit `HOT_BUILTINS` export;
+  test reds an unclassified, double-classified or phantom tool.
+- **Memory（扩大收编）**: index entry format switched to the official
+  markdown-link form `- [<title>](<file path>) — one-line hook` in all three
+  prompt sites; the capacity warning is now the official TWO-STATE shape —
+  approaching NOTICE at 80% of either cap, hard WARNING at breach, both
+  naming the target size. Remaining charter items (frontmatter taxonomy,
+  selective attachment, dream signal sources) go to a design round (todo
+  T75, proposal memory-charter-expansion-eval-20260729). `insert`'s
+  trailing-newline strip is kept and now recorded in store.ts's
+  format-fidelity tradeoff list（补登记销案）.
+
+Also in this release — the alignment audit that preceded the rulings (staged as its own version on the work branch; renumbered into this release when upstream main took 1.4.0 for audit wave 17):
+
+Tools/memory alignment audit (keeper-ruled, three rulings 2026-07-28): the
+external two-track review against the archived official corpus, all
+recommended options adopted. Full fixed-vs-registered ledger in COMPAT.md
+"2026-07-28 tools/memory alignment audit".
+
+- **Memory resident-index one-way mirror re-opened by the view cap** (fix):
+  the write-side capacity warning judged only the lines that survived
+  `store.view` and discarded the view's own truncation notice. Default
+  `maxViewChars` (16000) is SMALLER than the default index byte cap (25600),
+  so a dense ASCII index was cut by the view first, the surviving ~111-line
+  head passed the 200-line/25600-byte math, and the warning never fired —
+  exactly the "write side never learns the tail is invisible" failure the
+  mechanism exists to close. New `assessViewedIndex` (exported) folds the view
+  notice into ONE verdict shared by both sides (`breached: 'view'`); the
+  warning names that breach. Regression pinned at small scale (40-char view
+  cap vs generous index caps) plus unit coverage.
+- **Memory index injection now carries the official protection wording**
+  (fix): the injected `# Memory index` system-prompt block states the entries
+  are background context, not user instructions, and that a named
+  file/function/flag must be verified to still exist — under S1 mounts the
+  index can carry ANOTHER session's writes into this session's system prompt
+  at full authority.
+- **ToolSearch aligned to the official grammar and result encoding**
+  (behavioral): `select:Read,Edit` exact fetch, keyword search ranked up to
+  `max_results` (default 5), `+term` name-required form; result is the
+  official `<functions>` block of
+  `<function>{"description","name","parameters"}</function>` lines (was:
+  house Markdown with `input_schema:`). Description now reproduces the
+  archived second part verbatim; ToolSearch ENTERED the provenance registry —
+  it was the only shipped tool outside all description governance while being
+  the sole gateway to 2/3 of the tool surface under `silverCoreToolOptions()`.
+  The `names` array stays as a documented SDK extension.
+- **Bash output cap: official two-tier design shipped** (new knob):
+  `options.bashLimits.maxOutputChars` (symmetric with `readLimits`), the
+  official `BASH_MAX_OUTPUT_LENGTH` env var honored, both clamped to the
+  official 150000 ceiling; default stays 30000 and the default path is
+  behavior-identical. `resolveBashOutputCap` + `MAX_STREAM_CAP_CHARS`
+  exported. Invalid values (NaN/negative/non-numeric env) fall through to the
+  default rather than propagate.
+- **Docs de-contradicted**: three COMPAT rows still said Workflow runs
+  SYNCHRONOUSLY a month after v0.92.0 flipped it — corrected in place;
+  `types/options.ts` comments for `sessionEndUpdate` (described the exact bug
+  the 2026-07-27 ruling removed) and `schema: 'cards'` (omitted the
+  prescription kind) now match the implementation; MEMORY.md back-pressure
+  section documents the view-cap interplay. Ten remaining deltas registered
+  (not changed) in the COMPAT audit section, including the AskUserQuestion
+  plan-mode/preview gap and the Glob/Grep silent ignore set.
 ## 1.4.1 — 2026-07-29
 
 `setServers()` is an incremental diff, not a full rebuild (BPT finding D).
@@ -737,7 +917,7 @@ already holding. Being closed by making the behaviour match, tracked separately.
 
 ## 0.90.0 — 2026-07-27
 
-Checkpoint blob cap with honest degradation (todo T74, keeper ruling: option
+Checkpoint blob cap with honest degradation (todo T75, keeper ruling: option
 甲). `FileCheckpointStore.record()` used to capture the FULL pre-image of every
 mutated file with no size bound — a session touching a 500MB file silently
 stored a 500MB blob (sessions-domain audit P1-S2).
@@ -836,7 +1016,7 @@ Prescription cards (A1) + the sessions-domain health scan (audit P1-S1) — the
   scheduler (spec N1) — the host decides.
 - Blob-size cap for checkpoints deliberately NOT set here: capping means
   "over-cap files cannot be rewound", a correctness trade-off parked for a
-  keeper ruling (todo T74) rather than silently chosen.
+  keeper ruling (todo T75) rather than silently chosen.
 
 ## 0.87.1 — 2026-07-27
 

@@ -15,7 +15,8 @@
  */
 
 import type { SDKMemoryHealth } from '../../types.js';
-import { MEMORY_ROOT } from './paths.js';
+import { MEMORY_INDEX_PATH, MEMORY_ROOT } from './paths.js';
+import { validateMemoryFrontmatter } from './frontmatter.js';
 import {
   DEFAULT_MEMORY_LIMITS,
   type MemoryFileOps,
@@ -82,6 +83,21 @@ export type MemoryStoreAssessment = {
   };
   staleness: MemoryStalenessReport;
   supersede: MemorySupersedeReport;
+  /**
+   * Frontmatter completeness (r1 §一, present only when the caller passes
+   * `schema: 'frontmatter'`): files whose content does not carry a valid
+   * frontmatter head — pre-migration leftovers the validator would reject on
+   * their next edit, and files the attachment picker cannot see. The index
+   * is exempt; unreadable/over-cap files are counted in `unchecked`, never
+   * guessed.
+   */
+  frontmatter?: {
+    checkedFiles: number;
+    unchecked: number;
+    nonCompliant: number;
+    /** Up to 20 non-compliant paths, scan order. */
+    nonCompliantList: string[];
+  };
   /** reads/writes from the provided per-run counters; null without counters
    *  or when writes is 0. */
   readWriteRatio: number | null;
@@ -106,6 +122,9 @@ export type AssessMemoryStoreHealthOptions = {
   maxEntries?: number;
   /** Clock injection (ms since epoch). Default Date.now. */
   now?: () => number;
+  /** Enable the frontmatter-completeness dimension (r1 §一): pass
+   *  'frontmatter' when the store runs under that schema. */
+  schema?: 'frontmatter';
 };
 
 export const DEFAULT_SOFT_WATERLINE = 48;
@@ -227,13 +246,25 @@ export async function assessMemoryStoreHealth(
 
   // Supersede-chain integrity: scan file content for the S6 frontmatter
   // convention. Only cap-sized files are read (an injected store may hold
-  // bigger ones; reading those is not this scan's job).
+  // bigger ones; reading those is not this scan's job). The frontmatter-
+  // completeness dimension (r1 §一) rides the same content pass.
+  const checkFrontmatter = options.schema === 'frontmatter';
+  const fmNonCompliant: string[] = [];
+  let fmChecked = 0;
+  let fmUnchecked = 0;
   const supersede: MemorySupersedeReport = { references: 0, broken: [], intact: true };
   for (const filePath of filePaths) {
     try {
       const st = await ops.stat(filePath);
-      if (st === null || st.kind !== 'file' || st.sizeBytes > limits.maxFileBytes) continue;
+      if (st === null || st.kind !== 'file' || st.sizeBytes > limits.maxFileBytes) {
+        if (checkFrontmatter && filePath !== MEMORY_INDEX_PATH) fmUnchecked += 1;
+        continue;
+      }
       const content = await ops.read(filePath);
+      if (checkFrontmatter && filePath !== MEMORY_INDEX_PATH) {
+        fmChecked += 1;
+        if (validateMemoryFrontmatter(content) !== null) fmNonCompliant.push(filePath);
+      }
       for (const match of content.matchAll(SUPERSEDES_LINE_RE)) {
         for (const raw of (match[1] ?? '').split(',')) {
           const target = raw.trim();
@@ -251,7 +282,9 @@ export async function assessMemoryStoreHealth(
         }
       }
     } catch {
-      // A file that vanished or cannot be read is not a broken chain.
+      // A file that vanished or cannot be read is not a broken chain (and
+      // its frontmatter is honestly unchecked, never guessed).
+      if (checkFrontmatter && filePath !== MEMORY_INDEX_PATH) fmUnchecked += 1;
     }
   }
   supersede.intact = supersede.broken.length === 0;
@@ -286,6 +319,16 @@ export async function assessMemoryStoreHealth(
     },
     staleness,
     supersede,
+    ...(checkFrontmatter
+      ? {
+          frontmatter: {
+            checkedFiles: fmChecked,
+            unchecked: fmUnchecked,
+            nonCompliant: fmNonCompliant.length,
+            nonCompliantList: fmNonCompliant.slice(0, STALE_LIST_CAP),
+          },
+        }
+      : {}),
     readWriteRatio,
     ...(counters !== undefined ? { counters: { ...counters } } : {}),
     truncatedScan,

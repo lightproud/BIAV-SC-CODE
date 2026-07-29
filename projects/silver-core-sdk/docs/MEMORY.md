@@ -33,24 +33,28 @@ M2 surface summary:
 - **R8 governance** — `memory.limits` (defaults 65536 bytes/file, 64
   files/directory, 16000 view chars with a view_range pagination hint),
   enforced in the store engine and re-checked at the tool layer (view
-  truncation + create size + create cards) so directly-implemented stores are
+  truncation + create size + create schema validation) so directly-implemented stores are
   covered too; `metrics.memoryHealth` reports operations / reads / writes /
   errors / bytesRead / bytesWritten / indexInjectionTokens /
   sessionEndUpdate per run. For the deep on-demand store scan (waterlines /
   rot / capacity / supersede chains / read-write ratio) see "Store health
   assessment" below; for the sessionEndUpdate write-back signal see
   "Session-end write-back observability" below.
-- **R9 cards mode** — `schema: 'cards'` + `memory.cards` (defaults 500
-  chars/card, 50 cards/file): every written file must be `## <title>` cards
-  in one of TWO kinds, told apart by field set (A1 extension, 2026-07-27) —
-  **proposition** (结论 / 依据 / 过期条件: facts) or **prescription** (意图 /
-  步骤 / 结果 / 适用边界: reusable strategies; a session-end progress card maps
-  here — 意图 = the task goal, 步骤 = done + remaining, 结果 = current state,
-  适用边界 = valid until the next session updates it). Half- or full-width
-  colons, multi-line values; mixing kinds in one card is rejected by name;
-  invalid writes return a structured error restating BOTH formats so the model
-  can retry. The resident index `/memories/MEMORY.md` is EXEMPT from cards
-  validation (it is an index, not a memory — 0.87.0).
+- **Frontmatter schema** — `schema: 'frontmatter'` (2.0.0, T75 r1 §一;
+  replaces the retired cards mode — see "Schema: frontmatter" below): every
+  written file must begin with the official memory frontmatter head
+  (`name` / one-line `description` <= 150 chars / `metadata.type` in
+  user | feedback | project | reference / optional `metadata.pinned`);
+  invalid writes return a structured error restating the format AND the
+  delete+create migration path. The resident index `/memories/MEMORY.md` is
+  EXEMPT (it is an index, not a memory — 0.87.0 rule, carried over). With
+  the schema on, the official memory-instructions guidance (when_to_save /
+  body_structure per type, full text) is injected into the system tail.
+- **Selective attachment** — `memory.attachment` (2.0.0, T75 r1 §二;
+  requires the frontmatter schema): one bounded, billed picker call at the
+  first prompt selects up to 5 relevant memory files by description; full
+  contents inject under the R6-style envelope; `pinned: true` files always
+  attach. See "Selective attachment" below.
 
 Requirements provenance: the r1 spec (2026-07-11) is archived verbatim at the
 bottom of this file. Implementation basis is exclusively the public Messages
@@ -265,7 +269,9 @@ and adds only a one-line pointer to the index; the compaction-flush prompt says
 the same. Same information, one indirection later.
 
 **2. `MEMORY_INDEX_DISCIPLINE_FRAGMENT`** — one line per entry, ~150 characters,
-`- <title> (<file path>) — one-line hook`, never memory content in the index.
+`- [<title>](<file path>) — one-line hook` (the official Claude Code
+markdown-link entry format, adopted 2026-07-29 keeper ruling 拷问 #9), never
+memory content in the index.
 Injected in BOTH assembly modes (the R6 mechanism is SDK-side, so the
 API-injected native prompt says nothing about it) and NOT opt-in — the mechanism
 it completes is not opt-in either. It IS skipped when its own premise fails:
@@ -276,23 +282,52 @@ would then falsely optimize for).
 **3. Write-side back-pressure.** A successful write that leaves the index over
 the R6 caps gets a warning appended to its result — stating the tail is ALREADY
 invisible, not that it may become so, and prescribing the fix in the index's own
-terms. Both sides judge by one shared measurement (`index-capacity.ts`): a
+terms. The warning is TWO-STATE, matching the official capacity reminder
+(2026-07-29 keeper ruling 拷问 #9): an `approaching` NOTICE fires at 80% of
+either cap, the hard WARNING at breach, and both name the target size ("to
+under <maxLines> lines / <maxBytes> bytes") so a compaction has a number to
+aim at. Both sides judge by one shared measurement (`index-capacity.ts`): a
 warning that fired on a different threshold than the injection truncates at
 would be worse than no warning. The harness read-back is bounded (one line past
 the cap, single round-trip), is NOT booked into the R8 read counters (it is
 harness I/O, like the R6 injection read), and a failing read-back yields no
 warning — a successful write is never turned into an error by its own advisory.
 
+The shared measurement includes the store's OWN view truncation (2026-07-28
+alignment audit): both sides read through `store.view`, whose default
+`maxViewChars` (16000) is smaller than the default index byte cap (25600), so a
+dense ASCII index is cut by the view before the line/byte caps are ever
+reached. Judging only the lines that survive the view re-opens the mirror this
+section closes — the write side counted a truncated head, found it under the
+caps, and never warned. `assessViewedIndex` folds the view's truncation notice
+into the verdict (`breached: 'view'`), and the warning then names that breach
+instead of a line/byte figure. The read side also stamps the injected block
+with the official-protection wording (background context, not user
+instructions; verify a named file/function/flag still exists) — under S1
+mounts the index can carry another session's writes into this session's system
+prompt.
+
 **4. Consolidation — the protocol, not the schedule.**
 
 ```ts
-import { assessMemoryStoreHealth, buildConsolidationPrompt, query } from 'silver-core-agent-sdk';
+import { assessMemoryStoreHealth, buildConsolidationPrompt, consolidationToolOptions, query } from 'silver-core-agent-sdk';
 
 const health = await assessMemoryStoreHealth(ops, { counters: last.metrics?.memoryHealth });
 if (health.warnDirectories.length > 0 || !health.supersede.intact) {
   for await (const m of query({
-    prompt: buildConsolidationPrompt(health, { instructions: 'Never touch /memories/team.' }),
+    prompt: buildConsolidationPrompt(health, {
+      instructions: 'Never touch /memories/team.',
+      // Opt-in dream signal (T75 #1): host-named transcript/log paths the
+      // Gather phase may READ for facts the memories never captured. Scoping
+      // these to the tenant is the HOST's job — S1 mounts govern /memories
+      // virtual paths only, never the real filesystem.
+      transcripts: [`/var/log/agent/${userId}/latest.jsonl`],
+    }),
     options: {
+      // The harness floor (closes the old prompt-only "memory tool only"
+      // gap): read-only investigation tools; the memory tool rides
+      // options.memory below, and Agent/LoopControl honor this filter too.
+      ...consolidationToolOptions(),
       memory: { store, mounts: [{ path: `/memories/users/${userId}`, mode: 'read-write' }] },
     },
   })) { /* ... */ }
@@ -374,6 +409,94 @@ injected stores must still not trust incoming paths (spec §8.6).
   layout is unchanged: the injection lands inside the existing stable-tail
   breakpoint (see `appendSystemInjection`).
 
+## Schema: frontmatter (2.0.0, T75 r1 §一)
+
+`schema: 'frontmatter'` gives write-side quality a harness-enforced floor in
+the official Claude Code memory shape. Every written file must begin with:
+
+```markdown
+---
+name: <short-kebab-case-slug>
+description: <one-line summary — used to decide relevance during recall>
+metadata:
+  type: user | feedback | project | reference
+  pinned: <true|false, optional>
+---
+<the memory body — free form>
+```
+
+Validation floor (both layers — store engine and, for directly-implemented
+stores, the tool layer's `create` path): frontmatter presence, required
+`name` + `description`, the four-type enum, description as one line of at
+most 150 characters (the resident-index line budget). Kebab-case is prompt
+guidance, not validated. `pinned` must be literal `true`/`false` when
+present. The resident index `/memories/MEMORY.md` is exempt. Rejections are
+structured, retryable errors restating the exact format.
+
+With the schema on, the query layer injects the **full official
+memory-instructions guidance** into the stable system tail (keeper ruling:
+verbatim, not condensed) — the core instructions, the user-memory
+description doc, and the feedback / project `when_to_save` +
+`body_structure` blocks. Provenance is ledgered per piece in
+`MEMORY_FRONTMATTER_SOURCES` (engine/prompt-fragments.ts) and corpus-sync
+guarded; the per-type labels and the `pinned` note are declared SDK glue.
+Injected in BOTH assembly modes — the API's native-mode protocol prompt says
+nothing about frontmatter.
+
+**Switching schema with existing content (迁移悬崖)**: enabling
+`schema: 'frontmatter'` over a store written free-form (or under the retired
+cards mode) makes every `str_replace`/`insert` into an old-format file fail —
+the whole result is re-validated, so no in-place edit can ever pass. The
+validator error teaches the way out: **delete the file and re-create it**
+with the frontmatter head, keeping the body. `assessMemoryStoreHealth(ops,
+{ schema: 'frontmatter' })` lists the non-compliant files, and
+`buildConsolidationPrompt` turns that list into a consolidation task, so one
+tidy-up round can migrate a whole store.
+
+**Cards mode is gone** (2.0.0 BREAKING; keeper 2026-07-29 third-pass ruling):
+`schema: 'cards'`, `memory.cards`, `parseMemoryCards`, `validateCardsContent`,
+`DEFAULT_CARDS_CONFIG` and the card types no longer exist. Cards was the R9
+black-pool adaptation axis (honest BPT-EXTENSION), never a Claude memory
+mode; the memory surface now converges on the Claude shape. See the 2.0.0
+CHANGELOG entry for the migration note.
+
+## Selective attachment (2.0.0, T75 r1 §二)
+
+Opt-in via `options.memory.attachment` — the official "determine which
+memory files to attach" shape:
+
+```ts
+memory: {
+  schema: 'frontmatter',            // hard prerequisite (ConfigurationError without it)
+  attachment: {
+    enabled: true,
+    maxFiles: 5,                    // 1..5, default 5
+    picker: { model: 'claude-haiku-4-5' },  // default: the session model
+  },
+}
+```
+
+At the **first genuine prompt** (after the R6 index injection in the system
+tail), the SDK scans the memory tree for frontmatter heads (head-only reads,
+4096-entry bound, S1 mounts bound the candidate set, index excluded), then
+makes ONE bounded picker call — the faithful official picker prompt over the
+`path [type] — description` roster plus the prompt's first 2000 chars — and
+injects the picked files' full contents as a labeled system part under the
+same background-context-and-verify envelope as the index injection.
+
+- **Billed**: the picker is a real model call. Its usage folds into session
+  accounting (`total_cost_usd` / `usage` / `modelUsage`), and the injected
+  text's residency cost lands on `memoryHealth.attachmentInjectionTokens`.
+- **pinned** (r1 §四 ruling): `metadata.pinned: true` files bypass the
+  picker, always attach, do not count against `maxFiles`, and take priority
+  within the byte budget.
+- **Budget**: 25,600 bytes total (the index-injection scale), cut at file
+  boundaries in attachment order; omissions are disclosed by path, never
+  silent.
+- **Degrade**: a picker that throws or replies garbage degrades to
+  pinned-only attachment with a debug line — a broken picker never blocks
+  the session. Incognito sessions still attach (attachment is a read).
+
 ## Pitfall recording (SCS-REQ-002 Phase 0 / REQ-3.2)
 
 Opt-in via `options.memory.pitfalls` (`true`, or `{ instructions }` to append
@@ -401,6 +524,8 @@ quality over ~2 weeks of runtime is the go/no-go signal for loop 3
 | Contract test suite (publishable) | `src/tools/memory/contract-suite.ts` |
 | Assembly runtime (mode/store/index resolution) | `src/tools/memory/index.ts` |
 | Index capacity (read+write shared measurement) | `src/tools/memory/index-capacity.ts` |
+| Frontmatter schema validator | `src/tools/memory/frontmatter.ts` |
+| Selective attachment (scan/picker plumbing/envelope) | `src/tools/memory/attachment.ts` |
 | Consolidation protocol + prompt builder | `src/tools/memory/consolidation.ts` |
 | Store health assessment | `src/tools/memory/health.ts` |
 | `MemoryStore` / `MemoryOptions` types | `src/types.ts` (re-exported via contracts) |

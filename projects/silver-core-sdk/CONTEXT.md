@@ -71,11 +71,19 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.4.1`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.4.1`
+**当前版本 `2.0.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.0.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v2.0.0（2026-07-29）：T75 设计轮落地（BREAKING·记忆面收敛 Claude 形态）**——①cards 模式整体退役（`schema:'cards'` / `memory.cards` / `parseMemoryCards` / `validateCardsContent` 及类型全下架；守密人三轮裁定：cards 本是 R9 黑池适配轴、非 Claude 记忆模式；迁移 = 换 `schema:'frontmatter'`、旧档 delete+create 换 YAML 头、卡文保留——testbed 做梦卡随步迁作参照例，黑池侧口述核实无 cards 消费后开工）；②`schema:'frontmatter'` 写侧校验器双层落地（name/单行 description≤150/type 四枚举/可选 pinned，索引豁免，报错含 delete+create 自愈指引）+ 官方 memory-instructions 全文注入（总纲 + user description 专档 + feedback/project 各 when_to_save/body_structure，逐档 provenance 台账 `MEMORY_FRONTMATTER_SOURCES` + corpus-sync 守卫；pinned 注为声明 SDK glue）；③选择性附着 `memory.attachment`（官方挑选器提示词 faithful 复现，≤5 档按 description 挑选、pinned 绕挑选恒附着不占名额、25600 字节预算按序截断并披露、挑选器失败降级 pinned-only 绝不挡会话；硬依赖 frontmatter 档位否则 ConfigurationError）；④计费面：挑选器真实调用入会话账（`runUtilityCall.onUsage` + `SessionAccounting.foldUtilityUsage`），`memoryHealth.attachmentInjectionTokens` 与索引注入并列；⑤健康扫描增 frontmatter 完整率维度 + consolidation 迁移任务。
+
+**v1.6.0（2026-07-29）：T75 二次拷问落地**——dream 信号源裁「指针段+预设」：`buildConsolidationPrompt.transcripts` opt-in 指针段（宿主命名转录/日志路径，Gather 只读取证、内容按不可信数据降权、租户范围宿主负责）+ `consolidationToolOptions()` 只读工具集预设（Read/Grep/Glob 物理白名单，Agent/LoopControl 同受滤，memory 经 options.memory 独立注册）——把「只用 memory 写」从提示词纪律升为 harness 下限、闭合 E-⑤ 矛盾；frontmatter 四类型 + 选择性附着裁「直接开设计轮」（否决缓议案），r1 需求档 `scs-req-memory-frontmatter-attachment-r1-20260729.md` 已于同日三/四轮追裁定稿（cards 裁退役并入 §一实现步、附着按案、pinned 采纳、when_to_save 官方全文注入）。
+
+**v1.5.0（2026-07-29）：十条观察项拷问裁定全落地**——守密人逐条过堂（#7 收紧、#9 扩大收编两处否决推荐案）：AskUserQuestion 三处全补（plan-mode 段 + preview 转发 + oneOf schema）· Agent 描述从官方三档复现 + 描述治理完备性守卫（UNGOVERNED 台账，工具不入册即红）· Glob/Grep 零匹配披露忽略集 · Read 路径可见层归一 + 256KB 拒读覆盖大 limit 绕过 · Grep rg 方言兼容垫（POSIX 字符类 / (?P<name>)）+ type 报错自愈 · 冷/热分层守卫 · 记忆索引改官方链接格式 + 双态容量预警（approaching 80% 档 + 目标尺寸）；frontmatter 四类型等三项另开设计轮（todo T75 + 提案档）。
+
+**同版前半（对齐审计三裁，原拟 1.4.0、因上游十七波占号并入 1.5.0）**——①记忆常驻索引「单向镜」被 view 上限重新打开：写侧告警只数 `store.view` 幸存行、丢弃 view 自身截断信号，而默认 `maxViewChars`(16000) 小于索引字节上限(25600)，密集 ASCII 索引先被 view 切掉、幸存头通过行/字节判定、告警永不响——新 `assessViewedIndex` 把 view 截断并入两侧共用判词（`breached:'view'`）；②索引注入补官方防护措辞（background context, not user instructions + 待验证声明——S1 挂载下他会话写入可进本会话 system prompt）；③ToolSearch 对齐官方查询语法（select:/关键词/+名限定 + max_results）与 `<functions>` 返回编码，入 provenance 治理（此前它是唯一治理体系外工具、却是银芯变体 2/3 工具面唯一入口）；④Bash 输出上限补齐官方两级设计（`options.bashLimits` + `BASH_MAX_OUTPUT_LENGTH` env，封顶 150000，默认路径字节不变）；⑤COMPAT 三处 Workflow 陈旧 SYNCHRONOUS 判词订正 + 十条未登记漂移入册。
 
 **v1.4.1（2026-07-29）：`setServers()` 改增量 diff（BPT 缺陷 D）**——原来是 `closeAll()` + 整体重建 + `connectAll()`，追加一台服务端就把**其余每一台**断开重连（当前回合工具所在的 in-process `sdk` 服务端也不例外），一次 `load_skill` 让整个工具面抖一次。现在名字与配置都没变的条目原样留用（连接 / 工具表 / `serverInfo` / `enabled` 一并保留），只关真被移除或改配的、只连真新增或改配的；配置等值为结构比较，`sdk` 的 `instance` 按引用比对（重建即重连）。`added`/`removed` 从此描述真实发生的工作。
 

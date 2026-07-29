@@ -532,7 +532,17 @@ export const ASKUSERQUESTION_DESCRIPTION = `Use this tool only when you are bloc
 Usage notes:
 - Users will always be able to select "Other" to provide custom text input
 - Use multiSelect: true to allow multiple answers to be selected for a question
-- If you recommend a specific option, make that the first option in the list and add "(Recommended)" at the end of the label`;
+- If you recommend a specific option, make that the first option in the list and add "(Recommended)" at the end of the label
+
+Plan mode note: To switch into plan mode, use EnterPlanMode (not this tool). Once in plan mode, use this tool to clarify requirements or choose between approaches BEFORE finalizing your plan. Do NOT use this tool to ask "Is my plan ready?", "Should I proceed?", or otherwise reference "the plan" in questions — the user cannot see the plan until you call ExitPlanMode for approval.
+
+Preview feature:
+Use the optional \`preview\` field on options when presenting concrete artifacts that users need to visually compare:
+- HTML mockups of UI layouts or components
+- Formatted code snippets showing different implementations
+- Visual comparisons or diagrams
+
+Preview content must be a self-contained HTML fragment (no <html>/<body> wrapper, no <script> or <style> tags — use inline style attributes instead). Do not use previews for simple preference questions where labels and descriptions suffice. Note: previews are only supported for single-select questions (not multiSelect). Whether a preview is rendered is up to the host UI; the field is always accepted and forwarded.`;
 
 export const ENTERPLANMODE_DESCRIPTION = `Use this tool proactively when you're about to start a non-trivial implementation task. Getting user sign-off on your approach before writing code prevents wasted effort and ensures alignment. This tool transitions you into plan mode where you can explore the codebase and design an implementation approach for user approval.
 
@@ -815,6 +825,121 @@ Use this tool for multi-step orchestration where control flow should be determin
 The tool result includes a runId. To resume after a failure or script edit, relaunch with Workflow({scriptPath, resumeFromRunId}) — the longest unchanged prefix of agent() calls returns cached results instantly; the first edited/new call and everything after it runs live. Same script + same args → 100% cache hit. The cache lives in session memory: resume works within the same session only, and a matching agent() call that previously returned null re-runs live without breaking the prefix. Date.now()/Math.random()/new Date() are unavailable in scripts (they would break this) — stamp results after the workflow returns, or pass timestamps via args.`;
 
 /**
+ * ToolSearch — reproduction of the archived SECOND PART of the official
+ * description (slug tool-description-toolsearch-second-part, ccVersion
+ * 2.1.178; the official first part is not in the archive, so the opening
+ * sentence below is our own and claims nothing beyond shipped behavior).
+ * The official deferral vocabulary ("deferred tools") is kept; the closing
+ * note names this SDK's two deferred kinds. The `names` parameter is an SDK
+ * extension (pre-alignment surface, kept for wire compatibility) and is
+ * documented only in its own schema description, not here.
+ */
+export const TOOLSEARCH_DESCRIPTION = `Fetches full schema definitions for deferred tools so they can be called. In this SDK a deferred tool is a cold built-in or a deferred MCP tool whose schema is withheld from the request until loaded.
+
+This tool takes a query, matches it against the deferred tool list, and returns the matched tools' complete JSONSchema definitions inside a <functions> block. Once a tool's schema appears in that result, it is callable exactly like any tool defined at the top of the prompt.
+
+Result format: each matched tool appears as one <function>{"description": "...", "name": "...", "parameters": {...}}</function> line inside the <functions> block — the same encoding as the tool list at the top of this prompt.
+
+Query forms:
+- "select:Read,Edit,Grep" — fetch these exact tools by name
+- "notebook jupyter" — keyword search, up to max_results best matches
+- "+slack send" — require "slack" in the name, rank by remaining terms`;
+
+/**
+ * Agent — ADAPTED reproduction (keeper 2026-07-28 ruling: "Agent 复现") of the
+ * official Agent/Task description assembled from three archive fragments
+ * (when-to-launch 2.1.178 + simple-usage-notes 2.1.215 + usage-notes 2.1.215),
+ * template conditionals resolved to THIS SDK's shipped capability set.
+ * Adaptations, per the red-line discipline (never describe an unshipped
+ * capability):
+ *  - agent types are enumerated in the subagent_type field description, not a
+ *    <system-reminder> listing (no such channel here);
+ *  - background is OPT-IN (`run_in_background: true`), not the default — the
+ *    official background-by-default sentence is recast accordingly;
+ *  - fork is the `fork: true` parameter, not `subagent_type: "fork"`;
+ *  - SendMessage continuation is by agent ID only (no teammate names);
+ *  - remote isolation, teammate contexts, reasoning-effort per type and the
+ *    delegation-examples block are omitted (not shipped).
+ * The explicit-spawn-restriction fragment is a plan-gated variant and is
+ * deliberately NOT reproduced (it would wrongly restrict spawning here).
+ */
+export const AGENT_DESCRIPTION = `Launch a new agent to handle complex, multi-step tasks. Each agent type has specific capabilities and tools available to it.
+
+Available agent types are enumerated in the subagent_type field description.
+
+When using the Agent tool, specify a subagent_type parameter to select which agent type to use. If omitted, the general-purpose agent is used. Setting fork: true instead forks yourself (the fork inherits your full conversation context and always runs on your model — a model override is ignored).
+
+## When to use
+
+Reach for this when the task matches an available agent type, when you have independent work to run in parallel, or when answering would mean reading across several files — delegate it and you keep the conclusion, not the file dumps. For a single-fact lookup where you already know the file, symbol, or value, search directly. Once you've delegated a search, don't also run it yourself — wait for the result.
+
+## Usage notes
+
+- Always include a short description summarizing what the agent will do
+- The agent's final report is not shown to the user — relay what matters.
+- Trust but verify: an agent's summary describes what it intended to do, not necessarily what it did. When an agent writes or edits code, check the actual changes before reporting the work as done.
+- Pass run_in_background: true to launch the agent without blocking; its result is delivered on a later turn — do NOT sleep, poll, or proactively check on its progress. Continue with other work or respond to the user instead.
+- Don't race: after launching a background agent, you know nothing about its results. Never fabricate or predict them in any format — not as prose, summary, or structured output. The completion notification arrives in a later turn; it is never something you write yourself. If the user asks before it lands, say the agent is still running — give status, not a guess.
+- To continue a previously spawned agent, use SendMessage with the agent's ID as the \`to\` field — that resumes it with full context. A new Agent call starts a fresh agent with no memory of prior runs (except fork: true, which inherits your context), so the prompt must be self-contained.
+- Each agent type's model and tools come from its definition (the SDK \`agents\` option); the \`model\` parameter here overrides the definition for this one call.
+- Clearly tell the agent whether you expect it to write code or just to do research (search, file reads, web fetches, etc.), since a fresh agent is not aware of the user's intent
+- If the user specifies that they want you to run agents "in parallel", you MUST send a single message with multiple Agent tool use content blocks.
+- With \`isolation: "worktree"\`, the agent runs in its own temporary git worktree; the worktree is automatically cleaned up if the agent makes no changes; otherwise the path and branch are returned in the result.`;
+
+// ---------------------------------------------------------------------------
+// Self-written descriptions for tools with NO archive counterpart (keeper
+// 2026-07-28 ruling: centralize + ledger). The corpus was checked 2026-07-28:
+// no tool-description-{bashoutput,killshell,taskoutput,taskstop} fragment
+// exists, so these are necessarily SDK-written. They live here (not inline in
+// shells.ts) so the description surface has ONE home, and they are registered
+// in UNGOVERNED_TOOL_DESCRIPTIONS below so the completeness guard sees them.
+// ---------------------------------------------------------------------------
+
+export const BASHOUTPUT_DESCRIPTION =
+  'Read NEW output from a background shell started with Bash ' +
+  'run_in_background (output since the previous BashOutput call), plus its ' +
+  'current status. Optional `filter` is a regex applied per line.';
+
+export const KILLSHELL_DESCRIPTION =
+  'Kill a background shell started with Bash run_in_background, by its id.';
+
+export const TASKOUTPUT_DESCRIPTION =
+  'Retrieve output from a running or completed background task (started with ' +
+  'Bash run_in_background or Monitor), plus its current status. Returns the ' +
+  'output accumulated since the previous TaskOutput read. Set `block: true` to ' +
+  'wait up to `timeout` ms for new output before returning.';
+
+export const TASKSTOP_DESCRIPTION =
+  'Stop a running background task or shell by id (started with Bash ' +
+  'run_in_background or Monitor). Pass `task_id`; `shell_id` is a deprecated ' +
+  'alias for the same id.';
+
+/**
+ * Tools whose descriptions are deliberately OUTSIDE the provenance registry,
+ * each with the reason on record. Together with TOOL_DESCRIPTION_PROVENANCE
+ * this partitions the shipped tool surface: the completeness guard
+ * (tests/tool-descriptions-provenance.test.ts) fails on any shipped tool in
+ * neither ledger — and on any tool in both — so a future tool cannot ship
+ * ungoverned by silence again (that silence is how ToolSearch stayed
+ * unmeasured until the 2026-07-28 alignment audit).
+ */
+export const UNGOVERNED_TOOL_DESCRIPTIONS: Record<string, string> = {
+  BashOutput: 'self-written — no archive counterpart (corpus checked 2026-07-28)',
+  KillShell: 'self-written — no archive counterpart (corpus checked 2026-07-28)',
+  TaskOutput: 'self-written — no archive counterpart (corpus checked 2026-07-28)',
+  TaskStop: 'self-written — no archive counterpart (corpus checked 2026-07-28)',
+  ListMcpResourcesTool:
+    'archive counterpart exists (tool-description-listmcpresourcestool); adoption unruled — future-pass candidate',
+  ReadMcpResourceTool:
+    'archive counterpart exists (listmcpresourcestool-prompt family); adoption unruled — future-pass candidate',
+  ReadMcpResourceDirTool:
+    'archive counterpart exists (readmcpresourcedirtool-prompt); adoption unruled — future-pass candidate',
+  memory:
+    'mode-B custom description is SDK-written (native mode is a schema-less server-declared tool)',
+  LoopControl: 'SDK-original tool — no official counterpart (COMPAT: awaiting alignment)',
+};
+
+/**
  * SendMessage (O-B2) — ADAPTED reproduction of the agent-teams SendMessage
  * description (archive slug tool-description-sendmessage — renamed from
  * tool-description-sendmessagetool in the 2.1.216 snapshot; ccVersion 2.1.199
@@ -856,6 +981,14 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   {
     tool: 'Bash',
     faithful: true,
+    // 2026-07-28 keeper ruling (拷问 #3): the seven fragments below the git
+    // block were CARRIED by the description but never cited, so the guard was
+    // blind to them. The run-in-background parameter family
+    // (tool-parameter-bash-run-in-background-*) remains deliberately UNCITED:
+    // its text promises a completion notification this SDK does not deliver,
+    // so our sentence is an adaptation (BashOutput/KillShell polling) — cited
+    // anchors would red on the honest divergence. Registered in COMPAT
+    // instead.
     slugs: [
       'tool-description-bash-overview',
       'tool-description-bash-maintain-cwd',
@@ -863,6 +996,13 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
       'tool-description-bash-quote-file-paths',
       'tool-description-bash-verify-parent-directory',
       'tool-description-bash-prefer-dedicated-tools',
+      'tool-description-bash-alternative-file-search',
+      'tool-description-bash-alternative-content-search',
+      'tool-description-bash-alternative-read-files',
+      'tool-description-bash-alternative-edit-files',
+      'tool-description-bash-alternative-write-files',
+      'tool-description-bash-alternative-communication',
+      'tool-description-bash-built-in-tools-note',
       'tool-description-bash-git-avoid-destructive-ops',
       'tool-description-bash-git-never-skip-hooks',
       'tool-description-bash-git-prefer-new-commits',
@@ -889,7 +1029,15 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   // corpus-sync from holding it to the official byte-for-byte text.
   { tool: 'WebFetch', faithful: false, slugs: ['tool-description-webfetch'] },
   { tool: 'WebSearch', faithful: true, slugs: ['tool-description-websearch'] },
-  { tool: 'AskUserQuestion', faithful: true, slugs: ['tool-description-askuserquestion'] },
+  // 2026-07-28 keeper ruling "三处全补": the plan-mode paragraph (2.1.154) and
+  // the preview-field fragment are now reproduced (preview forwarded to the
+  // host verbatim, rendering the host UI's choice — the one adapted sentence
+  // at the end says so).
+  {
+    tool: 'AskUserQuestion',
+    faithful: true,
+    slugs: ['tool-description-askuserquestion', 'tool-description-askuserquestion-preview-field'],
+  },
   { tool: 'EnterPlanMode', faithful: true, slugs: ['tool-description-enterplanmode'] },
   { tool: 'ExitPlanMode', faithful: true, slugs: ['tool-description-exitplanmode'] },
   { tool: 'EnterWorktree', faithful: true, slugs: ['tool-description-enterworktree'] },
@@ -906,6 +1054,28 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
     tool: 'SendMessage',
     faithful: false,
     slugs: ['tool-description-sendmessage'],
+  },
+  // The archive holds only the SECOND PART of the official description; that
+  // part is reproduced verbatim (faithful:true keeps the anchor guard on it),
+  // while the opening sentences are our own — same pattern as Monitor's
+  // adapted first line. See the TOOLSEARCH_DESCRIPTION doc comment.
+  {
+    tool: 'ToolSearch',
+    faithful: true,
+    slugs: ['tool-description-toolsearch-second-part'],
+  },
+  // ADAPTED (keeper 2026-07-28 "Agent 复现"): template conditionals resolved
+  // to this SDK's capability set — see the AGENT_DESCRIPTION doc comment for
+  // the delta list. faithful:false: the assembly resolves variables and drops
+  // unshipped clauses, so anchor-exactness cannot be promised.
+  {
+    tool: 'Agent',
+    faithful: false,
+    slugs: [
+      'tool-description-agent-when-to-launch-subagents',
+      'tool-description-agent-simple-usage-notes',
+      'tool-description-agent-usage-notes',
+    ],
   },
 ];
 
@@ -931,6 +1101,8 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   Monitor: MONITOR_DESCRIPTION,
   Workflow: WORKFLOW_DESCRIPTION,
   SendMessage: SENDMESSAGE_DESCRIPTION,
+  ToolSearch: TOOLSEARCH_DESCRIPTION,
+  Agent: AGENT_DESCRIPTION,
 };
 
 // ---------------------------------------------------------------------------

@@ -163,7 +163,7 @@ describe('OPT: unchanged basics still hold', () => {
   it('no matches -> No matches found, no footer', async () => {
     const dir = await makeCorpus(10);
     const c = contentOf(await grepTool.execute({ pattern: 'ZZ_ABSENT', path: dir, output_mode: 'count' }, makeCtx(dir)));
-    expect(c).toBe('No matches found');
+    expect(c).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
   });
   it('aborts cleanly', async () => {
     const dir = await makeCorpus(3);
@@ -205,7 +205,7 @@ describe('OPT: -o (only-matching) content mode', () => {
     );
     // 'x*' matches empty at every offset; ripgrep emits nothing, so the file is
     // reported as not matching rather than four blank `m.txt:1:` lines.
-    expect(c).toBe('No matches found');
+    expect(c).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
   });
 
   it('-o still extracts ordinary single-line matches', async () => {

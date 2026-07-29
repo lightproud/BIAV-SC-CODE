@@ -13,7 +13,9 @@ import { describe, expect, it } from 'vitest';
 import {
   TOOL_DESCRIPTION_PROVENANCE,
   TOOL_DESCRIPTION_TEXT,
+  UNGOVERNED_TOOL_DESCRIPTIONS,
 } from '../src/tools/descriptions.js';
+import { createBuiltinTools } from '../src/tools/index.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const ARCHIVE = join(
@@ -104,5 +106,39 @@ describe('tool-description provenance (corpus-sync guard)', () => {
       }
     }
     expect(drifted, drifted.join('\n')).toEqual([]);
+  });
+
+  /**
+   * Completeness partition (keeper 2026-07-28 拷问 #2): every SHIPPED tool
+   * name is in exactly ONE of the two ledgers — provenance (archive-governed)
+   * or UNGOVERNED (self-written, reason on record). ToolSearch shipped for
+   * weeks in neither, unmeasured, while being the sole gateway to 2/3 of the
+   * tool surface under silverCoreToolOptions(); this guard makes that silence
+   * impossible for the next tool.
+   */
+  it('every shipped tool is in exactly one description ledger', () => {
+    const shipped = new Set<string>([
+      ...createBuiltinTools().keys(),
+      ...createBuiltinTools({ env: { CLAUDE_CODE_ENABLE_TASKS: '0' } }).keys(),
+      // Conditionally-registered outside createBuiltinTools (query.ts):
+      'Agent',
+      'ToolSearch',
+      'memory',
+      'LoopControl',
+    ]);
+    const governed = new Set(TOOL_DESCRIPTION_PROVENANCE.map((p) => p.tool));
+    const ungoverned = new Set(Object.keys(UNGOVERNED_TOOL_DESCRIPTIONS));
+
+    const unclassified = [...shipped].filter((t) => !governed.has(t) && !ungoverned.has(t));
+    expect(unclassified, `shipped tools in NO description ledger: ${unclassified.join(', ')}`)
+      .toEqual([]);
+
+    const doubled = [...governed].filter((t) => ungoverned.has(t));
+    expect(doubled, `tools in BOTH ledgers: ${doubled.join(', ')}`).toEqual([]);
+
+    // The ledgers may not name phantom tools either (a renamed tool must not
+    // leave a stale ledger row claiming governance of nothing).
+    const phantoms = [...governed, ...ungoverned].filter((t) => !shipped.has(t));
+    expect(phantoms, `ledger rows naming unshipped tools: ${phantoms.join(', ')}`).toEqual([]);
   });
 });

@@ -15,6 +15,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { GENERAL_PURPOSE_TYPE } from './agents.js';
+import { AGENT_DESCRIPTION } from '../tools/descriptions.js';
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
@@ -42,18 +43,10 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
   const typeList = agentNames.length > 0 ? agentNames.join(', ') : GENERAL_PURPOSE_TYPE;
   return {
     name: 'Agent',
-    description:
-      'Delegate a self-contained task to a subagent that runs in its own ' +
-      'isolated context and returns only its final message. Use this to fan ' +
-      'out research or multi-step work without cluttering the main thread. ' +
-      'Provide a complete, standalone prompt: the subagent does not see the ' +
-      'current conversation. Set run_in_background to true to launch the ' +
-      'subagent without blocking; its result is delivered on a later turn. ' +
-      'Set isolation to "worktree" to give the subagent its own temporary ' +
-      'git worktree as its working directory (auto-cleaned if unchanged), ' +
-      'and model to override which model it runs on. ' +
-      'Set fork to true to instead continue from the current context (shared ' +
-      'cache, more privileged) rather than a fresh isolated one.',
+    // ADAPTED archive reproduction (keeper 2026-07-28 "Agent 复现") — the
+    // assembly and its deltas live with the other governed descriptions
+    // (descriptions.ts AGENT_DESCRIPTION + provenance entry).
+    description: AGENT_DESCRIPTION,
     readOnly: false,
     isFileEdit: false,
     // Foreground Agent calls batched in one assistant turn must run
