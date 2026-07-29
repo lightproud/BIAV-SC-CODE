@@ -187,6 +187,130 @@ describe('AskUserQuestion collapses newlines in host answers', () => {
 });
 
 // ---------------------------------------------------------------------------
+// 8. Second batch (keeper ruling "修复 then merge"): the remaining silent
+//    fallbacks + honesty defects the same audit turned up.
+// ---------------------------------------------------------------------------
+
+describe('Grep/Glob reject mis-typed scope and option params', () => {
+  let dir: string;
+  beforeAll(async () => {
+    dir = path.join(root, 'opts');
+    await mkdir(dir, { recursive: true });
+    await writeFile(path.join(dir, 'a.ts'), 'Needle Soup\n');
+  });
+
+  it('a non-string path errors instead of silently searching the cwd', async () => {
+    const g = await grepTool.execute({ pattern: 'x', path: ['src'] }, makeCtx(dir));
+    expect(g.isError).toBe(true);
+    expect(text(g)).toContain('"path" must be a string');
+
+    const gl = await globTool.execute({ pattern: '**/*', path: 123 }, makeCtx(dir));
+    expect(gl.isError).toBe(true);
+    expect(text(gl)).toContain("'path' must be a string");
+  });
+
+  it('a string boolean flag errors instead of silently searching case-sensitively', async () => {
+    const res = await grepTool.execute(
+      { pattern: 'needle soup', path: dir, '-i': 'true' },
+      makeCtx(dir),
+    );
+    expect(res.isError).toBe(true);
+    expect(text(res)).toContain('"-i" must be a boolean');
+  });
+
+  it('a string context count errors instead of silently collapsing to 0', async () => {
+    const res = await grepTool.execute(
+      { pattern: 'Needle', path: dir, output_mode: 'content', '-C': '2' },
+      makeCtx(dir),
+    );
+    expect(res.isError).toBe(true);
+    expect(text(res)).toContain('"-C" must be a non-negative, finite number');
+  });
+
+  it('an array glob errors (and says how to spell it) instead of dropping the filter', async () => {
+    const res = await grepTool.execute(
+      { pattern: 'Needle', path: dir, glob: ['*.ts', '*.tsx'] },
+      makeCtx(dir),
+    );
+    expect(res.isError).toBe(true);
+    expect(text(res)).toContain('"glob" must be a single string');
+    expect(text(res)).toContain('*.{ts,tsx}');
+  });
+
+  it('a negative head_limit is still rejected (V6-3 stays locked)', async () => {
+    const res = await grepTool.execute(
+      { pattern: 'Needle', path: dir, output_mode: 'content', head_limit: -1 },
+      makeCtx(dir),
+    );
+    expect(res.isError).toBe(true);
+    expect(text(res)).toContain('head_limit');
+  });
+
+  it('valid options still work (the guards do not over-reject)', async () => {
+    const res = await grepTool.execute(
+      { pattern: 'needle soup', path: dir, '-i': true, '-C': 1, output_mode: 'content' },
+      makeCtx(dir),
+    );
+    expect(res.isError).not.toBe(true);
+    expect(text(res)).toContain('Needle Soup');
+  });
+});
+
+describe('Grep discloses the ignore set only when it applied', () => {
+  it('a directory search discloses it; an explicit file target does not', async () => {
+    const dir = path.join(root, 'disclose');
+    await mkdir(dir, { recursive: true });
+    const file = path.join(dir, 'f.txt');
+    await writeFile(file, 'nothing here\n');
+
+    const onDir = await grepTool.execute({ pattern: 'ZZ_ABSENT', path: dir }, makeCtx(dir));
+    expect(text(onDir)).toContain('node_modules');
+
+    const onFile = await grepTool.execute({ pattern: 'ZZ_ABSENT', path: file }, makeCtx(dir));
+    expect(text(onFile)).toBe('No matches found');
+  });
+});
+
+describe('Bash reports its own facts honestly', () => {
+  it('a background launch carries the shell id as structured output', async () => {
+    const ctx = makeCtx(root, {
+      shells: {
+        stateDir: '',
+        spawnBackground: async () => ({ id: 'bash_1' }),
+        get: () => undefined,
+        registerTask: () => {},
+      } as never,
+    });
+    const res = await bashTool.execute(
+      { command: 'sleep 30', run_in_background: true },
+      ctx,
+    );
+    expect(res.isError).not.toBe(true);
+    expect(res.structuredOutput).toMatchObject({
+      backgroundTaskId: 'bash_1',
+      exitCode: null,
+      truncated: false,
+    });
+  });
+
+  it('a command echoing a truncation-marker line is NOT reported as truncated', async () => {
+    const res = await bashTool.execute(
+      { command: "printf '[5 earlier chars dropped: x]\\n'" },
+      makeCtx(root),
+    );
+    expect(res.isError).not.toBe(true);
+    expect(res.structuredOutput).toMatchObject({ truncated: false });
+  });
+
+  it('a NUL byte in the command is a command error, not a shell-config error', async () => {
+    const res = await bashTool.execute({ command: 'echo a\0b' }, makeCtx(root));
+    expect(res.isError).toBe(true);
+    expect(text(res)).toContain('NUL byte');
+    expect(text(res)).not.toContain('failed to spawn a shell');
+  });
+});
+
+// ---------------------------------------------------------------------------
 // 7. memory tool surfaces a non-Error store rejection with a real reason.
 // ---------------------------------------------------------------------------
 

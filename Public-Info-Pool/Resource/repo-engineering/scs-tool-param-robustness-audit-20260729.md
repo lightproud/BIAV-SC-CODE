@@ -2,8 +2,10 @@
 
 - 日期：2026-07-29（北京时间）
 - 触发：守密人「工具调用还有什么 bug 请继续查找」（承 2.2.1 输入形状诊断案）
-- 落地版本：silver-core-agent-sdk **2.2.2**（maestro 2.2.2 锁步，零代码改动）
-- 状态：SHIPPED — 六缺陷全修 + 一权限旗镜头判 CLEAN；`tests/tool-param-robustness.test.ts` 11 例锁定；全量 3450 绿
+- 落地版本：silver-core-agent-sdk **2.2.2**（首批六修）+ **2.2.3**（观察项批收口，守密人裁「修复 然后合并」）；
+  maestro 同号锁步，零代码改动
+- 状态：SHIPPED — 首批六缺陷 + 观察批八项全修，权限旗镜头判 CLEAN；
+  `tests/tool-param-robustness.test.ts` **21 例**锁定；全量 **3460 绿**
 - 方法：三个子代理按文件分区并行审计（fs/exec 组、网络/交互组、记忆/工作流/注册表组），
   每条发现由艾瑞卡逐一读码 + 部分 dist 产物 / fast-glob 实测复核后采信
 
@@ -53,10 +55,9 @@ SDK 既有明确纪律（Read / WebSearch query / Grep type 均对错类型显�
 - **memory `view` 在 plan 模式被粗粒度工具旗拒**（`memory-tool.ts:275` 六命令共用 `readOnly:false`）：
   只读 view 在 plan 模式无 handler 时**fail-closed**（拒读、非提权），一旗服务六命令的固有取舍，无安全影响。
 - **ExitPlanMode/EnterPlanMode `readOnly:true` 自动放行权限模式变更**：有意设计 + 测试锁定（Z4-1 明记 skipped by design）。
-- Grep `path` 非字符串静默回落 cwd、Grep 选项（-i/-C/glob 等）类型错误静默丢弃、Bash 后台 ack 无 structuredOutput、
-  Grep `numFiles` 跨模式语义漂移、Grep 单文件目标附「已排除」失实披露等 **LOW 静默回落 / 契约小疵**：
-  与本轮已修的 timeout/run_in_background 同族，但属**更广的行为收紧面**（一次改多参数、改宽容→严格），
-  未纳入本批以保提交聚焦；如守密人认可「静默回落全线改诊断报错」的方向，可另开一轮统一收口。
+- ~~Grep `path` 非字符串静默回落 cwd、Grep 选项类型错误静默丢弃、Bash 后台 ack 无 structuredOutput、
+  Grep `numFiles` 跨模式语义漂移、Grep 单文件目标附「已排除」失实披露等 LOW 静默回落 / 契约小疵~~
+  **→ 守密人 2026-07-29 裁「修复 然后合并」，已于 2.2.3 全批收口**（见下 §六）。
 
 ## 五、验证
 
@@ -64,3 +65,28 @@ SDK 既有明确纪律（Read / WebSearch query / Grep type 均对错类型显�
 - 新测 `tests/tool-param-robustness.test.ts` 11 例：否定 glob 命中/正向 glob 不变/Glob 否定、
   Bash 两参数类型错误报错 + 合法值仍跑、WebSearch null 元素存活、AskUserQuestion 换行不伪造、memory 非 Error 抛值两形。
 - 版本守卫、档案三卫（size/facts/doc-facts）全绿。
+
+## 六、观察项批收口（2.2.3，守密人裁「修复 然后合并」）
+
+§四原「不修、待裁方向」的观察批全数落地。统一原则：**参数 present 但类型错 = 点名报错；
+`undefined`（省略）是唯一的静默路径**。另含三处「工具说了不实话」的订正。
+
+| # | 位置 | 原行为 | 现行为 |
+|---|------|--------|--------|
+| 1 | `grep.ts` / `glob.ts` `path` | 非字符串静默回落 cwd，错作用域满置信答案 | 报错（同 Read 的既有纪律） |
+| 2 | `grep.ts` 选项组 | `-i:"true"` 按大小写敏感搜、`-C:"2"` 上下文归零、`glob:["*.ts"]` 过滤器整体丢弃、字符串/NaN `head_limit` 回落 250 | 布尔组（`-i`/`-n`/`multiline`/`-o`）+ 计数组（`-A`/`-B`/`-C`/`context`/`offset`/`head_limit`）+ `glob` 全部点名报错；glob 报错附 `"*.{ts,tsx}"` 写法 |
+| 3 | `grep.ts` 忽略集披露 | 对**显式文件目标**也声称「node_modules/.git 已排除」——该过滤对具名文件根本没跑（文件甚至可能就在 node_modules 里） | 仅目录检索披露；三处编码旧不实文案的既有断言同步订正 |
+| 4 | `bash.ts` `truncated` | 正则嗅探自家渲染文本，命令 echo 一行标记形字符串即假阳性；真实计数在 `CappedStream` 里从不外传 | 由 `CappedStream.droppedChars()` 真实测量产出（标记嗅探仅留作无测量的合成 outcome 兜底） |
+| 5 | `bash.ts` 后台 ack | shell id 只能从「Command running in background with id: …」正则抠出——本工具最后一个无结构化的数据型成功分支 | 补 `backgroundTaskId` 结构化产出（官方字段），流字段诚实置空 |
+| 6 | `bash.ts` NUL 字节 | `ConfigurationError: failed to spawn a shell`——为一个模型可自纠的字符下**环境判词**，把宿主支去查 shell 装配 | 前置拒绝，报命令错并点名真问题；既有测试（原断言 ConfigurationError）同步订正为断言新行为，其「不得崩成裸 TypeError」的本意不变且更强 |
+| 7 | `sendmessage.ts` | `bridge.send` 无本地 try/catch，抛值落进 dispatch 泛化兜底、非 Error 抛值渲染 undefined | 包裹 + `thrownMessage`（L74 同族助手） |
+| 8 | `types/tools.ts` `GrepOutput.numFiles` | 跨模式语义翻转（命中数 vs 扫描数）未落契约，消费方按前者直觉读后者得虚高数字 | 类型上写明；行为不变（那是该模式下唯一诚实的计数） |
+
+另两处：截断恰落 `--` 分隔行后会留悬空分隔符（白占一行 head_limit 配额）——已剔除；
+`displayTruncated` 写明为**纵深防御**：今日结构不可达（收集端全程有 cap，真实截断由 `matchesCut` 报），
+且**刻意不放宽为 `>=`**——那会让「恰好填满 head_limit 的自然结束」误报截断，是引入新缺陷而非修复。
+
+小学生比喻：以前点菜备注写在小票背面（「不要辣」「多加一份」），后厨看不见就按标准做法上菜、还不告诉你备注没生效；
+现在备注写错格式会当场退回让你重写——菜可能晚一点，但绝不会端上来一盘你没点的东西。
+
+验证：typecheck / build exit 0；全量 **3460 通过 + 5 skipped**；`tests/tool-param-robustness.test.ts` 扩至 **21 例**。

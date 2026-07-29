@@ -57,6 +57,17 @@ export const globTool: BuiltinTool = {
     if (ctx.signal.aborted) throw new AbortError();
 
     const rawPath = input['path'];
+    // A non-string `path` (`["src"]`, a number) used to fall back to the cwd and
+    // answer for the WRONG directory with full confidence — Read type-checks its
+    // path for exactly this reason; Glob now matches (2026-07-29 sweep).
+    if (rawPath !== undefined && typeof rawPath !== 'string') {
+      return {
+        content:
+          `Glob: 'path' must be a string when provided (received a ` +
+          `${Array.isArray(rawPath) ? 'array' : typeof rawPath}).`,
+        isError: true,
+      };
+    }
     const baseDir = path.resolve(
       ctx.cwd,
       typeof rawPath === 'string' && rawPath.length > 0 ? rawPath : '.',

@@ -798,7 +798,10 @@ describe('Grep tool', () => {
       { pattern: 'alpha.beta', path: 'multi.txt' },
       makeCtx(dir),
     );
-    expect(text(plain)).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
+    // Explicit FILE target ('multi.txt') -> no ignore-set note (2026-07-29
+    // sweep): the ignore set is not applied to a named file, so disclosing it
+    // would be a false statement about this search.
+    expect(text(plain)).toBe('No matches found');
 
     const fwm = await grepTool.execute(
       { pattern: 'alpha.beta', path: 'multi.txt', multiline: true },

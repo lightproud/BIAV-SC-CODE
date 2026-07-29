@@ -12,6 +12,15 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 2.2.3 — 2026-07-29
+
+Lockstep alignment only — silver-core-agent-sdk 2.2.3 (the rest of the tool
+audit's observation batch: mis-typed Grep/Glob scope and option params are
+rejected instead of silently defaulted, Grep stops claiming an ignore set that
+never applied, Bash publishes its real truncation measurement and its
+background shell id, a NUL byte is a command error not a config error, and
+SendMessage wraps its bridge call). No maestro-side changes.
+
 ## 2.2.2 — 2026-07-29
 
 Lockstep alignment only — silver-core-agent-sdk 2.2.2 (tool-call parameter

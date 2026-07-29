@@ -300,7 +300,10 @@ describe('V6-4: a text-header/binary-tail file is skipped, not emitted', () => {
     );
 
     const res = await grepTool.execute({ pattern: 'NEEDLE', path: file }, makeCtx(sandbox));
-    expect(contentOf(res)).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)'); // file treated as binary, skipped whole
+    // No ignore-set note: an explicit FILE target bypasses the ignore set, so
+    // claiming node_modules/.git were "excluded" would describe a filter that
+    // never ran (2026-07-29 sweep).
+    expect(contentOf(res)).toBe('No matches found'); // file treated as binary, skipped whole
   });
 });
 

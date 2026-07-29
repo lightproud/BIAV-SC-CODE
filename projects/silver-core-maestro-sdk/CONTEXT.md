@@ -36,11 +36,13 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `2.2.2`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-agent-sdk` = `2.2.2`
+**当前版本 `2.2.3`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-agent-sdk` = `2.2.3`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v2.2.3（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.2.3（观察项批收口：Grep/Glob 作用域与选项参数类型错误改诊断报错、Grep 不再声称未生效的忽略集、Bash 截断标志改用真实计数 + 后台 ack 补结构化产出、NUL 字节归类为命令错、SendMessage 包裹桥调用）前进。
 
 **v2.2.2（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.2.2（工具调用参数健壮性七修：否定 glob 不再清空 Grep/Glob、Bash run_in_background/timeout 类型错误改诊断报错、WebSearch 容 null 后端元素、AskUserQuestion 应答防伪造行、memory 非 Error 抛值 String 化）前进。
 

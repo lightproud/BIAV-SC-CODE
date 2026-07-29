@@ -376,7 +376,9 @@ describe('F6: Grep multiline CRLF consistency', () => {
       { pattern: 'foo\\r\\nbar', path: file, multiline: true, output_mode: 'content' },
       makeCtx(sandbox),
     );
-    expect(String(res.content)).toBe('No matches found (note: node_modules and .git are always excluded from Grep — use Bash to search inside them)');
+    // Explicit FILE target -> no ignore-set note (2026-07-29 sweep: the note
+    // would describe a filter that never applied to this search).
+    expect(String(res.content)).toBe('No matches found');
   });
 });
 

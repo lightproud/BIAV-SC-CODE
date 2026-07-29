@@ -268,6 +268,40 @@ function asOptionalCount(v: unknown): number | undefined {
     : undefined;
 }
 
+/** Render a received value for a type-error message (numbers keep NaN/Infinity,
+ *  which JSON.stringify would flatten to `null`). */
+function describeValue(v: unknown): string {
+  return typeof v === 'number' ? String(v) : JSON.stringify(v) ?? String(v);
+}
+
+/**
+ * Present-but-mis-typed option guards (2026-07-29 robustness sweep).
+ *
+ * Every option below used to be read with a strict `=== true` / `!== false` /
+ * finite-number test whose else-branch was the DEFAULT, so `'-i': "true"`,
+ * `'-C': "2"`, or `glob: ["*.ts"]` — all routine model/gateway deformations —
+ * silently searched case-sensitively, with zero context, or with no filter at
+ * all. A silent wrong answer is the one failure a model cannot correct;
+ * `undefined` (option omitted) remains the only silent path.
+ */
+function badBoolean(input: Record<string, unknown>, key: string): string | undefined {
+  const v = input[key];
+  if (v === undefined || typeof v === 'boolean') return undefined;
+  return `Grep: "${key}" must be a boolean when provided (received ${describeValue(v)} of type ${typeof v}).`;
+}
+
+function badCount(input: Record<string, unknown>, key: string): string | undefined {
+  const v = input[key];
+  if (v === undefined) return undefined;
+  if (typeof v !== 'number' || !Number.isFinite(v) || v < 0) {
+    return (
+      `Grep: "${key}" must be a non-negative, finite number when provided ` +
+      `(received ${describeValue(v)} of type ${typeof v}).`
+    );
+  }
+  return undefined;
+}
+
 export const grepTool: BuiltinTool = {
   name: 'Grep',
   description: GREP_DESCRIPTION,
@@ -383,6 +417,18 @@ export const grepTool: BuiltinTool = {
       };
     }
 
+    // Mis-typed flags/counts are named, not silently defaulted (see the guard
+    // helpers above). Checked before any of them is read so the first offender
+    // is what the model hears about.
+    for (const key of ['-i', '-n', 'multiline', '-o']) {
+      const msg = badBoolean(input, key);
+      if (msg !== undefined) return { content: msg, isError: true };
+    }
+    for (const key of ['-A', '-B', '-C', 'context', 'offset', 'head_limit']) {
+      const msg = badCount(input, key);
+      if (msg !== undefined) return { content: msg, isError: true };
+    }
+
     const caseInsensitive = input['-i'] === true;
     const showLineNumbers = input['-n'] !== false; // default true
     const multiline = input['multiline'] === true;
@@ -395,18 +441,9 @@ export const grepTool: BuiltinTool = {
     const rawLimit = input['head_limit'];
     // V6-3 (audit r4): a NEGATIVE head_limit used to collapse via Math.max(0,…)
     // to 0 = unlimited, so `head_limit:-1` silently returned EVERY match with no
-    // cap — the opposite of a caller asking to bound output. Reject it so the
-    // model corrects the value instead of being flooded.
-    if (
-      typeof rawLimit === 'number' &&
-      Number.isFinite(rawLimit) &&
-      rawLimit < 0
-    ) {
-      return {
-        content: `Grep: "head_limit" must be >= 0 (0 = unlimited). Got ${rawLimit}.`,
-        isError: true,
-      };
-    }
+    // cap — the opposite of a caller asking to bound output. Now rejected by the
+    // shared badCount guard above (which also covers the string / NaN spellings
+    // that used to fall through to the default), so no separate check here.
     // 0 = unlimited; undefined -> 250 in EVERY mode, as in Claude Code.
     // An unlimited default was tried for `count` / `files_with_matches` (OPT-1,
     // 2026-07-07) on the grounds that a truncated count is a WRONG count. But
@@ -463,6 +500,19 @@ export const grepTool: BuiltinTool = {
       typePatterns = TYPE_GLOBS[rawType];
     }
     const rawGlob = input['glob'];
+    // `glob: ["*.ts","*.tsx"]` (the natural reading of ripgrep's repeatable -g)
+    // used to be dropped whole, searching the ENTIRE tree while the caller
+    // believed it had filtered. Name it instead; the array form is a real
+    // ripgrep idiom, so the message says how to spell it here.
+    if (rawGlob !== undefined && typeof rawGlob !== 'string') {
+      return {
+        content:
+          `Grep: "glob" must be a single string when provided (received ` +
+          `${describeValue(rawGlob)} of type ${Array.isArray(rawGlob) ? 'array' : typeof rawGlob}). ` +
+          `For several extensions use one brace pattern, e.g. "*.{ts,tsx}".`,
+        isError: true,
+      };
+    }
     const globPattern =
       typeof rawGlob === 'string' && rawGlob.length > 0
         ? // toPosixGlob first: a Windows-spelled filter (`src\**\*.ts`) must
@@ -474,6 +524,17 @@ export const grepTool: BuiltinTool = {
 
     // --- File enumeration ---------------------------------------------------
     const rawPath = input['path'];
+    // A non-string `path` (`["src"]`, a number) used to fall back to the cwd,
+    // returning a full-confidence answer for the WRONG scope — the failure mode
+    // Read already refuses by type-checking its own path. Same treatment here.
+    if (rawPath !== undefined && typeof rawPath !== 'string') {
+      return {
+        content:
+          `Grep: "path" must be a string when provided (received ` +
+          `${describeValue(rawPath)} of type ${Array.isArray(rawPath) ? 'array' : typeof rawPath}).`,
+        isError: true,
+      };
+    }
     const searchPath = path.resolve(
       ctx.cwd,
       typeof rawPath === 'string' && rawPath.length > 0 ? rawPath : '.',
@@ -490,6 +551,11 @@ export const grepTool: BuiltinTool = {
     }
 
     let files: string[];
+    // An explicit FILE target bypasses the ignore set entirely (it is searched
+    // whatever directory it lives in), so the "node_modules/.git are always
+    // excluded" note would be a false statement about the search that just ran
+    // — it can even be a file INSIDE node_modules. Disclose only what applies.
+    const ignoreApplied = !pathStat.isFile();
     if (pathStat.isFile()) {
       // Explicit file target is searched regardless of glob/type filters.
       files = [searchPath];
@@ -688,7 +754,7 @@ export const grepTool: BuiltinTool = {
 
     if (!anyMatch) {
       return {
-        content: `No matches found${IGNORE_DISCLOSURE}${oversizeNote}`,
+        content: `No matches found${ignoreApplied ? IGNORE_DISCLOSURE : ''}${oversizeNote}`,
         structuredOutput: {
           mode: outputMode,
           numFiles: 0,
@@ -708,7 +774,7 @@ export const grepTool: BuiltinTool = {
       // emit nothing, ripgrep semantics) — genuinely no reportable matches.
       if (out.length === 0) {
         return {
-          content: `No matches found${IGNORE_DISCLOSURE}${oversizeNote}`,
+          content: `No matches found${ignoreApplied ? IGNORE_DISCLOSURE : ''}${oversizeNote}`,
           // Same shape (and the same honest zeros) as the `!anyMatch` branch
           // above: a run that reports nothing still ran, and a consumer that
           // gets `undefined` here cannot tell it apart from a tool that never
@@ -753,7 +819,20 @@ export const grepTool: BuiltinTool = {
     // (or a partial per-file count) for the complete result. Certain cuts
     // (rows we collected or were mid-emitting) say "exist"; a mere early scan
     // stop (unscanned files remain, L21) only says "may exist".
+    // Defense-in-depth, unreachable by construction TODAY (2026-07-29 sweep):
+    // every collection site stops at `collectCap = offset + headLimit`, so `out`
+    // never exceeds it and this is currently always false — `matchesCut` is what
+    // actually reports a cut. It is kept, not deleted, because the condition is
+    // CORRECT ("collected more than displayed") and would fire if a future
+    // unguarded push ever over-collected. Deliberately NOT relaxed to `>=`:
+    // that would report truncation for a scan that finished naturally with
+    // exactly headLimit rows — a false "more matches exist".
     const displayTruncated = limited && out.length > offset + headLimit;
+    // A cut landing right after a `--` hunk separator leaves that separator as
+    // the last row: it spends one of the caller's head_limit rows and renders
+    // as a meaningless trailing `--`. Drop it (the truncation footer below is
+    // what tells the caller there is more).
+    while (capped.length > 0 && capped[capped.length - 1] === '--') capped.pop();
     let content = capped.join('\n');
     if (displayTruncated || matchesCut) {
       content +=

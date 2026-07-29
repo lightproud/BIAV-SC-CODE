@@ -20,8 +20,20 @@ import type {
   ToolContext,
   ToolResultPayload,
 } from '../internal/contracts.js';
-import { AbortError } from '../errors.js';
+import { AbortError, isAbortError } from '../errors.js';
 import { SENDMESSAGE_DESCRIPTION } from './descriptions.js';
+
+/** Diagnosable message for ANY thrown value (the L74 helper the sibling
+ *  host-callback tools use): a non-Error throw would otherwise render as
+ *  `undefined` through a blind `(e as Error).message` cast. */
+function thrownMessage(e: unknown): string {
+  if (e instanceof Error) return e.message;
+  if (e !== null && typeof e === 'object') {
+    const m = (e as { message?: unknown }).message;
+    if (typeof m === 'string') return m;
+  }
+  return String(e);
+}
 
 export const sendMessageTool: BuiltinTool = {
   name: 'SendMessage',
@@ -92,12 +104,25 @@ export const sendMessageTool: BuiltinTool = {
     // G4 (audit r2 2026-07-17): forward the validated `summary` so a background
     // delivery's task_notification can label the exchange for a host progress
     // display — the schema's stated purpose. Previously validated then dropped.
-    const result = await bridge.send({
-      to,
-      message,
-      summary: typeof summary === 'string' ? summary : undefined,
-      signal: ctx.signal,
-    });
+    // Wrap the bridge call like every sibling host-callback tool (websearch /
+    // askuserquestion): an unwrapped throw fell through to the dispatcher's
+    // generic `Tool SendMessage failed: …` catch-all, losing this tool's own
+    // error voice, and a non-Error throw rendered as `undefined` (L74).
+    let result: Awaited<ReturnType<typeof bridge.send>>;
+    try {
+      result = await bridge.send({
+        to,
+        message,
+        summary: typeof summary === 'string' ? summary : undefined,
+        signal: ctx.signal,
+      });
+    } catch (e) {
+      if (isAbortError(e)) throw new AbortError('SendMessage was aborted');
+      return {
+        content: `SendMessage failed: ${thrownMessage(e)}`,
+        isError: true,
+      };
+    }
     return { content: result.content, isError: result.isError };
   },
 };

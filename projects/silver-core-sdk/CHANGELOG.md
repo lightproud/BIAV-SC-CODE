@@ -16,6 +16,67 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 2.2.3 — 2026-07-29
+
+The rest of the 2.2.2 audit's observation batch, ruled in ("修复 then merge"):
+the remaining silent fallbacks, plus three places the tool told the caller
+something that was not true. Same principle throughout — an option that is
+PRESENT but mis-typed is named, never quietly replaced with a default;
+`undefined` (omitted) stays the one silent path.
+
+- **Grep/Glob `path` non-string silently searched the cwd.** `path: ["src"]`
+  or `path: 123` fell back to `.` and returned a full-confidence answer for the
+  WRONG scope — the failure Read already refuses by type-checking its own path.
+  Both tools now reject it.
+- **Grep option params were dropped silently when mis-typed.** `'-i': "true"`
+  searched case-sensitively; `'-C': "2"` collapsed the context to zero;
+  `glob: ["*.ts","*.tsx"]` (the natural reading of ripgrep's repeatable `-g`)
+  discarded the filter and searched the whole tree; a string / NaN `head_limit`
+  reverted to 250. All of `-i` / `-n` / `multiline` / `-o` (booleans) and
+  `-A` / `-B` / `-C` / `context` / `offset` / `head_limit` (counts) plus `glob`
+  now error, and the glob message says how to spell a multi-extension filter
+  here (`"*.{ts,tsx}"`). The V6-3 negative-`head_limit` rejection is now served
+  by that shared guard instead of its own check.
+- **Grep claimed an ignore set that had not applied.** An explicit FILE target
+  bypasses `node_modules`/`.git` filtering entirely — it can BE a file inside
+  `node_modules` — yet a zero-match result still appended "node_modules and
+  .git are always excluded". Disclosed only for directory searches now; three
+  existing assertions that had encoded the inaccurate text were corrected.
+- **Bash `structuredOutput.truncated` was sniffed out of its own rendered
+  text.** A regex over stdout/stderr looked for the truncation marker, so
+  `printf '[5 earlier chars dropped: x'` reported truncation that never
+  happened — while `CappedStream` held the real dropped count and never
+  published it. The flag now comes from that measurement (the marker sniff
+  survives only as a fallback for a synthesized outcome carrying none).
+- **Bash background launch had no structured output.** The shell id — the one
+  fact that branch produces — was reachable only by regexing it back out of
+  "Command running in background with id: bash_1". It now rides
+  `backgroundTaskId`, the official field for it; the stream fields are honestly
+  empty (nothing read yet, no exit code). This was the last data-bearing
+  success branch in the tool without a structured result.
+- **A NUL byte in a Bash command was reported as a shell-config failure.**
+  `spawn` throws synchronously on it, which surfaced as
+  `ConfigurationError: Bash: failed to spawn a shell` — an ENVIRONMENT verdict
+  for a MODEL-correctable argument, sending the host to check its shell
+  install. Rejected up front now, with a message naming the actual problem.
+- **SendMessage let a bridge throw fall through to the dispatcher.** Every
+  sibling host-callback tool wraps its callback; this one did not, so a failure
+  lost this tool's error voice and a non-Error throw rendered as `undefined`.
+  Wrapped, with the same `thrownMessage` helper (L74).
+- **`GrepOutput.numFiles` is mode-dependent and the contract never said so.**
+  It counts MATCHED files in `files_with_matches` but SCANNED files in
+  `content`/`count`, so a consumer carrying the first intuition into the second
+  read an inflated number as "files that matched". Documented on the type; the
+  behavior is unchanged (it is the honest count available in those modes).
+- Also: a truncation cut landing right after a `--` hunk separator left that
+  separator dangling as the last row, spending one of the caller's `head_limit`
+  rows on nothing; trailing separators are now dropped. And `displayTruncated`
+  is documented as defense-in-depth — it is unreachable today (collection is
+  capped, so `matchesCut` is what reports a cut) and deliberately NOT relaxed
+  to `>=`, which would report truncation for a scan that ended with exactly
+  `head_limit` rows.
+- `tests/tool-param-robustness.test.ts` grows to 21 tests.
+
 ## 2.2.2 — 2026-07-29
 
 Tool-call parameter robustness: a follow-up sweep for the same family as the
