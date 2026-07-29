@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.5.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.5.0`
+**当前版本 `1.6.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.6.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.6.0（2026-07-29）：审计第二十一波**——三处**静默失败还报成功**：结构化输出的 strict 围栏提取把 ```json5 标记、被截断的收尾围栏、以及「答案在第二个围栏」全判无效，而 workflow 的 `agent({schema})` 没有重试通道、该项直接丢；公开的 `estimateMessagesTokens` 被宿主现搭草稿里的 BigInt / 循环引用抛穿，经历史估算还会打死此后每轮压缩检查；文件回滚计划以原始路径字符串为键，符号链接或大小写不敏感文件系统下一个文件占两个坑，实测回滚成一个**任何检查点都不存在**的中途状态却报 `canRewind:true`。
 
 **v1.5.0（2026-07-29）：审计第十九、二十波**——`Monitor` 会开 shell 却不在主参数表里，**任何命令域规则对它都不成立**（`Monitor(rm:*)` 静默失效、工具照跑）；会话 `add/removeDirectories` 是条死线，网关认真算、送进零读取方的字段，**撤销了的目录在沙箱里仍然可写**；钩子 legacy `decision` 无失败关闭护栏，最自然的 `{decision:'deny'}` 被静默丢弃；自称「Never throws」的 `.mcp.json` 加载器被深嵌套配置爆栈打死 query 构造；另有 workflow-engine 跳数组洞、Grep 行记录可被含换行文件名伪造、compaction 的 NaN 窗口令自动压缩静默失效、拼错的 `baseUrl` 烧光重试梯等波十九十二处，以及一个让整档被判为二进制的裸 NUL 字节。
 

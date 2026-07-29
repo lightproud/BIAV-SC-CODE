@@ -16,6 +16,59 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.6.0 — 2026-07-29
+
+Audit wave 21 — three defects on surfaces where the failure is SILENT and the
+caller is told everything went fine.
+
+- `internal/structured-output.ts` — strict fenced extraction dropped ordinary
+  replies. `workflow-engine.ts` `agent({schema})` parses its subagent's text
+  reply with `extraction:'strict'` and has NO correction-retry channel: an
+  unparsed reply makes `agent()` return null and the script silently loses that
+  item. Three failure modes, each an ordinary thing a model does, all measured
+  invalid against `{"a":1}` and a schema it satisfies: **any language tag other
+  than exactly `json`** (```` ```json5 ````, ```` ```jsonc ````) had the tag
+  itself captured as part of the body; a **missing closing fence** — a reply cut
+  at max_tokens four characters after complete JSON — matched nothing at all;
+  and with **more than one fenced block** only the first was ever considered.
+  Fences are now paired directly. The strict guarantee is untouched: prose is
+  still never scanned for embedded JSON spans, and the first block still wins
+  whenever it validates.
+- `engine/tokens.ts` — the public token estimator threw on host-built drafts.
+  This module had already been hardened twice against crashes that, in its own
+  words, "escaped out of the compaction trigger AND out of the public
+  `estimateMessagesTokens`". A throwing `JSON.stringify` is the same escape by
+  another door, and the one shape a host-built draft actually hits:
+  `estimateMessagesTokens` is public since 0.97.0 precisely so a host can
+  measure material it has NOT sent — objects assembled in JS, never round
+  tripped through JSON, where a BigInt field or a back-reference is ordinary.
+  Measured: a circular or BigInt `tool_use` input, an unmodeled block carrying a
+  cycle, and a block whose accessor throws all raised straight out of the public
+  export; reached through the history estimate, the first three also kill every
+  later turn's compaction check. Serialization now degrades through a replacer
+  that names BigInts and cuts cycles, so the estimate still tracks real size.
+  `estimateTextTokens(null)` deliberately still throws — its parameter is typed
+  `string`, and a caller bug should stay loud.
+- `sessions/checkpoints.ts` — one file could take two slots in a rewind plan.
+  The first-touch dedup and the rewind plan keyed on the RAW absolute path, but
+  two spellings name one file whenever a symlink is involved or the filesystem
+  is case-insensitive (macOS, Windows). The later entry carries a MID-TURN
+  pre-image: measured with a symlink, a file at ORIGINAL → MIDDLE → FINAL
+  rewound to **MIDDLE** — a state that existed at no checkpoint — while
+  reporting `canRewind:true` with the file listed as restored. With one spelling
+  recorded as a creation (delete) and the other as a modification (restore),
+  insertion order alone decided whether the file survived. Both sites now key on
+  file identity (realpath the longest existing ancestor, re-append the tail,
+  plus the win32 case fold) — the same canonicalization `permissions/rules.ts`
+  already applies to path-scoped rules.
+
+Audited and found clean this wave, recorded so the surfaces are not re-swept:
+`error-normalize.ts` nested-signal walk, `mcp/registry.ts` `__`-collision
+routing, `mcp/protocol.ts` pagination, `webfetch` redirect SSRF,
+`hooks/condition.ts`, `hooks/goal.ts`, `tools/task.ts` edge symmetry,
+`tools/toolsearch.ts` decorator order, every `.every()` over a possibly-empty
+collection in `src/`, and every comparator-less or inconsistent `.sort()`.
+
 ## 1.5.0 — 2026-07-29
 
 Audit waves 19 and 20. Wave 19 turned four partitions on the tool, session,
