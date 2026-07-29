@@ -478,6 +478,29 @@ export function query(args: {
   const sandboxBackend = resolveSandboxBackend(options.sandbox, debug);
   let sandboxCtx: SandboxContext | undefined;
   let sandboxTmpDir = '';
+  /**
+   * Re-derive the sandbox's writable roots from the gate's CURRENT effective
+   * additional directories. No-op when no sandbox is active.
+   *
+   * Session `addDirectories` / `removeDirectories` permission updates were a
+   * complete no-op before this. The gate tracks them carefully (revocation
+   * subtraction, canonical Windows keys) and the per-turn ToolContext dutifully
+   * carried `gate.effectiveAdditionalDirectories(...)` — into a field with ZERO
+   * readers: the fs tools' containment fence that used to read it was removed
+   * with the 2026-07-05 path-model ruling (fsutil.ts header), leaving the
+   * comment claiming the effect but nothing performing it. The one place the
+   * directories still MEAN something is the sandbox writable set, and that was
+   * built once at query construction straight from `options.additionalDirectories`,
+   * bypassing the gate entirely. So a host that REVOKED a directory mid-session
+   * kept it rw-bound in the sandbox (fail-open), and one that GRANTED a
+   * directory still hit EROFS on every write to it.
+   *
+   * Applied by mutating the live context: the backend reads `sbx.writablePaths`
+   * at each Bash spawn, and non-worktree subagents share this same object, so a
+   * refresh reaches them too. A worktree-isolated child copies the list at spawn
+   * time (runtime.ts M2-1) and therefore keeps the value current as of its spawn.
+   */
+  let refreshSandboxWritablePaths: (extraDirs: readonly string[]) => void = () => {};
   if (sandboxBackend !== null) {
     try {
       sandboxTmpDir = mkdtempSync(join(tmpdir(), 'bpt-sbx-'));
@@ -498,13 +521,28 @@ export function query(args: {
         return p;
       }
     };
-    const writablePaths = [
-      cwd,
-      ...(options.additionalDirectories ?? []),
-      ...(sbxOpt?.writablePaths ?? []),
-      ...(shells.stateDir !== '' ? [shells.stateDir] : []),
-      ...(sandboxTmpDir !== '' ? [sandboxTmpDir] : []),
-    ].map(resolveRealBestEffort);
+    const computeWritablePaths = (extraDirs: readonly string[]): string[] =>
+      [
+        cwd,
+        ...extraDirs,
+        ...(sbxOpt?.writablePaths ?? []),
+        ...(shells.stateDir !== '' ? [shells.stateDir] : []),
+        ...(sandboxTmpDir !== '' ? [sandboxTmpDir] : []),
+      ].map(resolveRealBestEffort);
+    const writablePaths = computeWritablePaths(options.additionalDirectories ?? []);
+    // Keyed on the extra dirs alone: everything else in the list is fixed for
+    // the query's lifetime, so an unchanged grant set skips the realpath calls.
+    let lastExtraDirsKey = JSON.stringify(options.additionalDirectories ?? []);
+    refreshSandboxWritablePaths = (extraDirs) => {
+      const key = JSON.stringify([...extraDirs]);
+      if (key === lastExtraDirsKey || sandboxCtx === undefined) return;
+      lastExtraDirsKey = key;
+      sandboxCtx.writablePaths = computeWritablePaths(extraDirs);
+      debug(
+        `sandbox: writable roots refreshed from session directory grants ` +
+          `(${sandboxCtx.writablePaths.length} root(s))`,
+      );
+    };
     sandboxCtx = {
       backend: sandboxBackend,
       tmpDir: sandboxTmpDir,
@@ -1293,6 +1331,11 @@ export function query(args: {
           turnController.abort(new AbortError('The turn was interrupted'));
         }
         const turnSignal = AbortSignal.any([lifeSignal, turnController.signal]);
+        // Session directory grants/revocations, as of the start of this turn.
+        const effectiveDirs = gate.effectiveAdditionalDirectories(
+          options.additionalDirectories ?? [],
+        );
+        refreshSandboxWritablePaths(effectiveDirs);
         const toolContext: ToolContext = {
           // EnterWorktree survives turn-boundary context rebuilds: the session
           // state is keyed on the shared readFilePaths Set, so the per-turn
@@ -1301,11 +1344,12 @@ export function query(args: {
           cwd:
             peekWorktreeSession({ sessionKey: toolSessionKey } as ToolContext)?.dir ?? cwd,
           // Recomputed per turn so session addDirectories / removeDirectories
-          // permission updates take real effect on the fs tools (T2-7:
-          // removeDirectories revokes; addDirectories grants).
-          additionalDirectories: gate.effectiveAdditionalDirectories(
-            options.additionalDirectories ?? [],
-          ),
+          // permission updates take real effect (T2-7: removeDirectories
+          // revokes; addDirectories grants). The EFFECT is carried by the
+          // sandbox refresh a few lines above — the fs tools stopped reading
+          // this field when their containment fence was removed (fsutil.ts),
+          // and the original comment kept claiming an effect nothing performed.
+          additionalDirectories: effectiveDirs,
           env,
           signal: turnSignal,
           // Query-lifetime signal, distinct from the per-turn `signal` above:

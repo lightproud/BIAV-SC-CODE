@@ -235,7 +235,31 @@ const PRIMARY_ARG_FIELD: Readonly<Record<string, string>> = {
   WebFetch: 'url',
   WebSearch: 'query',
   NotebookEdit: 'notebook_path',
+  // Monitor runs an arbitrary shell script (`readOnly: false`, "same permission
+  // posture as Bash" per its own header) — see COMMAND_PRIMARY_TOOLS.
+  Monitor: 'command',
 };
+
+/**
+ * Builtins whose primary argument is a SHELL COMMAND. Their specifier rules get
+ * Bash's chain decomposition + deny-side unwrapping, and their "remember this"
+ * suggestion is the `firstToken:*` command-prefix form rather than the whole
+ * command line.
+ *
+ * Monitor was absent from BOTH this concept and PRIMARY_ARG_FIELD, which left a
+ * command-executing builtin with NO expressible command-scoped rule at all:
+ *   - `Bash(rm:*)` does not cover it (different tool name — correct, but then
+ *     nothing else did either);
+ *   - `Monitor(rm:*)` resolved primaryArg to undefined and returned false, so
+ *     the deny silently never fired — the host writes the rule, the SDK ignores
+ *     it, and `Monitor({command: 'rm -rf /'})` runs;
+ *   - `Monitor(npm:*)` likewise matched nothing in allow position;
+ *   - only the constraint-free `Monitor(*)` matched, i.e. the whole tool or
+ *     nothing.
+ * A tool that spawns a shell must be scopeable like the other tool that spawns a
+ * shell.
+ */
+const COMMAND_PRIMARY_TOOLS: ReadonlySet<string> = new Set(['Bash', 'Monitor']);
 
 /**
  * Extract the primary string argument of a tool call for specifier matching.
@@ -802,7 +826,7 @@ export function ruleMatches(
     // does not match - a bare-name rule is the supported way to scope it.
     return spec === '*';
   }
-  if (toolName === 'Bash' && segmentMode !== undefined) {
+  if (COMMAND_PRIMARY_TOOLS.has(toolName) && segmentMode !== undefined) {
     const { segments, hasInjection } = decomposeBashCommand(value);
     if (segmentMode === 'all') {
       // Allow position: fail-closed. A leading env prefix is NOT stripped here —
@@ -860,7 +884,9 @@ export function buildPermissionSuggestions(
       // build` command suggests `Bash(npm:*)`, not the absurd `Bash(VAR=x:*)`
       // (M2-4).
       const ruleContent =
-        toolName === 'Bash' ? `${firstToken(stripEnvAssignments(value))}:*` : value;
+        COMMAND_PRIMARY_TOOLS.has(toolName)
+          ? `${firstToken(stripEnvAssignments(value))}:*`
+          : value;
       suggestions.push({
         type: 'addRules',
         rules: [{ toolName, ruleContent }],
