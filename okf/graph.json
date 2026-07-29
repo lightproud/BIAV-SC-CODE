@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-29",
   "stats": {
-    "nodes": 383,
-    "edges": 424
+    "nodes": 385,
+    "edges": 426
   },
   "nodes": [
     {
@@ -2806,6 +2806,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
+      "type": "documentation",
+      "title": "memory-charter-expansion-eval-20260729",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-proposal-news-push-format-20260712.md",
       "type": "documentation",
       "title": "news-push-format-20260712",
@@ -3381,6 +3392,17 @@
       "id": "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
       "type": "documentation",
       "title": "scs-req-export-token-estimation-20260728",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
+      "type": "documentation",
+      "title": "scs-req-memory-frontmatter-attachment-r1-20260729",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4695,6 +4717,12 @@
       "source": "/community/community-reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-steam.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
@@ -6153,6 +6181,12 @@
       "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/steam.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {

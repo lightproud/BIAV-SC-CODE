@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 383,
-    "edges": 424,
-    "terms": 6825,
+    "concepts": 385,
+    "edges": 426,
+    "terms": 6851,
     "by_type": {
       "character": 72,
       "dataset": 95,
-      "documentation": 148,
+      "documentation": 150,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 23,
       "projects": 30,
-      "resource": 117,
+      "resource": 119,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 249
+      "search": 251
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 117
+      "count": 119
     },
     "sources": {
       "index": "/sources/index.md",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/characters/15577.md": {
       "type": "character",
@@ -1436,7 +1436,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 4
     },
     "/community/community-stopgame.md": {
       "type": "dataset",
@@ -3567,6 +3567,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md": {
+      "type": "documentation",
+      "title": "memory-charter-expansion-eval-20260729",
+      "description": "approaching 预警档）已随 silver-core-sdk 1.5.0 落地；其余三项**需另开设计轮**，本档为该轮的（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/memory-charter-expansion-eval-20260729.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-proposal-news-push-format-20260712.md": {
       "type": "documentation",
       "title": "news-push-format-20260712",
@@ -4309,6 +4323,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md": {
+      "type": "documentation",
+      "title": "scs-req-memory-frontmatter-attachment-r1-20260729",
+      "description": "§1.2 丙·cards 退役 / §2.2 按 r1 案 / §四 pinned 采纳暂定案 / §四 when_to_save 官方全文注入；（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/scs-req-memory-frontmatter-attachment-r1-20260729.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md": {
       "type": "documentation",
       "title": "scs-req-orchestrator-sdk-20260717",
@@ -4676,7 +4704,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3225 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3229 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4690,7 +4718,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8338470 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8359225 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4704,7 +4732,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1820 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1821 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4788,7 +4816,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5330 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5332 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4797,7 +4825,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 4
     },
     "/sources/steam_discussion.md": {
       "type": "dataset",
@@ -4844,7 +4872,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2443 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2453 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4886,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11595 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11609 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4872,7 +4900,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8908 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8928 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4886,7 +4914,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3138 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3142 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -6122,12 +6150,22 @@
         "variant"
       ],
       [
+        "/community/community-steam.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/memory/memory-research-community-analysis-2026-05-18-26.md",
         "提及:墨菲",
         "mention"
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/sources/steam.md",
         "提及:墨菲",
         "mention"
       ],
@@ -7923,6 +7961,11 @@
       ]
     ],
     "/community/community-steam.md": [
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
       [
         "/characters/130226.md",
         "提及:Saya",
@@ -9799,6 +9842,11 @@
     ],
     "/sources/steam.md": [
       [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/characters/130226.md",
         "提及:Saya",
         "mention"
@@ -10423,6 +10471,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -10476,6 +10525,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -10718,6 +10768,9 @@
       "/memory/memory-ext-workflow-api-key-audit.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
+    "approaching": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+    ],
     "appstore": [
       "/community/community-appstore.md",
       "/news-output/news-output-appstore.md",
@@ -10872,6 +10925,9 @@
     ],
     "atom": [
       "/news-output/news-output-feed.md"
+    ],
+    "attachment": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "audience": [
       "/projects/silver-core-sdk-doc-migration-0-3x-to-0-68.md",
@@ -11269,6 +11325,7 @@
       "/assets/assets-card-system.md"
     ],
     "cards": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/story/story_search_index.md"
     ],
     "carries": [
@@ -11316,6 +11373,9 @@
       "/story/story_search_index.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
       "/wiki-data/wiki-schema-characters-schema.md"
+    ],
+    "charter": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -11746,6 +11806,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -11799,6 +11860,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -11965,6 +12027,7 @@
       "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -12144,6 +12207,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -12197,6 +12261,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -12502,6 +12567,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -12555,6 +12621,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -12712,6 +12779,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -12765,6 +12833,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -13090,6 +13159,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -13142,6 +13212,9 @@
     "estimation": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md"
     ],
+    "eval": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+    ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
@@ -13159,6 +13232,9 @@
     ],
     "exists": [
       "/projects/silver-core-sdk-doc-tool-parity.md"
+    ],
+    "expansion": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "experience": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
@@ -13263,7 +13339,8 @@
     ],
     "frontmatter": [
       "/README.md",
-      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "frozen": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
@@ -13847,6 +13924,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -13900,6 +13978,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -14371,6 +14450,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -14424,6 +14504,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -14929,6 +15010,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -14977,6 +15059,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -15090,11 +15173,13 @@
       "/projects/doc-testing-strategy.md",
       "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/wiki-data/wiki-data-feature-unlock.md",
       "/wiki-data/wiki-data-item-stories.md",
       "/wiki-data/wiki-data-language-config.md",
@@ -15466,7 +15551,8 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
     "pinned": [
-      "/projects/silver-core-sdk-doc-migration-0-3x-to-0-68.md"
+      "/projects/silver-core-sdk-doc-migration-0-3x-to-0-68.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "pixiv": [
       "/community/community-pixiv.md",
@@ -15704,6 +15790,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -15757,6 +15844,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -16073,6 +16161,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -16155,6 +16244,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -16208,6 +16298,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -16290,6 +16381,7 @@
     ],
     "r1": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md"
     ],
     "r2": [
@@ -16532,6 +16624,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -16578,6 +16671,7 @@
     ],
     "req": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
@@ -16650,6 +16744,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -16703,6 +16798,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -16875,6 +16971,9 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
     ],
+    "save": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
+    ],
     "savings": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
     ],
@@ -16932,6 +17031,7 @@
     ],
     "scs": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
@@ -16968,6 +17068,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -17085,6 +17186,7 @@
       "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -17728,6 +17830,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -17781,6 +17884,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -18107,6 +18211,9 @@
       "/news-output/news-output-weixin.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
       "/sources/weixin.md"
+    ],
+    "when": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "why": [
       "/projects/silver-core-sdk-doc-tool-parity.md"
@@ -18506,6 +18613,9 @@
     "三重": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
+    "三项": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+    ],
     "上一": [
       "/characters/15565.md"
     ],
@@ -18895,6 +19005,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -18948,6 +19059,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -19199,6 +19311,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -19252,6 +19365,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -19559,6 +19673,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -19612,6 +19727,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -20168,6 +20284,9 @@
     ],
     "为讨": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "为该": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "为资": [
       "/characters/54116.md"
@@ -20965,6 +21084,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -21018,6 +21138,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -21995,6 +22116,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -22048,6 +22170,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -22295,6 +22418,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -22348,6 +22472,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -22523,6 +22648,9 @@
     ],
     "何黑": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
+    "余三": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "余复": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
@@ -23109,6 +23237,9 @@
     "全改": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
+    "全文": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
+    ],
     "全档": [
       "/README.md",
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -23293,6 +23424,7 @@
       "/characters/77925.md"
     ],
     "其余": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "其作": [
@@ -24386,6 +24518,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -24439,6 +24572,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -25779,6 +25913,9 @@
     ],
     "另存": [
       "/README.md"
+    ],
+    "另开": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "只会": [
       "/characters/15602.md"
@@ -27878,6 +28015,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -27931,6 +28069,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -28741,6 +28880,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -28794,6 +28934,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -29260,6 +29401,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "宙恐": [
@@ -29417,6 +29559,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -29470,6 +29613,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -29565,6 +29709,9 @@
     ],
     "定新": [
       "/characters/15589.md"
+    ],
+    "定案": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "定的": [
       "/resource/resource-proposal-news-push-format-20260712.md"
@@ -30636,6 +30783,7 @@
       "/memory/memory-archive-contribution-protocol-hub.md"
     ],
     "已随": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "已验": [
@@ -31280,6 +31428,9 @@
     ],
     "开社": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
+    "开设": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "开调": [
       "/projects/project-silver-core-sdk.md"
@@ -33592,6 +33743,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -33645,6 +33797,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -34202,6 +34355,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -34255,6 +34409,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -34572,6 +34727,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -34625,6 +34781,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -35034,6 +35191,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -35087,6 +35245,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -35350,6 +35509,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -35403,6 +35563,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -35883,6 +36044,9 @@
     "文每": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
+    "文注": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
+    ],
     "斗中": [
       "/characters/94450.md"
     ],
@@ -36025,6 +36189,9 @@
     "方主": [
       "/README.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "方全": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "方公": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
@@ -36601,6 +36768,9 @@
     ],
     "智者": [
       "/characters/54116.md"
+    ],
+    "暂定": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "暂性": [
       "/characters/15603.md"
@@ -37224,6 +37394,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -37277,6 +37448,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -37407,6 +37579,7 @@
     "本档": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
@@ -37701,6 +37874,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -37754,6 +37928,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -38378,6 +38553,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -38431,6 +38607,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -38623,6 +38800,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -38676,6 +38854,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -38800,6 +38979,9 @@
     "档与": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
+    "档为": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "档主": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
@@ -39183,6 +39365,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -39236,6 +39419,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -39605,6 +39789,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -39658,6 +39843,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -40163,6 +40349,7 @@
     "注入": [
       "/characters/15600.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "注册": [
@@ -44226,6 +44413,9 @@
       "/characters/15577.md",
       "/characters/15601.md"
     ],
+    "纳暂": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
+    ],
     "纵其": [
       "/characters/77925.md"
     ],
@@ -45512,6 +45702,7 @@
     "落地": [
       "/README.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "落差": [
@@ -46010,6 +46201,9 @@
       "/characters/15578.md",
       "/characters/15593.md"
     ],
+    "警档": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+    ],
     "计中": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
@@ -46077,6 +46271,9 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
+    ],
+    "计轮": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "计过": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -46264,6 +46461,7 @@
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "访确": [
@@ -46572,6 +46770,9 @@
     ],
     "该能": [
       "/characters/15565.md"
+    ],
+    "该轮": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "详情": [
       "/README.md"
@@ -47193,6 +47394,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -47246,6 +47448,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -47497,6 +47700,9 @@
     ],
     "轮是": [
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
+    "轮的": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "轮真": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
@@ -47951,6 +48157,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -48004,6 +48211,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -48121,7 +48329,8 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
-      "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+      "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "送到": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -48509,6 +48718,9 @@
     ],
     "采用": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
+    ],
+    "采纳": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "采访": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -49064,6 +49276,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -49117,6 +49330,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -49348,6 +49562,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -49401,6 +49616,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -50045,6 +50261,9 @@
     "需从": [
       "/community/community-index.md"
     ],
+    "需另": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+    ],
     "需求": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-storage-discussion.md",
@@ -50299,6 +50518,9 @@
     ],
     "预见": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
+    ],
+    "预警": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "领前": [
       "/characters/15599.md"
@@ -50821,6 +51043,9 @@
     "atom": [
       "/news-output/news-output-feed.md"
     ],
+    "attachment": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
+    ],
     "audit": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -51043,6 +51268,9 @@
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
       "/wiki-data/wiki-schema-characters-schema.md"
+    ],
+    "charter": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md"
@@ -51357,6 +51585,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -51410,6 +51639,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -51708,6 +51938,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -51761,6 +51992,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -51905,6 +52137,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -51958,6 +52191,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -52195,6 +52429,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -52236,6 +52471,9 @@
     "estimation": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md"
     ],
+    "eval": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+    ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
@@ -52244,6 +52482,9 @@
     "execution": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
+    ],
+    "expansion": [
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
     ],
     "experience": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
@@ -52289,6 +52530,9 @@
     ],
     "framework": [
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
+    ],
+    "frontmatter": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "frozen": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
@@ -52725,6 +52969,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -52778,6 +53023,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -53046,9 +53292,11 @@
       "/memory/style-guide.md",
       "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
-      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "merge": [
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
@@ -53474,6 +53722,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -53497,6 +53746,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "r1": [
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md"
     ],
     "r2": [
@@ -53606,6 +53856,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -53649,6 +53900,7 @@
     ],
     "req": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
@@ -53786,6 +54038,7 @@
     ],
     "scs": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
@@ -54163,6 +54416,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -54216,6 +54470,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",

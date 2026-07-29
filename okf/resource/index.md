@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (117)
+# 银芯正式产物（报告/分析） (119)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -45,6 +45,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [discord-layout-unification-20260710](/resource/resource-proposal-discord-layout-unification-20260710.md) - 当前三服布局不一致（历史原因：Global 先建、后来的 guild 走 `guilds/` 分层）：（格式：md）
 * [drift-resistant-architecture-20260726](/resource/resource-proposal-drift-resistant-architecture-20260726.md) - 一天内检出的全部漂移，按**它当初是怎么产生的**分类（不按严重度）：（格式：md）
 * [internal-ai-platform-plan-202604](/resource/resource-proposal-internal-ai-platform-plan-202604.md) - 制作人 Light 提出将 BIAV 从个人 AI 终端扩展为团队级内部 AI 工具平台，替代 Qoder，核心逻辑：（格式：md）
+* [memory-charter-expansion-eval-20260729](/resource/resource-proposal-memory-charter-expansion-eval-20260729.md) - approaching 预警档）已随 silver-core-sdk 1.5.0 落地；其余三项**需另开设计轮**，本档为该轮的（格式：md）
 * [news-push-format-20260712](/resource/resource-proposal-news-push-format-20260712.md) - 采集侧已稳（全量档案 + 3 小时节拍自动跑、日采北京 15 点档）；待定的是**输出侧最后一公里**：（格式：md）
 * [silver-core-maintenance-cadence-20260702](/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md) - M7 验收 =「二核心使命基础设施齐备 + 自动化跑稳 + 至少一种贡献流程跑顺」。（格式：md）
 * [silver-core-sdk-memory-consumer-kit-20260711](/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md) - `options.memory` 给 BPT 平台补上跨会话记忆:与 Anthropic 官方 memory tool(`memory_20250818`)（格
@@ -98,6 +99,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [repo-wide-orchestrated-review-20260609](/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md) - 代码层整体健康度中上：共享模块收敛良好（io_utils / text_utils / lua_parse 均带回归测试）、防御性异常处理普遍、workflow
 * [retired-modules-audit-202606](/resource/resource-repo-engineering-retired-modules-audit-202606.md) - CLAUDE.md §1.4 记载「做梦 + 会话蒸馏」自动环与三会话钩子于 2026-06-14 退役（决策见 `memory/decisions.md`）。
 * [scs-req-export-token-estimation-20260728](/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md) - 两个符号在 SDK 内部**已经实现且已 `export`**,但没有从 `src/index.ts` 转出,而包的 `exports` 只开了（格式：md）
+* [scs-req-memory-frontmatter-attachment-r1-20260729](/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md) - §1.2 丙·cards 退役 / §2.2 按 r1 案 / §四 pinned 采纳暂定案 / §四 when_to_save 官方全文注入；（格式：md）
 * [scs-req-orchestrator-sdk-20260717](/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md) - **银芯编排 SDK 持有分子:钟、跨会话状态、会话装配。它把"活得比一次调用久"的 agent 所需的脏活——循环、调度、重试、恢复、台账——做成可复用零件,
 * [scs-req-repositioning-loop-support-20260717](/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md) - 银芯 BIAV-SC 是黑池五层介质架构中的**引擎层**:最慢的介质、版本化、可替换的商品泵。它的职责由三条否定与一条肯定完整定义:（格式：md）
 * [sdk-bug-audit-multiwave-20260728](/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md) - 对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-mae
