@@ -207,7 +207,21 @@ export function buildCompactionConfig(
     minRecentTurns: opt?.minRecentTurns ?? 2,
     useApiSummary: opt?.useApiSummary ?? false,
     customInstructions: opt?.customInstructions,
-    contextWindowTokens: opt?.contextWindowTokens,
+    // A NaN window (Number()/parseInt over an unset env var reaching
+    // compaction.contextWindowTokens — the same hazard the sibling knobs guard:
+    // preTierMaxToolResultChars, loadTimeoutMs, setMaxThinkingTokens,
+    // runConcurrent's concurrency) is NOT caught by the degenerate-window guard
+    // downstream: `NaN <= maxOutputTokens` is FALSE, so the "compaction
+    // impossible, skipping" warning never fires, and every later comparison
+    // (`preTokens >= triggerAt` with triggerAt NaN) is also false. Measured on
+    // a 400-message history: window unset -> fold + boundary; window 0 or -5 ->
+    // no fold WITH the debug warning; window NaN -> no fold, NO warning, and
+    // auto-compaction plus the knownPromptFloor 'prompt too long' safety net
+    // both silently dead for the whole session. Treat NaN as unset so the
+    // model's real context window is used (a working configuration).
+    contextWindowTokens: Number.isNaN(opt?.contextWindowTokens)
+      ? undefined
+      : opt?.contextWindowTokens,
     model: opt?.model,
     preTier: opt?.preTier ?? true,
     preTierMaxToolResultChars:

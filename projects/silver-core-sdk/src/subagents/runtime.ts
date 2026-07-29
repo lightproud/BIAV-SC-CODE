@@ -64,7 +64,7 @@ import type {
   ToolDispatchRecord,
   Transport,
 } from '../internal/contracts.js';
-import type { CanUseTool } from '../types.js';
+import type { CanUseTool, PermissionRuleValue, PermissionUpdate } from '../types.js';
 import { DefaultPermissionGate } from '../permissions/gate.js';
 import { forkShellSession } from '../tools/shells.js';
 import { runAgentLoop } from '../engine/loop.js';
@@ -305,6 +305,42 @@ export function coerceToolPatternList(value: unknown): string[] {
   return arr
     .filter((e): e is string => typeof e === 'string')
     .map((e) => e.trim());
+}
+
+/** Stable identity for one session rule inside an `addRules` update. */
+const sessionRuleKey = (
+  behavior: string,
+  rule: PermissionRuleValue,
+): string => `${behavior} ${rule.toolName} ${rule.ruleContent ?? ''}`;
+
+/**
+ * The parent's session rule updates a child gate does not already carry.
+ *
+ * exportSessionRules() returns ONE aggregated addRules update per behavior and
+ * applyUpdates() pushes rules unconditionally, so replaying the whole parent
+ * export on every SendMessage continuation would duplicate every rule the
+ * spawn-time replay already installed (and re-duplicate them each episode).
+ * Diffing against the child's own export keeps the replay idempotent while
+ * still delivering rules the host added AFTER the spawn.
+ */
+export function pendingSessionRules(
+  parentUpdates: PermissionUpdate[],
+  childUpdates: PermissionUpdate[],
+): PermissionUpdate[] {
+  const have = new Set<string>();
+  for (const update of childUpdates) {
+    if (update.type !== 'addRules') continue;
+    for (const rule of update.rules) have.add(sessionRuleKey(update.behavior, rule));
+  }
+  const out: PermissionUpdate[] = [];
+  for (const update of parentUpdates) {
+    if (update.type !== 'addRules') continue;
+    const rules = update.rules.filter(
+      (rule) => !have.has(sessionRuleKey(update.behavior, rule)),
+    );
+    if (rules.length > 0) out.push({ ...update, rules });
+  }
+  return out;
 }
 
 /**
@@ -1987,6 +2023,27 @@ export function createSubagentRuntime(
     const contSignal = record.background
       ? AbortSignal.any([outerSignal, contController.signal])
       : AbortSignal.any([outerSignal, params.signal, contController.signal]);
+    // Re-sync the parent gate's SESSION rules onto this child's gate (audit
+    // wave19). The child gate is built at SPAWN time and replays the parent's
+    // session rules exactly once, there — so a denial the host issued AFTER the
+    // spawn (canUseTool returning addRules/deny with destination:'session')
+    // never reached a SendMessage-revived episode: the same gap the spawn-time
+    // replay exists to close, re-opened by continuation. Measured on a
+    // read-only `Danger` tool: `deny Danger` added after the initial run then a
+    // continuation asking for it -> the tool EXECUTED (1 call); the identical
+    // rule added before the spawn -> 0 calls. Diffed so an episode never
+    // duplicates rules the spawn-time replay already installed.
+    const contPendingRules = pendingSessionRules(
+      parentGate.exportSessionRules(),
+      record.deps.permissions.exportSessionRules(),
+    );
+    if (contPendingRules.length > 0) {
+      record.deps.permissions.applyUpdates(contPendingRules);
+      debug(
+        `subagent ${agentId}: inherited ${contPendingRules.length} new session ` +
+          'rule update(s) from the parent gate for this continuation',
+      );
+    }
     const contDeps: EngineDeps = {
       ...record.deps,
       toolContext: { ...record.deps.toolContext, signal: contSignal },
@@ -2324,11 +2381,30 @@ export function createSubagentRuntime(
         ]);
         allSettled = winner !== TIMED_OUT;
       }
-      // Query teardown: every started sidechain is now truly done (no further
+      // Query teardown: every SETTLED sidechain is now truly done (no further
       // SendMessage continuation can revive it past this point), so emit each
       // child's single sidechain_end (待裁②). Idempotent — a child already
       // finalized by killAgent is skipped.
-      for (const agentId of sidechainStarted) finalizeSidechain(agentId);
+      //
+      // A child still RUNNING past the timeout arm is deliberately excluded
+      // (audit wave19): this loop used to stamp the terminal marker for it too,
+      // which put the marker BEFORE the work it is supposed to close. Measured
+      // with a background child that answered 100ms after a settleAll(20):
+      // the transcript persisted [sidechain_start, user, sidechain_end,
+      // assistant] — the child's answer filed AFTER its own end marker — and a
+      // child that FAILED later carried is_error:false, because
+      // sidechainLastError is only written in the run's finally. Closing the
+      // bracket on the child's own completion keeps the marker last and its
+      // is_error honest in both arms of the race.
+      for (const agentId of [...sidechainStarted]) {
+        const rec = childRegistry.get(agentId);
+        if (!allSettled && rec !== undefined && rec.status === 'running') {
+          const close = (): void => finalizeSidechain(agentId);
+          void rec.queue.then(close, close);
+          continue;
+        }
+        finalizeSidechain(agentId);
+      }
       // Release transports the resolver handed over with owned: true (AFTER the
       // children settled — a SendMessage continuation can revive a finished
       // child any time before this point). WZ3-3: on a timeout with in-flight
@@ -2337,6 +2413,15 @@ export function createSubagentRuntime(
       if (allSettled) disposeOwnedTransports();
     },
     abortAll(): void {
+      // NOTE (audit wave19, investigated + deliberately NOT changed): a child
+      // killed here gets no terminal task_updated, unlike one stopped via
+      // stopTask/killAgent — so a host task tracker keeps it "running". Emitting
+      // one here is wrong all the same: abortAll runs in the query's teardown
+      // finally, AFTER the final result was yielded, and query.ts drains
+      // observability again past that point — the event would land BEHIND the
+      // terminal SDKResultMessage and break the "a result ends the stream"
+      // contract (tests/query.test.ts "#14" pins it). Teardown is the one
+      // cancellation site with no consumer left to inform.
       for (const { controller } of backgroundTasks.values()) {
         controller.abort();
       }

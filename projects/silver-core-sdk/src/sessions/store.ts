@@ -264,14 +264,54 @@ export type LoadedSession = StoredSession &
     toolCallRecords?: Array<Record<string, unknown>>;
   };
 
-/** Whitespace-tolerant first-record / control-line probes (audit 2026-07-17
- *  L54): our writers serialize compactly with `type` first, but EXTERNAL
- *  transcripts (mirrored stores, hand-edited files) may carry spaces —
- *  `{ "type": "meta" }` — and the old exact startsWith probes skipped them,
- *  making loadInfo/list disagree with load (which full-parses every line). */
-const SIDECHAIN_PROBE_RE = /^\{\s*"type"\s*:\s*"sidechain_start"/;
+/** Whitespace- AND key-order-tolerant control-line probe (audit 2026-07-17
+ *  L54, widened wave19): our writers serialize compactly with `type` first,
+ *  but EXTERNAL transcripts (mirrored stores, hand-edited files) may carry
+ *  spaces — `{ "type": "meta" }` — AND may reorder keys. L54 fixed the
+ *  whitespace half only; the probe stayed ANCHORED at the start of the line,
+ *  so `{"cwd":"/w","type":"meta",…}` — exactly what a mirror materializes when
+ *  the embedder's external store normalizes key order (Postgres `jsonb` sorts
+ *  keys by length then bytewise; msgpack maps and several ORMs do the same) —
+ *  was skipped outright. Measured on such a transcript: load() returned
+ *  firstPrompt 'hello world' / createdAt 111 / cwd '/w' / customTitle
+ *  'My Title', while loadInfo() (and therefore list / listSessions /
+ *  getSessionInfo) returned summary '' and createdAt = the file mtime. The
+ *  probe is only a cheap PRE-FILTER — every hit is still JSON.parsed and
+ *  dispatched on the real `entry.type`, so a message line that merely contains
+ *  the token costs one parse and contributes nothing. */
 const CONTROL_LINE_PROBE_RE =
-  /^\{\s*"type"\s*:\s*"(?:meta|meta_update|pending_turn|turn_complete)"/;
+  /"type"\s*:\s*"(?:meta|meta_update|pending_turn|turn_complete)"/;
+/** Same key-order blindness, but this one HIDES sessions: a subagent sidechain
+ *  transcript whose first record serializes as `{"agentId":…,"type":
+ *  "sidechain_start"}` slipped past the anchored probe, so list() surfaced it
+ *  as a resumable conversation and latestSessionId() returned it — `continue:
+ *  true` then resumed a child transcript (assistant-only turns behind the
+ *  marker, i.e. a garbled repair-mangled conversation). Unanchored token scan
+ *  as a pre-filter, then a real parsed field check so no message line whose
+ *  CONTENT mentions the token can falsely hide a session. */
+const SIDECHAIN_TOKEN_RE = /"sidechain_start"/;
+/** The historical anchored form, kept as an authoritative fast path: it also
+ *  covers a TORN first line (a crash mid-append leaves unparseable JSON), which
+ *  a parse-only check would stop hiding. */
+const SIDECHAIN_PREFIX_RE = /^\{\s*"type"\s*:\s*"sidechain_start"/;
+
+/** True when a transcript's first record really is `sidechain_start`, whatever
+ *  order its keys serialized in. */
+function isSidechainStartLine(line: string): boolean {
+  if (!SIDECHAIN_TOKEN_RE.test(line)) return false;
+  if (SIDECHAIN_PREFIX_RE.test(line)) return true;
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(line);
+  } catch {
+    return false;
+  }
+  return (
+    typeof parsed === 'object' &&
+    parsed !== null &&
+    (parsed as { type?: unknown }).type === 'sidechain_start'
+  );
+}
 
 export type JsonlSessionStoreConfig = {
   /** Explicit directory override (options.sessionDir). */
@@ -718,7 +758,7 @@ export class JsonlSessionStore implements SessionStore {
           // NOT a listable main session — hide it from list()/getSessionInfo so
           // it never surfaces as a resumable conversation (it holds only
           // assistant turns behind the marker).
-          if (SIDECHAIN_PROBE_RE.test(line)) return null;
+          if (isSidechainStartLine(line)) return null;
         }
         // Exact for our writers ('type' is always serialized first); a foreign
         // line simply contributes nothing to the summary row.
@@ -866,7 +906,7 @@ export class JsonlSessionStore implements SessionStore {
       for await (const rawLine of rl) {
         const line = rawLine.trim();
         if (line.length === 0) continue;
-        return SIDECHAIN_PROBE_RE.test(line);
+        return isSidechainStartLine(line);
       }
       return false; // empty file
     } catch {

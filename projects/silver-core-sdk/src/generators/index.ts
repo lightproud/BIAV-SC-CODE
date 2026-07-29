@@ -362,7 +362,7 @@ export async function generateAwaySummary(
  * instruction, not something to silently enforce here).
  */
 export function parseAwaySummary(raw: string): string {
-  return raw
+  const stripped = raw
     .replace(/```[a-z]*\n?/gi, '')
     .replace(/```/g, '')
     .replace(/^\s*#{1,6}\s+/gm, '')
@@ -383,9 +383,9 @@ export function parseAwaySummary(raw: string): string {
     // Trim surrounding whitespace BEFORE the quote trim: fence-stripping leaves
     // a trailing newline, behind which a closing quote was invisible to the
     // $-anchored class — the recap kept a dangling unbalanced quote.
-    .trim()
-    // Trim wrapping quotes, incl. both smart double AND smart single quotes.
-    .replace(/^["'“”‘’]+|["'“”‘’]+$/g, '')
+    .trim();
+  // Trim wrapping quotes, incl. both smart double AND smart single quotes.
+  return trimWrappingQuotes(stripped)
     .replace(/\s*\n+\s*/g, ' ')
     .replace(/\s{2,}/g, ' ')
     .trim();
@@ -549,17 +549,50 @@ function looksLikeJson(raw: string): boolean {
   return t.startsWith('{') || t.startsWith('[');
 }
 
+/** Quote characters that can WRAP a reply, mapped to their closing partner. */
+const QUOTE_PAIRS: ReadonlyMap<string, string> = new Map([
+  ['"', '"'],
+  ["'", "'"],
+  ['`', '`'],
+  ['“', '”'], // “ ”
+  ['‘', '’'], // ‘ ’
+]);
+
+/**
+ * Peel quote pairs that WRAP the whole reply.
+ *
+ * The blanket `^["'…]+|["'…]+$` this replaces matched either end
+ * INDEPENDENTLY, so a reply that merely ENDS on a quoted term lost its closing
+ * quote and surfaced unbalanced: `Renamed the flag to "verbose"` came back as
+ * `Renamed the flag to "verbose` (measured, both here and via the
+ * generateSessionTitle bare-string fallback), and `Two quoted terms: "a" and
+ * "b"` lost the final quote too. A pair is removed only when the last char is
+ * the opener's partner AND the delimiter does not recur inside — otherwise
+ * `"verbose" replaces "loud"` would be un-wrapped into two broken fragments.
+ */
+function trimWrappingQuotes(text: string): string {
+  let out = text;
+  while (out.length >= 2) {
+    const open = out[0] as string;
+    const close = QUOTE_PAIRS.get(open);
+    if (close === undefined || out[out.length - 1] !== close) break;
+    const inner = out.slice(1, -1);
+    if (inner.includes(open) || inner.includes(close)) break;
+    out = inner.trim();
+  }
+  return out;
+}
+
 /** Strip code fences and quotes from a bare-string fallback reply. */
 function stripToPlain(raw: string): string {
-  return raw
+  const stripped = raw
     .replace(/```[a-z]*\n?/gi, '')
     .replace(/```/g, '')
     // Trim BEFORE the quote strip: fence removal leaves a trailing newline
     // that hid a closing quote from the $-anchored class (dangling quote in
     // the fallback title).
-    .trim()
-    .replace(/^["'`]+|["'`]+$/g, '')
     .trim();
+  return trimWrappingQuotes(stripped).trim();
 }
 
 export type { UtilityCallOptions } from './runtime.js';
