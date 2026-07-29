@@ -39,11 +39,6 @@ const KILL_GRACE_MS = 2_000;
  */
 const FLUSH_GRACE_MS = 200;
 
-/** Leading marker shape a capped stream carries (the dropped count varies per
- *  run); also the `truncated` signal in the structured result, so the two can
- *  never disagree. */
-const BASH_TRUNCATION_MARKER_RE = /^\[\d+ earlier chars dropped:/;
-
 /**
  * Accumulates stream output, keeping only the LAST STREAM_CAP_CHARS chars.
  *
@@ -70,6 +65,23 @@ class CappedStream {
     }
   }
 
+  /**
+   * Whether the cap actually dropped chars from THIS stream — the fact the
+   * structured result reports.
+   *
+   * Read from the counter, never re-derived by pattern-matching the rendered
+   * text. Until 2026-07-29 `truncated` was computed as
+   * `/^\[\d+ earlier chars dropped:/.test(outcome.stdout)`, i.e. from a string
+   * the COMMAND controls: `printf '%s' '[42 earlier chars dropped: nothing]'`
+   * (39 chars out, nothing dropped) measured
+   * `{"exitCode":0,...,"truncated":true}` — a caller paging on the flag would
+   * re-run the command redirected to a file for output that was already
+   * complete. The counter cannot be forged by command output.
+   */
+  get truncated(): boolean {
+    return this.dropped > 0;
+  }
+
   text(): string {
     // Truncation discipline (keeper 2026-07-27): how much, why, how to recover.
     return this.dropped > 0
@@ -88,6 +100,8 @@ type RunOutcome =
       signal: NodeJS.Signals | null;
       stdout: string;
       stderr: string;
+      /** Either stream lost chars to STREAM_CAP_CHARS (counter-derived). */
+      truncated: boolean;
       timedOut: boolean;
       aborted: boolean;
     };
@@ -204,6 +218,7 @@ function runShell(
         signal: exitSignal,
         stdout: stdout.text(),
         stderr: stderr.text(),
+        truncated: stdout.truncated || stderr.truncated,
         timedOut,
         aborted,
       });
@@ -236,6 +251,7 @@ function runShell(
         signal: null,
         stdout: stdout.text(),
         stderr: `${stderr.text()}\n[process error] ${error.message}`.trim(),
+        truncated: stdout.truncated || stderr.truncated,
         timedOut,
         aborted,
       });
@@ -509,7 +525,7 @@ export const bashTool: BuiltinTool = createBashTool();
  *  reads the same shape whether the command succeeded, failed or timed out —
  *  facts that were previously only recoverable by parsing the report string. */
 function bashStructured(
-  outcome: { stdout: string; stderr: string; code: number | null },
+  outcome: { stdout: string; stderr: string; code: number | null; truncated: boolean },
   opts: { interrupted: boolean; timedOutAfterMs?: number },
 ): BashStructuredOutput {
   return {
@@ -518,9 +534,8 @@ function bashStructured(
     interrupted: opts.interrupted,
     exitCode: outcome.code,
     ...(opts.timedOutAfterMs !== undefined && { timedOutAfterMs: opts.timedOutAfterMs }),
-    truncated:
-      BASH_TRUNCATION_MARKER_RE.test(outcome.stdout) ||
-      BASH_TRUNCATION_MARKER_RE.test(outcome.stderr),
+    // Counter-derived, not text-sniffed — see CappedStream.truncated.
+    truncated: outcome.truncated,
   };
 }
 

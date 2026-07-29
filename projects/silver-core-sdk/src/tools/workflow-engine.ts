@@ -1023,11 +1023,22 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
         `parallel() accepts at most ${limits.maxCollectionItems} items; got ${thunksRaw.length}.`,
       );
     }
-    thunksRaw.forEach((t, i) => {
-      if (typeof t !== 'function') {
+    // Index loop, NOT forEach (audit 2026-07-29): forEach skips array HOLES,
+    // so this validator could not fail on the one input shape it exists for.
+    // A sparse thunk array — `const a = []; a[0] = f; a[2] = g;`, or plain
+    // `new Array(n)` — walked through untouched, and the `map` below skipped
+    // the holes too, leaving Promise.all to fill them with undefined. Measured:
+    // `parallel(new Array(3))` returned ok:true with value [null,null,null],
+    // no error and no progress line; `parallel([1,2,3])` (same arity, no holes)
+    // correctly errored "parallel() item 0 is not a function." A null in the
+    // result array means "this thunk failed" to every script, so the hole was
+    // reported as a phantom agent failure. An index loop reads a hole as
+    // undefined and rejects it like any other non-function.
+    for (let i = 0; i < thunksRaw.length; i += 1) {
+      if (typeof thunksRaw[i] !== 'function') {
         throw new WorkflowTypeError(`parallel() item ${i} is not a function.`);
       }
-    });
+    }
     // Barrier: awaits ALL thunks. A thunk that throws resolves to null in the
     // result array — the call itself never rejects (abort and the lifetime
     // backstop excepted: swallowing the backstop to null reported a runaway
@@ -1062,8 +1073,18 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
     // chain. A stage that throws drops that item to null and skips the rest
     // (abort and the lifetime backstop excepted — audit r4 Z5-2, as in
     // parallel() above).
+    // Array.from({length}), NOT itemsRaw.map (audit 2026-07-29): map skips
+    // array HOLES, so a sparse items array silently bypassed the stages —
+    // `const it = ['a']; it[2] = 'c'` measured result ["S:a", null, "S:c"] with
+    // the stage callback having seen only ['a','c']. Per this engine's own
+    // semantics a null item means "a stage threw and the item was dropped"
+    // (and would carry a `[pipeline] item N dropped at stage S` progress line),
+    // so index 1 was reported as a processing failure that never happened —
+    // while an EXPLICIT `undefined` at the same index does run the stages.
+    // Array.from visits every index, so a hole is now processed as undefined.
     return Promise.all(
-      itemsRaw.map(async (item, index) => {
+      Array.from({ length: itemsRaw.length }, async (_unused, index) => {
+        const item: unknown = itemsRaw[index];
         let prev: unknown = item;
         for (let s = 0; s < stages.length; s += 1) {
           try {

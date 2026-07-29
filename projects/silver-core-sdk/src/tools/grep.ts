@@ -116,6 +116,25 @@ function lineIndexAt(offsets: number[], pos: number): number {
   return lo;
 }
 
+/**
+ * Render a path for a result the reader parses as ONE RECORD PER LINE.
+ *
+ * A POSIX filename may legally contain `\n` / `\r`, and the raw path used to be
+ * concatenated straight into the `path:line:text` (and `path:count`) rows. A
+ * file named `evil\nfake.txt:9:NEEDLE forged` therefore rendered as TWO lines,
+ * the second of which is a perfectly well-formed result record for a file that
+ * does not exist — a writable directory is enough to forge a Grep hit at any
+ * path/line the attacker names (measured 2026-07-29: content mode emitted
+ * `.../evil` then `fake.txt:9:NEEDLE forged:1:NEEDLE evil`). Escaping the line
+ * separators keeps one row = one record. The structured `filenames` array
+ * still carries the RAW path, so a programmatic consumer is unaffected.
+ */
+function displayPath(p: string): string {
+  return p.includes('\n') || p.includes('\r')
+    ? p.replace(/\r/g, '\\r').replace(/\n/g, '\\n')
+    : p;
+}
+
 function clipLine(s: string): string {
   // R7s-1 (audit r4): a bare slice at 2000 can split a surrogate pair, leaving
   // a lone surrogate that serializes as U+FFFD in the grep tool_result the model
@@ -534,7 +553,7 @@ export const grepTool: BuiltinTool = {
         continue;
       }
       if (outputMode === 'count') {
-        out.push(`${file}:${scan.matches.length}`);
+        out.push(`${displayPath(file)}:${scan.matches.length}`);
         continue;
       }
 
@@ -562,7 +581,7 @@ export const grepTool: BuiltinTool = {
               break;
             }
             const lineNo = showLineNumbers ? `${lineIndexAt(offsets, m.index) + 1}:` : '';
-            out.push(`${file}:${lineNo}${clipLine(m[0])}`);
+            out.push(`${displayPath(file)}:${lineNo}${clipLine(m[0])}`);
           }
           continue;
         }
@@ -584,7 +603,7 @@ export const grepTool: BuiltinTool = {
               break;
             }
             const lineNo = showLineNumbers ? `${i + 1}:` : '';
-            out.push(`${file}:${lineNo}${clipLine(m[0])}`);
+            out.push(`${displayPath(file)}:${lineNo}${clipLine(m[0])}`);
           }
         }
         continue;
@@ -614,7 +633,7 @@ export const grepTool: BuiltinTool = {
           const isMatch = matchSet.has(i);
           const sep = isMatch ? ':' : '-';
           const lineNo = showLineNumbers ? `${i + 1}${sep}` : '';
-          out.push(`${file}${sep}${lineNo}${clipLine(scan.lines[i] ?? '')}`);
+          out.push(`${displayPath(file)}${sep}${lineNo}${clipLine(scan.lines[i] ?? '')}`);
         }
       }
     }
@@ -636,7 +655,7 @@ export const grepTool: BuiltinTool = {
       oversizeSkipped.length > 0
         ? `\n(${oversizeSkipped.length} file(s) skipped: larger than the ` +
           `${MAX_FILE_SIZE_BYTES / (1024 * 1024)}MB scan cap and NOT searched — ` +
-          `matches in them, if any, are not shown:\n${oversizeSkipped.join('\n')})`
+          `matches in them, if any, are not shown:\n${oversizeSkipped.map(displayPath).join('\n')})`
         : '';
 
     if (!anyMatch) {
@@ -707,7 +726,12 @@ export const grepTool: BuiltinTool = {
     // (rows we collected or were mid-emitting) say "exist"; a mere early scan
     // stop (unscanned files remain, L21) only says "may exist".
     const displayTruncated = limited && out.length > offset + headLimit;
-    let content = capped.join('\n');
+    // files_with_matches rows ARE bare paths, so they are kept raw in `out`
+    // (structuredOutput.filenames must stay machine-usable) and escaped only
+    // here, at render time — see displayPath.
+    let content = (
+      outputMode === 'files_with_matches' ? capped.map(displayPath) : capped
+    ).join('\n');
     if (displayTruncated || matchesCut) {
       content +=
         `\n(results truncated at head_limit=${headLimit}; more matches exist` +
