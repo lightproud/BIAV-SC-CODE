@@ -489,10 +489,32 @@ export function encodeOpenAIRequest(
   // required`), so only wire-safe schemas make it into `tools`.
   const isWireSafeSchema = (s: unknown): boolean =>
     typeof s === 'object' && s !== null && !Array.isArray(s);
-  const customTools = (req.tools ?? []).filter(
+  const declaredTools = req.tools ?? [];
+  const customTools = declaredTools.filter(
     (t): t is APIToolDefinition =>
       'input_schema' in t && isWireSafeSchema(t.input_schema),
   );
+  // ...but REPORT the malformed drops (audit wave 19). Dropping a
+  // server-declared typed entry is by design and stays silent; dropping a tool
+  // that DID declare an `input_schema` which failed the wire-safety check is a
+  // caller/MCP-side bug, and it was silent on every channel: the model is never
+  // told the tool exists (so it simply never calls it — the host sees "the
+  // agent ignores my tool", not a failure), and the only diagnostic this
+  // function emitted, the tool-name warning below, is computed from the
+  // SURVIVORS, so a dropped entry could not appear in it. With one such tool
+  // the whole `tools` key vanishes from the body without a single line
+  // anywhere. Twin of the capability-degradation rule above: reported, never
+  // silent.
+  const malformedTools = declaredTools.filter(
+    (t) => 'input_schema' in t && !isWireSafeSchema((t as APIToolDefinition).input_schema),
+  );
+  if (malformedTools.length > 0) {
+    debug?.(
+      `openai transport: WARNING dropped ${malformedTools.length} tool(s) whose input_schema ` +
+        `is not a JSON-schema object (null / array / primitive); the model is never told ` +
+        `they exist: ${malformedTools.map((t) => t.name).join(', ')}`,
+    );
+  }
   const tools =
     customTools.length > 0
       ? customTools.map((t: APIToolDefinition) => ({
@@ -1030,6 +1052,20 @@ export class OpenAIStreamTranslator {
     // (or one whose id never arrived) reaches finish() unemitted and is opened
     // here, with a synthetic id as the best-effort fallback. Runs before the
     // orphan pass so a late-flushed sibling is a valid merge target.
+    //
+    // NOTE (audit wave 19, investigated and left as-is): the gate is "id OR
+    // name", so a buffer that collected an id but never a NAME is opened with
+    // `name: ''` — a block the engine cannot dispatch, which is exactly what
+    // pass 2 below refuses to mint. It is reachable by the mirror of pass 2's
+    // own 待裁④ scenario (a gateway splitting ONE call across an index-LESS id
+    // fragment and an index-only name/args fragment), where the measured
+    // output is TWO blocks: `{id:'call_abc', name:''}` plus
+    // `{id:'call_0', name:'get_weather'}`. Tightening the gate to require a
+    // name is NOT done here because the id-only tolerance is deliberately
+    // pinned by tests/openai-mutation-kills-r5.test.ts ("a tool_call delta
+    // WITHOUT a function member is tolerated ... id still adopted"), which
+    // asserts the block IS emitted for a lone id-only fragment. Changing it
+    // needs a ruling on which of the two behaviours is intended.
     for (const [key, buf] of this.toolBuffers) {
       if (buf.emitted) continue;
       if (buf.id === undefined && buf.name === '') continue; // orphans: pass 2

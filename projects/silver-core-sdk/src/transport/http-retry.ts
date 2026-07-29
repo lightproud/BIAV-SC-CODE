@@ -18,7 +18,13 @@
  * twice by hand to stay honest.
  */
 
-import { AbortError, APIConnectionError, APIStatusError, isAbortError } from '../errors.js';
+import {
+  AbortError,
+  APIConnectionError,
+  APIStatusError,
+  ConfigurationError,
+  isAbortError,
+} from '../errors.js';
 import type { RetryInfo } from '../internal/contracts.js';
 import { SDK_USER_AGENT } from '../version.js';
 
@@ -78,6 +84,19 @@ export function describeNetworkFailure(err: unknown): string {
     cur = (cur as { cause?: unknown }).cause;
   }
   return head;
+}
+
+/** True when `value` parses as an absolute URL — i.e. when `fetch`'s own
+ *  internal `new URL(input)` would accept it. Deliberately scheme-agnostic:
+ *  `new URL` takes ANY scheme, so a custom-scheme endpoint behind an injected
+ *  `provider.fetch` is not rejected here. */
+function isParseableUrl(value: string): boolean {
+  try {
+    new URL(value);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 /** Abortable sleep; rejects with AbortError when the signal fires. */
@@ -327,6 +346,24 @@ export async function requestWithRetries(req: RetryableRequest): Promise<Accepte
     } catch (err) {
       releaseSignals();
       if (callerSignal?.aborted) throw new AbortError();
+      // An UNPARSEABLE endpoint is a permanent CONFIG fault, not a transient
+      // network one, and no amount of backoff fixes it — but every fetch throw
+      // below is classified as retryable, so a baseUrl typo that forgets the
+      // scheme ('api.example.com/v1') spent the whole budget re-issuing a POST
+      // that never left the process. Measured with maxRetries:2 — 3 attempts,
+      // ~2.0s, on BOTH arms; at the default maxRetries:10 that is 11 attempts
+      // and 2.5-5 minutes of backoff per turn before the typo surfaces.
+      // Checked only AFTER the request already failed, and only for the shape
+      // `new URL` itself rejects: a caller-injected `provider.fetch` that
+      // resolves a non-absolute endpoint on its own succeeds and never reaches
+      // here, so the injection seam is untouched.
+      if (!isParseableUrl(endpoint)) {
+        throw new ConfigurationError(
+          `Invalid endpoint URL "${endpoint}": ${errorMessage(err)}. Check ` +
+            `provider.baseUrl — an ABSOLUTE URL (e.g. https://api.example.com) ` +
+            `is required; a bare host or a path is not.`,
+        );
+      }
       // Connection failure or per-attempt timeout: retryable.
       if (retryBudget.used < maxRetries) {
         retryBudget.used += 1;
