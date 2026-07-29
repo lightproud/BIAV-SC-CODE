@@ -12,6 +12,11 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.4.1 — 2026-07-29
+
+Lockstep alignment with silver-core-agent-sdk 1.4.1 (`setServers()` incremental
+diff, BPT finding D). This package is untouched.
+
 ## 1.4.0 — 2026-07-28
 
 Audit wave 17 reached this package directly — two defects that only a test

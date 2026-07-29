@@ -16,6 +16,32 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.4.1 — 2026-07-29
+
+`setServers()` is an incremental diff, not a full rebuild (BPT finding D).
+
+- `mcp/registry.ts` ran `closeAll()` -> replace the whole entry array ->
+  `connectAll()` on every call, so appending ONE server disconnected and
+  re-handshook every other server — the in-process `sdk` ones the current
+  turn's tools are served by included. One `load_skill` mid-conversation made
+  the entire tool surface flicker. Now a server whose name AND config are
+  unchanged keeps its live entry verbatim (connection, tools, `serverInfo`,
+  `enabled` flag); only what the new set really drops is closed, only what it
+  really adds connects. Config equality is structural, with an
+  explicitly-`undefined` optional field treated as absent and any non-plain
+  value (notably the `sdk` transport's `instance`, whose `tools` Map holds
+  handler closures) compared by identity — a rebuilt instance reconnects,
+  which is the safe direction.
+- Consequence for callers: the `added`/`removed` of `McpSetServersResult` now
+  describe real work. A kept server is genuinely untouched, so an empty
+  `added` means "that name was already registered", not "the diff was erased
+  by a rebuild".
+- Behavior note: a server that survives the swap unchanged keeps its
+  `setEnabled(false)` state instead of being silently re-enabled. A server
+  whose config changed is a new registration and starts enabled, as before.
+- `closeAll()` is unchanged in effect: it now delegates to the same
+  retire-then-close helper `setServers()` uses for the abandoned subset.
+
 ## 1.4.0 — 2026-07-28
 
 Audit wave 17 — four lenses no earlier wave had used: untrusted tool output as

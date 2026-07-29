@@ -210,9 +210,10 @@ class SharedMcpRegistry implements McpRegistry {
     );
   }
   setServers(): Promise<void> {
-    // setServers() internally closes every connection before swapping the set
-    // — from a borrower that is exactly the #1 red line, so it is refused
-    // loudly rather than ignored quietly.
+    // setServers() re-points the server set and closes every connection the new
+    // set drops — from a borrower that is exactly the #1 red line (one session's
+    // narrower map would disconnect servers its siblings are mid-turn on), so it
+    // is refused loudly rather than ignored quietly.
     return Promise.reject(
       new ConfigurationError(
         'setMcpServers is not available on a SessionManager-managed query: ' +
