@@ -16,6 +16,57 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 2.2.2 — 2026-07-29
+
+Tool-call parameter robustness: a follow-up sweep for the same family as the
+2.2.1 BPT case — tool params that SILENTLY produce a wrong result (or crash the
+whole call) instead of working or erroring diagnosably. Seven fixes from a
+three-agent audit of the full tool surface; the permission-flag lens (a
+mutating tool mislabeled `readOnly` would auto-approve in every mode) came back
+clean, as did mount/boundary enforcement and worktree/plan state.
+
+- **Grep `glob: "!*.test.ts"` emptied the corpus (HIGH).** A lone negative glob
+  has nothing to subtract from — fast-glob returns `[]` for a pattern list with
+  no positive member — so ripgrep's `-g '!x'` idiom ("search everything EXCEPT
+  x", which the "built on ripgrep" description invites and `normalizeGlobDepth`
+  models by passing `!` through) reported "No matches found" over files that
+  plainly contained the needle. Now a lone negation enumerates `['**/*', '!x']`,
+  excluding from all files; the type-extension post-filter still narrows a
+  `glob:'!x' + type:'js'` call. `Glob` had the identical bug for a lone-negative
+  `pattern` (`!**/*.md` → "No files found") and the identical fix.
+- **Bash `run_in_background: "true"` (a string) silently ran FOREGROUND (HIGH).**
+  The strict `=== true` check let a string fall through to inline execution, so
+  a long-running server the model meant to detach was run inline and then
+  SIGTERM/SIGKILL'd at the 120s timeout — no diagnostic. A non-boolean is now
+  rejected with a message naming the received type; `undefined` is the ordinary
+  foreground path.
+- **Bash `timeout: "5000"` (a string) silently used the 120s default (MED).** A
+  model that believed it had capped a dangerous command at 5s ran it under the
+  default instead. A present-but-non-positive-finite-number `timeout` is now
+  rejected diagnosably (`undefined` still means "use the default"). Both Bash
+  fixes follow the 2.2.1 diagnose-don't-guess stance Read/Grep already take.
+- **WebSearch crashed on a `null` backend element (MED).** `filterResults` /
+  `renderResults` run OUTSIDE the backend try/catch and dereference `r.url`, so
+  a single `null` in the results array threw a bare TypeError that dispatch
+  turned into a generic "Tool WebSearch failed" — losing every real hit. Null /
+  non-object entries are now dropped before filter/render, matching the tool's
+  existing lax-backend tolerance and the per-element guards in
+  askuserquestion / todo.
+- **AskUserQuestion answer text could forge extra record lines (LOW).** The
+  line-oriented answer digest embedded host-handler strings without collapsing
+  newlines, so an answer carrying `\n` forged a second `Header: value` record —
+  the same forgery WebSearch's `renderResults` was hardened against in 1.4.0.
+  `header` and each answer now pass through `singleLine`.
+- **memory tool surfaced a non-Error store rejection as `content: undefined`
+  (MED).** An injected `MemoryStore` (the documented database/intranet seam)
+  rejecting with a non-Error value (`throw 'db down'`, a driver `{code}` object)
+  hit `(e as Error).message` → `undefined`, so the failure rode out as an
+  is_error result with no reason and an undefined content dispatch does not
+  normalize. Now `String()`-coerced — the same L74 non-Error guard the sibling
+  host-callback tools (contract-suite / resources / webfetch / websearch /
+  askuserquestion) already carry; the runtime memory tool was the one miss.
+- `tests/tool-param-robustness.test.ts` (11 tests) locks all seven.
+
 ## 2.2.1 — 2026-07-29
 
 Input-shape diagnostics: a required parameter that vanishes between the model

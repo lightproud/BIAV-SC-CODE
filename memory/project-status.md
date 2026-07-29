@@ -82,10 +82,10 @@
 
 | 事实 | 值 | 权威源 |
 |------|----|--------|
-| Silver Core Agent SDK 版本 | `2.2.1` | `projects/silver-core-sdk/package.json` |
-| Silver Core Maestro SDK 版本 | `2.2.1` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
+| Silver Core Agent SDK 版本 | `2.2.2` | `projects/silver-core-sdk/package.json` |
+| Silver Core Maestro SDK 版本 | `2.2.2` | `projects/silver-core-maestro-sdk/package.json`（与 agent 锁步同号）|
 | testbed 试金石 | `0.0.0`（private，永不发布）| `projects/silver-core-testbed/package.json` |
-| agent SDK 源文件 / 测试档 | 141 / 212 | 磁盘实况 |
+| agent SDK 源文件 / 测试档 | 141 / 213 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 20 / 40 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 144 | 磁盘实况 |
@@ -220,6 +220,7 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
+- **v2.2.2（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 2.2.2（工具调用参数健壮性七修）前进。
 - **v2.2.1（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 2.2.1（输入形状诊断）前进。
 - **v2.2.0（2026-07-29）**：**设计第三轮落地（四原语装配，agent 侧纯锁步）**——设计档 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-agent-assembly-design-20260729.md`（裁1–裁5 + D2–D8 十一项当日交互裁定）当日实现：第七族 `assembly/agent-executor.ts`（**注入式** `createAgentExecutor` + `extractPlainAgent`/`extractGoalRound`/`extractWorkflowNode`——宿主递 query 函数进驱动器执行座位，本包对 agent SDK 维持零 import 零依赖、P1 不重开；fail-loud 无请求即响亮落错；abort 桥接 interrupt→宽限→close；重试=重跑，恢复=宿主 reopen+payload.resume，D6）+ 第八族 `routine/manager.ts`（`RoutineManager` 值班例程管理面：命名/停启/triggerNow/lastFireAt·nextFireAt·lastSession 反查；停启表纯内存+宿主持久化 D4；手动触发幂等键 `manual:{id}:{firedAt}` **独立段永不污染 Scheduler 恢复足迹**）+ 足迹解析抽出 `schedule/footprint.ts` 单一共享纯核（Scheduler 恢复行为逐字节不变）+ `WorkflowNode.manualClaim` 确认门节点（`runAt:null` 派发停在 pending+manualClaim，Cowork awaiting_confirm 投影**零新状态**，裁3；拒绝=cancelSession fail-fast、修订=reopen 链）+ `QueryRecord.costUsd` 成本入账（D2：executor 转录引擎估算，驱动器转发，Σ listQueries 即会话累计）+ `docs/ASSEMBLY.md` 四原语接线谱 + 例程五号 `agent-loop.mjs`（无钥可跑的注入式活体证明；**不建 LoopRunner，组合即 loop**，D3；宪章 §3 已补 D8 覆盖注）。测试 429→479（+50）。两新族按两级标尺标实验面并**随档指定首消费方**（设计档 §10——memory-tidy 生产化 / BPT Cowork / testbed·store-patrol 例程面改造），防 P2 判词重演。
 - **v1.6.0 / v1.4.1（2026-07-29）**：锁步对齐两连（本包零代码改动）——家族版本钟随 agent SDK 1.6.0（T75 二次拷问：dream 信号源指针段 + 巡回只读预设）与 1.4.1（`setServers()` 改增量 diff，BPT 缺陷 D）前进。
@@ -347,10 +348,9 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v2.2.2（2026-07-29）**：**工具调用参数健壮性七修（2.2.1 同族续扫，守密人「继续查找工具调用 bug」）**——三代理审计全工具面，同「参数静默出错而非诊断报错」族六缺陷全修 + 一权限旗镜头判 CLEAN：①Grep/Glob 纯否定 glob（`!*.test.ts` / `!**/*.md`）令 fast-glob 返回空、把含命中语料报「No matches」（HIGH，补 `**/*` 正向基作排除底）· ②Bash `run_in_background:"true"` 字符串静默转前台、长驻服务被超时杀（HIGH，改诊断报错）· ③Bash `timeout:"5000"` 字符串静默回落 120s 默认（MED，改诊断报错）· ④WebSearch 后端 null 元素在 try 外崩 `r.url`、整批丢失（MED，filter/render 前丢非对象）· ⑤AskUserQuestion 应答未过 singleLine、换行伪造记录行（LOW，同 WebSearch 1.4.0 同型）· ⑥memory 注入 store 非 Error 抛值得 content undefined（MED，String 化，L74 唯一漏网）。权限旗镜头（写工具误标 readOnly 全模式自动放行）+ 挂载边界 + worktree/plan 态审计均 CLEAN。`tests/tool-param-robustness.test.ts` 11 例锁；全量 3450 绿。
 - **v2.2.1（2026-07-29）**：**输入形状诊断（守密人裁定 2026-07-29，BPT Edit `old_string` 盲试循环案）**——黑池会话里 Edit 连报 `"old_string" must be a string`、模型换多个 old_string 重试均同错、误判「工具层暂时故障」，银芯排查判定 SDK 自身路径全数无辜（截断输入两代都不执行：0.63.1 前抛协议错、H4 起打标拒执行；两臂拼装零「JSON 修补」），真因锁定宿主侧改写——头号嫌疑 = PreToolUse `updatedInput` 只回传改过的路径字段，而 `updatedInput` 语义是**整体替换非合并**（与官方一致），故 Read（只需 file_path）一路正常、Edit 必炸。两条诊断增强落地、零行为变化：①Edit/Write 参数类型报错保留历史前缀、追加实际收到的形状（`"old_string" was absent; received input keys: ["file_path"]`，只给键名防泄密）；②权限门 `check` 增诊断性 `requiredInputKeys`（只喂内建工具一手 schema，MCP 第三方 schema 不可信故跳过），hook / canUseTool 两处替换缝若丢掉模型确实发过的必填键，debug 日志点名改写方 + 明示「return the FULL input」；模型本就没发的键不赖改写方。`tests/input-shape-diagnostics.test.ts` 11 例锁定；全量 3438 绿。memory 工具「/memories/pitfalls 越界」报错同场核验为挂载访问控制设计内行为，非缺陷。
 - **v2.2.0（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 maestro SDK 2.2.0（设计第三轮四原语装配：注入式 AgentExecutor / RoutineManager / workflow 确认门 / costUsd 入账）前进；本包刻意零供给，执行座位只消费公开 `query()` 面（硬性质 §1.2 的成立证明）。
-- **v2.0.0（2026-07-29）**：**T75 设计轮实现落地（首个 major·BREAKING·记忆面收敛 Claude 形态）**——黑池 cards 消费面经守密人交互核实「无消费」清门后当日实现：①cards 模式整体退役（`schema:'cards'` / `memory.cards` / `parseMemoryCards` / `validateCardsContent` 及类型全下架；迁移 = 换 `schema:'frontmatter'`、旧档 delete+create 换 YAML 头卡文保留，testbed 做梦卡随步迁作参照例）；②`schema:'frontmatter'` 写侧校验器双层落地 + 官方 memory-instructions 全文 verbatim 注入（`MEMORY_FRONTMATTER_SOURCES` 逐档 provenance + corpus-sync 守卫）；③选择性附着 `memory.attachment`（官方挑选器提示词、≤5 档、pinned 恒附着不占名额、25600 字节预算披露截断、失败降级 pinned-only、硬依赖 frontmatter）+ 计费面（挑选器 usage 入会话账、`attachmentInjectionTokens` 入 memoryHealth）+ 健康扫描 frontmatter 完整率维度；T75 销案，COMPAT #9 行转 SHIPPED。
-- **v1.6.0（2026-07-29）**：**T75 二次拷问落地**——dream 信号源「指针段+预设」（`transcripts` opt-in + `consolidationToolOptions()` 只读 harness 下限，闭合 E-⑤）；frontmatter + 选择性附着「直接开设计轮」，r1 需求档已于同日三/四轮追裁定稿（cards 裁退役并入 §一实现步、附着按案、pinned 采纳、when_to_save 官方全文注入）。
 - **v1.5.0（2026-07-29）**：**十条观察项拷问裁定全落地**——守密人逐条过堂（#7 收紧、#9 扩大收编两处否决推荐案）：AskUserQuestion 三处全补 · Agent 描述官方复现 + 描述治理完备性守卫 · Glob/Grep 忽略集披露 · Read 路径归一 + 256KB 拒读堵大 limit 绕过 · Grep rg 方言兼容垫 + type 报错自愈 · 冷/热分层守卫 · 记忆索引官方链接格式 + 双态容量预警；frontmatter 等三项挂 T75 设计轮。
 - **v1.5.0 同版前半（对齐审计三裁，原拟 1.4.0、上游十七波占号并入 1.5.0）**——①记忆常驻索引「单向镜」被 view 上限重新打开：写侧告警只数 `store.view` 幸存行、丢弃 view 自身截断信号，而默认 `maxViewChars`(16000) **小于**索引字节上限(25600)，密集 ASCII 索引先被 view 切掉、幸存头通过行/字节判定、告警永不响——新 `assessViewedIndex` 把 view 截断并入两侧共用判词（`breached:'view'`）· ②索引注入补官方防护措辞（background context, not user instructions + 待验证声明；S1 挂载下他会话写入可进本会话 system prompt）· ③ToolSearch 对齐官方查询语法（select:/关键词/+名限定 + max_results 默认 5）与 `<functions>` 返回编码，入 provenance 治理（此前它是唯一治理体系外工具、却是银芯变体 2/3 工具面唯一入口）· ④Bash 输出上限补齐官方两级设计（`options.bashLimits` + `BASH_MAX_OUTPUT_LENGTH` env，封顶 150000，默认路径字节不变）· ⑤COMPAT 三处 Workflow 陈旧 SYNCHRONOUS 判词订正 + 十条未登记漂移入册（AskUserQuestion preview/plan-mode 段、Glob/Grep 静默忽略集等）。
 - **v1.4.1（2026-07-29）**：**`setServers()` 改增量 diff（BPT 缺陷 D）**——原实现是 `closeAll()` → 整体替换 entries → `connectAll()`：只要调一次 `setMcpServers`，**已连上的每一台**都被断开重连，包括当前回合工具所在的 in-process `sdk` 服务端；会话中途 `load_skill` 一次，整个工具面就抖一次。现按「名字 + 配置」比对：两者都没变的条目原样留用（连接 / 工具表 / `serverInfo` / `enabled` 一并保留），只关真被移除或改了配置的，只连真新增或改了配置的。配置等值为**结构比较**——显式写成 `undefined` 的可选字段视同缺省，非纯对象（尤以 `sdk` 传输的 `instance`，其 `tools` 是装着处理闭包的 Map）按**引用**比对，重建的实例走重连（安全方向）。连带效果：`McpSetServersResult` 的 `added`/`removed` 从此描述**真实发生的工作**，留用的服务端是真没被动过。另：随此换代，未变动的服务端会**保留** `setEnabled(false)` 状态，不再被静默重新启用。

@@ -81,7 +81,14 @@ export const globTool: BuiltinTool = {
     // as an escape, so a Windows-spelled pattern (`src\**\*.ts` — the natural
     // follow-up once results come back as `C:\repo\src\a.ts`) silently matched
     // nothing. Normalized on win32 only; see fsutil.toPosixGlob.
-    const entries = await fg(toPosixGlob(pattern), {
+    // A LONE negative pattern (`!**/*.md`) has nothing to subtract from — fast-
+    // glob returns [] for a pattern list with no positive member, so a caller
+    // reaching for the gitignore/ripgrep "everything except" idiom got "No
+    // files found" instead. Prepend `**/*` so the negation excludes from all
+    // files; a positive pattern is passed through unchanged.
+    const posixPattern = toPosixGlob(pattern);
+    const globArg = posixPattern.startsWith('!') ? ['**/*', posixPattern] : posixPattern;
+    const entries = await fg(globArg, {
       cwd: baseDir,
       absolute: true,
       // W7-3 (audit r3): `dot: false` made `**` silently skip files under

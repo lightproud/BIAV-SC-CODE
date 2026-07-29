@@ -12,6 +12,14 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 2.2.2 — 2026-07-29
+
+Lockstep alignment only — silver-core-agent-sdk 2.2.2 (tool-call parameter
+robustness: negation globs no longer empty Grep/Glob, mis-typed Bash
+run_in_background/timeout are rejected diagnosably, WebSearch survives a null
+backend element, AskUserQuestion answers can't forge record lines, and the
+memory tool coerces a non-Error store rejection). No maestro-side changes.
+
 ## 2.2.1 — 2026-07-29
 
 Lockstep alignment only — silver-core-agent-sdk 2.2.1 (input-shape

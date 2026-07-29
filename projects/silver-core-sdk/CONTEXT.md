@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `2.2.1`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.2.1`
+**当前版本 `2.2.2`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `2.2.2`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v2.2.2（2026-07-29）：工具调用参数健壮性七修（2.2.1 同族续扫，三代理审计全工具面）**——同 2.2.1 那一族「参数静默出错而非诊断报错」的缺陷：①Grep `glob:"!*.test.ts"` 纯否定 glob 令 fast-glob 返回空、把含命中的语料报成「No matches」（HIGH，补 `**/*` 正向基作排除底；Glob 纯否定 `pattern` 同 bug 同修）· ②Bash `run_in_background:"true"`（字符串）经严格 `=== true` 静默转前台、长驻服务被超时杀死（HIGH，改诊断报错）· ③Bash `timeout:"5000"`（字符串）静默回落 120s 默认、自以为设了 5s 紧箍（MED，改诊断报错）· ④WebSearch 后端数组含 `null` 元素在 try 外崩 `r.url`、整批结果丢失（MED，filter/render 前丢非对象元素）· ⑤AskUserQuestion 应答文本未过 singleLine、换行伪造额外记录行（LOW，同 WebSearch 1.4.0 已修同型）· ⑥memory 注入 store 非 Error 抛值 `(e as Error).message` 得 undefined、报错无因且 content undefined（MED，String 化，L74 同族唯一漏网）。权限旗镜头（写工具误标 readOnly 会全模式自动放行）审计判 CLEAN。`tests/tool-param-robustness.test.ts` 11 例锁定；全量 3450 绿。
 
 **v2.2.1（2026-07-29）：输入形状诊断——「参数在路上被谁弄丢」一眼可辨（守密人裁定，BPT Edit old_string 盲试循环案）**——Edit/Write 参数类型报错在历史文案前缀不变的前提下追加实际收到的形状（缺席字段的种类 + 键清单，只给键名不给值）；权限门 `check` 新增诊断性 `requiredInputKeys`（tool-dispatch 只喂内建工具 schema），PreToolUse hook / canUseTool 两处 `updatedInput` 整体替换若丢掉模型确实发过的必填键，debug 日志点名改写方并明示「replace 非 merge」。零行为变化；11 项新测试锁定。
 **v2.2.0（2026-07-29）：锁步对齐**——本包零代码改动，随 maestro SDK 2.2.0（设计第三轮：注入式 AgentExecutor / RoutineManager 例程管理面 / workflow 确认门 / query 行成本入账）前进。本包刻意零供给：执行座位只消费公开 `query()` 面——硬性质 §1.2 成立的证明，不是缺口。

@@ -211,7 +211,19 @@ export const webSearchTool: BuiltinTool = {
       return errorResult('WebSearch failed: backend returned an unexpected value.');
     }
 
-    const filtered = filterResults(raw, allowed.value, blocked.value);
+    // Drop null / non-object entries BEFORE filterResults / renderResults: both
+    // run OUTSIDE the backend try/catch above and dereference `r.url`, so a
+    // single `null` in the array threw a bare TypeError that dispatch turned
+    // into a generic "Tool WebSearch failed" — losing every real hit in the
+    // batch. This tool already tolerates a lax backend (String()-wrapping an
+    // omitted field); a null element is the same lax-backend noise, dropped the
+    // same way the sibling per-element guards (askuserquestion / todo) drop
+    // malformed members. Object entries missing url/title still render (String()).
+    const results = raw.filter(
+      (r): r is WebSearchResult => r !== null && typeof r === 'object',
+    );
+
+    const filtered = filterResults(results, allowed.value, blocked.value);
     ctx.debug(`WebSearch: "${query}" -> ${raw.length} results, ${filtered.length} after filter`);
     return {
       content: renderResults(filtered),

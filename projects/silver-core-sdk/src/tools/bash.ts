@@ -598,13 +598,44 @@ async function execute(
       ctx.debug('Bash: dangerouslyDisableSandbox ignored (no sandbox active on this context)');
     }
 
+    // Diagnose a mis-shaped timeout instead of silently substituting the
+    // default: a model that sends `timeout: "5000"` (a string — a routine
+    // gateway/model deformation) believed it had capped a dangerous command at
+    // 5s, while the old silent fallback ran it under the 120s default. An
+    // out-of-contract value is named and rejected (the same diagnose-don't-guess
+    // stance Read/Grep take on their numeric params); `undefined` still means
+    // "use the default", the only honest silent case.
     const rawTimeout = input['timeout'];
+    if (
+      rawTimeout !== undefined &&
+      (typeof rawTimeout !== 'number' || !Number.isFinite(rawTimeout) || rawTimeout <= 0)
+    ) {
+      return {
+        content:
+          `Bash: "timeout" must be a positive, finite number of milliseconds when ` +
+          `provided (received ${JSON.stringify(rawTimeout)} of type ${typeof rawTimeout}).`,
+        isError: true,
+      };
+    }
     const timeoutMs =
-      typeof rawTimeout === 'number' &&
-      Number.isFinite(rawTimeout) &&
-      rawTimeout > 0
+      typeof rawTimeout === 'number'
         ? Math.min(rawTimeout, MAX_TIMEOUT_MS)
         : DEFAULT_TIMEOUT_MS;
+
+    // Same stance for run_in_background: `"true"` (a string) silently fell
+    // through the strict `=== true` check below to FOREGROUND execution, so a
+    // long-running server the model meant to detach was run inline and then
+    // SIGTERM/SIGKILL'd at the timeout — with no diagnostic. Reject a non-boolean
+    // instead of guessing; `undefined` is the ordinary foreground path.
+    const rawBackground = input['run_in_background'];
+    if (rawBackground !== undefined && typeof rawBackground !== 'boolean') {
+      return {
+        content:
+          `Bash: "run_in_background" must be a boolean when provided ` +
+          `(received ${JSON.stringify(rawBackground)} of type ${typeof rawBackground}).`,
+        isError: true,
+      };
+    }
 
     // Background launch (v0.5): detach via the ShellManager and ack with the
     // shell id; the model polls with BashOutput / stops with KillShell.

@@ -494,8 +494,18 @@ export const grepTool: BuiltinTool = {
       // Explicit file target is searched regardless of glob/type filters.
       files = [searchPath];
     } else {
+      // A LONE negative glob (`!*.test.ts`) needs a positive base to subtract
+      // from: fast-glob returns [] for a pattern list with no positive member,
+      // so ripgrep's `-g '!x'` idiom ("search everything EXCEPT x", which the
+      // description's "built on ripgrep" invites and normalizeGlobDepth models
+      // by passing `!` through) silently emptied the corpus and reported "No
+      // matches" over files that plainly contained the needle. Prepend `**/*`
+      // so the negation excludes from all files; the type-extension post-filter
+      // below still narrows a `glob:'!x' + type:'js'` call to .js.
       const patterns = globPattern
-        ? [globPattern]
+        ? globPattern.startsWith('!')
+          ? ['**/*', globPattern]
+          : [globPattern]
         : (typePatterns ?? ['**/*']);
       const rawEntries = await fg(patterns, {
         cwd: searchPath,
