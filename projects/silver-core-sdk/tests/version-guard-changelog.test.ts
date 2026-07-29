@@ -15,7 +15,12 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
-import { latestChangelogVersion, compareVersions } from '../scripts/check-version-bump.mjs';
+import {
+  latestChangelogVersion,
+  compareVersions,
+  classifyBump,
+  VERSION_OVERRIDE_TRAILER,
+} from '../scripts/check-version-bump.mjs';
 
 const PKG = join(__dirname, '..');
 
@@ -108,5 +113,65 @@ describe('real-repo invariant (would red if drift shipped)', () => {
     const clVersion = latestChangelogVersion(readFileSync(join(PKG, 'CHANGELOG.md'), 'utf8'));
     expect(sdkVersion).toBe(pkgVersion);
     expect(clVersion).toBe(pkgVersion);
+  });
+});
+
+/**
+ * Keeper ruling 2026-07-29 — which DIGIT a bump moves.
+ *
+ * "以后版本号默认动最后一个。功能级别动中间数字。首位数字只有我要求才动。"
+ * (default to the last digit; feature-level moves the middle one; the first
+ * one moves only when the keeper asks.)
+ *
+ * Only part of that is machine-checkable, and the split matters: no guard can
+ * tell a fix from a feature, so "default to patch" stays a discipline the
+ * author applies. What a guard CAN hold is the step SHAPE and the first-digit
+ * gate — a major bump must be a deliberate, auditable line in the history
+ * rather than a side effect of routine work.
+ */
+describe('bump classification (keeper ruling 2026-07-29)', () => {
+  it('names the digit that moved', () => {
+    expect(classifyBump('1.8.0', '1.8.1')).toMatchObject({ kind: 'patch', ok: true });
+    expect(classifyBump('1.8.0', '1.9.0')).toMatchObject({ kind: 'minor', ok: true });
+    expect(classifyBump('1.8.0', '2.0.0')).toMatchObject({ kind: 'major', ok: true });
+    // Pre-1.0 is not a special case: 0.x -> 1.0.0 is still a first-digit move.
+    expect(classifyBump('0.99.0', '1.0.0')).toMatchObject({ kind: 'major', ok: true });
+  });
+
+  it('rejects a skipped number — it cannot be reclaimed later', () => {
+    // The family ships lockstep and consumers pin by version, so a version
+    // that never existed is a permanent hole in the ledger.
+    const r = classifyBump('1.8.0', '1.8.3');
+    expect(r.ok).toBe(false);
+    expect(r.reason).toContain('exactly 1');
+  });
+
+  it('rejects a bump whose lower digits did not reset', () => {
+    // 1.9.2 straight from 1.8.0 means two edits landed, or one file was
+    // hand-edited and another was not — the exact shape the three-way
+    // reconciliation exists to catch, seen one step earlier.
+    expect(classifyBump('1.8.0', '1.9.2')).toMatchObject({ ok: false, kind: 'minor' });
+    expect(classifyBump('1.8.0', '2.1.0')).toMatchObject({ ok: false, kind: 'major' });
+  });
+
+  it('rejects a no-op and an unparseable pair rather than passing them through', () => {
+    expect(classifyBump('1.8.0', '1.8.0').ok).toBe(false);
+    expect(classifyBump('1.8', '1.9').ok).toBe(false);
+    expect(classifyBump(undefined, '1.9.0').ok).toBe(false);
+  });
+
+  it('publishes the override trailer the guard actually looks for', () => {
+    // The guard greps the commit message for this exact string; a test that
+    // hardcoded its own copy would let the two drift apart silently.
+    expect(VERSION_OVERRIDE_TRAILER).toBe('Version-Bump-Override:');
+  });
+
+  it('the repo\'s own current version is reachable by a clean step', () => {
+    // Guards against shipping a version shape the guard itself would reject.
+    const pkg = JSON.parse(readFileSync(join(PKG, 'package.json'), 'utf8')) as { version: string };
+    const [maj, min, pat] = pkg.version.split('.').map(Number);
+    const prior =
+      pat > 0 ? `${maj}.${min}.${pat - 1}` : min > 0 ? `${maj}.${min - 1}.0` : `${maj - 1}.0.0`;
+    expect(classifyBump(prior, pkg.version).ok).toBe(true);
   });
 });

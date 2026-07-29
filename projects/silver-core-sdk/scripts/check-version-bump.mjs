@@ -73,6 +73,68 @@ export function compareVersions(a, b) {
   return 0;
 }
 
+/**
+ * Classify a bump as major / minor / patch, or report WHY it is not a clean
+ * single step (keeper ruling 2026-07-29).
+ *
+ * The keeper's rule: the LAST digit is the default (fixes), the MIDDLE digit
+ * is for feature-level change, and the FIRST digit moves only when the keeper
+ * asks. Only part of that is machine-checkable — no guard can tell a fix from
+ * a feature, so "default to patch" stays a discipline the author applies. What
+ * IS checkable is the shape of the step, and that is what this enforces:
+ *
+ *   - exactly one component increases,
+ *   - by exactly one,
+ *   - and every component below it resets to 0.
+ *
+ * So 1.8.0 -> 1.8.1 / 1.9.0 / 2.0.0 are clean; 1.8.0 -> 1.8.3 (skipped a
+ * number), 1.8.0 -> 2.1.0 (two components moved), and 1.8.0 -> 1.9.2 (lower
+ * component did not reset) are not. Those shapes are almost always a typo or a
+ * hand-edit that missed a file — the family ships lockstep, so a skipped
+ * number cannot be silently reclaimed later.
+ *
+ * Returns {kind, ok, reason}. Pure; exported for tests.
+ */
+export function classifyBump(before, after) {
+  const parse = (v) => {
+    const m = /^(\d+)\.(\d+)\.(\d+)$/.exec(String(v ?? '').trim());
+    return m ? [Number(m[1]), Number(m[2]), Number(m[3])] : null;
+  };
+  const a = parse(before);
+  const b = parse(after);
+  if (a === null || b === null) {
+    return { kind: null, ok: false, reason: `unparseable version pair (${before} -> ${after})` };
+  }
+  const names = ['major', 'minor', 'patch'];
+  const moved = [0, 1, 2].filter((i) => a[i] !== b[i]);
+  if (moved.length === 0) return { kind: null, ok: false, reason: 'version did not change' };
+  const first = moved[0];
+  if (b[first] !== a[first] + 1) {
+    return {
+      kind: names[first],
+      ok: false,
+      reason: `${names[first]} went ${a[first]} -> ${b[first]}; a bump moves it by exactly 1`,
+    };
+  }
+  for (let i = first + 1; i < 3; i += 1) {
+    if (b[i] !== 0) {
+      return {
+        kind: names[first],
+        ok: false,
+        reason: `${names[first]} bumped but ${names[i]} is ${b[i]}, not reset to 0`,
+      };
+    }
+  }
+  return { kind: names[first], ok: true, reason: '' };
+}
+
+/** The commit-message trailer that authorizes a first-digit (major) bump or a
+ *  non-single-step version move. This is an HONESTY mechanism, not a security
+ *  boundary — whoever writes the commit writes the trailer. It exists so the
+ *  first digit cannot move as a side effect of routine work: moving it becomes
+ *  a deliberate, auditable line in the history that names the keeper's ruling. */
+export const VERSION_OVERRIDE_TRAILER = 'Version-Bump-Override:';
+
 function git(args) {
   return execSync(`git ${args}`, { encoding: 'utf8' }).trim();
 }
@@ -195,6 +257,38 @@ function runGuard() {
     // the "version line differs" check and ships forked content under a reused
     // tag. Require a strict semver increase.
     if (versionChanged) {
+      // Keeper ruling 2026-07-29: patch by default, minor for feature-level
+      // change, major only when the keeper asks. The step SHAPE and the
+      // first-digit gate are the machine-checkable half; which of patch/minor
+      // a change deserves is the author's call and no guard can make it.
+      const bump = classifyBump(versionBefore, versionAfter);
+      let commitMsg = '';
+      try {
+        commitMsg = git('log -1 --format=%B HEAD');
+      } catch {
+        commitMsg = '';
+      }
+      const overridden = commitMsg.includes(VERSION_OVERRIDE_TRAILER);
+      if (!bump.ok && !overridden) {
+        console.error(
+          `version-bump guard FAILED: ${versionBefore} -> ${versionAfter} is not a clean ` +
+            `single step (${bump.reason}). A bump moves exactly ONE component by exactly one ` +
+            'and resets everything below it. A skipped number cannot be reclaimed later — the ' +
+            'family ships lockstep and consumers pin by version. If the move is deliberate, ' +
+            `add a "${VERSION_OVERRIDE_TRAILER} <keeper ruling>" trailer to the commit message.`,
+        );
+        process.exit(1);
+      }
+      if (bump.kind === 'major' && !overridden) {
+        console.error(
+          `version-bump guard FAILED: ${versionBefore} -> ${versionAfter} moves the FIRST ` +
+            'digit. Keeper ruling 2026-07-29: the first digit moves only when the keeper asks ' +
+            '— patch is the default, minor is for feature-level change. If the keeper did ask, ' +
+            `record it: add a "${VERSION_OVERRIDE_TRAILER} <keeper ruling>" trailer to the ` +
+            'commit message so the history says who authorized it.',
+        );
+        process.exit(1);
+      }
       const delta = compareVersions(versionAfter, versionBefore);
       if (delta !== null && delta <= 0) {
         console.error(
@@ -238,7 +332,9 @@ function runGuard() {
       '(projects/silver-core-sdk/src/ or dependencies) but package.json "version" ' +
       'is unchanged. Consumers pin npm-pack tarballs BY VERSION - same-version ' +
       'different-content builds cannot be pinned, rolled back, or audited. ' +
-      'Bump patch for fixes, minor for new capability, and add a CHANGELOG.md line.',
+      'Keeper ruling 2026-07-29: bump the LAST digit by default (fixes), the MIDDLE digit ' +
+      'for feature-level change, and the FIRST digit only when the keeper asks. ' +
+      'Add a matching CHANGELOG.md line.',
   );
   process.exit(1);
 }

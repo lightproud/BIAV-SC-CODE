@@ -67,6 +67,17 @@ src/
 2. **仿真器端到端**（`tests/integration/emulator-e2e.test.ts`）：真 fetch/HTTP/SSE/agent 环/工具落盘/MCP/会话，只把模型换成本地 Messages-API 仿真器；**零密钥、进常规 `npm test`**。
 3. **真机 smoke**（`tests/integration/live-real-api.mjs`）：真 Claude 模型自己决定调工具；从 `ANTHROPIC_API_KEY` env 读密钥（**脚本不含密钥**），不进 `npm test`。CI 侧由 `.github/workflows/silver-core-sdk.yml` 的 `live-smoke` job 手动触发（`workflow_dispatch`），用 `secrets.ANTHROPIC_API_KEY` 注入——密钥值全程不入仓库。
 
+## 版本号规则（守密人 2026-07-29 裁定）
+
+**末位 = 修复（默认档）· 中位 = 功能级变更 · 首位 = 只有守密人开口才动。** 两包锁步同号，
+故一次发版两包一起走同一步。
+
+机检切分如实标注：`scripts/check-version-bump.mjs` **分不出**「修复 vs 功能」，所以
+「默认动末位」是**作者纪律**；守卫只锁两件可机检的——① **步型必须单步**（恰一位 +1、其下归零；
+跳号事后无法回收，家族锁步且消费方按 tarball 版本 pin）；② **首位移动**须在提交信息带
+`Version-Bump-Override: <守密人裁定>` 尾行（**诚实机制、非安全边界**——写提交的人就是写尾行的人；
+它的作用是让首位不能作为日常工作的副作用悄悄移动，而必须留下一行可审计的历史）。
+
 ## 当前状态
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
