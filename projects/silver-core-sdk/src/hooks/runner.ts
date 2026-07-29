@@ -18,7 +18,7 @@
  *     field maps onto this: 'block' -> deny (with its `reason`), 'approve' ->
  *     allow (only when the same output carries no explicit permissionDecision).
  *     'defer' (v0.2) ends the turn with a deferred_tool_use. Any OTHER
- *     unrecognized permissionDecision value fails closed as a DENY, never a
+ *     unrecognized value — in EITHER field — fails closed as a DENY, never a
  *     silent allow.
  *   - continue:false wins; the FIRST non-empty stopReason is kept
  *   - systemMessage / additionalContext collected in registration order
@@ -568,7 +568,10 @@ export class DefaultHookRunner implements HookRunner {
       // ignored.
       let decision: string | undefined = hso?.permissionDecision;
       let reason = hso?.permissionDecisionReason ?? out.reason;
-      if (out.decision === 'block') {
+      // Widened for the same reason permissionDecision is: the declared union
+      // is not a runtime guarantee (see the unrecognized-value branch below).
+      const legacyDecision: string | undefined = out.decision;
+      if (legacyDecision === 'block') {
         // Legacy block -> deny; pair the recorded reason with the DENY source,
         // not any allow rationale the same output also carried (#25). The
         // hso reason only qualifies when hso itself is a (or no) deny: on a
@@ -581,11 +584,34 @@ export class DefaultHookRunner implements HookRunner {
           (hso?.permissionDecision === undefined || hso.permissionDecision === 'deny'
             ? hso?.permissionDecisionReason
             : undefined);
-      } else if (out.decision === 'approve' && decision === undefined) {
+      } else if (legacyDecision === 'approve') {
         // Legacy approve -> allow, symmetric to block. Only when the output
         // carries no explicit (more specific) permissionDecision (#15).
-        decision = 'allow';
-        reason = out.reason ?? reason;
+        if (decision === undefined) {
+          decision = 'allow';
+          reason = out.reason ?? reason;
+        }
+      } else if (typeof legacyDecision === 'string' && legacyDecision.length > 0) {
+        // Any OTHER legacy `decision` value: fail closed as a DENY, exactly as
+        // the unrecognized-permissionDecision branch below does.
+        //
+        // The two fields were asymmetric. `permissionDecision` is deliberately
+        // widened to `string` so a bad runtime value is caught; `decision` is
+        // typed `'approve' | 'block'` and had NO runtime guard, so anything
+        // else fell through as NEUTRAL — fail-open. The dangerous case is the
+        // most natural spelling there is: every other decision vocabulary in
+        // this SDK (permissionDecision, AggregatedHookResult.decision) says
+        // 'deny', so a host reaching for the legacy field writes
+        // `{decision: 'deny'}` and its security hook is silently discarded.
+        // TypeScript catches that only for a host that is TS AND types the
+        // return; a JS host, a JSON-configured hook or an `as any` callback
+        // does not.
+        this.debug(
+          `hooks: unrecognized legacy decision "${legacyDecision}" treated as deny`,
+        );
+        decision = 'deny';
+        reason =
+          out.reason ?? `unrecognized decision "${legacyDecision}" (treated as deny)`;
       }
 
       if (decision === 'deny') {
