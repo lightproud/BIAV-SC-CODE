@@ -33,11 +33,7 @@ import {
   indexCapacityWarning,
   type IndexCaps,
 } from './index-capacity.js';
-import {
-  DEFAULT_CARDS_CONFIG,
-  validateCardsContent,
-  type MemoryCardsConfig,
-} from './cards.js';
+import { validateMemoryFrontmatter } from './frontmatter.js';
 import {
   DEFAULT_MEMORY_LIMITS,
   fileTooLargeError,
@@ -177,6 +173,7 @@ export function createMemoryHealth(): SDKMemoryHealth {
     errors: 0,
     bytesRead: 0,
     bytesWritten: 0,
+    attachmentInjectionTokens: 0,
     indexInjectionTokens: 0,
     sessionEndUpdate: 'pending',
   };
@@ -189,10 +186,9 @@ export type CreateMemoryToolOptions = {
    *  even for a directly-implemented injected MemoryStore; the store engine
    *  enforces the full set. Missing fields take DEFAULT_MEMORY_LIMITS. */
   limits?: Partial<MemoryLimits>;
-  /** R9 tool-layer cards validation for `create` (full content available
+  /** Tool-layer frontmatter validation for `create` (full content available
    *  here); str_replace/insert results are validated in the store engine. */
-  schema?: 'cards';
-  cards?: Partial<MemoryCardsConfig>;
+  schema?: 'frontmatter';
   /** S1 scope routing: resolved mounts (null / absent = unrestricted). */
   mounts?: ResolvedMemoryMounts;
   /** R6 read-side caps. Present = a write that leaves /memories/MEMORY.md over
@@ -223,7 +219,6 @@ export function createMemoryTool(
   toolOptions: CreateMemoryToolOptions = {},
 ): BuiltinTool {
   const limits: MemoryLimits = { ...DEFAULT_MEMORY_LIMITS, ...toolOptions.limits };
-  const cardsCfg: MemoryCardsConfig = { ...DEFAULT_CARDS_CONFIG, ...toolOptions.cards };
   const health = toolOptions.health;
   const mounts: ResolvedMemoryMounts = toolOptions.mounts ?? null;
   const bytesOf = (s: string): number => Buffer.byteLength(s, 'utf8');
@@ -350,17 +345,17 @@ export function createMemoryTool(
             const path = validateMemoryPath(cmd.path);
             const denied = writeDenial(path);
             if (denied !== null) return done(errorResult(denied));
-            // Tool-layer R8 size cap + R9 cards validation on the full
+            // Tool-layer R8 size cap + frontmatter validation on the full
             // content (the store engine re-checks; this covers direct stores).
             if (bytesOf(cmd.file_text) > limits.maxFileBytes) {
               return done(errorResult(fileTooLargeError(path, limits.maxFileBytes)));
             }
-            // The index is exempt from cards validation (keeper 2026-07-27):
+            // The index is exempt from schema validation (keeper 2026-07-27):
             // the index-discipline fragment requires one-line pointer entries
-            // there, which are not cards — see store.ts checkWrite for the
-            // same exemption at the engine layer.
-            if (toolOptions.schema === 'cards' && path !== MEMORY_INDEX_PATH) {
-              const invalid = validateCardsContent(cmd.file_text, cardsCfg);
+            // there, which no memory schema should reject — see store.ts
+            // checkWrite for the same exemption at the engine layer.
+            if (toolOptions.schema === 'frontmatter' && path !== MEMORY_INDEX_PATH) {
+              const invalid = validateMemoryFrontmatter(cmd.file_text);
               if (invalid !== null) return done(errorResult(invalid));
             }
             // L24 (audit 2026-07-17): count the write AFTER the store call

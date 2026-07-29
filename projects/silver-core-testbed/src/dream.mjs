@@ -3,13 +3,15 @@
  * findings into one memory card. Deliberately deterministic (no model call —
  * the unattended cron carries no API key); what makes it a real exercise of
  * the family is the plumbing: the card content is VALIDATED with the agent
- * SDK's R9 cards machinery (validateCardsContent), written through the
+ * SDK's frontmatter schema machinery (validateMemoryFrontmatter — the cards
+ * validator it replaced retired in 2.0.0; the card body kept its shape, only
+ * the head changed to the official YAML frontmatter), written through the
  * memory store's six-command engine, and the resident /memories/MEMORY.md
  * index (R6 shape) is refreshed — memory tools + ledger + scheduling all
  * genuinely in play for one job.
  */
 
-import { parseMemoryCards, validateCardsContent } from 'silver-core-agent-sdk';
+import { parseMemoryFrontmatter, validateMemoryFrontmatter } from 'silver-core-agent-sdk';
 import {
   CARDS_PREFIX,
   INDEX_PATH,
@@ -87,7 +89,17 @@ export async function dream(store, { date, inspectorIds, keepDays = 45 }) {
         ? `巡检全绿 (${summaryLine})`
         : `整体 ${worst}: 无 warn/fail 条目 (${summaryLine})`;
 
+  // Frontmatter head (2.0.0 migration): the description is the picker's
+  // relevance signal, so it carries the day + worst verdict, capped well
+  // under the validator's 150-char line budget.
+  const description = `值班归并 ${day} worst=${worst}`.slice(0, 150);
   const card = [
+    '---',
+    `name: duty-card-${day}`,
+    `description: ${description}`,
+    'metadata:',
+    '  type: project',
+    '---',
     `## 值班归并 ${day}`,
     `结论: ${conclusionBits}`,
     `依据: ${evidence}`,
@@ -95,11 +107,12 @@ export async function dream(store, { date, inspectorIds, keepDays = 45 }) {
     '',
   ].join('\n');
 
-  // R9 discipline: the card must survive the agent SDK's own cards validator
-  // before it is allowed into memory — same floor a model write would face.
-  const invalid = validateCardsContent(card);
+  // Schema discipline: the card must survive the agent SDK's own frontmatter
+  // validator before it is allowed into memory — same floor a model write
+  // would face.
+  const invalid = validateMemoryFrontmatter(card);
   if (invalid !== null) throw new Error(`dream produced an invalid card: ${invalid}`);
-  const parsed = parseMemoryCards(card);
+  const parsed = parseMemoryFrontmatter(card);
   if (!parsed.ok) throw new Error(`dream card failed to parse back: ${parsed.reason}`);
 
   // The card file stays STRICTLY cards-valid (finding detail already lives in

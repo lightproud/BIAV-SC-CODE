@@ -52,16 +52,18 @@ import { createGoalStopHooks } from './hooks/goal.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
-import { hasPriceFor } from './engine/pricing.js';
+import { estimateCostUsd, hasPriceFor } from './engine/pricing.js';
 import { SessionAccounting } from './query-accounting.js';
 import { appendSystemInjection, buildEngineConfig } from './engine/config-builder.js';
 import {
   MEMORY_COMPACTION_FLUSH_PROMPT,
+  MEMORY_FRONTMATTER_GUIDANCE,
   MEMORY_INDEX_DISCIPLINE_FRAGMENT,
   MEMORY_PITFALLS_FRAGMENT,
   MEMORY_PROTOCOL_FRAGMENT,
   MEMORY_SESSION_END_PROMPT,
 } from './engine/prompt-fragments.js';
+import { runUtilityCall } from './generators/runtime.js';
 import { estimateMessagesTokens, estimateTextTokens } from './engine/tokens.js';
 import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js';
 import { createSessionPersistence } from './sessions/persistence.js';
@@ -1176,6 +1178,16 @@ export function query(args: {
             text: MEMORY_INDEX_DISCIPLINE_FRAGMENT.text,
           });
         }
+        // Frontmatter guidance (r1 §一/§四, keeper 2026-07-29): the official
+        // memory-instructions family, full text — teaches the format the
+        // schema validator enforces. Both modes, same layering rationale as
+        // index-discipline (the native API prompt says nothing about it).
+        if (memory.frontmatterGuidance) {
+          parts.push({
+            label: 'memory-frontmatter-guidance',
+            text: MEMORY_FRONTMATTER_GUIDANCE,
+          });
+        }
         // Phase 0 (REQ-3.2): the pitfall-recording protocol applies in BOTH
         // modes — it layers consumer guidance (WHAT to record) on top of the
         // base protocol (HOW the tool works), so it never doubles the
@@ -1208,6 +1220,9 @@ export function query(args: {
       let needMeta = sess.needMeta;
       // R1: the structured prelude rides the FIRST genuine prompt only.
       let preludePending = true;
+      // r1 §二: the selective-attachment picker rides the FIRST genuine
+      // prompt only (its relevance input is that prompt's head).
+      let attachmentPending = memory !== null && memory.attachment !== null;
 
       // File checkpointing: bind the disk-backed store to this session so
       // Write/Edit pre-images are captured and Query.rewindFiles() can restore.
@@ -1939,6 +1954,60 @@ export function query(args: {
                 };
         }
         message = appendContextLines(message, extraLines);
+
+        // Selective memory attachment (r1 §二): one bounded, BILLED picker
+        // call on the first genuine prompt — after the R6 index injection in
+        // the system tail (assembly order), before the first engine request.
+        // The picker inherits the session credentials/model (same rule as the
+        // hook condition evaluator); its usage folds into session accounting.
+        // buildAttachmentInjection never throws (degrades to pinned-only /
+        // null), so this cannot block the session.
+        if (attachmentPending && memory !== null) {
+          attachmentPending = false;
+          const att = memory.attachment!;
+          const part = await memory.buildAttachmentInjection({
+            promptText,
+            callPicker: (system, user) =>
+              runUtilityCall(
+                system,
+                user,
+                {
+                  provider: options.provider,
+                  betas: options.betas,
+                  env,
+                  debug,
+                  model: att.pickerModel ?? initialModel,
+                  ...(options.modelAliases !== undefined
+                    ? { modelAliases: options.modelAliases }
+                    : {}),
+                  ...(transportForModel !== undefined
+                    ? { resolveTransport: (m: string) => transportForModel(m, 'utility') }
+                    : {}),
+                  signal: lifeSignal,
+                  // Billing (r1 acceptance): the picker is a real model call
+                  // — its usage lands in the session account like a turn's,
+                  // priced with the same table/overrides the engine uses.
+                  onUsage: (info) =>
+                    acct.foldUtilityUsage(
+                      info.model,
+                      info.usage,
+                      estimateCostUsd(
+                        info.model,
+                        info.usage,
+                        engineConfig.cacheTtl,
+                        engineConfig.pricing,
+                      ),
+                    ),
+                },
+                512,
+              ),
+          });
+          if (part !== null) {
+            appendSystemInjection(engineConfig, [part]);
+            // R8: the attachment residency cost is part of the memory bill.
+            memory.health.attachmentInjectionTokens = estimateTextTokens(part.text);
+          }
+        }
 
         // Echo the user message, then append to history + store.
         const userUuid = incoming.uuid ?? randomUUID();

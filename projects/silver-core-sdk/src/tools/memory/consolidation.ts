@@ -9,7 +9,8 @@
  *  2. HOW to tidy — this module. Design principle 4 lists "整理" (tidying) among
  *     the behaviors that must have a harness-enforced floor instead of relying
  *     on model discipline; the SDK already ships the write-side floors (R7
- *     timing, R9 cards, the pitfall protocol) and this is the missing one.
+ *     timing, the frontmatter schema, the pitfall protocol) and this is the
+ *     missing one.
  *  3. WHEN to run it, on what model, on whose machine — NOT the SDK's (spec N1:
  *     no server-side/offline pipeline, no background process). This module adds
  *     no process and no scheduler: it returns a STRING the consumer passes to
@@ -164,6 +165,15 @@ export function buildConsolidationPrompt(
         `condense` +
         (largest !== null ? `; the largest is ${largest.path} (${largest.sizeBytes} bytes)` : '') +
         `.`,
+    );
+  }
+
+  if (assessment.frontmatter !== undefined && assessment.frontmatter.nonCompliant > 0) {
+    tasks.push(
+      `${assessment.frontmatter.nonCompliant} file(s) lack a valid memory ` +
+        `frontmatter head (name / description / metadata.type) — rewrite each as ` +
+        `delete + create with the frontmatter head, keeping the body content: ` +
+        `${pathList(assessment.frontmatter.nonCompliantList, cap)}.`,
     );
   }
 

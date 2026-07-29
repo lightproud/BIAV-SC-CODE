@@ -12,6 +12,16 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 2.0.0 — 2026-07-29
+
+Lockstep alignment only — no changes to this package's own runtime. The family
+clock advanced for silver-core-agent-sdk 2.0.0 (T75 design round shipped:
+BREAKING cards-mode removal + `schema: 'frontmatter'` + official guidance
+injection + selective memory attachment; see the agent SDK CHANGELOG for the
+cards→frontmatter migration notes). Major because lockstep mirrors the family
+clock — this package's own surface has no breaking change; consumers of the
+agent SDK's cards exports must migrate before pinning the 2.0.0 pair.
+
 ## 1.6.0 — 2026-07-29
 
 Lockstep alignment only — no changes to this package. The family clock advanced

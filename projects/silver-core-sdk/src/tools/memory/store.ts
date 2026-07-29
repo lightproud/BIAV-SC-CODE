@@ -40,11 +40,7 @@ import type { MemoryStore } from '../../internal/contracts.js';
 import { MemoryToolError } from '../../errors.js';
 import { sliceSurrogateSafe } from '../../internal/text.js';
 import { MEMORY_INDEX_PATH, MEMORY_ROOT, validateMemoryPath } from './paths.js';
-import {
-  DEFAULT_CARDS_CONFIG,
-  validateCardsContent,
-  type MemoryCardsConfig,
-} from './cards.js';
+import { validateMemoryFrontmatter } from './frontmatter.js';
 
 /** stat() result for one existing entry. `mtimeMs` is OPTIONAL — backends
  *  that can cheaply provide a last-modified timestamp should (the built-in
@@ -160,11 +156,11 @@ export type CreateMemoryStoreOptions = {
   createOverwrite?: boolean;
   /** Governance limits (spec R8); missing fields take DEFAULT_MEMORY_LIMITS. */
   limits?: Partial<MemoryLimits>;
-  /** Structured memory-card mode (spec R9): every written file must validate
-   *  as cards; invalid content is rejected with a structured retryable error. */
-  schema?: 'cards';
-  /** Card limits for schema 'cards'; missing fields take DEFAULT_CARDS_CONFIG. */
-  cards?: Partial<MemoryCardsConfig>;
+  /** Frontmatter memory schema (keeper ruling 2026-07-29, r1 §一): every
+   *  written file must begin with the official memory frontmatter head
+   *  (name / description / metadata.type); invalid content is rejected with a
+   *  structured retryable error. Replaces the retired cards mode (2.0.0). */
+  schema?: 'frontmatter';
 };
 
 const MAX_LINES = 999_999;
@@ -203,20 +199,18 @@ export function createMemoryStore(
 ): MemoryStore {
   const overwrite = options.createOverwrite === true;
   const limits: MemoryLimits = { ...DEFAULT_MEMORY_LIMITS, ...options.limits };
-  const cardsCfg: MemoryCardsConfig = { ...DEFAULT_CARDS_CONFIG, ...options.cards };
-  /** R8 + R9 write gate: size cap, then cards validation, both BEFORE any
-   *  primitive write. Throws the SDK-defined error string. */
+  /** R8 + schema write gate: size cap, then frontmatter validation, both
+   *  BEFORE any primitive write. Throws the SDK-defined error string. */
   const checkWrite = (path: string, content: string): void => {
     if (Buffer.byteLength(content, 'utf8') > limits.maxFileBytes) {
       throw new MemoryToolError(fileTooLargeError(path, limits.maxFileBytes));
     }
-    // The resident index is EXEMPT from cards validation (keeper 2026-07-27):
-    // the index is an index, not a memory — R9 cards discipline governs memory
-    // bodies, while the index-discipline fragment requires one-line pointer
-    // entries there. Without this exemption the two harness rules contradict:
-    // the prompt demands pointer lines the cards validator then rejects.
-    if (options.schema === 'cards' && path !== MEMORY_INDEX_PATH) {
-      const invalid = validateCardsContent(content, cardsCfg);
+    // The resident index is EXEMPT from schema validation (keeper 2026-07-27,
+    // carried over from cards mode): the index is an index, not a memory —
+    // the index-discipline fragment requires one-line pointer entries there,
+    // which no memory schema should reject.
+    if (options.schema === 'frontmatter' && path !== MEMORY_INDEX_PATH) {
+      const invalid = validateMemoryFrontmatter(content);
       if (invalid !== null) throw new MemoryToolError(invalid);
     }
   };

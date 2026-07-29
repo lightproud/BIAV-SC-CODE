@@ -483,16 +483,19 @@ describe('buildConsolidationPrompt', () => {
   });
 });
 
-describe('cards mode exempts the resident index (keeper 2026-07-27 review fix)', () => {
+describe('frontmatter schema exempts the resident index (keeper 2026-07-27 rule, carried into 2.0.0)', () => {
   // The contradiction this locks against: the index-discipline fragment
-  // requires one-line pointer entries in /memories/MEMORY.md while R9 cards
-  // validation rejected any non-card content there — two harness rules the
-  // model could not satisfy at once (a P4 instance shipped by 0.84.0 itself).
-  const cardsTool = (ops: MemoryFileOps) =>
-    createMemoryTool(createMemoryStore(ops, { schema: 'cards' }), { schema: 'cards' });
+  // requires one-line pointer entries in /memories/MEMORY.md while schema
+  // validation would reject any non-conforming content there — two harness
+  // rules the model could not satisfy at once (a P4 instance first shipped
+  // by 0.84.0 under cards mode; the exemption carries over to frontmatter).
+  const schemaTool = (ops: MemoryFileOps) =>
+    createMemoryTool(createMemoryStore(ops, { schema: 'frontmatter' }), {
+      schema: 'frontmatter',
+    });
 
-  it('accepts pointer-line index content under schema cards, at both layers', async () => {
-    const res = await run(cardsTool(memoryOps()), {
+  it('accepts pointer-line index content under schema frontmatter, at both layers', async () => {
+    const res = await run(schemaTool(memoryOps()), {
       command: 'create',
       path: MEMORY_INDEX_PATH,
       file_text: '- deploy pitfalls (/memories/pitfalls/deploy.md) — rollback trap\n',
@@ -501,19 +504,19 @@ describe('cards mode exempts the resident index (keeper 2026-07-27 review fix)',
     expect(res.content).toContain('File created successfully');
   });
 
-  it('still rejects non-card content everywhere else', async () => {
-    const res = await run(cardsTool(memoryOps()), {
+  it('still rejects headless content everywhere else', async () => {
+    const res = await run(schemaTool(memoryOps()), {
       command: 'create',
       path: '/memories/notes.md',
-      file_text: 'free-form prose, not a card',
+      file_text: 'free-form prose, no frontmatter head',
     });
     expect(res.isError).toBe(true);
-    expect(res.content).toContain('cards-mode validation failed');
+    expect(res.content).toContain('frontmatter validation failed');
   });
 
-  it('str_replace on the index passes the store engine in cards mode', async () => {
+  it('str_replace on the index passes the store engine in frontmatter mode', async () => {
     const ops = memoryOps({ [MEMORY_INDEX_PATH]: '- a (a.md) — hook\n' });
-    const res = await run(cardsTool(ops), {
+    const res = await run(schemaTool(ops), {
       command: 'str_replace',
       path: MEMORY_INDEX_PATH,
       old_str: '- a (a.md) — hook',

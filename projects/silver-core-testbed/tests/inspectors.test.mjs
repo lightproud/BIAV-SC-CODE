@@ -18,7 +18,7 @@ import {
 } from '../src/inspectors.mjs';
 import { openMemory, readIfExists, stripView, writeReport } from '../src/memory.mjs';
 import { dream } from '../src/dream.mjs';
-import { parseMemoryCards } from 'silver-core-agent-sdk';
+import { parseMemoryFrontmatter } from 'silver-core-agent-sdk';
 
 const tmp = () => mkdtempSync(join(tmpdir(), 'testbed-insp-'));
 
@@ -226,9 +226,12 @@ describe('memory area + dream (real agent-SDK memory store)', () => {
     const card = await readIfExists(store, '/memories/cards/2026-07-18.md');
     expect(card).toContain('结论:');
     expect(card).toContain('doc-links 1 条发现');
-    const parsed = parseMemoryCards(card);
+    const parsed = parseMemoryFrontmatter(card);
     expect(parsed.ok).toBe(true);
-    expect(parsed.cards[0].title).toBe('值班归并 2026-07-18');
+    expect(parsed.frontmatter.name).toBe('duty-card-2026-07-18');
+    expect(parsed.frontmatter.type).toBe('project');
+    expect(parsed.frontmatter.description).toContain('worst=fail');
+    expect(parsed.body).toContain('值班归并 2026-07-18');
 
     const index = await readIfExists(store, '/memories/MEMORY.md');
     expect(index).toContain('cards/2026-07-18.md');
@@ -283,7 +286,9 @@ describe('memory area + dream (real agent-SDK memory store)', () => {
     const summary = await dream(store, { date: '2026-07-18', inspectorIds: ['lockstep'] });
 
     expect(summary).toContain('merged 2026-07-18');
-    const parsed = parseMemoryCards(await readIfExists(store, '/memories/cards/2026-07-18.md'));
+    const parsed = parseMemoryFrontmatter(
+      await readIfExists(store, '/memories/cards/2026-07-18.md'),
+    );
     expect(parsed.ok).toBe(true);
   });
 

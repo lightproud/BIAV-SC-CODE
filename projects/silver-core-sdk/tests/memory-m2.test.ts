@@ -5,8 +5,9 @@
  *    progress-card round (normal end only; result absorbed);
  *  - R8: governance limits (file size / directory count / view truncation)
  *    at both enforcement layers, and the memoryHealth accounting fields on
- *    SDKRunMetrics;
- *  - R9: cards-mode validation (structured retryable errors).
+ *    SDKRunMetrics.
+ * (Schema validation lives in tests/memory-frontmatter.test.ts — the cards
+ * mode it replaced was retired in 2.0.0.)
  */
 
 import { mkdtemp, readFile, rm, mkdir, writeFile } from 'node:fs/promises';
@@ -22,14 +23,11 @@ import {
   MEMORY_SESSION_END_PROMPT,
 } from '../src/engine/prompt-fragments.js';
 import {
-  DEFAULT_CARDS_CONFIG,
   DEFAULT_MEMORY_LIMITS,
   createLocalFilesystemMemoryStore,
   createMemoryHealth,
   createMemoryTool,
-  parseMemoryCards,
   truncateViewBody,
-  validateCardsContent,
 } from '../src/tools/memory/index.js';
 import type {
   MemoryStore,
@@ -504,13 +502,12 @@ describe('R7 observability: sessionEndUpdate stamp + memoryHealthSnapshot()', ()
 // ---------------------------------------------------------------------------
 
 describe('R8: defaults and the shared truncation helper', () => {
-  it('spec defaults: 64KB file / 64 files per directory / 16k view chars; cards 500/50', () => {
+  it('spec defaults: 64KB file / 64 files per directory / 16k view chars', () => {
     expect(DEFAULT_MEMORY_LIMITS).toEqual({
       maxFileBytes: 65_536,
       maxFilesPerDirectory: 64,
       maxViewChars: 16_000,
     });
-    expect(DEFAULT_CARDS_CONFIG).toEqual({ maxCardChars: 500, maxCardsPerFile: 50 });
   });
 
   it('truncateViewBody cuts on a line boundary and is a no-op under the cap', () => {
@@ -670,115 +667,5 @@ describe('R8: memoryHealth accounting', () => {
     expect(health!.writes).toBe(1);
     expect(health!.bytesWritten).toBe(5);
     expect(health!.indexInjectionTokens).toBeGreaterThan(0);
-  });
-});
-
-// ---------------------------------------------------------------------------
-// R9: cards mode
-// ---------------------------------------------------------------------------
-
-const VALID_CARD = '## 命名规范\n结论: 采用 kebab-case\n依据: 2026-07-04 团队约定\n过期条件: 迁移到新框架时\n';
-
-describe('R9: card parsing', () => {
-  it('accepts a single valid card and multi-card files', () => {
-    expect(parseMemoryCards(VALID_CARD)).toMatchObject({ ok: true });
-    const two = parseMemoryCards(VALID_CARD + '\n' + VALID_CARD.replace('命名规范', '部署口径'));
-    expect(two.ok).toBe(true);
-    if (two.ok) expect(two.cards).toHaveLength(2);
-  });
-
-  it('accepts full-width colons and multi-line field values', () => {
-    const card =
-      '## 结论卡\n结论：第一行\n  第二行继续\n依据：某次会议\n过期条件：无\n';
-    const parsed = parseMemoryCards(card);
-    expect(parsed.ok).toBe(true);
-    if (parsed.ok) expect(parsed.cards[0]!.conclusion).toContain('第二行继续');
-  });
-
-  it('rejects a missing field with a reason naming it', () => {
-    const parsed = parseMemoryCards('## t\n结论: x\n依据: y\n');
-    expect(parsed).toMatchObject({ ok: false });
-    if (!parsed.ok) expect(parsed.reason).toContain('过期条件');
-  });
-
-  it('rejects content before the first heading, empty files and repeated fields', () => {
-    expect(parseMemoryCards('loose text\n' + VALID_CARD).ok).toBe(false);
-    expect(parseMemoryCards('').ok).toBe(false);
-    expect(parseMemoryCards('## t\n结论: a\n结论: b\n依据: y\n过期条件: z\n').ok).toBe(false);
-  });
-
-  it('enforces card-count and card-size limits', () => {
-    const two = VALID_CARD + '\n' + VALID_CARD;
-    expect(parseMemoryCards(two, { maxCardChars: 500, maxCardsPerFile: 1 }).ok).toBe(false);
-    expect(parseMemoryCards(VALID_CARD, { maxCardChars: 10, maxCardsPerFile: 50 }).ok).toBe(false);
-  });
-
-  it('validateCardsContent returns the structured retryable error', () => {
-    const msg = validateCardsContent('not a card');
-    expect(msg).toMatch(/^Error: cards-mode validation failed:/);
-    expect(msg).toContain('## <card title>');
-    expect(msg).toContain('结论: <conclusion>');
-    expect(validateCardsContent(VALID_CARD)).toBeNull();
-  });
-});
-
-describe('R9: cards mode in the store engine + tool layer', () => {
-  let baseDir: string;
-  beforeEach(async () => {
-    baseDir = await mkdtemp(join(tmpdir(), 'bpt-m2-cards-'));
-  });
-  afterEach(async () => {
-    await rm(baseDir, { recursive: true, force: true });
-  });
-
-  it('create accepts valid cards and rejects free-form content', async () => {
-    const store = createLocalFilesystemMemoryStore(baseDir, { schema: 'cards' });
-    await expect(store.create('/memories/MEMORY.md', VALID_CARD)).resolves.toContain(
-      'File created successfully',
-    );
-    await expect(store.create('/memories/free.md', 'just some notes')).rejects.toThrow(
-      /^Error: cards-mode validation failed:/,
-    );
-  });
-
-  it('str_replace producing invalid cards is rejected and the file is unchanged', async () => {
-    // On a TOPIC file — the resident index is exempt from cards validation
-    // (keeper 2026-07-27: the index-discipline fragment requires pointer
-    // lines there; see tests/memory-consolidation.test.ts for the exemption).
-    const store = createLocalFilesystemMemoryStore(baseDir, { schema: 'cards' });
-    await store.create('/memories/team.md', VALID_CARD);
-    await expect(
-      store.strReplace('/memories/team.md', '依据: 2026-07-04 团队约定', undefined),
-    ).rejects.toThrow(/cards-mode validation failed/);
-    expect(await store.view('/memories/team.md')).toContain('依据: 2026-07-04 团队约定');
-  });
-
-  it('tool-layer create validation shields a directly-implemented store', async () => {
-    const calls: string[] = [];
-    const direct: MemoryStore = {
-      view: async () => '',
-      create: async (p) => {
-        calls.push(p);
-        return `File created successfully at: ${p}`;
-      },
-      strReplace: async () => '',
-      insert: async () => '',
-      delete: async () => '',
-      rename: async () => '',
-    };
-    const tool = createMemoryTool(direct, { schema: 'cards' });
-    const bad = await tool.execute(
-      { command: 'create', path: '/memories/x.md', file_text: 'free-form' },
-      toolCtx(),
-    );
-    expect(bad.isError).toBe(true);
-    expect(String(bad.content)).toMatch(/^Error: cards-mode validation failed:/);
-    expect(calls).toEqual([]);
-    const good = await tool.execute(
-      { command: 'create', path: '/memories/x.md', file_text: VALID_CARD },
-      toolCtx(),
-    );
-    expect(good.isError).not.toBe(true);
-    expect(calls).toEqual(['/memories/x.md']);
   });
 });

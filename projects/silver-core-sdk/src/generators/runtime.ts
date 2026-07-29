@@ -22,8 +22,9 @@
 import { AbortError, ConfigurationError } from '../errors.js';
 import { createProviderTransport } from '../transport/factory.js';
 import { MessageAccumulator } from '../engine/accumulator.js';
+import { normalizeUsage } from '../engine/pricing.js';
 import { resolveModelAlias } from '../internal/model-alias.js';
-import type { APIMessageParam, ProviderConfig } from '../types.js';
+import type { APIMessageParam, NonNullableUsage, ProviderConfig } from '../types.js';
 import type { StreamRequest, Transport } from '../internal/contracts.js';
 
 /**
@@ -79,6 +80,14 @@ export interface UtilityCallOptions {
    * Defaults to process.env. Ignored when `transport` is injected.
    */
   env?: Record<string, string | undefined>;
+  /**
+   * Usage observer (r1 §二 billing surface, 2.0.0): called once per completed
+   * call with the RESOLVED model id and the stream-reported usage, so a caller
+   * can fold utility spend into its own accounting (the query layer does this
+   * for the memory-attachment picker). Not called when the stream reported no
+   * usage, and never on an aborted/failed call.
+   */
+  onUsage?: (info: { model: string; usage: NonNullableUsage }) => void;
 }
 
 /**
@@ -177,6 +186,10 @@ export async function runUtilityCall(
     // a fragment that parses as a benign prefix instead of an injection verdict.
     if (opts.signal?.aborted) throw new AbortError();
     acc.feed(ev);
+  }
+  const usage = acc.usageSnapshot();
+  if (usage !== undefined && opts.onUsage !== undefined) {
+    opts.onUsage({ model, usage: normalizeUsage(usage) });
   }
   const final = acc.finalize();
   return final.content

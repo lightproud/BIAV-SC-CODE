@@ -16,6 +16,63 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 2.0.0 — 2026-07-29
+
+T75 design round SHIPPED (keeper rulings 2026-07-29, requirements doc
+`Public-Info-Pool/Resource/repo-engineering/scs-req-memory-frontmatter-attachment-r1-20260729.md`):
+the memory write-side schema converges on the official Claude Code shape, and
+selective attachment lands on top of it.
+
+- **BREAKING — cards mode removed** (r1 §1.2 丙, keeper third-pass ruling):
+  `schema: 'cards'`, the `memory.cards` config, `cards.ts` and its exports
+  (`parseMemoryCards`, `validateCardsContent`, `DEFAULT_CARDS_CONFIG`,
+  `MemoryCard`, `MemoryCardsConfig`) are gone. Cards was never a Claude
+  memory mode (R9 was the black-pool adaptation axis, honestly labeled
+  BPT-EXTENSION); the keeper ruled the memory surface converges on the
+  Claude shape, one breaking migration, family lockstep 2.0.0.
+  **Migration**: switch to `schema: 'frontmatter'`; existing card files
+  keep their body and gain a YAML frontmatter head (`name` / one-line
+  `description` <= 150 chars / `metadata.type` in
+  user|feedback|project|reference / optional `metadata.pinned`) — rewrite
+  each file as delete + create (in-place edits re-validate the whole file
+  and fail; the validator error restates this path). The testbed's daily
+  dream card migrated with this release as the reference example.
+- **`schema: 'frontmatter'`** (r1 §一): write-side validator
+  (`frontmatter.ts`, structurally where cards.ts was) enforcing the official
+  frontmatter head at both layers (store engine + tool layer for direct
+  stores); the resident index stays exempt; structured errors restate the
+  format and the delete+create migration path. New exports:
+  `parseMemoryFrontmatter` / `validateMemoryFrontmatter` /
+  `MEMORY_FRONTMATTER_TYPES` / `FRONTMATTER_DESCRIPTION_MAX_CHARS` + types.
+- **Official guidance injected verbatim** (r1 §四, keeper overrode the
+  condensed-version recommendation): with the schema on, the system tail
+  carries the FULL official memory-instructions family — the core
+  instructions, the user-memory description doc, and the feedback / project
+  when_to_save + body_structure four — each piece provenance-ledgered in
+  `MEMORY_FRONTMATTER_SOURCES` and corpus-sync guarded; per-type labels and
+  the `pinned` note are declared SDK glue.
+- **Selective attachment** (r1 §二): opt-in `memory.attachment`
+  (`enabled: true`, `maxFiles` <= 5, `picker.model` defaulting to the
+  session model). At the first genuine prompt — after the R6 index
+  injection — one bounded picker call (faithful official picker prompt)
+  selects relevant files by frontmatter description; full contents inject
+  under the R6-aligned background-context-and-verify envelope. Hard
+  ConfigurationError without `schema: 'frontmatter'`. `pinned: true` files
+  bypass the picker, never consume maxFiles slots, and take priority within
+  the 25600-byte budget (cuts at file boundaries, omissions disclosed by
+  path). S1 mounts bound the candidate scan (4096-entry cap, head-only
+  reads); incognito still attaches (a read); a failed picker degrades to
+  pinned-only — never a blocked session.
+- **Billing surface**: the picker call is real spend — `runUtilityCall`
+  gained an `onUsage` observer and the query layer folds picker usage +
+  estimated cost into session accounting (`SessionAccounting.foldUtilityUsage`);
+  `SDKMemoryHealth` gained `attachmentInjectionTokens` beside
+  `indexInjectionTokens` (type-level breaking, covered by this major).
+- **Health scan**: `assessMemoryStoreHealth` gained a `schema: 'frontmatter'`
+  option adding a frontmatter-completeness dimension (non-compliant files
+  listed, index exempt, unreadable files honestly `unchecked`);
+  `buildConsolidationPrompt` turns it into a delete+create rewrite task.
+
 ## 1.6.0 — 2026-07-29
 
 T75 second grilling (keeper rulings on the memory charter-expansion items):

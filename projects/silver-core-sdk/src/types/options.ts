@@ -264,19 +264,45 @@ export type MemoryOptions = {
     maxViewChars?: number;
   };
   /**
-   * Structured memory-card mode (spec R9): 'cards' requires every written
-   * memory file to be one or more cards under a `## <title>` heading, in one
-   * of TWO kinds distinguished by their field set (mixing kinds in one card is
-   * rejected by name): proposition cards with 结论 / 依据 / 过期条件, or
-   * prescription cards with 意图 / 步骤 / 结果 / 适用边界 (cards.ts A1
-   * extension). Invalid content is rejected with a structured error the model
-   * can retry from. Aimed at models with weak write-side discipline; omit for
-   * free-form writing. The resident index /memories/MEMORY.md is exempt.
+   * Frontmatter memory schema (keeper ruling 2026-07-29, T75 r1 §一):
+   * 'frontmatter' requires every written memory file to begin with the
+   * official Claude Code memory frontmatter head — required `name` and
+   * one-line `description` (<= 150 chars), `metadata.type` in
+   * user | feedback | project | reference, optional `metadata.pinned`.
+   * Invalid content is rejected with a structured error that restates the
+   * format and the delete+create migration path. Also injects the official
+   * memory-instructions guidance (when_to_save / body_structure per type)
+   * into the system tail, and is the hard prerequisite for `attachment`.
+   * Omit for free-form writing. The resident index /memories/MEMORY.md is
+   * exempt. (The former 'cards' mode was retired in 2.0.0 — cards was a
+   * BPT-EXTENSION, not a Claude memory shape; see docs/MEMORY.md migration
+   * notes.)
    */
-  schema?: 'cards';
-  /** Card limits for schema 'cards'. Defaults: maxCardChars 500,
-   *  maxCardsPerFile 50. */
-  cards?: { maxCardChars?: number; maxCardsPerFile?: number };
+  schema?: 'frontmatter';
+  /**
+   * Selective memory attachment (T75 r1 §二; official "determine which
+   * memory files to attach" shape): at session assembly, after the R6 index
+   * injection, one bounded picker model call selects up to `maxFiles` (<= 5)
+   * memory files relevant to the first prompt by filename + frontmatter
+   * description; their full content is injected into the system tail under
+   * the same background-context-and-verify envelope as the index. Opt-in and
+   * BILLED (the picker is a real model call, folded into session usage
+   * accounting); requires `schema: 'frontmatter'` (ConfigurationError
+   * otherwise — without descriptions the picker has no relevance signal).
+   * Frontmatter `pinned: true` files bypass the picker, always attach, do
+   * not count against maxFiles, and take priority within the 25600-byte
+   * total budget (over-budget selections are dropped at file boundaries and
+   * disclosed). S1 mounts bound the candidate set; incognito sessions still
+   * attach (attachment is a read). A failed picker degrades to pinned-only
+   * attachment — never a blocked session.
+   */
+  attachment?: {
+    enabled: true;
+    /** 1..5; default 5 (the official picker ceiling). */
+    maxFiles?: number;
+    /** Picker call settings; `model` defaults to the session model. */
+    picker?: { model?: string };
+  };
   /**
    * Compaction flush (spec R7): when auto-compaction is about to fold the
    * conversation, first give the model one write opportunity ("record
@@ -370,6 +396,10 @@ export type SDKMemoryHealth = {
   /** UTF-8 bytes of content handed to write commands (file_text /
    *  insert_text / new_str). */
   bytesWritten: number;
+  /** Estimated tokens of the selective-attachment injection (r1 §二), 0 when
+   *  attachment is off or attached nothing — the read-side residency cost of
+   *  the attached memory files, next to indexInjectionTokens below. */
+  attachmentInjectionTokens: number;
   /** Estimated tokens of the resident memory-index injection (R6), so the
    *  read-side residency cost shows up on the bill. */
   indexInjectionTokens: number;

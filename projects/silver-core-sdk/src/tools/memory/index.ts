@@ -17,6 +17,7 @@ import { createMemoryHealth, createMemoryTool, MEMORY_TOOL_NAME } from './memory
 import { mountReadAccess, resolveMemoryMounts } from './mounts.js';
 import { recoverIndexLines } from './index-capacity.js';
 import { MEMORY_INDEX_PATH } from './paths.js';
+import { ATTACHMENT_MAX_FILES, buildMemoryAttachment } from './attachment.js';
 
 export { MEMORY_INDEX_PATH, MEMORY_ROOT, MemoryPathError, validateMemoryPath } from './paths.js';
 export {
@@ -45,12 +46,31 @@ export {
   type MemoryLimits,
 } from './store.js';
 export {
-  parseMemoryCards,
-  validateCardsContent,
-  DEFAULT_CARDS_CONFIG,
-  type MemoryCard,
-  type MemoryCardsConfig,
-} from './cards.js';
+  parseMemoryFrontmatter,
+  validateMemoryFrontmatter,
+  FRONTMATTER_DESCRIPTION_MAX_CHARS,
+  MEMORY_FRONTMATTER_TYPES,
+  type FrontmatterParseResult,
+  type MemoryFrontmatter,
+  type MemoryFrontmatterType,
+} from './frontmatter.js';
+export {
+  ATTACHMENT_MAX_BYTES,
+  ATTACHMENT_MAX_FILES,
+  ATTACHMENT_PROVENANCE_NOTE,
+  MEMORY_ATTACH_PICKER_OUTPUT_GLUE,
+  MEMORY_ATTACH_PICKER_PROVENANCE,
+  MEMORY_ATTACH_PICKER_SYSTEM,
+  buildAttachmentInjectionText,
+  buildMemoryAttachment,
+  buildPickerUserTurn,
+  parsePickerReply,
+  readAttachmentContent,
+  scanAttachmentCandidates,
+  type AttachedMemoryFile,
+  type AttachmentScan,
+  type MemoryAttachmentCandidate,
+} from './attachment.js';
 export {
   createLocalFilesystemMemoryStore,
   createLocalMemoryFileOps,
@@ -150,11 +170,35 @@ export type MemoryRuntime = {
    */
   pitfalls: { extra: string } | null;
   /**
+   * Frontmatter guidance injection (r1 §一 / §四 when_to_save ruling): true
+   * when `schema: 'frontmatter'` is on — the query layer then injects the
+   * official memory-instructions guidance (full text, verbatim) so the model
+   * knows the format the validator enforces. Both assembly modes: the
+   * API-injected native prompt says nothing about frontmatter.
+   */
+  frontmatterGuidance: boolean;
+  /**
+   * Selective attachment (r1 §二): resolved config, or null when not opted
+   * in. `pickerModel` undefined = inherit the session model.
+   */
+  attachment: { maxFiles: number; pickerModel?: string } | null;
+  /**
    * Resident memory index (spec R6): the head of /memories/MEMORY.md as a
    * ready-to-inject system-prompt part, or null for zero injection (file
    * missing, index disabled, or the store failed — never throws).
    */
   buildIndexInjection(): Promise<{ label: string; text: string } | null>;
+  /**
+   * Selective-attachment injection (r1 §二): scan + picker + envelope, as a
+   * ready-to-inject system-prompt part, or null (not opted in, empty store,
+   * or nothing usable). `callPicker` is the query layer's bounded utility
+   * call (billed there); picker failure degrades to pinned-only. Never
+   * throws.
+   */
+  buildAttachmentInjection(args: {
+    promptText: string;
+    callPicker: (system: string, user: string) => Promise<string>;
+  }): Promise<{ label: string; text: string } | null>;
 };
 
 /**
@@ -187,18 +231,44 @@ export function resolveMemoryRuntime(args: {
     );
   }
 
+  // r1 §二: attachment hard-depends on the frontmatter schema — without
+  // descriptions the picker has no relevance signal, and a half-blind picker
+  // is worse than none (no silent degrade; this is a consumer config error).
+  let attachment: { maxFiles: number; pickerModel?: string } | null = null;
+  if (memory.attachment !== undefined && memory.attachment.enabled === true) {
+    if (memory.schema !== 'frontmatter') {
+      throw new ConfigurationError(
+        "options.memory.attachment requires schema: 'frontmatter' — the " +
+          'picker selects by frontmatter descriptions; enable the frontmatter ' +
+          'schema (and migrate existing files) or remove attachment',
+      );
+    }
+    const maxFiles = memory.attachment.maxFiles ?? ATTACHMENT_MAX_FILES;
+    if (!Number.isInteger(maxFiles) || maxFiles < 1 || maxFiles > ATTACHMENT_MAX_FILES) {
+      throw new ConfigurationError(
+        `options.memory.attachment.maxFiles must be an integer between 1 and ` +
+          `${ATTACHMENT_MAX_FILES} (got ${String(memory.attachment.maxFiles)})`,
+      );
+    }
+    attachment = {
+      maxFiles,
+      ...(memory.attachment.picker?.model !== undefined
+        ? { pickerModel: memory.attachment.picker.model }
+        : {}),
+    };
+  }
+
   const store =
     memory.store ??
     createLocalFilesystemMemoryStore(
       memory.baseDir ?? path.join(cwd, '.claude', 'memory'),
       {
         createOverwrite: memory.createOverwrite === true,
-        // R8/R9 in the store engine (full enforcement). An injected store
-        // skips these; the tool layer below still covers view truncation,
-        // the create size cap and create-content cards validation.
+        // R8 + schema in the store engine (full enforcement). An injected
+        // store skips these; the tool layer below still covers view
+        // truncation, the create size cap and create-content validation.
         ...(memory.limits !== undefined ? { limits: memory.limits } : {}),
         ...(memory.schema !== undefined ? { schema: memory.schema } : {}),
-        ...(memory.cards !== undefined ? { cards: memory.cards } : {}),
       },
     );
 
@@ -223,7 +293,6 @@ export function resolveMemoryRuntime(args: {
       ...(maxLines > 0 && maxBytes > 0 ? { indexCaps: { maxLines, maxBytes } } : {}),
       ...(memory.limits !== undefined ? { limits: memory.limits } : {}),
       ...(memory.schema !== undefined ? { schema: memory.schema } : {}),
-      ...(memory.cards !== undefined ? { cards: memory.cards } : {}),
       ...(mounts !== null ? { mounts } : {}),
       ...(incognito ? { incognitoReadOnly: true } : {}),
     }),
@@ -234,6 +303,11 @@ export function resolveMemoryRuntime(args: {
     flushOnCompaction: !incognito && memory.flushOnCompaction !== false,
     sessionEndUpdate: !incognito && memory.sessionEndUpdate !== false,
     indexDiscipline: !incognito && maxLines > 0 && maxBytes > 0,
+    // r1 §一 / §四: the guidance completes the mechanism the validator
+    // enforces; injected in both assembly modes and regardless of incognito
+    // (an incognito session still READS memories written under the schema).
+    frontmatterGuidance: memory.schema === 'frontmatter',
+    attachment,
     // Phase 0 (REQ-3.2): opt-in, and — like the R7 write rounds — never on an
     // incognito session.
     pitfalls:
@@ -322,6 +396,29 @@ export function resolveMemoryRuntime(args: {
         label: 'memory-index',
         text: `# Memory index\n\n${intro}\n\n${content}`,
       };
+    },
+
+    async buildAttachmentInjection(args): Promise<{ label: string; text: string } | null> {
+      if (attachment === null) return null;
+      // S2: attachment stays on in incognito — it is a READ of the store,
+      // like the R6 index injection (r1 护栏).
+      try {
+        return await buildMemoryAttachment({
+          store,
+          ...(mounts !== null ? { mounts } : {}),
+          maxFiles: attachment.maxFiles,
+          promptText: args.promptText,
+          callPicker: args.callPicker,
+          debug,
+        });
+      } catch (err) {
+        // The scan itself failing (a hostile or broken store) must never
+        // block the session either — same posture as buildIndexInjection.
+        debug(
+          `memory: attachment assembly failed (${err instanceof Error ? err.message : String(err)}) — skipped`,
+        );
+        return null;
+      }
     },
   };
 }
