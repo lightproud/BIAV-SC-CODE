@@ -60,12 +60,20 @@ jobs:
           git clone https://github.com/lightproud/BIAV-SC-DATA.git data-repo
 
       - name: Run cold compress
+        # dispatch 输入经 env 传入并全程加引号：`${{ }}` 直接展开进 run: 会被
+        # shell 当代码解析（一个含 `;` 的 cutoff 就是任意命令执行），含空格的值
+        # 还会被词法拆成多个参数打乱 argv。cutoff 的格式合法性由脚本侧
+        # discord_cold_compress.parse_cutoff 把关（格式一错即压掉热层）。
+        env:
+          IN_SCOPE: ${{ github.event.inputs.scope || 'all' }}
+          IN_CUTOFF: ${{ github.event.inputs.cutoff }}
         run: |
-          ARGS="--scope ${{ github.event.inputs.scope || 'all' }}"
-          if [ -n "${{ github.event.inputs.cutoff }}" ]; then
-            ARGS="$ARGS --cutoff ${{ github.event.inputs.cutoff }}"
+          set -euo pipefail
+          ARGS=(--scope "${IN_SCOPE:-all}")
+          if [ -n "${IN_CUTOFF:-}" ]; then
+            ARGS+=(--cutoff "$IN_CUTOFF")
           fi
-          python3 projects/news/scripts/community_cold_compress.py $ARGS
+          python3 projects/news/scripts/community_cold_compress.py "${ARGS[@]}"
 
       - name: Commit and push if changed → BIAV-SC-DATA
         run: |

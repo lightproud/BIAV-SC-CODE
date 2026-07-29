@@ -143,7 +143,22 @@ export function compareRunner(baselineEntries, currentEntries) {
   for (const [id, cur] of Object.entries(currentEntries)) {
     const base = baselineEntries?.[id];
     if (!base) {
-      improvements.push({ id, kind: 'new-scenario', detail: `verdict ${cur.verdict}` });
+      // A brand-new scenario is an improvement only when it ARRIVES GREEN (or
+      // as a known diff). One that arrives in the red class was being filed
+      // under "improvement new-scenario" and passing the gate: a DIVERGENT /
+      // FAILED row could enter the suite with no triage at all, while the
+      // deliberately-red rows already in the baseline had to be ruled on and
+      // locked in by an explicit --update. Red is red on arrival too - triage
+      // it (KD entry / engine fix) or baseline it deliberately.
+      if (classOf(cur.verdict) === 'red') {
+        regressions.push({
+          id,
+          kind: 'new-scenario-red',
+          detail: `new scenario arrived RED (${cur.verdict}) - not an improvement; triage it or baseline it deliberately with --update`,
+        });
+      } else {
+        improvements.push({ id, kind: 'new-scenario', detail: `verdict ${cur.verdict}` });
+      }
       continue;
     }
     const baseClass = classOf(base.verdict);

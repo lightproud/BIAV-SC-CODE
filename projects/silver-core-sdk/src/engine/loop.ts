@@ -638,6 +638,30 @@ export async function* runAgentLoop(
    *  2026-07-13), killing every conversation that shares the tool list.
    *  Normalize such schemas to the safe empty-object schema and say so in
    *  the debug log, instead of letting one bad tool take the request down. */
+  /** `type:"object"` is necessary but not sufficient. `JSONSchema` DECLARES
+   *  `properties?: Record<string, unknown>`, and the API validates it as one
+   *  (`tools.N.custom.input_schema.properties: Input should be a valid
+   *  dictionary`) — but nothing ever CHECKED it: the `as JSONSchema` above
+   *  asserted a shape no code had inspected. A lax server reaches this with
+   *  `properties: []` for free, because `json_encode([])` / `Marshal` of an
+   *  EMPTY map is `[]` in PHP, Ruby and Go — so the most ordinary MCP tool
+   *  there is (one that takes no arguments) 400s the ENTIRE request, killing
+   *  every conversation sharing the tool list. Drop the unusable value rather
+   *  than forward it: a tool with no advertised properties still works (the
+   *  handler validates its own arguments), a dead session does not. */
+  const withWireSafeProperties = (name: string, schema: JSONSchema): JSONSchema => {
+    const props: unknown = schema.properties;
+    if (props === undefined) return schema;
+    if (typeof props === 'object' && props !== null && !Array.isArray(props)) return schema;
+    deps.debug(
+      `engine: tool "${name}" has an input schema whose \`properties\` is ` +
+        `${Array.isArray(props) ? 'an array' : typeof props}, not an object; the API ` +
+        'rejects the whole request on that, so the field was dropped',
+    );
+    const { properties: _drop, ...rest } = schema;
+    void _drop;
+    return rest as JSONSchema;
+  };
   const normalizeInputSchema = (name: string, schema: unknown): JSONSchema => {
     if (typeof schema === 'object' && schema !== null && !Array.isArray(schema)) {
       // Being a plain object is NOT enough: the API's input_schema requires the
@@ -650,13 +674,13 @@ export async function* runAgentLoop(
       // discriminator); a wrong-typed one cannot describe an argument object
       // at all and degrades to the safe empty-object schema.
       const declared = (schema as { type?: unknown }).type;
-      if (declared === 'object') return schema as JSONSchema;
+      if (declared === 'object') return withWireSafeProperties(name, schema as JSONSchema);
       if (declared === undefined) {
         deps.debug(
           `engine: tool "${name}" has an input schema without \`type\`; ` +
             'stamped type:"object" (the API requires it)',
         );
-        return { ...(schema as JSONSchema), type: 'object' };
+        return withWireSafeProperties(name, { ...(schema as JSONSchema), type: 'object' });
       }
       deps.debug(
         `engine: tool "${name}" declares input schema type ${JSON.stringify(declared)}, ` +

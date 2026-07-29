@@ -14,6 +14,7 @@ import argparse
 import hashlib
 import json
 import logging
+import os
 import re
 import subprocess
 import sys
@@ -65,10 +66,16 @@ def load_manifest() -> dict:
 
 
 def save_manifest(manifest: dict):
-    """Save download manifest."""
-    MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(MANIFEST_PATH, 'w', encoding='utf-8') as f:
-        json.dump(manifest, f, ensure_ascii=False, indent=2)
+    """Save download manifest（原子替换，news_common.dump_json_atomic 单一真源）。
+
+    直写 open('w')+dump 在中途被中断（作业超时 / runner 回收）会留下半截 JSON，
+    而 `load_manifest` 把 JSONDecodeError **静默**吞成默认空清单：
+      ① 已下载的每个 URL 重新排队重下（媒体目录 gitignore，CI 里本地文件不在）；
+      ② `archived` 那份「哪些 media-YYYY-MM-DD Release 收着已被删除的本地文件」
+         的台账凭空消失——本地副本 archive_to_release 早就 unlink 掉了，账没了
+         就再没有第二处记着它们在哪个 tag 里。
+    姊妹路径 backfill_media.save_manifest 已走原子写，本处是同族漏网。"""
+    news_common.dump_json_atomic(MANIFEST_PATH, manifest)
 
 
 def download_file(url: str, dest: Path) -> bool:
@@ -77,7 +84,16 @@ def download_file(url: str, dest: Path) -> bool:
     经 news_common.safe_get：禁用自动重定向、手动逐跳重校验 SSRF 守卫并 pin IP
     （R2-M1），同时正确跟随 30x（B站/YouTube/Pixiv 等 CDN 普遍以 30x 下发资源，
     R2-H2 回归修复）。3xx 缺/坏 Location 或不安全跳 → 抛 ValueError，不落盘垃圾。
+
+    落盘走同目录 `.part` + os.replace：原先逐块直写 dest，一旦中途被中断
+    （作业超时被杀 / 磁盘写满——ENOSPC 是 OSError，既不是 ValueError 也不是
+    RequestException，下面两个 except 都接不住），半截文件就留在了最终文件名上。
+    下一轮 `download_new_media` 的 `if dest.exists()` 分支会把它**当作已下载**
+    直接登记进 manifest（实测：3 KB 截断 JPEG 被记成 status ok），坏图从此永久
+    入库、原图再不重下，还会被 archive_to_release 打包传进 Release。
+    姊妹路径 backfill_media.fetch 已走 .part+replace，本处是同族漏网。
     """
+    part = dest.with_name(dest.name + '.part')
     try:
         resp = news_common.safe_get(url, timeout=REQUEST_TIMEOUT, stream=True, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -93,25 +109,32 @@ def download_file(url: str, dest: Path) -> bool:
 
         dest.parent.mkdir(parents=True, exist_ok=True)
         total = 0
-        with open(dest, 'wb') as f:
-            for chunk in resp.iter_content(chunk_size=65536):
-                f.write(chunk)
-                total += len(chunk)
-                if total > MAX_FILE_SIZE_MB * 1024 * 1024:
-                    logger.warning(f'文件下载中超限 ({total / 1024 / 1024:.1f}MB)，停止: {url[:80]}')
-                    dest.unlink(missing_ok=True)
-                    return False
+        try:
+            with open(part, 'wb') as f:
+                for chunk in resp.iter_content(chunk_size=65536):
+                    f.write(chunk)
+                    total += len(chunk)
+                    if total > MAX_FILE_SIZE_MB * 1024 * 1024:
+                        logger.warning(f'文件下载中超限 ({total / 1024 / 1024:.1f}MB)，停止: {url[:80]}')
+                        part.unlink(missing_ok=True)
+                        return False
+            os.replace(part, dest)   # 只有整份写完才占用最终文件名
+        except OSError:
+            # ENOSPC / IO 错误：清掉半截 .part 再让异常冒出去（绝不留下会被
+            # 下一轮当成「已下载」的残档），错误本身仍要响亮
+            part.unlink(missing_ok=True)
+            raise
 
         logger.info(f'  {dest.name} ({total / 1024:.0f} KB)')
         return True
     except ValueError as e:
         # safe_get 拒绝（不安全 URL / 坏重定向）——不落盘垃圾文件
         logger.warning(f'  拒绝不安全 URL: {e}')
-        dest.unlink(missing_ok=True)
+        part.unlink(missing_ok=True)
         return False
     except requests.RequestException as e:
         logger.warning(f'  下载失败: {e}')
-        dest.unlink(missing_ok=True)
+        part.unlink(missing_ok=True)
         return False
 
 
@@ -225,9 +248,11 @@ def archive_to_release(manifest: dict):
     archive_name = f'media-archive-{today}.tar.gz'
     archive_path = MEDIA_DIR.parent / archive_name
 
-    # Create tar.gz of media files (excluding manifest)
+    # Create tar.gz of media files (excluding manifest)。`.part` 是被硬杀留下的
+    # 半截下载（见 download_file），打进 Release 就等于把坏档发出去、随后又被
+    # 下面的 unlink 清掉本地副本——一并排除，不进包也不删。
     media_files = [f for f in MEDIA_DIR.iterdir()
-                   if f.is_file() and f.name != 'manifest.json']
+                   if f.is_file() and f.name != 'manifest.json' and f.suffix != '.part']
 
     if not media_files:
         logger.info('没有文件需要归档')

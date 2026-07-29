@@ -58,12 +58,38 @@ export function normalizeOutputFormat(
     debug('outputFormat ignored: schema must be a JSON Schema object');
     return undefined;
   }
+  // Being a plain object is enough for the LOCAL validator (it is lenient by
+  // design) but NOT for the wire: `native: true` forwards this schema verbatim
+  // as `output_config.format.schema` (Anthropic) / `response_format.json_schema
+  // .schema` (the OpenAI translator), and BOTH require the root to be an object
+  // schema. A `{}`, a type-less `{properties:{…}}`, or a `{type:'array'}` is
+  // rejected with the whole request — and because the schema rides on EVERY
+  // turn of the query, that is not a degraded answer but a query that can never
+  // complete. This is the same one-level-too-shallow guard the engine's
+  // normalizeInputSchema already learned about tools[].input_schema (BPT
+  // 2026-07-13): "is it a plain object" stops above the field the API actually
+  // validates.
+  //
+  // The schema is NOT rewritten (that would silently change what the caller
+  // asked to be enforced); only the WIRE opt-in is withdrawn. Local validation
+  // still runs the full constraint set, which is exactly what the engine's own
+  // C9 comment promises — "the local validator still runs as the complement /
+  // fallback, so opting in never loses a constraint".
+  const wireSafeRoot = (o.schema as { type?: unknown }).type === 'object';
+  const native = o.native === true && wireSafeRoot;
+  if (o.native === true && !native) {
+    debug(
+      'outputFormat.native ignored: native structured outputs require a root ' +
+        `schema with type:"object"; got ${JSON.stringify((o.schema as { type?: unknown }).type)} ` +
+        '(the API rejects the whole request otherwise). Local schema validation still applies.',
+    );
+  }
   // Preserve `native` ONLY when explicitly true, so the default (local-only)
   // config stays exactly { type, schema } — the wire opt-in is off by default.
   return {
     type: 'json_schema',
     schema: o.schema as JSONSchema,
-    ...(o.native === true ? { native: true } : {}),
+    ...(native ? { native: true } : {}),
   };
 }
 

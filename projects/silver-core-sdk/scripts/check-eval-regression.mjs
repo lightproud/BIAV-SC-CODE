@@ -21,6 +21,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { computeDimensionStats } from './eval-scoring.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGRESSION_THRESHOLD = 0.5;
@@ -30,6 +31,17 @@ export function compareToBaseline(baseline, report) {
   const current = report?.behavior?.dimensionMeans ?? {};
   const warnings = [];
   const rows = [];
+  // The mean hides its denominator (eval-scoring V7-1): a dimension whose
+  // questions mostly ERRORED still reports a healthy mean over the survivors,
+  // and an ERROR-shaped regression moves no mean at all — 15 of 20 questions
+  // crashing read as "PASS (no dimension dropped > 0.5)". computeDimensionStats
+  // was written for exactly this and then never wired to a consumer. Attach it
+  // where the per-question records exist; when a report carries no `results`
+  // array (older reports, unit fixtures) the stats stay empty and nothing
+  // below fires — the gate never invents a denominator it did not measure.
+  const stats = Array.isArray(report?.behavior?.results)
+    ? computeDimensionStats(report.behavior.results)
+    : {};
   for (const [dimension, base] of Object.entries(baseline.dimensionMeans ?? {})) {
     const cur = current[dimension];
     if (cur === undefined) {
@@ -51,7 +63,16 @@ export function compareToBaseline(baseline, report) {
         `behavior regression: ${dimension} ${base} -> ${cur} (${delta}; threshold -${REGRESSION_THRESHOLD})`,
       );
     }
-    rows.push({ dimension, baseline: base, current: cur, delta, regressed });
+    const st = stats[dimension];
+    const lost = st ? st.errored + st.invalid : 0;
+    if (lost > 0) {
+      warnings.push(
+        `sample collapse: ${dimension} mean ${cur} rests on ${st.scored}/${st.total} question(s) ` +
+          `(${st.errored} ERROR, ${st.invalid} scoreless) — an ERROR-shaped regression moves no mean, ` +
+          'so judge this delta against its denominator, not on its own',
+      );
+    }
+    rows.push({ dimension, baseline: base, current: cur, delta, regressed, ...(st ? { scored: st.scored, total: st.total } : {}) });
   }
   for (const dimension of Object.keys(current)) {
     if ((baseline.dimensionMeans ?? {})[dimension] === undefined) {
@@ -144,11 +165,12 @@ function main() {
     return;
   }
   const { warnings, rows } = compareToBaseline(baseline, report);
-  console.log('| dimension | baseline | current | delta |');
-  console.log('|---|---|---|---|');
+  console.log('| dimension | baseline | current | delta | scored/total |');
+  console.log('|---|---|---|---|---|');
   for (const r of rows) {
+    const denom = r.total === undefined ? '—' : `${r.scored}/${r.total}`;
     console.log(
-      `| ${r.dimension} | ${r.baseline ?? '—'} | ${r.current ?? '—'} | ${r.delta ?? '—'}${r.regressed ? ' (REGRESSED)' : ''} |`,
+      `| ${r.dimension} | ${r.baseline ?? '—'} | ${r.current ?? '—'} | ${r.delta ?? '—'}${r.regressed ? ' (REGRESSED)' : ''} | ${denom} |`,
     );
   }
   for (const w of warnings) console.log(`::warning title=evals regression gate::${w}`);

@@ -23,6 +23,7 @@ import gzip
 import json
 import logging
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -48,6 +49,26 @@ def default_cutoff(today: date | None = None) -> str:
     d = today or archive_layout.archive_today()
     year, month = (d.year, d.month - 1) if d.month > 1 else (d.year - 1, 12)
     return f'{year:04d}-{month:02d}'
+
+
+# 冷月上界字面量：必须是零填充的 YYYY-MM。月界判定是**字符串比较**
+# （`stem[:7] >= cutoff`），所以一个不合格的字面量不会报错、只会静默改变含义：
+#   '2026-6'（漏零填充）→ '2026-12' < '2026-6'（'1' < '6'）→ 12 月也算冷月；
+#   '2027' / 'oops' / 任何非日期串 → 全部月份都判冷月。
+# 于是一次手滑（本值是 workflow_dispatch 的自由文本输入）就把**整个档案连同
+# 当月 + 上月热层**一起压成 .gz，进程返回 0、日志与正常一轮长得一模一样。
+# 压冷是不可逆重写，宁可在第一行就吵着退出。
+CUTOFF_RE = re.compile(r'^\d{4}-(?:0[1-9]|1[0-2])$')
+
+
+def parse_cutoff(raw: str) -> str:
+    """校验冷月上界字面量；非零填充 YYYY-MM 一律拒绝（见 CUTOFF_RE 上方说明）。"""
+    if not CUTOFF_RE.match(raw or ''):
+        raise ValueError(
+            f'invalid --cutoff {raw!r}: 须为零填充的 YYYY-MM（如 2026-06）——'
+            f'月界为字符串比较，格式一错即把热层一并压冷且不报错'
+        )
+    return raw
 
 
 def _merge_lines(gz_path: Path, raw_path: Path) -> list[str]:
@@ -138,7 +159,10 @@ def main() -> int:
     parser.add_argument('--cutoff', default=None, help="冷月上界 YYYY-MM（不含；默认 = 上月）")
     parser.add_argument('--region', default=None, help='只处理指定区服')
     args = parser.parse_args()
-    cutoff = args.cutoff or default_cutoff()
+    try:
+        cutoff = parse_cutoff(args.cutoff) if args.cutoff else default_cutoff()
+    except ValueError as exc:
+        parser.error(str(exc))
     logger.info(f'冷月上界（不含）: {cutoff}{"  [dry-run：不写任何文件]" if args.dry_run else ""}')
     t = run(cutoff, dry_run=args.dry_run, region=args.region)
     # dry-run 时压缩没跑，gz_bytes 恒 0；原合计行照打 `N MB → 0 MB`，读起来像压到了零字节。

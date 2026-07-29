@@ -321,6 +321,22 @@ def main() -> int:
     if args.list:
         return 0
 
+    # 「本轮一条都没跑」必须**也是红**。`failed` 是对 `runnable` 求的，runnable 为空时
+    # 它恒为空列表，于是下面照打「合并前门禁全部通过」并退 0——**在什么都没执行的情况下
+    # 报平安**，正是本脚本自己在 SILENT_FAILURE_MARKERS 上方点名的那类错（守卫报绿却
+    # 什么都没查），而且发生在 §7.6 明定「全部安全性落在合并前那一道门上」的那道门自己身上。
+    # 触发形态不需要多离谱：工作流把命令改成 `${{ }}` 参数化（→ 全判 unsupported）、
+    # 门禁步骤挪进 composite action / reusable workflow（→ 派生不出 run 步骤）、
+    # 或 `--no-save` 对照臂扩散到全部 job（→ 全判 needs-arm），任一都够。
+    # 实测（2026-07-29）：把 14 条 gate 全改判 unsupported，本脚本打印「全部通过」退 0。
+    # 判据与 `dead_man_switch.py` 的「judged=0 即红」同构——那边已立，这边漏了。
+    if not runnable:
+        print("\n\033[31m✗ 本轮可执行的门禁步骤为 0 —— 什么都没跑，"
+              "「通过」在此不是「都过了」而是「一条都没验」。\033[0m")
+        print(f"\033[31m派生出 {len(steps)} 条步骤但无一可在本地执行"
+              f"（归类：{sorted({s.kind for s in steps})}）；先修派生/分类，别合并。\033[0m")
+        return 1
+
     failed = [s for s in runnable if not _run(s)]
     ok_sparse = sparse_selfcheck() if args.sparse else True
 

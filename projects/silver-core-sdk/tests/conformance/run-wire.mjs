@@ -175,12 +175,19 @@ for (const scenario of WIRE_SCENARIOS) {
       row.facetDiff = facetDiff;
       row.toolSchemaDiff = schemaDiff;
       const candidates = facetDiff.filter((d) => d.kind === 'alignment-candidate');
+      // An arm that captured NO request body fingerprints as { present: false },
+      // and diffFingerprints skips facets undefined on either side - so two
+      // arms that both failed to send a request diff to EMPTY and used to be
+      // stamped WIRE_MATCH, i.e. "our wire matches the official target" off
+      // zero captured requests. Nothing captured is nothing compared.
       row.verdict =
-        facetDiff.length === 0 && schemaDiff.length === 0
-          ? 'WIRE_MATCH'
-          : candidates.length === 0 && schemaDiff.length === 0
-            ? 'WIRE_KNOWN_DIFF'
-            : 'WIRE_DIFF';
+        bpt?.present !== true || official?.present !== true
+          ? 'WIRE-INCONCLUSIVE-NO-CAPTURE'
+          : facetDiff.length === 0 && schemaDiff.length === 0
+            ? 'WIRE_MATCH'
+            : candidates.length === 0 && schemaDiff.length === 0
+              ? 'WIRE_KNOWN_DIFF'
+              : 'WIRE_DIFF';
       console.log(
         `[${scenario.id}] ${row.verdict} | facets:${facetDiff.length}(cand ${candidates.length}) toolSchema:${schemaDiff.length}` +
           (candidates.length ? ` | ${candidates.map((c) => c.facet).join(',')}` : ''),
@@ -192,8 +199,13 @@ for (const scenario of WIRE_SCENARIOS) {
       console.log(`[${scenario.id}] official unavailable: ${row.official.unavailable}`);
     }
   } else {
-    row.verdict = 'single-arm';
-    console.log(`[${scenario.id}] single-arm (bpt) tools=${bpt.toolCount} thinking=${JSON.stringify(bpt.thinking)}`);
+    row.verdict = bpt?.present === true ? 'single-arm' : 'SINGLE-ARM-NO-CAPTURE';
+    console.log(
+      `[${scenario.id}] ${row.verdict}` +
+        (bpt?.present === true
+          ? ` (bpt) tools=${bpt.toolCount} thinking=${JSON.stringify(bpt.thinking)}`
+          : ' (bpt sent no request body - nothing was fingerprinted)'),
+    );
   }
   report.scenarios.push(row);
 }

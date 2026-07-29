@@ -150,8 +150,24 @@ def validate_processed_consistency(loaded: dict[str, object]) -> list[str]:
     chars = loaded.get("characters.json")
     if not isinstance(chars, dict):
         return errors
-    declared = chars.get("_meta", {}).get("total_characters")
-    actual = len(chars.get("characters", []))
+    # `_meta` 只有「是 dict」才能 .get——schema 要求它是 object, 但本函数在 schema
+    # 校验**之后无条件**运行, 而 schema 校验只把违规记进 all_errors、不中止流程。
+    # 于是一份 `_meta: null` / `_meta: []` 的坏档案会在这里抛 AttributeError, 让
+    # 整个校验器以 traceback 收场——本该打印出来的那份 FAIL 清单一条也看不到。
+    meta = chars.get("_meta")
+    if not isinstance(meta, dict):
+        return [
+            f"  FAIL  processed/characters.json: _meta must be an object,"
+            f" got {type(meta).__name__}"
+        ]
+    declared = meta.get("total_characters")
+    entries = chars.get("characters", [])
+    if not isinstance(entries, list):
+        return [
+            f"  FAIL  processed/characters.json: characters must be an array,"
+            f" got {type(entries).__name__}"
+        ]
+    actual = len(entries)
     if declared != actual:
         errors.append(
             f"  FAIL  processed/characters.json: _meta.total_characters={declared}"
@@ -189,8 +205,17 @@ def validate_cross_references(loaded: dict[str, object]) -> list[str]:
     # 唯一 id 是**无条件**检查：详情页落点 docs/zh/awakeners/{id}.md 直接用 id 命名,
     # 重复 id = 后写的页悄悄覆盖前一张。此前该检查只挂在「realms.json 缺席」分支里,
     # 一旦 db 层重建、realms.json 回来, 撞 id 就再没人拦。
+    # 条目未必是对象: schema 的 items.type=object 违规**只被记录、不中止**, 随后本
+    # 函数照跑, 一个字符串条目就让 char.get 抛 AttributeError——校验器崩在自己该报的
+    # 那条错上。非对象条目按 FAIL 记账并跳过, 其余条目继续查, 报告才完整。
     seen_ids: dict[str, str] = {}
-    for char in all_chars:
+    for idx, char in enumerate(all_chars):
+        if not isinstance(char, dict):
+            errors.append(
+                f"  FAIL  characters.json: entry #{idx} must be an object,"
+                f" got {type(char).__name__}"
+            )
+            continue
         cid = str(char.get("id", "unknown"))
         if cid in seen_ids:
             errors.append(f"  FAIL  characters.json: duplicate id '{cid}'")
@@ -204,12 +229,20 @@ def validate_cross_references(loaded: dict[str, object]) -> list[str]:
         return errors
 
     valid_realm_ids = set()
+    # `realm["id"]` 是无守卫下标: realms.schema.json 把 id 列为 required, 但同样
+    # 「schema 报错不中止」, 缺 id 的域条目会在这里抛 KeyError。此分支目前因 db 层
+    # 被清空而走不到, 一旦重建就是现成的坑（上面的注释已经在提防同一件事）。
     for realm in realms_data.get("realms", []):
+        if not isinstance(realm, dict) or "id" not in realm:
+            errors.append(f"  FAIL  realms.json: realm entry without an 'id': {realm!r:.60}")
+            continue
         valid_realm_ids.add(realm["id"])
         if "legacy_id" in realm:
             valid_realm_ids.add(realm["legacy_id"])
 
     for char in all_chars:
+        if not isinstance(char, dict):
+            continue  # 已在上面的唯一 id 检查里记过 FAIL
         char_id = str(char.get("id", "unknown"))
         realm = char.get("realm")
         # Stub characters carry realm=None; only validate when non-null

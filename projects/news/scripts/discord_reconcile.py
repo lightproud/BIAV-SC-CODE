@@ -59,17 +59,31 @@ def merge_channel_index(existing: dict, current: dict) -> dict:
 
 
 def recover_channel_id(ch_dir: Path) -> str:
-    """从目录内任一 JSONL（裸或 .gz）首行恢复完整 channel_id（紧凑 schema 恒留该字段）。"""
+    """从目录内任一 JSONL（裸或 .gz）首行恢复本目录归属的完整 channel_id。
+
+    **论坛频道目录是例外，必须先看 `forum_channel_id`**：帖内消息取自
+    `/channels/{thread_id}/messages`，其 `channel_id` 字段是**帖子 id**，而
+    `discord_archiver._fetch_forum_thread` 又把它们统一落进**论坛频道**目录
+    （`_write_msg(forum_channel_id, ...)`）。直接取 `channel_id` 于是把整个论坛频道
+    目录登记到某个帖子 id 名下——真实频道 id 在索引里反查不到、登记条目的
+    `dir` 与 `id[-8:]` 自相矛盾，而该 dir 下一轮已在 `indexed_dirs` 里，
+    再也不会被当成孤儿复查，错登记就此永久固化（T35 要治的正是「目录不可反查」）。
+    归属唯一权威是紧凑 schema 恒留的 `forum_channel_id`（discord_compact
+    `_KEEP_FORUM_META`）；普通频道消息不带该键，回落 `channel_id`，行为不变。
+    """
     files = sorted(list(ch_dir.glob('*.jsonl')) + list(ch_dir.glob('*.jsonl.gz')), reverse=True)
     for f in files:
         try:
             with archive_layout.open_archive_text(f) as fh:
                 line = fh.readline()
-            cid = str(json.loads(line).get('channel_id', ''))
-            if cid:
-                return cid
+            rec = json.loads(line)
         except (OSError, json.JSONDecodeError):
             continue
+        if not isinstance(rec, dict):
+            continue
+        cid = str(rec.get('forum_channel_id') or rec.get('channel_id') or '')
+        if cid:
+            return cid
     return ''
 
 

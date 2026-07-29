@@ -76,6 +76,7 @@ async function captureArm(armKind) {
   const vocab = new Set();
   const encoding = {};
   const allTypes = [];
+  let error;
   try {
     const q = query({
       prompt: 'Delegate this to a subagent.',
@@ -85,6 +86,13 @@ async function captureArm(armKind) {
         maxTurns: 8,
         allowedTools: ['Agent'],
         env: baseEnv(emulator.url),
+        // 0.94.0: the engine ships no built-in default model, and baseEnv
+        // deliberately blanks ANTHROPIC_MODEL — without this pin EVERY bpt-arm
+        // spawn dies in query() construction with "model is required", the
+        // catch below swallowed the throw, and the run reported an EMPTY
+        // lifecycle vocabulary as if it had been measured (two dead arms even
+        // produced "L35_VOCAB_MATCH"). Same id the other runners pin.
+        model: 'claude-sonnet-4-5',
         agents: { 'general-purpose': { description: 'general purpose worker', prompt: 'You are a worker.' } },
         ...(armKind === 'bpt' ? { sessionDir: join(cwd, '.sessions') } : {}),
       },
@@ -104,15 +112,32 @@ async function captureArm(armKind) {
         }
       }
     }
-  } catch {
+  } catch (err) {
     // official may throw on its own iterator quirk after the result; the
-    // vocabulary observed up to that point is still the finding.
+    // vocabulary observed up to that point is still the finding. RECORD the
+    // throw either way: a swallowed error made "arm produced no lifecycle
+    // events" indistinguishable from "arm never started".
+    error = String(err?.message ?? err).slice(0, 300);
   } finally {
     clearTimeout(timer);
     await emulator.close();
     rmSync(cwd, { recursive: true, force: true });
   }
-  return { arm: armKind, lifecycleVocab: [...vocab].sort(), encoding, sawResult: allTypes.includes('result') };
+  return {
+    arm: armKind,
+    lifecycleVocab: [...vocab].sort(),
+    encoding,
+    sawResult: allTypes.includes('result'),
+    error: error ?? null,
+  };
+}
+
+/**
+ * An arm that emitted NO lifecycle event measured nothing: comparing two such
+ * arms yields an empty vocab diff, which the verdict used to call a MATCH.
+ */
+function armMeasured(arm) {
+  return arm.lifecycleVocab.length > 0;
 }
 
 const pins = JSON.parse(readFileSync(join(HERE, 'pins.json'), 'utf8'));
@@ -125,13 +150,19 @@ const report = {
 
 const bpt = await captureArm('bpt');
 report.bpt = bpt;
-console.log(`[bpt] lifecycle vocab: ${bpt.lifecycleVocab.join(', ') || '(none)'} | sawResult=${bpt.sawResult}`);
+console.log(
+  `[bpt] lifecycle vocab: ${bpt.lifecycleVocab.join(', ') || '(none)'} | sawResult=${bpt.sawResult}` +
+    (bpt.error ? ` | ARM ERROR: ${bpt.error}` : ''),
+);
 
 if (armMode !== 'bpt') {
   try {
     const official = await captureArm('official');
     report.official = official;
-    console.log(`[official] lifecycle vocab: ${official.lifecycleVocab.join(', ') || '(none)'} | sawResult=${official.sawResult}`);
+    console.log(
+      `[official] lifecycle vocab: ${official.lifecycleVocab.join(', ') || '(none)'} | sawResult=${official.sawResult}` +
+        (official.error ? ` | ARM ERROR: ${official.error}` : ''),
+    );
     const onlyBpt = bpt.lifecycleVocab.filter((v) => !official.lifecycleVocab.includes(v));
     const onlyOfficial = official.lifecycleVocab.filter((v) => !bpt.lifecycleVocab.includes(v));
     // Encoding divergence: for names BOTH emit, does the wire encoding match?
@@ -139,8 +170,13 @@ if (armMode !== 'bpt') {
     const encodingDiff = shared.filter((v) => bpt.encoding[v] !== official.encoding[v]);
     report.vocabDiff = { onlyBpt, onlyOfficial };
     report.encodingDiff = encodingDiff.map((v) => ({ name: v, bpt: bpt.encoding[v], official: official.encoding[v] }));
-    report.verdict =
-      onlyBpt.length === 0 && onlyOfficial.length === 0 && encodingDiff.length === 0 ? 'L35_VOCAB_MATCH' : 'L35_VOCAB_DIFF';
+    // An empty-vs-empty vocabulary is zero comparisons, not agreement: only
+    // call it a MATCH when BOTH arms actually emitted lifecycle events.
+    report.verdict = !armMeasured(bpt) || !armMeasured(official)
+      ? 'L35-INCONCLUSIVE-NO-LIFECYCLE'
+      : onlyBpt.length === 0 && onlyOfficial.length === 0 && encodingDiff.length === 0
+        ? 'L35_VOCAB_MATCH'
+        : 'L35_VOCAB_DIFF';
     console.log(`\nlifecycle vocab diff: onlyBpt=${JSON.stringify(onlyBpt)} onlyOfficial=${JSON.stringify(onlyOfficial)} => ${report.verdict}`);
     if (encodingDiff.length) console.log(`encoding diff (shared names): ${JSON.stringify(report.encodingDiff)}`);
   } catch (err) {
@@ -157,4 +193,19 @@ assertContentBlind(serialized);
 writeFileSync(outPath, serialized);
 console.log(`\nreport: ${outPath}`);
 console.log('content-blind self-audit: PASS');
+
+// Report-only applies to the DIFFERENTIAL (arms legitimately disagree on
+// vocabulary). It never applied to our own arm failing to run: a bpt arm that
+// threw, or that emitted not one lifecycle event on a foreground spawn, has
+// measured nothing - the same "BPT-arm failure is our regression" rule the
+// other runners exit 1 on. Printing "(none)" and exiting 0 is how this runner
+// sat dead from 0.94.0 onward without a single red.
+if (bpt.error || !armMeasured(bpt)) {
+  console.error(
+    `\nFAIL: the BPT arm measured NO lifecycle vocabulary` +
+      (bpt.error ? ` (arm error: ${bpt.error})` : ' (no task_*/hook_* event on a foreground Agent spawn)') +
+      ' - this runner compared nothing on our side.',
+  );
+  process.exit(1);
+}
 process.exit(0);

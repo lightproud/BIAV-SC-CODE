@@ -221,11 +221,25 @@ jobs:
             if (!t) { console.error('unknown target ${{ matrix.target }} in mutation-ratchet.json'); process.exit(2); }
             console.log(t.mutate);
           ")
+          # Same per-target ignoreStatic read as the agent job above. It was
+          # missing here, so a maestro target declaring "ignoreStatic": true
+          # would be re-measured WITH its module-load static mutants while its
+          # floor was seeded without them — static mutants any import kills,
+          # i.e. free points that INFLATE the score and can hold a target above
+          # a floor its behavioural mutants no longer clear. A baseline field
+          # the runner silently ignores is the same drift class the generated
+          # matrix (keeper ruling 2026-07-26) was introduced to close.
+          IGNORE_STATIC=$(node -e "
+            const b = require('./mutation-ratchet.json');
+            const t = (b.targets ?? []).find((t) => t.name === '${{ matrix.target }}');
+            console.log(t && t.ignoreStatic ? '--ignoreStatic' : '');
+          ")
           echo "mutate=$PATTERN" >> "$GITHUB_OUTPUT"
+          echo "ignore_static=$IGNORE_STATIC" >> "$GITHUB_OUTPUT"
       - name: Stryker round (${{ matrix.target }})
         if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         working-directory: projects/silver-core-maestro-sdk
-        run: npx stryker run --mutate "${{ steps.pattern.outputs.mutate }}"
+        run: npx stryker run --mutate "${{ steps.pattern.outputs.mutate }}" ${{ steps.pattern.outputs.ignore_static }}
       - name: Ratchet check
         if: ${{ !github.event.inputs.target || github.event.inputs.target == matrix.target }}
         working-directory: projects/silver-core-maestro-sdk

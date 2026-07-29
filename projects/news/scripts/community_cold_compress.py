@@ -52,8 +52,33 @@ def _item_key(it) -> str:
     return 'raw:' + json.dumps(it, ensure_ascii=False, sort_keys=True)
 
 
+def _union_items(*item_lists) -> list:
+    """按条目键并集（gz 在前、旁车在后），保持首次出现顺序。"""
+    seen = set()
+    merged = []
+    for items in item_lists:
+        for it in items:
+            k = _item_key(it)
+            if k in seen:
+                continue
+            seen.add(k)
+            merged.append(it)
+    return merged
+
+
 def _merge_json_docs(gz_path: Path, raw_path: Path):
-    """并轨 {items:[...]} 形态：gz 在前、旁车在后按条目并集。不可识别返回 None。"""
+    """并轨冷层 .gz 与裸旁车：gz 在前、旁车在后按条目并集。不可识别返回 None。
+
+    两种档案形态都要认：
+      - `{date, item_count, items:[...]}`（archive_platforms / backfill_* 的写法）；
+      - **顶层裸列表 `[{...}, ...]`**——youtube_comments 的每日快照就是这个形状
+        （`collect_video_comments` 直接 dump 一个 list），读方 collect_fanart /
+        backfill_media 也都写着 `items if isinstance(items, list) else items["items"]`。
+        原实现只认前者，于是列表形态的旁车**永远**并不进去：每月压冷都打一行
+        「旁车结构不可识别」警告、裸文件与 .gz 就此长期并存，该平台的冷层再也
+        收不拢（`dated_files` 同一天恒产出两个文件），且没有任何补救路径。
+    元素非 dict 的列表（真正的不可识别结构）仍返回 None，裸文件原样保留不吞数据。
+    """
     try:
         with archive_layout.open_archive_text(gz_path) as f:
             base = json.load(f)
@@ -61,21 +86,18 @@ def _merge_json_docs(gz_path: Path, raw_path: Path):
             side = json.load(f)
     except (OSError, json.JSONDecodeError):
         return None
-    if not (isinstance(base, dict) and isinstance(base.get('items'), list)
+    if (isinstance(base, dict) and isinstance(base.get('items'), list)
             and isinstance(side, dict) and isinstance(side.get('items'), list)):
-        return None
-    seen = set()
-    merged = []
-    for it in base['items'] + side['items']:
-        k = _item_key(it)
-        if k in seen:
-            continue
-        seen.add(k)
-        merged.append(it)
-    base['items'] = merged
-    if 'item_count' in base or 'item_count' in side:
-        base['item_count'] = len(merged)
-    return base
+        merged = _union_items(base['items'], side['items'])
+        base['items'] = merged
+        if 'item_count' in base or 'item_count' in side:
+            base['item_count'] = len(merged)
+        return base
+    if (isinstance(base, list) and isinstance(side, list)
+            and all(isinstance(i, dict) for i in base)
+            and all(isinstance(i, dict) for i in side)):
+        return _union_items(base, side)
+    return None
 
 
 def compress_platform_file(raw: Path, dry_run: bool = False) -> str:
@@ -165,7 +187,13 @@ def main() -> int:
     parser.add_argument('--cutoff', default=None, help='冷月上界 YYYY-MM（不含；默认 = 上月）')
     parser.add_argument('--scope', choices=['all', 'discord', 'platforms'], default='all')
     args = parser.parse_args()
-    cutoff = args.cutoff or dcc.default_cutoff()
+    # 冷月上界必须是零填充 YYYY-MM：月界是字符串比较，'2026-6' / '2027' / 任意
+    # 非日期串都会把**全部**月份判成冷月（含当月 + 上月热层）而静默返回 0。
+    # 本值来自 workflow_dispatch 自由文本输入，压冷又是不可逆重写——先验后跑。
+    try:
+        cutoff = dcc.parse_cutoff(args.cutoff) if args.cutoff else dcc.default_cutoff()
+    except ValueError as exc:
+        parser.error(str(exc))
     logger.info(f'冷月上界（不含）: {cutoff}  scope={args.scope}'
                 f'{"  [dry-run：不写任何文件]" if args.dry_run else ""}')
     # dry-run 下 gz_bytes 恒为 0（压缩根本没跑），而合计行照旧打 `X MB → 0.0 MB`——

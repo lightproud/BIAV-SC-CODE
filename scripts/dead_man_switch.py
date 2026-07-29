@@ -45,7 +45,15 @@ GRACE_HOURS = 2.0
 #  cron 采样窗口：要能覆盖到月度 cron 的两次触发（每月 3 日 → 需 > 31 天）
 SAMPLE_DAYS = 400
 
-CRON_BOUNDS = [(0, 59), (0, 23), (1, 31), (1, 12), (0, 6)]
+# 字段上下界。**周字段上界是 7 不是 6**：POSIX crontab 与 GitHub Actions 都把
+# `7` 当作周日的第二种写法（`0` 与 `7` 同义），`_matches_day` 下面那句
+# `(7 in dow and cron_dow == 0)` 正是为它写的。上界写 6 时 `parse_field` 会把
+# `* * * * 7` / `* * * * 5-7` 判成「字段越界」抛 ValueError，`build_status` 于是
+# 把该工作流记成 state=unknown——**它被看守名单收下、却一次也没判过**，而
+# findings 只数 stale/never，报告照打「findings=0」。这正是本脚本存在要消灭的
+# 那种沉默，只不过发生在守卫自己身上。同时那句 `7 in dow` 也因此永远为假
+# （实测：整条删掉，23 条单测全绿），dead code 是这条边界写错的直接痕迹。
+CRON_BOUNDS = [(0, 59), (0, 23), (1, 31), (1, 12), (0, 7)]
 
 
 def parse_field(spec: str, lo: int, hi: int) -> set[int]:

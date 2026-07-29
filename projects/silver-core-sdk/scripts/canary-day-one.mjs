@@ -318,12 +318,27 @@ if (!LIVE) {
 // --- verdict ------------------------------------------------------------------
 const fails = results.filter((r) => r.status === 'FAIL');
 const skips = results.filter((r) => r.status === 'SKIP');
+// A SKIP is "not measured", never "measured and fine". `--live` without
+// ANTHROPIC_API_KEY skips C2/C3/C4, leaving only the import check - and the
+// verdict used to read GREEN / exit 0 off those three unmeasured rows, which
+// is precisely the go/no-go the migration checklist reads ("run keyless, then
+// --live. Green = done"). GREEN now requires every check to have actually run.
+const verdict = fails.length > 0 ? 'RED' : skips.length > 0 ? 'INCONCLUSIVE' : 'GREEN';
 console.log('---');
 console.log(
-  `canary verdict: ${fails.length === 0 ? 'GREEN' : 'RED'} — ` +
+  `canary verdict: ${verdict} — ` +
     `${results.filter((r) => r.status === 'PASS').length} passed, ${fails.length} failed, ${skips.length} skipped`,
 );
 if (fails.length > 0) {
   console.log('If a check fails, start at docs/MIGRATION-0.3x-to-0.68.md section 3 (breaking points).');
 }
-process.exit(fails.length === 0 ? 0 : 1);
+if (verdict === 'INCONCLUSIVE') {
+  console.log(
+    `INCONCLUSIVE: ${skips.map((r) => r.id).join(', ')} never ran (${skips.map((r) => r.note).join('; ')}). ` +
+      'Nothing was proven about those failure classes - fix the precondition and re-run before calling the upgrade good.',
+  );
+}
+// 0 = every check ran and passed; 1 = a check failed; 2 = nothing failed but
+// something never ran (distinct code so a wrapper script cannot read an
+// unmeasured round as a pass).
+process.exit(fails.length > 0 ? 1 : skips.length > 0 ? 2 : 0);

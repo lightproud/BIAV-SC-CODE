@@ -25,6 +25,15 @@ KNOWLEDGE_GLOBS = [
     "assets/data/character-personas/*.json", "assets/data/character-personas/*.md",
     "memory/*.md", "memory/*.json",
     "memory/active/*.md", "memory/research/*.md", "memory/strategy/*.md",
+    # `memory/archive/` 与 research / strategy 同为 memory 子层，此前**唯独它缺席**——
+    # 而生成器 `build_okf_bundle.build_memory()` 一直在给它发 `memory-archive-*` 概念
+    # （15 份，含整个 `bpt-strategic-shift-2026-04-19/` 快照集）。清单里没有的文件，
+    # 哨兵结构上不可能报红：实测（2026-07-29）把 okf/ 里 15 个 memory-archive-* 概念
+    # **全部删掉**——那 15 份档案在知识库里一条指针都不剩——本哨兵仍 2/2 全绿。
+    # 与下面 `projects/*/CONTEXT.md` 那条同一个病根（漏在清单里的洞它一辈子看不见），
+    # 只是这一处漏的是子层而不是子项目。用 `**` 是因为该层有嵌套目录，生成器那侧
+    # 用的正是 `rglob`——两侧射程必须同深，否则嵌套那 9 份又会掉出射程。
+    "memory/archive/**/*.md",
     "projects/wiki/data/processed/*.json", "projects/wiki/data/processed/*.md",
     "projects/wiki/data/processed/story/*.json", "projects/wiki/data/processed/story/*.md",
     "projects/wiki/data/schemas/*.json",

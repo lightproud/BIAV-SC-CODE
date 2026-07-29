@@ -65,8 +65,18 @@ def compact_record(rec: dict) -> dict:
 
 
 def expand_record(rec: dict) -> dict:
-    """把紧凑记录补回完整默认字段（供需要稳定 schema 的读取方；多数消费方用 .get 即可，无需此函数）。"""
-    return {
+    """把紧凑记录补回完整默认字段（供需要稳定 schema 的读取方；多数消费方用 .get 即可，无需此函数）。
+
+    论坛注记按**存在才带**透传（不进默认表）：本函数曾按固定 18 键重建，于是
+    `compact_record` 明明恒留的 thread_title / forum_channel_id / thread_tags /
+    is_thread_starter 在这里被整批丢掉——`expand_record(compact_record(x)) != x`，
+    与本模块「全部可逆、零信息损失」的契约相悖。后果不是崩溃而是静默降级：
+    论坛帖归档在**论坛频道**目录里，没有 thread_title / is_thread_starter 就无从
+    知道某条属于哪个帖、谁是首楼，凡按 CLAUDE.md §5.2 指引用本函数取「稳定全字段」
+    的读方（帖级分析 / 制作人信整理）会把每条论坛消息看成无主的普通频道消息。
+    普通频道消息不带这些键，输出与旧行为逐字节相同。
+    """
+    out = {
         'id': rec.get('id', ''),
         'channel_id': rec.get('channel_id', ''),
         'type': rec.get('type', 0),
@@ -86,3 +96,7 @@ def expand_record(rec: dict) -> dict:
         'thread_id': rec.get('thread_id'),
         'flags': rec.get('flags', 0),
     }
+    for k in _KEEP_FORUM_META:
+        if k in rec:
+            out[k] = rec[k]
+    return out

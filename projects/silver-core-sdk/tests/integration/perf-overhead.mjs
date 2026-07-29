@@ -92,6 +92,11 @@ async function runOnce(scripts, promptText) {
       prompt: promptText,
       options: {
         provider: { apiKey: 'perf-key', baseUrl: emulator.url },
+        // 0.94.0: the SDK ships no built-in default model, so an unpinned
+        // query() throws config_invalid before a single millisecond is
+        // measured — this probe has been unrunnable since. Any emulator id
+        // works: the scripted reply ignores it.
+        model: 'claude-emulator-1',
         persistSession: false,
         maxTurns: 100,
       },
