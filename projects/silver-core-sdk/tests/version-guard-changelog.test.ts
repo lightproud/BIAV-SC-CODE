@@ -19,6 +19,9 @@ import {
   latestChangelogVersion,
   compareVersions,
   classifyBump,
+  sequenceViolations,
+  changelogVersions,
+  KNOWN_SEQUENCE_ANOMALIES,
   VERSION_OVERRIDE_TRAILER,
 } from '../scripts/check-version-bump.mjs';
 
@@ -173,5 +176,49 @@ describe('bump classification (keeper ruling 2026-07-29)', () => {
     const prior =
       pat > 0 ? `${maj}.${min}.${pat - 1}` : min > 0 ? `${maj}.${min - 1}.0` : `${maj - 1}.0.0`;
     expect(classifyBump(prior, pkg.version).ok).toBe(true);
+  });
+});
+
+/**
+ * Where the step-shape rule is enforced, and why it is NOT the diff.
+ *
+ * This repo squash-merges long branches, so one merge commit legitimately
+ * spans several releases — a branch that cut 1.5.0/1.6.0/1.7.0/1.8.0 lands on
+ * a main sitting at 1.4.1 as a single 1.4.1 -> 1.8.0 diff. A "single step"
+ * rule applied to the diff would red every such merge, which is how this was
+ * caught: main moved to 1.4.1 under a parallel PR while this branch was at
+ * 1.8.0. The ledger is the squash-proof place to hold the invariant.
+ */
+describe('CHANGELOG version sequence (the squash-proof half)', () => {
+  it("the repo's own CHANGELOG is clean apart from the frozen historical band", () => {
+    const changelog = readFileSync(join(PKG, 'CHANGELOG.md'), 'utf8');
+    expect(sequenceViolations(changelog)).toEqual([]);
+  });
+
+  it('catches a hole where a version number never shipped', () => {
+    // 1.8.1 and 1.8.2 have no entry: a hand-edit typed 1.8.3.
+    const forged = '# CL\n\n## 1.8.3 — x\n\n## 1.8.0 — x\n\n## 1.7.0 — x\n';
+    const bad = sequenceViolations(forged);
+    expect(bad).toHaveLength(1);
+    expect(bad[0]).toContain('1.8.0->1.8.3');
+  });
+
+  it('accepts a multi-release branch: each entry is its own single step', () => {
+    // The exact shape that the diff-based rule would have wrongly rejected.
+    const ok = '# CL\n\n## 1.8.0 — x\n\n## 1.7.0 — x\n\n## 1.6.0 — x\n\n## 1.5.0 — x\n\n## 1.4.1 — x\n\n## 1.4.0 — x\n';
+    expect(sequenceViolations(ok)).toEqual([]);
+  });
+
+  it('freezes the historical anomalies as a ratchet, not a silent skip', () => {
+    // Published and pinned, so they cannot be renumbered — but the set is
+    // closed: a new violation cannot hide behind them.
+    expect(KNOWN_SEQUENCE_ANOMALIES.size).toBe(3);
+    const changelog = readFileSync(join(PKG, 'CHANGELOG.md'), 'utf8');
+    const vs = changelogVersions(changelog);
+    for (const key of KNOWN_SEQUENCE_ANOMALIES) {
+      const [older, newer] = key.split('->');
+      expect(vs).toContain(older);
+      expect(vs).toContain(newer);
+    }
   });
 });

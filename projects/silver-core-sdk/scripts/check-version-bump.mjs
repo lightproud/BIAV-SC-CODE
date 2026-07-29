@@ -128,6 +128,55 @@ export function classifyBump(before, after) {
   return { kind: names[first], ok: true, reason: '' };
 }
 
+/**
+ * Historical non-single-step pairs already in CHANGELOG.md, frozen as a
+ * RATCHET rather than skipped silently: the 0.35-0.37 band is genuinely out of
+ * order (0.37.0 sits below 0.36.0, and 0.37.1 exists without 0.37.0 preceding
+ * it), the same era lesson #45 came from. They are published and pinned, so
+ * they cannot be renumbered — but no NEW pair may join them.
+ */
+export const KNOWN_SEQUENCE_ANOMALIES = new Set([
+  '0.36.0->0.37.1',
+  '0.37.0->0.36.0',
+  '0.35.0->0.37.0',
+]);
+
+/**
+ * Every "## X.Y.Z" heading in CHANGELOG.md, newest first.
+ */
+export function changelogVersions(changelogText) {
+  return [...changelogText.matchAll(/^##\s+(\d+\.\d+\.\d+)\b/gm)].map((m) => m[1]);
+}
+
+/**
+ * The step-shape invariant, checked where it is squash-merge-proof: adjacent
+ * CHANGELOG entries must each be a clean single step (keeper ruling
+ * 2026-07-29).
+ *
+ * Checking shape against the DIFF cannot work in this repo — a squash merge of
+ * a long branch legitimately moves several releases at once. The ledger is the
+ * right place: it lists every version that ever existed, so a hole in it is
+ * exactly the defect worth catching. A hand-edit that types 1.8.3 where 1.8.1
+ * belonged leaves 1.8.1 and 1.8.2 with no entry, and a number that never
+ * shipped cannot be reclaimed later — the family ships lockstep and consumers
+ * pin tarballs by version.
+ *
+ * Returns the offending "older->newer" pairs, minus the frozen historical set.
+ */
+export function sequenceViolations(changelogText) {
+  const vs = changelogVersions(changelogText);
+  const out = [];
+  for (let i = 0; i < vs.length - 1; i += 1) {
+    const older = vs[i + 1];
+    const newer = vs[i];
+    const key = `${older}->${newer}`;
+    if (KNOWN_SEQUENCE_ANOMALIES.has(key)) continue;
+    const r = classifyBump(older, newer);
+    if (!r.ok) out.push(`${key} (${r.reason})`);
+  }
+  return out;
+}
+
 /** The commit-message trailer that authorizes a first-digit (major) bump or a
  *  non-single-step version move. This is an HONESTY mechanism, not a security
  *  boundary — whoever writes the commit writes the trailer. It exists so the
@@ -171,6 +220,17 @@ function runGuard() {
       console.error(
         'version-bump guard FAILED: no "## X.Y.Z" version entry found in CHANGELOG.md. ' +
           'Every release adds a "## <version>" heading; without one the ledger cannot be reconciled.',
+      );
+      process.exit(1);
+    }
+    const seqBad = sequenceViolations(changelog);
+    if (seqBad.length > 0) {
+      console.error(
+        `version-bump guard FAILED: CHANGELOG.md version sequence has ${seqBad.length} ` +
+          `non-single-step pair(s): ${seqBad.join('; ')}. Keeper ruling 2026-07-29 — a bump ` +
+          'moves exactly ONE digit by exactly one and resets everything below it. A gap here ' +
+          'means a version number that never shipped, and it cannot be reclaimed later: the ' +
+          'family ships lockstep and consumers pin tarballs by version.',
       );
       process.exit(1);
     }
@@ -261,6 +321,13 @@ function runGuard() {
       // change, major only when the keeper asks. The step SHAPE and the
       // first-digit gate are the machine-checkable half; which of patch/minor
       // a change deserves is the author's call and no guard can make it.
+      // NOTE on scope: the STEP SHAPE is deliberately NOT checked here against
+      // the diff. This repo squash-merges long branches, so one merge commit
+      // legitimately spans several releases (1.4.1 -> 1.8.0 when a branch cut
+      // 1.5.0/1.6.0/1.7.0/1.8.0 along the way) — a "single step" rule on the
+      // diff would red every such merge. Shape is enforced where it is
+      // actually meaningful and squash-proof: on CHANGELOG.md's own version
+      // sequence, above.
       const bump = classifyBump(versionBefore, versionAfter);
       let commitMsg = '';
       try {
@@ -269,16 +336,6 @@ function runGuard() {
         commitMsg = '';
       }
       const overridden = commitMsg.includes(VERSION_OVERRIDE_TRAILER);
-      if (!bump.ok && !overridden) {
-        console.error(
-          `version-bump guard FAILED: ${versionBefore} -> ${versionAfter} is not a clean ` +
-            `single step (${bump.reason}). A bump moves exactly ONE component by exactly one ` +
-            'and resets everything below it. A skipped number cannot be reclaimed later — the ' +
-            'family ships lockstep and consumers pin by version. If the move is deliberate, ' +
-            `add a "${VERSION_OVERRIDE_TRAILER} <keeper ruling>" trailer to the commit message.`,
-        );
-        process.exit(1);
-      }
       if (bump.kind === 'major' && !overridden) {
         console.error(
           `version-bump guard FAILED: ${versionBefore} -> ${versionAfter} moves the FIRST ` +
