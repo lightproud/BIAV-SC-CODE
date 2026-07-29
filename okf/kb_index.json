@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 388,
-    "edges": 430,
-    "terms": 6896,
+    "concepts": 390,
+    "edges": 431,
+    "terms": 6904,
     "by_type": {
       "character": 72,
       "dataset": 95,
-      "documentation": 153,
+      "documentation": 155,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 23,
       "projects": 30,
-      "resource": 122,
+      "resource": 124,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 254
+      "search": 256
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 122
+      "count": 124
     },
     "sources": {
       "index": "/sources/index.md",
@@ -394,7 +394,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 11
     },
     "/characters/15564.md": {
       "type": "character",
@@ -480,7 +480,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 12
     },
     "/characters/15570.md": {
       "type": "character",
@@ -494,7 +494,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 9
     },
     "/characters/15571.md": {
       "type": "character",
@@ -676,7 +676,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/15584.md": {
       "type": "character",
@@ -704,7 +704,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 7
     },
     "/characters/15586.md": {
       "type": "character",
@@ -718,7 +718,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/characters/15587.md": {
       "type": "character",
@@ -901,7 +901,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/15600.md": {
       "type": "character",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 113
+      "degree": 116
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1000,7 +1000,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1028,7 +1028,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/77914.md": {
       "type": "character",
@@ -1070,7 +1070,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 8
     },
     "/characters/77921.md": {
       "type": "character",
@@ -1140,7 +1140,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77926.md": {
       "type": "character",
@@ -4365,6 +4365,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md": {
+      "type": "documentation",
+      "title": "scs-req-input-shape-diagnostics-20260729",
+      "description": "问「这是银芯的 bug 吗」（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/scs-req-input-shape-diagnostics-20260729.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md": {
       "type": "documentation",
       "title": "scs-req-memory-frontmatter-attachment-r1-20260729",
@@ -4406,6 +4420,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 0
+    },
+    "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md": {
+      "type": "documentation",
+      "title": "scs-tool-param-robustness-audit-20260729",
+      "description": "maestro 同号锁步，零代码改动（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/scs-tool-param-robustness-audit-20260729.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
     },
     "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md": {
       "type": "documentation",
@@ -4746,7 +4774,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3233 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3234 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4774,7 +4802,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1824 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1825 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4872,7 +4900,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 157 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 158 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4914,7 +4942,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2494 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2503 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4928,7 +4956,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 11635 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 11649 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4942,7 +4970,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 8968 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8988 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4956,7 +4984,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3142 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3146 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5846,6 +5874,11 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "提及:图鲁",
         "mention"
@@ -5872,6 +5905,11 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:图鲁",
         "mention"
       ],
@@ -6043,6 +6081,11 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "提及:萝坦",
         "mention"
@@ -6063,6 +6106,11 @@
         "mention"
       ],
       [
+        "/sources/bilibili.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
         "/sources/weibo.md",
         "提及:萝坦",
         "mention"
@@ -6078,6 +6126,11 @@
         "/characters/15602.md",
         "变体",
         "variant"
+      ],
+      [
+        "/community/community-bilibili.md",
+        "提及:朵尔",
+        "mention"
       ],
       [
         "/memory/decisions.md",
@@ -6101,6 +6154,11 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:朵尔",
         "mention"
       ],
@@ -6389,17 +6447,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
         "/memory/morimens-context.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:奥尔拉",
         "mention"
       ]
@@ -6433,11 +6481,6 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:奥吉尔",
-        "mention"
-      ],
-      [
         "/memory/decisions.md",
         "提及:奥吉尔",
         "mention"
@@ -6451,10 +6494,17 @@
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
         "提及:奥吉尔",
         "mention"
+      ]
+    ],
+    "/characters/15586.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:旺达",
+        "mention"
       ],
       [
         "/sources/bilibili.md",
-        "提及:奥吉尔",
+        "提及:旺达",
         "mention"
       ]
     ],
@@ -6720,16 +6770,6 @@
     ],
     "/characters/15599.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
         "/story/STORY_RESEARCH.md",
         "提及:萨尔瓦多",
         "mention"
@@ -6809,6 +6849,11 @@
       ],
       [
         "/assets/persona-erica-speech-canon.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/community/community-bilibili.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -7303,6 +7348,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
         "提及:艾瑞卡",
         "mention"
@@ -7354,6 +7404,11 @@
       ],
       [
         "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -7419,12 +7474,22 @@
     ],
     "/characters/54117.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
         "/community/community-youtube-comments.md",
         "提及:哈姆林",
         "mention"
       ],
       [
         "/memory/decisions.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:哈姆林",
         "mention"
       ],
@@ -7442,16 +7507,6 @@
       ]
     ],
     "/characters/77913.md": [
-      [
-        "/community/community-bilibili.md",
-        "提及:凯蒂古拉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
-        "提及:凯蒂古拉",
-        "mention"
-      ],
       [
         "/story/STORY_RESEARCH.md",
         "提及:凯蒂古拉",
@@ -7504,11 +7559,6 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:阿拉克涅",
         "mention"
@@ -7530,11 +7580,6 @@
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:阿拉克涅",
         "mention"
       ],
@@ -7609,17 +7654,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:克莱门汀",
-        "mention"
-      ],
-      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:克莱门汀",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:克莱门汀",
         "mention"
       ],
@@ -7783,28 +7818,8 @@
         "mention"
       ],
       [
-        "/characters/15599.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
-        "/characters/77913.md",
-        "提及:凯蒂古拉",
-        "mention"
-      ],
-      [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
         "/characters/77923.md",
         "提及:卡斯托尔",
-        "mention"
-      ],
-      [
-        "/characters/77925.md",
-        "提及:克莱门汀",
         "mention"
       ],
       [
@@ -7823,18 +7838,38 @@
         "mention"
       ],
       [
-        "/characters/15583.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
-        "/characters/15585.md",
-        "提及:奥吉尔",
-        "mention"
-      ],
-      [
         "/characters/15588.md",
         "提及:艾尔瓦",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15569.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/characters/15586.md",
+        "提及:旺达",
         "mention"
       ],
       [
@@ -9610,6 +9645,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md": [
       [
         "/characters/15603.md",
@@ -9762,28 +9804,8 @@
         "mention"
       ],
       [
-        "/characters/15599.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
-        "/characters/77913.md",
-        "提及:凯蒂古拉",
-        "mention"
-      ],
-      [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
         "/characters/77923.md",
         "提及:卡斯托尔",
-        "mention"
-      ],
-      [
-        "/characters/77925.md",
-        "提及:克莱门汀",
         "mention"
       ],
       [
@@ -9802,18 +9824,38 @@
         "mention"
       ],
       [
-        "/characters/15583.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
-        "/characters/15585.md",
-        "提及:奥吉尔",
-        "mention"
-      ],
-      [
         "/characters/15588.md",
         "提及:艾尔瓦",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15569.md",
+        "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/characters/15586.md",
+        "提及:旺达",
         "mention"
       ],
       [
@@ -10614,9 +10656,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -11038,6 +11082,7 @@
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -11372,6 +11417,7 @@
     "bug": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
@@ -11955,9 +12001,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -12359,9 +12407,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -12722,9 +12772,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -12937,9 +12989,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -13051,7 +13105,8 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
-      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
+      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "dict": [
       "/story/story_search_index.md"
@@ -13273,9 +13328,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -14100,9 +14157,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -14147,6 +14206,9 @@
     ],
     "infobox": [
       "/memory/memory-ext-research-best-wiki-features.md"
+    ],
+    "input": [
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "insights": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
@@ -14632,9 +14694,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -14957,6 +15021,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
       "/resource/resource-repo-engineering-maestro-sdk-product-review-20260726.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md",
@@ -15194,9 +15259,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -15644,6 +15711,9 @@
     "parallelism": [
       "/projects/silver-core-sdk-doc-concurrency.md"
     ],
+    "param": [
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
+    ],
     "parity": [
       "/projects/silver-core-sdk-doc-tool-parity.md"
     ],
@@ -15985,9 +16055,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -16442,9 +16514,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -16772,9 +16846,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -16819,6 +16895,7 @@
     ],
     "req": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
@@ -16949,9 +17026,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -17037,6 +17116,9 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
+    ],
+    "robustness": [
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "role": [
       "/resource/resource-game-analysis-role-action-recommendations-202605.md"
@@ -17185,9 +17267,11 @@
     ],
     "scs": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
-      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
+      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "sdk": [
       "/README.md",
@@ -17295,6 +17379,9 @@
     ],
     "sh": [
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
+    ],
+    "shape": [
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "shift": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -17939,7 +18026,8 @@
       "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
-      "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
+      "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "tools": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -18043,9 +18131,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -19228,9 +19318,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -19538,9 +19630,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -19903,9 +19997,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -21338,9 +21434,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -21616,6 +21714,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
@@ -22379,9 +22478,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -22684,9 +22785,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -24792,9 +24895,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -26629,6 +26734,9 @@
     "号角": [
       "/characters/15585.md"
     ],
+    "号锁": [
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
+    ],
     "号面": [
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
@@ -26695,6 +26803,9 @@
     ],
     "同伙": [
       "/characters/130901.md"
+    ],
+    "同号": [
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "同型": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
@@ -28312,9 +28423,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -29180,9 +29293,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -29862,9 +29977,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -34067,9 +34184,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -34682,9 +34801,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -35057,9 +35178,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -35218,7 +35341,8 @@
     ],
     "改动": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
-      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "改指": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
@@ -35524,9 +35648,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -35845,9 +35971,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -37008,7 +37136,8 @@
     ],
     "是银": [
       "/README.md",
-      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "是防": [
       "/characters/15603.md"
@@ -37742,9 +37871,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -38225,9 +38356,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -38910,9 +39043,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -39160,9 +39295,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -39728,9 +39865,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -40155,9 +40294,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -43639,6 +43780,9 @@
     "码扫": [
       "/resource/resource-repo-engineering-mcp-2026-07-28-impact-20260729.md"
     ],
+    "码改": [
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
+    ],
     "码核": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
@@ -45915,7 +46059,8 @@
     "芯的": [
       "/assets/persona-erica-speech-canon.md",
       "/memory/memory-ext-testing-strategy.md",
-      "/projects/doc-testing-strategy.md"
+      "/projects/doc-testing-strategy.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "芯知": [
       "/README.md",
@@ -47807,9 +47952,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -48306,7 +48453,8 @@
     ],
     "这是": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "这条": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -48577,9 +48725,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -49703,9 +49853,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -49992,9 +50144,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -50095,6 +50249,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
@@ -50122,7 +50277,8 @@
       "/characters/15574.md"
     ],
     "锁步": [
-      "/projects/project-silver-core-testbed.md"
+      "/projects/project-silver-core-testbed.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "锁链": [
       "/characters/15567.md"
@@ -50587,6 +50743,9 @@
     "雪乃": [
       "/characters/15571.md",
       "/characters/15588.md"
+    ],
+    "零代": [
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "零件": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -51444,6 +51603,7 @@
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
@@ -52032,9 +52192,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -52388,9 +52550,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -52590,9 +52754,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -52684,7 +52850,8 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
-      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
+      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "diff": [
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
@@ -52832,9 +52999,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -53123,6 +53292,9 @@
     ],
     "inference": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
+    "input": [
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "insights": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
@@ -53435,9 +53607,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -53872,6 +54046,9 @@
     "panel": [
       "/wiki-data/wiki-data-panel-text.md"
     ],
+    "param": [
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
+    ],
     "parity": [
       "/projects/silver-core-sdk-doc-tool-parity.md"
     ],
@@ -54279,9 +54456,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
@@ -54323,6 +54502,7 @@
     ],
     "req": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
@@ -54379,6 +54559,9 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
+    ],
+    "robustness": [
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "role": [
       "/resource/resource-game-analysis-role-action-recommendations-202605.md"
@@ -54461,9 +54644,11 @@
     ],
     "scs": [
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
-      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
+      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "sdk": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
@@ -54550,6 +54735,9 @@
     "session": [
       "/memory/memory-ext-session-continuity.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
+    ],
+    "shape": [
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
     "silver": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
@@ -54797,7 +54985,8 @@
     ],
     "tool": [
       "/projects/silver-core-sdk-doc-tool-parity.md",
-      "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
+      "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md"
     ],
     "topic": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -54898,9 +55087,11 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
+      "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",

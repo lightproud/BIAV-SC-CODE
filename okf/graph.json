@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-30",
   "stats": {
-    "nodes": 388,
-    "edges": 430
+    "nodes": 390,
+    "edges": 431
   },
   "nodes": [
     {
@@ -3433,6 +3433,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
+      "type": "documentation",
+      "title": "scs-req-input-shape-diagnostics-20260729",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "type": "documentation",
       "title": "scs-req-memory-frontmatter-attachment-r1-20260729",
@@ -3458,6 +3469,17 @@
       "id": "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "type": "documentation",
       "title": "scs-req-repositioning-loop-support-20260717",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
+      "type": "documentation",
+      "title": "scs-tool-param-robustness-audit-20260729",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4670,32 +4692,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/77913.md",
-      "rel": "提及:凯蒂古拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/77923.md",
       "rel": "提及:卡斯托尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/77925.md",
-      "rel": "提及:克莱门汀",
       "rel_type": "mention"
     },
     {
@@ -4718,20 +4716,44 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15585.md",
-      "rel": "提及:奥吉尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15588.md",
       "rel": "提及:艾尔瓦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15586.md",
+      "rel": "提及:旺达",
       "rel_type": "mention"
     },
     {
@@ -6043,6 +6065,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -6152,32 +6180,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/77913.md",
-      "rel": "提及:凯蒂古拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/77923.md",
       "rel": "提及:卡斯托尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/77925.md",
-      "rel": "提及:克莱门汀",
       "rel_type": "mention"
     },
     {
@@ -6200,20 +6204,44 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15585.md",
-      "rel": "提及:奥吉尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15588.md",
       "rel": "提及:艾尔瓦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15586.md",
+      "rel": "提及:旺达",
       "rel_type": "mention"
     },
     {

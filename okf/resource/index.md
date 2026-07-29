@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (122)
+# 银芯正式产物（报告/分析） (124)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -102,9 +102,11 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [repo-wide-orchestrated-review-20260609](/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md) - 代码层整体健康度中上：共享模块收敛良好（io_utils / text_utils / lua_parse 均带回归测试）、防御性异常处理普遍、workflow
 * [retired-modules-audit-202606](/resource/resource-repo-engineering-retired-modules-audit-202606.md) - CLAUDE.md §1.4 记载「做梦 + 会话蒸馏」自动环与三会话钩子于 2026-06-14 退役（决策见 `memory/decisions.md`）。
 * [scs-req-export-token-estimation-20260728](/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md) - 两个符号在 SDK 内部**已经实现且已 `export`**,但没有从 `src/index.ts` 转出,而包的 `exports` 只开了（格式：md）
+* [scs-req-input-shape-diagnostics-20260729](/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md) - 问「这是银芯的 bug 吗」（格式：md）
 * [scs-req-memory-frontmatter-attachment-r1-20260729](/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md) - §1.2 丙·cards 退役 / §2.2 按 r1 案 / §四 pinned 采纳暂定案 / §四 when_to_save 官方全文注入；（格式：md）
 * [scs-req-orchestrator-sdk-20260717](/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md) - **银芯编排 SDK 持有分子:钟、跨会话状态、会话装配。它把"活得比一次调用久"的 agent 所需的脏活——循环、调度、重试、恢复、台账——做成可复用零件,
 * [scs-req-repositioning-loop-support-20260717](/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md) - 银芯 BIAV-SC 是黑池五层介质架构中的**引擎层**:最慢的介质、版本化、可替换的商品泵。它的职责由三条否定与一条肯定完整定义:（格式：md）
+* [scs-tool-param-robustness-audit-20260729](/resource/resource-repo-engineering-scs-tool-param-robustness-audit-20260729.md) - maestro 同号锁步，零代码改动（格式：md）
 * [sdk-bug-audit-multiwave-20260728](/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md) - 对银芯使命#2「通用 AI 底层开发基地」两个在产 SDK（`silver-core-agent-sdk` 50.7k 行 + `silver-core-mae
 * [sdk-cross-protocol-routing-bpt-handoff-20260713](/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md) - BPT 报障场景：主模型 `azure/gpt-5.6-sol`（openai-chat 协议）+ Haiku 档子代理映射（格式：md）
 * [sdk-prompt-mechanism-audit-20260727](/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md) - P2 已由截断纪律批（0.85.0）系统收口并有注册表测试守增量；P3 已由整理规程批（0.84.0）收口。（格式：md）
