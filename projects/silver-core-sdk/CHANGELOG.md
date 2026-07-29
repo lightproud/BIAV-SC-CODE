@@ -16,6 +16,112 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.5.0 — 2026-07-29
+
+Audit waves 19 and 20. Wave 19 turned four partitions on the tool, session,
+subagent and transport layers; wave 20 opened four surfaces no earlier wave had
+audited: permission rule matching, session directory grants, the hook
+aggregator's legacy field, and the project `.mcp.json` loader.
+
+A tool that spawns a shell but could not be scoped:
+
+- `permissions/rules.ts` — `Monitor` runs an arbitrary shell script (its own
+  header: "same permission posture as Bash") but was absent from both the
+  primary-argument table and the Bash-only chain decomposition. **No
+  command-scoped rule for it existed at all**: `Bash(rm:*)` does not cover it,
+  and `Monitor(rm:*)` resolved to no primary argument and matched nothing — the
+  host wrote the deny, the SDK ignored it, and the tool ran. Only the
+  constraint-free `Monitor(*)` matched. `Monitor` now carries the same rule
+  semantics as `Bash`: chain decomposition, deny-side unwrapping, word-boundary
+  `:*` matching and the `firstToken:*` approve-and-remember suggestion.
+
+Permission state that was tracked but never enforced:
+
+- `query.ts` — session `addDirectories` / `removeDirectories` were a **complete
+  no-op**. The gate tracks them carefully and each turn's `ToolContext` carried
+  the effective list into a field with zero readers (the fs tools' containment
+  fence that used to read it was removed with the 2026-07-05 path-model ruling,
+  and the comment kept claiming the effect). The one consumer that still gives
+  the directories meaning — the sandbox writable set — was built once at query
+  construction from `options.additionalDirectories`, bypassing the gate. A host
+  that REVOKED a directory mid-session kept it rw-bound; one that GRANTED a
+  directory still hit EROFS. The writable roots now refresh from the gate at
+  each turn boundary and reach subagents through the shared context.
+
+Fail-open guards:
+
+- `hooks/runner.ts` — the legacy `decision` field had no unrecognized-value
+  guard, while its modern counterpart `permissionDecision` deliberately fails
+  closed on one. The dangerous case is the most natural spelling there is:
+  every other decision vocabulary in this SDK says `deny`, so a host reaching
+  for the legacy field writes `{decision: 'deny'}` — and the aggregate decision
+  came back `undefined`, discarding a security hook's verdict. Unrecognized
+  values in either field now deny.
+- `mcp/project-config.ts` — a loader documented "never throws" three times threw
+  a `RangeError` on a `.mcp.json` with a deeply nested value: `JSON.parse`
+  accepts nesting far deeper than the recursive `${VAR}` expansion survives
+  (measured: 5,000 levels parse fine and blow the stack). Query construction
+  died with a stack-overflow message naming nothing about the config file.
+  Reachable by any agent running inside a repository it did not write. Entries
+  nested past 32 levels are now refused as malformed; siblings still load.
+
+Wave 19 — tool execution:
+
+- `tools/workflow-engine.ts` — `parallel()`'s "item N is not a function"
+  validator used `forEach`, which SKIPS ARRAY HOLES, so it could not fire on
+  the one input shape it exists for: `parallel(new Array(3))` returned `ok:true`
+  with `[null,null,null]`, which every script reads as three agent failures.
+  `pipeline()` had the same root cause via `map` — an unprocessed slot was
+  reported using the engine's own encoding for "the stage threw".
+- `tools/grep.ts` — the raw path was concatenated into rows the reader parses
+  one record per line, and a POSIX filename may contain a newline. A file named
+  `evil\nfake.txt:9:NEEDLE forged` rendered as two lines, the second a
+  well-formed hit at a path that does not exist: a writable directory is enough
+  to forge a Grep result anywhere. `structuredOutput.filenames` keeps the raw
+  path; ordinary paths render byte-identically.
+- `tools/bash.ts` — `structuredOutput.truncated` was derived by regex-testing
+  the rendered stream text, a string the executed command controls: `printf` of
+  a fake truncation marker measured `truncated:true` on 50 characters against a
+  30,000 cap. Now counter-derived.
+
+Wave 19 — sessions, subagents, transport:
+
+- `sessions/store.ts` — two control-line probes were anchored at the start of
+  the line, so a mirrored store that normalizes key order (Postgres `jsonb`,
+  msgpack maps, several ORMs) defeated them. `meta` blindness returned an empty
+  summary and the file mtime as `createdAt` from `list()` / `getSessionInfo()`;
+  `sidechain_start` blindness surfaced a subagent transcript as resumable, so
+  `continue:true` resumed an assistant-only child.
+- `engine/compaction.ts` — `contextWindowTokens` passed through unvalidated, and
+  `NaN` (`Number` of an unset env var) defeats the degenerate-window guard
+  because every comparison against it is false. Measured: no fold, no boundary,
+  no debug output — auto-compaction, the known-prompt floor and the
+  pre-compaction memory flush all silently dead.
+- `subagents/runtime.ts` — `settleAll()`'s timeout arm filed `sidechain_end` for
+  children still streaming, so the terminal marker preceded the work and a child
+  that threw carried `is_error:false`. Separately, a `SendMessage` continuation
+  ran on the spawn-time permission snapshot: a deny added after the first run
+  left the tool executing.
+- `generators/index.ts` — the quote trim matched each end independently, so a
+  reply merely ENDING on a quoted term came out unbalanced.
+- `transport/http-retry.ts` — every fetch rejection was classified as a
+  retryable network error, including one where the endpoint is not a URL at all.
+  Measured with `baseUrl: 'api.example.com/v1'` (the scheme-omitted typo): at
+  the shipped default of 10 retries that is 11 attempts and a 151-303s backoff
+  ladder per turn for a configuration error that can never succeed. Now one
+  attempt and a `ConfigurationError` naming `provider.baseUrl`.
+- `transport/openai.ts` — the wire-safety tool filter dropped malformed
+  `input_schema` entries silently: `body.tools` became `undefined` with zero
+  debug lines, so the model never learned the tool existed and the host saw only
+  "the agent ignores my tool". Its one tool diagnostic was computed from the
+  filter's SURVIVORS, so a dropped entry structurally could not appear in it.
+
+Recorded, deliberately unfixed (each documented in a source comment):
+`abortAll()` emits no terminal task event for background children it kills;
+an empty-named tool-use block the two `finish()` passes disagree about; and the
+Bash output cap's documented total-vs-per-stream semantics. The first two
+conflict with an existing test's stated intent and are held for a ruling.
+
 ## 1.4.0 — 2026-07-28
 
 Audit wave 17 — four lenses no earlier wave had used: untrusted tool output as

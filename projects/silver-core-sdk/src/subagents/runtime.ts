@@ -311,7 +311,12 @@ export function coerceToolPatternList(value: unknown): string[] {
 const sessionRuleKey = (
   behavior: string,
   rule: PermissionRuleValue,
-): string => `${behavior} ${rule.toolName} ${rule.ruleContent ?? ''}`;
+): string =>
+  // '\u0000' as an ESCAPE, not a raw NUL byte: a literal 0x00 anywhere in a
+  // tracked text file makes rg / git grep classify the WHOLE file as binary,
+  // so every later search goes blind to it (and it ships that way in the npm
+  // package). The runtime value is unchanged.
+  `${behavior}\u0000${rule.toolName}\u0000${rule.ruleContent ?? ''}`;
 
 /**
  * The parent's session rule updates a child gate does not already carry.
