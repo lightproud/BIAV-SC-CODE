@@ -71,11 +71,13 @@ src/
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.6.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.6.0`
+**当前版本 `1.7.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-maestro-sdk` = `1.7.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.7.0（2026-07-29）：关掉两项守密人裁定（皆为行为变更）**——OpenAI 传输层不再铸造 `name: ''` 的工具块（网关拆包时会多出一个白烧 `No such tool:` 来回、还把 `stop_reason` 顶成 `tool_use` 的幽灵块）；Bash 输出上限从「每流各 30,000」改为**两流共用一份总预算**，实测 60,352 → 30,180，让已导出的 `TOOL_OUTPUT_CAPS.bash` 对消费方**真的成立**（此前消费方台账翻倍低估）。真相侧以官方提示词语料裁定。
 
 **v1.6.0（2026-07-29）：审计第二十一波**——三处**静默失败还报成功**：结构化输出的 strict 围栏提取把 ```json5 标记、被截断的收尾围栏、以及「答案在第二个围栏」全判无效，而 workflow 的 `agent({schema})` 没有重试通道、该项直接丢；公开的 `estimateMessagesTokens` 被宿主现搭草稿里的 BigInt / 循环引用抛穿，经历史估算还会打死此后每轮压缩检查；文件回滚计划以原始路径字符串为键，符号链接或大小写不敏感文件系统下一个文件占两个坑，实测回滚成一个**任何检查点都不存在**的中途状态却报 `canRewind:true`。
 

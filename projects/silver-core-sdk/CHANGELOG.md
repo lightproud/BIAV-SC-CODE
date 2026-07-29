@@ -16,6 +16,40 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 1.7.0 — 2026-07-29
+
+Two keeper rulings closed. **Both change observable behavior**, and each one
+rewrites exactly one existing test that pinned the reversed shape — the first
+existing tests this audit campaign has touched, each on an explicit ruling.
+
+- `transport/openai.ts` (待裁①) — **no undispatchable empty-name tool_use
+  block.** `finish()`'s pass-1 gate was "id OR name", so a buffer that collected
+  an id but never a NAME opened with `name: ''` — exactly the shape pass 2, one
+  function apart, refuses to mint and calls "a block the engine can never
+  dispatch". Measured trigger: a gateway splitting ONE call across an
+  index-LESS id fragment and an index-only name/args fragment produced TWO
+  blocks, `{id:'call_abc', name:''}` plus `{id:'call_0', name:'get_weather'}`;
+  the first costs a round trip on `No such tool: ` and forces
+  `stop_reason:'tool_use'` for a call that does not exist. Three sites move
+  together: `feed()` no longer mints a nameless block mid-stream either, pass 1
+  requires a name (nameless buffers fall to pass 2, which merges their argument
+  bytes into the sibling block they belong to), and `hasRealTool` counts only an
+  actually-emitted block. Conforming gateways complete the name before argument
+  bytes begin, so none of this costs them anything.
+- `tools/bash.ts` (待裁③) — **the output cap is one shared TOTAL.** The
+  constant's doc and the exported `TOOL_OUTPUT_CAPS.bash` both said "max TOTAL
+  characters one Bash call returns", while the implementation built two
+  independent capped streams of 30,000 each: measured, 50,000 bytes to each
+  stream in one call returned **60,352** characters against a stated cap of
+  30,000. That export exists so a consumer can mirror this engine's context
+  accounting, so the error rode into the consumer's ledger at 2x. Settled from
+  the official prompt corpus, which states one quantity to the model ("Bash
+  output is limited to `${MAX_OUTPUT_CHARS}` chars") with no per-stream language
+  anywhere in it. stdout is the earliest output and is dropped first; ONE
+  call-level marker reports the true total. Measured after: **30,180** — 30,000
+  of output plus the 180-char marker, which is metadata about the cut and now
+  documented as riding outside the cap.
+
 ## 1.6.0 — 2026-07-29
 
 Audit wave 21 — three defects on surfaces where the failure is SILENT and the

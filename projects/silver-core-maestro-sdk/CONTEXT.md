@@ -36,11 +36,13 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:BEGIN 机器生成，勿手改；重算 `python3 scripts/build_status_facts.py` -->
 
-**当前版本 `1.6.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-agent-sdk` = `1.6.0`
+**当前版本 `1.7.0`** · 发布日 2026-07-29 · 家族锁步对端 `silver-core-agent-sdk` = `1.7.0`
 
 > 本行由 `scripts/build_status_facts.py` 从 `package.json` + `CHANGELOG.md` 生成，**勿手改**；规模数字不在此列，指 `memory/project-status.md` 的 STATUS-FACTS 块。下方叙述由人写（「这一版做了什么」是判断、生成不出来），其**新鲜度**由`tests/test_status_doc_facts.py` 守。
 
 <!-- CONTEXT-FACTS:END -->
+
+**v1.7.0（2026-07-29）：锁步对齐**——无本包运行时改动；agent SDK 1.7.0 关掉两项守密人裁定，家族版本钟锁步（守密人 2026-07-18 裁定）故同步升位。
 
 **v1.6.0（2026-07-29）：锁步对齐**——无本包运行时改动；agent SDK 1.6.0 为审计第二十一波，家族版本钟锁步（守密人 2026-07-18 裁定）故同步升位。
 
@@ -69,10 +71,6 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 **v0.88.0 / v0.87.x（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK
 0.87.0（截断纪律全家对齐）、0.87.1（嵌套路径普查）、0.88.0（处方卡型 + sessions 体检面）
 前进，逐版详见该包 CHANGELOG。
-
-**v0.81.0 / 0.80.2 / 0.80.1 / 0.80.0（2026-07-27）：锁步对齐四连**——本包**零代码改动**，
-家族版本钟随 agent SDK 同号前进（Read 截断页脚三件套 · 快照基准对齐 + 吻合度尺子 ·
-溯源 slug 改锚 + cron 自检 · 工具输出上限对齐 2.1.141）。逐版叙述见该包 CHANGELOG。
 
 **v0.79.0（2026-07-26）：重开语义 + 三项余项推进**（守密人「1.写 2.3.4.5.6.按你建议推进」）。
 **T67 重开（甲案）**：`reopenSession` / `reopenChain`——新会话 + `reopenOf`/`attemptRound` 链，

@@ -12,6 +12,12 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 1.7.0 — 2026-07-29
+
+Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.7.0 关掉两项守密人
+裁定（OpenAI 空名工具块不再铸造 · Bash 输出上限改为真总量），两者皆为行为变更，
+见 silver-core-sdk CHANGELOG。家族版本钟锁步（守密人 2026-07-18 裁定），故本包同步升位。
+
 ## 1.6.0 — 2026-07-29
 
 Lockstep alignment only — **锁步对齐**，无本包运行时改动。agent SDK 1.6.0 是审计
