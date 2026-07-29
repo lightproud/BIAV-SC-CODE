@@ -28,6 +28,10 @@ official grammar and <functions> encoding, Bash output-cap knob, AskUserQuestion
 plan-mode/preview/oneOf, Agent description reproduction + description-governance
 completeness guard, Glob/Grep ignore-set disclosure, Read path unification +
 256KB tightening, Grep rg-dialect shim, hot/cold partition guard).
+## 1.4.1 — 2026-07-29
+
+Lockstep alignment with silver-core-agent-sdk 1.4.1 (`setServers()` incremental
+diff, BPT finding D). This package is untouched.
 
 ## 1.4.0 — 2026-07-28
 

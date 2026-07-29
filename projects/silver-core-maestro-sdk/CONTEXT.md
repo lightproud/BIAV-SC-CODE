@@ -44,6 +44,8 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 **v1.6.0（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 1.6.0（T75 二次拷问：dream 信号源 + 巡回只读预设）前进。
 
+**v1.4.1（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 1.4.1（`setServers()` 改增量 diff，BPT 缺陷 D）前进。
+
 **v1.4.0（2026-07-28）：审计第十七波（本包份额）**——两处只被测试替身宽容挡住的真缺陷：`claimDue` 把并发上限套在存储**恰好**返回的顺序上（契约根本不规定顺序），对合规的最新在前存储实测 30 tick 里两个会话一次没跑；`systemClock.setTimeout` 未封顶，超 2^31-1 ms 溢出成 1 ms，30 天的 `queryTimeoutMs` 反而让每次尝试都来不及完成。
 
 **v1.3.0（2026-07-28）：审计第十五 + 十六波（本包份额）**——驱动器在 try/catch 外解引用执行器返回值，少一个 `return` 即让宿主以未处理拒绝崩溃、会话搁浅 `running`；`GoalChaser` 从不校验评审器判词形状，旧形状评审器报成功却实跑满轮落 `exhausted`；工作流加载器围栏扫描器不看反引号根数，文档示例图可顶替真图被派发，BOM 文件被静默跳过；`nextFireAt` 撞 `Date.UTC` 两位年份重映射。另订正台账：破坏性 `GoalVerdict` 统一被记错版本。
@@ -99,19 +101,7 @@ payload 可覆盖（e2e 抓到示例继承旧 target 重打本该迁离的端点
 写临时 .ts 真跑契约套件**（负控：删掉样板一行即报「2 orphan query row(s)」）。
 **P4** delivery 归属维持，改的是**判别式**（见上「定位」节补维）。测试 400 → **404**。
 
-**v0.78.0（2026-07-26）：设计审视四缝全修**——审视档
-`Public-Info-Pool/Resource/repo-engineering/maestro-sdk-design-review-20260726.md`，守密人同日四项裁定（均取推荐案）。
-四条**无一是算错了**，全部是「某个约定的射程没铺满」——五轮审计 67 项、三套性质测试、六靶变异棘轮（地板 97–100）全数漏过，
-因为这类缺口不产生任何测试信号。**F1** 0.76.0 新增的 `cancelled` 终态没穿透场景层（三处硬编码 `done || failed`），
-默认 `drainTimeoutMs` 不设时用户取消 → 工作流 / 目标追逐永久挂死；现 `graphStatus` 按守密人裁定判 fail-fast、
-`GoalChaser` 认全部终态并以新 action `'cancelled'` 结案（不问 evaluator），新增 `UNSUCCESSFUL_TERMINAL_STATES` +
-`isTerminal` / `isUnsuccessfulTerminal`，并**加治理守卫**禁止 src 内把终态判定写成字面量对（带在码内的
-`terminal-literal-ok:` 例外口 + 自陈射程边界）。**F2** 驱动器新增 `maxConcurrent`（实测 200 到期 → 峰值 200；
-宿主无法自行补救，executor 内排队会空烧租约）+ 台账 `claimDue(now,{limit})`。**F3** 新增可选存储缝
-`deleteSession?` + 网关 `TaskLedger.purgeSession`（持互斥、拒非终态、缺缝响亮失败；契约套件 +4 检查）。
-**F4** `run({signal})` / `chase(config,{signal})` 收 AbortSignal，共用的 `waitOrAbort` 恒清定时器。
-测试 362 → **400**；三套机制均经逐条回退负控实证（6 例转红）后还原。
-**未纳入（不在裁定射程）**：`Scheduler` 恢复仍做无过滤全表扫；F5「重开」语义仍挂待裁。
+**v0.78.0（2026-07-26）：设计审视四缝全修**——四缝（`cancelled` 未穿透场景层 / 驱动器无并发上限 / 无删除缝 / 长跑组件不收 `AbortSignal`）逐条见 `CHANGELOG.md` 0.78.0 与审视档 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-design-review-20260726.md`。
 
 第零战(monorepo 迁移)+ 第一战(任务台账 + 驱动器,0.2.0)完成:
 

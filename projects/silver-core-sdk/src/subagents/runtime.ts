@@ -399,7 +399,7 @@ class ChildMcpFilter implements McpRegistry {
   // Finding L1 — the child view narrows tool VISIBILITY only; it must not carry
   // a subagent's lifecycle mutations into the registry the parent and every
   // sibling subagent share. setEnabled would blank a server for all of them,
-  // setServers closes every connection before swapping the set, and closeAll
+  // setServers re-points the shared set (closing whatever it drops), and closeAll
   // tears the shared pool down mid-conversation — so these are inert on a child
   // view. Teardown/reconfiguration authority stays with the query/manager that
   // owns the registry.
