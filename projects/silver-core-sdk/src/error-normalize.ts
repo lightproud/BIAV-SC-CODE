@@ -161,7 +161,7 @@ function safeStringify(obj: Record<string, unknown>): string {
  * `.message` (an axios-style wrapper that overwrites `.message` with the parsed
  * `{ code, detail }` body) therefore blew up with `TypeError: text.trim is not
  * a function` STRAIGHT OUT of the one function documented "Never throws" — and
- * out of the engine's error chain, which is the exact穿透 this module exists to
+ * out of the engine's error chain, which is the exact escape this module exists to
  * close. A `.message` getter that throws (a Proxy / lazily-materialized error)
  * is the same class. Never throws.
  */

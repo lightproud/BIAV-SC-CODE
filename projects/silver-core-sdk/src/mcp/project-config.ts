@@ -75,12 +75,32 @@ export function loadProjectMcpServers(
       debug(`project-config: skipping malformed server entry "${name}"`);
       continue;
     }
+    // The env expansion below walks the entry RECURSIVELY, and JSON.parse
+    // happily accepts nesting far deeper than a recursive JS function survives
+    // (measured: 5,000 levels parse fine and blow the stack on the walk). A
+    // `.mcp.json` carrying a deeply nested value therefore threw a RangeError
+    // straight out of a function documented "Never throws" — killing query
+    // construction with a stack-overflow message that names nothing about the
+    // config file. Treat an over-deep entry as malformed, like every other
+    // shape this loader refuses, and keep the contract.
+    let expanded: unknown;
+    try {
+      expanded = expandEnvVars(value, env, 0);
+    } catch (err) {
+      debug(
+        `project-config: skipping server entry "${name}": ` +
+          (err instanceof TooDeepError
+            ? `nested deeper than ${MAX_EXPAND_DEPTH} levels`
+            : String(err)),
+      );
+      continue;
+    }
     // Y7-3 (audit r4): a server literally named `__proto__` (crafted .mcp.json)
     // would hit Object.prototype's `__proto__` setter under bracket assignment —
     // silently DROPPING the entry AND polluting `out`'s prototype chain.
     // defineProperty writes a real own data property for ANY key, setter-free.
     Object.defineProperty(out, name, {
-      value: expandEnvVars(value, env) as McpServerConfig,
+      value: expanded as McpServerConfig,
       enumerable: true,
       writable: true,
       configurable: true,
@@ -88,6 +108,16 @@ export function loadProjectMcpServers(
   }
   return out;
 }
+
+/** Depth ceiling for the recursive expansion walk. A real server entry is 3-4
+ *  levels deep ({command, args:[], env:{}, headers:{}}); anything past this is
+ *  not a config, and walking it would overflow the stack. */
+const MAX_EXPAND_DEPTH = 32;
+
+/** Signals an entry nested past MAX_EXPAND_DEPTH. Private to this module: the
+ *  caller converts it into the same "skipping malformed server entry" outcome
+ *  every other refused shape gets, so nothing escapes the loader. */
+class TooDeepError extends Error {}
 
 /**
  * Expand `${VAR}` / `${VAR:-default}` references in every string value of a
@@ -101,14 +131,16 @@ export function loadProjectMcpServers(
 function expandEnvVars(
   value: unknown,
   env: Record<string, string | undefined>,
+  depth: number,
 ): unknown {
+  if (depth > MAX_EXPAND_DEPTH) throw new TooDeepError();
   if (typeof value === 'string') {
     return value.replace(
       /\$\{([A-Za-z_][A-Za-z0-9_]*)(?::-([^}]*))?\}/g,
       (match, name: string, def: string | undefined) => env[name] ?? def ?? match,
     );
   }
-  if (Array.isArray(value)) return value.map((v) => expandEnvVars(v, env));
+  if (Array.isArray(value)) return value.map((v) => expandEnvVars(v, env, depth + 1));
   if (value !== null && typeof value === 'object') {
     const out: Record<string, unknown> = {};
     for (const [k, v] of Object.entries(value)) {
@@ -118,7 +150,7 @@ function expandEnvVars(
       // rebuilt object's prototype chain, which `'command' in config` style
       // checks later read. defineProperty writes a real own data property.
       Object.defineProperty(out, k, {
-        value: expandEnvVars(v, env),
+        value: expandEnvVars(v, env, depth + 1),
         enumerable: true,
         writable: true,
         configurable: true,
