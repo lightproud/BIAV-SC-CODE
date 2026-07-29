@@ -22,16 +22,59 @@ import {
   openSync,
   readFileSync,
   readSync,
+  realpathSync,
   writeFileSync,
 } from 'node:fs';
 import { Buffer } from 'node:buffer';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { basename, dirname, join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 
 import type { RewindFilesResult } from '../types.js';
 import { ConfigurationError } from '../errors.js';
 import { isSafeSessionId, resolveSessionsDir } from './store.js';
+
+/**
+ * Identity key for a path, so ONE file cannot occupy two slots.
+ *
+ * Both the per-turn first-touch dedup and the rewind plan keyed on the RAW
+ * absolute string. `path.resolve` collapses `.`/`..`, but two spellings still
+ * name one file whenever a SYMLINK is involved (`/w/link.ts` and its target
+ * `/real/f.ts`) or the filesystem is case-insensitive (`/w/File.ts` vs
+ * `/w/file.ts` — macOS and Windows, and a model varies the casing of a path it
+ * types constantly). Each spelling then got its OWN plan entry, and the
+ * later one carries a MID-TURN pre-image: the rewind writes the earliest image
+ * first and the mid-turn image over it, leaving the file at a state that
+ * existed at no checkpoint — while reporting canRewind:true and listing the
+ * file as restored. Where one spelling was recorded as a CREATION (delete) and
+ * the other as a modification (restore), insertion order alone decided whether
+ * the file survived.
+ *
+ * permissions/rules.ts already learned exactly this ("the kernel's open()
+ * FOLLOWS symlinks", plus the win32 case fold); this is the same
+ * canonicalization one layer over. Best-effort and non-throwing: a path not yet
+ * on disk resolves its longest existing ancestor and re-appends the tail, so a
+ * file created this turn still shares its parent directory's identity, and a
+ * path that resolves to nothing keeps its literal form (the previous behavior).
+ */
+function pathIdentity(p: string): string {
+  let current = p;
+  const tail: string[] = [];
+  let resolved = p;
+  for (;;) {
+    try {
+      const real = realpathSync(current);
+      resolved = tail.length > 0 ? join(real, ...[...tail].reverse()) : real;
+      break;
+    } catch {
+      const parent = dirname(current);
+      if (parent === current) break; // reached the root; nothing resolved
+      tail.push(basename(current));
+      current = parent;
+    }
+  }
+  return process.platform === 'win32' ? resolved.replace(/\\/g, '/').toLowerCase() : resolved;
+}
 
 /** One recorded pre-mutation change (a line in index.jsonl). */
 export type FileChange = {
@@ -159,8 +202,10 @@ export class FileCheckpointStore {
    */
   record(absPath: string, preImage: string | null): void {
     if (this.dir === null) return;
-    if (this.seenThisTurn.has(absPath)) return;
-    this.seenThisTurn.add(absPath);
+    // Dedup on file IDENTITY, not on the spelling the caller happened to use.
+    const identity = pathIdentity(absPath);
+    if (this.seenThisTurn.has(identity)) return;
+    this.seenThisTurn.add(identity);
     // Re-sync against the on-disk index before taking a number: a SECOND
     // store instance bound to the same session appends to the same index,
     // and two instance-local counters would hand out duplicate seq numbers —
@@ -252,10 +297,20 @@ export class FileCheckpointStore {
     // changes is seq-sorted; every change at or after the target's position is
     // undone (a no-file-change target simply yields an empty, valid plan).
     const window = changes.filter((c) => c.seq >= startSeq);
-    const plan = new Map<string, { blob: string | null; oversized: boolean }>();
+    // Keyed on file IDENTITY (see pathIdentity) so two spellings of one file
+    // cannot each claim a slot; the recorded spelling is kept for the write.
+    const plan = new Map<
+      string,
+      { absPath: string; blob: string | null; oversized: boolean }
+    >();
     for (const c of window) {
-      if (!plan.has(c.absPath)) {
-        plan.set(c.absPath, { blob: c.blob, oversized: c.oversized === true });
+      const identity = pathIdentity(c.absPath);
+      if (!plan.has(identity)) {
+        plan.set(identity, {
+          absPath: c.absPath,
+          blob: c.blob,
+          oversized: c.oversized === true,
+        });
       }
     }
 
@@ -273,7 +328,7 @@ export class FileCheckpointStore {
     // honestly reports incomplete: the on-disk state will not match the
     // checkpoint, and pretending otherwise is the one forbidden outcome.
     const unrewindableFiles: string[] = [];
-    for (const [absPath, { blob, oversized }] of plan) {
+    for (const { absPath, blob, oversized } of plan.values()) {
       if (oversized) {
         unrewindableFiles.push(absPath);
         continue;
