@@ -1,19 +1,8 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-29T14:06:24.019741+00:00",
+  "collected_at": "2026-07-29T16:21:37.835684+00:00",
   "source": "taptap",
   "data_layer": "output",
-  "item_count": 1,
-  "items": [
-    {
-      "source": "taptap",
-      "time": "2026-07-29T13:24:02+00:00",
-      "lang": "zh",
-      "title": "[TapTap 好评] 你什么时候上线国服啊？真的很喜欢你这个游戏。",
-      "summary": "你什么时候上线国服啊？真的很喜欢你这个游戏。",
-      "url": "https://www.taptap.cn/moment/831640903486538181",
-      "author": "超绝屯屯鼠",
-      "engagement": 0
-    }
-  ]
+  "item_count": 0,
+  "items": []
 }

@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-29T14:06:24.019741+00:00",
+  "collected_at": "2026-07-29T16:21:37.835684+00:00",
   "source": "appstore",
   "data_layer": "output",
   "item_count": 14,
@@ -77,16 +77,6 @@
     },
     {
       "source": "appstore",
-      "time": "2026-07-23T04:38:01-07:00",
-      "lang": "en",
-      "title": "Goated",
-      "summary": "🐐",
-      "url": "https://apps.apple.com/ph/app/id6447354150?see-all=reviews#as-14338085221",
-      "author": "toozty",
-      "engagement": 5
-    },
-    {
-      "source": "appstore",
       "time": "2026-07-07T19:28:46-07:00",
       "lang": "th",
       "title": "เกมดีมักไม่แมส",
@@ -113,6 +103,16 @@
       "summary": "One of the most beautiful and catching mobile games. I love the atmosphere, character design, world-building and creepy story. Even though it is a gatcha, it is very generous with its ingame currency and pull rates.",
       "url": "https://apps.apple.com/de/app/id6447354150?see-all=reviews#as-14250546734",
       "author": "Starshade78",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-07-27T23:39:28-07:00",
+      "lang": "it",
+      "title": "Nice",
+      "summary": "Good",
+      "url": "https://apps.apple.com/it/app/id6447354150?see-all=reviews#as-14357281231",
+      "author": "AllGripNoSlip",
       "engagement": 5
     },
     {

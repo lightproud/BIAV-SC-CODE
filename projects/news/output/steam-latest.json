@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-29T14:06:24.019741+00:00",
+  "collected_at": "2026-07-29T16:21:37.835684+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -48,7 +48,7 @@
       "voted_up": true,
       "review": "决战剧情之巅",
       "timestamp_created": 1785330101,
-      "playtime_forever": 224
+      "playtime_forever": 261
     },
     {
       "source": "steam",
@@ -63,7 +63,7 @@
       "voted_up": true,
       "review": "很好玩啊",
       "timestamp_created": 1785314796,
-      "playtime_forever": 445
+      "playtime_forever": 528
     },
     {
       "source": "steam",
@@ -78,7 +78,7 @@
       "voted_up": true,
       "review": "墨菲，既是我的妹妹，我的女儿，也是我的妻子，太可爱了[表情]",
       "timestamp_created": 1785314752,
-      "playtime_forever": 6587
+      "playtime_forever": 6690
     },
     {
       "source": "steam",
@@ -139,21 +139,6 @@
       "review": "Прикольная игра. сюжет интересный и персонажи красивые.",
       "timestamp_created": 1785257489,
       "playtime_forever": 271
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-28T14:38:39+00:00",
-      "lang": "russian",
-      "title": "[负面] очередное аниме говнище",
-      "summary": "очередное аниме говнище",
-      "url": "https://steamcommunity.com/profiles/76561198161956022/recommended/3052450",
-      "author": "76561198161956022",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": false,
-      "review": "очередное аниме говнище",
-      "timestamp_created": 1785249519,
-      "playtime_forever": 82
     }
   ]
 }
