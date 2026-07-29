@@ -83,11 +83,41 @@ taptap、taptap_review、ruliweb 等的零散缺日与其内容密度相称；ar
 - `discord_reconcile.py`：dry-run 语义正常，孤儿可全量恢复登记；
 - `community_cold_compress.py`：幂等 + dry-run 正常，discord/平台双轨均可判。
 
-## 六、待裁项（已按 §2.2.4 逐个交互呈报守密人）
+## 六、待裁项（已按 §2.2.4 逐个交互呈报守密人，2026-07-30 北京时间凌晨全部裁毕）
 
-1. backfill-media 修复方案三选一（推荐 `.gitignore` 反排除，改动最小且语义自文档）；
-2. discord global 16 孤儿目录是否执行 `discord_reconcile.py`（去 dry-run）补录（写数据仓，非本仓）；
-3. weixin / arca_live 两个降级源是否派查采集路径；
-4. twitter 挂名源是否从注册表摘除或标注「永挂」。
+1. backfill-media 修复 → **守密人裁定改案：manifest 应放数据仓**（高于三个候选案）；
+2. discord global 16 孤儿目录 → **裁定执行补录并推数据仓**；
+3. weixin / arca_live 降级源 → **裁定派专项排查**；
+4. twitter 挂名源 → **裁定从注册表摘除**。
 
-观察类站岗项（不裁自动跟踪）：平台冷压残留待 08-02 例行 CI 收编后回看清零；appstore/jp 叶沉默计数。
+## 七、裁定执行回执（2026-07-30）
+
+1. **manifest 迁数据仓（已落盘）**：`archive_layout.media_manifest_path()` 新增为单一真相源
+   （`<pool>/Record/media/backfill_manifest.json`），`backfill_media.py` 改经其解析并保留旧址
+   只读回退（一次性迁移兜底）；`backfill-media.yml` 末步改为在 data-repo 内 commit + push
+   （同 update-news 已验证的 PAT 推送形态），checkout 不再需要回推密钥。下一轮定时（每日
+   北京 16:40）即可验证转绿；转绿后 dead-man-switch 的两项发现将同时消失。
+2. **discord 孤儿补录（已执行并推送）**：`discord_reconcile.py` 实跑，global 区服索引
+   641→657、16 个孤儿目录全部恢复登记（ID 均从 JSONL 回收、零不可恢复）；复核 dry-run
+   报孤儿 0。数据仓提交 `76550792`。
+3. **weixin / arca_live 专项排查（已定性）**：
+   - **arca_live：GitHub Actions 机房 IP 被封**。最近一轮 CI 实录：HTTP 直采 403
+     （`arca.live/b/forgettingeve` best/latest 双模式），Playwright 后备 `.vrow` 选择器
+     20 秒超时（挑战页拦截）；而本会话容器出口实测同 URL 返回 **200**——封锁面是
+     runner IP 段而非全面反爬。窗口可回补（`backfill_platforms.py` 支持 arca_live，
+     帖子持久），修复方向须守密人裁预算：换出口（自托管 runner / 代理）或降频换 IP 池。
+   - **weixin：采集器活着，搜狗在喂旧文**。今日轮实采 +20 条且正常归档，但全部条目
+     内容日期 ≤2026-07-18——搜狗微信搜索 12 天只回旧结果（风控降级喂缓存的典型形态；
+     此前密度 ~134 条/日，骤停为零不像自然断流）。属源站侧软墙，管线无故障；
+     可选对策：换检索词组合 / 带登录态 cookie / 接受降级站岗。
+   > 比喻：arca 是大楼保安只拦快递公司的车、私家车照进；搜狗是报刊亭还开着门，
+   > 但架上摆的全是上周的报纸。
+4. **twitter 摘除（已落盘）**：`KNOWN_SOURCES` / `SPARSE_SOURCES` / `REGION_APPS` 三处
+   摘除 + `collect_global` 编排拔线；`fetch_twitter` 保留 `global_collectors`（经
+   `TWITTER_HANDLES` 环境变量可手动唤起），句柄→区服映射内聚该模块；零条目的
+   `twitter-latest.json` 删除，OKF bundle 同 PR 重建（twitter 概念退役、指针不悬空）。
+   合并前门禁全绿（默认 + `--sparse`，3,284 项测试通过）。
+
+**新增观察项**：`tests/test_discord_archiver*` 三用例在 `BIAV_SC_DATA_ROOT` 设定时被真实
+数据湖顶掉夹具而误红（CI 的 test 作业不设该变量故不触发）——测试隔离缺口，建议后续给
+这三用例 monkeypatch 数据根。原观察项（冷压残留待 08-02 收编、appstore/jp 叶沉默）继续站岗。
