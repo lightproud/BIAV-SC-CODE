@@ -439,6 +439,96 @@
       "nextRunAt": null,
       "revision": 3,
       "leaseUntil": null
+    },
+    "sched:insp-ci-status:1785308400000": {
+      "id": "sched:insp-ci-status:1785308400000",
+      "intent": "inspect:ci-status",
+      "payload": {
+        "schedule": {
+          "specId": "insp-ci-status",
+          "fireAt": 1785308400000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1785319115426,
+      "updatedAt": 1785319122069,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
+    },
+    "sched:insp-doc-links:1785308400000": {
+      "id": "sched:insp-doc-links:1785308400000",
+      "intent": "inspect:doc-links",
+      "payload": {
+        "schedule": {
+          "specId": "insp-doc-links",
+          "fireAt": 1785308400000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1785319115427,
+      "updatedAt": 1785319115517,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
+    },
+    "sched:insp-lockstep:1785308400000": {
+      "id": "sched:insp-lockstep:1785308400000",
+      "intent": "inspect:lockstep",
+      "payload": {
+        "schedule": {
+          "specId": "insp-lockstep",
+          "fireAt": 1785308400000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1785319115427,
+      "updatedAt": 1785319115519,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
+    },
+    "sched:insp-ratchet:1785308400000": {
+      "id": "sched:insp-ratchet:1785308400000",
+      "intent": "inspect:ratchet",
+      "payload": {
+        "schedule": {
+          "specId": "insp-ratchet",
+          "fireAt": 1785308400000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1785319115428,
+      "updatedAt": 1785319116641,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
+    },
+    "sched:dream:1785309000000": {
+      "id": "sched:dream:1785309000000",
+      "intent": "dream",
+      "payload": {
+        "schedule": {
+          "specId": "dream",
+          "fireAt": 1785309000000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 2,
+      "createdAt": 1785319115428,
+      "updatedAt": 1785319122520,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
     }
   },
   "queries": [
@@ -666,6 +756,51 @@
       "endedAt": 1785232177368,
       "outcome": "ok",
       "summary": "dream: merged 2026-07-28 (ci-status=ok doc-links=ok lockstep=ok ratchet=fail) worst=fail"
+    },
+    {
+      "id": "e2743564-538e-499e-a75a-9010394a7118",
+      "sessionId": "sched:insp-doc-links:1785308400000",
+      "attempt": 1,
+      "startedAt": 1785319115481,
+      "endedAt": 1785319115517,
+      "outcome": "ok",
+      "summary": "doc-links: ok (0 findings) -> reports/doc-links/2026-07-29.md"
+    },
+    {
+      "id": "def050f8-6c78-40c2-ab61-c349c3567a44",
+      "sessionId": "sched:insp-lockstep:1785308400000",
+      "attempt": 1,
+      "startedAt": 1785319115494,
+      "endedAt": 1785319115519,
+      "outcome": "ok",
+      "summary": "lockstep: ok (0 findings) -> reports/lockstep/2026-07-29.md"
+    },
+    {
+      "id": "271bacc8-04f8-4e33-a247-ee0c92912b53",
+      "sessionId": "sched:insp-ratchet:1785308400000",
+      "attempt": 1,
+      "startedAt": 1785319115495,
+      "endedAt": 1785319116641,
+      "outcome": "ok",
+      "summary": "ratchet: fail (4 findings) -> reports/ratchet/2026-07-29.md"
+    },
+    {
+      "id": "72300a2d-e29d-45f4-8fdc-927fded156f4",
+      "sessionId": "sched:insp-ci-status:1785308400000",
+      "attempt": 1,
+      "startedAt": 1785319115431,
+      "endedAt": 1785319122069,
+      "outcome": "ok",
+      "summary": "ci-status: fail (4 findings) -> reports/ci-status/2026-07-29.md"
+    },
+    {
+      "id": "d2d9dafd-670e-4c8d-86b4-4e2e6309feca",
+      "sessionId": "sched:dream:1785309000000",
+      "attempt": 1,
+      "startedAt": 1785319115497,
+      "endedAt": 1785319122519,
+      "outcome": "ok",
+      "summary": "dream: merged 2026-07-29 (ci-status=fail doc-links=ok lockstep=ok ratchet=fail) worst=fail"
     }
   ]
 }
