@@ -3,11 +3,28 @@
  * to the user and return their selected answers.
  *
  * Routes to the host handler wired via options.onUserQuestion (-> ctx.askUser).
- * When no handler is configured the tool returns a not-configured error. A
- * handler returning null is treated as "user declined"; a handler that THROWS
- * takes the same declined-style path but says so as a handler failure (naming
- * the thrown reason) instead of claiming a choice the user never made. Both
- * yield an isError result. Answers are rendered per header.
+ * Every exit reports WHAT HAPPENED, never what the user supposedly wanted:
+ * no handler configured, input rejected, handler threw, handler produced no
+ * answer, answers rendered per header. The four failure exits are isError and
+ * each carries a distinct `outcome` in `structuredOutput`.
+ *
+ * WHY the wording matters (BPT request 2026-07-29): this tool used to collapse
+ * a host-side MECHANICAL FACT into an assertion about a human's mind. A
+ * handler that threw (IPC down, renderer crashed, host bug) and a handler that
+ * returned null (question window closed, headless, host skipped it) both
+ * rendered "User declined to answer." — so the model told the user it had
+ * heard a refusal that was never uttered. BPT's UI has no cancel button at
+ * all; the one sentence this tool emitted described an action its users are
+ * physically unable to take. The SDK does not know the user's intent here and
+ * must not invent one: it reports "no answer was obtained", and says the
+ * intent is unknown.
+ *
+ * WHY structuredOutput (same request, D3): distinguishing those exits was
+ * possible only by string-matching the hardcoded English sentence — which
+ * `internal/contracts.ts` forbids in as many words ("Text is a rendering;
+ * rendering is not an interface"), and which made the SDK's internal wording a
+ * de-facto public contract that would break its consumer silently on any
+ * rewording. `outcome` is that contract instead.
  *
  * Plumbing: this is a tool-execute callback, NOT permission-gate interception -
  * answers do not pass through the gate's updatedInput/denial ledger.
@@ -19,11 +36,36 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import type { UserQuestion, UserQuestionAnswer } from '../types.js';
+import type { AskUserQuestionStructuredOutput } from '../types/tool-outputs.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { ASKUSERQUESTION_DESCRIPTION } from './descriptions.js';
 
-function errorResult(message: string): ToolResultPayload {
-  return { content: message, isError: true };
+/** Diagnosable message for ANY thrown value (same helper as resources.ts /
+ *  webfetch.ts / websearch.ts, audit 2026-07-17 L74): a non-Error throw
+ *  (string / plain object) rendered "failed: undefined" under a blind
+ *  `(e as Error).message` cast, losing the only diagnostic there was. */
+function thrownMessage(e: unknown): string {
+  if (e instanceof Error) return e.message;
+  if (e !== null && typeof e === 'object') {
+    const m = (e as { message?: unknown }).message;
+    if (typeof m === 'string') return m;
+  }
+  return String(e);
+}
+
+/** An isError result carrying the machine-readable outcome. `error` mirrors
+ *  the message so a consumer never has to parse the sentence (ReadMcpResource
+ *  precedent, resources.ts:20-26). */
+function outcomeError(
+  outcome: Exclude<AskUserQuestionStructuredOutput['outcome'], 'answered'>,
+  message: string,
+): ToolResultPayload {
+  const structuredOutput: AskUserQuestionStructuredOutput = {
+    outcome,
+    answers: [],
+    error: message,
+  };
+  return { content: message, isError: true, structuredOutput };
 }
 
 type ParseOk = { ok: true; value: UserQuestion[] };
@@ -206,10 +248,11 @@ export const askUserQuestionTool: BuiltinTool = {
     if (ctx.signal.aborted) throw new AbortError();
 
     const parsed = parseQuestions(input['questions']);
-    if (!parsed.ok) return errorResult(parsed.message);
+    if (!parsed.ok) return outcomeError('invalid_input', parsed.message);
 
     if (!ctx.askUser) {
-      return errorResult(
+      return outcomeError(
+        'not_configured',
         'AskUserQuestion requires options.onUserQuestion; none configured.',
       );
     }
@@ -219,26 +262,39 @@ export const askUserQuestionTool: BuiltinTool = {
       answers = await ctx.askUser(parsed.value, { signal: ctx.signal });
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('AskUserQuestion was aborted');
-      // A THROWING handler is a HOST fault, not a user decision. The old text
-      // asserted "User declined to answer." — a cause that never happened —
-      // and the thrown reason was swallowed whole, so a host whose question
-      // bridge was broken saw nothing anywhere. Same flow (declined-style
-      // isError result), honest attribution.
-      const reason = e instanceof Error ? e.message : String(e);
+      // A THROWING handler is a HOST fault, not a user decision — the user may
+      // never have seen the question. Name the thrown reason (it used to be
+      // swallowed whole, so a host with a broken question bridge saw nothing
+      // anywhere) and state plainly that the intent is unknown.
+      const reason = thrownMessage(e);
       ctx.debug(`AskUserQuestion: the onUserQuestion handler threw: ${reason}`);
-      return errorResult(
-        `AskUserQuestion failed: the options.onUserQuestion handler threw (${reason}); treating as declined.`,
+      return outcomeError(
+        'handler_error',
+        `AskUserQuestion failed: the options.onUserQuestion handler threw (${reason}). ` +
+          `No answer was obtained; the user's intent is unknown.`,
       );
     }
 
     if (answers === null) {
-      return errorResult('User declined to answer.');
+      // null is the handler contract's NEUTRAL "no answers array" signal
+      // (types/subsystems.ts). A host returns it for any reason it could not
+      // collect one — window closed, no UI to render into, policy skip — and
+      // only the host knows which. Report the mechanical fact, not a motive.
+      return outcomeError(
+        'no_answer',
+        'AskUserQuestion obtained no answer: the host handler returned none. ' +
+          "The user's intent on this question is unknown — do not assume they declined.",
+      );
     }
     if (!Array.isArray(answers)) {
-      return errorResult('AskUserQuestion failed: handler returned an unexpected value.');
+      return outcomeError(
+        'handler_error',
+        'AskUserQuestion failed: handler returned an unexpected value.',
+      );
     }
 
     ctx.debug(`AskUserQuestion: ${parsed.value.length} questions -> ${answers.length} answers`);
-    return { content: renderAnswers(answers) };
+    const structuredOutput: AskUserQuestionStructuredOutput = { outcome: 'answered', answers };
+    return { content: renderAnswers(answers), structuredOutput };
   },
 };

@@ -16,6 +16,47 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 2.1.0 — 2026-07-29
+
+AskUserQuestion stops translating host-side mechanics into a claim about what
+the user wanted (BPT request 2026-07-29, D1/D2/D3).
+
+- `tools/askuserquestion.ts` collapsed three unrelated endings into one
+  sentence, `User declined to answer.`: a handler that THREW (IPC down,
+  renderer crashed, host bug), a handler that returned `null` (the neutral "no
+  answers array" signal — window closed, headless, host skipped it), and a
+  refusal proper. The first two have nothing to do with the user's wishes, and
+  the model, reading a refusal, went on to tell the user they had declined
+  something they were never shown. BPT's question UI has no cancel button at
+  all: the SDK was reporting an action its users are physically unable to
+  perform. Both paths now state the mechanical fact ("no answer was obtained")
+  and say the intent is unknown; the `null` path adds "do not assume they
+  declined" so the model does not re-infer what the text stopped asserting.
+- The handler-threw path also reaches `thrownMessage()` (the helper
+  `resources.ts` / `webfetch.ts` / `websearch.ts` already use), so a
+  non-`Error` throw — a string, a `{message}` object — keeps its diagnostic
+  instead of rendering as `undefined`.
+- **New structured result** `AskUserQuestionStructuredOutput`, exported from
+  the package root: `outcome` (`answered` | `no_answer` | `handler_error` |
+  `not_configured` | `invalid_input`), this SDK's own `UserQuestionAnswer[]`,
+  and `error` on failures. Before it, a consumer could separate a host fault
+  from an empty answer only by string-matching the hardcoded English sentence
+  — which `internal/contracts.ts` forbids in as many words, and which had
+  already made the SDK's private wording a load-bearing public contract in
+  BPT's PostToolUse hook. That hook can now key on `outcome` and stop being
+  one reword away from silently shipping "User declined to answer." to a
+  model. A `declined` member is deliberately absent: it belongs to a host that
+  can SAY the user refused, never to SDK inference.
+- Official's `AskUserQuestionOutput` (the permission-component `answers` map,
+  `annotations`, `afkTimeoutMs`) stays unshipped — the 2026-07-27 keeper
+  ruling is untouched. What ships is the fact the callback genuinely produces,
+  the same reasoning that added `ReadMcpResourceOutput.error`.
+- Unchanged, and locked by test: an abort-shaped throw still raises
+  `AbortError` with no tool_result, and the answered path still renders
+  `header: a, b` per question.
+- `structured-output-census` ledger: `askuserquestion` graduated off the
+  exemption list (its stated reason only ever covered official's answer map).
+
 ## 2.0.0 — 2026-07-29
 
 T75 design round SHIPPED (keeper rulings 2026-07-29, requirements doc

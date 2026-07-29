@@ -28,6 +28,7 @@ import {
 } from '../src/mcp/elicitation.js';
 import { HttpMcpConnection } from '../src/mcp/http.js';
 import type {
+  AskUserQuestionStructuredOutput,
   WebSearchResult,
   UserQuestionAnswer,
   ElicitationResult,
@@ -556,6 +557,10 @@ describe('webSearchTool', () => {
 // ---------------------------------------------------------------------------
 
 describe('askUserQuestionTool', () => {
+  const structuredOf = (r: { structuredOutput?: unknown }): AskUserQuestionStructuredOutput =>
+    r.structuredOutput as AskUserQuestionStructuredOutput;
+  const outcomeOf = (r: { structuredOutput?: unknown }): string => structuredOf(r).outcome;
+
   const oneQuestion = {
     questions: [
       { question: 'Pick a color?', header: 'Color', options: ['Red', 'Blue'] },
@@ -615,24 +620,88 @@ describe('askUserQuestionTool', () => {
     const r = await askUserQuestionTool.execute(oneQuestion, makeCtx());
     expect(r.isError).toBe(true);
     expect(String(r.content)).toContain('onUserQuestion');
+    expect(outcomeOf(r)).toBe('not_configured');
   });
 
-  it('treats a null answer as declined', async () => {
+  // The wording rule, stated once and asserted on every mechanical exit: a
+  // host fault is not a user decision. Two of these paths used to render
+  // "User declined to answer." verbatim, so the model reported a refusal that
+  // never happened — in BPT's UI, which has no cancel button, one the user was
+  // physically unable to make (request 2026-07-29).
+  const INTENT_WORDS = /declin|decid|refus|cancel|reject|chose not|does ?n[o']t want/i;
+
+  it('reports a null answer WITHOUT asserting the user declined', async () => {
     const ctx = makeCtx({ askUser: async () => null });
     const r = await askUserQuestionTool.execute(oneQuestion, ctx);
     expect(r.isError).toBe(true);
-    expect(String(r.content)).toContain('declined');
+    expect(outcomeOf(r)).toBe('no_answer');
+    // "do not assume they declined" is an instruction NOT to infer intent —
+    // strip it before checking that nothing else claims the user acted.
+    const withoutGuard = String(r.content).replace(/do not assume they declined\.?/i, '');
+    expect(withoutGuard).not.toMatch(INTENT_WORDS);
+    expect(String(r.content)).toMatch(/no answer/i);
   });
 
-  it('treats a throwing handler as declined', async () => {
+  it('reports a throwing handler as a host fault, keeping the reason', async () => {
+    const seen: string[] = [];
     const ctx = makeCtx({
       askUser: async () => {
-        throw new Error('ui closed');
+        throw new Error('ui bridge closed');
       },
+      debug: (m: string) => void seen.push(m),
     });
     const r = await askUserQuestionTool.execute(oneQuestion, ctx);
     expect(r.isError).toBe(true);
-    expect(String(r.content)).toContain('declined');
+    expect(outcomeOf(r)).toBe('handler_error');
+    expect(String(r.content)).not.toMatch(INTENT_WORDS);
+    // D1: the thrown reason reaches BOTH the content and the debug log; it
+    // used to be swallowed whole, leaving a broken host nothing to debug with.
+    expect(String(r.content)).toContain('ui bridge closed');
+    expect(seen.join('\n')).toContain('ui bridge closed');
+    expect(structuredOf(r).error).toContain('ui bridge closed');
+  });
+
+  it('keeps the diagnostic when the handler throws a non-Error', async () => {
+    const ctx = makeCtx({
+      askUser: async () => {
+        throw { message: 'renderer gone' };
+      },
+    });
+    const r = await askUserQuestionTool.execute(oneQuestion, ctx);
+    expect(String(r.content)).toContain('renderer gone');
+  });
+
+  it('lets a consumer separate the two failures WITHOUT string matching', async () => {
+    // D3: the whole point. Both were byte-identical payloads before.
+    const thrown = await askUserQuestionTool.execute(
+      oneQuestion,
+      makeCtx({
+        askUser: async () => {
+          throw new Error('boom');
+        },
+      }),
+    );
+    const empty = await askUserQuestionTool.execute(
+      oneQuestion,
+      makeCtx({ askUser: async () => null }),
+    );
+    expect(outcomeOf(thrown)).not.toBe(outcomeOf(empty));
+    expect(thrown.isError && empty.isError).toBe(true);
+  });
+
+  it('flags an unexpected handler return value as a host fault', async () => {
+    const ctx = makeCtx({ askUser: (async () => 'nope') as never });
+    const r = await askUserQuestionTool.execute(oneQuestion, ctx);
+    expect(r.isError).toBe(true);
+    expect(outcomeOf(r)).toBe('handler_error');
+  });
+
+  it('marks a malformed questions payload as invalid input', async () => {
+    const r = await askUserQuestionTool.execute(
+      { questions: 'not an array' },
+      makeCtx({ askUser: async () => [] }),
+    );
+    expect(outcomeOf(r)).toBe('invalid_input');
   });
 
   it('renders answers per header', async () => {
@@ -644,6 +713,13 @@ describe('askUserQuestionTool', () => {
     const r = await askUserQuestionTool.execute(oneQuestion, ctx);
     expect(String(r.content)).toContain('Color: Red, Blue');
     expect(String(r.content)).toContain('Size: Large');
+    expect(r.isError).toBeUndefined();
+    // The unflattened selections: the rendered line joins with ", ", which is
+    // lossy for a label that contains one.
+    const s = structuredOf(r);
+    expect(s.outcome).toBe('answered');
+    expect(s.answers).toEqual(answers);
+    expect(s.error).toBeUndefined();
   });
 
   it('propagates AbortError from the handler', async () => {

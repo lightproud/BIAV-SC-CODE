@@ -42,6 +42,7 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:END -->
 
+**v2.1.0（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.1.0（AskUserQuestion 结局语义分离 + 结构化 `outcome`）前进。
 **v2.0.0（2026-07-29）：锁步对齐（家族首个 major）**——本包自身运行时零改动，随 agent SDK 2.0.0（T75 设计轮落地：cards 退役 BREAKING + `schema:'frontmatter'` + 官方全文注入 + 选择性附着）前进；本包无破坏性变更，消费者若用到 agent SDK cards 出口须先按其 CHANGELOG 迁移再 pin 2.0.0 对。
 
 **v1.6.0（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 1.6.0（T75 二次拷问：dream 信号源 + 巡回只读预设）前进。

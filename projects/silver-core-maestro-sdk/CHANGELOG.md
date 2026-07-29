@@ -12,6 +12,12 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 2.1.0 — 2026-07-29
+
+Lockstep alignment only — silver-core-agent-sdk 2.1.0 (AskUserQuestion reports
+how the call ended instead of asserting the user declined, and ships a
+structured `outcome`). No maestro-side changes.
+
 ## 2.0.0 — 2026-07-29
 
 Lockstep alignment only — no changes to this package's own runtime. The family

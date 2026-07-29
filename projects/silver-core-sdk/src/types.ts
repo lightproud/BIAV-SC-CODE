@@ -38,6 +38,9 @@ export * from './types/tools.js';
 export type {
   ReadOutput,
   ReadTextOutputWithCap,
+  // 导出理由：AskUserQuestion 的四种失败结局是消费方（BPT 宿主）要分流的东西，
+  // 不导出就等于逼它继续字符串匹配那句英文文案——正是本形状要消灭的依赖。
+  AskUserQuestionStructuredOutput,
   BashStructuredOutput,
   GrepStructuredOutput,
   WebFetchStructuredOutput,
