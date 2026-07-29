@@ -213,7 +213,7 @@ type ExtractResult = { ok: true; value: unknown } | { ok: false; reason: string 
 
 /**
  * Lenient extraction, yielding EVERY parseable candidate in precedence order:
- * (a) trim + direct JSON.parse; (b) fenced ```json / ``` block; (c) each
+ * (a) trim + direct JSON.parse; (b) each fenced ``` block; (c) each
  * balanced {..}/[..] span in appearance order (string-aware; a stray
  * wrong-type bracket in leading prose must not hide the real JSON after it).
  * A single not-ok item (the direct-parse failure reason) is yielded first when
@@ -242,8 +242,7 @@ function* jsonCandidates(
   }
   yield { ok: false, reason: direct.reason };
 
-  const fenced = extractFenced(trimmed);
-  if (fenced !== undefined) {
+  for (const fenced of extractFencedBlocks(trimmed)) {
     const parsed = tryParse(fenced);
     if (parsed.ok) yield parsed;
   }
@@ -276,11 +275,50 @@ function tryParse(s: string): ExtractResult {
   }
 }
 
-/** Inner content of the first fenced code block, or undefined. */
-function extractFenced(text: string): string | undefined {
-  const m = /```(?:json)?[ \t]*\r?\n?([\s\S]*?)```/i.exec(text);
-  if (m && m[1] !== undefined) return m[1].trim();
-  return undefined;
+/**
+ * Inner content of EVERY fenced code block, in appearance order.
+ *
+ * The previous single regex (`/```(?:json)?[ \t]*\r?\n?([\s\S]*?)```/i`) had
+ * three failure modes, each an ordinary thing a model does — and each FATAL on
+ * the strict path (workflow `agent({schema})`), which has no correction-retry
+ * channel: the item is simply judged invalid and the script gets `null`.
+ * Measured, all against `{"a":1}` and a schema it satisfies:
+ *
+ *   - **any language tag other than exactly `json`** — ```` ```json5 ````,
+ *     ```` ```jsonc ````: the optional `json` matched empty, so the tag itself
+ *     was captured as part of the body and the parse failed;
+ *   - **a missing closing fence** — a reply cut at max_tokens four characters
+ *     after complete JSON matched NOTHING at all, so no candidate was even
+ *     offered;
+ *   - **more than one fenced block** — only the FIRST was ever considered, so a
+ *     reply that fenced anything before its answer (or whose first fence was a
+ *     near-miss object) lost the real answer entirely.
+ *
+ * All three are fixed by pairing fences directly: any tag charset, an
+ * unterminated final fence runs to end of text, and every block is offered as a
+ * candidate. This does NOT loosen the strict mode's guarantee — prose is still
+ * never scanned for embedded JSON spans, and a fenced block is still a fenced
+ * block. Offering the later blocks can only ADD a candidate after the first one
+ * fails to validate; the first block still wins whenever it validates, exactly
+ * as before.
+ */
+function extractFencedBlocks(text: string): string[] {
+  const out: string[] = [];
+  // Opening fence + optional language tag. The tag charset covers json5 / jsonc
+  // / JSON / ts / …; an empty tag (a bare ```) is the common case.
+  const open = /```([A-Za-z0-9_+.-]*)[ \t]*\r?\n?/g;
+  let m: RegExpExecArray | null;
+  while ((m = open.exec(text)) !== null) {
+    const bodyStart = m.index + m[0].length;
+    const closeIdx = text.indexOf('```', bodyStart);
+    const body = (closeIdx === -1 ? text.slice(bodyStart) : text.slice(bodyStart, closeIdx)).trim();
+    if (body !== '') out.push(body);
+    if (closeIdx === -1) break;
+    // Resume AFTER the closing fence, so the next opener is a real opener and
+    // fences stay correctly paired.
+    open.lastIndex = closeIdx + 3;
+  }
+  return out;
 }
 
 /**
