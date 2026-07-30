@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-30T08:23:45.722602+00:00",
+  "collected_at": "2026-07-30T11:07:33.623286+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 123,
@@ -797,16 +797,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-18T13:47:43",
-      "lang": "id",
-      "title": "[Google Play 差评] ★1 pity is unclear, the chance of losing th",
-      "summary": "pity is unclear, the chance of losing the rate off is greater, the income is not comparable to the gacha",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-057f5b99-527e-45bb-8e00-d90009083b05",
-      "author": "Nothing",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-14T03:27:18",
       "lang": "id",
       "title": "[Google Play 差评] ★1 game macam apa ini?, mengapa di saat say",
@@ -1103,6 +1093,16 @@
       "summary": "5 stelle perché è un gioco multilingue compreso l'italiano cosa che ormai dovrebbero fare tutti giochi grazie all'IA",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-d2764bc5-5216-46e4-9594-094a54585b86",
       "author": "Daniele",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-29T10:49:14",
+      "lang": "ru",
+      "title": "[Google Play 差评] ★1 Буквально лютая копирка Reverse: 1999, н",
+      "summary": "Буквально лютая копирка Reverse: 1999, но на минималках",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-89ed1244-b652-4e6d-9894-d95a21822cde",
+      "author": "0_Lutz_0",
       "engagement": 0
     },
     {
