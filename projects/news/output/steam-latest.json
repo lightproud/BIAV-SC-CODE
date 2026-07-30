@@ -1,10 +1,70 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-30T11:07:33.623286+00:00",
+  "collected_at": "2026-07-30T13:56:55.548572+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 13,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-30T12:09:42+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561199862791647/recommended/3052450",
+      "author": "76561199862791647",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1785413382,
+      "playtime_forever": 645
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-30T11:41:53+00:00",
+      "lang": "schinese",
+      "title": "[正面] 喜欢好玩爱玩",
+      "summary": "喜欢好玩爱玩",
+      "url": "https://steamcommunity.com/profiles/76561198789716645/recommended/3052450",
+      "author": "76561198789716645",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "喜欢好玩爱玩",
+      "timestamp_created": 1785411713,
+      "playtime_forever": 1822
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-30T11:32:35+00:00",
+      "lang": "english",
+      "title": "[正面] gatcha mechanic is kinda of predatory, the game ha...",
+      "summary": "gatcha mechanic is kinda of predatory, the game has a bit too much ui, and its very much pay to win. Outside of that the games music, art style, and story are all great, and you don't need to pay any money to get anything but characters and items benefit from getting them 16 times, of which its a 3% chance",
+      "url": "https://steamcommunity.com/profiles/76561198304841017/recommended/3052450",
+      "author": "76561198304841017",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "gatcha mechanic is kinda of predatory, the game has a bit too much ui, and its very much pay to win. Outside of that the games music, art style, and story are all great, and you don't need to pay any money to get anything but characters and items benefit from getting them 16 times, of which its a 3% chance",
+      "timestamp_created": 1785411155,
+      "playtime_forever": 995
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-30T10:44:00+00:00",
+      "lang": "english",
+      "title": "[正面] One of the best Gachas on the market, really gener...",
+      "summary": "One of the best Gachas on the market, really generous, amazing vibes, story, graphic design, incredibly fun combat mechanics, lots of events. Just so you're aware.... it's HARD. But not \"pay to win\" hard, you really need to think what you're doing at all times or get absolutely wrecked. All characters are good and have a place in endgame, you just need to figure out how to use them.",
+      "url": "https://steamcommunity.com/profiles/76561197970718601/recommended/3052450",
+      "author": "76561197970718601",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "One of the best Gachas on the market, really generous, amazing vibes, story, graphic design, incredibly fun combat mechanics, lots of events. Just so you're aware.... it's HARD. But not \"pay to win\" hard, you really need to think what you're doing at all times or get absolutely wrecked. All characters are good and have a place in endgame, you just need to figure out how to use them.",
+      "timestamp_created": 1785408240,
+      "playtime_forever": 8154
+    },
     {
       "source": "steam",
       "time": "2026-07-30T10:36:45+00:00",
@@ -18,7 +78,7 @@
       "voted_up": true,
       "review": "gameplay and esthetics are top!",
       "timestamp_created": 1785407805,
-      "playtime_forever": 27393
+      "playtime_forever": 27537
     },
     {
       "source": "steam",
@@ -139,21 +199,6 @@
       "review": "good storyline, good character design, good pull rates, gameplay is a bit repetitive but remains fun, pls nerf lotan cetarchon",
       "timestamp_created": 1785370279,
       "playtime_forever": 2343
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-29T13:01:41+00:00",
-      "lang": "schinese",
-      "title": "[正面] 决战剧情之巅",
-      "summary": "决战剧情之巅",
-      "url": "https://steamcommunity.com/profiles/76561199693436117/recommended/3052450",
-      "author": "76561199693436117",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "决战剧情之巅",
-      "timestamp_created": 1785330101,
-      "playtime_forever": 432
     }
   ]
 }
