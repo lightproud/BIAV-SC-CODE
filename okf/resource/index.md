@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (125)
+# 银芯正式产物（报告/分析） (126)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -13,6 +13,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [saya-collab-community-report-20260603-r3](/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md) - **901 条强信号用户原声分类统计**（已剔除官方公告、维护通知、PV 搬运等噪声）：（格式：md）
 * [saya-collab-voices-fulldetail-20260603](/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md) - community-analysis 产物（xlsx）（格式：xlsx）
 * [volunteer-management-deep-dive-202606](/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md) - 这是一支**高知自驱、靠「热爱 + 被看见」维系的精英翻译志愿军**，质量极高但结构极脆。一句话定性：**质量不缺，缺的是「让人能持续干活」的供给与冗余**——
+* [archive-integrity-audit-20260729](/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md) - `repair_gaps.py --dry-run` 实测（默认近 60 天窗口），与仓内 `projects/news/data/gap_report.jso
 * [bpt-sdk-comparison-baseline-20260705](/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md) - **⚠ 重大更正（2026-07-05 晚，见 §4）**：第 1 节「v4 无可测收益」结论**作废**——发现 A/B harness 有测量 bug（未设
 * [bpt-sdk-i18n-cost-investigation-20260708](/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md) - 守密人两次「不对劲」都对;艾瑞卡据实纠正。（格式：md）
 * [bpt-sdk-l5-revalidation-v0182-20260707](/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md) - **Gate B：bpt 88/90 (97.8%) vs 官方 77/90 (85.6%)，delta +12.2pp，容忍 −5pp → PASS。跑满 1

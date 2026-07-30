@@ -127,7 +127,6 @@ class TestFailureAggregation(unittest.TestCase):
             "YouTube": "fetch_youtube",
             "Bahamut": "fetch_bahamut",
             "Arca.live": "fetch_arca_live", "Google Play": "fetch_google_play",
-            "Twitter": "fetch_twitter",
         }
         patches = []
         for name, attr in attr_by_name.items():
@@ -144,7 +143,7 @@ class TestFailureAggregation(unittest.TestCase):
 
         self._patch_fetchers({
             "YouTube": boom,
-            "Twitter": lambda: [_item("t", "https://t/1")],
+            "Weibo": lambda: [_item("t", "https://t/1")],
         })
         items, core_failures = collect_global.run_zero_cost_collectors()
         sources = {s for s, _ in core_failures}
@@ -159,7 +158,7 @@ class TestFailureAggregation(unittest.TestCase):
 
         self._patch_fetchers({
             "YouTube": boom,
-            "Twitter": lambda: [_item("t", "https://t/1")],
+            "Weibo": lambda: [_item("t", "https://t/1")],
         })
         # Isolate all output writes: main() now persists via news_common.dump_json_atomic
         # (temp file + os.replace), which bypasses builtins.open — so stub it out to a
@@ -178,7 +177,7 @@ class TestFailureAggregation(unittest.TestCase):
 
         self._patch_fetchers({
             "Zhihu": boom,
-            "Twitter": lambda: [_item("t", "https://t/1")],
+            "Weibo": lambda: [_item("t", "https://t/1")],
         })
         items, core_failures = collect_global.run_zero_cost_collectors()
         self.assertEqual(core_failures, [])
@@ -189,7 +188,7 @@ class TestFailureAggregation(unittest.TestCase):
         # 部分核心源（如 taptap）本就低频长期 0，硬失败会让管线永久非零退出。
         # 仅「抛异常」的核心源才进 core_failures（见 test_core_failure_recorded）。
         self._patch_fetchers({
-            "Twitter": lambda: [_item("t", "https://t/1")],
+            "Weibo": lambda: [_item("t", "https://t/1")],
             # TapTap / YouTube 等核心源默认返回 []（空）→ 只告警，不入 core_failures
         })
         items, core_failures = collect_global.run_zero_cost_collectors()
@@ -199,13 +198,13 @@ class TestFailureAggregation(unittest.TestCase):
     def test_merge_order_deterministic(self):
         # Concurrent collection must merge in a stable, engagement-sorted order
         # regardless of which thread finishes first.
-        def twitter():
+        def pixiv():
             return [{"title": "low", "url": "https://x/low", "engagement": 5}]
 
         def weibo():
             return [{"title": "high", "url": "https://x/high", "engagement": 50}]
 
-        self._patch_fetchers({"Twitter": twitter, "Weibo": weibo})
+        self._patch_fetchers({"Pixiv": pixiv, "Weibo": weibo})
         items, core_failures = collect_global.run_zero_cost_collectors()
         self.assertEqual(core_failures, [])
         merged = collect_global.merge_and_dedup([], items, apply_recency_filter=False)

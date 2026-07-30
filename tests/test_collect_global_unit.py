@@ -134,7 +134,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
             "Ruliweb": "fetch_ruliweb", "StopGame": "fetch_stopgame",
             "搜狗微信": "fetch_weixin", "YouTube": "fetch_youtube",
             "Bahamut": "fetch_bahamut", "Arca.live": "fetch_arca_live",
-            "Google Play": "fetch_google_play", "Twitter": "fetch_twitter",
+            "Google Play": "fetch_google_play",
         }
         patches = []
         for name, attr in attr_by_name.items():
@@ -153,7 +153,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
         with mock.patch.object(global_collectors, "_refresh_cutoff", return_value=None), \
                 mock.patch.dict(sys.modules, {"data_quality": fake_dq,
                                               "playwright_collectors": None}):
-            self._patch_all_empty({"Twitter": lambda: [_item("t", "https://t/1")]})
+            self._patch_all_empty({"Weibo": lambda: [_item("t", "https://t/1")]})
             items, core_failures = cg.run_zero_cost_collectors()
         self.assertEqual(items, [])
         self.assertEqual(core_failures, [])
@@ -193,7 +193,7 @@ class TestRunZeroCostBranches(unittest.TestCase):
                     SilentPlatformTracker=mock.MagicMock(side_effect=Exception("off"))),
                     "playwright_collectors": None}), \
                 mock.patch.dict(cg.os.environ, {}, clear=True):
-            self._patch_all_empty({"Twitter": lambda: [_item("t", "https://t/1")]})
+            self._patch_all_empty({"Weibo": lambda: [_item("t", "https://t/1")]})
             items, core_failures = cg.run_zero_cost_collectors()
         self.assertEqual(core_failures, [])
         self.assertEqual(len(items), 1)
@@ -210,7 +210,7 @@ class TestMain(unittest.TestCase):
 
     def test_success_writes_and_returns(self):
         items = [{"title": "T", "url": "https://x/1", "engagement": 9,
-                  "time": datetime.now(UTC).isoformat(), "source": "twitter"}]
+                  "time": datetime.now(UTC).isoformat(), "source": "weibo"}]
         with mock.patch.object(cg, "run_zero_cost_collectors", return_value=(items, [])), \
                 mock.patch.object(cg, "load_existing_news", return_value=[]), \
                 mock.patch.object(news_common, "dump_json_atomic") as dump:
@@ -220,7 +220,7 @@ class TestMain(unittest.TestCase):
 
     def test_core_failure_exits_after_write(self):
         items = [{"title": "T", "url": "https://x/1", "engagement": 9,
-                  "time": datetime.now(UTC).isoformat(), "source": "twitter"}]
+                  "time": datetime.now(UTC).isoformat(), "source": "weibo"}]
         with mock.patch.object(cg, "run_zero_cost_collectors",
                                return_value=(items, [("youtube", "down")])), \
                 mock.patch.object(cg, "load_existing_news", return_value=[]), \

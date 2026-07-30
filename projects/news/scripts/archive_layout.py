@@ -86,6 +86,19 @@ def discord_root() -> Path:
     """discord 归档根：<community>/discord。"""
     return community_root() / 'discord'
 
+
+def media_manifest_path() -> Path:
+    """媒体补录台账：<pool>/Record/media/backfill_manifest.json。
+
+    守密人 2026-07-30 裁定（归档完整性审计待裁项①）：manifest 随数据湖迁 BIAV-SC-DATA
+    数据仓——原 code 仓路径 projects/news/data/media/ 已被 .gitignore 整目录忽略（#876），
+    CI 末步 git add 被拒致 backfill-media 自 2026-06-21 起 38 天无一次成功。
+    台账是数据湖的操作记录，与 Record 同仓同推；media 二进制本体仍走 Releases 不变。
+    放 Record/media/（Community 的兄弟目录）而非 Community 内，防被平台目录扫描器
+    （silent_sources_audit / OKF pointer layers 等按 Community/* 枚举平台）误认成源。
+    """
+    return pool_root() / 'Record' / 'media' / 'backfill_manifest.json'
+
 # ── 折叠映射：源 → (宿主平台, 类型子目录) ────────────────────────────────────
 # steam 家族三子类共享宿主 steam；taptap 评论流归 taptap/*/review。
 # 与 sources.SOURCE_ALIASES / ARCHIVE_PLATFORM_FOLD 语义对齐（那边管「叫什么」，

@@ -58,7 +58,6 @@ SOURCE_MAP = {
     'stopgame': 'stopgame',
     'weixin': 'weixin',
     'discord': 'discord',
-    'twitter': 'twitter',
 }
 
 
@@ -155,7 +154,7 @@ def run_zero_cost_collectors() -> list[dict]:
         ('Ruliweb', c.fetch_ruliweb),
         ('StopGame', c.fetch_stopgame),
         ('搜狗微信', c.fetch_weixin),
-        ('Twitter', c.fetch_twitter),
+        # Twitter 已退出编排（守密人 2026-07-30 裁定摘除注册表；fetch_twitter 保留在 GC）
     ]
 
     # Collectors that may use API keys when available, fall back to public endpoints otherwise
@@ -172,7 +171,7 @@ def run_zero_cost_collectors() -> list[dict]:
     NAME_TO_SOURCE_ID = {
         'Weibo': 'weibo', 'App Store': 'appstore',
         'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
-        'StopGame': 'stopgame', '搜狗微信': 'weixin', 'Twitter': 'twitter',
+        'StopGame': 'stopgame', '搜狗微信': 'weixin',
         'YouTube': 'youtube',
         'Bahamut': 'bahamut',
         'Arca.live': 'arca_live', 'Google Play': 'google_play',

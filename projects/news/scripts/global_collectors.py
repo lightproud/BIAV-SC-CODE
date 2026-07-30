@@ -309,14 +309,13 @@ def fetch_bilibili():
     return items
 
 
-# 官方 X 账号 → 区服：单一真相源取自 sources.REGION_APPS['twitter']
-# （global = @MorimensOfcl / jp = @bokyakuzenya，AltPlus 日本版独立账号）。
-# 日服账号独立运营 → 拆 jp/ 区服目录（甲方案 region 字段驱动 archive 分桶，不走 platform_region）。
-_TWITTER_REGION_BY_HANDLE = {
-    h.lower(): region for region, h in REGION_APPS.get("twitter", {}).items() if h
-}
-# 默认采集清单从单一真相源派生；可用 TWITTER_HANDLES 环境变量覆盖（逗号分隔）。
-TWITTER_OFFICIAL_HANDLES = [h for h in REGION_APPS.get("twitter", {}).values() if h]
+# 官方 X 账号 → 区服（global = @MorimensOfcl / jp = @bokyakuzenya，AltPlus 日本版独立账号）。
+# twitter 已摘除源注册表（守密人 2026-07-30 裁定：1,126 天零产出）——句柄/区服知识随之
+# 从 sources.REGION_APPS 内聚到本模块（fetch_twitter 保留但退出编排，经 TWITTER_HANDLES
+# 环境变量仍可手动唤起）；重新登记采集时应把这两处迁回注册表单一真相源。
+_TWITTER_REGION_BY_HANDLE = {'morimensofcl': 'global', 'bokyakuzenya': 'jp'}
+# 默认清单置空（不再随注册表派生）；可用 TWITTER_HANDLES 环境变量覆盖（逗号分隔）。
+TWITTER_OFFICIAL_HANDLES: list[str] = []
 
 
 def _parse_twitter_time(created_at):

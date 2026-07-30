@@ -7,7 +7,6 @@ split_output.py — 按数据源分割 projects/news/output/news.json
   projects/news/output/steam-latest.json
   projects/news/output/taptap-latest.json
   projects/news/output/discord-latest.json
-  projects/news/output/twitter-latest.json
   projects/news/output/youtube-latest.json
   projects/news/output/reddit-latest.json
   projects/news/output/official-latest.json

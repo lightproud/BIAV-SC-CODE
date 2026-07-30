@@ -12,8 +12,8 @@
 * [事实圣经 assets](/assets/index.md) - 12 concept · 角色卡/采访/叙事/设计决策指针
 * [wiki 数据 wiki-data](/wiki-data/index.md) - 27 concept · 解包自举结构化数据集指针
 * [社区档案 community](/community/index.md) - 19 concept · 全量档案分析镜头（full_archive）
-* [输出展示 news-output](/news-output/index.md) - 23 concept · 抽样展示层（output）
-* [产物 resource](/resource/index.md) - 125 concept · 银芯正式报告/分析指针
+* [输出展示 news-output](/news-output/index.md) - 22 concept · 抽样展示层（output）
+* [产物 resource](/resource/index.md) - 126 concept · 银芯正式报告/分析指针
 * [子项目 projects](/projects/index.md) - 30 concept · CONTEXT/藏宝图/工程文档指针
 
 ## 运行时导航（LLM 可动态导航）

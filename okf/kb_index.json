@@ -8,12 +8,12 @@
   },
   "stats": {
     "concepts": 391,
-    "edges": 431,
-    "terms": 6947,
+    "edges": 432,
+    "terms": 6951,
     "by_type": {
       "character": 72,
-      "dataset": 95,
-      "documentation": 156,
+      "dataset": 94,
+      "documentation": 157,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -23,16 +23,16 @@
       "characters": 72,
       "community": 19,
       "memory": 51,
-      "news-output": 23,
+      "news-output": 22,
       "projects": 30,
-      "resource": 125,
+      "resource": 126,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
-      "skeleton": 134,
-      "search": 257
+      "skeleton": 133,
+      "search": 258
     }
   },
   "sections": {
@@ -54,7 +54,7 @@
     },
     "news-output": {
       "index": "/news-output/index.md",
-      "count": 23
+      "count": 22
     },
     "projects": {
       "index": "/projects/index.md",
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 125
+      "count": 126
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 116
+      "degree": 117
     },
     "/characters/15604.md": {
       "type": "character",
@@ -2519,20 +2519,6 @@
       "tier": "skeleton",
       "degree": 1
     },
-    "/news-output/news-output-twitter.md": {
-      "type": "dataset",
-      "title": "输出展示层 · twitter 最新快照",
-      "description": "twitter 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/twitter-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:twitter",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 0
-    },
     "/news-output/news-output-weibo.md": {
       "type": "dataset",
       "title": "输出展示层 · weibo 最新快照",
@@ -3118,6 +3104,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 0
+    },
+    "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md": {
+      "type": "documentation",
+      "title": "archive-integrity-audit-20260729",
+      "description": "`repair_gaps.py --dry-run` 实测（默认近 60 天窗口），与仓内 `projects/news/data/gap_report.json`（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/data-diagnostics/archive-integrity-audit-20260729.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
     },
     "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md": {
       "type": "documentation",
@@ -7142,6 +7142,11 @@
         "mention"
       ],
       [
+        "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
         "提及:艾瑞卡",
         "mention"
@@ -9248,6 +9253,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md": [
       [
         "/characters/15603.md",
@@ -10489,7 +10501,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -10581,6 +10592,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -10994,11 +11006,11 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -11089,6 +11101,7 @@
     ],
     "audit": [
       "/memory/memory-ext-workflow-api-key-audit.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
@@ -11716,7 +11729,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -11884,7 +11896,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -11927,6 +11938,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -12334,6 +12346,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -12657,7 +12670,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -12700,6 +12712,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -12918,6 +12931,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -13115,6 +13129,7 @@
     "diagnostics": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-sentinel-baseline.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -13264,6 +13279,9 @@
     ],
     "drops": [
       "/wiki-data/wiki-data-drops-by-item.md"
+    ],
+    "dry": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
     ],
     "ea40f": [
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
@@ -13590,7 +13608,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -13695,7 +13712,11 @@
     ],
     "gap": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
+    ],
+    "gaps": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
     ],
     "gate": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -14092,6 +14113,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -14245,7 +14267,8 @@
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
     "integrity": [
-      "/assets/assets-archive-integrity.md"
+      "/assets/assets-archive-integrity.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
     ],
     "intel": [
       "/resource/resource-intel-weekly-morimens-intel-20260712.md"
@@ -14329,12 +14352,12 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
@@ -14472,7 +14495,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -14590,7 +14612,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -14633,6 +14654,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -14913,7 +14935,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -15207,6 +15228,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -15535,7 +15557,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -15543,6 +15564,7 @@
       "/projects/project-news.md",
       "/projects/project-site.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -15686,7 +15708,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -15844,7 +15865,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -15999,6 +16019,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -16280,7 +16301,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -16311,6 +16331,7 @@
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
@@ -16459,6 +16480,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -16609,7 +16631,8 @@
     ],
     "py": [
       "/README.md",
-      "/assets/assets-readme.md"
+      "/assets/assets-readme.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
     ],
     "python": [
       "/assets/assets-readme.md"
@@ -16826,6 +16849,9 @@
     "rename": [
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
+    "repair": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
+    ],
     "repeat": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
@@ -16914,6 +16940,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
@@ -16975,6 +17002,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -17183,6 +17211,7 @@
       "/sources/ruliweb.md"
     ],
     "run": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
@@ -17238,7 +17267,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -17625,7 +17653,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -18085,6 +18112,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -18250,9 +18278,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
-    ],
-    "twitter": [
-      "/news-output/news-output-twitter.md"
     ],
     "type": [
       "/README.md"
@@ -19233,7 +19258,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -19276,6 +19300,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -19546,7 +19571,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -19589,6 +19613,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -19848,6 +19873,7 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
     "与仓": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
@@ -19914,7 +19940,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -19957,6 +19982,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -21362,7 +21388,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -21405,6 +21430,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -21653,6 +21679,7 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "仓内": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
@@ -22413,7 +22440,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -22456,6 +22482,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -22721,7 +22748,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -22764,6 +22790,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -23702,7 +23729,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -24236,7 +24262,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -24451,7 +24476,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -24833,7 +24857,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -24876,6 +24899,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -26261,7 +26285,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -28382,7 +28405,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -28425,6 +28447,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -28915,6 +28938,9 @@
     "天的": [
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
+    "天窗": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
+    ],
     "天记": [
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
@@ -29256,7 +29282,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -29299,6 +29324,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -29807,7 +29833,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -29944,7 +29969,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -29987,6 +30011,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -30226,7 +30251,8 @@
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "实测": [
-      "/memory/memory-archive-sdk-status-chronicle-20260727.md"
+      "/memory/memory-archive-sdk-status-chronicle-20260727.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
     ],
     "实现": [
       "/README.md",
@@ -30317,7 +30343,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -30741,7 +30766,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -30923,7 +30947,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -31008,7 +31031,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -32534,7 +32556,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -32742,7 +32763,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -33004,7 +33024,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -33110,7 +33129,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -33837,7 +33855,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -34170,7 +34187,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -34213,6 +34229,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -34795,7 +34812,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -34838,6 +34854,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -35177,7 +35194,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -35220,6 +35236,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -35499,7 +35516,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -35648,7 +35664,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -35691,6 +35706,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -35972,7 +35988,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -36015,6 +36030,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -36461,7 +36477,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -36698,7 +36713,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -37471,7 +37485,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -37879,7 +37892,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -37922,6 +37934,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -38365,7 +38378,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -38408,6 +38420,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -39056,7 +39069,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -39099,6 +39111,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -39296,7 +39309,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -39352,6 +39364,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -39532,7 +39545,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -39723,7 +39735,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -39880,7 +39891,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -39923,6 +39933,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -40311,7 +40322,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -40354,6 +40364,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -42421,7 +42432,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -44177,7 +44187,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -44599,10 +44608,10 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -46977,6 +46986,9 @@
     "认行": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
+    "认近": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
+    ],
     "讨厌": [
       "/characters/15563.md"
     ],
@@ -48016,7 +48028,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -48059,6 +48070,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -48497,7 +48509,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -48796,7 +48807,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -48839,6 +48849,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -49099,7 +49110,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -49748,7 +49758,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -49928,7 +49937,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -49971,6 +49979,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -50220,7 +50229,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -50263,6 +50271,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -50579,7 +50588,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -50629,7 +50637,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -51077,7 +51084,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -51228,7 +51234,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -51571,6 +51576,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "默认": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -51755,6 +51761,7 @@
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-archive-storage-discussion.md",
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -51804,6 +51811,7 @@
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "audit": [
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
@@ -52312,6 +52320,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -52628,7 +52637,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -52671,6 +52679,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -52876,6 +52885,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -53053,6 +53063,7 @@
     "diagnostics": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-sentinel-baseline.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -53513,7 +53524,8 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
     "integrity": [
-      "/assets/assets-archive-integrity.md"
+      "/assets/assets-archive-integrity.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
     ],
     "intel": [
       "/resource/resource-intel-weekly-morimens-intel-20260712.md"
@@ -53691,7 +53703,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -53734,6 +53745,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -54246,7 +54258,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -54332,7 +54343,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
@@ -54825,7 +54835,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -55220,6 +55229,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -55342,9 +55352,6 @@
     ],
     "trinkets": [
       "/wiki-data/wiki-schema-trinkets-schema.md"
-    ],
-    "twitter": [
-      "/news-output/news-output-twitter.md"
     ],
     "ui": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -55755,7 +55762,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -56080,7 +56086,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -56287,7 +56292,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -56518,7 +56522,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -56570,7 +56573,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -57075,7 +57077,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
@@ -57446,7 +57447,6 @@
       "/news-output/news-output-stopgame.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
-      "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"

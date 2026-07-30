@@ -1,4 +1,4 @@
-# 输出展示层（抽样，快查/日报） (23)
+# 输出展示层（抽样，快查/日报） (22)
 
 projects/news/output/ 输出展示层指针（抽样非全量）。凡长窗口/审计/情感长尾一律回全量档案层。
 
@@ -20,7 +20,6 @@ projects/news/output/ 输出展示层指针（抽样非全量）。凡长窗口/
 * [输出展示层 · stopgame 最新快照](/news-output/news-output-stopgame.md) - stopgame 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources
 * [输出展示层 · taptap 最新快照](/news-output/news-output-taptap.md) - taptap 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/
 * [输出展示层 · taptap_review 最新快照](/news-output/news-output-taptap-review.md) - taptap_review 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 so
-* [输出展示层 · twitter 最新快照](/news-output/news-output-twitter.md) - twitter 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/
 * [输出展示层 · weibo 最新快照](/news-output/news-output-weibo.md) - weibo 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的
 * [输出展示层 · weixin 最新快照](/news-output/news-output-weixin.md) - weixin 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/
 * [输出展示层 · youtube 最新快照](/news-output/news-output-youtube.md) - youtube 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/

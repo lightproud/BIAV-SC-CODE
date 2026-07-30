@@ -2,7 +2,7 @@
   "generated": "2026-07-30",
   "stats": {
     "nodes": 391,
-    "edges": 431
+    "edges": 432
   },
   "nodes": [
     {
@@ -1983,17 +1983,6 @@
       "tier": "skeleton"
     },
     {
-      "id": "/news-output/news-output-twitter.md",
-      "type": "dataset",
-      "title": "输出展示层 · twitter 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:twitter",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
       "id": "/news-output/news-output-weibo.md",
       "type": "dataset",
       "title": "输出展示层 · weibo 最新快照",
@@ -2450,6 +2439,17 @@
         "data_layer:curated",
         "deliverable",
         "topic:community-analysis"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
+      "type": "documentation",
+      "title": "archive-integrity-audit-20260729",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
       ],
       "tier": "search"
     },
@@ -5695,6 +5695,12 @@
       "source": "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
       "rel_type": "mention"
     },
     {
