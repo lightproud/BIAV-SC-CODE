@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-30T02:08:26.626248+00:00",
+  "collected_at": "2026-07-30T05:39:59.112898+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 122,
@@ -277,16 +277,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-03T07:53:37",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Really good game with a gameplay somewha",
-      "summary": "Really good game with a gameplay somewhat similar to slay the spire. The gacha aspect is free to play friendly, and progression is not hard. I love the art personally, and the stories are also really well written (I cried in some of them). I think the only thing that needs improvement is the UI of the loading screen and the combat screen, since there is no button feedback so if you clicked a button and it's loading you don't actually know that it's loading.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-76011579-765b-4aa8-9924-c12b460b9403",
-      "author": "Ethan B (Potatoooo)",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-24T05:00:49",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 덱빌딩보다는 덱 운영하는 느낌인데 상당히 재미있음 유물집는거나 카드 활용",
@@ -413,6 +403,16 @@
       "summary": "赞✨👍！",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-76f8661b-513b-45d0-b27c-a667dc06df2f",
       "author": "Zhi Shao Tan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-29T02:17:01",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 I'm having a lot of fun playing the game",
+      "summary": "I'm having a lot of fun playing the game. The character art style, story, and animations are beautifully made and perfectly suit my taste. While I might struggle a bit with the gameplay as I learn how the characters work and how to build them, it is an absolute masterpiece to me.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-2c143e5c-ffa9-40c0-b7ee-4652dccaf9c4",
+      "author": "kymz",
       "engagement": 0
     },
     {
