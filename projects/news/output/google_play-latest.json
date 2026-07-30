@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-30T13:56:55.548572+00:00",
+  "collected_at": "2026-07-30T16:26:54.592183+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 122,
   "items": [
     {
       "source": "google_play",
@@ -407,6 +407,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-29T15:01:23",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 it was peak",
+      "summary": "it was peak",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-84558713-9256-4e09-9132-3a2d902dd34e",
+      "author": "Shyla",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-29T02:17:01",
       "lang": "en",
       "title": "[Google Play 好评] ★5 I'm having a lot of fun playing the game",
@@ -667,16 +677,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-03T13:26:55",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 One of the best games I've ever played!",
-      "summary": "One of the best games I've ever played! The gameplay offers a ton of content, with a variety of mechanics, game modes, and challenges that keep things fresh. It's also very F2P friendly. The art style and soundtrack are immaculate, and the story is genuinely PEAK. Overall, it's a game I can see myself playing for years and not get bored, just because I REALLY REALLY LIKE it.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-87d2f581-8a36-47c4-8b94-8b796e9f1aaf",
-      "author": "Alexander Joshua Santos",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-28T13:51:51",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 덱빌딩 게임 좋아하는데 재밌어요 배경이나 아트가 정말 매력적이에요",
@@ -923,16 +923,6 @@
       "summary": "game hay, cốt truyện sợ vl nhưng hợp gu mình 💀 khá thân thiện với newbie vì cho rolls như cơm bữa nhưng cũng khá kén người chơi vì bản dịch của AI rất tệ và dễ khiến người khác nhầm lẫn đặc biệt là phần nhiệm vụ cốt truyện nhé.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-06ad2993-6934-42f7-a185-a0eabaa1821e",
       "author": "Lâm Cảnh",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-30T15:48:24",
-      "lang": "vi",
-      "title": "[Google Play 好评] ★5 absolute cinema✋🤚✨",
-      "summary": "absolute cinema✋🤚✨",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-6a8995ec-c7ff-4b72-91d3-275ba2b6add8",
-      "author": "Trinh Long",
       "engagement": 0
     },
     {

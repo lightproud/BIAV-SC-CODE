@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-30T13:57:38.529933+00:00",
-  "total_gaps": 247,
+  "generated_at": "2026-07-30T16:27:47.389059+00:00",
+  "total_gaps": 245,
   "coverage": {
     "sources_total": 20,
     "sources_scanned": 19,
@@ -50,7 +50,6 @@
     },
     "bahamut": {
       "missing_dates": [
-        "2026-05-31",
         "2026-06-01",
         "2026-06-02",
         "2026-06-03",
@@ -90,7 +89,7 @@
         "2026-07-07",
         "2026-07-08"
       ],
-      "count": 39
+      "count": 38
     },
     "bilibili": {
       "missing_dates": [
@@ -287,7 +286,6 @@
     },
     "weixin": {
       "missing_dates": [
-        "2026-05-31",
         "2026-06-01",
         "2026-06-02",
         "2026-06-03",
@@ -321,7 +319,7 @@
         "2026-07-15",
         "2026-07-17"
       ],
-      "count": 33
+      "count": 32
     },
     "youtube_comments": {
       "missing_dates": [
