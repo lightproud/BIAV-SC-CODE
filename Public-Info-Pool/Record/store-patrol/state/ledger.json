@@ -200,6 +200,47 @@
       "nextRunAt": null,
       "revision": 3,
       "leaseUntil": null
+    },
+    "patrol:steam-appdetails:2026-07-30": {
+      "id": "patrol:steam-appdetails:2026-07-30",
+      "intent": "store-patrol steam-appdetails 2026-07-30",
+      "payload": {
+        "target": {
+          "id": "steam-appdetails",
+          "title": "Morimens Steam storefront (price / release surface)",
+          "url": "https://store.steampowered.com/api/appdetails?appids=3052450&cc=us&l=en&filters=basic,price_overview,release_date",
+          "extract": "steam-appdetails",
+          "key": "3052450"
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1785404386670,
+      "updatedAt": 1785404386910,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
+    },
+    "patrol:steam-review-summary:2026-07-30": {
+      "id": "patrol:steam-review-summary:2026-07-30",
+      "intent": "store-patrol steam-review-summary 2026-07-30",
+      "payload": {
+        "target": {
+          "id": "steam-review-summary",
+          "title": "Morimens Steam review summary",
+          "url": "https://store.steampowered.com/appreviews/3052450?json=1&num_per_page=0&language=all&purchase_type=all",
+          "extract": "steam-review-summary"
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1785404386674,
+      "updatedAt": 1785404386965,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
     }
   },
   "queries": [
@@ -290,6 +331,24 @@
       "attempt": 1,
       "startedAt": 1785318496341,
       "endedAt": 1785318496510,
+      "outcome": "ok",
+      "summary": "steam-review-summary: CHANGED"
+    },
+    {
+      "id": "85787ba9-4111-4f49-a368-45a5a6e4e30c",
+      "sessionId": "patrol:steam-appdetails:2026-07-30",
+      "attempt": 1,
+      "startedAt": 1785404386677,
+      "endedAt": 1785404386909,
+      "outcome": "ok",
+      "summary": "steam-appdetails: unchanged"
+    },
+    {
+      "id": "adbe80ff-0b3d-4a04-b64c-b58922a3ca4b",
+      "sessionId": "patrol:steam-review-summary:2026-07-30",
+      "attempt": 1,
+      "startedAt": 1785404386734,
+      "endedAt": 1785404386965,
       "outcome": "ok",
       "summary": "steam-review-summary: CHANGED"
     }
