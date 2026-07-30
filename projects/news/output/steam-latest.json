@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-30T05:39:59.112898+00:00",
+  "collected_at": "2026-07-30T08:23:45.722602+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-30T05:01:09+00:00",
+      "lang": "english",
+      "title": "[正面] Slay the Spire with much better art and no Anita S...",
+      "summary": "Slay the Spire with much better art and no Anita Sarkeesian. 10/10",
+      "url": "https://steamcommunity.com/profiles/76561198015503232/recommended/3052450",
+      "author": "76561198015503232",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Slay the Spire with much better art and no Anita Sarkeesian. 10/10",
+      "timestamp_created": 1785387669,
+      "playtime_forever": 19294
+    },
     {
       "source": "steam",
       "time": "2026-07-30T03:43:12+00:00",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "很好玩啊",
       "timestamp_created": 1785314796,
-      "playtime_forever": 528
+      "playtime_forever": 630
     },
     {
       "source": "steam",
@@ -93,7 +108,7 @@
       "voted_up": true,
       "review": "墨菲，既是我的妹妹，我的女儿，也是我的妻子，太可爱了[表情]",
       "timestamp_created": 1785314752,
-      "playtime_forever": 6774
+      "playtime_forever": 6885
     }
   ]
 }
