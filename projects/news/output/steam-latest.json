@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-31T14:01:08.662631+00:00",
+  "collected_at": "2026-07-31T16:46:06.058615+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 4,
   "items": [
     {
       "source": "steam",
@@ -18,7 +18,7 @@
       "voted_up": false,
       "review": "I like this game, there are many different charachters and cards and you can create different combinations. The graphics are gorgeous, and the gameplay is fine.\n\nBUT\n\nYou have to spend a lot of money and/or grind a lot...\n\nEach character has its own cards, and your deck is made out of 4 characters with their respective cards.\n\nYou can't directly buy those characters; you have to gamble for them. They appear in rotation in the store, and you can gamble trying to get them, after 30 tries, it's usually guaranteed to receive the character.\n\nThen there's the EXP for  your \"profile\" very much neded, then there are differents material to upgrade your cards, then there are \"augments\" to apply to your charachters  ... so many things to upgrade that i got lost trying to understand it.... there's a lot to spend money on...\n\n\nIf you are a whale, you are fine.\n\nIf you think you can be fine with 20 euros, well... nah...",
       "timestamp_created": 1785499781,
-      "playtime_forever": 967
+      "playtime_forever": 1057
     },
     {
       "source": "steam",
@@ -64,36 +64,6 @@
       "review": "bom",
       "timestamp_created": 1785448865,
       "playtime_forever": 1283
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-30T16:16:46+00:00",
-      "lang": "english",
-      "title": "[正面] peak",
-      "summary": "peak",
-      "url": "https://steamcommunity.com/profiles/76561198086339954/recommended/3052450",
-      "author": "76561198086339954",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "peak",
-      "timestamp_created": 1785428206,
-      "playtime_forever": 348
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-30T16:00:03+00:00",
-      "lang": "english",
-      "title": "[正面] Addicting gameplay loop, engaging stories, excepti...",
-      "summary": "Addicting gameplay loop, engaging stories, exceptional OSTs, and cute and smoking hot characters (my main selling point.)",
-      "url": "https://steamcommunity.com/profiles/76561199206720976/recommended/3052450",
-      "author": "76561199206720976",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Addicting gameplay loop, engaging stories, exceptional OSTs, and cute and smoking hot characters (my main selling point.)",
-      "timestamp_created": 1785427203,
-      "playtime_forever": 8785
     }
   ]
 }
