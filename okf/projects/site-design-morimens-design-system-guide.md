@@ -4,7 +4,7 @@ title: "site design · morimens-design-system-guide.html"
 description: "site 设计系统权威（morimens-design-system-guide.html，22.7KB）：设计令牌 / 组件规范来源。"
 resource: "/projects/site/design/morimens-design-system-guide.html"
 tags: ["data_layer:curated", "design-system", "sub-project:site"]
-timestamp: "2026-07-30"
+timestamp: "2026-07-31"
 ---
 
 # 指针概念
