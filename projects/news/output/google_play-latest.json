@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-31T02:36:01.137286+00:00",
+  "collected_at": "2026-07-31T06:12:21.116620+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 122,
+  "item_count": 123,
   "items": [
     {
       "source": "google_play",
@@ -673,6 +673,16 @@
       "summary": "I really love this game! The stories are interesting and the gameplay is challenging, but most of all, the game is really generous with pulls as a gacha game!",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ceaad591-c024-4d25-93b7-01e7b6092c85",
       "author": "Amaryllis Anemone",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-30T04:05:19",
+      "lang": "ko",
+      "title": "[Google Play 差评] ★1 계정 로그인에서부터 막히고 메일보내도 해결방법 제공 없어요... 캐릭생성",
+      "summary": "계정 로그인에서부터 막히고 메일보내도 해결방법 제공 없어요... 캐릭생성도 안했는데 가득차서 못만든다고 뜨고 안고침+ 메일 3번 보냈는데 안읽고, 게임 설정에서 문의로 보내도 메크로답변만 줌",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-64587045-3bc7-4de9-9495-02c23b357d9e",
+      "author": "이준석",
       "engagement": 0
     },
     {
