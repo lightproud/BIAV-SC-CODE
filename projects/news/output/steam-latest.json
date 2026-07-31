@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-30T22:06:31.191580+00:00",
+  "collected_at": "2026-07-31T02:36:01.137286+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 16,
+  "item_count": 15,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-30T22:01:05+00:00",
+      "lang": "brazilian",
+      "title": "[正面] bom",
+      "summary": "bom",
+      "url": "https://steamcommunity.com/profiles/76561199388373802/recommended/3052450",
+      "author": "76561199388373802",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "bom",
+      "timestamp_created": 1785448865,
+      "playtime_forever": 1283
+    },
     {
       "source": "steam",
       "time": "2026-07-30T16:16:46+00:00",
@@ -48,7 +63,7 @@
       "voted_up": true,
       "review": "fun fun fun cool",
       "timestamp_created": 1785418190,
-      "playtime_forever": 1246
+      "playtime_forever": 1361
     },
     {
       "source": "steam",
@@ -63,7 +78,7 @@
       "voted_up": true,
       "review": "好玩",
       "timestamp_created": 1785413382,
-      "playtime_forever": 645
+      "playtime_forever": 649
     },
     {
       "source": "steam",
@@ -198,7 +213,7 @@
       "voted_up": true,
       "review": "Slay the Spire with much better art and no Anita Sarkeesian. 10/10",
       "timestamp_created": 1785387669,
-      "playtime_forever": 19339
+      "playtime_forever": 19371
     },
     {
       "source": "steam",
@@ -214,36 +229,6 @@
       "review": "For me i just feel like ive hit the free wall finally\nAfter some hours and trying to maxx my team every battle i start to die once or twice also im on the end of the second act btw\nill give it a 7/10",
       "timestamp_created": 1785382992,
       "playtime_forever": 924
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-30T01:04:07+00:00",
-      "lang": "russian",
-      "title": "[正面] все кайфово конечно же, интересная карточная игра...",
-      "summary": "все кайфово конечно же, интересная карточная игра про спам телекинезом, а также все предельно прикольно, -1/9 потому что могу, в общем не скачивайте я думаю, а также из за этой игры я теперь стал лудоманом cyкa прoeбaл вашу компанию в покер (простите гайс, я не умею играть в покер), рекомендую -5/1945",
-      "url": "https://steamcommunity.com/profiles/76561199702674701/recommended/3052450",
-      "author": "76561199702674701",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "все кайфово конечно же, интересная карточная игра про спам телекинезом, а также все предельно прикольно, -1/9 потому что могу, в общем не скачивайте я думаю, а также из за этой игры я теперь стал лудоманом cyкa прoeбaл вашу компанию в покер (простите гайс, я не умею играть в покер), рекомендую -5/1945",
-      "timestamp_created": 1785373447,
-      "playtime_forever": 138
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-30T00:11:19+00:00",
-      "lang": "english",
-      "title": "[正面] good storyline, good character design, good pull r...",
-      "summary": "good storyline, good character design, good pull rates, gameplay is a bit repetitive but remains fun, pls nerf lotan cetarchon",
-      "url": "https://steamcommunity.com/profiles/76561198962396444/recommended/3052450",
-      "author": "76561198962396444",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "good storyline, good character design, good pull rates, gameplay is a bit repetitive but remains fun, pls nerf lotan cetarchon",
-      "timestamp_created": 1785370279,
-      "playtime_forever": 2343
     }
   ]
 }
