@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-01T10:41:07.707972+00:00",
+  "collected_at": "2026-08-01T13:16:02.874912+00:00",
   "source": "pixiv",
   "data_layer": "output",
   "item_count": 26,
@@ -307,15 +307,13 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-07-02T22:08:46+09:00",
+      "time": "2026-08-01T13:15:15.996211+00:00",
       "lang": "",
-      "title": "Untitled",
+      "title": "",
       "summary": "",
-      "url": "https://www.pixiv.net/artworks/146735023",
-      "author": "mikori",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/07/02/22/08/46/146735023_p0_custom1200.jpg",
-      "content_type": "image"
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
     }
   ]
 }

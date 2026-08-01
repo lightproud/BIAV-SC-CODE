@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-01T10:42:11.180377+00:00",
+  "updated_at": "2026-08-01T13:16:53.807464+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1128
   },
   "validation_drops": {
-    "generated_at": "2026-08-01T10:41:07.734668+00:00",
+    "generated_at": "2026-08-01T13:16:02.900030+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -27,7 +27,7 @@
       "last_success_date": "2026-08-01",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3307,
+      "total_items": 3310,
       "errors": []
     },
     "steam": {
@@ -35,7 +35,7 @@
       "last_success_date": "2026-08-01",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5355,
+      "total_items": 5356,
       "errors": []
     },
     "taptap": {
@@ -59,7 +59,7 @@
       "last_success_date": "2026-08-01",
       "last_check_date": "2026-08-01",
       "consecutive_silent_days": 0,
-      "total_items": 3202,
+      "total_items": 3205,
       "errors": []
     },
     "reddit": {
@@ -91,7 +91,7 @@
       "last_success_date": "2026-08-01",
       "last_check_date": "2026-08-01",
       "consecutive_silent_days": 0,
-      "total_items": 11940,
+      "total_items": 11953,
       "errors": []
     },
     "bahamut": {
@@ -136,10 +136,10 @@
     },
     "note_com": {
       "level": "active",
-      "last_success_date": "2026-07-31",
+      "last_success_date": "2026-08-01",
       "last_check_date": "2026-08-01",
-      "consecutive_silent_days": 1,
-      "total_items": 45,
+      "consecutive_silent_days": 0,
+      "total_items": 46,
       "errors": []
     },
     "ruliweb": {
@@ -163,7 +163,7 @@
       "last_success_date": "2026-07-23",
       "last_check_date": "2026-08-01",
       "consecutive_silent_days": 9,
-      "total_items": 9388,
+      "total_items": 9408,
       "errors": []
     },
     "taptap_review": {
@@ -171,7 +171,7 @@
       "last_success_date": "2026-08-01",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 2717,
+      "total_items": 2722,
       "errors": []
     },
     "youtube_comments": {
