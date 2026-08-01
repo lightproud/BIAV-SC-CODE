@@ -1,107 +1,192 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-01T08:18:06.883327+00:00",
+  "collected_at": "2026-08-01T10:41:07.707972+00:00",
   "source": "discord",
   "data_layer": "output",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-07-31T00:00:00+00:00",
+      "time": "2026-08-01T00:00:00+00:00",
       "lang": "",
-      "title": "Discord 社区日报 (2026-07-31)",
-      "summary": "今日 2,193 条消息，227 位活跃用户，282 次反应。热门频道：🔸game-question(885)、🔸綜合討論(239)、🔸lore-chat(223)、🔸русский-канал(160)、🔸team-building(137)",
+      "title": "Discord 社区日报 (2026-08-01)",
+      "summary": "今日 2,905 条消息，239 位活跃用户，330 次反应。热门频道：🔸game-question(1571)、🔸phòng-chat-tiếng-việt(281)、🔸綜合討論(244)、🔸canal-español(229)、🔸team-building(195)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 2193
+      "engagement": 2905
     },
     {
       "source": "discord",
-      "time": "2026-07-31T05:55:30.422000+00:00",
+      "time": "2026-08-01T04:28:20.266000+00:00",
       "lang": "",
-      "title": "[DC] mosske@🔸art-and-memes: ",
-      "summary": "\n[附件: 6D937AD0-7FC1-4A7F-BA4E-BB466D37B981.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1532627749896716338/1532627749896716338",
-      "author": "mosske",
-      "engagement": 37,
-      "media_url": "https://cdn.discordapp.com/attachments/1532627749896716338/1532627750924451850/6D937AD0-7FC1-4A7F-BA4E-BB466D37B981.png?ex=6a6d8a52&is=6a6c38d2&hm=8a6ba3b58cfa275294ef4fc41863411d488a71cac0162e3f08023af741d7f53d&",
+      "title": "[DC] arthasiv@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: Screenshot_20260801-122746.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532968200898215986",
+      "author": "arthasiv",
+      "engagement": 49,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1532968200617066678/Screenshot_20260801-122746.jpg?ex=6a6ec764&is=6a6d75e4&hm=aab8fff90049420bcc5312e65e36c4fd1519d1640871ef75c29503e62b31d15d&",
       "content_type": "image",
       "metadata": {
-        "reactions": "Ramona_tuff_×12",
+        "reactions": "🛐×16",
         "reply_count": 0,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1532627749896716338/1532627750924451850/6D937AD0-7FC1-4A7F-BA4E-BB466D37B981.png?ex=6a6d8a52&is=6a6c38d2&hm=8a6ba3b58cfa275294ef4fc41863411d488a71cac0162e3f08023af741d7f53d&"
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1532968200617066678/Screenshot_20260801-122746.jpg?ex=6a6ec764&is=6a6d75e4&hm=aab8fff90049420bcc5312e65e36c4fd1519d1640871ef75c29503e62b31d15d&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-01T02:14:11.485000+00:00",
+      "lang": "",
+      "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: IMG_20260801_101222.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532934441863745617",
+      "author": "water_heart",
+      "engagement": 34,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1532934441532653770/IMG_20260801_101222.jpg?ex=6a6ea7f3&is=6a6d5673&hm=a623e9bf84ad5051ac567440db9fefb7cb2898e0c7a5d79f5088248c9e3ee70d&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🛐×11",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1532934441532653770/IMG_20260801_101222.jpg?ex=6a6ea7f3&is=6a6d5673&hm=a623e9bf84ad5051ac567440db9fefb7cb2898e0c7a5d79f5088248c9e3ee70d&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-01T03:29:16.212000+00:00",
+      "lang": "",
+      "title": "[DC] coldrinkies@🔸art-and-memes: (附件/嵌入)",
+      "summary": "[附件: Untitled1536_20260801112846.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1532953336058216630/1532953336058216630",
+      "author": "coldrinkies",
+      "engagement": 31,
+      "media_url": "https://cdn.discordapp.com/attachments/1532953336058216630/1532953336347758823/Untitled1536_20260801112846.jpg?ex=6a6eb98c&is=6a6d680c&hm=6b7e763b28afbcf2bd47561510098a50936a5d42c5c171efc09da6cd76909ab8&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "Jenkin_shrug×8 24_smile×2",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1532953336058216630/1532953336347758823/Untitled1536_20260801112846.jpg?ex=6a6eb98c&is=6a6d680c&hm=6b7e763b28afbcf2bd47561510098a50936a5d42c5c171efc09da6cd76909ab8&"
         ],
         "channel": "🔸art-and-memes"
       }
     },
     {
       "source": "discord",
-      "time": "2026-07-31T05:15:03.409000+00:00",
+      "time": "2026-08-01T06:26:09.304000+00:00",
       "lang": "",
-      "title": "[DC] samin_@🔸art-and-memes: https://x.com/SaminDraws/status/2083055929969307785?s=20",
-      "summary": "https://x.com/SaminDraws/status/2083055929969307785?s=20",
-      "url": "https://discord.com/channels/1131791637933199470/1532617570266382488/1532617570266382488",
-      "author": "samin_",
-      "engagement": 24,
+      "title": "[DC] ernest_heart@🔸綜合討論: 這遊戲只剩母豬能玩了嗎...",
+      "summary": "這遊戲只剩母豬能玩了嗎...",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532997850592710697",
+      "author": "ernest_heart",
+      "engagement": 27,
       "metadata": {
-        "reactions": "Tawil_loneliness×7 🤍×1",
+        "reactions": "↖️×9",
         "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸art-and-memes"
+        "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-07-31T04:42:23.930000+00:00",
+      "time": "2026-08-01T00:11:33.968000+00:00",
       "lang": "",
-      "title": "[DC] water_heart@🔸綜合討論: ~~我們可以用普海玩海祭主C~~",
-      "summary": "~~我們可以用普海玩海祭主C~~",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532609351616041012",
-      "author": "water_heart",
-      "engagement": 21,
+      "title": "[DC] xyakoto@🔸阵容构建: https://xht8723.github.io/morimen-team-builder/ 弄了个网页版融灾配队器。 不用游戏里反复调来调去忘记哪个命轮没用",
+      "summary": "https://xht8723.github.io/morimen-team-builder/\n弄了个网页版融灾配队器。\n不用游戏里反复调来调去忘记哪个命轮没用了。\n然后点复制代码可以直接丢进游戏。",
+      "url": "https://discord.com/channels/1131791637933199470/1131839874132090890/1532903582201024554",
+      "author": "xyakoto",
+      "engagement": 27,
+      "metadata": {
+        "reactions": "🛐×9",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸阵容构建"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-01T00:18:18.530000+00:00",
+      "lang": "",
+      "title": "[DC] xuanxue007@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: img_9302_bd7739adaa7fac2c7a0f66e6af5cec84.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532905279057035275",
+      "author": "xuanxue007",
+      "engagement": 22,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1532905279065297110/img_9302_bd7739adaa7fac2c7a0f66e6af5cec84.jpg?ex=6a6e8cca&is=6a6d3b4a&hm=c9b85afbe518beb4efa6efa1d9c7dd763e8cf3d13d93abf636a80bd474fd6769&",
+      "content_type": "image",
       "metadata": {
         "reactions": "🛐×7",
         "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1532905279065297110/img_9302_bd7739adaa7fac2c7a0f66e6af5cec84.jpg?ex=6a6e8cca&is=6a6d3b4a&hm=c9b85afbe518beb4efa6efa1d9c7dd763e8cf3d13d93abf636a80bd474fd6769&"
+        ],
         "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-07-31T05:29:19.896000+00:00",
+      "time": "2026-08-01T05:13:24.756000+00:00",
       "lang": "",
-      "title": "[DC] aurora3981@🔸有問必答┊official-q-a: It doesn't give more aliemus",
-      "summary": "It doesn't give more aliemus\n[附件: Screenshot_20260731_132814_Morimens.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1532621162633232514/1532621162633232514",
-      "author": "aurora3981",
-      "engagement": 19,
-      "media_url": "https://cdn.discordapp.com/attachments/1532621162633232514/1532621163136552991/Screenshot_20260731_132814_Morimens.jpg?ex=6a6d8430&is=6a6c32b0&hm=6105dc0721443a13d63ec4b7dc6dfe8f8015ae1cd103cf92c72259f7ec7f26b1&",
+      "title": "[DC] xyakoto@🔸綜合討論: 原来可以完全不开大招，疯狂用4就行了（）",
+      "summary": "原来可以完全不开大招，疯狂用4就行了（）\n[附件: image.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532979544351445082",
+      "author": "xyakoto",
+      "engagement": 22,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1532979543860838511/image.png?ex=6a6ed1f4&is=6a6d8074&hm=495dea4ded65569c0b7561319ff87c34396d2909b70de1e59576fc0d3efdaf04&",
       "content_type": "image",
       "metadata": {
-        "reactions": "🔥×6",
+        "reactions": "🛐×7",
         "reply_count": 0,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1532621162633232514/1532621163136552991/Screenshot_20260731_132814_Morimens.jpg?ex=6a6d8430&is=6a6c32b0&hm=6105dc0721443a13d63ec4b7dc6dfe8f8015ae1cd103cf92c72259f7ec7f26b1&"
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1532979543860838511/image.png?ex=6a6ed1f4&is=6a6d8074&hm=495dea4ded65569c0b7561319ff87c34396d2909b70de1e59576fc0d3efdaf04&"
         ],
-        "channel": "🔸有問必答┊official-q-a"
+        "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-07-31T04:22:52.374000+00:00",
+      "time": "2026-08-01T06:33:48.427000+00:00",
       "lang": "",
-      "title": "[DC] galagalaguo@🔸綜合討論: 当时我用珊弥利打的 不停地拉弥利3费 加全队精通 最后静海盾特别特别厚",
-      "summary": "当时我用珊弥利打的 不停地拉弥利3费 加全队精通 最后静海盾特别特别厚",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532604437753888828",
-      "author": "galagalaguo",
+      "title": "[DC] cassidy_xue@🔸綜合討論: 还差一个",
+      "summary": "还差一个\n[附件: Screenshot_20260801_143256_com.qookkagames.z1.gp.hk.jpg, Screenshot_20260801_143306_com.qookkagames.z1.gp.hk.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532999776294015240",
+      "author": "cassidy_xue",
+      "engagement": 20,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1532999775815733378/Screenshot_20260801_143256_com.qookkagames.z1.gp.hk.jpg?ex=6a6ee4cc&is=6a6d934c&hm=0fa3917f4fb5be0d3eeb8a0da47884400bbf57df8ae4b426e1dde47be4e59034&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🛐×6",
+        "reply_count": 0,
+        "attachment_count": 2,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1532999775815733378/Screenshot_20260801_143256_com.qookkagames.z1.gp.hk.jpg?ex=6a6ee4cc&is=6a6d934c&hm=0fa3917f4fb5be0d3eeb8a0da47884400bbf57df8ae4b426e1dde47be4e59034&",
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1532999776184828105/Screenshot_20260801_143306_com.qookkagames.z1.gp.hk.jpg?ex=6a6ee4cc&is=6a6d934c&hm=9f8629de59e5faa58209884e4c9e0025259cc20dbd0dd49a6143f1828a605e8a&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-01T08:15:34.775000+00:00",
+      "lang": "",
+      "title": "[DC] ahuahuahua@🔸綜合討論: 反過來說阿格里帕零啟是完全體（",
+      "summary": "反過來說阿格里帕零啟是完全體（",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1533025388173856858",
+      "author": "ahuahuahua",
       "engagement": 18,
       "metadata": {
-        "reactions": "🛐×5 Aurita_pinch×1",
+        "reactions": "Jenkin_think×1 🌿×5",
         "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
@@ -110,146 +195,74 @@
     },
     {
       "source": "discord",
-      "time": "2026-07-31T05:11:34.908000+00:00",
+      "time": "2026-08-01T04:16:46.459000+00:00",
       "lang": "",
-      "title": "[DC] mrmot347@🔸phòng-chat-tiếng-việt: (附件/嵌入)",
-      "summary": "[附件: Screenshot_2026-07-27_133848.png]\n  └ huong_phung2010: quá điên\n  └ vermiyy: hectic skybound rail đúng là content của anh tôi\n  └ hoangziet.:  dị mới là 20k tent dmg chứ đâu như kia",
-      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1532616695749939321",
-      "author": "mrmot347",
+      "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: Screenshot_2026-08-01-12-14-26-727_com.qookkagames.z1.gp.hk.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532965290860613794",
+      "author": "water_heart",
       "engagement": 16,
-      "media_url": "https://cdn.discordapp.com/attachments/1300659603993923644/1532616695573774406/Screenshot_2026-07-27_133848.png?ex=6a6d8006&is=6a6c2e86&hm=4fe518421bce38dae648372f1d3e403cea1b7a2f85743b6f8a4e44d573fe971c&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "💀×2 AniHugBigHeart×1",
-        "reply_count": 3,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659603993923644/1532616695573774406/Screenshot_2026-07-27_133848.png?ex=6a6d8006&is=6a6c2e86&hm=4fe518421bce38dae648372f1d3e403cea1b7a2f85743b6f8a4e44d573fe971c&"
-        ],
-        "channel": "🔸phòng-chat-tiếng-việt"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-07-31T06:16:13.121000+00:00",
-      "lang": "",
-      "title": "[DC] angbak@🔸綜合討論: 莫夏 ",
-      "summary": "莫夏 \n[附件: Screenshot_20260731_124022_Morimens.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532632962154369044",
-      "author": "angbak",
-      "engagement": 16,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1532632961805975563/Screenshot_20260731_124022_Morimens.jpg?ex=6a6d8f2d&is=6a6c3dad&hm=6446a748ebd5b5632d97f237af01f375335504bac31892ccb6147309decc216e&",
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1532965290571337848/Screenshot_2026-08-01-12-14-26-727_com.qookkagames.z1.gp.hk.jpg?ex=6a6ec4ae&is=6a6d732e&hm=2be59d3a2f80ec2845e9f0faf803d0f099a5a4d9de7eb8534271c2bf8fa11626&",
       "content_type": "image",
       "metadata": {
         "reactions": "🛐×5",
         "reply_count": 0,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1532632961805975563/Screenshot_20260731_124022_Morimens.jpg?ex=6a6d8f2d&is=6a6c3dad&hm=6446a748ebd5b5632d97f237af01f375335504bac31892ccb6147309decc216e&"
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1532965290571337848/Screenshot_2026-08-01-12-14-26-727_com.qookkagames.z1.gp.hk.jpg?ex=6a6ec4ae&is=6a6d732e&hm=2be59d3a2f80ec2845e9f0faf803d0f099a5a4d9de7eb8534271c2bf8fa11626&"
         ],
         "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-07-31T03:38:32.268000+00:00",
+      "time": "2026-08-01T04:16:48.767000+00:00",
       "lang": "",
-      "title": "[DC] reya.li@🔸lore-chat: well, whatever i think of the historical writing, i can't deny biva still know w",
-      "summary": "well, whatever i think of the historical writing, i can't deny biva still know what women want\n\nnaught but a stark white, fleshless bone pelvis, coated perhaps in a fine sheen of ectoplasm",
-      "url": "https://discord.com/channels/1131791637933199470/1326453763355185215/1532593280460525631",
-      "author": "reya.li",
-      "engagement": 15,
-      "metadata": {
-        "reactions": "Celeste_agree×5",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸lore-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-07-31T03:40:10.614000+00:00",
-      "lang": "",
-      "title": "[DC] arsenyx_9999@🔸lore-chat: women wants lesbian w ectoplasm flesh",
-      "summary": "women wants lesbian w ectoplasm flesh",
-      "url": "https://discord.com/channels/1131791637933199470/1326453763355185215/1532593692953546975",
-      "author": "arsenyx_9999",
-      "engagement": 15,
-      "metadata": {
-        "reactions": "👀×3 Murphy_satisfy×2",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸lore-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-07-31T06:18:10.895000+00:00",
-      "lang": "",
-      "title": "[DC] royhantamami@🔸ruang-obrolan-indonesia: Next update bannernya Caraboo kan ya?",
-      "summary": "Next update bannernya Caraboo kan ya?\n[附件: Caraboo.webp]",
-      "url": "https://discord.com/channels/1131791637933199470/1300659753197764688/1532633456134324344",
-      "author": "royhantamami",
-      "engagement": 13,
-      "media_url": "https://cdn.discordapp.com/attachments/1300659753197764688/1532633455790129192/Caraboo.webp?ex=6a6d8fa2&is=6a6c3e22&hm=eeee515a89ecb668090df942c1581460d386b3a947af8befbeff80be5bb19cd6&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "✅×4",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659753197764688/1532633455790129192/Caraboo.webp?ex=6a6d8fa2&is=6a6c3e22&hm=eeee515a89ecb668090df942c1581460d386b3a947af8befbeff80be5bb19cd6&"
-        ],
-        "channel": "🔸ruang-obrolan-indonesia"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-07-31T04:00:47.315000+00:00",
-      "lang": "",
-      "title": "[DC] ahuahuahua@🔸綜合討論: 夢遊茉夏好強",
-      "summary": "夢遊茉夏好強",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532598880053760011",
-      "author": "ahuahuahua",
-      "engagement": 12,
-      "metadata": {
-        "reactions": "👀×2 🛐×1 ❤️×1",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-07-31T04:14:03.812000+00:00",
-      "lang": "",
-      "title": "[DC] galagalaguo@🔸綜合討論: 试了 吃",
-      "summary": "试了 吃",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532602220804182167",
-      "author": "galagalaguo",
-      "engagement": 12,
-      "metadata": {
-        "reactions": "🛐×4",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-07-31T08:49:15.144000+00:00",
-      "lang": "",
-      "title": "[DC] water_heart@🔸綜合討論: 我們的目標是滿分",
-      "summary": "我們的目標是滿分",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532671474350031019",
+      "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: Screenshot_2026-08-01-12-14-47-061_com.qookkagames.z1.gp.hk.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532965300541198348",
       "author": "water_heart",
-      "engagement": 12,
+      "engagement": 16,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1532965300432015480/Screenshot_2026-08-01-12-14-47-061_com.qookkagames.z1.gp.hk.jpg?ex=6a6ec4b0&is=6a6d7330&hm=24497474234ee2edbce5aa4c3501c39ca98aa1540bcd205c1fb2809413714151&",
+      "content_type": "image",
       "metadata": {
-        "reactions": "🌿×4",
+        "reactions": "🛐×5",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1532965300432015480/Screenshot_2026-08-01-12-14-47-061_com.qookkagames.z1.gp.hk.jpg?ex=6a6ec4b0&is=6a6d7330&hm=24497474234ee2edbce5aa4c3501c39ca98aa1540bcd205c1fb2809413714151&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-01T07:05:06.559000+00:00",
+      "lang": "",
+      "title": "[DC] ernest_heart@🔸綜合討論: 本來想叫你去呷洨 但想一想好像也沒人喂你",
+      "summary": "本來想叫你去呷洨\n但想一想好像也沒人喂你\n  └ a._0320: 幹\n  └ ahuahuahua: 我破防了",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1533007653750706217",
+      "author": "ernest_heart",
+      "engagement": 16,
+      "metadata": {
+        "reactions": "😆×4",
+        "reply_count": 2,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-01T00:04:28.968000+00:00",
+      "lang": "",
+      "title": "[DC] xyakoto@🔸綜合討論: https://xht8723.github.io/morimen-team-builder/ 弄了个网页版融灾配队器。 不用游戏里反复调来调去忘记哪个命轮没用",
+      "summary": "https://xht8723.github.io/morimen-team-builder/\n弄了个网页版融灾配队器。\n不用游戏里反复调来调去忘记哪个命轮没用了。\n然后点复制代码可以直接丢进游戏。",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1532901799621558343",
+      "author": "xyakoto",
+      "engagement": 15,
+      "metadata": {
+        "reactions": "🛐×5",
         "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
@@ -258,40 +271,40 @@
     },
     {
       "source": "discord",
-      "time": "2026-07-31T07:48:42.772000+00:00",
+      "time": "2026-08-01T08:30:54.846000+00:00",
       "lang": "",
-      "title": "[DC] drunkendwarf76@🔸game-question: u can pull tawil from the normal banner?",
-      "summary": "u can pull tawil from the normal banner?\n[附件: image.png]\n  └ theviy: yesh\nALL arc1 limited are in standard banner\njust u need to pray to get offrated",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1532656239077494965",
-      "author": "drunkendwarf76",
-      "engagement": 12,
-      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1532656239031353507/image.png?ex=6a6da4da&is=6a6c535a&hm=a8cb8b2eb6ab7b3a10b30838857e1fc1bc6efc247d4a410f4404a1b7f35a8e17&",
-      "content_type": "image",
+      "title": "[DC] 0.0._.0_0.@🔸綜合討論: 有啦 ||美麗的花瓶||",
+      "summary": "有啦\n||美麗的花瓶||",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1533029247231463514",
+      "author": "0.0._.0_0.",
+      "engagement": 15,
       "metadata": {
-        "reactions": "Celeste_agree×1 🔥×2",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1532656239031353507/image.png?ex=6a6da4da&is=6a6c535a&hm=a8cb8b2eb6ab7b3a10b30838857e1fc1bc6efc247d4a410f4404a1b7f35a8e17&"
-        ],
-        "channel": "🔸game-question"
+        "reactions": "Doll_fail×2 😡×1 Jenkin_shrug×1 Aurita_please×1",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-07-31T01:41:33.018000+00:00",
+      "time": "2026-08-01T07:33:37.105000+00:00",
       "lang": "",
-      "title": "[DC] zier.0@🔸lore-chat: when gmurphy looked at us and told us \"call me Murphy: Fauxborn\" i lost my shit",
-      "summary": "when gmurphy looked at us and told us \"call me Murphy: Fauxborn\" i lost my shit ngl",
-      "url": "https://discord.com/channels/1131791637933199470/1326453763355185215/1532563839592304840",
-      "author": "zier.0",
-      "engagement": 12,
+      "title": "[DC] teenotfight@🔸ห้องสนทนาภาษาไทย: (附件/嵌入)",
+      "summary": "[附件: 05nxh7cc27gh1.png]\n  └ ice3564: ทำไมนึกถึงโรตีสายไหม\n  └ satachan: ล้างน้ำแล้วกลายเป็น Selotan",
+      "url": "https://discord.com/channels/1131791637933199470/1300659802455674972/1533014828300505249",
+      "author": "teenotfight",
+      "engagement": 14,
+      "media_url": "https://cdn.discordapp.com/attachments/1300659802455674972/1533014827889328298/05nxh7cc27gh1.png?ex=6a6ef2d1&is=6a6da151&hm=b5dd8477c06a3f432f7627a8c5c37da50334420009c8c32833f47ab2c5308aa1&",
+      "content_type": "image",
       "metadata": {
-        "reactions": "🔥×4",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸lore-chat"
+        "reactions": "😭×3",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1300659802455674972/1533014827889328298/05nxh7cc27gh1.png?ex=6a6ef2d1&is=6a6da151&hm=b5dd8477c06a3f432f7627a8c5c37da50334420009c8c32833f47ab2c5308aa1&"
+        ],
+        "channel": "🔸ห้องสนทนาภาษาไทย"
       }
     }
   ]
