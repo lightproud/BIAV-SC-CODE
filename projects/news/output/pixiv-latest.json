@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-01T16:01:01.372455+00:00",
+  "collected_at": "2026-08-01T19:06:57.855363+00:00",
   "source": "pixiv",
   "data_layer": "output",
-  "item_count": 25,
+  "item_count": 24,
   "items": [
     {
       "source": "pixiv",
@@ -259,6 +259,16 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-08-01T19:06:10.731661+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "pixiv",
       "time": "2026-07-08T22:05:28+09:00",
       "lang": "",
       "title": "Morimens Doodles",
@@ -279,30 +289,6 @@
       "author": "なん",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/07/05/23/42/00/146866118_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-07-03T02:18:46+09:00",
-      "lang": "",
-      "title": "Clementine",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/146744841",
-      "author": "신채민シン・チェミン",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/07/03/02/18/46/146744841_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-07-03T01:58:58+09:00",
-      "lang": "",
-      "title": "Untitled",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/146744381",
-      "author": "mikori",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/07/03/01/58/58/146744381_p0_custom1200.jpg",
       "content_type": "image"
     }
   ]
