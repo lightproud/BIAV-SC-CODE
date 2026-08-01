@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-01T02:35:23.016933+00:00",
+  "collected_at": "2026-08-01T05:55:15.980656+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 125,
@@ -34,6 +34,16 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a28b20be-0fe2-4911-924a-a9f3ab3c8bfb",
       "author": "*もひ*",
       "engagement": 5
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-09T14:14:47",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
+      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
+      "author": "Osman Yusuf",
+      "engagement": 3
     },
     {
       "source": "google_play",
@@ -83,16 +93,6 @@
       "summary": "Hyper fixation activation. Amazing gameplay and art style, love the story and the voice acting. Would give it six stars but there are only 5. So far my favourite group characters in design are the Aequor peeps, but for game play I lean towards the Ultra faction. Just having an entire turn to command a possibly losing battle and still win is just so appealing and exhilarating.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-a247c6f3-2f8c-4f83-9446-94196408fdac",
       "author": "Ashton Teoh",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-09T14:14:47",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
-      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
-      "author": "Osman Yusuf",
       "engagement": 2
     },
     {
