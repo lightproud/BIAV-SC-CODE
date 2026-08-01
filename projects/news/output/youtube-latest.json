@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-01T05:55:15.980656+00:00",
+  "collected_at": "2026-08-01T08:18:06.883327+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 18,
+  "item_count": 17,
   "items": [
     {
       "source": "youtube",
@@ -13,7 +13,7 @@
       "summary": "Don't know how long. Will be doing other stuff too.",
       "url": "https://www.youtube.com/watch?v=b9bBZ3K_rh0",
       "author": "Flares117",
-      "engagement": 1031,
+      "engagement": 1039,
       "media_url": "https://i.ytimg.com/vi/b9bBZ3K_rh0/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,8 +25,20 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=5g4ltg7xFik",
       "author": "Flares117",
-      "engagement": 932,
+      "engagement": 976,
       "media_url": "https://i.ytimg.com/vi/5g4ltg7xFik/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-01T07:00:05Z",
+      "lang": "",
+      "title": "망각전야 (모리멘스) - 엄청난 걸 알려드림",
+      "summary": "나만 알고 있기엔 아까워서.",
+      "url": "https://www.youtube.com/watch?v=-0VcQhfAh-o",
+      "author": "때까치",
+      "engagement": 569,
+      "media_url": "https://i.ytimg.com/vi/-0VcQhfAh-o/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -37,7 +49,7 @@
       "summary": "注意：シナリオに関するネタバレをポロポロする可能性があります。 #忘却前夜 #忘却前夜Steam版 墓から這い出してきた気分で ...",
       "url": "https://www.youtube.com/watch?v=kiFXjoxLI1A",
       "author": "朝霧@ASGRgames",
-      "engagement": 126,
+      "engagement": 140,
       "media_url": "https://i.ytimg.com/vi/kiFXjoxLI1A/hqdefault.jpg",
       "content_type": "video"
     },
@@ -67,6 +79,18 @@
     },
     {
       "source": "youtube",
+      "time": "2026-08-01T02:15:05Z",
+      "lang": "",
+      "title": "【忘却前夜】まだ7章",
+      "summary": "対人とポケモンしかやらなかった末路か？これが...... Twitter(X)→https://x.com/to_m4fuyu.",
+      "url": "https://www.youtube.com/watch?v=UBczJYHUsoo",
+      "author": "to真冬",
+      "engagement": 25,
+      "media_url": "https://i.ytimg.com/vi/UBczJYHUsoo/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-07-31T13:25:09Z",
       "lang": "",
       "title": "Giải đáp các thắc mắc của Newbie về Morimens#2 |  Morimens",
@@ -79,14 +103,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-01T02:15:05Z",
+      "time": "2026-08-01T06:52:01Z",
       "lang": "",
-      "title": "【忘却前夜】まだ7章",
-      "summary": "対人とポケモンしかやらなかった末路か？これが...... Twitter(X)→https://x.com/to_m4fuyu.",
-      "url": "https://www.youtube.com/watch?v=UBczJYHUsoo",
-      "author": "to真冬",
-      "engagement": 24,
-      "media_url": "https://i.ytimg.com/vi/UBczJYHUsoo/hqdefault.jpg",
+      "title": "【MORIMENS】 BEEN A WHILE SINCE WE PLAYED | STARTING CHAPTER 8",
+      "summary": "Game: Morimens __Follow me on Social Media!__ Bluesky: https://bsky.app/profile/adagiovt.vtubers.social Twitch: ...",
+      "url": "https://www.youtube.com/watch?v=gjoB_U7afvA",
+      "author": "AdagioVT",
+      "engagement": 23,
+      "media_url": "https://i.ytimg.com/vi/gjoB_U7afvA/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -103,30 +127,6 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-01T00:27:15Z",
-      "lang": "",
-      "title": "【MORIMENS】 BEEN A WHILE SINCE WE PLAYED | STARTING CHAPTER 8",
-      "summary": "Game: Morimens __Follow me on Social Media!__ Bluesky: https://bsky.app/profile/adagiovt.vtubers.social Twitch: ...",
-      "url": "https://www.youtube.com/watch?v=gjoB_U7afvA",
-      "author": "AdagioVT",
-      "engagement": 18,
-      "media_url": "https://i.ytimg.com/vi/gjoB_U7afvA/hqdefault_live.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-31T10:00:10Z",
-      "lang": "",
-      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 1:Alert V! 融災1-5 Boss戰的部分",
-      "summary": "忘卻前夜 #morimens 融災更新,7月20日~8月3號. Regional D-Effect Zone Update (July 20 – August 3). 1-5 Boss也是單管血,如果有 ...",
-      "url": "https://www.youtube.com/watch?v=CY3pSN52ErE",
-      "author": "Noir",
-      "engagement": 11,
-      "media_url": "https://i.ytimg.com/vi/CY3pSN52ErE/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-31T19:00:30Z",
       "lang": "",
       "title": "Life After Aigis... The Start of Chapter 2! | Morimens Part 8 (1-14 &amp; 1-15)",
@@ -139,26 +139,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-31T07:48:40Z",
+      "time": "2026-08-01T07:11:13Z",
       "lang": "",
-      "title": "【忘却前夜】イベント「半歩の隔たり」虚無の扉「狂騒舞踏会・超難度」",
-      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
-      "url": "https://www.youtube.com/watch?v=ZyncA8U-DFo",
-      "author": "霏憂【ひゅう】",
-      "engagement": 6,
-      "media_url": "https://i.ytimg.com/vi/ZyncA8U-DFo/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-31T08:21:31Z",
-      "lang": "",
-      "title": "忘卻前夜 Morimens Aurita + Corrosion",
-      "summary": "Can someone explain to me what does the corrosion debuff do?",
-      "url": "https://www.youtube.com/watch?v=HUzu6IddxDM",
-      "author": "Ascentia",
-      "engagement": 3,
-      "media_url": "https://i.ytimg.com/vi/HUzu6IddxDM/hqdefault.jpg",
+      "title": "Morimens Event Leviathan&#39;s Game Till The Cetus Falls",
+      "summary": "The world is dying, yet its inhabitants remain blissfully unaware. Confronted with a covert, indescribable calamity, you shall take ...",
+      "url": "https://www.youtube.com/watch?v=oP5y4Ifi5cw",
+      "author": "OutcastBox",
+      "engagement": 5,
+      "media_url": "https://i.ytimg.com/vi/oP5y4Ifi5cw/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -170,7 +158,7 @@
       "url": "https://www.youtube.com/watch?v=RdBWwgjPrx0",
       "author": "Jun-ak47",
       "engagement": 1,
-      "media_url": "https://i.ytimg.com/vi/RdBWwgjPrx0/hqdefault_live.jpg",
+      "media_url": "https://i.ytimg.com/vi/RdBWwgjPrx0/hqdefault.jpg",
       "content_type": "video"
     },
     {

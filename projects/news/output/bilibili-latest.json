@@ -1,44 +1,44 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-01T05:55:15.980656+00:00",
+  "collected_at": "2026-08-01T08:18:06.883327+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 28,
+  "item_count": 35,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-07-31T08:59:43+00:00",
+      "lang": "zh",
+      "title": "明明是资本孕育的怪物，在我眼中却是美丽的少女。",
+      "summary": "请输入文本\n  └ 我不是cheeks (595赞): 沙耶之歌进入创意工坊时代[笑哭]\n  └ _AsukaMinato (588赞): 哈耶之歌[doge]\n  └ 聆盺 (461赞): 这次好像不是脑子出问题了，而是世界真的病了",
+      "url": "https://www.bilibili.com/video/BV19UGw6hE5k",
+      "author": "i国小能手",
+      "engagement": 22651,
+      "media_url": "https://i0.hdslb.com/bfs/archive/15e9fb777c248974dd7a3a7b0bde716b4b7013fc.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 22511,
+        "comment_count": 140,
+        "comments_fetched": 3,
+        "danmaku": 41
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-07-31T14:26:51+00:00",
       "lang": "zh",
       "title": "【忘却前夜】新人不知道抽什么？开荒与容灾的强度排行，希望能帮到你。",
-      "summary": "└ 花岚天音Amane (31赞): 忘却篇一众老资历辅助就凭有易伤/虚弱都还能一直蒸，更别说一堆机制怪。冷知识上一个同时有易伤和虚弱的船长已经是一年多前的角色了\n  └ CreScent知式 (8赞): 依旧茉夏大人，低启强超限强最终强，忘却强星辰强容灾强竞速强，沙耶萝最近这两个t0全都能补强茉夏大人\n  └ 抱着狗狗不敢说话 (3赞): 有一些像水船啊珊这些有沙溢等于说直接多了一个翻倍的乘区吧。本来按照原来的玩法，他可能就伤害不会特别高。有了沙耶可能一下就变成了秒了。这么回头一看当年过的都是什么苦日子拿的图图开荒。。鸟哥鸟弟或者莫夏什么的随便过啊。就是银药易伤辅助位当时是一点都没考虑过。。。就愣打过来的。",
+      "summary": "└ 花岚天音Amane (32赞): 忘却篇一众老资历辅助就凭有易伤/虚弱都还能一直蒸，更别说一堆机制怪。冷知识上一个同时有易伤和虚弱的船长已经是一年多前的角色了\n  └ CreScent知式 (8赞): 依旧茉夏大人，低启强超限强最终强，忘却强星辰强容灾强竞速强，沙耶萝最近这两个t0全都能补强茉夏大人\n  └ 抱着狗狗不敢说话 (3赞): 有一些像水船啊珊这些有沙溢等于说直接多了一个翻倍的乘区吧。本来按照原来的玩法，他可能就伤害不会特别高。有了沙耶可能一下就变成了秒了。这么回头一看当年过的都是什么苦日子拿的图图开荒。。鸟哥鸟弟或者莫夏什么的随便过啊。就是银药易伤辅助位当时是一点都没考虑过。。。就愣打过来的。",
       "url": "https://www.bilibili.com/video/BV1yYGP6JENr",
       "author": "金发女人丨型",
-      "engagement": 3165,
+      "engagement": 3429,
       "media_url": "https://i0.hdslb.com/bfs/archive/7ec2bbbf434f920dc53dda934279536bc5480c30.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 3111,
-        "comment_count": 54,
+        "play": 3371,
+        "comment_count": 58,
         "comments_fetched": 3,
         "danmaku": 9
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-31T08:08:26+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】新人向，超维全唤醒体原型外号科普",
-      "summary": "淋系视频注意，内容纯属虚构，无恶意诋毁，不良引导，视频中所用语言皆为虚构和节目效果，无任何针对和低俗作用，请仔细了解淋的含义再决定是否观看\nBGM：中恵光城 - アルリシャの星図\n  └ bruhxoxo (16赞): 旺达原型是格拉基\n  └ 勤小懒猪 (4赞): 好努力的妈妈桑\n  └ 寒晓启 (2赞): 虽然已经退游130年但含泪支持了",
-      "url": "https://www.bilibili.com/video/BV1yTGA6EECc",
-      "author": "花葉月",
-      "engagement": 1677,
-      "media_url": "https://i0.hdslb.com/bfs/archive/bc640c2114c59e83a9eed380bbda2ac1ef778939.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 1665,
-        "comment_count": 12,
-        "comments_fetched": 3,
-        "danmaku": 10
       }
     },
     {
@@ -46,17 +46,35 @@
       "time": "2026-07-31T11:24:54+00:00",
       "lang": "zh",
       "title": "【两句话小剧场】女大学生的暑假宿舍闲聊对话.mp4",
-      "summary": "女大学生闲聊珍贵视频流出…\n素材来源于网络\n—————\n群号：1051266875\n欢迎来玩！\n  └ Carliee (34赞): 所有人请立刻支持时摆组让我们大声喊出手拉手99\n  └ 某不知名的H (8赞): 娜娜不是啥子😡\n（\n  └ 我還是人 (5赞): 明明奧妹立繪看著是個有點高冷的小姐姐，但為何現在每次見到她都會想笑[笑哭]",
+      "summary": "女大学生闲聊珍贵视频流出…\n素材来源于网络\n—————\n群号：1051266875\n欢迎来玩！\n  └ Carliee (35赞): 所有人请立刻支持时摆组让我们大声喊出手拉手99\n  └ 某不知名的H (9赞): 娜娜不是啥子😡\n（\n  └ 我還是人 (6赞): 明明奧妹立繪看著是個有點高冷的小姐姐，但為何現在每次見到她都會想笑[笑哭]",
       "url": "https://www.bilibili.com/video/BV1UKGN6oE7J",
       "author": "百合子堂堂登场",
-      "engagement": 1202,
+      "engagement": 1241,
       "media_url": "https://i2.hdslb.com/bfs/archive/061cddf596ca904f907df9171db14745671c9790.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1168,
+        "play": 1207,
         "comment_count": 34,
         "comments_fetched": 3,
-        "danmaku": 8
+        "danmaku": 9
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-31T13:49:14+00:00",
+      "lang": "zh",
+      "title": "好多小沙耶",
+      "summary": "快放了她们\n  └ 漂流向日良 (4赞): 都要救吗\n  └ 牢恋椰椰 (2赞): 我的梦，怎么可爱[星星眼]\n  └ 䭩㟗 (1赞): @某个神秘的黑荆棘女士",
+      "url": "https://www.bilibili.com/video/BV1DnGP6tEGA",
+      "author": "小龙猫大能力",
+      "engagement": 993,
+      "media_url": "https://i2.hdslb.com/bfs/archive/5c5c3a0b404fc473576a3455012434f852e43815.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 961,
+        "comment_count": 32,
+        "comments_fetched": 3,
+        "danmaku": 0
       }
     },
     {
@@ -67,11 +85,11 @@
       "summary": "└ 我草莓招了啊QAQ (5赞): 这什么雷霆配队[千恋万花表情包_zzz][千恋万花表情包_zzz]\n  └ 全忘却最尊重圣婴之人 (4赞): 这次是标准失败结局，以后会经常失败的[doge]\n  └ 濯玛克兹 (0赞): [鸣潮·共鸣与群星_点赞][鸣潮·共鸣与群星_点赞][鸣潮·共鸣与群星_点赞]",
       "url": "https://www.bilibili.com/video/BV1cdGA61EL3",
       "author": "全忘却最尊重圣婴之人",
-      "engagement": 894,
+      "engagement": 950,
       "media_url": "https://i1.hdslb.com/bfs/archive/c2fdc437889b468dac964348e4c7cad5d77f3add.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 889,
+        "play": 945,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
@@ -85,11 +103,11 @@
       "summary": "坏了 我以后沙莱队的主c不会要变成蚀罗了吧\n  └ 不废的柴柴君 (1赞): 强强?不过莱克这么快就又从主C变成辅助了吗[doge]\n  └ 理线道明未来 (0赞): 吓哭了大佬配置\n  └ RomG龍肆 (0赞): 打2-5也是一样的 可以最短进王",
       "url": "https://www.bilibili.com/video/BV1QEGK6qEEQ",
       "author": "RomG龍肆",
-      "engagement": 882,
+      "engagement": 937,
       "media_url": "https://i0.hdslb.com/bfs/archive/a478d87eec82af16c5023a7d61b7908a87016c1f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 876,
+        "play": 931,
         "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 2
@@ -97,18 +115,18 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-31T08:13:27+00:00",
+      "time": "2026-07-31T17:22:47+00:00",
       "lang": "zh",
-      "title": "【中日字幕/翻唱】FUWAMOCO「沙耶之歌 (Saya no Uta)」【沙耶の唄 主题曲】",
-      "summary": "https://www.youtube.com/watch?v=DgJ_H93D5_U\n\n(∪･ω･∪ ♡：：：：：：：：：：：：：：：：♡ ∪･ω･∪)\nOriginal Song: 沙耶の唄 / いとうかなこ 様\nVocals: FUWAMOCO\nMix: はまひろ\nHarmony Guide: Miori Celesta\nInstrumental: bear\nArt: 飯田ぽち。\nMovie: ayamaro\n  └ 御冷清寒 (0赞): 好翻[hololive ID收藏集_点赞]\n  └ 承羽崎 (0赞): 沙耶[给心心][给心心][给心心]\n  └ Alfrecid (1赞): 这是一个结局的ed啊，不是op",
-      "url": "https://www.bilibili.com/video/BV1qpGA6MECm",
-      "author": "小千代字幕组",
-      "engagement": 717,
-      "media_url": "https://i1.hdslb.com/bfs/archive/858b84f85b1de05041670752c340c6bc09ebb25e.jpg",
+      "title": "沙耶: 真的不试试绿鸡腿蘸番茄酱吗",
+      "summary": "我吃吃吃吃\n  └ 儒悝 (3赞): 鸡腿怎么绿的😱\n  └ SlowerLight (2赞): 你这冰箱怎么那么干净啊🤔鸡腿怎么这么肮脏啊🤔[doge]\n  └ 一个有名字的机器人 (1赞): ;)👍",
+      "url": "https://www.bilibili.com/video/BV1CBGK69Ebj",
+      "author": "今天吔吔了吗",
+      "engagement": 900,
+      "media_url": "https://i0.hdslb.com/bfs/archive/0dc007440706eb99fd06d4e2df4e603948c20980.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 713,
-        "comment_count": 4,
+        "play": 887,
+        "comment_count": 13,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -121,12 +139,30 @@
       "summary": "主包尽力录了\n主包听着感觉可能折磨你们耳朵\n毕竟哑巴是不会说话的\n有啥问题评论区问\n后续出全道中视频\n  └ 不会住在世界尽头 (1赞): 讲PPT也会时而口吃吗，可爱捏[少女乐团派对_开心]\n  └ 听筒ist (1赞): 陈老师...声音好好听[星星眼]\n  └ GADDY (0赞): 感觉魔术师不太靠谱，5以下确实能一路秒boss2t抬走，但打5怪肉点透支空间问题就显现了，超维本来生存就差没空间容错又降了一大截[笑哭]",
       "url": "https://www.bilibili.com/video/BV1B1GP63Ed3",
       "author": "偶陈陈陈",
-      "engagement": 707,
+      "engagement": 754,
       "media_url": "https://i2.hdslb.com/bfs/archive/d2c8b709b5e26857a46fb4eeeac0b3844c7d0780.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 690,
+        "play": 737,
         "comment_count": 17,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-31T15:32:28+00:00",
+      "lang": "zh",
+      "title": "【手绘/忘却前夜】守秘人，我不要你死。不要再冒险了……「拉蒙娜」这个名字将会永远烙印在世界上，任何人都无法将你从我身边夺走……",
+      "summary": "-\n  └ 苟人坤 (1赞): [星星眼]\n  └ 小补饭不会忧郁 (1赞): [打call]\n  └ 放飞菌のモノクマ (1赞): 正常身材……吗？",
+      "url": "https://www.bilibili.com/video/BV1qXGK65EFC",
+      "author": "葬原雪莲",
+      "engagement": 746,
+      "media_url": "https://i1.hdslb.com/bfs/archive/413175b773145b705d89cc8cbe0b18012f7ef919.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 737,
+        "comment_count": 9,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -139,31 +175,13 @@
       "summary": "-\n  └ 子夜微雪 (6赞): 当然是抽这个[傲娇]\n哦不是25年7月啊，那没事了\n  └ 姐妹我月鲸又回来了 (1赞): 已经…到极限了吗…",
       "url": "https://www.bilibili.com/video/BV1f4GN6VEPS",
       "author": "无生持",
-      "engagement": 643,
+      "engagement": 666,
       "media_url": "https://i2.hdslb.com/bfs/archive/9dddeb854c6db4412e796e252b3b55d98b7a1709.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 639,
+        "play": 662,
         "comment_count": 4,
         "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-31T15:32:28+00:00",
-      "lang": "zh",
-      "title": "【手绘/忘却前夜】守秘人，我不要你死。不要再冒险了……「拉蒙娜」这个名字将会永远烙印在世界上，任何人都无法将你从我身边夺走……",
-      "summary": "-\n  └ 放飞菌のモノクマ (1赞): 竟然还有futa标签\n  └ 放飞菌のモノクマ (1赞): 正常身材……吗？\n  └ 小补饭不会忧郁 (1赞): [打call]",
-      "url": "https://www.bilibili.com/video/BV1qXGK65EFC",
-      "author": "葬原雪莲",
-      "engagement": 615,
-      "media_url": "https://i1.hdslb.com/bfs/archive/413175b773145b705d89cc8cbe0b18012f7ef919.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 607,
-        "comment_count": 8,
-        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -172,14 +190,14 @@
       "time": "2026-07-31T12:23:49+00:00",
       "lang": "zh",
       "title": "［相位］对面天胡鸟弟，但是永不言弃！",
-      "summary": "-\n  └ 林木木QVQ (1赞): 马后炮一下，对面朵儿的大留一回合或者奶前排是不是有了\n  └ 仁爱主教 (1赞): 晚上好\n  └ yi36403 (1赞): [打call][打call]",
+      "summary": "-\n  └ 林木木QVQ (2赞): 马后炮一下，对面朵儿的大留一回合或者奶前排是不是有了\n  └ 仁爱主教 (1赞): 晚上好\n  └ yi36403 (1赞): [打call][打call]",
       "url": "https://www.bilibili.com/video/BV1eQGP6TEn4",
       "author": "莱星Ligh",
-      "engagement": 522,
+      "engagement": 553,
       "media_url": "https://i0.hdslb.com/bfs/archive/85a7670110dd67f13a0e1827b5abbb594d3cf9c4.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 517,
+        "play": 548,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 2
@@ -193,11 +211,11 @@
       "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途) 【出场演员：汀克特 卡茜亚 希洛 守密人 拉蒙娜 泰旖丝 埃尔顿 】守密人这画风我是真的喜欢 我自己做这一集的时候笑岔了 拉蒙娜醋坛子翻的太厉害！\n  └ 某不知名老法师 (2赞): 你汀怎么穿的这么保守[doge]\n  └ 彤你嗓子眼 (2赞): up多做一点菲茵特的吧😭我缺的剧情这一块就在这补了[打call][打call]\n  └ 不想取名_怎么这都有 (0赞): 看上去人很少实际上玩忘却前夜的都在这里了[doge]",
       "url": "https://www.bilibili.com/video/BV1emGF6WEV2",
       "author": "比较瓜皮",
-      "engagement": 494,
+      "engagement": 521,
       "media_url": "https://i2.hdslb.com/bfs/archive/33132c500ecc8e8dfce22c816ba149401728c47d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 481,
+        "play": 508,
         "comment_count": 13,
         "comments_fetched": 3,
         "danmaku": 3
@@ -211,11 +229,11 @@
       "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途) 【出场演员：杜勒赛因 尤乌哈希 希莱斯特 奥瑞塔 雷娅 】尤乌哈希画风怎么有点不对劲。。。不过画风算是升级了 AI升级改版后带来的好处么 不过杜勒赛因真的是帅我一脸 杜爷你咋能这么帅。。。\n  └ 人类的落日 (0赞): 我赤\n  └ 校园百宝箱-分箱2 (0赞): 加油💪没想到我们5771还能有这样的动画，全力支持[星星眼][星星眼][星星眼]\n  └ 校园百宝箱-分箱2 (0赞): 前排来啦[喜欢]",
       "url": "https://www.bilibili.com/video/BV1eXGP6iERz",
       "author": "比较瓜皮",
-      "engagement": 434,
+      "engagement": 450,
       "media_url": "https://i0.hdslb.com/bfs/archive/0cdf45127d2dfffd1007a4041a89a62974c54244.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 428,
+        "play": 444,
         "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 0
@@ -229,11 +247,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV15kKB6SE2v",
       "author": "不可燃抹茶果冻",
-      "engagement": 357,
+      "engagement": 374,
       "media_url": "https://i0.hdslb.com/bfs/archive/30fa286970b001c325cdb918152a4138e1870cd8.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 357,
+        "play": 374,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -247,11 +265,11 @@
       "summary": "全是数值，不过原初混沌界域还可以。哦，还有立绘和特效动画也挺好看。\n  └ 何为故是 (0赞): 我之前打血炼的专怪的时候，技能卡全被冻结了，本来大就需要技能卡解锁啊，要想解除冻结还要开大，天敌了直接美美退出[藏狐]\n  └ 跳段木偶舞 (0赞): [打call][打call][打call]\n  └ 上好佳薯片丶 (0赞): 来支持了[打call]",
       "url": "https://www.bilibili.com/video/BV1vmGw6wExV",
       "author": "问君何忧",
-      "engagement": 345,
+      "engagement": 348,
       "media_url": "https://i1.hdslb.com/bfs/archive/3643205c6d6380753442c4bb1ad9d715664b0305.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 342,
+        "play": 345,
         "comment_count": 3,
         "comments_fetched": 3,
         "danmaku": 0
@@ -265,11 +283,11 @@
       "summary": "血条太短了，水母塔薇还没出手就杀了…\n  └ 步饷罔了 (0赞): 可以去打5-5，5-5非对群c打起来有劲[星星眼]\n  └ 夜行性孩子 (0赞): 小水母神了[给心心]\n  └ 上好佳薯片丶 (0赞): 老大好强喵[打call]",
       "url": "https://www.bilibili.com/video/BV16JGA6gEP9",
       "author": "朝星-",
-      "engagement": 299,
+      "engagement": 306,
       "media_url": "https://i1.hdslb.com/bfs/archive/984b8864f6342545130be9fe5c7c0e2b602ea066.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 294,
+        "play": 301,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
@@ -283,11 +301,11 @@
       "summary": "莉兹现在最大缺陷是毒触发。启动、生存都有相性好的角色解决或者走3/4图规避，只有毒触发和现有角色的适配都不太好\n  └ 烟已归 (0赞): 我了\n  └ 有质保の小雪糕 (0赞): 旋转，旋转！[星星眼]",
       "url": "https://www.bilibili.com/video/BV1DcGN6cErc",
       "author": "朝星-",
-      "engagement": 290,
+      "engagement": 303,
       "media_url": "https://i1.hdslb.com/bfs/archive/bdef04b41995748e3962c5be5409d61bab8888bb.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 288,
+        "play": 301,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
@@ -301,11 +319,11 @@
       "summary": "配置高了没有展示出配队思路（\n不过四限定队也没啥配队思路可言了\n  └ 子夜微雪 (5赞): 一方面，杜勒灵塑有力量乘区，可以给萝坦和皮克曼当力量拐\n另一方面，杜勒自己出伤需要压低对面血量，需求一个“副c”来帮忙压血（但有什么意义呢，副c能压血还要主c干嘛）\n最后，萝坦纯靠自己指令卡过一阶段有些较难，需要其他队友的帮助\n羊妈算是道中润滑，替换成徐当算力辅，或者莱克当抽牌辅都是可行的。如果有舍不得自己高配杜勒可以尝试（真有这种情况吗）\n本来设想是如果萝坦二阶段杀不掉，可以让杜勒来做他最擅长的残血收割。结果有点想多了[月薪喵收藏集动态_眯一会]\n  └ 上好佳薯片丶 (1赞): [doge]这集是罗坦不懂事了，怎么能给对面二阶段一刀秒了呢，下次记得留点血给我们杜勒大人打神秘大数字\n  └ 暮知藏 (0赞): 所以杜杜的作用在哪里[藏狐]",
       "url": "https://www.bilibili.com/video/BV1vmGw6wES3",
       "author": "子夜唯雪",
-      "engagement": 272,
+      "engagement": 284,
       "media_url": "https://i0.hdslb.com/bfs/archive/8c884bdbea25c9b4b0380122cb35a57534f184a3.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 268,
+        "play": 280,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
@@ -319,11 +337,11 @@
       "summary": "-\n  └ 真不会练的李 (1赞): 第一[FGO_耶]\n  └ 秋弥空蝉 (0赞): 198出9个石板笑喷\n  └ 丿丨丨泽 (0赞): 老师，防瓜密契洗什么属性[tv_疑问]",
       "url": "https://www.bilibili.com/video/BV1JHGN62Evu",
       "author": "谨慎的小堇",
-      "engagement": 257,
+      "engagement": 270,
       "media_url": "https://i0.hdslb.com/bfs/archive/1b4e3706a9ba1803b03aa9bdaacf005b8dce24f3.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 249,
+        "play": 262,
         "comment_count": 8,
         "comments_fetched": 3,
         "danmaku": 0
@@ -337,13 +355,31 @@
       "summary": "其实我本来是想玩温朵奥那套纯靠直伤的\n但是基伤C还是太吃练度了\n我也没什么好命轮可以给魔术师\n打到2-4就受不了退出了\n后面只好改用繁育血肉给狂气拉终伤然后侵蚀占大部分伤害\n就算是这样伤害也不怎么理想\n所以说魔术C要吃的东西还是太多了啊\n天上什么时候掉下来+36心脏安息伊甸园魔术师助战给我玩\n\n背景音乐：ime44 - &quot;Violin Concerto in G&quot;",
       "url": "https://www.bilibili.com/video/BV1vUGw6hEnm",
       "author": "夢遊遊遊遊",
-      "engagement": 253,
+      "engagement": 261,
       "media_url": "https://i1.hdslb.com/bfs/archive/9642fcff6b33e5a36ea8d14cc07883f191341521.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 253,
+        "play": 261,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-31T12:48:37+00:00",
+      "lang": "zh",
+      "title": "未知的少女",
+      "summary": "不可名状\n  └ 哈基沙大玉 (2赞): 感谢好朋友画的沙耶，以及小群来玩1026292804\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 薇拉大玉 (0赞): 我困了",
+      "url": "https://www.bilibili.com/video/BV1hcGN6cEne",
+      "author": "哈基沙大玉",
+      "engagement": 195,
+      "media_url": "https://i1.hdslb.com/bfs/archive/ffde6edcfa96f1b3202e185ddf32dd722bfcd277.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 190,
+        "comment_count": 5,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -355,11 +391,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1T2GN68Epo",
       "author": "弥萨格首席机长",
-      "engagement": 183,
+      "engagement": 187,
       "media_url": "https://i0.hdslb.com/bfs/archive/ad838b80026d3dafbb341a7c3482743b60b2ec15.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 183,
+        "play": 187,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -367,19 +403,55 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-31T07:43:05+00:00",
+      "time": "2026-08-01T02:12:09+00:00",
       "lang": "zh",
-      "title": "（缓更）【忘却前夜】星辰正位之刻 主线剧情合集（繁中）",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1p3GA61EJw",
-      "author": "究極群体生命",
-      "engagement": 129,
-      "media_url": "https://i2.hdslb.com/bfs/archive/3e3f4095234cda171546a9f3f18cab5d5c300c7c.jpg",
+      "title": "《沙耶之歌》 但是《AIZO》多次神插入",
+      "summary": "-\n  └ 闲的发慌的老k (0赞): [打call]",
+      "url": "https://www.bilibili.com/video/BV17iGu6XEPB",
+      "author": "深空牧野",
+      "engagement": 165,
+      "media_url": "https://i2.hdslb.com/bfs/archive/a03f0d48c45c662843dbcb8dea76ee0dbbee6d54.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 129,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 163,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-01T01:10:44+00:00",
+      "lang": "zh",
+      "title": "“以单体级的实力去往类沙耶之歌的副本，您愿意吗？”",
+      "summary": "本up主视频故事视频皆为原创\n  └ 夜花流影 (1赞): 真是惨淡啊，我大概一个下午就会忘记你吧\n  └ 哈基沙大玉 (1赞): [鸣潮2周年同人绘画_看你]\n  └ 夜花流影 (1赞): 就没人点下点赞吗[大哭]",
+      "url": "https://www.bilibili.com/video/BV1PPGg6eEn7",
+      "author": "夜花流影",
+      "engagement": 118,
+      "media_url": "https://i0.hdslb.com/bfs/archive/7da0464a71a2b055f68ced620c86d917112b97b8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 115,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-01T05:24:58+00:00",
+      "lang": "zh",
+      "title": "神秘肉块少女能量巨大",
+      "summary": "惊呆了\n  └ 耕司青海瑶 (2赞): [doge]\n  └ 我不是cheeks (1赞): 郁纪爱上沙耶的原因找到了[doge]\n  └ 神神秘秘16h (1赞): yl",
+      "url": "https://www.bilibili.com/video/BV1eUG36pEcv",
+      "author": "哈基沙大玉",
+      "engagement": 72,
+      "media_url": "https://i2.hdslb.com/bfs/archive/e0b434e8b774f9739a394be00a546fc54486d514.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 65,
+        "comment_count": 7,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -403,18 +475,72 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-08-01T06:41:45+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】庞卡水船无戒指2-5&amp;5-5一镜到底",
+      "summary": "庞托斯双持向上后道中强度质变，道中拿2魇可以提速到3t左右。关底依靠水母做触发器空间刷怒涛CD，boss无防护可以4t左右击杀，比较克制单段的羊妈8t左右也能解决\n+2命轮提升比较大，船长二启拿虚弱即可（易伤不关键），庞三启，水最好高深化双持暴击命轮，卡三启",
+      "url": "https://www.bilibili.com/video/BV1bjG365Eya",
+      "author": "朝星-",
+      "engagement": 62,
+      "media_url": "https://i2.hdslb.com/bfs/archive/8707a8f4475f254cd1aca0b0b7e610cbcceed5ab.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 62,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-08-01T01:38:00+00:00",
       "lang": "zh",
       "title": "《忘却前夜》第六章倒错的行星P4，这些boss是个顶个难缠啊",
       "summary": "-\n  └ 燃え落ちない翼 (1赞): 终于要到忘却稍微困难一点的章节了，不过要我说，其实第七章比第八章还要难，有懂的吗[孤独摇滚_微笑][孤独摇滚_微笑]\n  └ 时间快些肘吧 (1赞): 要打圣婴喽，忘却篇阶段数第二的boss",
       "url": "https://www.bilibili.com/video/BV1qLKx6SEC2",
       "author": "不可燃抹茶果冻",
-      "engagement": 29,
+      "engagement": 61,
       "media_url": "https://i2.hdslb.com/bfs/archive/b63d86ee4fc2b42bfecdb6cc582e7ea6eb7cde0a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 26,
+        "play": 58,
         "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-01T01:37:00+00:00",
+      "lang": "zh",
+      "title": "《忘却前夜》第六章倒错的行星P1，墨菲大人仍然在发力",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1EGKx6QEy3",
+      "author": "不可燃抹茶果冻",
+      "engagement": 55,
+      "media_url": "https://i0.hdslb.com/bfs/archive/2fc77a55b42cca04abae567f6d9e94f78a9acb4d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 55,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-01T03:30:00+00:00",
+      "lang": "zh",
+      "title": "铃见洋佑一家开始觉得匈坂郁纪过于奇怪了，莫非是疯了不成？",
+      "summary": "嘎嘎嘎嘎嘎嘎嘎嘎嘎\n  └ 哈基沙大玉 (1赞): [鸣潮2周年同人绘画_看你]\n  └ 耕司青海瑶 (0赞): 邻居一家太惨了😭",
+      "url": "https://www.bilibili.com/video/BV1AfGT6FE6V",
+      "author": "朗克清",
+      "engagement": 28,
+      "media_url": "https://i0.hdslb.com/bfs/archive/27dd809b49b59ae6c06b47b67e977305ad24a8c4.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 26,
+        "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
       }
@@ -427,29 +553,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1L7Kx6EEmd",
       "author": "不可燃抹茶果冻",
-      "engagement": 8,
+      "engagement": 18,
       "media_url": "https://i2.hdslb.com/bfs/archive/1d3477c45cc6beae9d0b08a88998a07c3b0ed910.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 8,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-01T01:37:00+00:00",
-      "lang": "zh",
-      "title": "《忘却前夜》第六章倒错的行星P1，墨菲大人仍然在发力",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1EGKx6QEy3",
-      "author": "不可燃抹茶果冻",
-      "engagement": 7,
-      "media_url": "https://i0.hdslb.com/bfs/archive/2fc77a55b42cca04abae567f6d9e94f78a9acb4d.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 7,
+        "play": 18,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -463,11 +571,47 @@
       "summary": "https://youtu.be/DgJ_H93D5_U?si=zyZ2GKxbMTB5bUkP\n上面是原视频链接\n转自：FUWAMOCO的YouTube频道\n日期：2026-07-31",
       "url": "https://www.bilibili.com/video/BV18UGu6yEpT",
       "author": "冰BOT",
-      "engagement": 7,
+      "engagement": 15,
       "media_url": "https://i1.hdslb.com/bfs/archive/79cd1b12dbedf272e1140e7a0a3dff834b62b7d1.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 7,
+        "play": 15,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-01T01:38:00+00:00",
+      "lang": "zh",
+      "title": "《忘却前夜》第六章倒错的行星P2",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1i7Kx6EEVG",
+      "author": "不可燃抹茶果冻",
+      "engagement": 11,
+      "media_url": "https://i0.hdslb.com/bfs/archive/a1d93a8dfd9e362ff6165a7413ee05819d967267.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 11,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-01T06:19:20+00:00",
+      "lang": "zh",
+      "title": "“听完心理医生白干一周”“其实心理医生也爱听”dead-Horrormovies",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1gRG36EEpX",
+      "author": "PhonkyChery桃林小樱",
+      "engagement": 9,
+      "media_url": "https://i2.hdslb.com/bfs/archive/9abd1156d46f57fc770d60a236f0426494d16d11.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 9,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -486,24 +630,6 @@
       "content_type": "image",
       "metadata": {
         "play": 7,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-01T01:38:00+00:00",
-      "lang": "zh",
-      "title": "《忘却前夜》第六章倒错的行星P2",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1i7Kx6EEVG",
-      "author": "不可燃抹茶果冻",
-      "engagement": 6,
-      "media_url": "https://i0.hdslb.com/bfs/archive/a1d93a8dfd9e362ff6165a7413ee05819d967267.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 6,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
