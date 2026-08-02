@@ -93,6 +93,7 @@ jobs:
           cd /c/silver-core-smoke/app
           /c/silver-core-smoke/venv/Scripts/python.exe -c "import agent, hermes_cli; print('runtime imports OK')"
           ls /c/silver-core-smoke/desktop/*.exe
+          cd "$GITHUB_WORKSPACE"
           mv /c/silver-core-smoke SilverCore
           # 回搬后把 home 修回最终打包路径，保证 zip 内初值有效（launcher 首启仍会再自愈）
           PYHOME2=$(ls -d "$(pwd)/SilverCore/python/cpython-"*)
