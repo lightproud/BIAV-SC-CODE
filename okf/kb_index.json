@@ -4816,7 +4816,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 570 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 593 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4830,7 +4830,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3379 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3380 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4858,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1358 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1360 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4942,7 +4942,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5366 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5371 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4970,7 +4970,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 105 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 106 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4998,7 +4998,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2817 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2843 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -5012,7 +5012,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 12088 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 12105 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5026,7 +5026,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9588 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 9608 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5040,7 +5040,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3216 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3220 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5664,7 +5664,7 @@
       ],
       [
         "/community/community-youtube.md",
-        "提及:沙耶",
+        "提及:Saya",
         "mention"
       ],
       [
@@ -5754,7 +5754,7 @@
       ],
       [
         "/sources/youtube.md",
-        "提及:沙耶",
+        "提及:Saya",
         "mention"
       ],
       [
@@ -8305,7 +8305,7 @@
       ],
       [
         "/characters/130226.md",
-        "提及:沙耶",
+        "提及:Saya",
         "mention"
       ],
       [
@@ -10216,7 +10216,7 @@
       ],
       [
         "/characters/130226.md",
-        "提及:沙耶",
+        "提及:Saya",
         "mention"
       ],
       [
