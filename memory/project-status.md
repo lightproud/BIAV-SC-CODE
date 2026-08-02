@@ -346,7 +346,9 @@
 > 与上游档案见 `projects/silver-core-hermes/CONTEXT.md`。
 
 - **M0 立项（2026-08-02）**：完成——四项配套裁定（SDK 家族维护态过渡后冻结 #T78 / 银芯新子项目
-  承载 / 上游跟随 + 扩展层 / 定名 silver-core-hermes）落档，脚手架 CONTEXT.md 建立。
+  承载 / 上游跟随 + 扩展层 / 定名 silver-core-hermes）落档，脚手架 CONTEXT.md 建立；同日快照
+  vendor 入 `upstream/`（pin `v2026.7.30`，策略 release tag 优先）并**容器内全量实证上游套件**
+  （2,471 文件 / 22,766 过 / 40 环境伪影零真缺陷，报告见 Resource/repo-engineering）。
 - **M1 上游深读评估（待点火，#T79）**：扩展点覆盖度测绘（skills / tools / transports / gateway）
   + BPT 需求缺口对照（BPT 已依赖的 SDK 能力面 vs Hermes 原生能力面差集）+ 改造层工程形态设计
   （上游消费方式 / 银芯→黑池输出物形态），产出评估报告呈裁后开工。

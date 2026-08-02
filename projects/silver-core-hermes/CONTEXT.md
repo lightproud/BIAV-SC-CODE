@@ -53,5 +53,12 @@
 
 ## 验证清单
 
-- 本子项目暂无代码，无构建 / 测试步骤（M1 评估轮后随工程形态设计补充）
+- **上游套件容器内可全量复现**（2026-08-02 首跑实证：2,471 文件 / 22,766 过 / 40 环境伪影零真缺陷，
+  报告 `Public-Info-Pool/Resource/repo-engineering/hermes-upstream-testrun-20260802.md`）。口径：
+  uv **0.9.28**（上游钉版，容器自带 0.8.17 读不懂其 lockfile）→ `uv sync --locked --python 3.11
+  --extra all --extra dev --extra anthropic --extra mistral --extra fal --extra modal --extra daytona
+  --extra hindsight --extra parallel-web`（venv/缓存经 `UV_PROJECT_ENVIRONMENT`/`UV_CACHE_DIR`
+  落仓外）→ `OPENROUTER_API_KEY="" OPENAI_API_KEY="" scripts/run_tests.sh -j 4`。
+  已知假红排除集见报告（自更新家族 22 例为 vendor 布局结构假红）；树内跑完测试须清生成物
+  （`UPSTREAM.md` 例程步 2）
 - 改档后跑 `pytest tests/test_claude_md*.py -v`（CLAUDE.md 对账三卫）确认指针一致
