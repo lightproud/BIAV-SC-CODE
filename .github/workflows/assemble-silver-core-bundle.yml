@@ -56,10 +56,11 @@ jobs:
         working-directory: SilverCore/app
         run: |
           uv venv --relocatable --python "${PYTHON_VERSION}" "${UV_PROJECT_ENVIRONMENT}"
-          # --no-editable：项目自身装成实体包而非 editable .pth 指针——editable 指针
-          # 钉死组装机绝对路径，整包搬走即 ModuleNotFoundError（run 4 实证，
-          # 亦即守密人实测 launcher 失败的真因链源头）。
-          uv sync --locked --no-editable --extra all --extra anthropic --extra mistral --extra fal \
+          # 项目自身保持 editable（上游构建后端刻意禁 wheel——run 5 实证「wheels not
+          # supported, use editable」）；editable 指针钉组装机绝对路径的搬移问题
+          #（run 4 实证 ModuleNotFoundError）由 fix_venv_path.py 的指针自愈治：
+          # bundle-root.txt 记组装根，启动时把 site-packages 的 editable 指针改写到当前根。
+          uv sync --locked --extra all --extra anthropic --extra mistral --extra fal \
             --extra modal --extra daytona --extra hindsight --extra parallel-web
 
       - name: Setup Node
@@ -80,6 +81,8 @@ jobs:
         run: |
           cp projects/silver-core-hermes/deploy/launcher.cmd SilverCore/
           cp projects/silver-core-hermes/deploy/fix_venv_path.py SilverCore/
+          # 组装根印章：editable 指针自愈的「旧根」依据（自愈后由脚本滚动更新）
+          cygpath -w "$(pwd)/SilverCore" > SilverCore/bundle-root.txt
           {
             echo "Silver Core portable bundle (win64, merged single directory)"
             echo "pin: $(grep -m1 'pin tag' projects/silver-core-hermes/UPSTREAM.md || true)"
