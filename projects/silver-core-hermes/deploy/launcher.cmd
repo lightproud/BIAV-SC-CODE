@@ -26,7 +26,7 @@ if not defined PYHOME (
 echo [ok] PYHOME=%PYHOME% >> "%LOG%"
 
 rem -- 步骤 2：venv 自愈（pyvenv.cfg home 指回当前位置；幂等） --
-"%PYHOME%\python.exe" "%ROOT%fix_venv_path.py" "%ROOT%" >> "%LOG%" 2>&1
+"%PYHOME%\python.exe" "%ROOT%fix_venv_path.py" "%ROOT%." >> "%LOG%" 2>&1
 if errorlevel 1 (
   echo [FAIL] fix_venv_path failed >> "%LOG%"
   echo 启动失败：venv 自愈未通过。详情见 %LOG%
