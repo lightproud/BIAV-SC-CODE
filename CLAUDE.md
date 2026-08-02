@@ -300,6 +300,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 ```
 brain-in-a-vat/
 ├── CLAUDE.md / README.md          # AI 统一入口 / 人 + AI 共用入口
+├── sc-pull.cmd                    # 守密人本地一键更新本仓（双击 --ff-only 拉取，2026-08-02）
 ├── assets/                        # 事实圣经层（只读引用源）
 │   ├── data/                      # 角色卡 / 采访 / 叙事 / 设计决策 JSON（见 §5.1）
 │   └── images/                    # 立绘 / CG 等公开图像资产
