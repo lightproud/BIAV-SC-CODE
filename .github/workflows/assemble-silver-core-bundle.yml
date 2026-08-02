@@ -114,6 +114,18 @@ jobs:
           PYHOME2=$(ls -d "$(pwd)/SilverCore/python/cpython-"*)
           "$PYHOME2/python.exe" SilverCore/fix_venv_path.py "$(cygpath -w "$(pwd)/SilverCore")"
 
+      - name: Factory cleanup (strip build residue before smoke, ~700 MiB)
+        run: |
+          # 出厂清场（run 9 实测账目）：npm ci 构建工具链 524.7 MiB + desktop 成品在
+          # app 树内的重复份 ~158 MiB，运行期零用途。放在 desktop 冒烟之前——
+          # 冒烟必须验证「清场后的出货形态」，否则清掉运行时真依赖会假绿到用户面。
+          rm -rf SilverCore/app/node_modules
+          rm -rf SilverCore/app/apps/desktop/node_modules
+          rm -rf SilverCore/app/apps/desktop/dist
+          rm -rf SilverCore/app/apps/desktop/release
+          rm -rf SilverCore/app/apps/shared/node_modules
+          du -sh SilverCore
+
       - name: Desktop launch smoke (supervised, captures Chromium stderr)
         run: |
           # 黑屏类死因（GPU/沙箱早夭、缺 DLL、asar 缺渲染层）只有真拉起 exe 才暴露。
