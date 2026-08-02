@@ -41,6 +41,9 @@ jobs:
       - name: Apply Silver Core rebrand (rule engine)
         run: python projects/silver-core-hermes/deploy/rebrand.py --apply SilverCore/app
 
+      - name: Apply feature patches (whitelisted)
+        run: git apply --directory=SilverCore/app projects/silver-core-hermes/patches/conversation-cost-panel.patch
+
       - name: Portable CPython into bundle
         env:
           UV_PYTHON_INSTALL_DIR: ${{ github.workspace }}\SilverCore\python
@@ -92,6 +95,10 @@ jobs:
           /c/silver-core-smoke/venv/Scripts/python.exe --version
           cd /c/silver-core-smoke/app
           /c/silver-core-smoke/venv/Scripts/python.exe -c "import agent, hermes_cli; print('runtime imports OK')"
+          # 真启动检查：console-script 入口壳（hermes.exe）在搬移后的路径必须能跑起来
+          /c/silver-core-smoke/venv/Scripts/hermes.exe --help > /dev/null 2>&1 || \
+            /c/silver-core-smoke/venv/Scripts/hermes.exe --version
+          echo "hermes entrypoint launches OK"
           ls /c/silver-core-smoke/desktop/*.exe
           cd "$GITHUB_WORKSPACE"
           mv /c/silver-core-smoke SilverCore

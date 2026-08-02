@@ -13,6 +13,7 @@ SUB = REPO / "projects" / "silver-core-hermes"
 # patches/ 白名单：每个补丁须在此具名登记（防无名补丁悄悄入库）。
 ALLOWED_PATCHES = {
     "silver-core-rebrand.patch",  # 需求 #1 品牌换装，deploy/rebrand.py 规则引擎生成
+    "conversation-cost-panel.patch",  # 需求 #2 对话成本面板（手维护特性补丁，上下文零品牌词故可叠加于换装后）
 }
 
 
