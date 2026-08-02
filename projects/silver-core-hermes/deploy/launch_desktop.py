@@ -33,6 +33,16 @@ DEFAULT_WAIT_SECONDS = 25
 TAIL_LINES = 40
 
 
+def force_utf8_stdio() -> None:
+    """stdout/stderr 强制 UTF-8：控制台外的管道（CI / 重定向）默认 locale 编码
+    （cp1252 / GBK），打印中文进度即 UnicodeEncodeError——run 8 实证死在第一行。"""
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, OSError):
+            pass
+
+
 def pick_desktop_exe(root: pathlib.Path) -> pathlib.Path | None:
     """desktop/ 下的主 exe：win-unpacked 形态只有一个顶层 exe，取字典序第一个。"""
     exes = sorted((root / "desktop").glob("*.exe"))
@@ -130,6 +140,7 @@ def attempt(exe: pathlib.Path, env: dict, extra_args: list[str],
 
 
 def main() -> int:
+    force_utf8_stdio()
     root = pathlib.Path(sys.argv[1]).resolve()
     report = Reporter(root / "launcher.log")
     wait_seconds = int(os.environ.get("SILVER_CORE_LAUNCH_WAIT", DEFAULT_WAIT_SECONDS))
