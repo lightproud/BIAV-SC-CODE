@@ -1,4 +1,11 @@
 @echo off
+rem 双击防闪退外壳：把真正的执行放进 cmd /k 子窗——后面任何一步出事（含批处理
+rem 语法错这种 pause 都来不及跑的死法），窗口都停住可读；成功路径用 exit 0 关窗。
+if not defined SC_LAUNCHER_KEEPWIN (
+  set "SC_LAUNCHER_KEEPWIN=1"
+  cmd /d /k call "%~f0" %*
+  exit /b
+)
 rem Silver Core 便携整包启动器（cmd 批处理，零 PowerShell）。
 rem 合箱布局：python\（uv 托管 CPython）、venv\、app\（组装源树）、desktop\（win-unpacked）、
 rem home\（HERMES_HOME）与本文件同级。默认拉起 desktop；CLI 用法 launcher.cmd cli <args>。
@@ -55,6 +62,7 @@ if /i "%~1"=="cli" (
 )
 
 rem -- 步骤 4：监督式拉起 desktop（捕获输出 + 探活 + 软渲染重试；未找到则回退 CLI） --
+if not exist "%ROOT%launch_desktop.py" goto legacy_start
 if exist "%ROOT%desktop" (
   echo 正在启动桌面端，自检守窗约 25 秒，窗口正常出现后本窗自动关闭...
   "%ROOT%venv\Scripts\python.exe" "%ROOT%launch_desktop.py" "%ROOT%."
@@ -65,8 +73,26 @@ if exist "%ROOT%desktop" (
     pause
     exit /b 1
   )
+  exit 0
+)
+goto cli_fallback
+
+:legacy_start
+rem 旧包没有监督器时的兜底（本文件可单独拷进旧 SilverCore 直接用）：
+rem 直接拉起 desktop，窗口停住等守密人确认桌面端是否出现。
+set "DESKTOP_EXE="
+for %%F in ("%ROOT%desktop\*.exe") do if not defined DESKTOP_EXE set "DESKTOP_EXE=%%~fF"
+if defined DESKTOP_EXE (
+  echo [ok] legacy start %DESKTOP_EXE% >> "%LOG%"
+  echo 未找到监督器 launch_desktop.py，直接拉起桌面端：
+  echo   %DESKTOP_EXE%
+  start "Silver Core" "%DESKTOP_EXE%"
+  echo 若桌面端窗口没有出现，请把 home\logs\ 下日志发给艾瑞卡；本窗可手动关闭。
+  pause
   exit /b 0
 )
+
+:cli_fallback
 echo [warn] desktop dir not found, falling back to CLI >> "%LOG%"
 echo 未找到桌面端目录，回退命令行模式...
 "%ROOT%venv\Scripts\hermes.exe" %*
