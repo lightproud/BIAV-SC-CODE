@@ -84,11 +84,12 @@ jobs:
             gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/tags/$TAG"
             echo "旧 tag 已删除（Release 随之退草稿，下一步重新发布）"
           fi
-          publish() {
+          # tag 缺失时：带 tag_name+target_commitish 的发布 PATCH 让 GitHub 自建
+          # tag（run5 实测可行，前提 = 目标树 workflows 与默认分支一致）
+          if [ -z "$(git ls-remote origin "refs/tags/$TAG" | cut -f1)" ]; then
             gh api -X PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" \
-              -f tag_name="$TAG" -f target_commitish="$NEW_SHA" -F draft=false > /dev/null
-          }
-          publish
+              -f tag_name="$TAG" -f target_commitish="$NEW_SHA" -F draft=false > /dev/null || true
+          fi
           moved=""
           for i in 1 2 3 4 5 6; do
             moved=$(git ls-remote origin "refs/tags/$TAG" | cut -f1)
@@ -96,15 +97,18 @@ jobs:
             sleep 5
           done
           [ "$moved" = "$NEW_SHA" ] || { echo "::error::移锚后远端为 '${moved:-空}'，非目标 $NEW_SHA"; exit 1; }
-          # 「删 tag 退草稿」与「PATCH 发布」存在竞态（run5/6 实测：tag 建成而
-          # draft 未翻回），发布态单独重试收敛
+          # 发布态单独收敛：tag 已在位时必须用只翻 draft 的最小 PATCH——
+          # 带 tag_name/target_commitish 的 PATCH 会再触 workflows 权限墙
+          # （run8 实测 403），最小 PATCH 不碰 ref
           for i in 1 2 3 4 5 6; do
             [ "$(gh api "repos/$GITHUB_REPOSITORY/releases/$release_id" --jq .draft)" = "false" ] && break
-            echo "Release 仍为草稿，重试发布（第 $i 次）"
-            publish
+            echo "Release 仍为草稿，最小 PATCH 重试发布（第 $i 次）"
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" -F draft=false > /dev/null || true
             sleep 3
           done
-          echo "tag $TAG 已移至 $NEW_SHA"
+          [ "$(gh api "repos/$GITHUB_REPOSITORY/releases/$release_id" --jq .draft)" = "false" ] \
+            || { echo "::error::发布收敛失败，Release 仍为草稿"; exit 1; }
+          echo "tag $TAG 已移至 $NEW_SHA 且 Release 已发布"
 
       - name: Verify release intact
         env:
