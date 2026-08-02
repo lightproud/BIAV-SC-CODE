@@ -1,9 +1,10 @@
 name: Assemble Silver Core Bundle
 
-# 便携整包组装台（守密人 2026-08-02 裁定：不走服务端、免安装器免 PowerShell 分发；
-# 组装在银芯 CI Windows runner 上进行——Windows venv 不可跨平台组装）。
-# 产物 = 公开面整包（upstream 快照 + 品牌换装 + 便携 CPython + relocatable venv +
-# cmd 启动器；desktop 应用另出独立 zip）→ 落 `silver-core-bundle` Release。
+# 便携整包组装台（守密人 2026-08-02 三裁：不走服务端 / 组装在银芯仓 CI / 产物合箱单目录）。
+# 单 job 产**唯一资产** silver-core-win64.zip：解压后即一个 SilverCore\ 目录——
+# 运行时（品牌换装源树 + 便携 CPython + relocatable venv）与 desktop（--win dir
+# 免装目录形态）同箱，launcher.cmd 双击即用。zip 仅为传输载体（Releases 只能放文件），
+# 守密人解压一次进内网共享目录后，团队用户面 = 纯目录复制，零解压零安装零 PowerShell。
 # 凭据 / idealab 端点 / 内网参数一律不在包内（§1.1-HC 切面化：配置内网侧注入）。
 
 on:
@@ -18,10 +19,10 @@ env:
   BUNDLE_TAG: silver-core-bundle
 
 jobs:
-  runtime-bundle:
-    name: Runtime portable bundle (win64)
+  assemble:
+    name: Portable bundle (win64, merged single dir)
     runs-on: windows-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     defaults:
       run:
         shell: bash
@@ -34,93 +35,64 @@ jobs:
 
       - name: Stage assembly copy
         run: |
-          mkdir -p bundle
-          cp -r projects/silver-core-hermes/upstream bundle/app
+          mkdir -p SilverCore
+          cp -r projects/silver-core-hermes/upstream SilverCore/app
 
       - name: Apply Silver Core rebrand (rule engine)
-        run: python projects/silver-core-hermes/deploy/rebrand.py --apply bundle/app
+        run: python projects/silver-core-hermes/deploy/rebrand.py --apply SilverCore/app
 
       - name: Portable CPython into bundle
         env:
-          UV_PYTHON_INSTALL_DIR: ${{ github.workspace }}\bundle\python
+          UV_PYTHON_INSTALL_DIR: ${{ github.workspace }}\SilverCore\python
         run: uv python install "${PYTHON_VERSION}"
 
       - name: Relocatable venv + locked sync (production extras, no dev)
         env:
-          UV_PYTHON_INSTALL_DIR: ${{ github.workspace }}\bundle\python
-          UV_PROJECT_ENVIRONMENT: ${{ github.workspace }}\bundle\venv
-        working-directory: bundle/app
+          UV_PYTHON_INSTALL_DIR: ${{ github.workspace }}\SilverCore\python
+          UV_PROJECT_ENVIRONMENT: ${{ github.workspace }}\SilverCore\venv
+        working-directory: SilverCore/app
         run: |
           uv venv --relocatable --python "${PYTHON_VERSION}" "${UV_PROJECT_ENVIRONMENT}"
           uv sync --locked --extra all --extra anthropic --extra mistral --extra fal \
             --extra modal --extra daytona --extra hindsight --extra parallel-web
-
-      - name: Launcher + bundle notes
-        run: |
-          cp projects/silver-core-hermes/deploy/launcher.cmd bundle/
-          {
-            echo "Silver Core portable bundle (win64)"
-            echo "pin: $(grep -m1 'pin tag' projects/silver-core-hermes/UPSTREAM.md || true)"
-            echo "assembled: ${GITHUB_RUN_ID} @ $(date -u +%Y-%m-%dT%H:%MZ)"
-            echo "usage: unzip anywhere, run launcher.cmd (no installer, no PowerShell, no admin)"
-            echo "config: endpoints/credentials are injected on the intranet side (never bundled)"
-          } > bundle/BUNDLE-INFO.txt
-
-      - name: Relocatability smoke test (moved path)
-        run: |
-          mv bundle /c/silver-core-smoke
-          /c/silver-core-smoke/venv/Scripts/python.exe --version
-          cd /c/silver-core-smoke/app
-          /c/silver-core-smoke/venv/Scripts/python.exe -c "import agent, hermes_cli; print('imports OK')"
-          mv /c/silver-core-smoke bundle
-
-      - name: Zip bundle
-        run: 7z a -mx=3 "silver-core-bundle-win64.zip" bundle > /dev/null && ls -lh silver-core-bundle-win64.zip
-
-      - name: Upload to Release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release view "${BUNDLE_TAG}" >/dev/null 2>&1 || \
-            gh release create "${BUNDLE_TAG}" --title "Silver Core portable bundle" \
-              --notes "Rolling portable bundle assembled by CI. See projects/silver-core-hermes/deploy/README.md"
-          gh release upload "${BUNDLE_TAG}" silver-core-bundle-win64.zip --clobber
-
-  desktop-app:
-    name: Desktop portable build (win64)
-    runs-on: windows-latest
-    timeout-minutes: 60
-    defaults:
-      run:
-        shell: bash
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Stage assembly copy
-        run: |
-          mkdir -p bundle
-          cp -r projects/silver-core-hermes/upstream bundle/app
-
-      - name: Apply Silver Core rebrand (rule engine)
-        run: python projects/silver-core-hermes/deploy/rebrand.py --apply bundle/app
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "22"
 
-      - name: Build desktop (zip target, unsigned)
-        working-directory: bundle/app/apps/desktop
+      - name: Build desktop (dir target, unsigned, merged into bundle)
+        working-directory: SilverCore/app/apps/desktop
         run: |
           npm ci
           npm run build
-          npm run builder -- --win zip
+          npm run builder -- --win dir
+          ls release/
+          cp -r release/win-unpacked ../../../desktop
 
-      - name: Collect artifact
+      - name: Launcher + bundle notes
         run: |
-          ls bundle/app/apps/desktop/release/
-          cp bundle/app/apps/desktop/release/*.zip silver-core-desktop-win64.zip
+          cp projects/silver-core-hermes/deploy/launcher.cmd SilverCore/
+          {
+            echo "Silver Core portable bundle (win64, merged single directory)"
+            echo "pin: $(grep -m1 'pin tag' projects/silver-core-hermes/UPSTREAM.md || true)"
+            echo "assembled: run ${GITHUB_RUN_ID} @ $(date -u +%Y-%m-%dT%H:%MZ)"
+            echo "usage: copy the SilverCore folder anywhere, double-click launcher.cmd"
+            echo "       (desktop UI by default; CLI = venv\\Scripts\\hermes.exe)"
+            echo "config: endpoints/credentials are injected on the intranet side (never bundled)"
+          } > SilverCore/BUNDLE-INFO.txt
+
+      - name: Relocatability + merge smoke test (moved path)
+        run: |
+          mv SilverCore /c/silver-core-smoke
+          /c/silver-core-smoke/venv/Scripts/python.exe --version
+          cd /c/silver-core-smoke/app
+          /c/silver-core-smoke/venv/Scripts/python.exe -c "import agent, hermes_cli; print('runtime imports OK')"
+          ls /c/silver-core-smoke/desktop/*.exe
+          mv /c/silver-core-smoke SilverCore
+
+      - name: Zip (transport container only)
+        run: 7z a -mx=3 "silver-core-win64.zip" SilverCore > /dev/null && ls -lh silver-core-win64.zip
 
       - name: Upload to Release
         env:
@@ -128,5 +100,7 @@ jobs:
         run: |
           gh release view "${BUNDLE_TAG}" >/dev/null 2>&1 || \
             gh release create "${BUNDLE_TAG}" --title "Silver Core portable bundle" \
-              --notes "Rolling portable bundle assembled by CI. See projects/silver-core-hermes/deploy/README.md"
-          gh release upload "${BUNDLE_TAG}" silver-core-desktop-win64.zip --clobber
+              --notes "Rolling merged portable bundle assembled by CI. See projects/silver-core-hermes/deploy/README.md"
+          gh release delete-asset "${BUNDLE_TAG}" silver-core-bundle-win64.zip -y 2>/dev/null || true
+          gh release delete-asset "${BUNDLE_TAG}" silver-core-desktop-win64.zip -y 2>/dev/null || true
+          gh release upload "${BUNDLE_TAG}" silver-core-win64.zip --clobber
