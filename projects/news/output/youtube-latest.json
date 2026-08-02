@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-01T21:55:02.554293+00:00",
+  "collected_at": "2026-08-02T02:33:58.148345+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 16,
+  "item_count": 14,
   "items": [
     {
       "source": "youtube",
@@ -13,7 +13,7 @@
       "summary": "나만 알고 있기엔 아까워서.",
       "url": "https://www.youtube.com/watch?v=-0VcQhfAh-o",
       "author": "때까치",
-      "engagement": 975,
+      "engagement": 977,
       "media_url": "https://i.ytimg.com/vi/-0VcQhfAh-o/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,20 +25,8 @@
       "summary": "morimens #게임 #망각전야 #공략 디스코드 : https://discord.gg/TaDkgyQ35y 치지직 ...",
       "url": "https://www.youtube.com/watch?v=qtvlszdLBY4",
       "author": "박현(Muyeong)",
-      "engagement": 360,
+      "engagement": 436,
       "media_url": "https://i.ytimg.com/vi/qtvlszdLBY4/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-01T09:45:01Z",
-      "lang": "",
-      "title": "Arachnid Dance | Morimens",
-      "summary": "not a fan of spiders, but exception can always be made :) arguably the hardest boss in the game? fighting for your dear life each ...",
-      "url": "https://www.youtube.com/watch?v=ePW8bFiFI5c",
-      "author": "mahedans",
-      "engagement": 236,
-      "media_url": "https://i.ytimg.com/vi/ePW8bFiFI5c/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -49,8 +37,20 @@
       "summary": "A few things I forgot to mention in the video, The more damage the enemy does to you the more you exalt does. DONT WEAKEN ...",
       "url": "https://www.youtube.com/watch?v=MLFfGAlBM7k",
       "author": "Zyocuh",
-      "engagement": 209,
+      "engagement": 272,
       "media_url": "https://i.ytimg.com/vi/MLFfGAlBM7k/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-01T09:45:01Z",
+      "lang": "",
+      "title": "Arachnid Dance | Morimens",
+      "summary": "not a fan of spiders, but exception can always be made :) arguably the hardest boss in the game? fighting for your dear life each ...",
+      "url": "https://www.youtube.com/watch?v=ePW8bFiFI5c",
+      "author": "mahedans",
+      "engagement": 242,
+      "media_url": "https://i.ytimg.com/vi/ePW8bFiFI5c/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -85,7 +85,7 @@
       "summary": "Morimens #deckbuilding #Roguelike #Roguelike #Morimens #deckbuilding #cardgame #strategy 100673109 Ước gì được cái ...",
       "url": "https://www.youtube.com/watch?v=AuMa261h0Nw",
       "author": "Mr.NextMonday",
-      "engagement": 43,
+      "engagement": 46,
       "media_url": "https://i.ytimg.com/vi/AuMa261h0Nw/hqdefault.jpg",
       "content_type": "video"
     },
@@ -97,20 +97,8 @@
       "summary": "Game: Morimens __Follow me on Social Media!__ Bluesky: https://bsky.app/profile/adagiovt.vtubers.social Twitch: ...",
       "url": "https://www.youtube.com/watch?v=gjoB_U7afvA",
       "author": "AdagioVT",
-      "engagement": 32,
+      "engagement": 34,
       "media_url": "https://i.ytimg.com/vi/gjoB_U7afvA/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-01T02:15:05Z",
-      "lang": "",
-      "title": "【忘却前夜】まだ7章",
-      "summary": "対人とポケモンしかやらなかった末路か？これが...... Twitter(X)→https://x.com/to_m4fuyu.",
-      "url": "https://www.youtube.com/watch?v=UBczJYHUsoo",
-      "author": "to真冬",
-      "engagement": 30,
-      "media_url": "https://i.ytimg.com/vi/UBczJYHUsoo/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -121,8 +109,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=TKlA8PJiLIo",
       "author": "Dakawana Vidya Udaka",
-      "engagement": 12,
+      "engagement": 16,
       "media_url": "https://i.ytimg.com/vi/TKlA8PJiLIo/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-01T07:11:13Z",
+      "lang": "",
+      "title": "Morimens Event Leviathan&#39;s Game Till The Cetus Falls",
+      "summary": "The world is dying, yet its inhabitants remain blissfully unaware. Confronted with a covert, indescribable calamity, you shall take ...",
+      "url": "https://www.youtube.com/watch?v=oP5y4Ifi5cw",
+      "author": "OutcastBox",
+      "engagement": 12,
+      "media_url": "https://i.ytimg.com/vi/oP5y4Ifi5cw/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -139,25 +139,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-01T07:11:13Z",
-      "lang": "",
-      "title": "Morimens Event Leviathan&#39;s Game Till The Cetus Falls",
-      "summary": "The world is dying, yet its inhabitants remain blissfully unaware. Confronted with a covert, indescribable calamity, you shall take ...",
-      "url": "https://www.youtube.com/watch?v=oP5y4Ifi5cw",
-      "author": "OutcastBox",
-      "engagement": 8,
-      "media_url": "https://i.ytimg.com/vi/oP5y4Ifi5cw/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-08-01T18:56:35Z",
       "lang": "",
       "title": "Morimens - Paradise Veil (Boss)",
       "summary": "Had to use one revive (at 13:47) for the immense hp pool. (For who does not know, you get one revive each day and you can ...",
       "url": "https://www.youtube.com/watch?v=mS-T4CrLW2g",
       "author": "Kamiyo",
-      "engagement": 5,
+      "engagement": 7,
       "media_url": "https://i.ytimg.com/vi/mS-T4CrLW2g/hqdefault.jpg",
       "content_type": "video"
     },
@@ -183,18 +171,6 @@
       "author": "Koka",
       "engagement": 0,
       "media_url": "https://i.ytimg.com/vi/eN6C17H1UwA/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-31T23:01:49Z",
-      "lang": "",
-      "title": "Last Morimens in a while || Morimens #7 (VOD)",
-      "summary": "https://www.twitch.tv/wathakate222.",
-      "url": "https://www.youtube.com/watch?v=6TJGPUDxH4g",
-      "author": "VODsakate",
-      "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/6TJGPUDxH4g/hqdefault.jpg",
       "content_type": "video"
     }
   ]
