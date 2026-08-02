@@ -22,6 +22,9 @@ htmlcov/
 
 # global_collectors runtime output (if run standalone)
 projects/news/data/collected_raw.json
+
+# collector debug snapshots: rewritten every cycle, local-only (keeper ruling 2026-08-02)
+projects/news/data/debug_*.html
 morimens_extract.zip
 
 # one-off reverse-engineering tooling (local-only, hardcoded local paths)

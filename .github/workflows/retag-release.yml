@@ -1,0 +1,85 @@
+# retag-release: 受控移动 Release tag（运维工具，仅手动触发）
+#
+# 用途：把某个 Release tag 强制移到新提交（如 T62 压扁基线），Release 与资产
+# 挂在 tag 名上原地不动，但旧历史失去引用、克隆不再拖回旧对象。
+# 首用场景（守密人 2026-08-02 裁定）：community-data / community-assets /
+# unpacked-assets 三 tag 曾锚定压扁前旧历史，令默认完整克隆达 2.4GB。
+#
+# 三重防护：
+#   1. expected_old_sha 与远端当前 tag 不符 → 拒动（防并发/防打错 tag）
+#   2. new_sha 必须是 main 可达提交 → 拒动（防钉到悬空对象）
+#   3. 移锚后自动核对 Release 未退草稿、资产清单未变 → 异常即失败响亮报告
+# 回滚：用同一工作流把 tag 移回 expected_old_sha 即可（短期内旧对象未被回收）。
+
+name: Retag Release (guarded)
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "要移动的 Release tag 名"
+        required: true
+      new_sha:
+        description: "目标提交 SHA（须为 main 可达）"
+        required: true
+      expected_old_sha:
+        description: "远端当前 tag 应指向的 SHA（对不上即拒动）"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  retag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Guard and snapshot release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag_name }}
+          NEW_SHA: ${{ inputs.new_sha }}
+          OLD_SHA: ${{ inputs.expected_old_sha }}
+        run: |
+          set -euo pipefail
+          actual=$(git ls-remote origin "refs/tags/$TAG" | cut -f1)
+          [ -n "$actual" ] || { echo "::error::tag $TAG 不存在于远端"; exit 1; }
+          [ "$actual" = "$OLD_SHA" ] || { echo "::error::远端 $TAG=$actual 与期望 $OLD_SHA 不符，拒动"; exit 1; }
+          git merge-base --is-ancestor "$NEW_SHA" origin/main \
+            || { echo "::error::$NEW_SHA 不是 main 可达提交，拒动"; exit 1; }
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG" \
+            --jq '{draft: .draft, assets: [.assets[] | {name, size}]}' > /tmp/release_before.json
+          echo "移锚前资产数: $(python3 -c "import json;print(len(json.load(open('/tmp/release_before.json'))['assets']))")"
+
+      - name: Move tag
+        env:
+          TAG: ${{ inputs.tag_name }}
+          NEW_SHA: ${{ inputs.new_sha }}
+        run: |
+          set -euo pipefail
+          git push --force origin "$NEW_SHA:refs/tags/$TAG"
+          moved=$(git ls-remote origin "refs/tags/$TAG" | cut -f1)
+          [ "$moved" = "$NEW_SHA" ] || { echo "::error::移锚后远端为 $moved，非目标 $NEW_SHA"; exit 1; }
+          echo "tag $TAG 已移至 $NEW_SHA"
+
+      - name: Verify release intact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag_name }}
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG" \
+            --jq '{draft: .draft, assets: [.assets[] | {name, size}]}' > /tmp/release_after.json
+          python3 - <<'EOF'
+          import json, sys
+          before = json.load(open("/tmp/release_before.json"))
+          after = json.load(open("/tmp/release_after.json"))
+          if after["draft"]:
+              sys.exit("Release 退成了草稿——请立即用本工作流移回 expected_old_sha")
+          if before["assets"] != after["assets"]:
+              sys.exit("资产清单发生变化——请核查 Release 页面")
+          print(f"验收通过: Release 仍发布状态, {len(after['assets'])} 件资产逐一比对一致")
+          EOF
