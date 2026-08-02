@@ -11,6 +11,16 @@
 # Default: every text file checks out with LF on every platform.
 * text=auto eol=lf
 
+# Windows batch files are the one format where LF is a CORRECTNESS bug, not
+# formatting: cmd.exe mis-parses LF-only scripts (goto/label seek fails, paren
+# blocks abort) and the window closes before any pause can run. Field-proven
+# 2026-08-03: every "double-click does nothing / flash-closes" report against
+# sc-pull.cmd / launcher.cmd / silver-core-update.cmd traced to this line-ending
+# default. Index still stores LF; checkout materializes CRLF on every platform,
+# so clones, CI bundle assembly, and keeper machines all get runnable scripts.
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
 # Binary-ish assets git must never touch.
 *.png binary
 *.jpg binary
