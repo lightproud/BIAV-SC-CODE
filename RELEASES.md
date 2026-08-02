@@ -48,6 +48,7 @@
 | config 二进制/debug | `unpacked-assets` | `morimens-config.tar.gz`（含 binary/debug；文本部分另在 git）|
 | 同人图月归档 | `community-assets` | `fanart-archive-{YYYY-MM}.tar.gz` |
 | 回填的社区媒体 | `community-assets` | `media/backfill_manifest.json` 索引的媒体 |
+| Silver Core 便携整包（win64，Hermes 组装产物）| `silver-core-bundle` | `silver-core-bundle-win64.zip`（运行时整包）/ `silver-core-desktop-win64.zip`（desktop 应用）|
 
 ## 二、两个 Release 总览
 
@@ -81,6 +82,15 @@
 合并自原 `media-archive-v1`，含两类：
 - **回填社区媒体**（索引 `media/backfill_manifest.json`）；`backfill_media.py --upload` 以 `gh release upload --clobber` 追加。
 - **同人图月归档** `fanart-archive-{YYYY-MM}.tar.gz`：归档引擎 fanart 条目（`release_tag: community-assets`，`month_from_parent_dir` 分桶）。fanart 不入 git（2026-06-21 de-tier），采集工作流（`collect-fanart.yml` 每日 / `recover-fanart.yml` 手动补录）取回当月资产合并新采后经 `archive_engine.py --force-group` 重传，月资产随采集滚动更新。
+
+### 2.3 「便携整包」`silver-core-bundle` —— Hermes 组装产物（2026-08-02 增设）
+
+守密人裁定「组装在银芯仓进行」：CI `assemble-silver-core-bundle.yml`（workflow_dispatch，
+Windows runner）组装并滚动更新两件——`silver-core-bundle-win64.zip`（upstream 快照 +
+品牌换装 + 便携 CPython + relocatable venv + cmd 启动器，复制解压即用）与
+`silver-core-desktop-win64.zip`（desktop zip 目标，免安装器）。**包内零凭据零内网参数**
+（§1.1-HC 切面化，配置内网侧注入）；升级 = 移 pin 重测后重跑 workflow 重发（文书 §2.4）。
+方案详见 `projects/silver-core-hermes/deploy/README.md`。
 
 ## 三、整理历程
 
