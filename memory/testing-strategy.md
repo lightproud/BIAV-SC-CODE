@@ -7,8 +7,8 @@
 
 | 层 | 工具 | 守什么 | 在哪 |
 |----|------|--------|------|
-| 1. 行覆盖率门控 | pytest-cov | 「代码有没有被跑到」 | `.github/workflows/test.yml`（`--cov-fail-under=85`）|
-| 2. 变异测试 | mutmut | 「断言有没有真的钉住行为」 | `.github/workflows/mutation-test.yml`（手动）+ `setup.cfg` |
+| 1. 行覆盖率门控 | pytest-cov | 「代码有没有被跑到」 | **已拆除（2026-08-02 工程门禁拆除裁定：CI 不再测覆盖率，本地仍可 `pytest --cov` 按需看）** 原 `.github/workflows/test.yml` 覆盖率地板 |
+| 2. 变异测试 | mutmut | 「断言有没有真的钉住行为」 | **已拆除（2026-08-02 工程门禁拆除裁定，工作流删除；本地仍可 `mutmut run`）** 原 `.github/workflows/mutation-test.yml`（手动）+ `setup.cfg` |
 | 3. 真集成测试 | pytest（真依赖）| 「真库/真文件路径有没有被验」 | `tests/test_integration_*.py` |
 | 4. 数据纪律测试 | pytest（语义断言）| 「全量层 vs 输出层有没有被混用」 | `tests/test_data_discipline.py` |
 
@@ -59,7 +59,7 @@
   - `scripts/parse_voice_lines.py`（id 间隙分组 + `·` 分类切分；基于 lua_parse）
   - `projects/news/scripts/discord_compact.py`（紧凑 schema 压缩/还原对；`expand_record`
     是「缺字段=默认值」契约的唯一还原器，732 万条社区档案压其默认值表上。P8，2026-07-02）
-- 跑法：本地 `mutmut run && mutmut results`；CI 手动触发 `mutation-test.yml`。
+- 跑法：本地 `mutmut run && mutmut results`；CI 工作流已删除（2026-08-02 工程门禁拆除裁定）。
 - 每个被测模块配**包路径导入**的专用孪生档（`tests/test_mut_*.py`，如 `scripts.silver_tokenizer`），
   让 mutmut 运行时记录的 key 与按文件路径推导的 key 对齐（兄弟单测用裸模块名导入，mutmut 对不上）。
 - **刻意不纳入变异、改用常规强测试守护的模块**（两类噪声源）：
@@ -185,7 +185,7 @@ CLAUDE.md §4 的「全量档案层 vs 输出展示层不可互换」是**语义
 - **改了代码 / 测试 / 数据的 PR**：合并前**自跑 `pytest tests/`**，全绿才 squash 合并（贴结果）。
 - **纯文档 / 纯注释改动**：可免跑直接合。
 - `test.yml` 仍在每个 PR 上运行（**非必需**，供参考）；其 `pull_request` 触发不设 paths 过滤，
-  对每个到 main 的 PR 都跑（suite ~5s）。`mutation-test.yml` 仍是手动 `workflow_dispatch`。
+  对每个到 main 的 PR 都跑（suite ~5s）。`mutation-test.yml` 已删除（2026-08-02）。
 - **绝不**把「没有 CI 拦」当成「免验证」——验证只是从平台移到会话，标准不降。
 
 > 与 CLAUDE.md §7.6 一致：§7.6（自动加载层，运行时权威）即载「必需 CI `test` 检查已撤、改自查自合」。

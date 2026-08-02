@@ -23,9 +23,9 @@ name: SDK Mutation Ratchet (weekly)
 # other direction (a matrix leg with no floor).
 # tests/test_mutation_ratchet_matrix.py stays on as a second belt.
 
+# MANUAL-ONLY since 2026-08-02 (keeper ruling: engineering-gate demolition;
+# family in pure-maintenance mode, todo T78). Cron removed — dispatch by hand.
 on:
-  schedule:
-    - cron: '43 5 * * 1' # Mondays 05:43 UTC (13:43 北京)
   workflow_dispatch:
     inputs:
       target:

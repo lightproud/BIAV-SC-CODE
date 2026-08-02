@@ -19,9 +19,9 @@ name: SDK Family Cold Start (weekly)
 # 刻意周检而非每 PR：与常规 CI 的构建步骤重复，每 PR 跑纯属拖慢；这类缺陷是低频、结构性的，
 # 一周抓一次足够。故**不设为 required check**。
 
+# MANUAL-ONLY since 2026-08-02 (keeper ruling: engineering-gate demolition;
+# family in pure-maintenance mode, todo T78). Cron removed — dispatch by hand.
 on:
-  schedule:
-    - cron: '29 6 * * 2' # 周二 06:29 UTC（14:29 北京），与周一的变异棘轮错峰
   workflow_dispatch:
 
 permissions:

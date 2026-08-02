@@ -20,9 +20,9 @@ name: Conformance pin drift sentinel
 # the re-run for free. Drift is information (job stays green); only a lookup
 # failure fails the job (exit 2).
 
+# MANUAL-ONLY since 2026-08-02 (keeper ruling: engineering-gate demolition;
+# family in pure-maintenance mode, todo T78). Cron removed — dispatch by hand.
 on:
-  schedule:
-    - cron: '7 5 * * 1'   # Mondays 05:07 UTC - hour/minute distinct from all other repo crons
   workflow_dispatch:
 
 permissions:

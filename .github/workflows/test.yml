@@ -64,67 +64,15 @@ jobs:
           # vanish with it and the build_html branch would importorskip to fake
           # green. weasyprint itself stays out per the render-deps-on-demand
           # stance; only render()'s thin PDF shell is skipped without it.
-          # ruff 显式装在这里、**不靠下面那条 `|| true` 的 best-effort 安装**：
-          # scripts/requirements.txt 的安装是容错的（weasyprint 原生构建可能失败），
-          # 门禁工具挂在一条允许失败的线上，等于门禁本身可以静默消失。
-          # 版本与 scripts/requirements.txt 同步（钉死理由见该档）。
-          pip install pytest pytest-cov jsonschema markdown ruff==0.15.8
+          pip install pytest jsonschema markdown
           [ -f projects/news/requirements.txt ] && pip install -r projects/news/requirements.txt || true
           [ -f scripts/requirements.txt ] && pip install -r scripts/requirements.txt || true
-      - name: Lint (ruff, 棘轮式静态门禁)
-        # 2026-07-28 全仓缺陷扫描一次性清出 488 项静态可测缺陷后立此门。清扫是止血，
-        # 门禁才是缝合——没有它，下一个会话照样能写出同样的 json.load(open(...))。
-        # 棘轮设计（select 取整族 + ignore 逐条记欠账）见 pyproject.toml [tool.ruff]：
-        # 已清零的 619 条规则全部在保护之下，任一条重新出现即红；收紧的方式是从
-        # ignore 里删一条。ruff 版本钉死在 scripts/requirements.txt（理由见该档）。
-        # 放在跑测试之前：lint 秒级、测试 20 秒，先报便宜的那个。
-        run: ruff check .
+      # Engineering meta-gates removed 2026-08-02 (keeper ruling: gate
+      # demolition — keep cognition/memory + collection-line guards, drop the
+      # gates that police the tests themselves). Gone from this job: the ruff
+      # ratchet step, coverage measurement, and the coverage-floor step (whose
+      # pytest-flag silent-failure saga is preserved in git history and
+      # scripts/premerge_gate.py's SILENT_FAILURE_MARKERS note). The ruff
+      # config in pyproject.toml stays for on-demand local runs.
       - name: Run tests
-        # Coverage gate history: 10 -> 35 -> 90 -> 85. A dynamic-orchestration
-        # test sweep on 2026-06-21 lifted TOTAL coverage 43% -> ~94% (CI scope).
-        # The gate was then deliberately RELAXED 90 -> 85: network-bound news
-        # collectors are inherently hard to unit-test, and a 90 floor would
-        # pressure future collector additions into over-mocked filler tests that
-        # game the metric instead of verifying behaviour. 85 locks in the sweep's
-        # gains while leaving the collector layer room to breathe; 90+ stays the
-        # aspirational target, not a hard CI floor. Test-quality (not just line
-        # reach) is independently guarded by mutation testing — see
-        # .github/workflows/mutation-test.yml and docs/testing-strategy.md.
-        # report_render.py is split (P4, 2026-07-02) into pure HTML assembly
-        # (tested with the light markdown dep, installed above) and a thin
-        # weasyprint PDF shell (kept out of CI per the render-deps-on-demand
-        # stance), so it now caps ~87% here instead of ~56%.
-        # Branch coverage is ON via .coveragerc `branch = True` (P6): statement
-        # coverage alone hid executed-but-never-forked error/degradation
-        # branches — the dial got honest, not tighter. Measurement scope is
-        # pinned in .coveragerc.
-        # Gate 85 -> 92 (2026-07-11, keeper-approved coverage proposal): the
-        # P0/P1 gap-fill sweep (arca daily bridge, MCP error branches, alias
-        # extractor, KB evaluator CLIs, prompt-refresh sync) lifted TOTAL to
-        # ~96% locally, and a floor 11pp under actual would let 5+pp regress
-        # silently. 92 keeps ~2-4pp breathing room for cross-env variance and
-        # the network-bound collector layer; the 2026-06-21 anti-over-mocking
-        # stance stands — the floor chases actual coverage, never leads it.
-        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=92
-
-      # THE LINE ABOVE DOES NOT ENFORCE ANYTHING ON ITS OWN (2026-07-28).
-      #
-      # Under pytest 9.1.1 + pytest-cov 7.1.0 — the versions the unpinned
-      # `pip install pytest pytest-cov` above resolves to — `--cov-fail-under`
-      # prints "FAIL Required test coverage of 92% not reached" and then exits
-      # **0**. Minimal repro: any run with `--cov-fail-under=99` reports FAIL
-      # and returns 0. So this required check has been passing green over
-      # sub-threshold coverage, and `scripts/premerge_gate.py` inherited the
-      # same blindness because it judged the step by its exit code.
-      #
-      # Measured at merge 686b8d5 (release 1.3.0) with this exact command:
-      # 91.63% — under the floor, reported green, merged to main.
-      #
-      # `coverage report --fail-under` exits 2 correctly, so the enforcement
-      # lives here. The pytest flag is kept for its inline report only. Do NOT
-      # delete this step in the belief the flag above covers it: verify by
-      # raising the threshold and confirming the job actually goes red.
-      - name: Enforce the coverage floor (the pytest flag above cannot)
-        run: |
-          set -euo pipefail
-          python -m coverage report --fail-under=92
+        run: pytest tests/ -v

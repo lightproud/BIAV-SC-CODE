@@ -47,12 +47,12 @@ WORKFLOWS = REPO / ".github" / "workflows"
 
 # GitHub 规则集的 required 检查名（CLAUDE.md §7.6；规则集配置本身无 API 可读，故此处手抄，
 # 由 tests/test_premerge_gate.py 断言每个名字都能解析到真 job）。
+#
+# 2026-08-02 工程门禁拆除裁定：四个 JS 家族 required 检查随家族纯维稳（T78）退出
+# 清单，家族工作流降级为 workflow_dispatch 手动触发（修生产 bug 时手动拉起）。
+# 现行 required 检查只剩 `test`（认知/记忆守卫 + 采集线单测所在的 Python 套件）。
 REQUIRED_CHECKS = [
     "test",
-    "Silver Core Agent SDK / unit tests",
-    "Silver Core Agent SDK / conformance",
-    "Silver Core Maestro SDK / unit + testbed",
-    "Silver Core Maestro SDK / dependency direction",
 ]
 
 # 三类不当作门禁跑的步骤。分类写死在这里而不是猜：
