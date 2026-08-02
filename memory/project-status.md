@@ -90,7 +90,7 @@
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 145 | 磁盘实况 |
 | CI 工作流 / 其中定时 | 45 / 26 | `.github/workflows/` |
-| 挂账台账 开 / 已清 | 23 / 63 | `memory/todo.md` |
+| 挂账台账 开 / 已清 | 22 / 64 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->
 
@@ -354,8 +354,8 @@
   （唯一权威）。核心零侵入 / §1.1-HC 切面化「代码公开配置内网」/ idealab 唯一通道 / Maestro 概念清零。
   upstream/ 定位经守密人澄清 = **银芯开发镜像**（SVN vendor 生产供应链在黑池侧）；§2.2 骨架已建，
   patches 空 + 骨架完整由 `tests/test_hermes_charter.py` 机械守卫。
-- **当前执行面 = 起手式 Code 侧三项（#T79）**：骨架已建；BPT 核心功能对照清单初稿（裁 14 迁移判定尺）；
-  idealab provider 配置材料（参数化模板入 deploy/，零内网值）。
+- **起手式转黑池侧建议（守密人 2026-08-02 裁定，T79 销案）**：文书 §6 七步银芯不追踪执行；
+  银芯侧现状 = 骨架已建 + 守卫在岗 + 按需供材料（点名派发另计），常态职责 = 追官方新版 + gaps.md 值守。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
