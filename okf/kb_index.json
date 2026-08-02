@@ -761,7 +761,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 7
     },
     "/characters/15590.md": {
       "type": "character",
@@ -986,7 +986,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 6
     },
     "/characters/54117.md": {
       "type": "character",
@@ -6548,7 +6548,17 @@
         "variant"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:诞妄·墨菲",
         "mention"
       ],
@@ -7493,22 +7503,12 @@
         "mention"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:塔薇",
         "mention"
       ],
       [
         "/sources/bahamut.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:塔薇",
         "mention"
       ],
@@ -8168,6 +8168,11 @@
         "mention"
       ],
       [
+        "/characters/15589.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
         "/characters/15582.md",
         "提及:弥利亚姆",
         "mention"
@@ -8215,11 +8220,6 @@
       [
         "/characters/15587.md",
         "提及:希洛",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
         "mention"
       ],
       [
@@ -10131,6 +10131,11 @@
         "mention"
       ],
       [
+        "/characters/15589.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
         "/characters/15582.md",
         "提及:弥利亚姆",
         "mention"
@@ -10178,11 +10183,6 @@
       [
         "/characters/15587.md",
         "提及:希洛",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
         "mention"
       ],
       [

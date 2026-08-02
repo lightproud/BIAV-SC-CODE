@@ -4808,6 +4808,12 @@
     },
     {
       "source": "/community/community-weibo.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
       "target": "/characters/15582.md",
       "rel": "提及:弥利亚姆",
       "rel_type": "mention"
@@ -4864,12 +4870,6 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
@@ -6326,6 +6326,12 @@
     },
     {
       "source": "/sources/weibo.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
       "target": "/characters/15582.md",
       "rel": "提及:弥利亚姆",
       "rel_type": "mention"
@@ -6382,12 +6388,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
