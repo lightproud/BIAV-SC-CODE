@@ -16,8 +16,8 @@
 | **大写字标 `HERMES AGENT` → `SILVER CORE`**（对话空态巨幅 wordmark / bootstrap-installer 欢迎页，2026-08-02 补漏 #1） | 通用规则追加（大小写敏感故原三条全部漏它） | 5 处 |
 | **窗口标题 `<title>`**（desktop / web / bootstrap-installer 的 index.html——任务栏 / Alt-Tab 显示名实际来源，2026-08-02 补漏 #3） | `.html` 扩入扫描后缀 | 3 档 |
 | **应用显示名 APP_NAME**（About 面板 / 菜单标签 / `app.setName`；其兜底行含 `HERMES_` 被跳线保留，2026-08-02 补漏 #3） | 上游官方环境针 `HERMES_DESKTOP_APP_NAME=Silver Core`（launcher.cmd + launch_desktop.py 双设，零侵入） | 2 件 |
-| **应用图标 / 品牌图像**（win exe · 任务栏 · 托盘 · 窗口图标 · favicon · About 页 BrandMark，2026-08-02 补漏 #2） | 二进制覆盖 `deploy/brand-assets/`（`gen_brand_assets.py` 单源图生成全套；rebrand.py `ASSET_OVERLAYS` 组装期覆盖 + 补丁 `--binary` 段等效承载）。**现为艾瑞卡立绘占位**——守密人 2026-08-02 裁定另行供图，正式图落 `deploy/brand-assets/source.png` 后重跑两生成器即换装 | 4 件 |
-| **About 页出身声明 + 自更新区隐藏**（守密人 2026-08-02 两裁：①直接说明「B.I.A.V. Studio 基于 Hermes <版本> 的定制版本」②不再展示自更新区——便携包生产禁用 `hermes update`（文书 §2.4），该区只会报 git checkout 错误误导） | 后置全文规则锚定 about-settings.tsx：插入声明（版本动态渲染）+ `{false && (<>...</>)}` 包裹自更新区；哨兵防移 pin 静默复活（charter 守卫） | 2 处 |
+| **应用图标 / 品牌图像**（win exe · 任务栏 · 托盘 · 窗口图标 · favicon · About 页 BrandMark，2026-08-02 补漏 #2） | 二进制覆盖 `deploy/brand-assets/`（`gen_brand_assets.py` 单源图生成全套；rebrand.py `ASSET_OVERLAYS` 组装期覆盖 + 补丁 `--binary` 段等效承载）。源图 = 守密人 2026-08-02 正式供图 `deploy/brand-assets/source.png`（白纱人偶 · 256px，经 GitHub 直传落仓）；日后换图 = 换源图重跑两生成器 | 4 件 |
+| **About 页出身声明 + 自更新区 / Danger zone 隐藏**（守密人 2026-08-02 三裁：①直接说明「B.I.A.V. Studio 基于 Hermes <版本> 的定制版本」②不再展示自更新区——便携包生产禁用 `hermes update`（文书 §2.4），该区只会报 git checkout 错误误导③Danger zone 整区不必要——便携包无安装器，卸载文案「reopen the installer」失实） | 后置全文规则锚定 about-settings.tsx：插入声明（版本动态渲染）+ `{false && …}` 帘子包裹两区（非删除，移 pin 冲突面最小）；哨兵防静默复活（charter 守卫） | 3 处 |
 | CLI 命令名 | `deploy/bin/silver-core` 别名包裹（零侵入） | 1 件 |
 | 钉钉显示名 | 钉钉应用后台配置（内网侧） | 部署说明 |
 

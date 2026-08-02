@@ -119,7 +119,8 @@ POST_RULES = [
         "        />\n"
         "        </>)}\n"
         "\n"
-        "        <UninstallSection />\n",
+        "        {/* 便携包无安装器——Danger zone 整区隐藏（守密人 2026-08-02 裁定） */}\n"
+        "        {false && <UninstallSection />}\n",
     ),
 ]
 
