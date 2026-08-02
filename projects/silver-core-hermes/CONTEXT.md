@@ -12,8 +12,11 @@
 ## 铁律（文书裁定，机械守卫 `tests/test_hermes_charter.py`）
 
 1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /
-   MCP `mcp_servers:` / shell 事件钩子 / profile routing），不 fork 核心。`patches/` 预留
-   **当前必须为空**（守卫钉死）；扩展点不够、被迫想碰核心 = **即停、记录 `gaps.md`、不硬闯**。
+   MCP `mcp_servers:` / shell 事件钩子 / profile routing），不 fork 核心。`patches/` 为
+   **白名单制**（2026-08-02 需求 #1 起启用：品牌换装补丁经守密人裁定入册，守卫钉
+   白名单 + 干净应用 + LICENSE/版权零触碰三线；补丁不手写、由 `deploy/rebrand.py`
+   规则引擎生成，`upstream/` 本体始终零修改、补丁只在部署组装期应用）；扩展点不够、
+   被迫想碰核心 = **即停、记录 `gaps.md`、不硬闯**。
 2. **§1.1-HC 切面化红线**：代码公开、配置内网——本子项目内**不得出现凭据、内网地址/路径、
    公司域信息**；插件一律通用化写法，通用化三问不过者归黑池域代码区并在 gaps.md 留
    「通用化未遂」记录（文书裁 15）。

@@ -12,4 +12,10 @@
 
 ## 清单
 
-（暂无条目——2026-08-02 建档）
+- **2026-08-02 · 扩展点缺口 · patches/ 启用（守密人需求 #1 裁定）**：品牌换装
+  （Hermes → Silver Core）无扩展点可走——身份可由 SOUL.md 原生覆盖，但 159 文件
+  的运行面显示串（"Hermes Agent" / "Hermes profile" / "hermes-tui"）为硬编码。
+  处置：守密人 2026-08-02 交互裁定「开 patches/ 全量抹净」，`patches/` 由「必须为空」
+  转**白名单制**（守卫同 PR 修改，见 `tests/test_hermes_charter.py` ALLOWED_PATCHES）；
+  补丁不手写、由 `deploy/rebrand.py` 规则引擎生成，三红线（LICENSE/版权 · URL/遥测 ·
+  功能标识符）机械守卫。范围台账 `BRANDING.md`。状态：已落地。

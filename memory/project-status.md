@@ -342,8 +342,7 @@
 > **一句话**：基于 **Hermes Agent**（[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)，
 > MIT）的改造扩展层——守密人 2026-08-02 裁定放弃「BPT 100% 自研 + 模仿闭源 Claude Code」路线，
 > 改在成熟开源底座上做银芯自有扩展，银芯→黑池单向输出。决策全文见 `memory/decisions.md`
-> 2026-08-02「BPT 技术路线换轨」条；三条工程铁律（上游跟随 + 扩展层 / 单向输出 / MIT 合规）
-> 与上游档案见 `projects/silver-core-hermes/CONTEXT.md`。
+> 2026-08-02 三条；铁律与上游档案见 `projects/silver-core-hermes/CONTEXT.md`。
 
 - **M0 立项（2026-08-02）**：完成——四项配套裁定（SDK 家族维护态过渡后冻结 #T78 / 银芯新子项目
   承载 / 上游跟随 + 扩展层 / 定名 silver-core-hermes）落档，脚手架 CONTEXT.md 建立；同日快照
@@ -356,6 +355,9 @@
   patches 空 + 骨架完整由 `tests/test_hermes_charter.py` 机械守卫。
 - **起手式转黑池侧建议（守密人 2026-08-02 裁定，T79 销案）**：文书 §6 七步银芯不追踪执行；
   银芯侧现状 = 骨架已建 + 守卫在岗 + 按需供材料（点名派发另计），常态职责 = 追官方新版 + gaps.md 值守。
+- **需求 #1 品牌换装已交付（2026-08-02）**：Silver Core 品牌 + 知识层统一称「知识底座」——零侵入套件
+  （SOUL.md 模板 / CLI 别名）+ patches/ 白名单制（`deploy/rebrand.py` 规则引擎生成 159 文件补丁，
+  LICENSE/版权/URL/功能标识符四不碰，upstream 零修改、组装期应用）；范围台账 `BRANDING.md`。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
