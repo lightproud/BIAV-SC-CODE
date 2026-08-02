@@ -1,23 +1,60 @@
 """Hermes 施工边界文书（bpt-hermes-charter-20260802）的机械可查红线守卫。
 
-弱约定（文书）升硬门禁（测试）：文书禁 1「patches/ 当前必须为空」与 §2.2 骨架
-完整性由本档钉死——patches/ 里出现任何补丁文件即红，骨架目录/一等产出缺失即红。
-未来守密人裁定启用补丁时，同 PR 修改本守卫（等于把「启用」留痕在 diff 里）。
+弱约定（文书）升硬门禁（测试）。patches/ 启用史：文书禁 1 原定「当前必须为空」；
+守密人 2026-08-02 需求 #1（品牌换装 Silver Core）裁定「开 patches/ 全量抹净」，
+本守卫同 PR 从「必须为空」改为「白名单 + 三红线」——启用留痕于本 diff 与 gaps.md。
 """
+import subprocess
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 SUB = REPO / "projects" / "silver-core-hermes"
 
+# patches/ 白名单：每个补丁须在此具名登记（防无名补丁悄悄入库）。
+ALLOWED_PATCHES = {
+    "silver-core-rebrand.patch",  # 需求 #1 品牌换装，deploy/rebrand.py 规则引擎生成
+}
 
-def test_patches_dir_must_be_empty():
+
+def test_patches_are_whitelisted():
     patches = SUB / "patches"
-    assert patches.is_dir(), "patches/ 预留目录缺失（文书 §2.2）"
-    extras = [p.name for p in patches.iterdir() if p.name != ".gitkeep"]
+    assert patches.is_dir(), "patches/ 目录缺失（文书 §2.2）"
+    extras = [p.name for p in patches.iterdir()
+              if p.name not in ALLOWED_PATCHES | {".gitkeep"}]
     assert not extras, (
-        f"patches/ 当前必须为空（文书禁 1），发现: {extras}。"
-        "若守密人已裁定启用补丁，须同 PR 修改本守卫并在 gaps.md 留档。"
+        f"patches/ 出现未登记补丁: {extras}。新补丁须经守密人裁定，"
+        "同 PR 登记进 ALLOWED_PATCHES 并在 gaps.md 留档。"
     )
+
+
+def test_patches_apply_cleanly_to_upstream():
+    """补丁必须能干净打在当前 pin 的 upstream/ 上——移 pin 忘了重生成即红。"""
+    for name in ALLOWED_PATCHES:
+        patch = SUB / "patches" / name
+        assert patch.is_file(), f"登记的补丁不存在: {name}"
+        r = subprocess.run(
+            ["git", "apply", "--check",
+             "--directory=projects/silver-core-hermes/upstream", str(patch)],
+            cwd=REPO, capture_output=True, text=True,
+        )
+        assert r.returncode == 0, (
+            f"{name} 不能干净应用于 upstream/（多半是移 pin 后未重生成，"
+            f"跑 python3 deploy/rebrand.py）: {r.stderr[:500]}"
+        )
+
+
+def test_patches_never_touch_license_or_copyright():
+    """三红线之一：品牌换装不得触碰 LICENSE / 版权行（MIT + 文书裁 10）。"""
+    for name in ALLOWED_PATCHES:
+        text = (SUB / "patches" / name).read_text(encoding="utf-8")
+        for line in text.splitlines():
+            if line.startswith("diff --git"):
+                assert "LICENSE" not in line, f"{name} 含 LICENSE 文件 hunk: {line}"
+            if line.startswith("-") and not line.startswith("---"):
+                low = line.lower()
+                assert "copyright" not in low and "spdx-license" not in low, (
+                    f"{name} 删改了版权行: {line[:120]}"
+                )
 
 
 def test_charter_skeleton_present():
