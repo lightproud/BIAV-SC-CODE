@@ -21,12 +21,14 @@
 > 复刻它是死路。**便携整包（portable bundle）整条绕开安装器**：构建机组装、共享目录分发、
 > 复制即用——与 BPT 现状同形（本机运行、无服务端）。
 
-**组装台 = 银芯 CI（守密人 2026-08-02 裁定「整包组装在银芯仓进行」）**：
+**组装台 = 银芯 CI，产物合箱单目录（守密人 2026-08-02 两裁）**：
 `.github/workflows/assemble-silver-core-bundle.yml`（workflow_dispatch，Windows runner——
-Windows venv 不可跨平台组装，故必须 Windows 台）双 job 产两件落
-[`silver-core-bundle` Release](https://github.com/lightproud/BIAV-SC-CODE/releases/tag/silver-core-bundle)：
-运行时整包（含就地搬移冒烟测试验 relocatable）+ desktop zip；守密人从 Release 取包投内网共享目录。
-以下为该工作流所执行工序的等价手工描述：
+Windows venv 不可跨平台组装，故必须 Windows 台）单 job 产**唯一资产** `silver-core-win64.zip`
+落 [`silver-core-bundle` Release](https://github.com/lightproud/BIAV-SC-CODE/releases/tag/silver-core-bundle)：
+解压即一个 `SilverCore\` 目录（运行时 + desktop `--win dir` 免装形态 + launcher，含就地搬移
+冒烟测试验 relocatable 与合箱完整性）。**zip 仅为传输载体**（Releases 只能放文件）：
+守密人解压一次进内网共享目录，此后团队用户面 = **纯目录复制、双击 launcher.cmd 即用**，
+全程零解压零安装零 PowerShell。以下为该工作流所执行工序的等价手工描述：
 
 **整包组装（构建机一次做，产物 = 一个 zip）**：
 1. 组装副本 = upstream 快照 + 品牌补丁（本档上节流程）。

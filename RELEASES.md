@@ -48,7 +48,7 @@
 | config 二进制/debug | `unpacked-assets` | `morimens-config.tar.gz`（含 binary/debug；文本部分另在 git）|
 | 同人图月归档 | `community-assets` | `fanart-archive-{YYYY-MM}.tar.gz` |
 | 回填的社区媒体 | `community-assets` | `media/backfill_manifest.json` 索引的媒体 |
-| Silver Core 便携整包（win64，Hermes 组装产物）| `silver-core-bundle` | `silver-core-bundle-win64.zip`（运行时整包）/ `silver-core-desktop-win64.zip`（desktop 应用）|
+| Silver Core 便携整包（win64，Hermes 组装产物）| `silver-core-bundle` | `silver-core-win64.zip`（**合箱单目录**：运行时 + desktop + launcher，zip 仅传输载体）|
 
 ## 二、两个 Release 总览
 
@@ -85,12 +85,14 @@
 
 ### 2.3 「便携整包」`silver-core-bundle` —— Hermes 组装产物（2026-08-02 增设）
 
-守密人裁定「组装在银芯仓进行」：CI `assemble-silver-core-bundle.yml`（workflow_dispatch，
-Windows runner）组装并滚动更新两件——`silver-core-bundle-win64.zip`（upstream 快照 +
-品牌换装 + 便携 CPython + relocatable venv + cmd 启动器，复制解压即用）与
-`silver-core-desktop-win64.zip`（desktop zip 目标，免安装器）。**包内零凭据零内网参数**
-（§1.1-HC 切面化，配置内网侧注入）；升级 = 移 pin 重测后重跑 workflow 重发（文书 §2.4）。
-方案详见 `projects/silver-core-hermes/deploy/README.md`。
+守密人三裁（组装在银芯仓 / 不走服务端 / **产物合箱单目录**）：CI `assemble-silver-core-bundle.yml`
+（workflow_dispatch，Windows runner 单 job）滚动更新**唯一资产** `silver-core-win64.zip`——
+解压即一个 `SilverCore\` 目录：品牌换装源树 + 便携 CPython + relocatable venv +
+desktop（`--win dir` 免装目录形态）+ `launcher.cmd` 双击即用。**zip 仅为传输载体**
+（Releases 只能放文件）：守密人解压一次进内网共享目录，团队用户面 = 纯目录复制，
+零解压零安装零 PowerShell。**包内零凭据零内网参数**（§1.1-HC 切面化，配置内网侧注入）；
+升级 = 移 pin 重测后重跑 workflow 重发（文书 §2.4）。方案详见
+`projects/silver-core-hermes/deploy/README.md`。
 
 ## 三、整理历程
 
