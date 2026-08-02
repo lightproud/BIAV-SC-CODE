@@ -1,20 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-02T16:00:45.083486+00:00",
+  "collected_at": "2026-08-02T19:09:16.023951+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 125,
   "items": [
-    {
-      "source": "google_play",
-      "time": "2026-07-03T16:19:54",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★4 レビュー更新します。キャラによってはコイツスキルどうゆう事や?ってやついるけど理",
-      "summary": "レビュー更新します。キャラによってはコイツスキルどうゆう事や?ってやついるけど理解力ある人は大丈夫なんじゃなかろうか。ガチャの排出率はなかなか出ん時もあるくらい。ボスごとに止まって育成して突破して次の章みたいな感じ。 追記‐毒解除キャラ欲しい切実にちょっとでもいいから減らしたい",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a28b20be-0fe2-4911-924a-a9f3ab3c8bfb",
-      "author": "*もひ*",
-      "engagement": 5
-    },
     {
       "source": "google_play",
       "time": "2026-07-09T14:14:47",
@@ -347,6 +337,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-08-01T17:10:47",
+      "lang": "en",
+      "title": "[Google Play 差评] ★2 Memory leaks.",
+      "summary": "Memory leaks.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-89106529-2255-490d-af67-1ce4e96888d4",
+      "author": "Seta Kaoru",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-08-01T06:32:01",
       "lang": "en",
       "title": "[Google Play 好评] ★5 the story is hella good!",
@@ -627,16 +627,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-08T00:55:04",
-      "lang": "en",
-      "title": "[Google Play 差评] ★1 gameplay wise its an auto-battler(or rat",
-      "summary": "gameplay wise its an auto-battler(or rather it can be) which in ANY game if you have an auto mode it's just kind of lame cuz it removes the fun out of it. \"dont use it then\" is just stupid, if its in the game and is supposed to make my experience with the game easier then im going to use it. gacha is pretty bad too where 6☆ char just dont exist. game is somewhat generous. idc abt the story i js skip it. overall its just mid",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-5e0a32bc-1060-411e-92e3-95803c377855",
-      "author": "Ivana Popovic",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-31T22:11:25",
       "lang": "ko",
       "title": "[Google Play 差评] ★1 문제가 발생함. 윈도우10에서 구글플레이로 실행했습니다. 이 게임을 처음",
@@ -763,6 +753,16 @@
       "summary": "The game is very fun, the character is great. Many things are awesome. But the biggest problem is once you clear the story mode, the content left for you to play with is pitiful. I wish to see more content than this. Its been a good 2.5 years journey but I might have to quit cuz nothing left to do. I dont even have a reason to spend and pull more stuff cuz I have nowhere to use them.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-3c7b33ae-891c-4e36-930e-189bdc097f1b",
       "author": "Thirat Kuakulkitjaroen",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-01T16:02:54",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 Nice game",
+      "summary": "Nice game",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-3edc493d-1fa1-448a-9612-efbae7784453",
+      "author": "It'sHannn",
       "engagement": 0
     },
     {
