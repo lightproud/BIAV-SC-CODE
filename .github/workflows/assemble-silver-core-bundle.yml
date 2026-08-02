@@ -56,7 +56,10 @@ jobs:
         working-directory: SilverCore/app
         run: |
           uv venv --relocatable --python "${PYTHON_VERSION}" "${UV_PROJECT_ENVIRONMENT}"
-          uv sync --locked --extra all --extra anthropic --extra mistral --extra fal \
+          # --no-editable：项目自身装成实体包而非 editable .pth 指针——editable 指针
+          # 钉死组装机绝对路径，整包搬走即 ModuleNotFoundError（run 4 实证，
+          # 亦即守密人实测 launcher 失败的真因链源头）。
+          uv sync --locked --no-editable --extra all --extra anthropic --extra mistral --extra fal \
             --extra modal --extra daytona --extra hindsight --extra parallel-web
 
       - name: Setup Node
@@ -93,7 +96,8 @@ jobs:
           PYHOME=$(ls -d /c/silver-core-smoke/python/cpython-*)
           "$PYHOME/python.exe" /c/silver-core-smoke/fix_venv_path.py 'C:\silver-core-smoke'
           /c/silver-core-smoke/venv/Scripts/python.exe --version
-          cd /c/silver-core-smoke/app
+          # 中立目录跑导入检查——绝不允许 cwd 兜底假绿（前三轮的假绿正是 cwd=app 兜出来的）
+          cd /c
           /c/silver-core-smoke/venv/Scripts/python.exe -c "import agent, hermes_cli; print('runtime imports OK')"
           # 真启动检查：console-script 入口壳（hermes.exe）在搬移后的路径必须能跑起来
           /c/silver-core-smoke/venv/Scripts/hermes.exe --help > /dev/null 2>&1 || \
