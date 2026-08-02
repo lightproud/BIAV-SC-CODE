@@ -21,8 +21,8 @@
 * [steam_discussion](/sources/steam_discussion.md) - 全量 166 条 / active
 * [stopgame](/sources/stopgame.md) - 全量 106 条 / active
 * [taptap](/sources/taptap.md) - 全量 18 条 / active
-* [taptap_review](/sources/taptap_review.md) - 全量 2843 条 / active
-* [weibo](/sources/weibo.md) - 全量 12105 条 / active
-* [weixin](/sources/weixin.md) - 全量 9608 条 / degraded
-* [youtube](/sources/youtube.md) - 全量 3220 条 / active
+* [taptap_review](/sources/taptap_review.md) - 全量 2862 条 / active
+* [weibo](/sources/weibo.md) - 全量 12120 条 / active
+* [weixin](/sources/weixin.md) - 全量 9628 条 / degraded
+* [youtube](/sources/youtube.md) - 全量 3221 条 / active
 * [youtube_comments](/sources/youtube_comments.md) - 全量 2384 条 / degraded

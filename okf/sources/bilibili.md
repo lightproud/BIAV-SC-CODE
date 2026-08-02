@@ -4,7 +4,7 @@ title: "bilibili 社区数据源"
 description: "bilibili 平台采集档案，全量 3380 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/bilibili/"
 tags: ["data_layer:full_archive", "platform:bilibili", "health:active"]
-timestamp: "2026-08-02T19:09:58.761124+00:00"
+timestamp: "2026-08-02T21:56:21.249265+00:00"
 ---
 
 # 数据层指针
