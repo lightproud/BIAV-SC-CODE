@@ -24,9 +24,9 @@
   },
   "workflows": [
     {
-      "id": "assemble-silver-core-bundle.yml",
-      "name": "Assemble Silver Core Bundle",
-      "path": ".github/workflows/assemble-silver-core-bundle.yml",
+      "id": "assemble-black-pool-bundle.yml",
+      "name": "Assemble Black Pool Bundle",
+      "path": ".github/workflows/assemble-black-pool-bundle.yml",
       "triggers": [
         "manual"
       ]

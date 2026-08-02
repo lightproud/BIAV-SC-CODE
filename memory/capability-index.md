@@ -36,8 +36,8 @@
 
 ## CI 自动化工作流（编排入口·定时/事件平面）（46）
 
-- **`Assemble Silver Core Bundle`** _[manual]_ —   
-  `.github/workflows/assemble-silver-core-bundle.yml`
+- **`Assemble Black Pool Bundle`** _[manual]_ —   
+  `.github/workflows/assemble-black-pool-bundle.yml`
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
 - **`Backfill & Archive Media`** _[schedule/manual]_ — 定时回填并归档媒体文件（同人图等）。  
