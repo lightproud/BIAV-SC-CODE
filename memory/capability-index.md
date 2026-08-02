@@ -3,8 +3,8 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-30
-- 功能总数：**155**
+- 生成日期：2026-08-02
+- 功能总数：**156**
 - 脚本可达性：活 82 / 仅测试 0 / 孤儿 0
 
 ## 总览
@@ -18,7 +18,7 @@
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 6 |
-| 子项目 | 7 |
+| 子项目 | 8 |
 
 ## 动态编排与可达性
 
@@ -351,17 +351,19 @@
 - **`last30days`** — >-  
   `.claude/skills/last30days/SKILL.md`
 
-## 子项目（7）
+## 子项目（8）
 
 - **`game`** — 衍生游戏，退出主线，守密人个人兴趣，不主线派发。  
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
   `projects/news/`
-- **`silver-core-maestro-sdk`** — > 动手前先读本档。需求裁定书(建成什么样的唯一权威):  
+- **`silver-core-hermes`** — > **定位（守密人 2026-08-02 裁定，使命#2 载体换轨）**：本子项目是使命#2「通用 AI 底层能力  
+  `projects/silver-core-hermes/`
+- **`silver-core-maestro-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定）**：随家族转维护态**只修不建**（载体换轨 `projects/silver-core-hermes/`；BPT 换装完成后冻结，触发线 `memory/todo.md` #T78）。  
   `projects/silver-core-maestro-sdk/`
-- **`silver-core-sdk`** — Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面  
+- **`silver-core-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定）**：使命#2 载体已换轨 `projects/silver-core-hermes/`  
   `projects/silver-core-sdk/`
-- **`silver-core-testbed`** — > 施工封面（建成什么样的唯一权威）：守密人 2026-07-18「silver-core-testbed 施工封面」  
+- **`silver-core-testbed`** — > **维护态（守密人 2026-08-02 换轨裁定）**：随家族转维护态**只修不建**（使命#2 载体换轨  
   `projects/silver-core-testbed/`
 - **`site`** — 对外门户：静态站 public/ + 设计令牌 design/。  
   `projects/site/`
