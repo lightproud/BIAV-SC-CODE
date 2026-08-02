@@ -16,13 +16,6 @@ import { cn } from '@/lib/utils'
 import { notifyThreadEditOpen } from '@/store/thread-scroll'
 import { isWatchWindow } from '@/store/windows'
 
-/** True when the user has a live text highlight (drag-select / triple-click). */
-export function hasTextSelection(): boolean {
-  const selection = window.getSelection()
-
-  return Boolean(selection && !selection.isCollapsed && selection.toString().length > 0)
-}
-
 export function StickyHumanMessageContainer({
   attachments,
   children,
@@ -286,16 +279,10 @@ export const UserMessage: FC<{
               <div
                 className="relative w-full"
                 onContextMenu={
-                  // Right-click is the desktop stand-in for iOS touch-and-hold —
-                  // but only when there's nothing selected. A live highlight
-                  // keeps the native Copy menu (and ⌘C) instead of the picker.
+                  // Right-click is the desktop stand-in for iOS touch-and-hold.
                   readOnly || !reactionsEnabled
                     ? undefined
                     : event => {
-                        if (hasTextSelection()) {
-                          return
-                        }
-
                         event.preventDefault()
                         setPickerOpen(true)
                       }
@@ -308,9 +295,7 @@ export const UserMessage: FC<{
                     aria-expanded={bodyClamped ? expanded : undefined}
                     className={cn(bubbleClassName, !bodyClamped && 'cursor-default')}
                     onClick={() => {
-                      // Drag-select ends on mouseup→click; don't collapse the
-                      // clamp just because the highlight finished.
-                      if (hasTextSelection() || !bodyClamped) {
+                      if (!bodyClamped) {
                         return
                       }
 
@@ -325,29 +310,12 @@ export const UserMessage: FC<{
                 ) : (
                   // Always editable — clicking opens the edit composer even while a
                   // turn streams; sending the edit reverts (interrupt + rewind).
-                  // A live text highlight wins: finishing a drag-select must not
-                  // open the editor and throw the selection away.
                   <ActionBarPrimitive.Edit asChild>
                     <button
                       aria-label={copy.editMessage}
                       className={bubbleClassName}
-                      onClick={event => {
-                        if (hasTextSelection()) {
-                          event.preventDefault()
-                          event.stopPropagation()
-
-                          return
-                        }
-
-                        triggerHaptic('selection')
-                      }}
-                      onPointerDown={() => {
-                        if (hasTextSelection()) {
-                          return
-                        }
-
-                        notifyThreadEditOpen()
-                      }}
+                      onClick={() => triggerHaptic('selection')}
+                      onPointerDown={() => notifyThreadEditOpen()}
                       title={copy.editMessage}
                       type="button"
                     >

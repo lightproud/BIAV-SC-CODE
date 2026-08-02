@@ -133,47 +133,16 @@ test('profileRemoteOverride tolerates a missing/!object profiles map', () => {
   assert.equal(profileRemoteOverride(null, 'coder'), null)
 })
 
-test('SSH remains separate from URL-shaped remote modes and preserves an explicit remote profile', () => {
+test('SSH remains separate from URL-shaped remote modes', () => {
   assert.equal(modeIsRemoteLike('ssh'), false)
-
-  const config = {
-    profiles: { coder: { mode: 'ssh', host: 'alice@box:2222', keyPath: '/key', remoteProfile: 'default' } }
-  }
-
+  const config = { profiles: { coder: { mode: 'ssh', host: 'alice@box:2222', keyPath: '/key' } } }
   assert.equal(profileRemoteOverride(config, 'coder'), null)
-
   assert.deepEqual(profileSshOverride(config, 'coder'), {
     mode: 'ssh',
     host: 'box',
     user: 'alice',
     port: 2222,
-    keyPath: '/key',
-    remoteProfile: 'default'
-  })
-})
-
-test('normalizeSshConfig rejects unsafe remote profile mappings', () => {
-  assert.deepEqual(normalizeSshConfig({ mode: 'ssh', host: 'box', remoteProfile: 'writer_2' }), {
-    mode: 'ssh',
-    host: 'box',
-    remoteProfile: 'writer_2'
-  })
-  assert.deepEqual(normalizeSshConfig({ mode: 'ssh', host: 'box', remoteProfile: 'bad profile' }), {
-    mode: 'ssh',
-    host: 'box'
-  })
-  assert.deepEqual(normalizeSshConfig({ mode: 'ssh', host: 'box', remoteProfile: '' }), {
-    mode: 'ssh',
-    host: 'box'
-  })
-  assert.deepEqual(normalizeSshConfig({ mode: 'ssh', host: 'box', remoteProfile: 'root' }), {
-    mode: 'ssh',
-    host: 'box'
-  })
-  assert.deepEqual(normalizeSshConfig({ mode: 'ssh', host: 'box', remoteProfile: 'default' }), {
-    mode: 'ssh',
-    host: 'box',
-    remoteProfile: 'default'
+    keyPath: '/key'
   })
 })
 
@@ -379,19 +348,6 @@ test('normalizeRemoteBaseUrl rejects non-http(s) protocols', () => {
 
 test('normalizeRemoteBaseUrl rejects garbage', () => {
   assert.throws(() => normalizeRemoteBaseUrl('not a url'), /not valid/)
-})
-
-test('normalizeRemoteBaseUrl auto-prepends http:// for scheme-less host:port input', () => {
-  assert.equal(normalizeRemoteBaseUrl('100.64.0.1:9119'), 'http://100.64.0.1:9119')
-  assert.equal(normalizeRemoteBaseUrl('mini.tailnet-1234.ts.net:9119'), 'http://mini.tailnet-1234.ts.net:9119')
-  assert.equal(normalizeRemoteBaseUrl('localhost:9119'), 'http://localhost:9119')
-  assert.equal(normalizeRemoteBaseUrl('gw.example.com'), 'http://gw.example.com')
-  assert.equal(normalizeRemoteBaseUrl('gw.example.com/hermes/'), 'http://gw.example.com/hermes')
-})
-
-test('normalizeRemoteBaseUrl still rejects explicit non-http(s) schemes after scheme-less handling', () => {
-  assert.throws(() => normalizeRemoteBaseUrl('ws://host:9119'), /http:\/\/ or https:\/\//)
-  assert.throws(() => normalizeRemoteBaseUrl('ftp://host:21'), /http:\/\/ or https:\/\//)
 })
 
 // --- buildGatewayWsUrl (token) ---

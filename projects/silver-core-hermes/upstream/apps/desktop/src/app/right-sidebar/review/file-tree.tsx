@@ -16,7 +16,6 @@ import { Tip } from '@/components/ui/tooltip'
 import type { HermesReviewFile } from '@/global'
 import { useI18n } from '@/i18n'
 import { isDesktopFsRemoteMode } from '@/lib/desktop-fs'
-import { displayPath } from '@/lib/display-path'
 import { normalizeOrLocalPreviewTarget } from '@/lib/local-preview'
 import { cn } from '@/lib/utils'
 import { $renamingPath, copyFilePath, revealFile, toRelativePath } from '@/store/file-actions'
@@ -324,7 +323,7 @@ function ReviewFileRow({ node, depth }: { node: ReviewTreeNode; depth: number })
           event.dataTransfer.setData('text/plain', dragPath)
         }}
         style={rowStyle(depth)}
-        title={displayPath(dragPath)}
+        title={dragPath}
       >
         <Codicon className={cn('shrink-0', glyph.tone)} name={glyph.icon} size="0.8rem" />
         {/* Dir collapses first (huge shrink); the name only ellipsizes once the

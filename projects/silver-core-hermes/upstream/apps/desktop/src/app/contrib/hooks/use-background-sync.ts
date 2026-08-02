@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 
 import { createClientSessionState } from '@/lib/chat-runtime'
 import { $changeEventsAvailable, $cronChangeTick, $sessionsChangeTick } from '@/store/live-sync'
-import { $onBattery, batteryPollInterval } from '@/store/power'
 import { refreshActiveProfile } from '@/store/profile'
 import { $activeSessionId, $currentCwd, setCurrentCwd } from '@/store/session'
 import {
@@ -181,10 +180,7 @@ interface BackgroundSyncParams {
 }
 
 /** Poll a callback while the tab is visible, on `intervalMs`; re-checks on tab
- *  re-focus. On battery the cadence stretches (see store/power) — these are
- *  safety-net refreshes, not the live path, so they're the right thing to slow
- *  when the machine is spending its charge. Returns nothing — meant to live
- *  inside an effect. */
+ *  re-focus. Returns nothing — meant to live inside an effect. */
 function visiblePoll(intervalMs: number, tick: () => void): () => void {
   const run = () => {
     if (document.visibilityState === 'visible') {
@@ -192,17 +188,10 @@ function visiblePoll(intervalMs: number, tick: () => void): () => void {
     }
   }
 
-  let intervalId = window.setInterval(run, batteryPollInterval(intervalMs, $onBattery.get()))
-
-  const unsubscribeBattery = $onBattery.listen(onBattery => {
-    window.clearInterval(intervalId)
-    intervalId = window.setInterval(run, batteryPollInterval(intervalMs, onBattery))
-  })
-
+  const intervalId = window.setInterval(run, intervalMs)
   document.addEventListener('visibilitychange', run)
 
   return () => {
-    unsubscribeBattery()
     window.clearInterval(intervalId)
     document.removeEventListener('visibilitychange', run)
   }
