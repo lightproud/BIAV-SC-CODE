@@ -77,7 +77,10 @@ jobs:
         run: |
           set -euo pipefail
           release_id=$(cat /tmp/release_id)
-          if [ -n "$(git ls-remote origin "refs/tags/$TAG" | cut -f1)" ]; then
+          current=$(git ls-remote origin "refs/tags/$TAG" | cut -f1)
+          if [ "$current" = "$NEW_SHA" ]; then
+            echo "tag 已在目标位，跳过删建，仅确保发布状态"
+          elif [ -n "$current" ]; then
             gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/tags/$TAG"
             echo "旧 tag 已删除（Release 随之退草稿，下一步重新发布）"
           fi
@@ -92,17 +95,15 @@ jobs:
             [ -n "$moved" ] && break
             sleep 5
           done
-          if [ -z "$moved" ]; then
-            echo "发布未自建 tag，做一次 draft 循环重试"
-            gh api -X PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" -F draft=true > /dev/null
-            publish
-            for i in 1 2 3 4 5 6; do
-              moved=$(git ls-remote origin "refs/tags/$TAG" | cut -f1)
-              [ -n "$moved" ] && break
-              sleep 5
-            done
-          fi
           [ "$moved" = "$NEW_SHA" ] || { echo "::error::移锚后远端为 '${moved:-空}'，非目标 $NEW_SHA"; exit 1; }
+          # 「删 tag 退草稿」与「PATCH 发布」存在竞态（run5/6 实测：tag 建成而
+          # draft 未翻回），发布态单独重试收敛
+          for i in 1 2 3 4 5 6; do
+            [ "$(gh api "repos/$GITHUB_REPOSITORY/releases/$release_id" --jq .draft)" = "false" ] && break
+            echo "Release 仍为草稿，重试发布（第 $i 次）"
+            publish
+            sleep 3
+          done
           echo "tag $TAG 已移至 $NEW_SHA"
 
       - name: Verify release intact
