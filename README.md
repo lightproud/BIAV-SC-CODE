@@ -70,30 +70,29 @@ brain-in-a-vat/
 | 银芯记忆 | `memory/*.md` 人工策展 + MCP `biav-sc-memory` 4 工具 | 自造记忆栈（9 模块/做梦）2026-06 退役，定位收归平台原生上下文 |
 | 长期战略智库 | `memory/strategy/` + `memory/research/` | 长尺度调研 / 评估 / 选项分析 |
 
-## 克隆本仓（先读，省 2.3GB）
+## 克隆本仓
 
-**默认 `git clone` 会下载约 2.4GB**：三个 Release tag（`community-assets` / `community-data` /
-`unpacked-assets`）锚定着 2026-07-20 压扁前的旧历史，clone 默认抓 tags 就会把旧对象整包拖回。
-按需选档（2026-08-02 守密人裁定「仓不动、轻克隆姿势」，实测数字）：
+**默认完整克隆约 102MB**（2026-08-02 移锚后实测；此前三个 Release tag 锚定 2026-07-20
+压扁前旧历史，曾使默认克隆高达 2.4GB——移锚经过见 `CLAUDE.md` §6.3）。选档：
 
 ```bash
-# A 档：完整工作树（含 hermes 上游快照）——下载 102MB / 落盘约 306MB
-git clone --no-tags --single-branch --branch main https://github.com/lightproud/BIAV-SC-CODE.git
+# A 档：完整工作树（含 hermes 上游快照）——下载约 102MB / 落盘约 306MB
+git clone https://github.com/lightproud/BIAV-SC-CODE.git
 
 # B 档：日常轻装（不需要 hermes 上游快照时）——下载 26MB / 落盘 53MB
-git clone --no-tags --single-branch --branch main --filter=blob:none --no-checkout \
+git clone --single-branch --branch main --filter=blob:none --no-checkout \
   https://github.com/lightproud/BIAV-SC-CODE.git
 cd BIAV-SC-CODE
 git sparse-checkout set --no-cone '/*' '!/projects/silver-core-hermes/upstream/'
 git checkout main
 
-# 已有 2.4GB 旧克隆的就地瘦身（等效重克隆 A 档）
-git tag -l | xargs -r git tag -d && git gc --prune=now
+# 移锚前克隆的存量胖包（2.4GB）就地瘦身：换上新 tag 并回收旧对象
+git fetch --tags --force --prune --prune-tags origin && git gc --prune=now
 ```
 
-`--no-tags` 不影响三张抢救网的使用：Release 资产走 `scripts/restore_release_data.py` /
-GitHub Releases 页下载，不依赖本地 tag。B 档后续如需 hermes 快照，
-`git sparse-checkout set --no-cone '/*'` 一步补齐（blob 按需拉取）。
+B 档后续如需 hermes 快照，`git sparse-checkout set --no-cone '/*'` 一步补齐（blob 按需拉取）。
+Release 资产消费不受移锚影响：`scripts/restore_release_data.py` / Releases 页下载按 tag 名走，
+tag 名未变。
 
 ## 快速开始
 
