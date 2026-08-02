@@ -1,5 +1,11 @@
 # silver-core-sdk — 子项目会话上下文
 
+> **维护态（守密人 2026-08-02 换轨裁定）**：使命#2 载体已换轨 `projects/silver-core-hermes/`
+> （基于 NousResearch/hermes-agent 改造扩展）。本家族（agent / maestro / testbed）即日起
+> **只修不建**——BPT 在产 pin 消费者不断供、缺陷照修，不再开新功能战线；BPT 换装 Hermes
+> 完成后按 wiki 先例冻结（触发线 `memory/todo.md` #T78）。决策全文见 `memory/decisions.md`
+> 2026-08-02「BPT 技术路线换轨」条。
+
 ## 定位
 
 Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
