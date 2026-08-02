@@ -18,7 +18,7 @@ fire-and-forget——desktop 进程一经拉起即脱管，Electron / Chromium �
    已知解）；仍死则把两份日志尾部打印到控制台并非零退出，launcher.cmd 停窗。
 
 用法：python launch_desktop.py <整包根目录>
-环境旋钮：SILVER_CORE_LAUNCH_WAIT（守窗秒数，默认 25）。
+环境旋钮：BLACK_POOL_LAUNCH_WAIT（守窗秒数，默认 25）。
 所有输出同时打控制台与 <root>/launcher.log（与 launcher.cmd 共用一本日志）。
 """
 from __future__ import annotations
@@ -56,7 +56,7 @@ def build_env(root: pathlib.Path, base_env: dict, disable_gpu: bool = False) -> 
     # 应用显示名（上游官方旋钮）：main.ts 兜底 'Hermes' 的 APP_NAME 行被换装规则
     # 跳线保留（含 HERMES_），经环境针覆盖——launcher.cmd 已设，此处兜 CI 冒烟
     # 与直跑本脚本的路径。setdefault：守密人显式设过则不抢。
-    env.setdefault("HERMES_DESKTOP_APP_NAME", "Silver Core")
+    env.setdefault("HERMES_DESKTOP_APP_NAME", "Black Pool")
     env["HERMES_DESKTOP_HERMES_ROOT"] = str(root / "app")
     env["HERMES_DESKTOP_PYTHON"] = str(root / "venv" / "Scripts" / "python.exe")
     env["PATH"] = str(root / "venv" / "Scripts") + os.pathsep + env.get("PATH", "")
@@ -147,7 +147,7 @@ def main() -> int:
     force_utf8_stdio()
     root = pathlib.Path(sys.argv[1]).resolve()
     report = Reporter(root / "launcher.log")
-    wait_seconds = int(os.environ.get("SILVER_CORE_LAUNCH_WAIT", DEFAULT_WAIT_SECONDS))
+    wait_seconds = int(os.environ.get("BLACK_POOL_LAUNCH_WAIT", DEFAULT_WAIT_SECONDS))
 
     exe = pick_desktop_exe(root)
     if exe is None:

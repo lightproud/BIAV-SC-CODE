@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Silver Core 品牌图标生成器（守密人 2026-08-02 品牌换装补漏 #2：应用图标）。
+"""Black Pool（黑池）品牌图标生成器（守密人 2026-08-02 品牌换装补漏 #2：应用图标）。
 
 单一源图 → 全套消费尺寸，产出落 deploy/brand-assets/（rebrand.py ASSET_OVERLAYS
 组装期覆盖进树）。换图流程 = 守密人把新源图放到 deploy/brand-assets/source.png

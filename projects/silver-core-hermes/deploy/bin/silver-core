@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# Silver Core CLI 别名包裹（部署件，通用参数化——零内网值）。
-# 安装：拷入 PATH 目录（如 /usr/local/bin/）并 chmod +x。
-# SILVER_CORE_HERMES_BIN 可指向组装产物里的 hermes 入口；缺省用 PATH 上的 hermes。
-set -euo pipefail
-exec "${SILVER_CORE_HERMES_BIN:-hermes}" "$@"
