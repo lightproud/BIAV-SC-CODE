@@ -83,6 +83,10 @@ def test_rebrand_hides_about_updates_section():
         "About 自更新区隐藏 hunk 从补丁消失——多半是移 pin 后 POST_RULES 锚点"
         "失配无声 no-op，去 deploy/rebrand.py 修锚点"
     )
+    assert "{false && <UninstallSection />}" in text, (
+        "About Danger zone 隐藏 hunk 从补丁消失（守密人 2026-08-02 裁定）——"
+        "同上修 POST_RULES 锚点"
+    )
 
 
 def test_charter_skeleton_present():
