@@ -3,15 +3,15 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-08-02
-- 功能总数：**157**
+- 生成日期：2026-08-03
+- 功能总数：**156**
 - 脚本可达性：活 82 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 46 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 45 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 38 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 12 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（46）
+## CI 自动化工作流（编排入口·定时/事件平面）（45）
 
 - **`Assemble Silver Core Bundle`** _[manual]_ —   
   `.github/workflows/assemble-silver-core-bundle.yml`
@@ -66,7 +66,7 @@
   `.github/workflows/community-cold-compress.yml`
 - **`Community Platform Backup`** _[schedule/manual]_ —   
   `.github/workflows/community-platform-backup.yml`
-- **`Conformance pin drift sentinel`** _[schedule/manual]_ —   
+- **`Conformance pin drift sentinel`** _[manual]_ —   
   `.github/workflows/conformance-drift.yml`
 - **`Consolidate Releases`** _[manual]_ —   
   `.github/workflows/consolidate-releases.yml`
@@ -94,25 +94,23 @@
   `.github/workflows/edit-release.yml`
 - **`Extract Game Data from Client`** _[push/manual]_ — 解包提取客户端游戏数据（wiki 数据源）。  
   `.github/workflows/extract-game-data.yml`
-- **`SDK Family Cold Start (weekly)`** _[schedule/manual]_ —   
+- **`SDK Family Cold Start (weekly)`** _[manual]_ —   
   `.github/workflows/family-cold-start.yml`
 - **`KB Semantic Proof`** _[manual]_ —   
   `.github/workflows/kb-semantic-proof.yml`
-- **`Mutation Test (manual)`** _[manual]_ —   
-  `.github/workflows/mutation-test.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  
   `.github/workflows/recover-fanart.yml`
 - **`Refresh Claude Code Prompts`** _[schedule/manual]_ —   
   `.github/workflows/refresh-claude-code-prompts.yml`
-- **`SDK Mutation Ratchet (weekly)`** _[schedule/manual]_ —   
+- **`SDK Mutation Ratchet (weekly)`** _[manual]_ —   
   `.github/workflows/sdk-mutation-ratchet.yml`
 - **`SDK Platform Probe (manual)`** _[manual]_ —   
   `.github/workflows/sdk-platform-probe.yml`
 - **`Secret Scan`** _[schedule/push/pull_request/manual]_ —   
   `.github/workflows/secret-scan.yml`
-- **`Silver Core Maestro SDK`** _[push/pull_request]_ —   
+- **`Silver Core Maestro SDK`** _[manual]_ —   
   `.github/workflows/silver-core-maestro-sdk.yml`
-- **`Silver Core SDK`** _[schedule/push/pull_request/manual]_ —   
+- **`Silver Core SDK`** _[manual]_ —   
   `.github/workflows/silver-core-sdk.yml`
 - **`Store Patrol`** _[schedule/manual]_ —   
   `.github/workflows/store-patrol.yml`
@@ -120,7 +118,7 @@
   `.github/workflows/test-collectors.yml`
 - **`Run Tests`** _[push/pull_request/manual]_ — 运行全量 pytest 单元测试。  
   `.github/workflows/test.yml`
-- **`Testbed Patrol`** _[schedule/manual]_ —   
+- **`Testbed Patrol`** _[manual]_ —   
   `.github/workflows/testbed-patrol.yml`
 - **`Update Community News`** _[schedule/manual]_ — 每小时采集社区新闻并更新输出层。  
   `.github/workflows/update-news.yml`
@@ -195,7 +193,7 @@
   `scripts/premerge_gate.py`
 - **`refresh_claude_code_prompts.py`** _[活:cli+workflow]_ — Refresh the archived Claude Code system-prompts reference from upstream.  
   `scripts/refresh_claude_code_prompts.py`
-- **`report_render.py`** _[活:cli+command+workflow]_ — 银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。  
+- **`report_render.py`** _[活:cli+command]_ — 银芯报告渲染器 — 结构化 markdown → 统一视觉风格的 PDF + HTML。  
   `scripts/report_render.py`
 - **`restore_release_data.py`** _[活:cli+workflow]_ — 构建期从 GitHub Releases 临时还原全量档案到工作树（用完即弃，不进 git）。  
   `scripts/restore_release_data.py`
