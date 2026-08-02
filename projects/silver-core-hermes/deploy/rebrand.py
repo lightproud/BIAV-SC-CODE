@@ -98,6 +98,29 @@ POST_RULES = [
         " + ' 的定制版本'}\n"
         "          </p>\n",
     ),
+    # About 自更新区整块隐藏（守密人 2026-08-02 裁定；与文书 §2.4「生产禁用
+    # hermes update、更新只有换 tag 重测」同向——便携包里该区只会报 git checkout
+    # 错误误导用户）。{false && (<>...</>)} 包裹而非删除：对上游 diff 最小、
+    # 移 pin 冲突面最小。哨兵防静默复活见 tests/test_hermes_charter.py。
+    (
+        "      <div className=\"mx-auto mt-4 w-full max-w-2xl\">\n"
+        "        <SectionHeading icon={RefreshCw} title={a.updates} />\n",
+        "      <div className=\"mx-auto mt-4 w-full max-w-2xl\">\n"
+        "        {/* 便携包生产禁用自更新（文书 §2.4）——About 隐藏该区（2026-08-02 裁定） */}\n"
+        "        {false && (<>\n"
+        "        <SectionHeading icon={RefreshCw} title={a.updates} />\n",
+    ),
+    (
+        "          title={a.automaticUpdates}\n"
+        "        />\n"
+        "\n"
+        "        <UninstallSection />\n",
+        "          title={a.automaticUpdates}\n"
+        "        />\n"
+        "        </>)}\n"
+        "\n"
+        "        <UninstallSection />\n",
+    ),
 ]
 
 # 二进制品牌资产覆盖（2026-08-02 补漏：图标是二进制，文本规则到不了）：

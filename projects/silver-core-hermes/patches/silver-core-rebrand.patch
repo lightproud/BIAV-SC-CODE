@@ -33788,10 +33788,10 @@ index bcc6ffc..d0770aa 100644
      })
    })
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index fa0ca76..a883bc7 100644
+index fa0ca76..51b73b5 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
-@@ -102,6 +102,9 @@ export function AboutSettings() {
+@@ -102,10 +102,15 @@ export function AboutSettings() {
            <p className="mt-1 text-xs text-muted-foreground">
              {version?.appVersion ? a.version(version.appVersion) : a.versionUnavailable}
            </p>
@@ -33801,6 +33801,20 @@ index fa0ca76..a883bc7 100644
          </div>
        </div>
  
+       <div className="mx-auto mt-4 w-full max-w-2xl">
++        {/* 便携包生产禁用自更新（文书 §2.4）——About 隐藏该区（2026-08-02 裁定） */}
++        {false && (<>
+         <SectionHeading icon={RefreshCw} title={a.updates} />
+ 
+         <div
+@@ -175,6 +180,7 @@ export function AboutSettings() {
+           hint={a.branchCommit(status?.branch ?? 'unknown', status?.currentSha?.slice(0, 7) ?? 'unknown')}
+           title={a.automaticUpdates}
+         />
++        </>)}
+ 
+         <UninstallSection />
+       </div>
 diff --git a/apps/desktop/src/app/settings/billing/errors.ts b/apps/desktop/src/app/settings/billing/errors.ts
 index 0357bf4..3469aae 100644
 --- a/apps/desktop/src/app/settings/billing/errors.ts
