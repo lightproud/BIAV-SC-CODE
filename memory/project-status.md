@@ -89,7 +89,7 @@
 | maestro SDK 源文件 / 测试档 | 20 / 40 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 145 | 磁盘实况 |
-| CI 工作流 / 其中定时 | 46 / 26 | `.github/workflows/` |
+| CI 工作流 / 其中定时 | 47 / 26 | `.github/workflows/` |
 | 挂账台账 开 / 已清 | 22 / 64 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->

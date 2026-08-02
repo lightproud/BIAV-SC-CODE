@@ -1,0 +1,86 @@
+name: Retag Release Anchor
+
+# 把数据类 Release 的 git 标签重指到当前 main 顶（守密人 2026-08-02 乙案裁定：释放
+# 2.31 GiB 旧历史——三个标签 community-data / community-assets / unpacked-assets 仍钉着
+# 2026-07-20 压扁前的旧提交，clone 默认随标签把旧史整个拖下来）。
+# Release 对象与资产挂在标签名上，重指目标不影响资产；旧史自此服务端不可达、待 GitHub GC。
+# 云容器会话侧 force-push 被权限层拦截（应拦），本 workflow 为 RELEASES.md 维护约束
+# 规定的正规通道（同 delete-release.yml 安全设计）。
+#
+# 安全设计：
+#   - 仅 workflow_dispatch 手动触发
+#   - tag 白名单三选一（不接受任意标签）
+#   - confirm 必须完全等于「RETAG-<tag>」才执行
+#   - 重指前打印旧指向存档；重指后核验 Release 未变 draft、资产数与操作前一致
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: '要重指的 release tag'
+        required: true
+        type: choice
+        options:
+          - community-data
+          - community-assets
+          - unpacked-assets
+      confirm:
+        description: '二次确认：键入 RETAG-<tag>（如 RETAG-community-data），完全一致才执行'
+        required: true
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  retag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Guard confirm phrase
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "RETAG-${{ github.event.inputs.tag }}" ]; then
+            echo "confirm 不匹配（需 RETAG-${{ github.event.inputs.tag }}），拒绝执行。"
+            exit 1
+          fi
+
+      - name: Checkout (main tip)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Record pre-op state
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ github.event.inputs.tag }}"
+          echo "== pre-op tag target =="
+          git ls-remote origin "refs/tags/$TAG"
+          echo "== pre-op release state =="
+          gh api "repos/${{ github.repository }}/releases/tags/$TAG" \
+            --jq '{id, draft, tag_name, assets: (.assets | length)}' | tee /tmp/pre.json
+
+      - name: Retarget tag to main tip
+        run: |
+          TAG="${{ github.event.inputs.tag }}"
+          MAIN=$(git rev-parse HEAD)
+          echo "retarget refs/tags/$TAG -> $MAIN"
+          git push origin "+$MAIN:refs/tags/$TAG"
+
+      - name: Verify release intact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ github.event.inputs.tag }}"
+          gh api "repos/${{ github.repository }}/releases/tags/$TAG" \
+            --jq '{id, draft, tag_name, assets: (.assets | length)}' | tee /tmp/post.json
+          python3 - <<'EOF'
+          import json
+          pre = json.load(open('/tmp/pre.json'))
+          post = json.load(open('/tmp/post.json'))
+          assert post["id"] == pre["id"], f"release id changed: {pre['id']} -> {post['id']}"
+          assert post["draft"] is False, "release became draft!"
+          assert post["assets"] == pre["assets"], f"asset count changed: {pre['assets']} -> {post['assets']}"
+          print(f"release intact: id={post['id']} assets={post['assets']} draft={post['draft']}")
+          EOF
+          git ls-remote origin "refs/tags/$TAG"
