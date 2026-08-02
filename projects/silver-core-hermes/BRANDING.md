@@ -9,9 +9,10 @@
 |----|------|----|
 | 对话人格自称 | `deploy/SOUL.md.template`（身份槽 #1，原生机制零侵入） | 1 档 |
 | 兜底身份句（SOUL.md 缺席时） | 补丁：`You are Hermes Agent, … created by Nous Research.` → `You are Silver Core, …` | 1 处 |
-| 运行面显示串 `Hermes Agent` → `Silver Core` | 规则补丁（agent / hermes_cli / gateway / tools / plugins / ui-tui/src） | 159 文件 / 2,946 行 diff |
+| 运行面显示串 `Hermes Agent` → `Silver Core` | 规则补丁（agent / hermes_cli / gateway / tools / plugins / ui-tui/src / **apps / web**） | 合计 388 文件 / 13,575 行 diff |
 | `Hermes profile` → `Silver Core profile` | 同上 | 30 处 |
 | `hermes-tui` 诊断前缀 → `silver-core-tui` | 同上 | 10 处 |
+| **desktop / web / TUI 裸词 `Hermes`**（productName / 窗口标题 / i18n 全语种文案值 / UI 字面量） | 词边界正则（`BARE_WORD_DIRS`：apps · web · ui-tui/src，**守密人 2026-08-02 补充情报「内部主要消费面是 desktop」后扩入**）；标识符免疫实证（i18n 键 `updateHermes` / 类名不触，小写 `hermes` 包名/scheme 永不碰） | 含于上行合计 |
 | CLI 命令名 | `deploy/bin/silver-core` 别名包裹（零侵入） | 1 件 |
 | 钉钉显示名 | 钉钉应用后台配置（内网侧） | 部署说明 |
 
@@ -26,7 +27,8 @@
 
 ## 已知残留（照实记录，随移 pin 复测）
 
-- 非白名单目录（website / apps / docs / web 等非部署面）的品牌串未扫——不进部署产物。
+- 非白名单目录（website / docs 等纯站点面）的品牌串未扫——不进部署产物。
+  ~~apps / web 原列此处~~：守密人 2026-08-02 补充「内部主要消费面是 desktop」后已扩入扫描面（误判订正照实记录）。
 - 含 URL / `HERMES_*` 的行内伴生显示词因跳线谓词整行保留（保护优先于净度）。
 - 安装器 `install.sh` / `hermes update` 路径的品牌串未处理——生产禁用该路径（文书 §2.4）。
 

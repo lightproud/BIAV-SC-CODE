@@ -21,6 +21,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import shutil
 import subprocess
 import sys
@@ -32,9 +33,17 @@ SUB = HERE.parent
 UPSTREAM = SUB / "upstream"
 PATCH_PATH = SUB / "patches" / "silver-core-rebrand.patch"
 
-# 扫描范围：用户可感知的 runtime 面（白名单目录）。website/apps/docs 等
-# 非部署面刻意不扫（残留清单见 BRANDING.md）。
-RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins", "ui-tui/src"]
+# 扫描范围：用户可感知的 runtime 面（白名单目录）。
+# apps/（desktop 为内部主要消费面，守密人 2026-08-02 补充情报）与 web/（desktop
+# 所包 UI）在列；website/docs 等纯站点面不扫（残留清单见 BRANDING.md）。
+RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins",
+                "ui-tui/src", "apps", "web"]
+
+# 裸词换装目录：display 密集面（UI / i18n / 桌面壳）。裸词 "Hermes" 以词边界
+# 正则替换——`updateHermes`（i18n 键）/ `HermesClient`（类名）等标识符因前后
+# 紧邻字母数字下划线而免疫；小写 `hermes`（npm 包名 / 路径 / scheme）从不触碰。
+BARE_WORD_DIRS = ("apps", "web", "ui-tui/src")
+BARE_WORD_RE = re.compile(r"(?<![A-Za-z0-9_])Hermes(?![A-Za-z0-9_])")
 TEXT_SUFFIXES = {".py", ".ts", ".tsx", ".js", ".mjs", ".sh", ".yaml", ".yml", ".json"}
 
 # 特例规则（先于通用规则与跳线谓词，整句替换）：
@@ -68,12 +77,14 @@ def _skip_file(rel: Path) -> bool:
     name = rel.name
     if "LICENSE" in name or name.endswith((".md", ".lock", ".min.js")):
         return True
+    if name in ("package-lock.json", "pnpm-lock.yaml", "yarn.lock"):
+        return True
     if "/tests/" in f"/{s}" or name.startswith("test_") or name.endswith("_test.py"):
         return True
     return rel.suffix not in TEXT_SUFFIXES
 
 
-def transform_text(text: str) -> str:
+def transform_text(text: str, bare_word: bool = False) -> str:
     for old, new in SPECIAL_RULES:
         text = text.replace(old, new)
     out_lines = []
@@ -83,6 +94,8 @@ def transform_text(text: str) -> str:
             continue
         for old, new in GENERIC_RULES:
             line = line.replace(old, new)
+        if bare_word:
+            line = BARE_WORD_RE.sub("Silver Core", line)
         out_lines.append(line)
     return "".join(out_lines)
 
@@ -104,7 +117,8 @@ def apply_tree(root: Path) -> int:
                 text = p.read_text(encoding="utf-8")
             except (UnicodeDecodeError, OSError):
                 continue
-            new = transform_text(text)
+            bare = rel.as_posix().startswith(BARE_WORD_DIRS)
+            new = transform_text(text, bare_word=bare)
             if new != text:
                 p.write_text(new, encoding="utf-8")
                 changed += 1
