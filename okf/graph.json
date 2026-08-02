@@ -2,7 +2,7 @@
   "generated": "2026-08-02",
   "stats": {
     "nodes": 394,
-    "edges": 433
+    "edges": 437
   },
   "nodes": [
     {
@@ -4724,6 +4724,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77923.md",
+      "rel": "提及:卡斯托尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/95786.md",
       "rel": "提及:杜勒赛因",
       "rel_type": "mention"
@@ -4777,12 +4783,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
-      "rel_type": "mention"
-    },
-    {
       "source": "/community/community-reddit.md",
       "target": "/characters/15560.md",
       "rel": "提及:Pandia",
@@ -4804,6 +4804,12 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/15567.md",
       "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
       "rel_type": "mention"
     },
     {
@@ -4867,12 +4873,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4922,8 +4922,20 @@
     },
     {
       "source": "/community/community-youtube.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:熔朵",
       "rel_type": "mention"
     },
     {
@@ -6224,6 +6236,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77923.md",
+      "rel": "提及:卡斯托尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/95786.md",
       "rel": "提及:杜勒赛因",
       "rel_type": "mention"
@@ -6277,12 +6295,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
-      "rel_type": "mention"
-    },
-    {
       "source": "/sources/reddit.md",
       "target": "/characters/15560.md",
       "rel": "提及:Pandia",
@@ -6310,6 +6322,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/15567.md",
       "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
       "rel_type": "mention"
     },
     {
@@ -6373,15 +6391,21 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/weibo.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "source": "/sources/youtube.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
       "rel_type": "mention"
     },
     {
       "source": "/sources/youtube.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:熔朵",
       "rel_type": "mention"
     },
     {
