@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-02T13:17:26.009292+00:00",
+  "collected_at": "2026-08-02T16:00:45.083486+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -18,22 +18,7 @@
       "voted_up": true,
       "review": "Шикарная мрачная ККИ. Мой любимый формат геймплея с широкими возможностями для билдостроения и формирования колоды. Множество героев, четыре разные фракции со своими механиками.\r\nПри этом сюжет просто шикарный, очень интересно погружаться в эту вселенную, от чтения оторваться почти так же сложно, как от любования на персонажей и их карты.\r\nЖалею, что не нашла этот бриллиант раньше.",
       "timestamp_created": 1785601735,
-      "playtime_forever": 3053
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-01T15:43:18+00:00",
-      "lang": "english",
-      "title": "[正面] 🎮 \"Morimens has one of the most enjoyable combat s...",
-      "summary": "🎮 \"Morimens has one of the most enjoyable combat systems I've played... buried under a confusing story and rough translation.\"\r\n\r\nI've genuinely enjoyed my time with Morimens.\r\n\r\nThe combat is excellent.\r\nThe deck-building is addictive.\r\nEach Kingdom has its own identity, and discovering how they play is one of the game's biggest strengths.\r\n\r\nAfter trying every Kingdom, Aequor became my favorite.\r\n\r\nIt doesn't rely on a single explosive turn.\r\nInstead, it constantly builds momentum through summons, shields, and passive attacks. Even when your hand is empty, the fight doesn't stop—your summons keep applying pressure. That kind of gameplay feels rewarding and gives every battle a unique rhythm.\r\n\r\nThe game is also surprisingly generous for F2P players.\r\nI've never felt forced to spend money, and progression has been smooth so far.\r\n\r\nThen... the story starts.\r\n\r\nThat's where Morimens loses me.\r\n\r\nThe game introduces you as a Guardian in a world on the brink of collapse, setting up what feels like an epic apocalyptic journey.\r\n\r\nA few moments later, you're suddenly solving detective cases in an orphanage.\r\n\r\nThen come wax creatures.\r\nRoger.\r\nOld journals.\r\nMysterious experiments.\r\nVoices in your head.\r\nCharacters making decisions that are difficult to understand.\r\n\r\nInstead of building mystery, the story often creates confusion.\r\n\r\nThe translation doesn't help either.\r\n\r\nI've encountered awkward dialogue, untranslated Chinese text appearing in conversations, debug strings like \"Current\", and even UI tags showing up during story scenes.\r\n\r\nThose moments constantly break immersion.\r\n\r\nNone of these issues ruin the gameplay.\r\n\r\nBut they make it much harder to care about a world that actually seems fascinating.\r\n\r\nIn short:\r\n\r\n✅ Fantastic combat.\r\n\r\n✅ Great deck-building.\r\n\r\n✅ Every Kingdom feels different.\r\n\r\n✅ Very F2P-friendly.\r\n\r\n❌ Storytelling lacks clarity.\r\n\r\n❌ Translation needs significant polish.\r\n\r\n❌ Important scenes often become confusing because of awkward writing and localization issues.\r\n\r\nMorimens has the foundations of an excellent game.\r\n\r\nI just hope the developers give the same amount of attention to the narrative and localization that they gave to the combat system.\r\n\r\nI'm recommending it... because the gameplay deserves it.\r\n\r\nI'm criticizing it... because the story deserves better.\r\n\r\n✍️ Jrd Mushu",
-      "url": "https://steamcommunity.com/profiles/76561197991670060/recommended/3052450",
-      "author": "76561197991670060",
-      "engagement": 1,
-      "language": "english",
-      "voted_up": true,
-      "review": "🎮 \"Morimens has one of the most enjoyable combat systems I've played... buried under a confusing story and rough translation.\"\r\n\r\nI've genuinely enjoyed my time with Morimens.\r\n\r\nThe combat is excellent.\r\nThe deck-building is addictive.\r\nEach Kingdom has its own identity, and discovering how they play is one of the game's biggest strengths.\r\n\r\nAfter trying every Kingdom, Aequor became my favorite.\r\n\r\nIt doesn't rely on a single explosive turn.\r\nInstead, it constantly builds momentum through summons, shields, and passive attacks. Even when your hand is empty, the fight doesn't stop—your summons keep applying pressure. That kind of gameplay feels rewarding and gives every battle a unique rhythm.\r\n\r\nThe game is also surprisingly generous for F2P players.\r\nI've never felt forced to spend money, and progression has been smooth so far.\r\n\r\nThen... the story starts.\r\n\r\nThat's where Morimens loses me.\r\n\r\nThe game introduces you as a Guardian in a world on the brink of collapse, setting up what feels like an epic apocalyptic journey.\r\n\r\nA few moments later, you're suddenly solving detective cases in an orphanage.\r\n\r\nThen come wax creatures.\r\nRoger.\r\nOld journals.\r\nMysterious experiments.\r\nVoices in your head.\r\nCharacters making decisions that are difficult to understand.\r\n\r\nInstead of building mystery, the story often creates confusion.\r\n\r\nThe translation doesn't help either.\r\n\r\nI've encountered awkward dialogue, untranslated Chinese text appearing in conversations, debug strings like \"Current\", and even UI tags showing up during story scenes.\r\n\r\nThose moments constantly break immersion.\r\n\r\nNone of these issues ruin the gameplay.\r\n\r\nBut they make it much harder to care about a world that actually seems fascinating.\r\n\r\nIn short:\r\n\r\n✅ Fantastic combat.\r\n\r\n✅ Great deck-building.\r\n\r\n✅ Every Kingdom feels different.\r\n\r\n✅ Very F2P-friendly.\r\n\r\n❌ Storytelling lacks clarity.\r\n\r\n❌ Translation needs significant polish.\r\n\r\n❌ Important scenes often become confusing because of awkward writing and localization issues.\r\n\r\nMorimens has the foundations of an excellent game.\r\n\r\nI just hope the developers give the same amount of attention to the narrative and localization that they gave to the combat system.\r\n\r\nI'm recommending it... because the gameplay deserves it.\r\n\r\nI'm criticizing it... because the story deserves better.\r\n\r\n✍️ Jrd Mushu",
-      "timestamp_created": 1785598998,
-      "playtime_forever": 1617
+      "playtime_forever": 3150
     },
     {
       "source": "steam",
@@ -138,22 +123,7 @@
       "voted_up": true,
       "review": "Довольно интересная",
       "timestamp_created": 1785604584,
-      "playtime_forever": 728
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-01T14:07:35+00:00",
-      "lang": "english",
-      "title": "[正面] You can tell that the team behind this game is pas...",
-      "summary": "You can tell that the team behind this game is passionate, from the beautiful art to the expensive lore, this game is highly recommended if you enjoy Eldritch mythos.\nIt has an identity of it's own that helps it stand out. From the start it throws you into this wolrd and expects you to keep up, slowly introducing new elements as they become relevent.\nThe gameplay is also a highlight, it may seem simple at first but this is one of those games where order of operation is really important. [strike] ...the amount of times I ended a turn only to realize I could have done it better... [/strike]\nBosses will hit you like a truck and negative effects will stack up the longer you go, but thats true for you aswell...\nIf you don't mind Gacha and are looking for a mostly bitter sometimes sweet story might be worth giving this one a try.\n[strike] ...and May the Silver Key light your path... [/strike]\n                                      .✦ ݁˖",
-      "url": "https://steamcommunity.com/profiles/76561198666244808/recommended/3052450",
-      "author": "76561198666244808",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "You can tell that the team behind this game is passionate, from the beautiful art to the expensive lore, this game is highly recommended if you enjoy Eldritch mythos.\nIt has an identity of it's own that helps it stand out. From the start it throws you into this wolrd and expects you to keep up, slowly introducing new elements as they become relevent.\nThe gameplay is also a highlight, it may seem simple at first but this is one of those games where order of operation is really important. [strike] ...the amount of times I ended a turn only to realize I could have done it better... [/strike]\nBosses will hit you like a truck and negative effects will stack up the longer you go, but thats true for you aswell...\nIf you don't mind Gacha and are looking for a mostly bitter sometimes sweet story might be worth giving this one a try.\n[strike] ...and May the Silver Key light your path... [/strike]\n                                      .✦ ݁˖",
-      "timestamp_created": 1785593255,
-      "playtime_forever": 265
+      "playtime_forever": 752
     }
   ]
 }
