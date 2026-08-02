@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-02T02:33:58.148345+00:00",
+  "collected_at": "2026-08-02T05:57:06.043677+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -48,7 +48,22 @@
       "voted_up": true,
       "review": "🎮 \"Morimens has one of the most enjoyable combat systems I've played... buried under a confusing story and rough translation.\"\r\n\r\nI've genuinely enjoyed my time with Morimens.\r\n\r\nThe combat is excellent.\r\nThe deck-building is addictive.\r\nEach Kingdom has its own identity, and discovering how they play is one of the game's biggest strengths.\r\n\r\nAfter trying every Kingdom, Aequor became my favorite.\r\n\r\nIt doesn't rely on a single explosive turn.\r\nInstead, it constantly builds momentum through summons, shields, and passive attacks. Even when your hand is empty, the fight doesn't stop—your summons keep applying pressure. That kind of gameplay feels rewarding and gives every battle a unique rhythm.\r\n\r\nThe game is also surprisingly generous for F2P players.\r\nI've never felt forced to spend money, and progression has been smooth so far.\r\n\r\nThen... the story starts.\r\n\r\nThat's where Morimens loses me.\r\n\r\nThe game introduces you as a Guardian in a world on the brink of collapse, setting up what feels like an epic apocalyptic journey.\r\n\r\nA few moments later, you're suddenly solving detective cases in an orphanage.\r\n\r\nThen come wax creatures.\r\nRoger.\r\nOld journals.\r\nMysterious experiments.\r\nVoices in your head.\r\nCharacters making decisions that are difficult to understand.\r\n\r\nInstead of building mystery, the story often creates confusion.\r\n\r\nThe translation doesn't help either.\r\n\r\nI've encountered awkward dialogue, untranslated Chinese text appearing in conversations, debug strings like \"Current\", and even UI tags showing up during story scenes.\r\n\r\nThose moments constantly break immersion.\r\n\r\nNone of these issues ruin the gameplay.\r\n\r\nBut they make it much harder to care about a world that actually seems fascinating.\r\n\r\nIn short:\r\n\r\n✅ Fantastic combat.\r\n\r\n✅ Great deck-building.\r\n\r\n✅ Every Kingdom feels different.\r\n\r\n✅ Very F2P-friendly.\r\n\r\n❌ Storytelling lacks clarity.\r\n\r\n❌ Translation needs significant polish.\r\n\r\n❌ Important scenes often become confusing because of awkward writing and localization issues.\r\n\r\nMorimens has the foundations of an excellent game.\r\n\r\nI just hope the developers give the same amount of attention to the narrative and localization that they gave to the combat system.\r\n\r\nI'm recommending it... because the gameplay deserves it.\r\n\r\nI'm criticizing it... because the story deserves better.\r\n\r\n✍️ Jrd Mushu",
       "timestamp_created": 1785598998,
-      "playtime_forever": 1233
+      "playtime_forever": 1467
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-02T02:33:10+00:00",
+      "lang": "schinese",
+      "title": "[正面] 美术很强，游戏一般，可惜败在了运营上",
+      "summary": "美术很强，游戏一般，可惜败在了运营上",
+      "url": "https://steamcommunity.com/profiles/76561199804953535/recommended/3052450",
+      "author": "76561199804953535",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "美术很强，游戏一般，可惜败在了运营上",
+      "timestamp_created": 1785637990,
+      "playtime_forever": 2946
     },
     {
       "source": "steam",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "游戏是好游戏 但笑猫你把老boss当精英塞两个进道中 是真的要抓走你的麻麻了，差个福袋全图鉴  启灵和练度越来越高 怎么反而融灾打的更满头大汗",
       "timestamp_created": 1785605034,
-      "playtime_forever": 4508
+      "playtime_forever": 4520
     },
     {
       "source": "steam",
@@ -123,7 +138,7 @@
       "voted_up": true,
       "review": "草泥马，还有刀子，我十个小时辛辛苦苦去肝主线，就TM喂我吃刀子",
       "timestamp_created": 1785572880,
-      "playtime_forever": 669
+      "playtime_forever": 670
     }
   ]
 }
