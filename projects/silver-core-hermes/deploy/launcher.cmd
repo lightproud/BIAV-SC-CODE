@@ -9,6 +9,10 @@ set "ROOT=%~dp0"
 set "HERMES_HOME=%ROOT%home"
 set "PATH=%ROOT%venv\Scripts;%PATH%"
 if not exist "%HERMES_HOME%" mkdir "%HERMES_HOME%"
+rem venv 自愈：pyvenv.cfg 的 home 是绝对路径，包被复制/搬移后须指回当前位置
+rem （基座 CPython 自身便携，用它跑修复脚本；幂等毫秒级）。
+for /d %%D in ("%ROOT%python\cpython-*") do set "PYHOME=%%~fD"
+"%PYHOME%\python.exe" "%ROOT%fix_venv_path.py" "%ROOT%" >nul
 for %%F in ("%ROOT%desktop\*.exe") do (
   start "Silver Core" "%%~fF"
   goto :eof

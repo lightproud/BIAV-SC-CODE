@@ -73,6 +73,7 @@ jobs:
       - name: Launcher + bundle notes
         run: |
           cp projects/silver-core-hermes/deploy/launcher.cmd SilverCore/
+          cp projects/silver-core-hermes/deploy/fix_venv_path.py SilverCore/
           {
             echo "Silver Core portable bundle (win64, merged single directory)"
             echo "pin: $(grep -m1 'pin tag' projects/silver-core-hermes/UPSTREAM.md || true)"
@@ -82,14 +83,20 @@ jobs:
             echo "config: endpoints/credentials are injected on the intranet side (never bundled)"
           } > SilverCore/BUNDLE-INFO.txt
 
-      - name: Relocatability + merge smoke test (moved path)
+      - name: Relocatability + merge smoke test (moved path, launcher self-heal flow)
         run: |
           mv SilverCore /c/silver-core-smoke
+          # 与 launcher.cmd 同一自愈机制：基座 CPython 修 pyvenv.cfg home 后 venv 方可用
+          PYHOME=$(ls -d /c/silver-core-smoke/python/cpython-*)
+          "$PYHOME/python.exe" /c/silver-core-smoke/fix_venv_path.py 'C:\silver-core-smoke'
           /c/silver-core-smoke/venv/Scripts/python.exe --version
           cd /c/silver-core-smoke/app
           /c/silver-core-smoke/venv/Scripts/python.exe -c "import agent, hermes_cli; print('runtime imports OK')"
           ls /c/silver-core-smoke/desktop/*.exe
           mv /c/silver-core-smoke SilverCore
+          # 回搬后把 home 修回最终打包路径，保证 zip 内初值有效（launcher 首启仍会再自愈）
+          PYHOME2=$(ls -d "$(pwd)/SilverCore/python/cpython-"*)
+          "$PYHOME2/python.exe" SilverCore/fix_venv_path.py "$(cygpath -w "$(pwd)/SilverCore")"
 
       - name: Zip (transport container only)
         run: 7z a -mx=3 "silver-core-win64.zip" SilverCore > /dev/null && ls -lh silver-core-win64.zip
