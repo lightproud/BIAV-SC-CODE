@@ -47,6 +47,17 @@ Windows venv 不可跨平台组装，故必须 Windows 台）单 job 产**唯一
 **合规联动（守密人 2026-08-02 交互裁定已闭）**：文书裁 7 报备口径不变（常规迭代不另行申报），
 其成立前提修订为「数据面与现状完全一致 + 免安装器便携分发（与 BPT 现状同形）」。
 
+## 品牌图标（2026-08-02 补漏 #2）
+
+- 源：`deploy/brand-assets/`（icon.png / icon.ico / apple-touch-icon.png / brand-tile.jpg），
+  由 `deploy/gen_brand_assets.py` 从**单一源图**生成；组装期经 rebrand.py `ASSET_OVERLAYS`
+  覆盖进树（补丁亦以 `--binary` 段等效承载，两条应用路径效果相同）。
+- **换图流程（守密人正式供图后）**：把新图存为 `deploy/brand-assets/source.png` →
+  `python3 deploy/gen_brand_assets.py` → `python3 deploy/rebrand.py` → 提交三处产物。
+  正式图未落仓前以仓内艾瑞卡立绘占位（2026-08-02 裁定）。
+- 应用显示名（About 面板 / 菜单 / 任务管理器）走上游官方环境针
+  `HERMES_DESKTOP_APP_NAME=Silver Core`（launcher.cmd 与 launch_desktop.py 已内置）。
+
 ## 补丁维护（移 pin 例程的一部分）
 
 - 补丁**不手写**：规则与排除谓词在 `deploy/rebrand.py`，`patches/silver-core-rebrand.patch`

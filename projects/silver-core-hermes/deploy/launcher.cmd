@@ -19,6 +19,10 @@ echo [%date% %time%] launcher start ROOT=%ROOT% > "%LOG%"
 echo Silver Core 启动中，请稍候（本窗会显示进度，失败会停窗给出原因）...
 
 set "HERMES_HOME=%ROOT%home"
+rem 应用显示名（上游官方旋钮）：main.ts 的 APP_NAME 行因含 HERMES_ 被换装规则
+rem 跳线保留，兜底值仍是 'Hermes'——app.setName / About 面板 / 菜单标签全跟它走，
+rem 任务管理器与 Alt-Tab 因此漏显 Hermes。经环境针覆盖为 Silver Core（零侵入）。
+set "HERMES_DESKTOP_APP_NAME=Silver Core"
 set "PATH=%ROOT%venv\Scripts;%PATH%"
 if not exist "%HERMES_HOME%" mkdir "%HERMES_HOME%"
 

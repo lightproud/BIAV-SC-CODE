@@ -9,10 +9,15 @@
 |----|------|----|
 | 对话人格自称 | `deploy/SOUL.md.template`（身份槽 #1，原生机制零侵入） | 1 档 |
 | 兜底身份句（SOUL.md 缺席时） | 补丁：`You are Hermes Agent, … created by Nous Research.` → `You are Silver Core, …` | 1 处 |
-| 运行面显示串 `Hermes Agent` → `Silver Core` | 规则补丁（agent / hermes_cli / gateway / tools / plugins / ui-tui/src / **apps / web**） | 合计 388 文件 / 13,575 行 diff |
+| 运行面显示串 `Hermes Agent` → `Silver Core` | 规则补丁（agent / hermes_cli / gateway / tools / plugins / ui-tui/src / **apps / web**） | 合计 390 文件 / 43,718 行 diff（含二进制 b85 段） |
 | `Hermes profile` → `Silver Core profile` | 同上 | 30 处 |
 | `hermes-tui` 诊断前缀 → `silver-core-tui` | 同上 | 10 处 |
-| **desktop / web / TUI 裸词 `Hermes`**（productName / 窗口标题 / i18n 全语种文案值 / UI 字面量） | 词边界正则（`BARE_WORD_DIRS`：apps · web · ui-tui/src，**守密人 2026-08-02 补充情报「内部主要消费面是 desktop」后扩入**）；标识符免疫实证（i18n 键 `updateHermes` / 类名不触，小写 `hermes` 包名/scheme 永不碰） | 含于上行合计 |
+| **desktop / web / TUI 裸词 `Hermes`**（productName / 窗口标题 / i18n 全语种文案值 / UI 字面量） | 词边界正则（`BARE_WORD_DIRS`：apps · web · ui-tui/src，**守密人 2026-08-02 补充情报「内部主要消费面是 desktop」后扩入**）；标识符免疫实证（i18n 键 `updateHermes` / 类名不触，小写 `hermes` 包名/scheme 永不碰）；**连字符入免疫边界（2026-08-02 生产事故订正，lesson #57）**——`X-Hermes-Session-Token` 头名曾被换成含空格非法头名，desktop 设置页全线 ERR_INVALID_HTTP_TOKEN 崩加载 | 含于上行合计 |
+| **大写字标 `HERMES AGENT` → `SILVER CORE`**（对话空态巨幅 wordmark / bootstrap-installer 欢迎页，2026-08-02 补漏 #1） | 通用规则追加（大小写敏感故原三条全部漏它） | 5 处 |
+| **窗口标题 `<title>`**（desktop / web / bootstrap-installer 的 index.html——任务栏 / Alt-Tab 显示名实际来源，2026-08-02 补漏 #3） | `.html` 扩入扫描后缀 | 3 档 |
+| **应用显示名 APP_NAME**（About 面板 / 菜单标签 / `app.setName`；其兜底行含 `HERMES_` 被跳线保留，2026-08-02 补漏 #3） | 上游官方环境针 `HERMES_DESKTOP_APP_NAME=Silver Core`（launcher.cmd + launch_desktop.py 双设，零侵入） | 2 件 |
+| **应用图标 / 品牌图像**（win exe · 任务栏 · 托盘 · 窗口图标 · favicon · About 页 BrandMark，2026-08-02 补漏 #2） | 二进制覆盖 `deploy/brand-assets/`（`gen_brand_assets.py` 单源图生成全套；rebrand.py `ASSET_OVERLAYS` 组装期覆盖 + 补丁 `--binary` 段等效承载）。**现为艾瑞卡立绘占位**——守密人 2026-08-02 裁定另行供图，正式图落 `deploy/brand-assets/source.png` 后重跑两生成器即换装 | 4 件 |
+| **About 页出身声明**（守密人 2026-08-02 裁定：直接说明「B.I.A.V. Studio 基于 Hermes <版本> 的定制版本」） | 后置全文规则锚定 about-settings.tsx 插入，版本号动态渲染 | 1 处 |
 | CLI 命令名 | `deploy/bin/silver-core` 别名包裹（零侵入） | 1 件 |
 | 钉钉显示名 | 钉钉应用后台配置（内网侧） | 部署说明 |
 
@@ -31,6 +36,11 @@
   ~~apps / web 原列此处~~：守密人 2026-08-02 补充「内部主要消费面是 desktop」后已扩入扫描面（误判订正照实记录）。
 - 含 URL / `HERMES_*` 的行内伴生显示词因跳线谓词整行保留（保护优先于净度）。
 - 安装器 `install.sh` / `hermes update` 路径的品牌串未处理——生产禁用该路径（文书 §2.4）。
+- **连字复合显示词**（德/荷/匈 i18n 的 `Hermes-Plugins` 类、UA 值 `Hermes-Desktop`、
+  artifactName `Hermes-<版本>`）随连字符免疫边界一并保留（2026-08-02 头名事故的代价面：
+  保护功能标识符优先于这些次要语种/内部名的净度；团队用户面为中文，不受影响）。
+- mac 图标 `assets/icon.icns` 未覆盖（便携包只出 win）；`public/hermes.png` /
+  `hermes-sprite.png` / `hermes-frames/`（宠物动画帧素材）未覆盖。
 
 维护：补丁由 `deploy/rebrand.py` 规则引擎确定性生成，移 pin 重生成、`--check` 防漂移；
 残留升格诉求出现时改规则不改补丁。

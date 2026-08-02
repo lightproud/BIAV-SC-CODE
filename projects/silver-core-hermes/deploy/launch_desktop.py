@@ -53,6 +53,10 @@ def build_env(root: pathlib.Path, base_env: dict, disable_gpu: bool = False) -> 
     """desktop 进程环境：HERMES_HOME 指包内 + 确定性后端两针 + venv 前置 PATH。"""
     env = dict(base_env)
     env["HERMES_HOME"] = str(root / "home")
+    # 应用显示名（上游官方旋钮）：main.ts 兜底 'Hermes' 的 APP_NAME 行被换装规则
+    # 跳线保留（含 HERMES_），经环境针覆盖——launcher.cmd 已设，此处兜 CI 冒烟
+    # 与直跑本脚本的路径。setdefault：守密人显式设过则不抢。
+    env.setdefault("HERMES_DESKTOP_APP_NAME", "Silver Core")
     env["HERMES_DESKTOP_HERMES_ROOT"] = str(root / "app")
     env["HERMES_DESKTOP_PYTHON"] = str(root / "venv" / "Scripts" / "python.exe")
     env["PATH"] = str(root / "venv" / "Scripts") + os.pathsep + env.get("PATH", "")

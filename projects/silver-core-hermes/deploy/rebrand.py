@@ -42,9 +42,16 @@ RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins",
 # 裸词换装目录：display 密集面（UI / i18n / 桌面壳）。裸词 "Hermes" 以词边界
 # 正则替换——`updateHermes`（i18n 键）/ `HermesClient`（类名）等标识符因前后
 # 紧邻字母数字下划线而免疫；小写 `hermes`（npm 包名 / 路径 / scheme）从不触碰。
+# 连字符同列免疫边界（2026-08-02 生产事故订正）：`X-Hermes-Session-Token` 是
+# HTTP 头名（功能标识符），被换成含空格的 "X-Silver Core-..." 即非法头名，
+# desktop 全部设置页（Providers / Tools & Keys / Model）随之 ERR_INVALID_HTTP_TOKEN
+# 崩加载。代价：德/荷式连字复合词（"Hermes-Plugins"）留在残留清单——保护优先于净度。
 BARE_WORD_DIRS = ("apps", "web", "ui-tui/src")
-BARE_WORD_RE = re.compile(r"(?<![A-Za-z0-9_])Hermes(?![A-Za-z0-9_])")
-TEXT_SUFFIXES = {".py", ".ts", ".tsx", ".js", ".mjs", ".sh", ".yaml", ".yml", ".json"}
+BARE_WORD_RE = re.compile(r"(?<![A-Za-z0-9_-])Hermes(?![A-Za-z0-9_-])")
+# .html 在列（2026-08-02 补漏）：desktop/web/bootstrap-installer 的 <title> 是
+# 任务栏 / Alt-Tab 显示名的实际来源（Electron 加载页面后 document.title 覆盖窗口题）。
+TEXT_SUFFIXES = {".py", ".ts", ".tsx", ".js", ".mjs", ".sh", ".yaml", ".yml", ".json",
+                 ".html"}
 
 # 特例规则（先于通用规则与跳线谓词，整句替换）：
 # 兜底身份句——SOUL.md 缺席时的产品自述。品牌换 Silver Core；
@@ -69,6 +76,39 @@ GENERIC_RULES = [
     ("Hermes Agent", "Silver Core"),
     ("Hermes profile", "Silver Core profile"),
     ("hermes-tui", "silver-core-tui"),
+    # 全大写字标（2026-08-02 补漏）：desktop 对话空态 / bootstrap-installer 欢迎页
+    # 的巨幅 wordmark 是 'HERMES AGENT'，大小写敏感的前三条全部漏网。
+    ("HERMES AGENT", "SILVER CORE"),
+]
+
+# 后置全文规则（在逐行规则之后对全文应用）：插入体里允许保留 "Hermes" 字样
+# （来源事实陈述），因为不会再被后续规则二次换装。
+# About 页出身声明（守密人 2026-08-02 裁定「直接说明这是 B.I.A.V. Studio
+# 基于 Hermes 0.19.1 的定制版本」）：锚定 about-settings.tsx 版本行 JSX，
+# 版本号取运行时 appVersion 动态渲染，移 pin 后无需改词。
+POST_RULES = [
+    (
+        "            {version?.appVersion ? a.version(version.appVersion)"
+        " : a.versionUnavailable}\n          </p>\n",
+        "            {version?.appVersion ? a.version(version.appVersion)"
+        " : a.versionUnavailable}\n          </p>\n"
+        "          <p className=\"mt-1 text-xs text-muted-foreground\">\n"
+        "            {'B.I.A.V. Studio 基于 Hermes Agent'"
+        " + (version?.appVersion ? ` ${version.appVersion}` : '')"
+        " + ' 的定制版本'}\n"
+        "          </p>\n",
+    ),
+]
+
+# 二进制品牌资产覆盖（2026-08-02 补漏：图标是二进制，文本规则到不了）：
+# 源在 deploy/brand-assets/（由 deploy/gen_brand_assets.py 从单一源图生成，
+# 守密人换图 = 换源图重跑生成器再重生成补丁），覆盖进组装树的消费点。
+# mac 的 assets/icon.icns 刻意不覆盖（便携包只出 win，残留清单见 BRANDING.md）。
+ASSET_OVERLAYS = [
+    ("icon.png", "apps/desktop/assets/icon.png"),          # electron-builder 图标基座
+    ("icon.ico", "apps/desktop/assets/icon.ico"),          # win exe / 任务栏 / 托盘
+    ("apple-touch-icon.png", "apps/desktop/public/apple-touch-icon.png"),  # 运行时窗口图标 + favicon
+    ("brand-tile.jpg", "apps/desktop/public/nous-girl.jpg"),  # About 页 BrandMark 品牌位
 ]
 
 # 文件级排除：测试 / LICENSE / 锁文件 / 文档。
@@ -97,7 +137,27 @@ def transform_text(text: str, bare_word: bool = False) -> str:
         if bare_word:
             line = BARE_WORD_RE.sub("Silver Core", line)
         out_lines.append(line)
-    return "".join(out_lines)
+    text = "".join(out_lines)
+    for old, new in POST_RULES:
+        text = text.replace(old, new)
+    return text
+
+
+def overlay_assets(root: Path) -> int:
+    """把 deploy/brand-assets/ 的品牌二进制资产覆盖进组装树，返回覆盖文件数。"""
+    src_dir = HERE / "brand-assets"
+    replaced = 0
+    for src_name, dest_rel in ASSET_OVERLAYS:
+        src = src_dir / src_name
+        dest = root / dest_rel
+        if not src.is_file():
+            print(f"[warn] brand asset missing, skip: {src}", file=sys.stderr)
+            continue
+        if not dest.parent.is_dir():
+            continue
+        shutil.copyfile(src, dest)
+        replaced += 1
+    return replaced
 
 
 def apply_tree(root: Path) -> int:
@@ -122,6 +182,7 @@ def apply_tree(root: Path) -> int:
             if new != text:
                 p.write_text(new, encoding="utf-8")
                 changed += 1
+    changed += overlay_assets(root)
     return changed
 
 
@@ -140,7 +201,9 @@ def generate_patch() -> str:
         run("add", "-A")
         run("commit", "-qm", "pristine")
         n = apply_tree(work)
-        diff = run("diff").stdout
+        # --binary：图标类品牌资产覆盖以 GIT binary patch 形式入补丁，
+        # git apply 路径与 --apply 路径保持效果等同（deploy/README.md 二选一承诺）。
+        diff = run("diff", "--binary").stdout
         print(f"transformed files: {n}", file=sys.stderr)
         return diff
 
