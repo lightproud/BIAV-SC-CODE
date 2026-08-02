@@ -88,9 +88,9 @@
 | agent SDK 源文件 / 测试档 | 141 / 213 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 20 / 40 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
-| Python 测试档 | 144 | 磁盘实况 |
+| Python 测试档 | 145 | 磁盘实况 |
 | CI 工作流 / 其中定时 | 45 / 26 | `.github/workflows/` |
-| 挂账台账 开 / 已清 | 22 / 63 | `memory/todo.md` |
+| 挂账台账 开 / 已清 | 23 / 63 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->
 
@@ -349,9 +349,13 @@
   承载 / 上游跟随 + 扩展层 / 定名 silver-core-hermes）落档，脚手架 CONTEXT.md 建立；同日快照
   vendor 入 `upstream/`（pin `v2026.7.30`，策略 release tag 优先）并**容器内全量实证上游套件**
   （2,471 文件 / 22,766 过 / 40 环境伪影零真缺陷，报告见 Resource/repo-engineering）。
-- **M1 上游深读评估（待点火，#T79）**：扩展点覆盖度测绘（skills / tools / transports / gateway）
-  + BPT 需求缺口对照（BPT 已依赖的 SDK 能力面 vs Hermes 原生能力面差集）+ 改造层工程形态设计
-  （上游消费方式 / 银芯→黑池输出物形态），产出评估报告呈裁后开工。
+- **施工边界文书接收（2026-08-02 同日）**：Chat 侧（Fable）+ 守密人收敛的 15 条裁定 + 禁止十条 +
+  验证起手式即时生效，原文归档 `Public-Info-Pool/Resource/repo-engineering/bpt-hermes-charter-20260802.md`
+  （唯一权威）。核心零侵入 / §1.1-HC 切面化「代码公开配置内网」/ idealab 唯一通道 / Maestro 概念清零。
+  upstream/ 定位经守密人澄清 = **银芯开发镜像**（SVN vendor 生产供应链在黑池侧）；§2.2 骨架已建，
+  patches 空 + 骨架完整由 `tests/test_hermes_charter.py` 机械守卫。
+- **当前执行面 = 起手式 Code 侧三项（#T79）**：骨架已建；BPT 核心功能对照清单初稿（裁 14 迁移判定尺）；
+  idealab provider 配置材料（参数化模板入 deploy/，零内网值）。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
@@ -364,10 +368,11 @@
 > （Electron）脱离被禁的 `claude.exe` 子进程引擎。**定位辨析见「## 子项目状态」表下方例外辨析**——
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 >
-> **维护态（守密人 2026-08-02 换轨裁定）**：使命#2 载体换轨 `projects/silver-core-hermes/`
-> （见上节）；本家族三包（agent / maestro / testbed）即日起**只修不建**——BPT 在产 pin
-> 消费者不断供、缺陷照修，BPT 换装 Hermes 完成后按 wiki 先例冻结（成果保留不删不派发，
-> 触发线 `memory/todo.md` #T78）。
+> **维护态（守密人 2026-08-02 换轨裁定；同日施工边界文书裁 3 收紧）**：使命#2 载体换轨
+> `projects/silver-core-hermes/`（见上节）；本家族三包（agent / maestro / testbed）即日起
+> **纯维稳**——版本冻结、仅修影响生产的 bug、零新功能，BPT 在产 pin 消费者不断供；
+> 迁移终裁 = BPT 核心功能对照表逐项打勾齐（文书裁 14），完成后按 wiki 先例冻结
+> （成果保留不删不派发，触发线 `memory/todo.md` #T78）。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
 - **v2.2.3（2026-07-29）**：**观察项批收口（守密人裁「修复 然后合并」）**——2.2.2 审计留观察位的静默回落全线收紧 + 三处「工具说了不实话」订正：①Grep/Glob `path` 非字符串静默搜 cwd 改报错（错作用域满置信答案）· ②Grep 选项 present-but-mis-typed 一律点名（布尔组 `-i`/`-n`/`multiline`/`-o` + 计数组 `-A`/`-B`/`-C`/`context`/`offset`/`head_limit` + `glob` 数组形并给 `"*.{ts,tsx}"` 写法）· ③Grep 对显式文件目标不再声称「node_modules/.git 已排除」（该过滤对具名文件根本没跑），三处编码旧不实文案的既有断言同步订正 · ④Bash `truncated` 改用 `CappedStream` 真实丢弃计数（原正则嗅探自家渲染文本，命令 echo 标记形字符串即假阳性）· ⑤Bash 后台 ack 补 `backgroundTaskId` 结构化产出 · ⑥Bash NUL 字节由 `ConfigurationError`（环境判词）改命令错（模型可自纠），既有测试同步订正为断言新行为 · ⑦SendMessage 包裹 `bridge.send` · ⑧`GrepOutput.numFiles` 跨模式语义落进类型契约。另修 `--` 悬空分隔符；`displayTruncated` 写明纵深防御且刻意不放宽为 `>=`。测试 21 例；全量 3460 绿。

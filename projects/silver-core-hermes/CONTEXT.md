@@ -1,55 +1,53 @@
 # Silver Core Hermes — 会话上下文
 
-> **定位（守密人 2026-08-02 裁定，使命#2 载体换轨）**：本子项目是使命#2「通用 AI 底层能力
-> 开发基地」的**现行核心载体**——基于 **Hermes Agent**（[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)，
-> MIT 许可）的**改造扩展层**。守密人裁定放弃「BPT 100% 自研 + 模仿闭源 Claude Code」路线
-> （原载体 silver-core-sdk 家族转维护态过渡后冻结，见 `memory/todo.md` #T78），
-> 改为在成熟开源底座上做银芯自有扩展。
+> **定位（守密人 2026-08-02 换轨裁定 + 同日施工边界文书）**：使命#2「通用 AI 底层能力开发基地」
+> **现行核心载体**——BPT v2 引擎层 = **Hermes**（[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)，
+> MIT）。本子项目是其**公开扩展层**（沿 testbed 先例：workspace 不发布、锁步豁免）。
 >
-> 决策全文见 `memory/decisions.md` 2026-08-02「BPT 技术路线换轨」条。
+> **施工边界唯一权威** = 收敛文书原文归档
+> `Public-Info-Pool/Resource/repo-engineering/bpt-hermes-charter-20260802.md`
+> （15 条裁定 + 仓库拓扑 + 架构落位 + 禁止事项十条 + 验证起手式；动手前必读，
+> 与本档冲突时以文书为准）。决策链见 `memory/decisions.md` 2026-08-02 两条。
 
-## 三条工程铁律（立项裁定即定）
+## 铁律（文书裁定，机械守卫 `tests/test_hermes_charter.py`）
 
-1. **改造面定式：插件 + 补丁，二者之外无第三形态**（守密人 2026-08-02 裁定 + 同日两次
-   收敛，否决硬 fork 魔改）——**插件**（上游原生扩展机制内做事，上游零改动）为常态，
-   **补丁**（触改上游的最薄集合，逐条在册）为例外；任何改造归不进这两类 = 不做或呈裁。扩展优先走上游原生机制（skills / tools / transports / gateway
-   插件位），定期合并上游——上游迭代极快（v0.13.0 单版 864 commits / 295 贡献者），
-   深改核心必然脱轨。**允许的触改**：扩展位结构上给不了的薄改动（守密人点名合法例：
-   用户层品牌名感知 / rebrand），收敛为显式登记的薄补丁面——每条具名理由与触点，
-   随上游合并逐条重放核对；首条偏离出现时建本目录 `DEVIATIONS.md` 台账
-   （同 SDK 家族 COMPAT「刻意偏离入册」纪律同款）。
-2. **银芯→黑池单向输出**：与 §1.1-HC 防火墙同向——改造层在银芯公开开发，黑池（BPT）
-   单向消费，黑池数据与需求原始材料不回流（归因回流 = 需求非数据，经守密人过滤）。
-3. **MIT 合规**：上游 MIT 许可与银芯公开信息层定位相容；再分发 / 衍生须保留上游版权与
-   许可声明。
+1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /
+   MCP `mcp_servers:` / shell 事件钩子 / profile routing），不 fork 核心。`patches/` 预留
+   **当前必须为空**（守卫钉死）；扩展点不够、被迫想碰核心 = **即停、记录 `gaps.md`、不硬闯**。
+2. **§1.1-HC 切面化红线**：代码公开、配置内网——本子项目内**不得出现凭据、内网地址/路径、
+   公司域信息**；插件一律通用化写法，通用化三问不过者归黑池域代码区并在 gaps.md 留
+   「通用化未遂」记录（文书裁 15）。
+3. **MIT 合规**：`upstream/LICENSE` 随快照保留；对外口径「基于 MIT 开源组件二次开发」，
+   **禁止「100% 纯自研」表述**（文书裁 10）。
+4. **银芯→黑池单向输出**：与 §1.1-HC 防火墙同向，黑池数据与需求原始材料不回流
+   （归因回流 = 需求非数据）。
 
-## 上游接入形态（守密人 2026-08-02 裁定「快照 vendor」）
+## 结构（文书 §2.2 + 守密人拓扑澄清）
 
-上游源码**在树**：`upstream/` = pin 点工作树快照（不带上游历史），台账与同步例程见
-`UPSTREAM.md`（pin 唯一权威）。指针式 / submodule / subtree 全历史三案均否决——守密人
-要源码在树可读可改，同时不把上游 422MB / 2 万提交历史并进刚压扁的银芯历史。
-`upstream/` 内直接改动 = 补丁，逐条入 `DEVIATIONS.md`（首条偏离时建档），否则同步时被
-全量替换吞掉。
+```
+plugins/    # 通用化域插件（零公司信息）        skills/   # 通用技能样例（团队技能实体在内网）
+deploy/     # 通用部署/overlay 脚本（参数化）    patches/  # 预留，当前必须为空（守卫钉死）
+gaps.md     # 漏缝清单（一等产出）              upstream/ # 官方源码快照（银芯开发镜像，见下）
+UPSTREAM.md # pin 台账唯一权威
+```
 
-## 上游档案（2026-08-02 立项核实）
+- **upstream/ 定位（守密人 2026-08-02 交互澄清）**：保留在银芯仓，供**开发、测试、追官方新版**
+  ——即文书 §2.4 升级链条「外网机追官方 tag 先行体验」一环。黑池侧另有 SVN vendor 仓作
+  **生产供应链**（整包零修改 + 离线可重建），两者并存各司其职。生产禁用 `hermes update`。
+- 记忆纯个人 / 知识纯团队（黑池域，MCP + 只读挂载 + skills 主通道，**禁止**做成 memory
+  provider 主通道）/ 仅技能分个人·团队两档——分层定则见文书裁 6 与 §3。
 
-- 仓库：`NousResearch/hermes-agent`（MIT）
-- 形态：长驻代理运行时——终端 TUI（TypeScript/React-Ink）+ 核心 Python（~88%）
-- 关键机制：供应商无关传输层（`agent/transports/` ProviderTransport ABC：Anthropic /
-  ChatCompletions / ResponsesApi / Bedrock）· 持久记忆 · 技能自我改进 · 定时任务 ·
-  沙箱执行（Unix socket RPC）· 浏览器自动化 · 多消息平台接入（Telegram / Slack / Discord 等）
+## 当前 milestone：验证起手式（文书 §6，第一阶段）
 
-## 当前 milestone
+Code 侧承担项（挂账 `memory/todo.md` #T79）：
+- **⑤ 扩展子项目骨架**：已建（2026-08-02，本档 + §2.2 目录 + gaps.md + 守卫）。
+  插件开发前须先读 `upstream/AGENTS.md`（75,293 字节官方施工指南，已核实在快照内）。
+- **⑦ BPT 核心功能对照清单初稿**：Code 侧盘点产出、Light 审定后即回裁验收表（文书裁 14：
+  逐项打勾齐 = 迁移回裁信号）。
+- **② idealab 接入材料**：从源码核实 Hermes provider 自定义 endpoint（OpenAI 兼容）配置路径，
+  产出参数化配置模板入 `deploy/`（真端点与凭据在内网侧，本仓零内网值）。
 
-**M0 立项（本期）**：决策落档 + 脚手架。已完成。
-
-**M1 上游深读评估（待守密人点火，挂账 `memory/todo.md` #T79）**：
-- 上游架构深读：扩展点覆盖度测绘（skills / tools / transports / gateway 各插件位能承载什么）
-- BPT 需求缺口对照：BPT 已依赖的 silver-core-sdk 能力面 vs Hermes 原生能力面差集
-- 改造层工程形态设计：上游消费方式（pin / submodule / 依赖）、银芯→黑池输出物形态
-- 品牌感知面盘点：上游 Hermes 品牌名在用户层的露出点清单（TUI / CLI 名 / 提示词 / 文案），
-  即未来薄补丁面的第一张地图（铁律 1 的「允许触改」范围实测）
-- 产出：评估报告入 `Public-Info-Pool/Resource/repo-engineering/`，呈裁后开工
+①vendor 仓落地 / ③内网部署 + 钉钉网关 / ④挂 BPT MCP 实测——属内网侧执行，银芯只备材料。
 
 ## 验证清单
 
@@ -59,6 +57,7 @@
   --extra all --extra dev --extra anthropic --extra mistral --extra fal --extra modal --extra daytona
   --extra hindsight --extra parallel-web`（venv/缓存经 `UV_PROJECT_ENVIRONMENT`/`UV_CACHE_DIR`
   落仓外）→ `OPENROUTER_API_KEY="" OPENAI_API_KEY="" scripts/run_tests.sh -j 4`。
-  已知假红排除集见报告（自更新家族 22 例为 vendor 布局结构假红）；树内跑完测试须清生成物
+  已知假红排除集见报告（自更新家族 22 例为快照布局结构假红）；树内跑完测试须清生成物
   （`UPSTREAM.md` 例程步 2）
+- 红线守卫：`pytest tests/test_hermes_charter.py -v`（patches 空 + 骨架完整）
 - 改档后跑 `pytest tests/test_claude_md*.py -v`（CLAUDE.md 对账三卫）确认指针一致

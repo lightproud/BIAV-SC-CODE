@@ -311,7 +311,7 @@ brain-in-a-vat/
 │   ├── silver-core-sdk/  # 原使命#2 载体（2026-07-12 转正；2026-08-02 换轨后维护态只修不建，T78）· 银芯→黑池单向输出物：Silver Core Agent SDK——Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名；npm 名 silver-core-agent-sdk，2026-07-18 定名），见 project-status「## Silver Core SDK」
 │   ├── silver-core-maestro-sdk/ # Silver Core Maestro SDK（npm 名 silver-core-maestro-sdk，乐队指挥意象）：钟 / 跨会话状态 / 会话装配零件（任务台账等），依赖单向 maestro→agent，需求档 scs-req-orchestrator-sdk-20260717.md；随家族维护态（T78）
 │   ├── silver-core-testbed/ # 试金石（2026-07-18 施工）：两包效果验证床——消费者非家族第三包（private / 永不发布 / 锁步豁免 / 仅公开面），自举巡检本仓 + 台账即评测数据源；漏缝清单 GAPS.md 为一等产出；随家族维护态（T78）
-│   └── silver-core-hermes/ # 使命#2 现行核心载体（2026-08-02 换轨裁定）：Hermes Agent（NousResearch/hermes-agent，MIT）改造扩展层——改造面=插件+补丁（上游跟随不硬 fork），银芯→黑池单向输出，见 project-status「## Silver Core Hermes」
+│   └── silver-core-hermes/ # 使命#2 现行核心载体（2026-08-02 换轨裁定）：Hermes Agent（NousResearch/hermes-agent，MIT）改造扩展层——核心零侵入（能力走官方扩展面，patches/ 预留为空），银芯→黑池单向输出；施工边界文书 = Public-Info-Pool/Resource/repo-engineering/bpt-hermes-charter-20260802.md，状态见 project-status「## Silver Core Hermes」
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/
