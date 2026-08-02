@@ -21,6 +21,13 @@
 > 复刻它是死路。**便携整包（portable bundle）整条绕开安装器**：构建机组装、共享目录分发、
 > 复制即用——与 BPT 现状同形（本机运行、无服务端）。
 
+**组装台 = 银芯 CI（守密人 2026-08-02 裁定「整包组装在银芯仓进行」）**：
+`.github/workflows/assemble-silver-core-bundle.yml`（workflow_dispatch，Windows runner——
+Windows venv 不可跨平台组装，故必须 Windows 台）双 job 产两件落
+[`silver-core-bundle` Release](https://github.com/lightproud/BIAV-SC-CODE/releases/tag/silver-core-bundle)：
+运行时整包（含就地搬移冒烟测试验 relocatable）+ desktop zip；守密人从 Release 取包投内网共享目录。
+以下为该工作流所执行工序的等价手工描述：
+
 **整包组装（构建机一次做，产物 = 一个 zip）**：
 1. 组装副本 = upstream 快照 + 品牌补丁（本档上节流程）。
 2. 便携 Python：`uv python install <pin 版>` 把托管 CPython 装进包内目录（免系统 Python）。
