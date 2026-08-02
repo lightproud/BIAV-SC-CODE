@@ -4,7 +4,7 @@ title: "silver-core-hermes 子项目上下文"
 description: "1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /"
 resource: "/projects/silver-core-hermes/CONTEXT.md"
 tags: ["data_layer:curated", "sub-project-context", "milestone"]
-timestamp: "2026-08-02"
+timestamp: "2026-08-03"
 ---
 
 # 指针概念
