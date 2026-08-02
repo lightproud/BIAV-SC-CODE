@@ -1,25 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-02T10:40:56.607568+00:00",
+  "collected_at": "2026-08-02T13:17:26.009292+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
-    {
-      "source": "steam",
-      "time": "2026-08-01T11:02:37+00:00",
-      "lang": "turkish",
-      "title": "[正面] Lovecraftvari bir atmosferle harmanlanmış zevkli b...",
-      "summary": "Lovecraftvari bir atmosferle harmanlanmış zevkli bir gacha oyunu. Onlarca karakter var. Her karakterin hikayesi ve özel yetenekleri mevcut. Bu da oyunu çok fazla çeşitliliğe ve komboya sahip kılıyor.\n\nAna hikaye 9 bölümden oluşmakta ve 1. bölümün %70'ini bitirmem yaklaşık 4 saat sürdü. Kabaca 40-50 saatlik ana hikaye süresi vardır. Daha her karakterin kendi hikayesine ve gelen etkinliklere değinmiyorum bile. \n\nGörselliği ve müzikleriyle de oldukça keyifliydi. Tek sorunu Türkçe çeviri YZ ile yapılmış ve bazı yerlerde hatalar var. Boş vaktim olursa yapımcılara çevirmenlikte yardım etmeye çalışacağım.",
-      "url": "https://steamcommunity.com/profiles/76561198677742911/recommended/3052450",
-      "author": "76561198677742911",
-      "engagement": 2,
-      "language": "turkish",
-      "voted_up": true,
-      "review": "Lovecraftvari bir atmosferle harmanlanmış zevkli bir gacha oyunu. Onlarca karakter var. Her karakterin hikayesi ve özel yetenekleri mevcut. Bu da oyunu çok fazla çeşitliliğe ve komboya sahip kılıyor.\n\nAna hikaye 9 bölümden oluşmakta ve 1. bölümün %70'ini bitirmem yaklaşık 4 saat sürdü. Kabaca 40-50 saatlik ana hikaye süresi vardır. Daha her karakterin kendi hikayesine ve gelen etkinliklere değinmiyorum bile. \n\nGörselliği ve müzikleriyle de oldukça keyifliydi. Tek sorunu Türkçe çeviri YZ ile yapılmış ve bazı yerlerde hatalar var. Boş vaktim olursa yapımcılara çevirmenlikte yardım etmeye çalışacağım.",
-      "timestamp_created": 1785582157,
-      "playtime_forever": 562
-    },
     {
       "source": "steam",
       "time": "2026-08-01T16:28:55+00:00",
@@ -48,7 +33,52 @@
       "voted_up": true,
       "review": "🎮 \"Morimens has one of the most enjoyable combat systems I've played... buried under a confusing story and rough translation.\"\r\n\r\nI've genuinely enjoyed my time with Morimens.\r\n\r\nThe combat is excellent.\r\nThe deck-building is addictive.\r\nEach Kingdom has its own identity, and discovering how they play is one of the game's biggest strengths.\r\n\r\nAfter trying every Kingdom, Aequor became my favorite.\r\n\r\nIt doesn't rely on a single explosive turn.\r\nInstead, it constantly builds momentum through summons, shields, and passive attacks. Even when your hand is empty, the fight doesn't stop—your summons keep applying pressure. That kind of gameplay feels rewarding and gives every battle a unique rhythm.\r\n\r\nThe game is also surprisingly generous for F2P players.\r\nI've never felt forced to spend money, and progression has been smooth so far.\r\n\r\nThen... the story starts.\r\n\r\nThat's where Morimens loses me.\r\n\r\nThe game introduces you as a Guardian in a world on the brink of collapse, setting up what feels like an epic apocalyptic journey.\r\n\r\nA few moments later, you're suddenly solving detective cases in an orphanage.\r\n\r\nThen come wax creatures.\r\nRoger.\r\nOld journals.\r\nMysterious experiments.\r\nVoices in your head.\r\nCharacters making decisions that are difficult to understand.\r\n\r\nInstead of building mystery, the story often creates confusion.\r\n\r\nThe translation doesn't help either.\r\n\r\nI've encountered awkward dialogue, untranslated Chinese text appearing in conversations, debug strings like \"Current\", and even UI tags showing up during story scenes.\r\n\r\nThose moments constantly break immersion.\r\n\r\nNone of these issues ruin the gameplay.\r\n\r\nBut they make it much harder to care about a world that actually seems fascinating.\r\n\r\nIn short:\r\n\r\n✅ Fantastic combat.\r\n\r\n✅ Great deck-building.\r\n\r\n✅ Every Kingdom feels different.\r\n\r\n✅ Very F2P-friendly.\r\n\r\n❌ Storytelling lacks clarity.\r\n\r\n❌ Translation needs significant polish.\r\n\r\n❌ Important scenes often become confusing because of awkward writing and localization issues.\r\n\r\nMorimens has the foundations of an excellent game.\r\n\r\nI just hope the developers give the same amount of attention to the narrative and localization that they gave to the combat system.\r\n\r\nI'm recommending it... because the gameplay deserves it.\r\n\r\nI'm criticizing it... because the story deserves better.\r\n\r\n✍️ Jrd Mushu",
       "timestamp_created": 1785598998,
-      "playtime_forever": 1497
+      "playtime_forever": 1617
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-02T12:24:48+00:00",
+      "lang": "schinese",
+      "title": "[负面] 画风还挺独特的\n但是二次元抽卡游戏怎么给我划到肉鸽卡牌里了\n我chovy，分类给我分好了啊",
+      "summary": "画风还挺独特的\n但是二次元抽卡游戏怎么给我划到肉鸽卡牌里了\n我chovy，分类给我分好了啊",
+      "url": "https://steamcommunity.com/profiles/76561199069271275/recommended/3052450",
+      "author": "76561199069271275",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "画风还挺独特的\n但是二次元抽卡游戏怎么给我划到肉鸽卡牌里了\n我chovy，分类给我分好了啊",
+      "timestamp_created": 1785673488,
+      "playtime_forever": 39
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-02T12:14:21+00:00",
+      "lang": "spanish",
+      "title": "[正面] Luego de a verme fracturado la mano en pedazos...\"...",
+      "summary": "Luego de a verme fracturado la mano en pedazos...\"literalmente, ando con yeso, =( \"..., me he puesto a jugar este juego por limitaciones motrices y... la verdad me encariñe con su historia, por ahi el uso de chatGPT en la traduccion te hace decir \"¿k chotas quiere decir esto?\", pero, engancha la verdad, su estilo artístico de los personajes y combinado con lo visual novel darky le dan este toque *cheff kiss*\n\npd: \"Karen\", como milei dijo, Es clave. (le sabe a la economia).",
+      "url": "https://steamcommunity.com/profiles/76561198071252109/recommended/3052450",
+      "author": "76561198071252109",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Luego de a verme fracturado la mano en pedazos...\"literalmente, ando con yeso, =( \"..., me he puesto a jugar este juego por limitaciones motrices y... la verdad me encariñe con su historia, por ahi el uso de chatGPT en la traduccion te hace decir \"¿k chotas quiere decir esto?\", pero, engancha la verdad, su estilo artístico de los personajes y combinado con lo visual novel darky le dan este toque *cheff kiss*\n\npd: \"Karen\", como milei dijo, Es clave. (le sabe a la economia).",
+      "timestamp_created": 1785672861,
+      "playtime_forever": 8898
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-02T10:51:54+00:00",
+      "lang": "schinese",
+      "title": "[正面] 非常666.角色很好看",
+      "summary": "非常666.角色很好看",
+      "url": "https://steamcommunity.com/profiles/76561199843620945/recommended/3052450",
+      "author": "76561199843620945",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "非常666.角色很好看",
+      "timestamp_created": 1785667914,
+      "playtime_forever": 2031
     },
     {
       "source": "steam",
