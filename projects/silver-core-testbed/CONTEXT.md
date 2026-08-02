@@ -1,5 +1,9 @@
 # CONTEXT — silver-core-testbed（试金石）
 
+> **维护态（守密人 2026-08-02 换轨裁定）**：随家族转维护态**只修不建**（使命#2 载体换轨
+> `projects/silver-core-hermes/`；BPT 换装完成后冻结，触发线 `memory/todo.md` #T78）。
+> 巡检 / 值班职能照跑不停。
+>
 > 施工封面（建成什么样的唯一权威）：守密人 2026-07-18「silver-core-testbed 施工封面」
 > 会话派发（两包效果验证床，四战：骨架 / 巡检集 / 浸泡 / 基线）。
 > 漏缝清单：`GAPS.md`（验收件）；浸泡手册：`SOAK.md`；效果基线：`testbed-baseline.json`。

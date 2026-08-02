@@ -1,5 +1,6 @@
 # CONTEXT — silver-core-maestro-sdk(银芯编排 SDK)
 
+> **维护态（守密人 2026-08-02 换轨裁定）**：随家族转维护态**只修不建**（载体换轨 `projects/silver-core-hermes/`；BPT 换装完成后冻结，触发线 `memory/todo.md` #T78）。
 > 动手前先读本档。需求裁定书(建成什么样的唯一权威):
 > `Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md`
 > 地基(代理侧定位与 R1–R6 接口面):
