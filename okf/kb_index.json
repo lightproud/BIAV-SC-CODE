@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 393,
-    "edges": 432,
-    "terms": 6973,
+    "concepts": 394,
+    "edges": 433,
+    "terms": 6996,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 159,
+      "documentation": 160,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 22,
       "projects": 31,
-      "resource": 127,
+      "resource": 128,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 133,
-      "search": 260
+      "search": 261
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 127
+      "count": 128
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 116
+      "degree": 117
     },
     "/characters/15604.md": {
       "type": "character",
@@ -2646,7 +2646,7 @@
     "/projects/project-silver-core-hermes.md": {
       "type": "documentation",
       "title": "silver-core-hermes 子项目上下文",
-      "description": "1. **改造面定式：插件 + 补丁，二者之外无第三形态**（守密人 2026-08-02 裁定 + 同日两次",
+      "description": "1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /",
       "resource": "/projects/silver-core-hermes/CONTEXT.md",
       "tags": [
         "data_layer:curated",
@@ -3832,6 +3832,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 0
+    },
+    "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md": {
+      "type": "documentation",
+      "title": "bpt-hermes-charter-20260802",
+      "description": "放弃 BPT 100% 自研与模仿闭源 Claude Code 的路线，改为基于 **Hermes**（`github.com/NousResearch/hermes-agent`，MIT，官网当前 v0.19.1）进行改造和扩展。**核心零侵入：一切能力走官方扩展面，不 fork 核心。** 第一阶段仅 Light 与自动化使用，团队不动。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-hermes-charter-20260802.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
     },
     "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md": {
       "type": "documentation",
@@ -7307,6 +7321,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
         "提及:艾瑞卡",
         "mention"
@@ -9579,6 +9598,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md": [
       [
         "/characters/15603.md",
@@ -10678,6 +10704,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -10867,6 +10894,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md",
@@ -11451,6 +11479,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -11575,7 +11604,8 @@
       "/wiki-data/wiki-schema-characters-schema.md"
     ],
     "charter": [
-      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -11612,6 +11642,7 @@
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11677,6 +11708,7 @@
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
@@ -12024,6 +12056,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -12436,6 +12469,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -12804,6 +12838,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -13026,6 +13061,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -13203,6 +13239,9 @@
     "directive": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
+    "dirs": [
+      "/projects/project-silver-core-hermes.md"
+    ],
     "discord": [
       "/community/community-discord.md",
       "/community/community-index.md",
@@ -13371,6 +13410,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -13449,7 +13489,8 @@
     ],
     "entry": [
       "/projects/entry-claude-md.md",
-      "/projects/entry-readme.md"
+      "/projects/entry-readme.md",
+      "/projects/project-silver-core-hermes.md"
     ],
     "equivalent": [
       "/projects/silver-core-sdk-doc-memory.md"
@@ -13501,6 +13542,7 @@
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md"
     ],
     "external": [
+      "/projects/project-silver-core-hermes.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "extraction": [
@@ -13576,6 +13618,9 @@
     ],
     "fmm": [
       "/story/story_search_index.md"
+    ],
+    "fork": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "format": [
       "/README.md",
@@ -13858,7 +13903,8 @@
       "/README.md",
       "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "githubusercontent": [
       "/assets/assets-chat-onboarding-snippet.md"
@@ -13984,6 +14030,7 @@
     ],
     "hermes": [
       "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
     "history": [
@@ -14214,6 +14261,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -14757,6 +14805,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -15026,7 +15075,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
-      "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+      "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "lightproud": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -15329,6 +15379,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -15543,6 +15594,9 @@
     "mistakes": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
+    "mit": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "mjs": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
@@ -15675,6 +15729,9 @@
     "notes": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/story/story_research_notes.md"
+    ],
+    "nousresearch": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "npm": [
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
@@ -16014,6 +16071,9 @@
     "playbook": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "plugins": [
+      "/projects/project-silver-core-hermes.md"
+    ],
     "plugmem": [
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
@@ -16038,6 +16098,9 @@
       "/story/lore_entries.md",
       "/story/story_index.md",
       "/story/story_units.md"
+    ],
+    "points": [
+      "/projects/project-silver-core-hermes.md"
     ],
     "policy": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -16126,6 +16189,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -16590,6 +16654,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -16929,6 +16994,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -17114,6 +17180,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -17596,6 +17663,7 @@
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
     "skills": [
+      "/projects/project-silver-core-hermes.md",
       "/wiki-data/wiki-data-character-skills.md"
     ],
     "skip": [
@@ -18230,6 +18298,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -18442,6 +18511,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "v0182": [
@@ -18758,7 +18828,9 @@
       "/characters/15567.md",
       "/characters/54116.md",
       "/characters/77913.md",
-      "/characters/77917.md"
+      "/characters/77917.md",
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "一半": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -18913,6 +18985,9 @@
       "/characters/15592.md",
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "一阶": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "一面": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -18974,9 +19049,6 @@
     ],
     "三张": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
-    ],
-    "三形": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "三态": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
@@ -19170,7 +19242,8 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "不动": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "不发": [
       "/projects/project-silver-core-testbed.md"
@@ -19429,6 +19502,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -19744,6 +19818,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -20115,6 +20190,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -20251,6 +20327,9 @@
     "与构": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
+    "与模": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "与死": [
       "/characters/15564.md"
     ],
@@ -20259,6 +20338,9 @@
     ],
     "与绝": [
       "/characters/15562.md"
+    ],
+    "与自": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "与船": [
       "/characters/77922.md"
@@ -20367,7 +20449,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "两次": [
-      "/projects/project-silver-core-hermes.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
     ],
     "两段": [
@@ -20662,6 +20743,9 @@
     "为团": [
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
+    "为基": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "为她": [
       "/characters/15568.md",
       "/characters/54116.md"
@@ -20915,8 +20999,7 @@
       "/characters/15567.md"
     ],
     "之外": [
-      "/characters/77922.md",
-      "/projects/project-silver-core-hermes.md"
+      "/characters/77922.md"
     ],
     "之奥": [
       "/characters/15570.md"
@@ -21072,9 +21155,6 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/projects/project-news.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
-    ],
-    "二者": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "二轮": [
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
@@ -21570,6 +21650,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -22144,6 +22225,9 @@
     "仿真": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
+    "仿闭": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "伊藤": [
       "/characters/15577.md",
       "/characters/15601.md"
@@ -22627,6 +22711,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -22937,6 +23022,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -23297,7 +23383,8 @@
       "/characters/15582.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
-      "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+      "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "使莱": [
       "/characters/15604.md"
@@ -23375,6 +23462,10 @@
     ],
     "侧构": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
+    "侵入": [
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "侵蚀": [
       "/characters/77923.md"
@@ -24710,6 +24801,10 @@
     "切破": [
       "/characters/15562.md"
     ],
+    "切能": [
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "切锁": [
       "/characters/15567.md"
     ],
@@ -25049,6 +25144,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -25378,7 +25474,8 @@
     ],
     "动化": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "动在": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -25471,6 +25568,9 @@
     ],
     "化作": [
       "/characters/15582.md"
+    ],
+    "化使": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "化其": [
       "/characters/15583.md",
@@ -27034,7 +27134,6 @@
       "/memory/memory-archive-bpt-guidance-log.md"
     ],
     "同日": [
-      "/projects/project-silver-core-hermes.md",
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md"
     ],
     "同时": [
@@ -27393,6 +27492,9 @@
     ],
     "和强": [
       "/characters/15590.md"
+    ],
+    "和扩": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "和技": [
       "/characters/15604.md"
@@ -27753,7 +27855,8 @@
       "/memory/memory-ext-bpt-positioning.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
-      "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+      "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "园美": [
       "/characters/15563.md",
@@ -28129,7 +28232,8 @@
       "/characters/15601.md"
     ],
     "基于": [
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "基准": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
@@ -28607,6 +28711,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -28771,9 +28876,6 @@
     ],
     "外互": [
       "/README.md"
-    ],
-    "外无": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "外触": [
       "/characters/15586.md",
@@ -29492,6 +29594,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -29871,7 +29974,6 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-todo.md",
       "/projects/project-game.md",
-      "/projects/project-silver-core-hermes.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -29996,6 +30098,7 @@
     "官方": [
       "/README.md",
       "/projects/entry-readme.md",
+      "/projects/project-silver-core-hermes.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -30003,12 +30106,16 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
+    "官网": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "宙恐": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -30184,6 +30291,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -30315,9 +30423,6 @@
     ],
     "定就": [
       "/characters/15576.md"
-    ],
-    "定式": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "定性": [
       "/README.md",
@@ -31182,6 +31287,10 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "展面": [
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "属公": [
       "/README.md"
@@ -32278,6 +32387,7 @@
       "/memory/decisions.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "当她": [
@@ -32308,7 +32418,6 @@
     "形态": [
       "/characters/15601.md",
       "/characters/15603.md",
-      "/projects/project-silver-core-hermes.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "形成": [
@@ -32510,6 +32619,10 @@
     ],
     "心防": [
       "/characters/77925.md"
+    ],
+    "心零": [
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "必填": [
       "/README.md"
@@ -33726,7 +33839,9 @@
     ],
     "扩展": [
       "/projects/project-game.md",
-      "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "扫帚": [
       "/characters/15571.md"
@@ -34409,6 +34524,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -35036,6 +35152,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -35199,9 +35316,6 @@
     "提高": [
       "/characters/15575.md",
       "/characters/77925.md"
-    ],
-    "插件": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "插头": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -35423,6 +35537,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -35625,6 +35740,9 @@
     "收门": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
+    "改为": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "改动": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
@@ -35661,7 +35779,7 @@
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "改造": [
-      "/projects/project-silver-core-hermes.md"
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "改道": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
@@ -35700,6 +35818,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "放弃": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "放指": [
       "/README.md",
@@ -35898,6 +36019,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -36224,6 +36346,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -36915,6 +37038,10 @@
     "方或": [
       "/characters/15602.md"
     ],
+    "方扩": [
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "方技": [
       "/characters/15596.md"
     ],
@@ -37038,9 +37165,6 @@
     "无穷": [
       "/characters/54116.md"
     ],
-    "无第": [
-      "/projects/project-silver-core-hermes.md"
-    ],
     "无自": [
       "/characters/77923.md"
     ],
@@ -37077,9 +37201,6 @@
     "既能": [
       "/characters/15582.md",
       "/characters/54117.md"
-    ],
-    "日两": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "日志": [
       "/memory/decisions.md",
@@ -38140,6 +38261,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -38628,6 +38750,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -39321,6 +39444,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -39480,12 +39604,14 @@
       "/assets/assets-narrative-structure.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-hermes.md",
       "/projects/project-wiki.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "核查": [
@@ -39575,6 +39701,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -40146,6 +40273,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -40248,7 +40376,8 @@
       "/characters/15576.md"
     ],
     "模仿": [
-      "/characters/15596.md"
+      "/characters/15596.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "模块": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
@@ -40579,6 +40708,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -40768,6 +40898,9 @@
     "残骸": [
       "/characters/77926.md",
       "/characters/95786.md"
+    ],
+    "段仅": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "段伤": [
       "/characters/15594.md"
@@ -43699,6 +43832,9 @@
     "的足": [
       "/characters/15562.md"
     ],
+    "的路": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "的轨": [
       "/characters/54117.md"
     ],
@@ -44154,6 +44290,9 @@
     ],
     "码部": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+    ],
+    "研与": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "研究": [
       "/characters/15570.md",
@@ -44871,10 +45010,10 @@
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "第一": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "第三": [
-      "/projects/project-silver-core-hermes.md",
       "/projects/project-silver-core-testbed.md"
     ],
     "第二": [
@@ -45666,6 +45805,9 @@
     "网对": [
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
+    "网当": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "网络": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
@@ -45784,9 +45926,6 @@
     ],
     "考实": [
       "/README.md"
-    ],
-    "者之": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "者交": [
       "/characters/77925.md"
@@ -45976,7 +46115,9 @@
       "/characters/15600.md",
       "/characters/15602.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "能号": [
       "/characters/15582.md"
@@ -46182,6 +46323,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "自包": [
@@ -46221,6 +46363,9 @@
     "自由": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/characters/77923.md"
+    ],
+    "自研": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "自评": [
       "/story/story_research_todo.md"
@@ -46694,6 +46839,9 @@
     "行搜": [
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
+    "行改": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "行攻": [
       "/characters/15588.md",
       "/characters/54116.md"
@@ -46720,9 +46868,6 @@
     ],
     "行质": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
-    ],
-    "补丁": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "补上": [
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md"
@@ -46825,7 +46970,6 @@
       "/characters/78840.md",
       "/characters/78841.md",
       "/characters/94451.md",
-      "/projects/project-silver-core-hermes.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -47945,6 +48089,10 @@
     "走不": [
       "/memory/memory-archive-bpt-guidance-log.md"
     ],
+    "走官": [
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "走有": [
       "/characters/15572.md"
     ],
@@ -48307,6 +48455,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -48412,6 +48561,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "路线": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "路镜": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md"
@@ -48898,7 +49050,8 @@
     "进行": [
       "/characters/15573.md",
       "/characters/15588.md",
-      "/characters/54116.md"
+      "/characters/54116.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "进道": [
       "/characters/15575.md"
@@ -49089,6 +49242,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -49385,6 +49539,9 @@
     "造不": [
       "/characters/77926.md"
     ],
+    "造和": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "造大": [
       "/characters/54117.md"
     ],
@@ -49414,9 +49571,6 @@
     ],
     "造者": [
       "/characters/15567.md"
-    ],
-    "造面": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "逢沢": [
       "/characters/77917.md"
@@ -50225,6 +50379,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -50519,6 +50674,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -50883,6 +51039,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
+    "闭源": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "闭环": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
@@ -50920,6 +51079,9 @@
     ],
     "阅的": [
       "/projects/entry-readme.md"
+    ],
+    "队不": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "队伍": [
       "/characters/15565.md",
@@ -50981,6 +51143,9 @@
     ],
     "阳性": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "阶段": [
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "阻挡": [
       "/characters/77913.md"
@@ -51169,6 +51334,10 @@
     "零依": [
       "/README.md"
     ],
+    "零侵": [
+      "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+    ],
     "零后": [
       "/README.md"
     ],
@@ -51326,9 +51495,6 @@
     ],
     "面图": [
       "/README.md"
-    ],
-    "面定": [
-      "/projects/project-silver-core-hermes.md"
     ],
     "面对": [
       "/characters/15594.md",
@@ -52156,6 +52322,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -52238,7 +52405,8 @@
       "/wiki-data/wiki-schema-characters-schema.md"
     ],
     "charter": [
-      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"
+      "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md"
@@ -52575,6 +52743,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -52936,6 +53105,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -53145,6 +53315,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -53393,6 +53564,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -53694,6 +53866,7 @@
     ],
     "hermes": [
       "/projects/project-silver-core-hermes.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
     "history": [
@@ -54012,6 +54185,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -54863,6 +55037,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
@@ -55505,6 +55680,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",

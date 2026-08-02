@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (127)
+# 银芯正式产物（报告/分析） (128)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -64,6 +64,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [bpt-desktop-command-impl-plan-20260710](/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md) - （10 条活体观测）+ 需求说明书 v1.1（R1-R5）+ 五类盘点档 + SDK v0.39（格式：md）
 * [bpt-desktop-ui-reference-20260704-r2](/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md) - 对接表增 TodoWrite / AskUserQuestion / compact_boundary / thinking / 斜杠命令五行、（格式：md）
 * [bpt-desktop-ui-roadmap-20260705](/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md) - 怎么接」，本档回答「先建哪块、每步验收什么」。（格式：md）
+* [bpt-hermes-charter-20260802](/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md) - 放弃 BPT 100% 自研与模仿闭源 Claude Code 的路线，改为基于 **Hermes**（`github.com/NousResearch/her
 * [bpt-loop-goal-primitives-note-20260714](/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md) - 2026-07-14 缺口调查确认：BPT 中 `/loop 10m <任务>` 未被任何层解释——GUI 未注册（格式：md）
 * [bpt-sdk-completion-inventory-20260705](/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md) - 比喻：①查「家里电器齐不齐」，②查「每个插头针脚形状对不对」，③把电表箱打开看「进户线接法跟官方图纸差在哪」。三张验收单本次并成一张总表。（格式：md）
 * [bpt-sdk-conformance-campaign-report-20260705](/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md) - 元数据之上；官方请求体零读取零持久化（`assertContentBlind` 逐产物自审）（格式：md）

@@ -1,8 +1,8 @@
 {
   "generated": "2026-08-02",
   "stats": {
-    "nodes": 393,
-    "edges": 432
+    "nodes": 394,
+    "edges": 433
   },
   "nodes": [
     {
@@ -3015,6 +3015,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
+      "type": "documentation",
+      "title": "bpt-hermes-charter-20260802",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "type": "documentation",
       "title": "bpt-loop-goal-primitives-note-20260714",
@@ -5985,6 +5996,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
