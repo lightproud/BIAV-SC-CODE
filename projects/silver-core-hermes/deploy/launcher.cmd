@@ -4,6 +4,7 @@ rem 合箱布局：python\（uv 托管 CPython）、venv\、app\（组装源树�
 rem home\（HERMES_HOME）与本文件同级。默认拉起 desktop；CLI 用法 launcher.cmd cli <args>。
 rem 自诊断：全程写 launcher.log；任何一步失败都停窗展示原因（不再闪退吞错）。
 setlocal EnableExtensions
+chcp 65001 >nul
 set "ROOT=%~dp0"
 set "LOG=%ROOT%launcher.log"
 echo [%date% %time%] launcher start ROOT=%ROOT% > "%LOG%"
