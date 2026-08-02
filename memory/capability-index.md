@@ -357,13 +357,13 @@
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
   `projects/news/`
-- **`silver-core-hermes`** — > **定位（守密人 2026-08-02 裁定，使命#2 载体换轨）**：本子项目是使命#2「通用 AI 底层能力  
+- **`silver-core-hermes`** — > **定位（守密人 2026-08-02 换轨裁定 + 同日施工边界文书）**：使命#2「通用 AI 底层能力开发基地」  
   `projects/silver-core-hermes/`
-- **`silver-core-maestro-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定）**：随家族转维护态**只修不建**（载体换轨 `projects/silver-core-hermes/`；BPT 换装完成后冻结，触发线 `memory/todo.md` #T78）。  
+- **`silver-core-maestro-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定 + 文书裁 3）**：随家族转**纯维稳**——版本冻结、仅修影响生产的 bug、零新功能（载体换轨 `projects/silver-core-hermes/`；迁移终裁后冻结，触发线 `memory/todo.md` #T78）。  
   `projects/silver-core-maestro-sdk/`
-- **`silver-core-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定）**：使命#2 载体已换轨 `projects/silver-core-hermes/`  
+- **`silver-core-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定 + 施工边界文书裁 3）**：使命#2 载体已换轨  
   `projects/silver-core-sdk/`
-- **`silver-core-testbed`** — > **维护态（守密人 2026-08-02 换轨裁定）**：随家族转维护态**只修不建**（使命#2 载体换轨  
+- **`silver-core-testbed`** — > **维护态（守密人 2026-08-02 换轨裁定 + 文书裁 3）**：随家族转**纯维稳**——版本冻结、  
   `projects/silver-core-testbed/`
 - **`site`** — 对外门户：静态站 public/ + 设计令牌 design/。  
   `projects/site/`
