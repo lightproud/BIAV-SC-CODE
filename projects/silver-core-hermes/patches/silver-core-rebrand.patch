@@ -19665,7 +19665,7 @@ index e671dc2..04197d8 100644
      )
    }
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index f485e5a..c15d74c 100644
+index f485e5a..de18d49 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
 @@ -346,7 +346,7 @@ if (IS_WINDOWS) {
@@ -19695,8 +19695,12 @@ index f485e5a..c15d74c 100644
  const TITLEBAR_HEIGHT = 34
  const MACOS_TRAFFIC_LIGHTS_HEIGHT = 14
  
-@@ -960,7 +960,7 @@ if (IS_WINDOWS) {
-   app.setAppUserModelId('com.nousresearch.hermes')
+@@ -957,10 +957,10 @@ app.setName(APP_NAME)
+ // need this, so gate it on Windows. (Fixes: desktop approval/turn notifications
+ // never firing on Windows.)
+ if (IS_WINDOWS) {
+-  app.setAppUserModelId('com.nousresearch.hermes')
++  app.setAppUserModelId('com.biav.silvercore')
  }
  
 -// Seed the native About panel with the live Hermes version. This is refreshed
@@ -20047,7 +20051,20 @@ index f485e5a..c15d74c 100644
  function sendPowerResume() {
    if (!mainWindow || mainWindow.isDestroyed()) {
      return
-@@ -5710,7 +5710,7 @@ function installMediaPermissions() {
+@@ -5360,11 +5360,7 @@ function buildApplicationMenu() {
+       ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
+       : [{ role: 'minimize' }, { role: 'close' }]
+   })
+-  template.push({
+-    label: 'Help',
+-    role: 'help',
+-    submenu: [checkForUpdatesItem]
+-  })
++  // 便携包禁自更新——Help>Check for Updates 菜单整项摘除（审计轮二）
+ 
+   return Menu.buildFromTemplate(template)
+ }
+@@ -5710,7 +5706,7 @@ function installMediaPermissions() {
  // ---------------------------------------------------------------------------
  // OAuth remote-gateway auth.
  //
@@ -20056,7 +20073,7 @@ index f485e5a..c15d74c 100644
  // Nous Research) instead of a static session token. The auth model is
  // fundamentally different from the token path:
  //
-@@ -5754,7 +5754,7 @@ function getOauthSession() {
+@@ -5754,7 +5750,7 @@ function getOauthSession() {
  // hydrating from disk and return an empty array — even though the user is
  // signed in. That false-negative used to make hasLiveOauthSession() report
  // "not signed in", which on the initial boot path (startHermes → the renderer's
@@ -20065,7 +20082,7 @@ index f485e5a..c15d74c 100644
  // OAuth overlay that vanishes the instant the user clicks Retry.
  //
  // We force the store to hydrate once, up front: flushStorageData() then a
-@@ -5861,7 +5861,7 @@ async function hasLiveOauthSession(baseUrl) {
+@@ -5861,7 +5857,7 @@ async function hasLiveOauthSession(baseUrl) {
  
    // Cold-start false-negative guard. A `persist:` partition's cookie store
    // loads lazily, so the FIRST read on a fresh boot can come back empty even
@@ -20074,7 +20091,7 @@ index f485e5a..c15d74c 100644
    // couldn't start / not signed in" overlay that Retry always cleared. Before
    // trusting a negative, force the store to hydrate and re-read a couple of
    // times with a short backoff. A genuinely signed-out user still resolves
-@@ -5984,7 +5984,7 @@ function openOauthLoginWindow(baseUrl, { silent = false } = {}) {
+@@ -5984,7 +5980,7 @@ function openOauthLoginWindow(baseUrl, { silent = false } = {}) {
        win = new BrowserWindow({
          width: 520,
          height: 720,
@@ -20083,7 +20100,7 @@ index f485e5a..c15d74c 100644
          autoHideMenuBar: true,
          // Silent cascade: start HIDDEN. The auto-SSO 302 chain completes in
          // well under a second, so the window normally never needs to show. We
-@@ -6075,7 +6075,7 @@ function fetchJsonViaOauthSession(url, options: any = {}) {
+@@ -6075,7 +6071,7 @@ function fetchJsonViaOauthSession(url, options: any = {}) {
      }
  
      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
@@ -20092,7 +20109,7 @@ index f485e5a..c15d74c 100644
  
        return
      }
-@@ -6104,7 +6104,7 @@ function fetchJsonViaOauthSession(url, options: any = {}) {
+@@ -6104,7 +6100,7 @@ function fetchJsonViaOauthSession(url, options: any = {}) {
          // already finished
        }
  
@@ -20101,7 +20118,7 @@ index f485e5a..c15d74c 100644
      }, timeoutMs)
  
      request.on('response', res => {
-@@ -6387,7 +6387,7 @@ async function freshGatewayWsUrl(profile) {
+@@ -6387,7 +6383,7 @@ async function freshGatewayWsUrl(profile) {
    return connection.wsUrl
  }
  
@@ -20110,7 +20127,7 @@ index f485e5a..c15d74c 100644
  // Phase 3) ---------------------------------------------------------------
  //
  // The "cloud" connection mode lets a user sign in to the Nous portal ONCE in
-@@ -6403,7 +6403,7 @@ async function freshGatewayWsUrl(profile) {
+@@ -6403,7 +6399,7 @@ async function freshGatewayWsUrl(profile) {
  
  // Canonical Nous portal base URL, overridable for staging/dev. Mirrors the CLI
  // convention (hermes_cli/auth.py DEFAULT_NOUS_PORTAL_URL + the same env names)
@@ -20119,7 +20136,7 @@ index f485e5a..c15d74c 100644
  const DEFAULT_NOUS_PORTAL_URL = 'https://portal.nousresearch.com'
  
  function resolvePortalBaseUrl() {
-@@ -6414,7 +6414,7 @@ function resolvePortalBaseUrl() {
+@@ -6414,7 +6410,7 @@ function resolvePortalBaseUrl() {
  
  // Whether the OAuth partition currently holds a live Nous portal session — the
  // credential that powers both discovery and the silent cascade. The portal
@@ -20128,7 +20145,7 @@ index f485e5a..c15d74c 100644
  // checks for the `privy-token` cookie on the portal host (NOT
  // hasLiveOauthSession, which looks for hermes_session_at/rt that the portal
  // never sets). See connection-config.ts cookiesHavePrivySession.
-@@ -6453,7 +6453,7 @@ function openPortalLoginWindow() {
+@@ -6453,7 +6449,7 @@ function openPortalLoginWindow() {
  
    return new Promise((resolve, reject) => {
      if (!app.isReady()) {
@@ -20137,7 +20154,7 @@ index f485e5a..c15d74c 100644
  
        return
      }
-@@ -6511,7 +6511,7 @@ function openPortalLoginWindow() {
+@@ -6511,7 +6507,7 @@ function openPortalLoginWindow() {
        win = new BrowserWindow({
          width: 520,
          height: 720,
@@ -20146,7 +20163,7 @@ index f485e5a..c15d74c 100644
          autoHideMenuBar: true,
          webPreferences: {
            contextIsolation: true,
-@@ -6546,7 +6546,7 @@ function openPortalLoginWindow() {
+@@ -6546,7 +6542,7 @@ function openPortalLoginWindow() {
    })
  }
  
@@ -20155,7 +20172,7 @@ index f485e5a..c15d74c 100644
  // the NAS trimmed-summary endpoint over the partition-bound net, so the portal
  // session cookie is attached automatically (no bearer needed — NAS accepts the
  // cookie). Returns { agents } on success, or { needsOrgSelection: true, orgs }
-@@ -6559,7 +6559,7 @@ async function discoverCloudAgents(org?: string) {
+@@ -6559,7 +6555,7 @@ async function discoverCloudAgents(org?: string) {
  
    if (!(await hasLivePortalSession())) {
      const err = new Error(
@@ -20164,7 +20181,7 @@ index f485e5a..c15d74c 100644
      ) as any
  
      err.needsCloudLogin = true
-@@ -6578,7 +6578,7 @@ async function discoverCloudAgents(org?: string) {
+@@ -6578,7 +6574,7 @@ async function discoverCloudAgents(org?: string) {
      // A 401 means the portal session lapsed between the liveness check and the
      // call — surface it as a re-login, not a generic failure.
      if (error && error.statusCode === 401) {
@@ -20173,7 +20190,7 @@ index f485e5a..c15d74c 100644
        err.needsCloudLogin = true
        err.cause = error
        throw err
-@@ -6683,7 +6683,7 @@ async function cloudAgentSilentSignIn(dashboardUrl) {
+@@ -6683,7 +6679,7 @@ async function cloudAgentSilentSignIn(dashboardUrl) {
    // interactive prompt rather than a silent cascade. Discovery already gates on
    // this, but a selection can arrive after the session lapsed.
    if (!(await hasLivePortalSession())) {
@@ -20182,7 +20199,7 @@ index f485e5a..c15d74c 100644
      err.needsCloudLogin = true
      throw err
    }
-@@ -6783,7 +6783,7 @@ function sanitizeConnectionProfiles(raw: Record<string, any>) {
+@@ -6783,7 +6779,7 @@ function sanitizeConnectionProfiles(raw: Record<string, any>) {
        cleaned.token = entry.token
      }
  
@@ -20191,7 +20208,7 @@ index f485e5a..c15d74c 100644
      // reopen into the same org for a per-profile cloud connection.
      if (cleaned.mode === 'cloud') {
        const org = String(entry.org || '').trim()
-@@ -6928,7 +6928,7 @@ async function sanitizeDesktopConnectionConfig(config = readDesktopConnectionCon
+@@ -6928,7 +6924,7 @@ async function sanitizeDesktopConnectionConfig(config = readDesktopConnectionCon
      remoteAuthMode: authMode,
      remoteOauthConnected,
      remoteUrl,
@@ -20200,7 +20217,7 @@ index f485e5a..c15d74c 100644
      // remote/local. Lets Settings → Gateway reopen into the same org.
      cloudOrg: mode === 'cloud' ? String(block.org || '') : '',
      remoteTokenPreview: tokenPreview(remoteToken),
-@@ -6947,7 +6947,7 @@ async function sanitizeDesktopConnectionConfig(config = readDesktopConnectionCon
+@@ -6947,7 +6943,7 @@ async function sanitizeDesktopConnectionConfig(config = readDesktopConnectionCon
  // Build + validate a `{ url, authMode, token }` remote block. OAuth gateways
  // authenticate via the login-window session cookie (verified at connect time in
  // resolveRemoteBackend), so only token-auth remotes require a saved token.
@@ -20209,7 +20226,7 @@ index f485e5a..c15d74c 100644
  // under — persisted so Settings can reopen into the same org; omitted from the
  // block when empty so plain remote connections stay unchanged.
  function buildRemoteBlock(remoteUrl, authMode, token, org?: string) {
-@@ -6982,7 +6982,7 @@ function coerceDesktopConnectionConfig(input: any = {}, existing = readDesktopCo
+@@ -6982,7 +6978,7 @@ function coerceDesktopConnectionConfig(input: any = {}, existing = readDesktopCo
    // The block being edited: a per-profile entry or the global remote block.
    const rawExistingBlock = key ? existing.profiles?.[key] || {} : existing.remote || {}
    // Leaving a CLOUD connection unselects it: a cloud block's url/org/token
@@ -20218,7 +20235,7 @@ index f485e5a..c15d74c 100644
    // so switching to local or remote must NOT inherit them (otherwise the stale
    // cloud URL lingers and re-selecting Cloud looks "already connected"). When the
    // saved block was cloud and the new mode is not cloud, start from an empty
-@@ -7127,7 +7127,7 @@ async function buildRemoteConnection(
+@@ -7127,7 +7123,7 @@ async function buildRemoteConnection(
        oauthGuardMayHardFail(await gatewayAuthProviders(baseUrl))
      ) {
        const err = new Error(
@@ -20227,7 +20244,7 @@ index f485e5a..c15d74c 100644
            'Open Settings → Gateway and click "Sign in", or switch back to Local.'
        ) as any
  
-@@ -7143,7 +7143,7 @@ async function buildRemoteConnection(
+@@ -7143,7 +7139,7 @@ async function buildRemoteConnection(
        throw gatewayTicketFailure(
          error,
          'Your remote gateway session has expired. Open Settings → Gateway and click "Sign in" again.',
@@ -20236,7 +20253,7 @@ index f485e5a..c15d74c 100644
        )
      }
  
-@@ -7163,7 +7163,7 @@ async function buildRemoteConnection(
+@@ -7163,7 +7159,7 @@ async function buildRemoteConnection(
  
    if (!token) {
      throw new Error(
@@ -20245,7 +20262,7 @@ index f485e5a..c15d74c 100644
          'Open Settings → Gateway and save a token, or switch back to Local.'
      )
    }
-@@ -7499,7 +7499,7 @@ async function resolveRemoteBackend(profile) {
+@@ -7499,7 +7495,7 @@ async function resolveRemoteBackend(profile) {
      if (!rawEnvToken) {
        throw new Error(
          'HERMES_DESKTOP_REMOTE_URL is set but HERMES_DESKTOP_REMOTE_TOKEN is not. ' +
@@ -20254,7 +20271,7 @@ index f485e5a..c15d74c 100644
        )
      }
  
-@@ -7603,7 +7603,7 @@ async function requestJsonForProfile(profile: string, path: string, method: stri
+@@ -7603,7 +7599,7 @@ async function requestJsonForProfile(profile: string, path: string, method: stri
  
  async function probeRemoteAuthMode(rawUrl) {
    // Determine how a remote gateway expects callers to authenticate, WITHOUT
@@ -20263,7 +20280,7 @@ index f485e5a..c15d74c 100644
    // gateway (it backs the portal liveness probe) and reports:
    //   auth_required: true  → OAuth gate is engaged (cookie + ws-ticket auth)
    //   auth_required: false → loopback/--insecure: legacy session-token auth
-@@ -7718,7 +7718,7 @@ async function testDesktopConnectionConfig(input: any = {}) {
+@@ -7718,7 +7714,7 @@ async function testDesktopConnectionConfig(input: any = {}) {
              return {
                reachable: false,
                sshError: 'update-required',
@@ -20272,7 +20289,7 @@ index f485e5a..c15d74c 100644
              }
            }
  
-@@ -7791,7 +7791,7 @@ async function testDesktopConnectionConfig(input: any = {}) {
+@@ -7791,7 +7787,7 @@ async function testDesktopConnectionConfig(input: any = {}) {
    // connects — a separate transport with separate server-side guards (Host/
    // Origin, ws-ticket/token auth). Validating only the HTTP side produced a
    // false-positive "reachable" while the real boot still failed with "Could not
@@ -20281,7 +20298,7 @@ index f485e5a..c15d74c 100644
    // reflects the full path the app actually uses.
    const wsUrl = await resolveTestWsUrl(baseUrl, authMode, token, { mintTicket: mintGatewayWsTicket })
  
-@@ -8108,7 +8108,7 @@ async function spawnPoolBackend(profile, entry) {
+@@ -8108,7 +8104,7 @@ async function spawnPoolBackend(profile, entry) {
    const webDist = resolveWebDist()
    const readyFile = backend.readyFile ? makeDashboardReadyFile() : null
  
@@ -20290,7 +20307,7 @@ index f485e5a..c15d74c 100644
  
    const child = spawn(
      backend.command,
-@@ -8149,17 +8149,17 @@ async function spawnPoolBackend(profile, entry) {
+@@ -8149,17 +8145,17 @@ async function spawnPoolBackend(profile, entry) {
    })
  
    child.once('error', error => {
@@ -20311,7 +20328,7 @@ index f485e5a..c15d74c 100644
        )
      }
    })
-@@ -8179,7 +8179,7 @@ async function spawnPoolBackend(profile, entry) {
+@@ -8179,7 +8175,7 @@ async function spawnPoolBackend(profile, entry) {
  
    const authToken = await adoptServedDashboardToken(baseUrl, token, {
      childAlive: () => child.exitCode === null && !child.killed,
@@ -20320,7 +20337,7 @@ index f485e5a..c15d74c 100644
      rememberLog
    })
  
-@@ -8192,7 +8192,7 @@ async function spawnPoolBackend(profile, entry) {
+@@ -8192,7 +8188,7 @@ async function spawnPoolBackend(profile, entry) {
  
    if (!wsProbe.ok) {
      throw new Error(
@@ -20329,7 +20346,7 @@ index f485e5a..c15d74c 100644
      )
    }
  
-@@ -8299,7 +8299,7 @@ async function startHermes() {
+@@ -8299,7 +8295,7 @@ async function startHermes() {
    // E2E: simulate a boot failure without breaking the real backend. The boot
    // progresses a few steps, then fails with the given error message.
    if (BOOT_FAKE_ERROR) {
@@ -20338,7 +20355,7 @@ index f485e5a..c15d74c 100644
      const error = new Error(BOOT_FAKE_ERROR) as any
      error.isBootstrapFailure = true
      bootstrapFailure = error
-@@ -8321,11 +8321,11 @@ async function startHermes() {
+@@ -8321,11 +8317,11 @@ async function startHermes() {
  
    const connectionPromise = (async () => {
      const connectRemote = async remote => {
@@ -20352,7 +20369,7 @@ index f485e5a..c15d74c 100644
          progress: 94,
          running: true,
          error: null
-@@ -8346,7 +8346,7 @@ async function startHermes() {
+@@ -8346,7 +8342,7 @@ async function startHermes() {
        }
      }
  
@@ -20361,7 +20378,7 @@ index f485e5a..c15d74c 100644
      // Resolve for the desktop's primary profile so a per-profile remote
      // override on the active profile is honored (falls back to env / global).
      const token = crypto.randomBytes(32).toString('base64url')
-@@ -8367,7 +8367,7 @@ async function startHermes() {
+@@ -8367,7 +8363,7 @@ async function startHermes() {
        connectRemote,
        ensureLocalRuntime: ensureRuntime,
        prepareLocalBackend: async () => {
@@ -20370,7 +20387,7 @@ index f485e5a..c15d74c 100644
  
          return resolveHermesBackend(backendArgs)
        },
-@@ -8395,8 +8395,8 @@ async function startHermes() {
+@@ -8395,8 +8391,8 @@ async function startHermes() {
      const webDist = resolveWebDist()
      const readyFile = backend.readyFile ? makeDashboardReadyFile() : null
  
@@ -20381,7 +20398,7 @@ index f485e5a..c15d74c 100644
  
      const hermesProcess = spawn(
        backend.command,
-@@ -8432,7 +8432,7 @@ async function startHermes() {
+@@ -8432,7 +8428,7 @@ async function startHermes() {
  
      if (!processOwner) {
        stopBackendChild(hermesProcess)
@@ -20390,7 +20407,7 @@ index f485e5a..c15d74c 100644
      }
  
      hermesProcess.stdout.on('data', rememberLog)
-@@ -8446,17 +8446,17 @@ async function startHermes() {
+@@ -8446,17 +8442,17 @@ async function startHermes() {
  
      hermesProcess.once('error', error => {
        if (!backendConnectionState.clearForCurrentProcess(processOwner)) {
@@ -20412,7 +20429,7 @@ index f485e5a..c15d74c 100644
            phase: 'backend.error',
            running: false
          },
-@@ -8467,20 +8467,20 @@ async function startHermes() {
+@@ -8467,20 +8463,20 @@ async function startHermes() {
      })
      hermesProcess.once('exit', (code, signal) => {
        if (!backendConnectionState.clearForCurrentProcess(processOwner)) {
@@ -20437,7 +20454,7 @@ index f485e5a..c15d74c 100644
          updateBootProgress(
            {
              error: message,
-@@ -8492,13 +8492,13 @@ async function startHermes() {
+@@ -8492,13 +8488,13 @@ async function startHermes() {
          )
          rejectBackendStart?.(
            new Error(
@@ -20453,7 +20470,7 @@ index f485e5a..c15d74c 100644
  
      // Discover the ephemeral port the child bound to
      const port = await Promise.race([
-@@ -8511,7 +8511,7 @@ async function startHermes() {
+@@ -8511,7 +8507,7 @@ async function startHermes() {
      }
  
      const baseUrl = `http://127.0.0.1:${port}`
@@ -20462,7 +20479,7 @@ index f485e5a..c15d74c 100644
      await Promise.race([waitForHermes(baseUrl, token), backendStartFailed])
      backendReady = true
      backendStartFailure = null
-@@ -8527,13 +8527,13 @@ async function startHermes() {
+@@ -8527,13 +8523,13 @@ async function startHermes() {
  
      if (!wsProbe.ok) {
        throw new Error(
@@ -20478,7 +20495,7 @@ index f485e5a..c15d74c 100644
        progress: 94,
        running: true,
        error: null
-@@ -8666,7 +8666,7 @@ function spawnSecondaryWindow({ sessionId, watch }: { sessionId?: string; watch?
+@@ -8666,7 +8662,7 @@ function spawnSecondaryWindow({ sessionId, watch }: { sessionId?: string; watch?
      height: SESSION_WINDOW_MIN_HEIGHT,
      minWidth: SESSION_WINDOW_MIN_WIDTH,
      minHeight: SESSION_WINDOW_MIN_HEIGHT,
@@ -20487,7 +20504,7 @@ index f485e5a..c15d74c 100644
      titleBarStyle: 'hidden',
      titleBarOverlay: getTitleBarOverlayOptions(),
      trafficLightPosition: IS_MAC ? WINDOW_BUTTON_POSITION : undefined,
-@@ -8751,7 +8751,7 @@ function createInstanceWindow() {
+@@ -8751,7 +8747,7 @@ function createInstanceWindow() {
      ...nextInstanceBounds(),
      minWidth: WINDOW_MIN_WIDTH,
      minHeight: WINDOW_MIN_HEIGHT,
@@ -20496,7 +20513,7 @@ index f485e5a..c15d74c 100644
      titleBarStyle: 'hidden',
      titleBarOverlay: getTitleBarOverlayOptions(),
      trafficLightPosition: IS_MAC ? WINDOW_BUTTON_POSITION : undefined,
-@@ -8793,7 +8793,7 @@ function createInstanceWindow() {
+@@ -8793,7 +8789,7 @@ function createInstanceWindow() {
  
  // The pet overlay: a single transparent, frameless, always-on-top window that
  // hosts ONLY the floating mascot. Shift-clicking the in-window pet "pops it out"
@@ -20505,7 +20522,7 @@ index f485e5a..c15d74c 100644
  // minimized (Codex-style task-completion glance). It carries no gateway
  // connection of its own — the main renderer is the single source of truth and
  // pushes pet state over IPC (hermes:pet-overlay:state); the overlay just renders
-@@ -8825,7 +8825,7 @@ function spawnPetOverlayWindow(bounds) {
+@@ -8825,7 +8821,7 @@ function spawnPetOverlayWindow(bounds) {
      // taskbar/alt-tab entry. On macOS, cmd-tab is app-level and this can make
      // the whole app look like it vanished when the only newly-created visible
      // window is a frameless overlay. Use NSPanel + Mission Control hiding below
@@ -20514,7 +20531,7 @@ index f485e5a..c15d74c 100644
      skipTaskbar: !IS_MAC,
      hasShadow: false,
      alwaysOnTop: true,
-@@ -8835,7 +8835,7 @@ function spawnPetOverlayWindow(bounds) {
+@@ -8835,7 +8831,7 @@ function spawnPetOverlayWindow(bounds) {
      hiddenInMissionControl: IS_MAC,
      // Non-activating: the overlay must never become the app's key/main window,
      // or it (a frameless, taskbar-skipping panel) becomes the app's switcher
@@ -20523,7 +20540,7 @@ index f485e5a..c15d74c 100644
      // main window is minimized. We flip this on only while the composer needs
      // the keyboard (see hermes:pet-overlay:set-focusable).
      focusable: false,
-@@ -8864,7 +8864,7 @@ function spawnPetOverlayWindow(bounds) {
+@@ -8864,7 +8860,7 @@ function spawnPetOverlayWindow(bounds) {
    try {
      // Electron docs: macOS may transform process type on each
      // setVisibleOnAllWorkspaces() call unless skipTransformProcessType=true,
@@ -20532,7 +20549,7 @@ index f485e5a..c15d74c 100644
      // ForegroundApplication class so shift-clicking the pet never drops the app
      // out of app switchers.
      win.setVisibleOnAllWorkspaces(
-@@ -9144,7 +9144,7 @@ function createWindow() {
+@@ -9144,7 +9140,7 @@ function createWindow() {
      ...computeWindowOptions(savedWindowState, screen.getAllDisplays()),
      minWidth: WINDOW_MIN_WIDTH,
      minHeight: WINDOW_MIN_HEIGHT,
@@ -20541,7 +20558,7 @@ index f485e5a..c15d74c 100644
      // Frameless title bar on every platform so the renderer can paint the
      // "hide sidebar" button (and other left-side titlebar tools) flush with
      // the top edge — matching the macOS layout where the traffic lights sit
-@@ -9368,7 +9368,7 @@ ipcMain.handle('hermes:connection', async (_event, profile) => ensureBackend(pro
+@@ -9368,7 +9364,7 @@ ipcMain.handle('hermes:connection', async (_event, profile) => ensureBackend(pro
  // so the 'exit'/'error' handlers that would clear a dead connection promise never
  // fire — once the remote becomes unreachable across a sleep/wake the renderer
  // re-dials the same dead descriptor forever and the composer stays stuck on
@@ -20550,7 +20567,7 @@ index f485e5a..c15d74c 100644
  // to confirm the cached PRIMARY backend is still reachable; if a remote one is
  // not, we drop the cache so the next getConnection() rebuilds it. Local backends
  // self-heal via their child 'exit' handler, so we never touch them here.
-@@ -9779,7 +9779,7 @@ ipcMain.handle('hermes:connection-config:oauth-logout', async (_event, rawUrl) =
+@@ -9779,7 +9775,7 @@ ipcMain.handle('hermes:connection-config:oauth-logout', async (_event, rawUrl) =
    return { ok: true, connected }
  })
  
@@ -20559,7 +20576,7 @@ index f485e5a..c15d74c 100644
  // One portal login in the OAuth partition powers both discovery and the silent
  // per-agent cascade. See the discovery/cascade helpers above.
  ipcMain.handle('hermes:cloud:status', async () => ({
-@@ -10204,7 +10204,7 @@ ipcMain.handle('hermes:notify', (_event, payload) => {
+@@ -10204,7 +10200,7 @@ ipcMain.handle('hermes:notify', (_event, payload) => {
    const actions = Array.isArray(payload?.actions) ? payload.actions : []
  
    const notification = new Notification({
@@ -20568,7 +20585,7 @@ index f485e5a..c15d74c 100644
      body: payload?.body || '',
      silent: Boolean(payload?.silent),
      actions: actions.map(action => ({ type: 'button', text: String(action?.text || '') }))
-@@ -10820,7 +10820,7 @@ function terminalShellEnv() {
+@@ -10820,7 +10816,7 @@ function terminalShellEnv() {
  
    // Strip color/theme-detection vars that ride along when Electron is launched
    // from a non-tty agent shell (Cursor's runner sets NO_COLOR/FORCE_COLOR=0
@@ -20577,7 +20594,7 @@ index f485e5a..c15d74c 100644
    // light-mode). Our PTY is a real xterm-compat terminal — force truecolor.
    delete env.NO_COLOR
    delete env.FORCE_COLOR
-@@ -10829,7 +10829,7 @@ function terminalShellEnv() {
+@@ -10829,7 +10825,7 @@ function terminalShellEnv() {
    env.COLORTERM = 'truecolor'
    env.LC_CTYPE = env.LC_CTYPE || 'UTF-8'
    env.TERM = 'xterm-256color'
@@ -20586,7 +20603,7 @@ index f485e5a..c15d74c 100644
    env.TERM_PROGRAM_VERSION = app.getVersion()
  
    // Let a hermes/--tui launched in this pane know it's embedded in the desktop
-@@ -11262,9 +11262,9 @@ ipcMain.handle('hermes:updates:branch:set', async (_event, name) => {
+@@ -11262,9 +11258,9 @@ ipcMain.handle('hermes:updates:branch:set', async (_event, name) => {
    return { branch }
  })
  
@@ -20598,7 +20615,7 @@ index f485e5a..c15d74c 100644
  // which historically drifted (stuck at 0.0.2). Falls back to app.getVersion()
  // when the source tree can't be read (e.g. a packaged build without the repo).
  function resolveHermesVersion() {
-@@ -11287,7 +11287,7 @@ function resolveHermesVersion() {
+@@ -11287,7 +11283,7 @@ function resolveHermesVersion() {
    return app.getVersion()
  }
  
@@ -20607,7 +20624,7 @@ index f485e5a..c15d74c 100644
  // just before showing it, so an in-place `hermes update` is reflected without
  // an app restart. macOS only — `showAboutPanel()` is a no-op elsewhere, and the
  // other platforms don't use this menu item.
-@@ -11416,7 +11416,7 @@ async function runDesktopUninstall(mode) {
+@@ -11416,7 +11412,7 @@ async function runDesktopUninstall(mode) {
      return {
        ok: false,
        error: 'agent-missing',
@@ -20616,7 +20633,7 @@ index f485e5a..c15d74c 100644
      }
    }
  
-@@ -11813,7 +11813,7 @@ app.on('before-quit', event => {
+@@ -11813,7 +11809,7 @@ app.on('before-quit', event => {
    closePetOverlay()
  
    // Same for the Quick Entry composer — and release its global accelerator so a
@@ -21150,7 +21167,7 @@ index 831478f..4d2a863 100644
        // Pre-paint the themed background before the app bundle loads. Without
        // this, the first frame (which is what `ready-to-show` waits for) is the
 diff --git a/apps/desktop/package.json b/apps/desktop/package.json
-index 8a3f76e..282b46d 100644
+index 8a3f76e..d451a61 100644
 --- a/apps/desktop/package.json
 +++ b/apps/desktop/package.json
 @@ -1,9 +1,9 @@
@@ -21165,12 +21182,14 @@ index 8a3f76e..282b46d 100644
    "author": "Nous Research",
    "type": "module",
    "main": "dist/electron-main.mjs",
-@@ -172,11 +172,11 @@
+@@ -171,12 +171,12 @@
+   },
    "build": {
      "electronVersion": "40.10.2",
-     "appId": "com.nousresearch.hermes",
+-    "appId": "com.nousresearch.hermes",
 -    "productName": "Hermes",
 -    "executableName": "Hermes",
++    "appId": "com.biav.silvercore",
 +    "productName": "Silver Core",
 +    "executableName": "Silver Core",
      "protocols": [
@@ -35304,7 +35323,7 @@ index 89df6a9..2a4e92e 100644
    })
  })
 diff --git a/apps/desktop/src/app/settings/gateway-settings.tsx b/apps/desktop/src/app/settings/gateway-settings.tsx
-index 30afd2d..c71ab22 100644
+index 30afd2d..447d840 100644
 --- a/apps/desktop/src/app/settings/gateway-settings.tsx
 +++ b/apps/desktop/src/app/settings/gateway-settings.tsx
 @@ -33,7 +33,7 @@ import { enrichSelectedSshHost, selectSshHost } from './ssh-host-selection'
@@ -35334,7 +35353,24 @@ index 30afd2d..c71ab22 100644
  
    // Pull the discovered agent list over the shared portal session. Tolerant of
    // a lapsed session: a needsCloudLogin error flips us back to signed-out.
-@@ -1089,7 +1089,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1060,6 +1060,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+             onSelect={() => setState(current => ({ ...current, mode: 'local' }))}
+             title={scope === null ? g.localTitle : g.inheritTitle}
+           />
++          {/* 内网无 Nous Cloud——Cloud 连接模式隐藏（审计轮二） */}
++          {false && (
+           <ModeCard
+             active={state.mode === 'cloud'}
+             description={g.cloudDesc}
+@@ -1068,6 +1070,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+             onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}
+             title={g.cloudTitle}
+           />
++          )}
+           <ModeCard
+             active={state.mode === 'remote'}
+             description={g.remoteDesc}
+@@ -1089,7 +1092,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
          </div>
        </div>
  
@@ -35344,10 +35380,18 @@ index 30afd2d..c71ab22 100644
            connection. Replaces the URL/token form while in cloud mode. */}
        {state.mode === 'cloud' && !state.envOverride ? (
 diff --git a/apps/desktop/src/app/settings/index.tsx b/apps/desktop/src/app/settings/index.tsx
-index 8dccf3a..9f9e016 100644
+index 8dccf3a..87d04b5 100644
 --- a/apps/desktop/src/app/settings/index.tsx
 +++ b/apps/desktop/src/app/settings/index.tsx
-@@ -161,13 +161,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
+@@ -51,7 +51,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
+   'keybinds',
+   'keys',
+   'notifications',
+-  'billing',
+   'plugins',
+   'sessions',
+   'about'
+@@ -161,13 +160,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
          label: t.settings.nav.notifications,
          onSelect: () => setActiveView('notifications')
        },
@@ -40510,6 +40554,19 @@ index cb5be6b..5f36411 100644
      )
      chat_parser.add_argument(
          "-q", "--query", help="Single query (non-interactive mode)"
+diff --git a/hermes_cli/agent_import.py b/hermes_cli/agent_import.py
+index ba394b2..10a9e9a 100644
+--- a/hermes_cli/agent_import.py
++++ b/hermes_cli/agent_import.py
+@@ -810,7 +810,7 @@ def import_agent_command(args) -> None:
+ 
+     print()
+     print(color("┌─────────────────────────────────────────────────────────┐", Colors.MAGENTA))
+-    print(color("│          ⚕ Hermes — Import From Another Agent          │", Colors.MAGENTA))
++    print(color("│          ⚕ Silver Core — Import From Another Agent          │", Colors.MAGENTA))
+     print(color("└─────────────────────────────────────────────────────────┘", Colors.MAGENTA))
+ 
+     if not source_dir.is_dir():
 diff --git a/hermes_cli/auth.py b/hermes_cli/auth.py
 index 0d08007..4579db2 100644
 --- a/hermes_cli/auth.py
@@ -40545,6 +40602,28 @@ index e4cc6f0..2178363 100644
  
  Source installs report their git revision live via ``git rev-parse`` (see
  ``hermes_cli/dump.py`` and ``hermes_cli/banner.py``).  That doesn't work inside
+diff --git a/hermes_cli/claw.py b/hermes_cli/claw.py
+index 8f58d95..e31bd49 100644
+--- a/hermes_cli/claw.py
++++ b/hermes_cli/claw.py
+@@ -348,7 +348,7 @@ def _cmd_migrate(args):
+     )
+     print(
+         color(
+-            "│          ⚕ Hermes — OpenClaw Migration                 │",
++            "│          ⚕ Silver Core — OpenClaw Migration                 │",
+             Colors.MAGENTA,
+         )
+     )
+@@ -574,7 +574,7 @@ def _cmd_cleanup(args):
+     )
+     print(
+         color(
+-            "│          ⚕ Hermes — OpenClaw Cleanup                   │",
++            "│          ⚕ Silver Core — OpenClaw Cleanup                   │",
+             Colors.MAGENTA,
+         )
+     )
 diff --git a/hermes_cli/cli_billing_mixin.py b/hermes_cli/cli_billing_mixin.py
 index b0ec388..562e09f 100644
 --- a/hermes_cli/cli_billing_mixin.py
@@ -40586,9 +40665,23 @@ index b0ec388..562e09f 100644
              return
  
 diff --git a/hermes_cli/cli_commands_mixin.py b/hermes_cli/cli_commands_mixin.py
-index c9ae879..ea10d06 100644
+index c9ae879..6f092cd 100644
 --- a/hermes_cli/cli_commands_mixin.py
 +++ b/hermes_cli/cli_commands_mixin.py
+@@ -1960,11 +1960,11 @@ class CLICommandsMixin:
+                     try:
+                         from hermes_cli.skin_engine import get_active_skin
+                         _skin = get_active_skin()
+-                        label = _skin.get_branding("response_label", "⚕ Hermes")
++                        label = _skin.get_branding("response_label", "⚕ Silver Core")
+                         _resp_color = _maybe_remap_for_light_mode(_skin.get_color("response_border", "#CD7F32"))
+                         _resp_text = _maybe_remap_for_light_mode(_skin.get_color("banner_text", "#FFF8DC"))
+                     except Exception:
+-                        label = "⚕ Hermes"
++                        label = "⚕ Silver Core"
+                         _resp_color = "#CD7F32"
+                         _resp_text = "#FFF8DC"
+ 
 @@ -3138,7 +3138,7 @@ class CLICommandsMixin:
          run_debug_share(args)
  
@@ -40669,7 +40762,7 @@ index cd4815e..41dfa26 100644
          "#   hermes completion fish | source",
          "",
 diff --git a/hermes_cli/config.py b/hermes_cli/config.py
-index 4523f92..ea79417 100644
+index 4523f92..a807336 100644
 --- a/hermes_cli/config.py
 +++ b/hermes_cli/config.py
 @@ -1,5 +1,5 @@
@@ -40688,6 +40781,15 @@ index 4523f92..ea79417 100644
  git checkout — the container has no working tree to pull into.  Update by
  pulling a fresh image and restarting your container instead:
  
+@@ -4205,7 +4205,7 @@ def show_config():
+ 
+     print()
+     print(color("┌─────────────────────────────────────────────────────────┐", Colors.CYAN))
+-    print(color("│              ⚕ Hermes Configuration                    │", Colors.CYAN))
++    print(color("│              ⚕ Silver Core Configuration                    │", Colors.CYAN))
+     print(color("└─────────────────────────────────────────────────────────┘", Colors.CYAN))
+ 
+     # Managed scope: surface that some settings are administrator-pinned so the
 diff --git a/hermes_cli/config_defaults.py b/hermes_cli/config_defaults.py
 index dd1cfe8..da82fab 100644
 --- a/hermes_cli/config_defaults.py
@@ -40802,7 +40904,7 @@ index ca8b889..84c5d96 100644
                  "You are Hermes, a helpful AI assistant.\n",
                  encoding="utf-8",
 diff --git a/hermes_cli/gateway.py b/hermes_cli/gateway.py
-index 55b8a19..6900558 100644
+index 55b8a19..58d1ba0 100644
 --- a/hermes_cli/gateway.py
 +++ b/hermes_cli/gateway.py
 @@ -599,7 +599,7 @@ def find_gateway_pids(
@@ -40832,6 +40934,15 @@ index 55b8a19..6900558 100644
  
  
  def _profile_suffix() -> str:
+@@ -4891,7 +4891,7 @@ def run_gateway(verbose: int = 0, quiet: bool = False, replace: bool = False, fo
+     from gateway.run import start_gateway
+ 
+     print("┌─────────────────────────────────────────────────────────┐")
+-    print("│           ⚕ Hermes Gateway Starting...                 │")
++    print("│           ⚕ Silver Core Gateway Starting...                 │")
+     print("├─────────────────────────────────────────────────────────┤")
+     print("│  Messaging platforms + cron scheduler                    │")
+     print("│  Press Ctrl+C to stop                                   │")
 diff --git a/hermes_cli/gateway_windows.py b/hermes_cli/gateway_windows.py
 index 4d09ab3..8a3c1c1 100644
 --- a/hermes_cli/gateway_windows.py
@@ -41245,7 +41356,7 @@ index 6c91ed6..e8f2452 100644
          </div>
      </div>
 diff --git a/hermes_cli/setup.py b/hermes_cli/setup.py
-index 9031524..d22bdbf 100644
+index 9031524..9affceb 100644
 --- a/hermes_cli/setup.py
 +++ b/hermes_cli/setup.py
 @@ -1,5 +1,5 @@
@@ -41255,6 +41366,15 @@ index 9031524..d22bdbf 100644
  
  Modular wizard with independently-runnable sections:
    1. Model & Provider — choose your AI provider and model
+@@ -183,7 +183,7 @@ def is_interactive_stdin() -> bool:
+ def print_noninteractive_setup_guidance(reason: str | None = None) -> None:
+     """Print guidance for headless/non-interactive setup flows."""
+     print()
+-    print(color("⚕ Hermes Setup — Non-interactive mode", Colors.CYAN, Colors.BOLD))
++    print(color("⚕ Silver Core Setup — Non-interactive mode", Colors.CYAN, Colors.BOLD))
+     print()
+     if reason:
+         print_info(reason)
 @@ -2389,7 +2389,7 @@ def setup_telemetry(config: dict):
      """Configure the local, privacy-safe shared-metrics subscriber."""
      print_header("Shared Metrics")
@@ -41264,6 +41384,24 @@ index 9031524..d22bdbf 100644
  
      telemetry = config.get("telemetry")
      if not isinstance(telemetry, dict):
+@@ -2850,7 +2850,7 @@ def _run_portal_one_shot(config: dict) -> None:
+             Colors.MAGENTA,
+         )
+     )
+-    print(color("│     ⚕ Hermes Setup — Nous Portal (one-shot)             │", Colors.MAGENTA))
++    print(color("│     ⚕ Silver Core Setup — Nous Portal (one-shot)             │", Colors.MAGENTA))
+     print(
+         color(
+             "└─────────────────────────────────────────────────────────┘",
+@@ -2981,7 +2981,7 @@ def run_setup_wizard(args):
+                         Colors.MAGENTA,
+                     )
+                 )
+-                print(color(f"│     ⚕ Hermes Setup — {label:<34s} │", Colors.MAGENTA))
++                print(color(f"│     ⚕ Silver Core Setup — {label:<34s} │", Colors.MAGENTA))
+                 print(
+                     color(
+                         "└─────────────────────────────────────────────────────────┘",
 @@ -3017,7 +3017,7 @@ def run_setup_wizard(args):
      )
      print(
@@ -41294,10 +41432,10 @@ index 720b9eb..bece6ff 100644
  
  Toggle individual skills or categories on/off, globally or per-platform.
 diff --git a/hermes_cli/skin_engine.py b/hermes_cli/skin_engine.py
-index a2a093b..58e9a29 100644
+index a2a093b..39396a4 100644
 --- a/hermes_cli/skin_engine.py
 +++ b/hermes_cli/skin_engine.py
-@@ -94,7 +94,7 @@ All fields are optional. Missing values inherit from the ``default`` skin.
+@@ -94,10 +94,10 @@ All fields are optional. Missing values inherit from the ``default`` skin.
  
      # Branding: text strings used throughout the CLI
      branding:
@@ -41305,7 +41443,11 @@ index a2a093b..58e9a29 100644
 +      agent_name: "Silver Core"          # Banner title, status display
        welcome: "Welcome message"          # Shown at CLI startup
        goodbye: "Goodbye! ⚕"              # Shown on exit
-       response_label: " ⚕ Hermes "       # Response box header label
+-      response_label: " ⚕ Hermes "       # Response box header label
++      response_label: " ⚕ Silver Core "       # Response box header label
+       prompt_symbol: "❯"                 # Input prompt symbol (bare token; renderers add trailing space)
+       help_header: "(^_^)? Commands"      # /help header text
+ 
 @@ -119,7 +119,7 @@ USAGE
  
      skin = get_active_skin()
@@ -41315,7 +41457,7 @@ index a2a093b..58e9a29 100644
  
      set_active_skin("ares")               # Switch to built-in ares skin
      set_active_skin("mytheme")            # Switch to user skin from ~/.hermes/skins/
-@@ -274,8 +274,8 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
+@@ -274,10 +274,10 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
              # Empty = use hardcoded defaults in display.py
          },
          "branding": {
@@ -41324,9 +41466,12 @@ index a2a093b..58e9a29 100644
 +            "agent_name": "Silver Core",
 +            "welcome": "Welcome to Silver Core! Type your message or /help for commands.",
              "goodbye": "Goodbye! ⚕",
-             "response_label": " ⚕ Hermes ",
+-            "response_label": " ⚕ Hermes ",
++            "response_label": " ⚕ Silver Core ",
              "prompt_symbol": "❯",
-@@ -395,8 +395,8 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
+             "help_header": "(^_^)? Available Commands",
+         },
+@@ -395,10 +395,10 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
          },
          "spinner": {},
          "branding": {
@@ -41335,9 +41480,12 @@ index a2a093b..58e9a29 100644
 +            "agent_name": "Silver Core",
 +            "welcome": "Welcome to Silver Core! Type your message or /help for commands.",
              "goodbye": "Goodbye! ⚕",
-             "response_label": " ⚕ Hermes ",
+-            "response_label": " ⚕ Hermes ",
++            "response_label": " ⚕ Silver Core ",
              "prompt_symbol": "❯",
-@@ -439,8 +439,8 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
+             "help_header": "[?] Available Commands",
+         },
+@@ -439,10 +439,10 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
          },
          "spinner": {},
          "branding": {
@@ -41346,9 +41494,12 @@ index a2a093b..58e9a29 100644
 +            "agent_name": "Silver Core",
 +            "welcome": "Welcome to Silver Core! Type your message or /help for commands.",
              "goodbye": "Goodbye! ⚕",
-             "response_label": " ⚕ Hermes ",
+-            "response_label": " ⚕ Hermes ",
++            "response_label": " ⚕ Silver Core ",
              "prompt_symbol": "❯",
-@@ -485,8 +485,8 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
+             "help_header": "(^_^)? Available Commands",
+         },
+@@ -485,10 +485,10 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
          },
          "spinner": {},
          "branding": {
@@ -41357,8 +41508,11 @@ index a2a093b..58e9a29 100644
 +            "agent_name": "Silver Core",
 +            "welcome": "Welcome to Silver Core! Type your message or /help for commands.",
              "goodbye": "Goodbye! ⚕",
-             "response_label": " ⚕ Hermes ",
+-            "response_label": " ⚕ Hermes ",
++            "response_label": " ⚕ Silver Core ",
              "prompt_symbol": "❯",
+             "help_header": "[?] Available Commands",
+         },
 @@ -531,8 +531,8 @@ _BUILTIN_SKINS: Dict[str, Dict[str, Any]] = {
          },
          "spinner": {},
@@ -41546,7 +41700,7 @@ index 89395d5..1ee4d4f 100644
  POLL_INTERVAL = 2
  
 diff --git a/hermes_cli/tools_config.py b/hermes_cli/tools_config.py
-index 162a642..0672667 100644
+index 162a642..ac6f893 100644
 --- a/hermes_cli/tools_config.py
 +++ b/hermes_cli/tools_config.py
 @@ -1,5 +1,5 @@
@@ -41556,8 +41710,17 @@ index 162a642..0672667 100644
  
  `hermes tools` and `hermes setup tools` both enter this module.
  Select a platform → toggle toolsets on/off → for newly enabled tools
+@@ -4843,7 +4843,7 @@ def tools_command(args=None, first_install: bool = False, config: dict = None):
+                 print(color("    (none enabled)", Colors.DIM))
+         print()
+         return
+-    print(color("⚕ Hermes Tool Configuration", Colors.CYAN, Colors.BOLD))
++    print(color("⚕ Silver Core Tool Configuration", Colors.CYAN, Colors.BOLD))
+     print(color("  Enable or disable tools per platform.", Colors.DIM))
+     print(color("  Tools that need API keys will be configured when enabled.", Colors.DIM))
+     print(color("  Guide: https://hermes-agent.nousresearch.com/docs/user-guide/features/tools", Colors.DIM))
 diff --git a/hermes_cli/uninstall.py b/hermes_cli/uninstall.py
-index fb7548b..3aed312 100644
+index fb7548b..8721c54 100644
 --- a/hermes_cli/uninstall.py
 +++ b/hermes_cli/uninstall.py
 @@ -1,5 +1,5 @@
@@ -41578,6 +41741,15 @@ index fb7548b..3aed312 100644
                      skip_next = True
                      continue
                  if skip_next and ('hermes' in line.lower() and 'PATH' in line):
+@@ -514,7 +514,7 @@ def run_gui_uninstall(args):
+ 
+     print()
+     print(color("┌─────────────────────────────────────────────────────────┐", Colors.MAGENTA, Colors.BOLD))
+-    print(color("│         ⚕ Hermes Chat GUI Uninstaller                  │", Colors.MAGENTA, Colors.BOLD))
++    print(color("│         ⚕ Silver Core Chat GUI Uninstaller                  │", Colors.MAGENTA, Colors.BOLD))
+     print(color("└─────────────────────────────────────────────────────────┘", Colors.MAGENTA, Colors.BOLD))
+     print()
+ 
 @@ -611,7 +611,7 @@ def run_uninstall(args):
  
      print()
@@ -41597,7 +41769,7 @@ index fb7548b..3aed312 100644
  
  
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index 6b777ff..74df255 100644
+index 6b777ff..a0b1d0a 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
 @@ -532,7 +532,7 @@ def _atomic_replace_dir(src: str, dst: str) -> None:
@@ -41645,6 +41817,18 @@ index 6b777ff..74df255 100644
      print()
  
      # On Windows, abort early if another hermes.exe is holding the venv shim
+@@ -3221,6 +3221,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
+ 
+     if not git_dir.exists():
+         if sys.platform == "win32":
++            # Portable bundle (no .git): self-update is disabled — the ZIP
++            # fallback would overwrite the tree with unbranded upstream.
++            print("\u2717 Self-update is disabled in the portable bundle.")
++            print("  Update channel: replace the whole bundle with a new release zip.")
++            sys.exit(1)
+             use_zip_update = True
+         else:
+             print("✗ Not a git repository. Please reinstall:")
 diff --git a/hermes_cli/web_server.py b/hermes_cli/web_server.py
 index 767882b..52343fa 100644
 --- a/hermes_cli/web_server.py
@@ -42949,7 +43133,7 @@ index b3ab23c..3533fd4 100644
  
        break
 diff --git a/ui-tui/src/app/slash/commands/wake.ts b/ui-tui/src/app/slash/commands/wake.ts
-index 8011b85..6f94cf7 100644
+index 8011b85..28f38c2 100644
 --- a/ui-tui/src/app/slash/commands/wake.ts
 +++ b/ui-tui/src/app/slash/commands/wake.ts
 @@ -116,7 +116,7 @@ const WAKE_RUNNERS: Record<WakeSub, (ctx: SlashRunCtx) => void> = {
@@ -42957,7 +43141,7 @@ index 8011b85..6f94cf7 100644
  export const wakeCommands: SlashCommand[] = [
    {
 -    help: "toggle the 'Hey Hermes' wake word listener [on|off|status]",
-+    help: "toggle the 'Hey Silver Core' wake word listener [on|off|status]",
++    help: "toggle the wake word listener [on|off|status]",
      name: 'wake',
      usage: '/wake [on|off|status]',
      run: (arg, ctx) => {
@@ -44825,7 +45009,7 @@ index 2d5fecd..dbad6b2 100644
    const value = String(raw ?? "").trim().toLowerCase();
    if (!value) return "medium";
 diff --git a/web/src/pages/ChannelsPage.tsx b/web/src/pages/ChannelsPage.tsx
-index 08d781e..7f3940d 100644
+index 08d781e..0b3016d 100644
 --- a/web/src/pages/ChannelsPage.tsx
 +++ b/web/src/pages/ChannelsPage.tsx
 @@ -440,7 +440,7 @@ export default function ChannelsPage() {
@@ -44896,7 +45080,7 @@ index 08d781e..7f3940d 100644
        const dataUrl = await QRCode.toDataURL(res.qr_payload, {
          errorCorrectionLevel: "M",
          margin: 1,
-@@ -1266,7 +1266,7 @@ function TelegramOnboardingPanel({
+@@ -1266,12 +1266,13 @@ function TelegramOnboardingPanel({
          </span>
          <span className="text-xs text-muted-foreground">
            Both options connect a bot you control and save its credentials only to
@@ -44905,7 +45089,15 @@ index 08d781e..7f3940d 100644
          </span>
        </div>
  
-@@ -1279,7 +1279,7 @@ function TelegramOnboardingPanel({
+-      <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:divide-x sm:divide-border">
+-        <div className="grid content-start gap-3 sm:pr-4">
++      <div className="mt-4 grid gap-4">
++        {/* 内网无 Nous 托管 Bot SaaS——Quick setup 列隐藏（审计轮二） */}
++        {false && <div className="grid content-start gap-3 sm:pr-4">
+           <div className="flex flex-wrap items-center gap-2">
+             <span className="text-xs font-medium uppercase text-foreground">
+               Quick setup
+@@ -1279,7 +1280,7 @@ function TelegramOnboardingPanel({
              <Badge tone="success">recommended</Badge>
            </div>
            <p className="text-xs text-muted-foreground">
@@ -44914,6 +45106,18 @@ index 08d781e..7f3940d 100644
              detects your Telegram user ID automatically.
            </p>
            <Button
+@@ -1291,9 +1292,9 @@ function TelegramOnboardingPanel({
+           >
+             {phase === "starting" ? "Starting…" : "Create with QR"}
+           </Button>
+-        </div>
++        </div>}
+ 
+-        <div className="grid content-start gap-3 border-t border-border pt-4 sm:border-t-0 sm:pl-4 sm:pt-0">
++        <div className="grid content-start gap-3">
+           <span className="text-xs font-medium uppercase text-foreground">
+             Use your own bot
+           </span>
 diff --git a/web/src/pages/ChatPage.tsx b/web/src/pages/ChatPage.tsx
 index 081cccc..6cb048b 100644
 --- a/web/src/pages/ChatPage.tsx

@@ -21,6 +21,9 @@
 | CLI 命令名 | `deploy/bin/silver-core` 别名包裹（零侵入） | 1 件 |
 | 钉钉显示名 | 钉钉应用后台配置（内网侧） | 部署说明 |
 | **改名审计轮（守密人 2026-08-02 派发「查改名 bug + 不再必要功能」）** | 后置规则四条：① APP_NAME 兜底 `'Hermes'`→`'Silver Core'`（productName 已换而兜底未换 = electron userData 按两个名字解析，绕过 launcher 直启 exe 时配置脑裂）② 后台更新轮询整只 no-op（挂载 + 每 30 分钟 + 聚焦触发，便携包里每次注定报「isn't a git checkout」错误噪音）③ Billing 设置入口隐藏（Hermes Cloud 订阅页，内网自有 Providers 无对象）④ 钉钉 relay 默认名抑制两名并收（旧持久化配置存 `Hermes Agent` 时漏抑制、回复前缀泄漏旧名）；哨兵 `test_rebrand_portable_fit_rules_alive` | 4 处 |
+| **审计轮二（2026-08-03 Sonnet 七断面动态编排 + 主循环终审）** | 后置规则八条：① `hermes update` 便携硬门禁（无 .git 的 win32 ZIP 兜底会拉未换装上游整树覆盖——字面撤销全部品牌补丁；文书 §2.4 从文档纪律升格代码门禁）② Billing 深路由封死（`?tab=billing` + 计费故障自动跳转两条暗道，从 `SETTINGS_VIEWS` 摘除）③ Help > Check for Updates 菜单整项摘除（三处自更新入口最后一处）④ Gateway Cloud 连接模式卡隐藏（portal.nousresearch.com OAuth 无对象）⑤ Telegram Quick setup 列隐藏（托管 Bot 固定代理 Nous 自营 SaaS，内网不可达却挂 recommended）⑥⑦ AUMID + appId 中性化 `com.biav.silvercore`（全小写躲过裸词规则，Windows 通知设置直接显示原始串）⑧ 唤醒词帮助文案中性化（裸词规则教出 "Hey Silver Core" 但声学模型只认 "hey hermes"）+ CLI `⚕ Hermes` 面板残留收尾；哨兵 `test_rebrand_audit_round2_rules_alive` | 8 条 |
+
+**审计轮二观察项（未处理，供守密人裁夺）**：`hermes uninstall` 的桌面产物探测硬编码 `Hermes` 目录名、换装后找不到 `Silver Core` 实际产物（便携形态卸载 = 删目录，实害近零）；Remote/SSH 报错文案四语种引导 `hermes-agent.nousresearch.com/install.sh`（内网不可达，正确措辞需产品口径，暂记账）；pet 精灵素材仍为上游吉祥物（前轮已记）。
 
 ## 刻意不碰（红线，守卫 `tests/test_hermes_charter.py`）
 

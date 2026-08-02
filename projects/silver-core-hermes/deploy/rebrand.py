@@ -175,6 +175,106 @@ POST_RULES = [
         '        if value in ("Silver Core", "Hermes Agent"):\n'
         '            value = ""\n',
     ),
+    # ---- 2026-08-03 审计轮二（Sonnet 七断面编排发现，主循环终审确认） ----
+    # (5) hermes update 便携硬门禁：无 .git 的 win32 树本就是便携包形态，原 ZIP
+    # 兜底会从公网拉未换装上游整树覆盖本地——字面撤销全部品牌补丁。文书 §2.4
+    # 「生产禁用 hermes update」原本只有文档约束力，此处升格为代码门禁。
+    (
+        "    if not git_dir.exists():\n"
+        '        if sys.platform == "win32":\n'
+        "            use_zip_update = True\n",
+        "    if not git_dir.exists():\n"
+        '        if sys.platform == "win32":\n'
+        "            # Portable bundle (no .git): self-update is disabled — the ZIP\n"
+        "            # fallback would overwrite the tree with unbranded upstream.\n"
+        '            print("\\u2717 Self-update is disabled in the portable bundle.")\n'
+        '            print("  Update channel: replace the whole bundle with a new release zip.")\n'
+        "            sys.exit(1)\n"
+        "            use_zip_update = True\n",
+    ),
+    # (6) Billing 深路由封死：入口帘子只遮了侧栏，?tab=billing 与计费故障自动
+    # 跳转仍能整页打开 Nous Cloud 订阅页。从 SETTINGS_VIEWS 白名单摘除后
+    # enum 路由参数直接拒收、回落默认页。
+    (
+        "  'notifications',\n  'billing',\n  'plugins',\n",
+        "  'notifications',\n  'plugins',\n",
+    ),
+    # (7) Help > Check for Updates 菜单整项摘除：三处自更新入口中最后一处未堵
+    # 的（About 区已隐藏、后台轮询已 no-op），点击仍开完整更新覆盖层。
+    (
+        "  template.push({\n"
+        "    label: 'Help',\n"
+        "    role: 'help',\n"
+        "    submenu: [checkForUpdatesItem]\n"
+        "  })\n",
+        "  // 便携包禁自更新——Help>Check for Updates 菜单整项摘除（审计轮二）\n",
+    ),
+    # (8) Gateway Cloud 连接模式隐藏：卡片驱动 portal.nousresearch.com OAuth，
+    # 内网无对象（与 Billing 同理）。
+    (
+        "          <ModeCard\n"
+        "            active={state.mode === 'cloud'}\n"
+        "            description={g.cloudDesc}\n"
+        "            disabled={state.envOverride}\n"
+        "            icon={Cloud}\n"
+        "            onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}\n"
+        "            title={g.cloudTitle}\n"
+        "          />\n",
+        "          {/* 内网无 Nous Cloud——Cloud 连接模式隐藏（审计轮二） */}\n"
+        "          {false && (\n"
+        "          <ModeCard\n"
+        "            active={state.mode === 'cloud'}\n"
+        "            description={g.cloudDesc}\n"
+        "            disabled={state.envOverride}\n"
+        "            icon={Cloud}\n"
+        "            onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}\n"
+        "            title={g.cloudTitle}\n"
+        "          />\n"
+        "          )}\n",
+    ),
+    # (9) Telegram「Quick setup / Create with QR」列隐藏：托管 Bot 配对固定代理
+    # Nous 自营 SaaS（setup.hermes-agent.nousresearch.com），内网必然打不通，
+    # 却挂 recommended 徽标压过真正可用的 Manual setup。
+    (
+        '      <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:divide-x sm:divide-border">\n'
+        '        <div className="grid content-start gap-3 sm:pr-4">\n',
+        '      <div className="mt-4 grid gap-4">\n'
+        "        {/* 内网无 Nous 托管 Bot SaaS——Quick setup 列隐藏（审计轮二） */}\n"
+        '        {false && <div className="grid content-start gap-3 sm:pr-4">\n',
+    ),
+    (
+        "          </Button>\n"
+        "        </div>\n"
+        "\n"
+        '        <div className="grid content-start gap-3 border-t border-border pt-4 sm:border-t-0 sm:pl-4 sm:pt-0">\n',
+        "          </Button>\n"
+        "        </div>}\n"
+        "\n"
+        '        <div className="grid content-start gap-3">\n',
+    ),
+    # (10) AUMID / appId 品牌中性化：com.nousresearch.hermes 全小写躲过裸词规则，
+    # 便携无安装器时 Windows 通知设置会直接显示该原始串。两处成对同改。
+    (
+        "app.setAppUserModelId('com.nousresearch.hermes')",
+        "app.setAppUserModelId('com.biav.silvercore')",
+    ),
+    (
+        '"appId": "com.nousresearch.hermes",',
+        '"appId": "com.biav.silvercore",',
+    ),
+    # (11) 唤醒词帮助文案中性化：裸词规则把 'Hey Hermes' 教成 'Hey Silver Core'，
+    # 但 openwakeword 声学模型只认 "hey hermes"——UI 教的短语对模型无效。
+    # 改为不含短语的中性描述（桌面侧本就动态读真实短语渲染）。
+    (
+        "toggle the 'Hey Silver Core' wake word listener [on|off|status]",
+        "toggle the wake word listener [on|off|status]",
+    ),
+    # (12) CLI 响应面板残留品牌：'⚕ Hermes'（裸词 + hermes_cli 不在裸词目录）
+    # 在 Rich Panel 标题直接可见。通用规则跑完后剩下的都是裸词形态，统一收尾。
+    (
+        "⚕ Hermes",
+        "⚕ Silver Core",
+    ),
 ]
 
 # 二进制品牌资产覆盖（2026-08-02 补漏：图标是二进制，文本规则到不了）：

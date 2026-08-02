@@ -102,6 +102,23 @@ def test_rebrand_portable_fit_rules_alive():
     assert not missing, f"审计轮规则从补丁消失（POST_RULES 锚点失配）: {missing}"
 
 
+def test_rebrand_audit_round2_rules_alive():
+    """审计轮二八规则（2026-08-03 Sonnet 编排 + 主循环终审）不得静默失效。"""
+    text = (SUB / "patches" / "silver-core-rebrand.patch").read_text(encoding="utf-8")
+    sentinels = {
+        "hermes update 便携硬门禁": "Self-update is disabled in the portable bundle",
+        "Billing 深路由封死": "-  'billing',",
+        "Help 菜单更新项摘除": "Help>Check for Updates 菜单整项摘除",
+        "Cloud 连接模式隐藏": "Cloud 连接模式隐藏",
+        "Telegram Quick setup 列隐藏": "Quick setup 列隐藏",
+        "AUMID 中性化": "com.biav.silvercore",
+        "唤醒词帮助中性化": "toggle the wake word listener [on|off|status]",
+        "CLI 面板残留品牌收尾": "⚕ Silver Core",
+    }
+    missing = [k for k, v in sentinels.items() if v not in text]
+    assert not missing, f"审计轮二规则从补丁消失（POST_RULES 锚点失配）: {missing}"
+
+
 def test_charter_skeleton_present():
     for name in ["plugins", "skills", "deploy"]:
         assert (SUB / name).is_dir(), f"§2.2 骨架目录缺失: {name}/"
