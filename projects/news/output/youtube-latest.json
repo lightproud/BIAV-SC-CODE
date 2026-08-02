@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-02T19:09:16.023951+00:00",
+  "collected_at": "2026-08-02T21:55:36.200947+00:00",
   "source": "youtube",
   "data_layer": "output",
   "item_count": 10,
@@ -13,7 +13,7 @@
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=D62ydKJyFR8",
       "author": "박현(Muyeong)",
-      "engagement": 47,
+      "engagement": 55,
       "media_url": "https://i.ytimg.com/vi/D62ydKJyFR8/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,7 +25,7 @@
       "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 今回は新シーズン、新しいUIについて触れながら、 対人戦に挑んでいき ...",
       "url": "https://www.youtube.com/watch?v=OmUPULOCZ4o",
       "author": "薄めの『ゆゆ』",
-      "engagement": 36,
+      "engagement": 48,
       "media_url": "https://i.ytimg.com/vi/OmUPULOCZ4o/hqdefault.jpg",
       "content_type": "video"
     },
@@ -37,8 +37,20 @@
       "summary": "配信が終わり次第ミサゴ構内のコンビニへ Twitter(X)→https://x.com/to_m4fuyu.",
       "url": "https://www.youtube.com/watch?v=I3kwfNUdpwg",
       "author": "to真冬",
-      "engagement": 21,
+      "engagement": 25,
       "media_url": "https://i.ytimg.com/vi/I3kwfNUdpwg/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-02T20:29:50Z",
+      "lang": "",
+      "title": "모리멘스 (망각전야) - 융재 마감 10시간 전",
+      "summary": "노마이크.",
+      "url": "https://www.youtube.com/watch?v=-lq1HSZg8YI",
+      "author": "때까치",
+      "engagement": 7,
+      "media_url": "https://i.ytimg.com/vi/-lq1HSZg8YI/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -55,6 +67,30 @@
     },
     {
       "source": "youtube",
+      "time": "2026-08-02T18:29:06Z",
+      "lang": "",
+      "title": "Morimens × Saya no Uta - Song of Memento Remix",
+      "summary": "Submission for Morimens' 2.5 UGC Creation Submission Campaign! Original: https://www.youtube.com/watch?v=5csUC3QMF1M ...",
+      "url": "https://www.youtube.com/watch?v=IYi-9Eq-Gxg",
+      "author": "Symboli Kris S",
+      "engagement": 5,
+      "media_url": "https://i.ytimg.com/vi/IYi-9Eq-Gxg/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-02T16:10:14Z",
+      "lang": "",
+      "title": "Cetarchon Lotan Story Voiced Morimens Just Whale Things",
+      "summary": "Voicing the Entire Stooooory for the new Lotan Character Glotan or Cetarchon Lotan or whatever you prefer. Stream almost daily ...",
+      "url": "https://www.youtube.com/watch?v=0NCdfLX_ZlQ",
+      "author": "FluffeyPanda's World",
+      "engagement": 4,
+      "media_url": "https://i.ytimg.com/vi/0NCdfLX_ZlQ/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-08-02T10:44:12Z",
       "lang": "",
       "title": "Morimens Astral Reign 1-8 Hollow One",
@@ -67,30 +103,6 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-02T18:29:06Z",
-      "lang": "",
-      "title": "Morimens × Saya no Uta - Song of Memento Remix",
-      "summary": "Submission for Morimens' 2.5 UGC Creation Submission Campaign! Original: https://www.youtube.com/watch?v=5csUC3QMF1M ...",
-      "url": "https://www.youtube.com/watch?v=IYi-9Eq-Gxg",
-      "author": "Symboli Kris S",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/IYi-9Eq-Gxg/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-02T16:10:14Z",
-      "lang": "",
-      "title": "Cetarchon Lotan Story Voiced Morimens Just Whale Things",
-      "summary": "Voicing the Entire Stooooory for the new Lotan Character Glotan or Cetarchon Lotan or whatever you prefer. Stream almost daily ...",
-      "url": "https://www.youtube.com/watch?v=0NCdfLX_ZlQ",
-      "author": "FluffeyPanda's World",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/0NCdfLX_ZlQ/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-08-02T09:16:59Z",
       "lang": "",
       "title": "Caecus -- frenzy || Aequor Evolution || Morimens: Don&#39;t forget last night",
@@ -99,18 +111,6 @@
       "author": "Sunyandmony (Silly Vane) ",
       "engagement": 2,
       "media_url": "https://i.ytimg.com/vi/4ltA3gQPh5w/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-01T21:00:15Z",
-      "lang": "",
-      "title": "Demi-DOG BATTLE IS INSANE! Lotan Must Not Fail! | Morimens F2P Playthrough 4-15",
-      "summary": "F2P Playthrough of Morimen's Story.",
-      "url": "https://www.youtube.com/watch?v=eN6C17H1UwA",
-      "author": "Koka",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/eN6C17H1UwA/hqdefault.jpg",
       "content_type": "video"
     },
     {
