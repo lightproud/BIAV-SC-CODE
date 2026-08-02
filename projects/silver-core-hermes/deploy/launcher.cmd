@@ -2,12 +2,14 @@
 rem Silver Core 便携整包启动器（cmd 批处理，零 PowerShell）。
 rem 合箱布局：python\（uv 托管 CPython）、venv\、app\（组装源树）、desktop\（win-unpacked）、
 rem home\（HERMES_HOME）与本文件同级。默认拉起 desktop；CLI 用法 launcher.cmd cli <args>。
-rem 自诊断：全程写 launcher.log；任何一步失败都停窗展示原因（不再闪退吞错）。
+rem 自诊断：全程写 launcher.log；任何一步失败都停窗展示原因（不再闪退吞错）；
+rem desktop 由 launch_desktop.py 监督式拉起（捕获输出 + 探活 + 软渲染重试，治黑屏一闪即终）。
 setlocal EnableExtensions
 chcp 65001 >nul
 set "ROOT=%~dp0"
 set "LOG=%ROOT%launcher.log"
 echo [%date% %time%] launcher start ROOT=%ROOT% > "%LOG%"
+echo Silver Core 启动中，请稍候（本窗会显示进度，失败会停窗给出原因）...
 
 set "HERMES_HOME=%ROOT%home"
 set "PATH=%ROOT%venv\Scripts;%PATH%"
@@ -43,6 +45,7 @@ if errorlevel 1 (
   exit /b 1
 )
 echo [ok] runtime import check passed >> "%LOG%"
+echo 运行时自检通过。
 
 rem -- CLI 模式：launcher.cmd cli <args> --
 if /i "%~1"=="cli" (
@@ -51,14 +54,23 @@ if /i "%~1"=="cli" (
   exit /b %errorlevel%
 )
 
-rem -- 步骤 4：拉起 desktop（未找到则回退 CLI） --
-set "DESKTOP_EXE="
-for %%F in ("%ROOT%desktop\*.exe") do if not defined DESKTOP_EXE set "DESKTOP_EXE=%%~fF"
-if defined DESKTOP_EXE (
-  echo [ok] starting desktop %DESKTOP_EXE% >> "%LOG%"
-  start "Silver Core" "%DESKTOP_EXE%"
+rem -- 步骤 4：监督式拉起 desktop（捕获输出 + 探活 + 软渲染重试；未找到则回退 CLI） --
+if exist "%ROOT%desktop" (
+  echo 正在启动桌面端，自检守窗约 25 秒，窗口正常出现后本窗自动关闭...
+  "%ROOT%venv\Scripts\python.exe" "%ROOT%launch_desktop.py" "%ROOT%."
+  if errorlevel 1 (
+    echo.
+    echo 启动失败：桌面端进程未能存活。上方为取证日志尾部，
+    echo 完整日志见 %LOG% 与 home\logs\ 目录。
+    pause
+    exit /b 1
+  )
   exit /b 0
 )
-echo [warn] desktop exe not found, falling back to CLI >> "%LOG%"
+echo [warn] desktop dir not found, falling back to CLI >> "%LOG%"
+echo 未找到桌面端目录，回退命令行模式...
 "%ROOT%venv\Scripts\hermes.exe" %*
+echo.
+echo 命令行会话已结束。
+pause
 endlocal

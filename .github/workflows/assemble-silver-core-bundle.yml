@@ -81,6 +81,7 @@ jobs:
         run: |
           cp projects/silver-core-hermes/deploy/launcher.cmd SilverCore/
           cp projects/silver-core-hermes/deploy/fix_venv_path.py SilverCore/
+          cp projects/silver-core-hermes/deploy/launch_desktop.py SilverCore/
           # 组装根印章：editable 指针自愈的「旧根」依据（自愈后由脚本滚动更新）
           cygpath -w "$(pwd)/SilverCore" > SilverCore/bundle-root.txt
           {
@@ -112,6 +113,25 @@ jobs:
           # 回搬后把 home 修回最终打包路径，保证 zip 内初值有效（launcher 首启仍会再自愈）
           PYHOME2=$(ls -d "$(pwd)/SilverCore/python/cpython-"*)
           "$PYHOME2/python.exe" SilverCore/fix_venv_path.py "$(cygpath -w "$(pwd)/SilverCore")"
+
+      - name: Desktop launch smoke (supervised, captures Chromium stderr)
+        run: |
+          # 黑屏类死因（GPU/沙箱早夭、缺 DLL、asar 缺渲染层）只有真拉起 exe 才暴露。
+          # 与用户面同一监督器：早夭自动软渲染重试，仍死则 exit 1 并打印取证日志尾部。
+          SILVER_CORE_LAUNCH_WAIT=40 SilverCore/venv/Scripts/python.exe \
+            SilverCore/launch_desktop.py "$(cygpath -w "$(pwd)/SilverCore")"
+          # 冒烟完杀掉 desktop 及其 serve 后端（python.exe），避免句柄占用挡住清理与打包
+          EXE_NAME=$(basename "$(ls SilverCore/desktop/*.exe | head -1)")
+          taskkill //F //IM "$EXE_NAME" 2>/dev/null || true
+          taskkill //F //IM python.exe 2>/dev/null || true
+          sleep 3
+
+      - name: Clean smoke residue before zip
+        run: |
+          # 冒烟在 home\ 与 launcher.log 留下的运行时痕迹不入箱（用户首启应得到干净包）
+          rm -rf SilverCore/home
+          mkdir -p SilverCore/home
+          rm -f SilverCore/launcher.log
 
       - name: Zip (transport container only)
         run: 7z a -mx=3 "silver-core-win64.zip" SilverCore > /dev/null && ls -lh silver-core-win64.zip
