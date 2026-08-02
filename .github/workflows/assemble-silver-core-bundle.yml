@@ -41,6 +41,9 @@ jobs:
       - name: Apply Silver Core rebrand (rule engine)
         run: python projects/silver-core-hermes/deploy/rebrand.py --apply SilverCore/app
 
+      - name: Apply feature patches (whitelisted)
+        run: git apply --directory=SilverCore/app projects/silver-core-hermes/patches/conversation-cost-panel.patch
+
       - name: Portable CPython into bundle
         env:
           UV_PYTHON_INSTALL_DIR: ${{ github.workspace }}\SilverCore\python
