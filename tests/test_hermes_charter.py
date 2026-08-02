@@ -89,6 +89,19 @@ def test_rebrand_hides_about_updates_section():
     )
 
 
+def test_rebrand_portable_fit_rules_alive():
+    """改名审计轮四规则（2026-08-02）不得因移 pin 锚点失配而无声失效。"""
+    text = (SUB / "patches" / "silver-core-rebrand.patch").read_text(encoding="utf-8")
+    sentinels = {
+        "APP_NAME 兜底统一（userData 脑裂）": "|| 'Silver Core'",
+        "后台更新轮询 no-op": "便携包禁自更新",
+        "Billing 入口隐藏": "Billing 入口隐藏",
+        "relay 默认名两名并收": 'value in ("Silver Core", "Hermes Agent")',
+    }
+    missing = [k for k, v in sentinels.items() if v not in text]
+    assert not missing, f"审计轮规则从补丁消失（POST_RULES 锚点失配）: {missing}"
+
+
 def test_charter_skeleton_present():
     for name in ["plugins", "skills", "deploy"]:
         assert (SUB / name).is_dir(), f"§2.2 骨架目录缺失: {name}/"

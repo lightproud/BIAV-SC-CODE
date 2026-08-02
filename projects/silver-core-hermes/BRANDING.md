@@ -20,6 +20,7 @@
 | **About 页出身声明 + 自更新区 / Danger zone 隐藏**（守密人 2026-08-02 三裁：①直接说明「B.I.A.V. Studio 基于 Hermes <版本> 的定制版本」②不再展示自更新区——便携包生产禁用 `hermes update`（文书 §2.4），该区只会报 git checkout 错误误导③Danger zone 整区不必要——便携包无安装器，卸载文案「reopen the installer」失实） | 后置全文规则锚定 about-settings.tsx：插入声明（版本动态渲染）+ `{false && …}` 帘子包裹两区（非删除，移 pin 冲突面最小）；哨兵防静默复活（charter 守卫） | 3 处 |
 | CLI 命令名 | `deploy/bin/silver-core` 别名包裹（零侵入） | 1 件 |
 | 钉钉显示名 | 钉钉应用后台配置（内网侧） | 部署说明 |
+| **改名审计轮（守密人 2026-08-02 派发「查改名 bug + 不再必要功能」）** | 后置规则四条：① APP_NAME 兜底 `'Hermes'`→`'Silver Core'`（productName 已换而兜底未换 = electron userData 按两个名字解析，绕过 launcher 直启 exe 时配置脑裂）② 后台更新轮询整只 no-op（挂载 + 每 30 分钟 + 聚焦触发，便携包里每次注定报「isn't a git checkout」错误噪音）③ Billing 设置入口隐藏（Hermes Cloud 订阅页，内网自有 Providers 无对象）④ 钉钉 relay 默认名抑制两名并收（旧持久化配置存 `Hermes Agent` 时漏抑制、回复前缀泄漏旧名）；哨兵 `test_rebrand_portable_fit_rules_alive` | 4 处 |
 
 ## 刻意不碰（红线，守卫 `tests/test_hermes_charter.py`）
 

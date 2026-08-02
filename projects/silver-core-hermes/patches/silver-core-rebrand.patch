@@ -19665,7 +19665,7 @@ index e671dc2..04197d8 100644
      )
    }
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index f485e5a..1e6c05f 100644
+index f485e5a..c15d74c 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
 @@ -346,7 +346,7 @@ if (IS_WINDOWS) {
@@ -19686,6 +19686,15 @@ index f485e5a..1e6c05f 100644
  // local backend as. When set, startHermes() passes `hermes --profile <name>
  // dashboard …`, which deterministically pins HERMES_HOME (see
  // _apply_profile_override in hermes_cli/main.py) and bypasses the sticky
+@@ -659,7 +659,7 @@ const BOOT_FAKE_STEP_MS = (() => {
+   return Math.max(120, raw)
+ })()
+ 
+-const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || 'Hermes'
++const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || 'Silver Core'
+ const TITLEBAR_HEIGHT = 34
+ const MACOS_TRAFFIC_LIGHTS_HEIGHT = 14
+ 
 @@ -960,7 +960,7 @@ if (IS_WINDOWS) {
    app.setAppUserModelId('com.nousresearch.hermes')
  }
@@ -35334,6 +35343,36 @@ index 30afd2d..c71ab22 100644
            whose selection drives the silent per-agent cascade + a cloud
            connection. Replaces the URL/token form while in cloud mode. */}
        {state.mode === 'cloud' && !state.envOverride ? (
+diff --git a/apps/desktop/src/app/settings/index.tsx b/apps/desktop/src/app/settings/index.tsx
+index 8dccf3a..9f9e016 100644
+--- a/apps/desktop/src/app/settings/index.tsx
++++ b/apps/desktop/src/app/settings/index.tsx
+@@ -161,13 +161,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
+         label: t.settings.nav.notifications,
+         onSelect: () => setActiveView('notifications')
+       },
+-      {
+-        active: activeView === 'billing',
+-        icon: BarChart3,
+-        id: 'billing',
+-        label: t.settings.nav.billing,
+-        onSelect: () => setActiveView('billing')
+-      },
++      // 内网便携包无 Hermes Cloud 订阅——Billing 入口隐藏（2026-08-02 审计轮）
++      ...(false
++        ? [
++            {
++              active: activeView === 'billing',
++              icon: BarChart3,
++              id: 'billing',
++              label: t.settings.nav.billing,
++              onSelect: () => setActiveView('billing')
++            }
++          ]
++        : []),
+       {
+         active: activeView === 'providers',
+         children: [
 diff --git a/apps/desktop/src/app/settings/memory/provider-config-panel.test.tsx b/apps/desktop/src/app/settings/memory/provider-config-panel.test.tsx
 index ac4fe9c..b6a0af5 100644
 --- a/apps/desktop/src/app/settings/memory/provider-config-panel.test.tsx
@@ -40051,6 +40090,22 @@ index 9dd1cbe..e6c1d10 100644
      })
  
      const result = await applyUpdates()
+diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
+index 0b46920..b4295da 100644
+--- a/apps/desktop/src/store/updates.ts
++++ b/apps/desktop/src/store/updates.ts
+@@ -667,6 +667,11 @@ let lastConnectionMode: string | undefined
+ 
+ /** Wire up background polling + progress streaming. Idempotent. */
+ export function startUpdatePoller(): void {
++  // 便携包禁自更新（文书 §2.4）——后台轮询只产错误噪音，整只 no-op。
++  if (true as boolean) {
++    return
++  }
++
+   if (pollerStarted || typeof window === 'undefined') {
+     return
+   }
 diff --git a/apps/desktop/src/store/wake-word.test.ts b/apps/desktop/src/store/wake-word.test.ts
 index 1d09a92..e66a9d0 100644
 --- a/apps/desktop/src/store/wake-word.test.ts
@@ -40362,7 +40417,7 @@ index 70f77b2..ea9009d 100644
      _OUTBOUND_INVISIBLE_CHARS_RE = re.compile(r"[\u200b\u2060\u2063\ufeff]")
      _OUTBOUND_ODD_SPACE_RE = re.compile(r"[\u00a0\u1680\u180e\u2000-\u200a\u202f\u205f\u3000]")
 diff --git a/gateway/relay/__init__.py b/gateway/relay/__init__.py
-index 77481d8..18b480f 100644
+index 77481d8..c2cd3c2 100644
 --- a/gateway/relay/__init__.py
 +++ b/gateway/relay/__init__.py
 @@ -284,10 +284,10 @@ def relay_display_name() -> Optional[str]:
@@ -40374,7 +40429,7 @@ index 77481d8..18b480f 100644
          # shadowing the connector's linked-owner fallback, which actually
          # disambiguates. Only a deliberately customized name is forwarded.
 -        if value == "Hermes Agent":
-+        if value == "Silver Core":
++        if value in ("Silver Core", "Hermes Agent"):
              value = ""
      # Mirror the connector's ingest sanitization (trim + 64-char cap) so what
      # we send is what gets stored.

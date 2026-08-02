@@ -122,6 +122,59 @@ POST_RULES = [
         "        {/* 便携包无安装器——Danger zone 整区隐藏（守密人 2026-08-02 裁定） */}\n"
         "        {false && <UninstallSection />}\n",
     ),
+    # ---- 2026-08-02 改名审计轮（守密人「继续检查改名 bug + 不再必要功能」派发） ----
+    # (1) APP_NAME 兜底统一：该行含 HERMES_ 被跳线保留，兜底值 'Hermes' 与已换装的
+    # productName（'Silver Core'）分裂——electron userData 路径在 app.setName 前后
+    # 按不同名字解析，绕过 launcher 直启 exe 时配置会写进两个目录（脑裂）。
+    # 环境变量名原样保留，只统一兜底字面量。
+    (
+        "const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || 'Hermes'\n",
+        "const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || 'Silver Core'\n",
+    ),
+    # (2) 后台更新轮询整只 no-op：便携包更新通道 = 换 tag 重测（文书 §2.4），
+    # 轮询（挂载 + 每 30 分钟 + 窗口聚焦）只会反复报「isn't a git checkout」。
+    (
+        "export function startUpdatePoller(): void {\n"
+        "  if (pollerStarted || typeof window === 'undefined') {\n",
+        "export function startUpdatePoller(): void {\n"
+        "  // 便携包禁自更新（文书 §2.4）——后台轮询只产错误噪音，整只 no-op。\n"
+        "  if (true as boolean) {\n"
+        "    return\n"
+        "  }\n"
+        "\n"
+        "  if (pollerStarted || typeof window === 'undefined') {\n",
+    ),
+    # (3) Billing 入口隐藏：Hermes Cloud 订阅/额度页，内网便携包用自有 Providers，
+    # 该页无对象。spread-空数组帘子，保留代码结构。
+    (
+        "      {\n"
+        "        active: activeView === 'billing',\n"
+        "        icon: BarChart3,\n"
+        "        id: 'billing',\n"
+        "        label: t.settings.nav.billing,\n"
+        "        onSelect: () => setActiveView('billing')\n"
+        "      },\n",
+        "      // 内网便携包无 Hermes Cloud 订阅——Billing 入口隐藏（2026-08-02 审计轮）\n"
+        "      ...(false\n"
+        "        ? [\n"
+        "            {\n"
+        "              active: activeView === 'billing',\n"
+        "              icon: BarChart3,\n"
+        "              id: 'billing',\n"
+        "              label: t.settings.nav.billing,\n"
+        "              onSelect: () => setActiveView('billing')\n"
+        "            }\n"
+        "          ]\n"
+        "        : []),\n",
+    ),
+    # (4) 钉钉 relay 默认名抑制加固：旧持久化配置里存的可能仍是换装前的
+    # "Hermes Agent"，只比对新名会漏抑制、回复前缀泄漏旧品牌名。两名并收。
+    (
+        '        if value == "Silver Core":\n'
+        '            value = ""\n',
+        '        if value in ("Silver Core", "Hermes Agent"):\n'
+        '            value = ""\n',
+    ),
 ]
 
 # 二进制品牌资产覆盖（2026-08-02 补漏：图标是二进制，文本规则到不了）：
