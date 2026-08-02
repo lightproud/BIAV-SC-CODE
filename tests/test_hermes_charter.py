@@ -58,6 +58,20 @@ def test_patches_never_touch_license_or_copyright():
                 )
 
 
+def test_rebrand_never_breaks_functional_identifiers():
+    """红线延伸（lesson #57，2026-08-02 生产事故）：显示词换装不得误伤连字符标识符。
+
+    `X-Hermes-Session-Token` 曾被裸词正则换成含空格非法头名，desktop 设置页全线
+    ERR_INVALID_HTTP_TOKEN 崩加载。哨兵：补丁任何一行都不得产出被打断的头名/UA/文件名。
+    """
+    text = (SUB / "patches" / "silver-core-rebrand.patch").read_text(encoding="utf-8")
+    assert "X-Silver Core" not in text, "HTTP 头名被换装打断（lesson #57 复发）"
+    import re
+    bad = [l for l in text.splitlines()
+           if l.startswith("+") and re.search(r"Silver Core-(Session|Setup|Desktop)", l)]
+    assert not bad, f"连字符标识符被换装打断: {bad[:3]}"
+
+
 def test_charter_skeleton_present():
     for name in ["plugins", "skills", "deploy"]:
         assert (SUB / name).is_dir(), f"§2.2 骨架目录缺失: {name}/"
