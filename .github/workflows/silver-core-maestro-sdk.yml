@@ -5,23 +5,13 @@ name: Silver Core Maestro SDK
 # orchestrator -> agent one-way, machine-enforced). The guard also watches
 # agent-SDK changes, because a reverse import would appear on that side.
 
+# MANUAL-ONLY since 2026-08-02 (keeper ruling: engineering-gate demolition).
+# The family is in pure-maintenance mode (todo T78, Hermes migration): push /
+# pull_request triggers are removed so unrelated PRs no longer run this suite.
+# Dispatch it by hand when shipping a production bug fix — the integration net
+# (agent build + maestro suite + testbed contract + dep direction) is intact.
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'projects/silver-core-maestro-sdk/**'
-      - 'projects/silver-core-sdk/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/silver-core-maestro-sdk.yml'
-      - '.github/scripts/check-dep-direction.mjs'
-  # NO pull_request paths filter (keeper ruling 2026-07-18, option ②): this job
-  # is the family INTEGRATION gate (agent build + maestro suite + testbed
-  # consumer contract) and is meant to be a REQUIRED status check. A required
-  # check behind a paths filter deadlocks docs-only PRs on "Expected — waiting
-  # for status" (the exact 2026-06-21 failure mode). Sparse checkout keeps it
-  # cheap; it always runs and always reports so the Ruleset can require it.
-  pull_request:
+  workflow_dispatch:
 
 concurrency:
   group: silver-core-maestro-sdk-${{ github.ref }}

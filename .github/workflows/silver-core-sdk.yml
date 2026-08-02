@@ -11,28 +11,12 @@ name: Silver Core SDK
 #   api.anthropic.com with the ANTHROPIC_API_KEY repository secret. The key
 #   value never enters the repo — it is injected into the runner at run time.
 
+# MANUAL-ONLY since 2026-08-02 (keeper ruling: engineering-gate demolition).
+# The family is in pure-maintenance mode (todo T78, Hermes migration): push /
+# pull_request / schedule triggers are removed so unrelated PRs no longer run
+# this suite. Dispatch it by hand when shipping a production bug fix — the
+# full verification net below is intact, it just no longer runs on its own.
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'projects/silver-core-sdk/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/silver-core-sdk.yml'
-  # NO pull_request paths filter (keeper ruling 2026-07-18, option ②): the unit
-  # + conformance jobs are meant to be REQUIRED status checks, and a required
-  # check behind a paths filter deadlocks docs-only PRs on "Expected — waiting
-  # for status" (the 2026-06-21 failure mode). The live-budget jobs below stay
-  # gated by `if: event_name == 'workflow_dispatch'/'schedule'`, so a PR only
-  # ever runs the keyless unit + conformance jobs. Sparse checkout keeps it cheap.
-  pull_request:
-  schedule:
-    # Monthly L5 real-API round (audit 2026-07-10 P2-7/F): the emulator-based
-    # conformance jobs catch OUR regressions on every push, but real API
-    # server-side behavior drift (new stop_reasons, cache billing, stream
-    # grammar) was only visible on manual dispatch. One scheduled round a
-    # month (~$1.5 on haiku, capped by --max-budget) closes that blind spot.
-    - cron: '17 6 1 * *'
   workflow_dispatch:
     inputs:
       model:

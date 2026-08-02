@@ -5,11 +5,16 @@
 脚本首跑就自证了这一点：它漏读工作流级 `defaults.run.working-directory`，于是
 `npm run typecheck` 跑到仓根、报出一片假红。本组把那次教训钉成断言。
 
+2026-08-02 工程门禁拆除裁定后，required 检查收缩为单一 `test`（四个 JS 家族检查
+随家族纯维稳 T78 退出，工作流降级手动触发）。原来钉住 JS 侧盲区的断言
+（version-bump guard / 依赖方向 / conformance needs-arm 分类）随之退役——它们守的
+step 已不在派生射程内；工作目录三层继承改用合成文档单测锁定。
+
 守什么：
-- 五个 required 检查名都解析得到真 job（改名 / 删 job 即红）；
+- required 检查名都解析得到真 job（改名 / 删 job 即红）；
+- required 清单与 2026-08-02 拆除裁定一致（有人把 JS 检查加回来须走新裁定）；
 - 工作目录三层继承正确（工作流级 defaults 不许再被漏读）；
-- 分类不塌（至少认出 version-bump guard 与依赖方向守卫这两条**曾经漏跑过**的）；
-- 缺仓外对照臂的步骤不被当普通门禁跑（跑它会产出假红）。
+- 每条派生步骤都有已知归类（未知归类会被静默丢掉）。
 
 零执行：只读 committed 的 yaml，不跑任何 CI 步骤。
 """
@@ -28,7 +33,6 @@ pytest.importorskip("yaml")
 from premerge_gate import (  # noqa: E402
     REQUIRED_CHECKS,
     _default_workdir,
-    _jobs_by_check_name,
     collect_steps,
 )
 
@@ -44,21 +48,21 @@ def test_every_required_check_resolves_to_a_real_job() -> None:
     assert steps, "一条门禁步骤都没派生出来——派生链断了"
 
 
+def test_required_set_matches_the_demolition_ruling() -> None:
+    """2026-08-02 守密人裁定：工程门禁拆除，required 只剩 Python `test`。
+    往清单里加回 JS 家族检查 = 推翻该裁定，须先落新决策记录再改这里。"""
+    assert REQUIRED_CHECKS == ["test"], (
+        f"required 清单 {REQUIRED_CHECKS} 偏离 2026-08-02 拆除裁定（应只剩 'test'）；"
+        f"扩清单须新裁定 + 同步 CLAUDE.md §7.6"
+    )
+
+
 def test_workflow_level_working_directory_is_inherited() -> None:
-    """**首跑教训条**：`silver-core-sdk.yml` 把 `working-directory` 写在**工作流顶层**，
-    只读步骤级会让每条命令跑到仓根。那次产出了 13 条假红。"""
-    resolved = _jobs_by_check_name()
-    check = "Silver Core Agent SDK / unit tests"
-    assert check in resolved, "SDK unit 检查未解析——先看上一条"
-    _wf, _jid, _job, wd = resolved[check]
-    assert wd == "projects/silver-core-sdk", (
-        f"SDK 门禁步骤的工作目录解析为 {wd!r}，应继承工作流级 defaults "
-        f"`projects/silver-core-sdk`；跑错目录会报满屏假红"
-    )
-    steps = [s for s in collect_steps()[0] if s.check == check and s.kind == "gate"]
-    assert steps and all(s.workdir == "projects/silver-core-sdk" for s in steps), (
-        f"SDK 门禁步骤的 workdir 未落到包内: {[(s.name, s.workdir) for s in steps]}"
-    )
+    """**首跑教训条**（合成文档版）：原实例 `silver-core-sdk.yml` 把
+    `working-directory` 写在工作流顶层，只读步骤级会让每条命令跑到仓根、
+    产出 13 条假红。实例工作流已退出 required 清单，规则本身用合成文档钉住。"""
+    doc = {"defaults": {"run": {"working-directory": "projects/x"}}}
+    assert _default_workdir(doc, {}) == "projects/x", "工作流级 defaults 被漏读——首跑假红坑复发"
 
 
 def test_default_workdir_precedence() -> None:
@@ -71,42 +75,20 @@ def test_default_workdir_precedence() -> None:
     ) == "b", "job 级 defaults 必须盖过工作流级"
 
 
-# 曾经真的漏跑过、因而必须一直在清单里的门禁步骤。
-# version-bump guard: #835 手工验证漏了它，合并后 main 红约一小时（2026-07-27）。
-# dependency direction: 与它同属「pytest/vitest 跑不到」的一类，一并钉住。
-SENTINEL_STEPS = ["check-version-bump.mjs", "check-dep-direction.mjs"]
-
-
-@pytest.mark.parametrize("needle", SENTINEL_STEPS)
-def test_known_blind_spots_are_in_the_derived_list(needle: str) -> None:
-    """这两条正是「对话内判定门跑不到、于是被漏掉」的实例。它们必须**被派生出来
-    且被判为要跑**——只要它们从清单里消失，同一个坑就会原样复发。"""
-    steps, _ = collect_steps()
-    hits = [s for s in steps if needle in s.run]
-    assert hits, f"派生清单里找不到 {needle}——它是已知盲区，不许掉出清单"
-    assert any(s.kind == "gate" for s in hits), (
-        f"{needle} 被判为 {[s.kind for s in hits]}，不会被执行；它必须是 gate"
-    )
-
-
-def test_steps_needing_an_out_of_repo_arm_are_not_plain_gates() -> None:
-    """缺 `--no-save` 临时对照臂时，conformance 差分与棘轮会报 58 条环境固有的「回归」。
-    **假红比不跑更坏**——它教人无视门禁。故这类步骤须单独归类、默认跳过并点名。"""
-    steps, _ = collect_steps()
-    conformance = [s for s in steps if s.check.endswith("conformance") and s.kind != "plumbing"]
-    assert conformance, "conformance 检查一条步骤都没派生出来"
-    assert all(s.kind != "gate" for s in conformance), (
-        f"conformance 步骤被当普通门禁: {[(s.name, s.kind) for s in conformance if s.kind == 'gate']}"
-    )
-    assert any(s.kind == "needs-arm" for s in conformance), "needs-arm 分类未生效"
-
-
 def test_nothing_is_dropped_without_a_named_kind() -> None:
     """每条派生出来的步骤都必须有已知归类——未知归类会被静默丢掉，那就是无声上限。"""
     known = {"gate", "setup", "plumbing", "unsupported", "needs-arm"}
     steps, _ = collect_steps()
     unknown = {s.kind for s in steps} - known
     assert not unknown, f"出现未知步骤归类: {unknown}"
+
+
+def test_pytest_suite_is_still_a_derived_gate() -> None:
+    """拆除后仅剩的 required 检查必须仍派生出「跑测试」这一条 gate——
+    连它都掉了，判定门就空转成「什么都不跑、什么都绿」。"""
+    steps, _ = collect_steps()
+    gates = [s for s in steps if s.kind == "gate" and "pytest" in s.run]
+    assert gates, "test 检查没派生出 pytest 门禁步骤——判定门空转"
 
 
 def test_required_checks_matches_the_documented_set() -> None:
