@@ -15,6 +15,23 @@
 5. 命令名：`deploy/bin/silver-core` 拷入 PATH（`SILVER_CORE_HERMES_BIN` 可指定入口）。
 6. 钉钉显示名：在钉钉应用后台把机器人显示名设为 Silver Core（配置属内网侧，不入本仓）。
 
+## Windows 受限环境分发（PowerShell 受限 / 安装器不可用时）
+
+> 源码实证（pin v2026.7.30）：`install.ps1` 仅被 bootstrap-installer（装完整本机运行时）
+> 驱动；desktop 为 electron-builder 打包且 remote 模式原生在（`$connection.mode='remote'`
+> + baseUrl + 远程 pool profile）。据此**零 PowerShell 分发形态**：
+
+1. **运行时不上 Windows**：Hermes 运行时集中部署内网 Linux 服务器（uv + 内网 PyPI 镜像，
+   文书 §2.1 离线可重建），Windows 端零运行时。
+2. **终端三选接入**（均零安装器）：
+   - 钉钉网关（文书首战入口）；
+   - 浏览器直开 web dashboard（`web_server.py` 静态托管 web/ 产物）；
+   - **desktop portable 包 + remote 模式**：组装期以 electron-builder 出 zip/portable 目标
+     （CLI 加 `--win zip`，同上游 `dist:mac:zip` 先例，免 NSIS/MSI 免 PowerShell、
+     通常免管理员），共享目录分发、解压即用，首启配置 remote 连接指向内网服务端。
+3. 备选：若环境仅限 PowerShell 脚本、不限 exe——NSIS per-user 安装器本身不依赖
+   PowerShell，可直接使用（须实测目标环境策略后再采）。
+
 ## 补丁维护（移 pin 例程的一部分）
 
 - 补丁**不手写**：规则与排除谓词在 `deploy/rebrand.py`，`patches/silver-core-rebrand.patch`
