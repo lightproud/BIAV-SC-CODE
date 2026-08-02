@@ -4,7 +4,7 @@ title: "drift-resistant-architecture-20260726"
 description: "一天内检出的全部漂移，按**它当初是怎么产生的**分类（不按严重度）：（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/drift-resistant-architecture-20260726.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-08-01"
+timestamp: "2026-08-02"
 ---
 
 # 指针概念

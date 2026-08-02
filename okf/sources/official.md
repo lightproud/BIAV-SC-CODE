@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "official 社区数据源"
-description: "official 平台采集档案，全量 347 条，健康度 active。"
+description: "official 平台采集档案，全量 347 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/steam/global/news/"
-tags: ["data_layer:full_archive", "platform:official", "health:active"]
-timestamp: "2026-08-01T08:19:00.219595+00:00"
+tags: ["data_layer:full_archive", "platform:official", "health:degraded"]
+timestamp: "2026-08-02T05:57:56.626959+00:00"
 ---
 
 # 数据层指针
@@ -17,7 +17,7 @@ timestamp: "2026-08-01T08:19:00.219595+00:00"
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/steam/global/news/` |
 | 输出展示层（抽样） | `projects/news/output/official-latest.json` |
 | 全量条数 | 347 |
-| 采集健康度 | active |
+| 采集健康度 | degraded |
 | 最后成功 | 2026-07-26 |
 
 # 数据纪律（硬约束）
