@@ -356,8 +356,8 @@
 - **起手式转黑池侧建议（守密人 2026-08-02 裁定，T79 销案）**：文书 §6 七步银芯不追踪执行；
   银芯侧现状 = 骨架已建 + 守卫在岗 + 按需供材料（点名派发另计），常态职责 = 追官方新版 + gaps.md 值守。
 - **需求 #1 品牌换装已交付（2026-08-02）**：Silver Core 品牌 + 知识层统一称「知识底座」——零侵入套件
-  （SOUL.md 模板 / CLI 别名）+ patches/ 白名单制（`deploy/rebrand.py` 规则引擎生成 159 文件补丁，
-  LICENSE/版权/URL/功能标识符四不碰，upstream 零修改、组装期应用）；范围台账 `BRANDING.md`。
+  （SOUL.md 模板 / CLI 别名）+ patches/ 白名单制（`deploy/rebrand.py` 规则引擎生成 388 文件补丁，含
+  desktop/web 裸词换装——守密人补充「主要消费面是 desktop」后扩面；四不碰红线，upstream 零修改组装期应用）；台账 `BRANDING.md`。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
