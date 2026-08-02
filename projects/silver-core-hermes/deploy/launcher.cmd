@@ -6,7 +6,7 @@ if not defined SC_LAUNCHER_KEEPWIN (
   cmd /d /k call "%~f0" %*
   exit /b
 )
-rem Silver Core 便携整包启动器（cmd 批处理，零 PowerShell）。
+rem Black Pool（黑池）便携整包启动器（cmd 批处理，零 PowerShell）。
 rem 合箱布局：python\（uv 托管 CPython）、venv\、app\（组装源树）、desktop\（win-unpacked）、
 rem home\（HERMES_HOME）与本文件同级。默认拉起 desktop；CLI 用法 launcher.cmd cli <args>。
 rem 自诊断：全程写 launcher.log；任何一步失败都停窗展示原因（不再闪退吞错）；
@@ -16,13 +16,13 @@ chcp 65001 >nul
 set "ROOT=%~dp0"
 set "LOG=%ROOT%launcher.log"
 echo [%date% %time%] launcher start ROOT=%ROOT% > "%LOG%"
-echo Silver Core 启动中，请稍候（本窗会显示进度，失败会停窗给出原因）...
+echo Black Pool 启动中，请稍候（本窗会显示进度，失败会停窗给出原因）...
 
 set "HERMES_HOME=%ROOT%home"
 rem 应用显示名（上游官方旋钮）：main.ts 的 APP_NAME 行因含 HERMES_ 被换装规则
 rem 跳线保留，兜底值仍是 'Hermes'——app.setName / About 面板 / 菜单标签全跟它走，
-rem 任务管理器与 Alt-Tab 因此漏显 Hermes。经环境针覆盖为 Silver Core（零侵入）。
-set "HERMES_DESKTOP_APP_NAME=Silver Core"
+rem 任务管理器与 Alt-Tab 因此漏显 Hermes。经环境针覆盖为 Black Pool（零侵入）。
+set "HERMES_DESKTOP_APP_NAME=Black Pool"
 set "PATH=%ROOT%venv\Scripts;%PATH%"
 if not exist "%HERMES_HOME%" mkdir "%HERMES_HOME%"
 
@@ -31,7 +31,7 @@ set "PYHOME="
 for /d %%D in ("%ROOT%python\cpython-*") do set "PYHOME=%%~fD"
 if not defined PYHOME (
   echo [FAIL] bundle python not found under %ROOT%python\ >> "%LOG%"
-  echo 启动失败：包内 python\cpython-* 目录缺失。请把整个 SilverCore 文件夹完整复制后重试。
+  echo 启动失败：包内 python\cpython-* 目录缺失。请把整个 BlackPool 文件夹完整复制后重试。
   echo 详情见 %LOG%
   pause
   exit /b 1
@@ -90,7 +90,7 @@ if defined DESKTOP_EXE (
   echo [ok] legacy start %DESKTOP_EXE% >> "%LOG%"
   echo 未找到监督器 launch_desktop.py，直接拉起桌面端：
   echo   %DESKTOP_EXE%
-  start "Silver Core" "%DESKTOP_EXE%"
+  start "Black Pool" "%DESKTOP_EXE%"
   echo 若桌面端窗口没有出现，请把 home\logs\ 下日志发给艾瑞卡；本窗可手动关闭。
   pause
   exit /b 0

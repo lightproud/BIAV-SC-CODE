@@ -1,0 +1,161 @@
+diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
+index 6e249aa..d3e9686 100644
+--- a/apps/desktop/electron/main.ts
++++ b/apps/desktop/electron/main.ts
+@@ -5360,11 +5360,7 @@ function buildApplicationMenu() {
+       ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
+       : [{ role: 'minimize' }, { role: 'close' }]
+   })
+-  template.push({
+-    label: 'Help',
+-    role: 'help',
+-    submenu: [checkForUpdatesItem]
+-  })
++  // 便携包禁自更新——Help>Check for Updates 菜单整项摘除（审计轮二）
+ 
+   return Menu.buildFromTemplate(template)
+ }
+diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
+index 7694389..e838fd3 100644
+--- a/apps/desktop/src/app/settings/about-settings.tsx
++++ b/apps/desktop/src/app/settings/about-settings.tsx
+@@ -109,6 +109,8 @@ export function AboutSettings() {
+       </div>
+ 
+       <div className="mx-auto mt-4 w-full max-w-2xl">
++        {/* 便携包生产禁用自更新（文书 §2.4）——About 隐藏该区（2026-08-02 裁定） */}
++        {false && (<>
+         <SectionHeading icon={RefreshCw} title={a.updates} />
+ 
+         <div
+@@ -178,8 +180,10 @@ export function AboutSettings() {
+           hint={a.branchCommit(status?.branch ?? 'unknown', status?.currentSha?.slice(0, 7) ?? 'unknown')}
+           title={a.automaticUpdates}
+         />
++        </>)}
+ 
+-        <UninstallSection />
++        {/* 便携包无安装器——Danger zone 整区隐藏（守密人 2026-08-02 裁定） */}
++        {false && <UninstallSection />}
+       </div>
+     </SettingsContent>
+   )
+diff --git a/apps/desktop/src/app/settings/gateway-settings.tsx b/apps/desktop/src/app/settings/gateway-settings.tsx
+index 94573f5..5f5acf7 100644
+--- a/apps/desktop/src/app/settings/gateway-settings.tsx
++++ b/apps/desktop/src/app/settings/gateway-settings.tsx
+@@ -1060,6 +1060,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+             onSelect={() => setState(current => ({ ...current, mode: 'local' }))}
+             title={scope === null ? g.localTitle : g.inheritTitle}
+           />
++          {/* 内网无 Nous Cloud——Cloud 连接模式隐藏（审计轮二） */}
++          {false && (
+           <ModeCard
+             active={state.mode === 'cloud'}
+             description={g.cloudDesc}
+@@ -1068,6 +1070,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+             onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}
+             title={g.cloudTitle}
+           />
++          )}
+           <ModeCard
+             active={state.mode === 'remote'}
+             description={g.remoteDesc}
+diff --git a/apps/desktop/src/app/settings/index.tsx b/apps/desktop/src/app/settings/index.tsx
+index 8dccf3a..87d04b5 100644
+--- a/apps/desktop/src/app/settings/index.tsx
++++ b/apps/desktop/src/app/settings/index.tsx
+@@ -51,7 +51,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
+   'keybinds',
+   'keys',
+   'notifications',
+-  'billing',
+   'plugins',
+   'sessions',
+   'about'
+@@ -161,13 +160,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
+         label: t.settings.nav.notifications,
+         onSelect: () => setActiveView('notifications')
+       },
+-      {
+-        active: activeView === 'billing',
+-        icon: BarChart3,
+-        id: 'billing',
+-        label: t.settings.nav.billing,
+-        onSelect: () => setActiveView('billing')
+-      },
++      // 内网便携包无 Hermes Cloud 订阅——Billing 入口隐藏（2026-08-02 审计轮）
++      ...(false
++        ? [
++            {
++              active: activeView === 'billing',
++              icon: BarChart3,
++              id: 'billing',
++              label: t.settings.nav.billing,
++              onSelect: () => setActiveView('billing')
++            }
++          ]
++        : []),
+       {
+         active: activeView === 'providers',
+         children: [
+diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
+index 0b46920..b4295da 100644
+--- a/apps/desktop/src/store/updates.ts
++++ b/apps/desktop/src/store/updates.ts
+@@ -667,6 +667,11 @@ let lastConnectionMode: string | undefined
+ 
+ /** Wire up background polling + progress streaming. Idempotent. */
+ export function startUpdatePoller(): void {
++  // 便携包禁自更新（文书 §2.4）——后台轮询只产错误噪音，整只 no-op。
++  if (true as boolean) {
++    return
++  }
++
+   if (pollerStarted || typeof window === 'undefined') {
+     return
+   }
+diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
+index 56fcf32..15f95ff 100644
+--- a/hermes_cli/update_cmd.py
++++ b/hermes_cli/update_cmd.py
+@@ -3221,6 +3221,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
+ 
+     if not git_dir.exists():
+         if sys.platform == "win32":
++            # Portable bundle (no .git): self-update is disabled — the ZIP
++            # fallback would overwrite the tree with unbranded upstream.
++            print("\u2717 Self-update is disabled in the portable bundle.")
++            print("  Update channel: replace the whole bundle with a new release zip.")
++            sys.exit(1)
+             use_zip_update = True
+         else:
+             print("✗ Not a git repository. Please reinstall:")
+diff --git a/web/src/pages/ChannelsPage.tsx b/web/src/pages/ChannelsPage.tsx
+index 39f0ef5..8c0a3c0 100644
+--- a/web/src/pages/ChannelsPage.tsx
++++ b/web/src/pages/ChannelsPage.tsx
+@@ -1270,8 +1270,9 @@ function TelegramOnboardingPanel({
+         </span>
+       </div>
+ 
+-      <div className="mt-4 grid gap-4 sm:grid-cols-2 sm:divide-x sm:divide-border">
+-        <div className="grid content-start gap-3 sm:pr-4">
++      <div className="mt-4 grid gap-4">
++        {/* 内网无 Nous 托管 Bot SaaS——Quick setup 列隐藏（审计轮二） */}
++        {false && <div className="grid content-start gap-3 sm:pr-4">
+           <div className="flex flex-wrap items-center gap-2">
+             <span className="text-xs font-medium uppercase text-foreground">
+               Quick setup
+@@ -1291,9 +1292,9 @@ function TelegramOnboardingPanel({
+           >
+             {phase === "starting" ? "Starting…" : "Create with QR"}
+           </Button>
+-        </div>
++        </div>}
+ 
+-        <div className="grid content-start gap-3 border-t border-border pt-4 sm:border-t-0 sm:pl-4 sm:pt-0">
++        <div className="grid content-start gap-3">
+           <span className="text-xs font-medium uppercase text-foreground">
+             Use your own bot
+           </span>

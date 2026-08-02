@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
-"""Silver Core 品牌换装补丁生成器（守密人 2026-08-02 需求 #1）。
+"""Black Pool（黑池）品牌换装补丁生成器（守密人 2026-08-02 需求 #1；2026-08-03 定名裁定）。
 
-定位：patches/ 里的品牌补丁**不手写**——本脚本持有替换规则与排除谓词，
-对 upstream/ 快照的临时副本做确定性变换，产出可审计的统一 diff 落
-`patches/silver-core-rebrand.patch`。移 pin 后重跑本脚本即重生成补丁，
-不存在「手改补丁追上游」的维护深渊。
+品牌与版本（守密人 2026-08-03 裁定）：品牌名**黑池（Black Pool）**，
+`Hermes Agent` 对应 `Black Pool Agent`；发布版本号 **0.1.0**。
+
+两版体系（同日裁定）：
+- **公版（public）** = 纯品牌换装，不含内网/便携适配 → `patches/black-pool-rebrand.patch`
+- **私有版（private）** = 公版之上叠加内网/便携适配层 → `patches/black-pool-intranet.patch`
+  （自更新三入口封堵 / Billing / Cloud / Telegram 托管配对等云绑定面摘除）
+组装台默认出私有版（两补丁依序应用）；只打第一张即公版。
+
+定位：patches/ 里的补丁**不手写**——本脚本持有替换规则与排除谓词，
+对 upstream/ 快照的临时副本做确定性变换，产出可审计的统一 diff。
+移 pin 后重跑本脚本即重生成补丁，不存在「手改补丁追上游」的维护深渊。
 
 红线（与施工边界文书裁 10 / MIT 一致，机械守卫 tests/test_hermes_charter.py）：
 - LICENSE / 版权行 / 上游 URL / HERMES_* 环境变量名 / X-Client-Name 遥测头
@@ -14,9 +22,10 @@
   vendor 快照与官方测试基线保持逐字节纯净。
 
 用法：
-  python3 deploy/rebrand.py            # 生成/刷新 patches/silver-core-rebrand.patch
-  python3 deploy/rebrand.py --check    # 只校验现存补丁与规则输出一致（漂移守卫）
-  python3 deploy/rebrand.py --apply DEST  # 对 DEST（upstream 的组装副本）就地应用变换
+  python3 deploy/rebrand.py                    # 重生成两张补丁
+  python3 deploy/rebrand.py --check            # 校验两张补丁与规则输出一致（漂移守卫）
+  python3 deploy/rebrand.py --apply DEST                    # 应用私有版（公版+内网层）
+  python3 deploy/rebrand.py --apply DEST --edition public   # 只应用公版
 """
 from __future__ import annotations
 
@@ -31,7 +40,13 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SUB = HERE.parent
 UPSTREAM = SUB / "upstream"
-PATCH_PATH = SUB / "patches" / "silver-core-rebrand.patch"
+PATCH_BRAND = SUB / "patches" / "black-pool-rebrand.patch"
+PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
+
+BRAND = "Black Pool"
+BRAND_AGENT = "Black Pool Agent"
+BRAND_VERSION = "0.1.0"
+BRAND_AUMID = "com.biav.blackpool"
 
 # 扫描范围：用户可感知的 runtime 面（白名单目录）。
 # apps/（desktop 为内部主要消费面，守密人 2026-08-02 补充情报）与 web/（desktop
@@ -43,7 +58,7 @@ RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins",
 # 正则替换——`updateHermes`（i18n 键）/ `HermesClient`（类名）等标识符因前后
 # 紧邻字母数字下划线而免疫；小写 `hermes`（npm 包名 / 路径 / scheme）从不触碰。
 # 连字符同列免疫边界（2026-08-02 生产事故订正）：`X-Hermes-Session-Token` 是
-# HTTP 头名（功能标识符），被换成含空格的 "X-Silver Core-..." 即非法头名，
+# HTTP 头名（功能标识符），被换成含空格的品牌名即非法头名，
 # desktop 全部设置页（Providers / Tools & Keys / Model）随之 ERR_INVALID_HTTP_TOKEN
 # 崩加载。代价：德/荷式连字复合词（"Hermes-Plugins"）留在残留清单——保护优先于净度。
 BARE_WORD_DIRS = ("apps", "web", "ui-tui/src")
@@ -53,14 +68,16 @@ BARE_WORD_RE = re.compile(r"(?<![A-Za-z0-9_-])Hermes(?![A-Za-z0-9_-])")
 TEXT_SUFFIXES = {".py", ".ts", ".tsx", ".js", ".mjs", ".sh", ".yaml", ".yml", ".json",
                  ".html"}
 
+# ============================= 公版（品牌层） =============================
+
 # 特例规则（先于通用规则与跳线谓词，整句替换）：
-# 兜底身份句——SOUL.md 缺席时的产品自述。品牌换 Silver Core；
+# 兜底身份句——SOUL.md 缺席时的产品自述。品牌换 Black Pool Agent；
 # 「created by Nous Research」不保留在自述里（来源事实由 LICENSE 与
 # 合规口径「基于 MIT 开源组件二次开发」承载，见文书裁 10）。
 SPECIAL_RULES = [
     (
         "You are Hermes Agent, an intelligent AI assistant created by Nous Research. ",
-        "You are Silver Core, an intelligent AI assistant. ",
+        f"You are {BRAND_AGENT}, an intelligent AI assistant. ",
     ),
 ]
 
@@ -73,35 +90,78 @@ LINE_SKIP_MARKERS = [
 # 通用规则（逐行、按序应用）。刻意不把裸词 "Hermes"/"hermes" 入规则——
 # 那会波及模块名 / 路径 / 配置键（功能标识符），属 fork 级改动。
 GENERIC_RULES = [
-    ("Hermes Agent", "Silver Core"),
-    ("Hermes profile", "Silver Core profile"),
-    ("hermes-tui", "silver-core-tui"),
+    ("Hermes Agent", BRAND_AGENT),
+    ("Hermes profile", f"{BRAND} profile"),
+    ("hermes-tui", "black-pool-tui"),
     # 全大写字标（2026-08-02 补漏）：desktop 对话空态 / bootstrap-installer 欢迎页
     # 的巨幅 wordmark 是 'HERMES AGENT'，大小写敏感的前三条全部漏网。
-    ("HERMES AGENT", "SILVER CORE"),
+    ("HERMES AGENT", BRAND_AGENT.upper()),
 ]
 
-# 后置全文规则（在逐行规则之后对全文应用）：插入体里允许保留 "Hermes" 字样
-# （来源事实陈述），因为不会再被后续规则二次换装。
-# About 页出身声明（守密人 2026-08-02 裁定「直接说明这是 B.I.A.V. Studio
-# 基于 Hermes 0.19.1 的定制版本」）：锚定 about-settings.tsx 版本行 JSX，
-# 版本号取运行时 appVersion 动态渲染，移 pin 后无需改词。
-POST_RULES = [
+# 公版后置全文规则（逐行规则之后对全文应用）：纯品牌一致性修复——
+# 插入体里允许保留 "Hermes" 字样（来源事实陈述），不会被后续规则二次换装。
+BRAND_POST_RULES = [
+    # About 页出身声明 + 品牌版本号（守密人 2026-08-02 裁定「直接说明定制版本」；
+    # 2026-08-03 裁定加发布版本号 0.1.0）：锚定 about-settings.tsx 版本行 JSX，
+    # 上游版本取运行时 appVersion 动态渲染，移 pin 后无需改词。
     (
         "            {version?.appVersion ? a.version(version.appVersion)"
         " : a.versionUnavailable}\n          </p>\n",
         "            {version?.appVersion ? a.version(version.appVersion)"
         " : a.versionUnavailable}\n          </p>\n"
         "          <p className=\"mt-1 text-xs text-muted-foreground\">\n"
-        "            {'B.I.A.V. Studio 基于 Hermes Agent'"
+        f"            {{'{BRAND}（黑池）{BRAND_VERSION} — B.I.A.V. Studio 基于 Hermes Agent'"
         " + (version?.appVersion ? ` ${version.appVersion}` : '')"
         " + ' 的定制版本'}\n"
         "          </p>\n",
     ),
+    # APP_NAME 兜底统一：该行含 HERMES_ 被跳线保留，兜底值 'Hermes' 与已换装的
+    # productName 分裂——electron userData 路径在 app.setName 前后按不同名字解析，
+    # 绕过 launcher 直启 exe 时配置会写进两个目录（脑裂）。环境变量名原样保留。
+    (
+        "const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || 'Hermes'\n",
+        f"const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || '{BRAND}'\n",
+    ),
+    # 钉钉 relay 默认名抑制加固：旧持久化配置里存的可能仍是换装前的
+    # "Hermes Agent"，只比对新名会漏抑制、回复前缀泄漏旧品牌名。两名并收。
+    (
+        f'        if value == "{BRAND_AGENT}":\n'
+        '            value = ""\n',
+        f'        if value in ("{BRAND_AGENT}", "Hermes Agent"):\n'
+        '            value = ""\n',
+    ),
+    # AUMID / appId 品牌中性化：com.nousresearch.hermes 全小写躲过裸词规则，
+    # 无安装器部署时 Windows 通知设置会直接显示该原始串。两处成对同改。
+    (
+        "app.setAppUserModelId('com.nousresearch.hermes')",
+        f"app.setAppUserModelId('{BRAND_AUMID}')",
+    ),
+    (
+        '"appId": "com.nousresearch.hermes",',
+        f'"appId": "{BRAND_AUMID}",',
+    ),
+    # 唤醒词帮助文案中性化：裸词规则会把 'Hey Hermes' 教成 'Hey <品牌名>'，
+    # 但 openwakeword 声学模型只认 "hey hermes"——UI 教的短语对模型无效。
+    # 改为不含短语的中性描述（桌面侧本就动态读真实短语渲染）。
+    (
+        f"toggle the 'Hey {BRAND}' wake word listener [on|off|status]",
+        "toggle the wake word listener [on|off|status]",
+    ),
+    # CLI 响应面板残留品牌：'⚕ Hermes'（裸词 + hermes_cli 不在裸词目录）
+    # 在 Rich Panel 标题直接可见。通用规则跑完后剩下的都是裸词形态，统一收尾。
+    (
+        "⚕ Hermes",
+        f"⚕ {BRAND}",
+    ),
+]
+
+# ========================= 私有版（内网/便携适配层） =========================
+# 云绑定面摘除与自更新封堵——公版不含，叠加于公版之上（守密人 2026-08-03
+# 「无内网版视为公版，内网版补丁视为私有版」裁定）。
+INTRANET_POST_RULES = [
     # About 自更新区整块隐藏（守密人 2026-08-02 裁定；与文书 §2.4「生产禁用
-    # hermes update、更新只有换 tag 重测」同向——便携包里该区只会报 git checkout
-    # 错误误导用户）。{false && (<>...</>)} 包裹而非删除：对上游 diff 最小、
-    # 移 pin 冲突面最小。哨兵防静默复活见 tests/test_hermes_charter.py。
+    # hermes update、更新只有换 tag 重测」同向）。{false && (<>...</>)} 包裹而非
+    # 删除：对上游 diff 最小、移 pin 冲突面最小。哨兵防静默复活见守卫测试。
     (
         "      <div className=\"mx-auto mt-4 w-full max-w-2xl\">\n"
         "        <SectionHeading icon={RefreshCw} title={a.updates} />\n",
@@ -122,16 +182,7 @@ POST_RULES = [
         "        {/* 便携包无安装器——Danger zone 整区隐藏（守密人 2026-08-02 裁定） */}\n"
         "        {false && <UninstallSection />}\n",
     ),
-    # ---- 2026-08-02 改名审计轮（守密人「继续检查改名 bug + 不再必要功能」派发） ----
-    # (1) APP_NAME 兜底统一：该行含 HERMES_ 被跳线保留，兜底值 'Hermes' 与已换装的
-    # productName（'Silver Core'）分裂——electron userData 路径在 app.setName 前后
-    # 按不同名字解析，绕过 launcher 直启 exe 时配置会写进两个目录（脑裂）。
-    # 环境变量名原样保留，只统一兜底字面量。
-    (
-        "const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || 'Hermes'\n",
-        "const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || 'Silver Core'\n",
-    ),
-    # (2) 后台更新轮询整只 no-op：便携包更新通道 = 换 tag 重测（文书 §2.4），
+    # 后台更新轮询整只 no-op：便携包更新通道 = 换 tag 重测（文书 §2.4），
     # 轮询（挂载 + 每 30 分钟 + 窗口聚焦）只会反复报「isn't a git checkout」。
     (
         "export function startUpdatePoller(): void {\n"
@@ -144,7 +195,7 @@ POST_RULES = [
         "\n"
         "  if (pollerStarted || typeof window === 'undefined') {\n",
     ),
-    # (3) Billing 入口隐藏：Hermes Cloud 订阅/额度页，内网便携包用自有 Providers，
+    # Billing 入口隐藏：Hermes Cloud 订阅/额度页，内网便携包用自有 Providers，
     # 该页无对象。spread-空数组帘子，保留代码结构。
     (
         "      {\n"
@@ -167,16 +218,7 @@ POST_RULES = [
         "          ]\n"
         "        : []),\n",
     ),
-    # (4) 钉钉 relay 默认名抑制加固：旧持久化配置里存的可能仍是换装前的
-    # "Hermes Agent"，只比对新名会漏抑制、回复前缀泄漏旧品牌名。两名并收。
-    (
-        '        if value == "Silver Core":\n'
-        '            value = ""\n',
-        '        if value in ("Silver Core", "Hermes Agent"):\n'
-        '            value = ""\n',
-    ),
-    # ---- 2026-08-03 审计轮二（Sonnet 七断面编排发现，主循环终审确认） ----
-    # (5) hermes update 便携硬门禁：无 .git 的 win32 树本就是便携包形态，原 ZIP
+    # hermes update 便携硬门禁：无 .git 的 win32 树本就是便携包形态，原 ZIP
     # 兜底会从公网拉未换装上游整树覆盖本地——字面撤销全部品牌补丁。文书 §2.4
     # 「生产禁用 hermes update」原本只有文档约束力，此处升格为代码门禁。
     (
@@ -192,14 +234,14 @@ POST_RULES = [
         "            sys.exit(1)\n"
         "            use_zip_update = True\n",
     ),
-    # (6) Billing 深路由封死：入口帘子只遮了侧栏，?tab=billing 与计费故障自动
+    # Billing 深路由封死：入口帘子只遮了侧栏，?tab=billing 与计费故障自动
     # 跳转仍能整页打开 Nous Cloud 订阅页。从 SETTINGS_VIEWS 白名单摘除后
     # enum 路由参数直接拒收、回落默认页。
     (
         "  'notifications',\n  'billing',\n  'plugins',\n",
         "  'notifications',\n  'plugins',\n",
     ),
-    # (7) Help > Check for Updates 菜单整项摘除：三处自更新入口中最后一处未堵
+    # Help > Check for Updates 菜单整项摘除：三处自更新入口中最后一处未堵
     # 的（About 区已隐藏、后台轮询已 no-op），点击仍开完整更新覆盖层。
     (
         "  template.push({\n"
@@ -209,7 +251,7 @@ POST_RULES = [
         "  })\n",
         "  // 便携包禁自更新——Help>Check for Updates 菜单整项摘除（审计轮二）\n",
     ),
-    # (8) Gateway Cloud 连接模式隐藏：卡片驱动 portal.nousresearch.com OAuth，
+    # Gateway Cloud 连接模式隐藏：卡片驱动 portal.nousresearch.com OAuth，
     # 内网无对象（与 Billing 同理）。
     (
         "          <ModeCard\n"
@@ -232,7 +274,7 @@ POST_RULES = [
         "          />\n"
         "          )}\n",
     ),
-    # (9) Telegram「Quick setup / Create with QR」列隐藏：托管 Bot 配对固定代理
+    # Telegram「Quick setup / Create with QR」列隐藏：托管 Bot 配对固定代理
     # Nous 自营 SaaS（setup.hermes-agent.nousresearch.com），内网必然打不通，
     # 却挂 recommended 徽标压过真正可用的 Manual setup。
     (
@@ -252,32 +294,9 @@ POST_RULES = [
         "\n"
         '        <div className="grid content-start gap-3">\n',
     ),
-    # (10) AUMID / appId 品牌中性化：com.nousresearch.hermes 全小写躲过裸词规则，
-    # 便携无安装器时 Windows 通知设置会直接显示该原始串。两处成对同改。
-    (
-        "app.setAppUserModelId('com.nousresearch.hermes')",
-        "app.setAppUserModelId('com.biav.silvercore')",
-    ),
-    (
-        '"appId": "com.nousresearch.hermes",',
-        '"appId": "com.biav.silvercore",',
-    ),
-    # (11) 唤醒词帮助文案中性化：裸词规则把 'Hey Hermes' 教成 'Hey Silver Core'，
-    # 但 openwakeword 声学模型只认 "hey hermes"——UI 教的短语对模型无效。
-    # 改为不含短语的中性描述（桌面侧本就动态读真实短语渲染）。
-    (
-        "toggle the 'Hey Silver Core' wake word listener [on|off|status]",
-        "toggle the wake word listener [on|off|status]",
-    ),
-    # (12) CLI 响应面板残留品牌：'⚕ Hermes'（裸词 + hermes_cli 不在裸词目录）
-    # 在 Rich Panel 标题直接可见。通用规则跑完后剩下的都是裸词形态，统一收尾。
-    (
-        "⚕ Hermes",
-        "⚕ Silver Core",
-    ),
 ]
 
-# 二进制品牌资产覆盖（2026-08-02 补漏：图标是二进制，文本规则到不了）：
+# 二进制品牌资产覆盖（公版层；图标是二进制，文本规则到不了）：
 # 源在 deploy/brand-assets/（由 deploy/gen_brand_assets.py 从单一源图生成，
 # 守密人换图 = 换源图重跑生成器再重生成补丁），覆盖进组装树的消费点。
 # mac 的 assets/icon.icns 刻意不覆盖（便携包只出 win，残留清单见 BRANDING.md）。
@@ -301,7 +320,8 @@ def _skip_file(rel: Path) -> bool:
     return rel.suffix not in TEXT_SUFFIXES
 
 
-def transform_text(text: str, bare_word: bool = False) -> str:
+def transform_brand(text: str, bare_word: bool = False) -> str:
+    """公版变换：品牌显示名换装 + 品牌一致性修复。"""
     for old, new in SPECIAL_RULES:
         text = text.replace(old, new)
     out_lines = []
@@ -312,10 +332,17 @@ def transform_text(text: str, bare_word: bool = False) -> str:
         for old, new in GENERIC_RULES:
             line = line.replace(old, new)
         if bare_word:
-            line = BARE_WORD_RE.sub("Silver Core", line)
+            line = BARE_WORD_RE.sub(BRAND, line)
         out_lines.append(line)
     text = "".join(out_lines)
-    for old, new in POST_RULES:
+    for old, new in BRAND_POST_RULES:
+        text = text.replace(old, new)
+    return text
+
+
+def transform_intranet(text: str) -> str:
+    """私有版叠加变换：内网/便携适配（在公版之后应用）。"""
+    for old, new in INTRANET_POST_RULES:
         text = text.replace(old, new)
     return text
 
@@ -337,9 +364,7 @@ def overlay_assets(root: Path) -> int:
     return replaced
 
 
-def apply_tree(root: Path) -> int:
-    """对 root（upstream 布局的副本）就地应用变换，返回改动文件数。"""
-    changed = 0
+def _walk_files(root: Path):
     for d in RUNTIME_DIRS:
         base = root / d
         if not base.is_dir():
@@ -350,21 +375,43 @@ def apply_tree(root: Path) -> int:
             rel = p.relative_to(root)
             if _skip_file(rel):
                 continue
-            try:
-                text = p.read_text(encoding="utf-8")
-            except (UnicodeDecodeError, OSError):
-                continue
-            bare = rel.as_posix().startswith(BARE_WORD_DIRS)
-            new = transform_text(text, bare_word=bare)
-            if new != text:
-                p.write_text(new, encoding="utf-8")
-                changed += 1
+            yield p, rel
+
+
+def apply_brand_tree(root: Path) -> int:
+    """对 root 就地应用公版（品牌层）变换 + 图标覆盖，返回改动文件数。"""
+    changed = 0
+    for p, rel in _walk_files(root):
+        try:
+            text = p.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        bare = rel.as_posix().startswith(BARE_WORD_DIRS)
+        new = transform_brand(text, bare_word=bare)
+        if new != text:
+            p.write_text(new, encoding="utf-8")
+            changed += 1
     changed += overlay_assets(root)
     return changed
 
 
-def generate_patch() -> str:
-    """在临时 git 仓里做变换，产出相对 upstream 根的统一 diff。"""
+def apply_intranet_tree(root: Path) -> int:
+    """对（已应用公版的）root 叠加私有版内网层变换，返回改动文件数。"""
+    changed = 0
+    for p, rel in _walk_files(root):
+        try:
+            text = p.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        new = transform_intranet(text)
+        if new != text:
+            p.write_text(new, encoding="utf-8")
+            changed += 1
+    return changed
+
+
+def generate_patches() -> tuple[str, str]:
+    """在临时 git 仓里分两段变换，产出（公版, 私有版叠加）两张统一 diff。"""
     with tempfile.TemporaryDirectory() as td:
         work = Path(td) / "w"
         shutil.copytree(UPSTREAM, work, symlinks=False,
@@ -373,40 +420,54 @@ def generate_patch() -> str:
             return subprocess.run(["git", "-C", str(work), *args],
                                   capture_output=True, text=True, check=True)
         run("init", "-q")
-        run("config", "user.email", "rebrand@silver-core.local")
+        run("config", "user.email", "rebrand@black-pool.local")
         run("config", "user.name", "rebrand")
         run("add", "-A")
         run("commit", "-qm", "pristine")
-        n = apply_tree(work)
+        n1 = apply_brand_tree(work)
         # --binary：图标类品牌资产覆盖以 GIT binary patch 形式入补丁，
         # git apply 路径与 --apply 路径保持效果等同（deploy/README.md 二选一承诺）。
-        diff = run("diff", "--binary").stdout
-        print(f"transformed files: {n}", file=sys.stderr)
-        return diff
+        brand_diff = run("diff", "--binary").stdout
+        run("add", "-A")
+        run("commit", "-qm", "brand (public edition)")
+        n2 = apply_intranet_tree(work)
+        intranet_diff = run("diff", "--binary").stdout
+        print(f"transformed files: brand={n1} intranet={n2}", file=sys.stderr)
+        return brand_diff, intranet_diff
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--apply", metavar="DEST")
+    ap.add_argument("--edition", choices=["public", "private"], default="private",
+                    help="--apply 时选版：public=仅品牌层（公版）；private=品牌+内网层（默认）")
     args = ap.parse_args()
 
     if args.apply:
-        n = apply_tree(Path(args.apply).resolve())
-        print(f"applied rebrand to {args.apply}: {n} files changed")
+        dest = Path(args.apply).resolve()
+        n = apply_brand_tree(dest)
+        if args.edition == "private":
+            n += apply_intranet_tree(dest)
+        print(f"applied {args.edition} edition to {args.apply}: {n} files changed")
         return 0
 
-    diff = generate_patch()
+    brand_diff, intranet_diff = generate_patches()
     if args.check:
-        current = PATCH_PATH.read_text(encoding="utf-8") if PATCH_PATH.exists() else ""
-        if current != diff:
-            print("DRIFT: patches/silver-core-rebrand.patch 与规则输出不一致，"
-                  "跑 python3 deploy/rebrand.py 重生成", file=sys.stderr)
-            return 1
-        print("patch is in sync with rules")
-        return 0
-    PATCH_PATH.write_text(diff, encoding="utf-8")
-    print(f"wrote {PATCH_PATH} ({len(diff.splitlines())} diff lines)")
+        ok = True
+        for path, diff in ((PATCH_BRAND, brand_diff), (PATCH_INTRANET, intranet_diff)):
+            current = path.read_text(encoding="utf-8") if path.exists() else ""
+            if current != diff:
+                print(f"DRIFT: {path.name} 与规则输出不一致，"
+                      "跑 python3 deploy/rebrand.py 重生成", file=sys.stderr)
+                ok = False
+        if ok:
+            print("patches are in sync with rules")
+        return 0 if ok else 1
+    PATCH_BRAND.write_text(brand_diff, encoding="utf-8")
+    PATCH_INTRANET.write_text(intranet_diff, encoding="utf-8")
+    print(f"wrote {PATCH_BRAND} ({len(brand_diff.splitlines())} diff lines)")
+    print(f"wrote {PATCH_INTRANET} ({len(intranet_diff.splitlines())} diff lines)")
     return 0
 
 
