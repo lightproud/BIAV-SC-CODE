@@ -73,6 +73,26 @@ def test_reporter_dual_writes(tmp_path, capsys):
     assert "hello 取证" in (tmp_path / "launcher.log").read_text(encoding="utf-8")
 
 
+def test_reporter_survives_cp1252_pipe(tmp_path):
+    # run 8 实证死因：CI 管道 stdout 是 cp1252，打印中文进度即 UnicodeEncodeError。
+    # 子进程强制 PYTHONIOENCODING=cp1252 复现管道形态，force_utf8_stdio 必须救回。
+    import subprocess
+    import sys
+    code = (
+        "import importlib.util, pathlib\n"
+        f"spec = importlib.util.spec_from_file_location('ld', {str(MODULE_PATH)!r})\n"
+        "ld = importlib.util.module_from_spec(spec); spec.loader.exec_module(ld)\n"
+        "ld.force_utf8_stdio()\n"
+        f"ld.Reporter(pathlib.Path({str(tmp_path / 'l.log')!r})).line('第 1 次启动（守窗）')\n"
+    )
+    env = dict(os.environ, PYTHONIOENCODING="cp1252")
+    r = subprocess.run([sys.executable, "-c", code],
+                       capture_output=True, text=False, env=env, timeout=60)
+    assert r.returncode == 0, r.stderr.decode(errors="replace")
+    assert "守窗".encode() in r.stdout  # UTF-8 原文到达管道
+    assert "守窗" in (tmp_path / "l.log").read_text(encoding="utf-8")
+
+
 def test_reporter_survives_unwritable_log(tmp_path, capsys):
     # 日志写不进（目录不存在）不应让监督器崩——控制台输出仍在
     rep = launch_desktop.Reporter(tmp_path / "no-such-dir" / "launcher.log")
