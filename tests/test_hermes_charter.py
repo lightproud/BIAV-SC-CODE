@@ -72,6 +72,19 @@ def test_rebrand_never_breaks_functional_identifiers():
     assert not bad, f"连字符标识符被换装打断: {bad[:3]}"
 
 
+def test_rebrand_hides_about_updates_section():
+    """About 自更新区隐藏（守密人 2026-08-02 裁定）不得因移 pin 锚点失配而静默复活。
+
+    POST_RULES 是纯文本锚定替换——上游改了 about-settings.tsx 结构时替换会无声
+    no-op，补丁里的隐藏 hunk 随之消失。哨兵：补丁必须仍含包裹标记。
+    """
+    text = (SUB / "patches" / "silver-core-rebrand.patch").read_text(encoding="utf-8")
+    assert "{false && (<>" in text and "</>)}" in text, (
+        "About 自更新区隐藏 hunk 从补丁消失——多半是移 pin 后 POST_RULES 锚点"
+        "失配无声 no-op，去 deploy/rebrand.py 修锚点"
+    )
+
+
 def test_charter_skeleton_present():
     for name in ["plugins", "skills", "deploy"]:
         assert (SUB / name).is_dir(), f"§2.2 骨架目录缺失: {name}/"
