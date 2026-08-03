@@ -34,25 +34,32 @@ def test_patches_are_whitelisted():
     )
 
 
-def test_patches_apply_cleanly_to_upstream():
+def test_patches_apply_cleanly_to_upstream(tmp_path):
     """补丁必须能干净打在当前 pin 的 upstream/ 上——移 pin 忘了重生成即红。
 
-    私有版是公版的叠加层，单独对 pristine 上游不保证可应用——按装配真实顺序
-    「公版 → 私有版」一次性 --check（git apply 多补丁按序原子校验）。
+    私有版是公版的**叠加层**：git apply --check 对多补丁只各自对照原始树，
+    不串联结果（2026-08-03 实证翻车）——故按装配真实顺序在临时树上**实打**
+    公版后再校验私有版。
     """
-    for args in (
-        [str(PATCH_BRAND)],
-        [str(PATCH_BRAND), str(PATCH_INTRANET)],
-        [str(SUB / "patches" / "conversation-cost-panel.patch")],
-    ):
+    for args in ([str(PATCH_BRAND)], [str(SUB / "patches" / "conversation-cost-panel.patch")]):
         r = subprocess.run(
             ["git", "apply", "--check",
              "--directory=projects/black-pool-agent/upstream", *args],
             cwd=REPO, capture_output=True, text=True,
         )
         assert r.returncode == 0, (
-            f"补丁序列 {[Path(a).name for a in args]} 不能干净应用于 upstream/"
+            f"{Path(args[0]).name} 不能干净应用于 upstream/"
             f"（多半是移 pin 后未重生成，跑 python3 build/rebrand.py）: {r.stderr[:500]}"
+        )
+    import shutil
+    work = tmp_path / "seq"
+    shutil.copytree(SUB / "upstream", work,
+                    ignore=shutil.ignore_patterns(".venv", "node_modules", "__pycache__"))
+    for name, check in ((PATCH_BRAND, False), (PATCH_INTRANET, True)):
+        cmd = ["git", "apply", "--unsafe-paths"] + (["--check"] if check else []) + [str(name)]
+        r = subprocess.run(cmd, cwd=work, capture_output=True, text=True)
+        assert r.returncode == 0, (
+            f"序贯应用失败于 {Path(str(name)).name}: {r.stderr[:500]}"
         )
 
 
@@ -108,6 +115,9 @@ def test_brand_patch_sentinels():
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"公版规则从补丁消失（锚点失配）: {missing}"
+    # featuredPitch 归还 Hermes（负向哨兵：黑池名不得出现在该宣传语的产出行）
+    assert "the recommended way to run Black Pool" not in text
+    assert "运行 Black Pool 的推荐方式" not in text
 
 
 def test_intranet_patch_sentinels():
@@ -128,6 +138,8 @@ def test_intranet_patch_sentinels():
         "后端契约横幅静默": "契约横幅整只静默",
         "自定义模型价格表注入": "model-prices.json",
         "Nous Portal 推荐徽标摘除": "内网无推荐位",
+        "推荐光效摘除": "arc-nous",
+        "服务商列表默认展开": "SHOW_ALL_KEY) !== \'0\'",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"

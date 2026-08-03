@@ -33,6 +33,12 @@ jobs:
       - name: Install uv (pinned)
         run: pip install "uv==${UV_VERSION}"
 
+      - name: Cache uv downloads
+        uses: actions/cache@v4
+        with:
+          path: ~\AppData\Local\uv\cache
+          key: uv-${{ runner.os }}-${{ hashFiles('projects/black-pool-agent/upstream/uv.lock') }}
+
       - name: Stage assembly copy
         run: |
           mkdir -p BlackPool
@@ -67,6 +73,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: npm
+          cache-dependency-path: projects/black-pool-agent/upstream/apps/desktop/package-lock.json
 
       - name: Build desktop (dir target, unsigned, merged into bundle)
         working-directory: BlackPool/app/apps/desktop
@@ -160,7 +168,7 @@ jobs:
           rm -f BlackPool/launcher.log
 
       - name: Zip (transport container only)
-        run: 7z a -mx=9 "black-pool-win64.zip" BlackPool > /dev/null && ls -lh black-pool-win64.zip
+        run: 7z a -mx=5 "black-pool-win64.zip" BlackPool > /dev/null && ls -lh black-pool-win64.zip
 
       - name: Upload to Release
         env:
