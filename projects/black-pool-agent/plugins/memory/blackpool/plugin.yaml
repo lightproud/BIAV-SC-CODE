@@ -1,0 +1,5 @@
+name: blackpool
+version: 0.1.0
+description: "Black Pool memory — holographic fact store with deterministic Chinese segmentation (FMM + bigram) for FTS/Jaccard recall and CJK-quoted entity extraction."
+hooks:
+  - on_session_end
