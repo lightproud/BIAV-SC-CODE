@@ -117,6 +117,7 @@ def test_intranet_patch_sentinels():
         "Help 菜单更新项摘除": "Help>Check for Updates 菜单整项摘除",
         "Cloud 连接模式隐藏": "Cloud 连接模式隐藏",
         "Telegram Quick setup 列隐藏": "Quick setup 列隐藏",
+        "首启服务商引导跳过": "首启引导跳过（服务商在设置页配）",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"

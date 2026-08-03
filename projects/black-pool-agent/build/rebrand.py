@@ -301,6 +301,25 @@ INTRANET_POST_RULES = [
         "\n"
         '        <div className="grid content-start gap-3">\n',
     ),
+    # 首启服务商引导整环节跳过（守密人 2026-08-03 裁定「首次部署推荐肯定不合适」）：
+    # 引导头牌是 Nous Portal 云订阅（内网无对象）。readCachedSkipped 只喂首启
+    # 自动弹层（firstRunSkipped 初始态），恒真即「视同已点过稍后再选」；
+    # 设置页手动配服务商走 manual 通道，不受影响。
+    (
+        "function readCachedSkipped(): boolean {\n"
+        "  if (typeof window === 'undefined') {\n"
+        "    return false\n"
+        "  }\n",
+        "function readCachedSkipped(): boolean {\n"
+        "  // 内网私有版：首启引导跳过（服务商在设置页配）——审计轮三\n"
+        "  if (true as boolean) {\n"
+        "    return true\n"
+        "  }\n"
+        "\n"
+        "  if (typeof window === 'undefined') {\n"
+        "    return false\n"
+        "  }\n",
+    ),
 ]
 
 # 二进制品牌资产覆盖（公版层；图标是二进制，文本规则到不了）：
