@@ -1,0 +1,39 @@
+# bpa-dev 车间手册（银芯单向输出件，零内网值）
+
+> 本套件 = 黑池侧 `bpa-dev` 组装车间的通用脚本层。整目录拷入
+> `黑池\bpa-dev\scripts\` 即可用；凭据、端点、内网参数一律只活在
+> `bpa-dev` 的兄弟目录里，**永不回流银芯**（§1.1-HC）。
+
+## 目录约定（脚本按此找料，缺哪个跳哪步）
+
+```
+黑池\bpa-dev\
+├── releases\      # 进料：银芯 black-pool-bundle Release 下载的 zip（只进不改，留最近 2-3 版）
+│   └── CHECKSUMS.txt   # 每行含官方 SHA-256（Release 页 digest 可复制）；存在则强制验货
+├── patches\       # 内网自持补丁（*.patch，git diff 格式，按文件名序应用）
+├── plugins\       # 黑池专属插件 → 拷入 app\plugins\
+├── skills\        # 内网技能 → 拷入 home\skills\
+├── config\        # SOUL.md → home\；env.cmd → 包根（凭据/端点的唯一的家）
+├── overlay\       # 万能覆盖层：内容原样覆盖到包根（以上四类盖不住的任意路径用它）
+├── staging\       # 组装工作台（脚本自建自清，勿入 SVN）
+└── scripts\       # 本套件（assemble / deploy / rollback / apply_patch）
+```
+
+## 三步操作
+
+1. **组装** `assemble.cmd [zip名]`：验 SHA → 净台解压 → 打补丁（包内 Python 跑
+   `apply_patch.py`，无需 git；任一张上下文不匹配即整体失败，绝不半打）→ 注配置
+   插件 → 出 `staging\BlackPool\` + `MANIFEST.txt`（用了哪版 zip、哪些补丁，来历三行可查）。
+2. **部署** `deploy.cmd <部署目录>`（如 `D:\黑池\bpa`）：旧 `home\` 用户数据增量并入
+   新包（不覆盖注入的配置）→ 旧版让位 `<目录>.old` 回滚位 → 成品上位。
+3. **回滚** `rollback.cmd <部署目录>`：一键回切 `.old`，问题版留 `.failed-*` 供取证。
+
+## 纪律（写给将来的自己）
+
+- **补丁射程**：Python 面（agent / hermes_cli / gateway / tools）打完即生效；
+  desktop / web UI 是已构建产物，**内网改不动**——UI 需求走银芯补丁入库、CI 装配线出包。
+- **补丁登记**：patches\ 里每张补丁在 README 记一行「用途 / 锚点 / 维护人」，学银芯白名单制。
+- **换包必经组装**：直接解压 zip 进部署位会丢掉全部内网补丁与配置——永远走 assemble → deploy。
+- **用户数据解耦（可选）**：config\env.cmd 里设 `HERMES_HOME` 指向 bpa 之外的固定目录，
+  用户数据从此不随包走，deploy 的 home 保全步自动变为空操作。
+- **staging 与 *.old / *.failed-* 勿入 SVN**：都是临时态或取证残骸。
