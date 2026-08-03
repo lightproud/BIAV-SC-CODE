@@ -33,9 +33,9 @@
      （可审计补丁，按序 = 私有版；只打第一张 = 公版）
    - `python3 deploy/rebrand.py --apply DEST [--edition public]`（规则引擎直施，缺省私有版）
 3. TUI 为 TypeScript 源码：补丁改的是 `ui-tui/src/`，组装后须按上游流程重建 TUI 产物。
-4. 身份：`deploy/bpa-dev/deploy/SOUL.md.template` 拷入 HERMES_HOME 为 `SOUL.md`（身份槽 #1，
+4. 身份：`deploy/bpa-dev/SOUL.md.template` 拷入 HERMES_HOME 为 `SOUL.md`（身份槽 #1，
    产品自称 Black Pool（黑池）、知识层统一称「知识底座」）。
-5. 命令名：`deploy/bpa-dev/deploy/bin/black-pool` 拷入 PATH（`BLACK_POOL_HERMES_BIN` 可指定入口）。
+5. 命令名：`deploy/bpa-dev/bin/black-pool` 拷入 PATH（`BLACK_POOL_HERMES_BIN` 可指定入口）。
 6. 钉钉显示名：在钉钉应用后台把机器人显示名设为 Black Pool 或 黑池（配置属内网侧，不入本仓）。
 
 ## Windows 本机便携分发（守密人 2026-08-02 裁定：不走服务端部署；PowerShell 受限）

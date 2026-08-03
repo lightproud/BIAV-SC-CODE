@@ -24,7 +24,7 @@
 ## 取件两式（守密人 2026-08-03 问答定式）
 
 - **映射式（推荐）**：`黑池\bpa-dev\deploy` 经 `svn:externals` 挂到银芯 vendor 镜像内
-  `projects/black-pool-agent/deploy/bpa-dev/deploy`——脚本随 `svn update` 自动保鲜。
+  `projects/black-pool-agent/deploy/bpa-dev`（挂载名 `deploy` 在外链行里指定，与源目录名无关）——脚本随 `svn update` 自动保鲜。
   脚本全部按**挂载点**相对定位（`%~dp0..` = 车间根），日志与运行痕迹只写车间根，
   vendor 映射目录保持零写入（只读纪律不破）。
 - **手拷式（兜底）**：镜像不便外链时，整目录拷入 `黑池\bpa-dev\deploy\`，银芯更新后手动重拷。
