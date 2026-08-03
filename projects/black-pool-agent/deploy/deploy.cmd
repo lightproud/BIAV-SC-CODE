@@ -6,7 +6,7 @@ if not defined BPA_KEEPWIN (
   cmd /d /k call "%~f0" %*
   exit /b
 )
-setlocal EnableExtensions
+setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
 set "SD=%~dp0"
 set "DEVROOT=%SD%.."
@@ -38,14 +38,50 @@ if exist "%BPA_DIR%\home" (
   echo 用户数据已保全（旧 home 增量并入，不覆盖新配置）
 )
 
-rem -- 2. 轮换：旧版让位回滚位 --
-if exist "%BPA_DIR%.old" rd /s /q "%BPA_DIR%.old"
-if exist "%BPA_DIR%" (
-  move "%BPA_DIR%" "%BPA_DIR%.old" >nul || (
-    echo 部署失败：旧目录占用中（先关掉正在运行的 Black Pool）。
-    pause & exit /b 1
+rem -- 2. 自清障轮换（field: every deploy hit dir locks; clear + retry） --
+rem 已知占用者三类：TSVN 图标缓存 / 桌面主程序 / 部署位内自家进程（含后端 python）
+taskkill /f /im TSVNCache.exe >nul 2>&1
+set "OLD_EXE="
+for %%F in ("%BPA_DIR%\desktop\*.exe") do if not defined OLD_EXE set "OLD_EXE=%%~nxF"
+if defined OLD_EXE taskkill /f /im "%OLD_EXE%" >nul 2>&1
+set "WQL=%BPA_DIR:\=\\%"
+wmic process where "ExecutablePath like '%WQL%\\%%'" call terminate >nul 2>&1
+ping -n 2 127.0.0.1 >nul
+
+set /a _TRIES=0
+:rot_old
+if exist "%BPA_DIR%.old" (
+  rd /s /q "%BPA_DIR%.old" >nul 2>&1
+  if exist "%BPA_DIR%.old" (
+    set /a _TRIES+=1
+    if !_TRIES! geq 5 goto rot_fail
+    echo 回滚位清理被占用，重试 !_TRIES!/5 ...
+    ping -n 3 127.0.0.1 >nul
+    goto rot_old
   )
 )
+set /a _TRIES=0
+:rot_move
+if exist "%BPA_DIR%" (
+  move "%BPA_DIR%" "%BPA_DIR%.old" >nul 2>&1
+  if exist "%BPA_DIR%" (
+    set /a _TRIES+=1
+    if !_TRIES! geq 5 goto rot_fail
+    echo 旧目录占用中，自动清障后重试 !_TRIES!/5 ...
+    taskkill /f /im TSVNCache.exe >nul 2>&1
+    if defined OLD_EXE taskkill /f /im "%OLD_EXE%" >nul 2>&1
+    ping -n 3 127.0.0.1 >nul
+    goto rot_move
+  )
+)
+goto rot_done
+:rot_fail
+echo 部署失败：清障重试 5 轮后目录仍被占用。
+echo 请关闭浏览过该目录的资源管理器窗口/编辑器，或用 resmon 的
+echo 「CPU - 关联的句柄」搜索目录名找到占用进程后重试。
+echo 详情见 %LOG%
+pause & exit /b 1
+:rot_done
 
 rem -- 3. 上新 --
 move "%B%" "%BPA_DIR%" >nul || (
