@@ -3,6 +3,21 @@
 > 施工边界：本目录只放**参数化通用件**；端点、凭据、内网路径一律在内网侧部署配置
 > （文书裁 5 切面化）。生产禁用 `hermes update`（文书 §2.4），更新只有「换 tag 重测」。
 
+**两类件，用法不同（守密人 2026-08-03 问答明确）**：
+- **生产工具（原地运行，银芯侧）**：`rebrand.py` / `gen_brand_assets.py`——在本仓跑，产补丁与资产。
+- **部署件（拷到目的地运行，内网侧）**：`launcher.cmd` / `launch_desktop.py` / `fix_venv_path.py`
+  由 CI 装配进包；`SOUL.md.template` 拷入 HERMES_HOME；`bin/black-pool` 拷入 PATH；
+  `black-pool-update.cmd` 拷到包外双击；**`bpa-dev/` 整目录拷入 `黑池\bpa-dev\scripts\`**。
+  部署件在本仓原地双击是跑不出正确结果的——它们按目的地的相对布局找料。
+
+## bpa-dev/ — 黑池组装车间套件（守密人 2026-08-03 裁定产出）
+
+`assemble.cmd`（验SHA → 解压 → 打内网补丁 → 注配置插件 → 出 staging + MANIFEST）·
+`deploy.cmd`（home 保全 → 旧版转 .old 回滚位 → 上新）· `rollback.cmd`（一键回切）·
+`apply_patch.py`（纯标准库统一 diff 应用器，内网无 git 也能打补丁，用包内 CPython 跑；
+全量 check 通过才落盘，上下文不匹配响亮失败；守卫 `tests/test_bpa_dev_kit.py`，
+含对真特性补丁 482 行 / 13 档的实弹 check）。目录约定与纪律见 `bpa-dev/RUNBOOK.md`。
+
 ## 品牌换装组装流程（需求 #1，守密人 2026-08-02；2026-08-03 定名黑池 v0.1.0 + 两版体系）
 
 > **品牌与版本**：品牌名**黑池（Black Pool）**，`Hermes Agent` 对应 `Black Pool Agent`，
