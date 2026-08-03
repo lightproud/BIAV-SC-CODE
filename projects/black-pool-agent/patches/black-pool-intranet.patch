@@ -16,7 +16,7 @@ index 6e249aa..d3e9686 100644
    return Menu.buildFromTemplate(template)
  }
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index 7694389..e838fd3 100644
+index 51b2227..fb0a55c 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
 @@ -109,6 +109,8 @@ export function AboutSettings() {

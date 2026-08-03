@@ -91,7 +91,8 @@ def test_brand_patch_sentinels():
     """
     text = PATCH_BRAND.read_text(encoding="utf-8")
     sentinels = {
-        "品牌名 + 版本号声明（About 出身声明）": "Black Pool（黑池）0.1.0",
+        "About 主版本行渲染黑池版本": "a.version('0.1.0')",
+        "About 出身行（上游版本单次动态携带）": "B.I.A.V. Studio 出品 · 基于 Hermes Agent",
         "Hermes Agent 对应 Black Pool Agent": "Black Pool Agent",
         "APP_NAME 兜底统一（userData 脑裂）": "|| 'Black Pool'",
         "relay 默认名两名并收": 'value in ("Black Pool Agent", "Hermes Agent")',
