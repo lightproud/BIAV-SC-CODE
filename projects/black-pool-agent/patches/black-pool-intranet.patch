@@ -99,6 +99,22 @@ index 8dccf3a..87d04b5 100644
        {
          active: activeView === 'providers',
          children: [
+diff --git a/apps/desktop/src/store/onboarding.ts b/apps/desktop/src/store/onboarding.ts
+index 6fbf294..1ecaaf9 100644
+--- a/apps/desktop/src/store/onboarding.ts
++++ b/apps/desktop/src/store/onboarding.ts
+@@ -117,6 +117,11 @@ function writeCachedConfigured(value: boolean) {
+ }
+ 
+ function readCachedSkipped(): boolean {
++  // 内网私有版：首启引导跳过（服务商在设置页配）——审计轮三
++  if (true as boolean) {
++    return true
++  }
++
+   if (typeof window === 'undefined') {
+     return false
+   }
 diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
 index 0b46920..b4295da 100644
 --- a/apps/desktop/src/store/updates.ts
