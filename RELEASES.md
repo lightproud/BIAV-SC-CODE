@@ -48,7 +48,7 @@
 | config 二进制/debug | `unpacked-assets` | `morimens-config.tar.gz`（含 binary/debug；文本部分另在 git）|
 | 同人图月归档 | `community-assets` | `fanart-archive-{YYYY-MM}.tar.gz` |
 | 回填的社区媒体 | `community-assets` | `media/backfill_manifest.json` 索引的媒体 |
-| Silver Core 便携整包（win64，Hermes 组装产物）| `silver-core-bundle` | `silver-core-win64.zip`（**合箱单目录**：运行时 + desktop + launcher，zip 仅传输载体）|
+| Black Pool（黑池）便携整包（win64，Hermes 组装产物）| `black-pool-bundle` | `black-pool-win64.zip`（私有版，**合箱单目录**：运行时 + desktop + launcher，zip 仅传输载体）；`black-pool-public-win64.zip`（公版，独立工作流按需出包）|
 
 ## 二、两个 Release 总览
 
@@ -83,16 +83,19 @@
 - **回填社区媒体**（索引 `media/backfill_manifest.json`）；`backfill_media.py --upload` 以 `gh release upload --clobber` 追加。
 - **同人图月归档** `fanart-archive-{YYYY-MM}.tar.gz`：归档引擎 fanart 条目（`release_tag: community-assets`，`month_from_parent_dir` 分桶）。fanart 不入 git（2026-06-21 de-tier），采集工作流（`collect-fanart.yml` 每日 / `recover-fanart.yml` 手动补录）取回当月资产合并新采后经 `archive_engine.py --force-group` 重传，月资产随采集滚动更新。
 
-### 2.3 「便携整包」`silver-core-bundle` —— Hermes 组装产物（2026-08-02 增设）
+### 2.3 「便携整包」`black-pool-bundle` —— Hermes 组装产物（2026-08-02 增设；2026-08-03 定名黑池 v0.1.0）
 
-守密人三裁（组装在银芯仓 / 不走服务端 / **产物合箱单目录**）：CI `assemble-silver-core-bundle.yml`
-（workflow_dispatch，Windows runner 单 job）滚动更新**唯一资产** `silver-core-win64.zip`——
-解压即一个 `SilverCore\` 目录：品牌换装源树 + 便携 CPython + relocatable venv +
+守密人三裁（组装在银芯仓 / 不走服务端 / **产物合箱单目录**）+ 2026-08-03 定名两裁（品牌黑池
+Black Pool v0.1.0 / 公私两版）：CI `assemble-black-pool-bundle.yml`（workflow_dispatch，
+Windows runner 单 job）滚动更新**私有版资产** `black-pool-win64.zip`；公版
+`black-pool-public-win64.zip` 由独立工作流 `assemble-black-pool-public.yml` 按需出包同落本桶——
+解压即一个 `BlackPool\` 目录：品牌换装源树 + 便携 CPython + relocatable venv +
 desktop（`--win dir` 免装目录形态）+ `launcher.cmd` 双击即用。**zip 仅为传输载体**
 （Releases 只能放文件）：守密人解压一次进内网共享目录，团队用户面 = 纯目录复制，
 零解压零安装零 PowerShell。**包内零凭据零内网参数**（§1.1-HC 切面化，配置内网侧注入）；
 升级 = 移 pin 重测后重跑 workflow 重发（文书 §2.4）。方案详见
-`projects/silver-core-hermes/deploy/README.md`。
+`projects/silver-core-hermes/deploy/README.md`。定名前旧桶 `silver-core-bundle`
+已删除（守密人 2026-08-03 裁定，防误取旧包）。
 
 ## 三、整理历程
 

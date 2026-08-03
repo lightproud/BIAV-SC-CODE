@@ -1,0 +1,165 @@
+name: Assemble Black Pool Public Bundle
+
+# 公版便携整包组装台（守密人 2026-08-03 裁定：公版独立工作流按需出包，互不拖慢）。
+# 公版 = 纯品牌换装（black-pool-rebrand.patch 单张），不含内网/便携适配层。
+# 单 job 产**唯一资产** black-pool-public-win64.zip：解压后即一个 BlackPool\ 目录——
+# 运行时（品牌换装源树 + 便携 CPython + relocatable venv）与 desktop（--win dir
+# 免装目录形态）同箱，launcher.cmd 双击即用。zip 仅为传输载体（Releases 只能放文件），
+# 守密人解压一次进内网共享目录后，团队用户面 = 纯目录复制，零解压零安装零 PowerShell。
+# 凭据 / idealab 端点 / 内网参数一律不在包内（§1.1-HC 切面化：配置内网侧注入）。
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  UV_VERSION: "0.9.28"        # 与上游 tests.yml 钉版一致
+  PYTHON_VERSION: "3.11"      # 上游 CI 同口径
+  BUNDLE_TAG: black-pool-bundle
+
+jobs:
+  assemble:
+    name: Public portable bundle (win64, merged single dir)
+    runs-on: windows-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv (pinned)
+        run: pip install "uv==${UV_VERSION}"
+
+      - name: Stage assembly copy
+        run: |
+          mkdir -p BlackPool
+          cp -r projects/silver-core-hermes/upstream BlackPool/app
+
+      - name: Apply Black Pool rebrand, public edition (rule engine)
+        run: python projects/silver-core-hermes/deploy/rebrand.py --apply BlackPool/app --edition public
+
+      - name: Apply feature patches (whitelisted)
+        run: git apply --directory=BlackPool/app projects/silver-core-hermes/patches/conversation-cost-panel.patch
+
+      - name: Portable CPython into bundle
+        env:
+          UV_PYTHON_INSTALL_DIR: ${{ github.workspace }}\BlackPool\python
+        run: uv python install "${PYTHON_VERSION}"
+
+      - name: Relocatable venv + locked sync (production extras, no dev)
+        env:
+          UV_PYTHON_INSTALL_DIR: ${{ github.workspace }}\BlackPool\python
+          UV_PROJECT_ENVIRONMENT: ${{ github.workspace }}\BlackPool\venv
+        working-directory: BlackPool/app
+        run: |
+          uv venv --relocatable --python "${PYTHON_VERSION}" "${UV_PROJECT_ENVIRONMENT}"
+          # 项目自身保持 editable（上游构建后端刻意禁 wheel——run 5 实证「wheels not
+          # supported, use editable」）；editable 指针钉组装机绝对路径的搬移问题
+          #（run 4 实证 ModuleNotFoundError）由 fix_venv_path.py 的指针自愈治：
+          # bundle-root.txt 记组装根，启动时把 site-packages 的 editable 指针改写到当前根。
+          uv sync --locked --extra all --extra anthropic --extra mistral --extra fal \
+            --extra modal --extra daytona --extra hindsight --extra parallel-web
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build desktop (dir target, unsigned, merged into bundle)
+        working-directory: BlackPool/app/apps/desktop
+        run: |
+          npm ci
+          npm run build
+          npm run builder -- --win dir
+          ls release/
+          cp -r release/win-unpacked ../../../desktop
+
+      - name: Launcher + bundle notes
+        run: |
+          cp projects/silver-core-hermes/deploy/launcher.cmd BlackPool/
+          cp projects/silver-core-hermes/deploy/fix_venv_path.py BlackPool/
+          cp projects/silver-core-hermes/deploy/launch_desktop.py BlackPool/
+          # 组装根印章：editable 指针自愈的「旧根」依据（自愈后由脚本滚动更新）
+          cygpath -w "$(pwd)/BlackPool" > BlackPool/bundle-root.txt
+          {
+            echo "Black Pool (黑池) portable bundle — public edition, brand v0.1.0 (win64, merged single dir)"
+            echo "edition: public (black-pool-rebrand.patch only, no intranet adaptations)"
+            echo "pin: $(grep -m1 'pin tag' projects/silver-core-hermes/UPSTREAM.md || true)"
+            echo "assembled: run ${GITHUB_RUN_ID} @ $(date -u +%Y-%m-%dT%H:%MZ)"
+            echo "usage: copy the BlackPool folder anywhere, double-click launcher.cmd"
+            echo "       (desktop UI by default; CLI = venv\\Scripts\\hermes.exe)"
+            echo "config: endpoints/credentials are injected on the intranet side (never bundled)"
+          } > BlackPool/BUNDLE-INFO.txt
+
+      - name: Relocatability + merge smoke test (moved path, launcher self-heal flow)
+        run: |
+          mv BlackPool /c/black-pool-smoke
+          # 与 launcher.cmd 同一自愈机制：基座 CPython 修 pyvenv.cfg home 后 venv 方可用
+          PYHOME=$(ls -d /c/black-pool-smoke/python/cpython-*)
+          "$PYHOME/python.exe" /c/black-pool-smoke/fix_venv_path.py 'C:\black-pool-smoke'
+          /c/black-pool-smoke/venv/Scripts/python.exe --version
+          # 中立目录跑导入检查——绝不允许 cwd 兜底假绿（前三轮的假绿正是 cwd=app 兜出来的）
+          cd /c
+          /c/black-pool-smoke/venv/Scripts/python.exe -c "import agent, hermes_cli; print('runtime imports OK')"
+          # 真启动检查：console-script 入口壳（hermes.exe）在搬移后的路径必须能跑起来
+          /c/black-pool-smoke/venv/Scripts/hermes.exe --help > /dev/null 2>&1 || \
+            /c/black-pool-smoke/venv/Scripts/hermes.exe --version
+          echo "hermes entrypoint launches OK"
+          ls /c/black-pool-smoke/desktop/*.exe
+          cd "$GITHUB_WORKSPACE"
+          mv /c/black-pool-smoke BlackPool
+          # 回搬后把 home 修回最终打包路径，保证 zip 内初值有效（launcher 首启仍会再自愈）
+          PYHOME2=$(ls -d "$(pwd)/BlackPool/python/cpython-"*)
+          "$PYHOME2/python.exe" BlackPool/fix_venv_path.py "$(cygpath -w "$(pwd)/BlackPool")"
+
+      - name: Factory cleanup (strip build residue before smoke, ~700 MiB)
+        run: |
+          # 出厂清场（run 9 实测账目）：npm ci 构建工具链 524.7 MiB + desktop 成品在
+          # app 树内的重复份 ~158 MiB，运行期零用途。放在 desktop 冒烟之前——
+          # 冒烟必须验证「清场后的出货形态」，否则清掉运行时真依赖会假绿到用户面。
+          rm -rf BlackPool/app/node_modules
+          rm -rf BlackPool/app/apps/desktop/node_modules
+          rm -rf BlackPool/app/apps/desktop/dist
+          rm -rf BlackPool/app/apps/desktop/release
+          rm -rf BlackPool/app/apps/shared/node_modules
+          # 二阶清场（守密人 2026-08-03 继续压缩指示）：文档站源码与测试集运行期零用途。
+          # docs/ 与 mcp-research-data/ 刻意保留——运行时是否消费未证伪，宁胖勿断。
+          rm -rf BlackPool/app/website
+          rm -rf BlackPool/app/tests
+          rm -rf BlackPool/app/tests-js
+          du -sh BlackPool
+
+      - name: Desktop launch smoke (supervised, captures Chromium stderr)
+        run: |
+          # 黑屏类死因（GPU/沙箱早夭、缺 DLL、asar 缺渲染层）只有真拉起 exe 才暴露。
+          # 与用户面同一监督器：早夭自动软渲染重试，仍死则 exit 1 并打印取证日志尾部。
+          BLACK_POOL_LAUNCH_WAIT=40 BlackPool/venv/Scripts/python.exe \
+            BlackPool/launch_desktop.py "$(cygpath -w "$(pwd)/BlackPool")"
+          # 冒烟完杀掉 desktop 及其 serve 后端（python.exe），避免句柄占用挡住清理与打包
+          EXE_NAME=$(basename "$(ls BlackPool/desktop/*.exe | head -1)")
+          taskkill //F //IM "$EXE_NAME" 2>/dev/null || true
+          taskkill //F //IM python.exe 2>/dev/null || true
+          sleep 3
+
+      - name: Clean smoke residue before zip
+        run: |
+          # 冒烟在 home\ 与 launcher.log 留下的运行时痕迹不入箱（用户首启应得到干净包）
+          rm -rf BlackPool/home
+          mkdir -p BlackPool/home
+          rm -f BlackPool/launcher.log
+
+      - name: Zip (transport container only)
+        run: 7z a -mx=9 "black-pool-public-win64.zip" BlackPool > /dev/null && ls -lh black-pool-public-win64.zip
+
+      - name: Upload to Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release view "${BUNDLE_TAG}" >/dev/null 2>&1 || \
+            gh release create "${BUNDLE_TAG}" --title "Black Pool portable bundle (private edition)" \
+              --notes "Black Pool (黑池) v0.1.0 — rolling private-edition portable bundle assembled by CI. See projects/silver-core-hermes/deploy/README.md"
+          gh release upload "${BUNDLE_TAG}" black-pool-public-win64.zip --clobber
