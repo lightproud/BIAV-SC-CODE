@@ -10,7 +10,7 @@ setlocal EnableExtensions
 chcp 65001 >nul
 set "SD=%~dp0"
 set "DEVROOT=%SD%.."
-set "LOG=%SD%deploy.log"
+set "LOG=%DEVROOT%\deploy.log"
 if not "%~1"=="" set "BPA_DIR=%~1"
 if not defined BPA_DIR (
   echo 部署失败：未指定部署目录（参数或环境变量 BPA_DIR）。
