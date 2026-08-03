@@ -99,6 +99,40 @@ index 8dccf3a..87d04b5 100644
        {
          active: activeView === 'providers',
          children: [
+diff --git a/apps/desktop/src/components/desktop-install-overlay.tsx b/apps/desktop/src/components/desktop-install-overlay.tsx
+index aedde11..71991ed 100644
+--- a/apps/desktop/src/components/desktop-install-overlay.tsx
++++ b/apps/desktop/src/components/desktop-install-overlay.tsx
+@@ -421,6 +421,8 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
+               <p className="mt-2 text-sm leading-5 text-muted-foreground">{copy.connectExistingDesc}</p>
+             </button>
+ 
++            {/* 便携包后端随包自带——本地安装卡隐藏（审计轮三） */}
++            {false && (
+             <button
+               className="rounded-lg border border-(--ui-stroke-tertiary) bg-(--ui-bg-quinary) p-4 text-left transition hover:bg-(--chrome-action-hover) disabled:cursor-wait disabled:opacity-60"
+               disabled={localStarting}
+@@ -451,6 +453,7 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
+               </div>
+               <p className="mt-2 text-sm leading-5 text-muted-foreground">{copy.installLocalDesc}</p>
+             </button>
++            )}
+           </div>
+ 
+           {localStartError ? (
+@@ -460,10 +463,10 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
+             </div>
+           ) : null}
+ 
+-          <div className="mt-6 text-xs text-muted-foreground">
++          {false && <div className="mt-6 text-xs text-muted-foreground">
+             {copy.installTo}{' '}
+             <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>
+-          </div>
++          </div>}
+         </div>
+       </div>
+     )
 diff --git a/apps/desktop/src/store/onboarding.ts b/apps/desktop/src/store/onboarding.ts
 index 6fbf294..1ecaaf9 100644
 --- a/apps/desktop/src/store/onboarding.ts
