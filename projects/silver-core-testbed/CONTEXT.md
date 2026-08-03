@@ -1,7 +1,7 @@
 # CONTEXT — silver-core-testbed（试金石）
 
 > **维护态（守密人 2026-08-02 换轨裁定 + 文书裁 3）**：随家族转**纯维稳**——版本冻结、
-> 仅修影响生产的 bug、零新功能（载体换轨 `projects/silver-core-hermes/`；迁移终裁后冻结，
+> 仅修影响生产的 bug、零新功能（载体换轨 `projects/black-pool-hermes/`；迁移终裁后冻结，
 > 触发线 `memory/todo.md` #T78）。巡检 / 值班职能照跑不停。
 >
 > 施工封面（建成什么样的唯一权威）：守密人 2026-07-18「silver-core-testbed 施工封面」

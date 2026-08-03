@@ -11,7 +11,7 @@ import subprocess
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-SUB = REPO / "projects" / "silver-core-hermes"
+SUB = REPO / "projects" / "black-pool-hermes"
 PATCH_BRAND = SUB / "patches" / "black-pool-rebrand.patch"
 PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 
@@ -47,7 +47,7 @@ def test_patches_apply_cleanly_to_upstream():
     ):
         r = subprocess.run(
             ["git", "apply", "--check",
-             "--directory=projects/silver-core-hermes/upstream", *args],
+             "--directory=projects/black-pool-hermes/upstream", *args],
             cwd=REPO, capture_output=True, text=True,
         )
         assert r.returncode == 0, (

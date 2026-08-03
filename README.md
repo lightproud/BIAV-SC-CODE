@@ -83,7 +83,7 @@ git clone https://github.com/lightproud/BIAV-SC-CODE.git
 git clone --single-branch --branch main --filter=blob:none --no-checkout \
   https://github.com/lightproud/BIAV-SC-CODE.git
 cd BIAV-SC-CODE
-git sparse-checkout set --no-cone '/*' '!/projects/silver-core-hermes/upstream/'
+git sparse-checkout set --no-cone '/*' '!/projects/black-pool-hermes/upstream/'
 git checkout main
 
 # 移锚前克隆的存量胖包（2.4GB）就地瘦身：换上新 tag 并回收旧对象

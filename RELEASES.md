@@ -94,7 +94,7 @@ desktop（`--win dir` 免装目录形态）+ `launcher.cmd` 双击即用。**zip
 （Releases 只能放文件）：守密人解压一次进内网共享目录，团队用户面 = 纯目录复制，
 零解压零安装零 PowerShell。**包内零凭据零内网参数**（§1.1-HC 切面化，配置内网侧注入）；
 升级 = 移 pin 重测后重跑 workflow 重发（文书 §2.4）。方案详见
-`projects/silver-core-hermes/deploy/README.md`。定名前旧桶 `silver-core-bundle`
+`projects/black-pool-hermes/deploy/README.md`。定名前旧桶 `silver-core-bundle`
 已删除（守密人 2026-08-03 裁定，防误取旧包）。
 
 ## 三、整理历程

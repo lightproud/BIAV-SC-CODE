@@ -54,7 +54,7 @@
 | # | 使命 | 主对接子项目 |
 |---|------|------|
 | 1 | **黑池信息入口**（GitHub 自动化采集层 / 单向输出） | news（核心） |
-| 2 | **通用 AI 底层能力开发基地**（通用 AI 底层工程产物持续开发，作为银芯→黑池单向输出物支持黑池建设） | silver-core-hermes（核心，2026-08-02 载体换轨；silver-core-sdk 家族维护态，见 §6） |
+| 2 | **通用 AI 底层能力开发基地**（通用 AI 底层工程产物持续开发，作为银芯→黑池单向输出物支持黑池建设） | black-pool-hermes（核心，2026-08-02 载体换轨；silver-core-sdk 家族维护态，见 §6） |
 
 > **使命收敛历程**（详见 `memory/decisions.md`）：三新使命（2026-04-26 v2.0）→ 使命#3
 > 「Studio 团队 AI 协作训练场」退役（2026-06-28）→ 使命#2「共建」语义收敛为「单向共享」
@@ -65,7 +65,7 @@
 > （BPT 在产），黑池侧已完全弃用 Claude Code、全面换装自有技术栈（BPT + silver-core-sdk 0.3x pin），
 > SDK 存在理由由「应急替代」升格「常态底座」。site 仍为对外门户、game 仍为守密人个人兴趣
 > （均不承载正式使命）。**2026-08-02 载体换轨（守密人裁定）**：放弃「BPT 100% 自研 +
-> 模仿闭源 Claude Code」路线，使命#2 载体由 silver-core-sdk 换轨 `projects/silver-core-hermes/`
+> 模仿闭源 Claude Code」路线，使命#2 载体由 silver-core-sdk 换轨 `projects/black-pool-hermes/`
 > （基于 NousResearch/hermes-agent（MIT）上游跟随 + 扩展层）；SDK 家族转维护态只修不建，
 > BPT 换装完成后按 wiki 先例冻结（挂账 T78）。
 >
@@ -77,7 +77,7 @@
 **稳态维护期**（2026-07-12 即时生效，守密人裁定不待原定 07-19）：Phase 2「银芯使命建设期」
 （2026-04-27 起）提前收口，判定**基本达成**——M7 验收 ① 使命基础设施齐备 ✅ ② 自动化跑稳 ✅，
 ③ 贡献流程项随 wiki 使命取消作废（诚实记录：非「达成」而是「目标撤销」）。信息层采集自动跑、
-按需维护，不再开建设战线；**silver-core-hermes 按使命#2 持续开发，不受维护期限制**
+按需维护，不再开建设战线；**black-pool-hermes 按使命#2 持续开发，不受维护期限制**
 （2026-08-02 载体换轨；silver-core-sdk 家族转维护态只修不建，见 §1.2 / §6）。
 实时进度与子项目状态以 `memory/project-status.md` 为**唯一权威**——本档案及其他档案只指针、
 不复刻进度数字。
@@ -130,10 +130,10 @@
    （导航四件后端 `scripts/kb_navigator.py`，向量腿 `scripts/kb_vector.py`、合流 `scripts/kb_anchor.py`，均 import-only 库）。放指针不放本体：导航层只返回元信息 + `resource`
    指针，本体仍原地不动。重建随 `scripts/build_okf_bundle.py` 末尾自动跑，或 `python3 scripts/build_kb_index.py` 单独重建。
 
-使命#2「通用 AI 底层能力开发基地」的运转形态（2026-08-02 载体换轨）= `projects/silver-core-hermes/`
+使命#2「通用 AI 底层能力开发基地」的运转形态（2026-08-02 载体换轨）= `projects/black-pool-hermes/`
 （Hermes Agent 上游跟随 + 扩展层，现行核心载体）持续开发 + `projects/silver-core-sdk/` 家族
 维护态存量（只修不建，BPT 换装完成后冻结，挂账 T78）+ 银芯→黑池单向输出（tarball pin 消费，
-方向与 §1.1-HC 防火墙一致），状态见 `memory/project-status.md`「## Silver Core Hermes」
+方向与 §1.1-HC 防火墙一致），状态见 `memory/project-status.md`「## Black Pool Hermes」
 「## Silver Core SDK」两节。
 
 各主线的「手动怎么跑哪条命令」见 §7。
@@ -312,7 +312,7 @@ brain-in-a-vat/
 │   ├── silver-core-sdk/  # 原使命#2 载体（2026-07-12 转正；2026-08-02 换轨后维护态只修不建，T78）· 银芯→黑池单向输出物：Silver Core Agent SDK——Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名；npm 名 silver-core-agent-sdk，2026-07-18 定名），见 project-status「## Silver Core SDK」
 │   ├── silver-core-maestro-sdk/ # Silver Core Maestro SDK（npm 名 silver-core-maestro-sdk，乐队指挥意象）：钟 / 跨会话状态 / 会话装配零件（任务台账等），依赖单向 maestro→agent，需求档 scs-req-orchestrator-sdk-20260717.md；随家族维护态（T78）
 │   ├── silver-core-testbed/ # 试金石（2026-07-18 施工）：两包效果验证床——消费者非家族第三包（private / 永不发布 / 锁步豁免 / 仅公开面），自举巡检本仓 + 台账即评测数据源；漏缝清单 GAPS.md 为一等产出；随家族维护态（T78）
-│   └── silver-core-hermes/ # 使命#2 现行核心载体（2026-08-02 换轨裁定）：Hermes Agent（NousResearch/hermes-agent，MIT）改造扩展层——核心零侵入（能力走官方扩展面；patches/ 白名单制，品牌补丁由规则引擎生成、组装期应用），银芯→黑池单向输出；施工边界文书 = Public-Info-Pool/Resource/repo-engineering/bpt-hermes-charter-20260802.md，状态见 project-status「## Silver Core Hermes」
+│   └── black-pool-hermes/ # 使命#2 现行核心载体（2026-08-02 换轨裁定）：Hermes Agent（NousResearch/hermes-agent，MIT）改造扩展层——核心零侵入（能力走官方扩展面；patches/ 白名单制，品牌补丁由规则引擎生成、组装期应用），银芯→黑池单向输出；施工边界文书 = Public-Info-Pool/Resource/repo-engineering/bpt-hermes-charter-20260802.md，状态见 project-status「## Black Pool Hermes」
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/
@@ -333,7 +333,7 @@ brain-in-a-vat/
 
 子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
 动手前必读。news 承载使命#1 持续自动跑；wiki 已冻结（2026-07-12 原使命#2 取消，成果保留
-不删不派发）；site 维护稳定，game 不主线派发；`projects/silver-core-hermes/` 承载**使命#2
+不删不派发）；site 维护稳定，game 不主线派发；`projects/black-pool-hermes/` 承载**使命#2
 「通用 AI 底层能力开发基地」**现行主线（2026-08-02 载体换轨裁定：基于 NousResearch/hermes-agent
 （MIT）上游跟随 + 扩展层，与 §1.1-HC 防火墙同向：银芯→黑池单向输出、黑池不回流）；
 `projects/silver-core-sdk/` 家族为原载体（2026-07-12 由「非使命线工程产物」事实使命转正；原名
