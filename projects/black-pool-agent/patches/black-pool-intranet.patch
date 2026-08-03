@@ -205,6 +205,28 @@ index 8dccf3a..87d04b5 100644
        {
          active: activeView === 'providers',
          children: [
+diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
+index e7d5849..e8c5c83 100644
+--- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
++++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
+@@ -244,7 +244,7 @@ export function useStatusbarItems({
+       // Update state is not a preference: hiding it is how a user misses that
+       // their client is behind. Listed in the menu, but locked on.
+       lockedVisible: true,
+-      onSelect: () => openUpdateOverlayFor('client'),
++      onSelect: () => {},
+       title: status.tooltip,
+       toggleLabel: copy.toggleVersion,
+       variant: 'action'
+@@ -287,7 +287,7 @@ export function useStatusbarItems({
+       id: 'version-backend',
+       label: status.label,
+       lockedVisible: true,
+-      onSelect: () => openUpdateOverlayFor('backend'),
++      onSelect: () => {},
+       title: status.tooltip,
+       toggleLabel: copy.toggleBackendVersion,
+       variant: 'action'
 diff --git a/apps/desktop/src/components/desktop-install-overlay.tsx b/apps/desktop/src/components/desktop-install-overlay.tsx
 index aedde11..71991ed 100644
 --- a/apps/desktop/src/components/desktop-install-overlay.tsx

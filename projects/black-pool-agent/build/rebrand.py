@@ -254,6 +254,12 @@ BRAND_POST_RULES = [
         "featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم — الطريقة الموصى بها لتشغيل Black Pool',",
         "featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم — الطريقة الموصى بها لتشغيل Hermes',",
     ),
+    # 状态栏版本芯片显示黑池版本（守密人 2026-08-03「右下角版本号是 0.19.1」；
+    # 与 About 同口径：黑池版本为主）。unknown 态判定沿用原 undefined 语义。
+    (
+        "      version: desktopVersion?.appVersion\n    })\n",
+        f"      version: desktopVersion?.appVersion ? '{BRAND_VERSION}' : undefined\n    }})\n",
+    ),
     # 品牌字体加载修复（守密人 2026-08-03 实机发现字标回退无衬线；装配日志实锤
     # "didn't resolve at build time"）：上游 CSS 按 monorepo 根 node_modules 写
     # 路径、官方从根装依赖故可解析；本装配只在 apps/desktop 里 npm ci——改指
@@ -480,6 +486,16 @@ INTRANET_POST_RULES = [
         "          )}\n",
         "          {/* 内网无推荐位——徽标摘除（审计轮三） */}\n"
         "          {loggedIn ? <ConnectedTag /> : null}\n",
+    ),
+    # 状态栏版本芯片点击不再开更新覆盖层（自更新入口第六、七处；便携包更新
+    # 通道 = 换包）：client / backend 两枚芯片的 onSelect 一并 no-op。
+    (
+        "      onSelect: () => openUpdateOverlayFor('client'),\n",
+        "      onSelect: () => {},\n",
+    ),
+    (
+        "      onSelect: () => openUpdateOverlayFor('backend'),\n",
+        "      onSelect: () => {},\n",
     ),
     # 后端契约横幅静默（守密人 2026-08-03 实机反馈「Backend out of date」）：
     # 便携包 desktop 与后端同树出包、契约恒配对，横幅只在连到旧后端残留进程时
