@@ -392,6 +392,21 @@ INTRANET_POST_RULES = [
     # 引导头牌是 Nous Portal 云订阅（内网无对象）。readCachedSkipped 只喂首启
     # 自动弹层（firstRunSkipped 初始态），恒真即「视同已点过稍后再选」；
     # 设置页手动配服务商走 manual 通道，不受影响。
+    # 后端契约横幅静默（守密人 2026-08-03 实机反馈「Backend out of date」）：
+    # 便携包 desktop 与后端同树出包、契约恒配对，横幅只在连到旧后端残留进程时
+    # 出现，而其「Update」按钮走 git 式更新在便携形态是坏路——整只静默；
+    # 版本对齐唯一正道 = 整包替换（RUNBOOK 已载）。
+    (
+        "export function reportBackendContract(contract: number | undefined): void {\n"
+        "  if ((contract ?? 0) >= REQUIRED_BACKEND_CONTRACT) {\n",
+        "export function reportBackendContract(contract: number | undefined): void {\n"
+        "  // 便携包版本随包恒配对，Update 按钮为坏路——契约横幅整只静默（审计轮三）\n"
+        "  if (true as boolean) {\n"
+        "    return\n"
+        "  }\n"
+        "\n"
+        "  if ((contract ?? 0) >= REQUIRED_BACKEND_CONTRACT) {\n",
+    ),
     # 本地安装卡隐藏（守密人 2026-08-03「安装默认地址还没品牌化」实机反馈）：
     # 真实安装路径是功能标识（小写 hermes 目录，红线不碰、显示造假更不可）；
     # 便携包后端随包自带，「本地安装」整卡无对象且会拉未换装上游——整卡摘除，
