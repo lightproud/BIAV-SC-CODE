@@ -1,5 +1,5 @@
 diff --git a/agent/usage_pricing.py b/agent/usage_pricing.py
-index 04d34d1..8a01575 100644
+index 04d34d1..73f7eb1 100644
 --- a/agent/usage_pricing.py
 +++ b/agent/usage_pricing.py
 @@ -1172,12 +1172,81 @@ def _pricing_entry_from_metadata(
@@ -84,26 +84,6 @@ index 04d34d1..8a01575 100644
      route = resolve_billing_route(model_name, provider=provider, base_url=base_url)
      if route.billing_mode == "subscription_included":
          return PricingEntry(
-@@ -1305,6 +1374,9 @@ def estimate_usage_cost(
-     base_url: Optional[str] = None,
-     api_key: Optional[str] = None,
- ) -> CostResult:
-+    user_entry = _user_pricing_entry(model_name)
-+    if user_entry:
-+        return user_entry
-     route = resolve_billing_route(model_name, provider=provider, base_url=base_url)
-     if route.billing_mode == "subscription_included":
-         return CostResult(
-@@ -1387,6 +1459,9 @@ def has_known_pricing(
-     Uses direct lookup instead of routing through the full estimation
-     pipeline — avoids creating dummy usage objects just to check status.
-     """
-+    user_entry = _user_pricing_entry(model_name)
-+    if user_entry:
-+        return user_entry
-     route = resolve_billing_route(model_name, provider=provider, base_url=base_url)
-     if route.billing_mode == "subscription_included":
-         return True
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
 index 6e249aa..d3e9686 100644
 --- a/apps/desktop/electron/main.ts

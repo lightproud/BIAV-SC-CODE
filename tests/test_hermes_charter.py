@@ -149,6 +149,12 @@ def test_intranet_patch_sentinels():
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"
+    # 锚点唯一性回归（2026-08-04 野战：裸体锚匹配 3 处，把 return user_entry 注进
+    # 返回 CostResult 的 estimate_usage_cost，.amount_usd 崩死 BPA）：价格钩子
+    # 只许注入 get_pricing_entry 一处。
+    added = [l for l in text.splitlines() if l.startswith("+")]
+    hooks = [l for l in added if "user_entry = _user_pricing_entry" in l]
+    assert len(hooks) == 1, f"价格钩子注入点应恰为 1 处，实为 {len(hooks)}（锚点撞车复发）"
 
 
 def test_editions_are_cleanly_separated():

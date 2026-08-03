@@ -100,7 +100,8 @@ jobs:
             echo ""
             echo "- 版别：公版（public edition，无内网适配层）"
             echo "- 产品版本：${PRODVER}"
-            echo "- 上游 pin：$(grep -m1 'pin tag' projects/black-pool-agent/UPSTREAM.md || true)"
+            PIN_TAG=$(sed -n 's/.*pin tag.*`\(v[^`]*\)`.*/\1/p' projects/black-pool-agent/UPSTREAM.md | head -1)
+            echo "- 上游 pin：${PIN_TAG:-未探明}"
             echo "- 装配 commit：${GITHUB_SHA}"
             echo "- 装配运行：${GITHUB_RUN_ID} @ $(date -u +%Y-%m-%dT%H:%MZ)"
             echo ""
@@ -160,6 +161,13 @@ jobs:
           rm -rf BlackPool/app/apps/desktop/dist
           rm -rf BlackPool/app/apps/desktop/release
           rm -rf BlackPool/app/apps/shared/node_modules
+          # 三阶清场（守密人 2026-08-04「zip 没必要整个仓库」裁定）：desktop/shared
+          # TS 源码在成品并入 BlackPool\desktop 后运行期零用途；仓库元数据同判。
+          # ui-tui/web/docs/scripts 疑似运行时可达，按「宁胖勿断」保留。
+          rm -rf BlackPool/app/apps
+          rm -rf BlackPool/app/.github
+          rm -rf BlackPool/app/contributors
+          rm -f BlackPool/app/*.png BlackPool/app/*.jpg
           # 二阶清场（守密人 2026-08-03 继续压缩指示）：文档站源码与测试集运行期零用途。
           # docs/ 与 mcp-research-data/ 刻意保留——运行时是否消费未证伪，宁胖勿断。
           rm -rf BlackPool/app/website
@@ -187,7 +195,7 @@ jobs:
           rm -f BlackPool/launcher.log
 
       - name: Zip (transport container only)
-        run: 7z a -mx=5 "black-pool-public-win64.zip" BlackPool > /dev/null && ls -lh black-pool-public-win64.zip
+        run: 7z a -mx=7 "black-pool-public-win64.zip" BlackPool > /dev/null && ls -lh black-pool-public-win64.zip
 
       - name: Upload to Release
         env:

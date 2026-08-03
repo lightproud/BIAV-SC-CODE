@@ -224,10 +224,16 @@
 - **准则**：文本换装规则的标识符免疫边界必须覆盖**所有连接符**（`_` 之外至少 `-`）；换装补丁上线前要对 diff 做一轮「功能标识符样本」审计（HTTP 头 / User-Agent / 文件名 / scheme），不能只靠正则自证。
 - **防护**：`deploy/rebrand.py` 连字符入免疫边界 + `tests/test_hermes_charter.py::test_rebrand_never_breaks_functional_identifiers` 哨兵（补丁含 `X-Silver Core` 即红）；代价面记 `BRANDING.md` 残留清单。
 
+## 58. 全文替换规则的锚点不唯一，就是在给别的函数注射
+
+- **坑**：私有版价格钩子锚定「函数体首两行」做全文 `replace()`——那两行在 `usage_pricing.py` 出现 3 次（三个函数体同开头），`return user_entry`（PricingEntry）被一并注进返回 CostResult 的 `estimate_usage_cost`，调用方取 `.amount_usd` 即 AttributeError。守密人填上 model-prices.json 当天引爆，BPA 每轮计费崩死（潜伏至数据到位才发作）。
+- **准则**：引擎是全文替换，则**每条锚点必须全档唯一**——首选把函数签名尾（返回类型行）纳入锚；写规则时先 `grep -c` 锚串验唯一，不能拿「看起来够特殊」当证据。
+- **防护**：锚点已带 `-> Optional[PricingEntry]:` 签名尾（rebrand.py 注释记案）；`test_intranet_patch_sentinels` 增「钩子注入点恰为 1 处」计数哨兵，撞车复发即红。
+
 ---
 
 > **维护说明**：
-> 1. 遇新坑立即追加，接续最高号（下一条 = #58）。**定额**：每条 3–5 行（坑 / 准则 / 防护指针），
+> 1. 遇新坑立即追加，接续最高号（下一条 = #59）。**定额**：每条 3–5 行（坑 / 准则 / 防护指针），
 >    长叙事直接写归档层案卷区，主档只留指针——主档是路口的交通牌，卷宗放档案室。
 > 2. **毕业纪律（守密人 2026-07-12 裁定）**：本档定位**中转站，不是终点**。每条记入时顺带回答
 >    「能否升格为测试 / 钩子 / CLAUDE.md 硬约束」——能则提案升格，升格落地即标毕业迁档。
