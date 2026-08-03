@@ -1,20 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-03T06:22:51.912681+00:00",
+  "collected_at": "2026-08-03T12:22:47.615713+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 125,
+  "item_count": 126,
   "items": [
-    {
-      "source": "google_play",
-      "time": "2026-07-09T14:14:47",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
-      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
-      "author": "Osman Yusuf",
-      "engagement": 3
-    },
     {
       "source": "google_play",
       "time": "2026-07-04T18:34:42",
@@ -23,7 +13,7 @@
       "summary": "크툴루 신화+슬더스+씹덕 다 해당되는데 돌파가 15까지라는 말만 듣고 안하다가 사야 콜라보 때 맨땅으로 시작했음. 메인스 8장 밀고 있는데 무과금으로 충분히 할 만함. 풀돌해야 성능 나오는 것도 아니라서 명함~저돌파로도 잘만 밀고, 재화 잘 퍼주고, 무엇보다 게임 자체가 재밌음. 간혹 모르면 죽어야지 식으로 기믹 설명이 불친절한 부분이 있고, 내 스펙으로는 난이도가 너무 빡빡해서 죽지 않으면 안될 것 같은 때가 있지만, 그렇기 때문에 하루에 5번 부활할 수 있는 응급 영지체가 있는 것 같다. 이제 막 한 달 됐는데 애착이 가고 앞으로 잘 됐으면 하는 게임.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-78d6f7ad-d6fd-47e6-976b-8a2f5c883e44",
       "author": "미낼",
-      "engagement": 3
+      "engagement": 4
     },
     {
       "source": "google_play",
@@ -323,6 +313,16 @@
       "summary": "赞✨👍！",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-76f8661b-513b-45d0-b27c-a667dc06df2f",
       "author": "Zhi Shao Tan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-02T08:45:03",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 So far this game is really interesting,",
+      "summary": "So far this game is really interesting, it's very F2p friendly and doesn't take that much space on mobile, though I wish there were voice lines in the story so that we could understand the story better but I'm quite happy with the story and the plot itself. knowing this game isn't really a main stream, I don't really mind the lack of VA tbh and hopefully this game will get the recognition it deserves in the future 🗝️",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-5864ae93-7fd0-4e49-b627-d87dc0ff9f92",
+      "author": "Kitsune",
       "engagement": 0
     },
     {
@@ -767,6 +767,26 @@
     },
     {
       "source": "google_play",
+      "time": "2026-08-02T11:25:31",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 recommended buat player gratisan 🗿👍",
+      "summary": "recommended buat player gratisan 🗿👍",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-7663715b-a067-40e6-8328-da91129c78f4",
+      "author": "M.syarif.h768",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-02T10:38:01",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 👍",
+      "summary": "👍",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-2e1b6bc0-568e-48bd-b865-cfdd4db38f15",
+      "author": "Adly Laksmana",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-08-01T16:02:54",
       "lang": "id",
       "title": "[Google Play 好评] ★5 Nice game",
@@ -1083,16 +1103,6 @@
       "summary": "Best gatcha ever, I love the Lovecraftian lore and the intricate gameplay. 10/10 cum laude.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-3da69e37-ee67-4e24-9a08-b0814ade38a3",
       "author": "Alessio Bollich",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-04T07:26:08",
-      "lang": "it",
-      "title": "[Google Play 好评] ★5 5 stelle perché è un gioco multilingue c",
-      "summary": "5 stelle perché è un gioco multilingue compreso l'italiano cosa che ormai dovrebbero fare tutti giochi grazie all'IA",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-d2764bc5-5216-46e4-9594-094a54585b86",
-      "author": "Daniele",
       "engagement": 0
     },
     {
