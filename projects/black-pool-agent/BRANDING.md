@@ -35,6 +35,9 @@
 | **审计轮二（2026-08-03 Sonnet 七断面动态编排 + 主循环终审）** | 后置规则八条：① `hermes update` 便携硬门禁（无 .git 的 win32 ZIP 兜底会拉未换装上游整树覆盖——字面撤销全部品牌补丁；文书 §2.4 从文档纪律升格代码门禁）② Billing 深路由封死（`?tab=billing` + 计费故障自动跳转两条暗道，从 `SETTINGS_VIEWS` 摘除）③ Help > Check for Updates 菜单整项摘除（三处自更新入口最后一处）④ Gateway Cloud 连接模式卡隐藏（portal.nousresearch.com OAuth 无对象）⑤ Telegram Quick setup 列隐藏（托管 Bot 固定代理 Nous 自营 SaaS，内网不可达却挂 recommended）⑥⑦ AUMID + appId 中性化 `com.biav.silvercore`（全小写躲过裸词规则，Windows 通知设置直接显示原始串）⑧ 唤醒词帮助文案中性化（裸词规则教出 "Hey Silver Core" 但声学模型只认 "hey hermes"）+ CLI `⚕ Hermes` 面板残留收尾；哨兵 `test_rebrand_audit_round2_rules_alive` | 8 条 |
 | **首启服务商引导跳过（守密人 2026-08-03 内网首部署实机裁定「首次部署推荐肯定不合适，跳过这个环节」）** | 私有版规则：引导头牌 Nous Portal 云订阅内网无对象，`readCachedSkipped` 恒真 = 视同已选「稍后再选」直接进应用；设置页手动配服务商（manual 通道）不受影响 | 1 处 |
 | **About 版本区重排（守密人 2026-08-03 两问对齐裁定）** | ①标题维持 Black Pool Desktop ②黑池版本为主：主版本行渲染 `0.1.0`（借 i18n version 模板各语种自适），出身行「B.I.A.V. Studio 出品 · 基于 Hermes Agent <上游版本> 定制」——上游版本仅出现一次、动态渲染移 pin 免改词 | 2 行 |
+| **品牌字体加载修复（守密人 2026-08-03 实机发现字标回退无衬线）** | 装配日志实锤 `didn't resolve at build time`：上游 CSS 按 monorepo 根 node_modules 写字体路径、我方装配只在 apps/desktop 里 npm ci——公版规则改指应用自身 node_modules，Collapse-Bold 构建期内嵌 | 1 处 |
+| **默认配色黑池金（守密人 2026-08-03 配色裁定，对标黑池终端参考图）** | 公版规则：新增内建主题 `black-pool`（浅 = 金×米白 / 深 = 金×暖黑，全 24 令牌双貌）并设 `DEFAULT_SKIN_NAME`；上游六款主题保留可选 | 1 主题 |
+| **本地安装卡隐藏（守密人 2026-08-03「安装默认地址还没品牌化」反馈）** | 私有版规则：真实安装路径属功能标识（小写 hermes 目录红线不碰、显示造假更不可）；便携包后端随包自带，「本地安装」整卡无对象且会拉未换装上游——整卡连路径行摘除，「连接现有网关」保留 | 2 处 |
 | **默认语言简体中文（守密人 2026-08-03 裁定）** | 基座层后置规则：desktop 缺省 locale 单一真相源 `DEFAULT_LOCALE` `'en'`→`'zh'`（无系统语言探测，配置未设时生效；已设用户不受影响）；公私两版同得（语言偏好属产品定制非内网适配）；哨兵入 `test_brand_patch_sentinels` | 1 处 |
 
 **审计轮二观察项（未处理，供守密人裁夺）**：`hermes uninstall` 的桌面产物探测硬编码 `Hermes` 目录名、换装后找不到 `Silver Core` 实际产物（便携形态卸载 = 删目录，实害近零）；Remote/SSH 报错文案四语种引导 `hermes-agent.nousresearch.com/install.sh`（内网不可达，正确措辞需产品口径，暂记账）；pet 精灵素材仍为上游吉祥物（前轮已记）。

@@ -116,7 +116,8 @@ def test_kit_has_zero_intranet_values(name):
 
 def test_kit_files_complete():
     for name in ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py",
-                 "RUNBOOK.md", "launcher.cmd", "launch_desktop.py", "fix_venv_path.py"]:
+                 "RUNBOOK.md", "launcher.cmd", "launch_desktop.py", "fix_venv_path.py",
+                 "make-shortcut.vbs"]:
         assert (KIT / name).is_file(), f"bpa-dev 套件缺件: {name}"
 
 

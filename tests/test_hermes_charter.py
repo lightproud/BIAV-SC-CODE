@@ -100,6 +100,9 @@ def test_brand_patch_sentinels():
         "唤醒词帮助中性化": "toggle the wake word listener [on|off|status]",
         "CLI 面板残留品牌收尾": "⚕ Black Pool",
         "默认语言简体中文": "DEFAULT_LOCALE: Locale = 'zh'",
+        "品牌字体路径修复（Collapse 构建期内嵌）": "url('../node_modules/@nous-research/ui",
+        "黑池默认主题（鎏金双貌）": "DEFAULT_SKIN_NAME = 'black-pool'",
+        "黑池主题定义在位": "blackPoolTheme",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"公版规则从补丁消失（锚点失配）: {missing}"
@@ -119,6 +122,7 @@ def test_intranet_patch_sentinels():
         "Cloud 连接模式隐藏": "Cloud 连接模式隐藏",
         "Telegram Quick setup 列隐藏": "Quick setup 列隐藏",
         "首启服务商引导跳过": "首启引导跳过（服务商在设置页配）",
+        "本地安装卡隐藏": "本地安装卡隐藏",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"

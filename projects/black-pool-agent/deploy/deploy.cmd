@@ -52,6 +52,13 @@ move "%B%" "%BPA_DIR%" >nul || (
   echo 部署失败：成品搬运出错；旧版仍在 %BPA_DIR%.old 可手工恢复。
   echo 详情见 %LOG% & pause & exit /b 1
 )
+rem -- one-click icon entry: "Black Pool.lnk" next to launcher (icon from the exe) --
+set "BPA_EXE="
+for %%F in ("%BPA_DIR%\desktop\*.exe") do if not defined BPA_EXE set "BPA_EXE=%%~fF"
+if defined BPA_EXE (
+  cscript //nologo "%SD%make-shortcut.vbs" "%BPA_DIR%\Black Pool.lnk" "%BPA_DIR%\launcher.cmd" "%BPA_DIR%" "%BPA_EXE%,0" >nul 2>&1 && echo 已生成带图标入口：Black Pool.lnk（可拷到桌面）
+)
+
 echo.
 echo 部署完成：%BPA_DIR%   （回滚位：%BPA_DIR%.old，rollback.cmd 一键回切）
 echo 启动：双击 %BPA_DIR%\launcher.cmd

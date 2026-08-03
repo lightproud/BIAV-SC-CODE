@@ -66,7 +66,7 @@ BARE_WORD_RE = re.compile(r"(?<![A-Za-z0-9_-])Hermes(?![A-Za-z0-9_-])")
 # .html 在列（2026-08-02 补漏）：desktop/web/bootstrap-installer 的 <title> 是
 # 任务栏 / Alt-Tab 显示名的实际来源（Electron 加载页面后 document.title 覆盖窗口题）。
 TEXT_SUFFIXES = {".py", ".ts", ".tsx", ".js", ".mjs", ".sh", ".yaml", ".yml", ".json",
-                 ".html"}
+                 ".html", ".css"}  # .css 2026-08-03 补入：字体路径修复规则的载体
 
 # ============================= 公版（品牌层） =============================
 
@@ -100,6 +100,72 @@ GENERIC_RULES = [
 
 # 公版后置全文规则（逐行规则之后对全文应用）：纯品牌一致性修复——
 # 插入体里允许保留 "Hermes" 字样（来源事实陈述），不会被后续规则二次换装。
+# Black Pool 内建主题 TS 体（注入 themes/presets.ts，见下方配色规则）
+BLACK_POOL_THEME_TS = """/** Black Pool（黑池）— 鎏金双貌：暖黑之金与米白之金（守密人 2026-08-03 配色裁定）。 */
+export const blackPoolTheme: DesktopTheme = {
+  name: 'black-pool',
+  label: 'Black Pool',
+  description: '黑池金 — 暖黑与米白双貌',
+  colors: {
+    background: '#F7F1E1',
+    foreground: '#332B18',
+    card: '#FCF8EC',
+    cardForeground: '#332B18',
+    muted: '#EFE7D2',
+    mutedForeground: '#8C8063',
+    popover: '#FBF6E9',
+    popoverForeground: '#332B18',
+    primary: '#C9A857',
+    primaryForeground: '#241C07',
+    secondary: '#F0E6CC',
+    secondaryForeground: '#4A3F24',
+    accent: '#EEE1BE',
+    accentForeground: '#4A3C1C',
+    border: '#DDD1AE',
+    input: '#D6C89F',
+    ring: '#B08E35',
+    midground: '#8F6F26',
+    composerRing: '#B08E35',
+    destructive: '#B4372E',
+    destructiveForeground: '#FEF2F2',
+    sidebarBackground: '#F2EBD6',
+    sidebarBorder: '#E0D5B2',
+    userBubble: '#F1E8CE',
+    userBubbleBorder: '#DECFA3'
+  },
+  darkColors: {
+    background: '#171310',
+    foreground: '#E9E0C9',
+    card: '#1E1913',
+    cardForeground: '#E9E0C9',
+    muted: '#262015',
+    mutedForeground: '#9C9074',
+    popover: '#211B14',
+    popoverForeground: '#E9E0C9',
+    primary: '#D6B877',
+    primaryForeground: '#241C07',
+    secondary: '#2A2314',
+    secondaryForeground: '#D9CDA8',
+    accent: '#2E2716',
+    accentForeground: '#E2D4A8',
+    border: '#332B1A',
+    input: '#2A2416',
+    ring: '#D6B877',
+    midground: '#D9B96A',
+    composerRing: '#D6B877',
+    destructive: '#C0473A',
+    destructiveForeground: '#FEF2F2',
+    sidebarBackground: '#120F0A',
+    sidebarBorder: '#292214',
+    userBubble: '#231D11',
+    userBubbleBorder: '#3B3220'
+  }
+}
+
+export const BUILTIN_THEMES: Record<string, DesktopTheme> = {
+  'black-pool': blackPoolTheme,
+  nous: nousTheme,"""
+
 BRAND_POST_RULES = [
     # About 页出身声明 + 品牌版本号（守密人 2026-08-02 裁定「直接说明定制版本」；
     # 2026-08-03 裁定加发布版本号 0.1.0）：锚定 about-settings.tsx 版本行 JSX，
@@ -154,6 +220,25 @@ BRAND_POST_RULES = [
     (
         "⚕ Hermes",
         f"⚕ {BRAND}",
+    ),
+    # 品牌字体加载修复（守密人 2026-08-03 实机发现字标回退无衬线；装配日志实锤
+    # "didn't resolve at build time"）：上游 CSS 按 monorepo 根 node_modules 写
+    # 路径、官方从根装依赖故可解析；本装配只在 apps/desktop 里 npm ci——改指
+    # 应用自己的 node_modules，构建期即内嵌字体。
+    (
+        "url('../../../node_modules/@nous-research/ui/dist/fonts/Collapse-Bold.woff2')",
+        "url('../node_modules/@nous-research/ui/dist/fonts/Collapse-Bold.woff2')",
+    ),
+    # 默认配色方案（守密人 2026-08-03 裁定：对标黑池终端的鎏金双貌）：
+    # 新增内建主题 black-pool（浅 = 金×米白 / 深 = 金×暖黑）并设为默认皮肤；
+    # 上游六款主题保留可选。取色自守密人参考图。
+    (
+        "export const BUILTIN_THEMES: Record<string, DesktopTheme> = {\n  nous: nousTheme,",
+        BLACK_POOL_THEME_TS,
+    ),
+    (
+        "export const DEFAULT_SKIN_NAME = 'nous'",
+        "export const DEFAULT_SKIN_NAME = 'black-pool'",
     ),
     # 默认语言简体中文（守密人 2026-08-03 裁定）：desktop 全局缺省 locale 单一
     # 真相源改 'zh'——无系统语言探测，配置未设时生效；用户已设语言不受影响。
@@ -307,6 +392,43 @@ INTRANET_POST_RULES = [
     # 引导头牌是 Nous Portal 云订阅（内网无对象）。readCachedSkipped 只喂首启
     # 自动弹层（firstRunSkipped 初始态），恒真即「视同已点过稍后再选」；
     # 设置页手动配服务商走 manual 通道，不受影响。
+    # 本地安装卡隐藏（守密人 2026-08-03「安装默认地址还没品牌化」实机反馈）：
+    # 真实安装路径是功能标识（小写 hermes 目录，红线不碰、显示造假更不可）；
+    # 便携包后端随包自带，「本地安装」整卡无对象且会拉未换装上游——整卡摘除，
+    # 路径行随卡消失；「连接到现有网关」保留。
+    (
+        '            </button>\n'
+        '\n'
+        '            <button\n'
+        '              className="rounded-lg border border-(--ui-stroke-tertiary) bg-(--ui-bg-quinary) p-4 text-left transition hover:bg-(--chrome-action-hover) disabled:cursor-wait disabled:opacity-60"\n'
+        '              disabled={localStarting}\n',
+        '            </button>\n'
+        '\n'
+        '            {/* 便携包后端随包自带——本地安装卡隐藏（审计轮三） */}\n'
+        '            {false && (\n'
+        '            <button\n'
+        '              className="rounded-lg border border-(--ui-stroke-tertiary) bg-(--ui-bg-quinary) p-4 text-left transition hover:bg-(--chrome-action-hover) disabled:cursor-wait disabled:opacity-60"\n'
+        '              disabled={localStarting}\n',
+    ),
+    (
+        '              <p className="mt-2 text-sm leading-5 text-muted-foreground">{copy.installLocalDesc}</p>\n'
+        '            </button>\n'
+        '          </div>\n',
+        '              <p className="mt-2 text-sm leading-5 text-muted-foreground">{copy.installLocalDesc}</p>\n'
+        '            </button>\n'
+        '            )}\n'
+        '          </div>\n',
+    ),
+    (
+        '          <div className="mt-6 text-xs text-muted-foreground">\n'
+        "            {copy.installTo}{' '}\n"
+        '            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>\n'
+        '          </div>\n',
+        '          {false && <div className="mt-6 text-xs text-muted-foreground">\n'
+        "            {copy.installTo}{' '}\n"
+        '            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>\n'
+        '          </div>}\n',
+    ),
     (
         "function readCachedSkipped(): boolean {\n"
         "  if (typeof window === 'undefined') {\n"
