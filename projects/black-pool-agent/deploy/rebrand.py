@@ -153,6 +153,13 @@ BRAND_POST_RULES = [
         "⚕ Hermes",
         f"⚕ {BRAND}",
     ),
+    # 默认语言简体中文（守密人 2026-08-03 裁定）：desktop 全局缺省 locale 单一
+    # 真相源改 'zh'——无系统语言探测，配置未设时生效；用户已设语言不受影响。
+    # 归基座层：公私两版同得简中缺省（语言偏好属产品定制，非内网适配）。
+    (
+        "export const DEFAULT_LOCALE: Locale = 'en'\n",
+        "export const DEFAULT_LOCALE: Locale = 'zh'\n",
+    ),
 ]
 
 # ========================= 私有版（内网/便携适配层） =========================
