@@ -2058,9 +2058,9 @@
       "tier": "search"
     },
     {
-      "id": "/projects/project-black-pool-hermes.md",
+      "id": "/projects/project-black-pool-agent.md",
       "type": "documentation",
-      "title": "black-pool-hermes 子项目上下文",
+      "title": "black-pool-agent 子项目上下文",
       "tags": [
         "data_layer:curated",
         "sub-project-context",
@@ -7010,7 +7010,7 @@
     },
     {
       "source": "/projects/entry-claude-md.md",
-      "target": "/projects/project-black-pool-hermes.md",
+      "target": "/projects/project-black-pool-agent.md",
       "rel": "入口→上下文",
       "rel_type": "cross"
     },

@@ -1,4 +1,4 @@
-# Black Pool Hermes — 会话上下文
+# Black Pool Agent — 会话上下文
 
 > **定位（守密人 2026-08-02 换轨裁定 + 同日施工边界文书）**：使命#2「通用 AI 底层能力开发基地」
 > **现行核心载体**——BPT v2 引擎层 = **Hermes**（[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)，
