@@ -3,12 +3,14 @@
 > 施工边界：本目录只放**参数化通用件**；端点、凭据、内网路径一律在内网侧部署配置
 > （文书裁 5 切面化）。生产禁用 `hermes update`（文书 §2.4），更新只有「换 tag 重测」。
 
-**两类件，用法不同（守密人 2026-08-03 问答明确）**：
-- **生产工具（原地运行，银芯侧）**：`rebrand.py` / `gen_brand_assets.py`——在本仓跑，产补丁与资产。
-- **部署件（拷到目的地运行，内网侧）**：`launcher.cmd` / `launch_desktop.py` / `fix_venv_path.py`
-  由 CI 装配进包；`SOUL.md.template` 拷入 HERMES_HOME；`bin/black-pool` 拷入 PATH；
-  `black-pool-update.cmd` 拷到包外双击；**`bpa-dev/` 整目录拷入 `黑池\bpa-dev\scripts\`**。
-  部署件在本仓原地双击是跑不出正确结果的——它们按目的地的相对布局找料。
+**两类件分区收纳（守密人 2026-08-03 裁定「部署件统一放进 bpa-dev\deploy」）**：
+- **deploy/ 根 = 生产工具（原地运行，银芯侧）**：`rebrand.py` / `gen_brand_assets.py` /
+  `brand-assets/`——在本仓跑，产补丁与资产。
+- **`bpa-dev/deploy/` = 全部拷走型部署件的唯一收纳位（内网侧）**：车间三脚本
+  （assemble / deploy / rollback）+ `apply_patch.py` + 启动器家族（`launcher.cmd` /
+  `launch_desktop.py` / `fix_venv_path.py`，CI 装配进包）+ `SOUL.md.template` +
+  `black-pool-update.cmd` + `bin/black-pool`。内网拿件 = 拷这一个目录进
+  `黑池\bpa-dev\deploy\`。部署件在本仓原地双击跑不出正确结果——它们按目的地的相对布局找料。
 
 ## bpa-dev/ — 黑池组装车间套件（守密人 2026-08-03 裁定产出）
 
@@ -31,9 +33,9 @@
      （可审计补丁，按序 = 私有版；只打第一张 = 公版）
    - `python3 deploy/rebrand.py --apply DEST [--edition public]`（规则引擎直施，缺省私有版）
 3. TUI 为 TypeScript 源码：补丁改的是 `ui-tui/src/`，组装后须按上游流程重建 TUI 产物。
-4. 身份：`deploy/SOUL.md.template` 拷入 HERMES_HOME 为 `SOUL.md`（身份槽 #1，
+4. 身份：`deploy/bpa-dev/deploy/SOUL.md.template` 拷入 HERMES_HOME 为 `SOUL.md`（身份槽 #1，
    产品自称 Black Pool（黑池）、知识层统一称「知识底座」）。
-5. 命令名：`deploy/bin/black-pool` 拷入 PATH（`BLACK_POOL_HERMES_BIN` 可指定入口）。
+5. 命令名：`deploy/bpa-dev/deploy/bin/black-pool` 拷入 PATH（`BLACK_POOL_HERMES_BIN` 可指定入口）。
 6. 钉钉显示名：在钉钉应用后台把机器人显示名设为 Black Pool 或 黑池（配置属内网侧，不入本仓）。
 
 ## Windows 本机便携分发（守密人 2026-08-02 裁定：不走服务端部署；PowerShell 受限）
