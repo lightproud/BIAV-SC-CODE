@@ -115,5 +115,39 @@ def test_kit_has_zero_intranet_values(name):
 
 
 def test_kit_files_complete():
-    for name in ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py", "RUNBOOK.md"]:
+    for name in ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py",
+                 "RUNBOOK.md", "launcher.cmd", "launch_desktop.py", "fix_venv_path.py"]:
         assert (KIT / name).is_file(), f"bpa-dev 套件缺件: {name}"
+
+
+def test_fix_venv_path_derives_old_root_without_stamp(tmp_path):
+    """2026-08-03 内网首部署野战回归：bundle-root.txt 印章缺失时，旧根必须能从
+    editable 指针文件反推——否则自愈整段跳过、导入自检必挂。"""
+    (tmp_path / "python" / "cpython-3.11.14-test").mkdir(parents=True)
+    site = tmp_path / "venv" / "Lib" / "site-packages"
+    site.mkdir(parents=True)
+    (tmp_path / "venv" / "pyvenv.cfg").write_text(
+        "home = C:\\old\\python\nversion = 3.11\n", encoding="utf-8")
+    (site / "x.pth").write_text("D:\\a\\ws\\BlackPool\\app\n", encoding="utf-8")
+    (site / "__editable__.hermes.py").write_text(
+        "M = {'hermes_cli': 'D:\\\\a\\\\ws\\\\BlackPool\\\\app\\\\hermes_cli'}\n",
+        encoding="utf-8")
+    r = subprocess.run([sys.executable, str(KIT / "fix_venv_path.py"), str(tmp_path)],
+                       capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    assert "derived from editable pointers" in r.stdout
+    assert "BlackPool" not in (site / "x.pth").read_text(encoding="utf-8")
+    assert "BlackPool" not in (site / "__editable__.hermes.py").read_text(encoding="utf-8")
+    assert (tmp_path / "bundle-root.txt").read_text(encoding="utf-8").strip() == str(tmp_path)
+    r2 = subprocess.run([sys.executable, str(KIT / "fix_venv_path.py"), str(tmp_path)],
+                        capture_output=True, text=True)
+    assert r2.returncode == 0, "二跑必须幂等直通"
+
+
+def test_launcher_rem_lines_are_ascii_short():
+    """chcp 65001 解析器错位野战回归：launcher.cmd 的 rem 行必须 ASCII 且不超长。"""
+    for line in (KIT / "launcher.cmd").read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if s.lower().startswith("rem"):
+            assert s.isascii(), f"launcher.cmd rem 行含非 ASCII（65001 错位风险）: {s[:60]}"
+            assert len(s) <= 100, f"launcher.cmd rem 行超长: {s[:60]}"

@@ -8,10 +8,14 @@
    上游构建后端刻意禁 wheel（「use an editable install instead」），故指针自愈是
    便携化的正解而非绕道。
 
-「旧根」来自 `bundle-root.txt`（组装期落章，本脚本自愈后滚动更新为当前根），
-新根 = argv[1]。两根相同即幂等直通。用法：python fix_venv_path.py <整包根目录>
+「旧根」解析两级（2026-08-03 内网首部署实证加固：印章丢失曾致自愈整段跳过、
+导入自检必挂）：优先 `bundle-root.txt` 印章；印章缺失则**直接从指针文件里反推**
+（指针里写的就是旧 app 源树绝对路径，取其去掉尾段 `\\app` 的众数）——印章从
+必需品降级为加速缓存，丢了照样自愈。新根 = argv[1]。两根相同即幂等直通。
+用法：python fix_venv_path.py <整包根目录>
 """
 import pathlib
+import re
 import sys
 
 
@@ -19,6 +23,25 @@ def _variants(root: str) -> list[str]:
     """同一路径的三种书写形态（原样 / 双反斜杠转义 / 正斜杠）。"""
     back = root.replace("/", "\\")
     return [back, back.replace("\\", "\\\\"), back.replace("\\", "/")]
+
+
+_APP_PATH_RE = re.compile(r"[A-Za-z]:[\\/][^'\";\r\n]*?app(?=['\";\r\n\\/]|$)")
+
+
+def _derive_old_root(site: pathlib.Path) -> str | None:
+    """从 editable 指针文件反推旧整包根（指针路径去掉尾段 \\app 的众数）。"""
+    counts: dict[str, int] = {}
+    for pattern in ("*.pth", "__editable__*.py"):
+        for f in site.glob(pattern):
+            try:
+                text = f.read_text(encoding="utf-8")
+            except (UnicodeDecodeError, OSError):
+                continue
+            for m in _APP_PATH_RE.finditer(text):
+                p = m.group(0).replace("\\\\", "\\").replace("/", "\\")
+                if p.lower().endswith("\\app"):
+                    counts[p[: -len("\\app")]] = counts.get(p[: -len("\\app")], 0) + 1
+    return max(counts, key=lambda k: counts[k]) if counts else None
 
 
 def main() -> int:
@@ -39,14 +62,18 @@ def main() -> int:
     print(f"venv home -> {py_home}")
 
     # -- 2) editable 指针改写（旧根 -> 当前根） --
+    site = root / "venv" / "Lib" / "site-packages"
     stamp = root / "bundle-root.txt"
-    if not stamp.is_file():
-        print("no bundle-root.txt stamp; skip editable heal", file=sys.stderr)
-        return 0
-    old_root = stamp.read_text(encoding="utf-8").strip()
+    old_root = ""
+    if stamp.is_file():
+        old_root = stamp.read_text(encoding="utf-8").strip()
+    if not old_root:
+        derived = _derive_old_root(site)
+        if derived:
+            old_root = derived
+            print(f"stamp missing; old root derived from editable pointers: {old_root}")
     new_root = str(root)
     if old_root and old_root.rstrip("\\/") != new_root.rstrip("\\/"):
-        site = root / "venv" / "Lib" / "site-packages"
         pairs = list(zip(_variants(old_root.rstrip("\\/")), _variants(new_root), strict=True))
         touched = 0
         for pattern in ("*.pth", "__editable__*.py"):

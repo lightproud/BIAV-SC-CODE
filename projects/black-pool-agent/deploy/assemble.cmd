@@ -62,6 +62,12 @@ if not exist "%B%\launcher.cmd" (
   pause & exit /b 1
 )
 
+rem -- 3b. 套件权威启动器族覆盖：部署件修复即刻生效，不必等新 zip --
+for %%F in (launcher.cmd launch_desktop.py fix_venv_path.py) do (
+  if exist "%SD%%%F" copy /y "%SD%%%F" "%B%\%%F" >nul
+)
+echo 启动器族已按套件版覆盖（launcher / 监督器 / venv 自愈）
+
 rem -- 4. 定位包内 Python（补丁应用器的运行时）--
 set "PYHOME="
 for /d %%D in ("%B%\python\cpython-*") do set "PYHOME=%%~fD"
