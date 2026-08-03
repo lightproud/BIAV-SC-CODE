@@ -1,10 +1,22 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-02T21:55:36.200947+00:00",
+  "collected_at": "2026-08-03T02:36:26.426954+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 14,
   "items": [
+    {
+      "source": "youtube",
+      "time": "2026-08-03T00:11:49Z",
+      "lang": "",
+      "title": "[Morimens] Start of D-Tide Stream - When I&#39;m finished eating",
+      "summary": "Don't know how long. Will be doing other stuff too.",
+      "url": "https://www.youtube.com/watch?v=FcSe58d9ASY",
+      "author": "Flares117",
+      "engagement": 171,
+      "media_url": "https://i.ytimg.com/vi/FcSe58d9ASY/hqdefault_live.jpg",
+      "content_type": "video"
+    },
     {
       "source": "youtube",
       "time": "2026-08-02T16:36:56Z",
@@ -13,7 +25,7 @@
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=D62ydKJyFR8",
       "author": "박현(Muyeong)",
-      "engagement": 55,
+      "engagement": 72,
       "media_url": "https://i.ytimg.com/vi/D62ydKJyFR8/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,7 +37,7 @@
       "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 今回は新シーズン、新しいUIについて触れながら、 対人戦に挑んでいき ...",
       "url": "https://www.youtube.com/watch?v=OmUPULOCZ4o",
       "author": "薄めの『ゆゆ』",
-      "engagement": 48,
+      "engagement": 58,
       "media_url": "https://i.ytimg.com/vi/OmUPULOCZ4o/hqdefault.jpg",
       "content_type": "video"
     },
@@ -37,7 +49,7 @@
       "summary": "配信が終わり次第ミサゴ構内のコンビニへ Twitter(X)→https://x.com/to_m4fuyu.",
       "url": "https://www.youtube.com/watch?v=I3kwfNUdpwg",
       "author": "to真冬",
-      "engagement": 25,
+      "engagement": 28,
       "media_url": "https://i.ytimg.com/vi/I3kwfNUdpwg/hqdefault.jpg",
       "content_type": "video"
     },
@@ -49,7 +61,7 @@
       "summary": "노마이크.",
       "url": "https://www.youtube.com/watch?v=-lq1HSZg8YI",
       "author": "때까치",
-      "engagement": 7,
+      "engagement": 9,
       "media_url": "https://i.ytimg.com/vi/-lq1HSZg8YI/hqdefault.jpg",
       "content_type": "video"
     },
@@ -61,7 +73,7 @@
       "summary": "忘卻前夜#morimens 融災更新,7月20日~8月3號. Regional D-Effect Zone Update (July 20 – August 3). 1.第一隊是用阿拉克涅+熔朵 ...",
       "url": "https://www.youtube.com/watch?v=8uZnoanwe1o",
       "author": "Noir",
-      "engagement": 7,
+      "engagement": 8,
       "media_url": "https://i.ytimg.com/vi/8uZnoanwe1o/hqdefault.jpg",
       "content_type": "video"
     },
@@ -73,8 +85,20 @@
       "summary": "Submission for Morimens' 2.5 UGC Creation Submission Campaign! Original: https://www.youtube.com/watch?v=5csUC3QMF1M ...",
       "url": "https://www.youtube.com/watch?v=IYi-9Eq-Gxg",
       "author": "Symboli Kris S",
-      "engagement": 5,
+      "engagement": 6,
       "media_url": "https://i.ytimg.com/vi/IYi-9Eq-Gxg/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-02T22:00:04Z",
+      "lang": "",
+      "title": "Never Visit A Wax Museum At Night... Pandia! | Morimens Ep. 7",
+      "summary": "Welcome back to Morimens! In Episode 7, we kick off Chapter 2 and step foot into the spine-chilling Wax Museum Arc. Things get ...",
+      "url": "https://www.youtube.com/watch?v=iEYMzkaNV0U",
+      "author": "Dread Tmrw",
+      "engagement": 5,
+      "media_url": "https://i.ytimg.com/vi/iEYMzkaNV0U/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -123,6 +147,30 @@
       "author": "HowJuDuDat Gaming",
       "engagement": 1,
       "media_url": "https://i.ytimg.com/vi/fvQOm2sws7Q/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-03T02:11:16Z",
+      "lang": "",
+      "title": "morimens part 4",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=jnFHdbLlqaY",
+      "author": "Safe Haven Vtuber group",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/jnFHdbLlqaY/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-03T00:00:04Z",
+      "lang": "",
+      "title": "망각전야 (모리멘스) - 7/20 시즌 융재금구 W1~5A5",
+      "summary": "4파가 아품자이길래 하기 싫단 생각이 한 번 들기 시작하니 내내 미루다가 마감 10시간 쯤부터 하긴 해야겠구나 하고 400점만 클리어..",
+      "url": "https://www.youtube.com/watch?v=oEw85Cm3n5Q",
+      "author": "때까치",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/oEw85Cm3n5Q/hqdefault.jpg",
       "content_type": "video"
     }
   ]
