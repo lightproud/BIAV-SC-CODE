@@ -118,9 +118,11 @@ def test_brand_patch_sentinels():
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"公版规则从补丁消失（锚点失配）: {missing}"
-    # featuredPitch 归还 Hermes（负向哨兵：黑池名不得出现在该宣传语的产出行）
-    assert "the recommended way to run Black Pool" not in text
-    assert "运行 Black Pool 的推荐方式" not in text
+    # featuredPitch 砍后半句（正向 + 负向哨兵；负向只查新增行——删除行含原文属正常）
+    assert "featuredPitch: 'One subscription, 300+ frontier models'," in text
+    added = [l for l in text.splitlines() if l.startswith("+")]
+    assert not any("the recommended way to run" in l for l in added)
+    assert not any("的推荐方式" in l for l in added)
 
 
 def test_intranet_patch_sentinels():
