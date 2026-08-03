@@ -224,6 +224,13 @@ BRAND_POST_RULES = [
         "⚕ Hermes",
         f"⚕ {BRAND}",
     ),
+    # Nous Portal 账号卡图标保持官方原版（守密人 2026-08-03 裁定）：
+    # 品牌覆盖吃掉了 apple-touch-icon，而该卡表示的是对方服务——改用
+    # 组装期预存的官方原版专名（见 overlay_assets）。
+    (
+        "<img alt=\"\" className=\"size-5 shrink-0 rounded\" src={assetPath('apple-touch-icon.png')} />",
+        "<img alt=\"\" className=\"size-5 shrink-0 rounded\" src={assetPath('nous-portal-icon.png')} />",
+    ),
     # 品牌字体加载修复（守密人 2026-08-03 实机发现字标回退无衬线；装配日志实锤
     # "didn't resolve at build time"）：上游 CSS 按 monorepo 根 node_modules 写
     # 路径、官方从根装依赖故可解析；本装配只在 apps/desktop 里 npm ci——改指
@@ -421,6 +428,20 @@ INTRANET_POST_RULES = [
         "    route = resolve_billing_route(model_name, provider=provider, base_url=base_url)\n"
         '    if route.billing_mode == "subscription_included":\n',
     ),
+    # Nous Portal 推荐徽标摘除（守密人 2026-08-03 裁定「取消推荐 UI」）：
+    # 内网无推荐位——未登录态不再挂「推荐」徽标，已连接标记保留。
+    (
+        "          {loggedIn ? (\n"
+        "            <ConnectedTag />\n"
+        "          ) : (\n"
+        '            <span className="inline-flex items-center gap-1.5 bg-primary px-2 py-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-primary-foreground">\n'
+        '              <span aria-hidden="true" className="dither inline-block size-2 shrink-0" />\n'
+        "              {t.onboarding.recommended}\n"
+        "            </span>\n"
+        "          )}\n",
+        "          {/* 内网无推荐位——徽标摘除（审计轮三） */}\n"
+        "          {loggedIn ? <ConnectedTag /> : null}\n",
+    ),
     # 后端契约横幅静默（守密人 2026-08-03 实机反馈「Backend out of date」）：
     # 便携包 desktop 与后端同树出包、契约恒配对，横幅只在连到旧后端残留进程时
     # 出现，而其「Update」按钮走 git 式更新在便携形态是坏路——整只静默；
@@ -545,6 +566,14 @@ def overlay_assets(root: Path) -> int:
     """把 build/brand-assets/ 的品牌二进制资产覆盖进组装树，返回覆盖文件数。"""
     src_dir = HERE / "brand-assets"
     replaced = 0
+    # Nous Portal 账号卡保持官方原版图标（守密人 2026-08-03 裁定：那是对方服务，
+    # 不戴我们的面具）：覆盖 apple-touch-icon 前先把上游原版存为专用名，
+    # 卡片经公版规则改用之。
+    orig = root / "apps" / "desktop" / "public" / "apple-touch-icon.png"
+    keep = root / "apps" / "desktop" / "public" / "nous-portal-icon.png"
+    if orig.is_file() and not keep.exists():
+        shutil.copyfile(orig, keep)
+        replaced += 1
     for src_name, dest_rel in ASSET_OVERLAYS:
         src = src_dir / src_name
         dest = root / dest_rel

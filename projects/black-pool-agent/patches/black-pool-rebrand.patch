@@ -35929,6 +35929,19 @@ index a63fd1c..a316c73 100644
        running: false,
        visible: true
      })
+diff --git a/apps/desktop/src/components/onboarding/providers.tsx b/apps/desktop/src/components/onboarding/providers.tsx
+index f02226b..1b0a394 100644
+--- a/apps/desktop/src/components/onboarding/providers.tsx
++++ b/apps/desktop/src/components/onboarding/providers.tsx
+@@ -42,7 +42,7 @@ export function FeaturedProviderRow({
+       <span aria-hidden className="arc-border arc-reverse arc-nous" />
+       <div className="min-w-0">
+         <div className="flex items-center gap-2">
+-          <img alt="" className="size-5 shrink-0 rounded" src={assetPath('apple-touch-icon.png')} />
++          <img alt="" className="size-5 shrink-0 rounded" src={assetPath('nous-portal-icon.png')} />
+           <span className="text-[length:var(--conversation-text-font-size)] font-semibold">
+             {providerTitle(provider)}
+           </span>
 diff --git a/apps/desktop/src/components/pet/floating-pet.tsx b/apps/desktop/src/components/pet/floating-pet.tsx
 index 4175427..e4af0c9 100644
 --- a/apps/desktop/src/components/pet/floating-pet.tsx
