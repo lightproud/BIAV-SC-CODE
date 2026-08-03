@@ -124,6 +124,7 @@ def test_intranet_patch_sentinels():
         "首启服务商引导跳过": "首启引导跳过（服务商在设置页配）",
         "本地安装卡隐藏": "本地安装卡隐藏",
         "后端契约横幅静默": "契约横幅整只静默",
+        "自定义模型价格表注入": "model-prices.json",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"

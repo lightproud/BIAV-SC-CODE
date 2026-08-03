@@ -94,6 +94,10 @@ if exist "%DEVROOT%\config\SOUL.md" (
   copy /y "%DEVROOT%\config\SOUL.md" "%B%\home\SOUL.md" >nul && echo 已注入 SOUL.md
 )
 if exist "%DEVROOT%\config\env.cmd" copy /y "%DEVROOT%\config\env.cmd" "%B%\env.cmd" >nul && echo 已注入 env.cmd
+if exist "%DEVROOT%\config\model-prices.json" (
+  if not exist "%B%\home" mkdir "%B%\home"
+  copy /y "%DEVROOT%\config\model-prices.json" "%B%\home\model-prices.json" >nul && echo 已注入 model-prices.json
+)
 if exist "%DEVROOT%\plugins" robocopy "%DEVROOT%\plugins" "%B%\app\plugins" /e /njh /njs /ndl /nfl >nul & if !errorlevel! geq 8 (echo 组装失败：plugins 拷贝出错 & pause & exit /b 1)
 if exist "%DEVROOT%\skills" (
   if not exist "%B%\home\skills" mkdir "%B%\home\skills"

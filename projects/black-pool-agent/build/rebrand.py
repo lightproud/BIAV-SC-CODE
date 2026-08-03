@@ -100,6 +100,9 @@ GENERIC_RULES = [
 
 # 公版后置全文规则（逐行规则之后对全文应用）：纯品牌一致性修复——
 # 插入体里允许保留 "Hermes" 字样（来源事实陈述），不会被后续规则二次换装。
+# 自定义价格表注入体（agent/usage_pricing.py，见内网层规则）
+BLACK_POOL_PRICES_PY = '_USER_PRICES_CACHE: Optional[tuple] = None\n\n\ndef _load_user_price_table() -> dict:\n    """Intranet price injection: HERMES_HOME/model-prices.json (costs per million tokens).\n\n    Shape: {"models": {"<model-substring>": {"input": 4.0, "output": 12.0,\n    "cache_read": 0.4, "cache_write": 0}}}. Missing or invalid file -> {}\n    (silent; pricing falls through to upstream resolution).\n    """\n    global _USER_PRICES_CACHE\n    import json as _json\n    import os as _os\n\n    path = _os.path.join(\n        _os.environ.get("HERMES_HOME", _os.path.expanduser("~/.hermes")),\n        "model-prices.json",\n    )\n    try:\n        mtime = _os.path.getmtime(path)\n    except OSError:\n        return {}\n    if _USER_PRICES_CACHE and _USER_PRICES_CACHE[0] == mtime:\n        return _USER_PRICES_CACHE[1]\n    try:\n        with open(path, encoding="utf-8") as fh:\n            data = _json.load(fh)\n        models = data.get("models") or {}\n        if not isinstance(models, dict):\n            models = {}\n    except (OSError, ValueError):\n        models = {}\n    _USER_PRICES_CACHE = (mtime, models)\n    return models\n\n\ndef _user_pricing_entry(model_name: str) -> Optional[PricingEntry]:\n    table = _load_user_price_table()\n    if not table:\n        return None\n    name = (model_name or "").lower()\n    best = None\n    best_len = -1\n    for key, spec in table.items():\n        k = str(key).lower()\n        if (k == name or k in name) and len(k) > best_len and isinstance(spec, dict):\n            best, best_len = spec, len(k)\n    if best is None:\n        return None\n\n    def _d(value: Any) -> Optional[Decimal]:\n        try:\n            return Decimal(str(value)) if value is not None else None\n        except Exception:  # noqa: BLE001 - bad cell must not break pricing\n            return None\n\n    return PricingEntry(\n        input_cost_per_million=_d(best.get("input")),\n        output_cost_per_million=_d(best.get("output")),\n        cache_read_cost_per_million=_d(best.get("cache_read")),\n        cache_write_cost_per_million=_d(best.get("cache_write")),\n        source="user_override",\n        pricing_version="model-prices.json",\n    )\n\n\ndef get_pricing_entry('
+
 # Black Pool 内建主题 TS 体（注入 themes/presets.ts，见下方配色规则）
 BLACK_POOL_THEME_TS = """/** Black Pool（黑池）— 鎏金双貌：暖黑之金与米白之金（守密人 2026-08-03 配色裁定）。 */
 export const blackPoolTheme: DesktopTheme = {
@@ -392,6 +395,23 @@ INTRANET_POST_RULES = [
     # 引导头牌是 Nous Portal 云订阅（内网无对象）。readCachedSkipped 只喂首启
     # 自动弹层（firstRunSkipped 初始态），恒真即「视同已点过稍后再选」；
     # 设置页手动配服务商走 manual 通道，不受影响。
+    # 自定义模型价格表（守密人 2026-08-03「缺模型对应价格配置？」诊断确认后补机制）：
+    # 上游定价只认公网模型/provider 自报，内网端点模型永无价、成本恒「—」。
+    # 注入 HERMES_HOME/model-prices.json 读取口（最长子串匹配、每百万 token 四价、
+    # 改档热生效、缺档静默回落上游）；单价真值内网侧填写，不进银芯。
+    (
+        "def get_pricing_entry(",
+        BLACK_POOL_PRICES_PY,
+    ),
+    (
+        "    route = resolve_billing_route(model_name, provider=provider, base_url=base_url)\n"
+        '    if route.billing_mode == "subscription_included":\n',
+        "    user_entry = _user_pricing_entry(model_name)\n"
+        "    if user_entry:\n"
+        "        return user_entry\n"
+        "    route = resolve_billing_route(model_name, provider=provider, base_url=base_url)\n"
+        '    if route.billing_mode == "subscription_included":\n',
+    ),
     # 后端契约横幅静默（守密人 2026-08-03 实机反馈「Backend out of date」）：
     # 便携包 desktop 与后端同树出包、契约恒配对，横幅只在连到旧后端残留进程时
     # 出现，而其「Update」按钮走 git 式更新在便携形态是坏路——整只静默；

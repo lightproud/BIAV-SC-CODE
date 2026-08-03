@@ -20,6 +20,9 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 │                  #     set "SSL_CERT_FILE=%~dp0home\corp-ca.pem"
 │                  #     set "REQUESTS_CA_BUNDLE=%SSL_CERT_FILE%"
 │                  #     set "HTTPS_PROXY=..."（按内网实际；真值只写在内网这份文件里）
+│                  #   model-prices.json → home\：成本面板自定义价格表（每百万 token 四价），例：
+│                  #     {"models": {"qwen": {"input": 4, "output": 12, "cache_read": 0.4}}}
+│                  #     模型名最长子串匹配；改档热生效；面板货币符号当前固定 $（数值口径自定）
 ├── overlay\       # 万能覆盖层：内容原样覆盖到包根（以上四类盖不住的任意路径用它）
 ├── staging\       # 组装工作台（脚本自建自清，勿入 SVN）
 └── deploy\        # 本目录：部署件统一收纳（车间脚本 + 启动器家族 + 模板）
