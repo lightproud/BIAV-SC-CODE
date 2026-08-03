@@ -106,7 +106,8 @@ def test_multi_hunk_all_or_nothing(tmp_path):
     assert (tmp_path / "x.py").read_text(encoding="utf-8") == original
 
 
-@pytest.mark.parametrize("name", ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py"])
+@pytest.mark.parametrize("name", ["assemble.cmd", "verify.cmd", "deploy.cmd", "rollback.cmd",
+                                  "apply_patch.py", "bpa_lifecycle.py"])
 def test_kit_has_zero_intranet_values(name):
     """通用件纪律：脚本内不得出现网络端点/内网值（文书裁 5 切面化）。"""
     text = (KIT / name).read_text(encoding="utf-8").lower()
@@ -115,9 +116,9 @@ def test_kit_has_zero_intranet_values(name):
 
 
 def test_kit_files_complete():
-    for name in ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py",
+    for name in ["assemble.cmd", "verify.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py",
                  "RUNBOOK.md", "launcher.cmd", "launch_desktop.py", "fix_venv_path.py",
-                 "make-shortcut.vbs", "kill_by_path.py"]:
+                 "make-shortcut.vbs", "kill_by_path.py", "bpa_lifecycle.py"]:
         assert (KIT / name).is_file(), f"bpa-dev 套件缺件: {name}"
 
 
@@ -154,7 +155,8 @@ def test_launcher_kit_mode_dispatch_present():
     )
 
 
-@pytest.mark.parametrize("name", ["launcher.cmd", "assemble.cmd", "deploy.cmd", "rollback.cmd"])
+@pytest.mark.parametrize("name", ["launcher.cmd", "assemble.cmd", "verify.cmd",
+                                  "deploy.cmd", "rollback.cmd"])
 def test_cmd_rem_lines_are_ascii_short(name):
     """chcp 65001 解析器错位野战回归（两案实证）：套件 cmd 的 rem 行必须 ASCII 短行。"""
     for line in (KIT / name).read_text(encoding="utf-8").splitlines():
@@ -180,3 +182,44 @@ def test_kill_by_path_noop_on_non_windows(tmp_path):
     r = subprocess.run([sys.executable, str(KIT / "kill_by_path.py"), str(tmp_path)],
                        capture_output=True, text=True)
     assert r.returncode == 0 and "no-op" in r.stdout
+
+
+@pytest.mark.parametrize("cmd", ["status", "graceful"])
+def test_bpa_lifecycle_noop_on_non_windows(tmp_path, cmd):
+    """生命周期探测器：非 Windows 空跑退出 0（管线可验）；Windows 行为靠野战。"""
+    r = subprocess.run([sys.executable, str(KIT / "bpa_lifecycle.py"), cmd, str(tmp_path)],
+                       capture_output=True, text=True)
+    assert r.returncode == 0 and "no-op" in r.stdout
+
+
+def test_bpa_lifecycle_usage_error():
+    """缺子命令/目录参数须响亮失败（退出码 2），不静默空跑。"""
+    r = subprocess.run([sys.executable, str(KIT / "bpa_lifecycle.py"), "status"],
+                       capture_output=True, text=True)
+    assert r.returncode == 2 and "usage" in r.stderr
+
+
+def test_deploy_restart_ux_flow_present():
+    """部署体验五项（守密人 2026-08-03 裁定）文本守卫：提示重启 / 忙时等待或确认 /
+    优雅退出先于强杀 / 完成后自动重启。Windows 交互行为靠野战。"""
+    text = (KIT / "deploy.cmd").read_text(encoding="utf-8")
+    assert "将重启 Black Pool" in text, "缺部署前重启提示"
+    assert "choice /c" in text, "缺确认交互"
+    assert 'bpa_lifecycle.py" status' in text, "缺运行/忙探测"
+    assert ":wait_idle" in text, "缺忙时等待循环"
+    assert 'bpa_lifecycle.py" graceful' in text, "缺优雅退出步"
+    assert text.index('bpa_lifecycle.py" graceful') < text.index("kill_by_path.py"), (
+        "优雅退出必须先于强杀"
+    )
+    assert "WAS_RUNNING" in text and 'start "" "%LNK_TARGET%"' in text, "缺自动重启"
+    assert '"/y"' in text, "缺无人值守 /y 通道"
+
+
+def test_verify_never_touches_deploy_target():
+    """组装验证与部署分离（守密人 2026-08-03 裁定）：verify.cmd 只碰 staging，
+    零杀进程、零部署位引用。"""
+    text = (KIT / "verify.cmd").read_text(encoding="utf-8")
+    lower = text.lower()
+    for banned in ("taskkill", "kill_by_path", "bpa_dir", "deploy-target", "wm_close"):
+        assert banned not in lower, f"verify.cmd 不得含部署位/杀进程引用: {banned}"
+    assert "staging\\BlackPool" in text and "import hermes_cli" in text

@@ -115,6 +115,7 @@ rem (zh comment moved to RUNBOOK - 65001 parser desync)
 )
 echo.
 echo 组装完成：%B%
-echo 下一步：deploy.cmd ^<部署目录^>   （例：deploy.cmd E:\BIAV-BP\black-pool-agent）
+echo 验证（可选）：verify.cmd 就地体检成品，不触碰运行位、不影响在用的 Black Pool。
+echo 部署上线：deploy.cmd ^<部署目录^>   （例：deploy.cmd E:\BIAV-BP\black-pool-agent）
 echo 全程日志：%LOG%
 exit /b 0
