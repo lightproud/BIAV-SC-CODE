@@ -40,7 +40,7 @@ jobs:
           cp -r projects/black-pool-agent/upstream BlackPool/app
 
       - name: Apply Black Pool rebrand, public edition (rule engine)
-        run: python projects/black-pool-agent/deploy/rebrand.py --apply BlackPool/app --edition public
+        run: python projects/black-pool-agent/build/rebrand.py --apply BlackPool/app --edition public
 
       - name: Apply feature patches (whitelisted)
         run: git apply --directory=BlackPool/app projects/black-pool-agent/patches/conversation-cost-panel.patch
@@ -80,9 +80,9 @@ jobs:
 
       - name: Launcher + bundle notes
         run: |
-          cp projects/black-pool-agent/deploy/bpa-dev/launcher.cmd BlackPool/
-          cp projects/black-pool-agent/deploy/bpa-dev/fix_venv_path.py BlackPool/
-          cp projects/black-pool-agent/deploy/bpa-dev/launch_desktop.py BlackPool/
+          cp projects/black-pool-agent/deploy/launcher.cmd BlackPool/
+          cp projects/black-pool-agent/deploy/fix_venv_path.py BlackPool/
+          cp projects/black-pool-agent/deploy/launch_desktop.py BlackPool/
           # 组装根印章：editable 指针自愈的「旧根」依据（自愈后由脚本滚动更新）
           cygpath -w "$(pwd)/BlackPool" > BlackPool/bundle-root.txt
           {

@@ -1,4 +1,4 @@
-# deploy/ — 通用部署与品牌组装（零内网值）
+# build/ — 品牌换装生产工序（银芯侧原地运行）
 
 > 施工边界：本目录只放**参数化通用件**；端点、凭据、内网路径一律在内网侧部署配置
 > （文书裁 5 切面化）。生产禁用 `hermes update`（文书 §2.4），更新只有「换 tag 重测」。
@@ -31,11 +31,11 @@
 2. 应用补丁（二选一，效果相同）：
    - `git apply --directory=DEST patches/black-pool-rebrand.patch patches/black-pool-intranet.patch`
      （可审计补丁，按序 = 私有版；只打第一张 = 公版）
-   - `python3 deploy/rebrand.py --apply DEST [--edition public]`（规则引擎直施，缺省私有版）
+   - `python3 build/rebrand.py --apply DEST [--edition public]`（规则引擎直施，缺省私有版）
 3. TUI 为 TypeScript 源码：补丁改的是 `ui-tui/src/`，组装后须按上游流程重建 TUI 产物。
-4. 身份：`deploy/bpa-dev/SOUL.md.template` 拷入 HERMES_HOME 为 `SOUL.md`（身份槽 #1，
+4. 身份：`deploy/SOUL.md.template` 拷入 HERMES_HOME 为 `SOUL.md`（身份槽 #1，
    产品自称 Black Pool（黑池）、知识层统一称「知识底座」）。
-5. 命令名：`deploy/bpa-dev/bin/black-pool` 拷入 PATH（`BLACK_POOL_HERMES_BIN` 可指定入口）。
+5. 命令名：`deploy/bin/black-pool` 拷入 PATH（`BLACK_POOL_HERMES_BIN` 可指定入口）。
 6. 钉钉显示名：在钉钉应用后台把机器人显示名设为 Black Pool 或 黑池（配置属内网侧，不入本仓）。
 
 ## Windows 本机便携分发（守密人 2026-08-02 裁定：不走服务端部署；PowerShell 受限）
@@ -72,19 +72,19 @@ Windows venv 不可跨平台组装，故必须 Windows 台）单 job 产**唯一
 
 ## 品牌图标（2026-08-02 补漏 #2）
 
-- 源：`deploy/brand-assets/`（icon.png / icon.ico / apple-touch-icon.png / brand-tile.jpg），
-  由 `deploy/gen_brand_assets.py` 从**单一源图**生成；组装期经 rebrand.py `ASSET_OVERLAYS`
+- 源：`build/brand-assets/`（icon.png / icon.ico / apple-touch-icon.png / brand-tile.jpg），
+  由 `build/gen_brand_assets.py` 从**单一源图**生成；组装期经 rebrand.py `ASSET_OVERLAYS`
   覆盖进树（补丁亦以 `--binary` 段等效承载，两条应用路径效果相同）。
-- **换图流程（守密人正式供图后）**：把新图存为 `deploy/brand-assets/source.png` →
-  `python3 deploy/gen_brand_assets.py` → `python3 deploy/rebrand.py` → 提交三处产物。
+- **换图流程（守密人正式供图后）**：把新图存为 `build/brand-assets/source.png` →
+  `python3 build/gen_brand_assets.py` → `python3 build/rebrand.py` → 提交三处产物。
   正式图未落仓前以仓内艾瑞卡立绘占位（2026-08-02 裁定）。
 - 应用显示名（About 面板 / 菜单 / 任务管理器）走上游官方环境针
   `HERMES_DESKTOP_APP_NAME=Black Pool`（launcher.cmd 与 launch_desktop.py 已内置）。
 
 ## 补丁维护（移 pin 例程的一部分）
 
-- 补丁**不手写**：规则与排除谓词在 `deploy/rebrand.py`，`patches/black-pool-rebrand.patch`（公版）与
-  `patches/black-pool-intranet.patch`（私有版叠加层）是其确定性输出。移 pin 后重跑 `python3 deploy/rebrand.py` 重生成；
+- 补丁**不手写**：规则与排除谓词在 `build/rebrand.py`，`patches/black-pool-rebrand.patch`（公版）与
+  `patches/black-pool-intranet.patch`（私有版叠加层）是其确定性输出。移 pin 后重跑 `python3 build/rebrand.py` 重生成；
   `--check` 为漂移守卫（补丁与规则输出不一致即红）。
 - 红线：LICENSE / 版权行 / URL / `HERMES_*` 环境变量 / `X-Client-Name` 遥测头不碰
   （守卫 `tests/test_hermes_charter.py`）。

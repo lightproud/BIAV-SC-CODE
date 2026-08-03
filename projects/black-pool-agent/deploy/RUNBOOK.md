@@ -1,7 +1,7 @@
 # bpa-dev 车间手册（银芯单向输出件，零内网值）
 
 > 本目录 = **全部拷走型部署件的统一收纳位**（守密人 2026-08-03 裁定「统一放进
-> bpa-dev\deploy」）：车间三脚本 + 补丁应用器 + 启动器家族（launcher / 监督器 /
+> bpa-dev\deploy」；2026-08-03 终编：仓库侧本目录即部署件全集，生产工具另居 build/）：车间三脚本 + 补丁应用器 + 启动器家族（launcher / 监督器 /
 > venv 自愈）+ SOUL 模板 + 整包更新器 + CLI 别名，一目录拿全。整目录拷入
 > `黑池\bpa-dev\deploy\` 即可用；凭据、端点、内网参数一律只活在
 > `bpa-dev` 的兄弟目录里，**永不回流银芯**（§1.1-HC）。
@@ -24,7 +24,7 @@
 ## 取件两式（守密人 2026-08-03 问答定式）
 
 - **映射式（推荐）**：`黑池\bpa-dev\deploy` 经 `svn:externals` 挂到银芯 vendor 镜像内
-  `projects/black-pool-agent/deploy/bpa-dev`（挂载名 `deploy` 在外链行里指定，与源目录名无关）——脚本随 `svn update` 自动保鲜。
+  `projects/black-pool-agent/deploy`（源与挂载同名，一层不多）——脚本随 `svn update` 自动保鲜。
   脚本全部按**挂载点**相对定位（`%~dp0..` = 车间根），日志与运行痕迹只写车间根，
   vendor 映射目录保持零写入（只读纪律不破）。
 - **手拷式（兜底）**：镜像不便外链时，整目录拷入 `黑池\bpa-dev\deploy\`，银芯更新后手动重拷。

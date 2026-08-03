@@ -22,10 +22,10 @@
   vendor 快照与官方测试基线保持逐字节纯净。
 
 用法：
-  python3 deploy/rebrand.py                    # 重生成两张补丁
-  python3 deploy/rebrand.py --check            # 校验两张补丁与规则输出一致（漂移守卫）
-  python3 deploy/rebrand.py --apply DEST                    # 应用私有版（公版+内网层）
-  python3 deploy/rebrand.py --apply DEST --edition public   # 只应用公版
+  python3 build/rebrand.py                    # 重生成两张补丁
+  python3 build/rebrand.py --check            # 校验两张补丁与规则输出一致（漂移守卫）
+  python3 build/rebrand.py --apply DEST                    # 应用私有版（公版+内网层）
+  python3 build/rebrand.py --apply DEST --edition public   # 只应用公版
 """
 from __future__ import annotations
 
@@ -304,7 +304,7 @@ INTRANET_POST_RULES = [
 ]
 
 # 二进制品牌资产覆盖（公版层；图标是二进制，文本规则到不了）：
-# 源在 deploy/brand-assets/（由 deploy/gen_brand_assets.py 从单一源图生成，
+# 源在 build/brand-assets/（由 build/gen_brand_assets.py 从单一源图生成，
 # 守密人换图 = 换源图重跑生成器再重生成补丁），覆盖进组装树的消费点。
 # mac 的 assets/icon.icns 刻意不覆盖（便携包只出 win，残留清单见 BRANDING.md）。
 ASSET_OVERLAYS = [
@@ -355,7 +355,7 @@ def transform_intranet(text: str) -> str:
 
 
 def overlay_assets(root: Path) -> int:
-    """把 deploy/brand-assets/ 的品牌二进制资产覆盖进组装树，返回覆盖文件数。"""
+    """把 build/brand-assets/ 的品牌二进制资产覆盖进组装树，返回覆盖文件数。"""
     src_dir = HERE / "brand-assets"
     replaced = 0
     for src_name, dest_rel in ASSET_OVERLAYS:
@@ -466,7 +466,7 @@ def main() -> int:
             current = path.read_text(encoding="utf-8") if path.exists() else ""
             if current != diff:
                 print(f"DRIFT: {path.name} 与规则输出不一致，"
-                      "跑 python3 deploy/rebrand.py 重生成", file=sys.stderr)
+                      "跑 python3 build/rebrand.py 重生成", file=sys.stderr)
                 ok = False
         if ok:
             print("patches are in sync with rules")
