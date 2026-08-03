@@ -17,6 +17,12 @@ if not defined BPA_DIR (
   echo 回滚失败：未指定部署目录（参数或环境变量 BPA_DIR）。
   pause & exit /b 1
 )
+rem 相对路径一律按车间根（bpa-dev\）解析——整棵树搬盘符零改配置；绝不按当前窗口目录（会静默指错）
+set "_ABS="
+if "%BPA_DIR:~1,1%"==":" set "_ABS=1"
+if "%BPA_DIR:~0,2%"=="\\" set "_ABS=1"
+if not defined _ABS set "BPA_DIR=%DEVROOT%\%BPA_DIR%"
+for %%I in ("%BPA_DIR%") do set "BPA_DIR=%%~fI"
 if not exist "%BPA_DIR%.old" (
   echo 回滚失败：没有回滚位 %BPA_DIR%.old（每次 deploy 只留最近一版）。
   pause & exit /b 1

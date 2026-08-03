@@ -35,7 +35,8 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
    `apply_patch.py`，无需 git；任一张上下文不匹配即整体失败，绝不半打）→ 注配置
    插件 → 出 `staging\BlackPool\` + `MANIFEST.txt`（用了哪版 zip、哪些补丁，来历三行可查）。
 2. **部署** `deploy.cmd [部署目录]`：目标取参数 > 环境变量 BPA_DIR > `config\deploy-target.txt`
-   （文件里写一行地址如 `E:\BIAV-BP\black-pool-agent`，写好后**双击即部署**，rollback 同理）：旧 `home\` 用户数据增量并入
+   （文件里写一行地址，**支持相对路径、按车间根 bpa-dev\ 解析**——写 `..\black-pool-agent`
+   则整棵树搬盘符零改配置；绝对路径如 `E:\BIAV-BP\black-pool-agent` 亦可。写好后**双击即部署**，rollback 同理）：旧 `home\` 用户数据增量并入
    新包（不覆盖注入的配置）→ 旧版让位 `<目录>.old` 回滚位 → 成品上位。
 3. **回滚** `rollback.cmd <部署目录>`：一键回切 `.old`，问题版留 `.failed-*` 供取证。
 
