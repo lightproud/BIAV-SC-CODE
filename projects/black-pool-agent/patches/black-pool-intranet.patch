@@ -150,10 +150,22 @@ index 6fbf294..1ecaaf9 100644
      return false
    }
 diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
-index 0b46920..b4295da 100644
+index 0b46920..b45b179 100644
 --- a/apps/desktop/src/store/updates.ts
 +++ b/apps/desktop/src/store/updates.ts
-@@ -667,6 +667,11 @@ let lastConnectionMode: string | undefined
+@@ -142,6 +142,11 @@ function isInstallMethodToastSnoozed(): boolean {
+  * doesn't nag on every thread switch.
+  */
+ export function reportBackendContract(contract: number | undefined): void {
++  // 便携包版本随包恒配对，Update 按钮为坏路——契约横幅整只静默（审计轮三）
++  if (true as boolean) {
++    return
++  }
++
+   if ((contract ?? 0) >= REQUIRED_BACKEND_CONTRACT) {
+     dismissNotification(SKEW_TOAST_ID)
+     // Backend caught up — forget any prior snooze so a future regression warns
+@@ -667,6 +672,11 @@ let lastConnectionMode: string | undefined
  
  /** Wire up background polling + progress streaming. Idempotent. */
  export function startUpdatePoller(): void {
