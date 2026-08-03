@@ -35456,6 +35456,19 @@ index 5ac21ac..e5e235e 100644
              <p className="text-xs text-muted-foreground">
                Choose how much to remove. The app closes to finish the job; reopen the installer any time to come back.
              </p>
+diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
+index 0aa3c69..e7d5849 100644
+--- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
++++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
+@@ -231,7 +231,7 @@ export function useStatusbarItems({
+       restarting: updateApply.stage === 'restart',
+       sha: updateStatus?.currentSha?.slice(0, 7) ?? null,
+       target: 'client',
+-      version: desktopVersion?.appVersion
++      version: desktopVersion?.appVersion ? '0.1.0' : undefined
+     })
+ 
+     return {
 diff --git a/apps/desktop/src/app/shell/model-edit-submenu.tsx b/apps/desktop/src/app/shell/model-edit-submenu.tsx
 index 6fca399..c2f0119 100644
 --- a/apps/desktop/src/app/shell/model-edit-submenu.tsx

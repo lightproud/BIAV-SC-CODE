@@ -112,6 +112,7 @@ def test_brand_patch_sentinels():
         "黑池默认主题（鎏金双貌）": "DEFAULT_SKIN_NAME = 'black-pool'",
         "黑池主题定义在位": "blackPoolTheme",
         "Nous Portal 卡保持官方原版图标": "nous-portal-icon.png",
+        "状态栏版本芯片显示黑池版本": "desktopVersion?.appVersion ? '0.1.0'",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"公版规则从补丁消失（锚点失配）: {missing}"
@@ -139,6 +140,7 @@ def test_intranet_patch_sentinels():
         "自定义模型价格表注入": "model-prices.json",
         "Nous Portal 推荐徽标摘除": "内网无推荐位",
         "推荐光效摘除": "arc-nous",
+        "版本芯片更新覆盖层入口 no-op": "onSelect: () => {},",
         "服务商列表默认展开": "SHOW_ALL_KEY) !== \'0\'",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
