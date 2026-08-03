@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Black Pool（黑池）品牌图标生成器（守密人 2026-08-02 品牌换装补漏 #2：应用图标）。
 
-单一源图 → 全套消费尺寸，产出落 deploy/brand-assets/（rebrand.py ASSET_OVERLAYS
-组装期覆盖进树）。换图流程 = 守密人把新源图放到 deploy/brand-assets/source.png
-→ 重跑本脚本 → 重跑 deploy/rebrand.py 重生成补丁 → 提交。
+单一源图 → 全套消费尺寸，产出落 build/brand-assets/（rebrand.py ASSET_OVERLAYS
+组装期覆盖进树）。换图流程 = 守密人把新源图放到 build/brand-assets/source.png
+→ 重跑本脚本 → 重跑 build/rebrand.py 重生成补丁 → 提交。
 
-源图解析顺序：deploy/brand-assets/source.png（守密人正式供图位，优先）→
+源图解析顺序：build/brand-assets/source.png（守密人正式供图位，优先）→
 仓内占位 assets/images/portraits/erica.png（守密人 2026-08-02 裁定「另行供图」，
 正式图未落仓前以艾瑞卡立绘占位）。
 

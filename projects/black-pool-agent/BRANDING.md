@@ -18,7 +18,7 @@
 
 | 面 | 手段 | 量 |
 |----|------|----|
-| 对话人格自称 | `deploy/bpa-dev/SOUL.md.template`（身份槽 #1，原生机制零侵入） | 1 档 |
+| 对话人格自称 | `deploy/SOUL.md.template`（身份槽 #1，原生机制零侵入） | 1 档 |
 | 兜底身份句（SOUL.md 缺席时） | 补丁：`You are Hermes Agent, … created by Nous Research.` → `You are Silver Core, …` | 1 处 |
 | 运行面显示串 `Hermes Agent` → `Silver Core` | 规则补丁（agent / hermes_cli / gateway / tools / plugins / ui-tui/src / **apps / web**） | 合计 390 文件 / 43,718 行 diff（含二进制 b85 段） |
 | `Hermes profile` → `Silver Core profile` | 同上 | 30 处 |
@@ -27,9 +27,9 @@
 | **大写字标 `HERMES AGENT` → `SILVER CORE`**（对话空态巨幅 wordmark / bootstrap-installer 欢迎页，2026-08-02 补漏 #1） | 通用规则追加（大小写敏感故原三条全部漏它） | 5 处 |
 | **窗口标题 `<title>`**（desktop / web / bootstrap-installer 的 index.html——任务栏 / Alt-Tab 显示名实际来源，2026-08-02 补漏 #3） | `.html` 扩入扫描后缀 | 3 档 |
 | **应用显示名 APP_NAME**（About 面板 / 菜单标签 / `app.setName`；其兜底行含 `HERMES_` 被跳线保留，2026-08-02 补漏 #3） | 上游官方环境针 `HERMES_DESKTOP_APP_NAME=Silver Core`（launcher.cmd + launch_desktop.py 双设，零侵入） | 2 件 |
-| **应用图标 / 品牌图像**（win exe · 任务栏 · 托盘 · 窗口图标 · favicon · About 页 BrandMark，2026-08-02 补漏 #2） | 二进制覆盖 `deploy/brand-assets/`（`gen_brand_assets.py` 单源图生成全套；rebrand.py `ASSET_OVERLAYS` 组装期覆盖 + 补丁 `--binary` 段等效承载）。源图 = 守密人 2026-08-02 正式供图 `deploy/brand-assets/source.png`（白纱人偶 · 256px，经 GitHub 直传落仓）；日后换图 = 换源图重跑两生成器 | 4 件 |
+| **应用图标 / 品牌图像**（win exe · 任务栏 · 托盘 · 窗口图标 · favicon · About 页 BrandMark，2026-08-02 补漏 #2） | 二进制覆盖 `build/brand-assets/`（`gen_brand_assets.py` 单源图生成全套；rebrand.py `ASSET_OVERLAYS` 组装期覆盖 + 补丁 `--binary` 段等效承载）。源图 = 守密人 2026-08-02 正式供图 `build/brand-assets/source.png`（白纱人偶 · 256px，经 GitHub 直传落仓）；日后换图 = 换源图重跑两生成器 | 4 件 |
 | **About 页出身声明 + 自更新区 / Danger zone 隐藏**（守密人 2026-08-02 三裁：①直接说明「B.I.A.V. Studio 基于 Hermes <版本> 的定制版本」②不再展示自更新区——便携包生产禁用 `hermes update`（文书 §2.4），该区只会报 git checkout 错误误导③Danger zone 整区不必要——便携包无安装器，卸载文案「reopen the installer」失实） | 后置全文规则锚定 about-settings.tsx：插入声明（版本动态渲染）+ `{false && …}` 帘子包裹两区（非删除，移 pin 冲突面最小）；哨兵防静默复活（charter 守卫） | 3 处 |
-| CLI 命令名 | `deploy/bpa-dev/bin/black-pool` 别名包裹（零侵入） | 1 件 |
+| CLI 命令名 | `deploy/bin/black-pool` 别名包裹（零侵入） | 1 件 |
 | 钉钉显示名 | 钉钉应用后台配置（内网侧） | 部署说明 |
 | **改名审计轮（守密人 2026-08-02 派发「查改名 bug + 不再必要功能」）** | 后置规则四条：① APP_NAME 兜底 `'Hermes'`→`'Silver Core'`（productName 已换而兜底未换 = electron userData 按两个名字解析，绕过 launcher 直启 exe 时配置脑裂）② 后台更新轮询整只 no-op（挂载 + 每 30 分钟 + 聚焦触发，便携包里每次注定报「isn't a git checkout」错误噪音）③ Billing 设置入口隐藏（Hermes Cloud 订阅页，内网自有 Providers 无对象）④ 钉钉 relay 默认名抑制两名并收（旧持久化配置存 `Hermes Agent` 时漏抑制、回复前缀泄漏旧名）；哨兵 `test_rebrand_portable_fit_rules_alive` | 4 处 |
 | **审计轮二（2026-08-03 Sonnet 七断面动态编排 + 主循环终审）** | 后置规则八条：① `hermes update` 便携硬门禁（无 .git 的 win32 ZIP 兜底会拉未换装上游整树覆盖——字面撤销全部品牌补丁；文书 §2.4 从文档纪律升格代码门禁）② Billing 深路由封死（`?tab=billing` + 计费故障自动跳转两条暗道，从 `SETTINGS_VIEWS` 摘除）③ Help > Check for Updates 菜单整项摘除（三处自更新入口最后一处）④ Gateway Cloud 连接模式卡隐藏（portal.nousresearch.com OAuth 无对象）⑤ Telegram Quick setup 列隐藏（托管 Bot 固定代理 Nous 自营 SaaS，内网不可达却挂 recommended）⑥⑦ AUMID + appId 中性化 `com.biav.silvercore`（全小写躲过裸词规则，Windows 通知设置直接显示原始串）⑧ 唤醒词帮助文案中性化（裸词规则教出 "Hey Silver Core" 但声学模型只认 "hey hermes"）+ CLI `⚕ Hermes` 面板残留收尾；哨兵 `test_rebrand_audit_round2_rules_alive` | 8 条 |
@@ -58,5 +58,5 @@
 - mac 图标 `assets/icon.icns` 未覆盖（便携包只出 win）；`public/hermes.png` /
   `hermes-sprite.png` / `hermes-frames/`（宠物动画帧素材）未覆盖。
 
-维护：补丁由 `deploy/rebrand.py` 规则引擎确定性生成，移 pin 重生成、`--check` 防漂移；
+维护：补丁由 `build/rebrand.py` 规则引擎确定性生成，移 pin 重生成、`--check` 防漂移；
 残留升格诉求出现时改规则不改补丁。

@@ -17,7 +17,7 @@
   的运行面显示串（"Hermes Agent" / "Hermes profile" / "hermes-tui"）为硬编码。
   处置：守密人 2026-08-02 交互裁定「开 patches/ 全量抹净」，`patches/` 由「必须为空」
   转**白名单制**（守卫同 PR 修改，见 `tests/test_hermes_charter.py` ALLOWED_PATCHES）；
-  补丁不手写、由 `deploy/rebrand.py` 规则引擎生成，三红线（LICENSE/版权 · URL/遥测 ·
+  补丁不手写、由 `build/rebrand.py` 规则引擎生成，三红线（LICENSE/版权 · URL/遥测 ·
   功能标识符）机械守卫。范围台账 `BRANDING.md`。状态：已落地。
 - **2026-08-02 · 扩展点缺口 · 需求 #2 对话成本面板（`conversation-cost-panel.patch`）**：
   desktop 状态栏/面板无 UI 插件位，成本展示须触改核心（statusbar 项 + 面板组件 + i18n 五语种

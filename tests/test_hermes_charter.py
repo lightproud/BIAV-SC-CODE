@@ -17,7 +17,7 @@ PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 
 # patches/ 白名单：每个补丁须在此具名登记（防无名补丁悄悄入库）。
 ALLOWED_PATCHES = {
-    "black-pool-rebrand.patch",   # 公版：品牌换装（deploy/rebrand.py 规则引擎生成）
+    "black-pool-rebrand.patch",   # 公版：品牌换装（build/rebrand.py 规则引擎生成）
     "black-pool-intranet.patch",  # 私有版：内网/便携适配叠加层（同一引擎生成，叠加于公版后）
     "conversation-cost-panel.patch",  # 需求 #2 对话成本面板（手维护特性补丁，上下文零品牌词故可叠加于换装后）
 }
@@ -52,7 +52,7 @@ def test_patches_apply_cleanly_to_upstream():
         )
         assert r.returncode == 0, (
             f"补丁序列 {[Path(a).name for a in args]} 不能干净应用于 upstream/"
-            f"（多半是移 pin 后未重生成，跑 python3 deploy/rebrand.py）: {r.stderr[:500]}"
+            f"（多半是移 pin 后未重生成，跑 python3 build/rebrand.py）: {r.stderr[:500]}"
         )
 
 

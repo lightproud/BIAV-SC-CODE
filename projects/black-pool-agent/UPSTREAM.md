@@ -36,7 +36,7 @@
    **add 前必清生成物**：`find upstream -name __pycache__ -type d -prune -exec rm -rf {} +`
    ——`git add -f` 会连生成物一起强制入库；实测教训：在树内跑过测试后未清 `.pyc` 就 add，
    上游脱敏测试 .pyc 里的假 Slack token 样本直接触发 GitHub 推送保护拒推（2026-08-02）
-3. **重生成品牌补丁 + 重放特性补丁**：`python3 deploy/rebrand.py`（规则引擎重出
+3. **重生成品牌补丁 + 重放特性补丁**：`python3 build/rebrand.py`（规则引擎重出
    `patches/silver-core-rebrand.patch`）；特性补丁（如 `conversation-cost-panel.patch`）逐个
    `git apply --check` 核对新基底，冲突则人工重放后重出 diff（守卫核干净应用 + 三红线）
 4. 更新本档 pin 表 → 跑全量守卫 → 单提交入库（`vendor: hermes-agent @<short-sha>`）
