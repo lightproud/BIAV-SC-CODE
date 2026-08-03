@@ -104,15 +104,17 @@ BRAND_POST_RULES = [
     # About 页出身声明 + 品牌版本号（守密人 2026-08-02 裁定「直接说明定制版本」；
     # 2026-08-03 裁定加发布版本号 0.1.0）：锚定 about-settings.tsx 版本行 JSX，
     # 上游版本取运行时 appVersion 动态渲染，移 pin 后无需改词。
+    # About 版本区（守密人 2026-08-03 两问对齐裁定：标题维持 Black Pool Desktop、
+    # 黑池版本为主）：主版本行渲染品牌版本 0.1.0（借 i18n version 模板各语种自适），
+    # 上游版本只在出身行出现一次（动态渲染，移 pin 无需改词）。
     (
         "            {version?.appVersion ? a.version(version.appVersion)"
         " : a.versionUnavailable}\n          </p>\n",
-        "            {version?.appVersion ? a.version(version.appVersion)"
-        " : a.versionUnavailable}\n          </p>\n"
+        f"            {{a.version('{BRAND_VERSION}')}}\n          </p>\n"
         "          <p className=\"mt-1 text-xs text-muted-foreground\">\n"
-        f"            {{'{BRAND}（黑池）{BRAND_VERSION} — B.I.A.V. Studio 基于 Hermes Agent'"
+        "            {'B.I.A.V. Studio 出品 · 基于 Hermes Agent'"
         " + (version?.appVersion ? ` ${version.appVersion}` : '')"
-        " + ' 的定制版本'}\n"
+        " + ' 定制'}\n"
         "          </p>\n",
     ),
     # APP_NAME 兜底统一：该行含 HERMES_ 被跳线保留，兜底值 'Hermes' 与已换装的

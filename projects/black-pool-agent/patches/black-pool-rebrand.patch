@@ -35152,19 +35152,21 @@ index bcc6ffc..79581ba 100644
      })
    })
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index fa0ca76..7694389 100644
+index fa0ca76..51b2227 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
-@@ -102,6 +102,9 @@ export function AboutSettings() {
+@@ -100,7 +100,10 @@ export function AboutSettings() {
+         <div>
+           <h2 className="text-lg font-semibold tracking-tight">{a.heading}</h2>
            <p className="mt-1 text-xs text-muted-foreground">
-             {version?.appVersion ? a.version(version.appVersion) : a.versionUnavailable}
-           </p>
-+          <p className="mt-1 text-xs text-muted-foreground">
-+            {'Black Pool（黑池）0.1.0 — B.I.A.V. Studio 基于 Hermes Agent' + (version?.appVersion ? ` ${version.appVersion}` : '') + ' 的定制版本'}
+-            {version?.appVersion ? a.version(version.appVersion) : a.versionUnavailable}
++            {a.version('0.1.0')}
 +          </p>
++          <p className="mt-1 text-xs text-muted-foreground">
++            {'B.I.A.V. Studio 出品 · 基于 Hermes Agent' + (version?.appVersion ? ` ${version.appVersion}` : '') + ' 定制'}
+           </p>
          </div>
        </div>
- 
 diff --git a/apps/desktop/src/app/settings/billing/errors.ts b/apps/desktop/src/app/settings/billing/errors.ts
 index 0357bf4..682ede1 100644
 --- a/apps/desktop/src/app/settings/billing/errors.ts
