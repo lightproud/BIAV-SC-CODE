@@ -250,6 +250,15 @@ BRAND_POST_RULES = [
         "export const DEFAULT_LOCALE: Locale = 'en'\n",
         "export const DEFAULT_LOCALE: Locale = 'zh'\n",
     ),
+    # 默认语言真源头（2026-08-03 实机复盘：desktop 启动从后端取 display.language，
+    # 其显式默认 "en" 压过前端 DEFAULT_LOCALE——改在真上游，CLI/网关静态文案一并简中；
+    # 用户显式改过语言者不受影响）。
+    (
+        '        # Supported: en, zh, ja, de, es, fr, tr, uk.  Unknown values fall back to en.\n'
+        '        "language": "en",\n',
+        '        # Supported: en, zh, ja, de, es, fr, tr, uk.  Unknown values fall back to en.\n'
+        '        "language": "zh",\n',
+    ),
 ]
 
 # ========================= 私有版（内网/便携适配层） =========================
