@@ -92,15 +92,33 @@ jobs:
           cp projects/black-pool-agent/deploy/launch_desktop.py BlackPool/
           # 组装根印章：editable 指针自愈的「旧根」依据（自愈后由脚本滚动更新）
           cygpath -w "$(pwd)/BlackPool" > BlackPool/bundle-root.txt
+          # 出厂清单 BUILD.md（守密人 2026-08-04 裁定「补齐链条」）：第一级拼装
+          # 的地面真相，与内网第二级 ASSEMBLY.md 在部署包内并列自洽。
+          PRODVER=$(sed -n 's/__version__ = "\(.*\)"/\1/p' BlackPool/app/hermes_cli/__init__.py | head -1)
           {
-            echo "Black Pool (黑池) portable bundle — private edition, brand v0.1.0 (win64, merged single dir)"
-            echo "edition: private (black-pool-rebrand.patch + black-pool-intranet.patch)"
-            echo "pin: $(grep -m1 'pin tag' projects/black-pool-agent/UPSTREAM.md || true)"
-            echo "assembled: run ${GITHUB_RUN_ID} @ $(date -u +%Y-%m-%dT%H:%MZ)"
-            echo "usage: copy the BlackPool folder anywhere, double-click launcher.cmd"
-            echo "       (desktop UI by default; CLI = venv\\Scripts\\hermes.exe)"
-            echo "config: endpoints/credentials are injected on the intranet side (never bundled)"
-          } > BlackPool/BUNDLE-INFO.txt
+            echo "# Black Pool 出厂清单（BUILD.md · 第一级拼装：银芯 CI）"
+            echo ""
+            echo "- 版别：私有版（private edition）"
+            echo "- 产品版本：${PRODVER}"
+            echo "- 上游 pin：$(grep -m1 'pin tag' projects/black-pool-agent/UPSTREAM.md || true)"
+            echo "- 装配 commit：${GITHUB_SHA}"
+            echo "- 装配运行：${GITHUB_RUN_ID} @ $(date -u +%Y-%m-%dT%H:%MZ)"
+            echo ""
+            echo "## 烧入补丁（构建期已应用）"
+            echo ""
+            for p in projects/black-pool-agent/patches/black-pool-rebrand.patch \
+                     projects/black-pool-agent/patches/black-pool-intranet.patch \
+                     projects/black-pool-agent/patches/conversation-cost-panel.patch; do
+              echo "- $(basename "$p")  (sha256:$(sha256sum "$p" | cut -c1-12))"
+            done
+            echo ""
+            echo "## 使用"
+            echo ""
+            echo "- 整个 BlackPool 目录任意拷贝，双击 launcher.cmd（桌面端）；CLI = venv\\Scripts\\hermes.exe"
+            echo "- 端点与凭据在内网侧注入（本包绝不携带）"
+            echo ""
+            echo "> 第二级拼装（内网 bpa-dev 注入补丁/插件/配置）见部署包内 ASSEMBLY.md。"
+          } > BlackPool/BUILD.md
 
       - name: Native silent launcher (Black Pool.exe, embedded icon)
         run: |

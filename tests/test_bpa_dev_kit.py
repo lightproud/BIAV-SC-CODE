@@ -273,6 +273,17 @@ def test_assemble_cmd_delegates_injection():
     assert "ASSEMBLY.md" in text
 
 
+def test_ci_bakes_build_manifest_into_bundle():
+    """两级拼装链条自洽（守密人 2026-08-04 裁定）：第一级（银芯 CI）须在包内
+    烘 BUILD.md（版别/产品版本/pin/commit/烧入补丁指纹），与内网第二级
+    ASSEMBLY.md 并列；旧三行体 BUNDLE-INFO.txt 退役不残留。"""
+    for wf in ("assemble-black-pool-bundle.yml", "assemble-black-pool-public.yml"):
+        text = (REPO / ".github" / "workflows" / wf).read_text(encoding="utf-8")
+        assert "BlackPool/BUILD.md" in text, f"{wf} 缺出厂清单烘制步"
+        assert "sha256sum" in text and "GITHUB_SHA" in text, f"{wf} 清单缺指纹/commit"
+        assert "BUNDLE-INFO" not in text, f"{wf} 旧 BUNDLE-INFO 残留"
+
+
 def test_kill_by_path_noop_on_non_windows(tmp_path):
     """路径杀进程器：非 Windows 空跑退出 0（管线可验）；Windows 行为靠野战。"""
     r = subprocess.run([sys.executable, str(KIT / "kill_by_path.py"), str(tmp_path)],
