@@ -239,11 +239,31 @@ index aedde11..71991ed 100644
          </div>
        </div>
      )
+diff --git a/apps/desktop/src/components/onboarding/index.tsx b/apps/desktop/src/components/onboarding/index.tsx
+index 6fb2adf..252d3a8 100644
+--- a/apps/desktop/src/components/onboarding/index.tsx
++++ b/apps/desktop/src/components/onboarding/index.tsx
+@@ -404,7 +404,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
+ 
+ const readShowAll = () => {
+   try {
+-    return window.localStorage.getItem(SHOW_ALL_KEY) === '1'
++    return window.localStorage.getItem(SHOW_ALL_KEY) !== '0'
+   } catch {
+     return false
+   }
 diff --git a/apps/desktop/src/components/onboarding/providers.tsx b/apps/desktop/src/components/onboarding/providers.tsx
-index 1b0a394..6b56c1d 100644
+index 1b0a394..04bbf8b 100644
 --- a/apps/desktop/src/components/onboarding/providers.tsx
 +++ b/apps/desktop/src/components/onboarding/providers.tsx
-@@ -46,14 +46,8 @@ export function FeaturedProviderRow({
+@@ -39,21 +39,13 @@ export function FeaturedProviderRow({
+       onClick={() => onSelect(provider)}
+       type="button"
+     >
+-      <span aria-hidden className="arc-border arc-reverse arc-nous" />
+       <div className="min-w-0">
+         <div className="flex items-center gap-2">
+-          <img alt="" className="size-5 shrink-0 rounded" src={assetPath('nous-portal-icon.png')} />
            <span className="text-[length:var(--conversation-text-font-size)] font-semibold">
              {providerTitle(provider)}
            </span>

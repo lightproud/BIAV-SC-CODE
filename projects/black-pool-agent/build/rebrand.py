@@ -231,6 +231,29 @@ BRAND_POST_RULES = [
         "<img alt=\"\" className=\"size-5 shrink-0 rounded\" src={assetPath('apple-touch-icon.png')} />",
         "<img alt=\"\" className=\"size-5 shrink-0 rounded\" src={assetPath('nous-portal-icon.png')} />",
     ),
+    # featuredPitch 归还 Hermes（守密人 2026-08-03 裁定「别说是 Black Pool 推荐，
+    # 这是 Hermes 官方的，跟我们无关」）：裸词规则误把 Nous 自家服务的宣传语
+    # 换上了黑池名——五语种逐条还原（该句描述的是对方订阅服务）。
+    (
+        "featuredPitch: 'One subscription, 300+ frontier models — the recommended way to run Black Pool',",
+        "featuredPitch: 'One subscription, 300+ frontier models — the recommended way to run Hermes',",
+    ),
+    (
+        "featuredPitch: '一个订阅，300+ 前沿模型 — 运行 Black Pool 的推荐方式',",
+        "featuredPitch: '一个订阅，300+ 前沿模型 — 运行 Hermes 的推荐方式',",
+    ),
+    (
+        "featuredPitch: '一個訂閱，300+ 前沿模型 — 執行 Black Pool 的建議方式',",
+        "featuredPitch: '一個訂閱，300+ 前沿模型 — 執行 Hermes 的建議方式',",
+    ),
+    (
+        "featuredPitch: '1 つのサブスクリプションで 300 以上の最先端モデル — Black Pool を実行するための推奨方法',",
+        "featuredPitch: '1 つのサブスクリプションで 300 以上の最先端モデル — Hermes を実行するための推奨方法',",
+    ),
+    (
+        "featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم — الطريقة الموصى بها لتشغيل Black Pool',",
+        "featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم — الطريقة الموصى بها لتشغيل Hermes',",
+    ),
     # 品牌字体加载修复（守密人 2026-08-03 实机发现字标回退无衬线；装配日志实锤
     # "didn't resolve at build time"）：上游 CSS 按 monorepo 根 node_modules 写
     # 路径、官方从根装依赖故可解析；本装配只在 apps/desktop 里 npm ci——改指
@@ -427,6 +450,22 @@ INTRANET_POST_RULES = [
         "        return user_entry\n"
         "    route = resolve_billing_route(model_name, provider=provider, base_url=base_url)\n"
         '    if route.billing_mode == "subscription_included":\n',
+    ),
+    # Nous Portal 卡去特殊化续两刀（守密人 2026-08-03「光效和图标都去掉」）：
+    # 推荐光效边框整行删；卡上图标整行删（公版仍保官方图标——分层各表）。
+    (
+        '      <span aria-hidden className="arc-border arc-reverse arc-nous" />\n',
+        "",
+    ),
+    (
+        '          <img alt="" className="size-5 shrink-0 rounded" src={assetPath(\'nous-portal-icon.png\')} />\n',
+        "",
+    ),
+    # 服务商列表默认全展开（守密人 2026-08-03「默认展开这一页所有选项」）：
+    # 未持久化偏好时视为展开；用户点收起仍持久化为 '0' 得到尊重。
+    (
+        "    return window.localStorage.getItem(SHOW_ALL_KEY) === '1'\n",
+        "    return window.localStorage.getItem(SHOW_ALL_KEY) !== '0'\n",
     ),
     # Nous Portal 推荐徽标摘除（守密人 2026-08-03 裁定「取消推荐 UI」）：
     # 内网无推荐位——未登录态不再挂「推荐」徽标，已连接标记保留。
