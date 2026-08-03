@@ -25,3 +25,11 @@
   482 行 / 13 文件入白名单；**上下文零品牌词**（机械可验：补丁上下文行 grep Hermes = 0），
   故对换装前后基底皆干净适用；移 pin 时 `git apply --check` 守卫响亮报冲突、人工重放。
   验证：desktop typecheck 三配置绿 + 前端 675 测试绿 + 后端网关 533 测试绿。状态：已落地。
+- **2026-08-03 · 扩展点走通（正面记录）· blackpool 记忆插件**：中文记忆召回缺口
+  （stock holographic 的 FTS5 unicode61 把连续汉字当单一词元，中文事实近乎不可检索）
+  **全程走官方扩展面解决、零补丁零核心触碰**——MemoryProvider ABC 纯子类，兄弟插件位
+  `plugins/memory/blackpool/` 自动发现，确定性 FMM+bigram 分词器修 FTS 索引/查询、
+  Jaccard 双侧、CJK 引号实体四咬合点；HRR 向量维持原文保代数自洽。随 bpa-dev
+  套件 plugins\ 注入面分发，激活 `memory.provider: blackpool`。守卫
+  `tests/test_black_pool_memory.py` 11 例（含正负控端到端）。状态：已落地（v1；
+  中文内容级 HRR 留 v2 观察）。
