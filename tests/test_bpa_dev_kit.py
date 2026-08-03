@@ -164,6 +164,17 @@ def test_cmd_rem_lines_are_ascii_short(name):
             assert len(s) <= 100, f"{name} rem 行超长: {s[:60]}"
 
 
+def test_native_launcher_source_present_and_wired():
+    """无感原生外壳（守密人 2026-08-03 诉求）：C# 源在位且两条装配线都有编译步。"""
+    cs = KIT.parent / "build" / "black-pool-launcher.cs"
+    assert cs.is_file() and "winexe" in cs.read_text(encoding="utf-8")
+    for wf in ("assemble-black-pool-bundle.yml", "assemble-black-pool-public.yml"):
+        text = (REPO / ".github" / "workflows" / wf).read_text(encoding="utf-8")
+        assert "black-pool-launcher.cs" in text and "win32icon" in text, f"{wf} 缺编译步"
+    launcher = (KIT / "launcher.cmd").read_text(encoding="utf-8")
+    assert "BPA_SILENT" in launcher and "%PAUSE_C%" in launcher, "launcher 静默模式缺失"
+
+
 def test_kill_by_path_noop_on_non_windows(tmp_path):
     """路径杀进程器：非 Windows 空跑退出 0（管线可验）；Windows 行为靠野战。"""
     r = subprocess.run([sys.executable, str(KIT / "kill_by_path.py"), str(tmp_path)],

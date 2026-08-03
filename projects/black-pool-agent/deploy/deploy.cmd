@@ -96,8 +96,10 @@ move "%B%" "%BPA_DIR%" >nul || (
 rem -- one-click icon entry: "Black Pool.lnk" next to launcher (icon from the exe) --
 set "BPA_EXE="
 for %%F in ("%BPA_DIR%\desktop\*.exe") do if not defined BPA_EXE set "BPA_EXE=%%~fF"
+set "LNK_TARGET=%BPA_DIR%\launcher.cmd"
+if exist "%BPA_DIR%\Black Pool.exe" set "LNK_TARGET=%BPA_DIR%\Black Pool.exe"
 if defined BPA_EXE (
-  cscript //nologo "%SD%make-shortcut.vbs" "%BPA_DIR%\Black Pool.lnk" "%BPA_DIR%\launcher.cmd" "%BPA_DIR%" "%BPA_EXE%,0" >nul 2>&1 && echo 已生成带图标入口：Black Pool.lnk（可拷到桌面）
+  cscript //nologo "%SD%make-shortcut.vbs" "%BPA_DIR%\Black Pool.lnk" "%LNK_TARGET%" "%BPA_DIR%" "%BPA_EXE%,0" >nul 2>&1 && echo 已生成带图标入口：Black Pool.lnk（可拷到桌面）
 )
 
 echo.

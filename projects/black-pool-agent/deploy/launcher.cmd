@@ -33,6 +33,9 @@ call "%BPA_TARGET%\launcher.cmd" %*
 exit /b %errorlevel%
 :in_bundle
 set "LOG=%ROOT%launcher.log"
+rem Silent mode (set by the native exe wrapper): no pauses, exe shows the dialog.
+set "PAUSE_C=pause"
+if defined BPA_SILENT set "PAUSE_C=rem"
 echo [%date% %time%] launcher start ROOT=%ROOT% > "%LOG%"
 echo Black Pool 启动中，请稍候（本窗会显示进度，失败会停窗给出原因）...
 
@@ -51,7 +54,7 @@ if not defined PYHOME (
   echo [FAIL] bundle python not found under %ROOT%python\ >> "%LOG%"
   echo 启动失败：包内 python\cpython-* 目录缺失。请把整个 BlackPool 文件夹完整复制后重试。
   echo 详情见 %LOG%
-  pause
+  %PAUSE_C%
   exit /b 1
 )
 echo [ok] PYHOME=%PYHOME% >> "%LOG%"
@@ -61,7 +64,7 @@ rem -- step 2: venv self-heal (idempotent) --
 if errorlevel 1 (
   echo [FAIL] fix_venv_path failed >> "%LOG%"
   echo 启动失败：venv 自愈未通过。详情见 %LOG%
-  pause
+  %PAUSE_C%
   exit /b 1
 )
 
@@ -70,7 +73,7 @@ rem -- step 3: runtime import check --
 if errorlevel 1 (
   echo [FAIL] runtime import check failed >> "%LOG%"
   echo 启动失败：包内运行时导入自检未通过。详情见 %LOG%
-  pause
+  %PAUSE_C%
   exit /b 1
 )
 echo [ok] runtime import check passed >> "%LOG%"
@@ -92,7 +95,7 @@ if exist "%ROOT%desktop" (
     echo.
     echo 启动失败：桌面端进程未能存活。上方为取证日志尾部，
     echo 完整日志见 %LOG% 与 home\logs\ 目录。
-    pause
+    %PAUSE_C%
     exit /b 1
   )
   exit 0
@@ -109,7 +112,7 @@ if defined DESKTOP_EXE (
   echo   %DESKTOP_EXE%
   start "Black Pool" "%DESKTOP_EXE%"
   echo 若桌面端窗口没有出现，请把 home\logs\ 下日志发给艾瑞卡；本窗可手动关闭。
-  pause
+  %PAUSE_C%
   exit /b 0
 )
 
@@ -119,5 +122,5 @@ echo 未找到桌面端目录，回退命令行模式...
 "%ROOT%venv\Scripts\hermes.exe" %*
 echo.
 echo 命令行会话已结束。
-pause
+%PAUSE_C%
 endlocal
