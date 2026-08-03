@@ -4,7 +4,7 @@ title: "last30days-skill-research-20260729"
 description: "定位一句话：**「按赞数、转发数、真金赔率排序的搜索引擎，搜的是人不是编辑」**——Google 聚合编辑内容，它并行搜 Reddit / X / YouTube / TikTok / HN / Polymarket 等约 20 个平台近 30 天的真实讨论，按参与度加权聚类，由宿主模型综合成一份带引用的简报。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/last30days-skill-research-20260729.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-08-03"
+timestamp: "2026-08-04"
 ---
 
 # 指针概念

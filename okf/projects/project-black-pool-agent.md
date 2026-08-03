@@ -4,7 +4,7 @@ title: "black-pool-agent 子项目上下文"
 description: "1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /"
 resource: "/projects/black-pool-agent/CONTEXT.md"
 tags: ["data_layer:curated", "sub-project-context", "milestone"]
-timestamp: "2026-08-03"
+timestamp: "2026-08-04"
 ---
 
 # 指针概念

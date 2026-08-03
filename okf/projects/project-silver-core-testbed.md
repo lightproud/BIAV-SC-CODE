@@ -4,7 +4,7 @@ title: "silver-core-testbed 子项目上下文"
 description: "1. **消费者，不是家族第三包**：`private: true`、版本恒 `0.0.0`（锁步豁免）、永不发布"
 resource: "/projects/silver-core-testbed/CONTEXT.md"
 tags: ["data_layer:curated", "sub-project-context", "milestone"]
-timestamp: "2026-08-03"
+timestamp: "2026-08-04"
 ---
 
 # 指针概念

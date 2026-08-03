@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-03",
+  "generated": "2026-08-04",
   "stats": {
     "nodes": 394,
-    "edges": 437
+    "edges": 438
   },
   "nodes": [
     {
@@ -4712,14 +4712,32 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/77923.md",
       "rel": "提及:卡斯托尔",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:潘狄娅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15565.md",
       "rel": "提及:诺缔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15591.md",
+      "rel": "提及:艾继丝",
       "rel_type": "mention"
     },
     {
@@ -4748,6 +4766,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15604.md",
       "rel": "提及:莱克",
       "rel_type": "mention"
@@ -4756,24 +4780,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130901.md",
-      "rel": "提及:莫丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:熔朵",
       "rel_type": "mention"
     },
     {
@@ -6224,14 +6230,32 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/77923.md",
       "rel": "提及:卡斯托尔",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:潘狄娅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15565.md",
       "rel": "提及:诺缔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15591.md",
+      "rel": "提及:艾继丝",
       "rel_type": "mention"
     },
     {
@@ -6260,6 +6284,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15604.md",
       "rel": "提及:莱克",
       "rel_type": "mention"
@@ -6268,24 +6298,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130901.md",
-      "rel": "提及:莫丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:熔朵",
       "rel_type": "mention"
     },
     {
@@ -6304,12 +6316,6 @@
       "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/steam_discussion.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
