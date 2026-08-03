@@ -1,3 +1,109 @@
+diff --git a/agent/usage_pricing.py b/agent/usage_pricing.py
+index 04d34d1..8a01575 100644
+--- a/agent/usage_pricing.py
++++ b/agent/usage_pricing.py
+@@ -1172,12 +1172,81 @@ def _pricing_entry_from_metadata(
+     )
+ 
+ 
++_USER_PRICES_CACHE: Optional[tuple] = None
++
++
++def _load_user_price_table() -> dict:
++    """Intranet price injection: HERMES_HOME/model-prices.json (costs per million tokens).
++
++    Shape: {"models": {"<model-substring>": {"input": 4.0, "output": 12.0,
++    "cache_read": 0.4, "cache_write": 0}}}. Missing or invalid file -> {}
++    (silent; pricing falls through to upstream resolution).
++    """
++    global _USER_PRICES_CACHE
++    import json as _json
++    import os as _os
++
++    path = _os.path.join(
++        _os.environ.get("HERMES_HOME", _os.path.expanduser("~/.hermes")),
++        "model-prices.json",
++    )
++    try:
++        mtime = _os.path.getmtime(path)
++    except OSError:
++        return {}
++    if _USER_PRICES_CACHE and _USER_PRICES_CACHE[0] == mtime:
++        return _USER_PRICES_CACHE[1]
++    try:
++        with open(path, encoding="utf-8") as fh:
++            data = _json.load(fh)
++        models = data.get("models") or {}
++        if not isinstance(models, dict):
++            models = {}
++    except (OSError, ValueError):
++        models = {}
++    _USER_PRICES_CACHE = (mtime, models)
++    return models
++
++
++def _user_pricing_entry(model_name: str) -> Optional[PricingEntry]:
++    table = _load_user_price_table()
++    if not table:
++        return None
++    name = (model_name or "").lower()
++    best = None
++    best_len = -1
++    for key, spec in table.items():
++        k = str(key).lower()
++        if (k == name or k in name) and len(k) > best_len and isinstance(spec, dict):
++            best, best_len = spec, len(k)
++    if best is None:
++        return None
++
++    def _d(value: Any) -> Optional[Decimal]:
++        try:
++            return Decimal(str(value)) if value is not None else None
++        except Exception:  # noqa: BLE001 - bad cell must not break pricing
++            return None
++
++    return PricingEntry(
++        input_cost_per_million=_d(best.get("input")),
++        output_cost_per_million=_d(best.get("output")),
++        cache_read_cost_per_million=_d(best.get("cache_read")),
++        cache_write_cost_per_million=_d(best.get("cache_write")),
++        source="user_override",
++        pricing_version="model-prices.json",
++    )
++
++
+ def get_pricing_entry(
+     model_name: str,
+     provider: Optional[str] = None,
+     base_url: Optional[str] = None,
+     api_key: Optional[str] = None,
+ ) -> Optional[PricingEntry]:
++    user_entry = _user_pricing_entry(model_name)
++    if user_entry:
++        return user_entry
+     route = resolve_billing_route(model_name, provider=provider, base_url=base_url)
+     if route.billing_mode == "subscription_included":
+         return PricingEntry(
+@@ -1305,6 +1374,9 @@ def estimate_usage_cost(
+     base_url: Optional[str] = None,
+     api_key: Optional[str] = None,
+ ) -> CostResult:
++    user_entry = _user_pricing_entry(model_name)
++    if user_entry:
++        return user_entry
+     route = resolve_billing_route(model_name, provider=provider, base_url=base_url)
+     if route.billing_mode == "subscription_included":
+         return CostResult(
+@@ -1387,6 +1459,9 @@ def has_known_pricing(
+     Uses direct lookup instead of routing through the full estimation
+     pipeline — avoids creating dummy usage objects just to check status.
+     """
++    user_entry = _user_pricing_entry(model_name)
++    if user_entry:
++        return user_entry
+     route = resolve_billing_route(model_name, provider=provider, base_url=base_url)
+     if route.billing_mode == "subscription_included":
+         return True
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
 index 6e249aa..d3e9686 100644
 --- a/apps/desktop/electron/main.ts
