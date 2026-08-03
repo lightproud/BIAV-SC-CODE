@@ -12,7 +12,7 @@ setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
 set "SD=%~dp0"
 set "DEVROOT=%SD%.."
-set "LOG=%SD%assemble.log"
+set "LOG=%DEVROOT%\assemble.log"
 echo [%date% %time%] assemble start > "%LOG%"
 
 rem -- 1. 选包 --
