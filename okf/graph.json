@@ -2080,9 +2080,9 @@
       "tier": "search"
     },
     {
-      "id": "/projects/project-silver-core-hermes.md",
+      "id": "/projects/project-black-pool-hermes.md",
       "type": "documentation",
-      "title": "silver-core-hermes 子项目上下文",
+      "title": "black-pool-hermes 子项目上下文",
       "tags": [
         "data_layer:curated",
         "sub-project-context",
@@ -7022,7 +7022,7 @@
     },
     {
       "source": "/projects/entry-claude-md.md",
-      "target": "/projects/project-silver-core-hermes.md",
+      "target": "/projects/project-black-pool-hermes.md",
       "rel": "入口→上下文",
       "rel_type": "cross"
     },

@@ -2643,11 +2643,11 @@
       "tier": "search",
       "degree": 3
     },
-    "/projects/project-silver-core-hermes.md": {
+    "/projects/project-black-pool-hermes.md": {
       "type": "documentation",
-      "title": "silver-core-hermes 子项目上下文",
+      "title": "black-pool-hermes 子项目上下文",
       "description": "1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /",
-      "resource": "/projects/silver-core-hermes/CONTEXT.md",
+      "resource": "/projects/black-pool-hermes/CONTEXT.md",
       "tags": [
         "data_layer:curated",
         "sub-project-context",
@@ -9070,7 +9070,7 @@
         "cross"
       ],
       [
-        "/projects/project-silver-core-hermes.md",
+        "/projects/project-black-pool-hermes.md",
         "入口→上下文",
         "cross"
       ],
@@ -9166,7 +9166,7 @@
         "cross"
       ]
     ],
-    "/projects/project-silver-core-hermes.md": [
+    "/projects/project-black-pool-hermes.md": [
       [
         "/projects/entry-claude-md.md",
         "入口→上下文",
@@ -10659,7 +10659,7 @@
       "/projects/entry-readme.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -12011,7 +12011,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -12252,7 +12252,7 @@
       "/memory/morimens-context.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -12287,7 +12287,7 @@
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-research-best-wiki-features.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -12424,7 +12424,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -12793,7 +12793,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -13280,7 +13280,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
     "dirs": [
-      "/projects/project-silver-core-hermes.md"
+      "/projects/project-black-pool-hermes.md"
     ],
     "discord": [
       "/community/community-discord.md",
@@ -13530,7 +13530,7 @@
     "entry": [
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/project-silver-core-hermes.md"
+      "/projects/project-black-pool-hermes.md"
     ],
     "equivalent": [
       "/projects/silver-core-sdk-doc-memory.md"
@@ -13582,7 +13582,7 @@
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md"
     ],
     "external": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "extraction": [
@@ -14069,7 +14069,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "hermes": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
@@ -14760,7 +14760,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -15341,7 +15341,7 @@
       "/projects/entry-readme.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -15616,7 +15616,7 @@
     "milestone": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -16112,7 +16112,7 @@
       "/memory/memory-ext-collab-event-playbook.md"
     ],
     "plugins": [
-      "/projects/project-silver-core-hermes.md"
+      "/projects/project-black-pool-hermes.md"
     ],
     "plugmem": [
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
@@ -16140,7 +16140,7 @@
       "/story/story_units.md"
     ],
     "points": [
-      "/projects/project-silver-core-hermes.md"
+      "/projects/project-black-pool-hermes.md"
     ],
     "policy": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -16414,7 +16414,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -16469,7 +16469,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -17644,7 +17644,7 @@
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -17703,7 +17703,7 @@
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
     "skills": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/wiki-data/wiki-data-character-skills.md"
     ],
     "skip": [
@@ -18019,7 +18019,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -18869,7 +18869,7 @@
       "/characters/54116.md",
       "/characters/77913.md",
       "/characters/77917.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "一半": [
@@ -19136,7 +19136,7 @@
     "上下": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -19227,7 +19227,7 @@
       "/memory/memory-ext-skill-authoring-standard.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -19457,7 +19457,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -19773,7 +19773,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -20145,7 +20145,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -21605,7 +21605,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -22666,7 +22666,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -22977,7 +22977,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -23504,7 +23504,7 @@
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "侵入": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "侵蚀": [
@@ -24842,7 +24842,7 @@
       "/characters/15562.md"
     ],
     "切能": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "切锁": [
@@ -25099,7 +25099,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -28666,7 +28666,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -29549,7 +29549,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -29775,7 +29775,7 @@
       "/memory/project-status.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -30138,7 +30138,7 @@
     "官方": [
       "/README.md",
       "/projects/entry-readme.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -30246,7 +30246,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -31329,7 +31329,7 @@
       "/sources/youtube_comments.md"
     ],
     "展面": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "属公": [
@@ -32661,7 +32661,7 @@
       "/characters/77925.md"
     ],
     "心零": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "必填": [
@@ -33879,7 +33879,7 @@
     ],
     "扩展": [
       "/projects/project-game.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
@@ -34479,7 +34479,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -35107,7 +35107,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -35492,7 +35492,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -35974,7 +35974,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -36301,7 +36301,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -37079,7 +37079,7 @@
       "/characters/15602.md"
     ],
     "方扩": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "方技": [
@@ -38216,7 +38216,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -38705,7 +38705,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -39399,7 +39399,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -39644,7 +39644,7 @@
       "/assets/assets-narrative-structure.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-wiki.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
@@ -40228,7 +40228,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -40663,7 +40663,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -44025,7 +44025,7 @@
     "目上": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -46155,7 +46155,7 @@
       "/characters/15600.md",
       "/characters/15602.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
@@ -48130,7 +48130,7 @@
       "/memory/memory-archive-bpt-guidance-log.md"
     ],
     "走官": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "走有": [
@@ -48410,7 +48410,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -49197,7 +49197,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -50334,7 +50334,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -50629,7 +50629,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -51375,7 +51375,7 @@
       "/README.md"
     ],
     "零侵": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "零后": [
@@ -51602,7 +51602,7 @@
       "/memory/project-status.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -52544,7 +52544,7 @@
       "/memory/morimens-context.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -52571,7 +52571,7 @@
     "core": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -52698,7 +52698,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -53060,7 +53060,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -53905,7 +53905,7 @@
       "/sources/youtube_comments.md"
     ],
     "hermes": [
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
@@ -54140,7 +54140,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -54572,7 +54572,7 @@
     "milestone": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -54925,7 +54925,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -55405,7 +55405,7 @@
     "silver": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -55566,7 +55566,7 @@
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -55978,7 +55978,7 @@
     "上下": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -55991,7 +55991,7 @@
     "下文": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -56445,7 +56445,7 @@
     "子项": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -57466,7 +57466,7 @@
     "目上": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",
@@ -58010,7 +58010,7 @@
     "项目": [
       "/projects/project-game.md",
       "/projects/project-news.md",
-      "/projects/project-silver-core-hermes.md",
+      "/projects/project-black-pool-hermes.md",
       "/projects/project-silver-core-maestro-sdk.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/project-silver-core-testbed.md",

@@ -36,13 +36,13 @@ jobs:
       - name: Stage assembly copy
         run: |
           mkdir -p BlackPool
-          cp -r projects/silver-core-hermes/upstream BlackPool/app
+          cp -r projects/black-pool-hermes/upstream BlackPool/app
 
       - name: Apply Black Pool rebrand, private edition (rule engine)
-        run: python projects/silver-core-hermes/deploy/rebrand.py --apply BlackPool/app
+        run: python projects/black-pool-hermes/deploy/rebrand.py --apply BlackPool/app
 
       - name: Apply feature patches (whitelisted)
-        run: git apply --directory=BlackPool/app projects/silver-core-hermes/patches/conversation-cost-panel.patch
+        run: git apply --directory=BlackPool/app projects/black-pool-hermes/patches/conversation-cost-panel.patch
 
       - name: Portable CPython into bundle
         env:
@@ -79,15 +79,15 @@ jobs:
 
       - name: Launcher + bundle notes
         run: |
-          cp projects/silver-core-hermes/deploy/launcher.cmd BlackPool/
-          cp projects/silver-core-hermes/deploy/fix_venv_path.py BlackPool/
-          cp projects/silver-core-hermes/deploy/launch_desktop.py BlackPool/
+          cp projects/black-pool-hermes/deploy/launcher.cmd BlackPool/
+          cp projects/black-pool-hermes/deploy/fix_venv_path.py BlackPool/
+          cp projects/black-pool-hermes/deploy/launch_desktop.py BlackPool/
           # 组装根印章：editable 指针自愈的「旧根」依据（自愈后由脚本滚动更新）
           cygpath -w "$(pwd)/BlackPool" > BlackPool/bundle-root.txt
           {
             echo "Black Pool (黑池) portable bundle — private edition, brand v0.1.0 (win64, merged single dir)"
             echo "edition: private (black-pool-rebrand.patch + black-pool-intranet.patch)"
-            echo "pin: $(grep -m1 'pin tag' projects/silver-core-hermes/UPSTREAM.md || true)"
+            echo "pin: $(grep -m1 'pin tag' projects/black-pool-hermes/UPSTREAM.md || true)"
             echo "assembled: run ${GITHUB_RUN_ID} @ $(date -u +%Y-%m-%dT%H:%MZ)"
             echo "usage: copy the BlackPool folder anywhere, double-click launcher.cmd"
             echo "       (desktop UI by default; CLI = venv\\Scripts\\hermes.exe)"
@@ -160,5 +160,5 @@ jobs:
         run: |
           gh release view "${BUNDLE_TAG}" >/dev/null 2>&1 || \
             gh release create "${BUNDLE_TAG}" --title "Black Pool portable bundle (private edition)" \
-              --notes "Black Pool (黑池) v0.1.0 — rolling private-edition portable bundle assembled by CI. See projects/silver-core-hermes/deploy/README.md"
+              --notes "Black Pool (黑池) v0.1.0 — rolling private-edition portable bundle assembled by CI. See projects/black-pool-hermes/deploy/README.md"
           gh release upload "${BUNDLE_TAG}" black-pool-win64.zip --clobber
