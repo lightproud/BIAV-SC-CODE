@@ -1,16 +1,14 @@
 @echo off
-rem 双击防闪退外壳：把真正的执行放进 cmd /k 子窗——后面任何一步出事（含批处理
-rem 语法错这种 pause 都来不及跑的死法），窗口都停住可读；成功路径用 exit 0 关窗。
+rem Keep-window shell: rerun inside cmd /k so ANY failure stays readable.
 if not defined SC_LAUNCHER_KEEPWIN (
   set "SC_LAUNCHER_KEEPWIN=1"
   cmd /d /k call "%~f0" %*
   exit /b
 )
-rem Black Pool（黑池）便携整包启动器（cmd 批处理，零 PowerShell）。
-rem 合箱布局：python\（uv 托管 CPython）、venv\、app\（组装源树）、desktop\（win-unpacked）、
-rem home\（HERMES_HOME）与本文件同级。默认拉起 desktop；CLI 用法 launcher.cmd cli <args>。
-rem 自诊断：全程写 launcher.log；任何一步失败都停窗展示原因（不再闪退吞错）；
-rem desktop 由 launch_desktop.py 监督式拉起（捕获输出 + 探活 + 软渲染重试，治黑屏一闪即终）。
+rem Black Pool portable launcher (plain cmd, no PowerShell).
+rem Layout: python\ venv\ app\ desktop\ home\ next to this file.
+rem NOTE: keep rem lines ASCII-short - long UTF-8 comments desync the
+rem cmd parser under chcp 65001 (field-proven 2026-08-03).
 setlocal EnableExtensions
 chcp 65001 >nul
 set "ROOT=%~dp0"
@@ -19,14 +17,12 @@ echo [%date% %time%] launcher start ROOT=%ROOT% > "%LOG%"
 echo Black Pool 启动中，请稍候（本窗会显示进度，失败会停窗给出原因）...
 
 set "HERMES_HOME=%ROOT%home"
-rem 应用显示名（上游官方旋钮）：main.ts 的 APP_NAME 行因含 HERMES_ 被换装规则
-rem 跳线保留，兜底值仍是 'Hermes'——app.setName / About 面板 / 菜单标签全跟它走，
-rem 任务管理器与 Alt-Tab 因此漏显 Hermes。经环境针覆盖为 Black Pool（零侵入）。
+rem Display-name pin (upstream official knob).
 set "HERMES_DESKTOP_APP_NAME=Black Pool"
 set "PATH=%ROOT%venv\Scripts;%PATH%"
 if not exist "%HERMES_HOME%" mkdir "%HERMES_HOME%"
 
-rem -- 步骤 1：定位包内便携 CPython --
+rem -- step 1: locate bundled CPython --
 set "PYHOME="
 for /d %%D in ("%ROOT%python\cpython-*") do set "PYHOME=%%~fD"
 if not defined PYHOME (
@@ -38,7 +34,7 @@ if not defined PYHOME (
 )
 echo [ok] PYHOME=%PYHOME% >> "%LOG%"
 
-rem -- 步骤 2：venv 自愈（pyvenv.cfg home 指回当前位置；幂等） --
+rem -- step 2: venv self-heal (idempotent) --
 "%PYHOME%\python.exe" "%ROOT%fix_venv_path.py" "%ROOT%." >> "%LOG%" 2>&1
 if errorlevel 1 (
   echo [FAIL] fix_venv_path failed >> "%LOG%"
@@ -47,7 +43,7 @@ if errorlevel 1 (
   exit /b 1
 )
 
-rem -- 步骤 3：运行时健康自检（真启动 CLI 入口） --
+rem -- step 3: runtime import check --
 "%ROOT%venv\Scripts\python.exe" -c "import hermes_cli" >> "%LOG%" 2>&1
 if errorlevel 1 (
   echo [FAIL] runtime import check failed >> "%LOG%"
@@ -58,14 +54,14 @@ if errorlevel 1 (
 echo [ok] runtime import check passed >> "%LOG%"
 echo 运行时自检通过。
 
-rem -- CLI 模式：launcher.cmd cli <args> --
+rem -- CLI mode: launcher.cmd cli <args> --
 if /i "%~1"=="cli" (
   shift
   "%ROOT%venv\Scripts\hermes.exe" %2 %3 %4 %5 %6 %7 %8 %9
   exit /b %errorlevel%
 )
 
-rem -- 步骤 4：监督式拉起 desktop（捕获输出 + 探活 + 软渲染重试；未找到则回退 CLI） --
+rem -- step 4: supervised desktop start (fallback: CLI) --
 if not exist "%ROOT%launch_desktop.py" goto legacy_start
 if exist "%ROOT%desktop" (
   echo 正在启动桌面端，自检守窗约 25 秒，窗口正常出现后本窗自动关闭...
@@ -82,8 +78,7 @@ if exist "%ROOT%desktop" (
 goto cli_fallback
 
 :legacy_start
-rem 旧包没有监督器时的兜底（本文件可单独拷进旧 SilverCore 直接用）：
-rem 直接拉起 desktop，窗口停住等守密人确认桌面端是否出现。
+rem Fallback for bundles without the supervisor script.
 set "DESKTOP_EXE="
 for %%F in ("%ROOT%desktop\*.exe") do if not defined DESKTOP_EXE set "DESKTOP_EXE=%%~fF"
 if defined DESKTOP_EXE (
