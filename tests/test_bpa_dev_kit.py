@@ -117,7 +117,7 @@ def test_kit_has_zero_intranet_values(name):
 def test_kit_files_complete():
     for name in ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py",
                  "RUNBOOK.md", "launcher.cmd", "launch_desktop.py", "fix_venv_path.py",
-                 "make-shortcut.vbs"]:
+                 "make-shortcut.vbs", "kill_by_path.py"]:
         assert (KIT / name).is_file(), f"bpa-dev 套件缺件: {name}"
 
 
@@ -154,10 +154,18 @@ def test_launcher_kit_mode_dispatch_present():
     )
 
 
-def test_launcher_rem_lines_are_ascii_short():
-    """chcp 65001 解析器错位野战回归：launcher.cmd 的 rem 行必须 ASCII 且不超长。"""
-    for line in (KIT / "launcher.cmd").read_text(encoding="utf-8").splitlines():
+@pytest.mark.parametrize("name", ["launcher.cmd", "assemble.cmd", "deploy.cmd", "rollback.cmd"])
+def test_cmd_rem_lines_are_ascii_short(name):
+    """chcp 65001 解析器错位野战回归（两案实证）：套件 cmd 的 rem 行必须 ASCII 短行。"""
+    for line in (KIT / name).read_text(encoding="utf-8").splitlines():
         s = line.strip()
         if s.lower().startswith("rem"):
-            assert s.isascii(), f"launcher.cmd rem 行含非 ASCII（65001 错位风险）: {s[:60]}"
-            assert len(s) <= 100, f"launcher.cmd rem 行超长: {s[:60]}"
+            assert s.isascii(), f"{name} rem 行含非 ASCII（65001 错位风险）: {s[:60]}"
+            assert len(s) <= 100, f"{name} rem 行超长: {s[:60]}"
+
+
+def test_kill_by_path_noop_on_non_windows(tmp_path):
+    """路径杀进程器：非 Windows 空跑退出 0（管线可验）；Windows 行为靠野战。"""
+    r = subprocess.run([sys.executable, str(KIT / "kill_by_path.py"), str(tmp_path)],
+                       capture_output=True, text=True)
+    assert r.returncode == 0 and "no-op" in r.stdout

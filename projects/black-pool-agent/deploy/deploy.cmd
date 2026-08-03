@@ -1,6 +1,6 @@
 @echo off
-rem bpa-dev 部署器：staging 成品 -> 运行部署位（整目录替换 + 用户数据保全 + 回滚位）。
-rem 用法：deploy.cmd <部署目录>    或预设环境变量 BPA_DIR 后直接双击。
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 if not defined BPA_KEEPWIN (
   set "BPA_KEEPWIN=1"
   cmd /d /k call "%~f0" %*
@@ -12,13 +12,13 @@ set "SD=%~dp0"
 set "DEVROOT=%SD%.."
 set "LOG=%DEVROOT%\deploy.log"
 if not "%~1"=="" set "BPA_DIR=%~1"
-rem 目标地址属于「料」：一次写进 config\deploy-target.txt 后即可双击直跑（零参数）
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 if not defined BPA_DIR if exist "%DEVROOT%\config\deploy-target.txt" set /p BPA_DIR=<"%DEVROOT%\config\deploy-target.txt"
 if not defined BPA_DIR (
   echo 部署失败：未指定部署目录（参数或环境变量 BPA_DIR）。
   pause & exit /b 1
 )
-rem 相对路径一律按车间根（bpa-dev\）解析——整棵树搬盘符零改配置；绝不按当前窗口目录（会静默指错）
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 set "_ABS="
 if "%BPA_DIR:~1,1%"==":" set "_ABS=1"
 if "%BPA_DIR:~0,2%"=="\\" set "_ABS=1"
@@ -31,19 +31,23 @@ if not exist "%B%\MANIFEST.txt" (
   pause & exit /b 1
 )
 
-rem -- 1. 用户数据保全：旧 home 中新包缺失的文件补进来（不覆盖注入的 SOUL 等）--
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 if exist "%BPA_DIR%\home" (
   robocopy "%BPA_DIR%\home" "%B%\home" /e /xc /xn /xo /njh /njs /ndl /nfl >nul
   if errorlevel 8 (echo 部署失败：home 保全拷贝出错。& echo 详情见 %LOG% & pause & exit /b 1)
   echo 用户数据已保全（旧 home 增量并入，不覆盖新配置）
 )
 
-rem -- 2. 自清障轮换（field: every deploy hit dir locks; clear + retry） --
-rem 已知占用者三类：TSVN 图标缓存 / 桌面主程序 / 部署位内自家进程（含后端 python）
+rem -- 2. self-clearing rotation: kill known lockers, then retry --
+rem lockers: TSVN icon cache / desktop exe / any process running FROM the dir
+set "STPY="
+for /d %%D in ("%B%\python\cpython-*") do set "STPY=%%~fD\python.exe"
 taskkill /f /im TSVNCache.exe >nul 2>&1
 set "OLD_EXE="
 for %%F in ("%BPA_DIR%\desktop\*.exe") do if not defined OLD_EXE set "OLD_EXE=%%~nxF"
 if defined OLD_EXE taskkill /f /im "%OLD_EXE%" >nul 2>&1
+rem path-scoped kill via bundled python (wmic is gone on newer Windows)
+if defined STPY "%STPY%" "%SD%kill_by_path.py" "%BPA_DIR%" >> "%LOG%" 2>&1
 set "WQL=%BPA_DIR:\=\\%"
 wmic process where "ExecutablePath like '%WQL%\\%%'" call terminate >nul 2>&1
 ping -n 2 127.0.0.1 >nul
@@ -67,23 +71,24 @@ if exist "%BPA_DIR%" (
   if exist "%BPA_DIR%" (
     set /a _TRIES+=1
     if !_TRIES! geq 5 goto rot_fail
-    echo 旧目录占用中，自动清障后重试 !_TRIES!/5 ...
+    echo 目录占用，清障重试 !_TRIES!/5 ...
     taskkill /f /im TSVNCache.exe >nul 2>&1
     if defined OLD_EXE taskkill /f /im "%OLD_EXE%" >nul 2>&1
+    if defined STPY "%STPY%" "%SD%kill_by_path.py" "%BPA_DIR%" >> "%LOG%" 2>&1
     ping -n 3 127.0.0.1 >nul
     goto rot_move
   )
 )
 goto rot_done
 :rot_fail
-echo 部署失败：清障重试 5 轮后目录仍被占用。
-echo 请关闭浏览过该目录的资源管理器窗口/编辑器，或用 resmon 的
-echo 「CPU - 关联的句柄」搜索目录名找到占用进程后重试。
-echo 详情见 %LOG%
+echo 部署失败：重试 5 轮仍被占用。
+echo 排查：关掉浏览该目录的窗口；
+echo 或 resmon 句柄搜目录名找占用者。
+echo 日志：%LOG%
 pause & exit /b 1
 :rot_done
 
-rem -- 3. 上新 --
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 move "%B%" "%BPA_DIR%" >nul || (
   echo 部署失败：成品搬运出错；旧版仍在 %BPA_DIR%.old 可手工恢复。
   echo 详情见 %LOG% & pause & exit /b 1
