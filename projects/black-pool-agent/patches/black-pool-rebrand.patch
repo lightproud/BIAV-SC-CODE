@@ -40812,7 +40812,7 @@ index 4523f92..1d5a405 100644
  
      # Managed scope: surface that some settings are administrator-pinned so the
 diff --git a/hermes_cli/config_defaults.py b/hermes_cli/config_defaults.py
-index dd1cfe8..394b9e5 100644
+index dd1cfe8..dfc3652 100644
 --- a/hermes_cli/config_defaults.py
 +++ b/hermes_cli/config_defaults.py
 @@ -1,4 +1,4 @@
@@ -40821,6 +40821,15 @@ index dd1cfe8..394b9e5 100644
  
  Pure-data leaf module: DEFAULT_CONFIG and OPTIONAL_ENV_VARS, extracted
  verbatim from hermes_cli/config.py. Must not import from hermes_cli.config.
+@@ -1078,7 +1078,7 @@ DEFAULT_CONFIG = {
+         # handful of gateway slash-command replies).  Does NOT affect agent
+         # responses, log lines, tool outputs, or slash-command descriptions.
+         # Supported: en, zh, ja, de, es, fr, tr, uk.  Unknown values fall back to en.
+-        "language": "en",
++        "language": "zh",
+         # TUI busy indicator style: kaomoji (default), emoji, unicode (braille
+         # spinner), or ascii.  Live-swappable via `/indicator <style>`.
+         "tui_status_indicator": "kaomoji",
 @@ -1887,7 +1887,7 @@ DEFAULT_CONFIG = {
      # WhatsApp platform settings (gateway mode)
      "whatsapp": {
