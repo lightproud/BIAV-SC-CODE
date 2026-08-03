@@ -9,7 +9,7 @@
   "stats": {
     "concepts": 394,
     "edges": 437,
-    "terms": 6996,
+    "terms": 6995,
     "by_type": {
       "character": 72,
       "dataset": 94,
@@ -1301,7 +1301,7 @@
     "/community/community-bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区全量档案",
-      "description": "bahamut 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "bahamut 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 6 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -1315,7 +1315,7 @@
     "/community/community-bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区全量档案",
-      "description": "bilibili 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 7 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "bilibili 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 8 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -1329,7 +1329,7 @@
     "/community/community-discord.md": {
       "type": "dataset",
       "title": "discord 社区全量档案",
-      "description": "discord 平台全量档案层（分析镜头）：百万级条（精确值见指针本体）/ 35 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "discord 平台全量档案层（分析镜头）：百万级条（精确值见指针本体）/ 36 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -1343,7 +1343,7 @@
     "/community/community-google-play.md": {
       "type": "dataset",
       "title": "google_play 社区全量档案",
-      "description": "google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 32 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 33 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1357,7 +1357,7 @@
     "/community/community-index.md": {
       "type": "dataset",
       "title": "社区全量档案分析索引",
-      "description": "全量社区档案静态分析台账：百万级 条（精确值见指针本体）/ 17 平台，词典法零 ML。discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Rele",
+      "description": "全量社区档案静态分析台账：百万级 条（精确值见指针本体）/ 17 平台，词典法零 ML。discord 全量历史驻 BIAV-SC-DATA 数据仓 Record/Community/discord/，经环境变量 BIAV_SC_DATA_ROOT",
       "resource": "/projects/news/index/community_index.json",
       "tags": [
         "data_layer:full_archive",
@@ -1371,7 +1371,7 @@
     "/community/community-note-com.md": {
       "type": "dataset",
       "title": "note_com 社区全量档案",
-      "description": "note_com 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "note_com 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 3 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/note_com/",
       "tags": [
         "data_layer:full_archive",
@@ -1385,7 +1385,7 @@
     "/community/community-pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区全量档案",
-      "description": "pixiv 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 30 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "pixiv 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 31 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -1427,7 +1427,7 @@
     "/community/community-steam.md": {
       "type": "dataset",
       "title": "steam 社区全量档案",
-      "description": "steam 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 24 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "steam 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 25 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -1441,7 +1441,7 @@
     "/community/community-stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区全量档案",
-      "description": "stopgame 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "stopgame 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -1455,7 +1455,7 @@
     "/community/community-taptap.md": {
       "type": "dataset",
       "title": "taptap 社区全量档案",
-      "description": "taptap 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "taptap 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 3 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
@@ -1469,7 +1469,7 @@
     "/community/community-timeline.md": {
       "type": "dataset",
       "title": "社区活动时序（全量）",
-      "description": "全量社区月度时序：2016-06..2026-07（39 月），vol_index 抓量异常（本月量÷前6月中位数）。",
+      "description": "全量社区月度时序：2016-06..2026-08（40 月），vol_index 抓量异常（本月量÷前6月中位数）。",
       "resource": "/projects/news/index/community_index.json",
       "tags": [
         "data_layer:full_archive",
@@ -1483,7 +1483,7 @@
     "/community/community-weibo.md": {
       "type": "dataset",
       "title": "weibo 社区全量档案",
-      "description": "weibo 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weibo 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -1525,7 +1525,7 @@
     "/community/community-youtube.md": {
       "type": "dataset",
       "title": "youtube 社区全量档案",
-      "description": "youtube 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 15 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "youtube 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 16 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4830,7 +4830,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3384 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3389 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4858,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1361 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1363 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4900,7 +4900,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 616 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 617 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4942,7 +4942,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5372 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5374 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4984,7 +4984,7 @@
     "/sources/taptap.md": {
       "type": "dataset",
       "title": "taptap 社区数据源",
-      "description": "taptap 平台采集档案，全量 18 条，健康度 active。",
+      "description": "taptap 平台采集档案，全量 19 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
@@ -5012,7 +5012,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 12135 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 12150 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5026,7 +5026,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9648 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 9668 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5040,7 +5040,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3225 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3226 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -11292,6 +11292,7 @@
     ],
     "biav": [
       "/assets/assets-chat-onboarding-snippet.md",
+      "/community/community-index.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-lessons-archive.md",
       "/projects/silver-core-sdk-doc-positioning.md",
@@ -13013,9 +13014,6 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/wiki-data/wiki-data-drops-by-item.md"
     ],
-    "de": [
-      "/community/community-index.md"
-    ],
     "dead": [
       "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
@@ -13931,7 +13929,6 @@
       "/characters/95786.md"
     ],
     "git": [
-      "/community/community-index.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
@@ -16997,9 +16994,6 @@
       "/projects/project-silver-core-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
-    "rele": [
-      "/community/community-index.md"
-    ],
     "releases": [
       "/README.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
@@ -17361,6 +17355,9 @@
     "room": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
+    "root": [
+      "/community/community-index.md"
+    ],
     "round": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
@@ -17454,6 +17451,7 @@
     ],
     "sc": [
       "/assets/assets-chat-onboarding-snippet.md",
+      "/community/community-index.md",
       "/memory/memory-ext-lessons-archive.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
@@ -18223,9 +18221,6 @@
     "three": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/projects/silver-core-sdk-doc-concurrency.md"
-    ],
-    "tier": [
-      "/community/community-index.md"
     ],
     "tiktok": [
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
@@ -24428,8 +24423,7 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "几十": [
-      "/community/community-note-com.md",
-      "/community/community-stopgame.md"
+      "/community/community-note-com.md"
     ],
     "凯刻斯": [
       "/characters/15594.md"
@@ -25783,8 +25777,7 @@
       "/characters/15571.md"
     ],
     "十条": [
-      "/community/community-note-com.md",
-      "/community/community-stopgame.md"
+      "/community/community-note-com.md"
     ],
     "千级": [
       "/community/community-bilibili.md",
@@ -26464,6 +26457,7 @@
       "/characters/15572.md"
     ],
     "变量": [
+      "/community/community-index.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "变魔": [
@@ -27059,6 +27053,9 @@
     "史消": [
       "/memory/memory-ext-discord-archiver-design.md"
     ],
+    "史驻": [
+      "/community/community-index.md"
+    ],
     "号一": [
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
@@ -27261,8 +27258,7 @@
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "后永": [
-      "/characters/15586.md",
-      "/community/community-index.md"
+      "/characters/15586.md"
     ],
     "后的": [
       "/characters/15596.md"
@@ -28390,6 +28386,9 @@
     ],
     "境之": [
       "/characters/15566.md"
+    ],
+    "境变": [
+      "/community/community-index.md"
     ],
     "墙无": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -30967,8 +30966,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "少条": [
-      "/community/community-note-com.md",
-      "/community/community-stopgame.md"
+      "/community/community-note-com.md"
     ],
     "尖刺": [
       "/characters/15565.md"
@@ -33686,8 +33684,7 @@
     ],
     "或更": [
       "/characters/15572.md",
-      "/community/community-note-com.md",
-      "/community/community-stopgame.md"
+      "/community/community-note-com.md"
     ],
     "或植": [
       "/characters/77925.md"
@@ -34783,6 +34780,9 @@
     "据之": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
     ],
+    "据仓": [
+      "/community/community-index.md"
+    ],
     "据以": [
       "/story/story_layer_readme.md"
     ],
@@ -34996,9 +34996,6 @@
     "接表": [
       "/README.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
-    ],
-    "接读": [
-      "/community/community-index.md"
     ],
     "接零": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -36661,6 +36658,7 @@
       "/assets/assets-sentinel-baseline.md",
       "/assets/persona-erica.md",
       "/characters/15603.md",
+      "/community/community-index.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -37223,8 +37221,7 @@
       "/characters/77922.md"
     ],
     "无需": [
-      "/README.md",
-      "/community/community-index.md"
+      "/README.md"
     ],
     "既不": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
@@ -37709,8 +37706,7 @@
       "/characters/77922.md"
     ],
     "更少": [
-      "/community/community-note-com.md",
-      "/community/community-stopgame.md"
+      "/community/community-note-com.md"
     ],
     "更强": [
       "/characters/15598.md",
@@ -38948,8 +38944,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
     "条或": [
-      "/community/community-note-com.md",
-      "/community/community-stopgame.md"
+      "/community/community-note-com.md"
     ],
     "条战": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
@@ -41120,9 +41115,6 @@
       "/characters/15588.md",
       "/characters/77917.md"
     ],
-    "永驻": [
-      "/community/community-index.md"
-    ],
     "汀克特": [
       "/characters/15574.md"
     ],
@@ -42447,6 +42439,7 @@
       "/characters/54117.md"
     ],
     "环境": [
+      "/community/community-index.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "环打": [
@@ -43224,7 +43217,8 @@
       "/community/community-arca-live.md",
       "/community/community-bahamut.md",
       "/community/community-pixiv.md",
-      "/community/community-ruliweb.md"
+      "/community/community-ruliweb.md",
+      "/community/community-stopgame.md"
     ],
     "的一": [
       "/characters/15577.md",
@@ -44074,7 +44068,6 @@
     "直接": [
       "/README.md",
       "/assets/assets-chat-onboarding-snippet.md",
-      "/community/community-index.md",
       "/memory/memory-ext-active-policy-direct-push-main.md"
     ],
     "直推": [
@@ -45384,6 +45377,7 @@
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
       "/community/community-steam.md",
+      "/community/community-stopgame.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -45552,6 +45546,9 @@
     ],
     "经济": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
+    ],
+    "经环": [
+      "/community/community-index.md"
     ],
     "经符": [
       "/memory/memory-ext-knowledge-layer-design.md"
@@ -47934,7 +47931,6 @@
     ],
     "读取": [
       "/assets/assets-chat-onboarding-snippet.md",
-      "/community/community-index.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -51418,9 +51414,6 @@
     ],
     "雾境": [
       "/characters/94450.md"
-    ],
-    "需从": [
-      "/community/community-index.md"
     ],
     "需另": [
       "/resource/resource-proposal-memory-charter-expansion-eval-20260729.md"

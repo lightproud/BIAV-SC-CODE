@@ -4,7 +4,7 @@ title: "official 社区数据源"
 description: "official 平台采集档案，全量 347 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/steam/global/news/"
 tags: ["data_layer:full_archive", "platform:official", "health:degraded"]
-timestamp: "2026-08-03T02:37:09.873243+00:00"
+timestamp: "2026-08-03T06:23:39.449528+00:00"
 ---
 
 # 数据层指针
