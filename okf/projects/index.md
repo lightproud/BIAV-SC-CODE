@@ -6,9 +6,9 @@
 
 * [CLAUDE.md（AI 统一入口 · 运行时强约束权威）](/projects/entry-claude-md.md) - 银芯是黑池的「眼睛和耳朵」：采集 + 整理外部信息往黑池送，黑池吃完不吐回。
 * [README.md（人 + AI 共用主入口）](/projects/entry-readme.md) - 忘却前夜（忘卻前夜 / Morimens）的**社区知识平台 + 黑池信息入口**。本仓库由忘却前夜官方授权制作人维护，引用公开可查阅的游戏资料。
+* [black-pool-hermes 子项目上下文](/projects/project-black-pool-hermes.md) - 1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /
 * [game 子项目上下文](/projects/project-game.md) - **game = 守密人个人兴趣项目（主）+ 未来扩展可能 ⓐⓒ（备）**
 * [news 子项目上下文](/projects/project-news.md) - **news = 银芯二核心使命之 #1「黑池信息入口」核心载体**
-* [black-pool-hermes 子项目上下文](/projects/project-black-pool-hermes.md) - 1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /
 * [silver-core-maestro-sdk 子项目上下文](/projects/project-silver-core-maestro-sdk.md) - 编排 SDK 持有分子:钟、跨会话状态、会话装配。代理 SDK(`projects/silver-core-sdk/`,
 * [silver-core-sdk 子项目上下文](/projects/project-silver-core-sdk.md) - Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
 * [silver-core-testbed 子项目上下文](/projects/project-silver-core-testbed.md) - 1. **消费者，不是家族第三包**：`private: true`、版本恒 `0.0.0`（锁步豁免）、永不发布

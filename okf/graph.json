@@ -2058,6 +2058,17 @@
       "tier": "search"
     },
     {
+      "id": "/projects/project-black-pool-hermes.md",
+      "type": "documentation",
+      "title": "black-pool-hermes 子项目上下文",
+      "tags": [
+        "data_layer:curated",
+        "sub-project-context",
+        "milestone"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/projects/project-game.md",
       "type": "documentation",
       "title": "game 子项目上下文",
@@ -2072,17 +2083,6 @@
       "id": "/projects/project-news.md",
       "type": "documentation",
       "title": "news 子项目上下文",
-      "tags": [
-        "data_layer:curated",
-        "sub-project-context",
-        "milestone"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/project-black-pool-hermes.md",
-      "type": "documentation",
-      "title": "black-pool-hermes 子项目上下文",
       "tags": [
         "data_layer:curated",
         "sub-project-context",
@@ -7010,6 +7010,12 @@
     },
     {
       "source": "/projects/entry-claude-md.md",
+      "target": "/projects/project-black-pool-hermes.md",
+      "rel": "入口→上下文",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
       "target": "/projects/project-game.md",
       "rel": "入口→上下文",
       "rel_type": "cross"
@@ -7017,12 +7023,6 @@
     {
       "source": "/projects/entry-claude-md.md",
       "target": "/projects/project-news.md",
-      "rel": "入口→上下文",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/projects/entry-claude-md.md",
-      "target": "/projects/project-black-pool-hermes.md",
       "rel": "入口→上下文",
       "rel_type": "cross"
     },
