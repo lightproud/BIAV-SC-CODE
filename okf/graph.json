@@ -4742,20 +4742,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
+      "target": "/characters/15571.md",
+      "rel": "提及:珈伦",
       "rel_type": "mention"
     },
     {
@@ -4772,14 +4766,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
       "rel_type": "mention"
     },
     {
@@ -6260,20 +6260,14 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
+      "target": "/characters/15571.md",
+      "rel": "提及:珈伦",
       "rel_type": "mention"
     },
     {
@@ -6290,14 +6284,20 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
       "rel_type": "mention"
     },
     {

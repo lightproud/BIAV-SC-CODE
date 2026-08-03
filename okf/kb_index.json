@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 23
+      "degree": 25
     },
     "/characters/130375.md": {
       "type": "character",
@@ -337,7 +337,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15560.md": {
       "type": "character",
@@ -508,7 +508,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15572.md": {
       "type": "character",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 6
     },
     "/characters/15577.md": {
       "type": "character",
@@ -972,7 +972,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 1
     },
     "/characters/54116.md": {
       "type": "character",
@@ -1000,7 +1000,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77911.md": {
       "type": "character",
@@ -4816,7 +4816,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 617 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 618 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4830,7 +4830,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3415 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3417 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4900,7 +4900,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 618 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 619 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4914,7 +4914,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3806 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3825 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4942,7 +4942,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5377 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5378 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4956,7 +4956,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 169 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 170 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -5012,7 +5012,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 12180 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 12194 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5026,7 +5026,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9708 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 9728 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5040,7 +5040,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3233 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3234 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5653,6 +5653,11 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-reddit.md",
         "提及:Saya",
         "mention"
@@ -5748,6 +5753,11 @@
         "mention"
       ],
       [
+        "/sources/bilibili.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/sources/reddit.md",
         "提及:Saya",
         "mention"
@@ -5784,7 +5794,17 @@
     ],
     "/characters/130901.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:莫丝",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:莫丝",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:莫丝",
         "mention"
       ]
@@ -6184,6 +6204,16 @@
         "/characters/15588.md",
         "CV:二宫雪乃",
         "cv"
+      ],
+      [
+        "/community/community-bilibili.md",
+        "提及:珈伦",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:珈伦",
+        "mention"
       ]
     ],
     "/characters/15572.md": [
@@ -6241,11 +6271,6 @@
         "variant"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:墨菲",
         "mention"
@@ -6257,11 +6282,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:墨菲",
         "mention"
       ],
@@ -7481,17 +7501,7 @@
     ],
     "/characters/15604.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:莱克",
         "mention"
       ]
@@ -7530,22 +7540,12 @@
     ],
     "/characters/54117.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:哈姆林",
         "mention"
       ],
       [
         "/memory/decisions.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:哈姆林",
         "mention"
       ],
@@ -7909,18 +7909,13 @@
         "mention"
       ],
       [
-        "/characters/54117.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
         "/characters/15569.md",
         "提及:萝坦",
         "mention"
       ],
       [
-        "/characters/15576.md",
-        "提及:墨菲",
+        "/characters/15571.md",
+        "提及:珈伦",
         "mention"
       ],
       [
@@ -7934,13 +7929,18 @@
         "mention"
       ],
       [
-        "/characters/15604.md",
-        "提及:莱克",
+        "/characters/94450.md",
+        "提及:茉夏",
         "mention"
       ],
       [
-        "/characters/94450.md",
-        "提及:茉夏",
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/130901.md",
+        "提及:莫丝",
         "mention"
       ],
       [
@@ -9938,18 +9938,13 @@
         "mention"
       ],
       [
-        "/characters/54117.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
         "/characters/15569.md",
         "提及:萝坦",
         "mention"
       ],
       [
-        "/characters/15576.md",
-        "提及:墨菲",
+        "/characters/15571.md",
+        "提及:珈伦",
         "mention"
       ],
       [
@@ -9963,13 +9958,18 @@
         "mention"
       ],
       [
-        "/characters/15604.md",
-        "提及:莱克",
+        "/characters/94450.md",
+        "提及:茉夏",
         "mention"
       ],
       [
-        "/characters/94450.md",
-        "提及:茉夏",
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/130901.md",
+        "提及:莫丝",
         "mention"
       ],
       [
