@@ -175,6 +175,26 @@ def test_native_launcher_source_present_and_wired():
     assert "BPA_SILENT" in launcher and "%PAUSE_C%" in launcher, "launcher 静默模式缺失"
 
 
+def test_deploy_has_mirror_fallback_and_ascii_label_blocks():
+    """2026-08-04 野战回归（第三案）：① 改名被 CWD 型占用挡死时必须有就地
+    镜像退路（robocopy /mir 短重试）——CWD 锁只挡改名不挡覆盖；② goto 标签
+    之后的失败/回退块整块 ASCII——块内 UTF-8 echo 会让 65001 解析器错位，
+    把半截汉字当命令执行。"""
+    text = (KIT / "deploy.cmd").read_text(encoding="utf-8")
+    assert ":rot_mirror" in text and "/mir" in text and "/r:2" in text, (
+        "deploy.cmd 缺就地镜像退路"
+    )
+    lines = text.splitlines()
+    start = next(i for i, l in enumerate(lines) if l.strip() == ":rot_mirror")
+    end = next(i for i, l in enumerate(lines) if l.strip() == ":post_deploy")
+    block = lines[start:end]
+    bad = [l for l in block if not l.isascii()]
+    assert not bad, f"rot_mirror 块含非 ASCII 行（65001 错位风险）: {bad[:2]}"
+    assert not any("goto rot_fail" in l for l in lines), (
+        "旧 rot_fail 死路残留——应全部改走 rot_mirror 退路"
+    )
+
+
 def test_kill_by_path_noop_on_non_windows(tmp_path):
     """路径杀进程器：非 Windows 空跑退出 0（管线可验）；Windows 行为靠野战。"""
     r = subprocess.run([sys.executable, str(KIT / "kill_by_path.py"), str(tmp_path)],

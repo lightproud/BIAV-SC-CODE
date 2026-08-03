@@ -58,8 +58,8 @@ if exist "%BPA_DIR%.old" (
   rd /s /q "%BPA_DIR%.old" >nul 2>&1
   if exist "%BPA_DIR%.old" (
     set /a _TRIES+=1
-    if !_TRIES! geq 5 goto rot_fail
-    echo 回滚位清理被占用，重试 !_TRIES!/5 ...
+    if !_TRIES! geq 3 goto rot_mirror
+    echo 回滚位清理被占用，重试 !_TRIES!/3 ...
     ping -n 3 127.0.0.1 >nul
     goto rot_old
   )
@@ -70,8 +70,8 @@ if exist "%BPA_DIR%" (
   move "%BPA_DIR%" "%BPA_DIR%.old" >nul 2>&1
   if exist "%BPA_DIR%" (
     set /a _TRIES+=1
-    if !_TRIES! geq 5 goto rot_fail
-    echo 目录占用，清障重试 !_TRIES!/5 ...
+    if !_TRIES! geq 3 goto rot_mirror
+    echo 目录占用，清障重试 !_TRIES!/3 ...
     taskkill /f /im TSVNCache.exe >nul 2>&1
     if defined OLD_EXE taskkill /f /im "%OLD_EXE%" >nul 2>&1
     if defined STPY "%STPY%" "%SD%kill_by_path.py" "%BPA_DIR%" >> "%LOG%" 2>&1
@@ -79,20 +79,31 @@ if exist "%BPA_DIR%" (
     goto rot_move
   )
 )
-goto rot_done
-:rot_fail
-echo 部署失败：重试 5 轮仍被占用。
-echo 排查：关掉浏览该目录的窗口；
-echo 或 resmon 句柄搜目录名找占用者。
-echo 日志：%LOG%
-pause & exit /b 1
-:rot_done
-
+set "DEPLOY_MODE=rotate"
 rem (zh comment moved to RUNBOOK - 65001 parser desync)
 move "%B%" "%BPA_DIR%" >nul || (
   echo 部署失败：成品搬运出错；旧版仍在 %BPA_DIR%.old 可手工恢复。
   echo 详情见 %LOG% & pause & exit /b 1
 )
+goto post_deploy
+
+:rot_mirror
+rem Rotation blocked - typically a console/Explorer window whose CWD sits in
+rem the target dir. That CWD lock stops rename but NOT file overwrite, so
+rem fall back to an in-place mirror deploy. ASCII-only in this block:
+rem UTF-8 echo after goto labels desyncs the 65001 parser (field case 3).
+echo [mirror] dir busy - deploying in place. No rollback snapshot this round.
+robocopy "%B%" "%BPA_DIR%" /mir /r:2 /w:2 /njh /njs /ndl /nfl >> "%LOG%" 2>&1
+if errorlevel 8 (
+  echo [FAIL] mirror deploy blocked too - a target file is still locked.
+  echo Close Black Pool and any console in the target dir, then rerun.
+  echo Log: %LOG%
+  pause & exit /b 1
+)
+rd /s /q "%B%" >nul 2>&1
+set "DEPLOY_MODE=mirror"
+
+:post_deploy
 rem -- one-click icon entry: "Black Pool.lnk" next to launcher (icon from the exe) --
 set "BPA_EXE="
 for %%F in ("%BPA_DIR%\desktop\*.exe") do if not defined BPA_EXE set "BPA_EXE=%%~fF"
@@ -103,7 +114,12 @@ if defined BPA_EXE (
 )
 
 echo.
-echo 部署完成：%BPA_DIR%   （回滚位：%BPA_DIR%.old，rollback.cmd 一键回切）
+if "%DEPLOY_MODE%"=="mirror" (
+  echo 部署完成（就地覆盖模式）：%BPA_DIR%
+  echo 注意：本轮未刷新回滚位，rollback 回切的是更早版本。
+) else (
+  echo 部署完成：%BPA_DIR%   （回滚位：%BPA_DIR%.old，rollback.cmd 一键回切）
+)
 echo 启动：双击 %BPA_DIR%\launcher.cmd
 type "%BPA_DIR%\MANIFEST.txt"
 exit /b 0
