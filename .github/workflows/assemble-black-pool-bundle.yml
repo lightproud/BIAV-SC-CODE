@@ -105,8 +105,9 @@ jobs:
       - name: Native silent launcher (Black Pool.exe, embedded icon)
         run: |
           CSC="/c/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe"
-          "$CSC" /nologo /codepage:65001 /target:winexe /win32icon:projects/black-pool-agent/build/brand-assets/icon.ico \
-            /r:System.Windows.Forms.dll /out:"BlackPool/Black Pool.exe" \
+          # dash-style flags: Git Bash MSYS path-mangling eats /nologo-style switches
+          "$CSC" -nologo -codepage:65001 -target:winexe "-win32icon:projects/black-pool-agent/build/brand-assets/icon.ico" \
+            -r:System.Windows.Forms.dll "-out:BlackPool/Black Pool.exe" \
             projects/black-pool-agent/build/black-pool-launcher.cs
           ls -la "BlackPool/Black Pool.exe"
 
