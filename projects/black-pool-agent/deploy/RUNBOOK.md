@@ -39,6 +39,8 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
    则整棵树搬盘符零改配置；绝对路径如 `E:\BIAV-BP\black-pool-agent` 亦可。写好后**双击即部署**，rollback 同理）：旧 `home\` 用户数据增量并入
    新包（不覆盖注入的配置）→ 旧版让位 `<目录>.old` 回滚位 → 成品上位。
 3. **回滚** `rollback.cmd <部署目录>`：一键回切 `.old`，问题版留 `.failed-*` 供取证。
+4. **启动**：部署位双击 `launcher.cmd`；或直接双击**车间里的** `deploy\launcher.cmd`——
+   它检测到自己不在包内时，会按 `config\deploy-target.txt` 自动转发到部署位（kit 模式零写入）。
 
 ## 纪律（写给将来的自己）
 

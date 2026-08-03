@@ -144,6 +144,15 @@ def test_fix_venv_path_derives_old_root_without_stamp(tmp_path):
     assert r2.returncode == 0, "二跑必须幂等直通"
 
 
+def test_launcher_kit_mode_dispatch_present():
+    """车间双模入口（守密人 2026-08-03 诉求）：kit 里双击 launcher 须能经
+    deploy-target.txt 转发到部署位，且 kit 模式零写入（vendor 外链只读）。"""
+    text = (KIT / "launcher.cmd").read_text(encoding="utf-8")
+    assert "deploy-target.txt" in text and ":in_bundle" in text, (
+        "launcher.cmd 车间转发模式缺失"
+    )
+
+
 def test_launcher_rem_lines_are_ascii_short():
     """chcp 65001 解析器错位野战回归：launcher.cmd 的 rem 行必须 ASCII 且不超长。"""
     for line in (KIT / "launcher.cmd").read_text(encoding="utf-8").splitlines():
