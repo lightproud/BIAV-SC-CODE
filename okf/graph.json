@@ -4712,62 +4712,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15566.md",
-      "rel": "提及:希莱斯特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15598.md",
-      "rel": "提及:尤乌哈希",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/77923.md",
       "rel": "提及:卡斯托尔",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/95786.md",
-      "rel": "提及:杜勒赛因",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15572.md",
-      "rel": "提及:卡茜亚",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15573.md",
-      "rel": "提及:奥瑞塔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15574.md",
-      "rel": "提及:汀克特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15577.md",
-      "rel": "提及:菲茵特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15596.md",
-      "rel": "提及:泰旖丝",
+      "target": "/characters/15565.md",
+      "rel": "提及:诺缔拉",
       "rel_type": "mention"
     },
     {
@@ -4778,8 +4730,50 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/77926.md",
-      "rel": "提及:皮克曼",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:熔朵",
       "rel_type": "mention"
     },
     {
@@ -4924,6 +4918,12 @@
       "source": "/community/community-youtube.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -6224,62 +6224,14 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15566.md",
-      "rel": "提及:希莱斯特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15598.md",
-      "rel": "提及:尤乌哈希",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/77923.md",
       "rel": "提及:卡斯托尔",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/95786.md",
-      "rel": "提及:杜勒赛因",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15572.md",
-      "rel": "提及:卡茜亚",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15573.md",
-      "rel": "提及:奥瑞塔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15574.md",
-      "rel": "提及:汀克特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15577.md",
-      "rel": "提及:菲茵特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15596.md",
-      "rel": "提及:泰旖丝",
+      "target": "/characters/15565.md",
+      "rel": "提及:诺缔拉",
       "rel_type": "mention"
     },
     {
@@ -6290,8 +6242,50 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/77926.md",
-      "rel": "提及:皮克曼",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:熔朵",
       "rel_type": "mention"
     },
     {
@@ -6394,6 +6388,12 @@
       "source": "/sources/youtube.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
