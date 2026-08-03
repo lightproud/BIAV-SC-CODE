@@ -9,7 +9,7 @@
 ## 目录约定（脚本按此找料，缺哪个跳哪步）
 
 ```
-黑池\bpa-dev\
+E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-pool-agent）
 ├── releases\      # 进料：银芯 black-pool-bundle Release 下载的 zip（只进不改，留最近 2-3 版）
 │   └── CHECKSUMS.txt   # 每行含官方 SHA-256（Release 页 digest 可复制）；存在则强制验货
 ├── patches\       # 内网自持补丁（*.patch，git diff 格式，按文件名序应用）
@@ -34,7 +34,7 @@
 1. **组装** `assemble.cmd [zip名]`：验 SHA → 净台解压 → 打补丁（包内 Python 跑
    `apply_patch.py`，无需 git；任一张上下文不匹配即整体失败，绝不半打）→ 注配置
    插件 → 出 `staging\BlackPool\` + `MANIFEST.txt`（用了哪版 zip、哪些补丁，来历三行可查）。
-2. **部署** `deploy.cmd <部署目录>`（如 `D:\黑池\bpa`）：旧 `home\` 用户数据增量并入
+2. **部署** `deploy.cmd <部署目录>`（内网实名 `E:\BIAV-BP\black-pool-agent`）：旧 `home\` 用户数据增量并入
    新包（不覆盖注入的配置）→ 旧版让位 `<目录>.old` 回滚位 → 成品上位。
 3. **回滚** `rollback.cmd <部署目录>`：一键回切 `.old`，问题版留 `.failed-*` 供取证。
 

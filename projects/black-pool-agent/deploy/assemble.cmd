@@ -105,6 +105,6 @@ rem -- 7. MANIFEST（来历三行可查）--
 )
 echo.
 echo 组装完成：%B%
-echo 下一步：deploy.cmd ^<部署目录^>   （例：deploy.cmd D:\黑池\bpa）
+echo 下一步：deploy.cmd ^<部署目录^>   （例：deploy.cmd E:\BIAV-BP\black-pool-agent）
 echo 全程日志：%LOG%
 exit /b 0
