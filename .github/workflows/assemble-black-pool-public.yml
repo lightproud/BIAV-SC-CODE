@@ -75,7 +75,7 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: projects/black-pool-agent/upstream/apps/desktop/package-lock.json
+          cache-dependency-path: projects/black-pool-agent/upstream/package-lock.json
 
       - name: Build desktop (dir target, unsigned, merged into bundle)
         working-directory: BlackPool/app/apps/desktop
