@@ -463,9 +463,15 @@ INTRANET_POST_RULES = [
         "def get_pricing_entry(",
         BLACK_POOL_PRICES_PY,
     ),
+    # ⚠ 锚点必须含签名尾「-> Optional[PricingEntry]」：函数体首两行在本档案出现 3 次
+    # （get_pricing_entry / estimate_usage_cost / has_pricing 类布尔查询），引擎是全文
+    # replace——裸体锚会把 return user_entry 注进返回 CostResult 的函数，调用方取
+    # .amount_usd 即 AttributeError（2026-08-04 野战实证：BPA 每轮计费崩死）。
     (
+        ") -> Optional[PricingEntry]:\n"
         "    route = resolve_billing_route(model_name, provider=provider, base_url=base_url)\n"
         '    if route.billing_mode == "subscription_included":\n',
+        ") -> Optional[PricingEntry]:\n"
         "    user_entry = _user_pricing_entry(model_name)\n"
         "    if user_entry:\n"
         "        return user_entry\n"
