@@ -36089,7 +36089,7 @@ index 9088b1e..6bc124c 100644
  
    const suffix = pluginPathSuffix('pluginRest', path)
 diff --git a/apps/desktop/src/i18n/ar.ts b/apps/desktop/src/i18n/ar.ts
-index 0f37ba6..d7378b3 100644
+index 0f37ba6..2874781 100644
 --- a/apps/desktop/src/i18n/ar.ts
 +++ b/apps/desktop/src/i18n/ar.ts
 @@ -55,18 +55,18 @@ export const ar = defineLocale({
@@ -36554,6 +36554,15 @@ index 0f37ba6..d7378b3 100644
      lookingUpProviders: 'جار البحث عن المزوّدين...',
      collapse: 'طي',
      otherProviders: 'مزودون آخرون',
+@@ -1924,7 +1924,7 @@ export const ar = defineLocale({
+     chooseLater: 'سأختار مزوّدا لاحقا',
+     recommended: 'موصى به',
+     connected: 'متصل',
+-    featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم — الطريقة الموصى بها لتشغيل Hermes',
++    featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم',
+     fireworksPitch: 'نماذج مفتوحة سريعة مع استضافة Fireworks.',
+     openRouterPitch: 'مفتاح واحد لمئات النماذج — خيار افتراضي جيد',
+     apiKeyOptions: {
 @@ -1947,7 +1947,7 @@ export const ar = defineLocale({
        local: {
          short: 'مستضاف ذاتيا',
@@ -36632,7 +36641,7 @@ index 0f37ba6..d7378b3 100644
        fileChanged: url => `تغيّر الملف، جار إعادة تحميل المعاينة: ${url}`,
        filesChanged: (count, url) => `${count} تغييرات ملفات، جار إعادة تحميل المعاينة: ${url}`,
 diff --git a/apps/desktop/src/i18n/en.ts b/apps/desktop/src/i18n/en.ts
-index 6733eb4..f6f029e 100644
+index 6733eb4..5a01d60 100644
 --- a/apps/desktop/src/i18n/en.ts
 +++ b/apps/desktop/src/i18n/en.ts
 @@ -62,18 +62,18 @@ export const en: Translations = {
@@ -37178,6 +37187,15 @@ index 6733eb4..f6f029e 100644
      lookingUpProviders: 'Looking up providers...',
      collapse: 'Collapse',
      otherProviders: 'Other providers',
+@@ -2287,7 +2287,7 @@ export const en: Translations = {
+     chooseLater: "I'll choose a provider later",
+     recommended: 'Recommended',
+     connected: 'Connected',
+-    featuredPitch: 'One subscription, 300+ frontier models — the recommended way to run Hermes',
++    featuredPitch: 'One subscription, 300+ frontier models',
+     fireworksPitch: 'Direct model API — Fireworks-hosted frontier models',
+     openRouterPitch: 'One key, hundreds of models — a solid default',
+     apiKeyOptions: {
 @@ -2304,7 +2304,7 @@ export const en: Translations = {
        xai: { short: 'Grok models', description: 'Direct access to xAI Grok models.' },
        local: {
@@ -37333,7 +37351,7 @@ index 6733eb4..f6f029e 100644
      openImage: 'Open image',
      downloadImage: 'Download image',
 diff --git a/apps/desktop/src/i18n/ja.ts b/apps/desktop/src/i18n/ja.ts
-index fab8e07..8823a21 100644
+index fab8e07..fa5eca1 100644
 --- a/apps/desktop/src/i18n/ja.ts
 +++ b/apps/desktop/src/i18n/ja.ts
 @@ -62,18 +62,18 @@ export const ja = defineLocale({
@@ -37877,6 +37895,15 @@ index fab8e07..8823a21 100644
      lookingUpProviders: 'プロバイダーを検索中...',
      collapse: '折りたたむ',
      otherProviders: 'その他のプロバイダー',
+@@ -2129,7 +2129,7 @@ export const ja = defineLocale({
+     chooseLater: '後でプロバイダーを選択します',
+     recommended: '推奨',
+     connected: '接続済み',
+-    featuredPitch: '1 つのサブスクリプションで 300 以上の最先端モデル — Hermes を実行するための推奨方法',
++    featuredPitch: '1 つのサブスクリプションで 300 以上の最先端モデル',
+     fireworksPitch: '直接モデル API — Fireworks がホストする最先端モデル',
+     openRouterPitch: '1 つのキーで数百のモデル — 堅実なデフォルト',
+     apiKeyOptions: {
 @@ -2147,7 +2147,7 @@ export const ja = defineLocale({
        local: {
          short: 'セルフホスト',
@@ -38069,7 +38096,7 @@ index 499fc1d..736ce8a 100644
        boot.ready = originalReady
      }
 diff --git a/apps/desktop/src/i18n/zh-hant.ts b/apps/desktop/src/i18n/zh-hant.ts
-index 8a808df..5f03072 100644
+index 8a808df..08fe1f8 100644
 --- a/apps/desktop/src/i18n/zh-hant.ts
 +++ b/apps/desktop/src/i18n/zh-hant.ts
 @@ -62,18 +62,18 @@ export const zhHant = defineLocale({
@@ -38611,6 +38638,15 @@ index 8a808df..5f03072 100644
      lookingUpProviders: '正在查詢提供方...',
      collapse: '收合',
      otherProviders: '其他提供方',
+@@ -2061,7 +2061,7 @@ export const zhHant = defineLocale({
+     chooseLater: '稍後再選擇提供方',
+     recommended: '建議',
+     connected: '已連線',
+-    featuredPitch: '一個訂閱，300+ 前沿模型 — 執行 Hermes 的建議方式',
++    featuredPitch: '一個訂閱，300+ 前沿模型',
+     fireworksPitch: '直接模型 API — Fireworks 託管的前沿模型',
+     openRouterPitch: '一個金鑰，數百個模型 — 穩定的預設選擇',
+     apiKeyOptions: {
 @@ -2072,7 +2072,7 @@ export const zhHant = defineLocale({
        xai: { short: 'Grok 模型', description: '直接存取 xAI Grok 模型。' },
        local: {
@@ -38764,7 +38800,7 @@ index 8a808df..5f03072 100644
      openImage: '開啟圖片',
      downloadImage: '下載圖片',
 diff --git a/apps/desktop/src/i18n/zh.ts b/apps/desktop/src/i18n/zh.ts
-index c34d811..31fb061 100644
+index c34d811..3aa464a 100644
 --- a/apps/desktop/src/i18n/zh.ts
 +++ b/apps/desktop/src/i18n/zh.ts
 @@ -62,18 +62,18 @@ export const zh: Translations = {
@@ -39370,6 +39406,15 @@ index c34d811..31fb061 100644
      lookingUpProviders: '正在查找提供方...',
      collapse: '收起',
      otherProviders: '其他提供方',
+@@ -2476,7 +2476,7 @@ export const zh: Translations = {
+     chooseLater: '稍后再选择提供方',
+     recommended: '推荐',
+     connected: '已连接',
+-    featuredPitch: '一个订阅，300+ 前沿模型 — 运行 Hermes 的推荐方式',
++    featuredPitch: '一个订阅，300+ 前沿模型',
+     fireworksPitch: '直接模型 API — Fireworks 托管的前沿模型',
+     openRouterPitch: '一个密钥，数百个模型 — 稳妥的默认选择',
+     apiKeyOptions: {
 @@ -2487,7 +2487,7 @@ export const zh: Translations = {
        xai: { short: 'Grok 模型', description: '直接访问 xAI Grok 模型。' },
        local: {

@@ -230,28 +230,28 @@ BRAND_POST_RULES = [
         "<img alt=\"\" className=\"size-5 shrink-0 rounded\" src={assetPath('apple-touch-icon.png')} />",
         "<img alt=\"\" className=\"size-5 shrink-0 rounded\" src={assetPath('nous-portal-icon.png')} />",
     ),
-    # featuredPitch 归还 Hermes（守密人 2026-08-03 裁定「别说是 Black Pool 推荐，
-    # 这是 Hermes 官方的，跟我们无关」）：裸词规则误把 Nous 自家服务的宣传语
-    # 换上了黑池名——五语种逐条还原（该句描述的是对方订阅服务）。
+    # featuredPitch 砍后半句（守密人 2026-08-03 两裁：先「别说是 Black Pool 推荐」、
+    # 后「去掉后半段话就好」）：五语种统一只留「一个订阅，300+ 前沿模型」，
+    # 推荐措辞整段不留。
     (
         "featuredPitch: 'One subscription, 300+ frontier models — the recommended way to run Black Pool',",
-        "featuredPitch: 'One subscription, 300+ frontier models — the recommended way to run Hermes',",
+        "featuredPitch: 'One subscription, 300+ frontier models',",
     ),
     (
         "featuredPitch: '一个订阅，300+ 前沿模型 — 运行 Black Pool 的推荐方式',",
-        "featuredPitch: '一个订阅，300+ 前沿模型 — 运行 Hermes 的推荐方式',",
+        "featuredPitch: '一个订阅，300+ 前沿模型',",
     ),
     (
         "featuredPitch: '一個訂閱，300+ 前沿模型 — 執行 Black Pool 的建議方式',",
-        "featuredPitch: '一個訂閱，300+ 前沿模型 — 執行 Hermes 的建議方式',",
+        "featuredPitch: '一個訂閱，300+ 前沿模型',",
     ),
     (
         "featuredPitch: '1 つのサブスクリプションで 300 以上の最先端モデル — Black Pool を実行するための推奨方法',",
-        "featuredPitch: '1 つのサブスクリプションで 300 以上の最先端モデル — Hermes を実行するための推奨方法',",
+        "featuredPitch: '1 つのサブスクリプションで 300 以上の最先端モデル',",
     ),
     (
         "featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم — الطريقة الموصى بها لتشغيل Black Pool',",
-        "featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم — الطريقة الموصى بها لتشغيل Hermes',",
+        "featuredPitch: 'اشتراك واحد، أكثر من 300 نموذج متقدم',",
     ),
     # 状态栏版本芯片显示黑池版本（守密人 2026-08-03「右下角版本号是 0.19.1」；
     # 与 About 同口径：黑池版本为主）。unknown 态判定沿用原 undefined 语义。
