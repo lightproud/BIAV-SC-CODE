@@ -11,7 +11,7 @@ import os
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-MODULE_PATH = REPO / "projects" / "black-pool-agent" / "deploy" / "bpa-dev" / "deploy" / "launch_desktop.py"
+MODULE_PATH = REPO / "projects" / "black-pool-agent" / "deploy" / "bpa-dev" / "launch_desktop.py"
 
 _spec = importlib.util.spec_from_file_location("launch_desktop", MODULE_PATH)
 launch_desktop = importlib.util.module_from_spec(_spec)

@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 REPO = Path(__file__).resolve().parent.parent
-KIT = REPO / "projects" / "black-pool-agent" / "deploy" / "bpa-dev" / "deploy"
+KIT = REPO / "projects" / "black-pool-agent" / "deploy" / "bpa-dev"
 
 
 def _apply(root: Path, patch: str, check: bool = False) -> subprocess.CompletedProcess:

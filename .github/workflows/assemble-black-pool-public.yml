@@ -80,9 +80,9 @@ jobs:
 
       - name: Launcher + bundle notes
         run: |
-          cp projects/black-pool-agent/deploy/bpa-dev/deploy/launcher.cmd BlackPool/
-          cp projects/black-pool-agent/deploy/bpa-dev/deploy/fix_venv_path.py BlackPool/
-          cp projects/black-pool-agent/deploy/bpa-dev/deploy/launch_desktop.py BlackPool/
+          cp projects/black-pool-agent/deploy/bpa-dev/launcher.cmd BlackPool/
+          cp projects/black-pool-agent/deploy/bpa-dev/fix_venv_path.py BlackPool/
+          cp projects/black-pool-agent/deploy/bpa-dev/launch_desktop.py BlackPool/
           # 组装根印章：editable 指针自愈的「旧根」依据（自愈后由脚本滚动更新）
           cygpath -w "$(pwd)/BlackPool" > BlackPool/bundle-root.txt
           {
