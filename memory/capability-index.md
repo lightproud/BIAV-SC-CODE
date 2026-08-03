@@ -359,13 +359,13 @@
 
 ## 子项目（8）
 
-- **`black-pool-hermes`** — > **定位（守密人 2026-08-02 换轨裁定 + 同日施工边界文书）**：使命#2「通用 AI 底层能力开发基地」  
-  `projects/black-pool-hermes/`
+- **`black-pool-agent`** — > **定位（守密人 2026-08-02 换轨裁定 + 同日施工边界文书）**：使命#2「通用 AI 底层能力开发基地」  
+  `projects/black-pool-agent/`
 - **`game`** — 衍生游戏，退出主线，守密人个人兴趣，不主线派发。  
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
   `projects/news/`
-- **`silver-core-maestro-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定 + 文书裁 3）**：随家族转**纯维稳**——版本冻结、仅修影响生产的 bug、零新功能（载体换轨 `projects/black-pool-hermes/`；迁移终裁后冻结，触发线 `memory/todo.md` #T78）。  
+- **`silver-core-maestro-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定 + 文书裁 3）**：随家族转**纯维稳**——版本冻结、仅修影响生产的 bug、零新功能（载体换轨 `projects/black-pool-agent/`；迁移终裁后冻结，触发线 `memory/todo.md` #T78）。  
   `projects/silver-core-maestro-sdk/`
 - **`silver-core-sdk`** — > **维护态（守密人 2026-08-02 换轨裁定 + 施工边界文书裁 3）**：使命#2 载体已换轨  
   `projects/silver-core-sdk/`

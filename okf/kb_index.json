@@ -2615,11 +2615,11 @@
       "tier": "search",
       "degree": 0
     },
-    "/projects/project-black-pool-hermes.md": {
+    "/projects/project-black-pool-agent.md": {
       "type": "documentation",
-      "title": "black-pool-hermes 子项目上下文",
+      "title": "black-pool-agent 子项目上下文",
       "description": "1. **核心零侵入**：一切能力走官方扩展面（plugins entry points / `skills.external_dirs` /",
-      "resource": "/projects/black-pool-hermes/CONTEXT.md",
+      "resource": "/projects/black-pool-agent/CONTEXT.md",
       "tags": [
         "data_layer:curated",
         "sub-project-context",
@@ -9060,7 +9060,7 @@
         "cross"
       ],
       [
-        "/projects/project-black-pool-hermes.md",
+        "/projects/project-black-pool-agent.md",
         "入口→上下文",
         "cross"
       ],
@@ -9112,7 +9112,7 @@
         "cross"
       ]
     ],
-    "/projects/project-black-pool-hermes.md": [
+    "/projects/project-black-pool-agent.md": [
       [
         "/projects/entry-claude-md.md",
         "入口→上下文",
@@ -10657,7 +10657,7 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -11389,7 +11389,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
-      "/projects/project-black-pool-hermes.md"
+      "/projects/project-black-pool-agent.md"
     ],
     "blackpool": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -12010,7 +12010,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -12251,7 +12251,7 @@
     ],
     "context": [
       "/memory/morimens-context.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -12422,7 +12422,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -12791,7 +12791,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -13280,7 +13280,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
     "dirs": [
-      "/projects/project-black-pool-hermes.md"
+      "/projects/project-black-pool-agent.md"
     ],
     "discord": [
       "/community/community-discord.md",
@@ -13530,7 +13530,7 @@
     "entry": [
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/project-black-pool-hermes.md"
+      "/projects/project-black-pool-agent.md"
     ],
     "equivalent": [
       "/projects/silver-core-sdk-doc-memory.md"
@@ -13582,7 +13582,7 @@
       "/resource/resource-repo-engineering-scs-req-export-token-estimation-20260728.md"
     ],
     "external": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "extraction": [
@@ -14069,7 +14069,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "hermes": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
@@ -14758,7 +14758,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -15339,7 +15339,7 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -15614,7 +15614,7 @@
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "milestone": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -16112,7 +16112,7 @@
       "/memory/memory-ext-collab-event-playbook.md"
     ],
     "plugins": [
-      "/projects/project-black-pool-hermes.md"
+      "/projects/project-black-pool-agent.md"
     ],
     "plugmem": [
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
@@ -16140,7 +16140,7 @@
       "/story/story_units.md"
     ],
     "points": [
-      "/projects/project-black-pool-hermes.md"
+      "/projects/project-black-pool-agent.md"
     ],
     "policy": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -16169,7 +16169,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
@@ -16413,7 +16413,7 @@
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/project-status.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -16468,7 +16468,7 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -17703,7 +17703,7 @@
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
     "skills": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/wiki-data/wiki-data-character-skills.md"
     ],
     "skip": [
@@ -18017,7 +18017,7 @@
     ],
     "sub": [
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -18869,7 +18869,7 @@
       "/characters/54116.md",
       "/characters/77913.md",
       "/characters/77917.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "一半": [
@@ -19134,7 +19134,7 @@
       "/characters/15565.md"
     ],
     "上下": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -19225,7 +19225,7 @@
     ],
     "下文": [
       "/memory/memory-ext-skill-authoring-standard.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -19455,7 +19455,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -19771,7 +19771,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -20143,7 +20143,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -21603,7 +21603,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -22664,7 +22664,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -22975,7 +22975,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -23504,7 +23504,7 @@
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "侵入": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "侵蚀": [
@@ -24842,7 +24842,7 @@
       "/characters/15562.md"
     ],
     "切能": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "切锁": [
@@ -25097,7 +25097,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -28664,7 +28664,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -29547,7 +29547,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -29773,7 +29773,7 @@
     "子项": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/project-status.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -30138,7 +30138,7 @@
     "官方": [
       "/README.md",
       "/projects/entry-readme.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -30244,7 +30244,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -31329,7 +31329,7 @@
       "/sources/youtube_comments.md"
     ],
     "展面": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "属公": [
@@ -32661,7 +32661,7 @@
       "/characters/77925.md"
     ],
     "心零": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "必填": [
@@ -33878,7 +33878,7 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
     "扩展": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
@@ -34477,7 +34477,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -35105,7 +35105,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -35490,7 +35490,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -35972,7 +35972,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -36299,7 +36299,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -37079,7 +37079,7 @@
       "/characters/15602.md"
     ],
     "方扩": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "方技": [
@@ -38214,7 +38214,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -38703,7 +38703,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -39397,7 +39397,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -39643,7 +39643,7 @@
     "核心": [
       "/assets/assets-narrative-structure.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-news.md",
       "/projects/project-wiki.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -40226,7 +40226,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -40661,7 +40661,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -44023,7 +44023,7 @@
       "/characters/15581.md"
     ],
     "目上": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -46155,7 +46155,7 @@
       "/characters/15600.md",
       "/characters/15602.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
@@ -48130,7 +48130,7 @@
       "/memory/memory-archive-bpt-guidance-log.md"
     ],
     "走官": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "走有": [
@@ -48408,7 +48408,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -49195,7 +49195,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -50332,7 +50332,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -50627,7 +50627,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -51375,7 +51375,7 @@
       "/README.md"
     ],
     "零侵": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "零后": [
@@ -51600,7 +51600,7 @@
       "/memory/memory-archive-storage-discussion.md",
       "/memory/memory-ext-bpt-positioning.md",
       "/memory/project-status.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -52298,7 +52298,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
-      "/projects/project-black-pool-hermes.md"
+      "/projects/project-black-pool-agent.md"
     ],
     "blackpool": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -52543,7 +52543,7 @@
     ],
     "context": [
       "/memory/morimens-context.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -52696,7 +52696,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -53058,7 +53058,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -53905,7 +53905,7 @@
       "/sources/youtube_comments.md"
     ],
     "hermes": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
@@ -54138,7 +54138,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -54570,7 +54570,7 @@
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "milestone": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -54894,7 +54894,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
-      "/projects/project-black-pool-hermes.md"
+      "/projects/project-black-pool-agent.md"
     ],
     "positioning": [
       "/projects/silver-core-sdk-doc-positioning.md"
@@ -54924,7 +54924,7 @@
     "project": [
       "/memory/project-status.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -55564,7 +55564,7 @@
     ],
     "sub": [
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -55976,7 +55976,7 @@
       "/characters/15603.md"
     ],
     "上下": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -55989,7 +55989,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "下文": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -56443,7 +56443,7 @@
       "/characters/95786.md"
     ],
     "子项": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -57464,7 +57464,7 @@
       "/characters/15581.md"
     ],
     "目上": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",
@@ -58008,7 +58008,7 @@
       "/characters/15592.md"
     ],
     "项目": [
-      "/projects/project-black-pool-hermes.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-maestro-sdk.md",

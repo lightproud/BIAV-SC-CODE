@@ -1,7 +1,7 @@
 # silver-core-sdk — 子项目会话上下文
 
 > **维护态（守密人 2026-08-02 换轨裁定 + 施工边界文书裁 3）**：使命#2 载体已换轨
-> `projects/black-pool-hermes/`（基于 NousResearch/hermes-agent 改造扩展）。本家族
+> `projects/black-pool-agent/`（基于 NousResearch/hermes-agent 改造扩展）。本家族
 > （agent / maestro / testbed）即日起**纯维稳**——版本冻结、仅修影响生产的 bug、零新功能，
 > BPT 在产 pin 消费者不断供；迁移终裁 = 能力对照表齐（文书裁 14）后按 wiki 先例冻结
 > （触发线 `memory/todo.md` #T78）。决策全文见 `memory/decisions.md` 2026-08-02 两条。
