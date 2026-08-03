@@ -239,6 +239,27 @@ index aedde11..71991ed 100644
          </div>
        </div>
      )
+diff --git a/apps/desktop/src/components/onboarding/providers.tsx b/apps/desktop/src/components/onboarding/providers.tsx
+index 1b0a394..6b56c1d 100644
+--- a/apps/desktop/src/components/onboarding/providers.tsx
++++ b/apps/desktop/src/components/onboarding/providers.tsx
+@@ -46,14 +46,8 @@ export function FeaturedProviderRow({
+           <span className="text-[length:var(--conversation-text-font-size)] font-semibold">
+             {providerTitle(provider)}
+           </span>
+-          {loggedIn ? (
+-            <ConnectedTag />
+-          ) : (
+-            <span className="inline-flex items-center gap-1.5 bg-primary px-2 py-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-primary-foreground">
+-              <span aria-hidden="true" className="dither inline-block size-2 shrink-0" />
+-              {t.onboarding.recommended}
+-            </span>
+-          )}
++          {/* 内网无推荐位——徽标摘除（审计轮三） */}
++          {loggedIn ? <ConnectedTag /> : null}
+         </div>
+         <p className="mt-1 text-xs leading-5 text-muted-foreground">{t.onboarding.featuredPitch}</p>
+       </div>
 diff --git a/apps/desktop/src/store/onboarding.ts b/apps/desktop/src/store/onboarding.ts
 index 6fbf294..1ecaaf9 100644
 --- a/apps/desktop/src/store/onboarding.ts

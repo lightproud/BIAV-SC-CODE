@@ -104,6 +104,7 @@ def test_brand_patch_sentinels():
         "品牌字体路径修复（Collapse 构建期内嵌）": "url('../node_modules/@nous-research/ui",
         "黑池默认主题（鎏金双貌）": "DEFAULT_SKIN_NAME = 'black-pool'",
         "黑池主题定义在位": "blackPoolTheme",
+        "Nous Portal 卡保持官方原版图标": "nous-portal-icon.png",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"公版规则从补丁消失（锚点失配）: {missing}"
@@ -126,6 +127,7 @@ def test_intranet_patch_sentinels():
         "本地安装卡隐藏": "本地安装卡隐藏",
         "后端契约横幅静默": "契约横幅整只静默",
         "自定义模型价格表注入": "model-prices.json",
+        "Nous Portal 推荐徽标摘除": "内网无推荐位",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"
