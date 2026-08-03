@@ -38013,6 +38013,19 @@ index fab8e07..367f79b 100644
      imageDownloadFailed: '画像のダウンロードに失敗しました',
      openImage: '画像を開く',
      downloadImage: '画像をダウンロード',
+diff --git a/apps/desktop/src/i18n/languages.ts b/apps/desktop/src/i18n/languages.ts
+index e4a1fb1..35660d6 100644
+--- a/apps/desktop/src/i18n/languages.ts
++++ b/apps/desktop/src/i18n/languages.ts
+@@ -2,7 +2,7 @@ import { normalize } from '@/lib/text'
+ 
+ import type { Locale } from './types'
+ 
+-export const DEFAULT_LOCALE: Locale = 'en'
++export const DEFAULT_LOCALE: Locale = 'zh'
+ 
+ export const LOCALE_OPTIONS = [
+   {
 diff --git a/apps/desktop/src/i18n/runtime.test.ts b/apps/desktop/src/i18n/runtime.test.ts
 index 499fc1d..736ce8a 100644
 --- a/apps/desktop/src/i18n/runtime.test.ts

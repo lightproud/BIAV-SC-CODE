@@ -98,6 +98,7 @@ def test_brand_patch_sentinels():
         "AUMID 中性化": "com.biav.blackpool",
         "唤醒词帮助中性化": "toggle the wake word listener [on|off|status]",
         "CLI 面板残留品牌收尾": "⚕ Black Pool",
+        "默认语言简体中文": "DEFAULT_LOCALE: Locale = 'zh'",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"公版规则从补丁消失（锚点失配）: {missing}"
