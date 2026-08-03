@@ -111,6 +111,7 @@ def test_brand_patch_sentinels():
         "默认语言简体中文（后端真源头）": '"language": "zh",',
         "品牌字体路径修复（Collapse 构建期内嵌）": "url('../node_modules/@nous-research/ui",
         "黑池默认主题（鎏金双貌）": "DEFAULT_SKIN_NAME = 'black-pool'",
+        "默认皮肤后端真源头": '"skin": "black-pool"',
         "黑池主题定义在位": "blackPoolTheme",
         "Nous Portal 卡保持官方原版图标": "nous-portal-icon.png",
         "状态栏版本芯片显示黑池版本": "desktopVersion?.appVersion ? '0.1.0'",
