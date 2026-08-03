@@ -1,0 +1,25 @@
+# 装配选装表样例 —— 拷到 ..\config\assembly.txt 后按需改动。
+# 规则：每节内逐条 name = on/off；"* = on/off" 定该节缺省；
+#       本文件不存在、某节不存在、某条未写 = 一律视为 on（全拼）。
+# 装配后包内 ASSEMBLY.md 会如实记录拼了什么、跳了什么。
+
+[patches]
+* = on
+# 示例：临时停用某张实验补丁
+# my-experiment.patch = off
+
+[plugins]
+* = on
+# 插件按 plugins\ 下相对路径（正斜杠）点名：
+# memory/blackpool = on
+
+[skills]
+* = on
+
+[config]
+SOUL.md = on
+env.cmd = on
+model-prices.json = on
+
+[overlay]
+* = on

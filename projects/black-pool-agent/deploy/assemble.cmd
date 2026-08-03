@@ -75,46 +75,20 @@ if not defined PYHOME (
   echo 组装失败：包内 python\cpython-* 缺失。& pause & exit /b 1
 )
 
-rem (zh comment moved to RUNBOOK - 65001 parser desync)
-set "PATCHED=0"
-if exist "%DEVROOT%\patches\*.patch" (
-  for /f "delims=" %%P in ('dir /b /o:n "%DEVROOT%\patches\*.patch"') do (
-    "%PYHOME%\python.exe" "%SD%apply_patch.py" --root "%B%\app" "%DEVROOT%\patches\%%P" >> "%LOG%" 2>&1 || (
-      echo 组装失败：补丁 %%P 应用失败（上下文不匹配或目标缺失）。
-      echo 详情见 %LOG% & pause & exit /b 1
-    )
-    set /a PATCHED+=1
-    echo 补丁已打：%%P
-  )
+rem Injection phase (patches/config/plugins/skills/overlay) + assembly docs
+rem now live in assemble_inject.py, driven by the optional selection table
+rem config\assembly.txt (missing = everything on). It prints its own zh
+rem progress lines and writes ASSEMBLY.md + MANIFEST.txt into the bundle.
+set "PYTHONIOENCODING=utf-8"
+"%PYHOME%\python.exe" "%SD%assemble_inject.py" --devroot "%DEVROOT%" --bundle "%B%" --zip "%ZIP%" --sha "!SHA!"
+if errorlevel 1 (
+  echo 组装失败：注入/清单阶段出错（补丁上下文不匹配或拷贝失败）。
+  echo 详情见 %LOG% & pause & exit /b 1
 )
 
-rem (zh comment moved to RUNBOOK - 65001 parser desync)
-if exist "%DEVROOT%\config\SOUL.md" (
-  if not exist "%B%\home" mkdir "%B%\home"
-  copy /y "%DEVROOT%\config\SOUL.md" "%B%\home\SOUL.md" >nul && echo 已注入 SOUL.md
-)
-if exist "%DEVROOT%\config\env.cmd" copy /y "%DEVROOT%\config\env.cmd" "%B%\env.cmd" >nul && echo 已注入 env.cmd
-if exist "%DEVROOT%\config\model-prices.json" (
-  if not exist "%B%\home" mkdir "%B%\home"
-  copy /y "%DEVROOT%\config\model-prices.json" "%B%\home\model-prices.json" >nul && echo 已注入 model-prices.json
-)
-if exist "%DEVROOT%\plugins" robocopy "%DEVROOT%\plugins" "%B%\app\plugins" /e /njh /njs /ndl /nfl >nul & if !errorlevel! geq 8 (echo 组装失败：plugins 拷贝出错 & pause & exit /b 1)
-if exist "%DEVROOT%\skills" (
-  if not exist "%B%\home\skills" mkdir "%B%\home\skills"
-  robocopy "%DEVROOT%\skills" "%B%\home\skills" /e /njh /njs /ndl /nfl >nul
-  if !errorlevel! geq 8 (echo 组装失败：skills 拷贝出错 & pause & exit /b 1)
-)
-if exist "%DEVROOT%\overlay" robocopy "%DEVROOT%\overlay" "%B%" /e /njh /njs /ndl /nfl >nul & if !errorlevel! geq 8 (echo 组装失败：overlay 拷贝出错 & pause & exit /b 1)
-
-rem (zh comment moved to RUNBOOK - 65001 parser desync)
-> "%B%\MANIFEST.txt" (
-  echo assembled: %date% %time%
-  echo source-zip: %ZIP%
-  echo patches-applied: %PATCHED%
-  for /f "delims=" %%P in ('dir /b /o:n "%DEVROOT%\patches\*.patch" 2^>nul') do echo   - %%P
-)
 echo.
 echo 组装完成：%B%
+echo 装配清单：%B%\ASSEMBLY.md   （拼了什么、跳了什么，逐条在案）
 echo 下一步：deploy.cmd ^<部署目录^>   （例：deploy.cmd E:\BIAV-BP\black-pool-agent）
 echo 全程日志：%LOG%
 exit /b 0

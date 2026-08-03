@@ -106,7 +106,9 @@ def test_multi_hunk_all_or_nothing(tmp_path):
     assert (tmp_path / "x.py").read_text(encoding="utf-8") == original
 
 
-@pytest.mark.parametrize("name", ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py"])
+@pytest.mark.parametrize("name", ["assemble.cmd", "deploy.cmd", "rollback.cmd",
+                                  "apply_patch.py", "assemble_inject.py",
+                                  "assembly.sample.txt"])
 def test_kit_has_zero_intranet_values(name):
     """通用件纪律：脚本内不得出现网络端点/内网值（文书裁 5 切面化）。"""
     text = (KIT / name).read_text(encoding="utf-8").lower()
@@ -117,7 +119,8 @@ def test_kit_has_zero_intranet_values(name):
 def test_kit_files_complete():
     for name in ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py",
                  "RUNBOOK.md", "launcher.cmd", "launch_desktop.py", "fix_venv_path.py",
-                 "make-shortcut.vbs", "kill_by_path.py"]:
+                 "make-shortcut.vbs", "kill_by_path.py", "assemble_inject.py",
+                 "assembly.sample.txt"]:
         assert (KIT / name).is_file(), f"bpa-dev 套件缺件: {name}"
 
 
@@ -193,6 +196,81 @@ def test_deploy_has_mirror_fallback_and_ascii_label_blocks():
     assert not any("goto rot_fail" in l for l in lines), (
         "旧 rot_fail 死路残留——应全部改走 rot_mirror 退路"
     )
+
+
+def _make_devroot(tmp_path):
+    """搭一个最小 bpa-dev 车间 + staging 包骨架供注入器实跑。"""
+    dev = tmp_path / "bpa-dev"
+    bundle = dev / "staging" / "BlackPool"
+    (bundle / "app" / "hermes_cli").mkdir(parents=True)
+    (bundle / "app" / "hermes_cli" / "__init__.py").write_text(
+        '__version__ = "0.1.0"\n', encoding="utf-8")
+    (bundle / "app" / "x.py").write_text("a = 1\nb = 2\nc = 3\n", encoding="utf-8")
+    (dev / "patches").mkdir()
+    (dev / "patches" / "a-on.patch").write_text(MOD_PATCH, encoding="utf-8")
+    (dev / "patches" / "b-off.patch").write_text(
+        MOD_PATCH.replace("b = 20", "b = 99"), encoding="utf-8")
+    (dev / "config").mkdir()
+    (dev / "config" / "env.cmd").write_text(
+        'set "SECRET_MARKER_XYZZY=do-not-leak"\n', encoding="utf-8")
+    (dev / "plugins" / "memory" / "demo").mkdir(parents=True)
+    (dev / "plugins" / "memory" / "demo" / "plugin.yaml").write_text(
+        "name: demo\nversion: 9.9\n", encoding="utf-8")
+    (dev / "plugins" / "memory" / "demo" / "__init__.py").write_text(
+        "# demo\n", encoding="utf-8")
+    (dev / "skills").mkdir()
+    (dev / "skills" / "sk1").mkdir()
+    (dev / "skills" / "sk1" / "SKILL.md").write_text("x\n", encoding="utf-8")
+    (dev / "config" / "assembly.txt").write_text(
+        "[patches]\n* = on\nb-off.patch = off\n", encoding="utf-8")
+    return dev, bundle
+
+
+def test_assemble_inject_selection_manifest_and_secret_redline(tmp_path):
+    """注入器三合一守卫：① 选装表 off 的补丁不打且清单点名跳过；
+    ② ASSEMBLY.md / MANIFEST.txt 生成且记录在案；
+    ③ env.cmd 内容（凭据形值）绝不落清单——只记指纹。"""
+    dev, bundle = _make_devroot(tmp_path)
+    r = subprocess.run(
+        [sys.executable, str(KIT / "assemble_inject.py"),
+         "--devroot", str(dev), "--bundle", str(bundle)],
+        capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout + r.stderr
+    # 选装：a-on 打了，b-off 没打
+    x = (bundle / "app" / "x.py").read_text(encoding="utf-8")
+    assert "b = 20" in x and "b = 99" not in x
+    md = (bundle / "ASSEMBLY.md").read_text(encoding="utf-8")
+    assert "a-on.patch" in md and "b-off.patch" in md
+    assert "跳过" in md
+    # 注入落位
+    assert (bundle / "env.cmd").is_file()
+    assert (bundle / "app" / "plugins" / "memory" / "demo" / "plugin.yaml").is_file()
+    assert (bundle / "home" / "skills" / "sk1" / "SKILL.md").is_file()
+    # 红线：凭据内容不进任何清单
+    manifest = (bundle / "MANIFEST.txt").read_text(encoding="utf-8")
+    for doc in (md, manifest):
+        assert "SECRET_MARKER_XYZZY" not in doc and "do-not-leak" not in doc
+    assert "patches-applied: 1" in manifest
+    # 版本探明
+    assert "0.1.0" in md
+
+
+def test_assemble_inject_failed_patch_fails_loud(tmp_path):
+    dev, bundle = _make_devroot(tmp_path)
+    (dev / "config" / "assembly.txt").unlink()  # 全拼：b-off 与 a-on 改同一行必炸
+    r = subprocess.run(
+        [sys.executable, str(KIT / "assemble_inject.py"),
+         "--devroot", str(dev), "--bundle", str(bundle)],
+        capture_output=True, text=True)
+    assert r.returncode == 1
+    assert "补丁应用失败" in r.stdout
+
+
+def test_assemble_cmd_delegates_injection():
+    text = (KIT / "assemble.cmd").read_text(encoding="utf-8")
+    assert "assemble_inject.py" in text, "assemble.cmd 未接入注入器"
+    assert "robocopy" not in text, "旧 cmd 注入残留（应全部移交 assemble_inject.py）"
+    assert "ASSEMBLY.md" in text
 
 
 def test_kill_by_path_noop_on_non_windows(tmp_path):
