@@ -15,7 +15,7 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 ├── patches\       # 内网自持补丁（*.patch，git diff 格式，按文件名序应用）
 ├── plugins\       # 黑池专属插件 → 拷入 app\plugins\
 ├── skills\        # 内网技能 → 拷入 home\skills\
-├── config\        # SOUL.md → home\；env.cmd → 包根（凭据/端点的唯一的家）
+├── config\        # SOUL.md → home\；env.cmd → 包根；deploy-target.txt = 部署目录地址一行（凭据/端点的唯一的家）
 ├── overlay\       # 万能覆盖层：内容原样覆盖到包根（以上四类盖不住的任意路径用它）
 ├── staging\       # 组装工作台（脚本自建自清，勿入 SVN）
 └── deploy\        # 本目录：部署件统一收纳（车间脚本 + 启动器家族 + 模板）
@@ -34,7 +34,8 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 1. **组装** `assemble.cmd [zip名]`：验 SHA → 净台解压 → 打补丁（包内 Python 跑
    `apply_patch.py`，无需 git；任一张上下文不匹配即整体失败，绝不半打）→ 注配置
    插件 → 出 `staging\BlackPool\` + `MANIFEST.txt`（用了哪版 zip、哪些补丁，来历三行可查）。
-2. **部署** `deploy.cmd <部署目录>`（内网实名 `E:\BIAV-BP\black-pool-agent`）：旧 `home\` 用户数据增量并入
+2. **部署** `deploy.cmd [部署目录]`：目标取参数 > 环境变量 BPA_DIR > `config\deploy-target.txt`
+   （文件里写一行地址如 `E:\BIAV-BP\black-pool-agent`，写好后**双击即部署**，rollback 同理）：旧 `home\` 用户数据增量并入
    新包（不覆盖注入的配置）→ 旧版让位 `<目录>.old` 回滚位 → 成品上位。
 3. **回滚** `rollback.cmd <部署目录>`：一键回切 `.old`，问题版留 `.failed-*` 供取证。
 
