@@ -12,6 +12,26 @@ rem cmd parser under chcp 65001 (field-proven 2026-08-03).
 setlocal EnableExtensions
 chcp 65001 >nul
 set "ROOT=%~dp0"
+rem Kit mode: launched from the workshop (no bundle here) - dispatch to
+rem the deployed bundle named by config\deploy-target.txt. No writes in
+rem kit mode (this dir may be a read-only vendor external).
+if exist "%ROOT%python\" goto in_bundle
+if not exist "%ROOT%..\config\deploy-target.txt" goto in_bundle
+set /p BPA_TARGET=<"%ROOT%..\config\deploy-target.txt"
+set "_ABS="
+if "%BPA_TARGET:~1,1%"==":" set "_ABS=1"
+if "%BPA_TARGET:~0,2%"=="\\" set "_ABS=1"
+if not defined _ABS set "BPA_TARGET=%ROOT%..\%BPA_TARGET%"
+for %%I in ("%BPA_TARGET%") do set "BPA_TARGET=%%~fI"
+if not exist "%BPA_TARGET%\launcher.cmd" (
+  echo 启动失败：部署位 %BPA_TARGET% 里没有 launcher.cmd（先跑 assemble + deploy）。
+  pause
+  exit /b 1
+)
+echo 车间入口：转至部署位 %BPA_TARGET% ...
+call "%BPA_TARGET%\launcher.cmd" %*
+exit /b %errorlevel%
+:in_bundle
 set "LOG=%ROOT%launcher.log"
 echo [%date% %time%] launcher start ROOT=%ROOT% > "%LOG%"
 echo Black Pool 启动中，请稍候（本窗会显示进度，失败会停窗给出原因）...
