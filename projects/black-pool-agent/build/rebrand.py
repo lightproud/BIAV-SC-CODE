@@ -302,6 +302,14 @@ BRAND_POST_RULES = [
         '        # Supported: en, zh, ja, de, es, fr, tr, uk.  Unknown values fall back to en.\n'
         '        "language": "zh",\n',
     ),
+    # 默认皮肤真源头（守密人 2026-08-03「新部署没自动选黑池金」）：desktop 经
+    # backend-sync 从后端 display.skin 取皮肤、盖过前端 DEFAULT_SKIN_NAME——后端默认
+    # "default" 被推下来即回落 nous。改后端默认为 black-pool（desktop 有该内建主题，
+    # 直接上金；CLI/TUI 无此皮肤名，load_skin 优雅回落 default 仅一条 warning，不崩）。
+    (
+        '        "skin": "default",',
+        '        "skin": "black-pool",',
+    ),
 ]
 
 # ========================= 私有版（内网/便携适配层） =========================

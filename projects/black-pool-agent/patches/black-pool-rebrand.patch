@@ -40802,7 +40802,7 @@ index 4523f92..1d5a405 100644
  
      # Managed scope: surface that some settings are administrator-pinned so the
 diff --git a/hermes_cli/config_defaults.py b/hermes_cli/config_defaults.py
-index dd1cfe8..dfc3652 100644
+index dd1cfe8..03afb2e 100644
 --- a/hermes_cli/config_defaults.py
 +++ b/hermes_cli/config_defaults.py
 @@ -1,4 +1,4 @@
@@ -40811,7 +40811,13 @@ index dd1cfe8..dfc3652 100644
  
  Pure-data leaf module: DEFAULT_CONFIG and OPTIONAL_ENV_VARS, extracted
  verbatim from hermes_cli/config.py. Must not import from hermes_cli.config.
-@@ -1078,7 +1078,7 @@ DEFAULT_CONFIG = {
+@@ -1073,12 +1073,12 @@ DEFAULT_CONFIG = {
+         # model — see hermes_cli/focus_view.py.
+         "focus_view": False,
+         "focus_saved_tool_progress": "all",
+-        "skin": "default",
++        "skin": "black-pool",
+         # UI language for static user-facing messages (approval prompts, a
          # handful of gateway slash-command replies).  Does NOT affect agent
          # responses, log lines, tool outputs, or slash-command descriptions.
          # Supported: en, zh, ja, de, es, fr, tr, uk.  Unknown values fall back to en.
