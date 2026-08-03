@@ -10926,6 +10926,7 @@
       "/README.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-positioning.md",
+      "/projects/project-black-pool-agent.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-tool-parity.md",
@@ -14069,7 +14070,6 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "hermes": [
-      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
@@ -52047,6 +52047,7 @@
       "/sources/youtube.md"
     ],
     "agent": [
+      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -53905,7 +53906,6 @@
       "/sources/youtube_comments.md"
     ],
     "hermes": [
-      "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
