@@ -46,6 +46,7 @@ PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 BRAND = "Black Pool"
 BRAND_AGENT = "Black Pool Agent"
 BRAND_VERSION = "0.1.0"
+UPSTREAM_VERSION = "0.19.1"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
 BRAND_AUMID = "com.biav.blackpool"
 
 # 扫描范围：用户可感知的 runtime 面（白名单目录）。
@@ -181,9 +182,7 @@ BRAND_POST_RULES = [
         " : a.versionUnavailable}\n          </p>\n",
         f"            {{a.version('{BRAND_VERSION}')}}\n          </p>\n"
         "          <p className=\"mt-1 text-xs text-muted-foreground\">\n"
-        "            {'B.I.A.V. Studio 出品 · 基于 Hermes Agent'"
-        " + (version?.appVersion ? ` ${version.appVersion}` : '')"
-        " + ' 定制'}\n"
+        f"            {{'B.I.A.V. Studio 出品 · 基于 Hermes Agent {UPSTREAM_VERSION} 定制'}}\n"
         "          </p>\n",
     ),
     # APP_NAME 兜底统一：该行含 HERMES_ 被跳线保留，兜底值 'Hermes' 与已换装的
@@ -259,6 +258,14 @@ BRAND_POST_RULES = [
     (
         "      version: desktopVersion?.appVersion\n    })\n",
         f"      version: desktopVersion?.appVersion ? '{BRAND_VERSION}' : undefined\n    }})\n",
+    ),
+    # 产品版本一井换水（守密人 2026-08-03「还有很多地方是 0.19.1」）：托盘 /
+    # 网关弹窗 / 状态栏 / About 主行全消费后端 hermes_cli.__version__——源头换成
+    # 黑池版本，全桌面面自然归一。pyproject 刻意不动（uv sync --locked 校验会破）；
+    # 上游真版本由 About 出身行静态陈述（UPSTREAM_VERSION 常量，移 pin 同步）。
+    (
+        f'__version__ = "{UPSTREAM_VERSION}"',
+        f'__version__ = "{BRAND_VERSION}"',
     ),
     # 品牌字体加载修复（守密人 2026-08-03 实机发现字标回退无衬线；装配日志实锤
     # "didn't resolve at build time"）：上游 CSS 按 monorepo 根 node_modules 写
