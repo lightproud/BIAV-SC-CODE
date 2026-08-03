@@ -4,14 +4,14 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-08-03
-- 功能总数：**157**
+- 功能总数：**159**
 - 脚本可达性：活 82 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 46 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 48 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 38 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 12 |
@@ -34,10 +34,12 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（46）
+## CI 自动化工作流（编排入口·定时/事件平面）（48）
 
 - **`Assemble Black Pool Bundle`** _[manual]_ —   
   `.github/workflows/assemble-black-pool-bundle.yml`
+- **`Assemble Black Pool Public Bundle`** _[manual]_ —   
+  `.github/workflows/assemble-black-pool-public.yml`
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
 - **`Backfill & Archive Media`** _[schedule/manual]_ — 定时回填并归档媒体文件（同人图等）。  
@@ -102,6 +104,8 @@
   `.github/workflows/recover-fanart.yml`
 - **`Refresh Claude Code Prompts`** _[schedule/manual]_ —   
   `.github/workflows/refresh-claude-code-prompts.yml`
+- **`Release Admin (delete)`** _[manual]_ —   
+  `.github/workflows/release-admin.yml`
 - **`Retag Release (guarded)`** _[manual]_ —   
   `.github/workflows/retag-release.yml`
 - **`SDK Mutation Ratchet (weekly)`** _[manual]_ —   

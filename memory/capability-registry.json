@@ -6,7 +6,7 @@
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 46,
+      "workflows": 48,
       "scripts_top": 38,
       "scripts_news": 32,
       "scripts_wiki": 12,
@@ -14,7 +14,7 @@
       "commands": 4,
       "skills": 6,
       "projects": 8,
-      "total": 157
+      "total": 159
     },
     "reachability": {
       "live": 82,
@@ -27,6 +27,14 @@
       "id": "assemble-black-pool-bundle.yml",
       "name": "Assemble Black Pool Bundle",
       "path": ".github/workflows/assemble-black-pool-bundle.yml",
+      "triggers": [
+        "manual"
+      ]
+    },
+    {
+      "id": "assemble-black-pool-public.yml",
+      "name": "Assemble Black Pool Public Bundle",
+      "path": ".github/workflows/assemble-black-pool-public.yml",
       "triggers": [
         "manual"
       ]
@@ -320,6 +328,14 @@
       "path": ".github/workflows/refresh-claude-code-prompts.yml",
       "triggers": [
         "schedule",
+        "manual"
+      ]
+    },
+    {
+      "id": "release-admin.yml",
+      "name": "Release Admin (delete)",
+      "path": ".github/workflows/release-admin.yml",
+      "triggers": [
         "manual"
       ]
     },
