@@ -27,6 +27,12 @@ if not exist "%BPA_DIR%.old" (
   echo 回滚失败：没有回滚位 %BPA_DIR%.old（每次 deploy 只留最近一版）。
   pause & exit /b 1
 )
+rem 轻量清障（与 deploy 同款）：TSVN 缓存与桌面主程序常锁目录
+taskkill /f /im TSVNCache.exe >nul 2>&1
+set "RB_EXE="
+for %%F in ("%BPA_DIR%\desktop\*.exe") do if not defined RB_EXE set "RB_EXE=%%~nxF"
+if defined RB_EXE taskkill /f /im "%RB_EXE%" >nul 2>&1
+ping -n 2 127.0.0.1 >nul
 set "TS=%RANDOM%"
 if exist "%BPA_DIR%" (
   move "%BPA_DIR%" "%BPA_DIR%.failed-%TS%" >nul || (
