@@ -1,0 +1,40 @@
+name: Release Admin (delete)
+
+# Release 清理工序（守密人 2026-08-03 裁定：定名前旧桶 silver-core-bundle 删除）。
+# 防误触三重护栏：手动触发 + tag 显式输入 + confirm 必须逐字等于 "DELETE <tag>"。
+# 三张抢救网 Release（community-data / community-assets / unpacked-assets）在
+# 禁删名单（§6.3：删任一即等同永久丢失），护栏级拒绝。
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "要删除的 Release tag"
+        required: true
+      confirm:
+        description: '确认串，必须为 "DELETE <tag>"'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Guard rails
+        run: |
+          TAG="${{ inputs.tag }}"
+          case "$TAG" in
+            community-data|community-assets|unpacked-assets)
+              echo "::error::$TAG 是抢救网 Release（RELEASES.md §6.3 禁删名单），拒绝执行"; exit 1;;
+          esac
+          if [ "${{ inputs.confirm }}" != "DELETE $TAG" ]; then
+            echo "::error::confirm 串不匹配（需逐字 'DELETE $TAG'）"; exit 1
+          fi
+      - name: Delete release and tag
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release delete "${{ inputs.tag }}" --cleanup-tag -y
