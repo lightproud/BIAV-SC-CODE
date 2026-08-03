@@ -8,7 +8,11 @@ if not defined BPA_KEEPWIN (
 )
 setlocal EnableExtensions
 chcp 65001 >nul
+set "SD=%~dp0"
+set "DEVROOT=%SD%.."
 if not "%~1"=="" set "BPA_DIR=%~1"
+rem 目标地址属于「料」：一次写进 config\deploy-target.txt 后即可双击直跑（零参数）
+if not defined BPA_DIR if exist "%DEVROOT%\config\deploy-target.txt" set /p BPA_DIR=<"%DEVROOT%\config\deploy-target.txt"
 if not defined BPA_DIR (
   echo 回滚失败：未指定部署目录（参数或环境变量 BPA_DIR）。
   pause & exit /b 1
