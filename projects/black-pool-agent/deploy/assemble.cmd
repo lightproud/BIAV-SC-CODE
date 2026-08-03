@@ -1,8 +1,8 @@
 @echo off
-rem bpa-dev 组装器（通用参数化，零内网值）。放置约定：本套件整目录拷入
-rem 黑池\bpa-dev\scripts\，兄弟目录 ..\releases ..\patches ..\config ..\plugins
-rem ..\skills ..\overlay ..\staging（缺哪个跳哪步，不硬性要求全建）。
-rem 用法：assemble.cmd [zip文件名]   缺省取 ..\releases\ 里最新的 *.zip
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 if not defined BPA_KEEPWIN (
   set "BPA_KEEPWIN=1"
   cmd /d /k call "%~f0" %*
@@ -15,7 +15,7 @@ set "DEVROOT=%SD%.."
 set "LOG=%DEVROOT%\assemble.log"
 echo [%date% %time%] assemble start > "%LOG%"
 
-rem -- 1. 选包 --
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 set "ZIP="
 if not "%~1"=="" (
   set "ZIP=%DEVROOT%\releases\%~1"
@@ -33,7 +33,7 @@ if not exist "%ZIP%" (
 echo 进料：%ZIP%
 echo [ok] zip=%ZIP% >> "%LOG%"
 
-rem -- 2. 验货（CHECKSUMS.txt 存在则强制比对 SHA-256）--
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 if exist "%DEVROOT%\releases\CHECKSUMS.txt" (
   set "SHA="
   for /f "skip=1 delims=" %%H in ('certutil -hashfile "%ZIP%" SHA256 2^>nul') do if not defined SHA set "SHA=%%H"
@@ -49,7 +49,7 @@ if exist "%DEVROOT%\releases\CHECKSUMS.txt" (
   echo 提示：未做 SHA 验货（..\releases\CHECKSUMS.txt 不存在）。
 )
 
-rem -- 3. 净台解压 --
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 if exist "%DEVROOT%\staging" rd /s /q "%DEVROOT%\staging"
 mkdir "%DEVROOT%\staging"
 echo 解压中（约 1 分钟）...
@@ -62,20 +62,20 @@ if not exist "%B%\launcher.cmd" (
   pause & exit /b 1
 )
 
-rem -- 3b. 套件权威启动器族覆盖：部署件修复即刻生效，不必等新 zip --
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 for %%F in (launcher.cmd launch_desktop.py fix_venv_path.py) do (
   if exist "%SD%%%F" copy /y "%SD%%%F" "%B%\%%F" >nul
 )
 echo 启动器族已按套件版覆盖（launcher / 监督器 / venv 自愈）
 
-rem -- 4. 定位包内 Python（补丁应用器的运行时）--
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 set "PYHOME="
 for /d %%D in ("%B%\python\cpython-*") do set "PYHOME=%%~fD"
 if not defined PYHOME (
   echo 组装失败：包内 python\cpython-* 缺失。& pause & exit /b 1
 )
 
-rem -- 5. 打内网补丁（..\patches\*.patch 按名序；全 check 通过才落盘）--
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 set "PATCHED=0"
 if exist "%DEVROOT%\patches\*.patch" (
   for /f "delims=" %%P in ('dir /b /o:n "%DEVROOT%\patches\*.patch"') do (
@@ -88,7 +88,7 @@ if exist "%DEVROOT%\patches\*.patch" (
   )
 )
 
-rem -- 6. 注入配置与插件（存在才拷；凭据只活在内网这几个目录里）--
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 if exist "%DEVROOT%\config\SOUL.md" (
   if not exist "%B%\home" mkdir "%B%\home"
   copy /y "%DEVROOT%\config\SOUL.md" "%B%\home\SOUL.md" >nul && echo 已注入 SOUL.md
@@ -106,7 +106,7 @@ if exist "%DEVROOT%\skills" (
 )
 if exist "%DEVROOT%\overlay" robocopy "%DEVROOT%\overlay" "%B%" /e /njh /njs /ndl /nfl >nul & if !errorlevel! geq 8 (echo 组装失败：overlay 拷贝出错 & pause & exit /b 1)
 
-rem -- 7. MANIFEST（来历三行可查）--
+rem (zh comment moved to RUNBOOK - 65001 parser desync)
 > "%B%\MANIFEST.txt" (
   echo assembled: %date% %time%
   echo source-zip: %ZIP%
