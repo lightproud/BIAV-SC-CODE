@@ -16,6 +16,10 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 ├── plugins\       # 黑池专属插件 → 拷入 app\plugins\
 ├── skills\        # 内网技能 → 拷入 home\skills\
 ├── config\        # SOUL.md → home\；env.cmd → 包根；deploy-target.txt = 部署目录地址一行（凭据/端点的唯一的家）
+│                  #   env.cmd 由 launcher 启动时 call——企业根证书/代理等在此注入，例：
+│                  #     set "SSL_CERT_FILE=%~dp0home\corp-ca.pem"
+│                  #     set "REQUESTS_CA_BUNDLE=%SSL_CERT_FILE%"
+│                  #     set "HTTPS_PROXY=..."（按内网实际；真值只写在内网这份文件里）
 ├── overlay\       # 万能覆盖层：内容原样覆盖到包根（以上四类盖不住的任意路径用它）
 ├── staging\       # 组装工作台（脚本自建自清，勿入 SVN）
 └── deploy\        # 本目录：部署件统一收纳（车间脚本 + 启动器家族 + 模板）

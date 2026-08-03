@@ -37,6 +37,8 @@ echo [%date% %time%] launcher start ROOT=%ROOT% > "%LOG%"
 echo Black Pool 启动中，请稍候（本窗会显示进度，失败会停窗给出原因）...
 
 set "HERMES_HOME=%ROOT%home"
+rem Intranet env hook (proxy / corp CA / etc), injected at assemble time.
+if exist "%ROOT%env.cmd" call "%ROOT%env.cmd"
 rem Display-name pin (upstream official knob).
 set "HERMES_DESKTOP_APP_NAME=Black Pool"
 set "PATH=%ROOT%venv\Scripts;%PATH%"
