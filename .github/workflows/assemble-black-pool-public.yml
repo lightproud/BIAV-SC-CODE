@@ -162,4 +162,5 @@ jobs:
           gh release view "${BUNDLE_TAG}" >/dev/null 2>&1 || \
             gh release create "${BUNDLE_TAG}" --title "Black Pool portable bundle (private edition)" \
               --notes "Black Pool (黑池) v0.1.0 — rolling private-edition portable bundle assembled by CI. See projects/black-pool-agent/deploy/README.md"
+          gh release edit "${BUNDLE_TAG}" --notes "Black Pool (黑池) v0.1.0 — rolling portable bundle assembled by CI. Assets: black-pool-win64.zip (private edition) / black-pool-public-win64.zip (public edition, on demand). See projects/black-pool-agent/deploy/README.md"
           gh release upload "${BUNDLE_TAG}" black-pool-public-win64.zip --clobber
