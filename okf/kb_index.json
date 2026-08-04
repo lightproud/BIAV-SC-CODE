@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 394,
-    "edges": 438,
-    "terms": 6995,
+    "concepts": 395,
+    "edges": 439,
+    "terms": 6997,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 160,
+      "documentation": 161,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 22,
       "projects": 31,
-      "resource": 128,
+      "resource": 129,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 133,
-      "search": 261
+      "search": 262
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 128
+      "count": 129
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 117
+      "degree": 118
     },
     "/characters/15604.md": {
       "type": "character",
@@ -4132,6 +4132,20 @@
       "title": "hermes-upstream-testrun-20260802",
       "description": "上游套件在银芯容器内**可完整复现运行**：全量 **2,471 测试文件 / 22,766 通过 / 40 失败**，（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/hermes-upstream-testrun-20260802.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md": {
+      "type": "documentation",
+      "title": "hermes-upstream-testrun-20260804",
+      "description": "0.20.0 套件在银芯容器内**可完整复现运行**：**2,599 测试文件 / 25,176 断言通过 / 35 失败（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/hermes-upstream-testrun-20260804.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -7379,6 +7393,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
         "提及:艾瑞卡",
         "mention"
@@ -9685,6 +9704,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md": [
       [
         "/characters/15603.md",
@@ -10774,6 +10800,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12129,6 +12156,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12541,6 +12569,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12910,6 +12939,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -13130,6 +13160,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -13479,6 +13510,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -14076,7 +14108,8 @@
     ],
     "hermes": [
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "history": [
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md"
@@ -14328,6 +14361,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -14872,6 +14906,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -15443,6 +15478,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -16257,6 +16293,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -16722,6 +16759,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -17059,6 +17097,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -17245,6 +17284,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -18212,7 +18252,8 @@
       "/projects/doc-testing-strategy.md"
     ],
     "testrun": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "tests": [
       "/README.md"
@@ -18363,6 +18404,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -18527,7 +18569,8 @@
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "upstream": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "usage": [
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
@@ -19567,6 +19610,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -19883,6 +19927,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -20255,6 +20300,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -21715,6 +21761,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -22185,7 +22232,8 @@
       "/memory/memory-ext-collab-event-playbook.md"
     ],
     "件在": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "件坍": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -22776,6 +22824,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -23087,6 +23136,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -25208,6 +25258,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -26749,7 +26800,8 @@
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "可完": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "可对": [
       "/characters/15564.md"
@@ -27725,7 +27777,8 @@
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
     "器内": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "器可": [
       "/story/story_units.md"
@@ -28115,6 +28168,7 @@
     "在银": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "在错": [
@@ -28780,6 +28834,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -28887,6 +28942,7 @@
     ],
     "复现": [
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md"
     ],
     "复生": [
@@ -29226,6 +29282,7 @@
     "失败": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md"
     ],
     "头推": [
@@ -29270,7 +29327,8 @@
     ],
     "套件": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "套银": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -29663,6 +29721,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -30107,6 +30166,7 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/sources/appstore.md",
@@ -30360,6 +30420,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -30698,7 +30759,8 @@
     ],
     "容器": [
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "容忍": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
@@ -34591,6 +34653,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -35219,6 +35282,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -35604,6 +35668,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -36086,6 +36151,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -36413,6 +36479,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -36748,7 +36815,8 @@
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "整复": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "整套": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -36846,6 +36914,7 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md"
     ],
@@ -36987,6 +37056,9 @@
     ],
     "断纪": [
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md"
+    ],
+    "断言": [
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "断链": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -38327,6 +38399,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -38816,6 +38889,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -39509,6 +39583,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -39766,6 +39841,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -40338,6 +40414,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -40773,6 +40850,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -41427,6 +41505,7 @@
       "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
@@ -42518,7 +42597,8 @@
       "/memory/memory-ext-bpt-positioning.md"
     ],
     "现运": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "珈伦": [
       "/characters/15571.md"
@@ -46601,7 +46681,8 @@
       "/README.md"
     ],
     "芯容": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "芯已": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -47260,6 +47341,9 @@
     "言之": [
       "/characters/15601.md"
     ],
+    "言通": [
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
+    ],
     "詹金": [
       "/characters/15578.md",
       "/characters/15593.md"
@@ -47739,6 +47823,7 @@
     ],
     "试文": [
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "试档": [
@@ -48521,6 +48606,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -49009,6 +49095,7 @@
       "/projects/entry-claude-md.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
     ],
     "近乎": [
@@ -49308,6 +49395,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -49559,6 +49647,7 @@
       "/characters/15604.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
     ],
     "速堆": [
@@ -50445,6 +50534,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -50740,6 +50830,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -50864,6 +50955,7 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
       "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md",
@@ -52807,6 +52899,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -53169,6 +53262,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -53379,6 +53473,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -53628,6 +53723,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -53908,7 +54004,8 @@
     ],
     "hermes": [
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "history": [
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md"
@@ -54248,6 +54345,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -55101,6 +55199,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -55638,7 +55737,8 @@
       "/projects/project-silver-core-testbed.md"
     ],
     "testrun": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "text": [
       "/wiki-data/wiki-data-panel-text.md"
@@ -55743,6 +55843,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -55851,7 +55952,8 @@
       "/characters/94451.md"
     ],
     "upstream": [
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
     "usage": [
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
