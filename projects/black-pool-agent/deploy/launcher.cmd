@@ -1,10 +1,12 @@
 @echo off
 rem Keep-window shell: rerun inside cmd /k so ANY failure stays readable.
-if not defined SC_LAUNCHER_KEEPWIN (
-  set "SC_LAUNCHER_KEEPWIN=1"
-  cmd /d /k call "%~f0" %*
-  exit /b
-)
+rem goto-based guard: %~f0 / %* expanded inside a ( ) block breaks cmd
+rem parsing when the path or args contain a parenthesis (e.g. "xxx (1)").
+if defined SC_LAUNCHER_KEEPWIN goto :sc_keepwin
+set "SC_LAUNCHER_KEEPWIN=1"
+cmd /d /k call "%~f0" %*
+exit /b
+:sc_keepwin
 rem Black Pool portable launcher (plain cmd, no PowerShell).
 rem Layout: python\ venv\ app\ desktop\ home\ next to this file.
 rem NOTE: keep rem lines ASCII-short - long UTF-8 comments desync the

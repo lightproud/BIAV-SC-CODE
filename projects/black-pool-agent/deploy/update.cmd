@@ -6,20 +6,32 @@ rem Thin orchestrator: steps 4/5/6 call the existing kit scripts, which all
 rem stay independently runnable. Usage: update.cmd [nodl]
 rem   nodl = skip download, assemble newest zip already in releases\
 rem ASCII rem only + no zh echo after goto labels (65001 desync, RUNBOOK).
-if not defined BPA_KEEPWIN (
-  set "BPA_KEEPWIN=1"
-  cmd /d /k call "%~f0" %*
-  exit /b
-)
+rem Bootstrap is goto-based on purpose: expanding %~f0 or %* inside a ( )
+rem block breaks cmd parsing when the value contains a parenthesis - e.g.
+rem a dir or file Explorer renamed to "xxx (1)" - and the window dies
+rem instantly with no message. Field class found 2026-08-04.
+>> "%TEMP%\black-pool-update-boot.log" echo [%date% %time%] entry %~f0
+if defined BPA_KEEPWIN goto :bpa_keepwin
+set "BPA_KEEPWIN=1"
+cmd /d /k call "%~f0" %*
+exit /b
+:bpa_keepwin
 rem Re-exec from a TEMP copy: steps 1/2 may rewrite this very file mid-run
 rem (cmd parses batch files incrementally - self-modification desyncs it).
-if not defined BPA_UPD_TMP (
-  set "BPA_UPD_TMP=1"
-  set "BPA_UPD_SD=%~dp0"
-  copy /y "%~f0" "%TEMP%\bpa-update-run.cmd" >nul
-  call "%TEMP%\bpa-update-run.cmd" %*
-  exit /b %errorlevel%
-)
+rem Detect the TEMP copy by FILE NAME, not an env flag: a leftover env var
+rem in a reused window must not make the self-modifiable original run.
+if /i "%~nx0"=="bpa-update-run.cmd" goto :bpa_run
+set "BPA_UPD_SD=%~dp0"
+copy /y "%~f0" "%TEMP%\bpa-update-run.cmd" >nul
+if exist "%TEMP%\bpa-update-run.cmd" goto :bpa_staged
+echo [FAIL] cannot stage a TEMP copy of update.cmd - check TEMP dir and disk space.
+pause
+exit /b 1
+:bpa_staged
+call "%TEMP%\bpa-update-run.cmd" %*
+exit /b
+:bpa_run
+if not defined BPA_UPD_SD goto :bpa_no_sd
 setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
 set "SD=%BPA_UPD_SD%"
@@ -138,3 +150,8 @@ if exist "!BPA_DIR!\launcher.cmd" (
   echo [6/6] 未找到部署位 launcher.cmd，跳过启动（可手动双击部署位入口）。
 )
 exit /b 0
+
+:bpa_no_sd
+echo [FAIL] run update.cmd from the deploy kit dir, not the TEMP copy directly.
+pause
+exit /b 1

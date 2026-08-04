@@ -3,11 +3,13 @@ rem (zh comment moved to RUNBOOK - 65001 parser desync)
 rem (zh comment moved to RUNBOOK - 65001 parser desync)
 rem (zh comment moved to RUNBOOK - 65001 parser desync)
 rem (zh comment moved to RUNBOOK - 65001 parser desync)
-if not defined BPA_KEEPWIN (
-  set "BPA_KEEPWIN=1"
-  cmd /d /k call "%~f0" %*
-  exit /b
-)
+rem goto-based guard: %~f0 / %* expanded inside a ( ) block breaks cmd
+rem parsing when the path or args contain a parenthesis (e.g. "xxx (1)").
+if defined BPA_KEEPWIN goto :bpa_keepwin
+set "BPA_KEEPWIN=1"
+cmd /d /k call "%~f0" %*
+exit /b
+:bpa_keepwin
 setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
 set "SD=%~dp0"
