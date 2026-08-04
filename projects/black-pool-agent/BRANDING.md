@@ -14,13 +14,13 @@
 **「知识底座」（Knowledge Base）**，~~Black Pool / 黑池字样不出现于任何用户可见文案~~
 （②后半句已被 2026-08-03 定名裁定覆盖，见上）。
 
-## 已覆盖面（pin v2026.7.30 实测）
+## 已覆盖面（初测 pin v2026.7.30；2026-08-04 移 pin v2026.8.3 / 0.20.0 重生成复验，全部哨兵在位）
 
 | 面 | 手段 | 量 |
 |----|------|----|
 | 对话人格自称 | `deploy/SOUL.md.template`（身份槽 #1，原生机制零侵入） | 1 档 |
 | 兜底身份句（SOUL.md 缺席时） | 补丁：`You are Hermes Agent, … created by Nous Research.` → `You are Silver Core, …` | 1 处 |
-| 运行面显示串 `Hermes Agent` → `Silver Core` | 规则补丁（agent / hermes_cli / gateway / tools / plugins / ui-tui/src / **apps / web**） | 合计 390 文件 / 43,718 行 diff（含二进制 b85 段） |
+| 运行面显示串 `Hermes Agent` → `Silver Core` | 规则补丁（agent / hermes_cli / gateway / tools / plugins / ui-tui/src / **apps / web**） | 合计 390 文件 / 43,718 行 diff（含二进制 b85 段；v2026.8.3 重测 414 文件 / 46,359 行） |
 | `Hermes profile` → `Silver Core profile` | 同上 | 30 处 |
 | `hermes-tui` 诊断前缀 → `silver-core-tui` | 同上 | 10 处 |
 | **desktop / web / TUI 裸词 `Hermes`**（productName / 窗口标题 / i18n 全语种文案值 / UI 字面量） | 词边界正则（`BARE_WORD_DIRS`：apps · web · ui-tui/src，**守密人 2026-08-02 补充情报「内部主要消费面是 desktop」后扩入**）；标识符免疫实证（i18n 键 `updateHermes` / 类名不触，小写 `hermes` 包名/scheme 永不碰）；**连字符入免疫边界（2026-08-02 生产事故订正，lesson #57）**——`X-Hermes-Session-Token` 头名曾被换成含空格非法头名，desktop 设置页全线 ERR_INVALID_HTTP_TOKEN 崩加载 | 含于上行合计 |

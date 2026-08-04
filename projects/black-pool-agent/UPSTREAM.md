@@ -24,9 +24,13 @@
 | 项 | 值 |
 |----|----|
 | 上游仓库 | `NousResearch/hermes-agent`（MIT） |
-| pin tag | **`v2026.7.30`**（commit `cc4cab2f592e60a197e796506de9168f74baf3ea`，2026-07-30） |
-| 快照规模 | 8,071 文件 / 151MB |
-| 入仓日 | 2026-08-02 |
+| pin tag | **`v2026.8.3`**（commit `3c27eb6234bf91b8ceee9e9071591b31e9b148cb`，2026-08-03，引擎版本 0.20.0） |
+| 快照规模 | 8,436 文件 / 156MB |
+| 入仓日 | 2026-08-04 |
+
+> 移 pin 史：首钉 `v2026.7.30`（0.19.1，2026-08-02 入仓）→ `v2026.8.3`（0.20.0，2026-08-04，
+> 守密人「HERMES 更新 0.20」派发；特性补丁 conversation-cost-panel 于 use-statusbar-items.tsx
+> import 区人工重放一处，其余 hunk 带偏移干净落位）。
 
 ## 同步例程（移 pin 时照此执行）
 
@@ -36,8 +40,9 @@
    **add 前必清生成物**：`find upstream -name __pycache__ -type d -prune -exec rm -rf {} +`
    ——`git add -f` 会连生成物一起强制入库；实测教训：在树内跑过测试后未清 `.pyc` 就 add，
    上游脱敏测试 .pyc 里的假 Slack token 样本直接触发 GitHub 推送保护拒推（2026-08-02）
-3. **重生成品牌补丁 + 重放特性补丁**：`python3 build/rebrand.py`（规则引擎重出
-   `patches/silver-core-rebrand.patch`）；特性补丁（如 `conversation-cost-panel.patch`）逐个
+3. **重生成品牌补丁 + 重放特性补丁**：先同步 `build/rebrand.py` 的 `UPSTREAM_VERSION` 常量与
+   `tests/test_hermes_charter.py` 出身行哨兵，再 `python3 build/rebrand.py`（规则引擎重出
+   `patches/black-pool-rebrand.patch` + `black-pool-intranet.patch` 两张）；特性补丁（如 `conversation-cost-panel.patch`）逐个
    `git apply --check` 核对新基底，冲突则人工重放后重出 diff（守卫核干净应用 + 三红线）
 4. 更新本档 pin 表 → 跑全量守卫 → 单提交入库（`vendor: hermes-agent @<short-sha>`）
 
