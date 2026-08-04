@@ -6,14 +6,27 @@
 v0.1.0，补丁分**公版**（black-pool-rebrand.patch，纯品牌）与**私有版**
 （black-pool-intranet.patch，内网/便携适配叠加层）两张，装配按序应用。
 """
+import importlib.util
 import re
 import subprocess
+import sys
 from pathlib import Path
+
+import pytest
 
 REPO = Path(__file__).resolve().parent.parent
 SUB = REPO / "projects" / "black-pool-agent"
+REBRAND = SUB / "build" / "rebrand.py"
 PATCH_BRAND = SUB / "patches" / "black-pool-rebrand.patch"
 PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
+
+
+def _load_rebrand():
+    """按路径载入规则引擎（build/ 不是包，且与顶层 scripts/ 同名风险隔离）。"""
+    spec = importlib.util.spec_from_file_location("bpa_rebrand", REBRAND)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
 # patches/ 白名单：每个补丁须在此具名登记（防无名补丁悄悄入库）。
 ALLOWED_PATCHES = {
@@ -171,6 +184,89 @@ def test_editions_are_cleanly_separated():
     bad = [l for l in intranet.splitlines()
            if l.startswith("-") and not l.startswith("---") and "Hermes Agent" in l]
     assert not bad, f"品牌换装规则混入私有版补丁: {bad[:3]}"
+
+
+def test_rebrand_check_matches_committed_patches():
+    """规则引擎 ↔ 已入库补丁不得静默分叉（2026-08-04 审视 H-8，本轮补网）。
+
+    引擎自带 `--check` 漂移检测，却在 tests/ 与 .github/workflows/ 里零调用：
+    组装工作流用 `--apply`（规则引擎实时算），而 test_patches_apply_cleanly
+    校验的是**补丁文件**——两条路可以各走各的，谁也不会红。此测试即那道缺失的
+    对账，是本仓唯一把二者钉在一起的地方（约 17 秒，值这个价）。
+    """
+    r = subprocess.run([sys.executable, str(REBRAND), "--check"],
+                       cwd=SUB, capture_output=True, text=True)
+    assert r.returncode == 0, (
+        "规则引擎输出与 patches/ 已入库补丁不一致——"
+        f"跑 python3 build/rebrand.py 重生成: {r.stdout[-400:]}{r.stderr[-400:]}"
+    )
+
+
+def test_plugin_author_attribution_never_rewritten():
+    """归属行豁免（守密人 2026-08-04 裁定「回退」）：`author:` 不进换装射程。
+
+    上游 plugins/**/plugin.yaml 的 author 字段含真实第三方贡献者姓名
+    （fireworks / vertex 两个 provider 插件）。MIT 未要求改写署名，改了即把
+    他人作品记到自己名下——与「不抹来源事实」红线同源。
+    """
+    rb = _load_rebrand()
+    for line in ("author: Hermes Agent\n",
+                 "author: Alex Jestin Taylor (@alex-fireworks) + Hermes Agent\n",
+                 "author: Steve Lawton (@slawt), Hermes Agent\n",
+                 "author: Hermes Agent contributors\n"):
+        assert rb.transform_brand(line, bare_word=True) == line, f"归属行被改写: {line!r}"
+    # 正向：非归属行照常换装（豁免规则不得误伤正常文案）
+    assert "Black Pool" in rb.transform_brand("    authorizeThere: 'Authorize Hermes there.',\n",
+                                              bare_word=True)
+    for text in (PATCH_BRAND.read_text(encoding="utf-8"),
+                 PATCH_INTRANET.read_text(encoding="utf-8")):
+        bad = [l for l in text.splitlines() if re.match(r"^[-+]\s*author\s*:", l)]
+        assert not bad, f"补丁改动了归属行: {bad[:4]}"
+
+
+def test_rebrand_refuses_repeat_application(tmp_path):
+    """两层变换均非幂等，必须拒绝打在已变换的树上（2026-08-04 审视 H-1）。
+
+    公版第二遍会把 About 出身行「基于 Hermes Agent 0.20.0 定制」（MIT 归因
+    唯一的 UI 承载面）吃成「基于 Black Pool Agent」；私有版第二遍把价格表
+    注入体逐层套娃（实测 +66 行/遍，无上限）。
+    """
+    rb = _load_rebrand()
+    brand_tree = tmp_path / "b" / "agent"
+    brand_tree.mkdir(parents=True)
+    (brand_tree / "x.py").write_text("# Hermes Agent runtime\n", encoding="utf-8")
+    assert rb.apply_brand_tree(brand_tree.parent) == 1
+    assert "Black Pool Agent" in (brand_tree / "x.py").read_text(encoding="utf-8")
+    with pytest.raises(rb.RebrandError, match="已换过装"):
+        rb.apply_brand_tree(brand_tree.parent)
+
+    intranet_tree = tmp_path / "i" / "agent"
+    intranet_tree.mkdir(parents=True)
+    (intranet_tree / "usage_pricing.py").write_text(
+        "def get_pricing_entry(\n", encoding="utf-8")
+    assert rb.apply_intranet_tree(intranet_tree.parent) == 1
+    once = (intranet_tree / "usage_pricing.py").read_text(encoding="utf-8")
+    with pytest.raises(rb.RebrandError, match="已叠加内网层"):
+        rb.apply_intranet_tree(intranet_tree.parent)
+    assert (intranet_tree / "usage_pricing.py").read_text(encoding="utf-8") == once
+
+
+@pytest.mark.parametrize("dest,reason", [
+    ("__no_such_dir__", "目标树不存在"),
+    ("upstream", "vendor 快照"),
+    (".", "祖先目录"),
+])
+def test_rebrand_apply_validates_dest(dest, reason):
+    """`--apply` 指错地方必须 rc=2，不得「0 files changed」+ rc=0（审视 H-6）。
+
+    原实现只 resolve 不校验：目录不存在时什么也不扫，照报成功——组装脚本据此
+    判定换装完成，出厂即未换装包。upstream/ 自身与其祖先另属红线（vendor
+    快照逐字节纯净）。
+    """
+    r = subprocess.run([sys.executable, str(REBRAND), "--apply", dest],
+                       cwd=SUB, capture_output=True, text=True)
+    assert r.returncode == 2, f"应拒绝 {dest!r}，实得 rc={r.returncode}: {r.stdout}"
+    assert reason in r.stderr, r.stderr
 
 
 def test_charter_skeleton_present():

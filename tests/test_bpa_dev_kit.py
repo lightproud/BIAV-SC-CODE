@@ -106,6 +106,86 @@ def test_multi_hunk_all_or_nothing(tmp_path):
     assert (tmp_path / "x.py").read_text(encoding="utf-8") == original
 
 
+def test_multi_hunk_drift_not_double_counted(tmp_path):
+    """第三 hunk 起的搜索窗中心不得偏移（2026-08-04 审视 H-2）。
+
+    漂移量原写 `drift +=`，而 (pos - old_start+1) 已含既有 drift——从第三个
+    hunk 起窗心整体多偏一份。上下文块在文件里出现两次时，偏移后的窗心正好
+    压在**诱饵**那份上并精确匹配，于是改错地方且 rc=0（静默错打）。
+    """
+    base = [f"L{i}" for i in range(1, 41)]
+    base[19], base[20], base[21] = "L20", "MOTIF", "L22"        # 真目标
+    base[24], base[25], base[26] = "L20", "MOTIF", "L22"        # 诱饵（同块重现）
+    (tmp_path / "x.py").write_text("\n".join(base) + "\n", encoding="utf-8")
+    patch = """diff --git a/x.py b/x.py
+--- a/x.py
++++ b/x.py
+@@ -2,3 +2,8 @@
+ L2
++NEW1
++NEW2
++NEW3
++NEW4
++NEW5
+ L3
+ L4
+@@ -10,3 +10,3 @@
+ L10
+-L11
++L11X
+ L12
+@@ -20,3 +20,3 @@
+ L20
+-MOTIF
++MOTIF-PATCHED
+ L22
+"""
+    r = _apply(tmp_path, patch)
+    assert r.returncode == 0, r.stderr
+    out = (tmp_path / "x.py").read_text(encoding="utf-8").splitlines()
+    assert out.count("MOTIF-PATCHED") == 1 and out.count("MOTIF") == 1
+    assert out.index("MOTIF-PATCHED") < out.index("MOTIF"), (
+        "第三 hunk 打到了诱饵块上——drift 双计复发"
+    )
+
+
+def test_path_traversal_refused(tmp_path):
+    """补丁头路径逃出 --root 必须整张拒绝（2026-08-04 审视 H-3）。"""
+    root = tmp_path / "root"
+    root.mkdir()
+    patch = """diff --git a/../../evil.py b/../../evil.py
+--- /dev/null
++++ b/../../evil.py
+@@ -0,0 +1 @@
++PWNED
+"""
+    r = _apply(root, patch)
+    assert r.returncode == 1
+    assert "逃出 --root" in r.stderr
+    assert not (tmp_path.parent / "evil.py").exists()
+    assert not (tmp_path / "evil.py").exists()
+
+
+def test_zero_context_hunk_refused(tmp_path):
+    """零上下文 hunk（-U0 纯插入）无锚点可定位，必须拒绝而非按行号盲插。
+
+    空 old_block 对任何位置都「匹配」，重打即静默多插一份（2026-08-04 审视
+    H-4：连打三次得三行重复，rc 全 0）。
+    """
+    original = "a = 1\nb = 2\nc = 3\n"
+    (tmp_path / "x.py").write_text(original, encoding="utf-8")
+    patch = """diff --git a/x.py b/x.py
+--- a/x.py
++++ b/x.py
+@@ -2,0 +3 @@
++inserted = 1
+"""
+    r = _apply(tmp_path, patch)
+    assert r.returncode == 1
+    assert "零上下文 hunk" in r.stderr
+    assert (tmp_path / "x.py").read_text(encoding="utf-8") == original
+
+
 @pytest.mark.parametrize("name", ["assemble.cmd", "deploy.cmd", "rollback.cmd",
                                   "apply_patch.py", "assemble_inject.py",
                                   "assembly.sample.txt"])
