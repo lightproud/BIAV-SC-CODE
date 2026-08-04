@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-03T22:08:33.760055+00:00",
+  "collected_at": "2026-08-04T02:14:57.541927+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 125,
+  "item_count": 126,
   "items": [
     {
       "source": "google_play",
@@ -307,6 +307,36 @@
     },
     {
       "source": "google_play",
+      "time": "2026-08-03T01:55:55",
+      "lang": "en",
+      "title": "[Google Play 差评] ★1 Game wont start",
+      "summary": "Game wont start",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-57a047db-c85a-4574-af85-f18245b55663",
+      "author": "Yep Yep",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-03T01:19:58",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 very good game, looking forward for futu",
+      "summary": "very good game, looking forward for future updates",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-7e36d7e2-cdf6-4762-a279-1a273ac1f324",
+      "author": "Shaun Williams",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-03T00:53:15",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Really amazing game that I wish achieves",
+      "summary": "Really amazing game that I wish achieves the popularity it deserves. <3 Great character art, great meta-progression, gacha is quite generous and most standard characters are viable and some even great (Caecus, Sanga, Nautila, Winkle, Casiah), so it doesn't even feel bad losing to them. My only wish is some kind of endless mode to eventually really push the teams I create.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f046ab31-c2ef-4af1-9413-ab8b18243829",
+      "author": "Phoenix Chua",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-08-02T08:45:03",
       "lang": "en",
       "title": "[Google Play 好评] ★5 So far this game is really interesting,",
@@ -583,36 +613,6 @@
       "summary": "If you want something dark/thriller card based strategic turn based genre, Morimens is highly recommended for you. It's just few days since I played this game, and it giving me hype due to art style and flow of the story.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-e6a97be8-0461-41b1-808d-517840b04917",
       "author": "Lance Monterola",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-11T06:54:26",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 awesomesauce game. I lololololovee my ba",
-      "summary": "awesomesauce game. I lololololovee my baby boo Pickman and my handsome, incredible, talented king captain Elton!!! I'm already @ keeper lvl 50 with only 31 days of playtime (started playing during the 1st anniv. and have only been able to play again recently). Absolutely adore this game. As an f2p 4lifer, this is defo on the no. 1 spot in my games list.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-8d5d8f28-e7f0-451e-b8d0-d9f1d989001f",
-      "author": "Ash Gomez (Ace)",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-10T16:32:19",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 fun and PEAK",
-      "summary": "fun and PEAK",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-dac85edb-749b-4feb-b5bc-6cdb24a6b374",
-      "author": "Little Spicy",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-09T16:01:11",
-      "lang": "en",
-      "title": "[Google Play 好评] ★4 So great and kind! Here for Pontos 💙",
-      "summary": "So great and kind! Here for Pontos 💙",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ff93a09f-c26a-4b39-b107-353ed1db73af",
-      "author": "Joshua RGT",
       "engagement": 0
     },
     {
@@ -953,6 +953,16 @@
       "summary": "Cốt truyện peak, cực cuốn",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-4eb05881-8b69-428c-92fb-dd432db19607",
       "author": "Minh Hoàng Nguyên",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-03T00:38:16",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 Es de esos juegos que merecen ser mucho",
+      "summary": "Es de esos juegos que merecen ser mucho más conocidos. Su sistema de combate, la calidad visual de las animaciones, la historia y la música son muy buenos. Es desafiante: hay que pensar bien cada jugada. Como jugador casual, he conseguido la mayoría de personajes y cartas con poca inversión. Llevo casi un año jugando y he visto cómo mejora constantemente; espero que siga así. Mi única queja es la traducción al español; ojalá la mejoren con el tiempo. Por lo demás, súper recomendado.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-ff740690-d2ef-4cc6-8aa4-732a67504801",
+      "author": "Nereis",
       "engagement": 0
     },
     {
