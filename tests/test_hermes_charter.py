@@ -33,6 +33,7 @@ ALLOWED_PATCHES = {
     "black-pool-rebrand.patch",   # 公版：品牌换装（build/rebrand.py 规则引擎生成）
     "black-pool-intranet.patch",  # 私有版：内网/便携适配叠加层（同一引擎生成，叠加于公版后）
     "conversation-cost-panel.patch",  # 需求 #2 对话成本面板（手维护特性补丁，上下文零品牌词故可叠加于换装后）
+    "interaction-latency-trace.patch",  # 交互卡顿：逐 RPC / 往返 / 主线程延迟埋点 + 可用性探针去同步刷新（同上，零品牌词）
 }
 
 
@@ -54,7 +55,9 @@ def test_patches_apply_cleanly_to_upstream(tmp_path):
     不串联结果（2026-08-03 实证翻车）——故按装配真实顺序在临时树上**实打**
     公版后再校验私有版。
     """
-    for args in ([str(PATCH_BRAND)], [str(SUB / "patches" / "conversation-cost-panel.patch")]):
+    for args in ([str(PATCH_BRAND)],
+                 [str(SUB / "patches" / "conversation-cost-panel.patch")],
+                 [str(SUB / "patches" / "interaction-latency-trace.patch")]):
         r = subprocess.run(
             ["git", "apply", "--check",
              "--directory=projects/black-pool-agent/upstream", *args],
@@ -68,7 +71,13 @@ def test_patches_apply_cleanly_to_upstream(tmp_path):
     work = tmp_path / "seq"
     shutil.copytree(SUB / "upstream", work,
                     ignore=shutil.ignore_patterns(".venv", "node_modules", "__pycache__"))
-    for name, check in ((PATCH_BRAND, False), (PATCH_INTRANET, True)):
+    # 装配真实顺序（apply_patch.py 按文件名序）：公版 → 私有版 → 特性补丁。
+    # 特性补丁**实打**而非 --check：后一张的上下文必须落在前一张打完的树上，
+    # 只 --check 各自对照会漏掉相邻 hunk 撞车（2026-08-04 交互延迟埋点补丁
+    # 首版即撞：上下文含被换装的那行错误串，序贯打必失败、单查却全绿）。
+    for name, check in ((PATCH_BRAND, False), (PATCH_INTRANET, False),
+                        (SUB / "patches" / "conversation-cost-panel.patch", False),
+                        (SUB / "patches" / "interaction-latency-trace.patch", True)):
         cmd = ["git", "apply", "--unsafe-paths"] + (["--check"] if check else []) + [str(name)]
         r = subprocess.run(cmd, cwd=work, capture_output=True, text=True)
         assert r.returncode == 0, (
@@ -168,6 +177,37 @@ def test_intranet_patch_sentinels():
     added = [l for l in text.splitlines() if l.startswith("+")]
     hooks = [l for l in added if "user_entry = _user_pricing_entry" in l]
     assert len(hooks) == 1, f"价格钩子注入点应恰为 1 处，实为 {len(hooks)}（锚点撞车复发）"
+
+
+def test_latency_trace_patch_sentinels():
+    """交互延迟埋点补丁（2026-08-04「BPA 运行迟缓」派发）内容不得静默瘦身。
+
+    补丁一半是**取证**（网关逐 RPC 计时 + 渲染端往返 + 主线程阻塞哨），一半是
+    **修复**（可用性探针从同步 OAuth 刷新路径挪开）。任一半在移 pin 重放时丢了，
+    现场就又变回「只能猜」，故逐条钉死。
+    """
+    text = (SUB / "patches" / "interaction-latency-trace.patch").read_text(encoding="utf-8")
+    sentinels = {
+        "网关逐 RPC 计时": "def _note_rpc_duration(",
+        "内联 lane 点名（读循环被堵）": "inline: the ws read loop was blocked",
+        "线程池排队时长": "queue_ms=%.0f",
+        "阈值旋钮": "HERMES_RPC_SLOW_MS",
+        "渲染端往返计时": "noteGatewayRoundTrip(method, startedAt)",
+        "重连往返单独归因": "'reconnected'",
+        "渲染端主线程阻塞哨": "renderer main thread blocked",
+        "TTS 可用性探针去同步刷新": 'is_managed_tool_gateway_ready("openai-audio")',
+        "图像可用性探针去同步刷新": "_managed_fal_gateway_is_ready()",
+    }
+    missing = [k for k, v in sentinels.items() if v not in text]
+    assert not missing, f"埋点补丁内容缺失: {missing}"
+    # 零品牌词纪律（同 conversation-cost-panel）：本补丁按文件名序**最后**应用，
+    # 上下文行必须落在已换装的树上，故不得含会被换装规则改写的裸品牌词。
+    # 允许的是换装跳线保留的功能标识符（HermesGateway / @/hermes / HERMES_ 等）。
+    suspicious = [l for l in text.splitlines()
+                  if "Hermes" in l
+                  and not l.startswith(("+++", "---", "diff ", "index "))
+                  and not re.search(r"Hermes[A-Z]|@/hermes|@hermes/|HERMES_", l)]
+    assert not suspicious, f"补丁上下文含可被换装的品牌词（叠加后必失配）: {suspicious[:3]}"
 
 
 def test_editions_are_cleanly_separated():

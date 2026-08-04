@@ -49,6 +49,12 @@ UPSTREAM.md # pin 台账唯一权威
   idealab 配置模板），届时按新任务另计。插件开发前先读 `upstream/AGENTS.md`
   （75,293 字节官方施工指南，已核实在快照内）。
 - **常态职责**：upstream/ 追官方新版（`UPSTREAM.md` 例程）+ gaps.md 值守 + 红线守卫。
+- **现场卡顿在查（2026-08-04 派发「定位 BPA 运行迟缓并通过补丁修复」）**：症状「界面每个
+  交互等 5-10 秒」，环境层已由 `deploy/diagnose_lag.py` 前 7 节覆盖；本轮补上**应用内三层
+  延迟埋点**（`patches/interaction-latency-trace.patch`：网关逐 RPC 分 lane 计时 / 渲染端
+  往返与重连归因 / 主线程阻塞哨）+ 分诊器第 8 节判读 + 启动器渲染模式落痕与
+  `BLACK_POOL_FORCE_GPU` 旋钮，同批修掉两个「可用性探针坐在同步 OAuth 刷新路径上」的
+  真延迟缺陷。**根因待现场取证回传后定**——银芯侧不宣称已定位，详见 gaps.md 同日条。
 
 ## 验证清单
 

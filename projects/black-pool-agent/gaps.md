@@ -41,3 +41,22 @@
   同时令公版回到名副其实的纯品牌换装。守卫 `tests/test_black_pool_memory.py`
   随之退役。中文记忆召回**重回缺口态**，留待日后另案（若重开，索引侧须
   UNION 两表而非取代，且词元正则须收数字起头串）。
+- **2026-08-04 · 扩展点缺口 · 交互延迟埋点 + 可用性探针去同步刷新
+  （`interaction-latency-trace.patch`，守密人「定位 BPA 运行迟缓并通过补丁修复」派发）**：
+  现场症状「界面每个交互都要等 5-10 秒」远程不可复现，而**上游三层里没有任何一层
+  记录延迟**——网关 `dispatch` 只记调用不记耗时、渲染端往返无计时、主线程阻塞无哨兵，
+  故「慢在哪一层」在代码里根本无从判定（前一轮只能出环境分诊器 `diagnose_lag.py`，
+  量到第 7 节为止）。扩展面无观测钩子可挂（无中间件位、无事件总线），被迫触改核心。
+  处置：白名单特性补丁一张（6 文件 / 约 200 行），**一半取证一半修复**——
+  取证：`tui_gateway/server.py` 逐 RPC 计时（超 `HERMES_RPC_SLOW_MS`（默认 800ms）
+  即打 WARN，**分内联 / 线程池两 lane**并记排队时长；内联超时 = WS 读循环被堵，
+  后面每个请求跟着等，故单独点名）+ 渲染端 `use-gateway-request` 往返计时与重连归因
+  + `lib/lag-trace.ts` 主线程阻塞哨（心跳漂移法，隐藏窗不误报，`console.error`
+  出口是唯一能被主进程收进 `desktop.log` 的级别）；修复：`check_tts_requirements` /
+  `check_fal_api_key` 两个注册 `check_fn` 原经**刷新式** token 读取器解析托管网关
+  ——与 `managed_tool_gateway` 自己写明的契约（可用性扫描须走 `peek_*` 免网络）相悖，
+  在够不着 portal 的机器上每次 30 秒缓存过期都赔进一次阻塞 OAuth 往返（上限 15 秒），
+  改走 `is_managed_tool_gateway_ready` / 新增 `_managed_fal_gateway_is_ready`
+  （请求路径照旧刷新）。**上下文零品牌词**（守卫机械可验），故按文件名序最后应用、
+  换装前后皆适用。守卫 `tests/test_hermes_charter.py`（白名单 + 序贯实打 + 内容哨兵）。
+  状态：已落地；现场取证回传后按点名层另案处置。

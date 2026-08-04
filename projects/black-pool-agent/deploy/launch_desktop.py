@@ -212,6 +212,27 @@ def attempt(exe: pathlib.Path, env: dict, extra_args: list[str],
     return True
 
 
+def write_render_mode(root: pathlib.Path, mode: str, args: list[str]) -> None:
+    """记录本次实际起飞的渲染模式（home/logs/render-mode.txt）。
+
+    软渲染回退是「一次失败、长期变慢」的静默陷阱：首试早夭后本器会带
+    --disable-gpu 重试，成功即整场会话跑在 CPU 光栅化上——界面每次重绘都
+    慢一个数量级，而用户面只看到「能开」，没有任何痕迹指向渲染模式。分诊器
+    据本档一眼判定，故每次起飞都落盘（不只回退时）。
+    """
+    path = root / "home" / "logs" / "render-mode.txt"
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            f"mode={mode}\n"
+            f"at={time.strftime('%Y-%m-%d %H:%M:%S')}\n"
+            f"args={' '.join(args) if args else '(none)'}\n",
+            encoding="utf-8",
+        )
+    except OSError:
+        pass
+
+
 def main() -> int:
     force_utf8_stdio()
     root = pathlib.Path(sys.argv[1]).resolve()
@@ -242,12 +263,23 @@ def main() -> int:
 
     report.line(f"第 1 次启动（守窗 {wait_seconds} 秒）...")
     if attempt(exe, build_env(root, os.environ), [], stdout_log, wait_seconds, report):
+        write_render_mode(root, "gpu", [])
         return 0
 
-    report.line("首试早夭，带软渲染参数重试（--disable-gpu --no-sandbox，#38216 类死因）...")
-    if attempt(exe, build_env(root, os.environ, disable_gpu=True),
-               ["--disable-gpu", "--no-sandbox"], stdout_log, wait_seconds, report):
-        return 0
+    if os.environ.get("BLACK_POOL_FORCE_GPU") == "1":
+        report.line("[FAIL] 首试早夭，且 BLACK_POOL_FORCE_GPU=1 已禁用软渲染回退——"
+                    "本次不重试（该旋钮用于验证「界面卡顿是否来自软渲染」："
+                    "去掉它能开、加上它开不了，即证实回退在生效）。")
+    else:
+        report.line("首试早夭，带软渲染参数重试（--disable-gpu --no-sandbox，#38216 类死因）...")
+        if attempt(exe, build_env(root, os.environ, disable_gpu=True),
+                   ["--disable-gpu", "--no-sandbox"], stdout_log, wait_seconds, report):
+            write_render_mode(root, "software", ["--disable-gpu", "--no-sandbox"])
+            report.line("[warn] 本次为**软渲染**起飞（GPU 加速关闭）：界面绘制全落 CPU，"
+                        "滚动 / 打开面板 / 输入等交互会明显变慢，且此模式每次启动都会"
+                        "重演（首试仍会早夭）。真因在上面那次早夭的日志里——"
+                        "跑 diagnose.cmd 取全量取证，或先修好首试早夭再谈卡顿。")
+            return 0
 
     report.line("[FAIL] 两次启动均早夭。以下为取证日志尾部：")
     for label, p in (("desktop-stdout.log（Chromium/Electron 原始输出）", stdout_log),

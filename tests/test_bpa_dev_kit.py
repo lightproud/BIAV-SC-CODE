@@ -416,3 +416,67 @@ def test_factory_cleanup_stubs_test_runner():
         assert "cat > BlackPool/app/scripts/run_tests.sh" in text, f"{wf} 缺运行器存根"
         assert "the test suite is not shipped" in text, f"{wf} 存根未直说真相"
         assert "projects/black-pool-agent/CONTEXT.md" in text, f"{wf} 存根未指路配方"
+
+
+def _load_diagnose():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("bpa_diagnose_lag", KIT / "diagnose_lag.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_lag_report_names_the_layer_from_app_logs():
+    """第 8 节判读（2026-08-04「BPA 运行迟缓」派发）：三处埋点各自指向不同一层，
+    分诊器必须把它们读成**点名到层**的结论，而不是又一堆原始行。"""
+    dl = _load_diagnose()
+    gateway = (
+        "WARNING slow rpc method=session.history lane=inline ms=6100 queue_ms=0\n"
+        "WARNING slow rpc method=model.options lane=pool ms=900 queue_ms=1500\n"
+        "ws accepted peer=127.0.0.1:5001\n"
+    )
+    desktop = (
+        "[renderer console] [lag] gateway rpc method=prompt.submit ms=8000 outcome=reconnected\n"
+        "[renderer console] [lag] renderer main thread blocked ms=2400\n"
+    )
+    lines, hints = dl.analyze_app_logs(gateway, desktop, "mode=software\n")
+    blob = "\n".join(lines + hints)
+    assert "session.history(inline)" in blob, "内联 lane 慢处理器未点名"
+    assert "软渲染" in blob, "软渲染模式未判读"
+    assert "重连" in blob, "重连往返未判读"
+    assert "排队" in blob, "线程池排队未判读"
+    # 内联点名只许点内联的，pool 条目不得混进那条提示
+    inline_hint = [h for h in hints if "内联 lane" in h][0]
+    assert "model.options" not in inline_hint
+
+
+def test_lag_report_is_honest_when_instrumentation_is_absent():
+    """老包（未烧入埋点补丁）必须说「没埋点」，不得沉默成「一切正常」。"""
+    dl = _load_diagnose()
+    lines, hints = dl.analyze_app_logs("", "", "")
+    assert hints and "interaction-latency-trace" in hints[0]
+    assert any("未记录" in l for l in lines)
+
+
+def test_launcher_marks_render_mode_and_honors_force_gpu():
+    """软渲染回退是「一次失败、长期变慢」的静默陷阱：必须落痕 + 有开关关掉它。"""
+    text = (KIT / "launch_desktop.py").read_text(encoding="utf-8")
+    assert "def write_render_mode(" in text
+    assert 'write_render_mode(root, "gpu", [])' in text
+    assert 'write_render_mode(root, "software"' in text
+    assert "BLACK_POOL_FORCE_GPU" in text
+
+
+def test_render_mode_marker_written(tmp_path):
+    dl_spec_root = tmp_path
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("bpa_launch_desktop", KIT / "launch_desktop.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    mod.write_render_mode(dl_spec_root, "software", ["--disable-gpu"])
+    marker = dl_spec_root / "home" / "logs" / "render-mode.txt"
+    assert marker.is_file()
+    assert "mode=software" in marker.read_text(encoding="utf-8")
+    assert "--disable-gpu" in marker.read_text(encoding="utf-8")

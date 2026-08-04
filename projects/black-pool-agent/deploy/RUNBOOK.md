@@ -80,6 +80,24 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 杀软排除项；MOTW 命中 = zip 解锁后重解压；日志见反复 attempt/respawn = 网关早夭，
 主进程被同步探针钉住（单针可达 10 秒级），把 `home\logs\` 一并回传。
 
+### 第 8 节：应用内延迟埋点（2026-08-04 起随包烧入）
+
+前 7 节量的是**环境**；第 8 节读**应用自己记的账**，把「慢在哪一层」从猜升级为读：
+
+| 埋点 | 落点 | 说明 |
+|---|---|---|
+| 网关逐 RPC 计时 | `home\logs\gateway.log` 的 `slow rpc method=… lane=… ms=…` | `lane=inline` = 该处理器执行期间 WS 读循环停摆，**后面每个请求都跟着等**；`queue_ms` 高 = 线程池被占满 |
+| 渲染端往返计时 | `home\logs\desktop.log` 的 `[lag] gateway rpc …` | `outcome=reconnected` = 这次交互先重连再完成（掉线风暴的指纹）|
+| 渲染端主线程阻塞 | 同上，`[lag] renderer main thread blocked ms=…` | 界面层自己卡住（绘制 / JS 长任务 / 软渲染），与网关无关 |
+| 渲染模式 | `home\logs\render-mode.txt` | `mode=software` = 本次经 `--disable-gpu` 回退起飞，界面必然慢 |
+
+- 阈值旋钮：网关侧 `HERMES_RPC_SLOW_MS`（默认 800，设 0 关闭）；渲染端固定 1.5 秒 / 1 秒。
+  **一切埋点只在超阈时出声**，跑得顺的机器日志里一个字都不多。
+- 软渲染验证旋钮：`set BLACK_POOL_FORCE_GPU=1` 后启动——**能开 = 回退没在生效**（卡顿另有其因），
+  **开不了 = 平时就在软渲染上跑**（先治首试早夭，别治卡顿）。
+- 取证姿势：正常用 3-5 分钟、把卡的操作各做几次，**然后**跑 `diagnose.cmd`，回传 `lag-report.txt`
+  （必要时加 `home\logs\`）。埋点是滚动日志，先跑分诊再用软件反而什么也抓不到。
+
 ## 纪律（写给将来的自己）
 
 - **补丁射程**：Python 面（agent / hermes_cli / gateway / tools）打完即生效；

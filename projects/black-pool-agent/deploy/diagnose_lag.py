@@ -7,6 +7,12 @@
 远程无法复现，只能上实机分层测量。本器把每层各测一刀，输出判读提示，全文
 落 <root>/lag-report.txt 供回传银芯。
 
+第 8 节读**应用自身的延迟埋点**（interaction-latency-trace 补丁烧入的那套）：
+网关侧逐条 RPC 计时（慢的写 gateway.log，标明是内联 lane 还是线程池 lane）、
+渲染端往返计时与主线程阻塞（写 desktop.log），加上启动器落的渲染模式档。
+前 7 节量的是环境，第 8 节量的是应用内部——两者合起来才能把「每个交互
+5-10 秒」定到具体一层，而不是继续猜。
+
 用法：python diagnose_lag.py <整包根目录>
 只读部署位（写入仅 lag-report.txt 一件）；kit 模式由 diagnose.cmd 解析部署位后转入。
 """
@@ -316,6 +322,149 @@ def log_forensics(root: pathlib.Path) -> list[str]:
     return hints
 
 
+_SLOW_RPC_RE = re.compile(
+    r"slow rpc method=(\S+) lane=(\S+) ms=(\d+) queue_ms=(\d+)")
+_CLIENT_RPC_RE = re.compile(
+    r"\[lag\] gateway rpc method=(\S+) ms=(\d+) outcome=(\S+)")
+_BLOCKED_RE = re.compile(r"\[lag\] renderer main thread blocked ms=(\d+)")
+_UNRESPONSIVE = "webContents became unresponsive"
+
+
+def _median(values: list[int]) -> int:
+    return sorted(values)[len(values) // 2] if values else 0
+
+
+def _top(counter: dict[str, list[int]], n: int = 3) -> list[str]:
+    ranked = sorted(counter.items(), key=lambda kv: (-max(kv[1]), -len(kv[1])))
+    return [f"{name} x{len(v)} 最慢 {max(v)}ms 中位 {_median(v)}ms"
+            for name, v in ranked[:n]]
+
+
+def analyze_app_logs(gateway_text: str, desktop_text: str,
+                     render_mode_text: str) -> tuple[list[str], list[str]]:
+    """把三份日志读成「哪一层慢」的结论。纯函数，供单测直接喂文本。
+
+    返回 (报告行, 判读提示)。
+    """
+    out: list[str] = []
+    hints: list[str] = []
+
+    mode = ""
+    for line in render_mode_text.splitlines():
+        if line.startswith("mode="):
+            mode = line.split("=", 1)[1].strip()
+    if mode:
+        out.append(f"渲染模式: {mode}")
+        if mode == "software":
+            hints.append(
+                "本次以**软渲染**起飞（启动器首试早夭后带 --disable-gpu 重试成功）——"
+                "界面绘制全落 CPU，交互慢是必然结果，且每次启动都会重演。"
+                "处置：先修首试早夭（看 desktop-stdout.log 上一段 attempt），"
+                "或设 BLACK_POOL_FORCE_GPU=1 复跑确认回退确实在生效。")
+    else:
+        out.append("渲染模式: 未记录（启动器版本较旧或未经 launcher 启动）")
+
+    server: dict[str, list[int]] = {}
+    inline_hits = 0
+    queue_hits = 0
+    for m in _SLOW_RPC_RE.finditer(gateway_text):
+        method, lane, ms, queue_ms = m.group(1), m.group(2), int(m.group(3)), int(m.group(4))
+        server.setdefault(f"{method}({lane})", []).append(ms)
+        if lane == "inline":
+            inline_hits += 1
+        if queue_ms >= 800:
+            queue_hits += 1
+
+    client: dict[str, list[int]] = {}
+    reconnects = 0
+    for m in _CLIENT_RPC_RE.finditer(desktop_text):
+        method, ms, outcome = m.group(1), int(m.group(2)), m.group(3)
+        client.setdefault(method, []).append(ms)
+        if outcome == "reconnected":
+            reconnects += 1
+
+    blocked = [int(m.group(1)) for m in _BLOCKED_RE.finditer(desktop_text)]
+    unresponsive = desktop_text.count(_UNRESPONSIVE)
+    ws_accepts = gateway_text.count("ws accepted peer=")
+    ws_closes = gateway_text.count("ws closed peer=")
+
+    out.append(f"网关慢 RPC 记录: {sum(len(v) for v in server.values())} 条"
+               f"（内联 lane {inline_hits} 条 / 排队超阈 {queue_hits} 条）")
+    for line in _top(server):
+        out.append(f"  · {line}")
+    out.append(f"渲染端慢往返: {sum(len(v) for v in client.values())} 条"
+               f"（其中触发重连 {reconnects} 条）")
+    for line in _top(client):
+        out.append(f"  · {line}")
+    out.append(f"渲染端主线程阻塞: {len(blocked)} 次"
+               f"（最长 {max(blocked) if blocked else 0}ms）；"
+               f"主进程判定无响应 {unresponsive} 次")
+    out.append(f"WS 连接: 接受 {ws_accepts} 次 / 关闭 {ws_closes} 次")
+
+    if not server and not client and not blocked and not mode:
+        hints.append(
+            "三处埋点都没有任何记录：要么本次跑得很顺（那卡顿不在这三层），"
+            "要么整包早于 interaction-latency-trace 补丁——"
+            "先确认包内 BUILD.md 的烧入补丁清单里有它，再复跑一次交互后重测。")
+        return out, hints
+
+    if blocked:
+        hints.append(
+            f"渲染端主线程被阻塞 {len(blocked)} 次、最长 {max(blocked)}ms——"
+            "卡顿在**界面层**（绘制 / JS 长任务 / 软渲染），不在网关。"
+            "配合上面的渲染模式行判读：software 即先治软渲染。")
+    if unresponsive:
+        hints.append(f"主进程记录到 {unresponsive} 次渲染进程无响应——同上，界面层。")
+    if reconnects:
+        hints.append(
+            f"{reconnects} 次交互是在**重连之后**才完成的——网关连接在反复掉线，"
+            "每次交互都要先重建连接（这正是「每个交互都要等几秒」的典型形态）。"
+            "对照第 7 节 respawn 计数与本节 WS 接受次数：接受数远大于 1 = 掉线风暴。")
+    if inline_hits:
+        inline_only = {k: v for k, v in server.items() if k.endswith("(inline)")}
+        hints.append(
+            f"网关有 {inline_hits} 条**内联 lane** 慢 RPC——内联处理器执行期间"
+            "整条 WS 读循环停摆，排在它后面的每个请求都跟着等。"
+            f"点名最慢者：{'; '.join(_top(inline_only, 2)) or '见上表'}。")
+    if queue_hits:
+        hints.append(
+            f"网关有 {queue_hits} 条 RPC 在线程池里**排队**超过阈值——池被占满，"
+            "提高 HERMES_TUI_RPC_POOL_WORKERS 或查是谁长期占着 worker。")
+    if client and not server and not blocked:
+        hints.append(
+            "渲染端往返慢、网关侧却没有慢处理器记录——时间花在**传输与事件循环**"
+            "（回环 / IPv6 回退 / 事件循环被阻塞），对照第 3 节回环测时。")
+    return out, hints
+
+
+def app_forensics(root: pathlib.Path) -> list[str]:
+    section("8. 应用内延迟埋点（网关 RPC / 渲染端往返 / 主线程阻塞）")
+    logs = root / "home" / "logs"
+
+    def read_all(patterns: tuple[str, ...]) -> str:
+        chunks: list[str] = []
+        for pattern in patterns:
+            for path in sorted(logs.glob(pattern)):
+                try:
+                    chunks.append(path.read_text(encoding="utf-8", errors="replace"))
+                except OSError:
+                    continue
+        return "\n".join(chunks)
+
+    gateway_text = read_all(("gateway.log", "gateway.log.*"))
+    desktop_text = read_all(("desktop.log", "desktop.log.*"))
+    try:
+        render_mode_text = (logs / "render-mode.txt").read_text(
+            encoding="utf-8", errors="replace")
+    except OSError:
+        render_mode_text = ""
+
+    lines, hints = analyze_app_logs(gateway_text, desktop_text, render_mode_text)
+    for line in lines:
+        say(line)
+    return hints
+
+
 def main() -> int:
     force_utf8_stdio()
     if len(sys.argv) < 2:
@@ -334,8 +483,9 @@ def main() -> int:
     hints += sample_spawn(root)
     hints += motw_scan(root)
     hints += log_forensics(root)
+    hints += app_forensics(root)
 
-    section("8. 判读提示")
+    section("9. 判读提示")
     if hints:
         for i, hint in enumerate(hints, 1):
             say(f"[{i}] {hint}")

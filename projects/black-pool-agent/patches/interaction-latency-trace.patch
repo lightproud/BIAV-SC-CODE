@@ -1,0 +1,308 @@
+diff --git a/apps/desktop/src/app/gateway/hooks/use-gateway-request.ts b/apps/desktop/src/app/gateway/hooks/use-gateway-request.ts
+index 04f53f7..0df7c94 100644
+--- a/apps/desktop/src/app/gateway/hooks/use-gateway-request.ts
++++ b/apps/desktop/src/app/gateway/hooks/use-gateway-request.ts
+@@ -4,4 +4,5 @@ import { useCallback, useEffect, useRef } from 'react'
+ 
+ import type { HermesGateway } from '@/hermes'
++import { noteGatewayRoundTrip } from '@/lib/lag-trace'
+ import { $gateway, ensureActiveGatewayOpen, isActivePrimary } from '@/store/gateway'
+ import { $activeGatewayProfile } from '@/store/profile'
+@@ -112,6 +113,15 @@ export function useGatewayRequest() {
+       }
+ 
++      // Timed so a "the UI hangs on every click" report can be attributed:
++      // a slow round-trip here means the stall is behind the socket, a fast
++      // one means it is in front of it (renderer paint / main thread).
++      const startedAt = performance.now()
++
+       try {
+-        return await gateway.request<T>(method, params, timeoutMs, signal)
++        const result = await gateway.request<T>(method, params, timeoutMs, signal)
++
++        noteGatewayRoundTrip(method, startedAt)
++
++        return result
+       } catch (error) {
+         const message = error instanceof Error ? error.message : String(error)
+@@ -139,5 +149,12 @@ export function useGatewayRequest() {
+         }
+ 
+-        return recovered.request<T>(method, params, timeoutMs, signal)
++        const retried = await recovered.request<T>(method, params, timeoutMs, signal)
++
++        // Reported separately: a reconnect on the request path is the single
++        // most expensive thing that can happen to one interaction, and a
++        // storm of them is invisible in any other log.
++        noteGatewayRoundTrip(method, startedAt, 'reconnected')
++
++        return retried
+       }
+     },
+diff --git a/apps/desktop/src/lib/lag-trace.ts b/apps/desktop/src/lib/lag-trace.ts
+new file mode 100644
+index 0000000..9601e09
+--- /dev/null
++++ b/apps/desktop/src/lib/lag-trace.ts
+@@ -0,0 +1,92 @@
++// Renderer-side interaction latency tracing.
++//
++// "Every interaction waits several seconds" is a symptom three different
++// layers can produce, and from the outside they look identical:
++//
++//   1. the renderer's main thread is blocked (paint/layout/JS storm, or a
++//      GPU-less software rasterizer doing the compositing on the CPU),
++//   2. the gateway round-trip is slow (transport, event loop, or a handler
++//      holding the socket's read loop),
++//   3. the machine itself is slow (AV scanning, network share, swap).
++//
++// Nothing in the shipped app measured any of them, so a field report could
++// only be answered with guesses. This module measures the first two from
++// inside the renderer and writes them where they can be read back off the
++// user's machine afterwards.
++//
++// Output goes through `console.error` on purpose: the main process forwards
++// only level-3 renderer console messages into `logs/desktop.log`, and a trace
++// nobody can retrieve is not a trace. Everything here is rate-limited, and no
++// line is emitted at all while things are fast, so a healthy install stays
++// silent.
++
++/** Round-trip slower than this is worth a line (ms). */
++const SLOW_RPC_MS = 1_500
++/** Heartbeat drift past this means the main thread was blocked (ms). */
++const BLOCKED_MAIN_THREAD_MS = 1_000
++/** Heartbeat period (ms). */
++const HEARTBEAT_MS = 1_000
++/** Ceiling so a pathological install cannot flood the desktop log. */
++const MAX_LINES_PER_MINUTE = 30
++
++let windowStartedAt = 0
++let linesThisWindow = 0
++
++function emit(line: string): void {
++  const now = Date.now()
++
++  if (now - windowStartedAt > 60_000) {
++    windowStartedAt = now
++    linesThisWindow = 0
++  }
++
++  if (linesThisWindow >= MAX_LINES_PER_MINUTE) {
++    return
++  }
++
++  linesThisWindow += 1
++  console.error(line)
++}
++
++/**
++ * Record one gateway round-trip. `startedAt` is a `performance.now()` stamp
++ * taken immediately before the request went out.
++ */
++export function noteGatewayRoundTrip(method: string, startedAt: number, outcome: string = 'ok'): void {
++  const ms = Math.round(performance.now() - startedAt)
++
++  if (ms < SLOW_RPC_MS) {
++    return
++  }
++
++  emit(`[lag] gateway rpc method=${method} ms=${ms} outcome=${outcome}`)
++}
++
++/**
++ * Watch the renderer's main thread with a plain interval. A timer that should
++ * fire every second but fires late by more than a second means the main thread
++ * was busy for that long — which is exactly what "the UI froze" is.
++ *
++ * Hidden windows are throttled by Chromium by design, so drift is only
++ * reported while the window is actually visible.
++ */
++function installMainThreadWatch(): void {
++  if (typeof window === 'undefined') {
++    return
++  }
++
++  let last = performance.now()
++
++  window.setInterval(() => {
++    const now = performance.now()
++    const drift = now - last - HEARTBEAT_MS
++
++    last = now
++
++    if (drift >= BLOCKED_MAIN_THREAD_MS && document.visibilityState === 'visible') {
++      emit(`[lag] renderer main thread blocked ms=${Math.round(drift)}`)
++    }
++  }, HEARTBEAT_MS)
++}
++
++installMainThreadWatch()
+diff --git a/apps/desktop/src/main.tsx b/apps/desktop/src/main.tsx
+index a71427c..2ea40b4 100644
+--- a/apps/desktop/src/main.tsx
++++ b/apps/desktop/src/main.tsx
+@@ -6,4 +6,7 @@ import './store/power'
+ // Side-effect: applies the persisted window translucency on load.
+ import './store/translucency'
++// Side-effect: watches the main thread for multi-second stalls. Silent unless
++// something is actually slow; see lib/lag-trace.ts.
++import './lib/lag-trace'
+ // Dev-only render/state churn counters. MUST precede the `react-dom` import
+ // below: react-dom captures the devtools hook at module init, so bippy has to
+diff --git a/tools/image_generation_tool.py b/tools/image_generation_tool.py
+index ff46518..25bbb61 100644
+--- a/tools/image_generation_tool.py
++++ b/tools/image_generation_tool.py
+@@ -63,5 +63,8 @@ from tools.fal_common import (
+     _normalize_fal_queue_url_format,  # noqa: F401 — re-exported for tests
+ )
+-from tools.managed_tool_gateway import resolve_managed_tool_gateway
++from tools.managed_tool_gateway import (
++    is_managed_tool_gateway_ready,
++    resolve_managed_tool_gateway,
++)
+ from tools.tool_backend_helpers import (
+     fal_key_is_configured,
+@@ -1038,7 +1041,22 @@ def image_generate_tool(
+ 
+ 
++def _managed_fal_gateway_is_ready() -> bool:
++    """Availability-only twin of :func:`_resolve_managed_fal_gateway`.
++
++    Same gating, but it peeks at the stored token instead of refreshing it.
++    ``check_fal_api_key`` is the registered ``check_fn`` for image generation,
++    so it runs while the tool registry builds each turn's definitions (30s
++    cache): a blocking OAuth refresh there costs up to its full timeout on a
++    host that cannot reach the portal, and the user sees it as the UI stalling.
++    The submit path (:func:`_resolve_managed_fal_gateway`) still refreshes.
++    """
++    if fal_key_is_configured() and not prefers_gateway("image_gen"):
++        return False
++    return is_managed_tool_gateway_ready("fal-queue")
++
++
+ def check_fal_api_key() -> bool:
+     """True if the FAL.ai API key (direct or managed gateway) is available."""
+-    return bool(fal_key_is_configured() or _resolve_managed_fal_gateway())
++    return bool(fal_key_is_configured() or _managed_fal_gateway_is_ready())
+ 
+ 
+diff --git a/tools/tts_tool.py b/tools/tts_tool.py
+index 341d94c..77efe39 100644
+--- a/tools/tts_tool.py
++++ b/tools/tts_tool.py
+@@ -91,5 +91,8 @@ def _resolve_provider_key(env_var: str, provider_id: str) -> str:
+     return resolve_provider_secret(env_var, provider_id, env_getter=get_env_value)
+ 
+-from tools.managed_tool_gateway import resolve_managed_tool_gateway
++from tools.managed_tool_gateway import (
++    is_managed_tool_gateway_ready,
++    resolve_managed_tool_gateway,
++)
+ from tools.tool_backend_helpers import (
+     managed_nous_tools_enabled,
+@@ -3288,9 +3291,19 @@ def _resolve_openai_audio_client_config() -> tuple[str, str, bool]:
+ 
+ def _has_openai_audio_backend() -> bool:
+-    """Return True when OpenAI audio can use config/env credentials or the managed gateway."""
++    """Return True when OpenAI audio can use config/env credentials or the managed gateway.
++
++    Availability only — never the request path. ``is_managed_tool_gateway_ready``
++    peeks at the stored token instead of refreshing it, because this predicate
++    runs inside ``check_tts_requirements`` (a registered ``check_fn``): the tool
++    registry calls it while building every turn's tool definitions, with a 30s
++    result cache. Resolving through the refresh-aware reader put a blocking
++    OAuth round-trip on that path — up to a 15s timeout each time on a host that
++    cannot reach the portal — which the caller experiences as the whole UI
++    stalling every half minute. The real request paths still refresh.
++    """
+     openai_cfg = (_load_tts_config().get("openai") or {})
+     if openai_cfg.get("api_key"):
+         return True
+-    return bool(resolve_openai_audio_api_key() or resolve_managed_tool_gateway("openai-audio"))
++    return bool(resolve_openai_audio_api_key() or is_managed_tool_gateway_ready("openai-audio"))
+ 
+ 
+diff --git a/tui_gateway/server.py b/tui_gateway/server.py
+index 9d5fd00..2e1e57c 100644
+--- a/tui_gateway/server.py
++++ b/tui_gateway/server.py
+@@ -293,4 +293,53 @@ _pool = concurrent.futures.ThreadPoolExecutor(
+ atexit.register(lambda: _pool.shutdown(wait=False, cancel_futures=True))
+ 
++# ── Per-RPC latency tracing ──────────────────────────────────────────
++# "Every interaction stalls for seconds" is reported from packaged desktops
++# far more often than it can be reproduced, and nothing in the gateway used
++# to record how long a handler actually took: the logs show what was called,
++# never how long it ran. Without that number the stall cannot be attributed
++# to a layer (renderer paint / transport / handler work) and the triage
++# degenerates into guessing.
++#
++# So every dispatched RPC is timed and anything past the threshold is logged
++# with its lane. The lane matters as much as the duration:
++#   * inline — ws.handle_ws awaits dispatch() before it reads the next frame,
++#     so an inline overrun is head-of-line blocking: every later request on
++#     that socket waits behind it. One slow inline handler is enough to make
++#     the whole UI feel frozen.
++#   * pool — the handler runs on _pool. Its own runtime delays only itself,
++#     but `queue_ms` (how long the job waited for a free worker) exposes pool
++#     saturation, which does delay everything routed to the pool.
++# Threshold in milliseconds; HERMES_RPC_SLOW_MS=0 disables the tracing.
++try:
++    _rpc_slow_ms = float(os.environ.get("HERMES_RPC_SLOW_MS") or "800")
++except (ValueError, TypeError):
++    _rpc_slow_ms = 800.0
++_RPC_SLOW_MS = max(0.0, _rpc_slow_ms)
++
++
++def _note_rpc_duration(method: str, lane: str, started: float, queued_ms: float = 0.0) -> None:
++    """Log one RPC's wall time when it crosses the slow threshold.
++
++    Never raises: tracing must not be able to fail a request.
++    """
++    if _RPC_SLOW_MS <= 0:
++        return
++    try:
++        elapsed_ms = (time.monotonic() - started) * 1000.0
++        if elapsed_ms < _RPC_SLOW_MS and queued_ms < _RPC_SLOW_MS:
++            return
++        logger.warning(
++            "slow rpc method=%s lane=%s ms=%.0f queue_ms=%.0f%s",
++            method,
++            lane,
++            elapsed_ms,
++            queued_ms,
++            " (inline: the ws read loop was blocked for this long)"
++            if lane == "inline"
++            else "",
++        )
++    except Exception:  # pragma: no cover - diagnostics are never fatal
++        pass
++
+ # Reserve real stdout for JSON-RPC only; redirect Python's stdout to stderr
+ # so stray print() from libraries/tools becomes harmless gateway.stderr instead
+@@ -1919,14 +1968,23 @@ def dispatch(req: dict, transport: Optional[Transport] = None) -> dict | None:
+         _rid, method, _params = normalized
+         if method not in _LONG_HANDLERS:
+-            return handle_request(req)
++            inline_started = time.monotonic()
++            try:
++                return handle_request(req)
++            finally:
++                _note_rpc_duration(method, "inline", inline_started)
+ 
+         # Snapshot the context so the pool worker sees the bound transport.
+         ctx = contextvars.copy_context()
++        submitted = time.monotonic()
+ 
+         def run():
++            started = time.monotonic()
++            queued_ms = (started - submitted) * 1000.0
+             try:
+                 resp = handle_request(req)
+             except Exception as exc:
+                 resp = _err(req.get("id"), -32000, f"handler error: {exc}")
++            finally:
++                _note_rpc_duration(method, "pool", started, queued_ms)
+             if resp is not None:
+                 t.write(resp)

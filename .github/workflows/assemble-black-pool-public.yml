@@ -49,7 +49,9 @@ jobs:
         run: python projects/black-pool-agent/build/rebrand.py --apply BlackPool/app --edition public
 
       - name: Apply feature patches (whitelisted)
-        run: git apply --directory=BlackPool/app projects/black-pool-agent/patches/conversation-cost-panel.patch
+        run: |
+          git apply --directory=BlackPool/app projects/black-pool-agent/patches/conversation-cost-panel.patch
+          git apply --directory=BlackPool/app projects/black-pool-agent/patches/interaction-latency-trace.patch
 
       - name: Portable CPython into bundle
         env:
@@ -110,7 +112,8 @@ jobs:
             echo "## 烧入补丁（构建期已应用）"
             echo ""
             for p in projects/black-pool-agent/patches/black-pool-rebrand.patch \
-                     projects/black-pool-agent/patches/conversation-cost-panel.patch; do
+                     projects/black-pool-agent/patches/conversation-cost-panel.patch \
+                     projects/black-pool-agent/patches/interaction-latency-trace.patch; do
               echo "- $(basename "$p")  (sha256:$(sha256sum "$p" | cut -c1-12))"
             done
             echo ""
