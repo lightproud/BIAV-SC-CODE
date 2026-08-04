@@ -4,7 +4,7 @@ title: "morimens-context.md"
 description: "世界观术语 + 历史时间线"
 resource: "/memory/morimens-context.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-08-04"
+timestamp: "2026-08-05"
 ---
 
 # 记忆层指针

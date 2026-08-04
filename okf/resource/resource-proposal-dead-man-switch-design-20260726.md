@@ -4,7 +4,7 @@ title: "dead-man-switch-design-20260726"
 description: "2026-07-26 最贵的一条教训不是「巡检器坏了」，而是**巡检器坏了七天没人知道**——因为（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-08-04"
+timestamp: "2026-08-05"
 ---
 
 # 指针概念
