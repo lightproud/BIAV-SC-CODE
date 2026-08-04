@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-04T11:24:15.491347+00:00",
+  "collected_at": "2026-08-04T14:06:33.218349+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 5,
   "items": [
     {
       "source": "steam",
@@ -48,7 +48,7 @@
       "voted_up": true,
       "review": "Можно съесть эмбриона",
       "timestamp_created": 1785795089,
-      "playtime_forever": 734
+      "playtime_forever": 816
     },
     {
       "source": "steam",
@@ -64,36 +64,6 @@
       "review": "다른 건 모르겠고 스크립트랑 그래픽이 진짜. 너무. 아름다워요.",
       "timestamp_created": 1785777278,
       "playtime_forever": 2558
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-03T13:03:09+00:00",
-      "lang": "schinese",
-      "title": "[负面] 差",
-      "summary": "差",
-      "url": "https://steamcommunity.com/profiles/76561199557478078/recommended/3052450",
-      "author": "76561199557478078",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "差",
-      "timestamp_created": 1785762189,
-      "playtime_forever": 10706
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-03T12:57:22+00:00",
-      "lang": "english",
-      "title": "[正面] such a good game, trust me.",
-      "summary": "such a good game, trust me.",
-      "url": "https://steamcommunity.com/profiles/76561199662095440/recommended/3052450",
-      "author": "76561199662095440",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "such a good game, trust me.",
-      "timestamp_created": 1785761842,
-      "playtime_forever": 341
     },
     {
       "source": "steam",
