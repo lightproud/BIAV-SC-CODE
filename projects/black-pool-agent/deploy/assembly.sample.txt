@@ -11,7 +11,7 @@
 [plugins]
 * = on
 # 插件按 plugins\ 下相对路径（正斜杠）点名：
-# memory/blackpool = on
+# memory/some-provider = on
 
 [skills]
 * = on

@@ -13,9 +13,10 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 ├── releases\      # 进料：银芯 black-pool-bundle Release 下载的 zip（只进不改，留最近 2-3 版）
 │   └── CHECKSUMS.txt   # 每行含官方 SHA-256（Release 页 digest 可复制）；存在则强制验货
 ├── patches\       # 内网自持补丁（*.patch，git diff 格式，按文件名序应用）
-├── plugins\       # 黑池专属插件 → 拷入 app\plugins\（银芯产 blackpool 记忆插件：从
-│                  #   vendor 镜像 projects\black-pool-agent\plugins\ 整拷进来即随装配入包；
-│                  #   激活一次即可：launcher.cmd cli config set memory.provider blackpool）
+├── plugins\       # 黑池专属插件 → 拷入 app\plugins\（银芯 vendor 镜像
+│                  #   projects\black-pool-agent\plugins\ 整拷进来即随装配入包；
+│                  #   插件各自的激活方式见其 README。2026-08-04 起该镜像为空：
+│                  #   blackpool 记忆插件已退役，原因见 gaps.md）
 ├── skills\        # 内网技能 → 拷入 home\skills\
 ├── config\        # SOUL.md → home\；env.cmd → 包根；deploy-target.txt = 部署目录地址一行（凭据/端点的唯一的家）
 │                  #   git-root.txt = 银芯克隆根一行（可选，供 update.cmd 第①步；缺省自动探测）

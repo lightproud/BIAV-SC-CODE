@@ -16,7 +16,7 @@ Missing file or missing section = everything on (backward compatible).
     some-experiment.patch = off
 
     [plugins]
-    memory/blackpool = on
+    memory/some-provider = on
 
 After injecting, writes the ground-truth assembly documents into the bundle:
 
