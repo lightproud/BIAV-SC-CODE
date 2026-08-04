@@ -70,6 +70,15 @@ Windows venv 不可跨平台组装，故必须 Windows 台）单 job 产**唯一
 **合规联动（守密人 2026-08-02 交互裁定已闭）**：文书裁 7 报备口径不变（常规迭代不另行申报），
 其成立前提修订为「数据面与现状完全一致 + 免安装器便携分发（与 BPT 现状同形）」。
 
+## 公版仓内车间 `../public-workshop/`（守密人 2026-08-04 指示）
+
+「让银芯仓库本身也拥有组装能力，用于公版」的落地：任何克隆了银芯仓的 Windows 机器，
+凭 `public-workshop/` 即可把 Release 公版包（`black-pool-public-win64.zip`）验货 →
+解压 → 启动器套新 → home 保全 → 轮换落位为可用的 `BlackPool\`，并一键回滚。
+与内网 bpa-dev 车间同构但**自根于仓内、零内网件**（不含 assemble_inject 注入工序）。
+用法与目录约定见 `../public-workshop/RUNBOOK.md`；守卫 `tests/test_public_workshop.py`。
+一级出包（从源码构建 zip）仍归 CI 组装台，本车间只做二级落位。
+
 ## 品牌图标（2026-08-02 补漏 #2）
 
 - 源：`build/brand-assets/`（icon.png / icon.ico / apple-touch-icon.png / brand-tile.jpg），

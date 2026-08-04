@@ -1,0 +1,8 @@
+# Workshop runtime dirs: input material, assembly bench, deployed product,
+# rollback/forensic slots and logs never enter git.
+releases/
+staging/
+BlackPool/
+BlackPool.old/
+BlackPool.failed-*/
+*.log

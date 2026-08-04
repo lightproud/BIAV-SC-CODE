@@ -96,7 +96,9 @@ desktop（`--win dir` 免装目录形态）+ `launcher.cmd` 双击即用。**zip
 零解压零安装零 PowerShell。**包内零凭据零内网参数**（§1.1-HC 切面化，配置内网侧注入）；
 升级 = 移 pin 重测后重跑 workflow 重发（文书 §2.4）。方案详见
 `projects/black-pool-agent/deploy/README.md`。定名前旧桶 `silver-core-bundle`
-已删除（守密人 2026-08-03 裁定，防误取旧包）。
+已删除（守密人 2026-08-03 裁定，防误取旧包）。**公版包的仓内落位车间**（银芯 checkout
+自持组装：验货 / 解压 / home 保全 / 回滚，守密人 2026-08-04 指示）=
+`projects/black-pool-agent/public-workshop/`，用法见其 `RUNBOOK.md`。
 
 ### 2.4 「克隆搬运包」`clone-bundle` —— 仓库离线搬运（2026-08-04 增设）
 

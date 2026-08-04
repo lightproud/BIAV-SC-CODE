@@ -31,7 +31,7 @@
 plugins/    # 通用化域插件（零公司信息）        skills/   # 通用技能样例（团队技能实体在内网）
 deploy/     # 通用部署/overlay 脚本（参数化）    patches/  # 预留，当前必须为空（守卫钉死）
 gaps.md     # 漏缝清单（一等产出）              upstream/ # 官方源码快照（银芯开发镜像，见下）
-UPSTREAM.md # pin 台账唯一权威
+UPSTREAM.md # pin 台账唯一权威                  public-workshop/ # 公版仓内车间（checkout 自持组装，2026-08-04）
 ```
 
 - **upstream/ 定位（守密人 2026-08-02 交互澄清）**：保留在银芯仓，供**开发、测试、追官方新版**
