@@ -146,6 +146,8 @@ def test_intranet_patch_sentinels():
         "推荐光效摘除": "arc-nous",
         "版本芯片更新覆盖层入口 no-op": "onSelect: () => {},",
         "服务商列表默认展开": "SHOW_ALL_KEY) !== \'0\'",
+        "私有 provider 注册表晚同步（def）": "def _sync_profile_provider_registry",
+        "私有 provider 注册表晚同步（解析边界再同步）": "Refresh at the routing boundary",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"

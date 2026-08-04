@@ -326,6 +326,115 @@ index 0b46920..b45b179 100644
    if (pollerStarted || typeof window === 'undefined') {
      return
    }
+diff --git a/hermes_cli/auth.py b/hermes_cli/auth.py
+index 1724dfb..6215105 100644
+--- a/hermes_cli/auth.py
++++ b/hermes_cli/auth.py
+@@ -463,39 +463,59 @@ PROVIDER_REGISTRY: Dict[str, ProviderConfig] = {
+     ),
+ }
+ 
+-# Auto-extend PROVIDER_REGISTRY with any api-key provider registered in
+-# providers/ that is not already declared above.  New providers only need a
+-# plugins/model-providers/<name>/ plugin — no edits to this file required.
+-try:
+-    from providers import list_providers as _list_providers_for_registry
+-    for _pp in _list_providers_for_registry():
+-        if _pp.name in PROVIDER_REGISTRY:
+-            continue
+-        if _pp.auth_type != "api_key" or not _pp.env_vars:
+-            continue
+-        # Skip providers that need custom token resolution or are special-cased
+-        # in resolve_provider() (copilot/kimi/zai have bespoke token refresh;
+-        # openrouter/custom are aggregator/user-supplied and handled outside
+-        # the registry — adding them here breaks runtime_provider resolution
+-        # that relies on `openrouter not in PROVIDER_REGISTRY`).
+-        if _pp.name in {"copilot", "kimi-coding", "kimi-coding-cn", "zai", "openrouter", "custom"}:
+-            continue
+-        _api_key_vars = tuple(v for v in _pp.env_vars if not v.endswith("_BASE_URL") and not v.endswith("_URL"))
+-        _base_url_var = next((v for v in _pp.env_vars if v.endswith("_BASE_URL") or v.endswith("_URL")), None)
+-        PROVIDER_REGISTRY[_pp.name] = ProviderConfig(
+-            id=_pp.name,
+-            name=_pp.display_name or _pp.name,
+-            auth_type="api_key",
+-            inference_base_url=_pp.base_url,
+-            api_key_env_vars=_api_key_vars or _pp.env_vars,
+-            base_url_env_var=_base_url_var or "",
+-        )
+-        # Also register aliases so resolve_provider() resolves them
+-        for _alias in _pp.aliases:
+-            if _alias not in PROVIDER_REGISTRY:
+-                PROVIDER_REGISTRY[_alias] = PROVIDER_REGISTRY[_pp.name]
+-except Exception:
+-    pass
++# Providers that need custom token resolution or are special-cased in
++# resolve_provider() (copilot/kimi/zai have bespoke token refresh;
++# openrouter/custom are aggregator/user-supplied and handled outside the
++# registry — adding them here breaks runtime_provider resolution that
++# relies on `openrouter not in PROVIDER_REGISTRY`).
++_PROFILE_REGISTRY_SKIP = {
++    "copilot", "kimi-coding", "kimi-coding-cn", "zai", "openrouter", "custom"
++}
++
++
++def _sync_profile_provider_registry() -> None:
++    """Merge newly discovered api-key provider profiles into auth routing.
++
++    Runs at import and again at the resolve_provider() boundary: the packaged
++    desktop can import this module before private provider plugins are
++    discovered, so a late re-sync keeps picker-visible plugins resolvable.
++    New providers only need a plugins/model-providers/<name>/ plugin — no
++    edits to this file required.
++    """
++    try:
++        from providers import list_providers
++
++        for profile in list_providers():
++            if profile.name in PROVIDER_REGISTRY:
++                continue
++            if profile.auth_type != "api_key" or not profile.env_vars:
++                continue
++            if profile.name in _PROFILE_REGISTRY_SKIP:
++                continue
++            api_key_vars = tuple(
++                v for v in profile.env_vars
++                if not v.endswith("_BASE_URL") and not v.endswith("_URL")
++            )
++            base_url_var = next(
++                (v for v in profile.env_vars
++                 if v.endswith("_BASE_URL") or v.endswith("_URL")),
++                "",
++            )
++            PROVIDER_REGISTRY[profile.name] = ProviderConfig(
++                id=profile.name,
++                name=profile.display_name or profile.name,
++                auth_type="api_key",
++                inference_base_url=profile.base_url,
++                api_key_env_vars=api_key_vars or profile.env_vars,
++                base_url_env_var=base_url_var,
++            )
++            for alias in profile.aliases:
++                PROVIDER_REGISTRY.setdefault(alias, PROVIDER_REGISTRY[profile.name])
++    except Exception:
++        pass
++
++
++_sync_profile_provider_registry()
+ 
+ 
+ # =============================================================================
+@@ -1875,6 +1895,11 @@ def resolve_provider(
+     7. AWS Bedrock credential chain
+     8. Error (no provider configured)
+     """
++    # Packaged desktop may import auth before private plugins are
++    # discovered. Refresh at the routing boundary so picker-visible
++    # plugins stay resolvable.
++    _sync_profile_provider_registry()
++
+     normalized = (requested or "auto").strip().lower()
+ 
+     # Normalize provider aliases
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
 index 56fcf32..15f95ff 100644
 --- a/hermes_cli/update_cmd.py
