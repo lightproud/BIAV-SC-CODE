@@ -121,7 +121,7 @@ def test_kit_files_complete():
                  "apply_patch.py",
                  "RUNBOOK.md", "launcher.cmd", "launch_desktop.py", "fix_venv_path.py",
                  "make-shortcut.vbs", "kill_by_path.py", "assemble_inject.py",
-                 "assembly.sample.txt"]:
+                 "assembly.sample.txt", "diagnose.cmd", "diagnose_lag.py"]:
         assert (KIT / name).is_file(), f"bpa-dev 套件缺件: {name}"
 
 

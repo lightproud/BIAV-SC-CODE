@@ -68,6 +68,17 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
    或双击 `launcher.cmd`；或直接双击**车间里的** `deploy\launcher.cmd`——
    它检测到自己不在包内时，会按 `config\deploy-target.txt` 自动转发到部署位（kit 模式零写入）。
 
+## 卡顿分诊（2026-08-04「界面交互 5-10 秒」现场反馈后置备）
+
+界面整体迟缓时双击 `deploy\diagnose.cmd`（车间里跑会自动按 `config\deploy-target.txt`
+定位部署位，无需重新组装）：分诊器逐层实测**部署位盘型（网络盘/本地盘）→ 进程普查 →
+网关回环往返（含 localhost vs 127.0.0.1 的 IPv6 回退比对）→ 散文件读采样（杀软/SMB
+放大器）→ 子进程冷启采样（杀软 spawn 拦截）→ MOTW 普查 → 日志取证（网关早夭重启循环）**，
+末尾给判读提示，全文落部署位 `lag-report.txt`——把这份报告回传银芯即可远程续查。
+常见判读速记：网络盘 = 整拷回本地；散文件读 >20ms/件或 python 复启 >3s = 给部署目录加
+杀软排除项；MOTW 命中 = zip 解锁后重解压；日志见反复 attempt/respawn = 网关早夭，
+主进程被同步探针钉住（单针可达 10 秒级），把 `home\logs\` 一并回传。
+
 ## 纪律（写给将来的自己）
 
 - **补丁射程**：Python 面（agent / hermes_cli / gateway / tools）打完即生效；
