@@ -18,6 +18,7 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 │                  #   激活一次即可：launcher.cmd cli config set memory.provider blackpool）
 ├── skills\        # 内网技能 → 拷入 home\skills\
 ├── config\        # SOUL.md → home\；env.cmd → 包根；deploy-target.txt = 部署目录地址一行（凭据/端点的唯一的家）
+│                  #   git-root.txt = 银芯克隆根一行（可选，供 update.cmd 第①步；缺省自动探测）
 │                  #   assembly.txt = 选装表（可选，缺省全拼）：五节 patches/plugins/skills/config/overlay
 │                  #     逐条 name = on/off，"* = on/off" 定节内缺省；样例见 deploy\assembly.sample.txt
 │                  #   env.cmd 由 launcher 启动时 call——企业根证书/代理等在此注入，例：
@@ -42,6 +43,15 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 
 ## 三步操作
 
+0. **一键更新 `update.cmd`（守密人 2026-08-04 裁定，日常推荐入口）**：六步流水线
+   ① 银芯克隆 `git pull --ff-only`（克隆根自动探测；探不到时在 `config\git-root.txt`
+   写一行路径启用，没 git 就跳过）→ ② 车间根 `svn update`（顺带保鲜 deploy\ 外链；
+   没 svn 命令行就跳过）→ ③ 下载最新整包进 `releases\`（SHA-256 实测比对 Release
+   官方 digest，通过即登记 CHECKSUMS.txt；下载失败可选用现存最新包继续；
+   `update.cmd nodl` 显式跳过下载）→ ④⑤⑥ 依次调 assemble → deploy → 启动部署位。
+   底下三件照旧可单跑（诊断 / 只重部署 / 回滚排障）。脚本开跑先自拷 TEMP 再执行——
+   ①② 会改写 update.cmd 自身，cmd 边读边跑，不自拷会解析错乱；日志 `车间根\update.log`，
+   套件目录保持零写入。
 1. **组装** `assemble.cmd [zip名]`：验 SHA → 净台解压 → 注入阶段整体交
    `assemble_inject.py`（包内 Python）：按**选装表** `config\assembly.txt` 决定
    拼哪些补丁 / 插件 / 技能 / 配置 / 覆盖层（表不存在 = 全拼；样例
