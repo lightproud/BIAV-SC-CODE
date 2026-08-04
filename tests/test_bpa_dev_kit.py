@@ -117,7 +117,8 @@ def test_kit_has_zero_intranet_values(name):
 
 
 def test_kit_files_complete():
-    for name in ["assemble.cmd", "deploy.cmd", "rollback.cmd", "apply_patch.py",
+    for name in ["assemble.cmd", "deploy.cmd", "rollback.cmd", "update.cmd",
+                 "apply_patch.py",
                  "RUNBOOK.md", "launcher.cmd", "launch_desktop.py", "fix_venv_path.py",
                  "make-shortcut.vbs", "kill_by_path.py", "assemble_inject.py",
                  "assembly.sample.txt"]:
@@ -157,7 +158,8 @@ def test_launcher_kit_mode_dispatch_present():
     )
 
 
-@pytest.mark.parametrize("name", ["launcher.cmd", "assemble.cmd", "deploy.cmd", "rollback.cmd"])
+@pytest.mark.parametrize("name", ["launcher.cmd", "assemble.cmd", "deploy.cmd",
+                                  "rollback.cmd", "update.cmd"])
 def test_cmd_rem_lines_are_ascii_short(name):
     """chcp 65001 解析器错位野战回归（两案实证）：套件 cmd 的 rem 行必须 ASCII 短行。"""
     for line in (KIT / name).read_text(encoding="utf-8").splitlines():
@@ -165,6 +167,35 @@ def test_cmd_rem_lines_are_ascii_short(name):
         if s.lower().startswith("rem"):
             assert s.isascii(), f"{name} rem 行含非 ASCII（65001 错位风险）: {s[:60]}"
             assert len(s) <= 100, f"{name} rem 行超长: {s[:60]}"
+
+
+@pytest.mark.parametrize("name", ["launcher.cmd", "assemble.cmd", "deploy.cmd",
+                                  "rollback.cmd", "update.cmd", "black-pool-update.cmd"])
+def test_cmd_no_path_expansion_inside_paren_blocks(name):
+    """2026-08-04 野战回归（update.cmd 首战「双击闪退」类）：( ) 块内展开
+    %~f0 / %~dp0 / %*，一旦路径或参数含 ASCII 括号（Explorer 重名改 "xxx (1)"、
+    带括号目录），展开出的 ) 提前闭块、语法错乱、窗口秒关零留痕。
+    引导块一律 goto 式；括号块内禁这三类展开。"""
+    depth = 0
+    for i, line in enumerate((KIT / name).read_text(encoding="utf-8").splitlines(), 1):
+        s = line.strip()
+        if s.lower().startswith("rem"):
+            continue
+        if depth > 0:
+            for tok in ("%~f0", "%~dp0", "%*"):
+                assert tok not in line, f"{name}:{i} 括号块内展开 {tok}: {s[:60]}"
+        depth = max(0, depth + s.count("(") - s.count(")"))
+    text = (KIT / name).read_text(encoding="utf-8")
+    assert "KEEPWIN (" not in text, f"{name} 开窗引导块仍是括号式（应为 goto 式）"
+
+
+def test_update_cmd_temp_reexec_is_name_gated():
+    """update.cmd 自拷 TEMP 重执行须按文件名识别（bpa-update-run.cmd），不得用
+    环境旗标——复用窗口残留旗标会让可被步骤①②改写的原件直接跑（解析错乱源）。"""
+    text = (KIT / "update.cmd").read_text(encoding="utf-8")
+    assert 'if /i "%~nx0"=="bpa-update-run.cmd"' in text
+    assert "BPA_UPD_TMP" not in text, "环境旗标门控应已退役，改文件名门控"
+    assert "black-pool-update-boot.log" in text, "闪退取证面包屑缺失"
 
 
 def test_native_launcher_source_present_and_wired():
