@@ -42936,19 +42936,6 @@ index a5c6c16..1fa7ce1 100644
          }
          last_error: Optional[Dict[str, Any]] = None
          for i, model_id in enumerate(model_chain):
-diff --git a/plugins/image_gen/openrouter/plugin.yaml b/plugins/image_gen/openrouter/plugin.yaml
-index 3e5c3ec..1453ec8 100644
---- a/plugins/image_gen/openrouter/plugin.yaml
-+++ b/plugins/image_gen/openrouter/plugin.yaml
-@@ -1,7 +1,7 @@
- name: openrouter
- version: 1.0.0
- description: "OpenRouter + Nous Portal image generation (chat-completions image output; reference-grounded). Text-to-image and image-to-image."
--author: Hermes Agent
-+author: Black Pool Agent
- kind: backend
- requires_env:
-   - OPENROUTER_API_KEY
 diff --git a/plugins/kanban/dashboard/dist/index.js b/plugins/kanban/dashboard/dist/index.js
 index 959e4e6..8048e0f 100644
 --- a/plugins/kanban/dashboard/dist/index.js
@@ -43141,16 +43128,6 @@ index 9d01ab9..b85ca4e 100644
      },
      default_aux_model="google/gemini-3-flash",
  )
-diff --git a/plugins/model-providers/fireworks/plugin.yaml b/plugins/model-providers/fireworks/plugin.yaml
-index dc9b256..74c499d 100644
---- a/plugins/model-providers/fireworks/plugin.yaml
-+++ b/plugins/model-providers/fireworks/plugin.yaml
-@@ -2,4 +2,4 @@ name: fireworks-provider
- kind: model-provider
- version: 1.0.0
- description: Fireworks AI — fast inference for open and proprietary models
--author: Alex Jestin Taylor (@alex-fireworks) + Hermes Agent
-+author: Alex Jestin Taylor (@alex-fireworks) + Black Pool Agent
 diff --git a/plugins/model-providers/gmi/__init__.py b/plugins/model-providers/gmi/__init__.py
 index bf7dfb9..f50b97c 100644
 --- a/plugins/model-providers/gmi/__init__.py
@@ -43164,16 +43141,6 @@ index bf7dfb9..f50b97c 100644
      # The generic profile.default_headers fallback in run_agent.py and
      # agent/auxiliary_client.py picks this up at client construction time.
      default_headers={"User-Agent": f"HermesAgent/{_HERMES_VERSION}"},
-diff --git a/plugins/model-providers/vertex/plugin.yaml b/plugins/model-providers/vertex/plugin.yaml
-index eb7479a..8438904 100644
---- a/plugins/model-providers/vertex/plugin.yaml
-+++ b/plugins/model-providers/vertex/plugin.yaml
-@@ -2,4 +2,4 @@ name: vertex-provider
- kind: model-provider
- version: 1.0.0
- description: Google Vertex AI (Gemini via OpenAI-compatible endpoint, OAuth2)
--author: Steve Lawton (@slawt), Hermes Agent
-+author: Steve Lawton (@slawt), Black Pool Agent
 diff --git a/plugins/observability/nemo_relay/__init__.py b/plugins/observability/nemo_relay/__init__.py
 index 13218ed..bc1b18c 100644
 --- a/plugins/observability/nemo_relay/__init__.py
@@ -43513,7 +43480,7 @@ index b31c1a2..82ac1d0 100644
  
  * PR #18153 (leepoweii)   — Template Buttons postback cache state machine,
 diff --git a/plugins/platforms/line/plugin.yaml b/plugins/platforms/line/plugin.yaml
-index 2f06b3e..e5d806a 100644
+index 2f06b3e..14a0c83 100644
 --- a/plugins/platforms/line/plugin.yaml
 +++ b/plugins/platforms/line/plugin.yaml
 @@ -3,7 +3,7 @@ label: LINE
@@ -43525,15 +43492,6 @@ index 2f06b3e..e5d806a 100644
    Runs an aiohttp webhook server that receives LINE webhook events
    (with HMAC-SHA256 signature verification) and relays messages between
    LINE chats (1:1, groups, rooms) and the Hermes agent. Outbound replies
-@@ -11,7 +11,7 @@ description: >
-   when the token has expired or is absent. Slow LLM responses surface a
-   Template Buttons postback bubble so the user can fetch the answer with
-   a fresh reply token (free) once it's ready.
--author: Hermes Agent contributors
-+author: Black Pool Agent contributors
- # ``requires_env`` and ``optional_env`` entries are surfaced in the
- # ``hermes config`` UI via the platform-plugin env var injector in
- # ``hermes_cli/config.py``.
 diff --git a/plugins/platforms/matrix/adapter.py b/plugins/platforms/matrix/adapter.py
 index 577540b..bfc2de2 100644
 --- a/plugins/platforms/matrix/adapter.py

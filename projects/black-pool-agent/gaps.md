@@ -25,11 +25,19 @@
   482 行 / 13 文件入白名单；**上下文零品牌词**（机械可验：补丁上下文行 grep Hermes = 0），
   故对换装前后基底皆干净适用；移 pin 时 `git apply --check` 守卫响亮报冲突、人工重放。
   验证：desktop typecheck 三配置绿 + 前端 675 测试绿 + 后端网关 533 测试绿。状态：已落地。
-- **2026-08-03 · 扩展点走通（正面记录）· blackpool 记忆插件**：中文记忆召回缺口
-  （stock holographic 的 FTS5 unicode61 把连续汉字当单一词元，中文事实近乎不可检索）
-  **全程走官方扩展面解决、零补丁零核心触碰**——MemoryProvider ABC 纯子类，兄弟插件位
-  `plugins/memory/blackpool/` 自动发现，确定性 FMM+bigram 分词器修 FTS 索引/查询、
-  Jaccard 双侧、CJK 引号实体四咬合点；HRR 向量维持原文保代数自洽。随 bpa-dev
-  套件 plugins\ 注入面分发，激活 `memory.provider: blackpool`。守卫
-  `tests/test_black_pool_memory.py` 11 例（含正负控端到端）。状态：已落地（v1；
-  中文内容级 HRR 留 v2 观察）。
+- **2026-08-03 · 扩展点走通（正面记录）· blackpool 记忆插件 → 2026-08-04 已退役**：
+  中文记忆召回缺口（stock holographic 的 FTS5 unicode61 把连续汉字当单一词元，
+  中文事实近乎不可检索）**全程走官方扩展面解决、零补丁零核心触碰**——MemoryProvider
+  ABC 纯子类，兄弟插件位 `plugins/memory/blackpool/` 自动发现，确定性 FMM+bigram
+  分词器修 FTS 索引/查询、Jaccard 双侧、CJK 引号实体四咬合点。**扩展点结论仍成立
+  且是本档保留此条的理由**：官方扩展面确实够用，这条路走得通。
+  **退役原因（守密人 2026-08-04 裁定「整只撤下」）**：分词器是**净回归**。
+  `zh_seg` 的词元正则 `[a-z][a-z0-9']+` 要求首字符为字母，纯数字串整体落地不成词元；
+  而 `ZhFactRetriever._fts_candidates` 固定 MATCH `facts_fts_zh`，按设计**完全取代**
+  而非补充上游原索引。合起来即：端口号 / 错误码 / 版本号 / CVE 编号在本 provider 下
+  永远零命中，而上游原版查得到。实测 `网关端口定为 8443` → `网关 关端 端口 口定 定为 为`
+  （`8443` 消失）；`GPT-4o 模型` → `gpt 模型 型`；`CVE-2024-1234` → `cve`。
+  中文可检索性买不起「拉丁数字不可检索」这个价，故整只撤下而非就地修正则——
+  同时令公版回到名副其实的纯品牌换装。守卫 `tests/test_black_pool_memory.py`
+  随之退役。中文记忆召回**重回缺口态**，留待日后另案（若重开，索引侧须
+  UNION 两表而非取代，且词元正则须收数字起头串）。

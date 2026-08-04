@@ -95,6 +95,14 @@ def parse(patch_text: str) -> list[FilePatch]:
 def _find_anchor(target: list[str], block: list[str], want: int) -> int:
     """在 want（0 基）附近搜索 block 的精确匹配位置，找不到抛错。"""
     n, m = len(target), len(block)
+    # 零上下文 hunk（git diff -U0 的纯插入）在此不可定位：空块对任何位置都「匹配」，
+    # 会退化为按行号盲插——同一张补丁重打即静默多插一份（2026-08-04 审视实证：
+    # 连打三次得三行重复，rc 全 0）。宁可整张拒绝，不做无锚下注。
+    if m == 0:
+        raise PatchError(
+            f"零上下文 hunk（@@ 第 {want + 1} 行）无锚点可定位——"
+            "请用带上下文的补丁（勿用 git diff -U0）"
+        )
     normed = [_norm(l) for l in target]
     nb = [_norm(l) for l in block]
 
@@ -111,9 +119,23 @@ def _find_anchor(target: list[str], block: list[str], want: int) -> int:
     raise PatchError(f"上下文匹配失败（期望第 {want + 1} 行附近，含 ±{SEARCH_WINDOW} 行搜索）")
 
 
+def _resolve_in_root(root: Path, rel: str) -> Path:
+    """把补丁里的相对路径落到 root 下，越界即拒绝。
+
+    补丁头的路径来自补丁作者，不是可信输入：`+++ b/../../x` 会把写入点抬到
+    --root 之外（2026-08-04 审视实证：写到上两级、rc=0）。组装期一次越界写
+    = 便携包里多出一个谁也不知道来源的文件，故在唯一落点上关死。
+    """
+    dest = (root / rel).resolve()
+    if dest != root and root not in dest.parents:
+        raise PatchError(f"补丁路径逃出 --root，拒绝: {rel}")
+    return dest
+
+
 def apply_file(root: Path, fp: FilePatch, check_only: bool) -> str:
+    root = root.resolve()
     if fp.old_path is None:                      # 新建
-        dest = root / fp.new_path
+        dest = _resolve_in_root(root, fp.new_path)
         if dest.exists():
             raise PatchError(f"新建目标已存在: {fp.new_path}")
         content = "\n".join(fp.hunks[0][2]) + "\n" if fp.hunks else ""
@@ -123,14 +145,14 @@ def apply_file(root: Path, fp: FilePatch, check_only: bool) -> str:
                 fh.write(content)
         return f"A {fp.new_path}"
     if fp.new_path is None:                      # 删除
-        dest = root / fp.old_path
+        dest = _resolve_in_root(root, fp.old_path)
         if not dest.is_file():
             raise PatchError(f"删除目标不存在: {fp.old_path}")
         if not check_only:
             dest.unlink()
         return f"D {fp.old_path}"
 
-    dest = root / fp.old_path                    # 修改
+    dest = _resolve_in_root(root, fp.old_path)   # 修改
     if not dest.is_file():
         raise PatchError(f"修改目标不存在: {fp.old_path}")
     with dest.open(encoding="utf-8", newline="") as fh:
@@ -144,7 +166,11 @@ def apply_file(root: Path, fp: FilePatch, check_only: bool) -> str:
         pos = _find_anchor(lines, old_block, want)
         body[pos:pos + len(old_block)] = [_norm(l) for l in new_block]
         lines = [l + "\n" for l in body]         # 归一化中间态供下一 hunk 匹配
-        drift += (pos - (old_start - 1)) + (len(new_block) - len(old_block))
+        # 赋值而非累加：pos 是在 want = old_start-1+drift 附近找到的，
+        # (pos - (old_start-1)) 已含既有 drift，再 `+=` 即把它数第二遍——
+        # 第三个 hunk 起搜索窗中心整体偏移（2026-08-04 审视实证：应改第 36 行
+        # 实打第 41 行，rc=0）。本行是「绝不静默错打」承诺的唯一实现点。
+        drift = (pos - (old_start - 1)) + (len(new_block) - len(old_block))
     out = eol.join(body)
     if raw.endswith(("\n", "\r\n")) or not body:
         out += eol

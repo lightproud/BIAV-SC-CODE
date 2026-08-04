@@ -49,6 +49,21 @@ BRAND_VERSION = "0.1.0"
 UPSTREAM_VERSION = "0.20.0"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
 BRAND_AUMID = "com.biav.blackpool"
 
+
+class RebrandError(Exception):
+    """换装前置条件不成立——响亮失败，不做「尽力而为」的部分变换。"""
+
+
+# 幂等哨兵（2026-08-04 守密人裁定「先修静默错打链」）：两层变换均**只能打在
+# 未变换的树上**。规则表是全文 replace，重复应用会自食其果——
+#   · 公版：About 出身行「基于 Hermes Agent 0.20.0 定制」是 MIT 归因唯一的 UI
+#     承载面，第二遍被通用规则吃成「基于 Black Pool Agent」，来源事实当场蒸发；
+#   · 私有版：价格表注入体自带锚点尾巴 `def get_pricing_entry(`，每重跑一遍
+#     多套一层（实测 +66 行/遍，无上限）。
+# 上游快照零出现这两个串，故用作「已换装」指纹；命中即拒绝整棵树。
+BRAND_SENTINEL = BRAND_AGENT              # 公版换装后必现
+INTRANET_SENTINEL = "_user_pricing_entry"  # 私有版注入体专名（公版树零出现）
+
 # 扫描范围：用户可感知的 runtime 面（白名单目录）。
 # apps/（desktop 为内部主要消费面，守密人 2026-08-02 补充情报）与 web/（desktop
 # 所包 UI）在列；website/docs 等纯站点面不扫（残留清单见 BRANDING.md）。
@@ -87,6 +102,13 @@ LINE_SKIP_MARKERS = [
     "http://", "https://", "HERMES_", "X-Client-Name",
     "Copyright", "copyright", "SPDX-License-Identifier",
 ]
+
+# 归属行豁免（守密人 2026-08-04 裁定「回退」）：plugins/**/plugin.yaml 的
+# `author:` 是上游贡献者署名，其中两处为真实第三方姓名（fireworks / vertex
+# 两个 provider 插件）。MIT 未要求改写署名，改了即等于把他人作品记到自己名下；
+# 红线原则「只换用户感知的显示名、不抹来源事实」在此同样适用。整行跳过。
+# 用锚定行首的正则而非子串 marker：避免误伤 `authorizeThere:` 一类正常文案。
+ATTRIBUTION_LINE_RE = re.compile(r"^\s*(?:#\s*)?author\s*:", re.IGNORECASE)
 
 # 通用规则（逐行、按序应用）。刻意不把裸词 "Hermes"/"hermes" 入规则——
 # 那会波及模块名 / 路径 / 配置键（功能标识符），属 fork 级改动。
@@ -620,7 +642,7 @@ def transform_brand(text: str, bare_word: bool = False) -> str:
         text = text.replace(old, new)
     out_lines = []
     for line in text.splitlines(keepends=True):
-        if any(m in line for m in LINE_SKIP_MARKERS):
+        if any(m in line for m in LINE_SKIP_MARKERS) or ATTRIBUTION_LINE_RE.match(line):
             out_lines.append(line)
             continue
         for old, new in GENERIC_RULES:
@@ -680,8 +702,28 @@ def _walk_files(root: Path):
             yield p, rel
 
 
+def _find_sentinel(root: Path, marker: str) -> str | None:
+    """在扫描范围内找「已变换」指纹，返回首个命中文件的相对路径。"""
+    for p, rel in _walk_files(root):
+        try:
+            if marker in p.read_text(encoding="utf-8"):
+                return rel.as_posix()
+        except (UnicodeDecodeError, OSError):
+            continue
+    return None
+
+
 def apply_brand_tree(root: Path) -> int:
-    """对 root 就地应用公版（品牌层）变换 + 图标覆盖，返回改动文件数。"""
+    """对 root 就地应用公版（品牌层）变换 + 图标覆盖，返回改动文件数。
+
+    前置：root 必须是**未换装**的树（幂等哨兵守卫，见 BRAND_SENTINEL）。
+    """
+    hit = _find_sentinel(root, BRAND_SENTINEL)
+    if hit is not None:
+        raise RebrandError(
+            f"目标树已换过装（在 {hit} 命中 {BRAND_SENTINEL!r}）——重复应用会吃掉 "
+            "About 出身行的 MIT 归因。请对未换装的干净树应用。"
+        )
     changed = 0
     for p, rel in _walk_files(root):
         try:
@@ -698,7 +740,16 @@ def apply_brand_tree(root: Path) -> int:
 
 
 def apply_intranet_tree(root: Path) -> int:
-    """对（已应用公版的）root 叠加私有版内网层变换，返回改动文件数。"""
+    """对（已应用公版的）root 叠加私有版内网层变换，返回改动文件数。
+
+    前置：root 必须尚未叠加内网层（幂等哨兵守卫，见 INTRANET_SENTINEL）。
+    """
+    hit = _find_sentinel(root, INTRANET_SENTINEL)
+    if hit is not None:
+        raise RebrandError(
+            f"目标树已叠加内网层（在 {hit} 命中 {INTRANET_SENTINEL!r}）——"
+            "重复应用会把价格表注入体逐层套娃。请对只打过公版的树应用。"
+        )
     changed = 0
     for p, rel in _walk_files(root):
         try:
@@ -738,6 +789,31 @@ def generate_patches() -> tuple[str, str]:
         return brand_diff, intranet_diff
 
 
+def _validate_apply_dest(dest: Path) -> None:
+    """`--apply DEST` 的前置校验：路径不存在 / 指错地方一律响亮失败。
+
+    原实现只 resolve 不校验：目录不存在时 `_walk_files` 什么也不 yield，
+    脚本照打「0 files changed」并 rc=0（2026-08-04 审视实证）——组装脚本据此
+    判定「换装成功」，出厂即未换装包。
+    """
+    if not dest.is_dir():
+        raise RebrandError(f"目标树不存在或不是目录: {dest}")
+    # vendor 快照零修改（文书裁 10 红线）：DEST 落在 upstream/ 之内或之上都会
+    # 就地改写 pin 的快照，逐字节纯净性当场破裂，且无声。
+    if dest == UPSTREAM or UPSTREAM in dest.parents:
+        raise RebrandError(
+            f"拒绝就地改写 vendor 快照（upstream/ 本体零修改红线）: {dest}"
+        )
+    if dest in UPSTREAM.parents:
+        raise RebrandError(
+            f"DEST 是 upstream/ 的祖先目录，会连快照与扩展层一起改: {dest}"
+        )
+    if not [d for d in RUNTIME_DIRS if (dest / d).is_dir()]:
+        raise RebrandError(
+            f"不像 Hermes 源树（{RUNTIME_DIRS} 一个都不存在）: {dest}"
+        )
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -748,9 +824,19 @@ def main() -> int:
 
     if args.apply:
         dest = Path(args.apply).resolve()
-        n = apply_brand_tree(dest)
-        if args.edition == "private":
-            n += apply_intranet_tree(dest)
+        try:
+            _validate_apply_dest(dest)
+            n = apply_brand_tree(dest)
+            if args.edition == "private":
+                n += apply_intranet_tree(dest)
+            if n == 0:
+                raise RebrandError(
+                    f"变换零改动: {dest}——真实 Hermes 源树不可能一处不改，"
+                    "多半指错了目录或树已被改过。"
+                )
+        except RebrandError as e:
+            print(f"✗ {e}", file=sys.stderr)
+            return 2
         print(f"applied {args.edition} edition to {args.apply}: {n} files changed")
         return 0
 
