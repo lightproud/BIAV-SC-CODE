@@ -41116,7 +41116,7 @@ index e618534..3190292 100644
    // the choice sticks like any manual pick.
    const pendingSkin = useStore($pendingSkinApply)
 diff --git a/apps/desktop/src/themes/presets.ts b/apps/desktop/src/themes/presets.ts
-index 4643818..c9c9f18 100644
+index 4643818..fa548f4 100644
 --- a/apps/desktop/src/themes/presets.ts
 +++ b/apps/desktop/src/themes/presets.ts
 @@ -27,7 +27,7 @@ const nousTint = (pct: number) => `color-mix(in srgb, ${NOUS_BLUE} ${pct}%, #FFF
@@ -41128,41 +41128,44 @@ index 4643818..c9c9f18 100644
   * glass geometry neutral, then lets the old bb/gui blue and psyche cream
   * return as accent seeds.
   */
-@@ -276,7 +276,69 @@ export const slateTheme: DesktopTheme = {
+@@ -276,7 +276,72 @@ export const slateTheme: DesktopTheme = {
    }
  }
  
-+/** Black Pool（黑池）— 鎏金双貌：暖黑之金与米白之金（守密人 2026-08-03 配色裁定）。 */
++/** Black Pool（黑池）— 鎏金双貌：暖黑之金与米白之金（守密人 2026-08-03 配色裁定；
++ * 2026-08-04 浅色降饱和裁定：色相 44° 与明度不变，表面层感知色度压至米白纸级
++ * （底 okC≈0.012 / 中间层 ≈0.02 / 边框输入 ≈0.03），金三件与文字色原封——
++ * 复刻深色模式「金作点缀」纪律，根治浅色「越深越黄」的表面层超标。 */
 +export const blackPoolTheme: DesktopTheme = {
 +  name: 'black-pool',
 +  label: 'Black Pool',
 +  description: '黑池金 — 暖黑与米白双貌',
 +  colors: {
-+    background: '#F7F1E1',
++    background: '#F5F2E9',
 +    foreground: '#332B18',
-+    card: '#FCF8EC',
++    card: '#FAF8F2',
 +    cardForeground: '#332B18',
-+    muted: '#EFE7D2',
++    muted: '#ECE8DB',
 +    mutedForeground: '#8C8063',
-+    popover: '#FBF6E9',
++    popover: '#F8F5EE',
 +    popoverForeground: '#332B18',
 +    primary: '#C9A857',
 +    primaryForeground: '#241C07',
-+    secondary: '#F0E6CC',
++    secondary: '#EDE7D9',
 +    secondaryForeground: '#4A3F24',
-+    accent: '#EEE1BE',
++    accent: '#E8E1CE',
 +    accentForeground: '#4A3C1C',
-+    border: '#DDD1AE',
-+    input: '#D6C89F',
++    border: '#D8D1BB',
++    input: '#CFC7B0',
 +    ring: '#B08E35',
 +    midground: '#8F6F26',
 +    composerRing: '#B08E35',
 +    destructive: '#B4372E',
 +    destructiveForeground: '#FEF2F2',
-+    sidebarBackground: '#F2EBD6',
-+    sidebarBorder: '#E0D5B2',
-+    userBubble: '#F1E8CE',
-+    userBubbleBorder: '#DECFA3'
++    sidebarBackground: '#EFEBDE',
++    sidebarBorder: '#DBD4BF',
++    userBubble: '#EDE8D9',
++    userBubbleBorder: '#D9D1B8'
 +  },
 +  darkColors: {
 +    background: '#171310',
@@ -41198,7 +41201,7 @@ index 4643818..c9c9f18 100644
    nous: nousTheme,
    midnight: midnightTheme,
    ember: emberTheme,
-@@ -288,4 +350,4 @@ export const BUILTIN_THEMES: Record<string, DesktopTheme> = {
+@@ -288,4 +353,4 @@ export const BUILTIN_THEMES: Record<string, DesktopTheme> = {
  export const BUILTIN_THEME_LIST = Object.values(BUILTIN_THEMES)
  
  /** Skin used when nothing is persisted or the persisted name is retired. */
