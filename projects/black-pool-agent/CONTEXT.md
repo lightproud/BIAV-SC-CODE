@@ -52,13 +52,15 @@ UPSTREAM.md # pin 台账唯一权威
 
 ## 验证清单
 
-- **上游套件容器内可全量复现**（2026-08-02 首跑实证：2,471 文件 / 22,766 过 / 40 环境伪影零真缺陷，
-  报告 `Public-Info-Pool/Resource/repo-engineering/hermes-upstream-testrun-20260802.md`）。口径：
-  uv **0.9.28**（上游钉版，容器自带 0.8.17 读不懂其 lockfile）→ `uv sync --locked --python 3.11
+- **上游套件容器内可全量复现**（0.20.0 复跑实证 2026-08-04：2,599 文件 / 25,176 过 / 36 环境伪影
+  零真缺陷，报告 `Public-Info-Pool/Resource/repo-engineering/hermes-upstream-testrun-20260804.md`；
+  首跑基线 20260802 同目录）。口径：uv **0.9.28**（上游钉版；astral.sh 安装脚本被代理 403，
+  改 GitHub Releases 直下二进制）→ `uv sync --locked --python 3.11
   --extra all --extra dev --extra anthropic --extra mistral --extra fal --extra modal --extra daytona
   --extra hindsight --extra parallel-web`（venv/缓存经 `UV_PROJECT_ENVIRONMENT`/`UV_CACHE_DIR`
-  落仓外）→ `OPENROUTER_API_KEY="" OPENAI_API_KEY="" scripts/run_tests.sh -j 4`。
-  已知假红排除集见报告（自更新家族 22 例为快照布局结构假红）；树内跑完测试须清生成物
-  （`UPSTREAM.md` 例程步 2）
-- 红线守卫：`pytest tests/test_hermes_charter.py -v`（patches 空 + 骨架完整）
+  落仓外）→ **`HERMES_PYTHON=<venv>/bin/python`**（0.20 运行器必设，缺则拒跑）→
+  `OPENROUTER_API_KEY="" OPENAI_API_KEY="" scripts/run_tests.sh -j 4`。
+  已知假红排除集见 20260804 报告四簇分诊（自更新家族布局假红 / root 伪影 / 环境缺件含 teams
+  lazy install / 运行器负载敏感）；树内跑完测试须清生成物（`UPSTREAM.md` 例程步 2）
+- 红线守卫：`pytest tests/test_hermes_charter.py -v`（patches 白名单 + 骨架完整）
 - 改档后跑 `pytest tests/test_claude_md*.py -v`（CLAUDE.md 对账三卫）确认指针一致
