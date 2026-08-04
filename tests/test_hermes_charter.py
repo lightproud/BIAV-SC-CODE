@@ -210,6 +210,109 @@ def test_latency_trace_patch_sentinels():
     assert not suspicious, f"补丁上下文含可被换装的品牌词（叠加后必失配）: {suspicious[:3]}"
 
 
+def _unbrand(text: str) -> str:
+    """反换装归一：把黑池品牌词换回上游词，再压平空白。
+
+    用于回答「这处改动能不能**仅用改名**解释」——能，则它对行为无影响。
+    """
+    for a, b in (("Black Pool Agent", "Hermes Agent"), ("BLACK POOL AGENT", "HERMES AGENT"),
+                 ("Black Pool", "Hermes"), ("BLACK POOL", "HERMES"), ("black pool", "hermes"),
+                 ("black-pool", "hermes"), ("blackPool", "hermes"), ("blackpool", "hermes")):
+        text = text.replace(a, b)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _rename_residue(patch_text: str) -> dict:
+    """返回 {文件: 残差处数}——「反换装后仍不相等」的改动，即非改名所能解释者。"""
+    residue: dict[str, int] = {}
+    cur = None
+    minus: list[str] = []
+    plus: list[str] = []
+
+    def flush() -> None:
+        if cur and minus and plus and len(minus) == len(plus):
+            for m, p in zip(minus, plus):
+                if _unbrand(m[1:]) != _unbrand(p[1:]):
+                    residue[cur] = residue.get(cur, 0) + 1
+        elif cur and (minus or plus):
+            residue[cur] = residue.get(cur, 0) + 1
+        minus.clear()
+        plus.clear()
+
+    for line in patch_text.splitlines():
+        if line.startswith("+++ b/"):
+            flush()
+            cur = line[6:]
+        elif line.startswith("@@"):
+            flush()
+        elif line.startswith("-") and not line.startswith("---"):
+            minus.append(line)
+        elif line.startswith("+") and not line.startswith("+++"):
+            plus.append(line)
+        else:
+            flush()
+    flush()
+    return residue
+
+
+# 换装补丁里「不能仅用改名解释」的改动**必须逐个文件具名**。2026-08-04 迟缓排查
+# 实测残差 22 处 / 19 文件，逐条核过：缺省值（皮肤 / 语言 / 版本 / AUMID / appId）、
+# 5 句营销文案截断、1 处图标路径、1 处字体相对路径修正、relay 名双收、两句系统提示词、
+# 状态栏版本字面量、以及一张**纯色板** 64 行主题（零滤镜零阴影零模糊）。
+# 全部与「每次交互要做多少活」无关——这正是本清单要守住的性质。
+REBRAND_BEHAVIOUR_RESIDUE_FILES = {
+    "apps/desktop/src/themes/presets.ts",
+    "hermes_cli/config_defaults.py",
+    "agent/prompt_builder.py",
+    "apps/desktop/electron/main.ts",
+    "apps/desktop/package.json",
+    "apps/desktop/src/app/settings/about-settings.tsx",
+    "apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx",
+    "apps/desktop/src/components/onboarding/providers.tsx",
+    "apps/desktop/src/i18n/ar.ts",
+    "apps/desktop/src/i18n/en.ts",
+    "apps/desktop/src/i18n/ja.ts",
+    "apps/desktop/src/i18n/languages.ts",
+    "apps/desktop/src/i18n/zh-hant.ts",
+    "apps/desktop/src/i18n/zh.ts",
+    "apps/desktop/src/styles.css",
+    "gateway/relay/__init__.py",
+    "hermes_cli/__init__.py",
+    "hermes_cli/default_soul.py",
+    "ui-tui/src/app/slash/commands/wake.ts",
+}
+
+
+def test_rebrand_carries_no_unnamed_behaviour_change():
+    """换装 = **显示层改名**，不得夹带行为改动（2026-08-04 迟缓排查副产品）。
+
+    406 文件的补丁靠人眼读不完，于是机械化：每对 -/+ 行做反换装归一，仍不相等的
+    才是「非改名所能解释」的残差。残差**允许存在**（缺省值 / 版本 / 主题色板本就要改），
+    但必须逐个文件具名——出现清单外的文件 = 换装规则悄悄改了行为，红。
+    这条守卫同时封死一整类性能问疑：「界面卡顿会不会是换装补丁引入的？」——
+    只要本测试绿，换装层就没有新增任何每次交互要做的活。
+    """
+    residue = _rename_residue(PATCH_BRAND.read_text(encoding="utf-8"))
+    extras = sorted(set(residue) - REBRAND_BEHAVIOUR_RESIDUE_FILES)
+    assert not extras, (
+        f"换装补丁在清单外的文件里夹带了非改名改动: {extras}。"
+        "逐条核这些改动是否只该是显示层；确属预期则同 PR 具名进 "
+        "REBRAND_BEHAVIOUR_RESIDUE_FILES 并说明理由。"
+    )
+    total = sum(residue.values())
+    assert total <= 40, (
+        f"残差总量 {total} 处（基线 22）——即便文件都在册，量级跳变也说明换装规则"
+        "射程变了，请人工复核后再调阈值。"
+    )
+    # 负控（防「清单太宽 = 没守」）：纯改名不该报，夹带行为改动必须报。
+    clean = ("+++ b/x.ts\n@@ -1,1 +1,1 @@\n"
+             "-const label = 'Hermes Agent'\n+const label = 'Black Pool Agent'\n")
+    dirty = ("+++ b/x.ts\n@@ -1,1 +1,1 @@\n"
+             "-const timeoutMs = 200\n+const timeoutMs = 20000\n")
+    assert not _rename_residue(clean), "纯改名被误报为行为改动"
+    assert _rename_residue(dirty), "夹带的行为改动没被抓到——守卫失效"
+
+
 def test_editions_are_cleanly_separated():
     """两版分界纪律：公版不得混入内网适配内容，私有版不得混入品牌换装内容。
 
