@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-04T05:47:12.768804+00:00",
+  "collected_at": "2026-08-04T08:35:37.130171+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-04T07:05:46+00:00",
+      "lang": "english",
+      "title": "[正面] Chapter 1 was a monumental slog for me (patience i...",
+      "summary": "Chapter 1 was a monumental slog for me (patience issue due to roguelike exploration every second), but after that, I got more comfortable. Something interesting is the difficulty sometimes encountered, sometimes being negated by 5 free revives that freely replenish. (which is really neat imo bc skill issue). \nThe topic of the story revolving around not forgetting people, or memories in general, is quite a random but welcome treat of a theme\nIt's like a reminder to not let my brain start failing, and to preserve mental notes I've made about my own friends and written things\nand Always research gacha char Investments",
+      "url": "https://steamcommunity.com/profiles/76561198892300021/recommended/3052450",
+      "author": "76561198892300021",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Chapter 1 was a monumental slog for me (patience issue due to roguelike exploration every second), but after that, I got more comfortable. Something interesting is the difficulty sometimes encountered, sometimes being negated by 5 free revives that freely replenish. (which is really neat imo bc skill issue). \nThe topic of the story revolving around not forgetting people, or memories in general, is quite a random but welcome treat of a theme\nIt's like a reminder to not let my brain start failing, and to preserve mental notes I've made about my own friends and written things\nand Always research gacha char Investments",
+      "timestamp_created": 1785827146,
+      "playtime_forever": 1521
+    },
     {
       "source": "steam",
       "time": "2026-08-03T22:11:29+00:00",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "美術音樂超棒\r\n不能讓電腦自動練功  一定要動腦打  \r\n課金偏貴",
       "timestamp_created": 1785754138,
-      "playtime_forever": 6226
+      "playtime_forever": 6346
     }
   ]
 }
