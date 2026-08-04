@@ -74,6 +74,13 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
   desktop / web UI 是已构建产物，**内网改不动**——UI 需求走银芯补丁入库、CI 装配线出包。
 - **补丁登记**：patches\ 里每张补丁在 README 记一行「用途 / 锚点 / 维护人」，学银芯白名单制。
 - **换包必经组装**：直接解压 zip 进部署位会丢掉全部内网补丁与配置——永远走 assemble → deploy。
+- **绿色版二次拷贝纪律（2026-08-04 实机断料案）**：包本身是绿色版，但把部署位拷去
+  另一位置/另一台机时，**必须用不过滤目录的整拷方式**（`robocopy <源> <目标> /e` 或
+  Explorer 整目录复制后核对件数）——部分同步/备份工具默认跳过 `node_modules` 目录，
+  会把 `desktop\resources\app.asar.unpacked\dist\node_modules\node-pty` 拷丢，桌面端
+  启动即弹「A JavaScript error occurred in the main process / Cannot find package」。
+  监督器（launch_desktop.py）起飞前有关键件预检，缺料会点名并拒绝起飞；见到预检报缺 =
+  重新整拷或在目标机走一遍 assemble → deploy。
 - **用户数据解耦（可选）**：config\env.cmd 里设 `HERMES_HOME` 指向 bpa 之外的固定目录，
   用户数据从此不随包走，deploy 的 home 保全步自动变为空操作。
 - **staging 与 *.old / *.failed-* 勿入 SVN**：都是临时态或取证残骸。

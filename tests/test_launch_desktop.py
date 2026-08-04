@@ -93,6 +93,53 @@ def test_reporter_survives_cp1252_pipe(tmp_path):
     assert "守窗" in (tmp_path / "l.log").read_text(encoding="utf-8")
 
 
+def _lay_integrity_files(root):
+    for rel in launch_desktop.INTEGRITY_FILES:
+        p = root / rel
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.touch()
+
+
+def test_check_desktop_integrity_all_present(tmp_path):
+    _lay_integrity_files(tmp_path)
+    assert launch_desktop.check_desktop_integrity(tmp_path) == []
+
+
+def test_check_desktop_integrity_reports_missing(tmp_path):
+    # 守密人 2026-08-04 实机死法：app.asar.unpacked 下 node-pty 缺失，
+    # 主进程 import 'node-pty' ESM 解析失败弹 Electron 错误框。
+    _lay_integrity_files(tmp_path)
+    gone = (tmp_path / "desktop/resources/app.asar.unpacked"
+            "/dist/node_modules/node-pty/lib/index.js")
+    gone.unlink()
+    missing = launch_desktop.check_desktop_integrity(tmp_path)
+    assert missing == [
+        "desktop/resources/app.asar.unpacked/dist/node_modules/node-pty/lib/index.js"
+    ]
+
+
+def test_check_desktop_integrity_empty_root(tmp_path):
+    missing = launch_desktop.check_desktop_integrity(tmp_path / "absent")
+    assert missing == list(launch_desktop.INTEGRITY_FILES)
+
+
+def test_find_fatal_marker_hits_after_offset_only(tmp_path):
+    log = tmp_path / "desktop-stdout.log"
+    old = "old attempt: Uncaught Exception: stale\n"
+    log.write_text(old, encoding="utf-8")
+    offset = len(old.encode("utf-8"))
+    # offset 之后干净 → 不误报旧轮次残留
+    assert launch_desktop.find_fatal_marker(log, offset) is None
+    with open(log, "a", encoding="utf-8") as f:
+        f.write("A JavaScript error occurred in the main process\n")
+    assert (launch_desktop.find_fatal_marker(log, offset)
+            == "A JavaScript error occurred in the main process")
+
+
+def test_find_fatal_marker_missing_log(tmp_path):
+    assert launch_desktop.find_fatal_marker(tmp_path / "absent.log", 0) is None
+
+
 def test_reporter_survives_unwritable_log(tmp_path, capsys):
     # 日志写不进（目录不存在）不应让监督器崩——控制台输出仍在
     rep = launch_desktop.Reporter(tmp_path / "no-such-dir" / "launcher.log")
