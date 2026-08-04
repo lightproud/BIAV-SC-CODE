@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-04T02:14:57.541927+00:00",
+  "collected_at": "2026-08-04T05:47:12.768804+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 5,
   "items": [
     {
       "source": "steam",
@@ -78,37 +78,7 @@
       "voted_up": true,
       "review": "美術音樂超棒\r\n不能讓電腦自動練功  一定要動腦打  \r\n課金偏貴",
       "timestamp_created": 1785754138,
-      "playtime_forever": 5986
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-03T04:40:42+00:00",
-      "lang": "english",
-      "title": "[正面] Started the game attending my own funeral only to...",
-      "summary": "Started the game attending my own funeral only to kill the voice in my head and immediately ship out to the first level where I beat up street orphans. Pulled my vampire GF who eats our unborn children for power boosts. Abortion magic is really effective and apparently a pretty good source of nutrition because I've already raised the first daughter she DIDN'T consume into a poorly-adjusted 11 year old, which by Victorian standards makes her old enough to qualify for full-time work in my sweatshop of horrors. \n\nSo anyway yeah I recommend.",
-      "url": "https://steamcommunity.com/profiles/76561197998879736/recommended/3052450",
-      "author": "76561197998879736",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Started the game attending my own funeral only to kill the voice in my head and immediately ship out to the first level where I beat up street orphans. Pulled my vampire GF who eats our unborn children for power boosts. Abortion magic is really effective and apparently a pretty good source of nutrition because I've already raised the first daughter she DIDN'T consume into a poorly-adjusted 11 year old, which by Victorian standards makes her old enough to qualify for full-time work in my sweatshop of horrors. \n\nSo anyway yeah I recommend.",
-      "timestamp_created": 1785732042,
-      "playtime_forever": 343
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-03T04:13:24+00:00",
-      "lang": "english",
-      "title": "[正面] 8",
-      "summary": "8",
-      "url": "https://steamcommunity.com/profiles/76561198303694212/recommended/3052450",
-      "author": "76561198303694212",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "8",
-      "timestamp_created": 1785730404,
-      "playtime_forever": 3384
+      "playtime_forever": 6226
     }
   ]
 }
