@@ -480,3 +480,40 @@ def test_render_mode_marker_written(tmp_path):
     assert marker.is_file()
     assert "mode=software" in marker.read_text(encoding="utf-8")
     assert "--disable-gpu" in marker.read_text(encoding="utf-8")
+
+
+def test_egress_classifier_separates_refused_from_dropped():
+    """本案要害（2026-08-04 实测）：被拒毫秒返回、被丢要等满超时——分诊器必须区分。
+
+    银芯实测同一份代码、同一台机器，只改这一个变量：模型选择器 RPC 0.23s → 4-6s，
+    首轮交互突发 1.05s → 9.7s。故这条分类是「点名秒级放大器」的判据，不是装饰。
+    """
+    import socket as _socket
+    import time as _time
+
+    dl = _load_diagnose()
+
+    def refused(addr, timeout):
+        raise ConnectionRefusedError(111, "refused")
+
+    def dropped(addr, timeout):
+        _time.sleep(0.02)
+        raise _socket.timeout()
+
+    class _Sock:
+        def close(self):
+            return None
+
+    assert dl.classify_endpoint("h", 443, refused)[0] == "REFUSED"
+    assert dl.classify_endpoint("h", 443, dropped)[0] == "DROPPED"
+    assert dl.classify_endpoint("h", 443, lambda a, t: _Sock())[0] == "OK"
+
+
+def test_egress_host_list_carries_no_intranet_values():
+    """§1.1-HC 切面化：清单只许列上游硬编码的公网主机；内网端点现读部署位配置。"""
+    dl = _load_diagnose()
+    for host, port in dl.EGRESS_HOSTS:
+        assert host.count(".") >= 1 and not host.endswith(".local")
+        assert port in (80, 443)
+    src = (KIT / "diagnose_lag.py").read_text(encoding="utf-8")
+    assert "read_configured_base_url" in src, "内网端点必须从部署位现读，不得写死"

@@ -465,6 +465,89 @@ def app_forensics(root: pathlib.Path) -> list[str]:
     return hints
 
 
+EGRESS_TIMEOUT = 3.0
+# 应用在正常使用中会去碰的外部端点（不含任何内网值——**内网端点从部署位配置里
+# 现读**，绝不写进本档，§1.1-HC 切面化）。清单只列上游代码里硬编码的公网主机。
+EGRESS_HOSTS = (
+    ("portal.nousresearch.com", 443),
+    ("hermes-agent.nousresearch.com", 443),
+    ("openrouter.ai", 443),
+    ("api.openai.com", 443),
+)
+
+
+def classify_endpoint(host: str, port: int, connect) -> tuple[str, float]:
+    """把一个端点分成 OK / REFUSED / DROPPED 三态，并给出耗时（秒）。
+
+    这条分界就是本案的要害（2026-08-04 实测）：**被拒**（RST）几毫秒返回，
+    **被丢**（防火墙 DROP 不回包）要等满整个超时。同一份代码、同一台机器，
+    只改这一个变量，模型选择器那次 RPC 就从 0.23 秒变成 4-6 秒，
+    首轮交互突发从 1.05 秒变成 9.7 秒——正是「每个交互要等 5-10 秒」的量级。
+    """
+    t0 = time.perf_counter()
+    try:
+        sock = connect((host, port), EGRESS_TIMEOUT)
+        if sock is not None:
+            try:
+                sock.close()
+            except OSError:
+                pass
+        return "OK", time.perf_counter() - t0
+    except socket.timeout:
+        return "DROPPED", time.perf_counter() - t0
+    except OSError as exc:
+        # 拒绝 / 解析失败都属「快速失败」，不产生等待成本
+        name = "REFUSED" if getattr(exc, "errno", None) else "REFUSED"
+        return name, time.perf_counter() - t0
+
+
+def read_configured_base_url(root: pathlib.Path) -> str:
+    """从部署位 config.yaml 里读 base_url（只读不回传，值不落报告主机名以外部分）。"""
+    path = root / "home" / "config.yaml"
+    try:
+        text = path.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return ""
+    m = re.search(r"^\s*base_url\s*:\s*['\"]?([^'\"\s]+)", text, re.M)
+    return m.group(1) if m else ""
+
+
+def egress_probe(root: pathlib.Path) -> list[str]:
+    hints: list[str] = []
+    section("9. 出网形态（被拒 vs 被丢——本案已实测的秒级放大器）")
+
+    def connect(addr, timeout):
+        return socket.create_connection(addr, timeout=timeout)
+
+    targets = list(EGRESS_HOSTS)
+    base_url = read_configured_base_url(root)
+    if base_url:
+        m = re.match(r"^(https?)://([^/:]+)(?::(\d+))?", base_url)
+        if m:
+            port = int(m.group(3) or (443 if m.group(1) == "https" else 80))
+            targets.insert(0, (m.group(2), port))
+            say(f"配置的 provider 主机: {m.group(2)}:{port}（值只用于本机探测）")
+    dropped: list[str] = []
+    for host, port in targets:
+        verdict, secs = classify_endpoint(host, port, connect)
+        say(f"{host}:{port} -> {verdict} ({secs * 1000:.0f} ms)")
+        if verdict == "DROPPED":
+            dropped.append(f"{host}:{port}")
+    if dropped:
+        hints.append(
+            "以下端点**被静默丢包**（不回 RST，连接要等满超时）：" + "、".join(dropped) +
+            "。这是秒级卡顿的直接放大器：应用每次**首次触碰**这类端点（模型选择器 / "
+            "目录 / 定价 / 账户探测）都要赔进一次完整超时——银芯实测同一份代码下，"
+            "被丢比被拒慢 12 倍以上（模型选择器 0.23 秒 → 4-6 秒，首轮交互突发 "
+            "1.05 秒 → 9.7 秒）。处置按可行性排序：① 让防火墙对这些主机回 **REJECT** "
+            "而非 DROP（改一条策略，卡顿即消）；② 在 env.cmd 里把代理配对（含 "
+            "NO_PROXY 豁免回环），让请求快速失败或正常走通；③ 首次部署时短暂放行一次，"
+            "把目录/定价缓存喂热（缓存落 home/，之后不再探测）。")
+    else:
+        say("判读: 未见被丢端点——秒级卡顿不出在这一层。")
+    return hints
+
+
 def main() -> int:
     force_utf8_stdio()
     if len(sys.argv) < 2:
@@ -484,8 +567,9 @@ def main() -> int:
     hints += motw_scan(root)
     hints += log_forensics(root)
     hints += app_forensics(root)
+    hints += egress_probe(root)
 
-    section("9. 判读提示")
+    section("10. 判读提示")
     if hints:
         for i, hint in enumerate(hints, 1):
             say(f"[{i}] {hint}")
