@@ -85,6 +85,12 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
   desktop / web UI 是已构建产物，**内网改不动**——UI 需求走银芯补丁入库、CI 装配线出包。
 - **补丁登记**：patches\ 里每张补丁在 README 记一行「用途 / 锚点 / 维护人」，学银芯白名单制。
 - **换包必经组装**：直接解压 zip 进部署位会丢掉全部内网补丁与配置——永远走 assemble → deploy。
+- **整包不载测试套件（2026-08-04 野战案）**：出厂清场已裁掉 `app\tests`，且整包 venv 刻意
+  不带 pytest——在部署位跑 `scripts\run_tests.sh` 结构上不可能成功，这不是环境坏了。
+  运行器已在出厂时换成直说真相的存根（跑它会明说原因并指路）。真要跑套件：场地是银芯
+  克隆的 `projects\black-pool-agent\upstream\`，配方见同目录 `CONTEXT.md` 验证清单
+  （uv sync 带 dev extras + 设 `HERMES_PYTHON`）；当前整包引擎版本已在银芯容器全量
+  复现过（零真缺陷报告在 `Public-Info-Pool\Resource\repo-engineering\`），本地重跑无增量。
 - **绿色版二次拷贝纪律（2026-08-04 实机断料案）**：包本身是绿色版，但把部署位拷去
   另一位置/另一台机时，**必须用不过滤目录的整拷方式**（`robocopy <源> <目标> /e` 或
   Explorer 整目录复制后核对件数）——部分同步/备份工具默认跳过 `node_modules` 目录，

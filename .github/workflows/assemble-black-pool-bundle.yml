@@ -177,6 +177,21 @@ jobs:
           rm -rf BlackPool/app/website
           rm -rf BlackPool/app/tests
           rm -rf BlackPool/app/tests-js
+          # 测试运行器存根（2026-08-04 野战案）：tests/ 已裁但 run_tests.sh 原件仍在，
+          # 现场跑它会先撞 venv 探针报「no virtualenv with pytest」——误导排障方向。
+          # 出厂即换成直说真相的存根：整包不载测试套件，套件在银芯 upstream/ 跑。
+          rm -f BlackPool/app/scripts/run_tests_parallel.py
+          cat > BlackPool/app/scripts/run_tests.sh <<'STUB'
+          #!/usr/bin/env bash
+          # Stubbed at bundle assembly time (factory cleanup).
+          echo "error: this is a Black Pool deployment bundle - the test suite is not shipped." >&2
+          echo "       app/tests was stripped at assembly time and the bundle venv carries no pytest," >&2
+          echo "       so there is nothing here for pytest to run. This is by design, not breakage." >&2
+          echo "       Run the suite from a silver-core checkout instead:" >&2
+          echo "         projects/black-pool-agent/upstream/  (recipe: projects/black-pool-agent/CONTEXT.md)" >&2
+          exit 2
+          STUB
+          chmod +x BlackPool/app/scripts/run_tests.sh
           du -sh BlackPool
 
       - name: Desktop launch smoke (supervised, captures Chromium stderr)

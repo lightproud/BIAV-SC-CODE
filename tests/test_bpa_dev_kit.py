@@ -320,3 +320,19 @@ def test_kill_by_path_noop_on_non_windows(tmp_path):
     r = subprocess.run([sys.executable, str(KIT / "kill_by_path.py"), str(tmp_path)],
                        capture_output=True, text=True)
     assert r.returncode == 0 and "no-op" in r.stdout
+
+
+def test_factory_cleanup_stubs_test_runner():
+    """2026-08-04 野战回归（部署位跑 run_tests.sh 报 venv 缺 pytest）：整包既已
+    裁掉 app/tests，就不得再留会撞 venv 探针的运行器原件——两条装配线出厂清场
+    须 ① 裁 tests / tests-js ② 剔 run_tests_parallel.py ③ 把 run_tests.sh 换成
+    直说「套件不随包」的存根（exit 2 + 指路 upstream/）。"""
+    for wf in ("assemble-black-pool-bundle.yml", "assemble-black-pool-public.yml"):
+        text = (REPO / ".github" / "workflows" / wf).read_text(encoding="utf-8")
+        assert "rm -rf BlackPool/app/tests" in text, f"{wf} 未裁测试集"
+        assert "rm -f BlackPool/app/scripts/run_tests_parallel.py" in text, (
+            f"{wf} 未剔并行运行器"
+        )
+        assert "cat > BlackPool/app/scripts/run_tests.sh" in text, f"{wf} 缺运行器存根"
+        assert "the test suite is not shipped" in text, f"{wf} 存根未直说真相"
+        assert "projects/black-pool-agent/CONTEXT.md" in text, f"{wf} 存根未指路配方"
