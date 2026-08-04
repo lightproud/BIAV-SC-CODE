@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (129)
+# 银芯正式产物（报告/分析） (130)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -55,6 +55,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [biav-sc-p27-history-rewrite-runbook-20260720](/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md) - §7甲 已拿到实用大头：**fresh checkout 不再含 658M**（工作树已轻）。§7乙 只再省 **clone 下载体积**（格式：md）
 * [biav-sc-split-p23-cutover-plan-20260719](/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md) - 小学生比喻：把「采货机器人」全改道去新库房（写侧），把「查货窗口」也都改指向新库房（读侧），再拆掉「照老库房清新库房」的传送带（退役 sync）——三件齐了，老
 * [biav-sc-split-stage2-execution-plan-20260719](/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md) - 分仓后 code 仓「data 相关」有两件事，**别混为一谈**：（格式：md）
+* [bpa-selfcode-audit-20260804](/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md) - 这是一次**对自造工具链的信任度体检**。BPA 扩展层的定位是「核心零侵入」——不碰上游一行，（格式：md）
 * [bpt-agent-sdk-completion-audit-20260703](/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md) - 小学生比喻：拿着对方最新出厂说明书逐页清点自家仿制机——「有」「有一半」「只留了接口没通电」「压根没有」「本来就故意不装」五种贴纸逐个零件贴。（格式：md）
 * [bpt-agent-sdk-completion-matrix-20260703](/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md) - repo-engineering 产物（json）（格式：json）
 * [bpt-agent-sdk-evaluation-20260706](/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md) - **健康度：优。** 这是银芯迄今工程完成度最高的产物——1414 单测全绿、类型与构建零错、（格式：md）

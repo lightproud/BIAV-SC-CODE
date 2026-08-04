@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 395,
-    "edges": 439,
-    "terms": 6997,
+    "concepts": 396,
+    "edges": 441,
+    "terms": 7011,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 161,
+      "documentation": 162,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 51,
       "news-output": 22,
       "projects": 31,
-      "resource": 129,
+      "resource": 130,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 133,
-      "search": 262
+      "search": 263
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 129
+      "count": 130
     },
     "sources": {
       "index": "/sources/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 23
+      "degree": 24
     },
     "/characters/130375.md": {
       "type": "character",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 118
+      "degree": 119
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3707,6 +3707,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md": {
+      "type": "documentation",
+      "title": "bpa-selfcode-audit-20260804",
+      "description": "这是一次**对自造工具链的信任度体检**。BPA 扩展层的定位是「核心零侵入」——不碰上游一行，（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpa-selfcode-audit-20260804.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md": {
       "type": "documentation",
       "title": "bpt-agent-sdk-completion-audit-20260703",
@@ -4844,7 +4858,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3429 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3443 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4872,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8512642 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8551591 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4956,7 +4970,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5380 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5382 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4970,7 +4984,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 172 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 173 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4979,7 +4993,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/sources/stopgame.md": {
       "type": "dataset",
@@ -5012,7 +5026,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 2916 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 2924 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -5026,7 +5040,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 12252 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 12264 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5040,7 +5054,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9808 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 9828 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5054,7 +5068,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3244 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3248 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5763,6 +5777,11 @@
       ],
       [
         "/sources/reddit.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/sources/steam_discussion.md",
         "提及:Saya",
         "mention"
       ],
@@ -7331,6 +7350,11 @@
       ],
       [
         "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -9622,6 +9646,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md": [
       [
         "/characters/15603.md",
@@ -10118,6 +10149,11 @@
       ]
     ],
     "/sources/steam_discussion.md": [
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/news-output/news-output-steam-discussion.md",
         "抽样自",
@@ -10771,6 +10807,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -11242,6 +11279,7 @@
     "audit": [
       "/memory/memory-ext-workflow-api-key-audit.md",
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
@@ -11513,6 +11551,9 @@
     ],
     "bp": [
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
+    ],
+    "bpa": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "bpt": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
@@ -12127,6 +12168,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -12540,6 +12582,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -12910,6 +12953,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -13131,6 +13175,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -13481,6 +13526,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -14332,6 +14378,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -14877,6 +14924,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -15453,6 +15501,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md",
@@ -16264,6 +16313,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -16730,6 +16780,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -17068,6 +17119,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -17255,6 +17307,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -17646,6 +17699,9 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/silver-core-sdk-doc-reporting.md",
       "/story/story_search_index.md"
+    ],
+    "selfcode": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "selfreport": [
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
@@ -18375,6 +18431,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -19013,6 +19070,7 @@
       "/characters/15593.md",
       "/characters/15604.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
     "一步": [
@@ -19056,7 +19114,8 @@
       "/characters/54117.md"
     ],
     "一行": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "一谈": [
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
@@ -19231,6 +19290,7 @@
     ],
     "上游": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
     "上烈": [
@@ -19581,6 +19641,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -19898,6 +19959,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -20055,6 +20117,9 @@
     ],
     "不相": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md"
+    ],
+    "不碰": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "不离": [
       "/README.md"
@@ -20271,6 +20336,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -21732,6 +21798,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -22299,6 +22366,9 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
+    "任度": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
+    ],
     "份带": [
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
@@ -22558,6 +22628,9 @@
     "位数": [
       "/community/community-timeline.md"
     ],
+    "位是": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
+    ],
     "低下": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -22795,6 +22868,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -22903,6 +22977,9 @@
     ],
     "体构": [
       "/characters/130901.md"
+    ],
+    "体检": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "体正": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -23107,6 +23184,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -23560,6 +23638,7 @@
     ],
     "侵入": [
       "/projects/project-black-pool-agent.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "侵蚀": [
@@ -23599,6 +23678,9 @@
     "信仰": [
       "/characters/15575.md",
       "/characters/15582.md"
+    ],
+    "信任": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "信前": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
@@ -24251,6 +24333,9 @@
     ],
     "具调": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
+    "具链": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "典作": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -25229,6 +25314,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -28805,6 +28891,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -29692,6 +29779,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -30391,6 +30479,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -30860,6 +30949,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
     "对自": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
     ],
     "对话": [
@@ -31301,7 +31391,8 @@
     ],
     "层的": [
       "/README.md",
-      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "层皆": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -31345,6 +31436,9 @@
     ],
     "展可": [
       "/projects/project-game.md"
+    ],
+    "展层": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "展开": [
       "/characters/15576.md"
@@ -31474,6 +31568,7 @@
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -32109,6 +32204,9 @@
     "度中": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
+    "度体": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
+    ],
     "度做": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
@@ -32732,6 +32830,7 @@
     ],
     "心零": [
       "/projects/project-black-pool-agent.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "必填": [
@@ -33950,6 +34049,7 @@
       "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "扫帚": [
@@ -34624,6 +34724,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -35253,6 +35354,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -35639,6 +35741,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -36122,6 +36225,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -36450,6 +36554,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -37528,6 +37633,7 @@
       "/characters/15602.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -38370,6 +38476,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -38860,6 +38967,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -39554,6 +39662,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -39731,6 +39840,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -39812,6 +39922,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -40385,6 +40496,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -40821,6 +40933,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -41661,6 +41774,9 @@
     ],
     "渴求": [
       "/characters/15587.md"
+    ],
+    "游一": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "游套": [
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
@@ -43386,7 +43502,8 @@
     "的信": [
       "/characters/15575.md",
       "/characters/15582.md",
-      "/characters/15594.md"
+      "/characters/15594.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "的全": [
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
@@ -43535,6 +43652,9 @@
     ],
     "的完": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
+    "的定": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "的审": [
       "/characters/77917.md"
@@ -44588,6 +44708,9 @@
     ],
     "碎敌": [
       "/characters/15598.md"
+    ],
+    "碰上": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "磨对": [
       "/characters/15580.md"
@@ -46507,6 +46630,7 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
     "自造": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
     ],
     "自驱": [
@@ -48577,6 +48701,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -49140,6 +49265,7 @@
     ],
     "这是": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-scs-req-input-shape-diagnostics-20260729.md"
     ],
@@ -49366,6 +49492,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -49679,6 +49806,9 @@
     ],
     "造大": [
       "/characters/54117.md"
+    ],
+    "造工": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "造得": [
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
@@ -50505,6 +50635,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -50801,6 +50932,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -50982,7 +51114,8 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "链的": [
-      "/characters/15567.md"
+      "/characters/15567.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "锁下": [
       "/characters/15574.md"
@@ -51474,6 +51607,7 @@
     ],
     "零侵": [
       "/projects/project-black-pool-agent.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
     "零后": [
@@ -52315,6 +52449,7 @@
     ],
     "audit": [
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
@@ -52420,6 +52555,9 @@
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
+    ],
+    "bpa": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "bpt": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
@@ -52870,6 +53008,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -53233,6 +53372,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -53444,6 +53584,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -53694,6 +53835,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -54316,6 +54458,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -55170,6 +55313,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -55488,6 +55632,9 @@
     ],
     "search": [
       "/story/story_search_index.md"
+    ],
+    "selfcode": [
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "selfreport": [
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
@@ -55814,6 +55961,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md",
+      "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
