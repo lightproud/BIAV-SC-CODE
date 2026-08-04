@@ -41,17 +41,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          NOTES="仓库离线搬运包：main 全量历史的 git bundle（滚动覆盖，本份 @ ${GITHUB_SHA:0:12}, $(date -u +%Y-%m-%dT%H:%MZ) UTC）。
-
-用法：
-\`\`\`
-git clone ${BUNDLE_FILE} BIAV-SC-CODE
-cd BIAV-SC-CODE
-git remote set-url origin https://github.com/lightproud/BIAV-SC-CODE.git
-git pull --ff-only   # 补齐打包之后的新提交
-\`\`\`
-
-校验：clone 后 git rev-parse HEAD 应等于上面的打包 commit。详见 RELEASES.md。"
+          # notes 用 printf 单行拼装——多行块标量顶格续行会撑破 YAML（2026-08-04 实弹教训）
+          STAMP="$(date -u +%Y-%m-%dT%H:%MZ)"
+          NOTES="$(printf '仓库离线搬运包：main 全量历史的 git bundle（滚动覆盖，本份 @ %s, %s UTC）。\n\n用法：\n```\ngit clone biav-sc-main.bundle BIAV-SC-CODE\ncd BIAV-SC-CODE\ngit remote set-url origin https://github.com/lightproud/BIAV-SC-CODE.git\ngit pull --ff-only\n```\n\n校验：clone 后 git rev-parse HEAD 应等于上面的打包 commit。详见 RELEASES.md。' "${GITHUB_SHA:0:12}" "$STAMP")"
           gh release view "${BUNDLE_TAG}" >/dev/null 2>&1 || \
             gh release create "${BUNDLE_TAG}" --title "Clone bundle (offline transport)" --notes "${NOTES}"
           gh release edit "${BUNDLE_TAG}" --notes "${NOTES}"
