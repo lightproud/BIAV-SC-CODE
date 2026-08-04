@@ -105,37 +105,40 @@ GENERIC_RULES = [
 BLACK_POOL_PRICES_PY = '_USER_PRICES_CACHE: Optional[tuple] = None\n\n\ndef _load_user_price_table() -> dict:\n    """Intranet price injection: HERMES_HOME/model-prices.json (costs per million tokens).\n\n    Shape: {"models": {"<model-substring>": {"input": 4.0, "output": 12.0,\n    "cache_read": 0.4, "cache_write": 0}}}. Missing or invalid file -> {}\n    (silent; pricing falls through to upstream resolution).\n    """\n    global _USER_PRICES_CACHE\n    import json as _json\n    import os as _os\n\n    path = _os.path.join(\n        _os.environ.get("HERMES_HOME", _os.path.expanduser("~/.hermes")),\n        "model-prices.json",\n    )\n    try:\n        mtime = _os.path.getmtime(path)\n    except OSError:\n        return {}\n    if _USER_PRICES_CACHE and _USER_PRICES_CACHE[0] == mtime:\n        return _USER_PRICES_CACHE[1]\n    try:\n        with open(path, encoding="utf-8") as fh:\n            data = _json.load(fh)\n        models = data.get("models") or {}\n        if not isinstance(models, dict):\n            models = {}\n    except (OSError, ValueError):\n        models = {}\n    _USER_PRICES_CACHE = (mtime, models)\n    return models\n\n\ndef _user_pricing_entry(model_name: str) -> Optional[PricingEntry]:\n    table = _load_user_price_table()\n    if not table:\n        return None\n    name = (model_name or "").lower()\n    best = None\n    best_len = -1\n    for key, spec in table.items():\n        k = str(key).lower()\n        if (k == name or k in name) and len(k) > best_len and isinstance(spec, dict):\n            best, best_len = spec, len(k)\n    if best is None:\n        return None\n\n    def _d(value: Any) -> Optional[Decimal]:\n        try:\n            return Decimal(str(value)) if value is not None else None\n        except Exception:  # noqa: BLE001 - bad cell must not break pricing\n            return None\n\n    return PricingEntry(\n        input_cost_per_million=_d(best.get("input")),\n        output_cost_per_million=_d(best.get("output")),\n        cache_read_cost_per_million=_d(best.get("cache_read")),\n        cache_write_cost_per_million=_d(best.get("cache_write")),\n        source="user_override",\n        pricing_version="model-prices.json",\n    )\n\n\ndef get_pricing_entry('
 
 # Black Pool 内建主题 TS 体（注入 themes/presets.ts，见下方配色规则）
-BLACK_POOL_THEME_TS = """/** Black Pool（黑池）— 鎏金双貌：暖黑之金与米白之金（守密人 2026-08-03 配色裁定）。 */
+BLACK_POOL_THEME_TS = """/** Black Pool（黑池）— 鎏金双貌：暖黑之金与米白之金（守密人 2026-08-03 配色裁定；
+ * 2026-08-04 浅色降饱和裁定：色相 44° 与明度不变，表面层感知色度压至米白纸级
+ * （底 okC≈0.012 / 中间层 ≈0.02 / 边框输入 ≈0.03），金三件与文字色原封——
+ * 复刻深色模式「金作点缀」纪律，根治浅色「越深越黄」的表面层超标。 */
 export const blackPoolTheme: DesktopTheme = {
   name: 'black-pool',
   label: 'Black Pool',
   description: '黑池金 — 暖黑与米白双貌',
   colors: {
-    background: '#F7F1E1',
+    background: '#F5F2E9',
     foreground: '#332B18',
-    card: '#FCF8EC',
+    card: '#FAF8F2',
     cardForeground: '#332B18',
-    muted: '#EFE7D2',
+    muted: '#ECE8DB',
     mutedForeground: '#8C8063',
-    popover: '#FBF6E9',
+    popover: '#F8F5EE',
     popoverForeground: '#332B18',
     primary: '#C9A857',
     primaryForeground: '#241C07',
-    secondary: '#F0E6CC',
+    secondary: '#EDE7D9',
     secondaryForeground: '#4A3F24',
-    accent: '#EEE1BE',
+    accent: '#E8E1CE',
     accentForeground: '#4A3C1C',
-    border: '#DDD1AE',
-    input: '#D6C89F',
+    border: '#D8D1BB',
+    input: '#CFC7B0',
     ring: '#B08E35',
     midground: '#8F6F26',
     composerRing: '#B08E35',
     destructive: '#B4372E',
     destructiveForeground: '#FEF2F2',
-    sidebarBackground: '#F2EBD6',
-    sidebarBorder: '#E0D5B2',
-    userBubble: '#F1E8CE',
-    userBubbleBorder: '#DECFA3'
+    sidebarBackground: '#EFEBDE',
+    sidebarBorder: '#DBD4BF',
+    userBubble: '#EDE8D9',
+    userBubbleBorder: '#D9D1B8'
   },
   darkColors: {
     background: '#171310',

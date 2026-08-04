@@ -356,8 +356,8 @@
   （SOUL.md 模板 / CLI 别名）+ patches/ 白名单制（`build/rebrand.py` 规则引擎生成 388 文件补丁，含
   desktop/web 裸词换装——守密人补充「主要消费面是 desktop」后扩面；四不碰红线，upstream 零修改组装期应用）；台账 `BRANDING.md`。
 - **首件便携整包已实证落桶（2026-08-02，三轮迭代绿，run 30750724034）**：`silver-core-win64.zip`（1.04GB，sha256 在册）落 `silver-core-bundle` Release——合箱单目录搬移自愈冒烟全通；前两轮两坑（pyvenv.cfg 绝对路径 / 冒烟 cwd）均修入工作流。
-- **上游移 pin `v2026.8.3` / 0.20.0（2026-08-04，守密人派发）**：快照替换 + 哨兵同步 + 补丁全量
-  重生成/重放（cost-panel import 区一处人工归位），charter 守卫 8 项全绿；细节见 `UPSTREAM.md`。
+- **上游移 pin `v2026.8.3` / 0.20.0（2026-08-04，守密人派发）**：快照替换 + 哨兵同步 + 补丁重生成/
+  重放全绿（`UPSTREAM.md`）；同日浅色降饱和 12 表面令牌（诊断色值见 `BRANDING.md`）。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
