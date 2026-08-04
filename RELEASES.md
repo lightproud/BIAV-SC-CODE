@@ -49,6 +49,7 @@
 | 同人图月归档 | `community-assets` | `fanart-archive-{YYYY-MM}.tar.gz` |
 | 回填的社区媒体 | `community-assets` | `media/backfill_manifest.json` 索引的媒体 |
 | Black Pool（黑池）便携整包（win64，Hermes 组装产物）| `black-pool-bundle` | `black-pool-win64.zip`（私有版，**合箱单目录**：运行时 + desktop + launcher，zip 仅传输载体）；`black-pool-public-win64.zip`（公版，独立工作流按需出包）|
+| 本仓离线搬运包（直连克隆屡断时整仓下载）| `clone-bundle` | `biav-sc-main.bundle`（main 全量历史 git bundle，可断点续传/镜像加速；用法见 §2.4）|
 
 ## 二、两个 Release 总览
 
@@ -96,6 +97,24 @@ desktop（`--win dir` 免装目录形态）+ `launcher.cmd` 双击即用。**zip
 升级 = 移 pin 重测后重跑 workflow 重发（文书 §2.4）。方案详见
 `projects/black-pool-agent/deploy/README.md`。定名前旧桶 `silver-core-bundle`
 已删除（守密人 2026-08-03 裁定，防误取旧包）。
+
+### 2.4 「克隆搬运包」`clone-bundle` —— 仓库离线搬运（2026-08-04 增设）
+
+守密人 2026-08-04 要求（B 机器直连 GitHub 克隆屡断 curl 56）：CI `make-clone-bundle.yml`
+（workflow_dispatch）把触发时刻的 main 全量历史打成 **git bundle 单文件**
+`biav-sc-main.bundle` 挂本桶滚动覆盖。bundle 是 git 官方离线搬运格式——浏览器 / 下载工具
+断点续传，下载 URL 可加镜像前缀加速，展开后即完整克隆（区别于 zip 快照：带 `.git` 全部对象，
+可正常 `pull`）。用法：
+
+```bash
+git clone biav-sc-main.bundle BIAV-SC-CODE
+cd BIAV-SC-CODE
+git remote set-url origin https://github.com/lightproud/BIAV-SC-CODE.git
+git pull --ff-only   # 补齐打包之后的新提交
+```
+
+校验：clone 后 `git rev-parse HEAD` 应等于 Release notes 标注的打包 commit。
+包为按需重打（非定时），取新鲜包前可先重跑 workflow。
 
 ## 三、整理历程
 

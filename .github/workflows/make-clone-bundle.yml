@@ -1,0 +1,58 @@
+name: Make Clone Bundle
+
+# 克隆搬运包（守密人 2026-08-04 要求）：直连 GitHub 克隆屡断的机器，改从 Release
+# 下载一个 git bundle 单文件——bundle 是 git 官方的离线仓库搬运格式，浏览器 / 下载
+# 工具天然支持断点续传，且下载链接可加镜像前缀加速。下载后本地展开即为完整克隆：
+#
+#   git clone biav-sc-main.bundle BIAV-SC-CODE
+#   cd BIAV-SC-CODE
+#   git remote set-url origin https://github.com/lightproud/BIAV-SC-CODE.git
+#
+# 手动触发、滚动覆盖同名资产（--clobber）；bundle 内容 = 触发时刻 main 全量历史。
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  BUNDLE_TAG: clone-bundle
+  BUNDLE_FILE: biav-sc-main.bundle
+
+jobs:
+  bundle:
+    name: Bundle main for offline transport
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create and verify bundle
+        run: |
+          git bundle create "${BUNDLE_FILE}" main
+          git bundle verify "${BUNDLE_FILE}"
+          ls -lh "${BUNDLE_FILE}"
+
+      - name: Upload to Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NOTES="仓库离线搬运包：main 全量历史的 git bundle（滚动覆盖，本份 @ ${GITHUB_SHA:0:12}, $(date -u +%Y-%m-%dT%H:%MZ) UTC）。
+
+用法：
+\`\`\`
+git clone ${BUNDLE_FILE} BIAV-SC-CODE
+cd BIAV-SC-CODE
+git remote set-url origin https://github.com/lightproud/BIAV-SC-CODE.git
+git pull --ff-only   # 补齐打包之后的新提交
+\`\`\`
+
+校验：clone 后 git rev-parse HEAD 应等于上面的打包 commit。详见 RELEASES.md。"
+          gh release view "${BUNDLE_TAG}" >/dev/null 2>&1 || \
+            gh release create "${BUNDLE_TAG}" --title "Clone bundle (offline transport)" --notes "${NOTES}"
+          gh release edit "${BUNDLE_TAG}" --notes "${NOTES}"
+          gh release upload "${BUNDLE_TAG}" "${BUNDLE_FILE}" --clobber
