@@ -91,6 +91,8 @@ jobs:
           cp projects/black-pool-agent/deploy/launcher.cmd BlackPool/
           cp projects/black-pool-agent/deploy/fix_venv_path.py BlackPool/
           cp projects/black-pool-agent/deploy/launch_desktop.py BlackPool/
+          cp projects/black-pool-agent/deploy/diagnose.cmd BlackPool/
+          cp projects/black-pool-agent/deploy/diagnose_lag.py BlackPool/
           # 组装根印章：editable 指针自愈的「旧根」依据（自愈后由脚本滚动更新）
           cygpath -w "$(pwd)/BlackPool" > BlackPool/bundle-root.txt
           # 出厂清单 BUILD.md（守密人 2026-08-04 裁定「补齐链条」）：公版只烧两张补丁。
