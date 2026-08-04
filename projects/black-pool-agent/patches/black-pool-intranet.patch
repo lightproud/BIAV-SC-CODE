@@ -85,10 +85,10 @@ index 04d34d1..73f7eb1 100644
      if route.billing_mode == "subscription_included":
          return PricingEntry(
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index 6e249aa..d3e9686 100644
+index 2290ed2..3fcad72 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
-@@ -5360,11 +5360,7 @@ function buildApplicationMenu() {
+@@ -5462,11 +5462,7 @@ function buildApplicationMenu() {
        ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
        : [{ role: 'minimize' }, { role: 'close' }]
    })
@@ -102,7 +102,7 @@ index 6e249aa..d3e9686 100644
    return Menu.buildFromTemplate(template)
  }
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index fdb3481..3e95d66 100644
+index 5d55393..165500f 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
 @@ -109,6 +109,8 @@ export function AboutSettings() {
@@ -127,10 +127,10 @@ index fdb3481..3e95d66 100644
      </SettingsContent>
    )
 diff --git a/apps/desktop/src/app/settings/gateway-settings.tsx b/apps/desktop/src/app/settings/gateway-settings.tsx
-index 94573f5..5f5acf7 100644
+index 2e6c7cd..cc8e9d6 100644
 --- a/apps/desktop/src/app/settings/gateway-settings.tsx
 +++ b/apps/desktop/src/app/settings/gateway-settings.tsx
-@@ -1060,6 +1060,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1075,6 +1075,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'local' }))}
              title={scope === null ? g.localTitle : g.inheritTitle}
            />
@@ -139,7 +139,7 @@ index 94573f5..5f5acf7 100644
            <ModeCard
              active={state.mode === 'cloud'}
              description={g.cloudDesc}
-@@ -1068,6 +1070,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1083,6 +1085,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}
              title={g.cloudTitle}
            />
@@ -148,7 +148,7 @@ index 94573f5..5f5acf7 100644
              active={state.mode === 'remote'}
              description={g.remoteDesc}
 diff --git a/apps/desktop/src/app/settings/index.tsx b/apps/desktop/src/app/settings/index.tsx
-index 8dccf3a..87d04b5 100644
+index f555037..09eb641 100644
 --- a/apps/desktop/src/app/settings/index.tsx
 +++ b/apps/desktop/src/app/settings/index.tsx
 @@ -51,7 +51,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
@@ -186,10 +186,10 @@ index 8dccf3a..87d04b5 100644
          active: activeView === 'providers',
          children: [
 diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-index e7d5849..e8c5c83 100644
+index 2c7b914..5a65f1e 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-@@ -244,7 +244,7 @@ export function useStatusbarItems({
+@@ -295,7 +295,7 @@ export function useStatusbarItems({
        // Update state is not a preference: hiding it is how a user misses that
        // their client is behind. Listed in the menu, but locked on.
        lockedVisible: true,
@@ -198,7 +198,7 @@ index e7d5849..e8c5c83 100644
        title: status.tooltip,
        toggleLabel: copy.toggleVersion,
        variant: 'action'
-@@ -287,7 +287,7 @@ export function useStatusbarItems({
+@@ -338,7 +338,7 @@ export function useStatusbarItems({
        id: 'version-backend',
        label: status.label,
        lockedVisible: true,
@@ -327,10 +327,10 @@ index 0b46920..b45b179 100644
      return
    }
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index 56fcf32..15f95ff 100644
+index a990979..0f4885e 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
-@@ -3221,6 +3221,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
+@@ -3664,6 +3664,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
  
      if not git_dir.exists():
          if sys.platform == "win32":
