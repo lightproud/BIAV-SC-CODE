@@ -120,7 +120,7 @@ def test_brand_patch_sentinels():
         "AUMID 中性化": "com.biav.blackpool",
         "唤醒词帮助中性化": "toggle the wake word listener [on|off|status]",
         "CLI 面板残留品牌收尾": "⚕ Black Pool",
-        "默认语言简体中文（前端缺省）": "DEFAULT_LOCALE: Locale = 'zh'",
+        "默认语言简体中文（前端缺省，测试态钉 en）": "MODE === 'test' ? 'en' : 'zh'",
         "默认语言简体中文（后端真源头）": '"language": "zh",',
         "品牌字体路径修复（Collapse 构建期内嵌）": "url('../node_modules/@nous-research/ui",
         "黑池默认主题（鎏金双貌）": "DEFAULT_SKIN_NAME = 'black-pool'",
@@ -157,7 +157,9 @@ def test_intranet_patch_sentinels():
         "自定义模型价格表注入": "model-prices.json",
         "Nous Portal 推荐徽标摘除": "内网无推荐位",
         "推荐光效摘除": "arc-nous",
-        "版本芯片更新覆盖层入口 no-op": "onSelect: () => {},",
+        "版本芯片降为纯展示（更新覆盖层入口摘除）": "-      onSelect: () => openUpdateOverlayFor('client'),",
+        "版本芯片纯展示变体": "+      variant: 'text'",
+        "单测期望对齐私有版（自更新收口哨兵）": "the portable edition disables self-update",
         "服务商列表默认展开": "SHOW_ALL_KEY) !== \'0\'",
     }
     missing = [k for k, v in sentinels.items() if v not in text]

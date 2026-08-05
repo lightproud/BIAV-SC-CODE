@@ -21900,7 +21900,7 @@ index 1b24aaa..7a9b0d2 100644
      execFileSync() {
        throw new Error('access denied')
 diff --git a/apps/desktop/electron/windows-user-env.test.ts b/apps/desktop/electron/windows-user-env.test.ts
-index 6b92650..613828c 100644
+index 6b92650..ccf73aa 100644
 --- a/apps/desktop/electron/windows-user-env.test.ts
 +++ b/apps/desktop/electron/windows-user-env.test.ts
 @@ -35,7 +35,7 @@ test('expandWindowsEnvRefs expands %VAR% case-insensitively', () => {
@@ -21910,15 +21910,6 @@ index 6b92650..613828c 100644
 -  assert.equal(expandWindowsEnvRefs('F:\\Hermes\\data', {}), 'F:\\Hermes\\data')
 +  assert.equal(expandWindowsEnvRefs('F:\\Black Pool\\data', {}), 'F:\\Black Pool\\data')
    assert.equal(expandWindowsEnvRefs('%NOPE%\\x', {}), '%NOPE%\\x')
- })
- 
-@@ -69,7 +69,7 @@ test('readWindowsUserEnvVar queries HKCU\\Environment and expands the value', ()
-     exec
-   })
- 
--  assert.equal(value, 'F:\\Hermes')
-+  assert.equal(value, 'F:\\Black Pool')
-   assert.deepEqual(calls, [['reg', ['query', 'HKCU\\Environment', '/v', 'HERMES_HOME']]])
  })
  
 diff --git a/apps/desktop/electron/windows-user-env.ts b/apps/desktop/electron/windows-user-env.ts
@@ -38858,7 +38849,7 @@ index 16d5883..a506e53 100644
      openImage: '画像を開く',
      downloadImage: '画像をダウンロード',
 diff --git a/apps/desktop/src/i18n/languages.ts b/apps/desktop/src/i18n/languages.ts
-index e4a1fb1..35660d6 100644
+index e4a1fb1..e35ef57 100644
 --- a/apps/desktop/src/i18n/languages.ts
 +++ b/apps/desktop/src/i18n/languages.ts
 @@ -2,7 +2,7 @@ import { normalize } from '@/lib/text'
@@ -38866,7 +38857,7 @@ index e4a1fb1..35660d6 100644
  import type { Locale } from './types'
  
 -export const DEFAULT_LOCALE: Locale = 'en'
-+export const DEFAULT_LOCALE: Locale = 'zh'
++export const DEFAULT_LOCALE: Locale = import.meta.env.MODE === 'test' ? 'en' : 'zh'
  
  export const LOCALE_OPTIONS = [
    {

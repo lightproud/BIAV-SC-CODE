@@ -76,10 +76,21 @@ jobs:
           cache: npm
           cache-dependency-path: projects/black-pool-agent/upstream/package-lock.json
 
+      - name: Desktop deps
+        working-directory: BlackPool/app/apps/desktop
+        run: npm ci
+
+      # 换装是 400+ 文件的规则替换，改坏 UI 逻辑一样零报错出包（2026-08-05 实证：
+      # 装配线此前从不跑 desktop 单测，换装树 145 项红一直无人知晓——那批红后来
+      # 查明无一是功能坏，但网空着这件事本身才是风险）。测试期望已按私有版行为
+      # 修齐（见 build/rebrand.py 末段规则），故此处应当全绿；红即真回归，挡包。
+      - name: Desktop unit tests (regression net for the rebrand rules)
+        working-directory: BlackPool/app/apps/desktop
+        run: npx vitest run
+
       - name: Build desktop (dir target, unsigned, merged into bundle)
         working-directory: BlackPool/app/apps/desktop
         run: |
-          npm ci
           npm run build
           npm run builder -- --win dir
           ls release/
