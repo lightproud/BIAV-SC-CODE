@@ -4,7 +4,7 @@ title: "youtube_comments 社区数据源"
 description: "youtube_comments 平台采集档案，全量 2384 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/youtube_comments/"
 tags: ["data_layer:full_archive", "platform:youtube_comments", "health:degraded"]
-timestamp: "2026-08-04T16:52:33.989345+00:00"
+timestamp: "2026-08-05T08:33:50.120388+00:00"
 ---
 
 # 数据层指针

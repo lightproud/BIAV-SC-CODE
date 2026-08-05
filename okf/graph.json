@@ -2,7 +2,7 @@
   "generated": "2026-08-05",
   "stats": {
     "nodes": 396,
-    "edges": 435
+    "edges": 437
   },
   "nodes": [
     {
@@ -4733,6 +4733,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
@@ -4794,14 +4800,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15581.md",
-      "rel": "提及:莉莉",
+      "target": "/characters/15593.md",
+      "rel": "提及:詹金",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15586.md",
-      "rel": "提及:旺达",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -6245,6 +6251,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/sources/bahamut.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
       "source": "/sources/bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
@@ -6306,14 +6318,14 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15581.md",
-      "rel": "提及:莉莉",
+      "target": "/characters/15593.md",
+      "rel": "提及:詹金",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15586.md",
-      "rel": "提及:旺达",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
