@@ -103,6 +103,54 @@ def test_rebrand_never_breaks_functional_identifiers():
     assert not bad, f"连字符标识符被换装打断: {bad[:3]}"
 
 
+def test_bare_word_scope_safety():
+    """裸词换装铺到 Python 后端（agent/，2026-08-05）后的功能面守卫。
+
+    前端三处目录的风险面已由上一条守着；agent/ 入列带来的是 Python 侧的新风险：
+    产物路径（`Hermes.app`/`.exe`）、URL、环境变量名、import 语句里若含裸词，
+    换成含空格的品牌名即坏功能。入列前逐条核过为零命中，此测锁住这个状态——
+    下一层（hermes_cli / gateway / tools）铺开时，这些模式会真的出现，届时必须
+    先加豁免再入列，而不是让它无声打断。
+    """
+    added = [l for l in PATCH_BRAND.read_text(encoding="utf-8").splitlines()
+             if l.startswith("+") and not l.startswith("+++")]
+    patterns = {
+        # `.exe`/`.app`/`.desktop` 刻意不在列：electron-builder 的 productName /
+        # executableName 已随换装改为 "Black Pool"，产出的就是 `Black Pool.exe`，
+        # 那些 path.join 是与产物名对齐的正确写法，不是被打断的标识符。
+        "源码/数据文件路径被换": re.compile(r"Black Pool\.(py|json|ya?ml|db|tsx?|mjs)\b"),
+        "URL 内被换": re.compile(r"https?://[^\s\"']*Black Pool"),
+        "环境变量/常量名被换": re.compile(r"Black Pool[_-][A-Z]"),
+        "import 语句被换": re.compile(r"^\+\s*(?:import|from)\s+Black Pool\b"),
+    }
+    hits = {why: [l.strip()[:110] for l in added if rx.search(l)][:3]
+            for why, rx in patterns.items()}
+    hits = {k: v for k, v in hits.items() if v}
+    assert not hits, f"裸词换装打断了功能标识: {hits}"
+
+
+def test_agent_prompt_text_rebranded():
+    """系统提示词是模型自述的直接来源——留着上游品牌即当场穿帮。
+
+    守密人 2026-08-05 现场反馈「后端对话还有不少内容是 hermes」的根因：裸词此前
+    只扫前端，而 `You are chatting inside the Hermes desktop app` 一类句子就写在
+    agent/prompt_builder.py 里，逐字进模型上下文。
+    """
+    text = PATCH_BRAND.read_text(encoding="utf-8")
+    for phrase in (
+        "You run on Black Pool Agent (by B.I.A.V. Studio).",
+        "You are running in the Black Pool terminal UI (TUI).",
+        "You are chatting inside the Black Pool desktop app",
+        "You are in the Black Pool WebUI",
+    ):
+        assert phrase in text, f"提示词换装缺失: {phrase!r}"
+    # 归因口径：自述句不报上游母公司名（SPECIAL_RULES 既有裁定的延伸）。
+    added = [l for l in text.splitlines() if l.startswith("+") and not l.startswith("+++")]
+    assert not any("You run on" in l and "Nous Research" in l for l in added), (
+        "自述句仍报 Nous Research——归因口径未归一"
+    )
+
+
 def test_brand_patch_sentinels():
     """公版（品牌层）规则不得因移 pin 锚点失配而无声失效。
 

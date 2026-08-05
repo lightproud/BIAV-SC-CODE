@@ -77,7 +77,22 @@ RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins",
 # HTTP 头名（功能标识符），被换成含空格的品牌名即非法头名，
 # desktop 全部设置页（Providers / Tools & Keys / Model）随之 ERR_INVALID_HTTP_TOKEN
 # 崩加载。代价：德/荷式连字复合词（"Hermes-Plugins"）留在残留清单——保护优先于净度。
-BARE_WORD_DIRS = ("apps", "web", "ui-tui/src")
+#
+# agent/ 于 2026-08-05 入列（守密人「后端对话还有不少内容是 hermes」现场反馈，
+# 分层铺开第一层）。此前裸词只扫前端三处，Python 后端一处没换——`Hermes Agent`
+# 一类词组归 GENERIC_RULES 换掉了，单独的 `Hermes` 全留着，而**系统提示词就在
+# agent/ 里**：「You are chatting inside the Hermes desktop app」「You are running
+# in the Hermes terminal UI」这些直接进模型上下文，模型照着自述即冒出上游品牌；
+# `prompt_builder.py` 的自述句更是前半已换、后半没换，一句话里两个名字打架。
+# 入列前逐条核过 agent/ 的 399 处裸词：92 处在字符串字面量、其余为注释与
+# docstring；字面量里仅两处短串，一为 MCP 工具描述兜底文案（该换），一为
+# anthropic_adapter 的提示词消毒器条目（换了才对——它要消毒的正是新品牌名）。
+# 功能面因此为零风险：无 HTTP 头名、无 `HERMES_` 环境变量（大写不匹配裸词）、
+# 无 `.app`/`.exe` 产物路径（那些在 hermes_cli/，尚未入列）。
+# 守卫见 tests/test_hermes_charter.py::test_bare_word_scope_safety。
+# 下一层（hermes_cli / gateway / tools / plugins / skills）挂账未铺——那几处含
+# 皮肤名 `Hermes Teal`、MCP server 名、桌面产物路径等真功能标识，需先定豁免名单。
+BARE_WORD_DIRS = ("apps", "web", "ui-tui/src", "agent")
 BARE_WORD_RE = re.compile(r"(?<![A-Za-z0-9_-])Hermes(?![A-Za-z0-9_-])")
 # .html 在列（2026-08-02 补漏）：desktop/web/bootstrap-installer 的 <title> 是
 # 任务栏 / Alt-Tab 显示名的实际来源（Electron 加载页面后 document.title 覆盖窗口题）。
@@ -342,6 +357,17 @@ BRAND_POST_RULES = [
     (
         '        "skin": "default",',
         '        "skin": "black-pool",',
+    ),
+    # 自述句归因口径归一（守密人 2026-08-05 裁定「by B.I.A.V. Studio」）：
+    # SPECIAL_RULES 早有裁定——自述句不保留「created by Nous Research」（来源事实由
+    # LICENSE 与合规口径「基于 MIT 开源组件二次开发」承载）。但那条只换掉了
+    # 「You are Hermes Agent, ... created by Nous Research」一句，本句
+    # 「You run on ... (by Nous Research)」漏网：模型自述产品出身时仍报上游母公司名，
+    # 与 About 出身行 / CLI 面的口径对不上。锚点全树唯一（消毒器里的 "Nous Research"
+    # 是另一处、刻意不动——它要把品牌名替成 Claude Code 以绕开服务端内容过滤）。
+    (
+        "You run on Black Pool Agent (by Nous Research). ",
+        f"You run on {BRAND_AGENT} (by B.I.A.V. Studio). ",
     ),
     # 裸词换装的一处自伤（守密人 2026-08-05「装配线接上 desktop 单测」时暴露）：
     # windows-user-env 的用例喂给 mock 的注册表行含 `HERMES_HOME`，整行命中
