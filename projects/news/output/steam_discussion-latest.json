@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-05T14:04:22.073449+00:00",
+  "collected_at": "2026-08-05T16:41:37.369719+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 2,
   "items": [
     {
       "source": "steam_discussion",
@@ -24,16 +24,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/583930499273075320/",
       "author": "ReXert",
       "engagement": 3
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-08-04T15:39:43+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] invitation code",
-      "summary": "2UZC246X2N\n\nOn the left is the friends list icon. The penultimate button with a gift is what you need",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/583930499273098031/",
-      "author": "serpula",
-      "engagement": 0
     }
   ]
 }
