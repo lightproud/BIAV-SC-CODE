@@ -80,6 +80,19 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 杀软排除项；MOTW 命中 = zip 解锁后重解压；日志见反复 attempt/respawn = 网关早夭，
 主进程被同步探针钉住（单针可达 10 秒级），把 `home\logs\` 一并回传。
 
+## 置顶失效分诊（2026-08-05「会话置顶点了没反应」现场反馈后置备）
+
+侧栏置顶是 renderer 侧 localStorage（`hermes.desktop.pinnedSessions`）驱动显示、
+再经桥把 `sessions.pinned` 镜像给后端的双写结构，两半在外部都看不见，光读源码断不了案
+（银芯已逐字节比对确认换装补丁对整条链路零改动）。现场取证走 `deploy\probe-pin.js`：
+桌面版按 F12 开 DevTools → Console 粘贴该文件全文回车 → 回界面点一次「置顶」→ 回来看输出。
+
+判读三分：**完全没输出** = 点击没走到状态层（查该会话行是否真触发菜单项）；
+**有写入输出但列表仍空** = 状态写进去了、渲染或 id 查找侧出问题（把打印的 id 回传银芯）；
+**先增后减两次写入** = 本地置顶被后端拉取回冲（多半是 `state.db` 写不进，
+看 `home\logs\` 里 `PATCH /api/sessions/` 的报错）。探针另会报 localStorage 可写性与
+桥是否在位——这两项若红，问题不在置顶本身而在整个持久化层。
+
 ## 纪律（写给将来的自己）
 
 - **补丁射程**：Python 面（agent / hermes_cli / gateway / tools）打完即生效；
