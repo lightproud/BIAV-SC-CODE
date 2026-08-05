@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-05T16:41:37.369719+00:00",
+  "collected_at": "2026-08-05T19:28:33.434569+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 124,
   "items": [
     {
       "source": "google_play",
@@ -217,16 +217,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-13T14:23:10",
-      "lang": "en",
-      "title": "[Google Play 中评] ★3 The conversations between phases of boss",
-      "summary": "The conversations between phases of bosses in story are annoying, add a skip for that please, and also add that in replay too, thanks. And please have guide for teams.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-81b13ca9-e065-49df-90ff-be632967802f",
-      "author": "Nauth",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-24T05:00:49",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 덱빌딩보다는 덱 운영하는 느낌인데 상당히 재미있음 유물집는거나 카드 활용",
@@ -313,6 +303,26 @@
       "summary": "好歹比崩铁膨胀好一点",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-59d11405-e934-4f34-912a-f7ce534cafd8",
       "author": "张亚林",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-04T18:23:54",
+      "lang": "en",
+      "title": "[Google Play 差评] ★1 i have tried everything to enter this ga",
+      "summary": "i have tried everything to enter this game, everytime i'm met with \" you have reached maximum number of characters... crazy never even played before, 1 star until something gets fixed. ( cant even look up the issue no one has a fix or is talking bout it)",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-25553a94-98ee-46fa-993b-8df8cc284d75",
+      "author": "Zel Beis",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-04T18:13:56",
+      "lang": "en",
+      "title": "[Google Play 中评] ★3 I assume my device can't handle this gam",
+      "summary": "I assume my device can't handle this game as it crashed many times at startup.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-a223dd8f-c489-4f3b-976a-41035569131e",
+      "author": "Mayhes",
       "engagement": 0
     },
     {
@@ -607,16 +617,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-12T15:24:18",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 been playing this for a year and a half",
-      "summary": "been playing this for a year and a half or more the game play is tedious but fun the character pull is very generous It's simple and neat and I could tell all the budget goes to the art style The story or lore of this game has given me so much emotions that I could express my love for this game in short it's amazing",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-dc9319f3-70d3-4540-8efb-dc3193e71f51",
-      "author": "Troy Garcia",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-08-03T13:41:27",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 ai 발전을 볼 수 있음 초기 이벤트 현지화 안된건 거슬리는데 최근은 초",
@@ -733,6 +733,16 @@
       "summary": "It was so fun! i usually get bored but this game is so greatt!!!~~",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-fe7c92c1-7523-4fb9-a2ad-05667b6e3b5a",
       "author": "พิชชา พีช",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-04T18:23:14",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 no komen",
+      "summary": "no komen",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-76e3110f-8741-4fee-8323-02c601b44193",
+      "author": "Aldo Alfino",
       "engagement": 0
     },
     {
