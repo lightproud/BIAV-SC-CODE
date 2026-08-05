@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-05T05:45:56.761596+00:00",
+  "collected_at": "2026-08-05T08:33:05.102522+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 6,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-05T04:43:12+00:00",
+      "lang": "english",
+      "title": "[负面] late game gets pretty boring, i won't last more th...",
+      "summary": "late game gets pretty boring, i won't last more than a year.",
+      "url": "https://steamcommunity.com/profiles/76561198268450144/recommended/3052450",
+      "author": "76561198268450144",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "late game gets pretty boring, i won't last more than a year.",
+      "timestamp_created": 1785904992,
+      "playtime_forever": 8163
+    },
     {
       "source": "steam",
       "time": "2026-08-04T21:35:39+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "fantastic game",
       "timestamp_created": 1785879339,
-      "playtime_forever": 550
+      "playtime_forever": 595
     },
     {
       "source": "steam",
@@ -78,37 +93,7 @@
       "voted_up": true,
       "review": "good",
       "timestamp_created": 1785836292,
-      "playtime_forever": 3061
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-04T07:05:46+00:00",
-      "lang": "english",
-      "title": "[正面] Chapter 1 was a monumental slog for me (patience i...",
-      "summary": "Chapter 1 was a monumental slog for me (patience issue due to roguelike exploration every second), but after that, I got more comfortable. Something interesting is the difficulty sometimes encountered, sometimes being negated by 5 free revives that freely replenish. (which is really neat imo bc skill issue). \nThe topic of the story revolving around not forgetting people, or memories in general, is quite a random but welcome treat of a theme\nIt's like a reminder to not let my brain start failing, and to preserve mental notes I've made about my own friends and written things\nand Always research gacha char Investments",
-      "url": "https://steamcommunity.com/profiles/76561198892300021/recommended/3052450",
-      "author": "76561198892300021",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Chapter 1 was a monumental slog for me (patience issue due to roguelike exploration every second), but after that, I got more comfortable. Something interesting is the difficulty sometimes encountered, sometimes being negated by 5 free revives that freely replenish. (which is really neat imo bc skill issue). \nThe topic of the story revolving around not forgetting people, or memories in general, is quite a random but welcome treat of a theme\nIt's like a reminder to not let my brain start failing, and to preserve mental notes I've made about my own friends and written things\nand Always research gacha char Investments",
-      "timestamp_created": 1785827146,
-      "playtime_forever": 1584
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-04T07:36:48+00:00",
-      "lang": "japanese",
-      "title": "[正面] [h1]ソシャゲ版Slay the Spire[/h1]\n●良かった点\n・Slay the Spi...",
-      "summary": "[h1]ソシャゲ版Slay the Spire[/h1]\n●良かった点\n・Slay the Spireをソシャゲに上手く落とし込んでいるゲーム性\n・作品にマッチした雰囲気を醸し出す音楽\n・統一感のあるアートデザイン\n・ガチャは30回で最高レア確定、90回で限定キャラ確定と、限定キャラ1体入手するだけなら他のソシャゲと比較してもヌル目\n・配布が多くガチャが引きやすい、ストーリーを進めれば恒常キャラはコンプリート出来るほど。限定キャラは2～3体くらいなら最低保証でも入手可能\n\n×悪かった点\n・ローグライク要素はあるもののデッキはあらかじめ編成したキャラによって決まり、プレイ中に遺物を手に入れたりカードに特殊効果を付与することはできるが勝敗を左右するほどの効果はなく変化に乏しいので、結局は同じカードの同じ行動をひたすら繰り返すことになるので作業感が強い\n・ソシャゲの宿命だがプレイヤーの戦力は頭打ちして敵のステータスだけは徐々にインフレするので段々とストレステストじみてくる\n・最大15凸のキャラガチャ、凸アイテムは無課金でも手に入るものの3凸して実用レベル7凸して本領発揮というキャラが多い",
-      "url": "https://steamcommunity.com/profiles/76561199444689001/recommended/4226130",
-      "author": "76561199444689001",
-      "engagement": 0,
-      "language": "japanese",
-      "voted_up": true,
-      "review": "[h1]ソシャゲ版Slay the Spire[/h1]\n●良かった点\n・Slay the Spireをソシャゲに上手く落とし込んでいるゲーム性\n・作品にマッチした雰囲気を醸し出す音楽\n・統一感のあるアートデザイン\n・ガチャは30回で最高レア確定、90回で限定キャラ確定と、限定キャラ1体入手するだけなら他のソシャゲと比較してもヌル目\n・配布が多くガチャが引きやすい、ストーリーを進めれば恒常キャラはコンプリート出来るほど。限定キャラは2～3体くらいなら最低保証でも入手可能\n\n×悪かった点\n・ローグライク要素はあるもののデッキはあらかじめ編成したキャラによって決まり、プレイ中に遺物を手に入れたりカードに特殊効果を付与することはできるが勝敗を左右するほどの効果はなく変化に乏しいので、結局は同じカードの同じ行動をひたすら繰り返すことになるので作業感が強い\n・ソシャゲの宿命だがプレイヤーの戦力は頭打ちして敵のステータスだけは徐々にインフレするので段々とストレステストじみてくる\n・最大15凸のキャラガチャ、凸アイテムは無課金でも手に入るものの3凸して実用レベル7凸して本領発揮というキャラが多い",
-      "timestamp_created": 1785829008,
-      "playtime_forever": 3245
+      "playtime_forever": 3151
     }
   ]
 }
