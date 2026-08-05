@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-05T08:33:05.102522+00:00",
+  "collected_at": "2026-08-05T11:20:38.982990+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 124,
   "items": [
     {
       "source": "google_play",
@@ -893,6 +893,16 @@
       "summary": "Menarik banget ceritanya. Nuansa gelap dan game nya cukup kreatif. Semoga terus berkembang dan karakternya terus bertambah.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-3a219a1e-6aa4-48fd-9a08-402115e02c10",
       "author": "Adveka Bassar",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-04T09:25:03",
+      "lang": "vi",
+      "title": "[Google Play 差评] ★2 ko đăng nhập bằng steam đc",
+      "summary": "ko đăng nhập bằng steam đc",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-d4a6a340-e252-46de-90a4-ef7e99a0cf75",
+      "author": "Lâm",
       "engagement": 0
     },
     {
