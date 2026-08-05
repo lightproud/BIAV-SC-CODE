@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-05T11:20:38.982990+00:00",
+  "collected_at": "2026-08-05T14:04:22.073449+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 124,
+  "item_count": 123,
   "items": [
     {
       "source": "google_play",
@@ -717,16 +717,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-06T12:21:34",
-      "lang": "ko",
-      "title": "[Google Play 好评] ★4 재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
-      "summary": "재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-ea3efa69-914f-40ac-b463-299e5cf194f2",
-      "author": "김나연",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-08-01T05:35:48",
       "lang": "th",
       "title": "[Google Play 好评] ★5 เล่นบทนำเสร็จถึงกลับรีบมารีวิวเลย เนื้อเ",
@@ -743,16 +733,6 @@
       "summary": "It was so fun! i usually get bored but this game is so greatt!!!~~",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-fe7c92c1-7523-4fb9-a2ad-05667b6e3b5a",
       "author": "พิชชา พีช",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-06T12:47:57",
-      "lang": "th",
-      "title": "[Google Play 好评] ★5 เนื้อเรื่องเกม สนุกมากครับ เสียดายพึ่งมา",
-      "summary": "เนื้อเรื่องเกม สนุกมากครับ เสียดายพึ่งมาเจอเกมดีแบบนี้ ขอบคุณที่ทำเกมดีๆ แบบนี้ขึ้นมาครับ",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-f1c244fe-f57f-46ac-84cc-428dc1186908",
-      "author": "Baramee Kuanoon",
       "engagement": 0
     },
     {
@@ -1073,6 +1053,16 @@
       "summary": "Best gatcha ever, I love the Lovecraftian lore and the intricate gameplay. 10/10 cum laude.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-3da69e37-ee67-4e24-9a08-b0814ade38a3",
       "author": "Alessio Bollich",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-04T11:22:42",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 Приятный гибрид, который подкупает стиле",
+      "summary": "Приятный гибрид, который подкупает стилем Reverse 1999 и затягивающей механикой \"колодостроя\" от Slay the Spire. К слову, перевод на русский здесь есть, и для машинного он сделан очень достойно вполне играбельно и понятно",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-c04e19a0-7acf-4628-9759-9bcc2227fabd",
+      "author": "Аlex Nyrgaliev",
       "engagement": 0
     },
     {
