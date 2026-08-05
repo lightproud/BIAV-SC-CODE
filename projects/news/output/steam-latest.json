@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-05T19:28:33.434569+00:00",
+  "collected_at": "2026-08-05T22:12:51.315144+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-05T20:22:49+00:00",
+      "lang": "english",
+      "title": "[正面] i will never recover",
+      "summary": "i will never recover",
+      "url": "https://steamcommunity.com/profiles/76561199075757870/recommended/3052450",
+      "author": "76561199075757870",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "i will never recover",
+      "timestamp_created": 1785961369,
+      "playtime_forever": 4043
+    },
     {
       "source": "steam",
       "time": "2026-08-05T14:00:49+00:00",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "The game is overall very well designed and is especially fun to play in the evening. I just think that a few things aren't explained very well, but you can usually figure them out on your own. Overall, I'd give the game an 8/10.",
       "timestamp_created": 1785925361,
-      "playtime_forever": 1024
+      "playtime_forever": 1215
     },
     {
       "source": "steam",
@@ -124,21 +139,6 @@
       "review": "late game gets pretty boring, i won't last more than a year.",
       "timestamp_created": 1785904992,
       "playtime_forever": 8163
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-04T21:35:39+00:00",
-      "lang": "english",
-      "title": "[正面] fantastic game",
-      "summary": "fantastic game",
-      "url": "https://steamcommunity.com/profiles/76561198749713903/recommended/3052450",
-      "author": "76561198749713903",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "fantastic game",
-      "timestamp_created": 1785879339,
-      "playtime_forever": 685
     }
   ]
 }
