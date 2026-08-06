@@ -19,8 +19,55 @@ env:
   BUNDLE_TAG: black-pool-bundle
 
 jobs:
+  # 换装回归网（2026-08-05 接入，2026-08-06 移出打包 job）。
+  # 为什么单开一个 ubuntu job：换装是 400+ 文件的规则替换，改坏 UI 逻辑一样零报错出包，
+  # 所以这张网必须有。但整套 desktop 测试里有一批**本就假定 POSIX** 的用例
+  # （update-relaunch 期望 release/linux-unpacked、windows-hermes-path 期望
+  # /venv/lib/.../site-packages、ssh-connection 要真实 ssh），把它挂在 windows 打包 job 上
+  # 是**永远绿不了**的——2026-08-06 实证：换装与补丁全部干净落位、前 11 步皆绿，
+  # 唯独这一步红，红的全是上述平台用例，无一条与换装有关，却把整个 zip 挡在门外。
+  # 网挪到它成立的地方跑（同一份换装树，Linux 上实测 4,308 绿），覆盖面一条不减。
+  regression-net:
+    name: Desktop regression net (full suite, linux)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 与打包 job 同源同序：换装 → 特性补丁，测的必须是真正要出包的那棵树
+      - name: Stage assembly copy
+        run: |
+          mkdir -p BlackPool
+          cp -r projects/black-pool-agent/upstream BlackPool/app
+
+      - name: Apply Black Pool rebrand, private edition (rule engine)
+        run: python projects/black-pool-agent/build/rebrand.py --apply BlackPool/app
+
+      - name: Apply feature patches (whitelisted)
+        run: git apply --directory=BlackPool/app projects/black-pool-agent/patches/conversation-cost-panel.patch
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: projects/black-pool-agent/upstream/package-lock.json
+
+      - name: Desktop deps
+        working-directory: BlackPool/app/apps/desktop
+        run: npm ci
+
+      - name: Desktop unit tests (ui + electron projects)
+        working-directory: BlackPool/app/apps/desktop
+        run: npx vitest run
+
   assemble:
     name: Portable bundle (win64, merged single dir)
+    needs: regression-net
     runs-on: windows-latest
     timeout-minutes: 90
     defaults:
@@ -80,14 +127,9 @@ jobs:
         working-directory: BlackPool/app/apps/desktop
         run: npm ci
 
-      # 换装是 400+ 文件的规则替换，改坏 UI 逻辑一样零报错出包（2026-08-05 实证：
-      # 装配线此前从不跑 desktop 单测，换装树 145 项红一直无人知晓——那批红后来
-      # 查明无一是功能坏，但网空着这件事本身才是风险）。测试期望已按私有版行为
-      # 修齐（见 build/rebrand.py 末段规则），故此处应当全绿；红即真回归，挡包。
-      - name: Desktop unit tests (regression net for the rebrand rules)
-        working-directory: BlackPool/app/apps/desktop
-        run: npx vitest run
-
+      # 回归网已移至上方 regression-net job（ubuntu）——本 job 经 needs 依赖它，
+      # 网红则打包根本不会启动。此处不再重复跑：那批假定 POSIX 的平台用例在
+      # windows runner 上永远绿不了，留在这里只会把 zip 永久挡在门外。
       - name: Build desktop (dir target, unsigned, merged into bundle)
         working-directory: BlackPool/app/apps/desktop
         run: |
