@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-05T22:12:51.315144+00:00",
+  "collected_at": "2026-08-06T02:22:50.699941+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 125,
+  "item_count": 124,
   "items": [
     {
       "source": "google_play",
@@ -207,16 +207,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-14T05:50:52",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 actually kinda banger of a game I actual",
-      "summary": "actually kinda banger of a game I actually love this game. it's classic, the team is enthusiastic. they brought in human translators. it's a beautiful game.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-17e21c68-bf48-4236-b28b-506fd36f24bd",
-      "author": "broccoli vegetable",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-24T05:00:49",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 덱빌딩보다는 덱 운영하는 느낌인데 상당히 재미있음 유물집는거나 카드 활용",
@@ -303,6 +293,16 @@
       "summary": "好歹比崩铁膨胀好一点",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-59d11405-e934-4f34-912a-f7ce534cafd8",
       "author": "张亚林",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-05T02:22:02",
+      "lang": "en",
+      "title": "[Google Play 好评] ★4 I really love this game but i couldn't c",
+      "summary": "I really love this game but i couldn't continue because of the parent/guardian permission 😭",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-0e2767fd-4739-4dc9-a7fe-2d086be2d935",
+      "author": "XUREL",
       "engagement": 0
     },
     {
@@ -743,16 +743,6 @@
       "summary": "bagus gamenya, dan sekarang udah ga terlalu ngelag lagi. ohiya untuk cerita tolong ditambah lagi, ga sabar buat ngeliat kelanjutan dari game ini. semangat untuk developer dan tim yang bekerja dibalik game ini^^",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-c8bc04fe-c6f3-49bc-9e1e-3c1afcc4585c",
       "author": "Raka Arya Ramadhan",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-08-04T18:23:14",
-      "lang": "id",
-      "title": "[Google Play 好评] ★5 no komen",
-      "summary": "no komen",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-76e3110f-8741-4fee-8323-02c601b44193",
-      "author": "Aldo Alfino",
       "engagement": 0
     },
     {
