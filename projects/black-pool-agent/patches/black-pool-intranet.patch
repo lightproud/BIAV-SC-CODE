@@ -186,29 +186,176 @@ index f555037..09eb641 100644
          active: activeView === 'providers',
          children: [
 diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-index 2c7b914..5a65f1e 100644
+index 2c7b914..bd2364c 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-@@ -295,7 +295,7 @@ export function useStatusbarItems({
+@@ -42,8 +42,7 @@ import {
+   $backendUpdateStatus,
+   $desktopVersion,
+   $updateApply,
+-  $updateStatus,
+-  openUpdateOverlayFor
++  $updateStatus
+ } from '@/store/updates'
+ import type { StatusResponse, UsageStats } from '@/types/hermes'
+ 
+@@ -295,10 +294,9 @@ export function useStatusbarItems({
        // Update state is not a preference: hiding it is how a user misses that
        // their client is behind. Listed in the menu, but locked on.
        lockedVisible: true,
 -      onSelect: () => openUpdateOverlayFor('client'),
-+      onSelect: () => {},
        title: status.tooltip,
        toggleLabel: copy.toggleVersion,
-       variant: 'action'
-@@ -338,7 +338,7 @@ export function useStatusbarItems({
+-      variant: 'action'
++      variant: 'text'
+     }
+   }, [
+     desktopVersion?.appVersion,
+@@ -338,10 +336,9 @@ export function useStatusbarItems({
        id: 'version-backend',
        label: status.label,
        lockedVisible: true,
 -      onSelect: () => openUpdateOverlayFor('backend'),
-+      onSelect: () => {},
        title: status.tooltip,
        toggleLabel: copy.toggleBackendVersion,
-       variant: 'action'
+-      variant: 'action'
++      variant: 'text'
+     }
+   }, [
+     connection?.mode,
+diff --git a/apps/desktop/src/components/desktop-install-overlay.test.tsx b/apps/desktop/src/components/desktop-install-overlay.test.tsx
+index b354abe..c7a6138 100644
+--- a/apps/desktop/src/components/desktop-install-overlay.test.tsx
++++ b/apps/desktop/src/components/desktop-install-overlay.test.tsx
+@@ -90,7 +90,7 @@ afterEach(() => {
+ })
+ 
+ describe('DesktopInstallOverlay first-run setup', () => {
+-  it('shows the remote/local choice without installer progress', async () => {
++  it('shows the remote choice without installer progress', async () => {
+     installDesktopMock(
+       bootstrapState({
+         setupChoice: { platform: 'win32', activeRoot: 'C:\\Users\\me\\AppData\\Local\\hermes\\hermes-agent' }
+@@ -101,100 +101,25 @@ describe('DesktopInstallOverlay first-run setup', () => {
+ 
+     expect(await screen.findByText('Set up Black Pool Desktop')).toBeTruthy()
+     expect(screen.getByText('Connect to existing Black Pool')).toBeTruthy()
+-    expect(screen.getByText('Install Black Pool locally')).toBeTruthy()
+     expect(screen.queryByText(/steps complete/i)).toBeNull()
+     expect(screen.queryByText(/Fetching installer manifest/i)).toBeNull()
+   })
+ 
+-  it('continues local bootstrap only when Install Black Pool locally is selected', async () => {
+-    const desktop = installDesktopMock(
+-      bootstrapState({
+-        setupChoice: { platform: 'win32', activeRoot: 'C:\\Users\\me\\AppData\\Local\\hermes\\hermes-agent' }
+-      })
+-    )
+-
+-    render(<DesktopInstallOverlay />)
+-
+-    fireEvent.click(await screen.findByText('Install Black Pool locally'))
+-
+-    expect(desktop.continueBootstrapLocal).toHaveBeenCalledTimes(1)
+-    expect(screen.getByText('Set up Black Pool Desktop')).toBeTruthy()
+-
+-    act(() => {
+-      desktop.emitBootstrapEvent({ type: 'manifest', protocolVersion: 1, stages: [] })
+-    })
+-
+-    await waitFor(() => expect(screen.queryByText('Set up Black Pool Desktop')).toBeNull())
+-    expect(screen.getByText(/Fetching installer manifest/i)).toBeTruthy()
+-  })
+-
+-  it('surfaces a recoverable error when the local-bootstrap bridge is unavailable', async () => {
+-    const desktop = installDesktopMock(
+-      bootstrapState({
+-        setupChoice: { platform: 'win32', activeRoot: 'C:\\Users\\me\\AppData\\Local\\hermes\\hermes-agent' }
+-      })
+-    )
+-
+-    desktop.continueBootstrapLocal = undefined as never
+-    render(<DesktopInstallOverlay />)
+-
+-    const install = (await screen.findByText('Install Black Pool locally')).closest('button') as HTMLButtonElement
+-    fireEvent.click(install)
+-
+-    expect(
+-      await screen.findByText('Local installation could not start. Restart Black Pool Desktop and try again.')
+-    ).toBeTruthy()
+-    expect(install.disabled).toBe(false)
+-  })
+-
+-  it('keeps the local-start error when the first snapshot commits under the click', async () => {
+-    const desktop = installDesktopMock(
+-      bootstrapState({
+-        setupChoice: { platform: 'win32', activeRoot: 'C:\\Users\\me\\AppData\\Local\\hermes\\hermes-agent' }
+-      })
+-    )
+-
+-    desktop.continueBootstrapLocal = undefined as never
+-    render(<DesktopInstallOverlay />)
+-
+-    // Click the instant the choice paints, before React drains the passive
+-    // effect that reacts to the first snapshot. A loaded runner hits this
+-    // window by accident; observing the DOM directly hits it every time.
+-    const install = (await whenPresent('Install Black Pool locally')).closest('button') as HTMLButtonElement
+-    fireEvent.click(install)
+-
+-    await act(async () => {
+-      await Promise.resolve()
+-    })
+-
+-    expect(screen.queryByText('Local installation could not start. Restart Black Pool Desktop and try again.')).toBeTruthy()
+-  })
+-
+-  it('clears a stale local-start error when a repair presents a different root', async () => {
+-    const desktop = installDesktopMock(
++  // 便携包后端随包自带，首启的本地安装卡与安装路径行整块隐藏（见本档
++  // desktop-install-overlay 帘子条）。上游此处原有四项围绕本地 bootstrap 的用例
++  // （点击起装、桥缺失报错、快照抢跑保留错、修复换根清错），入口既已摘除即无从
++  // 触发——合并为一条收口哨兵：入口重新出现即说明隐藏被改回去了，那四项也该还原。
++  it('offers no local install entry: the portable edition ships its own backend', async () => {
++    installDesktopMock(
+       bootstrapState({
+         setupChoice: { platform: 'win32', activeRoot: 'C:\\Users\\me\\AppData\\Local\\hermes\\hermes-agent' }
+       })
+     )
+ 
+-    desktop.continueBootstrapLocal = undefined as never
+     render(<DesktopInstallOverlay />)
+ 
+-    fireEvent.click((await screen.findByText('Install Black Pool locally')).closest('button') as HTMLButtonElement)
+-    expect(
+-      await screen.findByText('Local installation could not start. Restart Black Pool Desktop and try again.')
+-    ).toBeTruthy()
+-
+-    act(() => {
+-      desktop.emitBootstrapEvent({
+-        type: 'setup-choice',
+-        active: false,
+-        platform: 'win32',
+-        activeRoot: 'C:\\Users\\me\\AppData\\Local\\hermes\\hermes-agent-repaired'
+-      })
+-    })
+-
+-    expect(screen.queryByText('Local installation could not start. Restart Black Pool Desktop and try again.')).toBeNull()
++    expect(await screen.findByText('Set up Black Pool Desktop')).toBeTruthy()
++    expect(screen.queryByText('Install Black Pool locally')).toBeNull()
+   })
+ 
+   it('opens the remote connection form from the first-run choice', async () => {
+@@ -228,7 +153,7 @@ describe('DesktopInstallOverlay first-run setup', () => {
+     fireEvent.click(screen.getByText('Back'))
+ 
+     expect(await screen.findByText('Set up Black Pool Desktop')).toBeTruthy()
+-    expect(screen.getByText('Install Black Pool locally')).toBeTruthy()
++    expect(screen.getByText('Connect to existing Black Pool')).toBeTruthy()
+   })
+ 
+   it('requires a successful token connection test before applying remote config', async () => {
 diff --git a/apps/desktop/src/components/desktop-install-overlay.tsx b/apps/desktop/src/components/desktop-install-overlay.tsx
-index aedde11..71991ed 100644
+index aedde11..ec0da80 100644
 --- a/apps/desktop/src/components/desktop-install-overlay.tsx
 +++ b/apps/desktop/src/components/desktop-install-overlay.tsx
 @@ -421,6 +421,8 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
@@ -235,12 +382,49 @@ index aedde11..71991ed 100644
 -          <div className="mt-6 text-xs text-muted-foreground">
 +          {false && <div className="mt-6 text-xs text-muted-foreground">
              {copy.installTo}{' '}
-             <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>
+-            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>
 -          </div>
++            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice?.activeRoot}</code>
 +          </div>}
          </div>
        </div>
      )
+diff --git a/apps/desktop/src/components/onboarding/index.test.tsx b/apps/desktop/src/components/onboarding/index.test.tsx
+index d167c04..984f8c1 100644
+--- a/apps/desktop/src/components/onboarding/index.test.tsx
++++ b/apps/desktop/src/components/onboarding/index.test.tsx
+@@ -56,20 +56,17 @@ afterEach(() => {
+ })
+ 
+ describe('onboarding Picker', () => {
+-  it('features Nous Portal and hides other providers behind a disclosure', () => {
++  it('features Nous Portal with every provider listed up front', () => {
+     setProviders([provider('anthropic', 'Anthropic Claude'), provider('nous', 'Nous Portal')])
+     render(<Picker ctx={ctx} />)
+ 
+     expect(screen.getByText('Nous Portal')).toBeTruthy()
+-    expect(screen.getByText('Recommended')).toBeTruthy()
++    expect(screen.queryByText('Recommended')).toBeNull()
+     // Fireworks is the always-visible #2 slot (after Nous), even while OAuth
+     // alternatives stay collapsed behind the disclosure.
+     expect(screen.getByText('Fireworks AI')).toBeTruthy()
+-    expect(screen.queryByText('Anthropic API Key')).toBeNull()
+-
+-    fireEvent.click(screen.getByRole('button', { name: 'Other providers' }))
+-
+     expect(screen.getByText('Anthropic API Key')).toBeTruthy()
++    expect(screen.queryByRole('button', { name: 'Other providers' })).toBeNull()
+     expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()
+   })
+ 
+@@ -80,7 +77,6 @@ describe('onboarding Picker', () => {
+       provider('nous', 'Nous Portal')
+     ])
+     render(<Picker ctx={ctx} />)
+-    fireEvent.click(screen.getByRole('button', { name: 'Other providers' }))
+ 
+     const labels = screen
+       .getAllByRole('button')
 diff --git a/apps/desktop/src/components/onboarding/index.tsx b/apps/desktop/src/components/onboarding/index.tsx
 index 6fb2adf..252d3a8 100644
 --- a/apps/desktop/src/components/onboarding/index.tsx
@@ -298,6 +482,112 @@ index 6fbf294..1ecaaf9 100644
    if (typeof window === 'undefined') {
      return false
    }
+diff --git a/apps/desktop/src/store/updates.test.ts b/apps/desktop/src/store/updates.test.ts
+index d6d8c85..6d38acd 100644
+--- a/apps/desktop/src/store/updates.test.ts
++++ b/apps/desktop/src/store/updates.test.ts
+@@ -133,50 +133,14 @@ describe('reportBackendContract', () => {
+     vi.useRealTimers()
+   })
+ 
+-  it('dismisses the toast when the backend meets the contract', () => {
++  it('never warns: the portable edition silences the contract banner', () => {
++    // Behind, ahead, and no-contract-at-all all take the early return.
+     reportBackendContract(5)
+-    expect(dismissSpy).toHaveBeenCalledWith('backend-contract-skew')
+-    expect(notifySpy).not.toHaveBeenCalled()
+-  })
+-
+-  it('warns when the backend is behind (or reports no contract)', () => {
+     reportBackendContract(undefined)
+-    expect(notifySpy).toHaveBeenCalledTimes(1)
+     reportBackendContract(1)
+-    expect(notifySpy).toHaveBeenCalledTimes(2)
+-  })
+ 
+-  it('stays quiet on later session opens once the user closed it', () => {
+-    reportBackendContract(1)
+-    lastToast().onDismiss() // user closes it → cooldown starts
+-    notifySpy.mockClear()
+-
+-    // Opening another pre-existing session re-runs the check within cooldown.
+-    reportBackendContract(1)
+     expect(notifySpy).not.toHaveBeenCalled()
+-  })
+-
+-  it('reminds again after the cooldown elapses', () => {
+-    vi.useFakeTimers()
+-    vi.setSystemTime(0)
+-
+-    reportBackendContract(1)
+-    lastToast().onDismiss()
+-    notifySpy.mockClear()
+-
+-    vi.setSystemTime(25 * 60 * 60 * 1000) // > 24h cooldown
+-    reportBackendContract(1)
+-    expect(notifySpy).toHaveBeenCalledTimes(1)
+-  })
+-
+-  it('clears the snooze once the backend catches up, so a regression warns again', () => {
+-    reportBackendContract(1)
+-    lastToast().onDismiss()
+-    notifySpy.mockClear()
+-
+-    reportBackendContract(5) // backend updated → satisfied, snooze cleared
+-    reportBackendContract(4) // a later regression must warn immediately
+-    expect(notifySpy).toHaveBeenCalledTimes(1)
++    expect(dismissSpy).not.toHaveBeenCalled()
+   })
+ })
+ 
+@@ -585,37 +549,37 @@ describe('startUpdatePoller', () => {
+     vi.useRealTimers()
+   })
+ 
+-  it('calls checkUpdates() on startup so the version pill populates immediately', async () => {
++  it('never checks on startup: the portable edition disables self-update', async () => {
+     startUpdatePoller()
+ 
+-    // checkUpdates() is async — flush microtasks without advancing the 30-min interval.
+     await vi.advanceTimersByTimeAsync(0)
+ 
+-    expect(checkMock).toHaveBeenCalled()
+-    expect($updateStatus.get()?.behind).toBe(5)
++    expect(checkMock).not.toHaveBeenCalled()
++    expect($updateStatus.get()).toBeNull()
+   })
+ 
+-  it('calls checkUpdates() on each interval tick', async () => {
++  it('never checks on an interval tick either', async () => {
+     startUpdatePoller()
+     await vi.advanceTimersByTimeAsync(0)
+     checkMock.mockClear()
+ 
+     await vi.advanceTimersByTimeAsync(30 * 60 * 1000)
+ 
+-    expect(checkMock).toHaveBeenCalled()
++    expect(checkMock).not.toHaveBeenCalled()
+   })
+ 
+-  it('calls checkUpdates() when the window regains focus', async () => {
++  it('registers no focus listener to check on, either', async () => {
+     startUpdatePoller()
+     await vi.advanceTimersByTimeAsync(0)
+     checkMock.mockClear()
+ 
+-    // Invoke the registered focus handler directly (the mock window doesn't
+-    // propagate DOM events, so call the stored listener).
++    // The no-op returns before the listener is ever registered, so there is
++    // nothing to invoke — the optional call is what proves it.
+     listeners['focus']?.()
+ 
+     await vi.advanceTimersByTimeAsync(0)
+ 
+-    expect(checkMock).toHaveBeenCalled()
++    expect(listeners['focus']).toBeUndefined()
++    expect(checkMock).not.toHaveBeenCalled()
+   })
+ })
 diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
 index 0b46920..b45b179 100644
 --- a/apps/desktop/src/store/updates.ts

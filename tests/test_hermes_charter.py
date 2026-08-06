@@ -103,6 +103,54 @@ def test_rebrand_never_breaks_functional_identifiers():
     assert not bad, f"连字符标识符被换装打断: {bad[:3]}"
 
 
+def test_bare_word_scope_safety():
+    """裸词换装铺到 Python 后端（agent/，2026-08-05）后的功能面守卫。
+
+    前端三处目录的风险面已由上一条守着；agent/ 入列带来的是 Python 侧的新风险：
+    产物路径（`Hermes.app`/`.exe`）、URL、环境变量名、import 语句里若含裸词，
+    换成含空格的品牌名即坏功能。入列前逐条核过为零命中，此测锁住这个状态——
+    下一层（hermes_cli / gateway / tools）铺开时，这些模式会真的出现，届时必须
+    先加豁免再入列，而不是让它无声打断。
+    """
+    added = [l for l in PATCH_BRAND.read_text(encoding="utf-8").splitlines()
+             if l.startswith("+") and not l.startswith("+++")]
+    patterns = {
+        # `.exe`/`.app`/`.desktop` 刻意不在列：electron-builder 的 productName /
+        # executableName 已随换装改为 "Black Pool"，产出的就是 `Black Pool.exe`，
+        # 那些 path.join 是与产物名对齐的正确写法，不是被打断的标识符。
+        "源码/数据文件路径被换": re.compile(r"Black Pool\.(py|json|ya?ml|db|tsx?|mjs)\b"),
+        "URL 内被换": re.compile(r"https?://[^\s\"']*Black Pool"),
+        "环境变量/常量名被换": re.compile(r"Black Pool[_-][A-Z]"),
+        "import 语句被换": re.compile(r"^\+\s*(?:import|from)\s+Black Pool\b"),
+    }
+    hits = {why: [l.strip()[:110] for l in added if rx.search(l)][:3]
+            for why, rx in patterns.items()}
+    hits = {k: v for k, v in hits.items() if v}
+    assert not hits, f"裸词换装打断了功能标识: {hits}"
+
+
+def test_agent_prompt_text_rebranded():
+    """系统提示词是模型自述的直接来源——留着上游品牌即当场穿帮。
+
+    守密人 2026-08-05 现场反馈「后端对话还有不少内容是 hermes」的根因：裸词此前
+    只扫前端，而 `You are chatting inside the Hermes desktop app` 一类句子就写在
+    agent/prompt_builder.py 里，逐字进模型上下文。
+    """
+    text = PATCH_BRAND.read_text(encoding="utf-8")
+    for phrase in (
+        "You run on Black Pool Agent (by B.I.A.V. Studio).",
+        "You are running in the Black Pool terminal UI (TUI).",
+        "You are chatting inside the Black Pool desktop app",
+        "You are in the Black Pool WebUI",
+    ):
+        assert phrase in text, f"提示词换装缺失: {phrase!r}"
+    # 归因口径：自述句不报上游母公司名（SPECIAL_RULES 既有裁定的延伸）。
+    added = [l for l in text.splitlines() if l.startswith("+") and not l.startswith("+++")]
+    assert not any("You run on" in l and "Nous Research" in l for l in added), (
+        "自述句仍报 Nous Research——归因口径未归一"
+    )
+
+
 def test_brand_patch_sentinels():
     """公版（品牌层）规则不得因移 pin 锚点失配而无声失效。
 
@@ -120,8 +168,10 @@ def test_brand_patch_sentinels():
         "AUMID 中性化": "com.biav.blackpool",
         "唤醒词帮助中性化": "toggle the wake word listener [on|off|status]",
         "CLI 面板残留品牌收尾": "⚕ Black Pool",
-        "默认语言简体中文（前端缺省）": "DEFAULT_LOCALE: Locale = 'zh'",
+        "默认语言简体中文（前端缺省，测试态钉 en）": "MODE === 'test' ? 'en' : 'zh'",
         "默认语言简体中文（后端真源头）": '"language": "zh",',
+        "默认外观深色（缺省兜底）": "'system' ? value : 'dark'",
+        "默认外观深色（契约用例同步翻面）": "fallback: 'dark', a: 'light'",
         "品牌字体路径修复（Collapse 构建期内嵌）": "url('../node_modules/@nous-research/ui",
         "黑池默认主题（鎏金双貌）": "DEFAULT_SKIN_NAME = 'black-pool'",
         "默认皮肤后端真源头": '"skin": "black-pool"',
@@ -157,8 +207,13 @@ def test_intranet_patch_sentinels():
         "自定义模型价格表注入": "model-prices.json",
         "Nous Portal 推荐徽标摘除": "内网无推荐位",
         "推荐光效摘除": "arc-nous",
-        "版本芯片更新覆盖层入口 no-op": "onSelect: () => {},",
+        "版本芯片降为纯展示（更新覆盖层入口摘除）": "-      onSelect: () => openUpdateOverlayFor('client'),",
+        "版本芯片纯展示变体": "+      variant: 'text'",
+        "单测期望对齐私有版（自更新收口哨兵）": "the portable edition disables self-update",
         "服务商列表默认展开": "SHOW_ALL_KEY) !== \'0\'",
+        # 死代码化会连同上游的非空收窄一起注释掉，解引用却留在原地；运行时短路不炸，
+        # tsc 却照查死代码。少了这一条，私有版 typecheck 长红（守密人 2026-08-05 裁修）。
+        "安装位解引用改可选链（死代码仍受 tsc 检查）": "{state.setupChoice?.activeRoot}",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"
@@ -200,6 +255,33 @@ def test_rebrand_check_matches_committed_patches():
         "规则引擎输出与 patches/ 已入库补丁不一致——"
         f"跑 python3 build/rebrand.py 重生成: {r.stdout[-400:]}{r.stderr[-400:]}"
     )
+
+
+def test_cost_panel_patch_sentinels():
+    """成本面板特性补丁的能力哨兵（守密人 2026-08-05 追加周 / 月 / 历史 + 人民币）。
+
+    此补丁是**人工维护**的（不像换装补丁由规则引擎重出），移 pin 重放时最容易
+    悄悄掉 hunk。故把每项能力钉一个锚：跨会话持久化的日台账、周一为周首、
+    本地日历日键、6.8 汇率，任一消失即红。
+
+    汇率与周首刻意钉死在测试里：二者都是守密人的口径裁定，不是实现细节——
+    改它们应当先改裁定、再改测试，而不是改了实现测试还绿。
+    """
+    text = (SUB / "patches" / "conversation-cost-panel.patch").read_text(encoding="utf-8")
+    sentinels = {
+        "跨会话日台账（周/月/历史三视图的底子）": "black-pool:usage-ledger",
+        "人民币汇率 6.8（守密人口径）": "export const USD_TO_CNY = 6.8",
+        "周一为周首": "const weekday = (start.getDay() + 6) % 7",
+        "本地日历日键（非 UTC，否则北京日 08:00 翻篇）": "at.getFullYear()}-${pad(at.getMonth() + 1)}",
+        "轮次增量同时喂日台账": "recordSpend(delta)",
+        "周合计视图": "weekToDate",
+        "月合计视图": "monthToDate",
+        "历史用量视图": "historyEmpty",
+        "汇率估算标注（不得让 ¥ 读作既成事实）": "rateNote",
+        "台账单测随补丁同行": "usage-ledger.test.ts",
+    }
+    missing = [k for k, v in sentinels.items() if v not in text]
+    assert not missing, f"成本面板能力从补丁消失（移 pin 重放掉 hunk？）: {missing}"
 
 
 def test_plugin_author_attribution_never_rewritten():

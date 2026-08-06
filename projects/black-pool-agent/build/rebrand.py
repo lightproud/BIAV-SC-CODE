@@ -77,7 +77,22 @@ RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins",
 # HTTP 头名（功能标识符），被换成含空格的品牌名即非法头名，
 # desktop 全部设置页（Providers / Tools & Keys / Model）随之 ERR_INVALID_HTTP_TOKEN
 # 崩加载。代价：德/荷式连字复合词（"Hermes-Plugins"）留在残留清单——保护优先于净度。
-BARE_WORD_DIRS = ("apps", "web", "ui-tui/src")
+#
+# agent/ 于 2026-08-05 入列（守密人「后端对话还有不少内容是 hermes」现场反馈，
+# 分层铺开第一层）。此前裸词只扫前端三处，Python 后端一处没换——`Hermes Agent`
+# 一类词组归 GENERIC_RULES 换掉了，单独的 `Hermes` 全留着，而**系统提示词就在
+# agent/ 里**：「You are chatting inside the Hermes desktop app」「You are running
+# in the Hermes terminal UI」这些直接进模型上下文，模型照着自述即冒出上游品牌；
+# `prompt_builder.py` 的自述句更是前半已换、后半没换，一句话里两个名字打架。
+# 入列前逐条核过 agent/ 的 399 处裸词：92 处在字符串字面量、其余为注释与
+# docstring；字面量里仅两处短串，一为 MCP 工具描述兜底文案（该换），一为
+# anthropic_adapter 的提示词消毒器条目（换了才对——它要消毒的正是新品牌名）。
+# 功能面因此为零风险：无 HTTP 头名、无 `HERMES_` 环境变量（大写不匹配裸词）、
+# 无 `.app`/`.exe` 产物路径（那些在 hermes_cli/，尚未入列）。
+# 守卫见 tests/test_hermes_charter.py::test_bare_word_scope_safety。
+# 下一层（hermes_cli / gateway / tools / plugins / skills）挂账未铺——那几处含
+# 皮肤名 `Hermes Teal`、MCP server 名、桌面产物路径等真功能标识，需先定豁免名单。
+BARE_WORD_DIRS = ("apps", "web", "ui-tui/src", "agent")
 BARE_WORD_RE = re.compile(r"(?<![A-Za-z0-9_-])Hermes(?![A-Za-z0-9_-])")
 # .html 在列（2026-08-02 补漏）：desktop/web/bootstrap-installer 的 <title> 是
 # 任务栏 / Alt-Tab 显示名的实际来源（Electron 加载页面后 document.title 覆盖窗口题）。
@@ -127,40 +142,50 @@ GENERIC_RULES = [
 BLACK_POOL_PRICES_PY = '_USER_PRICES_CACHE: Optional[tuple] = None\n\n\ndef _load_user_price_table() -> dict:\n    """Intranet price injection: HERMES_HOME/model-prices.json (costs per million tokens).\n\n    Shape: {"models": {"<model-substring>": {"input": 4.0, "output": 12.0,\n    "cache_read": 0.4, "cache_write": 0}}}. Missing or invalid file -> {}\n    (silent; pricing falls through to upstream resolution).\n    """\n    global _USER_PRICES_CACHE\n    import json as _json\n    import os as _os\n\n    path = _os.path.join(\n        _os.environ.get("HERMES_HOME", _os.path.expanduser("~/.hermes")),\n        "model-prices.json",\n    )\n    try:\n        mtime = _os.path.getmtime(path)\n    except OSError:\n        return {}\n    if _USER_PRICES_CACHE and _USER_PRICES_CACHE[0] == mtime:\n        return _USER_PRICES_CACHE[1]\n    try:\n        with open(path, encoding="utf-8") as fh:\n            data = _json.load(fh)\n        models = data.get("models") or {}\n        if not isinstance(models, dict):\n            models = {}\n    except (OSError, ValueError):\n        models = {}\n    _USER_PRICES_CACHE = (mtime, models)\n    return models\n\n\ndef _user_pricing_entry(model_name: str) -> Optional[PricingEntry]:\n    table = _load_user_price_table()\n    if not table:\n        return None\n    name = (model_name or "").lower()\n    best = None\n    best_len = -1\n    for key, spec in table.items():\n        k = str(key).lower()\n        if (k == name or k in name) and len(k) > best_len and isinstance(spec, dict):\n            best, best_len = spec, len(k)\n    if best is None:\n        return None\n\n    def _d(value: Any) -> Optional[Decimal]:\n        try:\n            return Decimal(str(value)) if value is not None else None\n        except Exception:  # noqa: BLE001 - bad cell must not break pricing\n            return None\n\n    return PricingEntry(\n        input_cost_per_million=_d(best.get("input")),\n        output_cost_per_million=_d(best.get("output")),\n        cache_read_cost_per_million=_d(best.get("cache_read")),\n        cache_write_cost_per_million=_d(best.get("cache_write")),\n        source="user_override",\n        pricing_version="model-prices.json",\n    )\n\n\ndef get_pricing_entry('
 
 # Black Pool 内建主题 TS 体（注入 themes/presets.ts，见下方配色规则）
-BLACK_POOL_THEME_TS = """/** Black Pool（黑池）— 鎏金双貌：暖黑之金与米白之金（守密人 2026-08-03 配色裁定；
- * 2026-08-04 浅色降饱和裁定：色相 44° 与明度不变，表面层感知色度压至米白纸级
- * （底 okC≈0.012 / 中间层 ≈0.02 / 边框输入 ≈0.03），金三件与文字色原封——
- * 复刻深色模式「金作点缀」纪律，根治浅色「越深越黄」的表面层超标。 */
+BLACK_POOL_THEME_TS = """/** Black Pool（黑池）— 鎏金双貌：暖黑之金与纸白之金。
+ *
+ * 深色为默认外观（守密人 2026-08-05 裁定），darkColors 自 2026-08-03 配色裁定起未动。
+ *
+ * 浅色于 2026-08-05 整体重设计为「甲 · 纸白中性」（守密人自三方案中裁定）。此前两版
+ * （2026-08-03 米白、2026-08-04 降饱和）都在同一个坑里：底 / 卡 / 墨全落在 44° 黄调，
+ * 与金只剩明度差、没有色相差，于是金不凸显、整体发土——与 style-guide v3.0
+ * 2026-07-12 对 #f7f3ea 的判词逐字相同，desktop 主题当时未跟上那次裁定。
+ *
+ * 甲案纪律：金以外的一切去黄提灰，金是画面唯一高饱和暖色。表面层退到中性灰白
+ * （色相残留 40° 上下、感知色度贴近纸张），金三件改走深金以在近白底上挣得对比
+ * （primary 4.8:1 / ring 3.8:1 / 墨 13.6:1 / 辅助 6.2:1，均对 background 测）。
+ * 层级方向亦随之翻转：卡片 / 侧栏 / 状态栏由「比底亮」改为「比底暗」的凹面——
+ * 底已近白，再往上抬无处可去，凹面才分得出层。 */
 export const blackPoolTheme: DesktopTheme = {
   name: 'black-pool',
   label: 'Black Pool',
-  description: '黑池金 — 暖黑与米白双貌',
+  description: '黑池金 — 暖黑与纸白双貌',
   colors: {
-    background: '#F5F2E9',
-    foreground: '#332B18',
-    card: '#FAF8F2',
-    cardForeground: '#332B18',
-    muted: '#ECE8DB',
-    mutedForeground: '#8C8063',
-    popover: '#F8F5EE',
-    popoverForeground: '#332B18',
-    primary: '#C9A857',
-    primaryForeground: '#241C07',
-    secondary: '#EDE7D9',
-    secondaryForeground: '#4A3F24',
-    accent: '#E8E1CE',
-    accentForeground: '#4A3C1C',
-    border: '#D8D1BB',
-    input: '#CFC7B0',
-    ring: '#B08E35',
-    midground: '#8F6F26',
-    composerRing: '#B08E35',
+    background: '#FAF9F6',
+    foreground: '#2B2A27',
+    card: '#F1EFE9',
+    cardForeground: '#2B2A27',
+    muted: '#E9E6DE',
+    mutedForeground: '#605D55',
+    popover: '#F1EFE9',
+    popoverForeground: '#2B2A27',
+    primary: '#8C6A15',
+    primaryForeground: '#FDFCF9',
+    secondary: '#EDEBE4',
+    secondaryForeground: '#3D3A33',
+    accent: '#EAE7DF',
+    accentForeground: '#8C6A15',
+    border: '#DCDAD3',
+    input: '#CFCCC3',
+    ring: '#9A7A28',
+    midground: '#9A7A28',
+    composerRing: '#9A7A28',
     destructive: '#B4372E',
     destructiveForeground: '#FEF2F2',
-    sidebarBackground: '#EFEBDE',
-    sidebarBorder: '#DBD4BF',
-    userBubble: '#EDE8D9',
-    userBubbleBorder: '#D9D1B8'
+    sidebarBackground: '#F1EFE9',
+    sidebarBorder: '#DCDAD3',
+    userBubble: '#E9E6DE',
+    userBubbleBorder: '#D6D2C6'
   },
   darkColors: {
     background: '#171310',
@@ -314,9 +339,17 @@ BRAND_POST_RULES = [
     # 默认语言简体中文（守密人 2026-08-03 裁定）：desktop 全局缺省 locale 单一
     # 真相源改 'zh'——无系统语言探测，配置未设时生效；用户已设语言不受影响。
     # 归基座层：公私两版同得简中缺省（语言偏好属产品定制，非内网适配）。
+    #
+    # 测试态钉回 'en'（守密人 2026-08-05 裁定「装配线接上 desktop 单测」的前置）：
+    # 上游 4297 项单测按英文文案定位元素，缺省一改简中即有 128 项红在语种上——
+    # 真回归会被这堆噪声淹没，等于白接。单测只该验行为、不该验界面语种，故让
+    # 缺省在 MODE==='test' 时取 'en'。刻意用 import.meta.env 编译期常量而非
+    # vitest.setup 的 vi.mock：mock 只换得掉常量、换不掉同模块的 normalizeLocale，
+    # 两者当场撕裂（实测 i18n 自身 5 项因此转红）；编译期分支则恒自洽，
+    # 且 vite 生产构建把它折成 'zh' 后摇树抹平，出厂产物里不留测试痕迹。
     (
         "export const DEFAULT_LOCALE: Locale = 'en'\n",
-        "export const DEFAULT_LOCALE: Locale = 'zh'\n",
+        "export const DEFAULT_LOCALE: Locale = import.meta.env.MODE === 'test' ? 'en' : 'zh'\n",
     ),
     # 默认语言真源头（2026-08-03 实机复盘：desktop 启动从后端取 display.language，
     # 其显式默认 "en" 压过前端 DEFAULT_LOCALE——改在真上游，CLI/网关静态文案一并简中；
@@ -334,6 +367,64 @@ BRAND_POST_RULES = [
     (
         '        "skin": "default",',
         '        "skin": "black-pool",',
+    ),
+    # 默认深色（守密人 2026-08-05 裁定「默认配色要黑池金，深色」）：外观偏好未设时
+    # 上游兜底 'light'，新部署因此开在浅色——而黑池金的立意是「暖黑之上金作点缀」，
+    # 浅色只是备选貌。三处兜底一并改：normalizeMode（未设/脏值的唯一收口）、
+    # ThemeContext 默认值（Provider 外的兜底）、无 window 时的首绘兜底。
+    # 归基座层：公私两版同得（外观缺省属产品定制，非内网适配）。
+    # 已显式选过浅色的用户不受影响——per-profile 偏好读到合法值即照旧。
+    (
+        "const normalizeMode = (value: string | null): ThemeMode =>\n"
+        "  value === 'light' || value === 'dark' || value === 'system' ? value : 'light'\n",
+        "const normalizeMode = (value: string | null): ThemeMode =>\n"
+        "  value === 'light' || value === 'dark' || value === 'system' ? value : 'dark'\n",
+    ),
+    (
+        "  theme: nousTheme,\n"
+        "  themeName: DEFAULT_SKIN_NAME,\n"
+        "  mode: 'light',\n"
+        "  resolvedMode: 'light',\n"
+        "  renderedMode: 'light',\n",
+        "  theme: nousTheme,\n"
+        "  themeName: DEFAULT_SKIN_NAME,\n"
+        "  mode: 'dark',\n"
+        "  resolvedMode: 'dark',\n"
+        "  renderedMode: 'dark',\n",
+    ),
+    (
+        "    typeof window === 'undefined' ? 'light' : modePref.resolve(readBootProfileKey())\n",
+        "    typeof window === 'undefined' ? 'dark' : modePref.resolve(readBootProfileKey())\n",
+    ),
+    # 对应用例翻面：per-profile 契约测试把「缺省」参数化成 fallback，缺省一改它就红
+    # （2026-08-05 实测：装配线新接的单测当场接住 2 项——这道网的第一次真实交付）。
+    # `a` 同时从 'dark' 换成 'light'：它是「与缺省不同的显式值」，缺省占了 dark 之后
+    # 必须让位，否则用例区分不出「显式设过」与「回落缺省」。
+    (
+        "  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'light',"
+        " a: 'dark', b: 'system', junk: 'dusk' }\n",
+        "  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'dark',"
+        " a: 'light', b: 'system', junk: 'dusk' }\n",
+    ),
+    # 自述句归因口径归一（守密人 2026-08-05 裁定「by B.I.A.V. Studio」）：
+    # SPECIAL_RULES 早有裁定——自述句不保留「created by Nous Research」（来源事实由
+    # LICENSE 与合规口径「基于 MIT 开源组件二次开发」承载）。但那条只换掉了
+    # 「You are Hermes Agent, ... created by Nous Research」一句，本句
+    # 「You run on ... (by Nous Research)」漏网：模型自述产品出身时仍报上游母公司名，
+    # 与 About 出身行 / CLI 面的口径对不上。锚点全树唯一（消毒器里的 "Nous Research"
+    # 是另一处、刻意不动——它要把品牌名替成 Claude Code 以绕开服务端内容过滤）。
+    (
+        "You run on Black Pool Agent (by Nous Research). ",
+        f"You run on {BRAND_AGENT} (by B.I.A.V. Studio). ",
+    ),
+    # 裸词换装的一处自伤（守密人 2026-08-05「装配线接上 desktop 单测」时暴露）：
+    # windows-user-env 的用例喂给 mock 的注册表行含 `HERMES_HOME`，整行命中
+    # LINE_SKIP_MARKERS 被跳过，值里的 `%DRIVE%\Hermes` 原样留着；而下面那句断言
+    # 不含跳线标记，裸词规则照改不误——同一个用例的输入与期望就此对不上。
+    # 这里测的是 `%VAR%` 展开逻辑，与品牌无关，故把期望改回与 mock 输入一致。
+    (
+        "  assert.equal(value, 'F:\\\\Black Pool')\n",
+        "  assert.equal(value, 'F:\\\\Hermes')\n",
     ),
 ]
 
@@ -534,14 +625,39 @@ INTRANET_POST_RULES = [
         "          {loggedIn ? <ConnectedTag /> : null}\n",
     ),
     # 状态栏版本芯片点击不再开更新覆盖层（自更新入口第六、七处；便携包更新
-    # 通道 = 换包）：client / backend 两枚芯片的 onSelect 一并 no-op。
+    # 通道 = 换包）：client / backend 两枚芯片降为纯展示标签。
+    #
+    # 原实现只把 onSelect 换成空函数，却留着 variant: 'action' 与可点样式——
+    # 芯片看着能点、按下去什么也不发生（守密人 2026-08-05 实机反馈「点了没反应」）。
+    # 上游本就备了 'text' 变体作纯展示用（statusbar-controls.tsx 的渲染分支要求
+    # variant === 'text' 且无 onSelect/to/href，且刻意不带 hover/transition），
+    # 故整条删掉 onSelect 并改判 'text'：不可点即不再骗手，版本号照常显示。
     (
-        "      onSelect: () => openUpdateOverlayFor('client'),\n",
-        "      onSelect: () => {},\n",
+        "      onSelect: () => openUpdateOverlayFor('client'),\n"
+        "      title: status.tooltip,\n"
+        "      toggleLabel: copy.toggleVersion,\n"
+        "      variant: 'action'\n",
+        "      title: status.tooltip,\n"
+        "      toggleLabel: copy.toggleVersion,\n"
+        "      variant: 'text'\n",
     ),
     (
-        "      onSelect: () => openUpdateOverlayFor('backend'),\n",
-        "      onSelect: () => {},\n",
+        "      onSelect: () => openUpdateOverlayFor('backend'),\n"
+        "      title: status.tooltip,\n"
+        "      toggleLabel: copy.toggleBackendVersion,\n"
+        "      variant: 'action'\n",
+        "      title: status.tooltip,\n"
+        "      toggleLabel: copy.toggleBackendVersion,\n"
+        "      variant: 'text'\n",
+    ),
+    # 上面两刀删掉了该文件仅有的两处 openUpdateOverlayFor 调用，import 随之悬空
+    # （vite build 不跑 tsc 故不报，但 eslint 会，且留着即误导下一个读码的人）。
+    (
+        "  $updateStatus,\n"
+        "  openUpdateOverlayFor\n"
+        "} from '@/store/updates'\n",
+        "  $updateStatus\n"
+        "} from '@/store/updates'\n",
     ),
     # 后端契约横幅静默（守密人 2026-08-03 实机反馈「Backend out of date」）：
     # 便携包 desktop 与后端同树出包、契约恒配对，横幅只在连到旧后端残留进程时
@@ -590,9 +706,14 @@ INTRANET_POST_RULES = [
         "            {copy.installTo}{' '}\n"
         '            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>\n'
         '          </div>\n',
+        # 可选链非洁癖：上游这段的非空收窄来自外层 `{state.setupChoice && (`，
+        # 而那个外层已被本层另一条规则 `{false && (` 死代码化——收窄一起没了，
+        # 解引用却还在。运行时 `false &&` 短路不炸，但 tsc 照查死代码（TS18047），
+        # 于是私有版 typecheck 长红、typecheck 也就没法接进装配线门禁。
+        # 守密人 2026-08-05 裁定「现在修」。
         '          {false && <div className="mt-6 text-xs text-muted-foreground">\n'
         "            {copy.installTo}{' '}\n"
-        '            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>\n'
+        '            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice?.activeRoot}</code>\n'
         '          </div>}\n',
     ),
     (
@@ -609,6 +730,299 @@ INTRANET_POST_RULES = [
         "  if (typeof window === 'undefined') {\n"
         "    return false\n"
         "  }\n",
+    ),
+    # ---- 单测期望对齐私有版行为（守密人 2026-08-05 裁定「接上，同时修齐测试期望」）----
+    #
+    # 以下规则改的是上游**测试文件**。原则：私有版故意关停的功能，其用例不删而是
+    # 翻面成「收口哨兵」——上游验「该功能能用」，私有版验「该入口确已关掉」。这样
+    # 关停被谁改回去都会当场红，比加豁免名单诚实（名单只会把新伤一起盖住）。
+    #
+    # 后台更新轮询三项（见本档「后台更新轮询整只 no-op」条）：上游分验挂载 /
+    # 每 30 分钟 / 窗口聚焦各触发一次 checkUpdates，入口关停后一次也不该有。
+    (
+        "  it('calls checkUpdates() on startup so the version pill populates immediately', async () => {\n"
+        "    startUpdatePoller()\n"
+        "\n"
+        "    // checkUpdates() is async — flush microtasks without advancing the 30-min interval.\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "\n"
+        "    expect(checkMock).toHaveBeenCalled()\n"
+        "    expect($updateStatus.get()?.behind).toBe(5)\n"
+        "  })\n",
+        "  it('never checks on startup: the portable edition disables self-update', async () => {\n"
+        "    startUpdatePoller()\n"
+        "\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "\n"
+        "    expect(checkMock).not.toHaveBeenCalled()\n"
+        "    expect($updateStatus.get()).toBeNull()\n"
+        "  })\n",
+    ),
+    (
+        "  it('calls checkUpdates() on each interval tick', async () => {\n"
+        "    startUpdatePoller()\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    checkMock.mockClear()\n"
+        "\n"
+        "    await vi.advanceTimersByTimeAsync(30 * 60 * 1000)\n"
+        "\n"
+        "    expect(checkMock).toHaveBeenCalled()\n"
+        "  })\n",
+        "  it('never checks on an interval tick either', async () => {\n"
+        "    startUpdatePoller()\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    checkMock.mockClear()\n"
+        "\n"
+        "    await vi.advanceTimersByTimeAsync(30 * 60 * 1000)\n"
+        "\n"
+        "    expect(checkMock).not.toHaveBeenCalled()\n"
+        "  })\n",
+    ),
+    (
+        "  it('calls checkUpdates() when the window regains focus', async () => {\n"
+        "    startUpdatePoller()\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    checkMock.mockClear()\n"
+        "\n"
+        "    // Invoke the registered focus handler directly (the mock window doesn't\n"
+        "    // propagate DOM events, so call the stored listener).\n"
+        "    listeners['focus']?.()\n"
+        "\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "\n"
+        "    expect(checkMock).toHaveBeenCalled()\n"
+        "  })\n",
+        "  it('registers no focus listener to check on, either', async () => {\n"
+        "    startUpdatePoller()\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    checkMock.mockClear()\n"
+        "\n"
+        "    // The no-op returns before the listener is ever registered, so there is\n"
+        "    // nothing to invoke — the optional call is what proves it.\n"
+        "    listeners['focus']?.()\n"
+        "\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "\n"
+        "    expect(listeners['focus']).toBeUndefined()\n"
+        "    expect(checkMock).not.toHaveBeenCalled()\n"
+        "  })\n",
+    ),
+    # 后端契约横幅五项（见本档「后端契约横幅静默」条）：上游逐一验落后即警告 /
+    # 冷却 / 消警，整只静默后一次也不该弹。合并为一条哨兵，覆盖三种入参。
+    (
+        "  it('dismisses the toast when the backend meets the contract', () => {\n"
+        "    reportBackendContract(5)\n"
+        "    expect(dismissSpy).toHaveBeenCalledWith('backend-contract-skew')\n"
+        "    expect(notifySpy).not.toHaveBeenCalled()\n"
+        "  })\n"
+        "\n"
+        "  it('warns when the backend is behind (or reports no contract)', () => {\n"
+        "    reportBackendContract(undefined)\n"
+        "    expect(notifySpy).toHaveBeenCalledTimes(1)\n"
+        "    reportBackendContract(1)\n"
+        "    expect(notifySpy).toHaveBeenCalledTimes(2)\n"
+        "  })\n"
+        "\n"
+        "  it('stays quiet on later session opens once the user closed it', () => {\n"
+        "    reportBackendContract(1)\n"
+        "    lastToast().onDismiss() // user closes it → cooldown starts\n"
+        "    notifySpy.mockClear()\n"
+        "\n"
+        "    // Opening another pre-existing session re-runs the check within cooldown.\n"
+        "    reportBackendContract(1)\n"
+        "    expect(notifySpy).not.toHaveBeenCalled()\n"
+        "  })\n"
+        "\n"
+        "  it('reminds again after the cooldown elapses', () => {\n"
+        "    vi.useFakeTimers()\n"
+        "    vi.setSystemTime(0)\n"
+        "\n"
+        "    reportBackendContract(1)\n"
+        "    lastToast().onDismiss()\n"
+        "    notifySpy.mockClear()\n"
+        "\n"
+        "    vi.setSystemTime(25 * 60 * 60 * 1000) // > 24h cooldown\n"
+        "    reportBackendContract(1)\n"
+        "    expect(notifySpy).toHaveBeenCalledTimes(1)\n"
+        "  })\n"
+        "\n"
+        "  it('clears the snooze once the backend catches up, so a regression warns again', () => {\n"
+        "    reportBackendContract(1)\n"
+        "    lastToast().onDismiss()\n"
+        "    notifySpy.mockClear()\n"
+        "\n"
+        "    reportBackendContract(5) // backend updated → satisfied, snooze cleared\n"
+        "    reportBackendContract(4) // a later regression must warn immediately\n"
+        "    expect(notifySpy).toHaveBeenCalledTimes(1)\n"
+        "  })\n",
+        "  it('never warns: the portable edition silences the contract banner', () => {\n"
+        "    // Behind, ahead, and no-contract-at-all all take the early return.\n"
+        "    reportBackendContract(5)\n"
+        "    reportBackendContract(undefined)\n"
+        "    reportBackendContract(1)\n"
+        "\n"
+        "    expect(notifySpy).not.toHaveBeenCalled()\n"
+        "    expect(dismissSpy).not.toHaveBeenCalled()\n"
+        "  })\n",
+    ),
+    # 首启本地安装四项 -> 一条哨兵（入口已隐藏，见上）。
+    (
+        "  it('continues local bootstrap only when Install Black Pool locally is selected', async () => {\n"
+        '    const desktop = installDesktopMock(\n'
+        '      bootstrapState({\n'
+        "        setupChoice: { platform: 'win32', activeRoot: 'C:\\\\Users\\\\me\\\\AppData\\\\Local\\\\hermes\\\\hermes-agent' }\n"
+        '      })\n'
+        '    )\n'
+        '\n'
+        '    render(<DesktopInstallOverlay />)\n'
+        '\n'
+        "    fireEvent.click(await screen.findByText('Install Black Pool locally'))\n"
+        '\n'
+        '    expect(desktop.continueBootstrapLocal).toHaveBeenCalledTimes(1)\n'
+        "    expect(screen.getByText('Set up Black Pool Desktop')).toBeTruthy()\n"
+        '\n'
+        '    act(() => {\n'
+        "      desktop.emitBootstrapEvent({ type: 'manifest', protocolVersion: 1, stages: [] })\n"
+        '    })\n'
+        '\n'
+        "    await waitFor(() => expect(screen.queryByText('Set up Black Pool Desktop')).toBeNull())\n"
+        '    expect(screen.getByText(/Fetching installer manifest/i)).toBeTruthy()\n'
+        '  })\n'
+        '\n'
+        "  it('surfaces a recoverable error when the local-bootstrap bridge is unavailable', async () => {\n"
+        '    const desktop = installDesktopMock(\n'
+        '      bootstrapState({\n'
+        "        setupChoice: { platform: 'win32', activeRoot: 'C:\\\\Users\\\\me\\\\AppData\\\\Local\\\\hermes\\\\hermes-agent' }\n"
+        '      })\n'
+        '    )\n'
+        '\n'
+        '    desktop.continueBootstrapLocal = undefined as never\n'
+        '    render(<DesktopInstallOverlay />)\n'
+        '\n'
+        "    const install = (await screen.findByText('Install Black Pool locally')).closest('button') as HTMLButtonElement\n"
+        '    fireEvent.click(install)\n'
+        '\n'
+        '    expect(\n'
+        "      await screen.findByText('Local installation could not start. Restart Black Pool Desktop and try again.')\n"
+        '    ).toBeTruthy()\n'
+        '    expect(install.disabled).toBe(false)\n'
+        '  })\n'
+        '\n'
+        "  it('keeps the local-start error when the first snapshot commits under the click', async () => {\n"
+        '    const desktop = installDesktopMock(\n'
+        '      bootstrapState({\n'
+        "        setupChoice: { platform: 'win32', activeRoot: 'C:\\\\Users\\\\me\\\\AppData\\\\Local\\\\hermes\\\\hermes-agent' }\n"
+        '      })\n'
+        '    )\n'
+        '\n'
+        '    desktop.continueBootstrapLocal = undefined as never\n'
+        '    render(<DesktopInstallOverlay />)\n'
+        '\n'
+        '    // Click the instant the choice paints, before React drains the passive\n'
+        '    // effect that reacts to the first snapshot. A loaded runner hits this\n'
+        '    // window by accident; observing the DOM directly hits it every time.\n'
+        "    const install = (await whenPresent('Install Black Pool locally')).closest('button') as HTMLButtonElement\n"
+        '    fireEvent.click(install)\n'
+        '\n'
+        '    await act(async () => {\n'
+        '      await Promise.resolve()\n'
+        '    })\n'
+        '\n'
+        "    expect(screen.queryByText('Local installation could not start. Restart Black Pool Desktop and try again.')).toBeTruthy()\n"
+        '  })\n'
+        '\n'
+        "  it('clears a stale local-start error when a repair presents a different root', async () => {\n"
+        '    const desktop = installDesktopMock(\n'
+        '      bootstrapState({\n'
+        "        setupChoice: { platform: 'win32', activeRoot: 'C:\\\\Users\\\\me\\\\AppData\\\\Local\\\\hermes\\\\hermes-agent' }\n"
+        '      })\n'
+        '    )\n'
+        '\n'
+        '    desktop.continueBootstrapLocal = undefined as never\n'
+        '    render(<DesktopInstallOverlay />)\n'
+        '\n'
+        "    fireEvent.click((await screen.findByText('Install Black Pool locally')).closest('button') as HTMLButtonElement)\n"
+        '    expect(\n'
+        "      await screen.findByText('Local installation could not start. Restart Black Pool Desktop and try again.')\n"
+        '    ).toBeTruthy()\n'
+        '\n'
+        '    act(() => {\n'
+        '      desktop.emitBootstrapEvent({\n'
+        "        type: 'setup-choice',\n"
+        '        active: false,\n'
+        "        platform: 'win32',\n"
+        "        activeRoot: 'C:\\\\Users\\\\me\\\\AppData\\\\Local\\\\hermes\\\\hermes-agent-repaired'\n"
+        '      })\n'
+        '    })\n'
+        '\n'
+        "    expect(screen.queryByText('Local installation could not start. Restart Black Pool Desktop and try again.')).toBeNull()\n"
+        '  })\n'
+        '\n',
+        '  // 便携包后端随包自带，首启的本地安装卡与安装路径行整块隐藏（见本档\n'
+        '  // desktop-install-overlay 帘子条）。上游此处原有四项围绕本地 bootstrap 的用例\n'
+        '  // （点击起装、桥缺失报错、快照抢跑保留错、修复换根清错），入口既已摘除即无从\n'
+        '  // 触发——合并为一条收口哨兵：入口重新出现即说明隐藏被改回去了，那四项也该还原。\n'
+        "  it('offers no local install entry: the portable edition ships its own backend', async () => {\n"
+        '    installDesktopMock(\n'
+        '      bootstrapState({\n'
+        "        setupChoice: { platform: 'win32', activeRoot: 'C:\\\\Users\\\\me\\\\AppData\\\\Local\\\\hermes\\\\hermes-agent' }\n"
+        '      })\n'
+        '    )\n'
+        '\n'
+        '    render(<DesktopInstallOverlay />)\n'
+        '\n'
+        "    expect(await screen.findByText('Set up Black Pool Desktop')).toBeTruthy()\n"
+        "    expect(screen.queryByText('Install Black Pool locally')).toBeNull()\n"
+        '  })\n'
+        '\n',
+    ),
+    # 首启选择页只剩「连到已有后端」一张卡——标题与断言同步收缩。
+    (
+        "  it('shows the remote/local choice without installer progress', async () => {\n",
+        "  it('shows the remote choice without installer progress', async () => {\n",
+    ),
+    (
+        "    expect(screen.getByText('Connect to existing Black Pool')).toBeTruthy()\n"
+        "    expect(screen.getByText('Install Black Pool locally')).toBeTruthy()\n",
+        "    expect(screen.getByText('Connect to existing Black Pool')).toBeTruthy()\n",
+    ),
+    # 从远端连接表单返回后，落回的选择页同样只该剩远端那张卡。
+    (
+        "    expect(await screen.findByText('Set up Black Pool Desktop')).toBeTruthy()\n"
+        "    expect(screen.getByText('Install Black Pool locally')).toBeTruthy()\n"
+        "  })\n",
+        "    expect(await screen.findByText('Set up Black Pool Desktop')).toBeTruthy()\n"
+        "    expect(screen.getByText('Connect to existing Black Pool')).toBeTruthy()\n"
+        "  })\n",
+    ),
+    # 首启服务商引导两项（见本档「推荐徽标摘除」「服务商列表默认全展开」两条）：
+    # 内网无推荐位、也没有「先藏起来再让人点开」的道理，故徽标不该在、
+    # 「Other providers」折叠钮不该在，而原本藏在折叠后的服务商应当直接可见。
+    (
+        "  it('features Nous Portal and hides other providers behind a disclosure', () => {\n",
+        "  it('features Nous Portal with every provider listed up front', () => {\n",
+    ),
+    (
+        "    expect(screen.getByText('Nous Portal')).toBeTruthy()\n"
+        "    expect(screen.getByText('Recommended')).toBeTruthy()\n",
+        "    expect(screen.getByText('Nous Portal')).toBeTruthy()\n"
+        "    expect(screen.queryByText('Recommended')).toBeNull()\n",
+    ),
+    (
+        "    expect(screen.queryByText('Anthropic API Key')).toBeNull()\n"
+        "\n"
+        "    fireEvent.click(screen.getByRole('button', { name: 'Other providers' }))\n"
+        "\n"
+        "    expect(screen.getByText('Anthropic API Key')).toBeTruthy()\n"
+        "    expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()\n",
+        "    expect(screen.getByText('Anthropic API Key')).toBeTruthy()\n"
+        "    expect(screen.queryByRole('button', { name: 'Other providers' })).toBeNull()\n"
+        "    expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()\n",
+    ),
+    (
+        "    render(<Picker ctx={ctx} />)\n"
+        "    fireEvent.click(screen.getByRole('button', { name: 'Other providers' }))\n",
+        "    render(<Picker ctx={ctx} />)\n",
     ),
 ]
 
