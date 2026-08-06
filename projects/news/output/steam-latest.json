@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-06T14:03:23.534389+00:00",
+  "collected_at": "2026-08-06T23:58:17.932090+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -63,7 +63,7 @@
       "voted_up": true,
       "review": "G",
       "timestamp_created": 1785993615,
-      "playtime_forever": 776
+      "playtime_forever": 828
     },
     {
       "source": "steam",
@@ -108,7 +108,7 @@
       "voted_up": true,
       "review": "I LOOOOVVVE EVERYTHING ABOUT THIS GAME, im kinda sad that there isnt much merch tho.. /(ㄒoㄒ)/~~",
       "timestamp_created": 1785986712,
-      "playtime_forever": 2199
+      "playtime_forever": 2226
     },
     {
       "source": "steam",
@@ -123,22 +123,7 @@
       "voted_up": true,
       "review": "best gacha i've played by a very long stretch in almost every aspect, very genuinely obsessed. Complex gameplay, beautiful art, lovable characters, great OST. Gacha + devs are generous enough that being f2p is more than easy.",
       "timestamp_created": 1785975510,
-      "playtime_forever": 4564
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-05T20:22:49+00:00",
-      "lang": "english",
-      "title": "[正面] i will never recover",
-      "summary": "i will never recover",
-      "url": "https://steamcommunity.com/profiles/76561199075757870/recommended/3052450",
-      "author": "76561199075757870",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "i will never recover",
-      "timestamp_created": 1785961369,
-      "playtime_forever": 4253
+      "playtime_forever": 4714
     }
   ]
 }

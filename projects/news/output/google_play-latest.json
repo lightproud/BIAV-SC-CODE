@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-06T14:03:23.534389+00:00",
+  "collected_at": "2026-08-06T23:58:17.932090+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 125,
+  "item_count": 126,
   "items": [
     {
       "source": "google_play",
@@ -933,6 +933,16 @@
       "summary": "bản dịch Tiếng Việt hơi dở nhưng còn lại thì game cực đỉnh ✨",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-1d7a2bfc-3ad8-47c5-9488-1b829c21dd94",
       "author": "rổ Đan",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-05T16:52:57",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 amo este juego :D tiene muy buenos perso",
+      "summary": "amo este juego :D tiene muy buenos personajes , seria super otros mini juegos",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-f654ba03-956c-4c39-9952-80f075e401cc",
+      "author": "Jhon Alex Sinisterra romero",
       "engagement": 0
     },
     {
