@@ -211,6 +211,9 @@ def test_intranet_patch_sentinels():
         "版本芯片纯展示变体": "+      variant: 'text'",
         "单测期望对齐私有版（自更新收口哨兵）": "the portable edition disables self-update",
         "服务商列表默认展开": "SHOW_ALL_KEY) !== \'0\'",
+        # 死代码化会连同上游的非空收窄一起注释掉，解引用却留在原地；运行时短路不炸，
+        # tsc 却照查死代码。少了这一条，私有版 typecheck 长红（守密人 2026-08-05 裁修）。
+        "安装位解引用改可选链（死代码仍受 tsc 检查）": "{state.setupChoice?.activeRoot}",
     }
     missing = [k for k, v in sentinels.items() if v not in text]
     assert not missing, f"私有版规则从补丁消失（锚点失配）: {missing}"

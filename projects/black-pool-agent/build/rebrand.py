@@ -706,9 +706,14 @@ INTRANET_POST_RULES = [
         "            {copy.installTo}{' '}\n"
         '            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>\n'
         '          </div>\n',
+        # 可选链非洁癖：上游这段的非空收窄来自外层 `{state.setupChoice && (`，
+        # 而那个外层已被本层另一条规则 `{false && (` 死代码化——收窄一起没了，
+        # 解引用却还在。运行时 `false &&` 短路不炸，但 tsc 照查死代码（TS18047），
+        # 于是私有版 typecheck 长红、typecheck 也就没法接进装配线门禁。
+        # 守密人 2026-08-05 裁定「现在修」。
         '          {false && <div className="mt-6 text-xs text-muted-foreground">\n'
         "            {copy.installTo}{' '}\n"
-        '            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>\n'
+        '            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice?.activeRoot}</code>\n'
         '          </div>}\n',
     ),
     (

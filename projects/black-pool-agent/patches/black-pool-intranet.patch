@@ -355,7 +355,7 @@ index b354abe..c7a6138 100644
  
    it('requires a successful token connection test before applying remote config', async () => {
 diff --git a/apps/desktop/src/components/desktop-install-overlay.tsx b/apps/desktop/src/components/desktop-install-overlay.tsx
-index aedde11..71991ed 100644
+index aedde11..ec0da80 100644
 --- a/apps/desktop/src/components/desktop-install-overlay.tsx
 +++ b/apps/desktop/src/components/desktop-install-overlay.tsx
 @@ -421,6 +421,8 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
@@ -382,8 +382,9 @@ index aedde11..71991ed 100644
 -          <div className="mt-6 text-xs text-muted-foreground">
 +          {false && <div className="mt-6 text-xs text-muted-foreground">
              {copy.installTo}{' '}
-             <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>
+-            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice.activeRoot}</code>
 -          </div>
++            <code className="font-mono text-(--ui-text-secondary)">{state.setupChoice?.activeRoot}</code>
 +          </div>}
          </div>
        </div>
