@@ -4,7 +4,7 @@ title: "scs-req-memory-frontmatter-attachment-r1-20260729"
 description: "§1.2 丙·cards 退役 / §2.2 按 r1 案 / §四 pinned 采纳暂定案 / §四 when_to_save 官方全文注入；（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/scs-req-memory-frontmatter-attachment-r1-20260729.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-08-05"
+timestamp: "2026-08-06"
 ---
 
 # 指针概念

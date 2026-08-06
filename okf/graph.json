@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05",
+  "generated": "2026-08-06",
   "stats": {
     "nodes": 396,
     "edges": 437
@@ -4758,20 +4758,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15565.md",
-      "rel": "提及:诺缔拉",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
       "target": "/characters/15575.md",
       "rel": "提及:法洛思",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15591.md",
-      "rel": "提及:艾继丝",
       "rel_type": "mention"
     },
     {
@@ -4784,6 +4778,12 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15562.md",
+      "rel": "提及:莉兹",
       "rel_type": "mention"
     },
     {
@@ -4826,6 +4826,12 @@
       "source": "/community/community-reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-steam.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
       "rel_type": "mention"
     },
     {
@@ -4946,12 +4952,6 @@
       "source": "/community/community-youtube.md",
       "target": "/characters/15560.md",
       "rel": "提及:Pandia",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-youtube.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6276,20 +6276,14 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15565.md",
-      "rel": "提及:诺缔拉",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
       "target": "/characters/15575.md",
       "rel": "提及:法洛思",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15591.md",
-      "rel": "提及:艾继丝",
       "rel_type": "mention"
     },
     {
@@ -6302,6 +6296,12 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15562.md",
+      "rel": "提及:莉兹",
       "rel_type": "mention"
     },
     {
@@ -6344,6 +6344,12 @@
       "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/steam.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
       "rel_type": "mention"
     },
     {
@@ -6422,12 +6428,6 @@
       "source": "/sources/youtube.md",
       "target": "/characters/15560.md",
       "rel": "提及:Pandia",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/youtube.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {

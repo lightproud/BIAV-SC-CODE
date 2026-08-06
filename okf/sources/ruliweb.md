@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "ruliweb 社区数据源"
-description: "ruliweb 平台采集档案，全量 428 条，健康度 active。"
+description: "ruliweb 平台采集档案，全量 430 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/ruliweb/"
 tags: ["data_layer:full_archive", "platform:ruliweb", "health:active"]
-timestamp: "2026-08-05T08:33:50.120388+00:00"
+timestamp: "2026-08-06T08:34:02.037227+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-08-05T08:33:50.120388+00:00"
 | 平台 | ruliweb |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/ruliweb/` |
 | 输出展示层（抽样） | `projects/news/output/ruliweb-latest.json` |
-| 全量条数 | 428 |
+| 全量条数 | 430 |
 | 采集健康度 | active |
-| 最后成功 | 2026-08-05 |
+| 最后成功 | 2026-08-06 |
 
 # 数据纪律（硬约束）
 
