@@ -1,327 +1,281 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-06T08:33:17.155570+00:00",
+  "collected_at": "2026-08-06T11:22:58.014264+00:00",
   "source": "discord",
   "data_layer": "output",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-08-05T00:00:00+00:00",
+      "time": "2026-08-06T00:00:00+00:00",
       "lang": "",
-      "title": "Discord 社区日报 (2026-08-05)",
-      "summary": "今日 2,454 条消息，218 位活跃用户，287 次反应。热门频道：🔸game-question(1005)、🔸綜合討論(440)、🔸team-building(273)、🔸phòng-chat-tiếng-việt(146)、🔸lore-chat(141)",
+      "title": "Discord 社区日报 (2026-08-06)",
+      "summary": "今日 2,156 条消息，203 位活跃用户，261 次反应。热门频道：🔸game-question(1079)、🔸綜合討論(188)、🔸canal-español(179)、🔸team-building(177)、🔸phòng-chat-tiếng-việt(106)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 2454
+      "engagement": 2156
     },
     {
       "source": "discord",
-      "time": "2026-08-05T01:52:15.265000+00:00",
+      "time": "2026-08-06T06:19:10.576000+00:00",
       "lang": "",
-      "title": "[DC] kuyuki1145@🔸同人创作: ［莫诺缔］尝试画了家产！灵感来自诺缔拉生日邮件。后面是在懒得搓了所以很草（",
-      "summary": "［莫诺缔］尝试画了家产！灵感来自诺缔拉生日邮件。后面是在懒得搓了所以很草（\n[附件: 1785866227845.png, 1785866236184.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1534378472699465799/1534378472699465799",
-      "author": "kuyuki1145",
-      "engagement": 26,
-      "media_url": "https://cdn.discordapp.com/attachments/1534378472699465799/1534378473219690666/1785866227845.png?ex=6a73e8cf&is=6a72974f&hm=ffd3bb56bc37a35ede5bce42226b0eb3580f4e07f85c3729993a7ee46ca2c08e&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🍟×8",
-        "reply_count": 0,
-        "attachment_count": 2,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1534378472699465799/1534378473219690666/1785866227845.png?ex=6a73e8cf&is=6a72974f&hm=ffd3bb56bc37a35ede5bce42226b0eb3580f4e07f85c3729993a7ee46ca2c08e&",
-          "https://cdn.discordapp.com/attachments/1534378472699465799/1534378473798369350/1785866236184.png?ex=6a73e8cf&is=6a72974f&hm=80e908eb77153106d4cde269de0c26a82a5915a28cdf7221ddf28b87cd09980e&"
-        ],
-        "channel": "🔸同人创作"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T03:36:56.873000+00:00",
-      "lang": "",
-      "title": "[DC] aegisx@🔸phòng-chat-tiếng-việt: ",
-      "summary": "\n[附件: image.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1534404819673153616",
-      "author": "aegisx",
-      "engagement": 25,
-      "media_url": "https://cdn.discordapp.com/attachments/1300659603993923644/1534404819320836136/image.png?ex=6a740158&is=6a72afd8&hm=f02706acbaee5b472120d5efdf1d6c51a70beacd27e9324eb48a26e5065ea800&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "Shocked×4 🔥×4",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659603993923644/1534404819320836136/image.png?ex=6a740158&is=6a72afd8&hm=f02706acbaee5b472120d5efdf1d6c51a70beacd27e9324eb48a26e5065ea800&"
-        ],
-        "channel": "🔸phòng-chat-tiếng-việt"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T05:59:29.528000+00:00",
-      "lang": "",
-      "title": "[DC] yuul_b_alwrigh@🔸綜合討論: ",
-      "summary": "\n[附件: image.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534440692107972628",
-      "author": "yuul_b_alwrigh",
-      "engagement": 25,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1534440691634143353/image.png?ex=6a7422c1&is=6a72d141&hm=86314f44b1fbee82f318d479313813a0ec1e1e25f7fb8215dabd5994a9bc60b5&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🛐×8",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534440691634143353/image.png?ex=6a7422c1&is=6a72d141&hm=86314f44b1fbee82f318d479313813a0ec1e1e25f7fb8215dabd5994a9bc60b5&"
-        ],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T05:33:49.848000+00:00",
-      "lang": "",
-      "title": "[DC] samin_@🔸art-and-memes: ",
-      "summary": "\n[附件: day65.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1534434234221990018/1534434234221990018",
-      "author": "samin_",
-      "engagement": 22,
-      "media_url": "https://cdn.discordapp.com/attachments/1534434234221990018/1534434235048394793/day65.png?ex=6a741cbe&is=6a72cb3e&hm=0aa29791ceb9ab211d0d4fea3cddf15e829153b94776758a62f02f829db1fc6f&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "Hameln_love×2 💕×4 William_shock×1",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1534434234221990018/1534434235048394793/day65.png?ex=6a741cbe&is=6a72cb3e&hm=0aa29791ceb9ab211d0d4fea3cddf15e829153b94776758a62f02f829db1fc6f&"
-        ],
-        "channel": "🔸art-and-memes"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T03:29:09.844000+00:00",
-      "lang": "",
-      "title": "[DC] yi000607@🔸綜合討論:  ",
-      "summary": " \n[附件: Screenshot_20260805_112849.jpg]\n  └ 0.0._.0_0.: 大佬",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534402860811423774",
-      "author": "yi000607",
-      "engagement": 21,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1534402860517691574/Screenshot_20260805_112849.jpg?ex=6a73ff85&is=6a72ae05&hm=482f8684a8093197c631e087ec1a48223dc4d58a4b9fe5297c8b210313c7ca5c&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🛐×6",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534402860517691574/Screenshot_20260805_112849.jpg?ex=6a73ff85&is=6a72ae05&hm=482f8684a8093197c631e087ec1a48223dc4d58a4b9fe5297c8b210313c7ca5c&"
-        ],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T08:33:05.072000+00:00",
-      "lang": "",
-      "title": "[DC] 0_0101._45013@🔸同人创作: 暑假太閒找點事情做，有新的進度應該會放這（可能？  （為我的拍攝技術默哀...",
-      "summary": "暑假太閒找點事情做，有新的進度應該會放這（可能？\n\n（為我的拍攝技術默哀...\n[附件: IMG_20260805_152114.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1534479344901296178/1534479344901296178",
-      "author": "0_0101._45013",
-      "engagement": 19,
-      "media_url": "https://cdn.discordapp.com/attachments/1534479344901296178/1534479345341694082/IMG_20260805_152114.jpg?ex=6a7446c1&is=6a72f541&hm=4bd01d310d8d169d13ae513022a55f1b66b7886f2573ac09be526cf8aec26b83&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🍟×6",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1534479344901296178/1534479345341694082/IMG_20260805_152114.jpg?ex=6a7446c1&is=6a72f541&hm=4bd01d310d8d169d13ae513022a55f1b66b7886f2573ac09be526cf8aec26b83&"
-        ],
-        "channel": "🔸同人创作"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T08:46:06.819000+00:00",
-      "lang": "",
-      "title": "[DC] tnimreppep@🔸game-question: (附件/嵌入)",
-      "summary": "[附件: Screenshot_2026-08-05-15-44-40-963_com.qookkagames.z1.qooapp.png, Screenshot_2026-08-05-15-45-39-597_com.qookkagames.z1.qooapp.png]\n  └ ringgo0901: thanks for this.\n  └ laplace.in.my.head: 67",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1534482623785730159",
-      "author": "tnimreppep",
-      "engagement": 18,
-      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1534482623077023844/Screenshot_2026-08-05-15-44-40-963_com.qookkagames.z1.qooapp.png?ex=6a7449ce&is=6a72f84e&hm=9a08de4fbb00641dbfb4c93568104af44c9da281324c041c1bd87ec5925d3964&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×4",
-        "reply_count": 2,
-        "attachment_count": 2,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1534482623077023844/Screenshot_2026-08-05-15-44-40-963_com.qookkagames.z1.qooapp.png?ex=6a7449ce&is=6a72f84e&hm=9a08de4fbb00641dbfb4c93568104af44c9da281324c041c1bd87ec5925d3964&",
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1534482623441801216/Screenshot_2026-08-05-15-45-39-597_com.qookkagames.z1.qooapp.png?ex=6a7449ce&is=6a72f84e&hm=3106257c8f0b64864790bc0633d265ac2ce08b9597243a8bba921a0ebab7bc32&"
-        ],
-        "channel": "🔸game-question"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T06:59:46.473000+00:00",
-      "lang": "",
-      "title": "[DC] nikolazuli@🔸lore-chat: \"come with me and my nakama to atlantis keeper, we can have fun, forever!\"",
-      "summary": "\"come with me and my nakama to atlantis keeper, we can have fun, forever!\"",
-      "url": "https://discord.com/channels/1131791637933199470/1326453763355185215/1534455862674853980",
-      "author": "nikolazuli",
-      "engagement": 15,
-      "metadata": {
-        "reactions": "🔥×5",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸lore-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T06:03:04.843000+00:00",
-      "lang": "",
-      "title": "[DC] idiota__@🔸game-question: (附件/嵌入)",
-      "summary": "[附件: image.png]\n  └ princess.goth: is this yours?\n  └ hnd414: ty, doing this so I could borrow glotan instead for w5 🔥",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1534441595204538428",
-      "author": "idiota__",
-      "engagement": 14,
-      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1534441594890092544/image.png?ex=6a742398&is=6a72d218&hm=69810392e300c6578cb42c7b69097670cdf41488574b9682f8f2b50d78def52d&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×3",
-        "reply_count": 2,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1534441594890092544/image.png?ex=6a742398&is=6a72d218&hm=69810392e300c6578cb42c7b69097670cdf41488574b9682f8f2b50d78def52d&"
-        ],
-        "channel": "🔸game-question"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T07:08:24.891000+00:00",
-      "lang": "",
-      "title": "[DC] anicillia@🔸phòng-chat-tiếng-việt: cuoi cung cung co gi do lam ngoai relink ae",
-      "summary": "cuoi cung cung co gi do lam ngoai relink ae\n[附件: image.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1534458037077541016",
-      "author": "anicillia",
-      "engagement": 13,
-      "media_url": "https://cdn.discordapp.com/attachments/1300659603993923644/1534458036742262874/image.png?ex=6a7432e8&is=6a72e168&hm=018b92e48b80268cb9b41d1d12e331d1f66f3dcbdbca05475b79364f0df9c63f&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×4",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659603993923644/1534458036742262874/image.png?ex=6a7432e8&is=6a72e168&hm=018b92e48b80268cb9b41d1d12e331d1f66f3dcbdbca05475b79364f0df9c63f&"
-        ],
-        "channel": "🔸phòng-chat-tiếng-việt"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T08:21:56.825000+00:00",
-      "lang": "",
-      "title": "[DC] huangyu0876@🔸綜合討論: (附件/嵌入)",
-      "summary": "[附件: image.png, image.png, image.png, image.png, image.png, image.png, image.png, image.png, image.png]\n  └ ponponnyaru: 你这配队怪怪的\n  └ ponponnyaru: 萝坦自己带一队，老头带魔术师",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534476542069968977",
-      "author": "huangyu0876",
-      "engagement": 13,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1534476537477206088/image.png?ex=6a744423&is=6a72f2a3&hm=05ec0e45b70a74d889707f286a537296e6171faa75c4324b09903f385ff38158&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "",
-        "reply_count": 2,
-        "attachment_count": 9,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476537477206088/image.png?ex=6a744423&is=6a72f2a3&hm=05ec0e45b70a74d889707f286a537296e6171faa75c4324b09903f385ff38158&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476537938706474/image.png?ex=6a744423&is=6a72f2a3&hm=add4bafd3ee189d9952f15d2ccd837f6d48ea6ed985c9ff6c787dfddc9e71bb2&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476538651611266/image.png?ex=6a744424&is=6a72f2a4&hm=a57faf9378450ff6a1259a4fdcad24a8e6fc178a365620703bb9184a086d8941&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476539192934493/image.png?ex=6a744424&is=6a72f2a4&hm=f6e1a179226c81126cd57e902561aae3c9400fefb46b597f53361018d5d199a5&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476539796783216/image.png?ex=6a744424&is=6a72f2a4&hm=8366370cea329c733ba3bae91802d8a63fa02d32508ced7eebf91cea8202371f&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476540329463968/image.png?ex=6a744424&is=6a72f2a4&hm=60ef42fc05c700d2041d08b890a2520862b8a70b775380356fc667abd248377f&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476540753084546/image.png?ex=6a744424&is=6a72f2a4&hm=7213c29c7fd351a582d146152fd109f545898dd1f22cd30a82353df4560b80a2&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476541281435648/image.png?ex=6a744424&is=6a72f2a4&hm=734cd6eb064c42d454d8cc53b42c753d4be2ad2bbdb9e734b6eb449dd7165b7d&",
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534476541906649088/image.png?ex=6a744424&is=6a72f2a4&hm=ed34b478622ed1908841b1d944824cb6829d04519dc46c7e6bc69c12bcff61b5&"
-        ],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-05T08:40:49.662000+00:00",
-      "lang": "",
-      "title": "[DC] kemomimi_@🔸綜合討論: (附件/嵌入)",
-      "summary": "[附件: Screenshot_20260805-164033999_1.jpg]\n  └ quackdayo: ",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534481293532856330",
+      "title": "[DC] kemomimi_@🔸綜合討論: 我先自己打试试看",
+      "summary": "我先自己打试试看\n  └ luna_.90: 好強，佬都能自己試試就425",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534808033648181409",
       "author": "kemomimi_",
-      "engagement": 12,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1534481293268746361/Screenshot_20260805-164033999_1.jpg?ex=6a744891&is=6a72f711&hm=31c4e405fb6d357e8e6c262cf6f89f212d6ba9e15bed57a5c58b5e2d80fb46e4&",
+      "engagement": 56,
+      "metadata": {
+        "reactions": "4️⃣×6 2️⃣×6 5️⃣×6",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T06:17:08.765000+00:00",
+      "lang": "",
+      "title": "[DC] ling_an_@🔸綜合討論: ~~阿狗但凡是全图鉴党5771的队伍组合将会是指数级的成长~~",
+      "summary": "~~阿狗但凡是全图鉴党5771的队伍组合将会是指数级的成长~~\n  └ arachnids_nacha: 忘卻前夜有61個喚醒體，其中環拉跟拉拉不能同隊。每個隊伍必須由四個不重複轉喚醒體組成。問，全圖鑑阿狗可以發現多少個獨特的配隊？\n\n承上題，這遊戲有四個界域，一個隊伍只能由最多兩個最少一個界域構成。問，全圖鑑阿狗可以發現多少個獨特的配隊？",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534807522735554560",
+      "author": "ling_an_",
+      "engagement": 35,
+      "metadata": {
+        "reactions": "👈×2 4️⃣×2 2️⃣×2 5️⃣×2 ❌×1 💅×2",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T01:11:38.739000+00:00",
+      "lang": "",
+      "title": "[DC] a_wei3797@🔸綜合討論: 有沒有大佬可以帶帶我",
+      "summary": "有沒有大佬可以帶帶我",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534730641034444864",
+      "author": "a_wei3797",
+      "engagement": 24,
+      "metadata": {
+        "reactions": "↖️×8",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T06:02:45.879000+00:00",
+      "lang": "",
+      "title": "[DC] a_wei3797@🔸綜合討論: ",
+      "summary": "\n  └ arr5721: ||還是大佬幫我打425||",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534803903529615461",
+      "author": "a_wei3797",
+      "engagement": 23,
+      "metadata": {
+        "reactions": "🛐×7",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T06:57:51.772000+00:00",
+      "lang": "",
+      "title": "[DC] arachnids_nacha@🔸綜合討論: 忘卻前夜有61個喚醒體，其中環拉跟拉拉不能同隊。每個隊伍必須由四個不重複轉喚醒體組成。問，全圖鑑阿狗可以發現多少個獨特的配隊？  承上題，這遊戲有四個界域，一個",
+      "summary": "忘卻前夜有61個喚醒體，其中環拉跟拉拉不能同隊。每個隊伍必須由四個不重複轉喚醒體組成。問，全圖鑑阿狗可以發現多少個獨特的配隊？\n\n承上題，這遊戲有四個界域，一個隊伍只能由最多兩個最少一個界域構成。問，全圖鑑阿狗可以發現多少個獨特的配隊？\n  └ luna_.90: 三個",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534817769449721926",
+      "author": "arachnids_nacha",
+      "engagement": 23,
+      "metadata": {
+        "reactions": "🌿×7",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T07:30:27.766000+00:00",
+      "lang": "",
+      "title": "[DC] ling_an_@🔸綜合討論: 多亏朝星的新影片我才能找到猫这句话🆘",
+      "summary": "多亏朝星的新影片我才能找到猫这句话🆘\n[附件: Screenshot_2026-08-06-15-26-50-502_com.discord.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534825973483048980",
+      "author": "ling_an_",
+      "engagement": 19,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1534825973093105744/Screenshot_2026-08-06-15-26-50-502_com.discord.jpg?ex=6a758993&is=6a743813&hm=f4d98a82c58b8bf9e742be912c7bb25ab3fccd92139e469782b53a0606febf1c&",
       "content_type": "image",
       "metadata": {
-        "reactions": "🌿×3",
-        "reply_count": 1,
+        "reactions": "😾×2 Thais_snicker×1 4️⃣×1 2️⃣×1 5️⃣×1",
+        "reply_count": 0,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1534481293268746361/Screenshot_20260805-164033999_1.jpg?ex=6a744891&is=6a72f711&hm=31c4e405fb6d357e8e6c262cf6f89f212d6ba9e15bed57a5c58b5e2d80fb46e4&"
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1534825973093105744/Screenshot_2026-08-06-15-26-50-502_com.discord.jpg?ex=6a758993&is=6a743813&hm=f4d98a82c58b8bf9e742be912c7bb25ab3fccd92139e469782b53a0606febf1c&"
         ],
         "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-05T03:35:48.035000+00:00",
+      "time": "2026-08-06T01:08:35.246000+00:00",
       "lang": "",
-      "title": "[DC] princess.goth@🔸game-question: should i stop playing league classic and work on morimens yt videos again",
-      "summary": "should i stop playing league classic and work on morimens yt videos again",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1534404530945392750",
-      "author": "princess.goth",
-      "engagement": 12,
+      "title": "[DC] water_heart@🔸綜合討論: 有沒有大佬可以帶帶我",
+      "summary": "有沒有大佬可以帶帶我",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534729871408758784",
+      "author": "water_heart",
+      "engagement": 18,
       "metadata": {
-        "reactions": "👍×4",
+        "reactions": "↖️×5 Leigh_love×1",
         "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸game-question"
+        "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-05T05:38:13.206000+00:00",
+      "time": "2026-08-06T04:25:36.951000+00:00",
       "lang": "",
-      "title": "[DC] idiota__@🔸game-question: only thing that benefits you from +12ing incalc is that you dont get any more du",
-      "summary": "only thing that benefits you from +12ing incalc is that you dont get any more dupes and instead its selector shards",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1534435338825629926",
-      "author": "idiota__",
-      "engagement": 12,
+      "title": "[DC] ling_an_@🔸綜合討論: 有沒有帶帶可以大佬我",
+      "summary": "有沒有帶帶可以大佬我\n  └ kemomimi_: 425...",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534779455233458246",
+      "author": "ling_an_",
+      "engagement": 17,
       "metadata": {
-        "reactions": "Kek×4",
-        "reply_count": 0,
+        "reactions": "4️⃣×1 2️⃣×1 5️⃣×1 6️⃣×1 7️⃣×1",
+        "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸game-question"
+        "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-05T06:50:49.619000+00:00",
+      "time": "2026-08-06T07:11:37.561000+00:00",
       "lang": "",
-      "title": "[DC] nikolazuli@🔸lore-chat: sorry venush the first idea what came to my head is aurita with the personality",
-      "summary": "sorry venush the first idea what came to my head is aurita with the personality of pontos 😭",
-      "url": "https://discord.com/channels/1131791637933199470/1326453763355185215/1534453610945970336",
-      "author": "nikolazuli",
-      "engagement": 12,
+      "title": "[DC] luna_.90@🔸綜合討論: 因為詞條「發現」為隨機取出三個，並且選擇一個",
+      "summary": "因為詞條「發現」為隨機取出三個，並且選擇一個\n  └ ka_0414: -# 可是塔薇的「发现」，有5个或10个",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534821233059696691",
+      "author": "luna_.90",
+      "engagement": 17,
       "metadata": {
-        "reactions": "😭×4",
-        "reply_count": 0,
+        "reactions": "🌿×5",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T07:01:03.475000+00:00",
+      "lang": "",
+      "title": "[DC] stormimi@🔸lore-chat: Her wax hair is honestly a really cool and well done design choice in her splash",
+      "summary": "Her wax hair is honestly a really cool and well done design choice in her splash art but most people don’t notice cause pandia tends to attract strong opinions\n  └ 10_katz_01: Well now I surely noticed it very much\n  └ fishhazardthewizard: I mean I always thought the whole candle/melting wax part for pandia was super cool, its why I just ignore her whole personality thing",
+      "url": "https://discord.com/channels/1131791637933199470/1326453763355185215/1534818573510512700",
+      "author": "stormimi",
+      "engagement": 16,
+      "metadata": {
+        "reactions": "Celeste_agree×4",
+        "reply_count": 2,
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸lore-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T01:13:02.281000+00:00",
+      "lang": "",
+      "title": "[DC] ernest_heart@🔸綜合討論: 有沒有帶帶可以大佬我",
+      "summary": "有沒有帶帶可以大佬我",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534730991434989689",
+      "author": "ernest_heart",
+      "engagement": 12,
+      "metadata": {
+        "reactions": "↖️×2 ↗️×1 gif_thinking×1",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T05:53:30.022000+00:00",
+      "lang": "",
+      "title": "[DC] ernest_heart@🔸綜合討論: 小米是個善良的好朋友 能一次性交很多朋友 他以前很不容易 可能吃過很多打擊吧 早年他家庭條件並不好 為了餵家裡的牛 每天上山背筐草 讀書也沒有天賦 每次考試都被",
+      "summary": "小米是個善良的好朋友\n能一次性交很多朋友\n他以前很不容易\n可能吃過很多打擊吧\n早年他家庭條件並不好\n為了餵家裡的牛\n每天上山背筐草\n讀書也沒有天賦\n每次考試都被很多人超\n第一次上場時他還是個青澀的孩子\n隊友調侃說你真緊張小米\n他支支吾吾地說我不姓張\n他很熱愛這份工作\n渾身都是敬業的味道\n他也非常貼心\n比賽時總會在團員休息室備茶",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534801572096249897",
+      "author": "ernest_heart",
+      "engagement": 12,
+      "metadata": {
+        "reactions": "🌿×4",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T03:48:42.044000+00:00",
+      "lang": "",
+      "title": "[DC] ashd3x@🔸team-building: Pandia was always one of the easiest bosses because she gets hard-countered by,",
+      "summary": "Pandia was always one of the easiest bosses because she gets hard-countered by, well... Counter. Pun not intended\n  └ moonandmymuse: ohhh i see",
+      "url": "https://discord.com/channels/1131791637933199470/1400749543288475770/1534770165240172664",
+      "author": "ashd3x",
+      "engagement": 11,
+      "metadata": {
+        "reactions": "Helot_slack_off×1 🔥×2",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸team-building"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T05:54:12.357000+00:00",
+      "lang": "",
+      "title": "[DC] ling_an_@🔸綜合討論: 现在好像是 先选一个造物进战斗再退出调查 就能刷新了",
+      "summary": "现在好像是 先选一个造物进战斗再退出调查\n就能刷新了\n  └ abhartach_0: 試了過沒用",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534801749662109696",
+      "author": "ling_an_",
+      "engagement": 11,
+      "metadata": {
+        "reactions": "4️⃣×1 2️⃣×1 5️⃣×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-06T09:01:58.257000+00:00",
+      "lang": "",
+      "title": "[DC] gensono0609@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: image.png]\n  └ arachnids_nacha: \n  └ yusi4172: Bug前夜最新力作",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1534849002271670292",
+      "author": "gensono0609",
+      "engagement": 11,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1534849001596129321/image.png?ex=6a759f06&is=6a744d86&hm=52766406123d98f3fd0deab6a310672cb10262727d84f1da2d49a77a089d7f94&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🫳×2",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1534849001596129321/image.png?ex=6a759f06&is=6a744d86&hm=52766406123d98f3fd0deab6a310672cb10262727d84f1da2d49a77a089d7f94&"
+        ],
+        "channel": "🔸綜合討論"
       }
     }
   ]
