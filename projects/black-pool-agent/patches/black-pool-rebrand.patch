@@ -44589,9 +44589,40 @@ index 860bacf..9dde482 100644
  const bloomberg = (foreground: string) => ({
    name: 'bloomberg',
 diff --git a/apps/desktop/src/themes/context.tsx b/apps/desktop/src/themes/context.tsx
-index e618534..3190292 100644
+index e618534..0105556 100644
 --- a/apps/desktop/src/themes/context.tsx
 +++ b/apps/desktop/src/themes/context.tsx
+@@ -48,7 +48,7 @@ const normalizeSkin = (name: string | null): string =>
+   name && resolveTheme(name) && !RETIRED_SKINS.has(name) ? name : DEFAULT_SKIN_NAME
+ 
+ const normalizeMode = (value: string | null): ThemeMode =>
+-  value === 'light' || value === 'dark' || value === 'system' ? value : 'light'
++  value === 'light' || value === 'dark' || value === 'system' ? value : 'dark'
+ 
+ // ─── Per-profile appearance persistence ─────────────────────────────────────
+ // Skin and mode are each stored per profile. "default" isn't a real profile —
+@@ -302,9 +302,9 @@ const SKIN_LIST = BUILTIN_THEME_LIST.map(({ name, label, description }) => ({ na
+ const ThemeContext = createContext<ThemeContextValue>({
+   theme: nousTheme,
+   themeName: DEFAULT_SKIN_NAME,
+-  mode: 'light',
+-  resolvedMode: 'light',
+-  renderedMode: 'light',
++  mode: 'dark',
++  resolvedMode: 'dark',
++  renderedMode: 'dark',
+   availableThemes: SKIN_LIST,
+   setTheme: () => {},
+   setMode: () => {}
+@@ -340,7 +340,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
+   )
+ 
+   const [mode, setModeState] = useState<ThemeMode>(() =>
+-    typeof window === 'undefined' ? 'light' : modePref.resolve(readBootProfileKey())
++    typeof window === 'undefined' ? 'dark' : modePref.resolve(readBootProfileKey())
+   )
+ 
+   // Follow profile switches: paint the profile's assigned skin + mode and
 @@ -387,7 +387,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
      modePref.assign(liveProfile(), next)
    }, [])
@@ -44693,6 +44724,19 @@ index 4643818..fa548f4 100644
  /** Skin used when nothing is persisted or the persisted name is retired. */
 -export const DEFAULT_SKIN_NAME = 'nous'
 +export const DEFAULT_SKIN_NAME = 'black-pool'
+diff --git a/apps/desktop/src/themes/profile-theme.test.ts b/apps/desktop/src/themes/profile-theme.test.ts
+index ce4a46d..9356863 100644
+--- a/apps/desktop/src/themes/profile-theme.test.ts
++++ b/apps/desktop/src/themes/profile-theme.test.ts
+@@ -18,7 +18,7 @@ const cases = [
+     b: 'midnight',
+     junk: 'nope'
+   },
+-  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'light', a: 'dark', b: 'system', junk: 'dusk' }
++  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'dark', a: 'light', b: 'system', junk: 'dusk' }
+ ]
+ 
+ describe.each(cases)('per-profile $name', ({ pref, fallback, a, b, junk }) => {
 diff --git a/apps/desktop/src/themes/skin.ts b/apps/desktop/src/themes/skin.ts
 index 61fa711..350083b 100644
 --- a/apps/desktop/src/themes/skin.ts

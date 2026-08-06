@@ -170,6 +170,8 @@ def test_brand_patch_sentinels():
         "CLI 面板残留品牌收尾": "⚕ Black Pool",
         "默认语言简体中文（前端缺省，测试态钉 en）": "MODE === 'test' ? 'en' : 'zh'",
         "默认语言简体中文（后端真源头）": '"language": "zh",',
+        "默认外观深色（缺省兜底）": "'system' ? value : 'dark'",
+        "默认外观深色（契约用例同步翻面）": "fallback: 'dark', a: 'light'",
         "品牌字体路径修复（Collapse 构建期内嵌）": "url('../node_modules/@nous-research/ui",
         "黑池默认主题（鎏金双貌）": "DEFAULT_SKIN_NAME = 'black-pool'",
         "默认皮肤后端真源头": '"skin": "black-pool"',

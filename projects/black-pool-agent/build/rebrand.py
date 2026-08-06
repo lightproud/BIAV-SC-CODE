@@ -358,6 +358,44 @@ BRAND_POST_RULES = [
         '        "skin": "default",',
         '        "skin": "black-pool",',
     ),
+    # 默认深色（守密人 2026-08-05 裁定「默认配色要黑池金，深色」）：外观偏好未设时
+    # 上游兜底 'light'，新部署因此开在浅色——而黑池金的立意是「暖黑之上金作点缀」，
+    # 浅色只是备选貌。三处兜底一并改：normalizeMode（未设/脏值的唯一收口）、
+    # ThemeContext 默认值（Provider 外的兜底）、无 window 时的首绘兜底。
+    # 归基座层：公私两版同得（外观缺省属产品定制，非内网适配）。
+    # 已显式选过浅色的用户不受影响——per-profile 偏好读到合法值即照旧。
+    (
+        "const normalizeMode = (value: string | null): ThemeMode =>\n"
+        "  value === 'light' || value === 'dark' || value === 'system' ? value : 'light'\n",
+        "const normalizeMode = (value: string | null): ThemeMode =>\n"
+        "  value === 'light' || value === 'dark' || value === 'system' ? value : 'dark'\n",
+    ),
+    (
+        "  theme: nousTheme,\n"
+        "  themeName: DEFAULT_SKIN_NAME,\n"
+        "  mode: 'light',\n"
+        "  resolvedMode: 'light',\n"
+        "  renderedMode: 'light',\n",
+        "  theme: nousTheme,\n"
+        "  themeName: DEFAULT_SKIN_NAME,\n"
+        "  mode: 'dark',\n"
+        "  resolvedMode: 'dark',\n"
+        "  renderedMode: 'dark',\n",
+    ),
+    (
+        "    typeof window === 'undefined' ? 'light' : modePref.resolve(readBootProfileKey())\n",
+        "    typeof window === 'undefined' ? 'dark' : modePref.resolve(readBootProfileKey())\n",
+    ),
+    # 对应用例翻面：per-profile 契约测试把「缺省」参数化成 fallback，缺省一改它就红
+    # （2026-08-05 实测：装配线新接的单测当场接住 2 项——这道网的第一次真实交付）。
+    # `a` 同时从 'dark' 换成 'light'：它是「与缺省不同的显式值」，缺省占了 dark 之后
+    # 必须让位，否则用例区分不出「显式设过」与「回落缺省」。
+    (
+        "  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'light',"
+        " a: 'dark', b: 'system', junk: 'dusk' }\n",
+        "  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'dark',"
+        " a: 'light', b: 'system', junk: 'dusk' }\n",
+    ),
     # 自述句归因口径归一（守密人 2026-08-05 裁定「by B.I.A.V. Studio」）：
     # SPECIAL_RULES 早有裁定——自述句不保留「created by Nous Research」（来源事实由
     # LICENSE 与合规口径「基于 MIT 开源组件二次开发」承载）。但那条只换掉了
