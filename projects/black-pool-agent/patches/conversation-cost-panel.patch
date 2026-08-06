@@ -1,5 +1,5 @@
 diff --git a/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event.ts b/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event.ts
-index 7493cf1..c54700d 100644
+index b1beaa9..3c51168 100644
 --- a/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event.ts
 +++ b/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event.ts
 @@ -17,6 +17,8 @@ import { modelOptionsQueryKey } from '@/lib/model-options'
@@ -21,17 +21,28 @@ index 7493cf1..c54700d 100644
              setCurrentUsage(current => ({ ...current, ...payload.usage }))
 diff --git a/apps/desktop/src/app/shell/cost-usage-panel.tsx b/apps/desktop/src/app/shell/cost-usage-panel.tsx
 new file mode 100644
-index 0000000..d67fa59
+index 0000000..1db9d9c
 --- /dev/null
 +++ b/apps/desktop/src/app/shell/cost-usage-panel.tsx
-@@ -0,0 +1,97 @@
+@@ -0,0 +1,153 @@
 +import { useStore } from '@nanostores/react'
 +import { useMemo } from 'react'
 +
 +import { useI18n } from '@/i18n'
 +import { compactNumber } from '@/lib/format'
++import {
++  $usageLedger,
++  formatCny,
++  recentDays,
++  startOfMonthKey,
++  startOfWeekKey,
++  sumSince
++} from '@/store/usage-ledger'
 +import { $usageRounds } from '@/store/usage-rounds'
 +import type { UsageStats } from '@/types/hermes'
++
++/** Enough to read the shape of a fortnight without turning the panel into a report. */
++const HISTORY_DAYS = 14
 +
 +interface CostUsagePanelProps {
 +  currentUsage: UsageStats
@@ -61,10 +72,24 @@ index 0000000..d67fa59
 +  const copy = t.shell.statusbar.costUsagePanel
 +  const roundsMap = useStore($usageRounds)
 +
++  const ledger = useStore($usageLedger)
++
 +  const rounds = useMemo(
 +    () => (sessionId ? (roundsMap[sessionId] ?? []) : []),
 +    [roundsMap, sessionId]
 +  )
++
++  const spend = useMemo(() => {
++    const now = new Date()
++    const days = recentDays(ledger, HISTORY_DAYS)
++
++    return {
++      days,
++      month: sumSince(ledger, startOfMonthKey(now)),
++      peak: days.reduce((max, day) => Math.max(max, day.costUsd), 0),
++      week: sumSince(ledger, startOfWeekKey(now))
++    }
++  }, [ledger])
 +
 +  const cacheRead = currentUsage.cache_read ?? 0
 +  const cacheWrite = currentUsage.cache_write ?? 0
@@ -90,6 +115,37 @@ index 0000000..d67fa59
 +          </div>
 +        ))}
 +      </div>
++      <div className="mb-1 font-medium">{copy.spend}</div>
++      <div className="grid grid-cols-2 gap-x-3 gap-y-1">
++        <div className="flex items-baseline justify-between gap-2">
++          <span className="text-(--ui-text-secondary)">{copy.weekToDate}</span>
++          <span className="tabular-nums">{formatCny(spend.week.costUsd)}</span>
++        </div>
++        <div className="flex items-baseline justify-between gap-2">
++          <span className="text-(--ui-text-secondary)">{copy.monthToDate}</span>
++          <span className="tabular-nums">{formatCny(spend.month.costUsd)}</span>
++        </div>
++      </div>
++      <div className="mt-1 mb-3 text-(--ui-text-secondary)">{copy.rateNote}</div>
++      <div className="mb-1 font-medium">{copy.history}</div>
++      {spend.days.length === 0 ? (
++        <div className="mb-3 text-(--ui-text-secondary)">{copy.historyEmpty}</div>
++      ) : (
++        <div className="mb-3 max-h-40 overflow-y-auto">
++          {spend.days.map(day => (
++            <div className="flex items-center gap-2" key={day.date}>
++              <span className="tabular-nums text-(--ui-text-secondary)">{day.date.slice(5)}</span>
++              <span className="h-1.5 flex-1 bg-(--ui-border)">
++                <span
++                  className="block h-full bg-(--ui-accent)"
++                  style={{ width: `${spend.peak > 0 ? Math.max(2, (day.costUsd / spend.peak) * 100) : 0}%` }}
++                />
++              </span>
++              <span className="tabular-nums">{formatCny(day.costUsd)}</span>
++            </div>
++          ))}
++        </div>
++      )}
 +      <div className="mb-1 font-medium">{copy.perRound}</div>
 +      {rounds.length === 0 ? (
 +        <div className="text-(--ui-text-secondary)">{copy.empty}</div>
@@ -123,7 +179,7 @@ index 0000000..d67fa59
 +  )
 +}
 diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-index a4081e9..613ead3 100644
+index bd2364c..fba66eb 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 @@ -4,6 +4,7 @@ import { useCallback, useMemo } from 'react'
@@ -143,7 +199,7 @@ index a4081e9..613ead3 100644
  import { useStoreSelector } from '@/lib/use-session-slice'
  import { cn } from '@/lib/utils'
  import { resolveVersionStatus } from '@/lib/version-status'
-@@ -225,6 +226,7 @@ export function useStatusbarItems({
+@@ -224,6 +225,7 @@ export function useStatusbarItems({
  
    const contextUsage = useMemo(() => usageContextLabel(currentUsage), [currentUsage])
    const contextBar = useMemo(() => contextBarLabel(currentUsage), [currentUsage])
@@ -151,7 +207,7 @@ index a4081e9..613ead3 100644
  
    const publishContextUsage = useCallback(
      (snapshot: Pick<UsageStats, 'context_max' | 'context_percent' | 'context_used'>) => {
-@@ -542,6 +544,16 @@ export function useStatusbarItems({
+@@ -539,6 +541,16 @@ export function useStatusbarItems({
          toggleLabel: copy.toggleContextUsage,
          variant: 'menu'
        },
@@ -168,7 +224,7 @@ index a4081e9..613ead3 100644
        {
          detail: <LiveDuration since={sessionStartedAt} />,
          hidden: !sessionStartedAt,
-@@ -578,6 +590,7 @@ export function useStatusbarItems({
+@@ -575,6 +587,7 @@ export function useStatusbarItems({
        clientVersionItem,
        contextBar,
        contextUsage,
@@ -177,10 +233,10 @@ index a4081e9..613ead3 100644
        currentUsage,
        publishContextUsage,
 diff --git a/apps/desktop/src/i18n/ar.ts b/apps/desktop/src/i18n/ar.ts
-index 6091c91..678255b 100644
+index 8101d23..918959c 100644
 --- a/apps/desktop/src/i18n/ar.ts
 +++ b/apps/desktop/src/i18n/ar.ts
-@@ -2058,6 +2058,20 @@ export const ar = defineLocale({
+@@ -2058,6 +2058,26 @@ export const ar = defineLocale({
        messagingPlatforms: 'منصات المراسلة'
      },
      statusbar: {
@@ -191,18 +247,24 @@ index 6091c91..678255b 100644
 +        cacheWrite: 'كتابة الكاش',
 +        costUnknown: '—',
 +        empty: 'لا توجد جولات مسجلة بعد',
++        history: 'السجل اليومي',
++        historyEmpty: 'لا يوجد سجل بعد',
 +        input: 'إدخال',
++        monthToDate: 'هذا الشهر',
 +        output: 'إخراج',
 +        perRound: 'لكل جولة',
++        rateNote: 'اليوان مقدر بسعر 6.8',
 +        round: 'جولة',
++        spend: 'الإنفاق',
 +        title: 'تكلفة المحادثة',
-+        totalCost: 'التكلفة الإجمالية'
++        totalCost: 'التكلفة الإجمالية',
++        weekToDate: 'هذا الأسبوع'
 +      },
        unknown: 'غير معروف',
        restart: 'إعادة تشغيل',
        update: 'تحديث',
 diff --git a/apps/desktop/src/i18n/en.ts b/apps/desktop/src/i18n/en.ts
-index fe764eb..28a39ca 100644
+index 1c61907..72025a3 100644
 --- a/apps/desktop/src/i18n/en.ts
 +++ b/apps/desktop/src/i18n/en.ts
 @@ -2474,6 +2474,7 @@ export const en: Translations = {
@@ -213,7 +275,7 @@ index fe764eb..28a39ca 100644
        toggleRunningTimer: 'Turn timer',
        toggleSessionTimer: 'Session timer',
        toggleTerminal: 'Terminal',
-@@ -2493,6 +2494,19 @@ export const en: Translations = {
+@@ -2493,6 +2494,25 @@ export const en: Translations = {
        openStarmap: 'Open memory graph',
        turnRunning: 'Running',
        contextUsage: 'Context usage',
@@ -223,21 +285,27 @@ index fe764eb..28a39ca 100644
 +        cacheWrite: 'Cache write',
 +        costUnknown: '—',
 +        empty: 'No rounds recorded yet',
++        history: 'Daily history',
++        historyEmpty: 'No history yet',
 +        input: 'Input',
++        monthToDate: 'Month to date',
 +        output: 'Output',
 +        perRound: 'Per round',
++        rateNote: 'CNY estimated at 6.8',
 +        round: 'Round',
++        spend: 'Spend',
 +        title: 'Conversation Cost',
-+        totalCost: 'Total cost'
++        totalCost: 'Total cost',
++        weekToDate: 'Week to date'
 +      },
        contextUsagePanel: {
          categories: {
            conversation: 'Conversation',
 diff --git a/apps/desktop/src/i18n/ja.ts b/apps/desktop/src/i18n/ja.ts
-index 16d5883..39d68a5 100644
+index a506e53..62bc640 100644
 --- a/apps/desktop/src/i18n/ja.ts
 +++ b/apps/desktop/src/i18n/ja.ts
-@@ -2322,6 +2322,20 @@ export const ja = defineLocale({
+@@ -2322,6 +2322,26 @@ export const ja = defineLocale({
        openStarmap: 'メモリグラフを開く',
        turnRunning: '実行中',
        contextUsage: 'コンテキスト使用状況',
@@ -248,18 +316,24 @@ index 16d5883..39d68a5 100644
 +        cacheWrite: 'キャッシュ書込',
 +        costUnknown: '—',
 +        empty: 'まだ記録がありません',
++        history: '日別履歴',
++        historyEmpty: '履歴はまだありません',
 +        input: '入力',
++        monthToDate: '今月',
 +        output: '出力',
 +        perRound: 'ターン別',
++        rateNote: '人民元は為替レート 6.8 で概算',
 +        round: 'ターン',
++        spend: '利用額',
 +        title: '会話コスト',
-+        totalCost: '合計コスト'
++        totalCost: '合計コスト',
++        weekToDate: '今週'
 +      },
        contextUsagePanel: {
          categories: {
            conversation: '会話',
 diff --git a/apps/desktop/src/i18n/types.ts b/apps/desktop/src/i18n/types.ts
-index b82feb4..209aadb 100644
+index b82feb4..e7243e9 100644
 --- a/apps/desktop/src/i18n/types.ts
 +++ b/apps/desktop/src/i18n/types.ts
 @@ -2077,6 +2077,7 @@ export interface Translations {
@@ -270,31 +344,37 @@ index b82feb4..209aadb 100644
        toggleRunningTimer: string
        toggleSessionTimer: string
        toggleTerminal: string
-@@ -2096,6 +2097,19 @@ export interface Translations {
+@@ -2096,6 +2097,25 @@ export interface Translations {
        openStarmap: string
        turnRunning: string
        contextUsage: string
 +      costUsagePanel: {
-+        cacheHitRate: string
-+        cacheRead: string
-+        cacheWrite: string
-+        costUnknown: string
-+        empty: string
-+        input: string
-+        output: string
-+        perRound: string
-+        round: string
-+        title: string
-+        totalCost: string
++        cacheHitRate: string,
++        cacheRead: string,
++        cacheWrite: string,
++        costUnknown: string,
++        empty: string,
++        history: string,
++        historyEmpty: string,
++        input: string,
++        monthToDate: string,
++        output: string,
++        perRound: string,
++        rateNote: string,
++        round: string,
++        spend: string,
++        title: string,
++        totalCost: string,
++        weekToDate: string
 +      }
        contextUsagePanel: {
          categories: {
            conversation: string
 diff --git a/apps/desktop/src/i18n/zh-hant.ts b/apps/desktop/src/i18n/zh-hant.ts
-index 31a0b62..066095f 100644
+index 8e92261..fc1762d 100644
 --- a/apps/desktop/src/i18n/zh-hant.ts
 +++ b/apps/desktop/src/i18n/zh-hant.ts
-@@ -2245,6 +2245,20 @@ export const zhHant = defineLocale({
+@@ -2245,6 +2245,26 @@ export const zhHant = defineLocale({
        openStarmap: '開啟記憶圖譜',
        turnRunning: '執行中',
        contextUsage: '上下文使用量',
@@ -305,18 +385,24 @@ index 31a0b62..066095f 100644
 +        cacheWrite: '快取寫入',
 +        costUnknown: '—',
 +        empty: '尚無輪次記錄',
++        history: '歷史用量',
++        historyEmpty: '尚無歷史紀錄',
 +        input: '輸入',
++        monthToDate: '本月',
 +        output: '輸出',
 +        perRound: '每輪明細',
++        rateNote: '人民幣按匯率 6.8 估算',
 +        round: '輪次',
++        spend: '用量合計',
 +        title: '對話成本',
-+        totalCost: '總成本'
++        totalCost: '總成本',
++        weekToDate: '本週'
 +      },
        contextUsagePanel: {
          categories: {
            conversation: '對話',
 diff --git a/apps/desktop/src/i18n/zh.ts b/apps/desktop/src/i18n/zh.ts
-index 10b4727..8fd592f 100644
+index 75074ab..4e6efe5 100644
 --- a/apps/desktop/src/i18n/zh.ts
 +++ b/apps/desktop/src/i18n/zh.ts
 @@ -2655,6 +2655,7 @@ export const zh: Translations = {
@@ -327,7 +413,7 @@ index 10b4727..8fd592f 100644
        toggleRunningTimer: '回合计时',
        toggleSessionTimer: '会话计时',
        toggleTerminal: '终端',
-@@ -2674,6 +2675,19 @@ export const zh: Translations = {
+@@ -2674,6 +2675,25 @@ export const zh: Translations = {
        openStarmap: '打开记忆图谱',
        turnRunning: '运行中',
        contextUsage: '上下文用量',
@@ -337,12 +423,18 @@ index 10b4727..8fd592f 100644
 +        cacheWrite: '缓存写入',
 +        costUnknown: '—',
 +        empty: '尚无轮次记录',
++        history: '历史用量',
++        historyEmpty: '尚无历史记录',
 +        input: '输入',
++        monthToDate: '本月',
 +        output: '输出',
 +        perRound: '每轮明细',
++        rateNote: '人民币按汇率 6.8 估算',
 +        round: '轮次',
++        spend: '用量合计',
 +        title: '对话成本',
-+        totalCost: '总成本'
++        totalCost: '总成本',
++        weekToDate: '本周'
 +      },
        contextUsagePanel: {
          categories: {
@@ -368,14 +460,427 @@ index 0c0d225..76fbaa0 100644
  export function contextBarLabel(usage: UsageStats): string {
    if (!usage.context_max) {
      return ''
-diff --git a/apps/desktop/src/store/usage-rounds.ts b/apps/desktop/src/store/usage-rounds.ts
+diff --git a/apps/desktop/src/store/usage-ledger.test.ts b/apps/desktop/src/store/usage-ledger.test.ts
 new file mode 100644
-index 0000000..1dd34c4
+index 0000000..5c48482
 --- /dev/null
-+++ b/apps/desktop/src/store/usage-rounds.ts
-@@ -0,0 +1,74 @@
++++ b/apps/desktop/src/store/usage-ledger.test.ts
+@@ -0,0 +1,192 @@
++import { beforeEach, describe, expect, it } from 'vitest'
++
++import {
++  $usageLedger,
++  dayKey,
++  formatCny,
++  recentDays,
++  recordSpend,
++  reloadUsageLedger,
++  resetUsageLedger,
++  RETAINED_DAYS_FOR_TEST,
++  startOfMonthKey,
++  startOfWeekKey,
++  STORAGE_KEY,
++  sumSince,
++  USD_TO_CNY
++} from './usage-ledger'
++
++const spend = (costUsd: number) => ({ costUsd, input: 10, output: 5 })
++
++// Local-time constructor on purpose: the ledger keys by local day, so a UTC
++// literal would silently test a different day than the code produces.
++const at = (year: number, month: number, day: number) => new Date(year, month - 1, day, 12)
++
++beforeEach(() => {
++  window.localStorage.clear()
++  resetUsageLedger()
++})
++
++describe('day keys', () => {
++  it('keys by local calendar day, not UTC', () => {
++    // 23:30 local on the 6th is already the 7th in UTC east of Greenwich.
++    expect(dayKey(new Date(2026, 7, 6, 23, 30))).toBe('2026-08-06')
++  })
++
++  it('zero-pads so keys sort lexically as dates', () => {
++    expect(dayKey(at(2026, 1, 9))).toBe('2026-01-09')
++    expect(dayKey(at(2026, 1, 9)) < dayKey(at(2026, 1, 10))).toBe(true)
++    expect(dayKey(at(2026, 9, 1)) < dayKey(at(2026, 10, 1))).toBe(true)
++  })
++})
++
++describe('week and month boundaries', () => {
++  it('starts the week on Monday', () => {
++    // 2026-08-06 is a Thursday.
++    expect(startOfWeekKey(at(2026, 8, 6))).toBe('2026-08-03')
++  })
++
++  it('treats Monday as its own week start', () => {
++    expect(startOfWeekKey(at(2026, 8, 3))).toBe('2026-08-03')
++  })
++
++  it('keeps Sunday in the week that began the previous Monday', () => {
++    // The trap: Date.getDay() calls Sunday 0, which would jump a week forward.
++    expect(startOfWeekKey(at(2026, 8, 9))).toBe('2026-08-03')
++  })
++
++  it('walks back across a month edge', () => {
++    // 2026-08-01 is a Saturday, so its week began in July.
++    expect(startOfWeekKey(at(2026, 8, 1))).toBe('2026-07-27')
++  })
++
++  it('starts the month on the first', () => {
++    expect(startOfMonthKey(at(2026, 8, 6))).toBe('2026-08-01')
++  })
++})
++
++describe('recording spend', () => {
++  it('accumulates repeated spend into one day bucket', () => {
++    recordSpend(spend(1), at(2026, 8, 6))
++    recordSpend(spend(2), at(2026, 8, 6))
++
++    const ledger = $usageLedger.get()
++
++    expect(Object.keys(ledger)).toEqual(['2026-08-06'])
++    expect(ledger['2026-08-06'].costUsd).toBe(3)
++    expect(ledger['2026-08-06'].input).toBe(20)
++  })
++
++  it('keeps separate days apart', () => {
++    recordSpend(spend(1), at(2026, 8, 5))
++    recordSpend(spend(2), at(2026, 8, 6))
++
++    expect(Object.keys($usageLedger.get()).sort()).toEqual(['2026-08-05', '2026-08-06'])
++  })
++
++  it('ignores empty deltas rather than banking a zero day', () => {
++    recordSpend({ costUsd: 0, input: 0, output: 0 }, at(2026, 8, 6))
++
++    expect($usageLedger.get()).toEqual({})
++  })
++
++  it('ignores negative and non-finite values instead of corrupting the total', () => {
++    recordSpend({ costUsd: Number.NaN, input: -5, output: 7 }, at(2026, 8, 6))
++
++    const day = $usageLedger.get()['2026-08-06']
++
++    expect(day.costUsd).toBe(0)
++    expect(day.input).toBe(0)
++    expect(day.output).toBe(7)
++  })
++
++  it('survives a restart by way of localStorage', () => {
++    recordSpend(spend(4), at(2026, 8, 6))
++    $usageLedger.set({})
++    reloadUsageLedger()
++
++    expect($usageLedger.get()['2026-08-06'].costUsd).toBe(4)
++  })
++})
++
++describe('totals', () => {
++  it('sums only days at or after the boundary', () => {
++    recordSpend(spend(1), at(2026, 8, 2))
++    recordSpend(spend(2), at(2026, 8, 3))
++    recordSpend(spend(4), at(2026, 8, 6))
++
++    // Week beginning Monday 2026-08-03 excludes the Sunday before it.
++    expect(sumSince($usageLedger.get(), '2026-08-03').costUsd).toBe(6)
++    expect(sumSince($usageLedger.get(), '2026-08-01').costUsd).toBe(7)
++  })
++
++  it('excludes last month from the month to date', () => {
++    recordSpend(spend(9), at(2026, 7, 31))
++    recordSpend(spend(1), at(2026, 8, 1))
++
++    expect(sumSince($usageLedger.get(), startOfMonthKey(at(2026, 8, 6))).costUsd).toBe(1)
++  })
++
++  it('returns zeroes for an empty ledger', () => {
++    expect(sumSince({}, '2026-08-01')).toEqual({ costUsd: 0, input: 0, output: 0 })
++  })
++})
++
++describe('history', () => {
++  it('lists most recent first and honours the limit', () => {
++    recordSpend(spend(1), at(2026, 8, 4))
++    recordSpend(spend(2), at(2026, 8, 5))
++    recordSpend(spend(3), at(2026, 8, 6))
++
++    expect(recentDays($usageLedger.get(), 2).map(day => day.date)).toEqual(['2026-08-06', '2026-08-05'])
++  })
++
++  it('prunes beyond the retention window, keeping the newest days', () => {
++    const overflow = 3
++    const start = new Date(2025, 0, 1)
++
++    for (let index = 0; index < RETAINED_DAYS_FOR_TEST + overflow; index += 1) {
++      const day = new Date(start)
++
++      day.setDate(day.getDate() + index)
++      recordSpend(spend(1), day)
++    }
++
++    const keys = Object.keys($usageLedger.get()).sort()
++    const newest = new Date(start)
++
++    newest.setDate(newest.getDate() + RETAINED_DAYS_FOR_TEST + overflow - 1)
++
++    expect(keys).toHaveLength(RETAINED_DAYS_FOR_TEST)
++    expect(keys[keys.length - 1]).toBe(dayKey(newest))
++    expect(keys[0]).toBe(dayKey(new Date(2025, 0, 1 + overflow)))
++  })
++})
++
++describe('resilience', () => {
++  it('reads a corrupt ledger as empty instead of throwing', () => {
++    window.localStorage.setItem(STORAGE_KEY, 'not json at all')
++    reloadUsageLedger()
++
++    expect($usageLedger.get()).toEqual({})
++  })
++
++  it('drops entries that are not dated buckets', () => {
++    window.localStorage.setItem(
++      STORAGE_KEY,
++      JSON.stringify({ '2026-08-06': { costUsd: 2, input: 1, output: 1 }, nonsense: { costUsd: 5 } })
++    )
++    reloadUsageLedger()
++
++    expect(Object.keys($usageLedger.get())).toEqual(['2026-08-06'])
++  })
++})
++
++describe('currency', () => {
++  it('converts at the ruled rate and always shows two decimals', () => {
++    expect(USD_TO_CNY).toBe(6.8)
++    expect(formatCny(1)).toBe('¥6.80')
++    expect(formatCny(0)).toBe('¥0.00')
++    expect(formatCny(2.5)).toBe('¥17.00')
++  })
++})
+diff --git a/apps/desktop/src/store/usage-ledger.ts b/apps/desktop/src/store/usage-ledger.ts
+new file mode 100644
+index 0000000..f8216c9
+--- /dev/null
++++ b/apps/desktop/src/store/usage-ledger.ts
+@@ -0,0 +1,208 @@
 +import { atom } from 'nanostores'
 +
++/**
++ * Persistent daily spend ledger behind the week / month / history views.
++ *
++ * The per-round ledger in `usage-rounds` lives in memory and dies with the
++ * app; "this week" and "this month" have to outlive restarts, so this store
++ * keeps one bucket per calendar day in localStorage and never holds raw
++ * per-round rows. Buckets are keyed by *local* date: the keeper reads these
++ * numbers as Beijing days, and a UTC key would roll the day over at 08:00.
++ *
++ * Feeding happens in `usage-rounds.recordCumulativeUsage`, which already
++ * turns the gateway's cumulative snapshots into per-round deltas and
++ * deliberately skips the first snapshot of a resumed session. That skip is
++ * what keeps this ledger honest across restarts: a resumed session reports
++ * usage that earlier runs already banked, and counting it again would
++ * inflate every total.
++ */
++export interface LedgerDay {
++  costUsd: number
++  date: string
++  input: number
++  output: number
++}
++
++export interface LedgerTotals {
++  costUsd: number
++  input: number
++  output: number
++}
++
++/**
++ * USD -> CNY for display only (keeper's ruling, 2026-08-05: "estimate at 6.8").
++ * Upstream prices every model in USD; nothing downstream reads this back, so a
++ * fixed rate is a labelling choice rather than an accounting one. The panel
++ * says so next to the numbers — an unlabelled ¥ would read as settled fact.
++ */
++export const USD_TO_CNY = 6.8
++
++export const STORAGE_KEY = 'black-pool:usage-ledger'
++
++/** ~13 months: long enough to compare a month against last year's, bounded enough to stay small. */
++const RETAINED_DAYS = 400
++
++const pad = (value: number): string => String(value).padStart(2, '0')
++
++/** Local calendar day, not UTC — see the store comment. */
++export function dayKey(at: Date): string {
++  return `${at.getFullYear()}-${pad(at.getMonth() + 1)}-${pad(at.getDate())}`
++}
++
++/** Monday-start week, matching how the keeper reads a work week. */
++export function startOfWeekKey(at: Date): string {
++  const start = new Date(at.getFullYear(), at.getMonth(), at.getDate())
++  const weekday = (start.getDay() + 6) % 7
++
++  start.setDate(start.getDate() - weekday)
++
++  return dayKey(start)
++}
++
++export function startOfMonthKey(at: Date): string {
++  return `${at.getFullYear()}-${pad(at.getMonth() + 1)}-01`
++}
++
++const num = (value: unknown): number => (typeof value === 'number' && Number.isFinite(value) && value > 0 ? value : 0)
++
++function parseLedger(raw: null | string): Record<string, LedgerDay> {
++  if (!raw) {
++    return {}
++  }
++
++  try {
++    const parsed: unknown = JSON.parse(raw)
++
++    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
++      return {}
++    }
++
++    const out: Record<string, LedgerDay> = {}
++
++    for (const [date, value] of Object.entries(parsed as Record<string, unknown>)) {
++      if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !value || typeof value !== 'object') {
++        continue
++      }
++
++      const day = value as Partial<LedgerDay>
++
++      out[date] = {
++        costUsd: num(day.costUsd),
++        date,
++        input: num(day.input),
++        output: num(day.output)
++      }
++    }
++
++    return out
++  } catch {
++    // A corrupt ledger is a display problem, never a reason to break the app.
++    return {}
++  }
++}
++
++function readStored(): Record<string, LedgerDay> {
++  if (typeof window === 'undefined') {
++    return {}
++  }
++
++  try {
++    return parseLedger(window.localStorage.getItem(STORAGE_KEY))
++  } catch {
++    return {}
++  }
++}
++
++function prune(ledger: Record<string, LedgerDay>): Record<string, LedgerDay> {
++  const keys = Object.keys(ledger).sort()
++
++  if (keys.length <= RETAINED_DAYS) {
++    return ledger
++  }
++
++  const kept: Record<string, LedgerDay> = {}
++
++  for (const key of keys.slice(-RETAINED_DAYS)) {
++    kept[key] = ledger[key]
++  }
++
++  return kept
++}
++
++export const $usageLedger = atom<Record<string, LedgerDay>>(readStored())
++
++function persist(ledger: Record<string, LedgerDay>): void {
++  $usageLedger.set(ledger)
++
++  if (typeof window === 'undefined') {
++    return
++  }
++
++  try {
++    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(ledger))
++  } catch {
++    // Quota or a locked-down profile: the in-memory atom still drives this session.
++  }
++}
++
++export function recordSpend(delta: Pick<LedgerDay, 'costUsd' | 'input' | 'output'>, at: Date = new Date()): void {
++  const costUsd = num(delta.costUsd)
++  const input = num(delta.input)
++  const output = num(delta.output)
++
++  if (costUsd === 0 && input === 0 && output === 0) {
++    return
++  }
++
++  const date = dayKey(at)
++  const ledger = { ...$usageLedger.get() }
++  const existing = ledger[date]
++
++  ledger[date] = {
++    costUsd: (existing?.costUsd ?? 0) + costUsd,
++    date,
++    input: (existing?.input ?? 0) + input,
++    output: (existing?.output ?? 0) + output
++  }
++
++  persist(prune(ledger))
++}
++
++/** Inclusive lower bound; keys are ISO-ish so lexical order is date order. */
++export function sumSince(ledger: Record<string, LedgerDay>, fromKey: string): LedgerTotals {
++  const totals: LedgerTotals = { costUsd: 0, input: 0, output: 0 }
++
++  for (const day of Object.values(ledger)) {
++    if (day.date >= fromKey) {
++      totals.costUsd += day.costUsd
++      totals.input += day.input
++      totals.output += day.output
++    }
++  }
++
++  return totals
++}
++
++/** Most recent first, days with no spend omitted. */
++export function recentDays(ledger: Record<string, LedgerDay>, limit: number): LedgerDay[] {
++  return Object.values(ledger)
++    .sort((a, b) => (a.date < b.date ? 1 : -1))
++    .slice(0, limit)
++}
++
++export function formatCny(costUsd: number): string {
++  return `¥${(costUsd * USD_TO_CNY).toFixed(2)}`
++}
++
++/** Test seam: drop everything, in memory and on disk. */
++export function resetUsageLedger(): void {
++  persist({})
++}
++
++/** Re-read from disk — the seam a second window would need, and what the tests drive. */
++export function reloadUsageLedger(): void {
++  $usageLedger.set(readStored())
++}
++
++/** Retention is an implementation detail everywhere except the test that guards it. */
++export const RETAINED_DAYS_FOR_TEST = RETAINED_DAYS
+diff --git a/apps/desktop/src/store/usage-rounds.ts b/apps/desktop/src/store/usage-rounds.ts
+new file mode 100644
+index 0000000..c1d4426
+--- /dev/null
++++ b/apps/desktop/src/store/usage-rounds.ts
+@@ -0,0 +1,79 @@
++import { atom } from 'nanostores'
++
++import { recordSpend } from '@/store/usage-ledger'
 +import type { UsageStats } from '@/types/hermes'
 +
 +/**
@@ -442,6 +947,10 @@ index 0000000..1dd34c4
 +    return
 +  }
 +
++  // Same delta, two ledgers: rounds are this session's detail, spend is the
++  // cross-restart daily total behind the week / month / history views.
++  recordSpend(delta)
++
 +  const map = $usageRounds.get()
 +  const existing = map[sessionId] ?? []
 +  delta.turn = (existing[existing.length - 1]?.turn ?? 0) + 1
@@ -449,7 +958,7 @@ index 0000000..1dd34c4
 +  $usageRounds.set({ ...map, [sessionId]: rounds })
 +}
 diff --git a/apps/desktop/src/types/hermes.ts b/apps/desktop/src/types/hermes.ts
-index bc1fb5c..c3a1358 100644
+index 6f35a02..6d432a2 100644
 --- a/apps/desktop/src/types/hermes.ts
 +++ b/apps/desktop/src/types/hermes.ts
 @@ -632,10 +632,13 @@ export interface SessionRuntimeInfo {

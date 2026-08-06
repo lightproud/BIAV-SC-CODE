@@ -254,6 +254,33 @@ def test_rebrand_check_matches_committed_patches():
     )
 
 
+def test_cost_panel_patch_sentinels():
+    """成本面板特性补丁的能力哨兵（守密人 2026-08-05 追加周 / 月 / 历史 + 人民币）。
+
+    此补丁是**人工维护**的（不像换装补丁由规则引擎重出），移 pin 重放时最容易
+    悄悄掉 hunk。故把每项能力钉一个锚：跨会话持久化的日台账、周一为周首、
+    本地日历日键、6.8 汇率，任一消失即红。
+
+    汇率与周首刻意钉死在测试里：二者都是守密人的口径裁定，不是实现细节——
+    改它们应当先改裁定、再改测试，而不是改了实现测试还绿。
+    """
+    text = (SUB / "patches" / "conversation-cost-panel.patch").read_text(encoding="utf-8")
+    sentinels = {
+        "跨会话日台账（周/月/历史三视图的底子）": "black-pool:usage-ledger",
+        "人民币汇率 6.8（守密人口径）": "export const USD_TO_CNY = 6.8",
+        "周一为周首": "const weekday = (start.getDay() + 6) % 7",
+        "本地日历日键（非 UTC，否则北京日 08:00 翻篇）": "at.getFullYear()}-${pad(at.getMonth() + 1)}",
+        "轮次增量同时喂日台账": "recordSpend(delta)",
+        "周合计视图": "weekToDate",
+        "月合计视图": "monthToDate",
+        "历史用量视图": "historyEmpty",
+        "汇率估算标注（不得让 ¥ 读作既成事实）": "rateNote",
+        "台账单测随补丁同行": "usage-ledger.test.ts",
+    }
+    missing = [k for k, v in sentinels.items() if v not in text]
+    assert not missing, f"成本面板能力从补丁消失（移 pin 重放掉 hunk？）: {missing}"
+
+
 def test_plugin_author_attribution_never_rewritten():
     """归属行豁免（守密人 2026-08-04 裁定「回退」）：`author:` 不进换装射程。
 

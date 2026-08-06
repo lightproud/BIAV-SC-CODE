@@ -44633,7 +44633,7 @@ index e618534..0105556 100644
    // the choice sticks like any manual pick.
    const pendingSkin = useStore($pendingSkinApply)
 diff --git a/apps/desktop/src/themes/presets.ts b/apps/desktop/src/themes/presets.ts
-index 4643818..fa548f4 100644
+index 4643818..08ac7a4 100644
 --- a/apps/desktop/src/themes/presets.ts
 +++ b/apps/desktop/src/themes/presets.ts
 @@ -27,7 +27,7 @@ const nousTint = (pct: number) => `color-mix(in srgb, ${NOUS_BLUE} ${pct}%, #FFF
@@ -44645,44 +44645,54 @@ index 4643818..fa548f4 100644
   * glass geometry neutral, then lets the old bb/gui blue and psyche cream
   * return as accent seeds.
   */
-@@ -276,7 +276,72 @@ export const slateTheme: DesktopTheme = {
+@@ -276,7 +276,82 @@ export const slateTheme: DesktopTheme = {
    }
  }
  
-+/** Black Pool（黑池）— 鎏金双貌：暖黑之金与米白之金（守密人 2026-08-03 配色裁定；
-+ * 2026-08-04 浅色降饱和裁定：色相 44° 与明度不变，表面层感知色度压至米白纸级
-+ * （底 okC≈0.012 / 中间层 ≈0.02 / 边框输入 ≈0.03），金三件与文字色原封——
-+ * 复刻深色模式「金作点缀」纪律，根治浅色「越深越黄」的表面层超标。 */
++/** Black Pool（黑池）— 鎏金双貌：暖黑之金与纸白之金。
++ *
++ * 深色为默认外观（守密人 2026-08-05 裁定），darkColors 自 2026-08-03 配色裁定起未动。
++ *
++ * 浅色于 2026-08-05 整体重设计为「甲 · 纸白中性」（守密人自三方案中裁定）。此前两版
++ * （2026-08-03 米白、2026-08-04 降饱和）都在同一个坑里：底 / 卡 / 墨全落在 44° 黄调，
++ * 与金只剩明度差、没有色相差，于是金不凸显、整体发土——与 style-guide v3.0
++ * 2026-07-12 对 #f7f3ea 的判词逐字相同，desktop 主题当时未跟上那次裁定。
++ *
++ * 甲案纪律：金以外的一切去黄提灰，金是画面唯一高饱和暖色。表面层退到中性灰白
++ * （色相残留 40° 上下、感知色度贴近纸张），金三件改走深金以在近白底上挣得对比
++ * （primary 4.8:1 / ring 3.8:1 / 墨 13.6:1 / 辅助 6.2:1，均对 background 测）。
++ * 层级方向亦随之翻转：卡片 / 侧栏 / 状态栏由「比底亮」改为「比底暗」的凹面——
++ * 底已近白，再往上抬无处可去，凹面才分得出层。 */
 +export const blackPoolTheme: DesktopTheme = {
 +  name: 'black-pool',
 +  label: 'Black Pool',
-+  description: '黑池金 — 暖黑与米白双貌',
++  description: '黑池金 — 暖黑与纸白双貌',
 +  colors: {
-+    background: '#F5F2E9',
-+    foreground: '#332B18',
-+    card: '#FAF8F2',
-+    cardForeground: '#332B18',
-+    muted: '#ECE8DB',
-+    mutedForeground: '#8C8063',
-+    popover: '#F8F5EE',
-+    popoverForeground: '#332B18',
-+    primary: '#C9A857',
-+    primaryForeground: '#241C07',
-+    secondary: '#EDE7D9',
-+    secondaryForeground: '#4A3F24',
-+    accent: '#E8E1CE',
-+    accentForeground: '#4A3C1C',
-+    border: '#D8D1BB',
-+    input: '#CFC7B0',
-+    ring: '#B08E35',
-+    midground: '#8F6F26',
-+    composerRing: '#B08E35',
++    background: '#FAF9F6',
++    foreground: '#2B2A27',
++    card: '#F1EFE9',
++    cardForeground: '#2B2A27',
++    muted: '#E9E6DE',
++    mutedForeground: '#605D55',
++    popover: '#F1EFE9',
++    popoverForeground: '#2B2A27',
++    primary: '#8C6A15',
++    primaryForeground: '#FDFCF9',
++    secondary: '#EDEBE4',
++    secondaryForeground: '#3D3A33',
++    accent: '#EAE7DF',
++    accentForeground: '#8C6A15',
++    border: '#DCDAD3',
++    input: '#CFCCC3',
++    ring: '#9A7A28',
++    midground: '#9A7A28',
++    composerRing: '#9A7A28',
 +    destructive: '#B4372E',
 +    destructiveForeground: '#FEF2F2',
-+    sidebarBackground: '#EFEBDE',
-+    sidebarBorder: '#DBD4BF',
-+    userBubble: '#EDE8D9',
-+    userBubbleBorder: '#D9D1B8'
++    sidebarBackground: '#F1EFE9',
++    sidebarBorder: '#DCDAD3',
++    userBubble: '#E9E6DE',
++    userBubbleBorder: '#D6D2C6'
 +  },
 +  darkColors: {
 +    background: '#171310',
@@ -44718,7 +44728,7 @@ index 4643818..fa548f4 100644
    nous: nousTheme,
    midnight: midnightTheme,
    ember: emberTheme,
-@@ -288,4 +353,4 @@ export const BUILTIN_THEMES: Record<string, DesktopTheme> = {
+@@ -288,4 +363,4 @@ export const BUILTIN_THEMES: Record<string, DesktopTheme> = {
  export const BUILTIN_THEME_LIST = Object.values(BUILTIN_THEMES)
  
  /** Skin used when nothing is persisted or the persisted name is retired. */
