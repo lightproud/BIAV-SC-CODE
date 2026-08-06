@@ -1,10 +1,55 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-06T02:22:50.699941+00:00",
+  "collected_at": "2026-08-06T05:48:56.077122+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 12,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-06T04:31:50+00:00",
+      "lang": "english",
+      "title": "[正面] The story is actually awesome. I just skip that ♥♥...",
+      "summary": "The story is actually awesome. I just skip that ♥♥♥♥ on every other gatcha but this one got me hooked. 1 problem is that there's alot of stuff the characters say that seems either censored to hide the whole picture or shrouded in some complex stuff you have to sit and read in the archives to fully understand. Some mechanics are also overly complex and it feels like you have to practice them again and again before you understand how they are supposed to work.",
+      "url": "https://steamcommunity.com/profiles/76561198160287702/recommended/3052450",
+      "author": "76561198160287702",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "The story is actually awesome. I just skip that ♥♥♥♥ on every other gatcha but this one got me hooked. 1 problem is that there's alot of stuff the characters say that seems either censored to hide the whole picture or shrouded in some complex stuff you have to sit and read in the archives to fully understand. Some mechanics are also overly complex and it feels like you have to practice them again and again before you understand how they are supposed to work.",
+      "timestamp_created": 1785990710,
+      "playtime_forever": 224
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-06T03:52:10+00:00",
+      "lang": "schinese",
+      "title": "[正面] 太肝了",
+      "summary": "太肝了",
+      "url": "https://steamcommunity.com/profiles/76561198691350115/recommended/3052450",
+      "author": "76561198691350115",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "太肝了",
+      "timestamp_created": 1785988330,
+      "playtime_forever": 2073
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-06T03:25:12+00:00",
+      "lang": "english",
+      "title": "[正面] I LOOOOVVVE EVERYTHING ABOUT THIS GAME, im kinda s...",
+      "summary": "I LOOOOVVVE EVERYTHING ABOUT THIS GAME, im kinda sad that there isnt much merch tho.. /(ㄒoㄒ)/~~",
+      "url": "https://steamcommunity.com/profiles/76561199834655867/recommended/3052450",
+      "author": "76561199834655867",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I LOOOOVVVE EVERYTHING ABOUT THIS GAME, im kinda sad that there isnt much merch tho.. /(ㄒoㄒ)/~~",
+      "timestamp_created": 1785986712,
+      "playtime_forever": 2158
+    },
     {
       "source": "steam",
       "time": "2026-08-06T00:18:30+00:00",
@@ -18,7 +63,7 @@
       "voted_up": true,
       "review": "best gacha i've played by a very long stretch in almost every aspect, very genuinely obsessed. Complex gameplay, beautiful art, lovable characters, great OST. Gacha + devs are generous enough that being f2p is more than easy.",
       "timestamp_created": 1785975510,
-      "playtime_forever": 4344
+      "playtime_forever": 4440
     },
     {
       "source": "steam",
@@ -63,7 +108,7 @@
       "voted_up": false,
       "review": "没有好的队伍玩不了，培养周期长",
       "timestamp_created": 1785938081,
-      "playtime_forever": 2130
+      "playtime_forever": 2136
     },
     {
       "source": "steam",
@@ -78,7 +123,7 @@
       "voted_up": false,
       "review": "為甚麼一個單機遊戲會有網路問題\n走一步、出一張牌都要等3~5秒有夠折磨",
       "timestamp_created": 1785937866,
-      "playtime_forever": 287
+      "playtime_forever": 396
     },
     {
       "source": "steam",
@@ -93,7 +138,7 @@
       "voted_up": true,
       "review": "总的来说把类杀戮尖塔游戏做成二游只会消磨玩家对这种玩法的热情，但话又说回来，游戏玩法关我剧情向玩家什么事？\r\n忘却前夜牛逼！\r\n数值牛逼！",
       "timestamp_created": 1785929028,
-      "playtime_forever": 1967
+      "playtime_forever": 2020
     },
     {
       "source": "steam",
@@ -138,22 +183,7 @@
       "voted_up": true,
       "review": "free game gacha",
       "timestamp_created": 1785919636,
-      "playtime_forever": 16216
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-05T04:43:12+00:00",
-      "lang": "english",
-      "title": "[负面] late game gets pretty boring, i won't last more th...",
-      "summary": "late game gets pretty boring, i won't last more than a year.",
-      "url": "https://steamcommunity.com/profiles/76561198268450144/recommended/3052450",
-      "author": "76561198268450144",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "late game gets pretty boring, i won't last more than a year.",
-      "timestamp_created": 1785904992,
-      "playtime_forever": 8163
+      "playtime_forever": 16369
     }
   ]
 }
