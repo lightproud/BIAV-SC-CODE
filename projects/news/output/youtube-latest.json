@@ -1,22 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-07T15:56:57.957844+00:00",
+  "collected_at": "2026-08-07T18:54:28.515867+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 19,
+  "item_count": 18,
   "items": [
-    {
-      "source": "youtube",
-      "time": "2026-08-07T08:07:22Z",
-      "lang": "",
-      "title": "도어쉐인 복각 뽑을까 말까 30초 최종요약 #morimens #망각전야 #게임",
-      "summary": "morimens #게임 #망각전야 #공략 디스코드 : https://discord.gg/TaDkgyQ35y 치지직 ...",
-      "url": "https://www.youtube.com/watch?v=xbeC-lGSNpM",
-      "author": "박현(Muyeong)",
-      "engagement": 707,
-      "media_url": "https://i.ytimg.com/vi/xbeC-lGSNpM/hqdefault.jpg",
-      "content_type": "video"
-    },
     {
       "source": "youtube",
       "time": "2026-08-07T15:16:40Z",
@@ -25,8 +13,20 @@
       "summary": "Don't know how long. Will be doing other stuff too.",
       "url": "https://www.youtube.com/watch?v=PxTOcyulGWs",
       "author": "Flares117",
-      "engagement": 698,
+      "engagement": 834,
       "media_url": "https://i.ytimg.com/vi/PxTOcyulGWs/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-07T08:07:22Z",
+      "lang": "",
+      "title": "도어쉐인 복각 뽑을까 말까 30초 최종요약 #morimens #망각전야 #게임",
+      "summary": "morimens #게임 #망각전야 #공략 디스코드 : https://discord.gg/TaDkgyQ35y 치지직 ...",
+      "url": "https://www.youtube.com/watch?v=xbeC-lGSNpM",
+      "author": "박현(Muyeong)",
+      "engagement": 765,
+      "media_url": "https://i.ytimg.com/vi/xbeC-lGSNpM/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -37,7 +37,7 @@
       "summary": "GooglePlay: https://bit.ly/morimensgoogle ✦ AppStore: https://apple.co/44LJBFO ✦ Steam: https://bit.ly/morimenssteam ...",
       "url": "https://www.youtube.com/watch?v=rtPSPloIAa8",
       "author": "Morimens",
-      "engagement": 323,
+      "engagement": 420,
       "media_url": "https://i.ytimg.com/vi/rtPSPloIAa8/hqdefault.jpg",
       "content_type": "video"
     },
@@ -49,20 +49,20 @@
       "summary": "GooglePlay: https://bit.ly/morimensgoogle ✦ AppStore: https://apple.co/44LJBFO ✦ Steam: https://bit.ly/morimenssteam ...",
       "url": "https://www.youtube.com/watch?v=0a8oPBZXwgk",
       "author": "Morimens",
-      "engagement": 70,
+      "engagement": 92,
       "media_url": "https://i.ytimg.com/vi/0a8oPBZXwgk/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-08-07T13:09:49Z",
+      "time": "2026-08-07T16:35:13Z",
       "lang": "",
       "title": "망각전야Morimens) (대리뽑,상담시청가능) 복각미리알아보기",
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=Uh_Y6XZLIrA",
       "author": "박현(Muyeong)",
-      "engagement": 59,
-      "media_url": "https://i.ytimg.com/vi/Uh_Y6XZLIrA/hqdefault_live.jpg",
+      "engagement": 72,
+      "media_url": "https://i.ytimg.com/vi/Uh_Y6XZLIrA/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -73,20 +73,8 @@
       "summary": "Steam：https://store.steampowered.com/app/3052450/Morimens/ ✦ 港澳新馬官網：https://morimens.qookkagames.com/ ✦ 台灣 ...",
       "url": "https://www.youtube.com/watch?v=gvBcbpSMYMo",
       "author": "Morimens",
-      "engagement": 55,
+      "engagement": 61,
       "media_url": "https://i.ytimg.com/vi/gvBcbpSMYMo/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-07T08:57:23Z",
-      "lang": "",
-      "title": "Wading the Crimson",
-      "summary": "Provided to YouTube by DistroKid Wading the Crimson · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Lotan: Cetarchon EP: ...",
-      "url": "https://www.youtube.com/watch?v=94IR-OTWJZA",
-      "author": "B.I.A.V. Studio - Topic",
-      "engagement": 26,
-      "media_url": "https://i.ytimg.com/vi/94IR-OTWJZA/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -97,8 +85,20 @@
       "summary": "忘却前夜 #忘却前夜Steam版 ジェンキン出てきただけでもうおぁああああってなったよね 忘却編また見たくなる作り流石 提供： ...",
       "url": "https://www.youtube.com/watch?v=lZQw1Urm0Ho",
       "author": "朝霧@ASGRgames",
-      "engagement": 26,
+      "engagement": 46,
       "media_url": "https://i.ytimg.com/vi/lZQw1Urm0Ho/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-07T08:57:23Z",
+      "lang": "",
+      "title": "Wading the Crimson",
+      "summary": "Provided to YouTube by DistroKid Wading the Crimson · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Lotan: Cetarchon EP: ...",
+      "url": "https://www.youtube.com/watch?v=94IR-OTWJZA",
+      "author": "B.I.A.V. Studio - Topic",
+      "engagement": 42,
+      "media_url": "https://i.ytimg.com/vi/94IR-OTWJZA/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -109,8 +109,20 @@
       "summary": "หากมีข้อมูลตกหล่น หรือเสียงไมล์แปลกๆต้องขออภัยด้วยนะครับ สามารถแชร์ทริกหรือวิธีการได้ที่ช่องคอมเม้นเลยนะคับ.",
       "url": "https://www.youtube.com/watch?v=ceaFfo6mBac",
       "author": "RandomWithEndfield",
-      "engagement": 15,
+      "engagement": 17,
       "media_url": "https://i.ytimg.com/vi/ceaFfo6mBac/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-07T14:31:34Z",
+      "lang": "",
+      "title": "Morimens Arc 2 H4-10 without gnoses 3",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=HaHN0itRZdQ",
+      "author": "Noir",
+      "engagement": 11,
+      "media_url": "https://i.ytimg.com/vi/HaHN0itRZdQ/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -127,62 +139,26 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-07T14:39:42Z",
-      "lang": "",
-      "title": "New ZZZ Endgame | WuWa 3.6? | More Morimens Chapter 2",
-      "summary": "We're doing stuff.",
-      "url": "https://www.youtube.com/watch?v=ywYD6u3Q_wo",
-      "author": "LemonadeGang",
-      "engagement": 9,
-      "media_url": "https://i.ytimg.com/vi/ywYD6u3Q_wo/hqdefault_live.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-07T14:31:34Z",
-      "lang": "",
-      "title": "Morimens Arc 2 H4-10 without gnoses 3",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=HaHN0itRZdQ",
-      "author": "Noir",
-      "engagement": 7,
-      "media_url": "https://i.ytimg.com/vi/HaHN0itRZdQ/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-08-07T10:00:06Z",
       "lang": "",
       "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 4:Alert V! 融災4-5 Boss戰的部分",
       "summary": "忘卻前夜#morimens 融災更新,8月3號~8月17日. Regional D-Effect Zone Update ( August 3-August 17). 4-5 原本是2-5的boss跟4-5 ...",
       "url": "https://www.youtube.com/watch?v=BlPNVL1k3q0",
       "author": "Noir",
-      "engagement": 6,
+      "engagement": 8,
       "media_url": "https://i.ytimg.com/vi/BlPNVL1k3q0/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-08-07T09:47:33Z",
+      "time": "2026-08-07T18:42:53Z",
       "lang": "",
-      "title": "Morimens astral reign final boss 3-10 Lord of Necrovia",
+      "title": "THAIS 🫦  Vous connaissez ? Jeu free sur steam 🎮 #game #morimens #darkfantasy #tsundere #jrdmushu",
       "summary": "",
-      "url": "https://www.youtube.com/watch?v=j1_cEUjFGEI",
-      "author": "Maddy Archer",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/j1_cEUjFGEI/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-07T09:45:03Z",
-      "lang": "",
-      "title": "Just chilling in Morimen and chatting",
-      "summary": "Made with Restream. Livestream on 30+ platforms at once via https://restream.io going to be playing through the new main story ...",
-      "url": "https://www.youtube.com/watch?v=d0bPy5Sr8V4",
-      "author": "EasilyImpressed",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/d0bPy5Sr8V4/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=00FJmh4giik",
+      "author": "Mushu",
+      "engagement": 7,
+      "media_url": "https://i.ytimg.com/vi/00FJmh4giik/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -193,8 +169,20 @@
       "summary": "앞부분은 그냥 편집 연습 같은 느낌... 핸드 카드 일부가 고정되는 버그가 신경 쓰이지만 리플레이를 여러번 다시 틀어봐도 계속 이러 ...",
       "url": "https://www.youtube.com/watch?v=iqc7MNVJ9wI",
       "author": "때까치",
-      "engagement": 1,
+      "engagement": 7,
       "media_url": "https://i.ytimg.com/vi/iqc7MNVJ9wI/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-07T09:47:33Z",
+      "lang": "",
+      "title": "Morimens astral reign final boss 3-10 Lord of Necrovia",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=j1_cEUjFGEI",
+      "author": "Maddy Archer",
+      "engagement": 3,
+      "media_url": "https://i.ytimg.com/vi/j1_cEUjFGEI/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -205,32 +193,32 @@
       "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
       "url": "https://www.youtube.com/watch?v=DPYKugqL94E",
       "author": "霏憂【ひゅう】",
-      "engagement": 1,
+      "engagement": 2,
       "media_url": "https://i.ytimg.com/vi/DPYKugqL94E/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-08-06T17:23:37Z",
+      "time": "2026-08-07T09:45:03Z",
       "lang": "",
-      "title": "【忘却前夜】高難度調査「H9-3」",
-      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
-      "url": "https://www.youtube.com/watch?v=kc48DBYIyuk",
-      "author": "霏憂【ひゅう】",
+      "title": "Just chilling in Morimen and chatting",
+      "summary": "Made with Restream. Livestream on 30+ platforms at once via https://restream.io going to be playing through the new main story ...",
+      "url": "https://www.youtube.com/watch?v=d0bPy5Sr8V4",
+      "author": "EasilyImpressed",
       "engagement": 1,
-      "media_url": "https://i.ytimg.com/vi/kc48DBYIyuk/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/d0bPy5Sr8V4/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-08-07T08:01:27Z",
+      "time": "2026-08-07T18:36:33Z",
       "lang": "",
-      "title": "Two hundred-twenty-fifth Stream: Morimens",
-      "summary": "Kick: https://kick.com/arkblight Twitch: https://www.twitch.tv/arkblight.",
-      "url": "https://www.youtube.com/watch?v=L58NvzmRhKA",
-      "author": "Arkblight",
+      "title": "[Morimens] Having fun with Uvhash and Mouchette (with Saya assist) in Traphase",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=bsIK9-yvbqM",
+      "author": "Aijisuku",
       "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/L58NvzmRhKA/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/bsIK9-yvbqM/hqdefault.jpg",
       "content_type": "video"
     }
   ]

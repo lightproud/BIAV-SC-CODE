@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-07T15:56:57.957844+00:00",
+  "collected_at": "2026-08-07T18:54:28.515867+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-07T16:06:02+00:00",
+      "lang": "thai",
+      "title": "[正面] 👍👍👍",
+      "summary": "👍👍👍",
+      "url": "https://steamcommunity.com/profiles/76561198966076984/recommended/3052450",
+      "author": "76561198966076984",
+      "engagement": 0,
+      "language": "thai",
+      "voted_up": true,
+      "review": "👍👍👍",
+      "timestamp_created": 1786118762,
+      "playtime_forever": 342
+    },
     {
       "source": "steam",
       "time": "2026-08-07T14:06:18+00:00",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "hope the game gets the recognition it deserves!! i love it",
       "timestamp_created": 1786095485,
-      "playtime_forever": 2284
+      "playtime_forever": 2312
     },
     {
       "source": "steam",
@@ -48,7 +63,7 @@
       "voted_up": true,
       "review": "怎么说呢，抛开厂商可能有的问题，这个游戏的画风我很喜欢，然后福利也好，剧情也算可观，玩法主要是卡牌，如果玩过卡厄斯梦境就知道大概玩法，不过还是有自己的特色，总之算是一款不错的游戏",
       "timestamp_created": 1786093595,
-      "playtime_forever": 498
+      "playtime_forever": 528
     },
     {
       "source": "steam",
