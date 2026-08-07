@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-07T18:54:28.515867+00:00",
+  "collected_at": "2026-08-07T21:38:30.288952+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 126,
+  "item_count": 125,
   "items": [
     {
       "source": "google_play",
@@ -23,16 +23,6 @@
       "summary": "absolute banger",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-3590fc1f-0851-4ce4-afd0-2e50ad50766a",
       "author": "Rara",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-16T00:51:37",
-      "lang": "en",
-      "title": "[Google Play 差评] ★1 Started off with a promising gender rati",
-      "summary": "Started off with a promising gender ratio, but now it's waifu-slop with lazy designs.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f3d961b6-7173-43e8-96b4-7d2736b72de2",
-      "author": "Anno Domini",
       "engagement": 2
     },
     {
@@ -263,6 +253,16 @@
       "summary": "非常好的游戏",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-fb35889a-9334-408f-b466-43051ac7e524",
       "author": "DARYL",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-06T19:04:20",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 I love this game.",
+      "summary": "I love this game.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-0610315c-aa13-485a-bd9e-ebd4e73f80e5",
+      "author": "Crown Light",
       "engagement": 0
     },
     {
@@ -883,16 +883,6 @@
       "summary": "story nya angst, TAPI GAME NYA BAGUS BANGET WOYYYY PEAKKKK",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-665ceb31-7a13-45f0-a915-2bff927ca33d",
       "author": "reisya aulia",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-08T20:51:31",
-      "lang": "id",
-      "title": "[Google Play 好评] ★5 gamenya bagus banget, dari segi grafik,",
-      "summary": "gamenya bagus banget, dari segi grafik, sistem gacha maupun alur, udah bagus semua. tapi menurut saya waktu di bannernya kurangin saja",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-8fd8b147-9f27-4595-b772-da5a4ee21f8b",
-      "author": "Baskara Putra",
       "engagement": 0
     },
     {
