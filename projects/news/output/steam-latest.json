@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-06T23:58:17.932090+00:00",
+  "collected_at": "2026-08-07T02:37:58.134609+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -109,21 +109,6 @@
       "review": "I LOOOOVVVE EVERYTHING ABOUT THIS GAME, im kinda sad that there isnt much merch tho.. /(ㄒoㄒ)/~~",
       "timestamp_created": 1785986712,
       "playtime_forever": 2226
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-06T00:18:30+00:00",
-      "lang": "english",
-      "title": "[正面] best gacha i've played by a very long stretch in a...",
-      "summary": "best gacha i've played by a very long stretch in almost every aspect, very genuinely obsessed. Complex gameplay, beautiful art, lovable characters, great OST. Gacha + devs are generous enough that being f2p is more than easy.",
-      "url": "https://steamcommunity.com/profiles/76561199751260464/recommended/3052450",
-      "author": "76561199751260464",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "best gacha i've played by a very long stretch in almost every aspect, very genuinely obsessed. Complex gameplay, beautiful art, lovable characters, great OST. Gacha + devs are generous enough that being f2p is more than easy.",
-      "timestamp_created": 1785975510,
-      "playtime_forever": 4714
     }
   ]
 }
