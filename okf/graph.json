@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-06",
+  "generated": "2026-08-07",
   "stats": {
     "nodes": 396,
-    "edges": 437
+    "edges": 431
   },
   "nodes": [
     {
@@ -4746,12 +4746,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/77923.md",
-      "rel": "提及:卡斯托尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15560.md",
       "rel": "提及:潘狄娅",
       "rel_type": "mention"
@@ -4764,20 +4758,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15575.md",
-      "rel": "提及:法洛思",
+      "target": "/characters/15579.md",
+      "rel": "提及:温柯尔",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15594.md",
-      "rel": "提及:凯刻斯",
+      "target": "/characters/15588.md",
+      "rel": "提及:艾尔瓦",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
       "rel_type": "mention"
     },
     {
@@ -4794,12 +4788,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15571.md",
-      "rel": "提及:珈伦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15593.md",
       "rel": "提及:詹金",
       "rel_type": "mention"
@@ -4808,6 +4796,24 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15581.md",
       "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15586.md",
+      "rel": "提及:旺达",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-google-play.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4842,18 +4848,6 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/77917.md",
       "rel": "提及:波吕克斯",
       "rel_type": "mention"
@@ -4866,12 +4860,6 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15591.md",
-      "rel": "提及:艾继丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
       "rel_type": "mention"
@@ -4880,12 +4868,6 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/15593.md",
-      "rel": "提及:詹金",
       "rel_type": "mention"
     },
     {
@@ -6264,12 +6246,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/77923.md",
-      "rel": "提及:卡斯托尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15560.md",
       "rel": "提及:潘狄娅",
       "rel_type": "mention"
@@ -6282,20 +6258,20 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15575.md",
-      "rel": "提及:法洛思",
+      "target": "/characters/15579.md",
+      "rel": "提及:温柯尔",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15594.md",
-      "rel": "提及:凯刻斯",
+      "target": "/characters/15588.md",
+      "rel": "提及:艾尔瓦",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
       "rel_type": "mention"
     },
     {
@@ -6312,12 +6288,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15571.md",
-      "rel": "提及:珈伦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15593.md",
       "rel": "提及:詹金",
       "rel_type": "mention"
@@ -6326,6 +6296,24 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15581.md",
       "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15586.md",
+      "rel": "提及:旺达",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/google_play.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6366,18 +6354,6 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/77917.md",
       "rel": "提及:波吕克斯",
       "rel_type": "mention"
@@ -6390,12 +6366,6 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15591.md",
-      "rel": "提及:艾继丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
       "rel_type": "mention"
@@ -6404,12 +6374,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/15593.md",
-      "rel": "提及:詹金",
       "rel_type": "mention"
     },
     {
