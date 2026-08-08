@@ -26,7 +26,9 @@ if not "%~1"=="" (
 )
 if not defined ZIP (
   echo 组装失败：..\releases\ 里没有 zip 包。先从银芯 Release 下载入库。
-  echo 详情见 %LOG% & pause & exit /b 1
+  echo 详情见 %LOG%
+  pause
+  exit /b 1
 )
 if not exist "%ZIP%" (
   echo 组装失败：指定的包不存在 %ZIP%
@@ -43,7 +45,9 @@ if exist "%DEVROOT%\releases\CHECKSUMS.txt" (
   findstr /i /c:"!SHA!" "%DEVROOT%\releases\CHECKSUMS.txt" >nul || (
     echo 组装失败：SHA-256 与 CHECKSUMS.txt 不符（包损坏或未登记）。
     echo   实测 !SHA! >> "%LOG%"
-    echo 详情见 %LOG% & pause & exit /b 1
+    echo 详情见 %LOG%
+    pause
+    exit /b 1
   )
   echo 验货通过：SHA-256 已比对 CHECKSUMS.txt
 ) else (
@@ -56,7 +60,10 @@ if exist "%DEVROOT%\staging" rd /s /q "%DEVROOT%\staging"
 mkdir "%DEVROOT%\staging"
 echo 解压中（约 1 分钟）...
 tar -xf "%ZIP%" -C "%DEVROOT%\staging" || (
-  echo 组装失败：解压出错。& echo 详情见 %LOG% & pause & exit /b 1
+  echo 组装失败：解压出错。
+  echo 详情见 %LOG%
+  pause
+  exit /b 1
 )
 set "B=%DEVROOT%\staging\BlackPool"
 if not exist "%B%\launcher.cmd" (
@@ -74,7 +81,9 @@ rem (zh comment moved to RUNBOOK - 65001 parser desync)
 set "PYHOME="
 for /d %%D in ("%B%\python\cpython-*") do set "PYHOME=%%~fD"
 if not defined PYHOME (
-  echo 组装失败：包内 python\cpython-* 缺失。& pause & exit /b 1
+  echo 组装失败：包内 python\cpython-* 缺失。
+  pause
+  exit /b 1
 )
 
 rem Injection phase (patches/config/plugins/skills/overlay) + assembly docs
@@ -85,7 +94,9 @@ set "PYTHONIOENCODING=utf-8"
 "%PYHOME%\python.exe" "%SD%assemble_inject.py" --devroot "%DEVROOT%" --bundle "%B%" --zip "%ZIP%" --sha "!SHA!"
 if errorlevel 1 (
   echo 组装失败：注入/清单阶段出错（补丁上下文不匹配或拷贝失败）。
-  echo 详情见 %LOG% & pause & exit /b 1
+  echo 详情见 %LOG%
+  pause
+  exit /b 1
 )
 
 echo.

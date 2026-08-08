@@ -132,9 +132,10 @@ def image_running(image_name: str) -> bool:
     try:
         out = subprocess.run(
             ["tasklist", "/FI", f"IMAGENAME eq {image_name}", "/NH"],
-            capture_output=True, text=True, timeout=30,
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            timeout=30,
         ).stdout
-    except (OSError, subprocess.SubprocessError):
+    except (OSError, subprocess.SubprocessError, UnicodeDecodeError):
         return False
     return image_name.lower() in out.lower()
 
