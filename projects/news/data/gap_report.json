@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-08T18:35:44.589360+00:00",
-  "total_gaps": 264,
+  "generated_at": "2026-08-08T21:30:11.531040+00:00",
+  "total_gaps": 265,
   "coverage": {
     "sources_total": 20,
     "sources_scanned": 19,
@@ -212,6 +212,12 @@
         "2026-08-02"
       ],
       "count": 15
+    },
+    "steam_discussion": {
+      "missing_dates": [
+        "2026-08-08"
+      ],
+      "count": 1
     },
     "taptap": {
       "missing_dates": [
