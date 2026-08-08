@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-08T09:37:00.535420+00:00",
+  "collected_at": "2026-08-08T12:43:33.749160+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 122,
   "items": [
     {
       "source": "google_play",
@@ -1033,16 +1033,6 @@
       "summary": "excelente",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-08e77136-c56f-4569-b5ab-7646bf684886",
       "author": "Dylan Santiago",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-09T10:38:30",
-      "lang": "es",
-      "title": "[Google Play 中评] ★3 muy bueno me encanta pero el único probl",
-      "summary": "muy bueno me encanta pero el único problema es que a la 2 partida se me congela si tienes otro celular en el futuro podrías intentarlo te quiero",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-299f7581-f633-483c-b79c-3354b8cf3a1e",
-      "author": "Matia Ezequiel",
       "engagement": 0
     },
     {

@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-08T09:37:00.535420+00:00",
+  "collected_at": "2026-08-08T12:43:33.749160+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-08T10:32:48+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561198783730343/recommended/3052450",
+      "author": "76561198783730343",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1786185168,
+      "playtime_forever": 274
+    },
     {
       "source": "steam",
       "time": "2026-08-08T05:24:03+00:00",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "번역체인거 빼고는 상당히 재미있음",
       "timestamp_created": 1786155520,
-      "playtime_forever": 1100
+      "playtime_forever": 1132
     },
     {
       "source": "steam",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "The art, story and gameplay are great!",
       "timestamp_created": 1786144508,
-      "playtime_forever": 1673
+      "playtime_forever": 1761
     },
     {
       "source": "steam",
@@ -123,7 +138,7 @@
       "voted_up": true,
       "review": "👍👍👍",
       "timestamp_created": 1786118762,
-      "playtime_forever": 387
+      "playtime_forever": 420
     },
     {
       "source": "steam",
@@ -138,22 +153,7 @@
       "voted_up": true,
       "review": "好玩，美工和音乐都可以的，唯一缺点是没有国服（不过这画风和内容感觉不太可能了，可惜了）\n\n问一下这种怎么氪金啊，有没有靠谱一点的渠道？",
       "timestamp_created": 1786111578,
-      "playtime_forever": 1105
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-07T09:38:05+00:00",
-      "lang": "english",
-      "title": "[正面] hope the game gets the recognition it deserves!! i...",
-      "summary": "hope the game gets the recognition it deserves!! i love it",
-      "url": "https://steamcommunity.com/profiles/76561199044491711/recommended/3052450",
-      "author": "76561199044491711",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "hope the game gets the recognition it deserves!! i love it",
-      "timestamp_created": 1786095485,
-      "playtime_forever": 2627
+      "playtime_forever": 1150
     }
   ]
 }
