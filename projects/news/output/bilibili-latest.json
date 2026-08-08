@@ -1,41 +1,23 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-08T06:48:15.269276+00:00",
+  "collected_at": "2026-08-08T09:37:00.535420+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 15,
+  "item_count": 13,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-08-07T09:35:00+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜人物志】在疯癫中碎裂，在泥沼中完整——24",
-      "summary": "视频内剧情画面来自@井上银溪  老师录制的全剧情流程，感谢授权~\n  └ 花岚天音Amane (13赞): 下期杂谈要讲的是星辰篇主线第五章，阿拉克涅和涅芙蕾亚这对相爱相杀爱恨交织的姐妹花的故事，感兴趣的话不妨点点关注哦～[主播女孩重度依赖第二弹_飞吻]\n  └ 秋沫爱吃 (3赞): 最爱的24姐姐[给心心][给心心][给心心]\n  └ 苏洋羊阳 (2赞): 42带我长大，我就给她养老[大哭]",
-      "url": "https://www.bilibili.com/video/BV16oux6YECL",
-      "author": "花岚天音Amane",
-      "engagement": 2728,
-      "media_url": "https://i2.hdslb.com/bfs/archive/6bd9dcfb11e12c2371fb21d8fd61698bb7f57507.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 2713,
-        "comment_count": 15,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
     {
       "source": "bilibili",
       "time": "2026-08-07T09:43:05+00:00",
       "lang": "zh",
       "title": "忘却前夜丨广播剧《原则》（CV：宫园美海）",
-      "summary": "「我的剑已经很久没有经历一场像样的战斗了。」\n「力量的证明，我已为你献上。期待我的到来吧……」\n✦ 蚀灭·萝坦CV：宫园美海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n✦ 官方玩家交流群\n⑭群：205243114\n⑦群：700587004\n  └ 一弦 (7赞): 谁让你改神萝语音的[呆]\n  └ 红枫鸟 (7赞): 原来你还记得有B站号呀\n  └ 林木木QVQ (6赞): 要是足够有钱把忘却篇全章节都补配音就好了",
+      "summary": "「我的剑已经很久没有经历一场像样的战斗了。」\n「力量的证明，我已为你献上。期待我的到来吧……」\n✦ 蚀灭·萝坦CV：宫园美海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n✦ 官方玩家交流群\n⑭群：205243114\n⑦群：700587004\n  └ 一弦 (7赞): 谁让你改神萝语音的[呆]\n  └ 红枫鸟 (8赞): 原来你还记得有B站号呀\n  └ 林木木QVQ (7赞): 要是足够有钱把忘却篇全章节都补配音就好了",
       "url": "https://www.bilibili.com/video/BV1vTub6YEhg",
       "author": "忘却前夜Morimens",
-      "engagement": 2042,
+      "engagement": 2101,
       "media_url": "https://i2.hdslb.com/bfs/archive/7c3b91f4f5f518c62c2abb6bbde9623a781e33ce.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 2024,
+        "play": 2083,
         "comment_count": 18,
         "comments_fetched": 3,
         "danmaku": 1
@@ -43,56 +25,20 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-08-08T02:05:00+00:00",
-      "lang": "zh",
-      "title": "【政治经济学分析】虚渊玄",
-      "summary": "-\n  └ lERNM (19赞): 看到标题一时间以为我眼花了[藏狐]\n  └ wzjDECADE (4赞): 您猜怎么着，现代心理学治疗的目的其实就是让一个被动脱出社会化大生产的人能够重新融入[doge]\n  └ 从善劝恶古之良典 (4赞): 文艺作品→理论分析→社会分析，前二者的跨度有点太大了，听起来有点魔怔。\n后二者的顺序调换一下，\n改成 文艺作品→社会分析→理论分析 会不会更好些？",
-      "url": "https://www.bilibili.com/video/BV1NHuw6uEHo",
-      "author": "铉铮",
-      "engagement": 1961,
-      "media_url": "https://i2.hdslb.com/bfs/archive/2b2d368a147c15fc7d023253668c4125f6f20b11.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 1932,
-        "comment_count": 29,
-        "comments_fetched": 3,
-        "danmaku": 8
-      }
-    },
-    {
-      "source": "bilibili",
       "time": "2026-08-07T13:31:43+00:00",
       "lang": "zh",
       "title": "【tk14 x 时摆组/meme】决战伦敦最美拉拉",
-      "summary": "-\n  └ 世界第一败犬殿下 (21赞): 我去老大，原来你也同时在吃tk14和时守组！我一直悄悄觉得这两对都很有骑士和国王的感觉，总有种似曾相识的味道[阿萨收藏集表情包_赞]\n  └ 山海不吃蒲绒绒 (7赞): 好奢侈的宵夜…大吃特吃…\n  └ 万舒鸦 (2赞): 不玩99所以我选时摆[doge][doge][doge]",
+      "summary": "-\n  └ 世界第一败犬殿下 (26赞): 我去老大，原来你也同时在吃tk14和时守组！我一直悄悄觉得这两对都很有骑士和国王的感觉，总有种似曾相识的味道[阿萨收藏集表情包_赞]\n  └ 山海不吃蒲绒绒 (7赞): 好奢侈的宵夜…大吃特吃…\n  └ 万舒鸦 (2赞): 不玩99所以我选时摆[doge][doge][doge]",
       "url": "https://www.bilibili.com/video/BV1qTuh63Er6",
       "author": "保温傍晚bw",
-      "engagement": 936,
+      "engagement": 1076,
       "media_url": "https://i2.hdslb.com/bfs/archive/10a363b50f73d7f99ada7c2a3ff4515b92df7910.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 914,
-        "comment_count": 22,
+        "play": 1051,
+        "comment_count": 25,
         "comments_fetched": 3,
         "danmaku": 1
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-07T08:08:55+00:00",
-      "lang": "zh",
-      "title": "男生去男厕所女生去女厕所，沙耶去哪个厕所？——沙耶之歌",
-      "summary": "└ 原子澎湃 (2赞): 如果从男主的视角认知来看，这个世界是由血肉组成的，其他人都是怪物，只有这一个沙耶是正常的，普通人的视角来看这个世界是正常的只有是怪物，然而如果从沙耶的视角来看，不管是男主还是其他人，以及这个世界又何尝不是男主眼中的怪物呢，然而沙耶也并未对此感到厌恶[大哭]",
-      "url": "https://www.bilibili.com/video/BV1tpub6pEGL",
-      "author": "五夜藤",
-      "engagement": 834,
-      "media_url": "https://i0.hdslb.com/bfs/archive/d0e4dcb0e725d7db87d722282a24ef5a8629383f.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 831,
-        "comment_count": 3,
-        "comments_fetched": 1,
-        "danmaku": 0
       }
     },
     {
@@ -103,11 +49,11 @@
       "summary": "-\n  └ 嘎啦嘎啦果 (0赞): 低等级学不来，血条就不够，看看就好了。\n本来想让茉夏当拐的，然后发现茉夏拐力还不如小骑士……\n菲神带入药是为了贪一张打击，骑士带入药应该更好，稳定易伤\n  └ iq2233 (0赞): 强强[打call]",
       "url": "https://www.bilibili.com/video/BV1Rau86NEMk",
       "author": "嘎啦嘎啦果",
-      "engagement": 377,
+      "engagement": 390,
       "media_url": "https://i1.hdslb.com/bfs/archive/3a772e2c9348e76d1e86a3fc439f9aa920c24232.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 375,
+        "play": 388,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
@@ -121,29 +67,11 @@
       "summary": "-\n  └ 嘎啦嘎啦果 (0赞): 5-5灵机一动带了老头专，不咋的，3启徐还是老老实实带自己专武吧\n  └ 嘎啦嘎啦果 (0赞): 纯小品，看看就好，也就这个大木桩好使",
       "url": "https://www.bilibili.com/video/BV15Yu86vEwc",
       "author": "嘎啦嘎啦果",
-      "engagement": 318,
+      "engagement": 328,
       "media_url": "https://i1.hdslb.com/bfs/archive/5fbba8f3599a8b54fe1472dd9d11cd0c83a6c2e2.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 316,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-07T17:38:35+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】三启24过融灾5-5全流程",
-      "summary": "随便玩玩，打的比较粗糙，凑合看）\n生存核心是无垢魂诞法则普朵（注意，纯混沌队普朵密契一定要带无垢，属性烂一点无所谓）\n配置溢出蛮多，24带正常sr也随便打，塔维可有可无，换成随便一个银钥位或银钥造物也一样\n开局不是夕光有不是夕光的玩法\n道中扛不住就二钥令拿艾瑞卡钥令选普朵，包能抗住\n看情况一觉24或普朵\n  └ 無名Mumei- (1赞): 木偶大佬[打call]\n  └ 上好佳薯片丶 (0赞): 大佬又在玩极限[跪了]",
-      "url": "https://www.bilibili.com/video/BV1znuN6iEN4",
-      "author": "跳段木偶舞",
-      "engagement": 176,
-      "media_url": "https://i0.hdslb.com/bfs/archive/ba666d74f0c0d30e05ab63cd1a139d5f4d276f83.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 174,
+        "play": 326,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
@@ -157,12 +85,12 @@
       "summary": "加强鸟弟，都退环境了\n  └ 燃え落ちない翼 (2赞): 这打的困难哪一章啊，我困难忘却还在母树那里，星辰都推到第五章了，主要阿拉C在忘却篇裁断被削的太厉害就不想玩了，没专塑确实烦[小A和小B_低头][小A和小B_低头]\n  └ 浪沫之翻涌 (1赞): 话说你为什么不打织造衍生卡？那个吃了之后阿拉克涅开大会有伤害很高的追击\n而且你这一回合不会死，有死抗\n  └ 住在可能性之中 (0赞): 前面太卡了我的问题[笑哭]",
       "url": "https://www.bilibili.com/video/BV1yiuh6HEen",
       "author": "住在可能性之中",
-      "engagement": 171,
+      "engagement": 315,
       "media_url": "https://i0.hdslb.com/bfs/archive/c1ff97dca2bb293ab2b836e5e83e3ee25332ba04.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 159,
-        "comment_count": 12,
+        "play": 295,
+        "comment_count": 20,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -172,52 +100,34 @@
       "time": "2026-08-08T00:01:22+00:00",
       "lang": "zh",
       "title": "【忘却前夜】大数字？大数字！",
-      "summary": "好久没给牢尤凹分了，浅浅一试）\n进门状态做好了的话千万肯定没问题，懒得继续凹了\n尤乌能吃满神超特性）\n虽然尤乌10张0c无视算力调和不会在进空间被重置，但进空间本身会重置调和），空间里就5张牌5算力，基本打不完，相当于剩下的那五六七八张空位可以自由打0c，怎么不算尤乌0c重置呢）\n有一说一只考虑打大数字，道中是真的区啊，完美体现我尤一碰就碎的特性（，还是正常配队玩起来舒服\n  └ iq2233 (1赞): 老大好强[打call]\n  └ 陶醉2333 (0赞): 神！\n  └ CyaneuS_ky (0赞): 强强[打call]凹分特有的道中疯狂蠕动和满商店找专造）",
+      "summary": "好久没给牢尤凹分了，浅浅一试）\n进门状态做好了的话千万肯定没问题，懒得继续凹了\n尤乌能吃满神超特性）\n虽然尤乌10张0c无视算力调和不会在进空间被重置，但进空间本身会重置调和），空间里就5张牌5算力，基本打不完，相当于剩下的那五六七八张空位可以自由打0c，怎么不算尤乌0c重置呢）\n有一说一只考虑打大数字，道中是真的区啊，完美体现我尤一碰就碎的特性（，还是正常配队玩起来舒服\n  └ wealve-color (1赞): 我勒个强效神力呀\n  └ 上好佳薯片丶 (1赞): [打call]uw厨最新力作\n  └ 陶醉2333 (1赞): 神！",
       "url": "https://www.bilibili.com/video/BV1GVuK6cESE",
       "author": "跳段木偶舞",
-      "engagement": 151,
+      "engagement": 204,
       "media_url": "https://i2.hdslb.com/bfs/archive/8d2026c5025653c03e2e4cbdeed702d8f5115626.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 147,
-        "comment_count": 4,
+        "play": 198,
+        "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 0
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-08-07T18:25:11+00:00",
+      "time": "2026-08-07T17:38:35+00:00",
       "lang": "zh",
-      "title": "我们都是肉做的",
-      "summary": "-\n  └ 心脏的天空 (2赞): @耕司青海瑶\n  └ 耕司青海瑶 (1赞): 哇哦[doge]\n  └ 哈基沙大玉 (1赞): [鸣潮2周年同人绘画_看你][鸣潮2周年同人绘画_看你][鸣潮2周年同人绘画_看你]",
-      "url": "https://www.bilibili.com/video/BV12PuN67ERV",
-      "author": "Kasha-T",
-      "engagement": 151,
-      "media_url": "https://i0.hdslb.com/bfs/archive/62c3163876d6dce1efea4fa076d32b0538180606.jpg",
+      "title": "【忘却前夜】三启24过融灾5-5全流程",
+      "summary": "随便玩玩，打的比较粗糙，凑合看）\n生存核心是无垢魂诞法则普朵（注意，纯混沌队普朵密契一定要带无垢，属性烂一点无所谓）\n配置溢出蛮多，24带正常sr也随便打，塔维可有可无，换成随便一个银钥位或银钥造物也一样\n开局不是夕光有不是夕光的玩法\n道中扛不住就二钥令拿艾瑞卡钥令选普朵，包能抗住\n看情况一觉24或普朵\n  └ 上好佳薯片丶 (1赞): 大佬又在玩极限[跪了]\n  └ 無名Mumei- (1赞): 木偶大佬[打call]",
+      "url": "https://www.bilibili.com/video/BV1znuN6iEN4",
+      "author": "跳段木偶舞",
+      "engagement": 202,
+      "media_url": "https://i0.hdslb.com/bfs/archive/ba666d74f0c0d30e05ab63cd1a139d5f4d276f83.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 143,
-        "comment_count": 8,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-07T12:10:58+00:00",
-      "lang": "zh",
-      "title": "环娜c 5-5",
-      "summary": "嘻嘻\n  └ 五笔的眼泪 (0赞): 很棒诶！",
-      "url": "https://www.bilibili.com/video/BV1sYuh6WExJ",
-      "author": "寂榕",
-      "engagement": 128,
-      "media_url": "https://i1.hdslb.com/bfs/archive/271d9415d470741948743ea1bd84013bce88d96c.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 127,
-        "comment_count": 1,
-        "comments_fetched": 1,
+        "play": 199,
+        "comment_count": 3,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
@@ -226,16 +136,34 @@
       "time": "2026-08-08T03:27:12+00:00",
       "lang": "zh",
       "title": "【忘却前夜】蹲坑蹲到底的混沌24，蹲到最后应有尽有",
-      "summary": "-\n  └ 嘎啦嘎啦果 (1赞): 还能省",
+      "summary": "-\n  └ 嘎啦嘎啦果 (2赞): 还能省",
       "url": "https://www.bilibili.com/video/BV1GLuM6qEdP",
       "author": "嘎啦嘎啦果",
-      "engagement": 127,
+      "engagement": 168,
       "media_url": "https://i1.hdslb.com/bfs/archive/98ac5b741d23e0eb2e748d0956566948847a61c8.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 126,
+        "play": 167,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-08T07:59:06+00:00",
+      "lang": "zh",
+      "title": "［相位］小艾她像个战神",
+      "summary": "-\n  └ 东方云心 (1赞): [星绘·沐春灼华 应援装扮_铸币大头]\n  └ 5455421 (0赞): 迫近的太阳怎么获得啊？",
+      "url": "https://www.bilibili.com/video/BV1s9uu68EZq",
+      "author": "莱星Ligh",
+      "engagement": 167,
+      "media_url": "https://i1.hdslb.com/bfs/archive/5d8d9adaa1d6e1a1028f9b9fc2d895786b7707e6.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 164,
+        "comment_count": 3,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
@@ -247,11 +175,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1AEuu6sEps",
       "author": "生活仍在继续12138",
-      "engagement": 64,
+      "engagement": 161,
       "media_url": "https://i2.hdslb.com/bfs/archive/5c9b93fceaaf6996ae170efde910eca1dba17dc7.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 64,
+        "play": 161,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -259,19 +187,55 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-08-08T03:30:00+00:00",
+      "time": "2026-08-07T12:10:58+00:00",
       "lang": "zh",
-      "title": "彻底敞开心扉后，沙耶给了我两个选择……",
-      "summary": "噶12412",
-      "url": "https://www.bilibili.com/video/BV1cYuP6zEFS",
-      "author": "朗克清",
-      "engagement": 1,
-      "media_url": "https://i0.hdslb.com/bfs/archive/b655d63cd24825098594315b29ae3150825e418b.jpg",
+      "title": "环娜c 5-5",
+      "summary": "嘻嘻\n  └ 五笔的眼泪 (0赞): 很棒诶！",
+      "url": "https://www.bilibili.com/video/BV1sYuh6WExJ",
+      "author": "寂榕",
+      "engagement": 129,
+      "media_url": "https://i1.hdslb.com/bfs/archive/271d9415d470741948743ea1bd84013bce88d96c.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1,
+        "play": 128,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-08T03:31:13+00:00",
+      "lang": "zh",
+      "title": "融灾首次425（8.3-8.16）",
+      "summary": "前几期隐隐约约感觉配置差不多了但一直没打，这期先用的金人kks配队逃了3图，又用血希对策1图，打完这两关感觉有希望就开始规划配队。1图2图3图都还蛮轻松的，4图出了神国不知道出哪个，5图出了蚀罗也不知道出哪个了。剩下了塔潘，阿拉和助战。塔潘配置低还没戒指实在有点牢，想来想去临时拉了个皮克曼组羊皮潘对策5图，凹完5图后宣告结束。4图借了个一哥的茉夏配阿拉平推了（140死扛实在太好用）",
+      "url": "https://www.bilibili.com/video/BV1gnuM6PEs5",
+      "author": "给天以星",
+      "engagement": 103,
+      "media_url": "https://i0.hdslb.com/bfs/archive/c47f65aa2a24cdd124871a42ace02443fa5c86b2.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 103,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-07T12:44:20+00:00",
+      "lang": "zh",
+      "title": "你游小登第一次尝试列车，遭遇n条命boss拼尽全力无法战胜",
+      "summary": "我玩不懂忘却前夜怎么办啊呜呜呜\n  └ 15-O (0赞): 这章图是第三面里最难的[笑哭]",
+      "url": "https://www.bilibili.com/video/BV1rcuh6LEu1",
+      "author": "Yookty",
+      "engagement": 103,
+      "media_url": "https://i0.hdslb.com/bfs/archive/40467a34ed7d8f4382cbd9c34ad7d56f5d269fe0.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 100,
+        "comment_count": 3,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     }

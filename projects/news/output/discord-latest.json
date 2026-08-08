@@ -1,116 +1,71 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-08T06:48:15.269276+00:00",
+  "collected_at": "2026-08-08T09:37:00.535420+00:00",
   "source": "discord",
   "data_layer": "output",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-08-07T00:00:00+00:00",
+      "time": "2026-08-08T00:00:00+00:00",
       "lang": "",
-      "title": "Discord 社区日报 (2026-08-07)",
-      "summary": "今日 1,947 条消息，196 位活跃用户，185 次反应。热门频道：🔸game-question(876)、🔸綜合討論(271)、🔸ruang-obrolan-indonesia(252)、🔸课间休息闲聊(105)、🔸traphase(105)",
+      "title": "Discord 社区日报 (2026-08-08)",
+      "summary": "今日 1,827 条消息，163 位活跃用户，217 次反应。热门频道：🔸game-question(923)、🔸canal-español(360)、🔸phòng-chat-tiếng-việt(147)、🔸team-building(113)、🔸綜合討論(82)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 1947
+      "engagement": 1827
     },
     {
       "source": "discord",
-      "time": "2026-08-07T07:26:25.299000+00:00",
+      "time": "2026-08-08T04:22:42.855000+00:00",
       "lang": "",
-      "title": "[DC] nemu_s_t_a_r@🔸綜合討論: 呃呃 開凹",
-      "summary": "呃呃 開凹\n[附件: IMG_2313.png]\n  └ kemomimi_: 这是谁在打伤害吖\n  └ jiangyu3454: 大佬求带\n  └ kemomimi_: 大佬求带",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1535187344368607283",
-      "author": "nemu_s_t_a_r",
-      "engagement": 25,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1535187343810633768/IMG_2313.png?ex=6a76da21&is=6a7588a1&hm=44281555580b1385134a37fff530cfe1414e8f71aaa187c147950e77edf43074&",
+      "title": "[DC] sparklingwater_69@🔸art-and-memes: More are coming soon…",
+      "summary": "More are coming soon…\n[附件: 15D71C7F-D93F-4743-B92A-1A3CE9AA8A88.jpg, Untitled201_20260805232457.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1535503500753248296/1535503500753248296",
+      "author": "sparklingwater_69",
+      "engagement": 29,
+      "media_url": "https://cdn.discordapp.com/attachments/1535503500753248296/1535503500920754227/15D71C7F-D93F-4743-B92A-1A3CE9AA8A88.jpg?ex=6a780092&is=6a76af12&hm=e881c4b5aab62a70407953af260ee8dd19c1213ea28cd1622dc17448fc99f676&",
       "content_type": "image",
       "metadata": {
-        "reactions": "🛐×6",
-        "reply_count": 3,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1535187343810633768/IMG_2313.png?ex=6a76da21&is=6a7588a1&hm=44281555580b1385134a37fff530cfe1414e8f71aaa187c147950e77edf43074&"
-        ],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T03:17:03.572000+00:00",
-      "lang": "",
-      "title": "[DC] hikarimew@🔸game-question: just one more and i am free to go back to digging for charas",
-      "summary": "just one more and i am free to go back to digging for charas\n[附件: image.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535124590337204236",
-      "author": "hikarimew",
-      "engagement": 19,
-      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1535124590215307414/image.png?ex=6a769faf&is=6a754e2f&hm=7b33aa10f95f993cec1c79d59091d4af216cca4c4593f9e11672fd162a465d16&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×6",
+        "reactions": "Salvador_OK×7 Uvhash_love×2",
         "reply_count": 0,
-        "attachment_count": 1,
+        "attachment_count": 2,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1535124590215307414/image.png?ex=6a769faf&is=6a754e2f&hm=7b33aa10f95f993cec1c79d59091d4af216cca4c4593f9e11672fd162a465d16&"
+          "https://cdn.discordapp.com/attachments/1535503500753248296/1535503500920754227/15D71C7F-D93F-4743-B92A-1A3CE9AA8A88.jpg?ex=6a780092&is=6a76af12&hm=e881c4b5aab62a70407953af260ee8dd19c1213ea28cd1622dc17448fc99f676&",
+          "https://cdn.discordapp.com/attachments/1535503500753248296/1535503501407555685/Untitled201_20260805232457.png?ex=6a780093&is=6a76af13&hm=384e196cd0f15a0a1ce617f6a4eddb2ac85990384a937b2d1fe802850eb17eba&"
         ],
-        "channel": "🔸game-question"
+        "channel": "🔸art-and-memes"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-07T04:52:48.846000+00:00",
+      "time": "2026-08-08T06:38:47.690000+00:00",
       "lang": "",
-      "title": "[DC] a._0320@🔸綜合討論:  ?",
-      "summary": " ?\n[附件: image.png]\n  └ luna_.90: 習慣就好",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1535148687762919434",
-      "author": "a._0320",
-      "engagement": 18,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1535148687427117066/image.png?ex=6a76b620&is=6a7564a0&hm=70743cade0863e08df167e6b0c67f37833b71e34fa3ce4cbb6c08db24179280f&",
-      "content_type": "image",
+      "title": "[DC] ling_an_@🔸綜合討論: 輸光 我也要一次只減1%死抗",
+      "summary": "輸光 我也要一次只減1%死抗",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1535537746553217094",
+      "author": "ling_an_",
+      "engagement": 27,
       "metadata": {
-        "reactions": "😆×5",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1535148687427117066/image.png?ex=6a76b620&is=6a7564a0&hm=70743cade0863e08df167e6b0c67f37833b71e34fa3ce4cbb6c08db24179280f&"
-        ],
+        "reactions": "4️⃣×3 2️⃣×3 5️⃣×3",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
         "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-07T07:47:09.899000+00:00",
+      "time": "2026-08-08T05:55:30.425000+00:00",
       "lang": "",
-      "title": "[DC] khryiis@🔸game-question: for now, this is my team, ignore the covenants ",
-      "summary": "for now, this is my team, ignore the covenants \n[附件: image.png]\n  └ ringgo0901: oh nice, i think you can start BoT",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535192564599095426",
-      "author": "khryiis",
-      "engagement": 18,
-      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1535192564129468436/image.png?ex=6a76defd&is=6a758d7d&hm=b1cba42f3997c2018eab3a140744f15cc8d08f4fe45445d2d6239ffe3de2dbe1&",
-      "content_type": "image",
+      "title": "[DC] lithanor@🔸game-question: two days left to see if i wanna AA pollux huh",
+      "summary": "two days left to see if i wanna AA pollux huh",
+      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535526852834238545",
+      "author": "lithanor",
+      "engagement": 21,
       "metadata": {
-        "reactions": "🔥×4 NODDERS×1",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1535192564129468436/image.png?ex=6a76defd&is=6a758d7d&hm=b1cba42f3997c2018eab3a140744f15cc8d08f4fe45445d2d6239ffe3de2dbe1&"
-        ],
-        "channel": "🔸game-question"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T07:52:12.966000+00:00",
-      "lang": "",
-      "title": "[DC] snorlax01@🔸game-question: Double-Play per each Arith consumed",
-      "summary": "Double-Play per each Arith consumed\n  └ ringgo0901: that would be the dream, the ultimate wall\n  └ theviy: now that something I can back up",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535193835754365069",
-      "author": "snorlax01",
-      "engagement": 13,
-      "metadata": {
-        "reactions": "🔥×3",
-        "reply_count": 2,
+        "reactions": "💳×4 🐳×3",
+        "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸game-question"
@@ -118,170 +73,181 @@
     },
     {
       "source": "discord",
-      "time": "2026-08-07T02:48:37.182000+00:00",
+      "time": "2026-08-08T03:44:58.058000+00:00",
       "lang": "",
-      "title": "[DC] victourie@🔸game-question: Would you guys say I should get Saya E0?  I have a guaranteed E0 limited pull, b",
-      "summary": "Would you guys say I should get Saya E0?\n\nI have a guaranteed E0 limited pull, but I'm not sure if I should actually get a proper DPS since I only have Glotan or just saya corrosion my way with whatever dps.\n[附件: image.png, image.png, image.png, image.png]\n  └ corvim: Get saya then get mouch\n  └ iulargerthan3: Saya is a must\n  └ ilusha1666: How does one get a guaranteed pull?\n  └ ilusha1666: Glotan is a proper dps 😠",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535117433218662440",
-      "author": "victourie",
+      "title": "[DC] galagalaguo@🔸綜合討論: 注射守护是神",
+      "summary": "注射守护是神\n[附件: Image_1786160562316_256.jpg]\n  └ ernest_heart: 最初的幾期融災，米粒還沒登場，我就靠著注射守護搭配破爛海毒打第五波",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1535494001505865838",
+      "author": "galagalaguo",
+      "engagement": 15,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1535494001204006983/Image_1786160562316_256.jpg?ex=6a77f7b9&is=6a76a639&hm=bf97feb31a92c00706ec9da1ed921110cdebdbb47156274f15c6257feb7b3ca2&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🛐×4",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1535494001204006983/Image_1786160562316_256.jpg?ex=6a77f7b9&is=6a76a639&hm=bf97feb31a92c00706ec9da1ed921110cdebdbb47156274f15c6257feb7b3ca2&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T06:48:51.554000+00:00",
+      "lang": "",
+      "title": "[DC] a_wei3797@🔸綜合討論: 有沒有大佬可以帶帶我",
+      "summary": "有沒有大佬可以帶帶我",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1535540279342272512",
+      "author": "a_wei3797",
+      "engagement": 15,
+      "metadata": {
+        "reactions": "↖️×5",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T04:40:00.737000+00:00",
+      "lang": "",
+      "title": "[DC] samin_@🔸art-and-memes: https://x.com/SaminDraws/status/2085946069960036517?s=20",
+      "summary": "https://x.com/SaminDraws/status/2085946069960036517?s=20",
+      "url": "https://discord.com/channels/1131791637933199470/1535507853945864324/1535507853945864324",
+      "author": "samin_",
+      "engagement": 15,
+      "metadata": {
+        "reactions": "Lotan_proud×4 Lotan_ok×1",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸art-and-memes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T05:24:14.953000+00:00",
+      "lang": "",
+      "title": "[DC] sowhatdobayleavesevendo@🔸art-and-memes: I don't have a pin maker so I hand painted over a fugly keychain from a school e",
+      "summary": "I don't have a pin maker so I hand painted over a fugly keychain from a school event. I'm just a beginner artist so it looks kinda ugly but eh it's not much but it's honest work (and it's Salvador so I'm still happy) \n[附件: IMG_20260808_122130.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1535518986534391918/1535518986534391918",
+      "author": "sowhatdobayleavesevendo",
+      "engagement": 13,
+      "media_url": "https://cdn.discordapp.com/attachments/1535518986534391918/1535518986807156836/IMG_20260808_122130.jpg?ex=6a780eff&is=6a76bd7f&hm=bc9cc7bf04c8891b09ab642a13f1662038b518ab04429c9023f08785e94dc618&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "Salvador_OK×4",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1535518986534391918/1535518986807156836/IMG_20260808_122130.jpg?ex=6a780eff&is=6a76bd7f&hm=bc9cc7bf04c8891b09ab642a13f1662038b518ab04429c9023f08785e94dc618&"
+        ],
+        "channel": "🔸art-and-memes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T06:39:26.244000+00:00",
+      "lang": "",
+      "title": "[DC] water_heart@🔸綜合討論: 有沒有大佬可以帶帶我",
+      "summary": "有沒有大佬可以帶帶我",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1535537908260405279",
+      "author": "water_heart",
       "engagement": 12,
-      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1535117431981342800/image.png?ex=6a769904&is=6a754784&hm=a305238042de0c7d4f5ca8ecdfc0901d4a6c6c8f10d456bd09e49c6aedb3c4bb&",
+      "metadata": {
+        "reactions": "↖️×4",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T06:14:38.666000+00:00",
+      "lang": "",
+      "title": "[DC] lycandias@🔸game-question: havent changed a team till ch 5 arc 2",
+      "summary": "havent changed a team till ch 5 arc 2\n[附件: image.png]\n  └ snorlax01: Where's your Dreams Corpo\n  └ khryiis: I guess I won't have many problems then ",
+      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535531668906049546",
+      "author": "lycandias",
+      "engagement": 11,
+      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1535531668658462760/image.png?ex=6a781ace&is=6a76c94e&hm=5356d1f32c7f7f845c1b02671ee66e22ceb8d9c884d3c82e51ef171b24321010&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🔥×2",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1535531668658462760/image.png?ex=6a781ace&is=6a76c94e&hm=5356d1f32c7f7f845c1b02671ee66e22ceb8d9c884d3c82e51ef171b24321010&"
+        ],
+        "channel": "🔸game-question"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T07:36:52.273000+00:00",
+      "lang": "",
+      "title": "[DC] tipsy.17@🔸canal-español: (附件/嵌入)",
+      "summary": "[附件: image.png, image.png, image.png, image.png, image.png, image.png, image.png, image.png, image.png, image.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1300659662311526512/1535552361953755187",
+      "author": "tipsy.17",
+      "engagement": 10,
+      "media_url": "https://cdn.discordapp.com/attachments/1300659662311526512/1535552354856992769/image.png?ex=6a782e12&is=6a76dc92&hm=9ecd2b92c04998a622c3b5264b4887c45893d42a4075e9f6548f625c5d7ce0d3&",
       "content_type": "image",
       "metadata": {
         "reactions": "",
-        "reply_count": 4,
-        "attachment_count": 4,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1535117431981342800/image.png?ex=6a769904&is=6a754784&hm=a305238042de0c7d4f5ca8ecdfc0901d4a6c6c8f10d456bd09e49c6aedb3c4bb&",
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1535117432279007232/image.png?ex=6a769904&is=6a754784&hm=77aaf423505c2a4b71bc99d333e5198466ec7fc9465e6e25a7a50e46a729fff7&",
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1535117432576807035/image.png?ex=6a769905&is=6a754785&hm=073005b67d10f849780d4dac90c024344883e5c6f7be03e6a662c36e2be14409&",
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1535117432895709205/image.png?ex=6a769905&is=6a754785&hm=ad3ea0da9fafc2b7ce6f17a9038f8886170b9c86c82527a02a8c6b527c3c3e80&"
-        ],
-        "channel": "🔸game-question"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T03:50:51.936000+00:00",
-      "lang": "",
-      "title": "[DC] watchthew0rldburn@🔸有問必答┊official-q-a: exalt: Maw of Hell(stating it as an object), opened and waiting > Maw of Hell(ad",
-      "summary": "exalt:\nMaw of Hell(stating it as an object), opened and waiting > Maw of Hell(addressing it as if it were a person), open for me\n\nshort blade:\nThe sea of stars witnesses destruction(implied meaning to me is \"the sea of stars witnesses MY destruction\") > sea of stars(again, as if a person), witness destruction(command tone)\n\nlong blade:\nbe honoured of the fact that you're fighting against  *me*(watashi which is normal way to say me and pretty humble as averag) > be honoured of the fact that you're fighting against  *me*(ware is a very haughty and mighty way to address one's self, usually used by those of rightfully arrogant like deities in JP fiction, with some exceptions)\n\nThe first two changes sound better in English, but in JP, IMO the original better fits GLotan as a deity, cuz she doesn't have to command the Maw of Hell and Sea of Stars to open up and witness respectively, they're already doing it on-demand, without verbally having to demand it.",
-      "url": "https://discord.com/channels/1131791637933199470/1534858900522664026/1535133097912303676",
-      "author": "watchthew0rldburn",
-      "engagement": 12,
-      "metadata": {
-        "reactions": "🎉×4",
         "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T06:33:43.122000+00:00",
-      "lang": "",
-      "title": "[DC] galagalaguo@🔸綜合討論: 哦豁 你忘正式从灵犀互娱那里分家了",
-      "summary": "哦豁 你忘正式从灵犀互娱那里分家了\n  └ xianrenwurao: 那我們台服怎麼辦\n  └ ethylenediamine33: 哪里的消息\n  └ kemomimi_: 那这算好事吗(？)\n  └ arr5721: 是整個平平無奇工作室還是裡面的一些工作室",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1535174081236832326",
-      "author": "galagalaguo",
-      "engagement": 11,
-      "metadata": {
-        "reactions": "👀×1",
-        "reply_count": 4,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T08:01:40.233000+00:00",
-      "lang": "",
-      "title": "[DC] wuyan_kana@🔸game-question: i think i did every one of those with pollux oe",
-      "summary": "i think i did every one of those with pollux oe\n  └ snorlax01: https://klipy.com/gifs/humpback-whale-onthe12thfloor",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535196215044603956",
-      "author": "wuyan_kana",
-      "engagement": 11,
-      "metadata": {
-        "reactions": "🐳×3",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸game-question"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T02:17:16.020000+00:00",
-      "lang": "",
-      "title": "[DC] 2ndselna@🔸ห้องสนทนาภาษาไทย: (附件/嵌入)",
-      "summary": "[附件: image-36.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1300659802455674972/1535109543053496340",
-      "author": "2ndselna",
-      "engagement": 10,
-      "media_url": "https://cdn.discordapp.com/attachments/1300659802455674972/1535109542688456745/image-36.png?ex=6a7691ab&is=6a75402b&hm=9d1a7d0b0f0ccb7c7263f2046279113af7e416e4e34021608fb4c7a625157455&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🐳×3",
-        "reply_count": 0,
-        "attachment_count": 1,
+        "attachment_count": 10,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659802455674972/1535109542688456745/image-36.png?ex=6a7691ab&is=6a75402b&hm=9d1a7d0b0f0ccb7c7263f2046279113af7e416e4e34021608fb4c7a625157455&"
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552354856992769/image.png?ex=6a782e12&is=6a76dc92&hm=9ecd2b92c04998a622c3b5264b4887c45893d42a4075e9f6548f625c5d7ce0d3&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552355569766491/image.png?ex=6a782e12&is=6a76dc92&hm=cfa8395a987dbefce6d7adced484b1fcd77331c21c304f31f492952d892369a5&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552356165484626/image.png?ex=6a782e12&is=6a76dc92&hm=1ad28348e0608e30230d23ba8e39e19ae5f80813f821306a127ccbe140aad483&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552356815478794/image.png?ex=6a782e13&is=6a76dc93&hm=507f4e64fa81b4401cc611f66f7dd15574ba60cd55b5ed94acecb52452f2274c&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552357725905047/image.png?ex=6a782e13&is=6a76dc93&hm=2da60678e338176415bea7726d44cb0446e4524be3f288473d7c4113af5d1896&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552358724145212/image.png?ex=6a782e13&is=6a76dc93&hm=cb54e6ed650fa4646d3ea31bb4d33627617d0907ea5113c16d8c145a1c569e80&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552359747428413/image.png?ex=6a782e13&is=6a76dc93&hm=202653538bb43a673329cbded1e8838ba6d39dc1a9b617e90e0ba3a5ca2fc01e&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552360359927868/image.png?ex=6a782e13&is=6a76dc93&hm=ba7deace9a841aa76499cd51d196c4e3222b27686dd45b17de52889d8834c099&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552360854589480/image.png?ex=6a782e14&is=6a76dc94&hm=d3a8da5a3baa5f2caf7bd4689758670e227575e3e1c4d7ae21771ccfc8545863&",
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1535552361349648394/image.png?ex=6a782e14&is=6a76dc94&hm=7f07f5ddad969a90864a16025232eaff26114d8392418fb349a93a865e839b9d&"
         ],
-        "channel": "🔸ห้องสนทนาภาษาไทย"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T05:19:29.537000+00:00",
-      "lang": "",
-      "title": "[DC] 2ndselna@🔸ห้องสนทนาภาษาไทย: (附件/嵌入)",
-      "summary": "[附件: Screenshot_20260807_120949.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1300659802455674972/1535155401547317319",
-      "author": "2ndselna",
-      "engagement": 10,
-      "media_url": "https://cdn.discordapp.com/attachments/1300659802455674972/1535155401153187890/Screenshot_20260807_120949.jpg?ex=6a76bc61&is=6a756ae1&hm=6a3bbd4ae9d0a7974f02f3f1d44365a631f96dd71766e8c4fcd3197226ee800e&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🐳×3",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659802455674972/1535155401153187890/Screenshot_20260807_120949.jpg?ex=6a76bc61&is=6a756ae1&hm=6a3bbd4ae9d0a7974f02f3f1d44365a631f96dd71766e8c4fcd3197226ee800e&"
-        ],
-        "channel": "🔸ห้องสนทนาภาษาไทย"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T07:01:53.060000+00:00",
-      "lang": "",
-      "title": "[DC] mrmot347@🔸phòng-chat-tiếng-việt: build   như bạn này là đc",
-      "summary": "build   như bạn này là đc\n[附件: Screenshot_2026-08-07_140119.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1535181169350545418",
-      "author": "mrmot347",
-      "engagement": 10,
-      "media_url": "https://cdn.discordapp.com/attachments/1300659603993923644/1535181169040302120/Screenshot_2026-08-07_140119.png?ex=6a76d460&is=6a7582e0&hm=9aac773789f9aa7a6770581db733111a2c4000e52f4ffef0caac38c091525621&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "❤️×3",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659603993923644/1535181169040302120/Screenshot_2026-08-07_140119.png?ex=6a76d460&is=6a7582e0&hm=9aac773789f9aa7a6770581db733111a2c4000e52f4ffef0caac38c091525621&"
-        ],
-        "channel": "🔸phòng-chat-tiếng-việt"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-07T00:49:55.766000+00:00",
-      "lang": "",
-      "title": "[DC] rexamart@🔸canal-español: Flares,que personajes es ese we?",
-      "summary": "Flares,que personajes es ese we?\n  └ ancientbp: Kathygura\n  └ just_onemore: No sé casi nada de Morimens",
-      "url": "https://discord.com/channels/1131791637933199470/1300659662311526512/1535087563834916886",
-      "author": "rexamart",
-      "engagement": 10,
-      "metadata": {
-        "reactions": "anmpikaxd×2",
-        "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
         "channel": "🔸canal-español"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-07T00:54:57.768000+00:00",
+      "time": "2026-08-08T03:54:49.977000+00:00",
       "lang": "",
-      "title": "[DC] princess.goth@🔸game-question: google lotan inflation for more info",
-      "summary": "google lotan inflation for more info\n  └ iristhephoenix: LMAO\n  └ fibrinogen: 🫃",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535088830523248711",
-      "author": "princess.goth",
+      "title": "[DC] cryniax@🔸game-question: (附件/嵌入)",
+      "summary": "[附件: Screenshot_2026-08-08-10-54-12-211_com.qookkagames.z1.gp.hk.jpg, Screenshot_2026-08-08-10-54-32-203_com.qookkagames.z1.gp.hk.jpg]\n  └ cryniax: can someone help me with the covenants and wheel\n  └ tnimreppep: 3 deus ex\nMouchete uses aprik\n  └ ringgo0901: I would personally do : DEM keyflare on thais, DEM DR on Helot, DEM on Gluten.\n  └ cryniax: this ",
+      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535496484194222120",
+      "author": "cryniax",
+      "engagement": 10,
+      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1535496483305164820/Screenshot_2026-08-08-10-54-12-211_com.qookkagames.z1.gp.hk.jpg?ex=6a77fa09&is=6a76a889&hm=876b3a6d1cae7f9ddf74cb4751c99f08dd44b7c389d952b7a5bef0424833458f&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "",
+        "reply_count": 4,
+        "attachment_count": 2,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1535496483305164820/Screenshot_2026-08-08-10-54-12-211_com.qookkagames.z1.gp.hk.jpg?ex=6a77fa09&is=6a76a889&hm=876b3a6d1cae7f9ddf74cb4751c99f08dd44b7c389d952b7a5bef0424833458f&",
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1535496483720396820/Screenshot_2026-08-08-10-54-32-203_com.qookkagames.z1.gp.hk.jpg?ex=6a77fa09&is=6a76a889&hm=a8dd89c37d118357c6b107144646eb5cba6714dc15664d50e3321eaf601a3337&"
+        ],
+        "channel": "🔸game-question"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T05:55:36.005000+00:00",
+      "lang": "",
+      "title": "[DC] fishhazardthewizard@🔸game-question: Ehhh yeah glotan e0 or e2, saya is fine at e0, mouch e2-3 depending on pref, e1",
+      "summary": "Ehhh yeah glotan e0 or e2, saya is fine at e0, mouch e2-3 depending on pref, e1 horla\n  └ lycandias: just follow this one\n  └ lycandias: so im pretty sure this is very achievable as long as you play enough",
+      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535526876238319686",
+      "author": "fishhazardthewizard",
       "engagement": 10,
       "metadata": {
-        "reactions": "🐎×1 Hameln_discontent×1",
+        "reactions": "Celeste_agree×2",
         "reply_count": 2,
         "attachment_count": 0,
         "attachment_urls": [],
@@ -290,23 +256,61 @@
     },
     {
       "source": "discord",
-      "time": "2026-08-07T02:17:54.088000+00:00",
+      "time": "2026-08-08T07:29:03.743000+00:00",
       "lang": "",
-      "title": "[DC] princess.goth@🔸game-question: this might be hard to shield",
-      "summary": "this might be hard to shield\n[附件: Screenshot_2026-08-07-04-10-36-50_09a98f8d0fc2b11b1559c9fab3480a92.jpg]\n  └ ringgo0901: ya know it took me alot of resets to let pandia reach that amount of hits\n  └ corvim: Pontos so you take 33 damage\n  └ silverbunny0w0.: Oh yeah no am definitely Donna just clear other waves at higher difficulty with mouchette and just clear that's in a1 or a2",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535109702722003045",
-      "author": "princess.goth",
+      "title": "[DC] teleftaios@🔸game-question: Insane value",
+      "summary": "Insane value\n[附件: IMG_2567.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1535550396796506195",
+      "author": "teleftaios",
       "engagement": 10,
-      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1535109702428393603/Screenshot_2026-08-07-04-10-36-50_09a98f8d0fc2b11b1559c9fab3480a92.jpg?ex=6a7691d2&is=6a754052&hm=9b239c1e32b654f0974642b146055804ae68d972511bb73673c92b6c8e2a5d0f&",
+      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1535550396507103232/IMG_2567.png?ex=6a782c3f&is=6a76dabf&hm=896ec9934ee2154aeb6b30218857c6151ff15a2174428921b6754a129c48e089&",
       "content_type": "image",
       "metadata": {
-        "reactions": "Celeste_agree×1",
-        "reply_count": 3,
+        "reactions": "NODDERS×2 Celeste_pray×1",
+        "reply_count": 0,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1535109702428393603/Screenshot_2026-08-07-04-10-36-50_09a98f8d0fc2b11b1559c9fab3480a92.jpg?ex=6a7691d2&is=6a754052&hm=9b239c1e32b654f0974642b146055804ae68d972511bb73673c92b6c8e2a5d0f&"
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1535550396507103232/IMG_2567.png?ex=6a782c3f&is=6a76dabf&hm=896ec9934ee2154aeb6b30218857c6151ff15a2174428921b6754a129c48e089&"
         ],
         "channel": "🔸game-question"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T05:06:24.721000+00:00",
+      "lang": "",
+      "title": "[DC] sparklingwater_69@🔸art-and-memes: (附件/嵌入)",
+      "summary": "[附件: Untitled209_20260808000551.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1535503500753248296/1535514497656160366",
+      "author": "sparklingwater_69",
+      "engagement": 10,
+      "media_url": "https://cdn.discordapp.com/attachments/1535503500753248296/1535514497274617866/Untitled209_20260808000551.png?ex=6a780ad0&is=6a76b950&hm=c9312b5f99cea1aa439343aa2609ae12612a841cccb55113c00e62e6658ddcc9&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "Lotan_proud×3",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1535503500753248296/1535514497274617866/Untitled209_20260808000551.png?ex=6a780ad0&is=6a76b950&hm=c9312b5f99cea1aa439343aa2609ae12612a841cccb55113c00e62e6658ddcc9&"
+        ],
+        "channel": "🔸art-and-memes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-08T03:44:07.320000+00:00",
+      "lang": "",
+      "title": "[DC] zilulu01@🔸綜合討論: https://klipy.com/gifs/signedearth-bear",
+      "summary": "https://klipy.com/gifs/signedearth-bear",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1535493788695404599",
+      "author": "zilulu01",
+      "engagement": 9,
+      "metadata": {
+        "reactions": "❓×2 🌿×1",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
       }
     }
   ]
