@@ -4,7 +4,7 @@ title: "卡帕西编码行为原则（Andrej Karpathy CLAUDE.md, forrestchang �
 description: "Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed."
 resource: "/memory/karpathy-coding-principles.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-08-07"
+timestamp: "2026-08-08"
 ---
 
 # 记忆层指针

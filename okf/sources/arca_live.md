@@ -4,7 +4,7 @@ title: "arca_live 社区数据源"
 description: "arca_live 平台采集档案，全量 104 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/arca_live/"
 tags: ["data_layer:full_archive", "platform:arca_live", "health:degraded"]
-timestamp: "2026-08-07T07:13:59.017980+00:00"
+timestamp: "2026-08-08T06:49:01.200871+00:00"
 ---
 
 # 数据层指针

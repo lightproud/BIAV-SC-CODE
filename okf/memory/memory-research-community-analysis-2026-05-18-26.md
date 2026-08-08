@@ -4,7 +4,7 @@ title: "社区分析报告：V2.5.1「沙耶之歌」联动窗口（2026-05-18 �
 description: "平台层分布（条目）：weibo 1,227 / reddit 710 / youtube 198 / steam 182 / weixin 172 /"
 resource: "/memory/research/community-analysis-2026-05-18_26.md"
 tags: ["memory", "data_layer:curated", "research"]
-timestamp: "2026-08-07"
+timestamp: "2026-08-08"
 ---
 
 # 记忆层指针
