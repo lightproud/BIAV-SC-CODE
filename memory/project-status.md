@@ -90,7 +90,7 @@
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 151 | 磁盘实况 |
 | CI 工作流 / 其中定时 | 49 / 21 | `.github/workflows/` |
-| 挂账台账 开 / 已清 | 22 / 64 | `memory/todo.md` |
+| 挂账台账 开 / 已清 | 21 / 65 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->
 
@@ -333,7 +333,7 @@
 > T59 = **四缝全采纳、同日落地家族锁步 0.71.0（原编 0.69.0，合并时因 main 并行会话占号让号）**——G1 随包契约套件 / G2 认领租约 + 每 tick
 > 过期清扫 / G3 seedFirstRun + scheduleSessionId / G4 MemoryStore.read 原样读回；testbed
 > 换装消费新面（primeSchedules 绕行件删除），GAPS.md 四缝全销、绕行件留作回归证据。
-> **等待真实时间**：验收 2「连续 7 天无人值守」自 CI 首轮起算（T57）。首日真实发现：
+> **验收 2 已达成（2026-08-08 核账销 T57）**：D+7 窗口 07-26 → 08-01 七轮定时全绿 + 台账/值班卡/报告/索引逐层核实，明细见 todo 已清 T57 与子项目 `CONTEXT.md`。首日真实发现：
 > agent SDK `mutation-ratchet.json` 的 loop-support 靶（地板 94.35）不在周检矩阵、从未被
 > 实测（T64 站岗，原编 T60，2026-07-26 撞号让号；ratchet 巡检器每日盯防此类缺口）。
 

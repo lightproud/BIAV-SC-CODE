@@ -67,7 +67,12 @@ tests/     store-contract（LedgerStore 契约套件 14 例）· inspectors · s
   四缝 = 全采纳、同日落地家族 0.71.0（原编 0.69.0，合并时因 main 并行会话占号让号）（G1-G3 maestro / G4 agent），testbed 已换装消费
   新面（daemon 用 `claimLeaseMs` + `seedFirstRun`、契约测试并跑随包套件、readIfExists
   优先 `store.read`；primeSchedules 绕行件删除），销缝注见 `GAPS.md`。
-- **等待真实时间的验收**：验收 2「连续 7 天无人值守」自 CI 首轮起算（挂账 T57，原编 T56）。
+- **验收 2「连续 7 天无人值守」已达成（2026-08-08 核账销 T57）**：D+7 窗口 **07-26 → 08-01 七轮定时全绿**
+  （首轮 7 天 07-19 → 07-25 曾连红，真因 dream 归并的 `MEMORY.md` create-only 重写每轮撞 already exists，
+  2026-07-26 修复后自首个绿轮重新起算）。核的不只是 Actions 绿灯：台账逐日 5 会话（四巡检器 + dream）
+  状态全 `done`、值班卡逐日齐、四巡检器报告各 9 档、`MEMORY.md` 常驻索引持续改写至 `cards/2026-08-02.md`
+  （原病灶行，能改写即幂等修复的生产实证）。**注**：`testbed-patrol.yml` 已于 2026-08-02 随 T78 家族维护态
+  移除 cron 转手动，每日流自此停摆——验收窗口整个落在移除之前，故验收 2 为一次性达成、不再持续站岗。
 - 首日真实发现：agent SDK `mutation-ratchet.json` 的 `loop-support` 靶（地板 94.35）
   不在周检矩阵中、从未被实测——ratchet 巡检器的「地板无实测」检查将在 CI 环境每日
   盯住此类缺口。
