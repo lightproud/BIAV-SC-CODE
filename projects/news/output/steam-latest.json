@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-08T01:22:17.107880+00:00",
+  "collected_at": "2026-08-08T04:11:35.643935+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 12,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-08T02:18:40+00:00",
+      "lang": "koreana",
+      "title": "[正面] 번역체인거 빼고는 상당히 재미있음",
+      "summary": "번역체인거 빼고는 상당히 재미있음",
+      "url": "https://steamcommunity.com/profiles/76561198043556433/recommended/3052450",
+      "author": "76561198043556433",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "번역체인거 빼고는 상당히 재미있음",
+      "timestamp_created": 1786155520,
+      "playtime_forever": 1043
+    },
     {
       "source": "steam",
       "time": "2026-08-08T00:21:32+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "A game where the story of the studio behind it is pretty much as important to the narrative than the main narrative itself, its incredible that this game managed to come back from oblivion after getting fully ready to shut down and now still be here today, alive and kicking",
       "timestamp_created": 1786148492,
-      "playtime_forever": 3135
+      "playtime_forever": 3147
     },
     {
       "source": "steam",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "10/10 would recommend",
       "timestamp_created": 1786145613,
-      "playtime_forever": 7051
+      "playtime_forever": 7054
     },
     {
       "source": "steam",
@@ -168,22 +183,7 @@
       "voted_up": true,
       "review": "故事很有吸引力，美术我给满分",
       "timestamp_created": 1786077351,
-      "playtime_forever": 12212
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-07T03:37:11+00:00",
-      "lang": "english",
-      "title": "[正面] its like if magic made you sad",
-      "summary": "its like if magic made you sad",
-      "url": "https://steamcommunity.com/profiles/76561199590290518/recommended/3052450",
-      "author": "76561199590290518",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "its like if magic made you sad",
-      "timestamp_created": 1786073831,
-      "playtime_forever": 8786
+      "playtime_forever": 12272
     }
   ]
 }
