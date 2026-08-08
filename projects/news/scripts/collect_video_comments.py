@@ -8,7 +8,11 @@
 数据根——此前仍写迁移前旧路径 projects/news/data/platforms/，导致权威档案 6-20 后断更）：
   comments.jsonl   累积库，一行一条评论，按 comment id 去重、只增不删
   state.json       每视频分页状态 {video_id: {title, channel, exhausted, next_page}}
-  {date}.json      当次运行采到的评论快照（供当日报告引用「PV 视频评论」）
+  {date}.json      **该日发布**的评论日档（供当日报告引用「PV 视频评论」）。守密人
+                   2026-08-08 裁定改为按发布日分档，取代原「当轮快照」语义——原语义下
+                   本档记的是「哪一轮采到的」而非「评论发布于哪天」，断更后补采时整段
+                   积压会全挤进一个日期档、其余日期成空档。--date 自此降为**回落标签**，
+                   只用于 published 缺失 / 不可解析的评论。
 
 候选视频来源：YouTube 搜索（Morimens/忘却前夜…）+ 复用已归档的 youtube 视频 ID
 （Record/Community/youtube/ 全布局递归，含区服/类型子目录）。每视频按 order=time 分页：
@@ -113,9 +117,26 @@ def fetch_video_comments(key, vid, known_ids, max_pages):
     return new_rows, False       # 还有更多，下次续（回填未尽）
 
 
+def snapshot_date(row: dict, fallback: str) -> str:
+    """这条评论该落哪个日期档：按 published 折算北京日期；缺失/不可解析回落 fallback。
+
+    日期基准一律经 archive_layout.archive_date_str（归档布局 SSOT）——YouTube 的
+    publishedAt 已带 Z 偏移，手写 `+ timedelta(hours=8)` 会把偏移算两遍（该坑的原案
+    见 archive_layout 日期基准注释）。
+    """
+    raw = (row.get("published") or "").strip()
+    if raw:
+        try:
+            return archive_layout.archive_date_str(datetime.fromisoformat(raw))
+        except ValueError:      # 非 ISO8601（字段缺省 / 上游改格式）→ 回落标签，不丢条目
+            pass
+    return fallback
+
+
 def main():
     ap = argparse.ArgumentParser(description="YouTube 评论累积采集器")
-    ap.add_argument("--date", required=True, help="当次快照日期标签 YYYY-MM-DD")
+    ap.add_argument("--date", required=True,
+                    help="回落日期标签 YYYY-MM-DD（仅用于 published 缺失/不可解析的评论）")
     ap.add_argument("--max-pages", type=int, default=8, help="每视频每次最多翻页数（回填节流）")
     a = ap.parse_args()
     os.makedirs(DEST, exist_ok=True)   # 始终建目录，便于工作流容错
@@ -161,31 +182,38 @@ def main():
     # （YouTube API 有每日配额，重翻即烧配额）。
     news_common.dump_json_atomic(sp, state, indent=1)
 
-    # 当次快照（按 likes 排序，供报告引用）。
-    # 与同日既有快照并轨后再写：run_new 只含**本轮新采**的评论，而累积库 comments.jsonl
+    # 日档（按 likes 排序，供报告引用），按**评论发布日**分组落各自的档。
+    # 与同日既有日档并轨后再写：run_new 只含**本轮新采**的评论，而累积库 comments.jsonl
     # 是跨轮去重的——同一天第二次跑（CI 重跑失败作业 / workflow_dispatch 补同一日期）
-    # 时全部评论都已在库，run_new 恒为空，直写就把当日快照清成 `[]`，当日「PV 视频评论」
-    # 报告数据凭空蒸发（累积库还在，快照层已毁）。
-    snap_path = Path(f"{DEST}/{a.date}.json")
-    merged = []
-    seen_ids = set()
-    if snap_path.is_file():
-        try:
-            prev = json.loads(snap_path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            prev = []
-        for r in prev if isinstance(prev, list) else []:
-            if isinstance(r, dict) and r.get("id") not in seen_ids:
+    # 时全部评论都已在库，run_new 恒为空，直写就把当日日档清成 `[]`，当日「PV 视频评论」
+    # 报告数据凭空蒸发（累积库还在，日档层已毁）。分组后**空组不落笔**，本轮没采到新
+    # 评论的日期一律不碰，上述清空路径遂在结构上不可达。
+    by_date: dict[str, list] = {}
+    for r in run_new:
+        by_date.setdefault(snapshot_date(r, a.date), []).append(r)
+    for day, rows in sorted(by_date.items()):
+        snap_path = Path(f"{DEST}/{day}.json")
+        merged = []
+        seen_ids = set()
+        if snap_path.is_file():
+            try:
+                prev = json.loads(snap_path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                prev = []
+            for r in prev if isinstance(prev, list) else []:
+                if isinstance(r, dict) and r.get("id") not in seen_ids:
+                    seen_ids.add(r.get("id"))
+                    merged.append(r)
+        for r in rows:
+            if r.get("id") not in seen_ids:
                 seen_ids.add(r.get("id"))
                 merged.append(r)
-    for r in run_new:
-        if r.get("id") not in seen_ids:
-            seen_ids.add(r.get("id"))
-            merged.append(r)
-    merged.sort(key=lambda x: -x.get("likes", 0))
+        merged.sort(key=lambda x: -x.get("likes", 0))
+        news_common.dump_json_atomic(str(snap_path), merged, indent=1)
     run_new.sort(key=lambda x: -x.get("likes", 0))
-    news_common.dump_json_atomic(str(snap_path), merged, indent=1)
-    print(f"本次新增 {len(run_new)} 条；累积库共 {len(known)} 条 → {store}")
+    print(f"本次新增 {len(run_new)} 条，落 {len(by_date)} 个日档"
+          f"（{min(by_date) if by_date else '-'} … {max(by_date) if by_date else '-'}）；"
+          f"累积库共 {len(known)} 条 → {store}")
 
 
 if __name__ == "__main__":

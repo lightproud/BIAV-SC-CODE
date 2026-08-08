@@ -152,5 +152,67 @@ class TestMain(unittest.TestCase):
             self.assertIn("v0", state)
 
 
+class TestSnapshotDateByPublish(unittest.TestCase):
+    """日档按**发布日**分档（守密人 2026-08-08 裁定），--date 只作回落标签。"""
+
+    def test_offset_applied_exactly_once(self):
+        # 两侧夹逼，把「北京偏移」钉死为恰好一次：
+        #   16:30Z 北京已跨日 → 少算偏移会得 08-05；
+        #   10:00Z 北京仍当日 → 多算一遍偏移会得 08-06。
+        self.assertEqual(cvc.snapshot_date({"published": "2026-08-05T16:30:00Z"}, "x"),
+                         "2026-08-06")
+        self.assertEqual(cvc.snapshot_date({"published": "2026-08-05T10:00:00Z"}, "x"),
+                         "2026-08-05")
+
+    def test_unparsable_or_missing_falls_back_to_label(self):
+        for row in ({"published": "p"}, {"published": ""}, {}):
+            self.assertEqual(cvc.snapshot_date(row, "2026-06-01"), "2026-06-01")
+
+    def _run_main(self, dest, rows, date_label):
+        with mock.patch.object(cvc, "DEST", dest), \
+                mock.patch.object(sys, "argv", ["prog", "--date", date_label]), \
+                mock.patch.dict(cvc.os.environ, {"YOUTUBE_API_KEY": "k"}, clear=True), \
+                mock.patch.object(cvc, "discover_videos", return_value={"v1": ("T", "C")}), \
+                mock.patch.object(cvc, "fetch_video_comments", return_value=(rows, True)):
+            cvc.main()
+
+    def test_one_run_scatters_into_own_publish_day_files(self):
+        # 断更补采的核心诉求：一轮采回的跨日积压不再全挤进 --date 那一个档。
+        import tempfile
+        rows = [
+            {"id": "c1", "likes": 1, "published": "2026-07-28T03:00:00Z"},
+            {"id": "c2", "likes": 2, "published": "2026-08-01T03:00:00Z"},
+            {"id": "c3", "likes": 3, "published": "2026-08-01T04:00:00Z"},
+        ]
+        with tempfile.TemporaryDirectory() as d:
+            dest = str(Path(d) / "yc")
+            self._run_main(dest, rows, "2026-08-07")
+            self.assertEqual(len(json.loads(Path(dest, "2026-07-28.json").read_text())), 1)
+            self.assertEqual(len(json.loads(Path(dest, "2026-08-01.json").read_text())), 2)
+            # 标签日自身不该凭空多出一个档
+            self.assertFalse(Path(dest, "2026-08-07.json").exists())
+
+    def test_empty_run_writes_no_file(self):
+        # 空组不落笔：本轮无新评论时不得造 `[]` 空档冒充「那天没评论」。
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            dest = str(Path(d) / "yc")
+            self._run_main(dest, [], "2026-08-07")
+            self.assertFalse(Path(dest, "2026-08-07.json").exists())
+
+    def test_merges_into_existing_day_without_clobbering(self):
+        # #875 幂等防线在新结构下仍在：并轨既有日档，不覆盖。
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            dest = Path(d) / "yc"
+            dest.mkdir()
+            (dest / "2026-08-01.json").write_text(
+                json.dumps([{"id": "old", "likes": 99}]), encoding="utf-8")
+            self._run_main(str(dest), [{"id": "c1", "likes": 1,
+                                        "published": "2026-08-01T03:00:00Z"}], "2026-08-07")
+            snap = json.loads((dest / "2026-08-01.json").read_text())
+            self.assertEqual([r["id"] for r in snap], ["old", "c1"])   # 按 likes 降序
+
+
 if __name__ == "__main__":
     unittest.main()
