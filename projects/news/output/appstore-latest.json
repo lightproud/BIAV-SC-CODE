@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-07T21:38:30.288952+00:00",
+  "collected_at": "2026-08-08T01:22:17.107880+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "appstore",
@@ -53,6 +53,16 @@
       "summary": "Really unique game with wonderful visuals and designs.",
       "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14289548620",
       "author": "feriiukas",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-07-17T00:02:48-07:00",
+      "lang": "en",
+      "title": "Invit code",
+      "summary": "Invit code\n\nGKI3KZE1NS",
+      "url": "https://apps.apple.com/ca/app/id6447354150?see-all=reviews#as-14313204363",
+      "author": "Olliwawa",
       "engagement": 5
     },
     {
