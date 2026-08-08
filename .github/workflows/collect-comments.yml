@@ -44,6 +44,12 @@ jobs:
         with:
           python-version: '3.11'
 
+      # 本脚本自身只用 urllib，但为取 dump_json_atomic 而 import news_common，
+      # 后者顶层 import requests——缺此步即在 import 期 ModuleNotFoundError。
+      # 装声明档而非手挑单包：依赖清单单一真相源，防 news_common 日后再引新包时复发。
+      - name: Install dependencies
+        run: pip install -r projects/news/requirements.txt
+
       - name: Clone BIAV-SC-DATA（PAT，数据根：读 youtube 存档 + 写评论）
         env:
           DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
