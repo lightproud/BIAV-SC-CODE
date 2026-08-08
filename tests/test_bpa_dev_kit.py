@@ -240,6 +240,28 @@ def test_launcher_kit_mode_dispatch_present():
 
 @pytest.mark.parametrize("name", ["launcher.cmd", "assemble.cmd", "deploy.cmd",
                                   "rollback.cmd", "update.cmd"])
+def test_cmd_non_ascii_lines_never_chain_with_ampersand(name):
+    """非 ASCII 行不得用 `&` 串接命令（2026-08-06 内网野战实证）。
+
+    守密人跑 assemble.cmd 时，`echo 组装失败：...` 那行**正常打印了**，紧接着的
+    `echo 详情见 %LOG% & pause & exit /b 1` 却报 `'详情见' is not recognized`——
+    65001 下解析器在多字节行上重新定位时切进了 `echo ` 里，把中文当成命令名。
+    两行都在同一个括号块、都含中文，差别只有一个 `&`，故按证据钉这一条：
+    含非 ASCII 的行只做一件事，`pause` / `exit` 各自独占一行。
+
+    这是既有 rem 行 / 标签块 ASCII 纪律的补集——那两条管的是「哪些块必须全 ASCII」，
+    这条管的是「允许带中文的行怎么写才不炸」。
+    """
+    for n, line in enumerate((KIT / name).read_text(encoding="utf-8").splitlines(), 1):
+        s = line.strip()
+        if not s.isascii() and "&" in s:
+            raise AssertionError(
+                f"{name}:{n} 非 ASCII 行用 & 串接命令（65001 错位风险）——拆成多行: {s[:70]}"
+            )
+
+
+@pytest.mark.parametrize("name", ["launcher.cmd", "assemble.cmd", "deploy.cmd",
+                                  "rollback.cmd", "update.cmd"])
 def test_cmd_rem_lines_are_ascii_short(name):
     """chcp 65001 解析器错位野战回归（两案实证）：套件 cmd 的 rem 行必须 ASCII 短行。"""
     for line in (KIT / name).read_text(encoding="utf-8").splitlines():

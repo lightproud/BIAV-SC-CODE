@@ -168,13 +168,21 @@ def main() -> int:
             skipped["patches"].append(patch.name)
             log(f"补丁跳过（选装表 off）：{patch.name}")
             continue
+        # encoding 必须显式钉 utf-8（2026-08-06 内网野战）：assemble.cmd 设了
+        # PYTHONIOENCODING=utf-8 让子进程吐 UTF-8，而 text=True 走的是**系统默认**
+        # 编码——中文 Windows 上是 GBK，两端约定正好相反。子进程一吐中文，读取线程
+        # 就 UnicodeDecodeError 死掉，r.stderr 变 None，下面那行 .strip() 再补一刀。
+        # 后果比崩溃本身更坏：**真正的补丁错误被这条崩溃掩盖了**，守密人看到的是
+        # 一串 traceback，而不是「哪张补丁的哪一段对不上」。errors="replace" 兜底，
+        # 保证报错通道在任何字节下都活着——诊断路径自己绝不能是失败源。
         r = subprocess.run(
             [sys.executable, str(kit / "apply_patch.py"),
              "--root", str(bundle / "app"), str(patch)],
-            capture_output=True, text=True)
+            capture_output=True, text=True, encoding="utf-8", errors="replace")
         if r.returncode != 0:
             log(f"补丁应用失败：{patch.name}")
-            log(r.stderr.strip()[-800:])
+            detail = ((r.stderr or "") + (r.stdout or "")).strip()
+            log(detail[-800:] if detail else "（子进程未给出原因，见上方 traceback）")
             return 1
         files, plus, minus = diffstat(patch)
         included["patches"].append(

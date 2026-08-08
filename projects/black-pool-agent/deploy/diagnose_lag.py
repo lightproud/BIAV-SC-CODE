@@ -51,9 +51,14 @@ def section(title: str) -> None:
 
 def run_capture(args: list[str], timeout: int = 30) -> str:
     try:
+        # 显式 utf-8 + replace（2026-08-06 同因加固）：text=True 默认走系统编码，
+        # 中文 Windows 上是 GBK，遇到非 GBK 字节即 UnicodeDecodeError——而这是
+        # **诊断工具**，它崩掉等于故障现场没人取证。UnicodeDecodeError 不是
+        # OSError/SubprocessError 的子类，原来的 except 接不住。
         return subprocess.run(args, capture_output=True, text=True,
+                              encoding="utf-8", errors="replace",
                               timeout=timeout).stdout or ""
-    except (OSError, subprocess.SubprocessError):
+    except (OSError, subprocess.SubprocessError, UnicodeDecodeError):
         return ""
 
 

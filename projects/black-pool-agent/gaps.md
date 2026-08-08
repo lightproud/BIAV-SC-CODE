@@ -49,6 +49,25 @@
   **教训**：门禁的价值取决于它**能不能通过**。一道永远红的门不叫严格，叫堵死；
   而它堵住的是交付，放过的是它本该拦的东西（那批 POSIX 用例红得太响，反而没人去看
   真正该看的换装回归）。选门禁落点时要先问「这道门在这台机器上有没有可能绿」。
+- **2026-08-06 · 自伤记录 · 报错通道自己是失败源（内网组装野战）**：守密人跑第二级组装
+  （bpa-dev `assemble.cmd`）时，一张内网补丁应用失败——**但真实原因一个字都没露出来**，
+  屏幕上只有两串 traceback 加一句 `'详情见' is not recognized`。三个缺陷叠在一起：
+  ① **编码两端相反**：`assemble.cmd` 设 `PYTHONIOENCODING=utf-8` 让子进程吐 UTF-8，
+  而 `assemble_inject.py` 的 `subprocess.run(text=True)` 走**系统默认**编码——中文
+  Windows 上是 GBK。子进程一吐中文即 `UnicodeDecodeError`（报错字节 `0x97` 正是 UTF-8
+  续字节），读取线程死掉。② **崩溃补刀**：线程死后 `r.stderr` 变 `None`，紧接着的
+  `r.stderr.strip()` 抛 `AttributeError`——**这行代码的唯一职责就是打印失败原因**。
+  ③ **cmd 65001 错位**：`echo 详情见 %LOG% & pause & exit /b 1` 被切进 `echo ` 里，
+  中文当成命令名。同块上一行的纯中文 echo **打印正常**，差别只有一个 `&`。
+  处置：四处 `subprocess.run` 全部显式钉 `encoding="utf-8", errors="replace"`
+  （含监督器 `launch_desktop.py`——它崩掉等于桌面端起不来、诊断器 `diagnose_lag.py`——
+  它崩掉等于现场没人取证；`UnicodeDecodeError` 不是 `OSError` 子类，原 except 接不住）；
+  失败分支改读 `(r.stderr or "") + (r.stdout or "")` 并在皆空时明说；8 处非 ASCII 的
+  `&` 串接行拆成多行，新守卫 `test_cmd_non_ascii_lines_never_chain_with_ampersand`
+  钉死（已做负控，串回去即红）。
+  **教训**：诊断路径必须比它诊断的东西更结实。一个只在出错时才走的分支，恰恰最少被执行、
+  最容易腐坏——而它坏掉的代价是**故障现场被抹掉**，比原故障本身更贵。凡「打印错误」
+  「写日志」「收集诊断」的代码，都要按「任何输入都不许崩」的标准写。
 - **2026-08-03 · 扩展点走通（正面记录）· blackpool 记忆插件 → 2026-08-04 已退役**：
   中文记忆召回缺口（stock holographic 的 FTS5 unicode61 把连续汉字当单一词元，
   中文事实近乎不可检索）**全程走官方扩展面解决、零补丁零核心触碰**——MemoryProvider

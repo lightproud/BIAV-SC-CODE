@@ -1185,7 +1185,8 @@ def generate_patches() -> tuple[str, str]:
                         ignore=shutil.ignore_patterns(".venv", "__pycache__"))
         def run(*args: str) -> subprocess.CompletedProcess:
             return subprocess.run(["git", "-C", str(work), *args],
-                                  capture_output=True, text=True, check=True)
+                                  capture_output=True, text=True,
+                                  encoding="utf-8", errors="replace", check=True)
         run("init", "-q")
         run("config", "user.email", "rebrand@black-pool.local")
         run("config", "user.name", "rebrand")

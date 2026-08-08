@@ -36,7 +36,10 @@ if not exist "%B%\MANIFEST.txt" (
 rem (zh comment moved to RUNBOOK - 65001 parser desync)
 if exist "%BPA_DIR%\home" (
   robocopy "%BPA_DIR%\home" "%B%\home" /e /xc /xn /xo /njh /njs /ndl /nfl >nul
-  if errorlevel 8 (echo 部署失败：home 保全拷贝出错。& echo 详情见 %LOG% & pause & exit /b 1)
+  if errorlevel 8 (echo 部署失败：home 保全拷贝出错。
+  echo 详情见 %LOG%
+  pause
+  exit /b 1)
   echo 用户数据已保全（旧 home 增量并入，不覆盖新配置）
 )
 
@@ -85,7 +88,9 @@ set "DEPLOY_MODE=rotate"
 rem (zh comment moved to RUNBOOK - 65001 parser desync)
 move "%B%" "%BPA_DIR%" >nul || (
   echo 部署失败：成品搬运出错；旧版仍在 %BPA_DIR%.old 可手工恢复。
-  echo 详情见 %LOG% & pause & exit /b 1
+  echo 详情见 %LOG%
+  pause
+  exit /b 1
 )
 goto post_deploy
 
@@ -112,7 +117,9 @@ for %%F in ("%BPA_DIR%\desktop\*.exe") do if not defined BPA_EXE set "BPA_EXE=%%
 set "LNK_TARGET=%BPA_DIR%\launcher.cmd"
 if exist "%BPA_DIR%\Black Pool.exe" set "LNK_TARGET=%BPA_DIR%\Black Pool.exe"
 if defined BPA_EXE (
-  cscript //nologo "%SD%make-shortcut.vbs" "%BPA_DIR%\Black Pool.lnk" "%LNK_TARGET%" "%BPA_DIR%" "%BPA_EXE%,0" >nul 2>&1 && echo 已生成带图标入口：Black Pool.lnk（可拷到桌面）
+  cscript //nologo "%SD%make-shortcut.vbs" "%BPA_DIR%\Black Pool.lnk" "%LNK_TARGET%" "%BPA_DIR%" "%BPA_EXE%,0" >nul 2>
+  1
+  echo 已生成带图标入口：Black Pool.lnk（可拷到桌面）
 )
 
 echo.
