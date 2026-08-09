@@ -28,11 +28,22 @@
 | 快照规模 | 8,436 文件 / 156MB |
 | 入仓日 | 2026-08-04 |
 
-> 移 pin 史：首钉 `v2026.7.30`（0.19.1，2026-08-02 入仓）→ `v2026.8.3`（0.20.0，2026-08-04，
-> 守密人「HERMES 更新 0.20」派发；特性补丁 conversation-cost-panel 于 use-statusbar-items.tsx
-> import 区人工重放一处，其余 hunk 带偏移干净落位）。
+## 移 pin 史
+
+<!-- 机器追加区：build/sync_upstream.py 只在表尾 append 一行，既有行一字不改。
+     人工补注写进「备注」列，不会被后续自动移 pin 覆盖。改表头形态即断同步引擎。 -->
+
+| 日期 | tag | 引擎版本 | 备注 |
+|------|-----|---------|------|
+| 2026-08-02 | `v2026.7.30` | 0.19.1 | 首钉（曾短暂取当日 HEAD `f86693c2`，同日按 release tag 策略换轨至 tag） |
+| 2026-08-04 | `v2026.8.3` | 0.20.0 | 守密人「HERMES 更新 0.20」派发；特性补丁 conversation-cost-panel 于 use-statusbar-items.tsx import 区人工重放一处，其余 hunk 带偏移干净落位 |
 
 ## 同步例程（移 pin 时照此执行）
+
+**日常走自动化**：周更例程每周一 00:00（北京，UTC 周日 16:00）自动跑完下述四步，
+手册见 [`WEEKLY-UPDATE.md`](WEEKLY-UPDATE.md)，机械腿是 `build/sync_upstream.py`
+（`probe` 探版 / `sync` 一步换装 / `changelog` 出变更清单 / `announce` 出公告）。
+本节保留为**引擎行为的地面真相**——手办与自动跑的是同一条例程，出入即 bug。
 
 1. 仓外浅克隆目标 ref：`git clone --depth 1 [--branch <tag>] https://github.com/NousResearch/hermes-agent.git`
 2. 全量替换快照：清空 `upstream/` → `git -C <clone> archive HEAD | tar -x -C upstream/`
@@ -44,7 +55,11 @@
    `tests/test_hermes_charter.py` 出身行哨兵，再 `python3 build/rebrand.py`（规则引擎重出
    `patches/black-pool-rebrand.patch` + `black-pool-intranet.patch` 两张）；特性补丁（如 `conversation-cost-panel.patch`）逐个
    `git apply --check` 核对新基底，冲突则人工重放后重出 diff（守卫核干净应用 + 三红线）
-4. 更新本档 pin 表 → 跑全量守卫 → 单提交入库（`vendor: hermes-agent @<short-sha>`）
+4. 更新本档 pin 表与移 pin 史 → 跑全量守卫 → 单提交入库（`vendor: hermes-agent @<short-sha>`）
+
+> 自动化的射程边界：步 1、2、4 与步 3 的**前半句**（同步常量 + 重生成品牌补丁）由引擎
+> 确定性完成；步 3 **后半句的人工重放**引擎只做 `--check` 并以退出码 3 上报，绝不代劳——
+> 重放是判断题不是填空题，交给例程会话（这正是守密人 2026-08-09 选「会话例程」而非纯 CI 的理由）。
 
 ## 纪律
 
