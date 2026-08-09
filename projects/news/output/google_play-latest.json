@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-09T12:45:30.145085+00:00",
+  "collected_at": "2026-08-09T15:30:35.061405+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 120,
+  "item_count": 121,
   "items": [
     {
       "source": "google_play",
@@ -873,6 +873,16 @@
       "summary": "best game ever, game baik dan sangat ramah buat free player, awaker (hero) nya sangat bagus",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-cb2eee64-7b8c-489f-b47e-c32cdfcb4d5f",
       "author": "Beryl Burn",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-08T13:31:57",
+      "lang": "vi",
+      "title": "[Google Play 好评] ★5 game hay mà ít người bt kinh😭",
+      "summary": "game hay mà ít người bt kinh😭",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-9c7109e4-fae7-4427-b6a1-17364fd93afb",
+      "author": "Ran Mei",
       "engagement": 0
     },
     {
