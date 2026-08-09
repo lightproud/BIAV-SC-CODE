@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-09T01:27:35.875784+00:00",
+  "collected_at": "2026-08-09T04:18:13.610604+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -139,21 +139,6 @@
       "review": "EL MEJOR JUEGO DEL MUNDO",
       "timestamp_created": 1786166643,
       "playtime_forever": 528
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-08T02:18:40+00:00",
-      "lang": "koreana",
-      "title": "[正面] 번역체인거 빼고는 상당히 재미있음",
-      "summary": "번역체인거 빼고는 상당히 재미있음",
-      "url": "https://steamcommunity.com/profiles/76561198043556433/recommended/3052450",
-      "author": "76561198043556433",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "번역체인거 빼고는 상당히 재미있음",
-      "timestamp_created": 1786155520,
-      "playtime_forever": 1149
     }
   ]
 }

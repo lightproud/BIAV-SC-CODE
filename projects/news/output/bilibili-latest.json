@@ -1,62 +1,26 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-09T01:27:35.875784+00:00",
+  "collected_at": "2026-08-09T04:18:13.610604+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 17,
+  "item_count": 13,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-08-08T02:05:00+00:00",
-      "lang": "zh",
-      "title": "【政治经济学分析】虚渊玄",
-      "summary": "-\n  └ TK有栖Alice (10赞): 老虚所有的作品，都是在讲述人与系统之间的关系与反思。这些系统里有什么？鬼哭街里面的封建礼教，沙耶之歌里面的人伦道德，小圆里面的宇宙规律，fz里面的人性因果，心测里面的完美理性社会。老虚把所有“理所当然的”“世界就是这样的”“无可奈何的”“应该顺从的”东西全部讨论抽离了个遍，问出了最终的问题“世界是这样的，我们就应该这样吗？就应该认可吗？就应该顺从吗？”\n我们是人类，我们有反抗世界的勇气吗？亵渎这些神圣规则的决心吗？\n于是，鬼哭街里面的孔瑞丽疯了，亵渎道德伦理系统，并且彻底蔑视世界。沙耶之歌的主角也疯了，偏执于自己的爱，否认了整个人类系统，小圆走出了一条脱离原有系统的新道路。fz里的卫宫的解决方法就是，把这条路不留余地的走下去，就是要在这个不黑不白的灰度世界里做正义的伙伴，选择与世界系统决裂。而桢岛圣护，则是选择当一个殉道者，即便毁灭，常守朱则是理想主义相信人类可以改良系统。\n老虚在不同的人身上给出不同的解法，他自诩为爱的战士，我觉得是有一定道理的，个人主义的爱这种东西从某种意义来说，就是邪恶，丑陋，不讲道理，不讲理性的，正好与这些理性运行的系统相悖。（当你用理性去计算权衡利弊的时候，很多时候就没有爱，这点在你爱人也是同样的道理）\n老虚这个人其实并不是喜欢虐笔下的角色，他是根本不怕毁灭，更多是“为了自己的意志，为了自己的爱，诸般因果尽加吾身”的那种畅快感。我只想坚持自己的爱，管这个世界会怎么样，也不用管我或者这个世界的结局，就是那么蛮横傲慢，就是那么不讲道理\n  └ lERNM (29赞): 看到标题一时间以为我眼花了[藏狐]\n  └ wzjDECADE (14赞): 您猜怎么着，现代心理学治疗的目的其实就是让一个被动脱出社会化大生产的人能够重新融入[doge]",
-      "url": "https://www.bilibili.com/video/BV1NHuw6uEHo",
-      "author": "铉铮",
-      "engagement": 3281,
-      "media_url": "https://i2.hdslb.com/bfs/archive/2b2d368a147c15fc7d023253668c4125f6f20b11.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 3232,
-        "comment_count": 49,
-        "comments_fetched": 3,
-        "danmaku": 17
-      }
-    },
     {
       "source": "bilibili",
       "time": "2026-08-08T07:59:06+00:00",
       "lang": "zh",
       "title": "［相位］小艾她像个战神",
-      "summary": "-\n  └ 5455421 (1赞): 迫近的太阳怎么获得啊？\n  └ 东方云心 (1赞): [星绘·沐春灼华 应援装扮_铸币大头]",
+      "summary": "-\n  └ 鸠竹竹 (1赞): 相位对弈对面的都是真人吗[蹲蹲]\n  └ 5455421 (1赞): 迫近的太阳怎么获得啊？\n  └ 东方云心 (1赞): [星绘·沐春灼华 应援装扮_铸币大头]",
       "url": "https://www.bilibili.com/video/BV1s9uu68EZq",
       "author": "莱星Ligh",
-      "engagement": 634,
+      "engagement": 725,
       "media_url": "https://i1.hdslb.com/bfs/archive/5d8d9adaa1d6e1a1028f9b9fc2d895786b7707e6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 630,
-        "comment_count": 4,
-        "comments_fetched": 2,
+        "play": 719,
+        "comment_count": 6,
+        "comments_fetched": 3,
         "danmaku": 1
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-08T03:27:12+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】蹲坑蹲到底的混沌24，蹲到最后应有尽有",
-      "summary": "-\n  └ 嘎啦嘎啦果 (2赞): 还能省",
-      "url": "https://www.bilibili.com/video/BV1GLuM6qEdP",
-      "author": "嘎啦嘎啦果",
-      "engagement": 402,
-      "media_url": "https://i1.hdslb.com/bfs/archive/98ac5b741d23e0eb2e748d0956566948847a61c8.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 401,
-        "comment_count": 1,
-        "comments_fetched": 1,
-        "danmaku": 0
       }
     },
     {
@@ -64,16 +28,34 @@
       "time": "2026-08-08T15:40:35+00:00",
       "lang": "zh",
       "title": "【忘却前夜】应对道中小怪数值膨胀，不妨试试双子白鸟弟（评论区有1000字构筑分析）",
-      "summary": "-\n  └ 嘎啦嘎啦果 (3赞): 【1】\n仅供超限鸟弟玩家捡破烂打融灾参考，3启鸟弟没法走这套，这套需要鸟弟尽量开超限大。\n对比传统只堆输出的三保一鸟弟来说，这队的道中更为舒适，可以让大部分中配鸟弟玩家平滑度过道中，不再痛苦地在落地战反复重开。\n主要思路就是鸟兄弟和另外两个队友一起靠戒备叠盾蹲坑，猥琐发育，本质上是鸟哥蹲坑队，但最好且最能输出的队友就是鸟弟。反正后面罪印叠起来了，管你暴击不暴击，爆伤有多低，都能靠大量流血打过去。\n这队，鸟哥（至少2启）和艾瑞卡是固定的，神父最优，其次是红夫人（删2费，留1费，在爆发回合先打出去，然后靠鸟兄弟的多次攻击来获得大量回血）和蜘蛛（经典叠永久戒备）。\n钥令固定短暂的永恒，一般都指给鸟弟，偶尔给其他人。\n鸟弟带艾瑞卡专武，双子白词条洗双爆和银钥。带艾瑞卡专武，一是缓解牌权全在没银充的鸟弟身上，而导致几回合都开不出一次钥令的问题（而且细想一下，你费尽力气终于开出一次鸟弟钥令，结果就是让罪印多叠5层和降1费和蚊子腿爆伤，不觉得有点好笑吗？），二是鸟弟打出防御后还能产生临时戒备造福全队。\n鸟弟开了超限大之后，开钥令，先出防御再出攻击，就能加速充狂开出下一个超限大，圣心在大部分情况等它们变成0费再打，不急，蹲到最后应有尽有。\n不要为了让防御多一点盾而让鸟弟去带远方的欢宴，地瓜带欢宴是因为她的防御有很多办法回手。\n鸟哥要带入药，不带光合祭礼，因为这队的血量可以一直维持在很高的水平上，而且王关前的最后一次小怪关做空间状态，也是需要不停地湮灭，尽可能把空间里鸟哥的牌替换成鸟弟的圣心，这样就几乎吃不到光合祭礼的效果了。\n鸟哥的sr可以换成别的你用起来顺手的命轮，我这里带血希sr是因为经常碰到差一点开不出鸟哥大招的情况。\n艾瑞卡和神父选一个带双子白/生机榨取，或者直接两个埋骨地，词条洗银钥和死抗。艾瑞卡带珊专武和纯银的初心可以白嫖到鸟弟出防御后的临时戒备，而且艾瑞卡觉醒之后，造成护盾的同时也会有临时戒备，反哺全队。神父sr可以换成鸟哥sr，还能多拿一次盾。\n落地战依旧需要凹开局才能更舒服，前期尽可能使得鸟哥的2费进空间。\n  └ 圳宝3 (0赞): 真的很好用，打2-5全程无压力，打完boss甚至满血[喜欢][喜欢][喜欢]\n  └ 幺幺水下乐园 (0赞): 试了一下确实挺有说法的 道中好打很多 不过落地架还是有点蠕动",
+      "summary": "-\n  └ 嘎啦嘎啦果 (4赞): 【1】\n仅供超限鸟弟玩家捡破烂打融灾参考，3启鸟弟没法走这套，这套需要鸟弟尽量开超限大。\n对比传统只堆输出的三保一鸟弟来说，这队的道中更为舒适，可以让大部分中配鸟弟玩家平滑度过道中，不再痛苦地在落地战反复重开。\n主要思路就是鸟兄弟和另外两个队友一起靠戒备叠盾蹲坑，猥琐发育，本质上是鸟哥蹲坑队，但最好且最能输出的队友就是鸟弟。反正后面罪印叠起来了，管你暴击不暴击，爆伤有多低，都能靠大量流血打过去。\n这队，鸟哥（至少2启）和艾瑞卡是固定的，神父最优，其次是红夫人（删2费，留1费，在爆发回合先打出去，然后靠鸟兄弟的多次攻击来获得大量回血）和蜘蛛（经典叠永久戒备）。\n钥令固定短暂的永恒，一般都指给鸟弟，偶尔给其他人。\n鸟弟带艾瑞卡专武，双子白词条洗双爆和银钥。带艾瑞卡专武，一是缓解牌权全在没银充的鸟弟身上，而导致几回合都开不出一次钥令的问题（而且细想一下，你费尽力气终于开出一次鸟弟钥令，结果就是让罪印多叠5层和降1费和蚊子腿爆伤，不觉得有点好笑吗？），二是鸟弟打出防御后还能产生临时戒备造福全队。\n鸟弟开了超限大之后，开钥令，先出防御再出攻击，就能加速充狂开出下一个超限大，圣心在大部分情况等它们变成0费再打，不急，蹲到最后应有尽有。\n不要为了让防御多一点盾而让鸟弟去带远方的欢宴，地瓜带欢宴是因为她的防御有很多办法回手。\n鸟哥要带入药，不带光合祭礼，因为这队的血量可以一直维持在很高的水平上，而且王关前的最后一次小怪关做空间状态，也是需要不停地湮灭，尽可能把空间里鸟哥的牌替换成鸟弟的圣心，这样就几乎吃不到光合祭礼的效果了。\n鸟哥的sr可以换成别的你用起来顺手的命轮，我这里带血希sr是因为经常碰到差一点开不出鸟哥大招的情况。\n艾瑞卡和神父选一个带双子白/生机榨取，或者直接两个埋骨地，词条洗银钥和死抗。艾瑞卡带珊专武和纯银的初心可以白嫖到鸟弟出防御后的临时戒备，而且艾瑞卡觉醒之后，造成护盾的同时也会有临时戒备，反哺全队。神父sr可以换成鸟哥sr，还能多拿一次盾。\n落地战依旧需要凹开局才能更舒服，前期尽可能使得鸟哥的2费进空间。\n  └ 天辉信使Official (1赞): 援一个三启低配鸟弟，道中也是尽可能塞鸟哥二费或者其他鸟哥牌，尽量不湮灭靠纯超的灵感来代替黑羽过牌，不过我这个还是传统的捕鸟蛛打法了，打其他图可能就不太行。\n  └ Silverizon_ (0赞): 果佬问问鸟哥的入药要洗什么哇，还是强效吗[委屈]",
       "url": "https://www.bilibili.com/video/BV1CNu56BEkW",
       "author": "嘎啦嘎啦果",
-      "engagement": 385,
+      "engagement": 525,
       "media_url": "https://i2.hdslb.com/bfs/archive/a1d66d57605143709eec22d88a80fc97d3c2a1ae.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 377,
-        "comment_count": 8,
+        "play": 516,
+        "comment_count": 9,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-09T00:08:28+00:00",
+      "lang": "zh",
+      "title": "Be you wanna be",
+      "summary": "-\n  └ 梦游惊奇 (0赞): [星星眼][星星眼][星星眼]",
+      "url": "https://www.bilibili.com/video/BV1X3u76cE62",
+      "author": "蹈海者",
+      "engagement": 500,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f7f58f1242bdc6997c11649221ee9e737bbecd2b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 498,
+        "comment_count": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -85,49 +67,13 @@
       "summary": "就炸魚，你氣不氣\n  └ 密斯卡托尼克的银猫 (0赞): 神之一手，七之八，腺體分裂\n  └ iq2233 (0赞): [打call]",
       "url": "https://www.bilibili.com/video/BV1WcuG6YEV5",
       "author": "密斯卡托尼克的银猫",
-      "engagement": 374,
+      "engagement": 383,
       "media_url": "https://i1.hdslb.com/bfs/archive/780a93835f9f40d7ec819f6fbd652393a0ae3d69.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 371,
+        "play": 380,
         "comment_count": 3,
         "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-08T01:36:40+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】混沌环娜空过一回合3T融灾5-5潘",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1AEuu6sEps",
-      "author": "生活仍在继续12138",
-      "engagement": 348,
-      "media_url": "https://i2.hdslb.com/bfs/archive/5c9b93fceaaf6996ae170efde910eca1dba17dc7.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 348,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-08T03:31:13+00:00",
-      "lang": "zh",
-      "title": "融灾首次425（8.3-8.16）",
-      "summary": "前几期隐隐约约感觉配置差不多了但一直没打，这期先用的金人kks配队逃了3图，又用血希对策1图，打完这两关感觉有希望就开始规划配队。1图2图3图都还蛮轻松的，4图出了神国不知道出哪个，5图出了蚀罗也不知道出哪个了。剩下了塔潘，阿拉和助战。塔潘配置低还没戒指实在有点牢，想来想去临时拉了个皮克曼组羊皮潘对策5图，凹完5图后宣告结束。4图借了个一哥的茉夏配阿拉平推了（140死扛实在太好用）",
-      "url": "https://www.bilibili.com/video/BV1gnuM6PEs5",
-      "author": "给天以星",
-      "engagement": 251,
-      "media_url": "https://i0.hdslb.com/bfs/archive/c47f65aa2a24cdd124871a42ace02443fa5c86b2.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 251,
-        "comment_count": 0,
-        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -139,11 +85,11 @@
       "summary": "音频来源BV1zWun6SEda\n玩这队果然还是旺达感很重，道中慢悠悠，虽然零压力就是了。Kks全程挂挂机王战开个大丢张三就是整局作用，这是属于我们深海旺达的银钥转反击版罗坦（骄傲）。温珊替换后面两个道中就会快很多，王战就又劣势了些，真是难以抉择",
       "url": "https://www.bilibili.com/video/BV18Tu366EZH",
       "author": "护林犬",
-      "engagement": 196,
+      "engagement": 242,
       "media_url": "https://i1.hdslb.com/bfs/archive/94bf57abcaba21635c13dcb95c2ecb23b2fe8263.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 196,
+        "play": 242,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -151,17 +97,17 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-08-08T03:26:12+00:00",
+      "time": "2026-08-09T00:00:00+00:00",
       "lang": "zh",
-      "title": "【忘却前夜】蚀萝茉夏6T肘死H5-11",
-      "summary": "不知道回放有什么BUG，速率有点不受我控制...\n总之想试试大萝配合茉夏，但是早忘了怎么打这玩意，直接瞎打，全程进攻\n  └ 只摘桃花换酒钱 (1赞): 突然想起来第一次打这玩意带的娜娜，总回合和BOSS回合数几乎是一样的，这下尴尬了\n不过让萝大姐砍了最后一刀也不赖[汤圆]",
-      "url": "https://www.bilibili.com/video/BV1G7uM6KE1N",
-      "author": "只摘桃花换酒钱",
-      "engagement": 164,
-      "media_url": "https://i2.hdslb.com/bfs/archive/48ff7571ad8c7c902ff66b9fcfaf29d8661342e8.jpg",
+      "title": "【忘却淋夜】老人与海制裁5-5潘狄亚回宫",
+      "summary": "淋系视频注意，内容纯属虚构，无恶意诋毁，不良引导，视频中所用语言皆为虚构和节目效果，无任何针对和低俗作用，请仔细了解淋的含义再决定是否观看\n对号入座前请仔细阅读文案\n这个能算饭吗\nBGM：初音miku-神居谣\n  └ 步饷罔了 (1赞): 很美[星星眼]",
+      "url": "https://www.bilibili.com/video/BV1izuV6xEsK",
+      "author": "花葉月",
+      "engagement": 214,
+      "media_url": "https://i1.hdslb.com/bfs/archive/4bb6e4ea174bd8d466a3171de361b9f52aa95d82.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 163,
+        "play": 213,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -172,34 +118,52 @@
       "time": "2026-08-08T16:35:22+00:00",
       "lang": "zh",
       "title": "5-5大招流uw 爽了",
-      "summary": "└ 笼宴 (1赞): 不赖\n  └ Au9usTus_ (0赞): 那我缺的神秘哈哈呢，在主播看到大数字的脸上吗[doge]",
+      "summary": "└ _double_double (1赞): 好萌呀我们231[喜欢]\n  └ bian_loratadine (1赞): 袜，是231老师\n  └ Au9usTus_ (1赞): 那我缺的神秘哈哈呢，在主播看到大数字的脸上吗[doge]",
       "url": "https://www.bilibili.com/video/BV1hQuV67EGu",
       "author": "Killer231x2317",
-      "engagement": 138,
+      "engagement": 202,
       "media_url": "https://i2.hdslb.com/bfs/archive/667f7ee4903701dcfad27afa4ff0ce92725abd16.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 136,
-        "comment_count": 2,
+        "play": 197,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-08T14:45:32+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】萝坦在c",
+      "summary": "-\n  └ 呆呆松OWO (0赞): 大佬大佬帶帶我[颂乐人偶_眯眼笑]\n  └ 步饷罔了 (0赞): 讲个冷知识，罗坦最终法则的防御双倍效果是可以多次叠的，叠其次就能保证几张双倍3费，氮素同样的问题出现就是会算力调和吃到吐[委屈]加上罗坦没专造完全伤害型之耻，其实有也就是个普通人水平🙄，算是那种没上限氮素有下限，基本上只要保证每回合能开个永恒就有几十万的保底输出",
+      "url": "https://www.bilibili.com/video/BV1yEu36wE9T",
+      "author": "-阿临-",
+      "engagement": 170,
+      "media_url": "https://i0.hdslb.com/bfs/archive/d2dbc11491bfb47815157cf49ed3224507ff9ca1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 167,
+        "comment_count": 3,
         "comments_fetched": 2,
         "danmaku": 0
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-08-08T03:30:00+00:00",
+      "time": "2026-08-08T15:48:44+00:00",
       "lang": "zh",
-      "title": "彻底敞开心扉后，沙耶给了我两个选择……",
-      "summary": "噶12412",
-      "url": "https://www.bilibili.com/video/BV1cYuP6zEFS",
-      "author": "朗克清",
-      "engagement": 127,
-      "media_url": "https://i0.hdslb.com/bfs/archive/b655d63cd24825098594315b29ae3150825e418b.jpg",
+      "title": "忘却前夜 小骑士打熔朵 癫狂列车",
+      "summary": "随便打打\n不知道在干嘛\n其实只是想说这个死亡的剖析捡了127人头\ncos藏品\n\n背景音乐：\nYoshihiro Ike - &quot;Festival&quot;\nSakuzyo - &quot;97键盘のための轮舞曲&quot;\n  └ 想睡觉的雨酱 (1赞): 蛙趣 梦游佬，吓哭了\n  └ 呆呆松OWO (1赞): 夕陽與海面之間不再有縫隙，我呆呆地站在海岸邊隙，向海投入一顆顆松果贈與我的心意[桃源_缘分]\n  └ iq2233 (1赞): 强强[打call]",
+      "url": "https://www.bilibili.com/video/BV1WNu56BEo7",
+      "author": "夢遊遊遊遊",
+      "engagement": 128,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f3d44d878e6b22193992f250f496211fb57cad8c.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 127,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 124,
+        "comment_count": 4,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -208,34 +172,16 @@
       "time": "2026-08-08T07:20:04+00:00",
       "lang": "zh",
       "title": "【米饭被变成黄毛的形状】最新视频上线，求关注！",
-      "summary": "-\n  └ Y0SHIKAG3 (0赞): @哈基沙大玉 我比你早到[doge]\n  └ Nautilus114 (0赞): 耶\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]",
+      "summary": "-\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]\n  └ Y0SHIKAG3 (0赞): @哈基沙大玉 我比你早到[doge]\n  └ Nautilus114 (0赞): 耶",
       "url": "https://www.bilibili.com/video/BV1Maug6eE7D",
       "author": "米饭被变成黄毛的形状",
-      "engagement": 89,
+      "engagement": 100,
       "media_url": "https://i2.hdslb.com/bfs/archive/125164f8c49d782ca2ee84f83cdb4914b8b6bc64.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 86,
+        "play": 97,
         "comment_count": 3,
         "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-09T00:00:00+00:00",
-      "lang": "zh",
-      "title": "【忘却淋夜】老人与海制裁5-5潘狄亚回宫",
-      "summary": "淋系视频注意，内容纯属虚构，无恶意诋毁，不良引导，视频中所用语言皆为虚构和节目效果，无任何针对和低俗作用，请仔细了解淋的含义再决定是否观看\n对号入座前请仔细阅读文案\n这个能算饭吗\nBGM：初音miku-神居谣",
-      "url": "https://www.bilibili.com/video/BV1izuV6xEsK",
-      "author": "花葉月",
-      "engagement": 87,
-      "media_url": "https://i1.hdslb.com/bfs/archive/4bb6e4ea174bd8d466a3171de361b9f52aa95d82.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 87,
-        "comment_count": 0,
-        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -265,30 +211,12 @@
       "summary": "-\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV164u36dEo9",
       "author": "親愛バカみた",
-      "engagement": 20,
+      "engagement": 31,
       "media_url": "https://i0.hdslb.com/bfs/archive/f3ad647207b977937510984a1ed2683be5ecb70b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 19,
+        "play": 30,
         "comment_count": 1,
-        "comments_fetched": 1,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-09T00:08:28+00:00",
-      "lang": "zh",
-      "title": "Be you wanna be",
-      "summary": "-\n  └ 梦游惊奇 (0赞): [星星眼][星星眼][星星眼]",
-      "url": "https://www.bilibili.com/video/BV1X3u76cE62",
-      "author": "蹈海者",
-      "engagement": 14,
-      "media_url": "https://i2.hdslb.com/bfs/archive/f7f58f1242bdc6997c11649221ee9e737bbecd2b.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 12,
-        "comment_count": 2,
         "comments_fetched": 1,
         "danmaku": 0
       }
@@ -298,14 +226,14 @@
       "time": "2026-08-09T00:11:12+00:00",
       "lang": "zh",
       "title": "be you wanna be",
-      "summary": "-\n  └ 爱喝酒的梅酱_ (0赞): 为什么会有两个一样的视频\n  └ 爱喝酒的梅酱_ (0赞): 剪的很好，赐给你忘却前夜的热度[doge]",
+      "summary": "-\n  └ 爱喝酒的梅酱_ (1赞): 剪的很好，赐给你忘却前夜的热度[doge]\n  └ 爱喝酒的梅酱_ (0赞): 为什么会有两个一样的视频",
       "url": "https://www.bilibili.com/video/BV19uu76aEUQ",
       "author": "蹈海者",
-      "engagement": 5,
+      "engagement": 25,
       "media_url": "https://i2.hdslb.com/bfs/archive/f7f58f1242bdc6997c11649221ee9e737bbecd2b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 3,
+        "play": 23,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
