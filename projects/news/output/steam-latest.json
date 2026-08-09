@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-09T04:18:13.610604+00:00",
+  "collected_at": "2026-08-09T06:53:51.738755+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -63,7 +63,7 @@
       "voted_up": true,
       "review": "画风可爱，剧情尚可，gacha良心不过不少角色想玩爽至少1，2命起步，而且怎么贵游运营主体变了又变？希望能保持稳定运营~",
       "timestamp_created": 1786202534,
-      "playtime_forever": 2494
+      "playtime_forever": 2536
     },
     {
       "source": "steam",
@@ -124,21 +124,6 @@
       "review": "好玩",
       "timestamp_created": 1786185168,
       "playtime_forever": 274
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-08T05:24:03+00:00",
-      "lang": "spanish",
-      "title": "[正面] EL MEJOR JUEGO DEL MUNDO",
-      "summary": "EL MEJOR JUEGO DEL MUNDO",
-      "url": "https://steamcommunity.com/profiles/76561198712697777/recommended/3052450",
-      "author": "76561198712697777",
-      "engagement": 0,
-      "language": "spanish",
-      "voted_up": true,
-      "review": "EL MEJOR JUEGO DEL MUNDO",
-      "timestamp_created": 1786166643,
-      "playtime_forever": 528
     }
   ]
 }

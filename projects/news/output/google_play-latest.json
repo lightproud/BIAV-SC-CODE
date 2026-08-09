@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-09T04:18:13.610604+00:00",
+  "collected_at": "2026-08-09T06:53:51.738755+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 122,
+  "item_count": 121,
   "items": [
     {
       "source": "google_play",
@@ -217,16 +217,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-16T15:19:15",
-      "lang": "en",
-      "title": "[Google Play 好评] ★4 love this game. Top tier storyline(s) an",
-      "summary": "love this game. Top tier storyline(s) and characters, and fun n interesting gameplay to boot. The only tiny problem I might have is the lagginess despite being on performance settings, but other than that a solid 9/10 game.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-dad586e7-db5e-404f-b85b-b97a151e3b83",
-      "author": "kjs",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-31T08:09:25",
       "lang": "vi",
       "title": "[Google Play 好评] ★5 Game đúng gu,nhưng bản dịch tiếng hơi lỏ",
@@ -283,6 +273,16 @@
       "summary": "非常好的游戏",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-fb35889a-9334-408f-b466-43051ac7e524",
       "author": "DARYL",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-08T06:28:40",
+      "lang": "en",
+      "title": "[Google Play 好评] ★4 Gorgeous are and awesome dark horror vib",
+      "summary": "Gorgeous are and awesome dark horror vibes, but the live events are pretty lack luster and mostly aimed at late game players. The game itself is also sadly quite a bit repetitive, with little variance in mission types and flows. Combat is pretty fun and with a lot tactics and team options, but you also get an overwhelming number of characters quickly.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-18f910a7-bd62-475c-ad03-c1d8fca31202",
+      "author": "Sean C",
       "engagement": 0
     },
     {
@@ -1013,16 +1013,6 @@
       "summary": "El juego está muy bueno, la historia es interesante como triste en algunas partes , la jugabilidad se siente bien, el problema es su optimización, eso hace que el juego pegue tirones , el resto está de 10",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-bdf2640c-dc9a-418d-9491-07d2c3b8527e",
       "author": "Dylan Canteros",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-10T04:26:45",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 excelente",
-      "summary": "excelente",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-08e77136-c56f-4569-b5ab-7646bf684886",
-      "author": "Dylan Santiago",
       "engagement": 0
     },
     {
