@@ -43,158 +43,24 @@ npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式**
 
 <!-- CONTEXT-FACTS:END -->
 
-**v2.2.3（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.2.3（观察项批收口：Grep/Glob 作用域与选项参数类型错误改诊断报错、Grep 不再声称未生效的忽略集、Bash 截断标志改用真实计数 + 后台 ack 补结构化产出、NUL 字节归类为命令错、SendMessage 包裹桥调用）前进。
+**v2.2.3（2026-07-29）**：家族锁步同号（agent = 2.2.3）。
 
-**v2.2.2（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.2.2（工具调用参数健壮性七修：否定 glob 不再清空 Grep/Glob、Bash run_in_background/timeout 类型错误改诊断报错、WebSearch 容 null 后端元素、AskUserQuestion 应答防伪造行、memory 非 Error 抛值 String 化）前进。
+**当前形态**：八族零件、成熟度两级（标尺见需求档 §6：「已验证」须有非为演示它而写的消费方）——
+`ledger` / `driver` / `scheduler` **已验证**；`workflow` / `goal` / `delivery` / `assembly` / `routine`
+为**实验面**。在产消费方两个：`examples/store-patrol.mjs`（每日北京 15:15 商店巡检）与
+silver-core-testbed。硬性质：对 agent SDK **零 import 零依赖**，依赖方向 maestro→agent 单向由 CI 执法。
+文档 `docs/ONBOARDING.md`（宿主 store 样板）/ `docs/CONCURRENCY.md`（并发模型）/ `docs/ASSEMBLY.md`（四原语接线谱）。
 
-**v2.2.1（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.2.1（输入形状诊断：参数类型报错带实际收到的键清单、权限门点名丢必填键的改写方）前进。
-**v2.2.0（2026-07-29）：设计第三轮落地（四原语装配）**——设计档 `maestro-sdk-agent-assembly-design-20260729.md` 全部裁定（裁1–裁5 + D2–D8）当日实现：新增第七族 `assembly/agent-executor.ts`（**注入式** `createAgentExecutor` + 三具名提取器——宿主递 query 函数，本包对 agent SDK 维持零 import 零依赖，P1 不动；重试=重跑，恢复走 reopen+payload.resume，D6）与第八族 `routine/manager.ts`（`RoutineManager` 值班例程管理面：命名/停启/triggerNow/状态反查；停启表纯内存+宿主持久化，D4；手动触发 `manual:` 段永不污染 Scheduler 恢复足迹）；足迹解析抽出 `schedule/footprint.ts` 单一共享纯核；`WorkflowNode.manualClaim` 确认门节点（runAt:null 派发，Cowork awaiting_confirm 投影零新状态，裁3）；`QueryRecord.costUsd` 成本入账（D2，驱动器转发 `ExecutorResult.costUsd`）；四原语接线谱 `projects/silver-core-maestro-sdk/docs/ASSEMBLY.md` + 例程五号 `agent-loop.mjs`（不建 LoopRunner，组合即 loop，D3）。测试 +50 至 479。两新族按两级标尺标**实验面**，指定首消费方见设计档 §10。
+**2026-08-02 起随 T78 转维护态**：纯维稳、仅修影响生产的 bug、零新功能；家族工程守卫工作流
+已降级为手动触发；BPT 换装完成后按 wiki 先例冻结。
 
-**v2.1.0（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 2.1.0（AskUserQuestion 结局语义分离 + 结构化 `outcome`）前进。
-**v2.0.0（2026-07-29）：锁步对齐（家族首个 major）**——本包自身运行时零改动，随 agent SDK 2.0.0（T75 设计轮落地：cards 退役 BREAKING + `schema:'frontmatter'` + 官方全文注入 + 选择性附着）前进；本包无破坏性变更，消费者若用到 agent SDK cards 出口须先按其 CHANGELOG 迁移再 pin 2.0.0 对。
+**不在已完范围**：周报 loop 迁入生产切换（机制已由 schedule 承载；切换待 T37 推送形态裁定 +
+判卷侧充值，见 `memory/todo.md`）。agent 侧棘轮 floor 抬升待每周 CI 实测出分后按 bump 提示落地
+（本地不盲抬）。
 
-**v1.6.0（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 1.6.0（T75 二次拷问：dream 信号源 + 巡回只读预设）前进。
+**逐版发布叙述以 `CHANGELOG.md` 为唯一权威**；2026-08-08 之前累积的逐战施工记录与逐版叙述
+已下沉 `memory/archive/maestro-context-chronicle-20260808.md`（原文逐字未改），状态档侧同类内容
+见 `memory/archive/maestro-status-chronicle-20260808.md`。
 
-**v1.4.1（2026-07-29）：锁步对齐**——本包零代码改动，随 agent SDK 1.4.1（`setServers()` 改增量 diff，BPT 缺陷 D）前进。
-
-**v1.4.0（2026-07-28）：审计第十七波（本包份额）**——两处只被测试替身宽容挡住的真缺陷：`claimDue` 把并发上限套在存储**恰好**返回的顺序上（契约根本不规定顺序），对合规的最新在前存储实测 30 tick 里两个会话一次没跑；`systemClock.setTimeout` 未封顶，超 2^31-1 ms 溢出成 1 ms，30 天的 `queryTimeoutMs` 反而让每次尝试都来不及完成。
-
-**v1.3.0（2026-07-28）：审计第十五 + 十六波（本包份额）**——驱动器在 try/catch 外解引用执行器返回值，少一个 `return` 即让宿主以未处理拒绝崩溃、会话搁浅 `running`；`GoalChaser` 从不校验评审器判词形状，旧形状评审器报成功却实跑满轮落 `exhausted`；工作流加载器围栏扫描器不看反引号根数，文档示例图可顶替真图被派发，BOM 文件被静默跳过；`nextFireAt` 撞 `Date.UTC` 两位年份重映射。另订正台账：破坏性 `GoalVerdict` 统一被记错版本。
-
-
-
-
-
-**v0.95.0（2026-07-28）：台账两处缺陷 + 驱动器并发竞态**——家族审计波及本包（非空转）：
-`reopenSession` 并发 CAS 落败永久丢溯源链接；`recordOutcome` 回填路径写入词表外 outcome；
-`stop()`+`start()` 交错令两代 tick 各自认领满额、并发翻倍（新增同步预留计数封顶）。
-
-**v0.94.0（2026-07-28）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.94.0
-（BREAKING：包内模型兜底默认值全数移除——缺 model 即抛 `ConfigurationError`，
-`DEFAULT_UTILITY_MODEL` / `VERIFIER_DEFAULT_MODEL` 出口删除）前进，详见该包 CHANGELOG。
-
-
-**v0.88.0 / v0.87.x（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK
-0.87.0（截断纪律全家对齐）、0.87.1（嵌套路径普查）、0.88.0（处方卡型 + sessions 体检面）
-前进，逐版详见该包 CHANGELOG。
-
-**v0.84.0（2026-07-27）：锁步对齐**——本包**零代码改动**。家族版本钟随 agent SDK 0.84.0
-（记忆索引纪律 + 整理规程）前进，详见该包 CHANGELOG。
-
-
-
-**v0.81.0 / 0.80.2 / 0.80.1 / 0.80.0（2026-07-27）：锁步对齐四连**——本包**零代码改动**，
-家族版本钟随 agent SDK 同号前进（Read 截断页脚三件套 · 快照基准对齐 + 吻合度尺子 ·
-溯源 slug 改锚 + cron 自检 · 工具输出上限对齐 2.1.141）。逐版叙述见该包 CHANGELOG。
-
-**v0.79.0（2026-07-26）：重开语义 + 三项余项推进**（守密人「1.写 2.3.4.5.6.按你建议推进」）。
-**T67 重开（甲案）**：`reopenSession` / `reopenChain`——新会话 + `reopenOf`/`attemptRound` 链，
-**封闭状态机分毫未动**（终态不可变是 CAS 围栏 / 幂等派发 / 重启不复活的共同立足点；缺的从来不是一条边，
-是那个**链接**）。前驱须终态 · `cancelled` 默认拒绝需 `force` · 后继 id 从**链根**派生（累加版被自己的回归锁首跑抓到）·
-payload 可覆盖（e2e 抓到示例继承旧 target 重打本该迁离的端点）。`store-patrol.mjs` 弃手写 `:rN` 环改用真 API。
-**T68 `docs/CONCURRENCY.md`**（本包第二份文档，产品审视列为最大缺口）。
-**T69 变异棘轮 `cadence` 分档**：三个零消费靶降月检（加字段不删腿），cadence 自身加三条治理断言。
-**T70 空转措辞钉死 + `scripts/sdk_substantive_versions.py`**（守卫首跑抓到两条真漂移）。
-测试 404 → **421**。
-
-**v0.78.1（2026-07-26）：产品审视四项裁定**——审视档
-`Public-Info-Pool/Resource/repo-engineering/maestro-sdk-product-review-20260726.md`（同日第二轮，
-问的不是「代码对不对」而是「作为产品是否成立、是否有效」）。**两包运行时行为零变化。**
-**P1** 删除对代理 SDK 的 peerDependency——`src/` 对它零 import（仅两处注释散文），而 npm 7+ 自动装 peer，
-等于强迫只想要台账的宿主连带装代理包，与硬性质①冲突；信息价值由锁步同号纪律接替。
-**P2** 六族按**两级标尺**标成熟度（需求档 §6 新增）：`ledger`/`driver`/`scheduler` 为**已验证**
-（两个互不相干真实消费方：生产商店巡检 + 试金石 daemon）；`workflow`/`goal`/`delivery`/保留缝为
-**实验面、无生产消费方**（实测全仓零真实调用点，`WorkflowRun` 仅 1 处自家 demo）。原标尺
-「例程写不出来 = 接口面漏缝」检验的是**可行性**不是需求，故补第二级：**须有至少一个不是为演示它而写的消费方**。
-**P3** 新增本包**第一份 docs** `docs/ONBOARDING.md`——两个真实消费方各自手写文件型 store
-（43/38 行、逐行相似度 86%），而本包原本只给「16 项契约套件检查你抄得对不对」、不给那份「抄什么」；
-现给可复制样板 + 四条陷阱各对应一项检查。`tests/onboarding-sample.test.ts` **从 markdown 提取样板
-写临时 .ts 真跑契约套件**（负控：删掉样板一行即报「2 orphan query row(s)」）。
-**P4** delivery 归属维持，改的是**判别式**（见上「定位」节补维）。测试 400 → **404**。
-
-**v0.78.0（2026-07-26）：设计审视四缝全修**——四缝（`cancelled` 未穿透场景层 / 驱动器无并发上限 / 无删除缝 / 长跑组件不收 `AbortSignal`）逐条见 `CHANGELOG.md` 0.78.0 与审视档 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-design-review-20260726.md`。
-
-第零战(monorepo 迁移)+ 第一战(任务台账 + 驱动器,0.2.0)完成:
-
-- 封闭状态机(`pending | running | retrying | failed | done`,定稿回填需求档 §4)
-  + 纯核 `src/ledger/state.ts` **变异分 100%**(棘轮地板 100,周检 CI 值守);
-- `LedgerStore` 存储缝(宿主注入,零内置电池)/ `TaskLedger` / `LedgerDriver`
-  (持钟活组件,宿主生杀,stop 中止走正常重试路径、重启自然续跑);
-- 例程一 `examples/minimal-loop.ts`(周期派发 + 预算帽 + 到帽收尾,消费代理侧
-  R2 预算事件流),e2e 对本地仿真器真跑双 R2 事件 + closeout。
-
-第二战(商店巡检真实场景接入,2026-07-18 守密人点火)完成:
-
-- `examples/store-patrol.mjs` + `store-patrol.targets.json`(注册表:加新商店 = 加一段
-  配置零新代码)——首个**生产**循环任务长在台账 + 驱动器上:Morimens Steam 双端点
-  (appdetails 价格/发行面 + appreviews 评价总量面)每日指纹比对,快照 + 变更日志落
-  `Public-Info-Pool/Record/store-patrol/`;台账经宿主文件店持久化,跨重启恢复真实生效;
-- 幂等派发键 `patrol:{target}:{date}`(同日重跑跳过;failed 终态经 0.79.0 `reopenSession` 重开为 `#r2`,
-  原为手写 `:r2` 后缀,见 v0.79.0 条);
-  驱动器超时经 AbortSignal 真中断 fetch;全部失败反映到进程退出码(CI 可见);
-- CI `store-patrol.yml` 每日北京 15:15(07:15 UTC)自动跑,机器提交带 [skip ci];
-- e2e `tests/store-patrol.e2e.test.ts` 四场景(基线/跨日变更+幂等/500 重试/挂死超时耗尽);
-  2026-07-18 首次生产真跑绿(两目标 done,基线:免费/发行 2024-08-01/Very Positive 3989:797)。
-
-第三至六战(0.4.0,2026-07-18 守密人「动态编排令」——四路文件不相交实现代理 +
-双对抗审查 + 单脑整合)完成:
-
-- **schedule**(§6.2 例程二):纯核 `nextFireAt`/`firesBetween`(UTC dailyAt +
-  锚定间隔,错过窗封顶保最新)+ 只派发 `Scheduler`(fire 记账在台账
-  `sched:{id}:{fireAt}` 幂等键,跨重启扫描恢复;补偿策略 latest/all);
-- **workflow 图**(§6.3 例程三):图即数据——`validateGraph`(环检出报精确环路径)
-  /`readyNodes`/`graphStatus`(fail-fast)+ `WorkflowRun`(节点=会话,幂等键即断点
-  续跑,join 节点收上游 ok summary);
-- **goal 追逐器**:跨 query 重发起,轮=会话 `goal:{id}:round-{n}`,宿主 evaluator
-  判轮、feedback 注回下轮 payload,goal 语义只在 payload 不进台账 schema;
-- **送达契约**(§5):`DeliverySink` 宿主注入 + `createDeliveryChannel`——每次送达
-  即一条台账审计会话(审计先行:落账失败不发信;sink 失败入回执与台账不上抛);
-- **审查整改五处**(4 major + 1 minor 全修全锁):类型化 `DuplicateSessionError`
-  (宽匹配吞真错误根治)、台账新 API `claimSession`(送达并发抢占根治)、四处 id
-  冒号封禁(会话键分隔符碰撞根治)、goal 排水超时逃生口;
-- 变异靶扩编三处:schedule-spec **100** / workflow-graph **97.14**(3 存活为
-  记档等价类)/ goal-decision **100**,周检矩阵四靶;测试 171(15 文件)。
-
-第七战(0.69.0,2026-07-18 守密人待办批第 4/5 项)完成:
-
-- **workflow 声明式加载**(热层闸):`parseWorkflowGraphSource` / `loadWorkflowGraphFile`
-  (json / md 首个 ```json fence;坏文件**永不抛**、降级 `{ok:false}` 跳过;ok 必已过
-  validateGraph);变异分 100(棘轮靶 `workflow-load`);
-- **例程四「综合整理任务」**(`examples/memory-tidy.mjs` + 假钟 e2e):定时派发 → 读
-  健康面(agent 侧 `assessMemoryStoreHealth`)→ 归并写卡 → 删碎片 → 台账收口,
-  只 import 两包公开面——黑池做梦例程原型(executor 座位换 agent query 即真梦);
-- **schedule 错过补偿核对**:已实现有测试(catchUp latest/all + 跨重启恢复,
-  组件级假钟 + e2e 双层覆盖),免补;
-- **质量方向切换**:棘轮五族全靶(新增 delivery-channel 100 / workflow-load 100,
-  CI 矩阵六靶);四份 e2e 全部假钟化(有界 drive 循环,三连跑稳,秒级降毫秒级),
-  全套件零真实钟;测试 171 → 180。
-
-试金石漏缝采纳批(0.71.0——原编 0.69.0,合并时因 main 并行会话(#743/#744)占号
-让号;0.70.0 审计批同场合并,2026-07-18 守密人「甲」裁定,testbed GAPS.md 四缝):
-
-- G1 `runLedgerStoreContractSuite` 随包契约套件(12 检查,坏实现落报告不抛出);
-- G2 认领租约:`claimLeaseMs` 盖 `leaseUntil` 戳 + `sweepExpiredLeases()`(只动过期
-  租约,多驱动器安全)+ 驱动器每 tick 自动清扫;无租约台账逐字节旧行为;
-- G3 `seedFirstRun`(短命宿主零号日死锁修复:无足迹 spec 起点回拨一节拍,首 tick
-  恰发最近到期点)+ `scheduleSessionId()` 公开导出;
-- (G4 `MemoryStore.read` 在 agent 侧同版落地。)
-
-cancelled 封闭终局(0.76.0,BPT 需求 P0-D1「用户主动取消的封闭终局语义」,2026-07-22):
-
-- 状态机第六态 `cancelled`(终态、无出边,`SESSION_STATES` 末尾追加保索引序)+
-  事件 `cancel`(pending / running / retrying 三态皆可入);
-- `TaskLedger.cancelSession(id, { reason?, cancelledAt? })`:幂等重复、done/failed
-  抛 InvalidTransitionError、互斥 + CAS 围栏(丢 CAS 有界重读重放);nextRunAt /
-  leaseUntil 无条件清空——取消后永不到期、永不被 claimDue / sweepExpiredLeases 碰;
-- query 级口径 = 需求 §4.4 方案 A:`QueryOutcome` 增 `'cancelled'`,running 取消落
-  在飞 attempt 墓志铭行(error = reason),pending/retrying 取消不伪造行;
-  recordOutcome 拒收 'cancelled'(会话级命令不是 executor 可上报结果);
-- session 级增量字段 `cancelledAt` / `cancelReason`(lastError 不挪用);
-- 取消 vs 在飞 attempt 双向竞态钉死:取消先落账 → 迟到 recordOutcome 抛错、驱动器
-  对这一种拒绝**静默丢弃**(用户取消不冒充驱动器故障);attempt 先落账 → 对
-  done/failed 取消抛错、对 retrying 正常取消;
-- 契约套件新增 cancelled 落库往返检查(重启不复活);测试 362(29 档,+20 例)。
-
-**不在已完范围**:周报 loop 迁入生产切换(机制已由 schedule 承载;切换待 T37
-推送形态裁定 + 判卷侧充值,见 todo)。agent 侧棘轮 floor 抬升待每周 CI 实测
-出分后按 bump 提示落地(本地不盲抬)。
+> **本档 12,500 字符封顶**（`tests/test_claude_md_size.py` 守）——撞线时下沉、且一次整理到
+> 上限的 50%，不抬上限、不压回刚好达标（守密人 2026-08-08 追裁）。

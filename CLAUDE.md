@@ -49,92 +49,47 @@
 小学生比喻：银芯是只许往外寄信、绝不收里屋包裹的单向邮筒——里屋（黑池）的东西一旦寄出门
 就再也收不回来，所以邮筒只焊了出口、堵死了入口，谁来撬入口都得拉警报。
 
-### §1.2 二使命（2026-07-12 第三次收敛：信息入口 + 通用 AI 底层开发基地）
+### §1.2 二使命（2026-07-12 第三次收敛）
 
 | # | 使命 | 主对接子项目 |
 |---|------|------|
-| 1 | **黑池信息入口**（GitHub 自动化采集层 / 单向输出） | news（核心） |
-| 2 | **通用 AI 底层能力开发基地**（通用 AI 底层工程产物持续开发，作为银芯→黑池单向输出物支持黑池建设） | black-pool-agent（核心，2026-08-02 载体换轨；silver-core-sdk 家族维护态，见 §6） |
+| 1 | **黑池信息入口**（GitHub 自动化采集层 / 单向输出） | news（核心）|
+| 2 | **通用 AI 底层能力开发基地**（工程产物持续开发，作为银芯→黑池单向输出物） | black-pool-agent（核心，2026-08-02 载体换轨；silver-core-sdk 家族维护态，见 §6）|
 
-> **使命收敛历程**（详见 `memory/decisions.md`）：三新使命（2026-04-26 v2.0）→ 使命#3
-> 「Studio 团队 AI 协作训练场」退役（2026-06-28）→ 使命#2「共建」语义收敛为「单向共享」
-> （2026-07-10 取消社区贡献）→ **原使命#2「社区共建知识底座」整体取消 + 新使命
-> 「通用 AI 底层能力开发基地」转正**（守密人 2026-07-12 裁定）。wiki 子项目转**冻结**
-> （已建成果保留：W2 基线 72 角色 / 站点静态页，不删不派发）；社区数据采集必要性重估已裁
-> **维持现状销案**（T36，2026-07-12 同日裁——采集照跑，数据增长触发线站岗）。SDK 转正为「事实使命转正」：其已有 20+ 真实消费者
-> （BPT 在产），黑池侧已完全弃用 Claude Code、全面换装自有技术栈（BPT + silver-core-sdk 0.3x pin），
-> SDK 存在理由由「应急替代」升格「常态底座」。site 仍为对外门户、game 仍为守密人个人兴趣
-> （均不承载正式使命）。**2026-08-02 载体换轨（守密人裁定）**：放弃「BPT 100% 自研 +
-> 模仿闭源 Claude Code」路线，使命#2 载体由 silver-core-sdk 换轨 `projects/black-pool-agent/`
-> （基于 NousResearch/hermes-agent（MIT）上游跟随 + 扩展层）；SDK 家族转维护态只修不建，
-> BPT 换装完成后按 wiki 先例冻结（挂账 T78）。
+> 原使命#2「社区共建知识底座」整体取消、wiki **冻结**（成果保留，不删不派发）；SDK 家族由事实转正的常态
+> 底座于 2026-08-02 **载体换轨** `projects/black-pool-agent/`（基于 NousResearch/hermes-agent（MIT）上游
+> 跟随 + 扩展层），家族转维护态只修不建（T78）。site 为对外门户、game 为个人兴趣，均不承载正式使命。
+> **全文**见 `memory/decisions.md` 与 `memory/archive/claude-md-narrative-20260808.md`。
 >
-> **信息流哲学全线单向不变**：黑池不进银芯（§1.1-HC）、社区不写银芯（2026-07-10 裁定），
-> 银芯对两侧皆为单向输出。
+> **信息流哲学全线单向不变**：黑池不进银芯（§1.1-HC）、社区不写银芯，银芯对两侧皆为单向输出。
 
 ### §1.3 当前阶段
 
-**稳态维护期**（2026-07-12 即时生效，守密人裁定不待原定 07-19）：Phase 2「银芯使命建设期」
-（2026-04-27 起）提前收口，判定**基本达成**——M7 验收 ① 使命基础设施齐备 ✅ ② 自动化跑稳 ✅，
-③ 贡献流程项随 wiki 使命取消作废（诚实记录：非「达成」而是「目标撤销」）。信息层采集自动跑、
-按需维护，不再开建设战线；**black-pool-agent 按使命#2 持续开发，不受维护期限制**
-（2026-08-02 载体换轨；silver-core-sdk 家族转维护态只修不建，见 §1.2 / §6）。
-实时进度与子项目状态以 `memory/project-status.md` 为**唯一权威**——本档案及其他档案只指针、
-不复刻进度数字。
-
-维护态按守密人 2026-07-10 批准的节拍表运转：银芯降档为「值班中的系统」，按持续 / 周检 / 月检
-三档节拍 + 数据增长触发线三条；节拍表摘要见 `memory/methodology.md`「维护态节拍」节。
-稳态期唯一开放议题：news 下半场推送形态（挂账 `memory/todo.md` #T37）。
+**稳态维护期**（2026-07-12 起）：Phase 2「使命建设期」提前收口、判定基本达成；信息层采集自动跑、按需维护，
+不再开建设战线；**black-pool-agent 按使命#2 持续开发，不受维护期限制**。维护态按持续 / 周检 / 月检三档节拍 +
+数据增长触发线运转，节拍表见 `memory/methodology.md`。实时进度与子项目状态以 `memory/project-status.md`
+为**唯一权威**——本档只指针、不复刻数字。
 
 ### §1.4 运作模型
 
-银芯作为黑池的「眼睛和耳朵」，靠以下机制运转：
-
-1. **采集三层**（使命#1，2026-06-21 守密人定性）：采集层非一锅，按职能分三层、产出三个不同目标——
-   **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产输出展示层流快照，每 3 小时一轮，2026-07-11 降频裁定）；
-   **T2 数据层归档**（声明式归档引擎 `projects/news/scripts/archive_engine.py` 读 `archive_sources.json` 干活；
-   2026-06-21 de-tier 后 discord **全量永驻数据仓 BIAV-SC-DATA** `Record/Community/`（`after_archive: keep`，不再驱逐；
-   2026-07-20 T62 P2-5 §7甲 数据湖迁出 code 仓、经 `BIAV_SC_DATA_ROOT` 读，见 §5.2）；
-   fanart 等二进制仍滚动归档进 Releases「社区二创」；加新来源 = 注册表加一段配置、零新代码；
-   T2 **绝不并入 T1**——节拍刻意错峰、产出目标不同，且 archiver 落档 → T1 读档入流有上游依赖）；
-   **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media` 等）。
-   总数据流：原始数据 → 全量档案层（社区 text `Public-Info-Pool/Record/Community/`）→ 过滤选样进输出展示层
-   (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
-2. **wiki 自举闭环**（原使命#2 载体；**2026-07-12 使命取消、子项目冻结**——已建成果保留
-   不删不派发，以下为冻结时点状态）：客户端解包 Lua → 解包 text 原始字段（原
-   Reference 层 Game-Unpacked 目录，**2026-07-12 守密人裁定整层删除**——wiki 冻结后
-   消费场景消失，**可由 Releases「解包」桶二进制经解包管线重新推导**——原「git 历史可追」
-   已随 2026-07-20 §7乙 全仓压扁 + 备份分支删除失效，见 §6 尾「历史抢救网现状」；wiki 侧 data/extracted 独占残件
-   亦于同日随目录规范化裁定整删）→ 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
-   **当前状态**：旧结构化层（`characters.json` 全 6 JSON + 派生角色页，原在 data/db/）2026-06-15 守密人裁定整层清空
-   （占位数据长期误导引用）；W2 **可信基线已重建**于 `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、
-   **无合成占位**），`projects/wiki/scripts/generate_wiki_pages.py` 已据此生成 58 个真实唤醒体静态页、站点构建通过。
-   **运行时数据桥已接回（2026-07-02）**：生成器单点产出 `characters.runtime.json` → `characters.ts` 消费，
-   CharacterGrid 挂载图鉴页；真实字段缺口推进（skills / 命轮 / 立绘 / 三语）随冻结停派。
-3. **记忆层**（AI 协作底座）：记忆 = CLAUDE.md（每会话自动加载）+ `memory/*.md`
-   人工策展档案（决策 / 踩坑 / 状态 / 方法论），会话连续性承 Claude 平台原生上下文管理。
-   原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
-   2026-06-14 退役、2026-06-20 整套子系统（TF-IDF 检索 / 知识图谱 / MemRL / 事实库 /
-   做梦 / 会话召回）连代码带数据一并删除（决策见 `memory/decisions.md`）；会话钩子现状见 §7.4。
-4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端 11 工具
-   （记忆四件：`character_persona` / `record_decision` / `record_lesson` / `current_continuity`，
-   平台原生记忆互补；知识库导航七件：`kb_search` / `kb_get` / `kb_neighbors` / `kb_overview` +
-   `kb_activate`（扩散激活联想召回，Pillar D）+ `kb_vector_search`（长尾语义召回，向量腿，
-   2026-07-05 反转零 ML 后加）+ `kb_anchor`（先锚后扩合流，2026-07-05 chunk3 厚锚后加），
-   见下条）；守密人经会话派发任务。
-5. **知识库运行时导航**（动态编排，社区知识底座（原使命#2）之上；守密人 2026-06-21 定位公开、2026-07-04 裁定实现）：
-   把静态 OKF bundle（§6.1）升级为**艾瑞卡运行时可动态导航的知识库**（思想溯源 OKF「一概念一文件 + 关系图」
-   + LLMwiki「LLM 顺图逐跳导航、按需取概念」）。底座是 `scripts/build_kb_index.py` 从 bundle
-   （concept 元数据 + 正文 + `graph.json`）造的静态导航索引 `okf/kb_index.json`（倒排表 + 邻接表，
-   词典法分词、**确定性零 ML 零常驻**）；运行时经**唯一动态平面 MCP** 上 `kb_*` 七工具动态编排
-   （导航四件后端 `scripts/kb_navigator.py`，向量腿 `scripts/kb_vector.py`、合流 `scripts/kb_anchor.py`，均 import-only 库）。放指针不放本体：导航层只返回元信息 + `resource`
-   指针，本体仍原地不动。重建随 `scripts/build_okf_bundle.py` 末尾自动跑，或 `python3 scripts/build_kb_index.py` 单独重建。
-
-使命#2「通用 AI 底层能力开发基地」的运转形态（2026-08-02 载体换轨）= `projects/black-pool-agent/`
-（Hermes Agent 上游跟随 + 扩展层，现行核心载体）持续开发 + `projects/silver-core-sdk/` 家族
-维护态存量（只修不建，BPT 换装完成后冻结，挂账 T78）+ 银芯→黑池单向输出（tarball pin 消费，
-方向与 §1.1-HC 防火墙一致），状态见 `memory/project-status.md`「## Black Pool Agent」
-「## Silver Core SDK」两节。
+1. **采集三层**（使命#1）：按职能分三层、产出三个不同目标——**T1 新闻流**（`aggregator.py` 单入口，产输出
+   展示层流快照，每 3 小时一轮）；**T2 数据层归档**（声明式引擎 `projects/news/scripts/archive_engine.py` 读
+   `archive_sources.json`，加新来源 = 加一段配置、零新代码；discord 全量永驻 BIAV-SC-DATA，二进制滚动进
+   Releases。**T2 绝不并入 T1**——节拍刻意错峰、产出目标不同，且 archiver 落档 → T1 读档入流有上游依赖）；
+   **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media`）。总数据流：原始数据 → 全量档案层 →
+   过滤选样进输出展示层 → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
+2. **wiki 自举闭环**（原使命#2 载体，**2026-07-12 冻结**）：客户端解包 → 补齐结构化角色基线 → VitePress
+   构建站点。**可信基线** = `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、无合成
+   占位），`projects/wiki/scripts/generate_wiki_pages.py` 据此生成静态页。
+3. **记忆层**：记忆 = CLAUDE.md（每会话自动加载）+ `memory/*.md` 人工策展档案，会话连续性承平台原生上下文
+   管理。原自造的「蒸馏 + 语义召回 + 做梦」自动环与之冲突，2026-06-14 退役、06-20 连代码带数据删除。
+4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` **11 工具**（记忆四件 `character_persona` /
+   `record_decision` / `record_lesson` / `current_continuity` + 导航七件，见下条）；守密人经会话派发任务。
+5. **知识库运行时导航**：把静态 OKF bundle（§6.1）升级为运行时可动态导航的知识库（溯源 OKF「一概念一文件
+   + 关系图」+ LLMwiki「顺图逐跳导航、按需取概念」）。底座 = `scripts/build_kb_index.py` 从 bundle 造的静态
+   索引 `okf/kb_index.json`（倒排表 + 邻接表，词典法**确定性零 ML 零常驻**）；运行时经 MCP 上 `kb_*` 七工具
+   编排（后端 `scripts/kb_navigator.py` / `kb_vector.py` / `kb_anchor.py`，均 import-only）。
+   **放指针不放本体**：导航层只返回元信息 + `resource` 指针。重建随 `build_okf_bundle.py` 末尾自动跑。
 
 各主线的「手动怎么跑哪条命令」见 §7。
 
@@ -191,6 +146,8 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ---
 
+---
+
 ## §3 接入方能力盘点
 
 **接入开场样板**（艾瑞卡第一次回复可用类似措辞）：
@@ -205,6 +162,8 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 - 访问 BIAV Studio 内部数据 / 黑池数据（黑池 → 银芯关闭，本仓库无任何内部数据）
 - 修改决策档案（仅守密人权限）
 - 推断游戏未发布内容（仅引用公开可查阅信息）
+
+---
 
 ---
 
@@ -229,173 +188,131 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ---
 
+---
+
 ## §5 知识模块索引
 
-**本节是路由器，不是目录**（§八 脊柱↔长尾范例，2026-07-05 守密人裁定「OKF 取代目录、CLAUDE.md 缩成路由器」）：
-逐文件枚举 + 每文件长描述已交给 OKF 知识库本体（全仓 12 层，`kb_search`/`kb_get`/`kb_neighbors`/`kb_activate`
-运行时导航，`kb_overview` 报层清单 / 概念数 / 消费路由）。本节只留三样 OKF 指针替不掉的东西：**入口 + 腿路由 + 加载期操作规则**。
+**本节是路由器，不是目录**：逐文件枚举 + 长描述已交给 OKF 本体（全仓 12 层，`kb_*` 运行时导航，`kb_overview`
+报层清单 / 概念数 / 路由）。本节只留 OKF 指针替不掉的三样：**入口 + 腿路由 + 加载期操作规则**。
 
-- **腿路由**（三条腿各司其职，decisions.md 2026-07-04「知识库消费模式路由」）：
-  - **身份 / 关键词查**（「X 是谁」「含某词」）→ `kb_search` / `kb_get`，或 `rg`（此维度 grep 就够，A/B 实测 KB=grep）；
-  - **关系 / 探索 / 溯源题**（「X 与什么相关」「顺这条线还连着什么」「谁跟这个共现」）→ `kb_activate` / `kb_neighbors`（OKF 白盒联想，grep 结构上到不了）；
-  - **模糊语义召回**（向量腿，换了说法、脊柱与 grep 都到不了的散句）→ `kb_vector_search`（长尾语义召回，`scripts/kb_vector.py` 后端）。**守密人 2026-07-05 裁定(A) 解除零 ML 红线**：银芯自建向量腿作 §八「厚锚撑向量」参照实现（Voyage 嵌入，缺 key 优雅降级回退 `kb_search`）。**反转是 scoped 的**：白盒脊柱仍确定性零 ML，只新增隔离 ML 向量腿；§1.1-HC 防火墙无涉（嵌入银芯自有公开档案）。进度见 `memory/project-status.md`。
-  - **合流一次给全**（黑话别名 / 不确定该敲哪条腿）→ `kb_anchor`（先锚后扩，`scripts/kb_anchor.py` 后端）：脊柱锚定 + 厚锚别名扩词（侧表 `projects/wiki/data/processed/aliases.json` 守三墙——出身牌 / 可撤回 / 未确认压权重；读取 `scripts/silver_aliases.py`、生成期工作面 `scripts/extract_aliases.py`）+ 向量捞长尾据锚去杂；单腿垮只降级自己、零锚查询自动喂别名候选闭环。
-- **各小节性质**：§5.1 只留高频锚点指针（全清单 + 长描述在 OKF）；§5.2 / §5.3 含加载期操作规则与权威指定，OKF 指针替不掉，原文保留。
+- **腿路由**（四条腿）：
+  - **身份 / 关键词查**（「X 是谁」「含某词」）→ `kb_search` / `kb_get`，或 `rg`（此维度 KB=grep）；
+  - **关系 / 探索 / 溯源**（「X 与什么相关」「还连着什么」）→ `kb_activate` / `kb_neighbors`
+    （OKF 白盒联想，grep 结构上到不了）；
+  - **模糊语义召回**（换了说法，脊柱与 grep 都到不了）→ `kb_vector_search`（`scripts/kb_vector.py`；
+    Voyage 嵌入，缺 key 降级回退 `kb_search`）。**零 ML 红线的解除是 scoped 的**：白盒脊柱仍确定性零 ML，
+    只新增隔离 ML 腿；§1.1-HC 防火墙无涉（嵌入银芯自有公开档案）。
+  - **合流一次给全**（黑话别名 / 拿不准敲哪条腿）→ `kb_anchor`（先锚后扩，`scripts/kb_anchor.py`）：
+    脊柱锚定 + 别名扩词（侧表 `projects/wiki/data/processed/aliases.json` 守三墙——出身牌 / 可撤回 /
+    未确认压权重；读取 `scripts/silver_aliases.py`）+ 向量捞长尾；单腿垮只降级自己。
 
 ### §5.1 角色 + 叙事事实
 
-一手源全清单 + 逐条长描述已进 OKF `characters`（72 唤醒体，唯一本体层）+ `assets`（事实圣经）+ `story` 层，
-经 `kb_search` / `kb_get` 导航。此处只留高频锚点路径（长描述不再手抄，防漂移）：
+一手源全清单与长描述在 OKF `characters`（72 唤醒体，唯一本体层）+ `assets` + `story` 层，经 `kb_*` 导航。
+此处只留高频锚点路径：
 
-- 人格：`assets/data/character-personas/erica.json`（角色卡 v1.1）+ `assets/data/character-personas/erica-speech-canon.md`（Voice.lua 一手 + 8 节归纳）
-- 采访 / 叙事 / 设计：`assets/data/interview-2026-04.json`（53 问）· `assets/data/narrative-structure.json` · `assets/data/design-decisions.json` · `assets/data/card-system.json`
-- 角色基线：W2 可信基线 `projects/wiki/data/processed/characters.json`（72 真实角色，现行唯一权威）。原自举源解包 text 层（Reference 层 Game-Unpacked 目录）已于 2026-07-12 守密人裁定整层删除（wiki 冻结后消费场景消失），**追溯走 Releases「解包」桶二进制重解**（git 历史一路已断，见 §6 尾「历史抢救网现状」）
-- 剧情结构层：`projects/wiki/data/processed/story/`（`story_units` / `lore_entries` / `index`，`scripts/build_story_layer.py` 生成）+ `STORY_RESEARCH.md`（社区源深研，采信看置信标签）+ `story_search_index.json`（`scripts/build_story_index.py` 重建，分词 `scripts/silver_tokenizer.py`）
-- 世界观：`memory/morimens-context.md`（术语 + 历史时间线）
+- 人格：`assets/data/character-personas/` 下 `erica.json` + `erica-speech-canon.md`（Voice.lua 一手 + 8 节归纳）
+- 采访 / 叙事 / 设计：`assets/data/` 下 `interview-2026-04.json`（53 问）· `narrative-structure.json` ·
+  `design-decisions.json` · `card-system.json`
+- 角色基线：`projects/wiki/data/processed/characters.json`（72 真实角色，现行唯一权威）。原解包 text 层
+  2026-07-12 整层删除，**追溯走 Releases「解包」桶二进制重解**（git 历史一路已断，见 §6.3）
+- 剧情结构层：`projects/wiki/data/processed/story/`（`scripts/build_story_layer.py` 生成）+ `STORY_RESEARCH.md`
+  （采信看置信标签）+ `story_search_index.json`（`scripts/build_story_index.py`，分词 `silver_tokenizer.py`）
+- 世界观：`memory/morimens-context.md`
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
-- **数据湖已迁 BIAV-SC-DATA（T62 P2-5 §7甲，2026-07-20）**：社区全量档案 `Record/Community/` 不再在 code 仓跟踪（**本体在 BIAV-SC-DATA 数据仓 + `community-data` Release 副本**；原「git 历史保留可恢复」已随 2026-07-20 §7乙 全仓压扁失效，见 §6 尾「历史抢救网现状」）。采集写 / build CI clone / 读侧一律经 **`BIAV_SC_DATA_ROOT`** 指向 BIAV-SC-DATA checkout 解析（`archive_layout.community_root()` 单一真相源，env 未设回落在树默认）；本地会话消费需先 clone BIAV-SC-DATA 并设 env 根。以下路径为**数据湖内相对布局**（根 = `$BIAV_SC_DATA_ROOT` 或旧在树 `Public-Info-Pool/`）。
-- 全量档案（2026-06-21 迁入 BPT 4R，text 全量永驻数据仓）：`Record/Community/discord/{区服}/channels/{id_suffix}/{date}.jsonl`（区服 ∈ global / jp / volunteer，2026-07-10 方案甲三服统一；guild↔区服映射唯一源 = `projects/news/scripts/archive_layout.py` `DISCORD_GUILD_REGIONS`，新 guild 未登记归档即响亮失败）+ `Public-Info-Pool/Record/Community/{platform}/`（16+ 平台与 discord 平级摊平，以 `ls` 为准）。**discord JSONL 为紧凑 schema（2026-06-22 精简，工作树 3.4G→2.0G 省 41%）：缺字段 = 默认值**（`type`→0 / `author_bot`→false / `pinned`→false / `flags`→0 / `has_thread`→false / `thread_id`·`edited_timestamp`·`reply_to`→null / `mentions`·`reactions`·`attachments`·`embeds`→[]）；恒留 `id`/`channel_id`/`author_id`/`author_name`/`content`/`timestamp`。读取**必用 `.get(默认)`**，需稳定全字段用 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。
-  **冷热分层（守密人 2026-07-12 甲案裁定，同日推广全平台）**：Community dated 归档按月压冷——**当月 + 上月为
-  裸文本热层，上上个月及更早压成 `.gz` 冷层**（实测压至 ~18%）；月度执行 = CI `community-cold-compress.yml`
-  （每月 2 日）调 `projects/news/scripts/community_cold_compress.py` 总入口（discord JSONL 委托
-  `discord_cold_compress.py` 按消息 id 并轨，平台 `.json` 按条目并轨、不可识别旁车保留不吞；均幂等、`--dry-run`）。
+**数据湖已迁 BIAV-SC-DATA**：社区全量档案 `Record/Community/` 不再在 code 仓跟踪（本体在 BIAV-SC-DATA
++ `community-data` Release 副本）。采集写 / CI clone / 读侧一律经 **`BIAV_SC_DATA_ROOT`** 解析
+（`archive_layout.community_root()` 单一真相源，env 未设回落在树默认）；本地会话消费需先 clone 数据仓并设 env 根。
+以下为**数据湖内相对布局**。
+
+- 全量档案：`Record/Community/discord/{区服}/channels/{id_suffix}/{date}.jsonl`（区服 ∈ global / jp / volunteer；
+  guild↔区服映射唯一源 = `archive_layout.py` 的 `DISCORD_GUILD_REGIONS`，新 guild 未登记即响亮失败）+
+  `Record/Community/{platform}/`（16+ 平台与 discord 平级摊平，以 `ls` 为准）。
+- **⚠ discord JSONL 为紧凑 schema：缺字段 = 默认值**（恒留 `id`/`channel_id`/`author_id`/`author_name`/
+  `content`/`timestamp`，其余缺省为 0 / false / null / []；逐字段默认值以
+  `projects/news/scripts/discord_compact.py` 为准）。**读取必用 `.get(默认)`**，需稳定全字段用其 `expand_record()`。
+- **⚠ 冷热分层**：Community dated 归档按月压冷——**当月 + 上月为裸文本热层，上上个月及更早压 `.gz` 冷层**
+  （月度 CI `community-cold-compress.yml` 调 `projects/news/scripts/community_cold_compress.py` 总入口，
+  discord JSONL 委托 `projects/news/scripts/discord_cold_compress.py` 按消息 id 并轨；幂等、`--dry-run`）。
   **读方一律经 `archive_layout.open_archive_text()` 透明双开，日期解析一律 `archive_layout.date_stem()`**
-  （`.json.gz` 的 Path.stem 残留 `.json`，直取 stem 会把冷层误判成缺口）；写方去重 gz 感知；
-  跨档案检索冷层给 `rg` 加 **`-z`**（discord 全冷层 1.9G 实测 ~8 秒，热层裸文件照常秒回）。
-  **频道反查唯一入口 = `{区服}/channel_index.json`**（id→{name,type,dir,status}；status ∈ active / offline / orphan，缺省按 active——2026-07-12 T35 对账后每个归档目录均可反查，orphan 为下线早于索引入库的历史目录、名字不可考）；索引为**合并式更新**（下线条目保留标 offline，不再覆盖蒸发），对账工具 `projects/news/scripts/discord_reconcile.py`（扫孤儿目录、从 JSONL 恢复完整 channel_id 登记，`--dry-run` 只报告）
-- Discord 每日纯统计：`Public-Info-Pool/Record/Community/discord/{区服}/activity_daily/{date}.json`（主服在 global 区服目录）
-- 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
-- **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史现驻数据仓 BIAV-SC-DATA `Record/Community/discord`**（2026-06-21 de-tier 退役月度 git_rm；2026-07-20 T62 P2-5 §7甲 迁出 code 仓），经 `BIAV_SC_DATA_ROOT` 读、无需 Release 还原。重建：`BIAV_SC_DATA_ROOT=<data仓> python3 scripts/build_community_index.py`（消费方双布局：新路径优先、回落旧）。分词用领域词典 FMM，top_terms 为粗粒度主题信号
-- 解包层：text 层（原 Reference 层 Game-Unpacked 目录）**2026-07-12 守密人裁定整层删除**
-  （**唯一还原路径 = Releases「解包」桶二进制重解**，管线 `extract-game-data.yml` +
-  `projects/wiki/scripts/extract_client_data.py` + `projects/wiki/scripts/parse_*.py` 均在（2026-07-27 结构审视 P3：解析末段自顶层 `scripts/` 归位，管线三段现同处一个子项目）；git 历史一路已断，见 §6 尾）；二进制解包资产（立绘/音视频/lua-bytecode/config binary）在 Releases「解包」桶
-- Releases：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
+  （`.json.gz` 的 `Path.stem` 残留 `.json`，直取 stem 会把冷层误判成缺口）；写方去重 gz 感知；冷层 `rg` 加 **`-z`**。
+- **频道反查唯一入口** = `{区服}/channel_index.json`（status ∈ active / offline / orphan，缺省按 active）；
+  索引为**合并式更新**（下线条目保留标 offline，不覆盖蒸发），对账 `projects/news/scripts/discord_reconcile.py`。
+- 每日纯统计 `.../discord/{区服}/activity_daily/{date}.json`；输出展示 `projects/news/output/*-latest.json`
+  （**仅快查，不可当全量**）。
+- **全量分析索引** `projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；按平台×月聚合，
+  timeline 带 `vol_index` 抓量异常）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。
+  重建：`BIAV_SC_DATA_ROOT=<data仓> python3 scripts/build_community_index.py`。
+- 解包层：text 层 2026-07-12 整层删除，**唯一还原路径 = Releases「解包」桶二进制重解**（管线
+  `extract-game-data.yml` + `projects/wiki/scripts/extract_client_data.py` + `parse_*.py`）。藏宝图 `RELEASES.md`。
 
 ### §5.3 项目档案
 
 | 文件 | 内容 |
 |------|------|
-| `memory/project-status.md` | 子项目状态 + 实时进度（**状态唯一权威**，进度数字只在此维护）|
-| `memory/decisions.md` | 决策日志（**决策溯源权威**：记「为什么这么定 / 何时定 / 覆盖了谁」，含「当前有效决策」速览表）。⚠ **运行时强约束以本 CLAUDE.md 自动加载层 + 工具层为准**——任何 prompt 级文档都是弱约束（弱约束本质见 decisions-archive 2026-05-19 入口反转条），decisions.md 非自动加载、需按需 fetch；二者冲突时**以日期新者为准并双向同步**，不再单方「以 decisions.md 为准」|
-| `memory/decisions-archive.md` | 决策归档层（长理由 + 已退役决策 + 编年史，仅供审计追溯，不作运行时约束）|
-| `memory/todo.md` | 挂账台账（**待办 / 待裁唯一权威**，守密人 2026-07-10 裁定）：开着的账 + 四类别（裁定 / 预算 / 观察 / 黑池输入）+ 源指针 + 销案引；decisions.md 记已裁、本档记未销；新挂账入此档、源档案只留指针 |
-| `memory/strategic-plan-2026.md` | 战略规划 |
-| `memory/knowledge-layer-design.md` | **知识层北极星**（神经符号白盒骨架定位 + 改造路线 A–E；守密人 2026-07-04 结晶，统辖 KB 投资方向）|
-| `memory/methodology.md` | 协作方法论 |
-| `memory/lessons-learned.md` | 踩坑记录（**准则清单体**，2026-07-12 裁定：每条 3–5 行「坑/准则/防护指针」定额，长叙事在归档层案卷区；编号持续追加不重用，退役走留号指针；毕业纪律——升格为测试/钩子/本档硬约束后即迁档）|
-| `memory/lessons-archive.md` | 踩坑归档层（已毕业 / 已过时条目全文 + 在役条目案卷长叙事，仅供追溯，只进不出；2026-07-12 建档）|
-| `memory/contribution-protocol.md` | 贡献协议（**已退役 2026-07-10**：社区贡献取消、对社区单向可读，档案仅供追溯）|
-| `memory/style-guide.md` | 视觉规范 |
-| `memory/capability-index.md` | 银芯全功能目录 + 动态编排可达性（CI 自动生成；含孤儿检测。人工用途补注在 `memory/capability-annotations.json`，机器权威数据在 `memory/capability-registry.json`）|
-| `assets/data/VERSION.md` | 事实圣经版本 |
+| `memory/project-status.md` | **状态唯一权威**：子项目状态 + 实时进度（进度数字只在此维护）|
+| `memory/decisions.md` | **决策溯源权威**（含「当前有效决策」速览表）。⚠ **运行时强约束以本 CLAUDE.md 自动加载层 + 工具层为准**——prompt 级文档皆弱约束；冲突时**以日期新者为准并双向同步** |
+| `memory/todo.md` | **待办 / 待裁唯一权威**：开着的账 + 四类别（裁定 / 预算 / 观察 / 黑池输入）+ 源指针 + 销案引 |
+| `memory/lessons-learned.md` | 踩坑**准则清单体**（每条 3–5 行；编号持续追加不重用；升格为测试 / 硬约束后即迁档）|
+| `memory/decisions-archive.md` · `memory/lessons-archive.md` · `memory/archive/` | 三处归档层（长理由 / 已退役条目 / 各档下沉的编年史），仅供追溯，不作运行时约束 |
+| `memory/knowledge-layer-design.md` | **知识层北极星**（神经符号白盒骨架 + 改造路线 A–E）|
+| `memory/methodology.md` · `strategic-plan-2026.md` · `style-guide.md` · `morimens-context.md` | 方法论（含维护态节拍）· 战略 · 视觉规范 · 世界观术语与时间线 |
+| `memory/capability-index.md` | 全功能目录（CI 生成；补注 `capability-annotations.json`，权威 `capability-registry.json`）|
 
-跨档案检索：`rg "<关键词>" memory/ assets/`（语义检索子系统 2026-06-20 已退役，改用 ripgrep）。
-
----
 
 ## §6 仓库结构总览
 
 ```
-brain-in-a-vat/
-├── CLAUDE.md / README.md          # AI 统一入口 / 人 + AI 共用入口
-├── sc-pull.cmd                    # 守密人本地一键更新本仓（双击 --ff-only 拉取，2026-08-02）
-├── assets/                        # 事实圣经层（只读引用源）
-│   ├── data/                      # 角色卡 / 采访 / 叙事 / 设计决策 JSON（见 §5.1）
-│   └── images/                    # 立绘 / CG 等公开图像资产
-├── projects/                      # 子项目 + 工程产物（各有 CONTEXT.md，动手前先读）
-│   ├── news/   # 使命#1 黑池信息入口：采集器 + 全量档案 + 输出展示层
-│   ├── wiki/   # 已冻结（2026-07-12 原使命#2 取消，成果保留）：VitePress 站点 + 72 角色数据库
-│   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
-│   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
-│   ├── silver-core-sdk/  # 原使命#2 载体（2026-07-12 转正；2026-08-02 换轨后维护态只修不建，T78）· 银芯→黑池单向输出物：Silver Core Agent SDK——Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名；npm 名 silver-core-agent-sdk，2026-07-18 定名），见 project-status「## Silver Core SDK」
-│   ├── silver-core-maestro-sdk/ # Silver Core Maestro SDK（npm 名 silver-core-maestro-sdk，乐队指挥意象）：钟 / 跨会话状态 / 会话装配零件（任务台账等），依赖单向 maestro→agent，需求档 scs-req-orchestrator-sdk-20260717.md；随家族维护态（T78）
-│   ├── silver-core-testbed/ # 试金石（2026-07-18 施工）：两包效果验证床——消费者非家族第三包（private / 永不发布 / 锁步豁免 / 仅公开面），自举巡检本仓 + 台账即评测数据源；漏缝清单 GAPS.md 为一等产出；随家族维护态（T78）
-│   └── black-pool-agent/ # 使命#2 现行核心载体（2026-08-02 换轨裁定）：Hermes Agent（NousResearch/hermes-agent，MIT）改造扩展层——核心零侵入（能力走官方扩展面；patches/ 白名单制，品牌补丁由规则引擎生成、组装期应用），银芯→黑池单向输出；施工边界文书 = Public-Info-Pool/Resource/repo-engineering/bpt-hermes-charter-20260802.md，状态见 project-status「## Black Pool Agent」
-├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
-│   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
-│   ├── archive/ research/ strategy/
-│   └── *.md / *.json              # 见 §5.3
-├── okf/                           # Open Knowledge Format v0.1 bundle（生成物，见 §6.1）
-├── scripts/                       # 顶层 Python 工具层（人格 / 记忆写入 / 解包-解析 / 运营）
-├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
-├── Public-Info-Pool/              # 公开信息层总池（BPT 5R：取代旧 deliverables/，见 §6.2）
-│   ├── Resource/{主题类型}/       #   A类正式产物（报告/分析），按主题类型分目录，进 git 长期归档
-│   ├── Record/Community/          #   社区全量档案 text（discord + 16+ 平台，冷热分层见 §5.2）
-│   ├── Record/store-patrol/       #   商店巡检快照 + 变更日志（Maestro SDK 台账驱动，每日北京 15:15）
-│   ├── Reference/                 #   引用参照层（解包 text 层 2026-07-12 裁定删除，经 Releases 二进制重解）
-│   ├── Rough/                     #   C类即兴草稿/过程废料，.gitignore，可晋升进 Resource
-│   └── types.json                 #   Resource 主题类型开放注册表（形式定死/清单可增）
-├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
-└── .github/workflows/             # CI 自动化（见 §7.2）
+BIAV-SC-CODE/
+├── CLAUDE.md / README.md   # AI 统一入口 / 人 + AI 共用入口
+├── assets/                 # 事实圣经层（只读引用源）：data/ 角色卡·采访·叙事·设计 · images/
+├── projects/               # 子项目（各有 CONTEXT.md，动手前必读）
+│   ├── news/               #   使命#1 黑池信息入口：采集器 + 输出展示层
+│   ├── wiki/               #   已冻结（成果保留）：VitePress 站点 + 72 角色数据库
+│   ├── site/  game/        #   对外门户静态站 · 衍生游戏（退主线）
+│   ├── black-pool-agent/   #   使命#2 现行核心载体：Hermes Agent 改造扩展层
+│   └── silver-core-{sdk,maestro-sdk,testbed}/  # SDK 家族：代理 / 编排 / 试金石（维护态，T78）
+├── memory/  okf/           # 记忆层（§5.3） · OKF bundle（生成物，§6.1）
+├── scripts/  tests/        # 顶层 Python 工具层 · pytest 单元测试
+├── Public-Info-Pool/       # 公开信息层总池（§6.2）
+└── .claude/  .github/workflows/   # slash 命令 / 技能 · CI 自动化（§7.2）
 ```
 
-子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
-动手前必读。news 承载使命#1 持续自动跑；wiki 已冻结（2026-07-12 原使命#2 取消，成果保留
-不删不派发）；site 维护稳定，game 不主线派发；`projects/black-pool-agent/` 承载**使命#2
-「通用 AI 底层能力开发基地」**现行主线（2026-08-02 载体换轨裁定：基于 NousResearch/hermes-agent
-（MIT）上游跟随 + 扩展层，与 §1.1-HC 防火墙同向：银芯→黑池单向输出、黑池不回流）；
-`projects/silver-core-sdk/` 家族为原载体（2026-07-12 由「非使命线工程产物」事实使命转正；原名
-bpt-agent-sdk、2026-07-10 守密人裁定更名 Silver Core SDK；2026-08-02 起维护态只修不建，
-BPT 换装完成后冻结，挂账 T78），状态与两轴保真模型见 `memory/project-status.md`
-「## Silver Core SDK」。
+子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，**动手前必读**。
+news 持续自动跑；wiki 已冻结；site 稳定、game 不主线派发；`projects/black-pool-agent/` 承载**使命#2** 现行主线
+（与 §1.1-HC 同向：单向输出、黑池不回流），施工边界文书
+`Public-Info-Pool/Resource/repo-engineering/bpt-hermes-charter-20260802.md`；SDK 家族为原载体，
+2026-08-02 起**维护态只修不建**（T78）。状态见 `memory/project-status.md`。
 
 ### §6.1 OKF Bundle（`okf/`）
 
-`okf/` 是银芯知识层的 **Open Knowledge Format v0.1** 捆绑包（Google Cloud 2026-06-12
-开放规范：知识 = 一目录带 YAML frontmatter 的 markdown，每文件一 concept，唯一必填
-`type`，`index.md`/`log.md` 保留名）。**生成物**，由 `scripts/build_okf_bundle.py`
-从现有权威源可复现生成，重跑覆盖；一致性由 `tests/test_okf_bundle.py` 守护。
+`okf/` 是银芯知识层的 **Open Knowledge Format v0.1** 捆绑包（一目录带 YAML frontmatter 的 markdown，
+每文件一 concept，唯一必填 `type`）。**生成物**，由 `scripts/build_okf_bundle.py` 从权威源可复现生成、
+重跑覆盖；一致性由 `tests/test_okf_bundle.py` 守护。
 
-- **定位**：银芯为**公开信息层**（整层公开，见 §0；本 bundle 作为工程产物亦属公开信息）。
-  「整层公开」（信息定位）与「本 bundle 主要面向**内部消费**」（产物用途取舍）是正交两维：
-  本 bundle 主供艾瑞卡人格 / 银芯→黑池单向接口线格式候选 / 白嫖 OKF 静态可视化器看关系图，
-  **非以对外跨组织互操作为目标**——OKF 官方「跨组织互操作」主卖点对银芯打折。
-- **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色，唯一本体层）；(2) **放指针不放本体**
-  （除 characters 外所有层仅持 `resource` 指针，本体原地不动，呼应 RELEASES.md「藏宝图」与
-  「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（指针用 `tags: data_layer:*` 标层，防 lesson #30）。
-- **全仓知识组织（守密人 2026-07-04「用 ultracode 组织整个仓库所有知识」裁定）**：
-  bundle 从 4 层扩到覆盖全仓知识域（characters 唯一本体层，余层放指针）。
-  **精确层清单 / 概念数 / tier 归属以 `kb_overview` 运行时为准**（不在此手抄——层随源数据增长、手抄即漂移，2026-07-05 §八 范例）。
-  新层由 import-only 库 `scripts/okf_pointer_layers.py` 确定性生成（声明式 per-layer builder，
-  community/news-output 归档路径**共用 `archive_layout` 单一真相源**防漂移）；跨层关系边（community↔sources
-  同平台、news-output↔sources 抽样自、community→分析索引聚合）令新层可被 `kb_neighbors` 顺图导航。
-  纪律守护 `tests/test_okf_pointer_layers.py`（覆盖 / 放指针小体积 / data_layer / 指针不落空 / 无黑池）。
-- **消费（静态）**：`okf/visualizer.html` 自包含零后端关系图（双击即开）；`okf/graph.json` 供
-  其他消费端。银芯→黑池单向线格式：`python3 scripts/build_okf_bundle.py --tarball <path>`
-  产出 `.tar.gz` 单向输出物（仅策展知识层走此线，原始时序数据仍只放指针）。
-- **消费（运行时动态导航，2026-07-04）**：`okf/kb_index.json`（`scripts/build_kb_index.py` 生成的
-  倒排表 + 邻接表导航索引，词典法零 ML）让艾瑞卡在唯一动态平面 MCP 上经 `kb_*` 七工具
-  （导航四件后端 `scripts/kb_navigator.py`，向量 / 合流腿见 §5 腿路由）动态检索 / 取概念 /
-  顺关系图遍历——即「动态编排知识库」（详见 §1.4 第 5 条）。
-- CI：`.github/workflows/build-okf-bundle.yml` 在源数据变更时自动重生成（带 `[skip ci]`）；
-  `kb_index.json` 随 bundle 一并重生成（`build_okf_bundle.py` 末尾自动调用 `build_kb_index`）。
-- **索引更新一步到位协议（2026-07-10，lesson #46）**：改 KB 源（memory / assets / Resource /
-  wiki 数据 / 项目文档等）的内容 PR **不必**随包重建 `okf/`、**不要**事后专开 rebuild PR——
-  push 触发器已覆盖全部会话可提交源路径，合并 main 即自动重建直推（数分钟内）；每小时归档层
-  漂移由每日 cron 兜底；治理测试为子集比对、容忍源增长不误报。唯一例外：改**生成器结构本身**
-  （概念改名 / 删层 / 变 type，即 committed 会从 fresh 缺失或结构不一致）须同 PR 重建，否则治理红。
-- 重新生成：`python3 scripts/build_okf_bundle.py`（含导航索引）。
+- **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色，唯一本体层）；(2) **放指针不放本体**（除
+  characters 外各层仅持 `resource` 指针）；(3) **全量 vs 输出层不可互换**（`tags: data_layer:*` 标层，防 lesson #30）。
+- **精确层清单 / 概念数 / tier 以 `kb_overview` 运行时为准**——不在此手抄，层随源数据增长、手抄即漂移。
+  新层由 `scripts/okf_pointer_layers.py` 生成（归档路径共用 `archive_layout`），守护 `tests/test_okf_pointer_layers.py`。
+- **消费**：`okf/visualizer.html` 零后端关系图 · `okf/graph.json` · `--tarball` 产单向输出物。
+- **索引更新一步到位协议**（lesson #46）：改 KB 源的内容 PR **不必**随包重建 `okf/`、**不要**事后专开
+  rebuild PR——push 触发器已覆盖会话可提交的源路径，合并 main 即自动重建直推。**唯一例外**：改**生成器结构
+  本身**（概念改名 / 删层 / 变 type）须同 PR 重建，否则治理红。重生成 `python3 scripts/build_okf_bundle.py`。
 
-### §6.2 Public-Info-Pool（产物落点强约定，2026-06-21 守密人裁定）
+### §6.2 Public-Info-Pool（产物落点强约定）
 
-银芯产物（报告 / 分析 / PDF / HTML 等）一律落 `Public-Info-Pool/`，**取代旧 `deliverables/{YYYY-MM}/`**
-（已全量迁移，月目录废除）。设此池的根因：产物路径「每次会话各编一套」会发散（分隔符 / 日期格式 /
-版本后缀漂移），故把**弱约定（文档）升级为强约束（脚本）**——路径由代码确定性算出，不由会话临场编。
+银芯产物一律落 `Public-Info-Pool/`。根因：路径「每次会话各编一套」会发散，故把**弱约定升级为强约束**——
+路径由代码算出，不由会话临场编。
 
-- **`Resource/{主题类型}/{主题}-{YYYYMMDD}[-rN].{ext}`**：A 类正式产物，进 git 长期归档。
-  时间维度落文件名（不建月目录）；变体（全量 / 精简）进**主题段**，修订才升 **`-rN`**（r2/r3…），
-  同产物同日重跑默认覆盖。
-- **`Public-Info-Pool/Rough/`**：C 类即兴草稿 / 过程废料，`.gitignore` 默认不进 git；要留的人工**晋升**进 `Public-Info-Pool/Resource/`。
-- **`types.json`**：主题类型**开放注册表**——形式定死（小写 kebab-case、单数），清单可增、新类型须显式登记。
-  当前 6 个 provisional 类型（守密人可随时改名）：`daily-news` / `community-analysis` / `game-analysis` /
-  `repo-engineering` / `data-diagnostics` / `proposal`。
-- **强制工具**：`scripts/deliverable_path.py`（路径生成器 / 注册表守卫，挡同义分裂与形式漂移）：
-  - `path --type <t> --topic <s> --date YYYYMMDD [--rev N] [--ext md]` 算唯一路径；
-  - `register --type <t> --desc <…>` 登记新类型（near-match 提示防分裂）；
-  - `promote <Rough草稿> --type --topic --date` 草稿晋升；`rename-type <old> <new>` 类型改名（移目录 + 改注册表）。
-- **`Public` 语义**：指**信息来源为公开渠道** + 银芯整层公开定位（见 §0）。_避免_读成「公网可访问目录」。
+- **`Resource/{主题类型}/{主题}-{YYYYMMDD}[-rN].{ext}`**：A 类正式产物，进 git 长期归档。时间落文件名
+  （不建月目录）；变体进**主题段**，修订才升 **-rN**，同日重跑默认覆盖。
+- **Record/**：社区全量档案（数据湖，§5.2）· store-patrol · heartbeat · kb-usage 四子目录。
+- **Rough/**：C 类草稿 / 过程废料，`.gitignore` 不进 git；要留的人工**晋升**进 Resource/。
+- **types.json**：主题类型**开放注册表**——形式定死（小写 kebab-case、单数），清单可增、新类型须显式登记。
+  **强制工具** `scripts/deliverable_path.py`（挡同义分裂与形式漂移）：`path` / `register` / `promote` / `rename-type`。
+- **Public 语义**：指**信息来源为公开渠道** + 银芯整层公开定位（§0）。_避免_读成「公网可访问目录」。
 
 ### §6.3 历史抢救网现状（2026-07-26 核实，硬事实）
 
@@ -429,120 +346,73 @@ main 可达校验 / 资产逐件验收三重防护）移至压扁后提交，Rel
 
 ---
 
+---
+
 ## §7 开发工作流
 
 ### §7.1 构建 / 测试 / 校验命令
 
 | 场景 | 命令 |
 |------|------|
-| 运行验证程序（全量单测）| `pytest tests/ -v`（pytest 未随 requirements 收口，云容器缺则先 `pip install pytest`）。**路径知识三处真相源，别再各写各的**（T72，2026-07-27）：pytest 走 `pyproject.toml` 的 `pythonpath`；`python tests/test_x.py` 直跑走 `tests/_paths.py`（档首 `import _paths`）；顶层脚本取采集层走 `scripts/news_bridge.py`。守卫 `tests/test_test_isolation.py` |
-| 单文件 / 单用例 | `pytest tests/test_<模块>.py -v` / `pytest tests/ -k "<关键词>" -v` |
-| CLAUDE.md 对账三卫 | `pytest tests/test_claude_md*.py -v`（路径引用 / 覆盖 / 日期一致性；**改本档案后必跑**）|
-| wiki 本地开发 | `cd projects/wiki && npm run dev`（VitePress dev）|
-| wiki 构建产出 | `cd projects/wiki && npm run docs:build` |
-| 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
-| 跨档案检索 | `rg "<关键词>" memory/ assets/`（ripgrep） |
-| **合并前门禁**（跑齐 CI 会跑的）| `python3 scripts/premerge_gate.py [--list] [--with-setup] [--sparse]`（**把「CI 会红在哪」从凭记忆升格为算出来**：从 `.github/workflows/` 里 required 检查对应的 job **派生**门禁步骤清单并逐条跑。**2026-08-02 工程门禁拆除裁定后 required 只剩 `test`（Python）单检查**，派生清单相应收缩为 pytest 套件；`--sparse` 另按 CI 的稀疏检出形态复跑 pytest（第二类差集：同命令不同检出形态判词可相反，2026-07-27 #836 实例）。跳过的步骤一律点名。清单守卫 `tests/test_premerge_gate.py`）|
-| 死手开关（沉默检测）| `python3 scripts/dead_man_switch.py [--dry-run]`（**只数空座位**：查全部带 cron 工作流的最近一次成功，超阈值报 `STALE`、从无成功报 `NEVER`；阈值由各自 cron 推导 ×2 + 宽限，状态落 `Public-Info-Pool/Record/heartbeat/status.json`，CI `dead-man-switch.yml` 每日北京 15:50；设计档见 `Public-Info-Pool/Resource/proposal/dead-man-switch-design-20260726.md`，单测 `tests/test_dead_man_switch.py`）|
-| 产出↔消费对账 | `python3 scripts/consumption_audit.py [--dry-run]`（**找没人读的产物**：静态引用图判「谁在读」，零消费 / 仅档案提及 / 经解析器读三档，报告落 `Public-Info-Pool/Record/heartbeat/consumption.json`；**候选清单供人裁、不是退役触发器**——静态图看不见守密人翻阅 / 会话内读档 / 黑池侧消费；单测 `tests/test_consumption_audit.py`）|
-| 状态档事实块重算 | `python3 scripts/build_status_facts.py [--check]`（`memory/project-status.md` 的版本 / 规模 / 台账数字 **+ 两包 `CONTEXT.md` 的版本标签块**由权威源生成，**勿手抄**；同步守卫 `tests/test_status_facts.py`，叙述新鲜度另由 `tests/test_status_doc_facts.py` 守）|
-| 记忆保鲜巡检 | `python3 scripts/memory_freshness.py`（lessons 指针/编号不变量门禁见 `tests/test_memory_freshness.py`；月检例程与 `/sync-memory` 手册共用一套流程）|
-| 知识库有效性记分卡 | `python3 scripts/kb_eval.py`（黄金问题集 hit@k + MRR；需求侧有效性回归见 `tests/test_kb_golden.py`）|
-| 知识库使用遥测报告 | `python3 scripts/kb_telemetry.py`（借阅记录：调用分布 / 死概念 / 零命中查询；日志按日落 git 内 `Public-Info-Pool/Record/kb-usage/{date}.jsonl` **跨会话累计**，2026-07-11 方案甲裁定，路径唯一源 = `kb_telemetry.KB_USAGE_DIR`）；`--harvest` 把零命中查询回流成 held-out 难题候选（闭合评判 #1↔#2）|
-| 知识库反事实 A/B | `python3 scripts/kb_ab.py`（KB 结构化检索 vs 朴素 grep 同语料对照，含**最强 grep** 反稻草人臂；回归见 `tests/test_kb_ab.py`：KB 不劣于 grep + 联想题即便对最强 grep 仍严格胜）|
-| 知识库质性能力 probe | `python3 scripts/kb_qual.py`（测 grep 给不了知识的四维：层判定/身份/边界/关系类型，hit@k 测不出的 KB 真价值；回归见 `tests/test_kb_qual.py`）|
-| 知识库黄金集图驱动生成 | `python3 scripts/kb_golden_gen.py`（从图的带类型边自动生成数百题黄金集，边即真值；规模化复现 KB vs grep 差距；回归见 `tests/test_kb_golden_generated.py`）|
-| 向量腿语义铁证 | `python3 scripts/kb_semantic_ab.py`（paraphrase-recall harness：换说法/零共享 token 查询，向量独胜 grep+脊柱；黄金集 `tests/kb_semantic_golden.jsonl`；stub 零网络验管线/负控，**真胜负需 CI Voyage** `kb-semantic-proof.yml`；回归 `tests/test_kb_semantic_ab.py`）|
-| **Hermes 周更例程**（使命#2 上游跟随）| `python3 projects/black-pool-agent/build/sync_upstream.py probe\|sync\|changelog\|announce`（**探版 / 换快照+重生成品牌补丁+核对特性补丁 / 变更清单 / 公告**；退出码 3 = 特性补丁需人工重放）。每周一 00:00 北京（Routine cron `0 16 * * 0`）起新会话照 `projects/black-pool-agent/WEEKLY-UPDATE.md` 执行：全绿即直推 main → 触发 `assemble-black-pool-bundle.yml` 出私有版整包 → 公告 + BPA 更新指南落 `Public-Info-Pool/Resource/repo-engineering/`（守密人 2026-08-09 四裁）。守卫 `tests/test_hermes_weekly_update.py` |
-| 刷新 Claude Code 提示词参照 | `python3 scripts/refresh_claude_code_prompts.py`（浅克隆上游公开仓库、同步进 `Public-Info-Pool/Reference/Claude-Code-System-Prompts/`；每周定时 CI `refresh-claude-code-prompts.yml` 自动跑，手动亦可）|
-| 顶层脚本依赖 | `scripts/requirements.txt`；news 采集器依赖 `projects/news/requirements.txt` |
+| 全量单测 | `pytest tests/ -v`（缺则先 `pip install pytest`）。**路径知识三处真相源**：pytest 走 `pyproject.toml` 的 `pythonpath`；直跑走 `tests/_paths.py`；顶层取采集层走 `scripts/news_bridge.py`。守卫 `tests/test_test_isolation.py` |
+| 单档/单用例 | `pytest tests/test_<模块>.py -v` / `pytest tests/ -k "<关键词>" -v` |
+| 本档四卫 | `pytest tests/test_claude_md*.py -v`（路径 / 覆盖 / 日期 / 体积；**改本档后必跑**）|
+| wiki 开发 / 构建 · 检索 | `cd projects/wiki && npm run dev` / `npm run docs:build` · `rg "<关键词>" memory/ assets/` |
+| **合并前门禁** | `python3 scripts/premerge_gate.py [--list] [--with-setup] [--sparse]`——**把「CI 会红在哪」从凭记忆升格为算出来**：从 required 检查对应的 job 派生门禁步骤逐条跑；`--sparse` 另按 CI 的稀疏检出形态复跑（同命令不同检出形态判词可相反）；跳过的步骤一律点名 |
+| 死手开关（沉默检测）| `python3 scripts/dead_man_switch.py [--dry-run]`——**只数空座位**：查全部带 cron 工作流的最近成功，超阈值报 `STALE`、从无成功报 `NEVER` |
+| 产出↔消费对账 | `python3 scripts/consumption_audit.py`——找没人读的产物；**候选清单供人裁、不是退役触发器**（静态图看不见守密人翻阅 / 会话内读档 / 黑池侧消费）|
+| 状态档事实块重算 | `python3 scripts/build_status_facts.py [--check]`（版本 / 规模 / 台账数字 + 两包 CONTEXT 版本块由权威源生成，**勿手抄**）|
+| 保鲜巡检 | `python3 scripts/memory_freshness.py` |
+| 知识库评判工具 | `scripts/kb_eval.py`（黄金集 hit@k）· `kb_telemetry.py`（遥测，`--harvest` 零命中回流）· `kb_ab.py`（对照 grep）· `kb_qual.py`（四 probe）· `kb_golden_gen.py` · `kb_semantic_ab.py`（真胜负需 CI Voyage）。各自 `--help`；设计见 `memory/knowledge-layer-design.md` |
+| **Hermes 周更例程**（使命#2 上游跟随）| `python3 projects/black-pool-agent/build/sync_upstream.py probe\|sync\|changelog\|announce`（探版 / 换快照+重生成品牌补丁+核对特性补丁 / 变更清单 / 公告；**退出码 3 = 特性补丁需人工重放**）。每周一 00:00 北京起新会话照 `projects/black-pool-agent/WEEKLY-UPDATE.md` 执行，全绿即直推 main → 触发 `assemble-black-pool-bundle.yml` 出私有版整包（守密人 2026-08-09 四裁）。守卫 `tests/test_hermes_weekly_update.py` |
+| 其他 | `scripts/sdk_substantive_versions.py`（筛家族实质变更版）· `scripts/refresh_claude_code_prompts.py`（每周 CI 跑）。依赖 `scripts/requirements.txt` 与 `projects/news/requirements.txt` |
 
 ### §7.2 CI 自动化
 
-`.github/workflows/` 按职能分组：采集（新闻 / Discord / 评论 / 同人图）、
-数据（抓取 / 解包 / 校验 / 版本检测）、测试、部署运维。精确清单以
-`ls .github/workflows/` 为准；机器提交带 `[skip ci]` 防触发循环。日报定时已停用，
-报告改在会话内生成（详见 `memory/project-status.md`）。
+`.github/workflows/` 按职能分组：采集（新闻 / Discord / 评论 / 同人图）、数据（抓取 / 解包 / 校验 / 版本检测）、
+测试、部署运维。精确清单以 `ls .github/workflows/` 为准；机器提交带 `[skip ci]` 防触发循环。日报定时已停用。
+**2026-08-02 起**家族工程守卫工作流（SDK / maestro / conformance / mutation-ratchet / testbed-patrol /
+cold-start）降级为 `workflow_dispatch` 手动触发，验证网保留不删。
 
 ### §7.3 脚本层
 
-`scripts/` 按命名约定分类（人格 `character_persona` / 记忆写入 `silver_memory_tools` /
-知识库 `kb_*` / 生成器 `build_*` / 运营；**解包-解析 `parse_*` 与 wiki 生成器已于
-2026-07-27 结构审视 P3/P6 归位 `projects/wiki/scripts/`**；顶层→采集层取 `archive_layout`
-一律经 `scripts/news_bridge.py` 唯一桥（P4，守卫 `tests/test_news_bridge.py`）；一次性迁移脚本 `migrate_*` **用完即删**——2026-07-11 精简裁定
-清空已完工存量，**历史版本已随 2026-07-20 压扁不可恢复**——`migrate_*` 本就用完即弃，此处照实记录），`projects/news/scripts/` 为采集器层——其中
-`archive_layout.py` 为**归档布局单一真相源**（2026-07-02 P0-1：某源数据落在哪、
-怎么找，全仓只有它回答；写方读方一律 import 它，契约测试 `tests/test_archive_layout.py`
-锁定读写往返）；精确清单以 `ls` 为准。
+`scripts/` 按命名约定分类（人格 `character_persona` / 记忆 `silver_memory_tools` / 知识库 `kb_*` / 生成器
+`build_*` / 运营）；解包-解析 `parse_*` 与 wiki 生成器在 `projects/wiki/scripts/`；顶层→采集层取 `archive_layout`
+一律经 `scripts/news_bridge.py` 唯一桥（守卫 `tests/test_news_bridge.py`）；一次性脚本 `migrate_*` **用完即删**。
+`projects/news/scripts/` 为采集器层——其中 **`archive_layout.py` 为归档布局单一真相源**（数据落在哪、怎么找，
+全仓只有它回答；**写方读方一律 import 它**，契约测试 `tests/test_archive_layout.py` 锁定读写往返）。清单以 `ls` 为准。
 
-### §7.4 会话钩子与 MCP（`.claude/settings.json` + `.mcp.json`）
+### §7.4 会话钩子与 MCP
 
-**当前无任何自定义「会话生命周期钩子」**——`.claude/settings.json` 仅保留 `$schema`。
+**当前无任何自定义「会话生命周期钩子」**——`.claude/settings.json` 仅保留 `$schema`（四钩子均 2026-06-14 退役）。
 
-**git 钩子（与会话钩子是两类东西）**：`.githooks/pre-push` 防 413 胖包——push 前自动把
-当前分支基底对齐到最新 origin/main（lesson #28/#34/#39 真因防护）。装配：每个新克隆 /
-云容器跑一次 `git config core.hooksPath .githooks`（git 不自动信任仓内 hooksPath，需手动启用）。
-守密人 2026-06-20 裁定重新引入（仅 git 层、push 时触发一次，不重蹈会话钩子「开工硬重置」的坑）。
+**git 钩子（与会话钩子是两类东西）**：`.githooks/pre-push` 防 413 胖包——push 前自动把当前分支基底对齐到最新
+origin/main。**装配**：每个新克隆 / 云容器跑一次 `git config core.hooksPath .githooks`（git 不自动信任仓内 hooksPath）。
 
 MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具调用。
 
-> 钩子退役历程：UserPromptSubmit / PostToolUse / SessionEnd 三钩子（会话注入 / 工具观测 / 蒸馏）
-> 于 2026-06-14 退役（记忆定位收回平台原生，见 §1.4 第 3 条）；最后保留的 SessionStart
-> 同步钩子 `session-start-sync.sh` 亦于 2026-06-14 退役（守密人裁定，见 `memory/decisions.md`）。
-> 上述退役的均为**会话生命周期钩子**；2026-06-20 复活的 pre-push 属 **git 钩子**，性质不同。
-
 ### §7.5 Slash 命令与技能
 
-`.claude/commands/`：`/biav-report` `/daily-news` `/sync-memory` `/validate-data`；
-`.claude/skills/`：`anysearch`（实时网络检索）、`last30days`（任意话题近 30 天社区舆情横切；
-2026-07-29 自建，AnySearch 时间窗 + 免费公开 API，零 cookie 零抓取）、`grill`（拷问对齐并落档，user-invoked）、
-`grilling`（核心拷问循环）、`domain-modeling`（术语锐化 + 决策落档）、`intel-weekly`
-（社区情报周报生产线：全量档案层取数、固定骨架 + 风险哨兵、移动端 PDF 渲染；
-首期范例 2026-07-12 定稿）。技能写作审计标尺见
-`memory/skill-authoring-standard.md`。详见各自定义文件。
+`.claude/commands/`：`/biav-report` `/daily-news` `/sync-memory` `/validate-data`。
+`.claude/skills/`：`anysearch`（实时检索）· `last30days`（近 30 天舆情横切）· `grill` / `grilling`（拷问对齐）·
+`domain-modeling`（术语锐化 + 决策落档）· `intel-weekly`（情报周报生产线）。标尺见 `memory/skill-authoring-standard.md`。
 
 ### §7.6 分支与提交
 
-- 默认协作政策见 `memory/active/policy-direct-push-main.md`；本会话按派发要求在指定
-  feature 分支开发（见任务头部「Git 开发分支要求」）。
-- **合并默认规则**（守密人 2026-06-11 裁定）：feature 分支任务完成且全量验证通过后，
-  守密人下达「合并」即默认合并 main，PR 无需停留等待逐项确认；遇合并冲突按
-  「自动生成状态档案取最新、人工档案先报告再处置」原则解决。
-- **工程门禁激进拆除（守密人 2026-08-02 裁定：只保留认知 / 记忆门禁 + 采集线单测）**：
-  main Ruleset required 检查集收缩为 **`test`（Python）单检查**（认知 / 记忆守卫与采集线单测所在的 pytest 套件；
-  ruff 棘轮与覆盖率地板两步同日拆除，`mutation-test.yml` 删除）。**四个家族 JS 检查退出 required**
-  （`Silver Core Agent SDK / unit tests` / `conformance`、`Silver Core Maestro SDK / unit + testbed` /
-  `dependency direction`，原 2026-07-18 T61 五检查制作废）；家族全部工程守卫工作流（silver-core-sdk /
-  maestro / conformance-drift / sdk-mutation-ratchet / testbed-patrol / family-cold-start）降级为
-  `workflow_dispatch` **手动触发**——验证网保留不删，修生产 bug（T78 纯维稳射程）时手动拉起。
-  **Ruleset 摘勾四个 JS 检查须守密人亲手操作**（规则集无 API 可写）；摘勾前家族检查在 PR 上永不报告，
-  合并依赖既有 bypass。
-  **require branches up to date 仍不勾**（2026-07-11 裁定沿用；pre-push 自动 rebase + §7.6 对话内自查兜底撞车）。
-  **合并纪律（2026-07-11 同日会话操作口径修订，见 `memory/decisions.md`「题库定稿 + 对话内合并纪律」条）**：
-  判定门 = **合并前跑 `python3 scripts/premerge_gate.py`**（涉路径 / 档案判据加 `--sparse`），绿即合并——
-  **不以围等 GitHub CI 为工作环节**（不为 CI 安排轮询 / 计时器 / 自检回执）。
-  **⚠ required 检查不是物理门禁（2026-07-27 实测订正）**：原措辞写「required 保留为 GitHub 侧物理门禁，
-  合并瞬时被其挡下则等其转绿重试一次」——**实测它一次也没挡下过**。#835 / #836 / #837 三连均在检查
-  `in_progress` 时合并成功（建 PR 到合并 18 秒，检查耗时 90–120 秒，**结构上不可能等到报出**），
-  合并身份对规则集存在 bypass（规则集配置无 API 可读，此为行为反推）。故**全部安全性落在合并前那一道门上**，
-  它必须跑齐 CI 会跑的东西——`pytest` / `vitest` 只覆盖其中一部分，2026-07-27 两次 main 变红
-  （#835 漏 version-bump guard、#836 漏稀疏检出形态差异）正出自这个差集。**绝不**把「CI 会拦」当成「免自查」——
-  CI 根本不拦。历程：2026-06-21 撤检查改自查自合 → 2026-07-10 批准重启（撤检查的两条理由已随 07-02
-  sparse checkout 改造消失）→ 2026-07-11 勾选生效 + 同日操作口径修订 → 2026-07-18 扩为五检查（家族组合入门）
-  → **2026-07-27 判定门升格为 `premerge_gate.py`、「物理门禁」措辞作废**（守密人两项交互裁定）
-  → **2026-08-02 工程门禁激进拆除：required 收缩回 `test` 单检查、家族守卫全数转手动**（守密人三项交互裁定，见上）。
-- **直接合并 main + PR 订阅可选（守密人 2026-06-14 裁定、2026-06-21 修订）**：
-  Web 环境强制建 PR，但任务完成且验证通过后**默认立即合并 main**（squash），不停留等待。
-  PR 订阅由**退订不再强制**：若会话被环境自动订阅（出现 `<github-webhook-activity>` 提示）
-  或守密人要求跟进 PR，**可保留订阅**以监听 CI / 评审事件并按需自动修复；不再要求
-  「立即 `unsubscribe_pr_activity` 退订」。守密人明确下达「退订 / 停止跟进」时再调
-  `unsubscribe_pr_activity`。彻底关闭自动订阅仍需在 Web 环境配置侧设置
-  （见 https://code.claude.com/docs/en/claude-code-on-the-web），仓库内无法根治。
-- commit message 可用英文，过程说明 / 状态报告用中文（§2.1.3）。
-- 产出文件后必附可点击超链接向守密人汇报（§2.2.2）。
-- **合并后必附对话总结体（守密人 2026-07-11 裁定；2026-07-12 修订加⓪定性开篇）**：每次合并
-  main 完成后，汇报以「总结体」收尾——**⓪工作定性开篇（2026-07-12 修订）：第一部分先用一小段
-  说清「这是怎样一件工作、有什么意义」（工作性质 + 对项目的价值），再进细节**；①按主题归账
-  本次合并的工作；②本对话累计总账（PR / 决策 / lesson / 测试规模等精确数字）；③关键产物
-  可点击链接；④守密人侧余项清单。单次合并总结聚焦本次所并内容，会话内多次合并时累计总账
-  滚动更新；§2.2 三条硬规则（精确数字 / 超链接 / 小学生比喻）在总结体内照常适用。
+- 默认协作政策见 `memory/active/policy-direct-push-main.md`；按派发要求在指定 feature 分支开发。
+- **合并默认规则**：feature 分支任务完成且全量验证通过后，守密人下达「合并」即默认合并 main，无需逐项确认；
+  遇冲突按「自动生成状态档案取最新、人工档案先报告再处置」解决。
+- **工程门禁现状（2026-08-02 拆除裁定）**：main Ruleset required 收缩为 **`test`（Python）单检查**；
+  四个家族 JS 检查退出 required。**require branches up to date 仍不勾**（pre-push 自动 rebase 兜底）。
+- **⚠ required 检查不是物理门禁（2026-07-27 实测订正）**：**它一次也没挡下过**（三连 PR 均在检查
+  `in_progress` 时合并成功——建 PR 到合并 18 秒、检查耗时 90–120 秒，结构上等不到报出）。故**全部安全性落在
+  合并前那一道门上**。**绝不**把「CI 会拦」当成「免自查」——CI 根本不拦。
+- **合并纪律**：判定门 = **合并前跑 `python3 scripts/premerge_gate.py`**（涉路径 / 档案判据加 `--sparse`），
+  绿即合并——**不以围等 GitHub CI 为工作环节**（不安排轮询 / 计时器 / 自检回执）。
+- **直接合并 main + PR 订阅可选**：Web 环境强制建 PR，但任务完成且验证通过后**默认立即合并 main**（squash）。
+  会话被自动订阅或守密人要求跟进时**可保留订阅**以监听 CI / 评审并按需自动修复；守密人下达「退订」时再调
+  `unsubscribe_pr_activity`。
+- commit message 可用英文，过程说明 / 状态报告用中文（§2.1.3）。产出文件后必附可点击超链接（§2.2.2）。
+- **合并后必附对话总结体**：**⓪工作定性开篇**（先一小段说清「这是怎样一件工作、有什么意义」，再进细节）；
+  ①按主题归账本次合并的工作；②本对话累计总账（PR / 决策 / lesson / 测试规模等精确数字）；③关键产物可点击
+  链接；④守密人侧余项清单。多次合并时累计总账滚动更新；§2.2 三条硬规则照常适用。
