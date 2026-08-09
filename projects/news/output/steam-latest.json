@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-09T06:53:51.738755+00:00",
+  "collected_at": "2026-08-09T09:38:14.337422+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-09T07:11:46+00:00",
+      "lang": "schinese",
+      "title": "[负面] 玩法底子其实还不错，但是怎么说呢？二游的本质就决定了不可能有什么健康的玩家体验。像现在萝坦纯粹就是那...",
+      "summary": "玩法底子其实还不错，但是怎么说呢？二游的本质就决定了不可能有什么健康的玩家体验。像现在萝坦纯粹就是那脚填的数值带个沟槽神领域，几乎一票打死所有混沌的纯色队。现在除了游戏美术能夸几句，说实话，角色机制一个比一个答辩。得亏不用steam注册，还能随时卖号跑路",
+      "url": "https://steamcommunity.com/profiles/76561198969435431/recommended/3052450",
+      "author": "76561198969435431",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "玩法底子其实还不错，但是怎么说呢？二游的本质就决定了不可能有什么健康的玩家体验。像现在萝坦纯粹就是那脚填的数值带个沟槽神领域，几乎一票打死所有混沌的纯色队。现在除了游戏美术能夸几句，说实话，角色机制一个比一个答辩。得亏不用steam注册，还能随时卖号跑路",
+      "timestamp_created": 1786259506,
+      "playtime_forever": 104
+    },
     {
       "source": "steam",
       "time": "2026-08-08T21:02:05+00:00",
