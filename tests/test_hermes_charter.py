@@ -7,6 +7,8 @@ v0.1.0，补丁分**公版**（black-pool-rebrand.patch，纯品牌）与**私�
 （black-pool-intranet.patch，内网/便携适配叠加层）两张，装配按序应用。
 """
 import importlib.util
+import json
+import os
 import re
 import subprocess
 import sys
@@ -16,6 +18,7 @@ import pytest
 
 REPO = Path(__file__).resolve().parent.parent
 SUB = REPO / "projects" / "black-pool-agent"
+UPSTREAM = SUB / "upstream"
 REBRAND = SUB / "build" / "rebrand.py"
 PATCH_BRAND = SUB / "patches" / "black-pool-rebrand.patch"
 PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
@@ -172,7 +175,6 @@ def test_brand_patch_sentinels():
         "默认语言简体中文（后端真源头）": '"language": "zh",',
         "默认外观深色（缺省兜底）": "'system' ? value : 'dark'",
         "默认外观深色（契约用例同步翻面）": "fallback: 'dark', a: 'light'",
-        "品牌字体路径修复（Collapse 构建期内嵌）": "url('../node_modules/@nous-research/ui",
         "黑池默认主题（鎏金双貌）": "DEFAULT_SKIN_NAME = 'black-pool'",
         "默认皮肤后端真源头": '"skin": "black-pool"',
         "黑池主题定义在位": "blackPoolTheme",
@@ -186,6 +188,63 @@ def test_brand_patch_sentinels():
     added = [l for l in text.splitlines() if l.startswith("+")]
     assert not any("the recommended way to run" in l for l in added)
     assert not any("的推荐方式" in l for l in added)
+
+
+def _install_root() -> Path:
+    """上游自陈的依赖安装根。
+
+    apps/desktop 没有自己的 package-lock.json——`npm ci` 在该目录会被 npm 的
+    workspace 检测上溯到仓根，整个 workspace 装进**仓根** node_modules。上游把这条
+    事实写死在 apps/desktop/scripts/assert-root-install.mjs（校验
+    <仓根>/node_modules/vite 在位），故以那里的上溯层数为唯一真相源，而非本档硬编码。
+    """
+    scripts = UPSTREAM / "apps" / "desktop" / "scripts"
+    mjs = (scripts / "assert-root-install.mjs").read_text(encoding="utf-8")
+    m = re.search(r"const root = resolve\(import\.meta\.dirname,([^)]*)\)", mjs)
+    assert m, "assert-root-install.mjs 结构变了——移 pin 后请重新核对依赖安装根"
+    root = scripts.resolve()
+    for _ in re.findall(r'"\.\."', m.group(1)):
+        root = root.parent
+    return root
+
+
+def test_desktop_font_asset_path_matches_install_root():
+    """桌面端 CSS 里指向 node_modules 的资产路径必须落在依赖安装根上。
+
+    2026-08-03 曾有一条换装规则把品牌字体 Collapse-Bold 的 url 从 '../../../node_modules/…'
+    改写成 '../node_modules/…'，指向实际不存在的 apps/desktop/node_modules——Vite 报
+    "didn't resolve at build time" 后原样留字面 URL，字体不进 dist/assets，
+    发行包里字标回退系统默认字体（2026-08-08 容器内构建实证，两向对照）。
+    本守卫钉三件：源树路径对得上安装根 / 两张补丁都不许改写它 / 字体包仍是声明依赖。
+    """
+    root = _install_root()
+    assert root == UPSTREAM.resolve(), f"依赖安装根不再是 upstream 仓根: {root}"
+
+    src = UPSTREAM / "apps" / "desktop" / "src"
+    checked = []
+    for css in sorted(src.rglob("*.css")):
+        for url in re.findall(r"url\('([^']*node_modules[^']*)'\)", css.read_text(encoding="utf-8")):
+            target = (css.parent / url).resolve()
+            checked.append((css.relative_to(UPSTREAM), url))
+            assert str(target).startswith(str(root / "node_modules") + os.sep), (
+                f"{css.relative_to(UPSTREAM)} 的 {url} 落在 {target}，"
+                f"不在依赖安装根 {root / 'node_modules'} 下——构建期解析不到，字体/资产会静默丢失"
+            )
+    assert checked, "桌面 CSS 里的 node_modules 资产引用全没了——哨兵失配，请核对上游结构"
+
+    for patch in (PATCH_BRAND, PATCH_INTRANET):
+        added = [
+            l for l in patch.read_text(encoding="utf-8").splitlines()
+            if l.startswith("+") and not l.startswith("+++")
+        ]
+        assert not any("node_modules/@nous-research/ui/dist/fonts" in l for l in added), (
+            f"{patch.name} 又在改写品牌字体路径——见 build/rebrand.py 该处「勿再加」注释"
+        )
+
+    deps = json.loads((UPSTREAM / "apps" / "desktop" / "package.json").read_text(encoding="utf-8"))
+    assert "@nous-research/ui" in deps.get("dependencies", {}), (
+        "@nous-research/ui 不再是 apps/desktop 的声明依赖——品牌字体来源断了"
+    )
 
 
 def test_intranet_patch_sentinels():

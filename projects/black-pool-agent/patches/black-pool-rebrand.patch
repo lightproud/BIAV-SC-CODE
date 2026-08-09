@@ -44511,19 +44511,6 @@ index 8f214f8..4d92f25 100644
    }
  
    return method === 'wake.start'
-diff --git a/apps/desktop/src/styles.css b/apps/desktop/src/styles.css
-index 2ee38e0..9a5d39e 100644
---- a/apps/desktop/src/styles.css
-+++ b/apps/desktop/src/styles.css
-@@ -30,7 +30,7 @@
-   font-style: normal;
-   font-weight: 700;
-   font-display: swap;
--  src: url('../../../node_modules/@nous-research/ui/dist/fonts/Collapse-Bold.woff2') format('woff2');
-+  src: url('../node_modules/@nous-research/ui/dist/fonts/Collapse-Bold.woff2') format('woff2');
- }
- 
- /* JetBrains Mono — bundled terminal font (Apache-2.0) so bold/italic share the
 diff --git a/apps/desktop/src/themes/backend-sync.test.ts b/apps/desktop/src/themes/backend-sync.test.ts
 index 3733331..ba40887 100644
 --- a/apps/desktop/src/themes/backend-sync.test.ts

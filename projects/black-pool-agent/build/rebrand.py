@@ -317,14 +317,17 @@ BRAND_POST_RULES = [
         f'__version__ = "{UPSTREAM_VERSION}"',
         f'__version__ = "{BRAND_VERSION}"',
     ),
-    # 品牌字体加载修复（守密人 2026-08-03 实机发现字标回退无衬线；装配日志实锤
-    # "didn't resolve at build time"）：上游 CSS 按 monorepo 根 node_modules 写
-    # 路径、官方从根装依赖故可解析；本装配只在 apps/desktop 里 npm ci——改指
-    # 应用自己的 node_modules，构建期即内嵌字体。
-    (
-        "url('../../../node_modules/@nous-research/ui/dist/fonts/Collapse-Bold.woff2')",
-        "url('../node_modules/@nous-research/ui/dist/fonts/Collapse-Bold.woff2')",
-    ),
+    # 【勿再加「品牌字体路径修复」规则】2026-08-03 曾在此加一条把
+    # url('../../../node_modules/…/Collapse-Bold.woff2') 改写成 '../node_modules/…' 的规则，
+    # 判词是「本装配只在 apps/desktop 里 npm ci，故依赖在应用自己的 node_modules」——
+    # 判词错，该规则本身就是字标回退无衬线的成因（2026-08-08 容器内实证）：
+    # apps/desktop 无自己的 package-lock.json，`npm ci` 在此目录会被 npm 的 workspace
+    # 检测上溯到仓根，整个 workspace 装进**仓根** node_modules，apps/desktop/node_modules
+    # 只留一个 ignore 的去重例外。上游自己的 apps/desktop/scripts/assert-root-install.mjs
+    # （校验 <仓根>/node_modules/vite 在位）即此事实的书面确认。故上游的 '../../../'
+    # 本就正确，改成 '../' 反指向不存在的目录 → Vite 报
+    # "didn't resolve at build time, it will remain unchanged" → 字体不进 dist/assets。
+    # 不变量守卫：tests/test_hermes_charter.py::test_desktop_font_asset_path_matches_install_root
     # 默认配色方案（守密人 2026-08-03 裁定：对标黑池终端的鎏金双貌）：
     # 新增内建主题 black-pool（浅 = 金×米白 / 深 = 金×暖黑）并设为默认皮肤；
     # 上游六款主题保留可选。取色自守密人参考图。
