@@ -221,94 +221,26 @@
 
 ## Silver Core Maestro SDK（`projects/silver-core-maestro-sdk/`，npm 名 `silver-core-maestro-sdk`，2026-07-18 立项施工，同日定名——曾用 @biav/orchestrator-sdk）
 
-- **v2.2.3（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 2.2.3（观察项批收口）前进。
-- **v2.2.2（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 2.2.2（工具调用参数健壮性七修）前进。
-- **v2.2.1（2026-07-29）**：锁步对齐（本包零代码改动）——家族版本钟随 agent SDK 2.2.1（输入形状诊断）前进。
-- **v2.2.0（2026-07-29）**：**设计第三轮落地（四原语装配，agent 侧纯锁步）**——设计档 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-agent-assembly-design-20260729.md`（裁1–裁5 + D2–D8 十一项当日交互裁定）当日实现：第七族 `assembly/agent-executor.ts`（**注入式** `createAgentExecutor` + `extractPlainAgent`/`extractGoalRound`/`extractWorkflowNode`——宿主递 query 函数进驱动器执行座位，本包对 agent SDK 维持零 import 零依赖、P1 不重开；fail-loud 无请求即响亮落错；abort 桥接 interrupt→宽限→close；重试=重跑，恢复=宿主 reopen+payload.resume，D6）+ 第八族 `routine/manager.ts`（`RoutineManager` 值班例程管理面：命名/停启/triggerNow/lastFireAt·nextFireAt·lastSession 反查；停启表纯内存+宿主持久化 D4；手动触发幂等键 `manual:{id}:{firedAt}` **独立段永不污染 Scheduler 恢复足迹**）+ 足迹解析抽出 `schedule/footprint.ts` 单一共享纯核（Scheduler 恢复行为逐字节不变）+ `WorkflowNode.manualClaim` 确认门节点（`runAt:null` 派发停在 pending+manualClaim，Cowork awaiting_confirm 投影**零新状态**，裁3；拒绝=cancelSession fail-fast、修订=reopen 链）+ `QueryRecord.costUsd` 成本入账（D2：executor 转录引擎估算，驱动器转发，Σ listQueries 即会话累计）+ `docs/ASSEMBLY.md` 四原语接线谱 + 例程五号 `agent-loop.mjs`（无钥可跑的注入式活体证明；**不建 LoopRunner，组合即 loop**，D3；宪章 §3 已补 D8 覆盖注）。测试 429→479（+50）。两新族按两级标尺标实验面并**随档指定首消费方**（设计档 §10——memory-tidy 生产化 / BPT Cowork / testbed·store-patrol 例程面改造），防 P2 判词重演。
-- **v2.0.0（2026-07-29）**：**锁步对齐（家族首个 major，本包零运行时改动）**——随 agent SDK 2.0.0（T75：cards 退役 BREAKING + frontmatter + 选择性附着）前进；本包面无破坏，agent 侧 cards 消费者先迁移再 pin。
-- **v1.4.0（2026-07-28）**：**审计第十七波（本包份额）**——两处**只被测试替身的宽容挡住**的真缺陷：①`claimDue` 把 `limit`（即 `LedgerDriver.maxConcurrent` 的批量上限）套在存储**恰好**返回的顺序上，而 `LedgerStore` 契约**根本不规定顺序**（随包契约套件比对前一律先排序 id，即顺序刻意在契约外）。全部测试替身都是 Map 支撑、列举序恰好等于派发序也就等于到期序，于是这条从来没被测过：对一个**完全合规**、按最新在前列举的存储，`maxConcurrent: 1` + 三个恒到期会话，实测 30 个 tick 里同一个会话占满槽位、另两个**一次没跑**；即便在内存存储上，5000/1000/100ms 三个到期点也会认领**最不逾期**的那个。现按 `nextRunAt` → `createdAt` 排序，完全并列者靠稳定排序保留存储序 · ②**32 位定时器溢出把每个毫秒旋钮顶部反转**：`systemClock.setTimeout` 把延时直接交给全局定时器，而超过 2^31-1 ms 后 Node 不是睡更久、是**溢出成 1 ms**。30 天的 `queryTimeoutMs` 通过了构造期的有限/正数校验，然后在执行器第一个 `await` 恢复之前就中止了每一次尝试、落 `retrying` + `lastError: 'timeout'`——**没有任何一次尝试可能完成**；同一反转把刻意设稀的 `pollIntervalMs`（驱动器与调度器皆然）变成对宿主存储的 1 ms 锤击。仅在交给全局的那一步封顶，注入钟与 NaN/Infinity 不动。
-- **v1.3.0（2026-07-28）**：**审计第十五 + 十六波（本包份额，非空转）**——①`LedgerDriver` 在 try/catch **之外**解引用宿主执行器的返回值，执行器少写一个 `return` 即产生无人处理的拒绝、Node 宿主以 `ERR_UNHANDLED_REJECTION` 死掉、会话搁浅在 `running`，与「驱动器绝不因执行器失败而崩溃」的明文承诺相悖 · ②`GoalChaser` 从不校验评审器返回的判词形状（agent 侧对**同一个** 0.83.0 统一形状是校验的）：仍说旧 `{achieved, feedback}` 的评审器在 agent 侧会被响亮抓住，在本包却当「未达成」放过——第 1 轮就报成功的追逐实跑了 5 轮驱动器执行、最后落 `exhausted` · ③工作流加载器围栏扫描器把长围栏内的三反引号行读作闭合，**文档示例图顶替真图**被加载派发，而寻常的包裹写法反被判为「没有图」· ④UTF-8 BOM 被格式嗅探当无意义（`trimStart` 吃掉它）、又被 `JSON.parse` 当有意义，Notepad / PowerShell 存的合法图被静默跳过 · ⑤`nextFireAt` 的 `dailyAt` 分支撞上 `Date.UTC` 的两位年份重映射（0–99 → 1900+year，而 `getUTCFullYear()` 报真年），一世纪时间戳的触发点偏出约 1900 年、`firesBetween` 静默丢掉全部到期点（70 万随机元组证明改法在该窗口外与 `Date.UTC` 逐位相同）。另订正台账：破坏性的 `GoalVerdict` 统一被记在 0.85.0，而它真正发布的 0.83.0 被写成「本包零改动」——消费方据此把 0.83.0 当免费重 pin。
-- **v1.1.0（2026-07-28）**：**审计第十三波**——**存储契约套件会给坏存储发合格证**（它是交付给宿主验证自家实现的东西，误判通过是此处最坏的缺陷）：`dueBefore` 检查名为 `<=` 却只测过 `500 <= 1000`，用严格小于过滤的存储照样 13/13 通过、却永久扣留每个恰在轮询时刻到期的会话；「按 id 创建或替换」从不断言一 id 一行，追加式存储照样通过而 `listSessions` 一直把旧世代交给调用方；`assertDeepEq` 比 `JSON.stringify` 输出，把**键序**写进了契约，字段全对但按列重建行的存储反而不合格。另修 goal 追逐器：中止落在宿主评审器决策期间仍会多买一轮，循环已派发第 N+1 轮且驱动器执行之后 `#awaitTerminal` 才拒绝（`WorkflowRun.run()` 早有对称守卫）。
-- **v0.99.0（2026-07-28）**：**审计第十波（本包份额）**——`docs/ONBOARDING.md` 称契约套件有「16 项」，实为 13 项基础 + 2 项可选缝检查，宿主按 `report.total === 16` 断言会误判三项静默未跑；另本包 `terminal-vocabulary` 守卫射程注明「仅 src」，testbed 的基线导出器与浸泡演练都在射程外重复了被禁写法（已在 testbed 侧修正，规则归属本包故并记）。
-- **v0.98.0（2026-07-28）**：**审计第九波（本包份额，全在从未审计面）**——变异棘轮守卫两处静默退出 0（与 agent 侧孪生同款）· **`examples/store-patrol.mjs`（每日在产 CI）五处**：损坏的 committed `ledger.json` 令巡检在构造期永久停摆、截断的 `latest.json` 基线令该店面此后每次尝试都抛、快照非原子写（中途被杀即发布半截文件而工作流照样提交）、`cancelled` 会话被读作在飞而烧光 120 秒排水超时并丢弃健康成果、失败过滤只认 `'failed'` 故未巡检的目标也报「全部巡检完毕」并退出 0 · `examples/memory-tidy.mjs` 把目录项喂给 `readFileSync`（`fragments/` 下一个嵌套目录即 EISDIR，整理此后再不运行）· 三个示例重复了 `terminal-vocabulary` 测试在 `src/` 禁止、而其射程注明「仅 src」的 `done || failed` 写法。
-- **v0.95.0（2026-07-28）**：**台账两处缺陷 + 驱动器并发上限竞态修正**（家族审计波及本包，非空转）——`reopenSession` 并发 CAS 落败永久丢溯源链接、`recordOutcome` 回填路径写入词表外 outcome、`stop()`+`start()` 交错令两代 tick 各自认领满额致并发翻倍。
-
 > **一句话**：银芯编排 SDK——持有分子（钟 / 跨会话状态 / 会话装配），把「活得比一次调用久」的
 > agent 脏活做成可复用零件交宿主装配；与代理 SDK 分界 = 代理持原子（一次结构化调用）、编排持分子。
 > 需求裁定书 `Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md`。
 >
-> **进度**（2026-07-18）：第零战 monorepo 迁移完成（仓库转 npm workspace 双包、silver-core-sdk
-> npm 名经 `@biav/agent-sdk`（0.66.0）定为 `silver-core-agent-sdk`（0.67.0，守密人同日定名）、依赖方向守卫 CI 执法（maestro→agent 单向，双向违规红证实测））；
-> 第一战任务台账 + 驱动器完成（0.2.0）：封闭状态机（pending/running/retrying/failed/done，定稿回填
-> 需求档 §4）+ `LedgerStore` 宿主注入缝 + `TaskLedger` + `LedgerDriver` 持钟活组件 + 例程一最小 loop
-> （消费代理侧 R2 预算事件流，e2e 对本地仿真器真跑）；纯核 state.ts **变异分 100%**（83/83，
-> 棘轮地板 100 入 `sdk-mutation-ratchet.yml` 周检）；第二战商店巡检真实场景接入完成
-> （2026-07-18 守密人点火）：`examples/store-patrol.mjs` 生产循环任务长在台账 + 驱动器上——
-> Morimens Steam 双端点每日指纹比对，快照 + 变更日志落 `Public-Info-Pool/Record/store-patrol/`，
-> CI `store-patrol.yml` 每日北京 15:15 自动跑，e2e 四场景 + 首次生产真跑绿；第三至六战
-> （0.4.0，2026-07-18 动态编排令：4 实现代理 + 2 对抗审查 + 单脑整合）完成——schedule（例程二：
-> 定点触发/错过补偿/跨重启恢复）+ workflow 图执行器（例程三：图即数据、fail-fast、幂等键断点续跑）
-> + goal 追逐器（跨 query 重发起、轮=会话）+ 送达契约（审计先行）；审查抓 4 major + 1 minor 全修全锁
-> （类型化 DuplicateSessionError / claimSession 单会话认领 / 四处 id 冒号封禁 / goal 排水超时）；
-> 变异靶四处（ledger-state 100 / schedule-spec 100 / workflow-graph 97.14 / goal-decision 100）；测试 171。
-> **未做**：周报 loop 生产切换（机制已备，待 T37 推送形态裁定）。
-> **版本钟**：2026-07-18 守密人裁定两包**锁步同版**（覆盖需求档 §2 双钟制），0.68.0 起同号、
-> CI 守卫相等；此后本节版本号即家族版本号。
+> **当前 v2.2.3（2026-07-29）**，与 agent SDK **锁步同版**（2026-07-18 守密人裁定覆盖需求档 §2 双钟制，
+> CI 守卫相等）。**八族零件、成熟度两级**（标尺见需求档 §6：「已验证」须有非为演示它而写的消费方）——
+> `ledger` / `driver` / `scheduler` 已验证；`workflow` / `goal` / `delivery` / `assembly` / `routine` 为实验面。
+> 在产消费方两个：`projects/silver-core-maestro-sdk/examples/store-patrol.mjs`（每日北京 15:15 商店巡检）
+> 与 silver-core-testbed。硬性质：对 agent SDK **零 import 零依赖**，依赖方向 maestro→agent 单向由 CI 执法。
 >
-> **第七战（0.69.0，2026-07-18 守密人待办批 4/5 项）**：workflow 声明式加载
-> （`parseWorkflowGraphSource` / `loadWorkflowGraphFile`，json / md fence、坏文件永不抛降级跳过，
-> 变异分 100）+ 例程四「综合整理任务」（`examples/memory-tidy.mjs`：定时派发→读健康面
-> `assessMemoryStoreHealth`→归并写卡→删碎片→台账收口，黑池做梦例程原型，假钟 e2e）+
-> schedule 错过补偿核对（已实现有测试，免补）+ 质量切换：棘轮五族全靶（新增 delivery-channel 100 /
-> workflow-load 100，CI 矩阵六靶）、四份 e2e 全部假钟化（三连稳、秒级降毫秒级）；测试 171→180。
+> **2026-08-02 起随 T78 转维护态**：纯维稳、仅修影响生产的 bug、零新功能；家族工程守卫工作流
+> 已降级为手动触发；BPT 换装完成后按 wiki 先例冻结。
 >
-> **v0.92.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.92.0（Workflow 改真异步启动）前进。
-
-> **v0.90.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.90.0（checkpoint blob 上限，T74 甲案）前进。
-> **v0.89.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.89.0（类型面漂移检测工具化，首跑挖出四条「发货了却没声明」的类型缺陷）前进。
-> **v0.86.1（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.87.1（嵌套路径普查：timedOutAfterMs 移回基类）前进。
-> **v0.86.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.86.0（主循环提示词补回开篇句 + 输出类型普查续：ReadMcpResource 错误字段 + WebSearch 结构化结果）前进。
-> **v0.84.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.84.0（记忆索引纪律 + 整理规程）前进。
-> **v0.85.0（2026-07-27，goal 判词家族统一）**：**BREAKING（实验面）**——`GoalVerdict` 迁移为与 agent SDK 逐字同形的 `{status: 'achieved'|'not_achieved'|'impossible', reason?}`（原 `{achieved, feedback, impossible?}`）。起因：BPT 接入后报「goal 没效果、模型照样停」，排查定位两包**同名不同形**判词——评审器误用另一包形状时引擎按设计 fail-open 把 malformed verdict 放行为允许停止，goal 无声失效。守密人裁「统一判词类型」：agent 侧 `{status}` 为正典（BPT 实接层不动），Maestro goal 族（零调用点实验面）赶在 GoalChaser 首次接线前迁移；声明式重复不跨包 import（硬性质 §1.2），一个宿主评审器经结构类型同时服务两缝；`GoalRoundPayload.feedback` 字段名保留、改承载 `reason`。迁移映射见 CHANGELOG 0.85.0。
-> **v0.85.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.85.0（工具产出结构化结果 + MCP 接受列表扩容）前进。
+> **逐版全文以本包 `projects/silver-core-maestro-sdk/CHANGELOG.md` 为唯一权威**——锁步纪元下约四成
+> 版本为「本包零改动」的空转对齐，用 `python3 scripts/sdk_substantive_versions.py` 可筛出对消费方
+> 有实质变更的那些（T70 建，格式由 `tests/test_sdk_changelog_lockstep.py` 钉死）。
+> 文档：`docs/ONBOARDING.md`（宿主 store 样板）/ `docs/CONCURRENCY.md`（并发模型）/ `docs/ASSEMBLY.md`（四原语接线谱）。
 >
-> **v0.82.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.82.0（Read 通读 >256KB 拒绝）前进。
->
-> **v0.81.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.81.0（Read 截断页脚补齐官方三件套）前进。
->
-> **v0.80.2（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.80.2（对齐 2.1.216 快照基准）前进。
->
-> **v0.80.1（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.80.1（两条提示词溯源 slug 改锚 + 刷新 cron 补自检）前进。
->
-> **v0.80.0（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.80.0（工具输出上限对齐 Claude Code 2.1.141：WebFetch 100_000 → Read 的 50_000、Grep `head_limit` 三模式统一默认 250、Bash 输出截断改保尾去头）前进。
->
-> **v0.79.1（2026-07-27，锁步对齐）**：本包零代码改动；随 agent SDK 0.79.1（transport / MCP 内部去重）前进。
->
-> **v0.79.0（2026-07-26）**：**重开语义（T67 甲案）+ 三项余项推进**（守密人「按你建议推进」）——`TaskLedger.reopenSession`/`reopenChain`（新会话 + `reopenOf`/`attemptRound` 链，**封闭状态机未动**：终态不可变是 CAS 围栏/幂等派发/重启不复活的共同立足点，缺的从来不是边而是链接；前驱须终态、`cancelled` 默认拒绝、后继 id 从链根派生、payload 可覆盖）· **T68** `docs/CONCURRENCY.md`（本包第二份文档）· **T69** 棘轮 `cadence` 分档（三个零消费靶降月检，加字段不删腿，cadence 自身三条治理断言）· **T70** 空转措辞钉死 + `scripts/sdk_substantive_versions.py`（守卫首跑抓到两条真漂移）。测试 404 → **421**。
-> **v0.78.1（2026-07-26）**：**产品审视四项裁定**（审视档 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-product-review-20260726.md`，同日第二轮，问「作为产品是否成立/有效」）——**P1** 删除无代码支撑的 peerDependency（src 对代理零 import，npm 7+ 自动装 peer 与硬性质①冲突）· **P2** 六族两级成熟度标注（`ledger`/`driver`/`scheduler` **已验证**：两个互不相干真实消费方；`workflow`/`goal`/`delivery` **实验面零调用点**）+ 需求档 §6 补「已验证」标尺（须有非为演示它而写的消费方）· **P3** 首份 `docs/ONBOARDING.md`（store 可复制样板，实测两消费方各自手写 43/38 行、相似度 86%；**测试从 markdown 提取样板真跑契约套件**）· **P5** 判别式补第三维「触发权」（delivery 归属正当、是判据漏维）。**运行时行为零变化**，测试 400 → **404**。
-> **v0.78.0（2026-07-26）**：**设计审视四缝全修**（审视档 `Public-Info-Pool/Resource/repo-engineering/maestro-sdk-design-review-20260726.md`，守密人同日四裁均取推荐案）——F1 `cancelled` 终态穿透场景层（三处硬编码 `done || failed`，默认配置下用户取消致工作流/目标追逐**永久挂死**；`graphStatus` 判 fail-fast、`GoalChaser` 新 action `'cancelled'`，新增 `isTerminal`/`isUnsuccessfulTerminal` + **禁字面量终态对的治理守卫**）· F2 驱动器 `maxConcurrent`（实测 200 到期→峰值 200）+ `claimDue(now,{limit})` · F3 可选存储缝 `deleteSession?` + 网关 `purgeSession`（契约套件 +4 检查）· F4 两长跑组件收 `AbortSignal`。测试 362 → **400**，三机制逐条回退负控实证。**未纳入**：Scheduler 全表扫、F5「重开」语义（挂待裁）。
-> **v0.77.0（2026-07-26）**：锁步对齐 agent 侧 Windows 正确性清扫，本包零代码改动。
-> 值得记一笔——同轮 Windows 探路中 agent SDK 15 个测试档失败，**maestro 362/362 全绿且无需任何改动**，
-> 编排层不含宿主路径与 shell 假设。
->
-> **当前版本 v0.76.0（2026-07-22）· 0.70.0→0.76.0 合并摘要（2026-07-26 哨兵首跑抓出补写）**：
-> 本节此前停在 0.69.0，与 agent 侧同款漂移，由新建的跨档对账哨兵
-> `tests/test_status_doc_facts.py` 首跑当场抓出。逐版全文以本包 `CHANGELOG.md` 为唯一权威。
-> **T56「500 缺陷战役」五轮审计是本段主线**：0.70.0 轮一（17 finder 代理 + 对抗验证，确认 29 项真
-> 缺陷全修带 fail-on-old 锁）· 0.72.0 轮二（6 换镜 finder，16 项含 3 个 P1，含 memory-tidy 经
-> `store.view` 归并的数据丢失）· 0.73.0 轮四（4 路故障注入镜，11 项——台账并发大修：attempt 围栏 +
-> 每会话互斥 + `putSessionIf` CAS 缝 + settle-then-append 提交序 + 恶意输入硬化）· 0.74.0 轮五
-> （6 项：回填分支围栏 / 读面序列化 / 送达通道租约竞态 / 驱动器搁浅信号 / 分数 fireAt 恢复）；
-> 战报 `Public-Info-Pool/Resource/repo-engineering/silver-core-maestro-sdk-bug-audit-r4-20260718.md`。
-> **0.71.0** testbed 漏缝 G1–G3 采纳（`runLedgerStoreContractSuite` 12 检查 + `claimLeaseMs` 认领租约 +
-> `scheduleSessionId()` / `seedFirstRun` 短命宿主收口）；**0.71.3** 打包三修（`files` 带 `src` /
-> `prepublishOnly` / `exports` 子路径，与 agent 同缺陷同治）；**0.70.1 / 0.71.1 / 0.71.2 / 0.75.0**
-> 为锁步对齐（本包零改动，跟随 agent 侧 deny 绕过修复、r3 批 N+P、批 R+S+T、R7 可观测性）；
-> **0.76.0** `cancelled` 封闭终局（BPT P0-D1：用户主动取消升为一等终态，台账可与 `failed` 区分、
-> 永不自动重跑；`TaskLedger.cancelSession()` 幂等 + CAS，取消与在飞尝试双向竞态均已钉死，
-> 驱动器静默吞掉取消导致的迟到 `InvalidTransitionError`——用户取消不得读作驱动器故障）。
-> **实测复核（2026-07-26 本地现跑）**：vitest **362 通过 / 29 文件**（冷态经新 `pretest` 自举）·
-> 锁步 agent = maestro = 0.76.0 · dep-direction 守卫 OK。
+> **2026-08-08 之前累积的逐版发布编年史 + 六战施工记录 + T56 五轮审计战报摘要已下沉**
+> `memory/archive/maestro-status-chronicle-20260808.md`（原文逐字未改）。
 
 ## Silver Core Testbed（`projects/silver-core-testbed/`，试金石，2026-07-18 施工封面立项）
 
@@ -446,72 +378,28 @@ Phase 0/1 已验收归档（2026-04-04）：Phase 0 止血完成、Stage 1 日�
 
 ## 知识库运行时动态导航（2026-07-04 落地）
 
-守密人 2026-07-04 裁定「动态编排根据 OKF 和 LLMwiki 的思想实现银芯知识库」——把静态
-OKF bundle 升级为**艾瑞卡运行时可动态导航的知识库**。落地：`scripts/build_kb_index.py`
-从 bundle（concept + `graph.json`）造静态导航索引 `okf/kb_index.json`（倒排表 + 邻接表，
-词典法零 ML）；MCP `biav-sc-memory` 增 **知识库导航四工具** `kb_search` / `kb_get` /
-`kb_neighbors` / `kb_overview`（后端 `scripts/kb_navigator.py`，import-only），MCP 工具
-总数 **4→8**。索引随 `build_okf_bundle.py` 末尾自动重生成、随 `--tarball` 单向输出物一起走。
-守护 `tests/test_kb_index.py`（索引完整性 + 导航四原语 + MCP 工具）。溯源见
-`memory/decisions.md` 2026-07-04 条 + CLAUDE.md §1.4 第 5 条 / §6.1。
-
-**全仓知识组织（2026-07-04 同日，ultracode 多代理编排落地）**：承接上条，OKF bundle 从 4 层
-扩到**覆盖全仓知识域**——**12 层 / ~293 概念**：原生 characters(72)/sources(17)/memory(45,扩全层)/
-story(11,扩) + 新增 assets(12,事实圣经)/wiki-data(26)/**community(19,归档社区全量档案 7.5M+ 条分析镜头)**/
-news-output(23)/unpacked(13)/extracted(4)/resource(34)/projects(17,含 CLAUDE.md/README 入口+CONTEXT+藏宝图+设计文档)。新层由 import-only
-库 `scripts/okf_pointer_layers.py` 确定性生成；kb_index 覆盖 294 概念、`kb_*` 导航跨全仓。三条铁律守恒
-（归档 2.1G/解包 44M 只指针不复刻、data_layer 标层、无黑池数据）。守护 `tests/test_okf_pointer_layers.py`。
-编排溯源：`organize-repo-knowledge`（测绘+合成+批判）+ `verify-repo-knowledge-org`（5 维对抗式核验）工作流。
-
-**知识层北极星锚定 + 治理不变量地基（2026-07-04，Pillar B）**：守密人会话把知识层定位结晶为
-**神经符号白盒骨架**（`memory/knowledge-layer-design.md`：OKF=有结构的概念网络承载白盒知识，
-区别于神经网络黑盒；三命令=白盒只花骨架/测不变量/守覆盖哨兵；改造路线 A 连网络→B 治理→C 覆盖哨兵
-→D 扩散激活→E 减易变）。**Pillar B 已落地**：`tests/test_kb_governance.py`——生成器假设绊线
-（no domain:misc / unpacked slug / memory·story 白名单⊆实况 / 层非空）+ **结构指纹 keystone**
-（`build_okf_bundle.structural_fingerprint`，排易变量的规范哈希；不变量：committed okf/ 结构须恒等于
-源重建，抓「改源忘重建」stale commit）。现状基线：约 200/293 概念度数=0（孤立指针群岛）。
-**Pillar A 已落地（2026-07-04，守密人边策略裁定「选 1」）**：实测证明选项 1（不造噪声星）下几无可加的
-干净高信号边，故 A 从「加边」诚实收束为「**显式声明两层结构**」——skeleton（characters/sources/community/
-news-output，连通 76%）vs search（参考层，有意孤立、kb_search 可达）。tier 落 kb_index/graph 节点 +
-kb_navigator overview 报告；绊线 `test_skeleton_is_actually_connected`（骨架连通≥60%）锁设计属性。
-**Pillar D 扩散激活检索已落地（2026-07-04「再 D」）**：`kb_activate`（MCP 第 9 工具）从种子沿骨架
-多跳带衰减扩散、按边类型加权（剪枝即加权），返回被点亮子图=联想召回。实证 `activate("discord")`
-跨层点亮全量镜头+输出抽样+分析索引（搜索连不到的结构）。MCP 工具 8→9。
-**Pillar C 覆盖哨兵 + E 减易变已落地（2026-07-04「再做 CE」）**：C=`tests/test_kb_coverage_sentinel.py`
-扫全仓知识文件断言每个被概念覆盖（守假完备，实测仅 processed/README.md meta 豁免）；E=`_magnitude()`
-把 community 每时增长的精确条数→量级桶「百万级（精确值见指针本体）」（杀 churn、锐化白/黑盒边界）。
-**至此北极星五支柱全落地**：A 两层结构 / B 治理不变量 / D 扩散激活 / C 覆盖哨兵 / E 减易变，**改造路线收尾完成**。
-
-**知识库有效性评判体系（2026-07-04「如何追踪评判是否有效」派发，逐个推进）**：
-- **#1 黄金问题集已落地（v2 定制化，守密人 2026-07-04「应该定制化设计」）**：`scripts/kb_eval.py`（评分器，**按能力分打分**）+ `tests/kb_golden_questions.json`（17 题，每题标 `capability`+`distinctive`）+ `tests/test_kb_golden.py`。**定制化核心洞察**：通用「X 是谁」关键词题测的是 KB=grep 的维度、稀释了 KB 价值；应按 **KB 独门能力**出题（associative/cross_layer/layer_aware/identity），`distinctive=true`（grep 到不了的 token 脱节题）的命中率才是**「KB 作用」的分数**。实测**★distinctive hit@3=1.00（4/4）**、总 0.94、门槛（总 0.62 / distinctive 0.80）。**验证守密人点**：定制化后 A/B 的 Δ 从 +0.10 跳到 **+0.24**（通用集稀释了 KB 优势）。诚实边界：hit@k 只测检索类能力（associative/keyword）；层判定/身份/边界等**质性能力**靠不变量测试与遥测，非黄金集能盖全——「验证 KB 作用」本就是多仪器的事。记分卡 `python3 scripts/kb_eval.py`。
-  - **图驱动黄金集扩容（守密人 2026-07-04「黄金集数量太少」）**：洞察=**白盒图每条带类型边本身就是一条标准答案**，故能从图**自动生成**黄金集。`scripts/kb_golden_gen.py`（内存生成、不落 committed 文件防 churn，复用 `kb_eval`/`kb_ab`）从图确定性造四类题（identity/associative 1 跳/associative 2 跳 token 脱节/layer），**262 题、其中 162 distinctive**（手写集仅 4）。规模化 A/B：**KB 0.98 vs grep 0.37（Δ+0.61）**——联想题 176 道 KB 171/grep 11，规模上稳稳复现「联想是 KB 独占、grep 结构上塌」。**诚实注**：生成的联想题对 KB 是「送分题」（activate 顺边走必中），故本集测的是**grep-gap 与覆盖广度在规模上稳不稳**、非刁难 KB；真 held-out 难题靠 #2 遥测零命中回流。守护 `tests/test_kb_golden_generated.py`（规模≥150/distinctive≥80、Δ≥0.30、KB 自生成 distinctive 命中≥0.90）。生成器 `python3 scripts/kb_golden_gen.py`。
-- **#2 MCP 工具埋点已落地**（追踪的地基）：`scripts/kb_telemetry.py`（`log_call` best-effort 埋点 + `summarize` 使用报告）；`mcp_server` 的 5 个 `kb_*` 工具在消费边界接入埋点（只记真实消费、不记测试/CLI）。日志落 **gitignored** `Public-Info-Pool/Rough/kb_usage.jsonl`（瞬态、不 churn）。报告 `python3 scripts/kb_telemetry.py` 暴露：调用分布 / 触达概念率 / **死概念**（从未导航到=剪枝候选）/ **零命中查询**（覆盖哨兵看不见的需求缺口）。守护 `tests/test_kb_telemetry.py`。
-  - **零命中回流（2026-07-04 推进，闭合 #1↔#2）**：`harvest_gaps()` 把「用户真的问了、KB 却零命中」的查询抽成 **held-out 难题候选**（`capability=held_out`、`expect` 待人工分诊）。补上评判 #1 的诚实缺口——图驱动生成的黄金集对 KB 是「送分题」（顺边必中），**真难题只能来自需求侧现实**。两条腿：生成集管够多够全、遥测回流管够难够真。`python3 scripts/kb_telemetry.py --harvest`。
-- **#3 反事实 A/B 已落地**（检索层确定性半）：`scripts/kb_ab.py` 比 KB 结构化检索 vs 朴素 grep（同语料 okf 概念、同黄金目标）。**实测 KB 0.80 vs grep 0.70（Δ+0.10）**——**分模式铁证「OKF ≠ 搜索」**：关键词题 KB=grep=13（打平，纯查串 grep 就够）、联想题 KB=3/grep=1（KB 胜，grep 无从遍历 token 脱节 lore 边，如「萝坦→奥吉尔」零共享字）。守护 `tests/test_kb_ab.py`（KB 不劣于 grep + 联想题严格胜）。
-  - **最强 grep 基线（2026-07-04 推进，反稻草人）**：`grep_baseline_strong` 把朴素 grep 一切能占的便宜给足（整串短语命中 ×10 + id/标题字段命中 ×5 + 逐 token TF）。实测**联想题上 KB=6 而最强 grep 仍只 2**——证明 KB 的联想优势是**结构**（顺关系边遍历），非拿弱基线凑的假象。新增回归 `test_kb_wins_associative_even_vs_strongest_grep`，彻底堵死「你的 grep 是稻草人」。
-  - **全量 LLM 答题反事实（人工协议·金标准偶检）**：检索层 A/B 测的是喂给 LLM 的检索，非最终答案质量（后者需 LLM+裁判在环，做不成 pytest）。人工偶检协议：取黄金集问题，令艾瑞卡各答两遍——一遍允许 `kb_*` 工具、一遍只 ripgrep，由守密人/独立会话对「正确性/落地率/是否脑补」打分对比。题库复用 `tests/kb_golden_questions.json`。
-- **#4 质性能力 probe 已落地**（守密人「针对专有能力 grep 还是好用」逼出）：真相=hit@k 是 grep 主场（只测找文本），KB 真价值在检索之后的结构化知识（层/身份/边界），grep 结构上给不了、hit@k 测不出。`scripts/kb_qual.py` 四 probe（2026-07-04 从三扩到四）：层判定（16 平台 KB 区分 16/grep 0，防 lesson #30）、身份消歧（唯一 type=character 规范，KB 5/grep 0）、边界枚举（KB 可枚举 72 角色/59 全量、grep 给不了）、**类型化关系**（KB 对 312 条边给出关系类型 mention/cross/cv/variant/lore——『A 与 B 是什么关系』，grep 只给共现给不了类型，是白盒图最本质、grep 结构上永远给不了的维度）。**实测 KB 4/4、grep 0/4**。守护 `tests/test_kb_qual.py`。
-- **评判体系四仪器齐 + 逐个加固（2026-07-04）**：#1 黄金集（检索 hit@k，**图驱动扩容 262 题**）/ #2 使用遥测（追踪，**零命中回流 held-out 难题**）/ #3 反事实 A/B（对照 grep，**最强 grep 反稻草人**）/ #4 质性 probe（层/身份/边界/**关系类型**，测 hit@k 测不出的 KB 真价值）。四项各获一轮深化，评判体系闭环加固。
-
-**Pillar A+ 提及边 + OKF vs 向量定位（2026-07-04 守密人两问）**：Q1 定位——向量=黑盒联想（需 ML/不可审计），
-OKF=白盒联想（带类型/零 ML/可单测），银芯选 OKF 因零 ML 红线；二者互补（向量更好的搜索、OKF 可解释结构层）。
-Q2 修正 Pillar A「参考层几无边」当时太保守——**关系在正文里**：`build_graph` 提及边抽取（领域词典 72 角色名扫
-策展正文源，字面点名建 `mention` 带类型边）。**孤立率 65%→37%**（+214 提及边），search-tier 96%→44%，
-golden MRR 0.775→0.80。守护 `tests/test_kb_governance.py`（高信号+连回角色+岛屿<50%）。北极星 §十。
-
-**向量检索腿（§八「厚锚撑向量」参照实现，2026-07-05 守密人裁定(A) 解除零 ML 红线）**：
-- **反转 scoped**：白盒脊柱（kb_index/community_index/tokenizer）**仍确定性零 ML、不动**；只新增**隔离的** ML 向量长尾腿。§1.1-HC 防火墙无涉（吃银芯自有公开社区档案）。
-- **Phase 0+1 已落地**（PR #438）：`scripts/kb_vector.py`（可插拔嵌入=生产 Voyage / 离线确定性桩；纯 Python 余弦；缺索引优雅降级）+ `scripts/build_kb_vectors.py`（复用 `build_community_index.iter_records` 流式有界取样 `--limit`，gzip 索引 `okf/kb_vectors.json.gz`，放指针不放本体）+ MCP `kb_vector_search`（**工具 9→10**）+ `tests/test_kb_vector.py`（桩后端 8 测全绿、零网络）。索引本体 `.gitignore` 排除、CI 建后传 Release、运行时 `restore_release_data.py` 还原。
-- **✅ key 已验证 + 首个真索引已建（2026-07-05）**：守密人配好 `VOYAGE_API_KEY` secret + Voyage 绑支付方式（免费 200M token 额度仍在、有界原型 ≈ $0，仅放开限流）。`build-community-vectors.yml`（workflow_dispatch）跑绿：guard 过 → Voyage 真嵌入 1500 条有界切片（`voyage-3-lite` 512 维）→ artifact `kb-vectors-bounded`。向量腿从「桩验管线」升级到「真语义可跑」。
-- **correctness 硬化已落（2026-07-05，设计工作流对抗核验揪出 2 真 bug + reviewer 复核无残留）**：① `kb_vector.write_index` 改**确定性 gzip**（`GzipFile mtime=0`——原裸 gzip 含 mtime，同内容字节不同，入 git 必 churn）；② `kb_vector.search` **围栏 embed 调用**（voyage 索引在运行时缺包/缺 key 时 embed 抛 ImportError，原未捕获会穿透、把「脊柱托底」带崩——§八 8.3 合流依赖此处就地降级；窄捕获不吞 cosine 真 bug）；③ `build_kb_vectors` 默认 `--out` 迁 gitignored `Public-Info-Pool/Rough/`（防本地桩索引污染 okf/，CI 建生产索引显式传 `--out okf/ --backend voyage`）。守护 `tests/test_kb_vector.py`（10 测：+确定性字节相同 +「voyage 索引+运行时无 key」降级）。全量 pytest 2562 passed。
-- **守密人 2026-07-05 三裁定（解锁剩余）**：(a) 索引落存 = **Release community-assets + restore**（合本仓「二进制→Release、git 留指针」范式，不入 git 免撞瘦身）；(b) 运行时激活 = 守密人已配环境侧 `VOYAGE_API_KEY` + `voyageai`（**对新会话生效**，本会话实测仍缺、走降级）；(c) chunk3 厚锚：mention 边**不刻意排除**社区档案（令真实黑话可成别名边）+ 别名 A/B 铁证**改立关系腿**（kb_neighbors/kb_activate，非「grep 找不到别名→角色」稻草人）。
-- **✅ Phase 2 语义铁证 harness 已落（2026-07-05，经对抗 reviewer C1/C2 加固）**：`scripts/kb_semantic_ab.py`（paraphrase-recall 四臂 vector/grep/grep_strong/spine，主分 `vector_exclusive_win_rate`；自足黄金现场嵌入、不依赖已建索引）+ `tests/kb_semantic_golden.jsonl`（**17 条种子**，query=真社区消息零共享-token 语义改写，出身牌+防火墙齐；ratchet 只增不减、向百条量级长）+ `tests/test_kb_semantic_ab.py`（诚实性不变量=grep/脊柱恒 0 + stub 贴 chance 地板负控 + 确定性 + 防火墙，7 测零网络）+ `.github/workflows/kb-semantic-proof.yml`（CI 真 Voyage 门：voyage 绝对胜率 + 超 chance 地板 margin，不以飘 stub 为减数）。**reviewer 加固**：C1 黄金 7→17（功效↑，文档「百余条」订正为真实数）；C2 `_STUB_DIM` 64→512 压碰撞（stub 底噪 0.29→0.0588=chance 地板）。**stub 实测**：grep/grep_strong/spine 全 0（黄金真不可达）、stub vector 贴地板（证词法袋赢不了语义）。**真胜负数字待 CI dispatch `kb-semantic-proof.yml`**（需 Voyage，本会话取不到 key）。
-- **✅ chunk2 已落（2026-07-05 接手会话）**：`build-community-vectors.yml` build 步补显式 `--out okf/kb_vectors.json.gz`（修 #449 默认迁 Rough/ 后 artifact 步断链）+ 新增 `gh release upload community-assets --clobber` 步（`permissions: contents: write`，照 fanart-archive.yml）；`restore_release_data.py` 扩展**非 tar 资产平拷贝**（`kb_vectors.json.gz` 是纯 gzip JSON、原 tarfile 解包必炸 ReadError——交接档还原命令现逐字可用）。桩端到端实测：建索引 200×512 → `kb_vector.search` degraded=false。**真索引传 Release 待本轮合并 main 后 dispatch**（workflow_dispatch 只认默认分支）；运行时查询嵌入待有 key 的会话验证（本会话环境实测仍无 `VOYAGE_API_KEY`/`voyageai`）。
-- **✅ chunk3 厚锚已落（2026-07-05 接手会话，按 (c) 裁定 3-甲/3-乙）**：
-  - **别名侧表** `projects/wiki/data/processed/aliases.json`（sibling 不改 characters.json；三墙=出身牌/可撤回/惰性确认态）：manual-seed 7 条全带真实社区引文（融朵/熔朵→熔毁·朵尔 bilibili 17/10 档、Ramona/Pandia/Saya discord 讨论正文、潘迪娅/菲英特单档未确认压权重）。读取层 `scripts/silver_aliases.py`（import-only，缺表/损坏优雅返空）；生成期工作面 `scripts/extract_aliases.py`（grep-evidence 核证据 / add 默认未确认 / confirm / revoke 删条撤回 / harvest 收割零锚喂料——AI 自动识别、人只留否决）。
-  - **别名流经白盒**：`silver_tokenizer.domain_dict` 只吸收 confirmed 纯 CJK 别名（融朵整词切出）；`build_okf_bundle.build_graph` mention 边纳入社区档案（3-甲：目录指针有界确定性抽样 ≤3 文件×500KB，文件指针直读 text 后缀）+ **已确认别名边**（拉丁整词边界防子串误连）——mention 边 223→290，`提及:Saya/Pandia/Ramona` 等真实黑话边从社区档案长出；角色概念页浮出「社区别名」行（未确认显式标注）。
-  - **先锚后扩合流** `scripts/kb_anchor.py` `anchor_expand()`：脊柱锚定（附侧表别名）→ 已确认别名扩词 → 向量捞长尾 + 据锚去杂（anchored 标记排前、不删召回）；**扩腿函数内吞全异常**（critique 致命洞：「有真 voyage 索引+运行时无 key」绝不带崩脊柱托底，测试专项覆盖）；零锚查询自动喂 `Rough/alias_gaps.jsonl` 闭环。MCP 注册 `kb_anchor`（**工具 10→11**）。
-  - **别名 A/B 立关系腿**（3-乙）：`tests/test_kb_alias_relation.py`——「提及:{别名}」标签边存在即证「只写别名的档案→角色」pair 非本名可达（本名扫描在先+pair 去重）；kb_neighbors/kb_activate 顺边可达；未确认别名绝不进图。kb_ab/kb_golden_gen 经查**本无**「别名 search 题」稻草人断言，无需删。守护另有 `tests/test_silver_aliases.py`（三墙+防御）+ `tests/test_kb_anchor.py`（降级契约 8 测）。
-- **✅ 真索引已传 Release + 真 Voyage 铁证已过（2026-07-05 合并后 dispatch 双绿）**：`build-community-vectors.yml` run 28738986075 建 1500×512 voyage-3-lite 并上传 Release `community-assets`（本会话经 `--months` 回退还原实测成功，meta 对上）；`kb-semantic-proof.yml` run 28738986658 **语义铁证通过**——voyage 超 chance 地板 **0.7059**（阈 0.5/0.3），paraphrase_recall 14 题独胜率 **0.7857** / cross_lingual 3 题 0.6667，grep/grep_strong/spine 恒 0、stub 负控 0.0588 贴地板。「只有语义能赢」从 stub 推定升格为真 Voyage 数据事实。
-- **✅ 索引扩到架构上限（守密人 2026-07-05「完全生成」裁定→AskUserQuestion 选「架构上限」档）**：默认规模 1500→**60000**（实测水位：gz≈92MB 单 Release 资产 / 全表扫描≈1.9s / 加载一次≈27s / `load_index` 加 `array('f')` 常驻压缩 ~944MB→~140MB）。**采样修正**：v1「取前 N 条」在语料极端偏斜下（discord 753 万=99.5%、其余 16 平台合计 ~3.4 万）是前缀失真（lesson #30 同源）——v2 两遍流式**分层采样**（`_quotas` 水填：小源全收、大源吃剩余；源内确定性跨步，跨全频道全时间落点），meta 落 `sampling/per_source` 可审计。真语料实测 14 源全进样。全量 757 万=量产子工程（量化+分片+ANN），未裁定不动。守护 `tests/test_build_kb_vectors_sampling.py`（10 测）。
-- **待办**：`extract_aliases.py` 生成期批量抽取跑第一轮（manual-seed 之外喂大侧表，本轮守密人未勾选、留后续）；带 key 会话验运行时真语义查询。设计全文 `Public-Info-Pool/Resource/proposal/silver-core-vector-leg-design-20260705.md`，交接档 `Public-Info-Pool/Resource/repo-engineering/kb-vector-remaining-handoff-20260705.md`，决策见 `memory/decisions.md`。
+> **现状**：静态 OKF bundle 已升级为艾瑞卡运行时可动态导航的知识库。MCP `biav-sc-memory` 上
+> **11 工具**（记忆四件 + 导航七件 `kb_search` / `kb_get` / `kb_neighbors` / `kb_overview` /
+> `kb_activate` / `kb_vector_search` / `kb_anchor`）；静态导航索引 `okf/kb_index.json` 由
+> `scripts/build_kb_index.py` 生成（倒排表 + 邻接表，词典法**确定性零 ML 零常驻**），随
+> `scripts/build_okf_bundle.py` 末尾自动重建。三条消费腿的路由见 CLAUDE.md §5；北极星定位与
+> 改造路线 A–E（**五支柱已全部落地**）见 `memory/knowledge-layer-design.md`。
+>
+> **向量腿**（2026-07-05 守密人裁定(A) 解除零 ML 红线；**反转是 scoped 的**——白盒脊柱仍确定性
+> 零 ML，只新增隔离 ML 腿，§1.1-HC 防火墙无涉）：`scripts/kb_vector.py` + `scripts/build_kb_vectors.py`
+> （Voyage 嵌入，缺 key 优雅降级回退 `kb_search`），索引经 Release `community-assets` 存取。
+> 真 Voyage 语义铁证已过（CI `kb-semantic-proof.yml`：voyage 超 chance 地板 **0.7059**，
+> grep / 脊柱恒 0，stub 负控贴地板）。合流腿 `scripts/kb_anchor.py` 先锚后扩，别名侧表
+> `projects/wiki/data/processed/aliases.json` 守三墙。
+>
+> **有效性评判四仪器**（命令见 CLAUDE.md §7.1）：`kb_eval.py` 黄金集 hit@k · `kb_telemetry.py`
+> 使用遥测 + 零命中回流 · `kb_ab.py` 对照 grep（含最强 grep 反稻草人臂）· `kb_qual.py` 四 probe
+> （层 / 身份 / 边界 / 关系类型，测 hit@k 测不出的维度）；另有 `kb_golden_gen.py` 图驱动扩容与
+> `kb_semantic_ab.py` 语义 harness。
+>
+> **待办**：`scripts/extract_aliases.py` 生成期批量抽取跑第一轮（manual-seed 之外喂大侧表，
+> 守密人本轮未勾选）；带 key 会话验运行时真语义查询。
+>
+> **2026-07-04 / 07-05 两日的逐支柱、逐 chunk 建设编年史已下沉**
+> `memory/archive/kb-buildout-chronicle-20260808.md`（原文逐字未改，含各轮实测数字与诚实注）。
+> 设计全文 `Public-Info-Pool/Resource/proposal/silver-core-vector-leg-design-20260705.md`。
