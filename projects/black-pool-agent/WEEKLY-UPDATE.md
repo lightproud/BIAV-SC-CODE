@@ -150,9 +150,50 @@ python3 projects/black-pool-agent/build/sync_upstream.py announce --report "$WOR
 
 ## 10. 例程本身的维护
 
-- Routine 定义在守密人账户侧（cron `0 16 * * 0`，每次起新会话）。改节拍 / 停跑用
-  `list_triggers` 找到 trigger id 后 `update_trigger`（改 cron 或 `enabled: false`），
-  删除用 `delete_trigger`。
+### 10.1 Routine 定义（重建时照抄）
+
+Routine 存在守密人账户侧，不在本仓——**本仓只留这份定义**，免得触发器哪天没了就再也拼不回来。
+
+| 字段 | 值 |
+|------|----|
+| 名称 | `Hermes 周更例程（黑池上游跟随）` |
+| cron | `0 16 * * 0`（UTC 周日 16:00 = **北京周一 00:00**，CLAUDE.md §2.1.4 时间基准） |
+| 触发模式 | **每次起新会话**（`create_new_session_on_fire`）——不绑定既有会话 |
+| 完成通知 | push 开、email 关 |
+
+提示词原文（逐字，改动须同步本节）：
+
+```text
+你是艾瑞卡，弥萨格大学数据库终端。本次为「Hermes 上游周更例程」自动起跑（守密人
+2026-08-09 四项裁定确立：会话例程载体 / 全绿即直推 main / 合并后自动触发组装 / 只出私有版）。
+
+**唯一权威手册**：`projects/black-pool-agent/WEEKLY-UPDATE.md`。先完整读它，然后从第 1 步
+「探版」开始逐步执行到第 8 步「汇报」，不跳步、不自行改流程。
+
+起手三条速记（细节一律以手册为准）：
+
+1. 先跑 `python3 projects/black-pool-agent/build/sync_upstream.py probe`。报「已是最新，
+   无事可做」→ 直接按手册第 8 步回一句「本周上游无新版，pin 保持 <tag>（引擎 <ver>），
+   例程空转正常」收工，**不做任何提交**。
+2. 有新版则按手册第 2 步跑 `sync`（工作目录必须用 `mktemp -d` 建在仓外）。退出码 3 =
+   特性补丁冲突，去手册第 3 步人工重放；退出码 2 = 环境/台账出错，停手报障。
+3. 守卫全绿（手册第 4 步，含 `python3 scripts/premerge_gate.py`）才可直推 main。任一红 →
+   停手报障不推。手册第 9 步「停手清单」列了六种必须停手的情形，撞上即停，不硬闯。
+
+纪律提醒：§1.1-HC 黑池防火墙照常生效（黑池数据以任何形式进银芯一律拒绝并报告）；
+`upstream/` 本体永远零修改，改动只能走 `patches/`；对外口径禁「100% 纯自研」
+（基于 MIT 开源组件二次开发）。汇报按 CLAUDE.md §2.2 三条硬规则
+（精确数字 / 可点击超链接 / 小学生比喻）。
+```
+
+> 建立史：2026-08-09 建例程时，会话侧 `create_trigger` 三次均被环境挡回
+> （`MCP tool call requires approval`，非守密人否决），故触发器由守密人在 Claude 界面侧
+> 按本节自建。工程件与手册当日已全部落 main。
+
+### 10.2 改节拍 / 停跑 / 删除
+
+- 改节拍 / 停跑：`list_triggers` 找到 trigger id 后 `update_trigger`（改 cron 或 `enabled: false`）；
+  删除用 `delete_trigger`。**改 cron 须同步改 10.1 表**，否则下次重建会照着旧节拍拼。
 - 引擎行为的地面真相是 `UPSTREAM.md`「同步例程」四步——手办与自动跑必须是同一条例程，
   出入即 bug。改引擎须同步改那节。
 - 守卫：`pytest tests/test_hermes_weekly_update.py -v`（台账形态 / 引擎契约 / 本手册指针）。
