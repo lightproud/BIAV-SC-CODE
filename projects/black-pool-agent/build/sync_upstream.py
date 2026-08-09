@@ -62,6 +62,14 @@ def today() -> str:
     return datetime.now(BEIJING).strftime("%Y-%m-%d")
 
 
+def rel(p: Path) -> str:
+    """仓内路径给相对形态，仓外的原样返回——不为了好看而在越界时抛异常。"""
+    try:
+        return str(p.relative_to(REPO))
+    except ValueError:
+        return str(p)
+
+
 def run(cmd: list[str], cwd: Path | None = None, check: bool = True) -> subprocess.CompletedProcess:
     r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
     if check and r.returncode != 0:
@@ -93,19 +101,21 @@ def write_pin(*, tag: str, sha: str, tag_date: str, engine: str,
     """
     text = UPSTREAM_MD.read_text(encoding="utf-8")
 
+    # 行尾一律用 [ \t]*$ 而非 \s*$：\s 会连着换行把下一个空行一起吃掉，
+    # 表和后续小标题当场粘成一坨（2026-08-09 彩排实测）。
     pin_row = (f"| pin tag | **`{tag}`**（commit `{sha}`，{tag_date}，"
                f"引擎版本 {engine}） |")
-    text, n = re.subn(r"^\|\s*pin tag\s*\|.*\|\s*$", pin_row.replace("\\", "\\\\"),
+    text, n = re.subn(r"^\|[ \t]*pin tag[ \t]*\|.*\|[ \t]*$", pin_row.replace("\\", "\\\\"),
                       text, count=1, flags=re.M)
     if n != 1:
         raise SyncError("pin 行改写失败")
 
-    text, n = re.subn(r"^\|\s*快照规模\s*\|.*\|\s*$",
+    text, n = re.subn(r"^\|[ \t]*快照规模[ \t]*\|.*\|[ \t]*$",
                       f"| 快照规模 | {files:,} 文件 / {size} |", text, count=1, flags=re.M)
     if n != 1:
         raise SyncError("快照规模行改写失败")
 
-    text, n = re.subn(r"^\|\s*入仓日\s*\|.*\|\s*$",
+    text, n = re.subn(r"^\|[ \t]*入仓日[ \t]*\|.*\|[ \t]*$",
                       f"| 入仓日 | {today()} |", text, count=1, flags=re.M)
     if n != 1:
         raise SyncError("入仓日行改写失败")
@@ -136,7 +146,7 @@ def sync_version_constants(engine: str) -> list[str]:
         raise SyncError("rebrand.py 的 UPSTREAM_VERSION 常量找不到")
     if new != src:
         REBRAND.write_text(new, encoding="utf-8")
-        touched.append(str(REBRAND.relative_to(REPO)))
+        touched.append(rel(REBRAND))
 
     src = CHARTER_TEST.read_text(encoding="utf-8")
     new, n = re.subn(r"(基于 Hermes Agent )[\d.]+( 定制)", rf"\g<1>{engine}\g<2>", src)
@@ -144,7 +154,7 @@ def sync_version_constants(engine: str) -> list[str]:
         raise SyncError("test_hermes_charter.py 的出身行哨兵找不到")
     if new != src:
         CHARTER_TEST.write_text(new, encoding="utf-8")
-        touched.append(str(CHARTER_TEST.relative_to(REPO)))
+        touched.append(rel(CHARTER_TEST))
 
     return touched
 
@@ -265,6 +275,12 @@ def changelog_markdown(commits: list[dict], *, from_tag: str, to_tag: str) -> st
         counts[c["kind"]] += 1
 
     lines = [f"上游区间 `{from_tag}` → `{to_tag}`，共 **{len(commits)}** 个提交。", ""]
+    if not commits:
+        # 区间为空 ≠ 上游没改：回钉、旁支、pin 记的 sha 被上游 force-push 掉都会走到这里。
+        # 如实说「算不出」，绝不让读者把空清单读成「本次没有变化」。
+        lines += ["> **区间为空**：目标 ref 不在当前 pin 之后（回钉 / 旁支 / 起点 sha 已失效）。",
+                  "> 变更清单**算不出来**，这不等于「上游没有变化」——"
+                  "改按文件级变更账与上游 release 页人工核对。", ""]
     lines.append("| 类别 | 条数 |")
     lines.append("|------|------|")
     for key, label in BUCKETS:
@@ -361,7 +377,10 @@ def snapshot(tag: str, work: Path) -> dict:
         f.unlink(missing_ok=True)
 
     files = sum(1 for p in UPSTREAM.rglob("*") if p.is_file())
+    # du 报 "151M"，台账历来写 "156MB"——单位补齐，免得历次移 pin 的规模行看着像两套口径
     size = run(["du", "-sh", str(UPSTREAM)]).stdout.split()[0]
+    if size and size[-1] in "KMGT":
+        size += "B"
 
     init = UPSTREAM / "hermes_cli" / "__init__.py"
     m = re.search(r'^__version__ = "([^"]+)"', init.read_text(encoding="utf-8"), re.M)
@@ -468,9 +487,11 @@ def announce_markdown(rep: dict) -> str:
     """
     d = rep
     conflicts = d.get("conflicts") or []
+    # 冲突时**只陈述已发生的事**（同步期 --check 报红），不替例程会话宣布「已重放」——
+    # 重放结果是第五节的人工填空，机器不得把未发生的事写成完成态（§4.2 R3）。
     patch_line = ("三张补丁全部干净落位（品牌两张规则引擎重出，特性补丁 `--check` 通过）"
                   if not conflicts else
-                  f"**特性补丁 {'、'.join(conflicts)} 在新基底冲突，已人工重放**")
+                  f"**特性补丁 {'、'.join(conflicts)} 在新基底冲突 —— 重放结果见第五节**")
     stat = d.get("file_stat", {})
 
     return f"""# Black Pool 周更公告 · 上游 {d['to_tag']}（引擎 {d['to_engine']}）
