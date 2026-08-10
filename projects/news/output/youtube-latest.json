@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-10T04:29:13.400956+00:00",
+  "collected_at": "2026-08-10T07:28:36.078554+00:00",
   "source": "youtube",
   "data_layer": "output",
   "item_count": 20,
@@ -13,8 +13,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=kPH1I5TckTA",
       "author": "SOLAIE_SOL",
-      "engagement": 477,
+      "engagement": 489,
       "media_url": "https://i.ytimg.com/vi/kPH1I5TckTA/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-09T16:11:28Z",
+      "lang": "",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능) 복각 무엇을 노려야 이득일까",
+      "summary": "망각전야 #Morimens #이터널리턴.",
+      "url": "https://www.youtube.com/watch?v=3oh6CVXoD04",
+      "author": "박현(Muyeong)",
+      "engagement": 70,
+      "media_url": "https://i.ytimg.com/vi/3oh6CVXoD04/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -31,25 +43,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-09T16:11:28Z",
-      "lang": "",
-      "title": "망각전야Morimens) (대리뽑,상담시청가능) 복각 무엇을 노려야 이득일까",
-      "summary": "망각전야 #Morimens #이터널리턴.",
-      "url": "https://www.youtube.com/watch?v=3oh6CVXoD04",
-      "author": "박현(Muyeong)",
-      "engagement": 66,
-      "media_url": "https://i.ytimg.com/vi/3oh6CVXoD04/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-08-09T12:13:01Z",
       "lang": "",
       "title": "GLotan is Probably the MOST FTP Friendly Awakener | Morimens",
       "summary": "How FTP is GLotan really? TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜.",
       "url": "https://www.youtube.com/watch?v=fiBv-7aO_Yw",
       "author": "LowLivve",
-      "engagement": 43,
+      "engagement": 46,
       "media_url": "https://i.ytimg.com/vi/fiBv-7aO_Yw/hqdefault.jpg",
       "content_type": "video"
     },
@@ -73,7 +73,7 @@
       "summary": "【目次】 0:00 紹介 0:04 カード紹介 狂気解放 1:23 タヴィの凸について 1:36 タヴィの役割と使用方法 2:08 タヴィの編成について ...",
       "url": "https://www.youtube.com/watch?v=vV-KX_aK-HE",
       "author": "リョタ",
-      "engagement": 30,
+      "engagement": 31,
       "media_url": "https://i.ytimg.com/vi/vV-KX_aK-HE/hqdefault.jpg",
       "content_type": "video"
     },
@@ -85,7 +85,7 @@
       "summary": "プロフィール 種族：妖狐 名前：庵風狐(いおりふぁんこ) ——————————————————————————— 忘却前夜 ...",
       "url": "https://www.youtube.com/watch?v=p8JgT8If_sY",
       "author": "🍁庵 風狐🍁 / iori fanko",
-      "engagement": 28,
+      "engagement": 30,
       "media_url": "https://i.ytimg.com/vi/p8JgT8If_sY/hqdefault.jpg",
       "content_type": "video"
     },
@@ -97,7 +97,7 @@
       "summary": "Experience the official Morimens x Saya no Uta Version 2.5.1 PV featuring \"Song of Perennial Wandering\" with the beautiful voice ...",
       "url": "https://www.youtube.com/watch?v=sslEXcDtWR0",
       "author": "BlazeVX4",
-      "engagement": 16,
+      "engagement": 19,
       "media_url": "https://i.ytimg.com/vi/sslEXcDtWR0/hqdefault.jpg",
       "content_type": "video"
     },
@@ -111,18 +111,6 @@
       "author": "Coma.ru725",
       "engagement": 16,
       "media_url": "https://i.ytimg.com/vi/bws2Y9rr4OI/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-09T10:00:18Z",
-      "lang": "",
-      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 3:Alert V! 融災3-5 Boss戰的部分",
-      "summary": "忘卻前夜 #morimens 融災更新,8月3號~8月17日. Regional D-Effect Zone Update ( August 3-August 17). 3-5 boss的特性當你每開 ...",
-      "url": "https://www.youtube.com/watch?v=dSshLQ2iILc",
-      "author": "Noir",
-      "engagement": 12,
-      "media_url": "https://i.ytimg.com/vi/dSshLQ2iILc/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -151,6 +139,18 @@
     },
     {
       "source": "youtube",
+      "time": "2026-08-10T04:39:47Z",
+      "lang": "",
+      "title": "[Morimens] OE Mouchette pulls",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=eL4ROzHd5uI",
+      "author": "Ethy",
+      "engagement": 6,
+      "media_url": "https://i.ytimg.com/vi/eL4ROzHd5uI/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-08-09T12:33:35Z",
       "lang": "",
       "title": "Morimens - D-Zone - W5A5 - 2026-08-08 -Glotan",
@@ -163,14 +163,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-09T09:58:23Z",
+      "time": "2026-08-10T03:39:59Z",
       "lang": "",
-      "title": "🔥 Morimens Opening Cutscene | The Beginning of Everything",
-      "summary": "Experience the official opening cutscene of Morimens and witness the beginning of an unforgettable journey into a mysterious ...",
-      "url": "https://www.youtube.com/watch?v=2w-Tc6FaWvU",
-      "author": "BlazeVX4",
+      "title": "back with more morimens (MORE-imens some may say)",
+      "summary": "this is the worst video ever.",
+      "url": "https://www.youtube.com/watch?v=DZdKe8GN0gE",
+      "author": "phoebe wuwa fishing",
       "engagement": 4,
-      "media_url": "https://i.ytimg.com/vi/2w-Tc6FaWvU/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/DZdKe8GN0gE/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -183,18 +183,6 @@
       "author": "HowJuDuDat Gaming",
       "engagement": 3,
       "media_url": "https://i.ytimg.com/vi/vAPSxYcJAMc/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-10T03:39:59Z",
-      "lang": "",
-      "title": "back with more morimens (MORE-imens some may say)",
-      "summary": "this is the worst video ever.",
-      "url": "https://www.youtube.com/watch?v=DZdKe8GN0gE",
-      "author": "phoebe wuwa fishing",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/DZdKe8GN0gE/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -243,6 +231,18 @@
       "author": "Ringgo",
       "engagement": 1,
       "media_url": "https://i.ytimg.com/vi/Fm5QfASIpDM/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-10T05:51:00Z",
+      "lang": "",
+      "title": "Morimens \\\\ Рераны Хорлы, Доресайна и Мушетт",
+      "summary": "Добровольная поддержка: https://www.donationalerts.com/r/closetom Напрямую: 2200700154063498 Т-Банк Соцсети: ...",
+      "url": "https://www.youtube.com/watch?v=QJ8Iqhu9YbE",
+      "author": "Closetom",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/QJ8Iqhu9YbE/hqdefault_live.jpg",
       "content_type": "video"
     }
   ]
