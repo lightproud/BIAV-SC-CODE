@@ -4,7 +4,7 @@ title: "discord 社区数据源"
 description: "discord 平台采集档案，全量 8691518 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/discord/"
 tags: ["data_layer:full_archive", "platform:discord", "health:active"]
-timestamp: "2026-08-10T04:29:57.619125+00:00"
+timestamp: "2026-08-10T07:29:18.596862+00:00"
 ---
 
 # 数据层指针

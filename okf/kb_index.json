@@ -1273,7 +1273,7 @@
     "/community/community-appstore.md": {
       "type": "dataset",
       "title": "appstore 社区全量档案",
-      "description": "appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 33 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 34 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1399,7 +1399,7 @@
     "/community/community-reddit.md": {
       "type": "dataset",
       "title": "reddit 社区全量档案",
-      "description": "reddit 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "reddit 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -1413,7 +1413,7 @@
     "/community/community-ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区全量档案",
-      "description": "ruliweb 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 9 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "ruliweb 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 10 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -1497,7 +1497,7 @@
     "/community/community-weixin.md": {
       "type": "dataset",
       "title": "weixin 社区全量档案",
-      "description": "weixin 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 12 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weixin 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 13 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -1511,7 +1511,7 @@
     "/community/community-youtube-comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区全量档案",
-      "description": "youtube_comments 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "youtube_comments 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -4844,7 +4844,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 767 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 768 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4858,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3562 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3564 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -5026,7 +5026,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 3464 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 3472 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -5040,7 +5040,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 12820 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 12833 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5054,7 +5054,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10708 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 10728 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5068,7 +5068,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3368 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3370 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -19133,7 +19133,8 @@
     "万级": [
       "/community/community-discord.md",
       "/community/community-index.md",
-      "/community/community-weibo.md"
+      "/community/community-weibo.md",
+      "/community/community-weixin.md"
     ],
     "万能": [
       "/characters/15590.md",
@@ -25904,7 +25905,6 @@
       "/community/community-reddit.md",
       "/community/community-steam.md",
       "/community/community-taptap.md",
-      "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
     ],

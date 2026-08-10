@@ -4,7 +4,7 @@ title: "google_play 社区数据源"
 description: "google_play 平台采集档案，全量 1404 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/google_play/global/"
 tags: ["data_layer:full_archive", "platform:google_play", "health:active"]
-timestamp: "2026-08-10T04:29:57.619125+00:00"
+timestamp: "2026-08-10T07:29:18.596862+00:00"
 ---
 
 # 数据层指针
