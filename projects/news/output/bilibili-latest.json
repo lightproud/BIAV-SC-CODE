@@ -1,26 +1,26 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-10T01:28:35.589449+00:00",
+  "collected_at": "2026-08-10T04:29:13.400956+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 17,
+  "item_count": 21,
   "items": [
     {
       "source": "bilibili",
-      "time": "2026-08-09T12:51:58+00:00",
+      "time": "2026-08-09T14:59:03+00:00",
       "lang": "zh",
-      "title": "所以不要依赖除我以外的人",
-      "summary": "-\n  └ 骄受了 (5赞): 包包怎么办 布羞也好好看，刷了一天肉块，终于刷到美少女了[星星眼]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 只关注好看的_ (0赞): 老婆[星星眼][星星眼]",
-      "url": "https://www.bilibili.com/video/BV19xu265Edb",
-      "author": "叶叶叶布羞",
-      "engagement": 914,
-      "media_url": "https://i1.hdslb.com/bfs/archive/988d1c4396636c7d9d1bf0425b29b32c2d4e5d6c.jpg",
+      "title": "沙耶之题:由劣质题目构成的少女",
+      "summary": "文案原创:@动漫从业者厷\n  └ 5个byte (38赞): 啥时候做刷题的夜宴[笑哭]\n  └ 云雪宫屏 (12赞): 做必刷题做魔了\n  └ Ar1s__ (27赞): 能不能来个入给up必刷题撕了[笑哭]",
+      "url": "https://www.bilibili.com/video/BV1ASuU6iEyA",
+      "author": "Yuki该呢称已存在",
+      "engagement": 2492,
+      "media_url": "https://i2.hdslb.com/bfs/archive/20689f3d893280b339cdfbe8e7bc65d678a87093.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 903,
-        "comment_count": 11,
+        "play": 2453,
+        "comment_count": 39,
         "comments_fetched": 3,
-        "danmaku": 0
+        "danmaku": 1
       }
     },
     {
@@ -31,11 +31,11 @@
       "summary": "-\n  └ Sky_Jerry (5赞): 我的天哪，是手法茉夏大人和手法萝坦大人，加上冷门信仰沙耶，老大我们真的还能坚持嘛[大哭]\n  └ 丿丨丨泽 (2赞): 最近新人很多吗，看到好多拉蒙娜升环娜记录和活动教学视频[思考]\n  └ 嘎啦嘎啦果 (1赞): 保证拉蒙娜开局有大招，先出第一张0费，让茉夏开大清掉第一管血，第二管血靠各种手段把沙耶0费重新捞上来，看你们自己发挥吧，几个追击就没了。\n如果日常打牌任务还有几张没做完的话，去3-1鸟弟1鸟哥0鸟弟1，刷自己喜欢的角色的同调率就行了。",
       "url": "https://www.bilibili.com/video/BV1oYu16SEop",
       "author": "嘎啦嘎啦果",
-      "engagement": 910,
+      "engagement": 996,
       "media_url": "https://i1.hdslb.com/bfs/archive/f22d4e27d4a6ca685ed4a6f596060afeb2ade36b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 900,
+        "play": 986,
         "comment_count": 10,
         "comments_fetched": 3,
         "danmaku": 0
@@ -43,18 +43,36 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-08-09T14:59:03+00:00",
+      "time": "2026-08-09T12:51:58+00:00",
       "lang": "zh",
-      "title": "沙耶之题:由劣质题目构成的少女",
-      "summary": "文案原创:@动漫从业者厷\n  └ 5个byte (12赞): 啥时候做刷题的夜宴[笑哭]\n  └ Ar1s__ (6赞): 能不能来个入给up必刷题撕了[笑哭]\n  └ 雪野絵葉_Eha (1赞): @星野核厨 @火神蛾万岁",
-      "url": "https://www.bilibili.com/video/BV1ASuU6iEyA",
-      "author": "Yuki该呢称已存在",
-      "engagement": 816,
-      "media_url": "https://i2.hdslb.com/bfs/archive/20689f3d893280b339cdfbe8e7bc65d678a87093.jpg",
+      "title": "所以不要依赖除我以外的人",
+      "summary": "-\n  └ 骄受了 (5赞): 包包怎么办 布羞也好好看，刷了一天肉块，终于刷到美少女了[星星眼]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 只关注好看的_ (0赞): 老婆[星星眼][星星眼]",
+      "url": "https://www.bilibili.com/video/BV19xu265Edb",
+      "author": "叶叶叶布羞",
+      "engagement": 990,
+      "media_url": "https://i1.hdslb.com/bfs/archive/988d1c4396636c7d9d1bf0425b29b32c2d4e5d6c.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 799,
-        "comment_count": 17,
+        "play": 979,
+        "comment_count": 11,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-09T14:40:35+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]（微进阶向）性价比洗密契推荐，2，3，4词条主属性密契作用与成本分析",
+      "summary": "myls的忘却银夜群：884208560\n  └ jRouo (1赞): 已严肃学习\n  └ 密斯卡托尼克的银猫 (1赞): abkbl…\n  └ EVA197 (1赞): 入药给沙耶的话要洗什么啊？黑印和强效吗？还是洗四词条同时给阿拉克捏用啊？",
+      "url": "https://www.bilibili.com/video/BV1fduU6hE2d",
+      "author": "梦依流苏_myls",
+      "engagement": 780,
+      "media_url": "https://i1.hdslb.com/bfs/archive/aa22a1508012c749b357bee2ac764e3deac833d2.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 756,
+        "comment_count": 24,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -64,33 +82,33 @@
       "time": "2026-08-09T12:51:27+00:00",
       "lang": "zh",
       "title": "没有明天",
-      "summary": "-\n  └ 忆灵清原 (0赞): 不到一个小时的[打call]\n  └ 狂想37嫉妒瓷 (0赞): 9分钟前[打call]",
+      "summary": "-\n  └ 忆灵清原 (0赞): 不到一个小时的[打call]\n  └ 狂想37嫉妒瓷 (0赞): 9分钟前[打call]\n  └ 鲨鱼团团子绝赞摸鱼中 (0赞): ？！美美？！",
       "url": "https://www.bilibili.com/video/BV134u26CEoQ",
       "author": "蹈海者",
-      "engagement": 634,
+      "engagement": 696,
       "media_url": "https://i1.hdslb.com/bfs/archive/87dbabe09f1676401b9b5304f607ec50830e7bbe.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 630,
-        "comment_count": 4,
-        "comments_fetched": 2,
+        "play": 691,
+        "comment_count": 5,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-08-09T14:40:35+00:00",
+      "time": "2026-08-09T11:22:27+00:00",
       "lang": "zh",
-      "title": "[忘却前夜]（微进阶向）性价比洗密契推荐，2，3，4词条主属性密契作用与成本分析",
-      "summary": "myls的忘却银夜群：884208560\n  └ 密斯卡托尼克的银猫 (1赞): abkbl…\n  └ jRouo (1赞): 已严肃学习\n  └ 天辉信使Official (0赞): 已严肃学习，三启茉夏有必要专门洗一套四月吗？",
-      "url": "https://www.bilibili.com/video/BV1fduU6hE2d",
-      "author": "梦依流苏_myls",
-      "engagement": 633,
-      "media_url": "https://i1.hdslb.com/bfs/archive/aa22a1508012c749b357bee2ac764e3deac833d2.jpg",
+      "title": "只有沙耶才可以哦",
+      "summary": "-\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ jkuilo (1赞): 可爱[你和她和她的恋爱_嘿嘿嘿]\n  └ 哈基沙大玉 (1赞): [鸣潮2周年同人绘画_看你][鸣潮2周年同人绘画_看你][Ave Mujica_我有话说][Ave Mujica_我有话说][Ave Mujica_我有话说]",
+      "url": "https://www.bilibili.com/video/BV1EZu26pEnv",
+      "author": "栀的小秘密",
+      "engagement": 492,
+      "media_url": "https://i2.hdslb.com/bfs/archive/64fa318ed328c75a3b96d1360386bb0295cce4d0.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 609,
-        "comment_count": 24,
+        "play": 480,
+        "comment_count": 12,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -103,32 +121,14 @@
       "summary": "吃点好的\n  └ 跳段木偶舞 (3赞): 想玩🌰了，还没怎么接触过这角色[汤圆]\n  └ 烟已归 (0赞): 好美丽的伤害...\n  └ 烟已归 (0赞): 我了",
       "url": "https://www.bilibili.com/video/BV1oRuy61ERQ",
       "author": "朝星-",
-      "engagement": 314,
+      "engagement": 338,
       "media_url": "https://i1.hdslb.com/bfs/archive/6df367ab9d74792c7b8135c98fcb4b0bfe27b689.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 309,
+        "play": 333,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 1
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-09T11:22:27+00:00",
-      "lang": "zh",
-      "title": "只有沙耶才可以哦",
-      "summary": "-\n  └ jkuilo (1赞): 可爱[你和她和她的恋爱_嘿嘿嘿]\n  └ 雅小姐太入机了 (0赞): 怎么一团肉在唱歌\n  └ 败絮斋 (0赞): 是这样么...",
-      "url": "https://www.bilibili.com/video/BV1EZu26pEnv",
-      "author": "栀的小秘密",
-      "engagement": 303,
-      "media_url": "https://i2.hdslb.com/bfs/archive/64fa318ed328c75a3b96d1360386bb0295cce4d0.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 293,
-        "comment_count": 10,
-        "comments_fetched": 3,
-        "danmaku": 0
       }
     },
     {
@@ -139,11 +139,11 @@
       "summary": "-\n  └ 嘎啦嘎啦果 (2赞): 水母必须+12，+4都不行！\n对水母和小骑士的灵塑适应要求比较高，尽可能8。\n自爆命轮五件套缺一不可：极夜、菲专、船长专、莉莉sr、墨菲sr\n自爆流核心固定小骑士，艾尔瓦防止断易伤，萝坦补伤害。\n只觉醒水母和小骑士，顺序随便。\n能偷一点伤害是一点。\n尽可能让水母0费污染整套手牌，最后小骑士开大，其他人补伤害，打出美丽瞬间，洗掉0费，然后水母打击吧打击吧打击吧就把对面打死啦。\n  └ 枫糖爱燃燃 (0赞): 水母伤害太低了，要加力量(我玩的时候水母力量高输出会高很多)，不过你这个用水母打击污染卡池很不错的思路。不过我是玩轮椅的，带沙耶很爽的[doge]",
       "url": "https://www.bilibili.com/video/BV1c8um6hEqZ",
       "author": "嘎啦嘎啦果",
-      "engagement": 289,
+      "engagement": 314,
       "media_url": "https://i1.hdslb.com/bfs/archive/9a64aa56ffe8a9c561012c484c1d18239e9cf76d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 286,
+        "play": 311,
         "comment_count": 3,
         "comments_fetched": 2,
         "danmaku": 0
@@ -157,11 +157,11 @@
       "summary": "简单又好玩）\n不打复杂机制怪，超限尤乌有专造还算轻松\n  └ 陶醉2333 (0赞): 退了，但完全没退",
       "url": "https://www.bilibili.com/video/BV1QTu16qEv5",
       "author": "跳段木偶舞",
-      "engagement": 253,
+      "engagement": 262,
       "media_url": "https://i0.hdslb.com/bfs/archive/6cb9727b154bff4483c75e7386c5aad9ff707fc4.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 251,
+        "play": 260,
         "comment_count": 2,
         "comments_fetched": 1,
         "danmaku": 0
@@ -172,15 +172,15 @@
       "time": "2026-08-09T06:18:00+00:00",
       "lang": "zh",
       "title": "[忘却前夜]：四小只5-5之潘神可是我的第一个常驻唤醒体，挚爱亲朋手足兄弟，得加钱",
-      "summary": "└ 丰川祥子-忍界大战 (2赞): 我学习…\n  └ 悲想 (1赞): 哦嚯嚯嚯嚯嚯[星星眼][星星眼][星星眼][星星眼][星星眼][星星眼][星星眼]\n  └ _欣特莱雅厨_ (0赞): ✍🏻✍🏻✍🏻✍🏻✍🏻✍🏻✍🏻",
+      "summary": "└ 丰川祥子-忍界大战 (2赞): 我学习…\n  └ 想吃休比同人谷的私信 (1赞): 河狸棒棒！\n  └ 悲想 (1赞): 哦嚯嚯嚯嚯嚯[星星眼][星星眼][星星眼][星星眼][星星眼][星星眼][星星眼]",
       "url": "https://www.bilibili.com/video/BV1oiu16mE8U",
       "author": "龢利喵",
-      "engagement": 207,
+      "engagement": 238,
       "media_url": "https://i0.hdslb.com/bfs/archive/2e9ea6719628673d74ff952f7138e7ceec0d149e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 201,
-        "comment_count": 6,
+        "play": 229,
+        "comment_count": 9,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -193,11 +193,11 @@
       "summary": "没必要看完视频就下鸟弟池，只是给抽了三启鸟弟打不过道中的参考一下打法。\n正好下周奥尔拉也复刻了，下周可以参考试试挑战2-5。\n  └ 沈景则 (2赞): 严肃学习\n  └ -网友菲顺比- (2赞): 3:31亏了一张灵感，满空间打算进的话可以先湮灭再跃迁\n  └ 绘梨衣的怪兽朋友 (2赞): 已严肃学习[赞了]",
       "url": "https://www.bilibili.com/video/BV1XMuS6pEf1",
       "author": "天辉信使Official",
-      "engagement": 155,
+      "engagement": 196,
       "media_url": "https://i0.hdslb.com/bfs/archive/640ac9ffcdea20c15d1110a10e250bf8d8a394da.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 148,
+        "play": 189,
         "comment_count": 7,
         "comments_fetched": 3,
         "danmaku": 0
@@ -211,13 +211,31 @@
       "summary": "这一切都是命运石之门的选择！\n狼来了！\n你为什么这么熟练！\n杀人就要做好被杀的准备！\n乔尼，LESSON5哒！\n豆楼噶（大力药）\n吃我冰冻弹\n此时，你也和我一样，在看着世界的尽头吧...我能否同你一起看呢？",
       "url": "https://www.bilibili.com/video/BV16ZuU6cE4A",
       "author": "没戏等多久",
-      "engagement": 134,
+      "engagement": 143,
       "media_url": "https://i2.hdslb.com/bfs/archive/0fdd9c7166c2aa5d8808acb5bc1daba59c11e97f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 134,
+        "play": 143,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-09T12:40:12+00:00",
+      "lang": "zh",
+      "title": "或许也是一种才能吧！",
+      "summary": "└ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
+      "url": "https://www.bilibili.com/video/BV1Lpu26jEPu",
+      "author": "龙傲天葉月夜Doctor",
+      "engagement": 143,
+      "media_url": "https://i2.hdslb.com/bfs/archive/b15ebbdad6b86f0312f29375d54e47095bdf7467.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 142,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -229,11 +247,11 @@
       "summary": "-\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ -昇天みそ__ (1赞): 这我婆娘\n  └ 原子澎湃 (1赞): 可以调节一下比例",
       "url": "https://www.bilibili.com/video/BV1SVum63EGx",
       "author": "止痛剂1231422",
-      "engagement": 125,
+      "engagement": 143,
       "media_url": "https://i2.hdslb.com/bfs/archive/6c11c008cd5d1863d091261c00aba4995ae0425c.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 118,
+        "play": 136,
         "comment_count": 7,
         "comments_fetched": 3,
         "danmaku": 0
@@ -244,34 +262,16 @@
       "time": "2026-08-09T14:27:40+00:00",
       "lang": "zh",
       "title": "沙耶的神圣之舞",
-      "summary": "@耕司青海瑶\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_啊？]\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]\n  └ 深红之王s-cp (0赞): [doge]",
+      "summary": "@耕司青海瑶\n  └ 深红之王s-cp (1赞): [doge]\n  └ 哈基沙大玉 (1赞): [鸣潮2周年同人绘画_看你]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_啊？]",
       "url": "https://www.bilibili.com/video/BV1y4uS6gEWx",
       "author": "七吕可真是一对好cp啊",
-      "engagement": 63,
+      "engagement": 72,
       "media_url": "https://i2.hdslb.com/bfs/archive/dd332a580bd15ef4b2f998888be2f722432e4877.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 60,
+        "play": 69,
         "comment_count": 3,
         "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-09T12:40:12+00:00",
-      "lang": "zh",
-      "title": "或许也是一种才能吧！",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1Lpu26jEPu",
-      "author": "龙傲天葉月夜Doctor",
-      "engagement": 32,
-      "media_url": "https://i2.hdslb.com/bfs/archive/b15ebbdad6b86f0312f29375d54e47095bdf7467.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 32,
-        "comment_count": 0,
-        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -283,13 +283,49 @@
       "summary": "-\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV17tuX6TEzW",
       "author": "小龙猫大能力",
-      "engagement": 10,
+      "engagement": 56,
       "media_url": "https://i0.hdslb.com/bfs/archive/feb5d54c24460b462f0536ec55ffb1e978bc57f6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 8,
+        "play": 54,
         "comment_count": 2,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-10T02:00:42+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】莉茲1t5-5（潘迪婭）",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1zpuX66EWf",
+      "author": "风凤_WP",
+      "engagement": 37,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9ded28a6dbb37cfa51ea40434b9e5f8702c364c2.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 37,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-10T02:10:34+00:00",
+      "lang": "zh",
+      "title": "九连歪创造历史",
+      "summary": "后续武器池也歪了",
+      "url": "https://www.bilibili.com/video/BV12xuQ6UEox",
+      "author": "CreScent知式",
+      "engagement": 31,
+      "media_url": "https://i0.hdslb.com/bfs/archive/a2cb92f7bfccf33507024b36b702f744baaeeef4.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 31,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -301,8 +337,44 @@
       "summary": "打算今年畫個MAS的短篇小故事&gt;:D (會在個人itch上上傳uwu\n個人pixiv:\nhttps://www.pixiv.net/users/10174887",
       "url": "https://www.bilibili.com/video/BV1imuQ6eEJi",
       "author": "AliceDemon929",
-      "engagement": 4,
+      "engagement": 20,
       "media_url": "https://i0.hdslb.com/bfs/archive/a037f72039444ecfdb5cb227485afd38545e8e63.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 20,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-10T03:39:48+00:00",
+      "lang": "zh",
+      "title": "该死的母树遇到属于自己的大运了",
+      "summary": "-\n  └ CreScent知式 (1赞): 回想起第一次打的时候这阵容给我打恶心了",
+      "url": "https://www.bilibili.com/video/BV143uR6dEJd",
+      "author": "CreScent知式",
+      "engagement": 8,
+      "media_url": "https://i0.hdslb.com/bfs/archive/53e0fbb01a671a7f2c14d62d5d8ec3867561c60a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 7,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-10T03:30:00+00:00",
+      "lang": "zh",
+      "title": "我不需要迷茫，现在沙耶就是我的一切……",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1inuU6xEDN",
+      "author": "朗克清",
+      "engagement": 4,
+      "media_url": "https://i0.hdslb.com/bfs/archive/cf55ef346ea6d683c4e76cf3f7024507e7ff60ae.jpg",
       "content_type": "image",
       "metadata": {
         "play": 4,

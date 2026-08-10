@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-10T01:28:35.589449+00:00",
+  "collected_at": "2026-08-10T04:29:13.400956+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-10T00:56:42+00:00",
+      "lang": "english",
+      "title": "[正面] good game, its free. get it, tyr it, decide for yo...",
+      "summary": "good game, its free. get it, tyr it, decide for yourself :D",
+      "url": "https://steamcommunity.com/profiles/76561199143586218/recommended/3052450",
+      "author": "76561199143586218",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "good game, its free. get it, tyr it, decide for yourself :D",
+      "timestamp_created": 1786323402,
+      "playtime_forever": 848
+    },
     {
       "source": "steam",
       "time": "2026-08-09T22:36:59+00:00",
