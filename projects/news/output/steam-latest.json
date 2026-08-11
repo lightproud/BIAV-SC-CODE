@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-11T18:59:44.785491+00:00",
+  "collected_at": "2026-08-11T21:44:39.535494+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 7,
@@ -18,7 +18,7 @@
       "voted_up": true,
       "review": "Beautiful visuals; story; character design and sound tracks. It is a turn-based card game that focuses on story than on actual gameplay. Similar to Limbus Company and R1999, so if you're into those games this is a must.",
       "timestamp_created": 1786465172,
-      "playtime_forever": 6187
+      "playtime_forever": 6265
     },
     {
       "source": "steam",
@@ -78,7 +78,7 @@
       "voted_up": true,
       "review": "美术音乐值一个推荐\nMay the silver key guide you",
       "timestamp_created": 1786437495,
-      "playtime_forever": 2214
+      "playtime_forever": 2304
     },
     {
       "source": "steam",
