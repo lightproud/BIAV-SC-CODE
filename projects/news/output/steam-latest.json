@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-10T21:40:14.639270+00:00",
+  "collected_at": "2026-08-11T01:26:43.831760+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 5,
   "items": [
     {
       "source": "steam",
@@ -79,36 +79,6 @@
       "review": "沙耶。。。。。。喜欢 。。。。。",
       "timestamp_created": 1786349143,
       "playtime_forever": 4181
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-10T00:56:42+00:00",
-      "lang": "english",
-      "title": "[正面] good game, its free. get it, tyr it, decide for yo...",
-      "summary": "good game, its free. get it, tyr it, decide for yourself :D",
-      "url": "https://steamcommunity.com/profiles/76561199143586218/recommended/3052450",
-      "author": "76561199143586218",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "good game, its free. get it, tyr it, decide for yourself :D",
-      "timestamp_created": 1786323402,
-      "playtime_forever": 1182
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-09T22:36:59+00:00",
-      "lang": "russian",
-      "title": "[负面] Сюжет полное говно, не втягивает. \nГеймплей максим...",
-      "summary": "Сюжет полное говно, не втягивает. \nГеймплей максимально убогий и посредственный даже для пошаговой боевки. \nПеревод дерьмовый даже в английской локализации. \nДизайны персов тоже дерьмо и (очевидно) сделаны с помощью нейронки. \nВ этот ИИ-слоп играть невозможно. Особенный сорт говна среди гача игр.",
-      "url": "https://steamcommunity.com/profiles/76561199388624489/recommended/3052450",
-      "author": "76561199388624489",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": false,
-      "review": "Сюжет полное говно, не втягивает. \nГеймплей максимально убогий и посредственный даже для пошаговой боевки. \nПеревод дерьмовый даже в английской локализации. \nДизайны персов тоже дерьмо и (очевидно) сделаны с помощью нейронки. \nВ этот ИИ-слоп играть невозможно. Особенный сорт говна среди гача игр.",
-      "timestamp_created": 1786315019,
-      "playtime_forever": 217
     }
   ]
 }

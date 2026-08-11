@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-10T21:40:14.639270+00:00",
+  "collected_at": "2026-08-11T01:26:43.831760+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 118,
@@ -607,6 +607,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-08-10T00:16:02",
+      "lang": "ko",
+      "title": "[Google Play 好评] ★5 폴룩스1돌하게해주세요",
+      "summary": "폴룩스1돌하게해주세요",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-5787453c-cc8a-4b72-b6cf-e8ccd97800f9",
+      "author": "ᄅᄅ",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-08-08T03:51:01",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 아 번역만좋앗으면 완벽햇는데",
@@ -933,16 +943,6 @@
       "summary": "mujer araña linda",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-fa7f6f22-bc21-4831-af85-718c035a4224",
       "author": "Thomas esparza",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-29T23:51:07",
-      "lang": "es",
-      "title": "[Google Play 差评] ★2 El juego es increíble pero la optimizaci",
-      "summary": "El juego es increíble pero la optimización es muy mala",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-d64ca922-e303-4777-9d75-091b068032cb",
-      "author": "Julian",
       "engagement": 0
     },
     {
