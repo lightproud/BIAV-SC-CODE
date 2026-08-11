@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-11T16:00:57.281021+00:00",
+  "collected_at": "2026-08-11T18:59:44.785491+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-11T16:19:32+00:00",
+      "lang": "english",
+      "title": "[正面] Beautiful visuals; story; character design and sou...",
+      "summary": "Beautiful visuals; story; character design and sound tracks. It is a turn-based card game that focuses on story than on actual gameplay. Similar to Limbus Company and R1999, so if you're into those games this is a must.",
+      "url": "https://steamcommunity.com/profiles/76561199096898273/recommended/3052450",
+      "author": "76561199096898273",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Beautiful visuals; story; character design and sound tracks. It is a turn-based card game that focuses on story than on actual gameplay. Similar to Limbus Company and R1999, so if you're into those games this is a must.",
+      "timestamp_created": 1786465172,
+      "playtime_forever": 6187
+    },
     {
       "source": "steam",
       "time": "2026-08-11T14:30:57+00:00",
@@ -94,21 +109,6 @@
       "review": "沙耶满命了",
       "timestamp_created": 1786422809,
       "playtime_forever": 1595
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-10T18:08:14+00:00",
-      "lang": "koreana",
-      "title": "[正面] 뭐라고 설명해야 할지 모르겠다.\n몽환적이고 환상적이지만 숨길 수 없는, 숨기지 않는 암울함...",
-      "summary": "뭐라고 설명해야 할지 모르겠다.\n몽환적이고 환상적이지만 숨길 수 없는, 숨기지 않는 암울함이 나를 끌어드리는 느낌이다.\n다크판티지를 사랑하는 나에게는 너무나 매력적으로 다가오는 게임이다.\n잔혹동화를 즐기거나 Fear & Hunger 같은 고어 게임을 사랑한다면 추천한다.\n(Fear & Hunger 같은 고난이도 스트레스 유발 게임은 아닌 것 같다.)",
-      "url": "https://steamcommunity.com/profiles/76561199352989961/recommended/3052450",
-      "author": "76561199352989961",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "뭐라고 설명해야 할지 모르겠다.\n몽환적이고 환상적이지만 숨길 수 없는, 숨기지 않는 암울함이 나를 끌어드리는 느낌이다.\n다크판티지를 사랑하는 나에게는 너무나 매력적으로 다가오는 게임이다.\n잔혹동화를 즐기거나 Fear & Hunger 같은 고어 게임을 사랑한다면 추천한다.\n(Fear & Hunger 같은 고난이도 스트레스 유발 게임은 아닌 것 같다.)",
-      "timestamp_created": 1786385294,
-      "playtime_forever": 1026
     }
   ]
 }
