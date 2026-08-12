@@ -1,22 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-12T01:44:00.199709+00:00",
+  "collected_at": "2026-08-12T04:46:54.763062+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 17,
+  "item_count": 16,
   "items": [
-    {
-      "source": "youtube",
-      "time": "2026-08-11T13:06:35Z",
-      "lang": "",
-      "title": "[Morimens] How to Not Play - Reviewing the WORST guidemakers builds and explaining why its TRASH.",
-      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=rBklFir0l7c",
-      "author": "Flares117",
-      "engagement": 1064,
-      "media_url": "https://i.ytimg.com/vi/rBklFir0l7c/hqdefault.jpg",
-      "content_type": "video"
-    },
     {
       "source": "youtube",
       "time": "2026-08-11T21:26:58Z",
@@ -25,20 +13,20 @@
       "summary": "Changes that I love are coming to version 2.6 patches. ♢ TWITTER: https://twitter.com/GrayRavenRadio ♢ KO-FI: ...",
       "url": "https://www.youtube.com/watch?v=ZohgidTSB9g",
       "author": "Linasera",
-      "engagement": 768,
+      "engagement": 1374,
       "media_url": "https://i.ytimg.com/vi/ZohgidTSB9g/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-08-12T00:24:27Z",
+      "time": "2026-08-11T13:06:35Z",
       "lang": "",
-      "title": "[Morimens] Extremely short stream (I promise this time)",
-      "summary": "Don't know how long. Will be doing other stuff too.",
-      "url": "https://www.youtube.com/watch?v=OZ0NvW7S_Js",
+      "title": "[Morimens] How to Not Play - Reviewing the WORST guidemakers builds and explaining why its TRASH.",
+      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "url": "https://www.youtube.com/watch?v=rBklFir0l7c",
       "author": "Flares117",
-      "engagement": 332,
-      "media_url": "https://i.ytimg.com/vi/OZ0NvW7S_Js/hqdefault.jpg",
+      "engagement": 1194,
+      "media_url": "https://i.ytimg.com/vi/rBklFir0l7c/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -49,8 +37,20 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=25fwoFtcPkQ",
       "author": "Flares117",
-      "engagement": 228,
+      "engagement": 337,
       "media_url": "https://i.ytimg.com/vi/25fwoFtcPkQ/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-12T00:24:27Z",
+      "lang": "",
+      "title": "[Morimens] Extremely short stream (I promise this time)",
+      "summary": "Don't know how long. Will be doing other stuff too.",
+      "url": "https://www.youtube.com/watch?v=OZ0NvW7S_Js",
+      "author": "Flares117",
+      "engagement": 333,
+      "media_url": "https://i.ytimg.com/vi/OZ0NvW7S_Js/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -61,7 +61,7 @@
       "summary": "Don't know how long. Will be doing other stuff too.",
       "url": "https://www.youtube.com/watch?v=R2fLPi5aH_Y",
       "author": "Flares117",
-      "engagement": 221,
+      "engagement": 287,
       "media_url": "https://i.ytimg.com/vi/R2fLPi5aH_Y/hqdefault.jpg",
       "content_type": "video"
     },
@@ -73,7 +73,7 @@
       "summary": "ラジオドラマ「水槽の中で見る夢」 わたしの子犬ちゃん、怖がらないでね。 この手で直接、手術をしてあげる。 溶壊・ ...",
       "url": "https://www.youtube.com/watch?v=MOey8oGtbKI",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 175,
+      "engagement": 193,
       "media_url": "https://i.ytimg.com/vi/MOey8oGtbKI/hqdefault.jpg",
       "content_type": "video"
     },
@@ -91,25 +91,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-11T02:52:47Z",
-      "lang": "",
-      "title": "【忘却前夜】星辰編　開幕　１－１３から【ローグライクで遊ぼうの会】",
-      "summary": "忘却前夜 #忘却前夜Steam版 溶壊・ドールVS溶壊・ドール ファイ！！！！ 提供：株式会社オルトプラス.",
-      "url": "https://www.youtube.com/watch?v=PxXw1VA4brs",
-      "author": "朝霧@ASGRgames",
-      "engagement": 62,
-      "media_url": "https://i.ytimg.com/vi/PxXw1VA4brs/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-08-11T05:53:39Z",
       "lang": "",
       "title": "Flesh and Flame",
       "summary": "Provided to YouTube by DistroKid Flesh and Flame · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Salvador EP: The Pale Saint ...",
       "url": "https://www.youtube.com/watch?v=zs7R03JiPnY",
       "author": "B.I.A.V. Studio - Topic",
-      "engagement": 29,
+      "engagement": 33,
       "media_url": "https://i.ytimg.com/vi/zs7R03JiPnY/hqdefault.jpg",
       "content_type": "video"
     },
@@ -121,7 +109,7 @@
       "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
       "url": "https://www.youtube.com/watch?v=4_Les2ka7Rc",
       "author": "SeaLily",
-      "engagement": 25,
+      "engagement": 27,
       "media_url": "https://i.ytimg.com/vi/4_Les2ka7Rc/hqdefault.jpg",
       "content_type": "video"
     },
@@ -133,7 +121,7 @@
       "summary": "lore #commentary #morimens #summary This video came out later than I planned because I got sick for a few weeks. This chapter ...",
       "url": "https://www.youtube.com/watch?v=vv2rknhfuFA",
       "author": "Clockinao",
-      "engagement": 23,
+      "engagement": 26,
       "media_url": "https://i.ytimg.com/vi/vv2rknhfuFA/hqdefault.jpg",
       "content_type": "video"
     },
@@ -145,7 +133,7 @@
       "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
       "url": "https://www.youtube.com/watch?v=FJ6NHuyDaZI",
       "author": "SeaLily",
-      "engagement": 17,
+      "engagement": 24,
       "media_url": "https://i.ytimg.com/vi/FJ6NHuyDaZI/hqdefault.jpg",
       "content_type": "video"
     },
@@ -157,8 +145,20 @@
       "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
       "url": "https://www.youtube.com/watch?v=gEskTYpZ6I0",
       "author": "SeaLily",
-      "engagement": 17,
+      "engagement": 18,
       "media_url": "https://i.ytimg.com/vi/gEskTYpZ6I0/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-11T05:53:39Z",
+      "lang": "",
+      "title": "Delusion",
+      "summary": "Provided to YouTube by DistroKid Delusion · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Salvador EP: The Pale Saint ...",
+      "url": "https://www.youtube.com/watch?v=dkmpnKEQ9hE",
+      "author": "B.I.A.V. Studio - Topic",
+      "engagement": 12,
+      "media_url": "https://i.ytimg.com/vi/dkmpnKEQ9hE/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -171,18 +171,6 @@
       "author": "GEX ► Play",
       "engagement": 11,
       "media_url": "https://i.ytimg.com/vi/C9zUzINKJj8/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-11T05:53:39Z",
-      "lang": "",
-      "title": "Delusion",
-      "summary": "Provided to YouTube by DistroKid Delusion · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Salvador EP: The Pale Saint ...",
-      "url": "https://www.youtube.com/watch?v=dkmpnKEQ9hE",
-      "author": "B.I.A.V. Studio - Topic",
-      "engagement": 11,
-      "media_url": "https://i.ytimg.com/vi/dkmpnKEQ9hE/hqdefault.jpg",
       "content_type": "video"
     },
     {
