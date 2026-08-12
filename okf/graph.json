@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-11",
+  "generated": "2026-08-12",
   "stats": {
     "nodes": 396,
-    "edges": 438
+    "edges": 436
   },
   "nodes": [
     {
@@ -4746,8 +4746,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
+      "target": "/characters/95786.md",
+      "rel": "提及:杜勒赛因",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15564.md",
+      "rel": "提及:戈利亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
       "rel_type": "mention"
     },
     {
@@ -4766,12 +4778,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
       "rel_type": "mention"
     },
     {
@@ -4805,12 +4811,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
       "source": "/community/community-reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
@@ -4820,12 +4820,6 @@
       "source": "/community/community-reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-steam.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
@@ -6264,8 +6258,20 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
+      "target": "/characters/95786.md",
+      "rel": "提及:杜勒赛因",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15564.md",
+      "rel": "提及:戈利亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15573.md",
+      "rel": "提及:奥瑞塔",
       "rel_type": "mention"
     },
     {
@@ -6284,12 +6290,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
       "rel_type": "mention"
     },
     {
@@ -6323,12 +6323,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
       "source": "/sources/reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
@@ -6338,12 +6332,6 @@
       "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/steam.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
