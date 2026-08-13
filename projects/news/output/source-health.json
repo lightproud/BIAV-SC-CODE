@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13T19:02:12.305985+00:00",
+  "updated_at": "2026-08-13T21:43:59.400269+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1141
   },
   "validation_drops": {
-    "generated_at": "2026-08-13T19:01:29.947130+00:00",
+    "generated_at": "2026-08-13T21:43:21.822904+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -107,7 +107,7 @@
       "last_success_date": "2026-08-14",
       "last_check_date": "2026-08-14",
       "consecutive_silent_days": 0,
-      "total_items": 869,
+      "total_items": 870,
       "errors": []
     },
     "arca_live": {
@@ -171,7 +171,7 @@
       "last_success_date": "2026-08-07",
       "last_check_date": "2026-08-14",
       "consecutive_silent_days": 7,
-      "total_items": 11288,
+      "total_items": 11308,
       "errors": []
     },
     "taptap_review": {
@@ -179,7 +179,7 @@
       "last_success_date": "2026-08-14",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 3827,
+      "total_items": 3832,
       "errors": []
     },
     "youtube_comments": {
