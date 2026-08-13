@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-12",
+  "generated": "2026-08-13",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 396,
-    "edges": 436,
+    "edges": 428,
     "terms": 7012,
     "by_type": {
       "character": 72,
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 27
+      "degree": 25
     },
     "/characters/130375.md": {
       "type": "character",
@@ -351,7 +351,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 13
+      "degree": 12
     },
     "/characters/15561.md": {
       "type": "character",
@@ -648,7 +648,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/15582.md": {
       "type": "character",
@@ -732,7 +732,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 5
     },
     "/characters/15588.md": {
       "type": "character",
@@ -746,7 +746,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/15589.md": {
       "type": "character",
@@ -845,7 +845,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 18
+      "degree": 17
     },
     "/characters/15596.md": {
       "type": "character",
@@ -972,7 +972,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/54116.md": {
       "type": "character",
@@ -1084,7 +1084,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77922.md": {
       "type": "character",
@@ -1239,7 +1239,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 9
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1310,7 +1310,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/community/community-bilibili.md": {
       "type": "dataset",
@@ -1534,7 +1534,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/memory/capability-index.md": {
       "type": "knowledge-pointer",
@@ -4844,7 +4844,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 823 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 849 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4853,12 +4853,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3610 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3629 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4872,7 +4872,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8778119 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8800291 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4886,7 +4886,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1414 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1419 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4928,7 +4928,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 632 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 637 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4942,7 +4942,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3913 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3942 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4970,7 +4970,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5445 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5453 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4984,7 +4984,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 187 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 190 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4993,12 +4993,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 1
     },
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 115 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 116 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -5026,7 +5026,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 3664 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 3764 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -5040,7 +5040,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 13070 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 13084 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5054,7 +5054,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 11048 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 11208 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5068,7 +5068,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3403 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3418 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5077,12 +5077,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2436 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2496 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -5701,11 +5701,6 @@
         "mention"
       ],
       [
-        "/community/community-youtube.md",
-        "提及:Saya",
-        "mention"
-      ],
-      [
         "/memory/decisions-archive.md",
         "提及:沙耶",
         "mention"
@@ -5801,11 +5796,6 @@
         "mention"
       ],
       [
-        "/sources/youtube.md",
-        "提及:Saya",
-        "mention"
-      ],
-      [
         "/sources/youtube_comments.md",
         "提及:沙耶",
         "mention"
@@ -5885,11 +5875,6 @@
       ],
       [
         "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
-        "/sources/steam_discussion.md",
         "提及:Pandia",
         "mention"
       ],
@@ -6427,11 +6412,6 @@
     ],
     "/characters/15581.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:莉莉",
         "mention"
@@ -6443,11 +6423,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:莉莉",
         "mention"
       ],
@@ -6542,22 +6517,12 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:希洛",
         "mention"
       ],
       [
         "/resource/resource-intel-weekly-morimens-intel-20260712.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:希洛",
         "mention"
       ],
@@ -6574,17 +6539,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:艾尔瓦",
-        "mention"
-      ],
-      [
         "/memory/morimens-context.md",
-        "提及:艾尔瓦",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:艾尔瓦",
         "mention"
       ]
@@ -6762,11 +6717,6 @@
       ],
       [
         "/sources/reddit.md",
-        "提及:Ramona",
-        "mention"
-      ],
-      [
-        "/sources/steam_discussion.md",
         "提及:Ramona",
         "mention"
       ],
@@ -7497,7 +7447,17 @@
     ],
     "/characters/15604.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:莱克",
         "mention"
       ]
@@ -7509,7 +7469,7 @@
         "cv"
       ],
       [
-        "/community/community-bahamut.md",
+        "/community/community-bilibili.md",
         "提及:塔薇",
         "mention"
       ],
@@ -7524,7 +7484,7 @@
         "mention"
       ],
       [
-        "/sources/bahamut.md",
+        "/sources/bilibili.md",
         "提及:塔薇",
         "mention"
       ],
@@ -7673,17 +7633,7 @@
         "cv"
       ],
       [
-        "/community/community-bahamut.md",
-        "提及:卡拉布",
-        "mention"
-      ],
-      [
         "/community/community-bilibili.md",
-        "提及:卡拉布",
-        "mention"
-      ],
-      [
-        "/sources/bahamut.md",
         "提及:卡拉布",
         "mention"
       ],
@@ -7793,6 +7743,11 @@
         "mention"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "提及:茉夏",
         "mention"
@@ -7809,6 +7764,11 @@
       ],
       [
         "/sources/bahamut.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -7878,16 +7838,6 @@
     ],
     "/community/community-bahamut.md": [
       [
-        "/characters/77921.md",
-        "提及:卡拉布",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
         "/characters/94450.md",
         "提及:茉夏",
         "mention"
@@ -7925,11 +7875,6 @@
         "mention"
       ],
       [
-        "/characters/15588.md",
-        "提及:艾尔瓦",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:拉蒙娜",
         "mention"
@@ -7955,13 +7900,18 @@
         "mention"
       ],
       [
-        "/characters/15581.md",
-        "提及:莉莉",
+        "/characters/15604.md",
+        "提及:莱克",
         "mention"
       ],
       [
-        "/characters/15587.md",
-        "提及:希洛",
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
         "mention"
       ],
       [
@@ -8317,11 +8267,6 @@
       ]
     ],
     "/community/community-youtube.md": [
-      [
-        "/characters/130226.md",
-        "提及:Saya",
-        "mention"
-      ],
       [
         "/community/community-index.md",
         "聚合于",
@@ -9906,16 +9851,6 @@
     ],
     "/sources/bahamut.md": [
       [
-        "/characters/77921.md",
-        "提及:卡拉布",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
         "/characters/94450.md",
         "提及:茉夏",
         "mention"
@@ -9953,11 +9888,6 @@
         "mention"
       ],
       [
-        "/characters/15588.md",
-        "提及:艾尔瓦",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:拉蒙娜",
         "mention"
@@ -9983,13 +9913,18 @@
         "mention"
       ],
       [
-        "/characters/15581.md",
-        "提及:莉莉",
+        "/characters/15604.md",
+        "提及:莱克",
         "mention"
       ],
       [
-        "/characters/15587.md",
-        "提及:希洛",
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
         "mention"
       ],
       [
@@ -10111,16 +10046,6 @@
     ],
     "/sources/steam_discussion.md": [
       [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
-        "/characters/15595.md",
-        "提及:Ramona",
-        "mention"
-      ],
-      [
         "/news-output/news-output-steam-discussion.md",
         "抽样自",
         "cross"
@@ -10237,11 +10162,6 @@
       ]
     ],
     "/sources/youtube.md": [
-      [
-        "/characters/130226.md",
-        "提及:Saya",
-        "mention"
-      ],
       [
         "/community/community-youtube.md",
         "同平台",
