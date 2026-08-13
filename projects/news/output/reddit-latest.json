@@ -1,8 +1,237 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-13T10:03:02.427705+00:00",
+  "collected_at": "2026-08-13T13:04:47.311996+00:00",
   "source": "reddit",
   "data_layer": "output",
-  "item_count": 0,
-  "items": []
+  "item_count": 16,
+  "items": [
+    {
+      "source": "reddit",
+      "time": "2026-08-13T10:11:46+00:00",
+      "lang": "en",
+      "title": "Thais by @soahh_numb",
+      "summary": "&#32; submitted by &#32;  /u/OneThanks3   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vn6mmt/thais_by_soahh_numb/",
+      "author": "/u/OneThanks3",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/p7juor0ca4jh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ef59047c0515ca73e47fda4b28c6c92e62258959",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-13T09:24:53+00:00",
+      "lang": "en",
+      "title": "Mouchette",
+      "summary": "Probably best DPS in the game, even at just E3. Mouchette falls off a bit for very long bosses, and you have to like glass cannon gameplay for her. Just give burial to all her allies or at least 2. All infographics are in &quot;Character guides&quot; folder: Drive For more information on awakers here&#39;s Fjant&#39;s website, a great database and team builder: SKeyDB Made with the help of Mythag Library team, including: Juno Lens Angbak Dracozion Cheri Linasera Aurora V Jolly Happy Skull  &#32; submitted by &#32;  /u/Independent-Baby-577   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vn5tpc/mouchette/",
+      "author": "/u/Independent-Baby-577",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/t8oducun04jh1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=dd84645ef08a57333a6a1976d8053484ffbf3c8e",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-13T06:40:22+00:00",
+      "lang": "en",
+      "title": "Preview: V2.6.X Adjustments Based on Community Feedback 2 (Electric Boogaloo) - From Light and BIAV",
+      "summary": "Please note that development logs are different from official announcements. The content in this post is still being discussed and refined based on your feedback, and the final implemented version may differ. In the previous development log, we temporarily removed the additional Silver rewards for the Regional D-Effect Zone, the adjustment involving Emergency Gnosis, and the Covenant Combination feature. However, after reassessing the plan, we believe that the better approach is not to remove these elements outright, but to continue improving upon the original proposal. The revised version is outlined below. ——— ## 1. Emergency Gnosis [Emergency Gnosis will remain usable in the Regional D-Effect Zone. Each use consumes 3 Emergency Gnosis. After use, the Training Points earned from that clear will not count toward the Rankings.] This will make it a contingency tool that requires planning, rather than a method that can be overly relied upon to clear content. At the same time, excluding these results from the Rankings ensures that they do not interfere with ranking outcomes and helps preserve fairness in high-end challenges. ——— ## 2. Regional D-Effect Zone The difficulty of Waves 1–4 on Hard, Nightmare, and Madness will be reduced. Their overall difficulty will be brought closer to that of Wave 5 in the next-lower difficulty tier. Under the previous version, the five Waves within each difficulty tier were relatively close in difficulty, with only limited variation between them. In the revised version, we will rework the difficulty curve between Waves so that the challenge rises more gradually and smoothly from Wave 1 through Wave 5, with Wave 5 always remaining the most demanding part. This will provide Keepers with a clearer process for learning and adapting, while making continued attempts feel more approachable. [Accordingly, Nightmare will continue to grant an additional Silver ×1,250.] We understand that some newer Keepers may feel pressure or have concerns about",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vn30ub/preview_v26x_adjustments_based_on_community/",
+      "author": "/u/DrExluxk",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/h64xuoan83jh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=44aa37691a689975331a09df381d9992dbf394d3",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-13T07:19:36+00:00",
+      "lang": "en",
+      "title": "Doresain fanart made by me",
+      "summary": "&#32; submitted by &#32;  /u/Apart_Thing_5569   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vn3ppy/doresain_fanart_made_by_me/",
+      "author": "/u/Apart_Thing_5569",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/g10lsm4nf3jh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6053d644689ae1726d78de7e4bd23e0b15ff0f1b",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-13T09:36:58+00:00",
+      "lang": "en",
+      "title": "What are the best AA characters META- wise?",
+      "summary": "Since we&#39;re getting 5 pyramids in the new update, what characters do you think I should use them on to get other standard AAs? And in what teams should I use them? I think caecus, nymph and sanga are some of the best? What do you think?  &#32; submitted by &#32;  /u/saltal1   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vn610d/what_are_the_best_aa_characters_meta_wise/",
+      "author": "/u/saltal1",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/ha04gmr144jh1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e60932f0ad60eac7660a8f0d2c801f42dd25aee6",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-13T00:18:22+00:00",
+      "lang": "en",
+      "title": "Salvador",
+      "summary": "Twitter/X Post!  &#32; submitted by &#32;  /u/Samin-A   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vmvbnt/salvador/",
+      "author": "/u/Samin-A",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/tkpuikvk61jh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=45c027e5a48fd4a62fe61d309d8092ef543c2460",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-12T13:07:00+00:00",
+      "lang": "en",
+      "title": "Top 10 most beloved characters in Morimens JP!",
+      "summary": "People loves the Godking!  &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vmdn6v/top_10_most_beloved_characters_in_morimens_jp/",
+      "author": "/u/DrExluxk",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/0uohggnp0yih1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=20c8b86a09feb68601436d5ad46b96f5ce1c1913",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-13T11:50:30+00:00",
+      "lang": "en",
+      "title": "Team Building Help",
+      "summary": "Hi guys, can i get some help building a team for Glotan or just in general? Thanks  &#32; submitted by &#32;  /u/Radiant-Key-563   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vn8i1v/team_building_help/",
+      "author": "/u/Radiant-Key-563",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/rhhq2vowr4jh1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e3edc039c575f1880f935bae657f75566eee13d4",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-12T18:36:16+00:00",
+      "lang": "en",
+      "title": "No more refined gnosis for mid-strength players🫠👎",
+      "summary": "With the new changes to D-tide, accounting for the latest partial backtrack, players who were previously able to clear Alert 3 for 350 points will no longer receive Refined Gnosis (the purple shards that combine to allow you to level a character from 70 to 80). Currently at 350 points we receive 15 each d-tide. After the changes however we will need to clear the equivalent of Alert FIVE (400 points) to get any Refined Gnosis (25). And ironically, according to the information they have provided, the recommended team level for Wave 5 of this difficulty is 80. What do you need to level your characters to 80? REFINED GNOSIS. Make it make sense!  &#32; submitted by &#32;  /u/SittingDuck394   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vmmmbx/no_more_refined_gnosis_for_midstrength_players/",
+      "author": "/u/SittingDuck394",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-12T13:47:24+00:00",
+      "lang": "en",
+      "title": "Regarding the most recent announcements ... and to get things off my chest",
+      "summary": "Potential Hot-Take and unpopular oppinion but I gotta get it off my chest at this point As much as I love the game, its dev&#39;s, their transparancy, and how they listen to player&#39;s feedback, etc. etc. ...  It hasn&#39;t even be a full day and they already want to backtrack most anounced changed (or at least the biggest ones) Like what is this?? At least let it simmer for one to two days, to let people form an actual and solid oppinion on it and not be scared of first impressions and negative possibilities because some people didn&#39;t like it frok the get go. Ofc players aren&#39;t keen on seeing change, especially when it could have a potential downside for them.  *Like what even is the point of announcing stuff and changes in the first place, when you&#39;re not fully standing behind it?* Just makes me actually scared of the game and its standing if they&#39;re **this** scared of negative reception and are so easy and quick to give in for when it comes to releasing new stuff...  &#32; submitted by &#32;  /u/-Esphir-   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vmen8o/regarding_the_most_recent_announcements_and_to/",
+      "author": "/u/-Esphir-",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-12T21:01:50+00:00",
+      "lang": "en",
+      "title": "It will be easier to hit 400 in New D-Tide than old D-Tide.",
+      "summary": "This is outside of my typical type of posts, but IMO this might be important enough to warrant it because I see a lot of misunderstandings on the new system. The difficulty of D-Tide is only realistically going up if you are pushing past 410. Don&#39;t worry. It is significantly easier to hit 400 or get rewards in New D-Tide than in current D-Tide. You will at least match what you&#39;re already getting if you were doing A3 before. Here&#39;s why: 1) They&#39;re moving Regular Gnosis frags earlier (from 375 to 350). Level 70 Awakeners will be faster to obtain for people who only clear 350, giving you a pathway to 400. You need regular Gnosis to even use Purple Gnosis anyway, so this is strictly better for newer players. 2) Current A3W5 level is currently on par with Hard W2. This means that in theory, you should be able to do 2x Hard (W1/2) and 3x Normal (W3/4/5) and maintain the same level of difficulty as full-clearing W3, but score 370.  3) Rewards should still be staggered. With 370, you should still be able to pick up 10 purple frags if they are staggered evenly. It may even be frontloaded, depending on BIAV&#39;s decision. The difficulty is now modular as well, so you can progress forward slowly. 4) Difficulty scaling in the new system for your 5 teams is much easier at Hard, with emphasis on having 1-2 strong teams. While the top end (W5) is at level 80, each Wave (W4/3/2/1) are 4 level drops. Current 400 requires your weakest team to fight a level 75 wave. The new D-Tide Hard requires your weakest team to fight a level 64 Wave (Current A3). Your second strongest team only has to fight a level 76 Wave (current W2), and the third a 72 wave (easier than A4W5). 5) Your strongest team is typically already ready investments-wise if you&#39;ve cleared the Normal story to tackle the 2nd hardest content (76). You can typically borrow a whale carry that matches up well into the level 80 wave. Everything else is A4 difficulty or lower.  &#32; submitted by &#32;  /u/GyR",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vmqizp/it_will_be_easier_to_hit_400_in_new_dtide_than/",
+      "author": "/u/GyRNi",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-12T22:00:26+00:00",
+      "lang": "en",
+      "title": "Horla is a good unit?",
+      "summary": "ive been seen some post ans tierlists saying horla is game changing but i really dont understand why ik what she does but i cant think at a team that shes the best slot for https://preview.redd.it/n1lede1rn0jh1.png?width=911&amp;format=png&amp;auto=webp&amp;s=ad16d06f1b86733f41f70f4b20e70ae600c084ae i use her here cause my clem is at doresain team but i really prefer clem   &#32; submitted by &#32;  /u/Q11iy   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vms103/horla_is_a_good_unit/",
+      "author": "/u/Q11iy",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/n1lede1rn0jh1.png?width=140&amp;height=74&amp;auto=webp&amp;s=ef9239ae36bb3dcf701ff44b38415818864a3eda",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-12T21:37:42+00:00",
+      "lang": "en",
+      "title": "Finally hit 400 points after 8 months ;-;",
+      "summary": "&#32; submitted by &#32;  /u/Kanade-chi   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vmrgmt/finally_hit_400_points_after_8_months/",
+      "author": "/u/Kanade-chi",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-13T05:22:13+00:00",
+      "lang": "en",
+      "title": "Team Recs",
+      "summary": "My first team in almost complete with Tawil, Hameln and Caecus. Just waiting to get Ryker from the standard. Should I start building G-Helot for my second team with Thais? Also wishing for Saya right now so should the team also include Faint or Aigis or someone else?  Also does anyone know which characters are coming next patch and which characters are getting reruns? Kinda hard finding anything for this game. I wanted to get Pollux and Castor, and G-Murphy but I have a feeling they&#39;re not gonna rerun anytime soon 🥲  &#32; submitted by &#32;  /u/Sugr_Faevr   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vn1mfe/team_recs/",
+      "author": "/u/Sugr_Faevr",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/j20h9izou2jh1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=cbe17cd1c81f15bda155f7d9422c88435528099c",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-13T09:02:09+00:00",
+      "lang": "en",
+      "title": "Mouchette and tawil",
+      "summary": "Mouchette and tawil can be in same team?. If yes which characters are best for both of them. If not best team for both of them individually with standard characters ( hameln g. Ramona and saya are occupied with g.lotan)  &#32; submitted by &#32;  /u/Large_Spirit9297   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vn5fym/mouchette_and_tawil/",
+      "author": "/u/Large_Spirit9297",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-12T14:44:55+00:00",
+      "lang": "en",
+      "title": "Dtide Changes: An Alternative Suggestion",
+      "summary": "Putting aside the issue of emergency gnosis, I wanted to propose a different solution to giving whales a way to compete for the dtide leaderboards rather than nightmare and madness mode. To me, massive hp inflation is more tedious than fun, and madness mode having 9x the hp of current alert 5 sounds very unfun. It will lead to more cheesy strats and less diverse gameplay. Just look at madness rail, which is almost all Clem teams, and madness pdive, which is almost all Gmurphy and Tawil teams. In current dtide, there is an amazing variety of teams and strategies. Sure, there are common cores of teams that appear often, but it really is awesome to look at the leaderboards and see many differences between teams, wheels, and tactics. To some extent, this reflects the fact that you need multiple teams. But it also reflects the creativity that is possible at the current level of balance. Instead of making hp sponges in nightmare and madness dtide, which will severely limit the leaderboard meta, I think a more simple, elegant solution would be to allow another extra clear. This would not affect the people who just want to do a single clear to rush for their biweekly dtide rewards. But it would allow whales to use the many characters they’ve built up over the years in new and interesting teams to strive for a 450 score, and keep an incentive for whales to pull for older characters, too. Personally, as a whale who gets 425 every dtide (and then has little to do afterwards), I would much rather try to clear another set of teams in alert 5 with wonky underused awakeners than have hp-inflated enemies that require specific, preset strategies. To me, that leans away from the strength of Morimens’s gameplay rather than towards it.  &#32; submitted by &#32;  /u/foxdc   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vmg5c9/dtide_changes_an_alternative_suggestion/",
+      "author": "/u/foxdc",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    }
+  ]
 }
