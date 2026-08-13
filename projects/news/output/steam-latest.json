@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-13T04:50:23.625039+00:00",
+  "collected_at": "2026-08-13T07:23:55.572021+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -22,6 +22,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-08-13T04:56:28+00:00",
+      "lang": "schinese",
+      "title": "[正面] 游戏还挺好玩但是键帽你老冯真飞了",
+      "summary": "游戏还挺好玩但是键帽你老冯真飞了",
+      "url": "https://steamcommunity.com/profiles/76561199140862046/recommended/3052450",
+      "author": "76561199140862046",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "游戏还挺好玩但是键帽你老冯真飞了",
+      "timestamp_created": 1786596988,
+      "playtime_forever": 2549
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-13T04:17:50+00:00",
+      "lang": "english",
+      "title": "[正面] BEST GAME",
+      "summary": "BEST GAME",
+      "url": "https://steamcommunity.com/profiles/76561199171796087/recommended/3052450",
+      "author": "76561199171796087",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "BEST GAME",
+      "timestamp_created": 1786594670,
+      "playtime_forever": 3250
+    },
+    {
+      "source": "steam",
       "time": "2026-08-13T03:32:23+00:00",
       "lang": "schinese",
       "title": "[正面] 好玩",
@@ -33,7 +63,7 @@
       "voted_up": true,
       "review": "好玩",
       "timestamp_created": 1786591943,
-      "playtime_forever": 1840
+      "playtime_forever": 1941
     },
     {
       "source": "steam",
@@ -94,21 +124,6 @@
       "review": "非常好玩",
       "timestamp_created": 1786523493,
       "playtime_forever": 321
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-12T04:57:16+00:00",
-      "lang": "schinese",
-      "title": "[正面] 美术超级顶 剧情不错 就是演出差一些可能因为制作组相对贫穷 但游戏性依然非常出众 我希望更多人能看到...",
-      "summary": "美术超级顶 剧情不错 就是演出差一些可能因为制作组相对贫穷 但游戏性依然非常出众 我希望更多人能看到这个游戏",
-      "url": "https://steamcommunity.com/profiles/76561198160999347/recommended/3052450",
-      "author": "76561198160999347",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "美术超级顶 剧情不错 就是演出差一些可能因为制作组相对贫穷 但游戏性依然非常出众 我希望更多人能看到这个游戏",
-      "timestamp_created": 1786510636,
-      "playtime_forever": 6671
     }
   ]
 }
