@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-12T21:43:12.745851+00:00",
+  "collected_at": "2026-08-13T01:45:45.661629+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 119,
+  "item_count": 121,
   "items": [
     {
       "source": "google_play",
@@ -607,6 +607,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-08-11T23:45:38",
+      "lang": "ko",
+      "title": "[Google Play 好评] ★5 다 좋은데 번역 좀 어케 해보셈 픽업창 캐 이름이 다르게 나오면 어떡하라",
+      "summary": "다 좋은데 번역 좀 어케 해보셈 픽업창 캐 이름이 다르게 나오면 어떡하라고",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-5787453c-cc8a-4b72-b6cf-e8ccd97800f9",
+      "author": "ᄅᄅ",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-08-10T12:28:37",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 인생갬중하나",
@@ -1043,6 +1053,16 @@
       "summary": "finalmente in Italiano. gioco di strategia vera con carte, non parliamo di soliti Idle automatici, qua devi usare la testa. ogni personaggio ha le sue abilità. trama oscura, lovecraftiana, pesante. da giocare e da fare spargere la voce per farlo giocare. fine.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-94adb568-bd72-4963-a4a0-2a296cf1bc92",
       "author": "Manuel Urbano",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-12T01:21:03",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 это наверное самая лучшая гача в которую",
+      "summary": "это наверное самая лучшая гача в которую я когда либо играла, тут такие красивые персонажи, и наград очень много, после 4х лет игры в геншин эта гача система и дизайны персонажей как глоток свежего воздуха",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-24a12655-327c-42dd-b895-a9a0f32ad6ad",
+      "author": "Amelita Zh",
       "engagement": 0
     },
     {
