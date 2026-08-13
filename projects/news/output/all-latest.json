@@ -1,10 +1,28 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-13T13:04:47.311996+00:00",
+  "collected_at": "2026-08-13T15:58:33.803134+00:00",
   "source": "all",
   "data_layer": "output",
-  "item_count": 303,
+  "item_count": 307,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-08-13T10:31:30+00:00",
+      "lang": "zh",
+      "title": "明明是人类，在我眼中却是美丽的肉块怪物...",
+      "summary": "参考:BV1wSL96YEhp\n  └ 成分复杂但最爱yj (24赞): 还有正反手教学\n  └ 黄品青110908 (3赞): 我教你，视频最后“会不会是反过来的”之后把视频倒放一遍\n  └ 耕司青海瑶 (16赞): 耕司最强的一期[doge]",
+      "url": "https://www.bilibili.com/video/BV1K2gp6iEct",
+      "author": "事一个啊一个homo",
+      "engagement": 3232,
+      "media_url": "https://i2.hdslb.com/bfs/archive/0df9d158d086d97cdb5a9bd15eef73e103c9b2c8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 3206,
+        "comment_count": 26,
+        "comments_fetched": 3,
+        "danmaku": 9
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-08-12T19:29:20+00:00",
@@ -13,11 +31,11 @@
       "summary": "-\n  └ 听筒ist (2赞): 为什么有两个引舵之帆和针筒\n  └ 暮知藏 (2赞): 组一辈子打击队吧😭\n  └ 朝星- (1赞): [椎名菜羽_nano好]来学习了",
       "url": "https://www.bilibili.com/video/BV15HgE6TEip",
       "author": "路过的耄耋",
-      "engagement": 838,
+      "engagement": 929,
       "media_url": "https://i0.hdslb.com/bfs/archive/3c0c014f1155b5a12492d6153f4d000c47cd54b2.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 825,
+        "play": 916,
         "comment_count": 13,
         "comments_fetched": 3,
         "danmaku": 0
@@ -31,102 +49,12 @@
       "summary": "-\n  └ CreScent知式 (3赞): 51级打完整个主线，这阵容还是太权威了，最终战甚至没看机制就硬和boss对轰，我打完都不知道那两次流血是怎么流死的\n  └ 莫心非姬 (1赞): 啊这样的孩子们，今年是主推打击大C，不玩机制，玩的就是数值[笑哭]\n  └ Aeriff_ (1赞): 确实大运，就是打长线的话银钥太少了吧[笑哭]我一般给阿拉带医生专",
       "url": "https://www.bilibili.com/video/BV1xDgL6SESV",
       "author": "CreScent知式",
-      "engagement": 693,
+      "engagement": 718,
       "media_url": "https://i1.hdslb.com/bfs/archive/b4ebceae2f06f92eb51a3454ffbde131ba613671.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 684,
+        "play": 709,
         "comment_count": 9,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-13T02:58:36+00:00",
-      "lang": "zh",
-      "title": "我已急哭",
-      "summary": "-\n  └ 用小号回我说明暗恋我 (3赞): 坏了，我超级喜欢相位对弈啊😭😭😭但是又没法科学上网投票去，我已急哭\n  └ 17岁性感人妻蟑螂 (8赞): ？！\n意思是说，我不能给对手展示我的雷霆二老头配队了吗\n  └ ileevo (5赞): 校猫没活了想偷懒直说，有点像pvp爆不了米，还没法美美数值膨胀抽卡，不想多写东西放弃了🙄🙄本来处处砍一刀再加上一堆区不加强就没啥新意科研，在停止更新更是老东西失去活力，疑似是要瘟似pvp去美美膨胀融灾边缘控制去了[正经狼咖_哦？]",
-      "url": "https://www.bilibili.com/video/BV1NBgE6xE5b",
-      "author": "莱星Ligh",
-      "engagement": 567,
-      "media_url": "https://i2.hdslb.com/bfs/archive/244972697c7bc0d3178720bb7ae83fdd1d5d4161.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 544,
-        "comment_count": 23,
-        "comments_fetched": 3,
-        "danmaku": 1
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-13T03:51:24+00:00",
-      "lang": "zh",
-      "title": "有人吃过腐烂的猪肉吗",
-      "summary": "你们吃过腐烂的猪肉吗？我吃过。不是放了一晚上有点味道那种，是扔在墙角七天、爬满白蛆、流着黄绿色脓水、苍蝇围着打转的那种。入口先是腐肉特有的甜腥恶臭，像把整张脸埋进了死老鼠的肚子里，那股味道顺着鼻腔直插后脑勺，天灵盖都发麻。紧接着蛆虫在舌头上炸了锅，有的往牙缝里钻，有的往喉咙口爬，像含了一把活跳跳的米粒，又烫又痒。\n\n牙齿咬下去，腐肉已经烂成了肉泥，软塌塌地糊在舌头上，像在吃一碗用尸水和烂肉熬成的稀粥。脓水从嘴角溢出来，黏糊糊、凉丝丝，带着一股发酵过度的酸馊味，像喝了一口化粪池勾兑的过期酸奶。偶尔咬到一块没\n  └ 117の钢毛 (6赞): 你们谁给宠物喂过自己的金叶？\n  └ 夏雨提倡华尔兹 (3赞): [打call][打call]\n  └ 夏雨提倡华尔兹 (2赞): [星星眼][星星眼]",
-      "url": "https://www.bilibili.com/video/BV1AkgE6XETe",
-      "author": "池沼大王678",
-      "engagement": 455,
-      "media_url": "https://i0.hdslb.com/bfs/archive/52d97a192a6f0af37258df00b13b2725853bc9f7.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 445,
-        "comment_count": 10,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-13T10:31:30+00:00",
-      "lang": "zh",
-      "title": "明明是人类，在我眼中却是美丽的肉块怪物...",
-      "summary": "参考:BV1wSL96YEhp\n  └ 成分复杂但最爱yj (2赞): 还有正反手教学\n  └ 耕司青海瑶 (1赞): 耕司最强的一期[doge]\n  └ 异眼亚克 (0赞): 还有正反手教学",
-      "url": "https://www.bilibili.com/video/BV1K2gp6iEct",
-      "author": "事一个啊一个homo",
-      "engagement": 385,
-      "media_url": "https://i2.hdslb.com/bfs/archive/0df9d158d086d97cdb5a9bd15eef73e103c9b2c8.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 380,
-        "comment_count": 5,
-        "comments_fetched": 3,
-        "danmaku": 2
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-12T15:07:52+00:00",
-      "lang": "zh",
-      "title": "『沙耶让梨』",
-      "summary": "新角色小沙耶的妹妹小小耶\n  └ 是Eta呀 (2赞): 三个肉块抢果冻吃[少女乐团派对_开心][少女乐团派对_开心][少女乐团派对_开心]\n  └ 烨青禾 (1赞): 😋\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]",
-      "url": "https://www.bilibili.com/video/BV1PBgj6mE6L",
-      "author": "小龙猫大能力",
-      "engagement": 340,
-      "media_url": "https://i2.hdslb.com/bfs/archive/2865f049d9376e608231ad22a89f5bc0cdfda28b.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 332,
-        "comment_count": 8,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-13T05:20:29+00:00",
-      "lang": "zh",
-      "title": "忘却前夜出号",
-      "summary": "心理底价450，要去备考故出号\n  └ 姜子鱼12138 (0赞): 练度挺好诶[鼓掌][鼓掌][鼓掌]\n  └ 燃え落ちない翼 (0赞): 感觉不会很高价的样子啊[小A和小B_喝茶][小A和小B_喝茶]\n  └ 秋沫爱吃 (0赞): 账号低于3级别找我。。。",
-      "url": "https://www.bilibili.com/video/BV1iPgH6jEsv",
-      "author": "秋沫爱吃",
-      "engagement": 288,
-      "media_url": "https://i1.hdslb.com/bfs/archive/fbb1478e9e125f0d6171b18a45102d5c675bebe7.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 282,
-        "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -136,17 +64,53 @@
       "time": "2026-08-13T11:31:11+00:00",
       "lang": "zh",
       "title": "【忘却前夜】茉夏2t融灾1亿输出…忘记吃沙漏了…",
-      "summary": "也许是茉夏的输出上限，直伤很难超过2e\n  └ 爱莉厨114514号 (1赞): 别吓我鱼神[崩坏3·光辉矢愿_让我摸摸]\n  └ 抱着狗狗不敢说话 (1赞): 1000死扛吗。。。\n  └ 普泽泽 (1赞): 鱼神…驾到…",
+      "summary": "也许是茉夏的输出上限，直伤很难超过2e\n  └ 普泽泽 (2赞): 鱼神…驾到…\n  └ 抱着狗狗不敢说话 (2赞): 1000死扛吗。。。\n  └ 爱莉厨114514号 (2赞): 别吓我鱼神[崩坏3·光辉矢愿_让我摸摸]",
       "url": "https://www.bilibili.com/video/BV1Yhgp62EFb",
       "author": "半醒的鱼yyy",
-      "engagement": 285,
+      "engagement": 697,
       "media_url": "https://i2.hdslb.com/bfs/archive/0ebdd90bf10d90243a661cf5bf729cd5823934e5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 280,
-        "comment_count": 5,
+        "play": 685,
+        "comment_count": 12,
+        "comments_fetched": 3,
+        "danmaku": 2
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-13T02:58:36+00:00",
+      "lang": "zh",
+      "title": "我已急哭",
+      "summary": "-\n  └ ileevo (7赞): 校猫没活了想偷懒直说，有点像pvp爆不了米，还没法美美数值膨胀抽卡，不想多写东西放弃了🙄🙄本来处处砍一刀再加上一堆区不加强就没啥新意科研，在停止更新更是老东西失去活力，疑似是要瘟似pvp去美美膨胀融灾边缘控制去了[正经狼咖_哦？]\n  └ 用小号回我说明暗恋我 (3赞): 坏了，我超级喜欢相位对弈啊😭😭😭但是又没法科学上网投票去，我已急哭\n  └ 17岁性感人妻蟑螂 (8赞): ？！\n意思是说，我不能给对手展示我的雷霆二老头配队了吗",
+      "url": "https://www.bilibili.com/video/BV1NBgE6xE5b",
+      "author": "莱星Ligh",
+      "engagement": 658,
+      "media_url": "https://i2.hdslb.com/bfs/archive/244972697c7bc0d3178720bb7ae83fdd1d5d4161.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 631,
+        "comment_count": 27,
         "comments_fetched": 3,
         "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-13T05:20:29+00:00",
+      "lang": "zh",
+      "title": "忘却前夜出号",
+      "summary": "心理底价450，要去备考故出号\n  └ 仁爱主教 (1赞): 还就是那个脱离苦海了xd\n  └ 姜子鱼12138 (1赞): 练度挺好诶[鼓掌][鼓掌][鼓掌]\n  └ 燃え落ちない翼 (0赞): 感觉不会很高价的样子啊[小A和小B_喝茶][小A和小B_喝茶]",
+      "url": "https://www.bilibili.com/video/BV1iPgH6jEsv",
+      "author": "秋沫爱吃",
+      "engagement": 431,
+      "media_url": "https://i1.hdslb.com/bfs/archive/fbb1478e9e125f0d6171b18a45102d5c675bebe7.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 423,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
       }
     },
     {
@@ -154,16 +118,34 @@
       "time": "2026-08-13T10:06:47+00:00",
       "lang": "zh",
       "title": "[忘却前夜]个人向450预组队",
-      "summary": "组队真辛苦，一直想找个队伍把普墨塞进去，但不打5队以上就只能和徐互抢位置。。唯一感触，能不能把我的玫瑰分两个1启出来单独组队，实在不够用。\n  └ 炸药一桶 (0赞): 450是五队吗\n  └ 苍崎橙子灬 (0赞): 普墨可以跟徐组dot队吧，普墨还是挺好用的，我索菲亚艾尔瓦都不知道塞给谁[笑哭]最后还是凑一些cylx跟末夏打3-5了",
+      "summary": "组队真辛苦，一直想找个队伍把普墨塞进去，但不打5队以上就只能和徐互抢位置。。唯一感触，能不能把我的玫瑰分两个1启出来单独组队，实在不够用。\n  └ 苍崎橙子灬 (1赞): 普墨可以跟徐组dot队吧，普墨还是挺好用的，我索菲亚艾尔瓦都不知道塞给谁[笑哭]最后还是凑一些cylx跟末夏打3-5了\n  └ 炸药一桶 (0赞): 450是五队吗\n  └ 小镇二次元黑猫 (0赞): 现在我在担心沙耶➕法则医生够不够打n6了[笑哭]队伍里没抽莫斯和莫夏，不能打就有点炸",
       "url": "https://www.bilibili.com/video/BV13igp6VEJr",
       "author": "护林犬",
-      "engagement": 132,
+      "engagement": 313,
       "media_url": "https://i2.hdslb.com/bfs/archive/bf32b6bd0cc1294b8ea7383ef7ce70016d8cf58e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 130,
-        "comment_count": 2,
-        "comments_fetched": 2,
+        "play": 308,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-13T09:51:43+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]圆头玩家好似意识到了什么 开始不停的记录",
+      "summary": "更新前：没能让茉夏大人尽兴真是抱歉；更新后：死斧头快砍啊！！！\n  └ bili_3546381700565939 (0赞): woc怎么血这么厚，要膨胀了嘛",
+      "url": "https://www.bilibili.com/video/BV1bkgp6uE3z",
+      "author": "-白云出岫-",
+      "engagement": 179,
+      "media_url": "https://i2.hdslb.com/bfs/archive/7e2d498044073cdcae33d57b24fafd7a6c7a9de3.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 173,
+        "comment_count": 6,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -187,19 +169,37 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-08-13T09:51:43+00:00",
+      "time": "2026-08-13T01:41:06+00:00",
       "lang": "zh",
-      "title": "[忘却前夜]圆头玩家好似意识到了什么 开始不停的记录",
-      "summary": "更新前：没能让茉夏大人尽兴真是抱歉；更新后：死斧头快砍啊！！！\n  └ bili_3546381700565939 (0赞): woc怎么血这么厚，要膨胀了嘛",
-      "url": "https://www.bilibili.com/video/BV1bkgp6uE3z",
-      "author": "-白云出岫-",
-      "engagement": 120,
-      "media_url": "https://i2.hdslb.com/bfs/archive/7e2d498044073cdcae33d57b24fafd7a6c7a9de3.jpg",
+      "title": "五年级菜鸡女孩用画世界画沙耶之歌。",
+      "summary": "-\n  └ 我不是cheeks (1赞): 你五年级接触这个未免有点太早了，但画的不错[doge][支持]\n  └ 伟大红色钻头女 (1赞): 5年级吗！！我高中玩的都觉得有点吓人…宝宝真厉害😳\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
+      "url": "https://www.bilibili.com/video/BV1LFgJ63EAy",
+      "author": "诺尔斯卡洛奇",
+      "engagement": 126,
+      "media_url": "https://i1.hdslb.com/bfs/archive/401e34178bb4d57a512704abb62ce235ba4f2be0.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 115,
-        "comment_count": 5,
-        "comments_fetched": 1,
+        "play": 119,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-13T10:08:09+00:00",
+      "lang": "zh",
+      "title": "神萝带给我的勇气",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1aigp6VENy",
+      "author": "Yuan源呀_",
+      "engagement": 125,
+      "media_url": "https://i2.hdslb.com/bfs/archive/d69d5d60553c31996037341595e5a198ed590c05.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 125,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -211,11 +211,11 @@
       "summary": "@耕司青海瑶 @妍伊moe @_aabcd_\n  └ 七吕可真是一对好cp啊 (5赞): 😭😭😭🖐🏻️🖐🏻️🖐🏻️🖐🏻️🖐🏻️两个肥美的肉块saya酱知道就人形的自己太无聊了  就开始跳舞逗人形saya酱开心  真的太感人了[大哭][大哭][大哭][大哭]\n  └ 耕司青海瑶 (1赞): [doge]",
       "url": "https://www.bilibili.com/video/BV18agn6MEiE",
       "author": "七吕可真是一对好cp啊",
-      "engagement": 75,
+      "engagement": 79,
       "media_url": "https://i1.hdslb.com/bfs/archive/b9de01dd673a1006eeedaff06e0093c8a3dc0ec3.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 71,
+        "play": 75,
         "comment_count": 4,
         "comments_fetched": 2,
         "danmaku": 0
@@ -229,13 +229,31 @@
       "summary": "└ 岩仓鈴音 (0赞): 娶不到这样的我就不死了[喜欢][喜欢][喜欢] 00:01",
       "url": "https://www.bilibili.com/video/BV1cUgE6UEGi",
       "author": "龙傲天葉月夜Doctor",
-      "engagement": 48,
+      "engagement": 79,
       "media_url": "https://i2.hdslb.com/bfs/archive/5781d66ea0b19fa1de909a2cc8c8317930b90597.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 47,
+        "play": 78,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-13T13:08:56+00:00",
+      "lang": "zh",
+      "title": "终于刷到美少女了",
+      "summary": "-\n  └ 语惊梦中之人 (1赞): 刷了一天的肉块...\n  └ 芏芏鸟 (1赞): 我喜欢你۶•͈⚇•͈♡",
+      "url": "https://www.bilibili.com/video/BV1Srgs6mE3z",
+      "author": "携带恋话_",
+      "engagement": 33,
+      "media_url": "https://i1.hdslb.com/bfs/archive/77e091d419e36b54642ababad9f549afeb78de84.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 31,
+        "comment_count": 2,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
@@ -247,11 +265,11 @@
       "summary": "#沙耶之歌 这个网站还挺好玩 只不过全是韩语\n  └ 耕司青海瑶 (1赞): [doge]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV1QTgJ6vEf4",
       "author": "-沙耶-saya",
-      "engagement": 21,
+      "engagement": 32,
       "media_url": "https://i0.hdslb.com/bfs/archive/8bded4c998ba5b2841c0771bc46213598f35fd98.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 17,
+        "play": 28,
         "comment_count": 4,
         "comments_fetched": 2,
         "danmaku": 0
@@ -259,21 +277,66 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-08-13T13:00:51+00:00",
+      "time": "2026-08-13T15:30:12+00:00",
       "lang": "zh",
-      "title": "终于看见美少女了",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV14fgH6BE1H",
-      "author": "雾见岛ISLET",
-      "engagement": 1,
-      "media_url": "https://i1.hdslb.com/bfs/archive/77e091d419e36b54642ababad9f549afeb78de84.jpg",
+      "title": "【忘却前夜】高配混沌环娜N7备战测试",
+      "summary": "1.没吃到四月；2.算调弄错了导致两张命定卡手上打不出去了；3.造物仅三有效（除莱克三造物）。总之还有不算小的提升空间。",
+      "url": "https://www.bilibili.com/video/BV1aogW6mEVv",
+      "author": "生活仍在继续12138",
+      "engagement": 21,
+      "media_url": "https://i1.hdslb.com/bfs/archive/5915707794d8abb8baf6be8ac75ff4465ac7c408.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1,
+        "play": 21,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
       }
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-12T17:56:48+00:00",
+      "lang": "russian",
+      "title": "[负面] Такое впечатление что все положительные отзывы нап...",
+      "summary": "Такое впечатление что все положительные отзывы написаны ботами, либо проплаченные. Особенно веселит как люди пишут про сюжетку, КАКАЯ НАХЕР СЮЖЕТКА ??? В Игре полностью угашенная локализация анг.языка, про Русский язык я вообще молчу. Какой вы там сюжет вынюхиваете ? \n\nДалее, это не ККИ.\nЭто обычная гача, в которой мы крутим персонажей и сигны. У каждого персонажа 5 или 6 статичных скиллов (Карт) 2 из которых это атака и защита. \nИтого: мы играем парочкой персонажей и кидаем всрато переведенные скилы под видом ККИ. \nВы не составляете колоду, вы лишь играете тем что вам дают. Если вам дали того или иного героя, то вы и будете им играть без возможности настроить его дек.\n\nДалее, полностью сгенерированная ИИ шлак, пытаясь в стилистику Ender Lilies.",
+      "url": "https://steamcommunity.com/profiles/76561198023073462/recommended/3052450",
+      "author": "76561198023073462",
+      "engagement": 1,
+      "language": "russian",
+      "voted_up": false,
+      "review": "Такое впечатление что все положительные отзывы написаны ботами, либо проплаченные. Особенно веселит как люди пишут про сюжетку, КАКАЯ НАХЕР СЮЖЕТКА ??? В Игре полностью угашенная локализация анг.языка, про Русский язык я вообще молчу. Какой вы там сюжет вынюхиваете ? \n\nДалее, это не ККИ.\nЭто обычная гача, в которой мы крутим персонажей и сигны. У каждого персонажа 5 или 6 статичных скиллов (Карт) 2 из которых это атака и защита. \nИтого: мы играем парочкой персонажей и кидаем всрато переведенные скилы под видом ККИ. \nВы не составляете колоду, вы лишь играете тем что вам дают. Если вам дали того или иного героя, то вы и будете им играть без возможности настроить его дек.\n\nДалее, полностью сгенерированная ИИ шлак, пытаясь в стилистику Ender Lilies.",
+      "timestamp_created": 1786557408,
+      "playtime_forever": 92
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-13T14:57:28+00:00",
+      "lang": "schinese",
+      "title": "[正面] 不错",
+      "summary": "不错",
+      "url": "https://steamcommunity.com/profiles/76561199763580294/recommended/3052450",
+      "author": "76561199763580294",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "不错",
+      "timestamp_created": 1786633048,
+      "playtime_forever": 626
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-13T12:53:17+00:00",
+      "lang": "english",
+      "title": "[正面] This game is beautiful.\r\nAmazing art, fantastic ga...",
+      "summary": "This game is beautiful.\r\nAmazing art, fantastic gameplay, caring devs, super generous with pulls, good story.\r\nIf you are into slay the spire style games, this game is one of the best I have played.",
+      "url": "https://steamcommunity.com/profiles/76561198019697907/recommended/3052450",
+      "author": "76561198019697907",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "This game is beautiful.\r\nAmazing art, fantastic gameplay, caring devs, super generous with pulls, good story.\r\nIf you are into slay the spire style games, this game is one of the best I have played.",
+      "timestamp_created": 1786625597,
+      "playtime_forever": 20420
     },
     {
       "source": "steam",
@@ -318,7 +381,7 @@
       "voted_up": true,
       "review": "！？牌牌！？",
       "timestamp_created": 1786615013,
-      "playtime_forever": 5967
+      "playtime_forever": 6035
     },
     {
       "source": "steam",
@@ -333,7 +396,7 @@
       "voted_up": true,
       "review": "挺好的游戏，别水社区，戾气重的离谱。",
       "timestamp_created": 1786610157,
-      "playtime_forever": 44127
+      "playtime_forever": 44300
     },
     {
       "source": "steam",
@@ -348,7 +411,7 @@
       "voted_up": true,
       "review": "游戏还挺好玩但是键帽你老冯真飞了",
       "timestamp_created": 1786596988,
-      "playtime_forever": 2549
+      "playtime_forever": 2573
     },
     {
       "source": "steam",
@@ -409,21 +472,6 @@
       "review": "пришла ради саечки, осталась ради геймплея и прекрасных дизайнов персонажей. а еще я люблю депать СПАСИБО",
       "timestamp_created": 1786560799,
       "playtime_forever": 8253
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-12T17:56:48+00:00",
-      "lang": "russian",
-      "title": "[负面] Такое впечатление что все положительные отзывы нап...",
-      "summary": "Такое впечатление что все положительные отзывы написаны ботами, либо проплаченные. Особенно веселит как люди пишут про сюжетку, КАКАЯ НАХЕР СЮЖЕТКА ??? В Игре полностью угашенная локализация анг.языка, про Русский язык я вообще молчу. Какой вы там сюжет вынюхиваете ? \n\nДалее, это не ККИ.\nЭто обычная гача, в которой мы крутим персонажей и сигны. У каждого персонажа 5 или 6 статичных скиллов (Карт) 2 из которых это атака и защита. \nИтого: мы играем парочкой персонажей и кидаем всрато переведенные скилы под видом ККИ. \nВы не составляете колоду, вы лишь играете тем что вам дают. Если вам дали того или иного героя, то вы и будете им играть без возможности настроить его дек.\n\nДалее, полностью сгенерированная ИИ шлак, пытаясь в стилистику Ender Lilies.",
-      "url": "https://steamcommunity.com/profiles/76561198023073462/recommended/3052450",
-      "author": "76561198023073462",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": false,
-      "review": "Такое впечатление что все положительные отзывы написаны ботами, либо проплаченные. Особенно веселит как люди пишут про сюжетку, КАКАЯ НАХЕР СЮЖЕТКА ??? В Игре полностью угашенная локализация анг.языка, про Русский язык я вообще молчу. Какой вы там сюжет вынюхиваете ? \n\nДалее, это не ККИ.\nЭто обычная гача, в которой мы крутим персонажей и сигны. У каждого персонажа 5 или 6 статичных скиллов (Карт) 2 из которых это атака и защита. \nИтого: мы играем парочкой персонажей и кидаем всрато переведенные скилы под видом ККИ. \nВы не составляете колоду, вы лишь играете тем что вам дают. Если вам дали того или иного героя, то вы и будете им играть без возможности настроить его дек.\n\nДалее, полностью сгенерированная ИИ шлак, пытаясь в стилистику Ender Lilies.",
-      "timestamp_created": 1786557408,
-      "playtime_forever": 92
     },
     {
       "source": "discord",
@@ -692,25 +740,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-12T13:19:43Z",
-      "lang": "",
-      "title": "[Morimens] Improving the changes Spreadsheet and theorycrafting Ecog and Ecogless Madness teams",
-      "summary": "Don't know how long. Will be doing other stuff too.",
-      "url": "https://www.youtube.com/watch?v=ZyLJZtKPr6s",
-      "author": "Flares117",
-      "engagement": 783,
-      "media_url": "https://i.ytimg.com/vi/ZyLJZtKPr6s/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-08-13T06:58:29Z",
       "lang": "",
       "title": "[Morimens] Light Flips for the 100th Time - Ecogs are back, Covenant Bonding is back, D-Tide NERFED",
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=3fXYLXGs24E",
       "author": "Flares117",
-      "engagement": 445,
+      "engagement": 616,
       "media_url": "https://i.ytimg.com/vi/3fXYLXGs24E/hqdefault.jpg",
       "content_type": "video"
     },
@@ -734,20 +770,20 @@
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=vvUmjh1RrC0",
       "author": "박현(Muyeong)",
-      "engagement": 50,
+      "engagement": 52,
       "media_url": "https://i.ytimg.com/vi/vvUmjh1RrC0/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-08-12T14:35:57Z",
+      "time": "2026-08-13T09:22:25Z",
       "lang": "",
-      "title": "【忘却前夜】今何が起こっているのか何も知らずに８章を進める",
-      "summary": "トゥルーとダフォが恒常落ちするらしいのは知ってる Twitterも何も見ずにポケチャンしてました ...",
-      "url": "https://www.youtube.com/watch?v=xXWYriF2nf4",
-      "author": "to真冬",
-      "engagement": 47,
-      "media_url": "https://i.ytimg.com/vi/xXWYriF2nf4/hqdefault.jpg",
+      "title": "【忘却前夜】忘れ去られることのない世界のために【ローグライクカードゲーム】#02",
+      "summary": "こんゴヤです～！ 気まぐれ突発配信のお時間です。 以前にも配信しました「忘却前夜」やりたいと思いまーす！ あれから色々 ...",
+      "url": "https://www.youtube.com/watch?v=JaBNAX3E2_w",
+      "author": "水底の『ゴヤ』",
+      "engagement": 11,
+      "media_url": "https://i.ytimg.com/vi/JaBNAX3E2_w/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -764,14 +800,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-13T09:22:25Z",
+      "time": "2026-08-13T14:47:15Z",
       "lang": "",
-      "title": "【忘却前夜】忘れ去られることのない世界のために【ローグライクカードゲーム】#02",
-      "summary": "こんゴヤです～！ 気まぐれ突発配信のお時間です。 以前にも配信しました「忘却前夜」やりたいと思いまーす！ あれから色々 ...",
-      "url": "https://www.youtube.com/watch?v=JaBNAX3E2_w",
-      "author": "水底の『ゴヤ』",
-      "engagement": 9,
-      "media_url": "https://i.ytimg.com/vi/JaBNAX3E2_w/hqdefault.jpg",
+      "title": "沙耶、被遺忘的愛之種___忘卻前夜 Morimens【ㄈㄈㄈ遊戲Live】【556】",
+      "summary": "錄製日期：2026.08.13 本次心得：-未解鎖- #vtuber #台v #忘卻前夜 #morimens #ㄈㄈㄈ遊戲Live #556 ===遊戲簡介（Steam）=== ...",
+      "url": "https://www.youtube.com/watch?v=e_lADV6cVlg",
+      "author": "赤蜻.",
+      "engagement": 4,
+      "media_url": "https://i.ytimg.com/vi/e_lADV6cVlg/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
@@ -785,234 +821,6 @@
       "engagement": 0,
       "media_url": "https://i.ytimg.com/vi/xPuv2cp97C0/hqdefault.jpg",
       "content_type": "video"
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T10:11:46+00:00",
-      "lang": "en",
-      "title": "Thais by @soahh_numb",
-      "summary": "&#32; submitted by &#32;  /u/OneThanks3   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vn6mmt/thais_by_soahh_numb/",
-      "author": "/u/OneThanks3",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/p7juor0ca4jh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ef59047c0515ca73e47fda4b28c6c92e62258959",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T09:24:53+00:00",
-      "lang": "en",
-      "title": "Mouchette",
-      "summary": "Probably best DPS in the game, even at just E3. Mouchette falls off a bit for very long bosses, and you have to like glass cannon gameplay for her. Just give burial to all her allies or at least 2. All infographics are in &quot;Character guides&quot; folder: Drive For more information on awakers here&#39;s Fjant&#39;s website, a great database and team builder: SKeyDB Made with the help of Mythag Library team, including: Juno Lens Angbak Dracozion Cheri Linasera Aurora V Jolly Happy Skull  &#32; submitted by &#32;  /u/Independent-Baby-577   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vn5tpc/mouchette/",
-      "author": "/u/Independent-Baby-577",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/t8oducun04jh1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=dd84645ef08a57333a6a1976d8053484ffbf3c8e",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T06:40:22+00:00",
-      "lang": "en",
-      "title": "Preview: V2.6.X Adjustments Based on Community Feedback 2 (Electric Boogaloo) - From Light and BIAV",
-      "summary": "Please note that development logs are different from official announcements. The content in this post is still being discussed and refined based on your feedback, and the final implemented version may differ. In the previous development log, we temporarily removed the additional Silver rewards for the Regional D-Effect Zone, the adjustment involving Emergency Gnosis, and the Covenant Combination feature. However, after reassessing the plan, we believe that the better approach is not to remove these elements outright, but to continue improving upon the original proposal. The revised version is outlined below. ——— ## 1. Emergency Gnosis [Emergency Gnosis will remain usable in the Regional D-Effect Zone. Each use consumes 3 Emergency Gnosis. After use, the Training Points earned from that clear will not count toward the Rankings.] This will make it a contingency tool that requires planning, rather than a method that can be overly relied upon to clear content. At the same time, excluding these results from the Rankings ensures that they do not interfere with ranking outcomes and helps preserve fairness in high-end challenges. ——— ## 2. Regional D-Effect Zone The difficulty of Waves 1–4 on Hard, Nightmare, and Madness will be reduced. Their overall difficulty will be brought closer to that of Wave 5 in the next-lower difficulty tier. Under the previous version, the five Waves within each difficulty tier were relatively close in difficulty, with only limited variation between them. In the revised version, we will rework the difficulty curve between Waves so that the challenge rises more gradually and smoothly from Wave 1 through Wave 5, with Wave 5 always remaining the most demanding part. This will provide Keepers with a clearer process for learning and adapting, while making continued attempts feel more approachable. [Accordingly, Nightmare will continue to grant an additional Silver ×1,250.] We understand that some newer Keepers may feel pressure or have concerns about",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vn30ub/preview_v26x_adjustments_based_on_community/",
-      "author": "/u/DrExluxk",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/h64xuoan83jh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=44aa37691a689975331a09df381d9992dbf394d3",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T07:19:36+00:00",
-      "lang": "en",
-      "title": "Doresain fanart made by me",
-      "summary": "&#32; submitted by &#32;  /u/Apart_Thing_5569   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vn3ppy/doresain_fanart_made_by_me/",
-      "author": "/u/Apart_Thing_5569",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/g10lsm4nf3jh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6053d644689ae1726d78de7e4bd23e0b15ff0f1b",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T09:36:58+00:00",
-      "lang": "en",
-      "title": "What are the best AA characters META- wise?",
-      "summary": "Since we&#39;re getting 5 pyramids in the new update, what characters do you think I should use them on to get other standard AAs? And in what teams should I use them? I think caecus, nymph and sanga are some of the best? What do you think?  &#32; submitted by &#32;  /u/saltal1   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vn610d/what_are_the_best_aa_characters_meta_wise/",
-      "author": "/u/saltal1",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/ha04gmr144jh1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e60932f0ad60eac7660a8f0d2c801f42dd25aee6",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T00:18:22+00:00",
-      "lang": "en",
-      "title": "Salvador",
-      "summary": "Twitter/X Post!  &#32; submitted by &#32;  /u/Samin-A   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vmvbnt/salvador/",
-      "author": "/u/Samin-A",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/tkpuikvk61jh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=45c027e5a48fd4a62fe61d309d8092ef543c2460",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-12T13:07:00+00:00",
-      "lang": "en",
-      "title": "Top 10 most beloved characters in Morimens JP!",
-      "summary": "People loves the Godking!  &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vmdn6v/top_10_most_beloved_characters_in_morimens_jp/",
-      "author": "/u/DrExluxk",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/0uohggnp0yih1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=20c8b86a09feb68601436d5ad46b96f5ce1c1913",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T11:50:30+00:00",
-      "lang": "en",
-      "title": "Team Building Help",
-      "summary": "Hi guys, can i get some help building a team for Glotan or just in general? Thanks  &#32; submitted by &#32;  /u/Radiant-Key-563   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vn8i1v/team_building_help/",
-      "author": "/u/Radiant-Key-563",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/rhhq2vowr4jh1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e3edc039c575f1880f935bae657f75566eee13d4",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-12T18:36:16+00:00",
-      "lang": "en",
-      "title": "No more refined gnosis for mid-strength players🫠👎",
-      "summary": "With the new changes to D-tide, accounting for the latest partial backtrack, players who were previously able to clear Alert 3 for 350 points will no longer receive Refined Gnosis (the purple shards that combine to allow you to level a character from 70 to 80). Currently at 350 points we receive 15 each d-tide. After the changes however we will need to clear the equivalent of Alert FIVE (400 points) to get any Refined Gnosis (25). And ironically, according to the information they have provided, the recommended team level for Wave 5 of this difficulty is 80. What do you need to level your characters to 80? REFINED GNOSIS. Make it make sense!  &#32; submitted by &#32;  /u/SittingDuck394   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vmmmbx/no_more_refined_gnosis_for_midstrength_players/",
-      "author": "/u/SittingDuck394",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-12T13:47:24+00:00",
-      "lang": "en",
-      "title": "Regarding the most recent announcements ... and to get things off my chest",
-      "summary": "Potential Hot-Take and unpopular oppinion but I gotta get it off my chest at this point As much as I love the game, its dev&#39;s, their transparancy, and how they listen to player&#39;s feedback, etc. etc. ...  It hasn&#39;t even be a full day and they already want to backtrack most anounced changed (or at least the biggest ones) Like what is this?? At least let it simmer for one to two days, to let people form an actual and solid oppinion on it and not be scared of first impressions and negative possibilities because some people didn&#39;t like it frok the get go. Ofc players aren&#39;t keen on seeing change, especially when it could have a potential downside for them.  *Like what even is the point of announcing stuff and changes in the first place, when you&#39;re not fully standing behind it?* Just makes me actually scared of the game and its standing if they&#39;re **this** scared of negative reception and are so easy and quick to give in for when it comes to releasing new stuff...  &#32; submitted by &#32;  /u/-Esphir-   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vmen8o/regarding_the_most_recent_announcements_and_to/",
-      "author": "/u/-Esphir-",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-12T21:01:50+00:00",
-      "lang": "en",
-      "title": "It will be easier to hit 400 in New D-Tide than old D-Tide.",
-      "summary": "This is outside of my typical type of posts, but IMO this might be important enough to warrant it because I see a lot of misunderstandings on the new system. The difficulty of D-Tide is only realistically going up if you are pushing past 410. Don&#39;t worry. It is significantly easier to hit 400 or get rewards in New D-Tide than in current D-Tide. You will at least match what you&#39;re already getting if you were doing A3 before. Here&#39;s why: 1) They&#39;re moving Regular Gnosis frags earlier (from 375 to 350). Level 70 Awakeners will be faster to obtain for people who only clear 350, giving you a pathway to 400. You need regular Gnosis to even use Purple Gnosis anyway, so this is strictly better for newer players. 2) Current A3W5 level is currently on par with Hard W2. This means that in theory, you should be able to do 2x Hard (W1/2) and 3x Normal (W3/4/5) and maintain the same level of difficulty as full-clearing W3, but score 370.  3) Rewards should still be staggered. With 370, you should still be able to pick up 10 purple frags if they are staggered evenly. It may even be frontloaded, depending on BIAV&#39;s decision. The difficulty is now modular as well, so you can progress forward slowly. 4) Difficulty scaling in the new system for your 5 teams is much easier at Hard, with emphasis on having 1-2 strong teams. While the top end (W5) is at level 80, each Wave (W4/3/2/1) are 4 level drops. Current 400 requires your weakest team to fight a level 75 wave. The new D-Tide Hard requires your weakest team to fight a level 64 Wave (Current A3). Your second strongest team only has to fight a level 76 Wave (current W2), and the third a 72 wave (easier than A4W5). 5) Your strongest team is typically already ready investments-wise if you&#39;ve cleared the Normal story to tackle the 2nd hardest content (76). You can typically borrow a whale carry that matches up well into the level 80 wave. Everything else is A4 difficulty or lower.  &#32; submitted by &#32;  /u/GyR",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vmqizp/it_will_be_easier_to_hit_400_in_new_dtide_than/",
-      "author": "/u/GyRNi",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-12T22:00:26+00:00",
-      "lang": "en",
-      "title": "Horla is a good unit?",
-      "summary": "ive been seen some post ans tierlists saying horla is game changing but i really dont understand why ik what she does but i cant think at a team that shes the best slot for https://preview.redd.it/n1lede1rn0jh1.png?width=911&amp;format=png&amp;auto=webp&amp;s=ad16d06f1b86733f41f70f4b20e70ae600c084ae i use her here cause my clem is at doresain team but i really prefer clem   &#32; submitted by &#32;  /u/Q11iy   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vms103/horla_is_a_good_unit/",
-      "author": "/u/Q11iy",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/n1lede1rn0jh1.png?width=140&amp;height=74&amp;auto=webp&amp;s=ef9239ae36bb3dcf701ff44b38415818864a3eda",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-12T21:37:42+00:00",
-      "lang": "en",
-      "title": "Finally hit 400 points after 8 months ;-;",
-      "summary": "&#32; submitted by &#32;  /u/Kanade-chi   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vmrgmt/finally_hit_400_points_after_8_months/",
-      "author": "/u/Kanade-chi",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T05:22:13+00:00",
-      "lang": "en",
-      "title": "Team Recs",
-      "summary": "My first team in almost complete with Tawil, Hameln and Caecus. Just waiting to get Ryker from the standard. Should I start building G-Helot for my second team with Thais? Also wishing for Saya right now so should the team also include Faint or Aigis or someone else?  Also does anyone know which characters are coming next patch and which characters are getting reruns? Kinda hard finding anything for this game. I wanted to get Pollux and Castor, and G-Murphy but I have a feeling they&#39;re not gonna rerun anytime soon 🥲  &#32; submitted by &#32;  /u/Sugr_Faevr   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vn1mfe/team_recs/",
-      "author": "/u/Sugr_Faevr",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/j20h9izou2jh1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=cbe17cd1c81f15bda155f7d9422c88435528099c",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-13T09:02:09+00:00",
-      "lang": "en",
-      "title": "Mouchette and tawil",
-      "summary": "Mouchette and tawil can be in same team?. If yes which characters are best for both of them. If not best team for both of them individually with standard characters ( hameln g. Ramona and saya are occupied with g.lotan)  &#32; submitted by &#32;  /u/Large_Spirit9297   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vn5fym/mouchette_and_tawil/",
-      "author": "/u/Large_Spirit9297",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-12T14:44:55+00:00",
-      "lang": "en",
-      "title": "Dtide Changes: An Alternative Suggestion",
-      "summary": "Putting aside the issue of emergency gnosis, I wanted to propose a different solution to giving whales a way to compete for the dtide leaderboards rather than nightmare and madness mode. To me, massive hp inflation is more tedious than fun, and madness mode having 9x the hp of current alert 5 sounds very unfun. It will lead to more cheesy strats and less diverse gameplay. Just look at madness rail, which is almost all Clem teams, and madness pdive, which is almost all Gmurphy and Tawil teams. In current dtide, there is an amazing variety of teams and strategies. Sure, there are common cores of teams that appear often, but it really is awesome to look at the leaderboards and see many differences between teams, wheels, and tactics. To some extent, this reflects the fact that you need multiple teams. But it also reflects the creativity that is possible at the current level of balance. Instead of making hp sponges in nightmare and madness dtide, which will severely limit the leaderboard meta, I think a more simple, elegant solution would be to allow another extra clear. This would not affect the people who just want to do a single clear to rush for their biweekly dtide rewards. But it would allow whales to use the many characters they’ve built up over the years in new and interesting teams to strive for a 450 score, and keep an incentive for whales to pull for older characters, too. Personally, as a whale who gets 425 every dtide (and then has little to do afterwards), I would much rather try to clear another set of teams in alert 5 with wonky underused awakeners than have hp-inflated enemies that require specific, preset strategies. To me, that leans away from the strength of Morimens’s gameplay rather than towards it.  &#32; submitted by &#32;  /u/foxdc   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vmg5c9/dtide_changes_an_alternative_suggestion/",
-      "author": "/u/foxdc",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
     },
     {
       "source": "official",
@@ -1126,6 +934,16 @@
     },
     {
       "source": "steam_discussion",
+      "time": "2026-08-13T15:44:13+00:00",
+      "lang": "en",
+      "title": "[Steam论坛] skill issue question",
+      "summary": "how str based characters are supposed to be played? is it just me being too stupid or what?",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/591812495357901628/",
+      "author": "N-Zero",
+      "engagement": 1
+    },
+    {
+      "source": "steam_discussion",
       "time": "2026-08-13T12:39:10+00:00",
       "lang": "en",
       "title": "[Steam论坛] 请使用我的邀请码",
@@ -1136,7 +954,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176435+00:00",
+      "time": "2026-08-13T15:58:25.328935+00:00",
       "lang": "zh",
       "title": "【情報】邀請活動集中串，一起拿朵爾幻衣獎勵(可3人互填)",
       "summary": "",
@@ -1146,7 +964,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-12T13:04:38.176167+00:00",
+      "time": "2026-08-12T15:58:25.328764+00:00",
       "lang": "zh",
       "title": "【集中串】2.4.0 發問集中串，來問，有問必答",
       "summary": "",
@@ -1156,7 +974,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176617+00:00",
+      "time": "2026-08-13T15:58:25.329048+00:00",
       "lang": "zh",
       "title": "【攻略】核彈級大C? 蝕滅 • 蘿坦抽取建議",
       "summary": "",
@@ -1166,7 +984,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176788+00:00",
+      "time": "2026-08-13T15:58:25.329152+00:00",
       "lang": "zh",
       "title": "【心得】星辰篇必修課：淺談「牌權」的重要性",
       "summary": "",
@@ -1176,7 +994,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176739+00:00",
+      "time": "2026-08-13T15:58:25.329126+00:00",
       "lang": "zh",
       "title": "【情報】V2.4.1 茉夏✦喚醒體&amp;命輪介紹",
       "summary": "",
@@ -1186,7 +1004,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176699+00:00",
+      "time": "2026-08-13T15:58:25.329101+00:00",
       "lang": "zh",
       "title": "【心得】癲狂列車打不過？教你低配穩定通關的方法",
       "summary": "",
@@ -1196,7 +1014,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-12T13:04:38.176112+00:00",
+      "time": "2026-08-12T15:58:25.328739+00:00",
       "lang": "zh",
       "title": "【攻略】奧爾拉、杜勒、茉夏，三相復刻抽取建議",
       "summary": "",
@@ -1206,17 +1024,17 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176879+00:00",
+      "time": "2026-08-13T15:58:25.329202+00:00",
       "lang": "zh",
       "title": "【問題】我寫的「蝕滅•蘿坦」宣傳，登上巴哈姆特首頁囉 !",
       "summary": "",
       "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1513&tnum=1",
       "author": "t12345825",
-      "engagement": 43
+      "engagement": 44
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176928+00:00",
+      "time": "2026-08-13T15:58:25.329231+00:00",
       "lang": "zh",
       "title": "【閒聊】蝕滅·蘿坦技能組及神鯨界域分析 (2樓更新一些配置思路，已通癲狂列車)",
       "summary": "",
@@ -1226,7 +1044,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.175828+00:00",
+      "time": "2026-08-13T15:58:25.328565+00:00",
       "lang": "zh",
       "title": "【場外休憩區】忘卻前夜二周年，大家一起幫忙蓋樓，融蝕危機之中，優雅與力量如影隨形，自組卡牌陣容，喚醒災厄同源的祂們",
       "summary": "",
@@ -1236,7 +1054,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-12T13:04:38.176034+00:00",
+      "time": "2026-08-12T15:58:25.328713+00:00",
       "lang": "zh",
       "title": "【心得】融災簡易攻略：無課小號實測＋本尊對照(還是依照個人情況做調整為主喔!(簡單做了一個新舊融災表格供參考!",
       "summary": "",
@@ -1246,7 +1064,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.175649+00:00",
+      "time": "2026-08-13T15:58:25.328251+00:00",
       "lang": "zh",
       "title": "【站方公告】巴哈姆特 30 週年《生日賀圖＆日誌徵稿》8/13 截稿！限定勳章與周邊等你拿",
       "summary": "",
@@ -1256,7 +1074,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-12T13:04:38.175933+00:00",
+      "time": "2026-08-12T15:58:25.328644+00:00",
       "lang": "zh",
       "title": "【攻略】茉夏開荒隊伍與主流陣容推薦(畢業命輪推薦)",
       "summary": "",
@@ -1266,7 +1084,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-12T13:04:38.176211+00:00",
+      "time": "2026-08-12T15:58:25.328788+00:00",
       "lang": "zh",
       "title": "【校貓日誌】前瞻：V2.6.X 商店兌換、密契結合與同調率",
       "summary": "",
@@ -1276,7 +1094,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-12T13:04:38.176251+00:00",
+      "time": "2026-08-12T15:58:25.328811+00:00",
       "lang": "zh",
       "title": "【校貓日誌】前瞻：V2.6.X 玩法與獎勵，融災500分",
       "summary": "",
@@ -1286,7 +1104,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176658+00:00",
+      "time": "2026-08-13T15:58:25.329075+00:00",
       "lang": "zh",
       "title": "【討論】關於蝕滅蘿坦的一些用後感",
       "summary": "",
@@ -1296,7 +1114,17 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176834+00:00",
+      "time": "2026-08-13T15:58:25.328603+00:00",
+      "lang": "zh",
+      "title": "【校貓日誌】朝令夕改，靈知每次使用消耗3個，1250銀芯獎勵恢復，密契結合優化",
+      "summary": "",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1529&tnum=1",
+      "author": "t12345825",
+      "engagement": 20
+    },
+    {
+      "source": "bahamut",
+      "time": "2026-08-13T15:58:25.329176+00:00",
       "lang": "zh",
       "title": "【情報】DC 58000守密人入駐達成禮",
       "summary": "",
@@ -1306,17 +1134,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.175882+00:00",
-      "lang": "zh",
-      "title": "【校貓日誌】朝令夕改，靈知每次使用消耗3個，1250銀芯獎勵恢復，密契結合優化",
-      "summary": "",
-      "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1529&tnum=1",
-      "author": "t12345825",
-      "engagement": 19
-    },
-    {
-      "source": "bahamut",
-      "time": "2026-08-12T13:04:38.175984+00:00",
+      "time": "2026-08-12T15:58:25.328681+00:00",
       "lang": "zh",
       "title": "【校貓日誌】前瞻：相位對弈暫停更新",
       "summary": "",
@@ -1326,7 +1144,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176297+00:00",
+      "time": "2026-08-13T15:58:25.328845+00:00",
       "lang": "zh",
       "title": "【情報】 DC 59000守密人入駐禮包碼",
       "summary": "",
@@ -1336,7 +1154,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176529+00:00",
+      "time": "2026-08-13T15:58:25.328991+00:00",
       "lang": "zh",
       "title": "【問題】這遊戲聯動時間這麼長嗎？",
       "summary": "",
@@ -1346,7 +1164,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176485+00:00",
+      "time": "2026-08-13T15:58:25.328963+00:00",
       "lang": "zh",
       "title": "【情報】關於《忘卻前夜》營運主體變更通知",
       "summary": "",
@@ -1356,7 +1174,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176573+00:00",
+      "time": "2026-08-13T15:58:25.329020+00:00",
       "lang": "zh",
       "title": "【閒聊】什麼叫作入坑一個月融災400分？",
       "summary": "",
@@ -1366,7 +1184,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176387+00:00",
+      "time": "2026-08-13T15:58:25.328904+00:00",
       "lang": "zh",
       "title": "【情報】忘卻前夜┊V2.5.3 廣播劇《原則》",
       "summary": "",
@@ -1376,7 +1194,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.177016+00:00",
+      "time": "2026-08-13T15:58:25.329282+00:00",
       "lang": "zh",
       "title": "【日服】【心得】熔毀 ● 朵爾 配隊心得",
       "summary": "",
@@ -1386,7 +1204,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176972+00:00",
+      "time": "2026-08-13T15:58:25.329256+00:00",
       "lang": "zh",
       "title": "【日服】【引流】 日服當前版本(熔毀朵爾)個人認為的角色排行榜",
       "summary": "",
@@ -1396,7 +1214,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.176342+00:00",
+      "time": "2026-08-13T15:58:25.328875+00:00",
       "lang": "zh",
       "title": "【問題】（新手問題）禁忌試煉在那裡？",
       "summary": "",
@@ -1406,7 +1224,7 @@
     },
     {
       "source": "bahamut",
-      "time": "2026-08-13T13:04:38.177085+00:00",
+      "time": "2026-08-13T15:58:25.329308+00:00",
       "lang": "zh",
       "title": "【閒聊】抱怨一下面板UI的設計",
       "summary": "",
@@ -1452,16 +1270,6 @@
       "summary": "Invit code\n\nGKI3KZE1NS",
       "url": "https://apps.apple.com/ca/app/id6447354150?see-all=reviews#as-14313204363",
       "author": "Olliwawa",
-      "engagement": 5
-    },
-    {
-      "source": "appstore",
-      "time": "2026-07-14T07:50:58-07:00",
-      "lang": "en",
-      "title": "So fun with rich story!!",
-      "summary": "I’ve recently began playing morimens about a month or two ago, and it’s so fun!! It’s such a fun game to play on and relax with, but also enjoyable to learn how all the mechanics work! The character designs are so unique and cool too the characters like Pickman and Thais with unique bodies is so cool and refreshing to see! I can’t wait to see all the more unique characters to pull in the future!😋😋",
-      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14302399247",
-      "author": "Chrissysilly!",
       "engagement": 5
     },
     {
@@ -2276,6 +2084,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-08-12T14:32:38",
+      "lang": "th",
+      "title": "[Google Play 好评] ★5 เกมดีแต่แปลภาษาไทยกากไปน่อย",
+      "summary": "เกมดีแต่แปลภาษาไทยกากไปน่อย",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-66104dc7-405a-463d-b8a0-9ef68696ae8c",
+      "author": "Hdhdbdbb Vxbxbx",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-08-01T05:35:48",
       "lang": "th",
       "title": "[Google Play 好评] ★5 เล่นบทนำเสร็จถึงกลับรีบมารีวิวเลย เนื้อเ",
@@ -2746,6 +2564,18 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-08-14T00:25:25+09:00",
+      "lang": "",
+      "title": "ラモンナ",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/148392461",
+      "author": "ぐにゃめ",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/08/14/00/25/25/148392461_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "source": "pixiv",
       "time": "2026-08-12T17:21:55+09:00",
       "lang": "",
       "title": "Untitled",
@@ -2997,18 +2827,6 @@
       "content_type": "image"
     },
     {
-      "source": "pixiv",
-      "time": "2026-07-14T22:56:43+09:00",
-      "lang": "",
-      "title": "Our beloved furry-detective",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/147205301",
-      "author": "Latteko",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/07/14/22/56/43/147205301_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
       "source": "note_com",
       "time": "2026-08-01T21:19:52+09:00",
       "lang": "ja",
@@ -3150,7 +2968,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-08-13T13:04:37.809337+00:00",
+      "time": "2026-08-13T15:58:25.197454+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
@@ -3164,7 +2982,17 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜第4届N厨杯圆满结束!",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS0wJUuXmWDUZPXejGwPKrk-COFSsZMr2zFqXa8Fplpd9KQfWDpkLLQ6vHRUGAzJWzdVhgibSKH5aeRoH2SG4iED2de9YWQkSNo9scehoMZa8UWv3J1J1NM4R4wXYfTALFNxP67HyNX0wRvIHqa6gKHOVq5jg4Vpoqal12g4kwO_HziY6WLSofn6JJX2gP7If6uBWk9m-SVhURTxskYIfaI5535pjGOOjYg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=3996FCD6B15EBA2F1A1D43F642BFD4A31B3477986A7DC0E5",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS0wJUuXmWDUZp0ChpXSQxsGCOFSsZMr2zFqXa8Fplpd9KQfWDpkLLQ6vHRUGAzJWzdVhgibSKH5aeRoH2SG4iED2de9YWQkSNj9T3m9xLfhN-KYrjBkysEBxFrYUsV3qqFz60Jt9uxlObwaYyJ2SmMEKa4snhybSq8nHdiQyN4DBAFo1GZXshtlqaRMrcSLaUYRKdJFJC2XDw5_4SPdAAcBFkDr8IT4KYw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=3A7C7DDD653AFD2316114EF9D1308636178AB4386A7DE9A1",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weixin",
+      "time": "2026-08-07T15:06:24+00:00",
+      "lang": "zh",
+      "title": "[微信] 关于《忘却前夜》运营主体变更的通知",
+      "summary": "",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS0wJUuXmWDUZp0ChpXSQxsGCOFSsZMr2zFqXa8Fplpd9KQfWDpkLLQ6vHRUGAzJWzdVhgibSKH5aeRoH2SG4iED2de9YWQkSNsB_qiRr9lEtEtxIQ60boUOgDcZkyMPmenGEKRE7Ec3ixY77wtru_b-3N-odZnYpO9OsHs7YcvvmSvKf1hji_BX3jfOCptG7Ch3lN-6K2RHC_j9PYbpBPbJflztgI7RZ1g..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=3A7C7DDD653AFD2316114EF9D1308636178AB4386A7DE9A1",
       "author": "",
       "engagement": 0
     },
@@ -3174,13 +3002,23 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜第4届N厨杯圆满结束!",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS0wJUuXmWDUZ_Y9L5v_baSqCOFSsZMr2zFqXa8Fplpd9KQfWDpkLLQ6vHRUGAzJWzdVhgibSKH5aeRoH2SG4iED2de9YWQkSNo9scehoMZa8UWv3J1J1NM4R4wXYfTALFO4Ob6CiEkDBTup_JwOuuBiN_hYgTeeO8d2g3CAlL82Y_e80sqFRDFwEJ2CAe3CuF1je_pZDAPk6vKqo-Jf40DRAe0f8bRARvQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=3997037287688C182D2A75C075952FCC2DC86B0B6A7DC0E7",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS0wJUuXmWDUZP5GFVJ7u_2KCOFSsZMr2zFqXa8Fplpd9KQfWDpkLLQ6vHRUGAzJWzdVhgibSKH5aeRoH2SG4iED2de9YWQkSNj9T3m9xLfhN-KYrjBkysEBxFrYUsV3qqEG5E8Bzw9dUTi6Bovbpk6WdqdcJJc1y2YKpVf5MqPG6G_8xZmrtvPnd2ZKsAMGleI_tUhyzeRyEFR8037qxQSH6zvkPgoArRQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=3A7C83FC6F31F42A1E1B46F2D82B86AE1EDE3A0F6A7DE9A2",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weixin",
+      "time": "2026-08-07T15:06:24+00:00",
+      "lang": "zh",
+      "title": "[微信] 关于《忘却前夜》运营主体变更的通知",
+      "summary": "",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS0wJUuXmWDUZP5GFVJ7u_2KCOFSsZMr2zFqXa8Fplpd9KQfWDpkLLQ6vHRUGAzJWzdVhgibSKH5aeRoH2SG4iED2de9YWQkSNsB_qiRr9lEtEtxIQ60boUOgDcZkyMPmesMKcgyquxoV-CBz4vqgOmyr_-aJ4g-zM8wMpxdpe5a31jF2UnMRSGA5Vb9lE4imyj85RggJm8fDYzIUOOgS1PLzAjcIGepUqA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=3A7C83FC6F31F42A1E1B46F2D82B86AE1EDE3A0F6A7DE9A2",
       "author": "",
       "engagement": 0
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163219+00:00",
+      "time": "2026-08-13T15:58:13.045263+00:00",
       "lang": "zh",
       "title": "哈吼哈哈哈哈哈",
       "summary": "哈吼哈哈哈哈哈",
@@ -3190,7 +3028,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163473+00:00",
+      "time": "2026-08-13T15:58:13.045295+00:00",
       "lang": "zh",
       "title": "哈吼哈哈哈哈哈",
       "summary": "哈吼哈哈哈哈哈",
@@ -3200,7 +3038,17 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163571+00:00",
+      "time": "2026-08-13T15:58:13.045345+00:00",
+      "lang": "zh",
+      "title": "期待",
+      "summary": "期待",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045397+00:00",
       "lang": "zh",
       "title": "来自 Android 设备",
       "summary": "来自 Android 设备",
@@ -3210,7 +3058,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163575+00:00",
+      "time": "2026-08-13T15:58:13.045402+00:00",
       "lang": "zh",
       "title": "无\n : 求问群号在哪，没找到",
       "summary": "无\n : 求问群号在哪，没找到",
@@ -3220,7 +3068,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163598+00:00",
+      "time": "2026-08-13T15:58:13.045409+00:00",
       "lang": "zh",
       "title": "5",
       "summary": "5",
@@ -3230,7 +3078,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163623+00:00",
+      "time": "2026-08-13T15:58:13.045413+00:00",
       "lang": "zh",
       "title": "咕咕嘎嘎",
       "summary": "咕咕嘎嘎",
@@ -3240,7 +3088,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163635+00:00",
+      "time": "2026-08-13T15:58:13.045417+00:00",
       "lang": "zh",
       "title": "咕咕嘎嘎",
       "summary": "咕咕嘎嘎",
@@ -3250,7 +3098,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163697+00:00",
+      "time": "2026-08-13T15:58:13.045443+00:00",
       "lang": "zh",
       "title": "来自 Honor X10",
       "summary": "来自 Honor X10",
@@ -3260,7 +3108,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163704+00:00",
+      "time": "2026-08-13T15:58:13.045450+00:00",
       "lang": "zh",
       "title": "没凡恼\n : 怎么下载啊",
       "summary": "没凡恼\n : 怎么下载啊",
@@ -3270,7 +3118,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163711+00:00",
+      "time": "2026-08-13T15:58:13.045457+00:00",
       "lang": "zh",
       "title": "20",
       "summary": "20",
@@ -3280,47 +3128,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163751+00:00",
-      "lang": "zh",
-      "title": "Kurisu",
-      "summary": "Kurisu",
-      "url": "https://www.taptap.cn/review/46310244",
-      "author": "Kurisu",
-      "engagement": 0
-    },
-    {
-      "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163762+00:00",
-      "lang": "zh",
-      "title": "Kurisu",
-      "summary": "Kurisu",
-      "url": "https://www.taptap.cn/user/400100377",
-      "author": "Kurisu",
-      "engagement": 0
-    },
-    {
-      "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163838+00:00",
-      "lang": "zh",
-      "title": "冰月\n : 会歪吗",
-      "summary": "冰月\n : 会歪吗",
-      "url": "https://www.taptap.cn/user/715419416",
-      "author": "冰月",
-      "engagement": 0
-    },
-    {
-      "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163858+00:00",
-      "lang": "zh",
-      "title": "10",
-      "summary": "10",
-      "url": "https://www.taptap.cn/review/46310244#to-reply",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163883+00:00",
+      "time": "2026-08-13T15:58:13.045461+00:00",
       "lang": "zh",
       "title": "该用户已注销",
       "summary": "该用户已注销",
@@ -3330,7 +3138,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163894+00:00",
+      "time": "2026-08-13T15:58:13.045464+00:00",
       "lang": "zh",
       "title": "该用户已注销",
       "summary": "该用户已注销",
@@ -3340,7 +3148,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163953+00:00",
+      "time": "2026-08-13T15:58:13.045489+00:00",
       "lang": "zh",
       "title": "展开",
       "summary": "展开",
@@ -3350,7 +3158,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163971+00:00",
+      "time": "2026-08-13T15:58:13.045511+00:00",
       "lang": "zh",
       "title": "来自 Nubia NX789J",
       "summary": "来自 Nubia NX789J",
@@ -3360,7 +3168,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.163989+00:00",
+      "time": "2026-08-13T15:58:13.045515+00:00",
       "lang": "zh",
       "title": "29",
       "summary": "29",
@@ -3370,7 +3178,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.164011+00:00",
+      "time": "2026-08-13T15:58:13.045519+00:00",
       "lang": "zh",
       "title": "MuKuRo",
       "summary": "MuKuRo",
@@ -3380,7 +3188,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.164023+00:00",
+      "time": "2026-08-13T15:58:13.045522+00:00",
       "lang": "zh",
       "title": "MuKuRo",
       "summary": "MuKuRo",
@@ -3390,7 +3198,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.164128+00:00",
+      "time": "2026-08-13T15:58:13.045567+00:00",
       "lang": "zh",
       "title": "来自 Vivo V2353A",
       "summary": "来自 Vivo V2353A",
@@ -3400,7 +3208,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.164132+00:00",
+      "time": "2026-08-13T15:58:13.045571+00:00",
       "lang": "zh",
       "title": "阿巴阿巴\n : steam下的需要加速器吗",
       "summary": "阿巴阿巴\n : steam下的需要加速器吗",
@@ -3410,7 +3218,7 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.164154+00:00",
+      "time": "2026-08-13T15:58:13.045578+00:00",
       "lang": "zh",
       "title": "15",
       "summary": "15",
@@ -3420,7 +3228,47 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.164179+00:00",
+      "time": "2026-08-13T15:58:13.045582+00:00",
+      "lang": "zh",
+      "title": "Kurisu",
+      "summary": "Kurisu",
+      "url": "https://www.taptap.cn/review/46310244",
+      "author": "Kurisu",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045588+00:00",
+      "lang": "zh",
+      "title": "Kurisu",
+      "summary": "Kurisu",
+      "url": "https://www.taptap.cn/user/400100377",
+      "author": "Kurisu",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045634+00:00",
+      "lang": "zh",
+      "title": "冰月\n : 会歪吗",
+      "summary": "冰月\n : 会歪吗",
+      "url": "https://www.taptap.cn/user/715419416",
+      "author": "冰月",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045641+00:00",
+      "lang": "zh",
+      "title": "10",
+      "summary": "10",
+      "url": "https://www.taptap.cn/review/46310244#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045645+00:00",
       "lang": "zh",
       "title": "发现烂游戏",
       "summary": "发现烂游戏",
@@ -3430,12 +3278,152 @@
     },
     {
       "source": "taptap_review",
-      "time": "2026-08-13T13:04:25.164193+00:00",
+      "time": "2026-08-13T15:58:13.045649+00:00",
       "lang": "zh",
       "title": "发现烂游戏",
       "summary": "发现烂游戏",
       "url": "https://www.taptap.cn/user/745592097",
       "author": "发现烂游戏",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045674+00:00",
+      "lang": "zh",
+      "title": "来自 Web 官网",
+      "summary": "来自 Web 官网",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045681+00:00",
+      "lang": "zh",
+      "title": "该用户已注销\n : 抛开无关的男女问题，游戏还是挺好玩的，美术也好看",
+      "summary": "该用户已注销\n : 抛开无关的男女问题，游戏还是挺好玩的，美术也好看",
+      "url": "https://www.taptap.cn/user/637724961",
+      "author": "该用户已注销",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045688+00:00",
+      "lang": "zh",
+      "title": "3",
+      "summary": "3",
+      "url": "https://www.taptap.cn/review/46738787#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045692+00:00",
+      "lang": "zh",
+      "title": "牢大",
+      "summary": "牢大",
+      "url": "https://www.taptap.cn/review/49878799",
+      "author": "牢大",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045696+00:00",
+      "lang": "zh",
+      "title": "牢大",
+      "summary": "牢大",
+      "url": "https://www.taptap.cn/user/755130885",
+      "author": "牢大",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045721+00:00",
+      "lang": "zh",
+      "title": "来自 Realme RMX5200",
+      "summary": "来自 Realme RMX5200",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045729+00:00",
+      "lang": "zh",
+      "title": "蛇缠死骨",
+      "summary": "蛇缠死骨",
+      "url": "https://www.taptap.cn/review/49635789",
+      "author": "蛇缠死骨",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045732+00:00",
+      "lang": "zh",
+      "title": "蛇缠死骨",
+      "summary": "蛇缠死骨",
+      "url": "https://www.taptap.cn/user/599670478",
+      "author": "蛇缠死骨",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045777+00:00",
+      "lang": "zh",
+      "title": "2",
+      "summary": "2",
+      "url": "https://www.taptap.cn/review/49635789#to-reply",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045780+00:00",
+      "lang": "zh",
+      "title": "吾好梦想封印\n期待\n炉石国服倒下的那一刻，我没去外服，有两款作为代餐的卡牌游戏映入了我的眼帘，漫威snap和忘却前夜。现",
+      "summary": "吾好梦想封印\n期待\n炉石国服倒下的那一刻，我没去外服，有两款作为代餐的卡牌游戏映入了我的眼帘，漫威snap和忘却前夜。现在我已经弃坑漫威snap了，一方面太氪了，一方面我觉得确实是忘却前夜更好玩，甚至让我如今国服炉石回归我都想放弃炉石，专精忘却前夜。\n作为一个从开服肝到现在的玩家，我觉得这游戏评分不该这么低，至少我在新手时期也就是刚开服的时候深刻体会到校猫（游戏制作人）对玩家和对这款游戏的良苦用心，他是真的愿意让林冲玩家和氪佬都体会到游戏中独有的属于他们的一份乐趣，也愿意在剧情或者角色平衡性这块和玩家一起探讨好坏。基本上每个小版本结束就会发一份问卷，我相信这次活动“花与春天的诗”非常成功离不开每一份问卷的功劳。\n至于有些氪金角色强度平衡的麻烦事，官方的补偿说实话很大方，对于我们零氪和微氪玩家来说确实是堪比记忆消除的福利，但对于一些玩家在充值这方面的伤害也确实弥补不回来。希望官方能挺过这几波舆论风波，在以后不会犯下这种失误了。\n现在游戏活动模式已经将肝度调整为基本都可接受的程度，活动副本难度面向所有等级的玩家，游戏剧情模式除了后面2章有点难，前面的就算用开局的四小只也能轻松打过，不用担心卡关问题，以前的卡等级在如今也荡然无存（新密契除外）。从开服就算零氪玩到现在也已经能体验99%的游戏内容了，现在入坑就也不知道福利咋样，但多肝肝，等几个月活动就能都复刻一遍。\n因为这次活动从游戏性到艺术风格我都很满意，尤其是pv做的相当好。希望忘却前夜能接着保持这份初心，我认为这才是我选择这款游戏的原因。\n展开\n2024/7/26\n来自 一加 Ace 2 pro\n山屿\n : 想问一下怎么下载啊？\n24\n90",
+      "url": "https://www.taptap.cn/review/41662987",
+      "author": "吾好梦想封印",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045788+00:00",
+      "lang": "zh",
+      "title": "吾好梦想封印",
+      "summary": "吾好梦想封印",
+      "url": "https://www.taptap.cn/user/12630240",
+      "author": "吾好梦想封印",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045835+00:00",
+      "lang": "zh",
+      "title": "来自 一加 Ace 2 pro",
+      "summary": "来自 一加 Ace 2 pro",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045839+00:00",
+      "lang": "zh",
+      "title": "山屿\n : 想问一下怎么下载啊？",
+      "summary": "山屿\n : 想问一下怎么下载啊？",
+      "url": "https://www.taptap.cn/user/596621888",
+      "author": "山屿",
+      "engagement": 0
+    },
+    {
+      "source": "taptap_review",
+      "time": "2026-08-13T15:58:13.045846+00:00",
+      "lang": "zh",
+      "title": "24",
+      "summary": "24",
+      "url": "https://www.taptap.cn/review/41662987#to-reply",
+      "author": "",
       "engagement": 0
     }
   ]
