@@ -1,48 +1,65 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-13T07:23:55.572021+00:00",
+  "collected_at": "2026-08-13T10:03:02.427705+00:00",
   "source": "discord",
   "data_layer": "output",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-08-12T00:00:00+00:00",
+      "time": "2026-08-13T00:00:00+00:00",
       "lang": "",
-      "title": "Discord 社区日报 (2026-08-12)",
-      "summary": "今日 4,302 条消息，261 位活跃用户，555 次反应。热门频道：🔸綜合討論(1157)、🔸game-question(874)、🔸canal-español(819)、🔸phòng-chat-tiếng-việt(559)、🔸ruang-obrolan-indonesia(128)",
+      "title": "Discord 社区日报 (2026-08-13)",
+      "summary": "今日 2,888 条消息，249 位活跃用户，557 次反应。热门频道：🔸game-question(1120)、🔸綜合討論(641)、🔸phòng-chat-tiếng-việt(206)、🔸team-building(192)、🔸canal-português(127)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 4302
+      "engagement": 2888
     },
     {
       "source": "discord",
-      "time": "2026-08-12T02:21:45.515000+00:00",
+      "time": "2026-08-13T06:00:56.272000+00:00",
       "lang": "",
-      "title": "[DC] sacred_promises@🔸有問必答┊official-q-a: 1) Move all silver rewards to normal mode in the new dtide.  all silver rewards",
-      "summary": "1) Move all silver rewards to normal mode in the new dtide. \nall silver rewards can be obtained from current dtide at 325 score (alert 2 lvl 52~58) so locking silver rewards in nightmare level does not make sense \n\n2) Move lvl 20 affinity reward “Scintilla” to lvl 15 affinity, grinding to lvl 15 affinity takes a lot of effort as it is, it does not make sense to lock the 5 extra affinity levels behind 250k currency jewel / badge / black heart. it is simply ridiculous \n\n3)Previously devs have stated content will not be balanced around absolute axiom AA. \n\nWith this new dtide system, it is clear that new awakeners and their AA be designed to cater to the power ceiling of madness difficulty\n\nwhat plans do the devs have here? is power creep a strong concern for you or do u not care at all?\n\n4) If emergency gnosis is going to be regularly used in dtide, please make it purchasable with rose scrip instead of sediments. for most players sediments is a scare resource used to purchase monthly items like prototype horizons and time loops",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536922612725321768",
-      "author": "sacred_promises",
-      "engagement": 72,
+      "title": "[DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: Please note that development logs are different from official announcements. The",
+      "summary": "Please note that development logs are different from official announcements. The content in this post is still being discussed and refined based on your feedback, and the final implemented version may differ.\n\nIn the previous development log, we temporarily removed the additional Silver rewards for the Regional D-Effect Zone, the adjustment involving Emergency Gnosis, and the Covenant Combination feature. However, after reassessing the plan, we believe that the better approach is not to remove these elements outright, but to continue improving upon the original proposal. The revised version is outlined below.\n\n## 1. Emergency Gnosis\n\n** Emergency Gnosis will remain usable in the Regional D-Effect Zone. Each use consumes 3 Emergency Gnosis. After use, the Training Points earned from that clear will not count toward the Rankings.**\n\nThis will make it a contingency tool that requires planning, rather than a method that can be overly relied upon to clear content. At the same time, excluding these results from the Rankings ensures that they do not interfere with ranking outcomes and helps preserve fairness in high-end challenges.\n  └ angbak:",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537340158863482921",
+      "author": "lightproud",
+      "engagement": 71,
       "metadata": {
-        "reactions": "⬆️×9 ✅×10 Celeste_agree×5",
-        "reply_count": 0,
+        "reactions": "Coalsie_shock×17 Alva_goodjob×3 👍×1 🔥×1 🐷×1",
+        "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-12T02:36:32.994000+00:00",
+      "time": "2026-08-13T06:05:46.650000+00:00",
       "lang": "",
-      "title": "[DC] bagels5899@🔸有問必答┊official-q-a: 1. Story change is good, feels like the best of both worlds  2. New items on the",
-      "summary": "1. Story change is good, feels like the best of both worlds\n\n2. New items on the shop/item caps are good, but no increase to the rate which you get currency will suck\n\n3.  HSR and Taboo quests are cool (locking more rewards behind traphase, also known as half the taboo quests, is not fun howhever)\n\n4. Covenant Bonding is terrible. Just remove it, don’t try making it better, don’t try fixing it, no. nada. never. Putting more stats behind covenants isn’t good, a lot of people already find covenant grinding annoying and locking any level of stats behind it is bad. “oh but it increases the floor of covs letting you get away with less substat”- no. What’s stopping the game and developers from just raising the floor on what they expect your covenants to be at instead? then now we need to interact with Cov bonding and get good substats alongside it. Just remove this. Bad. No. Never do.\n\n5. I think I’m over complaining about DTide, but I will just say locking silver rewards, no matter how little, behind content harder than A5 will never feel good. “oh but gnosis” gnosis doesn’t feel good. People don’t like using gnosis. Its not fun, it doesn’t feel fullfiling to use a revive to bruteforce  what we’ve been treating up untill now the most fullfilling challenge in the game for players. Overall, I’m fine with the existence of A67 but I’m not as fine with Silver locked behind 450",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536926335081910343",
-      "author": "bagels5899",
+      "title": "[DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: ## In Closing  We sincerely apologize that the information in the development lo",
+      "summary": "## In Closing\n\nWe sincerely apologize that the information in the development logs has changed several times within a short period, causing confusion in both understanding and discussion.\n\nHowever, this is precisely why we remain committed to sharing development logs in advance: to gather your feedback as early as possible, identify blind spots in our thinking, and make the most appropriate decision at the time—even if that decision means overturning our previous one.\n\nRather than appearing unwavering on the surface, we would rather do what truly needs to be done while there is still time to revise the plan. Going forward, we will also continue improving the way and pace at which we communicate through development logs, so that communication between the development team and the community can be smoother.\n\n**After the V2.6 update, we will provide Token of Concord ×5 and Origin of Time ×5 to help everyone better adapt to changes in the game’s systems and challenges.**\n\nSeeing the community proactively help us collect and organize feedback has been deeply moving. We are sincerely grateful to every Keeper who has taken the time to share their thoughts. It is through everyone’s collective contribution and participation that Morimens can continue moving forward, even through its twists and turns.\n  └ ko.nur:",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537341376797081640",
+      "author": "lightproud",
+      "engagement": 71,
+      "metadata": {
+        "reactions": "❤️×18 🔥×5",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-13T00:53:13.227000+00:00",
+      "lang": "",
+      "title": "[DC] angbak@🔸有問必答┊official-q-a: Removing other comments apart from the poll to keep things neater",
+      "summary": "Removing other comments apart from the poll to keep things neater",
+      "url": "https://discord.com/channels/1131791637933199470/1537112944070885506/1537262719239987332",
+      "author": "angbak",
       "engagement": 69,
       "metadata": {
-        "reactions": "⬆️×11 Celeste_agree×12",
+        "reactions": "Snake_goodjob×9 ✅×11 Erica_perfect×3",
         "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
@@ -51,144 +68,66 @@
     },
     {
       "source": "discord",
-      "time": "2026-08-12T02:05:32.549000+00:00",
+      "time": "2026-08-13T06:16:54.240000+00:00",
       "lang": "",
-      "title": "[DC] aurora3981@🔸有問必答┊official-q-a: Remove Covenant Bonding and replace it with something which increases main stat",
-      "summary": "Remove Covenant Bonding and replace it with something which increases main stat instead.\nCovenant Bonding discourages players from trying different builds and there are covenants which are realm combination specific.\nI don't think locking an awakener to a single realm combination is a good idea.\n[附件: Screenshot_20260812_052547_Firefox.jpg, Screenshot_20260812_052534_Firefox.jpg, Screenshot_20260812_052521_Firefox.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536918531810267227",
-      "author": "aurora3981",
-      "engagement": 63,
-      "media_url": "https://cdn.discordapp.com/attachments/1536914453189099601/1536918531029868646/Screenshot_20260812_052547_Firefox.jpg?ex=6a7d266c&is=6a7bd4ec&hm=bfdc280ae7e3b8089e7b11949d5a477ffb04de4f65b677d2b088abd27a0a2486&",
-      "content_type": "image",
+      "title": "[DC] lurenjiao@🔸校貓日誌┊schoolcat’s-notes: 有没有考虑开放更大额度的氪条进度，给点同心之证也行。28天一个角色，但是你一个月只能兑换4个材料，万一新出的角色我都",
+      "summary": "有没有考虑开放更大额度的氪条进度，给点同心之证也行。28天一个角色，但是你一个月只能兑换4个材料，万一新出的角色我都喜欢怎么办，老角色里面也有那么多喜欢的。\n  └ lightproud: 谢谢你的意见，我们会想合适的办法大家提供更多获取途径。",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537344176872624138",
+      "author": "lurenjiao",
+      "engagement": 53,
       "metadata": {
-        "reactions": "Lotan_ok×5 Celeste_agree×9 ⬆️×5 Alva_goodjob×1",
-        "reply_count": 0,
-        "attachment_count": 3,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1536914453189099601/1536918531029868646/Screenshot_20260812_052547_Firefox.jpg?ex=6a7d266c&is=6a7bd4ec&hm=bfdc280ae7e3b8089e7b11949d5a477ffb04de4f65b677d2b088abd27a0a2486&",
-          "https://cdn.discordapp.com/attachments/1536914453189099601/1536918531369730109/Screenshot_20260812_052534_Firefox.jpg?ex=6a7d266c&is=6a7bd4ec&hm=77538c5073321463c80d299cf9acd764cf9180d5379fe17bba94bbbd322f7462&",
-          "https://cdn.discordapp.com/attachments/1536914453189099601/1536918531696758915/Screenshot_20260812_052521_Firefox.jpg?ex=6a7d266c&is=6a7bd4ec&hm=02ed44fbd847bb70b26622e4ccf91f767871ac8c1c94f2263eb8e665dc2e3e39&"
-        ],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-12T02:11:19.649000+00:00",
-      "lang": "",
-      "title": "[DC] frosthief@🔸有問必答┊official-q-a: The Affinity cap item is too expensive",
-      "summary": "The Affinity cap item is too expensive",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536919987653189763",
-      "author": "frosthief",
-      "engagement": 54,
-      "metadata": {
-        "reactions": "Celeste_agree×11 ⬆️×6 ✅×1",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-12T06:01:06.629000+00:00",
-      "lang": "",
-      "title": "[DC] psychefu@🔸有問必答┊official-q-a: Issues with the latest announcements:  1)    Having silver in the high score ran",
-      "summary": "Issues with the latest announcements:\n\n1)    Having silver in the high score range is dumb and very frustrating for a new player. There is no way a new or casual player will ever get those scores in a reasonable amount of time. Especially when upgrading materials are limited as hell and also locked behind difficulty. It's so so so so unfriendly and has way too many barriers.\n\n2) Its true that the silver actually equals very little rolls—but, it’s still a massive fear of missing out aspect that pushing this game into really unfriendly territory. The idea of limiting players by having upgrading materials locked behind extremely difficult content is already dumb and makes it SUPER hard for new players to catch up. Now adding fear of missing out into the mix and at a difficulty less than 10% of the player base is at is just an insult to the majority of the player base.\n\n3) If there are to be rewards in the higher level it should be icons and banners/borders instead. Cosmetic and bragging rights is the way to go.\n\n4) Difficulty should be scaled with the perceptive that Morimens is a game—not for treating Morimens like every player’s job or personal project (i.e., avoid adding tedious stuff within reason. Locking upgrade materials and silver behind millions of HP does not treat Morimens as a game.\n\n5) There was a promise of \"you won't need AA for end game content\"—where did this perceptive go? Likewise, is Silver not counted as \"meaningful rewards\"? What the heck does \"meaningful rewards\" mean then? (see image)\n[附件: image.png]\n  └ psychefu: Have to send as multiple messages since I don't have discord Nitro... so here is **Part 2**. There will be a **Part 3** later (once the 30 minutes timer has ended and I get back from grocery shopping I guess) as well...\n\n6) Adding Revive does not make increasing HP bloat better. Others have already noted that these DTide changes becomes “more of a chore for casuals when they have to struggle with limited amounts of revives per season with much harder enemies just to get all pulls instead of calling it a day at 325.” I personally agree with this. I wonder how many new players are doing this strategy (I certainly was when I started out about 1 year ago). It’s also worth noting that this style of play pushes the gap between old players and new players wider. Which means BIAV will have even bigger issues going forward as the gap gets bigger and bigger between old and new players. There is a reason other games have a \"ceiling\" of difficulty. Like Genshin doesn't even have massive power creep and it has been years since its release. Likewise, Arknights is designed at a certain level of difficulty no matter how much power creep is in the new units. That or BIAV really need to add catch up events for new players. Or... have new units be so overpowered that old units become irrelevant (which I don't want to happen and clearly BAIV doesn't too with their character buffs)\n\nP.S., I have a word Doc version too if you want that, just DM me",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536977814438547588",
-      "author": "psychefu",
-      "engagement": 54,
-      "media_url": "https://cdn.discordapp.com/attachments/1536914453189099601/1536977814304071680/image.png?ex=6a7d5da2&is=6a7c0c22&hm=b2e85db0d77c7cc2072372ced18900b35a9947e9bbb7be60b2d2a9370a433000&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×9 Celeste_agree×8",
+        "reactions": "6️⃣×8 🛐×9",
         "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1536914453189099601/1536977814304071680/image.png?ex=6a7d5da2&is=6a7c0c22&hm=b2e85db0d77c7cc2072372ced18900b35a9947e9bbb7be60b2d2a9370a433000&"
-        ],
-        "channel": "🔸有問必答┊official-q-a"
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-12T04:44:38.061000+00:00",
+      "time": "2026-08-13T03:23:51.419000+00:00",
       "lang": "",
-      "title": "[DC] princess.goth@🔸有問必答┊official-q-a: Lets begin with the dzone changes, i think changing dtide as a mode is just a re",
-      "summary": "Lets begin with the dzone changes, i think changing dtide as a mode is just a really weird choice overall since its the only thing that keeps players logging in and actually playing the game. Other modes need way more assistance so i would hope they dont get left for dead (especially pdive).\nI think essentially adding 2 difficulty tiers is quite weird? why are we straight up ignoring the challenge even one new difficulty brings and adding another one on top? also the rewards allocation makes no sense why are the silver rewards less attainable now than before. Furthermore i dont understand the gnosis change and think its quite stupid, auto was removed for dtide since its an endgame gamemode to really test your skills and now we are able to use revives in it? what was the point of that is the game mode pro or con casual players?\n\nI would also like a more general overhaul of train, madness is essentially a reset fest, trying to get the right relics/setup/bosses etc and just adding one new endboss feels like essentially 0 improvements to the mode with some random boss to now smash.\n\nWhen it comes to the affinity system i like the changes in concept, especially being able to ear level up materials is really nice. What i dont think is acceptable is the cost of the items you need to buy. 50.000 currency is an INCREDIBLY out of touch amount to ask for and im wondering how you could possible end up at that number and think its okay. I also like the idea of a cosmetic for a character you love, but it having 0 individuality and essentially costing 250.000 currency is quite disappointing. Please reward your players more for their love of their characters. (i say this as someone whos starving for more corposant)\n\nIn addition to that i think the covenant binding system is stupid. The best part about morimens artifact system is how flexible it is and binding takes all of that away. You just overhauled the affinity system and could have easily just made it so covenants gain affinity aswell so after using the covenant a bunch your character now gets more stats. this currently presented system makes me quite angry in having wasted resources on multiple covenants for 1 character like vortice for different situations when it seems like i can only bind one. also we are essentially being taxxed for a quality of life feature, swapping covenants which makes 0 sense to me.",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536958568589426688",
-      "author": "princess.goth",
+      "title": "[DC] morimensstaffjelly@🔸한국어-채팅방:  안녕하세요, 수호자 여러분. PM젤리입니다.<:Nautila_happy:1356053849894420",
+      "summary": " 안녕하세요, 수호자 여러분.\nPM젤리입니다. \n모리멘스 한국 지역 플레이어를 위한 공식 계정 및 플랫폼을 준비 중에 있습니다.\n현재 운영팀 내부에서 검토 중인 플랫폼은 총 3가지이며, 각각 장단점이 존재합니다. 이에 따라, 실제로 한국 유저분들이 어떤 플랫폼을 가장 선호하시는지 여러분의 의견을 듣고자 합니다.\n아래 투표를 통해 원하시는 플랫폼을 선택해 주시면, 추후 개설 방향 결정에 적극 반영하도록 하겠습니다.\n\n📌 참고 사항\n복수 응답이 가능합니다 (가장 선호하는 순서대로 선택해 주세요).\n추가 의견이 있으시면 댓글로 남겨 주세요.\n투표 기간: ~ 2026년 8월 17일 (월) 23:59 (KST)\n많은 참여 부탁드립니다! 감사합니다~",
+      "url": "https://discord.com/channels/1131791637933199470/1300659495550062592/1537300628165103727",
+      "author": "morimensstaffjelly",
       "engagement": 51,
       "metadata": {
-        "reactions": "⬆️×10 Alva_goodjob×4 🔥×3",
+        "reactions": "catgood×9 Celeste_pray×5 Nautila_happy×3",
         "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
+        "channel": "🔸한국어-채팅방"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-12T02:19:32.620000+00:00",
+      "time": "2026-08-13T06:19:04.345000+00:00",
       "lang": "",
-      "title": "[DC] momvolo@🔸有問必答┊official-q-a: -> Story mode change is good. However, I believe the hard mode arc 2 story is pr",
-      "summary": "-> Story mode change is good. However, I believe the hard mode arc 2 story is progressing at a pace that makes it difficult for beloved older units to keep up. The changes in 2.7 may alleviate this. \n\n-> I do not like Train and cannot weigh in on its changes. So long as the monthly mission is doable on the easiest difficulty, like Traphase, I do not care at all. \n\n-> DTide changes are fine. The ability to gnosis while taking away its prestige for score is an excellent balance point between tryhards and those just in it for rewards. And to those who think f2p/newbies will be adversely effected by challenges at the top: They don't have the exp farmed up to actually level those units. We all know it. It's just a dead resource for early game accounts. \n\n-> Bond 16-20 and bond changes are an interesting concept! I like the change to how bond grinding works, now rewarding long gameplay turns with more affection with units such as Tawil or Pontos. However, 50 000 currency is too much for uncap materials. Requiring a grand total of- \n\n# **250 000 D Jewels**\n\n-Over 5 months is completely and entirely unacceptable. Lightless and badge conversions are even more pricy. You are unlocking the exchange to unlimited in the sediment shop, and are trying to bait whales into buying via sediment. This system is too expensive. Please change the numbers before it goes live. This is terrible and untenable pricing.\n\n-> Covanent changes are in effect useless. If the binding can be undone with 10 pieces, you're only taxing endgame players a little and hurting new to middle tier players a lot. This is bad. Make the buffs permanent or make the tax meaningful, because the system as it is has only grown more annoying and burdensome. \n\n-> Gnosis should remain in the sediment shop instead of in a pop-up menu. Pop-ups are disliked by almost all players for being intrusive, negatively impacting gameplay experience and being predatory. They are also not lore relevant ay all. There is nothing positive or defensible about this change. \n\nThank you for reading this, and I hope some price points and implementations can be reconsidered by the team before these changes go live.",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536922055323156500",
-      "author": "momvolo",
-      "engagement": 36,
+      "title": "[DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: This isn't usually a simple fixed number — it varies depending on differences be",
+      "summary": "This isn't usually a simple fixed number — it varies depending on differences between enemies and fluctuates from season to season. The multiplier for individual stages within each difficulty tier stays unchanged, but the average difficulty across all stages within each tier drops by about 0.5 tiers — that's roughly how you can think of it.\n  └ nirski: so basically nightmare will still be a step up in difficulty over alert 5, but not as severe as before?\n  └ fishhazardthewizard: In that case, compared to the current Alert 5, how many times higher would the Nightmare or Madness boss HP be?\n  └ nirski: I want to make it clear that many of the primary concerns when it comes to HP inflation come about because not every awakener can infinitely scale their damage - there are many currently powerful awakeners who will just fall off the meta entirely if HP becomes too high, leading high level play becoming narrow and unfun.\n\nAdditionally, the poison and counter caps are a big problem for the viability of these archetypes and would **need** to be revisited to maintain their clear capabilities.\n\nI do not know the numbers expected for these new endgame mode thresholds, so I can't say either way, but these are our concerns. If the final product doesn't address them, it *will* inevitably feel bad for many.\n  └ fibrinogen: you have stated before that Absolute Axiom is not required to clear existing content (DTide) will you be showing examples of madness clears without the use of Absolute Axiom",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537344722572673044",
+      "author": "lightproud",
+      "engagement": 35,
       "metadata": {
-        "reactions": "👍×6 ⬆️×6",
-        "reply_count": 0,
+        "reactions": "👍×7 👎×2",
+        "reply_count": 4,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-12T03:06:28.842000+00:00",
+      "time": "2026-08-13T02:51:11.585000+00:00",
       "lang": "",
-      "title": "[DC] sunyandmony@🔸有問必答┊official-q-a: I won't be a parrot and repeat everything already said, so I'll do it in my own",
-      "summary": "I won't be a parrot and repeat everything already said, so I'll do it in my own words + biased opinions\n\n1. The story mode access thing is very nice, but please don't let hp inflation affect the chapters later down the road! Not exactly everyone can predict you'll be greeted with some 20m hp boss at some point while on normal mode at that.. \n\n2. Rewards being added to make pvp mode/traphase more relevant is a good thing, but it feels a little weird to add them there for some reason.. It would've been better to try and make that mode relevant through other means, like an increase in pulls or silver gains \n\n3. The Awakener customization frame thingy... I have a very strong opinion on this. I feel like it shouldn't be locked over +15 affinity, nor does it deserve the price it is tagged with. I understand the issues and whatnot with this, but making them different for each Awakener would at least somewhat explain the cost and means, rather than them being similar (example: for Castor and Pollux, they could have matching effects, Arachne could have spider webs, Jenkins little rats, etc etc) and super expensive all at the same time. \n\n4. As for covenants, I think it's fairly obvious every player here feels at least relatively the same way. So I won't go into it.\n\n5. D-tide, oh man here we go.. While I like a good challenge, I feel like adding so many new things, like a nightmare mode and A6 and A7 will make it a little hard to play, even for people with already invested-in accounts. I do not wish for this game mode to be centered on how much we can spend until the unit is passable enough to clear the content. Additionally, I pray with my heart and soul and everything that I am, to not do hp inflation so early on. Not everyone has cleared the game mode with a full score. If veterans want a challenge, then let them have one. But casual players will definitely feel a lot more pressure on their shoulders as time goes on.",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536933867414618173",
-      "author": "sunyandmony",
-      "engagement": 36,
-      "metadata": {
-        "reactions": "⬆️×5 👍×7",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-12T04:04:49.039000+00:00",
-      "lang": "",
-      "title": "[DC] caelumace@🔸有問必答┊official-q-a: I forgot to include this in my main thing (that I'm replying to to continue off",
-      "summary": "I forgot to include this in my main thing (that I'm replying to to continue off of) but removing soulforges is a foolish endeavor. Most characters released in arc 2 were designed around or with their soulforge passive in mind (most notably Murphy: Fauxborn who relies on her faction passive specifying \"other lemurians\", and Arachne who gets her Final Verdict *doubled* while it's not able to recieve most other buffs due to being a singular insulated mechanic). These characters would be completely crippled and useless without these passives intact, especially compared with other future units who will have an arc 3 passive baked into their kits the same way. This also affects arc 1 units who had complete, if outdated, kits who got new life and new use through their soulforge mechanics and became archetype-defining. To scrap Casiah's passive, one of the biggest enablers of Discard teams, would be to hinder the entire team building around them especially when such strong characters like Pontos rely almost entirely on that passive. Other characters received unique synergies like Goliath who despite having no interaction with tentacle damage received a buff that made him work well with the aforementioned iteration of Murphy. Without these passives these fan favorites will fade into obscurity and have no reason to use them going into arc 3. There is the argument that these passives will be part of the new ones to avoid nerfing them post purchase, but that would be lazy design. I have an alternative. \n\nInstead of replacing passives, make them additive. This keeps characters not only where they are and as strong as they are, but also allows them to become even stronger with new mechanics and new characters. Expand upon Lemurian team building, or develop the poison/counter/bleed/discard archetypes without trying to bulldoze over what was already made. Players shouldn't have to memorize multiple distinct kits for the same character.",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536948548304765038",
-      "author": "caelumace",
-      "engagement": 36,
-      "metadata": {
-        "reactions": "⬆️×5 ✨×1 Celeste_agree×3 🤍×2 Alva_goodjob×1",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-12T04:04:33.194000+00:00",
-      "lang": "",
-      "title": "[DC] kevin7907@🔸有問必答┊official-q-a: My opinion is: 1. The choice of normal mode vs. hard mode is a great thing - new",
-      "summary": "My opinion is:\n1. The choice of normal mode vs. hard mode is a great thing - new players I have introduced have complained that ch1-6 is way too easy.\n2. I really like the increased difficulty of dtide. As a ~400 5 team player I want the content to be harder to challenge myself. But I think the rewards should be moved around a little since many players who care about silver get 325 in the current dtide. 400 to get all the silver seem like a better choice to me while pyramid acquistion could be rebalanced. \n3. I don't like the covenant change. Nobody liked farming for these. How about allowing covenant sets to be overlapping instead and go with the design philosiphy of sharing covenants? Binding in the non-literal sense makes more sense - aka when you auto equip, you can choose which cov set you want the character to use.",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536948481846026300",
-      "author": "kevin7907",
+      "title": "[DC] sacred_promises@🔸有問必答┊official-q-a: my 2nd feedback this time  For dtide  1) The new system favours vertically inves",
+      "summary": "my 2nd feedback this time\n\nFor dtide \n1) The new system favours vertically invested teams instead of horizontal invested teams. Since points increase by 10 each difficulty, while doing an extra clear on the same difficulty gives only 5 points. \n\nWhat does this mean? This causes less team building variety and encourages pulling for absolute axiom AA to make a single team clear the highest difficulty for the most points. \n\nWho does this affect? Mostly free to play / low spender players that have a wide roster of low invested e0~e3 units. This is basically the majority of the player base. \n\nMy thoughts is to rework the point system that balances both vertical & horizontal investment. Much like the current dtide 10x alert 4 = 5x alert 5 = 400 points\n\n2)The new nightmare / madness difficulties seemingly only have their hp increase 2-3x and damage 30-60% each tier. \n\nWhat does this mean? This either translate to 1 or 2 things. Either, existing units have to be buffed in order to make them viable against this difficulty and future releasing units will have increasing higher power floor / ceilings. If that is not the case, this means pulling for OE/AA becomes an ever increasing demand just to play higher level difficulties in dtide. \n\nWho does this affect? Majority of the player base who are not whales / big spenders. \n\nMy thoughts are if BIAV cares about powercreep and truly believes in what they said about “OE/AA being not needed in content”, explore different ways to increase dtide difficulty instead of blinding increasing hp & damage. \n\nAllowing skill expression is satisfying thing in morimens and should be prioritise instead of wallet flexing. \n\nI hope biav looks into this seriously as this is likely the biggest factor that can improve or worsen the game’s power creep, monetisation, and balance.",
+      "url": "https://discord.com/channels/1131791637933199470/1537082862069616770/1537292408025522267",
+      "author": "sacred_promises",
       "engagement": 33,
       "metadata": {
-        "reactions": "⬆️×5 ✅×4 ✨×1 Alva_goodjob×1",
+        "reactions": "✅×11",
         "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
@@ -197,92 +136,138 @@
     },
     {
       "source": "discord",
-      "time": "2026-08-12T01:49:20.130000+00:00",
+      "time": "2026-08-13T06:25:57.708000+00:00",
       "lang": "",
-      "title": "[DC] angbak@🔸有問必答┊official-q-a: Hello, please submit your feedback regarding 2.6.X under this thread.  Chatter a",
-      "summary": "Hello, please submit your feedback regarding 2.6.X under this thread.\n\nChatter and comments not related to feedback will be deleted.\n\nPlease keep things civil in your discussion",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536914453189099601",
-      "author": "angbak",
-      "engagement": 30,
+      "title": "[DC] nirski@🔸校貓日誌┊schoolcat’s-notes: I want to make it clear that many of the primary concerns when it comes to HP in",
+      "summary": "I want to make it clear that many of the primary concerns when it comes to HP inflation come about because not every awakener can infinitely scale their damage - there are many currently powerful awakeners who will just fall off the meta entirely if HP becomes too high, leading high level play becoming narrow and unfun.\n\nAdditionally, the poison and counter caps are a big problem for the viability of these archetypes and would **need** to be revisited to maintain their clear capabilities.\n\nI do not know the numbers expected for these new endgame mode thresholds, so I can't say either way, but these are our concerns. If the final product doesn't address them, it *will* inevitably feel bad for many.\n  └ lightproud: In our testing, poison and counter builds are still able to hold up, so there are no plans to adjust them for now. If the need arises, we'll make adjustments to help them out. Thank you for the clarification.",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537346456342765629",
+      "author": "nirski",
+      "engagement": 32,
       "metadata": {
-        "reactions": "🍟×10",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-12T02:18:17.128000+00:00",
-      "lang": "",
-      "title": "[DC] orinatic@🔸有問必答┊official-q-a: Yeah, I like the covenant bonding, because it makes using a specific covenant fo",
-      "summary": "Yeah, I like the covenant bonding, because it makes using a specific covenant for a specific character feasible. For example, if I want a TTB with sigil yield for GLotan specifically, right now doing it 'properly'  is a  *huge* investment for a somewhat niche application.\n\nCovenant bonding makes that kind of specific-awakener-covenant feasible.\n\nOnly caveat is that yeah, new content definitely shouldn't be ballanced around having it. Or at least dtide/you-want-multiple-teams-for-this really really shouldn't. But barring that, I think it's a great idea.",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536921738686758944",
-      "author": "orinatic",
-      "engagement": 27,
-      "metadata": {
-        "reactions": "Celeste_agree×6 ⬆️×3",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-12T05:35:32.395000+00:00",
-      "lang": "",
-      "title": "[DC] bu0465_15110@🔸有問必答┊official-q-a: Overall, pretty disappointing. I understand why players want more challenge, but",
-      "summary": "Overall, pretty disappointing. I understand why players want more challenge, but this just seems like a bad time for most players involved. It will feel unrewarding (since now 400 felt like perfect clear and 425 was that extra cherry on top). Why not actually pour some resources into a new game-mod that will have different difficulty baked in or will be more challenging? Or why not just A6? \n\nTrain is boring and long, adding extra boss does nothing to remedy that.\n\nBinding goes against recently added covenants that were perfect for mixing up realms. Now if I give Clem her conventant for caro team and I decide to bind it, I can say goodbye to playing her anywhere else. Not too mention that some conventants cannot double in the team. So my Corpo from Pontos team (Dream Medicine) can never be slotted with my GMurphy (Dream Medicine). If unbiding is easy and cheap, then what's the point in this mechanic at all.\n\nOverall this feels like: greed, desperation and disappointement all over again.\n\nThe \"same\" card effect for absurd amount of in-game currency feels like a joke. Minimum effort from the devs, maximum cost for the players. You can't even make unique effects for the cards after demanding so much time and resources from the players?",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536971379394617404",
-      "author": "bu0465_15110",
-      "engagement": 27,
-      "metadata": {
-        "reactions": "☝️×9",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-12T02:41:03.029000+00:00",
-      "lang": "",
-      "title": "[DC] caelumace@🔸有問必答┊official-q-a: Remove the need to do nightmare to get full value out of the silver rewards. And",
-      "summary": "Remove the need to do nightmare to get full value out of the silver rewards. And with content becoming increasing difficult implement an \"easy\" mode or \"cutscene\" mode into all story related content for new players and players without the necessary investment to clear harder \"normal\" mode content but who still want to engage with the story and world building of the game. Also rework covenant bonding. Many covenants require specific team compositions by mentioning realm mechanics by name. Additionally, many covenants (life drain, paradox, ring, cursed rabbit) are shared between multiple awakeners. Additionally, again, some awakeners may want multiple builds for different circumstances like both iterations of Doll wanting a set of Cursed Rabbit and Re-Evolution or Arachne wanting a set of Dream of Medicine or Cursed Rabbit. This also doesn't take into account that many covenants are relegated to 1 per team (dream of medicine, life drain, paradox) in which having awakeners on the same team with bonded covenants of the same type is an additional restriction to the system\n  └ caelumace: I forgot to include this in my main thing (that I'm replying to to continue off of) but removing soulforges is a foolish endeavor. Most characters released in arc 2 were designed around or with their soulforge passive in mind (most notably Murphy: Fauxborn who relies on her faction passive specifying \"other lemurians\", and Arachne who gets her Final Verdict *doubled* while it's not able to recieve most other buffs due to being a singular insulated mechanic). These characters would be completely crippled and useless without these passives intact, especially compared with other future units who will have an arc 3 passive baked into their kits the same way. This also affects arc 1 units who had complete, if outdated, kits who got new life and new use through their soulforge mechanics and became archetype-defining. To scrap Casiah's passive, one of the biggest enablers of Discard teams, would be to hinder the entire team building around them especially when such strong characters like Pontos rely almost entirely on that passive. Other characters received unique synergies like Goliath who despite having no interaction with tentacle damage received a buff that made him work well with the aforementioned iteration of Murphy. Without these passives these fan favorites will fade into obscurity and have no reason to use them going into arc 3. There is the argument that these passives will be part of the new ones to avoid nerfing them post purchase, but that would be lazy design. I have an alternative. \n\nInstead of replacing passives, make them additive. This keeps characters not only where they are and as strong as they are, but also allows them to become even stronger with new mechanics and new characters. Expand upon Lemurian team building, or develop the poison/counter/bleed/discard archetypes without trying to bulldoze over what was already made. Players shouldn't have to memorize multiple distinct kits for the same character.",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536927467690917979",
-      "author": "caelumace",
-      "engagement": 26,
-      "metadata": {
-        "reactions": "⬆️×6 ✨×1 Alva_goodjob×1",
+        "reactions": "Celeste_agree×10",
         "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
       }
     },
     {
       "source": "discord",
-      "time": "2026-08-12T01:58:57.684000+00:00",
+      "time": "2026-08-13T06:13:17.419000+00:00",
       "lang": "",
-      "title": "[DC] _venush@🔸有問必答┊official-q-a: - The silver reward shouldn’t be locked behind the Nightmare Difficulty (450 poi",
-      "summary": "- The silver reward shouldn’t be locked behind the Nightmare Difficulty (450 points)\n- Can we do something about the even bigger hp inflation?\n- Soulforges are currently designed as integral parts of the awakeners kit. What will happen to units with faction soulforge, units with trait soulforge and other soulforges that are integral to the base kit? Do they just disappear forever in arc 3?\n[附件: IMG_4720.png, IMG_4721.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1536914453189099601/1536916875626287264",
-      "author": "_venush",
-      "engagement": 23,
-      "media_url": "https://cdn.discordapp.com/attachments/1536914453189099601/1536916875194400858/IMG_4720.png?ex=6a7d24e1&is=6a7bd361&hm=eaf4ef5849994353ff11d1b1dd0883f043f3520049cee8557e33434fefe49810&",
-      "content_type": "image",
+      "title": "[DC] luna_.90@🔸校貓日誌┊schoolcat’s-notes: 問題來了，有多少個人記得相位對弈",
+      "summary": "問題來了，有多少個人記得相位對弈\n  └ lightproud: 只是暂时性调整。未来我们会以更大型、更集中的更新来推动相位对弈的演进。这样也能确保环境不过于频繁变化。",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537343267459571753",
+      "author": "luna_.90",
+      "engagement": 29,
       "metadata": {
-        "reactions": "Lotan_ok×5 ✅×2",
+        "reactions": "✅×8 🐷×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-13T06:10:16.764000+00:00",
+      "lang": "",
+      "title": "[DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: ## 2、融灾禁区 **困难、噩梦、癫狂难度的第 1—4 波次强度将会下调，整体更接近上一档难度第 5 波的水平。 **  旧版每档难度的 5 个波次强度较为接",
+      "summary": "## 2、融灾禁区\n**困难、噩梦、癫狂难度的第 1—4 波次强度将会下调，整体更接近上一档难度第 5 波的水平。 **\n\n旧版每档难度的 5 个波次强度较为接近，仅存在一定波动；新版将重新调整波次之间的难度曲线，让挑战强度从第 1 波到第 5 波更加平滑地逐步提升，其中第 5 波将始终是最具挑战性的部分。这将为玩家留下更明确的学习和适应过程，也让持续挑战的体验更加友好。 \n\n**相应地，噩梦难度仍然会增加 1250 银芯奖励。 **\n\n我们理解部分新玩家对此存在压力和顾虑。同时也想说明：自开服以来，游戏在各个系统、活动等免费内容中累计新增的银芯和抽数奖励，早已远超融灾禁区同期的总产出。 新玩家的追赶速度实际上在不断加快，旧角色的实力强化也在持续发生。高强度挑战带来的奖励差额，远小于这些常驻渠道带来的补充。即便是精粹灵核碎片，我们也已经在其他渠道提供了更多获取方式。 \n\n在这个背景下，我们认为，为高强度挑战提供适当的银芯奖励是恰当的——付出足够努力的守密人，理应得到更多回报。 \n\n我们也会确保普通玩家在获取这些银芯奖励时，仍然具备合理的通关可能性。唤醒体的超限爆发或最终法则可以让通关更加轻松，但不应该成为通关所必需的门槛。如果实际情况偏离了这一目标，我们会在后续作出修正。\n  └ heikwok: 話說這方面希望製作組可以特別注意一下\n只是假設\n假設未來3.0改版後靈塑全數失效，由於部分角色有一大部分強度及機制綁定靈塑，將會是相對沉重的打擊\n希望融災方面也可以及時作出相應調整，或是補救措施之類的，而不是等一段長時間後再作補強\n畢竟2.0開頭就是這種情況，結果搞半年才開始調整就有點太晚了",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537342509737443428",
+      "author": "lightproud",
+      "engagement": 26,
+      "metadata": {
+        "reactions": "👁️×4 🍬×3 🐷×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-13T02:23:51.404000+00:00",
+      "lang": "",
+      "title": "[DC] shadow_blings_31584@🔸校貓日誌┊schoolcat’s-notes: 1.融灾难度调整：（1）只开放n6，难度基于之前n4、n5之间的数值差，恢复之前n4、n5一倍的血量和攻击差，着重调整n5-n6的数值倍数 （2）n6奖励放置少",
+      "summary": "1.融灾难度调整：（1）只开放n6，难度基于之前n4、n5之间的数值差，恢复之前n4、n5一倍的血量和攻击差，着重调整n5-n6的数值倍数\n（2）n6奖励放置少量养成材料，不放抽卡资源。并设置挑战成功的限时称号，每年打过几次会给予永久称号\n（3）细化每个区间的奖励，现在每50分才给予奖励太苛刻，恢复之前25分一档奖励的设置\n2.创造额外营收：缺少多元化营收就会过度关注竞技数值。\n（1）出皮肤：一种是出官方投票和单独问卷，只出高人气角色皮肤售卖，质量达到旺达、蜘蛛那种皮肤的水准就能卖爆\n这个最好需要额外招人做\n（2）有些命轮的卡面也可以直接用来做皮肤卖\n（3）提高大大月卡的奖励，目前大大月卡奖励都没有实质性的养成材料，很多玩家都认为缺少性价比而放弃购买\n3.改善运营公告：有恶性bug第一时间通知玩家，然后再发布修复公告。避免再出现福袋、诞墨、蚀萝的情况\n  └ lingyujiling: 青天大老爷",
+      "url": "https://discord.com/channels/1131791637933199470/1537063552559349881/1537285528607658024",
+      "author": "shadow_blings_31584",
+      "engagement": 26,
+      "metadata": {
+        "reactions": "👍×7 👎×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-13T06:37:15.868000+00:00",
+      "lang": "",
+      "title": "[DC] yi000607@🔸綜合討論: 就跟要先做誰的倒模出來一樣令人糾結",
+      "summary": "就跟要先做誰的倒模出來一樣令人糾結",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1537349300751700088",
+      "author": "yi000607",
+      "engagement": 24,
+      "metadata": {
+        "reactions": "🌿×7 ❓×1",
         "reply_count": 0,
-        "attachment_count": 2,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1536914453189099601/1536916875194400858/IMG_4720.png?ex=6a7d24e1&is=6a7bd361&hm=eaf4ef5849994353ff11d1b1dd0883f043f3520049cee8557e33434fefe49810&",
-          "https://cdn.discordapp.com/attachments/1536914453189099601/1536916875433222174/IMG_4721.png?ex=6a7d24e1&is=6a7bd361&hm=3b82951647562b4dcc7bbea8b45a933ce7484defd467424b594f7c961a3460da&"
-        ],
-        "channel": "🔸有問必答┊official-q-a"
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-13T06:30:06.337000+00:00",
+      "lang": "",
+      "title": "[DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: In our testing, poison and counter builds are still able to hold up, so there ar",
+      "summary": "In our testing, poison and counter builds are still able to hold up, so there are no plans to adjust them for now. If the need arises, we'll make adjustments to help them out. Thank you for the clarification.\n  └ angbak: May I check what is the hp used in your testing?",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537347499168366632",
+      "author": "lightproud",
+      "engagement": 23,
+      "metadata": {
+        "reactions": "Saya_cry×4 🥀×1 24_clown×2",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-13T06:01:43.120000+00:00",
+      "lang": "",
+      "title": "[DC] yi000607@🔸綜合討論: ~~你怎知我穿過~~",
+      "summary": "~~你怎知我穿過~~\n  └ 0.0._.0_0.: 好色 👀\n  └ under_bright_light: \n  └ coleerouo: 嚇哭了\n這就是5771的群友啊⋯",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1537340355358494782",
+      "author": "yi000607",
+      "engagement": 18,
+      "metadata": {
+        "reactions": "🥵×2 Jenkin_processing×2",
+        "reply_count": 3,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-13T06:26:07.802000+00:00",
+      "lang": "",
+      "title": "[DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: 仍然可以随便挑选。",
+      "summary": "仍然可以随便挑选。\n  └ angbak: Translation for EN. You're not locked to a difficulty for all 5 waves",
+      "url": "https://discord.com/channels/1131791637933199470/1537340158863482921/1537346498680066068",
+      "author": "lightproud",
+      "engagement": 17,
+      "metadata": {
+        "reactions": "👌×5",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸校貓日誌┊schoolcat’s-notes"
       }
     }
   ]

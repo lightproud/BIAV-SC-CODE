@@ -1,44 +1,62 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-13T07:23:55.572021+00:00",
+  "collected_at": "2026-08-13T10:03:02.427705+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 11,
   "items": [
     {
       "source": "bilibili",
-      "time": "2026-08-12T08:10:41+00:00",
+      "time": "2026-08-12T19:29:20+00:00",
       "lang": "zh",
-      "title": "奶耶之歌",
-      "summary": "└ 追忆endrey (81赞): 比原作过得好[笑哭]\n  └ 仈氿拾 (6赞): [笑哭]\n  └ ハルカとソラ (39赞): 既然不用穹做抽象视频吗？还是太爱穹妹了",
-      "url": "https://www.bilibili.com/video/BV1ZkgG6tEGn",
-      "author": "我的春日野穹又在何方",
-      "engagement": 5454,
-      "media_url": "https://i1.hdslb.com/bfs/archive/e5c55b31ebf721a82741d43809c6b51694ac515d.jpg",
+      "title": "第一期525超维戒指预备十队，7个千万级别队伍，1队戒指魔术磨队防杀，2队百分比固伤和高成长",
+      "summary": "-\n  └ 暮知藏 (2赞): 组一辈子打击队吧😭\n  └ 听筒ist (2赞): 为什么有两个引舵之帆和针筒\n  └ 朝星- (1赞): [椎名菜羽_nano好]来学习了",
+      "url": "https://www.bilibili.com/video/BV15HgE6TEip",
+      "author": "路过的耄耋",
+      "engagement": 762,
+      "media_url": "https://i0.hdslb.com/bfs/archive/3c0c014f1155b5a12492d6153f4d000c47cd54b2.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 5402,
-        "comment_count": 52,
+        "play": 751,
+        "comment_count": 11,
         "comments_fetched": 3,
-        "danmaku": 12
+        "danmaku": 0
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-08-12T15:07:52+00:00",
+      "time": "2026-08-12T17:39:18+00:00",
       "lang": "zh",
-      "title": "『沙耶让梨』",
-      "summary": "新角色小沙耶的妹妹小小耶\n  └ 是Eta呀 (1赞): 三个肉块抢果冻吃[少女乐团派对_开心][少女乐团派对_开心][少女乐团派对_开心]",
-      "url": "https://www.bilibili.com/video/BV1PBgj6mE6L",
-      "author": "小龙猫大能力",
-      "engagement": 325,
-      "media_url": "https://i2.hdslb.com/bfs/archive/2865f049d9376e608231ad22a89f5bc0cdfda28b.jpg",
+      "title": "给茉萝阿奥四位大人跪下了",
+      "summary": "-\n  └ CreScent知式 (3赞): 51级打完整个主线，这阵容还是太权威了，最终战甚至没看机制就硬和boss对轰，我打完都不知道那两次流血是怎么流死的\n  └ 莫心非姬 (1赞): 啊这样的孩子们，今年是主推打击大C，不玩机制，玩的就是数值[笑哭]\n  └ Aeriff_ (1赞): 确实大运，就是打长线的话银钥太少了吧[笑哭]我一般给阿拉带医生专",
+      "url": "https://www.bilibili.com/video/BV1xDgL6SESV",
+      "author": "CreScent知式",
+      "engagement": 654,
+      "media_url": "https://i1.hdslb.com/bfs/archive/b4ebceae2f06f92eb51a3454ffbde131ba613671.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 323,
-        "comment_count": 2,
-        "comments_fetched": 1,
+        "play": 645,
+        "comment_count": 9,
+        "comments_fetched": 3,
         "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-13T02:58:36+00:00",
+      "lang": "zh",
+      "title": "我已急哭",
+      "summary": "-\n  └ 17岁性感人妻蟑螂 (7赞): ？！\n意思是说，我不能给对手展示我的雷霆二老头配队了吗\n  └ ileevo (4赞): 校猫没活了想偷懒直说，有点像pvp爆不了米，还没法美美数值膨胀抽卡，不想多写东西放弃了🙄🙄本来处处砍一刀再加上一堆区不加强就没啥新意科研，在停止更新更是老东西失去活力，疑似是要瘟似pvp去美美膨胀融灾边缘控制去了[正经狼咖_哦？]\n  └ 花葉月 (3赞): 臣妾百口莫辩[大哭]",
+      "url": "https://www.bilibili.com/video/BV1NBgE6xE5b",
+      "author": "莱星Ligh",
+      "engagement": 431,
+      "media_url": "https://i2.hdslb.com/bfs/archive/244972697c7bc0d3178720bb7ae83fdd1d5d4161.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 411,
+        "comment_count": 20,
+        "comments_fetched": 3,
+        "danmaku": 1
       }
     },
     {
@@ -46,35 +64,71 @@
       "time": "2026-08-13T03:51:24+00:00",
       "lang": "zh",
       "title": "有人吃过腐烂的猪肉吗",
-      "summary": "你们吃过腐烂的猪肉吗？我吃过。不是放了一晚上有点味道那种，是扔在墙角七天、爬满白蛆、流着黄绿色脓水、苍蝇围着打转的那种。入口先是腐肉特有的甜腥恶臭，像把整张脸埋进了死老鼠的肚子里，那股味道顺着鼻腔直插后脑勺，天灵盖都发麻。紧接着蛆虫在舌头上炸了锅，有的往牙缝里钻，有的往喉咙口爬，像含了一把活跳跳的米粒，又烫又痒。\n\n牙齿咬下去，腐肉已经烂成了肉泥，软塌塌地糊在舌头上，像在吃一碗用尸水和烂肉熬成的稀粥。脓水从嘴角溢出来，黏糊糊、凉丝丝，带着一股发酵过度的酸馊味，像喝了一口化粪池勾兑的过期酸奶。偶尔咬到一块没\n  └ 夏雨提倡华尔兹 (2赞): [星星眼][星星眼]\n  └ 夏雨提倡华尔兹 (2赞): [打call][打call]\n  └ 闽江哥萨克 (0赞): 吃自己的来了",
+      "summary": "你们吃过腐烂的猪肉吗？我吃过。不是放了一晚上有点味道那种，是扔在墙角七天、爬满白蛆、流着黄绿色脓水、苍蝇围着打转的那种。入口先是腐肉特有的甜腥恶臭，像把整张脸埋进了死老鼠的肚子里，那股味道顺着鼻腔直插后脑勺，天灵盖都发麻。紧接着蛆虫在舌头上炸了锅，有的往牙缝里钻，有的往喉咙口爬，像含了一把活跳跳的米粒，又烫又痒。\n\n牙齿咬下去，腐肉已经烂成了肉泥，软塌塌地糊在舌头上，像在吃一碗用尸水和烂肉熬成的稀粥。脓水从嘴角溢出来，黏糊糊、凉丝丝，带着一股发酵过度的酸馊味，像喝了一口化粪池勾兑的过期酸奶。偶尔咬到一块没\n  └ 117の钢毛 (6赞): 你们谁给宠物喂过自己的金叶？\n  └ 夏雨提倡华尔兹 (2赞): [星星眼][星星眼]\n  └ 夏雨提倡华尔兹 (2赞): [打call][打call]",
       "url": "https://www.bilibili.com/video/BV1AkgE6XETe",
       "author": "池沼大王678",
-      "engagement": 265,
+      "engagement": 399,
       "media_url": "https://i0.hdslb.com/bfs/archive/52d97a192a6f0af37258df00b13b2725853bc9f7.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 261,
-        "comment_count": 4,
+        "play": 392,
+        "comment_count": 7,
         "comments_fetched": 3,
         "danmaku": 0
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-08-12T07:58:34+00:00",
+      "time": "2026-08-12T15:07:52+00:00",
       "lang": "zh",
-      "title": "最喜欢了口牙！(*￣3￣)",
-      "summary": "摸个鱼给大家看看(:з っ )っ\n补药因为这条关注我呀，以后不会发沙耶了凹○\n  └ 九千岁老头爆打泰森 (0赞): 明明是由美丽的画构成的神做，在我眼里确变成了美丽的少女[大哭]\n  └ Nautilus114 (0赞): 沙耶笑死我了\n  └ 憂莉 (0赞): 沙耶好看[星星眼]",
-      "url": "https://www.bilibili.com/video/BV1mpgG6GEP6",
-      "author": "方照白沙",
-      "engagement": 151,
-      "media_url": "https://i2.hdslb.com/bfs/archive/1d6004a205cdd59e6da7619f977a509dae436322.jpg",
+      "title": "『沙耶让梨』",
+      "summary": "新角色小沙耶的妹妹小小耶\n  └ 是Eta呀 (2赞): 三个肉块抢果冻吃[少女乐团派对_开心][少女乐团派对_开心][少女乐团派对_开心]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 耕司青海瑶 (0赞): [笑哭]",
+      "url": "https://www.bilibili.com/video/BV1PBgj6mE6L",
+      "author": "小龙猫大能力",
+      "engagement": 333,
+      "media_url": "https://i2.hdslb.com/bfs/archive/2865f049d9376e608231ad22a89f5bc0cdfda28b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 147,
-        "comment_count": 4,
+        "play": 328,
+        "comment_count": 5,
         "comments_fetched": 3,
-        "danmaku": 2
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-12T12:45:09+00:00",
+      "lang": "zh",
+      "title": "这给我干到哪年了？",
+      "summary": "-\n  └ 是阿飘生 (0赞): 对的对的",
+      "url": "https://www.bilibili.com/video/BV13ng56HECF",
+      "author": "纯白233啊",
+      "engagement": 265,
+      "media_url": "https://i1.hdslb.com/bfs/archive/d4bdcedf4e2862ccb446b0d52d8a7ce86b95ab08.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 264,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-13T05:20:29+00:00",
+      "lang": "zh",
+      "title": "忘却前夜出号",
+      "summary": "心理底价450，要去备考故出号\n  └ 秋沫爱吃 (0赞): 账号低于3级别找我。。。\n  └ 就帝都温 (0赞): 回关谈下 老师\n  └ 燃え落ちない翼 (0赞): 感觉不会很高价的样子啊[小A和小B_喝茶][小A和小B_喝茶]",
+      "url": "https://www.bilibili.com/video/BV1iPgH6jEsv",
+      "author": "秋沫爱吃",
+      "engagement": 160,
+      "media_url": "https://i1.hdslb.com/bfs/archive/fbb1478e9e125f0d6171b18a45102d5c675bebe7.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 157,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
       }
     },
     {
@@ -85,11 +139,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1V7gj6wEUy",
       "author": "狛枝的氧气管",
-      "engagement": 129,
+      "engagement": 130,
       "media_url": "https://i0.hdslb.com/bfs/archive/256e7324c63abf4971ee538464fad029853ffc24.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 129,
+        "play": 130,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -100,16 +154,16 @@
       "time": "2026-08-13T06:29:41+00:00",
       "lang": "zh",
       "title": "沙耶与肥美沙耶的日常生活",
-      "summary": "@耕司青海瑶 @妍伊moe @_aabcd_\n  └ 七吕可真是一对好cp啊 (2赞): 😭😭😭🖐🏻️🖐🏻️🖐🏻️🖐🏻️🖐🏻️两个肥美的肉块saya酱知道就人形的自己太无聊了  就开始跳舞逗人形saya酱开心  真的太感人了[大哭][大哭][大哭][大哭]",
+      "summary": "@耕司青海瑶 @妍伊moe @_aabcd_\n  └ 七吕可真是一对好cp啊 (4赞): 😭😭😭🖐🏻️🖐🏻️🖐🏻️🖐🏻️🖐🏻️两个肥美的肉块saya酱知道就人形的自己太无聊了  就开始跳舞逗人形saya酱开心  真的太感人了[大哭][大哭][大哭][大哭]\n  └ 耕司青海瑶 (1赞): [doge]",
       "url": "https://www.bilibili.com/video/BV18agn6MEiE",
       "author": "七吕可真是一对好cp啊",
-      "engagement": 14,
+      "engagement": 54,
       "media_url": "https://i1.hdslb.com/bfs/archive/b9de01dd673a1006eeedaff06e0093c8a3dc0ec3.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 13,
-        "comment_count": 1,
-        "comments_fetched": 1,
+        "play": 51,
+        "comment_count": 3,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
@@ -121,11 +175,11 @@
       "summary": "└ 岩仓鈴音 (0赞): 娶不到这样的我就不死了[喜欢][喜欢][喜欢] 00:01",
       "url": "https://www.bilibili.com/video/BV1cUgE6UEGi",
       "author": "龙傲天葉月夜Doctor",
-      "engagement": 13,
+      "engagement": 32,
       "media_url": "https://i2.hdslb.com/bfs/archive/5781d66ea0b19fa1de909a2cc8c8317930b90597.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 12,
+        "play": 31,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -136,16 +190,16 @@
       "time": "2026-08-13T02:44:18+00:00",
       "lang": "zh",
       "title": "沙耶之歌",
-      "summary": "#沙耶之歌 这个网站还挺好玩 只不过全是韩语",
+      "summary": "#沙耶之歌 这个网站还挺好玩 只不过全是韩语\n  └ 耕司青海瑶 (0赞): [doge]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV1QTgJ6vEf4",
       "author": "-沙耶-saya",
-      "engagement": 7,
+      "engagement": 12,
       "media_url": "https://i0.hdslb.com/bfs/archive/8bded4c998ba5b2841c0771bc46213598f35fd98.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 7,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 10,
+        "comment_count": 2,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     }
