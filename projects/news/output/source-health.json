@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-14T18:52:33.263959+00:00",
+  "updated_at": "2026-08-14T21:24:29.608774+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1142
   },
   "validation_drops": {
-    "generated_at": "2026-08-14T18:51:48.428607+00:00",
+    "generated_at": "2026-08-14T21:23:41.438389+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -18,7 +18,7 @@
       "last_success_date": "2026-08-15",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3663,
+      "total_items": 3664,
       "errors": []
     },
     "steam": {
@@ -47,10 +47,10 @@
     },
     "youtube": {
       "level": "active",
-      "last_success_date": "2026-08-14",
+      "last_success_date": "2026-08-15",
       "last_check_date": "2026-08-15",
-      "consecutive_silent_days": 1,
-      "total_items": 3433,
+      "consecutive_silent_days": 0,
+      "total_items": 3434,
       "errors": []
     },
     "reddit": {
@@ -58,7 +58,7 @@
       "last_success_date": "2026-08-15",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3969,
+      "total_items": 3972,
       "errors": []
     },
     "official": {
@@ -79,10 +79,10 @@
     },
     "weibo": {
       "level": "active",
-      "last_success_date": "2026-08-14",
+      "last_success_date": "2026-08-15",
       "last_check_date": "2026-08-15",
-      "consecutive_silent_days": 1,
-      "total_items": 13115,
+      "consecutive_silent_days": 0,
+      "total_items": 13119,
       "errors": []
     },
     "bahamut": {
@@ -122,7 +122,7 @@
       "last_success_date": "2026-08-15",
       "last_check_date": "2026-08-15",
       "consecutive_silent_days": 0,
-      "total_items": 641,
+      "total_items": 642,
       "errors": []
     },
     "note_com": {
@@ -154,7 +154,7 @@
       "last_success_date": "2026-08-07",
       "last_check_date": "2026-08-15",
       "consecutive_silent_days": 8,
-      "total_items": 11448,
+      "total_items": 11468,
       "errors": []
     },
     "taptap_review": {
