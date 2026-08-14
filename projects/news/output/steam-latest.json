@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-13T21:43:21.798118+00:00",
+  "collected_at": "2026-08-14T01:44:25.455962+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -18,7 +18,7 @@
       "voted_up": true,
       "review": "Direção de arte, trilha sonora e combate simplesmente 10/10.\r\n\r\nA história do jogo é muito boa, e tem fortes elementos lovecraftianos. O jogo oferece um combate um pouco mais desafiador do que a maioria do gênero gacha rpg de turnos oferece.\r\n\r\nO combate é tipo Slay The Spire, um cardgame onde as skills dos personagens são cartas (estilo deckbuilder).\r\n\r\nA cereja do bolo é a trajetória do desenvolvimento, que demonstra a paixão dos desenvolvedores com a obra e o respeito com a comunidade que os apoia.",
       "timestamp_created": 1786642937,
-      "playtime_forever": 210
+      "playtime_forever": 233
     },
     {
       "source": "steam",
@@ -154,21 +154,6 @@
       "review": "好玩",
       "timestamp_created": 1786591943,
       "playtime_forever": 1944
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-13T00:34:22+00:00",
-      "lang": "schinese",
-      "title": "[负面] 制作组你们晚上睡觉最好睁一只眼闭一只眼",
-      "summary": "制作组你们晚上睡觉最好睁一只眼闭一只眼",
-      "url": "https://steamcommunity.com/profiles/76561198710473165/recommended/3052450",
-      "author": "76561198710473165",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "制作组你们晚上睡觉最好睁一只眼闭一只眼",
-      "timestamp_created": 1786581262,
-      "playtime_forever": 621
     }
   ]
 }

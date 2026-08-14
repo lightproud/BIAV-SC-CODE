@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-13T21:43:58.598063+00:00",
-  "total_gaps": 250,
+  "generated_at": "2026-08-14T01:45:03.264694+00:00",
+  "total_gaps": 251,
   "coverage": {
     "sources_total": 20,
     "sources_scanned": 19,
@@ -259,6 +259,12 @@
         "2026-07-25"
       ],
       "count": 14
+    },
+    "weibo": {
+      "missing_dates": [
+        "2026-08-13"
+      ],
+      "count": 1
     },
     "weixin": {
       "missing_dates": [
