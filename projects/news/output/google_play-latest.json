@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-14T09:59:32.973433+00:00",
+  "collected_at": "2026-08-14T13:00:30.032776+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 124,
   "items": [
     {
       "source": "google_play",
@@ -803,6 +803,16 @@
       "summary": "It was so fun! i usually get bored but this game is so greatt!!!~~",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-fe7c92c1-7523-4fb9-a2ad-05667b6e3b5a",
       "author": "พิชชา พีช",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-13T11:44:35",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 i like women, i like men, i like horror",
+      "summary": "i like women, i like men, i like horror beyond comprehension. and this game has all of it. 10/10 . awesome game.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-0ba9f0f0-c61c-49f0-9e05-2203de4bc5b9",
+      "author": "Fritz Katzen",
       "engagement": 0
     },
     {

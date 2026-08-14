@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-14T09:59:32.973433+00:00",
+  "collected_at": "2026-08-14T13:00:30.032776+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "source": "youtube",
@@ -13,8 +13,44 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=Ducm-csEGY0",
       "author": "Flares117",
-      "engagement": 444,
+      "engagement": 695,
       "media_url": "https://i.ytimg.com/vi/Ducm-csEGY0/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-14T10:00:20Z",
+      "lang": "",
+      "title": "【忘却前夜】Ver.2.2「魂を覗き見る旅」公式PV",
+      "summary": "8/20 Ver.2.2「魂を覗き見る旅」 彼女の導きに従えば、やがて苦しみは過ぎ去り、 すべてが「良く」なるだろう ...",
+      "url": "https://www.youtube.com/watch?v=PgbhhvWTDgA",
+      "author": "忘却前夜【日本版公式】",
+      "engagement": 342,
+      "media_url": "https://i.ytimg.com/vi/PgbhhvWTDgA/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-14T10:01:04Z",
+      "lang": "",
+      "title": "(망각전야) 모샤 종결 공략! 지금 안 뽑으면 진짜 후회함",
+      "summary": "morimens #게임 #망각전야 #공략 디스코드 : https://discord.gg/TaDkgyQ35y 치지직 ...",
+      "url": "https://www.youtube.com/watch?v=G8k5uPrAEvE",
+      "author": "박현(Muyeong)",
+      "engagement": 92,
+      "media_url": "https://i.ytimg.com/vi/G8k5uPrAEvE/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-14T08:59:35Z",
+      "lang": "",
+      "title": "Morimens \\\\ Прохождение Хард сюжетки (H5-11)",
+      "summary": "Добровольная поддержка: https://www.donationalerts.com/r/closetom Напрямую: 2200700154063498 Т-Банк Соцсети: ...",
+      "url": "https://www.youtube.com/watch?v=hltfAyE1cU0",
+      "author": "Closetom",
+      "engagement": 85,
+      "media_url": "https://i.ytimg.com/vi/hltfAyE1cU0/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
@@ -25,8 +61,20 @@
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=vvUmjh1RrC0",
       "author": "박현(Muyeong)",
-      "engagement": 82,
+      "engagement": 84,
       "media_url": "https://i.ytimg.com/vi/vvUmjh1RrC0/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-13T23:50:12Z",
+      "lang": "",
+      "title": "Directo relax Morimens",
+      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
+      "url": "https://www.youtube.com/watch?v=twfejsl41r4",
+      "author": "OcteKG",
+      "engagement": 75,
+      "media_url": "https://i.ytimg.com/vi/twfejsl41r4/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -43,38 +91,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-13T23:50:12Z",
-      "lang": "",
-      "title": "Directo relax Morimens",
-      "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
-      "url": "https://www.youtube.com/watch?v=twfejsl41r4",
-      "author": "OcteKG",
-      "engagement": 70,
-      "media_url": "https://i.ytimg.com/vi/twfejsl41r4/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-08-13T18:35:59Z",
       "lang": "",
       "title": "Morimens Pollux Boss Rotation (silent)",
       "summary": "",
       "url": "https://www.youtube.com/watch?v=EGFlhGnVc_M",
       "author": "Zyocuh",
-      "engagement": 44,
+      "engagement": 46,
       "media_url": "https://i.ytimg.com/vi/EGFlhGnVc_M/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-14T08:59:35Z",
-      "lang": "",
-      "title": "Morimens \\\\ Прохождение Хард сюжетки (H5-11)",
-      "summary": "Добровольная поддержка: https://www.donationalerts.com/r/closetom Напрямую: 2200700154063498 Т-Банк Соцсети: ...",
-      "url": "https://www.youtube.com/watch?v=hltfAyE1cU0",
-      "author": "Closetom",
-      "engagement": 30,
-      "media_url": "https://i.ytimg.com/vi/hltfAyE1cU0/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
@@ -91,6 +115,30 @@
     },
     {
       "source": "youtube",
+      "time": "2026-08-13T23:39:56Z",
+      "lang": "",
+      "title": "망각전야(Morimens) 융재 혈쇄히로 1파 5급 클리어 영상 08.03- 08.16",
+      "summary": "타이스, 자비로운 양육, 진리의 문, 생명력 착취 히로, 은밀한 오후 휴식 시간, 밤의 그림자 속에서, 묘지의 속삭임 혈쇄·히로, 진홍빛으로 ...",
+      "url": "https://www.youtube.com/watch?v=pEPaBTwPopk",
+      "author": "앤농",
+      "engagement": 6,
+      "media_url": "https://i.ytimg.com/vi/pEPaBTwPopk/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-14T10:00:01Z",
+      "lang": "",
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 1:Alert V! 融災1-5 Boss戰的部分",
+      "summary": "忘卻前夜 #morimens 融災更新,8月3號~8月17日. Regional D-Effect Zone Update ( August 3-August 17). 1-5 不算太難打的boss, ...",
+      "url": "https://www.youtube.com/watch?v=lpG341IZmzA",
+      "author": "Noir",
+      "engagement": 5,
+      "media_url": "https://i.ytimg.com/vi/lpG341IZmzA/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-08-13T16:18:57Z",
       "lang": "",
       "title": "沙耶、被遺忘的愛之種___忘卻前夜 Morimens【ㄈㄈㄈ遊戲Live】【556】",
@@ -99,18 +147,6 @@
       "author": "赤蜻.",
       "engagement": 5,
       "media_url": "https://i.ytimg.com/vi/e_lADV6cVlg/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-13T23:39:56Z",
-      "lang": "",
-      "title": "망각전야(Morimens) 융재 혈쇄히로 1파 5급 클리어 영상 08.03- 08.16",
-      "summary": "타이스, 자비로운 양육, 진리의 문, 생명력 착취 히로, 은밀한 오후 휴식 시간, 밤의 그림자 속에서, 묘지의 속삭임 혈쇄·히로, 진홍빛으로 ...",
-      "url": "https://www.youtube.com/watch?v=pEPaBTwPopk",
-      "author": "앤농",
-      "engagement": 4,
-      "media_url": "https://i.ytimg.com/vi/pEPaBTwPopk/hqdefault.jpg",
       "content_type": "video"
     },
     {
