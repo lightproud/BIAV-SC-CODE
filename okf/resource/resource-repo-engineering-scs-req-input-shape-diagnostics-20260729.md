@@ -4,7 +4,7 @@ title: "scs-req-input-shape-diagnostics-20260729"
 description: "问「这是银芯的 bug 吗」（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/scs-req-input-shape-diagnostics-20260729.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-08-13"
+timestamp: "2026-08-14"
 ---
 
 # 指针概念
