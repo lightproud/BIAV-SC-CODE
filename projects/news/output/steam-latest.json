@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-14T04:48:15.309131+00:00",
+  "collected_at": "2026-08-14T07:21:51.479400+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-14T04:35:11+00:00",
+      "lang": "english",
+      "title": "[正面] A very fun and cool game, a lot like slay the spir...",
+      "summary": "A very fun and cool game, a lot like slay the spire in combat but with lovecraftian horror, dark themes, and a really cool art style i genuinely recommend it to anyone who wants an experience like slay the spire with some horror elements",
+      "url": "https://steamcommunity.com/profiles/76561199598156112/recommended/3052450",
+      "author": "76561199598156112",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "A very fun and cool game, a lot like slay the spire in combat but with lovecraftian horror, dark themes, and a really cool art style i genuinely recommend it to anyone who wants an experience like slay the spire with some horror elements",
+      "timestamp_created": 1786682111,
+      "playtime_forever": 563
+    },
     {
       "source": "steam",
       "time": "2026-08-14T03:09:11+00:00",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "This game is beautiful.\r\nAmazing art, fantastic gameplay, caring devs, super generous with pulls, good story.\r\nIf you are into slay the spire style games, this game is one of the best I have played.",
       "timestamp_created": 1786625597,
-      "playtime_forever": 20540
+      "playtime_forever": 20575
     },
     {
       "source": "steam",
@@ -93,7 +108,7 @@
       "voted_up": true,
       "review": "好难打",
       "timestamp_created": 1786619916,
-      "playtime_forever": 11972
+      "playtime_forever": 11996
     },
     {
       "source": "steam",
@@ -108,7 +123,7 @@
       "voted_up": true,
       "review": "福利不错",
       "timestamp_created": 1786618795,
-      "playtime_forever": 1741
+      "playtime_forever": 1801
     },
     {
       "source": "steam",
@@ -139,21 +154,6 @@
       "review": "挺好的游戏，别水社区，戾气重的离谱。",
       "timestamp_created": 1786610157,
       "playtime_forever": 44320
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-13T04:56:28+00:00",
-      "lang": "schinese",
-      "title": "[正面] 游戏还挺好玩但是键帽你老冯真飞了",
-      "summary": "游戏还挺好玩但是键帽你老冯真飞了",
-      "url": "https://steamcommunity.com/profiles/76561199140862046/recommended/3052450",
-      "author": "76561199140862046",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "游戏还挺好玩但是键帽你老冯真飞了",
-      "timestamp_created": 1786596988,
-      "playtime_forever": 2573
     }
   ]
 }
