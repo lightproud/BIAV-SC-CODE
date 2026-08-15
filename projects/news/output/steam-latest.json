@@ -1,10 +1,70 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-15T09:24:26.010910+00:00",
+  "collected_at": "2026-08-15T12:32:55.105217+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-15T01:39:59+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561199836613672/recommended/3052450",
+      "author": "76561199836613672",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1786757999,
+      "playtime_forever": 1607
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-14T15:36:58+00:00",
+      "lang": "schinese",
+      "title": "[正面] 游戏设定不错，耐玩",
+      "summary": "游戏设定不错，耐玩",
+      "url": "https://steamcommunity.com/profiles/76561198286316183/recommended/3052450",
+      "author": "76561198286316183",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "游戏设定不错，耐玩",
+      "timestamp_created": 1786721818,
+      "playtime_forever": 17205
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-15T10:46:01+00:00",
+      "lang": "koreana",
+      "title": "[正面] 일단 해",
+      "summary": "일단 해",
+      "url": "https://steamcommunity.com/profiles/76561198378792491/recommended/3052450",
+      "author": "76561198378792491",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "일단 해",
+      "timestamp_created": 1786790761,
+      "playtime_forever": 44987
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-15T09:00:59+00:00",
+      "lang": "schinese",
+      "title": "[正面] 不错，很好玩，给我感觉有点像重返未来",
+      "summary": "不错，很好玩，给我感觉有点像重返未来",
+      "url": "https://steamcommunity.com/profiles/76561198784851675/recommended/3052450",
+      "author": "76561198784851675",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "不错，很好玩，给我感觉有点像重返未来",
+      "timestamp_created": 1786784459,
+      "playtime_forever": 192
+    },
     {
       "source": "steam",
       "time": "2026-08-15T07:14:47+00:00",
@@ -18,7 +78,7 @@
       "voted_up": true,
       "review": "can't complain",
       "timestamp_created": 1786778087,
-      "playtime_forever": 999
+      "playtime_forever": 1046
     },
     {
       "source": "steam",
@@ -33,7 +93,7 @@
       "voted_up": true,
       "review": "Fun Gameplay",
       "timestamp_created": 1786773849,
-      "playtime_forever": 414
+      "playtime_forever": 487
     },
     {
       "source": "steam",
@@ -49,21 +109,6 @@
       "review": "遊戲程式經常閃跳及沒有回應,遊戲中UI亦會時不時沒有圖片顯示,遊戲程式經常要重新安裝才能遊玩,導致遊戲體驗極差.",
       "timestamp_created": 1786765933,
       "playtime_forever": 2817
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T01:39:59+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩",
-      "summary": "好玩",
-      "url": "https://steamcommunity.com/profiles/76561199836613672/recommended/3052450",
-      "author": "76561199836613672",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩",
-      "timestamp_created": 1786757999,
-      "playtime_forever": 1577
     },
     {
       "source": "steam",
@@ -94,21 +139,6 @@
       "review": "Еще ни одну игру я не начинал с росписи на надгробии))",
       "timestamp_created": 1786724835,
       "playtime_forever": 1850
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-14T15:36:58+00:00",
-      "lang": "schinese",
-      "title": "[正面] 游戏设定不错，耐玩",
-      "summary": "游戏设定不错，耐玩",
-      "url": "https://steamcommunity.com/profiles/76561198286316183/recommended/3052450",
-      "author": "76561198286316183",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "游戏设定不错，耐玩",
-      "timestamp_created": 1786721818,
-      "playtime_forever": 17140
     }
   ]
 }

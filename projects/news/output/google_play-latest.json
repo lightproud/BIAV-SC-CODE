@@ -1,10 +1,20 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-15T09:24:26.010910+00:00",
+  "collected_at": "2026-08-15T12:32:55.105217+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 123,
   "items": [
+    {
+      "source": "google_play",
+      "time": "2026-08-14T10:40:47",
+      "lang": "en",
+      "title": "[Google Play 差评] ★1 bug on lotan shortsword skill when retur",
+      "summary": "bug on lotan shortsword skill when return to deck becomes normal strike.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-2e4926de-2b3f-4f29-b92c-01cf3606b69c",
+      "author": "Vermy Balasuela",
+      "engagement": 6
+    },
     {
       "source": "google_play",
       "time": "2026-08-04T18:23:54",
@@ -43,16 +53,6 @@
       "summary": "I had a wonderful experience playing! Older reviews seem to mention the use of A.I. for many things and it seems like the creators have moved away from that and are using mostly (if not all) human work and voices.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ec1dd207-75b2-4b58-b9aa-b30d64b21e01",
       "author": "Bernadette Glorioso",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-21T23:21:41",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 absolute banger",
-      "summary": "absolute banger",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-3590fc1f-0851-4ce4-afd0-2e50ad50766a",
-      "author": "Rara",
       "engagement": 2
     },
     {
