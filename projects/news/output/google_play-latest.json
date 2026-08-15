@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-15T12:32:55.105217+00:00",
+  "collected_at": "2026-08-15T15:18:46.480970+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 124,
   "items": [
     {
       "source": "google_play",
@@ -1083,6 +1083,16 @@
       "summary": "finalmente in Italiano. gioco di strategia vera con carte, non parliamo di soliti Idle automatici, qua devi usare la testa. ogni personaggio ha le sue abilità. trama oscura, lovecraftiana, pesante. da giocare e da fare spargere la voce per farlo giocare. fine.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-94adb568-bd72-4963-a4a0-2a296cf1bc92",
       "author": "Manuel Urbano",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-14T13:12:42",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 игра чудесная.помимо невероятной графики",
+      "summary": "игра чудесная.помимо невероятной графики и сюжета есть и другие плюсы1)перевод на русский язык да,от ии но это лучше чем ничего.многие жалуются что он плохой,но как по мне это не так.перевод полностью понятный,переводится абсолютно весь текст игры и все надписи на своих местах.2)в игре абсолютно не важен донат,наград достаточно.3)не нужно тратить время на однообразные рутиные действия как добыча ресурсов для прокачки персонажей.4)сюжет разделён на удобные небольшие части,которые удобно проходить",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-df24cda4-0466-4d4d-b497-808fb72b5f4e",
+      "author": "Таня",
       "engagement": 0
     },
     {
