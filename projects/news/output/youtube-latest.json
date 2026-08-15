@@ -1,22 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-15T03:37:14.827288+00:00",
+  "collected_at": "2026-08-15T06:34:14.673284+00:00",
   "source": "youtube",
   "data_layer": "output",
   "item_count": 16,
   "items": [
-    {
-      "source": "youtube",
-      "time": "2026-08-14T04:00:06Z",
-      "lang": "",
-      "title": "[Morimens] Hidden Tips + Tricks 2026 Edition - Time Savers/Facts Most players don&#39;t know",
-      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=Ducm-csEGY0",
-      "author": "Flares117",
-      "engagement": 1308,
-      "media_url": "https://i.ytimg.com/vi/Ducm-csEGY0/hqdefault.jpg",
-      "content_type": "video"
-    },
     {
       "source": "youtube",
       "time": "2026-08-14T10:00:20Z",
@@ -25,8 +13,20 @@
       "summary": "8/20 Ver.2.2「魂を覗き見る旅」 彼女の導きに従えば、やがて苦しみは過ぎ去り、 すべてが「良く」なるだろう ...",
       "url": "https://www.youtube.com/watch?v=PgbhhvWTDgA",
       "author": "忘却前夜【日本版公式】",
-      "engagement": 877,
+      "engagement": 969,
       "media_url": "https://i.ytimg.com/vi/PgbhhvWTDgA/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-15T04:26:30Z",
+      "lang": "",
+      "title": "[Morimens] Improving the changes Spreadsheet and theorycrafting Ecog and Ecogless Madness teams",
+      "summary": "Don't know how long. Will be doing other stuff too.",
+      "url": "https://www.youtube.com/watch?v=Q3XGOqReeUs",
+      "author": "Flares117",
+      "engagement": 455,
+      "media_url": "https://i.ytimg.com/vi/Q3XGOqReeUs/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -37,20 +37,8 @@
       "summary": "morimens #게임 #망각전야 #공략 디스코드 : https://discord.gg/TaDkgyQ35y 치지직 ...",
       "url": "https://www.youtube.com/watch?v=G8k5uPrAEvE",
       "author": "박현(Muyeong)",
-      "engagement": 304,
+      "engagement": 332,
       "media_url": "https://i.ytimg.com/vi/G8k5uPrAEvE/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-14T21:57:53Z",
-      "lang": "",
-      "title": "[Morimens] Improving the changes Spreadsheet and theorycrafting Ecog and Ecogless Madness teams",
-      "summary": "Don't know how long. Will be doing other stuff too.",
-      "url": "https://www.youtube.com/watch?v=Q3XGOqReeUs",
-      "author": "Flares117",
-      "engagement": 300,
-      "media_url": "https://i.ytimg.com/vi/Q3XGOqReeUs/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
@@ -61,8 +49,20 @@
       "summary": "Добровольная поддержка: https://www.donationalerts.com/r/closetom Напрямую: 2200700154063498 Т-Банк Соцсети: ...",
       "url": "https://www.youtube.com/watch?v=hltfAyE1cU0",
       "author": "Closetom",
-      "engagement": 154,
+      "engagement": 155,
       "media_url": "https://i.ytimg.com/vi/hltfAyE1cU0/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-15T04:24:47Z",
+      "lang": "",
+      "title": "[Morimens] Reacting to Chinese Morimens Video Titles/Fanfics/etc on Livestream.",
+      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "url": "https://www.youtube.com/watch?v=7GJrHnnhd20",
+      "author": "Flares117",
+      "engagement": 99,
+      "media_url": "https://i.ytimg.com/vi/7GJrHnnhd20/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -73,7 +73,7 @@
       "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
       "url": "https://www.youtube.com/watch?v=twfejsl41r4",
       "author": "OcteKG",
-      "engagement": 89,
+      "engagement": 91,
       "media_url": "https://i.ytimg.com/vi/twfejsl41r4/hqdefault.jpg",
       "content_type": "video"
     },
@@ -91,6 +91,18 @@
     },
     {
       "source": "youtube",
+      "time": "2026-08-15T00:04:19Z",
+      "lang": "",
+      "title": "모리멘스 (망각전야) - 8/3 시즌 융재금구 W3A5+",
+      "summary": "그저 평범한 풀돌 무셰트의 철거 작업입니다. 무셰트는 사야의 0코 침식으로 핸드가 뒤집혀도 팀원 누군가의 타격이 여럿 잡힌다면 ...",
+      "url": "https://www.youtube.com/watch?v=F6rVODw5lco",
+      "author": "때까치",
+      "engagement": 4,
+      "media_url": "https://i.ytimg.com/vi/F6rVODw5lco/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-08-14T19:00:36Z",
       "lang": "",
       "title": "LOTAN: CETARCHON SHOWCASE + Chapter 2-4 Walkthrough! | Morimens",
@@ -103,14 +115,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-15T00:04:19Z",
+      "time": "2026-08-15T00:02:26Z",
       "lang": "",
-      "title": "모리멘스 (망각전야) - 8/3 시즌 융재금구 W3A5+",
-      "summary": "그저 평범한 풀돌 무셰트의 철거 작업입니다. 무셰트는 사야의 0코 침식으로 핸드가 뒤집혀도 팀원 누군가의 타격이 여럿 잡힌다면 ...",
-      "url": "https://www.youtube.com/watch?v=F6rVODw5lco",
+      "title": "모리멘스 (망각전야) - 8/3 시즌 융재금구 W2A5+",
+      "summary": "이전부터 1페이즈를 총성 위주로 해결하고 2페이즈는 그 사이 아껴두었던 높은 폭염 스택의 엑사플레어로 마무리하는 플레이를 보긴 ...",
+      "url": "https://www.youtube.com/watch?v=eGEIPRC17J8",
       "author": "때까치",
       "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/F6rVODw5lco/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/eGEIPRC17J8/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -135,18 +147,6 @@
       "author": "J3w3lz4nn",
       "engagement": 1,
       "media_url": "https://i.ytimg.com/vi/Pcf4-uSi05k/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-15T00:02:26Z",
-      "lang": "",
-      "title": "모리멘스 (망각전야) - 8/3 시즌 융재금구 W2A5+",
-      "summary": "이전부터 1페이즈를 총성 위주로 해결하고 2페이즈는 그 사이 아껴두었던 높은 폭염 스택의 엑사플레어로 마무리하는 플레이를 보긴 ...",
-      "url": "https://www.youtube.com/watch?v=eGEIPRC17J8",
-      "author": "때까치",
-      "engagement": 1,
-      "media_url": "https://i.ytimg.com/vi/eGEIPRC17J8/hqdefault.jpg",
       "content_type": "video"
     },
     {

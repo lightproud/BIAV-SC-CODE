@@ -1,10 +1,28 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-15T03:37:14.827288+00:00",
+  "collected_at": "2026-08-15T06:34:14.673284+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 15,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-08-14T07:04:00+00:00",
+      "lang": "zh",
+      "title": "用15元组织你的gal军队",
+      "summary": "整活玩的，纯属娱乐\n  └ Asahina白絮 (31赞): 先买十五碗猪脚饭爽吃然后开国gal众筹拿到钱继续吃\n  └ Connor--康纳 (21赞): 我说让景明做掉一个然后被景明追杀有感觉吗\n  └ leodracaryX (9赞): 3\n个\n景\n明\n3\n份\n猪\n脚\n饭\n3\n个\n其\n他\n1\n元\n当\n善\n恶\n相\n抵\n的\n耗\n材",
+      "url": "https://www.bilibili.com/video/BV1EJgw6eEDt",
+      "author": "铅心_wings",
+      "engagement": 1656,
+      "media_url": "https://i2.hdslb.com/bfs/archive/e34c760c3b97cfa08b1b6c513b9c567e90277efe.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1599,
+        "comment_count": 57,
+        "comments_fetched": 3,
+        "danmaku": 2
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-08-14T09:00:00+00:00",
@@ -13,30 +31,48 @@
       "summary": "《太空寄生》01：BV11rgE6WEuE\n异蛾之光阿米娅BOSS战\n  └ 般若-Mortis (2赞): 哇，还有大扑棱蛾子[doge]\n  └ 白伝 (1赞): [2026明日方舟音律联觉昔时我见_记小本本][2026明日方舟音律联觉昔时我见_记小本本]\n  └ 孤独不是永恒 (1赞): 这血条是不是有什么含义[吃瓜]",
       "url": "https://www.bilibili.com/video/BV16TgN6uEcw",
       "author": "lv2i_光",
-      "engagement": 1335,
+      "engagement": 1458,
       "media_url": "https://i2.hdslb.com/bfs/archive/9d164600534503394f2269749ddcf42bfa72bcae.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1312,
-        "comment_count": 23,
+        "play": 1433,
+        "comment_count": 25,
         "comments_fetched": 3,
         "danmaku": 1
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-08-14T05:48:00+00:00",
+      "time": "2026-08-14T09:04:36+00:00",
       "lang": "zh",
-      "title": "［相位］你说你偷到两张什么？！",
-      "summary": "感谢来自维克多的投稿\n  └ WhisperwindW (2赞): 虚假的COMBO:带上几只有搭配的角色,控制着算力跟手牌再加一点运气凑成COMBO\n真正的COMBO:T1装备的讯息就是生命给的不平等交换换出来的门扉直接送[星星眼]\n  └ yi36403 (1赞): 对面怕不是晚上得给气的睡不着觉[吃瓜]\n  └ 一般杂鱼 (2赞): [doge]",
-      "url": "https://www.bilibili.com/video/BV1CQgw6rEew",
-      "author": "莱星Ligh",
-      "engagement": 760,
-      "media_url": "https://i1.hdslb.com/bfs/archive/a4b53091c3e95f725dd5ac94766d9794d4b4b3f2.jpg",
+      "title": "曼巴之歌：来自地狱的少女",
+      "summary": "原作者：动漫从业者厷\n  └ 我的世界玛丽安 (27赞): 你们这些霍霍沙耶之歌的是不是魔了😭😭😭\n  └ 秦始皇的凌驾 (6赞): 难道食物的味道不是吊塔下的冰红茶[doge]\n  └ 盛八 (3赞): 狂耶，肘黑宇宙",
+      "url": "https://www.bilibili.com/video/BV14QgP6nEoR",
+      "author": "落叶藏幽",
+      "engagement": 1254,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9eb510b2a282776a5898507286af8e25efef0013.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 751,
-        "comment_count": 9,
+        "play": 1240,
+        "comment_count": 14,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-14T13:34:47+00:00",
+      "lang": "zh",
+      "title": "“正如我需要光明，这片都市需要隔壁小蛙”",
+      "summary": "😈加入大群\n  └ l_你_好_l (4赞): 依旧\n  └ 一个小植僵僵 (3赞): 😈阴不阴\n  └ 复制蛙 (1赞): [doge]",
+      "url": "https://www.bilibili.com/video/BV1Z8gK6GEcA",
+      "author": "最尊重隔壁小蛙的帐号",
+      "engagement": 1197,
+      "media_url": "https://i2.hdslb.com/bfs/archive/3f85f6088094b2199716af6f02eaaf2ab0ef2633.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1192,
+        "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -46,35 +82,71 @@
       "time": "2026-08-14T14:52:24+00:00",
       "lang": "zh",
       "title": "［相位］我的思路小众又变态，我的打法神秘又古怪",
-      "summary": "└ 枯井戒 (3赞): 莫丝：我从地狱里回来了[阴险]\n  └ 红髮厨 (3赞): 开局后排就被秒了，依旧被速攻队吓哭\n  └ -Eirene- (1赞): 只要对面看不懂我的打法，那他就不会防着我[doge]",
+      "summary": "└ -Eirene- (3赞): 只要对面看不懂我的打法，那他就不会防着我[doge]\n  └ 红髮厨 (5赞): 开局后排就被秒了，依旧被速攻队吓哭\n  └ 枯井戒 (4赞): 莫丝：我从地狱里回来了[阴险]",
       "url": "https://www.bilibili.com/video/BV1MMgK6tEMr",
       "author": "莱星Ligh",
-      "engagement": 655,
+      "engagement": 815,
       "media_url": "https://i1.hdslb.com/bfs/archive/0c2a60b8f7a43e1fcaea8bf1fa138b16fb5e5be1.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 644,
-        "comment_count": 11,
+        "play": 793,
+        "comment_count": 22,
         "comments_fetched": 3,
-        "danmaku": 2
+        "danmaku": 3
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-08-14T06:07:03+00:00",
+      "time": "2026-08-14T15:54:04+00:00",
       "lang": "zh",
-      "title": "手搓一把环形拉蒙娜的命定之剑",
-      "summary": "└ 想吃休比同人谷的私信 (3赞): @不会住在世界尽头 @缌无邪 @那很糟糕了哇 @龢利喵\n  └ Noxxm (3赞): 玩5771的都在这了[大哭]\n  └ 南华莉娅-KanadeLuna (2赞): 莉莉可爱，小水母来点赞支持了（x）",
-      "url": "https://www.bilibili.com/video/BV1PVgw6BEgu",
-      "author": "青山之隐",
-      "engagement": 516,
-      "media_url": "https://i1.hdslb.com/bfs/archive/a2d7975894fb8af5bf8043c058ba93fe6e93acf8.jpg",
+      "title": "耶生狗奶",
+      "summary": "请输入文本\n  └ YaHKland (1赞): 眼睛和头像互补了[笑哭]\n  └ 柠檬棉条 (0赞): [星星眼]\n  └ 神神秘秘16h (0赞): [星星眼][星星眼][星星眼][星星眼]",
+      "url": "https://www.bilibili.com/video/BV1r1gN6VEg5",
+      "author": "哈基沙大玉",
+      "engagement": 468,
+      "media_url": "https://i0.hdslb.com/bfs/archive/de8b6e0c7a523704ddc1f0c590668194e2de8df9.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 499,
-        "comment_count": 17,
+        "play": 460,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-14T07:47:19+00:00",
+      "lang": "zh",
+      "title": "沙耶就是沙耶呀。",
+      "summary": "-\n  └ pan潇 (1赞): 好美呀[保卫萝卜_哇][保卫萝卜_哇]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ Zumihito (1赞): [NIYA表情包_点赞][NIYA表情包_点赞]",
+      "url": "https://www.bilibili.com/video/BV1rcgN6VE5B",
+      "author": "Ayana_72",
+      "engagement": 441,
+      "media_url": "https://i2.hdslb.com/bfs/archive/4b9e2f8fc2dfca304298e84599f31cf35b3238eb.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 437,
+        "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-14T14:56:52+00:00",
+      "lang": "zh",
+      "title": "我说生电指的是寄生电刑",
+      "summary": "上次爬塔好像是四五月份了，忙晕了，有点落后时代了\nmod是沙耶之歌和实验体自动播放animals\n原来buff超过一定层数就会归零\n  └ 多孔硫酸钡 (0赞): 依旧凌迟观众\n  └ 笄礼 (0赞): 寄生相生了",
+      "url": "https://www.bilibili.com/video/BV1acgK6AEs9",
+      "author": "Mirshreed",
+      "engagement": 436,
+      "media_url": "https://i2.hdslb.com/bfs/archive/5b38cdbc5138074ac00891e370a0d5f7118d067b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 434,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 2
       }
     },
     {
@@ -82,16 +154,52 @@
       "time": "2026-08-14T11:34:46+00:00",
       "lang": "zh",
       "title": "朵～",
-      "summary": "-\n  └ AAA木柴批发 (4赞): 缸脑稍微搓了一段时间，不过这么看，朵虽然不是最小的，但是占地面积是最小的[doge]\n  └ Carliee (1赞): 小小一只好萌\n  └ AAA木柴批发 (1赞): ☝😋",
+      "summary": "-\n  └ AAA木柴批发 (5赞): 缸脑稍微搓了一段时间，不过这么看，朵虽然不是最小的，但是占地面积是最小的[doge]\n  └ 鏚髏爛乸爨 (1赞): 强，但我想问一下萝坦是不是有两个形态，有个是链球？\n  └ Carliee (1赞): 小小一只好萌",
       "url": "https://www.bilibili.com/video/BV1adgA6ZEWK",
       "author": "AAA木柴批发",
-      "engagement": 193,
+      "engagement": 290,
       "media_url": "https://i0.hdslb.com/bfs/archive/d3bcf1232da79cb5ad5ef4f420d5e58b10ab641d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 181,
-        "comment_count": 12,
+        "play": 277,
+        "comment_count": 13,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-14T11:56:27+00:00",
+      "lang": "zh",
+      "title": "脑叶之歌：明明是由人类肢体组成的怪物，但在我眼中却是可爱的少女",
+      "summary": "真的没有人觉得一无所有很可爱吗\n  └ Maturebanana (2赞): 有人样吗[无限暖暖_毛线汪汪]\n  └ 再爱我一次啊啊啊啊 (1赞): ！！！不知所措！！！\n  └ Mizuki_27 (1赞): 有人样吗[折耳猫]",
+      "url": "https://www.bilibili.com/video/BV1D2gK6hEet",
+      "author": "猫不笑173",
+      "engagement": 199,
+      "media_url": "https://i0.hdslb.com/bfs/archive/23189dc6a4b74b51b10e4d41fc99189a126c6e57.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 193,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 2
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-15T03:36:39+00:00",
+      "lang": "zh",
+      "title": "醋鱼之歌·所有食物变得不可名状而西湖醋鱼不变",
+      "summary": "-\n  └ 易一不是逸伊 (0赞): 就算这样我也不吃[生气][生气][生气]",
+      "url": "https://www.bilibili.com/video/BV1ipg36pExU",
+      "author": "列奥尼达斯SAMA",
+      "engagement": 145,
+      "media_url": "https://i2.hdslb.com/bfs/archive/09c164ed6ddaff0976925e66c0c3af1f3fdd3a2f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 144,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -103,11 +211,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1CigN6JE1k",
       "author": "喵老狮",
-      "engagement": 74,
+      "engagement": 105,
       "media_url": "https://i0.hdslb.com/bfs/archive/95be69a0e562b4af8c0ac3f481df2e8b17a7e4de.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 74,
+        "play": 105,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -121,11 +229,47 @@
       "summary": "结尾有彩蛋",
       "url": "https://www.bilibili.com/video/BV1LYgP6YEXb",
       "author": "蜗牛叁叁",
-      "engagement": 59,
+      "engagement": 63,
       "media_url": "https://i2.hdslb.com/bfs/archive/371c801f64102318e801442fe82df3c475005d01.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 59,
+        "play": 63,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-14T19:40:52+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌重制计划day1第一天就完成了复杂的封面真不错 我是新手别见怪( ；∀；)",
+      "summary": "-\n  └ 并非玛丽安 (0赞): 不错[doge]\n  └ 孙笑川7878919 (0赞): [星星眼]",
+      "url": "https://www.bilibili.com/video/BV1W6gT6sEP1",
+      "author": "Jerry鼠黍",
+      "engagement": 40,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f5acf3ba6388eba62dce95dc2f0a017abea50392.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 38,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-15T03:30:00+00:00",
+      "lang": "zh",
+      "title": "郁纪知道了有关奥涯教授的行踪打算前去一探",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1y6gT6sENG",
+      "author": "朗克清",
+      "engagement": 8,
+      "media_url": "https://i1.hdslb.com/bfs/archive/6b8cc60411b4c927a9e434d1bd140c19c079245d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 8,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
