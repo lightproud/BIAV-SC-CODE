@@ -4,7 +4,7 @@ title: "ruliweb 社区数据源"
 description: "ruliweb 平台采集档案，全量 433 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/ruliweb/"
 tags: ["data_layer:full_archive", "platform:ruliweb", "health:degraded"]
-timestamp: "2026-08-14T07:22:27.307115+00:00"
+timestamp: "2026-08-15T06:34:56.442780+00:00"
 ---
 
 # 数据层指针

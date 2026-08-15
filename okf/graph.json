@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-14",
+  "generated": "2026-08-15",
   "stats": {
     "nodes": 396,
-    "edges": 426
+    "edges": 430
   },
   "nodes": [
     {
@@ -3863,7 +3863,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:note_com",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -3959,7 +3959,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:taptap",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4722,20 +4722,38 @@
     },
     {
       "source": "/community/community-bahamut.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/95786.md",
-      "rel": "提及:杜勒赛因",
+      "target": "/characters/77923.md",
+      "rel": "提及:卡斯托尔",
       "rel_type": "mention"
     },
     {
@@ -4752,8 +4770,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/77926.md",
       "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -4787,9 +4817,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:融朵",
+      "source": "/community/community-reddit.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -4807,13 +4837,7 @@
     {
       "source": "/community/community-steam.md",
       "target": "/characters/130226.md",
-      "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/15567.md",
-      "rel": "提及:血链·希洛",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -4824,32 +4848,20 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/77917.md",
-      "rel": "提及:波吕克斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/77922.md",
-      "rel": "提及:克珀珊特",
+      "target": "/characters/95786.md",
+      "rel": "提及:杜勒赛因",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
       "rel_type": "mention"
     },
     {
@@ -6210,20 +6222,38 @@
     },
     {
       "source": "/sources/bahamut.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/95786.md",
-      "rel": "提及:杜勒赛因",
+      "target": "/characters/77923.md",
+      "rel": "提及:卡斯托尔",
       "rel_type": "mention"
     },
     {
@@ -6240,8 +6270,20 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/77926.md",
       "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -6275,9 +6317,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:融朵",
+      "source": "/sources/reddit.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -6295,13 +6337,7 @@
     {
       "source": "/sources/steam.md",
       "target": "/characters/130226.md",
-      "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/15567.md",
-      "rel": "提及:血链·希洛",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6312,32 +6348,20 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/77917.md",
-      "rel": "提及:波吕克斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/77922.md",
-      "rel": "提及:克珀珊特",
+      "target": "/characters/95786.md",
+      "rel": "提及:杜勒赛因",
       "rel_type": "mention"
     },
     {
       "source": "/sources/weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
       "rel_type": "mention"
     },
     {

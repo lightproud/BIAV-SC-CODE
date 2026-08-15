@@ -4,7 +4,7 @@ title: "silver-core-sdk ARCHITECTURE"
 description: "Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible"
 resource: "/projects/silver-core-sdk/docs/ARCHITECTURE.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-08-14"
+timestamp: "2026-08-15"
 ---
 
 # 指针概念
