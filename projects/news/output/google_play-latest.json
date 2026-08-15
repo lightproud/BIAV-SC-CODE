@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-15T18:26:26.080147+00:00",
+  "collected_at": "2026-08-15T21:19:43.578279+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 124,
+  "item_count": 123,
   "items": [
     {
       "source": "google_play",
@@ -73,16 +73,6 @@
       "summary": "Es de esos juegos que merecen ser mucho más conocidos. Su sistema de combate, la calidad visual de las animaciones, la historia y la música son muy buenos. Es desafiante: hay que pensar bien cada jugada. Como jugador casual, he conseguido la mayoría de personajes y cartas con poca inversión. Llevo casi un año jugando y he visto cómo mejora constantemente; espero que siga así. Mi única queja es la traducción al español; ojalá la mejoren con el tiempo. Por lo demás, súper recomendado.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-ff740690-d2ef-4cc6-8aa4-732a67504801",
       "author": "Nereis",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-16T20:07:51",
-      "lang": "ru",
-      "title": "[Google Play 好评] ★5 Советую эту игру всем любителям мрачной",
-      "summary": "Советую эту игру всем любителям мрачной эстетики и необычных гача-механик)) Сама скачала её ради коллаборации с новеллой Saya no Uta, но в итоге влюбилась в геймплей: боевая система на картах требует тактического мышления и действительно затягивает. К ф2п игрокам тут относятся на удивление лояльно — донат не давит, играется комфортно. На фоне однотипных проектов вроде игр Хойоверс эта игра стала для меня настоящим глотком свежего воздуха!!",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-5c05a9f6-bc60-4266-a7b3-46ceb449d3f4",
-      "author": "Тома",
       "engagement": 2
     },
     {
@@ -333,6 +323,16 @@
       "summary": "非常好的游戏",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-fb35889a-9334-408f-b466-43051ac7e524",
       "author": "DARYL",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-14T19:00:12",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 The best game so far I've stumbled acros",
+      "summary": "The best game so far I've stumbled across in a while, Oh boy! Can't get enough of the unique art style, rewards are generous... And the best part? I'm not gonna get tired of Morimens.... Highly recommend if you're seeking a unique art style that no other Gacha games have.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-1cb6c800-6250-46cf-9dd6-31a3c502810d",
+      "author": "Justin Baguio",
       "engagement": 0
     },
     {
@@ -653,16 +653,6 @@
       "summary": "The game is good, and I’m loving it so far, even though I’ve only finished Chapter 1. I like that there isn’t too much content, because too much content can become overwhelming. I played Guardian Tales years ago and recently returned, but there was so much new content that I ended up deleting it—I preferred the older version. My suggestion is to slightly shorten the story in each chapter, as it can become exhausting, and add more animation effects to make the experience better.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-1a2761c2-704a-4d41-a38a-897dcc3b45cc",
       "author": "Thaniga",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-21T23:35:09",
-      "lang": "en",
-      "title": "[Google Play 好评] ★4 back when i tried the game like... 2 mon",
-      "summary": "back when i tried the game like... 2 months ago, the english translation seems like doesn't really work. Also, the game is very laggy, i have midrange chipset (mediatek dimensity 1080) but it feels very heavy.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-7c0684e1-0244-4282-b3ae-927d93bfece3",
-      "author": "Akbar Ramadhani",
       "engagement": 0
     },
     {
