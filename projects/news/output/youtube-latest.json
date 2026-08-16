@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T18:25:49.227401+00:00",
+  "collected_at": "2026-08-16T21:18:10.960745+00:00",
   "source": "youtube",
   "data_layer": "output",
   "item_count": 12,
@@ -13,8 +13,8 @@
       "summary": "Title.",
       "url": "https://www.youtube.com/watch?v=wEBphdDHd5Q",
       "author": "Flares117",
-      "engagement": 204,
-      "media_url": "https://i.ytimg.com/vi/wEBphdDHd5Q/hqdefault_live.jpg",
+      "engagement": 339,
+      "media_url": "https://i.ytimg.com/vi/wEBphdDHd5Q/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -25,7 +25,7 @@
       "summary": "最近本当に頭がおかしくて申し訳ない するといったことをできるような人間になります そうでない現時点じゃこの発言の真偽も ...",
       "url": "https://www.youtube.com/watch?v=kAZ96t2jSO8",
       "author": "to真冬",
-      "engagement": 19,
+      "engagement": 26,
       "media_url": "https://i.ytimg.com/vi/kAZ96t2jSO8/hqdefault.jpg",
       "content_type": "video"
     },
@@ -37,7 +37,7 @@
       "summary": "今回は遂に、超久しぶりのPVE動画となっております！ 対人戦も凄く楽しいのですが、やはり忘却前夜の強みといえば、物語の ...",
       "url": "https://www.youtube.com/watch?v=xQtARLcPkQQ",
       "author": "薄めの『ゆゆ』",
-      "engagement": 14,
+      "engagement": 15,
       "media_url": "https://i.ytimg.com/vi/xQtARLcPkQQ/hqdefault.jpg",
       "content_type": "video"
     },
@@ -55,26 +55,26 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-16T10:00:24Z",
-      "lang": "",
-      "title": "#忘卻前夜 #morimens Regional D-Effect Zone update!415 points achieved!融災415分達成!",
-      "summary": "忘卻前夜 #morimens 融災更新,8月3號~8月17日. Regional D-Effect Zone Update ( August 3-August 17). 第一隊,是借用大佬的茉夏, ...",
-      "url": "https://www.youtube.com/watch?v=1IAmqYn2RA8",
-      "author": "Noir",
-      "engagement": 9,
-      "media_url": "https://i.ytimg.com/vi/1IAmqYn2RA8/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-08-16T12:45:09Z",
       "lang": "",
       "title": "Yea.... - Why don&#39;t I think before I say something 😭😭",
       "summary": "Forgot to upload this to yt so here it is :3 This exists now Links https://www.twitch.tv/eepyghost ...",
       "url": "https://www.youtube.com/watch?v=dM5_thTrv_8",
       "author": "eepyghost",
-      "engagement": 8,
+      "engagement": 12,
       "media_url": "https://i.ytimg.com/vi/dM5_thTrv_8/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-16T10:00:24Z",
+      "lang": "",
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone update!415 points achieved!融災415分達成!",
+      "summary": "忘卻前夜 #morimens 融災更新,8月3號~8月17日. Regional D-Effect Zone Update ( August 3-August 17). 第一隊,是借用大佬的茉夏, ...",
+      "url": "https://www.youtube.com/watch?v=1IAmqYn2RA8",
+      "author": "Noir",
+      "engagement": 12,
+      "media_url": "https://i.ytimg.com/vi/1IAmqYn2RA8/hqdefault.jpg",
       "content_type": "video"
     },
     {

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T18:25:49.227401+00:00",
+  "collected_at": "2026-08-16T21:18:10.960745+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "source": "bilibili",
@@ -13,11 +13,11 @@
       "summary": "-\n  └ Satwreck (17赞): 白粥组成的怪物，哦这菲戈啊\n  └ 不会住在世界尽头 (2赞): @一只路过的居安安哦对了，f8fq\n  └ 方糖必秒砂糖 (5赞): 能不能把沙耶改为辛巴[喜欢]",
       "url": "https://www.bilibili.com/video/BV1qUbC68Exf",
       "author": "采蘑菇的九爷爷",
-      "engagement": 1738,
+      "engagement": 1751,
       "media_url": "https://i2.hdslb.com/bfs/archive/994b403ce7c8fef2fc8d38c1476b7d5d02b95247.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1712,
+        "play": 1725,
         "comment_count": 26,
         "comments_fetched": 3,
         "danmaku": 0
@@ -31,11 +31,11 @@
       "summary": "└ Mr_lja (0赞): 龙少怎么了？进局子了？\n  └ Neo_Li (0赞): 这铁拳出神入化\n  └ 69岁退休Niko (0赞): 拯救龙少没绷住",
       "url": "https://www.bilibili.com/video/BV1bZbU6fErU",
       "author": "浮世绘若梦",
-      "engagement": 1143,
+      "engagement": 1161,
       "media_url": "https://i1.hdslb.com/bfs/archive/ba3f74e45f540a85308bf6d563b22a53f0c23eb6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1139,
+        "play": 1157,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 3
@@ -49,11 +49,11 @@
       "summary": "卡组越怪，赢得越快\n  └ 云清禅心 (12赞): 你宁依旧集火最高优先级[doge]\n  └ 东方云心 (3赞): [星绘·沐春灼华 应援装扮_铸币大头]\n  └ 韵响 (4赞): 老大，这回这么长，看爽了",
       "url": "https://www.bilibili.com/video/BV1MXb26sERw",
       "author": "莱星Ligh",
-      "engagement": 1107,
+      "engagement": 1112,
       "media_url": "https://i0.hdslb.com/bfs/archive/1d96324ed5e754836b314b451d81670bbd0d7653.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1103,
+        "play": 1108,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 2
@@ -67,11 +67,11 @@
       "summary": "我是一名拉屎爱好者，我叫匂坂郁纪\n  └ 是Eta呀 (1赞): 说实话真觉得郁纪有点坏[笑哭][笑哭][笑哭]\n  └ 吐槽大会员工 (1赞): UP主加油！",
       "url": "https://www.bilibili.com/video/BV1u9bU6aE6e",
       "author": "耕司青海瑶",
-      "engagement": 133,
+      "engagement": 137,
       "media_url": "https://i1.hdslb.com/bfs/archive/8792402e75d2d9485d9b374cb8f9d5593e228259.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 130,
+        "play": 134,
         "comment_count": 3,
         "comments_fetched": 2,
         "danmaku": 6
@@ -85,13 +85,31 @@
       "summary": "-\n  └ 嘉侬zip (1赞): 🤔up你说在脑缸中间用一根其他颜色的线能不能还原被劈成两半的脑缸(？\n  └ AAA木柴批发 (0赞): 标题是歌词里面的一句话\n粉色真的用了不同的，但是相机会吞色[笑哭]\n融朵的缸脑真的不太能搓完整\n外面是一个透明壳子，太透了（）\n因为没有融朵去校园墙照着扒☝🤓，不知道有人发现小巧思吗[doge]",
       "url": "https://www.bilibili.com/video/BV1MobU68E1q",
       "author": "AAA木柴批发",
-      "engagement": 107,
+      "engagement": 112,
       "media_url": "https://i1.hdslb.com/bfs/archive/e363e15f5046cae22ba062e758a767e5f1f75dc9.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 104,
+        "play": 109,
         "comment_count": 3,
         "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-16T20:50:19+00:00",
+      "lang": "zh",
+      "title": "Sorry.",
+      "summary": "I am sorry.",
+      "url": "https://www.bilibili.com/video/BV1Xebb6CELz",
+      "author": "小龙猫大能力",
+      "engagement": 92,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f94926d5162be3bcd7c0271cb44d6c5ca0f2da87.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 92,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
