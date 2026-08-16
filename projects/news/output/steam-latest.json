@@ -1,25 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T01:08:52.107241+00:00",
+  "collected_at": "2026-08-16T03:46:39.750468+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 10,
   "items": [
-    {
-      "source": "steam",
-      "time": "2026-08-15T01:39:59+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩",
-      "summary": "好玩",
-      "url": "https://steamcommunity.com/profiles/76561199836613672/recommended/3052450",
-      "author": "76561199836613672",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩",
-      "timestamp_created": 1786757999,
-      "playtime_forever": 1663
-    },
     {
       "source": "steam",
       "time": "2026-08-15T23:05:23+00:00",
@@ -108,7 +93,7 @@
       "voted_up": true,
       "review": "일단 해",
       "timestamp_created": 1786790761,
-      "playtime_forever": 45019
+      "playtime_forever": 45022
     },
     {
       "source": "steam",
