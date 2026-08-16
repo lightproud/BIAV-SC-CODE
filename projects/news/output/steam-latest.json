@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T06:36:05.291239+00:00",
+  "collected_at": "2026-08-16T09:25:40.533734+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-16T08:32:06+00:00",
+      "lang": "schinese",
+      "title": "[正面] 非常好玩，画工顶级(*^_^*)",
+      "summary": "非常好玩，画工顶级(*^_^*)",
+      "url": "https://steamcommunity.com/profiles/76561198695840205/recommended/3052450",
+      "author": "76561198695840205",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "非常好玩，画工顶级(*^_^*)",
+      "timestamp_created": 1786869126,
+      "playtime_forever": 2376
+    },
     {
       "source": "steam",
       "time": "2026-08-15T23:05:23+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "非常好的游戏，画风在线，XP戳我，最关键是她还很好玩（虽然后期纯堆数值有些坐牢），而且不吃配置对老PC友好（唯一要求就是固态硬盘会提升运行速度）。赞一个！",
       "timestamp_created": 1786835123,
-      "playtime_forever": 12878
+      "playtime_forever": 12902
     },
     {
       "source": "steam",
@@ -48,7 +63,7 @@
       "voted_up": true,
       "review": "劇情美術很棒~我個人滿喜歡的www\r\n我也沒想到只是剛好看到推薦下載來玩玩\r\n就...就課金了還50+小時了wwww\r\n希望大家都能玩玩看~",
       "timestamp_created": 1786808374,
-      "playtime_forever": 3137
+      "playtime_forever": 3347
     },
     {
       "source": "steam",
@@ -93,37 +108,7 @@
       "voted_up": true,
       "review": "일단 해",
       "timestamp_created": 1786790761,
-      "playtime_forever": 45022
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T09:00:59+00:00",
-      "lang": "schinese",
-      "title": "[正面] 不错，很好玩，给我感觉有点像重返未来",
-      "summary": "不错，很好玩，给我感觉有点像重返未来",
-      "url": "https://steamcommunity.com/profiles/76561198784851675/recommended/3052450",
-      "author": "76561198784851675",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "不错，很好玩，给我感觉有点像重返未来",
-      "timestamp_created": 1786784459,
-      "playtime_forever": 192
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T07:14:47+00:00",
-      "lang": "english",
-      "title": "[正面] can't complain",
-      "summary": "can't complain",
-      "url": "https://steamcommunity.com/profiles/76561198041633723/recommended/3052450",
-      "author": "76561198041633723",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "can't complain",
-      "timestamp_created": 1786778087,
-      "playtime_forever": 1118
+      "playtime_forever": 45035
     }
   ]
 }
