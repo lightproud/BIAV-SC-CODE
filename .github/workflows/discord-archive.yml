@@ -8,7 +8,12 @@ name: Discord Archive
 
 on:
   schedule:
-    - cron: '0 7 * * *'
+    # 每 3 小时（对齐 jp=45 / volunteer=15 / history-backfill=30，本工作流占 05 分位）。
+    # 原为 '0 7 * * *' 一天一轮：global 是三个公会里最大的一个（日均 ~1 万条），
+    # 一天一轮 × 每频道 5k 配额 = 日排干上限 5k/频道，而 general-chat 日产 ~7.2k、
+    # morimens-game-chat ~7k —— 每天净欠 2k+，游标只会越掉越远。频次 ×8 与归档器
+    # 侧的积压追赶轮（Track 1b）是同一个赤字的两半，必须一起上。
+    - cron: '5 */3 * * *'
     - cron: '0 6 1 * *'
   workflow_dispatch:
     inputs:
@@ -32,7 +37,10 @@ jobs:
   archive:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # 55 > 归档器 35 + forum starter 15 + checkout/commit/push 余量。
+    # 原为 45，正好等于归档器自己的默认预算：归档器一旦吃满，作业会在 commit 之前
+    # 被砍，整轮采集白跑。加了积压追赶轮后归档器确实会吃满，所以这里必须留出空档。
+    timeout-minutes: 55
     env:
       BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
     steps:
@@ -82,13 +90,16 @@ jobs:
         if: steps.mode.outputs.mode == 'incremental'
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_RUNTIME_BUDGET: '2100'   # 35 min，给同作业后续步骤留出预算
         run: python projects/news/scripts/discord_archiver.py
 
       - name: Backfill forum thread starters (catches up legacy gap)
         if: steps.mode.outputs.mode == 'incremental'
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          RUNTIME_BUDGET: '3600'
+          # 原为 3600（60 min）——比作业 timeout 本身还长，从来没有兑现过，
+          # 实际预算一直是「45 分钟减去归档器用掉的部分」。改成 15 min 说实话。
+          RUNTIME_BUDGET: '900'
           RATE_LIMIT_SLEEP: '0.2'
         run: python projects/news/scripts/backfill_forum_starters.py
 

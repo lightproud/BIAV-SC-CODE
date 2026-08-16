@@ -54,8 +54,12 @@ def resolve_data_dir(guild_id: str | None = None) -> Path:
                                              guild_id or GLOBAL_GUILD_ID)
 
 REQUEST_DELAY = 0.25          # seconds between API calls (Discord allows 50 req/s per bot)
-MAX_RUNTIME_SECONDS = 45 * 60         # 45-minute limit (GitHub Actions safe margin)
-MAX_MESSAGES_PER_CHANNEL = 5000     # incremental cap per channel per run
+# 单轮预算。默认 45 分钟不变；允许 env 覆盖，是因为加了积压追赶轮（Track 1b）之后
+# 归档器**真的会**吃满预算，而它只是作业里的第一步——后面还有 forum starter 回填与
+# commit/push。作业 timeout 必须 > 归档器预算 + 回填预算，否则积压重的那几轮会在
+# 提交前被 CI 砍掉，等于白跑。谁排在同一个作业里，谁就在工作流里显式分配预算。
+MAX_RUNTIME_SECONDS = int(os.environ.get('DISCORD_RUNTIME_BUDGET') or 45 * 60)
+MAX_MESSAGES_PER_CHANNEL = 5000     # 单轮**每频道公平配额**（非本轮抓取总量上限，见 Track 1b）
 # 429 `retry_after` 由**服务端**给值，本地无上限地照睡是把整轮跑的进度权交了出去:
 # 一个 retry_after=86400 的响应（全局限流 / Cloudflare 拦截 / 被篡改的中间层）就让
 # 进程干睡到 CI 作业超时被杀 —— 45 分钟预算 `_is_time_up()` 检查不到睡眠里,
@@ -1142,13 +1146,48 @@ class DiscordArchiver:
 
         # ── Track 1: Incremental ──
         total_incremental = 0
+        lagging: list[dict] = []
         for ch in text_channels:
             if self._is_time_up():
                 logger.warning('Runtime limit: stopping incremental track')
                 break
             count = self.fetch_channel_incremental(ch['id'], ch.get('name', ''))
             total_incremental += count
+            # 撞到单轮配额 = 该频道还有没抽干的积压，登记进追赶轮
+            if count >= MAX_MESSAGES_PER_CHANNEL:
+                lagging.append(ch)
             self._save_state()  # per-channel save for 断点续传
+
+        # ── Track 1b: 积压追赶轮 ──────────────────────────────────────────────
+        # MAX_MESSAGES_PER_CHANNEL 是**单轮公平配额**（防一个大频道把预算吃光、
+        # 饿死排在后面的频道），不是「本轮最多只要这么多」。少了这一轮，日产出
+        # 高于配额的频道每轮净欠一截、游标越掉越远且**永不收敛**：global 的
+        # general-chat 日均 ~7.2k 条、morimens-game-chat ~7k 条，对 5k 配额每天
+        # 净欠 2k+，于是 general-chat 卡死在 2026-08-07、morimens-game-chat 卡死
+        # 在 2026-06-18；而同一轮里排在更后面的 game-question 反倒始终是新的
+        # （日产出低于配额，一轮就抽干）——「靠后的活、靠前的死」正是配额缺追赶
+        # 的指纹，不是频道顺序或权限问题。
+        #
+        # 所以第一轮走完后，只要预算还有剩，就对撞了配额的频道反复补抽，直到抽干
+        # 或时间到。抽 5k 条 ≈ 50 次请求 × REQUEST_DELAY(0.25s) ≈ 13 秒，相对 45
+        # 分钟预算极宽裕；真正的护栏自始至终是 _is_time_up()，不是配额本身。
+        catchup_rounds = 0
+        while lagging and not self._is_time_up():
+            catchup_rounds += 1
+            still_lagging = []
+            for ch in lagging:
+                if self._is_time_up():
+                    still_lagging.append(ch)
+                    continue
+                count = self.fetch_channel_incremental(ch['id'], ch.get('name', ''))
+                total_incremental += count
+                if count >= MAX_MESSAGES_PER_CHANNEL:
+                    still_lagging.append(ch)
+                self._save_state()
+            lagging = still_lagging
+        if catchup_rounds:
+            state = '积压已抽干' if not lagging else f'{len(lagging)} 个频道仍有积压（预算耗尽）'
+            logger.info(f'Catch-up: {catchup_rounds} 轮追赶，{state}')
 
         # Forum channels: active + archived threads, incremental (no historical backfill)
         for ch in forum_channels:

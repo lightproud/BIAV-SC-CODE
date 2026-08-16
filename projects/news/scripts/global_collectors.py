@@ -18,6 +18,7 @@
 
 import asyncio
 import hashlib
+import html as _html
 import json
 import os
 import re
@@ -1165,6 +1166,10 @@ def fetch_weixin():
                 if not time_str:
                     time_str = datetime.now(UTC).isoformat()
                     time_approx = True
+
+                # href 取自 HTML 属性，实体未解码时链接会带字面量 &amp;（归档里
+                # 的微信链接因此全是 `?url=…&amp;token=…` 这种点不开的坏链）。
+                url = _html.unescape(url)
 
                 item = _make_item(
                     title=f"[微信] {title}",

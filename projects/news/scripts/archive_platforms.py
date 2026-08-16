@@ -60,12 +60,25 @@ INPUT_NEWS = OUTPUT_DIR / 'news.json'
 PLATFORMS = ARCHIVE_PLATFORMS
 
 
+# URL 不可作去重键的源：拿到的不是文章直链，而是**每次请求都重新签发**的跳转链接，
+# 同一篇文章每轮采集都得到一个全新 URL —— 用 URL 做键 = 永远判不出重复。
+# weixin 走搜狗中转（/link?url=…&token=…）：实测同一篇公告在单日档里攒了 114 份、
+# 另一篇 144 份，114 个 URL 无一相同（连 url 参数本身都轮换，只有 type 固定）。
+# 这类源改用 `标题|时间|作者`——实测 time 字段稳定，正是能把它们收敛成 1 条的那一维。
+_UNSTABLE_URL_SOURCES = {'weixin'}
+
+
 def item_key(item: dict) -> str:
     """Generate a dedup key for an item."""
+    source = normalize_source(item.get('source', '') or '')
     url = item.get('url', '').strip()
-    if url:
+    if url and source not in _UNSTABLE_URL_SOURCES:
         return url
-    return f"{item.get('title', '')}|{item.get('time', '')}|{item.get('author', '')}"
+    # time_is_approximate = 采集器没能解析出真实发布时间、填的是 now()。那种时间
+    # 每轮都不一样，放进键里等于给同一条内容每轮发一个新身份——与上面 URL 轮换
+    # 是同一个坑。近似时间一律不入键。
+    time_part = '' if item.get('time_is_approximate') else item.get('time', '')
+    return f"{item.get('title', '')}|{time_part}|{item.get('author', '')}"
 
 
 def load_news() -> list[dict]:

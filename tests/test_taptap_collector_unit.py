@@ -246,6 +246,54 @@ class TestExtractReviewsDom(unittest.TestCase):
         self.assertEqual(out[0]["like_count"], 9)
         self.assertNotIn("time_is_approximate", out[0])
 
+    def test_drops_rows_where_content_echoes_author(self):
+        """正文==用户名 = 选择器抓到了卡片头部块，必须丢弃而不是落档。
+
+        回归实测：两周 1,185 条 TapTap「评论」全部 title=summary=author=用户名、
+        无正文无评分——这批数据事后无法自动识别，只能靠人肉发现。
+        """
+        dom = [{"content": "葱爆牛排", "author": "葱爆牛排", "time_str": "2026-08-15",
+                "url": "https://www.taptap.cn/review/50027316"}]
+        page = FakePage(dom_result=dom)
+        out = _run(tt._extract_reviews_dom(page))
+        self.assertEqual(out, [])
+
+    def test_dedups_same_review_url(self):
+        dom = [
+            {"content": "很好玩", "author": "a", "time_str": "2026-08-15", "url": "https://t/review/1"},
+            {"content": "很好玩", "author": "a", "time_str": "2026-08-15", "url": "https://t/review/1"},
+            {"content": "还行", "author": "b", "time_str": "2026-08-15", "url": "https://t/review/2"},
+        ]
+        page = FakePage(dom_result=dom)
+        with mock.patch.object(tt.news_common, "parse_relative_time",
+                               return_value=("2026-08-15T00:00:00+00:00", False)):
+            out = _run(tt._extract_reviews_dom(page))
+        self.assertEqual(len(out), 2)
+
+    def test_score_lands_in_title_and_field(self):
+        dom = [{"content": "很好玩", "author": "a", "time_str": "2026-08-15",
+                "score": "4.5", "url": "https://t/review/1"}]
+        page = FakePage(dom_result=dom)
+        with mock.patch.object(tt.news_common, "parse_relative_time",
+                               return_value=("2026-08-15T00:00:00+00:00", False)):
+            out = _run(tt._extract_reviews_dom(page))
+        self.assertEqual(out[0]["score"], 5)
+        self.assertTrue(out[0]["title"].startswith("★★★★★"))
+
+
+class TestParseTaptapDomScore(unittest.TestCase):
+    def test_star_glyphs(self):
+        self.assertEqual(tt._parse_taptap_dom_score("★★★★☆"), 4)
+
+    def test_numeric_forms(self):
+        self.assertEqual(tt._parse_taptap_dom_score("4.5"), 5)
+        self.assertEqual(tt._parse_taptap_dom_score("3 分"), 3)
+
+    def test_unparseable_returns_zero(self):
+        """拿不准就返回 0（下游据此知道「没有评分」），不编一个出来。"""
+        for bad in (None, "", "评分", "99"):
+            self.assertEqual(tt._parse_taptap_dom_score(bad), 0)
+
 
 # ── collect() orchestration (fully mocked playwright) ────────────────────────
 
