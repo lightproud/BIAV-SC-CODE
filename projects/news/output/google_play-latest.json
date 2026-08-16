@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T15:20:15.877491+00:00",
+  "collected_at": "2026-08-16T18:25:49.227401+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 122,
+  "item_count": 123,
   "items": [
     {
       "source": "google_play",
@@ -643,6 +643,16 @@
       "summary": "The game is good, and I’m loving it so far, even though I’ve only finished Chapter 1. I like that there isn’t too much content, because too much content can become overwhelming. I played Guardian Tales years ago and recently returned, but there was so much new content that I ended up deleting it—I preferred the older version. My suggestion is to slightly shorten the story in each chapter, as it can become exhausting, and add more animation effects to make the experience better.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-1a2761c2-704a-4d41-a38a-897dcc3b45cc",
       "author": "Thaniga",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-15T16:49:21",
+      "lang": "ko",
+      "title": "[Google Play 好评] ★5 가이드 잘 되어있어 초보자도 가능",
+      "summary": "가이드 잘 되어있어 초보자도 가능",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-86706291-a6c1-4673-a32a-af036786d8c4",
+      "author": "Sdf A",
       "engagement": 0
     },
     {
