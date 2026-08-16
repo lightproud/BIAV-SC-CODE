@@ -4,7 +4,7 @@ title: "arca_live 社区数据源"
 description: "arca_live 平台采集档案，全量 104 条，健康度 dormant。"
 resource: "/Public-Info-Pool/Record/Community/arca_live/"
 tags: ["data_layer:full_archive", "platform:arca_live", "health:dormant"]
-timestamp: "2026-08-16T06:36:35.279435+00:00"
+timestamp: "2026-08-16T15:20:48.106466+00:00"
 ---
 
 # 数据层指针

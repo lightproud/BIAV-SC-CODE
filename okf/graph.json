@@ -1,8 +1,8 @@
 {
   "generated": "2026-08-16",
   "stats": {
-    "nodes": 396,
-    "edges": 433
+    "nodes": 397,
+    "edges": 435
   },
   "nodes": [
     {
@@ -3279,6 +3279,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "type": "documentation",
+      "title": "hermes-weekly-update-20260816",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "type": "documentation",
       "title": "kb-vector-remaining-handoff-20260705",
@@ -4932,6 +4943,12 @@
     },
     {
       "source": "/community/community-youtube.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
       "rel_type": "mention"
@@ -6392,6 +6409,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
