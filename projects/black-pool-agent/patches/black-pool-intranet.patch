@@ -1,8 +1,8 @@
 diff --git a/agent/usage_pricing.py b/agent/usage_pricing.py
-index 04d34d1..73f7eb1 100644
+index 5cacdb0..f237631 100644
 --- a/agent/usage_pricing.py
 +++ b/agent/usage_pricing.py
-@@ -1172,12 +1172,81 @@ def _pricing_entry_from_metadata(
+@@ -1215,12 +1215,81 @@ def _pricing_entry_from_metadata(
      )
  
  
@@ -85,10 +85,10 @@ index 04d34d1..73f7eb1 100644
      if route.billing_mode == "subscription_included":
          return PricingEntry(
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index 2290ed2..3fcad72 100644
+index ac2a366..19a1bf3 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
-@@ -5462,11 +5462,7 @@ function buildApplicationMenu() {
+@@ -5347,11 +5347,7 @@ function buildApplicationMenu() {
        ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
        : [{ role: 'minimize' }, { role: 'close' }]
    })
@@ -102,7 +102,7 @@ index 2290ed2..3fcad72 100644
    return Menu.buildFromTemplate(template)
  }
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index 5d55393..165500f 100644
+index 5d4502b..7015055 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
 @@ -109,6 +109,8 @@ export function AboutSettings() {
@@ -127,10 +127,10 @@ index 5d55393..165500f 100644
      </SettingsContent>
    )
 diff --git a/apps/desktop/src/app/settings/gateway-settings.tsx b/apps/desktop/src/app/settings/gateway-settings.tsx
-index 2e6c7cd..cc8e9d6 100644
+index 2465168..c35bc17 100644
 --- a/apps/desktop/src/app/settings/gateway-settings.tsx
 +++ b/apps/desktop/src/app/settings/gateway-settings.tsx
-@@ -1075,6 +1075,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1117,6 +1117,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'local' }))}
              title={scope === null ? g.localTitle : g.inheritTitle}
            />
@@ -139,7 +139,7 @@ index 2e6c7cd..cc8e9d6 100644
            <ModeCard
              active={state.mode === 'cloud'}
              description={g.cloudDesc}
-@@ -1083,6 +1085,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1125,6 +1127,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}
              title={g.cloudTitle}
            />
@@ -390,10 +390,10 @@ index aedde11..ec0da80 100644
        </div>
      )
 diff --git a/apps/desktop/src/components/onboarding/index.test.tsx b/apps/desktop/src/components/onboarding/index.test.tsx
-index d167c04..984f8c1 100644
+index ad81560..ac17c4c 100644
 --- a/apps/desktop/src/components/onboarding/index.test.tsx
 +++ b/apps/desktop/src/components/onboarding/index.test.tsx
-@@ -56,20 +56,17 @@ afterEach(() => {
+@@ -56,12 +56,12 @@ afterEach(() => {
  })
  
  describe('onboarding Picker', () => {
@@ -405,19 +405,10 @@ index d167c04..984f8c1 100644
      expect(screen.getByText('Nous Portal')).toBeTruthy()
 -    expect(screen.getByText('Recommended')).toBeTruthy()
 +    expect(screen.queryByText('Recommended')).toBeNull()
-     // Fireworks is the always-visible #2 slot (after Nous), even while OAuth
-     // alternatives stay collapsed behind the disclosure.
-     expect(screen.getByText('Fireworks AI')).toBeTruthy()
--    expect(screen.queryByText('Anthropic API Key')).toBeNull()
--
--    fireEvent.click(screen.getByRole('button', { name: 'Other providers' }))
--
-     expect(screen.getByText('Anthropic API Key')).toBeTruthy()
-+    expect(screen.queryByRole('button', { name: 'Other providers' })).toBeNull()
-     expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()
-   })
- 
-@@ -80,7 +77,6 @@ describe('onboarding Picker', () => {
+     // Fireworks stays behind the disclosure with the other alternatives; only
+     // Nous Portal is visible before the user expands the list.
+     expect(screen.queryByText('Fireworks AI')).toBeNull()
+@@ -81,7 +81,6 @@ describe('onboarding Picker', () => {
        provider('nous', 'Nous Portal')
      ])
      render(<Picker ctx={ctx} />)
@@ -426,7 +417,7 @@ index d167c04..984f8c1 100644
      const labels = screen
        .getAllByRole('button')
 diff --git a/apps/desktop/src/components/onboarding/index.tsx b/apps/desktop/src/components/onboarding/index.tsx
-index 6fb2adf..252d3a8 100644
+index 3b44c4c..50cf5cc 100644
 --- a/apps/desktop/src/components/onboarding/index.tsx
 +++ b/apps/desktop/src/components/onboarding/index.tsx
 @@ -404,7 +404,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
@@ -439,7 +430,7 @@ index 6fb2adf..252d3a8 100644
      return false
    }
 diff --git a/apps/desktop/src/components/onboarding/providers.tsx b/apps/desktop/src/components/onboarding/providers.tsx
-index 1b0a394..04bbf8b 100644
+index 851f7be..522a60c 100644
 --- a/apps/desktop/src/components/onboarding/providers.tsx
 +++ b/apps/desktop/src/components/onboarding/providers.tsx
 @@ -39,21 +39,13 @@ export function FeaturedProviderRow({
@@ -467,7 +458,7 @@ index 1b0a394..04bbf8b 100644
          <p className="mt-1 text-xs leading-5 text-muted-foreground">{t.onboarding.featuredPitch}</p>
        </div>
 diff --git a/apps/desktop/src/store/onboarding.ts b/apps/desktop/src/store/onboarding.ts
-index 6fbf294..1ecaaf9 100644
+index 12c0d66..170a32f 100644
 --- a/apps/desktop/src/store/onboarding.ts
 +++ b/apps/desktop/src/store/onboarding.ts
 @@ -117,6 +117,11 @@ function writeCachedConfigured(value: boolean) {
@@ -483,64 +474,10 @@ index 6fbf294..1ecaaf9 100644
      return false
    }
 diff --git a/apps/desktop/src/store/updates.test.ts b/apps/desktop/src/store/updates.test.ts
-index d6d8c85..6d38acd 100644
+index 010c987..2387d69 100644
 --- a/apps/desktop/src/store/updates.test.ts
 +++ b/apps/desktop/src/store/updates.test.ts
-@@ -133,50 +133,14 @@ describe('reportBackendContract', () => {
-     vi.useRealTimers()
-   })
- 
--  it('dismisses the toast when the backend meets the contract', () => {
-+  it('never warns: the portable edition silences the contract banner', () => {
-+    // Behind, ahead, and no-contract-at-all all take the early return.
-     reportBackendContract(5)
--    expect(dismissSpy).toHaveBeenCalledWith('backend-contract-skew')
--    expect(notifySpy).not.toHaveBeenCalled()
--  })
--
--  it('warns when the backend is behind (or reports no contract)', () => {
-     reportBackendContract(undefined)
--    expect(notifySpy).toHaveBeenCalledTimes(1)
-     reportBackendContract(1)
--    expect(notifySpy).toHaveBeenCalledTimes(2)
--  })
- 
--  it('stays quiet on later session opens once the user closed it', () => {
--    reportBackendContract(1)
--    lastToast().onDismiss() // user closes it → cooldown starts
--    notifySpy.mockClear()
--
--    // Opening another pre-existing session re-runs the check within cooldown.
--    reportBackendContract(1)
-     expect(notifySpy).not.toHaveBeenCalled()
--  })
--
--  it('reminds again after the cooldown elapses', () => {
--    vi.useFakeTimers()
--    vi.setSystemTime(0)
--
--    reportBackendContract(1)
--    lastToast().onDismiss()
--    notifySpy.mockClear()
--
--    vi.setSystemTime(25 * 60 * 60 * 1000) // > 24h cooldown
--    reportBackendContract(1)
--    expect(notifySpy).toHaveBeenCalledTimes(1)
--  })
--
--  it('clears the snooze once the backend catches up, so a regression warns again', () => {
--    reportBackendContract(1)
--    lastToast().onDismiss()
--    notifySpy.mockClear()
--
--    reportBackendContract(5) // backend updated → satisfied, snooze cleared
--    reportBackendContract(4) // a later regression must warn immediately
--    expect(notifySpy).toHaveBeenCalledTimes(1)
-+    expect(dismissSpy).not.toHaveBeenCalled()
-   })
- })
- 
-@@ -585,37 +549,37 @@ describe('startUpdatePoller', () => {
+@@ -894,37 +894,37 @@ describe('startUpdatePoller', () => {
      vi.useRealTimers()
    })
  
@@ -589,10 +526,10 @@ index d6d8c85..6d38acd 100644
    })
  })
 diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
-index 0b46920..b45b179 100644
+index 19739a9..53fe210 100644
 --- a/apps/desktop/src/store/updates.ts
 +++ b/apps/desktop/src/store/updates.ts
-@@ -142,6 +142,11 @@ function isInstallMethodToastSnoozed(): boolean {
+@@ -144,6 +144,11 @@ function isInstallMethodToastSnoozed(): boolean {
   * doesn't nag on every thread switch.
   */
  export function reportBackendContract(contract: number | undefined): void {
@@ -604,7 +541,7 @@ index 0b46920..b45b179 100644
    if ((contract ?? 0) >= REQUIRED_BACKEND_CONTRACT) {
      dismissNotification(SKEW_TOAST_ID)
      // Backend caught up — forget any prior snooze so a future regression warns
-@@ -667,6 +672,11 @@ let lastConnectionMode: string | undefined
+@@ -724,6 +729,11 @@ let lastConnectionMode: string | undefined
  
  /** Wire up background polling + progress streaming. Idempotent. */
  export function startUpdatePoller(): void {
@@ -617,10 +554,10 @@ index 0b46920..b45b179 100644
      return
    }
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index a990979..0f4885e 100644
+index 4ce72fb..c945a85 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
-@@ -3664,6 +3664,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
+@@ -3999,6 +3999,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
  
      if not git_dir.exists():
          if sys.platform == "win32":

@@ -46,7 +46,7 @@ PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 BRAND = "Black Pool"
 BRAND_AGENT = "Black Pool Agent"
 BRAND_VERSION = "0.1.0"
-UPSTREAM_VERSION = "0.20.0"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
+UPSTREAM_VERSION = "0.20.1"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
 BRAND_AUMID = "com.biav.blackpool"
 
 

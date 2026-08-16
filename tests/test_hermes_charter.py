@@ -163,7 +163,7 @@ def test_brand_patch_sentinels():
     text = PATCH_BRAND.read_text(encoding="utf-8")
     sentinels = {
         "About 主版本行渲染黑池版本": "a.version('0.1.0')",
-        "About 出身行（上游版本静态陈述）": "B.I.A.V. Studio 出品 · 基于 Hermes Agent 0.20.0 定制",
+        "About 出身行（上游版本静态陈述）": "B.I.A.V. Studio 出品 · 基于 Hermes Agent 0.20.1 定制",
         "产品版本一井换水（后端 __version__）": '__version__ = "0.1.0"',
         "Hermes Agent 对应 Black Pool Agent": "Black Pool Agent",
         "APP_NAME 兜底统一（userData 脑裂）": "|| 'Black Pool'",
@@ -368,7 +368,7 @@ def test_plugin_author_attribution_never_rewritten():
 def test_rebrand_refuses_repeat_application(tmp_path):
     """两层变换均非幂等，必须拒绝打在已变换的树上（2026-08-04 审视 H-1）。
 
-    公版第二遍会把 About 出身行「基于 Hermes Agent 0.20.0 定制」（MIT 归因
+    公版第二遍会把 About 出身行「基于 Hermes Agent 0.20.1 定制」（MIT 归因
     唯一的 UI 承载面）吃成「基于 Black Pool Agent」；私有版第二遍把价格表
     注入体逐层套娃（实测 +66 行/遍，无上限）。
     """
