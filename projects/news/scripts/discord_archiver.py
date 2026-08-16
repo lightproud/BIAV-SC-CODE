@@ -1188,6 +1188,7 @@ class DiscordArchiver:
         if catchup_rounds:
             state = '积压已抽干' if not lagging else f'{len(lagging)} 个频道仍有积压（预算耗尽）'
             logger.info(f'Catch-up: {catchup_rounds} 轮追赶，{state}')
+        self._warn_unresolved_backlog(lagging)
 
         # Forum channels: active + archived threads, incremental (no historical backfill)
         for ch in forum_channels:
@@ -1261,6 +1262,28 @@ class DiscordArchiver:
         logger.info(
             f'Archival complete: {total_incremental} incremental msgs, '
             f'{len(workable)} channels, {elapsed}s elapsed'
+        )
+
+    def _warn_unresolved_backlog(self, lagging: list) -> None:
+        """追赶轮跑完仍有积压的频道要出声——这类停摆此前对所有监控都是隐形的。
+
+        沉默源审计只看 source 级（discord 整体有没有产出），并明确把频道级健康
+        「交给 archiver 的 state.json 自理」，而 archiver 从来没做过这个检查。
+        于是 general-chat 停摆 9 天、morimens-game-chat 停摆近 2 个月，全程零告警
+        ——公会整体每天照常几千条进账，聚合层面完全看不出来。
+
+        判据用「本轮反复撞配额、到预算耗尽仍没抽干」而不是「游标很旧」：後者会把
+        已停用频道全部误报（实测 global 121 个文字频道里有 31 个游标超 3 天，其中
+        绝大多数是「已停止使用」类频道，最久的 990 天没人发言——那是频道死了，不是
+        采集坏了）。撞配额是活跃度与滞后的合取，死频道永远不会命中。
+        """
+        if not lagging:
+            return
+        names = ', '.join(str(ch.get('name', ch.get('id'))) for ch in lagging[:10])
+        logger.warning(
+            f'积压未抽干频道 {len(lagging)} 个（预算耗尽仍在撞单轮配额）：{names}'
+            ' —— 单轮排干速度已跟不上这些频道的产出，若连续多轮出现同一批频道，'
+            '说明采集频次或预算需要再上调，否则游标会像 general-chat 那样越掉越远'
         )
 
 

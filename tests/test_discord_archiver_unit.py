@@ -564,6 +564,27 @@ class TestPipelines(unittest.TestCase):
             self.assertLess(fci.call_count, 10)
             self.assertTrue((arch.data_dir / "state.json").exists())
 
+    def test_unresolved_backlog_warns(self):
+        """预算耗尽仍在撞配额的频道必须出声——此前这类停摆对所有监控都是隐形的。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            with mock.patch.object(da.logger, "warning") as warn:
+                arch._warn_unresolved_backlog([{"id": "111", "name": "morimens-game-chat"}])
+            self.assertTrue(warn.called)
+            self.assertIn("morimens-game-chat", warn.call_args[0][0])
+
+    def test_drained_backlog_stays_quiet(self):
+        """抽干了就不该报警——判据是「撞配额」，不是「游标旧」。
+
+        用游标年龄做判据会把已停用频道全部误报：实测 global 121 个文字频道里 31 个
+        游标超 3 天，绝大多数是「已停止使用」类频道（最久 990 天没人发言）。
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            with mock.patch.object(da.logger, "warning") as warn:
+                arch._warn_unresolved_backlog([])
+            self.assertFalse(warn.called)
+
     def test_runtime_budget_env_override(self):
         """作业要能把归档器预算压到 job timeout 之下，给 commit/push 留出空档。"""
         import importlib
