@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T03:46:39.750468+00:00",
+  "collected_at": "2026-08-16T06:36:05.291239+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -33,7 +33,7 @@
       "voted_up": true,
       "review": "Very underrated game with beautiful visuals and ost. The character designs are genuinely some of the best in the industry and the gameplay (it's Slay the Spire) is very fun. The game is also extremely generous. I got 180 pulls (30 for pity) and it's not even an anniversary or anything.",
       "timestamp_created": 1786817599,
-      "playtime_forever": 564
+      "playtime_forever": 585
     },
     {
       "source": "steam",
@@ -48,7 +48,7 @@
       "voted_up": true,
       "review": "劇情美術很棒~我個人滿喜歡的www\r\n我也沒想到只是剛好看到推薦下載來玩玩\r\n就...就課金了還50+小時了wwww\r\n希望大家都能玩玩看~",
       "timestamp_created": 1786808374,
-      "playtime_forever": 3047
+      "playtime_forever": 3137
     },
     {
       "source": "steam",
@@ -124,36 +124,6 @@
       "review": "can't complain",
       "timestamp_created": 1786778087,
       "playtime_forever": 1118
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T06:04:09+00:00",
-      "lang": "english",
-      "title": "[正面] Fun Gameplay",
-      "summary": "Fun Gameplay",
-      "url": "https://steamcommunity.com/profiles/76561198996477575/recommended/3052450",
-      "author": "76561198996477575",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Fun Gameplay",
-      "timestamp_created": 1786773849,
-      "playtime_forever": 487
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T03:52:13+00:00",
-      "lang": "tchinese",
-      "title": "[负面] 遊戲程式經常閃跳及沒有回應,遊戲中UI亦會時不時沒有圖片顯示,遊戲程式經常要重新安裝才能遊玩,導致遊...",
-      "summary": "遊戲程式經常閃跳及沒有回應,遊戲中UI亦會時不時沒有圖片顯示,遊戲程式經常要重新安裝才能遊玩,導致遊戲體驗極差.",
-      "url": "https://steamcommunity.com/profiles/76561198177442486/recommended/3052450",
-      "author": "76561198177442486",
-      "engagement": 0,
-      "language": "tchinese",
-      "voted_up": false,
-      "review": "遊戲程式經常閃跳及沒有回應,遊戲中UI亦會時不時沒有圖片顯示,遊戲程式經常要重新安裝才能遊玩,導致遊戲體驗極差.",
-      "timestamp_created": 1786765933,
-      "playtime_forever": 2909
     }
   ]
 }
