@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "bahamut 社区数据源"
-description: "bahamut 平台采集档案，全量 895 条，健康度 active。"
+description: "bahamut 平台采集档案，全量 921 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/bahamut/"
 tags: ["data_layer:full_archive", "platform:bahamut", "health:active"]
-timestamp: "2026-08-15T06:34:56.442780+00:00"
+timestamp: "2026-08-16T06:36:35.279435+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-08-15T06:34:56.442780+00:00"
 | 平台 | bahamut |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/bahamut/` |
 | 输出展示层（抽样） | `projects/news/output/bahamut-latest.json` |
-| 全量条数 | 895 |
+| 全量条数 | 921 |
 | 采集健康度 | active |
-| 最后成功 | 2026-08-15 |
+| 最后成功 | 2026-08-16 |
 
 # 数据纪律（硬约束）
 
