@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-15T21:19:43.578279+00:00",
+  "collected_at": "2026-08-16T01:08:52.107241+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 14,
+  "item_count": 10,
   "items": [
     {
       "source": "youtube",
@@ -13,20 +13,8 @@
       "summary": "Don't know how long. Will be doing other stuff too.",
       "url": "https://www.youtube.com/watch?v=Q3XGOqReeUs",
       "author": "Flares117",
-      "engagement": 525,
+      "engagement": 531,
       "media_url": "https://i.ytimg.com/vi/Q3XGOqReeUs/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-15T04:24:47Z",
-      "lang": "",
-      "title": "[Morimens] Reacting to Chinese Morimens Video Titles/Fanfics/etc on Livestream.",
-      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=7GJrHnnhd20",
-      "author": "Flares117",
-      "engagement": 394,
-      "media_url": "https://i.ytimg.com/vi/7GJrHnnhd20/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -37,8 +25,20 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=XSUTq9HVsnY",
       "author": "Flares117",
-      "engagement": 259,
+      "engagement": 419,
       "media_url": "https://i.ytimg.com/vi/XSUTq9HVsnY/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-15T04:24:47Z",
+      "lang": "",
+      "title": "[Morimens] Reacting to Chinese Morimens Video Titles/Fanfics/etc on Livestream.",
+      "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "url": "https://www.youtube.com/watch?v=7GJrHnnhd20",
+      "author": "Flares117",
+      "engagement": 405,
+      "media_url": "https://i.ytimg.com/vi/7GJrHnnhd20/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -49,20 +49,8 @@
       "summary": "忘卻前夜 #morimens 融災更新,8月3號~8月17日. Regional D-Effect Zone Update ( August 3-August 17). 這次融災算是稍微好打一點 ...",
       "url": "https://www.youtube.com/watch?v=1sfpVW4857w",
       "author": "Noir",
-      "engagement": 12,
+      "engagement": 13,
       "media_url": "https://i.ytimg.com/vi/1sfpVW4857w/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-15T00:04:19Z",
-      "lang": "",
-      "title": "모리멘스 (망각전야) - 8/3 시즌 융재금구 W3A5+",
-      "summary": "그저 평범한 풀돌 무셰트의 철거 작업입니다. 무셰트는 사야의 0코 침식으로 핸드가 뒤집혀도 팀원 누군가의 타격이 여럿 잡힌다면 ...",
-      "url": "https://www.youtube.com/watch?v=F6rVODw5lco",
-      "author": "때까치",
-      "engagement": 11,
-      "media_url": "https://i.ytimg.com/vi/F6rVODw5lco/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -73,44 +61,20 @@
       "summary": "More story stuff :3 Links https://www.twitch.tv/eepyghost https://discord.gg/2hn75MB2zf https://twitter.com/eepyghostie.",
       "url": "https://www.youtube.com/watch?v=lkTCEyykX9E",
       "author": "eepyghost",
-      "engagement": 9,
+      "engagement": 12,
       "media_url": "https://i.ytimg.com/vi/lkTCEyykX9E/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-08-15T00:02:26Z",
+      "time": "2026-08-15T01:48:54Z",
       "lang": "",
-      "title": "모리멘스 (망각전야) - 8/3 시즌 융재금구 W2A5+",
-      "summary": "이전부터 1페이즈를 총성 위주로 해결하고 2페이즈는 그 사이 아껴두었던 높은 폭염 스택의 엑사플레어로 마무리하는 플레이를 보긴 ...",
-      "url": "https://www.youtube.com/watch?v=eGEIPRC17J8",
-      "author": "때까치",
-      "engagement": 6,
-      "media_url": "https://i.ytimg.com/vi/eGEIPRC17J8/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-15T00:00:20Z",
-      "lang": "",
-      "title": "모리멘스 (망각전야) - 8/3 시즌 융재금구 W1A5+",
-      "summary": "혈쇄히로는 3돌 시 광기폭발에 실드 제거 및 추가 실드생성 불가 상태로 만드는 기능이 추가됩니다. 원래는 혈쇄히로를 주 딜러로 기용 ...",
-      "url": "https://www.youtube.com/watch?v=SdzMiK-y3Es",
-      "author": "때까치",
-      "engagement": 6,
-      "media_url": "https://i.ytimg.com/vi/SdzMiK-y3Es/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-15T00:28:39Z",
-      "lang": "",
-      "title": "Morimens....Ch. 8 (8.13)",
-      "summary": "CapCut I made this amazing video with CapCut. Open the link to try it out: capcut.com/tools/desktop-video-editor.",
-      "url": "https://www.youtube.com/watch?v=Pcf4-uSi05k",
-      "author": "J3w3lz4nn",
-      "engagement": 4,
-      "media_url": "https://i.ytimg.com/vi/Pcf4-uSi05k/hqdefault.jpg",
+      "title": "Morimens Remembering You&#39;re Death/Other Gamer Later",
+      "summary": "Vtuber #VtuberEN #malevtuber #vstreamer #smallstreamer #gaming #morimens.",
+      "url": "https://www.youtube.com/watch?v=AOrlltfYolQ",
+      "author": "BreadRuin",
+      "engagement": 2,
+      "media_url": "https://i.ytimg.com/vi/AOrlltfYolQ/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
@@ -147,18 +111,6 @@
       "author": "BreadRuin",
       "engagement": 0,
       "media_url": "https://i.ytimg.com/vi/Bg3ByNI1RdA/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-15T01:48:54Z",
-      "lang": "",
-      "title": "Morimens Remembering You&#39;re Death/Other Gamer Later",
-      "summary": "Vtuber #VtuberEN #malevtuber #vstreamer #smallstreamer #gaming #morimens.",
-      "url": "https://www.youtube.com/watch?v=AOrlltfYolQ",
-      "author": "BreadRuin",
-      "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/AOrlltfYolQ/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
