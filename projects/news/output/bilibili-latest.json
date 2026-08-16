@@ -1,41 +1,23 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T12:34:49.866019+00:00",
+  "collected_at": "2026-08-16T15:20:15.877491+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 7,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-08-15T13:03:58+00:00",
-      "lang": "zh",
-      "title": "赔钱玩家在所有游戏里都能精准找到dot队哦🙄",
-      "summary": "-\n  └ -光影的栖所- (28赞): 忘却前夜来支持了，有点像诺谛卡大招素材来源🙄✌\n  └ 熬夜会变傻狗 (5赞): 回到过去来支持了[阴险]有点像3启ddg被扫地小妹踢了 还有啥子深蓝就这么阿帕次阿帕次的给我们血肉吞噬抄走给鲍里斯叔叔了呀\n  └ 最喜欢谢鸣的江山婳 (4赞): 融朵手感就是好玩啊，就是终末两回合就会毒免[笑哭]，第四人选择皮克曼是有什么说法吗？力量对于毒来说会不会太没用了？我甚至第四人带的sp罗坦，第一回合觉醒很舒服同时队伍又不算吃钥令，有没有什么别的说法？？？",
-      "url": "https://www.bilibili.com/video/BV1Wjby63ERH",
-      "author": "电稽懒莓",
-      "engagement": 1765,
-      "media_url": "https://i0.hdslb.com/bfs/archive/32bd560e51fdb63a33b4d86af81f7b573f2facf9.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 1748,
-        "comment_count": 17,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
     {
       "source": "bilibili",
       "time": "2026-08-16T00:00:00+00:00",
       "lang": "zh",
       "title": "（二补）明明是飞马白粥组成的怪物，在我眼中却是美丽的少女",
-      "summary": "-\n  └ Satwreck (14赞): 白粥组成的怪物，哦这菲戈啊\n  └ 不会住在世界尽头 (2赞): @一只路过的居安安哦对了，f8fq\n  └ 方糖必秒砂糖 (5赞): 能不能把沙耶改为辛巴[喜欢]",
+      "summary": "-\n  └ Satwreck (16赞): 白粥组成的怪物，哦这菲戈啊\n  └ 不会住在世界尽头 (2赞): @一只路过的居安安哦对了，f8fq\n  └ 方糖必秒砂糖 (5赞): 能不能把沙耶改为辛巴[喜欢]",
       "url": "https://www.bilibili.com/video/BV1qUbC68Exf",
       "author": "采蘑菇的九爷爷",
-      "engagement": 1615,
+      "engagement": 1669,
       "media_url": "https://i2.hdslb.com/bfs/archive/994b403ce7c8fef2fc8d38c1476b7d5d02b95247.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1590,
+        "play": 1644,
         "comment_count": 25,
         "comments_fetched": 3,
         "danmaku": 0
@@ -49,11 +31,11 @@
       "summary": "卡组越怪，赢得越快\n  └ 云清禅心 (12赞): 你宁依旧集火最高优先级[doge]\n  └ 东方云心 (3赞): [星绘·沐春灼华 应援装扮_铸币大头]\n  └ 韵响 (4赞): 老大，这回这么长，看爽了",
       "url": "https://www.bilibili.com/video/BV1MXb26sERw",
       "author": "莱星Ligh",
-      "engagement": 1051,
+      "engagement": 1081,
       "media_url": "https://i0.hdslb.com/bfs/archive/1d96324ed5e754836b314b451d81670bbd0d7653.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1047,
+        "play": 1077,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 2
@@ -64,17 +46,17 @@
       "time": "2026-08-16T04:30:58+00:00",
       "lang": "zh",
       "title": "【卜区】deg重组！和沙耶双区合璧，联手暴打猪肉丸",
-      "summary": "└ Neo_Li (0赞): 这铁拳出神入化\n  └ 69岁退休Niko (0赞): 拯救龙少没绷住\n  └ Mr_lja (0赞): 龙少怎么了？进局子了？",
+      "summary": "└ Mr_lja (0赞): 龙少怎么了？进局子了？\n  └ Neo_Li (0赞): 这铁拳出神入化\n  └ 69岁退休Niko (0赞): 拯救龙少没绷住",
       "url": "https://www.bilibili.com/video/BV1bZbU6fErU",
       "author": "浮世绘若梦",
-      "engagement": 919,
+      "engagement": 1049,
       "media_url": "https://i1.hdslb.com/bfs/archive/ba3f74e45f540a85308bf6d563b22a53f0c23eb6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 916,
-        "comment_count": 3,
+        "play": 1045,
+        "comment_count": 4,
         "comments_fetched": 3,
-        "danmaku": 2
+        "danmaku": 3
       }
     },
     {
@@ -82,51 +64,15 @@
       "time": "2026-08-15T16:48:12+00:00",
       "lang": "zh",
       "title": "给我汽油",
-      "summary": "-\n  └ HIRO-EMA (1赞): 给你5771的热度\n  └ 蔡怜儿 (0赞): 竟然还有坚持5771剪辑的，太欣慰了",
+      "summary": "-\n  └ HIRO-EMA (1赞): 给你5771的热度\n  └ 乌毛污龟 (0赞): 厉害[星星眼][星星眼][星星眼]\n  └ 乌毛污龟 (0赞): 给你2个币",
       "url": "https://www.bilibili.com/video/BV1J8b26gE2g",
       "author": "蹈海者",
-      "engagement": 516,
+      "engagement": 563,
       "media_url": "https://i2.hdslb.com/bfs/archive/7f1fd10459c6a429892793a0ce981ef596c4214e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 512,
-        "comment_count": 4,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-15T15:05:08+00:00",
-      "lang": "zh",
-      "title": "沙喵",
-      "summary": "-\n  └ 被子大人0 (1赞): [樱花萌放表情_巧克力][樱花萌放表情_巧克力][樱花萌放表情_巧克力]\n  └ 耕司青海瑶 (1赞): [doge]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]",
-      "url": "https://www.bilibili.com/video/BV15kb26wEdb",
-      "author": "小龙猫大能力",
-      "engagement": 374,
-      "media_url": "https://i0.hdslb.com/bfs/archive/d2df2b7bfc6eb58550fbfcc661803abb6ef9f2de.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 364,
-        "comment_count": 10,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-15T14:14:48+00:00",
-      "lang": "zh",
-      "title": "兲猫美食！万一匿名兲和熊猫是真爱呢os：这期有教育意义",
-      "summary": "-\n  └ 怎么都被占用了555 (3赞): 甚是诡异\n  └ 白石柚月 (1赞): 太诡异了\n  └ 002F_7 (1赞): 这期有教育意义",
-      "url": "https://www.bilibili.com/video/BV1FybC6PELY",
-      "author": "Air-迟岸",
-      "engagement": 214,
-      "media_url": "https://i2.hdslb.com/bfs/archive/cd8c615d46b24c39ae4434fcbc0491fcdbba1c16.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 210,
-        "comment_count": 4,
+        "play": 555,
+        "comment_count": 8,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -139,14 +85,32 @@
       "summary": "我是一名拉屎爱好者，我叫匂坂郁纪\n  └ 是Eta呀 (1赞): 说实话真觉得郁纪有点坏[笑哭][笑哭][笑哭]\n  └ 吐槽大会员工 (1赞): UP主加油！",
       "url": "https://www.bilibili.com/video/BV1u9bU6aE6e",
       "author": "耕司青海瑶",
-      "engagement": 101,
+      "engagement": 127,
       "media_url": "https://i1.hdslb.com/bfs/archive/8792402e75d2d9485d9b374cb8f9d5593e228259.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 98,
+        "play": 124,
         "comment_count": 3,
         "comments_fetched": 2,
         "danmaku": 6
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-16T10:23:09+00:00",
+      "lang": "zh",
+      "title": "沙耶小姐悠闲的诡异日常  2.0",
+      "summary": "@耕司青海瑶 @妍伊moe\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_哦吼吼]\n  └ 耕司青海瑶 (1赞): [doge]",
+      "url": "https://www.bilibili.com/video/BV1FHb96fEYV",
+      "author": "oldtimesishurt",
+      "engagement": 63,
+      "media_url": "https://i2.hdslb.com/bfs/archive/63333391266bb024fda25f60e958298388d15dae.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 59,
+        "comment_count": 4,
+        "comments_fetched": 2,
+        "danmaku": 0
       }
     },
     {
@@ -157,31 +121,13 @@
       "summary": "玩沙耶之歌的时候老是被虚渊玄引导，思考爱到底是什么，是血与肉的交织，还是纯粹的感情，跨越物种之间也有爱吗，当个人的小爱与社会的道德冲突，到底如何选择才是对的，沙耶之歌迷人之处就在此，选择权永远在你手中\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ Chonggg13 (0赞): Reapter什么鬼[doge]",
       "url": "https://www.bilibili.com/video/BV1MFbS6tEYE",
       "author": "So某ra",
-      "engagement": 38,
+      "engagement": 46,
       "media_url": "https://i2.hdslb.com/bfs/archive/5426706f51b1ec797ee27733ab01262653ffa87b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 36,
+        "play": 44,
         "comment_count": 2,
         "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-08-16T10:23:09+00:00",
-      "lang": "zh",
-      "title": "沙耶小姐悠闲的诡异日常  2.0",
-      "summary": "@耕司青海瑶 @妍伊moe\n  └ 耕司青海瑶 (1赞): [doge]",
-      "url": "https://www.bilibili.com/video/BV1FHb96fEYV",
-      "author": "oldtimesishurt",
-      "engagement": 16,
-      "media_url": "https://i2.hdslb.com/bfs/archive/63333391266bb024fda25f60e958298388d15dae.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 14,
-        "comment_count": 2,
-        "comments_fetched": 1,
         "danmaku": 0
       }
     }

@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T12:34:49.866019+00:00",
+  "collected_at": "2026-08-16T15:20:15.877491+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-16T14:03:30+00:00",
+      "lang": "tchinese",
+      "title": "[正面] 偶爾玩玩的\r\n被美術人設吸引而來的\r\n感覺劇情上是不斷吃刀子的微憂鬱向\r\n不建議睡覺前遊玩",
+      "summary": "偶爾玩玩的\r\n被美術人設吸引而來的\r\n感覺劇情上是不斷吃刀子的微憂鬱向\r\n不建議睡覺前遊玩",
+      "url": "https://steamcommunity.com/profiles/76561198058241988/recommended/3052450",
+      "author": "76561198058241988",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "偶爾玩玩的\r\n被美術人設吸引而來的\r\n感覺劇情上是不斷吃刀子的微憂鬱向\r\n不建議睡覺前遊玩",
+      "timestamp_created": 1786889010,
+      "playtime_forever": 317
+    },
     {
       "source": "steam",
       "time": "2026-08-16T11:17:39+00:00",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "Карточная гача) приятно что не надо 100 круток как у михуе а всего лишь 60 Мрачная тайная интересная минусом является перевод на Русский язык много ошибок .",
       "timestamp_created": 1786878791,
-      "playtime_forever": 890
+      "playtime_forever": 1011
     },
     {
       "source": "steam",
@@ -63,7 +78,7 @@
       "voted_up": true,
       "review": "Me encanta por que es de cartas y a mi me gustan los juegos de cartas y wena.",
       "timestamp_created": 1786872233,
-      "playtime_forever": 332
+      "playtime_forever": 452
     },
     {
       "source": "steam",
@@ -123,37 +138,7 @@
       "voted_up": true,
       "review": "劇情美術很棒~我個人滿喜歡的www\r\n我也沒想到只是剛好看到推薦下載來玩玩\r\n就...就課金了還50+小時了wwww\r\n希望大家都能玩玩看~",
       "timestamp_created": 1786808374,
-      "playtime_forever": 3557
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T14:23:23+00:00",
-      "lang": "english",
-      "title": "[正面] Still a bit rough, but screw it; game's great",
-      "summary": "Still a bit rough, but screw it; game's great",
-      "url": "https://steamcommunity.com/profiles/76561198038403824/recommended/3052450",
-      "author": "76561198038403824",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Still a bit rough, but screw it; game's great",
-      "timestamp_created": 1786803803,
-      "playtime_forever": 4508
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T13:59:58+00:00",
-      "lang": "koreana",
-      "title": "[正面] 스토리도 좋고 게임도 재밌는데.. 번역만 좀더 개선되면 주변에 엄청 추천하고 다닐 듯...",
-      "summary": "스토리도 좋고 게임도 재밌는데.. 번역만 좀더 개선되면 주변에 엄청 추천하고 다닐 듯...",
-      "url": "https://steamcommunity.com/profiles/76561198398810779/recommended/3052450",
-      "author": "76561198398810779",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "스토리도 좋고 게임도 재밌는데.. 번역만 좀더 개선되면 주변에 엄청 추천하고 다닐 듯...",
-      "timestamp_created": 1786802398,
-      "playtime_forever": 937
+      "playtime_forever": 3598
     }
   ]
 }
