@@ -1,10 +1,70 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T09:25:40.533734+00:00",
+  "collected_at": "2026-08-16T12:34:49.866019+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-16T11:17:39+00:00",
+      "lang": "english",
+      "title": "[正面] Pretty fun gacha. Underrated. Fair warning tho, it...",
+      "summary": "Pretty fun gacha. Underrated. Fair warning tho, it's quite hard. Combats can be pretty demanding.",
+      "url": "https://steamcommunity.com/profiles/76561198090668360/recommended/3052450",
+      "author": "76561198090668360",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Pretty fun gacha. Underrated. Fair warning tho, it's quite hard. Combats can be pretty demanding.",
+      "timestamp_created": 1786879059,
+      "playtime_forever": 1999
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-16T11:13:11+00:00",
+      "lang": "russian",
+      "title": "[正面] Карточная гача) приятно что не надо 100 круток как...",
+      "summary": "Карточная гача) приятно что не надо 100 круток как у михуе а всего лишь 60 Мрачная тайная интересная минусом является перевод на Русский язык много ошибок .",
+      "url": "https://steamcommunity.com/profiles/76561198041609367/recommended/3052450",
+      "author": "76561198041609367",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Карточная гача) приятно что не надо 100 круток как у михуе а всего лишь 60 Мрачная тайная интересная минусом является перевод на Русский язык много ошибок .",
+      "timestamp_created": 1786878791,
+      "playtime_forever": 890
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-16T09:54:01+00:00",
+      "lang": "tchinese",
+      "title": "[正面] deep",
+      "summary": "deep",
+      "url": "https://steamcommunity.com/profiles/76561199482551614/recommended/3052450",
+      "author": "76561199482551614",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "deep",
+      "timestamp_created": 1786874041,
+      "playtime_forever": 1139
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-16T09:23:53+00:00",
+      "lang": "spanish",
+      "title": "[正面] Me encanta por que es de cartas y a mi me gustan l...",
+      "summary": "Me encanta por que es de cartas y a mi me gustan los juegos de cartas y wena.",
+      "url": "https://steamcommunity.com/profiles/76561198880222049/recommended/3052450",
+      "author": "76561198880222049",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Me encanta por que es de cartas y a mi me gustan los juegos de cartas y wena.",
+      "timestamp_created": 1786872233,
+      "playtime_forever": 332
+    },
     {
       "source": "steam",
       "time": "2026-08-16T08:32:06+00:00",
@@ -48,7 +108,7 @@
       "voted_up": true,
       "review": "Very underrated game with beautiful visuals and ost. The character designs are genuinely some of the best in the industry and the gameplay (it's Slay the Spire) is very fun. The game is also extremely generous. I got 180 pulls (30 for pity) and it's not even an anniversary or anything.",
       "timestamp_created": 1786817599,
-      "playtime_forever": 585
+      "playtime_forever": 642
     },
     {
       "source": "steam",
@@ -63,7 +123,7 @@
       "voted_up": true,
       "review": "劇情美術很棒~我個人滿喜歡的www\r\n我也沒想到只是剛好看到推薦下載來玩玩\r\n就...就課金了還50+小時了wwww\r\n希望大家都能玩玩看~",
       "timestamp_created": 1786808374,
-      "playtime_forever": 3347
+      "playtime_forever": 3557
     },
     {
       "source": "steam",
@@ -93,22 +153,7 @@
       "voted_up": true,
       "review": "스토리도 좋고 게임도 재밌는데.. 번역만 좀더 개선되면 주변에 엄청 추천하고 다닐 듯...",
       "timestamp_created": 1786802398,
-      "playtime_forever": 877
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T10:46:01+00:00",
-      "lang": "koreana",
-      "title": "[正面] 일단 해",
-      "summary": "일단 해",
-      "url": "https://steamcommunity.com/profiles/76561198378792491/recommended/3052450",
-      "author": "76561198378792491",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "일단 해",
-      "timestamp_created": 1786790761,
-      "playtime_forever": 45035
+      "playtime_forever": 937
     }
   ]
 }
