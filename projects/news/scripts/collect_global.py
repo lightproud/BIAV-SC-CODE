@@ -49,7 +49,6 @@ SOURCE_MAP = {
     'steam': 'steam_review',
     'weibo': 'weibo',
     'bahamut': 'bahamut',
-    'arca_live': 'arca_live',
     'appstore': 'appstore',
     'google_play': 'google_play',
     'pixiv': 'pixiv',
@@ -127,7 +126,6 @@ def run_zero_cost_collectors() -> list[dict]:
     # Playwright fallback: platforms where HTTP fails but browser works
     PW_FALLBACK: dict[str, str] = {
         # name → playwright_collectors function name
-        'Arca.live':   'fetch_arca_live_playwright',
         'Ruliweb':     'fetch_ruliweb_playwright',
         'Bahamut':     'fetch_bahamut_playwright',
         'Weibo':       'fetch_weibo_playwright',
@@ -161,7 +159,8 @@ def run_zero_cost_collectors() -> list[dict]:
     api_fetchers = [
         ('YouTube', c.fetch_youtube),
         ('Bahamut', c.fetch_bahamut),
-        ('Arca.live', c.fetch_arca_live),
+        # Arca.live 已退出编排（守密人 2026-08-16 裁定摘除注册表；CF 封死 Actions
+        # 机房 IP，采集器与 collect_arca_daily.py 单脚本均保留在树上待复用）
         ('Google Play', c.fetch_google_play),
     ]
 
@@ -174,7 +173,7 @@ def run_zero_cost_collectors() -> list[dict]:
         'StopGame': 'stopgame', '搜狗微信': 'weixin',
         'YouTube': 'youtube',
         'Bahamut': 'bahamut',
-        'Arca.live': 'arca_live', 'Google Play': 'google_play',
+        'Google Play': 'google_play',
     }
 
     # 各采集器互相独立、采集前无共享状态 → 用线程并行（阻塞 requests 用线程即可）。

@@ -159,14 +159,15 @@ class TestRunZeroCostBranches(unittest.TestCase):
         self.assertEqual(core_failures, [])
 
     def test_playwright_fallback_on_empty(self):
-        # Arca.live returns [] via HTTP → playwright fallback yields items.
+        # Ruliweb returns [] via HTTP → playwright fallback yields items.
+        # （原以 Arca.live 举例；该源 2026-08-16 摘除后已不在编排里）
         pw_mod = mock.MagicMock()
-        pw_mod.fetch_arca_live_playwright = lambda: [_item("pw", "https://pw/1")]
+        pw_mod.fetch_ruliweb_playwright = lambda: [_item("pw", "https://pw/1")]
         with mock.patch.object(global_collectors, "_refresh_cutoff", return_value=None), \
                 mock.patch.dict(sys.modules, {"data_quality": mock.MagicMock(
                     SilentPlatformTracker=mock.MagicMock(side_effect=Exception("off"))),
                     "playwright_collectors": pw_mod}):
-            self._patch_all_empty({"Arca.live": list})
+            self._patch_all_empty({"Ruliweb": list})
             items, _ = cg.run_zero_cost_collectors()
         self.assertTrue(any(i["title"] == "pw" for i in items))
 

@@ -271,6 +271,42 @@ class TestFetchWeiboExtra(unittest.TestCase):
                 mock.patch.object(gc, "_get", side_effect=RuntimeError("down")):
             self.assertEqual(gc.fetch_weibo(), [])
 
+    @staticmethod
+    def _card(mid):
+        return {"card_type": 9, "mblog": {
+            "created_at": "", "text": f"忘却前夜 {mid}", "id": str(mid),
+            "reposts_count": 0, "comments_count": 0, "attitudes_count": 0,
+            "user": {"screen_name": "u"},
+        }}
+
+    def test_pagination_walks_pages(self):
+        """翻页：只取首页时一轮就那十来条，高峰日会整段刷过去（实测 8-13 归档为 0）。"""
+        pages = {1: [self._card(1)], 2: [self._card(2)], 3: []}
+
+        def fake_get(_url, params=None, **_kw):
+            return FakeResp(json_data={"data": {"cards": pages.get(params["page"], [])}})
+
+        with mock.patch.dict(gc.os.environ, {}, clear=True), \
+                mock.patch.object(gc, "_get", side_effect=fake_get):
+            items = gc.fetch_weibo()
+        # 2 个中文关键词 × 2 页各 1 条
+        self.assertEqual(len(items), 4)
+
+    def test_pagination_stops_on_repeated_page(self):
+        """微博越界翻页会重复回吐上一页——整页无新 id 必须停，否则同批内容反复计入。"""
+        calls = {"n": 0}
+
+        def fake_get(_url, params=None, **_kw):
+            calls["n"] += 1
+            return FakeResp(json_data={"data": {"cards": [self._card(1)]}})
+
+        with mock.patch.dict(gc.os.environ, {}, clear=True), \
+                mock.patch.object(gc, "_get", side_effect=fake_get):
+            items = gc.fetch_weibo()
+        # 每个关键词翻到第 2 页即判定重复停下：2 关键词 × 1 条，共 2×2 次请求
+        self.assertEqual(len(items), 2)
+        self.assertEqual(calls["n"], 4)
+
 
 # ─── arca extra branches ───────────────────────────────────
 
