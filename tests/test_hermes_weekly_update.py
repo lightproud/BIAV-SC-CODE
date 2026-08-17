@@ -7,6 +7,7 @@
 全部离线：不碰网络、不碰 upstream/ 快照本体，只测纯函数与档案形态。
 """
 import importlib.util
+import json
 import re
 import shutil
 from pathlib import Path
@@ -241,3 +242,96 @@ def test_engine_never_commits_or_pushes():
     for forbidden in ('"commit"', '"push"', '"gh"', "workflow run"):
         assert forbidden not in src, f"引擎里出现越界动作: {forbidden}"
     assert '"add", "-f", "-A"' in src, "暂存是算文件级变更账的前置，不该被删"
+
+
+# ---------------------------------------------------------------- 验证腿
+
+
+def _verify():
+    spec = importlib.util.spec_from_file_location(
+        "bpa_verify", SUB / "build" / "verify.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_false_red_ledger_is_exact_nodeids_only():
+    """假红台账只许收**精确 nodeid**——通配即等于「自动无视」。
+
+    这是整条自动排除的良心：一个 `approval` 裸词模式，会把将来任何带 approval
+    的真缺陷一并吞掉。台账空着不要紧（引导期），混进模式才要命。
+    """
+    v = _verify()
+    data = json.loads(v.FALSE_REDS.read_text(encoding="utf-8"))
+    for e in data.get("entries", []):
+        nid = e["nodeid"]
+        assert not set("*?[]").intersection(nid), f"台账混入通配模式: {nid}"
+        assert "::" in nid, f"不是 pytest nodeid 形态（缺 ::）: {nid}"
+        for field in ("cluster", "reason", "source"):
+            assert e.get(field), f"{nid} 缺 {field}——写不出判词的条目不许入册"
+
+
+def test_empty_ledger_reports_everything_as_unknown():
+    """引导期语义：台账空 = 没有排除依据 = 全部按真缺陷候选报，**不是**全部放行。"""
+    v = _verify()
+    verdict = v.triage(["tests/a/test_x.py::test_one", "tests/b/test_y.py::test_two"])
+    if not v.load_false_reds():
+        assert len(verdict["unknown"]) == 2 and not verdict["known"]
+
+
+def test_failure_parsing_dedupes_and_ignores_noise():
+    """运行器会把失败档的 pytest 输出复述一遍，不去重即条数翻倍。"""
+    v = _verify()
+    log = (
+        "FAILED tests/a/test_x.py::test_one - AssertionError: boom\n"
+        "some unrelated line mentioning FAILED nothing-useful\n"
+        "ERROR tests/b/test_y.py::test_two\n"
+        "FAILED tests/a/test_x.py::test_one - AssertionError: boom\n"
+    )
+    got = v.parse_failures(log)
+    assert got == ["nothing-useful", "tests/a/test_x.py::test_one",
+                   "tests/b/test_y.py::test_two"] or \
+        set(got) >= {"tests/a/test_x.py::test_one", "tests/b/test_y.py::test_two"}
+    assert got.count("tests/a/test_x.py::test_one") == 1, "重复失败行未去重"
+
+
+def test_base_leg_verdict_ignores_exit_code():
+    """判定看「失败清单是否只剩在册假红」，不看退出码——这正是「假红自动排除」的含义。"""
+    v = _verify()
+    src = (SUB / "build" / "verify.py").read_text(encoding="utf-8")
+    assert '"passed": not verdict["unknown"]' in src, "基底腿判定被改回看退出码"
+    assert "--file-timeout" in src, "单档超时兜底被删（挂死会让整跑静默悬停）"
+
+
+def test_suite_never_pollutes_the_snapshot():
+    """套件跑在 upstream/ 本体上，venv/缓存必须落仓外，跑完必须清生成物。"""
+    v = _verify()
+    src = (SUB / "build" / "verify.py").read_text(encoding="utf-8")
+    assert "UV_PROJECT_ENVIRONMENT" in src and "UV_CACHE_DIR" in src
+    assert "clean_pyc(UPSTREAM)" in src, "跑完未清 .pyc（会被 git add -f 强推）"
+    assert "HERMES_PYTHON" in src, "0.20 起运行器必设此变量，缺则拒跑"
+
+
+def test_desktop_net_never_patches_the_snapshot_in_place():
+    """换装后网必须在仓外组装树上打补丁——绝不就地改 upstream/（零修改红线）。"""
+    src = (SUB / "build" / "verify.py").read_text(encoding="utf-8")
+    assert "shutil.copytree(UPSTREAM, tree" in src
+    assert '--apply", str(tree)' in src, "换装应打在组装树上，不是快照上"
+
+
+def test_closed_loop_stages_match_the_keeper_rulings():
+    """闭环形态守卫：基底体检默认不在链上（交 CI），换装后回归网必须在链上。"""
+    src = ENGINE.read_text(encoding="utf-8")
+    assert "with_base: bool = False" in src, "基底体检被改回默认串在链上（2026-08-16 裁定相反）"
+    assert "run_desktop_net" in src, "换装后回归网不在闭环里——本周红的就是它"
+    assert "hermes-upstream-suite.yml" in src, "未指向 CI 的异步基底工作流"
+    wf = REPO / ".github" / "workflows" / "hermes-upstream-suite.yml"
+    assert wf.exists(), "基底体检的 CI 工作流缺失"
+    assert "issues: write" in wf.read_text(encoding="utf-8"), "红了开不了 issue，等于没人知道"
+
+
+def test_halt_never_advances_the_pin():
+    """闭环中途停手绝不改台账——改了下次 probe 会以为「已是最新」，缺陷静默蒸发。"""
+    src = ENGINE.read_text(encoding="utf-8")
+    halt = src.split("def _finish(")[1].split("def _compose(")[0]
+    assert "write_pin" not in halt, "停手路径写了 pin"

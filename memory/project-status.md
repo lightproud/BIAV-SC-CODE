@@ -89,7 +89,7 @@
 | maestro SDK 源文件 / 测试档 | 20 / 40 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
 | Python 测试档 | 151 | 磁盘实况 |
-| CI 工作流 / 其中定时 | 49 / 21 | `.github/workflows/` |
+| CI 工作流 / 其中定时 | 50 / 21 | `.github/workflows/` |
 | 挂账台账 开 / 已清 | 22 / 64 | `memory/todo.md` |
 
 <!-- STATUS-FACTS:END -->
@@ -354,7 +354,9 @@
 - **上游移 pin `v2026.8.3` / 0.20.0（2026-08-04，守密人派发）**：快照替换 + 哨兵同步 + 补丁重生成/重放
   全绿（`UPSTREAM.md`）；浅色降饱和 12 令牌（`BRANDING.md`）；套件复跑 25,176 过零真缺陷（testrun-20260804）。
 - **上游周更例程已建（2026-08-09，守密人四裁：会话例程载体 / 全绿即直推 main / 合并后自动出包 / 只出私有版）**：每周一 00:00 北京（Routine cron `0 16 * * 0`）起新会话，照 `projects/black-pool-agent/WEEKLY-UPDATE.md` 跑机械腿 `build/sync_upstream.py`（探版 / 换装 / 变更清单 / 公告），补丁冲突以退出码 3 交人工重放；出包触发 `assemble-black-pool-bundle.yml`，公告落 `Resource/repo-engineering/hermes-weekly-update-*`。
-  撞面判定走**补丁面文件交集**而非关键词（0.19.1→0.20.0 区间：关键词报 257/945 条高风险，交集报 38 条且正中当次真需人工重放的文件）。守卫 `tests/test_hermes_weekly_update.py`（13 项）。
+  撞面判定走**补丁面文件交集**而非关键词（0.19.1→0.20.0 区间：关键词报 257/945 条高风险，交集报 38 条且正中当次真需人工重放的文件）。守卫 `tests/test_hermes_weekly_update.py`（21 项）。
+- **首次实跑 + 闭环补完（2026-08-16/17）**：移 pin `v2026.8.13` / 0.20.1（1,620 提交）。首轮组装**红**——内网层两条测试对齐规则的锚点被上游改跑、替换静默 no-op（`reportBackendContract(5)→(6)`；onboarding 加了两行 Fireworks 断言），`--check` 与哨兵均未拦（前者只比「补丁==规则输出」，后者只盯实现侧规则）。**根治**：规则引擎加**锚点点火台账**（任一 POST 规则全树零命中即生成期响亮失败，负控已验），次轮组装绿、`black-pool-win64.zip` 371.9 MiB 落桶。
+- **闭环形态（守密人 2026-08-16 两裁）**：`sync_upstream.py run` 一键跑 追踪更新 → 审核补丁 → 换装后回归网（vitest 4,871 例 / 5 分钟，即首轮红的那一条），退出码 3/4 分流人工接手，中途停手绝不改 pin。**基底体检（上游套件约 27,464 例 / 4 核实测约 4.5 小时）不进链**，交 CI `hermes-upstream-suite.yml` 异步跑，判定走逐条具名假红台账 `build/upstream-false-reds.json`（禁通配、台账外即开 issue；现为引导期空档）。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 

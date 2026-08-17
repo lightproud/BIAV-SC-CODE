@@ -431,6 +431,117 @@ def stage_and_stat() -> dict:
 # ---------------------------------------------------------------- 编排
 
 
+def do_run(tag: str | None, work: Path, report_path: Path | None, *,
+           with_base: bool = False, skip_net: bool = False) -> tuple[int, dict]:
+    """周更闭环编排（守密人 2026-08-16「例程要自己跑完」）：
+
+        追踪更新 → 审核补丁 → 测试（换装后回归网）→ （交会话）出 zip
+
+    **基底体检不在这条链上**（守密人 2026-08-16 第二裁，据实测耗时翻案）：上游自带
+    Python 套件在 4 核容器实测约 **4.5 小时**（约 27,464 例），串进周更会让周一上午
+    拿不到包。它改由 CI `hermes-upstream-suite.yml` 在同一 commit 上**异步**跑，
+    红了开 issue 叫人——覆盖面不减，只是结论晚到几十分钟。`--with-base` 可在本地手动串回来
+    （引擎大版本跳动、或守密人点名时用）。
+
+    每段之间**只在全绿时前进**：补丁审不过就不必跑回归网（基底都没对齐），
+    回归网红就不必出包（出了也是坏包，还会覆盖桶里那个好的）。
+
+    本函数仍守引擎射程边界：不提交、不推送、不触发组装。最后一步由例程会话执行——
+    那一步要判断「红了该不该硬上」，是判断题。
+    """
+    from importlib import util as _util
+    spec = _util.spec_from_file_location("bpa_verify", HERE / "verify.py")
+    verify = _util.module_from_spec(spec)
+    spec.loader.exec_module(verify)
+
+    stages: list[dict] = []
+    pin = read_pin()
+    target = tag or latest_tag()
+    if target == pin["tag"]:
+        rep = {"action": "noop", "reason": "已是最新 pin", "stages": stages, **probe()}
+        if report_path:
+            report_path.write_text(json.dumps(rep, ensure_ascii=False, indent=2), encoding="utf-8")
+        return 0, rep
+
+    # ── 段一：追踪更新（换快照，先不碰补丁）
+    snap = snapshot(target, work)
+    stages.append({"stage": "追踪更新", "passed": True,
+                   "detail": f"{pin['tag']} → {target}（引擎 {pin['engine']} → {snap['engine']}）"})
+
+    # ── 段二：基底体检（默认不在链上，交 CI 异步跑；--with-base 手动串回）
+    if not with_base:
+        stages.append({"stage": "基底体检", "passed": True, "skipped": True,
+                       "detail": "交 CI hermes-upstream-suite.yml 异步跑（守密人 2026-08-16 裁定）"})
+    else:
+        base = verify.run_base_suite(work)
+        stages.append({"stage": "基底体检", **base})
+        if not base["passed"]:
+            return _finish(3, "基底体检未过：台账外失败即真缺陷候选，问题在上游新版本身",
+                           stages, report_path, pin, target, snap)
+
+    # ── 段三：审核补丁（同步常量 + 规则引擎重出品牌两张 + 特性补丁核对）
+    touched = sync_version_constants(snap["engine"])
+    run(["python3", str(REBRAND)], cwd=SUB)     # 锚点点火台账不通过即在此响亮失败
+    patches = check_feature_patches()
+    conflicts = [p["patch"] for p in patches if not p["clean"]]
+    stages.append({"stage": "审核补丁", "passed": not conflicts,
+                   "version_constants_touched": touched, "feature_patches": patches,
+                   "detail": ("三张补丁干净落位" if not conflicts
+                              else f"特性补丁冲突需人工重放：{'、'.join(conflicts)}")})
+    if conflicts:
+        return _finish(3, f"特性补丁需人工重放：{'、'.join(conflicts)}",
+                       stages, report_path, pin, target, snap)
+
+    # ── 段四：测试（换装后回归网，组装树）
+    if skip_net:
+        stages.append({"stage": "测试·换装后回归网", "passed": True, "skipped": True,
+                       "detail": "按 --skip-net 跳过（跳过即在报告里点名）"})
+    else:
+        net = verify.run_desktop_net(work)
+        stages.append({"stage": "测试·换装后回归网", **net})
+        if not net["passed"]:
+            return _finish(4, "换装后回归网未过：我们的补丁与上游新版对不上，不可出包",
+                           stages, report_path, pin, target, snap)
+
+    # ── 全绿：落台账 + 出变更清单，交会话推 main 并触发组装
+    stat = stage_and_stat()
+    commits = commit_log(pin["sha"], target, work)
+    write_pin(tag=target, sha=snap["sha"], tag_date=snap["tag_date"], engine=snap["engine"],
+              files=snap["files"], size=snap["size"], note="周更例程自动移 pin（闭环全绿）")
+    rep = _compose(pin, target, snap, stages, stat, commits, touched, patches, [])
+    if report_path:
+        report_path.write_text(json.dumps(rep, ensure_ascii=False, indent=2), encoding="utf-8")
+    return 0, rep
+
+
+def _finish(code: int, why: str, stages, report_path, pin, target, snap) -> tuple[int, dict]:
+    """闭环中途停手：如实记下停在哪一段、为什么，不写半截成功。
+
+    **刻意不改台账**——pin 表只在全绿时才动。中途停手却把 pin 写成新版，
+    会让下一次 probe 认为「已是最新」，缺陷就此静默蒸发。
+    """
+    rep = {"action": "halted", "halted_at": stages[-1]["stage"], "reason": why,
+           "from_tag": pin["tag"], "to_tag": target, "to_engine": snap["engine"],
+           "stages": stages, "synced_at": datetime.now(BEIJING).isoformat(timespec="seconds")}
+    if report_path:
+        report_path.write_text(json.dumps(rep, ensure_ascii=False, indent=2), encoding="utf-8")
+    return code, rep
+
+
+def _compose(pin, target, snap, stages, stat, commits, touched, patches, conflicts) -> dict:
+    return {
+        "action": "synced",
+        "from_tag": pin["tag"], "from_sha": pin["sha"], "from_engine": pin["engine"],
+        "to_tag": target, "to_sha": snap["sha"], "to_engine": snap["engine"],
+        "tag_date": snap["tag_date"], "files": snap["files"], "size": snap["size"],
+        "version_constants_touched": touched, "feature_patches": patches,
+        "conflicts": conflicts, "file_stat": stat, "stages": stages,
+        "commit_count": len(commits), "commits": commits,
+        "changelog_md": changelog_markdown(commits, from_tag=pin["tag"], to_tag=target),
+        "synced_at": datetime.now(BEIJING).isoformat(timespec="seconds"),
+    }
+
+
 def do_sync(tag: str | None, work: Path, report_path: Path | None) -> tuple[int, dict]:
     pin = read_pin()
     target = tag or latest_tag()
@@ -577,6 +688,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--work", help="临时克隆目录（缺省系统临时目录；务必在仓外）")
     p.add_argument("--report", help="同步报告 JSON 落点")
 
+    p = sp.add_parser("run", help="周更闭环：追踪更新 → 测试①基底 → 审核补丁 → 测试②换装后")
+    p.add_argument("--tag", help="指定目标 tag（缺省取上游最新）")
+    p.add_argument("--work", help="工作目录（缺省系统临时目录；务必在仓外）")
+    p.add_argument("--report", help="闭环报告 JSON 落点")
+    p.add_argument("--with-base", action="store_true",
+                   help="把基底体检（上游套件，约 4.5 小时）串回链上；缺省交 CI 异步跑")
+    p.add_argument("--skip-net", action="store_true",
+                   help="跳过换装后回归网（跳过会在报告里点名，不留静默缺口）")
+
     p = sp.add_parser("changelog", help="取两 pin 之间的提交史并分类")
     p.add_argument("--from", dest="frm", required=True, help="起点 tag 或 commit")
     p.add_argument("--to", required=True, help="终点 tag 或 commit")
@@ -605,6 +725,25 @@ def main(argv: list[str] | None = None) -> int:
         work.mkdir(parents=True, exist_ok=True)
         if REPO in work.resolve().parents or work.resolve() == REPO:
             raise SyncError(f"工作目录必须在仓外（免得临时克隆被 git add 卷进快照）: {work}")
+
+        if args.cmd == "run":
+            code, rep = do_run(args.tag, work,
+                               Path(args.report) if args.report else None,
+                               with_base=args.with_base, skip_net=args.skip_net)
+            if rep["action"] == "noop":
+                print(f"无更新：上游最新仍是 {rep['latest_tag']}")
+                return 0
+            print(f"闭环：{rep.get('from_tag')} → {rep.get('to_tag')}")
+            for s in rep["stages"]:
+                mark = "跳过" if s.get("skipped") else ("过" if s.get("passed") else "红")
+                print(f"  [{mark}] {s['stage']}  {s.get('detail', '')}")
+            if rep["action"] == "halted":
+                print(f"\n闭环停在「{rep['halted_at']}」：{rep['reason']}", file=sys.stderr)
+                print("按 WEEKLY-UPDATE.md 对应步骤接手；台账未改动，pin 仍是旧值。",
+                      file=sys.stderr)
+            else:
+                print(f"\n全绿。台账已移 pin，交会话推 main 并触发组装线。")
+            return code
 
         if args.cmd == "sync":
             code, rep = do_sync(args.tag, work, Path(args.report) if args.report else None)

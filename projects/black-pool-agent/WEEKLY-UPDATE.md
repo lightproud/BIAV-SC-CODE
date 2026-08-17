@@ -30,36 +30,67 @@ python3 projects/black-pool-agent/build/sync_upstream.py probe
 - 报「须移 pin → vX」→ 继续。**探不到任何 tag 会响亮失败**（退出码 2），
   那是网络/代理问题，不是「没更新」——此时报障，不得当成无更新收工。
 
-## 2. 换装（一步跑完机械活）
+## 2. 一键闭环（追踪更新 → 审核补丁 → 测试）
 
 ```bash
 WORK=$(mktemp -d)   # 必须在仓外：临时克隆落进仓内会被 git add 卷进快照
-python3 projects/black-pool-agent/build/sync_upstream.py sync \
-        --work "$WORK" --report "$WORK/sync-report.json"
+python3 projects/black-pool-agent/build/sync_upstream.py run \
+        --work "$WORK" --report "$WORK/run-report.json"
 echo "exit=$?"
 ```
 
-引擎一步做完：仓外浅克隆目标 tag → 清空并重铺 `upstream/` 快照（`git archive` 取 tracked
-全集 + 清 `__pycache__`/`.pyc`）→ 同步 `build/rebrand.py` 的 `UPSTREAM_VERSION` 与
-`tests/test_hermes_charter.py` 出身行哨兵 → 跑 `rebrand.py` 重出两张品牌补丁 →
-特性补丁逐张 `git apply --check` → `git add -f` 暂存并算文件级变更账 →
-取两 pin 间提交史并分类 → 改 `UPSTREAM.md` 的 pin 表与移 pin 史。
+一条命令跑完三段，**每段只在绿了才前进**：
 
-**退出码即分流**：`0` = 全干净，去第 4 步；`3` = 特性补丁冲突，去第 3 步；`2` = 环境/台账
-出错，**停手报障**（别硬闯，`upstream/` 此时可能是半态，用 `git checkout -- ` 回滚干净）。
+| 段 | 干什么 | 红了意味着 |
+|----|--------|-----------|
+| 追踪更新 | 仓外浅克隆目标 tag → 清空重铺 `upstream/` 快照（`git archive` 取 tracked 全集 + 清 `__pycache__`/`.pyc`） | 网络/磁盘问题 |
+| 审核补丁 | 同步 `UPSTREAM_VERSION` 与出身行哨兵 → `rebrand.py` 重出品牌两张（**锚点点火台账**：任一规则全树零命中即响亮失败）→ 特性补丁逐张 `git apply --check` | 上游改了我们锚定的代码，需重锚或重放 |
+| 测试·换装后回归网 | 仓外起组装树 → 换装（私有版）+ 特性补丁 → `npm ci` → `vitest run`（约 5 分钟，4,871 例） | **我们的补丁与上游新版对不上，不可出包** |
 
-## 3. 特性补丁人工重放（只有退出码 3 才走）
+全绿才改 `UPSTREAM.md` 的 pin 表与移 pin 史——**中途停手一律不动台账**，
+否则下次 `probe` 会以为「已是最新」，缺陷就此静默蒸发。
+
+**退出码即分流**：
+
+- `0` 全绿 → 去第 4 步补跑门禁
+- `3` 补丁审核未过（特性补丁冲突 / 锚点全树零命中）→ 去第 3 步
+- `4` **换装后回归网红** → 去第 3 步的「回归网红」分支
+- `2` 环境/台账出错 → **停手报障**（`upstream/` 此时可能是半态，`git checkout --` 回滚干净）
+
+> **基底体检不在这条链上**（守密人 2026-08-16 第二裁，据实测翻案）：上游自带 Python 套件
+> 约 27,464 例、4 核实测约 **4.5 小时**，串进来周一上午就拿不到包。它由 CI
+> `hermes-upstream-suite.yml` 在同一 commit 上**异步**跑，台账外失败会自动开 issue 叫人。
+> 本地要串回来加 `--with-base`（引擎大版本跳动或守密人点名时用）。
+
+## 3. 人工接手（只有退出码 3 / 4 才走）
 
 这一步是**整条例程唯一需要判断力的地方**，也正是守密人选会话例程而非纯 CI 的理由。
+接手后回到第 2 步重跑 `run`，让它把后面几段重新走一遍——不要手工往下硬推。
 
-1. 看报告里 `feature_patches[].detail`，定位冲突的文件与 hunk
+### 3a. 特性补丁冲突（退出码 3，报告里 `feature_patches[].detail` 有 hunk 报错）
+
+1. 定位冲突的文件与 hunk
 2. 在 `upstream/` 上手工把该补丁的意图重放一遍（改的是**语义**不是行号——
    上游重构过就照新结构重写，别硬塞旧上下文）
 3. 重出 diff 覆盖原补丁：`git diff -- <改动文件> > patches/<名>.patch`，
    然后 `git checkout -- <改动文件>` 把 `upstream/` 恢复零修改
 4. `git apply --check --directory=projects/black-pool-agent/upstream patches/<名>.patch` 复核
 
-**红线**：`upstream/` 本体永远零修改（施工边界文书禁 1），补丁只在组装期应用。
+### 3b. 锚点全树零命中（退出码 3，`rebrand.py` 报「一次也没命中」）
+
+上游改了该规则锚定的那块代码，替换已静默失效。**处置是按上游新形态重锚，不是删规则**
+——删规则等于悄悄丢掉一处内网适配 / 换装，比红着更坏。规则在 `build/rebrand.py` 的
+`BRAND_POST_RULES` / `INTRANET_POST_RULES`，报错会点名是哪条、锚的头一行是什么。
+
+### 3c. 换装后回归网红（退出码 4）
+
+日志在报告的 `log` 字段。**先分清是谁的问题**：上游自己的用例红（我们没碰那块）→
+多半是环境伪影或上游真缺陷，记 `gaps.md`；**上游用例在测一个被我们改掉的实现** →
+是我们的测试对齐规则过期了，按 3b 重锚。2026-08-16 那次六红正属后者。
+
+### 共同红线
+
+`upstream/` 本体永远零修改（施工边界文书禁 1），补丁只在组装期应用。
 重放不成功、或上游已把该特性做进主干 → **停手挂 `gaps.md` 并在汇报里点名**，
 不得为了让例程「跑完」而丢掉补丁。
 
@@ -175,10 +206,13 @@ Routine 存在守密人账户侧，不在本仓——**本仓只留这份定义*
 1. 先跑 `python3 projects/black-pool-agent/build/sync_upstream.py probe`。报「已是最新，
    无事可做」→ 直接按手册第 8 步回一句「本周上游无新版，pin 保持 <tag>（引擎 <ver>），
    例程空转正常」收工，**不做任何提交**。
-2. 有新版则按手册第 2 步跑 `sync`（工作目录必须用 `mktemp -d` 建在仓外）。退出码 3 =
-   特性补丁冲突，去手册第 3 步人工重放；退出码 2 = 环境/台账出错，停手报障。
-3. 守卫全绿（手册第 4 步，含 `python3 scripts/premerge_gate.py`）才可直推 main。任一红 →
-   停手报障不推。手册第 9 步「停手清单」列了六种必须停手的情形，撞上即停，不硬闯。
+2. 有新版则按手册第 2 步跑 `run`（一条命令跑完：追踪更新 → 审核补丁 → 换装后回归网；
+   工作目录必须用 `mktemp -d` 建在仓外）。退出码 3 = 补丁审核未过，4 = 回归网红，
+   两者都去手册第 3 步人工接手；2 = 环境/台账出错，停手报障。
+3. 闭环全绿后再补跑 `python3 scripts/premerge_gate.py`（手册第 4 步）才可直推 main。
+   任一红 → 停手报障不推。手册第 9 步「停手清单」列了必须停手的情形，撞上即停，不硬闯。
+4. 推完 main 触发组装线出 zip（第 6 步），并**回查确认资产真被覆盖**再汇报——
+   组装红就照实说「zip 未出、链接仍指上一版」，绝不把红的写成绿的。
 
 纪律提醒：§1.1-HC 黑池防火墙照常生效（黑池数据以任何形式进银芯一律拒绝并报告）；
 `upstream/` 本体永远零修改，改动只能走 `patches/`；对外口径禁「100% 纯自研」
