@@ -390,10 +390,10 @@ index aedde11..ec0da80 100644
        </div>
      )
 diff --git a/apps/desktop/src/components/onboarding/index.test.tsx b/apps/desktop/src/components/onboarding/index.test.tsx
-index ad81560..ac17c4c 100644
+index ad81560..e9c07fa 100644
 --- a/apps/desktop/src/components/onboarding/index.test.tsx
 +++ b/apps/desktop/src/components/onboarding/index.test.tsx
-@@ -56,12 +56,12 @@ afterEach(() => {
+@@ -56,21 +56,17 @@ afterEach(() => {
  })
  
  describe('onboarding Picker', () => {
@@ -404,11 +404,23 @@ index ad81560..ac17c4c 100644
  
      expect(screen.getByText('Nous Portal')).toBeTruthy()
 -    expect(screen.getByText('Recommended')).toBeTruthy()
+-    // Fireworks stays behind the disclosure with the other alternatives; only
+-    // Nous Portal is visible before the user expands the list.
+-    expect(screen.queryByText('Fireworks AI')).toBeNull()
+-    expect(screen.queryByText('Anthropic API Key')).toBeNull()
+-
+-    fireEvent.click(screen.getByRole('button', { name: 'Other providers' }))
+-
 +    expect(screen.queryByText('Recommended')).toBeNull()
-     // Fireworks stays behind the disclosure with the other alternatives; only
-     // Nous Portal is visible before the user expands the list.
-     expect(screen.queryByText('Fireworks AI')).toBeNull()
-@@ -81,7 +81,6 @@ describe('onboarding Picker', () => {
++    // The portable edition drops the disclosure, so every alternative is
++    // listed up front — there is nothing left to expand.
+     expect(screen.getByText('Fireworks AI')).toBeTruthy()
+     expect(screen.getByText('Anthropic API Key')).toBeTruthy()
++    expect(screen.queryByRole('button', { name: 'Other providers' })).toBeNull()
+     expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()
+   })
+ 
+@@ -81,7 +77,6 @@ describe('onboarding Picker', () => {
        provider('nous', 'Nous Portal')
      ])
      render(<Picker ctx={ctx} />)
@@ -474,10 +486,65 @@ index 12c0d66..170a32f 100644
      return false
    }
 diff --git a/apps/desktop/src/store/updates.test.ts b/apps/desktop/src/store/updates.test.ts
-index 010c987..2387d69 100644
+index 010c987..a3aba40 100644
 --- a/apps/desktop/src/store/updates.test.ts
 +++ b/apps/desktop/src/store/updates.test.ts
-@@ -894,37 +894,37 @@ describe('startUpdatePoller', () => {
+@@ -133,50 +133,14 @@ describe('reportBackendContract', () => {
+     vi.useRealTimers()
+   })
+ 
+-  it('dismisses the toast when the backend meets the contract', () => {
+-    reportBackendContract(6)
+-    expect(dismissSpy).toHaveBeenCalledWith('backend-contract-skew')
+-    expect(notifySpy).not.toHaveBeenCalled()
+-  })
+-
+-  it('warns when the backend is behind (or reports no contract)', () => {
++  it('never warns: the portable edition silences the contract banner', () => {
++    // Behind, ahead, and no-contract-at-all all take the early return.
++    reportBackendContract(5)
+     reportBackendContract(undefined)
+-    expect(notifySpy).toHaveBeenCalledTimes(1)
+     reportBackendContract(1)
+-    expect(notifySpy).toHaveBeenCalledTimes(2)
+-  })
+ 
+-  it('stays quiet on later session opens once the user closed it', () => {
+-    reportBackendContract(1)
+-    lastToast().onDismiss() // user closes it → cooldown starts
+-    notifySpy.mockClear()
+-
+-    // Opening another pre-existing session re-runs the check within cooldown.
+-    reportBackendContract(1)
+     expect(notifySpy).not.toHaveBeenCalled()
+-  })
+-
+-  it('reminds again after the cooldown elapses', () => {
+-    vi.useFakeTimers()
+-    vi.setSystemTime(0)
+-
+-    reportBackendContract(1)
+-    lastToast().onDismiss()
+-    notifySpy.mockClear()
+-
+-    vi.setSystemTime(25 * 60 * 60 * 1000) // > 24h cooldown
+-    reportBackendContract(1)
+-    expect(notifySpy).toHaveBeenCalledTimes(1)
+-  })
+-
+-  it('clears the snooze once the backend catches up, so a regression warns again', () => {
+-    reportBackendContract(1)
+-    lastToast().onDismiss()
+-    notifySpy.mockClear()
+-
+-    reportBackendContract(6) // backend updated → satisfied, snooze cleared
+-    reportBackendContract(5) // a later regression must warn immediately
+-    expect(notifySpy).toHaveBeenCalledTimes(1)
++    expect(dismissSpy).not.toHaveBeenCalled()
+   })
+ })
+ 
+@@ -894,37 +858,37 @@ describe('startUpdatePoller', () => {
      vi.useRealTimers()
    })
  

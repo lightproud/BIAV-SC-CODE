@@ -64,6 +64,15 @@ class RebrandError(Exception):
 BRAND_SENTINEL = BRAND_AGENT              # 公版换装后必现
 INTRANET_SENTINEL = "_user_pricing_entry"  # 私有版注入体专名（公版树零出现）
 
+# 锚点点火台账（2026-08-16 移 pin v2026.8.13 事故后加）：POST_RULES 是纯文本锚定替换，
+# 上游改了被锚定的那块代码，`text.replace` 就静默 no-op——补丁少一个 hunk，
+# `--check` 照样绿（它只比「补丁 == 规则输出」，不问「规则有没有匹配上」），
+# 守卫照样绿，红要等 90 分钟后的组装线回归网才报。0.20.1 那次正是这样漏的：
+# 上游把 `reportBackendContract(5)` 改成 `(6)`、onboarding 用例加了两行 Fireworks 断言，
+# 两条测试对齐规则当场哑火，上游原用例留在树里、与「已静默/已摘折叠」的实现对不上，六红。
+# 治法：每条规则至少要在全树命中一次，一条没命中即在生成期响亮失败。
+_RULES_FIRED: set[tuple[str, int]] = set()
+
 # 扫描范围：用户可感知的 runtime 面（白名单目录）。
 # apps/（desktop 为内部主要消费面，守密人 2026-08-02 补充情报）与 web/（desktop
 # 所包 UI）在列；website/docs 等纯站点面不扫（残留清单见 BRANDING.md）。
@@ -814,7 +823,7 @@ INTRANET_POST_RULES = [
     # 冷却 / 消警，整只静默后一次也不该弹。合并为一条哨兵，覆盖三种入参。
     (
         "  it('dismisses the toast when the backend meets the contract', () => {\n"
-        "    reportBackendContract(5)\n"
+        "    reportBackendContract(6)\n"
         "    expect(dismissSpy).toHaveBeenCalledWith('backend-contract-skew')\n"
         "    expect(notifySpy).not.toHaveBeenCalled()\n"
         "  })\n"
@@ -854,8 +863,8 @@ INTRANET_POST_RULES = [
         "    lastToast().onDismiss()\n"
         "    notifySpy.mockClear()\n"
         "\n"
-        "    reportBackendContract(5) // backend updated → satisfied, snooze cleared\n"
-        "    reportBackendContract(4) // a later regression must warn immediately\n"
+        "    reportBackendContract(6) // backend updated → satisfied, snooze cleared\n"
+        "    reportBackendContract(5) // a later regression must warn immediately\n"
         "    expect(notifySpy).toHaveBeenCalledTimes(1)\n"
         "  })\n",
         "  it('never warns: the portable edition silences the contract banner', () => {\n"
@@ -1012,12 +1021,22 @@ INTRANET_POST_RULES = [
         "    expect(screen.queryByText('Recommended')).toBeNull()\n",
     ),
     (
+        # 0.20.1 起上游在折叠前后各加了一行 Fireworks 断言（原锚点只含 Anthropic 两行，
+        # 失配后整条规则静默 no-op，上游原用例留在树里、与「已摘折叠」的实现对不上 →
+        # 回归网六红。锚点必须跟着上游这块的真实形态走）。
+        "    // Fireworks stays behind the disclosure with the other alternatives; only\n"
+        "    // Nous Portal is visible before the user expands the list.\n"
+        "    expect(screen.queryByText('Fireworks AI')).toBeNull()\n"
         "    expect(screen.queryByText('Anthropic API Key')).toBeNull()\n"
         "\n"
         "    fireEvent.click(screen.getByRole('button', { name: 'Other providers' }))\n"
         "\n"
+        "    expect(screen.getByText('Fireworks AI')).toBeTruthy()\n"
         "    expect(screen.getByText('Anthropic API Key')).toBeTruthy()\n"
         "    expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()\n",
+        "    // The portable edition drops the disclosure, so every alternative is\n"
+        "    // listed up front — there is nothing left to expand.\n"
+        "    expect(screen.getByText('Fireworks AI')).toBeTruthy()\n"
         "    expect(screen.getByText('Anthropic API Key')).toBeTruthy()\n"
         "    expect(screen.queryByRole('button', { name: 'Other providers' })).toBeNull()\n"
         "    expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()\n",
@@ -1068,14 +1087,18 @@ def transform_brand(text: str, bare_word: bool = False) -> str:
             line = BARE_WORD_RE.sub(BRAND, line)
         out_lines.append(line)
     text = "".join(out_lines)
-    for old, new in BRAND_POST_RULES:
+    for i, (old, new) in enumerate(BRAND_POST_RULES):
+        if old in text:
+            _RULES_FIRED.add(("brand", i))
         text = text.replace(old, new)
     return text
 
 
 def transform_intranet(text: str) -> str:
     """私有版叠加变换：内网/便携适配（在公版之后应用）。"""
-    for old, new in INTRANET_POST_RULES:
+    for i, (old, new) in enumerate(INTRANET_POST_RULES):
+        if old in text:
+            _RULES_FIRED.add(("intranet", i))
         text = text.replace(old, new)
     return text
 
@@ -1204,7 +1227,30 @@ def generate_patches() -> tuple[str, str]:
         n2 = apply_intranet_tree(work)
         intranet_diff = run("diff", "--binary").stdout
         print(f"transformed files: brand={n1} intranet={n2}", file=sys.stderr)
+        _assert_every_rule_fired()
         return brand_diff, intranet_diff
+
+
+def _assert_every_rule_fired() -> None:
+    """全树跑完后，每条 POST 规则都必须至少命中一次——否则响亮失败。
+
+    只在**生成期**校验（两版都跑过全树）：`--apply --edition public` 只跑品牌层，
+    内网规则本就不该点火，那里查会误报。
+
+    失败即意味着上游改了该规则锚定的那块代码。处置不是删规则，是**按上游新形态重锚**
+    （删规则等于悄悄丢掉一处内网适配 / 换装，比红着更坏）。
+    """
+    dead = []
+    for kind, rules in (("brand", BRAND_POST_RULES), ("intranet", INTRANET_POST_RULES)):
+        for i, (old, _new) in enumerate(rules):
+            if (kind, i) not in _RULES_FIRED:
+                probe = next((l.strip() for l in old.splitlines() if l.strip()), old[:60])
+                dead.append(f"{kind}#{i}: {probe[:100]}")
+    if dead:
+        raise RebrandError(
+            "以下规则的锚点在当前 upstream 快照上一次也没命中（上游改了那块代码，"
+            "替换已静默失效）——按新形态重锚，不要删规则：\n  " + "\n  ".join(dead)
+        )
 
 
 def _validate_apply_dest(dest: Path) -> None:
