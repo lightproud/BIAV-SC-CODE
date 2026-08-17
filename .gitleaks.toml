@@ -25,4 +25,26 @@ paths = [
   '''^deliverables/.*''',                              # 旧产物目录（已由 Public-Info-Pool 取代）
   '''^data/.*''',                                      # 远古根级数据布局（历史 blob）
   '''^news/.*''',                                      # 远古根级 news 布局（历史 blob）
+
+  # ---- 上游 vendored 树豁免（2026-08-16 守密人裁定）----
+  # black-pool-agent/upstream 是 hermes-agent 的原样搬运层，受「本体永远零修改，
+  # 改动只能走 patches/」约束（见 WEEKLY-UPDATE.md）——银芯自有凭据在设计上不可能
+  # 落在这里，与上面的数据层同属「非银芯凭据面」。
+  #
+  # 为什么必须走路径面而不是 .gitleaksignore 指纹面：指纹是
+  # `<commit>:<file>:<rule>:<line>`，含 commit SHA。周更例程每周把整棵 upstream 树
+  # 重新提交一次，SHA 一变全部指纹失效——指纹路线等于每周手工补一遍，永远补不完。
+  #
+  # 首次触发：2026-08-16 vendor 6f043a5b（v2026.8.3 → v2026.8.13）报 leaks found: 19，
+  # 逐条核实全为上游自带的合成夹具与公开配置，无一条银芯凭据：
+  #   - tests/agent/test_redact.py 等脱敏测试的假密钥（该测试断言的正是「密钥须被打码」，
+  #     夹具形如 sk-abc123def456 / xyzzyplugh1234567890abcd，另含 KEYBOARD=notsecret
+  #     这类专门验证「不该误伤」的反例）
+  #   - tests/test_redaction_registry.py 的 nvapi-AbCdEf...（字母表序，紧邻其待测正则）
+  #   - website/docusaurus.config.ts 的 Algolia DocSearch search-only key（设计上即公开，
+  #     随前端 JS 分发）
+  #
+  # 代价（已知并接受）：上游若某日自带真实凭据，本仓扫描不再拦截——那是上游的凭据面，
+  # 不是银芯的。patches/（银芯自有改动落点）与 build/ deploy/ plugins/ skills/ 照扫。
+  '''^projects/black-pool-agent/upstream/.*''',        # 上游 vendored 树（零修改策略，非银芯凭据面）
 ]
