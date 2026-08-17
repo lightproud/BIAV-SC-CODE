@@ -4,7 +4,7 @@ title: "archive-integrity-audit-20260729"
 description: "`repair_gaps.py --dry-run` 实测（默认近 60 天窗口），与仓内 `projects/news/data/gap_report.json`（格式：md）"
 resource: "/Public-Info-Pool/Resource/data-diagnostics/archive-integrity-audit-20260729.md"
 tags: ["data_layer:curated", "deliverable", "topic:data-diagnostics"]
-timestamp: "2026-08-17"
+timestamp: "2026-08-18"
 ---
 
 # 指针概念
