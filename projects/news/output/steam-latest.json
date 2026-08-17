@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T21:18:10.960745+00:00",
+  "collected_at": "2026-08-17T01:06:19.780210+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-16T11:17:39+00:00",
+      "lang": "english",
+      "title": "[正面] Pretty fun gacha. Underrated. Fair warning tho, it...",
+      "summary": "Pretty fun gacha. Underrated. Fair warning tho, it's quite hard. Combats can be pretty demanding.",
+      "url": "https://steamcommunity.com/profiles/76561198090668360/recommended/3052450",
+      "author": "76561198090668360",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "Pretty fun gacha. Underrated. Fair warning tho, it's quite hard. Combats can be pretty demanding.",
+      "timestamp_created": 1786879059,
+      "playtime_forever": 1999
+    },
     {
       "source": "steam",
       "time": "2026-08-16T11:13:11+00:00",
@@ -19,6 +34,21 @@
       "review": "Карточная гача) приятно что не надо 100 круток как у михуе а всего лишь 60 Мрачная тайная интересная минусом является перевод на Русский язык много ошибок .",
       "timestamp_created": 1786878791,
       "playtime_forever": 1315
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-16T20:35:42+00:00",
+      "lang": "schinese",
+      "title": "[正面] 美术风格无敌，人物的文学性等很强，机制还好",
+      "summary": "美术风格无敌，人物的文学性等很强，机制还好",
+      "url": "https://steamcommunity.com/profiles/76561198662899804/recommended/3052450",
+      "author": "76561198662899804",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "美术风格无敌，人物的文学性等很强，机制还好",
+      "timestamp_created": 1786912542,
+      "playtime_forever": 4557
     },
     {
       "source": "steam",
@@ -52,21 +82,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-08-16T11:17:39+00:00",
-      "lang": "english",
-      "title": "[正面] Pretty fun gacha. Underrated. Fair warning tho, it...",
-      "summary": "Pretty fun gacha. Underrated. Fair warning tho, it's quite hard. Combats can be pretty demanding.",
-      "url": "https://steamcommunity.com/profiles/76561198090668360/recommended/3052450",
-      "author": "76561198090668360",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Pretty fun gacha. Underrated. Fair warning tho, it's quite hard. Combats can be pretty demanding.",
-      "timestamp_created": 1786879059,
-      "playtime_forever": 1999
-    },
-    {
-      "source": "steam",
       "time": "2026-08-16T09:54:01+00:00",
       "lang": "tchinese",
       "title": "[正面] deep",
@@ -93,7 +108,7 @@
       "voted_up": true,
       "review": "Me encanta por que es de cartas y a mi me gustan los juegos de cartas y wena.",
       "timestamp_created": 1786872233,
-      "playtime_forever": 812
+      "playtime_forever": 1012
     },
     {
       "source": "steam",
@@ -109,21 +124,6 @@
       "review": "非常好玩，画工顶级(*^_^*)",
       "timestamp_created": 1786869126,
       "playtime_forever": 2386
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-15T23:05:23+00:00",
-      "lang": "schinese",
-      "title": "[正面] 非常好的游戏，画风在线，XP戳我，最关键是她还很好玩（虽然后期纯堆数值有些坐牢），而且不吃配置对老P...",
-      "summary": "非常好的游戏，画风在线，XP戳我，最关键是她还很好玩（虽然后期纯堆数值有些坐牢），而且不吃配置对老PC友好（唯一要求就是固态硬盘会提升运行速度）。赞一个！",
-      "url": "https://steamcommunity.com/profiles/76561199077092453/recommended/3052450",
-      "author": "76561199077092453",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "非常好的游戏，画风在线，XP戳我，最关键是她还很好玩（虽然后期纯堆数值有些坐牢），而且不吃配置对老PC友好（唯一要求就是固态硬盘会提升运行速度）。赞一个！",
-      "timestamp_created": 1786835123,
-      "playtime_forever": 12902
     }
   ]
 }

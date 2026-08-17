@@ -1,19 +1,19 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T21:18:10.960745+00:00",
+  "collected_at": "2026-08-17T01:06:19.780210+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "youtube",
-      "time": "2026-08-16T16:18:37Z",
+      "time": "2026-08-16T21:21:41Z",
       "lang": "",
       "title": "[Morimens] Morimens Lore Stream Rant.",
       "summary": "Title.",
       "url": "https://www.youtube.com/watch?v=wEBphdDHd5Q",
       "author": "Flares117",
-      "engagement": 339,
+      "engagement": 477,
       "media_url": "https://i.ytimg.com/vi/wEBphdDHd5Q/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,7 +25,7 @@
       "summary": "最近本当に頭がおかしくて申し訳ない するといったことをできるような人間になります そうでない現時点じゃこの発言の真偽も ...",
       "url": "https://www.youtube.com/watch?v=kAZ96t2jSO8",
       "author": "to真冬",
-      "engagement": 26,
+      "engagement": 31,
       "media_url": "https://i.ytimg.com/vi/kAZ96t2jSO8/hqdefault.jpg",
       "content_type": "video"
     },
@@ -97,7 +97,7 @@
       "summary": "Vtuber #VtuberEN #malevtuber #vstreamer #smallstreamer #gaming #morimens #Peak.",
       "url": "https://www.youtube.com/watch?v=AOrlltfYolQ",
       "author": "BreadRuin",
-      "engagement": 6,
+      "engagement": 7,
       "media_url": "https://i.ytimg.com/vi/AOrlltfYolQ/hqdefault.jpg",
       "content_type": "video"
     },
@@ -121,8 +121,20 @@
       "summary": "OLDtaku Plays Anime Games https://www.twitch.tv/howjududat/ https://discord.gg/FB3Ck2Qq #HonkaiStarRail #HonkaiImpact ...",
       "url": "https://www.youtube.com/watch?v=FB_l9Wy9DS4",
       "author": "HowJuDuDat Gaming",
-      "engagement": 0,
+      "engagement": 1,
       "media_url": "https://i.ytimg.com/vi/FB_l9Wy9DS4/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-17T01:06:03Z",
+      "lang": "",
+      "title": "[Morimens] THE LAST ALERT D-TIDE Stream",
+      "summary": "Don't know how long. Will be doing other stuff too.",
+      "url": "https://www.youtube.com/watch?v=SQVsayaXTKU",
+      "author": "Flares117",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/SQVsayaXTKU/hqdefault_live.jpg",
       "content_type": "video"
     },
     {

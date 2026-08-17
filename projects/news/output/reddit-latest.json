@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-16T21:18:10.960745+00:00",
+  "collected_at": "2026-08-17T01:06:19.780210+00:00",
   "source": "reddit",
   "data_layer": "output",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "source": "reddit",
@@ -52,6 +52,21 @@
     },
     {
       "source": "reddit",
+      "time": "2026-08-16T20:41:59+00:00",
+      "lang": "en",
+      "title": "Clementine 🦋🌀",
+      "summary": "Twitter/X Post!  &#32; submitted by &#32;  /u/Samin-A   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vq81rs/clementine/",
+      "author": "/u/Samin-A",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/rpq1ydegtsjh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=bf37949cd61c6341ad1d4bebe377c382009274e6",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-08-16T11:20:36+00:00",
       "lang": "en",
       "title": "Miryam by @M31_FLNaccnt",
@@ -82,29 +97,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-08-16T20:41:59+00:00",
+      "time": "2026-08-16T23:51:08+00:00",
       "lang": "en",
-      "title": "Clementine 🦋🌀",
-      "summary": "Twitter/X Post!  &#32; submitted by &#32;  /u/Samin-A   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vq81rs/clementine/",
-      "author": "/u/Samin-A",
+      "title": "Tentative covenant bonding plan",
+      "summary": "Thought I&#39;d share my tentative covenant bonding plans. Looking forward to the feature a bit and am interested if there&#39;s obvious tech I&#39;m missing out on. Dreams on Tawil/GDoll is ofc good if you&#39;re carrying with them which I generally don&#39;t.  &#32; submitted by &#32;  /u/parmreggiano   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vqch19/tentative_covenant_bonding_plan/",
+      "author": "/u/parmreggiano",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/rpq1ydegtsjh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=bf37949cd61c6341ad1d4bebe377c382009274e6",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-16T06:19:37+00:00",
-      "lang": "en",
-      "title": "\"Did you wake up, my puppy?\" (GDoll, Leonora) [art by @souri_10244]",
-      "summary": "&#32; submitted by &#32;  /u/WeatherSlime   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vppdv8/did_you_wake_up_my_puppy_gdoll_leonora_art_by/",
-      "author": "/u/WeatherSlime",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/r00j9leyiojh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=f753dfc5bea6f156ff5ad3947c4c679d713f2473",
+      "media_url": "https://preview.redd.it/tza1rq3uqtjh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=afa22252e0ceca804e037f774ffed6d0bcc06441",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -120,6 +120,21 @@
       "author": "/u/ywra_a",
       "engagement": 0,
       "media_url": "https://preview.redd.it/pu5iqly0fqjh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e75eb4a000f97794ad23daf3abc5b0fc0c257be5",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-16T06:19:37+00:00",
+      "lang": "en",
+      "title": "\"Did you wake up, my puppy?\" (GDoll, Leonora) [art by @souri_10244]",
+      "summary": "&#32; submitted by &#32;  /u/WeatherSlime   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vppdv8/did_you_wake_up_my_puppy_gdoll_leonora_art_by/",
+      "author": "/u/WeatherSlime",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/r00j9leyiojh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=f753dfc5bea6f156ff5ad3947c4c679d713f2473",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -172,6 +187,32 @@
     },
     {
       "source": "reddit",
+      "time": "2026-08-16T21:33:07+00:00",
+      "lang": "en",
+      "title": "Arc 2 packages?",
+      "summary": "Does anyone a screenshot or can at least provide a list of the contents and price for Arc 2 chapter competition FOMO packages?  Are they a better deal than the chapter pre-order package?  &#32; submitted by &#32;  /u/tenxsmtch   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vq9ayy/arc_2_packages/",
+      "author": "/u/tenxsmtch",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-16T21:27:10+00:00",
+      "lang": "en",
+      "title": "When does the story get into gear?",
+      "summary": "Hi, downloaded the game on a whim because I&#39;m a big fan of Slay the Spire and I&#39;m enjoying the team making, combat and general item acquisition and progression within the game. However, the intro cinematics were cool and the epilogue intriguing, but the first act seems like a bit of a slog story-wise as I come to the end of it. I&#39;ve kind of set it to x3 speed and read like half the text when I think it may be interesting, am I missing out on too much with the other acts or should I just set it fully to skip and maybe watch a video essay instead on Youtube afterwards? I like the character design and their quirks however the writing itself seems uninspired; when would you say the story peaks?  &#32; submitted by &#32;  /u/Lavender_Critique   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vq95wk/when_does_the_story_get_into_gear/",
+      "author": "/u/Lavender_Critique",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-08-16T14:19:22+00:00",
       "lang": "en",
       "title": "Aprofundar na comunidade",
@@ -213,21 +254,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-08-15T22:56:23+00:00",
-      "lang": "en",
-      "title": "Fish quiz- guess the awakener",
-      "summary": "Fish made a quiz - I had some amazing artwork contributions to it   &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vpgmvv/fish_quiz_guess_the_awakener/",
-      "author": "/u/Angbak94",
-      "engagement": 0,
-      "media_url": "https://external-preview.redd.it/jti6JejyH1Jk3fyNjyHMyX__yAjdqzqh6UlMbkanUbw.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=25a70f023bbc1280be747b81bb1e0c5e726cfd17",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-08-16T06:26:09+00:00",
       "lang": "en",
       "title": "Event Pity?",
@@ -249,19 +275,6 @@
       "summary": "I have e0 mouchette thais faint aigis comp should I go for mouchette E2 in banner and use monthly duplicate from next month on thais or get e1 mouchette and use monthly duplicate from next month ti get e2 mouchette. Which is better option  &#32; submitted by &#32;  /u/Large_Spirit9297   [link] &#32; [comments]",
       "url": "https://old.reddit.com/r/Morimens/comments/1vpos0a/mouchette_and_thais/",
       "author": "/u/Large_Spirit9297",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-08-15T22:19:33+00:00",
-      "lang": "en",
-      "title": "Dumb question about Life drain covenant",
-      "summary": "I May be stupid but i only recently started Building more specifically certain units , but i honestly can&#39;t understand how It works if i have double realms activated, will both effects of the 6pcs activate? The wording of the Covenant Is kinda bugging me for some reason (probably because english Is not my first language i guess)  &#32; submitted by &#32;  /u/Fish_Far   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1vpftzk/dumb_question_about_life_drain_covenant/",
-      "author": "/u/Fish_Far",
       "engagement": 0,
       "metadata": {
         "via": "rss"
