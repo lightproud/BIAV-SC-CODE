@@ -13,6 +13,7 @@ TapTap 已废弃 webapiv2 全部端点（均返回404），页面使用 Nuxt 客
 import asyncio
 import json
 import logging
+import math
 import re
 import sys
 from datetime import datetime, timedelta, timezone, UTC
@@ -81,6 +82,33 @@ def _parse_taptap_dom_time(time_str):
     Falls back to now if unparseable.
     """
     return news_common.parse_relative_time(time_str)[0]
+
+
+def _parse_taptap_dom_score(raw: Any) -> int:
+    """从 DOM 星级块的文本里取 1–5 分，取不到返回 0（不入标题、不写 score 字段）。
+
+    评分块可能渲染成 "4.5"、"4 分"、"★★★★☆" 几种形态；API 路径有结构化 score，
+    DOM 兜底只能从文本猜，所以拿不准就返回 0，让下游知道「这条没有评分」，而不是
+    编一个出来。
+    """
+    if raw is None:
+        return 0
+    text = str(raw).strip()
+    if not text:
+        return 0
+    filled = text.count('★')
+    if filled:
+        return min(filled, 5)
+    m = re.search(r'\d+(?:\.\d+)?', text)
+    if not m:
+        return 0
+    try:
+        # 四舍五入而非 round()：内建 round 是银行家舍入，round(4.5)==4，
+        # 对"4.5 星"这种半档评分会系统性地往下压一档。
+        value = math.floor(float(m.group()) + 0.5)
+    except ValueError:
+        return 0
+    return value if 1 <= value <= 5 else 0
 
 
 # ─── 滚动深采（懒加载分页）─────────────────────────────────────
@@ -480,9 +508,6 @@ async def _extract_reviews_dom(page) -> list[dict]:
         }
 
         return els.map(el => {
-            const contentEl = el.querySelector(
-                '[class*="content"], [class*="text"], [class*="body"], p'
-            );
             const timeEl = el.querySelector('time, [class*="time"], [class*="date"]');
             const likeEl = el.querySelector('[class*="like"], [class*="thumb"]');
             const authorEl = el.querySelector(
@@ -490,6 +515,22 @@ async def _extract_reviews_dom(page) -> list[dict]:
             );
             const starEl = el.querySelector('[class*="star"], [class*="score"], [class*="rating"]');
             const linkEl = el.querySelector('a[href*="/review/"]') || el.querySelector('a[href]');
+
+            // 正文选择：原实现用 querySelector 取**文档序第一个**命中
+            // '[class*="content"], [class*="text"], …' 的元素。TapTap 的卡片把用户名
+            // 也包在带 content/text 类名的头部块里，且它排在正文之前 —— 于是抓回来的
+            // 「正文」就是用户名，落档成 title=summary=author=用户名、评分全空
+            // （实测两周 1,185 条评论无一条有正文）。
+            // 改成：候选里挑**文本最长**的那个，并排除作者块本身及其祖先容器。
+            const contentCandidates = Array.from(el.querySelectorAll(
+                '[class*="content"], [class*="text"], [class*="body"], p'
+            )).filter(c => !authorEl || !(c === authorEl || c.contains(authorEl)));
+            let contentEl = null;
+            let bestLen = 0;
+            for (const c of contentCandidates) {
+                const t = (c.innerText || c.textContent || '').trim();
+                if (t.length > bestLen) { bestLen = t.length; contentEl = c; }
+            }
 
             return {
                 content: contentEl ? ((contentEl.innerText || contentEl.textContent || '').trim()) : '',
@@ -505,24 +546,49 @@ async def _extract_reviews_dom(page) -> list[dict]:
     }""")
 
     items = []
+    seen_urls = set()
+    dropped_author_echo = 0
     for r in result or []:
         content_text = r.get("content", "").strip()
         if not content_text:
             continue
+        author = r.get("author", "").strip()
+        # 正文与用户名雷同 = 选择器又抓到了头部块，不是评论正文。宁可这轮空手
+        # 触发响亮失败，也不要把一堆用户名当评论灌进归档（那批数据无法回溯识别，
+        # 只能靠人肉发现「1,185 条评论全是用户名」）。
+        if author and content_text == author:
+            dropped_author_echo += 1
+            continue
+        url = r.get("url", "")
+        # 同一条评论在 DOM 里可能被多个卡片容器命中；按评论链接收敛。
+        if url:
+            if url in seen_urls:
+                continue
+            seen_urls.add(url)
         created_str = _parse_taptap_dom_time(r.get("time_str", ""))
+        score = _parse_taptap_dom_score(r.get("score", ""))
+        star_str = f"{'★' * score}{'☆' * (5 - score)} " if score else ""
         item = {
-            "title": content_text[:60],
+            "title": f"{star_str}{content_text[:60]}".strip(),
             "summary": content_text,
             "like_count": _parse_num(r.get("likes")),
             "comment_count": 0,
             "created": created_str,
-            "url": r.get("url", ""),
-            "author": r.get("author", ""),
+            "url": url,
+            "author": author,
             "item_id": "",
         }
+        if score:
+            item["score"] = score
         if not r.get("time_str"):
             item["time_is_approximate"] = True
         items.append(item)
+
+    if dropped_author_echo:
+        logger.warning(
+            f"TapTap DOM: {dropped_author_echo} 条正文与用户名雷同已丢弃"
+            f"（正文选择器疑似又抓到卡片头部块，请复查 debug_taptap_review.html）"
+        )
 
     if not items:
         logger.warning("TapTap: DOM extraction found no review elements")

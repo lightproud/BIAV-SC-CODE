@@ -709,7 +709,8 @@ BACKFILL_REGISTRY = {
     'bilibili': backfill_bilibili,
     'appstore': backfill_appstore,
     'steam_review': backfill_steam_reviews,
-    'arca_live': backfill_arca_live,
+    # arca_live 已摘除（守密人 2026-08-16 裁定）：backfill_arca_live 实现保留在本模块
+    # 待复用，但不再登记——CF 封死 Actions 出口，登记着只会让手动回填每次空手而归。
     'pixiv': backfill_pixiv,
     'ruliweb': backfill_ruliweb,
     'weixin': backfill_weixin,

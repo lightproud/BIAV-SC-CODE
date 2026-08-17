@@ -27,6 +27,31 @@ class TestItemKey(unittest.TestCase):
         k = ap.item_key({"url": "   ", "title": "T"})
         self.assertEqual(k, "T||")
 
+    def test_weixin_ignores_rotating_sogou_url(self):
+        """搜狗中转链每次请求重签，同一篇公告必须仍判为同一条。
+
+        回归实测：2026-08-07 单日档里「运营主体变更通知」攒了 114 份、
+        「第4届N厨杯」144 份，114 个 URL 无一相同（连 url 参数本身都轮换）。
+        """
+        base = {"source": "weixin", "title": "[微信] 关于《忘却前夜》运营主体变更的通知",
+                "time": "2026-08-07T03:11:00+00:00", "author": ""}
+        a = ap.item_key({**base, "url": "/link?url=dn9a_AAA&type=2&token=0ED020BE"})
+        b = ap.item_key({**base, "url": "/link?url=dn9a_BBB&type=2&token=9FC431AA"})
+        self.assertEqual(a, b)
+
+    def test_stable_url_source_still_keys_on_url(self):
+        """只有中转链源改键；URL 稳定的源不受影响（同标题不同贴仍是两条）。"""
+        a = ap.item_key({"source": "reddit", "title": "T", "url": "https://x/1"})
+        b = ap.item_key({"source": "reddit", "title": "T", "url": "https://x/2"})
+        self.assertNotEqual(a, b)
+
+    def test_approximate_time_excluded_from_key(self):
+        """时间是 now() 兜底出来的就不能进键，否则每轮又是一个新身份。"""
+        base = {"source": "weixin", "title": "T", "author": "a", "time_is_approximate": True}
+        a = ap.item_key({**base, "time": "2026-08-07T01:00:00+00:00"})
+        b = ap.item_key({**base, "time": "2026-08-07T04:00:00+00:00"})
+        self.assertEqual(a, b)
+
 
 class TestItemDateUtc8(unittest.TestCase):
     def test_no_time_uses_fallback(self):

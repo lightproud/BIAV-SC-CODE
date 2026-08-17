@@ -515,6 +515,85 @@ class TestPipelines(unittest.TestCase):
             fci.assert_called()
             self.assertTrue((arch.data_dir / "state.json").exists())
 
+    def test_catchup_drains_channel_over_quota(self):
+        """撞了单轮配额的频道会被反复补抽，直到抽干。
+
+        回归 general-chat（日产 ~7.2k）在 5k 配额下卡死在 2026-08-07 的那个缺陷：
+        只有配额、没有追赶轮时一轮只排 5k，日增大于日排 → 游标永不收敛。
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            arch.state["history_backfill_complete"] = True
+            # 频道 111 积压 12k：首轮 5k（撞配额）→ 追赶 5k、2k（抽干）
+            drains = iter([da.MAX_MESSAGES_PER_CHANNEL,
+                           da.MAX_MESSAGES_PER_CHANNEL,
+                           2000])
+
+            def fake_incremental(_cid, _name=""):
+                return next(drains, 0)
+
+            with mock.patch.object(arch, "fetch_guild_meta", return_value=self._channels()), \
+                    mock.patch.object(arch, "fetch_channel_incremental",
+                                      side_effect=fake_incremental) as fci, \
+                    mock.patch.object(arch, "fetch_forum_threads", return_value=0), \
+                    mock.patch.object(da.time, "sleep"):
+                arch.run()
+            # 首轮 1 次 + 追赶 2 次；最后一次低于配额即判定抽干、停止追赶
+            self.assertEqual(fci.call_count, 3)
+
+    def test_catchup_yields_when_budget_exhausted(self):
+        """预算耗尽时追赶轮必须让位——不能为了抽干把作业拖到被 CI 砍掉。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            arch.state["history_backfill_complete"] = True
+            # 永远抽不干（每轮都撞配额）：没有时间护栏就是死循环
+            calls = {"n": 0}
+
+            def time_up():
+                calls["n"] += 1
+                return calls["n"] > 3
+
+            with mock.patch.object(arch, "fetch_guild_meta", return_value=self._channels()), \
+                    mock.patch.object(arch, "fetch_channel_incremental",
+                                      return_value=da.MAX_MESSAGES_PER_CHANNEL) as fci, \
+                    mock.patch.object(arch, "fetch_forum_threads", return_value=0), \
+                    mock.patch.object(arch, "_is_time_up", side_effect=time_up), \
+                    mock.patch.object(da.time, "sleep"):
+                arch.run()
+            # 有限次返回后收尾，且状态照常落盘（下一轮从游标接着抓）
+            self.assertLess(fci.call_count, 10)
+            self.assertTrue((arch.data_dir / "state.json").exists())
+
+    def test_unresolved_backlog_warns(self):
+        """预算耗尽仍在撞配额的频道必须出声——此前这类停摆对所有监控都是隐形的。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            with mock.patch.object(da.logger, "warning") as warn:
+                arch._warn_unresolved_backlog([{"id": "111", "name": "morimens-game-chat"}])
+            self.assertTrue(warn.called)
+            self.assertIn("morimens-game-chat", warn.call_args[0][0])
+
+    def test_drained_backlog_stays_quiet(self):
+        """抽干了就不该报警——判据是「撞配额」，不是「游标旧」。
+
+        用游标年龄做判据会把已停用频道全部误报：实测 global 121 个文字频道里 31 个
+        游标超 3 天，绝大多数是「已停止使用」类频道（最久 990 天没人发言）。
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            with mock.patch.object(da.logger, "warning") as warn:
+                arch._warn_unresolved_backlog([])
+            self.assertFalse(warn.called)
+
+    def test_runtime_budget_env_override(self):
+        """作业要能把归档器预算压到 job timeout 之下，给 commit/push 留出空档。"""
+        import importlib
+        with mock.patch.dict(os.environ, {"DISCORD_RUNTIME_BUDGET": "2100"}, clear=False):
+            reloaded = importlib.reload(da)
+            self.assertEqual(reloaded.MAX_RUNTIME_SECONDS, 2100)
+        importlib.reload(da)  # 还原默认值，避免污染同批其余用例
+        self.assertEqual(da.MAX_RUNTIME_SECONDS, 45 * 60)
+
     def test_run_history_only_pipeline(self):
         with tempfile.TemporaryDirectory() as tmp:
             arch = _make_archiver(tmp)

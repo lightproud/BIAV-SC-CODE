@@ -29,7 +29,6 @@ KNOWN_SOURCES = [
     # 全球扩展平台
     'weibo',
     'bahamut',
-    'arca_live',
     'appstore',
     'google_play',
     'pixiv',
@@ -47,6 +46,14 @@ KNOWN_SOURCES = [
 # twitter 已摘除（守密人 2026-07-30 裁定，归档完整性审计待裁项④）：挂名 1,126 天审计窗口
 # 零产出、归档目录从未存在（syndication 接口 API 墙）。采集器 fetch_twitter 保留在
 # global_collectors 但不再入 collect_global 编排；未来要采集须重新登记并接回编排。
+#
+# arca_live 已摘除（守密人 2026-08-16 裁定，明文放弃）：Cloudflare 三路封死 Actions
+# 机房 IP（HTTP 403 / PW 挑战页超时 / App API 403）。2026-07-10 方案 2 本要改由每日
+# 云端例程绕行，但那条 Routine 从未建立——数据停在 2026-07-11，归档共 10 个文件。
+# 韩区实际声量主要在 YouTube 创作者侧而非 arca，为它单挂一条云端例程投入产出不成立。
+# 采集器 fetch_arca_live / fetch_arca_live_playwright 与 collect_arca_daily.py 单脚本
+# 均保留（CF 某日放行 Actions 即可原样复用），但都不再入编排；未来要恢复须重新登记
+# 回 KNOWN_SOURCES 并接回 collect_global。
 
 # 原始源名 → 规范源名
 SOURCE_ALIASES = {
@@ -68,7 +75,7 @@ SPARSE_SOURCES = {
     'weixin',
     'pixiv',
     'stopgame',
-    'note_com', 'ruliweb', 'arca_live', 'bahamut',
+    'note_com', 'ruliweb', 'bahamut',   # arca_live 已摘除（2026-08-16）
     'taptap', 'taptap_review',
     'discord',
 }
@@ -96,8 +103,10 @@ AUTH_GATED = {
 ARCHIVE_PLATFORMS = [s for s in KNOWN_SOURCES if s != 'discord']
 
 # backfill_platforms.py 的 PLATFORM_BACKFILLERS 实际支持的源（务必与之同步）
+# arca_live 已摘除（2026-08-16）：回填器实现保留在 backfill_platforms，但不再登记，
+# 否则 backfill-news 的手动回填仍会去撞 Cloudflare、每次必然空手而归。
 BACKFILL_PLATFORMS = [
-    'bilibili', 'appstore', 'steam_review', 'arca_live',
+    'bilibili', 'appstore', 'steam_review',
     'pixiv', 'ruliweb', 'weixin', 'taptap',
 ]
 

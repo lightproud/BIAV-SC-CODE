@@ -18,6 +18,7 @@
 
 import asyncio
 import hashlib
+import html as _html
 import json
 import os
 import re
@@ -57,6 +58,10 @@ def _refresh_cutoff():
     """Refresh the global CUTOFF so long-running processes (scheduler) use current time."""
     global CUTOFF
     CUTOFF = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
+
+# 微博搜索每个关键词最多向后翻几页。取 5：单页约十余条，5 页 ≈ 每关键词每轮 50~70
+# 条，足以覆盖高峰日的刷新速度；再深就开始大量撞到时窗外的旧贴，纯烧请求。
+WEIBO_MAX_PAGES = int(os.environ.get("WEIBO_MAX_PAGES") or 5)
 
 # 多语言搜索关键词
 KEYWORDS = {
@@ -588,50 +593,75 @@ def _parse_weibo_time(created_str):
 
 
 def fetch_weibo():
-    """从微博搜索忘却前夜相关热帖。支持 WEIBO_COOKIE 环境变量提升成功率。"""
+    """从微博搜索忘却前夜相关热帖。支持 WEIBO_COOKIE 环境变量提升成功率。
+
+    翻页（2026-08-16）：原实现每个关键词只取搜索结果第一页（约十余条），一轮采集
+    的可见面就是首屏那点内容——高峰日刷得快就整段刷过去了，实测 2026-08-13 单日
+    归档为 0，其后三天只有 33/10/9 条。现按 page 参数向后翻至多 WEIBO_MAX_PAGES 页，
+    空页或重复页即停。
+    """
     cookie = os.environ.get("WEIBO_COOKIE", "")
     items = []
     for keyword in KEYWORDS["zh"]:
-        try:
-            headers = {"Referer": "https://m.weibo.cn"}
-            if cookie:
-                headers["Cookie"] = cookie
-            data = _get(
-                "https://m.weibo.cn/api/container/getIndex",
-                params={"containerid": f"100103type=1&q={keyword}", "page_type": "searchall"},
-                headers=headers,
-            ).json()
+        seen_ids: set[str] = set()
+        for page in range(1, WEIBO_MAX_PAGES + 1):
+            try:
+                headers = {"Referer": "https://m.weibo.cn"}
+                if cookie:
+                    headers["Cookie"] = cookie
+                data = _get(
+                    "https://m.weibo.cn/api/container/getIndex",
+                    params={"containerid": f"100103type=1&q={keyword}",
+                            "page_type": "searchall", "page": page},
+                    headers=headers,
+                ).json()
 
-            for card in data.get("data", {}).get("cards", []):
-                if card.get("card_type") != 9:
-                    continue
-                mblog = card.get("mblog", {})
-                created_str = mblog.get("created_at", "")
-                parsed_time, time_approx = _parse_weibo_time(created_str)
-                text = mblog.get("text", "")
-                text_clean = re.sub(r"<[^>]+>", "", text)
+                cards = [c for c in data.get("data", {}).get("cards", [])
+                         if c.get("card_type") == 9]
+                if not cards:
+                    break  # 到底了
 
-                item = _make_item(
-                    title=text_clean[:100],
-                    summary=text_clean,
-                    source="weibo",
-                    platform_region="cn",
-                    time_str=parsed_time,
-                    url=f"https://m.weibo.cn/detail/{mblog.get('id', '')}",
-                    engagement=mblog.get("reposts_count", 0) + mblog.get("comments_count", 0) + mblog.get("attitudes_count", 0),
-                    is_hot=mblog.get("attitudes_count", 0) > 500,
-                    author=mblog.get("user", {}).get("screen_name", ""),
-                    lang="zh",
-                )
-                if time_approx:
-                    item["time_is_approximate"] = True
-                items.append(item)
+                # 微博在越界翻页时会重复回吐上一页——整页无新 id 即停，
+                # 否则会把同一批内容反复计入（且白烧请求）。
+                page_ids = {str((c.get("mblog") or {}).get("id", "")) for c in cards}
+                if page_ids and page_ids <= seen_ids:
+                    break
+                seen_ids |= page_ids
 
-            logger.info(f'Weibo "{keyword}": {len(items)} posts')
-        except Exception as e:
-            logger.warning(f'Weibo "{keyword}" failed: {e}')
+                _collect_weibo_cards(cards, items)
+                logger.info(f'Weibo "{keyword}" p{page}: {len(cards)} cards')
+            except Exception as e:
+                logger.warning(f'Weibo "{keyword}" p{page} failed: {e}')
+                break
 
     return items
+
+
+def _collect_weibo_cards(cards, items):
+    """把一页搜索卡片解析成标准 item 追加进 items。"""
+    for card in cards:
+        mblog = card.get("mblog", {})
+        parsed_time, time_approx = _parse_weibo_time(mblog.get("created_at", ""))
+        text_clean = re.sub(r"<[^>]+>", "", mblog.get("text", ""))
+
+        item = _make_item(
+            title=text_clean[:100],
+            summary=text_clean,
+            source="weibo",
+            platform_region="cn",
+            time_str=parsed_time,
+            url=f"https://m.weibo.cn/detail/{mblog.get('id', '')}",
+            engagement=(mblog.get("reposts_count", 0) + mblog.get("comments_count", 0)
+                        + mblog.get("attitudes_count", 0)),
+            is_hot=mblog.get("attitudes_count", 0) > 500,
+            author=mblog.get("user", {}).get("screen_name", ""),
+            lang="zh",
+        )
+        if time_approx:
+            item["time_is_approximate"] = True
+        items.append(item)
+
+
 def fetch_arca_live():
     """从 Arca.live 抓取韩国忘却前夜频道 (forgettingeve)。
 
@@ -1165,6 +1195,10 @@ def fetch_weixin():
                 if not time_str:
                     time_str = datetime.now(UTC).isoformat()
                     time_approx = True
+
+                # href 取自 HTML 属性，实体未解码时链接会带字面量 &amp;（归档里
+                # 的微信链接因此全是 `?url=…&amp;token=…` 这种点不开的坏链）。
+                url = _html.unescape(url)
 
                 item = _make_item(
                     title=f"[微信] {title}",
