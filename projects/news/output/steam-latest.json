@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-17T01:06:19.780210+00:00",
+  "collected_at": "2026-08-17T03:48:50.183743+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -37,6 +37,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-08-17T03:23:26+00:00",
+      "lang": "english",
+      "title": "[正面] peak",
+      "summary": "peak",
+      "url": "https://steamcommunity.com/profiles/76561199177110240/recommended/3052450",
+      "author": "76561199177110240",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "peak",
+      "timestamp_created": 1786937006,
+      "playtime_forever": 2167
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-17T01:45:20+00:00",
+      "lang": "koreana",
+      "title": "[正面] 정보가 적어서 힘들지만 진짜 재밌는 게임",
+      "summary": "정보가 적어서 힘들지만 진짜 재밌는 게임",
+      "url": "https://steamcommunity.com/profiles/76561198127203442/recommended/3052450",
+      "author": "76561198127203442",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "정보가 적어서 힘들지만 진짜 재밌는 게임",
+      "timestamp_created": 1786931120,
+      "playtime_forever": 10414
+    },
+    {
+      "source": "steam",
       "time": "2026-08-16T20:35:42+00:00",
       "lang": "schinese",
       "title": "[正面] 美术风格无敌，人物的文学性等很强，机制还好",
@@ -48,7 +78,7 @@
       "voted_up": true,
       "review": "美术风格无敌，人物的文学性等很强，机制还好",
       "timestamp_created": 1786912542,
-      "playtime_forever": 4557
+      "playtime_forever": 4767
     },
     {
       "source": "steam",

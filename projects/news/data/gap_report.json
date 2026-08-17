@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-17T01:06:55.836819+00:00",
-  "total_gaps": 273,
+  "generated_at": "2026-08-17T03:49:29.563258+00:00",
+  "total_gaps": 272,
   "coverage": {
-    "sources_total": 20,
-    "sources_scanned": 19,
+    "sources_total": 19,
+    "sources_scanned": 18,
     "sources_insufficient": 1
   },
   "platforms": {
@@ -48,12 +48,6 @@
         "2026-08-14"
       ],
       "count": 37
-    },
-    "arca_live": {
-      "missing_dates": [
-        "2026-07-09"
-      ],
-      "count": 1
     },
     "bahamut": {
       "missing_dates": [

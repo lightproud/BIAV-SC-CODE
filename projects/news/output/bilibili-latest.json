@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-17T01:06:19.780210+00:00",
+  "collected_at": "2026-08-17T03:48:50.183743+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 10,
   "items": [
     {
       "source": "bilibili",
@@ -13,11 +13,11 @@
       "summary": "└ Mr_lja (0赞): 龙少怎么了？进局子了？\n  └ Neo_Li (0赞): 这铁拳出神入化\n  └ 69岁退休Niko (0赞): 拯救龙少没绷住",
       "url": "https://www.bilibili.com/video/BV1bZbU6fErU",
       "author": "浮世绘若梦",
-      "engagement": 1172,
+      "engagement": 1188,
       "media_url": "https://i1.hdslb.com/bfs/archive/ba3f74e45f540a85308bf6d563b22a53f0c23eb6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1168,
+        "play": 1184,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 3
@@ -25,20 +25,56 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-08-17T02:53:36+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】8.17-8.31容灾攻略(最后一期425)",
+      "summary": "└ 圈内多神语社区少真人 (1赞): [大哭]\n  └ 白牧月 (0赞): 皓哥发视频辛苦了[笑哭]\n  └ 白边薄荷 (0赞): 第三[星星眼]",
+      "url": "https://www.bilibili.com/video/BV1c6b86bE86",
+      "author": "金发女人丨型",
+      "engagement": 705,
+      "media_url": "https://i1.hdslb.com/bfs/archive/77c71efc98ee89d0ef9192b270c7e3f4084e5139.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 699,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-08-16T04:39:24+00:00",
       "lang": "zh",
       "title": "全网最尊重郁纪之人",
-      "summary": "我是一名拉屎爱好者，我叫匂坂郁纪\n  └ 是Eta呀 (1赞): 说实话真觉得郁纪有点坏[笑哭][笑哭][笑哭]\n  └ 吐槽大会员工 (1赞): UP主加油！",
+      "summary": "我是一名拉屎爱好者，我叫匂坂郁纪\n  └ 是Eta呀 (1赞): 说实话真觉得郁纪有点坏[笑哭][笑哭][笑哭]\n  └ 吐槽大会员工 (1赞): UP主加油！\n  └ 不解之海 (0赞): @HeaVen1y_Key",
       "url": "https://www.bilibili.com/video/BV1u9bU6aE6e",
       "author": "耕司青海瑶",
-      "engagement": 167,
+      "engagement": 182,
       "media_url": "https://i1.hdslb.com/bfs/archive/8792402e75d2d9485d9b374cb8f9d5593e228259.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 164,
-        "comment_count": 3,
-        "comments_fetched": 2,
+        "play": 178,
+        "comment_count": 4,
+        "comments_fetched": 3,
         "danmaku": 6
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-16T20:50:19+00:00",
+      "lang": "zh",
+      "title": "Sorry.",
+      "summary": "I am sorry.\n  └ 是Eta呀 (0赞): 啥子沙耶来抱抱[大哭][大哭][大哭]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 被子大人0 (0赞): 没有大运吗[樱花萌放表情_唔][樱花萌放表情_唔][樱花萌放表情_唔]",
+      "url": "https://www.bilibili.com/video/BV1Xebb6CELz",
+      "author": "小龙猫大能力",
+      "engagement": 170,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f94926d5162be3bcd7c0271cb44d6c5ca0f2da87.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 167,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
       }
     },
     {
@@ -49,11 +85,11 @@
       "summary": "-\n  └ 嘉侬zip (1赞): 🤔up你说在脑缸中间用一根其他颜色的线能不能还原被劈成两半的脑缸(？\n  └ AAA木柴批发 (0赞): 标题是歌词里面的一句话\n粉色真的用了不同的，但是相机会吞色[笑哭]\n融朵的缸脑真的不太能搓完整\n外面是一个透明壳子，太透了（）\n因为没有融朵去校园墙照着扒☝🤓，不知道有人发现小巧思吗[doge]",
       "url": "https://www.bilibili.com/video/BV1MobU68E1q",
       "author": "AAA木柴批发",
-      "engagement": 153,
+      "engagement": 160,
       "media_url": "https://i1.hdslb.com/bfs/archive/e363e15f5046cae22ba062e758a767e5f1f75dc9.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 150,
+        "play": 157,
         "comment_count": 3,
         "comments_fetched": 2,
         "danmaku": 0
@@ -61,19 +97,37 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-08-16T20:50:19+00:00",
+      "time": "2026-08-16T16:28:00+00:00",
       "lang": "zh",
-      "title": "Sorry.",
-      "summary": "I am sorry.",
-      "url": "https://www.bilibili.com/video/BV1Xebb6CELz",
-      "author": "小龙猫大能力",
-      "engagement": 144,
-      "media_url": "https://i1.hdslb.com/bfs/archive/f94926d5162be3bcd7c0271cb44d6c5ca0f2da87.jpg",
+      "title": "『忘却前夜』融灾5-3实战",
+      "summary": "依旧不容易 走运了",
+      "url": "https://www.bilibili.com/video/BV1EKbR6fEzr",
+      "author": "九夏倦恋77",
+      "engagement": 108,
+      "media_url": "https://i1.hdslb.com/bfs/archive/9875ab6de436d7a1c827861c322f22a00e552866.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 144,
+        "play": 108,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-17T02:00:00+00:00",
+      "lang": "zh",
+      "title": "【源石之歌】明明是源石孕育的怪物，在我眼中却是美丽的少女",
+      "summary": "沙耶之果太强了→BV1wSL96YEhp\n  └ 安格修Angle-X (0赞): ！？牢博？！",
+      "url": "https://www.bilibili.com/video/BV1USgK6bE3t",
+      "author": "安格修Angle-X",
+      "engagement": 106,
+      "media_url": "https://i2.hdslb.com/bfs/archive/3f704195bc5bfa762576d4193e4bef2bd2bb4129.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 105,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -85,11 +139,11 @@
       "summary": "@耕司青海瑶 @妍伊moe\n  └ 耕司青海瑶 (1赞): [doge]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_哦吼吼]",
       "url": "https://www.bilibili.com/video/BV1FHb96fEYV",
       "author": "oldtimesishurt",
-      "engagement": 64,
+      "engagement": 67,
       "media_url": "https://i2.hdslb.com/bfs/archive/63333391266bb024fda25f60e958298388d15dae.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 60,
+        "play": 63,
         "comment_count": 4,
         "comments_fetched": 2,
         "danmaku": 0
@@ -100,16 +154,34 @@
       "time": "2026-08-16T04:22:34+00:00",
       "lang": "zh",
       "title": "[Memphis,Trap,Trip hop] 沙耶——SORA",
-      "summary": "玩沙耶之歌的时候老是被虚渊玄引导，思考爱到底是什么，是血与肉的交织，还是纯粹的感情，跨越物种之间也有爱吗，当个人的小爱与社会的道德冲突，到底如何选择才是对的，沙耶之歌迷人之处就在此，选择权永远在你手中\n  └ Chonggg13 (1赞): Reapter什么鬼[doge]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]",
+      "summary": "玩沙耶之歌的时候老是被虚渊玄引导，思考爱到底是什么，是血与肉的交织，还是纯粹的感情，跨越物种之间也有爱吗，当个人的小爱与社会的道德冲突，到底如何选择才是对的，沙耶之歌迷人之处就在此，选择权永远在你手中\n  └ Chonggg13 (1赞): Reapter什么鬼[doge]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ So某ra (0赞): 网易云：沙耶——SORA",
       "url": "https://www.bilibili.com/video/BV1MFbS6tEYE",
       "author": "So某ra",
-      "engagement": 57,
+      "engagement": 62,
       "media_url": "https://i2.hdslb.com/bfs/archive/5426706f51b1ec797ee27733ab01262653ffa87b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 54,
-        "comment_count": 3,
-        "comments_fetched": 2,
+        "play": 58,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-08-17T03:30:00+00:00",
+      "lang": "zh",
+      "title": "瑶收到了来自已经失踪了的青海的短信，她没有做出判断的勇气……",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1ndbb6bEee",
+      "author": "朗克清",
+      "engagement": 2,
+      "media_url": "https://i1.hdslb.com/bfs/archive/2908abee79eb9e1aee6739619c43a85c006320e5.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     }
