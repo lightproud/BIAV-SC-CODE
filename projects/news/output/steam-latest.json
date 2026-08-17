@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-17T06:50:26.491113+00:00",
+  "collected_at": "2026-08-17T09:39:14.921034+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -34,6 +34,51 @@
       "review": "Карточная гача) приятно что не надо 100 круток как у михуе а всего лишь 60 Мрачная тайная интересная минусом является перевод на Русский язык много ошибок .",
       "timestamp_created": 1786878791,
       "playtime_forever": 1315
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-17T08:42:44+00:00",
+      "lang": "tchinese",
+      "title": "[负面] 版本膨脹過度實測課金破千美刀+500小時以上的練度,無法打贏融災試煉(這是等級突破唯一的獲取途徑),...",
+      "summary": "版本膨脹過度實測課金破千美刀+500小時以上的練度,無法打贏融災試煉(這是等級突破唯一的獲取途徑),陷入等級不夠去刷材料,刷不到材料去提升等級的死循環。建議等營運願意降低水溫再來玩,不然這遊戲就只能購買大佬帳號,新手那怕把課金選項全課滿+願意花費大量時間肝練度,也是無法拿到理應人人都有份的等級突破材料。",
+      "url": "https://steamcommunity.com/profiles/76561198139282461/recommended/3052450",
+      "author": "76561198139282461",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": false,
+      "review": "版本膨脹過度實測課金破千美刀+500小時以上的練度,無法打贏融災試煉(這是等級突破唯一的獲取途徑),陷入等級不夠去刷材料,刷不到材料去提升等級的死循環。建議等營運願意降低水溫再來玩,不然這遊戲就只能購買大佬帳號,新手那怕把課金選項全課滿+願意花費大量時間肝練度,也是無法拿到理應人人都有份的等級突破材料。",
+      "timestamp_created": 1786956164,
+      "playtime_forever": 30931
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-17T08:10:35+00:00",
+      "lang": "english",
+      "title": "[正面] I still don't know what I'm doing",
+      "summary": "I still don't know what I'm doing",
+      "url": "https://steamcommunity.com/profiles/76561199591357114/recommended/3052450",
+      "author": "76561199591357114",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I still don't know what I'm doing",
+      "timestamp_created": 1786954235,
+      "playtime_forever": 4830
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-17T08:08:37+00:00",
+      "lang": "english",
+      "title": "[正面] peak",
+      "summary": "peak",
+      "url": "https://steamcommunity.com/profiles/76561198930206853/recommended/3052450",
+      "author": "76561198930206853",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "peak",
+      "timestamp_created": 1786954117,
+      "playtime_forever": 2312
     },
     {
       "source": "steam",
@@ -78,7 +123,7 @@
       "voted_up": true,
       "review": "정보가 적어서 힘들지만 진짜 재밌는 게임",
       "timestamp_created": 1786931120,
-      "playtime_forever": 10414
+      "playtime_forever": 10455
     },
     {
       "source": "steam",
@@ -93,7 +138,7 @@
       "voted_up": true,
       "review": "美术风格无敌，人物的文学性等很强，机制还好",
       "timestamp_created": 1786912542,
-      "playtime_forever": 4887
+      "playtime_forever": 5097
     },
     {
       "source": "steam",
@@ -139,36 +184,6 @@
       "review": "deep",
       "timestamp_created": 1786874041,
       "playtime_forever": 1139
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-16T09:23:53+00:00",
-      "lang": "spanish",
-      "title": "[正面] Me encanta por que es de cartas y a mi me gustan l...",
-      "summary": "Me encanta por que es de cartas y a mi me gustan los juegos de cartas y wena.",
-      "url": "https://steamcommunity.com/profiles/76561198880222049/recommended/3052450",
-      "author": "76561198880222049",
-      "engagement": 0,
-      "language": "spanish",
-      "voted_up": true,
-      "review": "Me encanta por que es de cartas y a mi me gustan los juegos de cartas y wena.",
-      "timestamp_created": 1786872233,
-      "playtime_forever": 1012
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-16T08:32:06+00:00",
-      "lang": "schinese",
-      "title": "[正面] 非常好玩，画工顶级(*^_^*)",
-      "summary": "非常好玩，画工顶级(*^_^*)",
-      "url": "https://steamcommunity.com/profiles/76561198695840205/recommended/3052450",
-      "author": "76561198695840205",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "非常好玩，画工顶级(*^_^*)",
-      "timestamp_created": 1786869126,
-      "playtime_forever": 2386
     }
   ]
 }
