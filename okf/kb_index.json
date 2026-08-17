@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-16",
+  "generated": "2026-08-17",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,12 +7,12 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 397,
-    "edges": 435,
-    "terms": 7033,
+    "concepts": 396,
+    "edges": 419,
+    "terms": 7032,
     "by_type": {
       "character": 72,
-      "dataset": 94,
+      "dataset": 93,
       "documentation": 163,
       "knowledge-pointer": 48,
       "reference": 17,
@@ -26,12 +26,12 @@
       "news-output": 22,
       "projects": 31,
       "resource": 131,
-      "sources": 20,
+      "sources": 19,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
-      "skeleton": 133,
+      "skeleton": 132,
       "search": 264
     }
   },
@@ -66,7 +66,7 @@
     },
     "sources": {
       "index": "/sources/index.md",
-      "count": 20
+      "count": 19
     },
     "story": {
       "index": "/story/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 30
+      "degree": 26
     },
     "/characters/130375.md": {
       "type": "character",
@@ -351,7 +351,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 16
+      "degree": 14
     },
     "/characters/15561.md": {
       "type": "character",
@@ -648,7 +648,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/15582.md": {
       "type": "character",
@@ -845,7 +845,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 17
+      "degree": 15
     },
     "/characters/15596.md": {
       "type": "character",
@@ -873,7 +873,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 0
     },
     "/characters/15598.md": {
       "type": "character",
@@ -901,7 +901,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/15600.md": {
       "type": "character",
@@ -944,7 +944,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 7
     },
     "/characters/15603.md": {
       "type": "character",
@@ -986,7 +986,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/54117.md": {
       "type": "character",
@@ -1296,7 +1296,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/community/community-bahamut.md": {
       "type": "dataset",
@@ -1324,7 +1324,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 14
+      "degree": 12
     },
     "/community/community-discord.md": {
       "type": "dataset",
@@ -1408,7 +1408,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/community/community-ruliweb.md": {
       "type": "dataset",
@@ -1436,7 +1436,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/community/community-stopgame.md": {
       "type": "dataset",
@@ -1492,7 +1492,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 7
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -1534,7 +1534,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/memory/capability-index.md": {
       "type": "knowledge-pointer",
@@ -2293,7 +2293,7 @@
       ],
       "section": "news-output",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 0
     },
     "/news-output/news-output-bahamut.md": {
       "type": "dataset",
@@ -4841,24 +4841,10 @@
       "tier": "skeleton",
       "degree": 2
     },
-    "/sources/arca_live.md": {
-      "type": "dataset",
-      "title": "arca_live 社区数据源",
-      "description": "arca_live 平台采集档案，全量 104 条，健康度 dormant。",
-      "resource": "/Public-Info-Pool/Record/Community/arca_live/",
-      "tags": [
-        "data_layer:full_archive",
-        "platform:arca_live",
-        "health:dormant"
-      ],
-      "section": "sources",
-      "tier": "skeleton",
-      "degree": 2
-    },
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 923 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 948 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4872,7 +4858,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3690 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3696 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4881,7 +4867,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 14
+      "degree": 12
     },
     "/sources/discord.md": {
       "type": "dataset",
@@ -4900,7 +4886,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1430 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1432 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4942,7 +4928,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 644 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 645 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4956,7 +4942,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3980 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 4001 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4965,7 +4951,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/sources/ruliweb.md": {
       "type": "dataset",
@@ -4984,7 +4970,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5484 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5488 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4993,12 +4979,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 203 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 206 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -5012,7 +4998,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 119 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 120 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -5054,7 +5040,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 13137 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 13143 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5063,12 +5049,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 7
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 11748 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 9860 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5082,7 +5068,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3457 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3464 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5091,7 +5077,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
@@ -5705,22 +5691,12 @@
         "mention"
       ],
       [
-        "/community/community-steam.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:沙耶",
         "mention"
       ],
       [
         "/community/community-youtube-comments.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/community/community-youtube.md",
         "提及:沙耶",
         "mention"
       ],
@@ -5815,22 +5791,12 @@
         "mention"
       ],
       [
-        "/sources/steam.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
         "/sources/steam_discussion.md",
         "提及:Saya",
         "mention"
       ],
       [
         "/sources/weibo.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/sources/youtube.md",
         "提及:沙耶",
         "mention"
       ],
@@ -5871,11 +5837,6 @@
         "/characters/15583.md",
         "CV:橘由纪",
         "cv"
-      ],
-      [
-        "/community/community-reddit.md",
-        "提及:Pandia",
-        "mention"
       ],
       [
         "/community/community-youtube-comments.md",
@@ -5924,11 +5885,6 @@
       ],
       [
         "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
-        "/sources/reddit.md",
         "提及:Pandia",
         "mention"
       ],
@@ -6431,11 +6387,6 @@
     ],
     "/characters/15581.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:莉莉",
         "mention"
@@ -6447,11 +6398,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:莉莉",
         "mention"
       ],
@@ -6690,11 +6636,6 @@
         "lore"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:拉蒙娜",
-        "mention"
-      ],
-      [
         "/community/community-reddit.md",
         "提及:Ramona",
         "mention"
@@ -6740,11 +6681,6 @@
         "mention"
       ],
       [
-        "/sources/bilibili.md",
-        "提及:拉蒙娜",
-        "mention"
-      ],
-      [
         "/sources/reddit.md",
         "提及:Ramona",
         "mention"
@@ -6769,18 +6705,6 @@
       [
         "/memory/morimens-context.md",
         "提及:泰旖丝",
-        "mention"
-      ]
-    ],
-    "/characters/15597.md": [
-      [
-        "/community/community-bilibili.md",
-        "提及:雷娅",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
-        "提及:雷娅",
         "mention"
       ]
     ],
@@ -6817,16 +6741,6 @@
       ]
     ],
     "/characters/15599.md": [
-      [
-        "/community/community-weibo.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
       [
         "/story/STORY_RESEARCH.md",
         "提及:萨尔瓦多",
@@ -6879,6 +6793,11 @@
         "variant"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:融朵",
+        "mention"
+      ],
+      [
         "/memory/decisions.md",
         "提及:熔毁·朵尔",
         "mention"
@@ -6891,6 +6810,11 @@
       [
         "/memory/project-status.md",
         "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -7510,17 +7434,7 @@
         "cv"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:塔薇",
         "mention"
       ],
@@ -7882,11 +7796,6 @@
         "/community/community-index.md",
         "聚合于",
         "cross"
-      ],
-      [
-        "/sources/arca_live.md",
-        "同平台",
-        "cross"
       ]
     ],
     "/community/community-bahamut.md": [
@@ -7958,28 +7867,18 @@
         "mention"
       ],
       [
-        "/characters/15595.md",
-        "提及:拉蒙娜",
-        "mention"
-      ],
-      [
         "/characters/15563.md",
         "提及:图鲁",
         "mention"
       ],
       [
-        "/characters/15581.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
-        "/characters/15597.md",
-        "提及:雷娅",
-        "mention"
-      ],
-      [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15602.md",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -8130,11 +8029,6 @@
     ],
     "/community/community-reddit.md": [
       [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:Ramona",
         "mention"
@@ -8168,11 +8062,6 @@
       ]
     ],
     "/community/community-steam.md": [
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
-        "mention"
-      ],
       [
         "/community/community-index.md",
         "聚合于",
@@ -8215,11 +8104,6 @@
         "mention"
       ],
       [
-        "/characters/15599.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
         "/characters/77918.md",
         "提及:阿拉克涅",
         "mention"
@@ -8227,11 +8111,6 @@
       [
         "/characters/95786.md",
         "提及:杜勒赛因",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
         "mention"
       ],
       [
@@ -8323,11 +8202,6 @@
       [
         "/characters/94450.md",
         "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
         "mention"
       ],
       [
@@ -8940,13 +8814,6 @@
     "/news-output/news-output-appstore.md": [
       [
         "/sources/appstore.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-arca-live.md": [
-      [
-        "/sources/arca_live.md",
         "抽样自",
         "cross"
       ]
@@ -9905,18 +9772,6 @@
         "cross"
       ]
     ],
-    "/sources/arca_live.md": [
-      [
-        "/community/community-arca-live.md",
-        "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-arca-live.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
     "/sources/bahamut.md": [
       [
         "/characters/54117.md",
@@ -9986,28 +9841,18 @@
         "mention"
       ],
       [
-        "/characters/15595.md",
-        "提及:拉蒙娜",
-        "mention"
-      ],
-      [
         "/characters/15563.md",
         "提及:图鲁",
         "mention"
       ],
       [
-        "/characters/15581.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
-        "/characters/15597.md",
-        "提及:雷娅",
-        "mention"
-      ],
-      [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15602.md",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -10078,11 +9923,6 @@
     ],
     "/sources/reddit.md": [
       [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:Ramona",
         "mention"
@@ -10116,11 +9956,6 @@
       ]
     ],
     "/sources/steam.md": [
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
-        "mention"
-      ],
       [
         "/community/community-steam.md",
         "同平台",
@@ -10182,11 +10017,6 @@
         "mention"
       ],
       [
-        "/characters/15599.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
         "/characters/77918.md",
         "提及:阿拉克涅",
         "mention"
@@ -10194,11 +10024,6 @@
       [
         "/characters/95786.md",
         "提及:杜勒赛因",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
         "mention"
       ],
       [
@@ -10238,11 +10063,6 @@
       [
         "/characters/94450.md",
         "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
         "mention"
       ],
       [
@@ -10632,7 +10452,6 @@
       "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -11072,8 +10891,7 @@
     ],
     "arca": [
       "/community/community-arca-live.md",
-      "/news-output/news-output-arca-live.md",
-      "/sources/arca_live.md"
+      "/news-output/news-output-arca-live.md"
     ],
     "architecture": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
@@ -11146,7 +10964,6 @@
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -11730,7 +11547,6 @@
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -11886,7 +11702,6 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -12205,7 +12020,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -12992,7 +12806,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -13426,9 +13239,6 @@
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
     ],
-    "dormant": [
-      "/sources/arca_live.md"
-    ],
     "dream": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
@@ -13792,7 +13602,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -14093,7 +13902,6 @@
     "health": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -14422,7 +14230,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -14554,7 +14361,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -14690,7 +14496,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -14969,7 +14774,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -15136,7 +14940,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -15194,8 +14997,7 @@
     ],
     "live": [
       "/community/community-arca-live.md",
-      "/news-output/news-output-arca-live.md",
-      "/sources/arca_live.md"
+      "/news-output/news-output-arca-live.md"
     ],
     "llm": [
       "/README.md",
@@ -15541,7 +15343,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -15778,7 +15579,6 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -15923,7 +15723,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -16081,7 +15880,6 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -16360,7 +16158,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -16562,7 +16359,6 @@
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -16828,7 +16624,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -17013,7 +16808,6 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-memory-governance.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -17357,7 +17151,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -19386,7 +19179,6 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-knowledge-layer-design.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -20020,7 +19812,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -20398,7 +20189,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -20561,7 +20351,6 @@
     "两层": [
       "/memory/memory-ext-bpt-positioning.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -21346,7 +21135,6 @@
     "互换": [
       "/README.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -21867,7 +21655,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -23822,7 +23609,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -24096,7 +23882,6 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -24632,7 +24417,6 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -24845,7 +24629,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -25868,7 +25651,6 @@
       "/assets/assets-chat-onboarding-snippet.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -26121,7 +25903,6 @@
     "即可": [
       "/README.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -26175,7 +25956,6 @@
       "/memory/morimens-context.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -26242,7 +26022,6 @@
       "/README.md",
       "/assets/assets-images.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -26273,7 +26052,6 @@
       "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -26670,7 +26448,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -26852,7 +26629,6 @@
     "可互": [
       "/README.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -27152,7 +26928,6 @@
     ],
     "台采": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -27177,7 +26952,6 @@
     ],
     "史回": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -27381,7 +27155,6 @@
     ],
     "后成": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -28003,7 +27776,6 @@
     ],
     "回溯": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -28280,7 +28052,6 @@
     ],
     "地存": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -29564,7 +29335,6 @@
     "始数": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -30053,7 +29823,6 @@
     ],
     "存放": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -30265,7 +30034,6 @@
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -30565,7 +30333,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -30789,7 +30556,6 @@
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -31239,7 +31005,6 @@
     ],
     "层即": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -31335,7 +31100,6 @@
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -31415,7 +31179,6 @@
     ],
     "层语": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -31482,7 +31245,6 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -31960,7 +31722,6 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -32234,7 +31995,6 @@
     ],
     "度榜": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -32267,7 +32027,6 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -32856,7 +32615,6 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -32976,7 +32734,6 @@
     ],
     "快查": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -33227,7 +32984,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -33716,7 +33472,6 @@
     "成功": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -34256,7 +34011,6 @@
     ],
     "报展": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -34330,7 +34084,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -34824,7 +34577,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -34984,7 +34736,6 @@
     ],
     "据原": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -35016,7 +34767,6 @@
     "据层": [
       "/projects/news-archive-sources-registry.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -35065,7 +34815,6 @@
     ],
     "据源": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -35088,7 +34837,6 @@
     "据纪": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -35455,7 +35203,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -36037,7 +35784,6 @@
     ],
     "放于": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -36329,7 +36075,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -36659,7 +36404,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -36887,7 +36631,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -36997,7 +36740,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -37459,7 +37201,6 @@
     "日报": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -37959,7 +37700,6 @@
       "/characters/15604.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -38582,7 +38322,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -39175,7 +38914,6 @@
     ],
     "条数": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -40098,7 +39836,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -40296,7 +40033,6 @@
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -42098,7 +41834,6 @@
     ],
     "热度": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -43017,7 +42752,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -43112,7 +42846,6 @@
     "用输": [
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -44686,7 +44419,6 @@
     "硬约": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -44800,7 +44532,6 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -44886,7 +44617,6 @@
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -45222,7 +44952,6 @@
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -45586,7 +45315,6 @@
       "/projects/entry-claude-md.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -45667,7 +45395,6 @@
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -48120,7 +47847,6 @@
     "语义": [
       "/memory/memory-ext-lessons-archive.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -49166,7 +48892,6 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -49628,7 +49353,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -50136,7 +49860,6 @@
       "/projects/entry-claude-md.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -50361,7 +50084,6 @@
     ],
     "量条": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -50432,7 +50154,6 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -50772,7 +50493,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -51325,7 +51045,6 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -51595,7 +51314,6 @@
     ],
     "集健": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -51623,7 +51341,6 @@
     ],
     "集档": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -51942,7 +51659,6 @@
     ],
     "须用": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -52415,8 +52131,7 @@
     ],
     "arca": [
       "/community/community-arca-live.md",
-      "/news-output/news-output-arca-live.md",
-      "/sources/arca_live.md"
+      "/news-output/news-output-arca-live.md"
     ],
     "architecture": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -52466,7 +52181,6 @@
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -53519,7 +53233,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -53875,9 +53588,6 @@
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
     ],
-    "dormant": [
-      "/sources/arca_live.md"
-    ],
     "drift": [
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md"
     ],
@@ -54103,7 +53813,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -54196,7 +53905,6 @@
     "health": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -54610,7 +54318,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -54716,8 +54423,7 @@
     ],
     "live": [
       "/community/community-arca-live.md",
-      "/news-output/news-output-arca-live.md",
-      "/sources/arca_live.md"
+      "/news-output/news-output-arca-live.md"
     ],
     "localization": [
       "/wiki-data/wiki-data-language-config.md",
@@ -55096,7 +54802,6 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -56601,7 +56306,6 @@
     ],
     "区数": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -57209,7 +56913,6 @@
     ],
     "据源": [
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -57249,7 +56952,6 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -57883,7 +57585,6 @@
       "/community/community-youtube.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",

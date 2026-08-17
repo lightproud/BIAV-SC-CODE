@@ -4,7 +4,7 @@ title: "hermes-weekly-update-20260816"
 description: "**这一版对用户实际意味着什么**（1,620 个提交里，桌面端用户真会碰到的几条）：（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/hermes-weekly-update-20260816.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-08-16"
+timestamp: "2026-08-17"
 ---
 
 # 指针概念
