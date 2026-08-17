@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T12:39:31.786086+00:00",
+  "updated_at": "2026-08-17T15:24:10.572365+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1144
   },
   "validation_drops": {
-    "generated_at": "2026-08-17T12:38:56.357775+00:00",
+    "generated_at": "2026-08-17T15:23:24.642625+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -18,7 +18,7 @@
       "last_success_date": "2026-08-17",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3706,
+      "total_items": 3714,
       "errors": []
     },
     "steam": {
@@ -26,7 +26,7 @@
       "last_success_date": "2026-08-17",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5494,
+      "total_items": 5495,
       "errors": []
     },
     "taptap": {
@@ -50,7 +50,7 @@
       "last_success_date": "2026-08-17",
       "last_check_date": "2026-08-17",
       "consecutive_silent_days": 0,
-      "total_items": 3479,
+      "total_items": 3480,
       "errors": []
     },
     "reddit": {
@@ -82,7 +82,7 @@
       "last_success_date": "2026-08-17",
       "last_check_date": "2026-08-17",
       "consecutive_silent_days": 0,
-      "total_items": 13145,
+      "total_items": 13147,
       "errors": []
     },
     "bahamut": {
@@ -146,15 +146,15 @@
       "last_success_date": "2026-08-07",
       "last_check_date": "2026-08-17",
       "consecutive_silent_days": 10,
-      "total_items": 9606,
+      "total_items": 9599,
       "errors": []
     },
     "taptap_review": {
       "level": "active",
-      "last_success_date": "2026-08-16",
+      "last_success_date": "2026-08-17",
       "last_check_date": null,
-      "consecutive_silent_days": 1,
-      "total_items": 4002,
+      "consecutive_silent_days": 0,
+      "total_items": 4032,
       "errors": []
     },
     "youtube_comments": {
