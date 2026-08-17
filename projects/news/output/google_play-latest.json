@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-17T18:36:32.964205+00:00",
+  "collected_at": "2026-08-17T21:24:50.651320+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 121,
+  "item_count": 120,
   "items": [
     {
       "source": "google_play",
@@ -1203,16 +1203,6 @@
       "summary": "最近はアップデートでメインストーリーが進めやすくなってます。公式ディスコードで質問したらおすすめ編成など教えてくれます。攻略サイトは信用しないでください。あれは情報がおかしいです。",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-e69b36c0-ee48-4b2b-975e-2e2fa1ee65f7",
       "author": "ソロイア-soroia",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-18T18:43:15",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★4 なかなか難しい、チーム作りが",
-      "summary": "なかなか難しい、チーム作りが",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-ec482f35-12d1-4f61-8c4c-ef97bae4084c",
-      "author": "阿部広和",
       "engagement": 0
     }
   ]
