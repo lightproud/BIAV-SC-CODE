@@ -16,12 +16,12 @@
 * [pixiv](/sources/pixiv.md) - 全量 645 条 / active
 * [reddit](/sources/reddit.md) - 全量 4001 条 / active
 * [ruliweb](/sources/ruliweb.md) - 全量 433 条 / degraded
-* [steam](/sources/steam.md) - 全量 5488 条 / active
+* [steam](/sources/steam.md) - 全量 5489 条 / active
 * [steam_discussion](/sources/steam_discussion.md) - 全量 206 条 / active
 * [stopgame](/sources/stopgame.md) - 全量 120 条 / active
 * [taptap](/sources/taptap.md) - 全量 21 条 / active
 * [taptap_review](/sources/taptap_review.md) - 全量 4002 条 / active
-* [weibo](/sources/weibo.md) - 全量 13143 条 / active
-* [weixin](/sources/weixin.md) - 全量 9860 条 / degraded
-* [youtube](/sources/youtube.md) - 全量 3464 条 / active
+* [weibo](/sources/weibo.md) - 全量 13145 条 / active
+* [weixin](/sources/weixin.md) - 全量 9715 条 / degraded
+* [youtube](/sources/youtube.md) - 全量 3470 条 / active
 * [youtube_comments](/sources/youtube_comments.md) - 全量 2648 条 / active

@@ -19,7 +19,7 @@
 * [stopgame 社区全量档案](/community/community-stopgame.md) - stopgame 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [taptap 社区全量档案](/community/community-taptap.md) - taptap 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 3 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [weibo 社区全量档案](/community/community-weibo.md) - weibo 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
-* [weixin 社区全量档案](/community/community-weixin.md) - weixin 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 13 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
+* [weixin 社区全量档案](/community/community-weixin.md) - weixin 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 13 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [youtube 社区全量档案](/community/community-youtube.md) - youtube 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 16 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [youtube_comments 社区全量档案](/community/community-youtube-comments.md) - youtube_comments 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [社区活动时序（全量）](/community/community-timeline.md) - 全量社区月度时序：2016-06..2026-08（40 月），vol_index 抓量异常（本月量÷前6月中位数）。
