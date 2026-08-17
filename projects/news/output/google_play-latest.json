@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-17T09:39:14.921034+00:00",
+  "collected_at": "2026-08-17T12:38:56.336047+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 120,
+  "item_count": 121,
   "items": [
     {
       "source": "google_play",
@@ -73,6 +73,16 @@
       "summary": "Es de esos juegos que merecen ser mucho más conocidos. Su sistema de combate, la calidad visual de las animaciones, la historia y la música son muy buenos. Es desafiante: hay que pensar bien cada jugada. Como jugador casual, he conseguido la mayoría de personajes y cartas con poca inversión. Llevo casi un año jugando y he visto cómo mejora constantemente; espero que siga así. Mi única queja es la traducción al español; ojalá la mejoren con el tiempo. Por lo demás, súper recomendado.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-ff740690-d2ef-4cc6-8aa4-732a67504801",
       "author": "Nereis",
+      "engagement": 2
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-04T11:22:42",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 Приятный гибрид, который подкупает стиле",
+      "summary": "Приятный гибрид, который подкупает стилем Reverse 1999 и затягивающей механикой \"колодостроя\" от Slay the Spire. К слову, перевод на русский здесь есть, и для машинного он сделан очень достойно вполне играбельно и понятно",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-c04e19a0-7acf-4628-9759-9bcc2227fabd",
+      "author": "Аlex",
       "engagement": 2
     },
     {
@@ -207,16 +217,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-23T04:23:01",
-      "lang": "en",
-      "title": "[Google Play 差评] ★1 downloaded it never played it before. te",
-      "summary": "downloaded it never played it before. tells me I cant play because I have reached the maximum number of characters allowed. re-download, fix option. never got to even try this game out",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-2d9f6cca-df8a-40a4-a8aa-90d058db6881",
-      "author": "Josiah Collins (josiah)",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-08-11T23:45:38",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 다 좋은데 번역 좀 어케 해보셈 픽업창 캐 이름이 다르게 나오면 어떡하라",
@@ -277,16 +277,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-08-04T11:22:42",
-      "lang": "ru",
-      "title": "[Google Play 好评] ★5 Приятный гибрид, который подкупает стиле",
-      "summary": "Приятный гибрид, который подкупает стилем Reverse 1999 и затягивающей механикой \"колодостроя\" от Slay the Spire. К слову, перевод на русский здесь есть, и для машинного он сделан очень достойно вполне играбельно и понятно",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-c04e19a0-7acf-4628-9759-9bcc2227fabd",
-      "author": "Аlex",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-08-12T01:53:48",
       "lang": "zh",
       "title": "[Google Play 好评] ★5 第二天就完全迷上了，第二个rpg能让我着迷，第一个是卡滋",
@@ -303,6 +293,16 @@
       "summary": "非常好的游戏",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-fb35889a-9334-408f-b466-43051ac7e524",
       "author": "DARYL",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-16T11:49:31",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Simply one of the best games I've ever d",
+      "summary": "Simply one of the best games I've ever downloaded. Character design, story, overall art, and ost along with the sfx is just wonderful godd, plus it's F2P friendly. Though there's 1 problem, they don't have a REAL translator, so they used ai (I'm not accusing them, they clearly stated that they use ai), which came out pretty weird, grammar errors here and there and bunch of jumbled word, you could still understand it so it's not that big of a deal. Peak games overall, recommended.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-5acd3989-6837-4db0-a7a2-14458d0e243e",
+      "author": "Naditya K",
       "engagement": 0
     },
     {
@@ -913,6 +913,16 @@
       "summary": "Buat Developer, terimakasih sudah membuat game yg sekeren ini,asli gokil parah,aku suka sama alur ceritanya,art dari setiap karakter nya,dan juga musik nya tentunya,dan juga sering sering adakan event baru juga,biar nambah seru,dan juga kalau bisa untuk bagian top up nya sedikit di kasih kemurahan harga ya,hehe",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-d3a13e8d-93e9-4499-b82e-77e92c3baa89",
       "author": "Pradana Setiono",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-16T11:55:28",
+      "lang": "vi",
+      "title": "[Google Play 好评] ★5 game chịu lắng nghe người chơi, game hay",
+      "summary": "game chịu lắng nghe người chơi, game hay, nhiều tài nguyên, điểm trừ duy nhất là gacha dễ lệch:) nhưng ko sao, cày kiểu gì cũng có hehe",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-242459d8-5b04-4aa7-bf16-c013d696821b",
+      "author": "Hoa Lan Nhỏ",
       "engagement": 0
     },
     {

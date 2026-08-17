@@ -1,10 +1,20 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-17T09:39:14.921034+00:00",
+  "collected_at": "2026-08-17T12:38:56.336047+00:00",
   "source": "taptap",
   "data_layer": "output",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
+    {
+      "source": "taptap",
+      "time": "2026-08-17T12:07:01+00:00",
+      "lang": "zh",
+      "title": "[TapTap 好评] 美术组强强强[表情_开心][表情_开心]",
+      "summary": "美术组强强强[表情_开心][表情_开心]",
+      "url": "https://www.taptap.cn/moment/838506889321906588",
+      "author": "I love you",
+      "engagement": 0
+    },
     {
       "source": "taptap",
       "time": "2026-08-16T14:23:18+00:00",
