@@ -27,7 +27,15 @@ on:
         default: ''
 
 concurrency:
-  group: discord-archive-${{ github.ref }}
+  # 与 discord-history-backfill 共用同一把锁：两者都 `git add Record/Community/discord/`，
+  # 都会改 global 的 state.json / activity_daily / channels——是同一份文件的两个写方。
+  # 频次提到每 3 小时、归档器又会吃满 35 分钟预算之后，本作业持有 data 仓 clone 的窗口
+  # 从 7~10 分钟涨到 35 分钟以上，正好罩住 backfill 的 `30 */3` 档，rebase 内容冲突
+  # 由「偶发」变成「必然」（2026-08-17 run 31992498596 即因此整轮丢弃）。
+  # 串行化是治本：跨 clone 并发改同一个 state.json，即便文本能合上，语义也是后写覆盖先写。
+  # jp / volunteer 各写自己的子目录（discord/jp、discord/volunteer），与本组无文件重叠，
+  # 保持各自独立的锁，不必陪跑。
+  group: discord-global-write-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -150,8 +158,16 @@ jobs:
           git commit -m "$MSG"
           for i in 1 2 3 4; do
             git pull --rebase origin main && git push origin main && exit 0
+            # rebase 撞冲突会在树里留下未合并文件。不 abort 就重试，后续每一次
+            # pull 都只会回 "Pulling is not possible because you have unmerged
+            # files" —— 2026-08-17 run 31992498596 实测：4 次尝试里有 3 次是这条
+            # 空转，35 分钟采集成果原样丢弃。abort 让下一次重试回到干净基线，
+            # 也让真冲突（内容级、重试也解不开）尽快落到响亮失败而不是被噪声淹没。
+            git rebase --abort 2>/dev/null || true
             echo "Push attempt $i failed, retrying in ${i}s..."
             sleep $i
           done
           echo "All push attempts failed"
+          # 未推上去 = origin 上的游标没有前移，下一轮从同一基线重抓，
+          # 只丢本轮工时、不丢数据、不会写坏归档。
           exit 1
