@@ -270,6 +270,37 @@ class TestExtractReviewsDom(unittest.TestCase):
             out = _run(tt._extract_reviews_dom(page))
         self.assertEqual(len(out), 2)
 
+    def test_dedups_when_url_empty(self):
+        """url 为空的条目也必须去重。
+
+        回归实测：2026-08-17 归档 29 条评论里 7 条 linkEl 未命中、url 全为空串，
+        它们绕过了按 url 的去重守卫，29 条只落出 23 个唯一键。
+        """
+        dom = [
+            {"content": "很好玩很好玩很好玩", "author": "a", "time_str": "2026-08-17", "url": ""},
+            {"content": "很好玩很好玩很好玩", "author": "a", "time_str": "2026-08-17", "url": ""},
+            {"content": "另一条不同的评论", "author": "b", "time_str": "2026-08-17", "url": ""},
+        ]
+        page = FakePage(dom_result=dom)
+        with mock.patch.object(tt.news_common, "parse_relative_time",
+                               return_value=("2026-08-17T00:00:00+00:00", False)):
+            out = _run(tt._extract_reviews_dom(page))
+        self.assertEqual(len(out), 2)
+
+    def test_warns_with_probe_when_no_scores(self):
+        """整批无评分时要把星级块结构证据打进日志，供下一轮精确定位。"""
+        dom = [{"content": "所以给三星，观望", "author": "a", "time_str": "2026-08-17",
+                "url": "https://t/review/1", "score": "",
+                "score_probe": '{"cls":"rating-star","inner":"","width":"width: 60%","lit":3}'}]
+        page = FakePage(dom_result=dom)
+        with mock.patch.object(tt.news_common, "parse_relative_time",
+                               return_value=("2026-08-17T00:00:00+00:00", False)), \
+                mock.patch.object(tt.logger, "warning") as warn:
+            out = _run(tt._extract_reviews_dom(page))
+        self.assertEqual(len(out), 1)
+        self.assertTrue(warn.called)
+        self.assertIn("width: 60%", warn.call_args[0][0])
+
     def test_score_lands_in_title_and_field(self):
         dom = [{"content": "很好玩", "author": "a", "time_str": "2026-08-15",
                 "score": "4.5", "url": "https://t/review/1"}]
