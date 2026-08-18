@@ -4844,7 +4844,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 973 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 974 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4858,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3718 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3736 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4872,7 +4872,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8924916 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 9338186 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4886,7 +4886,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1434 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1437 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4970,7 +4970,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5496 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5500 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -5040,7 +5040,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 13149 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 13152 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5054,12 +5054,12 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9599 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 9600 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
         "platform:weixin",
-        "health:degraded"
+        "health:active"
       ],
       "section": "sources",
       "tier": "skeleton",
@@ -5068,7 +5068,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3485 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3494 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -10828,6 +10828,7 @@
       "/sources/taptap.md",
       "/sources/taptap_review.md",
       "/sources/weibo.md",
+      "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
@@ -12950,8 +12951,7 @@
       "/projects/silver-core-sdk-doc-performance.md"
     ],
     "degraded": [
-      "/sources/ruliweb.md",
-      "/sources/weixin.md"
+      "/sources/ruliweb.md"
     ],
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -52113,6 +52113,7 @@
       "/sources/taptap.md",
       "/sources/taptap_review.md",
       "/sources/weibo.md",
+      "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
@@ -53367,8 +53368,7 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "degraded": [
-      "/sources/ruliweb.md",
-      "/sources/weixin.md"
+      "/sources/ruliweb.md"
     ],
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",

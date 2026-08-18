@@ -3994,7 +3994,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:weixin",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
