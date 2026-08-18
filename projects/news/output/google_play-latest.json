@@ -1,10 +1,20 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T15:31:15.925997+00:00",
+  "collected_at": "2026-08-18T18:35:34.063687+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 120,
+  "item_count": 121,
   "items": [
+    {
+      "source": "google_play",
+      "time": "2026-08-17T17:19:53",
+      "lang": "ja",
+      "title": "[Google Play 好评] ★4 リリースから遊んでいるがクラッシュがリリース当時より酷くなっています。 スマホの",
+      "summary": "リリースから遊んでいるがクラッシュがリリース当時より酷くなっています。 スマホのスペックの問題の可能性もあるので、やるか迷っている人は是非試してみてほしい ストーリーは面白く、キャラも濃く癖強で良い。 TRPGを知らなくても楽しめました（知ってたらさらに面白い） ただクラッシュが本当に酷くてマトモにプレイできなくなってしまったのでアンスト",
+      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-f63bd2df-7ac4-4d5f-9f63-4d0489324ac8",
+      "author": "あんな",
+      "engagement": 14
+    },
     {
       "source": "google_play",
       "time": "2026-08-14T10:40:47",

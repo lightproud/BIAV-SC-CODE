@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-08-18T15:32:14.832732+00:00",
+  "updated_at": "2026-08-18T18:36:22.495791+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
-    "end": "2026-08-18",
-    "days": 1145
+    "end": "2026-08-19",
+    "days": 1146
   },
   "validation_drops": {
-    "generated_at": "2026-08-18T15:31:15.954976+00:00",
+    "generated_at": "2026-08-18T18:35:34.088946+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -15,25 +15,25 @@
   "platforms": {
     "bilibili": {
       "level": "active",
-      "last_success_date": "2026-08-18",
+      "last_success_date": "2026-08-19",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3749,
+      "total_items": 3752,
       "errors": []
     },
     "steam": {
       "level": "active",
-      "last_success_date": "2026-08-18",
+      "last_success_date": "2026-08-19",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5504,
+      "total_items": 5505,
       "errors": []
     },
     "taptap": {
       "level": "active",
       "last_success_date": "2026-08-18",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 0,
+      "consecutive_silent_days": 1,
       "total_items": 23,
       "errors": []
     },
@@ -41,31 +41,31 @@
       "level": "active",
       "last_success_date": "2026-08-18",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 0,
+      "consecutive_silent_days": 1,
       "total_items": 9706384,
       "errors": []
     },
     "youtube": {
       "level": "active",
-      "last_success_date": "2026-08-18",
-      "last_check_date": "2026-08-18",
+      "last_success_date": "2026-08-19",
+      "last_check_date": "2026-08-19",
       "consecutive_silent_days": 0,
-      "total_items": 3502,
+      "total_items": 3506,
       "errors": []
     },
     "reddit": {
       "level": "active",
-      "last_success_date": "2026-08-18",
+      "last_success_date": "2026-08-17",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 0,
-      "total_items": 4024,
+      "consecutive_silent_days": 2,
+      "total_items": 4006,
       "errors": []
     },
     "official": {
       "level": "active",
       "last_success_date": "2026-08-18",
       "last_check_date": null,
-      "consecutive_silent_days": 0,
+      "consecutive_silent_days": 1,
       "total_items": 351,
       "errors": []
     },
@@ -73,95 +73,95 @@
       "level": "active",
       "last_success_date": "2026-08-18",
       "last_check_date": null,
-      "consecutive_silent_days": 0,
+      "consecutive_silent_days": 1,
       "total_items": 207,
       "errors": []
     },
     "weibo": {
       "level": "active",
-      "last_success_date": "2026-08-18",
-      "last_check_date": "2026-08-18",
+      "last_success_date": "2026-08-19",
+      "last_check_date": "2026-08-19",
       "consecutive_silent_days": 0,
-      "total_items": 13156,
+      "total_items": 13158,
       "errors": []
     },
     "bahamut": {
       "level": "active",
-      "last_success_date": "2026-08-18",
-      "last_check_date": "2026-08-18",
+      "last_success_date": "2026-08-19",
+      "last_check_date": "2026-08-19",
       "consecutive_silent_days": 0,
-      "total_items": 977,
+      "total_items": 998,
       "errors": []
     },
     "appstore": {
       "level": "active",
       "last_success_date": "2026-08-15",
-      "last_check_date": "2026-08-18",
-      "consecutive_silent_days": 3,
+      "last_check_date": "2026-08-19",
+      "consecutive_silent_days": 4,
       "total_items": 753,
       "errors": []
     },
     "google_play": {
       "level": "active",
-      "last_success_date": "2026-08-17",
-      "last_check_date": "2026-08-18",
+      "last_success_date": "2026-08-18",
+      "last_check_date": "2026-08-19",
       "consecutive_silent_days": 1,
-      "total_items": 1438,
+      "total_items": 1439,
       "errors": []
     },
     "pixiv": {
       "level": "active",
       "last_success_date": "2026-08-18",
-      "last_check_date": "2026-08-18",
-      "consecutive_silent_days": 0,
+      "last_check_date": "2026-08-19",
+      "consecutive_silent_days": 1,
       "total_items": 647,
       "errors": []
     },
     "note_com": {
       "level": "active",
       "last_success_date": "2026-08-14",
-      "last_check_date": "2026-08-18",
-      "consecutive_silent_days": 4,
+      "last_check_date": "2026-08-19",
+      "consecutive_silent_days": 5,
       "total_items": 47,
       "errors": []
     },
     "ruliweb": {
       "level": "degraded",
       "last_success_date": "2026-08-07",
-      "last_check_date": "2026-08-18",
-      "consecutive_silent_days": 11,
+      "last_check_date": "2026-08-19",
+      "consecutive_silent_days": 12,
       "total_items": 433,
       "errors": []
     },
     "stopgame": {
       "level": "active",
-      "last_success_date": "2026-08-18",
-      "last_check_date": "2026-08-18",
+      "last_success_date": "2026-08-19",
+      "last_check_date": "2026-08-19",
       "consecutive_silent_days": 0,
-      "total_items": 121,
+      "total_items": 122,
       "errors": []
     },
     "weixin": {
       "level": "active",
       "last_success_date": "2026-08-18",
-      "last_check_date": "2026-08-18",
-      "consecutive_silent_days": 0,
+      "last_check_date": "2026-08-19",
+      "consecutive_silent_days": 1,
       "total_items": 9600,
       "errors": []
     },
     "taptap_review": {
       "level": "active",
-      "last_success_date": "2026-08-17",
+      "last_success_date": "2026-08-19",
       "last_check_date": null,
-      "consecutive_silent_days": 1,
-      "total_items": 4032,
+      "consecutive_silent_days": 0,
+      "total_items": 4065,
       "errors": []
     },
     "youtube_comments": {
       "level": "active",
       "last_success_date": "2026-08-18",
       "last_check_date": null,
-      "consecutive_silent_days": 0,
+      "consecutive_silent_days": 1,
       "total_items": 2663,
       "errors": []
     }

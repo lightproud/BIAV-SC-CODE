@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T15:31:15.925997+00:00",
+  "collected_at": "2026-08-18T18:35:34.063687+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -19,6 +19,21 @@
       "review": "守密人ＩＤ [h3]101652206 [/h3]\n\n歡迎加手機板/PC版好友\nFeel free to add me on mobile version.",
       "timestamp_created": 1787041170,
       "playtime_forever": 12
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-18T17:04:15+00:00",
+      "lang": "schinese",
+      "title": "[正面] 沙耶茉夏谁玩谁知道",
+      "summary": "沙耶茉夏谁玩谁知道",
+      "url": "https://steamcommunity.com/profiles/76561198847325523/recommended/3052450",
+      "author": "76561198847325523",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "沙耶茉夏谁玩谁知道",
+      "timestamp_created": 1787072655,
+      "playtime_forever": 2282
     },
     {
       "source": "steam",
@@ -79,66 +94,6 @@
       "review": "Morimens might be most generous gacha game on the market, and it's a game worth taking advantage of that generosity for. \r\n\r\nI think the story is a little bit weak in the beginning (and the end of arc1 felt rushed), but the characters/ gameplay carry it for me. The aesthetic and themes in here are top notch, and the music conveys this game's tone quite well. \r\n\r\nThe deets:\r\n - The way this game has massaged the sensibilities of Lovecraftian horror into game mechanics is very cool. \r\n - Awakeners being good at low investment/dupes are good. There are enough of them in this game that I'm bringing it up.\r\n - Low effort dailies, as well as a more involved rotating gauntlet mode that makes deliberate planning/team building feel rewarding. This is super helpful for managing the time investment with Morimens. \r\n - Guaranteed SSR at 30 pulls. Even if you miss the 50/50, your account is improving.\r\n - Roguelike deckbuilders are neat, even if this one is a little less insistent on the roguelike aspect of the genre (rewarding investment/build quality a little bit more than its contemporaries). \r\n\r\n\r\nI'd recommend playing this on mobile, but I'm on here every once in a while to reduce eye strain. Seamless account linking was also a plus.",
       "timestamp_created": 1787029875,
       "playtime_forever": 1712
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T17:44:15+00:00",
-      "lang": "russian",
-      "title": "[负面] Очередное аниме говно",
-      "summary": "Очередное аниме говно",
-      "url": "https://steamcommunity.com/profiles/76561199255638007/recommended/3052450",
-      "author": "76561199255638007",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": false,
-      "review": "Очередное аниме говно",
-      "timestamp_created": 1786988655,
-      "playtime_forever": 139
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T17:27:10+00:00",
-      "lang": "schinese",
-      "title": "[正面] 福利特別多",
-      "summary": "福利特別多",
-      "url": "https://steamcommunity.com/profiles/76561199743427832/recommended/3052450",
-      "author": "76561199743427832",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "福利特別多",
-      "timestamp_created": 1786987630,
-      "playtime_forever": 6731
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T17:22:53+00:00",
-      "lang": "english",
-      "title": "[正面] I don't usually enjoy gacha games but Morimens is...",
-      "summary": "I don't usually enjoy gacha games but Morimens is absolutely amazing! The pulling system is extremely good and you get rewards constantly. It has stunning character designs and a unique, well written story.",
-      "url": "https://steamcommunity.com/profiles/76561199855081609/recommended/3052450",
-      "author": "76561199855081609",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I don't usually enjoy gacha games but Morimens is absolutely amazing! The pulling system is extremely good and you get rewards constantly. It has stunning character designs and a unique, well written story.",
-      "timestamp_created": 1786987373,
-      "playtime_forever": 10741
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T16:45:17+00:00",
-      "lang": "schinese",
-      "title": "[正面] 有美女……",
-      "summary": "有美女……",
-      "url": "https://steamcommunity.com/profiles/76561199816402568/recommended/3052450",
-      "author": "76561199816402568",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "有美女……",
-      "timestamp_created": 1786985117,
-      "playtime_forever": 307
     }
   ]
 }
