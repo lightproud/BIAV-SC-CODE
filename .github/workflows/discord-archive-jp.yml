@@ -47,7 +47,7 @@ jobs:
             scripts
           sparse-checkout-cone-mode: true
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         if: steps.guard.outputs.skip == 'false'
         with:
           python-version: '3.11'
