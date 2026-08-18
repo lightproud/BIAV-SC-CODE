@@ -1,10 +1,40 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T06:39:24.837850+00:00",
+  "collected_at": "2026-08-18T09:31:38.725487+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-18T08:44:36+00:00",
+      "lang": "english",
+      "title": "[正面] The gameplay is genuinely fun. The art and atmosph...",
+      "summary": "The gameplay is genuinely fun. The art and atmosphere are dark and totally my vibe, but the story is a real pain.",
+      "url": "https://steamcommunity.com/profiles/76561198414003576/recommended/3052450",
+      "author": "76561198414003576",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "The gameplay is genuinely fun. The art and atmosphere are dark and totally my vibe, but the story is a real pain.",
+      "timestamp_created": 1787042676,
+      "playtime_forever": 182
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-18T08:19:30+00:00",
+      "lang": "english",
+      "title": "[正面] 守密人ＩＤ [h3]101652206 [/h3]\n\n歡迎加手機板/PC版好友\nFeel free...",
+      "summary": "守密人ＩＤ [h3]101652206 [/h3]\n\n歡迎加手機板/PC版好友\nFeel free to add me on mobile version.",
+      "url": "https://steamcommunity.com/profiles/76561198097195632/recommended/3052450",
+      "author": "76561198097195632",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "守密人ＩＤ [h3]101652206 [/h3]\n\n歡迎加手機板/PC版好友\nFeel free to add me on mobile version.",
+      "timestamp_created": 1787041170,
+      "playtime_forever": 12
+    },
     {
       "source": "steam",
       "time": "2026-08-18T05:11:15+00:00",
@@ -124,51 +154,6 @@
       "review": "ID102150681，为什么steam登录授权登不上了。",
       "timestamp_created": 1786965155,
       "playtime_forever": 1036
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T08:42:44+00:00",
-      "lang": "tchinese",
-      "title": "[负面] 版本膨脹過度實測課金破千美刀+500小時以上的練度,無法打贏融災試煉(這是等級突破唯一的獲取途徑),...",
-      "summary": "版本膨脹過度實測課金破千美刀+500小時以上的練度,無法打贏融災試煉(這是等級突破唯一的獲取途徑),陷入等級不夠去刷材料,刷不到材料去提升等級的死循環。建議等營運願意降低水溫再來玩,不然這遊戲就只能購買大佬帳號,新手那怕把課金選項全課滿+願意花費大量時間肝練度,也是無法拿到理應人人都有份的等級突破材料。",
-      "url": "https://steamcommunity.com/profiles/76561198139282461/recommended/3052450",
-      "author": "76561198139282461",
-      "engagement": 0,
-      "language": "tchinese",
-      "voted_up": false,
-      "review": "版本膨脹過度實測課金破千美刀+500小時以上的練度,無法打贏融災試煉(這是等級突破唯一的獲取途徑),陷入等級不夠去刷材料,刷不到材料去提升等級的死循環。建議等營運願意降低水溫再來玩,不然這遊戲就只能購買大佬帳號,新手那怕把課金選項全課滿+願意花費大量時間肝練度,也是無法拿到理應人人都有份的等級突破材料。",
-      "timestamp_created": 1786956164,
-      "playtime_forever": 31012
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T08:10:35+00:00",
-      "lang": "english",
-      "title": "[正面] I still don't know what I'm doing",
-      "summary": "I still don't know what I'm doing",
-      "url": "https://steamcommunity.com/profiles/76561199591357114/recommended/3052450",
-      "author": "76561199591357114",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I still don't know what I'm doing",
-      "timestamp_created": 1786954235,
-      "playtime_forever": 5088
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T08:08:37+00:00",
-      "lang": "english",
-      "title": "[正面] peak",
-      "summary": "peak",
-      "url": "https://steamcommunity.com/profiles/76561198930206853/recommended/3052450",
-      "author": "76561198930206853",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "peak",
-      "timestamp_created": 1786954117,
-      "playtime_forever": 2312
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T06:39:24.837850+00:00",
+  "collected_at": "2026-08-18T09:31:38.725487+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 121,
+  "item_count": 120,
   "items": [
     {
       "source": "google_play",
@@ -197,16 +197,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-23T13:04:47",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 wish this was more popular",
-      "summary": "wish this was more popular",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-5c38f686-e41c-4410-b6a5-222fff180e57",
-      "author": "Haskel Miguel",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-08-11T23:45:38",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 다 좋은데 번역 좀 어케 해보셈 픽업창 캐 이름이 다르게 나오면 어떡하라",
@@ -283,6 +273,16 @@
       "summary": "非常好的游戏",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-fb35889a-9334-408f-b466-43051ac7e524",
       "author": "DARYL",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-17T08:39:09",
+      "lang": "en",
+      "title": "[Google Play 差评] ★1 no way in hell am I going to download an",
+      "summary": "no way in hell am I going to download an additional 5 GB of \"updates\"",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-20e60afc-ec08-46b2-b643-60cd95a4ab7c",
+      "author": "Daniël van der Zee",
       "engagement": 0
     },
     {
@@ -1203,16 +1203,6 @@
       "summary": "ゲームのシステム、ストーリー共に最高です。考えるのが面倒と思う方には向かないかもしれません。",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-cdd89aee-e1fe-449a-a5ee-766fc4db5d29",
       "author": "ゆうじ",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-19T07:12:55",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 反撃とかのエフェクトの派手な演出がほしいなぁ",
-      "summary": "反撃とかのエフェクトの派手な演出がほしいなぁ",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-7f0ff0c7-8b6f-481b-a1ac-8ff076546fea",
-      "author": "健一上田",
       "engagement": 0
     }
   ]

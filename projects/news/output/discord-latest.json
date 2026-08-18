@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T06:39:24.837850+00:00",
+  "collected_at": "2026-08-18T09:31:38.725487+00:00",
   "source": "discord",
   "data_layer": "output",
   "item_count": 16,
@@ -10,10 +10,124 @@
       "time": "2026-08-18T00:00:00+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-08-18)",
-      "summary": "今日 1,597 条消息，78 位活跃用户，52 次反应。热门频道：🔸general-chat(574)、🔸русский-канал(519)、🔸game-question(438)、🔸canal-español(17)、🔸chaîne-française(10)",
+      "summary": "今日 4,402 条消息，179 位活跃用户，222 次反应。热门频道：🔸general-chat(2045)、🔸game-question(1396)、🔸русский-канал(521)、🔸綜合討論(124)、🔸ruang-obrolan-indonesia(67)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 1597
+      "engagement": 4402
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T02:02:07.619000+00:00",
+      "lang": "",
+      "title": "[DC] princess.goth@🔸general-chat: i wanna get the unit so i can buy her skin",
+      "summary": "i wanna get the unit so i can buy her skin",
+      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539091999465021570",
+      "author": "princess.goth",
+      "engagement": 21,
+      "metadata": {
+        "reactions": "😭×2 💀×1 ☠️×1 ❓×1 🔥×2",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸general-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T05:08:12.304000+00:00",
+      "lang": "",
+      "title": "[DC] yusi4172@🔸綜合討論: 複雜人際關係（。",
+      "summary": "複雜人際關係（。\n  └ kemomimi_: ~~宫斗剧(？~~",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1539138827547840573",
+      "author": "yusi4172",
+      "engagement": 17,
+      "metadata": {
+        "reactions": "🫳×3 FoobzillaPatting×2",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T05:24:17.941000+00:00",
+      "lang": "",
+      "title": "[DC] abhartach_0@🔸綜合討論: 每次都打的很極限",
+      "summary": "每次都打的很極限\n[附件: Screenshot_2026-08-18_132311.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1539142877723103262",
+      "author": "abhartach_0",
+      "engagement": 16,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1539142877471449128/Screenshot_2026-08-18_132311.png?ex=6a853e01&is=6a83ec81&hm=46b7b7a2bb651ecbe6f591b7e293d666bce501542cb5f15084fe500fb959cfbb&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🌿×5",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1539142877471449128/Screenshot_2026-08-18_132311.png?ex=6a853e01&is=6a83ec81&hm=46b7b7a2bb651ecbe6f591b7e293d666bce501542cb5f15084fe500fb959cfbb&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T02:56:15.758000+00:00",
+      "lang": "",
+      "title": "[DC] p19682@🔸general-chat: The absolute aura of this girl",
+      "summary": "The absolute aura of this girl\n[附件: 20260817_225350.jpg]\n  └ shadowtag5002: And she stands there! Unfazed!\n  └ nothin339: Like father like daughter\n  └ arisuu0604: ending the fields",
+      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539105623147548682",
+      "author": "p19682",
+      "engagement": 16,
+      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539105622727852232/20260817_225350.jpg?ex=6a851b4f&is=6a83c9cf&hm=99991faef173f26f08b76bd55bd3d877b0f501215874396c9eef81752d1e8cf5&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "Helot_slack_off×3",
+        "reply_count": 3,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1400750050208125010/1539105622727852232/20260817_225350.jpg?ex=6a851b4f&is=6a83c9cf&hm=99991faef173f26f08b76bd55bd3d877b0f501215874396c9eef81752d1e8cf5&"
+        ],
+        "channel": "🔸general-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T04:09:18.943000+00:00",
+      "lang": "",
+      "title": "[DC] p19682@🔸general-chat: (附件/嵌入)",
+      "summary": "[附件: 20260818_000903.jpg]\n  └ fayrbrant: Bruv",
+      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539124007557800026",
+      "author": "p19682",
+      "engagement": 12,
+      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539124007213989988/20260818_000903.jpg?ex=6a852c6e&is=6a83daee&hm=fff83a24452b3cda3006d6f31672f571558a4f4a4a2bbcd8eb2b14758292aba9&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "😆×3",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1400750050208125010/1539124007213989988/20260818_000903.jpg?ex=6a852c6e&is=6a83daee&hm=fff83a24452b3cda3006d6f31672f571558a4f4a4a2bbcd8eb2b14758292aba9&"
+        ],
+        "channel": "🔸general-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T02:47:27.454000+00:00",
+      "lang": "",
+      "title": "[DC] a._0320@🔸綜合討論: 六萬發六萬抽",
+      "summary": "六萬發六萬抽\n  └ kevin.yienwenst: 夢想大點，6000萬源液",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1539103407279837234",
+      "author": "a._0320",
+      "engagement": 11,
+      "metadata": {
+        "reactions": "Lily_wow×3",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
     },
     {
       "source": "discord",
@@ -59,251 +173,136 @@
     },
     {
       "source": "discord",
-      "time": "2026-08-18T00:05:56.157000+00:00",
+      "time": "2026-08-18T02:59:21.859000+00:00",
       "lang": "",
-      "title": "[DC] magicalgirlavis@🔸русский-канал: почитай что такое синтаксические и лексические синонимы",
-      "summary": "почитай что такое синтаксические и лексические синонимы\n  └ magicalgirlavis: метофора туда не входит, да\n  └ kill_la_kir: почитай, что я тебе скинул и что является языковой единицей\n  └ magicalgirlavis: бля\n  └ magicalgirlavis: бля",
-      "url": "https://discord.com/channels/1131791637933199470/1300659580446969918/1539062759034065018",
-      "author": "magicalgirlavis",
-      "engagement": 8,
+      "title": "[DC] shiroseki.@🔸general-chat: can i kill this thing ",
+      "summary": "can i kill this thing \n  └ fibrinogen: yes\n  └ leviathxan: Why you wanna kill glorp?",
+      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539106403711717437",
+      "author": "shiroseki.",
+      "engagement": 10,
+      "metadata": {
+        "reactions": "Celeste_agree×1 ❌×1",
+        "reply_count": 2,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸general-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T03:08:23.385000+00:00",
+      "lang": "",
+      "title": "[DC] princess.goth@🔸general-chat: i touched him dude he got touched so hard bro",
+      "summary": "i touched him dude he got touched so hard bro\n  └ nothin339: this is why u need frd\n  └ fibrinogen: 💀 why r u touching trag",
+      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539108675036258408",
+      "author": "princess.goth",
+      "engagement": 10,
+      "metadata": {
+        "reactions": "💀×2",
+        "reply_count": 2,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸general-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T04:05:03.231000+00:00",
+      "lang": "",
+      "title": "[DC] nemu_s_t_a_r@🔸綜合討論: https://cdn.discordapp.com/attachments/474550941883039747/732207530671079504/693",
+      "summary": "https://cdn.discordapp.com/attachments/474550941883039747/732207530671079504/693519556039147581.gif",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1539122935023931483",
+      "author": "nemu_s_t_a_r",
+      "engagement": 9,
+      "metadata": {
+        "reactions": "🌿×3",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T05:16:58.364000+00:00",
+      "lang": "",
+      "title": "[DC] kemomimi_@🔸綜合討論: ~~@ foxcatfurry  阿偉還打嗎，不打我下周要打了~~",
+      "summary": "~~@ foxcatfurry  阿偉還打嗎，不打我下周要打了~~",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1539141034003398737",
+      "author": "kemomimi_",
+      "engagement": 9,
+      "metadata": {
+        "reactions": "🌿×3",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T02:40:08.115000+00:00",
+      "lang": "",
+      "title": "[DC] jmjmjm6667@🔸general-chat: (附件/嵌入)",
+      "summary": "[附件: 20260818_113824.jpg]\n  └ shadowtag5002: Mama mia, 2 in one day? U blessing my eyes Kogami",
+      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539101564558508183",
+      "author": "jmjmjm6667",
+      "engagement": 9,
+      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539101564302786660/20260818_113824.jpg?ex=6a851788&is=6a83c608&hm=0b2b297c094c37154d07b32d76ee4f8a1530d1f2f42718a0b398d67902bac049&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "Winkle_cry×1 Faros_love×1",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1400750050208125010/1539101564302786660/20260818_113824.jpg?ex=6a851788&is=6a83c608&hm=0b2b297c094c37154d07b32d76ee4f8a1530d1f2f42718a0b398d67902bac049&"
+        ],
+        "channel": "🔸general-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T02:00:42.911000+00:00",
+      "lang": "",
+      "title": "[DC] ashniartis@🔸game-question: Bc besides the Corpo borrow(yeah, i shouldve read it before using it on w3, as i",
+      "summary": "Bc besides the Corpo borrow(yeah, i shouldve read it before using it on w3, as it kinda fucked me lmao), can barelly claer a2(sanga one was on a1 tho)\nBut like, ig i played wrong lmao\n[附件: image.png, image.png, image.png, image.png]\n  └ angbak: Your soulforge is only lvl 1, Sanga is lvl 50",
+      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1539091644173778985",
+      "author": "ashniartis",
+      "engagement": 9,
+      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1539091642588336219/image.png?ex=6a850e4a&is=6a83bcca&hm=d72bd90798ace026560aff8f1a3901964067d50c95b904487ba997b99050ef0e&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🔥×1",
+        "reply_count": 1,
+        "attachment_count": 4,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1539091642588336219/image.png?ex=6a850e4a&is=6a83bcca&hm=d72bd90798ace026560aff8f1a3901964067d50c95b904487ba997b99050ef0e&",
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1539091643075141712/image.png?ex=6a850e4a&is=6a83bcca&hm=cbff74e7f32290831dd5a5387830aefd274ecd4644d4d88bf768bfea5dab93bd&",
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1539091643548835921/image.png?ex=6a850e4a&is=6a83bcca&hm=f3696fa4bfc6798d6bc23352f90dd7aa9e6716069b366751fbfb229d5ca9f803&",
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1539091643993555075/image.png?ex=6a850e4a&is=6a83bcca&hm=a989f56c821bdf282a5c54a909e4e91975b9d40ffcc9c7c366b36d629b445369&"
+        ],
+        "channel": "🔸game-question"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-08-18T02:12:48.146000+00:00",
+      "lang": "",
+      "title": "[DC] .tryshot.@🔸game-question: does this wod setup look good, would dusk be better over something?",
+      "summary": "does this wod setup look good, would dusk be better over something?\n[附件: image.png]\n  └ snorlax01: DnD on Salvador would be pretty good\n  └ princess.goth: id prob run dusk on salv and make nymph the keyflare bot\n  └ angbak: Arc1 right?\n  └ angbak: Swap thais wheels with agrippa, get a cov set with keyflare main stats and substats",
+      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1539094686030106684",
+      "author": ".tryshot.",
+      "engagement": 9,
+      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1539094685635715102/image.png?ex=6a851120&is=6a83bfa0&hm=fce4ffd4d17156b5352ee32feb5b8101d6802897529cab29d9b42b19cf64c333&",
+      "content_type": "image",
       "metadata": {
         "reactions": "",
         "reply_count": 4,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸русский-канал"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T00:26:25.639000+00:00",
-      "lang": "",
-      "title": "[DC] k.y.u.@🔸general-chat: ",
-      "summary": "\n[附件: Screenshot_20260817_190009_Arknights.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539067915855462421",
-      "author": "k.y.u.",
-      "engagement": 7,
-      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539067915469590589/Screenshot_20260817_190009_Arknights.jpg?ex=6a84f831&is=6a83a6b1&hm=d3722a9aa8e76469de930b9d4df261bc63cbf29e16fbf385f7c9e18593590a2c&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×2",
-        "reply_count": 0,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1400750050208125010/1539067915469590589/Screenshot_20260817_190009_Arknights.jpg?ex=6a84f831&is=6a83a6b1&hm=d3722a9aa8e76469de930b9d4df261bc63cbf29e16fbf385f7c9e18593590a2c&"
-        ],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T00:34:13.085000+00:00",
-      "lang": "",
-      "title": "[DC] princess.goth@🔸general-chat:  did it",
-      "summary": " did it\n[附件: Screenshot_2026-08-18-02-33-52-47_39a08d986496c6659356f005305ed773.jpg]\n  └ moyashi0672: \n  └ 4lunakin: goated :3\n  └ moyashi0672: Now do sandstorm ",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539069876466090105",
-      "author": "princess.goth",
-      "engagement": 7,
-      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539069875933417492/Screenshot_2026-08-18-02-33-52-47_39a08d986496c6659356f005305ed773.jpg?ex=6a84fa04&is=6a83a884&hm=e158ef7e7236e6af09c9d6b4575848f1736ca1b76b1b22d50fe6d4399d66e7b5&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "",
-        "reply_count": 3,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1400750050208125010/1539069875933417492/Screenshot_2026-08-18-02-33-52-47_39a08d986496c6659356f005305ed773.jpg?ex=6a84fa04&is=6a83a884&hm=e158ef7e7236e6af09c9d6b4575848f1736ca1b76b1b22d50fe6d4399d66e7b5&"
-        ],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T00:38:03.686000+00:00",
-      "lang": "",
-      "title": "[DC] moyashi0672@🔸general-chat: Feeling 6 7 right now",
-      "summary": "Feeling 6 7 right now\n  └ omegamart: https://cdn.discordapp.com/attachments/1043035349292699721/1495593500920512522/Image_1764318924636.gif\n  └ just_onemore: Niice",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539070843676655646",
-      "author": "moyashi0672",
-      "engagement": 7,
-      "metadata": {
-        "reactions": "👀×1",
-        "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T01:08:47.980000+00:00",
-      "lang": "",
-      "title": "[DC] moyashi0672@🔸general-chat: LET'S FKING GOOOO",
-      "summary": "LET'S FKING GOOOO\n[附件: Screenshot_20260818_030835_com_YoStarEN_Arknights_U8UnityContext.jpg]\n  └ princess.goth: gratz\n  └ moyashi0672: What was the combination for either surtr / mudrock / saga for this btw?\n  └ arisuu0604: FUCK YOU",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539078579206365184",
-      "author": "moyashi0672",
-      "engagement": 7,
-      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539078578904498276/Screenshot_20260818_030835_com_YoStarEN_Arknights_U8UnityContext.jpg?ex=6a85021f&is=6a83b09f&hm=3e2ddafab181843a0bdbfb2928a6d782a62322789665c9652e14b33513804903&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "",
-        "reply_count": 3,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1400750050208125010/1539078578904498276/Screenshot_20260818_030835_com_YoStarEN_Arknights_U8UnityContext.jpg?ex=6a85021f&is=6a83b09f&hm=3e2ddafab181843a0bdbfb2928a6d782a62322789665c9652e14b33513804903&"
-        ],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T01:15:21.306000+00:00",
-      "lang": "",
-      "title": "[DC] princess.goth@🔸general-chat: should i get the module of any of these people?",
-      "summary": "should i get the module of any of these people?\n[附件: Screenshot_2026-08-18-03-14-57-30_39a08d986496c6659356f005305ed773.jpg]\n  └ moyashi0672: Ch'en alt\n  └ moyashi0672: Kal'sit module make her better but you can just play her fine without too\n  └ moyashi0672: Also take wang module, his bombs will deal like 4k instead of 3k just from def shred passive + small atk boost",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539080228935041055",
-      "author": "princess.goth",
-      "engagement": 7,
-      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539080228620730530/Screenshot_2026-08-18-03-14-57-30_39a08d986496c6659356f005305ed773.jpg?ex=6a8503a9&is=6a83b229&hm=e8e9e8a9ddc733becbe955c31c682b4160ac067c162cc2d96066115d3d7b38e6&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "",
-        "reply_count": 3,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1400750050208125010/1539080228620730530/Screenshot_2026-08-18-03-14-57-30_39a08d986496c6659356f005305ed773.jpg?ex=6a8503a9&is=6a83b229&hm=e8e9e8a9ddc733becbe955c31c682b4160ac067c162cc2d96066115d3d7b38e6&"
-        ],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T00:03:09.280000+00:00",
-      "lang": "",
-      "title": "[DC] watchthew0rldburn@🔸game-question: you need 900 more sparks for 19 sf10s 25 per week, that's 36 weeks",
-      "summary": "you need 900 more sparks for 19 sf10s\n25 per week, that's 36 weeks\n  └ corvim: slightly better now (hopefully 2.6.0) at 125/month\n  └ enchaaanttt: and then arc3 comes and makes it irrelevant lol",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1539062059101196329",
-      "author": "watchthew0rldburn",
-      "engagement": 7,
-      "metadata": {
-        "reactions": "💀×1",
-        "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸game-question"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T00:04:40.127000+00:00",
-      "lang": "",
-      "title": "[DC] .tryshot.@🔸game-question: so me getting my fun team fully leveled doesnt mean it will be enough for story?",
-      "summary": "so me getting my fun team fully leveled doesnt mean it will be enough for story?\n[附件: image.png]\n  └ corvim: very much yeah\n  └ watchthew0rldburn: you *may* be able to do arc2 anyways through some shenanigans, but arc2 is famously requiring you to use proper teams to deal with them, particularly arc2 hard mode\n  └ null.pointer_exception: i believe in u (but you'll probably have to pop a gnosis)",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1539062440141005011",
-      "author": ".tryshot.",
-      "engagement": 7,
-      "media_url": "https://cdn.discordapp.com/attachments/1433513650299076780/1539062439738613860/image.png?ex=6a84f318&is=6a83a198&hm=9dccbfcc4b9113267ef458e453895d1fb3e355f36823be2e04ac37cd6d6d0635&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "",
-        "reply_count": 3,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1539062439738613860/image.png?ex=6a84f318&is=6a83a198&hm=9dccbfcc4b9113267ef458e453895d1fb3e355f36823be2e04ac37cd6d6d0635&"
+          "https://cdn.discordapp.com/attachments/1433513650299076780/1539094685635715102/image.png?ex=6a851120&is=6a83bfa0&hm=fce4ffd4d17156b5352ee32feb5b8101d6802897529cab29d9b42b19cf64c333&"
         ],
         "channel": "🔸game-question"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T00:03:38.852000+00:00",
-      "lang": "",
-      "title": "[DC] serahh__@🔸general-chat: Lore accurate btw",
-      "summary": "Lore accurate btw",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539062183135281295",
-      "author": "serahh__",
-      "engagement": 6,
-      "metadata": {
-        "reactions": "😭×1 ❓×1",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T00:49:37.943000+00:00",
-      "lang": "",
-      "title": "[DC] il0vem4d4r4m1k3j1m4@🔸general-chat: (附件/嵌入)",
-      "summary": "[附件: HP9Q_DhWUAATMkI.png]\n  └ arisuu0604: hi rocky",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539073755601567885",
-      "author": "il0vem4d4r4m1k3j1m4",
-      "engagement": 6,
-      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539073755056447498/HP9Q_DhWUAATMkI.png?ex=6a84fda1&is=6a83ac21&hm=b78a40e86bc5ead051c8f37c818e821d4c1b2554dd735ebf3794839900f3de96&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "Helot_slack_off×1",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1400750050208125010/1539073755056447498/HP9Q_DhWUAATMkI.png?ex=6a84fda1&is=6a83ac21&hm=b78a40e86bc5ead051c8f37c818e821d4c1b2554dd735ebf3794839900f3de96&"
-        ],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T01:00:07.993000+00:00",
-      "lang": "",
-      "title": "[DC] princess.goth@🔸general-chat: im not poor rn!!",
-      "summary": "im not poor rn!!\n  └ arisuu0604: but u will\n  └ omegamart: False\n  └ leviathxan: ",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539076398222942229",
-      "author": "princess.goth",
-      "engagement": 6,
-      "metadata": {
-        "reactions": "",
-        "reply_count": 3,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T01:06:08.680000+00:00",
-      "lang": "",
-      "title": "[DC] k.y.u.@🔸general-chat: I kinda like the IS5 theme",
-      "summary": "I kinda like the IS5 theme\n[附件: Screenshot_20260817_210443_Arknights.jpg]\n  └ princess.goth: okay but IS5 has an ugly clanker awakener",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539077911053860904",
-      "author": "k.y.u.",
-      "engagement": 6,
-      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1539077910676246548/Screenshot_20260817_210443_Arknights.jpg?ex=6a850180&is=6a83b000&hm=2fcf9d8c4958617ddf66e33c11384f8fc2a86159ce293266a8d57bcefe70d30b&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "Winkle_cry×1",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1400750050208125010/1539077910676246548/Screenshot_20260817_210443_Arknights.jpg?ex=6a850180&is=6a83b000&hm=2fcf9d8c4958617ddf66e33c11384f8fc2a86159ce293266a8d57bcefe70d30b&"
-        ],
-        "channel": "🔸general-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-08-18T01:18:59.361000+00:00",
-      "lang": "",
-      "title": "[DC] moyashi0672@🔸general-chat: https://tenor.com/view/yui-yuigahama-yahallo-gif-18724491",
-      "summary": "https://tenor.com/view/yui-yuigahama-yahallo-gif-18724491",
-      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1539081143524003861",
-      "author": "moyashi0672",
-      "engagement": 6,
-      "metadata": {
-        "reactions": "❤️×1 Snake_goodjob×1",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸general-chat"
       }
     }
   ]

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T06:39:24.837850+00:00",
+  "collected_at": "2026-08-18T09:31:38.725487+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 17,
+  "item_count": 18,
   "items": [
     {
       "source": "youtube",
@@ -13,7 +13,7 @@
       "summary": "It's big brain time in my Morimens D-Tides (which I'm long overdue to stream again!), then after I'm done with those and also ...",
       "url": "https://www.youtube.com/watch?v=9io-DIHavdw",
       "author": "Rose Guardian Reya",
-      "engagement": 573,
+      "engagement": 596,
       "media_url": "https://i.ytimg.com/vi/9io-DIHavdw/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,20 +25,8 @@
       "summary": "Don't know how long. Will be doing other stuff too.",
       "url": "https://www.youtube.com/watch?v=cVbOqdABPhU",
       "author": "Flares117",
-      "engagement": 295,
+      "engagement": 317,
       "media_url": "https://i.ytimg.com/vi/cVbOqdABPhU/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-08-17T11:00:26Z",
-      "lang": "",
-      "title": "My Morimens experience  #shorts #vtuber #gaming",
-      "summary": "If you like reading, this gacha game is for you! 【About】 Greetings, my name is Minoguchi Romulus, I'm an indie v-tuber and I ...",
-      "url": "https://www.youtube.com/watch?v=ecS_iSOS7IM",
-      "author": "Minoguchi Romulus Ch.",
-      "engagement": 193,
-      "media_url": "https://i.ytimg.com/vi/ecS_iSOS7IM/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -49,8 +37,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=PlUD5dWJj5A",
       "author": "OcteKG",
-      "engagement": 179,
+      "engagement": 215,
       "media_url": "https://i.ytimg.com/vi/PlUD5dWJj5A/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-17T11:00:26Z",
+      "lang": "",
+      "title": "My Morimens experience  #shorts #vtuber #gaming",
+      "summary": "If you like reading, this gacha game is for you! 【About】 Greetings, my name is Minoguchi Romulus, I'm an indie v-tuber and I ...",
+      "url": "https://www.youtube.com/watch?v=ecS_iSOS7IM",
+      "author": "Minoguchi Romulus Ch.",
+      "engagement": 197,
+      "media_url": "https://i.ytimg.com/vi/ecS_iSOS7IM/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -61,7 +61,7 @@
       "summary": "Добровольная поддержка: https://www.donationalerts.com/r/closetom Напрямую: 2200700154063498 Т-Банк Соцсети: ...",
       "url": "https://www.youtube.com/watch?v=hi4sztJbAPA",
       "author": "Closetom",
-      "engagement": 94,
+      "engagement": 97,
       "media_url": "https://i.ytimg.com/vi/hi4sztJbAPA/hqdefault.jpg",
       "content_type": "video"
     },
@@ -109,7 +109,7 @@
       "summary": "Yoz everyone, I'm Rozarai, a undead virtual YouTuber. Welcome to my stream and enjoy your stay! Socials Twitter: ...",
       "url": "https://www.youtube.com/watch?v=hbPA0exBBqk",
       "author": "Roz Arai Ch.",
-      "engagement": 24,
+      "engagement": 25,
       "media_url": "https://i.ytimg.com/vi/hbPA0exBBqk/hqdefault.jpg",
       "content_type": "video"
     },
@@ -139,7 +139,7 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-17T17:05:43Z",
+      "time": "2026-08-18T09:26:44Z",
       "lang": "",
       "title": "🔞 The story is too good :3 - Morimens",
       "summary": "The story is too good :3 Links https://www.twitch.tv/eepyghost https://discord.gg/2hn75MB2zf https://twitter.com/eepyghostie.",
@@ -151,13 +151,25 @@
     },
     {
       "source": "youtube",
+      "time": "2026-08-18T07:30:57Z",
+      "lang": "",
+      "title": "忘却前夜やらないと　星辰篇",
+      "summary": "１周年前々夜くらい.",
+      "url": "https://www.youtube.com/watch?v=Ka8k6AXIzt0",
+      "author": "たこに名前を入力",
+      "engagement": 9,
+      "media_url": "https://i.ytimg.com/vi/Ka8k6AXIzt0/hqdefault_live.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-08-18T04:45:30Z",
       "lang": "",
       "title": "🦖 D-tide reset 400 ou + Morimens",
       "summary": "Made with Restream. Livestream on 30+ platforms at once via https://restream.io enfin le reset semi hebdo et là let'z gow poncé le ...",
       "url": "https://www.youtube.com/watch?v=23WWfQs0f5w",
       "author": "T-rex",
-      "engagement": 3,
+      "engagement": 4,
       "media_url": "https://i.ytimg.com/vi/23WWfQs0f5w/hqdefault.jpg",
       "content_type": "video"
     },
@@ -169,13 +181,13 @@
       "summary": "Provided to YouTube by DistroKid Looming Shadow · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Sorel EP: The Rose's ...",
       "url": "https://www.youtube.com/watch?v=f9YhlHz7DxE",
       "author": "B.I.A.V. Studio - Topic",
-      "engagement": 2,
+      "engagement": 3,
       "media_url": "https://i.ytimg.com/vi/f9YhlHz7DxE/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-08-17T14:04:34Z",
+      "time": "2026-08-18T06:48:05Z",
       "lang": "",
       "title": "Morimens We&#39;re Losing Our Selves",
       "summary": "Vtuber #VtuberEN #malevtuber #vstreamer #smallstreamer #gaming #morimens #Peak.",
