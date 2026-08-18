@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T01:04:41.419246+00:00",
+  "collected_at": "2026-08-18T03:43:06.432093+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 120,
+  "item_count": 121,
   "items": [
     {
       "source": "google_play",
@@ -793,6 +793,16 @@
       "summary": "เล่นบทนำเสร็จถึงกลับรีบมารีวิวเลย เนื้อเรื่องมีความน่าสนใจ เกมเพลย์ดีต้องใช้การวางแผนหน่อย ภาพ ตัวละคร เสียง ดีมากให้เลย ถูกใจสุดๆ มีภาษาไทยแต่ใช้คำไม่ค่อยดีเท่าไหร่ ส่วนตัวแปลไม่ได้ลื่นขนาดนั้น ขมวดคิ้วตลอดการอ่านเห็นจะได้ โทนเรื่องค่อนข้างหม่น ให้กลิ่นอายของความตาย โดยรวมคือชอบมาก พัฒนาต่อไปนะคะ",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-cb50ed64-2436-4c7a-869e-04f1d7fb3e63",
       "author": "Pinyapat",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-17T02:34:48",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 widihdih, gak tiap hari nie aku lihat ga",
+      "summary": "widihdih, gak tiap hari nie aku lihat game GACHA yang sangat f2p friendly! aku ada suggesti yang opsional, Namun bisakah tambahin animasinya karakter? aku lihat hanya 3(atau 4) karakter punya animasi",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-c8efcfe2-542a-490a-8d5f-8547ac193e42",
+      "author": "Yuli Nicha",
       "engagement": 0
     },
     {

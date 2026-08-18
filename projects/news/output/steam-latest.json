@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T01:04:41.419246+00:00",
+  "collected_at": "2026-08-18T03:43:06.432093+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 13,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -18,7 +18,7 @@
       "voted_up": true,
       "review": "There's a very long very negative review here that almost turned me away from trying this game. I won't name anybody or anything, just mentioning that I saw it and it factored into my hesitation.\n\nI'm really glad to have given this game a chance. IDK if being f2p will \"entitle\" me to all of the pulls available from the endgame loop, but I don't really care. This is probably the only gacha I've played where as long as I can clear the stories I'm good. The art and the chapters are great. Really great.  It's generous enough that I'm not having any trouble putting together teams to clear the content I care about. It's still really early for me, so IDK if there's a wall on this content, and if there is, I'll still be happy to have played until then. \n\nThis is beautiful, creepy, and well written. It's Slay the Spire with a Nechronica-esque visual novel on top. If you're interested you should give it a chance. If it would be your first gacha, the pull (banner) system is a touch more confusing than most, I'd look up a video and trial a bunch of characters before committing resources. The faction mechanics are very different from each other.\n\nAll gacha teeter on the brink of predation vs liquidation. It is literally the genre. Unless you are a money printer, there will be time gates and missed opportunities. If FOMO kills you, or if you have low self-control, it can cause genuine issues. If you are willing to \"take what you can get\" and realize the game \"ends\" where your boundaries start, you'll have a excellent time with this one I think.",
       "timestamp_created": 1786943345,
-      "playtime_forever": 1553
+      "playtime_forever": 1610
     },
     {
       "source": "steam",
@@ -108,7 +108,7 @@
       "voted_up": true,
       "review": "Its a turn-based strategy game. I like the story and recommend you to give a try, but I understand that its not the style of everyone\r\n\r\nThe music / vibe is awesome",
       "timestamp_created": 1786967252,
-      "playtime_forever": 508
+      "playtime_forever": 538
     },
     {
       "source": "steam",
@@ -153,7 +153,7 @@
       "voted_up": true,
       "review": "I still don't know what I'm doing",
       "timestamp_created": 1786954235,
-      "playtime_forever": 4900
+      "playtime_forever": 4960
     },
     {
       "source": "steam",
@@ -169,36 +169,6 @@
       "review": "peak",
       "timestamp_created": 1786954117,
       "playtime_forever": 2312
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T03:23:26+00:00",
-      "lang": "english",
-      "title": "[正面] peak",
-      "summary": "peak",
-      "url": "https://steamcommunity.com/profiles/76561199177110240/recommended/3052450",
-      "author": "76561199177110240",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "peak",
-      "timestamp_created": 1786937006,
-      "playtime_forever": 2212
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-17T01:45:20+00:00",
-      "lang": "koreana",
-      "title": "[正面] 정보가 적어서 힘들지만 진짜 재밌는 게임",
-      "summary": "정보가 적어서 힘들지만 진짜 재밌는 게임",
-      "url": "https://steamcommunity.com/profiles/76561198127203442/recommended/3052450",
-      "author": "76561198127203442",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "정보가 적어서 힘들지만 진짜 재밌는 게임",
-      "timestamp_created": 1786931120,
-      "playtime_forever": 10455
     }
   ]
 }
