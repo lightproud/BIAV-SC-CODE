@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-18T12:40:32.324631+00:00",
+  "collected_at": "2026-08-18T15:31:15.925997+00:00",
   "source": "weixin",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "source": "weixin",
@@ -11,7 +11,17 @@
       "lang": "zh",
       "title": "[微信] 《忘却前夜》原声音乐集即将上线 Steam",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSwv_xF-VDnnIYXg_Vs5uQuCOrvbCYTe0wlqXa8Fplpd9-GH5VtduAEW3mDch2OhzMIZsB_BMZCSt0ZQ2uobxh6n149vm7Hg9rCWupFPyHVtEeFmboslpoZg3X6C_Q57Xhb9BiSc0zKc_EvbqHy7W9mTgVq_bgj0b8M89XADjDSZ8va-TXmqIhzHxbwdZdZWFFtlM-mgugZ5AgBvSj49eyroY-UZGbO56rA..&type=2&query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&token=5F88FF1815AFAEC147401E16D0509F0647864BED6A8452B6",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSwv_xF-VDnnIHMUaWVfP9JqOrvbCYTe0wlqXa8Fplpd9-GH5VtduAEW3mDch2OhzMIZsB_BMZCSt0ZQ2uobxh6n149vm7Hg9rJ0kaYalC_HTkPW4KnkBMjHCs1p5NOB5daVZK8vSRWtq_Zj0ULPE4tC9oML9aq5F3AJ4Dh-zJyGN5_tuJT0ar1fSFzwMyKmkJKLWh5x8-kZgHCg_oJkRbgpCy6umSSPEsg..&type=2&query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&token=6056CD9C20A2BF1128217E74D1829CA828B8F8A76A847AB9",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weixin",
+      "time": "2026-08-07T15:06:24+00:00",
+      "lang": "zh",
+      "title": "[微信] 忘却前夜第4届N厨杯圆满结束!",
+      "summary": "",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSwv_xF-VDnnIHMUaWVfP9JqOrvbCYTe0wlqXa8Fplpd9-GH5VtduAEW3mDch2OhzMIZsB_BMZCSt0ZQ2uobxh6n149vm7Hg9rO45fsyBtKAL-0waXv5eGtkyOdUJUcTomlD9VBskqMmip_PZEVs9jOqUHA94RNz5aK4H7lmB51_zZfD1LBGTS4Udzyo0LEMnByFj4lEwrGVZT9VvEenEgV-54z_tGSZTqA..&type=2&query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&token=6056CD9C20A2BF1128217E74D1829CA828B8F8A76A847AB9",
       "author": "",
       "engagement": 0
     },
@@ -21,7 +31,17 @@
       "lang": "zh",
       "title": "[微信] 《忘却前夜》原声音乐集即将上线 Steam",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSwv_xF-VDnnIBtnOt0dvPneOrvbCYTe0wlqXa8Fplpd9-GH5VtduAEW3mDch2OhzMIZsB_BMZCSt0ZQ2uobxh6n149vm7Hg9rCWupFPyHVtEeFmboslpoZg3X6C_Q57Xhe6FbLESnPg94hJoRdYoDGuYKPlIr83UzLEEZaTRrM2ElsYpz553D5GPVnVIs4zeSDPXwIsM9fjCW8QWjKOXl_afxjh3za6jWA..&type=2&query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&token=5F89079ACD76761A9E9BC7CC09B384FD9EA0EADA6A8452B7",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSwv_xF-VDnnIJklACrjVmUKOrvbCYTe0wlqXa8Fplpd9-GH5VtduAEW3mDch2OhzMIZsB_BMZCSt0ZQ2uobxh6n149vm7Hg9rJ0kaYalC_HTkPW4KnkBMjHCs1p5NOB5dRlOMe90R8k6DNDpHztKqMGcv8VeiH9uwHxCcTSfLniN1RSoYl8fuSvC4cKyscGbkEILjUFtCjXH4tLpeYfhRve00NVofL2iDw..&type=2&query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&token=6056D30202839E33090C5059F3B012210AC995CF6A847ABB",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weixin",
+      "time": "2026-08-07T15:06:24+00:00",
+      "lang": "zh",
+      "title": "[微信] 忘却前夜第4届N厨杯圆满结束!",
+      "summary": "",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSwv_xF-VDnnIJklACrjVmUKOrvbCYTe0wlqXa8Fplpd9-GH5VtduAEW3mDch2OhzMIZsB_BMZCSt0ZQ2uobxh6n149vm7Hg9rO45fsyBtKAL-0waXv5eGtkyOdUJUcTomiXYlmSTmh9oQu3KRr2rh4Ti5U9Ky1_srByUN4ocdZcuozxbfmnMuFbGBQdL9yHN8HR1aSllX1kBhrco-fyTGjJf_71bqkOtiw..&type=2&query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&token=6056D30202839E33090C5059F3B012210AC995CF6A847ABB",
       "author": "",
       "engagement": 0
     }
