@@ -1,10 +1,20 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-19T03:45:17.143273+00:00",
+  "collected_at": "2026-08-19T06:40:20.643580+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 120,
   "items": [
+    {
+      "source": "google_play",
+      "time": "2026-08-18T04:55:17",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Edited my review. The game is still awes",
+      "summary": "Edited my review. The game is still awesome! The voices, the art style, the story (I bawled my eyes out when Aigis and Jenkin died. You owe me an apology). I also found out that Doresain has the same VA as Toji from JJK and Nikolai from BSD! Anyways, the rewards are generous. I've probably already gotten more than half the characters because the gacha system is nice. It's just that my phone crashes, but it's my phone's fault. Overall, I'd recommend this to my friends. A great game!!",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-d3f5545e-4f13-4b59-8a66-5f3f2bb31e29",
+      "author": "Jin Kisaragi",
+      "engagement": 23
+    },
     {
       "source": "google_play",
       "time": "2026-08-17T17:19:53",
@@ -197,16 +207,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-23T13:26:06",
-      "lang": "en",
-      "title": "[Google Play 差评] ★1 SERIOUSLY DEVS, WHO ASKED FOR THIS?! THI",
-      "summary": "SERIOUSLY DEVS, WHO ASKED FOR THIS?! THIS IS UNFORTUNATELY ANOTHER COPYPASTE DARK UNIVERSE CLONE! FROM BIZARRE IMAGERY IN THE TRAILERS TO VERY BY THE NUMBERS INTRO! IT'S EITHER PORN, SOFT PORN OR EXTREME DARK UNIVERSE GARBAGE LIKE THIS! SERIOUSLY WHY!? IMAGERY ALONE, SHOULD MAKE THIS 'M' FOR THE MATURE CONTENT!",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-3daaa6a4-b251-4a89-8d28-0bd35e06a973",
-      "author": "Peter Von Feldt",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-08-11T23:45:38",
       "lang": "ko",
       "title": "[Google Play 好评] ★5 다 좋은데 번역 좀 어케 해보셈 픽업창 캐 이름이 다르게 나오면 어떡하라",
@@ -293,6 +293,26 @@
       "summary": "非常好的游戏",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-fb35889a-9334-408f-b466-43051ac7e524",
       "author": "DARYL",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-18T04:34:57",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 The story is amazing and everything abou",
+      "summary": "The story is amazing and everything about the game is entertaining ❤️❤️❤️",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-4b3155d1-0452-4001-9b66-68c216f72dcf",
+      "author": "Hafsa",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-18T04:04:55",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 goated game. so underrated",
+      "summary": "goated game. so underrated",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-bdee92e5-b9cb-427b-be14-4d19f19e52a4",
+      "author": "Phoenix Chung",
       "engagement": 0
     },
     {
@@ -643,26 +663,6 @@
       "summary": "in the span of 2ish months (100 hours of playtime) ive fallen to the floor in despair 2 times while reading the story and criedover my favorite trans fish boy. caecus you are so loved umnot sure if i got the point across but. the story is cinema 🥹 the gameplay is very slay the spire reminiscent which i fw; and while i usually tend to stay away from gacha games since they are evil and greedy biav is at least generous enough with their made up currency with a free pull every story clear. love it",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-52530f3c-ddaf-427d-a7d7-c7fafab42e8d",
       "author": "Ame",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-24T06:49:38",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 absolute cinema 🎥",
-      "summary": "absolute cinema 🎥",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-c51df001-d610-451a-9ba1-c97d210a99af",
-      "author": "Astrid",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-23T13:25:22",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 The game is good, and I’m loving it so f",
-      "summary": "The game is good, and I’m loving it so far, even though I’ve only finished Chapter 1. I like that there isn’t too much content, because too much content can become overwhelming. I played Guardian Tales years ago and recently returned, but there was so much new content that I ended up deleting it—I preferred the older version. My suggestion is to slightly shorten the story in each chapter, as it can become exhausting, and add more animation effects to make the experience better.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-1a2761c2-704a-4d41-a38a-897dcc3b45cc",
-      "author": "Thaniga",
       "engagement": 0
     },
     {

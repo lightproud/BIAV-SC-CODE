@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-19T03:45:17.143273+00:00",
+  "collected_at": "2026-08-19T06:40:20.643580+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 6,
@@ -19,6 +19,21 @@
       "review": "守密人ＩＤ [h3]101652206 [/h3]\n\n歡迎加手機板/PC版好友\nFeel free to add me on mobile version.",
       "timestamp_created": 1787041170,
       "playtime_forever": 12
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-19T05:17:05+00:00",
+      "lang": "english",
+      "title": "[正面] One of the best gatcha games ive ever played, love...",
+      "summary": "One of the best gatcha games ive ever played, love the ftp-friendly deck builds as well. Pretty challenging",
+      "url": "https://steamcommunity.com/profiles/76561198753416401/recommended/3052450",
+      "author": "76561198753416401",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "One of the best gatcha games ive ever played, love the ftp-friendly deck builds as well. Pretty challenging",
+      "timestamp_created": 1787116625,
+      "playtime_forever": 1765
     },
     {
       "source": "steam",
@@ -79,21 +94,6 @@
       "review": "The gameplay is genuinely fun. The art and atmosphere are dark and totally my vibe, but the story is a real pain.",
       "timestamp_created": 1787042676,
       "playtime_forever": 182
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-18T05:11:15+00:00",
-      "lang": "english",
-      "title": "[正面] Morimens might be most generous gacha game on the...",
-      "summary": "Morimens might be most generous gacha game on the market, and it's a game worth taking advantage of that generosity for. \r\n\r\nI think the story is a little bit weak in the beginning (and the end of arc1 felt rushed), but the characters/ gameplay carry it for me. The aesthetic and themes in here are top notch, and the music conveys this game's tone quite well. \r\n\r\nThe deets:\r\n - The way this game has massaged the sensibilities of Lovecraftian horror into game mechanics is very cool. \r\n - Awakeners being good at low investment/dupes are good. There are enough of them in this game that I'm bringing it up.\r\n - Low effort dailies, as well as a more involved rotating gauntlet mode that makes deliberate planning/team building feel rewarding. This is super helpful for managing the time investment with Morimens. \r\n - Guaranteed SSR at 30 pulls. Even if you miss the 50/50, your account is improving.\r\n - Roguelike deckbuilders are neat, even if this one is a little less insistent on the roguelike aspect of the genre (rewarding investment/build quality a little bit more than its contemporaries). \r\n\r\n\r\nI'd recommend playing this on mobile, but I'm on here every once in a while to reduce eye strain. Seamless account linking was also a plus.",
-      "url": "https://steamcommunity.com/profiles/76561198381750399/recommended/3052450",
-      "author": "76561198381750399",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Morimens might be most generous gacha game on the market, and it's a game worth taking advantage of that generosity for. \r\n\r\nI think the story is a little bit weak in the beginning (and the end of arc1 felt rushed), but the characters/ gameplay carry it for me. The aesthetic and themes in here are top notch, and the music conveys this game's tone quite well. \r\n\r\nThe deets:\r\n - The way this game has massaged the sensibilities of Lovecraftian horror into game mechanics is very cool. \r\n - Awakeners being good at low investment/dupes are good. There are enough of them in this game that I'm bringing it up.\r\n - Low effort dailies, as well as a more involved rotating gauntlet mode that makes deliberate planning/team building feel rewarding. This is super helpful for managing the time investment with Morimens. \r\n - Guaranteed SSR at 30 pulls. Even if you miss the 50/50, your account is improving.\r\n - Roguelike deckbuilders are neat, even if this one is a little less insistent on the roguelike aspect of the genre (rewarding investment/build quality a little bit more than its contemporaries). \r\n\r\n\r\nI'd recommend playing this on mobile, but I'm on here every once in a while to reduce eye strain. Seamless account linking was also a plus.",
-      "timestamp_created": 1787029875,
-      "playtime_forever": 1712
     }
   ]
 }
