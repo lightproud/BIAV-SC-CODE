@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18",
+  "generated": "2026-08-19",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -4844,7 +4844,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 974 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 999 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4858,7 +4858,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3736 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3762 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4872,7 +4872,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 9338186 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 9706384 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4886,7 +4886,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1437 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1442 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4914,7 +4914,7 @@
     "/sources/official.md": {
       "type": "dataset",
       "title": "official 社区数据源",
-      "description": "official 平台采集档案，全量 350 条，健康度 active。",
+      "description": "official 平台采集档案，全量 351 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/news/",
       "tags": [
         "data_layer:full_archive",
@@ -4928,7 +4928,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 647 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 648 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4970,7 +4970,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5500 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5506 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4998,7 +4998,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 121 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 122 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -5026,7 +5026,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 4032 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 4062 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -5040,7 +5040,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 13152 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 13158 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -5068,7 +5068,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3494 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3513 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5082,7 +5082,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2654 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2663 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
