@@ -1,8 +1,304 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-19T01:05:57.340823+00:00",
+  "collected_at": "2026-08-19T03:45:17.143273+00:00",
   "source": "reddit",
   "data_layer": "output",
-  "item_count": 0,
-  "items": []
+  "item_count": 21,
+  "items": [
+    {
+      "source": "reddit",
+      "time": "2026-08-18T13:48:53+00:00",
+      "lang": "en",
+      "title": "Dzone rotation mechanics overview, week of 17th August.",
+      "summary": "Hello, rain from discord here.  As always, the intention for this post is to serve as an overview on the current Dzone Rotation boss, I will cover their basic mechanics and potential counters to help any players attempting higher alert clears. This guide is for the week of 17th August 2026 Dzone rotation. special thanks to the team at Mythag Library for their effort in making the enemy stat card, link below: Morimen Boss Compendium: https://docs.google.com/spreadsheets/d/1QYciqHJY3BilDcdvBiIT_dOqXOdqGX-4FBDj5rL6qyA/edit?gid=201451668#gid=201451668 Dtide chatter: In anticipation of Caraboo next monday, this week is Caro ring as expected. Notably, both W4 and W5 boss has the burn gimmick, which are unique to these two awakener boss atm, perhaps caraboo is able to counter this somehow? Overall difficulty imo is W4 = W5 &gt; W3 &gt; W2 &gt; W1, but W5 will be a lot easier if you have a built Glotan. ------------------------------ Wave 1: “Schizophrenic”, relic：Rhind Papyrus W1 boss is the schizophrenic patient from Clem’s chapter,，he only has 1 health bar , but its a big one, sitting at a massive value at 2002K hp, though his is pretty easy and is fairly abusable. His rotation goes something like this: Please refer to the attached image on &quot;Schizophrenic” for moveset Exploration Note:  You need to go through at least 2 battle before you can face the boss The path through the portal will lead you to a shop, while the back track path will lead to a healing tile, but also an extra fight  Battle Note:  Mr Schizo is fairly simple: he has a pseudo berserk passive and loses str when he gets hit. On 15 accumulated card use in a single turn, his intention will be switched to “Trauma Blow”, a big single hit that applies 1 turn of Trauma to you. Trauma: when you play a strike, shuffle a wound to the top of your drawpile Whenever Mr Schizo gets hit, he loses 37 temp str Which means if your playing a comp that does a lot of multihit (like Aequor tentacle comps), you can quite r",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrppyj/dzone_rotation_mechanics_overview_week_of_17th/",
+      "author": "/u/Fantastic_Use_9",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/p4yxftoxz4kh1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=8420e661e0ee738e00b0482833ed5f12f0072d44",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T19:54:48+00:00",
+      "lang": "en",
+      "title": "Liz 💚",
+      "summary": "Twitter/X Post!  &#32; submitted by &#32;  /u/Samin-A   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vs02s2/liz/",
+      "author": "/u/Samin-A",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/43saky4tu6kh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=cbc4dc8b9e1c051bb3a9027ee4375bd180af93c1",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-19T02:57:03+00:00",
+      "lang": "en",
+      "title": "Bad Apple (Caraboo) [@M31_FLNaccn]",
+      "summary": "&#32; submitted by &#32;  /u/WeatherSlime   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vsa9o3/bad_apple_caraboo_m31_flnaccn/",
+      "author": "/u/WeatherSlime",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/a9x7gcc4y8kh1.gif?width=640&amp;crop=smart&amp;s=fedbda98d01797f2da00e06f5c290c9886cbf975",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T18:53:21+00:00",
+      "lang": "en",
+      "title": "Smol Sorel",
+      "summary": "don’t ask me how long her hat took  &#32; submitted by &#32;  /u/somnonym   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrycgn/smol_sorel/",
+      "author": "/u/somnonym",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/jsd6cb4wj6kh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=55afc79780be55e7a71bfc097b001188702b2f50",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T20:40:41+00:00",
+      "lang": "en",
+      "title": "G.Lotan and Jenkins Wheel (stop reccomending it)",
+      "summary": "Hello, Angbak from Discord here. I&#39;ve seen several comments on Jenkins wheel being good on G.Lotan and I&#39;m here to explain why IMO, there are way better wheels. The screenshots attached shows how the bulk of her damage comes from her Long Blade. Granted, this is a E1 strike damage focused build with Arachne, but I&#39;m dealing 1.1m on turn 1 focusing on her Long Blade.   G.Lotan&#39;s strength is largely concentrated on Rouse + Posse -&gt; Long Blade. Since her posse only DOUBLES the damage of the next strike played, you want to concentrate your strength on 1 Long Blade instead of finding more strikes. Ramona, one of her best partners already guarantees you drawing her Long Blade via her exalt at 0 cost. Damage wise, Jenkins wheel only provides Crit Rate for G.Lotan as main stat. The wheel effects helps to provide a search, but  - it&#39;s inconsistent in procing   - it doesn&#39;t guarantee that you draw Long Blade - it doesnt provide any other damage  - You&#39;re only reliant on Long Blade, which if played, can&#39;t be searched back via Jenkins wheel (it&#39;s in discard pile, the wheel prioritises cards in draw pile) - She has high base damage which Jenkins wheel is overlooking - In my clear here, you can see that I&#39;m only using 1 card to kill mobs. The search function from Jenkins wheel is useless. https://youtu.be/qQ0Mm7\\_Kq0s?is=ehyoO9QxRs\\_3epWf _______________________________________________ So what wheels are better alternatives? Base damage multipliers   Celestial beast (BIS) - gives 50% strike base damage + cdmg main stat. IMO this is probably her strongest wheel over her own Pollux wheel (Limited BIS) - 35% base damage and cdmg, 15% final damage for first card played  [The rest aren&#39;t in order] Kath wheel (Limited) - base damage increase + cdmg main stat. Able to build str for exalt Hand of oblivion (SR) - 40% base damage increase  Her own SR wheel - 50% cdmg + some base damage and CC if you have her e1 unlocked (Sigil Yield) Dore (Lim",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vs1cmf/glotan_and_jenkins_wheel_stop_reccomending_it/",
+      "author": "/u/Angbak94",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/v6y5h19437kh1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=4d16492a7281c79755831ba8ed27d94a02ca19f2",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T16:18:50+00:00",
+      "lang": "en",
+      "title": "a tier list based on how mildly inconvenience it would be to live as each morimens character (based on appearance mostly)",
+      "summary": "this is just for fun :^ this isnt meant to be a this design isnt realistic so dont take it too serious anyway, from the title i mean like if their hair or clothes might get in the way in everyday life. Communicator, character stories or maybe main plot are also included in this which is there&#39;s a &quot;depend&quot; row! so thing like aigis&#39;s eye problem or tulu who have to sleep a lotgo in there lemme me know ur thought as wellllll  &#32; submitted by &#32;  /u/ywra_a   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrtw0s/a_tier_list_based_on_how_mildly_inconvenience_it/",
+      "author": "/u/ywra_a",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/om45v9z8s5kh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3351c3842f0b03cca59fbcfae52a234421d1622f",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T23:51:37+00:00",
+      "lang": "en",
+      "title": "Would \"Summoner\" awakeners be possible?",
+      "summary": "I was laying in bed thinking about necromancers (as one does), and how I wish there was something like that in morimens which lead me to doresain and his corpse mechanic which got me thinking. What if there was a support (?) awakener who could summon trash mobs on the enemy side that you could defeat for benefits/buffs like low HP non attacking fleshy goodie bags. As for what buffs or benefits my two brain cells couldn&#39;t go farther than that lol but I did also realize it would help with awakeners like daffodil and doresain who care about killing enemies. I figured I&#39;d see what the community thinks and if it would even be possible in this type of game or simply too complicated/not worth the effort.  &#32; submitted by &#32;  /u/Ragnarok15271   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vs643e/would_summoner_awakeners_be_possible/",
+      "author": "/u/Ragnarok15271",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T07:19:04+00:00",
+      "lang": "en",
+      "title": "New code: DC60000",
+      "summary": "Setting =&gt; Account =&gt; Redemption Code   &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vri3ha/new_code_dc60000/",
+      "author": "/u/DrExluxk",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/10l02ml343kh1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=66e3881f91fb8d6113cabd875be69fe2f38bbd52",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T07:05:39+00:00",
+      "lang": "en",
+      "title": "V2.6.0 || His, Her & Its Wishes",
+      "summary": "——✦——✦—— ✦✦✦ ——✦——✦—— Follow the best guide among all the Sherpa, and set out for an altitude of 8,840 meters— Once you reach the summit⛰️, you&#39;ve arrived at the promised land where all wishes come true.  “Ta-daa~ the Fairy&#39;s radiance🌟 shines upon you now. Go get &#39;em!&quot; Yes, of course there&#39;s a goddess at the snowy mountain&#39;s peak! Just like Caraboo&#39;s gold coins—it&#39;s as real as it gets! Hmm... but before everyone makes their own wish, wouldn&#39;t you like to hear... &quot;Its&quot; wish? ——✦——✦—— ✦✦✦ ——✦——✦——  &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrhur7/v260_his_her_its_wishes/",
+      "author": "/u/DrExluxk",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/1j11h5qp13kh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=794880d5ec82fd05951cbff49bcb821095bf08a6",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T09:23:16+00:00",
+      "lang": "en",
+      "title": "Carabu🤍🍎 by @visooooouuueeee",
+      "summary": "&#32; submitted by &#32;  /u/OneThanks3   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrk60c/carabu_by_visooooouuueeee/",
+      "author": "/u/OneThanks3",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/bc4f6ao5q3kh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5cc6167516e7918a2e2a0a2ccccee23cd622028b",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T14:29:02+00:00",
+      "lang": "en",
+      "title": "the next candidate of the new awaker?",
+      "summary": "I think the next candidate of the next awaker are either the silhouette of a lady in Karen mind(that one event), the silhouette of a man on the right(which idk who is he and is he gonna debut or not), William, and N ig? That&#39;s who&#39;s comes to my mind, does anyone gonna add more? Since I am not a lore person and somehow I stumble upon this lady😔  &#32; submitted by &#32;  /u/CheckGlobal6202   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrqskt/the_next_candidate_of_the_new_awaker/",
+      "author": "/u/CheckGlobal6202",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-19T00:30:06+00:00",
+      "lang": "en",
+      "title": "Well i was curious why not all the wiki pages are the same.",
+      "summary": "As the title says there a few different ones like Thais( To my knowledge) is the only one who has her appearance for the Archive part and I wish there was more of them like that(sorry for bad Grammar)​  &#32; submitted by &#32;  /u/Hot-Mycologist-3591   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vs70sw/well_i_was_curious_why_not_all_the_wiki_pages_are/",
+      "author": "/u/Hot-Mycologist-3591",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T16:38:47+00:00",
+      "lang": "en",
+      "title": "How mandatory is GLotan's WoD?",
+      "summary": "I&#39;m kinda low on pulls and also saving for future units, how badly does GLotan need her signature wheel? Because I&#39;m not sure I&#39;ll be able to get it. If there are alternatives, what are they?  &#32; submitted by &#32;  /u/Keeguna   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vruh87/how_mandatory_is_glotans_wod/",
+      "author": "/u/Keeguna",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T19:19:14+00:00",
+      "lang": "en",
+      "title": "Is E3 Sorel still bad?",
+      "summary": "How many dupes does she need to justify building her?   &#32; submitted by &#32;  /u/hellandthisislife   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrz3ca/is_e3_sorel_still_bad/",
+      "author": "/u/hellandthisislife",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T20:35:36+00:00",
+      "lang": "en",
+      "title": "Story order?",
+      "summary": "Hello everybody, just started sinking into this game and I wanted to know if there was a chronological order for the story that I could find. I know the chapters are in order, but I&#39;m mostly referring to the side stories as I would like to follow along without going too much ahead. Thank you in advance  &#32; submitted by &#32;  /u/I_DontMissAcog   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vs17nb/story_order/",
+      "author": "/u/I_DontMissAcog",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T21:24:37+00:00",
+      "lang": "en",
+      "title": "how can i be more proficent and get past 8-13",
+      "summary": "Hello there, im basically stuck at the final boss in 8-13, i can manage to get at the boss with pretty much full hp but i cant really beat it.  these are the units i have: https://preview.redd.it/u7mt3vpma7kh1.png?width=2560&amp;format=png&amp;auto=webp&amp;s=a387a4cab91936b4ea3287fe5972be01f4858cb1 https://preview.redd.it/qt1o9xjna7kh1.png?width=2560&amp;format=png&amp;auto=webp&amp;s=70512edfd35635b5b0d5e32b94a4294fd3c114a0 https://preview.redd.it/ho29vmupa7kh1.png?width=2560&amp;format=png&amp;auto=webp&amp;s=bbec1acce205d607c896630d68b9028aedef7080 and this is the comp im using: https://preview.redd.it/utaj2cdua7kh1.png?width=2560&amp;format=png&amp;auto=webp&amp;s=2302c057c2c569d91bb858a8b06bed83996b2f9c  &#32; submitted by &#32;  /u/Tsume96_   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vs2ig8/how_can_i_be_more_proficent_and_get_past_813/",
+      "author": "/u/Tsume96_",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/u7mt3vpma7kh1.png?width=140&amp;height=78&amp;auto=webp&amp;s=a64a4c0a34ee0dbab6621beb8384f7af246b0321",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T19:15:28+00:00",
+      "lang": "en",
+      "title": "Mejores equipos para Pollux?",
+      "summary": "Pollux es mi main definitivamente, busco aumentar su daño lo máximo posible pero tengo muchas dudas con cuales personajes debería llevarlo para que haga más daño, actualmente hago 300k con el.. también quería saber si alguien podría guiarme en sus equipos y como jugarlos🙏  &#32; submitted by &#32;  /u/Excellent_Special409   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vryzhk/mejores_equipos_para_pollux/",
+      "author": "/u/Excellent_Special409",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/sam0eilon6kh1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=b0fa5d205d48c9a23ba155e3600b3c1adc276e5d",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T16:22:54+00:00",
+      "lang": "en",
+      "title": "best wheels of destiny for saya",
+      "summary": "hello guys i was wondering which are the best &quot;wheels of destiny&quot; for saya since i already got her and her signature &quot;wheel of destiny&quot; which is the &quot;fragant morphogenesis&quot; but i was w9ndering which would be the second best one for her... was thinking on &quot;incalculable factor&quot; which makes &quot;the aliemus generated by the wielder +9%. The wielder gains 140 keyflare after releasing exalt&quot; as default... that way i can increase her aliemus faster... if there is a better one please let me know  &#32; submitted by &#32;  /u/Nyu_Gasai   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vru0d6/best_wheels_of_destiny_for_saya/",
+      "author": "/u/Nyu_Gasai",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T12:35:50+00:00",
+      "lang": "en",
+      "title": "Genesis lore questions",
+      "summary": "Hey guys I have 2 small questions about the genesis awakener&#39;s lore or just lore in general. So I just started chapter 9, and met with GDoll, and the game was talking about her like I&#39;ve met with her before. So I guess similarly to GRamona who was mentioned in chapter 7 before GHelot was introduced, she was in a sidequest as well. I did that sidequest after meeting with GHelot btw and gave the needed context, buut are there other sidequests I need to do for better context in the main story? The other question is, at the end of GRamona&#39;s quest, she was sharing a body with Ramona, so I figured all genesis awakeners have to share their body with the &quot;original&quot; but then GDoll plotting for a month to open the gate doesn&#39;t sound that feasible. Am I misunderstanding something or is body sharing only present in Ramona&#39;s case?  &#32; submitted by &#32;  /u/Regan312   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrnxk9/genesis_lore_questions/",
+      "author": "/u/Regan312",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T15:56:31+00:00",
+      "lang": "en",
+      "title": "Morimens moble download stuck at 35% anyone else having this problem?",
+      "summary": "I have tried deleting and downloading again but same problem   &#32; submitted by &#32;  /u/Striking-Spring-3835   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrt5ff/morimens_moble_download_stuck_at_35_anyone_else/",
+      "author": "/u/Striking-Spring-3835",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-08-18T17:20:56+00:00",
+      "lang": "en",
+      "title": "what's your favorite filler covenant set?",
+      "summary": "like DR or sigil yield or the arithmetica? I personally like money and dr  &#32; submitted by &#32;  /u/soItsNotallYours   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1vrvpry/whats_your_favorite_filler_covenant_set/",
+      "author": "/u/soItsNotallYours",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    }
+  ]
 }

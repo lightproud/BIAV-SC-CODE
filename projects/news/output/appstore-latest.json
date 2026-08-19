@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-19T01:05:57.340823+00:00",
+  "collected_at": "2026-08-19T03:45:17.143273+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "appstore",
@@ -43,16 +43,6 @@
       "summary": "🐐",
       "url": "https://apps.apple.com/ph/app/id6447354150?see-all=reviews#as-14338085221",
       "author": "toozty",
-      "engagement": 5
-    },
-    {
-      "source": "appstore",
-      "time": "2026-07-27T23:39:28-07:00",
-      "lang": "it",
-      "title": "Nice",
-      "summary": "Good",
-      "url": "https://apps.apple.com/it/app/id6447354150?see-all=reviews#as-14357281231",
-      "author": "AllGripNoSlip",
       "engagement": 5
     },
     {
