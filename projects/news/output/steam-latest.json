@@ -1,10 +1,40 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-19T18:32:44.543033+00:00",
+  "collected_at": "2026-08-19T21:23:53.882692+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-19T19:59:19+00:00",
+      "lang": "english",
+      "title": "[正面] started playing this game last week and i alredy h...",
+      "summary": "started playing this game last week and i alredy have more then 80 H on it. no need to say more it's a great game",
+      "url": "https://steamcommunity.com/profiles/76561199122979844/recommended/3052450",
+      "author": "76561199122979844",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "started playing this game last week and i alredy have more then 80 H on it. no need to say more it's a great game",
+      "timestamp_created": 1787169559,
+      "playtime_forever": 5324
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-19T16:22:02+00:00",
+      "lang": "english",
+      "title": "[正面] me likey",
+      "summary": "me likey",
+      "url": "https://steamcommunity.com/profiles/76561199860451968/recommended/3052450",
+      "author": "76561199860451968",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "me likey",
+      "timestamp_created": 1787156522,
+      "playtime_forever": 3641
+    },
     {
       "source": "steam",
       "time": "2026-08-19T13:37:25+00:00",
@@ -123,7 +153,7 @@
       "voted_up": true,
       "review": "One of the best gatcha games ive ever played, love the ftp-friendly deck builds as well. Pretty challenging",
       "timestamp_created": 1787116625,
-      "playtime_forever": 1889
+      "playtime_forever": 1911
     }
   ]
 }
