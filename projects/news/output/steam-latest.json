@@ -1,10 +1,70 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-19T09:32:26.632206+00:00",
+  "collected_at": "2026-08-19T12:41:35.484244+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 4,
+  "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-19T10:32:18+00:00",
+      "lang": "french",
+      "title": "[正面] trop cool",
+      "summary": "trop cool",
+      "url": "https://steamcommunity.com/profiles/76561198977675761/recommended/3052450",
+      "author": "76561198977675761",
+      "engagement": 0,
+      "language": "french",
+      "voted_up": true,
+      "review": "trop cool",
+      "timestamp_created": 1787135538,
+      "playtime_forever": 1973
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-19T10:19:35+00:00",
+      "lang": "indonesian",
+      "title": "[正面] Perfect",
+      "summary": "Perfect",
+      "url": "https://steamcommunity.com/profiles/76561199850099900/recommended/3052450",
+      "author": "76561199850099900",
+      "engagement": 0,
+      "language": "indonesian",
+      "voted_up": true,
+      "review": "Perfect",
+      "timestamp_created": 1787134775,
+      "playtime_forever": 1265
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-19T10:03:31+00:00",
+      "lang": "english",
+      "title": "[正面] I kinda hate this game.",
+      "summary": "I kinda hate this game.",
+      "url": "https://steamcommunity.com/profiles/76561199609830194/recommended/3052450",
+      "author": "76561199609830194",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I kinda hate this game.",
+      "timestamp_created": 1787133811,
+      "playtime_forever": 3458
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-19T09:41:21+00:00",
+      "lang": "schinese",
+      "title": "[正面] 画风特别美",
+      "summary": "画风特别美",
+      "url": "https://steamcommunity.com/profiles/76561198659169734/recommended/3052450",
+      "author": "76561198659169734",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "画风特别美",
+      "timestamp_created": 1787132481,
+      "playtime_forever": 270
+    },
     {
       "source": "steam",
       "time": "2026-08-19T05:17:05+00:00",
@@ -18,7 +78,7 @@
       "voted_up": true,
       "review": "One of the best gatcha games ive ever played, love the ftp-friendly deck builds as well. Pretty challenging",
       "timestamp_created": 1787116625,
-      "playtime_forever": 1828
+      "playtime_forever": 1889
     },
     {
       "source": "steam",
@@ -48,7 +108,7 @@
       "voted_up": true,
       "review": "A very unique Gacha experience. I do hope more of the game receives non-machine translations for the side stories because the writing in this game is enjoyable when you can understand it.",
       "timestamp_created": 1787064803,
-      "playtime_forever": 8108
+      "playtime_forever": 8179
     },
     {
       "source": "steam",
