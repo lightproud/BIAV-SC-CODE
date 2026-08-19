@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-19T15:29:46.895515+00:00",
+  "collected_at": "2026-08-19T18:32:44.543033+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -124,21 +124,6 @@
       "review": "One of the best gatcha games ive ever played, love the ftp-friendly deck builds as well. Pretty challenging",
       "timestamp_created": 1787116625,
       "playtime_forever": 1889
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-18T17:04:15+00:00",
-      "lang": "schinese",
-      "title": "[正面] 沙耶茉夏谁玩谁知道",
-      "summary": "沙耶茉夏谁玩谁知道",
-      "url": "https://steamcommunity.com/profiles/76561198847325523/recommended/3052450",
-      "author": "76561198847325523",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "沙耶茉夏谁玩谁知道",
-      "timestamp_created": 1787072655,
-      "playtime_forever": 2287
     }
   ]
 }
