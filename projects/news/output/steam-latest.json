@@ -1,10 +1,55 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-19T12:41:35.484244+00:00",
+  "collected_at": "2026-08-19T15:29:46.895515+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-19T13:37:25+00:00",
+      "lang": "koreana",
+      "title": "[正面] 님만 오면 고",
+      "summary": "님만 오면 고",
+      "url": "https://steamcommunity.com/profiles/76561198318910709/recommended/3052450",
+      "author": "76561198318910709",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "님만 오면 고",
+      "timestamp_created": 1787146645,
+      "playtime_forever": 38321
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-19T12:22:31+00:00",
+      "lang": "russian",
+      "title": "[正面] Nice игра",
+      "summary": "Nice игра",
+      "url": "https://steamcommunity.com/profiles/76561198103814568/recommended/3052450",
+      "author": "76561198103814568",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Nice игра",
+      "timestamp_created": 1787142151,
+      "playtime_forever": 561
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-19T12:05:54+00:00",
+      "lang": "russian",
+      "title": "[负面] Не люблю карточки и аниме",
+      "summary": "Не люблю карточки и аниме",
+      "url": "https://steamcommunity.com/profiles/76561198835886917/recommended/3052450",
+      "author": "76561198835886917",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": false,
+      "review": "Не люблю карточки и аниме",
+      "timestamp_created": 1787141154,
+      "playtime_forever": 560
+    },
     {
       "source": "steam",
       "time": "2026-08-19T10:32:18+00:00",
@@ -18,7 +63,7 @@
       "voted_up": true,
       "review": "trop cool",
       "timestamp_created": 1787135538,
-      "playtime_forever": 1973
+      "playtime_forever": 2062
     },
     {
       "source": "steam",
@@ -94,36 +139,6 @@
       "review": "沙耶茉夏谁玩谁知道",
       "timestamp_created": 1787072655,
       "playtime_forever": 2287
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-18T14:53:23+00:00",
-      "lang": "english",
-      "title": "[正面] A very unique Gacha experience. I do hope more of...",
-      "summary": "A very unique Gacha experience. I do hope more of the game receives non-machine translations for the side stories because the writing in this game is enjoyable when you can understand it.",
-      "url": "https://steamcommunity.com/profiles/76561199386959360/recommended/3052450",
-      "author": "76561199386959360",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "A very unique Gacha experience. I do hope more of the game receives non-machine translations for the side stories because the writing in this game is enjoyable when you can understand it.",
-      "timestamp_created": 1787064803,
-      "playtime_forever": 8179
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-18T14:21:16+00:00",
-      "lang": "schinese",
-      "title": "[正面] 苟住，别死",
-      "summary": "苟住，别死",
-      "url": "https://steamcommunity.com/profiles/76561199178359392/recommended/3052450",
-      "author": "76561199178359392",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "苟住，别死",
-      "timestamp_created": 1787062876,
-      "playtime_forever": 1269
     }
   ]
 }
