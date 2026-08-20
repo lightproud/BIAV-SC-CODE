@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-20T12:44:58.790333+00:00",
-  "total_gaps": 283,
+  "generated_at": "2026-08-20T15:32:00.932655+00:00",
+  "total_gaps": 285,
   "coverage": {
     "sources_total": 19,
     "sources_scanned": 18,
@@ -72,6 +72,12 @@
         "2026-07-08"
       ],
       "count": 18
+    },
+    "bilibili": {
+      "missing_dates": [
+        "2026-08-19"
+      ],
+      "count": 1
     },
     "note_com": {
       "missing_dates": [
@@ -181,10 +187,9 @@
         "2026-07-26",
         "2026-07-31",
         "2026-08-01",
-        "2026-08-02",
-        "2026-08-18"
+        "2026-08-02"
       ],
-      "count": 8
+      "count": 7
     },
     "ruliweb": {
       "missing_dates": [
@@ -204,11 +209,18 @@
       ],
       "count": 13
     },
-    "steam_discussion": {
+    "steam": {
       "missing_dates": [
-        "2026-08-08"
+        "2026-08-19"
       ],
       "count": 1
+    },
+    "steam_discussion": {
+      "missing_dates": [
+        "2026-08-08",
+        "2026-08-19"
+      ],
+      "count": 2
     },
     "stopgame": {
       "missing_dates": [
@@ -258,9 +270,10 @@
         "2026-08-11",
         "2026-08-12",
         "2026-08-13",
-        "2026-08-15"
+        "2026-08-15",
+        "2026-08-19"
       ],
-      "count": 41
+      "count": 42
     },
     "taptap_review": {
       "missing_dates": [
@@ -277,11 +290,9 @@
         "2026-07-01",
         "2026-07-02",
         "2026-07-05",
-        "2026-07-25",
-        "2026-08-18",
-        "2026-08-19"
+        "2026-07-25"
       ],
-      "count": 16
+      "count": 14
     },
     "weibo": {
       "missing_dates": [
@@ -342,6 +353,12 @@
         "2026-08-17"
       ],
       "count": 48
+    },
+    "youtube": {
+      "missing_dates": [
+        "2026-08-19"
+      ],
+      "count": 1
     },
     "youtube_comments": {
       "missing_dates": [
