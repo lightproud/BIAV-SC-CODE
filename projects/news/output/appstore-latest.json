@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-20T18:36:28.412094+00:00",
+  "collected_at": "2026-08-20T21:26:07.741072+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "source": "appstore",
@@ -104,6 +104,16 @@
       "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14408556058",
       "author": "Noctantis",
       "engagement": 3
+    },
+    {
+      "source": "appstore",
+      "time": "2026-08-19T08:02:52-07:00",
+      "lang": "en",
+      "title": "Game is crashing every 5 to 10 minutes",
+      "summary": "Love this, absolutely love it. But it keeps crashing. I’m using an older iPad but come on, it’s not a very graphic intensive game, not too much happening at one time. The cinstsnt crashing makes it hard to keep playing",
+      "url": "https://apps.apple.com/ca/app/id6447354150?see-all=reviews#as-14447160520",
+      "author": "ZygmanFroid",
+      "engagement": 2
     },
     {
       "source": "appstore",
