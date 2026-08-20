@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-20T15:31:33.087941+00:00",
+  "collected_at": "2026-08-20T18:36:28.412094+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 122,
   "items": [
     {
       "source": "google_play",
@@ -123,16 +123,6 @@
       "summary": "Приятный гибрид, который подкупает стилем Reverse 1999 и затягивающей механикой \"колодостроя\" от Slay the Spire. К слову, перевод на русский здесь есть, и для машинного он сделан очень достойно вполне играбельно и понятно",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-c04e19a0-7acf-4628-9759-9bcc2227fabd",
       "author": "Аlex",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-08-06T14:21:42",
-      "lang": "ja",
-      "title": "[Google Play 差评] ★2 アプリのクラッシュが酷すぎて、問い合わせても原因がわからないとの事で何してもダメ",
-      "summary": "アプリのクラッシュが酷すぎて、問い合わせても原因がわからないとの事で何してもダメでした。ご分に一回並にクラッシュが起きます",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-ac361b79-c538-48a4-adf8-78e7d0b50503",
-      "author": "ピカチュウ",
       "engagement": 2
     },
     {
@@ -273,6 +263,16 @@
       "summary": "아직 시작 하루이긴한데 스토리+BGM+더빙 등등 애니를보고있나하고 착각할정도로 좋음ㄹㅇ 원래 튜토리얼 같은건 그냥스킵인데 이겜은 진짜 튜토리얼부터가 기깔남ㅉㅈ",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-784c3a6e-414a-4a0f-9957-ab59148684a1",
       "author": "1898 in",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-08-12T14:32:38",
+      "lang": "th",
+      "title": "[Google Play 好评] ★5 เกมดีแต่แปลภาษาไทยกากไปน่อย",
+      "summary": "เกมดีแต่แปลภาษาไทยกากไปน่อย",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-66104dc7-405a-463d-b8a0-9ef68696ae8c",
+      "author": "Hdhdbdbb Vxbxbx",
       "engagement": 1
     },
     {
@@ -813,16 +813,6 @@
       "summary": "ดีมากครับ",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-263d167c-48c1-4cb9-99d7-07177adee907",
       "author": "ศาฬา",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-08-12T14:32:38",
-      "lang": "th",
-      "title": "[Google Play 好评] ★5 เกมดีแต่แปลภาษาไทยกากไปน่อย",
-      "summary": "เกมดีแต่แปลภาษาไทยกากไปน่อย",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-66104dc7-405a-463d-b8a0-9ef68696ae8c",
-      "author": "Hdhdbdbb Vxbxbx",
       "engagement": 0
     },
     {
