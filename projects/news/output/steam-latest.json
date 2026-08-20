@@ -1,10 +1,55 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-20T01:05:27.561908+00:00",
+  "collected_at": "2026-08-20T03:45:02.159047+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 13,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-20T01:23:57+00:00",
+      "lang": "russian",
+      "title": "[正面] Юля это жесть",
+      "summary": "Юля это жесть",
+      "url": "https://steamcommunity.com/profiles/76561199802094973/recommended/3052450",
+      "author": "76561199802094973",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Юля это жесть",
+      "timestamp_created": 1787189037,
+      "playtime_forever": 178
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-20T01:14:20+00:00",
+      "lang": "russian",
+      "title": "[负面] Аниме",
+      "summary": "Аниме",
+      "url": "https://steamcommunity.com/profiles/76561199032561636/recommended/3052450",
+      "author": "76561199032561636",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": false,
+      "review": "Аниме",
+      "timestamp_created": 1787188460,
+      "playtime_forever": 564
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-20T01:04:41+00:00",
+      "lang": "schinese",
+      "title": "[负面] 拉完了",
+      "summary": "拉完了",
+      "url": "https://steamcommunity.com/profiles/76561199440843458/recommended/3052450",
+      "author": "76561199440843458",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "拉完了",
+      "timestamp_created": 1787187881,
+      "playtime_forever": 977
+    },
     {
       "source": "steam",
       "time": "2026-08-19T19:59:19+00:00",
@@ -108,7 +153,7 @@
       "voted_up": true,
       "review": "Perfect",
       "timestamp_created": 1787134775,
-      "playtime_forever": 1265
+      "playtime_forever": 1287
     },
     {
       "source": "steam",
