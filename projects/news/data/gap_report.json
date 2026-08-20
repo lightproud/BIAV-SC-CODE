@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-20T06:42:51.739340+00:00",
-  "total_gaps": 279,
+  "generated_at": "2026-08-20T09:32:44.308745+00:00",
+  "total_gaps": 280,
   "coverage": {
     "sources_total": 19,
     "sources_scanned": 18,
@@ -69,6 +69,12 @@
         "2026-07-08"
       ],
       "count": 18
+    },
+    "bilibili": {
+      "missing_dates": [
+        "2026-08-19"
+      ],
+      "count": 1
     },
     "note_com": {
       "missing_dates": [
