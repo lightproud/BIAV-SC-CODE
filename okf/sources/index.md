@@ -1,27 +1,27 @@
 # 社区情报数据源 (19)
 
-源：`projects/news/output/source-health.json`。每个平台一份**指针** concept；
+源：`projects/news/data/source-health.json`。每个平台一份**指针** concept；
 本体（JSONL/JSON 时序档案）原地不动，concept 仅持 `resource` 指针。
 注册表中尚无档案目录的平台（未落盘）不生成指针，避免指针落空。
 
 ## 平台
 
-* [appstore](/sources/appstore.md) - 全量 753 条 / active
+* [appstore](/sources/appstore.md) - 全量 757 条 / active
 * [bahamut](/sources/bahamut.md) - 全量 1003 条 / active
-* [bilibili](/sources/bilibili.md) - 全量 3765 条 / active
+* [bilibili](/sources/bilibili.md) - 全量 3768 条 / active
 * [discord](/sources/discord.md) - 全量 9706384 条 / active
-* [google_play](/sources/google_play.md) - 全量 1452 条 / active
-* [note_com](/sources/note_com.md) - 全量 49 条 / active
-* [official](/sources/official.md) - 全量 353 条 / active
-* [pixiv](/sources/pixiv.md) - 全量 654 条 / active
+* [google_play](/sources/google_play.md) - 全量 1455 条 / active
+* [note_com](/sources/note_com.md) - 全量 50 条 / active
+* [official](/sources/official.md) - 全量 355 条 / active
+* [pixiv](/sources/pixiv.md) - 全量 655 条 / active
 * [reddit](/sources/reddit.md) - 全量 4006 条 / active
-* [ruliweb](/sources/ruliweb.md) - 全量 433 条 / degraded
+* [ruliweb](/sources/ruliweb.md) - 全量 434 条 / active
 * [steam](/sources/steam.md) - 全量 5511 条 / active
-* [steam_discussion](/sources/steam_discussion.md) - 全量 208 条 / active
+* [steam_discussion](/sources/steam_discussion.md) - 全量 207 条 / active
 * [stopgame](/sources/stopgame.md) - 全量 122 条 / active
-* [taptap](/sources/taptap.md) - 全量 24 条 / active
-* [taptap_review](/sources/taptap_review.md) - 全量 4032 条 / active
+* [taptap](/sources/taptap.md) - 全量 23 条 / active
+* [taptap_review](/sources/taptap_review.md) - 全量 4053 条 / active
 * [weibo](/sources/weibo.md) - 全量 13158 条 / active
 * [weixin](/sources/weixin.md) - 全量 9600 条 / active
-* [youtube](/sources/youtube.md) - 全量 3509 条 / active
+* [youtube](/sources/youtube.md) - 全量 3518 条 / active
 * [youtube_comments](/sources/youtube_comments.md) - 全量 2663 条 / active

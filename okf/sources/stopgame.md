@@ -4,7 +4,7 @@ title: "stopgame 社区数据源"
 description: "stopgame 平台采集档案，全量 122 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/stopgame/"
 tags: ["data_layer:full_archive", "platform:stopgame", "health:active"]
-timestamp: "2026-08-21T06:42:59.986594+00:00"
+timestamp: "2026-08-21T20:00:02.841998+00:00"
 ---
 
 # 数据层指针
@@ -17,7 +17,7 @@ timestamp: "2026-08-21T06:42:59.986594+00:00"
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/stopgame/` |
 | 全量条数 | 122 |
 | 采集健康度 | active |
-| 最后成功 | 2026-08-21 |
+| 最后成功 | 2026-08-22 |
 
 # 数据纪律（硬约束）
 

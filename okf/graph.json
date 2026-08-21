@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-21",
+  "generated": "2026-08-22",
   "stats": {
     "nodes": 374,
-    "edges": 407
+    "edges": 403
   },
   "nodes": [
     {
@@ -3668,7 +3668,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:ruliweb",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4478,9 +4478,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-bahamut.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
+      "source": "/community/community-appstore.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4509,8 +4509,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15598.md",
+      "rel": "提及:尤乌哈希",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/77921.md",
+      "rel": "提及:卡拉布",
       "rel_type": "mention"
     },
     {
@@ -4538,9 +4550,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:融朵",
+      "source": "/community/community-pixiv.md",
+      "target": "/characters/15601.md",
+      "rel": "提及:「24」",
       "rel_type": "mention"
     },
     {
@@ -4563,26 +4575,8 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -4635,14 +4629,8 @@
     },
     {
       "source": "/community/community-youtube.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-youtube.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -5930,9 +5918,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/bahamut.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
+      "source": "/sources/appstore.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -5961,8 +5949,20 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15598.md",
+      "rel": "提及:尤乌哈希",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/77921.md",
+      "rel": "提及:卡拉布",
       "rel_type": "mention"
     },
     {
@@ -5990,9 +5990,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:融朵",
+      "source": "/sources/pixiv.md",
+      "target": "/characters/15601.md",
+      "rel": "提及:「24」",
       "rel_type": "mention"
     },
     {
@@ -6093,38 +6093,14 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
     },
     {
-      "source": "/sources/weibo.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
+      "source": "/sources/youtube.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/youtube.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/youtube.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
