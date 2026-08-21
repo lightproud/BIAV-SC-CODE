@@ -46,7 +46,8 @@ import archive_layout
 import news_common  # 原子写单一真源（dump_json_atomic）
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
+# 运行期工作根（不进 git）：本步读的是**同一轮 CI 内**上游刚写下的中间态。
+OUTPUT_DIR = archive_layout.news_run_root()
 # 平台摊平到 BPT 4R Record/Community 下，与 discord 同级（2026-06-21 迁移）
 ARCHIVE_DIR = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA_ROOT 或在树默认
 

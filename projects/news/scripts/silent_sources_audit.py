@@ -42,8 +42,10 @@ ARCHIVE_DIR = archive_layout.community_root()  # 分仓桥接：env BIAV_SC_DATA
 _DISCORD_ROOT = ARCHIVE_DIR / 'discord'
 DISCORD_ARCHIVE_DIR = (archive_layout.discord_region_roots(_DISCORD_ROOT)
                        .get('global', _DISCORD_ROOT / 'global')) / 'activity_daily'
-HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
-DROPS_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'validation-drops.json'
+# 跨轮状态（沉默天数 / 校验丢弃计数按轮累计）：2026-08-21 输出展示层删除后落 data/，
+# 随 update-news CI 提交回仓——放运行期工作根等于每轮清零，沉默降级永不触发。
+HEALTH_PATH = archive_layout.news_state_root() / 'source-health.json'
+DROPS_PATH = archive_layout.news_state_root() / 'validation-drops.json'
 
 # 单轮校验丢弃超过该值即告警（P0-3；taptap_review 事故单轮丢 108 条为定标参照，
 # 阈值取其一半——半个事故就该响铃，又高于正常脏数据零星过滤的噪声水平）

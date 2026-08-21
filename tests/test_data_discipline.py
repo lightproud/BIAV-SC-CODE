@@ -86,7 +86,7 @@ class TestOkfSourceLayerTagging:
         bundle = tmp_path / "okf"
         # source-health.json must live under REPO: build_sources() emits an
         # index that calls SOURCE_HEALTH.relative_to(REPO).
-        health = fake_repo / "projects/news/output/source-health.json"
+        health = fake_repo / "projects/news/data/source-health.json"
         health.parent.mkdir(parents=True, exist_ok=True)
         health.write_text(
             json.dumps({"updated_at": "2026-06-21T00:00:00+00:00",

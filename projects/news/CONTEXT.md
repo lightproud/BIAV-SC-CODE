@@ -192,8 +192,9 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 
 ## 给 Code 会话的指令
 - 工作目录：`projects/news/`
-- 聚合输出写入：`projects/news/output/news.json`
-- 中间产出放：`projects/news/output/`
+- 聚合输出写入：运行期工作根 `news.json`（`archive_layout.news_run_root()`，默认 `projects/news/run/`，不进 git）
+- 中间产出放：同一运行期工作根；**输出展示层（原 `projects/news/output/*-latest.json`）已于 2026-08-21 守密人裁定整层删除**
+- 跨轮状态（`source-health.json` / `validation-drops.json`）放 `projects/news/data/`，随 CI 提交回仓
 - 不要修改其他子项目的文件
 
 ## 启动验证清单
@@ -202,7 +203,7 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 
 - [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
 - [ ] 阅读 `memory/project-status.md` 确认 news 子项目当前状态
-- [ ] 检查 `projects/news/output/news.json` 最新更新时间，确认聚合器是否正常运行
+- [ ] 检查 `projects/news/data/source-health.json` 的 `last_success_date`，确认聚合器是否正常运行（运行期 news.json 不进仓、看不到）
 - [ ] 检查 GitHub Actions 最近一次 `news-aggregator` 工作流是否成功
 - [ ] 确认你要修改的文件不属于其他子项目
 - [ ] 完成任务后更新本文件"当前状态"和"待解决"部分

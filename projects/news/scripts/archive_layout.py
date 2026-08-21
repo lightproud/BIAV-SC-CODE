@@ -99,6 +99,35 @@ def media_manifest_path() -> Path:
     """
     return pool_root() / 'Record' / 'media' / 'backfill_manifest.json'
 
+
+# ── 采集运行期工作根（2026-08-21 守密人裁定：输出展示层整层删除）──────────────
+# 原 projects/news/output/ 是「输出展示层」：25 个快照文件随每轮采集提交进 git。
+# 展示消费面（/news/ 页面、feed.xml RSS）下线后，它只剩管线内部中间态的职能——
+# aggregator 写 news.json / news-raw.json，split_output 拆 *-latest.json，
+# archive_platforms 读它们写数据湖。这些文件**同一轮内产生、同一轮内吃掉**，
+# 进 git 只会让仓库长期驻留一份「看起来是当前热点、实际取决于上次 CI 何时跑」的快照。
+# 故整层改落**运行期工作目录**：不进 git（.gitignore），每轮现造现用。
+# 唯一例外是**跨轮状态**（source-health.json 的沉默天数、validation-drops.json 的
+# 校验丢弃计数）——它们靠读上一轮自己的落盘值累计，一旦随工作目录蒸发，7 天沉默降级 /
+# 30 天休眠判定每轮从零重建，等于永不触发。这两份改落 news_state_root()（进 git）。
+_RUN_ROOT_ENV = 'BIAV_NEWS_RUN_DIR'
+
+
+def news_run_root() -> Path:
+    """采集运行期工作根：env BIAV_NEWS_RUN_DIR 或在树默认 projects/news/run/（不进 git）。
+
+    只放**单轮内产生、单轮内消费**的中间产物；任何需要跨轮累计的状态一律走
+    news_state_root()。目录不在此创建——写方经 news_common.dump_json_atomic
+    （自建父目录）或显式 mkdir 落盘，读方须容忍不存在（首轮 / 干净检出即空）。
+    """
+    env = os.environ.get(_RUN_ROOT_ENV)
+    return Path(env).expanduser() if env else _REPO_ROOT / 'projects' / 'news' / 'run'
+
+
+def news_state_root() -> Path:
+    """采集跨轮状态根：projects/news/data/（进 git，随 update-news CI 提交回仓）。"""
+    return _REPO_ROOT / 'projects' / 'news' / 'data'
+
 # ── 折叠映射：源 → (宿主平台, 类型子目录) ────────────────────────────────────
 # steam 家族三子类共享宿主 steam；taptap 评论流归 taptap/*/review。
 # 与 sources.SOURCE_ALIASES / ARCHIVE_PLATFORM_FOLD 语义对齐（那边管「叫什么」，

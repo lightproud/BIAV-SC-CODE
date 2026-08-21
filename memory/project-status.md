@@ -141,12 +141,13 @@
     `data/platforms/`，权威档案断更 10 天；已改写 `Record/Community/youtube_comments/`
     并将两段历史按评论 id 并集合并（1,727 条唯一）
   - ruliweb 沉默 7 天为边界情况（帖子内容日期偏旧致归档桶不新），非故障，观察即可
-- **数据落盘位置**：
-  - `projects/news/output/news.json` — 所有数据源合并的原始输出（由 aggregator.py 写入）
-  - `projects/news/output/` — **Chat 会话统一读取入口**，按数据源分割的 JSON 文件
-    - `bilibili-latest.json`、`steam-latest.json`、`taptap-latest.json` 等
-    - `all-latest.json` — 所有源合并（适合日报/分析场景）
-    - 每次 workflow 运行后自动更新（由 split_output.py 生成）
+- **数据落盘位置**（2026-08-21 输出展示层整层删除后订正）：
+  - 运行期工作根（`archive_layout.news_run_root()`，默认 `projects/news/run/`，内容 gitignore）
+    — aggregator 写 news.json / news-raw.json、split_output 拆 *-latest.json、archive_platforms
+    **同轮内**读走落数据湖；单轮内产生、单轮内消费，不进 git
+  - 全量档案层 `Record/Community/`（BIAV-SC-DATA，经 `BIAV_SC_DATA_ROOT`）— **会话唯一取数面**
+  - `projects/news/data/` — 跨轮状态（source-health / validation-drops / 采集游标），CI 提交回本仓
+  - 原输出展示层 25 份快照 + `/news/` 展示页 + feed.xml RSS：守密人 2026-08-21 裁定整体删除（化石快照停在 2026-03-29 却自称当前热点）
 - **数据源状态**：
   - [x] Bilibili — 正常运行
   - [x] Reddit — 代码就绪

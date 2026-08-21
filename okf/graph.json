@@ -1,8 +1,8 @@
 {
   "generated": "2026-08-21",
   "stats": {
-    "nodes": 395,
-    "edges": 425
+    "nodes": 374,
+    "edges": 407
   },
   "nodes": [
     {
@@ -1772,237 +1772,6 @@
         "pointer"
       ],
       "tier": "search"
-    },
-    {
-      "id": "/news-output/news-output-all.md",
-      "type": "dataset",
-      "title": "输出展示层 · 全平台聚合",
-      "tags": [
-        "data_layer:output",
-        "aggregate",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-appstore.md",
-      "type": "dataset",
-      "title": "输出展示层 · appstore 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:appstore",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-arca-live.md",
-      "type": "dataset",
-      "title": "输出展示层 · arca_live 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:arca_live",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-bahamut.md",
-      "type": "dataset",
-      "title": "输出展示层 · bahamut 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:bahamut",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-bilibili.md",
-      "type": "dataset",
-      "title": "输出展示层 · bilibili 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:bilibili",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-discord.md",
-      "type": "dataset",
-      "title": "输出展示层 · discord 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:discord",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-google-play.md",
-      "type": "dataset",
-      "title": "输出展示层 · google_play 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:google_play",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-newsjs.md",
-      "type": "dataset",
-      "title": "输出展示层 · 合并流",
-      "tags": [
-        "data_layer:output",
-        "aggregate",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-note-com.md",
-      "type": "dataset",
-      "title": "输出展示层 · note_com 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:note_com",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-official.md",
-      "type": "dataset",
-      "title": "输出展示层 · official 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:official",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-pixiv.md",
-      "type": "dataset",
-      "title": "输出展示层 · pixiv 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:pixiv",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-reddit.md",
-      "type": "dataset",
-      "title": "输出展示层 · reddit 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:reddit",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-ruliweb.md",
-      "type": "dataset",
-      "title": "输出展示层 · ruliweb 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:ruliweb",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-steam-discussion.md",
-      "type": "dataset",
-      "title": "输出展示层 · steam_discussion 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:steam_discussion",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-steam.md",
-      "type": "dataset",
-      "title": "输出展示层 · steam 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:steam",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-stopgame.md",
-      "type": "dataset",
-      "title": "输出展示层 · stopgame 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:stopgame",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-taptap-review.md",
-      "type": "dataset",
-      "title": "输出展示层 · taptap_review 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:taptap_review",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-taptap.md",
-      "type": "dataset",
-      "title": "输出展示层 · taptap 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:taptap",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-weibo.md",
-      "type": "dataset",
-      "title": "输出展示层 · weibo 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:weibo",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-weixin.md",
-      "type": "dataset",
-      "title": "输出展示层 · weixin 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:weixin",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-youtube.md",
-      "type": "dataset",
-      "title": "输出展示层 · youtube 最新快照",
-      "tags": [
-        "data_layer:output",
-        "platform:youtube",
-        "sampled"
-      ],
-      "tier": "skeleton"
     },
     {
       "id": "/projects/doc-testing-strategy.md",
@@ -6743,21 +6512,9 @@
       "rel_type": "cross"
     },
     {
-      "source": "/news-output/news-output-appstore.md",
-      "target": "/sources/appstore.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-bahamut.md",
       "target": "/sources/bahamut.md",
       "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-bahamut.md",
-      "target": "/sources/bahamut.md",
-      "rel": "抽样自",
       "rel_type": "cross"
     },
     {
@@ -6767,21 +6524,9 @@
       "rel_type": "cross"
     },
     {
-      "source": "/news-output/news-output-bilibili.md",
-      "target": "/sources/bilibili.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-discord.md",
       "target": "/sources/discord.md",
       "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-discord.md",
-      "target": "/sources/discord.md",
-      "rel": "抽样自",
       "rel_type": "cross"
     },
     {
@@ -6791,27 +6536,9 @@
       "rel_type": "cross"
     },
     {
-      "source": "/news-output/news-output-google-play.md",
-      "target": "/sources/google_play.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-note-com.md",
       "target": "/sources/note_com.md",
       "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-note-com.md",
-      "target": "/sources/note_com.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-official.md",
-      "target": "/sources/official.md",
-      "rel": "抽样自",
       "rel_type": "cross"
     },
     {
@@ -6821,21 +6548,9 @@
       "rel_type": "cross"
     },
     {
-      "source": "/news-output/news-output-pixiv.md",
-      "target": "/sources/pixiv.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-reddit.md",
       "target": "/sources/reddit.md",
       "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-reddit.md",
-      "target": "/sources/reddit.md",
-      "rel": "抽样自",
       "rel_type": "cross"
     },
     {
@@ -6845,27 +6560,9 @@
       "rel_type": "cross"
     },
     {
-      "source": "/news-output/news-output-ruliweb.md",
-      "target": "/sources/ruliweb.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-steam.md",
       "target": "/sources/steam.md",
       "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-steam.md",
-      "target": "/sources/steam.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-steam-discussion.md",
-      "target": "/sources/steam_discussion.md",
-      "rel": "抽样自",
       "rel_type": "cross"
     },
     {
@@ -6875,27 +6572,9 @@
       "rel_type": "cross"
     },
     {
-      "source": "/news-output/news-output-stopgame.md",
-      "target": "/sources/stopgame.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-taptap.md",
       "target": "/sources/taptap.md",
       "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-taptap.md",
-      "target": "/sources/taptap.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-taptap-review.md",
-      "target": "/sources/taptap_review.md",
-      "rel": "抽样自",
       "rel_type": "cross"
     },
     {
@@ -6905,33 +6584,15 @@
       "rel_type": "cross"
     },
     {
-      "source": "/news-output/news-output-weibo.md",
-      "target": "/sources/weibo.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-weixin.md",
       "target": "/sources/weixin.md",
       "rel": "同平台",
       "rel_type": "cross"
     },
     {
-      "source": "/news-output/news-output-weixin.md",
-      "target": "/sources/weixin.md",
-      "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-youtube.md",
       "target": "/sources/youtube.md",
       "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/news-output/news-output-youtube.md",
-      "target": "/sources/youtube.md",
-      "rel": "抽样自",
       "rel_type": "cross"
     },
     {

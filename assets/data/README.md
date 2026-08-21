@@ -23,4 +23,4 @@ AI 会话根据用户提问按需读取对应文件即可，无需全部加载�
 
 ## 运营数据已迁移
 
-社区聚合数据（新闻、Discord 归档等）已迁移至 `projects/news/output/`。本目录仅保留领域知识文件。
+社区聚合数据（新闻、Discord 归档等）在全量档案层 `Record/Community/`（BIAV-SC-DATA 数据仓，经 `BIAV_SC_DATA_ROOT` 读）。本目录仅保留领域知识文件。

@@ -11,7 +11,7 @@ description: Generate the Morimens weekly community intelligence report (社区�
 
 ## 硬口径（每条都是门禁）
 
-1. **数据层**：只用全量档案层 `Record/Community/`，禁用 `projects/news/output/` 选样层充全量。
+1. **数据层**：只用全量档案层 `Record/Community/`。原 `projects/news/output/*-latest.json` 选样层已于 2026-08-21 整层删除，仓内不再有第二个可取数的层。
    该层**已迁出本仓**（T62 P2-5，2026-07-20）：本体在 **BIAV-SC-DATA** 数据仓，取数前先 clone
    并设 `BIAV_SC_DATA_ROOT`，路径一律经 `projects/news/scripts/archive_layout.py` 的
    `community_root()` / `discord_root()` 解析（单一真相源；env 未设会静默读到空目录）。

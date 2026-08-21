@@ -19,7 +19,7 @@
 
 - **全量档案层**（真实数据）：`Public-Info-Pool/Record/Community/`（2026-06-21 迁入 BPT 4R，text 全量永驻 git）
   - 长窗口分析、抽样率计算、情感长尾、历史回溯 → **必须用这一层**
-- **输出展示层**（过滤选样）：`projects/news/output/`
+- **运行期中间态**（管线内部，不进 git）：`archive_layout.news_run_root()`——原「输出展示层」2026-08-21 整层删除
   - 仅快查 / 热度榜，是 24h 或 30 天窗口 + 热度阈值过滤后的样本
 
 把 output 当 archive 用 = 抽样率失真（已有事故记录）。
@@ -52,7 +52,7 @@ https://raw.githubusercontent.com/lightproud/BIAV-SC-CODE/main/<PATH>
 
 ## 状态 / 索引文件
 
-- `projects/news/output/source-health.json` — 23 平台健康状态（active / degraded / dormant + last_success + total_items）
+- `projects/news/data/source-health.json` — 23 平台健康状态（active / degraded / dormant + last_success + total_items）
 - `projects/news/data/gap_report.json` — 5173 缺失日期（archive 完整性诊断）
 
 ## 高频用法示例

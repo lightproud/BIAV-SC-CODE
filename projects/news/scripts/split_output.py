@@ -1,16 +1,17 @@
 """
-split_output.py — 按数据源分割 projects/news/output/news.json
-将合并的聚合结果拆分为各数据源独立的 JSON 文件，统一存放在 projects/news/output/
+split_output.py — 按数据源分割运行期 news.json
+将合并的聚合结果拆分为各数据源独立的 JSON 文件，统一存放在**运行期工作根**
+（archive_layout.news_run_root()，默认 projects/news/run/，不进 git）
 
 输出文件：
-  projects/news/output/bilibili-latest.json
-  projects/news/output/steam-latest.json
-  projects/news/output/taptap-latest.json
-  projects/news/output/discord-latest.json
-  projects/news/output/youtube-latest.json
-  projects/news/output/reddit-latest.json
-  projects/news/output/official-latest.json
-  projects/news/output/all-latest.json   ← 所有源合并（方便 Chat 会话一次性读取）
+  <运行期工作根>/bilibili-latest.json
+  <运行期工作根>/steam-latest.json
+  <运行期工作根>/taptap-latest.json
+  <运行期工作根>/discord-latest.json
+  <运行期工作根>/youtube-latest.json
+  <运行期工作根>/reddit-latest.json
+  <运行期工作根>/official-latest.json
+  <运行期工作根>/all-latest.json   ← 所有源合并（方便 Chat 会话一次性读取）
 
 格式：
   {
@@ -43,8 +44,13 @@ from pathlib import Path
 
 # ── 路径 ──────────────────────────────────────────────────────────────────────
 _REPO_ROOT = Path(__file__).parent.parent.parent.parent  # 仓根 BIAV-SC-CODE/
-INPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
-OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import archive_layout  # noqa: E402  运行期工作根单一真相源
+
+# 运行期工作根（不进 git，2026-08-21 输出展示层删除）：同轮内 aggregator 写 news.json、
+# 本脚本拆 *-latest.json、archive_platforms 读走落数据湖。
+INPUT_PATH = archive_layout.news_run_root() / 'news.json'
+OUTPUT_DIR = archive_layout.news_run_root()
 
 # 数据层戳记（CLAUDE.md §4 数据纪律）：这些文件是输出/展示层——全量档案层的
 # 过滤抽样，绝不可当全量数据用（lesson #30）。此前该身份纯靠约定、产物无机器可读

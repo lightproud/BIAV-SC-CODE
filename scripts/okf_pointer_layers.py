@@ -10,7 +10,7 @@
 本体绝不复刻）。data_layer 分层：社区/解包全量→full_archive、输出展示→output、策展/事实→curated。
 
 本模块为 import-only 部件（不设独立 CLI 入口），由 build_okf_bundle.py 在 4 个原生层之后调用。
-community/news-output 的归档路径解析**共用 archive_layout 单一真相源**（不自撰第二套，防漂移）。
+community 层的归档路径解析**共用 archive_layout 单一真相源**（不自撰第二套，防漂移）。
 """
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ import json
 import re
 from pathlib import Path
 
-from news_bridge import archive_layout  # noqa: E402  归档布局单一真相源（community/news-output 路径推导共用）
+from news_bridge import archive_layout  # noqa: E402  归档布局单一真相源（community 路径推导）
 
 REPO = Path(__file__).resolve().parent.parent
 BUNDLE = REPO / "okf"
@@ -435,51 +435,6 @@ def build_community() -> tuple[list[dict], list[str]]:
 
 
 # ---------------------------------------------------------------------------
-# Layer: news-output (输出展示层，output)
-# ---------------------------------------------------------------------------
-
-def build_news_output() -> tuple[list[dict], list[str]]:
-    odir = REPO / "projects" / "news" / "output"
-    flags: list[str] = []
-    entries: list[dict] = []
-    for f in sorted(odir.glob("*-latest.json")):
-        if f.name == "all-latest.json":
-            continue
-        src = f.stem.replace("-latest", "")
-        dl = None
-        try:
-            top = json.loads(f.read_text(encoding="utf-8"))
-            if isinstance(top, dict):
-                dl = top.get("data_layer")
-        except (json.JSONDecodeError, OSError):
-            pass
-        if dl is not None and dl != "output":
-            flags.append(f"news-output/{src}: data_layer={dl}!=output，跳过（防全量误标输出）")
-            continue
-        entries.append({
-            "id": f"news-output-{slug(src)}", "type": "dataset", "title": f"输出展示层 · {src} 最新快照",
-            "description": (f"{src} 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / "
-                            f"情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。"),
-            "resource": _rel(f), "tags": ["data_layer:output", f"platform:{src}", "sampled"],
-        })
-    # 3 aggregates
-    for fname, cid, title, desc in [
-        ("all-latest.json", "news-output-all", "输出展示层 · 全平台聚合", "全平台最新快照聚合（抽样，非全量）。"),
-        ("news.json", "news-output-newsjs", "输出展示层 · 合并流", "合并全量层 news.json（构建期快照）。"),
-    ]:
-        f = odir / fname
-        if f.exists():
-            entries.append({
-                "id": cid, "type": "dataset", "title": title,
-                "description": desc + " 抽样/展示用途，非全量档案层。",
-                "resource": _rel(f), "tags": ["data_layer:output", "aggregate", "sampled"],
-            })
-    written = write_layer("news-output", entries, "输出展示层（抽样，快查/日报）",
-                          "projects/news/output/ 输出展示层指针（抽样非全量）。凡长窗口/审计/情感长尾一律回全量档案层。")
-    return written, flags
-
-
-# ---------------------------------------------------------------------------
 # Layer: unpacked (解包 text，full_archive)
 # ---------------------------------------------------------------------------
 
@@ -684,9 +639,6 @@ def build_all() -> tuple[dict, list[str]]:
     community, cflags = build_community()
     counts["community"] = len(community)
     flags += cflags
-    news_out, nflags = build_news_output()
-    counts["news-output"] = len(news_out)
-    flags += nflags
     counts["unpacked"] = len(build_unpacked())
     counts["extracted"] = len(build_extracted())
     counts["resource"] = len(build_resource())

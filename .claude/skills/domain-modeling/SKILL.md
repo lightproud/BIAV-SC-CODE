@@ -30,7 +30,7 @@ immediately. "morimens-context 把『X』定义为 A，但守密人此处似乎�
 ### Sharpen fuzzy language
 When a term is vague or overloaded, propose a precise canonical 银芯 term, listing
 the words to avoid. "守密人说『数据层』—— 指全量档案层（BIAV-SC-DATA 数据仓 `Record/Community/`，
-经 `BIAV_SC_DATA_ROOT` 读）还是输出展示层（本仓 `projects/news/output/`）？二者语义不可互换（§4.1）。"
+经 `BIAV_SC_DATA_ROOT` 读）还是采集运行期中间态（`archive_layout.news_run_root()`，不进 git）？前者是唯一取数面；输出展示层已于 2026-08-21 整层删除（§4.1）。"
 
 ### Stress-test with scenarios
 When relationships are discussed, invent concrete edge-case scenarios that force the

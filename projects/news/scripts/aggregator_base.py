@@ -17,6 +17,7 @@ from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # 采集层共享 HTML-strip 单一真源（ARCH-02）
+import archive_layout  # 运行期工作根 / 跨轮状态根单一真相源
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -63,7 +64,8 @@ def _get_playwright_collectors():
     return _playwright_collectors
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-OUTPUT_PATH = REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
+# 运行期中间态（不进 git，2026-08-21 输出展示层删除）——路径 SSOT 见 archive_layout。
+OUTPUT_PATH = archive_layout.news_run_root() / 'news.json'
 COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ.get('COLLAB_KEYWORDS') else [
     '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
 ]
@@ -262,8 +264,9 @@ def validate_all_news(items):
 
 # 本次运行的校验丢弃计数（源 -> 条数）。跨源累计，run 结束由 aggregator 落盘。
 VALIDATION_DROPS: dict = {}
-VALIDATION_DROPS_PATH = (Path(__file__).resolve().parent.parent / 'output'
-                         / 'validation-drops.json')
+# 跨轮状态（每轮读旧值累计）：落 data/ 进 git，绝不放运行期工作根——随目录蒸发
+# 等于健康侧计数每轮从零重建。
+VALIDATION_DROPS_PATH = archive_layout.news_state_root() / 'validation-drops.json'
 
 
 def write_validation_drops(path=None):

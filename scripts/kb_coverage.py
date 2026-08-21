@@ -29,7 +29,6 @@ KNOWLEDGE_GLOBS = [
     "projects/wiki/data/processed/story/*.json", "projects/wiki/data/processed/story/*.md",
     "projects/wiki/data/schemas/*.json",
     "projects/news/index/community_index.json",
-    "projects/news/output/*-latest.json",
     "Public-Info-Pool/Resource/*/*.md",
     # 子项目上下文用 glob，不逐个点名——原先五条硬编码把 silver-core-maestro-sdk /
     # silver-core-testbed 的 CONTEXT.md 挡在「知识文件」定义之外，于是覆盖哨兵

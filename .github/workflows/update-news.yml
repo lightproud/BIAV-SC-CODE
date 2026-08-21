@@ -1,9 +1,14 @@
 name: Update Community News
 
 # T62 P2-3c 已切换（2026-07-19）：**双目标**——Record/Community 归档写 **BIAV-SC-DATA**
-# （archive_platforms / repair_gaps 经 community_root() 分仓桥接），output 快照 + news/data
-# 状态仍写 **code 仓**（分仓设计：仅 Record 数据湖迁 data 仓）。故 code 仓 checkout 保
-# ssh-key（推 output/state 回 code 仓、绕分支保护）+ clone data 仓（PAT，推 Record/Community）。
+# （archive_platforms / repair_gaps 经 community_root() 分仓桥接），采集跨轮状态
+# （projects/news/data/）仍写 **code 仓**。故 code 仓 checkout 保 ssh-key（推 state 回 code
+# 仓、绕分支保护）+ clone data 仓（PAT，推 Record/Community）。
+#
+# 2026-08-21 输出展示层整层删除（守密人裁定）：管线中间产物（news.json / news-raw.json /
+# *-latest.json）改落**运行期工作根**（archive_layout.news_run_root()，默认 projects/news/run/，
+# gitignore），同一 job 内产生、同一 job 内被归档步吃掉，**不再提交回 code 仓**。回推 code 仓
+# 的只剩 projects/news/data/ 下的跨轮状态（source-health / validation-drops / 采集游标）。
 on:
   schedule:
     - cron: '0 */3 * * *'
@@ -116,22 +121,22 @@ jobs:
         continue-on-error: true
         run: python projects/news/scripts/silent_sources_audit.py --strict
 
-      - name: Commit output + state → code repo
+      - name: Commit cross-run state → code repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add projects/news/output/ projects/news/data/
+          git add projects/news/data/
           if git diff --staged --quiet; then
-            echo "No output/state changes to commit"
+            echo "No state changes to commit"
           else
-            git commit -m "chore: update community news output [skip ci]"
+            git commit -m "chore: update news collection state [skip ci]"
             for i in 1 2 3 4; do
               if git pull --rebase origin main; then
                 git push origin main && break
               else
                 git checkout --theirs . 2>/dev/null || true
                 # 同上：冲突解决限定在本作业的产出面，不放大到整棵工作树。
-                git add -A projects/news/output/ projects/news/data/
+                git add -A projects/news/data/
                 git -c core.editor=true rebase --continue \
                   && git push origin main && break
                 git rebase --abort 2>/dev/null || true
@@ -180,7 +185,7 @@ jobs:
           EXISTING=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number --jq 'length')
           if [ "$EXISTING" = "0" ]; then
             gh issue create --title "$TITLE" \
-              --body "silent_sources_audit --strict 触发告警（核心源零产出/长期沉默，或单源单轮校验丢弃 >= 50 条——后者意味着采集在产出但被校验层扔掉，查 VALID_SOURCES/必填字段契约是否漂移）。具体原因见运行日志 [健康门控] 行。运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}。详见 projects/news/output/source-health.json 与 validation-drops.json。"
+              --body "silent_sources_audit --strict 触发告警（核心源零产出/长期沉默，或单源单轮校验丢弃 >= 50 条——后者意味着采集在产出但被校验层扔掉，查 VALID_SOURCES/必填字段契约是否漂移）。具体原因见运行日志 [健康门控] 行。运行: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}。详见 projects/news/data/source-health.json 与 validation-drops.json。"
           else
             echo "Alert issue already open, skipping"
           fi

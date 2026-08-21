@@ -17,7 +17,7 @@ import kb_qual  # noqa: E402
 
 def test_kb_delivers_all_qualitative_dimensions():
     rep = kb_qual.evaluate()
-    assert rep["dimensions_kb_delivers"] == rep["dimensions_total"] == 4, (
+    assert rep["dimensions_kb_delivers"] == rep["dimensions_total"] == 3, (
         f"KB 未交付全部质性维度：{rep['dimensions_kb_delivers']}/{rep['dimensions_total']}"
     )
     assert rep["dimensions_grep_delivers"] == 0  # grep 结构上给不了这些
@@ -32,16 +32,6 @@ def test_relation_typing_names_edge_types():
     assert r["grep_can_type_relations"] is False
     for rt, ex in r["exemplars"].items():
         assert ex["a"] and ex["b"], f"关系类型 {rt} 缺范例端点"
-
-
-def test_layer_disambiguation_all_platforms():
-    """凡同时有全量+抽样概念的平台，KB 都能靠 data_layer 唯一区分（防 lesson #30）。"""
-    layer = kb_qual.probe_layer_disambiguation()
-    assert layer["platforms_with_both_layers"] >= 10, "多层平台样本过少"
-    assert layer["kb_can_disambiguate"] == layer["platforms_with_both_layers"], (
-        "存在 KB 无法区分全量 vs 抽样的平台"
-    )
-    assert layer["grep_can_disambiguate"] == 0
 
 
 def test_identity_isolates_one_canonical():
@@ -65,21 +55,20 @@ def test_boundary_enumeration_exact():
 
 # ---------- CLI 入口 / 报告渲染冒烟（main + _print） ----------
 
-def test_main_prints_four_dimensions(monkeypatch, capsys):
-    """main() 默认路径：质性报告四维逐条打印（层/身份/边界/关系类型）。"""
+def test_main_prints_three_dimensions(monkeypatch, capsys):
+    """main() 默认路径：质性报告三维逐条打印（身份/边界/关系类型；层判定 2026-08-21 随输出展示层退役）。"""
     monkeypatch.setattr(sys, "argv", ["kb_qual.py"])
     kb_qual.main()
     out = capsys.readouterr().out
     assert "KB 质性能力报告" in out
-    assert "层判定" in out
     assert "身份" in out
     assert "边界枚举" in out
     assert "类型化关系" in out
-    assert "4/4" in out  # KB 交付全部四维
+    assert "3/3" in out  # KB 交付全部三维
 
 
 def test_main_json_summary_only(monkeypatch, capsys):
-    """--json 机读路径：只输出三项汇总（维度计数），不带四维明细。"""
+    """--json 机读路径：只输出三项汇总（维度计数），不带逐维明细。"""
     import json
 
     monkeypatch.setattr(sys, "argv", ["kb_qual.py", "--json"])
@@ -87,7 +76,7 @@ def test_main_json_summary_only(monkeypatch, capsys):
     rep = json.loads(capsys.readouterr().out)
     assert set(rep) == {"dimensions_kb_delivers", "dimensions_total",
                         "dimensions_grep_delivers"}
-    assert rep["dimensions_kb_delivers"] == rep["dimensions_total"] == 4
+    assert rep["dimensions_kb_delivers"] == rep["dimensions_total"] == 3
     assert rep["dimensions_grep_delivers"] == 0
 
 

@@ -36,8 +36,8 @@
 | 类别 | 文件 | 用途 |
 |---|---|---|
 | 社区情报 | 日报改 Claude Code 会话内生成（原 `daily-latest.md` 定时产物已停用，见 project-status）| 黑池消费的每日动态 |
-| 平台数据 | `projects/news/output/{steam,bilibili,discord,...}-latest.json` | 黑池消费的平台原始数据（平台清单持续增加，以 `ls projects/news/output/` 为准）|
-| 全平台合并 | `projects/news/output/all-latest.json` | 黑池消费的合并视图 |
+| 平台数据 | 全量档案层 `Record/Community/{platform}/{date}.json`（BIAV-SC-DATA 数据仓，经 `BIAV_SC_DATA_ROOT`）| 黑池消费的平台数据。**原 `projects/news/output/*-latest.json` 抽样面 2026-08-21 守密人裁定整层删除**——管线中间态改落运行期工作目录、不进 git，黑池侧若还在读旧路径须改读数据湖 |
+| 全平台合并 | 同上（按需在消费侧按平台×日期合并）| 原 `all-latest.json` 合并视图随输出展示层一并删除 |
 | 角色数据库 | `projects/wiki/data/processed/characters.json` | 黑池消费的事实圣经（W2 可信基线 72 真实角色，**现行唯一权威**）。原 `data/db/characters.json` 占位层 2026-06-15 清空、其解包 text 自举源 2026-07-12 整层删除，追溯走 Releases「解包」桶重解 |
 | 游戏世界观 | `memory/morimens-context.md` | 黑池消费的领域知识 |
 | 设计决策 | `assets/data/design-decisions.json` | 黑池消费的产品哲学 |

@@ -7,7 +7,7 @@ on:
     # 路径清单从生成器（build_okf_bundle.py + okf_pointer_layers.py + build_kb_index.py）
     # 实际消费的源反推，覆盖全部会话可提交的 KB 源——内容 PR 合并即触发重建直推 main，
     # 会话不必随 PR 重建 okf/、更不必开 follow-up rebuild PR。
-    # 刻意不含每小时归档层（Public-Info-Pool/Record/Community、projects/news/output 流快照）：
+    # 刻意不含每小时归档层（Public-Info-Pool/Record/Community 流快照）：
     # 其提交带 [skip ci] 本就不触发，数据漂移由下方每日 cron 兜底，防高频重建。
     paths:
       # 生成器本体
@@ -35,7 +35,7 @@ on:
       - 'projects/wiki/data/schemas/**'
       - 'projects/wiki/data/extracted/**'
       # sources 注册表
-      - 'projects/news/output/source-health.json'
+      - 'projects/news/data/source-health.json'
       - 'projects/news/scripts/archive_sources.json'
       # 记忆层 + 事实圣经层
       - 'memory/**'

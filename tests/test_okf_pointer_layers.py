@@ -25,13 +25,14 @@ NEW_LAYERS = {
     "assets": "curated",
     "wiki-data": "curated",
     "community": "full_archive",
-    "news-output": "output",
+    # "news-output"（输出展示层）2026-08-21 守密人裁定整层删除：管线中间态改落运行期
+    # 工作目录、不进 git，仓内不再有可指的抽样快照，指针层随之退役。
     # "unpacked" / "extracted" 层已随源数据退役（解包 text 层与 wiki 独占残件整删，守密人 2026-07-12 裁定）
     "resource": "curated",
     "projects": "curated",
 }
 # 全量大本体层：概念必须只放指针（文件小），防复刻 2.1G/44M 本体
-POINTER_ONLY_SMALL = ("community", "news-output")
+POINTER_ONLY_SMALL = ("community",)
 
 _ARCHIVE_PRESENT = (REPO / "Public-Info-Pool" / "Record" / "Community").exists()
 _SPARSE_EXCLUDED = ("Public-Info-Pool/Record/", "Public-Info-Pool/Reference/")
@@ -82,13 +83,6 @@ def test_layer_data_layer_discipline(layer, expected_dl):
             )
 
 
-def test_news_output_declares_not_full():
-    """输出展示层描述必须明示『非全量』，把消费者导回全量档案层。"""
-    for p in _concepts("news-output"):
-        desc = _fm(p).get("description", "")
-        assert ("非全量" in desc or "抽样" in desc), f"{p} 输出层未声明抽样/非全量"
-
-
 @pytest.mark.parametrize("layer", POINTER_ONLY_SMALL)
 def test_pointer_only_bodies_are_small(layer):
     """全量大本体层：概念只放指针，文件必须小（未复刻 2.1G/44M 本体）。"""
@@ -121,7 +115,10 @@ def test_community_covers_archive_and_index():
 
 
 def test_cross_layer_platform_edges_exist():
-    """跨层可导航：community/news-output ↔ sources 平台 join 边已建（rel_type=cross）。"""
+    """跨层可导航：community ↔ sources 平台 join 边已建（rel_type=cross）。
+
+    原第二条 join（news-output ↔ sources「抽样自」）随输出展示层 2026-08-21 整层删除而退役。
+    """
     import json
 
     graph = json.loads((BUNDLE / "graph.json").read_text(encoding="utf-8"))

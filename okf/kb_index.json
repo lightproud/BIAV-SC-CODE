@@ -7,12 +7,12 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 395,
-    "edges": 425,
-    "terms": 7025,
+    "concepts": 374,
+    "edges": 407,
+    "terms": 7018,
     "by_type": {
       "character": 72,
-      "dataset": 92,
+      "dataset": 71,
       "documentation": 163,
       "knowledge-pointer": 48,
       "reference": 17,
@@ -23,7 +23,6 @@
       "characters": 72,
       "community": 19,
       "memory": 51,
-      "news-output": 21,
       "projects": 31,
       "resource": 131,
       "sources": 19,
@@ -31,7 +30,7 @@
       "wiki-data": 27
     },
     "by_tier": {
-      "skeleton": 131,
+      "skeleton": 110,
       "search": 264
     }
   },
@@ -51,10 +50,6 @@
     "memory": {
       "index": "/memory/index.md",
       "count": 51
-    },
-    "news-output": {
-      "index": "/news-output/index.md",
-      "count": 21
     },
     "projects": {
       "index": "/projects/index.md",
@@ -2251,300 +2246,6 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 1
-    },
-    "/news-output/news-output-all.md": {
-      "type": "dataset",
-      "title": "输出展示层 · 全平台聚合",
-      "description": "全平台最新快照聚合（抽样，非全量）。 抽样/展示用途，非全量档案层。",
-      "resource": "/projects/news/output/all-latest.json",
-      "tags": [
-        "data_layer:output",
-        "aggregate",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 0
-    },
-    "/news-output/news-output-appstore.md": {
-      "type": "dataset",
-      "title": "输出展示层 · appstore 最新快照",
-      "description": "appstore 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/appstore-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:appstore",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-arca-live.md": {
-      "type": "dataset",
-      "title": "输出展示层 · arca_live 最新快照",
-      "description": "arca_live 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/arca_live-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:arca_live",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 0
-    },
-    "/news-output/news-output-bahamut.md": {
-      "type": "dataset",
-      "title": "输出展示层 · bahamut 最新快照",
-      "description": "bahamut 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/bahamut-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:bahamut",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-bilibili.md": {
-      "type": "dataset",
-      "title": "输出展示层 · bilibili 最新快照",
-      "description": "bilibili 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/bilibili-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:bilibili",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-discord.md": {
-      "type": "dataset",
-      "title": "输出展示层 · discord 最新快照",
-      "description": "discord 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/discord-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:discord",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-google-play.md": {
-      "type": "dataset",
-      "title": "输出展示层 · google_play 最新快照",
-      "description": "google_play 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/google_play-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:google_play",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-newsjs.md": {
-      "type": "dataset",
-      "title": "输出展示层 · 合并流",
-      "description": "合并全量层 news.json（构建期快照）。 抽样/展示用途，非全量档案层。",
-      "resource": "/projects/news/output/news.json",
-      "tags": [
-        "data_layer:output",
-        "aggregate",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 0
-    },
-    "/news-output/news-output-note-com.md": {
-      "type": "dataset",
-      "title": "输出展示层 · note_com 最新快照",
-      "description": "note_com 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/note_com-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:note_com",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-official.md": {
-      "type": "dataset",
-      "title": "输出展示层 · official 最新快照",
-      "description": "official 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/official-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:official",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-pixiv.md": {
-      "type": "dataset",
-      "title": "输出展示层 · pixiv 最新快照",
-      "description": "pixiv 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/pixiv-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:pixiv",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-reddit.md": {
-      "type": "dataset",
-      "title": "输出展示层 · reddit 最新快照",
-      "description": "reddit 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/reddit-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:reddit",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-ruliweb.md": {
-      "type": "dataset",
-      "title": "输出展示层 · ruliweb 最新快照",
-      "description": "ruliweb 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/ruliweb-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:ruliweb",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-steam-discussion.md": {
-      "type": "dataset",
-      "title": "输出展示层 · steam_discussion 最新快照",
-      "description": "steam_discussion 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/steam_discussion-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:steam_discussion",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-steam.md": {
-      "type": "dataset",
-      "title": "输出展示层 · steam 最新快照",
-      "description": "steam 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/steam-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:steam",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-stopgame.md": {
-      "type": "dataset",
-      "title": "输出展示层 · stopgame 最新快照",
-      "description": "stopgame 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/stopgame-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:stopgame",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-taptap-review.md": {
-      "type": "dataset",
-      "title": "输出展示层 · taptap_review 最新快照",
-      "description": "taptap_review 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/taptap_review-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:taptap_review",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-taptap.md": {
-      "type": "dataset",
-      "title": "输出展示层 · taptap 最新快照",
-      "description": "taptap 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/taptap-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:taptap",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-weibo.md": {
-      "type": "dataset",
-      "title": "输出展示层 · weibo 最新快照",
-      "description": "weibo 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/weibo-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:weibo",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-weixin.md": {
-      "type": "dataset",
-      "title": "输出展示层 · weixin 最新快照",
-      "description": "weixin 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/weixin-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:weixin",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 1
-    },
-    "/news-output/news-output-youtube.md": {
-      "type": "dataset",
-      "title": "输出展示层 · youtube 最新快照",
-      "description": "youtube 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。",
-      "resource": "/projects/news/output/youtube-latest.json",
-      "tags": [
-        "data_layer:output",
-        "platform:youtube",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
       "degree": 1
     },
     "/projects/doc-testing-strategy.md": {
@@ -4825,7 +4526,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/bahamut.md": {
       "type": "dataset",
@@ -4839,7 +4540,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 6
     },
     "/sources/bilibili.md": {
       "type": "dataset",
@@ -4853,7 +4554,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 7
     },
     "/sources/discord.md": {
       "type": "dataset",
@@ -4867,7 +4568,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/google_play.md": {
       "type": "dataset",
@@ -4881,7 +4582,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/note_com.md": {
       "type": "dataset",
@@ -4895,7 +4596,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/official.md": {
       "type": "dataset",
@@ -4909,7 +4610,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 0
     },
     "/sources/pixiv.md": {
       "type": "dataset",
@@ -4923,7 +4624,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/reddit.md": {
       "type": "dataset",
@@ -4937,7 +4638,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 3
     },
     "/sources/ruliweb.md": {
       "type": "dataset",
@@ -4951,7 +4652,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/steam.md": {
       "type": "dataset",
@@ -4965,7 +4666,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/steam_discussion.md": {
       "type": "dataset",
@@ -4979,7 +4680,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/stopgame.md": {
       "type": "dataset",
@@ -4993,7 +4694,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/taptap.md": {
       "type": "dataset",
@@ -5007,7 +4708,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/sources/taptap_review.md": {
       "type": "dataset",
@@ -5021,7 +4722,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 13
+      "degree": 12
     },
     "/sources/weibo.md": {
       "type": "dataset",
@@ -5035,7 +4736,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 5
     },
     "/sources/weixin.md": {
       "type": "dataset",
@@ -5049,7 +4750,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/youtube.md": {
       "type": "dataset",
@@ -5063,7 +4764,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 3
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
@@ -8812,132 +8513,6 @@
         "mention"
       ]
     ],
-    "/news-output/news-output-appstore.md": [
-      [
-        "/sources/appstore.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-bahamut.md": [
-      [
-        "/sources/bahamut.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-bilibili.md": [
-      [
-        "/sources/bilibili.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-discord.md": [
-      [
-        "/sources/discord.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-google-play.md": [
-      [
-        "/sources/google_play.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-note-com.md": [
-      [
-        "/sources/note_com.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-official.md": [
-      [
-        "/sources/official.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-pixiv.md": [
-      [
-        "/sources/pixiv.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-reddit.md": [
-      [
-        "/sources/reddit.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-ruliweb.md": [
-      [
-        "/sources/ruliweb.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-steam-discussion.md": [
-      [
-        "/sources/steam_discussion.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-steam.md": [
-      [
-        "/sources/steam.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-stopgame.md": [
-      [
-        "/sources/stopgame.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-taptap-review.md": [
-      [
-        "/sources/taptap_review.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-taptap.md": [
-      [
-        "/sources/taptap.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-weibo.md": [
-      [
-        "/sources/weibo.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-weixin.md": [
-      [
-        "/sources/weixin.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/news-output/news-output-youtube.md": [
-      [
-        "/sources/youtube.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
     "/projects/entry-claude-md.md": [
       [
         "/characters/15603.md",
@@ -9766,11 +9341,6 @@
         "/community/community-appstore.md",
         "同平台",
         "cross"
-      ],
-      [
-        "/news-output/news-output-appstore.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/bahamut.md": [
@@ -9802,11 +9372,6 @@
       [
         "/community/community-bahamut.md",
         "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-bahamut.md",
-        "抽样自",
         "cross"
       ]
     ],
@@ -9845,22 +9410,12 @@
         "/community/community-bilibili.md",
         "同平台",
         "cross"
-      ],
-      [
-        "/news-output/news-output-bilibili.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/discord.md": [
       [
         "/community/community-discord.md",
         "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-discord.md",
-        "抽样自",
         "cross"
       ]
     ],
@@ -9869,11 +9424,6 @@
         "/community/community-google-play.md",
         "同平台",
         "cross"
-      ],
-      [
-        "/news-output/news-output-google-play.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/note_com.md": [
@@ -9881,29 +9431,12 @@
         "/community/community-note-com.md",
         "同平台",
         "cross"
-      ],
-      [
-        "/news-output/news-output-note-com.md",
-        "抽样自",
-        "cross"
-      ]
-    ],
-    "/sources/official.md": [
-      [
-        "/news-output/news-output-official.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/pixiv.md": [
       [
         "/community/community-pixiv.md",
         "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-pixiv.md",
-        "抽样自",
         "cross"
       ]
     ],
@@ -9922,22 +9455,12 @@
         "/community/community-reddit.md",
         "同平台",
         "cross"
-      ],
-      [
-        "/news-output/news-output-reddit.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/ruliweb.md": [
       [
         "/community/community-ruliweb.md",
         "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-ruliweb.md",
-        "抽样自",
         "cross"
       ]
     ],
@@ -9946,11 +9469,6 @@
         "/community/community-steam.md",
         "同平台",
         "cross"
-      ],
-      [
-        "/news-output/news-output-steam.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/steam_discussion.md": [
@@ -9958,22 +9476,12 @@
         "/characters/130226.md",
         "提及:Saya",
         "mention"
-      ],
-      [
-        "/news-output/news-output-steam-discussion.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/stopgame.md": [
       [
         "/community/community-stopgame.md",
         "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-stopgame.md",
-        "抽样自",
         "cross"
       ]
     ],
@@ -9986,11 +9494,6 @@
       [
         "/community/community-taptap.md",
         "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-taptap.md",
-        "抽样自",
         "cross"
       ]
     ],
@@ -10054,11 +9557,6 @@
         "/characters/15586.md",
         "提及:旺达",
         "mention"
-      ],
-      [
-        "/news-output/news-output-taptap-review.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/weibo.md": [
@@ -10086,22 +9584,12 @@
         "/community/community-weibo.md",
         "同平台",
         "cross"
-      ],
-      [
-        "/news-output/news-output-weibo.md",
-        "抽样自",
-        "cross"
       ]
     ],
     "/sources/weixin.md": [
       [
         "/community/community-weixin.md",
         "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-weixin.md",
-        "抽样自",
         "cross"
       ]
     ],
@@ -10119,11 +9607,6 @@
       [
         "/community/community-youtube.md",
         "同平台",
-        "cross"
-      ],
-      [
-        "/news-output/news-output-youtube.md",
-        "抽样自",
         "cross"
       ]
     ],
@@ -10474,27 +9957,6 @@
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-session-continuity.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -10840,10 +10302,6 @@
     "agents": [
       "/projects/silver-core-sdk-doc-memory.md"
     ],
-    "aggregate": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-newsjs.md"
-    ],
     "ai": [
       "/assets/persona-erica-speech-canon.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -10931,12 +10389,10 @@
     ],
     "appstore": [
       "/community/community-appstore.md",
-      "/news-output/news-output-appstore.md",
       "/sources/appstore.md"
     ],
     "arca": [
-      "/community/community-arca-live.md",
-      "/news-output/news-output-arca-live.md"
+      "/community/community-arca-live.md"
     ],
     "architecture": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
@@ -10986,25 +10442,6 @@
       "/memory/memory-archive-storage-discussion.md",
       "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
@@ -11149,7 +10586,6 @@
     ],
     "bahamut": [
       "/community/community-bahamut.md",
-      "/news-output/news-output-bahamut.md",
       "/sources/bahamut.md"
     ],
     "banners": [
@@ -11213,7 +10649,6 @@
     ],
     "bilibili": [
       "/community/community-bilibili.md",
-      "/news-output/news-output-bilibili.md",
       "/sources/bilibili.md"
     ],
     "binary": [
@@ -11587,26 +11022,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md",
-      "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
     "clean": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -11714,25 +11130,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
@@ -11877,27 +11274,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -12662,27 +12038,6 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -13182,7 +12537,6 @@
       "/community/community-index.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
-      "/news-output/news-output-discord.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -13192,7 +12546,6 @@
     ],
     "discussion": [
       "/memory/memory-archive-storage-discussion.md",
-      "/news-output/news-output-steam-discussion.md",
       "/sources/steam_discussion.md"
     ],
     "discussions": [
@@ -13618,25 +12971,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -13865,7 +13199,6 @@
     "google": [
       "/README.md",
       "/community/community-google-play.md",
-      "/news-output/news-output-google-play.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/sources/google_play.md"
     ],
@@ -14368,27 +13701,6 @@
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
@@ -14396,25 +13708,6 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md",
       "/story/character_story_links.md",
       "/story/lore_by_unit.md",
       "/story/lore_entries.md",
@@ -14510,47 +13803,6 @@
     "last30days": [
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
-    "latest": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
-    ],
     "layer": [
       "/README.md",
       "/assets/assets-archive-integrity.md",
@@ -14625,27 +13877,6 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -14954,45 +14185,7 @@
       "/community/community-youtube.md"
     ],
     "lesson": [
-      "/README.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/README.md"
     ],
     "lessons": [
       "/memory/lessons-learned.md",
@@ -15031,8 +14224,7 @@
       "/story/character_story_links.md"
     ],
     "live": [
-      "/community/community-arca-live.md",
-      "/news-output/news-output-arca-live.md"
+      "/community/community-arca-live.md"
     ],
     "llm": [
       "/README.md",
@@ -15377,25 +14569,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md",
       "/story/STORY_RESEARCH.md",
       "/story/story_layer_readme.md",
       "/story/story_research_notes.md",
@@ -15582,27 +14755,6 @@
     "news": [
       "/community/community-index.md",
       "/community/community-timeline.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-news.md",
       "/projects/project-site.md",
@@ -15654,7 +14806,6 @@
     ],
     "note": [
       "/community/community-note-com.md",
-      "/news-output/news-output-note-com.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/sources/note_com.md"
     ],
@@ -15678,7 +14829,6 @@
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "official": [
-      "/news-output/news-output-official.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
@@ -15734,27 +14884,6 @@
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "output": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -15858,7 +14987,6 @@
     ],
     "pixiv": [
       "/community/community-pixiv.md",
-      "/news-output/news-output-pixiv.md",
       "/sources/pixiv.md"
     ],
     "plan": [
@@ -15892,25 +15020,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -15934,7 +15043,6 @@
     ],
     "play": [
       "/community/community-google-play.md",
-      "/news-output/news-output-google-play.md",
       "/sources/google_play.md"
     ],
     "playable": [
@@ -16336,27 +15444,6 @@
       "/community/community-index.md",
       "/community/community-timeline.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-black-pool-agent.md",
       "/projects/project-game.md",
@@ -16862,7 +15949,6 @@
     "reddit": [
       "/community/community-reddit.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-reddit.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/sources/reddit.md"
     ],
@@ -17222,7 +16308,6 @@
     ],
     "review": [
       "/community/community-steam.md",
-      "/news-output/news-output-taptap-review.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
@@ -17269,7 +16354,6 @@
     ],
     "ruliweb": [
       "/community/community-ruliweb.md",
-      "/news-output/news-output-ruliweb.md",
       "/sources/ruliweb.md"
     ],
     "run": [
@@ -17308,29 +16392,6 @@
     ],
     "safely": [
       "/projects/silver-core-sdk-doc-onboarding.md"
-    ],
-    "sampled": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "save": [
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
@@ -17703,25 +16764,6 @@
     ],
     "sources": [
       "/README.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/news-archive-sources-registry.md"
     ],
     "spec": [
@@ -17780,8 +16822,6 @@
     "steam": [
       "/community/community-steam.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
       "/sources/official.md",
       "/sources/steam.md",
       "/sources/steam_discussion.md"
@@ -17791,7 +16831,6 @@
     ],
     "stopgame": [
       "/community/community-stopgame.md",
-      "/news-output/news-output-stopgame.md",
       "/sources/stopgame.md"
     ],
     "storage": [
@@ -18059,8 +17098,6 @@
     ],
     "taptap": [
       "/community/community-taptap.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
       "/sources/taptap.md",
       "/sources/taptap_review.md"
     ],
@@ -18603,13 +17640,11 @@
     "weibo": [
       "/community/community-weibo.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-weibo.md",
       "/sources/weibo.md"
     ],
     "weixin": [
       "/community/community-weixin.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-weixin.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
       "/sources/weixin.md"
     ],
@@ -18696,7 +17731,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
@@ -19174,7 +18208,26 @@
       "/characters/15575.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md"
+      "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "不写": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -19201,26 +18254,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-discord-archiver-design.md",
-      "/memory/memory-ext-knowledge-layer-design.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "不合": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -19332,27 +18366,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -19650,27 +18663,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -20026,27 +19018,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -20370,26 +19341,7 @@
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
     ],
     "两层": [
-      "/memory/memory-ext-bpt-positioning.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "两引": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
@@ -21154,26 +20106,7 @@
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
     "互换": [
-      "/README.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/README.md"
     ],
     "互操": [
       "/README.md"
@@ -21491,27 +20424,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -21807,7 +20719,26 @@
     "仓内": [
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
-      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "仓同": [
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
@@ -22563,27 +21494,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -22879,27 +21789,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -23803,9 +22692,6 @@
     "全守": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
-    "全平": [
-      "/news-output/news-output-all.md"
-    ],
     "全扫": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
@@ -23873,27 +22759,6 @@
       "/community/community-youtube.md",
       "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
@@ -24152,6 +23017,27 @@
     "兽如": [
       "/characters/15569.md"
     ],
+    "内不": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
     "内容": [
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -24259,6 +23145,27 @@
     "再在": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-bpt-guidance-protocol.md"
+    ],
+    "再存": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "再拆": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
@@ -24410,27 +23317,6 @@
     ],
     "出展": [
       "/memory/memory-ext-lessons-archive.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -24625,25 +23511,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -24814,7 +23681,26 @@
     ],
     "删除": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
-      "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
+      "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "判定": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
@@ -25009,27 +23895,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -25917,26 +24782,7 @@
       "/README.md"
     ],
     "即可": [
-      "/README.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/README.md"
     ],
     "即因": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
@@ -26318,6 +25164,27 @@
     "取方": [
       "/memory/memory-ext-discord-archiver-design.md"
     ],
+    "取样": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
     "取概": [
       "/README.md"
     ],
@@ -26444,25 +25311,27 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
+    "口取": [
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -26643,26 +25512,7 @@
       "/characters/15600.md"
     ],
     "可互": [
-      "/README.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/README.md"
     ],
     "可制": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -26787,6 +25637,27 @@
       "/characters/94450.md",
       "/characters/95786.md"
     ],
+    "可直": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
     "可能": [
       "/characters/54116.md",
       "/projects/project-game.md"
@@ -26867,12 +25738,6 @@
     ],
     "台层": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
-    ],
-    "台最": [
-      "/news-output/news-output-all.md"
-    ],
-    "台聚": [
-      "/news-output/news-output-all.md"
     ],
     "台补": [
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md"
@@ -27055,7 +25920,6 @@
     ],
     "合并": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
-      "/news-output/news-output-newsjs.md",
       "/projects/releases-treasure-map.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
@@ -27126,7 +25990,26 @@
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md"
     ],
     "同样": [
-      "/memory/memory-ext-skill-authoring-standard.md"
+      "/memory/memory-ext-skill-authoring-standard.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "同档": [
       "/memory/memory-archive-bpt-guidance-log.md"
@@ -27744,6 +26627,27 @@
     "回元": [
       "/README.md"
     ],
+    "回全": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
     "回写": [
       "/memory/memory-archive-sdk-status-chronicle-20260727.md"
     ],
@@ -27952,6 +26856,27 @@
     ],
     "在受": [
       "/characters/15599.md"
+    ],
+    "在可": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "在哪": [
       "/characters/15581.md",
@@ -28577,27 +27502,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -29464,27 +28368,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -29830,6 +28713,25 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md",
       "/story/story_research_todo.md"
     ],
     "存成": [
@@ -30023,25 +28925,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
@@ -30162,27 +29045,6 @@
       "/community/community-youtube.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-bpt-positioning.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -30544,25 +29406,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-ext-skill-authoring-standard.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
@@ -30970,27 +29813,6 @@
     "尾腿": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
-    "尾须": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
-    ],
     "局不": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
@@ -31013,10 +29835,7 @@
     "层分": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
     ],
-    "层判": [
-      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
-    ],
-    "层即": [
+    "层删": [
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -31036,6 +29855,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "层判": [
+      "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
     "层双": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -31143,32 +29965,32 @@
       "/story/story_search_index.md",
       "/story/story_units.md"
     ],
+    "层按": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
     "层整": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "层文": [
       "/story/story_research_notes.md"
-    ],
-    "层最": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "层楼": [
       "/characters/15565.md"
@@ -31189,27 +30011,6 @@
     ],
     "层设": [
       "/memory/memory-ext-knowledge-layer-design.md"
-    ],
-    "层语": [
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
     ],
     "层质": [
       "/memory/memory-ext-testing-strategy.md"
@@ -31234,27 +30035,6 @@
     ],
     "展示": [
       "/memory/memory-ext-lessons-archive.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -31441,7 +30221,26 @@
     ],
     "已于": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
-      "/projects/project-wiki.md"
+      "/projects/project-wiki.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "已从": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -31727,7 +30526,6 @@
       "/community/community-youtube.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-all.md",
       "/projects/entry-readme.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -31812,7 +30610,6 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "并全": [
-      "/news-output/news-output-newsjs.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "并发": [
@@ -31845,9 +30642,6 @@
     ],
     "并有": [
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md"
-    ],
-    "并流": [
-      "/news-output/news-output-newsjs.md"
     ],
     "并用": [
       "/characters/15565.md",
@@ -32073,9 +30867,6 @@
     ],
     "建哪": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
-    ],
-    "建期": [
-      "/news-output/news-output-newsjs.md"
     ],
     "建档": [
       "/memory/memory-ext-todo.md"
@@ -32767,29 +31558,27 @@
     ],
     "快照": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "快速": [
       "/characters/15560.md",
@@ -32976,25 +31765,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -33235,26 +32005,7 @@
       "/community/community-weibo.md",
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
-      "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
+      "/community/community-youtube.md"
     ],
     "情报": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
@@ -33343,26 +32094,7 @@
       "/community/community-weibo.md",
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
-      "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
+      "/community/community-youtube.md"
     ],
     "愿军": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -34073,27 +32805,6 @@
     ],
     "抽样": [
       "/README.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -34403,27 +33114,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -34664,6 +33354,27 @@
     ],
     "按画": [
       "/README.md"
+    ],
+    "按窗": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "按纪": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
@@ -35028,27 +33739,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -35415,27 +34105,6 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -35747,27 +34416,6 @@
     "改版": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
-    "改用": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
-    ],
     "改进": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
@@ -35898,27 +34546,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -36226,27 +34853,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -36706,7 +35312,26 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "整层": [
-      "/README.md"
+      "/README.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "整性": [
       "/community/community-appstore.md",
@@ -36726,25 +35351,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -36963,28 +35569,6 @@
     ],
     "新库": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
-    ],
-    "新快": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "新扫": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
@@ -37738,26 +36322,6 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "最新": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
@@ -37970,9 +36534,6 @@
     "望只": [
       "/characters/15602.md"
     ],
-    "期快": [
-      "/news-output/news-output-newsjs.md"
-    ],
     "期性": [
       "/characters/77917.md"
     ],
@@ -38143,27 +36704,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -38633,27 +37173,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -39118,7 +37637,6 @@
     ],
     "构建": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
-      "/news-output/news-output-newsjs.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md"
@@ -39327,27 +37845,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -39562,8 +38059,50 @@
     "样东": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
+    "样回": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
     "样当": [
       "/README.md"
+    ],
+    "样快": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "样抽": [
       "/characters/15572.md"
@@ -39573,27 +38112,6 @@
     ],
     "样的": [
       "/memory/memory-ext-skill-authoring-standard.md"
-    ],
-    "样选": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "核对": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -39816,27 +38334,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-ext-lessons-archive.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -40007,27 +38504,6 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-lessons-archive.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-data-layer-detachment-evaluation-20260719.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -40161,27 +38637,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -40598,27 +39053,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -41906,9 +40340,6 @@
     "照老": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
     ],
-    "照聚": [
-      "/news-output/news-output-all.md"
-    ],
     "照膨": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -42728,25 +41159,6 @@
       "/characters/77926.md"
     ],
     "用全": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -42840,26 +41252,7 @@
       "/characters/15574.md"
     ],
     "用输": [
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "用途": [
       "/memory/capability-index.md",
@@ -42872,8 +41265,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-newsjs.md",
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
       "/story/lore_entries.md",
@@ -43498,6 +41889,27 @@
     "的报": [
       "/characters/15590.md"
     ],
+    "的抽": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
     "的指": [
       "/characters/130901.md",
       "/characters/15568.md",
@@ -44058,6 +42470,27 @@
     "直的": [
       "/characters/130901.md"
     ],
+    "直读": [
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
+    ],
     "相交": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md"
     ],
@@ -44503,27 +42936,6 @@
     ],
     "示层": [
       "/memory/memory-ext-lessons-archive.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -44547,10 +42959,6 @@
     ],
     "示性": [
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md"
-    ],
-    "示用": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-newsjs.md"
     ],
     "示的": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -44923,25 +43331,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md",
       "/sources/appstore.md",
@@ -46062,7 +44451,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
     "聚合": [
-      "/news-output/news-output-all.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/story/story_index.md"
     ],
@@ -47835,26 +46223,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "语义": [
-      "/memory/memory-ext-lessons-archive.md",
-      "/sources/appstore.md",
-      "/sources/bahamut.md",
-      "/sources/bilibili.md",
-      "/sources/discord.md",
-      "/sources/google_play.md",
-      "/sources/note_com.md",
-      "/sources/official.md",
-      "/sources/pixiv.md",
-      "/sources/reddit.md",
-      "/sources/ruliweb.md",
-      "/sources/steam.md",
-      "/sources/steam_discussion.md",
-      "/sources/stopgame.md",
-      "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/sources/weibo.md",
-      "/sources/weixin.md",
-      "/sources/youtube.md",
-      "/sources/youtube_comments.md"
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "语区": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -47928,7 +46297,26 @@
       "/projects/news-archive-sources-registry.md"
     ],
     "读的": [
-      "/memory/memory-ext-knowledge-layer-design.md"
+      "/memory/memory-ext-knowledge-layer-design.md",
+      "/sources/appstore.md",
+      "/sources/bahamut.md",
+      "/sources/bilibili.md",
+      "/sources/discord.md",
+      "/sources/google_play.md",
+      "/sources/note_com.md",
+      "/sources/official.md",
+      "/sources/pixiv.md",
+      "/sources/reddit.md",
+      "/sources/ruliweb.md",
+      "/sources/steam.md",
+      "/sources/steam_discussion.md",
+      "/sources/stopgame.md",
+      "/sources/taptap.md",
+      "/sources/taptap_review.md",
+      "/sources/weibo.md",
+      "/sources/weixin.md",
+      "/sources/youtube.md",
+      "/sources/youtube_comments.md"
     ],
     "调和": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -48366,27 +46754,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -48855,27 +47222,6 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-skill-authoring-standard.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
@@ -49156,27 +47502,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -49464,27 +47789,6 @@
     ],
     "逆境": [
       "/characters/94450.md"
-    ],
-    "选样": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "透防": [
       "/characters/15573.md"
@@ -50037,8 +48341,7 @@
       "/community/community-weibo.md",
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
-      "/community/community-youtube.md",
-      "/news-output/news-output-newsjs.md"
+      "/community/community-youtube.md"
     ],
     "量异": [
       "/community/community-timeline.md"
@@ -50117,27 +48420,6 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/memory-ext-lessons-archive.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -50294,27 +48576,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -50590,27 +48851,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -50960,25 +49200,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "长枪": [
@@ -51009,25 +49230,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
@@ -51460,29 +49662,6 @@
     "非保": [
       "/README.md"
     ],
-    "非全": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
-    ],
     "非同": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
@@ -51615,27 +49794,6 @@
     ],
     "须全": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
-    ],
-    "须改": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "须用": [
       "/sources/appstore.md",
@@ -52044,10 +50202,6 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
-    "aggregate": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-newsjs.md"
-    ],
     "ai": [
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -52106,12 +50260,10 @@
     ],
     "appstore": [
       "/community/community-appstore.md",
-      "/news-output/news-output-appstore.md",
       "/sources/appstore.md"
     ],
     "arca": [
-      "/community/community-arca-live.md",
-      "/news-output/news-output-arca-live.md"
+      "/community/community-arca-live.md"
     ],
     "architecture": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -52235,7 +50387,6 @@
     ],
     "bahamut": [
       "/community/community-bahamut.md",
-      "/news-output/news-output-bahamut.md",
       "/sources/bahamut.md"
     ],
     "banners": [
@@ -52275,7 +50426,6 @@
     ],
     "bilibili": [
       "/community/community-bilibili.md",
-      "/news-output/news-output-bilibili.md",
       "/sources/bilibili.md"
     ],
     "binary": [
@@ -53025,27 +51175,6 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -53498,7 +51627,6 @@
       "/community/community-discord.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
-      "/news-output/news-output-discord.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -53507,7 +51635,6 @@
       "/sources/discord.md"
     ],
     "discussion": [
-      "/news-output/news-output-steam-discussion.md",
       "/sources/steam_discussion.md"
     ],
     "dissection": [
@@ -53855,7 +51982,6 @@
     ],
     "google": [
       "/community/community-google-play.md",
-      "/news-output/news-output-google-play.md",
       "/sources/google_play.md"
     ],
     "governance": [
@@ -54108,27 +52234,6 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -54396,8 +52501,7 @@
       "/story/character_story_links.md"
     ],
     "live": [
-      "/community/community-arca-live.md",
-      "/news-output/news-output-arca-live.md"
+      "/community/community-arca-live.md"
     ],
     "localization": [
       "/wiki-data/wiki-data-language-config.md",
@@ -54620,7 +52724,6 @@
     ],
     "note": [
       "/community/community-note-com.md",
-      "/news-output/news-output-note-com.md",
       "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/sources/note_com.md"
     ],
@@ -54632,7 +52735,6 @@
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "official": [
-      "/news-output/news-output-official.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
@@ -54665,29 +52767,6 @@
     ],
     "oss": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
-    ],
-    "output": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "overnight": [
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
@@ -54723,7 +52802,6 @@
     ],
     "pixiv": [
       "/community/community-pixiv.md",
-      "/news-output/news-output-pixiv.md",
       "/sources/pixiv.md"
     ],
     "plan": [
@@ -54754,25 +52832,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -54796,7 +52855,6 @@
     ],
     "play": [
       "/community/community-google-play.md",
-      "/news-output/news-output-google-play.md",
       "/sources/google_play.md"
     ],
     "playable": [
@@ -55037,7 +53095,6 @@
     ],
     "reddit": [
       "/community/community-reddit.md",
-      "/news-output/news-output-reddit.md",
       "/sources/reddit.md"
     ],
     "reference": [
@@ -55202,7 +53259,6 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
     ],
     "review": [
-      "/news-output/news-output-taptap-review.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md",
@@ -55236,7 +53292,6 @@
     ],
     "ruliweb": [
       "/community/community-ruliweb.md",
-      "/news-output/news-output-ruliweb.md",
       "/sources/ruliweb.md"
     ],
     "runbook": [
@@ -55244,29 +53299,6 @@
     ],
     "runtime": [
       "/projects/entry-claude-md.md"
-    ],
-    "sampled": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "savings": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
@@ -55510,8 +53542,6 @@
     ],
     "steam": [
       "/community/community-steam.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
       "/sources/steam.md",
       "/sources/steam_discussion.md"
     ],
@@ -55520,7 +53550,6 @@
     ],
     "stopgame": [
       "/community/community-stopgame.md",
-      "/news-output/news-output-stopgame.md",
       "/sources/stopgame.md"
     ],
     "stories": [
@@ -55613,8 +53642,6 @@
     ],
     "taptap": [
       "/community/community-taptap.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
       "/sources/taptap.md",
       "/sources/taptap_review.md"
     ],
@@ -55918,12 +53945,10 @@
     ],
     "weibo": [
       "/community/community-weibo.md",
-      "/news-output/news-output-weibo.md",
       "/sources/weibo.md"
     ],
     "weixin": [
       "/community/community-weixin.md",
-      "/news-output/news-output-weixin.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
       "/sources/weixin.md"
     ],
@@ -55953,7 +53978,6 @@
     "youtube": [
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/news-output/news-output-youtube.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
@@ -56138,9 +54162,6 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md"
     ],
-    "全平": [
-      "/news-output/news-output-all.md"
-    ],
     "全量": [
       "/community/community-appstore.md",
       "/community/community-arca-live.md",
@@ -56193,29 +54214,6 @@
     ],
     "凯蒂古拉": [
       "/characters/77913.md"
-    ],
-    "出展": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "分层": [
       "/memory/memory-ext-testing-strategy.md"
@@ -56343,17 +54341,11 @@
     "口规": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md"
     ],
-    "台聚": [
-      "/news-output/news-output-all.md"
-    ],
     "台账": [
       "/memory/memory-ext-todo.md"
     ],
     "号白": [
       "/memory/memory-ext-knowledge-layer-design.md"
-    ],
-    "合并": [
-      "/news-output/news-output-newsjs.md"
     ],
     "向冻": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -56517,29 +54509,6 @@
     "层质": [
       "/memory/memory-ext-testing-strategy.md"
     ],
-    "展示": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
-    ],
     "山本": [
       "/characters/15568.md",
       "/characters/15591.md",
@@ -56673,12 +54642,6 @@
     "帕西": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
-    "平台": [
-      "/news-output/news-output-all.md"
-    ],
-    "并流": [
-      "/news-output/news-output-newsjs.md"
-    ],
     "库瘦": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
@@ -56725,26 +54688,7 @@
       "/memory/memory-archive-pending-discussions.md"
     ],
     "快照": [
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "息分": [
       "/memory/memory-ext-biav-info-classification.md"
@@ -56953,27 +54897,6 @@
     "断验": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
     ],
-    "新快": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
-    ],
     "方案": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-storage-discussion.md",
@@ -57003,27 +54926,6 @@
     ],
     "星乃": [
       "/characters/15594.md"
-    ],
-    "最新": [
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "木下": [
       "/characters/15564.md"
@@ -57506,29 +55408,6 @@
     "码行": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
-    "示层": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
-    ],
     "社区": [
       "/community/community-appstore.md",
       "/community/community-arca-live.md",
@@ -57671,9 +55550,6 @@
     "联动": [
       "/memory/memory-ext-collab-event-playbook.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
-    ],
-    "聚合": [
-      "/news-output/news-output-all.md"
     ],
     "育美": [
       "/characters/94450.md"
@@ -57870,29 +55746,6 @@
     "转向": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
-    ],
-    "输出": [
-      "/news-output/news-output-all.md",
-      "/news-output/news-output-appstore.md",
-      "/news-output/news-output-arca-live.md",
-      "/news-output/news-output-bahamut.md",
-      "/news-output/news-output-bilibili.md",
-      "/news-output/news-output-discord.md",
-      "/news-output/news-output-google-play.md",
-      "/news-output/news-output-newsjs.md",
-      "/news-output/news-output-note-com.md",
-      "/news-output/news-output-official.md",
-      "/news-output/news-output-pixiv.md",
-      "/news-output/news-output-reddit.md",
-      "/news-output/news-output-ruliweb.md",
-      "/news-output/news-output-steam-discussion.md",
-      "/news-output/news-output-steam.md",
-      "/news-output/news-output-stopgame.md",
-      "/news-output/news-output-taptap-review.md",
-      "/news-output/news-output-taptap.md",
-      "/news-output/news-output-weibo.md",
-      "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
     ],
     "达芙黛尔": [
       "/characters/15590.md"

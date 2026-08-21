@@ -4,8 +4,13 @@
 守密人 2026-07-04「针对专有能力 grep 还是那么好用」逼出的真相：**hit@k 结构上是 grep 的主场**
 ——它只测「找没找到文本」，而找文本正是 grep 本来就会的。grep「命中」≠ grep「给了你知识」：
 它找到 community-discord，却分不清全量 vs 抽样（会带你进 lesson #30）；它返回一堆「沙耶」的出现，
-却给不了「沙耶这个规范概念」。**KB 的真价值在检索之后的结构化知识——层 / 身份 / 类型 / 边界——
+却给不了「沙耶这个规范概念」。**KB 的真价值在检索之后的结构化知识——身份 / 类型 / 边界——
 这些 grep 一个都给不了，hit@k 一个都测不出。**
+
+（原第①维「层判定」测的是「同一平台同时有全量档案 + 输出抽样概念时，KB 能否靠 data_layer
+唯一区分」。输出展示层已于 2026-08-21 守密人裁定整层删除，语料里不再存在这种双层平台，
+该维度结构上恒为 0/0——留着就成了一个永远不可能触发的指标，正是本模块自己反对的东西，
+故连同 probe 一并退役。全量档案层的 data_layer 硬纪律不变，由 tests/test_data_discipline.py 守。）
 
 本模块用**质性 probe** 测这些维度：不比「谁先摸到书」，比「摸到之后能不能给对结构化知识」。
 每个 probe 是 KB 的事实性能力，纯朴素文本搜索（grep over 原始源）结构上给不了 → grep 计 0。
@@ -42,42 +47,6 @@ def _or_live(concepts: dict | None) -> dict:
     报告的是另一个对象的成绩。None 才是「没给语料」，{} 是「给了个空的」。
     """
     return _concepts() if concepts is None else concepts
-
-
-def probe_layer_disambiguation(concepts: dict | None = None) -> dict:
-    """层判定：凡同时有全量档案 + 输出抽样概念的平台，KB 靠 data_layer tag 能**唯一区分**
-    「全量 vs 抽样」；grep over 原始源无此字段、三个一视同仁 → 会把抽样当全量（lesson #30）。"""
-    concepts = _or_live(concepts)
-    plat = {}
-    for cid, c in concepts.items():
-        tags = c.get("tags", [])
-        p = next((t.split(":", 1)[1] for t in tags if t.startswith("platform:")), None)
-        if not p:
-            continue
-        e = plat.setdefault(p, {"full": [], "output": []})
-        if "data_layer:full_archive" in tags:
-            e["full"].append(cid)
-        if "data_layer:output" in tags:
-            e["output"].append(cid)
-    both = {p: e for p, e in plat.items() if e["full"] and e["output"]}
-    # KB 能区分 = 该平台的全量与输出概念**互不重叠**（每个概念只属一层，能唯一挑出全量）。
-    # 原判据是 `if e["full"] and e["output"]`——那正是 `both` 的定义本身，于是
-    # kb_can_disambiguate 恒等于 platforms_with_both_layers，比值永远 1.00：一个**结构上
-    # 不可能失败**的指标，却被当成「KB 真的分得清层」的证据摆在报告里。真正会出事的形态
-    # 它一个也抓不到——某平台的概念同时挂 data_layer:full_archive 与 data_layer:output
-    # （指针层标错、或全量与输出被合并成一个概念）时，该平台的层归属是**歧义的**，
-    # 消费方照 tag 取「全量」会取到抽样，就是 lesson #30 本身；旧判据仍给它满分。
-    ambiguous = {p: sorted(set(e["full"]) & set(e["output"])) for p, e in both.items()}
-    ambiguous = {p: v for p, v in ambiguous.items() if v}
-    kb_ok = len(both) - len(ambiguous)
-    return {
-        "platforms_with_both_layers": len(both),
-        "kb_can_disambiguate": kb_ok,
-        "grep_can_disambiguate": 0,  # 原始源无 data_layer 字段，结构上给不了层知识
-        "ambiguous_platforms": ambiguous,  # 同一概念身兼两层 = 层归属歧义（lesson #30 的种子）
-        "sample": sorted(both)[:6],
-        "meaning": "grep 找到 discord 相关文本，却分不清全量档案 vs 输出抽样→lesson #30；KB 靠 data_layer 唯一区分",
-    }
 
 
 def probe_identity_canonical(concepts: dict | None = None,
@@ -161,13 +130,11 @@ def probe_relation_typing(concepts: dict | None = None, graph: dict | None = Non
 
 def evaluate(concepts: dict | None = None) -> dict:
     concepts = _or_live(concepts)
-    layer = probe_layer_disambiguation(concepts)
     identity = probe_identity_canonical(concepts)
     boundary = probe_boundary_enumeration(concepts)
     relation = probe_relation_typing(concepts)
     # 汇总：KB 在几个质性维度上交付了 grep 结构上给不了的知识
     dims = {
-        "layer_disambiguation": layer["kb_can_disambiguate"] > 0,
         "identity_canonical": identity["kb_isolates_canonical"] > 0,
         "boundary_enumeration": boundary["kb_can_enumerate_bounded"],
         "relation_typing": relation["kb_can_type_relations"],
@@ -175,8 +142,8 @@ def evaluate(concepts: dict | None = None) -> dict:
     return {
         "dimensions_kb_delivers": sum(dims.values()),
         "dimensions_total": len(dims),
-        "dimensions_grep_delivers": 0,             # 四维 grep 结构上均给不了
-        "layer": layer, "identity": identity, "boundary": boundary, "relation": relation,
+        "dimensions_grep_delivers": 0,             # 三维 grep 结构上均给不了
+        "identity": identity, "boundary": boundary, "relation": relation,
     }
 
 
@@ -184,20 +151,16 @@ def _print(rep: dict) -> None:
     print("KB 质性能力报告（测 grep 给不了知识的维度——hit@k 测不出的那些）")
     print(f"  KB 交付 {rep['dimensions_kb_delivers']}/{rep['dimensions_total']} 个质性维度；"
           f"grep 结构上交付 {rep['dimensions_grep_delivers']}/{rep['dimensions_total']}")
-    layer = rep["layer"]
-    print(f"  ① 层判定：{layer['platforms_with_both_layers']} 个平台同时有全量+抽样概念，"
-          f"KB 能区分 {layer['kb_can_disambiguate']}、grep {layer['grep_can_disambiguate']}"
-          f"（grep 会把抽样当全量→lesson #30）")
     i = rep["identity"]
-    print(f"  ② 身份：{i['names_probed']} 个角色名，KB 隔出唯一规范身份 {i['kb_isolates_canonical']}、grep {i['grep_isolates_canonical']}")
+    print(f"  ① 身份：{i['names_probed']} 个角色名，KB 隔出唯一规范身份 {i['kb_isolates_canonical']}、grep {i['grep_isolates_canonical']}")
     for pn in i["per_name"][:3]:
         print(f"       {pn['name']}: 规范 {pn['canonical']} 个 / 提及它的概念 {pn['mention_concepts']} 个"
               f"（grep 会把这些混在一起）")
     b = rep["boundary"]
-    print(f"  ③ 边界枚举：KB 可枚举有界（{b['characters_enumerable']} 角色 / "
+    print(f"  ② 边界枚举：KB 可枚举有界（{b['characters_enumerable']} 角色 / "
           f"{b['full_archive_enumerable']} 全量概念）；grep 给不了完整集合")
     r = rep["relation"]
-    print(f"  ④ 类型化关系：KB 对 {r['typed_edges']} 条边给出关系类型 "
+    print(f"  ③ 类型化关系：KB 对 {r['typed_edges']} 条边给出关系类型 "
           f"{r['relation_types']}；grep 只给共现、给不了类型")
 
 

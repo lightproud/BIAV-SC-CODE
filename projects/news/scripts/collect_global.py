@@ -27,11 +27,14 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-OUTPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
-RAW_OUTPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news-raw.json'
 
 # Ensure sibling scripts dir is importable (works both as script and module)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import archive_layout  # noqa: E402  运行期工作根单一真相源
+
+# 运行期工作根（不进 git，2026-08-21 输出展示层删除）：路径 SSOT 见 archive_layout。
+OUTPUT_PATH = archive_layout.news_run_root() / 'news.json'
+RAW_OUTPUT_PATH = archive_layout.news_run_root() / 'news-raw.json'
 
 
 # 核心源 + 需 secret 的源元数据统一取自 sources.py（单一真相源，杜绝硬编码漂移）。

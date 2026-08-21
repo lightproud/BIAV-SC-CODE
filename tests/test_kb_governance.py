@@ -106,7 +106,8 @@ def test_memory_extension_disjoint_from_whitelist():
 
 def test_all_declared_layers_present_and_nonempty():
     """okf_pointer_layers.build_all 声明的每层都必须在 bundle 里有概念。"""
-    declared = ["assets", "wiki-data", "community", "news-output", "resource", "projects"]  # unpacked/extracted 层 2026-07-12 随源删除退役
+    # unpacked/extracted 层 2026-07-12 随源删除退役；news-output 层 2026-08-21 随输出展示层整层删除退役
+    declared = ["assets", "wiki-data", "community", "resource", "projects"]
     empty = [layer for layer in declared if not _concepts(layer)]
     assert empty == [], f"声明的层为空（生成器静默丢层）：{empty}"
 

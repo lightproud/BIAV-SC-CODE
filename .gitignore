@@ -53,7 +53,10 @@ assets/data/semantic-index.json
 assets/data/knowledge-graph.json
 assets/data/memory-utility.json
 assets/data/precomputed-cache.json
-projects/news/output/alerts.json
+# 采集运行期工作根（2026-08-21 输出展示层整层删除后的落点）：单轮内产生、单轮内消费，
+# 绝不进 git。跨轮状态（source-health / validation-drops）在 projects/news/data/，照常提交。
+projects/news/run/*
+!projects/news/run/.gitkeep
 
 # 向量检索腿索引本体（kb_vector，§八「厚锚撑向量」，2026-07-05 反转零 ML 引入）。
 # 可 MB→GB，放指针不放本体：不进 git，CI 构建后上传 Release community-assets，

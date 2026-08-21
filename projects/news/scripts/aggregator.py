@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 忘却前夜 Morimens - 社区热点聚合器
-从各社区平台抓取24小时内的热门话题并生成 projects/news/output/news.json
+从各社区平台抓取24小时内的热门话题并生成运行期 news.json（archive_layout.news_run_root()）
 
 数据源:
   - Reddit (r/Morimens)
@@ -15,11 +15,12 @@
   1. 安装依赖: pip install -r requirements.txt
   2. 配置环境变量 (见 .env.example)
   3. 运行: python scripts/aggregator.py
-  4. 输出: projects/news/output/news.json
+  4. 输出: <运行期工作根>/news.json（默认 projects/news/run/，不进 git）
 """
 
 import sys
 from datetime import datetime, UTC
+from pathlib import Path
 
 from aggregator_base import (
     OUTPUT_PATH, _get_playwright_collectors,
@@ -39,8 +40,8 @@ from sources import R1_HARD_FAIL_SOURCES  # §4.2 R1 硬失败源（单一真相
 # H9: 失败哨兵文件。aggregator 直接 SystemExit(1) 会让 update-news.yml 跳过后续
 # collect_global/split/archive/commit 步骤，成功源数据随 runner 销毁丢失。改为：
 # 失败时写哨兵 + 以 0 退出，workflow 末尾独立步骤检测哨兵再标红（失败仍在 CI 可见）。
-# 路径在 output/ 之外，避免被 `git add projects/news/output/` 提交进仓库。
-FAILURE_FLAG = OUTPUT_PATH.parent.parent / 'aggregator-failure.flag'
+# 失败哨兵固定落 projects/news/（运行期工作根可经 env 改道，哨兵位置不跟着漂）
+FAILURE_FLAG = Path(__file__).resolve().parent.parent / 'aggregator-failure.flag'
 
 
 def _flag_failure(summary: str):

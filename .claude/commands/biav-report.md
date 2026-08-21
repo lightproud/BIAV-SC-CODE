@@ -4,7 +4,7 @@ Produce a silver-core community intelligence report (deep analysis / role recomm
 
 0. **挂载数据湖**（T62 P2-5，2026-07-20 起的前置步）：社区全量档案**已迁出本仓**，本体在 **BIAV-SC-DATA** 数据仓。先 clone 该仓、设 `BIAV_SC_DATA_ROOT=<checkout 路径>`，取数一律经 `projects/news/scripts/archive_layout.py` 的 `community_root()` / `discord_root()` 解析（**归档布局单一真相源**，env 未设时回落在树默认，会读到空目录——空手而归即检查此步）。下文路径均为**数据湖内相对布局**，根 = `$BIAV_SC_DATA_ROOT`。
 
-1. 确认数据层（§4 硬约束）：报告类一律走全量档案层 `Record/Community/`，禁用输出层充全量（lesson #30）。日报/快查才用 `projects/news/output/*-latest.json`（这一份仍在本仓）。
+1. 确认数据层（§4 硬约束）：一律走全量档案层 `Record/Community/`（经 `BIAV_SC_DATA_ROOT` 读）。原输出展示层 `projects/news/output/*-latest.json` 已于 2026-08-21 整层删除——日报 / 快查同样回全量档案层按窗口取样，仓内不再有抽样快照可读（lesson #30 的取错机会被结构性移除）。
 
 2. 单脚本提取（放 `/tmp/`，不并行多脚本）：
    - **冷热分层（2026-07-12 起，硬规则）**：当月 + 上月为裸文本热层，**上上个月及更早为 `.gz` 冷层**。读文件一律经 `archive_layout.open_archive_text()` 透明双开，解析日期一律 `archive_layout.date_stem()`（`.json.gz` 的 `Path.stem` 残留 `.json`，直取 stem 会把冷层误判成缺口）；用 `rg` 跨档案检索时**必加 `-z`**，否则冷层整段查不到、且不会报错。

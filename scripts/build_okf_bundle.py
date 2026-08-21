@@ -44,7 +44,7 @@ from okf_frontmatter import (  # noqa: E402
 )
 
 CHARACTERS_SRC = REPO / "projects/wiki/data/processed/characters.json"
-SOURCE_HEALTH = REPO / "projects/news/output/source-health.json"
+SOURCE_HEALTH = REPO / "projects/news/data/source-health.json"  # 跨轮状态（2026-08-21 迁出已删的 output 层）
 NEWS_DATA = REPO / "projects/news/data"
 STORY_DIR = REPO / "projects/wiki/data/processed/story"
 
@@ -190,7 +190,6 @@ def build_sources() -> int:
         else:
             # 放指针不放本体：各布局均无此源档案 → 跳过，避免指针落空。
             continue
-        output = f"/projects/news/output/{name}-latest.json"
 
         fields = {
             "type": "dataset",
@@ -210,7 +209,6 @@ def build_sources() -> int:
             "|------|------|",
             f"| 平台 | {name} |",
             f"| 全量档案层（本体） | `{archive.lstrip('/')}` |",
-            f"| 输出展示层（抽样） | `{output.lstrip('/')}` |",
             f"| 全量条数 | {total} |",
             f"| 采集健康度 | {level} |",
             f"| 最后成功 | {info.get('last_success_date', 'n/a')} |",
@@ -218,8 +216,8 @@ def build_sources() -> int:
             "# 数据纪律（硬约束）",
             "",
             "- 长窗口分析 / 完整性审计 / 历史回溯 → **必须用全量档案层**（本 concept 的 `resource`）。",
-            "- 日报展示 / 快查 / 热度榜 → 用输出展示层即可。",
-            "- 两层语义**不可互换**（CLAUDE.md §4.1，lesson #30）。",
+            "- 日报展示 / 快查 / 热度榜 → 同样回全量档案层按窗口取样：原「输出展示层」"
+            "（projects/news/output/）已于 2026-08-21 整层删除，仓内不再存在可直读的抽样快照。",
         ]
         write_concept(out_dir / f"{name}.md", fields, "\n".join(body))
         emitted.append((name, info))
@@ -861,11 +859,11 @@ def build_graph() -> dict:
     # 不沦为孤立节点。确定性 join，经 add_edge（#393 typed-edge + pair_seen 去重），rel_type=cross。
     for n in nodes:
         nid = n["id"]
-        # platform join: sources ↔ community（同平台异镜头）/ sources ↔ news-output（抽样自）
+        # platform join: sources ↔ community（同平台异镜头）
+        # 原第二条 join（sources ↔ news-output「抽样自」）随输出展示层 2026-08-21 整层删除而移除。
         if nid.startswith("/sources/") and nid.endswith(".md"):
             p = opl.slug(nid[len("/sources/"):-3])
             add_edge(f"/community/community-{p}.md", nid, "同平台", "cross")
-            add_edge(f"/news-output/news-output-{p}.md", nid, "抽样自", "cross")
         # community 平台概念 → 分析索引（aggregated_in）
         if (nid.startswith("/community/community-") and
                 not nid.endswith(("community-index.md", "community-timeline.md"))):
