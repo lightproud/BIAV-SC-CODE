@@ -1,10 +1,55 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-20T21:26:07.741072+00:00",
+  "collected_at": "2026-08-21T01:08:26.069656+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-08-21T00:32:34+00:00",
+      "lang": "tchinese",
+      "title": "[正面] 卡厄斯夢境拉完了",
+      "summary": "卡厄斯夢境拉完了",
+      "url": "https://steamcommunity.com/profiles/76561198119955249/recommended/3052450",
+      "author": "76561198119955249",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "卡厄斯夢境拉完了",
+      "timestamp_created": 1787272354,
+      "playtime_forever": 936
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-21T00:28:57+00:00",
+      "lang": "schinese",
+      "title": "[正面] 游戏是好游戏，但是校猫不做人。\n世界观、人设、立绘都很有特色，战斗机制也别具一格。\n希望它早点凉了然...",
+      "summary": "游戏是好游戏，但是校猫不做人。\n世界观、人设、立绘都很有特色，战斗机制也别具一格。\n希望它早点凉了然后一转单机，留点周回/月度肉鸽啥的，未尝不是一桩幸事。",
+      "url": "https://steamcommunity.com/profiles/76561198439738038/recommended/3052450",
+      "author": "76561198439738038",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "游戏是好游戏，但是校猫不做人。\n世界观、人设、立绘都很有特色，战斗机制也别具一格。\n希望它早点凉了然后一转单机，留点周回/月度肉鸽啥的，未尝不是一桩幸事。",
+      "timestamp_created": 1787272137,
+      "playtime_forever": 16457
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-20T23:10:43+00:00",
+      "lang": "english",
+      "title": "[正面] ♡",
+      "summary": "♡",
+      "url": "https://steamcommunity.com/profiles/76561199747138689/recommended/3052450",
+      "author": "76561199747138689",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "♡",
+      "timestamp_created": 1787267443,
+      "playtime_forever": 28504
+    },
     {
       "source": "steam",
       "time": "2026-08-20T16:12:41+00:00",
@@ -94,21 +139,6 @@
       "review": "Аниме",
       "timestamp_created": 1787188460,
       "playtime_forever": 564
-    },
-    {
-      "source": "steam",
-      "time": "2026-08-20T01:04:41+00:00",
-      "lang": "schinese",
-      "title": "[负面] 拉完了",
-      "summary": "拉完了",
-      "url": "https://steamcommunity.com/profiles/76561199440843458/recommended/3052450",
-      "author": "76561199440843458",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "拉完了",
-      "timestamp_created": 1787187881,
-      "playtime_forever": 977
     }
   ]
 }
