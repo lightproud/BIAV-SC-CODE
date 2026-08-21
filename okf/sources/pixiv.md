@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "pixiv 社区数据源"
-description: "pixiv 平台采集档案，全量 649 条，健康度 active。"
+description: "pixiv 平台采集档案，全量 654 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/pixiv/"
 tags: ["data_layer:full_archive", "platform:pixiv", "health:active"]
-timestamp: "2026-08-20T06:42:52.332125+00:00"
+timestamp: "2026-08-21T06:42:59.986594+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-08-20T06:42:52.332125+00:00"
 | 平台 | pixiv |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/pixiv/` |
 | 输出展示层（抽样） | `projects/news/output/pixiv-latest.json` |
-| 全量条数 | 649 |
+| 全量条数 | 654 |
 | 采集健康度 | active |
-| 最后成功 | 2026-08-19 |
+| 最后成功 | 2026-08-21 |
 
 # 数据纪律（硬约束）
 
