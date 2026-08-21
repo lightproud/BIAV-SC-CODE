@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-21T09:35:16.689367+00:00",
+  "collected_at": "2026-08-21T12:41:37.076332+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -19,6 +19,21 @@
       "review": "un juego que todo el mundo debería jugar al menos una vez en su vida",
       "timestamp_created": 1787289625,
       "playtime_forever": 4829
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-21T09:38:10+00:00",
+      "lang": "english",
+      "title": "[正面] Out of the 8 or so gachas I play actively, this is...",
+      "summary": "Out of the 8 or so gachas I play actively, this is by far one of my favourites. From the incredible artstyle, to the legendary lineup of VA's, to the story and the combat. And also how much you're able to acquire while staying f2p. The community has been super helpful as well with questions regarding teambuilding, etc. Big fan",
+      "url": "https://steamcommunity.com/profiles/76561198111701113/recommended/3052450",
+      "author": "76561198111701113",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Out of the 8 or so gachas I play actively, this is by far one of my favourites. From the incredible artstyle, to the legendary lineup of VA's, to the story and the combat. And also how much you're able to acquire while staying f2p. The community has been super helpful as well with questions regarding teambuilding, etc. Big fan",
+      "timestamp_created": 1787305090,
+      "playtime_forever": 3858
     },
     {
       "source": "steam",
@@ -48,7 +63,7 @@
       "voted_up": true,
       "review": "卡厄斯夢境拉完了",
       "timestamp_created": 1787272354,
-      "playtime_forever": 966
+      "playtime_forever": 996
     },
     {
       "source": "steam",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "♡",
       "timestamp_created": 1787267443,
-      "playtime_forever": 28984
+      "playtime_forever": 29022
     },
     {
       "source": "steam",
@@ -108,7 +123,7 @@
       "voted_up": true,
       "review": "peak~",
       "timestamp_created": 1787240016,
-      "playtime_forever": 602
+      "playtime_forever": 624
     },
     {
       "source": "steam",
