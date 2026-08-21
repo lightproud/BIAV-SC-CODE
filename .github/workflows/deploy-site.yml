@@ -26,18 +26,16 @@ on:
       # cg_gallery.json / item_stories.json），部署页面正是由它现场推导出来的。
       # 只改数据层不改 docs/ 时，站点内容会变而部署不触发——线上停在旧数据。
       - 'projects/wiki/data/processed/**'
-      - 'projects/news/index.html'
       - 'Public-Info-Pool/Resource/proposal/**'
       - 'okf/visualizer.html'
       - '.github/workflows/deploy-site.yml'
   # 每日兜底重部署（2026-07-28 扫描补齐）。
   #
-  # 下面「Assemble site」把 projects/news/output/news.json 拷成 dist/news/data/news.json，
-  # 而 /news/ 页面运行时正是 fetch('data/news.json')——那份 JSON 是这条工作流的**输入**，
-  # 却触发不了它：采集器每 3 小时重写它，提交一律带 `[skip ci]`，GitHub 因此跳过整个
-  # push 的工作流分发。所以**把该路径加进上面的 paths 是无效修法**（加了也永不触发），
-  # 只能靠定时兜底。结果是 /news/ 的数据此前只能搭别的 site 改动的顺风车才更新，
-  # 无人改站点的时间段里线上可以停在数周前的快照，而采集照跑、看不出任何异常。
+  # 原始理由是 /news/ 页面的数据兜底：采集器每 3 小时重写 news.json、提交一律带
+  # `[skip ci]`，push 触发不了本工作流，线上快照只能靠定时刷新。**该页面已于
+  # 2026-08-21 下线删除**（守密人裁定），此条理由作废；cron 保留的现行理由是
+  # wiki 构建期从 Release 拉美术资产 + 数据层推导页面，需要一条与 push 触发面
+  # 无关的日更兜底（同时维持 dead-man-switch 沉默检测射程，见末条）。
   #
   # 同样理由的既有先例：build-analysis-index.yml 走 schedule-only、
   # build-okf-bundle.yml 刻意把每小时归档层排除在 paths 外并用每日 cron 兜底。
@@ -112,14 +110,11 @@ jobs:
 
       - name: Assemble site
         run: |
-          mkdir -p dist/wiki dist/news
+          mkdir -p dist/wiki
 
           cp -r projects/site/public/. dist/
           [ -d projects/site/design ] && cp -r projects/site/design dist/design
           cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
-          cp projects/news/index.html dist/news/index.html
-          mkdir -p dist/news/data
-          [ -f projects/news/output/news.json ] && cp projects/news/output/news.json dist/news/data/news.json
           mkdir -p dist/kb
           [ -f "okf/visualizer.html" ] && cp "okf/visualizer.html" dist/kb/index.html
           mkdir -p dist/docs
@@ -135,7 +130,7 @@ jobs:
           echo "=== index.html title ==="
           grep '<title>' dist/index.html
           echo ""
-          for f in dist/index.html dist/wiki/index.html dist/news/index.html dist/kb/index.html; do
+          for f in dist/index.html dist/wiki/index.html dist/kb/index.html; do
             if [ ! -f "$f" ]; then
               echo "MISSING: $f" && exit 1
             fi
@@ -217,7 +212,7 @@ jobs:
           sleep 30
           BASE="https://lightproud.github.io/BIAV-SC-CODE"
           # wiki is zh-only (single locale at /wiki/ root); no en/ja locales configured
-          for url in "$BASE/" "$BASE/wiki/" "$BASE/news/" "$BASE/kb/"; do
+          for url in "$BASE/" "$BASE/wiki/" "$BASE/kb/"; do
             status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "000")
             if [ "$status" = "200" ]; then
               echo "OK: $url → $status"

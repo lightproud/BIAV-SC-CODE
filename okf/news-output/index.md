@@ -1,4 +1,4 @@
-# 输出展示层（抽样，快查/日报） (22)
+# 输出展示层（抽样，快查/日报） (21)
 
 projects/news/output/ 输出展示层指针（抽样非全量）。凡长窗口/审计/情感长尾一律回全量档案层。
 
@@ -24,5 +24,4 @@ projects/news/output/ 输出展示层指针（抽样非全量）。凡长窗口/
 * [输出展示层 · weixin 最新快照](/news-output/news-output-weixin.md) - weixin 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/
 * [输出展示层 · youtube 最新快照](/news-output/news-output-youtube.md) - youtube 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/
 * [输出展示层 · 全平台聚合](/news-output/news-output-all.md) - 全平台最新快照聚合（抽样，非全量）。 抽样/展示用途，非全量档案层。
-* [输出展示层 · RSS/Atom 订阅](/news-output/news-output-feed.md) - 24h 热点 RSS 2.0 订阅源。 抽样/展示用途，非全量档案层。
 * [输出展示层 · 合并流](/news-output/news-output-newsjs.md) - 合并全量层 news.json（构建期快照）。 抽样/展示用途，非全量档案层。

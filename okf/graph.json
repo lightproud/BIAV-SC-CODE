@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-21",
   "stats": {
-    "nodes": 396,
+    "nodes": 395,
     "edges": 425
   },
   "nodes": [
@@ -1835,17 +1835,6 @@
       "tags": [
         "data_layer:output",
         "platform:discord",
-        "sampled"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/news-output/news-output-feed.md",
-      "type": "dataset",
-      "title": "输出展示层 · RSS/Atom 订阅",
-      "tags": [
-        "data_layer:output",
-        "aggregate",
         "sampled"
       ],
       "tier": "skeleton"

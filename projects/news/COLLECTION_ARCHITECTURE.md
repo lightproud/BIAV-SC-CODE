@@ -115,12 +115,15 @@ projects/news/output/
 │                          #   taptap / taptap_post / taptap_review / official /
 │                          #   ruliweb / stopgame / weixin / arca_live / bahamut /
 │                          #   note_com / twitter / steam_discussion 等，以 ls 为准）
-├── source-health.json     # 数据源健康状态（data_quality.py 产出）
-└── feed.xml               # RSS 输出
+└── source-health.json     # 数据源健康状态（data_quality.py 产出）
 ```
 
 > 日报文件（daily-latest.md）与 extended-latest.json 已随日报定时停用 / 单入口
 > 合并而不再产出；报告改在会话内生成（见 `memory/project-status.md`）。
+>
+> `feed.xml`（RSS）与 `news.jsonl` 同属停产化石：管线里早已无生成方，仓内两份快照
+> 停在 2026-03-29，却仍自称「24h 热点」。守密人 2026-08-21 裁定连同 OKF `news-output-feed`
+> 指针一并删除。`index.html` 前端展示页同日下线（见 CONTEXT.md）。
 
 ## 新增功能（2026-04-11，历史记录；现状以 2026-07-02 订正为准）
 

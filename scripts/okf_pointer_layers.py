@@ -465,7 +465,6 @@ def build_news_output() -> tuple[list[dict], list[str]]:
     # 3 aggregates
     for fname, cid, title, desc in [
         ("all-latest.json", "news-output-all", "输出展示层 · 全平台聚合", "全平台最新快照聚合（抽样，非全量）。"),
-        ("feed.xml", "news-output-feed", "输出展示层 · RSS/Atom 订阅", "24h 热点 RSS 2.0 订阅源。"),
         ("news.json", "news-output-newsjs", "输出展示层 · 合并流", "合并全量层 news.json（构建期快照）。"),
     ]:
         f = odir / fname

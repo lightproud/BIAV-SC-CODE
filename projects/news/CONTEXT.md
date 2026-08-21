@@ -48,7 +48,7 @@
 - **Discord → 聚合器桥接已落地**：aggregator 含 discord 通道，`output/discord-latest.json` 持续产出（M1 任务 1 完成）
 - **YouTube 已接通**：`output/youtube-latest.json` 持续更新，`Public-Info-Pool/Record/Community/youtube{,_comments}/` 在归档（M2 首项完成）
 - **新增 workflow（2026-06-05）**：`collect-comments`（每日 02:00 UTC 视频评论归档）/ `recover-fanart`（手动触发，刷新 Discord 过期 URL 恢复同人图）
-- **daily-report 定时已停用**：报告改在 Claude Code 会话内订阅生成（零 API 费），workflow 仅留手动触发备用——M1 任务 3 的「日报 workflow 验证」语境已失效
+- **daily-report 已整体退役**：报告改在 Claude Code 会话内订阅生成（零 API 费）；`daily-report.yml` workflow 已删除，**不存在手动备用触发**（原措辞「仅留手动触发备用」为死指路牌，2026-08-21 订正）——M1 任务 3 的「日报 workflow 验证」语境已失效
 - `Public-Info-Pool/Record/Community/` 已扩至 18 个平台目录（2026-06-21 迁移，原 `data/platforms/` 根废弃）
 - M1 任务 2（月度清理触发）/ 任务 4（黑池接口 schema 评估）状态未在本次复核范围，待 Code-news 确认
 
@@ -87,7 +87,7 @@
 - discord-archive-jp.yml 日服服务器归档（数据落 `Public-Info-Pool/Record/Community/discord/jp/`）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml 每日北京 15:05（07:05 UTC）、collect-fanart.yml 每日北京 15:10（07:10 UTC）（2026-07-11 统一北京 15 点档）；recover-fanart.yml 手动触发
-- daily-report.yml 定时已停用，仅手动备用（报告改会话内订阅生成）
+- daily-report.yml 已删除（定时停用后 workflow 亦不复存在，无手动备用；报告改会话内订阅生成）
 
 ### 日服 Discord 接入（2026-06-17 接入，已启用运行；07-10 实测每小时正常落档）
 bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver.py`）按 guild_id 自动分层，
@@ -108,7 +108,7 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 
 ## 已完成
 - [x] aggregator.py 基础架构（Reddit/Bilibili/Twitter/NGA/TapTap/Steam）
-- [x] index.html 前端页面（深色主题，平台筛选）
+- [x] ~~index.html 前端页面（深色主题，平台筛选）~~ 2026-08-21 守密人裁定下线并删除（站点 /news/ 页同时摘除）
 - [x] GitHub Actions 自动抓取
 - [x] B站 + Steam 数据源接通
 - [x] Discord 全量归档系统（537 频道）
@@ -176,7 +176,6 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
   `memory/project-status.md` News 节）
 
 ## 文件说明
-- `index.html` — 前端展示页面（纯 HTML/CSS/JS，深色主题）
 - `projects/news/scripts/aggregator.py` — 主采集管线（每小时自动运行）
 - `projects/news/scripts/global_collectors.py` — 全球 29 个平台零成本采集器集合（被 `collect_global.py` 和 `backfill_platforms.py` 引用）
 - `projects/news/scripts/taptap_collector.py` — TapTap Playwright 采集器（`global_collectors.py` 的依赖）

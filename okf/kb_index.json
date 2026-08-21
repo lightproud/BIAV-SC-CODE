@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21",
+  "generated": "2026-08-22",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,12 +7,12 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 396,
+    "concepts": 395,
     "edges": 425,
-    "terms": 7032,
+    "terms": 7025,
     "by_type": {
       "character": 72,
-      "dataset": 93,
+      "dataset": 92,
       "documentation": 163,
       "knowledge-pointer": 48,
       "reference": 17,
@@ -23,7 +23,7 @@
       "characters": 72,
       "community": 19,
       "memory": 51,
-      "news-output": 22,
+      "news-output": 21,
       "projects": 31,
       "resource": 131,
       "sources": 19,
@@ -31,7 +31,7 @@
       "wiki-data": 27
     },
     "by_tier": {
-      "skeleton": 132,
+      "skeleton": 131,
       "search": 264
     }
   },
@@ -54,7 +54,7 @@
     },
     "news-output": {
       "index": "/news-output/index.md",
-      "count": 22
+      "count": 21
     },
     "projects": {
       "index": "/projects/index.md",
@@ -2336,20 +2336,6 @@
       "section": "news-output",
       "tier": "skeleton",
       "degree": 1
-    },
-    "/news-output/news-output-feed.md": {
-      "type": "dataset",
-      "title": "输出展示层 · RSS/Atom 订阅",
-      "description": "24h 热点 RSS 2.0 订阅源。 抽样/展示用途，非全量档案层。",
-      "resource": "/projects/news/output/feed.xml",
-      "tags": [
-        "data_layer:output",
-        "aggregate",
-        "sampled"
-      ],
-      "section": "news-output",
-      "tier": "skeleton",
-      "degree": 0
     },
     "/news-output/news-output-google-play.md": {
       "type": "dataset",
@@ -10494,7 +10480,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -10857,7 +10842,6 @@
     ],
     "aggregate": [
       "/news-output/news-output-all.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-newsjs.md"
     ],
     "ai": [
@@ -11095,9 +11079,6 @@
       "/assets/persona-erica.md",
       "/projects/releases-treasure-map.md",
       "/wiki-data/wiki-data-cg-gallery.md"
-    ],
-    "atom": [
-      "/news-output/news-output-feed.md"
     ],
     "attachment": [
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
@@ -11902,7 +11883,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -12688,7 +12668,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -13558,9 +13537,6 @@
     ],
     "featureunlock": [
       "/wiki-data/wiki-data-feature-unlock.md"
-    ],
-    "feed": [
-      "/news-output/news-output-feed.md"
     ],
     "fetch": [
       "/assets/assets-chat-onboarding-snippet.md"
@@ -14655,7 +14631,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -15613,7 +15588,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -15766,7 +15740,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -16369,7 +16342,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -17295,9 +17267,6 @@
     "routing": [
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
-    "rss": [
-      "/news-output/news-output-feed.md"
-    ],
     "ruliweb": [
       "/community/community-ruliweb.md",
       "/news-output/news-output-ruliweb.md",
@@ -17347,7 +17316,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -18721,9 +18689,6 @@
     "xlsx": [
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md"
     ],
-    "xml": [
-      "/news-output/news-output-feed.md"
-    ],
     "yaml": [
       "/README.md"
     ],
@@ -19373,7 +19338,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -19692,7 +19656,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -20069,7 +20032,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -21535,7 +21497,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -22608,7 +22569,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -22925,7 +22885,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -23920,7 +23879,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -24458,7 +24416,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -25058,7 +25015,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -28627,7 +28583,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -29515,7 +29470,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -30214,7 +30168,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -31287,7 +31240,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -34127,7 +34079,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -34458,7 +34409,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -35084,7 +35034,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -35472,7 +35421,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -35956,7 +35904,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -36285,7 +36232,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -38203,7 +38149,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -38694,7 +38639,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -39389,7 +39333,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -39879,7 +39822,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -40071,7 +40013,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -40226,7 +40167,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -40664,7 +40604,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -41919,9 +41858,6 @@
     "热情": [
       "/characters/15560.md"
     ],
-    "热点": [
-      "/news-output/news-output-feed.md"
-    ],
     "热爱": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
@@ -42937,7 +42873,6 @@
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
       "/news-output/news-output-all.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-newsjs.md",
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
@@ -44574,7 +44509,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -44616,7 +44550,6 @@
     ],
     "示用": [
       "/news-output/news-output-all.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-newsjs.md"
     ],
     "示的": [
@@ -47394,9 +47327,6 @@
     "计错": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
-    "订阅": [
-      "/news-output/news-output-feed.md"
-    ],
     "认可": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
@@ -48442,7 +48372,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -48932,7 +48861,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -49234,7 +49162,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -50196,7 +50123,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -50374,7 +50300,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -50671,7 +50596,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -51182,9 +51106,6 @@
     "间线": [
       "/memory/morimens-context.md"
     ],
-    "阅源": [
-      "/news-output/news-output-feed.md"
-    ],
     "阅的": [
       "/projects/entry-readme.md"
     ],
@@ -51546,7 +51467,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -52126,7 +52046,6 @@
     ],
     "aggregate": [
       "/news-output/news-output-all.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-newsjs.md"
     ],
     "ai": [
@@ -52280,9 +52199,6 @@
     ],
     "assets": [
       "/projects/releases-treasure-map.md"
-    ],
-    "atom": [
-      "/news-output/news-output-feed.md"
     ],
     "attachment": [
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
@@ -53115,7 +53031,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -54199,7 +54114,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -54759,7 +54673,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -55321,9 +55234,6 @@
     "routing": [
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
-    "rss": [
-      "/news-output/news-output-feed.md"
-    ],
     "ruliweb": [
       "/community/community-ruliweb.md",
       "/news-output/news-output-ruliweb.md",
@@ -55342,7 +55252,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -56292,7 +56201,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -56616,7 +56524,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -57606,7 +57513,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
@@ -57891,9 +57797,6 @@
     "计规": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
     ],
-    "订阅": [
-      "/news-output/news-output-feed.md"
-    ],
     "讨论": [
       "/memory/memory-archive-pending-discussions.md",
       "/memory/memory-archive-storage-discussion.md"
@@ -57975,7 +57878,6 @@
       "/news-output/news-output-bahamut.md",
       "/news-output/news-output-bilibili.md",
       "/news-output/news-output-discord.md",
-      "/news-output/news-output-feed.md",
       "/news-output/news-output-google-play.md",
       "/news-output/news-output-newsjs.md",
       "/news-output/news-output-note-com.md",
