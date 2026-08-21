@@ -162,7 +162,7 @@ class TestFailureAggregation(unittest.TestCase):
         })
         # Isolate all output writes: main() now persists via news_common.dump_json_atomic
         # (temp file + os.replace), which bypasses builtins.open — so stub it out to a
-        # no-op, otherwise the test would clobber the real projects/news/output/*.json.
+        # no-op, otherwise the test would clobber the real run-dir *.json.
         with mock.patch.object(collect_global, "load_existing_news", return_value=[]), \
                 mock.patch.object(news_common, "dump_json_atomic", return_value=None):
             with self.assertRaises(SystemExit) as cm:

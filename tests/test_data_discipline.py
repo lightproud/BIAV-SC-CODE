@@ -1,10 +1,13 @@
 """Data-discipline semantic tests (test-hardening recommendation #4).
 
-CLAUDE.md §4 mandates that the project keep TWO data layers strictly separate
-and never interchangeable:
+CLAUDE.md §4 mandates that sampled data never be passed off as the full archive:
 
-    FULL ARCHIVE layer   projects/news/data/     真实完整数据
-    OUTPUT/DISPLAY layer  projects/news/output/  过滤选样（抽样）
+    FULL ARCHIVE layer   Record/Community/ (BIAV-SC-DATA)  真实完整数据 —— 唯一取数面
+    RUN-TIME intermediate  archive_layout.news_run_root()  过滤选样（抽样），不进 git
+
+The second row used to be the committed 输出展示层 `projects/news/output/`; 守密人
+2026-08-21 裁定整层删除，中间产物退回运行期工作根、单轮内被归档步吃掉。The ``data_layer``
+stamp still rides on those run-time payloads, so the invariants below are unchanged.
 
 Lesson #30: 16 sampled Discord messages were once treated as if they were the
 full 5,455 — a SEMANTIC error that high line-coverage does NOT catch. The tests
