@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-20T08:18:00+00:00",
+  "generated_at": "2026-08-21T08:20:00+00:00",
   "threshold_factor": 2.0,
   "grace_hours": 2.0,
   "watched": 21,
   "judged": 21,
   "unknown": 0,
-  "findings": 7,
+  "findings": 9,
   "entries": [
     {
       "workflow": "backfill-media.yml",
@@ -14,9 +14,9 @@
       ],
       "expected_interval_h": 24.0,
       "created_at": "2026-06-02T20:53:02.000Z",
-      "state": "ok",
+      "state": "stale",
       "last_success": "2026-08-18T09:57:22Z",
-      "note": "最近一次成功在 46.3h 前（阈值 50.0h）"
+      "note": "最近一次成功在 70.4h 前，超阈值 50.0h"
     },
     {
       "workflow": "backfill-news.yml",
@@ -26,7 +26,7 @@
       "expected_interval_h": 1.0,
       "created_at": "2026-04-05T05:18:19.000Z",
       "state": "ok",
-      "last_success": "2026-08-20T08:00:14Z",
+      "last_success": "2026-08-21T08:01:13Z",
       "note": "最近一次成功在 0.3h 前（阈值 4.0h）"
     },
     {
@@ -38,7 +38,7 @@
       "created_at": "2026-06-21T08:25:44.000Z",
       "state": "ok",
       "last_success": "2026-08-17T05:00:25Z",
-      "note": "最近一次成功在 75.3h 前（阈值 338.0h）"
+      "note": "最近一次成功在 99.3h 前（阈值 338.0h）"
     },
     {
       "workflow": "build-okf-bundle.yml",
@@ -48,7 +48,7 @@
       "expected_interval_h": 24.0,
       "created_at": "2026-06-21T06:32:39.000Z",
       "state": "ok",
-      "last_success": "2026-08-20T07:04:47Z",
+      "last_success": "2026-08-21T07:05:55Z",
       "note": "最近一次成功在 1.2h 前（阈值 50.0h）"
     },
     {
@@ -60,7 +60,7 @@
       "created_at": "2026-03-29T09:46:17.000Z",
       "state": "ok",
       "last_success": "2026-08-17T06:59:27Z",
-      "note": "最近一次成功在 73.3h 前（阈值 338.0h）"
+      "note": "最近一次成功在 97.3h 前（阈值 338.0h）"
     },
     {
       "workflow": "cleanup-stale-branches.yml",
@@ -71,7 +71,7 @@
       "created_at": "2026-04-26T14:46:41.000Z",
       "state": "ok",
       "last_success": "2026-08-17T02:53:55Z",
-      "note": "最近一次成功在 77.4h 前（阈值 338.0h）"
+      "note": "最近一次成功在 101.4h 前（阈值 338.0h）"
     },
     {
       "workflow": "collect-comments.yml",
@@ -80,9 +80,9 @@
       ],
       "expected_interval_h": 24.0,
       "created_at": "2026-06-03T05:00:03.000Z",
-      "state": "ok",
+      "state": "stale",
       "last_success": "2026-08-18T07:47:50Z",
-      "note": "最近一次成功在 48.5h 前（阈值 50.0h）"
+      "note": "最近一次成功在 72.5h 前，超阈值 50.0h"
     },
     {
       "workflow": "collect-fanart.yml",
@@ -92,7 +92,7 @@
       "expected_interval_h": 24.0,
       "created_at": "2026-06-11T00:45:07.000Z",
       "state": "ok",
-      "last_success": "2026-08-20T07:54:01Z",
+      "last_success": "2026-08-21T07:54:34Z",
       "note": "最近一次成功在 0.4h 前（阈值 50.0h）"
     },
     {
@@ -104,7 +104,7 @@
       "created_at": "2026-07-12T13:14:54.000Z",
       "state": "ok",
       "last_success": "2026-08-02T06:15:20Z",
-      "note": "最近一次成功在 434.0h 前（阈值 1490.0h）"
+      "note": "最近一次成功在 458.1h 前（阈值 1490.0h）"
     },
     {
       "workflow": "community-platform-backup.yml",
@@ -115,7 +115,7 @@
       "created_at": "2026-07-19T07:27:35.000Z",
       "state": "ok",
       "last_success": "2026-08-03T07:52:40Z",
-      "note": "最近一次成功在 408.4h 前（阈值 1490.0h）"
+      "note": "最近一次成功在 432.5h 前（阈值 1490.0h）"
     },
     {
       "workflow": "dead-man-switch.yml",
@@ -136,7 +136,7 @@
       "expected_interval_h": 24.0,
       "created_at": "2026-03-29T09:02:38.000Z",
       "state": "ok",
-      "last_success": "2026-08-19T09:08:46Z",
+      "last_success": "2026-08-20T09:09:34Z",
       "note": "最近一次成功在 23.2h 前（阈值 50.0h）"
     },
     {
@@ -148,7 +148,7 @@
       "created_at": "2026-06-17T07:24:44.000Z",
       "state": "stale",
       "last_success": "2026-08-18T10:02:59Z",
-      "note": "最近一次成功在 46.3h 前，超阈值 8.0h"
+      "note": "最近一次成功在 70.3h 前，超阈值 8.0h"
     },
     {
       "workflow": "discord-archive-volunteer.yml",
@@ -159,7 +159,7 @@
       "created_at": "2026-06-16T14:02:26.000Z",
       "state": "stale",
       "last_success": "2026-08-18T09:48:38Z",
-      "note": "最近一次成功在 46.5h 前，超阈值 8.0h"
+      "note": "最近一次成功在 70.5h 前，超阈值 8.0h"
     },
     {
       "workflow": "discord-archive.yml",
@@ -171,7 +171,7 @@
       "created_at": "2026-03-29T09:08:30.000Z",
       "state": "stale",
       "last_success": "2026-08-18T10:08:49Z",
-      "note": "最近一次成功在 46.2h 前，超阈值 8.0h"
+      "note": "最近一次成功在 70.2h 前，超阈值 8.0h"
     },
     {
       "workflow": "discord-history-backfill.yml",
@@ -182,7 +182,7 @@
       "created_at": "2026-04-05T05:49:21.000Z",
       "state": "stale",
       "last_success": "2026-08-18T10:09:28Z",
-      "note": "最近一次成功在 46.1h 前，超阈值 8.0h"
+      "note": "最近一次成功在 70.2h 前，超阈值 8.0h"
     },
     {
       "workflow": "refresh-claude-code-prompts.yml",
@@ -193,7 +193,7 @@
       "created_at": "2026-07-04T22:31:56.000Z",
       "state": "stale",
       "last_success": "2026-08-03T06:29:43Z",
-      "note": "最近一次成功在 409.8h 前，超阈值 338.0h"
+      "note": "最近一次成功在 433.8h 前，超阈值 338.0h"
     },
     {
       "workflow": "secret-scan.yml",
@@ -204,7 +204,7 @@
       "created_at": "2026-07-19T02:53:46.000Z",
       "state": "ok",
       "last_success": "2026-08-18T19:17:19Z",
-      "note": "最近一次成功在 37.0h 前（阈值 338.0h）"
+      "note": "最近一次成功在 61.0h 前（阈值 338.0h）"
     },
     {
       "workflow": "store-patrol.yml",
@@ -214,7 +214,7 @@
       "expected_interval_h": 24.0,
       "created_at": "2026-07-18T06:59:41.000Z",
       "state": "ok",
-      "last_success": "2026-08-20T07:55:22Z",
+      "last_success": "2026-08-21T07:55:12Z",
       "note": "最近一次成功在 0.4h 前（阈值 50.0h）"
     },
     {
@@ -226,7 +226,7 @@
       "created_at": "2026-03-24T06:13:31.000Z",
       "state": "stale",
       "last_success": "2026-08-18T09:32:44Z",
-      "note": "最近一次成功在 46.8h 前，超阈值 8.0h"
+      "note": "最近一次成功在 70.8h 前，超阈值 8.0h"
     },
     {
       "workflow": "weekly-heavy-deps-test.yml",
@@ -237,7 +237,7 @@
       "created_at": "2026-07-12T03:38:17.000Z",
       "state": "ok",
       "last_success": "2026-08-17T08:06:07Z",
-      "note": "最近一次成功在 72.2h 前（阈值 338.0h）"
+      "note": "最近一次成功在 96.2h 前（阈值 338.0h）"
     }
   ]
 }
