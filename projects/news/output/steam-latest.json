@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-21T18:34:22.664353+00:00",
+  "collected_at": "2026-08-21T19:59:11.935795+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -19,6 +19,21 @@
       "review": "un juego que todo el mundo debería jugar al menos una vez en su vida",
       "timestamp_created": 1787289625,
       "playtime_forever": 4829
+    },
+    {
+      "source": "steam",
+      "time": "2026-08-21T18:00:53+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩好玩好玩好玩好玩\r\n类似杀戮尖塔",
+      "summary": "好玩好玩好玩好玩好玩\r\n类似杀戮尖塔",
+      "url": "https://steamcommunity.com/profiles/76561199070944642/recommended/3052450",
+      "author": "76561199070944642",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩好玩好玩好玩好玩\r\n类似杀戮尖塔",
+      "timestamp_created": 1787335253,
+      "playtime_forever": 2573
     },
     {
       "source": "steam",

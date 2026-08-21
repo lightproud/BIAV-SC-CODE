@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T18:35:15.862293+00:00",
+  "updated_at": "2026-08-21T20:00:02.841998+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1149
   },
   "validation_drops": {
-    "generated_at": "2026-08-21T18:34:22.691230+00:00",
+    "generated_at": "2026-08-21T19:59:11.962240+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -18,15 +18,15 @@
       "last_success_date": "2026-08-21",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 1,
-      "total_items": 3766,
+      "total_items": 3768,
       "errors": []
     },
     "steam": {
       "level": "active",
-      "last_success_date": "2026-08-21",
+      "last_success_date": "2026-08-22",
       "last_check_date": null,
-      "consecutive_silent_days": 1,
-      "total_items": 5510,
+      "consecutive_silent_days": 0,
+      "total_items": 5511,
       "errors": []
     },
     "taptap": {
@@ -50,15 +50,15 @@
       "last_success_date": "2026-08-22",
       "last_check_date": "2026-08-22",
       "consecutive_silent_days": 0,
-      "total_items": 3517,
+      "total_items": 3518,
       "errors": []
     },
     "reddit": {
       "level": "active",
-      "last_success_date": "2026-08-22",
+      "last_success_date": "2026-08-17",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 0,
-      "total_items": 4027,
+      "consecutive_silent_days": 5,
+      "total_items": 4006,
       "errors": []
     },
     "official": {
@@ -111,10 +111,10 @@
     },
     "pixiv": {
       "level": "active",
-      "last_success_date": "2026-08-22",
+      "last_success_date": "2026-08-21",
       "last_check_date": "2026-08-22",
-      "consecutive_silent_days": 0,
-      "total_items": 656,
+      "consecutive_silent_days": 1,
+      "total_items": 655,
       "errors": []
     },
     "note_com": {
@@ -154,7 +154,7 @@
       "last_success_date": "2026-08-22",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 4066,
+      "total_items": 4053,
       "errors": []
     },
     "youtube_comments": {
