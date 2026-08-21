@@ -54,10 +54,15 @@ jobs:
           if [ -z "${DATA_TOKEN:-}" ]; then
             echo "::error::secret BIAV_SC_DATA_TOKEN 未配置"; exit 1
           fi
-          git config --global credential.helper store
-          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
-          chmod 600 ~/.git-credentials
-          git clone https://github.com/lightproud/BIAV-SC-DATA.git data-repo
+          # 凭据内联进 remote URL，不再依赖 credential.helper store。
+          # 2026-08-18 09:48~13:07 之间起，store helper 在 push 时不再返回任何凭据
+          # （fatal: could not read Username for 'https://github.com'），而 pull 因
+          # DATA 仓公开、匿名可读照常成功——于是所有写 DATA 仓的作业从那一刻起全部
+          # 卡在 commit/push，社区归档整整停摆 3 天而无人察觉。同窗口内本仓零代码改动，
+          # 变的是 runner 环境（观测到 git 2.54.0 -> 2.55.0）。
+          # URL 内联与 git 版本、helper 实现无关；secret 值由 Actions 在日志中遮蔽，
+          # 且仅存在于本次运行的临时 .git/config 内。
+          git clone "https://x-access-token:${DATA_TOKEN}@github.com/lightproud/BIAV-SC-DATA.git" data-repo
 
       - name: Run cold compress
         run: |

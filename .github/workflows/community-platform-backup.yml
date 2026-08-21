@@ -55,11 +55,11 @@ jobs:
           if [ -z "${DATA_TOKEN:-}" ]; then
             echo "::error::secret BIAV_SC_DATA_TOKEN 未配置"; exit 1
           fi
-          git config --global credential.helper store
-          printf 'https://x-access-token:%s@github.com\n' "$DATA_TOKEN" > ~/.git-credentials
-          chmod 600 ~/.git-credentials
+          # 凭据内联进 remote URL，不再依赖 credential.helper store（2026-08-21 裁定）。
+          # 详见 discord-archive.yml 同位注释：08-18 起 store helper 在 push 时不再
+          # 返回任何凭据，所有写 DATA 仓的作业整整停摆 3 天。
           # 只读用途，--depth 1 足够（要的是当前全量内容，不是历史）
-          git clone --depth 1 https://github.com/lightproud/BIAV-SC-DATA.git data-repo
+          git clone --depth 1 "https://x-access-token:${DATA_TOKEN}@github.com/lightproud/BIAV-SC-DATA.git" data-repo
 
       - name: Resolve the community root（单一真相源）
         id: root
