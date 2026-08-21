@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T20:00:02.841998+00:00",
+  "updated_at": "2026-08-21T21:23:34.397792+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1149
   },
   "validation_drops": {
-    "generated_at": "2026-08-21T19:59:11.962240+00:00",
+    "generated_at": "2026-08-21T21:22:41.059037+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -15,10 +15,10 @@
   "platforms": {
     "bilibili": {
       "level": "active",
-      "last_success_date": "2026-08-21",
+      "last_success_date": "2026-08-22",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 1,
-      "total_items": 3768,
+      "consecutive_silent_days": 0,
+      "total_items": 3769,
       "errors": []
     },
     "steam": {
@@ -39,10 +39,10 @@
     },
     "discord": {
       "level": "active",
-      "last_success_date": "2026-08-18",
+      "last_success_date": "2026-08-21",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 4,
-      "total_items": 9706384,
+      "consecutive_silent_days": 1,
+      "total_items": 9804488,
       "errors": []
     },
     "youtube": {
@@ -50,7 +50,7 @@
       "last_success_date": "2026-08-22",
       "last_check_date": "2026-08-22",
       "consecutive_silent_days": 0,
-      "total_items": 3518,
+      "total_items": 3519,
       "errors": []
     },
     "reddit": {
@@ -82,7 +82,7 @@
       "last_success_date": "2026-08-22",
       "last_check_date": "2026-08-22",
       "consecutive_silent_days": 0,
-      "total_items": 13158,
+      "total_items": 13160,
       "errors": []
     },
     "bahamut": {
@@ -106,7 +106,7 @@
       "last_success_date": "2026-08-21",
       "last_check_date": "2026-08-22",
       "consecutive_silent_days": 1,
-      "total_items": 1455,
+      "total_items": 1456,
       "errors": []
     },
     "pixiv": {
@@ -154,15 +154,15 @@
       "last_success_date": "2026-08-22",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 4053,
+      "total_items": 4063,
       "errors": []
     },
     "youtube_comments": {
       "level": "active",
-      "last_success_date": "2026-08-18",
+      "last_success_date": "2026-08-22",
       "last_check_date": null,
-      "consecutive_silent_days": 4,
-      "total_items": 2663,
+      "consecutive_silent_days": 0,
+      "total_items": 2765,
       "errors": []
     }
   }
