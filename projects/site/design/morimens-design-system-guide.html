@@ -126,7 +126,7 @@
 
   <h3>部署方式（自动）</h3>
   <p>不再手动 cp 到根目录。push 到 main 触发 <code>.github/workflows/deploy-site.yml</code>，由 workflow 在 dist/ 中组装
-  site + wiki + news + kb 后，用 <code>actions/upload-pages-artifact</code> 上传、<code>actions/deploy-pages</code> 部署
+  site + wiki + kb 后，用 <code>actions/upload-pages-artifact</code> 上传、<code>actions/deploy-pages</code> 部署
   （T62，2026-07-22 起；此前的 <code>peaceiris/actions-gh-pages@v4</code> 推 <code>gh-pages</code> 分支方式已退役）。</p>
 
   <pre><code># 触发路径（任一匹配即触发部署）
@@ -136,14 +136,12 @@ projects/wiki/package.json
 projects/wiki/package-lock.json
 projects/wiki/scripts/generate_wiki_pages.py
 projects/wiki/data/processed/**
-projects/news/index.html
 Public-Info-Pool/Resource/proposal/**
 okf/visualizer.html
 .github/workflows/deploy-site.yml
 
 # 另有每日 cron 兜底（08:35 UTC / 北京 16:35）+ workflow_dispatch。
-# 采集器重写的 projects/news/output/news.json 提交带 [skip ci]，
-# 放进 paths 也永不触发，只能靠 cron 刷新 /news/ 数据。</code></pre>
+# /news/ 展示页已于 2026-08-21 下线删除，dist 只组装 site + wiki + kb。</code></pre>
 
   <h3>当前状态（2026-04-26 修订）</h3>
   <table>

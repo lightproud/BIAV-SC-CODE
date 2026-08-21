@@ -71,7 +71,7 @@ https://lightproud.github.io/BIAV-SC-CODE/
 ├── /kb/      ← okf/visualizer.html（知识库关系图，部署期 cp 成 kb/index.html；okf/ 为唯一真值源，非 public/ 下本体）
 ├── /design/  ← projects/site/design/（设计系统 Token + 落地指南，对外可访问）
 ├── /wiki/    ← projects/wiki/docs/.vitepress/dist/*（Code-wiki 维护，VitePress base: /BIAV-SC-CODE/wiki/）
-├── /news/    ← projects/news/index.html + 数据（Code-news 维护）
+│          （原 /news/ 展示页 2026-08-21 守密人裁定下线删除，采集与归档不受影响）
 └── /docs/    ← Public-Info-Pool/Resource/proposal/biav-project-plan-202603.{html,pdf}（如存在；deliverables/ 已 2026-06-21 迁此）
 ```
 
@@ -101,10 +101,11 @@ https://lightproud.github.io/BIAV-SC-CODE/
 push to main 且路径匹配（`deploy-site.yml` paths）：`projects/site/**`、
 `projects/wiki/docs/**`、`projects/wiki/package.json`、`projects/wiki/package-lock.json`、
 `projects/wiki/scripts/generate_wiki_pages.py`、`projects/wiki/data/processed/**`、
-`projects/news/index.html`、`Public-Info-Pool/Resource/proposal/**`（原 `deliverables/**`，2026-06-21 迁移）、
+`Public-Info-Pool/Resource/proposal/**`（原 `deliverables/**`，2026-06-21 迁移）、
 `okf/visualizer.html`、`.github/workflows/deploy-site.yml`。
-另有每日 cron 兜底（`35 8 * * *` UTC / 北京 16:35）刷新 `/news/` 数据——采集器重写的
-`projects/news/output/news.json` 提交带 `[skip ci]`，放进 paths 也永不触发。
+另有每日 cron 兜底（`35 8 * * *` UTC / 北京 16:35）——2026-08-21 前它的理由是刷新 `/news/`
+数据（采集提交带 `[skip ci]`，放进 paths 也永不触发）；该展示页已于同日下线删除，cron 现行
+理由是 wiki 构建期从 Release 拉美术资产 + 数据层推导页面，需一条与 push 触发面无关的日更兜底。
 也支持 `workflow_dispatch` 手动触发。旧 `site/**` 路径已不在触发列表（与下文 2026-04-20 B1a 清理记述一致）。
 
 ## 文件位置说明

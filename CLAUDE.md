@@ -91,15 +91,17 @@
 银芯作为黑池的「眼睛和耳朵」，靠以下机制运转：
 
 1. **采集三层**（使命#1，2026-06-21 守密人定性）：采集层非一锅，按职能分三层、产出三个不同目标——
-   **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产输出展示层流快照，每 3 小时一轮，2026-07-11 降频裁定）；
+   **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产**运行期**流快照，每 3 小时一轮，2026-07-11 降频裁定）；
    **T2 数据层归档**（声明式归档引擎 `projects/news/scripts/archive_engine.py` 读 `archive_sources.json` 干活；
    2026-06-21 de-tier 后 discord **全量永驻数据仓 BIAV-SC-DATA** `Record/Community/`（`after_archive: keep`，不再驱逐；
    2026-07-20 T62 P2-5 §7甲 数据湖迁出 code 仓、经 `BIAV_SC_DATA_ROOT` 读，见 §5.2）；
    fanart 等二进制仍滚动归档进 Releases「社区二创」；加新来源 = 注册表加一段配置、零新代码；
    T2 **绝不并入 T1**——节拍刻意错峰、产出目标不同，且 archiver 落档 → T1 读档入流有上游依赖）；
    **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media` 等）。
-   总数据流：原始数据 → 全量档案层（社区 text `Public-Info-Pool/Record/Community/`）→ 过滤选样进输出展示层
-   (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
+   总数据流：原始数据 → **运行期工作根**（`archive_layout.news_run_root()`，默认 `projects/news/run/`，
+   不进 git）→ 全量档案层（社区 text `Public-Info-Pool/Record/Community/`）→ 单向送黑池。机器提交带
+   `[skip ci]` 防触发循环。**原「输出展示层」（news 下 output 目录）2026-08-21 守密人裁定整层删除**，
+   跨轮状态（`source-health.json` / `validation-drops.json`）迁 `projects/news/data/` 照常进 git。
 2. **wiki 自举闭环**（原使命#2 载体；**2026-07-12 使命取消、子项目冻结**——已建成果保留
    不删不派发，以下为冻结时点状态）：客户端解包 Lua → 解包 text 原始字段（原
    Reference 层 Game-Unpacked 目录，**2026-07-12 守密人裁定整层删除**——wiki 冻结后
@@ -210,16 +212,16 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ## §4 数据纪律（硬约束）
 
-### §4.1 数据层 vs 输出层
+### §4.1 数据层 vs 运行期中间态（2026-08-21 输出展示层删除后订正）
 
-社区数据存在**全量档案层**（社区 text `Public-Info-Pool/Record/Community/`，真实全量数据）vs **输出展示层**
-（`projects/news/output/`，过滤选样），两者语义不可互换。
-
-- **长窗口分析 / 完整性审计 / 情感长尾 / 历史回溯** → **必须用全量档案层**
-- **日报展示 / 快查 / 热度榜** → 用输出层即可
-
-把输出层当全量数据用 = 抽样率失真（典型反例：lesson #30 把 Discord 16 条当全量
-5,455 条，得出 0.27% 抽样率的假命题）。**所有报告 / 审计 / 周报场景必须先确认数据层。**
+社区数据的**唯一在库数据层 = 全量档案层**（社区 text `Public-Info-Pool/Record/Community/`，
+经 `BIAV_SC_DATA_ROOT` 读）。**长窗口 / 审计 / 情感长尾 / 回溯 / 日报 / 快查 / 热度榜一律取自它。**
+原与之并列的**输出展示层**（`projects/news/output/*-latest.json`，过滤选样）已于 2026-08-21
+守密人裁定**整层删除**：管线仍在运行期工作根（`archive_layout.news_run_root()`，默认
+`projects/news/run/`，内容 gitignore）产同名中间文件，但**单轮内产生、单轮内被归档步吃掉**，
+不进 git、不对会话与黑池开放。纪律由来仍在：把抽样当全量 = 抽样率失真（lesson #30 把
+Discord 16 条当全量 5,455 条，得出 0.27% 抽样率的假命题）——删层把它从「人记得别拿错」
+升格为「拿不到错的那份」。
 
 ### §4.2 事实采信三规则（lesson #32）
 
@@ -266,7 +268,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
   跨档案检索冷层给 `rg` 加 **`-z`**（discord 全冷层 1.9G 实测 ~8 秒，热层裸文件照常秒回）。
   **频道反查唯一入口 = `{区服}/channel_index.json`**（id→{name,type,dir,status}；status ∈ active / offline / orphan，缺省按 active——2026-07-12 T35 对账后每个归档目录均可反查，orphan 为下线早于索引入库的历史目录、名字不可考）；索引为**合并式更新**（下线条目保留标 offline，不再覆盖蒸发），对账工具 `projects/news/scripts/discord_reconcile.py`（扫孤儿目录、从 JSONL 恢复完整 channel_id 登记，`--dry-run` 只报告）
 - Discord 每日纯统计：`Public-Info-Pool/Record/Community/discord/{区服}/activity_daily/{date}.json`（主服在 global 区服目录）
-- 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
+- 输出展示层：**2026-08-21 守密人裁定整层删除**（原 `projects/news/output/*-latest.json`）；管线中间态改落运行期工作根（不进 git，见 §4.1），快查 / 日报一律回全量档案层
 - **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史现驻数据仓 BIAV-SC-DATA `Record/Community/discord`**（2026-06-21 de-tier 退役月度 git_rm；2026-07-20 T62 P2-5 §7甲 迁出 code 仓），经 `BIAV_SC_DATA_ROOT` 读、无需 Release 还原。重建：`BIAV_SC_DATA_ROOT=<data仓> python3 scripts/build_community_index.py`（消费方双布局：新路径优先、回落旧）。分词用领域词典 FMM，top_terms 为粗粒度主题信号
 - 解包层：text 层（原 Reference 层 Game-Unpacked 目录）**2026-07-12 守密人裁定整层删除**
   （**唯一还原路径 = Releases「解包」桶二进制重解**，管线 `extract-game-data.yml` +
@@ -305,7 +307,7 @@ brain-in-a-vat/
 │   ├── data/                      # 角色卡 / 采访 / 叙事 / 设计决策 JSON（见 §5.1）
 │   └── images/                    # 立绘 / CG 等公开图像资产
 ├── projects/                      # 子项目 + 工程产物（各有 CONTEXT.md，动手前先读）
-│   ├── news/   # 使命#1 黑池信息入口：采集器 + 全量档案 + 输出展示层
+│   ├── news/   # 使命#1 黑池信息入口：采集器 + 全量档案（输出展示层 2026-08-21 整层删除）
 │   ├── wiki/   # 已冻结（2026-07-12 原使命#2 取消，成果保留）：VitePress 站点 + 72 角色数据库
 │   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
 │   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
@@ -354,7 +356,7 @@ BPT 换装完成后冻结，挂账 T78），状态与两轴保真模型见 `memo
   **非以对外跨组织互操作为目标**——OKF 官方「跨组织互操作」主卖点对银芯打折。
 - **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色，唯一本体层）；(2) **放指针不放本体**
   （除 characters 外所有层仅持 `resource` 指针，本体原地不动，呼应 RELEASES.md「藏宝图」与
-  「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（指针用 `tags: data_layer:*` 标层，防 lesson #30）。
+  「只指针不复刻」）；(3) **层身份显式标注**（指针用 `tags: data_layer:*` 标层，防 lesson #30；输出展示层 2026-08-21 删除后 bundle 内只剩 `full_archive` / `curated`，原 news-output 指针层同日退役）。
 - **全仓知识组织（守密人 2026-07-04「用 ultracode 组织整个仓库所有知识」裁定）**：
   bundle 从 4 层扩到覆盖全仓知识域（characters 唯一本体层，余层放指针）。
   **精确层清单 / 概念数 / tier 归属以 `kb_overview` 运行时为准**（不在此手抄——层随源数据增长、手抄即漂移，2026-07-05 §八 范例）。
@@ -450,7 +452,7 @@ main 可达校验 / 资产逐件验收三重防护）移至压扁后提交，Rel
 | 知识库有效性记分卡 | `python3 scripts/kb_eval.py`（黄金问题集 hit@k + MRR；需求侧有效性回归见 `tests/test_kb_golden.py`）|
 | 知识库使用遥测报告 | `python3 scripts/kb_telemetry.py`（借阅记录：调用分布 / 死概念 / 零命中查询；日志按日落 git 内 `Public-Info-Pool/Record/kb-usage/{date}.jsonl` **跨会话累计**，2026-07-11 方案甲裁定，路径唯一源 = `kb_telemetry.KB_USAGE_DIR`）；`--harvest` 把零命中查询回流成 held-out 难题候选（闭合评判 #1↔#2）|
 | 知识库反事实 A/B | `python3 scripts/kb_ab.py`（KB 结构化检索 vs 朴素 grep 同语料对照，含**最强 grep** 反稻草人臂；回归见 `tests/test_kb_ab.py`：KB 不劣于 grep + 联想题即便对最强 grep 仍严格胜）|
-| 知识库质性能力 probe | `python3 scripts/kb_qual.py`（测 grep 给不了知识的四维：层判定/身份/边界/关系类型，hit@k 测不出的 KB 真价值；回归见 `tests/test_kb_qual.py`）|
+| 知识库质性能力 probe | `python3 scripts/kb_qual.py`（测 grep 给不了知识的三维：身份/边界/关系类型，hit@k 测不出的 KB 真价值；原第①维「层判定」2026-08-21 随输出展示层删除退役——语料里不再有双层平台，指标恒 0/0；回归见 `tests/test_kb_qual.py`）|
 | 知识库黄金集图驱动生成 | `python3 scripts/kb_golden_gen.py`（从图的带类型边自动生成数百题黄金集，边即真值；规模化复现 KB vs grep 差距；回归见 `tests/test_kb_golden_generated.py`）|
 | 向量腿语义铁证 | `python3 scripts/kb_semantic_ab.py`（paraphrase-recall harness：换说法/零共享 token 查询，向量独胜 grep+脊柱；黄金集 `tests/kb_semantic_golden.jsonl`；stub 零网络验管线/负控，**真胜负需 CI Voyage** `kb-semantic-proof.yml`；回归 `tests/test_kb_semantic_ab.py`）|
 | **Hermes 周更例程**（使命#2 上游跟随）| `python3 projects/black-pool-agent/build/sync_upstream.py probe\|run\|changelog\|announce`（**探版 / 一键闭环（追踪更新→审核补丁→换装后回归网）/ 变更清单 / 公告**；退出码 3 = 补丁审核未过、4 = 回归网红，均需人工接手。基底体检（上游套件约 4.5h）不在链上，交 CI `hermes-upstream-suite.yml` 异步跑、台账外失败自动开 issue）。每周一 00:00 北京（Routine cron `0 16 * * 0`）起新会话照 `projects/black-pool-agent/WEEKLY-UPDATE.md` 执行：全绿即直推 main → 触发 `assemble-black-pool-bundle.yml` 出私有版整包 → 公告 + BPA 更新指南落 `Public-Info-Pool/Resource/repo-engineering/`（守密人 2026-08-09 四裁）。守卫 `tests/test_hermes_weekly_update.py` |

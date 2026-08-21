@@ -27,8 +27,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-OUTPUT_DIR = REPO_ROOT / 'projects' / 'news' / 'output'
-HEALTH_PATH = OUTPUT_DIR / 'source-health.json'
+OUTPUT_DIR = archive_layout.news_run_root()          # 运行期中间态（不进 git）
+HEALTH_PATH = archive_layout.news_state_root() / 'source-health.json'  # 跨轮状态（进 git）
 
 # ============================================================
 # 1. Engagement 归一化

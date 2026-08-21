@@ -290,7 +290,7 @@ Light 当前在 L3.5。L3→L4 是最难的跳跃，需要同时完成三件事�
   同人图 15:10 / arca 例程 15:37，均北京时间，cron 落地 UTC 07 点档）
 
 ### 周检档（会话内人工，每周一次，约 15 分钟）
-- 读 `projects/news/output/source-health.json`：degraded / never 源有无新增；
+- 读 `projects/news/data/source-health.json`（2026-08-21 输出展示层删除后迁此）：degraded / never 源有无新增；
   `stalled_leaves`（区服/类型叶级断档，2026-07-10 起有此字段）有无新叶；
   validation 丢弃计数有无异常
 - `git log --oneline -20` 确认机器提交节奏无断档

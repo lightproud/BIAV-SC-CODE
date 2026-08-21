@@ -14,15 +14,15 @@
 | `data/VERSION.md` | 事实圣经版本追踪 | 每次数据变更 | Code-wiki |
 | `data/validate.py` | 事实圣经校验脚本 | 按需 | Code-wiki |
 
-## 运营数据（projects/news/output/）
+## 运营数据（全量档案层 Record/Community/）
 
-社区聚合数据已迁移至 `projects/news/output/`，不再存放于 assets 目录。
+社区聚合数据在全量档案层 `Record/Community/`（BIAV-SC-DATA，经 `BIAV_SC_DATA_ROOT`），不再存放于 assets 目录。原输出展示层 `projects/news/output/*-latest.json` 已于 2026-08-21 守密人裁定整层删除。
 
 | 文件 | 说明 | 更新频率 | 来源 |
 |------|------|----------|------|
-| `projects/news/output/news.json` | 社区热点聚合数据 | 每小时（Actions） | Code-news |
-| `projects/news/output/all-latest.json` | 全平台最新社区数据（合并） | 每小时 | Code-news |
-| `projects/news/output/{source}-latest.json` | 各源选样（13 个 source 文件，热度阈值 + 时窗过滤） | 每小时 | Code-news |
+| `Record/Community/{platform}/{date}.json` | 社区全量档案（唯一取数面，经 `BIAV_SC_DATA_ROOT`） | 每 3 小时（Actions） | Code-news |
+| `projects/news/data/source-health.json` | 采集健康跨轮状态（沉默降级 / 休眠判定） | 每 3 小时 | Code-news |
+| 运行期 news.json / *-latest.json | 管线中间态，单轮内产生消费、不进 git | 每 3 小时 | Code-news |
 
 ## Wiki 数据（projects/wiki/data/）
 
