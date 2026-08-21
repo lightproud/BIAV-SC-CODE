@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T03:50:47.140844+00:00",
+  "updated_at": "2026-08-21T06:42:59.986594+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1148
   },
   "validation_drops": {
-    "generated_at": "2026-08-21T03:50:00.356854+00:00",
+    "generated_at": "2026-08-21T06:42:16.686828+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -18,7 +18,7 @@
       "last_success_date": "2026-08-21",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 3770,
+      "total_items": 3765,
       "errors": []
     },
     "steam": {
@@ -26,7 +26,7 @@
       "last_success_date": "2026-08-21",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5509,
+      "total_items": 5511,
       "errors": []
     },
     "taptap": {
@@ -95,10 +95,10 @@
     },
     "appstore": {
       "level": "active",
-      "last_success_date": "2026-08-19",
+      "last_success_date": "2026-08-15",
       "last_check_date": "2026-08-21",
-      "consecutive_silent_days": 2,
-      "total_items": 756,
+      "consecutive_silent_days": 6,
+      "total_items": 753,
       "errors": []
     },
     "google_play": {
@@ -111,10 +111,10 @@
     },
     "pixiv": {
       "level": "active",
-      "last_success_date": "2026-08-20",
+      "last_success_date": "2026-08-21",
       "last_check_date": "2026-08-21",
-      "consecutive_silent_days": 1,
-      "total_items": 653,
+      "consecutive_silent_days": 0,
+      "total_items": 654,
       "errors": []
     },
     "note_com": {

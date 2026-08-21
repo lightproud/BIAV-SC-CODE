@@ -1,22 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-08-21T03:50:00.337041+00:00",
+  "collected_at": "2026-08-21T06:42:16.667261+00:00",
   "source": "youtube",
   "data_layer": "output",
   "item_count": 13,
   "items": [
-    {
-      "source": "youtube",
-      "time": "2026-08-20T05:36:19Z",
-      "lang": "",
-      "title": "【Morimens】Playing a new gacha game everyday - day 7『Rina Astera』#augacha",
-      "summary": "lovecwaft ☆Twitter: https://twitter.com/RinaAstera ☆Twitch: https://www.twitch.tv/rinaastera ☆TikTok: ...",
-      "url": "https://www.youtube.com/watch?v=gpcJUsK2Mcc",
-      "author": "Rina Astera Ch.",
-      "engagement": 655,
-      "media_url": "https://i.ytimg.com/vi/gpcJUsK2Mcc/hqdefault.jpg",
-      "content_type": "video"
-    },
     {
       "source": "youtube",
       "time": "2026-08-20T14:37:10Z",
@@ -25,7 +13,7 @@
       "summary": "Don't know how long. Will be doing other stuff too.",
       "url": "https://www.youtube.com/watch?v=RTRY-pUGdkA",
       "author": "Flares117",
-      "engagement": 338,
+      "engagement": 347,
       "media_url": "https://i.ytimg.com/vi/RTRY-pUGdkA/hqdefault.jpg",
       "content_type": "video"
     },
@@ -43,14 +31,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-08-20T06:12:23Z",
+      "time": "2026-08-21T06:04:28Z",
       "lang": "",
-      "title": "모리멘스 (망각전야) - 피해증폭 침식로탄 예제",
-      "summary": "힘이 부족하면 힘이 부족한 게 아닌지 고민해봅시다 8/3 시즌 융재금구 W1A5.",
-      "url": "https://www.youtube.com/watch?v=4FJAYqPZONg",
-      "author": "때까치",
-      "engagement": 23,
-      "media_url": "https://i.ytimg.com/vi/4FJAYqPZONg/hqdefault.jpg",
+      "title": "SPEEDRUN DE MORIMENS y todo por SAYA",
+      "summary": "CANAL PRINCIPAL: https://www.youtube.com/channel/UCSUybusSZwo3rWPdbLZgwIA CANAL DE TWITCH: ...",
+      "url": "https://www.youtube.com/watch?v=yYAuMtQ9TpI",
+      "author": "El Rookieverso Streams",
+      "engagement": 112,
+      "media_url": "https://i.ytimg.com/vi/yYAuMtQ9TpI/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -99,6 +87,18 @@
       "author": "霏憂【ひゅう】",
       "engagement": 3,
       "media_url": "https://i.ytimg.com/vi/iZMmT8kicO0/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-08-21T05:02:40Z",
+      "lang": "",
+      "title": "[Morimens] Trying Morimens JP Edition",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=RhypBo1hApA",
+      "author": "kizunoV",
+      "engagement": 2,
+      "media_url": "https://i.ytimg.com/vi/RhypBo1hApA/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
