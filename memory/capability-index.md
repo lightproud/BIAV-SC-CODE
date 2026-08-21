@@ -3,7 +3,7 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-08-18
+- 生成日期：2026-08-22
 - 功能总数：**161**
 - 脚本可达性：活 82 / 仅测试 0 / 孤儿 0
 
@@ -230,7 +230,7 @@
   `projects/news/scripts/archive_engine.py`
 - **`archive_layout.py`** _[活:command+workflow]_ — archive_layout.py — 归档布局单一真相源（SSOT）。  
   `projects/news/scripts/archive_layout.py`
-- **`archive_platforms.py`** _[活:cli+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期落全量档案层。  
+- **`archive_platforms.py`** _[活:cli+command+workflow]_ — 多平台按日归档脚本 — 将 news.json（merged 全量层）按每条目真实日期落全量档案层。  
   `projects/news/scripts/archive_platforms.py`
 - **`backfill_forum_starters.py`** _[活:cli+workflow]_ — backfill_forum_starters.py — 一次性回填所有 forum thread 的 starter 消息  
   `projects/news/scripts/backfill_forum_starters.py`
@@ -278,7 +278,7 @@
   `projects/news/scripts/silent_sources_audit.py`
 - **`sources.py`** _[活:import]_ — sources.py — 采集源单一真相源（single source of truth）  
   `projects/news/scripts/sources.py`
-- **`split_output.py`** _[活:cli+command+workflow]_ — split_output.py — 按数据源分割 projects/news/output/news.json  
+- **`split_output.py`** _[活:cli+command+workflow]_ — split_output.py — 按数据源分割运行期 news.json  
   `projects/news/scripts/split_output.py`
 - **`taptap_collector.py`** _[活:cli]_ — TapTap 社区采集器 - Playwright 无头浏览器方案  
   `projects/news/scripts/taptap_collector.py`
