@@ -45,7 +45,7 @@
 
 ### 2026-06-09 状态核验（实测）
 - **采集自动化持续运行**：`update-news` 每小时；`output/*-latest.json` 当日仍在更新
-- **Discord → 聚合器桥接已落地**：aggregator 含 discord 通道，`output/discord-latest.json` 持续产出（M1 任务 1 完成）
+- **Discord → 聚合器桥接曾落地**（M1 任务 1）：AC 栈含 discord 通道入流；2026-08-22 新闻流退役后该桥接一并删除——discord 由 `discord_archiver.py` 独立采集直落数据湖，无需再入流
 - **YouTube 已接通**：`output/youtube-latest.json` 持续更新，`Public-Info-Pool/Record/Community/youtube{,_comments}/` 在归档（M2 首项完成）
 - **新增 workflow（2026-06-05）**：`collect-comments`（每日 02:00 UTC 视频评论归档）/ `recover-fanart`（手动触发，刷新 Discord 过期 URL 恢复同人图）
 - **daily-report 已整体退役**：报告改在 Claude Code 会话内订阅生成（零 API 费）；`daily-report.yml` workflow 已删除，**不存在手动备用触发**（原措辞「仅留手动触发备用」为死指路牌，2026-08-21 订正）——M1 任务 3 的「日报 workflow 验证」语境已失效
@@ -59,8 +59,9 @@
 2. ~~Discord 月度清理首次触发~~：2026-06-21 de-tier 裁定后 discord 全量 text 永驻 git
    （`after_archive: keep`，不再驱逐），月度清理语境失效；历史月份已备份进 Releases
 3. ~~验证日报质量~~：daily-report 定时已停用，报告改会话内生成，本项语境失效
-4. [x] **黑池接口稳定性评估**：输出层契约 v1 已落地（2026-07-02，
-   `projects/news/schema/output-latest.schema.json` + `contract_version` 盖章）
+4. [x] **黑池接口稳定性评估**：输出层契约 v1 曾于 2026-07-02 落地（schema +
+   `contract_version` 盖章）；随 2026-08-21 输出展示层删除、2026-08-22 `split_output`
+   退役，该契约已无对象，schema 同步删除。黑池现直接消费全量档案层 `Record/Community/`
 
 ### M2 信息齐备（5-11 → 6-10，31 天）
 > 全球采集覆盖范围与接入纪律见 `GLOBAL_COLLECTION_SPEC.md`（规定层，与 sources.py 配套）。
@@ -107,7 +108,7 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 `archive_layout.DISCORD_GUILD_REGIONS`，未登记归档响亮失败），与 Global / 志愿者互不污染。
 
 ## 已完成
-- [x] aggregator.py 基础架构（Reddit/Bilibili/Twitter/NGA/TapTap/Steam）
+- [x] ~~aggregator.py 基础架构（Reddit/Bilibili/Twitter/NGA/TapTap/Steam）~~ 2026-08-22 退役，采集入口改 `collect_global.py`
 - [x] ~~index.html 前端页面（深色主题，平台筛选）~~ 2026-08-21 守密人裁定下线并删除（站点 /news/ 页同时摘除）
 - [x] GitHub Actions 自动抓取
 - [x] B站 + Steam 数据源接通
@@ -176,17 +177,17 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
   `memory/project-status.md` News 节）
 
 ## 文件说明
-- `projects/news/scripts/aggregator.py` — 主采集管线（每小时自动运行）
-- `projects/news/scripts/global_collectors.py` — 全球 29 个平台零成本采集器集合（被 `collect_global.py` 和 `backfill_platforms.py` 引用）
+- `projects/news/scripts/collect_global.py` — **采集唯一入口**（2026-08-22「采集 → 直接入湖」裁定）：编排全部零成本采集器 → 校验 → 产运行期全量层 `news-raw.json` 交归档步落数据湖
+- `projects/news/scripts/global_collectors.py` — 平台采集器集合（含 2026-08-22 自退役的 AC 栈迁入的 steam 三源；被 `collect_global.py` 与 `backfill_platforms.py` 引用）
 - `projects/news/scripts/taptap_collector.py` — TapTap Playwright 采集器（`global_collectors.py` 的依赖）
-- `projects/news/scripts/collect_global.py` — 全球采集桥接脚本，合并 aggregator 输出
 - `projects/news/scripts/backfill_platforms.py` — 多平台历史回溯采集
-- `projects/news/scripts/split_output.py` / `archive_platforms.py` / `download_media.py` — 后处理管线（split 拆分到 *-latest.json，archive 按日归档到 `Public-Info-Pool/Record/Community/`）
+- `projects/news/scripts/archive_platforms.py` / `download_media.py` — 后处理管线（archive 按日归档到 `Record/Community/`，media 下载图片进 Release）
+- ~~`aggregator.py` / `aggregator_base.py` / `aggregator_collectors.py` / `split_output.py`~~ — 新闻流编排与输出层拆分，2026-08-22 守密人裁定整体删除（校验链路迁 `news_common.py`，steam 采集器迁 `global_collectors.py`，水位与失败哨兵迁 `collect_global.py`）
 - `requirements.txt` — Python 依赖
 - `.env.example` — 环境变量配置模板
 
 ## 验证清单
-- [ ] aggregator.py 运行后 news.json 条目数 > 0
+- [ ] collect_global.py 运行后运行期 news-raw.json 条目数 > 0
 - [ ] 所有条目有 title、url、source、time 字段
 - [ ] 无重复条目
 
@@ -204,6 +205,6 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 - [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
 - [ ] 阅读 `memory/project-status.md` 确认 news 子项目当前状态
 - [ ] 检查 `projects/news/data/source-health.json` 的 `last_success_date`，确认聚合器是否正常运行（运行期 news.json 不进仓、看不到）
-- [ ] 检查 GitHub Actions 最近一次 `news-aggregator` 工作流是否成功
+- [ ] 检查 GitHub Actions 最近一次 `update-news` 工作流是否成功
 - [ ] 确认你要修改的文件不属于其他子项目
 - [ ] 完成任务后更新本文件"当前状态"和"待解决"部分

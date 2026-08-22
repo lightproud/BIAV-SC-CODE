@@ -1,3 +1,4 @@
+import pathlib
 import sys
 import unittest
 from unittest import mock
@@ -117,9 +118,14 @@ class TestFailureAggregation(unittest.TestCase):
         names mapped through NAME_TO_SOURCE_ID.
         """
         # Map display name → global_collectors attribute used by the fetcher list.
-        # ARCH-01 收敛（decisions.md 2026-06-20）：reddit/bilibili/discord/taptap 已移出 GC
-        # 编排（归 AC / archiver），故不在此映射；youtube 为 GC 保留的核心源。
+        # 2026-08-22「采集 → 直接入湖」：AC 栈退役，reddit / bilibili / taptap 回落 GC，
+        # steam 三源整段迁入 GC —— 六者必须在此登记，否则它们不被 mock，测试会真的出网
+        # 采集（实测把一次本该 5 秒的 hermetic 用例拖成 79 秒）。discord 仍归 archiver。
         attr_by_name = {
+            "Reddit": "fetch_reddit", "Bilibili": "fetch_bilibili",
+            "TapTap": "fetch_taptap",
+            "Steam News": "fetch_steam_news", "Steam Reviews": "fetch_steam_reviews",
+            "Steam Discussions": "fetch_steam_discussions",
             "Weibo": "fetch_weibo",
             "App Store": "fetch_appstore_reviews", "Pixiv": "fetch_pixiv",
             "Note.com": "fetch_note_com", "Ruliweb": "fetch_ruliweb",
@@ -150,9 +156,9 @@ class TestFailureAggregation(unittest.TestCase):
         self.assertIn("youtube", sources)
         self.assertTrue(any("youtube down" in err for _, err in core_failures))
 
-    def test_core_failure_propagates_nonzero_exit(self):
-        # main() must exit non-zero when a core source fails (§4.2 R1),
-        # even though good items were collected and written.
+    def test_core_failure_writes_sentinel_without_exiting(self):
+        # 核心源失败（§4.2 R1）：写哨兵、**不非零退出**。非零会让 workflow 跳过后续
+        # archive/repair/health 步骤，本轮已采到的好数据随 runner 一起销毁（H9 原委）。
         def boom():
             raise RuntimeError("youtube down")
 
@@ -160,14 +166,20 @@ class TestFailureAggregation(unittest.TestCase):
             "YouTube": boom,
             "Weibo": lambda: [_item("t", "https://t/1")],
         })
-        # Isolate all output writes: main() now persists via news_common.dump_json_atomic
-        # (temp file + os.replace), which bypasses builtins.open — so stub it out to a
-        # no-op, otherwise the test would clobber the real run-dir *.json.
-        with mock.patch.object(collect_global, "load_existing_news", return_value=[]), \
-                mock.patch.object(news_common, "dump_json_atomic", return_value=None):
-            with self.assertRaises(SystemExit) as cm:
-                collect_global.main()
-        self.assertEqual(cm.exception.code, 1)
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            flag = pathlib.Path(tmp) / "collect-failure.flag"
+            # Isolate all output writes: main() persists via news_common.dump_json_atomic
+            # (temp file + os.replace), which bypasses builtins.open — stub it out so the
+            # test never clobbers the real run-dir *.json.
+            with mock.patch.object(collect_global, "FAILURE_FLAG", flag), \
+                    mock.patch.object(collect_global, "_mark_collected") as marked, \
+                    mock.patch.object(news_common, "dump_json_atomic", return_value=None), \
+                    mock.patch.object(news_common, "write_validation_drops",
+                                      return_value={"total_dropped": 0, "by_source": {}}):
+                collect_global.main()  # 不抛 SystemExit
+            self.assertTrue(flag.exists(), "核心源失败必须留下哨兵供 CI 标红")
+            marked.assert_not_called()  # 水位不许在失败轮推进
 
     def test_non_core_failure_tolerated(self):
         # A non-core source (zhihu) failing must NOT be recorded as a core

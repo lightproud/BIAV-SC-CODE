@@ -7,8 +7,7 @@
 | 位置 | 读错在哪 | 后果 |
 |---|---|---|
 | `discord_archiver._archived_months` | 只看区服目录，而引擎的 `archive-log.json` 写在 **discord 根** | 「该月已在 Releases → 跳过重抓」恒不成立；45 分钟预算全耗在已有数据上，真正缺的月份永远轮不到 |
-| `aggregator` 水位 | 水位在 `run()` 内、核心源失败判定**之前**推进 | reddit 被拦 30 小时期间轮轮标记成功；恢复那轮回溯窗仍是 24h，最早 6 小时整段静默丢失 |
-| `aggregator_collectors._read_discord_jsonl` | 单行坏 JSON 摊在外层 `except` 下 | 一条半截行让该文件**剩下的全部消息**不读了；日报静默缩水 |
+| 采集水位 | 水位在核心源失败判定**之前**推进 | reddit 被拦 30 小时期间轮轮标记成功；恢复那轮回溯窗仍是 24h，最早 6 小时整段静默丢失（2026-08-22 起该职责在 collect_global）|
 | `build_capability_registry` | `generated_at` 取当日日期 | 只要跨一天，`--check` 就在源码没动的情况下报「已过期」；写模式产出只改日期的噪声提交 |
 | `kb_telemetry` | 把向量腿的档案 ref 混进「触达概念」计数 | `reach_ratio` 能冲破 100%——拿别人的借阅记录充自己的读者数 |
 | `kb_golden_gen` | 期望答案落裸 stem，而判命中是子串匹配 | `community-youtube` ⊂ `community-youtube-comments`：证明「KB 分得清层与平台」的题，却在给错答案打分 |
@@ -32,8 +31,7 @@ import pytest
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
-import aggregator as ag  # noqa: E402
-import aggregator_collectors as ac  # noqa: E402
+import collect_global as cg  # noqa: E402
 import archive_layout  # noqa: E402
 import build_capability_registry as bcr  # noqa: E402
 import collection_state  # noqa: E402
@@ -157,7 +155,12 @@ class TestChannelIndexAtomicity:
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# 二、aggregator —— 水位只在整条链路都干净时推进
+# 二、采集水位 —— 只在整条链路都干净时推进
+# ════════════════════════════════════════════════════════════════════════════
+# 2026-08-22「采集 → 直接入湖」裁定后 aggregator.py 退役，水位职责随之迁入
+# collect_global（唯一采集入口）。本节改测迁入后的实现；原第三例（断言 run() 内部
+# 不碰水位）与 aggregator 源码一同退役——它守的是那份源码的形状，形状已不复存在，
+# 其语义由下面「核心源失败即不推进水位」一例接管。
 # ════════════════════════════════════════════════════════════════════════════
 
 class TestCollectionWatermark:
@@ -168,53 +171,38 @@ class TestCollectionWatermark:
             seen.append(item_count)
 
         monkeypatch.setattr(collection_state, "mark_collection_done", recorder)
-        ag.mark_collected(41)
+        cg._mark_collected(41)
         assert seen == [41]
 
     def test_mark_collected_is_a_no_op_without_collection_state(self, monkeypatch):
         """可选依赖缺失时优雅降级——水位推进失败不许打断采集链路。"""
         monkeypatch.setitem(sys.modules, "collection_state", None)
-        ag.mark_collected(7)  # 不抛即通过
+        cg._mark_collected(7)  # 不抛即通过
 
-    def test_watermark_is_not_advanced_inside_run(self):
-        """水位推进必须在两段采集都判过之后——run() 内部不许再碰它。
+    def test_core_failure_writes_sentinel_and_leaves_watermark_alone(self, monkeypatch, tmp_path):
+        """核心源失败：写哨兵 + 不推进水位 + 不非零退出（否则归档步骤被跳过，本轮数据全丢）。
 
-        这是本次修复的形状本身：`run()` 里若还留着 mark_collection_done 调用，
-        「部分成功即推进水位」就原样复发（reddit 被拦 30 小时那次的真因）。
+        「部分成功即推进水位」正是 reddit 被拦 30 小时那次的真因：水位一路顶着，
+        下一轮回溯窗永远只有 24h，失败期间的条目再没有任何窗口覆盖得到。
         """
-        source = Path(ag.__file__).read_text(encoding="utf-8")
-        head, _, tail = source.partition("if __name__ ==")
-        assert "mark_collection_done" not in head.split("def mark_collected")[0], (
-            "run() 内不许推进水位"
-        )
-        assert "if ac_ok and gc_ok:" in tail, "水位推进必须由两段采集的联合判定把门"
+        advanced = []
+        monkeypatch.setattr(cg, "_mark_collected", lambda n: advanced.append(n))
+        monkeypatch.setattr(cg, "FAILURE_FLAG", tmp_path / "collect-failure.flag")
+        monkeypatch.setattr(cg, "run_zero_cost_collectors",
+                            lambda: ([{"title": "t", "source": "reddit",
+                                       "time": "2026-08-22T00:00:00+00:00", "engagement": 1,
+                                       "url": "https://example.com/a"}],
+                                     [("reddit", "boom")]))
+        monkeypatch.setattr(cg.news_common, "dump_json_atomic", lambda *a, **k: None)
+        monkeypatch.setattr(cg.news_common, "write_validation_drops", lambda *a, **k: {"total_dropped": 0, "by_source": {}})
+
+        cg.main()  # 不抛 SystemExit 即为「不非零退出」
+
+        assert advanced == [], "核心源失败时水位不许推进"
+        assert (tmp_path / "collect-failure.flag").exists(), "核心源失败必须留下哨兵供 CI 标红"
 
 
-class TestDiscordJsonlBadLines:
-    def test_one_torn_line_does_not_abandon_the_rest_of_the_file(
-        self, tmp_path, monkeypatch, caplog
-    ):
-        """500 条的频道日档不许因为一条半截行只剩坏行之前那几十条。"""
-        lake = tmp_path / "lake"
-        ch = lake / "Record" / "Community" / "discord" / "global" / "channels" / "12345678"
-        ch.mkdir(parents=True)
-        (ch / "2026-05-03.jsonl").write_text(
-            '{"id":"1","content":"before"}\n'
-            '{"id":"2","cont\n'                       # 上一轮被杀留下的半截行
-            "\n"                                       # 空行照旧跳过
-            '{"id":"3","content":"after"}\n',
-            encoding="utf-8",
-        )
-        monkeypatch.setenv("BIAV_SC_DATA_ROOT", str(lake))
 
-        with caplog.at_level(logging.WARNING):
-            msgs = ac._read_discord_jsonl("2026-05-03")
-
-        assert [m["id"] for m in msgs] == ["1", "3"], "坏行之后的消息必须照读"
-        assert "skipped 1 malformed line(s)" in caplog.text, "跳了多少行必须说出来"
-
-
-# ════════════════════════════════════════════════════════════════════════════
 # 三、build_capability_registry —— 日历不许自己制造「已过期」
 # ════════════════════════════════════════════════════════════════════════════
 

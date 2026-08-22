@@ -514,3 +514,173 @@ def dump_json_atomic(path, obj, *, indent=2):
         except OSError:
             pass
         raise
+
+
+# ---------------------------------------------------------------------------
+# 采集条目校验链路（2026-08-22 从退役的 aggregator_base 迁入）
+# ---------------------------------------------------------------------------
+# 守密人 2026-08-22 裁定「采集 → 直接入湖」：新闻流编排退役，但校验链路是数据质量
+# 保障而非展示件——丢弃计数是一等健康指标（2026-07-02 P0-3；taptap_review 曾单轮被
+# 丢 108 条、连续 12 天无人察觉），经 write_validation_drops 落盘、由
+# silent_sources_audit --strict 参与告警门控。整段迁入采集层共享真源，
+# 顺带把原「AC 才校验、GC 不校验」的覆盖缺口补平：现在唯一入口 collect_global
+# 对全部采集条目一律校验（原 aggregator_base 注释里挂账的「未来 GC 增设校验点须接入」）。
+import logging as _logging
+
+_log = _logging.getLogger('news_common.validate')
+
+# Valid source identifiers — 从 sources.py 单一真相源派生（含 SOURCE_ALIASES 的
+# 归一化前原始名，如 steam_review）。
+from sources import KNOWN_SOURCES as _KNOWN_SOURCES, SOURCE_ALIASES as _SOURCE_ALIASES  # noqa: E402
+
+VALID_SOURCES = set(_KNOWN_SOURCES) | set(_SOURCE_ALIASES)
+
+# Required fields for each news item
+REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
+
+def sanitize_url(url):
+    """Validate and normalize URL scheme."""
+    if not url:
+        return ''
+    url = url.strip()
+    # Normalize http to https for known platforms
+    if url.startswith(('http://www.bilibili.com', 'http://bilibili.com')):
+        url = url.replace('http://', 'https://', 1)
+    # Basic URL validation
+    parsed = urlparse(url)
+    if parsed.scheme not in ('http', 'https', ''):
+        return ''
+    return url
+
+
+def sanitize_summary(summary):
+    """Clean up summary text, removing placeholder values."""
+    if not summary:
+        return ''
+    summary = summary.strip()
+    # Filter out placeholder/empty summaries
+    if summary in ('-', '--', '无', 'N/A', 'null', 'none', '暂无'):
+        return ''
+    return strip_html(summary)
+
+
+def validate_news_item(item):
+    """
+    Validate a single news item. Returns (is_valid, cleaned_item).
+    Checks required fields, sanitizes text, normalizes URLs.
+    """
+    if not isinstance(item, dict):
+        return False, None
+
+    # Check required fields
+    for field in REQUIRED_FIELDS:
+        if field not in item or item[field] is None or (isinstance(item[field], str) and not item[field]):
+            _log.warning(f'Validation: missing required field "{field}" in item: {item.get("title", "unknown")[:50]}')
+            return False, None
+
+    # Validate source
+    if item['source'] not in VALID_SOURCES:
+        _log.warning(f'Validation: unknown source "{item["source"]}" for: {item["title"][:50]}')
+        return False, None
+
+    # Validate engagement is a non-negative number
+    try:
+        engagement = int(item['engagement'])
+        engagement = max(engagement, 0)
+    except (ValueError, TypeError):
+        engagement = 0
+
+    # Validate time format (ISO 8601)
+    try:
+        if isinstance(item['time'], str):
+            datetime.fromisoformat(item['time'])
+    except (ValueError, TypeError):
+        _log.warning(f'Validation: invalid time format for: {item["title"][:50]}')
+        return False, None
+
+    # Build cleaned item
+    cleaned = {
+        'title': strip_html(str(item['title']).strip()),
+        'summary': sanitize_summary(item.get('summary', '')),
+        'source': item['source'],
+        'time': item['time'],
+        'url': sanitize_url(item.get('url', '')),
+        'engagement': engagement,
+        'is_hot': bool(item.get('is_hot', False)),
+        'author': strip_html(str(item.get('author', '')).strip()),
+        'tags': [strip_html(str(t).strip()) for t in item.get('tags', []) if t and str(t).strip()],
+    }
+
+    # Preserve source-specific extra fields
+    if 'language' in item:
+        cleaned['language'] = str(item['language'])
+    if 'metadata' in item and isinstance(item['metadata'], dict):
+        cleaned['metadata'] = item['metadata']
+    # Preserve media fields for image archival
+    if item.get('media_url'):
+        cleaned['media_url'] = sanitize_url(item['media_url'])
+        cleaned['content_type'] = item.get('content_type', 'image')
+    if item.get('lang'):
+        cleaned['lang'] = str(item['lang'])
+    # 甲方案归档分层字段（2026-06-21 采集源命名规范）：AC 栈 item 经此白名单重建，
+    # 须显式放行 region/archive_subtype，否则 archive_platforms 分桶失据（缺省不落，回落扁平）。
+    if item.get('region'):
+        cleaned['region'] = str(item['region'])
+    if item.get('archive_subtype'):
+        cleaned['archive_subtype'] = str(item['archive_subtype'])
+
+    # Title must not be empty after sanitization
+    if not cleaned['title']:
+        return False, None
+
+    return True, cleaned
+
+
+def validate_all_news(items):
+    """Validate and clean a list of news items. Returns list of valid items.
+
+    被丢弃条目按源计数进 VALIDATION_DROPS（2026-07-02 P0-3「静默丢弃升格为
+    一等指标」）：此前丢弃只打 WARNING 进 CI 日志，taptap_review 曾单轮被
+    丢 108 条、连续 12 天无人察觉。计数经 write_validation_drops 落盘，由
+    silent_sources_audit 并入 source-health 并参与 --strict 告警门控。
+    """
+    valid_items = []
+    invalid_count = 0
+
+    for item in items:
+        is_valid, cleaned = validate_news_item(item)
+        if is_valid:
+            valid_items.append(cleaned)
+        else:
+            invalid_count += 1
+            src = item.get('source', 'unknown') if isinstance(item, dict) else 'malformed'
+            VALIDATION_DROPS[src] = VALIDATION_DROPS.get(src, 0) + 1
+
+    if invalid_count > 0:
+        _log.warning(f'Validation: {invalid_count} invalid items filtered out of {len(items)} total')
+
+    _log.info(f'Validation: {len(valid_items)} valid items out of {len(items)} total')
+    return valid_items
+
+
+# 本次运行的校验丢弃计数（源 -> 条数）。跨源累计，run 结束由 aggregator 落盘。
+VALIDATION_DROPS: dict = {}
+# 跨轮状态（每轮读旧值累计）：落 data/ 进 git，绝不放运行期工作根——随目录蒸发
+# 等于健康侧计数每轮从零重建。
+def _validation_drops_path():
+    import archive_layout
+    return archive_layout.news_state_root() / 'validation-drops.json'
+
+
+def write_validation_drops(path=None):
+    """把本次运行的校验丢弃计数写盘（无丢弃也写零值文件，供健康侧稳定消费）。"""
+    import json as _json
+    path = Path(path) if path else _validation_drops_path()
+    payload = {
+        'generated_at': datetime.now().astimezone().isoformat(),
+        'total_dropped': sum(VALIDATION_DROPS.values()),
+        'by_source': dict(sorted(VALIDATION_DROPS.items())),
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(_json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+    return payload

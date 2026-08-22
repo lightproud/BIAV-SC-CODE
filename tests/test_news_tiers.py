@@ -83,9 +83,11 @@ def test_t1_entrypoint_does_not_absorb_the_archive_actions() -> None:
     """「T2 绝不并入 T1」的可执行形式（CLAUDE.md §1.4）。
 
     注意这条钉的是**动作**不是**数据**：T1 读 archive_layout 求路径是正常的
-    （shared 层），把归档器/冷压拉进 aggregator 那一轮才是违规。
+    （shared 层），把归档器/冷压拉进采集入口那一轮才是违规。
+
+    T1 入口 2026-08-22 由 aggregator 换为 collect_global（「采集 → 直接入湖」裁定）。
     """
-    reachable, frontier = set(), {"aggregator"}
+    reachable, frontier = set(), {"collect_global"}
     while frontier:
         cur = frontier.pop()
         for dep in _local_deps(cur) - reachable:
@@ -93,7 +95,7 @@ def test_t1_entrypoint_does_not_absorb_the_archive_actions() -> None:
             frontier.add(dep)
     offenders = sorted(reachable & ARCHIVE_ACTIONS)
     assert not offenders, (
-        f"T1 入口 aggregator 经依赖链拉进了 T2 归档动作 {offenders}；"
+        f"T1 入口 collect_global 经依赖链拉进了 T2 归档动作 {offenders}；"
         "CLAUDE.md §1.4 明定二者节拍错峰，不得并轮"
     )
 
@@ -150,4 +152,5 @@ def test_registry_matches_the_workflow_that_drives_each_module() -> None:
         f"update-news.yml（T1 每 3 小时轮）直接调用了 T2 归档动作 {offenders}——节拍已并轨"
     )
     # 反向的健全性：这一轮确实由 T1 入口领跑，否则本条测试是在守一个空壳。
-    assert "aggregator.py" in t1_round
+    # 入口 2026-08-22 由 aggregator 换为 collect_global（「采集 → 直接入湖」裁定）。
+    assert "collect_global.py" in t1_round

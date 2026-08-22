@@ -2,7 +2,9 @@
 
 > 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移全面修复：删除不存在的 `collect.py` / `generate_daily.py` 引用、执行链与输出清单对齐 `update-news.yml` 实况、Playwright 覆盖面对齐实际采集器。上次 2026-06-28 同步「统一采集入口」裁定）
 >
-> 本文档说明采集系统的分工和使用方式。生产管线与扩展采集现由 `aggregator.py` 单入口统一调度（2026-06-20 起）。
+> 本文档说明采集系统的分工和使用方式。**2026-08-22 守密人裁定「采集 → 直接入湖」**：新闻流编排
+> （`aggregator.py` 全家）与输出层拆分（`split_output.py`）整体退役，采集唯一入口为 `collect_global.py`，
+> 采到的条目经校验直接交归档步落全量档案层。原 2026-06-20「aggregator 单入口」表述作废。
 
 ## 系统概览
 
@@ -10,12 +12,12 @@
 
 | 系统 | 入口 | 数据源数 | 运行方式 | 用途 |
 |------|------|----------|----------|------|
-| **生产管线** | `scripts/aggregator.py` | AC 核心平台 + 微博/TapTap/Arca/Ruliweb/巴哈姆特 Playwright 回退（`playwright_collectors.py`） | GitHub Actions 自动（每小时） | 日报、实时监控 |
-| **扩展采集** | `scripts/collect_global.py`（内部调 `scripts/global_collectors.py`；2026-06-20 起由 `aggregator.py` 单入口内部调用，不再独立 workflow 步）| 29 | GitHub Actions 自动（aggregator 内置） | 覆盖全球社区、同人、商店 |
+| **采集入口** | `scripts/collect_global.py`（内部调 `scripts/global_collectors.py`，Playwright 回退见 `playwright_collectors.py`） | 全部平台（含 2026-08-22 自 AC 栈迁入的 steam 三源） | GitHub Actions 每 3 小时 | 全量档案层入湖 |
+| **独立采集器** | `scripts/discord_archiver.py` · `scripts/collect_video_comments.py` | discord 三区服 / youtube 评论 | 各自 workflow（错峰） | 直连各平台 API，直落数据湖，不经采集入口 |
 
-由 `.github/workflows/update-news.yml` 每小时触发：`aggregator.py` 为**唯一采集入口**——先采 AC 平台，内部调 `collect_global.main()` 采全球平台并产出 `news.json` + `news-raw.json`（2026-06-20 起原独立的「Run global collectors」步已并入 aggregator 步以免重复采集），随后 `split_output.py` → `download_media.py` → `archive_platforms.py` → `repair_gaps.py` → `silent_sources_audit.py --write`。本地复现扩展采集仍可手动 `python projects/news/scripts/collect_global.py`，且多数平台需 API Key 或 Playwright runtime。
+由 `.github/workflows/update-news.yml` 每 3 小时触发：`collect_global.py` 为**唯一采集入口**——并行跑全部平台采集器、校验清洗、产运行期 `news.json` + `news-raw.json`（工作根 `archive_layout.news_run_root()`，不进 git），随后 `download_media.py` → `archive_platforms.py` → `repair_gaps.py` → `silent_sources_audit.py --write`。多数平台需 API Key 或 Playwright runtime。
 
-## 生产管线（aggregator.py）
+## 采集入口（collect_global.py）
 
 ### 数据源
 
@@ -38,16 +40,16 @@
 ### 运行方式
 
 ```bash
-# 本地运行（aggregator 即唯一入口，末尾自动调 collect_global）
+# 本地运行（唯一入口）
 cd projects/news
-python scripts/aggregator.py
+python scripts/collect_global.py
 ```
 
 ### GitHub Actions
 
 - **频率**: 每小时（`cron: '0 * * * *'`）
 - **Workflow**: `.github/workflows/update-news.yml`
-- **执行链**: `aggregator.py`（单入口，内部调 `collect_global.main()`）→ `split_output.py` → `download_media.py` → `archive_platforms.py` → `repair_gaps.py` → `silent_sources_audit.py --write`（2026-06-20 起 collect_global 不再为独立 workflow 步；日报生成已停用、无 generate_daily 环节）
+- **执行链**: `collect_global.py`（唯一入口）→ `download_media.py` → `archive_platforms.py` → `repair_gaps.py` → `silent_sources_audit.py --write`（2026-08-22 起 aggregator 全家与 split_output 退役；日报生成早已停用、无 generate_daily 环节）
 - **输出**: 运行期工作根（`archive_layout.news_run_root()`，默认 `projects/news/run/`，不进 git）下的 `news.json` + 各平台独立文件；**落地面是全量档案层** `Record/Community/`
 
 ## 扩展采集（collect_global.py / global_collectors.py）
@@ -92,12 +94,12 @@ python scripts/data_quality.py --report
 
 ## 统一入口
 
-统一入口即 `scripts/aggregator.py`（2026-06-20 守密人裁定；此前设想的独立
+统一入口即 `scripts/collect_global.py`（2026-08-22 守密人裁定；2026-06-20 的 aggregator 单入口已退役。此前设想的独立
 `collect.py` 包装脚本从未落盘，相关引用已于 2026-07-02 清理）：
 
 ```bash
 # 生产管线 + 扩展采集（单入口一次跑全）
-python projects/news/scripts/aggregator.py
+python projects/news/scripts/collect_global.py
 
 # 仅扩展采集（调试用）
 python projects/news/scripts/collect_global.py
@@ -131,5 +133,5 @@ python projects/news/scripts/collect_global.py
    微博 / TapTap / Arca / Ruliweb / 巴哈姆特**（NGA / 小红书采集器已移除）
 2. **数据质量追踪** — 自动监控平台健康状态（仍在用，`data_quality.py`）
 3. ~~**统一入口** — `collect.py` 整合两套系统~~ 该包装脚本从未落盘；统一入口
-   现为 `aggregator.py`（2026-06-20 裁定）
+   现为 `collect_global.py`（2026-08-22 裁定；2026-06-20 的 aggregator 已退役）
 4. **平台降级** — 连续 7 天沉默降级，30 天休眠（仍在用）

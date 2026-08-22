@@ -21,7 +21,7 @@ Three invariants are exercised against real code:
      points ``resource`` at the archive layer — never the output layer.
   B. build_community_index stamps ``_meta.data_layer == "full_archive"`` on the
      full-analysis index it produces from full-archive inputs.
-  C. split_output's output is a strict SAMPLE/SUBSET of its input: the output
+  (C. split_output 的抽样子集不变量已随该模块 2026-08-22 退役，见文件末尾说明。原文：output
      layer never claims a count larger than the archive it came from, and every
      id/url emitted into output exists in the input (lesson-#30 guard).
 
@@ -42,7 +42,6 @@ import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml�
 
 import build_okf_bundle  # noqa: E402
 import build_community_index  # noqa: E402
-import split_output  # noqa: E402
 from datetime import UTC
 
 
@@ -238,141 +237,11 @@ class TestCommunityIndexDeclaresFullArchive:
 
 
 # ---------------------------------------------------------------------------
-# C. split_output — output layer is a strict SAMPLE/SUBSET of the input archive.
-#    This is the direct lesson-#30 guard: output is a sample, never a superset
-#    or substitute for the archive it derives from.
+# C. 输出层子集不变量 —— 2026-08-22 随 split_output 一并退役
 # ---------------------------------------------------------------------------
-
-class TestOutputIsSubsetOfArchive:
-
-    def _run_split(self, tmp_path, monkeypatch, news_items, max_age_hours=24):
-        """Run split_output.main() over a synthetic news.json archive input.
-
-        Returns (input_items, {source: payload}) where payloads are the written
-        output-layer files. All IO routed into tmp_path.
-        """
-        out_dir = tmp_path / "output"
-        out_dir.mkdir()
-        input_path = out_dir / "news.json"
-        input_path.write_text(
-            json.dumps({"updated_at": "2026-06-21T00:00:00+00:00",
-                        "news": news_items}),
-            encoding="utf-8",
-        )
-        monkeypatch.setattr(split_output, "OUTPUT_DIR", out_dir)
-        monkeypatch.setattr(split_output, "INPUT_PATH", input_path)
-        monkeypatch.setattr(split_output, "MAX_AGE_HOURS", max_age_hours)
-        # widen sparse-source window so the subset relation is exercised on
-        # content, not on time-window edge effects.
-        monkeypatch.setattr(split_output, "OFFICIAL_MAX_AGE_HOURS", max_age_hours)
-
-        # silence the script's prints
-        monkeypatch.setattr("builtins.print", lambda *a, **k: None)
-        split_output.main()
-
-        payloads = {}
-        for f in out_dir.glob("*-latest.json"):
-            payloads[f.stem.replace("-latest", "")] = json.loads(
-                f.read_text(encoding="utf-8"))
-        return news_items, payloads
-
-    @staticmethod
-    def _recent(hours_ago=1):
-        from datetime import datetime, timedelta
-        return (datetime.now(UTC) - timedelta(hours=hours_ago)).isoformat()
-
-    def test_output_count_never_exceeds_archive(self, tmp_path, monkeypatch):
-        """Every output-layer file's item_count <= the archive item count.
-
-        Encodes: the output (sample) can never claim MORE items than the full
-        archive it was sampled from. (lesson #30: don't let 16 masquerade as N.)
-        """
-        items = [
-            {"source": "reddit", "time": self._recent(1), "title": "a", "url": "u-a"},
-            {"source": "reddit", "time": self._recent(2), "title": "b", "url": "u-b"},
-            {"source": "bilibili_articles", "time": self._recent(1), "title": "c",
-             "url": "u-c"},
-        ]
-        archive, payloads = self._run_split(tmp_path, monkeypatch, items)
-        n_archive = len(archive)
-        for source, payload in payloads.items():
-            assert payload["item_count"] <= n_archive, (
-                f"{source} output count {payload['item_count']} exceeds "
-                f"archive size {n_archive} — output claims to be larger than its "
-                f"own source (lesson #30 violation)")
-            # item_count is honest about the file it lives in.
-            assert payload["item_count"] == len(payload["items"]), (
-                f"{source} item_count disagrees with len(items)")
-
-    def test_all_latest_count_equals_sum_and_bounded_by_archive(self, tmp_path, monkeypatch):
-        items = [
-            {"source": "reddit", "time": self._recent(1), "title": "a", "url": "u-a"},
-            {"source": "reddit", "time": self._recent(2), "title": "b", "url": "u-b"},
-            {"source": "mystery", "time": self._recent(1), "title": "c", "url": "u-c"},
-        ]
-        archive, payloads = self._run_split(tmp_path, monkeypatch, items)
-        all_latest = payloads["all"]
-        # the merged sample is bounded by the archive...
-        assert all_latest["item_count"] <= len(archive)
-        # ...and equals the sum of the per-source samples (no phantom inflation).
-        per_source = sum(p["item_count"] for k, p in payloads.items() if k != "all")
-        assert all_latest["item_count"] == per_source
-
-    def test_every_output_url_exists_in_archive(self, tmp_path, monkeypatch):
-        """Subset relation on identity: no output item is fabricated — every
-        emitted url traces back to an item present in the archive input."""
-        items = [
-            {"source": "reddit", "time": self._recent(1), "title": "a", "url": "u-a"},
-            {"source": "reddit", "time": self._recent(2), "title": "b", "url": "u-b"},
-            {"source": "youtube", "time": self._recent(3), "title": "c", "url": "u-c"},
-        ]
-        archive, payloads = self._run_split(tmp_path, monkeypatch, items)
-        archive_urls = {it["url"] for it in archive}
-        for source, payload in payloads.items():
-            for out_item in payload["items"]:
-                assert out_item["url"] in archive_urls, (
-                    f"{source} emitted url {out_item['url']!r} not present in the "
-                    f"archive — output is not a subset of its source")
-
-    def test_stale_items_dropped_so_output_is_proper_sample(self, tmp_path, monkeypatch):
-        """Output is a FILTERED sample: stale archive items are excluded, so the
-        output is a strict subset (<= archive), never the whole archive verbatim.
-        """
-        items = [
-            {"source": "reddit", "time": self._recent(1), "title": "fresh", "url": "u-fresh"},
-            {"source": "reddit", "time": self._recent(100), "title": "stale", "url": "u-stale"},
-        ]
-        archive, payloads = self._run_split(tmp_path, monkeypatch, items, max_age_hours=24)
-        reddit = payloads["reddit"]
-        # the stale item is filtered: output is a proper subset, count < archive.
-        assert reddit["item_count"] == 1
-        assert reddit["item_count"] < len(archive)
-        emitted_urls = {it["url"] for it in reddit["items"]}
-        assert emitted_urls == {"u-fresh"}
-        assert "u-stale" not in emitted_urls
-
-    def test_every_output_file_stamps_data_layer_output(self, tmp_path, monkeypatch):
-        """Every split_output product must self-declare data_layer == "output".
-
-        Closes the gap surfaced by the prior data-discipline pass: the output
-        layer's "I am a sample" identity used to be convention-only, with NO
-        machine-readable marker in the payload. Now each per-source file AND the
-        merged all-latest.json carries a data_layer stamp, so a consumer can
-        programmatically refuse to treat a sample as the full archive (lesson
-        #30). Discipline moves from "humans must remember" to "code enforces".
-        """
-        items = [
-            {"source": "reddit", "time": self._recent(1), "title": "a", "url": "u-a"},
-            {"source": "youtube", "time": self._recent(2), "title": "b", "url": "u-b"},
-        ]
-        _, payloads = self._run_split(tmp_path, monkeypatch, items)
-        assert payloads, "split produced no output files"
-        for source, payload in payloads.items():
-            assert payload.get("data_layer") == "output", (
-                f"{source}-latest.json is missing the data_layer:output stamp "
-                f"(got {payload.get('data_layer')!r}) — output identity unguarded")
-            # An output-layer file must NEVER claim to be the full archive.
-            assert payload["data_layer"] != "full_archive", (
-                f"{source} output file masquerades as full_archive")
-        # the merged file is covered too (it is the most tempting to mis-read).
-        assert payloads["all"]["data_layer"] == "output"
+# 原 C 段驱动 split_output.main()，断言输出层是输入档案的严格抽样子集、且每份产物
+# 自带 data_layer:"output" 戳记。守密人 2026-08-21 删除输出展示层、2026-08-22 裁定
+# 「采集 → 直接入湖」删除 split_output 本身之后，这条不变量已无对象可测：管线不再
+# 产出任何抽样层，采集条目由 collect_global 校验后直接交 archive_platforms 落全量
+# 档案层。lesson #30 的防线因此从「戳记 + 测试」前移为「结构上不存在第二个层」。
+# A / B 两段（档案层指针必须标 full_archive、分析索引自报全量）继续在役。
