@@ -49,7 +49,12 @@ SOURCE_MAP = {
     'reddit': 'reddit',
     'youtube': 'youtube',
     'taptap': 'taptap',
-    'steam': 'steam_review',
+    # 'steam' 不再重映射：steam 三源采集器（2026-08-22 自 AC 栈迁入）各自直接产
+    # steam / steam_review / steam_discussion，旧的 steam→steam_review 映射会把官方
+    # 新闻错标成评价，落档就进错桶。
+    'steam': 'steam',
+    'steam_review': 'steam_review',
+    'steam_discussion': 'steam_discussion',
     'weibo': 'weibo',
     'bahamut': 'bahamut',
     'appstore': 'appstore',
@@ -141,13 +146,20 @@ def run_zero_cost_collectors() -> list[dict]:
     except ImportError:
         logger.debug('playwright_collectors not available')
 
-    # NOTE: ARCH-01 收敛（decisions.md 2026-06-20）：reddit / bilibili 唯一权威实现归 AC 栈
-    # （aggregator 富数据版：评论+媒体+search），discord 唯一活 API 采集器归 discord_archiver
-    # （AC fetch_discord_local 读其归档入流）。taptap 亦归 AC（守密人「GC 功能合并到 AC」：
-    # AC fetch_taptap 已吸收本栈 taptap_collector 的 topic 帖子能力 + 保留 webapiv2 富评价）。
-    # GC 不再调度这四者，消除重复采集；对应函数与其单测保留，仅退出生产编排。
+    # NOTE: ARCH-01 收敛（2026-06-20）曾把 reddit / bilibili / taptap 的权威实现放在 AC 栈
+    # （aggregator 富数据版），GC 退出对它们的调度。**2026-08-22 守密人裁定「采集 → 直接
+    # 入湖」后 AC 栈整体退役**，三源的权威实现回落本栈（GC 版：无评论/媒体富采集，条目本身
+    # 照采照归档——这是裁定的已知代价，如实记录）；steam 三源为 AC 独有，其实现已整段迁入
+    # global_collectors，覆盖面不缩窄。discord 仍由 discord_archiver 独立采集直落数据湖，
+    # 本栈不调度（原 AC fetch_discord_local 只为把归档条目并进新闻流，流已退役即无用）。
     # Zero-cost collectors (no API key / no cookie required)
     zero_cost_fetchers = [
+        ('Reddit', c.fetch_reddit),
+        ('Bilibili', c.fetch_bilibili),
+        ('TapTap', c.fetch_taptap),
+        ('Steam News', c.fetch_steam_news),
+        ('Steam Reviews', c.fetch_steam_reviews),
+        ('Steam Discussions', c.fetch_steam_discussions),
         ('Weibo', c.fetch_weibo),
         ('App Store', c.fetch_appstore_reviews),
         ('Pixiv', c.fetch_pixiv),
@@ -171,6 +183,9 @@ def run_zero_cost_collectors() -> list[dict]:
 
     # 显示名 → source_id（与 archive/split 对齐）
     NAME_TO_SOURCE_ID = {
+        'Reddit': 'reddit', 'Bilibili': 'bilibili', 'TapTap': 'taptap',
+        'Steam News': 'steam', 'Steam Reviews': 'steam_review',
+        'Steam Discussions': 'steam_discussion',
         'Weibo': 'weibo', 'App Store': 'appstore',
         'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
         'StopGame': 'stopgame', '搜狗微信': 'weixin',
@@ -282,16 +297,9 @@ def run_zero_cost_collectors() -> list[dict]:
     return items, core_failures
 
 
-def load_existing_news() -> list[dict]:
-    """Load existing news.json items from aggregator."""
-    if not OUTPUT_PATH.exists():
-        return []
-    try:
-        with open(OUTPUT_PATH, encoding='utf-8') as f:
-            data = json.load(f)
-        return data.get('news', [])
-    except Exception:
-        return []
+# load_existing_news() 已退役（2026-08-22）：它读的是 aggregator 先写下的 news.json，
+# 而 AC 栈随「采集 → 直接入湖」裁定整体删除，本模块成为唯一采集入口——没有"上一段"
+# 的产物可并，existing 恒为空列表。保留合并函数本身（merge_and_dedup 仍做窗口过滤与去重）。
 
 
 # Adaptive: match the lookback window used by collectors
@@ -356,8 +364,30 @@ def build_summary(items: list[dict]) -> str:
     return '；'.join(titles) + '。' if titles else ''
 
 
+# 失败哨兵（2026-08-22 自退役的 aggregator.py 迁入）：固定落 projects/news/，
+# 与运行期工作根解耦（工作根可经 env 改道，哨兵位置不跟着漂）。
+FAILURE_FLAG = Path(__file__).resolve().parent.parent / 'collect-failure.flag'
+
+
+def _flag_failure(summary: str) -> None:
+    try:
+        FAILURE_FLAG.write_text(news_common.redact_secrets(summary), encoding='utf-8')
+    except OSError as exc:
+        logger.error(f'failed to write failure sentinel: {exc}')
+
+
+def _mark_collected(item_count: int) -> None:
+    """推进「采集到此为止」水位（collection_state.last_collected_at）。"""
+    try:
+        from collection_state import mark_collection_done
+    except ImportError:
+        return
+    mark_collection_done(item_count=item_count)
+
+
 def main():
-    logger.info('=== 全球社区采集开始 ===')
+    logger.info('=== 社区采集开始（唯一入口）===')
+    FAILURE_FLAG.unlink(missing_ok=True)  # 清掉上次运行残留的哨兵
 
     # Step 1: Run global collectors
     global_items, core_failures = run_zero_cost_collectors()
@@ -369,9 +399,12 @@ def main():
         logger.error('全部采集器返回空，疑似全线失败；保留 news.json 原样，非零退出。')
         sys.exit(1)
 
-    # Step 2: Load existing aggregator output
-    existing = load_existing_news()
-    logger.info(f'已有数据: {len(existing)} items')
+    # Step 2: 校验 + 清洗（2026-08-22 自退役的 aggregator_base 迁入 news_common）。
+    # 原先只有 AC 栈走校验、GC 侧直通；唯一入口后全部条目一律校验，丢弃计数落盘供
+    # silent_sources_audit --strict 门控。
+    global_items = news_common.validate_all_news(global_items)
+
+    existing: list[dict] = []  # AC 栈已退役，无上游产物可并（见 load_existing_news 退役说明）
 
     # Step 3: Merge and dedup
     merged = merge_and_dedup(existing, global_items)
@@ -414,11 +447,27 @@ def main():
         logger.info(f'  {src}: {count}')
     logger.info(f'=== 全球采集完成: {len(merged)} items → {OUTPUT_PATH} ===')
 
-    # §4.2 R1: 输出已落盘保全数据，但任一核心源失败则以非零退出让 CI 暴露失败
+    # 校验丢弃计数落盘（零丢弃也写零值文件，供健康侧稳定消费）。
+    try:
+        payload = news_common.write_validation_drops()
+        if payload['total_dropped']:
+            logger.warning(f"Validation drops this run: {payload['by_source']}")
+    except Exception as exc:
+        logger.error(f'failed to write validation-drops.json: {exc}')
+
+    # §4.2 R1: 输出已落盘保全数据。核心源失败 → 写哨兵 + 0 退出（**不非零退出**）：
+    # 非零会让 workflow 跳过后续 archive/repair/health 步骤，本轮成功源的数据随 runner
+    # 一起销毁（H9 当年正是为此把 aggregator 改成哨兵制）。CI 末步检测哨兵再标红。
     if core_failures:
         names = ', '.join(f'{s} ({err[:80]})' for s, err in core_failures)
-        logger.error(f'Core source(s) failed: {names}. Surfacing non-zero exit per §4.2 R1.')
-        sys.exit(1)
+        _flag_failure(f'Core source(s) failed per §4.2 R1: {names}')
+        logger.error(f'Core source(s) failed: {names}. Sentinel written; pipeline continues.')
+        return
+
+    # 水位只在整轮干净时推进（原 aggregator.mark_collected 的说明照搬）：某轮有源没采到
+    # 却照样把水位推到「现在」，那段没采到的时间就再也不会被后续窗口覆盖——窗口被水位
+    # 一路顶着，永远只回看 24 小时。
+    _mark_collected(len(merged))
 
 
 if __name__ == '__main__':

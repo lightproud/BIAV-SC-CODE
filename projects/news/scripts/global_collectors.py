@@ -1538,3 +1538,279 @@ def fetch_stopgame():
 
 
 # ─── 收入/数据平台 ─────────────────────────────────────────
+
+
+# ---------------------------------------------------------------------------
+# Steam（2026-08-22 从退役的 AC 栈迁入）
+# ---------------------------------------------------------------------------
+# 守密人 2026-08-22 裁定「采集 → 直接入湖」：新闻流编排（aggregator.py）与其展示件
+# 退役，但 steam 三源（steam 官方新闻 / steam_review 评价 / steam_discussion 讨论区）
+# 的采集实现**只存在于 AC 栈**——GC 栈无等价物。整段实现原样迁入本模块，改动仅限
+# 依赖改名（strip_html_tags → 本模块的 _strip_html_tags 委托），采集行为逐字节不变。
+# 覆盖面因此零缩窄：三源继续按日归档进 Record/Community/steam{,_review,_discussion}/。
+MAX_ITEMS_PER_FETCHER = news_common.env_int('MAX_ITEMS_PER_FETCHER', 500)
+
+def fetch_steam_reviews():
+    """Fetch Steam reviews across all configured regions（甲方案：双 appid global/jp，归档子类 review）。"""
+    items = []
+    for region, app_id in REGION_APPS.get('steam', {'global': '3052450'}).items():
+        items.extend(_fetch_steam_reviews_one(str(app_id), region))
+    return items
+
+
+def _fetch_steam_reviews_one(app_id, region):
+    """Fetch recent Steam reviews for one (app_id, region).
+
+    使用 cursor=* 分页一直翻到时间窗口外为止。Steam 按 recent 排序，
+    一旦看到早于 cutoff 的 review 就可以停。
+    """
+    import subprocess as _sp
+    from urllib.parse import quote
+    cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
+    items = []
+    cursor = '*'
+    page = 0
+    stopped_by_cutoff = False
+
+    try:
+        while len(items) < MAX_ITEMS_PER_FETCHER:
+            page += 1
+            url = (
+                f'https://store.steampowered.com/appreviews/{app_id}'
+                f'?json=1&filter=recent&num_per_page=100&language=all&purchase_type=all'
+                f'&cursor={quote(cursor, safe="")}'
+            )
+            result = _sp.run(
+                ['curl', '-s', '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)', url],
+                capture_output=True, text=True, timeout=30,
+            )
+            if result.returncode != 0:
+                logger.warning(f'Steam curl failed on page {page}: {result.stderr[:200]}')
+                break
+            if not result.stdout.strip():
+                logger.warning(f'Steam curl empty body on page {page}')
+                break
+            data = json.loads(result.stdout)
+            reviews = data.get('reviews', []) or []
+            if not reviews:
+                break
+
+            for review in reviews:
+                ts = review.get('timestamp_created', 0)
+                created = datetime.fromtimestamp(ts, tz=UTC)
+                if created < cutoff:
+                    stopped_by_cutoff = True
+                    break
+
+                language = review.get('language', 'unknown')
+                voted_up = review.get('voted_up', False)
+                sentiment = '正面' if voted_up else '负面'
+                review_text = review.get('review', '')
+                summary_text = review_text[:50].strip()
+                title = f'[{sentiment}] {summary_text}...' if len(review_text) > 50 else f'[{sentiment}] {summary_text}'
+
+                author_info = review.get('author', {})
+                steamid = author_info.get('steamid', '')
+                review_url = f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}'
+                votes_up = review.get('votes_up', 0)
+
+                items.append({
+                    'title': title,
+                    'summary': review_text,
+                    'source': 'steam_review',
+                    'region': region,             # 甲方案：global/jp 区服
+                    'archive_subtype': 'review',  # 归档 steam/<区服>/review
+                    'time': created.isoformat(),
+                    'url': review_url,
+                    'engagement': votes_up,
+                    'is_hot': votes_up > 10,
+                    'author': steamid,
+                    'tags': [language],
+                    'language': language,
+                    'metadata': {
+                        'voted_up': voted_up,
+                        'playtime_forever': author_info.get('playtime_forever', 0),
+                        'votes_up': votes_up,
+                        'timestamp_created': ts,
+                    },
+                })
+
+            if stopped_by_cutoff:
+                break
+            next_cursor = data.get('cursor')
+            # cursor 不变或缺失 → 已到末尾
+            if not next_cursor or next_cursor == cursor:
+                break
+            cursor = next_cursor
+            time.sleep(0.5)
+
+        if len(items) == 0:
+            logger.warning(f'Steam Reviews: 0 reviews found in last {HOURS_LOOKBACK}h (data source not blocked)')
+        else:
+            logger.info(f'Steam Reviews: fetched {len(items)} reviews in last {HOURS_LOOKBACK}h across {page} page(s)')
+    except Exception as e:
+        logger.warning(f'Steam Reviews failed: {e}')
+
+    return items
+
+
+def fetch_steam_news():
+    """Fetch Steam official news across all configured regions（甲方案：双 appid，归档子类 news）。"""
+    items = []
+    for region, app_id in REGION_APPS.get('steam', {'global': '3052450'}).items():
+        items.extend(_fetch_steam_news_one(str(app_id), region))
+    return items
+
+
+def _fetch_steam_news_one(app_id, region):
+    """Fetch official Steam news/announcements for one (app_id, region).
+
+    官方公告本身频率较低，通用 HOURS_LOOKBACK（24h）会经常过滤掉全部内容。
+    使用更宽的 OFFICIAL_HOURS_LOOKBACK（默认 30 天）以保证日报至少能看到近期官方动态。
+    """
+    # Steam News 单次 API 调用即可拿足 30 天窗口；count=100 保证不截断。
+    url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=100&maxlength=500'
+    official_hours = news_common.env_int('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24))
+    cutoff = datetime.now(UTC) - timedelta(hours=official_hours)
+    items = []
+
+    try:
+        resp = requests.get(url, timeout=15)
+        resp.raise_for_status()
+        news_items = resp.json().get('appnews', {}).get('newsitems', [])
+
+        for n in news_items:
+            ts = n.get('date', 0)
+            created = datetime.fromtimestamp(ts, tz=UTC) if ts else None
+            if not created or created < cutoff:
+                continue
+
+            feed_type = n.get('feed_type', 0)
+            feed_label = {0: '公告', 1: '新闻'}.get(feed_type, '资讯')
+
+            items.append({
+                'title': f'[Steam{feed_label}] {_strip_html_tags(n.get("title", ""))}',
+                'summary': _strip_html_tags(n.get('contents', '')),
+                'source': 'official',
+                'region': region,            # 甲方案：global/jp 区服
+                'archive_subtype': 'news',   # 归档 steam/<区服>/news（official 折叠到 steam）
+                'time': created.isoformat(),
+                'url': n.get('url', ''),
+                'engagement': 0,
+                'is_hot': True,  # Official announcements are always marked hot
+                'author': n.get('author', 'Steam'),
+                'tags': [n.get('feedlabel', '')],
+            })
+
+        logger.info(f'Steam News: fetched {len(items)} announcements')
+    except Exception as e:
+        logger.warning(f'Steam News failed: {e}')
+
+    return items
+
+
+def fetch_steam_discussions(max_pages: int = 3):
+    """Fetch Steam discussions across all configured regions（甲方案：双 appid，归档子类 discussion）。"""
+    items = []
+    for region, app_id in REGION_APPS.get('steam', {'global': '3052450'}).items():
+        items.extend(_fetch_steam_discussions_one(str(app_id), region, max_pages=max_pages))
+    return items
+
+
+def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
+    """Fetch recent Steam Community discussions for one (app_id, region).
+
+    Steam has no public API for discussions, so we scrape the HTML listing page
+    (默认按最后回复时间倒序，15 帖/页，?fp=N 翻页)。2026-06 实测 DOM：
+    每帖为 <div class="forum_topic ..."> 块，内含 forum_topic_overlay 链接、
+    forum_topic_name 标题、forum_topic_op 楼主、forum_topic_lastpost 的
+    data-timestamp 真实时间戳，以及 data-tooltip-forum 里的正文预览。
+    """
+    import html as _html
+    import re as _re
+
+    base_url = f'https://steamcommunity.com/app/{app_id}/discussions/0/'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,ko;q=0.7,ja;q=0.6',
+    }
+    cutoff = datetime.now(UTC) - timedelta(hours=HOURS_LOOKBACK)
+    items = []
+
+    try:
+        for page in range(1, max_pages + 1):
+            url = base_url if page == 1 else f'{base_url}?fp={page}'
+            resp = requests.get(url, headers=headers, timeout=30)
+            resp.raise_for_status()
+            html = resp.text
+
+            # 按 forum_topic 块切分（每块以下一个块或容器结束为界）
+            blocks = _re.split(r'<div[^>]+class="forum_topic\s', html)[1:]
+            page_added = 0
+            for block in blocks:
+                m_url = _re.search(
+                    r'class="forum_topic_overlay"\s+href="(https://steamcommunity\.com/app/\d+/discussions/[^"]+)"',
+                    block)
+                m_title = _re.search(r'class="forum_topic_name\s*"[^>]*>\s*(.*?)\s*</div>', block, _re.DOTALL)
+                if not m_url or not m_title:
+                    continue
+                title = _strip_html_tags(m_title.group(1)).strip()
+                if not title:
+                    continue
+
+                m_replies = _re.search(r'class="forum_topic_reply_count">.*?>\s*([\d,]+)\s*</div>', block, _re.DOTALL)
+                replies = int(m_replies.group(1).replace(',', '')) if m_replies else 0
+
+                m_ts = _re.search(r'class="forum_topic_lastpost"[^>]*data-timestamp="(\d+)"', block)
+                if m_ts:
+                    lastpost = datetime.fromtimestamp(int(m_ts.group(1)), tz=UTC)
+                    if lastpost < cutoff:
+                        # 列表页首部是**置顶帖**（class 同为 forum_topic），其最后回复
+                        # 往往是几个月前。原实现一见旧帖就 break 整页 —— 只要板块挂着
+                        # 一个陈旧置顶，第 0 个块就把整轮采集掐断，日志报
+                        # 「fetched 0 threads」，与「今天真没人发帖」完全无法区分。
+                        # 改为跳过该帖；整页无新帖时由下面 page_added == 0 收尾停翻。
+                        continue
+                    time_str, approx = lastpost.isoformat(), False
+                else:
+                    time_str, approx = datetime.now(UTC).isoformat(), True
+
+                m_author = _re.search(r'class="forum_topic_op"[^>]*>\s*([^<]+?)\s*</div>', block)
+                author = m_author.group(1).strip() if m_author else ''
+
+                # 正文预览藏在 data-tooltip-forum 的转义 HTML 里
+                summary = ''
+                m_hover = _re.search(r'data-tooltip-forum="(.*?)">', block, _re.DOTALL)
+                if m_hover:
+                    hover = _html.unescape(m_hover.group(1))
+                    m_text = _re.search(r'class="topic_hover_text"\s*>\s*(.*?)\s*</div>', hover, _re.DOTALL)
+                    if m_text:
+                        summary = _html.unescape(_strip_html_tags(m_text.group(1))).strip()[:500]
+
+                item = {
+                    'title': f'[Steam论坛] {title}',
+                    'summary': summary,
+                    'source': 'steam_discussion',
+                    'region': region,                # 甲方案：global/jp 区服
+                    'archive_subtype': 'discussion', # 归档 steam/<区服>/discussion
+                    'time': time_str,
+                    'url': m_url.group(1),
+                    'engagement': replies,
+                    'is_hot': replies >= 10,
+                    'author': author,
+                    'tags': ['steam_forum'],
+                }
+                if approx:
+                    item['time_is_approximate'] = True
+                items.append(item)
+                page_added += 1
+
+            if page_added == 0:
+                break
+            time.sleep(0.5)
+
+        logger.info(f'Steam Discussions: fetched {len(items)} threads')
+    except Exception as e:
+        logger.warning(f'Steam Discussions failed: {e}')
+
+    return items

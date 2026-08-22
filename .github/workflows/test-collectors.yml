@@ -17,8 +17,8 @@ permissions:
   contents: read
 
 jobs:
-  test-aggregator:
-    name: Test aggregator.py collectors
+  test-collectors:
+    name: Test platform collectors
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -36,7 +36,7 @@ jobs:
       - name: Install Playwright browsers
         run: playwright install chromium
 
-      - name: Test each aggregator collector
+      - name: Test each platform collector
         env:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
@@ -47,11 +47,13 @@ jobs:
           python3 -c "
           import sys, json, traceback, time
           sys.path.insert(0, 'projects/news/scripts')
-          from aggregator import (
+          # 2026-08-22「采集 → 直接入湖」：AC 栈（aggregator*）退役，全部采集器归
+          # global_collectors —— steam 三源整段迁入，reddit / bilibili / taptap 回落本栈。
+          # discord 不在此列：它由 discord_archiver 独立采集直落数据湖，不经采集入口。
+          from global_collectors import (
               fetch_reddit, fetch_bilibili,
               fetch_taptap, fetch_steam_reviews, fetch_steam_news,
               fetch_steam_discussions,
-              fetch_discord_local,
           )
           # Playwright collectors (fallback for API-limited platforms)
           try:
@@ -74,7 +76,6 @@ jobs:
               ('SteamReviews', fetch_steam_reviews),
               ('SteamNews', fetch_steam_news),
               ('SteamDiscussions', fetch_steam_discussions),
-              ('DiscordLocal', fetch_discord_local),
           ] + pw_fetchers
 
           print('=' * 80)

@@ -88,7 +88,7 @@
 | agent SDK 源文件 / 测试档 | 141 / 213 | 磁盘实况 |
 | maestro SDK 源文件 / 测试档 | 20 / 40 | 磁盘实况 |
 | testbed 源文件 / 测试档 | 6 / 3 | 磁盘实况 |
-| Python 测试档 | 151 | 磁盘实况 |
+| Python 测试档 | 145 | 磁盘实况 |
 | CI 工作流 / 其中定时 | 50 / 21 | `.github/workflows/` |
 | 挂账台账 开 / 已清 | 22 / 64 | `memory/todo.md` |
 
@@ -134,7 +134,7 @@
   - steam / youtube / official / steam_discussion / appstore / google_play 六源为**假警报**——
     数据自 06-22 起正常写入区服分层新路径（`steam/global/review/` 等），
     `silent_sources_audit.py` 只扫平级旧布局误判沉默；审计器已改为识别折叠映射 + 递归区服目录
-  - **taptap_review 真沉默真因**：`aggregator_base.VALID_SOURCES` 私有硬编码白名单
+  - **taptap_review 真沉默真因**：校验白名单 `VALID_SOURCES`（当时在 `aggregator_base`，2026-08-22 随该模块退役迁 `news_common`）私有硬编码
     未随 06-21 采集规范收录 `taptap_review`，采到的评论（CI 实测单轮 108 条）在校验层被整批丢弃；
     白名单已改从 `sources.py` 单一真相源派生，下轮采集起恢复入流
   - **youtube_comments 写旧读新**：`collect_video_comments.py` 迁移后仍写旧路径
@@ -143,7 +143,7 @@
   - ruliweb 沉默 7 天为边界情况（帖子内容日期偏旧致归档桶不新），非故障，观察即可
 - **数据落盘位置**（2026-08-21 输出展示层整层删除后订正）：
   - 运行期工作根（`archive_layout.news_run_root()`，默认 `projects/news/run/`，内容 gitignore）
-    — aggregator 写 news.json / news-raw.json、split_output 拆 *-latest.json、archive_platforms
+    — collect_global（2026-08-22 起唯一采集入口）写 news.json / news-raw.json、archive_platforms
     **同轮内**读走落数据湖；单轮内产生、单轮内消费，不进 git
   - 全量档案层 `Record/Community/`（BIAV-SC-DATA，经 `BIAV_SC_DATA_ROOT`）— **会话唯一取数面**
   - `projects/news/data/` — 跨轮状态（source-health / validation-drops / 采集游标），CI 提交回本仓

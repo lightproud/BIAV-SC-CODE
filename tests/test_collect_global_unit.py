@@ -24,8 +24,17 @@ import news_common
 
 class TestConvertItem(unittest.TestCase):
     def test_source_mapped(self):
-        out = cg.convert_item({"source": "steam", "title": "t"})
-        self.assertEqual(out["source"], "steam_review")
+        out = cg.convert_item({"source": "bilibili", "title": "t"})
+        self.assertEqual(out["source"], "bilibili")
+
+    def test_steam_sources_are_not_remapped(self):
+        """steam 三源各自直通（2026-08-22）。
+
+        旧表把 steam → steam_review：AC 栈里 GC 只见得到评价，那时无碍；三源迁入 GC 后
+        官方新闻会被改标成评价，archive_platforms 据 source 分桶，落档就进错桶。
+        """
+        for src in ("steam", "steam_review", "steam_discussion"):
+            self.assertEqual(cg.convert_item({"source": src, "title": "t"})["source"], src)
 
     def test_unknown_source_passthrough(self):
         out = cg.convert_item({"source": "myst", "title": "t"})
@@ -97,24 +106,9 @@ class TestBuildSummary(unittest.TestCase):
         self.assertTrue(out.endswith("。"))
 
 
-class TestLoadExistingNews(unittest.TestCase):
-    def test_missing_file(self):
-        with mock.patch.object(cg, "OUTPUT_PATH", Path("/nonexistent/news.json")):
-            self.assertEqual(cg.load_existing_news(), [])
-
-    def test_reads_news_array(self):
-        with tempfile.TemporaryDirectory() as d:
-            p = Path(d) / "news.json"
-            p.write_text('{"news": [{"title": "x"}]}')
-            with mock.patch.object(cg, "OUTPUT_PATH", p):
-                self.assertEqual(cg.load_existing_news(), [{"title": "x"}])
-
-    def test_corrupt_returns_empty(self):
-        with tempfile.TemporaryDirectory() as d:
-            p = Path(d) / "news.json"
-            p.write_text("{bad")
-            with mock.patch.object(cg, "OUTPUT_PATH", p):
-                self.assertEqual(cg.load_existing_news(), [])
+# load_existing_news 已随 aggregator 全家退役（2026-08-22「采集 → 直接入湖」）：
+# 它读的是 AC 栈先写下的 news.json，作为唯一入口后没有"上一段"的产物可并，
+# existing 恒为空列表。原三例（缺文件 / 正常读 / 坏档回落空）随函数一并退役。
 
 
 # ── run_zero_cost_collectors special branches ────────────────────────────────
@@ -129,6 +123,13 @@ class TestRunZeroCostBranches(unittest.TestCase):
 
     def _patch_all_empty(self, overrides):
         attr_by_name = {
+            # 2026-08-22：AC 栈退役后 reddit / bilibili / taptap 回落 GC、steam 三源迁入 GC。
+            # 本表漏登记 = 该采集器不被 mock = 用例真的出网（实测把 hermetic 用例拖成 55 秒）。
+            # 漂移守卫见 test_fetcher_stub_map_covers_every_registered_collector。
+            "Reddit": "fetch_reddit", "Bilibili": "fetch_bilibili",
+            "TapTap": "fetch_taptap",
+            "Steam News": "fetch_steam_news", "Steam Reviews": "fetch_steam_reviews",
+            "Steam Discussions": "fetch_steam_discussions",
             "Weibo": "fetch_weibo", "App Store": "fetch_appstore_reviews",
             "Pixiv": "fetch_pixiv", "Note.com": "fetch_note_com",
             "Ruliweb": "fetch_ruliweb", "StopGame": "fetch_stopgame",
@@ -213,22 +214,49 @@ class TestMain(unittest.TestCase):
         items = [{"title": "T", "url": "https://x/1", "engagement": 9,
                   "time": datetime.now(UTC).isoformat(), "source": "weibo"}]
         with mock.patch.object(cg, "run_zero_cost_collectors", return_value=(items, [])), \
-                mock.patch.object(cg, "load_existing_news", return_value=[]), \
+                mock.patch.object(cg, "_mark_collected"), \
+                mock.patch.object(news_common, "write_validation_drops",
+                                  return_value={"total_dropped": 0, "by_source": {}}), \
                 mock.patch.object(news_common, "dump_json_atomic") as dump:
             cg.main()  # no SystemExit on clean success
         # both news.json and news-raw.json written
         self.assertEqual(dump.call_count, 2)
 
-    def test_core_failure_exits_after_write(self):
+    def test_core_failure_writes_sentinel_without_exit(self):
+        """核心源失败：哨兵 + 0 退出（2026-08-22 起）。
+
+        非零退出会让 workflow 跳过后续 archive/repair/health 步骤，本轮已采到的
+        好数据随 runner 一起销毁——H9 当年正是为此把硬退出换成哨兵制。
+        """
         items = [{"title": "T", "url": "https://x/1", "engagement": 9,
                   "time": datetime.now(UTC).isoformat(), "source": "weibo"}]
-        with mock.patch.object(cg, "run_zero_cost_collectors",
-                               return_value=(items, [("youtube", "down")])), \
-                mock.patch.object(cg, "load_existing_news", return_value=[]), \
-                mock.patch.object(news_common, "dump_json_atomic", return_value=None):
-            with self.assertRaises(SystemExit) as cm:
-                cg.main()
-        self.assertEqual(cm.exception.code, 1)
+        with tempfile.TemporaryDirectory() as d:
+            flag = Path(d) / "collect-failure.flag"
+            with mock.patch.object(cg, "run_zero_cost_collectors",
+                                   return_value=(items, [("youtube", "down")])), \
+                    mock.patch.object(cg, "FAILURE_FLAG", flag), \
+                    mock.patch.object(cg, "_mark_collected") as marked, \
+                    mock.patch.object(news_common, "write_validation_drops",
+                                      return_value={"total_dropped": 0, "by_source": {}}), \
+                    mock.patch.object(news_common, "dump_json_atomic", return_value=None):
+                cg.main()  # 不抛 SystemExit
+            self.assertTrue(flag.exists())
+            marked.assert_not_called()
+
+
+
+class TestFetcherStubMapDoesNotDrift(unittest.TestCase):
+    """测试桩映射漏一个源，用例就真的出网——把它升格为守卫，而不是靠人记得同步。"""
+
+    def test_fetcher_stub_map_covers_every_registered_collector(self):
+        import re as _re
+        src = Path(cg.__file__).read_text(encoding="utf-8")
+        block = src.split("zero_cost_fetchers = [", 1)[1].split("all_fetchers =", 1)[0]
+        registered = set(_re.findall(r"c\.(fetch_[a-z_0-9]+)", block))
+        stub_src = Path(__file__).read_text(encoding="utf-8")
+        stubbed = set(_re.findall(r'"(fetch_[a-z_0-9]+)"', stub_src))
+        missing = sorted(registered - stubbed)
+        self.assertEqual(missing, [], f"这些已注册的采集器没有测试桩，用例会真的出网：{missing}")
 
 
 if __name__ == "__main__":
