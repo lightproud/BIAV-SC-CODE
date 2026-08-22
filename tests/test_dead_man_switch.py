@@ -7,6 +7,7 @@
 """
 from __future__ import annotations
 
+import json
 from datetime import datetime, timedelta, UTC
 from pathlib import Path
 
@@ -129,6 +130,67 @@ class TestBuildStatus:
         assert status["entries"][0]["workflow"] == "daily.yml"
         assert status["entries"][0]["state"] == "stale"
         assert status["generated_at"] == NOW.isoformat()
+
+    def _self_only_dir(self, tmp_path):
+        wf = tmp_path / "workflows"
+        wf.mkdir()
+        (wf / dms.SELF_WORKFLOW).write_text(
+            "on:\n  schedule:\n    - cron: '50 7 * * *'\n", encoding="utf-8")
+        return wf
+
+    @staticmethod
+    def _no_success(name):
+        """真实情况：本作业有发现即 exit 1，故自己永远没有 workflow success 记录。"""
+        return {
+            "created_at": (NOW - timedelta(days=26)).isoformat(),
+            "state": "active",
+            "last_success": None,
+        }
+
+    def test_self_judged_by_heartbeat_not_workflow_success(self, tmp_path):
+        """自锁回归：自己判自己不能用 workflow success，否则警报永远卡在常亮。
+
+        本作业「有发现就变红」，于是自己永无 success → 自判 never → findings 恒 ≥1
+        → 永远红。实测 2026-07-26 建成起 27 次运行 27 次红，2026-08-18 采集停摆
+        70 小时时那抹红与前 24 天的自噬性红毫无分别。改判上一轮心跳后循环断开。
+        """
+        wf = self._self_only_dir(tmp_path)
+        status_path = tmp_path / "status.json"
+        status_path.write_text(
+            json.dumps({"generated_at": (NOW - timedelta(hours=24)).isoformat()}),
+            encoding="utf-8")
+
+        status = dms.build_status(self._no_success, NOW, workflow_dir=wf,
+                                  status_path=status_path)
+        assert status["findings"] == 0          # 关键：能转绿了
+        assert status["entries"][0]["state"] == "ok"
+        assert status["entries"][0]["self_judged_by"] == "status.json/generated_at"
+
+    def test_self_still_alarms_when_sweeper_itself_goes_quiet(self, tmp_path):
+        """断开自锁不等于放过自己：扫描器真哑掉时仍须报。"""
+        wf = self._self_only_dir(tmp_path)
+        status_path = tmp_path / "status.json"
+        status_path.write_text(
+            json.dumps({"generated_at": (NOW - timedelta(hours=80)).isoformat()}),
+            encoding="utf-8")
+
+        status = dms.build_status(self._no_success, NOW, workflow_dir=wf,
+                                  status_path=status_path)
+        assert status["findings"] == 1
+        assert status["entries"][0]["state"] == "stale"
+
+    def test_self_heartbeat_unreadable_falls_back_to_created_at(self, tmp_path):
+        """心跳文件缺失/损坏时回落原逻辑，不能因读不到就静悄悄判 ok。"""
+        wf = self._self_only_dir(tmp_path)
+        for content in (None, "{bad json"):
+            status_path = tmp_path / "status.json"
+            if content is None:
+                status_path.unlink(missing_ok=True)
+            else:
+                status_path.write_text(content, encoding="utf-8")
+            status = dms.build_status(self._no_success, NOW, workflow_dir=wf,
+                                      status_path=status_path)
+            assert status["entries"][0]["state"] == "never"
 
     def test_api_failure_degrades_to_unknown_not_to_silence(self, tmp_path):
         """查不到 ≠ 没事：降级为 unknown 并留痕，绝不悄悄算作 ok。"""
