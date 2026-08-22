@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-22T18:27:13.973749+00:00",
+  "updated_at": "2026-08-22T21:20:29.057401+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1150
   },
   "validation_drops": {
-    "generated_at": "2026-08-22T18:26:32.482328+00:00",
+    "generated_at": "2026-08-22T21:19:44.720356+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -15,10 +15,10 @@
   "platforms": {
     "bilibili": {
       "level": "active",
-      "last_success_date": "2026-08-22",
+      "last_success_date": "2026-08-23",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 1,
-      "total_items": 3781,
+      "consecutive_silent_days": 0,
+      "total_items": 3782,
       "errors": []
     },
     "steam": {
@@ -42,7 +42,7 @@
       "last_success_date": "2026-08-22",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 1,
-      "total_items": 9822363,
+      "total_items": 9828146,
       "errors": []
     },
     "youtube": {
@@ -82,7 +82,7 @@
       "last_success_date": "2026-08-23",
       "last_check_date": "2026-08-23",
       "consecutive_silent_days": 0,
-      "total_items": 13173,
+      "total_items": 13175,
       "errors": []
     },
     "bahamut": {
@@ -90,7 +90,7 @@
       "last_success_date": "2026-08-23",
       "last_check_date": "2026-08-23",
       "consecutive_silent_days": 0,
-      "total_items": 1028,
+      "total_items": 1029,
       "errors": []
     },
     "appstore": {
@@ -111,10 +111,10 @@
     },
     "pixiv": {
       "level": "active",
-      "last_success_date": "2026-08-22",
+      "last_success_date": "2026-08-23",
       "last_check_date": "2026-08-23",
-      "consecutive_silent_days": 1,
-      "total_items": 657,
+      "consecutive_silent_days": 0,
+      "total_items": 658,
       "errors": []
     },
     "note_com": {
@@ -154,7 +154,7 @@
       "last_success_date": "2026-08-23",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 4153,
+      "total_items": 4175,
       "errors": []
     },
     "youtube_comments": {
