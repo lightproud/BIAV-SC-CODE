@@ -4521,26 +4521,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15591.md",
+      "rel": "提及:艾继丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15586.md",
       "rel": "提及:旺达",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -4577,6 +4571,12 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weixin.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
@@ -5961,26 +5961,20 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15591.md",
+      "rel": "提及:艾继丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15586.md",
       "rel": "提及:旺达",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -6095,6 +6089,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weixin.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
