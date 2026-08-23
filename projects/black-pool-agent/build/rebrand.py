@@ -46,7 +46,7 @@ PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 BRAND = "Black Pool"
 BRAND_AGENT = "Black Pool Agent"
 BRAND_VERSION = "0.1.0"
-UPSTREAM_VERSION = "0.20.1"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
+UPSTREAM_VERSION = "0.20.5"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
 BRAND_AUMID = "com.biav.blackpool"
 
 
@@ -381,14 +381,17 @@ BRAND_POST_RULES = [
         '        "skin": "black-pool",',
     ),
     # 默认深色（守密人 2026-08-05 裁定「默认配色要黑池金，深色」）：外观偏好未设时
-    # 上游兜底 'light'，新部署因此开在浅色——而黑池金的立意是「暖黑之上金作点缀」，
+    # 上游兜底本为 'light'，新部署因此开在浅色——而黑池金的立意是「暖黑之上金作点缀」，
     # 浅色只是备选貌。三处兜底一并改：normalizeMode（未设/脏值的唯一收口）、
     # ThemeContext 默认值（Provider 外的兜底）、无 window 时的首绘兜底。
     # 归基座层：公私两版同得（外观缺省属产品定制，非内网适配）。
     # 已显式选过浅色的用户不受影响——per-profile 偏好读到合法值即照旧。
+    # 2026-08-19 移 pin 锚点重锚：上游 v2026.8.19 出于同样的「暗色桌面不该被塞白窗」
+    # 理由，把自家兜底由 'light' 改成了 'system'（随 OS）——三处锚点随之更新，
+    # 但黑池的兜底仍强制 'dark'（品牌自定，不随 OS 走），裁定不受上游改动影响。
     (
         "const normalizeMode = (value: string | null): ThemeMode =>\n"
-        "  value === 'light' || value === 'dark' || value === 'system' ? value : 'light'\n",
+        "  value === 'light' || value === 'dark' || value === 'system' ? value : 'system'\n",
         "const normalizeMode = (value: string | null): ThemeMode =>\n"
         "  value === 'light' || value === 'dark' || value === 'system' ? value : 'dark'\n",
     ),
@@ -405,7 +408,7 @@ BRAND_POST_RULES = [
         "  renderedMode: 'dark',\n",
     ),
     (
-        "    typeof window === 'undefined' ? 'light' : modePref.resolve(readBootProfileKey())\n",
+        "    typeof window === 'undefined' ? 'system' : modePref.resolve(readBootProfileKey())\n",
         "    typeof window === 'undefined' ? 'dark' : modePref.resolve(readBootProfileKey())\n",
     ),
     # 对应用例翻面：per-profile 契约测试把「缺省」参数化成 fallback，缺省一改它就红
@@ -413,10 +416,23 @@ BRAND_POST_RULES = [
     # `a` 同时从 'dark' 换成 'light'：它是「与缺省不同的显式值」，缺省占了 dark 之后
     # 必须让位，否则用例区分不出「显式设过」与「回落缺省」。
     (
-        "  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'light',"
-        " a: 'dark', b: 'system', junk: 'dusk' }\n",
+        "  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'system',"
+        " a: 'dark', b: 'light', junk: 'dusk' }\n",
         "  { name: 'mode', pref: modePref as unknown as Pref, fallback: 'dark',"
         " a: 'light', b: 'system', junk: 'dusk' }\n",
+    ),
+    # 2026-08-19 移 pin 新增用例翻面：上游这次把「未选过外观的新档跟随 OS」升成了
+    # 一条独立断言用例（标题字面意思仍是「跟随 OS」，不改标题——只翻断言值，
+    # 与上面 per-profile 契约测试同一处理口径），黑池兜底仍强制 dark，断言随之翻面。
+    (
+        "  it('follows the OS rather than forcing light', () => {\n"
+        "    expect(modePref.resolve('default')).toBe('system')\n"
+        "    expect(modePref.resolve('work')).toBe('system')\n"
+        "  })\n",
+        "  it('follows the OS rather than forcing light', () => {\n"
+        "    expect(modePref.resolve('default')).toBe('dark')\n"
+        "    expect(modePref.resolve('work')).toBe('dark')\n"
+        "  })\n",
     ),
     # 自述句归因口径归一（守密人 2026-08-05 裁定「by B.I.A.V. Studio」）：
     # SPECIAL_RULES 早有裁定——自述句不保留「created by Nous Research」（来源事实由
@@ -437,6 +453,24 @@ BRAND_POST_RULES = [
     (
         "  assert.equal(value, 'F:\\\\Black Pool')\n",
         "  assert.equal(value, 'F:\\\\Hermes')\n",
+    ),
+    # 2026-08-19 移 pin 新撞的同类自伤（find-in-page 大小写不敏感回归用例，
+    # 新增于本次移 pin）：夹具字符串拿 'Hermes' 当纯占位样本文本（测的是查找
+    # 大小写不敏感，与品牌无关），裸词规则照改不误；但断言用的搜索词
+    # `'hermes'`（小写，查询参数）不在裸词规则的大小写匹配范围内、原样未变——
+    # 于是夹具内容变 'Black Pool Black Pool'、查询词仍是 'hermes'，两者对不上、
+    # 用例必红。三处（两条测试夹具 + 源码里同一处的说明注释）一并改回原样。
+    (
+        "    const surface = plantSurface('surface', '<p>Black Pool Black Pool</p>')\n",
+        "    const surface = plantSurface('surface', '<p>Hermes Hermes</p>')\n",
+    ),
+    (
+        '    surface.insertAdjacentHTML(\'beforeend\', \'<mark class="find-hit">Black Pool</mark>\')\n',
+        '    surface.insertAdjacentHTML(\'beforeend\', \'<mark class="find-hit">Hermes</mark>\')\n',
+    ),
+    (
+        "  // typed query fails on the first match whose casing differs — 'Black Pool'\n",
+        "  // typed query fails on the first match whose casing differs — 'Hermes'\n",
     ),
 ]
 
