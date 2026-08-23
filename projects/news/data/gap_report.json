@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-22T21:20:28.282723+00:00",
-  "total_gaps": 294,
+  "generated_at": "2026-08-23T01:12:44.768623+00:00",
+  "total_gaps": 298,
   "coverage": {
     "sources_total": 19,
     "sources_scanned": 18,
@@ -224,9 +224,13 @@
     },
     "steam_discussion": {
       "missing_dates": [
-        "2026-08-08"
+        "2026-08-08",
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-22"
       ],
-      "count": 1
+      "count": 5
     },
     "stopgame": {
       "missing_dates": [
