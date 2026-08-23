@@ -4,7 +4,7 @@ title: "taptap 社区数据源"
 description: "taptap 平台采集档案，全量 23 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/taptap/cn/post/"
 tags: ["data_layer:full_archive", "platform:taptap", "health:active"]
-timestamp: "2026-08-22T06:37:02.316525+00:00"
+timestamp: "2026-08-23T06:37:41.599348+00:00"
 ---
 
 # 数据层指针

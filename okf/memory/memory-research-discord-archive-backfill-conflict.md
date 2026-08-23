@@ -4,7 +4,7 @@ title: "诊断备忘：discord 全量 3.2G 仍在 git —— 状态与瘦身下�
 description: "约 10,600 文件、3.2G 的绝大部分。这些 Releases 已有副本，删 git 不丢数据。"
 resource: "/memory/research/discord-archive-backfill-conflict.md"
 tags: ["memory", "data_layer:curated", "research"]
-timestamp: "2026-08-22"
+timestamp: "2026-08-23"
 ---
 
 # 记忆层指针
