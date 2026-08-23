@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-23",
+  "generated": "2026-08-24",
   "stats": {
-    "nodes": 374,
-    "edges": 407
+    "nodes": 375,
+    "edges": 405
   },
   "nodes": [
     {
@@ -3048,6 +3048,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
+      "type": "documentation",
+      "title": "hermes-weekly-update-20260824",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "type": "documentation",
       "title": "kb-vector-remaining-handoff-20260705",
@@ -4478,12 +4489,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-appstore.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
       "source": "/community/community-bahamut.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
@@ -4551,12 +4556,6 @@
     },
     {
       "source": "/community/community-reddit.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:Ramona",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"
@@ -4571,6 +4570,12 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
@@ -5930,12 +5935,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/appstore.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
       "source": "/sources/bahamut.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
@@ -5999,12 +5998,6 @@
       "source": "/sources/pixiv.md",
       "target": "/characters/15601.md",
       "rel": "提及:「24」",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/reddit.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:Ramona",
       "rel_type": "mention"
     },
     {
@@ -6101,6 +6094,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {

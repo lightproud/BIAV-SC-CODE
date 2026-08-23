@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-23",
+  "generated": "2026-08-24",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 374,
-    "edges": 407,
-    "terms": 7017,
+    "concepts": 375,
+    "edges": 405,
+    "terms": 7092,
     "by_type": {
       "character": 72,
       "dataset": 71,
-      "documentation": 163,
+      "documentation": 164,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -24,14 +24,14 @@
       "community": 19,
       "memory": 51,
       "projects": 31,
-      "resource": 131,
+      "resource": 132,
       "sources": 19,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 110,
-      "search": 264
+      "search": 265
     }
   },
   "sections": {
@@ -57,7 +57,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 131
+      "count": 132
     },
     "sources": {
       "index": "/sources/index.md",
@@ -290,7 +290,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 34
+      "degree": 32
     },
     "/characters/130375.md": {
       "type": "character",
@@ -573,7 +573,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 9
     },
     "/characters/15577.md": {
       "type": "character",
@@ -840,7 +840,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 16
+      "degree": 14
     },
     "/characters/15596.md": {
       "type": "character",
@@ -1277,7 +1277,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/community/community-arca-live.md": {
       "type": "dataset",
@@ -1403,7 +1403,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 3
     },
     "/community/community-ruliweb.md": {
       "type": "dataset",
@@ -1487,7 +1487,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 6
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -3870,6 +3870,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md": {
+      "type": "documentation",
+      "title": "hermes-weekly-update-20260824",
+      "description": "本周区间横跨上游六个 tag（`v2026.8.13` → `v2026.8.19`），2200 个提交里对黑池桌面用户**摸得到**的变化集中在四块：**外观**——macOS/Windows 玻璃质感（glass）分平台可调、matte 磨砂选项、主题强调色一键重取色、新增 GitHub 配色主题，默认外观本条不变（黑池仍强制暗色鎏金，不随上游改的 OS 跟随走）；**Bot Mode 群聊**——真正的 Slack 式串行回帖、群聊自动折叠旧对话摘要、解散/重建群聊、头（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/hermes-weekly-update-20260824.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md": {
       "type": "documentation",
       "title": "kb-vector-remaining-handoff-20260705",
@@ -4517,7 +4531,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 760 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 761 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4526,12 +4540,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 1029 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 1031 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4545,7 +4559,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3787 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3793 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4559,7 +4573,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 9837036 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 9847408 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4573,7 +4587,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1459 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1461 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4629,7 +4643,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 4029 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 4047 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4638,12 +4652,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 435 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 436 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4657,7 +4671,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5521 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5526 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4671,7 +4685,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 208 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 209 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4713,7 +4727,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 4193 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 4222 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4727,7 +4741,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 13179 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 13183 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4736,7 +4750,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 5
     },
     "/sources/weixin.md": {
       "type": "dataset",
@@ -4755,7 +4769,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3531 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3541 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4769,7 +4783,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2778 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2799 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -5368,11 +5382,6 @@
         "cv"
       ],
       [
-        "/community/community-appstore.md",
-        "提及:Saya",
-        "mention"
-      ],
-      [
         "/community/community-bahamut.md",
         "提及:沙耶",
         "mention"
@@ -5485,11 +5494,6 @@
       [
         "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
         "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/sources/appstore.md",
-        "提及:Saya",
         "mention"
       ],
       [
@@ -5966,6 +5970,11 @@
         "mention"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/memory/memory-research-community-analysis-2026-05-18-26.md",
         "提及:墨菲",
         "mention"
@@ -5982,6 +5991,11 @@
       ],
       [
         "/sources/taptap_review.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:墨菲",
         "mention"
       ],
@@ -6372,11 +6386,6 @@
         "lore"
       ],
       [
-        "/community/community-reddit.md",
-        "提及:Ramona",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:Ramona",
         "mention"
@@ -6414,11 +6423,6 @@
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:拉蒙娜",
-        "mention"
-      ],
-      [
-        "/sources/reddit.md",
-        "提及:Ramona",
         "mention"
       ],
       [
@@ -7498,11 +7502,6 @@
     ],
     "/community/community-appstore.md": [
       [
-        "/characters/130226.md",
-        "提及:Saya",
-        "mention"
-      ],
-      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -7736,11 +7735,6 @@
     ],
     "/community/community-reddit.md": [
       [
-        "/characters/15595.md",
-        "提及:Ramona",
-        "mention"
-      ],
-      [
         "/characters/130226.md",
         "提及:Saya",
         "mention"
@@ -7813,6 +7807,11 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
         "mention"
       ],
       [
@@ -9338,11 +9337,6 @@
     ],
     "/sources/appstore.md": [
       [
-        "/characters/130226.md",
-        "提及:Saya",
-        "mention"
-      ],
-      [
         "/community/community-appstore.md",
         "同平台",
         "cross"
@@ -9446,11 +9440,6 @@
       ]
     ],
     "/sources/reddit.md": [
-      [
-        "/characters/15595.md",
-        "提及:Ramona",
-        "mention"
-      ],
       [
         "/characters/130226.md",
         "提及:Saya",
@@ -9568,6 +9557,11 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
         "mention"
       ],
       [
@@ -10121,6 +10115,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -10797,6 +10792,9 @@
     "bootstrapped": [
       "/story/story_search_index.md"
     ],
+    "bot": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "boundary": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
     ],
@@ -11391,6 +11389,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -11805,6 +11804,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12155,6 +12155,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12371,6 +12372,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12721,6 +12723,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -13169,10 +13172,14 @@
       "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
-      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
+      "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "githubusercontent": [
       "/assets/assets-chat-onboarding-snippet.md"
+    ],
+    "glass": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "global": [
       "/community/community-appstore.md",
@@ -13295,7 +13302,8 @@
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "history": [
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md"
@@ -13550,6 +13558,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -13991,6 +14000,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -14290,6 +14300,9 @@
       "/memory/memory-ext-session-continuity.md",
       "/projects/silver-core-sdk-doc-errors.md"
     ],
+    "macos": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "maestro": [
       "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -14355,6 +14368,9 @@
     ],
     "matrix": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md"
+    ],
+    "matte": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "mb": [
       "/assets/assets-images.md"
@@ -14523,6 +14539,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -14715,6 +14732,9 @@
     "mockup": [
       "/resource/resource-repo-engineering-maestro-sdk-bpt-intervention-ui-mockup-20260729.md"
     ],
+    "mode": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "modules": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
@@ -14877,6 +14897,9 @@
     ],
     "origin": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
+    ],
+    "os": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "oss": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -15250,6 +15273,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -15694,6 +15718,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -16031,6 +16056,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -16220,6 +16246,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -16663,6 +16690,9 @@
     "skip": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
+    "slack": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "slim": [
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
     ],
@@ -17091,6 +17121,9 @@
     "t29": [
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md"
     ],
+    "tag": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "tags": [
       "/README.md"
     ],
@@ -17291,6 +17324,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -17452,7 +17486,8 @@
       "/characters/94451.md"
     ],
     "update": [
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "updateprompts": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -17510,6 +17545,9 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/projects/releases-treasure-map.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
+    ],
+    "v2026": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "v4": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -17633,7 +17671,8 @@
     ],
     "weekly": [
       "/resource/resource-intel-weekly-morimens-intel-20260712.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "weibo": [
       "/community/community-weibo.md",
@@ -17702,6 +17741,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "windows": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "wire": [
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -17960,6 +18002,9 @@
       "/characters/15592.md",
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "一键": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "一阶": [
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
@@ -18119,7 +18164,8 @@
     "上游": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
-      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
+      "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "上烈": [
       "/characters/15575.md"
@@ -18245,7 +18291,8 @@
     ],
     "不变": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
-      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "不可": [
       "/README.md",
@@ -18480,6 +18527,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -18777,6 +18825,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -18944,6 +18993,9 @@
     ],
     "不适": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
+    ],
+    "不随": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "不需": [
       "/assets/assets-chat-onboarding-snippet.md"
@@ -19132,6 +19184,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -19434,7 +19487,8 @@
       "/characters/15598.md"
     ],
     "个提": [
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "个插": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -19522,6 +19576,7 @@
     "中在": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -19588,7 +19643,8 @@
       "/characters/15596.md"
     ],
     "串行": [
-      "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
+      "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "临时": [
       "/characters/15566.md",
@@ -19791,6 +19847,9 @@
     ],
     "主词": [
       "/memory/memory-ext-bpt-positioning.md"
+    ],
+    "主题": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "丽的": [
       "/characters/15584.md"
@@ -20195,7 +20254,8 @@
       "/memory/memory-ext-biav-info-classification.md"
     ],
     "交里": [
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "亦属": [
       "/README.md"
@@ -20538,6 +20598,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -20661,6 +20722,9 @@
     ],
     "仍在": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
+    ],
+    "仍强": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "仍按": [
       "/memory/memory-archive-contribution-protocol-hub.md"
@@ -21608,6 +21672,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -21903,6 +21968,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -22806,6 +22872,7 @@
       "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "六个": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
     ],
     "兰提戈斯": [
@@ -23471,6 +23538,9 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
+    "分平": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "分开": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
@@ -23778,6 +23848,9 @@
       "/characters/15584.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
+    "制暗": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "制本": [
       "/assets/assets-images.md"
     ],
@@ -24009,6 +24082,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -24336,6 +24410,9 @@
     "动总": [
       "/characters/15573.md"
     ],
+    "动折": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "动搭": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
@@ -24462,6 +24539,9 @@
     "化身": [
       "/characters/94450.md"
     ],
+    "化集": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "北京": [
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
@@ -24573,6 +24653,9 @@
     "区贡": [
       "/memory/contribution-protocol.md",
       "/memory/memory-archive-contribution-protocol-hub.md"
+    ],
+    "区间": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "医师": [
       "/characters/77925.md"
@@ -25203,6 +25286,9 @@
     "取的": [
       "/characters/15590.md"
     ],
+    "取色": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "取零": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
     ],
@@ -25239,7 +25325,8 @@
       "/characters/94451.md"
     ],
     "变化": [
-      "/characters/15583.md"
+      "/characters/15583.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "变坏": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
@@ -25290,6 +25377,9 @@
     ],
     "叠大": [
       "/characters/15588.md"
+    ],
+    "叠旧": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "口分": [
       "/community/community-appstore.md",
@@ -25688,6 +25778,9 @@
       "/memory/memory-ext-knowledge-layer-design.md",
       "/story/story_units.md"
     ],
+    "可调": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "可赋": [
       "/characters/15574.md"
     ],
@@ -25733,6 +25826,9 @@
     ],
     "台双": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "台可": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "台层": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
@@ -26224,6 +26320,9 @@
     "周会": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
+    "周区": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "周报": [
       "/memory/memory-archive-bpt-architecture-summary-template.md"
     ],
@@ -26600,6 +26699,9 @@
     "四件": [
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
     ],
+    "四块": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "四层": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -26670,6 +26772,9 @@
     ],
     "回头": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "回帖": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "回归": [
       "/characters/15580.md",
@@ -26882,6 +26987,9 @@
     ],
     "在唯": [
       "/README.md"
+    ],
+    "在四": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "在她": [
       "/characters/15600.md",
@@ -27616,6 +27724,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -27760,6 +27869,9 @@
     ],
     "外互": [
       "/README.md"
+    ],
+    "外观": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "外触": [
       "/characters/15586.md",
@@ -28482,6 +28594,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -29159,6 +29272,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -29586,7 +29700,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "对账": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -29597,6 +29712,9 @@
     "对银": [
       "/README.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
+    ],
+    "对黑": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "对齐": [
       "/README.md",
@@ -30528,6 +30646,7 @@
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -30883,6 +31002,9 @@
     "建立": [
       "/resource/resource-repo-engineering-plugmem-vs-silver-core-memory-20260727.md"
     ],
+    "建群": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "建计": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
@@ -30991,6 +31113,9 @@
     "弃牌": [
       "/characters/15565.md"
     ],
+    "式串": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "式候": [
       "/README.md"
     ],
@@ -31084,6 +31209,9 @@
     "强信": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
+    "强制": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "强力": [
       "/characters/15583.md",
       "/characters/15590.md"
@@ -31121,6 +31249,9 @@
     ],
     "强约": [
       "/projects/entry-claude-md.md"
+    ],
+    "强调": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "归了": [
       "/characters/15580.md"
@@ -31291,7 +31422,8 @@
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "得到": [
-      "/characters/130901.md"
+      "/characters/130901.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "得十": [
       "/characters/15571.md"
@@ -32684,6 +32816,9 @@
     "抗死": [
       "/characters/15571.md"
     ],
+    "折叠": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "折磨": [
       "/characters/15580.md"
     ],
@@ -33228,6 +33363,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -33853,6 +33989,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -33950,7 +34087,8 @@
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "提供": [
       "/characters/15570.md",
@@ -34219,6 +34357,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -34301,6 +34440,9 @@
     ],
     "摧毁": [
       "/characters/77925.md"
+    ],
+    "摸得": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "撑向": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -34413,6 +34555,9 @@
     ],
     "改版": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "改的": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "改进": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
@@ -34660,6 +34805,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -34967,6 +35113,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -35562,6 +35709,9 @@
     "新出": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
+    "新增": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "新并": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r5-20260718.md"
     ],
@@ -35823,6 +35973,9 @@
     ],
     "日采": [
       "/resource/resource-proposal-news-push-format-20260712.md"
+    ],
+    "旧对": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "旧版": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
@@ -36200,6 +36353,9 @@
     ],
     "暗料": [
       "/characters/15571.md"
+    ],
+    "暗色": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "暧昧": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r4-20260718.md"
@@ -36818,6 +36974,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -36931,6 +37088,9 @@
     "本号": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
+    "本周": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "本回": [
       "/characters/15587.md"
     ],
@@ -36963,6 +37123,9 @@
     ],
     "本月": [
       "/community/community-timeline.md"
+    ],
+    "本条": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "本来": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
@@ -37287,6 +37450,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -37396,6 +37560,9 @@
     ],
     "杠杆": [
       "/memory/memory-ext-skill-authoring-standard.md"
+    ],
+    "条不": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "条件": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -37959,6 +38126,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -38241,6 +38409,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -38362,7 +38531,8 @@
       "/community/community-index.md"
     ],
     "桌面": [
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "档与": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
@@ -38751,6 +38921,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -38864,6 +39035,9 @@
     ],
     "模糊": [
       "/characters/15575.md"
+    ],
+    "横跨": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "橘由": [
       "/characters/15560.md",
@@ -39167,6 +39341,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -39247,7 +39422,8 @@
       "/characters/15591.md"
     ],
     "正的": [
-      "/characters/15602.md"
+      "/characters/15602.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "正落": [
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
@@ -39545,6 +39721,9 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
+    "池仍": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "池任": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
@@ -39577,6 +39756,9 @@
     ],
     "池是": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
+    ],
+    "池桌": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "池特": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
@@ -39979,6 +40161,9 @@
     "游一": [
       "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
+    "游六": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "游套": [
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md"
     ],
@@ -40057,6 +40242,9 @@
       "/characters/95786.md",
       "/projects/entry-readme.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+    ],
+    "游改": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "源不": [
       "/characters/15573.md"
@@ -40915,6 +41103,9 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md"
     ],
+    "玻璃": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "珈伦": [
       "/characters/15571.md"
     ],
@@ -40992,6 +41183,9 @@
     ],
     "瑰刺": [
       "/characters/15583.md"
+    ],
+    "璃质": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "瓦解": [
       "/characters/125346.md",
@@ -41210,7 +41404,8 @@
     "用户": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "用料": [
       "/characters/15571.md"
@@ -41735,6 +41930,9 @@
     ],
     "的取": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "的变": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "的可": [
       "/characters/15600.md"
@@ -42547,7 +42745,8 @@
       "/characters/15586.md"
     ],
     "真正": [
-      "/characters/15602.md"
+      "/characters/15602.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "真瑠": [
       "/characters/122587.md",
@@ -42740,6 +42939,9 @@
     "码部": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
+    "砂选": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "研与": [
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md"
     ],
@@ -42928,6 +43130,9 @@
     ],
     "磨灭": [
       "/characters/15588.md"
+    ],
+    "磨砂": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "示例": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -44282,7 +44487,8 @@
       "/characters/15569.md"
     ],
     "群聊": [
-      "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+      "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "羽优": [
       "/characters/77913.md"
@@ -44435,6 +44641,9 @@
     "聊天": [
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+    ],
+    "聊自": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "职能": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
@@ -44733,6 +44942,7 @@
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "自包": [
@@ -44846,6 +45056,12 @@
     "良好": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
+    "色一": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
+    "色主": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "色人": [
       "/assets/persona-erica.md"
     ],
@@ -44881,6 +45097,9 @@
     ],
     "色设": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "色鎏": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "艺术": [
       "/characters/15592.md"
@@ -45238,6 +45457,9 @@
     "行动": [
       "/characters/15591.md"
     ],
+    "行回": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "行基": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
@@ -45500,6 +45722,9 @@
     "观察": [
       "/characters/15595.md"
     ],
+    "观本": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "观术": [
       "/memory/morimens-context.md"
     ],
@@ -45588,6 +45813,9 @@
     "解敌": [
       "/characters/125346.md",
       "/characters/77925.md"
+    ],
+    "解散": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "解析": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
@@ -45715,6 +45943,9 @@
     ],
     "认可": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "认外": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "认提": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -46161,7 +46392,8 @@
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
-      "/memory/memory-ext-active-silver-blackpool-interface.md"
+      "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "话状": [
       "/projects/project-silver-core-maestro-sdk.md",
@@ -46332,6 +46564,9 @@
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-scs-req-orchestrator-sdk-20260717.md"
     ],
+    "调色": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "谕中": [
       "/characters/15599.md"
     ],
@@ -46402,6 +46637,9 @@
     ],
     "货窗": [
       "/resource/resource-repo-engineering-biav-sc-split-p23-cutover-plan-20260719.md"
+    ],
+    "质感": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "质架": [
       "/projects/silver-core-sdk-doc-positioning.md",
@@ -46649,6 +46887,12 @@
     "跟着": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
+    "跟随": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
+    "跨上": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "跨会": [
       "/projects/project-silver-core-maestro-sdk.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -46868,6 +47112,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -47616,6 +47861,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -47787,6 +48033,9 @@
     ],
     "逆境": [
       "/characters/94450.md"
+    ],
+    "选项": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "透防": [
       "/characters/15573.md"
@@ -48105,6 +48354,9 @@
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-ext-biav-info-classification.md"
     ],
+    "配色": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "配锁": [
       "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r2-20260718.md"
     ],
@@ -48187,6 +48439,9 @@
       "/characters/15585.md",
       "/characters/15592.md"
     ],
+    "里对": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "里已": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
@@ -48208,6 +48463,9 @@
     "重创": [
       "/characters/15564.md"
     ],
+    "重取": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "重叠": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
@@ -48227,7 +48485,8 @@
     ],
     "重建": [
       "/README.md",
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "重推": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -48490,6 +48749,9 @@
     "金赔": [
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
+    "鎏金": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "针不": [
       "/README.md",
       "/assets/assets-archive-integrity.md",
@@ -48690,6 +48952,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -48965,6 +49228,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -49156,6 +49420,9 @@
     "键路": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
+    "键重": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "镜头": [
       "/community/community-appstore.md",
       "/community/community-arca-live.md",
@@ -49299,6 +49566,9 @@
     ],
     "间摧": [
       "/characters/77925.md"
+    ],
+    "间横": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "间的": [
       "/characters/15590.md"
@@ -49448,6 +49718,9 @@
     "陷集": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
+    "随上": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "随后": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
@@ -49461,6 +49734,9 @@
       "/characters/15574.md",
       "/characters/15604.md",
       "/memory/memory-ext-skill-authoring-standard.md"
+    ],
+    "随走": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "隐忍": [
       "/characters/15587.md"
@@ -49487,6 +49763,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
@@ -49716,6 +49993,9 @@
     "面清": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
+    "面用": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+    ],
     "面的": [
       "/characters/15566.md"
     ],
@@ -49843,6 +50123,9 @@
     ],
     "题前": [
       "/memory/memory-archive-contribution-protocol-hub.md"
+    ],
+    "题强": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "题是": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
@@ -50113,6 +50396,7 @@
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
@@ -50132,7 +50416,8 @@
     "默认": [
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "鼓舞": [
       "/characters/130901.md"
@@ -50947,6 +51232,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -51290,6 +51576,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -51496,6 +51783,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -51746,6 +52034,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -52025,7 +52314,8 @@
       "/resource/resource-repo-engineering-bpt-hermes-charter-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "history": [
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md"
@@ -52346,6 +52636,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -53150,6 +53441,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -53765,6 +54057,7 @@
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -53873,7 +54166,8 @@
       "/characters/94451.md"
     ],
     "update": [
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "upstream": [
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
@@ -53937,7 +54231,8 @@
     ],
     "weekly": [
       "/resource/resource-intel-weekly-morimens-intel-20260712.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
     "weibo": [
       "/community/community-weibo.md",

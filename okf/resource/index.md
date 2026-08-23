@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (131)
+# 银芯正式产物（报告/分析） (132)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -89,6 +89,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [hermes-upstream-testrun-20260802](/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md) - 上游套件在银芯容器内**可完整复现运行**：全量 **2,471 测试文件 / 22,766 通过 / 40 失败**，（格式：md）
 * [hermes-upstream-testrun-20260804](/resource/resource-repo-engineering-hermes-upstream-testrun-20260804.md) - 0.20.0 套件在银芯容器内**可完整复现运行**：**2,599 测试文件 / 25,176 断言通过 / 35 失败（格式：md）
 * [hermes-weekly-update-20260816](/resource/resource-repo-engineering-hermes-weekly-update-20260816.md) - **这一版对用户实际意味着什么**（1,620 个提交里，桌面端用户真会碰到的几条）：（格式：md）
+* [hermes-weekly-update-20260824](/resource/resource-repo-engineering-hermes-weekly-update-20260824.md) - 本周区间横跨上游六个 tag（`v2026.8.13` → `v2026.8.19`），2200 个提交里对黑池桌面用户**摸得到**的变化集中在四块：**外观
 * [kb-vector-remaining-handoff-20260705](/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md) - 银芯已建向量检索腿（§八「厚锚撑向量」的活体参照实现，守密人 2026-07-05 裁定(A) 解除零 ML 红线，**scoped**：白盒脊柱仍零 ML，只
 * [last30days-skill-research-20260729](/resource/resource-repo-engineering-last30days-skill-research-20260729.md) - 定位一句话：**「按赞数、转发数、真金赔率排序的搜索引擎，搜的是人不是编辑」**——Google 聚合编辑内容，它并行搜 Reddit / X / YouTub
 * [maestro-sdk-agent-assembly-design-20260729](/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md) - 第一轮问「代码写得对不对」，第二轮问「作为产品是否成立」。第二轮的判词是：**一个被证明「造得出」、但只有一半被证明「有人要」的产品**——已验证三族（ledg
