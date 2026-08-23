@@ -1,8 +1,8 @@
 diff --git a/agent/usage_pricing.py b/agent/usage_pricing.py
-index 5cacdb0..f237631 100644
+index c955bdc..f77a32d 100644
 --- a/agent/usage_pricing.py
 +++ b/agent/usage_pricing.py
-@@ -1215,12 +1215,81 @@ def _pricing_entry_from_metadata(
+@@ -1238,12 +1238,81 @@ def _pricing_entry_from_metadata(
      )
  
  
@@ -85,10 +85,10 @@ index 5cacdb0..f237631 100644
      if route.billing_mode == "subscription_included":
          return PricingEntry(
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index ac2a366..19a1bf3 100644
+index d8ceea5..4eb1848 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
-@@ -5347,11 +5347,7 @@ function buildApplicationMenu() {
+@@ -6385,11 +6385,7 @@ function buildApplicationMenu() {
        ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
        : [{ role: 'minimize' }, { role: 'close' }]
    })
@@ -102,10 +102,10 @@ index ac2a366..19a1bf3 100644
    return Menu.buildFromTemplate(template)
  }
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index 5d4502b..7015055 100644
+index 80d7fba..420d20c 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
-@@ -109,6 +109,8 @@ export function AboutSettings() {
+@@ -138,6 +138,8 @@ export function AboutSettings() {
        </div>
  
        <div className="mx-auto mt-4 w-full max-w-2xl">
@@ -114,7 +114,7 @@ index 5d4502b..7015055 100644
          <SectionHeading icon={RefreshCw} title={a.updates} />
  
          <div
-@@ -178,8 +180,10 @@ export function AboutSettings() {
+@@ -207,8 +209,10 @@ export function AboutSettings() {
            hint={a.branchCommit(status?.branch ?? 'unknown', status?.currentSha?.slice(0, 7) ?? 'unknown')}
            title={a.automaticUpdates}
          />
@@ -127,19 +127,19 @@ index 5d4502b..7015055 100644
      </SettingsContent>
    )
 diff --git a/apps/desktop/src/app/settings/gateway-settings.tsx b/apps/desktop/src/app/settings/gateway-settings.tsx
-index 2465168..c35bc17 100644
+index 56948ea..15df429 100644
 --- a/apps/desktop/src/app/settings/gateway-settings.tsx
 +++ b/apps/desktop/src/app/settings/gateway-settings.tsx
-@@ -1117,6 +1117,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1054,6 +1054,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'local' }))}
-             title={scope === null ? g.localTitle : g.inheritTitle}
+             title={g.localTitle}
            />
 +          {/* 内网无 Nous Cloud——Cloud 连接模式隐藏（审计轮二） */}
 +          {false && (
            <ModeCard
              active={state.mode === 'cloud'}
              description={g.cloudDesc}
-@@ -1125,6 +1127,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1062,6 +1064,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}
              title={g.cloudTitle}
            />
@@ -148,10 +148,10 @@ index 2465168..c35bc17 100644
              active={state.mode === 'remote'}
              description={g.remoteDesc}
 diff --git a/apps/desktop/src/app/settings/index.tsx b/apps/desktop/src/app/settings/index.tsx
-index f555037..09eb641 100644
+index 82cc8a0..f8eb4ec 100644
 --- a/apps/desktop/src/app/settings/index.tsx
 +++ b/apps/desktop/src/app/settings/index.tsx
-@@ -51,7 +51,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
+@@ -63,7 +63,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
    'keybinds',
    'keys',
    'notifications',
@@ -159,7 +159,7 @@ index f555037..09eb641 100644
    'plugins',
    'sessions',
    'about'
-@@ -161,13 +160,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
+@@ -187,13 +186,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
          label: t.settings.nav.notifications,
          onSelect: () => setActiveView('notifications')
        },
@@ -186,10 +186,10 @@ index f555037..09eb641 100644
          active: activeView === 'providers',
          children: [
 diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-index 2c7b914..bd2364c 100644
+index a6e144d..e17ee7e 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-@@ -42,8 +42,7 @@ import {
+@@ -45,8 +45,7 @@ import {
    $backendUpdateStatus,
    $desktopVersion,
    $updateApply,
@@ -199,7 +199,7 @@ index 2c7b914..bd2364c 100644
  } from '@/store/updates'
  import type { StatusResponse, UsageStats } from '@/types/hermes'
  
-@@ -295,10 +294,9 @@ export function useStatusbarItems({
+@@ -330,10 +329,9 @@ export function useStatusbarItems({
        // Update state is not a preference: hiding it is how a user misses that
        // their client is behind. Listed in the menu, but locked on.
        lockedVisible: true,
@@ -211,7 +211,7 @@ index 2c7b914..bd2364c 100644
      }
    }, [
      desktopVersion?.appVersion,
-@@ -338,10 +336,9 @@ export function useStatusbarItems({
+@@ -374,10 +372,9 @@ export function useStatusbarItems({
        id: 'version-backend',
        label: status.label,
        lockedVisible: true,
@@ -390,16 +390,16 @@ index aedde11..ec0da80 100644
        </div>
      )
 diff --git a/apps/desktop/src/components/onboarding/index.test.tsx b/apps/desktop/src/components/onboarding/index.test.tsx
-index ad81560..e9c07fa 100644
+index ef099f9..54a7124 100644
 --- a/apps/desktop/src/components/onboarding/index.test.tsx
 +++ b/apps/desktop/src/components/onboarding/index.test.tsx
-@@ -56,21 +56,17 @@ afterEach(() => {
+@@ -46,21 +46,17 @@ afterEach(() => {
  })
  
  describe('onboarding Picker', () => {
 -  it('features Nous Portal and hides other providers behind a disclosure', () => {
 +  it('features Nous Portal with every provider listed up front', () => {
-     setProviders([provider('anthropic', 'Anthropic Claude'), provider('nous', 'Nous Portal')])
+     setProviders([makeOAuthProvider('anthropic', 'Anthropic Claude'), makeOAuthProvider('nous', 'Nous Portal')])
      render(<Picker ctx={ctx} />)
  
      expect(screen.getByText('Nous Portal')).toBeTruthy()
@@ -420,8 +420,8 @@ index ad81560..e9c07fa 100644
      expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()
    })
  
-@@ -81,7 +77,6 @@ describe('onboarding Picker', () => {
-       provider('nous', 'Nous Portal')
+@@ -71,7 +67,6 @@ describe('onboarding Picker', () => {
+       makeOAuthProvider('nous', 'Nous Portal')
      ])
      render(<Picker ctx={ctx} />)
 -    fireEvent.click(screen.getByRole('button', { name: 'Other providers' }))
@@ -429,7 +429,7 @@ index ad81560..e9c07fa 100644
      const labels = screen
        .getAllByRole('button')
 diff --git a/apps/desktop/src/components/onboarding/index.tsx b/apps/desktop/src/components/onboarding/index.tsx
-index 3b44c4c..50cf5cc 100644
+index e75d128..e99be00 100644
 --- a/apps/desktop/src/components/onboarding/index.tsx
 +++ b/apps/desktop/src/components/onboarding/index.tsx
 @@ -404,7 +404,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
@@ -470,7 +470,7 @@ index 851f7be..522a60c 100644
          <p className="mt-1 text-xs leading-5 text-muted-foreground">{t.onboarding.featuredPitch}</p>
        </div>
 diff --git a/apps/desktop/src/store/onboarding.ts b/apps/desktop/src/store/onboarding.ts
-index 12c0d66..170a32f 100644
+index c4c1bcd..a62c307 100644
 --- a/apps/desktop/src/store/onboarding.ts
 +++ b/apps/desktop/src/store/onboarding.ts
 @@ -117,6 +117,11 @@ function writeCachedConfigured(value: boolean) {
@@ -486,10 +486,10 @@ index 12c0d66..170a32f 100644
      return false
    }
 diff --git a/apps/desktop/src/store/updates.test.ts b/apps/desktop/src/store/updates.test.ts
-index 010c987..a3aba40 100644
+index 5c04feb..0984ef6 100644
 --- a/apps/desktop/src/store/updates.test.ts
 +++ b/apps/desktop/src/store/updates.test.ts
-@@ -133,50 +133,14 @@ describe('reportBackendContract', () => {
+@@ -163,50 +163,14 @@ describe('reportBackendContract', () => {
      vi.useRealTimers()
    })
  
@@ -544,7 +544,7 @@ index 010c987..a3aba40 100644
    })
  })
  
-@@ -894,37 +858,37 @@ describe('startUpdatePoller', () => {
+@@ -1181,37 +1145,37 @@ describe('startUpdatePoller', () => {
      vi.useRealTimers()
    })
  
@@ -593,10 +593,10 @@ index 010c987..a3aba40 100644
    })
  })
 diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
-index 19739a9..53fe210 100644
+index 476354e..88148e2 100644
 --- a/apps/desktop/src/store/updates.ts
 +++ b/apps/desktop/src/store/updates.ts
-@@ -144,6 +144,11 @@ function isInstallMethodToastSnoozed(): boolean {
+@@ -148,6 +148,11 @@ function isInstallMethodToastSnoozed(): boolean {
   * doesn't nag on every thread switch.
   */
  export function reportBackendContract(contract: number | undefined): void {
@@ -608,7 +608,7 @@ index 19739a9..53fe210 100644
    if ((contract ?? 0) >= REQUIRED_BACKEND_CONTRACT) {
      dismissNotification(SKEW_TOAST_ID)
      // Backend caught up — forget any prior snooze so a future regression warns
-@@ -724,6 +729,11 @@ let lastConnectionMode: string | undefined
+@@ -916,6 +921,11 @@ let lastConnectionMode: string | undefined
  
  /** Wire up background polling + progress streaming. Idempotent. */
  export function startUpdatePoller(): void {
@@ -621,10 +621,10 @@ index 19739a9..53fe210 100644
      return
    }
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index 4ce72fb..c945a85 100644
+index 212e8e6..6d75f4e 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
-@@ -3999,6 +3999,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
+@@ -5328,6 +5328,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
  
      if not git_dir.exists():
          if sys.platform == "win32":

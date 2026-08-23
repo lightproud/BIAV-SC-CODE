@@ -1,24 +1,24 @@
-diff --git a/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event.ts b/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event.ts
-index b1beaa9..3c51168 100644
---- a/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event.ts
-+++ b/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event.ts
-@@ -17,6 +17,8 @@ import { modelOptionsQueryKey } from '@/lib/model-options'
- import { isProviderSetupErrorMessage } from '@/lib/provider-setup-errors'
- import { invalidateSlashCompletions } from '@/lib/slash-completion-cache'
- import { type AgentNoticePayload, clearAgentNotice, nativeNoticeInput, showAgentNotice } from '@/store/agent-notices'
+diff --git a/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts b/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts
+index 0000000..0000000 100644
+--- a/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts
++++ b/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts
+@@ -15,5 +15,7 @@
+ import { setCurrentUsage, setTurnStartedAt } from '@/store/session'
+ import { pruneFinishedSessionSubagents } from '@/store/subagents'
+ import { clearActiveSessionTodos } from '@/store/todos'
 +import { recordCumulativeUsage } from '@/store/usage-rounds'
 +import type { UsageStats } from '@/types/hermes'
- import { reconcileApprovalModeForProfile } from '@/store/approval-mode'
- import { billingCtaLabel, clearBillingBlock, runBillingRecovery, setBillingBlock } from '@/store/billing-block'
- import { clearClarifyRequest, normalizeChoices, setClarifyRequest, warnDroppedChoices } from '@/store/clarify'
-@@ -764,6 +766,7 @@ export function useGatewayEventHandler(deps: GatewayEventDeps) {
-             ...state,
-             usage: { calls: 0, input: 0, output: 0, total: 0, ...state.usage, ...payload.usage }
-           }))
-+          recordCumulativeUsage(sessionId, payload.usage as Partial<UsageStats>)
  
-           if (isActiveEvent) {
-             setCurrentUsage(current => ({ ...current, ...payload.usage }))
+ import type { GatewayEventContext } from './types'
+@@ -378,7 +380,8 @@
+       updateSessionState(sessionId, state => ({
+         ...state,
+         usage: { calls: 0, input: 0, output: 0, total: 0, ...state.usage, ...payload.usage }
+       }))
++      recordCumulativeUsage(sessionId, payload.usage as Partial<UsageStats>)
+ 
+       if (isActiveEvent) {
+         setCurrentUsage(current => ({ ...current, ...payload.usage }))
 diff --git a/apps/desktop/src/app/shell/cost-usage-panel.tsx b/apps/desktop/src/app/shell/cost-usage-panel.tsx
 new file mode 100644
 index 0000000..1db9d9c
@@ -182,14 +182,15 @@ diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/des
 index bd2364c..fba66eb 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-@@ -4,6 +4,7 @@ import { useCallback, useMemo } from 'react'
+@@ -5,7 +5,8 @@ import { useMemo } from 'react'
+ import { ConnectionSwitcher } from '@/app/chat/sidebar/connection-switcher'
  import type { CommandCenterSection } from '@/app/command-center'
  import { useApprovalModeStatusbarItem } from '@/app/shell/approval-mode-menu'
  import { ContextUsagePanel } from '@/app/shell/context-usage-panel'
 +import { CostUsagePanel } from '@/app/shell/cost-usage-panel'
  import { GatewayMenuPanel } from '@/app/shell/gateway-menu-panel'
+ import { useContextBreakdown } from '@/app/shell/hooks/use-context-breakdown'
  import { $paneVisible, togglePaneVisible } from '@/components/pane-shell/tree/store'
- import { Codicon } from '@/components/ui/codicon'
 @@ -12,7 +13,7 @@ import { useI18n } from '@/i18n'
  import { displayPath, pathLeaf } from '@/lib/display-path'
  import { Activity, AlertCircle, Clock, Command, FolderOpen, Globe, Hash, Loader2, Terminal } from '@/lib/icons'
@@ -199,14 +200,13 @@ index bd2364c..fba66eb 100644
  import { useStoreSelector } from '@/lib/use-session-slice'
  import { cn } from '@/lib/utils'
  import { resolveVersionStatus } from '@/lib/version-status'
-@@ -224,6 +225,7 @@ export function useStatusbarItems({
+@@ -266,5 +267,6 @@ export function useStatusbarItems({
  
-   const contextUsage = useMemo(() => usageContextLabel(currentUsage), [currentUsage])
-   const contextBar = useMemo(() => contextBarLabel(currentUsage), [currentUsage])
+   const contextUsage = useMemo(() => usageContextLabel(gaugeUsage), [gaugeUsage])
+   const contextBar = useMemo(() => contextBarLabel(gaugeUsage), [gaugeUsage])
 +  const costUsage = useMemo(() => usageCostLabel(currentUsage), [currentUsage])
  
-   const publishContextUsage = useCallback(
-     (snapshot: Pick<UsageStats, 'context_max' | 'context_percent' | 'context_used'>) => {
+   const approvalModeItem = useApprovalModeStatusbarItem(activeGatewayProfile, requestGateway)
 @@ -539,6 +541,16 @@ export function useStatusbarItems({
          toggleLabel: copy.toggleContextUsage,
          variant: 'menu'
@@ -224,14 +224,18 @@ index bd2364c..fba66eb 100644
        {
          detail: <LiveDuration since={sessionStartedAt} />,
          hidden: !sessionStartedAt,
-@@ -575,6 +587,7 @@ export function useStatusbarItems({
+@@ -590,9 +602,11 @@ export function useStatusbarItems({
        clientVersionItem,
        contextBar,
+       contextBreakdown,
+       contextBreakdownLoading,
        contextUsage,
-+      costUsage,
        copy,
-       currentUsage,
-       publishContextUsage,
++      costUsage,
++      currentUsage,
+       gaugeUsage,
+       sessionStartedAt,
+       gatewayState,
 diff --git a/apps/desktop/src/i18n/ar.ts b/apps/desktop/src/i18n/ar.ts
 index 8101d23..918959c 100644
 --- a/apps/desktop/src/i18n/ar.ts
