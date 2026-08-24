@@ -2,7 +2,7 @@
   "generated": "2026-08-24",
   "stats": {
     "nodes": 375,
-    "edges": 405
+    "edges": 400
   },
   "nodes": [
     {
@@ -4520,18 +4520,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15598.md",
-      "rel": "提及:尤乌哈希",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15591.md",
       "rel": "提及:艾继丝",
       "rel_type": "mention"
@@ -4549,13 +4537,13 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-pixiv.md",
-      "target": "/characters/15601.md",
-      "rel": "提及:「24」",
+      "source": "/community/community-reddit.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-reddit.md",
+      "source": "/community/community-steam.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"
@@ -5966,18 +5954,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15598.md",
-      "rel": "提及:尤乌哈希",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15591.md",
       "rel": "提及:艾继丝",
       "rel_type": "mention"
@@ -5995,19 +5971,13 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/pixiv.md",
-      "target": "/characters/15601.md",
-      "rel": "提及:「24」",
-      "rel_type": "mention"
-    },
-    {
       "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
-      "source": "/sources/steam_discussion.md",
+      "source": "/sources/steam.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"

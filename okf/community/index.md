@@ -7,7 +7,7 @@
 * [社区全量档案分析索引](/community/community-index.md) - 全量社区档案静态分析台账：百万级 条（精确值见指针本体）/ 17 平台，词典法零 ML。discord 全量历史驻 BIAV-SC-DATA 数据仓 Recor
 * [appstore 社区全量档案](/community/community-appstore.md) - appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 34 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [arca_live 社区全量档案](/community/community-arca-live.md) - arca_live 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
-* [bahamut 社区全量档案](/community/community-bahamut.md) - bahamut 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 6 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
+* [bahamut 社区全量档案](/community/community-bahamut.md) - bahamut 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 6 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [bilibili 社区全量档案](/community/community-bilibili.md) - bilibili 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 8 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [discord 社区全量档案](/community/community-discord.md) - discord 平台全量档案层（分析镜头）：百万级条（精确值见指针本体）/ 36 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [google_play 社区全量档案](/community/community-google-play.md) - google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 33 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
