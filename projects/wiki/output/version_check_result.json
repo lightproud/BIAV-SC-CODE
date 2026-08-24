@@ -1,14 +1,15 @@
 {
-  "checked_at": "2026-08-17T06:59:19.182479+00:00",
+  "checked_at": "2026-08-24T07:02:25.176513+00:00",
   "current_version": "unknown",
   "known_versions": [
-    "2.5.3"
+    "2.5.3",
+    "2.6.0"
   ],
-  "new_version_found": true,
-  "new_version": "2.6.0",
+  "new_version_found": false,
+  "new_version": null,
   "steam": {
     "source": "steam",
-    "checked_at": "2026-08-17T06:59:18.567529+00:00",
+    "checked_at": "2026-08-24T07:02:24.610044+00:00",
     "status": "ok",
     "name": "Morimens",
     "short_description": "Morimens is a roguelite card-battler inspired by the Lovecraftian mythos. Bond with a diverse cast of Awakeners, build your perfect deck, and battle through the mists of Kadath—facing wild events and uncovering maddening truths at every turn.",
@@ -18,92 +19,98 @@
     "coming_soon": false,
     "recent_news": [
       {
-        "title": "V2.6.0 The \"Truly Breathtaking\" Snowy Peak 7-Day VIP Blitz!",
-        "date": "2026-08-14T07:00:25+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840944183778742"
+        "title": "V2.6.0.0 Maintenance Announcement",
+        "date": "2026-08-23T06:03:59+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228672780"
       },
       {
-        "title": "🎧 V2.5.3 Radio Drama - Principles",
-        "date": "2026-08-07T09:41:56+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840310314344436"
+        "title": "📜 V2.6.0 Version Outlook",
+        "date": "2026-08-21T12:15:59+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228668541"
       },
       {
-        "title": "V2.5.3.0 Maintenance Announcement",
-        "date": "2026-07-26T07:00:37+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839041357033310"
+        "title": "🎬 V2.6 PV - Summit of Voided Wills (VA: Kugimiya Rie)",
+        "date": "2026-08-21T08:15:26+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228667891"
       },
       {
-        "title": "V2.5.3 Lotan: Cetarchon✦Awakener & Wheel of Destiny Introduction",
-        "date": "2026-07-24T11:44:05+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839041357029310"
+        "title": "V2.6.0 Caraboo✦Awakener & Wheel of Destiny Introduction",
+        "date": "2026-08-19T14:12:29+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228662742"
       },
       {
-        "title": "📜 V2.5.3 Version Outlook",
-        "date": "2026-07-23T12:34:07+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839041357026531"
+        "title": "V2.6.0 His, Her, and Its Wishes",
+        "date": "2026-08-18T07:00:15+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840944183788011"
       }
     ]
   },
   "fandom": {
     "source": "fandom",
-    "checked_at": "2026-08-17T06:59:18.845188+00:00",
+    "checked_at": "2026-08-24T07:02:24.961513+00:00",
     "status": "ok",
     "recent_changes": [
       {
-        "title": "Symptoms",
-        "timestamp": "2026-07-03T03:49:38Z",
-        "user": "Rqwe1",
+        "title": "Umapati's Treasures",
+        "timestamp": "2026-08-24T05:17:06Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"'''{{PAGENAME}}''' are the Event Stages in [[New Moon and Deep Snow]].  == Description == ♪~~♫~~♪~~♫~~♪~~♫~~<br />Beneath the snow mountain, every guide remembers it, and every child still sings it. She is the will of the towering mountain made flesh, she is the merciful goddess Umapati. Her divine power lies scattered through the mortal world; her treasures cannot be found. They are near enough to touch; they leave no trace at all.<br />Surrender something....\""
+      },
+      {
+        "title": "Candy Apple",
+        "timestamp": "2026-08-24T04:56:18Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"{{Item |title={{PAGENAME}} |type=[[Currency|Event Currency]] |image={{PAGENAME}}.png }} '''{{PAGENAME}}''' is an [[Currency|Event Currency]] in ''[[Morimens]].''  == Description == Why should a candy apple be worth more than a golden one? Could there be a little truth buried beneath the lies? The moment you start to wonder, you've already fallen into the real lie's trap. So hurry, take it to the fairy and trade it for some good, solid rewards!  == Acquisition == <div>N...\""
+      },
+      {
+        "title": "Golden Apple",
+        "timestamp": "2026-08-24T04:52:11Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"{{Item |title={{PAGENAME}} |type=[[Currency|Event Currency]] |image={{PAGENAME}}.png }} '''{{PAGENAME}}''' is an [[Currency|Event Currency]] in ''[[Morimens]].''  == Description == Is it a gilded apple, or a true golden one...? Only the fairy knows the answer. Offer it to her for a reward or two.  == Acquisition == [[New Moon and Deep Snow]] Gameplay Event &mdash; [[Umapati's Treasures]] Stages.  == Usage == [[New Moon and Deep Snow]] Gameplay Event &mdash; Fairy's Ritua...\""
+      },
+      {
+        "title": "Crimson Apple",
+        "timestamp": "2026-08-24T04:51:05Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"{{Item |title={{PAGENAME}} |type=[[Currency|Event Currency]] |image={{PAGENAME}}.png}}  '''{{PAGENAME}}''' is an [[Currency|Event Currency]] in ''[[Morimens]].''  == Description == An apple so red it looks about to drip, giving off a thick, heady fragrance. Offer it to the fairy for a reward or two.  == Acquisition == [[New Moon and Deep Snow]] Gameplay Event &mdash; [[Umapati's Treasures]] Stages.  == Usage == [[New Moon and Deep Snow]] Gameplay Event &mdash; Fairy's Ri...\""
+      },
+      {
+        "title": "MediaWiki:Wiki-navigation",
+        "timestamp": "2026-08-24T04:40:04Z",
+        "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "Symptoms",
-        "timestamp": "2026-07-03T03:49:09Z",
-        "user": "Rqwe1",
-        "comment": "Created page with \"Cards that certain events and enemy abilities shuffle into the player's deck. Symptoms have generally negative affects for the player, but can have positive uses depending on the player's deck.  A List of the Symptom Cards one can randomly receive in a stage:  * Paranoia * Mania * Blind Obedience * Delusions * Trauma * Somniloquy * Weakness * Epilepsy * Excitement * Claustrophobia * Hallucinations * Hysteria * Shock\""
+        "title": "New Moon and Deep Snow",
+        "timestamp": "2026-08-24T04:36:20Z",
+        "user": "Frorefawn",
+        "comment": ""
       },
       {
-        "title": "Chapter 2 Metamorphosis Stage 7 Five Gunshots",
-        "timestamp": "2026-07-03T02:54:53Z",
-        "user": "Rqwe1",
-        "comment": "Created page with \"The first three shots were merely a prelude.   With the last two shots—one takes his life, one takes his soul.  6 waves  === <u>Fight w/ 3 enemies</u> === Emergency Contact  Ashen Dissolute  The Supplicant  === <u>Event Citadel's Secret</u> === Residents come and go, yet the swarm of rats persists indefinitely.   Compared to humans, they are the true \"natives\" of this castle.   But they have no objections to humans moving in.   Because those soft, white, ugly things wi...\""
+        "title": "Serene Truth",
+        "timestamp": "2026-08-24T04:25:30Z",
+        "user": "Frorefawn",
+        "comment": ""
       },
       {
-        "title": "Chapter 2 Metamorphosis Stage 6 Similar Silhouettes",
-        "timestamp": "2026-07-03T02:50:53Z",
-        "user": "Rqwe1",
-        "comment": "Created page with \"Memory is unreliable—it deteriorates and fades as I rummage through it. What means exist to fix your image in permanence?   If memory cannot hold, let it be carved into life itself.  3 waves  === <u>Fight w/ 3 enemies</u> === Fastrunner  Hardhitter  King of Kids  === <u>Event \"His\" Childhood</u> === \"Little William, what a freak,   Sleeps in graves, cold and bleak.   Nobody loves him, stay away,   Or he’ll stab you in the back one day.\"   The figures, their shapes bl...\""
+        "title": "Morimens Wiki",
+        "timestamp": "2026-08-24T04:10:51Z",
+        "user": "Frorefawn",
+        "comment": ""
       },
       {
-        "title": "Chapter 2 Metamorphosis Stage 4 The Chase",
-        "timestamp": "2026-07-03T02:48:36Z",
-        "user": "Rqwe1",
-        "comment": "Created page with \"Run, run, little puppy, hurry and escape.   Entertain us with your panic and wretched despair.  1 wave  === Fight w/ 2 enemies === Cruel \"Father\"  Silent \"Mother\"\""
+        "title": "File:Awakener Trials V2.6.0.png",
+        "timestamp": "2026-08-24T04:10:23Z",
+        "user": "Frorefawn",
+        "comment": ""
       },
       {
-        "title": "Chapter 2 Metamorphosis Stage 3 Lost Memories",
-        "timestamp": "2026-07-03T00:06:36Z",
-        "user": "Rqwe1",
-        "comment": "/* Fight w/ 3 enemies */"
-      },
-      {
-        "title": "Chapter 2 Metamorphosis Stage 3 Lost Memories",
-        "timestamp": "2026-06-29T22:24:21Z",
-        "user": "Rqwe1",
-        "comment": "Created page with \"3 waves  === Fight w/ 3 enemies === First Variant  Collaborative Dissolute  Wax Sculpture ~Cat  === Event Faded Bones === A pale skeleton, half submerged in pitch-black D-Slime.   [Bury] Destroy up to 1 Command Card and recover [% of lost HP] HP.   You gently push the exposed skeleton, which slowly sinks into the black sludge, vanishing without a trace.   May the soul find peace in nothingness.  [Leave]  [Pray] Acquire the Golden Relic \"[Random upgraded Relic],\" but deve...\""
-      },
-      {
-        "title": "Chapter 2 Metamorphosis Stage 1 Untamed Dreams",
-        "timestamp": "2026-06-29T22:22:55Z",
-        "user": "Rqwe1",
-        "comment": "Misspelled title"
-      },
-      {
-        "title": "Chapter 2 Metamorphosis Stage 1 Untamed Dreams",
-        "timestamp": "2026-06-28T22:58:19Z",
-        "user": "Rqwe1",
-        "comment": "Created page with \"3 waves  === <u>Fight w/ 3 enemies</u> === Emergency Contact  Wax Sculpture Housecat  Ashen Dissolute  === <u>Event Dream-Call</u> === \"We meet again.\"  Through your blurred vision Clementine smiles gently.  \"Though we met earkier than expected, I'm still very happy. I wonder if you feel the same, [Player name]?\"   [Answer Honestly]  \"I'm glad to hear your sincere answer.\"  \"Looking forward to our next meeting.\"  [Leave] Engrave 1 out of 3 Orisons   [Refuse to Answer]  \"...\""
+        "title": "File:After School Hours SS.png",
+        "timestamp": "2026-08-24T04:08:02Z",
+        "user": "Frorefawn",
+        "comment": ""
       }
     ],
-    "change_count": 9
+    "change_count": 20
   }
 }
