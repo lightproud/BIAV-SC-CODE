@@ -2,7 +2,7 @@
   "generated": "2026-08-25",
   "stats": {
     "nodes": 375,
-    "edges": 420
+    "edges": 422
   },
   "nodes": [
     {
@@ -3727,7 +3727,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:taptap",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4544,14 +4544,32 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15562.md",
       "rel": "提及:莉兹",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15571.md",
+      "rel": "提及:珈伦",
       "rel_type": "mention"
     },
     {
@@ -4570,18 +4588,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6038,14 +6044,32 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15562.md",
       "rel": "提及:莉兹",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15571.md",
+      "rel": "提及:珈伦",
       "rel_type": "mention"
     },
     {
@@ -6064,18 +6088,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
