@@ -4,7 +4,7 @@ title: "reddit 社区数据源"
 description: "reddit 平台采集档案，全量 4047 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/reddit/"
 tags: ["data_layer:full_archive", "platform:reddit", "health:active"]
-timestamp: "2026-08-24T06:55:02.775319+00:00"
+timestamp: "2026-08-25T06:43:45.292373+00:00"
 ---
 
 # 数据层指针

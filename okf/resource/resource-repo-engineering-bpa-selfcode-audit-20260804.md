@@ -4,7 +4,7 @@ title: "bpa-selfcode-audit-20260804"
 description: "这是一次**对自造工具链的信任度体检**。BPA 扩展层的定位是「核心零侵入」——不碰上游一行，（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpa-selfcode-audit-20260804.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-08-24"
+timestamp: "2026-08-25"
 ---
 
 # 指针概念
