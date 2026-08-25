@@ -91,7 +91,7 @@
 银芯作为黑池的「眼睛和耳朵」，靠以下机制运转：
 
 1. **采集三层**（使命#1，2026-06-21 守密人定性）：采集层非一锅，按职能分三层、产出三个不同目标——
-   **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产**运行期**流快照，每 3 小时一轮，2026-07-11 降频裁定）；
+   **T1 采集入口**（`collect_global.py` 单入口，每 3 小时一轮；2026-08-22 守密人裁定「采集 → 直接入湖」后**新闻流形态退役**——采集条目经校验直接交 T2 落全量档案层，不再产展示流）；
    **T2 数据层归档**（声明式归档引擎 `projects/news/scripts/archive_engine.py` 读 `archive_sources.json` 干活；
    2026-06-21 de-tier 后 discord **全量永驻数据仓 BIAV-SC-DATA** `Record/Community/`（`after_archive: keep`，不再驱逐；
    2026-07-20 T62 P2-5 §7甲 数据湖迁出 code 仓、经 `BIAV_SC_DATA_ROOT` 读，见 §5.2）；
