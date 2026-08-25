@@ -3,9 +3,9 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-08-22
-- 功能总数：**161**
-- 脚本可达性：活 82 / 仅测试 0 / 孤儿 0
+- 生成日期：2026-08-25
+- 功能总数：**157**
+- 脚本可达性：活 78 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
@@ -13,7 +13,7 @@
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 50 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 38 |
-| news 采集器脚本 | 32 |
+| news 采集器脚本 | 28 |
 | wiki 数据脚本 | 12 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -216,14 +216,8 @@
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（32）
+## news 采集器脚本（28）
 
-- **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
-  `projects/news/scripts/aggregator.py`
-- **`aggregator_base.py`** _[活:import]_ — Shared base for the news aggregator: HTTP/logging setup, config  
-  `projects/news/scripts/aggregator_base.py`
-- **`aggregator_collectors.py`** _[活:import]_ — Per-platform news collectors (Reddit, Bilibili, NGA, TapTap, Steam,  
-  `projects/news/scripts/aggregator_collectors.py`
 - **`archive_discord.py`** _[活:cli+workflow]_ — Discord 月度归档 — 向后兼容垫片（守密人 2026-06-21 裁定 A + 合并）  
   `projects/news/scripts/archive_discord.py`
 - **`archive_engine.py`** _[活:cli+workflow]_ — 通用归档引擎 — 声明式来源注册表驱动，打包冷数据 → GitHub Releases → 可选从 git 删除  
@@ -244,7 +238,7 @@
   `projects/news/scripts/collect_arca_daily.py`
 - **`collect_fanart.py`** _[活:cli+workflow]_ — 同人图采集器 — 把某日各信息源的玩家二创图抓到本地，供日报附录嵌图。  
   `projects/news/scripts/collect_fanart.py`
-- **`collect_global.py`** _[活:cli]_ — collect_global.py — 全球社区采集桥接脚本  
+- **`collect_global.py`** _[活:cli+command+workflow]_ — collect_global.py — 全球社区采集桥接脚本  
   `projects/news/scripts/collect_global.py`
 - **`collect_video_comments.py`** _[活:cli+workflow]_ — YouTube 视频评论采集器（累积归档版）。  
   `projects/news/scripts/collect_video_comments.py`
@@ -278,8 +272,6 @@
   `projects/news/scripts/silent_sources_audit.py`
 - **`sources.py`** _[活:import]_ — sources.py — 采集源单一真相源（single source of truth）  
   `projects/news/scripts/sources.py`
-- **`split_output.py`** _[活:cli+command+workflow]_ — split_output.py — 按数据源分割运行期 news.json  
-  `projects/news/scripts/split_output.py`
 - **`taptap_collector.py`** _[活:cli]_ — TapTap 社区采集器 - Playwright 无头浏览器方案  
   `projects/news/scripts/taptap_collector.py`
 
