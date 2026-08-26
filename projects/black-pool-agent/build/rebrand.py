@@ -77,7 +77,13 @@ _RULES_FIRED: set[tuple[str, int]] = set()
 # apps/（desktop 为内部主要消费面，守密人 2026-08-02 补充情报）与 web/（desktop
 # 所包 UI）在列；website/docs 等纯站点面不扫（残留清单见 BRANDING.md）。
 RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins",
-                "ui-tui/src", "apps", "web"]
+                "ui-tui/src", "apps", "web",
+                # acp_adapter / skills 于 2026-08-25 随裸词六目录铺开一并入列。
+                # 教训（同日自查逮到）：BARE_WORD_DIRS 与 RUNTIME_DIRS 是**两道闸**——
+                # 前者管「这个目录换不换裸词」，后者管「这个目录扫不扫」。只加前者、
+                # 不加后者，等于给一扇没开的门配了钥匙：实测 acp_adapter 11 处、
+                # skills 5 处残留纹丝不动。两表须同进同退，守卫见 test_hermes_charter.py。
+                "acp_adapter", "skills"]
 
 # 裸词换装目录：display 密集面（UI / i18n / 桌面壳）。裸词 "Hermes" 以词边界
 # 正则替换——`updateHermes`（i18n 键）/ `HermesClient`（类名）等标识符因前后
@@ -99,10 +105,56 @@ RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins",
 # 功能面因此为零风险：无 HTTP 头名、无 `HERMES_` 环境变量（大写不匹配裸词）、
 # 无 `.app`/`.exe` 产物路径（那些在 hermes_cli/，尚未入列）。
 # 守卫见 tests/test_hermes_charter.py::test_bare_word_scope_safety。
-# 下一层（hermes_cli / gateway / tools / plugins / skills）挂账未铺——那几处含
-# 皮肤名 `Hermes Teal`、MCP server 名、桌面产物路径等真功能标识，需先定豁免名单。
-BARE_WORD_DIRS = ("apps", "web", "ui-tui/src", "agent")
+# 下一层于 2026-08-25 入列（守密人「品牌补丁不够完整，很多状态提示还是 hermes」
+# 现场反馈后三项交互裁定：全铺六目录 / 掩码法 / 外部自有名九处全豁免）。挂账两年多的
+# 「需先定豁免名单」在换装后的私有版树上实测出了名单：这六个目录的 Python **代码
+# token 里裸词 Hermes 为 0 处**（659 处全部落在字符串字面量、其余在注释与 docstring），
+# 故铺开不改动任何类名 / 变量名 / 模块名；字符串里的功能标识符共 35 处，
+# 已逐条枚举进 BARE_WORD_EXEMPT。铺开前生产字符串残留：hermes_cli 420 / plugins 115
+# / tools 70 / gateway 38 / acp_adapter 11 / skills 5——`tips.py` 的提示语、
+# `console_engine.py` 的「Hermes Console」「Show Hermes component status.」、
+# `gateway/run.py` 的「Starting Hermes Gateway...」皆在其中，正是守密人看见的那些状态提示。
+BARE_WORD_DIRS = ("apps", "web", "ui-tui/src", "agent",
+                  "hermes_cli", "gateway", "tools", "plugins", "acp_adapter", "skills")
 BARE_WORD_RE = re.compile(r"(?<![A-Za-z0-9_-])Hermes(?![A-Za-z0-9_-])")
+
+# 裸词豁免名单（守密人 2026-08-25 两项裁定，分两类）：
+#
+# 【甲类已撤销 · 2026-08-25 守密人第四裁，勿再加回】原拟豁免 `Hermes.exe` /
+#   `Hermes.app` / `Hermes.desktop` / `StartupWMClass=Hermes` 共 27 处，判词是
+#   「真功能标识符，改了就找不到文件」。**该判词方向搞反了**：实测 apps/desktop/
+#   package.json 的 `productName` 与 `executableName` 换装后均为 `Black Pool`，
+#   故 electron-builder 产出的就是 `Black Pool.exe` / `Black Pool.app/Contents/
+#   MacOS/Black Pool`——这些路径指的是**黑池自己的产物**，不是上游的门牌号；
+#   豁免它们才会去找一个不存在的文件名。旁证：apps/ 早在裸词射程内，
+#   `desktop-uninstall.ts` 的同类路径旧引擎下已是 `Black Pool.app`，
+#   豁免 hermes_cli 侧只会造成两边分裂。StartupWMClass 同理——WM_CLASS 派生自
+#   executableName，不跟着换任务栏图标反而归不了组。故甲类一律照换，不入豁免。
+#
+# 乙 · **外部 / 上游自有名**（守密人「九处全豁免」裁定，入 2026-08-03 Nous Portal
+#   图标先例：对方自有之物不戴黑池面具，红线「不抹来源事实」同样适用）：
+#   `Hermes Teal` / `Hermes Teal (Large)`（5 处，仪表盘主题名，与 `Nous Blue` /
+#   `Midnight` / `Ember` 并列；其描述「the canonical Hermes look」说的正是上游青调皮肤，
+#   而黑池自己的皮肤是鎏金 `black-pool`——换成「the canonical Black Pool look」即说假话）
+#   `Hermes Index`（1 处，技能中心源标签，与 `Official (Nous)` / `skills.sh` /
+#   `ClawHub` 并列；那是个外部注册表，改名会让用户搜不到它）
+#   `Hermes Tools`（3 处，上游子系统名）
+#
+# 实现走**掩码**而非整行跳过：命中片段先换占位符、规则跑完再还原——精度到片段，
+# 同一行其余文案照常换装（同 MASK_PATTERNS，见下）。
+#
+# 丙 · **线上标识符**（非用户感知的显示名，走既有政策不走新裁定）：qqbot 适配器发给
+#   腾讯接口的 User-Agent 片段 `; Hermes/<ver>`（`gateway/platforms/qqbot/utils.py`
+#   3 行，全树仅此一处形态）。与 MASK_PATTERNS 里的 `X-Client-Name` 遥测头同类——
+#   红线只换「用户感知的显示名」，UA 是对外报的客户端身份，且塞进含空格的品牌名会把
+#   一个产品令牌劈成两截（lesson #57 `X-Hermes-Session-Token` 同一病灶）。
+#   BRANDING.md 2026-08-05 挂账时即点名此处须先定豁免，本轮据既有政策收口。
+BARE_WORD_EXEMPT = [
+    re.compile(r"Hermes Teal(?: \(Large\))?"),
+    re.compile(r"Hermes Index"),
+    re.compile(r"Hermes Tools"),
+    re.compile(r"; Hermes/"),
+]
 # .html 在列（2026-08-02 补漏）：desktop/web/bootstrap-installer 的 <title> 是
 # 任务栏 / Alt-Tab 显示名的实际来源（Electron 加载页面后 document.title 覆盖窗口题）。
 TEXT_SUFFIXES = {".py", ".ts", ".tsx", ".js", ".mjs", ".sh", ".yaml", ".yml", ".json",
@@ -121,10 +173,30 @@ SPECIAL_RULES = [
     ),
 ]
 
-# 跳线谓词：含以下片段的行不做任何替换（保 URL / 环境变量 / 遥测 / 版权）。
-LINE_SKIP_MARKERS = [
-    "http://", "https://", "HERMES_", "X-Client-Name",
+# 跳线谓词（守密人 2026-08-25「掩码法」裁定后由一档拆成两档）。
+#
+# 甲 · **整行跳过**：整行都是来源事实，行内不存在该换的显示文案。
+WHOLE_LINE_SKIP_MARKERS = [
     "Copyright", "copyright", "SPDX-License-Identifier",
+]
+#
+# 乙 · **片段掩码**：只有那一小段是功能标识符，同一行其余部分照常换装。
+#   原先这三样也走整行跳过，代价是同行的用户文案被一并豁免——实测 12 处生产残留
+#   正出自此：i18n 四语种「远程主机上未安装 Hermes……或设置 Hermes 路径」因行内含
+#   安装 URL 而整行免疫，electron 托盘标签 `Hermes at ${ACTIVE_HERMES_ROOT}` 与
+#   「Hermes install at … is missing or incomplete」因变量名含 `HERMES_` 而整行免疫。
+#   掩码后功能标识符风险不变（片段原样还原），显示文案不再搭便车。
+#   注：`X-Hermes-Session-Token` 一类 HTTP 头名另由 BARE_WORD_RE 的连字符免疫边界
+#   独立防住（2026-08-02 生产事故的真防线），掩码层是第二道网而非唯一那道。
+MASK_PATTERNS = [
+    re.compile(r"https?://\S*"),                       # URL（含 hermes-agent.nousresearch.com 等小写域名）
+    re.compile(r"[A-Za-z0-9_]*HERMES_[A-Za-z0-9_]*"),  # HERMES_HOME / ACTIVE_HERMES_ROOT 等环境变量与常量名
+    re.compile(r"X-Client-Name"),                       # 遥测头名
+    # 转义序列（2026-08-25 铺开时实测逮到 1 处）：源码字面 `"\\nHermes relaunch failed"`
+    # 里，紧挨 Hermes 前面的字符是 `\n` 的那个 `n`——字母，于是 BARE_WORD_RE 的
+    # 左边界当场判它「不是词首」而放行，换装静默漏掉。把 `\n` / `\t` / `\r` 整体
+    # 掩成占位符，词边界即恢复；还原后转义序列一字不变。
+    re.compile(r"\\[ntr]"),
 ]
 
 # 归属行豁免（守密人 2026-08-04 裁定「回退」）：plugins/**/plugin.yaml 的
@@ -244,13 +316,13 @@ BRAND_POST_RULES = [
         f"            {{'B.I.A.V. Studio 出品 · 基于 Hermes Agent {UPSTREAM_VERSION} 定制'}}\n"
         "          </p>\n",
     ),
-    # APP_NAME 兜底统一：该行含 HERMES_ 被跳线保留，兜底值 'Hermes' 与已换装的
-    # productName 分裂——electron userData 路径在 app.setName 前后按不同名字解析，
-    # 绕过 launcher 直启 exe 时配置会写进两个目录（脑裂）。环境变量名原样保留。
-    (
-        "const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || 'Hermes'\n",
-        f"const APP_NAME = process.env.HERMES_DESKTOP_APP_NAME || '{BRAND}'\n",
-    ),
+    # 【已退役 2026-08-25 · 被掩码法接管，勿重新加回】APP_NAME 兜底统一。
+    # 原因：该行含 `HERMES_DESKTOP_APP_NAME`，整行跳线年代被整行豁免，兜底值
+    # 'Hermes' 与已换装的 productName 分裂（electron userData 路径在 app.setName
+    # 前后按不同名字解析，绕过 launcher 直启 exe 时配置写进两个目录 = 脑裂），
+    # 故当年补一条 POST 规则收尾。改掩码后环境变量名被单独掩住、行内 'Hermes'
+    # 由裸词规则正常换装，产出逐字相同（实测 `|| 'Black Pool'`），本规则遂成死锚，
+    # 留着会被点火台账判为哑火。环境变量名仍原样保留（掩码还原）。
     # 钉钉 relay 默认名抑制加固：旧持久化配置里存的可能仍是换装前的
     # "Hermes Agent"，只比对新名会漏抑制、回复前缀泄漏旧品牌名。两名并收。
     (
@@ -276,12 +348,10 @@ BRAND_POST_RULES = [
         f"toggle the 'Hey {BRAND}' wake word listener [on|off|status]",
         "toggle the wake word listener [on|off|status]",
     ),
-    # CLI 响应面板残留品牌：'⚕ Hermes'（裸词 + hermes_cli 不在裸词目录）
-    # 在 Rich Panel 标题直接可见。通用规则跑完后剩下的都是裸词形态，统一收尾。
-    (
-        "⚕ Hermes",
-        f"⚕ {BRAND}",
-    ),
+    # 【已退役 2026-08-25 · 被裸词目录扩容接管，勿重新加回】CLI 面板标题 '⚕ Hermes'。
+    # 原因：当年 hermes_cli 不在 BARE_WORD_DIRS，这条是对该目录的单点补丁式收尾。
+    # 六目录铺开后 hermes_cli 已在裸词射程内，同一处由裸词规则自然换成 '⚕ Black Pool'
+    # （实测 agent_import.py / claw.py 等 Rich Panel 标题均已换），本规则遂成死锚。
     # Nous Portal 账号卡图标保持官方原版（守密人 2026-08-03 裁定）：
     # 品牌覆盖吃掉了 apple-touch-icon，而该卡表示的是对方服务——改用
     # 组装期预存的官方原版专名（见 overlay_assets）。
@@ -1106,20 +1176,58 @@ def _skip_file(rel: Path) -> bool:
     return rel.suffix not in TEXT_SUFFIXES
 
 
+# 掩码占位符：`\x00` 是控制字符，上游文本源零出现（守卫 test_mask_placeholder_absent
+# 全树核过）。占位体不含任何规则会匹配的字面，故规则跑过它必然原样穿过。
+_MASK_OPEN = "\x00"
+
+
+def _mask(line: str, patterns: list[re.Pattern],
+          fire: tuple[str, int] | None = None) -> tuple[str, list[str]]:
+    """把敏感片段换成占位符，返回（掩码后的行, 原片段表）。
+
+    `fire` 给出（台账名, 该表在 patterns 中的起始下标）时，逐条记录点火——
+    豁免名单沿用 2026-08-16 事故立的规矩：**全树一次没命中即在生成期响亮失败**，
+    因为豁免哑火不像替换哑火那样看得见（它的症状是「某个功能标识符被顺手改掉了」，
+    要等组装线回归网甚至出厂后才炸）。
+    """
+    stash: list[str] = []
+
+    def take(m: "re.Match[str]") -> str:
+        stash.append(m.group(0))
+        return f"{_MASK_OPEN}{len(stash) - 1}{_MASK_OPEN}"
+
+    for idx, rx in enumerate(patterns):
+        before = len(stash)
+        line = rx.sub(take, line)
+        if fire is not None and len(stash) > before and idx >= fire[1]:
+            _RULES_FIRED.add((fire[0], idx - fire[1]))
+    return line, stash
+
+
+def _unmask(line: str, stash: list[str]) -> str:
+    """还原掩码。序号两侧都有 \x00 定界，故 #1 不会误配进 #10 内部。"""
+    for i, original in enumerate(stash):
+        line = line.replace(f"{_MASK_OPEN}{i}{_MASK_OPEN}", original)
+    return line
+
+
 def transform_brand(text: str, bare_word: bool = False) -> str:
     """公版变换：品牌显示名换装 + 品牌一致性修复。"""
     for old, new in SPECIAL_RULES:
         text = text.replace(old, new)
+    mask_patterns = MASK_PATTERNS + (BARE_WORD_EXEMPT if bare_word else [])
     out_lines = []
     for line in text.splitlines(keepends=True):
-        if any(m in line for m in LINE_SKIP_MARKERS) or ATTRIBUTION_LINE_RE.match(line):
+        if any(m in line for m in WHOLE_LINE_SKIP_MARKERS) or ATTRIBUTION_LINE_RE.match(line):
             out_lines.append(line)
             continue
+        line, stash = _mask(line, mask_patterns,
+                            fire=("exempt", len(MASK_PATTERNS)) if bare_word else None)
         for old, new in GENERIC_RULES:
             line = line.replace(old, new)
         if bare_word:
             line = BARE_WORD_RE.sub(BRAND, line)
-        out_lines.append(line)
+        out_lines.append(_unmask(line, stash))
     text = "".join(out_lines)
     for i, (old, new) in enumerate(BRAND_POST_RULES):
         if old in text:
@@ -1280,6 +1388,12 @@ def _assert_every_rule_fired() -> None:
             if (kind, i) not in _RULES_FIRED:
                 probe = next((l.strip() for l in old.splitlines() if l.strip()), old[:60])
                 dead.append(f"{kind}#{i}: {probe[:100]}")
+    # 裸词豁免名单同守此规（2026-08-25 铺开六目录时立）：某条豁免全树没命中，
+    # 意味着它保护的那个功能标识符在上游已改名/消失——处置是按新形态重锚，
+    # 不是删豁免（删了下次就把真路径 / 外部服务名一起换掉了）。
+    for i, rx in enumerate(BARE_WORD_EXEMPT):
+        if ("exempt", i) not in _RULES_FIRED:
+            dead.append(f"exempt#{i}: {rx.pattern}")
     if dead:
         raise RebrandError(
             "以下规则的锚点在当前 upstream 快照上一次也没命中（上游改了那块代码，"

@@ -59,9 +59,21 @@
 
 | **安装位解引用改可选链（守密人 2026-08-05 裁定「现在修」）** | `desktop-install-overlay.tsx` 的安装路径行被本层死代码化，但上游对 `state.setupChoice` 的**非空收窄来自外层 `{state.setupChoice && (`，而那个外层也被本层死代码化了**——收窄没了、解引用还在。运行时 `false &&` 短路不炸，tsc 却照查死代码（TS18047），私有版 typecheck 因此长红、也就没法把 typecheck 接进装配线门禁。上游原树实测零报错，确认是换装自带缺陷而非上游问题 | 1 处 |
 
-**审计轮四观察项（2026-08-05 新增，未处理）**：提示词 `HERMES_AGENT_HELP_GUIDANCE` 仍把 `https://hermes-agent.nousresearch.com/docs` 作为「产品自身问题去查这里」的指引——该域内网不可达，且被 `https://` 跳线标记保护故换装扫不到；模型会据此引导用户去查一个打不开的文档站。正确措辞需产品口径（自建文档？删除该指引？），记账待裁。
+**审计轮四观察项（2026-08-05 新增，未处理）**：提示词 `HERMES_AGENT_HELP_GUIDANCE` 仍把 `https://hermes-agent.nousresearch.com/docs` 作为「产品自身问题去查这里」的指引——该域内网不可达；模型会据此引导用户去查一个打不开的文档站。正确措辞需产品口径（自建文档？删除该指引？），记账待裁。**2026-08-25 订正**：原写「被 `https://` 跳线标记保护故换装扫不到」——掩码法上线后该行的品牌词已正常换装（`You run on Black Pool Agent … help with Black Pool itself`），URL 本身仍原样保留。故本观察项**只剩「域名不可达」一半**，品牌词那一半已消。
 
-**后端裸词下一层挂账（守密人 2026-08-05 分层裁定）**：`hermes_cli` / `gateway` / `tools` / `plugins` / `skills` 尚未铺开，已量到字符串字面量 **575 处**（667 减去 agent 的 92）+ skills **269 处 / 134 文件**。这几处含真功能标识——皮肤名 `Hermes Teal`（`load_skin` 按名查找）、MCP server 名、`Hermes.app`/`.exe`/`.desktop` 桌面产物探测路径、`user.name=Hermes`、qqbot UA 片段 `; Hermes/`——**须先定豁免名单再入列**，`test_bare_word_scope_safety` 已就位等着接住误伤。
+**后端裸词下一层已铺开（2026-08-25 销案，守密人「品牌补丁不够完整，很多状态提示还是 hermes」现场反馈后四项交互裁定）**：`hermes_cli` / `gateway` / `tools` / `plugins` / `acp_adapter` / `skills` 六目录入列，`BARE_WORD_DIRS` 与 `RUNTIME_DIRS` 同步扩容（**两表是两道闸，须同进同退**——本轮先只改前者，实测 acp_adapter 11 处 / skills 5 处纹丝不动，即「配了钥匙没开门」，守卫 `test_bare_word_rollout_reaches_six_new_dirs` 已锁死这条一致性）。
+
+挂账两年的「须先定豁免名单」在换装后的私有版树上实测出了名单，且比预想小得多：六目录 Python **代码 token 里裸词 Hermes 为 0 处**（659 处生产残留全部落在字符串字面量），故铺开**不改动任何类名 / 变量名 / 模块名**。当年点名的五处「真功能标识」逐条复核结论：
+
+| 当年判词 | 复核结论 |
+|---|---|
+| 皮肤名 `Hermes Teal`（`load_skin` 按名查找） | **判词有误但结论对**：`load_skin` 查的是 `name` 键（`"default"`，全小写不受裸词影响），`Hermes Teal` 只是 `label` 显示名。仍**豁免**——它与 `Nous Blue` / `Ember` 并列，是上游自有主题名，且其描述「the canonical Hermes look」指的正是上游青调皮肤（黑池自己的是鎏金 `black-pool`），换了即说假话 |
+| `Hermes.app` / `.exe` / `.desktop` 桌面产物探测路径 | **判词方向搞反，照换不豁免**：`productName` / `executableName` 换装后均为 `Black Pool`，electron-builder 产出的就是 `Black Pool.exe`——这些是**黑池自己产物**的门牌号，豁免才会去找不存在的文件。旁证：`apps/` 早在射程内，`desktop-uninstall.ts` 同类路径旧引擎下已是 `Black Pool.app`。`StartupWMClass` 同理（WM_CLASS 派生自 executableName，不换反而任务栏图标归不了组） |
+| `user.name=Hermes` | **照换**：git 提交署名是用户在 log 里直接看到的显示名，且列参数传递、含空格合法 |
+| qqbot UA 片段 `; Hermes/` | **豁免**（走既有政策非新裁定）：UA 是发给腾讯接口的线上标识符、非用户感知显示名，与已受保护的 `X-Client-Name` 遥测头同类；塞含空格品牌名会把产品令牌劈成两截（lesson #57 同病灶） |
+| MCP server 名 | 复核为零命中（`Hermes` 裸词未出现在 server 名位置） |
+
+铺开后残留由 **659 → 8**，8 处全部为有意保留：7 处豁免（Teal 3 / Index 1 / Tools 3）+ 1 处自家规则故意注入（relay 旧持久化名并收）。
 
 **审计轮二观察项（未处理，供守密人裁夺）**：`hermes uninstall` 的桌面产物探测硬编码 `Hermes` 目录名、换装后找不到 `Silver Core` 实际产物（便携形态卸载 = 删目录，实害近零）；Remote/SSH 报错文案四语种引导 `hermes-agent.nousresearch.com/install.sh`（内网不可达，正确措辞需产品口径，暂记账）；pet 精灵素材仍为上游吉祥物（前轮已记）。
 
@@ -72,13 +84,24 @@
 - **`HERMES_*` 环境变量名 / 配置键 / `~/.hermes` 路径 / 模块与包名**：功能标识符，
   改之即 fork 级侵入且破坏上游测试基线。
 - **`X-Client-Name: hermes-agent` 遥测头**：对上游服务如实自报，不冒充。
+- **qqbot UA 片段 `; Hermes/<ver>`**（2026-08-25 入列）：同上，线上标识符非显示名；
+  含空格品牌名会把产品令牌劈成两截（lesson #57）。
+- **上游 / 外部自有名**（2026-08-25 守密人裁定）：`Hermes Teal` 主题名、`Hermes Index`
+  技能源标签、`Hermes Tools` 子系统名——入 2026-08-03 Nous Portal 图标先例，
+  对方自有之物不戴黑池面具（改 `Hermes Index` 更会让用户搜不到那个外部注册表）。
 - **上游测试与文档**（tests/ · *.md）：测试基线须与官方逐字节同判；文档非部署运行面。
 
 ## 已知残留（照实记录，随移 pin 复测）
 
 - 非白名单目录（website / docs 等纯站点面）的品牌串未扫——不进部署产物。
   ~~apps / web 原列此处~~：守密人 2026-08-02 补充「内部主要消费面是 desktop」后已扩入扫描面（误判订正照实记录）。
-- 含 URL / `HERMES_*` 的行内伴生显示词因跳线谓词整行保留（保护优先于净度）。
+- ~~含 URL / `HERMES_*` 的行内伴生显示词因跳线谓词整行保留（保护优先于净度）~~
+  **2026-08-25 已消（守密人「掩码法」裁定）**：跳线谓词由一档拆两档——版权 / SPDX 仍整行跳过，
+  URL / `HERMES_*` / `X-Client-Name` 改**片段掩码**（先换占位符、规则跑完再还原）。原代价面
+  12 处生产残留随之消失：i18n 四语种「远程主机上未安装 Hermes……或设置 Hermes 路径」（行内含安装 URL）、
+  electron 托盘标签 `Hermes at ${ACTIVE_HERMES_ROOT}` 与「Hermes install at … is missing or incomplete」
+  （变量名含 `HERMES_`）现已正常换装，URL 与变量名一字未动。另修同族假阴性一处：`"\nHermes relaunch failed"`
+  里 `\n` 的那个 `n` 被词边界当成字母、静默漏换，掩码转义序列后恢复。
 - 安装器 `install.sh` / `hermes update` 路径的品牌串未处理——生产禁用该路径（文书 §2.4）。
 - **连字复合显示词**（德/荷/匈 i18n 的 `Hermes-Plugins` 类、UA 值 `Hermes-Desktop`、
   artifactName `Hermes-<版本>`）随连字符免疫边界一并保留（2026-08-02 头名事故的代价面：
