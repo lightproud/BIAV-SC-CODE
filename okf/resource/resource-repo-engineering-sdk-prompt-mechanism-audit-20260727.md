@@ -4,7 +4,7 @@ title: "sdk-prompt-mechanism-audit-20260727"
 description: "P2 已由截断纪律批（0.85.0）系统收口并有注册表测试守增量；P3 已由整理规程批（0.84.0）收口。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/sdk-prompt-mechanism-audit-20260727.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-08-25"
+timestamp: "2026-08-26"
 ---
 
 # 指针概念
