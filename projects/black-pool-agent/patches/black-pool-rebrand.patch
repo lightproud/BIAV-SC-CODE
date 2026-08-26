@@ -27073,7 +27073,7 @@ index 1b24aaa..7a9b0d2 100644
      execFileSync() {
        throw new Error('access denied')
 diff --git a/apps/desktop/electron/windows-user-env.test.ts b/apps/desktop/electron/windows-user-env.test.ts
-index 6b92650..1c4ca3d 100644
+index 6b92650..00def06 100644
 --- a/apps/desktop/electron/windows-user-env.test.ts
 +++ b/apps/desktop/electron/windows-user-env.test.ts
 @@ -7,8 +7,8 @@ import { expandWindowsEnvRefs, parseRegQueryValue, readWindowsUserEnvVar } from
@@ -27116,6 +27116,15 @@ index 6b92650..1c4ca3d 100644
    }
  
    const value = readWindowsUserEnvVar('HERMES_HOME', {
+@@ -69,7 +69,7 @@ test('readWindowsUserEnvVar queries HKCU\\Environment and expands the value', ()
+     exec
+   })
+ 
+-  assert.equal(value, 'F:\\Hermes')
++  assert.equal(value, 'F:\\Black Pool')
+   assert.deepEqual(calls, [['reg', ['query', 'HKCU\\Environment', '/v', 'HERMES_HOME']]])
+ })
+ 
 diff --git a/apps/desktop/electron/windows-user-env.ts b/apps/desktop/electron/windows-user-env.ts
 index 890cd6f..f87eef7 100644
 --- a/apps/desktop/electron/windows-user-env.ts
