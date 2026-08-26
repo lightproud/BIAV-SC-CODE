@@ -515,15 +515,15 @@ BRAND_POST_RULES = [
         "You run on Black Pool Agent (by Nous Research). ",
         f"You run on {BRAND_AGENT} (by B.I.A.V. Studio). ",
     ),
-    # 裸词换装的一处自伤（守密人 2026-08-05「装配线接上 desktop 单测」时暴露）：
-    # windows-user-env 的用例喂给 mock 的注册表行含 `HERMES_HOME`，整行命中
-    # LINE_SKIP_MARKERS 被跳过，值里的 `%DRIVE%\Hermes` 原样留着；而下面那句断言
-    # 不含跳线标记，裸词规则照改不误——同一个用例的输入与期望就此对不上。
-    # 这里测的是 `%VAR%` 展开逻辑，与品牌无关，故把期望改回与 mock 输入一致。
-    (
-        "  assert.equal(value, 'F:\\\\Black Pool')\n",
-        "  assert.equal(value, 'F:\\\\Hermes')\n",
-    ),
+    # 【已退役 2026-08-25 · 掩码法上线后自愈，勿再加回】windows-user-env 用例的
+    # 输入/期望自伤。原病灶是**整行跳线**：mock 喂的注册表行含 `HERMES_HOME`、
+    # 整行豁免，值里的 `%DRIVE%\Hermes` 原样留着，而下面那句断言不含跳线标记、
+    # 裸词照改——同一个用例的输入与期望对不上，故当年补一条规则把期望改回 Hermes。
+    # 掩码法只掩 `HERMES_HOME` 本身，值里的 `Hermes` 与断言里的一起换成 Black Pool，
+    # 两边自然一致，这条规则反而成了唯一的不一致来源：组装线 run #25 的**唯一**
+    # 红项（1 failed / 6,952）就是它——mock 返回 `%DRIVE%\Black Pool`、断言被它
+    # 强行改回 `F:\Hermes`。这里测的是 `%VAR%` 展开逻辑，与品牌无关，两边同为
+    # Black Pool 一样测得到，故整条退役而非重锚。
     # 2026-08-19 移 pin 新撞的同类自伤（find-in-page 大小写不敏感回归用例，
     # 新增于本次移 pin）：夹具字符串拿 'Hermes' 当纯占位样本文本（测的是查找
     # 大小写不敏感，与品牌无关），裸词规则照改不误；但断言用的搜索词
