@@ -111,9 +111,14 @@ def test_bare_word_scope_safety():
 
     前端三处目录的风险面已由上一条守着；agent/ 入列带来的是 Python 侧的新风险：
     产物路径（`Hermes.app`/`.exe`）、URL、环境变量名、import 语句里若含裸词，
-    换成含空格的品牌名即坏功能。入列前逐条核过为零命中，此测锁住这个状态——
-    下一层（hermes_cli / gateway / tools）铺开时，这些模式会真的出现，届时必须
-    先加豁免再入列，而不是让它无声打断。
+    换成含空格的品牌名即坏功能。入列前逐条核过为零命中，此测锁住这个状态。
+
+    **下一层已于 2026-08-25 铺开**（hermes_cli / gateway / tools / plugins /
+    acp_adapter / skills 六目录，守密人四项交互裁定）。届时逐条复核的结论与本测
+    第 121 行注释既有的判词一致：`.exe`/`.app`/`.desktop` 不入豁免——它们指的是
+    黑池自己的 electron-builder 产物，名字随 productName 走。真正入豁免的只有
+    上游/外部自有名（Hermes Teal / Hermes Index / Hermes Tools），见
+    `rebrand.BARE_WORD_EXEMPT` 与 test_upstream_own_names_stay_exempt。
     """
     added = [l for l in PATCH_BRAND.read_text(encoding="utf-8").splitlines()
              if l.startswith("+") and not l.startswith("+++")]
@@ -130,6 +135,80 @@ def test_bare_word_scope_safety():
             for why, rx in patterns.items()}
     hits = {k: v for k, v in hits.items() if v}
     assert not hits, f"裸词换装打断了功能标识: {hits}"
+
+
+def test_bare_word_rollout_reaches_six_new_dirs():
+    """裸词换装铺开六目录（2026-08-25 守密人裁定）后的**有效性**守卫。
+
+    与上一条互补：上一条问「有没有误伤功能标识」，本条问「该换的到底换没换」。
+    起因是守密人现场反馈「品牌补丁不够完整，很多状态提示还是 hermes」——实测
+    hermes_cli 420 / plugins 115 / tools 70 / gateway 38 / acp_adapter 11 /
+    skills 5 共 659 处生产字符串从没进过射程。逐条挑的是**用户直面**的状态提示，
+    退一条即意味着某个目录悄悄掉出射程（例如只改 BARE_WORD_DIRS 忘了改
+    RUNTIME_DIRS——那是本轮真踩过的坑，两表是两道闸，须同进同退）。
+    """
+    rebrand = _load_rebrand()
+    # 两道闸必须同进同退：裸词目录不得有任何一个落在扫描白名单之外。
+    runtime = set(rebrand.RUNTIME_DIRS)
+    missing = [d for d in rebrand.BARE_WORD_DIRS if d not in runtime]
+    assert not missing, f"这些目录进了裸词表却没进扫描白名单（配了钥匙没开门）: {missing}"
+
+    text = PATCH_BRAND.read_text(encoding="utf-8")
+    for phrase, why in (
+        ("⚕ Black Pool", "CLI Rich 面板标题"),
+        ("Starting Black Pool Gateway...", "网关启动日志"),
+        ("Black Pool Console", "控制台标题"),
+        ("Show Black Pool component status.", "console status 命令描述"),
+        ("StartupWMClass=Black Pool", "Linux 桌面项窗口类（须与 executableName 一致）"),
+        ('release_dir / "win-unpacked" / "Black Pool.exe"', "桌面产物路径随 productName"),
+    ):
+        assert phrase in text, f"该换的没换（{why}）: {phrase!r}"
+
+
+def test_upstream_own_names_stay_exempt():
+    """外部 / 上游自有名九处豁免（守密人 2026-08-25 裁定）。
+
+    入 2026-08-03 Nous Portal 图标先例：对方自有之物不戴黑池面具。改了不只是失礼——
+    `Hermes Teal` 描述的是上游青调皮肤（黑池自己的皮肤是鎏金 black-pool），改成
+    「the canonical Black Pool look」即说假话；`Hermes Index` 是外部技能注册表，
+    改名会让用户搜不到它。
+    """
+    added = [l for l in PATCH_BRAND.read_text(encoding="utf-8").splitlines()
+             if l.startswith("+") and not l.startswith("+++")]
+    for bad in ("Black Pool Teal", "Black Pool Index", "Black Pool Tools"):
+        hits = [l.strip()[:110] for l in added if bad in l]
+        assert not hits, f"外部自有名被误换（应豁免）: {bad} -> {hits[:3]}"
+
+
+def test_masking_preserves_functional_tokens_on_rebranded_lines():
+    """掩码法（2026-08-25 守密人裁定）取代整行跳线后的双向守卫。
+
+    改法的意义：原先整行跳过，同一行的用户文案跟着功能标识符一起免疫——12 处生产
+    残留正出自此（i18n 四语种「远程主机上未安装 Hermes」因行内含安装 URL 而整行豁免，
+    electron 托盘标签 `Hermes at ${ACTIVE_HERMES_ROOT}` 因变量名含 HERMES_ 而整行豁免）。
+    掩码后同一行两件事各归各位，故本测两头都验：文案换了，且片段一字未动。
+    """
+    rebrand = _load_rebrand()
+    line = ("        '远程主机上未安装 Hermes。请在远程安装"
+            "（curl -fsSL https://hermes-agent.nousresearch.com/install.sh | sh）"
+            "或设置 Hermes 路径。',\n")
+    out = rebrand.transform_brand(line, bare_word=True)
+    assert "未安装 Black Pool。" in out and "设置 Black Pool 路径" in out, f"显示文案未换装: {out}"
+    assert "https://hermes-agent.nousresearch.com/install.sh" in out, f"URL 被打断: {out}"
+
+    tray = "    label: `Hermes at ${ACTIVE_HERMES_ROOT}`,\n"
+    out = rebrand.transform_brand(tray, bare_word=True)
+    assert "`Black Pool at ${ACTIVE_HERMES_ROOT}`" in out, f"托盘标签换装失败: {out}"
+
+    # 转义序列不再挡住词边界（`\n` 的 n 曾被当成字母左边界，静默漏换 1 处）。
+    esc = '                f"\\nHermes relaunch failed: {exc}\\n"\n'
+    out = rebrand.transform_brand(esc, bare_word=True)
+    assert "Black Pool relaunch failed" in out, f"转义序列后的裸词未换装: {out}"
+    assert "\\n" in out, f"转义序列被吞: {out}"
+
+    # 版权行仍走整行跳过（来源事实整行都是，不做片段掩码）。
+    cw = "# Copyright (c) Nous Research — Hermes Agent\n"
+    assert rebrand.transform_brand(cw, bare_word=True) == cw, "版权行必须整行跳过"
 
 
 def test_agent_prompt_text_rebranded():

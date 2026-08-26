@@ -85,7 +85,7 @@ index c955bdc..f77a32d 100644
      if route.billing_mode == "subscription_included":
          return PricingEntry(
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index d8ceea5..4eb1848 100644
+index 7efb8ab..131116f 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
 @@ -6385,11 +6385,7 @@ function buildApplicationMenu() {
@@ -621,7 +621,7 @@ index 476354e..88148e2 100644
      return
    }
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index 212e8e6..6d75f4e 100644
+index cd765b5..60e3041 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
 @@ -5328,6 +5328,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
