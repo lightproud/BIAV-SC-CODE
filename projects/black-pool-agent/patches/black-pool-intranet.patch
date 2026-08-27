@@ -1,8 +1,8 @@
 diff --git a/agent/usage_pricing.py b/agent/usage_pricing.py
-index c955bdc..f77a32d 100644
+index 9af08f6..45fa182 100644
 --- a/agent/usage_pricing.py
 +++ b/agent/usage_pricing.py
-@@ -1238,12 +1238,81 @@ def _pricing_entry_from_metadata(
+@@ -1260,12 +1260,81 @@ def _pricing_entry_from_metadata(
      )
  
  
@@ -85,10 +85,10 @@ index c955bdc..f77a32d 100644
      if route.billing_mode == "subscription_included":
          return PricingEntry(
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index 7efb8ab..131116f 100644
+index 5d27a32..832d90f 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
-@@ -6385,11 +6385,7 @@ function buildApplicationMenu() {
+@@ -6615,11 +6615,7 @@ function buildApplicationMenu() {
        ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
        : [{ role: 'minimize' }, { role: 'close' }]
    })
@@ -102,7 +102,7 @@ index 7efb8ab..131116f 100644
    return Menu.buildFromTemplate(template)
  }
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index 80d7fba..420d20c 100644
+index f547aaf..5c854c6 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
 @@ -138,6 +138,8 @@ export function AboutSettings() {
@@ -127,10 +127,10 @@ index 80d7fba..420d20c 100644
      </SettingsContent>
    )
 diff --git a/apps/desktop/src/app/settings/gateway-settings.tsx b/apps/desktop/src/app/settings/gateway-settings.tsx
-index 56948ea..15df429 100644
+index e03a63a..3ab09c1 100644
 --- a/apps/desktop/src/app/settings/gateway-settings.tsx
 +++ b/apps/desktop/src/app/settings/gateway-settings.tsx
-@@ -1054,6 +1054,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1113,6 +1113,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'local' }))}
              title={g.localTitle}
            />
@@ -139,7 +139,7 @@ index 56948ea..15df429 100644
            <ModeCard
              active={state.mode === 'cloud'}
              description={g.cloudDesc}
-@@ -1062,6 +1064,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1121,6 +1123,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}
              title={g.cloudTitle}
            />
@@ -186,7 +186,7 @@ index 82cc8a0..f8eb4ec 100644
          active: activeView === 'providers',
          children: [
 diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-index a6e144d..e17ee7e 100644
+index 006c23f..1676630 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 @@ -45,8 +45,7 @@ import {
@@ -199,7 +199,7 @@ index a6e144d..e17ee7e 100644
  } from '@/store/updates'
  import type { StatusResponse, UsageStats } from '@/types/hermes'
  
-@@ -330,10 +329,9 @@ export function useStatusbarItems({
+@@ -332,10 +331,9 @@ export function useStatusbarItems({
        // Update state is not a preference: hiding it is how a user misses that
        // their client is behind. Listed in the menu, but locked on.
        lockedVisible: true,
@@ -211,7 +211,7 @@ index a6e144d..e17ee7e 100644
      }
    }, [
      desktopVersion?.appVersion,
-@@ -374,10 +372,9 @@ export function useStatusbarItems({
+@@ -376,10 +374,9 @@ export function useStatusbarItems({
        id: 'version-backend',
        label: status.label,
        lockedVisible: true,
@@ -429,10 +429,10 @@ index ef099f9..54a7124 100644
      const labels = screen
        .getAllByRole('button')
 diff --git a/apps/desktop/src/components/onboarding/index.tsx b/apps/desktop/src/components/onboarding/index.tsx
-index e75d128..e99be00 100644
+index 521a1a2..2495264 100644
 --- a/apps/desktop/src/components/onboarding/index.tsx
 +++ b/apps/desktop/src/components/onboarding/index.tsx
-@@ -404,7 +404,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
+@@ -408,7 +408,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
  
  const readShowAll = () => {
    try {
@@ -470,7 +470,7 @@ index 851f7be..522a60c 100644
          <p className="mt-1 text-xs leading-5 text-muted-foreground">{t.onboarding.featuredPitch}</p>
        </div>
 diff --git a/apps/desktop/src/store/onboarding.ts b/apps/desktop/src/store/onboarding.ts
-index c4c1bcd..a62c307 100644
+index 8923cf7..a306297 100644
 --- a/apps/desktop/src/store/onboarding.ts
 +++ b/apps/desktop/src/store/onboarding.ts
 @@ -117,6 +117,11 @@ function writeCachedConfigured(value: boolean) {
@@ -486,10 +486,10 @@ index c4c1bcd..a62c307 100644
      return false
    }
 diff --git a/apps/desktop/src/store/updates.test.ts b/apps/desktop/src/store/updates.test.ts
-index 5c04feb..0984ef6 100644
+index b64c429..940f233 100644
 --- a/apps/desktop/src/store/updates.test.ts
 +++ b/apps/desktop/src/store/updates.test.ts
-@@ -163,50 +163,14 @@ describe('reportBackendContract', () => {
+@@ -190,50 +190,14 @@ describe('reportBackendContract', () => {
      vi.useRealTimers()
    })
  
@@ -544,7 +544,7 @@ index 5c04feb..0984ef6 100644
    })
  })
  
-@@ -1181,37 +1145,37 @@ describe('startUpdatePoller', () => {
+@@ -1226,37 +1190,37 @@ describe('startUpdatePoller', () => {
      vi.useRealTimers()
    })
  
@@ -593,10 +593,10 @@ index 5c04feb..0984ef6 100644
    })
  })
 diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
-index 476354e..88148e2 100644
+index f6e977f..c9dbe8a 100644
 --- a/apps/desktop/src/store/updates.ts
 +++ b/apps/desktop/src/store/updates.ts
-@@ -148,6 +148,11 @@ function isInstallMethodToastSnoozed(): boolean {
+@@ -149,6 +149,11 @@ function isInstallMethodToastSnoozed(): boolean {
   * doesn't nag on every thread switch.
   */
  export function reportBackendContract(contract: number | undefined): void {
@@ -608,7 +608,7 @@ index 476354e..88148e2 100644
    if ((contract ?? 0) >= REQUIRED_BACKEND_CONTRACT) {
      dismissNotification(SKEW_TOAST_ID)
      // Backend caught up — forget any prior snooze so a future regression warns
-@@ -916,6 +921,11 @@ let lastConnectionMode: string | undefined
+@@ -955,6 +960,11 @@ let lastConnectionMode: string | undefined
  
  /** Wire up background polling + progress streaming. Idempotent. */
  export function startUpdatePoller(): void {
@@ -621,10 +621,10 @@ index 476354e..88148e2 100644
      return
    }
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index cd765b5..60e3041 100644
+index 5d1c7ec..9ecace5 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
-@@ -5328,6 +5328,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
+@@ -7489,6 +7489,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
  
      if not git_dir.exists():
          if sys.platform == "win32":

@@ -1,8 +1,8 @@
 diff --git a/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts b/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts
-index 0000000..0000000 100644
+index 43be63e1..082f41cd 100644
 --- a/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts
 +++ b/apps/desktop/src/app/session/hooks/use-message-stream/gateway-event/message-stream.ts
-@@ -15,5 +15,7 @@
+@@ -16,6 +16,8 @@ import { providerWaitText, setSessionProviderWait } from '@/store/provider-wait'
  import { setCurrentUsage, setTurnStartedAt } from '@/store/session'
  import { pruneFinishedSessionSubagents } from '@/store/subagents'
  import { clearActiveSessionTodos } from '@/store/todos'
@@ -10,8 +10,8 @@ index 0000000..0000000 100644
 +import type { UsageStats } from '@/types/hermes'
  
  import type { GatewayEventContext } from './types'
-@@ -378,7 +380,8 @@
-       updateSessionState(sessionId, state => ({
+ 
+@@ -382,6 +384,7 @@ export function handleMessageStreamEvent(ctx: GatewayEventContext): boolean {
          ...state,
          usage: { calls: 0, input: 0, output: 0, total: 0, ...state.usage, ...payload.usage }
        }))
@@ -21,7 +21,7 @@ index 0000000..0000000 100644
          setCurrentUsage(current => ({ ...current, ...payload.usage }))
 diff --git a/apps/desktop/src/app/shell/cost-usage-panel.tsx b/apps/desktop/src/app/shell/cost-usage-panel.tsx
 new file mode 100644
-index 0000000..1db9d9c
+index 00000000..1db9d9c0
 --- /dev/null
 +++ b/apps/desktop/src/app/shell/cost-usage-panel.tsx
 @@ -0,0 +1,153 @@
@@ -179,11 +179,10 @@ index 0000000..1db9d9c
 +  )
 +}
 diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-index bd2364c..fba66eb 100644
+index b9d9eff4..cf4438ab 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-@@ -5,7 +5,8 @@ import { useMemo } from 'react'
- import { ConnectionSwitcher } from '@/app/chat/sidebar/connection-switcher'
+@@ -6,6 +6,7 @@ import { ConnectionSwitcher } from '@/app/chat/sidebar/connection-switcher'
  import type { CommandCenterSection } from '@/app/command-center'
  import { useApprovalModeStatusbarItem } from '@/app/shell/approval-mode-menu'
  import { ContextUsagePanel } from '@/app/shell/context-usage-panel'
@@ -191,23 +190,24 @@ index bd2364c..fba66eb 100644
  import { GatewayMenuPanel } from '@/app/shell/gateway-menu-panel'
  import { useContextBreakdown } from '@/app/shell/hooks/use-context-breakdown'
  import { $paneVisible, togglePaneVisible } from '@/components/pane-shell/tree/store'
-@@ -12,7 +13,7 @@ import { useI18n } from '@/i18n'
+@@ -15,7 +16,7 @@ import { useI18n } from '@/i18n'
  import { displayPath, pathLeaf } from '@/lib/display-path'
  import { Activity, AlertCircle, Clock, Command, FolderOpen, Globe, Hash, Loader2, Terminal } from '@/lib/icons'
- import type { RuntimeReadinessResult } from '@/lib/runtime-readiness'
+ import { runtimeReadinessDisplay, type RuntimeReadinessResult } from '@/lib/runtime-readiness'
 -import { contextBarLabel, LiveDuration, usageContextLabel } from '@/lib/statusbar'
 +import { contextBarLabel, LiveDuration, usageContextLabel, usageCostLabel } from '@/lib/statusbar'
  import { useStoreSelector } from '@/lib/use-session-slice'
  import { cn } from '@/lib/utils'
  import { resolveVersionStatus } from '@/lib/version-status'
-@@ -266,5 +267,6 @@ export function useStatusbarItems({
+@@ -266,6 +267,7 @@ export function useStatusbarItems({
  
    const contextUsage = useMemo(() => usageContextLabel(gaugeUsage), [gaugeUsage])
    const contextBar = useMemo(() => contextBarLabel(gaugeUsage), [gaugeUsage])
 +  const costUsage = useMemo(() => usageCostLabel(currentUsage), [currentUsage])
  
    const approvalModeItem = useApprovalModeStatusbarItem(activeGatewayProfile, requestGateway)
-@@ -539,6 +541,16 @@ export function useStatusbarItems({
+ 
+@@ -557,6 +559,16 @@ export function useStatusbarItems({
          toggleLabel: copy.toggleContextUsage,
          variant: 'menu'
        },
@@ -224,10 +224,7 @@ index bd2364c..fba66eb 100644
        {
          detail: <LiveDuration since={sessionStartedAt} />,
          hidden: !sessionStartedAt,
-@@ -590,9 +602,11 @@ export function useStatusbarItems({
-       clientVersionItem,
-       contextBar,
-       contextBreakdown,
+@@ -595,6 +607,8 @@ export function useStatusbarItems({
        contextBreakdownLoading,
        contextUsage,
        copy,
@@ -237,10 +234,10 @@ index bd2364c..fba66eb 100644
        sessionStartedAt,
        gatewayState,
 diff --git a/apps/desktop/src/i18n/ar.ts b/apps/desktop/src/i18n/ar.ts
-index 8101d23..918959c 100644
+index f658ca54..8caed465 100644
 --- a/apps/desktop/src/i18n/ar.ts
 +++ b/apps/desktop/src/i18n/ar.ts
-@@ -2058,6 +2058,26 @@ export const ar = defineLocale({
+@@ -2244,6 +2244,26 @@ export const ar = defineLocale({
        messagingPlatforms: 'منصات المراسلة'
      },
      statusbar: {
@@ -268,10 +265,10 @@ index 8101d23..918959c 100644
        restart: 'إعادة تشغيل',
        update: 'تحديث',
 diff --git a/apps/desktop/src/i18n/en.ts b/apps/desktop/src/i18n/en.ts
-index 1c61907..72025a3 100644
+index a3c7fb1c..014e71cb 100644
 --- a/apps/desktop/src/i18n/en.ts
 +++ b/apps/desktop/src/i18n/en.ts
-@@ -2474,6 +2474,7 @@ export const en: Translations = {
+@@ -2905,6 +2905,7 @@ export const en: Translations = {
        toggleBackendVersion: 'Backend version',
        toggleCommandCenter: 'Command Center',
        toggleContextUsage: 'Context meter',
@@ -279,7 +276,7 @@ index 1c61907..72025a3 100644
        toggleRunningTimer: 'Turn timer',
        toggleSessionTimer: 'Session timer',
        toggleTerminal: 'Terminal',
-@@ -2493,6 +2494,25 @@ export const en: Translations = {
+@@ -2924,6 +2925,25 @@ export const en: Translations = {
        openStarmap: 'Open memory graph',
        turnRunning: 'Running',
        contextUsage: 'Context usage',
@@ -306,10 +303,10 @@ index 1c61907..72025a3 100644
          categories: {
            conversation: 'Conversation',
 diff --git a/apps/desktop/src/i18n/ja.ts b/apps/desktop/src/i18n/ja.ts
-index a506e53..62bc640 100644
+index d4131559..45ba5b9a 100644
 --- a/apps/desktop/src/i18n/ja.ts
 +++ b/apps/desktop/src/i18n/ja.ts
-@@ -2322,6 +2322,26 @@ export const ja = defineLocale({
+@@ -2552,6 +2552,26 @@ export const ja = defineLocale({
        openStarmap: 'メモリグラフを開く',
        turnRunning: '実行中',
        contextUsage: 'コンテキスト使用状況',
@@ -337,10 +334,10 @@ index a506e53..62bc640 100644
          categories: {
            conversation: '会話',
 diff --git a/apps/desktop/src/i18n/types.ts b/apps/desktop/src/i18n/types.ts
-index b82feb4..e7243e9 100644
+index 4c2df317..8246de94 100644
 --- a/apps/desktop/src/i18n/types.ts
 +++ b/apps/desktop/src/i18n/types.ts
-@@ -2077,6 +2077,7 @@ export interface Translations {
+@@ -2469,6 +2469,7 @@ export interface Translations {
        toggleBackendVersion: string
        toggleCommandCenter: string
        toggleContextUsage: string
@@ -348,7 +345,7 @@ index b82feb4..e7243e9 100644
        toggleRunningTimer: string
        toggleSessionTimer: string
        toggleTerminal: string
-@@ -2096,6 +2097,25 @@ export interface Translations {
+@@ -2488,6 +2489,25 @@ export interface Translations {
        openStarmap: string
        turnRunning: string
        contextUsage: string
@@ -375,10 +372,10 @@ index b82feb4..e7243e9 100644
          categories: {
            conversation: string
 diff --git a/apps/desktop/src/i18n/zh-hant.ts b/apps/desktop/src/i18n/zh-hant.ts
-index 8e92261..fc1762d 100644
+index f155f405..9322af95 100644
 --- a/apps/desktop/src/i18n/zh-hant.ts
 +++ b/apps/desktop/src/i18n/zh-hant.ts
-@@ -2245,6 +2245,26 @@ export const zhHant = defineLocale({
+@@ -2463,6 +2463,26 @@ export const zhHant = defineLocale({
        openStarmap: '開啟記憶圖譜',
        turnRunning: '執行中',
        contextUsage: '上下文使用量',
@@ -406,10 +403,10 @@ index 8e92261..fc1762d 100644
          categories: {
            conversation: '對話',
 diff --git a/apps/desktop/src/i18n/zh.ts b/apps/desktop/src/i18n/zh.ts
-index 75074ab..4e6efe5 100644
+index e5326688..966dc61b 100644
 --- a/apps/desktop/src/i18n/zh.ts
 +++ b/apps/desktop/src/i18n/zh.ts
-@@ -2655,6 +2655,7 @@ export const zh: Translations = {
+@@ -3069,6 +3069,7 @@ export const zh: Translations = {
        toggleBackendVersion: '后端版本',
        toggleCommandCenter: '命令中心',
        toggleContextUsage: '上下文用量',
@@ -417,7 +414,7 @@ index 75074ab..4e6efe5 100644
        toggleRunningTimer: '回合计时',
        toggleSessionTimer: '会话计时',
        toggleTerminal: '终端',
-@@ -2674,6 +2675,25 @@ export const zh: Translations = {
+@@ -3088,6 +3089,25 @@ export const zh: Translations = {
        openStarmap: '打开记忆图谱',
        turnRunning: '运行中',
        contextUsage: '上下文用量',
@@ -444,10 +441,10 @@ index 75074ab..4e6efe5 100644
          categories: {
            conversation: '对话',
 diff --git a/apps/desktop/src/lib/statusbar.tsx b/apps/desktop/src/lib/statusbar.tsx
-index 0c0d225..76fbaa0 100644
+index 01ca3b64..5b0506e0 100644
 --- a/apps/desktop/src/lib/statusbar.tsx
 +++ b/apps/desktop/src/lib/statusbar.tsx
-@@ -48,6 +48,16 @@ export function usageContextLabel(usage: UsageStats): string {
+@@ -49,6 +49,16 @@ export function usageContextLabel(usage: UsageStats): string {
    return usage.total > 0 ? `${compactNumber(usage.total)} tok` : ''
  }
  
@@ -466,7 +463,7 @@ index 0c0d225..76fbaa0 100644
      return ''
 diff --git a/apps/desktop/src/store/usage-ledger.test.ts b/apps/desktop/src/store/usage-ledger.test.ts
 new file mode 100644
-index 0000000..5c48482
+index 00000000..5c48482e
 --- /dev/null
 +++ b/apps/desktop/src/store/usage-ledger.test.ts
 @@ -0,0 +1,192 @@
@@ -664,7 +661,7 @@ index 0000000..5c48482
 +})
 diff --git a/apps/desktop/src/store/usage-ledger.ts b/apps/desktop/src/store/usage-ledger.ts
 new file mode 100644
-index 0000000..f8216c9
+index 00000000..f8216c99
 --- /dev/null
 +++ b/apps/desktop/src/store/usage-ledger.ts
 @@ -0,0 +1,208 @@
@@ -878,7 +875,7 @@ index 0000000..f8216c9
 +export const RETAINED_DAYS_FOR_TEST = RETAINED_DAYS
 diff --git a/apps/desktop/src/store/usage-rounds.ts b/apps/desktop/src/store/usage-rounds.ts
 new file mode 100644
-index 0000000..c1d4426
+index 00000000..c1d44266
 --- /dev/null
 +++ b/apps/desktop/src/store/usage-rounds.ts
 @@ -0,0 +1,79 @@
@@ -962,10 +959,10 @@ index 0000000..c1d4426
 +  $usageRounds.set({ ...map, [sessionId]: rounds })
 +}
 diff --git a/apps/desktop/src/types/hermes.ts b/apps/desktop/src/types/hermes.ts
-index 6f35a02..6d432a2 100644
+index 4f39fca3..c62d1457 100644
 --- a/apps/desktop/src/types/hermes.ts
 +++ b/apps/desktop/src/types/hermes.ts
-@@ -632,10 +632,13 @@ export interface SessionRuntimeInfo {
+@@ -710,10 +710,13 @@ export interface SessionRuntimeInfo {
  }
  
  export interface UsageStats {
@@ -980,10 +977,10 @@ index 6f35a02..6d432a2 100644
    input: number
    output: number
 diff --git a/tui_gateway/server.py b/tui_gateway/server.py
-index 9d5fd00..0854b91 100644
+index f110cc0d..d56d5048 100644
 --- a/tui_gateway/server.py
 +++ b/tui_gateway/server.py
-@@ -4843,6 +4843,10 @@ def _get_usage(agent) -> dict:
+@@ -6659,6 +6659,10 @@ def _get_usage(agent) -> dict:
          "completion": g("session_completion_tokens"),
          "total": g("session_total_tokens"),
          "calls": g("session_api_calls"),

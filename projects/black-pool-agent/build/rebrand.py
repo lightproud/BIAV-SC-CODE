@@ -46,7 +46,7 @@ PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 BRAND = "Black Pool"
 BRAND_AGENT = "Black Pool Agent"
 BRAND_VERSION = "0.1.0"
-UPSTREAM_VERSION = "0.20.5"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
+UPSTREAM_VERSION = "0.20.6"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
 BRAND_AUMID = "com.biav.blackpool"
 
 
@@ -417,6 +417,18 @@ BRAND_POST_RULES = [
     (
         "export const DEFAULT_SKIN_NAME = 'nous'",
         "export const DEFAULT_SKIN_NAME = 'black-pool'",
+    ),
+    # 上游 v2026.8.27 新增用例（themes/presets.test.ts「nous-alt is the retired
+    # Nous, not the default」）断言默认皮肤仍是 'nous'——它测的正是被上一条规则
+    # 有意改掉的那一处（守密人 2026-08-03 配色裁定：默认皮肤黑池金）。
+    # 处置按 2026-08-24 移 pin 同类先例（上游改 unset-mode 回退时的做法）
+    # **翻面成收口哨兵**，不加豁免名单、不删用例：上游验「默认是 nous」，
+    # 私有版验「默认已强制为 black-pool」——谁把默认皮肤改回去，这条当场红。
+    # 豁免只会把新伤一起盖住，翻面才留得住覆盖率。
+    # 锚点全树唯一（lesson #58 锚点唯一性已核：1 处命中）。
+    (
+        "    expect(DEFAULT_SKIN_NAME).toBe('nous')\n",
+        "    expect(DEFAULT_SKIN_NAME).toBe('black-pool')\n",
     ),
     # 默认语言简体中文（守密人 2026-08-03 裁定）：desktop 全局缺省 locale 单一
     # 真相源改 'zh'——无系统语言探测，配置未设时生效；用户已设语言不受影响。
