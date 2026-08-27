@@ -4,7 +4,7 @@ title: "design-decisions"
 description: "design-decisions 事实数据"
 resource: "/assets/data/design-decisions.json"
 tags: ["data_layer:curated", "fact-bible"]
-timestamp: "2026-08-26"
+timestamp: "2026-08-28"
 ---
 
 # 指针概念

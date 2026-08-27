@@ -4,7 +4,7 @@ title: "silver-core-sdk MIGRATION"
 description: "Audience: the BPT Desktop (Electron) codebase currently importing the official"
 resource: "/projects/silver-core-sdk/docs/MIGRATION.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-08-26"
+timestamp: "2026-08-28"
 ---
 
 # 指针概念

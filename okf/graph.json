@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-26",
+  "generated": "2026-08-28",
   "stats": {
     "nodes": 375,
-    "edges": 420
+    "edges": 421
   },
   "nodes": [
     {
@@ -4520,24 +4520,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/77922.md",
-      "rel": "提及:克珀珊特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15574.md",
-      "rel": "提及:汀克特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15583.md",
       "rel": "提及:奥尔拉",
       "rel_type": "mention"
@@ -4546,6 +4528,12 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -4591,6 +4579,18 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
@@ -4628,14 +4628,14 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
@@ -6014,24 +6014,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/77922.md",
-      "rel": "提及:克珀珊特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15574.md",
-      "rel": "提及:汀克特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15583.md",
       "rel": "提及:奥尔拉",
       "rel_type": "mention"
@@ -6040,6 +6022,12 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -6085,6 +6073,18 @@
       "rel_type": "mention"
     },
     {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
       "source": "/sources/reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
@@ -6100,6 +6100,12 @@
       "source": "/sources/steam.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/steam_discussion.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6194,14 +6200,14 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
       "rel_type": "mention"
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
