@@ -4,7 +4,7 @@ title: "silver-core-sdk MEMORY"
 description: "Cross-session memory for agents: a `memory_20250818`-equivalent six-command"
 resource: "/projects/silver-core-sdk/docs/MEMORY.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-08-28"
+timestamp: "2026-08-29"
 ---
 
 # 指针概念

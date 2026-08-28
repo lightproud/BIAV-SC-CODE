@@ -4,7 +4,7 @@ title: "character_skills"
 description: "[[toc]]"
 resource: "/projects/wiki/data/processed/character_skills.md"
 tags: ["data_layer:curated", "community-sourced", "version-volatile", "domain:gameplay"]
-timestamp: "2026-08-28"
+timestamp: "2026-08-29"
 ---
 
 # 指针概念
