@@ -42,6 +42,16 @@ STATUS_PATH = REPO / "Public-Info-Pool" / "Record" / "heartbeat" / "status.json"
 
 THRESHOLD_FACTOR = 2.0
 GRACE_HOURS = 2.0
+
+# 本工作流自身：判据必须换一维，否则警报会卡在常亮。
+# 本作业的设计是「有发现就 exit 1 变红」（红=可见）。可它同时把自己也列入看守名单、
+# 判据用「最近一次 workflow success」——于是：有发现 → 红 → 自己永无 success 记录 →
+# 自己被判 never → findings 恒 ≥ 1 → 永远红。自 2026-07-26 建成起 27 次运行 27 次红，
+# 从第一天就锁死；2026-08-18 采集全线停摆 70 小时时它确实抓到并写进了 status.json，
+# 但那抹红与前 24 天的自噬性红色毫无分别，等于没有警报。
+# 改判「上一轮有没有扫完」——status.json 的 generated_at 每轮无条件落盘（findings
+# 与否都写），正是设计档里点名的那一维。循环就此断开：无真发现时可转绿，红重新有信息量。
+SELF_WORKFLOW = "dead-man-switch.yml"
 #  cron 采样窗口：要能覆盖到月度 cron 的两次触发（每月 3 日 → 需 > 31 天）
 SAMPLE_DAYS = 400
 
@@ -179,6 +189,18 @@ def github_fetcher(repo: str, token: str | None) -> Callable[[str], dict]:
     return fetch
 
 
+def self_last_beat(status_path: Path = STATUS_PATH) -> str | None:
+    """本工作流上一轮扫完的时间，取自它上一次写下的 status.json。
+
+    读的是**上一轮**留下的文件（本轮的还没写），所以这就是「昨天有没有扫」的直接答案。
+    读不到（首次运行 / 文件损坏）返回 None，交回 classify 的 created_at 宽限逻辑。
+    """
+    try:
+        return json.loads(status_path.read_text(encoding="utf-8")).get("generated_at")
+    except (OSError, json.JSONDecodeError, AttributeError, TypeError):
+        return None
+
+
 def _parse_ts(value: str | None) -> datetime | None:
     if not value:
         return None
@@ -211,6 +233,7 @@ def build_status(
     fetch: Callable[[str], dict],
     now: datetime,
     workflow_dir: Path = WORKFLOW_DIR,
+    status_path: Path = STATUS_PATH,
 ) -> dict:
     entries = []
     for name, crons in scheduled_workflows(workflow_dir).items():
@@ -227,6 +250,10 @@ def build_status(
             record.update(state="unknown", note=f"API 查询失败: {exc}")
             entries.append(record)
             continue
+        if name == SELF_WORKFLOW:
+            # 见 SELF_WORKFLOW 注释：自己的 workflow success 恒为空，改用心跳。
+            record["last_success"] = self_last_beat(status_path) or record.get("last_success")
+            record["self_judged_by"] = "status.json/generated_at"
         state, note = classify(record, now)
         record["state"] = state
         record["note"] = note
