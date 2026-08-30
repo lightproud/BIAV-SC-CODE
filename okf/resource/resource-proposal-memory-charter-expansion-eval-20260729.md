@@ -4,7 +4,7 @@ title: "memory-charter-expansion-eval-20260729"
 description: "approaching 预警档）已随 silver-core-sdk 1.5.0 落地；其余三项**需另开设计轮**，本档为该轮的（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/memory-charter-expansion-eval-20260729.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-08-29"
+timestamp: "2026-08-30"
 ---
 
 # 指针概念

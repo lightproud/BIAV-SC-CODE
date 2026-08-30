@@ -4,7 +4,7 @@ title: "style-guide.md"
 description: "视觉规范"
 resource: "/memory/style-guide.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-08-29"
+timestamp: "2026-08-30"
 ---
 
 # 记忆层指针

@@ -4,7 +4,7 @@ title: "archive-integrity"
 description: "archive-integrity 事实数据"
 resource: "/assets/data/archive-integrity.json"
 tags: ["data_layer:curated", "fact-bible", "diagnostics", "snapshot"]
-timestamp: "2026-08-29"
+timestamp: "2026-08-30"
 ---
 
 # 指针概念

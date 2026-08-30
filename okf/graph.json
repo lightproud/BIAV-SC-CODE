@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-29",
+  "generated": "2026-08-30",
   "stats": {
     "nodes": 376,
     "edges": 399
@@ -4519,20 +4519,14 @@
     },
     {
       "source": "/community/community-bahamut.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bahamut.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
       "rel_type": "mention"
     },
     {
@@ -4572,6 +4566,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-pixiv.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
@@ -4593,12 +4593,6 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
@@ -4659,6 +4653,12 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -5965,20 +5965,14 @@
     },
     {
       "source": "/sources/bahamut.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bahamut.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
       "rel_type": "mention"
     },
     {
@@ -6015,6 +6009,12 @@
       "source": "/sources/pixiv.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/pixiv.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6084,12 +6084,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/weibo.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
       "source": "/sources/weixin.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
@@ -6099,6 +6093,12 @@
       "source": "/sources/weixin.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {

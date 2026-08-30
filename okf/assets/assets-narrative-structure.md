@@ -4,7 +4,7 @@ title: "narrative-structure"
 description: "忘却前夜叙事结构数据库 — 事实圣经核心文件"
 resource: "/assets/data/narrative-structure.json"
 tags: ["data_layer:curated", "fact-bible"]
-timestamp: "2026-08-29"
+timestamp: "2026-08-30"
 ---
 
 # 指针概念
