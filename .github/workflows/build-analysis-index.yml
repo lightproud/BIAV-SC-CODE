@@ -57,6 +57,10 @@ jobs:
             git commit -m "chore: rebuild analysis index [skip ci]"
             for i in 1 2 3 4; do
               git pull --rebase origin main && git push origin main && exit 0
+              # rebase 撞冲突会在树里留下未合并文件；不 abort 就重试，后续每次 pull
+              # 都只回 "Pulling is not possible because you have unmerged files"，
+              # 剩下几次尝试全是空转（2026-08-17 run 31992498596 实测 4 次里 3 次是这条）。
+              git rebase --abort 2>/dev/null || true
               echo "Push attempt $i failed, retrying in ${i}s..."
               sleep $i
             done
