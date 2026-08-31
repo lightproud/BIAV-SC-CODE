@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-08-24T07:02:25.176513+00:00",
+  "checked_at": "2026-08-31T13:02:25.891391+00:00",
   "current_version": "unknown",
   "known_versions": [
     "2.5.3",
@@ -9,7 +9,7 @@
   "new_version": null,
   "steam": {
     "source": "steam",
-    "checked_at": "2026-08-24T07:02:24.610044+00:00",
+    "checked_at": "2026-08-31T13:02:25.374208+00:00",
     "status": "ok",
     "name": "Morimens",
     "short_description": "Morimens is a roguelite card-battler inspired by the Lovecraftian mythos. Bond with a diverse cast of Awakeners, build your perfect deck, and battle through the mists of Kadath—facing wild events and uncovering maddening truths at every turn.",
@@ -18,6 +18,11 @@
     "release_date": "Aug 1, 2024",
     "coming_soon": false,
     "recent_news": [
+      {
+        "title": "🎧 V2.6.0 Radio Drama - A Snowy Night",
+        "date": "2026-08-26T07:04:13+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842212951296009"
+      },
       {
         "title": "V2.6.0.0 Maintenance Announcement",
         "date": "2026-08-23T06:03:59+00:00",
@@ -37,76 +42,71 @@
         "title": "V2.6.0 Caraboo✦Awakener & Wheel of Destiny Introduction",
         "date": "2026-08-19T14:12:29+00:00",
         "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228662742"
-      },
-      {
-        "title": "V2.6.0 His, Her, and Its Wishes",
-        "date": "2026-08-18T07:00:15+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840944183788011"
       }
     ]
   },
   "fandom": {
     "source": "fandom",
-    "checked_at": "2026-08-24T07:02:24.961513+00:00",
+    "checked_at": "2026-08-31T13:02:25.718114+00:00",
     "status": "ok",
     "recent_changes": [
       {
-        "title": "Umapati's Treasures",
-        "timestamp": "2026-08-24T05:17:06Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"'''{{PAGENAME}}''' are the Event Stages in [[New Moon and Deep Snow]].  == Description == ♪~~♫~~♪~~♫~~♪~~♫~~<br />Beneath the snow mountain, every guide remembers it, and every child still sings it. She is the will of the towering mountain made flesh, she is the merciful goddess Umapati. Her divine power lies scattered through the mortal world; her treasures cannot be found. They are near enough to touch; they leave no trace at all.<br />Surrender something....\""
-      },
-      {
-        "title": "Candy Apple",
-        "timestamp": "2026-08-24T04:56:18Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"{{Item |title={{PAGENAME}} |type=[[Currency|Event Currency]] |image={{PAGENAME}}.png }} '''{{PAGENAME}}''' is an [[Currency|Event Currency]] in ''[[Morimens]].''  == Description == Why should a candy apple be worth more than a golden one? Could there be a little truth buried beneath the lies? The moment you start to wonder, you've already fallen into the real lie's trap. So hurry, take it to the fairy and trade it for some good, solid rewards!  == Acquisition == <div>N...\""
-      },
-      {
-        "title": "Golden Apple",
-        "timestamp": "2026-08-24T04:52:11Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"{{Item |title={{PAGENAME}} |type=[[Currency|Event Currency]] |image={{PAGENAME}}.png }} '''{{PAGENAME}}''' is an [[Currency|Event Currency]] in ''[[Morimens]].''  == Description == Is it a gilded apple, or a true golden one...? Only the fairy knows the answer. Offer it to her for a reward or two.  == Acquisition == [[New Moon and Deep Snow]] Gameplay Event &mdash; [[Umapati's Treasures]] Stages.  == Usage == [[New Moon and Deep Snow]] Gameplay Event &mdash; Fairy's Ritua...\""
-      },
-      {
-        "title": "Crimson Apple",
-        "timestamp": "2026-08-24T04:51:05Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"{{Item |title={{PAGENAME}} |type=[[Currency|Event Currency]] |image={{PAGENAME}}.png}}  '''{{PAGENAME}}''' is an [[Currency|Event Currency]] in ''[[Morimens]].''  == Description == An apple so red it looks about to drip, giving off a thick, heady fragrance. Offer it to the fairy for a reward or two.  == Acquisition == [[New Moon and Deep Snow]] Gameplay Event &mdash; [[Umapati's Treasures]] Stages.  == Usage == [[New Moon and Deep Snow]] Gameplay Event &mdash; Fairy's Ri...\""
-      },
-      {
-        "title": "MediaWiki:Wiki-navigation",
-        "timestamp": "2026-08-24T04:40:04Z",
+        "title": "Elton",
+        "timestamp": "2026-08-31T07:26:44Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "New Moon and Deep Snow",
-        "timestamp": "2026-08-24T04:36:20Z",
+        "title": "Return to the Big Smoke",
+        "timestamp": "2026-08-31T07:15:07Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"{{Stub}} {{Quest |type=Operation |series=Astral Reign |chapter=1 |start=1-1: Dream in a Vat |end=1-14: Within the Rain |level=61-62 |previous=A Long Dream's End |next=Metamorphosis |title=Return to the Big Smoke |image=Return to the Big Smoke.png }} '''{{PAGENAME}}''' is Chapter 1 of Operation: Astral Reign in ''[[Morimens]]''.  == Description ==  Buried in the gray mist lies the ruins of an ancient city.<br />Traverse the void of lightless stars, reuniting with the frag...\""
+      },
+      {
+        "title": "File:Return to the Big Smoke.png",
+        "timestamp": "2026-08-31T07:13:21Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "Serene Truth",
-        "timestamp": "2026-08-24T04:25:30Z",
+        "title": "Metamorphosis",
+        "timestamp": "2026-08-31T07:10:40Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"{{Stub}} {{Quest |type=Operation |series=Astral Reign |chapter=2 |start=2-1: Eyes |end=2-18: Farewell, Burning World |level=63-64 |previous=Return to the Big Smoke |next=Ossuary Gala |title=Metamorphosis |image=Metamorphosis.png }} '''{{PAGENAME}}''' is Chapter 2 of Operation: Astral Reign in ''[[Morimens]]''.  == Description ==  A sanatorium constructed by the collective subconscious.<br />Here, the dissolution of the shell is not the end; the death of the mind is.<br /...\""
+      },
+      {
+        "title": "File:Metamorphosis.png",
+        "timestamp": "2026-08-31T07:09:28Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "Morimens Wiki",
-        "timestamp": "2026-08-24T04:10:51Z",
+        "title": "Ossuary Gala",
+        "timestamp": "2026-08-31T07:07:01Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"{{Stub}} {{Quest |type=Operation |series=Astral Reign |chapter=3 |start=3-1: Beneath the Dream's Veil |end=3-11: Beyond the Tides |level=65-66 |previous=Metamorphosis |next=Paradise |title=Ossuary Gala |image=Ossuary Gala.png }} '''{{PAGENAME}}''' is Chapter 3 of Operation: Astral Reign in ''[[Morimens]]''.  == Description ==  Rejoice, my friend ♪<br />Beneath the moonlight, bones quietly bloom ♪<br />My beloved lies still on a silver plate ♪<br />All the guests ha...\""
+      },
+      {
+        "title": "File:Ossuary Gala.png",
+        "timestamp": "2026-08-31T07:05:53Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "File:Awakener Trials V2.6.0.png",
-        "timestamp": "2026-08-24T04:10:23Z",
+        "title": "Paradise",
+        "timestamp": "2026-08-31T07:02:02Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"{{Stub}} {{Quest |type=Operation |series=Astral Reign |chapter=4 |start=4-0: Murmurs |end=4-16: Epilogue |level=67-68 |previous=Ossuary Gala |next=Fated Theater |title=Paradise |image=Paradise.png }} '''{{PAGENAME}}''' is Chapter 4 of Operation: Astral Reign in ''[[Morimens]]''.  == Description ==  The massive cruise ship, \"Paradise,\" is home to the [[Seafarer|Order of Seafarers]], who travel the boundless ocean.<br />Offer your wishes on this ship, and the happiness you...\""
+      },
+      {
+        "title": "File:Paradise.png",
+        "timestamp": "2026-08-31T07:00:11Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "File:After School Hours SS.png",
-        "timestamp": "2026-08-24T04:08:02Z",
+        "title": "Template:Quest",
+        "timestamp": "2026-08-31T06:56:21Z",
         "user": "Frorefawn",
         "comment": ""
       }
