@@ -4,7 +4,7 @@ title: "sentinel-baseline"
 description: "sentinel-baseline 事实数据"
 resource: "/assets/data/sentinel-baseline.json"
 tags: ["data_layer:curated", "fact-bible", "diagnostics", "snapshot"]
-timestamp: "2026-08-31"
+timestamp: "2026-09-01"
 ---
 
 # 指针概念
