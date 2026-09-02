@@ -4,7 +4,7 @@ title: "methodology.md"
 description: "协作方法论"
 resource: "/memory/methodology.md"
 tags: ["memory", "pointer"]
-timestamp: "2026-09-01"
+timestamp: "2026-09-02"
 ---
 
 # 记忆层指针

@@ -4,7 +4,7 @@ title: "silver-core-sdk MEMORY-GOVERNANCE"
 description: "Archived requirements + implementation record for the 2026-07-11 keeper"
 resource: "/projects/silver-core-sdk/docs/MEMORY-GOVERNANCE.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-09-01"
+timestamp: "2026-09-02"
 ---
 
 # 指针概念

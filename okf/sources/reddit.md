@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "reddit 社区数据源"
-description: "reddit 平台采集档案，全量 4271 条，健康度 active。"
+description: "reddit 平台采集档案，全量 4298 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/reddit/"
 tags: ["data_layer:full_archive", "platform:reddit", "health:active"]
-timestamp: "2026-09-01T08:18:10.689739+00:00"
+timestamp: "2026-09-02T07:37:49.198459+00:00"
 ---
 
 # 数据层指针
@@ -15,9 +15,9 @@ timestamp: "2026-09-01T08:18:10.689739+00:00"
 |------|------|
 | 平台 | reddit |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/reddit/` |
-| 全量条数 | 4271 |
+| 全量条数 | 4298 |
 | 采集健康度 | active |
-| 最后成功 | 2026-09-01 |
+| 最后成功 | 2026-09-02 |
 
 # 数据纪律（硬约束）
 
