@@ -4,7 +4,7 @@ title: "note_com 社区数据源"
 description: "note_com 平台采集档案，全量 51 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/note_com/"
 tags: ["data_layer:full_archive", "platform:note_com", "health:degraded"]
-timestamp: "2026-09-02T07:37:49.198459+00:00"
+timestamp: "2026-09-03T07:47:15.882513+00:00"
 ---
 
 # 数据层指针

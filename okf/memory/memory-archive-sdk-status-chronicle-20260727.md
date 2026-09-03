@@ -4,7 +4,7 @@ title: "Silver Core SDK 状态叙述归档（截至 2026-07-27）"
 description: "「补顶部摘要 + 实测数字」）**：本节此前停在 v0.69.0，其后 **12 个发布未回写**，现合并补齐一条；"
 resource: "/memory/archive/sdk-status-chronicle-20260727.md"
 tags: ["memory", "data_layer:curated", "archive", "frozen-snapshot"]
-timestamp: "2026-09-02"
+timestamp: "2026-09-03"
 ---
 
 # 记忆层指针

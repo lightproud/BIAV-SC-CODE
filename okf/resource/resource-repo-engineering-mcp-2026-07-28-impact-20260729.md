@@ -4,7 +4,7 @@ title: "mcp-2026-07-28-impact-20260729"
 description: "代码扫描（file:line 可回核）。「建议」均标注为建议，未与「已落盘」混写（§4.2 R3）。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/mcp-2026-07-28-impact-20260729.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-09-02"
+timestamp: "2026-09-03"
 ---
 
 # 指针概念

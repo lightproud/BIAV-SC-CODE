@@ -4,7 +4,7 @@ title: "hermes-upstream-testrun-20260802"
 description: "上游套件在银芯容器内**可完整复现运行**：全量 **2,471 测试文件 / 22,766 通过 / 40 失败**，（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/hermes-upstream-testrun-20260802.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-09-02"
+timestamp: "2026-09-03"
 ---
 
 # 指针概念
