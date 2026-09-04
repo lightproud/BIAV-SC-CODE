@@ -4,7 +4,7 @@ title: "VERSION"
 description: "事实圣经 (Fact Bible)"
 resource: "/assets/data/VERSION.md"
 tags: ["data_layer:curated", "fact-bible"]
-timestamp: "2026-09-03"
+timestamp: "2026-09-04"
 ---
 
 # 指针概念
