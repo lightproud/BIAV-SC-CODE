@@ -3,12 +3,12 @@ name: "System Prompt: Scratchpad directory"
 description: "Instructions for using a dedicated scratchpad directory for temporary files"
 ccVersion: "2.1.178"
 variables:
-  - "SCRATCHPAD_DIR_FN"
+  - "SCRATCHPAD_DIR"
 -->
 # Scratchpad Directory
 
 IMPORTANT: Always use this scratchpad directory for temporary files instead of `/tmp` or other system temp directories:
-`${SCRATCHPAD_DIR_FN}`
+`${SCRATCHPAD_DIR}`
 
 Use this directory for ALL temporary file needs:
 - Storing intermediate results or data during multi-step tasks

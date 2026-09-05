@@ -1,7 +1,7 @@
 <!--
 name: "System Reminder: Memory index capacity warning"
 description: "Warns when a private or team memory index approaches or exceeds its byte or line read limit and instructs Claude to compact it below the target size"
-ccVersion: "2.1.210"
+ccVersion: "2.1.235"
 variables:
   - "CAPACITY_STATUS"
   - "MEMORY_INDEX_METADATA"

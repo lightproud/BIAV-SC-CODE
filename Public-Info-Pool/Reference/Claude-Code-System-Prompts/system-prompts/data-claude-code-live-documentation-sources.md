@@ -1,7 +1,7 @@
 <!--
 name: "Data: Claude Code live documentation sources"
 description: "WebFetch URLs for fetching current Claude Code documentation from official sources"
-ccVersion: "2.1.202"
+ccVersion: "2.1.246"
 -->
 # Live Documentation Sources
 
@@ -38,6 +38,8 @@ Mintlify serves both `.md` and `.mdx` for every page; prefer `.md` for clean fet
 | Plugins | `https://code.claude.com/docs/en/plugins.md` | "Extract how to install and develop plugins" |
 | Output styles | `https://code.claude.com/docs/en/output-styles.md` | "Extract how to create and apply output styles" |
 
+Plugin eval (`claude plugin eval`, `claude plugin eval init`) and `/skill-doctor` have **no public docs page yet** - do not fetch a guessed URL. `references/plugin-eval.md` is the offline floor for them; when a page is published it will appear in the docs map above.
+
 ## Workflows and surfaces
 
 | Topic | URL | Extraction prompt |
@@ -64,7 +66,7 @@ Mintlify serves both `.md` and `.mdx` for every page; prefer `.md` for clean fet
 
 ## Claude in Slack (Claude Tag)
 
-Read `references/claude-tag.md` first — it is the offline floor for this surface. Then fetch:
+Read `references/claude-tag.md` first - it is the offline floor for this surface. Then fetch:
 
 | Topic | URL | Extraction prompt |
 |---|---|---|

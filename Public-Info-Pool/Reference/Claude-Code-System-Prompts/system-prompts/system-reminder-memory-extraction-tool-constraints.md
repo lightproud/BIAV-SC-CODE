@@ -1,7 +1,7 @@
 <!--
 name: "System Reminder: Memory extraction tool constraints"
 description: "Lists the tools available to the memory extraction subagent for reading, updating, and deleting memory files under directory restrictions"
-ccVersion: "2.1.219"
+ccVersion: "2.1.235"
 variables:
   - "READ_TOOL_NAME"
   - "GREP_TOOL_NAME"

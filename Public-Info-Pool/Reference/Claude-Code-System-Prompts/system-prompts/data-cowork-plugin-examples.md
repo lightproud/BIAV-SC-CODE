@@ -1,7 +1,7 @@
 <!--
 name: "Data: Cowork plugin examples"
 description: "Reference examples of minimal, medium, and complex Cowork plugin structures with plugin metadata, skills, agents, hooks, MCP config, README, and connectors"
-ccVersion: "2.1.163"
+ccVersion: "2.1.246"
 -->
 # Example Plugins
 
@@ -15,12 +15,12 @@ A simple plugin with one skill and no other components.
 
 ```
 meeting-notes/
-├── .claude-plugin/
-│   └── plugin.json
-├── skills/
-│   └── meeting-notes/
-│       └── SKILL.md
-└── README.md
+|-- .claude-plugin/
+|   `-- plugin.json
+|-- skills/
+|   `-- meeting-notes/
+|       `-- SKILL.md
+`-- README.md
 ```
 
 ### plugin.json
@@ -51,11 +51,11 @@ Read the transcript file the user provided and generate structured meeting notes
 
 Include these sections:
 
-1. **Attendees** — list all participants mentioned
-2. **Summary** — 2-3 sentence overview of the meeting
-3. **Key Decisions** — numbered list of decisions made
-4. **Action Items** — table with columns: Owner, Task, Due Date
-5. **Open Questions** — anything unresolved
+1. **Attendees** - list all participants mentioned
+2. **Summary** - 2-3 sentence overview of the meeting
+3. **Key Decisions** - numbered list of decisions made
+4. **Action Items** - table with columns: Owner, Task, Due Date
+5. **Open Questions** - anything unresolved
 
 Write the notes to a new file named after the transcript with `-notes` appended.
 ```
@@ -70,19 +70,19 @@ A plugin that combines domain knowledge, user-initiated actions, and external se
 
 ```
 code-quality/
-├── .claude-plugin/
-│   └── plugin.json
-├── skills/
-│   ├── coding-standards/
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       └── style-rules.md
-│   ├── review-changes/
-│   │   └── SKILL.md
-│   └── fix-lint/
-│       └── SKILL.md
-├── .mcp.json
-└── README.md
+|-- .claude-plugin/
+|   `-- plugin.json
+|-- skills/
+|   |-- coding-standards/
+|   |   |-- SKILL.md
+|   |   `-- references/
+|   |       `-- style-rules.md
+|   |-- review-changes/
+|   |   `-- SKILL.md
+|   `-- fix-lint/
+|       `-- SKILL.md
+|-- .mcp.json
+`-- README.md
 ```
 
 ### plugin.json
@@ -182,7 +182,7 @@ Project coding standards and conventions for consistent, high-quality code.
 
 ## Additional Resources
 
-- **`references/style-rules.md`** — complete style rules by language
+- **`references/style-rules.md`** - complete style rules by language
 ```
 
 ### .mcp.json
@@ -208,24 +208,24 @@ A plugin using skills, agents, hooks, and MCP integration with tool-agnostic con
 
 ```
 engineering-workflow/
-├── .claude-plugin/
-│   └── plugin.json
-├── skills/
-│   ├── team-processes/
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       └── workflow-guide.md
-│   ├── standup-prep/
-│   │   └── SKILL.md
-│   └── create-ticket/
-│       └── SKILL.md
-├── agents/
-│   └── ticket-analyzer.md
-├── hooks/
-│   └── hooks.json
-├── .mcp.json
-├── CONNECTORS.md
-└── README.md
+|-- .claude-plugin/
+|   `-- plugin.json
+|-- skills/
+|   |-- team-processes/
+|   |   |-- SKILL.md
+|   |   `-- references/
+|   |       `-- workflow-guide.md
+|   |-- standup-prep/
+|   |   `-- SKILL.md
+|   `-- create-ticket/
+|       `-- SKILL.md
+|-- agents/
+|   `-- ticket-analyzer.md
+|-- hooks/
+|   `-- hooks.json
+|-- .mcp.json
+|-- CONNECTORS.md
+`-- README.md
 ```
 
 ### plugin.json

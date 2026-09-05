@@ -1,7 +1,7 @@
 <!--
 name: "Skill: Import to Claude Code"
 description: "Generated SKILL.md instructing Claude to finish importing leftover foreign-agent config that `claude import` could not map automatically"
-ccVersion: "2.1.213"
+ccVersion: "2.1.235"
 variables:
   - "IMPORT_SOURCES"
   - "IMPORT_SOURCE"

@@ -1,7 +1,7 @@
 <!--
 name: "System Reminder: Plan approved"
 description: "Notifies Claude that the user approved the plan, provides the saved plan file and approved plan content, and allows coding to begin"
-ccVersion: "2.1.173"
+ccVersion: "2.1.235"
 variables:
   - "PLAN_FILE_PATH"
   - "TEAM_PARALLELIZATION_NOTE"

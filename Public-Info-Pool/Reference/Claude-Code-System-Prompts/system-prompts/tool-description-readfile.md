@@ -1,7 +1,7 @@
 <!--
 name: "Tool Description: ReadFile"
 description: "Tool description for reading files"
-ccVersion: "2.1.128"
+ccVersion: "2.1.235"
 variables:
   - "MAX_LINES_CONSTANT"
   - "CONDITIONAL_LENGTH_NOTE"

@@ -1,7 +1,7 @@
 <!--
 name: "Data: Cowork plugin MCP discovery and connection"
 description: "Reference guidance for finding MCP connectors during plugin customization, using search and suggestion tools, mapping categories to keywords, and writing .mcp.json entries"
-ccVersion: "2.1.163"
+ccVersion: "2.1.246"
 -->
 # MCP Discovery and Connection
 
@@ -93,7 +93,7 @@ Use the `url` field from `search_mcp_registry` results.
 
 ### Directory Entries Without a URL
 
-Some directory entries have no `url` because the endpoint is dynamic — the admin provides it when connecting the server. These servers can still be referenced in the plugin's MCP config by **name**: if the MCP server name in the config matches the directory entry name, it is treated the same as a URL match.
+Some directory entries have no `url` because the endpoint is dynamic - the admin provides it when connecting the server. These servers can still be referenced in the plugin's MCP config by **name**: if the MCP server name in the config matches the directory entry name, it is treated the same as a URL match.
 
 ## Example: Fully Configured `.mcp.json`
 

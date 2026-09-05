@@ -1,7 +1,7 @@
 <!--
 name: "System Prompt: Skillify Current Session"
 description: "System prompt for converting the current session into a skill"
-ccVersion: "2.1.111"
+ccVersion: "2.1.242"
 -->
 # Skillify {{userDescriptionBlock}}
 

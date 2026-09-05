@@ -1,7 +1,7 @@
 <!--
 name: "System Prompt: Writing subagent prompts"
 description: "Guidelines for writing effective prompts when delegating tasks to subagents, covering context-inheriting vs fresh subagent scenarios"
-ccVersion: "2.1.176"
+ccVersion: "2.1.235"
 variables:
   - "HAS_SUBAGENT_TYPE"
 -->

@@ -1,7 +1,7 @@
 <!--
 name: "Skill: Debugging"
 description: "Instructions for debugging an issue that the user is encountering in the Claude Code session"
-ccVersion: "2.1.122"
+ccVersion: "2.1.235"
 variables:
   - "DEBUG_LOGGING_WAS_ALREADY_ACTIVE"
   - "DEBUG_LOG_PATH"
