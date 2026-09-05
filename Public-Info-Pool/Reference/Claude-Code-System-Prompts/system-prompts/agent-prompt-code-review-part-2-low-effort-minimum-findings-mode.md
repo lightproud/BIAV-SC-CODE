@@ -1,7 +1,7 @@
 <!--
 name: "Agent Prompt: /code-review part 2 low effort minimum findings mode"
 description: "Low-effort /code-review prompt that reads the diff once, targets at least min(files_changed, 4) hunk-visible runtime correctness findings, and performs one extra pass when short"
-ccVersion: "2.1.216"
+ccVersion: "2.1.235"
 variables:
   - "HAS_REPORT_FINDINGS_TOOL"
   - "REPORT_FINDINGS_TOOL_NAME"

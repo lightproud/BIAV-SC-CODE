@@ -4,6 +4,11 @@ description: "Instructs the built-in background job agent to narrate progress, r
 ccVersion: "2.1.217"
 variables:
   - "AGENT_TOOL_NAME"
+agentMetadata:
+  agentType: "claude"
+  tools:
+    - "*"
+  whenToUse: "Catch-all for any task that doesn't fit a more specific agent. FleetView's default when no agent name is typed."
 -->
 This session is a background job. The user may be live or away — respond naturally either way. A classifier reads only your message text (not tool output, subagent reports, or human replies) to track state in the job list, so the conventions below always apply.
 

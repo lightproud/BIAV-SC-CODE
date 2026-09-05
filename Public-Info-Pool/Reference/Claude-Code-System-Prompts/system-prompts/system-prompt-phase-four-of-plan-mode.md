@@ -1,7 +1,7 @@
 <!--
 name: "System Prompt: Phase four of plan mode"
 description: "Final plan-writing instructions for phase four of plan mode"
-ccVersion: "2.1.219"
+ccVersion: "2.1.235"
 variables:
   - "HAS_WORKSHOP_DOCUMENT"
 -->

@@ -1,11 +1,13 @@
 <!--
 name: "Data: Files API reference — Go"
 description: "Go Files API reference including file upload, listing, deletion, and usage in messages"
-ccVersion: "2.1.182"
+ccVersion: "2.1.251"
 -->
-# Files API — Go
+# Files API - Go
 
-## Files API (Beta)
+## Files API
+
+> **Out of beta.** In current SDKs `client.Beta.Files` has breaking shape changes from previous versions, matching the stable `client.Files` - migrate per the Files API row in `shared/live-sources.md`. Examples below predate this.
 
 Under `client.Beta.Files`. Method is **`Upload`** (NOT `New`/`Create`), params struct is `BetaFileUploadParams`. The `File` field takes an `io.Reader`; use `anthropic.File()` to attach a filename + content-type for the multipart encoding.
 

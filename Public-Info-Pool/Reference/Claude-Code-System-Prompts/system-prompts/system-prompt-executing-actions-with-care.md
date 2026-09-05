@@ -1,6 +1,6 @@
 <!--
 name: "System Prompt: Executing actions with care"
-description: "Instructions for executing actions carefully."
+description: "Instructions for executing actions carefully"
 ccVersion: "2.1.200"
 -->
 # Executing actions with care

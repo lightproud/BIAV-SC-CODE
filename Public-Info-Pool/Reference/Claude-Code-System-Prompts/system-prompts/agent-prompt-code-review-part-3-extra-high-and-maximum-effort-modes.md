@@ -1,7 +1,7 @@
 <!--
 name: "Agent Prompt: /code-review part 3 extra-high and maximum effort modes"
 description: "Extra-high and maximum-effort /code-review prompt that runs five finder angles, one-vote verification, a gap sweep, and capped JSON findings"
-ccVersion: "2.1.218"
+ccVersion: "2.1.235"
 variables:
   - "EFFORT_LEVEL"
   - "DIFF_GATHERING_PHASE"

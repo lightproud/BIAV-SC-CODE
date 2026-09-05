@@ -1,6 +1,6 @@
 <!--
 name: "Tool Description: EnterWorktree"
-description: "Tool description for the EnterWorktree tool."
+description: "Creates a new isolated worktree or enters an existing one only when explicitly requested, with eligibility, switching, lifecycle, and cleanup rules"
 ccVersion: "2.1.203"
 -->
 Use this tool ONLY when explicitly instructed to work in a worktree — either by the user directly, or by project instructions (CLAUDE.md / memory). This tool creates an isolated git worktree and switches the current session into it.

@@ -150,3 +150,30 @@ def test_real_workflows_all_yield_a_threshold():
     assert len(found) >= 20, f"带 cron 工作流仅 {len(found)} 个，疑似解析失效"
     for name, crons in found.items():
         assert dms.expected_interval_hours(crons, NOW) > 0, f"{name} 无法推导期望间隔"
+
+
+@pytest.mark.parametrize('other_age, findings', [(1, 0), (90, 1)])
+def test_monitor_does_not_lock_itself_red(tmp_path, other_age, findings):
+    """An old alarm must recover once its target recovers, but still report outages."""
+    for name in ('dead-man-switch.yml', 'daily.yml'):
+        (tmp_path / name).write_text("on:\n  schedule:\n    - cron: '0 7 * * *'\n")
+    queried = []
+
+    def fetch(name):
+        queried.append(name)
+        assert name == 'daily.yml'
+        return {'state': 'active', 'created_at': '2026-01-01T00:00:00Z',
+                'last_success': (NOW - timedelta(hours=other_age)).isoformat()}
+
+    status = dms.build_status(fetch, NOW, workflow_dir=tmp_path)
+    assert queried == ['daily.yml']
+    assert (status['watched'], status['judged'], status['findings']) == (2, 1, findings)
+    own = next(e for e in status['entries'] if e['workflow'] == 'dead-man-switch.yml')
+    assert own['state'] == 'skipped'
+
+
+def test_self_only_watchlist_is_not_health(tmp_path, monkeypatch):
+    """Excluding self must not turn an empty effective watchlist green."""
+    monkeypatch.setattr(dms, 'scheduled_workflows',
+                        lambda workflow_dir=None: {'dead-man-switch.yml': ['0 7 * * *']})
+    assert dms.main(['--dry-run']) == 1

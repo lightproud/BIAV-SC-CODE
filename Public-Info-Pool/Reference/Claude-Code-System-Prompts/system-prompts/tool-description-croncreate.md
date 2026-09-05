@@ -1,7 +1,7 @@
 <!--
 name: "Tool Description: CronCreate"
 description: "Describes the CronCreate tool for enqueuing one-shot or recurring cron-based jobs with jitter and off-minute scheduling guidance"
-ccVersion: "2.1.144"
+ccVersion: "2.1.235"
 variables:
   - "CRON_DURABILITY_SECTION"
   - "IS_MONITOR_TOOL_ENABLED_FN"
