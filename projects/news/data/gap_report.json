@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-05T07:24:55.025984+00:00",
-  "total_gaps": 266,
+  "generated_at": "2026-09-05T12:22:34.302442+00:00",
+  "total_gaps": 269,
   "coverage": {
     "sources_total": 19,
     "sources_scanned": 18,
@@ -147,6 +147,14 @@
         "2026-09-03"
       ],
       "count": 45
+    },
+    "pixiv": {
+      "missing_dates": [
+        "2026-09-02",
+        "2026-09-03",
+        "2026-09-04"
+      ],
+      "count": 3
     },
     "reddit": {
       "missing_dates": [
