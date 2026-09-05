@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-04",
+  "generated": "2026-09-05",
   "stats": {
     "nodes": 376,
-    "edges": 426
+    "edges": 413
   },
   "nodes": [
     {
@@ -3654,7 +3654,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:official",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4537,20 +4537,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15584.md",
-      "rel": "提及:索蕾尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15594.md",
-      "rel": "提及:凯刻斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
       "rel_type": "mention"
     },
     {
@@ -4639,24 +4627,6 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15564.md",
-      "rel": "提及:戈利亚",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/15591.md",
-      "rel": "提及:艾继丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/15594.md",
-      "rel": "提及:凯刻斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
@@ -4669,14 +4639,14 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15593.md",
-      "rel": "提及:詹金",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -4737,6 +4707,12 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -6067,20 +6043,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15584.md",
-      "rel": "提及:索蕾尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15594.md",
-      "rel": "提及:凯刻斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
       "rel_type": "mention"
     },
     {
@@ -6151,36 +6115,6 @@
     },
     {
       "source": "/sources/taptap_review.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:熔毁·朵尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/taptap_review.md",
-      "target": "/characters/77913.md",
-      "rel": "提及:凯蒂古拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/taptap_review.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/taptap_review.md",
-      "target": "/characters/15563.md",
-      "rel": "提及:图鲁",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/taptap_review.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/taptap_review.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
       "rel_type": "mention"
@@ -6205,24 +6139,6 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15564.md",
-      "rel": "提及:戈利亚",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/15591.md",
-      "rel": "提及:艾继丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/15594.md",
-      "rel": "提及:凯刻斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
@@ -6235,14 +6151,14 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15593.md",
-      "rel": "提及:詹金",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -6255,6 +6171,12 @@
       "source": "/sources/weixin.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {

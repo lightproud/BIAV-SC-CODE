@@ -4,7 +4,7 @@ title: "silver-core-sdk COMPAT"
 description: "**What this document is.** A reference record of how the official"
 resource: "/projects/silver-core-sdk/docs/COMPAT.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-09-04"
+timestamp: "2026-09-05"
 ---
 
 # 指针概念

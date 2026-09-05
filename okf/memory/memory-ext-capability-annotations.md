@@ -4,7 +4,7 @@ title: "capability-annotations.json"
 description: "capability-annotations 机器权威数据"
 resource: "/memory/capability-annotations.json"
 tags: ["memory", "data_layer:curated", "machine-authority"]
-timestamp: "2026-09-04"
+timestamp: "2026-09-05"
 ---
 
 # 记忆层指针

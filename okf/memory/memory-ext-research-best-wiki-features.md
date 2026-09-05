@@ -4,7 +4,7 @@ title: "Best Game Wiki Features & UX Patterns Research"
 description: "**Core Info Block (Infobox)**"
 resource: "/memory/research-best-wiki-features.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-09-04"
+timestamp: "2026-09-05"
 ---
 
 # 记忆层指针
