@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-07T14:46:58.493146+00:00",
-  "total_gaps": 274,
+  "generated_at": "2026-09-07T19:00:10.204331+00:00",
+  "total_gaps": 272,
   "coverage": {
     "sources_total": 19,
     "sources_scanned": 18,
@@ -9,7 +9,6 @@
   "platforms": {
     "appstore": {
       "missing_dates": [
-        "2026-07-09",
         "2026-07-10",
         "2026-07-13",
         "2026-07-15",
@@ -43,7 +42,7 @@
         "2026-09-01",
         "2026-09-05"
       ],
-      "count": 33
+      "count": 32
     },
     "bahamut": {
       "missing_dates": [
@@ -111,7 +110,6 @@
     },
     "official": {
       "missing_dates": [
-        "2026-07-09",
         "2026-07-10",
         "2026-07-11",
         "2026-07-12",
@@ -155,7 +153,7 @@
         "2026-09-02",
         "2026-09-03"
       ],
-      "count": 43
+      "count": 42
     },
     "pixiv": {
       "missing_dates": [
