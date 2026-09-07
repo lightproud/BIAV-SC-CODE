@@ -1,5 +1,7 @@
 {
-  "generated_at": "2026-09-07T07:55:30.506475+00:00",
-  "total_dropped": 0,
-  "by_source": {}
+  "generated_at": "2026-09-07T14:46:20.624294+00:00",
+  "total_dropped": 2,
+  "by_source": {
+    "pixiv": 2
+  }
 }
