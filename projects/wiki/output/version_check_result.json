@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-08-31T13:02:25.891391+00:00",
+  "checked_at": "2026-09-07T11:54:25.937525+00:00",
   "current_version": "unknown",
   "known_versions": [
     "2.5.3",
@@ -9,7 +9,7 @@
   "new_version": null,
   "steam": {
     "source": "steam",
-    "checked_at": "2026-08-31T13:02:25.374208+00:00",
+    "checked_at": "2026-09-07T11:54:25.178071+00:00",
     "status": "ok",
     "name": "Morimens",
     "short_description": "Morimens is a roguelite card-battler inspired by the Lovecraftian mythos. Bond with a diverse cast of Awakeners, build your perfect deck, and battle through the mists of Kadath—facing wild events and uncovering maddening truths at every turn.",
@@ -18,6 +18,11 @@
     "release_date": "Aug 1, 2024",
     "coming_soon": false,
     "recent_news": [
+      {
+        "title": "On the D-Effect Zone Adjustments",
+        "date": "2026-09-04T11:15:20+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1842846814446131"
+      },
       {
         "title": "🎧 V2.6.0 Radio Drama - A Snowy Night",
         "date": "2026-08-26T07:04:13+00:00",
@@ -37,76 +42,71 @@
         "title": "🎬 V2.6 PV - Summit of Voided Wills (VA: Kugimiya Rie)",
         "date": "2026-08-21T08:15:26+00:00",
         "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228667891"
-      },
-      {
-        "title": "V2.6.0 Caraboo✦Awakener & Wheel of Destiny Introduction",
-        "date": "2026-08-19T14:12:29+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228662742"
       }
     ]
   },
   "fandom": {
     "source": "fandom",
-    "checked_at": "2026-08-31T13:02:25.718114+00:00",
+    "checked_at": "2026-09-07T11:54:25.666555+00:00",
     "status": "ok",
     "recent_changes": [
       {
-        "title": "Elton",
-        "timestamp": "2026-08-31T07:26:44Z",
+        "title": "File:Undying Sun Full.png",
+        "timestamp": "2026-09-07T06:20:56Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "Return to the Big Smoke",
-        "timestamp": "2026-08-31T07:15:07Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"{{Stub}} {{Quest |type=Operation |series=Astral Reign |chapter=1 |start=1-1: Dream in a Vat |end=1-14: Within the Rain |level=61-62 |previous=A Long Dream's End |next=Metamorphosis |title=Return to the Big Smoke |image=Return to the Big Smoke.png }} '''{{PAGENAME}}''' is Chapter 1 of Operation: Astral Reign in ''[[Morimens]]''.  == Description ==  Buried in the gray mist lies the ruins of an ancient city.<br />Traverse the void of lightless stars, reuniting with the frag...\""
-      },
-      {
-        "title": "File:Return to the Big Smoke.png",
-        "timestamp": "2026-08-31T07:13:21Z",
+        "title": "Blackened Flame",
+        "timestamp": "2026-09-07T06:19:23Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "Metamorphosis",
-        "timestamp": "2026-08-31T07:10:40Z",
+        "title": "Blackened Flame",
+        "timestamp": "2026-09-07T06:14:03Z",
         "user": "Frorefawn",
-        "comment": "Created page with \"{{Stub}} {{Quest |type=Operation |series=Astral Reign |chapter=2 |start=2-1: Eyes |end=2-18: Farewell, Burning World |level=63-64 |previous=Return to the Big Smoke |next=Ossuary Gala |title=Metamorphosis |image=Metamorphosis.png }} '''{{PAGENAME}}''' is Chapter 2 of Operation: Astral Reign in ''[[Morimens]]''.  == Description ==  A sanatorium constructed by the collective subconscious.<br />Here, the dissolution of the shell is not the end; the death of the mind is.<br /...\""
+        "comment": "Created page with \"{{Relic_Infobox |relic_img=Blackened Flame.webp |grade=Gold |group=Event |story= }} '''{{PAGENAME}}''' is a [[Relic]] in ''[[Morimens]]''.  == Effects ==  {{Relic Table | event_grade = Gold | event_effect = At turn start, apply {{Affix|Burn}} to 1 Command Card in hand and gain 1 stack of {{Affix|Blackened Flame}}. When {{Affix|Blackened Flame}} reaches 3 stacks, put 1 <u>Endless Combustion</u> into hand. | event_name = A Million Suns Descend }}  == Navigation ==  {{Relic...\""
       },
       {
-        "title": "File:Metamorphosis.png",
-        "timestamp": "2026-08-31T07:09:28Z",
-        "user": "Frorefawn",
-        "comment": ""
-      },
-      {
-        "title": "Ossuary Gala",
-        "timestamp": "2026-08-31T07:07:01Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"{{Stub}} {{Quest |type=Operation |series=Astral Reign |chapter=3 |start=3-1: Beneath the Dream's Veil |end=3-11: Beyond the Tides |level=65-66 |previous=Metamorphosis |next=Paradise |title=Ossuary Gala |image=Ossuary Gala.png }} '''{{PAGENAME}}''' is Chapter 3 of Operation: Astral Reign in ''[[Morimens]]''.  == Description ==  Rejoice, my friend ♪<br />Beneath the moonlight, bones quietly bloom ♪<br />My beloved lies still on a silver plate ♪<br />All the guests ha...\""
-      },
-      {
-        "title": "File:Ossuary Gala.png",
-        "timestamp": "2026-08-31T07:05:53Z",
+        "title": "Template:Relic Table",
+        "timestamp": "2026-09-07T06:09:54Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "Paradise",
-        "timestamp": "2026-08-31T07:02:02Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"{{Stub}} {{Quest |type=Operation |series=Astral Reign |chapter=4 |start=4-0: Murmurs |end=4-16: Epilogue |level=67-68 |previous=Ossuary Gala |next=Fated Theater |title=Paradise |image=Paradise.png }} '''{{PAGENAME}}''' is Chapter 4 of Operation: Astral Reign in ''[[Morimens]]''.  == Description ==  The massive cruise ship, \"Paradise,\" is home to the [[Seafarer|Order of Seafarers]], who travel the boundless ocean.<br />Offer your wishes on this ship, and the happiness you...\""
-      },
-      {
-        "title": "File:Paradise.png",
-        "timestamp": "2026-08-31T07:00:11Z",
+        "title": "Template:Relic Table",
+        "timestamp": "2026-09-07T06:08:33Z",
         "user": "Frorefawn",
         "comment": ""
       },
       {
-        "title": "Template:Quest",
-        "timestamp": "2026-08-31T06:56:21Z",
+        "title": "Hunt of the Charred",
+        "timestamp": "2026-09-07T05:58:11Z",
+        "user": "Frorefawn",
+        "comment": "Created page with \"{{Event | image = Undying Sun Full.png | type = Gameplay Event | duration2 = September 7, 2026 - October 5, 2026 | related = A Million Suns Descend }} '''{{PAGENAME}}''' are the Event Stages in [[A Million Suns Descend]].  == Description == She stands once again upon the Earth, and the revenge that consumes all arrives as promised.  It is an unending Pursuit, it is the searing fire of The Living Flame.  She will traverse every corner, hunting down all who have signed a C...\""
+      },
+      {
+        "title": "File:Blackened Flame.webp",
+        "timestamp": "2026-09-07T05:53:31Z",
+        "user": "Frorefawn",
+        "comment": ""
+      },
+      {
+        "title": "File:\"Seal\" of Death.png",
+        "timestamp": "2026-09-07T05:51:34Z",
+        "user": "Frorefawn",
+        "comment": ""
+      },
+      {
+        "title": "File:\"Seal\" of War.png",
+        "timestamp": "2026-09-07T05:51:34Z",
+        "user": "Frorefawn",
+        "comment": ""
+      },
+      {
+        "title": "File:\"Seal\" of Wealth.png",
+        "timestamp": "2026-09-07T05:51:33Z",
         "user": "Frorefawn",
         "comment": ""
       }
