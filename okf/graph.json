@@ -2,7 +2,7 @@
   "generated": "2026-09-07",
   "stats": {
     "nodes": 377,
-    "edges": 427
+    "edges": 421
   },
   "nodes": [
     {
@@ -3785,7 +3785,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:weixin",
-        "health:active"
+        "health:degraded"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4542,12 +4542,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15590.md",
-      "rel": "提及:达芙黛尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
@@ -4578,20 +4572,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130901.md",
-      "rel": "提及:莫丝",
       "rel_type": "mention"
     },
     {
@@ -6090,12 +6072,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15590.md",
-      "rel": "提及:达芙黛尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
@@ -6126,20 +6102,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130901.md",
-      "rel": "提及:莫丝",
       "rel_type": "mention"
     },
     {

@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 377,
-    "edges": 427,
+    "edges": 421,
     "terms": 7122,
     "by_type": {
       "character": 72,
@@ -332,7 +332,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 1
     },
     "/characters/15560.md": {
       "type": "character",
@@ -770,7 +770,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 5
     },
     "/characters/15591.md": {
       "type": "character",
@@ -1234,7 +1234,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 5
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1268,7 +1268,7 @@
     "/community/community-appstore.md": {
       "type": "dataset",
       "title": "appstore 社区全量档案",
-      "description": "appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 34 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 35 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1296,7 +1296,7 @@
     "/community/community-bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区全量档案",
-      "description": "bahamut 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 6 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "bahamut 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 7 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -1310,7 +1310,7 @@
     "/community/community-bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区全量档案",
-      "description": "bilibili 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 8 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "bilibili 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 9 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -1319,12 +1319,12 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 12
+      "degree": 9
     },
     "/community/community-discord.md": {
       "type": "dataset",
       "title": "discord 社区全量档案",
-      "description": "discord 平台全量档案层（分析镜头）：百万级条（精确值见指针本体）/ 36 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "discord 平台全量档案层（分析镜头）：百万级条（精确值见指针本体）/ 37 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -1338,7 +1338,7 @@
     "/community/community-google-play.md": {
       "type": "dataset",
       "title": "google_play 社区全量档案",
-      "description": "google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 33 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 34 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1380,7 +1380,7 @@
     "/community/community-pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区全量档案",
-      "description": "pixiv 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 31 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "pixiv 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 32 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -1394,7 +1394,7 @@
     "/community/community-reddit.md": {
       "type": "dataset",
       "title": "reddit 社区全量档案",
-      "description": "reddit 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "reddit 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 6 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -1408,7 +1408,7 @@
     "/community/community-ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区全量档案",
-      "description": "ruliweb 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 10 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "ruliweb 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 11 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -1422,7 +1422,7 @@
     "/community/community-steam.md": {
       "type": "dataset",
       "title": "steam 社区全量档案",
-      "description": "steam 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 25 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "steam 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 26 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -1436,7 +1436,7 @@
     "/community/community-stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区全量档案",
-      "description": "stopgame 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "stopgame 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 6 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -1450,7 +1450,7 @@
     "/community/community-taptap.md": {
       "type": "dataset",
       "title": "taptap 社区全量档案",
-      "description": "taptap 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 3 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "taptap 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
@@ -1464,7 +1464,7 @@
     "/community/community-timeline.md": {
       "type": "dataset",
       "title": "社区活动时序（全量）",
-      "description": "全量社区月度时序：2016-06..2026-08（40 月），vol_index 抓量异常（本月量÷前6月中位数）。",
+      "description": "全量社区月度时序：2016-06..2026-09（41 月），vol_index 抓量异常（本月量÷前6月中位数）。",
       "resource": "/projects/news/index/community_index.json",
       "tags": [
         "data_layer:full_archive",
@@ -1478,7 +1478,7 @@
     "/community/community-weibo.md": {
       "type": "dataset",
       "title": "weibo 社区全量档案",
-      "description": "weibo 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weibo 平台全量档案层（分析镜头）：万级条（精确值见指针本体）/ 6 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -1506,7 +1506,7 @@
     "/community/community-youtube-comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区全量档案",
-      "description": "youtube_comments 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 5 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "youtube_comments 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 6 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -1520,7 +1520,7 @@
     "/community/community-youtube.md": {
       "type": "dataset",
       "title": "youtube 社区全量档案",
-      "description": "youtube 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 16 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "youtube 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 17 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4573,7 +4573,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 1384 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 1411 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4587,7 +4587,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 4061 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 4065 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4596,12 +4596,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 11
+      "degree": 8
     },
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 9785249 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 9798152 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4615,7 +4615,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1547 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1557 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4671,7 +4671,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 4422 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 4442 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4699,7 +4699,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5763 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5776 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4713,7 +4713,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 255 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 258 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4727,7 +4727,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 137 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 138 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4755,7 +4755,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 5038 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 5083 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4769,7 +4769,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 13674 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 13741 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4783,12 +4783,12 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9604 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 9604 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
         "platform:weixin",
-        "health:active"
+        "health:degraded"
       ],
       "section": "sources",
       "tier": "skeleton",
@@ -4797,7 +4797,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 3835 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 3845 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5586,17 +5586,7 @@
     ],
     "/characters/130901.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:莫丝",
-        "mention"
-      ],
-      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:莫丝",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:莫丝",
         "mention"
       ]
@@ -6382,17 +6372,7 @@
         "mention"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:达芙黛尔",
-        "mention"
-      ],
-      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
-        "提及:达芙黛尔",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:达芙黛尔",
         "mention"
       ],
@@ -7579,11 +7559,6 @@
         "mention"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:茉夏",
         "mention"
@@ -7595,11 +7570,6 @@
       ],
       [
         "/sources/bahamut.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -7696,11 +7666,6 @@
     ],
     "/community/community-bilibili.md": [
       [
-        "/characters/15590.md",
-        "提及:达芙黛尔",
-        "mention"
-      ],
-      [
         "/characters/77921.md",
         "提及:卡拉布",
         "mention"
@@ -7726,18 +7691,8 @@
         "mention"
       ],
       [
-        "/characters/94450.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
         "/characters/130226.md",
         "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/characters/130901.md",
-        "提及:莫丝",
         "mention"
       ],
       [
@@ -9599,11 +9554,6 @@
     ],
     "/sources/bilibili.md": [
       [
-        "/characters/15590.md",
-        "提及:达芙黛尔",
-        "mention"
-      ],
-      [
         "/characters/77921.md",
         "提及:卡拉布",
         "mention"
@@ -9629,18 +9579,8 @@
         "mention"
       ],
       [
-        "/characters/94450.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
         "/characters/130226.md",
         "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/characters/130901.md",
-        "提及:莫丝",
         "mention"
       ],
       [
@@ -10517,7 +10457,6 @@
       "/sources/stopgame.md",
       "/sources/taptap_review.md",
       "/sources/weibo.md",
-      "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
@@ -12540,7 +12479,8 @@
     ],
     "degraded": [
       "/sources/note_com.md",
-      "/sources/taptap.md"
+      "/sources/taptap.md",
+      "/sources/weixin.md"
     ],
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -50926,7 +50866,6 @@
       "/sources/stopgame.md",
       "/sources/taptap_review.md",
       "/sources/weibo.md",
-      "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
@@ -52154,7 +52093,8 @@
     ],
     "degraded": [
       "/sources/note_com.md",
-      "/sources/taptap.md"
+      "/sources/taptap.md",
+      "/sources/weixin.md"
     ],
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
