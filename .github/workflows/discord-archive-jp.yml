@@ -8,7 +8,11 @@ name: Discord Archive (JP)
 # Guard 步骤保留：若 JP_GUILD_ID 被清空则安全跳过、不回落 Global guild。
 on:
   schedule:
-    - cron: '45 */3 * * *'
+    # 每小时 :45（守密人 2026-09-07「社区归档尤其 discord 改每小时增量」；原 '45 */3'）。
+    # :45 错峰保持不变——global 占 :05、volunteer 占 :15、history-backfill 占 :30。
+    # 三服写各自子目录、各自持锁，彼此不抢文件；共用的是同一个 bot 的 Discord 限流额度，
+    # 而错峰 + 归档器自带的 REQUEST_DELAY(0.25s) 已经把并发面压住。
+    - cron: '45 * * * *'
   workflow_dispatch:
 
 concurrency:
@@ -26,7 +30,9 @@ jobs:
   archive:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    # 35 > 归档器预算 25 + clone/commit/push 余量；整作业须在一小时内收工，
+    # 否则下一档 cron 会被自己的 concurrency 锁挤成 pending（提频反而丢轮次）。
+    timeout-minutes: 35
     steps:
       - name: Guard — require JP guild id
         id: guard
@@ -80,6 +86,10 @@ jobs:
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_GUILD_ID: ${{ env.JP_GUILD_ID }}
+          # 每小时档必须显式给预算：不给则回落归档器默认 45 min，比本作业 timeout 还长，
+          # 一旦真吃满就会在 commit 之前被砍、整轮白跑。日服体量远小于 global
+          # （state.json 390 条频道游标 vs 12398），历史回填亦已 complete，25 min 有余。
+          DISCORD_RUNTIME_BUDGET: '1500'
         run: python projects/news/scripts/discord_archiver.py
 
       - name: Commit and push if changed → BIAV-SC-DATA

@@ -8,12 +8,21 @@ name: Discord Archive
 
 on:
   schedule:
-    # 每 3 小时（对齐 jp=45 / volunteer=15 / history-backfill=30，本工作流占 05 分位）。
-    # 原为 '0 7 * * *' 一天一轮：global 是三个公会里最大的一个（日均 ~1 万条），
-    # 一天一轮 × 每频道 5k 配额 = 日排干上限 5k/频道，而 general-chat 日产 ~7.2k、
-    # morimens-game-chat ~7k —— 每天净欠 2k+，游标只会越掉越远。频次 ×8 与归档器
-    # 侧的积压追赶轮（Track 1b）是同一个赤字的两半，必须一起上。
-    - cron: '5 */3 * * *'
+    # 每小时（对齐 jp=45 / volunteer=15 / history-backfill=30，本工作流占 05 分位）。
+    # 沿革：'0 7 * * *' 一天一轮 → '5 */3' 每 3 小时 → **每小时**（守密人 2026-09-07
+    # 「社区归档尤其 discord 改每小时增量」）。前两档的赤字账仍成立：global 是三个公会里
+    # 最大的一个（日均 ~1 万条），一天一轮 × 每频道 5k 配额 = 日排干上限 5k/频道，而
+    # general-chat 日产 ~7.2k、morimens-game-chat ~7k —— 每天净欠 2k+，游标只会越掉越远。
+    # 提到每小时后单轮增量摊薄到 ~1/24，单轮配额（5k/频道）对任何频道都不再是约束，
+    # 归档延迟从「最坏 3 小时」压到「最坏 1 小时」。
+    #
+    # 提频的前提是**一轮必须跑得完一小时**：三服历史回填现已全部 complete
+    # （state.json `history_backfill_complete: true` / `historical_month: null`，2026-09-07 核对），
+    # Track 2 每轮立即 break、不再吃满预算，实测整作业 6~7 分钟收工（run 34147783648 = 6m24s）。
+    # 预算相应从 35+15 收到 25+10 分钟（见下），最坏 ~38 分钟仍落在一小时内——否则同一把
+    # concurrency 锁会把下一档挤成排队（GitHub 只留一个 pending，再来的直接丢），
+    # 提频反而丢轮次。
+    - cron: '5 * * * *'
     - cron: '0 6 1 * *'
   workflow_dispatch:
     inputs:
@@ -32,6 +41,8 @@ concurrency:
   # 频次提到每 3 小时、归档器又会吃满 35 分钟预算之后，本作业持有 data 仓 clone 的窗口
   # 从 7~10 分钟涨到 35 分钟以上，正好罩住 backfill 的 `30 */3` 档，rebase 内容冲突
   # 由「偶发」变成「必然」（2026-08-17 run 31992498596 即因此整轮丢弃）。
+  # 2026-09-07 提到每小时后这把锁更吃紧：两边预算都做了硬上限（本作业 25+10 分钟、
+  # backfill 15 分钟），保证任一持锁者都在一小时内交还，下一档 cron 不会被挤成 pending。
   # 串行化是治本：跨 clone 并发改同一个 state.json，即便文本能合上，语义也是后写覆盖先写。
   # jp / volunteer 各写自己的子目录（discord/jp、discord/volunteer），与本组无文件重叠，
   # 保持各自独立的锁，不必陪跑。
@@ -45,10 +56,11 @@ jobs:
   archive:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    # 55 > 归档器 35 + forum starter 15 + checkout/commit/push 余量。
-    # 原为 45，正好等于归档器自己的默认预算：归档器一旦吃满，作业会在 commit 之前
-    # 被砍，整轮采集白跑。加了积压追赶轮后归档器确实会吃满，所以这里必须留出空档。
-    timeout-minutes: 55
+    # 40 > 归档器 25 + forum starter 10 + checkout/commit/push 余量。
+    # 这条不等式的方向不能反：timeout 一旦等于（或小于）两步预算之和，归档器吃满时
+    # 作业会在 commit 之前被砍，整轮采集白跑（原为 45 = 归档器默认预算时的老账）。
+    # 每小时档下上限同时受另一侧约束——整作业必须在一小时内收工，见 schedule 处注释。
+    timeout-minutes: 40
     env:
       BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
     steps:
@@ -103,7 +115,10 @@ jobs:
         if: steps.mode.outputs.mode == 'incremental'
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          DISCORD_RUNTIME_BUDGET: '2100'   # 35 min，给同作业后续步骤留出预算
+          # 25 min。原为 2100（35 min），是「每 3 小时 + 历史回填还没跑完」时的配法。
+          # 现三服历史均已 complete、单轮增量只剩一小时的量，25 分钟对积压追赶轮
+          # （Track 1b）绰绰有余；真正的硬约束是「本作业必须一小时内交还 concurrency 锁」。
+          DISCORD_RUNTIME_BUDGET: '1500'
         run: python projects/news/scripts/discord_archiver.py
 
       - name: Backfill forum thread starters (catches up legacy gap)
@@ -111,8 +126,10 @@ jobs:
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           # 原为 3600（60 min）——比作业 timeout 本身还长，从来没有兑现过，
-          # 实际预算一直是「45 分钟减去归档器用掉的部分」。改成 15 min 说实话。
-          RUNTIME_BUDGET: '900'
+          # 实际预算一直是「45 分钟减去归档器用掉的部分」。2026-08 改成 15 min 说实话，
+          # 每小时档下再收到 10 min：本步按 completed 名单跳过已回填的帖，无积压时
+          # 秒级收工，预算只在补历史缺口那几轮才真正兑现。
+          RUNTIME_BUDGET: '600'
           RATE_LIMIT_SLEEP: '0.2'
         run: python projects/news/scripts/backfill_forum_starters.py
 

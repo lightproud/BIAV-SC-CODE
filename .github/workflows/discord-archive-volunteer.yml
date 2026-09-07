@@ -5,7 +5,9 @@ name: Discord Archive (Volunteer)
 # BIAV_SC_DATA_ROOT 解析数据根 = data 仓 checkout；提交推 data 仓（PAT）。
 on:
   schedule:
-    - cron: '15 */3 * * *'
+    # 每小时 :15（守密人 2026-09-07「社区归档尤其 discord 改每小时增量」；原 '15 */3'）。
+    # :15 错峰保持不变——global 占 :05、history-backfill 占 :30、jp 占 :45。
+    - cron: '15 * * * *'
   workflow_dispatch:
 
 concurrency:
@@ -23,7 +25,9 @@ jobs:
   archive:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    # 35 > 归档器预算 25 + clone/commit/push 余量；整作业须在一小时内收工，
+    # 否则下一档 cron 会被自己的 concurrency 锁挤成 pending（提频反而丢轮次）。
+    timeout-minutes: 35
     steps:
       - name: Checkout code repo（sparse 脚本，不取数据）
         uses: actions/checkout@v7
@@ -62,6 +66,9 @@ jobs:
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_GUILD_ID: ${{ env.VOLUNTEER_GUILD_ID }}
+          # 同 jp：每小时档必须显式给预算，不给则回落默认 45 min（> 本作业 timeout）。
+          # 志愿者服体量最小（state.json 121 条频道游标），历史回填已 complete。
+          DISCORD_RUNTIME_BUDGET: '1500'
         run: python projects/news/scripts/discord_archiver.py
 
       - name: Commit and push if changed → BIAV-SC-DATA

@@ -83,9 +83,24 @@
 
 ### 注意事项
 - update-news.yml 每 3 小时运行一次（cron: '0 */3 * * *'，2026-07-11 降频裁定）
-- discord-archive.yml 每日 1 次北京时间 15:00（07:00 UTC；2026-07-11 日更档统一北京 15 点裁定）+ 每月 1 日月度归档（Global 官方服，数据落 `Public-Info-Pool/Record/Community/discord/global/`，2026-07-10 方案甲）
-- discord-archive-volunteer.yml 每 3 小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/volunteer/`）
-- discord-archive-jp.yml 日服服务器归档（数据落 `Public-Info-Pool/Record/Community/discord/jp/`）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）
+- **discord 三服增量归档每小时一轮**（守密人 2026-09-07 裁定；沿革 日更 → 每 3 小时 → 每小时）。
+  错峰分位固定：`discord-archive.yml` :05（Global 官方服）+ 每月 1 日月度归档、
+  `discord-archive-volunteer.yml` :15（志愿者服）、`discord-history-backfill.yml` :30（**仍每 3 小时**）、
+  `discord-archive-jp.yml` :45（日服，JP_GUILD_ID 已填，07-10 起实测正常落档）。
+  数据落 **BIAV-SC-DATA** 数据仓 `Record/Community/discord/{global,volunteer,jp}/`
+  （T62 P2-5 §7甲 已迁出 code 仓，经 `BIAV_SC_DATA_ROOT` 解析）。
+- **每小时档的两条硬约束**（改 cron 前先读）：① 一轮必须一小时内跑完并交还 concurrency 锁——
+  `discord-archive` 与 `discord-history-backfill` 共用 `discord-global-write` 一把锁，超时的那轮会把
+  下一档 cron 挤成 pending（GitHub 只留一个 pending，再来的直接丢），提频反而丢轮次；
+  故各作业预算钉死：global 归档器 25 min + forum starter 10 min（timeout 40）、
+  volunteer / jp 各 25 min（timeout 35）、history-backfill 15 min（timeout 25）。
+  ② 预算之和必须 < 作业 timeout，否则吃满时会在 commit 之前被砍、整轮采集白跑。
+  提频的前提是三服历史回填均已 complete（`state.json` 的 `history_backfill_complete: true` /
+  `historical_month: null`，2026-09-07 核对），Track 2 不再吃满预算——实测整作业 6~7 分钟收工。
+- 死手开关阈值随 cron 自动推导（`cron 最大相邻间隔 × 2 + 2h`）：discord 四条从 8h 收到
+  **4h**（history-backfill 仍 8h）。GitHub 定时事件本身有分钟到小时级延迟与丢发，
+  4h 阈值下偶发 STALE 属平台抖动，非采集停摆——判据以 `Record/heartbeat/status.json`
+  里的 `last_success` 实值为准（`backfill-news.yml` 的每小时档早已在同一阈值下运行）。
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml 每日北京 15:05（07:05 UTC）、collect-fanart.yml 每日北京 15:10（07:10 UTC）（2026-07-11 统一北京 15 点档）；recover-fanart.yml 手动触发
 - daily-report.yml 已删除（定时停用后 workflow 亦不复存在，无手动备用；报告改会话内订阅生成）

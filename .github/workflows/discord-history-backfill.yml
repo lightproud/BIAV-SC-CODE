@@ -4,6 +4,11 @@ name: Discord History Backfill
 # archiver --history-only 经 env BIAV_SC_DATA_ROOT 解析数据根 = data 仓 checkout。
 on:
   schedule:
+    # 仍是每 3 小时 :30，**不随增量档提到每小时**：三服历史回填均已 complete
+    # （state.json `history_backfill_complete: true` / `historical_month: null`，
+    # 2026-09-07 核对），本作业现在只兜新出现的历史缺口（新建频道 / 新接入 guild 的
+    # cold start）。这类缺口按天计，提到每小时只是空转，还要跟每小时的 discord-archive
+    # 抢同一把 discord-global-write 锁。
     - cron: '30 */3 * * *'
   workflow_dispatch:
 
@@ -11,6 +16,8 @@ concurrency:
   # 与 discord-archive 共用同一把锁——见该工作流的同位注释。两者都 `git add
   # Record/Community/discord/`、都改 global 的 state.json，是同一份文件的两个写方；
   # discord-archive 提频到每 3 小时后窗口罩住本作业的 `30 */3` 档，必须串行。
+  # 2026-09-07 对面提到每小时：锁的每一次持有都必须限时交还，否则本作业一旦长跑就会
+  # 连吃掉后面几档增量。故下面给了显式 15 分钟预算（原为回落默认 45 min）。
   group: discord-global-write-${{ github.ref }}
   cancel-in-progress: false
 
@@ -24,7 +31,9 @@ jobs:
   backfill:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    # 25 > 回填预算 15 + clone/commit/push 余量。与增量档的 25+10 相加仍在一小时内，
+    # 保证 `30 */3` 这一档不会把 `5 * * * *` 的下一轮挤成 pending。
+    timeout-minutes: 25
     steps:
       - name: Checkout code repo（sparse 脚本，不取数据）
         uses: actions/checkout@v7
@@ -62,6 +71,10 @@ jobs:
       - name: Run history-only backfill
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          # 15 min。原为回落归档器默认 45 min —— 比本作业 timeout(50) 只小 5 分钟，
+          # 真吃满就会在 commit 之前被砍。历史已 complete 的现在，history-only 每轮
+          # 走到 `All historical months complete!` 即退出，15 分钟只在真有新缺口时兑现。
+          DISCORD_RUNTIME_BUDGET: '900'
         run: python projects/news/scripts/discord_archiver.py --history-only
 
       - name: Commit and push if changed → BIAV-SC-DATA
