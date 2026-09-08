@@ -14,7 +14,22 @@ on:
         required: false
         default: ''
   schedule:
-    - cron: '5 7 * * *'   # 每日北京时间 15:05（07:05 UTC）自动采
+    # 每 3 小时 :55（守密人 2026-09-07 裁定；原 '5 7 * * *' 每日北京 15:05）。
+    # 其中 07:55 UTC 这一档仍落在北京 15:55，日更时代的「北京 15 点档」不算断。
+    # 分位选 :55 是给 data 仓的推让路：:00 update-news、:05 discord global、
+    # :15 volunteer、:30 discord history-backfill、:45 jp 都在推同一个 main，
+    # :55 是本小时唯一没人占的档（本工作流只写 youtube_comments/，与上述几支
+    # 无路径重叠，rebase 结构上不会内容冲突，错峰只为少撞非快进）。
+    #
+    # YouTube Data API 日配额 10000 单位，单轮成本：
+    #   discover_videos  4 条 search 查询 × 100 单位 = 400（大头，search 是贵调用）
+    #   fetch_comments   候选视频（4×25，去重后 ≤100 个）× 1 单位/页；state.json
+    #                    里 1807 个视频 exhausted 全为 true（2026-09-07 核对），
+    #                    增量轮每视频翻到整页已知即停 ≈ 1 页 → ~100 单位
+    # 单轮 ≈ 500~600 → 每 3 小时 8 轮 ≈ 4000~4800，留一倍余量。**再往上提到每小时
+    # （24 轮 ≈ 1.2~1.4 万）会打爆日配额**，届时须先给 discover_videos 加「每日只搜
+    # 一次」的节流再谈提频，别只改 cron。
+    - cron: '55 */3 * * *'
 
 concurrency:
   group: collect-comments
@@ -72,8 +87,13 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
+          # 回落标签取**北京当日**（原为昨日）。--date 只在评论的 published 缺失/
+          # 不可解析时才用得上（日档按发布日分，见 collect_video_comments 档首）。
+          # 日更时代一轮覆盖「昨日 15:05 → 今日 15:05」，取昨日是个折中；改成 3 小时
+          # 一轮后单轮窗口只有 3 小时，同一天内采到的坏时间戳条目理应记在当天。
+          # workflow_dispatch 传 date 仍然照旧覆盖，补采历史不受影响。
           D="${{ github.event.inputs.date }}"
-          [ -n "$D" ] || D=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
+          [ -n "$D" ] || D=$(TZ=Asia/Shanghai date +%Y-%m-%d)
           python projects/news/scripts/collect_video_comments.py --date "$D"
 
       - name: Commit comments archive → BIAV-SC-DATA
