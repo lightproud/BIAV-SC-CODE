@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-07",
+  "generated": "2026-09-08",
   "stats": {
     "nodes": 377,
-    "edges": 421
+    "edges": 425
   },
   "nodes": [
     {
@@ -3653,7 +3653,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:note_com",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4535,9 +4535,21 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-bahamut.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15564.md",
+      "rel": "提及:戈利亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15594.md",
+      "rel": "提及:凯刻斯",
       "rel_type": "mention"
     },
     {
@@ -4554,26 +4566,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15571.md",
+      "rel": "提及:珈伦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -4608,14 +4614,14 @@
     },
     {
       "source": "/community/community-steam.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-steam.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4748,6 +4754,12 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6065,9 +6077,21 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/bahamut.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15564.md",
+      "rel": "提及:戈利亚",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15594.md",
+      "rel": "提及:凯刻斯",
       "rel_type": "mention"
     },
     {
@@ -6084,26 +6108,20 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15571.md",
+      "rel": "提及:珈伦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6138,14 +6156,14 @@
     },
     {
       "source": "/sources/steam.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
       "rel_type": "mention"
     },
     {
       "source": "/sources/steam.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6236,6 +6254,12 @@
       "source": "/sources/weixin.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
