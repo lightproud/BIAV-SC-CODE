@@ -4,7 +4,7 @@ title: "weixin 社区数据源"
 description: "weixin 平台采集档案，全量 9605 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/weixin/"
 tags: ["data_layer:full_archive", "platform:weixin", "health:degraded"]
-timestamp: "2026-09-08T08:00:26.791824+00:00"
+timestamp: "2026-09-09T08:04:53.753791+00:00"
 ---
 
 # 数据层指针
