@@ -97,10 +97,22 @@
   ② 预算之和必须 < 作业 timeout，否则吃满时会在 commit 之前被砍、整轮采集白跑。
   提频的前提是三服历史回填均已 complete（`state.json` 的 `history_backfill_complete: true` /
   `historical_month: null`，2026-09-07 核对），Track 2 不再吃满预算——实测整作业 6~7 分钟收工。
+- **本仓 schedule 事件的实测抖动（2026-09-09 量的，动 cron 前先读这条）**：拿
+  `discord-archive-volunteer.yml`（cron `15 */3`）最近 15 轮对表，实际起跑**中位迟到
+  约 85 分钟**，区间 12~174 分；一天 8 档只落地 4~5 轮（约 56%）。两条推论：
+  ① **分位错峰（:05/:15/:30/:45）到不了运行时**，三支本来就在随机撞车，别把它当防线
+  ——它只剩可读性价值；② **提频不等于等比例增加轮次**，每小时档拿到的多半是 1.5~2.5
+  小时的有效节拍，但仍显著优于现状（更多触发机会 = 更多落地）。
+- 三支同时跑真正会碰到的只有一件事：推 data 仓同一条 main 的**非快进竞争**。三服写
+  `discord/{global,jp,volunteer}/` 互不相交，rebase 结构上不会内容冲突，靠各自的
+  `pull --rebase` 重试循环（4 次 / 退避 1+2+3+4 秒）解决；四次全输则作业 exit 1，
+  **丢本轮工时不丢数据**（游标未前移，下轮从同一基线重抓）。真要降这个尾部风险，
+  该加厚的是重试循环，不是排班表。共用 bot 的 Discord 限流**不是**约束：
+  每归档器 4 req/s、三支合计 12 req/s，对 bot 全局上限 50 req/s 有大把余量。
 - 死手开关阈值随 cron 自动推导（`cron 最大相邻间隔 × 2 + 2h`）：discord 四条从 8h 收到
-  **4h**（history-backfill 仍 8h）。GitHub 定时事件本身有分钟到小时级延迟与丢发，
-  4h 阈值下偶发 STALE 属平台抖动，非采集停摆——判据以 `Record/heartbeat/status.json`
-  里的 `last_success` 实值为准（`backfill-news.yml` 的每小时档早已在同一阈值下运行）。
+  **4h**（history-backfill 仍 8h）。对照上面 85 分钟的中位迟到，4h 阈值下偶发 STALE
+  属平台抖动、非采集停摆——判据以 `Record/heartbeat/status.json` 里的 `last_success`
+  实值为准（`backfill-news.yml` 的每小时档早已在同一阈值下运行）。
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml **每 3 小时 :55**（守密人 2026-09-07 裁定；原每日北京 15:05，07:55 UTC 一档仍落北京 15:55）。配额分**两个独立的桶**（2026-09-09 查官方文档订正）：`search.list` 走 **Search Queries 桶（100 次调用/日）**，`commentThreads.list` 1 单位/页走**通用桶（10000 单位/日）**。`discover_videos` 每轮固定 4 次 search、**不随增量摊薄**，是提频的唯一瓶颈：8 轮/日 = 32 次（32%）宽裕，24 轮/日 = 96 次（96%）贴墙，一次手动补采即越界；而评论抓取本身 24 轮才约 2400 单位（通用桶 24%），撑得住每小时。**要上每小时，先把候选集缓存进 state.json、发现按日/按 3 小时刷一次**，只改 cron 会撞墙。
 - collect-fanart.yml 每日北京 15:10（07:10 UTC）（2026-07-11 统一北京 15 点档）；recover-fanart.yml 手动触发

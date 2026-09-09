@@ -9,9 +9,14 @@ name: Discord Archive (JP)
 on:
   schedule:
     # 每小时 :45（守密人 2026-09-07「社区归档尤其 discord 改每小时增量」；原 '45 */3'）。
-    # :45 错峰保持不变——global 占 :05、volunteer 占 :15、history-backfill 占 :30。
-    # 三服写各自子目录、各自持锁，彼此不抢文件；共用的是同一个 bot 的 Discord 限流额度，
-    # 而错峰 + 归档器自带的 REQUEST_DELAY(0.25s) 已经把并发面压住。
+    # :45 的分位保持不变，但**别把错峰当成一道防线**（2026-09-09 实测订正）：
+    # 本仓的 schedule 事件中位迟到约 85 分钟（实测区间 12~174 分），一天 8 档只落地
+    # 4~5 轮，分位早就被抖动打散、三服本来就在随机撞车。分位留着只为可读性。
+    # 同时跑真正会碰到的只有一件事：三支推 data 仓同一条 main 的非快进竞争（各写
+    # discord/{global,jp,volunteer}/ 互不相交，rebase 结构上不会内容冲突，见文末推送循环）。
+    # 共用的 bot 限流**不是**约束：每个归档器 REQUEST_DELAY(0.25s) = 4 req/s，三支同时
+    # 跑也才 12 req/s，而 bot 全局上限 50 req/s（discord_archiver.py 同位注释）——
+    # 压住并发面的是 REQUEST_DELAY 本身，与错不错峰无关。
     - cron: '45 * * * *'
   workflow_dispatch:
 

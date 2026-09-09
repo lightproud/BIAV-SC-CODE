@@ -16,10 +16,11 @@ on:
   schedule:
     # 每 3 小时 :55（守密人 2026-09-07 裁定；原 '5 7 * * *' 每日北京 15:05）。
     # 其中 07:55 UTC 这一档仍落在北京 15:55，日更时代的「北京 15 点档」不算断。
-    # 分位选 :55 是给 data 仓的推让路：:00 update-news、:05 discord global、
-    # :15 volunteer、:30 discord history-backfill、:45 jp 都在推同一个 main，
-    # :55 是本小时唯一没人占的档（本工作流只写 youtube_comments/，与上述几支
-    # 无路径重叠，rebase 结构上不会内容冲突，错峰只为少撞非快进）。
+    # 分位选 :55 只因它是本小时唯一没人占的档（:00 update-news、:05 discord global、
+    # :15 volunteer、:30 history-backfill、:45 jp）。**别高估这个错峰**：2026-09-09 实测
+    # 本仓 schedule 事件中位迟到约 85 分钟（12~174 分），分位到不了运行时。真同时跑也
+    # 只是推 data 仓 main 的非快进竞争——本工作流只写 youtube_comments/，与上述几支
+    # 无路径重叠，rebase 结构上不会内容冲突。
     #
     # 配额是**两个独立的桶**，别按一个池算（2026-09-09 查官方文档订正，此前本注释
     # 按旧模型写成「search 100 单位 / 共用 1 万池」，数字与结论都是错的）：
