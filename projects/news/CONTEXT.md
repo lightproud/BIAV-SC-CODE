@@ -83,36 +83,47 @@
 
 ### 注意事项
 - update-news.yml 每 3 小时运行一次（cron: '0 */3 * * *'，2026-07-11 降频裁定）
-- **discord 三服增量归档每小时一轮**（守密人 2026-09-07 裁定；沿革 日更 → 每 3 小时 → 每小时）。
-  错峰分位固定：`discord-archive.yml` :05（Global 官方服）+ 每月 1 日月度归档、
-  `discord-archive-volunteer.yml` :15（志愿者服）、`discord-history-backfill.yml` :30（**仍每 3 小时**）、
-  `discord-archive-jp.yml` :45（日服，JP_GUILD_ID 已填，07-10 起实测正常落档）。
-  数据落 **BIAV-SC-DATA** 数据仓 `Record/Community/discord/{global,volunteer,jp}/`
+- **discord 四支合并为一支 `discord-archive.yml`，每小时 :05 一轮**（守密人 2026-09-09
+  「discord 合并都每个小时跑一次」；沿革：日更 → 每 3 小时 → 每小时 → 四支合一）。
+  原 `discord-archive-{jp,volunteer}.yml` 与 `discord-history-backfill.yml` **已删除**，
+  三服增量 + global 历史回填 + forum starter 回填 + 月度 Release 清理全在同一作业内顺序执行。
+  数据仍落 **BIAV-SC-DATA** 的 `Record/Community/discord/{global,volunteer,jp}/`
   （T62 P2-5 §7甲 已迁出 code 仓，经 `BIAV_SC_DATA_ROOT` 解析）。
-- **每小时档的两条硬约束**（改 cron 前先读）：① 一轮必须一小时内跑完并交还 concurrency 锁——
-  `discord-archive` 与 `discord-history-backfill` 共用 `discord-global-write` 一把锁，超时的那轮会把
-  下一档 cron 挤成 pending（GitHub 只留一个 pending，再来的直接丢），提频反而丢轮次；
-  故各作业预算钉死：global 归档器 25 min + forum starter 10 min（timeout 40）、
-  volunteer / jp 各 25 min（timeout 35）、history-backfill 15 min（timeout 25）。
-  ② 预算之和必须 < 作业 timeout，否则吃满时会在 commit 之前被砍、整轮采集白跑。
-  提频的前提是三服历史回填均已 complete（`state.json` 的 `history_backfill_complete: true` /
-  `historical_month: null`，2026-09-07 核对），Track 2 不再吃满预算——实测整作业 6~7 分钟收工。
+- **合并买到的三件事**：① 消掉四支推同一条 main 的**非快进竞争**（原先重试四次全输那轮
+  直接 exit 1、丢整轮工时）；② 退休 `discord-global-write` 那把共用锁及其「一小时内必须
+  交还锁」的预算倒推；③ 四次 479 MB 全量 clone + 四次装依赖降为一次（每小时档下从
+  96 次/天 ≈ 46 GB 降到 24 次）。**代价两条**：失败隔离改由 per-step `continue-on-error`
+  + `if: always()` 提交 + 末尾统一判定承接；死手开关从四个 last_success 信号并成一个，
+  一服长期坏会把另两服的健康一起染红——是明知故犯的取舍。
+- **改 cron / 改预算前先读**：① 整作业须一小时内收工，否则下一档被自己的 concurrency
+  锁挤成 pending（GitHub 只留一个 pending，再来的直接丢）；② `timeout > Σ各步预算`，
+  否则吃满时会在 commit 之前被砍、整轮白跑。现行：global 18 min + forum 5 + volunteer 6
+  + jp 6 + 回填 5 = 40，timeout 50。实测各步远够不到（global ~6m、volunteer ~45s、
+  jp ~1-2m、回填 ~35s，整轮约 10 分钟）——预算是病态情形的天花板，不是常态开销。
+  前提是三服历史回填均已 complete（`state.json` 的 `history_backfill_complete: true` /
+  `historical_month: null`，2026-09-07 核对），Track 2 每轮立即 break、不再吃满预算。
+- 手动补跑：`workflow_dispatch` 的 `guild` 输入（all/global/volunteer/jp）保留单服补采能力，
+  `mode` 的 monthly-cleanup / force-month 原样保留。
 - **本仓 schedule 事件的实测抖动（2026-09-09 量的，动 cron 前先读这条）**：拿
-  `discord-archive-volunteer.yml`（cron `15 */3`）最近 15 轮对表，实际起跑**中位迟到
+  `discord-archive-volunteer.yml`（cron `15 */3`；该支已随 09-09 合并删除，数据是删前量的）
+  最近 15 轮对表，实际起跑**中位迟到
   约 85 分钟**，区间 12~174 分；一天 8 档只落地 4~5 轮（约 56%）。两条推论：
-  ① **分位错峰（:05/:15/:30/:45）到不了运行时**，三支本来就在随机撞车，别把它当防线
-  ——它只剩可读性价值；② **提频不等于等比例增加轮次**，每小时档拿到的多半是 1.5~2.5
-  小时的有效节拍，但仍显著优于现状（更多触发机会 = 更多落地）。
-- 三支同时跑真正会碰到的只有一件事：推 data 仓同一条 main 的**非快进竞争**。三服写
-  `discord/{global,jp,volunteer}/` 互不相交，rebase 结构上不会内容冲突，靠各自的
-  `pull --rebase` 重试循环（4 次 / 退避 1+2+3+4 秒）解决；四次全输则作业 exit 1，
-  **丢本轮工时不丢数据**（游标未前移，下轮从同一基线重抓）。真要降这个尾部风险，
-  该加厚的是重试循环，不是排班表。共用 bot 的 Discord 限流**不是**约束：
-  每归档器 4 req/s、三支合计 12 req/s，对 bot 全局上限 50 req/s 有大把余量。
-- 死手开关阈值随 cron 自动推导（`cron 最大相邻间隔 × 2 + 2h`）：discord 四条从 8h 收到
-  **4h**（history-backfill 仍 8h）。对照上面 85 分钟的中位迟到，4h 阈值下偶发 STALE
-  属平台抖动、非采集停摆——判据以 `Record/heartbeat/status.json` 里的 `last_success`
-  实值为准（`backfill-news.yml` 的每小时档早已在同一阈值下运行）。
+  ① **分位错峰到不了运行时**——这正是 09-09 把 discord 四支合并的直接依据之一：
+  :05/:15/:30/:45 从来没有真正错开过，三支本就在随机撞车；② **提频不等于等比例增加
+  轮次**，每小时档拿到的多半是 1.5~2.5 小时的有效节拍，仍显著优于合并前，但配额与
+  阈值都别按 24 轮/日 算。
+- 合并后 discord 家族只剩一个推送方，但 `update-news` / `collect-comments` /
+  `backfill-media` 仍在推同一条 main。它们与 `discord/` 无路径重叠，rebase 结构上不会
+  内容冲突，只会撞非快进，由提交步的 `pull --rebase` 重试循环（4 次 / 退避 1+2+3+4 秒）
+  兜住；四次全输则 exit 1，**丢本轮工时不丢数据**（游标未前移，下轮从同一基线重抓）。
+  共用 bot 的 Discord 限流**从来不是**约束：归档器 `REQUEST_DELAY=0.25s` = 4 req/s，
+  合并后更是全程单线，对 bot 全局上限 50 req/s 有大把余量。
+- 死手开关阈值随 cron 自动推导（`cron 最大相邻间隔 × 2 + 2h`）：discord 合并后只剩
+  `discord-archive.yml` 一条被看守，每小时档 → 阈值 **4h**（原四条各自 8h）。对照上面
+  85 分钟的中位迟到，4h 阈值下偶发 STALE 属平台抖动、非采集停摆——判据以
+  `Record/heartbeat/status.json` 里的 `last_success` 实值为准（`backfill-news.yml` 的
+  每小时档早已在同一阈值下运行）。**注意粒度已变粗**：单服哑掉不再有独立信号，
+  靠工作流末尾的 per-guild 判定步把它变成整支变红。
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml **每 3 小时 :55**（守密人 2026-09-07 裁定；原每日北京 15:05，07:55 UTC 一档仍落北京 15:55）。配额分**两个独立的桶**（2026-09-09 查官方文档订正）：`search.list` 走 **Search Queries 桶（100 次调用/日）**，`commentThreads.list` 1 单位/页走**通用桶（10000 单位/日）**。`discover_videos` 每轮固定 4 次 search、**不随增量摊薄**，是提频的唯一瓶颈：8 轮/日 = 32 次（32%）宽裕，24 轮/日 = 96 次（96%）贴墙，一次手动补采即越界；而评论抓取本身 24 轮才约 2400 单位（通用桶 24%），撑得住每小时。**要上每小时，先把候选集缓存进 state.json、发现按日/按 3 小时刷一次**，只改 cron 会撞墙。
 - collect-fanart.yml 每日北京 15:10（07:10 UTC）（2026-07-11 统一北京 15 点档）；recover-fanart.yml 手动触发
@@ -127,9 +138,13 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
    仅手动触发）。脚本 `discord_list_guilds.py` 调 `/users/@me/guilds` 列出 bot 所在全部服务器，
    对照已登记清单（Global / 志愿者）高亮「未登记」者，快照写入
    `Public-Info-Pool/Record/Community/discord/guilds_seen.json` 并提交回仓库。日服 ID 即在该快照中。
-2. **启用归档**：把日服 ID 填入 `discord-archive-jp.yml` 的 `env.JP_GUILD_ID`，取消其
-   `schedule` 区块注释（保留 `:45` 错峰，避开 Global 与志愿者）。在 ID 配置前，该 workflow
-   经 Guard 步骤安全跳过——绝不因空 ID 回落到 Global guild。
+2. **启用归档**：把日服 ID 填入 `discord-archive.yml` 的 `env.JP_GUILD_ID`
+   （2026-09-09 四支合并为一支后，日服不再有独立 workflow，也不再需要取消 schedule 注释
+   ——填上即随每小时轮一起跑）。ID 为空时「JP — incremental」那一步经 `env.JP_GUILD_ID != ''`
+   判据安全跳过——绝不因空 ID 回落到 Global guild，这个判据是那条回落路径唯一的闸门。
+   **再接新 guild 照此办理**：加一个 `<NAME>_GUILD_ID` 到 workflow 的 `env`，复制一份
+   增量步（设 `DISCORD_GUILD_ID` + 自己的预算 + `continue-on-error`），并把它加进末尾
+   「Surface per-guild failures」的判定清单。
 
 首跑会全量回溯日服建服至今的历史（归档器对新 guild 的 cold-start 行为），数据隔离落
 `Public-Info-Pool/Record/Community/discord/jp/`（2026-07-10 方案甲区服布局；新 guild 须先登记

@@ -127,8 +127,9 @@ def main() -> int:
     elif len(unregistered) == 1:
         u = unregistered[0]
         print(f"结论: 发现 1 个未登记服务器 →「{u['name']}」(ID {u['id']})。")
-        print("      下一步: 将此 ID 填入 .github/workflows/discord-archive-jp.yml 的")
-        print("      env.JP_GUILD_ID，并取消该 workflow 的 schedule 注释以启用日服归档。")
+        print("      下一步: 将此 ID 填入 .github/workflows/discord-archive.yml 的")
+        print("      env.JP_GUILD_ID（2026-09-09 四支合并为一支，日服不再有独立 workflow；")
+        print("      该 env 为空时 JP 那一步安全跳过，填上即随每小时轮一起跑）。")
     else:
         print(f'结论: 发现 {len(unregistered)} 个未登记服务器，请确认哪个是日服后填入归档 workflow：')
         for u in unregistered:

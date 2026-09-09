@@ -145,8 +145,16 @@ class TestBuildStatus:
 
 
 def test_real_workflows_all_yield_a_threshold():
-    """仓内 24 个带 cron 的工作流必须条条能推导出间隔——推不出即阈值缺失、静默漏守。"""
+    """仓内每个带 cron 的工作流必须条条能推导出间隔——推不出即阈值缺失、静默漏守。
+
+    下限**不是**在钉工作流数量（那会让每次增删工作流都误报），而是防
+    `scheduled_workflows()` 的正则静默失配：它一旦匹配不到，返回空 dict，
+    看守名单整个蒸发而没有任何一处会红（该正则此前就因只认单引号，让一个
+    `- cron: "0 7 * * *"` 的工作流整个从名单里消失过，见 dead_man_switch 同位注释）。
+    真正长牙的是下面那个循环。
+    当前 18 个（2026-09-09：discord 四支合并为一支，带 cron 的从 21 降到 18）。
+    """
     found = dms.scheduled_workflows()
-    assert len(found) >= 20, f"带 cron 工作流仅 {len(found)} 个，疑似解析失效"
+    assert len(found) >= 15, f"带 cron 工作流仅 {len(found)} 个，疑似解析失效"
     for name, crons in found.items():
         assert dms.expected_interval_hours(crons, NOW) > 0, f"{name} 无法推导期望间隔"

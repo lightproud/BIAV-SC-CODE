@@ -1,28 +1,51 @@
 name: Discord Archive
 
-# T62 P2-3c 已切换（2026-07-19）：discord 采集写 **BIAV-SC-DATA**（不再写 code 仓）。
+# 三服（global / volunteer / jp）增量归档 + global 历史回填 + 月度 Release 清理，
+# **一支工作流一个作业**跑完，每小时一轮。
+#
+# T62 P2-3c（2026-07-19）：discord 采集写 **BIAV-SC-DATA**（不再写 code 仓）。
 # 三个写脚本（discord_archiver / backfill_forum_starters / archive_engine）经 env
 # BIAV_SC_DATA_ROOT 解析数据根 = data 仓 checkout；提交推 data 仓（PAT）。
 # 月度 cleanup 的 Release 备份仍上传 code 仓 community-data 桶（gh --repo $GITHUB_REPOSITORY，
 # 历史备份桶暂留 code 仓）。前置 secret：DISCORD_BOT_TOKEN + BIAV_SC_DATA_TOKEN。
+#
+# ── 为什么是一支而不是四支（守密人 2026-09-09「discord 合并都每个小时跑一次」）──
+# 原为四支各自定时：discord-archive(:05) / -volunteer(:15) / -history-backfill(:30) /
+# -jp(:45)。四支各自 clone 同一个 data 仓、各自推同一条 main，合并掉的是三件事：
+#
+# ① **推送竞争**（唯一实测在咬人的摩擦）。四支写 discord/{global,jp,volunteer}/ 互不
+#    相交，rebase 不会内容冲突，但会撞非快进；重试四次全输的那一轮直接 exit 1，
+#    丢整轮工时。一个作业一次 commit 一次 push，这条竞争在结构上消失。
+# ② **那把共用锁**。global 与 history-backfill 都改 global 的 state.json，此前靠
+#    concurrency group `discord-global-write` 串行化，还要为「一小时内必须交还锁」
+#    去倒推每一步的预算。同一作业内天然串行，锁与那套倒推一起退休。
+# ③ **四次 479 MB 全量 clone + 四次装依赖**。每小时档下原本是 96 次/天 ≈ 46 GB，
+#    现在 24 次。history-backfill 尤其荒唐：历史已回填完，它花一次全量 clone
+#    装一遍依赖，只为跑一个 35 秒就退出的脚本。
+#
+# 代价两条，都在下面显式接住：
+# ① **失败隔离**——四支时 jp 崩了不影响 global 提交。故每服一步 continue-on-error、
+#    提交步 if: always()、末尾再统一判定成败（见 “Surface per-guild failures”）。
+#    归档器自身 finally 里 _flush_on_exit，已落盘的消息不会因后续步骤崩而丢。
+# ② **死手开关粒度变粗**——四个 last_success 信号并成一个，jp 单独哑掉不再单独可见。
+#    ①的末尾门禁保证它会响亮变红，但代价是一服长期坏会把另两服的健康一起染红。
+#    这是这次合并明知故犯的取舍，不是疏漏。
 
 on:
   schedule:
-    # 每小时（对齐 jp=45 / volunteer=15 / history-backfill=30，本工作流占 05 分位）。
-    # 沿革：'0 7 * * *' 一天一轮 → '5 */3' 每 3 小时 → **每小时**（守密人 2026-09-07
-    # 「社区归档尤其 discord 改每小时增量」）。前两档的赤字账仍成立：global 是三个公会里
-    # 最大的一个（日均 ~1 万条），一天一轮 × 每频道 5k 配额 = 日排干上限 5k/频道，而
-    # general-chat 日产 ~7.2k、morimens-game-chat ~7k —— 每天净欠 2k+，游标只会越掉越远。
-    # 提到每小时后单轮增量摊薄到 ~1/24，单轮配额（5k/频道）对任何频道都不再是约束，
-    # 归档延迟从「最坏 3 小时」压到「最坏 1 小时」。
+    # 每小时 :05。沿革：'0 7 * * *' 一天一轮 → '5 */3' 每 3 小时 →（2026-09-07）每小时
+    # → （2026-09-09）四支合并为本支，仍每小时。
     #
-    # 提频的前提是**一轮必须跑得完一小时**：三服历史回填现已全部 complete
-    # （state.json `history_backfill_complete: true` / `historical_month: null`，2026-09-07 核对），
-    # Track 2 每轮立即 break、不再吃满预算，实测整作业 6~7 分钟收工（run 34147783648 = 6m24s）。
-    # 预算相应从 35+15 收到 25+10 分钟（见下），最坏 ~38 分钟仍落在一小时内——否则同一把
-    # concurrency 锁会把下一档挤成排队（GitHub 只留一个 pending，再来的直接丢），
-    # 提频反而丢轮次。
+    # 赤字账（提频的原始理由，仍成立）：global 是三个公会里最大的一个（日均 ~1 万条），
+    # 一天一轮 × 每频道 5k 单轮配额 = 日排干上限 5k/频道，而 general-chat 日产 ~7.2k、
+    # morimens-game-chat ~7k —— 每天净欠 2k+，游标只会越掉越远。提到每小时后单轮增量
+    # 摊薄到 ~1/24，单轮配额对任何频道都不再是约束。
+    #
+    # **别按 24 轮/日 规划**：本仓 schedule 事件实测中位迟到约 85 分钟（区间 12~174 分），
+    # 一天 8 档只落地 4~5 轮（2026-09-09 拿 volunteer 的 15 轮对表量的）。每小时档实际
+    # 拿到的是 1.5~2.5 小时的有效节拍——仍显著优于合并前，但配额与阈值都别按 24 算。
     - cron: '5 * * * *'
+    # 月度 Release 清理（把超期月份打包传 Releases 再出工作树）。
     - cron: '0 6 1 * *'
   workflow_dispatch:
     inputs:
@@ -34,35 +57,45 @@ on:
         description: 'When mode=force-month: YYYY-MM (comma-separated for multiple).'
         required: false
         default: ''
+      guild:
+        description: 'Which guild(s) for incremental mode: all (default) / global / volunteer / jp'
+        required: false
+        default: 'all'
 
 concurrency:
-  # 与 discord-history-backfill 共用同一把锁：两者都 `git add Record/Community/discord/`，
-  # 都会改 global 的 state.json / activity_daily / channels——是同一份文件的两个写方。
-  # 频次提到每 3 小时、归档器又会吃满 35 分钟预算之后，本作业持有 data 仓 clone 的窗口
-  # 从 7~10 分钟涨到 35 分钟以上，正好罩住 backfill 的 `30 */3` 档，rebase 内容冲突
-  # 由「偶发」变成「必然」（2026-08-17 run 31992498596 即因此整轮丢弃）。
-  # 2026-09-07 提到每小时后这把锁更吃紧：两边预算都做了硬上限（本作业 25+10 分钟、
-  # backfill 15 分钟），保证任一持锁者都在一小时内交还，下一档 cron 不会被挤成 pending。
-  # 串行化是治本：跨 clone 并发改同一个 state.json，即便文本能合上，语义也是后写覆盖先写。
-  # jp / volunteer 各写自己的子目录（discord/jp、discord/volunteer），与本组无文件重叠，
-  # 保持各自独立的锁，不必陪跑。
-  group: discord-global-write-${{ github.ref }}
+  # 合并后只剩这一把：三服 + 回填都在同一作业里顺序执行，不再有跨 clone 并发改同一个
+  # state.json 的路径（那正是原 `discord-global-write` 要防的——即便文本能合上，语义
+  # 也是后写覆盖先写；2026-08-17 run 31992498596 因此整轮丢弃）。
+  # 本组只防「上一轮还没跑完，下一档 cron 又来」。cancel-in-progress 保持 false：
+  # 采集跑到一半被砍等于白跑，宁可让新的那档排队。
+  group: discord-archive-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
   contents: read   # 只读 code 仓脚本；写 data 仓走 PAT
 
+env:
+  BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
+  # guild → 区服目录的映射唯一源在 archive_layout.DISCORD_GUILD_REGIONS；这里只是把
+  # 两个非默认 guild 的 ID 喂给归档器（global 是归档器的默认 guild，无需在此列出）。
+  VOLUNTEER_GUILD_ID: '1402537664619479100'
+  # 【公式】忘却前夜サーバー（日服官方），2026-06-17 探测确认并启用。
+  # 留空则日服那一步安全跳过、绝不回落 Global guild（见该步的 env.JP_GUILD_ID 判据）。
+  JP_GUILD_ID: '1377475512716234902'
+
 jobs:
   archive:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    # 40 > 归档器 25 + forum starter 10 + checkout/commit/push 余量。
-    # 这条不等式的方向不能反：timeout 一旦等于（或小于）两步预算之和，归档器吃满时
-    # 作业会在 commit 之前被砍，整轮采集白跑（原为 45 = 归档器默认预算时的老账）。
-    # 每小时档下上限同时受另一侧约束——整作业必须在一小时内收工，见 schedule 处注释。
-    timeout-minutes: 40
-    env:
-      BIAV_SC_DATA_ROOT: ${{ github.workspace }}/data-repo
+    # 50 > 各步预算之和 40（global 18 + forum 5 + volunteer 6 + jp 6 + 回填 5）
+    #      + clone/装依赖/提交推送余量 ~5。
+    # 两条不等式都不能反：
+    #   ① timeout > Σ预算 —— 否则某步吃满时作业会在 commit 之前被砍，整轮白跑。
+    #   ② timeout < 60min —— 整作业须一小时内收工，否则下一档 cron 被自己的
+    #      concurrency 锁挤成 pending（GitHub 只留一个 pending，再来的直接丢）。
+    # 实测各步远够不到预算：global ~6m、volunteer ~45s、jp ~1-2m、回填 ~35s，
+    # 合并后整轮约 10 分钟。预算是病态情形的天花板，不是常态开销。
+    timeout-minutes: 50
     steps:
       - name: Checkout code repo（sparse 脚本，不取数据）
         uses: actions/checkout@v7
@@ -80,6 +113,7 @@ jobs:
         run: pip install -r projects/news/requirements.txt
 
       - name: Clone BIAV-SC-DATA（PAT，数据根）
+        id: clone
         env:
           DATA_TOKEN: ${{ secrets.BIAV_SC_DATA_TOKEN }}
         run: |
@@ -97,10 +131,11 @@ jobs:
           # 且仅存在于本次运行的临时 .git/config 内。
           git clone "https://x-access-token:${DATA_TOKEN}@github.com/lightproud/BIAV-SC-DATA.git" data-repo
 
-      - name: Determine run mode
+      - name: Determine run mode and guild scope
         id: mode
         env:
           INPUT_MODE: ${{ github.event.inputs.mode }}
+          INPUT_GUILD: ${{ github.event.inputs.guild }}
           EVENT_SCHEDULE: ${{ github.event.schedule }}
         run: |
           if [ "$INPUT_MODE" = "force-month" ]; then
@@ -110,38 +145,87 @@ jobs:
           else
             echo "mode=incremental" >> $GITHUB_OUTPUT
           fi
+          # 定时触发不带 inputs，guild 为空 —— 空即 all，别让它变成「一个服都不跑」。
+          echo "guild=${INPUT_GUILD:-all}" >> $GITHUB_OUTPUT
 
-      - name: Run Discord archiver (incremental)
-        if: steps.mode.outputs.mode == 'incremental'
+      # ── 增量三服 ────────────────────────────────────────────────────────────
+      # 每服 continue-on-error：一服挂掉不许带走另两服**已采到**的数据，成败在末尾统一判。
+      - name: Global — incremental
+        id: global
+        if: steps.mode.outputs.mode == 'incremental' && (steps.mode.outputs.guild == 'all' || steps.mode.outputs.guild == 'global')
+        continue-on-error: true
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          # 25 min。原为 2100（35 min），是「每 3 小时 + 历史回填还没跑完」时的配法。
-          # 现三服历史均已 complete、单轮增量只剩一小时的量，25 分钟对积压追赶轮
-          # （Track 1b）绰绰有余；真正的硬约束是「本作业必须一小时内交还 concurrency 锁」。
-          DISCORD_RUNTIME_BUDGET: '1500'
+          # 18 min。合并前是 25（更早 35）——那时预算要养活 Track 2 历史回填，且要为
+          # 「一小时内交还共用锁」留量。三服历史现已全部 complete（state.json
+          # `history_backfill_complete: true` / `historical_month: null`），Track 2 每轮
+          # 立即 break；18 分钟对 Track 1b 积压追赶轮仍绰绰有余（抽 5k 条 ≈ 13 秒）。
+          DISCORD_RUNTIME_BUDGET: '1080'
         run: python projects/news/scripts/discord_archiver.py
 
-      - name: Backfill forum thread starters (catches up legacy gap)
-        if: steps.mode.outputs.mode == 'incremental'
+      - name: Global — backfill forum thread starters
+        id: forum
+        if: steps.mode.outputs.mode == 'incremental' && (steps.mode.outputs.guild == 'all' || steps.mode.outputs.guild == 'global')
+        continue-on-error: true
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          # 原为 3600（60 min）——比作业 timeout 本身还长，从来没有兑现过，
-          # 实际预算一直是「45 分钟减去归档器用掉的部分」。2026-08 改成 15 min 说实话，
-          # 每小时档下再收到 10 min：本步按 completed 名单跳过已回填的帖，无积压时
-          # 秒级收工，预算只在补历史缺口那几轮才真正兑现。
-          RUNTIME_BUDGET: '600'
+          # 5 min。本步按 state 里的 completed 名单跳过已回填的帖，无积压时秒级收工，
+          # 预算只在补历史缺口那几轮才真正兑现。
+          RUNTIME_BUDGET: '300'
           RATE_LIMIT_SLEEP: '0.2'
         run: python projects/news/scripts/backfill_forum_starters.py
 
-      - name: Run monthly cleanup (archive old data to Releases)
+      - name: Volunteer — incremental
+        id: volunteer
+        if: steps.mode.outputs.mode == 'incremental' && (steps.mode.outputs.guild == 'all' || steps.mode.outputs.guild == 'volunteer')
+        continue-on-error: true
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_GUILD_ID: ${{ env.VOLUNTEER_GUILD_ID }}
+          # 6 min。志愿者服体量最小（state.json 121 条频道游标），实测 ~45 秒。
+          DISCORD_RUNTIME_BUDGET: '360'
+        run: python projects/news/scripts/discord_archiver.py
+
+      - name: JP — incremental
+        id: jp
+        # JP_GUILD_ID 为空则整步跳过 —— 归档器在缺 DISCORD_GUILD_ID 时会回落 Global guild，
+        # 那会把日服数据写进 global/。这个判据是那条回落路径唯一的闸门，别删。
+        if: steps.mode.outputs.mode == 'incremental' && (steps.mode.outputs.guild == 'all' || steps.mode.outputs.guild == 'jp') && env.JP_GUILD_ID != ''
+        continue-on-error: true
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_GUILD_ID: ${{ env.JP_GUILD_ID }}
+          # 6 min。日服 390 条频道游标，实测 1~2 分钟。
+          DISCORD_RUNTIME_BUDGET: '360'
+        run: python projects/news/scripts/discord_archiver.py
+
+      - name: Global — history-only backfill
+        id: history
+        # 原 discord-history-backfill.yml。不设 DISCORD_GUILD_ID = 跑归档器默认的 global，
+        # 与合并前一致（jp / volunteer 的历史由各自增量轮的 Track 2 负责）。
+        # global 历史已 complete，本步现在走到 `All historical months complete!` 即退出；
+        # 预算只对「新建频道 / 新接入 guild 的 cold start」才真正兑现。
+        if: steps.mode.outputs.mode == 'incremental' && (steps.mode.outputs.guild == 'all' || steps.mode.outputs.guild == 'global')
+        continue-on-error: true
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_RUNTIME_BUDGET: '300'
+        run: python projects/news/scripts/discord_archiver.py --history-only
+
+      # ── 月度 / 手动补档 ─────────────────────────────────────────────────────
+      - name: Monthly cleanup (archive old data to Releases)
+        id: monthly
         if: steps.mode.outputs.mode == 'monthly'
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python projects/news/scripts/archive_discord.py
 
-      - name: Run force-month archive (manual stop-bleed)
+      - name: Force-month archive (manual stop-bleed)
+        id: force
         if: steps.mode.outputs.mode == 'force'
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
@@ -160,12 +244,20 @@ jobs:
           echo "Running: python projects/news/scripts/archive_discord.py $FLAGS"
           python projects/news/scripts/archive_discord.py $FLAGS
 
+      # ── 提交 ────────────────────────────────────────────────────────────────
+      # if: always() 是失败隔离的另一半：上面任一步崩了，**已经落盘的消息仍要进仓**。
+      # 归档器每频道 _save_state()、退出走 finally _flush_on_exit，磁盘上的东西是完整的；
+      # 不提交等于把它们连同游标一起丢掉，下一轮从同一基线重抓。
+      # clone 失败则无仓可提，那一种情形下跳过（也只有那一种）。
       - name: Commit and push if changed → BIAV-SC-DATA
+        if: always() && steps.clone.outcome == 'success'
         run: |
           set -euo pipefail
           cd data-repo
           git config user.name "Erica (BIAV-SC)"
           git config user.email "lightproud@hotmail.com"
+          # 三服 + 回填的产出都在 discord/ 下，一次 add 一次 commit —— 合并前那四支
+          # 各推各的、互撞非快进的路径到此为止。
           git add Record/Community/discord/
           if git diff --staged --quiet; then
             echo "No changes to commit"
@@ -185,6 +277,9 @@ jobs:
             # files" —— 2026-08-17 run 31992498596 实测：4 次尝试里有 3 次是这条
             # 空转，35 分钟采集成果原样丢弃。abort 让下一次重试回到干净基线，
             # 也让真冲突（内容级、重试也解不开）尽快落到响亮失败而不是被噪声淹没。
+            # 合并后 discord 家族只剩这一个推送方，但 update-news / collect-comments /
+            # backfill-media 仍在推同一条 main，非快进竞争依然存在（它们与 discord/
+            # 无路径重叠，故只会撞非快进、不会内容冲突）。
             git rebase --abort 2>/dev/null || true
             echo "Push attempt $i failed, retrying in ${i}s..."
             sleep $i
@@ -193,3 +288,30 @@ jobs:
           # 未推上去 = origin 上的游标没有前移，下一轮从同一基线重抓，
           # 只丢本轮工时、不丢数据、不会写坏归档。
           exit 1
+
+      # ── 成败判定 ────────────────────────────────────────────────────────────
+      # 上面每步都 continue-on-error（为的是不让一服带走另两服的数据），成败在这里统一
+      # 收口 —— 少了这一步，任何一服静静地挂掉都会被记成一次「成功运行」，而死手开关
+      # 数的正是最近一次成功。合并后四个健康信号并成一个，这一步就是那个信号本身。
+      - name: Surface per-guild failures
+        if: always() && steps.clone.outcome == 'success'
+        run: |
+          failed=""
+          for s in "global:${{ steps.global.outcome }}" \
+                   "forum-starters:${{ steps.forum.outcome }}" \
+                   "volunteer:${{ steps.volunteer.outcome }}" \
+                   "jp:${{ steps.jp.outcome }}" \
+                   "history-backfill:${{ steps.history.outcome }}" \
+                   "monthly:${{ steps.monthly.outcome }}" \
+                   "force-month:${{ steps.force.outcome }}"; do
+            name="${s%%:*}"; outcome="${s##*:}"
+            # skipped = 本轮压根没轮到它（模式/guild 选择），不是失败
+            case "$outcome" in
+              failure) failed="$failed $name" ;;
+            esac
+          done
+          if [ -n "$failed" ]; then
+            echo "::error::以下步骤失败（其余步骤的产出已提交）:$failed"
+            exit 1
+          fi
+          echo "All executed steps succeeded"
