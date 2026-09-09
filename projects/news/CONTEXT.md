@@ -102,7 +102,7 @@
   4h 阈值下偶发 STALE 属平台抖动，非采集停摆——判据以 `Record/heartbeat/status.json`
   里的 `last_success` 实值为准（`backfill-news.yml` 的每小时档早已在同一阈值下运行）。
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
-- collect-comments.yml **每 3 小时 :55**（守密人 2026-09-07 裁定；原每日北京 15:05，07:55 UTC 一档仍落北京 15:55）。上限由 YouTube Data API 日配额 10000 单位定死：单轮 ≈ 500~600 单位（4 条 search × 100 是大头），8 轮 ≈ 4000~4800；**提到每小时会打爆配额**，须先给 discover_videos 加每日一次的搜索节流。
+- collect-comments.yml **每 3 小时 :55**（守密人 2026-09-07 裁定；原每日北京 15:05，07:55 UTC 一档仍落北京 15:55）。配额分**两个独立的桶**（2026-09-09 查官方文档订正）：`search.list` 走 **Search Queries 桶（100 次调用/日）**，`commentThreads.list` 1 单位/页走**通用桶（10000 单位/日）**。`discover_videos` 每轮固定 4 次 search、**不随增量摊薄**，是提频的唯一瓶颈：8 轮/日 = 32 次（32%）宽裕，24 轮/日 = 96 次（96%）贴墙，一次手动补采即越界；而评论抓取本身 24 轮才约 2400 单位（通用桶 24%），撑得住每小时。**要上每小时，先把候选集缓存进 state.json、发现按日/按 3 小时刷一次**，只改 cron 会撞墙。
 - collect-fanart.yml 每日北京 15:10（07:10 UTC）（2026-07-11 统一北京 15 点档）；recover-fanart.yml 手动触发
 - daily-report.yml 已删除（定时停用后 workflow 亦不复存在，无手动备用；报告改会话内订阅生成）
 
