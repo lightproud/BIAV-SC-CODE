@@ -18,7 +18,7 @@
 - LICENSE / 版权行 / 上游 URL / HERMES_* 环境变量名 / X-Client-Name 遥测头
   / 配置键 / 路径（~/.hermes）一律不碰——只换「用户感知的显示名」，
   不抹来源事实。
-- upstream/ 本体零修改：补丁只在部署组装期应用（见 deploy/README.md），
+- upstream/ 本体零修改：补丁只在部署组装期应用（见 build/README.md），
   vendor 快照与官方测试基线保持逐字节纯净。
 
 用法：
@@ -1391,7 +1391,7 @@ def generate_patches() -> tuple[str, str]:
         run("commit", "-qm", "pristine")
         n1 = apply_brand_tree(work)
         # --binary：图标类品牌资产覆盖以 GIT binary patch 形式入补丁，
-        # git apply 路径与 --apply 路径保持效果等同（deploy/README.md 二选一承诺）。
+        # git apply 路径与 --apply 路径保持效果等同（build/README.md 二选一承诺）。
         brand_diff = run("diff", "--binary").stdout
         run("add", "-A")
         run("commit", "-qm", "brand (public edition)")

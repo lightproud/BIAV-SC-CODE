@@ -84,14 +84,13 @@ E:\BIAV-BP\bpa-dev\   （内部开发目录；部署目录 = E:\BIAV-BP\black-po
 
 侧栏置顶是 renderer 侧 localStorage（`hermes.desktop.pinnedSessions`）驱动显示、
 再经桥把 `sessions.pinned` 镜像给后端的双写结构，两半在外部都看不见，光读源码断不了案
-（银芯已逐字节比对确认换装补丁对整条链路零改动）。现场取证走 `deploy\probe-pin.js`：
-桌面版按 F12 开 DevTools → Console 粘贴该文件全文回车 → 回界面点一次「置顶」→ 回来看输出。
+（银芯已逐字节比对确认换装补丁对整条链路零改动）。三个候选断点：点击没走到状态层 /
+状态写进去但渲染或 id 查找侧出问题 / 本地置顶被后端拉取回冲（多半是 `state.db` 写不进，
+看 `home\logs\` 里 `PATCH /api/sessions/` 的报错）。
 
-判读三分：**完全没输出** = 点击没走到状态层（查该会话行是否真触发菜单项）；
-**有写入输出但列表仍空** = 状态写进去了、渲染或 id 查找侧出问题（把打印的 id 回传银芯）；
-**先增后减两次写入** = 本地置顶被后端拉取回冲（多半是 `state.db` 写不进，
-看 `home\logs\` 里 `PATCH /api/sessions/` 的报错）。探针另会报 localStorage 可写性与
-桥是否在位——这两项若红，问题不在置顶本身而在整个持久化层。
+**现场探针 `deploy\probe-pin.js` 已于 2026-09-09 随残余件清理退役**（守密人裁定，
+一次性排障件、零脚本消费）。问题若复发：回传 `home\logs\` 与复现步骤，银芯按上述三分
+重新签发一份 DevTools Console 探针即可，架构判读依据即本节。
 
 ## 纪律（写给将来的自己）
 
