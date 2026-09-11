@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "weixin 社区数据源"
-description: "weixin 平台采集档案，全量 9605 条，健康度 degraded。"
+description: "weixin 平台采集档案，全量 9606 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/weixin/"
-tags: ["data_layer:full_archive", "platform:weixin", "health:degraded"]
-timestamp: "2026-09-10T08:04:01.089254+00:00"
+tags: ["data_layer:full_archive", "platform:weixin", "health:active"]
+timestamp: "2026-09-11T07:50:49.759068+00:00"
 ---
 
 # 数据层指针
@@ -15,9 +15,9 @@ timestamp: "2026-09-10T08:04:01.089254+00:00"
 |------|------|
 | 平台 | weixin |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/weixin/` |
-| 全量条数 | 9605 |
-| 采集健康度 | degraded |
-| 最后成功 | 2026-08-31 |
+| 全量条数 | 9606 |
+| 采集健康度 | active |
+| 最后成功 | 2026-09-10 |
 
 # 数据纪律（硬约束）
 

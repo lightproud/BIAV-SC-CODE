@@ -4,7 +4,7 @@ title: "erica"
 description: "erica 角色人格数据"
 resource: "/assets/data/character-personas/erica.json"
 tags: ["data_layer:curated", "persona", "character:erica"]
-timestamp: "2026-09-10"
+timestamp: "2026-09-11"
 ---
 
 # 指针概念
