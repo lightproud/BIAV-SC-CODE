@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-11",
+  "generated": "2026-09-12",
   "stats": {
     "nodes": 377,
-    "edges": 401
+    "edges": 403
   },
   "nodes": [
     {
@@ -3701,7 +3701,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:ruliweb",
-        "health:active"
+        "health:degraded"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4518,18 +4518,6 @@
     },
     {
       "source": "/community/community-bahamut.md",
-      "target": "/characters/77926.md",
-      "rel": "提及:皮克曼",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bahamut.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bahamut.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
       "rel_type": "mention"
@@ -4542,20 +4530,32 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:融朵",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-pixiv.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4682,6 +4682,12 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -5988,18 +5994,6 @@
     },
     {
       "source": "/sources/bahamut.md",
-      "target": "/characters/77926.md",
-      "rel": "提及:皮克曼",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bahamut.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bahamut.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
       "rel_type": "mention"
@@ -6012,20 +6006,32 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:融朵",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/pixiv.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6110,6 +6116,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
