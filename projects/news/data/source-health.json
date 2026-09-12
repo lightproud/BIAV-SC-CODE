@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T17:43:50.739505+00:00",
+  "updated_at": "2026-09-12T20:11:26.447368+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1171
   },
   "validation_drops": {
-    "generated_at": "2026-09-12T17:43:18.585137+00:00",
+    "generated_at": "2026-09-12T20:10:47.317687+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -18,7 +18,7 @@
       "last_success_date": "2026-09-13",
       "last_check_date": "2026-09-13",
       "consecutive_silent_days": 0,
-      "total_items": 4121,
+      "total_items": 4123,
       "errors": []
     },
     "steam": {
@@ -50,7 +50,7 @@
       "last_success_date": "2026-09-13",
       "last_check_date": "2026-09-13",
       "consecutive_silent_days": 0,
-      "total_items": 3957,
+      "total_items": 3958,
       "errors": []
     },
     "reddit": {
@@ -82,7 +82,7 @@
       "last_success_date": "2026-09-13",
       "last_check_date": "2026-09-13",
       "consecutive_silent_days": 0,
-      "total_items": 14131,
+      "total_items": 14146,
       "errors": []
     },
     "bahamut": {
@@ -126,11 +126,11 @@
       "errors": []
     },
     "ruliweb": {
-      "level": "degraded",
-      "last_success_date": "2026-09-05",
+      "level": "active",
+      "last_success_date": "2026-09-13",
       "last_check_date": "2026-09-13",
-      "consecutive_silent_days": 8,
-      "total_items": 443,
+      "consecutive_silent_days": 0,
+      "total_items": 444,
       "errors": []
     },
     "stopgame": {
@@ -154,7 +154,7 @@
       "last_success_date": "2026-09-13",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5332,
+      "total_items": 5340,
       "errors": []
     },
     "youtube_comments": {
