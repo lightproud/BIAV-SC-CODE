@@ -84,3 +84,43 @@
   同时令公版回到名副其实的纯品牌换装。守卫 `tests/test_black_pool_memory.py`
   随之退役。中文记忆召回**重回缺口态**，留待日后另案（若重开，索引侧须
   UNION 两表而非取代，且词元正则须收数字起头串）。
+- **2026-09-13 · 回归网环境缺口（周更例程 v2026.9.11 移 pin）· 品牌缺口两处已定点修复
+  + 一处环境伪影挂账未销**：Hermes 上游 v2026.8.31 → v2026.9.11（引擎 0.21.0 → 0.21.2）
+  移 pin，闭环第二段「审核补丁」经三轮重锚全绿（rebrand.py 七条锚点全树零命中重锚 + 特性补丁
+  `conversation-cost-panel.patch` 九处冲突按语义重放），第三段「换装后回归网」首轮 9 红，
+  逐条定性后两处已就地修复、一处判定环境伪影挂账：
+  ① **品牌缺口（已修复）**：上游新增 `desktop-update-ui.test.mjs` 直接渲染并断言
+  `scripts/desktop-update/ui.html` 的用户可见文案——该文件此前从未进任何扫描表
+  （`RUNTIME_DIRS`/`BARE_WORD_DIRS` 均未列 `scripts/` 顶层任何子目录），生产桌面端的
+  自更新中转窗口因此一直原样显示 "Hermes"，纯属此前无测试盯着才没暴露。处置：只将
+  `scripts/desktop-update` 加入 `RUNTIME_DIRS`（未加入 `BARE_WORD_DIRS`——同目录还有
+  `windows.ps1`/`posix.sh` 等 Windows/macOS/Linux 自更新脚本，内含大量
+  `HermesUpdateJob`/`Invoke-HermesStep`/`$HermesHome` 复合标识符与 `/opt/Hermes/hermes`
+  一类 repro 夹具路径，裸词铺开前需要六目录铺开先例同等量级的逐条核验，非本轮回归修复
+  射程），改走 `ui.html` 五处字面量的定点 `BRAND_POST_RULES`。**该目录的裸词铺开评估
+  仍是缺口**，留待日后另案（若做，比照 2026-08-25 六目录铺开先例逐条核过功能面）。
+  ② **测试自伤（已修复）**：上游新增 `venv-holder-select.test.ts` 大小写不敏感回归用例，
+  故意配对大小写不同的两个路径字面量（exePath 全小写 `c:\hermes\...` 不入裸词射程，
+  venvScriptsDir 首字母大写 `C:\Hermes\...` 被裸词规则换成 `C:\Black Pool\...`），裸词
+  规则只误伤其中一个，前缀比较自然对不上——与本档「find-in-page」「data.identity」两案
+  同一口径，加 `BRAND_POST_RULES` 定点改回原样，不碰 `hasWindowsPathPrefix` 实现本身。
+  ③ **环境伪影（未修复，挂账）**：`src/store/voice-prefs.test.ts` 新增两条用例
+  （`keeps the desktop toggle local across config refreshes` / `migrates the legacy
+  preference once, not on every refresh`），全程未被任何品牌 / 特性补丁触碰（两文件
+  `grep -c Hermes` 均为 0，唯一命中均为小写 `hermes` 免疫裸词）。已用最小复现探针实证
+  根因：本装配树 `jsdom@29.1.1` + `vitest@4.1.10` 组合下，`vi.spyOn(localStorage,
+  'setItem')` 不拦截随后经 `window.localStorage.setItem(...)` 发起的同一次调用——
+  即便 `localStorage === window.localStorage` 恒为 `true`（探针已验证两侧引用相同），
+  spy 装在其中一个访问路径上就是拦不住经另一路径发起的调用，疑似 jsdom 该版本
+  `Storage` 存取器每次取值返回新代理对象的已知类别问题。`voice-prefs.ts` 的
+  `readKey`/`writeKey` 走 `window.localStorage.*`，用例走裸 `localStorage` 起 spy，
+  正好撞在这条缝上。**未处置**：既非我们补丁引入（文件从未入任一 patch 射程），
+  也非上游实现缺陷（现网真实浏览器里 `localStorage`/`window.localStorage` 是同一对象、
+  spy 会正常拦截，只有这套沙箱测试环境的 jsdom/vitest 版本组合会撞上），改测试
+  等于替上游背书一个我们没有把握的判断，改 `voice-prefs.ts` 实现更是越界改动未受我们
+  补丁覆盖的上游源码。闭环因此停在「换装后回归网」，**pin 未移、台账未动、未推 main**。
+  处置建议留守密人裁定：(a) 确认是否为本沙箱专属环境问题（对照 CI
+  `hermes-upstream-suite.yml` 异步跑出的基底体检结果）；(b) 若确认环境专属，需要给
+  `sync_upstream.py` 的换装后回归网增一条「已知环境缺口」白名单机制（当前该工具是
+  纯二元闸门，没有为此类个案放行的口子，这也是本条唯一的真实处置缺口）；(c) 若怀疑
+  是上游真缺陷，走 `hermes-upstream-suite.yml` 或社区渠道向上游报告。

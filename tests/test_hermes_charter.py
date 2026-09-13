@@ -160,7 +160,10 @@ def test_bare_word_rollout_reaches_six_new_dirs():
         ("Black Pool Console", "控制台标题"),
         ("Show Black Pool component status.", "console status 命令描述"),
         ("StartupWMClass=Black Pool", "Linux 桌面项窗口类（须与 executableName 一致）"),
-        ('release_dir / "win-unpacked" / "Black Pool.exe"', "桌面产物路径随 productName"),
+        # 2026-09-13 周更例程重锚（v2026.9.11 移 pin）：上游把三个 OS 变体的裸露路径
+        # 表达式拍平成单条生成器推导式（`hermes_cli/main_desktop.py` 的
+        # `_desktop_packaged_executable_in`），字面量落点随之变化，锚点跟着挪。
+        ('release_dir / d / "Black Pool.exe" for d in ("win-unpacked"', "桌面产物路径随 productName"),
     ):
         assert phrase in text, f"该换的没换（{why}）: {phrase!r}"
 
@@ -247,7 +250,7 @@ def test_brand_patch_sentinels():
     text = PATCH_BRAND.read_text(encoding="utf-8")
     sentinels = {
         "About 主版本行渲染黑池版本": "a.version('0.1.0')",
-        "About 出身行（上游版本静态陈述）": "B.I.A.V. Studio 出品 · 基于 Hermes Agent 0.21.0 定制",
+        "About 出身行（上游版本静态陈述）": "B.I.A.V. Studio 出品 · 基于 Hermes Agent 0.21.2 定制",
         "产品版本一井换水（后端 __version__）": '__version__ = "0.1.0"',
         "Hermes Agent 对应 Black Pool Agent": "Black Pool Agent",
         "APP_NAME 兜底统一（userData 脑裂）": "|| 'Black Pool'",
@@ -460,7 +463,7 @@ def test_plugin_author_attribution_never_rewritten():
 def test_rebrand_refuses_repeat_application(tmp_path):
     """两层变换均非幂等，必须拒绝打在已变换的树上（2026-08-04 审视 H-1）。
 
-    公版第二遍会把 About 出身行「基于 Hermes Agent 0.21.0 定制」（MIT 归因
+    公版第二遍会把 About 出身行「基于 Hermes Agent 0.21.2 定制」（MIT 归因
     唯一的 UI 承载面）吃成「基于 Black Pool Agent」；私有版第二遍把价格表
     注入体逐层套娃（实测 +66 行/遍，无上限）。
     """
