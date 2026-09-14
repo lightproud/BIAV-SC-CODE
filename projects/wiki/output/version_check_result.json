@@ -1,15 +1,15 @@
 {
-  "checked_at": "2026-09-07T11:54:25.937525+00:00",
+  "checked_at": "2026-09-14T12:09:39.436370+00:00",
   "current_version": "unknown",
   "known_versions": [
     "2.5.3",
     "2.6.0"
   ],
-  "new_version_found": false,
-  "new_version": null,
+  "new_version_found": true,
+  "new_version": "2.6.1",
   "steam": {
     "source": "steam",
-    "checked_at": "2026-09-07T11:54:25.178071+00:00",
+    "checked_at": "2026-09-14T12:09:38.649392+00:00",
     "status": "ok",
     "name": "Morimens",
     "short_description": "Morimens is a roguelite card-battler inspired by the Lovecraftian mythos. Bond with a diverse cast of Awakeners, build your perfect deck, and battle through the mists of Kadath—facing wild events and uncovering maddening truths at every turn.",
@@ -18,6 +18,16 @@
     "release_date": "Aug 1, 2024",
     "coming_soon": false,
     "recent_news": [
+      {
+        "title": "V2.6.1 New Awakener✦Ogier: Oathbound",
+        "date": "2026-09-14T08:09:35+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262700992"
+      },
+      {
+        "title": "V2.6.1 You've Been Warned...",
+        "date": "2026-09-11T07:00:28+00:00",
+        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1843481262694246"
+      },
       {
         "title": "On the D-Effect Zone Adjustments",
         "date": "2026-09-04T11:15:20+00:00",
@@ -32,83 +42,73 @@
         "title": "V2.6.0.0 Maintenance Announcement",
         "date": "2026-08-23T06:03:59+00:00",
         "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228672780"
-      },
-      {
-        "title": "📜 V2.6.0 Version Outlook",
-        "date": "2026-08-21T12:15:59+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228668541"
-      },
-      {
-        "title": "🎬 V2.6 PV - Summit of Voided Wills (VA: Kugimiya Rie)",
-        "date": "2026-08-21T08:15:26+00:00",
-        "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228667891"
       }
     ]
   },
   "fandom": {
     "source": "fandom",
-    "checked_at": "2026-09-07T11:54:25.666555+00:00",
+    "checked_at": "2026-09-14T12:09:39.095777+00:00",
     "status": "ok",
     "recent_changes": [
       {
-        "title": "File:Undying Sun Full.png",
-        "timestamp": "2026-09-07T06:20:56Z",
-        "user": "Frorefawn",
+        "title": "File:Refined Active Ions.png",
+        "timestamp": "2026-09-14T10:37:46Z",
+        "user": "Tallcakestarwberry",
         "comment": ""
       },
       {
-        "title": "Blackened Flame",
-        "timestamp": "2026-09-07T06:19:23Z",
-        "user": "Frorefawn",
+        "title": "Refined Active Ions",
+        "timestamp": "2026-09-14T10:36:42Z",
+        "user": "Tallcakestarwberry",
+        "comment": "Adding categories"
+      },
+      {
+        "title": "Refined Active Ions",
+        "timestamp": "2026-09-14T10:35:42Z",
+        "user": "Tallcakestarwberry",
+        "comment": "Created page with \"{{Item|title=Refined Active Ions|image=Refined Active Ions.png|type=Active Ions}}\""
+      },
+      {
+        "title": "File:Thousand Faces Seal.png",
+        "timestamp": "2026-09-14T10:29:49Z",
+        "user": "Tallcakestarwberry",
         "comment": ""
       },
       {
-        "title": "Blackened Flame",
-        "timestamp": "2026-09-07T06:14:03Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"{{Relic_Infobox |relic_img=Blackened Flame.webp |grade=Gold |group=Event |story= }} '''{{PAGENAME}}''' is a [[Relic]] in ''[[Morimens]]''.  == Effects ==  {{Relic Table | event_grade = Gold | event_effect = At turn start, apply {{Affix|Burn}} to 1 Command Card in hand and gain 1 stack of {{Affix|Blackened Flame}}. When {{Affix|Blackened Flame}} reaches 3 stacks, put 1 <u>Endless Combustion</u> into hand. | event_name = A Million Suns Descend }}  == Navigation ==  {{Relic...\""
+        "title": "Thousand Faces Seal",
+        "timestamp": "2026-09-14T10:27:35Z",
+        "user": "Tallcakestarwberry",
+        "comment": "Adding categories"
       },
       {
-        "title": "Template:Relic Table",
-        "timestamp": "2026-09-07T06:09:54Z",
-        "user": "Frorefawn",
+        "title": "Thousand Faces Seal",
+        "timestamp": "2026-09-14T10:26:22Z",
+        "user": "Tallcakestarwberry",
+        "comment": "Created page with \"{{Item|title=Thousand Faces Seal|image=Thousand Faces Seal.png|type=Covenant Enchantment Material}} == Description == Symbols, words, memories... It will alter everything. Used for Covenant Upgrade and Transcription. Covenant upgrades enhance Mainstats, while Transcription grants random Substats. == Acquisition ==  [[Material Conversion]]\""
+      },
+      {
+        "title": "Gnosis Elixir II",
+        "timestamp": "2026-09-14T10:21:08Z",
+        "user": "Tallcakestarwberry",
+        "comment": "Adding categories"
+      },
+      {
+        "title": "Gnosis Elixir II",
+        "timestamp": "2026-09-14T10:20:43Z",
+        "user": "Tallcakestarwberry",
         "comment": ""
       },
       {
-        "title": "Template:Relic Table",
-        "timestamp": "2026-09-07T06:08:33Z",
-        "user": "Frorefawn",
-        "comment": ""
+        "title": "Kathigu-Ra/Voicelines",
+        "timestamp": "2026-09-14T09:46:39Z",
+        "user": "LotanLover",
+        "comment": "I filled in Enlighten: Reflect for the big sis Kathi, just found the chance when I got it, yknow"
       },
       {
-        "title": "Hunt of the Charred",
-        "timestamp": "2026-09-07T05:58:11Z",
-        "user": "Frorefawn",
-        "comment": "Created page with \"{{Event | image = Undying Sun Full.png | type = Gameplay Event | duration2 = September 7, 2026 - October 5, 2026 | related = A Million Suns Descend }} '''{{PAGENAME}}''' are the Event Stages in [[A Million Suns Descend]].  == Description == She stands once again upon the Earth, and the revenge that consumes all arrives as promised.  It is an unending Pursuit, it is the searing fire of The Living Flame.  She will traverse every corner, hunting down all who have signed a C...\""
-      },
-      {
-        "title": "File:Blackened Flame.webp",
-        "timestamp": "2026-09-07T05:53:31Z",
-        "user": "Frorefawn",
-        "comment": ""
-      },
-      {
-        "title": "File:\"Seal\" of Death.png",
-        "timestamp": "2026-09-07T05:51:34Z",
-        "user": "Frorefawn",
-        "comment": ""
-      },
-      {
-        "title": "File:\"Seal\" of War.png",
-        "timestamp": "2026-09-07T05:51:34Z",
-        "user": "Frorefawn",
-        "comment": ""
-      },
-      {
-        "title": "File:\"Seal\" of Wealth.png",
-        "timestamp": "2026-09-07T05:51:33Z",
-        "user": "Frorefawn",
-        "comment": ""
+        "title": "Heart of Confusion",
+        "timestamp": "2026-09-14T03:47:11Z",
+        "user": "Tallcakestarwberry",
+        "comment": "Adding categories"
       }
     ],
     "change_count": 20
