@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-14",
+  "generated": "2026-09-15",
   "stats": {
     "nodes": 377,
-    "edges": 408
+    "edges": 409
   },
   "nodes": [
     {
@@ -4512,6 +4512,12 @@
     },
     {
       "source": "/community/community-bahamut.md",
+      "target": "/characters/77922.md",
+      "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
@@ -4530,20 +4536,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15581.md",
-      "rel": "提及:莉莉",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
@@ -4572,8 +4572,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:融朵",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
       "rel_type": "mention"
     },
     {
@@ -4586,12 +4586,6 @@
       "source": "/community/community-pixiv.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-reddit.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:Ramona",
       "rel_type": "mention"
     },
     {
@@ -4706,6 +4700,12 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -5994,6 +5994,12 @@
     },
     {
       "source": "/sources/bahamut.md",
+      "target": "/characters/77922.md",
+      "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
@@ -6012,20 +6018,14 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/77921.md",
       "rel": "提及:卡拉布",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15581.md",
-      "rel": "提及:莉莉",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
@@ -6054,8 +6054,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:融朵",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
       "rel_type": "mention"
     },
     {
@@ -6068,12 +6068,6 @@
       "source": "/sources/pixiv.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/reddit.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:Ramona",
       "rel_type": "mention"
     },
     {
@@ -6098,6 +6092,12 @@
       "source": "/sources/taptap_review.md",
       "target": "/characters/77913.md",
       "rel": "提及:凯蒂古拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/taptap_review.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
       "rel_type": "mention"
     },
     {
@@ -6164,6 +6164,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
