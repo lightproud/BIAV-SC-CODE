@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-16",
+  "generated": "2026-09-17",
   "stats": {
     "nodes": 377,
-    "edges": 419
+    "edges": 413
   },
   "nodes": [
     {
@@ -3785,7 +3785,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:weixin",
-        "health:active"
+        "health:degraded"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4572,12 +4572,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
       "rel_type": "mention"
@@ -4592,12 +4586,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/130901.md",
       "rel": "提及:莫丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-google-play.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4622,6 +4610,12 @@
       "source": "/community/community-reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-steam.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -4662,12 +4656,6 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15593.md",
-      "rel": "提及:詹金",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
       "rel_type": "mention"
@@ -4676,12 +4664,6 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6084,12 +6066,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
       "rel_type": "mention"
@@ -6104,12 +6080,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/130901.md",
       "rel": "提及:莫丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/google_play.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6134,6 +6104,12 @@
       "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/steam.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -6204,12 +6180,6 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15593.md",
-      "rel": "提及:詹金",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
       "rel_type": "mention"
@@ -6218,12 +6188,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
