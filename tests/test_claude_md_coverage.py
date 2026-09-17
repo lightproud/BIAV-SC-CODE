@@ -46,6 +46,10 @@ ALLOWLIST = {
     "report_render": "internal render helper for the in-session report flow",
     "silent_sources_audit": "diagnostic sub-step of update-news.yml; not a standalone component",
     "data_quality": "internal QA helper run ad hoc; not a standalone entry point",
+    # 2026-09-17: read-only archive date reconciliation, run on demand (same class as
+    # data_quality). Both entry docs sit at their line caps, so naming it there would
+    # require sinking other content — a keeper ruling, not a side effect of adding a tool.
+    "audit_archive_dates": "on-demand read-only diagnostic; findings live in its report under Public-Info-Pool",
     # Docs name the *platform* ("TapTap, needs key") but never the collector stem; it is
     # a per-platform collector backend, same class as playwright_collectors. Surfaced by
     # this sentinel on first run (a plain grep for 'taptap' false-matched the platform).
