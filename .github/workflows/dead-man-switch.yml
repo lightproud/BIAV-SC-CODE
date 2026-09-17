@@ -44,7 +44,7 @@ jobs:
             !/Public-Info-Pool/Reference/
             /Public-Info-Pool/Record/heartbeat/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
       # 发现沉默要让作业变红（可见），但状态文件必须先落库——否则「有发现」等于
