@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T03:22:18.252894+00:00",
+  "updated_at": "2026-09-17T10:57:28.306769+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1175
   },
   "validation_drops": {
-    "generated_at": "2026-09-17T03:21:43.345788+00:00",
+    "generated_at": "2026-09-17T10:56:49.687471+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -18,7 +18,7 @@
       "last_success_date": "2026-09-17",
       "last_check_date": "2026-09-17",
       "consecutive_silent_days": 0,
-      "total_items": 4167,
+      "total_items": 4171,
       "errors": []
     },
     "steam": {
@@ -26,7 +26,7 @@
       "last_success_date": "2026-09-17",
       "last_check_date": "2026-09-17",
       "consecutive_silent_days": 0,
-      "total_items": 5880,
+      "total_items": 5881,
       "errors": []
     },
     "taptap": {
@@ -39,10 +39,10 @@
     },
     "discord": {
       "level": "active",
-      "last_success_date": "2026-09-16",
+      "last_success_date": "2026-09-17",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 1,
-      "total_items": 9998985,
+      "consecutive_silent_days": 0,
+      "total_items": 10002101,
       "errors": []
     },
     "youtube": {
@@ -50,7 +50,7 @@
       "last_success_date": "2026-09-17",
       "last_check_date": "2026-09-17",
       "consecutive_silent_days": 0,
-      "total_items": 4048,
+      "total_items": 4059,
       "errors": []
     },
     "reddit": {
@@ -58,7 +58,7 @@
       "last_success_date": "2026-09-17",
       "last_check_date": "2026-09-17",
       "consecutive_silent_days": 0,
-      "total_items": 4639,
+      "total_items": 4643,
       "errors": []
     },
     "official": {
@@ -82,7 +82,7 @@
       "last_success_date": "2026-09-17",
       "last_check_date": "2026-09-17",
       "consecutive_silent_days": 0,
-      "total_items": 14459,
+      "total_items": 14471,
       "errors": []
     },
     "bahamut": {
@@ -90,7 +90,7 @@
       "last_success_date": "2026-09-17",
       "last_check_date": "2026-09-17",
       "consecutive_silent_days": 0,
-      "total_items": 1665,
+      "total_items": 1666,
       "errors": []
     },
     "appstore": {
@@ -154,7 +154,7 @@
       "last_success_date": "2026-09-17",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5530,
+      "total_items": 5537,
       "errors": []
     },
     "youtube_comments": {
