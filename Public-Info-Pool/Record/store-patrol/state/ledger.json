@@ -2209,6 +2209,47 @@
       "nextRunAt": null,
       "revision": 3,
       "leaseUntil": null
+    },
+    "patrol:steam-appdetails:2026-09-17": {
+      "id": "patrol:steam-appdetails:2026-09-17",
+      "intent": "store-patrol steam-appdetails 2026-09-17",
+      "payload": {
+        "target": {
+          "id": "steam-appdetails",
+          "title": "Morimens Steam storefront (price / release surface)",
+          "url": "https://store.steampowered.com/api/appdetails?appids=3052450&cc=us&l=en&filters=basic,price_overview,release_date",
+          "extract": "steam-appdetails",
+          "key": "3052450"
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1789648469956,
+      "updatedAt": 1789648470213,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
+    },
+    "patrol:steam-review-summary:2026-09-17": {
+      "id": "patrol:steam-review-summary:2026-09-17",
+      "intent": "store-patrol steam-review-summary 2026-09-17",
+      "payload": {
+        "target": {
+          "id": "steam-review-summary",
+          "title": "Morimens Steam review summary",
+          "url": "https://store.steampowered.com/appreviews/3052450?json=1&num_per_page=0&language=all&purchase_type=all",
+          "extract": "steam-review-summary"
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1789648469959,
+      "updatedAt": 1789648470237,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
     }
   },
   "queries": [
@@ -3183,6 +3224,24 @@
       "endedAt": 1789562109528,
       "outcome": "ok",
       "summary": "steam-appdetails: unchanged"
+    },
+    {
+      "id": "cce19816-0282-4465-a4ae-3860ca1dfb6c",
+      "sessionId": "patrol:steam-appdetails:2026-09-17",
+      "attempt": 1,
+      "startedAt": 1789648469963,
+      "endedAt": 1789648470213,
+      "outcome": "ok",
+      "summary": "steam-appdetails: unchanged"
+    },
+    {
+      "id": "ffa963fa-160d-44ce-91f7-af34d292e011",
+      "sessionId": "patrol:steam-review-summary:2026-09-17",
+      "attempt": 1,
+      "startedAt": 1789648470005,
+      "endedAt": 1789648470237,
+      "outcome": "ok",
+      "summary": "steam-review-summary: CHANGED"
     }
   ]
 }
