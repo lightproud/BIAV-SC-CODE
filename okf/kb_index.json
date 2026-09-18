@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 377,
+    "concepts": 378,
     "edges": 404,
-    "terms": 7122,
+    "terms": 7140,
     "by_type": {
       "character": 72,
       "dataset": 71,
-      "documentation": 166,
+      "documentation": 167,
       "knowledge-pointer": 48,
       "reference": 17,
       "research": 3
@@ -24,14 +24,14 @@
       "community": 19,
       "memory": 51,
       "projects": 31,
-      "resource": 134,
+      "resource": 135,
       "sources": 19,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 110,
-      "search": 267
+      "search": 268
     }
   },
   "sections": {
@@ -57,7 +57,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 134
+      "count": 135
     },
     "sources": {
       "index": "/sources/index.md",
@@ -2853,6 +2853,20 @@
       "title": "bpt-sdk-l5-revalidation-v0182-20260707",
       "description": "**Gate B：bpt 88/90 (97.8%) vs 官方 77/90 (85.6%)，delta +12.2pp，容忍 −5pp → PASS。跑满 180/180，花 $2.1920 < $5 帽。判定：最新 v0.18.2 未回归 gate B。**（格式：md）",
       "resource": "/Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md": {
+      "type": "documentation",
+      "title": "community-archive-date-confusion-20260917",
+      "description": "归档日文件的文件名是**桶日期**，`archive_layout` 第 37–48 行明写「归档分桶用的日期自始就是（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/data-diagnostics/community-archive-date-confusion-20260917.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -10055,6 +10069,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -10451,6 +10466,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -11149,6 +11165,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -11328,6 +11345,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -11520,6 +11538,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
+    ],
+    "confusion": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
     ],
     "consistency": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -11745,6 +11766,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -12098,6 +12120,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -12282,6 +12305,9 @@
       "/story/stages_by_unit.md",
       "/story/story_search_index.md"
     ],
+    "date": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "db": [
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/wiki-data/wiki-data-drops-by-item.md"
@@ -12322,6 +12348,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -12528,6 +12555,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -13514,6 +13542,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -13958,6 +13987,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -14140,6 +14170,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "layout": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "lbs": [
@@ -14506,6 +14537,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -15236,6 +15268,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -15683,6 +15716,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -16218,6 +16252,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -17298,6 +17333,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -18511,6 +18547,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -18811,6 +18848,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -19172,6 +19210,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -20591,6 +20630,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -21156,6 +21196,9 @@
     "件仓": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
+    "件名": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "件响": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
@@ -21186,6 +21229,9 @@
     ],
     "件登": [
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
+    ],
+    "件的": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
     ],
     "件蓝": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
@@ -21670,6 +21716,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -21968,6 +22015,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -23679,6 +23727,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "分桶": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "分歧": [
       "/story/story_research_todo.md"
     ],
@@ -24090,6 +24141,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -26234,6 +26286,9 @@
       "/characters/15578.md",
       "/characters/15593.md"
     ],
+    "名是": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "后一": [
       "/characters/15604.md",
       "/resource/resource-proposal-news-push-format-20260712.md"
@@ -27756,6 +27811,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -28467,6 +28523,9 @@
     "始信": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
+    "始就": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "始数": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/sources/appstore.md",
@@ -28628,6 +28687,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -29308,6 +29368,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -31390,6 +31451,7 @@
       "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
@@ -33422,6 +33484,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -34054,6 +34117,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -34424,6 +34488,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -34874,6 +34939,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -35184,6 +35250,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -35687,6 +35754,7 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
@@ -36106,7 +36174,11 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "日文": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "日期": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
@@ -36239,6 +36311,9 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
+    ],
+    "明写": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
     ],
     "明前": [
       "/characters/15575.md"
@@ -36854,6 +36929,9 @@
     "期缝": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
+    "期自": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "木下": [
       "/characters/15564.md"
     ],
@@ -37056,6 +37134,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -37536,6 +37615,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -38214,6 +38294,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -38499,6 +38580,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -38708,6 +38790,9 @@
     "档主": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
+    "档分": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "档到": [
       "/projects/news-archive-sources-registry.md"
     ],
@@ -38738,6 +38823,9 @@
     "档归": [
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
+    "档日": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
     ],
     "档案": [
       "/README.md",
@@ -38872,6 +38960,12 @@
     ],
     "档系": [
       "/memory/memory-ext-discord-archiver-design.md"
+    ],
+    "桶日": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
+    "桶用": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
     ],
     "梦也": [
       "/characters/15575.md"
@@ -39016,6 +39110,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -39438,6 +39533,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -41611,6 +41707,7 @@
       "/characters/15567.md"
     ],
     "用的": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md"
     ],
     "用螺": [
@@ -42322,8 +42419,14 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
     ],
+    "的文": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "的斗": [
       "/characters/125346.md"
+    ],
+    "的日": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
     ],
     "的时": [
       "/characters/15598.md"
@@ -45141,6 +45244,9 @@
     "自原": [
       "/README.md"
     ],
+    "自始": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "自定": [
       "/characters/15590.md"
     ],
@@ -45682,6 +45788,9 @@
     "行时": [
       "/README.md",
       "/projects/entry-claude-md.md"
+    ],
+    "行明": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
     ],
     "行档": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -47233,6 +47342,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -47987,6 +48097,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -49083,6 +49194,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -49361,6 +49473,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -50811,6 +50924,7 @@
       "/memory/memory-archive-storage-discussion.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
       "/sources/bahamut.md",
@@ -51143,6 +51257,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/wiki-data/wiki-data-character-skills.md"
     ],
@@ -51173,6 +51288,9 @@
     "conformance": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+    ],
+    "confusion": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
     ],
     "consistency": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -51376,6 +51494,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -51722,6 +51841,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -51905,6 +52025,9 @@
       "/story/stages_by_unit.md",
       "/story/story_search_index.md"
     ],
+    "date": [
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md"
+    ],
     "dead": [
       "/resource/resource-proposal-dead-man-switch-design-20260726.md"
     ],
@@ -51936,6 +52059,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -52122,6 +52246,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -52795,6 +52920,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",
@@ -54220,6 +54346,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md",

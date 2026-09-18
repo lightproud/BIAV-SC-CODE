@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (134)
+# 银芯正式产物（报告/分析） (135)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -17,6 +17,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [bpt-sdk-comparison-baseline-20260705](/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md) - **⚠ 重大更正（2026-07-05 晚，见 §4）**：第 1 节「v4 无可测收益」结论**作废**——发现 A/B harness 有测量 bug（未设
 * [bpt-sdk-i18n-cost-investigation-20260708](/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md) - 守密人两次「不对劲」都对;艾瑞卡据实纠正。（格式：md）
 * [bpt-sdk-l5-revalidation-v0182-20260707](/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md) - **Gate B：bpt 88/90 (97.8%) vs 官方 77/90 (85.6%)，delta +12.2pp，容忍 −5pp → PASS。跑满 1
+* [community-archive-date-confusion-20260917](/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md) - 归档日文件的文件名是**桶日期**，`archive_layout` 第 37–48 行明写「归档分桶用的日期自始就是（格式：md）
 * [discord-compaction-further-savings-20260622](/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md) - 硬约束：仓库总纲「可检索 text→git」——**grep 存活是采信前提**。（格式：md）
 * [discord-data-retention-diagnosis-202606](/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md) - `projects/news/data/discord/channels/` 现存 **3.3 GB / 12803 个 jsonl**，（格式：md）
 * [discord-rescue-net-completeness-20260719](/resource/resource-data-diagnostics-discord-rescue-net-completeness-20260719.md) - **抢救网对 discord 主服数据 = 高保真、近乎全覆盖**；T29「30 月仅实证 3 月有副本」的悲观假设（格式：md）

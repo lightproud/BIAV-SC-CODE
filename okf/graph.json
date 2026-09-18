@@ -1,7 +1,7 @@
 {
   "generated": "2026-09-18",
   "stats": {
-    "nodes": 377,
+    "nodes": 378,
     "edges": 404
   },
   "nodes": [
@@ -2248,6 +2248,17 @@
       "id": "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "type": "documentation",
       "title": "bpt-sdk-l5-revalidation-v0182-20260707",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-data-diagnostics-community-archive-date-confusion-20260917.md",
+      "type": "documentation",
+      "title": "community-archive-date-confusion-20260917",
       "tags": [
         "data_layer:curated",
         "deliverable",
