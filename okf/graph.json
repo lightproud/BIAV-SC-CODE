@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-18",
+  "generated": "2026-09-19",
   "stats": {
     "nodes": 378,
-    "edges": 404
+    "edges": 414
   },
   "nodes": [
     {
@@ -3604,7 +3604,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:appstore",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4541,14 +4541,50 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/77913.md",
       "rel": "提及:凯蒂古拉",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15585.md",
       "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15596.md",
+      "rel": "提及:泰旖丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
       "rel_type": "mention"
     },
     {
@@ -4571,14 +4607,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "target": "/characters/15586.md",
+      "rel": "提及:旺达",
       "rel_type": "mention"
     },
     {
@@ -6017,14 +6047,50 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15590.md",
+      "rel": "提及:达芙黛尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/77913.md",
       "rel": "提及:凯蒂古拉",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15585.md",
       "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15596.md",
+      "rel": "提及:泰旖丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
       "rel_type": "mention"
     },
     {
@@ -6047,14 +6113,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "target": "/characters/15586.md",
+      "rel": "提及:旺达",
       "rel_type": "mention"
     },
     {
