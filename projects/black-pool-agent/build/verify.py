@@ -26,6 +26,14 @@
 台账只进不出靠人工裁定：上游修好了某条，它会从失败清单里消失，台账里那条便成死条目，
 由 `--prune` 报出来供人清理——但**绝不自动增补新条目**，否则「自动排除」会退化成
 「自动无视」，本周红的那 6 例正是靠「没人自动无视它」才被抓住的。
+
+## 两条腿各管各的册（2026-09-18 守密人裁定后）
+
+`base` 认 `upstream-false-reds.json`（纯快照上的环境假红），`net` 认
+`desktop-env-gaps.json`（换装树上的已知环境缺口，入册须带守密人裁定日期）。
+**绝不共用一张免死金牌**：一条腿的排除依据拿到另一条腿上就成了无依据放行。
+`net` 的放行还多三道旁证（用例级 / 无整档崩 / 解析计数逐个对上），见
+`evaluate_desktop_net`。
 """
 from __future__ import annotations
 
@@ -43,6 +51,7 @@ SUB = HERE.parent
 REPO = SUB.parent.parent
 UPSTREAM = SUB / "upstream"
 FALSE_REDS = HERE / "upstream-false-reds.json"
+DESKTOP_GAPS = HERE / "desktop-env-gaps.json"
 
 UV_VERSION = "0.9.28"          # 上游 tests.yml 钉版（与组装线 env 同源）
 PYTHON_VERSION = "3.11"
@@ -55,6 +64,9 @@ UV_URL = (f"https://github.com/astral-sh/uv/releases/download/{UV_VERSION}"
 
 # pytest 短摘要行：`FAILED tests/x.py::test_y - AssertionError: ...`
 NODEID_RE = re.compile(r"^(FAILED|ERROR)\s+(\S+)", re.M)
+# vitest 失败行：` FAIL  src/x.test.ts > describe > case`（用例级带 " > "，整档崩不带）
+VITEST_FAIL_RE = re.compile(r"^\s*FAIL\s+(\S.*?)\s*$", re.M)
+CASE_SEP = " > "
 
 
 class VerifyError(Exception):
@@ -86,12 +98,55 @@ def load_false_reds() -> dict:
     return {e["nodeid"]: e for e in data.get("entries", [])}
 
 
-def triage(nodeids: list[str]) -> dict:
-    """把失败清单切成「在册假红」与「真缺陷候选」两堆。
+def load_desktop_gaps() -> dict:
+    """读换装后回归网的「已知环境缺口」台账（守密人 2026-09-18 裁定的受控豁免口）。
+
+    缺档 = 一条也不豁免（回到纯二元闸门），**不是**错误——这是安全的缺省方向。
+    有档则逐条查验字段完备：缺 reason / source / decided_on / decided_by 任一即
+    **响亮失败**。豁免是拿守密人的裁定换来的，没有裁定出处的条目一条也不许放行。
+    整档崩不可豁免，故 nodeid 必须是用例级（含 " > "），文件级条目一律拒收。
+    """
+    if not DESKTOP_GAPS.exists():
+        return {}
+    data = json.loads(DESKTOP_GAPS.read_text(encoding="utf-8"))
+    out: dict[str, dict] = {}
+    for e in data.get("entries", []):
+        nid = e.get("nodeid", "")
+        for field in ("nodeid", "reason", "source", "decided_on", "decided_by"):
+            if not e.get(field):
+                raise VerifyError(
+                    f"环境缺口台账条目缺 {field}（nodeid={nid or '<空>'}）："
+                    "无裁定出处的条目不许放行，先补齐或删条目")
+        if CASE_SEP not in nid:
+            raise VerifyError(
+                f"环境缺口台账条目非用例级（nodeid={nid}）：整档崩不可豁免，"
+                f"nodeid 必须含 {CASE_SEP!r}")
+        out[nid] = e
+    return out
+
+
+def parse_vitest_failures(log_text: str) -> list[str]:
+    """从 vitest 输出里抓失败条目，规范成 nodeid（去 "FAIL " 前缀、收敛空白）。
+
+    用例级形如 `src/x.test.ts > describe > case`，整档崩则只有档路径。
+    两者都抓——**区分交给调用方**，解析层不替判定层做取舍。
+    """
+    out = set()
+    for m in VITEST_FAIL_RE.finditer(log_text):
+        nid = " ".join(m.group(1).split())
+        if nid:
+            out.add(nid)
+    return sorted(out)
+
+
+def triage(nodeids: list[str], known_map: dict | None = None) -> dict:
+    """把失败清单切成「在册（假红 / 已知环境缺口）」与「真缺陷候选」两堆。
 
     在册者逐条点名回传（供报告打印），不在册者即例程停手的理由。
+    `known_map` 缺省取基底体检的假红台账；换装后回归网传自己的环境缺口台账进来——
+    两条腿**各管各的册**，绝不共用一张免死金牌。
     """
-    known_map = load_false_reds()
+    known_map = load_false_reds() if known_map is None else known_map
     known, unknown = [], []
     for nid in nodeids:
         entry = known_map.get(nid)
@@ -218,6 +273,43 @@ def clean_pyc(root: Path) -> None:
 # ---------------------------------------------------------------- 换装后网
 
 
+def evaluate_desktop_net(returncode: int, counts: dict, failures: list[str],
+                         known_map: dict | None = None) -> dict:
+    """换装后回归网的判定（守密人 2026-09-18 裁定的受控豁免闸门）。
+
+    抽成纯函数是为了**能被单测直接拷问**——闸门松没松，不该等到真跑一遍 45 分钟的
+    vitest 才知道。判定输入只有四样：退出码 / vitest 汇总计数 / 失败清单 / 台账。
+
+    红了仍放行，必须**四条同时成立**，缺一即停手。刻意设得比「全部在册」更严：
+
+      ① 失败清单全部在册（台账外一条都没有）——台账外失败一律真缺陷候选
+      ② 确有用例级失败（红着却抓不出条目 = 说不清是什么红，不放行）
+      ③ 无整档崩（那是组装树坏了，不是某条用例撞环境，不可豁免）
+      ④ 解析出的用例级条数与 vitest 汇总 failed 计数**逐个对上**——对不上说明解析漂了，
+        而解析漂的正确反应是不放行（同 parse_counts 的纪律：数字对不上不是结论，是警报）
+    """
+    if known_map is None:
+        known_map = load_desktop_gaps()
+    case_level = [n for n in failures if CASE_SEP in n]
+    file_level = [n for n in failures if CASE_SEP not in n]
+    verdict = triage(failures, known_map)
+    parse_consistent = bool(counts) and counts.get("failed", -1) == len(case_level)
+    gated = bool(returncode != 0 and not verdict["unknown"] and case_level
+                 and not file_level and parse_consistent)
+    return {
+        "exit_code": returncode,
+        "counts": counts,
+        "failures": failures[:40],
+        "known": verdict["known"],
+        "unknown": verdict["unknown"],
+        "stale": verdict["stale"],
+        "file_level_failures": file_level,
+        "parse_consistent": parse_consistent,
+        "gated": gated,
+        "passed": returncode == 0 or gated,
+    }
+
+
 def run_desktop_net(work: Path, timeout: int = 2700) -> dict:
     """测试②：桌面端回归网跑**打完补丁的组装树**（换装后）。
 
@@ -251,16 +343,13 @@ def run_desktop_net(work: Path, timeout: int = 2700) -> dict:
         # 退出码 0 却解析不出计数 = 解析漂了，不许当绿（vitest 换了输出形态即在此报）
         raise VerifyError("桌面端回归网退出码 0 但读不出计数——输出形态变了，先修解析再信结论")
 
-    failed = [l.strip() for l in log.splitlines() if l.strip().startswith("FAIL ")]
+    failures = parse_vitest_failures(log)
     return {
         "leg": "desktop-net",
         "tree": "组装树（私有版换装 + 特性补丁）",
-        "exit_code": r.returncode,
         "run_seconds": round(time.time() - t0),
-        "counts": counts,
-        "failures": sorted(set(failed))[:40],
         "log": str(work / "desktop-net.log"),
-        "passed": r.returncode == 0,
+        **evaluate_desktop_net(r.returncode, counts, failures),
     }
 
 
@@ -296,7 +385,23 @@ def render(result: dict) -> str:
         if c:
             lines.append(f"- {c.get('passed', 0)} 过 / {c.get('failed', 0)} 红 / "
                          f"{c.get('skipped', 0)} 跳过")
-        if result["failures"]:
+        if result.get("gated"):
+            lines.append("- 退出码非零，但失败清单全部在「已知环境缺口」台账内，闸门放行")
+        if result.get("known"):
+            lines += ["", "已知环境缺口（逐条点名，豁免不等于隐身）：", ""]
+            for e in result["known"]:
+                lines.append(f"- `{e['nodeid']}` —— {e.get('reason', '')}"
+                             f"（{e.get('decided_on', '')} 守密人裁定）")
+        if result.get("unknown"):
+            lines += ["", "**台账外失败（视为真缺陷候选，例程停手）**：", ""]
+            lines += [f"- `{e['nodeid']}`" for e in result["unknown"][:20]]
+        if result.get("file_level_failures"):
+            lines += ["", "**整档崩（不可豁免）**：", ""]
+            lines += [f"- `{f}`" for f in result["file_level_failures"][:10]]
+        if result.get("stale"):
+            lines += ["", f"> 台账死条目 {len(result['stale'])} 条（环境或上游可能已修，"
+                          f"供人工清理）：{', '.join(result['stale'][:5])}"]
+        if not result.get("known") and result["failures"]:
             lines += ["", "失败档："] + [f"- `{f}`" for f in result["failures"][:20]]
     lines.append("")
     return "\n".join(lines)
