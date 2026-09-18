@@ -81,6 +81,10 @@
       "tier": "T3",
       "why": "一次性回填 4/13–25 数据缺口"
     },
+    "migrate_discord_beijing_day": {
+      "tier": "T3",
+      "why": "一次性迁移：discord 历史日档 UTC 日切 → 北京日切（含 activity_daily 重算）"
+    },
     "backfill_platforms": {
       "tier": "T3",
       "why": "多平台历史数据回溯采集"

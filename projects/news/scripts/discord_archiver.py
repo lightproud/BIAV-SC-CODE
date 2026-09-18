@@ -45,6 +45,24 @@ DISCORD_DATA_DIR = archive_layout.discord_root()  # 分仓桥接：env BIAV_SC_D
 GLOBAL_GUILD_ID = '1131791637933199470'
 
 
+def _bucket_day(timestamp: str) -> str:
+    """消息落哪个日档：一律**北京日期**，与 `archive_layout` 声明的日期基准同源。
+
+    原写法是 `datetime.fromisoformat(ts).strftime('%Y-%m-%d')`——Discord 的 timestamp
+    带 `+00:00`，直接 strftime 取到的是 **UTC 日**，于是每天北京 00:00–08:00 的消息
+    都归进前一天的桶。2026-09-17 全量对账：9,708,177 条里 2,783,113 条（28.67%）错位，
+    漂移清一色 -1 天；而同一棵 `Record/Community/` 树下的平台层全按北京日切，读方
+    按文件名做跨层同日对比时两侧差一天。守密人 2026-09-18 裁定改写方并迁移历史。
+
+    时间戳缺失 / 不可解析时回落「当下的北京日」——那是**归档时刻**而非发生时刻，
+    属于没有更好答案时的下策，不是正常路径。
+    """
+    try:
+        return archive_layout.archive_date_str(datetime.fromisoformat(timestamp))
+    except (ValueError, TypeError):
+        return archive_layout.archive_date_str()
+
+
 def resolve_data_dir(guild_id: str | None = None) -> Path:
     """guild 数据目录唯一解析（归档器与回填工具共用）。"""
     override = os.environ.get('DISCORD_DATA_ROOT')
@@ -420,11 +438,7 @@ class DiscordArchiver:
     def _process_message(self, msg: dict, channel_id, channel_name: str = ''):
         """Slim, write to JSONL, update daily stats, queue threads."""
         slim = self._slim_message(msg)
-        try:
-            ts = datetime.fromisoformat(slim['timestamp'])
-            date_str = ts.strftime('%Y-%m-%d')
-        except (ValueError, TypeError):
-            date_str = datetime.now(UTC).strftime('%Y-%m-%d')
+        date_str = _bucket_day(slim['timestamp'])
         # H5: 仅在新写入时计入日统计，重复抓取不再膨胀 activity_daily 计数
         if self._write_msg(channel_id, date_str, slim):
             self._update_daily_stats(slim, channel_name)
@@ -437,12 +451,14 @@ class DiscordArchiver:
             ts = datetime.fromisoformat(slim['timestamp'])
         except (ValueError, TypeError):
             return
-        date_str = ts.strftime('%Y-%m-%d')
+        # 日键与消息落档桶同基准（北京日），否则 activity_daily 与 JSONL 日档对不上。
+        date_str = archive_layout.archive_date_str(ts)
         stats = self.daily_stats[date_str]
         stats['messages'] += 1
         stats['unique_authors'].add(slim['author_id'])
         stats['channel_activity'][channel_name or slim['channel_id']] += 1
-        stats['hourly_activity'][str(ts.hour)] += 1
+        # 小时分布随日键一并折北京时：日按北京切、小时仍按 UTC，同一份统计里两套钟。
+        stats['hourly_activity'][str(ts.astimezone(archive_layout.BEIJING_TZ).hour)] += 1
         stats['message_types'][str(slim['type'])] += 1
         stats['attachments'] += len(slim['attachments'])
         total_reactions = sum(r['count'] for r in slim['reactions'])
@@ -875,11 +891,7 @@ class DiscordArchiver:
                     slim = self._slim_message(starter)
                     slim.update(thread_meta)
                     slim['is_thread_starter'] = True
-                    try:
-                        ts = datetime.fromisoformat(slim['timestamp'])
-                        date_str = ts.strftime('%Y-%m-%d')
-                    except (ValueError, TypeError):
-                        date_str = datetime.now(UTC).strftime('%Y-%m-%d')
+                    date_str = _bucket_day(slim['timestamp'])
                     # H5: 仅在新写入时计入日统计
                     if self._write_msg(forum_channel_id, date_str, slim):
                         self._update_daily_stats(slim, thread_meta.get('thread_title', ''))

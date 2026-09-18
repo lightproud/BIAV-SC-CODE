@@ -17,6 +17,7 @@ from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
+import archive_layout  # 日期基准 SSOT（桶名 = 北京日）
 import discord_archiver as da
 from discord_archiver import DiscordArchiver, request_with_retry, _month_bounds
 
@@ -225,6 +226,46 @@ class TestSlimAndProcess(unittest.TestCase):
 
 
 # ── fetch_guild_meta / index ─────────────────────────────────────────────────
+
+class TestBucketDayIsBeijing(unittest.TestCase):
+    """消息落哪个日档 = **北京日**，与 archive_layout 的日期基准同源。
+
+    原写法对带 `+00:00` 的 timestamp 直接 strftime，取到 UTC 日，于是每天北京
+    00:00–08:00 的消息归进前一天的桶（2026-09-17 全量对账：970 万条里 278 万条
+    错位，漂移清一色 -1 天）。这类错位靠既有用例抓不到——它们用的时刻恰好在
+    UTC 日与北京日相同的那 16 小时里。本类专挑那 8 小时的边界。
+    """
+
+    #: UTC 23:00 = 北京次日 07:00：两套基准在此分岔。
+    ACROSS = "2026-05-03T23:30:00.000000+00:00"
+    #: UTC 14:41 = 北京 22:41：同日，两套基准一致。
+    SAME = "2026-05-03T14:41:39.000000+00:00"
+
+    def test_across_the_boundary_lands_on_the_beijing_day(self):
+        self.assertEqual(da._bucket_day(self.ACROSS), "2026-05-04")
+
+    def test_inside_the_shared_window_is_unchanged(self):
+        self.assertEqual(da._bucket_day(self.SAME), "2026-05-03")
+
+    def test_bad_timestamp_falls_back_to_today_beijing(self):
+        self.assertEqual(da._bucket_day("garbage"), archive_layout.archive_date_str())
+
+    def test_message_file_is_named_by_beijing_day(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            arch._process_message(_msg(1, ts=self.ACROSS), "chan", "general")
+            written = sorted(p.name for p in arch._ch_dir("chan").glob("*.jsonl"))
+            self.assertEqual(written, ["2026-05-04.jsonl"])
+
+    def test_daily_stats_key_matches_the_bucket(self):
+        """activity_daily 的日键必须与 JSONL 日档同基准，否则两份档对不上账。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            arch._process_message(_msg(1, ts=self.ACROSS), "chan", "general")
+            self.assertEqual(list(arch.daily_stats), ["2026-05-04"])
+            # 小时分布同折北京时：UTC 23:30 → 北京 07:30
+            self.assertEqual(arch.daily_stats["2026-05-04"]["hourly_activity"], {"7": 1})
+
 
 class TestGuildMeta(unittest.TestCase):
     def test_fetch_guild_meta_writes_file(self):
