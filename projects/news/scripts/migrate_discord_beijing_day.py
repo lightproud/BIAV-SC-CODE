@@ -198,7 +198,7 @@ def recompute_stats(region_dir: Path, cutoff: str, dry_run: bool) -> dict:
     by_day: dict[str, dict] = defaultdict(_blank_stats)
     ch_root = region_dir / 'channels'
     if not ch_root.is_dir():
-        return {'written': 0, 'changed': 0, 'days': 0}
+        return {'written': 0, 'changed': 0, 'days': 0, 'orphans': 0}
 
     for path in sorted(ch_root.rglob('*.jsonl*')):
         if not _DAY_RE.match(path.name):
@@ -284,7 +284,19 @@ def recompute_stats(region_dir: Path, cutoff: str, dry_run: bool) -> dict:
             if stale != target and stale.exists():
                 stale.unlink()
         written += 1
-    return {'written': written, 'changed': changed, 'days': len(by_day)}
+
+    # 旧日键的统计档必须撤掉，重算才算数。日键从 UTC 日改成北京日之后，两套基准的
+    # 日期集合在首尾与稀疏区段并不重合：只写不删，那些旧档就成了**孤儿**——JSONL
+    # 里根本没有那一天，统计里却有，谁按日对账都会发现这一层自相矛盾（实测
+    # volunteer 区服留下 11 个，把区服总量算多了 46 条）。
+    orphans = 0
+    if not dry_run and stats_dir.is_dir():
+        for path in sorted(stats_dir.iterdir()):
+            m = re.match(r'^(\d{4}-\d{2}-\d{2})\.json(\.gz)?$', path.name)
+            if m and m.group(1) not in by_day:
+                path.unlink()
+                orphans += 1
+    return {'written': written, 'changed': changed, 'days': len(by_day), 'orphans': orphans}
 
 
 def run(regions: list[str] | None, dry_run: bool, cutoff: str | None = None,
@@ -292,7 +304,7 @@ def run(regions: list[str] | None, dry_run: bool, cutoff: str | None = None,
     root = archive_layout.discord_root()
     cutoff = cutoff or default_cutoff()
     totals = {'channels': 0, 'moved': 0, 'total': 0, 'rewritten': 0,
-              'stats_written': 0, 'stats_changed': 0}
+              'stats_written': 0, 'stats_changed': 0, 'stats_orphans': 0}
     per_region: dict[str, dict] = {}
     for region, region_dir in sorted(archive_layout.discord_region_roots(root).items()):
         if regions and region not in regions:
@@ -301,7 +313,7 @@ def run(regions: list[str] | None, dry_run: bool, cutoff: str | None = None,
         if not ch_root.is_dir():
             continue
         acc = {'channels': 0, 'moved': 0, 'total': 0, 'rewritten': 0,
-               'stats_written': 0, 'stats_changed': 0}
+               'stats_written': 0, 'stats_changed': 0, 'stats_orphans': 0}
         if messages:
             for ch_dir in sorted(p for p in ch_root.iterdir() if p.is_dir()):
                 res = migrate_channel(ch_dir, cutoff, dry_run)
@@ -315,8 +327,9 @@ def run(regions: list[str] | None, dry_run: bool, cutoff: str | None = None,
             sres = recompute_stats(region_dir, cutoff, dry_run)
             acc['stats_written'] = sres['written']
             acc['stats_changed'] = sres['changed']
+            acc['stats_orphans'] = sres['orphans']
             print(f"  {region}/activity_daily: {sres['days']} 个北京日档，"
-                  f"{sres['changed']} 个与旧档不同")
+                  f"{sres['changed']} 个与旧档不同，撤掉旧日键孤儿 {sres['orphans']} 个")
         per_region[region] = acc
         for k in acc:
             totals[k] += acc[k]
