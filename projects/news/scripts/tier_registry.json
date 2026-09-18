@@ -85,6 +85,14 @@
       "tier": "T3",
       "why": "一次性迁移：discord 历史日档 UTC 日切 → 北京日切（含 activity_daily 重算）"
     },
+    "migrate_video_comment_days": {
+      "tier": "T3",
+      "why": "一次性回填：视频评论旧日档由采集轮次改按评论发布日"
+    },
+    "migrate_platform_timestamps": {
+      "tier": "T3",
+      "why": "一次性订正：ruliweb / appstore / google_play 历史时间戳口径"
+    },
     "backfill_platforms": {
       "tier": "T3",
       "why": "多平台历史数据回溯采集"
