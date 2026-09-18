@@ -16,6 +16,7 @@ from unittest import mock
 
 import _paths  # noqa: F401  直跑路径引导（pytest 侧见 pyproject.toml）
 
+import archive_layout  # 日期基准 SSOT（桶名 = 北京日）
 import discord_archiver as da
 from discord_archiver import DiscordArchiver, _sf_from_dt
 
@@ -224,7 +225,9 @@ class TestForumFailureIsolation(unittest.TestCase):
                                                                   "thread_title": "帖",
                                                                   "forum_channel_id": "forum1"})
             self.assertEqual(total, 1)
-            today = datetime.now(UTC).strftime("%Y-%m-%d")
+            # 回退日期与落桶基准同源（北京日）。原断言写的是 UTC 日——那只在一天里
+            # 两套基准相同的 16 小时内碰巧成立，北京 00:00–08:00 跑就会红。
+            today = archive_layout.archive_date_str()
             self.assertTrue((arch.data_dir / "channels" / "forum1" / f"{today}.jsonl").exists(),
                             "坏时间戳回退今日日期，消息不得丢弃")
 

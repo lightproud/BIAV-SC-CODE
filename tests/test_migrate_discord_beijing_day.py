@@ -209,6 +209,18 @@ class TestRecomputeStats:
         mig.run(["volunteer"], dry_run=False, cutoff="2026-08", stats=True)
         assert sorted(p.name for p in stats_dir.iterdir()) == ["2026-03-02.json.gz"]
 
+    def test_stale_day_keys_are_removed(self, lake):
+        """旧日键的统计档必须撤掉：JSONL 里没有那一天，统计里却有，就是自相矛盾。"""
+        stats_dir = self._region_dir(lake) / "activity_daily"
+        stats_dir.mkdir()
+        (stats_dir / "2020-01-01.json").write_text('{"date": "2020-01-01", "messages": 9}',
+                                                   encoding="utf-8")
+        _write(lake, "2026-09-10", [_msg("1", "2026-09-10T10:00:00+00:00")])
+        res = mig.run(["volunteer"], dry_run=False, cutoff="2026-08", stats=True)
+        assert res["totals"]["stats_written"] == 1
+        assert list(self._stats(lake)) == ["2026-09-10.json"]
+        assert res["per_region"]["volunteer"]["stats_orphans"] == 1
+
     def test_dry_run_reports_without_writing(self, lake):
         _write(lake, "2026-09-10", [_msg("1", "2026-09-10T23:30:00+00:00")])
         res = mig.run(["volunteer"], dry_run=True, cutoff="2026-08", stats=True)
