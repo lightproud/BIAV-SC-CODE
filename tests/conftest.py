@@ -1,5 +1,13 @@
 """全局测试夹具。
 
+数据湖隔离（autouse，2026-09-18 守密人裁定）：`BIAV_SC_DATA_ROOT` 指向真实
+BIAV-SC-DATA checkout 时，凡运行时调 `archive_layout.*_root()` 的测试会读到**真实
+归档**而非自己铺的临时目录——3 个 discord 归档器用例因此在「clone 了数据仓的会话」
+里报红（实测把 `historical_month` 读成 2023-08），在不设该变量的 CI 里却恒绿。
+于是 `scripts/premerge_gate.py` 这道判定门在本地会话中失真：红的不是改动，是环境。
+本夹具把该变量从测试环境摘掉，令测试**恒与 CI 同形态**。需要数据湖的测试自行
+monkeypatch 指向自己的 fixture 目录，照常覆盖本夹具。
+
 遥测隔离（autouse）：借阅记录落点自 2026-07-11 方案甲起为 git-tracked
 `Public-Info-Pool/Record/kb-usage/`（跨会话累计）。测试会大量调 MCP `kb_*`
 工具与 `log_call`，若不改道会把测试跑动写进 git 数据——违背遥测「只记真实
@@ -29,6 +37,23 @@ for _src in ("scripts", "projects/news/scripts", "projects/wiki/scripts"):
     _p = str(REPO / _src)
     if _p not in sys.path:
         sys.path.insert(0, _p)
+
+
+@pytest.fixture(autouse=True)
+def _isolate_data_lake(monkeypatch):
+    # 见档首「数据湖隔离」。摘掉 env 后 archive_layout 回落在树默认根，与 CI 一致。
+    monkeypatch.delenv("BIAV_SC_DATA_ROOT", raising=False)
+    # `discord_archiver.DISCORD_DATA_DIR` 是**导入期**算定的模块常量：测试档在收集期
+    # 就 import 了它，那时 env 还在，常量已经钉在真实数据仓上，光摘 env 追不回来。
+    # 已导入才改道，未导入则什么都不做（mutmut 工作副本里可能根本没有这个模块）。
+    mod = sys.modules.get("discord_archiver")
+    if mod is None:
+        return
+    try:
+        import archive_layout
+    except ImportError:
+        return
+    monkeypatch.setattr(mod, "DISCORD_DATA_DIR", archive_layout.discord_root(), raising=False)
 
 
 @pytest.fixture(autouse=True)

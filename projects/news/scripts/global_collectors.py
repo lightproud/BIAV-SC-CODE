@@ -830,6 +830,28 @@ def fetch_appstore_reviews():
     return items
 
 
+def _pacific_wallclock_iso(raw):
+    """把苹果 RSS `updated` 的墙钟按**真实**太平洋时区规则重标，返回 ISO 8601。
+
+    苹果这个字段的偏移标签全年恒为 `-07:00`（2026-09-17 实测：归档层 713 条无一例外，
+    连 2023-12 / 2024-01 这些 PST=-08:00 的冬季条目也照标 -07:00）。墙钟本身是太平洋
+    当地时间，所以冬令时期间整条时间戳偏 1 小时——卡在日界附近的评论会因此落进错误的
+    归档桶。做法：剥掉那个固定标签，把墙钟交给 `America/Los_Angeles` 按当日真实规则
+    （PST / PDT）重新定位。
+
+    tzdata 不可用时**原值返回**，不猜：宁可维持已知偏差，也不引入一个新的猜测。
+    DST 回拨那一小时的歧义按 fold=0 取前一次，比现在全年差 1 小时小得多。
+    """
+    if not raw:
+        return raw
+    try:
+        from zoneinfo import ZoneInfo
+        wall = datetime.fromisoformat(raw).replace(tzinfo=None)
+        return wall.replace(tzinfo=ZoneInfo("America/Los_Angeles")).isoformat()
+    except Exception:  # noqa: BLE001  tzdata 缺失 / 格式意外，一律回落原值
+        return raw
+
+
 def _fetch_appstore_reviews_one(appstore_id, region, countries):
     """抓取单个 (appstore_id, region) 的多国评论。"""
     items = []
@@ -860,7 +882,7 @@ def _fetch_appstore_reviews_one(appstore_id, region, countries):
                     summary=entry.get("content", {}).get("label", ""),
                     source="appstore",
                     platform_region=country,
-                    time_str=entry.get("updated", {}).get("label", ""),
+                    time_str=_pacific_wallclock_iso(entry.get("updated", {}).get("label", "")),
                     url=f"{review_url}#as-{entry_id}" if entry_id else review_url,
                     engagement=rating,
                     is_hot=False,
@@ -977,6 +999,22 @@ def fetch_google_play():
     return items
 
 
+def _google_play_at_iso(at):
+    """把 google_play_scraper 的 `at` 折成带时区的 ISO 8601（UTC）。
+
+    该库返回的是 **naive** datetime（内部 `datetime.fromtimestamp(...)`，取运行机器
+    **本地时区**的墙钟）。直接 `isoformat()` 落档就是一个不带时区的字符串，而
+    `archive_layout.archive_date_str` 对 naive 一律按 UTC 解释——只要采集始终跑在 UTC
+    的 CI runner 上就碰巧对上，换台非 UTC 机器做回填，日期整体歪掉且不报任何错
+    （2026-09-17 实测：归档层 1,509 条 google_play 时间戳全部无时区标注）。
+
+    `astimezone()` 对 naive 值按运行机器本地时区定位，再折 UTC：隐性假设变显式换算。
+    """
+    if at is None:
+        return None
+    return (at if at.tzinfo else at.astimezone()).astimezone(UTC).isoformat()
+
+
 def _fetch_google_play_one(gp_package, arch_region, locales):
     """抓取单个 (gp_package, arch_region) 的多 locale 评论。"""
     from google_play_scraper import reviews as gp_reviews, Sort as GPSort
@@ -1000,7 +1038,7 @@ def _fetch_google_play_one(gp_package, arch_region, locales):
                     source="google_play",
                     platform_region=region,
                     region=arch_region,  # 甲方案：global（多 locale）/ jp（AltPlus 独立包）→ google_play/<区服>/
-                    time_str=review["at"].isoformat() if review.get("at") else datetime.now(UTC).isoformat(),
+                    time_str=_google_play_at_iso(review.get("at")) or datetime.now(UTC).isoformat(),
                     # URL 追加 reviewId 锚点：评论页 URL 仅含 id+hl，同语言数十条评论会共用同一
                     # URL，致 dedup_key（URL 优先）碰撞、每语言仅存活 1 条（丢失 ~98% 评论）。
                     # fragment 使每条 key 唯一，不影响链接访问，跨轮次去重仍按恒定 reviewId 生效。
@@ -1357,7 +1395,13 @@ def fetch_ruliweb():
                         if " " in raw:
                             dt = datetime.strptime(raw, "%Y.%m.%d %H:%M")
                         else:
-                            dt = datetime.strptime(raw, "%Y.%m.%d")
+                            # 日期级（只有 YYYY.MM.DD）：取**当地正午**作代表时刻。
+                            # 原写法取 KST 00:00——零点正站在时区分界线上，折成北京
+                            # 日期就掉进前一天的桶，整批帖子日期系统性早一天（2026-09-17
+                            # 实测 301/448 条，67.2%；2026-07-02 记的「ruliweb 沉默 7 天、
+                            # 帖子内容日期偏旧致归档桶不新，非故障」真因即此）。正午离
+                            # 两侧日界各 12 小时，任何常见时区折算都还落在当天。
+                            dt = datetime.strptime(raw, "%Y.%m.%d").replace(hour=12)
                         # KST = UTC+9
                         dt = dt.replace(tzinfo=timezone(timedelta(hours=9)))
                         time_str = dt.astimezone(UTC).isoformat()

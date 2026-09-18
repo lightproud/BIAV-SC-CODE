@@ -62,6 +62,48 @@ class TestMakeItem(unittest.TestCase):
         self.assertIs(item["time_is_approximate"], True)
 
 
+class TestValidateNewsItem(unittest.TestCase):
+    """守 `validate_news_item` 的白名单重建**不吃掉归档必需的字段**。
+
+    该函数不是过滤器而是**重建器**：它丢掉白名单外的一切。所以每一个下游真正要读的
+    字段都得在这里有一条往返测试——否则字段没了也没人红，只有几个月后对着归档层做
+    对账时才发现（2026-09-17 实测：全量档案层 58,207 条里带 `time_is_approximate`
+    者 0 条，采集层却在 20 处认真地打了这个标记）。
+    """
+
+    BASE = {
+        'title': 'T', 'source': 'reddit', 'engagement': 3,
+        'time': '2026-09-18T00:00:00+00:00', 'url': 'https://example.com/1',
+    }
+
+    def _clean(self, **extra):
+        ok, cleaned = news_common.validate_news_item({**self.BASE, **extra})
+        self.assertTrue(ok)
+        return cleaned
+
+    def test_approximate_flag_survives(self):
+        """`time_is_approximate` 必须活着到归档层：`archive_platforms.item_key` 据它
+        把「猜出来的时刻」排除出去重键，标记一丢，每轮不同的 now() 就成了条目身份。"""
+        self.assertIs(self._clean(time_is_approximate=True)['time_is_approximate'], True)
+
+    def test_approximate_flag_absent_when_not_set(self):
+        self.assertNotIn('time_is_approximate', self._clean())
+
+    def test_archive_layout_fields_survive(self):
+        cleaned = self._clean(region='jp', archive_subtype='review')
+        self.assertEqual(cleaned['region'], 'jp')
+        self.assertEqual(cleaned['archive_subtype'], 'review')
+
+    def test_make_item_roundtrip_keeps_flag(self):
+        """采集器真正走的那条路：make_item 打标 → validate 重建 → 标记仍在。"""
+        item = news_common.make_item(
+            'T', '', 'reddit', 'global', '2026-09-18T00:00:00+00:00',
+            'https://example.com/2', engagement=1, time_is_approximate=True)
+        ok, cleaned = news_common.validate_news_item(item)
+        self.assertTrue(ok)
+        self.assertIs(cleaned['time_is_approximate'], True)
+
+
 def _addrinfo(*ips):
     """Build socket.getaddrinfo-shaped results for the given IP strings."""
     return [(socket.AF_INET, socket.SOCK_STREAM, 6, "", (ip, 0)) for ip in ips]
