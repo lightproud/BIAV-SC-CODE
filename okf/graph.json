@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-17",
+  "generated": "2026-09-18",
   "stats": {
     "nodes": 377,
-    "edges": 413
+    "edges": 404
   },
   "nodes": [
     {
@@ -3593,7 +3593,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:appstore",
-        "health:active"
+        "health:degraded"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4548,12 +4548,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15570.md",
       "rel": "提及:朵尔",
       "rel_type": "mention"
@@ -4562,12 +4556,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15581.md",
       "rel": "提及:莉莉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15597.md",
-      "rel": "提及:雷娅",
       "rel_type": "mention"
     },
     {
@@ -4583,9 +4571,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130901.md",
-      "rel": "提及:莫丝",
+      "source": "/community/community-google-play.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4712,12 +4700,6 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-youtube.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6042,12 +6024,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15570.md",
       "rel": "提及:朵尔",
       "rel_type": "mention"
@@ -6056,12 +6032,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15581.md",
       "rel": "提及:莉莉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15597.md",
-      "rel": "提及:雷娅",
       "rel_type": "mention"
     },
     {
@@ -6077,9 +6047,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130901.md",
-      "rel": "提及:莫丝",
+      "source": "/sources/google_play.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6120,26 +6090,8 @@
     },
     {
       "source": "/sources/taptap_review.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:熔毁·朵尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/taptap_review.md",
-      "target": "/characters/77913.md",
-      "rel": "提及:凯蒂古拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/taptap_review.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/taptap_review.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
       "rel_type": "mention"
     },
     {
@@ -6188,12 +6140,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/youtube.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
