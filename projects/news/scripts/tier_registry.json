@@ -93,6 +93,10 @@
       "tier": "T3",
       "why": "一次性订正：ruliweb / appstore / google_play 历史时间戳口径"
     },
+    "migrate_platform_rebucket": {
+      "tier": "T3",
+      "why": "一次性回填：平台层历史错桶条目搬回自身发生日（D4）"
+    },
     "backfill_platforms": {
       "tier": "T3",
       "why": "多平台历史数据回溯采集"
