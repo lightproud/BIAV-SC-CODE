@@ -628,6 +628,15 @@ def validate_news_item(item):
         cleaned['region'] = str(item['region'])
     if item.get('archive_subtype'):
         cleaned['archive_subtype'] = str(item['archive_subtype'])
+    # 近似时间标记（2026-09-18 守密人裁定放行）：采集器解析不出真实发布时间时填 now()
+    # 并置此标记，`archive_platforms.item_key` 据它把这种时刻**排除出去重键**。白名单
+    # 不放行 → 标记在此蒸发 → 每轮不同的 now()（精确到微秒）成了条目身份，同一条内容
+    # 每轮都是新条目（实测 taptap 574 条实为 48 条、weibo 815 条实为 184 条），且读方
+    # 再也分不清「真实发布时刻」与「采集时刻」。2026-08-22「全部条目一律校验」后此漏
+    # 覆盖全平台，对账见 Public-Info-Pool/Resource/data-diagnostics/
+    # community-archive-date-confusion-20260917.md D3。
+    if item.get('time_is_approximate'):
+        cleaned['time_is_approximate'] = True
 
     # Title must not be empty after sanitization
     if not cleaned['title']:
