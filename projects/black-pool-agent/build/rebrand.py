@@ -46,7 +46,7 @@ PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 BRAND = "Black Pool"
 BRAND_AGENT = "Black Pool Agent"
 BRAND_VERSION = "0.1.0"
-UPSTREAM_VERSION = "0.21.0"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
+UPSTREAM_VERSION = "0.21.3"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
 BRAND_AUMID = "com.biav.blackpool"
 
 
@@ -83,7 +83,18 @@ RUNTIME_DIRS = ["agent", "hermes_cli", "gateway", "tools", "plugins",
                 # 前者管「这个目录换不换裸词」，后者管「这个目录扫不扫」。只加前者、
                 # 不加后者，等于给一扇没开的门配了钥匙：实测 acp_adapter 11 处、
                 # skills 5 处残留纹丝不动。两表须同进同退，守卫见 test_hermes_charter.py。
-                "acp_adapter", "skills"]
+                "acp_adapter", "skills",
+                # scripts/desktop-update 于 2026-09-13 周更例程入列（v2026.9.11 移 pin
+                # 换装后回归网首次实测出的品牌缺口）：上游新增 desktop-update-ui.test.mjs
+                # 直接渲染并断言 scripts/desktop-update/ui.html 的用户可见文案，而该文件
+                # 在此之前从未进过任一扫描表——生产桌面端的更新中转窗口因此一直原样显示
+                # "Hermes"，只是从无测试盯着才没暴露。只入 RUNTIME_DIRS（不入 BARE_WORD_DIRS，
+                # 裸词扫描留待评估）：本目录同居 windows.ps1/posix.sh 等 Windows/macOS/Linux
+                # 自更新脚本，内含大量 `HermesUpdateJob`/`Invoke-HermesStep`/`$HermesHome`
+                # 一类复合标识符与 `/opt/Hermes/hermes` 一类 repro 夹具路径，裸词铺开前需要
+                # 同等量级的逐条核验（六目录铺开先例的规格），非本轮回归修复范围；本轮只加
+                # ui.html 的定点 BRAND_POST_RULES（见下），风险面收在单文件单测已验证的字面量。
+                "scripts/desktop-update"]
 
 # 裸词换装目录：display 密集面（UI / i18n / 桌面壳）。裸词 "Hermes" 以词边界
 # 正则替换——`updateHermes`（i18n 键）/ `HermesClient`（类名）等标识符因前后
@@ -449,9 +460,11 @@ BRAND_POST_RULES = [
     # 其显式默认 "en" 压过前端 DEFAULT_LOCALE——改在真上游，CLI/网关静态文案一并简中；
     # 用户显式改过语言者不受影响）。
     (
-        '        # Supported: en, zh, ja, de, es, fr, tr, uk.  Unknown values fall back to en.\n'
+        '        # UI language for static messages (approval prompts, some gateway slash replies); not agent\n'
+        '        # responses/logs/tool outputs. en, zh, ja, de, es, fr, tr, uk; unknown → en.\n'
         '        "language": "en",\n',
-        '        # Supported: en, zh, ja, de, es, fr, tr, uk.  Unknown values fall back to en.\n'
+        '        # UI language for static messages (approval prompts, some gateway slash replies); not agent\n'
+        '        # responses/logs/tool outputs. en, zh, ja, de, es, fr, tr, uk; unknown → en.\n'
         '        "language": "zh",\n',
     ),
     # 默认皮肤真源头（守密人 2026-08-03「新部署没自动选黑池金」）：desktop 经
@@ -571,6 +584,47 @@ BRAND_POST_RULES = [
         ' *  (researchbuddy). Reserved tokens are dropped so a bot renamed "Black Pool"\n',
         ' *  (researchbuddy). Reserved tokens are dropped so a bot renamed "Hermes"\n',
     ),
+    # scripts/desktop-update/ui.html 品牌缺口定点修复（2026-09-13 周更例程，v2026.9.11
+    # 移 pin 换装后回归网首次实测暴露；见 RUNTIME_DIRS 表尾同日注记）：该文件是自更新
+    # 中转窗口的实际渲染页，桌面端在真实更新流程里会原样显示这里的文案。只列该测试
+    # 已验证覆盖到、且用户可见的五处字面量——不碰同目录 windows.ps1/posix.sh 等脚本里的
+    # 复合标识符与 repro 夹具路径（裸词铺开评估范围，不在本轮）。
+    (
+        '<title>Hermes</title>\n',
+        '<title>Black Pool</title>\n',
+    ),
+    (
+        '    <h2 id="title">Updating Hermes</h2>\n'
+        '    <p id="line">Hermes will open once done.</p>\n',
+        '    <h2 id="title">Updating Black Pool</h2>\n'
+        '    <p id="line">Black Pool will open once done.</p>\n',
+    ),
+    (
+        "      lineEl.textContent = 'Opening Hermes\\u2026\\nYou can close this window.'\n",
+        "      lineEl.textContent = 'Opening Black Pool\\u2026\\nYou can close this window.'\n",
+    ),
+    (
+        "      lineEl.textContent = state.message || 'Reopen Hermes to finish.'\n",
+        "      lineEl.textContent = state.message || 'Reopen Black Pool to finish.'\n",
+    ),
+    (
+        "        lineEl.textContent = 'The progress connection was lost.\\nCheck Hermes for the update result. You can close this window.'\n",
+        "        lineEl.textContent = 'The progress connection was lost.\\nCheck Black Pool for the update result. You can close this window.'\n",
+    ),
+    # 2026-09-13 移 pin 新撞的同类自伤（venv-holder-select 大小写不敏感回归用例，
+    # 与本档「find-in-page」「data.identity」两案同一口径）：用例故意配对大小写不同的
+    # 两个路径字面量测 `hasWindowsPathPrefix` 的 ordinal 大小写不敏感比较——exePath 用
+    # 全小写 'c:\hermes\venv\scripts\...'（裸词规则不碰小写，原样留下），
+    # venvScriptsDir 用首字母大写 'C:\Hermes\venv\Scripts'（裸词规则照常把 'Hermes'
+    # 当品牌词扫成 'Black Pool'，路径里多出一个空格）。两个本该只靠大小写不同的
+    # fixture 被改成只有其中一个变身，前缀比较自然对不上——与品牌无关，是测试夹具
+    # 内部自洽性问题，改回原样而不碰 `hasWindowsPathPrefix` 实现本身。
+    (
+        "      'python.exe -m hindsight_api.main --daemon',\n"
+        "      'C:\\\\Black Pool\\\\venv\\\\Scripts'\n",
+        "      'python.exe -m hindsight_api.main --daemon',\n"
+        "      'C:\\\\Hermes\\\\venv\\\\Scripts'\n",
+    ),
 ]
 
 # ========================= 私有版（内网/便携适配层） =========================
@@ -639,25 +693,32 @@ INTRANET_POST_RULES = [
     # hermes update 便携硬门禁：无 .git 的 win32 树本就是便携包形态，原 ZIP
     # 兜底会从公网拉未换装上游整树覆盖本地——字面撤销全部品牌补丁。文书 §2.4
     # 「生产禁用 hermes update」原本只有文档约束力，此处升格为代码门禁。
+    # 2026-09-11 移 pin 重锚：上游 v2026.9.x 把 `if not git_dir.exists(): if
+    # sys.platform=="win32": use_zip_update=True` 拍平成布尔赋值
+    # `use_zip_update = not git_dir.exists()` + 非 win32 早退，win32 分支的
+    # `use_zip_update=True` 语句本身被消掉（赋值已隐含为真）。门禁改插在
+    # 布尔赋值之后、既有非 win32 早退判断之前，同一处拦 win32 便携态。
     (
-        "    if not git_dir.exists():\n"
-        '        if sys.platform == "win32":\n'
-        "            use_zip_update = True\n",
-        "    if not git_dir.exists():\n"
-        '        if sys.platform == "win32":\n'
-        "            # Portable bundle (no .git): self-update is disabled — the ZIP\n"
-        "            # fallback would overwrite the tree with unbranded upstream.\n"
-        '            print("\\u2717 Self-update is disabled in the portable bundle.")\n'
-        '            print("  Update channel: replace the whole bundle with a new release zip.")\n'
-        "            sys.exit(1)\n"
-        "            use_zip_update = True\n",
+        '    use_zip_update = not git_dir.exists()\n'
+        '    if use_zip_update and sys.platform != "win32":\n',
+        '    use_zip_update = not git_dir.exists()\n'
+        '    if use_zip_update and sys.platform == "win32":\n'
+        "        # Portable bundle (no .git): self-update is disabled — the ZIP\n"
+        "        # fallback would overwrite the tree with unbranded upstream.\n"
+        '        print("\\u2717 Self-update is disabled in the portable bundle.")\n'
+        '        print("  Update channel: replace the whole bundle with a new release zip.")\n'
+        "        sys.exit(1)\n"
+        '    if use_zip_update and sys.platform != "win32":\n',
     ),
     # Billing 深路由封死：入口帘子只遮了侧栏，?tab=billing 与计费故障自动
     # 跳转仍能整页打开 Nous Cloud 订阅页。从 SETTINGS_VIEWS 白名单摘除后
     # enum 路由参数直接拒收、回落默认页。
+    # 2026-09-11 移 pin 重锚：上游把 plugins 页从 SETTINGS_VIEWS 字面枚举挪进了
+    # `...SECTIONS.map(s => \`config:${s.id}\`)` 动态展开（不再是相邻字面量），
+    # 'billing' 后一行现为 'sessions'——锚点随之改扣 billing 前后两邻居。
     (
-        "  'notifications',\n  'billing',\n  'plugins',\n",
-        "  'notifications',\n  'plugins',\n",
+        "  'notifications',\n  'billing',\n  'sessions',\n",
+        "  'notifications',\n  'sessions',\n",
     ),
     # Help > Check for Updates 菜单整项摘除：三处自更新入口中最后一处未堵
     # 的（About 区已隐藏、后台轮询已 no-op），点击仍开完整更新覆盖层。
@@ -757,8 +818,15 @@ INTRANET_POST_RULES = [
     ),
     # Nous Portal 推荐徽标摘除（守密人 2026-08-03 裁定「取消推荐 UI」）：
     # 内网无推荐位——未登录态不再挂「推荐」徽标，已连接标记保留。
+    # 2026-09-11 移 pin 重锚：上游新增 freeTier 分支，原二元三目
+    # `{loggedIn ? <ConnectedTag/> : (...recommended...)}` 变三元
+    # `{freeTier ? <FreeTierTag/> : loggedIn ? <ConnectedTag/> : (...recommended...)}`；
+    # freeTier 分支与推荐徽标无关（免费层标签，非 Nous 推荐位），保留不动，
+    # 只摘除 loggedIn 为假时兜底的推荐 span。
     (
-        "          {loggedIn ? (\n"
+        "          {freeTier ? (\n"
+        "            <FreeTierTag />\n"
+        "          ) : loggedIn ? (\n"
         "            <ConnectedTag />\n"
         "          ) : (\n"
         '            <span className="inline-flex items-center gap-1.5 bg-primary px-2 py-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-primary-foreground">\n'
@@ -766,8 +834,8 @@ INTRANET_POST_RULES = [
         "              {t.onboarding.recommended}\n"
         "            </span>\n"
         "          )}\n",
-        "          {/* 内网无推荐位——徽标摘除（审计轮三） */}\n"
-        "          {loggedIn ? <ConnectedTag /> : null}\n",
+        "          {/* 内网无推荐位——徽标摘除（审计轮三；2026-09-11 随 freeTier 分支重锚） */}\n"
+        "          {freeTier ? <FreeTierTag /> : loggedIn ? <ConnectedTag /> : null}\n",
     ),
     # 状态栏版本芯片点击不再开更新覆盖层（自更新入口第六、七处；便携包更新
     # 通道 = 换包）：client / backend 两枚芯片降为纯展示标签。
@@ -884,11 +952,17 @@ INTRANET_POST_RULES = [
     #
     # 后台更新轮询三项（见本档「后台更新轮询整只 no-op」条）：上游分验挂载 /
     # 每 30 分钟 / 窗口聚焦各触发一次 checkUpdates，入口关停后一次也不该有。
+    # 2026-09-11 移 pin 重锚（三项 checkUpdates 哨兵同批）：上游把轮询节拍从固定
+    # 30 分钟改成「每日一次 + force:false + 聚焦仅在节拍已过时补检」，用例名与
+    # 断言结构随之整体重写（新增 BACKGROUND_UPDATE_CHECK_MS 常量、force 参数
+    # 校验、`vi.setSystemTime` 时间推进）。私有版轮询仍是彻底 no-op（本档「后台
+    # 更新轮询整只 no-op」条），三条哨兵沿用「上游验能用、私有版验关掉」的翻面
+    # 口径重写为新结构下的对应否定断言。
     (
         "  it('calls checkUpdates() on startup so the version pill populates immediately', async () => {\n"
         "    startUpdatePoller()\n"
         "\n"
-        "    // checkUpdates() is async — flush microtasks without advancing the 30-min interval.\n"
+        "    // checkUpdates() is async — flush microtasks without advancing the daily interval.\n"
         "    await vi.advanceTimersByTimeAsync(0)\n"
         "\n"
         "    expect(checkMock).toHaveBeenCalled()\n"
@@ -904,27 +978,33 @@ INTRANET_POST_RULES = [
         "  })\n",
     ),
     (
-        "  it('calls checkUpdates() on each interval tick', async () => {\n"
+        "  it('polls once per day and never forces past the caches', async () => {\n"
         "    startUpdatePoller()\n"
         "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    expect(checkMock).toHaveBeenCalledWith({ force: false })\n"
         "    checkMock.mockClear()\n"
         "\n"
-        "    await vi.advanceTimersByTimeAsync(30 * 60 * 1000)\n"
+        "    await vi.advanceTimersByTimeAsync(BACKGROUND_UPDATE_CHECK_MS - 1)\n"
+        "    expect(checkMock).not.toHaveBeenCalled()\n"
         "\n"
-        "    expect(checkMock).toHaveBeenCalled()\n"
+        "    await vi.advanceTimersByTimeAsync(1)\n"
+        "    expect(checkMock).toHaveBeenCalledTimes(1)\n"
         "  })\n",
-        "  it('never checks on an interval tick either', async () => {\n"
+        "  it('never polls once per day either — the daily cadence check never gets to run', async () => {\n"
         "    startUpdatePoller()\n"
         "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    expect(checkMock).not.toHaveBeenCalled()\n"
         "    checkMock.mockClear()\n"
         "\n"
-        "    await vi.advanceTimersByTimeAsync(30 * 60 * 1000)\n"
+        "    await vi.advanceTimersByTimeAsync(BACKGROUND_UPDATE_CHECK_MS - 1)\n"
+        "    expect(checkMock).not.toHaveBeenCalled()\n"
         "\n"
+        "    await vi.advanceTimersByTimeAsync(1)\n"
         "    expect(checkMock).not.toHaveBeenCalled()\n"
         "  })\n",
     ),
     (
-        "  it('calls checkUpdates() when the window regains focus', async () => {\n"
+        "  it('window focus only re-checks once the daily cadence has elapsed', async () => {\n"
         "    startUpdatePoller()\n"
         "    await vi.advanceTimersByTimeAsync(0)\n"
         "    checkMock.mockClear()\n"
@@ -932,12 +1012,15 @@ INTRANET_POST_RULES = [
         "    // Invoke the registered focus handler directly (the mock window doesn't\n"
         "    // propagate DOM events, so call the stored listener).\n"
         "    listeners['focus']?.()\n"
-        "\n"
         "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    expect(checkMock).not.toHaveBeenCalled()\n"
         "\n"
-        "    expect(checkMock).toHaveBeenCalled()\n"
+        "    vi.setSystemTime(Date.now() + BACKGROUND_UPDATE_CHECK_MS)\n"
+        "    listeners['focus']?.()\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    expect(checkMock).toHaveBeenCalledTimes(1)\n"
         "  })\n",
-        "  it('registers no focus listener to check on, either', async () => {\n"
+        "  it('registers no focus listener to re-check on the daily cadence, either', async () => {\n"
         "    startUpdatePoller()\n"
         "    await vi.advanceTimersByTimeAsync(0)\n"
         "    checkMock.mockClear()\n"
@@ -945,18 +1028,23 @@ INTRANET_POST_RULES = [
         "    // The no-op returns before the listener is ever registered, so there is\n"
         "    // nothing to invoke — the optional call is what proves it.\n"
         "    listeners['focus']?.()\n"
-        "\n"
         "    await vi.advanceTimersByTimeAsync(0)\n"
+        "    expect(checkMock).not.toHaveBeenCalled()\n"
         "\n"
+        "    vi.setSystemTime(Date.now() + BACKGROUND_UPDATE_CHECK_MS)\n"
+        "    listeners['focus']?.()\n"
+        "    await vi.advanceTimersByTimeAsync(0)\n"
         "    expect(listeners['focus']).toBeUndefined()\n"
         "    expect(checkMock).not.toHaveBeenCalled()\n"
         "  })\n",
     ),
     # 后端契约横幅五项（见本档「后端契约横幅静默」条）：上游逐一验落后即警告 /
     # 冷却 / 消警，整只静默后一次也不该弹。合并为一条哨兵，覆盖三种入参。
+    # 2026-09-18 周更例程重锚（v2026.9.14 移 pin）：上游把达标值的裸字面量 6 换成
+    # 具名常量 REQUIRED_BACKEND_CONTRACT（两处），锚点随之改字面量；替换体不涉及。
     (
         "  it('dismisses the toast when the backend meets the contract', () => {\n"
-        "    reportBackendContract(6)\n"
+        "    reportBackendContract(REQUIRED_BACKEND_CONTRACT)\n"
         "    expect(dismissSpy).toHaveBeenCalledWith('backend-contract-skew')\n"
         "    expect(notifySpy).not.toHaveBeenCalled()\n"
         "  })\n"
@@ -996,7 +1084,7 @@ INTRANET_POST_RULES = [
         "    lastToast().onDismiss()\n"
         "    notifySpy.mockClear()\n"
         "\n"
-        "    reportBackendContract(6) // backend updated → satisfied, snooze cleared\n"
+        "    reportBackendContract(REQUIRED_BACKEND_CONTRACT) // backend updated → satisfied, snooze cleared\n"
         "    reportBackendContract(5) // a later regression must warn immediately\n"
         "    expect(notifySpy).toHaveBeenCalledTimes(1)\n"
         "  })\n",

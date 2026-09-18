@@ -1,8 +1,8 @@
 diff --git a/agent/usage_pricing.py b/agent/usage_pricing.py
-index 9af08f6..45fa182 100644
+index 172374b..e35cbf4 100644
 --- a/agent/usage_pricing.py
 +++ b/agent/usage_pricing.py
-@@ -1260,12 +1260,81 @@ def _pricing_entry_from_metadata(
+@@ -439,10 +439,79 @@ def _pricing_entry_from_metadata(
      )
  
  
@@ -73,9 +73,7 @@ index 9af08f6..45fa182 100644
 +
 +
  def get_pricing_entry(
-     model_name: str,
-     provider: Optional[str] = None,
-     base_url: Optional[str] = None,
+     model_name: str, provider: Optional[str] = None, base_url: Optional[str] = None,
      api_key: Optional[str] = None,
  ) -> Optional[PricingEntry]:
 +    user_entry = _user_pricing_entry(model_name)
@@ -83,12 +81,12 @@ index 9af08f6..45fa182 100644
 +        return user_entry
      route = resolve_billing_route(model_name, provider=provider, base_url=base_url)
      if route.billing_mode == "subscription_included":
-         return PricingEntry(
+         return _INCLUDED_ENTRY
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index b3790f0..5973bb9 100644
+index fc2113d..20e2edf 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
-@@ -6618,11 +6618,7 @@ function buildApplicationMenu() {
+@@ -7093,11 +7093,7 @@ function buildApplicationMenu() {
        ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
        : [{ role: 'minimize' }, { role: 'close' }]
    })
@@ -102,10 +100,10 @@ index b3790f0..5973bb9 100644
    return Menu.buildFromTemplate(template)
  }
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index cb8c205..629679c 100644
+index 79f8a64..adbdee0 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
-@@ -138,6 +138,8 @@ export function AboutSettings() {
+@@ -161,6 +161,8 @@ export function AboutSettings() {
        </div>
  
        <div className="mx-auto mt-4 w-full max-w-2xl">
@@ -114,7 +112,7 @@ index cb8c205..629679c 100644
          <SectionHeading icon={RefreshCw} title={a.updates} />
  
          <div
-@@ -207,8 +209,10 @@ export function AboutSettings() {
+@@ -230,8 +232,10 @@ export function AboutSettings() {
            hint={a.branchCommit(status?.branch ?? 'unknown', status?.currentSha?.slice(0, 7) ?? 'unknown')}
            title={a.automaticUpdates}
          />
@@ -127,10 +125,10 @@ index cb8c205..629679c 100644
      </SettingsContent>
    )
 diff --git a/apps/desktop/src/app/settings/gateway-settings.tsx b/apps/desktop/src/app/settings/gateway-settings.tsx
-index e03a63a..3ab09c1 100644
+index a54c263..f7e495f 100644
 --- a/apps/desktop/src/app/settings/gateway-settings.tsx
 +++ b/apps/desktop/src/app/settings/gateway-settings.tsx
-@@ -1113,6 +1113,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1147,6 +1147,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'local' }))}
              title={g.localTitle}
            />
@@ -139,7 +137,7 @@ index e03a63a..3ab09c1 100644
            <ModeCard
              active={state.mode === 'cloud'}
              description={g.cloudDesc}
-@@ -1121,6 +1123,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1155,6 +1157,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
              onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}
              title={g.cloudTitle}
            />
@@ -148,18 +146,18 @@ index e03a63a..3ab09c1 100644
              active={state.mode === 'remote'}
              description={g.remoteDesc}
 diff --git a/apps/desktop/src/app/settings/index.tsx b/apps/desktop/src/app/settings/index.tsx
-index 82cc8a0..f8eb4ec 100644
+index 3d2eb0b..1ed55dc 100644
 --- a/apps/desktop/src/app/settings/index.tsx
 +++ b/apps/desktop/src/app/settings/index.tsx
-@@ -63,7 +63,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
-   'keybinds',
+@@ -68,7 +68,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
    'keys',
+   'vault',
    'notifications',
 -  'billing',
-   'plugins',
    'sessions',
    'about'
-@@ -187,13 +186,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
+ ]
+@@ -207,13 +206,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
          label: t.settings.nav.notifications,
          onSelect: () => setActiveView('notifications')
        },
@@ -186,10 +184,10 @@ index 82cc8a0..f8eb4ec 100644
          active: activeView === 'providers',
          children: [
 diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-index 006c23f..1676630 100644
+index 34dad8e..5df095d 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-@@ -45,8 +45,7 @@ import {
+@@ -62,8 +62,7 @@ import {
    $backendUpdateStatus,
    $desktopVersion,
    $updateApply,
@@ -199,7 +197,7 @@ index 006c23f..1676630 100644
  } from '@/store/updates'
  import type { StatusResponse, UsageStats } from '@/types/hermes'
  
-@@ -332,10 +331,9 @@ export function useStatusbarItems({
+@@ -366,10 +365,9 @@ export function useStatusbarItems({
        // Update state is not a preference: hiding it is how a user misses that
        // their client is behind. Listed in the menu, but locked on.
        lockedVisible: true,
@@ -211,7 +209,7 @@ index 006c23f..1676630 100644
      }
    }, [
      desktopVersion?.appVersion,
-@@ -376,10 +374,9 @@ export function useStatusbarItems({
+@@ -410,10 +408,9 @@ export function useStatusbarItems({
        id: 'version-backend',
        label: status.label,
        lockedVisible: true,
@@ -390,10 +388,10 @@ index aedde11..ec0da80 100644
        </div>
      )
 diff --git a/apps/desktop/src/components/onboarding/index.test.tsx b/apps/desktop/src/components/onboarding/index.test.tsx
-index ef099f9..54a7124 100644
+index 5f8b27d..9af0188 100644
 --- a/apps/desktop/src/components/onboarding/index.test.tsx
 +++ b/apps/desktop/src/components/onboarding/index.test.tsx
-@@ -46,21 +46,17 @@ afterEach(() => {
+@@ -48,21 +48,17 @@ afterEach(() => {
  })
  
  describe('onboarding Picker', () => {
@@ -420,7 +418,7 @@ index ef099f9..54a7124 100644
      expect(screen.getByRole('button', { name: 'Collapse' })).toBeTruthy()
    })
  
-@@ -71,7 +67,6 @@ describe('onboarding Picker', () => {
+@@ -73,7 +69,6 @@ describe('onboarding Picker', () => {
        makeOAuthProvider('nous', 'Nous Portal')
      ])
      render(<Picker ctx={ctx} />)
@@ -429,10 +427,10 @@ index ef099f9..54a7124 100644
      const labels = screen
        .getAllByRole('button')
 diff --git a/apps/desktop/src/components/onboarding/index.tsx b/apps/desktop/src/components/onboarding/index.tsx
-index 521a1a2..2495264 100644
+index b40b504..7e042e4 100644
 --- a/apps/desktop/src/components/onboarding/index.tsx
 +++ b/apps/desktop/src/components/onboarding/index.tsx
-@@ -408,7 +408,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
+@@ -537,7 +537,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
  
  const readShowAll = () => {
    try {
@@ -442,10 +440,10 @@ index 521a1a2..2495264 100644
      return false
    }
 diff --git a/apps/desktop/src/components/onboarding/providers.tsx b/apps/desktop/src/components/onboarding/providers.tsx
-index 851f7be..522a60c 100644
+index 7cdce02..c1a96d9 100644
 --- a/apps/desktop/src/components/onboarding/providers.tsx
 +++ b/apps/desktop/src/components/onboarding/providers.tsx
-@@ -39,21 +39,13 @@ export function FeaturedProviderRow({
+@@ -40,23 +40,13 @@ export function FeaturedProviderRow({
        onClick={() => onSelect(provider)}
        type="button"
      >
@@ -454,9 +452,11 @@ index 851f7be..522a60c 100644
          <div className="flex items-center gap-2">
 -          <img alt="" className="size-5 shrink-0 rounded" src={assetPath('nous-portal-icon.png')} />
            <span className="text-[length:var(--conversation-text-font-size)] font-semibold">
-             {providerTitle(provider)}
+             {freeTier ? t.freeTier.providerRowTitle : providerTitle(provider)}
            </span>
--          {loggedIn ? (
+-          {freeTier ? (
+-            <FreeTierTag />
+-          ) : loggedIn ? (
 -            <ConnectedTag />
 -          ) : (
 -            <span className="inline-flex items-center gap-1.5 bg-primary px-2 py-0.5 text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-primary-foreground">
@@ -464,16 +464,16 @@ index 851f7be..522a60c 100644
 -              {t.onboarding.recommended}
 -            </span>
 -          )}
-+          {/* 内网无推荐位——徽标摘除（审计轮三） */}
-+          {loggedIn ? <ConnectedTag /> : null}
++          {/* 内网无推荐位——徽标摘除（审计轮三；2026-09-11 随 freeTier 分支重锚） */}
++          {freeTier ? <FreeTierTag /> : loggedIn ? <ConnectedTag /> : null}
          </div>
-         <p className="mt-1 text-xs leading-5 text-muted-foreground">{t.onboarding.featuredPitch}</p>
-       </div>
+         <p className="mt-1 text-xs leading-5 text-muted-foreground">
+           {freeTier ? t.freeTier.providerRowPitch : t.onboarding.featuredPitch}
 diff --git a/apps/desktop/src/store/onboarding.ts b/apps/desktop/src/store/onboarding.ts
-index 8923cf7..a306297 100644
+index 066057c..90c4a09 100644
 --- a/apps/desktop/src/store/onboarding.ts
 +++ b/apps/desktop/src/store/onboarding.ts
-@@ -117,6 +117,11 @@ function writeCachedConfigured(value: boolean) {
+@@ -128,6 +128,11 @@ function writeCachedConfigured(value: boolean) {
  }
  
  function readCachedSkipped(): boolean {
@@ -486,15 +486,15 @@ index 8923cf7..a306297 100644
      return false
    }
 diff --git a/apps/desktop/src/store/updates.test.ts b/apps/desktop/src/store/updates.test.ts
-index b64c429..940f233 100644
+index 4ada1a0..b41283a 100644
 --- a/apps/desktop/src/store/updates.test.ts
 +++ b/apps/desktop/src/store/updates.test.ts
-@@ -190,50 +190,14 @@ describe('reportBackendContract', () => {
+@@ -194,50 +194,14 @@ describe('reportBackendContract', () => {
      vi.useRealTimers()
    })
  
 -  it('dismisses the toast when the backend meets the contract', () => {
--    reportBackendContract(6)
+-    reportBackendContract(REQUIRED_BACKEND_CONTRACT)
 -    expect(dismissSpy).toHaveBeenCalledWith('backend-contract-skew')
 -    expect(notifySpy).not.toHaveBeenCalled()
 -  })
@@ -508,12 +508,12 @@ index b64c429..940f233 100644
      reportBackendContract(1)
 -    expect(notifySpy).toHaveBeenCalledTimes(2)
 -  })
- 
+-
 -  it('stays quiet on later session opens once the user closed it', () => {
 -    reportBackendContract(1)
 -    lastToast().onDismiss() // user closes it → cooldown starts
 -    notifySpy.mockClear()
--
+ 
 -    // Opening another pre-existing session re-runs the check within cooldown.
 -    reportBackendContract(1)
      expect(notifySpy).not.toHaveBeenCalled()
@@ -537,14 +537,14 @@ index b64c429..940f233 100644
 -    lastToast().onDismiss()
 -    notifySpy.mockClear()
 -
--    reportBackendContract(6) // backend updated → satisfied, snooze cleared
+-    reportBackendContract(REQUIRED_BACKEND_CONTRACT) // backend updated → satisfied, snooze cleared
 -    reportBackendContract(5) // a later regression must warn immediately
 -    expect(notifySpy).toHaveBeenCalledTimes(1)
 +    expect(dismissSpy).not.toHaveBeenCalled()
    })
  })
  
-@@ -1226,37 +1190,37 @@ describe('startUpdatePoller', () => {
+@@ -1355,36 +1319,35 @@ describe('startUpdatePoller', () => {
      vi.useRealTimers()
    })
  
@@ -552,7 +552,7 @@ index b64c429..940f233 100644
 +  it('never checks on startup: the portable edition disables self-update', async () => {
      startUpdatePoller()
  
--    // checkUpdates() is async — flush microtasks without advancing the 30-min interval.
+-    // checkUpdates() is async — flush microtasks without advancing the daily interval.
      await vi.advanceTimersByTimeAsync(0)
  
 -    expect(checkMock).toHaveBeenCalled()
@@ -561,20 +561,24 @@ index b64c429..940f233 100644
 +    expect($updateStatus.get()).toBeNull()
    })
  
--  it('calls checkUpdates() on each interval tick', async () => {
-+  it('never checks on an interval tick either', async () => {
+-  it('polls once per day and never forces past the caches', async () => {
++  it('never polls once per day either — the daily cadence check never gets to run', async () => {
      startUpdatePoller()
      await vi.advanceTimersByTimeAsync(0)
+-    expect(checkMock).toHaveBeenCalledWith({ force: false })
++    expect(checkMock).not.toHaveBeenCalled()
      checkMock.mockClear()
  
-     await vi.advanceTimersByTimeAsync(30 * 60 * 1000)
+     await vi.advanceTimersByTimeAsync(BACKGROUND_UPDATE_CHECK_MS - 1)
+     expect(checkMock).not.toHaveBeenCalled()
  
--    expect(checkMock).toHaveBeenCalled()
+     await vi.advanceTimersByTimeAsync(1)
+-    expect(checkMock).toHaveBeenCalledTimes(1)
 +    expect(checkMock).not.toHaveBeenCalled()
    })
  
--  it('calls checkUpdates() when the window regains focus', async () => {
-+  it('registers no focus listener to check on, either', async () => {
+-  it('window focus only re-checks once the daily cadence has elapsed', async () => {
++  it('registers no focus listener to re-check on the daily cadence, either', async () => {
      startUpdatePoller()
      await vi.advanceTimersByTimeAsync(0)
      checkMock.mockClear()
@@ -584,19 +588,22 @@ index b64c429..940f233 100644
 +    // The no-op returns before the listener is ever registered, so there is
 +    // nothing to invoke — the optional call is what proves it.
      listeners['focus']?.()
- 
      await vi.advanceTimersByTimeAsync(0)
- 
--    expect(checkMock).toHaveBeenCalled()
+     expect(checkMock).not.toHaveBeenCalled()
+@@ -1392,6 +1355,7 @@ describe('startUpdatePoller', () => {
+     vi.setSystemTime(Date.now() + BACKGROUND_UPDATE_CHECK_MS)
+     listeners['focus']?.()
+     await vi.advanceTimersByTimeAsync(0)
+-    expect(checkMock).toHaveBeenCalledTimes(1)
 +    expect(listeners['focus']).toBeUndefined()
 +    expect(checkMock).not.toHaveBeenCalled()
    })
  })
 diff --git a/apps/desktop/src/store/updates.ts b/apps/desktop/src/store/updates.ts
-index f6e977f..c9dbe8a 100644
+index 06fedcc..ce63e6a 100644
 --- a/apps/desktop/src/store/updates.ts
 +++ b/apps/desktop/src/store/updates.ts
-@@ -149,6 +149,11 @@ function isInstallMethodToastSnoozed(): boolean {
+@@ -153,6 +153,11 @@ function isInstallMethodToastSnoozed(): boolean {
   * doesn't nag on every thread switch.
   */
  export function reportBackendContract(contract: number | undefined): void {
@@ -608,7 +615,7 @@ index f6e977f..c9dbe8a 100644
    if ((contract ?? 0) >= REQUIRED_BACKEND_CONTRACT) {
      dismissNotification(SKEW_TOAST_ID)
      // Backend caught up — forget any prior snooze so a future regression warns
-@@ -955,6 +960,11 @@ let lastConnectionMode: string | undefined
+@@ -1033,6 +1038,11 @@ function runPassiveChecks(): void {
  
  /** Wire up background polling + progress streaming. Idempotent. */
  export function startUpdatePoller(): void {
@@ -621,26 +628,27 @@ index f6e977f..c9dbe8a 100644
      return
    }
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index 54f12c4..7a0c52c 100644
+index 86f55fb..0b846cc 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
-@@ -8156,6 +8156,11 @@ def _cmd_update_impl(args, gateway_mode: bool):
- 
-     if not git_dir.exists():
-         if sys.platform == "win32":
-+            # Portable bundle (no .git): self-update is disabled — the ZIP
-+            # fallback would overwrite the tree with unbranded upstream.
-+            print("\u2717 Self-update is disabled in the portable bundle.")
-+            print("  Update channel: replace the whole bundle with a new release zip.")
-+            sys.exit(1)
-             use_zip_update = True
-         else:
-             print("✗ Not a git repository. Please reinstall:")
+@@ -1063,6 +1063,12 @@ def _prepare_git_command() -> tuple[bool, list, bool]:
+     on a non-Windows host (Windows falls back to ZIP: broken git file I/O, AV, NTFS filters)."""
+     git_dir = _m().PROJECT_ROOT / ".git"
+     use_zip_update = not git_dir.exists()
++    if use_zip_update and sys.platform == "win32":
++        # Portable bundle (no .git): self-update is disabled — the ZIP
++        # fallback would overwrite the tree with unbranded upstream.
++        print("\u2717 Self-update is disabled in the portable bundle.")
++        print("  Update channel: replace the whole bundle with a new release zip.")
++        sys.exit(1)
+     if use_zip_update and sys.platform != "win32":
+         print("✗ Not a git repository. Please reinstall:")
+         print("  curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash")
 diff --git a/web/src/pages/ChannelsPage.tsx b/web/src/pages/ChannelsPage.tsx
-index 39f0ef5..8c0a3c0 100644
+index e05ae0e..c416b2d 100644
 --- a/web/src/pages/ChannelsPage.tsx
 +++ b/web/src/pages/ChannelsPage.tsx
-@@ -1270,8 +1270,9 @@ function TelegramOnboardingPanel({
+@@ -1283,8 +1283,9 @@ function TelegramOnboardingPanel({
          </span>
        </div>
  
@@ -652,7 +660,7 @@ index 39f0ef5..8c0a3c0 100644
            <div className="flex flex-wrap items-center gap-2">
              <span className="text-xs font-medium uppercase text-foreground">
                Quick setup
-@@ -1291,9 +1292,9 @@ function TelegramOnboardingPanel({
+@@ -1304,9 +1305,9 @@ function TelegramOnboardingPanel({
            >
              {phase === "starting" ? "Starting…" : "Create with QR"}
            </Button>
