@@ -1,23 +1,23 @@
 {
   "meta": {
-    "generated_at": "2026-08-25",
+    "generated_at": "2026-09-18",
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 50,
-      "scripts_top": 38,
-      "scripts_news": 28,
+      "scripts_top": 39,
+      "scripts_news": 32,
       "scripts_wiki": 12,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 6,
       "projects": 8,
-      "total": 157
+      "total": 162
     },
     "reachability": {
-      "live": 78,
+      "live": 83,
       "test-only": 0,
       "orphaned": 0
     }
@@ -476,6 +476,15 @@
     }
   ],
   "scripts_top": [
+    {
+      "id": "audit_archive_dates.py",
+      "path": "scripts/audit_archive_dates.py",
+      "summary": "audit_archive_dates.py — 社区全量档案层「桶日期 vs 信息发生日期」对账（只读诊断）。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
     {
       "id": "build_capability_registry.py",
       "path": "scripts/build_capability_registry.py",
@@ -1055,6 +1064,42 @@
       "summary": "忘却前夜 Morimens - 全球信息收集器",
       "planes": [
         "import"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "migrate_discord_beijing_day.py",
+      "path": "projects/news/scripts/migrate_discord_beijing_day.py",
+      "summary": "migrate_discord_beijing_day.py — 把 discord 历史日档从 UTC 日切改成北京日切。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "migrate_platform_rebucket.py",
+      "path": "projects/news/scripts/migrate_platform_rebucket.py",
+      "summary": "migrate_platform_rebucket.py — 平台层历史错桶回填（D4）。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "migrate_platform_timestamps.py",
+      "path": "projects/news/scripts/migrate_platform_timestamps.py",
+      "summary": "migrate_platform_timestamps.py — 按已修好的采集器口径订正三层历史时间戳。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "migrate_video_comment_days.py",
+      "path": "projects/news/scripts/migrate_video_comment_days.py",
+      "summary": "migrate_video_comment_days.py — 视频评论旧日档：采集轮次 → 评论发布日。",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },

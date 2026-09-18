@@ -3,17 +3,17 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-08-25
-- 功能总数：**157**
-- 脚本可达性：活 78 / 仅测试 0 / 孤儿 0
+- 生成日期：2026-09-18
+- 功能总数：**162**
+- 脚本可达性：活 83 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 50 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 38 |
-| news 采集器脚本 | 28 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 39 |
+| news 采集器脚本 | 32 |
 | wiki 数据脚本 | 12 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -137,8 +137,10 @@
 - **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
   `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（38）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（39）
 
+- **`audit_archive_dates.py`** _[活:cli]_ — audit_archive_dates.py — 社区全量档案层「桶日期 vs 信息发生日期」对账（只读诊断）。  
+  `scripts/audit_archive_dates.py`
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
 - **`build_community_index.py`** _[活:cli+workflow]_ — Build a static community-discussion analysis index over the FULL archive.  
@@ -216,7 +218,7 @@
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（28）
+## news 采集器脚本（32）
 
 - **`archive_discord.py`** _[活:cli+workflow]_ — Discord 月度归档 — 向后兼容垫片（守密人 2026-06-21 裁定 A + 合并）  
   `projects/news/scripts/archive_discord.py`
@@ -262,6 +264,14 @@
   `projects/news/scripts/download_media.py`
 - **`global_collectors.py`** _[活:import]_ — 忘却前夜 Morimens - 全球信息收集器  
   `projects/news/scripts/global_collectors.py`
+- **`migrate_discord_beijing_day.py`** _[活:cli]_ — migrate_discord_beijing_day.py — 把 discord 历史日档从 UTC 日切改成北京日切。  
+  `projects/news/scripts/migrate_discord_beijing_day.py`
+- **`migrate_platform_rebucket.py`** _[活:cli]_ — migrate_platform_rebucket.py — 平台层历史错桶回填（D4）。  
+  `projects/news/scripts/migrate_platform_rebucket.py`
+- **`migrate_platform_timestamps.py`** _[活:cli]_ — migrate_platform_timestamps.py — 按已修好的采集器口径订正三层历史时间戳。  
+  `projects/news/scripts/migrate_platform_timestamps.py`
+- **`migrate_video_comment_days.py`** _[活:cli]_ — migrate_video_comment_days.py — 视频评论旧日档：采集轮次 → 评论发布日。  
+  `projects/news/scripts/migrate_video_comment_days.py`
 - **`news_common.py`** _[活:import]_ — news_common.py — 采集层共享工具（ARCH-01/02 收敛单一归属）  
   `projects/news/scripts/news_common.py`
 - **`playwright_collectors.py`** _[活:cli]_ — Playwright-based collectors for Morimens community news.  
