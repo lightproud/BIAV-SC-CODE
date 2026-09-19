@@ -1,4 +1,4 @@
-# 银芯正式产物（报告/分析） (135)
+# 银芯正式产物（报告/分析） (136)
 
 Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组，同 stem 多格式合并为一交付物）。
 
@@ -93,6 +93,7 @@ Public-Info-Pool/Resource/ 下 A 类正式产物指针（按主题类型分组�
 * [hermes-weekly-update-20260824](/resource/resource-repo-engineering-hermes-weekly-update-20260824.md) - 本周区间横跨上游六个 tag（`v2026.8.13` → `v2026.8.19`），2200 个提交里对黑池桌面用户**摸得到**的变化集中在四块：**外观
 * [hermes-weekly-update-20260828](/resource/resource-repo-engineering-hermes-weekly-update-20260828.md) - **对黑池用户实际可感知的变化**（据本档第二节一手变更清单归纳，非上游 release 页转述）：（格式：md）
 * [hermes-weekly-update-20260907](/resource/resource-repo-engineering-hermes-weekly-update-20260907.md) - 本周对黑池用户实际可感知的变化，挑对内网日常使用最相关的几条：`/plan` 从可选技能升成（格式：md）
+* [hermes-weekly-update-20260919](/resource/resource-repo-engineering-hermes-weekly-update-20260919.md) - **这一版对车间日常实际可感知的变化**（两周量的上游积累，8,020 提交里挑得出的就这些；（格式：md）
 * [kb-vector-remaining-handoff-20260705](/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md) - 银芯已建向量检索腿（§八「厚锚撑向量」的活体参照实现，守密人 2026-07-05 裁定(A) 解除零 ML 红线，**scoped**：白盒脊柱仍零 ML，只
 * [last30days-skill-research-20260729](/resource/resource-repo-engineering-last30days-skill-research-20260729.md) - 定位一句话：**「按赞数、转发数、真金赔率排序的搜索引擎，搜的是人不是编辑」**——Google 聚合编辑内容，它并行搜 Reddit / X / YouTub
 * [maestro-sdk-agent-assembly-design-20260729](/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md) - 第一轮问「代码写得对不对」，第二轮问「作为产品是否成立」。第二轮的判词是：**一个被证明「造得出」、但只有一半被证明「有人要」的产品**——已验证三族（ledg

@@ -1,7 +1,7 @@
 {
   "generated": "2026-09-19",
   "stats": {
-    "nodes": 379,
+    "nodes": 380,
     "edges": 409
   },
   "nodes": [
@@ -3096,6 +3096,17 @@
       "id": "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
       "type": "documentation",
       "title": "hermes-weekly-update-20260907",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
+      "type": "documentation",
+      "title": "hermes-weekly-update-20260919",
       "tags": [
         "data_layer:curated",
         "deliverable",

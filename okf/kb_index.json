@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 379,
+    "concepts": 380,
     "edges": 409,
-    "terms": 7152,
+    "terms": 7164,
     "by_type": {
       "character": 72,
       "dataset": 71,
-      "documentation": 167,
+      "documentation": 168,
       "knowledge-pointer": 49,
       "reference": 17,
       "research": 3
@@ -24,14 +24,14 @@
       "community": 19,
       "memory": 52,
       "projects": 31,
-      "resource": 135,
+      "resource": 136,
       "sources": 19,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 110,
-      "search": 269
+      "search": 270
     }
   },
   "sections": {
@@ -57,7 +57,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 135
+      "count": 136
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3932,6 +3932,20 @@
       "title": "hermes-weekly-update-20260907",
       "description": "本周对黑池用户实际可感知的变化，挑对内网日常使用最相关的几条：`/plan` 从可选技能升成（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/hermes-weekly-update-20260907.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md": {
+      "type": "documentation",
+      "title": "hermes-weekly-update-20260919",
+      "description": "**这一版对车间日常实际可感知的变化**（两周量的上游积累，8,020 提交里挑得出的就这些；（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/hermes-weekly-update-20260919.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -10212,6 +10226,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -11498,6 +11513,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -11920,6 +11936,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12275,6 +12292,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12502,6 +12520,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -12856,6 +12875,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -13438,7 +13458,8 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "history": [
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md"
@@ -13697,6 +13718,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -14143,6 +14165,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -14687,6 +14710,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -15430,6 +15454,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -15878,6 +15903,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -16225,6 +16251,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -16418,6 +16445,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -17504,6 +17532,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -17668,7 +17697,8 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "updateprompts": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -17855,7 +17885,8 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "weibo": [
       "/community/community-weibo.md",
@@ -18136,7 +18167,8 @@
       "/story/story_research_todo.md"
     ],
     "一版": [
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "一的": [
       "/README.md",
@@ -18352,7 +18384,8 @@
       "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md",
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "上烈": [
       "/characters/15575.md"
@@ -18719,6 +18752,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -19021,6 +19055,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -19383,6 +19418,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -19588,6 +19624,9 @@
     ],
     "两件": [
       "/resource/resource-repo-engineering-biav-sc-split-stage2-execution-plan-20260719.md"
+    ],
+    "两周": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "两层": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -20456,7 +20495,8 @@
     ],
     "交里": [
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "亦属": [
       "/README.md"
@@ -20803,6 +20843,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -21892,6 +21933,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -22192,6 +22234,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -23648,7 +23691,8 @@
     ],
     "出的": [
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "出相": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -24325,6 +24369,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -25580,7 +25625,8 @@
       "/characters/15583.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "变坏": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
@@ -25886,7 +25932,8 @@
     ],
     "可感": [
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "可成": [
       "/characters/15590.md"
@@ -26605,6 +26652,9 @@
     ],
     "周身": [
       "/characters/15586.md"
+    ],
+    "周量": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "味的": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -28002,6 +28052,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -28879,6 +28930,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -29560,6 +29612,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -29769,7 +29822,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "实验": [
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
@@ -30001,6 +30055,9 @@
     "对跑": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
+    "对车": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
+    ],
     "对银": [
       "/README.md",
       "/resource/resource-repo-engineering-sdk-bug-audit-multiwave-20260728.md"
@@ -30198,6 +30255,9 @@
     ],
     "就越": [
       "/characters/15592.md"
+    ],
+    "就这": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "就连": [
       "/characters/15579.md"
@@ -30887,6 +30947,9 @@
     ],
     "常处": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "常实": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "常规": [
       "/characters/15563.md"
@@ -31726,6 +31789,7 @@
       "/resource/resource-repo-engineering-maestro-sdk-design-review-20260726.md"
     ],
     "得出": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md"
     ],
     "得到": [
@@ -32512,7 +32576,8 @@
     "感知": [
       "/characters/77925.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "感配": [
       "/memory/memory-archive-bpt-architecture-summary-template.md"
@@ -33685,6 +33750,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -33845,6 +33911,9 @@
     ],
     "挑对": [
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+    ],
+    "挑得": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "挑针": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -34318,6 +34387,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -34416,7 +34486,8 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "提供": [
       "/characters/15570.md",
@@ -34690,6 +34761,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -35145,6 +35217,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -35457,6 +35530,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -36278,7 +36352,8 @@
       "/characters/54117.md"
     ],
     "日常": [
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "日志": [
       "/memory/decisions.md",
@@ -37344,6 +37419,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -37826,6 +37902,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -38505,6 +38582,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -38791,6 +38869,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -39321,6 +39400,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -39746,6 +39826,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -40655,6 +40736,9 @@
     "游改": [
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
+    "游积": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
+    ],
     "源不": [
       "/characters/15573.md"
     ],
@@ -41007,7 +41091,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "版对": [
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "版本": [
       "/projects/project-silver-core-testbed.md",
@@ -42205,7 +42290,8 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "的上": [
-      "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+      "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "的下": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
@@ -42354,7 +42440,8 @@
     "的变": [
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "的可": [
       "/characters/15600.md"
@@ -42449,6 +42536,9 @@
     ],
     "的尖": [
       "/characters/15565.md"
+    ],
+    "的就": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "的干": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -43284,7 +43374,8 @@
     "知的": [
       "/characters/54116.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "知相": [
       "/characters/15563.md"
@@ -43788,7 +43879,8 @@
       "/characters/77925.md"
     ],
     "积累": [
-      "/characters/77925.md"
+      "/characters/77925.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "称号": [
       "/characters/122587.md",
@@ -47569,6 +47661,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -47802,6 +47895,9 @@
     ],
     "身鳞": [
       "/characters/15594.md"
+    ],
+    "车间": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "轨迹": [
       "/characters/54117.md"
@@ -48068,10 +48164,12 @@
     "这一": [
       "/characters/15604.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "这些": [
-      "/memory/memory-research-discord-archive-backfill-conflict.md"
+      "/memory/memory-research-discord-archive-backfill-conflict.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "这令": [
       "/characters/125346.md"
@@ -48324,6 +48422,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -48910,6 +49009,9 @@
     "里已": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "里挑": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
+    ],
     "里榨": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
@@ -49180,6 +49282,9 @@
       "/characters/15570.md",
       "/characters/77923.md"
     ],
+    "量的": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
+    ],
     "量社": [
       "/community/community-index.md",
       "/community/community-timeline.md"
@@ -49422,6 +49527,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -49701,6 +49807,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -50039,6 +50146,9 @@
     "间摧": [
       "/characters/77925.md"
     ],
+    "间日": [
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
+    ],
     "间横": [
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md"
     ],
@@ -50138,7 +50248,8 @@
     ],
     "际可": [
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "际意": [
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md"
@@ -51727,6 +51838,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -52075,6 +52187,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -52292,6 +52405,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -52546,6 +52660,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -52829,7 +52944,8 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "history": [
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md"
@@ -53155,6 +53271,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -53964,6 +54081,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -54584,6 +54702,7 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-last30days-skill-research-20260729.md",
       "/resource/resource-repo-engineering-maestro-sdk-agent-assembly-design-20260729.md",
@@ -54695,7 +54814,8 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "upstream": [
       "/resource/resource-repo-engineering-hermes-upstream-testrun-20260802.md",
@@ -54762,7 +54882,8 @@
       "/resource/resource-repo-engineering-hermes-weekly-update-20260816.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260824.md",
       "/resource/resource-repo-engineering-hermes-weekly-update-20260828.md",
-      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md"
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260907.md",
+      "/resource/resource-repo-engineering-hermes-weekly-update-20260919.md"
     ],
     "weibo": [
       "/community/community-weibo.md",
