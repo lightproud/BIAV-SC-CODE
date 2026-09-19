@@ -506,8 +506,15 @@ def do_run(tag: str | None, work: Path, report_path: Path | None, *,
     # ── 全绿：落台账 + 出变更清单，交会话推 main 并触发组装
     stat = stage_and_stat()
     commits = commit_log(pin["sha"], target, work)
+    # 台账备注如实分两种：真全绿 / 经受控闸门放行（§4.2 R3——别把放行写成全绿，
+    # 2026-09-07 那条「闭环全绿」抹平过程的教训就摆在移 pin 史里）
+    net_stage = next((st for st in stages if st["stage"].startswith("测试·换装后回归网")), {})
+    gated_n = len(net_stage.get("known") or []) if net_stage.get("gated") else 0
+    note = ("周更例程自动移 pin（闭环全绿）" if not gated_n else
+            f"周更例程自动移 pin（闭环绿；{gated_n} 条已知环境缺口经受控闸门放行，"
+            "逐条见 build/desktop-env-gaps.json）")
     write_pin(tag=target, sha=snap["sha"], tag_date=snap["tag_date"], engine=snap["engine"],
-              files=snap["files"], size=snap["size"], note="周更例程自动移 pin（闭环全绿）")
+              files=snap["files"], size=snap["size"], note=note)
     rep = _compose(pin, target, snap, stages, stat, commits, touched, patches, [])
     if report_path:
         report_path.write_text(json.dumps(rep, ensure_ascii=False, indent=2), encoding="utf-8")

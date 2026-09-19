@@ -1,0 +1,52 @@
+{
+  "_doc": [
+    "换装后回归网「已知环境缺口」台账（桌面端 vitest 的唯一放行依据，消费方 build/verify.py）。",
+    "",
+    "由来（守密人 2026-09-18 裁定）：2026-09-13 周更例程撞上 `src/store/voice-prefs.test.ts`",
+    "两条用例在本沙箱 jsdom + vitest 版本组合下恒红——既非银芯补丁引入（该档从未进任一",
+    "patch 射程），也非上游实现缺陷（真实浏览器里 spy 会正常拦截），但当时闸门是纯二元，",
+    "没有放行口子，闭环整条卡死、pin 未移。本台账即那次挂账（gaps.md 2026-09-13 条 (b) 项）",
+    "的处置：给回归网开一道**受控**豁免口，而不是把验证网整段调松。",
+    "",
+    "纪律（改这个档案前先读，它与 upstream-false-reds.json 同一套良心）：",
+    "1. 只认**精确 vitest nodeid**（`档案路径 > describe > 用例名`全串），绝不用裸词或通配 ——",
+    "   模式匹配会把将来任何同名真缺陷一并吞掉，那就成了「自动无视」而不是「受控豁免」。",
+    "2. **只认用例级条目**：nodeid 必须含 ` > `。整档崩（import 失败 / 零用例执行）一律",
+    "   不可豁免 —— 那种红说明组装树坏了，不是某条用例撞环境。",
+    "3. 每条必须写清 reason（凭什么判为环境缺口而非代码缺陷，要能被人复核）/ source（出处，",
+    "   指向 gaps.md 条目或实证报告）/ decided_on + decided_by（守密人裁定日期与裁定人）。",
+    "   **缺任一字段即响亮失败**，整条闭环停手 —— 无裁定出处的条目不许放行。",
+    "4. **只由人工增补**，程序绝不自动往里加。台账外失败一律按真缺陷候选报、例程停手。",
+    "5. 在册者在报告与公告里**照样逐条点名打印** —— 豁免不等于隐身。",
+    "6. 放行还须两道旁证同时成立（见 verify.run_desktop_net）：解析出的用例级失败条数与",
+    "   vitest 汇总的 failed 计数**完全一致**（不一致 = 解析漂了，一律不放行）；且无整档崩。",
+    "7. 上游或环境修好某条后它会从失败清单消失，台账里那条便成死条目，报告的 stale 字段",
+    "   会点名，由人工清理 —— 死条目留着不致命，但会让台账越来越像一张免死金牌。"
+  ],
+  "schema": {
+    "nodeid": "精确 vitest nodeid，形如 src/store/voice-prefs.test.ts > voice prefs > case name",
+    "cluster": "E 测试环境 API 伪影 | F 运行器时序 | G 平台缺件（新簇须在此登记后使用）",
+    "reason": "凭什么判为环境缺口而非代码缺陷（要能被人复核，含最小复现结论）",
+    "source": "出处：gaps.md 条目日期 / 报告档名 / 运行链接",
+    "decided_on": "守密人裁定日期 YYYY-MM-DD",
+    "decided_by": "裁定人（守密人）"
+  },
+  "entries": [
+    {
+      "nodeid": "|ui| src/store/voice-prefs.test.ts > keeps the desktop toggle local across config refreshes",
+      "reason": "本装配树 jsdom 29.1.1 + vitest 4.1.10 组合下，`vi.spyOn(localStorage, 'setItem')` 拦不住随后经 `window.localStorage.setItem` 发起的同一次调用——探针实证 `localStorage === window.localStorage` 恒为真、spy 零拦截、值真落库，用例遂读到真实写入而非 null。该档从未进任一补丁射程（三张补丁 grep voice-prefs 皆 0），真实浏览器里两条路径同对象、spy 正常拦截，故非银芯改装引入、亦非上游实现缺陷。",
+      "cluster": "E 测试环境 API 伪影",
+      "source": "gaps.md 2026-09-13 条 (b) 项 + 2026-09-18 本轮组装树最小复现探针（jsdom 29.1.1 / vitest 4.1.10）",
+      "decided_on": "2026-09-18",
+      "decided_by": "守密人"
+    },
+    {
+      "nodeid": "|ui| src/store/voice-prefs.test.ts > migrates the legacy preference once, not on every refresh",
+      "reason": "本装配树 jsdom 29.1.1 + vitest 4.1.10 组合下，`vi.spyOn(localStorage, 'setItem')` 拦不住随后经 `window.localStorage.setItem` 发起的同一次调用——探针实证 `localStorage === window.localStorage` 恒为真、spy 零拦截、值真落库，用例遂读到真实写入而非 null。该档从未进任一补丁射程（三张补丁 grep voice-prefs 皆 0），真实浏览器里两条路径同对象、spy 正常拦截，故非银芯改装引入、亦非上游实现缺陷。",
+      "cluster": "E 测试环境 API 伪影",
+      "source": "gaps.md 2026-09-13 条 (b) 项 + 2026-09-18 本轮组装树最小复现探针（jsdom 29.1.1 / vitest 4.1.10）",
+      "decided_on": "2026-09-18",
+      "decided_by": "守密人"
+    }
+  ]
+}
