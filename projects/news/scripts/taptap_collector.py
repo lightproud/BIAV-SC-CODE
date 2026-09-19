@@ -513,7 +513,32 @@ async def _extract_reviews_dom(page) -> list[dict]:
             const authorEl = el.querySelector(
                 '[class*="username"], [class*="user-name"], [class*="author"], [class*="nickname"]'
             );
+            // 星级：只取 innerText 在实测里始终为空（2026-08-17 归档 29 条评论
+            // 带星级 0 条，而其中一条正文明写「所以给三星」——分数在 DOM 里，
+            // 只是不在文本节点上）。改为多形态尝试，并把候选块的结构证据带出去，
+            // 让下一轮 CI 日志足以精确定位，而不是继续猜。
             const starEl = el.querySelector('[class*="star"], [class*="score"], [class*="rating"]');
+            let starProbe = '';
+            if (starEl) {
+                const inner = (starEl.innerText || starEl.textContent || '').trim();
+                const attr = starEl.getAttribute('aria-label') || starEl.getAttribute('title')
+                          || starEl.getAttribute('data-score') || starEl.getAttribute('data-rate') || '';
+                // 常见渲染：外层固定 5 颗灰星，内层按百分比宽度盖一层亮星
+                const widthEl = starEl.querySelector('[style*="width"]') ||
+                                (starEl.getAttribute('style') || '').includes('width') ? starEl : null;
+                const widthStyle = widthEl ? (widthEl.getAttribute('style') || '') : '';
+                // 或：N 个已点亮的子元素
+                const litCount = starEl.querySelectorAll(
+                    '[class*="active"], [class*="on"], [class*="filled"], [class*="light"]').length;
+                starProbe = JSON.stringify({
+                    cls: starEl.className && starEl.className.toString().slice(0, 80),
+                    inner: inner.slice(0, 24),
+                    attr: attr.slice(0, 24),
+                    width: (widthStyle.match(/width:[^;]+/) || [''])[0],
+                    lit: litCount,
+                    html: (starEl.innerHTML || '').slice(0, 160),
+                });
+            }
             const linkEl = el.querySelector('a[href*="/review/"]') || el.querySelector('a[href]');
 
             // 正文选择：原实现用 querySelector 取**文档序第一个**命中
@@ -540,6 +565,7 @@ async def _extract_reviews_dom(page) -> list[dict]:
                 likes: likeEl ? ((likeEl.innerText || likeEl.textContent || '').trim()) : '0',
                 author: authorEl ? ((authorEl.innerText || authorEl.textContent || '').trim()) : '',
                 score: starEl ? ((starEl.innerText || starEl.textContent || '').trim()) : '',
+                score_probe: starProbe,
                 url: linkEl ? linkEl.href : '',
             };
         });
@@ -561,10 +587,13 @@ async def _extract_reviews_dom(page) -> list[dict]:
             continue
         url = r.get("url", "")
         # 同一条评论在 DOM 里可能被多个卡片容器命中；按评论链接收敛。
-        if url:
-            if url in seen_urls:
-                continue
-            seen_urls.add(url)
+        # url 为空时不能跳过去重——2026-08-17 归档 29 条里有 7 条 linkEl 未命中、
+        # url 全为空串，它们绕过了本守卫，于是 29 条只落出 23 个唯一键。
+        # 回退键用「作者 + 正文前 80 字」：同一条评论这两项稳定，跨轮也判得出重复。
+        dedup_key = url or f"{author}|{content_text[:80]}"
+        if dedup_key in seen_urls:
+            continue
+        seen_urls.add(dedup_key)
         created_str = _parse_taptap_dom_time(r.get("time_str", ""))
         score = _parse_taptap_dom_score(r.get("score", ""))
         star_str = f"{'★' * score}{'☆' * (5 - score)} " if score else ""
@@ -589,6 +618,15 @@ async def _extract_reviews_dom(page) -> list[dict]:
             f"TapTap DOM: {dropped_author_echo} 条正文与用户名雷同已丢弃"
             f"（正文选择器疑似又抓到卡片头部块，请复查 debug_taptap_review.html）"
         )
+
+    # 星级取不到时，把星级块的结构证据打进日志。实测 2026-08-17 归档 29 条评论
+    # 带星级 0 条，而其中一条正文明写「所以给三星」——分数确实在 DOM 里，只是不在
+    # 文本节点上。与其继续猜选择器，不如让下一轮 CI 日志直接给出 class/属性/宽度/
+    # 点亮子元素数，据此一次改对。
+    if items and not any(i.get("score") for i in items):
+        probes = [r.get("score_probe") for r in (result or []) if r.get("score_probe")]
+        sample = probes[0] if probes else "（星级块选择器未命中任何元素）"
+        logger.warning(f"TapTap DOM: {len(items)} 条评论全部无评分，星级块结构样本: {sample}")
 
     if not items:
         logger.warning("TapTap: DOM extraction found no review elements")
