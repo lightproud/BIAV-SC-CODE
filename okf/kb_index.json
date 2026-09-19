@@ -7,14 +7,14 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 378,
-    "edges": 414,
-    "terms": 7140,
+    "concepts": 379,
+    "edges": 409,
+    "terms": 7152,
     "by_type": {
       "character": 72,
       "dataset": 71,
       "documentation": 167,
-      "knowledge-pointer": 48,
+      "knowledge-pointer": 49,
       "reference": 17,
       "research": 3
     },
@@ -22,7 +22,7 @@
       "assets": 12,
       "characters": 72,
       "community": 19,
-      "memory": 51,
+      "memory": 52,
       "projects": 31,
       "resource": 135,
       "sources": 19,
@@ -31,7 +31,7 @@
     },
     "by_tier": {
       "skeleton": 110,
-      "search": 268
+      "search": 269
     }
   },
   "sections": {
@@ -49,7 +49,7 @@
     },
     "memory": {
       "index": "/memory/index.md",
-      "count": 51
+      "count": 52
     },
     "projects": {
       "index": "/projects/index.md",
@@ -346,7 +346,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 14
+      "degree": 12
     },
     "/characters/15561.md": {
       "type": "character",
@@ -489,7 +489,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 7
     },
     "/characters/15571.md": {
       "type": "character",
@@ -643,7 +643,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/15582.md": {
       "type": "character",
@@ -671,7 +671,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/characters/15584.md": {
       "type": "character",
@@ -699,7 +699,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 11
+      "degree": 9
     },
     "/characters/15586.md": {
       "type": "character",
@@ -840,7 +840,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 18
+      "degree": 17
     },
     "/characters/15596.md": {
       "type": "character",
@@ -967,7 +967,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/54116.md": {
       "type": "character",
@@ -981,7 +981,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 8
     },
     "/characters/54117.md": {
       "type": "character",
@@ -1234,7 +1234,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 7
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1403,7 +1403,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/community/community-ruliweb.md": {
       "type": "dataset",
@@ -1487,7 +1487,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 8
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -1591,6 +1591,21 @@
       "tags": [
         "memory",
         "pointer"
+      ],
+      "section": "memory",
+      "tier": "search",
+      "degree": 0
+    },
+    "/memory/memory-archive-bpa-status-chronicle-20260918.md": {
+      "type": "knowledge-pointer",
+      "title": "Black Pool Agent 状态编年归档（截至 2026-08-17）",
+      "description": "（SOUL.md 模板 / CLI 别名）+ patches/ 白名单制（`build/rebrand.py` 规则引擎生成 388 文件补丁，含",
+      "resource": "/memory/archive/bpa-status-chronicle-20260918.md",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "archive",
+        "frozen-snapshot"
       ],
       "section": "memory",
       "tier": "search",
@@ -4573,7 +4588,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 783 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 555 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4587,7 +4602,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 1695 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 1716 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4601,7 +4616,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 4183 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3848 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4615,7 +4630,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 10021718 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 9523866 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4629,7 +4644,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1619 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1208 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4643,7 +4658,7 @@
     "/sources/note_com.md": {
       "type": "dataset",
       "title": "note_com 社区数据源",
-      "description": "note_com 平台采集档案，全量 56 条，健康度 active。",
+      "description": "note_com 平台采集档案，全量 43 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/note_com/",
       "tags": [
         "data_layer:full_archive",
@@ -4657,7 +4672,7 @@
     "/sources/official.md": {
       "type": "dataset",
       "title": "official 社区数据源",
-      "description": "official 平台采集档案，全量 363 条，健康度 active。",
+      "description": "official 平台采集档案，全量 56 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/news/",
       "tags": [
         "data_layer:full_archive",
@@ -4671,7 +4686,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 684 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 419 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4685,7 +4700,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 4664 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 4144 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4694,12 +4709,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 3
     },
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 471 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 181 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4713,7 +4728,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5885 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5473 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4727,7 +4742,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 290 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 291 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4769,7 +4784,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 5589 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 5620 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4778,12 +4793,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 14562 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 14600 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4792,12 +4807,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 7
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9606 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 8919 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4811,7 +4826,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 4098 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 4061 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4825,7 +4840,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 3941 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 3735 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -5592,11 +5607,6 @@
         "cv"
       ],
       [
-        "/community/community-reddit.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:Pandia",
         "mention"
@@ -5638,11 +5648,6 @@
       ],
       [
         "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
-        "/sources/reddit.md",
         "提及:Pandia",
         "mention"
       ],
@@ -5895,11 +5900,6 @@
         "variant"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
         "/memory/decisions.md",
         "提及:朵尔",
         "mention"
@@ -5921,11 +5921,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:朵尔",
         "mention"
       ],
@@ -6130,11 +6125,6 @@
     ],
     "/characters/15581.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:莉莉",
         "mention"
@@ -6146,11 +6136,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:莉莉",
         "mention"
       ],
@@ -6189,12 +6174,22 @@
         "mention"
       ],
       [
+        "/community/community-steam.md",
+        "提及:奥尔拉",
+        "mention"
+      ],
+      [
         "/memory/morimens-context.md",
         "提及:奥尔拉",
         "mention"
       ],
       [
         "/sources/bilibili.md",
+        "提及:奥尔拉",
+        "mention"
+      ],
+      [
+        "/sources/steam.md",
         "提及:奥尔拉",
         "mention"
       ]
@@ -6228,11 +6223,6 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:奥吉尔",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:奥吉尔",
         "mention"
@@ -6249,11 +6239,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:奥吉尔",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:奥吉尔",
         "mention"
       ],
@@ -6478,11 +6463,6 @@
       [
         "/sources/reddit.md",
         "提及:Ramona",
-        "mention"
-      ],
-      [
-        "/sources/taptap_review.md",
-        "提及:拉蒙娜",
         "mention"
       ],
       [
@@ -7222,7 +7202,17 @@
     ],
     "/characters/15604.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:莱克",
         "mention"
       ]
@@ -7234,12 +7224,22 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "提及:塔薇",
         "mention"
       ],
       [
         "/community/community-youtube-comments.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:塔薇",
         "mention"
       ],
@@ -7528,12 +7528,7 @@
         "mention"
       ],
       [
-        "/community/community-steam.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/community/community-weibo.md",
+        "/community/community-bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -7553,12 +7548,7 @@
         "mention"
       ],
       [
-        "/sources/steam.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
+        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -7653,11 +7643,6 @@
         "mention"
       ],
       [
-        "/characters/15585.md",
-        "提及:奥吉尔",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:拉蒙娜",
         "mention"
@@ -7678,18 +7663,23 @@
         "mention"
       ],
       [
-        "/characters/15570.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
-        "/characters/15581.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
         "/characters/15586.md",
         "提及:旺达",
+        "mention"
+      ],
+      [
+        "/characters/15604.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
         "mention"
       ],
       [
@@ -7850,11 +7840,6 @@
     ],
     "/community/community-reddit.md": [
       [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:Ramona",
         "mention"
@@ -7889,8 +7874,8 @@
     ],
     "/community/community-steam.md": [
       [
-        "/characters/94450.md",
-        "提及:茉夏",
+        "/characters/15583.md",
+        "提及:奥尔拉",
         "mention"
       ],
       [
@@ -7962,11 +7947,6 @@
       [
         "/characters/54116.md",
         "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
         "mention"
       ],
       [
@@ -9521,11 +9501,6 @@
         "mention"
       ],
       [
-        "/characters/15585.md",
-        "提及:奥吉尔",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:拉蒙娜",
         "mention"
@@ -9546,18 +9521,23 @@
         "mention"
       ],
       [
-        "/characters/15570.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
-        "/characters/15581.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
         "/characters/15586.md",
         "提及:旺达",
+        "mention"
+      ],
+      [
+        "/characters/15604.md",
+        "提及:莱克",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
         "mention"
       ],
       [
@@ -9606,11 +9586,6 @@
     ],
     "/sources/reddit.md": [
       [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:Ramona",
         "mention"
@@ -9635,8 +9610,8 @@
     ],
     "/sources/steam.md": [
       [
-        "/characters/94450.md",
-        "提及:茉夏",
+        "/characters/15583.md",
+        "提及:奥尔拉",
         "mention"
       ],
       [
@@ -9665,11 +9640,6 @@
       ]
     ],
     "/sources/taptap_review.md": [
-      [
-        "/characters/15595.md",
-        "提及:拉蒙娜",
-        "mention"
-      ],
       [
         "/characters/130226.md",
         "提及:沙耶",
@@ -9705,11 +9675,6 @@
       [
         "/characters/54116.md",
         "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
         "mention"
       ],
       [
@@ -10301,6 +10266,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -10406,6 +10372,7 @@
     ],
     "agent": [
       "/README.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-positioning.md",
       "/projects/project-black-pool-agent.md",
@@ -10550,6 +10517,7 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/decisions-archive.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -10839,6 +10807,7 @@
       "/characters/95786.md"
     ],
     "black": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -10932,6 +10901,7 @@
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
     ],
     "bpa": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/resource/resource-repo-engineering-bpa-selfcode-audit-20260804.md"
     ],
     "bpt": [
@@ -11024,6 +10994,7 @@
     ],
     "build": [
       "/README.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
     ],
     "builtin": [
@@ -11120,6 +11091,7 @@
       "/resource/resource-repo-engineering-biav-sc-p27-history-rewrite-runbook-20260720.md"
     ],
     "chronicle": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md"
     ],
     "ci": [
@@ -11160,6 +11132,7 @@
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md"
     ],
     "cli": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/projects/silver-core-sdk-doc-tool-parity.md"
     ],
     "clone": [
@@ -11358,6 +11331,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -11784,6 +11758,7 @@
       "/assets/assets-version.md",
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -12138,6 +12113,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -13089,6 +13065,7 @@
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "frozen": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -14004,6 +13981,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -14556,6 +14534,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -14774,6 +14753,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -15136,6 +15116,9 @@
     "pass": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
     ],
+    "patches": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
+    ],
     "patterns": [
       "/memory/memory-ext-research-best-wiki-features.md"
     ],
@@ -15353,6 +15336,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -15974,6 +15958,7 @@
     "py": [
       "/README.md",
       "/assets/assets-readme.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/resource/resource-data-diagnostics-archive-integrity-audit-20260729.md"
     ],
     "python": [
@@ -16099,6 +16084,9 @@
     "rebase": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+    ],
+    "rebrand": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "recommendations": [
       "/resource/resource-game-analysis-role-action-recommendations-202605.md"
@@ -16944,6 +16932,7 @@
     "snapshot": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-sentinel-baseline.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -16966,6 +16955,9 @@
     ],
     "sol": [
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
+    ],
+    "soul": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "source": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -17027,6 +17019,7 @@
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "status": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/project-status.md"
     ],
@@ -18559,6 +18552,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -18860,6 +18854,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -21338,6 +21333,9 @@
     "件蓝": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
+    "件补": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
+    ],
     "件规": [
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
@@ -22027,6 +22025,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -23167,6 +23166,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -23337,6 +23337,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -23960,6 +23961,9 @@
     "则会": [
       "/characters/94450.md"
     ],
+    "则引": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
+    ],
     "创伤": [
       "/characters/77925.md"
     ],
@@ -24025,7 +24029,8 @@
       "/characters/15560.md",
       "/characters/15577.md",
       "/characters/15595.md",
-      "/characters/15602.md"
+      "/characters/15602.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "别无": [
       "/characters/77922.md"
@@ -24120,6 +24125,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -24998,6 +25004,9 @@
     ],
     "单切": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "单制": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "单向": [
       "/README.md",
@@ -26380,6 +26389,9 @@
     ],
     "名与": [
       "/resource/resource-repo-engineering-silver-core-repo-split-migration-plan-20260719.md"
+    ],
+    "名单": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "名提": [
       "/characters/15602.md"
@@ -27823,6 +27835,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -28699,6 +28712,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -30284,6 +30298,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -30967,6 +30982,9 @@
     "年史": [
       "/memory/decisions-archive.md"
     ],
+    "年归": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
+    ],
     "年踩": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
@@ -31432,6 +31450,7 @@
     ],
     "引擎": [
       "/characters/15602.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
@@ -31545,6 +31564,7 @@
     ],
     "归档": [
       "/memory/decisions-archive.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
@@ -31869,6 +31889,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -32850,6 +32871,7 @@
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md"
     ],
     "截至": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md"
     ],
     "户原": [
@@ -33496,6 +33518,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -34505,6 +34528,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -34786,6 +34810,9 @@
     "擎每": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
+    "擎生": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
+    ],
     "擎终": [
       "/characters/15602.md"
     ],
@@ -34951,6 +34978,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -35262,6 +35290,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -35851,6 +35880,7 @@
       "/README.md",
       "/assets/assets-chat-onboarding-snippet.md",
       "/assets/assets-narrative-structure.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-storage-discussion.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
@@ -35877,6 +35907,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -37146,6 +37177,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -37627,6 +37659,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -39396,6 +39429,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
     "模板": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-contribution-protocol-hub.md"
     ],
@@ -39545,6 +39579,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -41145,6 +41180,7 @@
       "/characters/15572.md",
       "/characters/15583.md",
       "/characters/77925.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
@@ -41601,6 +41637,7 @@
       "/characters/15592.md",
       "/characters/15593.md",
       "/characters/77922.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -42138,6 +42175,9 @@
     ],
     "登麻": [
       "/characters/15589.md"
+    ],
+    "白名": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "白嫖": [
       "/README.md"
@@ -44743,7 +44783,8 @@
       "/memory/lessons-learned.md"
     ],
     "编年": [
-      "/memory/decisions-archive.md"
+      "/memory/decisions-archive.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "编排": [
       "/memory/capability-index.md",
@@ -45906,6 +45947,9 @@
     "行质": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
+    "补丁": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
+    ],
     "补上": [
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md"
     ],
@@ -46140,6 +46184,9 @@
     ],
     "规划": [
       "/memory/strategic-plan-2026.md"
+    ],
+    "规则": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "规程": [
       "/resource/resource-repo-engineering-sdk-prompt-mechanism-audit-20260727.md"
@@ -46427,6 +46474,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -47354,6 +47402,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -49206,6 +49255,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -50912,6 +50962,7 @@
       "/sources/youtube_comments.md"
     ],
     "agent": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/projects/project-black-pool-agent.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -51010,6 +51061,7 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
       "/memory/decisions-archive.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -51149,6 +51201,7 @@
       "/projects/releases-treasure-map.md"
     ],
     "black": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -51512,6 +51565,7 @@
       "/assets/assets-version.md",
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -51859,6 +51913,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -52619,6 +52674,7 @@
       "/resource/resource-repo-engineering-scs-req-memory-frontmatter-attachment-r1-20260729.md"
     ],
     "frozen": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -52937,6 +52993,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -53343,6 +53400,7 @@
       "/memory/decisions-archive.md",
       "/memory/decisions.md",
       "/memory/lessons-learned.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -53691,6 +53749,7 @@
       "/story/story_units.md"
     ],
     "pool": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -54241,6 +54300,7 @@
     "snapshot": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-sentinel-baseline.md",
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -55403,6 +55463,9 @@
     "帕西": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
+    "年归": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
+    ],
     "库瘦": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
@@ -55425,6 +55488,7 @@
       "/projects/entry-claude-md.md"
     ],
     "归档": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
@@ -55474,6 +55538,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "截至": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md"
     ],
     "手册": [
@@ -55936,6 +56001,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "状态": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md",
       "/memory/memory-archive-sdk-status-chronicle-20260727.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
@@ -56277,6 +56343,9 @@
     "绪凛": [
       "/characters/15572.md",
       "/characters/15579.md"
+    ],
+    "编年": [
+      "/memory/memory-archive-bpa-status-chronicle-20260918.md"
     ],
     "编码": [
       "/memory/memory-ext-karpathy-coding-principles.md"

@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "youtube_comments 社区数据源"
-description: "youtube_comments 平台采集档案，全量 3941 条，健康度 active。"
+description: "youtube_comments 平台采集档案，全量 3735 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/youtube_comments/"
 tags: ["data_layer:full_archive", "platform:youtube_comments", "health:active"]
-timestamp: "2026-09-18T15:48:52.604761+00:00"
+timestamp: "2026-09-19T03:04:45.808830+00:00"
 ---
 
 # 数据层指针
@@ -15,7 +15,7 @@ timestamp: "2026-09-18T15:48:52.604761+00:00"
 |------|------|
 | 平台 | youtube_comments |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/youtube_comments/` |
-| 全量条数 | 3941 |
+| 全量条数 | 3735 |
 | 采集健康度 | active |
 | 最后成功 | 2026-09-18 |
 

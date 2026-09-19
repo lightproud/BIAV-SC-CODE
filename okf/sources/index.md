@@ -6,22 +6,22 @@
 
 ## 平台
 
-* [appstore](/sources/appstore.md) - 全量 783 条 / active
-* [bahamut](/sources/bahamut.md) - 全量 1695 条 / active
-* [bilibili](/sources/bilibili.md) - 全量 4183 条 / active
-* [discord](/sources/discord.md) - 全量 10021718 条 / active
-* [google_play](/sources/google_play.md) - 全量 1619 条 / active
-* [note_com](/sources/note_com.md) - 全量 56 条 / active
-* [official](/sources/official.md) - 全量 363 条 / active
-* [pixiv](/sources/pixiv.md) - 全量 684 条 / active
-* [reddit](/sources/reddit.md) - 全量 4664 条 / active
-* [ruliweb](/sources/ruliweb.md) - 全量 471 条 / active
-* [steam](/sources/steam.md) - 全量 5885 条 / active
-* [steam_discussion](/sources/steam_discussion.md) - 全量 290 条 / active
+* [appstore](/sources/appstore.md) - 全量 555 条 / active
+* [bahamut](/sources/bahamut.md) - 全量 1716 条 / active
+* [bilibili](/sources/bilibili.md) - 全量 3848 条 / active
+* [discord](/sources/discord.md) - 全量 9523866 条 / active
+* [google_play](/sources/google_play.md) - 全量 1208 条 / active
+* [note_com](/sources/note_com.md) - 全量 43 条 / active
+* [official](/sources/official.md) - 全量 56 条 / active
+* [pixiv](/sources/pixiv.md) - 全量 419 条 / active
+* [reddit](/sources/reddit.md) - 全量 4144 条 / active
+* [ruliweb](/sources/ruliweb.md) - 全量 181 条 / active
+* [steam](/sources/steam.md) - 全量 5473 条 / active
+* [steam_discussion](/sources/steam_discussion.md) - 全量 291 条 / active
 * [stopgame](/sources/stopgame.md) - 全量 149 条 / active
 * [taptap](/sources/taptap.md) - 全量 24 条 / degraded
-* [taptap_review](/sources/taptap_review.md) - 全量 5589 条 / active
-* [weibo](/sources/weibo.md) - 全量 14562 条 / active
-* [weixin](/sources/weixin.md) - 全量 9606 条 / degraded
-* [youtube](/sources/youtube.md) - 全量 4098 条 / active
-* [youtube_comments](/sources/youtube_comments.md) - 全量 3941 条 / active
+* [taptap_review](/sources/taptap_review.md) - 全量 5620 条 / active
+* [weibo](/sources/weibo.md) - 全量 14600 条 / active
+* [weixin](/sources/weixin.md) - 全量 8919 条 / degraded
+* [youtube](/sources/youtube.md) - 全量 4061 条 / active
+* [youtube_comments](/sources/youtube_comments.md) - 全量 3735 条 / active

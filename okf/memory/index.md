@@ -1,4 +1,4 @@
-# 银芯记忆层指针 (51)
+# 银芯记忆层指针 (52)
 
 每张卡是一份**指针** concept，正文权威在 `memory/**`，此处不复刻。核心 10 份 + 全层扩展。
 
@@ -40,6 +40,7 @@
 * [直推 main 政策（active hub）](/memory/memory-ext-active-policy-direct-push-main.md) - **一句话摘要**：银芯仓库自 2026-03-29 决策、2026-04-26 PR #141 全档案对齐落地起，**所有 AI 会话（现
 * [Silver Core SDK — 自我改进闭环需求文档](/memory/memory-ext-active-self-improvement-requirements.md) - BPT 目前的运行质量改进完全依赖唯一维护者的人工排查:断流原因靠事后翻监控,token 消耗靠账单倒推,记忆系统效果无法量化。运行数据(t
 * [银芯-黑池数据接口（active hub）](/memory/memory-ext-active-silver-blackpool-interface.md) - **一句话摘要**：银芯（公开信息层）与黑池（内部层 SVN + Qoder）通过**严格单向流动**协作——银芯采集外部信息单向输出至黑池
+* [Black Pool Agent 状态编年归档（截至 2026-08-17）](/memory/memory-archive-bpa-status-chronicle-20260918.md) - （SOUL.md 模板 / CLI 别名）+ patches/ 白名单制（`build/rebrand.py` 规则引擎生成 388 文件补
 * [BPT 架构周报模板](/memory/memory-archive-bpt-architecture-summary-template.md) - 1. **保密**：不贴源代码片段、不贴敏感配置、不贴未发布功能名。仅贴**结构性事实**（模块名、文件数、行数、状态值、错误类型、toke
 * [BPT 指导搬运日志](/memory/memory-archive-bpt-guidance-log.md) - 不同性质的反馈走不同档案：
 * [BPT 战略转向归档（2026-04-19）](/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md) - 2026-04-19 守密人决策：BPT（黑池终端）整条战线**从银芯仓库删除**，不再在银芯内部开发。银芯转为 BPT 的指导者，采用「人
