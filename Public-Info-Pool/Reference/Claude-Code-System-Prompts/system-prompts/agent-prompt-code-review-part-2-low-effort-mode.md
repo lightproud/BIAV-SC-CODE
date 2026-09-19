@@ -1,7 +1,7 @@
 <!--
 name: "Agent Prompt: /code-review part 2 low effort mode"
 description: "Low-effort /code-review prompt that reads the diff once and returns up to four hunk-visible runtime correctness findings"
-ccVersion: "2.1.216"
+ccVersion: "2.1.235"
 variables:
   - "HAS_REPORT_FINDINGS_TOOL"
   - "REPORT_FINDINGS_TOOL_NAME"

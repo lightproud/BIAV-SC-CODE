@@ -1,7 +1,7 @@
 <!--
 name: "Skill: Code Review low effort expanded-findings mode"
 description: "Low-effort /code-review prompt that reads the diff once, returns up to eight hunk-visible findings, and targets at least min(files_changed, 4) genuine findings"
-ccVersion: "2.1.216"
+ccVersion: "2.1.235"
 variables:
   - "HAS_REPORT_FINDINGS_TOOL"
   - "REPORT_FINDINGS_TOOL_NAME"

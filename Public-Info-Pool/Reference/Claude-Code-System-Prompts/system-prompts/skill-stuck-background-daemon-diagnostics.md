@@ -1,7 +1,7 @@
 <!--
 name: "Skill: /stuck (background-daemon diagnostics)"
 description: "The background-daemon troubleshooting section of the /stuck skill"
-ccVersion: "2.1.173"
+ccVersion: "2.1.235"
 variables:
   - "DAEMON_LOCK_CONTENT"
   - "DAEMON_STATUS_CONTENT"

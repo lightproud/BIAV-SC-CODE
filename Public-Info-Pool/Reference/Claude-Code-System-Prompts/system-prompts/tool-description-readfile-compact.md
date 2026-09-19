@@ -1,7 +1,7 @@
 <!--
 name: "Tool Description: ReadFile compact"
 description: "Compact file-read tool description served to newer models — absolute path, default line cap, and image/PDF/notebook handling"
-ccVersion: "2.1.178"
+ccVersion: "2.1.235"
 variables:
   - "MAX_LINES_CONSTANT"
   - "CONDITIONAL_LENGTH_NOTE"

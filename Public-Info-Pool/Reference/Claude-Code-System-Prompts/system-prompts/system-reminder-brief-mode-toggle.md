@@ -1,7 +1,7 @@
 <!--
 name: "System Reminder: Brief mode toggle"
 description: "Announces whether brief mode is enabled and whether user-facing output must use the SendUserMessage tool"
-ccVersion: "2.1.173"
+ccVersion: "2.1.235"
 variables:
   - "IS_BRIEF_MODE_ENABLED"
   - "SEND_USER_MESSAGE_TOOL_NAME"

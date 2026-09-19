@@ -1,6 +1,7 @@
 /**
  * Corpus-sync guard (Track B): every `faithful` main-loop fragment must still be
- * found in its declared archive source. This turns upstream drift into a test
+ * found in its declared source (version-pinned where upstream removed/revised it).
+ * This turns unaccounted source drift into a test
  * failure instead of a silent divergence — the core promise of the assembly
  * layer over the old hardcoded snapshot.
  *
@@ -28,6 +29,18 @@ const ARCHIVE = join(
   'system-prompts',
 );
 
+// These two sources changed upstream after the maintained SDK was shipped.
+// Validate historical provenance against the original, versioned source rather
+// than changing shipped behavior just to refresh an external reference archive.
+const PINNED = join(here, 'fixtures', 'prompt-provenance-2.1.220');
+const HISTORICAL_SLUGS = new Set([
+  'system-prompt-clarifying-question-research-first',
+  'system-prompt-outcome-first-communication-style',
+]);
+const sourceFile = (slug: string) => join(
+  HISTORICAL_SLUGS.has(slug) ? PINNED : ARCHIVE, `${slug}.md`,
+);
+
 const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
 const longestLine = (text: string) => text.split('\n').sort((a, b) => b.length - a.length)[0]!;
 const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
@@ -41,7 +54,7 @@ describe('main-loop fragment provenance (corpus-sync guard)', () => {
     const drifted: string[] = [];
     for (const f of ALL) {
       if (!f.faithful) continue;
-      const file = join(ARCHIVE, `${f.slug}.md`);
+      const file = sourceFile(f.slug);
       if (!existsSync(file)) {
         drifted.push(`${f.id}: archive file missing (${f.slug}.md)`);
         continue;
@@ -59,7 +72,7 @@ describe('main-loop fragment provenance (corpus-sync guard)', () => {
     const drifted: string[] = [];
     for (const f of ALL) {
       if (f.faithful || f.slug === 'adapted' || f.slug === 'sdk-original') continue;
-      const file = join(ARCHIVE, `${f.slug}.md`);
+      const file = sourceFile(f.slug);
       if (!existsSync(file)) {
         drifted.push(`${f.id}: cited source missing (${f.slug}.md)`);
         continue;

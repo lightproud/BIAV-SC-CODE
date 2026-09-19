@@ -1,7 +1,7 @@
 <!--
 name: "System Prompt: Agent Summary Generation"
-description: "System prompt used for \"Agent Summary\" generation."
-ccVersion: "2.1.32"
+description: "System prompt used for \"Agent Summary\" generation"
+ccVersion: "2.1.235"
 variables:
   - "PREVIOUS_AGENT_SUMMARY"
 -->

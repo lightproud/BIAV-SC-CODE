@@ -1,7 +1,7 @@
 <!--
 name: "Tool Description: Agent (simple usage notes)"
 description: "Simplified usage notes for the Agent tool, including when to delegate, fork behavior, resumption, worktree isolation, background execution, parallel launches, and context restrictions"
-ccVersion: "2.1.215"
+ccVersion: "2.1.235"
 variables:
   - "TOOL_BASE_DESCRIPTION"
   - "HAS_PRO_RESTRICTION_NOTE"
