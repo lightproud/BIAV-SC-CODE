@@ -140,3 +140,12 @@
   **仍开着的缺口**：上条 ① 的 `scripts/desktop-update` 目录**裸词铺开评估**未做（本轮仍走
   五处字面量定点规则）；两条 voice-prefs 条目待环境或上游升级 jsdom 后自然成死条目，
   届时由 stale 点名清理。
+- **2026-09-19 · 判定链断裂：闸门只覆盖会话侧，组装线仍是裸二元（待守密人裁定）**：
+  受控豁免闸门落在 `build/verify.py`，只有会话侧 `sync_upstream.py run` 经过它；而组装线
+  `.github/workflows/assemble-black-pool-bundle.yml` 的 `regression-net` job 跑的是裸
+  `npx vitest run`，退出码直接决定成败。**同一棵换装树、同一套用例，两条链判词可以相反**
+  ——闭环放行、组装线卡死，包照样出不来（2026-09-19 本轮移 pin 后首次触发组装即撞上此风险）。
+  预备入口 `build/desktop_net_gate.py` 已入库（跑 vitest → 喂同一个
+  `verify.evaluate_desktop_net` → 同一本台账 → 退出码据判定），**四条放行前提一条不放宽**；
+  但**尚未接进 workflow**——改 CI 行为属守密人裁定范畴，接线与否待裁。未接线期间该脚本
+  零消费，`consumption_audit.py` 会把它报成零消费产物，属预期。
