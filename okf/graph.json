@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-19",
+  "generated": "2026-09-20",
   "stats": {
     "nodes": 380,
-    "edges": 409
+    "edges": 411
   },
   "nodes": [
     {
@@ -3819,7 +3819,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:weixin",
-        "health:degraded"
+        "health:active"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4588,6 +4588,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
       "rel_type": "mention"
@@ -4626,12 +4632,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -4704,6 +4704,12 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -6082,6 +6088,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
       "rel_type": "mention"
@@ -6120,12 +6132,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -6204,6 +6210,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
