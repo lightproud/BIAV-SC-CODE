@@ -239,12 +239,18 @@ class FakePage:
     def __init__(self, selector_results=None):
         # selector_results: {selector: [FakeEl, ...]}
         self._selector_results = selector_results or {}
+        self.goto_urls = []      # 记录访问过的 URL（多关键词断言用）
+        self.evaluates = []      # 记录 evaluate 调用（滚动断言用）
 
     def set_default_timeout(self, ms):
         pass
 
     def goto(self, url, **kwargs):
-        pass
+        self.goto_urls.append(url)
+
+    def evaluate(self, script, *a, **kw):
+        self.evaluates.append(script)
+        return None
 
     def wait_for_timeout(self, ms):
         pass
@@ -333,6 +339,31 @@ class TestFetchWeiboPlaywright(unittest.TestCase, FetchPlaywrightTestMixin):
         # 不注入 playwright → import 失败 → 返回空
         with mock.patch.dict(sys.modules, {"playwright": None, "playwright.sync_api": None}):
             self.assertEqual(pc.fetch_weibo_playwright(), [])
+
+    def test_visits_both_keywords(self):
+        """简繁两个关键词都要走——原实现只硬编码了简体那一个。"""
+        art = FakeEl(children={
+            '.weibo-text, .content, p': FakeEl(text="足够长的微博正文内容用于采集测试"),
+            'time, [class*="time"], [class*="date"]': None,
+            'a[href*="status"]': None,
+        })
+        page = FakePage({'article': [art]})
+        with self._run_with_page(page):
+            pc.fetch_weibo_playwright()
+        self.assertEqual(len(page.goto_urls), len(pc.WEIBO_KEYWORDS))
+
+    def test_dedups_across_keywords(self):
+        """简繁两轮结果大量重合，同一条不能计两次。"""
+        art = FakeEl(children={
+            '.weibo-text, .content, p': FakeEl(text="足够长的微博正文内容用于采集测试"),
+            'time, [class*="time"], [class*="date"]': None,
+            'a[href*="status"]': None,
+        })
+        page = FakePage({'article': [art]})
+        with self._run_with_page(page):
+            items = pc.fetch_weibo_playwright()
+        # 两个关键词各看到同一条 → 去重后仍是 1 条
+        self.assertEqual(len(items), 1)
 
 
 class TestFetchTaptapPlaywright(unittest.TestCase, FetchPlaywrightTestMixin):

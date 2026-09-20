@@ -13,11 +13,18 @@ Tested and working:
 import logging
 import re
 import sys
+from urllib.parse import quote
 from datetime import datetime, timedelta, timezone, UTC
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # 时间归一单一真源（H4）
+
+# 微博 Playwright 路径的关键词与滚动深度。关键词与 global_collectors.KEYWORDS['zh']
+# 保持一致（简繁两个）——原实现只硬编码了简体那一个。滚动 6 轮：移动版每屏约 10 条，
+# 够把单关键词一轮的可见面从「首屏 20 条硬截」提到百条量级。
+WEIBO_KEYWORDS = ('忘却前夜', '忘卻前夜')
+WEIBO_MAX_SCROLLS = 6
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -65,15 +72,34 @@ def _parse_weibo_article(article) -> dict:
         if href and not href.startswith('http'):
             href = f'https://m.weibo.cn{href}'
 
+    # author / engagement 原为硬编码 ''/0——归档里 weibo 全部条目作者空、互动量 0
+    # 就是这么来的（也因此这个源在社区报告里排不了序）。移动版 article 内有昵称与
+    # 转发/评论/点赞三个计数，能取就取，取不到再回落原默认值。
+    author = ''
+    author_el = article.query_selector('.m-text-cut, [class*="name"], header a')
+    if author_el:
+        author = (author_el.inner_text() or '').strip()[:40]
+
+    engagement = 0
+    try:
+        foot = article.query_selector('footer, [class*="toolbar"], [class*="card-act"]')
+        if foot:
+            nums = re.findall(r'\d[\d.]*\s*万?', foot.inner_text() or '')
+            for n in nums:
+                n = n.strip()
+                engagement += int(float(n[:-1]) * 10000) if n.endswith('万') else int(float(n))
+    except (ValueError, AttributeError):
+        engagement = 0
+
     item = {
         'title': text[:80],
         'summary': text[:500],
         'source': 'weibo',
         'time': parsed_time,
         'url': href,
-        'engagement': 0,
-        'is_hot': False,
-        'author': '',
+        'engagement': engagement,
+        'is_hot': engagement > 500,
+        'author': author,
         'tags': ['weibo'],
     }
     if time_approx:
@@ -236,27 +262,64 @@ def fetch_weibo_playwright() -> list[dict]:
             page = browser.new_page()
             page.set_default_timeout(TIMEOUT_MS)
 
-            # 移动版无需登录
-            url = 'https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C'
-            logger.info('微博: 访问移动版')
-            page.goto(url, wait_until='networkidle')
-            page.wait_for_timeout(3000)
-
-            articles = page.query_selector_all('article')
-            logger.info(f'微博: 找到 {len(articles)} 条微博')
-
-            for article in articles[:20]:
+            # 移动版无需登录。两个关键词都要走：原实现只硬编码了简体「忘却前夜」，
+            # 而 HTTP 路径的 KEYWORDS['zh'] 是简繁两个，繁体那半在 Playwright 路径
+            # 一直没被采集过。
+            seen_urls: set[str] = set()
+            for keyword in WEIBO_KEYWORDS:
+                q = quote(keyword)
+                url = f'https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D{q}'
+                logger.info(f'微博: 访问移动版 "{keyword}"')
                 try:
-                    item = _parse_weibo_article(article)
-                    if item is not None:
-                        items.append(item)
-                # 逐条解析是 best-effort（页面结构常变，单条失败不该毁掉整轮），但
-                # 原先的裸 `except Exception: continue` 连解析器**自己写崩**都一起
-                # 吞掉——结构改版导致的全军覆没与「今天就是没几条」长得一模一样。
-                # 照旧不中断，但出声：条数对不上时日志里有据可查。
+                    page.goto(url, wait_until='networkidle')
                 except Exception as exc:
-                    logger.debug(f'跳过一条解析失败的article: {type(exc).__name__}: {exc}')
+                    logger.warning(f'微博 "{keyword}" 打开失败: {type(exc).__name__}: {exc}')
                     continue
+                page.wait_for_timeout(3000)
+
+                # 滚动触发懒加载。原实现只取首屏并硬截 articles[:20]，
+                # 单轮上限 20 条——2026-08-15~18 每日归档稳定停在 10 条上下，
+                # 正是首屏那点量。连续两轮无新增即判到底。
+                stale = 0
+                for _ in range(WEIBO_MAX_SCROLLS):
+                    before = len(page.query_selector_all('article'))
+                    try:
+                        page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
+                    except Exception:
+                        break
+                    page.wait_for_timeout(1500)
+                    if len(page.query_selector_all('article')) == before:
+                        stale += 1
+                        if stale >= 2:
+                            break
+                    else:
+                        stale = 0
+
+                articles = page.query_selector_all('article')
+                logger.info(f'微博 "{keyword}": DOM 上找到 {len(articles)} 条')
+
+                kept = 0
+                for article in articles:
+                    try:
+                        item = _parse_weibo_article(article)
+                        if item is None:
+                            continue
+                        # 跨关键词去重：简繁两轮会大量重合。url 为空时回退到正文，
+                        # 否则空 url 条目会每轮重复计入（与 taptap 同型的坑）。
+                        key = item.get('url') or item.get('summary', '')[:80]
+                        if key in seen_urls:
+                            continue
+                        seen_urls.add(key)
+                        items.append(item)
+                        kept += 1
+                    # 逐条解析是 best-effort（页面结构常变，单条失败不该毁掉整轮），但
+                    # 原先的裸 `except Exception: continue` 连解析器**自己写崩**都一起
+                    # 吞掉——结构改版导致的全军覆没与「今天就是没几条」长得一模一样。
+                    # 照旧不中断，但出声：条数对不上时日志里有据可查。
+                    except Exception as exc:
+                        logger.debug(f'跳过一条解析失败的article: {type(exc).__name__}: {exc}')
+                        continue
+                logger.info(f'微博 "{keyword}": 解析出 {kept} 条新条目')
 
             browser.close()
     except Exception as e:
