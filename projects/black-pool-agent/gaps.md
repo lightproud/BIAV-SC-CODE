@@ -140,3 +140,18 @@
   **仍开着的缺口**：上条 ① 的 `scripts/desktop-update` 目录**裸词铺开评估**未做（本轮仍走
   五处字面量定点规则）；两条 voice-prefs 条目待环境或上游升级 jsdom 后自然成死条目，
   届时由 stale 点名清理。
+- **2026-09-19 · 判定链断裂：闸门只覆盖会话侧，组装线仍是裸二元（待守密人裁定）**：
+  受控豁免闸门落在 `build/verify.py`，只有会话侧 `sync_upstream.py run` 经过它；而组装线
+  `.github/workflows/assemble-black-pool-bundle.yml` 的 `regression-net` job 跑的是裸
+  `npx vitest run`，退出码直接决定成败。**同一棵换装树、同一套用例，两条链判词可以相反**
+  ——闭环放行、组装线卡死，包照样出不来（2026-09-19 本轮移 pin 后首次触发组装即撞上此风险）。
+  **已实证，非推演**：本轮移 pin 合并后首次触发组装
+  （[run 35420409159](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35420409159)），
+  ubuntu runner 上跑出 **9,879 过 / 2 红 / 6 跳过**——与银芯沙箱闭环逐个数字相同，红的正是
+  台账在册的两条 `voice-prefs.test.ts`（行 33 与 61，同一 spy 失效根因）。regression-net job
+  因此红、打包 job 被 skipped，**包没出**。
+  **处置（守密人 2026-09-19 裁定「接入同一道闸门」）**：入口 `build/desktop_net_gate.py`
+  （跑 vitest → 喂同一个 `verify.evaluate_desktop_net` → 同一本台账 → 退出码据判定，
+  四条放行前提一条不放宽）已接进 `assemble-black-pool-bundle.yml` 的回归网步骤，原裸
+  `npx vitest run` 退役；日志作为 artifact 上传留证。守卫两例
+  （`tests/test_hermes_env_gaps.py`：workflow 不得改回裸 vitest · CI 入口不得自带放行逻辑）。
