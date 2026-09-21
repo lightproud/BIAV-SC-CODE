@@ -67,6 +67,17 @@ NODEID_RE = re.compile(r"^(FAILED|ERROR)\s+(\S+)", re.M)
 # vitest 失败行：` FAIL  src/x.test.ts > describe > case`（用例级带 " > "，整档崩不带）
 VITEST_FAIL_RE = re.compile(r"^\s*FAIL\s+(\S.*?)\s*$", re.M)
 CASE_SEP = " > "
+# CI 上 vitest 照样上色，FAIL 行以转义序列开头 —— 不剥就一条也抓不到（2026-09-21 实证：
+# 组装线 run 35606424068 因此把在册两条读成「台账死条目」、计数也读不出，闸门按纪律停手）。
+ANSI_RE = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")
+# 同一条用例在两种输出形态下的前缀不同：无色是 `|ui| path > case`，彩色剥离后是
+# `ui  path > case`。nodeid 必须跨环境唯一，故解析期一律剥掉 project 标签，只留
+# `path > case`——台账也按这个形态登记。
+PROJECT_TAG_RE = re.compile(
+    r"^(?:\|[\w.-]+\||[\w.-]+)\s+(?=\S*\.(?:test|spec)\.[\w]+)")
+# vitest 汇总行（剥色后再匹配）
+VITEST_COUNTS_RE = re.compile(
+    r"Tests\s+(?:(\d+) failed \| )?(\d+) passed(?: \| (\d+) skipped)?")
 
 
 class VerifyError(Exception):
@@ -125,15 +136,35 @@ def load_desktop_gaps() -> dict:
     return out
 
 
-def parse_vitest_failures(log_text: str) -> list[str]:
-    """从 vitest 输出里抓失败条目，规范成 nodeid（去 "FAIL " 前缀、收敛空白）。
+def strip_ansi(text: str) -> str:
+    """剥掉 ANSI 转义序列。CI 与本地的着色行为不同，nodeid 却必须是同一个。"""
+    return ANSI_RE.sub("", text)
 
-    用例级形如 `src/x.test.ts > describe > case`，整档崩则只有档路径。
+
+def parse_vitest_counts(log_text: str) -> dict:
+    """抓 vitest 尾部汇总计数（两条腿与 CI 入口**共用这一个实现**，别再各写各的）。
+
+    读不出就回空字典——判定层据此认定「解析漂了」，而解析漂的正确反应是不放行。
+    """
+    m = VITEST_COUNTS_RE.search(strip_ansi(log_text))
+    if not m:
+        return {}
+    return {"failed": int(m.group(1) or 0), "passed": int(m.group(2)),
+            "skipped": int(m.group(3) or 0)}
+
+
+def parse_vitest_failures(log_text: str) -> list[str]:
+    """从 vitest 输出里抓失败条目，规范成 nodeid。
+
+    规范化三步：剥 ANSI → 去 "FAIL " 前缀 → 去 project 标签（`|ui| ` / `ui  `），
+    再收敛空白。这样无色（本地）与彩色（CI）两种输出落到**同一个 nodeid**，
+    台账才对得上。用例级形如 `src/x.test.ts > describe > case`，整档崩则只有档路径；
     两者都抓——**区分交给调用方**，解析层不替判定层做取舍。
     """
     out = set()
-    for m in VITEST_FAIL_RE.finditer(log_text):
+    for m in VITEST_FAIL_RE.finditer(strip_ansi(log_text)):
         nid = " ".join(m.group(1).split())
+        nid = PROJECT_TAG_RE.sub("", nid).strip()
         if nid:
             out.add(nid)
     return sorted(out)
@@ -334,12 +365,8 @@ def run_desktop_net(work: Path, timeout: int = 2700) -> dict:
     log = r.stdout + r.stderr
     (work / "desktop-net.log").write_text(log, encoding="utf-8")
 
-    m = re.search(r"Tests\s+(?:(\d+) failed \| )?(\d+) passed(?: \| (\d+) skipped)?", log)
-    counts = {}
-    if m:
-        counts = {"failed": int(m.group(1) or 0), "passed": int(m.group(2)),
-                  "skipped": int(m.group(3) or 0)}
-    elif r.returncode == 0:
+    counts = parse_vitest_counts(log)
+    if not counts and r.returncode == 0:
         # 退出码 0 却解析不出计数 = 解析漂了，不许当绿（vitest 换了输出形态即在此报）
         raise VerifyError("桌面端回归网退出码 0 但读不出计数——输出形态变了，先修解析再信结论")
 

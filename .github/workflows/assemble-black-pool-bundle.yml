@@ -67,6 +67,10 @@ jobs:
       # 台账里在册的 voice-prefs 环境缺口）。改走同一个入口，接同一个判定函数、
       # 同一本台账 `build/desktop-env-gaps.json`，四条放行前提一条不放宽。
       - name: Desktop unit tests (ui + electron projects, via exemption gate)
+        # 解析器已剥 ANSI 并归一 nodeid，这两个变量是双保险 + 让 artifact 日志可读
+        env:
+          NO_COLOR: "1"
+          FORCE_COLOR: "0"
         run: |
           python projects/black-pool-agent/build/desktop_net_gate.py \
             --desktop BlackPool/app/apps/desktop \

@@ -167,6 +167,50 @@ def test_vitest_parser_separates_case_and_file_level():
         "src/store/voice-prefs.test.ts > voice prefs > migrates once"], "须去重并规范空白"
 
 
+def test_parser_survives_ci_colour_and_project_tags():
+    """真 CI 日志的形态（2026-09-21 实证）：vitest 在 runner 上照样上色，FAIL 行以转义
+    序列开头；无色（本地）写 `|ui| path`，彩色剥离后写 `ui  path`。两种形态必须落到
+    **同一个 nodeid**，否则台账永远对不上——组装线 run 35606424068 正是栽在这里：
+    一条失败都没解析出来，在册两条被当成死条目，闸门按纪律停手、包出不来。
+    """
+    verify = _load_verify()
+    ci = ("\x1b[41m\x1b[1m FAIL \x1b[22m\x1b[49m \x1b[30m\x1b[45m ui \x1b[49m\x1b[39m "
+          "src/store/voice-prefs.test.ts\x1b[2m > \x1b[22mkeeps the desktop toggle local\n"
+          "\x1b[2m      Tests \x1b[22m \x1b[1m\x1b[31m2 failed\x1b[39m\x1b[22m\x1b[2m | "
+          "\x1b[22m\x1b[1m\x1b[32m9879 passed\x1b[39m\x1b[22m\x1b[2m | \x1b[22m"
+          "\x1b[33m6 skipped\x1b[39m\n")
+    plain = (" FAIL  |ui| src/store/voice-prefs.test.ts > keeps the desktop toggle local\n"
+             "      Tests  2 failed | 9879 passed | 6 skipped\n")
+    expected = ["src/store/voice-prefs.test.ts > keeps the desktop toggle local"]
+    assert verify.parse_vitest_failures(ci) == expected, "彩色输出必须能解析"
+    assert verify.parse_vitest_failures(plain) == expected, "无色输出必须归一到同一 nodeid"
+    counts = {"failed": 2, "passed": 9879, "skipped": 6}
+    assert verify.parse_vitest_counts(ci) == counts
+    assert verify.parse_vitest_counts(plain) == counts
+
+
+def test_parser_keeps_whole_file_and_untagged_forms_intact():
+    """去 project 标签不得误伤：整档崩只有路径，无目录的档名也不该被吃掉前半截。"""
+    verify = _load_verify()
+    assert verify.parse_vitest_failures(" FAIL  src/boom.test.ts") == ["src/boom.test.ts"]
+    assert verify.parse_vitest_failures(" FAIL  voice-prefs.test.ts > a case") == [
+        "voice-prefs.test.ts > a case"]
+
+
+def test_ledger_ids_carry_no_project_tag():
+    """台账登记的是归一后的形态——带 |ui| 前缀的条目永远匹配不上解析结果。"""
+    data = json.loads(GAPS_LEDGER.read_text(encoding="utf-8"))
+    for e in data["entries"]:
+        assert not e["nodeid"].startswith("|"), f"台账条目带 project 标签：{e['nodeid']}"
+
+
+def test_counts_parsing_has_one_implementation():
+    """两条腿与 CI 入口共用同一个计数解析，别再各写各的正则。"""
+    gate = (VERIFY.parent / "desktop_net_gate.py").read_text(encoding="utf-8")
+    assert "parse_vitest_counts" in gate, "CI 入口须复用 verify.parse_vitest_counts"
+    assert "Tests\\s+" not in gate, "CI 入口不得自带一份计数正则"
+
+
 def test_render_names_every_exempted_case():
     verify = _load_verify()
     nid = "src/x.test.ts > suite > case"

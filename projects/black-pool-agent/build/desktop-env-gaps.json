@@ -9,7 +9,7 @@
     "的处置：给回归网开一道**受控**豁免口，而不是把验证网整段调松。",
     "",
     "纪律（改这个档案前先读，它与 upstream-false-reds.json 同一套良心）：",
-    "1. 只认**精确 vitest nodeid**（`档案路径 > describe > 用例名`全串），绝不用裸词或通配 ——",
+    "1. 只认**精确 vitest nodeid**（`档案路径 > describe > 用例名`全串，**不带 project 标签**——同一条用例在无色与彩色输出里前缀不同，解析期已统一剥掉），绝不用裸词或通配 ——",
     "   模式匹配会把将来任何同名真缺陷一并吞掉，那就成了「自动无视」而不是「受控豁免」。",
     "2. **只认用例级条目**：nodeid 必须含 ` > `。整档崩（import 失败 / 零用例执行）一律",
     "   不可豁免 —— 那种红说明组装树坏了，不是某条用例撞环境。",
@@ -24,7 +24,7 @@
     "   会点名，由人工清理 —— 死条目留着不致命，但会让台账越来越像一张免死金牌。"
   ],
   "schema": {
-    "nodeid": "精确 vitest nodeid，形如 src/store/voice-prefs.test.ts > voice prefs > case name",
+    "nodeid": "精确 vitest nodeid，形如 src/store/voice-prefs.test.ts > voice prefs > case name（不带 |ui| 一类 project 标签）",
     "cluster": "E 测试环境 API 伪影 | F 运行器时序 | G 平台缺件（新簇须在此登记后使用）",
     "reason": "凭什么判为环境缺口而非代码缺陷（要能被人复核，含最小复现结论）",
     "source": "出处：gaps.md 条目日期 / 报告档名 / 运行链接",
@@ -33,7 +33,7 @@
   },
   "entries": [
     {
-      "nodeid": "|ui| src/store/voice-prefs.test.ts > keeps the desktop toggle local across config refreshes",
+      "nodeid": "src/store/voice-prefs.test.ts > keeps the desktop toggle local across config refreshes",
       "reason": "本装配树 jsdom 29.1.1 + vitest 4.1.10 组合下，`vi.spyOn(localStorage, 'setItem')` 拦不住随后经 `window.localStorage.setItem` 发起的同一次调用——探针实证 `localStorage === window.localStorage` 恒为真、spy 零拦截、值真落库，用例遂读到真实写入而非 null。该档从未进任一补丁射程（三张补丁 grep voice-prefs 皆 0），真实浏览器里两条路径同对象、spy 正常拦截，故非银芯改装引入、亦非上游实现缺陷。",
       "cluster": "E 测试环境 API 伪影",
       "source": "gaps.md 2026-09-13 条 (b) 项 + 2026-09-18 本轮组装树最小复现探针（jsdom 29.1.1 / vitest 4.1.10）",
@@ -41,7 +41,7 @@
       "decided_by": "守密人"
     },
     {
-      "nodeid": "|ui| src/store/voice-prefs.test.ts > migrates the legacy preference once, not on every refresh",
+      "nodeid": "src/store/voice-prefs.test.ts > migrates the legacy preference once, not on every refresh",
       "reason": "本装配树 jsdom 29.1.1 + vitest 4.1.10 组合下，`vi.spyOn(localStorage, 'setItem')` 拦不住随后经 `window.localStorage.setItem` 发起的同一次调用——探针实证 `localStorage === window.localStorage` 恒为真、spy 零拦截、值真落库，用例遂读到真实写入而非 null。该档从未进任一补丁射程（三张补丁 grep voice-prefs 皆 0），真实浏览器里两条路径同对象、spy 正常拦截，故非银芯改装引入、亦非上游实现缺陷。",
       "cluster": "E 测试环境 API 伪影",
       "source": "gaps.md 2026-09-13 条 (b) 项 + 2026-09-18 本轮组装树最小复现探针（jsdom 29.1.1 / vitest 4.1.10）",
