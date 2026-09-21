@@ -155,3 +155,16 @@
   四条放行前提一条不放宽）已接进 `assemble-black-pool-bundle.yml` 的回归网步骤，原裸
   `npx vitest run` 退役；日志作为 artifact 上传留证。守卫两例
   （`tests/test_hermes_env_gaps.py`：workflow 不得改回裸 vitest · CI 入口不得自带放行逻辑）。
+- **2026-09-21 · 闸门解析器没见过真 CI 日志（已修）**：接线后首跑
+  （[run 35606424068](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35606424068)）
+  仍红，但**不是闸门放水或误判**——恰恰相反，它按「解析漂了就不放行」的纪律停了手：
+  runner 上 vitest 照样上色，`FAIL` 行以 ANSI 转义序列开头，解析器一条失败都没抓到、
+  尾部计数也读不出，于是在册两条被当成**台账死条目**，四条前提里的两条不成立。
+  本地一直没暴露，是因为 `capture_output` 非 TTY、vitest 自动关色——**本地跑的日志形态
+  与 CI 的根本不是同一种**（同命令不同形态判词可相反，CLAUDE.md §7.6 早有此教训，
+  这次栽在解析层）。**修法（治本，非加豁免）**：① 解析期剥 ANSI；② nodeid 归一——无色输出
+  写 `|ui| path`、彩色剥离后写 `ui  path`，一律剥掉 project 标签只留 `path > case`，
+  台账同步改为归一形态；③ 计数解析统一到 `verify.parse_vitest_counts`，两条腿与 CI 入口
+  共用一份，不再各写各的正则；④ workflow 另加 `NO_COLOR=1` / `FORCE_COLOR=0` 双保险，
+  顺带让 artifact 日志可读。守卫四例（彩色/无色归一一致 · 整档崩与无目录档名不被误伤 ·
+  台账不得带 project 标签 · 计数解析只此一份），`tests/test_hermes_env_gaps.py` 增至 22 例。

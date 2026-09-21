@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -49,12 +48,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.log:
         Path(args.log).write_text(log, encoding="utf-8")
 
-    m = re.search(r"Tests\s+(?:(\d+) failed \| )?(\d+) passed(?: \| (\d+) skipped)?", log)
-    counts = {}
-    if m:
-        counts = {"failed": int(m.group(1) or 0), "passed": int(m.group(2)),
-                  "skipped": int(m.group(3) or 0)}
-    elif r.returncode == 0:
+    counts = verify.parse_vitest_counts(log)
+    if not counts and r.returncode == 0:
         # 与 verify.run_desktop_net 同款纪律：读不出计数就不许当绿
         print("退出码 0 但读不出计数——vitest 输出形态变了，先修解析再信结论", file=sys.stderr)
         return 1
