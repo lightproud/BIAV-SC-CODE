@@ -919,11 +919,7 @@ class DiscordArchiver:
                 slim = self._slim_message(msg)
                 # Annotate with thread metadata so consumers know which post this belongs to
                 slim.update(thread_meta)
-                try:
-                    ts = datetime.fromisoformat(slim['timestamp'])
-                    date_str = ts.strftime('%Y-%m-%d')
-                except (ValueError, TypeError):
-                    date_str = datetime.now(UTC).strftime('%Y-%m-%d')
+                date_str = _bucket_day(slim['timestamp'])
                 # Store under the forum channel directory, not the individual thread directory
                 # H5: 仅在新写入时计入日统计
                 if self._write_msg(forum_channel_id, date_str, slim):

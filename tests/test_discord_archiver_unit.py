@@ -257,6 +257,31 @@ class TestBucketDayIsBeijing(unittest.TestCase):
             written = sorted(p.name for p in arch._ch_dir("chan").glob("*.jsonl"))
             self.assertEqual(written, ["2026-05-04.jsonl"])
 
+    def test_forum_thread_replies_land_on_the_beijing_day(self):
+        """论坛帖的**回复**与首楼走的是两条落档路径，必须同基准。
+
+        2026-09-21 实测：首楼那条改对了，回复那条还在 strftime UTC 日——合并后两天
+        新采的 34,057 条里 132 条因此落错桶，无一例外全带 thread_title。同一个帖的
+        首楼和回复分家在两个日子里，比整层偏一天更难看出来。
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            arch = _make_archiver(tmp)
+            meta = {"thread_id": "t1", "thread_title": "帖", "forum_channel_id": "forum1"}
+            replies = [_msg("r1", ts=self.ACROSS)]
+
+            def api(path, **params):
+                if path.endswith("/messages/t1"):
+                    return _msg("t1", ts=self.ACROSS)
+                out, replies[:] = list(replies), []
+                return out
+
+            with mock.patch.object(arch, "_api", side_effect=api), \
+                    mock.patch.object(arch, "_is_time_up", return_value=False), \
+                    mock.patch.object(da.time, "sleep"):
+                arch._fetch_forum_thread("t1", "forum1", meta)
+            written = sorted(p.name for p in arch._ch_dir("forum1").glob("*.jsonl"))
+            self.assertEqual(written, ["2026-05-04.jsonl"], "首楼与回复须同落北京日档")
+
     def test_daily_stats_key_matches_the_bucket(self):
         """activity_daily 的日键必须与 JSONL 日档同基准，否则两份档对不上账。"""
         with tempfile.TemporaryDirectory() as tmp:
