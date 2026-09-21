@@ -3020,10 +3020,28 @@
    `window.localStorage.setItem` 的同一次调用，本轮探针实证；三张补丁零触碰该档）。
    闸门放行须四条同时成立，台账见 `projects/black-pool-agent/build/desktop-env-gaps.json`。
    移 pin 史备注如实写「闭环绿；2 条已知环境缺口经受控闸门放行」，**没有写「全绿」**。
-5. **组装线**：合并 main 后已触发
-   [run 35420409159](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35420409159)
-   （head `0271eb1d`）。**结论待回查**——本档第三节的下载链接在组装线转绿前仍指向上一版
-   （`v2026.8.31` / 0.21.0）的 zip，验收请以包内 `BUILD.md` 的上游 pin 行为准。
+5. **组装线：第三轮才出包，前两轮如实记录**（合并 main 后共触发三次）：
+   - [run 35420409159](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35420409159)
+     **红**：回归网 job 当时跑的是裸 `npx vitest run`，不经闸门，9,879 过 / 2 红（正是台账
+     在册的两条 voice-prefs）即判 job 失败、打包 job 被 skipped。**会话侧闭环放行、组装线卡死**
+     ——判定链断裂，守密人 2026-09-19 裁定把该步接进同一道闸门。
+   - [run 35606424068](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35606424068)
+     **仍红，但不是误判而是拒绝判定**：runner 上 vitest 照样上色，`FAIL` 行以 ANSI 转义序列
+     开头，解析器一条都没抓到、计数也读不出，在册两条被报成「台账死条目」，四条前提里两条
+     不成立 → 按纪律停手。治本修法见 `gaps.md` 2026-09-21 条（剥 ANSI + nodeid 跨环境归一 +
+     计数解析统一 + `NO_COLOR` 双保险）。
+   - [run 35615906318](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35615906318)
+     **全绿出包**（head `75d19516`）。中间还修掉一处真 bug：上游把 `compactNumber` 挪进
+     `@hermes/shared`、`src/lib/format` 不复存在，而 `conversation-cost-panel.patch` 是全树
+     唯一还指旧路径的消费者，`vite build` 报 `UNLOADABLE_DEPENDENCY`；补丁按语义重放
+     （794 行增删逐字未变，只改那行 import），本地真跑 `npm run build` 实证通过后才推。
+   **验收三件**：① 两 job 均 success；② Release 资产 `black-pool-win64.zip` 更新于
+   **2026-09-21 23:27（北京）/ 15:27 UTC**，418.6 MiB，SHA-256
+   `b2e69f37fa7be9f6c75687817103f65a2a4d2b4eda1db8dc2b34f876202e3fdc`；③ 包内 `BUILD.md`
+   的上游 pin 行**未直读**（zip 418 MiB 未下载解包），依据两条间接证据认定为 `v2026.9.14`——
+   打包日志里 `hermes-agent==0.21.3` 实际装入（即本 pin 的引擎版本），且该行由脚本从
+   `UPSTREAM.md` 的 pin tag 抽取、而其值已是 `v2026.9.14`。守密人拿到包后可开包复核一眼。
+   **本档第三节的下载链接现已指向本版**（链接恒定、内容滚动）。
 6. **仍开着的漏缝**（`gaps.md`）：`scripts/desktop-update` 目录的**裸词铺开评估**未做，
    该目录目前仍走五处字面量的定点换装规则；两条 voice-prefs 台账条目待环境或上游升级 jsdom
    后自然成死条目，届时由报告的 stale 字段点名清理。
