@@ -45,7 +45,7 @@ from pathlib import Path
 
 # Reuse the archiver's API + state machinery
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from discord_archiver import DiscordArchiver, resolve_data_dir
+from discord_archiver import DiscordArchiver, resolve_data_dir, _bucket_day
 import archive_layout  # noqa: E402  冷热分层统一开档（2026-07-12 甲案）
 import news_common  # noqa: E402  容错 env 读取（env_int / env_float）
 
@@ -194,11 +194,9 @@ def main():
             processed += 1
             continue
 
-        try:
-            ts = datetime.fromisoformat(starter['timestamp'])
-            date_str = ts.strftime('%Y-%m-%d')
-        except (ValueError, TypeError, KeyError):
-            date_str = datetime.now(UTC).strftime('%Y-%m-%d')
+        # 落桶经归档器的日期基准单点（北京日）。写方与回填必须同源，否则回填出来的
+        # starter 会落在与归档器不同的日子里——同一个帖的首楼和回复分家两天。
+        date_str = _bucket_day(starter.get('timestamp', ''))
 
         msg_id = str(starter['id'])
         if already_has_starter(forum_channel_id, date_str, msg_id):
