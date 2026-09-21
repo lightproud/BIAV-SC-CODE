@@ -168,3 +168,13 @@
   共用一份，不再各写各的正则；④ workflow 另加 `NO_COLOR=1` / `FORCE_COLOR=0` 双保险，
   顺带让 artifact 日志可读。守卫四例（彩色/无色归一一致 · 整档崩与无目录档名不被误伤 ·
   台账不得带 project 标签 · 计数解析只此一份），`tests/test_hermes_env_gaps.py` 增至 22 例。
+- **2026-09-21 · 第二处判定链缺口：验证网止于 vitest，不跑 build / typecheck（待守密人裁定）**：
+  闸门放行后打包段仍红——`conversation-cost-panel.patch` 的 `cost-usage-panel.tsx` 从
+  `@/lib/format` 导入 `compactNumber`，而上游 v2026.9.14 把该模块整体挪进共享包
+  （其自身 `tab-dropdown.tsx` / `mcp-tab.tsx` / `skills/index.tsx` 均已改 `from '@hermes/shared'`，
+  `src/lib/format` 不复存在），`vite build` 报 `UNLOADABLE_DEPENDENCY`。**本次已修**（补丁按语义
+  重放，794 行增删逐字未变、只改那行 import；本地真跑 `npm run build` 实证 `BUILD_OK`）。
+  **缺口本身仍开着**：会话侧闭环与组装线 regression-net **都只跑 vitest**，构建期的模块解析
+  / 类型错误一律要等到 windows 打包段才暴露——本轮两次 CI 往返均栽在此。补法候选：把
+  `npm run build`（或 `tsc --noEmit`）纳入换装后回归网，代价是回归网时长增加约 1–2 分钟。
+  属工程变更，呈守密人裁定后再动。
