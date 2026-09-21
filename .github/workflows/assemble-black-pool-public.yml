@@ -35,7 +35,7 @@ jobs:
         run: pip install "uv==${UV_VERSION}"
 
       - name: Cache uv downloads
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~\AppData\Local\uv\cache
           key: uv-${{ runner.os }}-${{ hashFiles('projects/black-pool-agent/upstream/uv.lock') }}
