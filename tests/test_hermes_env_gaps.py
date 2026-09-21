@@ -176,6 +176,29 @@ def test_render_names_every_exempted_case():
     assert nid in text and "闸门放行" in text and "2026-09-18" in text
 
 
+def test_assembly_workflow_runs_the_regression_net_through_the_gate():
+    """两条链一个判词（守密人 2026-09-19 裁定接线）。
+
+    组装线那一步曾是裸 `npx vitest run`：闭环放行、组装线卡死，包出不来——
+    2026-09-19 首次触发即实证（CI 9,879 过 / 2 红，红的正是台账在册的两条）。
+    本例守的是「别改回裸 vitest」。
+    """
+    wf = (REPO / ".github" / "workflows" / "assemble-black-pool-bundle.yml").read_text(encoding="utf-8")
+    assert "desktop_net_gate.py" in wf, "组装线的回归网必须经闸门入口，不得直接跑 vitest"
+    net_step = wf[wf.index("Desktop unit tests"):]
+    net_step = net_step[:net_step.index("\n  assemble:")] if "\n  assemble:" in net_step else net_step
+    assert "npx vitest run" not in net_step, "回归网步骤里仍有裸 npx vitest run——判词又分叉了"
+
+
+def test_gate_entry_point_reuses_the_single_verdict_function():
+    """CI 入口不得自带一套判定——它只能转调 verify 的那一个纯函数。"""
+    src = (VERIFY.parent / "desktop_net_gate.py").read_text(encoding="utf-8")
+    assert "evaluate_desktop_net" in src, "CI 入口须复用 verify.evaluate_desktop_net"
+    assert "parse_vitest_failures" in src, "CI 入口须复用同一套失败解析"
+    for forbidden in ("known_map=", "gaps.md 免", "return 0  # 放行"):
+        assert forbidden not in src, f"CI 入口疑似自带放行逻辑：{forbidden}"
+
+
 def test_pin_note_tells_gated_from_all_green():
     """§4.2 R3：放行不许写成全绿——移 pin 史的措辞必须能区分两者。"""
     src = (SUB / "build" / "sync_upstream.py").read_text(encoding="utf-8")

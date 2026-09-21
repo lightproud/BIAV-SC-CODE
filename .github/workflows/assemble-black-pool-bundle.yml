@@ -61,9 +61,24 @@ jobs:
         working-directory: BlackPool/app/apps/desktop
         run: npm ci
 
-      - name: Desktop unit tests (ui + electron projects)
-        working-directory: BlackPool/app/apps/desktop
-        run: npx vitest run
+      # 2026-09-19 守密人裁定接线：这一步原是裸 `npx vitest run`，退出码直接定生死——
+      # 与会话侧闭环用的是**两套判词**。同一棵换装树、同一套用例，闭环放行、这里卡死，
+      # 包就出不来（本轮移 pin 后首次触发组装即实证：9,879 过 / 2 红，红的两条正是
+      # 台账里在册的 voice-prefs 环境缺口）。改走同一个入口，接同一个判定函数、
+      # 同一本台账 `build/desktop-env-gaps.json`，四条放行前提一条不放宽。
+      - name: Desktop unit tests (ui + electron projects, via exemption gate)
+        run: |
+          python projects/black-pool-agent/build/desktop_net_gate.py \
+            --desktop BlackPool/app/apps/desktop \
+            --log desktop-net.log
+
+      - name: Upload regression net log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: desktop-net-log
+          path: desktop-net.log
+          if-no-files-found: warn
 
   assemble:
     name: Portable bundle (win64, merged single dir)
