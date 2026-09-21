@@ -36,7 +36,7 @@ jobs:
     timeout-minutes: 60  # 两遍流式采样 + 60k 条 Voyage 嵌入（~470 批）需富余
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
       - name: Install embedding dep
