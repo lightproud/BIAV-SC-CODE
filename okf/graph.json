@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21",
+  "generated": "2026-09-22",
   "stats": {
     "nodes": 380,
     "edges": 399
@@ -4558,6 +4558,18 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77925.md",
+      "rel": "提及:克莱门汀",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15574.md",
+      "rel": "提及:汀克特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15583.md",
       "rel": "提及:奥尔拉",
       "rel_type": "mention"
@@ -4582,6 +4594,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
       "rel_type": "mention"
@@ -4590,18 +4608,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:熔朵",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-google-play.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4620,12 +4626,6 @@
       "source": "/community/community-reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-steam.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
       "rel_type": "mention"
     },
     {
@@ -6022,6 +6022,18 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77925.md",
+      "rel": "提及:克莱门汀",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15574.md",
+      "rel": "提及:汀克特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15583.md",
       "rel": "提及:奥尔拉",
       "rel_type": "mention"
@@ -6046,6 +6058,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
       "rel_type": "mention"
@@ -6054,18 +6072,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:熔朵",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/google_play.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -6084,12 +6090,6 @@
       "source": "/sources/reddit.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/steam.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
       "rel_type": "mention"
     },
     {
