@@ -4,7 +4,7 @@ title: "steam 社区数据源"
 description: "steam 平台采集档案，全量 5501 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/steam/global/review/"
 tags: ["data_layer:full_archive", "platform:steam", "health:active"]
-timestamp: "2026-09-22T10:58:07.682993+00:00"
+timestamp: "2026-09-22T16:16:46.905786+00:00"
 ---
 
 # 数据层指针

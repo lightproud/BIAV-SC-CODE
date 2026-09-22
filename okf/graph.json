@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-22",
+  "generated": "2026-09-23",
   "stats": {
-    "nodes": 380,
+    "nodes": 381,
     "edges": 399
   },
   "nodes": [
@@ -3115,6 +3115,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-hermes-weekly-update-20260923.md",
+      "type": "documentation",
+      "title": "hermes-weekly-update-20260923",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "type": "documentation",
       "title": "kb-vector-remaining-handoff-20260705",
@@ -3735,7 +3746,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:ruliweb",
-        "health:active"
+        "health:degraded"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4594,6 +4605,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15570.md",
       "rel": "提及:朵尔",
       "rel_type": "mention"
@@ -4662,12 +4679,6 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -6058,6 +6069,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15570.md",
       "rel": "提及:朵尔",
       "rel_type": "mention"
@@ -6132,12 +6149,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {

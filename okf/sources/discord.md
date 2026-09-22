@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "discord 社区数据源"
-description: "discord 平台采集档案，全量 9590006 条，健康度 active。"
+description: "discord 平台采集档案，全量 9596034 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/discord/"
 tags: ["data_layer:full_archive", "platform:discord", "health:active"]
-timestamp: "2026-09-22T10:58:07.682993+00:00"
+timestamp: "2026-09-22T16:16:46.905786+00:00"
 ---
 
 # 数据层指针
@@ -15,7 +15,7 @@ timestamp: "2026-09-22T10:58:07.682993+00:00"
 |------|------|
 | 平台 | discord |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/discord/` |
-| 全量条数 | 9590006 |
+| 全量条数 | 9596034 |
 | 采集健康度 | active |
 | 最后成功 | 2026-09-22 |
 

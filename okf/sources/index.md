@@ -7,21 +7,21 @@
 ## 平台
 
 * [appstore](/sources/appstore.md) - 全量 555 条 / active
-* [bahamut](/sources/bahamut.md) - 全量 1791 条 / active
-* [bilibili](/sources/bilibili.md) - 全量 3901 条 / active
-* [discord](/sources/discord.md) - 全量 9590006 条 / active
-* [google_play](/sources/google_play.md) - 全量 1222 条 / active
-* [note_com](/sources/note_com.md) - 全量 44 条 / active
+* [bahamut](/sources/bahamut.md) - 全量 1813 条 / active
+* [bilibili](/sources/bilibili.md) - 全量 3904 条 / active
+* [discord](/sources/discord.md) - 全量 9596034 条 / active
+* [google_play](/sources/google_play.md) - 全量 1224 条 / active
+* [note_com](/sources/note_com.md) - 全量 45 条 / active
 * [official](/sources/official.md) - 全量 59 条 / active
 * [pixiv](/sources/pixiv.md) - 全量 419 条 / active
-* [reddit](/sources/reddit.md) - 全量 4224 条 / active
-* [ruliweb](/sources/ruliweb.md) - 全量 181 条 / active
+* [reddit](/sources/reddit.md) - 全量 4231 条 / active
+* [ruliweb](/sources/ruliweb.md) - 全量 181 条 / degraded
 * [steam](/sources/steam.md) - 全量 5501 条 / active
-* [steam_discussion](/sources/steam_discussion.md) - 全量 301 条 / active
-* [stopgame](/sources/stopgame.md) - 全量 152 条 / active
+* [steam_discussion](/sources/steam_discussion.md) - 全量 302 条 / active
+* [stopgame](/sources/stopgame.md) - 全量 153 条 / active
 * [taptap](/sources/taptap.md) - 全量 24 条 / degraded
-* [taptap_review](/sources/taptap_review.md) - 全量 5755 条 / active
-* [weibo](/sources/weibo.md) - 全量 14819 条 / active
+* [taptap_review](/sources/taptap_review.md) - 全量 5772 条 / active
+* [weibo](/sources/weibo.md) - 全量 14835 条 / active
 * [weixin](/sources/weixin.md) - 全量 8920 条 / active
-* [youtube](/sources/youtube.md) - 全量 4129 条 / active
-* [youtube_comments](/sources/youtube_comments.md) - 全量 3806 条 / active
+* [youtube](/sources/youtube.md) - 全量 4135 条 / active
+* [youtube_comments](/sources/youtube_comments.md) - 全量 3853 条 / active
