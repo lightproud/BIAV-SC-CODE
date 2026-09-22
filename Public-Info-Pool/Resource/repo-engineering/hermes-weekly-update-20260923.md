@@ -3793,9 +3793,15 @@
 4. **特性补丁**：`conversation-cost-panel.patch` 干净落位，无需重放。
 5. **源码卫生守卫排除供应商快照**：本版 `optional-skills/creative/auteur/scripts/refscout.mjs`
    含裸 `0x08`。`upstream/` 按宪章零修改、无权改写，只豁免这一个 vendor 前缀。
-6. **组装线**：合并 main 后已触发
-   [run 35764906684](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35764906684)
-   （head `664a6cfc`）。**结论待回查**——第三节下载链接在组装线转绿前仍指向上一版
-   （`v2026.9.14` / 0.21.3），验收以包内 `BUILD.md` 的上游 pin 行为准。
+6. **组装线：一次全绿出包**
+   （[run 35764906684](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35764906684)，
+   head `664a6cfc`）。与上一轮三跑才出包不同，这次回归网（构建腿 + vitest，经闸门放行两条
+   在册 voice-prefs）与 windows 打包段都**首跑即绿**——上一轮补上的闸门接线、解析修复与构建腿
+   都在这一轮兑现了。**验收三件**：① 两 job 均 success；② Release 资产 `black-pool-win64.zip`
+   更新于 **2026-09-23 02:35（北京）/ 2026-09-22 18:35 UTC**，421.4 MiB，SHA-256
+   `88a17e2fa7a23edc7f2d3ef13a5eacdb3f5f15bc0c455b747aba30aa29af5ab2`；③ 包内 `BUILD.md` 的
+   pin 行**未直读**（zip 未下载解包），依据两条间接证据认定为 `v2026.9.21`：打包日志实见
+   `hermes-agent==0.21.4 (from …/BlackPool/app)`，且该行由脚本从 `UPSTREAM.md` 的 pin tag
+   抽取、其值已是 `v2026.9.21`。**第三节下载链接现已指向本版。**
 7. **仍开着的漏缝**：两条 voice-prefs 台账条目待环境或上游升级 jsdom 后自然成死条目，届时由
    stale 点名清理。无其他新增漏缝。
