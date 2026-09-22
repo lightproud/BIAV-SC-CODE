@@ -46,7 +46,7 @@ PATCH_INTRANET = SUB / "patches" / "black-pool-intranet.patch"
 BRAND = "Black Pool"
 BRAND_AGENT = "Black Pool Agent"
 BRAND_VERSION = "0.1.0"
-UPSTREAM_VERSION = "0.21.3"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
+UPSTREAM_VERSION = "0.21.4"  # 上游引擎版本（About 出身行静态渲染；移 pin 同步，哨兵守卫）
 BRAND_AUMID = "com.biav.blackpool"
 
 
@@ -642,17 +642,37 @@ INTRANET_POST_RULES = [
         "        {false && (<>\n"
         "        <SectionHeading icon={RefreshCw} title={a.updates} />\n",
     ),
+    # 2026-09-22 移 pin 重锚（v2026.9.21 / 0.21.4）：上游把 About 拆成「应用更新」与
+    # 「卸载」两个子页，Danger zone 改由 `includeUninstall` 门控渲染。收尾锚点随之改为
+    # 门控表达式；保留 `includeUninstall` 引用（不留未用形参），前置 `false &&` 短路。
+    # **本条必须与上一条（开头 `{false && (<>`）同生共死**——只命中开头不命中收尾，
+    # JSX 里只剩一个开括号，桌面端直接构建失败；点火台账正是这样拦下 0.21.4 这一轮的。
     (
         "          title={a.automaticUpdates}\n"
         "        />\n"
         "\n"
-        "        <UninstallSection />\n",
+        "        {includeUninstall && <UninstallSection />}\n",
         "          title={a.automaticUpdates}\n"
         "        />\n"
         "        </>)}\n"
         "\n"
         "        {/* 便携包无安装器——Danger zone 整区隐藏（守密人 2026-08-02 裁定） */}\n"
-        "        {false && <UninstallSection />}\n",
+        "        {false && includeUninstall && <UninstallSection />}\n",
+    ),
+    # 同一裁定的**新入口**（2026-09-22 随 0.21.4 补封）：上游新增独立的「卸载」子页，
+    # 设置导航与设置搜索都能直达，会绕过上一条的整区隐藏、让便携包露出卸载器。
+    # 两处都封：路由分支短路 + 子页登记表摘除。`(false as boolean)` 与本档既有
+    # `true as boolean` 同一写法，避免 TS 把分支判成死代码。
+    (
+        "  if (subpage === 'uninstall') {\n",
+        "  // 便携包无安装器——卸载子页路由封死（2026-08-02 裁定，2026-09-22 随上游新入口补封）\n"
+        "  if ((false as boolean) && subpage === 'uninstall') {\n",
+    ),
+    (
+        "    { id: 'updates', labelKey: 'appUpdates' },\n"
+        "    { id: 'uninstall', labelKey: 'uninstall' }\n",
+        "    { id: 'updates', labelKey: 'appUpdates' }\n"
+        "    // 便携包无安装器——卸载子页不入导航与搜索（2026-09-22 随上游新入口补封）\n",
     ),
     # 后台更新轮询整只 no-op：便携包更新通道 = 换 tag 重测（文书 §2.4），
     # 轮询（挂载 + 每 30 分钟 + 窗口聚焦）只会反复报「isn't a git checkout」。
@@ -669,26 +689,31 @@ INTRANET_POST_RULES = [
     ),
     # Billing 入口隐藏：Hermes Cloud 订阅/额度页，内网便携包用自有 Providers，
     # 该页无对象。spread-空数组帘子，保留代码结构。
+    # 2026-09-22 移 pin 重锚（v2026.9.21 / 0.21.4）：上游给 Billing 加了 overview / plans
+    # 子项并整体缩进两级。锚点只取**开头两行**做帘子起点、收尾另起一条，
+    # 不再把子项内容整段抄进锚点——子项每改一次就断一次的锚点是自找麻烦。
     (
-        "      {\n"
-        "        active: activeView === 'billing',\n"
-        "        icon: BarChart3,\n"
-        "        id: 'billing',\n"
-        "        label: t.settings.nav.billing,\n"
-        "        onSelect: () => setActiveView('billing')\n"
-        "      },\n",
-        "      // 内网便携包无 Hermes Cloud 订阅——Billing 入口隐藏（2026-08-02 审计轮）\n"
-        "      ...(false\n"
-        "        ? [\n"
-        "            {\n"
-        "              active: activeView === 'billing',\n"
-        "              icon: BarChart3,\n"
-        "              id: 'billing',\n"
-        "              label: t.settings.nav.billing,\n"
-        "              onSelect: () => setActiveView('billing')\n"
-        "            }\n"
-        "          ]\n"
-        "        : []),\n",
+        "          {\n"
+        "            active: activeView === 'billing',\n"
+        "            children: [\n",
+        "          // 内网便携包无 Hermes Cloud 订阅——Billing 入口隐藏（2026-08-02 审计轮）\n"
+        "          ...(false\n"
+        "            ? [\n"
+        "          {\n"
+        "            active: activeView === 'billing',\n"
+        "            children: [\n",
+    ),
+    (
+        "            id: 'billing',\n"
+        "            label: t.settings.nav.billing,\n"
+        "            onSelect: () => setActiveView('billing')\n"
+        "          },\n",
+        "            id: 'billing',\n"
+        "            label: t.settings.nav.billing,\n"
+        "            onSelect: () => setActiveView('billing')\n"
+        "          }\n"
+        "              ]\n"
+        "            : []),\n",
     ),
     # hermes update 便携硬门禁：无 .git 的 win32 树本就是便携包形态，原 ZIP
     # 兜底会从公网拉未换装上游整树覆盖本地——字面撤销全部品牌补丁。文书 §2.4
