@@ -41,6 +41,15 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     verify = load_verify()
+
+    # 构建腿先跑（守密人 2026-09-21 裁定纳入回归网）：它快且塌了就没必要再等 vitest。
+    # 构建失败**不可豁免**——台账只管 vitest 的用例级失败。
+    build = verify.run_desktop_build(desktop)
+    print(f"[构建腿] npm run build -> {'通过' if build['passed'] else '未通过'}"
+          f"（{build['seconds']}s）")
+    if not build["passed"]:
+        print(build["tail"], file=sys.stderr)
+
     r = subprocess.run(["npx", "vitest", "run"], cwd=desktop,
                        capture_output=True, text=True, errors="replace")
     log = r.stdout + r.stderr
@@ -54,9 +63,10 @@ def main(argv: list[str] | None = None) -> int:
         print("退出码 0 但读不出计数——vitest 输出形态变了，先修解析再信结论", file=sys.stderr)
         return 1
 
-    result = {"leg": "desktop-net", "run_seconds": 0,
+    result = {"leg": "desktop-net", "run_seconds": 0, "build": build,
               **verify.evaluate_desktop_net(r.returncode, counts,
-                                            verify.parse_vitest_failures(log))}
+                                            verify.parse_vitest_failures(log),
+                                            build_ok=build["passed"])}
     print(verify.render(result))
     return 0 if result["passed"] else 1
 

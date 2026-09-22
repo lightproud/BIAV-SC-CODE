@@ -305,7 +305,7 @@ def clean_pyc(root: Path) -> None:
 
 
 def evaluate_desktop_net(returncode: int, counts: dict, failures: list[str],
-                         known_map: dict | None = None) -> dict:
+                         known_map: dict | None = None, build_ok: bool = True) -> dict:
     """换装后回归网的判定（守密人 2026-09-18 裁定的受控豁免闸门）。
 
     抽成纯函数是为了**能被单测直接拷问**——闸门松没松，不该等到真跑一遍 45 分钟的
@@ -318,6 +318,9 @@ def evaluate_desktop_net(returncode: int, counts: dict, failures: list[str],
       ③ 无整档崩（那是组装树坏了，不是某条用例撞环境，不可豁免）
       ④ 解析出的用例级条数与 vitest 汇总 failed 计数**逐个对上**——对不上说明解析漂了，
         而解析漂的正确反应是不放行（同 parse_counts 的纪律：数字对不上不是结论，是警报）
+
+    另有一条**先决条件**：构建腿（`npm run build`）必须过。它不在四条之列，因为它根本
+    不参与豁免——构建塌了就是塌了，台账管不着（守密人 2026-09-21 裁定纳入回归网）。
     """
     if known_map is None:
         known_map = load_desktop_gaps()
@@ -328,6 +331,7 @@ def evaluate_desktop_net(returncode: int, counts: dict, failures: list[str],
     gated = bool(returncode != 0 and not verdict["unknown"] and case_level
                  and not file_level and parse_consistent)
     return {
+        "build_ok": build_ok,
         "exit_code": returncode,
         "counts": counts,
         "failures": failures[:40],
@@ -337,8 +341,26 @@ def evaluate_desktop_net(returncode: int, counts: dict, failures: list[str],
         "file_level_failures": file_level,
         "parse_consistent": parse_consistent,
         "gated": gated,
-        "passed": returncode == 0 or gated,
+        "passed": build_ok and (returncode == 0 or gated),
     }
+
+
+def run_desktop_build(desktop: Path, timeout: int = 1800) -> dict:
+    """构建腿（守密人 2026-09-21 裁定纳入回归网）：在组装树上真跑 `npm run build`。
+
+    为什么必须有：vitest 跑的是模块图里被测到的那部分，打包器的模块解析是另一回事——
+    2026-09-21 实测，上游把 `compactNumber` 挪进共享包后，特性补丁的导入失效，
+    vitest 全绿而 `vite build` 报 `UNLOADABLE_DEPENDENCY`，红只能等到 windows 打包段
+    才暴露，一轮组装 45–75 分钟就这么耗掉。本地实测构建约 36 秒，换这个提前量很划算。
+
+    **构建失败不可豁免**：环境缺口台账只管 vitest 的用例级失败，构建塌了说明这棵树
+    根本装不出来，没有「在册」一说。
+    """
+    t0 = time.time()
+    r = _run(["npm", "run", "build"], cwd=desktop, timeout=timeout, check=False)
+    log = r.stdout + r.stderr
+    return {"passed": r.returncode == 0, "exit_code": r.returncode,
+            "seconds": round(time.time() - t0), "tail": log[-1500:] if r.returncode else ""}
 
 
 def run_desktop_net(work: Path, timeout: int = 2700) -> dict:
@@ -361,6 +383,8 @@ def run_desktop_net(work: Path, timeout: int = 2700) -> dict:
     desktop = tree / "apps" / "desktop"
     t0 = time.time()
     _run(["npm", "ci"], cwd=desktop, timeout=1800)
+    # 构建腿先跑：它快（约 36 秒）且塌了就没必要再等十几分钟的 vitest
+    build = run_desktop_build(desktop)
     r = _run(["npx", "vitest", "run"], cwd=desktop, timeout=timeout, check=False)
     log = r.stdout + r.stderr
     (work / "desktop-net.log").write_text(log, encoding="utf-8")
@@ -376,7 +400,8 @@ def run_desktop_net(work: Path, timeout: int = 2700) -> dict:
         "tree": "组装树（私有版换装 + 特性补丁）",
         "run_seconds": round(time.time() - t0),
         "log": str(work / "desktop-net.log"),
-        **evaluate_desktop_net(r.returncode, counts, failures),
+        "build": build,
+        **evaluate_desktop_net(r.returncode, counts, failures, build_ok=build["passed"]),
     }
 
 
@@ -409,6 +434,14 @@ def render(result: dict) -> str:
                           f" {', '.join(result['stale'][:5])}"]
     else:
         lines.append(f"- 用时：{result['run_seconds']}s")
+        b = result.get("build") or {}
+        if b:
+            lines.append(f"- 构建腿 `npm run build`：{'通过' if b.get('passed') else '**未通过**'}"
+                         f"（{b.get('seconds', 0)}s）")
+        elif result.get("build_ok") is False:
+            lines.append("- 构建腿 `npm run build`：**未通过**")
+        if result.get("build_ok") is False:
+            lines.append("- 构建塌了即整条未过，**不可豁免**（台账只管 vitest 的用例级失败）")
         if c:
             lines.append(f"- {c.get('passed', 0)} 过 / {c.get('failed', 0)} 红 / "
                          f"{c.get('skipped', 0)} 跳过")

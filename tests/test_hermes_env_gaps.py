@@ -243,6 +243,35 @@ def test_gate_entry_point_reuses_the_single_verdict_function():
         assert forbidden not in src, f"CI 入口疑似自带放行逻辑：{forbidden}"
 
 
+def test_build_failure_is_never_exempted():
+    """构建腿是先决条件，不在四条放行前提之列（守密人 2026-09-21 裁定纳入回归网）。
+
+    2026-09-21 实测：上游把 compactNumber 挪进共享包后，vitest 全绿而 vite build 报
+    UNLOADABLE_DEPENDENCY——构建塌了台账管不着，塌就是塌。
+    """
+    verify = _load_verify()
+    nid = "src/x.test.ts > suite > case"
+    ok = verify.evaluate_desktop_net(1, {"failed": 1, "passed": 9}, [nid], _entry(nid),
+                                     build_ok=True)
+    assert ok["passed"] and ok["gated"], "构建过 + 全部在册 → 照常放行"
+    for rc, counts, fails in ((1, {"failed": 1, "passed": 9}, [nid]),
+                              (0, {"failed": 0, "passed": 9}, [])):
+        bad = verify.evaluate_desktop_net(rc, counts, fails, _entry(nid), build_ok=False)
+        assert not bad["passed"], "构建塌了即整条未过，vitest 绿不绿都一样"
+        assert bad["build_ok"] is False
+
+
+def test_both_legs_actually_run_the_build():
+    """闭环与 CI 入口都必须真跑 npm run build，别让它只活在文档里。"""
+    verify_src = VERIFY.read_text(encoding="utf-8")
+    assert "def run_desktop_build" in verify_src
+    assert '"npm", "run", "build"' in verify_src, "构建腿须真调 npm run build"
+    assert "build = run_desktop_build(desktop)" in verify_src, "闭环回归网须调用构建腿"
+    gate_src = (VERIFY.parent / "desktop_net_gate.py").read_text(encoding="utf-8")
+    assert "run_desktop_build" in gate_src, "CI 入口须调用同一条构建腿"
+    assert "build_ok=build[" in gate_src, "CI 入口须把构建结论喂进判定"
+
+
 def test_pin_note_tells_gated_from_all_green():
     """§4.2 R3：放行不许写成全绿——移 pin 史的措辞必须能区分两者。"""
     src = (SUB / "build" / "sync_upstream.py").read_text(encoding="utf-8")
