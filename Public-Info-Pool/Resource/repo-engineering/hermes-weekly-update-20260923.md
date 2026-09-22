@@ -1,0 +1,3801 @@
+# Black Pool 周更公告 · 上游 v2026.9.21（引擎 0.21.4）
+
+> 银芯周更例程自动产出（每周一 00:00 北京时间 / 周日 16:00 UTC 起跑）。
+> 本档三合一：**新内容公告** + **zip 下载链接** + **BPA 更新指南**。
+> 上游 [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)（MIT）——
+> 黑池为其品牌换装 + 内网适配的二次开发衍生物，非纯自研。
+
+## 一、本次更新是什么
+
+| 项 | 值 |
+|----|----|
+| 上游 pin | `v2026.9.14` → **`v2026.9.21`**（commit `d337b736aa1e`，2026-09-21） |
+| 引擎版本 | 0.21.3 → **0.21.4** |
+| 黑池版本 | 0.1.0（品牌版本号不随上游走） |
+| 上游提交 | 5173 个 |
+| 快照变更 | 1763 新增 / 3311 修改 / 78 删除文件 |
+| 快照规模 | 14,733 文件 / 214MB |
+| 补丁核对 | 三张补丁全部干净落位（品牌两张规则引擎重出，特性补丁 `--check` 通过） |
+
+**这一版对车间日常实际可感知的变化**（一周 5,173 提交，其中 3,096 条是缺陷修复；
+下面只挑用户面能感知到的）：
+
+- **设置页重新分了子页**：上游把设置整理成有序子页（About 拆成「应用更新 / 卸载」等）。
+  对黑池的影响是换装规则要跟着重锚，详见第五节；用户侧看到的是更清楚的分组。
+- **桌面端不再重复拉起后端**：本机已有后端在跑时直接接上，不再另起第二个。
+  *（比喻：以前每开一个窗口就多请一位厨师，现在同一间厨房只留一位，大家共用。）*
+- **插件管理补全**：插件中心每行加了带确认的「卸载」，独立桌面插件也能卸。
+- **后台进程看得见**：CLI / TUI 的实时工作坞新增 Processes 区，后台跑着什么一眼可见。
+- **用量与限流更友好**：`hermes usage [--json]` 不开会话也能查账户额度；桌面端遇 429
+  限额时可以预约「额度重置后自动重试一次」。
+- **cron 默认跟随主模型**：定时任务在触发时使用当前主模型，需要固定时可显式 `pinned`。
+- **登录更可控**：可关闭「借用本机 Codex CLI / Claude Code 登录」（`auth.adopt_external_logins`）。
+- **细节体验**：每个对话可隐藏输入框状态栈、可隐藏时间线条与代码 diff、文件树可按项目
+  显示 gitignore 文件、侧栏分组可快捷键循环。
+- **插件 / 模型目录扩容**：插件目录新增数十个条目（memory-review、prompt-snippets、
+  bot-forge、reMarkable 工具箱等）；OpenRouter / Nous Portal 目录新增 `z-ai/glm-5.3-flashx`。
+
+> 观察项（未深究，供内网侧留意）：上游新增「已配置的记忆提供方若已移出核心，会自动从目录
+> 安装」一条（`e21ccdd7`）。内网便携包的外网可达性与目录可用性若有限制，这类自动安装的
+> 表现值得在车间实测时看一眼。
+
+## 二、变更清单
+
+上游区间 `v2026.9.14` → `v2026.9.21`，共 **5173** 个提交。
+
+| 类别 | 条数 |
+|------|------|
+| 新增能力（feat） | 288 |
+| 缺陷修复（fix） | 3096 |
+| 性能（perf） | 33 |
+| 重构（refactor） | 245 |
+| CI（ci） | 6 |
+| 测试（test） | 621 |
+| 文档（docs） | 249 |
+| 样式（style） | 11 |
+| 杂务（chore） | 350 |
+| 回退（revert） | 13 |
+| 未分类（other） | 261 |
+
+### 新增能力（feat，288 条）
+
+- **desktop** feat(desktop): let each chat hide its composer status stack  `accb8203`
+- **plugin-catalog** feat(plugin-catalog): add done-bell community plugin  `ddde715b`
+- **plugin-catalog** feat(plugin-catalog): add kiwi  `e652d6ea`
+- feat: add cognee.yaml in the catalogue  `f6e1c21a`
+- **plugin-catalog** feat(plugin-catalog): bump hermes-auto-titler to v0.2.3.1  `074f92b1`
+- **plugin-catalog** feat(plugin-catalog): bump hermes-auto-titler to v0.2.3  `f6513845`
+- **plugin-catalog** feat(plugin-catalog): bump cdp-manager to 1.0.2  `db39ee3f`
+- **gateway** feat(gateway): host-wide singleton lock + rendezvous record  `9eb90b0a`
+- **mcp** feat(mcp): make the discovery connect cap configurable (mcp.discovery_concurrency, default 4, 0 = unlimited)  `9a1f0629`
+- **website** feat(website): plugin pages render the README from the pinned commit by default  `2463550c`
+- **desktop** feat(desktop): attach to the running host backend instead of spawning a second one  `25d88ad0`
+- **desktop** feat(desktop): Uninstall for standalone desktop plugins via Electron IPC  `dec236b2`
+- **desktop** feat(desktop): Uninstall action with confirm on Plugins hub rows  `dd482928`
+- **gateway** feat(gateway): plugins.manage remove action for user-installed plugins  `180975a3`
+- **connectors** feat(connectors): one backend-owned connection operation, with a setup card on Desktop, TUI and CLI (#111008)  `afc3b7c6`
+- **website** feat(website): a page for every catalog plugin and every author  `845fee6c`
+- **plugin-catalog** feat(plugin-catalog): screenshots and readme entry fields for the plugin pages  `10c27381`
+- **website** feat(website): plugin catalog shows when each entry was added/updated and can sort by it  `4c2c20f6`
+- **sessions** feat(sessions): `hermes sessions set-journal-mode delete|wal` converts an existing WAL store offline (#100896)  `96da5d97`
+- **update** feat(update): hermes update --list-venv-holders prints the venv guard's holders as JSON, exit 3  `eaef5ec7`
+- **delegation** feat(delegation): recovery event carries transcript tails and owner git state  `a2b6f532`
+- **plugin-catalog** feat(plugin-catalog): bump cdp-manager to 1.0.2  `5327c3e3`
+- **plugin-catalog** feat(plugin-catalog): repin cdp-manager to 7ab55282 (config path + env-derived profile)  `5a9cd06d`
+- **plugin-catalog** feat(plugin-catalog): list ard-kit 0.20.0 @ 99796c7d  `0a1e738d`
+- feat: point Cron Bulletin catalog entry to v0.1.1  `7ae7ab4f`
+- feat: add Cron Bulletin to plugin catalog  `5034e5ec`
+- **plugin-catalog** feat(plugin-catalog): bump prompt-snippets to v1.6.0  `a02c3317`
+- **plugin-catalog** feat(plugin-catalog): add prompt-tray community plugin  `c0b79516`
+- **plugin-catalog** feat(plugin-catalog): bump rss-reader to 1.0.7  `d69ec488`
+- **plugin-catalog** feat(plugin-catalog): bump rss-reader to 1.0.7  `05e2de32`
+- **plugin-catalog** feat(plugin-catalog): bump hermes-auto-titler to v0.2.1  `6d1423a7`
+- **gateway** feat(gateway): log that SIGUSR1 / systemctl reload is a graceful restart (#117267)  `299401c0`
+- **delegate** feat(delegate): warn the child at 80% of its inactivity window before abandoning it  `97beaeee`
+- **plugin-catalog** feat(plugin-catalog): add claude-subscription-directsdk (official, models)  `5f5acb9e`
+- **providers** feat(providers): external-process provider support for standalone model-provider plugins (from #105863)  `13fe9c71`
+- **website** feat(website): catalog cards open the Desktop Install Plugin dialog by catalog name  `d9fdaeb4`
+- **desktop** feat(desktop): hermes://plugin/install?catalog=<name> opens the reviewed catalog install dialog  `aae3c737`
+- **tui** feat(tui): Processes block in the live-work dock and /agents overlay  `1d30aa55`
+- **cli** feat(cli): background processes show in the live-work dock and monitor  `caa2e2dd`
+- **process_registry** feat(process_registry): stamp exited_at and expose it on process.list  `2c78b9b3`
+- **gateway** feat(gateway): /branch opens a sibling thread by default; --here keeps this chat (#66023)  `dbcbd9d9`
+- feat: add z-ai/glm-5.3-flashx to the OpenRouter and Nous Portal catalogs  `8d153b26`
+- **plugin-catalog** feat(plugin-catalog): pin memory-review public edition  `3e0c86ec`
+- **plugin-catalog** feat(plugin-catalog): pin memory-review catalog card  `36918b3e`
+- **plugin-catalog** feat(plugin-catalog): add memory-review  `629107a8`
+- **plugin-catalog** feat(plugin-catalog): add xmemo memory provider entry  `9b69f441`
+- **plugin-catalog** feat(plugin-catalog): pin intelligent-tool-break public edition  `8e887332`
+- **plugin-catalog** feat(plugin-catalog): pin intelligent-tool-break public edition  `696f0786`
+- **plugin-catalog** feat(plugin-catalog): pin intelligent-tool-break catalog card  `c8fe3334`
+- **plugin-catalog** feat(plugin-catalog): add intelligent-tool-break  `b85c552e`
+- **plugin-catalog** feat(plugin-catalog): add openrouter-voice (community, voice)  `97d925df`
+- **plugin-catalog** feat(plugin-catalog): add prompt-enhancer  `20d7521f`
+- **plugin-catalog** feat(plugin-catalog): add prompt-snippets  `b95c822f`
+- **plugin-catalog** feat(plugin-catalog): pin bot-forge to v0.4.0  `9392fa1d`
+- **plugin-catalog** feat(plugin-catalog): pin bot-forge to v0.3.0  `cf3be4d7`
+- **plugin-catalog** feat(plugin-catalog): pin bot-forge to v0.2.0  `36bad2f0`
+- **plugin-catalog** feat(plugin-catalog): add bot-forge  `e437be2f`
+- **plugin-catalog** feat(plugin-catalog): add image-utils  `e2978d0a`
+- **plugin-catalog** feat(plugin-catalog): bump rss-reader to 1.0.6  `73352247`
+- **plugins** feat(plugins): add reMarkable cloud and notebook toolkit  `22b72e25`
+- **plugin-catalog** feat(plugin-catalog): add sketch-pad community plugin  `8c9b6746`
+- **catalog** feat(catalog): add hermes-herald plugin entry  `358cb072`
+- **cron** feat(cron): jobs follow the main agent model at fire time; `pinned` locks it on request  `0469740a`
+- **desktop** feat(desktop): organize settings into ordered subpages  `5a0fb0f3`
+- **nous** feat(nous): unlock subscription-billed models for free-tier accounts  `a76e4916`
+- **desktop** feat(desktop): allow hiding thread timeline bars  `ee56d38d`
+- feat: model-provider plugins classify their own API errors via ProviderProfile.classify_api_error  `bce20d0b`
+- feat: declarative OAuth Authorization-Code+PKCE login for provider plugins  `97fd8c8f`
+- **providers** feat(providers): plugin-declared per-model capability metadata  `ef0bac6c`
+- **opencode-go** feat(opencode-go): show Go plan windows in /usage through the profile hook  `627a12a9`
+- **providers** feat(providers): expose plugin account usage hook  `400b6c41`
+- **auth** feat(auth): OAuth-shaped provider plugins register, log in and refresh through their profile  `dce233e8`
+- **auth** feat(auth): let model-provider plugins own hermes auth add/status/logout/refresh  `749443e2`
+- **desktop** feat(desktop): expose hide code diffs in appearance settings  `4d14aaf4`
+- **desktop** feat(desktop): keep edit counts when code diffs are hidden  `0f2c2715`
+- **catalog** feat(catalog): add hermes-structured-aux-models plugin entry  `1764d01b`
+- **plugin-catalog** feat(plugin-catalog): pin rss-reader public edition  `55f2b988`
+- **plugin-catalog** feat(plugin-catalog): pin rss-reader 1.0.5 fix  `9c1ef6bf`
+- **plugin-catalog** feat(plugin-catalog): bump rss-reader to 1.0.5  `f9073eff`
+- **plugin-catalog** feat(plugin-catalog): pin rss-reader 1.0.4  `23bb584b`
+- **plugin-catalog** feat(plugin-catalog): pin rss-reader catalog card  `633b065a`
+- **plugin-catalog** feat(plugin-catalog): pin rss-reader 1.0.4  `250d8a89`
+- **plugin-catalog** feat(plugin-catalog): add rss-reader  `05e580ff`
+- **plugin-catalog** feat(plugin-catalog): pin provider-status public edition  `a7f63109`
+- **plugin-catalog** feat(plugin-catalog): pin provider-status catalog card  `3ee2d100`
+- **plugin-catalog** feat(plugin-catalog): add provider-status  `97f73102`
+- **plugins** feat(plugins): add the Tempo MPP catalog entry  `f2a85c16`
+- **catalog** feat(catalog): add Corpus plugin entry  `38bae549`
+- **plugin-catalog** feat(plugin-catalog): add Adspirer  `4666ce6d`
+- **plugin-catalog** feat(plugin-catalog): add sticky-notes community plugin  `58bc617c`
+- **plugin-catalog** feat(plugin-catalog): add provider-copy community plugin  `2e58fb3b`
+- **api_server** feat(api_server): stream agent status lines as hermes.status SSE events  `b9f29e21`
+- **agent** feat(agent): bounded auto-recovery ladder after retries and fallback are spent (#85426, #107307)  `0752127c`
+- **doctor** feat(doctor): resolve every routed auxiliary.<task> block and report the dead ones  `15fec561`
+- **config** feat(config): expose a custom route's canonical api_mode for metadata lookups  `193e5684`
+- **auth** feat(auth): opt-in browser authorization-code + PKCE login for openai-codex  `de66512a`
+- **plugin-catalog** feat(plugin-catalog): bump iteration-budget-meter to 1.2.2  `00570550`
+- **plugin-catalog** feat(plugin-catalog): pin iteration-budget-meter catalog card  `538d0ee5`
+- **plugin-catalog** feat(plugin-catalog): add iteration-budget-meter  `e4733cca`
+- **plugin-catalog** feat(plugin-catalog): pin reasoning-switch catalog card  `e5472fbc`
+- **plugin-catalog** feat(plugin-catalog): add reasoning-switch  `8bac9750`
+- **plugin-catalog** feat(plugin-catalog): pin compact-reasoning-label catalog card  `89cdfb81`
+- **plugin-catalog** feat(plugin-catalog): add compact-reasoning-label  `11c4a76d`
+- **plugin-catalog** feat(plugin-catalog): add mermail community plugin  `0a669975`
+- **plugin-catalog** feat(plugin-catalog): add Hermes-Jev  `81ba2648`
+- **plugin-catalog** feat(plugin-catalog): add compartment (encrypted offline memory provider)  `01291fda`
+- **evals** feat(evals): fast-jev-compaction arm + compaction cost metering in the compaction eval  `139047ae`
+- **plugins** feat(plugins): list ReMe and align manifest install support  `e834ee89`
+- **plugin-catalog** feat(plugin-catalog): add browserclaw plugin  `4383f1cd`
+- **plugin-catalog** feat(plugin-catalog): add hermes-project-stewardship  `5db3298a`
+- **catalog** feat(catalog): add VK Messenger platform plugin  `da1d38dd`
+- **plugin-catalog** feat(plugin-catalog): add jev-typesafe entry  `2b2512d0`
+- **plugin-catalog** feat(plugin-catalog): pin opaque-composer catalog card  `10eb8607`
+- **plugin-catalog** feat(plugin-catalog): add opaque-composer  `bf9f57e2`
+- **telegram** feat(telegram): drop_pending_on_cold_boot knob to preserve offline queue  `a4a0447b`
+- **tui_gateway** feat(tui_gateway): session.info reports the wire level the route sends for the effort  `e2a02106`
+- **desktop** feat(desktop): 429 usage-limit card can schedule one retry for when the limit resets  `6e1f5c97`
+- feat: Hermes-owned scratch dir replaces the system temp dir for every process and child  `2dcebe64`
+- **gateway** feat(gateway): opt-in `served_model` footer field shows the model that really answered  `bafb778e`
+- **cli** feat(cli): `hermes usage [--json]` prints the /usage account limits without a session  `85b2a3df`
+- feat: label a model.context_length pin and warn once when it disagrees with the provider  `8e180c69`
+- **codex** feat(codex): inline SVG images are rasterized to PNG before the Responses send  `3dad039a`
+- **compression** feat(compression): warn on an invalid no_progress_timeout and document the key  `c13d16eb`
+- **compression** feat(compression): make Codex auxiliary no-progress timeout configurable per task  `4ae4b465`
+- **image_gen** feat(image_gen): OpenAI image provider sends custom model ids verbatim and can reuse a named custom endpoint  `fc08fdb1`
+- **image_gen** feat(image_gen): OpenAI image provider takes base_url/key_env from config, blanks OpenAI-Project, bypasses macOS system proxy  `3fa2c45b`
+- **api-server** feat(api-server): reasoning on non-streaming replies; echoed reasoning input items are ignored  `0a846a2e`
+- **api-server** feat(api-server): stream model reasoning on /v1/chat/completions and /v1/responses  `70cee9e0`
+- **usage** feat(usage): expose the decoded Codex usage payload on AccountUsageSnapshot  `4ebbbde2`
+- **providers** feat(providers): accept `chatgpt` / `chatgpt-codex` as names for the openai-codex provider  `dc9fec7d`
+- **codex** feat(codex): configure app-server binary  `267ddabb`
+- feat: accept dict-form reasoning_effort for providers with bespoke thinking tiers  `5c113bb0`
+- **plugin-catalog** feat(plugin-catalog): add source-tray community plugin  `e6b32ee2`
+- feat: one-shot runs drop the self-improvement footprint (no skill authoring, fewer process skills, delegation cap)  `a79d1d3a`
+- **discord** feat(discord): add free_response_auto_thread opt-in  `774e0707`
+- **mcp** feat(mcp): connect to the official n8n server from the catalog (#116063)  `17b5df02`
+- **plugin-catalog** feat(plugin-catalog): refuse desktop plugins that step outside the SDK surface  `72f55062`
+- **curator** feat(curator)!: prune_builtins defaults to off  `1b8e4c51`
+- **tools** feat(tools): read_file renders SQLite schemas and flags merge conflicts; web_extract refuses binary payloads  `11d68e46`
+- **catalog** feat(catalog): add Pixel Worlds desktop realms  `b8390ee2`
+- feat: added apify plugin entry  `fafcddbc`
+- **plugin-catalog** feat(plugin-catalog): add ha-sidebar-navigator  `efc9a445`
+- **plugin-catalog** feat(plugin-catalog): add hermes-loadout community plugin  `fc32ca79`
+- **plugin-catalog** feat(plugin-catalog): add toolaria  `65fcc53c`
+- **plugin-catalog** feat(plugin-catalog): add quota plugin  `bb431a7a`
+- **catalog** feat(catalog): add githermes to plugin catalog  `bee4fabf`
+- **plugin-catalog** feat(plugin-catalog): add memlock  `83664cb5`
+- **catalog** feat(catalog): add hermes-sidepulse beta backend  `bac32f28`
+- **catalog** feat(catalog): add Blinkenbar desktop light panel  `884a14b4`
+- **catalog** feat(catalog): add hermes-speech v0.3.2  `55f09ed2`
+- **website** feat(website): plugin catalog hero speaks to users, not package managers  `04a722d6`
+- **lsp** feat(lsp): lsp.package_manager picks npm, pnpm or yarn for language-server installs  `c484be01`
+- **web** feat(web): add openai-native backend for Codex server-side web_search  `82c77ff9`
+- **error-surface** feat(error-surface): 429 error card shows when the usage limit resets  `645e9298`
+- **lsp** feat(lsp): route .blade.php to laravel-lsp; plain .php stays on intelephense  `d4d9b76d`
+- **lsp** feat(lsp): declare custom language servers in config (lsp.servers.<id> with extensions)  `8420737a`
+- **codex** feat(codex): named custom providers work with the codex_app_server runtime  `8b7caf22`
+- feat: slim the per-provider session header to the route seam and document it  `2828e19a`
+- **agent** feat(agent): per-provider session_affinity_header (#104449)  `ece07d24`
+- **api-server** feat(api-server): reasoning on non-streaming replies; echoed reasoning input items are ignored  `004c8a51`
+- **api-server** feat(api-server): opt-in cap on tool outputs in the stored /v1/responses history  `064756ca`
+- **openai** feat(openai): agent.text_verbosity controls Responses answer length  `3910489f`
+- feat: make the streaming TTS first-sentence threshold configurable (tts.streaming.min_len)  `9823ce4f`
+- **api-server** feat(api-server): stream model reasoning on /v1/chat/completions and /v1/responses  `b9577829`
+- **cli** feat(cli): add `hermes codex-runtime migrate [--dry-run] [--json]`  `d09183d8`
+- **codex_app_server** feat(codex_app_server): accept developer_instructions and send them on thread/start  `5cf6dcdd`
+- **codex** feat(codex): configure app-server binary  `c48e0b42`
+- **sessions** feat(sessions): `hermes sessions repair-profiles` settles crossed-profile durable state  `67757285`
+- **gateway** feat(gateway): route inbound messages to profiles by sender user_id  `d6f3285b`
+- **gateway** feat(gateway): RoutingIdentity — one frozen identity per inbound event  `ad651b82`
+- **auth** feat(auth): opt out of borrowing Codex CLI / Claude Code logins (auth.adopt_external_logins)  `6c7f6934`
+- **plugins** feat(plugins): pin hermes-talk catalog entry to v0.19.2  `e8e712e7`
+- **plugin-catalog** feat(plugin-catalog): add Hermes Talk  `c36681ef`
+- **plugin-catalog** feat(plugin-catalog): add Prism provider  `fde394c4`
+- **catalog** feat(catalog): add Search1API plugin  `6c7a0e59`
+- **catalog** feat(catalog): add pinned artifact-relay plugin  `c2435803`
+- **plugin-catalog** feat(plugin-catalog): add hermes-security-audit  `0b78a269`
+- **catalog** feat(catalog): add OpenAlex research tools  `a9dbbe9f`
+- **plugin-catalog** feat(plugin-catalog): add live-time plugin entry  `6a627e6e`
+- **catalog** feat(catalog): add Toolsmith desktop plugin  `369d3b49`
+- **catalog** feat(catalog): add Session Diff desktop plugin  `24fd6ca6`
+- **plugin-catalog** feat(plugin-catalog): add Hermes Outpost  `b09f7a8f`
+- **catalog** feat(catalog): add ClinePass model provider  `3090f9c6`
+- **plugin-catalog** feat(plugin-catalog): add billing community plugin  `6e8209df`
+- **catalog** feat(catalog): add by2kb video-to-knowledge plugin  `244ee11d`
+- **plugin-catalog** feat(plugin-catalog): add kiro-acp community plugin  `b9cf6bf7`
+- **catalog** feat(catalog): add Replaid plugin  `328503b5`
+- **plugin-catalog** feat(plugin-catalog): add hermes-opper (Opper model provider)  `13d5b651`
+- **catalog** feat(catalog): declare hermes floor and note the placeholder key for zerosignal  `d02a840f`
+- **catalog** feat(catalog): add zerosignal provider v0.1.0  `a23482a1`
+- **plugin-catalog** feat(plugin-catalog): add debug-desk community plugin  `c0bdb65e`
+- **plugin-catalog** feat(plugin-catalog): add web-serply  `c5fba43c`
+- **plugin-catalog** feat(plugin-catalog): add junie-acp — JetBrains Junie as an ACP model provider  `45940920`
+- **catalog** feat(catalog): add hermes-town community plugin  `6b219b56`
+- **plugin-catalog** feat(plugin-catalog): add explicit Jev decision sidekick  `0d433914`
+- **gateway** feat(gateway): `hermes gateway status` reports Windows Scheduled Task registration drift  `2097cc6b`
+- **gateway** feat(gateway): read a registered Windows Scheduled Task back as namespace-agnostic XML leaves  `60b64355`
+- **send** feat(send): add WhatsApp native mentions  `b34ebc08`
+- **providers** feat(providers): remove the keyless opencode-free tier  `998f614c`
+- **memory** feat(memory): a configured provider that left core is installed from the catalog automatically  `e21ccdd7`
+- **notifications** feat(notifications): opt-in suppression of user-channel warning notifications  `cd3de040`
+- **plugins validate** feat(plugins validate): --install-deps installs the declaration before the capability probe  `f253f25b`
+- **desktop** feat(desktop): per-project toggle for gitignored files in the file tree (#101065)  `27dfbe39`
+- **vision** feat(vision): vision.embed_target_bytes replaces the hardcoded 256 KB native embed budget  `f3733652`
+- **desktop** feat(desktop): add rebindable sidebar grouping cycle  `81de5afa`
+- **plugin-catalog** feat(plugin-catalog): add debug-desk community plugin  `6bdfc0b0`
+- **plugin-catalog** feat(plugin-catalog): add Sahil community plugins  `d4f78229`
+- **plugins validate** feat(plugins validate): fail trees with nothing to load; check dependency declarations  `6ac3ff88`
+- **plugins** feat(plugins): install declared Python dependencies and re-apply them after hermes update  `96e8a232`
+- **lazy_deps** feat(lazy_deps): install_specs takes constraints and dry_run  `e3507ef2`
+- **desktop** feat(desktop): auto-grow the Bot group composer for long prompts  `75578134`
+- **bot-mode** feat(bot-mode): render room @mentions as inline references and add Reply to @bot  `e04ce9d1`
+- **desktop** feat(desktop): authenticate the update check's GitHub API calls  `44af2685`
+- **matrix** feat(matrix): implement create_handoff_thread  `3063d0f2`
+- **desktop** feat(desktop): attach the frontmost window to the active draft  `1b2da207`
+- **desktop** feat(desktop): detect the dual-Command gesture on macOS  `76a4d3b6`
+- **desktop** feat(desktop): open a bot's most recent session from its roster row  `13f18198`
+- **desktop** feat(desktop): pin a group chat to the top of the Bots roster  `2679f477`
+- **desktop** feat(desktop): file group chats into user-made roster sections  `60999871`
+- **bot-mode** feat(bot-mode): open the member picker from Group settings and keep picks stable  `6b22e108`
+- **bot-mode** feat(bot-mode): edit an existing group room's members from the room  `df2d8c6b`
+- **catalog** feat(catalog): add hermes-t3-control v1.5.0  `5eb06273`
+- **image_gen** feat(image_gen): route the managed selection by model id across FAL, Krea and Portal  `294421fd`
+- **catalog** feat(catalog): add usage-stats plugin entry  `aca6c1c8`
+- feat: catalog card image slot is 2:1; version pill reads as a pill  `bd463527`
+- feat: plugin catalog entries carry an optional version label and card image  `034313e7`
+- **desktop** feat(desktop): suggest varied first tasks from real integrations  `4716ec0b`
+- **mcp** feat(mcp): curate first-task examples and add Blender bridge  `12f495fe`
+- **mcp** feat(mcp): expose optional backend-local app discovery  `a38d544f`
+- **desktop** feat(desktop): browse catalogs as cards with a saved list option  `4e9d3c71`
+- **ui** feat(ui): support icon-only segmented controls  `2e05fcf5`
+- **catalog** feat(catalog): restore website install links to Desktop  `cf59980e`
+- **desktop** feat(desktop): restore native skill and plugin catalogs  `cbd76e4e`
+- **models** feat(models): add stealth/union-alpha to the OpenRouter free-tier catalog  `d0aecdf3`
+- **desktop** feat(desktop): add profile window and default context actions  `09aaa4cc`
+- **desktop** feat(desktop): apply profile defaults to startup and new chats  `63d129bf`
+- **desktop** feat(desktop): persist default profile and route peer windows  `8eaf776c`
+- **plugin-catalog** feat(plugin-catalog): add hermes-telemetry, openalex, yantrikdb at their merged validate-fix commits  `bb0c2303`
+- **gateway** feat(gateway): gateway.multiplex_profiles defaults to on, gated by a boot-time serve guard  `a10bbf95`
+- **desktop** feat(desktop): share the floating composer across chat panes  `087fbe38`
+- **desktop** feat(desktop): keep live approval stacks stable during execution  `cb95c278`
+- **desktop** feat(desktop): stack approvals and advance exact requests with Enter  `56ea9bab`
+- **desktop** feat(desktop): give queued toasts bounded card depth  `ca6bfe2b`
+- **approval** feat(approval): prepare GUI terminal asks before ordered execution  `dd68d175`
+- **desktop** feat(desktop): browse skills and plugins in a shared native catalog  `07c90884`
+- **catalog** feat(catalog): open website installs in Hermes Desktop  `b0e78e60`
+- **desktop** feat(desktop): fan the composer's voice toggles out of the mic  `bc722dcb`
+- **desktop** feat(desktop): FanMenu primitive and a floating Button variant  `c7580f0e`
+- **plugin-catalog** feat(plugin-catalog): add 5 sweep follow-ups (Gondola, intelligent-memory, inkbox, home-dashboard, obsidian-memory)  `873a7bbb`
+- **credential-pool** feat(credential-pool): numbered env siblings (KEY_2, KEY_3, …) seed rotation  `996f7bc5`
+- **plugin-catalog** feat(plugin-catalog): add 66 community plugins from the Discord #plugins-skills-and-skins sweep  `5d593660`
+- feat: hermes update and doctor tell you when /rollback checkpoints are on and large  `f9c3a8a1`
+- **desktop** feat(desktop): hideable profile rail with a statusbar profile dropdown stand-in  `043632e2`
+- **free-tier** feat(free-tier): ruled behaviour for every welcome-api failure, with friendly copy and a fault-injecting rehearsal server  `51e39af9`
+- feat: profile clone can opt into staying synced with its source (--sync-imports)  `7bb52c0b`
+- **auth** feat(auth): accept top-level allow_all_users as a known config.yaml key  `23bdb546`
+- **skills** feat(skills): add ip-as-logo optional skill (minimal cute IP mascot marks)  `398279fd`
+- **skills** feat(skills): add auteur optional skill — cinematic web design with executable anti-slop gates  `251ab050`
+- **session-search** feat(session-search): OR-relaxed retry recovers paraphrased recall  `2a2c3aa5`
+- **session_search** feat(session_search): add after/before bounds and exclude_session_ids  `5655920f`
+- **cli** feat(cli): add --format stream-json for structured JSONL output  `1657a1ce`
+- **session-export** feat(session-export): include timing evidence  `f25f6555`
+- **relay** feat(relay): migrate legacy HERMES_NEMO_RELAY_ATIF_*/ATOF_* vars into a validated relay-plugins.toml  `87ce653d`
+- **gateway** feat(gateway): 'decline' unauthorized-DM behavior — one-time polite decline instead of pairing code  `a6e934e0`
+- **video_gen** feat(video_gen): LTX 2.5 + Kling O3 families; Happy Horse upgraded to v1.1  `37286d30`
+- **skills** feat(skills): skills.auto_load pins skills into every new session's prompt  `1976869c`
+- **plugin-catalog** feat(plugin-catalog): rank entries by GitHub stars, probed at most once a day  `3e2e2c50`
+- **plugin-catalog** feat(plugin-catalog): add grill-tab community plugin  `63839f98`
+- **plugin-catalog** feat(plugin-catalog): default shelf is Desktop, catch-all is General; categorise today's six entries  `2de17e5d`
+- **plugin-catalog** feat(plugin-catalog): shelve the catalog by category (Memory, Desktop, Platforms, …)  `55dbd7f6`
+- **plugins** feat(plugins): add Octen web provider catalog entry  `603bc6ed`
+- **plugin-catalog** feat(plugin-catalog): add metamask-wallet community entry  `50551b24`
+- **plugin-catalog** feat(plugin-catalog): add hermes-live-voice (community)  `913ce5b6`
+- **plugin-catalog** feat(plugin-catalog): add hermes-auto-titler (community)  `a982d2c8`
+- **desktop** feat(desktop): add one-click local engine updates  `de5a1da6`
+- **local-runtime** feat(local-runtime): prefer llama.cpp b10964  `e9e363c8`
+- **catalog** feat(catalog): add hermes-tailscale community plugin  `3bec4742`
+- **catalog** feat(catalog): add hermes-ssh community plugin  `cb84ee77`
+- **catalog** feat(catalog): add shodan community plugin  `e7bd70d9`
+- **catalog** feat(catalog): add hermes-terminal community plugin  `0491ae81`
+- **catalog** feat(catalog): add hermes-rss community plugin  `4b8e1839`
+- **catalog** feat(catalog): add hermes-resetwatch community plugin  `2c70c41a`
+- **catalog** feat(catalog): add hermes-office community plugin  `23effb59`
+- **catalog** feat(catalog): add hermes-nous-prices community plugin  `eab88719`
+- **catalog** feat(catalog): add hermes-ledgerline community plugin  `681d6c63`
+- **desktop** feat(desktop): chat/UI font picker (desktop.font_family) for readability faces  `40f2702b`
+- **web** feat(web): send Hermes identity headers on Perplexity requests  `1ad89ac0`
+- **connectors** feat(connectors): the connector card offers one verb per row; Continue is the only way out (#110843)  `1ab32b21`
+
+### 缺陷修复（fix，3096 条）
+
+- **models** fix(models): pin x-ai/grok-4.7 to the top of the Nous picker in the source list  `9ec90755`
+- **gateway** fix(gateway): give up on an update notice whose platform never connects  `601a8a17`
+- **image_gen** fix(image_gen): a gateway 429 is reported as a rate limit and retried once, not as a missing model  `884b8d98`
+- **desktop** fix(desktop): leave Space activation to focused controls  `2a6debe5`
+- **gateway** fix(gateway): an unmigrated standalone fleet must not spin on the host lock  `483cb07f`
+- **gateway** fix(gateway): prove gateway ownership, not just liveness; stop trapping a mid-migration host  `583864c3`
+- **migrate** fix(migrate): auto-fold a unit-less default when every secondary shares one manager  `e9ac4a59`
+- **desktop** fix(desktop): unscopable mutations keep a process-scoped backend; stamp shared-primary event provenance  `25c74f73`
+- **desktop** fix(desktop): wake retired bots for group turns  `996417c3`
+- **dashboard** fix(dashboard): close the indirection holes and the unnamed-profile 400s  `2e497bea`
+- **dashboard** fix(dashboard): every REST route honours the profile it is given  `6a3dcc39`
+- **auth** fix(auth): named profiles read the root auth.json again (revert #111724)  `2632229b`
+- fix: apply the per-model image strip to the max-iterations summary request  `fe429480`
+- fix: a corrupt-image rejection must not blind the model for the session  `b5dacdb1`
+- **agent** fix(agent): track image rejections per model across a fallback chain  `72990150`
+- **agent** fix(agent): an image rejection strips the request, never the session history  `1ef306f6`
+- **auth** fix(auth): recognise a bare named providers: pin in boot inventory  `907bf871`
+- **auth** fix(auth): honour openrouter mirror base_url in boot inventory  `a74a2586`
+- **auth** fix(auth): recognise model.provider openrouter in boot inventory  `34d72063`
+- **desktop** fix(desktop): type the known-origin WeakSet over object  `6bde794b`
+- **desktop** fix(desktop): give a captured read origin the same write tag on both paths  `8403fd11`
+- **desktop** fix(desktop): let saveHermesConfig resolve the i18n record's own read origin  `74ecb830`
+- **desktop** fix(desktop): include writeScope in the voice-provider autosave effect deps  `44d492b9`
+- **desktop** fix(desktop): include writeScope in the terminal-font autosave effect deps  `b6ad5563`
+- **desktop** fix(desktop): spread the captured config read origin on write  `f0eed37d`
+- **desktop** fix(desktop): default config writeScope to undefined, not null  `744634fd`
+- **desktop** fix(desktop): retain config routes through cache refresh  `389e89bd`
+- **desktop** fix(desktop): retain config routes for font and reset  `f63c7c80`
+- **desktop** fix(desktop): bind config writes to the config-read route  `8961499f`
+- fix: return a raced-successful compression from _await_worker_within_budget  `68f7b90e`
+- fix: report a worker that died with TimeoutError as exited in _join_cancelled_worker  `7740a4ac`
+- **compression** fix(compression): don't mistake a worker's TimeoutError for a poll timeout  `83051133`
+- **gateway** fix(gateway): count wedged housekeeping workers in the shutdown live-worker total  `9436dfe8`
+- **gateway** fix(gateway): run session housekeeping on its own pool so it cannot starve turn bodies  `9815b445`
+- fix: detach aliased agent.tools at the outbound sanitization chokepoint  `336d9662`
+- fix: surface ascii-codec error when UTF-8 runtime repairs nothing  `05287a53`
+- fix: preserve conversation history during unicode recovery  `17dfeb1c`
+- **mcp** fix(mcp): connector-card install keeps .env secrets-only too  `dacae4ce`
+- **mcp** fix(mcp): treat empty preloaded env value as absent so required secrets still raise  `2434cffd`
+- **mcp** fix(mcp): feed dashboard-supplied env into catalog install without re-prompt  `b1ff5939`
+- **mcp** fix(mcp): route non-secret catalog env vars to config.yaml instead of .env  `d1900345`
+- **profiles** fix(profiles): route distribution .git cleanup through the shared rmtree_readonly helper  `287f0ec6`
+- **profiles** fix(profiles): remove Git metadata from distributions  `7cdbd5be`
+- **windows** fix(windows): delete read-only Git trees instead of failing with WinError 5  `b79b530e`
+- **gateway** fix(gateway): log the converge hint on a standalone owner; put a refusal in the profile's own log  `bb359ec5`
+- **gateway** fix(gateway): a standalone owner is the per-profile topology, not a refusal  `804cc3c0`
+- **ci** fix(ci): eslint ignores *.generated.ts; restore the contract file's header  `75b083e9`
+- **desktop** fix(desktop): bound the Chromium log while the shell is running, not only at launch  `782886f8`
+- **desktop** fix(desktop): optional Linux crash diagnostics must not be fatal or unbounded  `9a217944`
+- **update** fix(update): never disarm the host restart obligation, and never discharge unknown terms  `953b6f6f`
+- **desktop** fix(desktop): close the Linux notification bus on will-quit  `8f7b3b48`
+- **desktop** fix(desktop): no notification cooldown after a benign daemon swap on Linux  `c93b1572`
+- **desktop** fix(desktop): release naturally closed Linux notifications  `ab4455d9`
+- **desktop** fix(desktop): prevent Linux native notification freezes  `326ce363`
+- **desktop** fix(desktop): a Linux SIGTRAP leaves its FATAL line and a minidump behind  `00e08cec`
+- **host-topology** fix(host-topology): a createTime-null record is not a live gateway, and the restart we print must run  `ea0c2b82`
+- **host-topology** fix(host-topology): only a PROVEN-live host record names the host gateway  `f6608917`
+- fix: doctor, cron status, claw and gateway status report the real host topology  `a1398a6f`
+- **gateway** fix(gateway): a record alone never means "attach", and --replace/--force work  `a10620a6`
+- **homeassistant** fix(homeassistant): detect the supervised launch through is_supervised_gateway_launch  `7b660e66`
+- **gateway** fix(gateway): scope the Local Network hint and keep the osascript wrapper out of gateway process scans  `eda2432c`
+- **gateway** fix(gateway): launchd gateway reaches the local network on macOS (#71206, #57812)  `5d63d3e5`
+- **homeassistant** fix(homeassistant): name the macOS Local Network block behind errno 65 under launchd (#71206)  `1d871110`
+- **desktop** fix(desktop): count the answer row in a page-boundary fold  `6668ac14`
+- **desktop** fix(desktop): count released transcript rows in backend rows  `3f985c84`
+- **desktop** fix(desktop): rewind the older-page offset in the backend's own units  `7c799c26`
+- **desktop** fix(desktop): the store releases paged-through history instead of holding it for the window's lifetime (#77311)  `14b43274`
+- **computer-use** fix(computer-use): doctor names the stale TCC row on the health_report path too  `db1f3f45`
+- **computer-use** fix(computer-use): name the stale TCC row when CuaDriver shows ON but is denied  `42ae8b44`
+- **mcp** fix(mcp): divide the shutdown budget across profile passes and stop poisoning the teardown context  `af380f66`
+- **kanban** fix(kanban): scrub the dispatcher's credentials from another profile's worker on any host  `bc0a42fd`
+- **serve** fix(serve): honour multiplex_profiles: false, freeze the launch env last, be loud on failure  `d80aaf1c`
+- **tui_gateway** fix(tui_gateway): never run an external secret command inside the exit-flush budget  `cbeedffc`
+- **multiplex** fix(multiplex): a profile whose home does not resolve must not borrow the launch profile's secrets  `4aa9baf1`
+- **multiplex** fix(multiplex): close the profile-scope holes the scope machinery misses  `c718267e`
+- **state** fix(state): VACUUM admission counts live holders only; argv proves the home, not the install  `8b71dc31`
+- **state** fix(state): per-profile store housekeeping under one multiplexed process  `a2c0af43`
+- **cron** fix(cron): release a profile's in-flight claim under the key it registered with  `9ecd22e5`
+- **cron** fix(cron): one host ticker owns every profile's cron, per profile  `cb647a01`
+- **gateway** fix(gateway): a failed host attach never exits 0, and SIGTERM clears the record  `f9b8cf7c`
+- fix: RoomLink catalog names the served profile and reads its policy from that profile  `3917c7dd`
+- **cron** fix(cron): stale-code yield reads as an outage in `cron status`; `hermes update` restarts proven-stale gateways  `8863b36f`
+- **doctor** fix(doctor): return failure for unresolved findings  `e1790567`
+- **memory** fix(memory): surface the overwritten entry on the /memory approve surface too  `05b9bacb`
+- **memory** fix(memory): key replaced_entries by 1-based op position; tidy review nits  `c6ed01e7`
+- **memory** fix(memory): replace states and surfaces the whole-entry contract instead of truncating silently (#117952, salvage #109177)  `67208caa`
+- **memory** fix(memory): exact whole-entry match beats substring match in replace/remove/batch  `c2bc9358`
+- **config** fix(config): model.provider survives config load as a string  `2069de86`
+- **backup** fix(backup): scope browser_profiles exclude to profile-home roots  `77657e75`
+- **backup** fix(backup): exclude Browser Use CLI browser_profiles from archives  `b52bd5c8`
+- **mcp** fix(mcp): cap discovery pass timeout and derive lock waiter budget from it  `ef50bb34`
+- **mcp** fix(mcp): scale discovery pass timeout with the connect cap (#117373)  `d93a48e6`
+- **mcp** fix(mcp): bound concurrent server connects during discovery (#117373)  `5208541b`
+- **delegate** fix(delegate): key a named custom child's credential pool by its inherited identity  `b905042d`
+- **delegate** fix(delegate): preserve named provider vision route  `7216a860`
+- **desktop** fix(desktop): jump-button message count settles after a timeline rail jump  `73f3f64e`
+- **desktop** fix(desktop): timeline rail index follows turns created after the session was opened  `f7193940`
+- **gateway** fix(gateway): /help and /commands catalog gating tolerates a runner without config  `2c286d9d`
+- **gateway** fix(gateway): /help and /commands show a gated non-admin only the commands they can run  `2978c23a`
+- **gateway** fix(gateway): honor configured slash-command refusal  `72ba7ae3`
+- **desktop** fix(desktop): group-chat member failure row names the error's first line (#117366)  `d90c3ad4`
+- **agent** fix(agent): remote backend probe no longer puts user, $HOME and cwd into the system prompt  `af66d5db`
+- **compression** fix(compression): cap the protected tail at 20% of the context window  `b7803a17`
+- **website** fix(website): catalog cards never collapse; clicking one opens the plugin page  `a782e2ee`
+- **desktop** fix(desktop): say when the launch-config reader ignored a desktop block, and pair space-separated argv switches (#77311)  `5dd70d7c`
+- **desktop** fix(desktop): prune the warm cache when a tile is parked, not only on publish (#77311)  `ca887435`
+- **desktop** fix(desktop): a parked session pane releases its transcript from the warm cache (#77311)  `af2a3be5`
+- **desktop** fix(desktop): renderer heap ceiling and desktop.electron_flags reach packaged launches (#77311)  `7d2d6347`
+- **desktop** fix(desktop): the agent avatar cache is bounded, so a long session cannot pin image bytes (Refs #77311)  `f4e085e9`
+- **local-runtime** fix(local-runtime): cap resident models by the hardware budget, not a count  `eaa5523f`
+- **models** fix(models): DeepSeek picker drops retired ids and labels V4.1 Flash (#117516, salvage #117525)  `e77c516e`
+- **models** fix(models): clean up DeepSeek picker catalog  `a839530c`
+- **desktop** fix(desktop): export Switch from the four remaining plugin-sdk test mocks  `7756d04e`
+- **desktop** fix(desktop): preserve explicit group stop cancellation  `d633255a`
+- **desktop** fix(desktop): preserve messages skipped by group holds  `a273c2c0`
+- **tui-gateway** fix(tui-gateway): drop the dead import guard around the default threshold cap  `aa667cf1`
+- **tui-gateway** fix(tui-gateway): restore the default threshold cap when the live config key is absent  `b06052ec`
+- **desktop** fix(desktop): onboarding and model pill share one provider label table  `b6a87db5`
+- **desktop** fix(desktop): label xAI OAuth model selections  `3235206c`
+- **desktop** fix(desktop): idle renderer stops ticking once a decode placeholder resolves  `56af2bdf`
+- **desktop** fix(desktop): gate rotation follow on focused surface and hash route  `6d7a8005`
+- **desktop** fix(desktop): cover route-based foreground and unselected A-next rotation  `32bb86ff`
+- **desktop** fix(desktop): prevent background session rotation from stealing foreground route (#86106)  `ced5f36b`
+- **gateway** fix(gateway): suppress the completion send only when the queued lane's send actually landed  `b4345b4e`
+- fix: queued-follow-up lane marks the first response delivered so the completion path never re-sends it  `ddd3c542`
+- **update** fix(update): the invoking profile's launchd restart is claimed only on a pid that changed  `e7e19281`
+- **update** fix(update): a supervised serve backend no longer pins the fleet-restart warning on forever  `e9197afd`
+- fix: state the real failure mode of the model_config sanitiser  `a5d561b1`
+- **gateway** fix(gateway): auto-archive every served profile's store, not just the launch home  `411a75a5`
+- fix: backup import refuses to publish over a deleted-but-held state.db  `a263df8d`
+- fix: recovery no longer ships a store that raises on the first resume  `7c2914be`
+- fix: `hermes serve` stops opening state.db writable under a live gateway  `b4f8d83e`
+- **gateway** fix(gateway): keep the operator restart tail on the home-channel storage notice  `968422e7`
+- **console** fix(console): accept the --force override the held-store refusal advertises  `f88ba2ea`
+- **state** fix(state): automatic maintenance skips the VACUUM while another process holds state.db  `1dc881b6`
+- **sessions** fix(sessions): resolve the held-store scan path from the store resolver, not the db object  `dfaf016d`
+- **sessions** fix(sessions): storage maintenance refuses while a writer holds state.db; human-first retired-WAL guard text + recovery guide  `6ba45b0e`
+- **sessions** fix(sessions): make set-journal-mode portable and fail closed where it cannot prove quiescence  `12fb5eb4`
+- **cron** fix(cron): scope the yield predicate's claims to what the record proves  `95b1f4c8`
+- **cron** fix(cron): compare full gateway code identities  `153b5f01`
+- **cron** fix(cron): verify fresh gateway before yielding ticks  `bc04c35f`
+- **auth** fix(auth): explicit-provider gate uses the credential resolver's reader  `1a1f4a59`
+- **auth** fix(auth): count profile .env keys in the explicit provider gate  `4ea57fa6`
+- **desktop** fix(desktop): honor Applies-to on Custom Endpoints  `050ea53a`
+- **desktop** fix(desktop): large text pastes attach from HERMES_HOME/composer-pastes when the chat cwd is elsewhere  `60dd9778`
+- **desktop** fix(desktop): prove the sign-in wall from curl's arrival URL and title too  `3d0bdce9`
+- **desktop** fix(desktop): never load a sign-in wall in the hidden link-title renderer  `1c81ad34`
+- **desktop** fix(desktop): skip the local gateway restart on update when the Desktop is remote-served  `04845f5f`
+- **desktop** fix(desktop): surface an externally-terminated renderer with a recovery page (#116472)  `338b3122`
+- **desktop** fix(desktop): an ssh connection learns its backend install id, so two addresses for one machine collapse  `82e147ff`
+- **desktop** fix(desktop): removing or re-pointing a connection forgets what was cached about it  `07888c88`
+- **kanban** fix(kanban): CLI and kanban_complete tool report an empty-completion refusal  `c7462498`
+- **kanban** fix(kanban): refuse empty complete_task evidence (#117483)  `6504b665`
+- **mcp-oauth** fix(mcp-oauth): classify discovery URLs by path  `86aa9dec`
+- **mcp-oauth** fix(mcp-oauth): avoid consuming MCP resource SSE as OAuth metadata  `1fd7ff0f`
+- **lsp** fix(lsp): one stalled request no longer silences a workspace for good — retry window, cold-root warm-up budget, per-root exclusion  `c5452725`
+- **desktop** fix(desktop): keep the chat composer mounted through transient session loaders  `16b749f6`
+- **compression** fix(compression): an auto-resolved summary model that fails falls back to the main model and is named in the warning  `7d3c0b2f`
+- **update** fix(update): settle latest.json only when the live fleet discharges the pending restart  `442636bf`
+- **update** fix(update): settle a stuck failed receipt once the live fleet serves the checkout code  `29c4ec8f`
+- **update** fix(update): pending fleet restart leaves gateways already on the checkout code alone  `d6b0d37e`
+- **delegation** fix(delegation): keep encoding= on the text=True line so the line-based footgun scanner sees it  `287cbb7e`
+- **delegation** fix(delegation): recovery-hint git probe decodes output as utf-8 (Windows footgun)  `4f46bbfb`
+- **desktop** fix(desktop): gate the plain-text token warning on secure storage being unavailable  `5d9af50a`
+- **gateway** fix(gateway): dedupe non-editable interim finals  `4774bb0a`
+- **a2a** fix(a2a): recover the streamed reply text instead of resolving empty  `7efacc8f`
+- **tui-gateway** fix(tui-gateway): an empty -wal sidecar created by our own read-only open does not count as a store change  `20fc19be`
+- **kanban** fix(kanban): expose task runtime limit in JSON  `1a4c68ce`
+- **kanban** fix(kanban): derive review implementer from the run, not the card's assignee  `79c4c363`
+- **tests** fix(tests): point the CLI minting/call-site probes at the new init and TUI-runtime mixins  `31e6242f`
+- **desktop** fix(desktop): keep the edit composer available after a timeline rail jump  `f532b8ad`
+- **plugin-catalog** fix(plugin-catalog): cdp-manager — re-pin to reviewed 7ab55282 (1.0.1), platforms [windows], profile-dir clause; map author email  `a2b9c5e6`
+- **desktop** fix(desktop): trim right-rail scope salvage to the renderer store  `765cb40b`
+- **desktop** fix(desktop): scope the right rail to the chat on screen, not the gateway socket  `c996d1c0`
+- **auth** fix(auth): user provider plugin owns its aliases and display name in the auth registry  `5aeddb6c`
+- **cron** fix(cron): preserve custom provider model choices  `46e1e49d`
+- **voice** fix(voice): wake-word pause/stop no longer hangs on a wedged microphone stream  `29414875`
+- **cli** fix(cli): let the early interface probe follow the profile's home  `f50c6f43`
+- **cli** fix(cli): attribute a scrubbed-env dashboard to its owner's home  `b3ae8182`
+- **browser** fix(browser): orphan reaper binds only on the full socket-dir path, never its basename  `f2f70bed`
+- **tests** fix(tests): strip the synced durable timestamp in the flushed-message dict comparison  `fbc4ea8b`
+- **compression** fix(compression): preserve steer display identity  `bb9058d7`
+- **contributors** fix(contributors): map forkbert noreply identity to PR #117479 author tylerbrevard; say why the probeUpstream wiring gate reads source  `3f584354`
+- **photon** fix(photon): use GUID for liveness probe message id  `b113ab6d`
+- **mcp** fix(mcp): wrap the redirect handler for Google offline access once and fold the tests to two  `2a00b062`
+- **mcp** fix(mcp): ask Google-hosted OAuth for offline access and normalize the device-flow issuer check  `c458bcf2`
+- **auth** fix(auth): PKCE token errors reuse the canonical grant-dead code set  `f76bdb6e`
+- **auth** fix(auth): mark PKCE invalid_grant dead and store alias logins canonically  `5eb06591`
+- **cli** fix(cli): fail closed without bang shell sanitizer  `7df20a67`
+- **gateway** fix(gateway): human-delay pacing comes from each profile's human_delay config, not process env  `86a599cb`
+- **gateway** fix(gateway): startup "Agent budget" line reports the enforced max_turns  `e987003f`
+- **gateway** fix(gateway): busy-text debounce/hard-cap come from per-profile config, not process env  `5a074a02`
+- **gateway** fix(gateway): validate human delay bounds  `b6a5b41e`
+- **gateway** fix(gateway): resolve silence narration filter from config only (#116886)  `166ec177`
+- **gateway** fix(gateway): resolve HERMES_TOOL_PROGRESS_MODE through profile scope (#116898)  `38c55c7e`
+- **dashboard** fix(dashboard): fold the new fallback config section into the agent tab  `dcae0d81`
+- **agent** fix(agent): pin the reset_at reach through try_activate_fallback and add opt-in fallback.min_switch_reset_seconds  `f568b860`
+- **agent** fix(agent): honor provider reset for fallback cooldown  `125bdff6`
+- **profiles** fix(profiles): hoist the profile-id grammar into hermes_constants.PROFILE_ID_RE  `348568dd`
+- **bot-mode** fix(bot-mode): a teammate roster entry must also pass the profile-id name gate (#116905)  `1e8fb24b`
+- **kanban** fix(kanban): drop the dead edit_completed_task_result shim and route dashboard priority edits through edit_task  `d325e531`
+- **cli** fix(cli): align kanban edit and paused cron listing  `3f399c0b`
+- **gateway** fix(gateway): share the drift-tolerant start-time comparator across every owner-liveness check  `36ede56a`
+- **cron** fix(cron): treat a drifted start-time fingerprint as a live owner in recovery  `52abb64c`
+- **constants** fix(constants): one home for managed, container and HERMES_UID policy; drop the config twins  `891c1d79`
+- **constants** fix(constants): empty/unreadable managed marker still counts as managed  `9218f751`
+- **constants** fix(constants): honor managed/shared-home permission policy in get_scratch_dir  `a5605724`
+- **tools** fix(tools): tear down a child in the caller's own process group by PID, never killpg it  `e2344086`
+- **tools** fix(tools): search_files keeps its matches when killpg is refused  `d4b772cb`
+- **tui-gateway** fix(tui-gateway): scope the hot-reload context pin to the configured default route  `54315c15`
+- **context** fix(context): re-derive model.context_length on model/provider change  `36b6efc2`
+- **auth** fix(auth): one primary_failure_wording() helper labels quota vs auth failure at all three fallback surfaces  `265e68d7`
+- **cli** fix(cli): treat credential-resolution 429 as quota, not auth  `89096ba5`
+- **models_validate** fix(models_validate): one profile-catalog helper decides accept/reject before the generic listing  `21462338`
+- **models_validate** fix(models_validate): a profile's own catalog endpoint decides, not the generic /models listing  `57a3bbbc`
+- **skills** fix(skills): share the credential-file alternation and pin plugin admission for py_read_secrets_file  `54718306`
+- **skills** fix(skills): cover expanduser-wrapped paths and Path read variants in py_read_secrets_file  `9cfea1db`
+- **skills** fix(skills): exclude write/append/exclusive open() modes from py_read_secrets_file  `128c737f`
+- **skills** fix(skills): Python open()/Path.read_text() on credential files lands critical  `8ee0ffe2`
+- **agent** fix(agent): detect Thai plan tails in promoted-reasoning stall guard  `de622b29`
+- **desktop** fix(desktop): honour updates.pre_update_backup=off in the Desktop updater preflight  `4de06d1d`
+- fix: send reasoning_effort=medium on custom endpoints when agent.reasoning_effort is unset  `53815e24`
+- **skills** fix(skills): write quarantined text members verbatim, without newline translation  `c2e64291`
+- **desktop** fix(desktop): keep agent tips out of the persisted seen ledger  `9c12b980`
+- **desktop** fix(desktop): hash persisted agent tip identities  `7a15dd19`
+- **desktop** fix(desktop): remember dismissed agent tips  `c1f96e6c`
+- **desktop** fix(desktop): mask typographic double quotes too and document quoted stop words  `4f0ced3e`
+- **desktop** fix(desktop): quoted or pasted stop words no longer hold a group-chat member (#117040)  `c5b27c4c`
+- **doctor** fix(doctor): stop prescribing audit fixes that updates revert (#116774)  `d76c77be`
+- **plugins** fix(plugins): peel an annotated-tag pin before verifying the checkout  `dff92f3d`
+- **tests** fix(tests): exit clear-screen fallback tests use the host OS, no os fake  `afd2fdf1`
+- **cli** fix(cli): clear-screen fallback spawns no shell and no console window (#116904)  `8e4c9434`
+- **tests** fix(tests): drop the unread detect_hardline_command patch in test_shell_exec_security  `650aa5b6`
+- **tui-gateway** fix(tui-gateway): scrub shell RPC secrets  `a5c044d2`
+- **kanban** fix(kanban): a caller asserting run ownership cannot classify a parked card  `31017b73`
+- **kanban** fix(kanban): classify only an untyped, run-free breaker block; restore sort order  `9850010f`
+- **kanban** fix(kanban): allow block_task to classify an already-blocked card  `c80ab1d8`
+- **cron** fix(cron): bound the Slack thread-origin horizon so an expired one-shot fails closed  `bda775f3`
+- **cron** fix(cron): keep the Slack reply-in-thread origin for near one-shots  `5263bede`
+- **kanban** fix(kanban): cover authorising/authorises in the respawn auth pattern and trim the table  `87f892b8`
+- **kanban** fix(kanban): ignore auth words in crashed worker output  `3899401a`
+- **kanban** fix(kanban): cover -es/-ing/British spellings in the auth blocker pattern  `857709d6`
+- **kanban** fix(kanban): curate the respawn guard's auth pattern instead of an open auth\w* stem  `6a52c9e4`
+- **local-runtime** fix(local-runtime): an unwritable boot lock degrades to an unlocked boot, never an OSError  `56b7a0fb`
+- **local-runtime** fix(local-runtime): serialize managed runtime boot across processes  `4352a7d0`
+- **tests** fix(tests): trailing newline  `c1c84ea3`
+- **tests** fix(tests): drop the prompt-substring change-detector from the MoA stale-guidance tests  `26277966`
+- **moa** fix(moa): mark reused advisor guidance as predating the tool results  `3a37a24e`
+- **compression** fix(compression): fence the durable cooldown rollback per compressor; one stale-attempt helper  `0765099f`
+- **compression** fix(compression): stop detached stale attempts writing shared compressor state  `0e33dc9e`
+- **windows** fix(windows): route every bare-bash spawn through _find_bash and surface silent interpreter failures  `85564321`
+- **agent,cli** fix(agent,cli): skip WSL/system bash.exe in Windows bash discovery (#116818)  `0abc3b04`
+- **skills** fix(skills): resolve native Git Bash for Windows inline shell  `1a24b851`
+- **delegate** fix(delegate): child_timeout_seconds bounds inactivity, not total runtime  `03973bd0`
+- **tools** fix(tools): share the idle-expiry criteria between acquire and the reaper; plain once-latch  `31d237ca`
+- **tools** fix(tools): reap idle session kernels without a new acquire  `c230d04d`
+- **desktop** fix(desktop): drop the unwired owner parameter from fetchVoiceLiveStatus and trim the routing tests  `c7f2e76c`
+- **desktop** fix(desktop): route GPT-Live sessions through the Bot owner's profile  `ae153074`
+- **tests** fix(tests): pin the allowed_root-relative folder header through the production entry point  `090c4b98`
+- **context_references** fix(context_references): @folder: listing works outside cwd under a widened allowed_root  `275002d7`
+- **gateway** fix(gateway): every adapter send_voice accepts the dispatch's is_voice kwarg  `fd94fe9b`
+- **matrix** fix(matrix): accept the media dispatch's is_voice kwarg in send_voice  `b6505448`
+- **skills** fix(skills): determiner-led child/to-workers recipients stay delegation prose  `d766e5d1`
+- **skills** fix(skills): flag Send child/workers context as exfil  `ccf77484`
+- **simplex** fix(simplex): flatten alpha image thumbnails  `45a701d8`
+- **gateway** fix(gateway): retry transiently-failed profile starts instead of parking them scanned  `ac97c507`
+- **desktop** fix(desktop): scope plugin specifier scanning to code, not strings/comments  `5171ea18`
+- **mcp** fix(mcp): keep the new resolver lines formatter-stable  `9eca7f38`
+- **mcp** fix(mcp): resolve stdio commands without reading or mutating the parent env  `80c26964`
+- **gateway** fix(gateway): suspend typing refresh before final delivery (#117300)  `bcdb1dec`
+- **cron** fix(cron): a bot-chat delivery builds its child env for the DESTINATION profile, not the sender  `786c0e3f`
+- **approval** fix(approval): warn on empty smart-approval guardian answers  `262825db`
+- **approval** fix(approval): keep the git branch force-delete gate off the safe -d delete  `7f61872d`
+- **cron** fix(cron): drop the is_cron_silence_response alias; trim tests to three invariants  `6bbfd63a`
+- **cron** fix(cron): split archives on the last heading; match lane silence forms  `a11b77fe`
+- **cron** fix(cron): inject the previous run's answer, not its prompt  `387e8e1e`
+- **gateway** fix(gateway): drain a restart-safe worker's cron delivery when it is queued, not on the next tick  `eb2781dd`
+- **kanban** fix(kanban): report the registered attachment set in the kanban_complete result  `64c7da59`
+- **local-runtime** fix(local-runtime): name the MXFP4 row in the GGML size table  `e56c229f`
+- **local-runtime** fix(local-runtime): support MXFP4 GGUF tensors  `ae908a93`
+- **url_safety** fix(url_safety): classify the IPv4-translated wrapper by its embedded IPv4  `2163a426`
+- fix: name the CommandCode upstream-outage pattern  `30d14a3f`
+- **agent** fix(agent): narrow upstream outage matching  `1f3c882d`
+- **runtime** fix(runtime): resolve missing credential pool endpoints  `23d3edac`
+- **compression** fix(compression): track commit fences as a registration stack  `09b72bc6`
+- **agent** fix(agent): pop _db_persisted on in-place mutations of stamped live dicts  `a48b4c7d`
+- **whatsapp** fix(whatsapp): refuse legacy-pidfile kills without a start-time fingerprint  `7a23b001`
+- **update** fix(update): exempt gateways from separate checkouts  `561658d2`
+- **install** fix(install): probe the command link directory for dependencies  `8c5a5deb`
+- **plugins** fix(plugins): isolate SystemExit in event, middleware and prompt-section callbacks too  `656c1c9b`
+- **plugins** fix(plugins): isolate SystemExit from hook callbacks  `d1221d43`
+- **computer-use** fix(computer-use): doctor and status report a configured cua-driver daemon whose `serve` is not listening  `f9d6d043`
+- **desktop** fix(desktop): pin the update-check proxy deps exactly and document the proxy variables  `522e121e`
+- **desktop** fix(desktop): honor proxy env for update API checks  `7473088b`
+- **plugins** fix(plugins): share the loader's SUPPORTED_MANIFEST_VERSION with the installer (#85879)  `118984d7`
+- **plugins** fix(plugins): hermes plugins doctor understands kind: model-provider  `78004e84`
+- **models** fix(models): plugin providers without a static catalog row keep their pinned models in the GUI picker  `577e88bf`
+- **desktop** fix(desktop): "Open containing folder" is offered only for a session on this computer, and says so when a path is not here  `00c0ea6c`
+- **kanban** fix(kanban): a profile_routes-pinned profile without this platform's adapter delivers via the primary bot  `bdd7192b`
+- fix: send the title model call after the turn on a shared custom endpoint  `efc947d7`
+- fix: capped @-reference child output always reports a nonzero returncode  `3e579ee7`
+- fix: failed initialize keeps the LSP error type instead of raising TypeError (review follow-up)  `81faca2f`
+- **lsp** fix(lsp): log at INFO when a request is skipped because its root is marked broken  `d15b17ad`
+- **lsp** fix(lsp): report server exit status and stderr tail on a failed initialize (#116446)  `b4f0553f`
+- fix: shutdown-killed live-owned peer run reports interrupted, not cancelled (review follow-up)  `5e6b504b`
+- **bot-mode** fix(bot-mode): every transport into a live Bot Chat waits on the owner's receipt through one primitive  `4179dc9b`
+- **desktop/bots** fix(desktop/bots): outside writes into member sessions surface on room open (#93813)  `099d19a5`
+- **desktop/bots** fix(desktop/bots): writes into a member's Group session reach the room log (#93813)  `e00aa13d`
+- fix: keep cli_footer_split importable under the prompt_toolkit test stubs  `7f21c7dc`
+- **cli** fix(cli): footer no longer collapses into "Window too small..." mid-turn (#57393)  `3b51213c`
+- fix: runtime-selected copilot still gets the exchanged token (review follow-up)  `f4c83fea`
+- **auth** fix(auth): skip the Copilot token exchange while copilot is only an ambient gh-CLI credential  `d03b5f37`
+- **auth** fix(auth): prevent repeated copilot raw token exchange warnings (#114740)  `bd2b8124`
+- **sessions** fix(sessions): skip POSIX zombie probe on Windows; prune registry snapshot after lock release  `c2cb1df3`
+- fix: a failed executor submission releases the API worker count (review follow-up)  `92b4f199`
+- **shutdown** fix(shutdown): track API-server worker lifetime past handler cancellation  `589d4d05`
+- **desktop** fix(desktop): publish the recovered binding before the retried attach, not after it returns  `8cc4ff5d`
+- **desktop** fix(desktop): a queued send's attachments stage on, recover and submit to ITS session, not the chat on screen  `af9d9867`
+- **desktop** fix(desktop): keep un-acked optimistic messages across a resync  `5f97bb0f`
+- fix: polled process results carry the reply-sized output and cut marker (review follow-up)  `cf54dcfd`
+- **tools** fix(tools): resolve skills.sh skills whose SKILL.md sits at the repo root  `f8d479b6`
+- **tests** fix(tests): terminate mocked kernel streams  `3f1afe79`
+- **docs** fix(docs): reference pages name tools the registry never registered  `6ae4cb88`
+- fix: ACP set_model no longer runs queued prompts inside the RPC (review follow-up)  `a2398488`
+- **acp** fix(acp): block state-mutating commands while a turn is running  `4987f668`
+- fix: assert diag severity tokens by parsed value, not whitespace (review follow-up)  `bf3f0bea`
+- **kanban** fix(kanban): diagnostic severity colours follow the dashboard theme  `1e4cd9ad`
+- fix: LSP tree-kill runs off the event loop (review follow-up)  `1e9d402e`
+- **lsp** fix(lsp): hard-kill failed server trees before reaping  `b773bcf2`
+- **lsp** fix(lsp): reap servers cancelled during startup  `bf52a951`
+- **security** fix(security): keep _HERMES_PROVIDER_ENV_BLOCKLIST importable from tools.environments.local  `940c6109`
+- **security** fix(security): match credential env names case-insensitively  `b534f4b8`
+- **desktop** fix(desktop): an env-pinned remote can sign in again from Gateway settings  `c28a0f74`
+- **compression** fix(compression): an over-window session that cannot shrink ends the turn with /new guidance and waits one idle budget, not the ceiling  `d03d6c2b`
+- **dashboard** fix(dashboard): a /chat tab's attach token is per tab, and one token maps to one PTY  `406ed30a`
+- **mcp** fix(mcp): re-mint an ended dashboard OAuth flow instead of parking the server  `0a37960b`
+- **state** fix(state): a schema column holding bytes keeps its key in message dicts  `86a27315`
+- **anthropic** fix(anthropic): key_cmd Claude Code OAuth identity survives on custom api.anthropic.com routes (main + aux)  `2b3bab0a`
+- **approval** fix(approval): deno eval asks for approval behind global flags (-q, -L <level>)  `6ae1fab3`
+- **gateway** fix(gateway): a busy redirect re-anchors the running turn's reply to the redirecting message  `bd3eb413`
+- **browser** fix(browser): recycle a poisoned local session after a protocol-level agent-browser failure  `73c4dc15`
+- fix: a secondary profile no longer removes the default profile's bare-named gateway launchers (review follow-up)  `5bdfc798`
+- **gateway** fix(gateway): status names and uninstall removes pre-suffix Windows launchers  `96ee0516`
+- **update** fix(update): resolve the live venv from the running interpreter, not <checkout>/venv  `4f6c04cd`
+- fix: keep the langfuse max-depth warning test order-independent (review follow-up)  `a7462e0f`
+- **langfuse** fix(langfuse): warn once per invalid HERMES_LANGFUSE_MAX_DEPTH value, not per payload  `34b475e2`
+- **cron** fix(cron): resolve every per-job dashboard call to the profile that holds the job  `290be1ad`
+- **cron** fix(cron): read a job's run history from its owning profile  `94f56aa7`
+- **config** fix(config): a skipped migration step is logged on the quiet auto-migrate path  `290a99aa`
+- **config** fix(config): hermes doctor and plugins enable read a list-literal platform_toolsets string  `b5d7a7b1`
+- **mcp** fix(mcp): OAuth login waits for oauth.timeout and a probe timeout names itself  `a4f9857f`
+- **dashboard** fix(dashboard): resuming a chat never lands inside a subagent or /branch child row  `b80292c9`
+- **bot-relay** fix(bot-relay): a relayed DM into a Bot Chat open in Desktop returns the target's answer, not a receipt  `453b1dec`
+- **desktop** fix(desktop): install the macOS application menu after the first window exists  `40c5986d`
+- fix: the wedged-cron drain check parses jobs.json once per run (review follow-up)  `27144dd5`
+- **gateway** fix(gateway): the restart drain skips a cron run wedged past its in-flight allowance  `69266ecb`
+- **mcp** fix(mcp): startup summary names every failed server with its connect error  `e6bb65aa`
+- **tui** fix(tui): count streamed frames as heartbeat liveness  `1cf8a9fb`
+- **gateway** fix(gateway): renew the startup-watchdog lease during the unclean-exit state.db check  `2a8c3b31`
+- fix: slot-busy skipped Telegram edits no longer count as shown text (review follow-up)  `a57a5f90`
+- **streaming** fix(streaming): flood-refused edits wait out Telegram's retry_after instead of re-striking inside the penalty  `75d92e3d`
+- **telegram** fix(telegram): pace sends and edits against a shared per-chat slot  `fb2f3e21`
+- **streaming** fix(streaming): back fallback continuation cut up to last word boundary  `31789137`
+- **sessions** fix(sessions): bulk archive never hides a live chat because its old history matched  `ad1707e5`
+- fix: doctor validates GitHub tokens against /rate_limit so Actions installation tokens pass (review follow-up)  `2edbd4ed`
+- **doctor** fix(doctor): validate GITHUB_TOKEN/GH_TOKEN against api.github.com and name the .env file  `17958bfe`
+- **desktop** fix(desktop): scale drive_preview input by the guest zoom factor  `59496ffc`
+- **api_server** fix(api_server): stamp the drain boundary on restart too; one HTTP-level invariant; docs  `6d335529`
+- **api** fix(api): expose shutdown drain on durable run status  `3c6952b3`
+- **web** fix(web): drop mobile IME double-sends in the chat PTY input path  `3293dd33`
+- **state** fix(state): /undo and /retry work again after a turn that got no reply  `ad01b93b`
+- **tui** fix(tui): treat every ctrl chord as a binding name, never typed text  `d6a69ea5`
+- **tui** fix(tui): a ctrl chord's control byte is not typed text (stray `l` after resume)  `addf6949`
+- fix: explicit empty backfill channel list disables the Discord scan (review follow-up)  `1d6fbd0d`
+- **platforms** fix(platforms): Discord/WhatsApp/DingTalk gates honour allowlists stored as a JSON-list string  `587bb105`
+- **agent** fix(agent): refuse ambient credential chains for multiplex profiles  `6087b409`
+- **desktop** fix(desktop): room-level group failures carry their reason too  `5a41d1bc`
+- **desktop** fix(desktop): surface pool slot-wait cause in group activity labels  `9ae34de7`
+- **desktop** fix(desktop): a group member that is still working keeps its turn for up to three hours  `15ce7a55`
+- **desktop** fix(desktop): the in-flight marker token is a UUID (review nit)  `4c9ad854`
+- **desktop** fix(desktop): a room turn a Desktop abandons mid-flight is harvested, not lost — the marker goes down at submit  `7eee6ae6`
+- **bot-mode** fix(bot-mode): durable disband memory is keyed by roomId only, so a same-name recreate is never deleted  `b81e8ddf`
+- **bot-mode** fix(bot-mode): a same-name room recreated inside the disband sync window survives the read-back merge  `e3a0a74b`
+- **bot-mode** fix(bot-mode): disbanded group chat stays gone when a gateway mirror missed the tombstone  `0ee7854b`
+- **desktop** fix(desktop): flush direct speech at sealed narration boundaries  `96cb6636`
+- **bot-relay** fix(bot-relay): peer gateways name each machine by its label, not its connection id  `bfaa0492`
+- fix: kill verification waits for the tree to be reaped before reporting survivors (review follow-up)  `a931b455`
+- **process** fix(process): verify tree death before writing killed receipt  `9a46df0a`
+- **skills** fix(skills): a SKILL.md link above the skill directory no longer makes the skill uninstallable  `772a866b`
+- **checkpoints** fix(checkpoints): sweep tmp_pack debris stranded by timed-out store gcs  `137cbb78`
+- **desktop** fix(desktop): local-graph fallback when the update compare API 404s a patched checkout  `ae37fac2`
+- **disk-cleanup** fix(disk-cleanup): only .git entries below HERMES_HOME mark a file git-owned  `8cc183e1`
+- **disk-cleanup** fix(disk-cleanup): never classify test_* files inside git worktrees as disposable  `b3946bb0`
+- **desktop** fix(desktop): keep contributed composer actions grouped with the send cluster  `f287c771`
+- **termux** fix(termux): policy pins, full uvloop marker, lazy dashboard mirror, lock  `536e8867`
+- **termux** fix(termux): add upper bounds to httptools, watchfiles, uvloop specifiers  `78bfd8ff`
+- **termux** fix(termux): gate uvloop behind optional extra to unblock Android installs  `99049aa1`
+- **desktop** fix(desktop): show tool calls the user interrupted as Interrupted  `ee920388`
+- **desktop** fix(desktop): @ picker lists a remote default by its title, qualifies colliding tags, and completes cross-connection bots cold  `0ff5ec84`
+- **desktop** fix(desktop): render a relayed sender re-stamped @handle@connection as an agent notice  `346dd5ca`
+- **bot-relay** fix(bot-relay): a relayed turn is booked from its turn report at the cap, not killed with its handoff  `76a486a1`
+- fix: ranged @file read bails at the char budget mid-line (review follow-up)  `6d1341a1`
+- **agent** fix(agent): bound file/process reads in @ context reference expansion  `0accda1f`
+- **web** fix(web): session search hits carry the row's last_active  `e3e48545`
+- **desktop** fix(desktop): drop stale server search hits while a new query is pending  `aca18438`
+- **desktop** fix(desktop): keep the sidebar search's exact-id hit on top  `ac5ab522`
+- **desktop** fix(desktop): pin transcript viewport while text is selected (#115464)  `7ba1b436`
+- **plugins** fix(plugins): only prompt for declared capabilities on enable  `09bcf178`
+- **desktop** fix(desktop): recognize every registry built-in offline so /context groups as a Command  `969913bb`
+- **desktop** fix(desktop): carry forward keybind overrides written after boot  `f8a9d4d6`
+- **desktop** fix(desktop): keep stored overrides for not-yet-registered keybind actions (#116331)  `5945cd4a`
+- **bot-relay** fix(bot-relay): re-offer only past the Desktop's deliver deadline, once per envelope, with a typed timeout after the waiter's budget  `664c7e7d`
+- **bot-relay** fix(bot-relay): a claimed envelope the Desktop never delivered is re-offered, and the first reply stands  `2a294a75`
+- fix: scrub credentials at the llama-server spawn only, not the generic probe spawner (review follow-up)  `c6c59550`
+- **local-models** fix(local-models): llama-server never inherits credential-shaped environment variables  `63c16221`
+- **api-server** fix(api-server): a streamed peer turn into a Bot Chat open in Desktop is answered by that chat too  `af8e47a6`
+- **api-server** fix(api-server): a peer run into a Bot Chat open in Desktop is that chat's turn, and its receipt drives the run  `07405b65`
+- **api-server** fix(api-server): a peer DM into a Bot Chat open in Desktop is answered by that chat, not a second writer  `b4b34178`
+- **desktop** fix(desktop): ship the markdown-preprocess change the currency test asserts  `3c7943fb`
+- **desktop** fix(desktop): prefixed currency with a space before the amount no longer renders as inline math  `1abe4b0c`
+- fix: bank main-composer undo snapshots for cut and text drag (review follow-up)  `4f703b20`
+- **desktop** fix(desktop): bank edit-composer undo snapshots for cut and text drag  `083e6851`
+- **desktop** fix(desktop): let scroll-up beat transcript resize  `997e36fc`
+- **plugin-guard** fix(plugin-guard): v8 — four intake false-positive classes step down where inert  `dad00572`
+- **desktop** fix(desktop): index explicitly delivered Office documents in Artifacts  `f9c632a1`
+- **desktop** fix(desktop): resolve home-relative attachment refs in preview/download  `c7f79352`
+- **desktop** fix(desktop): a sidebar row only owns presses that started inside it  `c143e044`
+- **desktop** fix(desktop): stop the rail dropping its end-mark tooltips  `e1ffc7ba`
+- **desktop** fix(desktop): scroll Approval Needed to the pending approval, not the bottom  `8c2f9ca9`
+- **tests** fix(tests): title-upgrade join tolerates a stubbed agent.title_generator module  `93537ddb`
+- fix: multi-select clarify keeps the typed answer when picking a choice (review follow-up)  `3d1c00e1`
+- **desktop** fix(desktop): typing a custom clarify answer keeps multi-select picks  `94939c06`
+- **desktop** fix(desktop): clear the swap overlay a superseded wake set, not just the current one  `0a32314c`
+- **desktop** fix(desktop): bound the persisted group-chat log by characters, not just entries  `9048fbe2`
+- **desktop** fix(desktop): byte-bound the Bot Mode group-chat turn window  `a767747a`
+- **cron** fix(cron): spawn bot-chat delivery from a live cwd  `c89be4c5`
+- **skills** fix(skills): an env-var NAME constant is not an embedded credential  `1b50e99a`
+- **desktop** fix(desktop): show empty project repository headers  `f02a128d`
+- **desktop** fix(desktop): scope remote spawn umask 077 to the mkdir subshell  `a0caeda3`
+- **computer-use** fix(computer-use): windowless, non-interactive Windows autostart repair  `6f29d897`
+- **agent** fix(agent): run bare script-path hooks on Windows through their interpreter  `829c91aa`
+- **desktop** fix(desktop): trim the quit-finalization tests to two invariants and never parent the quit prompt on a hidden window  `fb97ade5`
+- **desktop** fix(desktop): bound Windows Electron quit finalization  `a598d527`
+- **desktop** fix(desktop): keep backend gate closed through update handoff  `3b7549d2`
+- **desktop** fix(desktop): render pinned session rows in the Inbox-style card variant  `93940214`
+- **desktop** fix(desktop): show group member failure reasons  `7d33bc00`
+- **telegram** fix(telegram): attach real video geometry and a thumbnail so large uploads aren't square  `97051e41`
+- **tui_gateway** fix(tui_gateway): scope manual compression to session profile  `a22c29dd`
+- **tui** fix(tui): Ctrl+D exits from an empty composer on macOS too  `b787fb91`
+- **desktop** fix(desktop): spawn the Windows update hand-off wrapper with a hidden console it can share  `8ac3215a`
+- **desktop** fix(desktop): keep Windows update hand-off hidden  `f58605b5`
+- **models** fix(models): credit the managed local-models library in /model validation  `d02762cc`
+- **skills** fix(skills): point the godmode skill's self-referencing install paths at its new location  `5141b312`
+- **messaging** fix(messaging): hermes send reports dropped MEDIA attachments instead of success:true  `314076ca`
+- fix: the Desktop-owned dashboard fallback spawn keeps its packaged web dist (review follow-up)  `c1b5a501`
+- **dashboard** fix(dashboard): isolate packaged renderer from browser launches  `aa14b814`
+- **tui** fix(tui): no gateway respawn after graceful-exit kill (#114987)  `6abbc022`
+- **gateway-windows** fix(gateway-windows): decode schtasks strictly as UTF-8 first, one localized denial vocabulary, seam tests  `133004ac`
+- **gateway-windows** fix(gateway-windows): preserve localized task arguments  `e333cc00`
+- **desktop** fix(desktop): let two-modifier navigation chords fire while typing  `1a3bbe61`
+- **windows** fix(windows): ask gateway setup install questions once and stop after UAC hand-off  `7dcb6677`
+- fix: quoted MEDIA payloads in tts output_path are rejected too (review follow-up)  `00a79a40`
+- **tts** fix(tts): keep the output_path gate as the single MEDIA-forgery check  `391a6416`
+- **tts** fix(tts): reject MEDIA directives and control chars in output_path  `2a808df1`
+- **clipboard** fix(clipboard): give image probes a valid stdin  `d264b2bb`
+- fix: computer-use doctor scans daemon units under XDG_CONFIG_HOME (review follow-up)  `a731e7ef`
+- **computer_use** fix(computer_use): surface daemon units pointing at pruned cua-driver releases in doctor  `fc36a30f`
+- **tests** fix(tests): let run_tests_parallel take the explicit file list from a file  `8828e356`
+- **agent** fix(agent): reject subdirectory hint files that resolve outside the tree  `5aca5406`
+- **gemini** fix(gemini): stop rerouting AQ. keys off the default Studio surface  `c1924655`
+- **discord** fix(discord): accept a pasted channel link at the _resolve_channel chokepoint too  `c060a821`
+- **discord** fix(discord): normalize channel links in home destinations  `d3dc7671`
+- **gateway** fix(gateway): relayed bot DM into an auth-gated gateway is attributed to the relaying principal, not refused  `8820cfb7`
+- **cli** fix(cli): run dashboard plugin install/update in the profile's secret scope  `7ddf71d3`
+- **desktop** fix(desktop): dragging MAIN's tab into a split moves the chat instead of copying it  `c6a59c20`
+- **desktop** fix(desktop): let a Bot Mode chat be dragged into a split pane (#109684)  `25dc2d34`
+- **catalog** fix(catalog): covision sha is the real commit 373012bed0a3… (PR string was a mistyped 40-char id sharing only the 7-char prefix)  `01b7e244`
+- **git-auth** fix(git-auth): a rejected GITHUB_TOKEN yields to the gh CLI login instead of failing the clone (#115257)  `5c44d5df`
+- **tools** fix(tools): grep fallback follows a symlinked search root on the content lane  `d5ee1847`
+- **tools** fix(tools): follow a symlinked root on the files lane  `9308a168`
+- **gateway** fix(gateway): resolve bundled platform config keys written under the manifest name  `7427f539`
+- **kanban** fix(kanban): NFC-normalize worktree path identity checks  `1920b924`
+- **acp** fix(acp): run the cwd backfill once when the session manager first opens the DB  `8155f435`
+- **acp** fix(acp): persist session cwd and git metadata to the sessions table  `b58146ce`
+- **cli** fix(cli): symmetric Windows resume-failure handling + atexit disarm  `18f4b29d`
+- **telegram** fix(telegram): point dm_topics prerequisite text at BotFather Threaded Mode  `0c872b61`
+- **env** fix(env): a parent-injected dashboard session token survives the .env reload  `d5c2e0fb`
+- fix: late resume/submit from a closed socket keeps the ws-orphan reap armed  `8109c400`
+- **desktop** fix(desktop): room settings offer per-member Compress history for hidden member sessions  `5cabfa5d`
+- **desktop** fix(desktop): Bot chats speak through their own (connection, profile) in tiles and the main pane  `ae7bf989`
+- **desktop** fix(desktop): Bot chats speak with the Bot's own profile TTS voice  `f3d98d4f`
+- **desktop** fix(desktop): reveal is hidden per focused workspace and the Projects menu toasts a missing path  `d147a379`
+- **desktop** fix(desktop): "Open containing folder" is hidden for remote workspaces and reports a missing path  `d58831c3`
+- **session-titles** fix(session-titles): resolve the canonical Bot Chat by exact title, never a "#N" sibling  `06475d11`
+- **hermes-bots** fix(hermes-bots): suppress duplicate activity toasts for unchanged preview  `0a0d2d26`
+- **desktop** fix(desktop): route bot-roster section rename/create Enter through isSubmitEnter  `f5a1602e`
+- **bot-relay** fix(bot-relay): tolerate invalid envelope TTL config  `09e3f4b8`
+- **bot-mode** fix(bot-mode): a remote default is addressable by its title slug and signs relayed DMs reply-safely  `27e30a28`
+- **kanban** fix(kanban): tapping a card on touch opens it instead of moving it  `88d2d90f`
+- **desktop** fix(desktop): every chrome pane tab, zone menu row and drag ghost follow the display language  `c2c0248f`
+- **desktop** fix(desktop): SESSIONS / BOTS tab labels follow the display language  `9a7d3937`
+- **desktop** fix(desktop): localize Bots pane label  `25f6ef42`
+- **telegram** fix(telegram): observe sibling-bot wake-word messages dropped by the bot-to-bot gate  `e7509fa1`
+- **profiles** fix(profiles): log the tolerated failure when a rename cannot record its previous name  `680dd93b`
+- **bot-mode** fix(bot-mode): live mention variants outrank previous-name aliases  `b7454a82`
+- **bot-mode** fix(bot-mode): sync renamed profile names and handles in existing group chats  `68f81c4f`
+- **update** fix(update): pin handoff module before checkout swap  `26e85cfe`
+- **desktop** fix(desktop): the Bots roster stops republishing an unchanged roster every 5 s  `bde56f7c`
+- **desktop** fix(desktop): group replies carry the gateway install_id so (you) survives differing connection labels  `49d13403`
+- **bot-mode** fix(bot-mode): local member replies carry from.source so cross-Desktop rooms attribute them  `10a78f99`
+- **agent** fix(agent): repair a missing HOME in terminal.home_mode auto, not just a wrong one  `4c4924d2`
+- fix: HERMES_HOME argv values containing a space still identify their own gateway (review follow-up)  `9cb5c8ae`
+- **gateway** fix(gateway): accept trailing-separator HERMES_HOME spellings, bound the assignment name  `deda2c9d`
+- **gateway** fix(gateway): profile identity predicate must not accept a longer sibling HERMES_HOME  `5cca9b25`
+- **acp** fix(acp): evaluate V4A multi-file patch paths individually for auto-approve  `4a71ce3b`
+- **plugins** fix(plugins): pin cross-platform CI-qualified installable release  `db5205b8`
+- **tts** fix(tts): drop the empty mkstemp placeholder when the provider wrote elsewhere  `77fd944c`
+- **tts** fix(tts): play the artifact the tool reported in the sync speaker pipeline  `ce963a46`
+- **kanban** fix(kanban): read --body-file as UTF-8 and pin it through the real parser  `d8b64d4a`
+- **kanban** fix(kanban): add --body-file to create for shell-proof bodies  `daf5e0d7`
+- **lsp** fix(lsp): use UTF-16 units for document replacement ranges  `d23d6e82`
+- **desktop** fix(desktop): capabilities preview keys on the target default for a remote Bot, like the payload  `06bb6a65`
+- **bot-mode** fix(bot-mode): New Bot on another machine can start fresh instead of forcing a clone of its default  `1350427f`
+- **desktop** fix(desktop): unmask the slash worker's real error behind the dispatch fallback  `c68d889a`
+- **tui_gateway** fix(tui_gateway): launch-profile slash worker spawns under own home after multiplex flip  `4c2de106`
+- **bot-mode** fix(bot-mode): a teammate's reply reaches the sender whole, and a cut completion says so  `eccc9ab4`
+- fix: verify-on-stop recognises python.exe / py launcher interpreters (review follow-up)  `5195c138`
+- **agent** fix(agent): record ad-hoc verify evidence run through a versioned or absolute interpreter  `35accdbc`
+- **gateway** fix(gateway): skip unreadable Windows SCM services  `b2269603`
+- **plugin-catalog** fix(plugin-catalog): pin kiro-acp to the tagged COMMIT, not the tag object  `10955303`
+- **acp** fix(acp): release the turn in a finally so a mid-tail failure cannot wedge the session running  `bccd4561`
+- **whatsapp** fix(whatsapp): honor configured reply prefix in bridge replies  `3cbd3cce`
+- **gateway** fix(gateway): consult _in_bot_thread in the Discord admission gate  `a0e7fc4a`
+- **cli** fix(cli): hooks test prints the decision for failing hooks  `df905174`
+- **auth** fix(auth): reject the placeholder secrets this repo ships as examples  `3335319f`
+- **kanban** fix(kanban): order the board's done column by completion time  `71c614b6`
+- **auxiliary** fix(auxiliary): prioritize explicit reasoning config  `9f7df273`
+- **auxiliary** fix(auxiliary): consume promoted reasoning config  `0a407e16`
+- **auxiliary** fix(auxiliary): preserve raw reasoning body shapes  `c86de9c4`
+- **auxiliary** fix(auxiliary): honor provider reasoning disable controls  `ab3448e0`
+- **auth** fix(auth): a removed env:XAI_API_KEY no longer overrides xai-oauth for x_search  `c265f776`
+- **peer** fix(peer): hermes peer dm is a 4th Bot Mode silence delivery door  `9b63750d`
+- **gateway** fix(gateway): a peer DM retries a transient turn failure once, like the other two lanes  `effcf3af`
+- fix: capture route is exactly the shared vision gate (review follow-up)  `29422f05`
+- **vision** fix(vision): computer_use capture and vision_analyze share one native-vision gate  `edb30c10`
+- **desktop** fix(desktop): route the palette and artifact "open chat" doors through openSessionFromPicker  `b811892c`
+- fix: preserve bot scope when resuming sessions  `8c26ca2a`
+- fix: kanban_attach_url keeps accepting the title alias past the unknown-argument gate (review follow-up)  `c4bb492c`
+- **kanban** fix(kanban): keep the project_id alias past the unknown-argument gate  `9887307e`
+- **kanban** fix(kanban): preserve internal create session provenance argument  `43193aa2`
+- **kanban** fix(kanban): reject unknown tool arguments before mutations  `2c8c14e0`
+- **desktop** fix(desktop): land the hidden-row guard in carryForwardFailedProfileSessions  `4e940386`
+- **desktop** fix(desktop): hidden Bot Chats also stay out of the failed-profile carry  `a50c748c`
+- **desktop** fix(desktop): keep hidden Bot Mode chats out of the Sessions sidebar (#113273)  `e46b5650`
+- **utils** fix(utils): fsync the resolved target's parent in atomic writes  `01a7efae`
+- fix: web gate follows the dispatcher when the web-xai plugin resolves xai (review follow-up)  `f04a2316`
+- **web** fix(web): xai credentials alone no longer light the web_search/web_extract gate  `d945faf5`
+- **models** fix(models): filter retired Zen ids on every picker path, not only the live merge  `b04de120`
+- **models** fix(models): delist retired x-preview-f-free from the OpenCode Zen picker  `4541fd55`
+- **kanban** fix(kanban): decode the guard's comment body once  `f8133e9e`
+- **kanban** fix(kanban): lossy-decode BLOB cells in check_respawn_guard reads  `e943a012`
+- **providers** fix(providers): restore the trimmed api_mode gates lost in the rebase onto #116853  `2dda2339`
+- **transports** fix(transports): accept a provider plugin's own api_mode  `ef8cdfc3`
+- **desktop** fix(desktop): route bot skill installs to owner  `2683899b`
+- **state** fix(state): serialize replaced probe and reopen on close in residual entry points (#116244)  `fc1b0d4e`
+- fix: config get/unset still reach a legacy gateway.platforms-only value (review follow-up)  `e95da4bf`
+- **config** fix(config): hermes config set gateway.platforms.<p>.<field> lands on the top-level platforms block  `7c41e31e`
+- **tools** fix(tools): refuse unbound worker run-lifecycle mutations  `7c2b5b59`
+- **mcp** fix(mcp): redirect header stripper builds httpx.AsyncClient at call time so proxy mounts stay observable  `7b6e2ac3`
+- **mcp** fix(mcp): enforce strict_redirect_headers on redirects and the preflight probe (#115155)  `a8afb3b5`
+- **model-picker** fix(model-picker): built-in aggregator row keeps its models when a user row duplicates the same upstream  `27914eb3`
+- **auth** fix(auth): a user provider plugin's endpoint overrides the bundled row too  `e5e7fbcd`
+- **desktop** fix(desktop): stop a live renderer before the POSIX stage-and-swap rename  `12a75a1a`
+- **desktop** fix(desktop): show compaction progress for manual /compress  `a59d15a0`
+- **bot-mode** fix(bot-mode): a schema-damaged mailbox ticket no longer wedges Bot Chat delivery  `97942a29`
+- **desktop** fix(desktop): trim the roster-age comment to the why  `d02869b6`
+- **desktop** fix(desktop): roster age reflects the last worker run, not only the last chat (#105874)  `ec34ec1f`
+- **local-models** fix(local-models): pass config to resolve_llamacpp_endpoint by keyword  `581af463`
+- fix: trim llamacpp salvage to invariant tests, drop redundant config load, document fixed-port servers  `34fb4ab4`
+- **local** fix(local): the picker's Local row id and the provider resolver share one definition (#116249)  `04f37f74`
+- **provider** fix(provider): honor configured llamacpp endpoint  `ef8222b9`
+- **sessions** fix(sessions): pin the Bot Chat composer-pick reach through _apply_model_switch -> SessionDB -> session.resume  `78b5dbfb`
+- **sessions** fix(sessions): persist Bot Chat override provenance atomically  `53ac548f`
+- **sessions** fix(sessions): preserve explicit Bot Chat model overrides  `a16d4582`
+- **update** fix(update): drop the _IS_WINDOWS test flag; prove the read-only sweep on a real Windows host  `d767bfab`
+- **cli** fix(cli): clear the write bit before unlinking read-only pack temps on Windows  `9bd542c4`
+- **peer** fix(peer): a connect-phase timeout is unreachable; only a response timeout means the turn was accepted  `0497b945`
+- **providers** fix(providers): runtime-endpoint plugin profiles resolve in /model, the model picker and hermes model  `6040512d`
+- **providers** fix(providers): preserve profile aliases and endpoint configuration  `38d994a2`
+- fix: name the process holding the state.db write lock when a writer times out  `2182f51d`
+- **delegation** fix(delegation): retain recovery transcript locators  `21e3fa6b`
+- **delegation** fix(delegation): a one-child detached unit keeps its finished child on owner death  `56a262cd`
+- **update** fix(update): scrub interpreter-steering env keys from the critical-module import probe (#115032)  `8abfd281`
+- **tests** fix(tests): stop the code_kernel reader-thread leak that OOM-killed test workers; cap worker heap  `439ebe0a`
+- **desktop** fix(desktop): honor artifact dismissal across navigation and replay  `30f0b220`
+- **desktop** fix(desktop): persist preview artifact dismissals per session  `57be2674`
+- **tools** fix(tools): gate the browser picker on an actual backend choice  `e10934b0`
+- fix: recognize browser.backend as a configured provider signal  `e6ae3d4a`
+- **desktop** fix(desktop): keep steering recovery bound to its source chat  `dda88ecb`
+- **gateway** fix(gateway): runtime-status transitions are reported when queued, not only when persisted  `22169ff8`
+- **gateway** fix(gateway): shutdown flush budget applies to signal-driven stops only  `7e15a9aa`
+- **gateway** fix(gateway): runtime-status writer merges over out-of-process stamps  `489df88d`
+- **gateway** fix(gateway): shutdown flush cannot outlive the launchd exit budget  `d27ee657`
+- **gateway** fix(gateway): persist runtime status off event loop  `d5479495`
+- **gateway** fix(gateway): keep the os.getuid gate the Windows-footgun lint requires  `76b3c7ec`
+- **gateway** fix(gateway): launchd identity requires darwin, like control_socket  `23bd1ee6`
+- **gateway** fix(gateway): only ai.hermes launchd jobs get the ExitTimeOut drain cap  `d5f3d8d8`
+- **gateway** fix(gateway): thread watchdog leash also fits launchd's exit budget  `dc0f03ac`
+- **gateway** fix(gateway): resolve os.getuid via getattr in launchd probe (Windows footgun lint)  `815594ee`
+- **gateway** fix(gateway): cap signal-driven stop drain to launchd's live ExitTimeOut  `aa0289f3`
+- **mcp_startup** fix(mcp_startup): take the deferred slot under the lock so two racing first clients fire once  `63982391`
+- **dashboard** fix(dashboard): standalone dashboard starts MCP discovery on first /api/ws client, not at boot  `b47abc36`
+- **skills** fix(skills): a bundle with a failed blob fetch records no revision; tree misses are cached; the probe is guarded  `4f9e15f1`
+- **gateway** fix(gateway): say so when an explicit text-batch delay is clamped to the ceiling  `297b3cef`
+- **whatsapp,weixin** fix(whatsapp,weixin): text-batch delays default to Telegram cadence  `130b596f`
+- **agent** fix(agent): read the trim flag with a default — bare test stubs reach _execute_tool_calls without _set_defaults  `52d203d0`
+- **agent** fix(agent): trim after the tool batch unwinds, not inside the commit that still holds the result  `05e09aee`
+- **matrix** fix(matrix): apply the inviter allowlist to reconciled pending invites  `439f2b1c`
+- **matrix** fix(matrix): record reconciled direct invites in m.direct  `0ce3e7b1`
+- **cron** fix(cron): derive the live-owner stale bound only when a live-owned row is seen  `2eb40f71`
+- **cron** fix(cron): derive the live-owner stale-claim bound from the configured timeouts  `b552dc9a`
+- **cron** fix(cron): key the dead-owner reap throttle by profile home  `df753d4f`
+- **cron** fix(cron): wall-clock stale-claim guard for live-but-deadlocked workers (#115692)  `086da1e0`
+- **anthropic** fix(anthropic): probe every PATH hit before the install prefixes  `e58d7df3`
+- **anthropic** fix(anthropic): detect Claude Code version outside PATH on GUI launches  `0eb04ef5`
+- **telegram** fix(telegram): bounded sends do not arm the blocked-loop watchdog  `536ce859`
+- **telegram** fix(telegram): deadline label default no longer claims init at non-init sites  `d37f59af`
+- **telegram** fix(telegram): give media uploads their own 300 s wall-clock deadline  `85e673b4`
+- **telegram** fix(telegram): wall-clock deadline on every Bot API send (text + media)  `04057250`
+- **cron** fix(cron): degraded marker uses the redacted job name  `15a36914`
+- **cron** fix(cron): drained degraded marker is posted without the generic cronjob header  `fba9b930`
+- **cron** fix(cron): degraded-delivery marker is recognised by its record, not its text  `619370c0`
+- **cron** fix(cron): never lose a bot-chat alert to a delivery timeout  `fa939860`
+- **desktop** fix(desktop): composer fill opaque enough to read over the transcript without the blur  `7da7259e`
+- **desktop** fix(desktop): remove composer input backdrop blur  `7b81848c`
+- **gateway** fix(gateway): cut api-server startup cost Closes #79047  `501d8ba4`
+- **state** fix(state): the kept-prefix match compares rows through the same lens the loader applies  `6b0ffed7`
+- **state** fix(state): archive-mode replace_messages archives only the dropped suffix  `1a9b5024`
+- **lazy_deps** fix(lazy_deps): pip's file precedence, not its enumeration order  `aa11bc35`
+- **lazy_deps** fix(lazy_deps): read pip.conf the way pip does, and respect every uv index knob  `30caab21`
+- **bedrock** fix(bedrock): log the swallowed boto3 lazy-install failure instead of passing silently  `a4f34b90`
+- **lazy_deps** fix(lazy_deps): pip.conf lookup honors PIP_CONFIG_FILE/XDG_CONFIG_HOME; trim bridge tests to invariants  `98d70e07`
+- **lazy_deps** fix(lazy_deps): bridge PIP_INDEX_URL into the uv tier alongside pip.conf  `d42fff65`
+- **lazy_deps** fix(lazy_deps): bridge pip.conf index-url into the uv tier and make uv timeouts actionable (#95608)  `1ec887f7`
+- **update** fix(update): Electron presence via _electron_dir (workspace-local hoist), one DESKTOP_NPM_SCOPE  `9dfa8dce`
+- **update** fix(update): pass-1 clears its stamp before npm ci too; reuse the module's suppress import  `e760236e`
+- **update** fix(update): clear the desktop install stamp before each attempt; one stamp comparator  `d5b80c63`
+- **agent** fix(agent): relay-managed aux streams run the SDK bypass inside the provider callback  `8bca1f71`
+- **desktop** fix(desktop): secondary sockets judge a stable open by their own openedAt, not the persistent lastOpenedAt  `80814b94`
+- **desktop** fix(desktop): stable-open rule owns all three reconnect counters and covers secondary sockets  `018531a8`
+- **desktop** fix(desktop): only reset gateway reconnect backoff after a stable open (#83134)  `c97b5b56`
+- **gateway** fix(gateway): the installed unit is the fallback source for LD_LIBRARY_PATH, so a refresh cannot drop it  `5cba54d4`
+- **gateway** fix(gateway): preserve ld library path in systemd units  `efd7bb55`
+- **memory** fix(memory): omit current_entries on batch abort  `840c41e9`
+- **desktop** fix(desktop): condensed profile dropdown prewarm also requires pointer movement  `97a82ee5`
+- **desktop** fix(desktop): stop fleet-wide hover-prewarm without pointer movement  `eea63bc3`
+- **desktop** fix(desktop): share transcript budget across panes  `887cdec4`
+- **model_metadata** fix(model_metadata): honor per-model context_length when the caller doesn't pass custom_providers  `f4ffd482`
+- **gateway** fix(gateway): /model listing also skips the OpenRouter catalog GET and saved-endpoint /models probes  `4243abd6`
+- **model_switch** fix(model_switch): authenticated-slug lookup is cache-only  `9e0aba49`
+- **gateway** fix(gateway): /model listing reads catalogs cache-only, never joins live probes  `cb24121a`
+- **tui** fix(tui): drop the no-op drain reset; model a foreign owner in the denied-inspection attach test  `0caf219a`
+- **tui,active_sessions** fix(tui,active_sessions): gate-review follow-ups for the idle bot-delivery throttle  `06c19032`
+- **active_sessions** fix(active_sessions): self-pid skips only the existence probe, never the start-time identity check  `052e3f71`
+- **tui** fix(tui): throttle idle bot-delivery poll to stop sessions² CPU  `bfc28a2c`
+- **gateway** fix(gateway): close the wrapper's stderr pipe in finally; hoist test imports (gate follow-up)  `aa68a17a`
+- **gateway** fix(gateway): wrapper keeps forwarding signals until the child has exited; test runs on every POSIX lane  `ce90424e`
+- **gateway** fix(gateway): launchd wrapper forwards SIGUSR1 so sibling restarts are planned exits (#101426)  `15149768`
+- **dashboard** fix(dashboard): session search/stats/detail run SQLite off the event loop (#60747)  `70755239`
+- **desktop** fix(desktop): ignore effect replay when detecting profile switches  `5dbe99bb`
+- **desktop** fix(desktop): remove extra padding above the first status row  `a28722ee`
+- **credits** fix(credits): re-warm the Nous catalog when a header finds it cold after the TTL  `21cf53b8`
+- **credits** fix(credits): warm the pricing catalog before the session-open notice policy  `a728c554`
+- **billing** fix(billing): the /billing portal fetch releases the caller at its wall-clock bound too  `9573f44c`
+- **agent** fix(agent): release the portal account fetch caller at the wall-clock bound  `7bc7937c`
+- **tui-gateway** fix(tui-gateway): a notification that loses its delivery claim hands the session's turn back  `c548bdd6`
+- **update** fix(update): classify launchd-owned serve/dashboard rows as launchd, not manual-serve  `ca7200fc`
+- **bedrock** fix(bedrock): capture reasoning signatures, parse sync reasoningText, keep untouched turns on sealed-blob resend  `29826ca5`
+- **bedrock** fix(bedrock): replay thinking as reasoningText; resend once without redacted blocks on encrypted-content rejection (#115865)  `8437310a`
+- **state** fix(state): drop unknown BLOB columns before messages reach the API  `b873a3a1`
+- **kanban** fix(kanban): warn once on credential-gated subs instead of silent rewind  `2b86e0b2`
+- **api-server** fix(api-server): preserve resolved provider for lock checks  `12c1ccb5`
+- **state** fix(state): resolve symlinks in deleted-WAL sidecar watch paths  `271a4670`
+- **compression** fix(compression): dispatch alone must not reset the summary idle fence (#114938)  `c2560f4d`
+- **sessions** fix(sessions): consume deferred hidden intent after persistence  `0816a476`
+- **state** fix(state): delegate and branch children stop inheriting a compressed parent's gateway routing  `3b94ec1b`
+- **update** fix(update): record every autostash disposition in the update receipt  `ecd05453`
+- **tui** fix(tui): import is_truthy_value in live compression config apply  `25e7a99a`
+- fix: name the allowed retention_days range when skipping auto-maintenance  `77737667`
+- **state** fix(state): reject negative retention bounds in session prune paths  `5a56f109`
+- **mcp** fix(mcp): announce a disabled parked entry once, not per self-probe wake  `6ea3fe06`
+- **mcp** fix(mcp): parked self-probe honours enabled:false and deleted config entries  `67737c37`
+- **dashboard-auth** fix(dashboard-auth): pin OIDC discovery to the configured issuer origin  `07c1953e`
+- **gateway** fix(gateway): mark supervisor-ordered stops as planned so direct systemctl restart exits cleanly  `ba3b1eb3`
+- **tools** fix(tools): flag bun/deno inline script execution for approval  `886df27c`
+- **approval** fix(approval): cover zsh/ksh/dash in every pipe-to-shell pattern  `4a9902d5`
+- **cron** fix(cron): make the Windows bot-chat witness a real windows_only nested parent  `151b0701`
+- **cron** fix(cron): decode the Windows bot-chat lane as the UTF-8 the child writes  `00ecaf77`
+- **cron** fix(cron): decode cron child output lossily (script + bot-chat delivery)  `8be901ac`
+- **agent** fix(agent): Responses-upgrade predicate declines every external-process profile, not three names  `ddc55f21`
+- **agent** fix(agent): _should_stream keys ACP on the provider profile, not one vendor's name  `2f696878`
+- fix: keep Copilot ACP fallbacks on chat completions  `9bb0c4a4`
+- **bot-relay** fix(bot-relay): the reply waiter is a runner entrypoint, so it starts under single-query deny  `a28d038d`
+- **docker** fix(docker): drop -f from orphan reaper rm so running containers fail safe  `e885d9cd`
+- **docker** fix(docker): stop caching transient capability-probe failures as unsupported  `504e79d0`
+- **docker** fix(docker): scan docker_extra_args env flags under pflag shorthand semantics  `10c30c82`
+- **docker** fix(docker): guard every egress-written env name in collision checks  `578c7aea`
+- **tui** fix(tui): pre-confirm the backend path-completion listing  `6d8370af`
+- fix: credit legacy launchd units by pinned HERMES_HOME only  `ccb5aeda`
+- **update** fix(update): restart this install's legacy hash-suffixed launchd gateways  `7c295a8e`
+- **update** fix(update): discharge an unreadable-create_time manual-serve row once its pid is provably dead  `989da7d5`
+- **update** fix(update): make intent-to-add entries stashable so `hermes update` can run  `db64d1f1`
+- **tui_gateway** fix(tui_gateway): subagent.list follows the conversation across UI-sid and compression rotation  `6406be0f`
+- **delegation** fix(delegation): make remaining-depth guidance unambiguous  `8ae0a21a`
+- **delegation** fix(delegation): align child prompts with depth-derived roles  `a915be8b`
+- **langfuse** fix(langfuse): make payload capture depth configurable  `bc79fe7c`
+- **gateway** fix(gateway): run shutdown tool-subprocess kill off the event loop  `7c4d2a81`
+- **update** fix(update): inventory-less markers settle on a fleet current at the checkout; supervised serve rows never veto gateway discharge  `d6ef05e2`
+- **update** fix(update): clear the fleet-restart obligation on empty gateway inventories  `f491c795`
+- **update** fix(update): discharge inventory-less fleet-restart markers on live-fleet evidence  `58ca9417`
+- **tools** fix(tools): warn once when tools.tool_search.defer is a scalar, then use the curated default  `ea25a615`
+- **config** fix(config): register tool search deferral settings  `f7ff7d3f`
+- **cli** fix(cli): register tools.tool_search.defer in DEFAULT_CONFIG  `d6beebcc`
+- **cron** fix(cron): bound the standalone send inside the coroutine so the thread fallback keeps it  `729b1c3d`
+- **cron** fix(cron): bound the standalone send lane with a wall-clock timeout  `c53eaf0d`
+- **tools** fix(tools): do not join wedged delegate workers on the interrupt path  `e24e66c6`
+- **gateway** fix(gateway): skip the missing-allowlist warning when no messaging platform is enabled  `ac91b9f3`
+- **streaming** fix(streaming): explicit stale_timeout_seconds wins over the context-size tier and reasoning floor  `80154cf3`
+- **usage** fix(usage): plugin usage hook runs under run_bounded_sync; base no-op spawns no thread  `14489082`
+- **error-classifier** fix(error-classifier): a profile hook asking for fallback on a terminal reason is non-retryable  `838214c8`
+- **agent** fix(agent): ACP providers never auto-upgrade to Responses, whatever their base_url marker  `925a5992`
+- **setup** fix(setup): profile-owned catalog keeps the curated list when the live fetch fails  `7fec7cf5`
+- **mcp** fix(mcp): dual-emit check is per text block; an over-cap structuredContent never doubles the flood cap  `bfb3b1a3`
+- **mcp** fix(mcp): keep structuredContent unless content is its verbatim JSON dual-emit  `f94d72f7`
+- **mcp** fix(mcp): OAuth login keeps discovered server metadata; token errors carry a redacted body excerpt  `f44e73da`
+- **mcp** fix(mcp): token-endpoint requests always carry a User-Agent  `af1ac349`
+- **cli** fix(cli): warn once when platform_toolsets.<platform> is not a list  `3adc1787`
+- **cli** fix(cli): read a JSON-list string platform_toolsets entry as the list it encodes  `d4798eae`
+- **gateway** fix(gateway): keep the warm-up gate-release warning off the event loop  `c00071ba`
+- **cron** fix(cron): publish worker ack file via atomic rename  `24cfa762`
+- **provider** fix(provider): honor explicit local provider names  `8658d159`
+- **provider** fix(provider): resolve named fallback before local alias  `204ebafb`
+- **auxiliary** fix(auxiliary): resolve provider aliases from the authoritative auth table  `dacfd0ef`
+- **relay** fix(relay): shared-metrics task close skips a scope buried under a concurrent turn  `148d1f6d`
+- **relay** fix(relay): propagate push RuntimeError instead of retrying via exit fallback  `768d08c8`
+- **approvals** fix(approvals): route plugin asks through runs bridge  `151c06e5`
+- **config** fix(config): tolerate malformed nested values in config migrations  `8cc66b3e`
+- **mcp** fix(mcp): accept an origin-issued metadata document for a path-scoped OAuth authorization server  `0818892d`
+- fix: repair misnested tool-call closers by inserting the missing one before the misplaced one  `081332f0`
+- **agent** fix(agent): count tool-call argument brackets outside strings and close in stack order  `5c305fa9`
+- **agent** fix(agent): classify CommandCode 'Content Exists Risk' 400 as a content-policy block  `d4f88f39`
+- **relay** fix(relay): propagate Relay failures after transformed output instead of replaying raw chunks  `c454107c`
+- **mcp** fix(mcp): trim the callback latch to one response path and prove it through the real waiter  `74ddb737`
+- **mcp** fix(mcp): keep the first callback result from being clobbered by browser fetches  `a99a1034`
+- **gateway** fix(gateway): suppress leaked terminal EOS tokens  `2bf7a4aa`
+- **gateway** fix(gateway): release the startup-restore gate from a finally around the whole boot wait  `07c7dabd`
+- **gateway** fix(gateway): resolve blank chat_type to the gated slash scope  `568decfb`
+- **tui-gateway** fix(tui-gateway): isolate session cwd by profile  `a613d4f9`
+- **tui-gateway** fix(tui-gateway): resolve deferred/cold resume overrides under the session profile scope (#115607)  `e702554e`
+- fix: plugin catalog ranks by stars only and drops the review-claim badges  `76fe8f7f`
+- fix: credit-wall 404 is one billing table row; billing fallback warns with profile + remedy  `1cd2c45f`
+- fix: route 404 insufficient_credits_for_paid_model to fallback_model chain  `d861bca1`
+- **gateway** fix(gateway): read reconnect_attention_after from the bound profile's config, not the env bridge  `2df8ac4f`
+- **gateway** fix(gateway): resolve agent.reconnect_attention_after at call time, not import time  `79465f33`
+- **gateway** fix(gateway): run curator/skills-sync housekeeping ticks under each served profile's scope  `b5e8bb72`
+- **mcp** fix(mcp): re-park dedupe keys on the park line, so a new reason warns again  `dc17eb0e`
+- **mcp** fix(mcp): demote re-park lines to DEBUG while a server never revived  `78b8669b`
+- **cron** fix(cron): live-lane text send uses the already-authorized transport (#115656)  `ffae0825`
+- fix: admitted plugin providers are selectable and status-accurate on every surface  `f7240ca9`
+- **image-routing** fix(image-routing): drop the provider-wide supports_vision probe; mirror registry via public types in setup test  `08feaa98`
+- **cli** fix(cli): model-switch validation trusts a profile-owned catalog  `ce6f064e`
+- **vision** fix(vision): image routing honours ProviderProfile.supports_vision  `9de45d95`
+- **cli** fix(cli): first-time setup resolves plugin catalogs like the /model picker  `e22e33c1`
+- **cli** fix(cli): honor provider catalogs in API-key setup  `6a70d5d9`
+- **models** fix(models): reduce repeated Nous recommendation traffic  `5fa01f2f`
+- **models** fix(models): external_process catalog fetch degrades to fallback_models on error; test mirrors registry via public types  `22beb954`
+- **models** fix(models): admit every plugin provider to the picker by slug; catalogs fall back to the profile  `6f12165a`
+- **agent** fix(agent): key ACP launch kwargs on provider profile, not vendor slug  `cc2ec588`
+- **models** fix(models): route external_process provider catalogs through profile.fetch_models  `de9e45f5`
+- **models** fix(models): seat configured external_process providers in the picker payload  `df2e6f2d`
+- **models** fix(models): admit plugin external_process providers into the picker  `3c5d4b05`
+- **credential-pool** fix(credential-pool): plugin refresh keeps rotated tokens, runs locked, and quarantines dead grants  `ec1238fa`
+- **auth** fix(auth): missing-auth_handler guard fires only for plugin-mirrored providers  `031d70f6`
+- **auth** fix(auth): defer hermes_cli.config import until after PROVIDER_REGISTRY exists  `30b0958a`
+- **auth** fix(auth): re-sync plugin providers into PROVIDER_REGISTRY after discovery  `04f80dba`
+- **runtime** fix(runtime): model.openai_runtime: codex_app_server applies to provider "openai" again  `35cea9b8`
+- **codex** fix(codex): a codex app-server thread started from scratch is seeded with the session's prior turns  `e84f0a1c`
+- **desktop** fix(desktop): satisfy composer test import ordering  `f9524d3f`
+- **desktop** fix(desktop): expose native text replacement controls  `410c2817`
+- **desktop** fix(desktop): honor macOS replacements in message composers  `d7c7af77`
+- **plugin-guard** fix(plugin-guard): plural test-file names and delegation prose are not attack shapes  `ec015c90`
+- **plugins** fix(plugins): update MPP catalog pin and payment disclosure  `4abd595f`
+- **catalog** fix(catalog): pin reviewed Corpus kit and disclose marketing and PII  `b22ebf48`
+- **plugin-catalog** fix(plugin-catalog): update pstack maintainer Zoeille → Cloeille  `14802a58`
+- **plugin-catalog** fix(plugin-catalog): re-pin hermes-project-stewardship to 4f733a8  `c29e6b2f`
+- **gateway** fix(gateway): anchor errno/winerror connection markers with word boundaries  `6d2765b7`
+- **gateway** fix(gateway): distinguish interrupted and unreachable model connections  `37c15650`
+- **plugin-guard** fix(plugin-guard): two intake false positives — regex literal <script, allowlist "printenv"  `50e9cd7b`
+- **plugin-catalog** fix(plugin-catalog): re-pin debug-desk after unique module names  `7847f3e2`
+- **background_review** fix(background_review): say so when the configured review route falls back to the main model  `9910041d`
+- **aux** fix(aux): provider "openai" resolves the same on the runtime and aux-client paths  `956a8c84`
+- fix: persist the codex thread id per session and thread/resume it across an API-server restart  `e77e24a6`
+- fix: let CodexAppServerSession resume a stored codex thread  `ba586ed4`
+- fix: video generation tools no longer let the agent pick the model  `19b29df1`
+- fix: name host, attempts and request size when connect retries are exhausted  `72fccf2b`
+- **context** fix(context): proxied Codex routes resolve the Codex OAuth window, not the direct-API catalog  `21ef1b97`
+- **cron** fix(cron): a missing-credential preflight verdict names the profile and HERMES_HOME it read  `fc49f761`
+- fix: session.create refuses a model its provider cannot serve  `1693c071`
+- **api-server** fix(api-server): anchor the Responses current turn on this turn's user row, not a history prefix match  `d1996378`
+- **catalog** fix(catalog): update by2kb pin to v0.6.1  `ef6da906`
+- **gateway** fix(gateway): count API-server runs before the adapters are released; include deferred workers  `d66be764`
+- **gateway** fix(gateway): the shutdown close gate also counts API-server runs  `7d305081`
+- **plugin-catalog** fix(plugin-catalog): re-pin hermes-project-stewardship after dependency fix  `7ef19308`
+- **catalog** fix(catalog): pin VK v0.2.3 profile isolation fixes  `ea14d6c8`
+- **catalog** fix(catalog): require verified Hermes 0.21.3 for VK v0.2.2  `5a5c3aec`
+- **catalog** fix(catalog): pin VK plugin v0.2.1 registration compatibility  `e07f0221`
+- **doctor** fix(doctor): name the processes holding a retired WAL generation instead of a green state.db  `3d67226b`
+- **desktop,tui** fix(desktop,tui): reasoning pill and effort rows say ultra sends max on this route  `171a1777`
+- fix: a child env with no resolvable home keeps the OS temp dir instead of failing env construction  `51dd1970`
+- fix: test-runner scratch root is /var/tmp/hermes-pytest; two tests follow TMPDIR  `ece388ec`
+- fix: test-runner scratch lives in ~/.cache/hermes-pytest; env-less home fallback cannot raise  `07469036`
+- fix: sockets keep a short temp root; lint skips git-ignored artifacts; test runner scratch leaves /tmp  `07df62d6`
+- **desktop** fix(desktop): direct dictation requests time out per stt.openai.timeout instead of hanging  `471ef5f4`
+- **desktop** fix(desktop): Model settings label the main-model context window and expose the compression model timeout  `f30fe581`
+- **desktop** fix(desktop): error card 'Switch provider' opens the live session model menu  `74c2439a`
+- **codex** fix(codex): send image attachments natively in app-server turn/start (#51053)  `b056e1f3`
+- **agent** fix(agent): preserve context when summary provider overloads  `af93d57c`
+- **codex** fix(codex): proxy override survives credential rotation and model.base_url is honoured  `7034628c`
+- fix: truncated compaction summaries back off 60s/300s/900s across turns  `801e3fa6`
+- fix: warn when a new Codex login is the same OpenAI account as a pooled credential  `65f6e31f`
+- fix: custom-provider key_env in the CLI picker/catalog helpers reads through the profile secret scope  `41ead01d`
+- fix: exhausted OAuth credential pool reports the cooldown and reset time, not "no credentials"  `1710f841`
+- **agent** fix(agent): retry a truncated tool call with a boosted budget on the Responses wire  `b0952eac`
+- **delegate** fix(delegate): child inherits the parent's live endpoint and key together  `52705fba`
+- **delegation** fix(delegation): assemble subagent credential bundle atomically  `aa5b452b`
+- fix: read a top-level `detail` error body so a descriptive 400 is not a bare 400  `05c95d21`
+- **codex** fix(codex): sweep the retired gpt-5.3-codex slug off every Codex-OAuth surface  `3934fe55`
+- **codex** fix(codex): remove dead gpt-5.3-codex from curated fallback list  `82796e06`
+- fix: route a slug shared by several catalogs to the provider the user can use  `ff4399a0`
+- fix: local sub-64K context refusal stops assuming Ollama  `55db0a98`
+- fix: effort pickers and /reasoning status say what ultra really sends  `39726f8b`
+- fix: explicit --api-key keeps OpenCode's per-model api_mode and base URL  `07f2041e`
+- **doctor** fix(doctor): accept vendor/model slugs for openai-api on a custom endpoint  `c2b59084`
+- **codex** fix(codex): alias the tool_search bridge on OpenAI Responses so Codex requests are not rejected  `1f4fbd51`
+- **tools** fix(tools): coerce a missing `required` to [] and pin the MCP normalizer entry (#56123)  `3dbaffd8`
+- fix: correct indentation of repaired['required'] assignment  `4e1edd92`
+- **mcp_tool_schema** fix(mcp_tool_schema): preserve empty required arrays in _repair_object_shape  `9f2a1ad8`
+- **tests** fix(tests): drive the lookaround strip-and-retry through recover_after_classification  `1d6b56c6`
+- **agent** fix(agent): recover from strict OpenAI-compatible "regex lookaround is not supported" 400s  `3306e105`
+- **api_server** fix(api_server): emit the run record's runtime in the canonical _sanitize_runtime_metadata shape  `6b5a8fad`
+- **api_server** fix(api_server): GET /v1/runs/{id} reports the served fallback runtime and cache-read tokens  `1b02df86`
+- **agent** fix(agent): copy-on-write for SDK-object tool calls in _repair_invalid_tool_call_names  `62277ebe`
+- **agent** fix(agent): coerce invalid stored tool-call names on every outbound request  `7154ac03`
+- **cron** fix(cron): drop a stale quota hold on schedule edit; scope the docs to the usage-probe case  `24f57317`
+- **cron** fix(cron): pin the quota-hold scheduler wiring through a real run_one_job tick  `1d140a01`
+- **cron** fix(cron): hold fires through a provider's closed usage window instead of re-firing every tick  `b680dcd5`
+- **desktop** fix(desktop): cap client-direct STT uploads at 60s  `0830b7f7`
+- **qqbot** fix(qqbot): test the STT timeout at the HTTP call-site; share the 60s default and number parsing  `aa503830`
+- **stt** fix(stt): coerce the new client keys, apply the 60s default to the QQ STT call, document both  `749f657f`
+- **stt** fix(stt): configure OpenAI client timeout and retries  `0690fc19`
+- fix: drop the dead is_local_endpoint clause from the hosted-host probe guard  `35f69a91`
+- **agent** fix(agent): stop probing hosted provider hosts for local server types (#61421)  `5d0a39a1`
+- fix: pin consent_attestation on the Desktop client-direct TTS path  `935eef50`
+- fix: forward tts.openai.consent_attestation to every OpenAI-compatible TTS request  `f1608376`
+- **desktop** fix(desktop): require the provider slug in setOnboardingModel  `fbcc6059`
+- **desktop** fix(desktop): pin the cross-provider onboarding pick test to the confirm card's picker wiring  `be81cf7d`
+- **desktop** fix(desktop): persist onboarding model change against the picked model's provider  `c25892c8`
+- **gateway** fix(gateway): pin the hygiene no-commit reason and in-place adoption through the adopt path  `ebda770a`
+- **gateway** fix(gateway): hygiene no-commit warning names the real cause instead of "no session_db"  `762c4d35`
+- **desktop** fix(desktop): trim voice picker tests to invariants; document ElevenLabs model ids  `38029a52`
+- **desktop** fix(desktop): expose ElevenLabs v3 and gpt-transcribe in Voice pickers  `71df3e5a`
+- **state** fix(state): prune shadowed compaction checkpoints when a newer carrier row is persisted  `1947f74c`
+- **compression** fix(compression): pin the shadowed-checkpoint prune through compress(); drop the tail-budget claim  `e1f46b85`
+- **compression** fix(compression): prune native-compaction checkpoints a newer carrier shadows  `addb689a`
+- **google_meet** fix(google_meet): stop the PCM tail thread from swallowing every exception  `78cee6bc`
+- **google_meet** fix(google_meet): pin the mic unmute at _drain_loop's admission branch  `31c18481`
+- **google_meet** fix(google_meet): keep the realtime PCM pump alive and unmute the mic after admission  `03874cd4`
+- **google_meet** fix(google_meet): poll for the Join button instead of clicking once after domcontentloaded  `5381c6c2`
+- **opencode** fix(opencode): send ephemeral x-opencode-session header on one-shot requests  `6ca41cbe`
+- **setup** fix(setup): Codex image post-setup names the auth command instead of starting a device login without a terminal  `f7f000de`
+- **setup** fix(setup): Image Generation 'OpenAI (Codex auth)' row starts Codex sign-in and names the real auth command  `00e1a555`
+- **dashboard** fix(dashboard): a typed-root 404 no longer hides the /v1 key rejection; pin the Settings Test URL rewrite  `754d229b`
+- **dashboard** fix(dashboard): custom endpoint validation persists the base URL that served /models (#65488)  `9202bae5`
+- fix: pin the iteration-limit summary's router-shim rejection through handle_max_iterations  `9f7928ec`
+- fix: reject the HTTP-200 router timeout shim in every OpenAI-compatible consumer  `22753744`
+- **agent** fix(agent): reject router timeout shim responses  `d4a49637`
+- **tools** fix(tools): tool_call bridge treats blank arguments as no arguments  `462c1c14`
+- **stt** fix(stt): keep the provider's 5xx when no transcode is possible; trim tests  `4b4e8ed4`
+- **tools** fix(tools): reach the STT transcode-and-retry path on 5xx container rejections  `f185bf7f`
+- **bot-mode** fix(bot-mode): system-prompt section and docs describe the reply_delivery=poll return path  `d86a1687`
+- **bot-mode** fix(bot-mode): non-push senders get the poll ack on the live-owner branch too, and the reply is persisted as a delivery row  `a6ac73a0`
+- **bot-mode** fix(bot-mode): message_agent no longer promises a reply notification a non-push sender cannot receive  `8f44cd89`
+- fix: drop the redundant _request_is_current() from the first-event stamp guard  `68ef35de`
+- **codex** fix(codex): record first Responses stream event timing  `34ca29ad`
+- **gateway** fix(gateway): a --global /model keeps the session override under a channel_overrides model; report a failed stale-override cleanup  `03d40f89`
+- **gateway** fix(gateway): concurrent /model commands commit in issue order  `d4d383ee`
+- **gateway** fix(gateway): a --global /model pick leaves config.yaml as the only durable model authority  `1a595192`
+- fix: close the raw provider stream when the post-terminal drain times out under a Relay-managed wrapper  `b3f6834e`
+- **codex** fix(codex): make the post-terminal drain budget a config key (agent.stream_drain_timeout)  `a8c317d4`
+- **codex** fix(codex): bound post-terminal stream drain  `39884274`
+- **agent** fix(agent): extend the reasoning stale-timeout floor to gpt-6-astra and pin the gpt-5.6 family  `6a245239`
+- **agent** fix(agent): apply reasoning timeout floor to GPT-5.6  `676970cb`
+- fix: WAF-block follow-ups — honest hint, cron action, anthropic debug dump (#24293)  `cb062f7b`
+- **desktop** fix(desktop): the error card names a WAF block and the User-Agent fix instead of 'retry in a moment'  `1fc8887c`
+- **cli** fix(cli): a WAF-blocked Kanban worker exits KANBAN_TERMINAL_PROVIDER_EXIT_CODE, not 1  `64c703ee`
+- fix: WAF 403s stop reading as key rejections; anthropic_messages routes send custom_providers extra_headers  `6f6ed013`
+- **vision** fix(vision): accept the image/jpg alias and give the Anthropic converter the same unsupported-subtype downgrade  `d1998c30`
+- **codex** fix(codex): unsupported inline image formats no longer 400 the whole Responses request  `2f339520`
+- **cron** fix(cron): name the home-channel target when a non-push session's deliver=origin job is rerouted  `0502f35d`
+- **cron** fix(cron): deliver=origin from an api_server session reaches the home channel instead of failing silently  `d5d653c2`
+- **wait-notice** fix(wait-notice): derive the near-deadline flag once; retire the stale 'provider may be slow' docstrings  `926055bf`
+- **desktop** fix(desktop): admit the near-deadline 'still waiting on' wait notice in the status row  `5b27b4a6`
+- fix: show the long-wait status once per silence, neutrally worded, naming its watchdog  `eee53835`
+- fix: pin the run_conversation native-turn scope with a tool-loop test; document the same-turn dedupe  `940c1f11`
+- fix: vision_analyze does not re-embed an image already attached natively to the current turn  `503d818d`
+- fix: document the host inactivity budget as the outer no_progress_timeout cap  `a6057ccb`
+- fix: drop the mocked no_progress_timeout wiring test  `85c1af17`
+- **video_gen** fix(video_gen): build the OpenAI-compatible video client on the env-only-proxy httpx client  `e113c1b3`
+- **image_gen** fix(image_gen): system-proxy regression test patches the getproxies httpx actually calls and drives generate()  `7af3b7f8`
+- fix: wire the anthropic_messages stream into the late-connect re-abort (#98974)  `0bd01187`
+- **streaming** fix(streaming): interrupt abort reaches the in-flight stream socket  `b5100933`
+- fix: model_extra reasoning fallback in the streaming final-response branch  `eed6fa2a`
+- fix: read model_extra reasoning in the auxiliary stream accumulator  `c9e506f7`
+- fix: reasoning-only streams whose deltas carry reasoning only in model_extra no longer fail as empty  `36c987ea`
+- **agent** fix(agent): skip a fallback candidate whose credential pool is benched for longer than any retry wait  `8e74bfb4`
+- **agent** fix(agent): exhausted plan-quota 429 names its reset window instead of 'wait a minute'  `5d0ddb7d`
+- **gateway** fix(gateway): real 401 envelopes keep the sign-in reply; quota reply reads the shared reset grammar  `b2af1700`
+- fix: quota-exhausted 429 is no longer reported to chat as a sign-in failure  `4b0dd7e9`
+- fix: recognise discourse-marker lead-ins before a leaked shell-JSON call  `cdac150e`
+- **codex** fix(codex): treat leaked Codex-CLI shell JSON as an incomplete turn, not a final answer  `f5fbe9a6`
+- **docs** fix(docs): mirror the api-server model-reasoning section and reasoning_streaming flag in zh-Hans  `93652783`
+- **api-server** fix(api-server): pin the reasoning_callback wiring through _spawn_stream_agent/_run_agent/_create_agent  `62dbead3`
+- **model_switch** fix(model_switch): the OpenRouter mirror is a fallback only when no custom endpoint is configured  `b58e1287`
+- fix: retry a 403 stamped code=upstream_unavailable instead of failing as auth  `12131094`
+- **error_classifier** fix(error_classifier): read Gemini's error.status when error.code is numeric; pin anthropic RATE_LIMIT_ERROR rotation  `b580e215`
+- fix: classify provider code-only errors into structured failover reasons  `f2651cb0`
+- fix: persist a multimodal text part once and record its spill path for the stub guard  `ea513251`
+- fix: spill oversized tool outputs before a Codex zero-event reconnect and log the size delta  `87de11b7`
+- fix: spill oversized text parts of multimodal tool results like string results  `876bae4d`
+- **agent** fix(agent): price Responses function_call_output images flat, not as base64 text  `162c0583`
+- **model_metadata** fix(model_metadata): recognise the OpenAI-style completion split as an output-cap error  `624ffd3b`
+- fix: cover the attempt-line verdict through handle_api_error  `b23f31c2`
+- **agent** fix(agent): name a non-retryable API failure on the attempt line  `9c75ae13`
+- **aux** fix(aux): drop dead suppress in _routes_to_custom_endpoint  `0348a190`
+- **custom** fix(custom): clamp top-level reasoning_effort to Groq's none/default vocabulary on api.groq.com  `981cb830`
+- **aux** fix(aux): only configured custom endpoints project the custom profile  `6a2bfded`
+- **aux** fix(aux): keyed custom endpoints get top-level reasoning_effort, not the nested reasoning object  `5ba9cb9f`
+- **cli** fix(cli): release the old agent's clients before dropping it for a rebuild  `c30b750a`
+- **agent** fix(agent): release_clients() closes the Codex app-server session too  `73959315`
+- **models** fix(models): azure-foundry disk-cache fingerprint tracks model.base_url  `9a403e52`
+- **picker** fix(picker): Entra-only Azure Foundry stays listed in /model without an API key  `41a0c3f1`
+- **cli** fix(cli): the /model picker reads the disk-cached live catalog like the gateway pickers  `8c6e97ee`
+- **picker** fix(picker): providers.<overlay>.models extends Hermes-overlay rows (azure-foundry)  `dd00b6c3`
+- **models** fix(models): the /model picker lists the configured Azure Foundry resource's models  `1d62b6ac`
+- **gateway** fix(gateway): route AuthError fallback through resolve_runtime_with_fallback  `50274afa`
+- **oneshot** fix(oneshot): consult the fallback chain at provider resolution time  `a3141497`
+- **codex** fix(codex): stop double-counting cached input in app-server usage  `1c362700`
+- **acp** fix(acp): forward the resolved credential pool into ACP agents  `4a8c7ce6`
+- **image-routing** fix(image-routing): resolve vision capability of valid Codex `-900k` variants via their base slug  `c6d0b632`
+- **auth** fix(auth): count additional_rate_limits in the Codex quota-restored probe  `4c3d31eb`
+- **auth** fix(auth): throttle the pre-probe Codex refresh and pin the pool-side wiring  `a70053d9`
+- **auth** fix(auth): `hermes auth reset` survives a live session's next pool flush  `a564f777`
+- **auth** fix(auth): refresh an expired Codex token before the quota-restored probe  `63bcdcaa`
+- **credential-pool** fix(credential-pool): treat rotate-to-self after mark as no-recovery  `8530d81b`
+- **auth** fix(auth): normalise millisecond last_error_reset_at in Codex pool selection  `07135710`
+- **tui-gateway** fix(tui-gateway): session.usage RPC ships provider account limits (account_lines)  `604d8803`
+- **gateway** fix(gateway): /usage falls back to the configured provider when no route is known  `58d1fa22`
+- **cli** fix(cli): render account limits in /usage without a live agent  `3ee389af`
+- **usage** fix(usage): label Codex quota windows by published duration, not response position  `5685b4ea`
+- **aux** fix(aux): flatten the Codex reasoning projection guard; pin OpenAI's unsupported-none 400 shape  `80009fbd`
+- fix: route the curator review fork and gateway /compress agent through resolve_reasoning_config  `52b64999`
+- **codex** fix(codex): warn once when an explicit reasoning disable has no wire form on the route  `0def1fb1`
+- **codex** fix(codex): send reasoning.effort none explicitly; no reasoning field for chat-era OpenAI models  `3e74037c`
+- **acp** fix(acp): resolve reasoning_config for ACP and Feishu comment agents  `1447c83b`
+- **aux** fix(aux): honour a custom OpenCode-family entry's declared api_mode, like the main runtime  `1a2bf64a`
+- **aux** fix(aux): route OpenCode auxiliary clients by the model's wire, not a persisted api_mode  `37f7f003`
+- **providers** fix(providers): resolve the chatgpt alias in the /model parser and hermes auth login too  `393ffff0`
+- fix: pin entitlement rotation through recover_with_credential_pool; bench until reset  `4a43cc50`
+- fix: rotate Codex pool credentials on a ChatGPT-account model entitlement 400  `7958cbf2`
+- **codex-app-server** fix(codex-app-server): fail pending requests when stdout hits EOF  `1db043b3`
+- **codex-app-server** fix(codex-app-server): report close() before the turn loop as 'session closed', not a timeout  `8dbbc133`
+- **codex-app-server** fix(codex-app-server): end a turn cleanly when close() or a transport loss races the poll loop  `300201c9`
+- **codex-app-server** fix(codex-app-server): raise CodexAppServerTransportError on write failure and closed-client drains  `7c4a3762`
+- **codex-app-server** fix(codex-app-server): cancel pending requests immediately on close()  `1b8245b8`
+- **web** fix(web): the dashboard's submitted custom endpoint survives the model assignment  `8c1f8ed6`
+- **model_switch** fix(model_switch): a bare custom switch no longer adopts the OPENROUTER_BASE_URL mirror  `3cfbffa1`
+- **tests** fix(tests): pin the provider:model prefix strip through AIAgent init, not just the helper  `75400793`
+- fix: strip a matching `provider:` prefix like `provider/` in model normalization  `50e262a7`
+- fix: bind the delegated child to the entry actually leased, not the pool's shared cursor  `c38f7f6d`
+- fix: mid-run credential rotation never rebinds a session to an entry for another endpoint  `c7d0045a`
+- fix: delegated child never leases a same-provider pool entry for another endpoint  `d75a5187`
+- **aux** fix(aux): canonicalize task-level api_mode so `responses` selects the Responses adapter  `807d7a77`
+- fix: build the dashboard Codex poll client through the shared capped builder  `e5258804`
+- fix: cap Codex OAuth/device-auth response bodies at 1 MiB in CLI and dashboard  `c6d12daf`
+- fix: keep model.openai_runtime=codex_app_server across /model switch; document the overlay rung  `5f914154`
+- fix: apply model.openai_runtime once, after the ladder; trim tests to two invariants  `8ec20648`
+- **runtime** fix(runtime): honor model.openai_runtime: codex_app_server across all ladder rungs (#115169)  `8d2ea58f`
+- fix: strip stale Codex reasoning on 401 token_expired before the credential pool  `fbbc7dfe`
+- fix: recover a persisted Codex session that loops on 401 token_expired  `283a4c7a`
+- fix: keep the Entra token provider intact when auxiliary tasks re-resolve Azure Foundry  `fc9f40ac`
+- **test** fix(test): pin migrate() plugin discovery to configured model.codex_bin  `c72eea92`
+- **codex** fix(codex): reset the streamed-text buffer at each completed agentMessage  `1484f82c`
+- **gateway** fix(gateway): final-send predicate matches only durable deliveries; pin it at the mark-streamed boundary  `80ba7f6f`
+- **gateway** fix(gateway): codex app-server final replies are no longer delivered twice  `30f4cc70`
+- **agent** fix(agent): reuse _RATE_LIMIT_REASONS for app-server failover; document the eligible failure classes  `1b0cb4d1`
+- **agent** fix(agent): fail over from codex app-server quota errors (#71642 re-port)  `8535b7f1`
+- fix: unwind re-port of #71642 for attribution  `f7d1965f`
+- **agent** fix(agent): codex app-server quota and rate-limit failures fail over to fallback_providers  `d7e405ef`
+- fix: hermes doctor probes Azure Foundry Anthropic endpoints like the runtime  `9bd66000`
+- fix: pin the auxiliary wire's route-scoped reasoning_details strip; document OpenRouter/Nous-only replay  `0c24dd56`
+- fix: keep reasoning_details on the iteration-summary messages; the transport drops it per route  `42bdab86`
+- fix: drop replayed reasoning_details on every chat-completions route that does not read it  `c8ecc3db`
+- fix: drop base64 imports left unused by the shared codex_account_headers helper  `0837f549`
+- fix: send the Codex residency header on every JWT-derived Codex request  `7471586a`
+- **agent** fix(agent): extract residency claims from Codex OAuth JWT for workspace auth  `0bbf7b79`
+- **codex** fix(codex): match the primary error on '401 unauthorized', not any bare 401 token  `e132e693`
+- **codex** fix(codex): plugin 401 noise in app-server stderr no longer masks the real turn error  `48d59f15`
+- fix: fallback entries inherit a named provider's declared transport  `8f154242`
+- **tests** fix(tests): pin Responses tool strictness at both production entry points  `45356370`
+- **agent** fix(agent): preserve explicit Responses tool strictness  `908fb96f`
+- fix: render dict-form reasoning_effort in the TUI config.get and setup wizard readers  `f75263f8`
+- **codex** fix(codex): drop the message id of Azure-trimmed reasoning turns too  `4d1d3d05`
+- **codex** fix(codex): drop a replayed message id when its reasoning id was stripped  `801590af`
+- **auth** fix(auth): read-only Codex reads take no store lock; /model picker never refreshes  `29bc6343`
+- **auth** fix(auth): status and doctor Codex reads never adopt, refresh or persist credentials  `d43c9622`
+- **classifier** fix(classifier): pin the body-less 'Unsupported content type' envelope in the codex replay test  `e62c5e33`
+- **codex** fix(codex): send string role-message text as typed parts on the ChatGPT Codex backend  `3665a535`
+- **classifier** fix(classifier): route two more rejected-reasoning-replay 400s to the replay strip  `c7cf3f8a`
+- **cli** fix(cli): bound Azure detect response reads  `43127a86`
+- **agent** fix(agent): classify Codex account token failures  `0acd96a4`
+- **curator** fix(curator): never-used built-ins get their inactivity clock anchored at first curator sight  `f64ac2fb`
+- **curator** fix(curator): tarball skips regeneratable dirs; `ledger --compact` garbage-collects blobs  `4fc3e9be`
+- **skill_ledger** fix(skill_ledger): stop snapshot_paths from sweeping transient dirs into the blob store  `0ed64d4a`
+- **compression** fix(compression): keep the tail anchors the split exception was bypassing  `d32f162c`
+- **compression** fix(compression): split oversized active turns  `cc4bb888`
+- **context-compressor** fix(context-compressor): the marked-leaf guard must match the whole tail  `39abfdf4`
+- **context-compressor** fix(context-compressor): match the marker by position, and leave args byte-identical  `a5381a7d`
+- **context-compressor** fix(context-compressor): only shrink args when it reclaims, never re-shrink  `1e216d13`
+- **context-compressor** fix(context-compressor): stop injecting an imitable truncation marker into replayed tool_calls  `262a6436`
+- **tui_gateway** fix(tui_gateway): vault.* RPCs bind the launch profile's secret scope once the process multiplexes  `ae712635`
+- **mcp** fix(mcp): retire the n8n bridge catalog entry (#116048)  `8d4abc3e`
+- **cli** fix(cli): model-switch warning quotes the capped compression trigger  `b8a77fa9`
+- **compression** fix(compression): bound default trigger at 256K tokens  `489cb746`
+- **review** fix(review): one shared routing block; single-store deployments; one-place wording  `78990af6`
+- **review** fix(review): route memory facts to USER.md vs MEMORY.md and forbid dual-store writes  `f02be54d`
+- **agent** fix(agent): bound tail message floor by token budget  `fdbcdef9`
+- **env_loader** fix(env_loader): restore only values a source is authoritative for  `da2e571b`
+- **env_loader** fix(env_loader): isolate external-secret snapshots per HERMES_HOME (#74283)  `303d8391`
+- **mcp** fix(mcp): log the dead-child reconnect; test file named by behaviour  `6fc43ca6`
+- **mcp** fix(mcp): reconnect dead stdio child past proof deadline instead of spinning  `55b6116b`
+- **plugins** fix(plugins): install scanner scores inert context as context, not as plugin behaviour  `5a0c2fb8`
+- **curator** fix(curator): prune-only passes stop snapshotting; ledger stores deltas; one pass per home; restore by skill name  `5fd334f1`
+- **curator** fix(curator): keep the CLI prompt off the curator's critical path; stop snapshotting the ledger and .archive  `2a0a6c5c`
+- **tests** fix(tests): idle-proof live test waits for the startup cron tick to drain  `41456ea8`
+- **tests** fix(tests): pin the gateway identity inputs in the migrate fleet fixture  `1c2cf518`
+- fix: re-pin apify plugin to the git-clone loader fix  `8bb3496d`
+- **plugin-catalog** fix(plugin-catalog): configure subdir and update pinned sha to e025217  `00f279fd`
+- **install** fix(install): reinstall a managed uv that no longer runs  `4d59f894`
+- **install** fix(install): resolve uv shims before salvage and validate the copy in place  `d0dbf2cb`
+- **install** fix(install): validate every managed uv acceptance path  `3662a192`
+- **install** fix(install): reject broken copied uv shims  `23298685`
+- **acp** fix(acp): warm numpy with the memory provider so hindsight is covered too (#58083)  `80f4c6d6`
+- **acp** fix(acp): restore not-in-memory sessions off the event loop in every handler (#58083)  `2cb01755`
+- **acp** fix(acp): pre-import the memory provider on the main thread on Windows (#58083)  `6a93afa0`
+- **acp** fix(acp): build sessions off the event loop; single-flight DB restores (#58083)  `2a2c3e3c`
+- **desktop** fix(desktop): retry the Electron mirror only when the Electron distribution is missing  `d3c012ff`
+- **catalog** fix(catalog): rename memos entry to mem-os and re-pin both entries  `0171faec`
+- **catalog** fix(catalog): excel_line re-pin to 45dcf84 (review fixes), declare capabilities  `fc973ca7`
+- fix: step reasoning up to the floor when a route refuses to disable it  `2768f316`
+- **tools** fix(tools): bounded probes contain Windows descendants in a Job Object so the Git Bash grandchild dies  `9307c678`
+- **acp** fix(acp): approval prompts wait approvals.timeout instead of a hardcoded 60 s  `b9ba9d50`
+- **terminal** fix(terminal): bound the Git Bash startup probe's timeout cleanup (#73403)  `edae76fe`
+- **terminal** fix(terminal): restore the unconditional stdout.close() after the Windows drain  `f0032daf`
+- **terminal** fix(terminal): skip stdout.close() while a Windows drain thread is still reading (#67362)  `428777a6`
+- **terminal** fix(terminal): bound the Windows stdout drain with PeekNamedPipe (#105865)  `e7a82ead`
+- **serve** fix(serve): the idle probe names the ledger that holds work  `03132b18`
+- **update** fix(update): ZIP dirty-tree guard admits what the swap cannot destroy  `71335fe2`
+- **update** fix(update): rebuild a Desktop app whose artifacts an earlier update lost  `6b0a6657`
+- **update** fix(update): ZIP fallback keeps every nested Desktop/web build output  `610f37d7`
+- **desktop** fix(desktop): remove a half-installed get-windows dir before the workspace npm install (#90829)  `f97f8d5f`
+- **desktop** fix(desktop): degrade instead of failing the build when get-windows lacks its binding or helper  `048e7b97`
+- **desktop** fix(desktop): name the half-installed get-windows dir and its repair when staging degrades  `7ee8f552`
+- **desktop** fix(desktop): do not fail build if get-windows is missing on any platform  `2a9ba259`
+- **desktop** fix(desktop): document the afterExtract ordering, trim tests, refresh stale hook references  `70096110`
+- **desktop** fix(desktop): order PE stamping before ASAR integrity  `168e0f78`
+- **gateway** fix(gateway): a restored lane whose receiving bot is offline delivers nowhere  `d899d890`
+- **relay** fix(relay): echo the routed profile on every outbound frame and follow_up  `e09cd0d2`
+- **gateway** fix(gateway): routing entries persist the receiving bot; restored lanes deliver through it or fail closed  `8ab22a95`
+- **ci** fix(ci): a failing workspace check keeps its output in the log (#115214)  `3752f89f`
+- **update** fix(update): "Already up to date" re-syncs a venv installed from an older release  `44945d22`
+- **update** fix(update): decide SCM service ownership by name before asking binpath; AccessDenied is "not ours"  `26eb0848`
+- **update** fix(update): classify Windows gateway supervisors by Hermes ownership, not ancestry  `1417ae04`
+- **updater** fix(updater): require Hermes-owned Windows services  `94d0789c`
+- **update** fix(update): shim hand-off child outwaits the launcher pid before the update lock and pins the wiring  `6f0dae8b`
+- **update** fix(update): Windows shim hand-off child waits for hermes.exe to exit and owns the gateway resume  `16801258`
+- **lsp** fix(lsp): cap the workspace-root cache and the eventlog announce buckets (#62950)  `1c21a502`
+- **lsp** fix(lsp): take _state_lock in _set_delta_baseline; pin the cap through the production call sites  `83200b35`
+- **hindsight** fix(hindsight): bound the append-mode session turn buffer  `6e1de485`
+- fix: bound the LSP document cache, delta baselines, TUI fuzzy cache and the tool-call logger (#62950)  `539b8269`
+- **lsp** fix(lsp): surface the pnpm failure reason and document the exotic-subdep block  `06e76129`
+- **lsp** fix(lsp): unknown lsp.package_manager fails closed; yarn uses the global --cwd form  `6cf2f066`
+- **web** fix(web): openai-native backend docs name the real login command, English picker tag, registry test lists the plugin  `44e6ea3c`
+- **tui_gateway,cli** fix(tui_gateway,cli): per-turn fallback sync fails closed on a torn config; classic CLI syncs too (#95066)  `064c8475`
+- **lsp** fix(lsp): eventlog path shortener survives a removed process cwd  `6b3005c4`
+- **lsp** fix(lsp): inline the deleted-cwd guard and keep one real-cwd invariant test  `311123a8`
+- **lsp** fix(lsp): treat a deleted process cwd as no anchor so write diagnostics never fail a landed write  `570b3c1a`
+- fix: map the emails of the contributors #115851 supersedes  `c6ced3c0`
+- **desktop** fix(desktop): custom endpoint Test probes the transport route, not just /v1/models  `ab241af3`
+- **gateway** fix(gateway): keep the ps column header first in the shutdown diagnostic  `01133121`
+- **service** fix(service): drop the s6 chmod-after-chown reorder  `cb40107d`
+- **lsp,gateway** fix(lsp,gateway): give servers a grace period after `exit` and keep shutdown diagnostics off GNU-only tools (#72944)  `51283072`
+- fix: honour tts.streaming.min_len on the Desktop client-direct TTS path  `744945b3`
+- **lsp** fix(lsp): pin Windows wrapper resolution through _existing_binary and the pyright sibling  `966959da`
+- **lsp** fix(lsp): probe Windows .cmd/.exe/.bat wrappers before npm's POSIX shim (#86445)  `d6e5cda2`
+- **lsp** fix(lsp): pre-write capture sees config-declared servers; e2e test goes through create_from_config  `894ba961`
+- **lsp** fix(lsp): Vue reinstall hint routes through `hermes lsp install`; recipe test is a major-bound invariant  `d0db7227`
+- **lsp** fix(lsp): Vue diagnostics arrive again — pin @vue/language-server to the self-hosting 2.x line  `7b83a009`
+- **dashboard** fix(dashboard): a typed-root 404 no longer hides the /v1 key rejection; pin the Settings Test URL rewrite  `088e8278`
+- **lsp** fix(lsp): release language servers on every in-process workspace removal; pin the call sites  `2ebfec40`
+- **lsp** fix(lsp): release a worktree's language servers on removal; reap deleted roots  `d6f1de3f`
+- **lsp** fix(lsp): document that wait_timeout bounds both waits; tighten the salvaged tests  `0bd59ba1`
+- **lsp** fix(lsp): honor lsp.wait_timeout in baseline snapshot  `631baa40`
+- fix: surface the pre-agent provider fallback on the TUI/Desktop gateway and cron too  `adf33e31`
+- fix: drop unreachable isinstance guards in SentenceChunker.from_config  `5acdd85b`
+- fix: pin tts.streaming.min_len at the speaker and speak-stream entry points  `86bb3eb7`
+- **tests** fix(tests): split the bundled OpenAI sample-rate test into single-invariant cases  `e67e8012`
+- **web** fix(web): speak-stream start frame carries the rate learned from the endpoint  `20902172`
+- **agent** fix(agent): live retry wait line and vendor reset headers carry the reset window  `664f37dd`
+- **gateway** fix(gateway): route AuthError fallback through resolve_runtime_with_fallback  `af6ed691`
+- **codex_app_server** fix(codex_app_server): retire the thread when the composed prompt changes mid-session  `ee69433c`
+- fix: drop the reasoning fields when the route rejects an enabled reasoning level  `64dceb9c`
+- **agent** fix(agent): key the temperature route memory on the same base_url the kwargs builder reads  `3308e2dc`
+- **gateway** fix(gateway): reset the pre-agent fallback notice stash on every resolution; pin it at the turn-runner entry  `4c652b0a`
+- fix: drop the redundant _request_is_current() from the first-event stamp guard  `65842421`
+- **codex-runtime** fix(codex-runtime): pin CLI registration, honour CODEX_HOME, widen preserve-user  `0923589e`
+- **auth** fix(auth): read-only Codex reads take no store lock; /model picker never refreshes  `84c77f47`
+- **gateway** fix(gateway): heal a persisted opencode relay URL on /model override rehydration; share the per-model api_mode lookup  `c7b82ed4`
+- **oneshot** fix(oneshot): pin the resumed opencode-go wire re-derivation on the oneshot resume entry  `ea1aed5d`
+- fix: parse the "limited to N" output-cap figure so the budget steps down  `5eb31233`
+- fix: pin direct-alias rung of custom key_env resolution  `9641e60c`
+- **acp** fix(acp): only the switch_model rejection maps session/set_model to invalid params  `a9725ed5`
+- fix: close the raw provider stream when the post-terminal drain times out under a Relay-managed wrapper  `69562a13`
+- fix: document the reasoning-only stall failover under Fallback Model  `2c4d1f79`
+- fix: pin the cross-protocol nudge strip through the production request path  `f85a7cb6`
+- **docs** fix(docs): mirror the api-server model-reasoning section and reasoning_streaming flag in zh-Hans  `ed004973`
+- **api-server** fix(api-server): pin the reasoning_callback wiring through _spawn_stream_agent/_run_agent/_create_agent  `543a5a58`
+- **test** fix(test): pin migrate() plugin discovery to configured model.codex_bin  `169c2e59`
+- fix: Codex CLI recovery no longer replaces a credential from another workspace  `a745c352`
+- fix: output-cap failure copy stops pointing at the removed model.max_tokens key  `f1737e1f`
+- **api-server** fix(api-server): /v1/runs emits message.interim; display.interim_assistant_messages gates all surfaces  `67173a73`
+- fix: parse SGLang output-cap rejection wording (#83521)  `6c28f1f7`
+- fix: parse Azure output-cap rejection wording (#78405)  `2641d416`
+- **codex** fix(codex): superseded streams keep consuming so the final text is not truncated  `09f307d3`
+- **api-server** fix(api-server): /v1/responses stream carries commentary as a phase-tagged message item  `968f99e2`
+- **api-server** fix(api-server): wire interim_assistant_callback; session SSE emits assistant.commentary  `b44ccdcc`
+- **compression** fix(compression): enable Astra native compaction on official Codex OAuth  `33b2461b`
+- fix: local Responses endpoints get the local stale ceiling as first-event grace  `db675a91`
+- **cli** fix(cli): a resumed opencode-go session re-derives its wire format from the stored model  `ba9d68a8`
+- fix: keep the Codex catalog fetch shape while capping -900k at max_context_window  `a585ad83`
+- **codex** fix(codex): allow Responses `text` through Codex preflight  `23fb0611`
+- **model-metadata** fix(model-metadata): cap opted-in codex -900k alias at live catalog max_context_window (#105443)  `223aed61`
+- **gateway** fix(gateway): voice input re-routes per speaker through the identity seam  `8df0a037`
+- **gateway** fix(gateway): canonicalize identity first at every adapter ingress path  `1654575c`
+- **agent** fix(agent): rate-limit retry status names the provider's reset window  `1e8219fe`
+- **api-server** fix(api-server): chained /v1/responses turns store each message once  `3305af8d`
+- fix: auxiliary calls omit temperature up front for OpenAI reasoning families and remembered routes  `0d6d6c36`
+- **desktop** fix(desktop): custom endpoints pin an API mode and keep /v1/models alias metadata  `363b8a6f`
+- **tts** fix(tts): honor the PCM sample rate reported by OpenAI-compatible endpoints  `3e212b7d`
+- **tui_gateway** fix(tui_gateway): adopt fallback_providers edits into open Desktop/TUI chats at turn start  `adc3698b`
+- **dashboard** fix(dashboard): custom endpoint validation persists the base URL that served /models (#65488)  `859c883c`
+- **providers** fix(providers): opencode-go vision models stay on the Go endpoint and attach images natively  `a750c091`
+- fix: hand Codex reasoning-only stalls to the fallback provider instead of the incomplete sentinel  `f7567a62`
+- **opencode** fix(opencode): send ephemeral x-opencode-session header on one-shot requests  `709cc221`
+- **tui_gateway** fix(tui_gateway): probe foreign rows by keyset and re-hydrate after a remote compaction  `25a43ddf`
+- **tui_gateway** fix(tui_gateway): next prompt sees turns another surface appended to the session (#42962)  `83f6c77a`
+- fix: keep the pre-agent fallback notice out of AIAgent kwargs; surface it from the turn runner  `280eb136`
+- **gateway** fix(gateway): surface fallback notice when credential resolution falls back to secondary provider  `38241942`
+- **agent** fix(agent): retry pre-stream Codex APIConnectionError caused by transport errors  `37a2ab61`
+- **acp** fix(acp): rejected session/set_model is an invalid-params error and a failed rebuild reports its real cause  `643b94bf`
+- **codex** fix(codex): record first Responses stream event timing  `bef494b0`
+- **codex** fix(codex): make the post-terminal drain budget a config key (agent.stream_drain_timeout)  `b949348c`
+- **providers** fix(providers): bare `provider: custom` honours model.key_env; an unset key_env is logged instead of laundered into no-key-required  `77d87b62`
+- **codex** fix(codex): bound post-terminal stream drain  `87b95700`
+- **desktop** fix(desktop): create a project from a folder in one step  `e1866bf7`
+- **agent** fix(agent): judge "wrong script" against the user's own message; one continuation kind per stop  `112446af`
+- **agent** fix(agent): re-prompt once when a turn that did tool work ends on a collapsed fragment  `80f0d1b5`
+- **shared** fix(shared): a failed gateway dial says which failure it hit  `efe042ab`
+- **tui_gateway** fix(tui_gateway): the turn-completion trim waits for the other sessions too  `e0e54981`
+- **tui_gateway** fix(tui_gateway): the periodic memory trim waits until no session is busy or attached  `11b7a1e7`
+- **desktop** fix(desktop): profile-only secondaries count their live turn too  `4f766f8f`
+- **desktop** fix(desktop): wake probe counts the foreground turn as in-flight work; sibling pins and prune follow-through  `e796a298`
+- **desktop** fix(desktop): defer secondary wake-probe force-close behind a failure streak  `ad6c7a5a`
+- **desktop** fix(desktop): probe live secondaries on forced wake instead of skipping them  `a915f0b3`
+- **desktop** fix(desktop): stop forced wake reconnects from churning live secondary sockets  `69c51bb0`
+- **codex** fix(codex): rotate the credential pool on Responses HTTP-200 soft failures  `d1b283f4`
+- **oneshot** fix(oneshot): consult the fallback chain at provider resolution time  `b1d49279`
+- **codex** fix(codex): stop double-counting cached input in app-server usage  `67640b9f`
+- **acp** fix(acp): forward the resolved credential pool into ACP agents  `247a2450`
+- **codex-runtime** fix(codex-runtime): keep user-owned same-name MCP tables instead of duplicating them; validate TOML before writing  `871b863b`
+- **codex_runtime** fix(codex_runtime): hand Hermes' composed system prompt to the codex thread  `ab2861fb`
+- **codex_app_server** fix(codex_app_server): disable codex's built-in personality on thread/start  `2a12555b`
+- **auth** fix(auth): status and doctor Codex reads never adopt, refresh or persist credentials  `784f94fb`
+- fix: recognize structured reasoning-field 400s (param / invalid_reasoning_effort) as reasoning rejections  `e343fbd2`
+- fix: strip duplicate unmanaged MCP tables during codex migration (#79023)  `619f6131`
+- **agent** fix(agent): match enum-style reasoning_effort rejections with no unsupported marker  `da8388c7`
+- **agent_init** fix(agent_init): judge the served window only for local endpoints; clamp after the floor as before  `afaa53e5`
+- **agent_init** fix(agent_init): the 64K context floor judges the window Ollama serves, not the GGUF metadata  `3de7140b`
+- **anthropic** fix(anthropic): mirror only the Keychain item that held the spent pair; parse both `security` attribute encodings  `14a34634`
+- **anthropic** fix(anthropic): mirror the Keychain item through `security -i` with a hex payload, under its own account  `bf5a6f6a`
+- **agent** fix(agent): mirror Claude Code OAuth refresh into the macOS Keychain (#98334)  `6d4ca15d`
+- **gateway** fix(gateway): reject inbound events when route matching fails  `032b91d9`
+- **gateway** fix(gateway): close sender-routing gaps found in review  `e864bedf`
+- **model_switch** fix(model_switch): treat a fall-through to OpenRouter's default as "no custom endpoint configured"  `0cb37603`
+- **model_switch** fix(model_switch): switching to a bare custom endpoint from another provider resolves the configured one  `daf882e3`
+- **agent** fix(agent): strip namespace-prefixed text-channel tool-call XML from visible text  `60735cbf`
+- **gateway** fix(gateway): every adapter session key goes through one seam (+ lint)  `c0770867`
+- **agent** fix(agent): refuse stale singleton adoption over rotated manual:device_code entries (#106705)  `20512a47`
+- **auth** fix(auth): isolate Codex singleton sync by principal  `46503f16`
+- **agent** fix(agent): terminal copy for the new role_alternation failure reason  `76724f3d`
+- fix: MoA aggregator merges adjacent same-role messages only for destinations that reject them  `40778c74`
+- **desktop** fix(desktop): restore the unsent composer draft when a session is gone  `acccd54c`
+- **desktop** fix(desktop): /reasoning hide|show gates Thinking blocks immediately  `0c3ebefb`
+- **desktop** fix(desktop): count the head entries the group-chat mirror drops  `d9922601`
+- **desktop** fix(desktop): mark truncated group-chat sync payloads  `d32dacf8`
+- **desktop** fix(desktop): mark the truncated head of a bot group-chat turn delta  `c91d955f`
+- fix: /stop halts background subagents and returns their partial results as interrupted completions  `b7135906`
+- **kanban** fix(kanban): dispatcher blocks a card on the first terminal provider error  `2b94b0d4`
+- **kanban** fix(kanban): worker exits EX_CONFIG on a terminal provider error  `c20432ff`
+- **cron** fix(cron): the ticker supervisor respawns only a ticker that crashed, not one that returned  `c6e3a775`
+- **chronos** fix(chronos): a 403 invalid_client from NAS hands cron fires to the built-in ticker (#97494)  `e56ec8c9`
+- **plugin-catalog** fix(plugin-catalog): drop pre_user_message from prompt-optimizer  `56db4dc2`
+- **update** fix(update): refresh memory-provider deps in the same order as the pull path  `6c16233b`
+- **cli** fix(cli): heal memory-provider bridge packages on every venv repair path  `1f6e737e`
+- **image-gen** fix(image-gen): record token usage as soon as the billed HTTP 200 lands  `255b4fd9`
+- **image-gen** fix(image-gen): every token-billed image backend records session usage (chat path, Image API, OpenAI gpt-image)  `6babdc96`
+- **image-gen** fix(image-gen): record token-billed OpenRouter calls to session usage  `98ad0d81`
+- **plugin-catalog** fix(plugin-catalog): re-pin prompt-optimizer after manifest fix  `062b5de3`
+- **ci** fix(ci): report an interpreter crash as CRASHED, not "no tests ran"  `0ddba07a`
+- **plugin-catalog** fix(plugin-catalog): pin corrected Hermes Talk source  `cf31cccd`
+- **agent** fix(agent): a server context rejection the transcript cannot explain is no longer "conversation too long"  `5e950506`
+- **review** fix(review): derive the default input budget from the fork's resolved context window  `a6ad3cc3`
+- **review** fix(review): cap default background input budget  `f797a23c`
+- **compression** fix(compression): collapse duplicate task sections during snapshot grounding  `dbf19a6c`
+- **compression** fix(compression): replace alias task headings during snapshot grounding  `d295ef02`
+- **compaction** fix(compaction): name the emitted task heading in the update instruction  `4ab7dec7`
+- **plugin-catalog** fix(plugin-catalog): pin clean Prism model IDs  `5a3f3e7c`
+- **gateway** fix(gateway): a NUL-stdin Windows `gateway start` is non-interactive too  `be0a2144`
+- **gateway** fix(gateway): a non-interactive Windows `gateway start` never installs login auto-start  `ff6b9f72`
+- **bedrock** fix(bedrock): resolve application-inference-profile ARNs before the prompt-cache allowlist match  `a51143fb`
+- **bedrock** fix(bedrock): application inference profile ARNs size from the wrapped model on the real path  `11445cc5`
+- **bedrock** fix(bedrock): size inference-profile ARNs from the wrapped foundation model  `4c28be68`
+- **backup** fix(backup): an incomplete archive never prunes the last complete ones  `1250a3e4`
+- **backup** fix(backup): exit non-zero when a full backup is incomplete  `ccb3d968`
+- **runtime** fix(runtime): drop the dead urlparse import; pin the bare-host-default fail-open  `07fccd31`
+- **runtime** fix(runtime): share URL path parsing with the host check; pin catalog defaults in tests  `da2b6a47`
+- **runtime** fix(runtime): compare against the catalog default path, keep declared on empty input  `dbdcb83d`
+- **runtime** fix(runtime): declared Anthropic transport applies only on the provider's own endpoint  `ae2a8cd8`
+- **desktop** fix(desktop): every Custom Endpoints completion is dropped once its profile view unmounts  `55c92fa3`
+- **desktop** fix(desktop): drop stale custom endpoint saves  `0eb0a6d7`
+- **dashboard** fix(dashboard): profile-less chat deep links inherit the launcher's preselected profile  `a8cccc22`
+- **tui** fix(tui): session-bound config.set persists into the session profile, not the launch profile  `fbe85963`
+- **profiles** fix(profiles): a child spawned for another profile no longer inherits the spawner's authorization gates  `3ed40556`
+- **feishu** fix(feishu): avoid threading regular replies  `f59c451f`
+- **gateway** fix(gateway): rebind webhook and api_server over TIME_WAIT after a restart on macOS  `2d99b7cf`
+- **weixin** fix(weixin): same session-not-ready error on the media leg; cooldown message keeps the raw fields; test + docs  `5db9f023`
+- **weixin** fix(weixin): ret=-2 "prepare failed" that survives recovery is a session error, not a rate limit (#80125)  `bd39167c`
+- **whatsapp** fix(whatsapp): bridge gets the adapter's resolved group policy and group allowlist; one allowlist reader  `35b38f1f`
+- **whatsapp** fix(whatsapp): adapter reads WHATSAPP_GROUP_ALLOWED_USERS for the group allowlist (#72529)  `477afd24`
+- **whatsapp** fix(whatsapp): honor group ingress policy in bridge  `81fd9dc7`
+- fix: WhatsApp group messages dropped when LID sender has no lid-mapping (#72529)  `3926c420`
+- **whatsapp** fix(whatsapp): authorize first-contact LID senders  `8a55373d`
+- **state** fix(state): v2→v3 topic rebuild survives orphan bindings and a stranded scratch table  `83b50f6b`
+- **state** fix(state): make the v2->v3 topic heal atomic and non-silent on failure  `7ef48e2e`
+- **state** fix(state): self-heal pre-v3 telegram topic tables on read  `558cc3bd`
+- **website** fix(website): cross-page doc links resolve on GitHub as well as on the site  `36fb2be9`
+- **state** fix(state): track repair/probe connections so byte-probes can't cancel their locks  `2438d0a9`
+- **compression** fix(compression): scope the checkpoint remediation to capability refusals; trim tests  `96030a35`
+- **compression** fix(compression): debug-log checkpoint capability probe failures  `8e7120e2`
+- **compression** fix(compression): warn and remediate opaque checkpoint_required blocks  `ef7c7f9e`
+- **gateway** fix(gateway): every live-state check knows a degraded gateway is serving  `b97b0c6b`
+- **gateway** fix(gateway): a degraded boot stays degraded and still counts as a completed restart  `ed8f8498`
+- **gateway** fix(gateway): a boot that lost a configured platform must not report itself as a normal run  `182f623f`
+- **gateway** fix(gateway): restart waits on the configured api_server address and treats a slow accept as busy  `5d487225`
+- **gateway** fix(gateway): wait for api_server port before a replacement starts  `b945645b`
+- **desktop** fix(desktop): honor display.show_reasoning in the message renderer  `f12c3a16`
+- **tools** fix(tools): a single-file search root under a hidden dir is searched too  `ab9a9503`
+- **tools** fix(tools): search_files grep fallback finds content under hidden directories  `91065800`
+- **cli** fix(cli): the startup route decodes custom:<name> from the caller's providers, not a second config read  `b2d2cf4e`
+- **tui** fix(tui): hermes --tui -m custom:<name>:<model> routes through the startup owner too  `10767ab0`
+- **cli** fix(cli): a provider-qualified -m selects that provider on both CLI entry paths  `81cd8755`
+- **anthropic** fix(anthropic): a possessive 'hermes-agent's' is prose and is still rewritten  `ae62e832`
+- **anthropic** fix(anthropic): quoted slugs stay identifiers; a sentence-final dot is prose  `f7676e7f`
+- **anthropic** fix(anthropic): OAuth slug rewrite skips paths, repo slugs and mailboxes too  `75b62813`
+- **anthropic** fix(anthropic): preserve docs URL in OAuth sanitizer  `e218f364`
+- **gateway** fix(gateway): a released non-flood claim becomes reconnect-only  `877848d2`
+- **gateway** fix(gateway): reconnect-only rows stay off the redelivery timer  `07a1d55d`
+- **gateway** fix(gateway): the redelivery timer never spends a row's last attempt  `807435ac`
+- **gateway** fix(gateway): retry any rejected final send with a backoff, not only flood refusals  `c961e5bb`
+- **desktop** fix(desktop): count pinned rows toward sidebar window truncation  `e16fd43c`
+- **desktop** fix(desktop): exempt the newest turn from the budget on a real page only  `bdcda7e3`
+- **desktop** fix(desktop): keep newest turn outside history budget  `c1af9c64`
+- **desktop** fix(desktop): keep streaming turn out of history budget  `65babb3b`
+- **bedrock** fix(bedrock): index-less text after a tool stop opens its own block  `5d4a206c`
+- **bedrock** fix(bedrock): key streamed content blocks by contentBlockIndex, not arrival count  `8b28df7b`
+- **desktop** fix(desktop): gateway/profile group headers take the pointer activator only  `15a25629`
+- **desktop** fix(desktop): stop the sidebar drag sensor from swallowing Space in text inputs  `7a468192`
+- **setup** fix(setup): reconcile_record() only reconciles the launch profile's record  `b9629c29`
+- **setup** fix(setup): a provider configured after boot unblocks the dashboard chat without a restart  `5ae7ec86`
+- **dashboard** fix(dashboard): refresh the setup record after a main-slot model assignment  `1979f704`
+- **skills** fix(skills): retry a failed skills.sh sitemap shard; never cache a partial catalog  `43eda09e`
+- **skills-index** fix(skills-index): retry only on a failed fetch; give the scheduled build time for slow ClawHub pages  `73f39086`
+- **skills** fix(skills): retry ClawHub catalog pages on fetch failure  `b26944ce`
+- **tui_gateway** fix(tui_gateway): commands.catalog keeps a discovery-failure warning over the skill collision note  `2a455644`
+- **skills** fix(skills): built-in name collisions show a note in /skills, /help skills and the palette  `b7b203cd`
+- **errors** fix(errors): auth refusals from a non-stock route name the contacted host  `7530f403`
+- **config** fix(config): provider switch via config set drops the previous provider's route (#113719)  `250e12e7`
+- **config** fix(config): clear stale model.base_url when model.provider changes via config set  `39d46d94`
+- **tests** fix(tests): systemd-scope tests patch is_gateway_supervisor_process with its real signature  `309b764a`
+- **tools** fix(tools): execute_code shares the interpreter-kill rejection text; collapse redundant supervisor branch  `1f1fa9a8`
+- **cron** fix(cron): -f patterns must match the gateway cmdline, not any "hermes" substring; ledger names agent-issued kills  `5d027bbd`
+- **cron** fix(cron): lifecycle guard blocks kills aimed at the gateway's own interpreter image  `726bccd2`
+- **security** fix(security): gateway lifecycle guard recognises Windows command spellings  `d966b34c`
+- **cron** fix(cron): block taskkill gateway interpreter  `339ee5b9`
+- **mcp** fix(mcp): complete the handshake when a stateless server names a modern protocolVersion and lacks server/discover  `9bd8257c`
+- **mcp** fix(mcp): name the HTTP status, URL and body behind "Server returned an error response"  `f0c26f05`
+- **kanban** fix(kanban): only a breaker trip stamped sticky holds the card past recompute_ready  `84c6e503`
+- **kanban** fix(kanban): a breaker trip is not promoted back to ready in the same tick  `e21a9e50`
+- **kanban** fix(kanban): book a dead worker the same way whichever process notices it  `edd4ec31`
+- **mcp** fix(mcp): pin the pre-flight discovery User-Agent in a test; drop the unfailing version import guard  `5a64a888`
+- **mcp** fix(mcp): OAuth discovery/registration carry a User-Agent; cancelled login frees its callback port  `668e505a`
+- **mcp** fix(mcp): send a User-Agent on SDK-built OAuth discovery/registration requests  `7eed6156`
+- **mcp** fix(mcp): propagate an extended connect_timeout into config for OAuth probes  `d968db3c`
+- **update** fix(update): `hermes gateway restart` onto a moved checkout clears the startup hint  `db302ada`
+- **update** fix(update): clear fleet restart warning for multiplexers  `e5fe2264`
+- **dashboard** fix(dashboard): say when the scheduler last ticked on the Cron page  `5179b517`
+- **cli** fix(cli): label an overdue next run in the in-chat /cron and /cron list  `610fc83f`
+- **desktop** fix(desktop): label an overdue next run on the Bot Mode routine card  `00b7997f`
+- **cron** fix(cron): label overdue next runs in cron list, dashboard and Desktop; one parser for the instant  `eddf7283`
+- **cli** fix(cli): share the doctor's overdue grace in cron status  `f9683271`
+- **cli** fix(cli): flag overdue next_run_at and stale ticker in cron status  `a20a71a3`
+- **cron** fix(cron): order status next run by actual instant  `8f6f9e5b`
+- **kanban** fix(kanban): fence-warned flag reset must not mask the heartbeat assertion  `e3e08668`
+- **kanban** fix(kanban): warn once when an inherited delegation fence rejects the worker's auto-heartbeat  `63fb1a7d`
+- **kanban** fix(kanban): report failed auto-heartbeats  `3aa76b2c`
+- **desktop** fix(desktop): never register a turn lease that nothing can release  `e1374093`
+- **desktop** fix(desktop): keep the message reaction picker open while the pointer moves toward it (#114130)  `a2ed82c8`
+- **desktop** fix(desktop): localize the session-named prompt title; trim to two invariants  `1879088d`
+- **desktop** fix(desktop): name the session in blocking-prompt OS notifications  `eb7687b9`
+- **web** fix(web): list, activate and delete legacy custom_providers entries on Custom Endpoints  `76c640ff`
+- **desktop** fix(desktop): mock the profile-store hermes exports in local-models-settings test  `ec4cd38d`
+- **doctor** fix(doctor): flag a non-list custom_providers and legacy list entries with no providers: twin; name the edited profile on Custom Endpoints / Local Models  `3e182f46`
+- fix: re-register a drifted Windows gateway Scheduled Task from start and update  `084befae`
+- **desktop** fix(desktop): clamp cascaded instance windows to the work area they land on  `17c7f73a`
+- **desktop** fix(desktop): clamp restored window bounds to work area  `35b94ca2`
+- **agent** fix(agent): preserve scaled codex ttfb timeout  `aa7af52a`
+- **state** fix(state): reactions resolve rows across the compression lineage, not the tip alone  `fc5424d0`
+- **state** fix(state): deliver unseen reactions from visible compacted history  `e07bc09a`
+- **desktop** fix(desktop): route message.react through the session's owner, not the ambient gateway  `4898326e`
+- **acp** fix(acp): preserve session MCP toolsets across model switches  `2ae7ccd1`
+- **desktop** fix(desktop): wake voice loop from stable reply edge  `e98090e0`
+- **desktop** fix(desktop): stream voice replies from live message deltas  `93dc760d`
+- fix: derive agent_context from platform for memory provider context-skip  `6f305f3d`
+- **gateway** fix(gateway): disarm the startup watchdog when `gateway run` hands off to s6  `a399004b`
+- **tools** fix(tools): read_file's dedup stub skips the review fork too  `027d1a8a`
+- **skills** fix(skills): the background-review fork never receives a skill_view dedup stub  `bc471d68`
+- **gateway** fix(gateway): an empty session id must not reset every task's read dedup  `62661023`
+- **gateway** fix(gateway): codex manual /compress resets the live session's read dedup too  `1b4821c9`
+- **gateway** fix(gateway): scope out-of-turn compression dedup reset to the live session task  `8e22d4f1`
+- **webhook** fix(webhook): per-route toolsets bind to the authenticated route, not a split of chat_id (GHSA-2fmg-cjqm-hhrj)  `9345c678`
+- **desktop** fix(desktop): bound the dispatchedTo scan to the current exchange  `1e4952dd`
+- **desktop** fix(desktop): keep a Bot Chat report expanded after a teammate answers this bot's dispatch  `625070d5`
+- **tests** fix(tests): cover the 'no credentials were found' permanent-failure marker  `cab9a279`
+- **auth** fix(auth): missing-credential hints name the real env var or the OAuth login (#114405, #78996)  `a0562d17`
+- **cli** fix(cli): /cron run reports a refused run instead of "Triggered … next scheduler tick"  `63f09c2d`
+- **cron** fix(cron): reap stale executions before the one-shot early return  `1131fd56`
+- **tests** fix(tests): accept the _kb._IS_WINDOWS guard in the kanban waitpid source-text test  `02429bc4`
+- **kanban** fix(kanban): capture worker exit codes on Windows so rate-limited exits requeue  `984c12b9`
+- **kanban** fix(kanban): decode worker wait status bit-level, not via os.WIFEXITED  `b54258df`
+- fix: cache_only Ollama Cloud read no longer rewrites the disk cache  `fba4cb1c`
+- **picker** fix(picker): curated fallback for cold OAuth rows; Z.AI failed-probe negative cache; trim salvage  `8669e47a`
+- **picker** fix(picker): never wait on provider catalog probes in the model-options read path  `cdacc2bc`
+- **desktop** fix(desktop): pin that the cold-start restore announces the session the pre-session draft moves onto  `abbbe2a9`
+- **desktop** fix(desktop): move the pre-session draft only when the fresh chat is re-homed, keyed on the scope swap  `a4b48064`
+- **desktop** fix(desktop): migrate pre-session composer drafts  `ec0f840d`
+- **desktop** fix(desktop): restart replay after interrupted reconnect  `93b3aa06`
+- fix: inject platform into buildCommandScreenshotMonitor instead of faking process.platform in tests  `ed45828c`
+- **desktop** fix(desktop): pin macosx SDK for the screenshot-monitor native build  `5bb1ded8`
+- **desktop** fix(desktop): retire "Show earlier" when the complete index lists no prompt before the window  `cdc50342`
+- **desktop** fix(desktop): only merge an older history page that actually touches the window  `edff9580`
+- **desktop** fix(desktop): open history windows keep their earlier prompts reachable  `41ce41cd`
+- **desktop** fix(desktop): keep no-op tail re-records as LRU touches  `c3d2e108`
+- **desktop** fix(desktop): no-op re-reads keep identity; a genuine scroll ends a pending restore  `28e0eab9`
+- **desktop** fix(desktop): skip tail atom writes when the entry is unchanged  `9568f614`
+- **desktop** fix(desktop): mark the immediate active-route redial too, via one reopen helper  `11a12f20`
+- **desktop** fix(desktop): a prune no longer cancels the redial of the route it is pruning  `c382333e`
+- **agent** fix(agent): a paste-only opener's expansion footer must not demote the title preview  `85f5f560`
+- fix: cover the title_preview wire seam and the widened _run_after_agent_ready call  `490bd209`
+- **agent** fix(agent): paste title hint reaches the instant title and the prompt.submit contract  `34ba61bf`
+- **desktop** fix(desktop): use generated paste previews for titles  `8d25e69b`
+- **desktop** fix(desktop): the creating desktop backfills section names onto bots filed before names rode along  `996c1827`
+- **desktop** fix(desktop): bot roster sections follow the roster to every desktop  `1197afc2`
+- **desktop** fix(desktop): use an opaque surface for group mention menus  `e0f0d2f5`
+- fix: answer window-owned requests for sessions hosted in tiles  `4cde8f2c`
+- **desktop** fix(desktop): every per-window pane bridge stays silent for another window's session  `3c4ac7cc`
+- **desktop** fix(desktop): retry replayed preview owner routing  `4db8521f`
+- **desktop** fix(desktop): point the remote-backend desktop-half tooltip at the install path  `aee7de4d`
+- **desktop** fix(desktop): mark a remote-backend desktop half unavailable instead of forever copying  `2bc2c50d`
+- **desktop** fix(desktop): Kanban board switcher reads as a control — icon, tooltip, i18n  `d235ae09`
+- **desktop** fix(desktop): clarify kanban board switcher  `8667e982`
+- **gateway** fix(gateway): signal busy instead of queueing a mid-turn edit/rewind  `00d41aa5`
+- **desktop** fix(desktop): kinded inline references keep their hue instead of the raw primary (#114612)  `cd62ab34`
+- **desktop** fix(desktop): approval card hands focus back to the pane the user was in  `f81ac9a4`
+- **desktop** fix(desktop): unarchive from Settings into the session's own sidebar slice  `8dff4e9b`
+- **desktop** fix(desktop): keep untouched sidebar slices identity-stable on resolve eviction  `f1e89cbb`
+- **desktop** fix(desktop): route resolved sessions into their current slice  `52066564`
+- **desktop** fix(desktop): empty-prose and settled-target guards in resume reconciler  `fabb6da6`
+- **desktop** fix(desktop): theme inline code at the markdown renderer root  `5f1e6a82`
+- **desktop** fix(desktop): style inline code in group chats  `2354782b`
+- **desktop** fix(desktop): drop native title= from all 24 button sites the fixed guard flags  `0aa13a5e`
+- **desktop** fix(desktop): no-native-title guard scans src/ and ends tags at a depth-0 ">"  `b2fd69b1`
+- fix: pin Browser tile keep-alive through the mirror; document Hide for Terminal  `26a7a95c`
+- **desktop** fix(desktop): gate the kept-mounted hidden body on lifecycleKeepAlive  `a0c61500`
+- **desktop** fix(desktop): keep hidden browser pages and automation alive  `73d4a4e9`
+- **desktop** fix(desktop): render tool activity images with MarkdownImage  `93e7c4f4`
+- **desktop** fix(desktop): resolve tool activity images through the media pipeline  `9e4b10da`
+- **desktop** fix(desktop): show local vision images in activity  `46cd0458`
+- **desktop** fix(desktop): page-owned header controls get their own area; titleBar.center stays permanent  `14d86238`
+- **desktop** fix(desktop): keep titleBar.center in one permanent slot  `43ab8c91`
+- **cli** fix(cli): name the real state when cooperative attach is unavailable  `4b39c555`
+- fix: local delivery runner ships a typed reason for every failure  `2d773ff0`
+- **bot-relay** fix(bot-relay): every deliver refusal carries its typed reason, not just a JSON-RPC code  `d72bf750`
+- **bot-relay** fix(bot-relay): every deliver refusal carries its typed reason, not just a JSON-RPC code  `9e16953a`
+- fix: route sidebar row classifiers through the backend session owner map  `b111e413`
+- **desktop** fix(desktop): backend claimed-id set is the one owner for live project overlays  `ba94d111`
+- **desktop** fix(desktop): retain backend worktree project ownership  `aed68262`
+- **desktop** fix(desktop): resolve the tooltip pane boundary when the tip opens, not at mount  `bfb01087`
+- **desktop** fix(desktop): clip tooltips against the nearest tree-group that has layout  `8c60b84a`
+- **desktop** fix(desktop): ignore a zero-rect tree-group host as a tooltip collision boundary  `80fc3765`
+- **bot-relay** fix(bot-relay): a failed roster clear is retried, not spent  `2cf24121`
+- **desktop** fix(desktop): keep the caret in a focused clarify/text field when the pointer moves (#114245)  `e2bc5e8a`
+- **bot-mode** fix(bot-mode): message_agent CLI-runner ack is queued + delivery_id like the other branches  `250bdcc3`
+- **bot-mode** fix(bot-mode): message_agent ack says it is a dispatch hand-off, not a delivery receipt  `ef495671`
+- **state** fix(state): stale-agent recovery ignores reset forks of a compression parent  `52a293fb`
+- **state** fix(state): routing lineage CTE stops at reset forks like the Python walk  `09038405`
+- **state** fix(state): reset forks leave the Python lineage walk too; /resume ranks lineages by activity  `09cf1b92`
+- **state** fix(state): keep reset forks from stealing the compression lineage tip  `714c2be5`
+- fix: drop the retired tool high-water key on stale-FTS recovery and session recover  `cc22eeb0`
+- fix: cover the deferred FTS backfill path in the tool-row bound test  `0da1b2f4`
+- **state** fix(state): align messages_fts external content with its indexed projection  `42e97f38`
+- **checkpoints** fix(checkpoints): drop the defence layers around the never-raising backend predicate  `1b083b85`
+- **checkpoints** fix(checkpoints): refuse rollback.diff from container-backed sessions on the TUI/Desktop RPC  `1efc0271`
+- **checkpoints** fix(checkpoints): refuse host rollback and session diff from container sessions on the gateway too  `dac4c60f`
+- **checkpoints** fix(checkpoints): classify the backend on every /rollback instead of remembering it  `3220b9ed`
+- **checkpoints** fix(checkpoints): do not feed container paths into host checkpoint storage  `10ee9819`
+- **tests** fix(tests): gate test_mcp_oauth_metadata on the MCP SDK  `f685eab0`
+- **tests** fix(tests): install the hindsight_client_api fake only when the SDK is absent  `74c75156`
+- **compression** fix(compression): read the aux compression budget unguarded in resolve_context_compression_timeouts  `2d333e68`
+- **tests** fix(tests): compute-host compress wait budget follows the aux-floored ceiling  `466a0b24`
+- **compression** fix(compression): a timed-out preflight compaction sends a fitting request and prune-commits an over-window one  `303bcd80`
+- **compression** fix(compression): host idle watchdog never undercuts the aux summary request budget  `f2bd6b44`
+- fix: arm the pool revert only when the benched credential outranks the one rotated to  `4c5a7006`
+- fix: revert a quota-benched credential through the pool, not a private probe; cover /model and chained rotations  `92bb5b92`
+- **agent** fix(agent): revert pool rotation after transient quota cooldown expires (#114501)  `0dd153ba`
+- **state** fix(state): exclude closed SessionDB writers  `a7ed1098`
+- **docs** fix(docs): kanban attachment removal keeps a blob other rows still reference  `9cc7886a`
+- **kanban** fix(kanban): preserve shared attachment blobs  `08946095`
+- **acp** fix(acp): close the permission bubble per the decision actually taken  `58e38f46`
+- **acp** fix(acp): close the permission-request tool call once the user answers  `def73eba`
+- **acp** fix(acp): honour the executor's is_error when closing a tool call  `0fc1ebca`
+- **acp** fix(acp): flush open tool calls on the executor thread, cover both turn-end paths  `5e23ebbd`
+- **acp** fix(acp): step-closer fallback coerces wire arguments; trim to two invariant tests  `ac6fc98c`
+- **acp** fix(acp): give every tool call a terminal status before the turn ends  `12d7b4ab`
+- **contributors** fix(contributors): map kendrick.kester@gmail.com to kendrickkester  `9a01dfc6`
+- **gateway** fix(gateway): read the failed-turn notice module constants directly; drop the class aliases  `8eeed0a1`
+- **acp** fix(acp): cover the None final_response interrupt path in the failed-turn closure test  `23a44763`
+- **agent** fix(agent): close a failed turn's durable user tail so the next prompt is not merged into it  `8f0322da`
+- fix: document how unprovable lease owners count toward max_concurrent_sessions  `d60280fd`
+- fix: guarded lease release and orphan sweep tolerate an unknowable sibling lease  `b96e60b2`
+- **cli** fix(cli): unknown liveness of a sibling lease no longer refuses a different session's claim  `c53d5b74`
+- **dashboard** fix(dashboard): map the default root to profile name "default" in _scope_profile_name  `369d5b07`
+- **dashboard** fix(dashboard): bind the profile secret scope around PUT /api/profiles/{name}/model  `dad20814`
+- **tests** fix(tests): assert the read cap literal instead of importing _READ_MAX_CONTENT  `77da057c`
+- **session_search** fix(session_search): cap title-match discovery entries like FTS hits  `0a413924`
+- **session_search** fix(session_search): cap per-message content on the read shape  `17869e8b`
+- **state** fix(state): auto-prune recovered session placeholders  `9ec089bf`
+- **browser** fix(browser): route any newline/% argument past a Windows .cmd shim losslessly  `6c9e5838`
+- **browser** fix(browser): eval scripts reach a Windows .cmd shim base64-encoded; tests trimmed  `35a03bce`
+- **browser** fix(browser): preserve image eval payload on Windows  `1222172b`
+- **cron** fix(cron): bot-chat delivery cap bounds the bot's turn, not its exit linger  `4ce832ee`
+- **browser** fix(browser): gave-up supervisor unregisters itself; tests trimmed to two invariants  `aefa5034`
+- **browser** fix(browser): bound CDP supervisor reconnects  `67b061a5`
+- **mcp** fix(mcp): _connect_server installs the owner scope inside the try so a failed install releases the claim  `92deb8e8`
+- **mcp** fix(mcp): discover binds the owner's secret scope before ${VAR} interpolation at config load  `7529ff0d`
+- **tui_gateway** fix(tui_gateway): reload.mcp rediscovers the launch profile's MCP servers under its own scope  `834187bf`
+- **mcp** fix(mcp): connect resolves credentials under the connection owner's profile scope  `d34423e4`
+- **gateway** fix(gateway): name the launchctl step once in the supervised-job notice  `73e00fe3`
+- **gateway** fix(gateway): a supervised launchd job is not an unmanageable domain  `1c1f8e06`
+- **cli** fix(cli): auth.json-only login with a benched credential is explained, not sent to the wizard  `e63da953`
+- **cli** fix(cli): cooldown notice leads with the wait and names its cause, not a re-login  `90a6c480`
+- **cli** fix(cli): a benched or signed-out credential prints its reason instead of the first-run provider wizard  `d98b1480`
+- **tests** fix(tests): parallel runner reports a known flag's missing value as usage, not per file  `49397cf2`
+- **tests** fix(tests): parallel runner rejects unknown bare flags with usage instead of sweeping  `d7bedcee`
+- **tests** fix(tests): handle parallel runner help flags  `41332e78`
+- **tui,desktop** fix(tui,desktop): send session_id on commands.catalog, complete.slash and skills.reload  `9b0ca895`
+- **tui** fix(tui): bind complete.slash and skills.reload to the calling session's workspace  `d5bfdb5d`
+- **tui** fix(tui): project-local skills register and dispatch for the session's repo  `1764508c`
+- **skills** fix(skills): resolve project roots from session cwd  `3316a122`
+- **skills-hub** fix(skills-hub): keep the gzip-only Accept-Encoding pin on sitemap fetches  `309023a0`
+- **video-gen** fix(video-gen): trust the operator-configured origin on the first download hop  `b44a4813`
+- **security** fix(security): route remote-party-supplied URL fetches through the SSRF guard  `3933fdf6`
+- **kanban** fix(kanban): host spawn refusals stop charging cards; oneshot-unit dispatch scope-wraps workers  `eb28bc1b`
+- **agent** fix(agent): drop non-invariant disable-rung test; document thinking-state 400 trade-off (#114460)  `95dee173`
+- **agent** fix(agent): recognise reversed "reasoning_effort 'none' unsupported" on every surface (#114460)  `a830061c`
+- **agent** fix(agent): map reversed reasoning-disable rejection to reasoning_mandatory (#114460)  `74398c54`
+- **agent** fix(agent): match reversed reasoning_effort unsupported wording in retry rung  `4190af38`
+- **model** fix(model): only a local alias hands its URL to the pre-alias resolution  `8232680c`
+- **runtime** fix(runtime): local alias guard keys on a missing endpoint, /model passes the alias URL  `fea23969`
+- **model** fix(model): block local aliases without endpoints  `47b5e578`
+- **kanban** fix(kanban): docs say a bound Project keeps the directory when the field is cleared; UI test pins only the unbind seam  `c2bf40d1`
+- **kanban** fix(kanban): board switcher shows the bound project with an unbind action  `0985aeb7`
+- **kanban** fix(kanban): expose the board's project binding in the dashboard dialogs  `bc3da64f`
+- **tui_gateway** fix(tui_gateway): export session profile to tool subprocesses  `63e4e040`
+- **change-watcher** fix(change-watcher): probe profile liveness once per profiles/ mtime + TTL, not on every 2 s pairing tick  `1eb5cd61`
+- **profiles** fix(profiles): @profile completion never walks skill trees; drop dead OSError guard; pin router + completion in the walk-free test  `47b58634`
+- **tests** fix(tests): executor-isolation stub for list_profiles accepts the lazy_skill_count kwarg  `8d8f7569`
+- **profiles** fix(profiles): polled profile lists never walk skill trees; vanished skill dirs no longer abort enumeration  `4590ef8b`
+- **tests** fix(tests): drive the Nous terminal-refresh test through the real resolver  `6689bdde`
+- **auth** fix(auth): Nous unusable-JWT-without-refresh-token is a terminal pool failure  `5dbeaf23`
+- **auth** fix(auth): Nous "not logged in" refresh failures leave rotation instead of a silent hour-long bench  `89c6a8a1`
+- **gateway** fix(gateway): fallback flood retry never re-sends a partially delivered split payload  `969898d4`
+- **telegram** fix(telegram): split replies resume from the refused chunk, never re-send the head; per-chat send order + flood cooldown  `595f3a28`
+- **desktop** fix(desktop): record the logged-in user_id on session rows  `cf398aba`
+- **clarify** fix(clarify): CLI honours agent.clarify_timeout instead of a hidden 120 s cap  `9104b25c`
+- **config** fix(config): keep <section>.<extra_root> paths out of the wrong-prefix refusal  `5e16a574`
+- **config** fix(config): recognize extra known root keys in config set validation  `0fac6499`
+- fix: call _resolve_pre_update_backup_mode directly in the receipt classifier  `be98c68f`
+- **config,update** fix(config,update): replace an unwritable SOUL.md symlink; say when the pre-update snapshot failed  `69b63e74`
+- **config** fix(config): replace a cyclic SOUL.md symlink instead of failing home init  `85620ff3`
+- **update** fix(update): record a disabled pre-update backup as a skip, not a failure  `e276fc21`
+- **platforms** fix(platforms): set media_text_inlined in the sibling document paths  `7f2b64f7`
+- **feishu** fix(feishu): retain attachments in text batches  `51fa2d51`
+- **feishu** fix(feishu): retain attachment inline flags in batches  `2e58dbc9`
+- **feishu** fix(feishu): preserve post file attachments  `29490a0e`
+- **aux** fix(aux): caller thinking-off drops the task effort before the profile merge, never the profile's own disable  `6b1e9608`
+- **aux** fix(aux): suppress task reasoning after caller disables it  `01a0d9ac`
+- **aux** fix(aux): explicit-provider auth fallback stays on the task chain through the quarantine re-walk  `e6d4dcf9`
+- **auxiliary** fix(auxiliary): honor task fallback after explicit auth failure  `ac70c4f0`
+- **tests** fix(tests): gate only the two AuthorizationCodeResult.code assertions on mcp 2.0  `e4557d1f`
+- **auth** fix(auth): status snapshot peeks the credential pool instead of leasing it  `964fbaae`
+- fix: map lofibrainwav contributor email  `22ead777`
+- **mcp** fix(mcp): `hermes mcp test` exits non-zero on connection failure and unknown server  `a34cd92a`
+- **send** fix(send): name the default-root gateway and external secret sources in the 'not configured' error  `21642218`
+- **send** fix(send): the 'not configured' error lists the home and sources it consulted  `7a99c4d1`
+- **send** fix(send): derive `hermes send` path hints from the resolved Hermes home  `59e40220`
+- **file_state** fix(file_state): drop the module-level forget_task wrapper  `783f854b`
+- **file-state** fix(file-state): close() releases file state for every task id the agent ran; drop the writer TTL knob  `f7a422ee`
+- **file_state** fix(file_state): purge stale writer claims in forget_task and add writer TTL (#114446)  `16d3b21e`
+- fix: run the launchd plist guard tests on a real macOS host  `62a119b9`
+- **cli** fix(cli): skip malformed launchd plists instead of aborting update cleanup (#114142)  `61fea1ec`
+- fix: drop no-op suppress around named-home expanduser in _guard_homes  `e342248e`
+- **file-safety** fix(file-safety): one coordinate helper for the guard homes; trim tests to two invariants  `c9956192`
+- **file-safety** fix(file-safety): anchor credential write guards to every home a write can land in  `7c478ac2`
+- **feishu** fix(feishu): a receive loop ending during disconnect() is not logged as a died link  `0d0ccb88`
+- **feishu** fix(feishu): publish retrying when the SDK's own reconnect ladder runs  `88a9ca7b`
+- **feishu** fix(feishu): stop the worker loop only on receive-loop exceptions; publish retrying/connected  `6d7b53a4`
+- **feishu** fix(feishu): stop the WS worker loop when the SDK receive loop dies  `5743dbb7`
+- **gateway** fix(gateway): stalled-session spool replay probe no longer warns on every append  `f2755aee`
+- **gateway** fix(gateway): escalate a persistent transcript-lag streak to ERROR  `3a8b8236`
+- **gateway** fix(gateway): count no-DB transcript appends and spool a stalled session's backlog to disk  `d0d004bc`
+- **gateway** fix(gateway): stamp FTS rebuild cooldown only on real attempts  `997d1092`
+- **gateway** fix(gateway): retry FTS index rebuild after cooldown instead of giving up  `caba409b`
+- **desktop** fix(desktop): stop transcript memos pinning cold source arrays  `88bcf2f9`
+- **tools** fix(tools): scope-only passthrough overlay raises instead of silently dropping the declared secret  `547fff75`
+- **cron** fix(cron): no_agent script env comes from the factory's own snapshot, not a raw copy at the spawn site  `e1c08965`
+- **cron** fix(cron): no_agent scripts get the owning profile's declared secret, never the launch profile's  `802a9975`
+- **kanban** fix(kanban): review reservation also skips per-profile-capped review rows  `c2d6b3c2`
+- **kanban** fix(kanban): skip guarded review reservations  `937e13ee`
+- **acp** fix(acp): drop the redundant copy_context around asyncio.to_thread  `787b6ebd`
+- **acp** fix(acp): pin the session cwd while registering IDE-provided MCP servers  `021a4bfa`
+- **mcp** fix(mcp): stdio servers default to the session working directory  `08ac0804`
+- **guardrails** fix(guardrails): mark every file-tool loop refusal and exempt it on the live failure seam  `9814fb92`
+- **guardrails** fix(guardrails): a harness refusal is not a tool failure  `c962c698`
+- **tools** fix(tools): scrub lone surrogates from the outbound send body  `0f766890`
+- **agent** fix(agent): clear_interrupt drops an unconsumed steer only on hard cancel  `79d1c4b2`
+- **plugins** fix(plugins): drop inherited askpass from the anonymous git attempt so a 401 is classifiable  `7d0c1f20`
+- **plugins** fix(plugins): fold the non-credential failure case into the fetch/pull parametrization  `c4857de8`
+- **plugins** fix(plugins): attach stored git credentials only after an anonymous refusal, on every network verb  `9b55e7e6`
+- **plugins** fix(plugins): clone anonymously first; only attach stored credential on 401/403/Username-prompt (#114526)  `c082b013`
+- **gateway,cron** fix(gateway,cron): 401 sign-in hints name the provider and the failing profile  `d6a58adb`
+- **auth** fix(auth): Codex credential and relogin copy name the failing profile's own sign-in  `69deb433`
+- **auth** fix(auth): a revoked Codex grant names openai-codex, the failing profile and the raw error  `6b457953`
+- **tirith** fix(tirith): half-open the circuit breaker instead of latching it open  `cc295509`
+- **tirith** fix(tirith): treat every emoji-capable base as VS16 presentation; trim tests; docs  `fa833032`
+- **security** fix(security): allow emoji variation selectors  `fbc5df3c`
+- **title** fix(title): demote only the exact greeting placeholder, not prefixed topical titles  `96b6c534`
+- **agent** fix(agent): a placeholder title gets re-titled by the first substantive turn  `f85d9910`
+- **agent** fix(agent): upgrade provisional greeting titles  `cc19fcf9`
+- **mcp** fix(mcp): error sanitizer redacts dotted/dashed sk- keys  `dd075102`
+- **redact** fix(redact): dotted sk- body cannot span "..", so display masks survive a second pass; Zhipu matcher is 32-hex.16+alnum  `aebc71d7`
+- **redact** fix(redact): dotted sk- pattern without nested repeats; tests cover terminal + file_read surfaces  `c2aa2ff2`
+- **agent** fix(agent): redact dotted and Zhipu API keys  `7b57cda6`
+- fix: map contributor attribution for delacaola  `22aa0eb2`
+- **gateway** fix(gateway): sweep a stale Startup-folder staging file on uninstall and re-install  `cae25086`
+- **gateway** fix(gateway): remove the Startup-folder staging .tmp when the atomic swap fails  `397ec039`
+- **cron** fix(cron): a completed run keeps its result when a fire-claim heartbeat sample misses  `eafed27c`
+- **doctor** fix(doctor): detect a dead IPv6 route and name network.force_ipv4  `72360ae1`
+- **bootstrap** fix(bootstrap): a racer bug surfaces instead of silently falling back to the serial connect  `d029cddf`
+- **gateway** fix(gateway): race IPv6/IPv4 on every cold-start WebSocket dial  `3ffee767`
+- **bootstrap** fix(bootstrap): race IPv6/IPv4 for every sync connect from the process bootstrap, not per client  `c350d3e4`
+- **agent** fix(agent): keep socket racer signature-complete with stock create_connection  `5a88baa7`
+- **agent** fix(agent): race IPv6/IPv4 on every startup-path sync connect, not just Codex  `298cfd32`
+- **photon** fix(photon): evaluate the group mention gate before caching inline attachments  `ee9c0f1a`
+- **bluebubbles** fix(bluebubbles): apply the require_mention gate before downloading attachments  `8d6ecaac`
+- **matrix** fix(matrix): gate require_mention / allowed rooms before downloading inbound media  `7f13d3f4`
+- **teams** fix(teams): match the bot's `28:` wire id, keep extras on the instance, trim to two invariant tests  `0ecf2d2f`
+- **teams** fix(teams): honor require_mention for RSC-delivered conversation history  `98ad3913`
+- fix: map contributor email adleapnet@users.noreply.github.com -> adleapnet  `6c93b925`
+- **tui** fix(tui): keep unselected list rows on the cursor column; trim tests  `103c6157`
+- **tui** fix(tui): keep long scroll-list labels on the cursor row  `1e2420c1`
+- **tools** fix(tools): surface a bad working directory on every file-tool read path (#98723)  `10433003`
+- **tools** fix(tools): file tools name an invalid terminal.cwd; trim live-env cwd tests to invariants  `e85e5add`
+- **tools** fix(tools): sanitize cwd overrides written into live container envs  `b911b979`
+- **tests** fix(tests): cover the aux adapter's xAI reserved-tool aliasing in the main-transport parity test  `5813725a`
+- **agent** fix(agent): aux Responses adapter emits the main transport's tool schemas and aliases  `d6a753fe`
+- **agent** fix(agent): alias Perplexity-reserved Responses tools  `2cfeb505`
+- **state** fix(state): gate delivery_obligations.adapter_profile on column presence  `48381196`
+- **state** fix(state): support legacy Telegram topic schemas  `f2f0be89`
+- **tui_gateway** fix(tui_gateway): strip a persisted Discord triggering note from user rows on resume  `3569a135`
+- **desktop** fix(desktop): hide a persisted Discord triggering note in user bubbles  `dcafb190`
+- **gateway** fix(gateway): persist the authored text, not the Discord triggering note, as the user row  `c61bbc24`
+- **anthropic** fix(anthropic): aux stream reader tolerates non-iterable get_final_message shims  `eb942819`
+- **agent** fix(agent): refusal handler reports Anthropic stop_details instead of "(no text)"  `6ed8bea8`
+- **anthropic** fix(anthropic): carry stop_details from the Messages response into provider_data  `92392218`
+- **delegation** fix(delegation): avoid duplicating child goals in system prompts  `0aa17873`
+- **cli** fix(cli): Super+<printable> under modifyOtherKeys types the character  `119e3062`
+- **cli** fix(cli): cite xterm's key table for the Shift+symbol mapping; trim tests  `df97ee79`
+- **cli** fix(cli): map Shift+symbol keys under modifyOtherKeys=2  `e368bff1`
+- **desktop** fix(desktop): name the REST hide path in the hide-sweep comments  `5bb41cec`
+- **tui-gateway** fix(tui-gateway): session.set_hidden no longer logs a stored-id hide as a rejected RPC  `8c5b66b6`
+- **desktop** fix(desktop): prune stale bot session references  `8b5e0ce0`
+- **cli** fix(cli): --help lists gateway status and the --profile long form; trim epilogue tests  `1d46d030`
+- **cli** fix(cli): document -p <profile> and the gateway service verbs in --help  `bd72c420`
+- **kanban** fix(kanban): keep `diagnostics --json` a list; allowlist rides as a trailing home-scope row  `20e48f87`
+- **kanban** fix(kanban): show the resolved dispatch_profiles allowlist in `hermes kanban diagnostics`  `6545fb82`
+- **kanban** fix(kanban): warn when kanban.dispatch_profiles is present but empty; rename test ids  `8994bb6c`
+- **kanban** fix(kanban): warn when the dispatch allowlist is unreadable; document the fail-closed spellings  `c432cd27`
+- **kanban** fix(kanban): fail closed on invalid dispatch allowlist  `e3d377a5`
+- **gateway** fix(gateway): route identity-file HERMES_HOME readers through get_process_hermes_home  `bfa2c491`
+- **desktop** fix(desktop): expand a literal ~ in HERMES_HOME before resolving the backend home  `235622a9`
+- **cli** fix(cli): expand HERMES_HOME once at process entry; sweep raw readers  `fc94ff56`
+- **skills** fix(skills): expand variables in Hermes home paths  `138ae22a`
+- **compression** fix(compression): probe aux feasibility before the first compaction; clear stale clamp notice on un-clamp  `a37293a2`
+- **compression** fix(compression): fallback/restore re-probe only refreshes an existing feasibility verdict  `c97c7dbd`
+- **compression** fix(compression): keep the aux ceiling and re-probe feasibility on every main-runtime change  `9f5b7ea0`
+- **agent** fix(agent): retain auxiliary compression limit on model switch  `8d51d488`
+- **kanban** fix(kanban): dashboard /orchestration docstring no longer claims decomposer parity  `957bf63d`
+- **kanban** fix(kanban): decomposed cards fall back to the root task's assignee, never the dispatcher's own profile  `1ea94b37`
+- **setup** fix(setup): xAI TTS wizard checks XAI_API_KEY before OAuth to match runtime  `27a30d85`
+- **tts** fix(tts): pin _xai_requirements to key-first credential resolution in tests  `ca3c4256`
+- **tts** fix(tts): xAI TTS availability probe prefers XAI_API_KEY like the synthesis paths  `d7865939`
+- **tts** fix(tts): prefer explicit XAI_API_KEY over subscription OAuth in streaming TTS  `3b0aae77`
+- **api_server** fix(api_server): resolve the model_routes alias for the in-process wake turn  `66d79311`
+- **api_server** fix(api_server): move the in-process wake turn body to api_server_runs  `76257d1f`
+- **gateway** fix(gateway): wake a served profile's api_server session in-process for background-process completions  `d8edd603`
+- **kanban** fix(kanban): in-process served wake requires the proven profile; drain fails at once  `8be66c55`
+- **kanban** fix(kanban): wake a served profile's api_server session in-process under its own scope  `5579fd5c`
+- **mcp** fix(mcp): remote-session OAuth hint names the configured redirect_host  `9dd36c56`
+- **mcp** fix(mcp): dashboard/Desktop Authorize honours a pre-registered client's pinned loopback redirect  `b0cd35e2`
+- **mcp** fix(mcp): a running server adopts a changed config.yaml definition on rebuild  `e8aa69c1`
+- **mcp** fix(mcp): Asana catalog installs a working V2 pre-registered OAuth client  `c553df91`
+- **mcp** fix(mcp): migrate Asana catalog to V2  `7954418d`
+- **discord** fix(discord): backfill stops re-dispatching a message once its turn delivered, and bounds the rest  `8c688123`
+- **discord** fix(discord): persist unthreaded recovery replies  `dd7af8e7`
+- **dingtalk** fix(dingtalk): guard edits when AI Cards are unavailable  `61f99d6d`
+- **buzz** fix(buzz): pass edit content literally to the CLI  `9223a424`
+- **buzz** fix(buzz): pass edit content as argument  `e2062866`
+- **plugins** fix(plugins): removed_annotation takes the resolved kill list as a required argument  `f971bbf5`
+- **dashboard** fix(dashboard): offload plugins hub rebuild  `6165b6eb`
+- **plugins** fix(plugins): one kill-list resolution per plugins hub rebuild and CLI listing  `88b31637`
+- fix: escape table-cell pipe in Slack autolink example so the docs site compiles  `f0fe07af`
+- **slack** fix(slack): parse mrkdwn <url|label> inside rich_text lists  `da25b166`
+- **test** fix(test): pin config set's refusal of an invalid list literal  `aca2631d`
+- **config** fix(config): fix container type for unseeded roots, top-level lists and bare-name list slots  `9c088a7a`
+- **config** fix(config): config set refuses a wrong-shaped value for a list/mapping key  `0972b481`
+- **cli** fix(cli): keep api_key/key_env on nested model.aliases dict entries  `9407b9f1`
+- **config** fix(config): keep the providers view when custom_providers is malformed  `d80639ed`
+- **codex** fix(codex): profile declarations follow the host and never override OpenAI's own ladder  `d7f26441`
+- **custom** fix(custom): declare the OpenAI-compat effort vocabulary so Responses keeps a configured max  `f111297a`
+- **cron** fix(cron): remind once per cooldown after the alert-once gate; migrate alerted_at  `454f9c14`
+- **cron** fix(cron): alert once per failure incident instead of every run  `7aa46666`
+- **docs** fix(docs): custom endpoints do receive top-level reasoning_effort; correct the local-endpoint note  `b41c2c5d`
+- **reasoning** fix(reasoning): trim salvaged tests to two invariants; document escape + local-endpoint gate  `4b617afc`
+- **reasoning** fix(reasoning): match provider-prefixed override keys against bare model strings  `1d556a1c`
+- **update** fix(update): heal stale root modules at every fresh import site  `0d5a07c7`
+- **update** fix(update): bridge stale utils so pre-handoff upgrades finish restart  `a39dfffd`
+- **dashboard** fix(dashboard): pin --stop and the update sweep to scope_home  `71f3ee09`
+- **dashboard** fix(dashboard): owner home for a pid follows the real profile resolver  `537ed2a4`
+- **dashboard** fix(dashboard): --stop and the update sweep resolve backend ownership tri-state, never guess  `46500f9c`
+- **cli** fix(cli): scope dashboard stop to hermes home  `5b93b7c1`
+- **dashboard** fix(dashboard): stop sweep spares the caller's wrapper shell  `ab55bbc3`
+- **desktop** fix(desktop): pin the bootstrap marker with the probed git, not the first PATH hit  `35a3f035`
+- **desktop** fix(desktop): name the unlaunchable git instead of blaming the update server  `107e6fc4`
+- **desktop** fix(desktop): gh PATH fallback goes through the runnability probe too  `11e3bfea`
+- **desktop** fix(desktop): probe non-Windows git and gh candidates for executability  `57f2da67`
+- **telegram** fix(telegram): slash-confirm card budgets the MarkdownV2 rendering; approval budgets count UTF-16 units  `edd9fd66`
+- **telegram** fix(telegram): approval button card fits the 4096-char cap after HTML escaping  `b502504b`
+- **discord** fix(discord): header-only cards for slash confirm and clarify prompts too  `63aa02d3`
+- **discord** fix(discord): keep the exec-approval reason bounded after dropping the embed mirror  `c1eb1592`
+- **discord** fix(discord): avoid duplicate exec approval details  `5e0a1852`
+- **cli** fix(cli): re-resolve reasoning after every startup model move, not just the auth fallback  `4a15e049`
+- **cli** fix(cli): startup auth fallback re-resolves reasoning effort through the CLI chokepoint  `8e1b4216`
+- **cli** fix(cli): re-resolve reasoning config after fallback  `0781f445`
+- **cron** fix(cron): an oversized or live-SQLite cron script raises the named refusal, not the lifecycle verdict  `5ebbcbc8`
+- **cron** fix(cron): a data file only mentioned in an inert heredoc never fails the lifecycle guard closed  `d46abd44`
+- **tools** fix(tools): classify prefixed heredoc consumers  `d939605f`
+- **gateway** fix(gateway): count secondary adapters parked mid-reconnect in the scale-to-zero gate  `97011235`
+- **gateway** fix(gateway): re-ask the scale-to-zero gate before every dormant sequence  `2bd0fa41`
+- **gateway** fix(gateway): fail awake when platform state is unreadable  `8d3efbb3`
+- **gateway** fix(gateway): keep multiplexed direct platforms awake  `bbdaa89a`
+- fix: preserve Codex command exit status for replay  `2e6ff19c`
+- **acp** fix(acp): give each CopilotACPClient session its own process slot  `5983dfe7`
+- **cron** fix(cron): resume keeps a recurring slot that elapsed while paused due (#113603)  `cb8d652b`
+- **kanban** fix(kanban): bind per-task affinity scope around the goal-loop judge call  `9ee7da83`
+- **kanban** fix(kanban): goal gates fail open when the judge transport fails  `c68d21cd`
+- **kanban** fix(kanban): bind relay-affinity scope for headless goal-judge calls  `53809f8a`
+- **desktop** fix(desktop): fold the confirm gate into the existing selecting guard; trim tests to two invariants  `014f395b`
+- **desktop** fix(desktop): stabilize backend-confirm test, guard double-click, tighten copy  `ce2b6a85`
+- **cron** fix(cron): bot-chat redaction test seams the spawn helper on both scheduler_delivery shapes  `69da0b12`
+- **cron** fix(cron): scrub the bot-chat deferred record too; trim redaction tests to two invariants; docs  `0db097dc`
+- **cron** fix(cron): redact secrets from delivery content before sending  `c0362da9`
+- **file-sync** fix(file-sync): sync-back cap is a config.yaml key, not an env var  `775aedab`
+- **file-sync** fix(file-sync): bound sync-back leaks by owner PID, make the cap overridable, cover every tar backend  `d007afe1`
+- **tools** fix(tools): reclaim sync-back temps by owner PID and harden socket tolerance  `e928655b`
+- **tools** fix(tools): stop socket-ignoring tars from failing sync-back and leaking GBs  `2f62b1f4`
+- **kanban** fix(kanban): CLI link test covers the owner-handoff path  `e6a8eb7f`
+- **kanban** fix(kanban): dashboard done/review refusals name the open parents  `06350c79`
+- **kanban** fix(kanban): dependency-gate refusals name their cause on every surface  `0cdc325b`
+- **kanban** fix(kanban): report blocking parents from kanban_complete tool, state delegate handoff contract  `50edbb3d`
+- **kanban** fix(kanban): preserve worker lifecycle run checks  `e7d1db73`
+- **kanban** fix(kanban): bind running link ownership to board  `8f6f8ebb`
+- **kanban** fix(kanban): preserve foreign child linking  `46763ce3`
+- **kanban** fix(kanban): preserve owned dependency handoffs  `117b7796`
+- **kanban** fix(kanban): reject links to running children  `b95513df`
+- **kanban** fix(kanban): phantom-session test also binds HERMES_SESSION_ID  `c619a145`
+- **kanban** fix(kanban): stamp the request-scoped session, not the process-global env  `1667840d`
+- **kanban** fix(kanban): reject phantom session provenance  `3c332310`
+- **gemini** fix(gemini): route Vertex express keys to aiplatform in doctor and dashboard key probes  `df53cae7`
+- **gemini** fix(gemini): route Vertex AI express keys (AQ.) to aiplatform instead of 403ing on AI Studio  `6293fca0`
+- **profiles** fix(profiles): clone re-creates NTFS skill junctions instead of deep-copying them  `b08fbfa0`
+- **gateway** fix(gateway): /stop, /new and /reset keep a parked internal wake instead of discarding it  `87cd8a3c`
+- **api-server** fix(api-server): every SessionDB call in the session handlers leaves the event loop  `f639e171`
+- **gateway** fix(gateway): offload Bot Chat recovery SQLite calls  `fa00787d`
+- **web** fix(web): gateway strip's new labels are optional locale keys with an en fallback  `f96258d4`
+- **gateway** fix(gateway): warn when a live gateway's heartbeat goes stale instead of printing `running`  `a3cce7b9`
+- **status** fix(status): dashboard keeps a watchdog-exited gateway `degraded` with its reason  `993d1b98`
+- **cron** fix(cron): render watchdog-degraded exits in `hermes gateway status`; degraded is the last writer  `8bfc66b2`
+- **gateway** fix(gateway): publish watchdog degradation before exit  `b013f461`
+- fix: assert platform gate on declared data, not a sys.platform fake  `8fb12bc8`
+- **skills** fix(skills): preserve shell example continuations  `86b0617c`
+- **tool_search** fix(tool_search): cover the dispatcher's local-entry guard directly; reuse _core_tool_names  `91279b01`
+- **tools** fix(tools): tool_call rejections restate the single-entry shape and stop misdirecting deferred names  `13fc2e10`
+- **tools** fix(tools): parse JSON-string tool_call batch envelopes  `7765b196`
+- **api** fix(api): drop the redundant try/except around the interrupted-run marker  `0b2b5e18`
+- **api** fix(api): a run admitted but not yet started settles interrupted at shutdown  `58116539`
+- **api** fix(api): terminalize durable runs during gateway shutdown  `3293964f`
+- **read-extract** fix(read-extract): pdftoppm recovery hints shell-quote the PDF path  `14e1c1a2`
+- **read-file** fix(read-file): preserve notebook paths in output recovery hints  `88c2adb3`
+- **config** fix(config): custom endpoint list marks a mixed-case key as current after activate  `08b791b9`
+- **config** fix(config): custom endpoint save/delete detach the mirror for every key spelling  `66dfecca`
+- **config** fix(config): reuse resolved custom endpoint key  `2474f9f3`
+- **config** fix(config): resolve custom endpoint ids before slug fallback  `ae1c29c5`
+- **memory** fix(memory): migration checks provider presence in the home being migrated  `ffa105c7`
+- **read_file** fix(read_file): DOCX ruby guides (w:rt) are excluded from paragraph text  `58e749d0`
+- **read_file** fix(read_file): exclude XLSX phonetic guides from cell values  `7a79b147`
+- **disk-cleanup** fix(disk-cleanup): never rmtree protected top-level dirs; never track kanban/  `33f3d96b`
+- **kanban** fix(kanban): keep the protocol-violation preamble short so the worker's last output survives  `7e437bba`
+- **kanban** fix(kanban): stop-guard nudge names every worker exit; sync terminal-tool copies  `41fe679d`
+- **kanban** fix(kanban): sync terminal-knowledge copies that kanban_request_review callers hit  `edd14100`
+- **kanban** fix(kanban): treat review-handoff tools as terminal in the stop guard  `42500bf0`
+- **kanban** fix(kanban): pin the CLI wording for a re-kinded dependency block  `66c9e980`
+- **kanban** fix(kanban): report the re-kinded dependency block on every surface, trim tests  `b7e6acf4`
+- **kanban** fix(kanban): re-kind parent-less dependency blocks as needs_input  `42a778ab`
+- **gateway** fix(gateway): Telegram topic-binding heal cannot re-pin a route /new moved during its lookups  `3e408dcc`
+- **gateway** fix(gateway): async completion cannot re-pin a route after /stop or /new won the race  `2f569002`
+- **mcp** fix(mcp): dashboard OAuth failures keep their first cause on every surface  `a764a544`
+- **mcp** fix(mcp): propagate dashboard OAuth flow errors to the callback waiter  `8e3d5405`
+- **gateway** fix(gateway): queued voice/video/document follow-ups keep their own FIFO turn  `ed1b3412`
+- **gateway** fix(gateway): a parseable non-dict transcript spool file no longer aborts drain_transcript_spool  `1c121280`
+- **tools,tui_gateway,cli,plugins** fix(tools,tui_gateway,cli,plugins): parseable non-dict JSON no longer crashes the remaining file scans  `9ac4e76e`
+- **cron,tools** fix(cron,tools): exact-id receipt reads fail closed on a non-dict JSON payload  `e16fc212`
+- **cron** fix(cron): a parseable non-dict Bot Chat receipt no longer wedges the deferred drain  `8235afad`
+- **desktop** fix(desktop): Windows marker probe and spawn scripts no longer assign the read-only $HOME  `b4709b85`
+- **desktop** fix(desktop): join split try/catch in Windows SSH probe for PowerShell 5.1  `0ceafba7`
+- **web** fix(web): retry transient transport blips in the dashboard Codex device-code login  `97c67507`
+- **auth** fix(auth): drop dead code from the Codex login retry; trim to two invariant tests  `227384e3`
+- **cli** fix(cli): retry transient transport blips in the Codex device-code login  `82e5db63`
+- **cron** fix(cron): sleep to deadline in ticker loops to eliminate clock drift (#114467)  `2968b363`
+- **cli** fix(cli): doctor and terminal setup resolve the container runtime too  `e4739c6d`
+- **dashboard** fix(dashboard): honor Podman in the Docker backend health probe  `9c068fb3`
+- **cron** fix(cron): terminal-worker reaper lives in scheduler_detached_worker, not the scheduler facade  `d6d3ee85`
+- **cron** fix(cron): reap the external worker when the waiter returns on terminal ledger  `21d7283f`
+- fix: clear stale currentCwd when switching to a gateway with no remembered workspace  `94f80d87`
+- **desktop** fix(desktop): gateway switch no longer keeps the previous gateway's workspace folder (#114306)  `6f6ab904`
+- **cron** fix(cron): R3-W3 require satellite heartbeat for list and create  `c1341998`
+- **cron** fix(cron): R2-2 explain when lateness warnings clear  `909c736c`
+- **cron** fix(cron): R2-1 remove impossible Desktop takeover hint  `d68640ae`
+- **cron** fix(cron): W3 bound missed-fire details and ignore empty records  `bd7d4e30`
+- **cron** fix(cron): W2 keep custom homes on standalone guidance  `a027b924`
+- **cron** fix(cron): W1 restore per-profile gateway install guidance  `b2d9cef8`
+- **cron** fix(cron): preserve satellite diagnostics on the CI merge base  `26199959`
+- **cron** fix(cron): point satellite recovery hints at the scheduler host  `9f2b05bb`
+- **cron** fix(cron): keep satellite diagnostics scoped to observed health  `a3dc9583`
+- **cron** fix(cron): surface missed fires and clarify satellite gateway status (#107168)  `5298ace8`
+- **update** fix(update): P1 verify owned fleet after catch-up restart  `b263ea5a`
+- **update** fix(update): keep manual serve restart obligations visible through gateway recovery  `c0aa3ce3`
+- **desktop** fix(desktop): keep selected device in ordinary peer windows  `f1fdb548`
+- **desktop** fix(desktop): portal windows settle on a new access cookie, forced renewal never short-circuits  `c725f80a`
+- **desktop** fix(desktop): a rejected background primary offers Settings instead of parking silently  `d7778e14`
+- **models** fix(models): restore _OPENCODE_FREE_EXCLUDED_MODELS used by the Zen/Go live pickers  `ce6c45d3`
+- **gateway** fix(gateway): a /stop in a thread stops every run of that thread  `0fb56906`
+- **desktop** fix(desktop): compare the moved agent's legacy URL with the shared gateway normaliser  `8ece9242`
+- **desktop** fix(desktop): let the Reconnect action redial a rejected active gateway  `e0eb2ff0`
+- **cron** fix(cron): move FIRE_CLAIM_TTL_SECONDS to the same leaf as the skew bound  `e4e63e32`
+- **cron** fix(cron): isolate fire claim skew constant  `f967d9b8`
+- **desktop** fix(desktop): retain auth rejection across socket cleanup  `1655edd3`
+- **desktop** fix(desktop): stop reconnecting rejected gateway sessions  `6c5764cd`
+- **desktop** fix(desktop): recover Cloud connections after team changes  `969a7cba`
+- **desktop** fix(desktop): support Privy and NAS portal sessions in Cloud sign-in  `07a05437`
+- **gateway** fix(gateway): match the chat id as text so ids containing ':' survive  `f9e47df2`
+- **gateway** fix(gateway): chat-scope match must not alias a chat_id or a reply thread  `04c0bec9`
+- **gateway** fix(gateway): /stop falls back to any running turn in the same chat  `59c42672`
+- **slack** fix(slack): reopen a native task card when Slack seals the stream mid-turn  `5648f814`
+- **plugins** fix(plugins): an installed directory plugin keeps its identity over a same-name pip entry point  `9dda4332`
+- **bedrock** fix(bedrock): restore Grok context with provider-confirmed cache provenance  `541b2029`
+- **bedrock** fix(bedrock): cache only probed context windows, memoise probe failures  `bd2d8973`
+- **slack** fix(slack): retain bearer on validated Enterprise Grid file redirects  `c57458a9`
+- **state** fix(state): list only the writable holders the live-handles count names  `77fb7f0a`
+- **state** fix(state): identify duplicate SessionDB holders  `e088a092`
+- **mcp** fix(mcp): skip dynamic tool refresh when the server session is already gone (#109824)  `1c82c22e`
+- **env** fix(env): import dotenv internals lazily so stubbed dotenv modules still import env_loader  `d04f6f79`
+- **env** fix(env): self-referential .env values resolve once per process instead of growing on every reload  `369fb8ef`
+- **gateway** fix(gateway): bound watchdog without activity snapshot  `e27244ad`
+- **cli** fix(cli): preserve startup alias base URL (#103938)  `a1b1c0e3`
+- **tui_gateway** fix(tui_gateway): drop a never-started Thread left over from the stale base  `21d5dd19`
+- **gateway** fix(gateway): keep default-off byte parity; scope only the policy reads  `70addd35`
+- **desktop** fix(desktop): label a Windows drive path by its basename  `6fac69ce`
+- **desktop** fix(desktop): Artifacts index MEDIA paths through the chat parser  `b94143c9`
+- **desktop** fix(desktop): re-render streamed MEDIA tags from the raw source  `5b5ec010`
+- **desktop** fix(desktop): allow interior spaces in unquoted MEDIA: paths (#96657)  `e805e57e`
+- **discord** fix(discord): re-arm the bot handoff window per chunk; trim salvage to invariants  `b675e6de`
+- **discord** fix(discord): batch bot tag continuations  `5d220ed6`
+- **discord** fix(discord): require hard mentions from bots  `f7086405`
+- **desktop** fix(desktop): working WSLg window controls and native Wayland launch (#113247)  `8ffc2f03`
+- **desktop** fix(desktop): offer Start new session on the stranded-resume dead end  `8a492617`
+- **tui_gateway** fix(tui_gateway): relay reply says queued, not delivered, for a sibling-process Bot Chat  `679d0851`
+- **bot-relay** fix(bot-relay): hand cross-connection DMs to a Bot Chat live in a sibling process  `c748a4b4`
+- **desktop** fix(desktop): a local primary skips the shared-remote probe entirely  `6b96c2d5`
+- **desktop** fix(desktop): a local primary never absorbs a pooled profile's chat when the pool probe fails  `0dcbc9e5`
+- **tui_gateway** fix(tui_gateway): hold the canonical lease until a closed session's isolated turn settles  `baeebe4a`
+- **tui_gateway** fix(tui_gateway): keep the isolated child's lease borrow inert across compression rotation  `ecefbfa6`
+- **tui_gateway** fix(tui_gateway): stop isolated turns fencing out the parent's session lease  `b3973490`
+- **onboarding** fix(onboarding): accept custom colors in the existing picker  `4c203de4`
+- **onboarding** fix(onboarding): explain features at first use  `4d91731a`
+- **aux** fix(aux): a callable key_cmd credential survives every custom-provider resolution branch (#88667)  `a51c6599`
+- **cron** fix(cron): a delivered failure notice keeps its real error when the claim sample misses after delivery  `4c0ad43d`
+- **cron** fix(cron): a delivered run keeps its ok status when the fire claim sample misses after delivery (#105861)  `132a181d`
+- **local-runtime** fix(local-runtime): resumed llamacpp sessions follow the live managed port on every surface (#114336)  `1792e8bf`
+- **tools** fix(tools): stop the terminal snapshot from persisting delegation markers  `c44b423e`
+- **gemini** fix(gemini): surface Standard-key guidance on 400 API_KEY_INVALID  `d27a43f1`
+- **desktop** fix(desktop): exe identity stamping stops retrying when the rcedit binary itself is missing  `2bbff2a4`
+- fix: desktop promotion rides out a transient Windows file lock on release/win-unpacked  `bbdb279a`
+- **aux** fix(aux): scope the response_format rejection memo to the model and to capability errors  `5e17f210`
+- **aux** fix(aux): structured-output rejection no longer kills fallback candidates or costs a doomed first request  `df1074b4`
+- **aux** fix(aux): quarantine a transient fallback-candidate failure for seconds, not the payment hold  `951600dc`
+- **aux** fix(aux): walk every configured fallback_providers entry after a candidate quota error  `639fb575`
+- **aux** fix(aux): bracket-prefixed and fence-containing prose titles are kept  `eff18764`
+- fix: auto-titles no longer drop reasoning-model JSON or store truncated fragments  `0b52e403`
+- **sessions** fix(sessions): one-shot runs get a distinct `oneshot` source that pickers hide  `ae1b5d79`
+- fix: a clarify card that resolves AMBIGUOUS after the ack window stays armed for the late tap  `9790d730`
+- fix: clarify cards that cannot render are re-asked as plain text, never reported as user inactivity  `98b4efbf`
+- **tui_gateway** fix(tui_gateway): a stale submit-time row is never adopted by a later turn  `7016e996`
+- **tui_gateway** fix(tui_gateway): rewind test expects the edited prompt to be durable at submit  `0dcd558c`
+- fix: desktop saves the first message at send time and session tabs survive a profile rename  `2f273962`
+- **desktop** fix(desktop): gate the preview guest bridge on a trusted click; trim salvage  `408f5b78`
+- **desktop** fix(desktop): hand preview guest links to the audited opener via a guest preload  `b08ec00a`
+- **approval** fix(approval): withdraw the queue entry when no client can answer; commit choices under the lock  `2afb4053`
+- **tui_gateway** fix(tui_gateway): old app builds no longer stall the agent on clarify/approval; late approval choices count  `f9d178f7`
+- fix: descendant sweep spares the stopper, reports leftovers, and skips subtrees of unkillable roots  `1038e0fc`
+- fix: dashboard stop sweeps the wedged descendants that outlive the SIGKILLed backend  `f3bdcd08`
+- **plugins** fix(plugins): stream observer hooks and event subscribers fail-report once, not per event  `3f80dc9a`
+- **plugins** fix(plugins): execution-chain middleware failures are reported once, not per call  `0f98d5a1`
+- **vision** fix(vision): reserve the per-image embed slot atomically  `87f29fb1`
+- **gateway** fix(gateway): busy-mode steer also reaches the parent's active subagents  `f4452169`
+- **vision** fix(vision): delegated subagents stop re-loading the same image on the native fast path  `abc56351`
+- **auth** fix(auth): Claude Code dead refresh token is reported once; CLAUDE_CONFIG_DIR honoured; no 'claude setup-token' hints  `428056e7`
+- **auth** fix(auth): dead OAuth logins are reported once and leave rotation; hints point at hermes auth  `d6add160`
+- **desktop** fix(desktop): explicitly scoped session reads keep the ambient dial priority  `6ae79db3`
+- **desktop** fix(desktop): every explicitly scoped api/ read dials its profile backend foreground  `53517082`
+- **compression** fix(compression): repeated summary stall escalates to the deterministic fallback summary  `07c92d67`
+- **gateway** fix(gateway): auth-fallback test stub accepts the target_model kwarg the fallback resolver now passes  `ba2bcfa6`
+- **opencode** fix(opencode): every credential-resolution surface keys off the model it will send; family heal only for built-in providers  `931b5ff9`
+- **aux** fix(aux): local-server aliases never borrow OPENAI_API_KEY for the lane's base_url  `5b80838e`
+- **aux** fix(aux): keep the /v1 tail on the config path and trim the salvage to two invariants  `200f8a6b`
+- **agent** fix(agent): route explicit local-server provider aliases (ollama/vllm) through the aux custom branch  `b7e0d715`
+- fix: fold a duplicate custom_providers row at the match level so its own models still route  `f7631c0e`
+- fix: /model collapses compat views of one configured provider by identity, keeps custom:<slug> sessions  `01d2e6c3`
+- **kanban** fix(kanban): goal_mode workers keep the live tool feed in their worker log  `3187d68b`
+- **cron** fix(cron): pin the worker's PYTHONPATH from the sanitized env in a sibling helper; skip under a wheel install  `d4dfbba4`
+- **cron** fix(cron): restart-safe worker imports the gateway's own checkout instead of relying on cwd  `9269b19e`
+- **desktop** fix(desktop): a logged-out gh is asked again on the next update check  `7b085a73`
+- **desktop** fix(desktop): update check falls back to the gh CLI login before going anonymous  `c61a1147`
+- fix: log the provider in the vision-gate skip and prove capacity 429s do not rotate the pool  `a1238adf`
+- **aux** fix(aux): aux billing keywords share the main classifier table; quarantine logs name the real reason; vision fallback skips text-only models  `6368ec68`
+- **tools** fix(tools): core-tool drop warns only after the probe had admitted it  `0a3b7437`
+- **tools** fix(tools): warn once when a check_fn drops a core tool; reject a mistyped catalog_provider  `4e41ab09`
+- **models** fix(models): custom providers can inherit a vendor catalog; unknown models get no synthesized output cap  `d1c6786d`
+- **agent** fix(agent): route a planning-monologue reasoning-only stop through the stall guard, not a fake completion  `03e17ba7`
+- **aux** fix(aux): named custom anthropic_messages entries send their extra_headers too  `d41aec0b`
+- **aux** fix(aux): keep key_cmd bearer and extra_headers on async aux calls to named custom providers  `b1db026f`
+- **kanban** fix(kanban): only a handoff to a different profile lifts the active_pr guard  `cdc4fc4c`
+- **kanban** fix(kanban): active_pr respawn guard no longer holds a card handed to a closer or back to its implementer  `2e805005`
+- **process** fix(process): let the yield-to-background kill test signal the reparented orphan  `3ea0089e`
+- **process** fix(process): grace host PID tree teardown  `039165a3`
+- fix: digest only the peeked entry's key in the aux client cache hint  `7d57fbfc`
+- **aux** fix(aux): cached auxiliary client follows the pooled credential after rotation  `3fe9e8ff`
+- **cron** fix(cron): a server parked on a permanent error blocks the job again; warn once per outage  `66a91b7c`
+- **cron** fix(cron): run a job whose enabled_toolsets MCP server is only reconnecting, instead of blocking it  `6924cc66`
+- fix: bound auto-title timeouts to one window and name them in the log  `f85cd964`
+- fix: keep API-key xai auto routes off the xai-oauth refresh row  `2ba6fcd7`
+- fix: refresh xai-oauth on auto-routed auxiliary 403 bad-credentials  `c739ab15`
+- **config** fix(config): save_config takes explicit paths from the fail-closed read  `8b9c0b63`
+- fix: only WARN about an unavailable Nous auxiliary client when a Nous credential actually failed  `78756858`
+- fix: goal loop names the Nous auth failure instead of an opaque judge error  `1539a1a9`
+- **config** fix(config): the custom-top-level footer prints only for top-level keys  `2cf13517`
+- **config** fix(config): a structural wrong-prefix match beats a fuzzy sibling suggestion  `c1071146`
+- **config** fix(config): allow unseeded runtime config keys  `6f11f458`
+- **gateway** fix(gateway): the flush-time fence compares whole seconds  `c39f5424`
+- **gateway** fix(gateway): an unresolvable profile store preserves the flush file instead of writing to the root store  `f6978426`
+- **gateway** fix(gateway): keep one failed flush file from aborting pending-message recovery  `38c77f4c`
+- **gateway** fix(gateway): resolve flush session_key to session_id at recovery  `4aac9834`
+- **gateway** fix(gateway): resolve session_key in shutdown-flush recovery  `9dbe5d7a`
+- **desktop** fix(desktop): answer server→client requests when a handler crashes instead of stalling the backend  `ae43ded1`
+- **desktop** fix(desktop): a half-arrived reasoning tag at a block boundary is held back too  `74b4d0e4`
+- **desktop** fix(desktop): reasoning blocks stop eating streamed prose  `956abb9d`
+- **mcp** fix(mcp): an idle stdio server is proven only after a full default interval  `f1df0aa0`
+- **mcp** fix(mcp): an idle stdio server still proves its session without a keepalive ping  `3ceb40fc`
+- **mcp** fix(mcp): wake recycle deadlines after active RPCs  `9ff0459a`
+- **mcp** fix(mcp): avoid default keepalive on stdio servers  `967bbf25`
+- **telegram** fix(telegram): a confirmed stall hands off before the reconnect backoff, not after it  `5ca3e554`
+- **telegram** fix(telegram): rebuild adapter on confirmed polling stall instead of reusing unquiesced updater (#113618)  `4a7ed002`
+- **tools** fix(tools): sandbox read paths recognise SQLite sidecars as binary  `a3967ddb`
+- **tools** fix(tools): a SQLite sidecar path is refused even when no sidecar file exists yet  `d219e575`
+- **tools** fix(tools): refuse text writes into database files and binary overwrites  `be79102e`
+- **sessions** fix(sessions): include live session activity in prune recency  `3547c30c`
+- **skills** fix(skills): keep absorbed_into in the delete shape; decide every patch shape miss pre-effect  `0bd85d31`
+- **skills** fix(skills): skill_manage advertises one shape per action; a misfiled text slot fails before any op applies  `75a0649a`
+- **anthropic** fix(anthropic): merged user turns keep each turn as its own text block  `170d616c`
+- **aux** fix(aux): max_tokens rung retries even when the wire kwargs no longer carry the cap  `cbe2413b`
+- **aux** fix(aux): parameter rungs hand a 429 on, and Fireworks gets top-level reasoning_effort  `7f038675`
+- **aux** fix(aux): fallback ladder route carries the client base_url; test builds the route by name  `b1c57819`
+- **aux** fix(aux): build the fallback ladder route by field name  `0f57ffa8`
+- fix: chain auxiliary parameter-rejection retries on primary and fallback requests  `1d1c4ac7`
+- **agent** fix(agent): use provider-default temperature for title generation (#72351)  `90ae99aa`
+- **aux** fix(aux): model_upgrade_enabled only silences the automatic title upgrade  `c02616ac`
+- **title** fix(title): keep the derived title while skipping the model upgrade (#85194)  `06387ae8`
+- **update** fix(update): let the Windows repoint run; refuse a minor-line jump  `290bdc3c`
+- **update** fix(update): repoint Windows managed runtime without renaming live venv  `5a49d1de`
+- **update** fix(update): scope the installed-bundle refresh to macOS, keep the signature, never swap under a live app  `032cf843`
+- **desktop** fix(desktop): install rebuilt app to system location after CLI hermes update  `d49fda1d`
+- **gateway** fix(gateway): heartbeat idle gate probes the default profile under a named-profile multiplexer  `131e6709`
+- **gateway** fix(gateway): watcher idle probes fail open on an unavailable store and ignore cleared rows  `d54a1dee`
+- **gateway** fix(gateway): gate per-profile watcher ticks on actual work in the profile's store  `2e6247fb`
+- **gateway** fix(gateway): skip heartbeat restore sweep when no heartbeat is persisted  `5d7fa6bc`
+- **secret_scope** fix(secret_scope): memoise the shared .env tokenizer once per file change  `0d6fec59`
+- **approval** fix(approval): deobfuscate every command word in one detection variant (#113535)  `4eff83cd`
+- **approval** fix(approval): anchor launchctl lookaheads to prevent GIL starvation  `ea870b4d`
+- **desktop** fix(desktop): hide no-op pop-out for file previews  `a9bba684`
+- **dashboard** fix(dashboard): route search hits to their owning profile  `3277a6b2`
+- **desktop** fix(desktop): keep pet activity bound to the live runtime  `91f679a1`
+- **desktop** fix(desktop): pet animates for reclaimed/draft sessions via recency-guarded activity  `1878e5f9`
+- **docs** fix(docs): clarify bot credential isolation  `48566fd9`
+- **cli** fix(cli): attach macOS clipboard images copied as files  `045778e3`
+- **upstage** fix(upstage): default new Solar models to the 512K context window  `98f758ae`
+- **tui_gateway** fix(tui_gateway): lease takeover stays within the profile and spares the new owner's row  `8039bb1e`
+- **tui_gateway** fix(tui_gateway): a chat restored under a new runtime takes over its own detached lease  `3ca367ad`
+- **agent** fix(agent): quantize eviction by the fit window so heavy tool results hold the frontier  `30ca0e10`
+- **agent** fix(agent): a batch retire that would blind the model stops at the keep-newest floor  `09d68f8a`
+- **anthropic** fix(anthropic): the screenshot-eviction floor is satisfiability-aware on the wire pass too  `593a2f10`
+- **agent** fix(agent): make the keep-newest floor satisfiability-aware  `b150dfa8`
+- **anthropic** fix(anthropic): walk sibling tool_result blocks newest-first when evicting screenshots  `406602be`
+- **agent** fix(agent): count image BLOCKS and reserve user uploads against the limit  `5768f78e`
+- **agent** fix(agent): round the eviction overshoot up to whole batches so the image limit actually holds  `c37753c4`
+- **agent** fix(agent): evict images at the provider limit, not on a keep-newest count  `66a281c3`
+- **plugin-catalog** fix(plugin-catalog): repin stewardship security fix  `48257c6e`
+- **plugin-catalog** fix(plugin-catalog): apply admission feedback  `a7b0ea5f`
+- **plugin-catalog** fix(plugin-catalog): repin corrected plugins  `3f8b4d8b`
+- **plugin-catalog** fix(plugin-catalog): update reviewed plugin pins  `dfe0063d`
+- **desktop** fix(desktop): await page-owned promises before Electron IPC  `bbaf7af5`
+- **desktop** fix(desktop): widen libuv-only staging to get-windows and the rollback .bak wipe  `afb9243f`
+- **desktop** fix(desktop): harden before-pack cleanup against the same non-ASCII rmSync no-op  `8317fc8f`
+- **desktop** fix(desktop): stage node-pty without fs.cpSync/fs.rmSync (non-ASCII Windows paths)  `2d88b9b4`
+- **install** fix(install): let Rolldown name the missing binding; repair on every OS  `3dcf0d49`
+- **install** fix(install): repair missing Rolldown bindings  `ae9f42ac`
+- **desktop** fix(desktop): enable New Group Chat with one local bot plus remote-connection bots  `9f077100`
+- **gateway** fix(gateway): pre-isolation room import copies per room, reads pre-actor layouts, warns once  `00cb8895`
+- **gateway** fix(gateway): import pre-isolation hosted_room* rows into shared-state.db (#109775)  `5e9fe101`
+- fix: read plugin-home config through the loader; register update export  `a08dee94`
+- **nous** fix(nous): heal a signed-in account's stale welcome-host route once before failing the turn  `4a61b030`
+- **update** fix(update): hand-off carries sibling snapshots + Windows pause token on both paths; child pinned to the parent's home  `bec89245`
+- **update** fix(update): startup hint no longer blames an update that did restart the fleet  `ae71d85b`
+- **update** fix(update): finish `hermes update` in an interpreter born on the pulled code  `94ced1a2`
+- **nous** fix(nous): classify the desktop's escaped-exception card with the request credential  `564687b1`
+- **nous** fix(nous): keep the reconnect copy for a named account on the welcome host  `c0e604cd`
+- **nous** fix(nous): keep anonymous errors exclusive to anonymous users  `165271fc`
+- **desktop** fix(desktop): serialize idle reclamation and release slots on real exit  `768e5c2a`
+- **serve** fix(serve): hold work admission through cooperative retirement  `98745df3`
+- **desktop** fix(desktop): a retired scope parks instead of redialing  `0fa67196`
+- **desktop** fix(desktop): cooperative pool retirement for foreground dials behind an admission fence  `5fef7301`
+- **serve** fix(serve): expose turn_in_flight as an idle proof for pooled backends  `3eface06`
+- **bot-mode** fix(bot-mode): a renamed primary signs with its friendly name; docs the message_agent target forms  `58c6f6fa`
+- **desktop** fix(desktop): introduce a renamed primary bot by its own @tag in group-turn prompts  `2b267f94`
+- **bot-mode** fix(bot-mode): message_agent resolves friendly names and Desktop @-slugs to folder ids  `002df670`
+- **tools** fix(tools): restore executor allowlist on message_agent inject success  `e4ccfc16`
+- **tools** fix(tools): keep the default profile roster entry pointing at the root home  `4f03ed9e`
+- **desktop** fix(desktop): keep sidebar navigation stable beside page titles  `444c75c1`
+- **desktop** fix(desktop): clear the composer's blur-close timer on unmount  `59731085`
+- **desktop** fix(desktop): settle approval and tool-row layout together  `140d1254`
+- **desktop** fix(desktop): retire card-stack height without a completion snap  `4bcde77e`
+- **bot-mode** fix(bot-mode): report a retained turn failure whose prompt never reached history  `4a2ea5b6`
+- **bot-mode** fix(bot-mode): a distant stop word never releases the member it addresses  `ae417cf0`
+- **bot-mode** fix(bot-mode): group rooms wake on @all, ignore prose stop words, report dead turns, approve on click  `b466a87b`
+- **desktop** fix(desktop): identify local profile mutations by backend mode  `3e379a77`
+- **desktop** fix(desktop): retarget deleted startup profiles  `2b1eba47`
+- **desktop** fix(desktop): reconcile failed tails without erasing later replies  `10225745`
+- **desktop** fix(desktop): settle duplicate completions within segment boundaries  `0e5da5e9`
+- **desktop** fix(desktop): Group Chat speaker labels qualify twins per room and never show a raw key  `ab4bd4ba`
+- **desktop** fix(desktop): resolve Group Chat member identity by owning connection and profile  `f9cc4ce9`
+- **desktop** fix(desktop): owner-aware Group Chat transcript avatars (#96432)  `589abfe9`
+- **bot-mode** fix(bot-mode): Reply to @bot seeds an owner-qualified tag for same-named twins  `577bf9c0`
+- fix: cron agents carry their delivery channel's platform hint  `3276af09`
+- **desktop** fix(desktop): preserve source freshness and console diagnostics  `20942650`
+- **cli** fix(cli): `hermes -z` exits non-zero for partial, failed and interrupted runs even when text was printed  `391a7007`
+- **desktop** fix(desktop): Model settings reads for an "Applies to" profile dial foreground  `bd626ec1`
+- **setup** fix(setup): let SSH wizard reset a saved port back to 22  `c347e509`
+- **tools** fix(tools): redact vault values from browser exec output  `a48debd3`
+- fix: fail soft to guards-on when the terminal env registry lookup raises  `1a1b1143`
+- **approval** fix(approval): resolve the plugin classification lazily inside the guard predicate  `9e232a7f`
+- **approval** fix(approval): honor plugin container guard classification  `3fc1a184`
+- **desktop** fix(desktop): keep the cold-boot recovery overlay up while main retries behind it  `dbc18a05`
+- fix: drop env_type from the builders' signature comment  `2370a630`
+- **tools** fix(tools): avoid duplicate sandbox env type dispatch  `4a78de28`
+- **tools** fix(tools): heredoc-pipe guard sees through fd redirects around the pipe  `27ad6f56`
+- **tools** fix(tools): self-repo guard scans heredoc bodies piped into a bare shell  `c796e68e`
+- **tui_gateway** fix(tui_gateway): withdraw a server request when its wait is interrupted  `4371ed34`
+- **tui_gateway** fix(tui_gateway): an answer given at the deadline is returned, not reported as a timeout  `4a45fda9`
+- **tui_gateway** fix(tui_gateway): make server request settlement atomic  `434c5755`
+- **desktop** fix(desktop): render a typed synthetic in-flight prompt like its persisted row on reconnect  `b75396a7`
+- **tui** fix(tui): preserve inflight synthetic display metadata  `9583c8c4`
+- **tests** fix(tests): sandbox a dev shell whose HERMES_HOME is the Windows platform root, and pin lazy state.db home resolution  `cf7895c1`
+- **tui_gateway** fix(tui_gateway): resolve the launch state.db path at first use, not import time  `7ee008aa`
+- **tui** fix(tui): leave a crash-log breadcrumb when an inline stdio handler fails  `4f1bbe11`
+- **tui** fix(tui): keep stdio gateway alive after inline RPC failures  `7b43355b`
+- **tui** fix(tui): prevent RPC stdin inheritance  `ec1f26f4`
+- **cron** fix(cron): blocked-config notice no longer conditions the retry on the user fixing something  `7ad51527`
+- **cron** fix(cron): say the MCP zero-tools preflight block clears itself when the server reconnects  `fad86764`
+- **cron** fix(cron): acknowledged worker removes its own stderr capture; comments match captured stderr  `f857a4ed`
+- **cron** fix(cron): a restart-safe worker that dies before its ack reports its own stderr  `e094e25b`
+- **cli** fix(cli): no false "[HERMES_HOME fallback] wrong profile" warning on every command  `2452b882`
+- **desktop** fix(desktop): strip installer escapes from the manifest-failure banner too  `1503d40a`
+- **desktop** fix(desktop): strip installer escapes at the Electron bootstrap emitter too  `6e58dcdb`
+- **installer** fix(installer): strip ANSI escapes from live log events  `74466f03`
+- **sessions** fix(sessions): an explicit --source tui|desktop survives the one-shot label drop  `0010273f`
+- **sessions** fix(sessions): one-shot runs stop inheriting the tui/desktop session source  `c5f6336f`
+- **cli** fix(cli): block resume during active turns  `a3cd00ca`
+- **cli** fix(cli): refuse /branch mid-turn — an in-flight run flushes onto the branch  `23e128f1`
+- fix: kanban guidance and stop nudge resolve worker identity through one helper  `474db536`
+- **agent** fix(agent): scope kanban guidance to worker tasks  `1d5024bb`
+- fix: attribute gateway lifecycle stops to their system issuer, not the user  `9d0ab880`
+- **agent** fix(agent): system watchdog interrupts are attributed to their issuer, not the user  `6a997664`
+- **clarify** fix(clarify): batch result carries the surface's no-answer notice; trim tests  `b3aef459`
+- **gateway** fix(gateway): answer a clarify batch on the surface, not by sentinel text  `242ff24f`
+- **desktop** fix(desktop): a lone pasted link lands as a url chip again  `dfad5397`
+- **desktop** fix(desktop): a pasted PR-comment deep link lands as text like every other URL  `774b3865`
+- **desktop** fix(desktop): size the rcedit retry to the observed lock window and retry any failure  `f501ebcf`
+- **desktop** fix(desktop): retry transient rcedit commit failures  `8ca920b5`
+- **desktop** fix(desktop): track plugin gateway listeners in the bundled loader and ctx.onEvent  `ca396e0f`
+- **desktop** fix(desktop): dispose runtime plugin event listeners  `14b2ad15`
+- fix: correct the blur rationale in the edit composer test  `7916c2fb`
+- **desktop** fix(desktop): keep the inline message edit open when a bubble is clicked  `c450ed51`
+- **update** fix(update): bracket the post-repair lazy restore with the lazy-refresh marker  `bafbf880`
+- **updater** fix(updater): restore optional deps after sqlite repair  `2b76a635`
+- **codex** fix(codex): floor every effort >= high and keep the run-budget cap over it  `ebd106f3`
+- **codex** fix(codex): high-effort reasoning no longer trips the small-prompt watchdogs  `a6cad512`
+- **update** fix(update): one bad workspaces glob no longer aborts the lockfile-churn cleanup  `73521a8e`
+- **install** fix(install): installers keep the root lockfile when a workspace manifest is dirty  `ba153d69`
+- **update** fix(update): preserve root lockfile for dirty workspace manifests  `c115c55a`
+- **desktop** fix(desktop): only park a PRIMARY reconcile's unread dot; confirm parked completions from any fresh snapshot  `cc0c9783`
+- **desktop** fix(desktop): defer the unread dot on a reconnect reconcile until the snapshot confirms the turn ended  `9ca29747`
+- **desktop** fix(desktop): retain deferred session reap candidates  `4e926504`
+- **desktop** fix(desktop): preserve terminal session state ordering  `08ab3ec5`
+- **web** fix(web): ladder-derived firecrawl no longer forces the direct-only route  `816cb379`
+- **web** fix(web): per-capability backend key no longer reroutes the other capability  `010a4509`
+- fix: bound the index-miss fallback and skip it under provider filters and index timeouts  `5457c48d`
+- **skills** fix(skills): hub search falls back to the registries when the index has no match  `13dcfc11`
+- **config** fix(config): hedge the `config get` phantom-key notice — the schema walk has false positives  `da942e44`
+- **config** fix(config): inline the phantom-key notice into get_config_value, trim to 2 tests, docs  `efc03590`
+- **config** fix(config): flag schema-unknown nested keys in `hermes config get`  `5abda7e7`
+- **auth** fix(auth): a terminally rejected OAuth refresh token is logged at WARNING with a re-auth hint  `9bcba9be`
+- fix: pruned skill_view/read_file results reload after a proactive prune  `b002dfc0`
+- fix: run "Show all" hydration through the project tree's exclusion  `4d1eb919`
+- **desktop** fix(desktop): offer "Show all N sessions" under project rows capped at 3 previews  `534c93f9`
+- **gateway** fix(gateway): scheduled heartbeats end silently, emit no progress and quote no stale message  `68073517`
+- **gateway** fix(gateway): quiet scheduled heartbeat surfaces  `95d624e9`
+- **desktop** fix(desktop): retry the update check anonymously when the env token is rejected  `e79ba2d7`
+- **desktop** fix(desktop): env-only GitHub token for the update check, honest rate-limit copy  `c7d4d328`
+- **tui-gateway** fix(tui-gateway): carry session_id in the llm.oneshot runtime snapshot; align feasibility test  `4f0eea5e`
+- **aux** fix(aux): keep the /btw and title snapshots duck-typed; make the out-of-turn header tests discriminating  `6f8389d6`
+- **auxiliary** fix(auxiliary): preserve session in out-of-turn snapshots  `de03c342`
+- **auxiliary** fix(auxiliary): propagate OpenCode session header  `20ade400`
+- **gateway** fix(gateway): replay the sidecar-only assistant row when rebuilding history from the transcript  `578bff8e`
+- **agent** fix(agent): reasoning promoted on a reasoning-only clean stop is never persisted as an ordinary reply  `eb11e7ea`
+- **stt** fix(stt): preserve subprocess error details  `cb0cf7a1`
+- **tools** fix(tools): honor false interrupt debug values  `84893f83`
+- **bot-mode** fix(bot-mode): the retried delivery adopts the DM behind the failed attempt's tool scaffolding too  `d0a016db`
+- **bot-mode** fix(bot-mode): the DM delivery retry reads the stream the CLI writes and resumes the persisted row  `05e3b864`
+- **tools** fix(tools): search_files only defaults None/blank paths, not wrong-typed ones  `d77cf5ae`
+- **tools** fix(tools): search_files treats a JSON-null path like a blank one  `ba96e68d`
+- **tools** fix(tools): normalize blank search paths  `66cc3f16`
+- **desktop** fix(desktop): bound the supervisor respawn so a crash-looping backend stops cycling  `8e5b0e2a`
+- **desktop** fix(desktop): supervisor owns the respawn when a backend exit empties the primary slot  `d9277fe0`
+- **desktop** fix(desktop): supervise unexpected primary backend exits  `702595a9`
+- **desktop** fix(desktop): respawn after stale backend exit loses owner  `27c1f491`
+- **desktop** fix(desktop): backend exit lines carry the buffered output tail  `e98d7451`
+- **cron** fix(cron): seed Telegram forum-topic cron threads on the group slot topic replies key  `3c9431a8`
+- **gateway,cron** fix(gateway,cron): key Matrix handoff/cron thread seeds the way Matrix replies are keyed  `f41ad3bc`
+- **moa** fix(moa): keep the aggregator prefix byte-stable across tool-loop iterations  `f3e62619`
+- **prompt_builder** fix(prompt_builder): keep blocking a distribution-owned SOUL.md on a scanner hit  `095de7ff`
+- **prompt_builder** fix(prompt_builder): load the user's own SOUL.md on a scanner hit instead of blocking it  `7bb43368`
+- **desktop** fix(desktop): route every desktop-plugin tree copy through staged publication  `8170c16c`
+- **desktop** fix(desktop): recover interrupted unified plugin copies  `27fc1d9f`
+- **tests** fix(tests): accept select(model=) in sibling pool stubs; mirror per-model 429 docs to zh-Hans  `3977a2ad`
+- **anthropic** fix(anthropic): model-scoped 429 cooldowns live in a pool sibling; restore path no longer NameErrors  `6de6e6da`
+- **agent** fix(agent): scope Anthropic 429 cooldowns to model  `fb358d43`
+- **plugins** fix(plugins): record plugin-compat hit paths in POSIX form on every OS  `5eca9d71`
+- fix: no misplaced-text hint for actions without a text slot; lead patch hint with targeted form  `b119575b`
+- **skills** fix(skills): skill_manage error names the key misplaced text arrived in  `7d1a5399`
+- **bot-mode** fix(bot-mode): a ✕ on Scheduled jobs survives a group-room round trip  `581ae5b7`
+- **bot-mode** fix(bot-mode): Routines rows fit the 250px pane and a closed Scheduled jobs pane comes back  `8717a0bd`
+- **tools** fix(tools): preserve Windows child local timezone  `62de3077`
+- **tests** fix(tests): derive the quarantine guard tests' venv root from the checkout  `92558efe`
+- **desktop** fix(desktop): order updater imports and pad the shim resolver  `4ef2aebc`
+- **update** fix(update): keep .venv installs whole through ZIP fallback and venv repair  `659f5ae9`
+- **update** fix(update): support uv default venv in desktop updates  `b6cc751e`
+- **desktop** fix(desktop): render the reader's own group lines in the active language  `4d46d767`
+- **desktop** fix(desktop): localize the Bot Mode row context menu and attention hints  `71c5a0bd`
+- **desktop** fix(desktop): localize the Bot Mode group row's member count and availability  `aa974a76`
+- **desktop** fix(desktop): narrow screenshot failures in Electron typechecks  `79c0ce39`
+- fix: drop the Tailwind class assertion and document the guarded-switch dialog  `a3554843`
+- **desktop** fix(desktop): guarded model switch asks in a dialog with a real decline  `e1e7eafe`
+- **bot-mode** fix(bot-mode): a bot row whose connection was deleted renders instead of throwing  `9d5d202c`
+- **compression** fix(compression): re-arm the drifted-prompt INFO on session reset so it is once per session  `0023b904`
+- **compression** fix(compression): stall cooldown covers one idle window; drifted-prompt INFO once per session  `f59d973a`
+- **compression** fix(compression): slim the same-turn fallback worker and pin it with a real-path test  `20d2903e`
+- **compression** fix(compression): retry stalled fallback in the same turn  `8e64cc33`
+- **url_safety** fix(url_safety): refuse fake-ip declarations that overlap reserved address classes  `2837d252`
+- **url_safety** fix(url_safety): trim the fake-ip salvage to the existing cache shape and two invariants  `e4c00097`
+- **url_safety** fix(url_safety): dial a declared local-proxy fake-ip block instead of blocking it  `0f870069`
+- **cron** fix(cron): deliver [CRON_FAILURE] evidence verbatim, not through provider heuristics  `9f48f4ed`
+- **cron** fix(cron): record agent-declared cron failures  `f26e436d`
+- **bot-mode** fix(bot-mode): pin the room log grid track so a long code line scrolls inside its block  `c4045ce5`
+- **bot-mode** fix(bot-mode): resolve room MEDIA only for members on this gateway; make the code-block spec bite  `c27d67a9`
+- **bot-mode** fix(bot-mode): group-chat replies render through the chat's message renderer  `9073bfb7`
+- **desktop** fix(desktop): render group MEDIA directives inline  `f924fac1`
+- **whatsapp-bridge** fix(whatsapp-bridge): bump body-parser override pin to 1.20.8  `8ff91f6a`
+- **web** fix(web): join the state.db eager-reconcile worker at lifespan shutdown  `c15286f4`
+- **moa** fix(moa): name the billed aggregator in the gateway /model block and qualify the advise-once copy  `c8f0f6b1`
+- **moa** fix(moa): show who pays on every MoA surface and trim the salvage to two invariants  `587c7d96`
+- **moa** fix(moa): label the aggregator as the acting, billed model across CLI and Desktop  `0a433320`
+- fix: only drop an interrupted partial for the runaway repetition shape  `55a26c99`
+- fix: keep looped partials out of every interrupt checkpoint, tell the model why  `2f3c3cfb`
+- **agent** fix(agent): skip repeated interrupt partial replay  `34936950`
+- **model** fix(model): preserve unknown custom capabilities  `24e4d442`
+- **agent** fix(agent): label a spent image-shrink fallback instead of 'Non-retryable error (HTTP 400)'  `efcafea0`
+- **agent** fix(agent): apply the oversize content-field rule on the 422 path too  `4655263f`
+- **agent** fix(agent): route oversize rejections that arrive as HTTP 400 to the image-shrink recovery  `270fe15c`
+- **tui** fix(tui): non-local path completion speaks POSIX from a Windows host and honours the composer cwd  `20ac379a`
+- **tui** fix(tui): complete.path follows terminal.backend from config and keeps ~ remote; docs say where ! runs  `0bac3390`
+- **tui** fix(tui): route remote completion and bang commands  `0f4430b5`
+- **agent** fix(agent): trim the PermissionError guard salvage to two live tests  `787b261f`
+- **agent** fix(agent): guard _find_hermes_md and .cursor/rules discovery against PermissionError  `a310741c`
+- **plugins** fix(plugins): dedupe middleware failures too, and let unload forget reported hook failures  `01d73210`
+- **plugins** fix(plugins): report an identically failing hook callback once, not on every call  `8beeb661`
+- **agent** fix(agent): stop the tool-activity heartbeat when the executor abandons its worker  `ba135b36`
+- **test** fix(test): give the stale-abort atomicity test a display consumer so "hello" counts as delivered  `7242811d`
+- **streaming** fix(streaming): retry a stream that died before any visible text instead of an empty stub  `96f31359`
+- **bot-mode** fix(bot-mode): a Bot removed from a room stays removed through both doors  `4ffbeac3`
+- fix: give the batch clarify preview a loading cue  `6a07ce61`
+- **desktop** fix(desktop): paint batch clarify questions from tool args while request races  `05f928bc`
+- **agent** fix(agent): a MoA preset in the fallback chain activates the preset, not the aggregator alone  `c810640a`
+- **picker** fix(picker): native Ollama cache rows use the 300s TTL and never stale-serve empty catalogs  `d6d6565d`
+- **picker** fix(picker): key the native Ollama cache entry on the caller's headers  `8294eff4`
+- **picker** fix(picker): admit the native Ollama catalog to the shared model cache  `4de3bce8`
+- **api-server** fix(api-server): the session-chat routes spend the concurrent-run budget without respecting it  `9934972e`
+- fix: collapse same-root duplicate skills only when provably the same skill  `ad80cb4e`
+- **skills** fix(skills): resolve same-root duplicate names instead of refusing them  `b20c8cab`
+- **update** fix(update): identity-pending fleet row no longer claims 'restarted by this update'  `fe52c4a7`
+- fix: post-update fleet settle poll no longer ends early on inconclusive signals  `f0794584`
+- fix: keep refused focus redirects visible and treat editor-anchored selections as inside  `3e9ae05f`
+- **desktop** fix(desktop): guard every focus-follow branch, not only pointermove  `b2d80bfb`
+- **desktop** fix(desktop): keep transcript selection when pointer moves over a composer surface  `e82adb7d`
+- **desktop** fix(desktop): never route a tool event onto a finished row from an earlier turn  `32cf330f`
+- **desktop** fix(desktop): route running tool events by call id too and unseal the owning row  `6cdca684`
+- **desktop** fix(desktop): reconcile a late tool completion with the bubble that owns it  `fef05a89`
+- **achievements** fix(achievements): apply the sticky-unlock floor to in-flight snapshots too  `44657ff6`
+- **achievements** fix(achievements): read the deduped display history; drop the TypeError shim  `cf86c141`
+- **achievements** fix(achievements): keep unlocked badges sticky and scan full history so rewind/compaction never shrinks totals (#112273)  `b41b2d3e`
+- fix: scope one-shot aux usage to the branch and keep it on failed turns  `1a08c487`
+- **oneshot** fix(oneshot): --usage-file ledger reports auxiliary LLM spend  `8899aeff`
+- **auth** fix(auth): isolate dashboard provider registration by launch home  `d93f74b7`
+- **cli** fix(cli): /model switch, session restore and /new re-resolve reasoning effort for the new model  `77f5de23`
+- **tui-gateway** fix(tui-gateway): copy the custom provider gateway before pinning the inherited model  `d5ff004a`
+- **cli** fix(cli): inherit the launch profile's custom provider gateway with its model  `b5a9efea`
+- **doctor** fix(doctor): name the processes holding a WAL database that journal_mode=delete never converted  `d7ebee3c`
+- fix: reap the killed sqlite3 .recover children on timeout  `4b119687`
+- **recovery** fix(recovery): drain .recover dump stderr to a temp file, not a pipe  `54a769b4`
+- **profiles** fix(profiles): keep tombstoned profiles out of the name-only listing  `4346cdcd`
+- **aux** fix(aux): only treat a standalone reasoning field name as a reasoning rejection; let parameter rungs chain  `65aaf16a`
+- **aux** fix(aux): retry once without reasoning fields when a custom endpoint rejects them  `0b2b4fd8`
+- fix: cap only generic sample tokens, one step, last; bump plugin-guard to v4  `dd2141b9`
+- **plugins** fix(plugins): demote main-guard sample tokens  `4037b009`
+- **mcp** fix(mcp): count an adopted shared connection as live in the config reconcile  `c815d912`
+- **mcp** fix(mcp): retry a never-connected server through the existing reconcile seam  `ea17e976`
+- **gateway** fix(gateway): reconcile MCP on drift, not only on a config edit  `31d3b948`
+- **update** fix(update): cover every flat-install <db>.db.* artifact, cron stores too, one test module  `6049ef0f`
+- **update** fix(update): preserve flat-install database artifacts  `1d0292eb`
+- **bot-mode** fix(bot-mode): hosted room turns release the member's bot_room slot when the turn ends  `f3535715`
+- **picker** fix(picker): keep the LM Studio row minimal — drop probe-timeout/cache hunks  `014d3e39`
+- fix: bare providers.lmstudio config block silently collapses /model picker to one model  `16cd15dd`
+- **desktop** fix(desktop): profile backends stop reaping the Desktop's live SSH backends  `5b651e07`
+- **compression** fix(compression): mark failed skill-tool results and drop the duplicated stub suffix  `5670f846`
+- **compression** fix(compression): skill-tool summaries carry skill names and failure outcome  `03165465`
+- fix: /model no longer calls one configured provider ambiguous when its compat view is also passed  `a02ca4a1`
+- **profiles** fix(profiles): side-thread asyncio.run workers keep the caller's profile scope  `3baf4c2c`
+- **kanban** fix(kanban): heal every nullable v1 tasks column and index assignee after the ALTER pass  `0cb7a2fd`
+- **kanban** fix(kanban): heal base tasks columns a foreign harness omitted before the run backfill  `41f9489c`
+- **cron** fix(cron): banner-only bot-chat failure names the exit code; persisted stdout tail capped and scrubbed  `3719e04d`
+- **cron** fix(cron): a failed bot-chat delivery records both streams, labeled  `6e89b8f3`
+- **curator** fix(curator): exclude disabled review candidates  `e5ea8053`
+- **curator** fix(curator): keep bundled skills out of the LLM consolidation list  `061f37d8`
+- **compat** fix(compat): prune dependency trees from pointer scan  `1655dcd3`
+- fix: honour middle-click on the composer directive pill  `49ec28fb`
+- **desktop** fix(desktop): route url chips through the link surface  `010362cc`
+- fix: soften the hydration-sync badge comment about the profile gate  `1dbdc153`
+- **desktop** fix(desktop): bound the paint-first hydration syncing badge  `e2084e8c`
+- **browser** fix(browser): atexit hooks stay silent when the origin module is unimportable  `ee62a4b5`
+- **delegation** fix(delegation): a stale verdict under a configured cap names the stale threshold, not the cap  `6b1cf3a6`
+- **delegation** fix(delegation): a stale subagent ends the sync delegation wait instead of holding the turn forever  `90663bff`
+- **bot-relay** fix(bot-relay): claim the outbox oldest first, so two DMs to one agent keep their order  `135bf07a`
+- **linux** fix(linux): a PATH hit inside the checkout never persists as desktop entry Exec  `b5f3ed77`
+- **bootstrap-installer** fix(bootstrap-installer): launched Desktop no longer holds the installer's stdout/stderr pipe  `555ffa3c`
+- **updater** fix(updater): require evidence before deferring desktop serve  `81bee00b`
+- **gateway** fix(gateway): refuse user-scope systemd install in containers on every fresh-install entry  `c4e8fcda`
+- **gateway** fix(gateway): block user unit install in containers  `8386ef24`
+- **bot-mode** fix(bot-mode): unreadable-ticket skips warn once, tolerate bad UTF-8, keep the sequence mark  `c3f0d877`
+- **cron** fix(cron): an unreadable deferred Bot Chat receipt no longer blocks its siblings  `7c46ee69`
+- **tools** fix(tools): stop one unreadable ticket from wedging bot live delivery  `68865580`
+- **cli** fix(cli): resolve runtime credentials for the model the CLI will send  `c358a6fb`
+- **cli** fix(cli): heal the OpenCode family path in a carried-over base_url  `723b462b`
+- **compression** fix(compression): publish the working-attempt marker only when the summarizer actually runs  `3950785f`
+- **compression** fix(compression): key candidate supersession on working attempts, not entry claims  `b5108bb1`
+- **tests** fix(tests): restore the trailing newline in test_disk_cleanup_plugin.py  `2db11f03`
+- **disk-cleanup** fix(disk-cleanup): protect every per-profile user tree and trim tests to two invariants  `0631710a`
+- **disk-cleanup** fix(disk-cleanup): keep test_*/tmp_* files under $HERMES_HOME/workspace  `3b6b0e24`
+- **desktop** fix(desktop): keep the free titlebar band draggable when tabs drop below the controls  `1aa296fb`
+- **desktop** fix(desktop): reserve titlebar drag region  `5aa1e353`
+- fix: only call an auth DB backup "locked" when it made no progress  `713a9377`
+- **browser** fix(browser): real-profile snapshot names the locked auth databases and the reason  `864e9dcc`
+- **codex** fix(codex): drop the stale 'watchdog tripped' retirement cause and re-scope the reset test  `9cb1a659`
+- **codex** fix(codex): healthy app-server sessions survive long post-tool reasoning silence  `2992ed4b`
+- **gateway** fix(gateway): guard Windows post-drain taskkill with the pre-drain start time  `d809057a`
+- **gateway** fix(gateway): drain Windows profile stop before kill  `fd1582f6`
+- **desktop** fix(desktop): disable WSL path bridge for registry SSH/remote/cloud profiles  `1f091cb4`
+- **gateway** fix(gateway): persist shutdown forensics without process argv  `1d291102`
+- **desktop** fix(desktop): hovering an SSH bot never dials the tunnel or spawns a remote backend  `3d9ddb72`
+- **mcp** fix(mcp): count SSE events across boundaries split between chunks  `b1dfaf40`
+- **kanban** fix(kanban): remove worktree when the process cwd is already gone  `cf5287b0`
+- **kanban** fix(kanban): release worker cwd before worktree cleanup  `76901e9a`
+- **desktop** fix(desktop): expose custom Hermes path for SSH connections  `3093e985`
+- **agent** fix(agent): scope auxiliary client eviction to the calling profile and stop closing in-flight clients  `ff1f5d42`
+- **agent** fix(agent): evict rotated auxiliary provider clients  `10684127`
+- **gateway** fix(gateway): Weixin media sends honour iLink ret and re-send without a stale token  `97066a0e`
+- **gateway** fix(gateway): Weixin tokenless re-send no longer consumes the retry budget  `2995063b`
+- **gateway** fix(gateway): retry Weixin prepare failures without token  `46ab37ce`
+- **mcp** fix(mcp): treat a non-object client.json as corrupt instead of crashing auth init  `e166791f`
+- **mcp** fix(mcp): skip malformed cached OAuth redirect_uris instead of crashing  `f8f89b20`
+- **lsp** fix(lsp): attach reused multi-root client outside state lock  `6950959f`
+- **desktop** fix(desktop): keep last-known remote roster rows when the union probe fails  `72dd05cc`
+- fix: cover the geocoding 'location not found' branch in the weather test  `04ded3b1`
+- **tui** fix(tui): move weather widget to Open-Meteo  `b5821a57`
+- **desktop** fix(desktop): Passwords & Logins asks the connection it shows, not the primary  `924e4700`
+- **desktop** fix(desktop): session RPCs route by the owning connection, not a bare profile name  `02b6802c`
+- **bot-mode** fix(bot-mode): teammate roster and every profiles/ enumerator use the profile identity predicate (#99392)  `85d02887`
+- **profiles** fix(profiles): profile create never deletes a live marker-less dir; dangling symlink markers count as identity  `30bde465`
+- **profiles** fix(profiles): a profiles/ dir without an identity file is not a profile  `19e984ae`
+- **gateway** fix(gateway): fanout transport uses the shared serialization guard too  `532608db`
+- **gateway** fix(gateway): stdio transport shares the JSON-RPC serialization guard with WS (#92506 follow-up)  `1ccd1b3e`
+- **gateway** fix(gateway): surface JSON-RPC serialization failures  `87c5658c`
+- **desktop** fix(desktop): fold accented Latin, keep NFC tokens and cut CJK profile ids on a token boundary  `1b722403`
+- **desktop** fix(desktop): allow CJK bot names  `08debd71`
+- **desktop** fix(desktop): keep a window-state IPC that lands before the first connection publishes  `a02e1d78`
+- **desktop** fix(desktop): re-measure the panel tab strip when the window chrome moves  `0d777e21`
+- **desktop** fix(desktop): scope the bot-title label to the Settings chips; unbreak providers-settings test  `f10b9380`
+- **desktop** fix(desktop): name the Settings scope note by the same label as its chip  `61ab27e9`
+- **desktop** fix(desktop): label Settings "Applies to" chips with the bot title / display name  `2af437b4`
+- **desktop** fix(desktop): bot-workspace tiles drop the whole ambient composer selection; live Electron proof  `89f27702`
+- **desktop** fix(desktop): Bot-workspace new chats use the bot profile's model, not the ambient composer pick  `93f38972`
+- **state** fix(state): surface archived+hidden sessions in the archived-only listing  `105bb914`
+- fix: hermes -w repack no longer stampedes a shared clone  `76478fc0`
+- **tools** fix(tools): one "Nous Subscription" image row instead of two rows that both read active  `45ef7245`
+- **web** fix(web): resolve a managed image row's GUI model catalog from its backend so the Krea row lists Krea models  `07753067`
+- **image_gen** fix(image_gen): advertise Krea capabilities when the managed selection stores a Krea model  `fe1eddee`
+- fix: catalog installs no longer block on caution; admission runs the same scanner  `260da4ef`
+- **auth** fix(auth): credential audit reads profile config.yaml through read_user_config_raw  `8c8003f8`
+- **auth** fix(auth): named profiles no longer inherit the root profile's auth.json (#111724)  `93889b77`
+- **messaging** fix(messaging): stopped profile no longer wears "Start failed" on the Channels page  `595d4cfe`
+- **checkpoints** fix(checkpoints): retry of a partial profile-rename rekey keeps checkpoints taken under the new name  `b1b0cb23`
+- **profiles** fix(profiles): preserve checkpoint history across rename  `8a2c9eda`
+- **status** fix(status): honor stopped gateway intent  `aa711728`
+- **profiles** fix(profiles): release routed log locks before deletion  `43e28551`
+- **gateway** fix(gateway): resolve the mirror sessions index at call time, not import time  `f27c719a`
+- fix: fallback activation picks the OpenCode per-model wire (muse-spark → Responses)  `6eef5ea0`
+- fix: seed Responses budget escalation from the observed ceiling when no cap is configured  `4a1daecc`
+- fix: Responses-wire length continuation raises the output cap and drops reasoning after an empty fragment  `92c24d41`
+- **responses** fix(responses): avoid invented empty assistant turns before tool replay  `1c7bc44e`
+- **profiles** fix(profiles): report a settle-pending delete as a typed partial success  `aa90c01e`
+- **profiles** fix(profiles): purge a deleted profile's session/routing identity on delete  `a41552fa`
+- **gateway** fix(gateway): standalone gateway binds the launch profile's own scope after hosted activation  `51c4b6ba`
+- **gateway** fix(gateway): scope standalone turns after hosted activation  `99f68e73`
+- **mcp** fix(mcp): isolate unsupported inferred app labels  `d5b3cad7`
+- **onboarding** fix(onboarding): consume future catalog entries without custom metadata  `74ca4f28`
+- **models** fix(models): route Union Alpha through messages  `61154b6f`
+- **local-runtime** fix(local-runtime): isolate download staging files  `3c565917`
+- **desktop** fix(desktop): explicit bot opens and session creates dial the pool at foreground priority (#113269)  `a7691f41`
+- **update** fix(update): a failed dashboard cleanup no longer aborts fleet verification and the receipt  `5f071fb3`
+- **update** fix(update): the receipt survives a mixed sys.modules graph and a lost write is visible  `1259b140`
+- **agent** fix(agent): preserve periodic callback context  `c11b0a07`
+- **usage** fix(usage): preserve routed profile context in Nous account fetches  `f1b7ae72`
+- **delegation** fix(delegation): keep stale finalization in the origin profile  `5ad9ee86`
+- **api** fix(api): preserve profile context for disconnect reapers  `33a47679`
+- **gateway** fix(gateway): preserve profile context for interrupt reapers  `213dc82a`
+- **desktop** fix(desktop): keep timeline ticks compact outside hover  `fdb7b216`
+- **launchd** fix(launchd): park EX_CONFIG token conflicts instead of KeepAlive-looping (#112079)  `2eb5395d`
+- **anon** fix(anon): retry_after is the whole wait, not the wait plus float dust  `6ff1a6c8`
+- **serve** fix(serve): off-turn system-prompt rebuilds run under the session's profile scope  `80ab36e4`
+- **tui** fix(tui): isolate config show profile metadata  `2eb74da9`
+- **tui** fix(tui): scope config.show to the requested profile  `83475261`
+- **doctor** fix(doctor): the stop-first issue line says run, not re-run — it is now also emitted before any --fix  `acc78451`
+- **doctor** fix(doctor): a large WAL under a live writer is reported as normal, never as "run --fix"  `84a5f1cd`
+- **kanban** fix(kanban): delegate_task children never act on the parent's HERMES_KANBAN_TASK  `9977df91`
+- **messaging** fix(messaging): dual-live and cross-profile invariants for the served-profile card  `a09195b1`
+- **desktop** fix(desktop): resolve multiplexed secondary-profile platform state past a stale own record  `d4ff9e85`
+- **messaging** fix(messaging): ignore a served profile's stale own runtime record  `1db13039`
+- **local-runtime** fix(local-runtime): limit archive fix to incomplete downloads  `ea09e2e4`
+- **desktop** fix(desktop): host.navigate fronts the workspace pane on a re-click (#112942)  `f57857ad`
+- **mcp** fix(mcp): the launch profile pruning a server no longer tears down served profiles' same-named connections  `842a736a`
+- **state** fix(state): pin the session-db-unavailable fallbacks to the failing profile  `532b6d1c`
+- **state** fix(state): pin the shared storage-failure action copy to the failing profile  `b6bba97f`
+- **gateway** fix(gateway): pin the remaining persistence-failure commands to the failing profile  `9c093c83`
+- **agent** fix(agent): pin the turn-explainer `hermes` commands to the failing profile  `60945c70`
+- **checkpoints** fix(checkpoints): safe restore must find the ledger under the walked project key  `ce7afd48`
+- **desktop** fix(desktop): route project writes to the live profile in All profiles (#112943)  `6bea68a1`
+- **vault** fix(vault): default detected password managers to enabled (opt-out contract) (#109558)  `948e9706`
+- **desktop** fix(desktop): send Cloudflare Access headers on OAuth login (#110987)  `03b0c794`
+- **desktop** fix(desktop): align timeline idle checks and skip unsaved history work  `657ee57a`
+- **desktop** fix(desktop): show scrollbars only in hovered regions without fading  `586737c5`
+- **desktop** fix(desktop): require explicit tile ownership before overriding rows (F2)  `201c7ea8`
+- **desktop** fix(desktop): reject mismatched runtime owner fallback (F1)  `b78d7f5e`
+- **desktop** fix(desktop): keep active Bot Chat profile when refreshing history  `7a5a9108`
+- **approval** fix(approval): prepare batches for desktop session sources  `42e933b4`
+- **docker** fix(docker): stage2 routing sync removes its own lines when the platform unsets the variable  `6cd25026`
+- **docker** fix(docker): sync the NOUS_PORTAL_BASE_URL alias too; note the runtime-profile gap  `8ae96967`
+- **docker** fix(docker): carry deploy-injected Nous routing overrides into every profile .env  `2d15a72b`
+- **gateway** fix(gateway): the free-tier bootstrap runs inside the launch profile's scope under multiplex  `c622dd53`
+- **gateway** fix(gateway): run the boot warm-up inside the launch profile's scope under multiplex  `a3c4fc84`
+- **update** fix(update): unbind the purged submodule by object identity, not name  `d2f1587a`
+- **update** fix(update): drop the stale submodule attribute in the post-pull purge  `5a942f95`
+- **desktop** fix(desktop): pause thinking preview pin while the reader is scrolled up (#109510)  `741fa6ac`
+- **desktop** fix(desktop): drop overscroll-contain on the thinking body (dead zone + broken chaining)  `651268b8`
+- **desktop** fix(desktop): hand nested transcript scrolling back to the thread  `e82fc060`
+- **desktop** fix(desktop): let readers scroll away from streaming thoughts  `622e9878`
+- **desktop** fix(desktop): keep tooltip wrappers from blocking fan controls  `7b6e0d38`
+- **desktop** fix(desktop): place tooltips around rows and controls consistently  `1b7c9f6f`
+- **desktop** fix(desktop): keep tooltips compact and anchored with exit-only motion  `b8b7d753`
+- **catalog** fix(catalog): align CI checks with the shared action row  `0fc2c59a`
+- **desktop** fix(desktop): show skill install progress and completion in the shared dialog  `25be0982`
+- **desktop** fix(desktop): keep status corners fixed and allow nested scroll handoff  `682a9525`
+- **desktop** fix(desktop): align status rows and share leading dismiss controls  `b7d51a38`
+- **desktop** fix(desktop): transcript directives survive markdown, and the guide keeps its reasoning to itself  `65b622da`
+- **kanban** fix(kanban): worker fingerprint carries a boot witness; an uncaptured fingerprint never authorizes a signal  `db54f544`
+- **serve** fix(serve): launch-profile scope decided at entry; send keeps scope authority; per-reset release  `86097433`
+- **multiplex** fix(multiplex): routed children never inherit launch-only credentials, with or without the multiplex flag  `3fe8e5e4`
+- **gateway** fix(gateway): migrate --multiplex resumes from live state, compensates the whole destructive phase, and refuses an unknown default principal  `7dde7a24`
+- **profiles** fix(profiles): sweep the remaining pre-write mkdirs under the deleted-profile guard  `9085ef96`
+- **utils** fix(utils): atomic writers refuse to resurrect a deleted named profile home  `7f7d229f`
+- fix: guard atomic writers after profile deletion  `91a38622`
+- **profiles** fix(profiles): ship a retry path for the rename identity migration  `81140e45`
+- **profiles** fix(profiles): migrate session/routing identity on profile rename  `4ba717df`
+- **desktop** fix(desktop): keep inline edit placeholders off entered text  `2e320e6d`
+- **desktop** fix(desktop): keep background continuations in one visual response  `3bdd4cc5`
+- **desktop** fix(desktop): keep completed subagents from reviving stale activity  `57d34b14`
+- **tui_gateway** fix(tui_gateway): a spared durable row survives agent.close() too  `dfc40a50`
+- **tui** fix(tui): a gateway-owned session survives agent.close()  `a8b85561`
+- **gateway** fix(gateway): don't end durable session row on automatic Desktop cleanup  `d3a753df`
+- **agent** fix(agent): honor ProviderProfile.create_client() for api_key aux routes  `4cd2eb01`
+- **kanban** fix(kanban): surface the worker's own last output on a dead-worker reap  `3b9c1118`
+- **tui** fix(tui): tolerate agents without session_cwd in _register_session_cwd; adapt stubs to the cwd kwarg  `c2e5c94c`
+- **honcho** fix(honcho): preserve title provenance through upstream peer routing  `94efd221`
+- **honcho** fix(honcho): [verified] preserve seeded branch title provenance  `c2f743f9`
+- **tui** fix(tui): synchronize runtime cwd after workspace moves  `86b36952`
+- **honcho** fix(honcho): preserve deferred routing invariants  `44ba32a5`
+- **honcho** fix(honcho): thread logical cwd through agent construction  `5237cab7`
+- **honcho** fix(honcho): resolve sessions against agent cwd, not process cwd  `231e1c12`
+- **honcho** fix(honcho): don't let auto-generated session titles override sessionStrategy  `3cbdc325`
+- **kanban** fix(kanban): 5xx and timeouts requeue the worker instead of spending its retry budget  `3abeca16`
+- **config** fix(config): drop the "Hermes does not read this" note on config set  `08f36192`
+- **config** fix(config): drop the runtime read of the docs env registry  `fd74bf6f`
+- **config** fix(config): route every UPPER_SNAKE key from `hermes config set` to .env by shape  `f8e8cacf`
+- **plugins** fix(plugins): install refuses to ship an unreadable plugin tree (#111804)  `db25a785`
+- **cli** fix(cli): one-shot `chat -q` exits non-zero on failure; 75 covers upstream 429 and overload  `23863ccb`
+- **approval** fix(approval): undelivered or unanswered CLI approval prompts are not user denials  `2dfb795c`
+- **tui_gateway** fix(tui_gateway): stop the bot mailbox poll from flooding the log on installs that never received a delivery  `3c3ab69a`
+- **cli** fix(cli): allow hermes update without gateway restart for cron (rebased on upstream/main)  `7b27ea36`
+- **cli** fix(cli): one-shot `-q` runs report their outcome in the exit code  `be9d4369`
+- **api-server** fix(api-server): the session stream records its reply text, like /v1/runs does  `bb89074e`
+- **agent** fix(agent): keep moved chat fields as slot placeholders so the wire body is byte-identical; one shared escape hatch  `af7b60e8`
+- **desktop** fix(desktop): classify any 3xx as a redirect and name its Location  `10652c93`
+- **desktop** fix(desktop): send the connection extra gateway headers on remote media streams  `c902f50e`
+- **desktop** fix(desktop): stop calling a 3xx HTML reply a missing endpoint  `47c3683f`
+- **desktop** fix(desktop): keep primary remote gateway extra headers on REST calls  `e65ddf1c`
+- **desktop** fix(desktop): share the profile-switch freshness latch across font settings and MCP tab  `66f9f369`
+- **desktop** fix(desktop): reseed font controls after config refetch  `df832c86`
+- **secrets** fix(secrets): preserve OP_CONFIG_DIR for 1Password  `a457e91a`
+- **tools** fix(tools): bound execute_code's lifecycle probe and keep the terminal guard answerable to /stop  `30b22b54`
+- **tools** fix(tools): pre-exec guard that misses the deadline refuses the command  `c8329202`
+- **tools** fix(tools): bound terminal pre-exec guards  `c1e749d6`
+- fix: drop the dead disabled guard on the lazy MCP banner line  `fff10484`
+- **mcp** fix(mcp): carry the lazy status across the TUI wire, tests and docs  `abdb4027`
+- **mcp** fix(mcp): report lazily registered servers as lazy, not configured or failed  `a17d0409`
+- **mcp** fix(mcp): route /v1/runs MCP trust-gate consent through the run's approval callback  `c001881d`
+- fix: cap, loopback-bypass and share the MCP proxy mounts  `341f8b4d`
+- **mcp** fix(mcp): NO_PROXY for MCP servers uses the repo matcher; trim tests to two invariants  `ee1bfef8`
+- **mcp** fix(mcp): restore proxy support for HTTP/SSE MCP servers  `ceb1aa19`
+- **evals** fix(evals): align Kanban probe with managed MCP overrides  `4521e04a`
+- **codex** fix(codex): target hermes-tools in Kanban worker overrides  `6973f262`
+- fix: share the control-frame opener list and cover [System:/[IMPORTANT:/[PRIOR CONTEXT/[CONTEXT SUMMARY]  `837acdc9`
+- **gateway,desktop** fix(gateway,desktop): one visible relabel for member-quoted control frames on both room surfaces  `9988545a`
+- **desktop** fix(desktop): neutralize member control markers  `498633f4`
+- **gateway** fix(gateway): neutralize member control frames  `925d3448`
+- **mcp** fix(mcp): resolve managed Windows Node launchers (npx.cmd/npm.cmd) for stdio MCP servers  `8e116667`
+- **cli** fix(cli): warn when hermes runs unsupervised as PID 1  `8d5cce4d`
+- fix: validate the skill name before opening its lock; key lock files on a digest  `54ed7cbb`
+- **skills** fix(skills): route the skill_manage lock through the existing skill_usage lock helper  `273986f8`
+- **skills** fix(skills): serialize skill mutations  `0b8b000c`
+- fix: drop dead shutil.which patches in bot-chat delivery tests  `173ccfe2`
+- fix: kanban dispatcher prefers module argv over PATH hermes  `da18c202`
+- **cron** fix(cron): bot-chat delivery launches the running install, not whatever `hermes` PATH names  `f336048b`
+- **gateway** fix(gateway): resolve the update/restart argv from the running install, not PATH  `fea81282`
+- fix: map MrMongstad's GitHub noreply email for contributor credit  `4b1215be`
+- fix: walk a group's __cause__/__context__ in the exception node walker  `55e2986d`
+- **mcp** fix(mcp): bound nested connection error traversal  `030d4caa`
+- fix: recognise fences opened inside list items and blockquotes  `2588c908`
+- **skills** fix(skills): fenced blocks close only on a matching fence; temp-root rm covers `//..` and `..;`  `33292aff`
+- **skills** fix(skills): track CommonMark fence state in prose-link masking exemption  `725713d5`
+- **skills** fix(skills): detect temp-root traversal deletes  `4537869d`
+- **curator** fix(curator): seed shared read-marks store in the LLM consolidation fork  `9b003f20`
+- fix: device OAuth login scans every advertised authorization server  `e133f3f6`
+- fix: redact '/'- and '~'-led secrets whose segments cannot be a path  `60f436b5`
+- fix: keep $(cmd) substitutions readable under strong-key assignments  `34067a7b`
+- **redact** fix(redact): keep $VAR interpolations inside rc path values readable  `93a269c0`
+- **redact** fix(redact): anchor the path/var exemption so leading-/ and $ secrets still mask  `93a0ec70`
+- **buzz** fix(buzz): a clean relay close backs off and publishes retrying like any other disconnect  `7c5296ce`
+- **buzz** fix(buzz): a dead socket ends the WebSocket connection from either side and publishes retrying  `f529986a`
+- **buzz** fix(buzz): recover from uninterruptible websocket reads  `8f1e0ec9`
+- **feishu** fix(feishu): warn once when the empty-allowlist default drops group messages  `8ebc3d42`
+- **gateway** fix(gateway): background completions reach the chat while the launching turn is still running  `704f0b1c`
+- **gateway** fix(gateway): /status keeps the default runtime endpoint and context pin when no /model switch owns the route  `96601953`
+- **gateway** fix(gateway): /status resolves the switched-to model's context window; validator names the missing slug  `de132792`
+- **gateway** fix(gateway): trim planned-restart notice replay to a single write-once marker pass  `fcd4778e`
+- **gateway** fix(gateway): persist and replay pending planned-restart notices  `2ae1630b`
+- **tui** fix(tui): heartbeat ownership follows the gateway's live routing index, not the row source  `490ee160`
+- **tui** fix(tui): session-owner poller leaves gateway-routed /loop ticks to the gateway  `8a86c56d`
+- **gateway** fix(gateway): preserve routed heartbeat ownership  `cf1e7270`
+- **gateway** fix(gateway): key Telegram forum handoffs on the group slot the adapter replies on  `9a41a8be`
+- **slack** fix(slack): resolve a cold channel's workspace from the sole authenticated team  `79bf0be5`
+- **gateway** fix(gateway): key Slack handoffs the way Slack thread replies are keyed  `1f3f45e8`
+- fix: slim the Slack edit-failure log to one line via the existing payload helper  `fb975fb0`
+- **gateway** fix(gateway): improve response and Slack error logs  `62147691`
+- **platforms** fix(platforms): QR fallback tip names Hermes' own uv when it is not on PATH  `6062ad5a`
+- **platforms** fix(platforms): QR fallback tip uses uv against the running interpreter  `c2b93ae5`
+- **platforms** fix(platforms): make QR fallback install tip target the active interpreter  `505b36b7`
+- **telegram** fix(telegram): slim the scheduled typing re-arm and trim its tests to two invariants  `3250020b`
+- **telegram** fix(telegram): schedule the post-send typing re-arm instead of awaiting it  `7c10c249`
+- **web** fix(web): drop dead subprocess import from git router  `8017dfa4`
+- **web** fix(web): gh auth refresh waits out a probe that started before it was asked for  `ac829e8d`
+- **web** fix(web): bound and deduplicate gh auth probes  `46076805`
+- **desktop** fix(desktop): bound background profile hydration retries  `68e48331`
+- **desktop** fix(desktop): refresh archived sessions on external changes  `dbda53b8`
+- **desktop** fix(desktop): stop the voice-live toasts leaking machine strings (#111987)  `c2625370`
+- **tui** fix(tui): track the durable session id in ui state instead of on the replaceable info object  `5a4c3b32`
+- **tui** fix(tui): preserve sessions across gateway reconnects  `583dbb53`
+- **tui_gateway** fix(tui_gateway): refuse a turn whose session has no agent instead of crashing the turn thread  `6f0be923`
+- **tui_gateway** fix(tui_gateway): record why a deferred agent build attached nothing  `a944a4d8`
+- **desktop** fix(desktop): trap focus in boot recovery  `758638c6`
+- **desktop** fix(desktop): honor MCP health snooze after restart  `c9277d25`
+- **desktop** fix(desktop): a push that lands mid-delivery claims its envelope now — lanes outlive the drain  `b469be8c`
+- **desktop** fix(desktop): the bot relay claims every outbox first and delivers per target, not one envelope at a time  `1eb771e2`
+- **tui** fix(tui): drop a pending key-burst flush when an external value replaces the draft  `81805a97`
+- **tui** fix(tui): keep stale own-echo flushes from rewinding composer keystrokes  `c9fe50f3`
+- **desktop** fix(desktop): refresh stale 4px scrollbar-width comments to 8px  `a22c7317`
+- **desktop** fix(desktop): widen the portaled-menu scrollbar to match the app theme  `00c66225`
+- **desktop** fix(desktop): widen themed scrollbars from 0.25rem to 0.5rem  `22dc293f`
+- **tools** fix(tools): tolerate an untraversable HOME when probing ~/.local/bin  `be67e1d3`
+- **tools** fix(tools): fold ~/.local/bin into the POSIX PATH completion siblings, tests + docs  `43e7e830`
+- **tools** fix(tools): include user local bin in POSIX PATH  `c68e306e`
+- **desktop** fix(desktop): do not prune the desktop half of a package folder the app cannot read  `b74f158b`
+- **plugins** fix(plugins): one unreadable plugin child no longer aborts iter_plugin_dirs or memory-provider discovery  `e3a90079`
+- **desktop** fix(desktop): reconcile of unified plugin halves survives one unreadable package  `b915405f`
+- **plugins** fix(plugins): one unreadable plugin dir no longer aborts loader or list discovery  `22716fab`
+- **dashboard** fix(dashboard): skip unreadable plugin manifests  `9af62e7e`
+- **tests** fix(tests): select launchd restart tests on macOS  `8624e632`
+- fix: describe protected_instruction_files as an always-ask approval gate  `4179c5a9`
+- **desktop** fix(desktop): make the zsh probe test legs visible and run them on CI  `1cfa892d`
+- **desktop** fix(desktop): support zsh SSH probe watchdogs  `1267d7fd`
+- **desktop** fix(desktop): blank-line padding in the foreground-dial test  `d30c05be`
+- **desktop** fix(desktop): Vault settings tab dials its scoped profile foreground  `5eb0ed45`
+- **desktop** fix(desktop): one scoped-dial priority helper; Capabilities selector dials foreground too  `d3ba5b30`
+- **desktop** fix(desktop): prioritize scoped settings backend dials  `d6ff2777`
+- **desktop** fix(desktop): keep the original boot error when post-spawn cleanup cannot prove ownership  `21349500`
+- **desktop** fix(desktop): a lost SSH probe answer no longer kills or orphans a live remote backend  `e368c01e`
+- **desktop** fix(desktop): keep cookie partitions colon-free so Windows jars work  `401a7d08`
+- **approval** fix(approval): session teardown and interrupted leaders withdraw the prompt instead of denying it  `1e2cb579`
+- **approval** fix(approval): withdrawn gateway approval prompts no longer read as a user deny  `63322163`
+- **bot-mode** fix(bot-mode): a pending command approval is not a failed DM delivery  `54d7f755`
+- **tools** fix(tools): keep async delegation results past a failed durable write and never prune live records  `27e3fc51`
+- **web** fix(web): keyless MCP honours SSE CR terminators and declared charsets  `4b008425`
+- **web** fix(web): keyless Exa decodes its SSE body as UTF-8 so CJK searches work  `28cdd728`
+- **web** fix(web): rescue eligibility asks the provider whether the ring was walked  `80f76edf`
+- **web** fix(web): rescue failed Nous gateway searches  `911eea56`
+- **web** fix(web): key extract cache on metadata.sourceURL too, pin redirect case  `45a4db22`
+- **web** fix(web): cache extracts by returned URL  `ffd02f37`
+- **agent** fix(agent): concurrent worker survives a dict error result  `1d14418e`
+- **gateway** fix(gateway): bounded redacted result preview on tool.completed run events  `339fa6d9`
+- **gateway** fix(gateway): report structured tool failures in run events  `c89209d5`
+- **tools** fix(tools): support daemon pool workers on Python 3.14  `c9fa1913`
+- **delegation** fix(delegation): run the schema-retry turn in the delegated-child context  `e002cdb9`
+- **kanban** fix(kanban): scope the stop nudge to the dispatcher-owned worker  `2bd0f1c5`
+- **contributors** fix(contributors): map dresvyanskiydenis@gmail.com to DresvyanskiyDenis  `fa28f432`
+- **delegate** fix(delegate): composite parents can grant their included toolsets to children  `b121a024`
+- **delegate** fix(delegate): retain composite child toolsets  `3d4c4cc2`
+- **tools** fix(tools): quiet expected unavailable toolsets  `ae5666f7`
+- **agent** fix(agent): log the serialized size of multimodal results in the concurrent executor  `69903717`
+- **plugins** fix(plugins): validate accepts model-provider plugins and mirrors the real PluginContext surface  `5f9042be`
+- **tools** fix(tools): keep an empty `required: []` in sanitized tool schemas  `decf8e3f`
+- **tools** fix(tools): persist the kill outcome when the reader thread finalises first  `0724a6a0`
+- **web** fix(web): clear stale banner when hidden-tab reconnect is deferred  `0dba105b`
+- **web** fix(web): release xterm WebGL contexts on reconnect instead of dropping the renderer  `115706aa`
+- **web** fix(web): keep chat PTY connections alive  `b23c4fad`
+- **cli** fix(cli): accept native npm paths under mnt  `addcf7d8`
+- **kanban** fix(kanban): give a finished worker a grace window before the terminal reaper signals it  `bd638662`
+- **kanban** fix(kanban): reap workers that outlive their finished run  `aa5817d9`
+- **kanban** fix(kanban): BLOB cells in comment/event/run rows degrade like a BLOB task body  `4465b8d7`
+- **kanban** fix(kanban): one undecodable task field no longer breaks the whole board listing  `a647c6cb`
+- **kanban** fix(kanban): request_review shares complete_task's live-worker fence  `85d4415b`
+- **kanban** fix(kanban): live-claim guard keys on a live worker process, not on any claim  `72916de3`
+- **kanban** fix(kanban): claim-less complete no longer closes a live worker's run  `09592243`
+- **kanban** fix(kanban): text dispatch output and both "dispatcher stuck" warnings name the hold reason  `c7f4bc5b`
+- **kanban** fix(kanban): `dispatch --json` reports respawn_guarded and other suppression reasons  `ec64ec0d`
+- **kanban** fix(kanban): dashboard estimate calls declare a relay-affinity key too  `f7ea3948`
+- **kanban** fix(kanban): headless specify/decompose aux calls carry a relay session key  `058e620b`
+- **skills** fix(skills): honor profile-scoped readiness secrets  `0aec64c8`
+- **cron** fix(cron): an unreadable cron toolset restriction fails the run instead of granting every tool  `9013fcdc`
+- **cron** fix(cron): a due slot skipped as already completed is logged, not silent  `f7d2bb95`
+- **cron** fix(cron): sanitize monitor runtime prompt data  `e7cb478d`
+- **update** fix(update): Desktop-owned serve no longer fails the update or holds fleet_restart_pending  `7c6b8c7a`
+- **gateway** fix(gateway): in-container gateway start registers a missing s6 slot  `9c36cafc`
+- **desktop** fix(desktop): an exit without a window reveal no longer writes hermes.desktop  `49b9bbb6`
+- **desktop** fix(desktop): app-grid launches write hermes.desktop only after the window is on screen  `169c48fa`
+- **cli** fix(cli): name the dashboard kill grace and pin it against the lifespan teardown  `f93d33f9`
+- **cli** fix(cli): increase dashboard kill timeout to prevent PTY child leaks and WAL corruption  `83f1b883`
+- **config** fix(config): treat empty-dict DEFAULT_CONFIG sections as open containers in the typo gate  `c1115a71`
+- **config** fix(config): refuse an unknown path under a known section before writing  `0e63a1bc`
+- **config** fix(config): route every registered env setting through .env from config set/get/unset  `70e4938c`
+- **config** fix(config): route platform setup values through .env  `49bbc738`
+- **update** fix(update): sudo-prefix the manual kickstart hint for a LaunchDaemon run as a user  `de93cb05`
+- **dashboard** fix(dashboard): --stop exits 0 when a launchd KeepAlive job respawns the backend  `469e5b6a`
+- **update** fix(update): attribute an earlier --no-open respawn to its launchd job  `29979b8c`
+- **doctor** fix(doctor): warn when database.journal_mode=delete never applied to a WAL database  `b4a69581`
+- **update** fix(update): verify the launchd job comes back on a fresh PID, follow wrapper plists, warn on --stop  `efc2b8e2`
+- **update** fix(update): a launchd-supervised backend restarts through launchd, never as a detached respawn  `99b727bd`
+- **update** fix(update): one receipt entry per repair outcome; reason no longer printed twice  `a1b997be`
+- **update** fix(update): record SQLite runtime repair outcomes in receipts  `2f3d0b5c`
+- **update** fix(update): report why the candidate runtime sync failed  `882c59ee`
+- fix: setup gateway skips the standalone service for a multiplex-served profile  `71aa0d63`
+- **gateway** fix(gateway): skip served profile setup install  `edca3c26`
+- **worktree** fix(worktree): judge no-remote repos against the local trunk instead of reaping everything  `0a3e7929`
+- **worktree** fix(worktree): preserve commits without remote refs  `1039c15a`
+- **profiles** fix(profiles): share the runtime-tree trio with backup via hermes_constants  `cf94a293`
+- **profiles** fix(profiles): --clone-all skips the local-models runtime trees (models/, runtimes/, node/)  `f11be897`
+- **config** fix(config): validate the timezone key so a bad IANA name is reported, not silently ignored  `7af3515c`
+- fix: sessions list prints a footer when --limit cuts the listing  `536a07be`
+- **stt** fix(stt): consume lazy whisper segments inside the CUDA→CPU retry guard  `afe9e25c`
+- **state** fix(state): tolerate Windows resource stubs  `576e7c9c`
+- **checkpoints** fix(checkpoints): clear-legacy trims to two real-path tests, aligns failure line with the log  `d1bd778a`
+- **checkpoints** fix(checkpoints): report legacy archive deletion failures  `065bc918`
+- **agent** fix(agent): update zai vision fallback  `c93f2e1d`
+- **catalog** fix(catalog): apply the opencode free exclusion on the live-first keyed Zen/Go picker  `9aaa7136`
+- **catalog** fix(catalog): keep the delisted deepseek-v4-flash-free out of the live OpenCode picker too  `bb5d745a`
+- **catalog** fix(catalog): remove delisted opencode free model  `4766cb2c`
+- **sessions** fix(sessions): token-accounting guard stamps the agent's real source; trim salvage  `cfd752e6`
+- **sessions** fix(sessions): keep a stream-interrupt recovery inside the original session  `a7dde8a5`
+- fix: trim DeepInfra reasoning salvage to the invariant and document it  `b027a465`
+- **providers** fix(providers): send DeepInfra reasoning effort  `4fe3d288`
+- **agent** fix(agent): file-mutation footer states failed edits, not "files were NOT modified"  `ee49b7d2`
+- **agent,gateway** fix(agent,gateway): report interrupted and unfinished turns truthfully  `0a6c7b7f`
+- fix: stream retry no longer replays the old model on the switched-to provider  `66c94408`
+- **pricing** fix(pricing): custom-provider /models prices already per-million are no longer inflated 1e6x  `d54ae026`
+- **aux** fix(aux): clamp extra_body.reasoning effort too so auxiliary.<task>.reasoning_effort ultra never reaches the wire  `5435ac8c`
+- fix: clamp aux reasoning effort once before profile projection  `9e45a904`
+- **agent** fix(agent): clamp auxiliary ultra reasoning effort  `c02db640`
+- **aux** fix(aux): bare-custom AuthError yields no custom endpoint instead of a stale env OPENAI_BASE_URL  `f55d4f67`
+- **runtime** fix(runtime): keep the bare-custom fail-fast off local aliases  `a9fabe43`
+- **runtime** fix(runtime): bare-custom fail-fast keys on the dead runtime shape, covers custom aliases  `e9a54c48`
+- **runtime** fix(runtime): fail fast for bare custom credentials  `879d65ec`
+- **agent** fix(agent): hint-preview truncation log names the real remedy; invariant tests  `c1bbcf97`
+- **agent** fix(agent): suppress subdirectory hint truncation warning  `fc7cbc7d`
+- **gateway** fix(gateway): defer context files until active turn  `87661da3`
+- fix: trim hygiene bound salvage to two invariant tests and document the knob  `9b304290`
+- **gateway** fix(gateway): bound the model payload when hygiene has not landed (#111988)  `5ae06d38`
+- **docs** fix(docs): document the 10 s SSE keepalive comment for custom parsers  `c5c71ea1`
+- **api-server** fix(api-server): /v1/runs events stream shares the SSE keepalive cadence; trim tests  `8e00832d`
+- **gateway** fix(gateway): keep SSE active during preflight  `67a959ac`
+- **agent** fix(agent): contentless SSE keepalive frames retry without streaming  `71281fb2`
+- **local-runtime** fix(local-runtime): reject incomplete downloads and repair corrupt cache  `745e3264`
+- **update** fix(update): stop the fleet settle poll early when the restarted unit is dead  `f81c33cb`
+- **update** fix(update): wait for fleet state publication after supervised restart  `c99fee4e`
+- **desktop** fix(desktop): route tile title heals when its plugin route registers late  `c91770b2`
+- **desktop** fix(desktop): remembered plugin page survives boot when the session list beats disk plugins  `212f6610`
+- **gateway** fix(gateway): setup.status / setup.runtime_check scope the launch profile under multiplex  `5910de20`
+- **tui** fix(tui): setup.runtime_check resolves like session creation and reports the model  `6f975b76`
+- **desktop** fix(desktop): Tab Strip → Auto copy names the other-zone exception  `05e82b74`
+- **desktop** fix(desktop): a lone chat keeps its tab strip while another chat zone is open  `36010d0b`
+- **desktop** fix(desktop): late-contributed keybind actions reach the Keybinds settings map  `eaef5237`
+- **desktop** fix(desktop): feed the ROUTES_AREA subscription snapshot into contributedRoutes (#109063)  `6fc7032a`
+- **credential-pool** fix(credential-pool): hydrate on-disk env rows on the openrouter branch too  `423bc7e4`
+- **credential-pool** fix(credential-pool): seed env-source entries not in registry tuple  `23afade6`
+- fix: checkpoint store gc never runs inside a tool call or gateway startup  `804707be`
+- **desktop** fix(desktop): keep code geometry stable while highlighting loads  `673d3309`
+- **desktop** fix(desktop): preserve reading intent across history and pane changes  `3ccad12c`
+- **desktop** fix(desktop): retain scoped transcript paint through background hydration  `76f9bf94`
+- **state** fix(state): bound legacy transcript hydration memory  `43bd5db4`
+- **mcp** fix(mcp): Figma OAuth login completes despite the omitted iss parameter  `d84ece48`
+- **update** fix(update): the purge keeps hermes_constants; it is refreshed in place instead  `5341f135`
+- **cli** fix(cli): purge every top-level checkout module, not just five packages  `29758a4e`
+- **desktop** fix(desktop): anchor the first-paint backfill so long sessions stop lurching (#99920)  `69fd61b0`
+- **desktop** fix(desktop): drag gateway/profile groups by their header, not only the hidden handle  `6bc3628c`
+- **cli** fix(cli): import file_signature in TUI run-state init  `3d2842d8`
+- **free-tier** fix(free-tier): classify_mint_exception keeps an uncoded AuthError's wait hint  `95dba8d9`
+- **free-tier** fix(free-tier): setup.ready carries the failure block flat, the shape setup.status already spreads  `658f3191`
+- **classifier** fix(classifier): a welcome-host 403 naming the free tier itself is the tier refusing, not a billing wall  `683ca440`
+- **free-tier** fix(free-tier): review round 2 — route-gate the allowance verdict, keep policy/billing 403s, pool the provision RPC, guard the retry race  `2a94ca80`
+- **free-tier** fix(free-tier): the desktop card body leaves the "To sign in" tail off; the button is the door  `2e3b8ecc`
+- **free-tier** fix(free-tier): the desktop renders a free-tier refusal as its own card, not an OAuth re-login  `16def7b8`
+- **free-tier** fix(free-tier): review follow-ups — read the classifier's context, never replace a locked identity, re-inventory on retry  `59fad62a`
+- **cli** fix(cli): preserve image attachments when re-queueing interrupt messages  `40b22806`
+- fix: gate the stalled-redraw close on socket identity, not session.attached  `64aeb5dd`
+- **dashboard** fix(dashboard): skip the stalled-input close when attach detached itself  `7a1d2785`
+- **pty** fix(pty): handle replay send failures cleanly  `941d8b59`
+- **pty** fix(pty): recover sessions after socket send failures  `6d622d8e`
+- **discord** fix(discord): slash registration and /skill refresh scan the catalog off the event loop  `9c311038`
+- **gateway** fix(gateway): skill-slash fallthrough and the Telegram inline picker run off the event loop  `ab782a76`
+- **gateway** fix(gateway): known slash commands never pay the unavailable-skill scan  `88c04e65`
+- **telegram** fix(telegram): hop only the menu build off the loop; one invariant test covers both menu sites  `660d4b8d`
+- **telegram** fix(telegram): build command menu off event loop  `0a5846d3`
+- fix: unlink the dm plaintext file too once a live delivery settled  `14bd358f`
+- **bot-mode** fix(bot-mode): live-delivery intents are swept, and dropped once the owner settled  `1238dbc0`
+- **desktop** fix(desktop): restore the last-used profile when the primary local descriptor is profile-less  `825324fd`
+- **web** fix(web): jump the iOS viewport to the chat composer when the keyboard opens  `e7281339`
+- **tui** fix(tui): skip the session-store title read when the Bot Chat hint is set  `b3feb88a`
+- **tui** fix(tui): hold back Bot Chat stream deltas that could still be a silence marker  `04e3e89d`
+- **bot-mode** fix(bot-mode): Bot Chat identity + one-shot DM transport apply the silence rule; trim tests  `4eb69cbc`
+- **tui** fix(tui): suppress Bot Mode silence markers  `50a834fa`
+- fix: widen the remaining config.yaml stat caches to file_signature  `182ec5c2`
+- fix: stat signatures cover inode + ctime everywhere config identity is cached  `a1e7f74e`
+- **config** fix(config): detect file replacements in stat-based cache signatures  `b797e9d7`
+- fix: ignore every cron SQLite store and per-launch marker on flat installs  `97d3d75f`
+- **update** fix(update): also ignore backups/ and the vault on flat installs; document the flat-install rule  `a172d76f`
+- fix: derive the lost-bus check from the env the scoped worker was spawned with  `14ebd48c`
+- **cron** fix(cron): a scoped worker whose user bus vanished names the cause and re-probes  `a313a211`
+- **tools** fix(tools): revalidate systemd scope availability  `c143ec4d`
+- fix: linear gutter anchors, cat -n/grep-context gutters, keep rc path references readable  `979576d9`
+- **redact** fix(redact): config.yaml backup copies under HERMES_HOME are secret-bearing too  `f5907fd0`
+- **redact** fix(redact): mask assignments in secret-bearing file reads  `d205cef4`
+- **kanban** fix(kanban): gate create-with-parents like link; archived parent is terminal  `6f242455`
+- **kanban** fix(kanban): dashboard link reports the gate; docs; trim to two invariant tests  `89ef1452`
+- **kanban** fix(kanban): surface the link-time demotion of a ready child to todo  `35b1609f`
+- fix: merge shipped skill categories instead of replacing them on update  `fa915784`
+- **distribution** fix(distribution): refuse symlinked targets before the first write  `d4fa3730`
+- **distribution** fix(distribution): refuse to replace a symlinked owned container  `cfc11f21`
+- **distribution** fix(distribution): preserve skill roots safely  `a4f0a5e0`
+- **distribution** fix(distribution): preserve profile skills on update  `5029a382`
+- fix: docs no longer claim project .env files are write-denied  `00bb2c35`
+- **security** fix(security): write-deny HERMES_HOME secret stores, keep control files writable  `1c0d95ba`
+- **security** fix(security): deny writes to read-blocked Hermes credential stores  `e7cd1848`
+- fix: exempt the Matrix quote block from the mention strip only on real replies  `060e2a42`
+- **gateway** fix(gateway): keep the Matrix reply fallback pill out of the mention strip  `0813a227`
+- **agent** fix(agent): classify NVIDIA NIM serde rejection of list-type tool content  `0968fa26`
+- **agent** fix(agent): recover opencode zen encrypted replay  `7d03ea3a`
+- fix: bypass the proxy on loopback HTTP CDP discovery and keep NO_PROXY=* intact  `95987fb8`
+- **browser** fix(browser): one loopback proxy-bypass helper covers child envs and in-process CDP dials  `8f6f92d9`
+- **browser** fix(browser): bypass proxies for loopback hosts in browser child envs  `00a68a87`
+- fix: cap kanban card titles so an overlong card still names its worker  `1b7355d7`
+- **kanban** fix(kanban): read the worker's card title from the board instead of a new env var  `c12a3397`
+- **kanban** fix(kanban): name worker sessions from task title  `56555f88`
+- **cron** fix(cron): let a skewed early fire own its armed slot  `fcbdcdb4`
+- **cron** fix(cron): reject impossible occurrence completions  `82ae78cc`
+- **cron** fix(cron): manual fires before the next occurrence must not consume it  `cd685a22`
+- **kanban** fix(kanban): automatic stale-claim reclaims count toward the failure breaker  `738d63a3`
+- **kanban** fix(kanban): stale-claim reclaim advances consecutive_failures  `48bcdf94`
+- **agent** fix(agent): skip corrupted Gemini thought signatures  `af4a3eba`
+- **state** fix(state): preserve replies after consecutive review harness prompts  `6a886240`
+- **gateway** fix(gateway): agent-cache pressure valve measures the cgroup's anon charge, not just the gateway's own RSS  `7b441061`
+- **agent** fix(agent): steer briefing must match standalone-user-row delivery (#110979)  `645b9526`
+- **gateway** fix(gateway): the launch profile's webhooks register at startup under multiplexing  `a8a2faab`
+- **gateway** fix(gateway): agent-cache eviction commits memory under the OWNING profile, not the requesting one  `571a4e0c`
+- **desktop** fix(desktop): keep createdBy=learn through the starmap share code  `d7350973`
+- **journey** fix(journey): show foreground-created skills in /journey via learn provenance marker  `7d292af8`
+- **stt** fix(stt): treat a partial whisper cache as a cache miss  `8ecc3dd7`
+- **stt** fix(stt): tolerate a missing huggingface_hub when checking the whisper cache  `0bb460b4`
+- **stt** fix(stt): only rewrap Hub/network failures on the whisper download path  `489ad839`
+- **stt** fix(stt): prefer cached local whisper models  `ebb6dc6e`
+- **file-sync** fix(file-sync): sweep stale sync-back dirs too and tighten the stale window to 6 h  `bae9f8ab`
+- **file-sync** fix(file-sync): clean stale sync-back archives  `6a03d5a9`
+- **moa** fix(moa): reject non-finite temperatures before provider requests  `0c492361`
+- **moa** fix(moa): tolerate overflowing fanout configuration  `367bbc37`
+- **approval** fix(approval): honor pattern-key allowlists when unattended  `05e7e891`
+- **local_runtime** fix(local_runtime): keep the idle clock across failed telemetry probes  `b83ee209`
+- **skills** fix(skills): ignore package-owned legacy markdown  `7851d1d3`
+- **local-runtime** fix(local-runtime): spawn llama-server with --no-ui  `b039e679`
+- fix: keep the feishu dedup scratch dir open for the whole concurrency test  `d0939257`
+- **security** fix(security): secure HERMES_HOME when only an ancestor path is a symlink  `56d2438a`
+- fix: relocate pytest basetemp to a sibling of the native home, not the repo  `1e1e5c0f`
+- fix: route component log files added after profile routing is already on  `f8eb2912`
+- **logging** fix(logging): a second Hermes home in one process gets a routed log, not an unfiltered handler  `c7a942e8`
+- **compression** fix(compression): announce the compacting status before the lazy feasibility probe  `d6d9e67f`
+- fix: clear the relay roster per sole connection, not once per below-two regime  `ee6fb0ed`
+- **desktop** fix(desktop): an empty relay route list does not spend the one roster clear  `c02a2693`
+- **desktop** fix(desktop): the relay clears the remaining gateways' remote roster when the peer set drops below two  `8b091e53`
+- fix: remote probe watchdog kills the probe's process group, not just its child  `33cd423d`
+- **desktop** fix(desktop): kill hung remote SSH probes via a POSIX remote watchdog  `5724cb30`
+- **desktop** fix(desktop): keep the code-block copy control clear of the scrollbar  `6e04bf8e`
+- **desktop** fix(desktop): expose Codex compression auto-raise  `fccdcdae`
+- **desktop** fix(desktop): refetch vault sources after closed-to-open remount  `ec5c9759`
+- **desktop** fix(desktop): refresh vault source detection on mount  `c89a4404`
+- **desktop** fix(desktop): drop unsaved credential edits when the settings target changes  `6201a823`
+- **desktop** fix(desktop): read the live composer draft for the recall guard  `bc62b270`
+- **desktop** fix(desktop): honor show all sessions in projects  `38a4e909`
+- fix: classify .env-routed keys, hyphenated headers and ${VAR} placeholders in config get  `6f69d170`
+- **config** fix(config): `hermes config get` masks credentials on every path; `--raw` opts out  `a9a8a3fa`
+- fix: warn about existing WAL on cross-VM fs on the vulnerable-SQLite path too  `2034126e`
+- **state** fix(state): warn when an existing WAL state.db sits on a virtiofs/9p mount; doctor + docs  `60d94fd8`
+- **state** fix(state): avoid display metadata backfill rewrites  `7e4180d1`
+- fix: compare legacy reset children against the parent's started_at, not ended_at  `5ffdf823`
+- **sessions** fix(sessions): preserve branch lineage on reopen  `a5aa2379`
+- fix: derive suggest globs from the raw command, class-key when redaction hits them  `1f08821b`
+- **cli** fix(cli): hoist redactor import, trim suggest redaction tests, document masking  `c60fab35`
+- **cli** fix(cli): mask credentials in approvals suggest proposals  `a9db7ed5`
+- fix: key the check_fn cache by the same served-profile predicate as the MCP registry scope  `5117e3b3`
+- **mcp** fix(mcp): served profiles keep their own MCP connections without the multiplex flag  `57c4e1d9`
+- fix: skip Bitwarden URIs marked match=Never when collecting fill origins  `8a299650`
+- **vault** fix(vault): bind manager logins to every saved web origin  `5fff41e5`
+- **mcp** fix(mcp): repair schema-map keywords per-entry in _repair_object_shape  `798cc60f`
+- **mcp** fix(mcp): refresh expired cold-loaded OAuth tokens  `20d80bb3`
+- fix: refresh the credential that 401'd on the Codex /usage retry  `417b707f`
+- **auth** fix(auth): retry Codex usage after 401  `2a6a9b04`
+- fix: honour HERMES_CODEX_BASE_URL on the raw Codex client too  `9336fb11`
+- **aux** fix(aux): read HERMES_CODEX_BASE_URL through the profile secret scope  `70ff4863`
+- **codex** fix(codex): honor HERMES_CODEX_BASE_URL on pooled and aux codex client resolution  `b62bb2a3`
+- **auth** fix(auth): avoid auto provider resolution recursion  `7e066256`
+- fix: keep the OpenCode keyless Authorization blank on the async aux client  `d4e0df1e`
+- **agent** fix(agent): keyless OpenCode placeholder blanks Authorization under the paid profile too  `e77060e0`
+- fix: key the ACP named-provider swap on is_user_defined, not slug-name collision  `21d28dfe`
+- **acp** fix(acp): deduplicate configured provider model ids  `dcaf3468`
+- **desktop** fix(desktop): local-runtime job poller no longer throws after the test env tears down  `9b5f5a0c`
+- **codex** fix(codex): uniquify replayed call_ids that recur across turns  `1610fe8e`
+- fix: surface the narrowed error when the aux recovery ladder is exhausted  `27faf9ce`
+- **agent** fix(agent): fall through to the configured chain when an auth-refresh retry fails  `64a46871`
+- fix: key the routed vision-tool veto on is_routing_aggregator  `d4863cf2`
+- **vision** fix(vision): honor routed tool message veto  `04060eae`
+- **copilot** fix(copilot): pass two-slash custom-model ids through unchanged  `c008cfe9`
+- **auxiliary** fix(auxiliary): retry without response_format when a provider rejects the object-form json_schema by shape  `9c7de107`
+- **auxiliary** fix(auxiliary): recognise Bedrock's "doesn't support"/"is deprecated" sampling-param rejections  `9219f56e`
+- **bedrock** fix(bedrock): omit sampling params for xAI Grok on Converse  `796aeede`
+- **profile** fix(profile): lazy manifest-name import; --sync-imports notice under --clone-all too  `5dc5a9f3`
+- **gateway** fix(gateway): SIGUSR2 dumps thread stacks without killing the gateway  `4da4cc5c`
+- **whatsapp** fix(whatsapp): normalize device-qualified ids in every id comparison, bridge and Python  `8a3cded0`
+- **whatsapp** fix(whatsapp): strip :<device> suffix in normalizeWhatsAppId  `6bf10326`
+- **slack** fix(slack): preserve allowed bot posts and canvas mentions  `90aa5e35`
+- **slack** fix(slack): gate inbound turns on a conversational-subtype allowlist  `cac288a0`
+- fix: retire clarify cards on an explicit no-answer signal, not the '[' prefix  `6a22abe5`
+- **gateway** fix(gateway): retire native clarify cards on timeout, reset and prose cancel  `71cac942`
+- **gateway** fix(gateway): retire Slack clarify cards on prose cancellation  `a41187e1`
+- **telegram** fix(telegram): trim the liveness heartbeat, fix the polling error-callback log lines  `1847ad28`
+- **telegram** fix(telegram): name empty-string transport errors in adapter log lines  `ff307aea`
+- **telegram** fix(telegram): expose polling transport recovery  `e1e943a9`
+- fix: propagate caller contextvars into the Feishu adapter-owned executor  `2298dc81`
+- **feishu** fix(feishu): thread-reply lookup uses the adapter-owned pool too  `b447554c`
+- **gateway** fix(gateway): keep Feishu websocket off default executor  `5fbef868`
+- **feishu** fix(feishu): run the inbound dedup flush on the adapter-owned pool  `fa2c7274`
+- fix: make the allow_all_users env bridge own what it writes and re-derive it on restart  `08bb2273`
+- **gateway** fix(gateway): honour allow_all_users from config.yaml by bridging it to GATEWAY_ALLOW_ALL_USERS  `5083d5f7`
+- **gateway** fix(gateway): declare gateway.allow_all_users in DEFAULT_CONFIG  `d728f419`
+- **photon** fix(photon): preserve Unicode NDJSON separators  `992b517f`
+- **gateway** fix(gateway): skip duplicate-send diagnostic for interim-only stream consumers (#105341)  `b065e861`
+- fix: de-punctuate autonomous silence candidates like the interactive rule  `cc6b6aa8`
+- **cron** fix(cron): the silence instruction names [SILENT] as an untranslatable ASCII token; docs + trim tests  `71d229f5`
+- **gateway** fix(gateway): a translated intentional-silence sentinel is still silence  `623eb48f`
+- fix: exempt the hidden canonical Bot Chat from the idle auto-archive sweep  `4db4650a`
+- **state** fix(state): release archived Bot Chat title  `b6207cb5`
+- fix: inline MEDIA data URLs on the API server despite a terminal <|eos|> sentinel  `13f908f1`
+- **gateway** fix(gateway): a leaked terminal <|eos|> sentinel no longer hides the MEDIA attachment  `2bade67c`
+- **auth** fix(auth): a Portal-returned inference host is accepted only when the operator named it  `569b4242`
+- **auth** fix(auth): routing overrides fail closed when a multi-profile call has no secret scope  `aaed2a23`
+- **telegram** fix(telegram): allow opt-in CJK rich messages  `fa12d755`
+- fix: record a known exit status when the reader's wait() raises  `0ea0c53e`
+- **process** fix(process): reap children after early stdout EOF  `1bfbeff4`
+- **gateway** fix(gateway): drop the redundant whole-block lease; one invariant test per atom; document the watchdog env vars  `b5310236`
+- **gateway** fix(gateway): persist startup watchdog stacks before stderr  `bcab2dd6`
+- **gateway** fix(gateway): hold startup-watchdog progress leases across state.db auto-maintenance  `cef69276`
+- fix: keep the carried pre-admission input across the waited lease reload  `53587802`
+- **gateway** fix(gateway): retain pre-admission interrupted input  `24ae31f7`
+- fix: match find/read-tool dynamic words only as unquoted command arguments  `9efa5007`
+- fix: gate dynamic shell words in approval checks  `06a3a987`
+- fix: NT-namespace guard fires before every sibling resolve (checkpoint, ACP bridge, @file:)  `bc3df8a4`
+- fix: guard search_tool's root and trim the NT-namespace tests to two invariants  `07e6461d`
+- **cron** fix(cron): "Script not found" says scripts are per-profile and how to fix it  `248938b4`
+- **bot-mode** fix(bot-mode): an empty member seat surfaces an error instead of swallowing the group send  `9c689bee`
+- **cron** fix(cron): validate script existence and fix profile-aware path in error messages  `7ecbe50d`
+- fix: count service-supervised gateways as running for per-profile cold-start  `27df47af`
+- **update-windows** fix(update-windows): per-profile cold-start runs after the relaunch and fails loud  `8fbae281`
+- **update-windows** fix(update-windows): per-profile cold-start probes its own home and runs after the active spawn  `c728e658`
+- **update-windows** fix(update-windows): cold-start every dead-but-attested profile, not only when nothing runs  `c8686224`
+- fix: restore TestBridgeDispatch, trim #39797 tests, drop dead execution_guidance_text param  `ef44c1b7`
+- **agent** fix(agent): execution guidance and browser hints drop the web_search stripper; tests assert the invariant  `ac63d0ee`
+- **agent** fix(agent): respect permitted web retrieval guidance  `ccf380f6`
+- fix: release the profile MCP stderr handle before rename too  `6dc6c92e`
+- **mcp** fix(mcp): release profile stderr handles before deletion  `68dea35e`
+- **gateway** fix(gateway): 401 hint cites hermes auth add, not the removed hermes login  `7c6b29e1`
+- **ux** fix(ux): plain-language, actionable user-facing messages (core)  `23036e20`
+- **linux** fix(linux): converge the desktop entry Exec on the durable wrapper  `a2a7cf92`
+- **logging** fix(logging): unavailable-log notice is re-armed by a successful write, not by open()  `f876ba60`
+- **updater** fix(updater): a probe that cannot be spawned stays advisory instead of failing the update  `37e4cd5f`
+- **logging** fix(logging): name an unavailable log file once instead of silently dropping records  `b847c1ea`
+- **updater** fix(updater): import probe children never resolve external secret sources  `da1fb702`
+- **updater** fix(updater): bound import probe teardown  `e74c29de`
+- **update** fix(update): keep the config-migration purge and reload inside the fail-open guard  `8e0b1a2e`
+- **update** fix(update): purge stale Hermes modules before post-pull config migrations  `24a623e5`
+- **update** fix(update): reload the cached tools_config before post-pull migrations  `91a3ab4c`
+- **cli** fix(cli): retire the 0.0 monotonic sentinel in the remaining input-mode throttles  `e43f2f68`
+- **cli** fix(cli): first repaint no longer swallowed when monotonic clock is small  `eab377a4`
+- **webhook** fix(webhook): validate the coalesce block on hot-reloaded dynamic routes  `6467172d`
+- **dashboard** fix(dashboard): accept command-scoped NOPASSWD sudo for system gateway actions  `b2577df8`
+- **dashboard** fix(dashboard): share the fleet's sudo posture; trim to two invariant tests  `05fb8796`
+- **dashboard** fix(dashboard): elevate system-scope gateway lifecycle actions (#110820)  `eaf700c6`
+- fix: hand back a custom-unit gateway even when identify answers systemd/launchd  `a3d3daf7`
+- **cli** fix(cli): keep the supervisor the sole restart owner on both handback branches  `9ef2dd0b`
+- **cli** fix(cli): hand externally-supervised gateways back to their supervisor on restart  `8c286af7`
+- fix: keep fleet-restart marker while a receipt-owed gateway is down  `127214a6`
+- **update** fix(update): discharge fleet_restart_pending when the fleet provably serves expected_sha  `8130274b`
+- **update** fix(update): drop untrusted fleet fallback version  `dab6fe29`
+- **update** fix(update): verify fleet state fallback gateway identity  `0eaa5167`
+- **skills** fix(skills): auteur follows the modern section order and routes assets through image_generate  `7eae49c4`
+- **skills** fix(skills): auteur — proper upstream attribution, windows platform, trimmed tests  `54255f1e`
+- **nix** fix(nix): container mode does not linger the host service user; document the cron/linger dependency  `ea5757a8`
+- **nix** fix(nix): linger the service uid so cron can create its worker scope  `ec30eefe`
+- **auth** fix(auth): accept a non-production Portal's own inference host when the operator selected it  `288fdc1a`
+- **auth** fix(auth): read the Portal env override through the profile scope  `9366f595`
+- fix: keep reading scripts named inside masked heredoc bodies  `56e563d3`
+- **cron** fix(cron): mask inert heredoc bodies before the referenced-script walk  `59a1403f`
+- **goals** fix(goals): failed quality gates re-run every boundary instead of replaying a status fingerprint  `bb745a0e`
+- fix: judge wait_on_pid race no longer raises out of evaluate_after_turn  `b55767be`
+- **goals** fix(goals): a judge wait_on_pid naming an unobservable pid continues instead of parking  `ee07fcd4`
+- **goals** fix(goals): reject dead wait-on PIDs  `c70db196`
+- **import-sync** fix(import-sync): never clobber a locally edited imported skill; keep digest on errors  `9f30a0a2`
+- **cron** fix(cron): inject skill config into scheduled runs  `43891e9f`
+- **session_search** fix(session_search): forward after/before/exclude_session_ids through the inline executor  `18da1172`
+- **session_search** fix(session_search): apply after/before in SQL WHERE  `6f793ddb`
+- fix: paged, extracted and post-compaction reads count as a write_file baseline  `dddefaef`
+- fix: harden salvage of #65605 — redaction-gated test, sibling test baseline, docs  `6569651b`
+- fix: block stale write_file overwrites  `a8af57fc`
+- fix: keep api_server approval bridge and cron self-scheduling after presence strip  `04fcf915`
+- **approval** fix(approval): every unattended context clears leaked presence vars  `b6b78024`
+- **cron** fix(cron): strip interactive presence vars from external worker env  `2db47cc9`
+- **approval** fix(approval): cron context is never interactive, even with leaked presence env  `2a630671`
+- **stream-json** fix(stream-json): verbatim text deltas, closed protocol on init failure, per-call tool keys  `aa75d372`
+- **codex** fix(codex): import kill_process_tree so the SIGTERM-timeout path actually kills  `cb84e7d9`
+- **codex** fix(codex): reap app-server descendant processes  `a180274a`
+- **kanban** fix(kanban): actor sentinel for synthesized runs; two invariant tests  `616a3ce0`
+- **kanban** fix(kanban): attribute synthesized review-handoff run to the implementer  `ff8f725c`
+- **session-export** fix(session-export): lineage timings span the merged messages; import ignores derived size  `d566442b`
+- fix: session-export timings tolerate corrupt timestamp cells  `2a92d6be`
+- **discord** fix(discord): filter obfuscated channels on the explicit-id backfill path too  `62477761`
+- **discord** fix(discord): skip obfuscated channels in directory and backfill enumeration  `1f347425`
+- **whatsapp** fix(whatsapp): contentless Cloud API envelopes no longer start blank agent turns  `f90721e9`
+- **pairing** fix(pairing): accept spaced approval codes  `2db1f25f`
+- **ci** fix(ci): feed the timeout scaler only healthy durations, and wire the cache in CI  `d2280138`
+- **ci** fix(ci): scale per-file test timeout by cached duration to stop false FLAKY kills  `9a697857`
+- **kanban** fix(kanban): worker liveness and kills require the spawn-time start fingerprint  `7abe9502`
+- **multiplex** fix(multiplex): background threads and teardown paths carry the turn's profile scope  `8b181940`
+- **multiplex** fix(multiplex): children spawned for a served profile start from that profile's env  `d1794d55`
+- **ux** fix(ux): plain-language, actionable user-facing messages (desktop-tui)  `66878996`
+- **dashboard** fix(dashboard): profile-routed routers run under the profile's secret scope; console `send` never writes the process env  `5ca670b3`
+- **tui_gateway** fix(tui_gateway): serve fails closed when hosting a second profile home; profile RPCs bind the full runtime scope  `fdd5995e`
+- **delegate_task** fix(delegate_task): return a schema-invalid child's raw text instead of failing the task  `45ab3ad5`
+- **kanban** fix(kanban): scope the delegated-child write fence to the lineage's board root  `8a8c3634`
+- **execute_code** fix(execute_code): subagent kernels survive the LRU cap for the child's lifetime  `9a49b3c9`
+- fix: keep the write-side outcome-uncertain verdict when no server can reconnect  `081421d8`
+- **tests** fix(tests): drop the RLIMIT_AS memory cap; the leak sweep is the fix  `087c4f4f`
+- **tests** fix(tests): keep the leak registry in hermes_state_guard and skip shared handles  `d12cec18`
+- **tests** fix(tests): close leaked SessionDB handles suite-wide and cap pytest memory  `d070e480`
+- **gateway** fix(gateway): clear needs_attention/retrying_since on every transition to connected  `c77b9e80`
+- **gateway** fix(gateway): surface secondary WhatsApp/Relay skipped under multiplex instead of a silent continue  `395e4248`
+- **discord** fix(discord): clear fatal status on successful reconnect  `ec11359b`
+- **gateway** fix(gateway): 'decline' survives the config.yaml load path; Telegram forwards it; wizard offers it  `fd303c01`
+- **cron** fix(cron): self-removed runs leave no output directory and skip mark_job_run on crash  `134ef645`
+- **cron** fix(cron): self-removal excuses only a missing record; replacement records stay fail-closed  `acb2c45e`
+- **cron** fix(cron): keep self-removed runs alive across post-removal heartbeats  `8b3059fc`
+- **cron** fix(cron): deliver completed self-removing runs  `31b40011`
+- **desktop** fix(desktop): derive the loud scope note from the shared settings-scope store  `d7d92097`
+- **desktop** fix(desktop): settings pages state loudly when they edit a non-default profile's config  `b047b5db`
+- **kanban** fix(kanban): neutral block-loop wording on the CLI, Desktop toast, wake text and docs  `5c970d97`
+- **gateway** fix(gateway): neutral orchestration wording for block-loop triage pings  `302334ff`
+- **desktop** fix(desktop): key voice-fields autosave on the profile scope string  `0468acdc`
+- **desktop** fix(desktop): Capabilities TTS voice fields write the scoped profile's config, not the active one  `bdac5c8e`
+- **web** fix(web): lock the remaining off-loop config RMWs; keep model probes outside the lock  `f9da9e83`
+- **web** fix(web): config RMW handlers hold _CONFIG_MUTATION_LOCK so concurrent saves stop dropping writes  `eaf0dd09`
+- **model_switch** fix(model_switch): clear key_env only when the route changes; drop it on custom activation  `5bccc4e2`
+- **model_switch** fix(model_switch): provider switch clears model.key_env/api_key_env in the canonical persist shape  `1987b5e4`
+- **config** fix(config): provider switch clears the stale model.key_env pointer  `68ebb2c9`
+- **agent** fix(agent): cover the remaining refusal-only surfaces and fold the tests  `88f2844d`
+- **agent** fix(agent): preserve streamed refusals as text (port of anomalyco/opencode#43343)  `e27f1636`
+- fix: hindsight update-time dep resolution survives a BOM in config.json  `021ab58a`
+- fix: memory-plugin and Qwen-CLI config JSON survives Windows BOM  `5705b68f`
+- **context** fix(context): compute-host /context and session.context_breakdown carry the per-file manifest; report blocked files  `e860b8e4`
+- **context** fix(context): derive the /context file listing from the builder's own discovery walk  `f271ba09`
+- **desktop** fix(desktop): OAuth REST preflight gets its own dial budget  `9bb985c5`
+- **desktop** fix(desktop): at-rest rails read the roster only; active gateway keeps its single render path  `b591df7c`
+- **desktop** fix(desktop): profile-list ownership follows the published source, without a roster reconciler  `256edfc1`
+- **desktop** fix(desktop): keep profile switches on the selected gateway  `5b490512`
+- **video_gen** fix(video_gen): cap LTX 2.5 at 10s for 1440p/2160p; omit unset enum durations  `d8053f48`
+- **video_gen** fix(video_gen): make the duration enum explicit instead of sniffing tuple shape  `1c1980dc`
+- **ux** fix(ux): plain-language, actionable user-facing messages (dashboard)  `bdc79161`
+- **skills** fix(skills): live-dashboard credits the human author and drops the product-name intro  `b00ebf62`
+- **skills** fix(skills): auto-load resolves under the agent's own home and skips internal forks  `286e723d`
+- **skills** fix(skills): auto-load resolves once per agent and dedupes against -s  `075a2565`
+- fix: gate kanban.default_assignee through the dispatch_profiles allowlist  `bbe13059`
+- **kanban** fix(kanban): dispatch_profiles is config-only and fail-closed; trim tests  `923960fa`
+- **kanban** fix(kanban): per-home dispatch claim allowlist for shared boards  `2d46af3f`
+- **cron** fix(cron): address Xipong's review nits on #110563  `05e13a1f`
+- **cron** fix(cron): honor ESTOP in NAS fire webhook and misfire backstop  `95fd5d68`
+- **cli** fix(cli): /bg completion rings through _ring_bell like every other bell site  `6b69d0f6`
+- **cli** fix(cli): turn-end notifications no longer paint the pet's kitty frame as base64  `ac2359cd`
+- **skills** fix(skills): give the provider cut one owner inside the parallel walker  `2932195c`
+- **skills** fix(skills): filter providers before limiting search results  `e75b5a2d`
+- **gemini** fix(gemini): give each native tool call its own streaming slot  `91665b5e`
+- **desktop** fix(desktop): omit a null iss from the oauth.callback relay; hoist the loopback parse import  `8bdac1b1`
+- **tui_gateway** fix(tui_gateway): relay RFC 9207 iss through the oauth.callback RPC  `1c243f86`
+- **mcp** fix(mcp): thread RFC 9207 iss through every OAuth callback relay  `1a6503a5`
+- **desktop** fix(desktop): keep sudo commands visible before password entry  `d128ce2e`
+- **gateway** fix(gateway): include command context in sudo password requests  `b79107c5`
+- **cli** fix(cli): only a missing column/table means the read-only store needs migration  `ddbd7a94`
+- **cli** fix(cli): keep doctor's read-only opens URI-safe and holder-gated  `4a268c9e`
+- **cli** fix(cli): open observational session stores read-only  `b4e22481`
+- **agent** fix(agent): drop the stale-aligned read-timeout cap from _stream_timeouts  `13f9206e`
+- **agent** fix(agent): stale-killed stream unwedges its reader and reconnects (#110769)  `2355d593`
+- **cli** fix(cli): skip special files when cloning a profile with --clone-all  `fe6d3016`
+- **cli** fix(cli): skip Unix sockets and other special files during profile export  `9a82c44e`
+- **gateway** fix(gateway): queued terminal turns carry their own display kind into silence shaping  `a75628bc`
+- **gateway** fix(gateway): preserve replies on human silence markers  `5ea8fb2b`
+- **bot-mode** fix(bot-mode): scope stop, harvest and clarify to the originating thread  `1ce97331`
+- **bot-mode** fix(bot-mode): key group member sessions by thread  `d631ad5f`
+- **supermemory** fix(supermemory): explicit failure sentinel and bounded pending-turn buffer  `d793f7b9`
+- **supermemory** fix(supermemory): route capture-write logging through _quietly; drop dead default in custom id  `3cad3c6d`
+- **supermemory** fix(supermemory): serialize capture writes and document at-least-once retry  `c6da9e07`
+- **supermemory** fix(supermemory): keep pending turns across session switch until written  `1b76cfff`
+- **supermemory** fix(supermemory): write turns via documents API instead of session-end conversations ingest  `03627dbf`
+- **secret-scope** fix(secret-scope): compose the managed .env into every profile secret scope  `cedf4a3d`
+- **env-loader** fix(env-loader): split source_supplied_names() out of secret_source_names()  `dcdbcb8a`
+- **cron** fix(cron): scope the handoff multiplex context to the worker env build; gate the no_agent overlay  `0fd59b44`
+- **cron** fix(cron): routed fires are multiplexed at the worker handoff; managed keys keep policy precedence  `62b4488c`
+- **cron** fix(cron): close three launch-residue leaks into a routed no_agent child  `9d7de6c1`
+- **cron** fix(cron): only strip launch external-source names when multiplexing  `3dedff6a`
+- **cron** fix(cron): strip launch external-source names too, and make the scope refresh replace  `0943e771`
+- **cron** fix(cron): drop the launch profile's dotenv residue before overlaying a routed no_agent scope  `023e4f99`
+- **cron** fix(cron): a routed profile's cron fire in the desktop backend runs under multiplex semantics  `dbede34f`
+- **update** fix(update): ignore cron/executions.db sidecars, not just the base file  `49b8f06a`
+- **update** fix(update): ignore flat-install runtime state by class, not by file name  `3ce06055`
+- **update** fix(update): also ignore the flat-install config/credential/profile roots  `34a45b35`
+- **update** fix(update): also ignore the cron job store on flat installs  `eef60cc1`
+- **update** fix(update): ignore flat-install runtime state so autostash cannot sweep state.db  `8f344998`
+- **desktop** fix(desktop): keep the pool slot leased when a spawned start is superseded  `6915e9b4`
+- **desktop** fix(desktop): do not cache a timed-out serve-support probe  `844e5f26`
+- **desktop** fix(desktop): keep runtime discovery off the main event loop  `5d9f8325`
+- **matrix** fix(matrix): correct sync result-object comment and route it through the classifier  `9969a995`
+- **matrix** fix(matrix): use a genuinely discriminating fixture for the sync-loop test  `6bd9cf80`
+- **matrix** fix(matrix): tighten sync error classifier  `104889ac`
+- **mcp-oauth** fix(mcp-oauth): return a verdict from disk-pair install, count a missing expiry as live  `f4bf786c`
+- **mcp-oauth** fix(mcp-oauth): keep the refresh-fence sidecar when removing token state  `2e89c5da`
+- **mcp-oauth** fix(mcp-oauth): only treat contention errnos as "a peer holds the fence"  `f07ea70d`
+- **mcp-oauth** fix(mcp-oauth): share one rotated-candidate rule between adopt and reload, re-bind issuer on every disk pair  `8933d355`
+- **mcp-oauth** fix(mcp-oauth): make the refresh fence async and skip the POST after adopting a peer's rotation  `1a1345ab`
+- **mcp-oauth** fix(mcp-oauth): fence one refresh generation across the consuming POST  `a0810c9c`
+- **mcp-oauth** fix(mcp-oauth): serialize token-store access across processes  `47ee79a6`
+- **desktop** fix(desktop): match app.asar segment on either separator in resolveOutsideAsar  `45760ac0`
+- **desktop** fix(desktop): exec get-windows helper from app.asar.unpacked so read_window_below works on packaged macOS builds  `763489a8`
+- **codex** fix(codex): canonicalise persisted issuer stamps via the route-identity owner  `00f0d92b`
+- **codex** fix(codex): canonicalise the custom-endpoint issuer kind  `16986c4b`
+- **codex** fix(codex): replay legacy endpoint-stamped reasoning without a model stamp  `cb49660b`
+- **codex** fix(codex): scope encrypted-reasoning replay to the issuing model  `51ebdff5`
+- **codex** fix(codex): drop foreign replay message ids  `f7b6a2b5`
+- **discord** fix(discord): scope the event-silence knob warning to its dimension  `b4a5ce62`
+- **config** fix(config): register discord websocket_event_max_silence_seconds default  `9d4f1782`
+- **discord** fix(discord): dispatch-side liveness dimension detects an ACKing-but-deaf gateway socket (#109521)  `101861c7`
+- **plugins** fix(plugins): only mark a timed-out hook worker abandoned while it still holds its token  `73f808e4`
+- **plugins** fix(plugins): give output-transform hooks a call identity for the callback gate  `4bd38ec9`
+- **plugins** fix(plugins): keep one worker per callback while a timed-out worker is still running  `cdd58810`
+- **plugins** fix(plugins): gate hook callbacks by call identity, not by tool name alone  `4121aa29`
+- **state** fix(state): treat ESRCH like ENOENT in deleted-WAL fd identity check  `7feaf038`
+- **state** fix(state): tolerate closed WAL scan descriptors  `106bf99a`
+- **skills-guard** fix(skills-guard): socat only flags a reverse shell when an address spec follows  `ab0d4735`
+- **tools** fix(tools): one-shot linger waits for a completion that is mid-publish  `f5a457ad`
+- **desktop** fix(desktop): dragging a link from a browser attaches an @url chip  `2179a279`
+- **bot-mode** fix(bot-mode): show the current thread and newest unresolved failure  `9326d9cd`
+- **bot-mode** fix(bot-mode): do not retry failures from already queued sends  `3040c87a`
+- **bot-mode** fix(bot-mode): keep group follow-ups ordered and late answers visible  `e80642df`
+- **computer-use** fix(computer-use): doctor diagnoses a denied cua-driver spawn instead of crashing  `a4d47477`
+- **computer_use** fix(computer_use): attach element_token when the driver schema accepts it  `65625dfe`
+- **catalog** fix(catalog): pin hermes-tailscale without self-updater  `9a6eb21a`
+- **catalog** fix(catalog): pin hermes-ssh without self-updater  `d4dbac6d`
+- **cron** fix(cron): keep deferred delivery exceptions from aborting ticks  `8f785318`
+- **cron** fix(cron): keep unowned Bot Chat delivery on its resolved home  `002ee41c`
+- **cron** fix(cron): keep deferred Bot Chat delivery bound to admission  `3b0fe0cc`
+- **cron** fix(cron): retain Bot Chat output while a CLI owner is open  `5d8390d1`
+- **catalog** fix(catalog): pin hermes-terminal without self-updater  `b5b8df57`
+- **catalog** fix(catalog): pin read-only Resetwatch package without updater  `010ebe47`
+- **catalog** fix(catalog): pin hermes-nous-prices without self-updater  `69e85742`
+- **catalog** fix(catalog): pin hermes-ledgerline without self-updater  `5acad841`
+- **tools** fix(tools): resolve hermes CLI beside the interpreter in bot_mode_dm deliveries  `37243bd6`
+- **desktop** fix(desktop): preserve qualified bot identity in primary handoffs  `1f1f02e3`
+- **desktop** fix(desktop): keep @hermes callable when the primary handle is default  `d92ce52e`
+- **skills** fix(skills): keep scanning link-shaped arguments inside fenced code blocks  `1a990f30`
+- **skills** fix(skills): ignore traversal in markdown links  `b259f240`
+- **threat-scanner** fix(threat-scanner): gate ssh_access on every mutating verb, not just copy verbs  `de16ce9d`
+- fix: keep the ssh_access id, word-bound the verb gate, collapse tests to two invariants  `b1733fd0`
+- **threat-scanner** fix(threat-scanner): close reviewer-noted ssh_access_write bypass shapes  `fe68349c`
+- **threat-scanner** fix(threat-scanner): require a write verb before SSH paths in the ssh_access strict pattern  `34304b72`
+- **gateway** fix(gateway): migrate --multiplex rolls back or resumes when the default cannot come up; every installed unit counts  `8c82e931`
+- **gateway** fix(gateway): preserve system service user during migration  `18a45464`
+- **gateway** fix(gateway): keep auto_multiplex_migration spelling  `c8a6b3ca`
+- **gateway** fix(gateway): bind the session profile once around command.dispatch and bundle routing (#110695)  `23ef6408`
+- **kanban** fix(kanban): an anchorless thread subscription warns once instead of vanishing (#110919)  `a21747fe`
+- **cron** fix(cron): a raising profile gate ticks nothing; housekeeping respawns a dead ticker (#111010)  `45b42202`
+- **gateway** fix(gateway): scope skill dispatch to session profile  `4c306e9e`
+- **kanban** fix(kanban): preserve Discord thread route anchors  `38bda395`
+- **cron** fix(cron): keep the ticker thread alive through startup recovery and marker writes (#111010)  `8fce4baf`
+- **skills-guard** fix(skills-guard): stop flagging sudo.request/sudo.respond event names as sudo usage  `4f00c456`
+- **skills-guard** fix(skills-guard): stop shell_rc_mod matching attribute access  `63395922`
+- **gateway** fix(gateway): gateway-stop teardown fires memory-provider lifecycle hooks under the owning profile  `90a65d6e`
+- **tools** fix(tools): uncached check_fn probes classify UnscopedSecretError from the live scope  `09a7c297`
+- **cron** fix(cron): preserve cleanup profile scope  `45aebc11`
+- **tools** fix(tools): honor multiplexed per-turn HERMES_HOME in execute_code child env  `7ef0b982`
+- **file-safety** fix(file-safety): exempt the Hermes ROOT, not just the profile home  `ab78e71a`
+- **skills** fix(skills): stop scoring a skill's own denylist as an access  `52bec9d7`
+- **plugins** fix(plugins): contextualize defensive scanner findings  `72ec6e0a`
+- **plugins** fix(plugins): cut plugin-guard false positives on prose and agent-config-file refs (#103364)  `fd0de74b`
+- **plugins** fix(plugins): stop the install scanner from scoring hardening comments and changelogs as un-overridable criticals  `a8b7af85`
+- **connectors** fix(connectors): manage_connections is absent for accounts the portal has not enabled (#111238)  `cf35e735`
+- **plugin-guard** fix(plugin-guard): reconcile current scanner rules and test install confirmation  `30d78cd8`
+- **desktop** fix(desktop): skip the film, keep the guided onboarding  `14efb460`
+- **state** fix(state): doctor's holder count enumerates macOS holders via libproc (#109641)  `b889e4e9`
+- **desktop** fix(desktop): a stopped clarify no longer swallows the next turn's question  `85b93771`
+- **image_gen** fix(image_gen): Codex-auth images use the native images endpoints, no chat host model  `3275ca88`
+- **local-runtime** fix(local-runtime): contain Windows runtimes and safely stop orphans  `ef1cfbbb`
+- **cron** fix(cron): a successful run resolves the job's open incidents; a repeat re-opens them  `498abb67`
+- **approval** fix(approval): judge shell quoting on the raw command, not the escape-stripped one  `e383c28d`
+- **state** fix(state): run table rebuilds as one write transaction  `caa7f21f`
+- **plugin-guard** fix(plugin-guard): require confirmation for ambiguous JS capability references  `db2b5266`
+
+### 性能（perf，33 条）
+
+- **desktop** perf(desktop): restore structural sharing for the hermes-config record  `a2ac754a`
+- **desktop** perf(desktop): expose writeScope as a getter instead of spreading the query  `14bdc01b`
+- **gateway** perf(gateway): the roster's ui_meta fields ride the same memo, keyed on profile.yaml  `0111d931`
+- **profiles** perf(profiles): the listing re-reads a profile's YAML only when that file has changed  `55a8f423`
+- **gateway** perf(gateway): the roster poll reuses a profile's session fields while its store has not moved  `8889060b`
+- **gateway** perf(gateway): read a PID's command line with psutil before forking ps  `5d775ff8`
+- **gateway** perf(gateway): two deep copies per publish, not four  `64487009`
+- **skills** perf(skills): skip bundle downloads when the GitHub tree revision is unchanged  `075ed554`
+- **tool_executor** perf(tool_executor): trim memory after publishing a >=1 MB tool result  `f32f6517`
+- **state** perf(state): counters from the rows in hand, bounded identity read, one row-identity helper  `b3534f35`
+- **desktop** perf(desktop): keep the keyframes hoist only; the composer rAF coalescing is dropped  `efa09f49`
+- **desktop** perf(desktop): drop the loader clock-pause; coalesce composer measures via rafCoalesce; one decode-cursor keyframe  `ba4c0fbb`
+- **desktop** perf(desktop): static keyframes, coalesced composer measures, clock-based loader pause  `3c60e7db`
+- **desktop** perf(desktop): gate the desktop root npm ci on the manifests digest and Electron presence  `8231ea13`
+- **update** perf(update): skip the web build's npm ci when the manifests digest is unchanged  `96149253`
+- **summary** perf(summary): bypass chat SDK request transform on the iteration-limit summary call  `d66bed6a`
+- **agent** perf(agent): bypass chat SDK request transform in auxiliary and summary calls  `fc67cbaa`
+- **desktop** perf(desktop): hidden-pane subagent polls use the sibling early-return shape  `d39caf45`
+- **desktop** perf(desktop): stop hidden-pane subagent.list/tail polls  `8c3ffa5c`
+- **gateway** perf(gateway): prime provider context metadata during startup warm-up  `614f11d3`
+- **desktop** perf(desktop): test the pending reply's parts in place instead of joining the transcript per flush  `0571c4e8`
+- **desktop** perf(desktop): reasoning-block seam check reads two chars, not two string copies  `bc6bd699`
+- **agent** perf(agent): size outbound image payloads by data length, not by re-serializing them  `fa5da7cf`
+- **aux** perf(aux): bound the anonymous Nous cooldown marker instead of skipping it  `86d393d7`
+- **desktop** perf(desktop): reduce Windows startup I/O and blocking checks  `db63214c`
+- **desktop** perf(desktop): virtualize the timeline and bound history jumps  `2efbbef9`
+- **sessions** perf(sessions): index prompts without hydrating full transcripts  `7e69873c`
+- **desktop** perf(desktop): observe live workspace frame pacing without synthetic sessions  `69122844`
+- **desktop** perf(desktop): defer closed action menus until their content mounts  `fd304509`
+- **desktop** perf(desktop): keep relational style invalidation out of unrelated panes  `fa148ce1`
+- **agent** perf(agent): keep bulk chat-completions payloads out of the SDK request transform  `1e39c937`
+- **desktop** perf(desktop): resolve the renderer bundle once per window, not twice  `ab4bfda3`
+- **plugins** perf(plugins): scan each plugin's source for removed imports once per process, not once per profile  `416a8177`
+
+### 回退（revert，13 条）
+
+- Revert "docs(portal): the shared token store refreshes a login, it does not seed one"  `f50d4b34`
+- Revert "feat(catalog): restore website install links to Desktop"  `3eb97121`
+- Revert "docs(catalog): restore native browsing and install guidance"  `007e80ee`
+- Revert "feat(ui): support icon-only segmented controls"  `086628ad`
+- Revert "feat(desktop): restore native skill and plugin catalogs"  `8bd0da2b`
+- Revert "feat(desktop): browse catalogs as cards with a saved list option"  `f923398f`
+- revert: remove onboarding catalog additions  `d9fedb06`
+- Revert "feat(catalog): open website installs in Hermes Desktop"  `97962358`
+- Revert "feat(desktop): browse skills and plugins in a shared native catalog"  `4718ba73`
+- Revert "docs(catalog): explain shared feeds and Desktop install links"  `9b8cc183`
+- Revert "fix(desktop): show skill install progress and completion in the shared dialog"  `9d67c7c2`
+- Revert "fix(catalog): align CI checks with the shared action row"  `9139bb8a`
+- Revert "refactor(desktop): reuse ActionStatus for catalog installs"  `6a912eb1`
+
+### 撞特性补丁面（手维护补丁，逐条核对）
+
+**`conversation-cost-panel.patch`**（补丁面 15 文件）：109 个提交撞面
+
+- feat(desktop): let each chat hide its composer status stack  `accb8203`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fmt(js): `npm run fix` on merge (#118250)  `bc655bfb`
+  - 撞：`apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx`、`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(desktop): Uninstall for standalone desktop plugins via Electron IPC  `dec236b2`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(desktop): Uninstall action with confirm on Plugins hub rows  `dd482928`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(connectors): one backend-owned connection operation, with a setup card on Desktop, TUI and CLI (#111008)  `afc3b7c6`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`、`tui_gateway/server.py`
+- fix(desktop): gate the plain-text token warning on secure storage being unavailable  `5d9af50a`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(auth): one primary_failure_wording() helper labels quota vs auth failure at all three fallback surfaces  `265e68d7`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): "Open containing folder" is offered only for a session on this computer, and says so when a path is not here  `00c0ea6c`
+  - 撞：`apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`
+- feat(desktop): hermes://plugin/install?catalog=<name> opens the reviewed catalog install dialog  `aae3c737`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): show tool calls the user interrupted as Interrupted  `ee920388`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): keep the sidebar search's exact-id hit on top  `ac5ab522`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- fix(desktop): reveal is hidden per focused workspace and the Projects menu toasts a missing path  `d147a379`
+  - 撞：`apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx`、`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): "Open containing folder" is hidden for remote workspaces and reports a missing path  `d58831c3`
+  - 撞：`apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`
+- fix(desktop): every chrome pane tab, zone menu row and drag ghost follow the display language  `c2c0248f`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): localize Bots pane label  `25f6ef42`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): unmask the slash worker's real error behind the dispatch fallback  `c68d889a`
+  - 撞：`tui_gateway/server.py`
+- fix(tui_gateway): launch-profile slash worker spawns under own home after multiplex flip  `4c2de106`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): keep hidden Bot Mode chats out of the Sessions sidebar (#113273)  `e46b5650`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- fix(sessions): pin the Bot Chat composer-pick reach through _apply_model_switch -> SessionDB -> session.resume  `78b5dbfb`
+  - 撞：`tui_gateway/server.py`
+- fix(sessions): preserve explicit Bot Chat model overrides  `a16d4582`
+  - 撞：`tui_gateway/server.py`
+- feat(cron): jobs follow the main agent model at fire time; `pinned` locks it on request  `0469740a`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`…
+- feat(desktop): organize settings into ordered subpages  `5a0fb0f3`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(desktop): allow hiding thread timeline bars  `ee56d38d`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(tui-gateway): isolate session cwd by profile  `a613d4f9`
+  - 撞：`tui_gateway/server.py`
+- feat(desktop): expose hide code diffs in appearance settings  `4d14aaf4`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop,tui): reasoning pill and effort rows say ultra sends max on this route  `171a1777`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`…
+- feat(tui_gateway): session.info reports the wire level the route sends for the effort  `e2a02106`
+  - 撞：`tui_gateway/server.py`
+- feat(desktop): 429 usage-limit card can schedule one retry for when the limit resets  `6e1f5c97`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): Model settings label the main-model context window and expose the compression model timeout  `f30fe581`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(dashboard): custom endpoint validation persists the base URL that served /models (#65488)  `9202bae5`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- fix(desktop): the error card names a WAF block and the User-Agent fix instead of 'retry in a moment'  `1fc8887c`
+  - 撞：`apps/desktop/src/i18n/en.ts`
+- refactor(desktop): the Capabilities page is a module at /capabilities, one folder per tab (#115054)  `633dda6d`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(error-surface): 429 error card shows when the usage limit resets  `645e9298`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): custom endpoint Test probes the transport route, not just /v1/models  `ab241af3`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- fix: surface the pre-agent provider fallback on the TUI/Desktop gateway and cron too  `adf33e31`
+  - 撞：`tui_gateway/server.py`
+- fix(gateway): heal a persisted opencode relay URL on /model override rehydration; share the per-model api_mode lookup  `c7b82ed4`
+  - 撞：`tui_gateway/server.py`
+- feat(codex): named custom providers work with the codex_app_server runtime  `8b7caf22`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): custom endpoints pin an API mode and keep /v1/models alias metadata  `363b8a6f`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- Revert "feat(desktop): restore native skill and plugin catalogs"  `8bd0da2b`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- Revert "feat(desktop): browse catalogs as cards with a saved list option"  `f923398f`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(dashboard): custom endpoint validation persists the base URL that served /models (#65488)  `859c883c`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- fix(providers): opencode-go vision models stay on the Go endpoint and attach images natively  `a750c091`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): restore the unsent composer draft when a session is gone  `acccd54c`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(tui): session-bound config.set persists into the session profile, not the launch profile  `fbe85963`
+  - 撞：`tui_gateway/server.py`
+- docs(desktop): document the Reasoning Blocks toggle; narrow its config type  `ad12cbbd`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- fix(desktop): honor display.show_reasoning in the message renderer  `f12c3a16`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- fix(tui): hermes --tui -m custom:<name>:<model> routes through the startup owner too  `10767ab0`
+  - 撞：`tui_gateway/server.py`
+- fix(cron): label overdue next runs in cron list, dashboard and Desktop; one parser for the instant  `eddf7283`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`
+- fix(desktop): localize the session-named prompt title; trim to two invariants  `1879088d`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): point the remote-backend desktop-half tooltip at the install path  `aee7de4d`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): mark a remote-backend desktop half unavailable instead of forever copying  `2bc2c50d`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(tui_gateway): export session profile to tool subprocesses  `63e4e040`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): name the unlaunchable git instead of blaming the update server  `107e6fc4`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): stabilize backend-confirm test, guard double-click, tighten copy  `ce2b6a85`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- desktop: confirm before selecting a needs-setup terminal backend  `d271bed1`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(gateway): warn when a live gateway's heartbeat goes stale instead of printing `running`  `a3cce7b9`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- feat(notifications): opt-in suppression of user-channel warning notifications  `cd3de040`
+  - 撞：`tui_gateway/server.py`
+- fix(local-runtime): resumed llamacpp sessions follow the live managed port on every surface (#114336)  `1792e8bf`
+  - 撞：`tui_gateway/server.py`
+- feat(desktop): per-project toggle for gitignored files in the file tree (#101065)  `27dfbe39`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(approval): withdraw the queue entry when no client can answer; commit choices under the lock  `2afb4053`
+  - 撞：`tui_gateway/server.py`
+- fix(tui_gateway): old app builds no longer stall the agent on clarify/approval; late approval choices count  `f9d178f7`
+  - 撞：`tui_gateway/server.py`
+- feat(desktop): add rebindable sidebar grouping cycle  `81de5afa`
+  - 撞：`apps/desktop/src/i18n/en.ts`
+- fix(serve): hold work admission through cooperative retirement  `98745df3`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): render a typed synthetic in-flight prompt like its persisted row on reconnect  `b75396a7`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- refactor(tui_gateway): follow the repo's _AT_IMPORT resolve pattern  `30b143cf`
+  - 撞：`tui_gateway/server.py`
+- fix(tui_gateway): resolve the launch state.db path at first use, not import time  `7ee008aa`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): offer "Show all N sessions" under project rows capped at 3 previews  `534c93f9`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(tui-gateway): carry session_id in the llm.oneshot runtime snapshot; align feasibility test  `4f0eea5e`
+  - 撞：`tui_gateway/server.py`
+- feat(desktop): attach the frontmost window to the active draft  `1b2da207`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): guarded model switch asks in a dialog with a real decline  `e1e7eafe`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(moa): name the billed aggregator in the gateway /model block and qualify the advise-once copy  `c8f0f6b1`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(moa): show who pays on every MoA surface and trim the salvage to two invariants  `587c7d96`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(moa): label the aggregator as the acting, billed model across CLI and Desktop  `0a433320`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): label Settings "Applies to" chips with the bot title / display name  `2af437b4`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- feat(desktop): suggest varied first tasks from real integrations  `4716ec0b`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- feat(desktop): browse catalogs as cards with a saved list option  `4e9d3c71`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(desktop): restore native skill and plugin catalogs  `cbd76e4e`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(serve): off-turn system-prompt rebuilds run under the session's profile scope  `80ab36e4`
+  - 撞：`tui_gateway/server.py`
+- feat(desktop): add profile window and default context actions  `09aaa4cc`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- Revert "feat(desktop): browse skills and plugins in a shared native catalog"  `4718ba73`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- Revert "fix(desktop): show skill install progress and completion in the shared dialog"  `9d67c7c2`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(desktop): show skill install progress and completion in the shared dialog  `25be0982`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(desktop): browse skills and plugins in a shared native catalog  `07c90884`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(desktop): fan the composer's voice toggles out of the mic  `bc722dcb`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(serve): launch-profile scope decided at entry; send keeps scope authority; per-reset release  `86097433`
+  - 撞：`tui_gateway/server.py`
+- fix(honcho): thread logical cwd through agent construction  `5237cab7`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): stop the voice-live toasts leaking machine strings (#111987)  `c2625370`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(tui_gateway): record why a deferred agent build attached nothing  `a944a4d8`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): Tab Strip → Auto copy names the other-zone exception  `05e82b74`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(state): bound legacy transcript hydration memory  `43bd5db4`
+  - 撞：`tui_gateway/server.py`
+- feat(desktop): hideable profile rail with a statusbar profile dropdown stand-in  `043632e2`
+  - 撞：`apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(free-tier): review round 2 — route-gate the allowance verdict, keep policy/billing 403s, pool the provision RPC, guard the retry race  `2a94ca80`
+  - 撞：`tui_gateway/server.py`
+- copy(free-tier): "it's free" without "keeps the free model" — signed-in free models are not the same model  `a241f42f`
+  - 撞：`apps/desktop/src/i18n/en.ts`
+- fix(free-tier): the desktop renders a free-tier refusal as its own card, not an OAuth re-login  `16def7b8`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`
+- fix(free-tier): review follow-ups — read the classifier's context, never replace a locked identity, re-inventory on retry  `59fad62a`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- feat(free-tier): ruled behaviour for every welcome-api failure, with friendly copy and a fault-injecting rehearsal server  `51e39af9`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/types/hermes.ts`
+- fix: widen the remaining config.yaml stat caches to file_signature  `182ec5c2`
+  - 撞：`tui_gateway/server.py`
+- fix(desktop): expose Codex compression auto-raise  `fccdcdae`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(ux): plain-language, actionable user-facing messages (core)  `23036e20`
+  - 撞：`tui_gateway/server.py`
+- fix(multiplex): children spawned for a served profile start from that profile's env  `d1794d55`
+  - 撞：`tui_gateway/server.py`
+- fix(ux): plain-language, actionable user-facing messages (desktop-tui)  `66878996`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- fix(tui_gateway): serve fails closed when hosting a second profile home; profile RPCs bind the full runtime scope  `fdd5995e`
+  - 撞：`tui_gateway/server.py`
+- fix(context): compute-host /context and session.context_breakdown carry the per-file manifest; report blocked files  `e860b8e4`
+  - 撞：`apps/desktop/src/types/hermes.ts`
+- fix(desktop): keep sudo commands visible before password entry  `d128ce2e`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(desktop): add one-click local engine updates  `de5a1da6`
+  - 撞：`apps/desktop/src/i18n/ar.ts`、`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`
+- feat(desktop): chat/UI font picker (desktop.font_family) for readability faces  `40f2702b`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/ja.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh-hant.ts`、`apps/desktop/src/i18n/zh.ts`、`apps/desktop/src/types/hermes.ts`
+- feat(connectors): the connector card offers one verb per row; Continue is the only way out (#110843)  `1ab32b21`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`
+- Desktop connect runs on the connection operation: one card, no link to the model, no renderer polling (NS-868) (#110574)  `ee2f5629`
+  - 撞：`apps/desktop/src/i18n/en.ts`、`apps/desktop/src/i18n/types.ts`、`apps/desktop/src/i18n/zh.ts`、`apps/desktop/src/types/hermes.ts`、`tui_gateway/server.py`
+- manage_connections covers local MCP servers; setup_mcp leaves the schema (NS-867, PR1) (#109517)  `e0ef0eb9`
+  - 撞：`tui_gateway/server.py`
+
+### 撞品牌换装覆盖面（2514 个提交 / 覆盖面 1122 文件）
+
+品牌补丁由 `build/rebrand.py` 规则引擎整张重出，撞面**不需要人工重放**——这里列出只为一件事：上游若改了规则锚点的上下文，替换会无声 no-op，由 `test_hermes_charter.py` 的哨兵负责报红。改动最密的文件：
+
+- `agent/auxiliary_client.py` —— 93 次改动
+- `gateway/run.py` —— 83 次改动
+- `apps/desktop/electron/main.ts` —— 75 次改动
+- `hermes_cli/config_defaults.py` —— 63 次改动
+- `apps/desktop/src/i18n/en.ts` —— 59 次改动
+- `apps/desktop/src/i18n/zh.ts` —— 54 次改动
+- `hermes_cli/gateway.py` —— 53 次改动
+- `agent/turn_recovery.py` —— 51 次改动
+- `apps/desktop/src/i18n/types.ts` —— 50 次改动
+- `hermes_cli/config.py` —— 49 次改动
+
+
+## 三、下载
+
+| 版别 | 资产 | 链接 |
+|------|------|------|
+| 私有版（内网日常用） | `black-pool-win64.zip` | [直接下载](https://github.com/lightproud/biav-sc-code/releases/download/black-pool-bundle/black-pool-win64.zip) |
+| Release 页（含 SHA-256 digest） | — | [black-pool-bundle](https://github.com/lightproud/biav-sc-code/releases/tag/black-pool-bundle) |
+
+> 链接**恒定**、内容滚动——每次周更由组装线覆盖同一资产名。要核对拿到的是不是这一版，
+> 解压后看包内 `BUILD.md` 的「上游 pin」行是否为 `v2026.9.21`。
+> 公版 `black-pool-public-win64.zip` 不随周更出包，按需手动触发 `assemble-black-pool-public.yml`。
+
+## 四、BPA 更新指南（内网 bpa-dev 车间）
+
+**推荐路径——双击一键更新**：车间根 `bpa-dev\deploy\update.cmd`。六步流水线自动跑完
+① 银芯克隆 `git pull --ff-only` → ② 车间 `svn update` → ③ 下载最新整包进 `releases\`
+（SHA-256 比对 Release 官方 digest）→ ④ `assemble.cmd` 组装（按 `config\assembly.txt`
+拼内网补丁 / 插件 / 技能 / 配置）→ ⑤ `deploy.cmd` 部署（旧 `home\` 用户数据增量并入，
+旧版让位 `.old` 回滚位）→ ⑥ 拉起部署位。日志落 `车间根\update.log`。
+
+**手动路径**（下载失败或要挑版本时）：
+
+1. 从上表下载 zip 进 `bpa-dev\releases\`，比对 Release 页 digest 后登记进 `CHECKSUMS.txt`
+2. `assemble.cmd black-pool-win64.zip` —— 出 `staging\BlackPool\` + 装配清单 `ASSEMBLY.md`
+3. `deploy.cmd` —— 成品上位，旧版进 `.old`
+4. 双击部署位 `Black Pool.lnk` 或 `launcher.cmd` 验收
+
+**验收三看**：包内 `BUILD.md` 上游 pin = `v2026.9.21` · 关于页出身行 = 「基于 Hermes Agent
+0.21.4 定制」· 内网补丁在 `ASSEMBLY.md` 里逐张有名有增删行数。
+
+**出事回滚**：`rollback.cmd <部署目录>` 一键回切 `.old`，问题版留 `.failed-*` 供取证。
+
+**纪律提醒**：换包**必经组装**——直接解压 zip 进部署位会丢掉全部内网补丁与配置；
+整包不载测试套件（出厂清场已裁），跑 `scripts\run_tests.sh` 会明说原因并指路。
+详见 `projects/black-pool-agent/deploy/RUNBOOK.md`。
+
+## 五、需要守密人注意的
+
+**本轮为守密人派发「拉取更新 0.21.4」**，非周更例程档期。
+
+1. **首轮闭环 exit 3**：锚点点火台账拦下两条内网规则全树零命中。
+   - `intranet#1`（About 自更新区**收尾**）：上游把 About 拆成两子页、Danger zone 改由
+     `includeUninstall` 门控。**要紧的是同组开头规则 #0 仍然命中**——若无台账拦截，产物里只有
+     `{false && (<>` 开括号没有收尾，桌面端直接构建失败。按门控形态重锚。
+     *（比喻：只贴上了「施工中」告示的上半张，下半张没找到地方贴——幸好门口保安要求整张贴全才放行。）*
+   - Billing 入口：上游加了 overview / plans 子项并缩进两级。改为「开头两行 + 收尾」两条分锚，
+     不再把子项内容抄进锚点，子项以后再改也不会断。
+2. **补封新入口**：上游新增独立「卸载」子页，设置导航与设置搜索均可直达，会绕过 Danger zone
+   的整区隐藏、让便携包露出卸载器。按 2026-08-02「便携包无安装器」裁定封死路由分支并摘除
+   子页登记，宪章新增两条哨兵防其复活。**这是既有裁定延伸到新入口，非新决策**；若守密人认为
+   该子页应保留，可撤。
+3. **构建腿首次上阵**：`npm run build` 46 秒通过；vitest 11,109 过 / 2 红 / 15 跳过，2 红均为
+   台账在册的 voice-prefs 环境缺口经闸门放行（台账外 0、整档崩 0、死条目 0）。
+4. **特性补丁**：`conversation-cost-panel.patch` 干净落位，无需重放。
+5. **源码卫生守卫排除供应商快照**：本版 `optional-skills/creative/auteur/scripts/refscout.mjs`
+   含裸 `0x08`。`upstream/` 按宪章零修改、无权改写，只豁免这一个 vendor 前缀。
+6. **组装线**：合并 main 后已触发
+   [run 35764906684](https://github.com/lightproud/BIAV-SC-CODE/actions/runs/35764906684)
+   （head `664a6cfc`）。**结论待回查**——第三节下载链接在组装线转绿前仍指向上一版
+   （`v2026.9.14` / 0.21.3），验收以包内 `BUILD.md` 的上游 pin 行为准。
+7. **仍开着的漏缝**：两条 voice-prefs 台账条目待环境或上游升级 jsdom 后自然成死条目，届时由
+   stale 点名清理。无其他新增漏缝。
