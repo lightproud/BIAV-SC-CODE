@@ -1,5 +1,5 @@
 diff --git a/agent/usage_pricing.py b/agent/usage_pricing.py
-index 172374b..e35cbf4 100644
+index d356fd4..284fb85 100644
 --- a/agent/usage_pricing.py
 +++ b/agent/usage_pricing.py
 @@ -439,10 +439,79 @@ def _pricing_entry_from_metadata(
@@ -83,10 +83,10 @@ index 172374b..e35cbf4 100644
      if route.billing_mode == "subscription_included":
          return _INCLUDED_ENTRY
 diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
-index fc2113d..20e2edf 100644
+index 859e1d9..6538d61 100644
 --- a/apps/desktop/electron/main.ts
 +++ b/apps/desktop/electron/main.ts
-@@ -7093,11 +7093,7 @@ function buildApplicationMenu() {
+@@ -7386,11 +7386,7 @@ function buildApplicationMenu() {
        ? [{ role: 'minimize' }, { role: 'zoom' }, { role: 'front' }]
        : [{ role: 'minimize' }, { role: 'close' }]
    })
@@ -100,10 +100,20 @@ index fc2113d..20e2edf 100644
    return Menu.buildFromTemplate(template)
  }
 diff --git a/apps/desktop/src/app/settings/about-settings.tsx b/apps/desktop/src/app/settings/about-settings.tsx
-index 79f8a64..adbdee0 100644
+index 57f317c..a11c7a8 100644
 --- a/apps/desktop/src/app/settings/about-settings.tsx
 +++ b/apps/desktop/src/app/settings/about-settings.tsx
-@@ -161,6 +161,8 @@ export function AboutSettings() {
+@@ -51,7 +51,8 @@ interface AboutSettingsProps {
+ }
+ 
+ export function AboutSettings({ subpage }: AboutSettingsProps = {}) {
+-  if (subpage === 'uninstall') {
++  // 便携包无安装器——卸载子页路由封死（2026-08-02 裁定，2026-09-22 随上游新入口补封）
++  if ((false as boolean) && subpage === 'uninstall') {
+     return (
+       <SettingsContent>
+         <UninstallSection />
+@@ -179,6 +180,8 @@ function AppUpdatesSettings({ includeUninstall }: { includeUninstall: boolean })
        </div>
  
        <div className="mx-auto mt-4 w-full max-w-2xl">
@@ -112,23 +122,23 @@ index 79f8a64..adbdee0 100644
          <SectionHeading icon={RefreshCw} title={a.updates} />
  
          <div
-@@ -230,8 +232,10 @@ export function AboutSettings() {
+@@ -248,8 +251,10 @@ function AppUpdatesSettings({ includeUninstall }: { includeUninstall: boolean })
            hint={a.branchCommit(status?.branch ?? 'unknown', status?.currentSha?.slice(0, 7) ?? 'unknown')}
            title={a.automaticUpdates}
          />
 +        </>)}
  
--        <UninstallSection />
+-        {includeUninstall && <UninstallSection />}
 +        {/* 便携包无安装器——Danger zone 整区隐藏（守密人 2026-08-02 裁定） */}
-+        {false && <UninstallSection />}
++        {false && includeUninstall && <UninstallSection />}
        </div>
      </SettingsContent>
    )
 diff --git a/apps/desktop/src/app/settings/gateway-settings.tsx b/apps/desktop/src/app/settings/gateway-settings.tsx
-index a54c263..f7e495f 100644
+index e58d5a9..9917600 100644
 --- a/apps/desktop/src/app/settings/gateway-settings.tsx
 +++ b/apps/desktop/src/app/settings/gateway-settings.tsx
-@@ -1147,6 +1147,8 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1264,6 +1264,8 @@ function GatewayConnectionSettings({ embedded, standalone }: { embedded: boolean
              onSelect={() => setState(current => ({ ...current, mode: 'local' }))}
              title={g.localTitle}
            />
@@ -137,7 +147,7 @@ index a54c263..f7e495f 100644
            <ModeCard
              active={state.mode === 'cloud'}
              description={g.cloudDesc}
-@@ -1155,6 +1157,7 @@ export function GatewaySettings({ embedded = false }: { embedded?: boolean } = {
+@@ -1272,6 +1274,7 @@ function GatewayConnectionSettings({ embedded, standalone }: { embedded: boolean
              onSelect={() => setState(current => ({ ...current, mode: 'cloud' }))}
              title={g.cloudTitle}
            />
@@ -146,10 +156,10 @@ index a54c263..f7e495f 100644
              active={state.mode === 'remote'}
              description={g.remoteDesc}
 diff --git a/apps/desktop/src/app/settings/index.tsx b/apps/desktop/src/app/settings/index.tsx
-index 3d2eb0b..1ed55dc 100644
+index 7014f8a..a50d539 100644
 --- a/apps/desktop/src/app/settings/index.tsx
 +++ b/apps/desktop/src/app/settings/index.tsx
-@@ -68,7 +68,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
+@@ -72,7 +72,6 @@ const SETTINGS_VIEWS: readonly SettingsViewId[] = [
    'keys',
    'vault',
    'notifications',
@@ -157,37 +167,46 @@ index 3d2eb0b..1ed55dc 100644
    'sessions',
    'about'
  ]
-@@ -207,13 +206,18 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
-         label: t.settings.nav.notifications,
-         onSelect: () => setActiveView('notifications')
-       },
--      {
--        active: activeView === 'billing',
--        icon: BarChart3,
--        id: 'billing',
--        label: t.settings.nav.billing,
--        onSelect: () => setActiveView('billing')
--      },
-+      // 内网便携包无 Hermes Cloud 订阅——Billing 入口隐藏（2026-08-02 审计轮）
-+      ...(false
-+        ? [
-+            {
-+              active: activeView === 'billing',
-+              icon: BarChart3,
-+              id: 'billing',
-+              label: t.settings.nav.billing,
-+              onSelect: () => setActiveView('billing')
-+            }
-+          ]
-+        : []),
-       {
-         active: activeView === 'providers',
-         children: [
+@@ -267,6 +266,9 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
+             label: t.settings.nav.notifications,
+             onSelect: () => setActiveView('notifications')
+           },
++          // 内网便携包无 Hermes Cloud 订阅——Billing 入口隐藏（2026-08-02 审计轮）
++          ...(false
++            ? [
+           {
+             active: activeView === 'billing',
+             children: [
+@@ -293,7 +295,9 @@ export function SettingsView({ onClose, onConfigSaved, onMainModelChanged }: Set
+             id: 'billing',
+             label: t.settings.nav.billing,
+             onSelect: () => setActiveView('billing')
+-          },
++          }
++              ]
++            : []),
+           {
+             active: activeView === 'providers',
+             children: [
+diff --git a/apps/desktop/src/app/settings/other-subpages.ts b/apps/desktop/src/app/settings/other-subpages.ts
+index 6f550a9..d3edb70 100644
+--- a/apps/desktop/src/app/settings/other-subpages.ts
++++ b/apps/desktop/src/app/settings/other-subpages.ts
+@@ -24,7 +24,7 @@ export const OTHER_SUBPAGES: Record<string, { id: string; labelKey: string }[]>
+     { id: 'sources', labelKey: 'vaultSources' }
+   ],
+   about: [
+-    { id: 'updates', labelKey: 'appUpdates' },
+-    { id: 'uninstall', labelKey: 'uninstall' }
++    { id: 'updates', labelKey: 'appUpdates' }
++    // 便携包无安装器——卸载子页不入导航与搜索（2026-09-22 随上游新入口补封）
+   ]
+ }
 diff --git a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-index 34dad8e..5df095d 100644
+index 965827a..652632c 100644
 --- a/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
 +++ b/apps/desktop/src/app/shell/hooks/use-statusbar-items.tsx
-@@ -62,8 +62,7 @@ import {
+@@ -70,8 +70,7 @@ import {
    $backendUpdateStatus,
    $desktopVersion,
    $updateApply,
@@ -197,7 +216,7 @@ index 34dad8e..5df095d 100644
  } from '@/store/updates'
  import type { StatusResponse, UsageStats } from '@/types/hermes'
  
-@@ -366,10 +365,9 @@ export function useStatusbarItems({
+@@ -391,10 +390,9 @@ export function useStatusbarItems({
        // Update state is not a preference: hiding it is how a user misses that
        // their client is behind. Listed in the menu, but locked on.
        lockedVisible: true,
@@ -209,7 +228,7 @@ index 34dad8e..5df095d 100644
      }
    }, [
      desktopVersion?.appVersion,
-@@ -410,10 +408,9 @@ export function useStatusbarItems({
+@@ -435,10 +433,9 @@ export function useStatusbarItems({
        id: 'version-backend',
        label: status.label,
        lockedVisible: true,
@@ -353,10 +372,10 @@ index b354abe..c7a6138 100644
  
    it('requires a successful token connection test before applying remote config', async () => {
 diff --git a/apps/desktop/src/components/desktop-install-overlay.tsx b/apps/desktop/src/components/desktop-install-overlay.tsx
-index aedde11..ec0da80 100644
+index 082222e..199d219 100644
 --- a/apps/desktop/src/components/desktop-install-overlay.tsx
 +++ b/apps/desktop/src/components/desktop-install-overlay.tsx
-@@ -421,6 +421,8 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
+@@ -439,6 +439,8 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
                <p className="mt-2 text-sm leading-5 text-muted-foreground">{copy.connectExistingDesc}</p>
              </button>
  
@@ -365,7 +384,7 @@ index aedde11..ec0da80 100644
              <button
                className="rounded-lg border border-(--ui-stroke-tertiary) bg-(--ui-bg-quinary) p-4 text-left transition hover:bg-(--chrome-action-hover) disabled:cursor-wait disabled:opacity-60"
                disabled={localStarting}
-@@ -451,6 +453,7 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
+@@ -469,6 +471,7 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
                </div>
                <p className="mt-2 text-sm leading-5 text-muted-foreground">{copy.installLocalDesc}</p>
              </button>
@@ -373,7 +392,7 @@ index aedde11..ec0da80 100644
            </div>
  
            {localStartError ? (
-@@ -460,10 +463,10 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
+@@ -478,10 +481,10 @@ export function DesktopInstallOverlay({ enabled = true }: DesktopInstallOverlayP
              </div>
            ) : null}
  
@@ -427,10 +446,10 @@ index 5f8b27d..9af0188 100644
      const labels = screen
        .getAllByRole('button')
 diff --git a/apps/desktop/src/components/onboarding/index.tsx b/apps/desktop/src/components/onboarding/index.tsx
-index b40b504..7e042e4 100644
+index 4248234..540d127 100644
 --- a/apps/desktop/src/components/onboarding/index.tsx
 +++ b/apps/desktop/src/components/onboarding/index.tsx
-@@ -537,7 +537,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
+@@ -575,7 +575,7 @@ const SHOW_ALL_KEY = 'hermes-onboarding-show-all-v1'
  
  const readShowAll = () => {
    try {
@@ -440,10 +459,10 @@ index b40b504..7e042e4 100644
      return false
    }
 diff --git a/apps/desktop/src/components/onboarding/providers.tsx b/apps/desktop/src/components/onboarding/providers.tsx
-index 7cdce02..c1a96d9 100644
+index 64717cb..0076a4b 100644
 --- a/apps/desktop/src/components/onboarding/providers.tsx
 +++ b/apps/desktop/src/components/onboarding/providers.tsx
-@@ -40,23 +40,13 @@ export function FeaturedProviderRow({
+@@ -42,23 +42,13 @@ export function FeaturedProviderRow({
        onClick={() => onSelect(provider)}
        type="button"
      >
@@ -470,7 +489,7 @@ index 7cdce02..c1a96d9 100644
          <p className="mt-1 text-xs leading-5 text-muted-foreground">
            {freeTier ? t.freeTier.providerRowPitch : t.onboarding.featuredPitch}
 diff --git a/apps/desktop/src/store/onboarding.ts b/apps/desktop/src/store/onboarding.ts
-index 066057c..90c4a09 100644
+index 6119ac8..de0be90 100644
 --- a/apps/desktop/src/store/onboarding.ts
 +++ b/apps/desktop/src/store/onboarding.ts
 @@ -128,6 +128,11 @@ function writeCachedConfigured(value: boolean) {
@@ -628,10 +647,10 @@ index 06fedcc..ce63e6a 100644
      return
    }
 diff --git a/hermes_cli/update_cmd.py b/hermes_cli/update_cmd.py
-index 86f55fb..0b846cc 100644
+index ebbcfb1..3e81cf4 100644
 --- a/hermes_cli/update_cmd.py
 +++ b/hermes_cli/update_cmd.py
-@@ -1063,6 +1063,12 @@ def _prepare_git_command() -> tuple[bool, list, bool]:
+@@ -1132,6 +1132,12 @@ def _prepare_git_command() -> tuple[bool, list, bool]:
      on a non-Windows host (Windows falls back to ZIP: broken git file I/O, AV, NTFS filters)."""
      git_dir = _m().PROJECT_ROOT / ".git"
      use_zip_update = not git_dir.exists()
@@ -645,10 +664,10 @@ index 86f55fb..0b846cc 100644
          print("✗ Not a git repository. Please reinstall:")
          print("  curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash")
 diff --git a/web/src/pages/ChannelsPage.tsx b/web/src/pages/ChannelsPage.tsx
-index e05ae0e..c416b2d 100644
+index 7ef6681..85c6fa2 100644
 --- a/web/src/pages/ChannelsPage.tsx
 +++ b/web/src/pages/ChannelsPage.tsx
-@@ -1283,8 +1283,9 @@ function TelegramOnboardingPanel({
+@@ -1284,8 +1284,9 @@ function TelegramOnboardingPanel({
          </span>
        </div>
  
@@ -660,7 +679,7 @@ index e05ae0e..c416b2d 100644
            <div className="flex flex-wrap items-center gap-2">
              <span className="text-xs font-medium uppercase text-foreground">
                Quick setup
-@@ -1304,9 +1305,9 @@ function TelegramOnboardingPanel({
+@@ -1305,9 +1306,9 @@ function TelegramOnboardingPanel({
            >
              {phase === "starting" ? "Starting…" : "Create with QR"}
            </Button>

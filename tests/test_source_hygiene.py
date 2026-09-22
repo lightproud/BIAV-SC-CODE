@@ -40,6 +40,15 @@ TEXT_SUFFIXES = {
 ALLOWED_CONTROL = {0x09, 0x0A, 0x0D, 0x0C}
 
 
+# 供应商快照不在本守卫射程内：`projects/black-pool-agent/upstream/` 是上游
+# NousResearch/hermes-agent 在 pin 点的原样工作树（UPSTREAM.md「快照 vendor」），
+# 宪章禁 1 规定**本体零修改**——里面哪怕有裸控制字节我们也无权改写，改了就不是
+# 上游了。本守卫要保护的是银芯自己的源码能被 rg / 引用图读到，快照本就不进引用图。
+# 2026-09-22 首撞：v2026.9.21 的 optional-skills/creative/auteur/scripts/refscout.mjs
+# 含 0x08。只豁免这一个 vendor 目录，银芯自有文件照旧一个不放。
+VENDOR_SNAPSHOT_PREFIXES = ("projects/black-pool-agent/upstream/",)
+
+
 def _tracked_text_files() -> list[Path]:
     res = subprocess.run(
         ["git", "ls-files", "-z"],
@@ -47,7 +56,7 @@ def _tracked_text_files() -> list[Path]:
     )
     out = []
     for rel in res.stdout.split("\0"):
-        if not rel:
+        if not rel or rel.startswith(VENDOR_SNAPSHOT_PREFIXES):
             continue
         p = REPO / rel
         if p.suffix.lower() in TEXT_SUFFIXES and p.is_file():
