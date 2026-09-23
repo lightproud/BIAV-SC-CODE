@@ -7,7 +7,7 @@ import re
 import types
 import unittest
 
-SOURCE=Path(__file__).with_name('global_collectors.py')
+SOURCE = Path(__file__).parents[1] / 'projects/news/scripts/global_collectors.py'
 
 def functions():
     tree=ast.parse(SOURCE.read_text(encoding='utf-8'))
