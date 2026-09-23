@@ -4,7 +4,7 @@ title: "steam_discussion 社区数据源"
 description: "steam_discussion 平台采集档案，全量 302 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/steam/global/discussion/"
 tags: ["data_layer:full_archive", "platform:steam_discussion", "health:active"]
-timestamp: "2026-09-22T16:16:46.905786+00:00"
+timestamp: "2026-09-23T10:46:40.454219+00:00"
 ---
 
 # 数据层指针

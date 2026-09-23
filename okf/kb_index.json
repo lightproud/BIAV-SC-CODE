@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 381,
-    "edges": 399,
+    "edges": 395,
     "terms": 7169,
     "by_type": {
       "character": 72,
@@ -290,7 +290,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 28
+      "degree": 26
     },
     "/characters/130375.md": {
       "type": "character",
@@ -671,7 +671,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/15584.md": {
       "type": "character",
@@ -1051,7 +1051,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/77918.md": {
       "type": "character",
@@ -1079,7 +1079,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 5
     },
     "/characters/77922.md": {
       "type": "character",
@@ -1319,7 +1319,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 12
+      "degree": 10
     },
     "/community/community-discord.md": {
       "type": "dataset",
@@ -1389,7 +1389,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/community/community-reddit.md": {
       "type": "dataset",
@@ -1487,7 +1487,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -4630,7 +4630,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 1813 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 1814 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4644,7 +4644,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3904 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3912 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4653,12 +4653,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 11
+      "degree": 9
     },
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 9596034 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 9610215 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4672,7 +4672,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1224 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1226 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4714,7 +4714,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 419 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 421 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4723,12 +4723,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 4231 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 4245 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4742,12 +4742,12 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 181 条，健康度 degraded。",
+      "description": "ruliweb 平台采集档案，全量 182 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
         "platform:ruliweb",
-        "health:degraded"
+        "health:active"
       ],
       "section": "sources",
       "tier": "skeleton",
@@ -4756,7 +4756,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5501 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5502 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4812,7 +4812,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 5772 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 5800 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4826,7 +4826,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 14835 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 14896 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4835,7 +4835,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 8
     },
     "/sources/weixin.md": {
       "type": "dataset",
@@ -4854,7 +4854,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 4135 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 4141 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5467,11 +5467,6 @@
         "cv"
       ],
       [
-        "/community/community-pixiv.md",
-        "提及:Saya",
-        "mention"
-      ],
-      [
         "/community/community-reddit.md",
         "提及:Saya",
         "mention"
@@ -5569,11 +5564,6 @@
       [
         "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
         "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/sources/pixiv.md",
-        "提及:Saya",
         "mention"
       ],
       [
@@ -6217,17 +6207,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
         "/memory/morimens-context.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:奥尔拉",
         "mention"
       ]
@@ -7310,6 +7290,16 @@
     ],
     "/characters/77917.md": [
       [
+        "/community/community-weibo.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
         "/story/STORY_RESEARCH.md",
         "提及:波吕克斯",
         "mention"
@@ -7369,22 +7359,12 @@
         "mention"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:卡拉布",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:卡拉布",
         "mention"
       ],
       [
         "/sources/bahamut.md",
-        "提及:卡拉布",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:卡拉布",
         "mention"
       ],
@@ -7604,11 +7584,6 @@
         "mention"
       ],
       [
-        "/characters/15583.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
         "/characters/15585.md",
         "提及:奥吉尔",
         "mention"
@@ -7616,11 +7591,6 @@
       [
         "/characters/54117.md",
         "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/characters/77921.md",
-        "提及:卡拉布",
         "mention"
       ],
       [
@@ -7779,11 +7749,6 @@
     ],
     "/community/community-pixiv.md": [
       [
-        "/characters/130226.md",
-        "提及:Saya",
-        "mention"
-      ],
-      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -7870,6 +7835,11 @@
       ]
     ],
     "/community/community-weibo.md": [
+      [
+        "/characters/77917.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
@@ -9437,11 +9407,6 @@
         "mention"
       ],
       [
-        "/characters/15583.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
         "/characters/15585.md",
         "提及:奥吉尔",
         "mention"
@@ -9449,11 +9414,6 @@
       [
         "/characters/54117.md",
         "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/characters/77921.md",
-        "提及:卡拉布",
         "mention"
       ],
       [
@@ -9504,11 +9464,6 @@
       ]
     ],
     "/sources/pixiv.md": [
-      [
-        "/characters/130226.md",
-        "提及:Saya",
-        "mention"
-      ],
       [
         "/community/community-pixiv.md",
         "同平台",
@@ -9573,6 +9528,11 @@
       ]
     ],
     "/sources/weibo.md": [
+      [
+        "/characters/77917.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
@@ -10289,6 +10249,7 @@
       "/sources/official.md",
       "/sources/pixiv.md",
       "/sources/reddit.md",
+      "/sources/ruliweb.md",
       "/sources/steam.md",
       "/sources/steam_discussion.md",
       "/sources/stopgame.md",
@@ -12343,7 +12304,6 @@
       "/projects/silver-core-sdk-doc-performance.md"
     ],
     "degraded": [
-      "/sources/ruliweb.md",
       "/sources/taptap.md"
     ],
     "deliverable": [
@@ -51050,6 +51010,7 @@
       "/sources/official.md",
       "/sources/pixiv.md",
       "/sources/reddit.md",
+      "/sources/ruliweb.md",
       "/sources/steam.md",
       "/sources/steam_discussion.md",
       "/sources/stopgame.md",
@@ -52301,7 +52262,6 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "degraded": [
-      "/sources/ruliweb.md",
       "/sources/taptap.md"
     ],
     "deliverable": [
