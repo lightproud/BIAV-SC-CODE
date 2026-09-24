@@ -1761,6 +1761,46 @@ def fetch_steam_discussions(max_pages: int = 3):
     return items
 
 
+def _steam_thread_created_at(document):
+    """Read only the OP timestamp; a reply timestamp is never a fallback."""
+    from html.parser import HTMLParser
+
+    class OriginalPostTime(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.depth = 0
+            self.op_depth = None
+            self.created = None
+
+        def handle_starttag(self, tag, attrs):
+            if tag != 'div':
+                return
+            self.depth += 1
+            attributes = dict(attrs)
+            classes = attributes.get('class', '').split()
+            if 'forum_op' in classes:
+                self.op_depth = self.depth
+            if (self.op_depth is not None
+                    and 'commentthread_comment_timestamp' in classes
+                    and self.created is None):
+                try:
+                    timestamp = int(attributes['data-timestamp'])
+                    self.created = datetime.fromtimestamp(timestamp, tz=UTC).isoformat()
+                except (KeyError, ValueError, OverflowError, OSError):
+                    pass
+
+        def handle_endtag(self, tag):
+            if tag != 'div':
+                return
+            if self.depth == self.op_depth:
+                self.op_depth = None
+            self.depth = max(0, self.depth - 1)
+
+    parser = OriginalPostTime()
+    parser.feed(document)
+    return parser.created
+
+
 def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
     """Fetch recent Steam Community discussions for one (app_id, region).
 
@@ -1768,7 +1808,8 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
     (默认按最后回复时间倒序，15 帖/页，?fp=N 翻页)。2026-06 实测 DOM：
     每帖为 <div class="forum_topic ..."> 块，内含 forum_topic_overlay 链接、
     forum_topic_name 标题、forum_topic_op 楼主、forum_topic_lastpost 的
-    data-timestamp 真实时间戳，以及 data-tooltip-forum 里的正文预览。
+    data-timestamp 最后回复/活跃时间戳（注意：此为最后回复时间，非主帖创建时间），
+    以及 data-tooltip-forum 里的正文预览。
     """
     import html as _html
     import re as _re
@@ -1806,6 +1847,8 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
                 replies = int(m_replies.group(1).replace(',', '')) if m_replies else 0
 
                 m_ts = _re.search(r'class="forum_topic_lastpost"[^>]*data-timestamp="(\d+)"', block)
+                last_activity_at = None
+                fetched_at = datetime.now(UTC).isoformat()
                 if m_ts:
                     lastpost = datetime.fromtimestamp(int(m_ts.group(1)), tz=UTC)
                     if lastpost < cutoff:
@@ -1815,9 +1858,14 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
                         # 「fetched 0 threads」，与「今天真没人发帖」完全无法区分。
                         # 改为跳过该帖；整页无新帖时由下面 page_added == 0 收尾停翻。
                         continue
-                    time_str, approx = lastpost.isoformat(), False
+                    last_activity_at = lastpost.isoformat()
+                    time_str = last_activity_at
+                    time_semantics = 'last_activity'
+                    approx = False
                 else:
-                    time_str, approx = datetime.now(UTC).isoformat(), True
+                    time_str = fetched_at
+                    time_semantics = 'fetched'
+                    approx = True
 
                 m_author = _re.search(r'class="forum_topic_op"[^>]*>\s*([^<]+?)\s*</div>', block)
                 author = m_author.group(1).strip() if m_author else ''
@@ -1831,6 +1879,15 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
                     if m_text:
                         summary = _html.unescape(_strip_html_tags(m_text.group(1))).strip()[:500]
 
+                # Listing activity selects candidates; the OP page supplies creation.
+                created_at = None
+                try:
+                    topic_resp = requests.get(m_url.group(1), headers=headers, timeout=10)
+                    topic_resp.raise_for_status()
+                    created_at = _steam_thread_created_at(topic_resp.text)
+                except requests.RequestException as exc:
+                    logger.warning('Steam OP creation time unavailable: %s', type(exc).__name__)
+
                 item = {
                     'title': f'[Steam论坛] {title}',
                     'summary': summary,
@@ -1838,6 +1895,11 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
                     'region': region,                # 甲方案：global/jp 区服
                     'archive_subtype': 'discussion', # 归档 steam/<区服>/discussion
                     'time': time_str,
+                    'time_semantics': time_semantics,
+                    'last_activity_at': last_activity_at,
+                    'fetched_at': fetched_at,
+                    'created_at': created_at,
+                    'time_provenance': 'steam_forum_op.data-timestamp' if created_at else None,
                     'url': m_url.group(1),
                     'engagement': replies,
                     'is_hot': replies >= 10,
