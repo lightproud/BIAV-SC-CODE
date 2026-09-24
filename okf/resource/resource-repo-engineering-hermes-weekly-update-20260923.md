@@ -4,7 +4,7 @@ title: "hermes-weekly-update-20260923"
 description: "**这一版对车间日常实际可感知的变化**（一周 5,173 提交，其中 3,096 条是缺陷修复；（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/hermes-weekly-update-20260923.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-09-23"
+timestamp: "2026-09-24"
 ---
 
 # 指针概念

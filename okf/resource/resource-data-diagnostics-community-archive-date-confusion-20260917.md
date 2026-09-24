@@ -4,7 +4,7 @@ title: "community-archive-date-confusion-20260917"
 description: "归档日文件的文件名是**桶日期**，`archive_layout` 第 37–48 行明写「归档分桶用的日期自始就是（格式：md）"
 resource: "/Public-Info-Pool/Resource/data-diagnostics/community-archive-date-confusion-20260917.md"
 tags: ["data_layer:curated", "deliverable", "topic:data-diagnostics"]
-timestamp: "2026-09-23"
+timestamp: "2026-09-24"
 ---
 
 # 指针概念

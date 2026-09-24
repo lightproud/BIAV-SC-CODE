@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-23",
+  "generated": "2026-09-24",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -8,8 +8,8 @@
   },
   "stats": {
     "concepts": 381,
-    "edges": 395,
-    "terms": 7169,
+    "edges": 387,
+    "terms": 7170,
     "by_type": {
       "character": 72,
       "dataset": 71,
@@ -489,7 +489,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 7
     },
     "/characters/15571.md": {
       "type": "character",
@@ -545,7 +545,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/15575.md": {
       "type": "character",
@@ -995,7 +995,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1234,7 +1234,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1319,7 +1319,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 6
     },
     "/community/community-discord.md": {
       "type": "dataset",
@@ -4616,12 +4616,12 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 555 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 555 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
         "platform:appstore",
-        "health:active"
+        "health:degraded"
       ],
       "section": "sources",
       "tier": "skeleton",
@@ -4630,7 +4630,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 1814 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 1841 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4644,7 +4644,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 3912 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 3917 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4653,12 +4653,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 5
     },
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 9610215 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 9631880 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4672,7 +4672,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1226 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1228 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4728,7 +4728,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 4245 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 4267 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4742,7 +4742,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 182 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 185 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4770,7 +4770,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 302 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 303 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4784,7 +4784,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 153 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 154 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4798,12 +4798,12 @@
     "/sources/taptap.md": {
       "type": "dataset",
       "title": "taptap 社区数据源",
-      "description": "taptap 平台采集档案，全量 24 条，健康度 degraded。",
+      "description": "taptap 平台采集档案，全量 24 条，健康度 dormant。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
         "platform:taptap",
-        "health:degraded"
+        "health:dormant"
       ],
       "section": "sources",
       "tier": "skeleton",
@@ -4812,7 +4812,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 5800 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 5817 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4826,7 +4826,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 14896 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 14955 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4854,7 +4854,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 4141 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 4154 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4868,7 +4868,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 3853 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 3858 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -5918,11 +5918,6 @@
         "variant"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
         "/memory/decisions.md",
         "提及:朵尔",
         "mention"
@@ -5944,11 +5939,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:朵尔",
         "mention"
       ],
@@ -5996,22 +5986,12 @@
         "variant"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:汀克特",
-        "mention"
-      ],
-      [
         "/memory/memory-ext-wiki-characters-schema-v1.md",
         "提及:汀克特",
         "mention"
       ],
       [
         "/memory/morimens-context.md",
-        "提及:汀克特",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:汀克特",
         "mention"
       ]
@@ -7227,22 +7207,12 @@
     ],
     "/characters/54117.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:哈姆林",
         "mention"
       ],
       [
         "/memory/decisions.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:哈姆林",
         "mention"
       ],
@@ -7489,22 +7459,12 @@
     ],
     "/characters/94450.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:茉夏",
         "mention"
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -7579,18 +7539,8 @@
         "mention"
       ],
       [
-        "/characters/15574.md",
-        "提及:汀克特",
-        "mention"
-      ],
-      [
         "/characters/15585.md",
         "提及:奥吉尔",
-        "mention"
-      ],
-      [
-        "/characters/54117.md",
-        "提及:哈姆林",
         "mention"
       ],
       [
@@ -7599,18 +7549,8 @@
         "mention"
       ],
       [
-        "/characters/15570.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
         "/characters/54116.md",
         "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
         "mention"
       ],
       [
@@ -9402,18 +9342,8 @@
         "mention"
       ],
       [
-        "/characters/15574.md",
-        "提及:汀克特",
-        "mention"
-      ],
-      [
         "/characters/15585.md",
         "提及:奥吉尔",
-        "mention"
-      ],
-      [
-        "/characters/54117.md",
-        "提及:哈姆林",
         "mention"
       ],
       [
@@ -9422,18 +9352,8 @@
         "mention"
       ],
       [
-        "/characters/15570.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
         "/characters/54116.md",
         "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
         "mention"
       ],
       [
@@ -10240,7 +10160,6 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -12304,7 +12223,7 @@
       "/projects/silver-core-sdk-doc-performance.md"
     ],
     "degraded": [
-      "/sources/taptap.md"
+      "/sources/appstore.md"
     ],
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -12656,6 +12575,9 @@
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
+    ],
+    "dormant": [
+      "/sources/taptap.md"
     ],
     "dream": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -51001,7 +50923,6 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/sources/appstore.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -52262,7 +52183,7 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "degraded": [
-      "/sources/taptap.md"
+      "/sources/appstore.md"
     ],
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -52546,6 +52467,9 @@
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
+    ],
+    "dormant": [
+      "/sources/taptap.md"
     ],
     "drift": [
       "/resource/resource-proposal-drift-resistant-architecture-20260726.md"

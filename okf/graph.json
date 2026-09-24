@@ -1,8 +1,8 @@
 {
-  "generated": "2026-09-23",
+  "generated": "2026-09-24",
   "stats": {
     "nodes": 381,
-    "edges": 395
+    "edges": 387
   },
   "nodes": [
     {
@@ -3638,7 +3638,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:appstore",
-        "health:active"
+        "health:degraded"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -3794,7 +3794,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:taptap",
-        "health:degraded"
+        "health:dormant"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4575,20 +4575,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15574.md",
-      "rel": "提及:汀克特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15585.md",
       "rel": "提及:奥吉尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -4599,20 +4587,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -6027,20 +6003,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15574.md",
-      "rel": "提及:汀克特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15585.md",
       "rel": "提及:奥吉尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -6051,20 +6015,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/54116.md",
       "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
