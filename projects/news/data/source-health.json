@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T03:22:44.898904+00:00",
+  "updated_at": "2026-09-25T11:07:21.525914+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1183
   },
   "validation_drops": {
-    "generated_at": "2026-09-25T03:22:14.897097+00:00",
+    "generated_at": "2026-09-25T11:06:54.247846+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -27,7 +27,7 @@
       "last_success_date": "2026-09-25",
       "last_check_date": "2026-09-25",
       "consecutive_silent_days": 0,
-      "total_items": 3924,
+      "total_items": 3927,
       "errors": []
     },
     "steam": {
@@ -51,7 +51,7 @@
       "last_success_date": "2026-09-25",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 9645472,
+      "total_items": 9649517,
       "errors": []
     },
     "youtube": {
@@ -59,7 +59,7 @@
       "last_success_date": "2026-09-25",
       "last_check_date": "2026-09-25",
       "consecutive_silent_days": 0,
-      "total_items": 4163,
+      "total_items": 4168,
       "errors": []
     },
     "reddit": {
@@ -67,7 +67,7 @@
       "last_success_date": "2026-09-25",
       "last_check_date": "2026-09-25",
       "consecutive_silent_days": 0,
-      "total_items": 4276,
+      "total_items": 4284,
       "errors": []
     },
     "official": {
@@ -83,7 +83,7 @@
       "last_success_date": "2026-09-25",
       "last_check_date": "2026-09-25",
       "consecutive_silent_days": 0,
-      "total_items": 304,
+      "total_items": 305,
       "errors": []
     },
     "weibo": {
@@ -91,7 +91,7 @@
       "last_success_date": "2026-09-25",
       "last_check_date": "2026-09-25",
       "consecutive_silent_days": 0,
-      "total_items": 15000,
+      "total_items": 15015,
       "errors": []
     },
     "bahamut": {
@@ -99,7 +99,7 @@
       "last_success_date": "2026-09-25",
       "last_check_date": "2026-09-25",
       "consecutive_silent_days": 0,
-      "total_items": 1865,
+      "total_items": 1868,
       "errors": []
     },
     "appstore": {
