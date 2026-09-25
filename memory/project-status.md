@@ -344,8 +344,9 @@
 > MIT）的改造扩展层——放弃「BPT 100% 自研 + 模仿闭源 Claude Code」路线（守密人 2026-08-02 裁定），
 > 银芯→黑池单向输出。决策见 `memory/decisions.md` 同日各条；铁律与上游档案见子项目 `CONTEXT.md`。
 
+- **自动生产已移交黑池（守密人 2026-09-25 裁定）**：周更例程（探版 → 移 pin → 直推 main → 触发组装）银芯**不再维护**，Routine 待守密人账户侧停用；引擎 / 补丁 / 验证腿 / 两条组装工作流原样保留、仅手动触发。移交前末次移 pin = `v2026.9.21` / 0.21.4（2026-09-23，组装 run 35764906684 首跑全绿出包）。
 - **建设轮次编年（2026-08-02 立项 → 2026-08-17 首次周更实跑）已迁归档层**：M0 立项 / 需求 #1 品牌换装 / 需求 #2 成本面板 / 施工边界文书接收 / 首件便携整包 / 08-04 移 pin / 首次实跑八条原文逐字见 [`memory/archive/bpa-status-chronicle-20260918.md`](archive/bpa-status-chronicle-20260918.md)（2026-09-18 迁，照 SDK 先例；逐次移 pin 权威仍是 `UPSTREAM.md`）。
-- **上游周更例程已建（2026-08-09，守密人四裁：会话例程载体 / 全绿即直推 main / 合并后自动出包 / 只出私有版）**：每周一 00:00 北京（Routine cron `0 16 * * 0`）起新会话，照 `projects/black-pool-agent/WEEKLY-UPDATE.md` 跑机械腿 `build/sync_upstream.py`（探版 / 换装 / 变更清单 / 公告），补丁冲突以退出码 3 交人工重放；出包触发 `assemble-black-pool-bundle.yml`，公告落 `Resource/repo-engineering/hermes-weekly-update-*`。
+- **上游周更例程已建（2026-08-09；**2026-09-25 自动生产移交黑池、例程退役**，守密人四裁：会话例程载体 / 全绿即直推 main / 合并后自动出包 / 只出私有版）**：每周一 00:00 北京（Routine cron `0 16 * * 0`）起新会话，照 `projects/black-pool-agent/WEEKLY-UPDATE.md` 跑机械腿 `build/sync_upstream.py`（探版 / 换装 / 变更清单 / 公告），补丁冲突以退出码 3 交人工重放；出包触发 `assemble-black-pool-bundle.yml`，公告落 `Resource/repo-engineering/hermes-weekly-update-*`。
   撞面判定走**补丁面文件交集**而非关键词（0.19.1→0.20.0 区间：关键词报 257/945 条高风险，交集报 38 条且正中当次真需人工重放的文件）。守卫 `tests/test_hermes_weekly_update.py`（21 项）。
 - **闭环形态（守密人 2026-08-16 两裁）**：`sync_upstream.py run` 一键跑 追踪更新 → 审核补丁 → 换装后回归网（vitest 4,871 例 / 5 分钟，即首轮红的那一条），退出码 3/4 分流人工接手，中途停手绝不改 pin。**基底体检（上游套件约 27,464 例 / 4 核实测约 4.5 小时）不进链**，交 CI `hermes-upstream-suite.yml` 异步跑，判定走逐条具名假红台账 `build/upstream-false-reds.json`（禁通配、台账外即开 issue；现为引导期空档）。
 - **上游移 pin `v2026.9.14` / 0.21.3 + 回归网受控豁免闸门（2026-09-18，守密人两裁）**：09-07 pin
