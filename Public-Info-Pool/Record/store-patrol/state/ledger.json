@@ -2537,6 +2537,48 @@
       "nextRunAt": null,
       "revision": 3,
       "leaseUntil": null
+    },
+    "patrol:steam-appdetails:2026-09-25": {
+      "id": "patrol:steam-appdetails:2026-09-25",
+      "intent": "store-patrol steam-appdetails 2026-09-25",
+      "payload": {
+        "target": {
+          "id": "steam-appdetails",
+          "title": "Morimens Steam storefront (price / release surface)",
+          "url": "https://store.steampowered.com/api/appdetails?appids=3052450&cc=us&l=en&filters=basic,price_overview,release_date",
+          "extract": "steam-appdetails",
+          "key": "3052450"
+        }
+      },
+      "state": "failed",
+      "attempts": 3,
+      "maxAttempts": 3,
+      "createdAt": 1790340293204,
+      "updatedAt": 1790340299995,
+      "nextRunAt": null,
+      "revision": 7,
+      "leaseUntil": null,
+      "lastError": "steam-appdetails: no data for app 3052450"
+    },
+    "patrol:steam-review-summary:2026-09-25": {
+      "id": "patrol:steam-review-summary:2026-09-25",
+      "intent": "store-patrol steam-review-summary 2026-09-25",
+      "payload": {
+        "target": {
+          "id": "steam-review-summary",
+          "title": "Morimens Steam review summary",
+          "url": "https://store.steampowered.com/appreviews/3052450?json=1&num_per_page=0&language=all&purchase_type=all",
+          "extract": "steam-review-summary"
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1790340293209,
+      "updatedAt": 1790340293457,
+      "nextRunAt": null,
+      "revision": 3,
+      "leaseUntil": null
     }
   },
   "queries": [
@@ -3655,6 +3697,42 @@
       "endedAt": 1790253761481,
       "outcome": "ok",
       "summary": "steam-review-summary: CHANGED"
+    },
+    {
+      "id": "d4e26cfd-7047-4ad4-8b37-1426c1215a00",
+      "sessionId": "patrol:steam-appdetails:2026-09-25",
+      "attempt": 1,
+      "startedAt": 1790340293214,
+      "endedAt": 1790340293402,
+      "outcome": "error",
+      "error": "steam-appdetails: no data for app 3052450"
+    },
+    {
+      "id": "9b179e9c-7106-4d68-a7ca-7f52945c2f5e",
+      "sessionId": "patrol:steam-review-summary:2026-09-25",
+      "attempt": 1,
+      "startedAt": 1790340293272,
+      "endedAt": 1790340293457,
+      "outcome": "ok",
+      "summary": "steam-review-summary: CHANGED"
+    },
+    {
+      "id": "3b591ac0-2116-4f64-b3ad-355beedc19f3",
+      "sessionId": "patrol:steam-appdetails:2026-09-25",
+      "attempt": 2,
+      "startedAt": 1790340295676,
+      "endedAt": 1790340295755,
+      "outcome": "error",
+      "error": "steam-appdetails: no data for app 3052450"
+    },
+    {
+      "id": "4cbc6ad5-63c8-46f5-825c-3ab574dbc1bc",
+      "sessionId": "patrol:steam-appdetails:2026-09-25",
+      "attempt": 3,
+      "startedAt": 1790340299882,
+      "endedAt": 1790340299995,
+      "outcome": "error",
+      "error": "steam-appdetails: no data for app 3052450"
     }
   ]
 }
