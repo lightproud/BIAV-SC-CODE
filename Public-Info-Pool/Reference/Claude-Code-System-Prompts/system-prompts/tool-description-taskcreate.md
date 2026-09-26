@@ -3,7 +3,7 @@ name: "Tool Description: TaskCreate"
 description: "Tool description for TaskCreate tool"
 ccVersion: "2.1.84"
 variables:
-  - "CONDTIONAL_TEAMMATES_NOTE"
+  - "CONDITIONAL_TEAMMATES_NOTE"
   - "CONDITIONAL_TASK_NOTES"
 -->
 Use this tool to create a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.
@@ -14,7 +14,7 @@ It also helps the user understand the progress of the task and overall progress 
 Use this tool proactively in these scenarios:
 
 - Complex multi-step tasks - When a task requires 3 or more distinct steps or actions
-- Non-trivial and complex tasks - Tasks that require careful planning or multiple operations${CONDTIONAL_TEAMMATES_NOTE}
+- Non-trivial and complex tasks - Tasks that require careful planning or multiple operations${CONDITIONAL_TEAMMATES_NOTE}
 - Plan mode - When using plan mode, create a task list to track the work
 - User explicitly requests todo list - When the user directly asks you to use the todo list
 - User provides multiple tasks - When users provide a list of things to be done (numbered or comma-separated)

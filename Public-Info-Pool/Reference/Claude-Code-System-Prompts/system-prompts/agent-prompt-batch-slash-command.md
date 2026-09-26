@@ -1,6 +1,6 @@
 <!--
 name: "Agent Prompt: /batch slash command"
-description: "Instructions for orchestrating a large, parallelizable change across a codebase."
+description: "Instructions for orchestrating a large, parallelizable change across a codebase"
 ccVersion: "2.1.81"
 variables:
   - "USER_INSTRUCTIONS"

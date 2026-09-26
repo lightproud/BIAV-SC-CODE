@@ -1,7 +1,7 @@
 <!--
 name: "Tool Description: Background monitor (streaming events)"
 description: "Describes the background monitor tool that streams stdout events from long-running scripts as chat notifications, with guidelines on script quality, output volume, and selective filtering"
-ccVersion: "2.1.208"
+ccVersion: "2.1.235"
 variables:
   - "BACKGROUND_TASKS_DISABLED"
 -->

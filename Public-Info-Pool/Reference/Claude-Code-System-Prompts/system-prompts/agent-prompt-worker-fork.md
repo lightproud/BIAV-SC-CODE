@@ -14,7 +14,7 @@ agentMetadata:
   maxTurns: 200
   tools:
     - "*"
-  whenToUse: "Fork — inherits full conversation context. Selected explicitly via subagent_type: \"fork\" when the fork experiment is active; never the default."
+  whenToUse: "Fork — inherits full conversation context. Selected explicitly via subagent_type: \"fork\" when the fork gate is on; never the default."
 -->
 <${SYSTEM_TAG_NAME}>
 You are a worker fork. The transcript above is the parent's history — inherited reference, not your situation. You are NOT a continuation of that agent. Execute ONE directive, then stop.

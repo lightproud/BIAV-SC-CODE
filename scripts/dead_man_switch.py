@@ -215,6 +215,14 @@ def build_status(
     entries = []
     for name, crons in scheduled_workflows(workflow_dir).items():
         record: dict = {"workflow": name, "cron": crons}
+        # An alarm intentionally fails when it finds a stale workflow. Requiring
+        # its own last success creates a permanent feedback loop after an alert.
+        # Keep an explicit entry, but do not count self as evidence of health.
+        # Detecting this monitor's absence requires an independent observer.
+        if name in ("dead-man-switch.yml", "dead-man-switch.yaml"):
+            record.update(state="skipped", note="监控自身不以报警作业成功判活，避免自锁；停摆须外部监控")
+            entries.append(record)
+            continue
         try:
             record["expected_interval_h"] = round(expected_interval_hours(crons, now), 2)
         except ValueError as exc:
@@ -279,13 +287,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"状态已写入 {args.out}")
     if status["findings"]:
         return 1
-    # 「一个都没判成」必须**也是红**，不能只打印一行警告就退 0。守卫退 0 的后果比
-    # 别处严重：本工作流自己也在被看守名单里，而它的判据是「最近一次成功」——
-    # 退 0 就是一次成功。于是 GH_TOKEN 失效 / Actions API 不通的日子里，死手开关
-    # 天天绿灯、天天刷新 status.json 的 generated_at、天天把自己的「最近一次成功」
-    # 顶到今天，**连它自己的失明都监控不到**（实测：token 无效时 watched=26
-    # judged=0 unknown=26 findings=0，退出码 0）。watched=0（看守名单为空，如
-    # .github/workflows 缺失或被稀疏检出裁掉）同理——那是在什么都没查的情况下报平安。
+    # 无可判定对象时保持失败：自监控条目被显式跳过，不能算健康证据。
+    # token 失效 / API 不通 / 看守名单为空时，不许用 findings=0 报平安。
     if not status["judged"]:
         print("  ⚠ 判红：本轮 judged=0（看守名单为空或全部查询失败），"
               "findings=0 在此不是「全都健康」，而是「一个都没查到」。")

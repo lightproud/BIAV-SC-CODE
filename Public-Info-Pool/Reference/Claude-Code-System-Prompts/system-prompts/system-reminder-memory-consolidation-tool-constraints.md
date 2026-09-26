@@ -1,7 +1,7 @@
 <!--
 name: "System Reminder: Memory consolidation tool constraints"
 description: "Restricts the memory consolidation job to read-only shell access plus deleting memory files and lists sessions to review"
-ccVersion: "2.1.219"
+ccVersion: "2.1.235"
 variables:
   - "SESSIONS_TO_REVIEW"
   - "SESSION_ID"

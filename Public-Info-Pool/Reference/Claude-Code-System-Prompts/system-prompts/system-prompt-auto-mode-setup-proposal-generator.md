@@ -1,7 +1,7 @@
 <!--
 name: "System Prompt: Auto mode setup proposal generator"
 description: "Transforms gathered repository and usage reconnaissance into a constrained JSON proposal for auto-mode environment context and permission rules"
-ccVersion: "2.1.213"
+ccVersion: "2.1.257"
 variables:
   - "AUTO_MODE_SETUP_ANSWERS"
   - "SUBSCRIPTION_POSTURE_SIGNAL"
@@ -82,7 +82,7 @@ publishing).
 - **Organization**, **Cloud provider(s)**, **Repository visibility**,
   **Internal sharing / snippet hosting**, **Secrets management**,
   **Default / protected branches**, **CI/CD deploy targets**,
-  **Network posture**
+  **Network posture**, **Host containment**
 - **Source control**, **Trusted internal domains**,
   **Trusted cloud buckets**, **Key internal services**,
   **Internal package registry**

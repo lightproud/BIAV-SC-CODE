@@ -1,7 +1,7 @@
 <!--
 name: "System Reminder: Plan mode phase 2 design"
 description: "Plan-mode phase 2 guidance for launching Plan agents to design an implementation approach after initial exploration"
-ccVersion: "2.1.198"
+ccVersion: "2.1.235"
 variables:
   - "PLAN_AGENT"
   - "PLAN_V2_AGENT_COUNT"

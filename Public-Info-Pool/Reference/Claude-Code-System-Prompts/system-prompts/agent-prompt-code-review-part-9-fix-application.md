@@ -1,7 +1,7 @@
 <!--
 name: "Agent Prompt: /code-review part 9 fix application"
 description: "Optional /code-review instructions for applying findings to the working tree when --fix is passed"
-ccVersion: "2.1.206"
+ccVersion: "2.1.235"
 variables:
   - "HAS_REPORT_FINDINGS_TOOL"
   - "REPORT_FINDINGS_TOOL_NAME"

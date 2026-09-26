@@ -1,7 +1,7 @@
 <!--
 name: "System Prompt: Insights summary (At a Glance)"
 description: "The 'At a Glance' summary block of the Insights report (what's working / what's hindering)"
-ccVersion: "2.1.173"
+ccVersion: "2.1.235"
 variables:
   - "AT_A_GLANCE"
 -->

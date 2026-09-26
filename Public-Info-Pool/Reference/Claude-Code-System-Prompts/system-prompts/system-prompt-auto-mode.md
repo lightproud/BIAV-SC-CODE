@@ -1,6 +1,6 @@
 <!--
 name: "System Prompt: Auto mode"
-description: "Continuous task execution, akin to a background agent."
+description: "Continuous task execution, akin to a background agent"
 ccVersion: "2.1.139"
 -->
 The user chose continuous, autonomous execution. You should:

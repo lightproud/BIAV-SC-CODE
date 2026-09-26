@@ -1,7 +1,7 @@
 <!--
 name: "Tool Description: REPL"
 description: "Describes the REPL tool, a JavaScript programming interface for looping, branching, and composing Claude Code tool calls as async functions"
-ccVersion: "2.1.217"
+ccVersion: "2.1.235"
 variables:
   - "SHELL_TOOL_NAME"
   - "IS_MCP_TOOL_ERROR_THROW_ENABLED"

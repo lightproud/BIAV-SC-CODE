@@ -1,29 +1,29 @@
 <!--
 name: "Tool Description: PowerShell"
 description: "Describes the PowerShell command execution tool with syntax guidance, timeout settings, and instructions to prefer specialized tools over PowerShell for file operations"
-ccVersion: "2.1.213"
+ccVersion: "2.1.235"
 variables:
-  - "RENDER_COMMAND_NOTES_FN"
-  - "COMMAND_NOTES"
-  - "POWERSHELL_TIMEOUT_NOTE"
+  - "RENDER_POWERSHELL_EDITION_GUIDANCE_FN"
+  - "POWERSHELL_EDITION"
+  - "DETECTED_DEVELOPER_TOOLS_NOTE"
   - "MAX_TIMEOUT_MS_FN"
   - "DEFAULT_TIMEOUT_MS_FN"
   - "MAX_OUTPUT_CHARS_FN"
-  - "CUSTOM_USAGE_NOTE"
+  - "BACKGROUND_EXECUTION_NOTE"
   - "GLOB_TOOL_NAME"
   - "GREP_TOOL_NAME"
   - "READ_TOOL_NAME"
   - "EDIT_TOOL_NAME"
   - "WRITE_TOOL_NAME"
   - "POWERSHELL_TOOL_NAME"
-  - "CUSTOM_GIT_NOTES"
+  - "SLEEP_AVOIDANCE_NOTE"
 -->
 Executes a given PowerShell command with optional timeout. Working directory persists between commands; shell state (variables, functions) does not.
 
 IMPORTANT: This tool is for terminal operations via PowerShell: git, npm, docker, and PS cmdlets. DO NOT use it for file operations (reading, writing, editing, searching, finding files) - use the specialized tools for this instead.
 
-${RENDER_COMMAND_NOTES_FN(COMMAND_NOTES)}
-${POWERSHELL_TIMEOUT_NOTE}
+${RENDER_POWERSHELL_EDITION_GUIDANCE_FN(POWERSHELL_EDITION)}
+${DETECTED_DEVELOPER_TOOLS_NOTE}
 Before executing the command, please follow these steps:
 
 1. Directory Verification:
@@ -81,7 +81,7 @@ Usage notes:
   - You can specify an optional timeout in milliseconds (up to ${MAX_TIMEOUT_MS_FN()}ms / ${MAX_TIMEOUT_MS_FN()/60000} minutes). If not specified, commands will timeout after ${DEFAULT_TIMEOUT_MS_FN()}ms (${DEFAULT_TIMEOUT_MS_FN()/60000} minutes).
   - It is very helpful if you write a clear, concise description of what this command does.
   - If the output exceeds ${MAX_OUTPUT_CHARS_FN()} characters, output will be truncated before being returned to you.
-${CUSTOM_USAGE_NOTE?CUSTOM_USAGE_NOTE+`
+${BACKGROUND_EXECUTION_NOTE?BACKGROUND_EXECUTION_NOTE+`
 `:""}  - Avoid using PowerShell to run commands that have dedicated tools, unless explicitly instructed:
     - File search: Use ${GLOB_TOOL_NAME} (NOT Get-ChildItem -Recurse)
     - Content search: Use ${GREP_TOOL_NAME} (NOT Select-String)
@@ -94,9 +94,9 @@ ${CUSTOM_USAGE_NOTE?CUSTOM_USAGE_NOTE+`
     - If the commands depend on each other and must run sequentially, chain them in a single ${POWERSHELL_TOOL_NAME} call (see edition-specific chaining syntax above).
     - Use `;` only when you need to run commands sequentially but don't care if earlier commands fail.
     - DO NOT use newlines to separate commands (newlines are ok in quoted strings and here-strings)
-  - Do NOT prefix commands with `cd` or `Set-Location` -- the working directory is already set to the correct project directory automatically.
-${CUSTOM_GIT_NOTES?CUSTOM_GIT_NOTES+`
-`:""}  - For git commands:
+  - Do NOT prefix commands with `cd` or `Set-Location` -- the working directory is already set to the correct project directory automatically.${SLEEP_AVOIDANCE_NOTE?`
+`+SLEEP_AVOIDANCE_NOTE:""}
+  - For git commands:
     - Prefer to create a new commit rather than amending an existing commit.
     - Before running destructive operations (e.g., git reset --hard, git push --force, git checkout --), consider whether there is a safer alternative that achieves the same goal. Only use destructive operations when they are truly the best approach.
     - Never skip hooks (--no-verify) or bypass signing (--no-gpg-sign, -c commit.gpgsign=false) unless the user has explicitly asked for it. If a hook fails, investigate and fix the underlying issue.

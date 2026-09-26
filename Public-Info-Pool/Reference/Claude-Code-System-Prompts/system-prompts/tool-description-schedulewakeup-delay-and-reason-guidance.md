@@ -1,15 +1,14 @@
 <!--
 name: "Tool Description: ScheduleWakeup delay and reason guidance"
 description: "Extends the ScheduleWakeup tool description with no-op reporting, prompt-cache-aware delay selection, and concise reason-field guidance"
-ccVersion: "2.1.210"
+ccVersion: "2.1.242"
 variables:
   - "SCHEDULE_WAKEUP_BASE_DESCRIPTION"
-  - "INCLUDE_NOOP_GUIDANCE"
   - "PROMPT_CACHE_TTL_CLASSIFICATION"
 -->
-${SCHEDULE_WAKEUP_BASE_DESCRIPTION}${INCLUDE_NOOP_GUIDANCE?`
+${SCHEDULE_WAKEUP_BASE_DESCRIPTION}
 
-${'Set `noop: true` if nothing changed — you checked and there's nothing to report ("no change", "still waiting", "quiet hold"). Set `noop: false` if something happened worth keeping — you edited a file, posted a message, advanced state, or surfaced a finding. Consecutive `noop: true` ticks are collapsed in the user's terminal view and tracked as a streak, so long quiet holds stay legible to the user without scrolling. Omit `noop` when stopping (`stop: true`).'}`:""}
+${'Set `noop: true` if nothing changed — you checked and there's nothing to report ("no change", "still waiting", "quiet hold"). Set `noop: false` if something happened worth keeping — you edited a file, posted a message, advanced state, or surfaced a finding. Consecutive `noop: true` ticks are collapsed in the user's terminal view and tracked as a streak, so long quiet holds stay legible to the user without scrolling. Omit `noop` when stopping (`stop: true`).'}
 
 ${PROMPT_CACHE_TTL_CLASSIFICATION===!0?`## Picking delaySeconds
 
