@@ -4,7 +4,7 @@ title: "appstore 社区数据源"
 description: "appstore 平台采集档案，全量 555 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/appstore/global/"
 tags: ["data_layer:full_archive", "platform:appstore", "health:degraded"]
-timestamp: "2026-09-25T11:07:21.525914+00:00"
+timestamp: "2026-09-26T10:49:09.378240+00:00"
 ---
 
 # 数据层指针
