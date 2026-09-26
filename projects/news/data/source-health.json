@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T21:05:49.704197+00:00",
+  "updated_at": "2026-09-26T03:28:36.950321+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1184
   },
   "validation_drops": {
-    "generated_at": "2026-09-25T21:05:23.714162+00:00",
+    "generated_at": "2026-09-26T03:28:06.393061+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -32,10 +32,10 @@
   "platforms": {
     "bilibili": {
       "level": "active",
-      "last_success_date": "2026-09-25",
+      "last_success_date": "2026-09-26",
       "last_check_date": "2026-09-26",
-      "consecutive_silent_days": 1,
-      "total_items": 3930,
+      "consecutive_silent_days": 0,
+      "total_items": 3932,
       "errors": []
     },
     "steam": {
@@ -59,7 +59,7 @@
       "last_success_date": "2026-09-26",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 9660103,
+      "total_items": 9663788,
       "errors": []
     },
     "youtube": {
@@ -67,7 +67,7 @@
       "last_success_date": "2026-09-26",
       "last_check_date": "2026-09-26",
       "consecutive_silent_days": 0,
-      "total_items": 4170,
+      "total_items": 4173,
       "errors": []
     },
     "reddit": {
@@ -75,7 +75,7 @@
       "last_success_date": "2026-09-26",
       "last_check_date": "2026-09-26",
       "consecutive_silent_days": 0,
-      "total_items": 4296,
+      "total_items": 4299,
       "errors": []
     },
     "official": {
@@ -99,7 +99,7 @@
       "last_success_date": "2026-09-26",
       "last_check_date": "2026-09-26",
       "consecutive_silent_days": 0,
-      "total_items": 15046,
+      "total_items": 15062,
       "errors": []
     },
     "bahamut": {
@@ -120,10 +120,10 @@
     },
     "google_play": {
       "level": "active",
-      "last_success_date": "2026-09-24",
+      "last_success_date": "2026-09-25",
       "last_check_date": "2026-09-26",
-      "consecutive_silent_days": 2,
-      "total_items": 1231,
+      "consecutive_silent_days": 1,
+      "total_items": 1232,
       "errors": []
     },
     "pixiv": {
